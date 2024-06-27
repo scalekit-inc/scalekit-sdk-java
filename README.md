@@ -66,7 +66,7 @@ public class ScalekitExample {
 }
 ```
 
-See the project's [functional tests][functional-tests] for more examples.
+See the project's [functional tests][https://github.com/scalekit-inc/scalekit-sdk-java/tree/0.1-SNAPSHOT/src/test/java] for more examples.
 
 [api-docs]: https://docs.scalekit.com/apis
 [functional-tests]: test
