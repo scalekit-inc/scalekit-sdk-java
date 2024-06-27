@@ -33,7 +33,7 @@ Add this dependency to your project's POM:
 ```
 
 ## Documentation
-Please see the [Java API docs][api-docs] for the most
+Please see the [Java API docs][api-docs]
 
 
 
