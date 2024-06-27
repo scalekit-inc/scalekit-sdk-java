@@ -20,8 +20,8 @@ public class OrganizationTests {
     static void init(){
         //Init client
          client = new ScalekitClient("gmail-dev.scalekit.cloud",
-                 "test",
-                 "test");
+                 "clientId",
+                 "key");
     }
 
     @Test
