@@ -82,7 +82,7 @@ public class ScalekitClient {
              int status = response.statusCode();
             if(status != 200){
                 String message = "Invalid Credentials or Site Name";
-                throw new APIException("message" + ":" + response.body());
+                throw new APIException(message + ":" + response.body());
             }
             tokenResponse = mapper.readValue(response.body(), TokenResponse.class);
             return tokenResponse.getAccessToken();
