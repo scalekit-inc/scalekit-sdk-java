@@ -10,6 +10,7 @@
 ## Installation
 
 ### Requirements
+- Java 1.8 or later
 
 ### Gradle users
 
