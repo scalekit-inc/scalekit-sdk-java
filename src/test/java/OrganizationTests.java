@@ -4,9 +4,6 @@ import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.organizations.CreateOrganization;
 import com.scalekit.grpc.scalekit.v1.organizations.Organization;
 import com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganization;
-
-
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +19,9 @@ public class OrganizationTests {
     @BeforeAll
     static void init(){
         //Init client
-         client = new ScalekitClient("gmail-dev.scalekit.cloud","skc_13388706786312310","test_DdFtAfDceJQeQ5aLj4afSgdyrZeqAir8tbRGeIKxkgcwNitgov7q3GtExe4p2Aek");
+         client = new ScalekitClient("gmail-dev.scalekit.cloud",
+                 "test",
+                 "test");
     }
 
     @Test
