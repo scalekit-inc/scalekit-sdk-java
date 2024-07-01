@@ -7,7 +7,7 @@ import com.scalekit.internal.ScalekitCredentials;
 import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
 
-
+import java.util.List;
 
 
 public class ScalekitOrganizationClient implements OrganizationClient {
@@ -134,5 +134,34 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         }
 
     }
+
+    @Override
+    public List<Organization> GetOrganizations() {
+        try {
+            ListOrganizationsResponse response = this.organizationStub.listOrganization(
+                    ListOrganizationsRequest.newBuilder()
+                            .build()
+            );
+            return response.getOrganizationsList();
+        } catch (StatusRuntimeException e) {
+            throw new APIException(e);
+        }
+    }
+
+    @Override
+    public Link GeneratePortalLink(String organizationId) {
+        GeneratePortalLinkRequest request = GeneratePortalLinkRequest.newBuilder()
+                .setId(organizationId)
+                .build();
+
+        try {
+            GeneratePortalLinkResponse response = this.organizationStub.generatePortalLink(request);
+            return response.getLink();
+        } catch (StatusRuntimeException e) {
+            throw new APIException(e);
+        }
+    }
+
+
 
 }

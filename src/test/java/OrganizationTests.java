@@ -1,13 +1,12 @@
 
 import com.scalekit.ScalekitClient;
 import com.scalekit.exceptions.APIException;
-import com.scalekit.grpc.scalekit.v1.organizations.CreateOrganization;
-import com.scalekit.grpc.scalekit.v1.organizations.Organization;
-import com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganization;
+import com.scalekit.grpc.scalekit.v1.organizations.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 
+import java.util.List;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -20,8 +19,8 @@ public class OrganizationTests {
     static void init(){
         //Init client
          client = new ScalekitClient("gmail-dev.scalekit.cloud",
-                 "clientId",
-                 "key");
+                 "skc_13388706786312310",
+                 "test_DdFtAfDceJQeQ5aLj4afSgdyrZeqAir8tbRGeIKxkgcwNitgov7q3GtExe4p2Aek");
     }
 
     @Test
@@ -55,6 +54,9 @@ public class OrganizationTests {
         Organization reCreatedOrganization = client.Organizations().Create(createOrganization);
         client.Organizations().DeleteByExternalId(reCreatedOrganization.getExternalId());
 
+        List<Organization> organizations = client.Organizations().GetOrganizations();
+
+        assertNotNull(organizations);
         assertThrows(APIException.class, () -> client.Organizations().GetById(createdOrganization.getId()));
         assertThrows(APIException.class, () -> client.Organizations().GetById(reCreatedOrganization.getId()));
         assertThrows(APIException.class, () -> client.Organizations().GetById(reCreatedOrganization.getExternalId()));
@@ -83,6 +85,28 @@ public class OrganizationTests {
         APIException exception = assertThrows(APIException.class, () -> client.Organizations().Create(createOrganization));
         assertEquals("INVALID_ARGUMENT", exception.getScalekitErrorCode());
 
+    }
+
+    @Test
+    void ListOrganizationsTest() {
+        List<Organization> organizations = client.Organizations().GetOrganizations();
+        assertNotNull(organizations);
+
+        GeneratePortalLinkRequest request = GeneratePortalLinkRequest.newBuilder()
+                .setId(organizations.get(0).getId())
+                .build();
+    }
+
+    @Test
+    void GeneratePortalLinkTest() {
+        List<Organization> organizations = client.Organizations().GetOrganizations();
+        assertNotNull(organizations);
+
+
+        Link response = client.Organizations().GeneratePortalLink(organizations.get(0).getId());
+        assertNotNull(response);
+        assertNotNull(response.getLocation());
+        assertNotNull(response.getId());
     }
 
 

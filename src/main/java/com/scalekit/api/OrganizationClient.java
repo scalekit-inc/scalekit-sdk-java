@@ -1,8 +1,8 @@
 package com.scalekit.api;
 
-import com.scalekit.grpc.scalekit.v1.organizations.CreateOrganization;
-import com.scalekit.grpc.scalekit.v1.organizations.Organization;
-import com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganization;
+import com.scalekit.grpc.scalekit.v1.organizations.*;
+
+import java.util.List;
 
 public interface OrganizationClient {
 
@@ -19,5 +19,9 @@ public interface OrganizationClient {
   void  DeleteById(String id);
 
   void DeleteByExternalId(String externalId);
+
+  List<Organization> GetOrganizations();
+
+  Link GeneratePortalLink(String organizationId);
 
 }

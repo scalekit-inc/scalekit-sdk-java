@@ -1,7 +1,11 @@
 package com.scalekit;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.scalekit.api.ConnectionClient;
+import com.scalekit.api.DomainClient;
 import com.scalekit.api.OrganizationClient;
+import com.scalekit.api.impl.ScalekitConnectionClient;
+import com.scalekit.api.impl.ScalekitDomainClient;
 import com.scalekit.api.impl.ScalekitOrganizationClient;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.internal.ScalekitCredentials;
@@ -24,7 +28,10 @@ import static com.scalekit.internal.Constants.*;
 
 public class ScalekitClient {
     private final OrganizationClient organizationClient;
-    private final ManagedChannel channel;
+
+    private final DomainClient domainClient;
+
+    private final ConnectionClient connectionClient;
 
     public ScalekitClient(String siteName, String clientId, String clientSecret){
 
@@ -34,15 +41,25 @@ public class ScalekitClient {
         ScalekitCredentials credentials = new ScalekitCredentials(token);
 
         // Managed channel automatically handles channel closing
-        this.channel = ManagedChannelBuilder.forAddress(environment.siteName,443).build();
+        ManagedChannel channel = ManagedChannelBuilder.forAddress(environment.siteName, 443).build();
 
         // Initialize all clients
-        organizationClient = new ScalekitOrganizationClient(this.channel, credentials);
+        organizationClient = new ScalekitOrganizationClient(channel, credentials);
+        domainClient = new ScalekitDomainClient(channel, credentials);
+        connectionClient = new ScalekitConnectionClient(channel, credentials);
 
     }
 
     public OrganizationClient Organizations() {
         return this.organizationClient;
+    }
+
+    public DomainClient Domains() {
+        return this.domainClient;
+    }
+
+    public ConnectionClient Connections() {
+        return this.connectionClient;
     }
 
     private String getToken(){
