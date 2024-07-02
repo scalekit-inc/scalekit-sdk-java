@@ -14,9 +14,11 @@ public class DomainTests {
     @BeforeAll
     static void init(){
         //Init client
-        client = new ScalekitClient("gmail-dev.scalekit.cloud",
-                "skc_13388706786312310",
-                "test_DdFtAfDceJQeQ5aLj4afSgdyrZeqAir8tbRGeIKxkgcwNitgov7q3GtExe4p2Aek");
+        String environmentUrl = System.getenv("SCALEKIT_ENVIRONMENT_URL");
+        String  clientId = System.getenv("SCALEKIT_CLIENT_ID");
+        String apiSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
+
+        client = new ScalekitClient(environmentUrl, clientId, apiSecret);
     }
 
     @Test

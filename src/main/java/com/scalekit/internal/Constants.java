@@ -4,6 +4,7 @@ import io.grpc.Metadata;
 import static io.grpc.Metadata.ASCII_STRING_MARSHALLER;
 public class Constants {
 
+    public static String version = "0.1";
     public static final String BEARER_TYPE = "Bearer";
 
     public static final String GRANT_TYPE = "grant_type";

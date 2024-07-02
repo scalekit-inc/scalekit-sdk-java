@@ -7,9 +7,35 @@
 
     <groupId>com.scalekit</groupId>
     <artifactId>scalekit-sdk-java</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1</version>
 
     <packaging>jar</packaging>
+
+    <developers>
+        <developer>
+            <name>Avinash Kamath</name>
+            <email>avinash.kamath@scalekit.com</email>
+            <organization>Scalekit</organization>
+            <organizationUrl>https://www.scalekit.com</organizationUrl>
+        </developer>
+    </developers>
+
+
+    <scm>
+        <connection>scm:git:git@github.com:scalekit-inc/scalekit-sdk-java.git</connection>
+        <developerConnection>scm:git:git@github.com:scalekit-inc/scalekit-sdk-java.git</developerConnection>
+        <url>https://github.com/scalekit-inc/scalekit-sdk-java.git</url>
+    </scm>
+
+
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
 
 
     <name>Scalekit Java</name>
@@ -32,8 +58,6 @@
         <io.grpc.protobuf>3.25.3</io.grpc.protobuf>
     </properties>
 
-    <!--TODO use jar jar for packaging-->
-
     <dependencies>
         <dependency>
             <groupId>io.grpc</groupId>
@@ -48,14 +72,8 @@
         </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
-            <artifactId>grpc-alts</artifactId>
-            <version>${io.grpc.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-testing</artifactId>
-            <version>${io.grpc.version}</version>
-            <scope>test</scope>
+            <artifactId>grpc-protobuf</artifactId>
+            <version>1.64.0</version>
         </dependency>
         <dependency>
             <groupId>com.google.protobuf</groupId>
@@ -67,7 +85,6 @@
             <artifactId>protovalidate</artifactId>
             <version>0.2.1</version>
         </dependency>
-
         <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>javax.annotation-api</artifactId>
@@ -94,7 +111,6 @@
 
 
 
-
     <build>
         <resources>
             <resource>
@@ -105,6 +121,17 @@
             </resource>
         </resources>
         <plugins>
+                <plugin>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>0.5.0</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <publishingServerId>central</publishingServerId>
+                        <autoPublish>true</autoPublish>
+                    </configuration>
+                </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -114,6 +141,35 @@
                         <id>attach-javadocs</id>
                         <goals>
                             <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.3.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-source</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
                         </goals>
                     </execution>
                 </executions>

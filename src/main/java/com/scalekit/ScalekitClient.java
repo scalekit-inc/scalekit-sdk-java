@@ -41,7 +41,9 @@ public class ScalekitClient {
         ScalekitCredentials credentials = new ScalekitCredentials(token);
 
         // Managed channel automatically handles channel closing
-        ManagedChannel channel = ManagedChannelBuilder.forAddress(environment.siteName, 443).build();
+        ManagedChannel channel = ManagedChannelBuilder.forAddress(environment.siteName, 443)
+                .userAgent("scalekit-sdk-java/" + version)
+                .build();
 
         // Initialize all clients
         organizationClient = new ScalekitOrganizationClient(channel, credentials);

@@ -16,6 +16,8 @@ public class Environment {
 
     private static Environment defaultEnv; // singleton
 
+    public final int timeout = 80000;
+
 
     public Environment(String siteName, String clientId, String clientSecret) {
         this.clientId = clientId;

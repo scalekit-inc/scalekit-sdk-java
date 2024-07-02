@@ -1,14 +1,17 @@
 package com.scalekit.api.impl;
 
+import com.scalekit.Environment;
 import com.scalekit.api.ConnectionClient;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.connections.*;
 import com.scalekit.grpc.scalekit.v1.domains.DomainServiceGrpc;
 import com.scalekit.internal.ScalekitCredentials;
+import io.grpc.Deadline;
 import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class ScalekitConnectionClient implements ConnectionClient {
@@ -19,6 +22,7 @@ public class ScalekitConnectionClient implements ConnectionClient {
         try {
             this.ConnectionStub =  ConnectionServiceGrpc
                     .newBlockingStub(channel)
+                    .withDeadline(Deadline.after(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS))
                     .withCallCredentials(credentials);
         }
         catch (StatusRuntimeException e){
