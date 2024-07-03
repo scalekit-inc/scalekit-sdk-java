@@ -20,7 +20,7 @@ public interface OrganizationClient {
 
   void DeleteByExternalId(String externalId);
 
-  List<Organization> GetOrganizations();
+  ListOrganizationsResponse ListOrganizations(int pageSize, String pageToken);
 
   Link GeneratePortalLink(String organizationId);
 

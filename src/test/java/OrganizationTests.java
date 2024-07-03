@@ -56,9 +56,12 @@ public class OrganizationTests {
         Organization reCreatedOrganization = client.Organizations().Create(createOrganization);
         client.Organizations().DeleteByExternalId(reCreatedOrganization.getExternalId());
 
-        List<Organization> organizations = client.Organizations().GetOrganizations();
+        ListOrganizationsResponse organizations = client.Organizations().ListOrganizations(10, "");
 
         assertNotNull(organizations);
+        assertEquals(organizations.getTotalSize(),10);
+        assertNotNull(organizations.getNextPageToken());
+
         assertThrows(APIException.class, () -> client.Organizations().GetById(createdOrganization.getId()));
         assertThrows(APIException.class, () -> client.Organizations().GetById(reCreatedOrganization.getId()));
         assertThrows(APIException.class, () -> client.Organizations().GetById(reCreatedOrganization.getExternalId()));
@@ -89,23 +92,14 @@ public class OrganizationTests {
 
     }
 
-    @Test
-    void ListOrganizationsTest() {
-        List<Organization> organizations = client.Organizations().GetOrganizations();
-        assertNotNull(organizations);
-
-        GeneratePortalLinkRequest request = GeneratePortalLinkRequest.newBuilder()
-                .setId(organizations.get(0).getId())
-                .build();
-    }
 
     @Test
     void GeneratePortalLinkTest() {
-        List<Organization> organizations = client.Organizations().GetOrganizations();
+        ListOrganizationsResponse organizations = client.Organizations().ListOrganizations(10, null);
         assertNotNull(organizations);
 
 
-        Link response = client.Organizations().GeneratePortalLink(organizations.get(0).getId());
+        Link response = client.Organizations().GeneratePortalLink(organizations.getOrganizationsList().get(0).getId());
         assertNotNull(response);
         assertNotNull(response.getLocation());
         assertNotNull(response.getId());

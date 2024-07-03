@@ -4,15 +4,11 @@ import com.scalekit.Environment;
 import com.scalekit.api.ConnectionClient;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.connections.*;
-import com.scalekit.grpc.scalekit.v1.domains.DomainServiceGrpc;
 import com.scalekit.internal.ScalekitCredentials;
 import io.grpc.Deadline;
 import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
-
-import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 public class ScalekitConnectionClient implements ConnectionClient {
 
@@ -31,6 +27,11 @@ public class ScalekitConnectionClient implements ConnectionClient {
     }
 
 
+    /*
+        * GetConnectionById retrieves a connection by its ID
+        * @param connectionId: The connection ID
+        * @param organizationId: The organization ID
+     */
     @Override
     public Connection GetConnectionById(String connectionId, String organizationId) {
         GetConnectionRequest request = GetConnectionRequest.newBuilder()
@@ -46,43 +47,42 @@ public class ScalekitConnectionClient implements ConnectionClient {
         }
     }
 
+    /*
+        * ListConnectionsByDomain retrieves a list of connections by domain
+        * @param domain: The domain
+        * @return List<Connection>: The list of connections
+        * @throws APIException: If an error occurs
+     */
     @Override
-    public List<Connection> ListConnectionsByDomain(String domain) {
+    public ListConnectionsResponse ListConnectionsByDomain(String domain) {
         ListConnectionsRequest request = ListConnectionsRequest.newBuilder()
                 .setDomain(domain)
+                .setInclude("all")
                 .build();
-
         try {
-            ListConnectionsResponse response = ConnectionStub.listConnections(request);
-            return toConnectionList(response);
+            return ConnectionStub.listConnections(request);
         } catch (StatusRuntimeException e) {
             throw new APIException(e);
         }
     }
 
+    /*
+        * ListConnectionsByOrganization retrieves a list of connections by organization
+        * @param organizationId: The organization ID
+        * @return List<Connection>: The list of connections
+        * @throws APIException: If an error occurs
+     */
     @Override
-    public List<Connection> ListConnectionsByOrganization(String organizationId) {
+    public ListConnectionsResponse ListConnectionsByOrganization(String organizationId) {
         ListConnectionsRequest request = ListConnectionsRequest.newBuilder()
+                .setInclude("all")
                 .setOrganizationId(organizationId)
                 .build();
 
         try {
-            ListConnectionsResponse response = ConnectionStub.listConnections(request);
-            return toConnectionList(response);
+            return ConnectionStub.listConnections(request);
         } catch (StatusRuntimeException e) {
             throw new APIException(e);
         }
-    }
-
-    private List<Connection> toConnectionList(ListConnectionsResponse response){
-        return response.getConnectionsList().stream().map(listConnection -> Connection.newBuilder()
-                        .setOrganizationId(listConnection.getOrganizationId())
-                        .setId(listConnection.getId())
-                        .setEnabled(listConnection.getEnabled())
-                        .setProvider(listConnection.getProvider())
-                        .setStatusValue(listConnection.getStatusValue())
-                        .setType(listConnection.getType())
-                        .build())
-                .collect(Collectors.toList());
     }
 }

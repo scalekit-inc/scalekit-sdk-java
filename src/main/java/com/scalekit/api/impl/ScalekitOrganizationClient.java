@@ -10,6 +10,7 @@ import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 
@@ -31,6 +32,12 @@ public class ScalekitOrganizationClient implements OrganizationClient {
 
     }
 
+    /*
+     * Create creates a new organization in Scalekit
+     * @param organization: The organization to create
+     * @return Organization: The organization created
+     * @throws APIException: If an error occurs
+     */
     @Override
     public Organization Create(CreateOrganization organization) {
         try {
@@ -46,6 +53,12 @@ public class ScalekitOrganizationClient implements OrganizationClient {
 
     }
 
+    /*
+     * GetById retrieves an organization by its ID
+     * @param id: The organizations ID
+     * @return Organization: The organization retrieved
+     * @throws APIException: If an error occurs
+     */
     @Override
     public Organization GetById(String id) {
         try {
@@ -63,6 +76,12 @@ public class ScalekitOrganizationClient implements OrganizationClient {
 
     }
 
+    /*
+     * GetByExternalId retrieves an organization by its external ID
+     * @param externalId: The organizations external ID
+     * @return Organization: The organization retrieved
+     * @throws APIException: If an error occurs
+     */
     @Override
     public Organization GetByExternalId(String externalId) {
         try {
@@ -79,6 +98,13 @@ public class ScalekitOrganizationClient implements OrganizationClient {
 
     }
 
+    /*
+     * UpdateById updates an organization by its ID
+     * @param id: The organizations ID
+     * @param organization: The organization to update
+     * @return Organization: The organization updated
+     * @throws APIException: If an error occurs
+     */
     @Override
     public Organization UpdateById(String id, UpdateOrganization organization) {
 
@@ -96,6 +122,13 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         }
     }
 
+    /*
+     * UpdateByExternalId updates an organization by its external ID
+     * @param externalId: The organizations external ID
+     * @param organization: The organization to update
+     * @return Organization: The organization updated
+     * @throws APIException: If an error occurs
+     */
     @Override
     public Organization UpdateByExternalId(String externalId, UpdateOrganization organization) {
         try {
@@ -112,6 +145,11 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         }
     }
 
+    /*
+     * DeleteById deletes an organization by its ID returns nothing if successful
+     * @param id: The organizations ID
+     * @throws APIException: If an error occurs
+     */
     @Override
     public void DeleteById(String id) {
         try {
@@ -125,6 +163,11 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         }
     }
 
+    /*
+     * DeleteByExternalId deletes an organization by its external ID returns nothing if successful
+     * @param externalId: The organizations external ID
+     * @throws APIException: If an error occurs
+     */
     @Override
     public void DeleteByExternalId(String externalId) {
 
@@ -140,19 +183,41 @@ public class ScalekitOrganizationClient implements OrganizationClient {
 
     }
 
+    /*
+        * ListOrganizations retrieves a list of organizations
+        * The response will have page token to retrieve the next page with the same size
+        * <p>
+        * @param pageSize: The number of organizations to retrieve default page size is 10
+        * @param pageToken: The page token to retrieve the next page
+        * @return ListOrganizationsResponse: The list of organizations retrieved
+        * @throws APIException: If an error occurs
+     */
     @Override
-    public List<Organization> GetOrganizations() {
+    public ListOrganizationsResponse ListOrganizations(int pageSize, String pageToken) {
+        if(Objects.isNull(pageToken)) {
+            pageToken = "";
+        }
+        if (pageSize <= 0) {
+            pageSize = 10;
+        }
         try {
-            ListOrganizationsResponse response = this.organizationStub.listOrganization(
+            return this.organizationStub.listOrganization(
                     ListOrganizationsRequest.newBuilder()
+                            .setPageSize(pageSize)
+                            .setPageToken(pageToken)
                             .build()
             );
-            return response.getOrganizationsList();
         } catch (StatusRuntimeException e) {
             throw new APIException(e);
         }
     }
 
+    /*
+        * GeneratePortalLink generates a portal link for an organization
+        * @param organizationId: The organization ID
+        * @return Link: The portal link generated
+        * @throws APIException: If an error occurs
+     */
     @Override
     public Link GeneratePortalLink(String organizationId) {
         GeneratePortalLinkRequest request = GeneratePortalLinkRequest.newBuilder()
@@ -166,7 +231,5 @@ public class ScalekitOrganizationClient implements OrganizationClient {
             throw new APIException(e);
         }
     }
-
-
 
 }
