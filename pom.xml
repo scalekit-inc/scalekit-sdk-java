@@ -13,6 +13,18 @@
 
     <developers>
         <developer>
+            <name>Hrishikesh Premkumar</name>
+            <email>hrishikesh.premkumar@scalekit.com</email>
+            <organization>Scalekit</organization>
+            <organizationUrl>https://www.scalekit.com</organizationUrl>
+        </developer>
+        <developer>
+            <name>Vishal Dhawani</name>
+            <email>vishal.dhawani@scalekit.com</email>
+            <organization>Scalekit</organization>
+            <organizationUrl>https://www.scalekit.com</organizationUrl>
+        </developer>
+        <developer>
             <name>Avinash Kamath</name>
             <email>avinash.kamath@scalekit.com</email>
             <organization>Scalekit</organization>
