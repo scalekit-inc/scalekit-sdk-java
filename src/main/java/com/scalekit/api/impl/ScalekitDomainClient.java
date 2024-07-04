@@ -31,14 +31,14 @@ public class ScalekitDomainClient implements DomainClient {
 
 
     /*
-        * CreateDomain creates a new domain for the organization
+        * createDomain creates a new domain for the organization
         * @param organizationId: The organization ID
         * @param domainName: The domain name
         * @return Domain: The domain created
         * @throws APIException: If an error occurs
      */
     @Override
-    public Domain CreateDomain(String organizationId, String domainName) {
+    public Domain createDomain(String organizationId, String domainName) {
         CreateDomainRequest request = CreateDomainRequest.newBuilder()
                 .setOrganizationId(organizationId)
                 .setDomain(CreateDomain.newBuilder()
@@ -56,7 +56,7 @@ public class ScalekitDomainClient implements DomainClient {
 
 
     /*
-        * GetDomainById retrieves a domain by its ID
+        * getDomainById retrieves a domain by its ID
         * @param organizationId: The organization ID
         * @param domainId: The domain ID
         * @return Domain: The domain retrieved
@@ -64,7 +64,7 @@ public class ScalekitDomainClient implements DomainClient {
      */
 
     @Override
-    public Domain GetDomainById(String organizationId, String domainId) {
+    public Domain getDomainById(String organizationId, String domainId) {
         GetDomainRequest request = GetDomainRequest.newBuilder()
                 .setOrganizationId(organizationId)
                 .setId(domainId)
@@ -79,14 +79,14 @@ public class ScalekitDomainClient implements DomainClient {
     }
 
     /*
-        * ListDomainsByOrganizationId retrieves all domains for an organization
+        * listDomainsByOrganizationId retrieves all domains for an organization
         * @param organizationId: The organization ID
         * @return List<Domain>: The list of domains retrieved
         * @throws APIException: If an error occurs
      */
 
     @Override
-    public List<Domain> ListDomainsByOrganizationId(String organizationId) {
+    public List<Domain> listDomainsByOrganizationId(String organizationId) {
         ListDomainRequest request = ListDomainRequest.newBuilder()
                 .setOrganizationId(organizationId)
                 .build();

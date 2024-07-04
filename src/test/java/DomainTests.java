@@ -24,14 +24,14 @@ public class DomainTests {
     @Test
     public void DomainTest(){
         String domainName = UUID.randomUUID().toString().substring(0,10);
-        Domain domain = client.Domains().CreateDomain("org_26441296998563842", domainName);
+        Domain domain = client.domains().createDomain("org_26441296998563842", domainName);
         Assertions.assertEquals(domainName, domain.getDomain());
 
-        List<Domain> retrievedDomain = client.Domains().ListDomainsByOrganizationId("org_26441296998563842");
+        List<Domain> retrievedDomain = client.domains().listDomainsByOrganizationId("org_26441296998563842");
         Assertions.assertFalse(retrievedDomain.isEmpty());
 
 
-        Domain retrievedDomainById = client.Domains().GetDomainById("org_26441296998563842", domain.getId());
+        Domain retrievedDomainById = client.domains().getDomainById("org_26441296998563842", domain.getId());
         Assertions.assertEquals(domain.getId(), retrievedDomainById.getId());
 
     }

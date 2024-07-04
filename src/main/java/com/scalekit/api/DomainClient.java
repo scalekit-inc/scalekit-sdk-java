@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface DomainClient {
 
-    Domain CreateDomain(String organizationId, String domainName);
+    Domain createDomain(String organizationId, String domainName);
 
-    Domain GetDomainById(String organizationId, String domainId);
+    Domain getDomainById(String organizationId, String domainId);
 
-    List<Domain> ListDomainsByOrganizationId(String organizationId);
+    List<Domain> listDomainsByOrganizationId(String organizationId);
 }

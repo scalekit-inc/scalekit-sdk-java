@@ -6,22 +6,22 @@ import java.util.List;
 
 public interface OrganizationClient {
 
-  Organization Create(CreateOrganization organization);
+  Organization create(CreateOrganization organization);
 
-  Organization GetById(String id);
+  Organization getById(String id);
 
-  Organization GetByExternalId(String externalId);
+  Organization getByExternalId(String externalId);
 
-  Organization UpdateById(String id ,UpdateOrganization organization);
+  Organization updateById(String id ,UpdateOrganization organization);
 
-  Organization UpdateByExternalId(String externalId ,UpdateOrganization organization);
+  Organization updateByExternalId(String externalId ,UpdateOrganization organization);
 
-  void  DeleteById(String id);
+  void  deleteById(String id);
 
-  void DeleteByExternalId(String externalId);
+  void deleteByExternalId(String externalId);
 
-  ListOrganizationsResponse ListOrganizations(int pageSize, String pageToken);
+  ListOrganizationsResponse listOrganizations(int pageSize, String pageToken);
 
-  Link GeneratePortalLink(String organizationId);
+  Link generatePortalLink(String organizationId);
 
 }

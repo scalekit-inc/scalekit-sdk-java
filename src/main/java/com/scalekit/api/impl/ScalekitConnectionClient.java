@@ -28,12 +28,12 @@ public class ScalekitConnectionClient implements ConnectionClient {
 
 
     /*
-        * GetConnectionById retrieves a connection by its ID
+        * getConnectionById retrieves a connection by its ID
         * @param connectionId: The connection ID
         * @param organizationId: The organization ID
      */
     @Override
-    public Connection GetConnectionById(String connectionId, String organizationId) {
+    public Connection getConnectionById(String connectionId, String organizationId) {
         GetConnectionRequest request = GetConnectionRequest.newBuilder()
                 .setOrganizationId(organizationId)
                 .setId(connectionId)
@@ -48,13 +48,13 @@ public class ScalekitConnectionClient implements ConnectionClient {
     }
 
     /*
-        * ListConnectionsByDomain retrieves a list of connections by domain
+        * listConnectionsByDomain retrieves a list of connections by domain
         * @param domain: The domain
         * @return List<Connection>: The list of connections
         * @throws APIException: If an error occurs
      */
     @Override
-    public ListConnectionsResponse ListConnectionsByDomain(String domain) {
+    public ListConnectionsResponse listConnectionsByDomain(String domain) {
         ListConnectionsRequest request = ListConnectionsRequest.newBuilder()
                 .setDomain(domain)
                 .setInclude("all")
@@ -67,13 +67,13 @@ public class ScalekitConnectionClient implements ConnectionClient {
     }
 
     /*
-        * ListConnectionsByOrganization retrieves a list of connections by organization
+        * listConnectionsByOrganization retrieves a list of connections by organization
         * @param organizationId: The organization ID
         * @return List<Connection>: The list of connections
         * @throws APIException: If an error occurs
      */
     @Override
-    public ListConnectionsResponse ListConnectionsByOrganization(String organizationId) {
+    public ListConnectionsResponse listConnectionsByOrganization(String organizationId) {
         ListConnectionsRequest request = ListConnectionsRequest.newBuilder()
                 .setInclude("all")
                 .setOrganizationId(organizationId)

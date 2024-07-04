@@ -6,10 +6,10 @@ import com.scalekit.grpc.scalekit.v1.connections.ListConnectionsResponse;
 import java.util.List;
 
 public interface ConnectionClient {
-    Connection GetConnectionById(String connectionId, String organizationId);
+    Connection getConnectionById(String connectionId, String organizationId);
 
-    ListConnectionsResponse ListConnectionsByDomain(String domain);
+    ListConnectionsResponse listConnectionsByDomain(String domain);
 
-    ListConnectionsResponse ListConnectionsByOrganization(String organizationId);
+    ListConnectionsResponse listConnectionsByOrganization(String organizationId);
 
 }

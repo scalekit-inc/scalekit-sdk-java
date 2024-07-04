@@ -14,7 +14,11 @@ public class Constants {
 
     public static final String AUTHORIZATION_CODE = "authorization_code";
 
-    public static final String TOKEN_ENDPOINT = "oauth/token";
+    public static final String CLIENT_CREDENTIALS = "client_credentials";
+
+    public static final String TOKEN_ENDPOINT = "/oauth/token";
+
+    public static final String KEYS_ENDPOINT = "/keys";
 
 
     public static final Metadata.Key<String> AUTHORIZATION_METADATA_KEY = Metadata.Key.of("Authorization", ASCII_STRING_MARSHALLER);

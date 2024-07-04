@@ -33,13 +33,13 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     }
 
     /*
-     * Create creates a new organization in Scalekit
+     * create creates a new organization in Scalekit
      * @param organization: The organization to create
      * @return Organization: The organization created
      * @throws APIException: If an error occurs
      */
     @Override
-    public Organization Create(CreateOrganization organization) {
+    public Organization create(CreateOrganization organization) {
         try {
             CreateOrganizationResponse response = this.organizationStub.createOrganization(
                     CreateOrganizationRequest.newBuilder()
@@ -54,13 +54,13 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     }
 
     /*
-     * GetById retrieves an organization by its ID
+     * getById retrieves an organization by its ID
      * @param id: The organizations ID
      * @return Organization: The organization retrieved
      * @throws APIException: If an error occurs
      */
     @Override
-    public Organization GetById(String id) {
+    public Organization getById(String id) {
         try {
             GetOrganizationResponse response = this.organizationStub.getOrganization(
                     GetOrganizationRequest.newBuilder()
@@ -77,13 +77,13 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     }
 
     /*
-     * GetByExternalId retrieves an organization by its external ID
+     * getByExternalId retrieves an organization by its external ID
      * @param externalId: The organizations external ID
      * @return Organization: The organization retrieved
      * @throws APIException: If an error occurs
      */
     @Override
-    public Organization GetByExternalId(String externalId) {
+    public Organization getByExternalId(String externalId) {
         try {
             GetOrganizationResponse response = this.organizationStub.getOrganization(
                     GetOrganizationRequest.newBuilder()
@@ -99,14 +99,14 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     }
 
     /*
-     * UpdateById updates an organization by its ID
+     * updateById updates an organization by its ID
      * @param id: The organizations ID
      * @param organization: The organization to update
      * @return Organization: The organization updated
      * @throws APIException: If an error occurs
      */
     @Override
-    public Organization UpdateById(String id, UpdateOrganization organization) {
+    public Organization updateById(String id, UpdateOrganization organization) {
 
         try {
             UpdateOrganizationResponse response = this.organizationStub.updateOrganization(
@@ -123,14 +123,14 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     }
 
     /*
-     * UpdateByExternalId updates an organization by its external ID
+     * updateByExternalId updates an organization by its external ID
      * @param externalId: The organizations external ID
      * @param organization: The organization to update
      * @return Organization: The organization updated
      * @throws APIException: If an error occurs
      */
     @Override
-    public Organization UpdateByExternalId(String externalId, UpdateOrganization organization) {
+    public Organization updateByExternalId(String externalId, UpdateOrganization organization) {
         try {
             UpdateOrganizationResponse response = this.organizationStub.updateOrganization(
                     UpdateOrganizationRequest.newBuilder()
@@ -146,12 +146,12 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     }
 
     /*
-     * DeleteById deletes an organization by its ID returns nothing if successful
+     * deleteById deletes an organization by its ID returns nothing if successful
      * @param id: The organizations ID
      * @throws APIException: If an error occurs
      */
     @Override
-    public void DeleteById(String id) {
+    public void deleteById(String id) {
         try {
             this.organizationStub.deleteOrganization(
                     DeleteOrganizationRequest.newBuilder()
@@ -164,12 +164,12 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     }
 
     /*
-     * DeleteByExternalId deletes an organization by its external ID returns nothing if successful
+     * deleteByExternalId deletes an organization by its external ID returns nothing if successful
      * @param externalId: The organizations external ID
      * @throws APIException: If an error occurs
      */
     @Override
-    public void DeleteByExternalId(String externalId) {
+    public void deleteByExternalId(String externalId) {
 
         try {
             this.organizationStub.deleteOrganization(
@@ -184,7 +184,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     }
 
     /*
-        * ListOrganizations retrieves a list of organizations
+        * distOrganizations retrieves a list of organizations
         * The response will have page token to retrieve the next page with the same size
         * <p>
         * @param pageSize: The number of organizations to retrieve default page size is 10
@@ -193,7 +193,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         * @throws APIException: If an error occurs
      */
     @Override
-    public ListOrganizationsResponse ListOrganizations(int pageSize, String pageToken) {
+    public ListOrganizationsResponse listOrganizations(int pageSize, String pageToken) {
         if(Objects.isNull(pageToken)) {
             pageToken = "";
         }
@@ -213,13 +213,13 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     }
 
     /*
-        * GeneratePortalLink generates a portal link for an organization
+        * generatePortalLink generates a portal link for an organization
         * @param organizationId: The organization ID
         * @return Link: The portal link generated
         * @throws APIException: If an error occurs
      */
     @Override
-    public Link GeneratePortalLink(String organizationId) {
+    public Link generatePortalLink(String organizationId) {
         GeneratePortalLinkRequest request = GeneratePortalLinkRequest.newBuilder()
                 .setId(organizationId)
                 .build();

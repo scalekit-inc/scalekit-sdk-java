@@ -5,8 +5,6 @@ import com.scalekit.grpc.scalekit.v1.organizations.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-
-import java.util.List;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -34,37 +32,37 @@ public class OrganizationTests {
                 .putMetadata("testKey","testValue")
                 .build();
 
-        Organization createdOrganization       = client.Organizations().Create(createOrganization);
-        Organization retrievedOrganizationById = client.Organizations().GetById(createdOrganization.getId());
-        Organization retrieveByExternalId      = client.Organizations().GetByExternalId(createdOrganization.getExternalId());
-        Organization updatedOrganizationById   = client.Organizations().UpdateById(
+        Organization createdOrganization       = client.organizations().create(createOrganization);
+        Organization retrievedOrganizationById = client.organizations().getById(createdOrganization.getId());
+        Organization retrieveByExternalId      = client.organizations().getByExternalId(createdOrganization.getExternalId());
+        Organization updatedOrganizationById   = client.organizations().updateById(
                 createdOrganization.getId(),
                 UpdateOrganization.newBuilder()
                         .setDisplayName("Updated name")
                         .build()
         );
 
-        Organization updatedOrganizationByExternalId = client.Organizations().UpdateByExternalId(
+        Organization updatedOrganizationByExternalId = client.organizations().updateByExternalId(
                 createdOrganization.getExternalId(),
                 UpdateOrganization.newBuilder()
                         .setDisplayName("Updated name again")
                         .build()
         );
 
-        client.Organizations().DeleteById(createdOrganization.getId());
+        client.organizations().deleteById(createdOrganization.getId());
         // create again with same external Id
-        Organization reCreatedOrganization = client.Organizations().Create(createOrganization);
-        client.Organizations().DeleteByExternalId(reCreatedOrganization.getExternalId());
+        Organization reCreatedOrganization = client.organizations().create(createOrganization);
+        client.organizations().deleteByExternalId(reCreatedOrganization.getExternalId());
 
-        ListOrganizationsResponse organizations = client.Organizations().ListOrganizations(10, "");
+        ListOrganizationsResponse organizations = client.organizations().listOrganizations(10, "");
 
         assertNotNull(organizations);
         assertEquals(organizations.getTotalSize(),10);
         assertNotNull(organizations.getNextPageToken());
 
-        assertThrows(APIException.class, () -> client.Organizations().GetById(createdOrganization.getId()));
-        assertThrows(APIException.class, () -> client.Organizations().GetById(reCreatedOrganization.getId()));
-        assertThrows(APIException.class, () -> client.Organizations().GetById(reCreatedOrganization.getExternalId()));
+        assertThrows(APIException.class, () -> client.organizations().getById(createdOrganization.getId()));
+        assertThrows(APIException.class, () -> client.organizations().getById(reCreatedOrganization.getId()));
+        assertThrows(APIException.class, () -> client.organizations().getById(reCreatedOrganization.getExternalId()));
         assertEquals(organizationName, createdOrganization.getDisplayName());
         assertEquals(createdOrganization.getMetadataMap(),createdOrganization.getMetadataMap());
         assertEquals(retrievedOrganizationById.getId(),createdOrganization.getId());
@@ -87,7 +85,7 @@ public class OrganizationTests {
                 .build();
 
 
-        APIException exception = assertThrows(APIException.class, () -> client.Organizations().Create(createOrganization));
+        APIException exception = assertThrows(APIException.class, () -> client.organizations().create(createOrganization));
         assertEquals("INVALID_ARGUMENT", exception.getScalekitErrorCode());
 
     }
@@ -95,11 +93,11 @@ public class OrganizationTests {
 
     @Test
     void GeneratePortalLinkTest() {
-        ListOrganizationsResponse organizations = client.Organizations().ListOrganizations(10, null);
+        ListOrganizationsResponse organizations = client.organizations().listOrganizations(10, null);
         assertNotNull(organizations);
 
 
-        Link response = client.Organizations().GeneratePortalLink(organizations.getOrganizationsList().get(0).getId());
+        Link response = client.organizations().generatePortalLink(organizations.getOrganizationsList().get(0).getId());
         assertNotNull(response);
         assertNotNull(response.getLocation());
         assertNotNull(response.getId());

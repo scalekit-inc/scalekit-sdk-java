@@ -4,6 +4,9 @@ import com.scalekit.grpc.scalekit.v1.connections.ListConnectionsResponse;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class ConnectionTests {
     private static ScalekitClient client;
 
@@ -20,14 +23,14 @@ public class ConnectionTests {
     @Test
     public void ConnectionTest(){
 
-        ListConnectionsResponse response = client.Connections().ListConnectionsByDomain("test.sdk.com");
-        System.out.println(response);
+        ListConnectionsResponse response = client.connections().listConnectionsByDomain("test.sdk.com");
+        assertTrue(response.getConnectionsCount() > 0);
 
-        response = client.Connections().ListConnectionsByOrganization("org_26727998916919595");
-        System.out.println(response);
+        response = client.connections().listConnectionsByOrganization("org_26727998916919595");
+        assertTrue(response.getConnectionsCount() > 0);
 
-        Connection connection = client.Connections().GetConnectionById("conn_26728023562649899", "org_26727998916919595");
+        Connection connection = client.connections().getConnectionById("conn_26728023562649899", "org_26727998916919595");
 
-        System.out.println(connection);
+        assertEquals("conn_26728023562649899", connection.getId());
     }
 }

@@ -64,7 +64,7 @@ public class APIException extends RuntimeException{
             }
         }
         catch (Exception e){
-            throw new RuntimeException("Error when parsing the error response. Probably not Scalekit' error response.", e);
+            throw new RuntimeException("Error when parsing the error response. Probably not Scalekit's error response.", e);
         }
 
        return errorInfo;
