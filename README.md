@@ -1,11 +1,24 @@
-# Scalekit Java SDK
+<p align="left">
+  <a href="https://scalekit.com" target="_blank" rel="noopener noreferrer">
+    <picture>
+      <img src="https://cdn.scalekit.cloud/v1/scalekit-logo-dark.svg" height="64">
+    </picture>
+  </a>
+  <br/>
+</p>
 
-[![Maven Central](https://img.shields.io/badge/maven--central-v0.1-blue)]()
-[![JavaDoc](http://img.shields.io/badge/javadoc-reference-blue.svg)]()
+# Official Java SDK
+<a href="https://scalekit.com" target="_blank" rel="noopener noreferrer">Scalekit</a> is an Enterprise Authentication Platform purpose built for B2B applications. This Node.js SDK helps implement Enterprise Capabilities like Single Sign-on via SAML or OIDC in your Node.js applications within a few hours.
 
+<div>
+📚 <a target="_blank" href="https://docs.scalekit.com">Documentation</a> - 🚀 <a target="_blank" href="https://docs.scalekit.com">Quick-start Guide</a> - 💻 <a target="_blank" href="https://docs.scalekit.com/apis">API Reference</a>
+</div>
+<hr />
 
+## Pre-requisites
 
-
+1. [Sign up](https://scalekit.com) for a Scalekit account.
+2. Get your ```env_url```, ```client_id``` and ```client_secret``` from the Scalekit dashboard.
 
 ## Installation
 
@@ -17,7 +30,7 @@
 Add this dependency to your project's build file:
 
 ```gradle
-implementation "com.scalekit:scalekit-sdk-java:0.1-SNAPSHOT"
+implementation "com.scalekit:scalekit-sdk-java:0.1.1"
 ```
 
 ### Maven users
@@ -28,17 +41,13 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.scalekit</groupId>
     <artifactId>scalekit-sdk-java</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1.1</version>
 </dependency>
 ```
 
-## Documentation
-Please see the [Java API docs][api-docs]
-
-
-
 ## Usage
 
+Initialize the Scalekit client using the appropriate credentials. Refer code sample below.
 ```java
 import com.scalekit.ScalekitClient;
 import com.scalekit.exceptions.APIException;
@@ -52,26 +61,62 @@ public class ScalekitExample {
         client = new ScalekitClient("environment url",
                 "skc_...",
                 "sk_test_...");
-        CreateOrganization params = CreateOrganization.newBuilder()
-                .setDisplayName("Test Organization")
-                .putMetadata("testKey","testValue")
-                .build();
-
-        try {
-            Organization createdOrganization  = client.Organizations().Create(params);
-            System.out.println(Organization);
-        } catch (APIException e) {
-            e.printStackTrace();
         }
+}
+```
+
+
+## Examples - SSO with Express.js
+
+Below is a simple code sample that showcases how to implement Single Sign-on using Scalekit SDK
+
+```java
+@RestController
+public class AuthController {
+    ScalekitClient scalekitClient = ScalekitClient("environment url",
+            "skc_...",
+            "sk_test_...");
+
+    @Value("${auth.redirect.url}")
+    private String redirectUrl;
+
+    @PostMapping( path = "auth/login")
+    public ResponseEntity<Map<String, String>> loginHandler() {
+        AuthorizationUrlOptions options = new AuthorizationUrlOptions();
+        String url = scalekitClient.authentication().getAuthorizationUrl(redirectUrl, options).toString();
+        System.out.println(url);
+        return ResponseEntity.ok(Collections.singletonMap("url", url));
+    }
+
+    @GetMapping("auth/callback")
+    public String callbackHandler(@RequestParam(required = false) String code,
+                                  HttpServletResponse response){
+
+        AuthenticationResponse authResponse = scalekitClient.authentication()
+                .authenticateWithCode(code, redirectUrl, new AuthenticationOptions());
+
+        Cookie cookie = new Cookie("access_token", authResponse.getAccessToken());
+        response.addCookie(cookie);
+        return authResponse.getIdToken();
     }
 }
 ```
 
-See the project's [functional tests][functional-tests] for more examples.
+## Example Apps
 
-[api-docs]: https://docs.scalekit.com/apis
-[functional-tests]: https://github.com/scalekit-inc/scalekit-sdk-java/tree/0.1-SNAPSHOT/src/test/java
+Fully functional sample applications written using some popular web application frameworks and Scalekit SDK. Feel free to clone the repo and run them locally.
 
-<!--
-# vim: set tw=79:
--->
+- [Spring Boot ](https://github.com/scalekit-inc/scalekit-spring-boot-example)
+
+
+## API Reference
+
+Refer to our [API reference docs](https://docs.scalekit.com/apis) for detailed information about all our API endpoints and their usage.
+
+## More Information
+
+- Quickstart Guide to implement Single Sign-on in your application: [SSO Quickstart Guide](https://docs.scalekit.com)
+- Understand Single Sign-on basics: [SSO Basics](https://docs.scalekit.com/best-practices/single-sign-on)
+
+## License
+This project is licensed under the **MIT license**.
