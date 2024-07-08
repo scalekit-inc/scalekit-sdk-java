@@ -8,7 +8,7 @@
 </p>
 
 # Official Java SDK
-<a href="https://scalekit.com" target="_blank" rel="noopener noreferrer">Scalekit</a> is an Enterprise Authentication Platform purpose built for B2B applications. This Node.js SDK helps implement Enterprise Capabilities like Single Sign-on via SAML or OIDC in your Node.js applications within a few hours.
+<a href="https://scalekit.com" target="_blank" rel="noopener noreferrer">Scalekit</a> is an Enterprise Authentication Platform purpose built for B2B applications. This Java SDK helps implement Enterprise Capabilities like Single Sign-on via SAML or OIDC in your Java applications within a few hours.
 
 <div>
 📚 <a target="_blank" href="https://docs.scalekit.com">Documentation</a> - 🚀 <a target="_blank" href="https://docs.scalekit.com">Quick-start Guide</a> - 💻 <a target="_blank" href="https://docs.scalekit.com/apis">API Reference</a>
@@ -58,9 +58,9 @@ import com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganization;
 public class ScalekitExample {
 
     public static void main(String[] args) {
-        client = new ScalekitClient("environment url",
-                "skc_...",
-                "sk_test_...");
+        client = new ScalekitClient("env_url",
+                "client_id",
+                "client_secret");
         }
 }
 ```
@@ -73,9 +73,7 @@ Below is a simple code sample that showcases how to implement Single Sign-on usi
 ```java
 @RestController
 public class AuthController {
-    ScalekitClient scalekitClient = new ScalekitClient("environment url",
-            "skc_...",
-            "sk_test_...");
+    ScalekitClient scalekitClient = client = new ScalekitClient("env_url", "client_id", "client_secret");
 
     @Value("${auth.redirect.url}")
     private String redirectUrl;
@@ -103,7 +101,7 @@ public class AuthController {
 
 ## Example Apps
 
-Fully functional sample applications written using some popular web application frameworks and Scalekit SDK. Feel free to clone the repo and run them locally.
+Fully functional sample applications written using Spring Boot and Scalekit SDK. Feel free to clone the repo and run them locally.
 
 - [Spring Boot ](https://github.com/scalekit-inc/scalekit-spring-boot-example)
 
