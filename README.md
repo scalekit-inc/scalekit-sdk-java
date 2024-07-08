@@ -66,7 +66,7 @@ public class ScalekitExample {
 ```
 
 
-## Examples - SSO with Express.js
+## Examples - SSO with Spring Boot
 
 Below is a simple code sample that showcases how to implement Single Sign-on using Scalekit SDK
 
