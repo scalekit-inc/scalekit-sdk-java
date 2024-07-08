@@ -106,7 +106,7 @@ public class ScalekitAuthClient implements AuthClient {
             qs.add("code_challenge_method=" + URLEncoder.encode(options.getCodeChallengeMethod(), StandardCharsets.UTF_8));
         }
 
-        String urlString = String.format("https://%s/%s?%s", Environment.defaultConfig().siteName , "authorize", qs);
+        String urlString = String.format("https://%s/%s?%s", Environment.defaultConfig().siteName , AUTHORIZATION_ENDPOINT, qs);
 
         try {
             return new URL(urlString);
@@ -160,6 +160,7 @@ public class ScalekitAuthClient implements AuthClient {
             response = authenticate(params);
             JwtConsumer jwtConsumer = new JwtConsumerBuilder()
                     .setSkipSignatureVerification()
+                    .setSkipDefaultAudienceValidation()
                     .build();
 
             JwtClaims jwtClaims = jwtConsumer.processToClaims(response.getIdToken());

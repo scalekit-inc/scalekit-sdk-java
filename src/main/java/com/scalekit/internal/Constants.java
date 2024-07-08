@@ -18,6 +18,8 @@ public class Constants {
 
     public static final String TOKEN_ENDPOINT = "/oauth/token";
 
+    public static final String AUTHORIZATION_ENDPOINT = "oauth/authorize";
+
     public static final String KEYS_ENDPOINT = "/keys";
 
 
