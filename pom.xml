@@ -7,7 +7,7 @@
 
     <groupId>com.scalekit</groupId>
     <artifactId>scalekit-sdk-java</artifactId>
-    <version>0.1</version>
+    <version>0.1.1</version>
 
     <packaging>jar</packaging>
 
