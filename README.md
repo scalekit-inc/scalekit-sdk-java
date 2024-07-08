@@ -73,7 +73,7 @@ Below is a simple code sample that showcases how to implement Single Sign-on usi
 ```java
 @RestController
 public class AuthController {
-    ScalekitClient scalekitClient = ScalekitClient("environment url",
+    ScalekitClient scalekitClient = new ScalekitClient("environment url",
             "skc_...",
             "sk_test_...");
 
@@ -81,20 +81,19 @@ public class AuthController {
     private String redirectUrl;
 
     @PostMapping( path = "auth/login")
-    public ResponseEntity<Map<String, String>> loginHandler() {
+    public RedirectView loginHandler() {
         AuthorizationUrlOptions options = new AuthorizationUrlOptions();
-        String url = scalekitClient.authentication().getAuthorizationUrl(redirectUrl, options).toString();
-        System.out.println(url);
-        return ResponseEntity.ok(Collections.singletonMap("url", url));
+        String url = scalekitClient.authentication().
+                getAuthorizationUrl(redirectUrl, options)
+                .toString();
+        return new RedirectView(url);
     }
 
     @GetMapping("auth/callback")
-    public String callbackHandler(@RequestParam(required = false) String code,
-                                  HttpServletResponse response){
-
+    public String callbackHandler(@RequestParam String code, HttpServletResponse response){
+        
         AuthenticationResponse authResponse = scalekitClient.authentication()
                 .authenticateWithCode(code, redirectUrl, new AuthenticationOptions());
-
         Cookie cookie = new Cookie("access_token", authResponse.getAccessToken());
         response.addCookie(cookie);
         return authResponse.getIdToken();
