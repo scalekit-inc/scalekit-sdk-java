@@ -45,6 +45,22 @@ public enum ConnectionProvider
    * <code>CUSTOM = 8;</code>
    */
   CUSTOM(8),
+  /**
+   * <code>GITHUB = 9;</code>
+   */
+  GITHUB(9),
+  /**
+   * <code>GITLAB = 10;</code>
+   */
+  GITLAB(10),
+  /**
+   * <code>LINKEDIN = 11;</code>
+   */
+  LINKEDIN(11),
+  /**
+   * <code>SALESFORCE = 12;</code>
+   */
+  SALESFORCE(12),
   UNRECOGNIZED(-1),
   ;
 
@@ -84,6 +100,22 @@ public enum ConnectionProvider
    * <code>CUSTOM = 8;</code>
    */
   public static final int CUSTOM_VALUE = 8;
+  /**
+   * <code>GITHUB = 9;</code>
+   */
+  public static final int GITHUB_VALUE = 9;
+  /**
+   * <code>GITLAB = 10;</code>
+   */
+  public static final int GITLAB_VALUE = 10;
+  /**
+   * <code>LINKEDIN = 11;</code>
+   */
+  public static final int LINKEDIN_VALUE = 11;
+  /**
+   * <code>SALESFORCE = 12;</code>
+   */
+  public static final int SALESFORCE_VALUE = 12;
 
 
   public final int getNumber() {
@@ -119,6 +151,10 @@ public enum ConnectionProvider
       case 6: return PING_IDENTITY;
       case 7: return JUMPCLOUD;
       case 8: return CUSTOM;
+      case 9: return GITHUB;
+      case 10: return GITLAB;
+      case 11: return LINKEDIN;
+      case 12: return SALESFORCE;
       default: return null;
     }
   }

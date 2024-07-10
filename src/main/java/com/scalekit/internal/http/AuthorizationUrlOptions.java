@@ -16,4 +16,5 @@ public class AuthorizationUrlOptions {
     private String loginHint;
     private String codeChallenge;
     private String codeChallengeMethod;
+    private String provider;
 }

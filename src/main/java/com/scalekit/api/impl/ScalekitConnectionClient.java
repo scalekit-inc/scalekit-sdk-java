@@ -85,4 +85,33 @@ public class ScalekitConnectionClient implements ConnectionClient {
             throw new APIException(e);
         }
     }
+
+    @Override
+    public ToggleConnectionResponse enableConnection(String connectionId, String organizationId) {
+        ToggleConnectionRequest request = ToggleConnectionRequest.newBuilder()
+                .setOrganizationId(organizationId)
+                .setId(connectionId)
+                .build();
+
+        try {
+            return ConnectionStub.enableConnection(request);
+        } catch (StatusRuntimeException e) {
+            throw new APIException(e);
+        }
+
+    }
+
+    @Override
+    public ToggleConnectionResponse disableConnection(String connectionId, String organizationId) {
+        ToggleConnectionRequest request = ToggleConnectionRequest.newBuilder()
+                .setOrganizationId(organizationId)
+                .setId(connectionId)
+                .build();
+
+        try {
+            return ConnectionStub.disableConnection(request);
+        } catch (StatusRuntimeException e) {
+            throw new APIException(e);
+        }
+    }
 }

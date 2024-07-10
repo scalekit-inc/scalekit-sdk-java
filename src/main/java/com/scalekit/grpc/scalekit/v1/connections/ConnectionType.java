@@ -25,6 +25,10 @@ public enum ConnectionType
    * <code>PASSWORD = 3;</code>
    */
   PASSWORD(3),
+  /**
+   * <code>OAUTH = 4;</code>
+   */
+  OAUTH(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -44,6 +48,10 @@ public enum ConnectionType
    * <code>PASSWORD = 3;</code>
    */
   public static final int PASSWORD_VALUE = 3;
+  /**
+   * <code>OAUTH = 4;</code>
+   */
+  public static final int OAUTH_VALUE = 4;
 
 
   public final int getNumber() {
@@ -74,6 +82,7 @@ public enum ConnectionType
       case 1: return OIDC;
       case 2: return SAML;
       case 3: return PASSWORD;
+      case 4: return OAUTH;
       default: return null;
     }
   }

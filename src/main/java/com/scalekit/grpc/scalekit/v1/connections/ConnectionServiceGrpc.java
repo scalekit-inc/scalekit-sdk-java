@@ -15,6 +15,68 @@ public final class ConnectionServiceGrpc {
   public static final java.lang.String SERVICE_NAME = "scalekit.v1.connections.ConnectionService";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.GetProvidersRequest,
+      com.scalekit.grpc.scalekit.v1.connections.GetProvidersResponse> getGetProvidersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetProviders",
+      requestType = com.scalekit.grpc.scalekit.v1.connections.GetProvidersRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.connections.GetProvidersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.GetProvidersRequest,
+      com.scalekit.grpc.scalekit.v1.connections.GetProvidersResponse> getGetProvidersMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.GetProvidersRequest, com.scalekit.grpc.scalekit.v1.connections.GetProvidersResponse> getGetProvidersMethod;
+    if ((getGetProvidersMethod = ConnectionServiceGrpc.getGetProvidersMethod) == null) {
+      synchronized (ConnectionServiceGrpc.class) {
+        if ((getGetProvidersMethod = ConnectionServiceGrpc.getGetProvidersMethod) == null) {
+          ConnectionServiceGrpc.getGetProvidersMethod = getGetProvidersMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connections.GetProvidersRequest, com.scalekit.grpc.scalekit.v1.connections.GetProvidersResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProviders"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.GetProvidersRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.GetProvidersResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectionServiceMethodDescriptorSupplier("GetProviders"))
+              .build();
+        }
+      }
+    }
+    return getGetProvidersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.CreateEnvironmentConnectionRequest,
+      com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse> getCreateEnvironmentConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateEnvironmentConnection",
+      requestType = com.scalekit.grpc.scalekit.v1.connections.CreateEnvironmentConnectionRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.CreateEnvironmentConnectionRequest,
+      com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse> getCreateEnvironmentConnectionMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.CreateEnvironmentConnectionRequest, com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse> getCreateEnvironmentConnectionMethod;
+    if ((getCreateEnvironmentConnectionMethod = ConnectionServiceGrpc.getCreateEnvironmentConnectionMethod) == null) {
+      synchronized (ConnectionServiceGrpc.class) {
+        if ((getCreateEnvironmentConnectionMethod = ConnectionServiceGrpc.getCreateEnvironmentConnectionMethod) == null) {
+          ConnectionServiceGrpc.getCreateEnvironmentConnectionMethod = getCreateEnvironmentConnectionMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connections.CreateEnvironmentConnectionRequest, com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateEnvironmentConnection"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.CreateEnvironmentConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectionServiceMethodDescriptorSupplier("CreateEnvironmentConnection"))
+              .build();
+        }
+      }
+    }
+    return getCreateEnvironmentConnectionMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.CreateConnectionRequest,
       com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse> getCreateConnectionMethod;
 
@@ -44,6 +106,37 @@ public final class ConnectionServiceGrpc {
       }
     }
     return getCreateConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.GetEnvironmentConnectionRequest,
+      com.scalekit.grpc.scalekit.v1.connections.GetConnectionResponse> getGetEnvironmentConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEnvironmentConnection",
+      requestType = com.scalekit.grpc.scalekit.v1.connections.GetEnvironmentConnectionRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.connections.GetConnectionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.GetEnvironmentConnectionRequest,
+      com.scalekit.grpc.scalekit.v1.connections.GetConnectionResponse> getGetEnvironmentConnectionMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.GetEnvironmentConnectionRequest, com.scalekit.grpc.scalekit.v1.connections.GetConnectionResponse> getGetEnvironmentConnectionMethod;
+    if ((getGetEnvironmentConnectionMethod = ConnectionServiceGrpc.getGetEnvironmentConnectionMethod) == null) {
+      synchronized (ConnectionServiceGrpc.class) {
+        if ((getGetEnvironmentConnectionMethod = ConnectionServiceGrpc.getGetEnvironmentConnectionMethod) == null) {
+          ConnectionServiceGrpc.getGetEnvironmentConnectionMethod = getGetEnvironmentConnectionMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connections.GetEnvironmentConnectionRequest, com.scalekit.grpc.scalekit.v1.connections.GetConnectionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEnvironmentConnection"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.GetEnvironmentConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.GetConnectionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectionServiceMethodDescriptorSupplier("GetEnvironmentConnection"))
+              .build();
+        }
+      }
+    }
+    return getGetEnvironmentConnectionMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.GetConnectionRequest,
@@ -108,6 +201,37 @@ public final class ConnectionServiceGrpc {
     return getListConnectionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest,
+      com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse> getUpdateEnvironmentConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEnvironmentConnection",
+      requestType = com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest,
+      com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse> getUpdateEnvironmentConnectionMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest, com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse> getUpdateEnvironmentConnectionMethod;
+    if ((getUpdateEnvironmentConnectionMethod = ConnectionServiceGrpc.getUpdateEnvironmentConnectionMethod) == null) {
+      synchronized (ConnectionServiceGrpc.class) {
+        if ((getUpdateEnvironmentConnectionMethod = ConnectionServiceGrpc.getUpdateEnvironmentConnectionMethod) == null) {
+          ConnectionServiceGrpc.getUpdateEnvironmentConnectionMethod = getUpdateEnvironmentConnectionMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest, com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateEnvironmentConnection"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectionServiceMethodDescriptorSupplier("UpdateEnvironmentConnection"))
+              .build();
+        }
+      }
+    }
+    return getUpdateEnvironmentConnectionMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionRequest,
       com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse> getUpdateConnectionMethod;
 
@@ -137,6 +261,37 @@ public final class ConnectionServiceGrpc {
       }
     }
     return getUpdateConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.DeleteEnvironmentConnectionRequest,
+      com.google.protobuf.Empty> getDeleteEnvironmentConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteEnvironmentConnection",
+      requestType = com.scalekit.grpc.scalekit.v1.connections.DeleteEnvironmentConnectionRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.DeleteEnvironmentConnectionRequest,
+      com.google.protobuf.Empty> getDeleteEnvironmentConnectionMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.DeleteEnvironmentConnectionRequest, com.google.protobuf.Empty> getDeleteEnvironmentConnectionMethod;
+    if ((getDeleteEnvironmentConnectionMethod = ConnectionServiceGrpc.getDeleteEnvironmentConnectionMethod) == null) {
+      synchronized (ConnectionServiceGrpc.class) {
+        if ((getDeleteEnvironmentConnectionMethod = ConnectionServiceGrpc.getDeleteEnvironmentConnectionMethod) == null) {
+          ConnectionServiceGrpc.getDeleteEnvironmentConnectionMethod = getDeleteEnvironmentConnectionMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connections.DeleteEnvironmentConnectionRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteEnvironmentConnection"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.DeleteEnvironmentConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectionServiceMethodDescriptorSupplier("DeleteEnvironmentConnection"))
+              .build();
+        }
+      }
+    }
+    return getDeleteEnvironmentConnectionMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.DeleteConnectionRequest,
@@ -170,6 +325,37 @@ public final class ConnectionServiceGrpc {
     return getDeleteConnectionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest,
+      com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse> getEnableEnvironmentConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EnableEnvironmentConnection",
+      requestType = com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest,
+      com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse> getEnableEnvironmentConnectionMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest, com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse> getEnableEnvironmentConnectionMethod;
+    if ((getEnableEnvironmentConnectionMethod = ConnectionServiceGrpc.getEnableEnvironmentConnectionMethod) == null) {
+      synchronized (ConnectionServiceGrpc.class) {
+        if ((getEnableEnvironmentConnectionMethod = ConnectionServiceGrpc.getEnableEnvironmentConnectionMethod) == null) {
+          ConnectionServiceGrpc.getEnableEnvironmentConnectionMethod = getEnableEnvironmentConnectionMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest, com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EnableEnvironmentConnection"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectionServiceMethodDescriptorSupplier("EnableEnvironmentConnection"))
+              .build();
+        }
+      }
+    }
+    return getEnableEnvironmentConnectionMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionRequest,
       com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse> getEnableConnectionMethod;
 
@@ -199,6 +385,37 @@ public final class ConnectionServiceGrpc {
       }
     }
     return getEnableConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest,
+      com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse> getDisableEnvironmentConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DisableEnvironmentConnection",
+      requestType = com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest,
+      com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse> getDisableEnvironmentConnectionMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest, com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse> getDisableEnvironmentConnectionMethod;
+    if ((getDisableEnvironmentConnectionMethod = ConnectionServiceGrpc.getDisableEnvironmentConnectionMethod) == null) {
+      synchronized (ConnectionServiceGrpc.class) {
+        if ((getDisableEnvironmentConnectionMethod = ConnectionServiceGrpc.getDisableEnvironmentConnectionMethod) == null) {
+          ConnectionServiceGrpc.getDisableEnvironmentConnectionMethod = getDisableEnvironmentConnectionMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest, com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DisableEnvironmentConnection"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectionServiceMethodDescriptorSupplier("DisableEnvironmentConnection"))
+              .build();
+        }
+      }
+    }
+    return getDisableEnvironmentConnectionMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionRequest,
@@ -282,9 +499,30 @@ public final class ConnectionServiceGrpc {
 
     /**
      */
+    default void getProviders(com.scalekit.grpc.scalekit.v1.connections.GetProvidersRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.GetProvidersResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetProvidersMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void createEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.CreateEnvironmentConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateEnvironmentConnectionMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void createConnection(com.scalekit.grpc.scalekit.v1.connections.CreateConnectionRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateConnectionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.GetEnvironmentConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.GetConnectionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEnvironmentConnectionMethod(), responseObserver);
     }
 
     /**
@@ -303,9 +541,23 @@ public final class ConnectionServiceGrpc {
 
     /**
      */
+    default void updateEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateEnvironmentConnectionMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void updateConnection(com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateConnectionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.DeleteEnvironmentConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteEnvironmentConnectionMethod(), responseObserver);
     }
 
     /**
@@ -317,9 +569,23 @@ public final class ConnectionServiceGrpc {
 
     /**
      */
+    default void enableEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEnableEnvironmentConnectionMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void enableConnection(com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEnableConnectionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void disableEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDisableEnvironmentConnectionMethod(), responseObserver);
     }
 
     /**
@@ -359,10 +625,34 @@ public final class ConnectionServiceGrpc {
 
     /**
      */
+    public void getProviders(com.scalekit.grpc.scalekit.v1.connections.GetProvidersRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.GetProvidersResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetProvidersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.CreateEnvironmentConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateEnvironmentConnectionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void createConnection(com.scalekit.grpc.scalekit.v1.connections.CreateConnectionRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateConnectionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.GetEnvironmentConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.GetConnectionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetEnvironmentConnectionMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -383,10 +673,26 @@ public final class ConnectionServiceGrpc {
 
     /**
      */
+    public void updateEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateEnvironmentConnectionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void updateConnection(com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateConnectionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.DeleteEnvironmentConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteEnvironmentConnectionMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -399,10 +705,26 @@ public final class ConnectionServiceGrpc {
 
     /**
      */
+    public void enableEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEnableEnvironmentConnectionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void enableConnection(com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getEnableConnectionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void disableEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDisableEnvironmentConnectionMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -432,9 +754,30 @@ public final class ConnectionServiceGrpc {
 
     /**
      */
+    public com.scalekit.grpc.scalekit.v1.connections.GetProvidersResponse getProviders(com.scalekit.grpc.scalekit.v1.connections.GetProvidersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProvidersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse createEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.CreateEnvironmentConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEnvironmentConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse createConnection(com.scalekit.grpc.scalekit.v1.connections.CreateConnectionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.GetConnectionResponse getEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.GetEnvironmentConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEnvironmentConnectionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -453,9 +796,23 @@ public final class ConnectionServiceGrpc {
 
     /**
      */
+    public com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse updateEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEnvironmentConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse updateConnection(com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.google.protobuf.Empty deleteEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.DeleteEnvironmentConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEnvironmentConnectionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -467,9 +824,23 @@ public final class ConnectionServiceGrpc {
 
     /**
      */
+    public com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse enableEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEnableEnvironmentConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse enableConnection(com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getEnableConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse disableEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDisableEnvironmentConnectionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -498,10 +869,34 @@ public final class ConnectionServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connections.GetProvidersResponse> getProviders(
+        com.scalekit.grpc.scalekit.v1.connections.GetProvidersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetProvidersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse> createEnvironmentConnection(
+        com.scalekit.grpc.scalekit.v1.connections.CreateEnvironmentConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateEnvironmentConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse> createConnection(
         com.scalekit.grpc.scalekit.v1.connections.CreateConnectionRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connections.GetConnectionResponse> getEnvironmentConnection(
+        com.scalekit.grpc.scalekit.v1.connections.GetEnvironmentConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetEnvironmentConnectionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -522,10 +917,26 @@ public final class ConnectionServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse> updateEnvironmentConnection(
+        com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateEnvironmentConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse> updateConnection(
         com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteEnvironmentConnection(
+        com.scalekit.grpc.scalekit.v1.connections.DeleteEnvironmentConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteEnvironmentConnectionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -538,10 +949,26 @@ public final class ConnectionServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse> enableEnvironmentConnection(
+        com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEnableEnvironmentConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse> enableConnection(
         com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getEnableConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse> disableEnvironmentConnection(
+        com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDisableEnvironmentConnectionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -553,13 +980,20 @@ public final class ConnectionServiceGrpc {
     }
   }
 
-  private static final int METHODID_CREATE_CONNECTION = 0;
-  private static final int METHODID_GET_CONNECTION = 1;
-  private static final int METHODID_LIST_CONNECTIONS = 2;
-  private static final int METHODID_UPDATE_CONNECTION = 3;
-  private static final int METHODID_DELETE_CONNECTION = 4;
-  private static final int METHODID_ENABLE_CONNECTION = 5;
-  private static final int METHODID_DISABLE_CONNECTION = 6;
+  private static final int METHODID_GET_PROVIDERS = 0;
+  private static final int METHODID_CREATE_ENVIRONMENT_CONNECTION = 1;
+  private static final int METHODID_CREATE_CONNECTION = 2;
+  private static final int METHODID_GET_ENVIRONMENT_CONNECTION = 3;
+  private static final int METHODID_GET_CONNECTION = 4;
+  private static final int METHODID_LIST_CONNECTIONS = 5;
+  private static final int METHODID_UPDATE_ENVIRONMENT_CONNECTION = 6;
+  private static final int METHODID_UPDATE_CONNECTION = 7;
+  private static final int METHODID_DELETE_ENVIRONMENT_CONNECTION = 8;
+  private static final int METHODID_DELETE_CONNECTION = 9;
+  private static final int METHODID_ENABLE_ENVIRONMENT_CONNECTION = 10;
+  private static final int METHODID_ENABLE_CONNECTION = 11;
+  private static final int METHODID_DISABLE_ENVIRONMENT_CONNECTION = 12;
+  private static final int METHODID_DISABLE_CONNECTION = 13;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -578,9 +1012,21 @@ public final class ConnectionServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_GET_PROVIDERS:
+          serviceImpl.getProviders((com.scalekit.grpc.scalekit.v1.connections.GetProvidersRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.GetProvidersResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_ENVIRONMENT_CONNECTION:
+          serviceImpl.createEnvironmentConnection((com.scalekit.grpc.scalekit.v1.connections.CreateEnvironmentConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse>) responseObserver);
+          break;
         case METHODID_CREATE_CONNECTION:
           serviceImpl.createConnection((com.scalekit.grpc.scalekit.v1.connections.CreateConnectionRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse>) responseObserver);
+          break;
+        case METHODID_GET_ENVIRONMENT_CONNECTION:
+          serviceImpl.getEnvironmentConnection((com.scalekit.grpc.scalekit.v1.connections.GetEnvironmentConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.GetConnectionResponse>) responseObserver);
           break;
         case METHODID_GET_CONNECTION:
           serviceImpl.getConnection((com.scalekit.grpc.scalekit.v1.connections.GetConnectionRequest) request,
@@ -590,16 +1036,32 @@ public final class ConnectionServiceGrpc {
           serviceImpl.listConnections((com.scalekit.grpc.scalekit.v1.connections.ListConnectionsRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ListConnectionsResponse>) responseObserver);
           break;
+        case METHODID_UPDATE_ENVIRONMENT_CONNECTION:
+          serviceImpl.updateEnvironmentConnection((com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse>) responseObserver);
+          break;
         case METHODID_UPDATE_CONNECTION:
           serviceImpl.updateConnection((com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_ENVIRONMENT_CONNECTION:
+          serviceImpl.deleteEnvironmentConnection((com.scalekit.grpc.scalekit.v1.connections.DeleteEnvironmentConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_DELETE_CONNECTION:
           serviceImpl.deleteConnection((com.scalekit.grpc.scalekit.v1.connections.DeleteConnectionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
+        case METHODID_ENABLE_ENVIRONMENT_CONNECTION:
+          serviceImpl.enableEnvironmentConnection((com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse>) responseObserver);
+          break;
         case METHODID_ENABLE_CONNECTION:
           serviceImpl.enableConnection((com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse>) responseObserver);
+          break;
+        case METHODID_DISABLE_ENVIRONMENT_CONNECTION:
+          serviceImpl.disableEnvironmentConnection((com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse>) responseObserver);
           break;
         case METHODID_DISABLE_CONNECTION:
@@ -625,12 +1087,33 @@ public final class ConnectionServiceGrpc {
   public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
     return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
         .addMethod(
+          getGetProvidersMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connections.GetProvidersRequest,
+              com.scalekit.grpc.scalekit.v1.connections.GetProvidersResponse>(
+                service, METHODID_GET_PROVIDERS)))
+        .addMethod(
+          getCreateEnvironmentConnectionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connections.CreateEnvironmentConnectionRequest,
+              com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse>(
+                service, METHODID_CREATE_ENVIRONMENT_CONNECTION)))
+        .addMethod(
           getCreateConnectionMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               com.scalekit.grpc.scalekit.v1.connections.CreateConnectionRequest,
               com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse>(
                 service, METHODID_CREATE_CONNECTION)))
+        .addMethod(
+          getGetEnvironmentConnectionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connections.GetEnvironmentConnectionRequest,
+              com.scalekit.grpc.scalekit.v1.connections.GetConnectionResponse>(
+                service, METHODID_GET_ENVIRONMENT_CONNECTION)))
         .addMethod(
           getGetConnectionMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -646,12 +1129,26 @@ public final class ConnectionServiceGrpc {
               com.scalekit.grpc.scalekit.v1.connections.ListConnectionsResponse>(
                 service, METHODID_LIST_CONNECTIONS)))
         .addMethod(
+          getUpdateEnvironmentConnectionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest,
+              com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse>(
+                service, METHODID_UPDATE_ENVIRONMENT_CONNECTION)))
+        .addMethod(
           getUpdateConnectionMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionRequest,
               com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse>(
                 service, METHODID_UPDATE_CONNECTION)))
+        .addMethod(
+          getDeleteEnvironmentConnectionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connections.DeleteEnvironmentConnectionRequest,
+              com.google.protobuf.Empty>(
+                service, METHODID_DELETE_ENVIRONMENT_CONNECTION)))
         .addMethod(
           getDeleteConnectionMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -660,12 +1157,26 @@ public final class ConnectionServiceGrpc {
               com.google.protobuf.Empty>(
                 service, METHODID_DELETE_CONNECTION)))
         .addMethod(
+          getEnableEnvironmentConnectionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest,
+              com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse>(
+                service, METHODID_ENABLE_ENVIRONMENT_CONNECTION)))
+        .addMethod(
           getEnableConnectionMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionRequest,
               com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse>(
                 service, METHODID_ENABLE_CONNECTION)))
+        .addMethod(
+          getDisableEnvironmentConnectionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connections.ToggleEnvironmentConnectionRequest,
+              com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse>(
+                service, METHODID_DISABLE_ENVIRONMENT_CONNECTION)))
         .addMethod(
           getDisableConnectionMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -721,12 +1232,19 @@ public final class ConnectionServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new ConnectionServiceFileDescriptorSupplier())
+              .addMethod(getGetProvidersMethod())
+              .addMethod(getCreateEnvironmentConnectionMethod())
               .addMethod(getCreateConnectionMethod())
+              .addMethod(getGetEnvironmentConnectionMethod())
               .addMethod(getGetConnectionMethod())
               .addMethod(getListConnectionsMethod())
+              .addMethod(getUpdateEnvironmentConnectionMethod())
               .addMethod(getUpdateConnectionMethod())
+              .addMethod(getDeleteEnvironmentConnectionMethod())
               .addMethod(getDeleteConnectionMethod())
+              .addMethod(getEnableEnvironmentConnectionMethod())
               .addMethod(getEnableConnectionMethod())
+              .addMethod(getDisableEnvironmentConnectionMethod())
               .addMethod(getDisableConnectionMethod())
               .build();
         }

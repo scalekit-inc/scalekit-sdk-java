@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     uiButtonTitle_ = "";
     configurationType_ = 0;
     testConnectionUri_ = "";
+    keyId_ = "";
   }
 
   @java.lang.Override
@@ -66,8 +67,9 @@ private static final long serialVersionUID = 0L;
   public enum SettingsCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    OIDC_CONFIG(13),
-    SAML_CONFIG(14),
+    OIDC_CONFIG(18),
+    SAML_CONFIG(19),
+    OAUTH_CONFIG(20),
     SETTINGS_NOT_SET(0);
     private final int value;
     private SettingsCase(int value) {
@@ -85,8 +87,9 @@ private static final long serialVersionUID = 0L;
 
     public static SettingsCase forNumber(int value) {
       switch (value) {
-        case 13: return OIDC_CONFIG;
-        case 14: return SAML_CONFIG;
+        case 18: return OIDC_CONFIG;
+        case 19: return SAML_CONFIG;
+        case 20: return OAUTH_CONFIG;
         case 0: return SETTINGS_NOT_SET;
         default: return null;
       }
@@ -221,7 +224,15 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object organizationId_ = "";
   /**
-   * <code>string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the organizationId field is set.
+   */
+  @java.lang.Override
+  public boolean hasOrganizationId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The organizationId.
    */
   @java.lang.Override
@@ -238,7 +249,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for organizationId.
    */
   @java.lang.Override
@@ -352,68 +363,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int OIDC_CONFIG_FIELD_NUMBER = 13;
-  /**
-   * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 13 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the oidcConfig field is set.
-   */
-  @java.lang.Override
-  public boolean hasOidcConfig() {
-    return settingsCase_ == 13;
-  }
-  /**
-   * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 13 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The oidcConfig.
-   */
-  @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig getOidcConfig() {
-    if (settingsCase_ == 13) {
-       return (com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig) settings_;
-    }
-    return com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.getDefaultInstance();
-  }
-  /**
-   * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 13 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfigOrBuilder getOidcConfigOrBuilder() {
-    if (settingsCase_ == 13) {
-       return (com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig) settings_;
-    }
-    return com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.getDefaultInstance();
-  }
-
-  public static final int SAML_CONFIG_FIELD_NUMBER = 14;
-  /**
-   * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 14 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the samlConfig field is set.
-   */
-  @java.lang.Override
-  public boolean hasSamlConfig() {
-    return settingsCase_ == 14;
-  }
-  /**
-   * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 14 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The samlConfig.
-   */
-  @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse getSamlConfig() {
-    if (settingsCase_ == 14) {
-       return (com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse) settings_;
-    }
-    return com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.getDefaultInstance();
-  }
-  /**
-   * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 14 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponseOrBuilder getSamlConfigOrBuilder() {
-    if (settingsCase_ == 14) {
-       return (com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse) settings_;
-    }
-    return com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.getDefaultInstance();
-  }
-
   public static final int ATTRIBUTE_MAPPING_FIELD_NUMBER = 15;
   private static final class AttributeMappingDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
@@ -501,7 +450,7 @@ java.lang.String defaultValue) {
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <code>.google.protobuf.Timestamp create_time = 16 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -527,7 +476,7 @@ java.lang.String defaultValue) {
    */
   @java.lang.Override
   public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    * <code>.google.protobuf.Timestamp update_time = 17 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -543,6 +492,146 @@ java.lang.String defaultValue) {
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  public static final int OIDC_CONFIG_FIELD_NUMBER = 18;
+  /**
+   * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 18 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the oidcConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasOidcConfig() {
+    return settingsCase_ == 18;
+  }
+  /**
+   * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 18 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The oidcConfig.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig getOidcConfig() {
+    if (settingsCase_ == 18) {
+       return (com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.getDefaultInstance();
+  }
+  /**
+   * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 18 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfigOrBuilder getOidcConfigOrBuilder() {
+    if (settingsCase_ == 18) {
+       return (com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.getDefaultInstance();
+  }
+
+  public static final int SAML_CONFIG_FIELD_NUMBER = 19;
+  /**
+   * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 19 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the samlConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSamlConfig() {
+    return settingsCase_ == 19;
+  }
+  /**
+   * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 19 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The samlConfig.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse getSamlConfig() {
+    if (settingsCase_ == 19) {
+       return (com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.getDefaultInstance();
+  }
+  /**
+   * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 19 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponseOrBuilder getSamlConfigOrBuilder() {
+    if (settingsCase_ == 19) {
+       return (com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.getDefaultInstance();
+  }
+
+  public static final int OAUTH_CONFIG_FIELD_NUMBER = 20;
+  /**
+   * <code>.scalekit.v1.connections.OAuthConnectionConfig oauth_config = 20 [json_name = "oauthConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the oauthConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasOauthConfig() {
+    return settingsCase_ == 20;
+  }
+  /**
+   * <code>.scalekit.v1.connections.OAuthConnectionConfig oauth_config = 20 [json_name = "oauthConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The oauthConfig.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig getOauthConfig() {
+    if (settingsCase_ == 20) {
+       return (com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig.getDefaultInstance();
+  }
+  /**
+   * <code>.scalekit.v1.connections.OAuthConnectionConfig oauth_config = 20 [json_name = "oauthConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfigOrBuilder getOauthConfigOrBuilder() {
+    if (settingsCase_ == 20) {
+       return (com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig.getDefaultInstance();
+  }
+
+  public static final int KEY_ID_FIELD_NUMBER = 21;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyId_ = "";
+  /**
+   * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the keyId field is set.
+   */
+  @java.lang.Override
+  public boolean hasKeyId() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The keyId.
+   */
+  @java.lang.Override
+  public java.lang.String getKeyId() {
+    java.lang.Object ref = keyId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      keyId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for keyId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getKeyIdBytes() {
+    java.lang.Object ref = keyId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      keyId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -577,7 +666,7 @@ java.lang.String defaultValue) {
     if (debugEnabled_ != false) {
       output.writeBool(6, debugEnabled_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationId_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, organizationId_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uiButtonTitle_)) {
@@ -589,23 +678,29 @@ java.lang.String defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(testConnectionUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, testConnectionUri_);
     }
-    if (settingsCase_ == 13) {
-      output.writeMessage(13, (com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig) settings_);
-    }
-    if (settingsCase_ == 14) {
-      output.writeMessage(14, (com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse) settings_);
-    }
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
         internalGetAttributeMapping(),
         AttributeMappingDefaultEntryHolder.defaultEntry,
         15);
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(16, getCreateTime());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(17, getUpdateTime());
+    }
+    if (settingsCase_ == 18) {
+      output.writeMessage(18, (com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig) settings_);
+    }
+    if (settingsCase_ == 19) {
+      output.writeMessage(19, (com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse) settings_);
+    }
+    if (settingsCase_ == 20) {
+      output.writeMessage(20, (com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig) settings_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, keyId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -639,7 +734,7 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(6, debugEnabled_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationId_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, organizationId_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uiButtonTitle_)) {
@@ -652,14 +747,6 @@ java.lang.String defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(testConnectionUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, testConnectionUri_);
     }
-    if (settingsCase_ == 13) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, (com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig) settings_);
-    }
-    if (settingsCase_ == 14) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(14, (com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse) settings_);
-    }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
          : internalGetAttributeMapping().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
@@ -670,13 +757,28 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, attributeMapping__);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(16, getCreateTime());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(17, getUpdateTime());
+    }
+    if (settingsCase_ == 18) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(18, (com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig) settings_);
+    }
+    if (settingsCase_ == 19) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(19, (com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse) settings_);
+    }
+    if (settingsCase_ == 20) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(20, (com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig) settings_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, keyId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -702,8 +804,11 @@ java.lang.String defaultValue) {
         != other.getEnabled()) return false;
     if (getDebugEnabled()
         != other.getDebugEnabled()) return false;
-    if (!getOrganizationId()
-        .equals(other.getOrganizationId())) return false;
+    if (hasOrganizationId() != other.hasOrganizationId()) return false;
+    if (hasOrganizationId()) {
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
+    }
     if (!getUiButtonTitle()
         .equals(other.getUiButtonTitle())) return false;
     if (configurationType_ != other.configurationType_) return false;
@@ -721,15 +826,24 @@ java.lang.String defaultValue) {
       if (!getUpdateTime()
           .equals(other.getUpdateTime())) return false;
     }
+    if (hasKeyId() != other.hasKeyId()) return false;
+    if (hasKeyId()) {
+      if (!getKeyId()
+          .equals(other.getKeyId())) return false;
+    }
     if (!getSettingsCase().equals(other.getSettingsCase())) return false;
     switch (settingsCase_) {
-      case 13:
+      case 18:
         if (!getOidcConfig()
             .equals(other.getOidcConfig())) return false;
         break;
-      case 14:
+      case 19:
         if (!getSamlConfig()
             .equals(other.getSamlConfig())) return false;
+        break;
+      case 20:
+        if (!getOauthConfig()
+            .equals(other.getOauthConfig())) return false;
         break;
       case 0:
       default:
@@ -759,8 +873,10 @@ java.lang.String defaultValue) {
     hash = (37 * hash) + DEBUG_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getDebugEnabled());
-    hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getOrganizationId().hashCode();
+    if (hasOrganizationId()) {
+      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationId().hashCode();
+    }
     hash = (37 * hash) + UI_BUTTON_TITLE_FIELD_NUMBER;
     hash = (53 * hash) + getUiButtonTitle().hashCode();
     hash = (37 * hash) + CONFIGURATION_TYPE_FIELD_NUMBER;
@@ -779,14 +895,22 @@ java.lang.String defaultValue) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
+    if (hasKeyId()) {
+      hash = (37 * hash) + KEY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyId().hashCode();
+    }
     switch (settingsCase_) {
-      case 13:
+      case 18:
         hash = (37 * hash) + OIDC_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getOidcConfig().hashCode();
         break;
-      case 14:
+      case 19:
         hash = (37 * hash) + SAML_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getSamlConfig().hashCode();
+        break;
+      case 20:
+        hash = (37 * hash) + OAUTH_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getOauthConfig().hashCode();
         break;
       case 0:
       default:
@@ -961,12 +1085,6 @@ java.lang.String defaultValue) {
       uiButtonTitle_ = "";
       configurationType_ = 0;
       testConnectionUri_ = "";
-      if (oidcConfigBuilder_ != null) {
-        oidcConfigBuilder_.clear();
-      }
-      if (samlConfigBuilder_ != null) {
-        samlConfigBuilder_.clear();
-      }
       internalGetMutableAttributeMapping().clear();
       createTime_ = null;
       if (createTimeBuilder_ != null) {
@@ -978,6 +1096,16 @@ java.lang.String defaultValue) {
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
+      if (oidcConfigBuilder_ != null) {
+        oidcConfigBuilder_.clear();
+      }
+      if (samlConfigBuilder_ != null) {
+        samlConfigBuilder_.clear();
+      }
+      if (oauthConfigBuilder_ != null) {
+        oauthConfigBuilder_.clear();
+      }
+      keyId_ = "";
       settingsCase_ = 0;
       settings_ = null;
       return this;
@@ -1032,8 +1160,10 @@ java.lang.String defaultValue) {
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.debugEnabled_ = debugEnabled_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.organizationId_ = organizationId_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.uiButtonTitle_ = uiButtonTitle_;
@@ -1044,22 +1174,25 @@ java.lang.String defaultValue) {
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.testConnectionUri_ = testConnectionUri_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.attributeMapping_ = internalGetAttributeMapping();
         result.attributeMapping_.makeImmutable();
       }
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.createTime_ = createTimeBuilder_ == null
             ? createTime_
             : createTimeBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null
             ? updateTime_
             : updateTimeBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.keyId_ = keyId_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1067,13 +1200,17 @@ java.lang.String defaultValue) {
     private void buildPartialOneofs(com.scalekit.grpc.scalekit.v1.connections.Connection result) {
       result.settingsCase_ = settingsCase_;
       result.settings_ = this.settings_;
-      if (settingsCase_ == 13 &&
+      if (settingsCase_ == 18 &&
           oidcConfigBuilder_ != null) {
         result.settings_ = oidcConfigBuilder_.build();
       }
-      if (settingsCase_ == 14 &&
+      if (settingsCase_ == 19 &&
           samlConfigBuilder_ != null) {
         result.settings_ = samlConfigBuilder_.build();
+      }
+      if (settingsCase_ == 20 &&
+          oauthConfigBuilder_ != null) {
+        result.settings_ = oauthConfigBuilder_.build();
       }
     }
 
@@ -1141,7 +1278,7 @@ java.lang.String defaultValue) {
       if (other.getDebugEnabled() != false) {
         setDebugEnabled(other.getDebugEnabled());
       }
-      if (!other.getOrganizationId().isEmpty()) {
+      if (other.hasOrganizationId()) {
         organizationId_ = other.organizationId_;
         bitField0_ |= 0x00000040;
         onChanged();
@@ -1161,12 +1298,17 @@ java.lang.String defaultValue) {
       }
       internalGetMutableAttributeMapping().mergeFrom(
           other.internalGetAttributeMapping());
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000400;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (other.hasKeyId()) {
+        keyId_ = other.keyId_;
+        bitField0_ |= 0x00010000;
+        onChanged();
       }
       switch (other.getSettingsCase()) {
         case OIDC_CONFIG: {
@@ -1175,6 +1317,10 @@ java.lang.String defaultValue) {
         }
         case SAML_CONFIG: {
           mergeSamlConfig(other.getSamlConfig());
+          break;
+        }
+        case OAUTH_CONFIG: {
+          mergeOauthConfig(other.getOauthConfig());
           break;
         }
         case SETTINGS_NOT_SET: {
@@ -1257,43 +1403,55 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000200;
               break;
             } // case 98
-            case 106: {
-              input.readMessage(
-                  getOidcConfigFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              settingsCase_ = 13;
-              break;
-            } // case 106
-            case 114: {
-              input.readMessage(
-                  getSamlConfigFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              settingsCase_ = 14;
-              break;
-            } // case 114
             case 122: {
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               attributeMapping__ = input.readMessage(
                   AttributeMappingDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               internalGetMutableAttributeMapping().getMutableMap().put(
                   attributeMapping__.getKey(), attributeMapping__.getValue());
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00000400;
               break;
             } // case 122
             case 130: {
               input.readMessage(
                   getCreateTimeFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00000800;
               break;
             } // case 130
             case 138: {
               input.readMessage(
                   getUpdateTimeFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00001000;
               break;
             } // case 138
+            case 146: {
+              input.readMessage(
+                  getOidcConfigFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              settingsCase_ = 18;
+              break;
+            } // case 146
+            case 154: {
+              input.readMessage(
+                  getSamlConfigFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              settingsCase_ = 19;
+              break;
+            } // case 154
+            case 162: {
+              input.readMessage(
+                  getOauthConfigFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              settingsCase_ = 20;
+              break;
+            } // case 162
+            case 170: {
+              keyId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00010000;
+              break;
+            } // case 170
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1623,7 +1781,14 @@ java.lang.String defaultValue) {
 
     private java.lang.Object organizationId_ = "";
     /**
-     * <code>string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the organizationId field is set.
+     */
+    public boolean hasOrganizationId() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The organizationId.
      */
     public java.lang.String getOrganizationId() {
@@ -1639,7 +1804,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for organizationId.
      */
     public com.google.protobuf.ByteString
@@ -1656,7 +1821,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The organizationId to set.
      * @return This builder for chaining.
      */
@@ -1669,7 +1834,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearOrganizationId() {
@@ -1679,7 +1844,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for organizationId to set.
      * @return This builder for chaining.
      */
@@ -1890,290 +2055,6 @@ java.lang.String defaultValue) {
       return this;
     }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig, com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfigOrBuilder> oidcConfigBuilder_;
-    /**
-     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 13 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the oidcConfig field is set.
-     */
-    @java.lang.Override
-    public boolean hasOidcConfig() {
-      return settingsCase_ == 13;
-    }
-    /**
-     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 13 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The oidcConfig.
-     */
-    @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig getOidcConfig() {
-      if (oidcConfigBuilder_ == null) {
-        if (settingsCase_ == 13) {
-          return (com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig) settings_;
-        }
-        return com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.getDefaultInstance();
-      } else {
-        if (settingsCase_ == 13) {
-          return oidcConfigBuilder_.getMessage();
-        }
-        return com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 13 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setOidcConfig(com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig value) {
-      if (oidcConfigBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        settings_ = value;
-        onChanged();
-      } else {
-        oidcConfigBuilder_.setMessage(value);
-      }
-      settingsCase_ = 13;
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 13 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setOidcConfig(
-        com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.Builder builderForValue) {
-      if (oidcConfigBuilder_ == null) {
-        settings_ = builderForValue.build();
-        onChanged();
-      } else {
-        oidcConfigBuilder_.setMessage(builderForValue.build());
-      }
-      settingsCase_ = 13;
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 13 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder mergeOidcConfig(com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig value) {
-      if (oidcConfigBuilder_ == null) {
-        if (settingsCase_ == 13 &&
-            settings_ != com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.getDefaultInstance()) {
-          settings_ = com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.newBuilder((com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig) settings_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          settings_ = value;
-        }
-        onChanged();
-      } else {
-        if (settingsCase_ == 13) {
-          oidcConfigBuilder_.mergeFrom(value);
-        } else {
-          oidcConfigBuilder_.setMessage(value);
-        }
-      }
-      settingsCase_ = 13;
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 13 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder clearOidcConfig() {
-      if (oidcConfigBuilder_ == null) {
-        if (settingsCase_ == 13) {
-          settingsCase_ = 0;
-          settings_ = null;
-          onChanged();
-        }
-      } else {
-        if (settingsCase_ == 13) {
-          settingsCase_ = 0;
-          settings_ = null;
-        }
-        oidcConfigBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 13 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.Builder getOidcConfigBuilder() {
-      return getOidcConfigFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 13 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfigOrBuilder getOidcConfigOrBuilder() {
-      if ((settingsCase_ == 13) && (oidcConfigBuilder_ != null)) {
-        return oidcConfigBuilder_.getMessageOrBuilder();
-      } else {
-        if (settingsCase_ == 13) {
-          return (com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig) settings_;
-        }
-        return com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 13 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig, com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfigOrBuilder> 
-        getOidcConfigFieldBuilder() {
-      if (oidcConfigBuilder_ == null) {
-        if (!(settingsCase_ == 13)) {
-          settings_ = com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.getDefaultInstance();
-        }
-        oidcConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig, com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfigOrBuilder>(
-                (com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig) settings_,
-                getParentForChildren(),
-                isClean());
-        settings_ = null;
-      }
-      settingsCase_ = 13;
-      onChanged();
-      return oidcConfigBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse, com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.Builder, com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponseOrBuilder> samlConfigBuilder_;
-    /**
-     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 14 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the samlConfig field is set.
-     */
-    @java.lang.Override
-    public boolean hasSamlConfig() {
-      return settingsCase_ == 14;
-    }
-    /**
-     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 14 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The samlConfig.
-     */
-    @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse getSamlConfig() {
-      if (samlConfigBuilder_ == null) {
-        if (settingsCase_ == 14) {
-          return (com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse) settings_;
-        }
-        return com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.getDefaultInstance();
-      } else {
-        if (settingsCase_ == 14) {
-          return samlConfigBuilder_.getMessage();
-        }
-        return com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 14 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setSamlConfig(com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse value) {
-      if (samlConfigBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        settings_ = value;
-        onChanged();
-      } else {
-        samlConfigBuilder_.setMessage(value);
-      }
-      settingsCase_ = 14;
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 14 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setSamlConfig(
-        com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.Builder builderForValue) {
-      if (samlConfigBuilder_ == null) {
-        settings_ = builderForValue.build();
-        onChanged();
-      } else {
-        samlConfigBuilder_.setMessage(builderForValue.build());
-      }
-      settingsCase_ = 14;
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 14 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder mergeSamlConfig(com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse value) {
-      if (samlConfigBuilder_ == null) {
-        if (settingsCase_ == 14 &&
-            settings_ != com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.getDefaultInstance()) {
-          settings_ = com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.newBuilder((com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse) settings_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          settings_ = value;
-        }
-        onChanged();
-      } else {
-        if (settingsCase_ == 14) {
-          samlConfigBuilder_.mergeFrom(value);
-        } else {
-          samlConfigBuilder_.setMessage(value);
-        }
-      }
-      settingsCase_ = 14;
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 14 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder clearSamlConfig() {
-      if (samlConfigBuilder_ == null) {
-        if (settingsCase_ == 14) {
-          settingsCase_ = 0;
-          settings_ = null;
-          onChanged();
-        }
-      } else {
-        if (settingsCase_ == 14) {
-          settingsCase_ = 0;
-          settings_ = null;
-        }
-        samlConfigBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 14 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.Builder getSamlConfigBuilder() {
-      return getSamlConfigFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 14 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponseOrBuilder getSamlConfigOrBuilder() {
-      if ((settingsCase_ == 14) && (samlConfigBuilder_ != null)) {
-        return samlConfigBuilder_.getMessageOrBuilder();
-      } else {
-        if (settingsCase_ == 14) {
-          return (com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse) settings_;
-        }
-        return com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 14 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse, com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.Builder, com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponseOrBuilder> 
-        getSamlConfigFieldBuilder() {
-      if (samlConfigBuilder_ == null) {
-        if (!(settingsCase_ == 14)) {
-          settings_ = com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.getDefaultInstance();
-        }
-        samlConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse, com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.Builder, com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponseOrBuilder>(
-                (com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse) settings_,
-                getParentForChildren(),
-                isClean());
-        settings_ = null;
-      }
-      settingsCase_ = 14;
-      onChanged();
-      return samlConfigBuilder_;
-    }
-
     private com.google.protobuf.MapField<
         java.lang.String, java.lang.String> attributeMapping_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -2193,7 +2074,7 @@ java.lang.String defaultValue) {
       if (!attributeMapping_.isMutable()) {
         attributeMapping_ = attributeMapping_.copy();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000400;
       onChanged();
       return attributeMapping_;
     }
@@ -2253,7 +2134,7 @@ java.lang.String defaultValue) {
       return map.get(key);
     }
     public Builder clearAttributeMapping() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000400);
       internalGetMutableAttributeMapping().getMutableMap()
           .clear();
       return this;
@@ -2274,7 +2155,7 @@ java.lang.String defaultValue) {
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
         getMutableAttributeMapping() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000400;
       return internalGetMutableAttributeMapping().getMutableMap();
     }
     /**
@@ -2287,7 +2168,7 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException("map value"); }
       internalGetMutableAttributeMapping().getMutableMap()
           .put(key, value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000400;
       return this;
     }
     /**
@@ -2297,7 +2178,7 @@ java.lang.String defaultValue) {
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAttributeMapping().getMutableMap()
           .putAll(values);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000400;
       return this;
     }
 
@@ -2309,7 +2190,7 @@ java.lang.String defaultValue) {
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      * <code>.google.protobuf.Timestamp create_time = 16 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -2334,7 +2215,7 @@ java.lang.String defaultValue) {
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2348,7 +2229,7 @@ java.lang.String defaultValue) {
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2357,7 +2238,7 @@ java.lang.String defaultValue) {
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0) &&
+        if (((bitField0_ & 0x00000800) != 0) &&
           createTime_ != null &&
           createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2368,7 +2249,7 @@ java.lang.String defaultValue) {
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -2377,7 +2258,7 @@ java.lang.String defaultValue) {
      * <code>.google.protobuf.Timestamp create_time = 16 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00000800);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2390,7 +2271,7 @@ java.lang.String defaultValue) {
      * <code>.google.protobuf.Timestamp create_time = 16 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2430,7 +2311,7 @@ java.lang.String defaultValue) {
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      * <code>.google.protobuf.Timestamp update_time = 17 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -2455,7 +2336,7 @@ java.lang.String defaultValue) {
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2469,7 +2350,7 @@ java.lang.String defaultValue) {
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2478,7 +2359,7 @@ java.lang.String defaultValue) {
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0) &&
+        if (((bitField0_ & 0x00001000) != 0) &&
           updateTime_ != null &&
           updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -2489,7 +2370,7 @@ java.lang.String defaultValue) {
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -2498,7 +2379,7 @@ java.lang.String defaultValue) {
      * <code>.google.protobuf.Timestamp update_time = 17 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00001000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -2511,7 +2392,7 @@ java.lang.String defaultValue) {
      * <code>.google.protobuf.Timestamp update_time = 17 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2541,6 +2422,511 @@ java.lang.String defaultValue) {
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig, com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfigOrBuilder> oidcConfigBuilder_;
+    /**
+     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 18 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the oidcConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasOidcConfig() {
+      return settingsCase_ == 18;
+    }
+    /**
+     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 18 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The oidcConfig.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig getOidcConfig() {
+      if (oidcConfigBuilder_ == null) {
+        if (settingsCase_ == 18) {
+          return (com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.getDefaultInstance();
+      } else {
+        if (settingsCase_ == 18) {
+          return oidcConfigBuilder_.getMessage();
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 18 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setOidcConfig(com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig value) {
+      if (oidcConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        settings_ = value;
+        onChanged();
+      } else {
+        oidcConfigBuilder_.setMessage(value);
+      }
+      settingsCase_ = 18;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 18 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setOidcConfig(
+        com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.Builder builderForValue) {
+      if (oidcConfigBuilder_ == null) {
+        settings_ = builderForValue.build();
+        onChanged();
+      } else {
+        oidcConfigBuilder_.setMessage(builderForValue.build());
+      }
+      settingsCase_ = 18;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 18 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeOidcConfig(com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig value) {
+      if (oidcConfigBuilder_ == null) {
+        if (settingsCase_ == 18 &&
+            settings_ != com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.getDefaultInstance()) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.newBuilder((com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig) settings_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          settings_ = value;
+        }
+        onChanged();
+      } else {
+        if (settingsCase_ == 18) {
+          oidcConfigBuilder_.mergeFrom(value);
+        } else {
+          oidcConfigBuilder_.setMessage(value);
+        }
+      }
+      settingsCase_ = 18;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 18 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearOidcConfig() {
+      if (oidcConfigBuilder_ == null) {
+        if (settingsCase_ == 18) {
+          settingsCase_ = 0;
+          settings_ = null;
+          onChanged();
+        }
+      } else {
+        if (settingsCase_ == 18) {
+          settingsCase_ = 0;
+          settings_ = null;
+        }
+        oidcConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 18 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.Builder getOidcConfigBuilder() {
+      return getOidcConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 18 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfigOrBuilder getOidcConfigOrBuilder() {
+      if ((settingsCase_ == 18) && (oidcConfigBuilder_ != null)) {
+        return oidcConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (settingsCase_ == 18) {
+          return (com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 18 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig, com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfigOrBuilder> 
+        getOidcConfigFieldBuilder() {
+      if (oidcConfigBuilder_ == null) {
+        if (!(settingsCase_ == 18)) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.getDefaultInstance();
+        }
+        oidcConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig, com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfigOrBuilder>(
+                (com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig) settings_,
+                getParentForChildren(),
+                isClean());
+        settings_ = null;
+      }
+      settingsCase_ = 18;
+      onChanged();
+      return oidcConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse, com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.Builder, com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponseOrBuilder> samlConfigBuilder_;
+    /**
+     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 19 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the samlConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasSamlConfig() {
+      return settingsCase_ == 19;
+    }
+    /**
+     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 19 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The samlConfig.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse getSamlConfig() {
+      if (samlConfigBuilder_ == null) {
+        if (settingsCase_ == 19) {
+          return (com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.getDefaultInstance();
+      } else {
+        if (settingsCase_ == 19) {
+          return samlConfigBuilder_.getMessage();
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 19 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setSamlConfig(com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse value) {
+      if (samlConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        settings_ = value;
+        onChanged();
+      } else {
+        samlConfigBuilder_.setMessage(value);
+      }
+      settingsCase_ = 19;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 19 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setSamlConfig(
+        com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.Builder builderForValue) {
+      if (samlConfigBuilder_ == null) {
+        settings_ = builderForValue.build();
+        onChanged();
+      } else {
+        samlConfigBuilder_.setMessage(builderForValue.build());
+      }
+      settingsCase_ = 19;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 19 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeSamlConfig(com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse value) {
+      if (samlConfigBuilder_ == null) {
+        if (settingsCase_ == 19 &&
+            settings_ != com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.getDefaultInstance()) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.newBuilder((com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse) settings_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          settings_ = value;
+        }
+        onChanged();
+      } else {
+        if (settingsCase_ == 19) {
+          samlConfigBuilder_.mergeFrom(value);
+        } else {
+          samlConfigBuilder_.setMessage(value);
+        }
+      }
+      settingsCase_ = 19;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 19 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearSamlConfig() {
+      if (samlConfigBuilder_ == null) {
+        if (settingsCase_ == 19) {
+          settingsCase_ = 0;
+          settings_ = null;
+          onChanged();
+        }
+      } else {
+        if (settingsCase_ == 19) {
+          settingsCase_ = 0;
+          settings_ = null;
+        }
+        samlConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 19 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.Builder getSamlConfigBuilder() {
+      return getSamlConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 19 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponseOrBuilder getSamlConfigOrBuilder() {
+      if ((settingsCase_ == 19) && (samlConfigBuilder_ != null)) {
+        return samlConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (settingsCase_ == 19) {
+          return (com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 19 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse, com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.Builder, com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponseOrBuilder> 
+        getSamlConfigFieldBuilder() {
+      if (samlConfigBuilder_ == null) {
+        if (!(settingsCase_ == 19)) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.getDefaultInstance();
+        }
+        samlConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse, com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse.Builder, com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponseOrBuilder>(
+                (com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse) settings_,
+                getParentForChildren(),
+                isClean());
+        settings_ = null;
+      }
+      settingsCase_ = 19;
+      onChanged();
+      return samlConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig, com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfigOrBuilder> oauthConfigBuilder_;
+    /**
+     * <code>.scalekit.v1.connections.OAuthConnectionConfig oauth_config = 20 [json_name = "oauthConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the oauthConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasOauthConfig() {
+      return settingsCase_ == 20;
+    }
+    /**
+     * <code>.scalekit.v1.connections.OAuthConnectionConfig oauth_config = 20 [json_name = "oauthConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The oauthConfig.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig getOauthConfig() {
+      if (oauthConfigBuilder_ == null) {
+        if (settingsCase_ == 20) {
+          return (com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig.getDefaultInstance();
+      } else {
+        if (settingsCase_ == 20) {
+          return oauthConfigBuilder_.getMessage();
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.OAuthConnectionConfig oauth_config = 20 [json_name = "oauthConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setOauthConfig(com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig value) {
+      if (oauthConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        settings_ = value;
+        onChanged();
+      } else {
+        oauthConfigBuilder_.setMessage(value);
+      }
+      settingsCase_ = 20;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.OAuthConnectionConfig oauth_config = 20 [json_name = "oauthConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setOauthConfig(
+        com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig.Builder builderForValue) {
+      if (oauthConfigBuilder_ == null) {
+        settings_ = builderForValue.build();
+        onChanged();
+      } else {
+        oauthConfigBuilder_.setMessage(builderForValue.build());
+      }
+      settingsCase_ = 20;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.OAuthConnectionConfig oauth_config = 20 [json_name = "oauthConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeOauthConfig(com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig value) {
+      if (oauthConfigBuilder_ == null) {
+        if (settingsCase_ == 20 &&
+            settings_ != com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig.getDefaultInstance()) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig.newBuilder((com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig) settings_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          settings_ = value;
+        }
+        onChanged();
+      } else {
+        if (settingsCase_ == 20) {
+          oauthConfigBuilder_.mergeFrom(value);
+        } else {
+          oauthConfigBuilder_.setMessage(value);
+        }
+      }
+      settingsCase_ = 20;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.OAuthConnectionConfig oauth_config = 20 [json_name = "oauthConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearOauthConfig() {
+      if (oauthConfigBuilder_ == null) {
+        if (settingsCase_ == 20) {
+          settingsCase_ = 0;
+          settings_ = null;
+          onChanged();
+        }
+      } else {
+        if (settingsCase_ == 20) {
+          settingsCase_ = 0;
+          settings_ = null;
+        }
+        oauthConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.OAuthConnectionConfig oauth_config = 20 [json_name = "oauthConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig.Builder getOauthConfigBuilder() {
+      return getOauthConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.connections.OAuthConnectionConfig oauth_config = 20 [json_name = "oauthConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfigOrBuilder getOauthConfigOrBuilder() {
+      if ((settingsCase_ == 20) && (oauthConfigBuilder_ != null)) {
+        return oauthConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (settingsCase_ == 20) {
+          return (com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.OAuthConnectionConfig oauth_config = 20 [json_name = "oauthConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig, com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfigOrBuilder> 
+        getOauthConfigFieldBuilder() {
+      if (oauthConfigBuilder_ == null) {
+        if (!(settingsCase_ == 20)) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig.getDefaultInstance();
+        }
+        oauthConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig, com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfigOrBuilder>(
+                (com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig) settings_,
+                getParentForChildren(),
+                isClean());
+        settings_ = null;
+      }
+      settingsCase_ = 20;
+      onChanged();
+      return oauthConfigBuilder_;
+    }
+
+    private java.lang.Object keyId_ = "";
+    /**
+     * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the keyId field is set.
+     */
+    public boolean hasKeyId() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The keyId.
+     */
+    public java.lang.String getKeyId() {
+      java.lang.Object ref = keyId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        keyId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for keyId.
+     */
+    public com.google.protobuf.ByteString
+        getKeyIdBytes() {
+      java.lang.Object ref = keyId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        keyId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The keyId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      keyId_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearKeyId() {
+      keyId_ = getDefaultInstance().getKeyId();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for keyId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      keyId_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -298,7 +298,7 @@ public final class OrganizationsProto {
       "1.organizations.LinkB\026\222A\0232\021Admin Portal " +
       "LinkR\004link\"h\n\026GetPortalLinksResponse\022N\n\005" +
       "links\030\001 \003(\0132\037.scalekit.v1.organizations." +
-      "LinkB\027\222A\0242\022Admin Portal LinksR\005links2\267\035\n" +
+      "LinkB\027\222A\0242\022Admin Portal LinksR\005links2\325\035\n" +
       "\023OrganizationService\022\214\003\n\022CreateOrganizat" +
       "ion\0224.scalekit.v1.organizations.CreateOr" +
       "ganizationRequest\0325.scalekit.v1.organiza" +
@@ -368,149 +368,150 @@ public final class OrganizationsProto {
       "n Portal Link\0229\n7\0325.scalekit.v1.organiza" +
       "tions.GeneratePortalLinkResponse\202\265\030\002\030T\202\323" +
       "\344\223\002)\032\'/api/v1/organizations/{id}/portal_" +
-      "links\022\376\001\n\020DeletePortalLink\0222.scalekit.v1" +
+      "links\022\215\002\n\020DeletePortalLink\0222.scalekit.v1" +
       ".organizations.DeletePortalLinkRequest\032\026" +
-      ".google.protobuf.Empty\"\235\001\222Ae\n\014Admin Port" +
+      ".google.protobuf.Empty\"\254\001\222Ae\n\014Admin Port" +
       "al\022\030Delete Admin Portal link\032)Revokes an" +
       "d deletes an Admin portal link.J\020\n\003200\022\t" +
-      "\n\007Success\202\265\030\002\030P\202\323\344\223\002)*\'/api/v1/organizat" +
-      "ions/{id}/portal_links\022\220\002\n\024DeletePortalL" +
-      "inkByID\0226.scalekit.v1.organizations.Dele" +
-      "tePortalLinkByIdRequest\032\026.google.protobu" +
-      "f.Empty\"\247\001\222Ae\n\014Admin Portal\022\030Delete Admi" +
-      "n Portal link\032)Revokes and deletes an Ad" +
-      "min portal link.J\020\n\003200\022\t\n\007Success\202\265\030\002\030T" +
-      "\202\323\344\223\0023*1/api/v1/organizations/{id}/porta" +
-      "l_links/{link_id}\022\371\002\n\016GetPortalLinks\022/.s" +
-      "calekit.v1.organizations.GetPortalLinkRe" +
-      "quest\0321.scalekit.v1.organizations.GetPor" +
-      "talLinksResponse\"\202\002\222A\311\001\n\014Admin Portal\022\017G" +
-      "et Portal link\032_Returns the Admin portal" +
-      " link if it exists. Use Generate Portal " +
-      "link to create and fetch a linkJG\n\003200\022@" +
-      "\n\007Success\0225\n3\0321.scalekit.v1.organization" +
-      "s.GetPortalLinksResponse\202\265\030\002\030P\202\323\344\223\002)\022\'/a" +
-      "pi/v1/organizations/{id}/portal_links\032W\222" +
-      "AT\n\014Organization\022D{{import \"proto/scalek" +
-      "it/v1/organizations/organization_details" +
-      ".md\"}}B\305$\n+com.scalekit.grpc.scalekit.v1" +
-      ".organizationsB\022OrganizationsProtoP\001Z7gi" +
-      "thub.com/scalekit-inc/scalekit/pkg/grpc/" +
-      "organizations\242\002\003SVO\252\002\031Scalekit.V1.Organi" +
-      "zations\312\002\031Scalekit\\V1\\Organizations\342\002%Sc" +
-      "alekit\\V1\\Organizations\\GPBMetadata\352\002\033Sc" +
-      "alekit::V1::Organizations\222A\301\"\022\335 \n\rScalek" +
-      "it APIs\022\324\037# Introduction\nScalekit API is" +
-      " modeled around the [REST](https://en.wi" +
-      "kipedia.org/wiki/REST) architecture styl" +
-      "e. That means, our API has predictable r" +
-      "esource-oriented URLs, accepts form-enco" +
-      "ded request bodies and produces JSON for" +
-      "matted responses, uses standard HTTP ver" +
-      "bs and error codes.\n\n## Getting Started\n" +
-      "If you are just getting started, you can" +
-      " also refer to our [Quick Start Guide](/" +
-      "single-sign-on/quickstart-sso).\n\nApart f" +
-      "rom REST APIs, we have published SDKs in" +
-      " some of the popular languages as shown " +
-      "below. You can use these SDKs and integr" +
-      "ate with Scalekit much faster.\n\n- [NodeJ" +
-      "S](https://github.com/scalekit-inc/scale" +
-      "kit-sdk-node)\n- [Go Lang](https://github" +
-      ".com/scalekit-inc/scalekit-sdk-go)\n\nSome" +
-      " additional instructions around using ou" +
-      "r APIs\n\n- API Endpoint Host must use the" +
-      " `Environment URL` of the environment yo" +
-      "u are targeting.\n- API requests without " +
-      "appropriate authentication headers will " +
-      "fail with 401 status code.\n\nRead below t" +
-      "o understand more about how to authentic" +
-      "ate the API calls and how to handle erro" +
-      "rs appropriately.\n\n\n# API Authentication" +
-      "\nScalekit API uses [OAuth2 Client Creden" +
-      "tials](https://www.oauth.com/oauth2-serv" +
-      "ers/access-tokens/client-credentials) ba" +
-      "sed authentication. You can view and man" +
-      "age the necessary information from your " +
-      "`API Config` section in the Scalekit Das" +
-      "hboard.\n\nYou will need the following inf" +
-      "ormation to authenticate with Scalekit A" +
-      "PIs\n- Client ID\n- Client Secret\n- Enviro" +
-      "nment URL\n\nYou can obtain a secure token" +
-      " by making `POST` call to the `https://{" +
-      "ENV_URL}/oauth/token` endpoint and sendi" +
-      "ng client_id and client_secret as part o" +
-      "f the request body.\n\n```shell\n$ curl htt" +
-      "ps://{ENV_URL}/oauth/token \\\n  -X POST \\" +
-      "\n  -H \'Content-Type: application/x-www-f" +
-      "orm-urlencoded\' \\\n  -d \'client_id={clien" +
-      "t_id}\' \\\n  -d \'client_secret={client_sec" +
-      "ret}\' \\\n  -d \'grant_type=client_credenti" +
-      "als\'\\\n```\n\nUpon successful processing, y" +
-      "ou will receive the access token as part" +
-      " of the JSON response as shown in exampl" +
-      "e below:\n```json\n{\n  \"access_token\": \"DC" +
-      "RD10-e7c5c8139165228a82e442445fe01c16\",\n" +
-      "  \"token_type\": \"bearer\",\n  \"expires_in\"" +
-      ": 1799\n}\n```\nThe `access_token` is the O" +
-      "Auth access token you need to use for al" +
-      "l subsequent API calls to Scalekit.\n\nTo " +
-      "make a request to one of our APIs, you n" +
-      "eed to include the access token in the A" +
-      "uthorization header of the request as Be" +
-      "arer \'access_token\' like the following e" +
-      "xample shows:\n```shell\n$ curl --request " +
-      "GET \"https://{ENV_URL}/api/v1/organizati" +
-      "ons\" \\\n-H \"Content-Type: application/jso" +
-      "n\" \\\n-H \"Authorization: Bearer {access_t" +
-      "oken}\"\n```\n\nPlease make sure that you ke" +
-      "ep your Client Secrets safely. Do not sh" +
-      "are your client secret in publicly acces" +
-      "sible areas such as GitHub, client-side " +
-      "code, etc. Refer to [this guide](/securi" +
-      "ty/client-secrets) to understand some of" +
-      " the best practices around keeping clien" +
-      "t secrets secure.\n\nOur SDKs will automat" +
-      "ically handle the API authentication and" +
-      " error handling to make the job of using" +
-      " our APIs much easier for you.\n\n# Error " +
-      "Handling\nAs mentioned earlier, Scalekit " +
-      "APIs return appropriate HTTP Status Code" +
-      "s along with the detailed error messages" +
-      " in case of invalid usage of APIs.\n\nIn g" +
-      "eneral:\n- `200 or 201`: API request is s" +
-      "uccessful\n- `400`: The request was unacc" +
-      "eptable, often due to missing a required" +
-      " parameter.\n- `401`: Invalid Authenticat" +
-      "ion Headers found in the request.\n- `404" +
-      "`: Resource not found\n- `429`: Too many " +
-      "requests hit the API too quickly. Retry " +
-      "the request after a cool-off period.\n- `" +
-      "500 or 501 or 504`: Something went wrong" +
-      " at our end. However rare they are, we a" +
-      "utomatically log these requests for proa" +
-      "ctive support and fixing the underlying " +
-      "issue.\n\nAlong with HTTP Status Codes, we" +
-      " also respond with detailed error messag" +
-      "es. An example error message for a 401 e" +
-      "rror is shown below.\n\n```json\n{\n    \"cod" +
-      "e\": 16,\n    \"message\": \"Token empty\",\n  " +
-      "  \"details\":\n    [\n        {\n           " +
-      " \"@type\": \"type.googleapis.com/scalekit." +
-      "v1.errdetails.ErrorInfo\",\n            \"e" +
-      "rror_code\": \"UNAUTHENTICATED\"\n        }\n" +
-      "    ]\n}\n```\n\nWe strongly recommend you t" +
-      "o handle errors gracefully while writing" +
-      " code using our SDKs.\n\"6\n\010Scalekit\022\024http" +
-      "s://scalekit.com\032\024support@scalekit.com*8" +
-      "\n\nApache 2.0\022*http://www.apache.org/lice" +
-      "nses/LICENSE-2.02\0031.0\032\010$ENV_URL*\001\0022\020appl" +
-      "ication/json:\020application/jsonZ.\n,\n\006OAut" +
-      "h2\022\"\010\003(\003:\034https://$ENV_URL/oauth/tokenb\014" +
-      "\n\n\n\006OAuth2\022\000j\020\n\016Single Sign-Onj\016\n\014Organi" +
-      "zationj\016\n\014Admin Portalr>\n Scalekit Devel" +
-      "oper Documentation\022\032https://docs.scaleki" +
-      "t.com/b\006proto3"
+      "\n\007Success\202\265\030\002\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002)*\'/a" +
+      "pi/v1/organizations/{id}/portal_links\022\220\002" +
+      "\n\024DeletePortalLinkByID\0226.scalekit.v1.org" +
+      "anizations.DeletePortalLinkByIdRequest\032\026" +
+      ".google.protobuf.Empty\"\247\001\222Ae\n\014Admin Port" +
+      "al\022\030Delete Admin Portal link\032)Revokes an" +
+      "d deletes an Admin portal link.J\020\n\003200\022\t" +
+      "\n\007Success\202\265\030\002\030T\202\323\344\223\0023*1/api/v1/organizat" +
+      "ions/{id}/portal_links/{link_id}\022\210\003\n\016Get" +
+      "PortalLinks\022/.scalekit.v1.organizations." +
+      "GetPortalLinkRequest\0321.scalekit.v1.organ" +
+      "izations.GetPortalLinksResponse\"\221\002\222A\311\001\n\014" +
+      "Admin Portal\022\017Get Portal link\032_Returns t" +
+      "he Admin portal link if it exists. Use G" +
+      "enerate Portal link to create and fetch " +
+      "a linkJG\n\003200\022@\n\007Success\0225\n3\0321.scalekit." +
+      "v1.organizations.GetPortalLinksResponse\202" +
+      "\265\030\002\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002)\022\'/api/v1/orga" +
+      "nizations/{id}/portal_links\032W\222AT\n\014Organi" +
+      "zation\022D{{import \"proto/scalekit/v1/orga" +
+      "nizations/organization_details.md\"}}B\305$\n" +
+      "+com.scalekit.grpc.scalekit.v1.organizat" +
+      "ionsB\022OrganizationsProtoP\001Z7github.com/s" +
+      "calekit-inc/scalekit/pkg/grpc/organizati" +
+      "ons\242\002\003SVO\252\002\031Scalekit.V1.Organizations\312\002\031" +
+      "Scalekit\\V1\\Organizations\342\002%Scalekit\\V1\\" +
+      "Organizations\\GPBMetadata\352\002\033Scalekit::V1" +
+      "::Organizations\222A\301\"\022\335 \n\rScalekit APIs\022\324\037" +
+      "# Introduction\nScalekit API is modeled a" +
+      "round the [REST](https://en.wikipedia.or" +
+      "g/wiki/REST) architecture style. That me" +
+      "ans, our API has predictable resource-or" +
+      "iented URLs, accepts form-encoded reques" +
+      "t bodies and produces JSON formatted res" +
+      "ponses, uses standard HTTP verbs and err" +
+      "or codes.\n\n## Getting Started\nIf you are" +
+      " just getting started, you can also refe" +
+      "r to our [Quick Start Guide](/single-sig" +
+      "n-on/quickstart-sso).\n\nApart from REST A" +
+      "PIs, we have published SDKs in some of t" +
+      "he popular languages as shown below. You" +
+      " can use these SDKs and integrate with S" +
+      "calekit much faster.\n\n- [NodeJS](https:/" +
+      "/github.com/scalekit-inc/scalekit-sdk-no" +
+      "de)\n- [Go Lang](https://github.com/scale" +
+      "kit-inc/scalekit-sdk-go)\n\nSome additiona" +
+      "l instructions around using our APIs\n\n- " +
+      "API Endpoint Host must use the `Environm" +
+      "ent URL` of the environment you are targ" +
+      "eting.\n- API requests without appropriat" +
+      "e authentication headers will fail with " +
+      "401 status code.\n\nRead below to understa" +
+      "nd more about how to authenticate the AP" +
+      "I calls and how to handle errors appropr" +
+      "iately.\n\n\n# API Authentication\nScalekit " +
+      "API uses [OAuth2 Client Credentials](htt" +
+      "ps://www.oauth.com/oauth2-servers/access" +
+      "-tokens/client-credentials) based authen" +
+      "tication. You can view and manage the ne" +
+      "cessary information from your `API Confi" +
+      "g` section in the Scalekit Dashboard.\n\nY" +
+      "ou will need the following information t" +
+      "o authenticate with Scalekit APIs\n- Clie" +
+      "nt ID\n- Client Secret\n- Environment URL\n" +
+      "\nYou can obtain a secure token by making" +
+      " `POST` call to the `https://{ENV_URL}/o" +
+      "auth/token` endpoint and sending client_" +
+      "id and client_secret as part of the requ" +
+      "est body.\n\n```shell\n$ curl https://{ENV_" +
+      "URL}/oauth/token \\\n  -X POST \\\n  -H \'Con" +
+      "tent-Type: application/x-www-form-urlenc" +
+      "oded\' \\\n  -d \'client_id={client_id}\' \\\n " +
+      " -d \'client_secret={client_secret}\' \\\n  " +
+      "-d \'grant_type=client_credentials\'\\\n```\n" +
+      "\nUpon successful processing, you will re" +
+      "ceive the access token as part of the JS" +
+      "ON response as shown in example below:\n`" +
+      "``json\n{\n  \"access_token\": \"DCRD10-e7c5c" +
+      "8139165228a82e442445fe01c16\",\n  \"token_t" +
+      "ype\": \"bearer\",\n  \"expires_in\": 1799\n}\n`" +
+      "``\nThe `access_token` is the OAuth acces" +
+      "s token you need to use for all subseque" +
+      "nt API calls to Scalekit.\n\nTo make a req" +
+      "uest to one of our APIs, you need to inc" +
+      "lude the access token in the Authorizati" +
+      "on header of the request as Bearer \'acce" +
+      "ss_token\' like the following example sho" +
+      "ws:\n```shell\n$ curl --request GET \"https" +
+      "://{ENV_URL}/api/v1/organizations\" \\\n-H " +
+      "\"Content-Type: application/json\" \\\n-H \"A" +
+      "uthorization: Bearer {access_token}\"\n```" +
+      "\n\nPlease make sure that you keep your Cl" +
+      "ient Secrets safely. Do not share your c" +
+      "lient secret in publicly accessible area" +
+      "s such as GitHub, client-side code, etc." +
+      " Refer to [this guide](/security/client-" +
+      "secrets) to understand some of the best " +
+      "practices around keeping client secrets " +
+      "secure.\n\nOur SDKs will automatically han" +
+      "dle the API authentication and error han" +
+      "dling to make the job of using our APIs " +
+      "much easier for you.\n\n# Error Handling\nA" +
+      "s mentioned earlier, Scalekit APIs retur" +
+      "n appropriate HTTP Status Codes along wi" +
+      "th the detailed error messages in case o" +
+      "f invalid usage of APIs.\n\nIn general:\n- " +
+      "`200 or 201`: API request is successful\n" +
+      "- `400`: The request was unacceptable, o" +
+      "ften due to missing a required parameter" +
+      ".\n- `401`: Invalid Authentication Header" +
+      "s found in the request.\n- `404`: Resourc" +
+      "e not found\n- `429`: Too many requests h" +
+      "it the API too quickly. Retry the reques" +
+      "t after a cool-off period.\n- `500 or 501" +
+      " or 504`: Something went wrong at our en" +
+      "d. However rare they are, we automatical" +
+      "ly log these requests for proactive supp" +
+      "ort and fixing the underlying issue.\n\nAl" +
+      "ong with HTTP Status Codes, we also resp" +
+      "ond with detailed error messages. An exa" +
+      "mple error message for a 401 error is sh" +
+      "own below.\n\n```json\n{\n    \"code\": 16,\n  " +
+      "  \"message\": \"Token empty\",\n    \"details" +
+      "\":\n    [\n        {\n            \"@type\": " +
+      "\"type.googleapis.com/scalekit.v1.errdeta" +
+      "ils.ErrorInfo\",\n            \"error_code\"" +
+      ": \"UNAUTHENTICATED\"\n        }\n    ]\n}\n``" +
+      "`\n\nWe strongly recommend you to handle e" +
+      "rrors gracefully while writing code usin" +
+      "g our SDKs.\n\"6\n\010Scalekit\022\024https://scalek" +
+      "it.com\032\024support@scalekit.com*8\n\nApache 2" +
+      ".0\022*http://www.apache.org/licenses/LICEN" +
+      "SE-2.02\0031.0\032\010$ENV_URL*\001\0022\020application/js" +
+      "on:\020application/jsonZ.\n,\n\006OAuth2\022\"\010\003(\003:\034" +
+      "https://$ENV_URL/oauth/tokenb\014\n\n\n\006OAuth2" +
+      "\022\000j\020\n\016Single Sign-Onj\016\n\014Organizationj\016\n\014" +
+      "Admin Portalr>\n Scalekit Developer Docum" +
+      "entation\022\032https://docs.scalekit.com/b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -679,6 +680,7 @@ public final class OrganizationsProto {
     registry.add(com.scalekit.grpc.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.scalekit.grpc.google.api.VisibilityProto.fieldVisibility);
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
+    registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Schema);

@@ -66,12 +66,17 @@ public interface ConnectionOrBuilder extends
   boolean getDebugEnabled();
 
   /**
-   * <code>string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the organizationId field is set.
+   */
+  boolean hasOrganizationId();
+  /**
+   * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The organizationId.
    */
   java.lang.String getOrganizationId();
   /**
-   * <code>string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for organizationId.
    */
   com.google.protobuf.ByteString
@@ -111,36 +116,6 @@ public interface ConnectionOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTestConnectionUriBytes();
-
-  /**
-   * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 13 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the oidcConfig field is set.
-   */
-  boolean hasOidcConfig();
-  /**
-   * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 13 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The oidcConfig.
-   */
-  com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig getOidcConfig();
-  /**
-   * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 13 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfigOrBuilder getOidcConfigOrBuilder();
-
-  /**
-   * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 14 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the samlConfig field is set.
-   */
-  boolean hasSamlConfig();
-  /**
-   * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 14 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The samlConfig.
-   */
-  com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse getSamlConfig();
-  /**
-   * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 14 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponseOrBuilder getSamlConfigOrBuilder();
 
   /**
    * <code>map&lt;string, string&gt; attribute_mapping = 15 [json_name = "attributeMapping", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -205,6 +180,68 @@ java.lang.String defaultValue);
    * <code>.google.protobuf.Timestamp update_time = 17 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 18 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the oidcConfig field is set.
+   */
+  boolean hasOidcConfig();
+  /**
+   * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 18 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The oidcConfig.
+   */
+  com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfig getOidcConfig();
+  /**
+   * <code>.scalekit.v1.connections.OIDCConnectionConfig oidc_config = 18 [json_name = "oidcConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.connections.OIDCConnectionConfigOrBuilder getOidcConfigOrBuilder();
+
+  /**
+   * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 19 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the samlConfig field is set.
+   */
+  boolean hasSamlConfig();
+  /**
+   * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 19 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The samlConfig.
+   */
+  com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponse getSamlConfig();
+  /**
+   * <code>.scalekit.v1.connections.SAMLConnectionConfigResponse saml_config = 19 [json_name = "samlConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.connections.SAMLConnectionConfigResponseOrBuilder getSamlConfigOrBuilder();
+
+  /**
+   * <code>.scalekit.v1.connections.OAuthConnectionConfig oauth_config = 20 [json_name = "oauthConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the oauthConfig field is set.
+   */
+  boolean hasOauthConfig();
+  /**
+   * <code>.scalekit.v1.connections.OAuthConnectionConfig oauth_config = 20 [json_name = "oauthConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The oauthConfig.
+   */
+  com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig getOauthConfig();
+  /**
+   * <code>.scalekit.v1.connections.OAuthConnectionConfig oauth_config = 20 [json_name = "oauthConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfigOrBuilder getOauthConfigOrBuilder();
+
+  /**
+   * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the keyId field is set.
+   */
+  boolean hasKeyId();
+  /**
+   * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The keyId.
+   */
+  java.lang.String getKeyId();
+  /**
+   * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for keyId.
+   */
+  com.google.protobuf.ByteString
+      getKeyIdBytes();
 
   com.scalekit.grpc.scalekit.v1.connections.Connection.SettingsCase getSettingsCase();
 }

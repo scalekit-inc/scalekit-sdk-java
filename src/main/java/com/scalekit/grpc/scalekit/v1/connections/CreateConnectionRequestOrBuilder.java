@@ -10,11 +10,6 @@ public interface CreateConnectionRequestOrBuilder extends
 
   /**
    * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the organizationId field is set.
-   */
-  boolean hasOrganizationId();
-  /**
-   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The organizationId.
    */
   java.lang.String getOrganizationId();
@@ -24,23 +19,6 @@ public interface CreateConnectionRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getOrganizationIdBytes();
-
-  /**
-   * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the externalId field is set.
-   */
-  boolean hasExternalId();
-  /**
-   * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The externalId.
-   */
-  java.lang.String getExternalId();
-  /**
-   * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for externalId.
-   */
-  com.google.protobuf.ByteString
-      getExternalIdBytes();
 
   /**
    * <code>.scalekit.v1.connections.CreateConnection connection = 3 [json_name = "connection", (.buf.validate.field) = { ... }</code>
@@ -56,6 +34,4 @@ public interface CreateConnectionRequestOrBuilder extends
    * <code>.scalekit.v1.connections.CreateConnection connection = 3 [json_name = "connection", (.buf.validate.field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.connections.CreateConnectionOrBuilder getConnectionOrBuilder();
-
-  com.scalekit.grpc.scalekit.v1.connections.CreateConnectionRequest.IdentitiesCase getIdentitiesCase();
 }

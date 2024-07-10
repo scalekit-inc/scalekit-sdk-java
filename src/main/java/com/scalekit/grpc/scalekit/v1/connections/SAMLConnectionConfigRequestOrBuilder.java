@@ -143,21 +143,6 @@ public interface SAMLConnectionConfigRequestOrBuilder extends
   com.scalekit.grpc.scalekit.v1.connections.SAMLSigningOptions getSamlSigningOption();
 
   /**
-   * <code>.google.protobuf.BoolValue allow_idp_initiated_login = 11 [json_name = "allowIdpInitiatedLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the allowIdpInitiatedLogin field is set.
-   */
-  boolean hasAllowIdpInitiatedLogin();
-  /**
-   * <code>.google.protobuf.BoolValue allow_idp_initiated_login = 11 [json_name = "allowIdpInitiatedLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The allowIdpInitiatedLogin.
-   */
-  com.google.protobuf.BoolValue getAllowIdpInitiatedLogin();
-  /**
-   * <code>.google.protobuf.BoolValue allow_idp_initiated_login = 11 [json_name = "allowIdpInitiatedLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  com.google.protobuf.BoolValueOrBuilder getAllowIdpInitiatedLoginOrBuilder();
-
-  /**
    * <code>.google.protobuf.BoolValue force_authn = 14 [json_name = "forceAuthn", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the forceAuthn field is set.
    */

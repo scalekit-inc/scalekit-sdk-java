@@ -170,6 +170,37 @@ public final class DomainServiceGrpc {
     return getListDomainsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainRequest,
+      com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainResponse> getListAuthorizedDomainsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAuthorizedDomains",
+      requestType = com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainRequest,
+      com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainResponse> getListAuthorizedDomainsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainRequest, com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainResponse> getListAuthorizedDomainsMethod;
+    if ((getListAuthorizedDomainsMethod = DomainServiceGrpc.getListAuthorizedDomainsMethod) == null) {
+      synchronized (DomainServiceGrpc.class) {
+        if ((getListAuthorizedDomainsMethod = DomainServiceGrpc.getListAuthorizedDomainsMethod) == null) {
+          DomainServiceGrpc.getListAuthorizedDomainsMethod = getListAuthorizedDomainsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainRequest, com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAuthorizedDomains"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new DomainServiceMethodDescriptorSupplier("ListAuthorizedDomains"))
+              .build();
+        }
+      }
+    }
+    return getListAuthorizedDomainsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -252,6 +283,13 @@ public final class DomainServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.domains.ListDomainResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDomainsMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void listAuthorizedDomains(com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAuthorizedDomainsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -320,6 +358,14 @@ public final class DomainServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDomainsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void listAuthorizedDomains(com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAuthorizedDomainsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -371,6 +417,13 @@ public final class DomainServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.domains.ListDomainResponse listDomains(com.scalekit.grpc.scalekit.v1.domains.ListDomainRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDomainsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainResponse listAuthorizedDomains(com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAuthorizedDomainsMethod(), getCallOptions(), request);
     }
   }
 
@@ -429,6 +482,14 @@ public final class DomainServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDomainsMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainResponse> listAuthorizedDomains(
+        com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAuthorizedDomainsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_DOMAIN = 0;
@@ -436,6 +497,7 @@ public final class DomainServiceGrpc {
   private static final int METHODID_GET_DOMAIN = 2;
   private static final int METHODID_DELETE_DOMAIN = 3;
   private static final int METHODID_LIST_DOMAINS = 4;
+  private static final int METHODID_LIST_AUTHORIZED_DOMAINS = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -473,6 +535,10 @@ public final class DomainServiceGrpc {
         case METHODID_LIST_DOMAINS:
           serviceImpl.listDomains((com.scalekit.grpc.scalekit.v1.domains.ListDomainRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.domains.ListDomainResponse>) responseObserver);
+          break;
+        case METHODID_LIST_AUTHORIZED_DOMAINS:
+          serviceImpl.listAuthorizedDomains((com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -527,6 +593,13 @@ public final class DomainServiceGrpc {
               com.scalekit.grpc.scalekit.v1.domains.ListDomainRequest,
               com.scalekit.grpc.scalekit.v1.domains.ListDomainResponse>(
                 service, METHODID_LIST_DOMAINS)))
+        .addMethod(
+          getListAuthorizedDomainsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainRequest,
+              com.scalekit.grpc.scalekit.v1.domains.ListAuthorizedDomainResponse>(
+                service, METHODID_LIST_AUTHORIZED_DOMAINS)))
         .build();
   }
 
@@ -580,6 +653,7 @@ public final class DomainServiceGrpc {
               .addMethod(getGetDomainMethod())
               .addMethod(getDeleteDomainMethod())
               .addMethod(getListDomainsMethod())
+              .addMethod(getListAuthorizedDomainsMethod())
               .build();
         }
       }

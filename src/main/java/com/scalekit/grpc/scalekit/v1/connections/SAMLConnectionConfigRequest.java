@@ -272,32 +272,6 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.scalekit.grpc.scalekit.v1.connections.SAMLSigningOptions.UNRECOGNIZED : result;
   }
 
-  public static final int ALLOW_IDP_INITIATED_LOGIN_FIELD_NUMBER = 11;
-  private com.google.protobuf.BoolValue allowIdpInitiatedLogin_;
-  /**
-   * <code>.google.protobuf.BoolValue allow_idp_initiated_login = 11 [json_name = "allowIdpInitiatedLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the allowIdpInitiatedLogin field is set.
-   */
-  @java.lang.Override
-  public boolean hasAllowIdpInitiatedLogin() {
-    return ((bitField0_ & 0x00000040) != 0);
-  }
-  /**
-   * <code>.google.protobuf.BoolValue allow_idp_initiated_login = 11 [json_name = "allowIdpInitiatedLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The allowIdpInitiatedLogin.
-   */
-  @java.lang.Override
-  public com.google.protobuf.BoolValue getAllowIdpInitiatedLogin() {
-    return allowIdpInitiatedLogin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : allowIdpInitiatedLogin_;
-  }
-  /**
-   * <code>.google.protobuf.BoolValue allow_idp_initiated_login = 11 [json_name = "allowIdpInitiatedLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.BoolValueOrBuilder getAllowIdpInitiatedLoginOrBuilder() {
-    return allowIdpInitiatedLogin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : allowIdpInitiatedLogin_;
-  }
-
   public static final int FORCE_AUTHN_FIELD_NUMBER = 14;
   private com.google.protobuf.BoolValue forceAuthn_;
   /**
@@ -306,7 +280,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasForceAuthn() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    * <code>.google.protobuf.BoolValue force_authn = 14 [json_name = "forceAuthn", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -332,7 +306,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasDefaultRedirectUri() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    * <code>.google.protobuf.StringValue default_redirect_uri = 15 [json_name = "defaultRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -358,7 +332,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasAssertionEncrypted() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    * <code>.google.protobuf.BoolValue assertion_encrypted = 16 [json_name = "assertionEncrypted", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -384,7 +358,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasWantRequestSigned() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    * <code>.google.protobuf.BoolValue want_request_signed = 17 [json_name = "wantRequestSigned", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -447,18 +421,15 @@ private static final long serialVersionUID = 0L;
       output.writeEnum(10, samlSigningOption_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeMessage(11, getAllowIdpInitiatedLogin());
-    }
-    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(14, getForceAuthn());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(15, getDefaultRedirectUri());
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(16, getAssertionEncrypted());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(17, getWantRequestSigned());
     }
     getUnknownFields().writeTo(output);
@@ -512,21 +483,17 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getAllowIdpInitiatedLogin());
+        .computeMessageSize(14, getForceAuthn());
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(14, getForceAuthn());
+        .computeMessageSize(15, getDefaultRedirectUri());
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(15, getDefaultRedirectUri());
-    }
-    if (((bitField0_ & 0x00000200) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(16, getAssertionEncrypted());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(17, getWantRequestSigned());
     }
@@ -579,11 +546,6 @@ private static final long serialVersionUID = 0L;
     if (idpSsoRequestBinding_ != other.idpSsoRequestBinding_) return false;
     if (idpSloRequestBinding_ != other.idpSloRequestBinding_) return false;
     if (samlSigningOption_ != other.samlSigningOption_) return false;
-    if (hasAllowIdpInitiatedLogin() != other.hasAllowIdpInitiatedLogin()) return false;
-    if (hasAllowIdpInitiatedLogin()) {
-      if (!getAllowIdpInitiatedLogin()
-          .equals(other.getAllowIdpInitiatedLogin())) return false;
-    }
     if (hasForceAuthn() != other.hasForceAuthn()) return false;
     if (hasForceAuthn()) {
       if (!getForceAuthn()
@@ -647,10 +609,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + idpSloRequestBinding_;
     hash = (37 * hash) + SAML_SIGNING_OPTION_FIELD_NUMBER;
     hash = (53 * hash) + samlSigningOption_;
-    if (hasAllowIdpInitiatedLogin()) {
-      hash = (37 * hash) + ALLOW_IDP_INITIATED_LOGIN_FIELD_NUMBER;
-      hash = (53 * hash) + getAllowIdpInitiatedLogin().hashCode();
-    }
     if (hasForceAuthn()) {
       hash = (37 * hash) + FORCE_AUTHN_FIELD_NUMBER;
       hash = (53 * hash) + getForceAuthn().hashCode();
@@ -803,7 +761,6 @@ private static final long serialVersionUID = 0L;
         getIdpCertificateFieldBuilder();
         getIdpSloUrlFieldBuilder();
         getUiButtonTitleFieldBuilder();
-        getAllowIdpInitiatedLoginFieldBuilder();
         getForceAuthnFieldBuilder();
         getDefaultRedirectUriFieldBuilder();
         getAssertionEncryptedFieldBuilder();
@@ -848,11 +805,6 @@ private static final long serialVersionUID = 0L;
       idpSsoRequestBinding_ = 0;
       idpSloRequestBinding_ = 0;
       samlSigningOption_ = 0;
-      allowIdpInitiatedLogin_ = null;
-      if (allowIdpInitiatedLoginBuilder_ != null) {
-        allowIdpInitiatedLoginBuilder_.dispose();
-        allowIdpInitiatedLoginBuilder_ = null;
-      }
       forceAuthn_ = null;
       if (forceAuthnBuilder_ != null) {
         forceAuthnBuilder_.dispose();
@@ -956,34 +908,28 @@ private static final long serialVersionUID = 0L;
         result.samlSigningOption_ = samlSigningOption_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.allowIdpInitiatedLogin_ = allowIdpInitiatedLoginBuilder_ == null
-            ? allowIdpInitiatedLogin_
-            : allowIdpInitiatedLoginBuilder_.build();
-        to_bitField0_ |= 0x00000040;
-      }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.forceAuthn_ = forceAuthnBuilder_ == null
             ? forceAuthn_
             : forceAuthnBuilder_.build();
-        to_bitField0_ |= 0x00000080;
+        to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.defaultRedirectUri_ = defaultRedirectUriBuilder_ == null
             ? defaultRedirectUri_
             : defaultRedirectUriBuilder_.build();
-        to_bitField0_ |= 0x00000100;
+        to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.assertionEncrypted_ = assertionEncryptedBuilder_ == null
             ? assertionEncrypted_
             : assertionEncryptedBuilder_.build();
-        to_bitField0_ |= 0x00000200;
+        to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.wantRequestSigned_ = wantRequestSignedBuilder_ == null
             ? wantRequestSigned_
             : wantRequestSignedBuilder_.build();
-        to_bitField0_ |= 0x00000400;
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1061,9 +1007,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.samlSigningOption_ != 0) {
         setSamlSigningOptionValue(other.getSamlSigningOptionValue());
-      }
-      if (other.hasAllowIdpInitiatedLogin()) {
-        mergeAllowIdpInitiatedLogin(other.getAllowIdpInitiatedLogin());
       }
       if (other.hasForceAuthn()) {
         mergeForceAuthn(other.getForceAuthn());
@@ -1165,39 +1108,32 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000200;
               break;
             } // case 80
-            case 90: {
-              input.readMessage(
-                  getAllowIdpInitiatedLoginFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              bitField0_ |= 0x00000400;
-              break;
-            } // case 90
             case 114: {
               input.readMessage(
                   getForceAuthnFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00000400;
               break;
             } // case 114
             case 122: {
               input.readMessage(
                   getDefaultRedirectUriFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00000800;
               break;
             } // case 122
             case 130: {
               input.readMessage(
                   getAssertionEncryptedFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00001000;
               break;
             } // case 130
             case 138: {
               input.readMessage(
                   getWantRequestSignedFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00002000;
               break;
             } // case 138
             default: {
@@ -2155,127 +2091,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.BoolValue allowIdpInitiatedLogin_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> allowIdpInitiatedLoginBuilder_;
-    /**
-     * <code>.google.protobuf.BoolValue allow_idp_initiated_login = 11 [json_name = "allowIdpInitiatedLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the allowIdpInitiatedLogin field is set.
-     */
-    public boolean hasAllowIdpInitiatedLogin() {
-      return ((bitField0_ & 0x00000400) != 0);
-    }
-    /**
-     * <code>.google.protobuf.BoolValue allow_idp_initiated_login = 11 [json_name = "allowIdpInitiatedLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The allowIdpInitiatedLogin.
-     */
-    public com.google.protobuf.BoolValue getAllowIdpInitiatedLogin() {
-      if (allowIdpInitiatedLoginBuilder_ == null) {
-        return allowIdpInitiatedLogin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : allowIdpInitiatedLogin_;
-      } else {
-        return allowIdpInitiatedLoginBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.google.protobuf.BoolValue allow_idp_initiated_login = 11 [json_name = "allowIdpInitiatedLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setAllowIdpInitiatedLogin(com.google.protobuf.BoolValue value) {
-      if (allowIdpInitiatedLoginBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        allowIdpInitiatedLogin_ = value;
-      } else {
-        allowIdpInitiatedLoginBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000400;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.BoolValue allow_idp_initiated_login = 11 [json_name = "allowIdpInitiatedLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setAllowIdpInitiatedLogin(
-        com.google.protobuf.BoolValue.Builder builderForValue) {
-      if (allowIdpInitiatedLoginBuilder_ == null) {
-        allowIdpInitiatedLogin_ = builderForValue.build();
-      } else {
-        allowIdpInitiatedLoginBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000400;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.BoolValue allow_idp_initiated_login = 11 [json_name = "allowIdpInitiatedLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder mergeAllowIdpInitiatedLogin(com.google.protobuf.BoolValue value) {
-      if (allowIdpInitiatedLoginBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0) &&
-          allowIdpInitiatedLogin_ != null &&
-          allowIdpInitiatedLogin_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
-          getAllowIdpInitiatedLoginBuilder().mergeFrom(value);
-        } else {
-          allowIdpInitiatedLogin_ = value;
-        }
-      } else {
-        allowIdpInitiatedLoginBuilder_.mergeFrom(value);
-      }
-      if (allowIdpInitiatedLogin_ != null) {
-        bitField0_ |= 0x00000400;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.BoolValue allow_idp_initiated_login = 11 [json_name = "allowIdpInitiatedLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder clearAllowIdpInitiatedLogin() {
-      bitField0_ = (bitField0_ & ~0x00000400);
-      allowIdpInitiatedLogin_ = null;
-      if (allowIdpInitiatedLoginBuilder_ != null) {
-        allowIdpInitiatedLoginBuilder_.dispose();
-        allowIdpInitiatedLoginBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.BoolValue allow_idp_initiated_login = 11 [json_name = "allowIdpInitiatedLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public com.google.protobuf.BoolValue.Builder getAllowIdpInitiatedLoginBuilder() {
-      bitField0_ |= 0x00000400;
-      onChanged();
-      return getAllowIdpInitiatedLoginFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.google.protobuf.BoolValue allow_idp_initiated_login = 11 [json_name = "allowIdpInitiatedLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public com.google.protobuf.BoolValueOrBuilder getAllowIdpInitiatedLoginOrBuilder() {
-      if (allowIdpInitiatedLoginBuilder_ != null) {
-        return allowIdpInitiatedLoginBuilder_.getMessageOrBuilder();
-      } else {
-        return allowIdpInitiatedLogin_ == null ?
-            com.google.protobuf.BoolValue.getDefaultInstance() : allowIdpInitiatedLogin_;
-      }
-    }
-    /**
-     * <code>.google.protobuf.BoolValue allow_idp_initiated_login = 11 [json_name = "allowIdpInitiatedLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
-        getAllowIdpInitiatedLoginFieldBuilder() {
-      if (allowIdpInitiatedLoginBuilder_ == null) {
-        allowIdpInitiatedLoginBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
-                getAllowIdpInitiatedLogin(),
-                getParentForChildren(),
-                isClean());
-        allowIdpInitiatedLogin_ = null;
-      }
-      return allowIdpInitiatedLoginBuilder_;
-    }
-
     private com.google.protobuf.BoolValue forceAuthn_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> forceAuthnBuilder_;
@@ -2284,7 +2099,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the forceAuthn field is set.
      */
     public boolean hasForceAuthn() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      * <code>.google.protobuf.BoolValue force_authn = 14 [json_name = "forceAuthn", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -2309,7 +2124,7 @@ private static final long serialVersionUID = 0L;
       } else {
         forceAuthnBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2323,7 +2138,7 @@ private static final long serialVersionUID = 0L;
       } else {
         forceAuthnBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2332,7 +2147,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeForceAuthn(com.google.protobuf.BoolValue value) {
       if (forceAuthnBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0) &&
+        if (((bitField0_ & 0x00000400) != 0) &&
           forceAuthn_ != null &&
           forceAuthn_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
           getForceAuthnBuilder().mergeFrom(value);
@@ -2343,7 +2158,7 @@ private static final long serialVersionUID = 0L;
         forceAuthnBuilder_.mergeFrom(value);
       }
       if (forceAuthn_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -2352,7 +2167,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.BoolValue force_authn = 14 [json_name = "forceAuthn", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearForceAuthn() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000400);
       forceAuthn_ = null;
       if (forceAuthnBuilder_ != null) {
         forceAuthnBuilder_.dispose();
@@ -2365,7 +2180,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.BoolValue force_authn = 14 [json_name = "forceAuthn", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.BoolValue.Builder getForceAuthnBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getForceAuthnFieldBuilder().getBuilder();
     }
@@ -2405,7 +2220,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the defaultRedirectUri field is set.
      */
     public boolean hasDefaultRedirectUri() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      * <code>.google.protobuf.StringValue default_redirect_uri = 15 [json_name = "defaultRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -2430,7 +2245,7 @@ private static final long serialVersionUID = 0L;
       } else {
         defaultRedirectUriBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2444,7 +2259,7 @@ private static final long serialVersionUID = 0L;
       } else {
         defaultRedirectUriBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2453,7 +2268,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeDefaultRedirectUri(com.google.protobuf.StringValue value) {
       if (defaultRedirectUriBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0) &&
+        if (((bitField0_ & 0x00000800) != 0) &&
           defaultRedirectUri_ != null &&
           defaultRedirectUri_ != com.google.protobuf.StringValue.getDefaultInstance()) {
           getDefaultRedirectUriBuilder().mergeFrom(value);
@@ -2464,7 +2279,7 @@ private static final long serialVersionUID = 0L;
         defaultRedirectUriBuilder_.mergeFrom(value);
       }
       if (defaultRedirectUri_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -2473,7 +2288,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.StringValue default_redirect_uri = 15 [json_name = "defaultRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearDefaultRedirectUri() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000800);
       defaultRedirectUri_ = null;
       if (defaultRedirectUriBuilder_ != null) {
         defaultRedirectUriBuilder_.dispose();
@@ -2486,7 +2301,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.StringValue default_redirect_uri = 15 [json_name = "defaultRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.StringValue.Builder getDefaultRedirectUriBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getDefaultRedirectUriFieldBuilder().getBuilder();
     }
@@ -2526,7 +2341,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the assertionEncrypted field is set.
      */
     public boolean hasAssertionEncrypted() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      * <code>.google.protobuf.BoolValue assertion_encrypted = 16 [json_name = "assertionEncrypted", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -2551,7 +2366,7 @@ private static final long serialVersionUID = 0L;
       } else {
         assertionEncryptedBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2565,7 +2380,7 @@ private static final long serialVersionUID = 0L;
       } else {
         assertionEncryptedBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2574,7 +2389,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAssertionEncrypted(com.google.protobuf.BoolValue value) {
       if (assertionEncryptedBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0) &&
+        if (((bitField0_ & 0x00001000) != 0) &&
           assertionEncrypted_ != null &&
           assertionEncrypted_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
           getAssertionEncryptedBuilder().mergeFrom(value);
@@ -2585,7 +2400,7 @@ private static final long serialVersionUID = 0L;
         assertionEncryptedBuilder_.mergeFrom(value);
       }
       if (assertionEncrypted_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -2594,7 +2409,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.BoolValue assertion_encrypted = 16 [json_name = "assertionEncrypted", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearAssertionEncrypted() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00001000);
       assertionEncrypted_ = null;
       if (assertionEncryptedBuilder_ != null) {
         assertionEncryptedBuilder_.dispose();
@@ -2607,7 +2422,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.BoolValue assertion_encrypted = 16 [json_name = "assertionEncrypted", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.BoolValue.Builder getAssertionEncryptedBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getAssertionEncryptedFieldBuilder().getBuilder();
     }
@@ -2647,7 +2462,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the wantRequestSigned field is set.
      */
     public boolean hasWantRequestSigned() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      * <code>.google.protobuf.BoolValue want_request_signed = 17 [json_name = "wantRequestSigned", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -2672,7 +2487,7 @@ private static final long serialVersionUID = 0L;
       } else {
         wantRequestSignedBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -2686,7 +2501,7 @@ private static final long serialVersionUID = 0L;
       } else {
         wantRequestSignedBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -2695,7 +2510,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeWantRequestSigned(com.google.protobuf.BoolValue value) {
       if (wantRequestSignedBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0) &&
+        if (((bitField0_ & 0x00002000) != 0) &&
           wantRequestSigned_ != null &&
           wantRequestSigned_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
           getWantRequestSignedBuilder().mergeFrom(value);
@@ -2706,7 +2521,7 @@ private static final long serialVersionUID = 0L;
         wantRequestSignedBuilder_.mergeFrom(value);
       }
       if (wantRequestSigned_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -2715,7 +2530,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.BoolValue want_request_signed = 17 [json_name = "wantRequestSigned", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearWantRequestSigned() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       wantRequestSigned_ = null;
       if (wantRequestSignedBuilder_ != null) {
         wantRequestSignedBuilder_.dispose();
@@ -2728,7 +2543,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.BoolValue want_request_signed = 17 [json_name = "wantRequestSigned", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.BoolValue.Builder getWantRequestSignedBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getWantRequestSignedFieldBuilder().getBuilder();
     }

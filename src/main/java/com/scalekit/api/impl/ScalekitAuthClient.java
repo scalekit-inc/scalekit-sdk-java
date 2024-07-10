@@ -69,6 +69,7 @@ public class ScalekitAuthClient implements AuthClient {
         List<String> scopes = new ArrayList<>();
         scopes.add("openid");
         scopes.add("profile");
+        scopes.add("email");
 
         if (options.getScopes() != null) {
             scopes = new ArrayList<>(options.getScopes());
@@ -104,6 +105,9 @@ public class ScalekitAuthClient implements AuthClient {
         }
         if (options.getCodeChallengeMethod() != null && !options.getCodeChallengeMethod().isEmpty()) {
             qs.add("code_challenge_method=" + URLEncoder.encode(options.getCodeChallengeMethod(), StandardCharsets.UTF_8));
+        }
+        if (options.getProvider() != null && !options.getProvider().isEmpty()) {
+            qs.add("provider=" + URLEncoder.encode(options.getProvider(), StandardCharsets.UTF_8));
         }
 
         String urlString = String.format("https://%s/%s?%s", Environment.defaultConfig().siteName , AUTHORIZATION_ENDPOINT, qs);
