@@ -5,10 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.scalekit.Environment;
 import com.scalekit.api.AuthClient;
 import com.scalekit.exceptions.APIException;
-import com.scalekit.internal.http.AuthenticationOptions;
-import com.scalekit.internal.http.AuthenticationResponse;
-import com.scalekit.internal.http.AuthorizationUrlOptions;
-import com.scalekit.internal.http.IdTokenClaims;
+import com.scalekit.internal.http.*;
 import org.jose4j.jwa.AlgorithmConstraints;
 import org.jose4j.jwk.JsonWebKey;
 import org.jose4j.jwk.JsonWebKeySet;
@@ -119,8 +116,7 @@ public class ScalekitAuthClient implements AuthClient {
         }
     }
 
-
-    public boolean validateAccessToken(String jwt) {
+    public boolean validateAccessToken(String jwt) throws APIException{
         try {
             // TODO Optimization - Cache the keys
             String keysJson = this.httpClient.send(
@@ -208,5 +204,23 @@ public class ScalekitAuthClient implements AuthClient {
         return objectMapper.readValue(response.body(), AuthenticationResponse.class);
     }
 
+    public IdpInitiatedLoginClaims getIdpInitiatedLoginClaims(String idpInitiatedLoginToken) throws APIException {
+        try {
+            boolean isTokenValid = validateAccessToken(idpInitiatedLoginToken);
+            if (!isTokenValid) {
+                throw new APIException("Invalid idpInitiatedLoginToken");
+            }
+            JwtConsumer jwtConsumer = new JwtConsumerBuilder()
+                    .setSkipSignatureVerification()
+                    .setSkipDefaultAudienceValidation()
+                    .build();
+            JwtClaims jwtClaims = jwtConsumer.processToClaims(idpInitiatedLoginToken);
 
+            return objectMapper.readValue(
+                    jwtClaims.toJson(),
+                    IdpInitiatedLoginClaims.class);
+        } catch (IOException | InvalidJwtException e) {
+            throw new APIException("Failed to verify and consume idpInitiatedLoginToken, error: " + e.getMessage());
+        }
+    }
 }
