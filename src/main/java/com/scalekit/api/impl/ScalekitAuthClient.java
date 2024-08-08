@@ -6,11 +6,9 @@ import com.scalekit.Environment;
 import com.scalekit.api.AuthClient;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.internal.http.*;
-import org.jose4j.jwa.AlgorithmConstraints;
 import org.jose4j.jwk.JsonWebKey;
 import org.jose4j.jwk.JsonWebKeySet;
 import org.jose4j.jwk.VerificationJwkSelector;
-
 import org.jose4j.jws.JsonWebSignature;
 import org.jose4j.jwt.JwtClaims;
 import org.jose4j.jwt.consumer.InvalidJwtException;
@@ -107,7 +105,7 @@ public class ScalekitAuthClient implements AuthClient {
             qs.add("provider=" + URLEncoder.encode(options.getProvider(), StandardCharsets.UTF_8));
         }
 
-        String urlString = String.format("https://%s/%s?%s", Environment.defaultConfig().siteName , AUTHORIZATION_ENDPOINT, qs);
+        String urlString = String.format("%s/%s?%s", Environment.defaultConfig().siteName , AUTHORIZATION_ENDPOINT, qs);
 
         try {
             return new URL(urlString);
@@ -121,7 +119,7 @@ public class ScalekitAuthClient implements AuthClient {
             // TODO Optimization - Cache the keys
             String keysJson = this.httpClient.send(
                     HttpRequest.newBuilder()
-                            .uri(new URI("https://" + Environment.defaultConfig().siteName + KEYS_ENDPOINT))
+                            .uri(new URI(Environment.defaultConfig().siteName + KEYS_ENDPOINT))
                             .GET()
                             .build(),
                     HttpResponse.BodyHandlers.ofString()
@@ -182,7 +180,7 @@ public class ScalekitAuthClient implements AuthClient {
     private AuthenticationResponse authenticate(Map<String, String> requestData) throws IOException, InterruptedException, URISyntaxException {
 
         Environment environment = Environment.defaultConfig();
-        String url = "https://"+environment.siteName+TOKEN_ENDPOINT;
+        String url = environment.siteName+TOKEN_ENDPOINT;
 
         String form = requestData.entrySet()
                 .stream()
