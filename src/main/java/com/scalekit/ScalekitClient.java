@@ -1,13 +1,7 @@
 package com.scalekit;
 
-import com.scalekit.api.AuthClient;
-import com.scalekit.api.ConnectionClient;
-import com.scalekit.api.DomainClient;
-import com.scalekit.api.OrganizationClient;
-import com.scalekit.api.impl.ScalekitAuthClient;
-import com.scalekit.api.impl.ScalekitConnectionClient;
-import com.scalekit.api.impl.ScalekitDomainClient;
-import com.scalekit.api.impl.ScalekitOrganizationClient;
+import com.scalekit.api.*;
+import com.scalekit.api.impl.*;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.internal.ScalekitCredentials;
 import io.grpc.ManagedChannel;
@@ -27,6 +21,8 @@ public class ScalekitClient {
     private final ConnectionClient connectionClient;
 
     private final ScalekitAuthClient authenticationClient;
+
+    private final DirectoryClient directoryClient ;
 
     public ScalekitClient(String siteName, String clientId, String clientSecret) {
 
@@ -48,6 +44,8 @@ public class ScalekitClient {
             organizationClient = new ScalekitOrganizationClient(channel, credentials);
             domainClient = new ScalekitDomainClient(channel, credentials);
             connectionClient = new ScalekitConnectionClient(channel, credentials);
+            directoryClient = new ScalekitDirectoryClient(channel, credentials);
+
         } catch (MalformedURLException e) {
             throw new APIException("invalid environment URL, error:" + e.getMessage());
         }
@@ -70,6 +68,10 @@ public class ScalekitClient {
 
     public AuthClient authentication() {
         return this.authenticationClient;
+    }
+
+    public DirectoryClient directories() {
+        return this.directoryClient;
     }
 
 }
