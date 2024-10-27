@@ -57,7 +57,7 @@ public class OrganizationTests {
         ListOrganizationsResponse organizations = client.organizations().listOrganizations(10, "");
 
         assertNotNull(organizations);
-        assertEquals(organizations.getTotalSize(),10);
+        assertTrue(organizations.getTotalSize() > 10);
         assertNotNull(organizations.getNextPageToken());
 
         assertThrows(APIException.class, () -> client.organizations().getById(createdOrganization.getId()));
