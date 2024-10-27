@@ -86,6 +86,33 @@ public class ScalekitDirectoryClient implements DirectoryClient {
         }
     }
 
+    @Override
+    public ToggleDirectoryResponse enableDirectory(String directoryId, String organizationId) {
+        ToggleDirectoryRequest request = ToggleDirectoryRequest.newBuilder()
+                .setId(directoryId)
+                .setOrganizationId(organizationId)
+                .build();
+        try {
+            return directoryStub.enableDirectory(request);
+        } catch (StatusRuntimeException e) {
+            throw new APIException(e);
+        }
+
+    }
+
+    @Override
+    public ToggleDirectoryResponse disableDirectory(String directoryId, String organizationId) {
+        ToggleDirectoryRequest request = ToggleDirectoryRequest.newBuilder()
+                .setId(directoryId)
+                .setOrganizationId(organizationId)
+                .build();
+        try {
+            return directoryStub.disableDirectory(request);
+        } catch (StatusRuntimeException e) {
+            throw new APIException(e);
+        }
+    }
+
 
     private ListDirectoryResourceOptions validateOptions(ListDirectoryResourceOptions options){
         if (Objects.isNull(options)){

@@ -141,4 +141,21 @@ public class DirectoryTest {
 
     }
 
+    @Test
+    public void EnableDisableDirectory(){
+        try {
+            var enableResponse = client.directories().enableDirectory(directoryId, organizationId);
+            assertTrue(enableResponse.getEnabled());
+
+            var disableResponse = client.directories().disableDirectory(directoryId, organizationId);
+            assertFalse(disableResponse.getEnabled());
+        }
+        catch (Exception e){
+            fail(e);
+        }finally {
+            //cleanup
+            client.directories().enableDirectory(directoryId, organizationId);
+        }
+    }
+
 }
