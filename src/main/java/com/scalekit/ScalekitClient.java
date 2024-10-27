@@ -4,6 +4,8 @@ import com.scalekit.api.*;
 import com.scalekit.api.impl.*;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.internal.ScalekitCredentials;
+import com.scalekit.webhooks.ScalekitWebhook;
+import com.scalekit.webhooks.Webhook;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
@@ -23,6 +25,8 @@ public class ScalekitClient {
     private final ScalekitAuthClient authenticationClient;
 
     private final DirectoryClient directoryClient ;
+
+    private final Webhook webhook;
 
     public ScalekitClient(String siteName, String clientId, String clientSecret) {
 
@@ -46,6 +50,8 @@ public class ScalekitClient {
             connectionClient = new ScalekitConnectionClient(channel, credentials);
             directoryClient = new ScalekitDirectoryClient(channel, credentials);
 
+            webhook = new ScalekitWebhook();
+
         } catch (MalformedURLException e) {
             throw new APIException("invalid environment URL, error:" + e.getMessage());
         }
@@ -68,6 +74,10 @@ public class ScalekitClient {
 
     public AuthClient authentication() {
         return this.authenticationClient;
+    }
+
+    public Webhook webhook() {
+        return this.webhook;
     }
 
     public DirectoryClient directories() {
