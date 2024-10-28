@@ -65,9 +65,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-
         <io.grpc.version>1.67.1</io.grpc.version>
-        <io.grpc.protobuf>3.25.3</io.grpc.protobuf>
+
     </properties>
 
     <dependencies>
@@ -81,6 +80,11 @@
             <groupId>io.grpc</groupId>
             <artifactId>grpc-stub</artifactId>
             <version>${io.grpc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.25.5</version>
         </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
