@@ -57,7 +57,8 @@ public class ScalekitWebhook implements Webhook {
 
     private Date verifyTimestamp(String timestampStr) throws WebHookException {
         Date now = new Date();
-        Date timestamp = Date.from(java.time.OffsetDateTime.parse(timestampStr).toInstant());
+        long epochTime = Long.parseLong(timestampStr); // Parse the string to a long
+        Date timestamp = new Date(epochTime * 1000);
 
         long diffInSeconds = TimeUnit.MILLISECONDS.toSeconds(now.getTime() - timestamp.getTime());
         if (diffInSeconds > WEBHOOK_TOLERANCE_IN_SECONDS || diffInSeconds < -WEBHOOK_TOLERANCE_IN_SECONDS) {
