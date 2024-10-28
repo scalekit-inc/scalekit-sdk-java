@@ -9,7 +9,7 @@ managed:
 
 
 plugins:
-  - plugin: buf.build/grpc/java:v1.64.0
+  - plugin: buf.build/grpc/java:v1.67.1 #corresponds to grpc-java v1.67.1
     out: .artifacts
     opt: paths=source_relative
   - plugin: buf.build/protocolbuffers/java:v25.3 #corresponds to protobuf-java v3.25.3

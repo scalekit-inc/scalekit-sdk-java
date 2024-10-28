@@ -5,7 +5,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.64.0)",
+    value = "by gRPC proto compiler (version 1.67.1)",
     comments = "Source: scalekit/v1/organizations/organizations.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class OrganizationServiceGrpc {

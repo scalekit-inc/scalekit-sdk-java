@@ -6,22 +6,22 @@ package com.scalekit.grpc.buf.validate;
 
 /**
  * <pre>
- * MessageConstraints represents validation rules that are applied to the entire message.
- * It includes disabling options and a list of Constraint messages representing Common Expression Language (CEL) validation rules.
+ * PredefinedConstraints are custom constraints that can be re-used with
+ * multiple fields.
  * </pre>
  *
- * Protobuf type {@code buf.validate.MessageConstraints}
+ * Protobuf type {@code buf.validate.PredefinedConstraints}
  */
-public final class MessageConstraints extends
+public final class PredefinedConstraints extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:buf.validate.MessageConstraints)
-    MessageConstraintsOrBuilder {
+    // @@protoc_insertion_point(message_implements:buf.validate.PredefinedConstraints)
+    PredefinedConstraintsOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use MessageConstraints.newBuilder() to construct.
-  private MessageConstraints(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use PredefinedConstraints.newBuilder() to construct.
+  private PredefinedConstraints(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private MessageConstraints() {
+  private PredefinedConstraints() {
     cel_ = java.util.Collections.emptyList();
   }
 
@@ -29,90 +29,44 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new MessageConstraints();
+    return new PredefinedConstraints();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.scalekit.grpc.buf.validate.ValidateProto.internal_static_buf_validate_MessageConstraints_descriptor;
+    return com.scalekit.grpc.buf.validate.ValidateProto.internal_static_buf_validate_PredefinedConstraints_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.scalekit.grpc.buf.validate.ValidateProto.internal_static_buf_validate_MessageConstraints_fieldAccessorTable
+    return com.scalekit.grpc.buf.validate.ValidateProto.internal_static_buf_validate_PredefinedConstraints_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.scalekit.grpc.buf.validate.MessageConstraints.class, com.scalekit.grpc.buf.validate.MessageConstraints.Builder.class);
+            com.scalekit.grpc.buf.validate.PredefinedConstraints.class, com.scalekit.grpc.buf.validate.PredefinedConstraints.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int DISABLED_FIELD_NUMBER = 1;
-  private boolean disabled_ = false;
-  /**
-   * <pre>
-   * `disabled` is a boolean flag that, when set to true, nullifies any validation rules for this message.
-   * This includes any fields within the message that would otherwise support validation.
-   *
-   * ```proto
-   * message MyMessage {
-   *   // validation will be bypassed for this message
-   *   option (buf.validate.message).disabled = true;
-   * }
-   * ```
-   * </pre>
-   *
-   * <code>optional bool disabled = 1 [json_name = "disabled"];</code>
-   * @return Whether the disabled field is set.
-   */
-  @java.lang.Override
-  public boolean hasDisabled() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <pre>
-   * `disabled` is a boolean flag that, when set to true, nullifies any validation rules for this message.
-   * This includes any fields within the message that would otherwise support validation.
-   *
-   * ```proto
-   * message MyMessage {
-   *   // validation will be bypassed for this message
-   *   option (buf.validate.message).disabled = true;
-   * }
-   * ```
-   * </pre>
-   *
-   * <code>optional bool disabled = 1 [json_name = "disabled"];</code>
-   * @return The disabled.
-   */
-  @java.lang.Override
-  public boolean getDisabled() {
-    return disabled_;
-  }
-
-  public static final int CEL_FIELD_NUMBER = 3;
+  public static final int CEL_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private java.util.List<com.scalekit.grpc.buf.validate.Constraint> cel_;
   /**
    * <pre>
-   * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-   * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+   * `cel` is a repeated field used to represent a textual expression
+   * in the Common Expression Language (CEL) syntax. For more information on
    * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-   *
    *
    * ```proto
    * message MyMessage {
-   *   // The field `foo` must be greater than 42.
-   *   option (buf.validate.message).cel = {
+   *   // The field `value` must be greater than 42.
+   *   optional int32 value = 1 [(buf.validate.predefined).cel = {
    *     id: "my_message.value",
    *     message: "value must be greater than 42",
-   *     expression: "this.foo &gt; 42",
-   *   };
-   *   optional int32 foo = 1;
+   *     expression: "this &gt; 42",
+   *   }];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+   * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
    */
   @java.lang.Override
   public java.util.List<com.scalekit.grpc.buf.validate.Constraint> getCelList() {
@@ -120,25 +74,23 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-   * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+   * `cel` is a repeated field used to represent a textual expression
+   * in the Common Expression Language (CEL) syntax. For more information on
    * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-   *
    *
    * ```proto
    * message MyMessage {
-   *   // The field `foo` must be greater than 42.
-   *   option (buf.validate.message).cel = {
+   *   // The field `value` must be greater than 42.
+   *   optional int32 value = 1 [(buf.validate.predefined).cel = {
    *     id: "my_message.value",
    *     message: "value must be greater than 42",
-   *     expression: "this.foo &gt; 42",
-   *   };
-   *   optional int32 foo = 1;
+   *     expression: "this &gt; 42",
+   *   }];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+   * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.scalekit.grpc.buf.validate.ConstraintOrBuilder> 
@@ -147,25 +99,23 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-   * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+   * `cel` is a repeated field used to represent a textual expression
+   * in the Common Expression Language (CEL) syntax. For more information on
    * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-   *
    *
    * ```proto
    * message MyMessage {
-   *   // The field `foo` must be greater than 42.
-   *   option (buf.validate.message).cel = {
+   *   // The field `value` must be greater than 42.
+   *   optional int32 value = 1 [(buf.validate.predefined).cel = {
    *     id: "my_message.value",
    *     message: "value must be greater than 42",
-   *     expression: "this.foo &gt; 42",
-   *   };
-   *   optional int32 foo = 1;
+   *     expression: "this &gt; 42",
+   *   }];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+   * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
    */
   @java.lang.Override
   public int getCelCount() {
@@ -173,25 +123,23 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-   * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+   * `cel` is a repeated field used to represent a textual expression
+   * in the Common Expression Language (CEL) syntax. For more information on
    * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-   *
    *
    * ```proto
    * message MyMessage {
-   *   // The field `foo` must be greater than 42.
-   *   option (buf.validate.message).cel = {
+   *   // The field `value` must be greater than 42.
+   *   optional int32 value = 1 [(buf.validate.predefined).cel = {
    *     id: "my_message.value",
    *     message: "value must be greater than 42",
-   *     expression: "this.foo &gt; 42",
-   *   };
-   *   optional int32 foo = 1;
+   *     expression: "this &gt; 42",
+   *   }];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+   * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.buf.validate.Constraint getCel(int index) {
@@ -199,25 +147,23 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-   * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+   * `cel` is a repeated field used to represent a textual expression
+   * in the Common Expression Language (CEL) syntax. For more information on
    * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-   *
    *
    * ```proto
    * message MyMessage {
-   *   // The field `foo` must be greater than 42.
-   *   option (buf.validate.message).cel = {
+   *   // The field `value` must be greater than 42.
+   *   optional int32 value = 1 [(buf.validate.predefined).cel = {
    *     id: "my_message.value",
    *     message: "value must be greater than 42",
-   *     expression: "this.foo &gt; 42",
-   *   };
-   *   optional int32 foo = 1;
+   *     expression: "this &gt; 42",
+   *   }];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+   * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.buf.validate.ConstraintOrBuilder getCelOrBuilder(
@@ -239,11 +185,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeBool(1, disabled_);
-    }
     for (int i = 0; i < cel_.size(); i++) {
-      output.writeMessage(3, cel_.get(i));
+      output.writeMessage(1, cel_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -254,13 +197,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(1, disabled_);
-    }
     for (int i = 0; i < cel_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, cel_.get(i));
+        .computeMessageSize(1, cel_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -272,16 +211,11 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.scalekit.grpc.buf.validate.MessageConstraints)) {
+    if (!(obj instanceof com.scalekit.grpc.buf.validate.PredefinedConstraints)) {
       return super.equals(obj);
     }
-    com.scalekit.grpc.buf.validate.MessageConstraints other = (com.scalekit.grpc.buf.validate.MessageConstraints) obj;
+    com.scalekit.grpc.buf.validate.PredefinedConstraints other = (com.scalekit.grpc.buf.validate.PredefinedConstraints) obj;
 
-    if (hasDisabled() != other.hasDisabled()) return false;
-    if (hasDisabled()) {
-      if (getDisabled()
-          != other.getDisabled()) return false;
-    }
     if (!getCelList()
         .equals(other.getCelList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -295,11 +229,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasDisabled()) {
-      hash = (37 * hash) + DISABLED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getDisabled());
-    }
     if (getCelCount() > 0) {
       hash = (37 * hash) + CEL_FIELD_NUMBER;
       hash = (53 * hash) + getCelList().hashCode();
@@ -309,44 +238,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.scalekit.grpc.buf.validate.MessageConstraints parseFrom(
+  public static com.scalekit.grpc.buf.validate.PredefinedConstraints parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.buf.validate.MessageConstraints parseFrom(
+  public static com.scalekit.grpc.buf.validate.PredefinedConstraints parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.buf.validate.MessageConstraints parseFrom(
+  public static com.scalekit.grpc.buf.validate.PredefinedConstraints parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.buf.validate.MessageConstraints parseFrom(
+  public static com.scalekit.grpc.buf.validate.PredefinedConstraints parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.buf.validate.MessageConstraints parseFrom(byte[] data)
+  public static com.scalekit.grpc.buf.validate.PredefinedConstraints parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.buf.validate.MessageConstraints parseFrom(
+  public static com.scalekit.grpc.buf.validate.PredefinedConstraints parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.buf.validate.MessageConstraints parseFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.buf.validate.PredefinedConstraints parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.buf.validate.MessageConstraints parseFrom(
+  public static com.scalekit.grpc.buf.validate.PredefinedConstraints parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -354,26 +283,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.scalekit.grpc.buf.validate.MessageConstraints parseDelimitedFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.buf.validate.PredefinedConstraints parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.scalekit.grpc.buf.validate.MessageConstraints parseDelimitedFrom(
+  public static com.scalekit.grpc.buf.validate.PredefinedConstraints parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.scalekit.grpc.buf.validate.MessageConstraints parseFrom(
+  public static com.scalekit.grpc.buf.validate.PredefinedConstraints parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.buf.validate.MessageConstraints parseFrom(
+  public static com.scalekit.grpc.buf.validate.PredefinedConstraints parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -386,7 +315,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.scalekit.grpc.buf.validate.MessageConstraints prototype) {
+  public static Builder newBuilder(com.scalekit.grpc.buf.validate.PredefinedConstraints prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -403,30 +332,30 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * MessageConstraints represents validation rules that are applied to the entire message.
-   * It includes disabling options and a list of Constraint messages representing Common Expression Language (CEL) validation rules.
+   * PredefinedConstraints are custom constraints that can be re-used with
+   * multiple fields.
    * </pre>
    *
-   * Protobuf type {@code buf.validate.MessageConstraints}
+   * Protobuf type {@code buf.validate.PredefinedConstraints}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:buf.validate.MessageConstraints)
-      com.scalekit.grpc.buf.validate.MessageConstraintsOrBuilder {
+      // @@protoc_insertion_point(builder_implements:buf.validate.PredefinedConstraints)
+      com.scalekit.grpc.buf.validate.PredefinedConstraintsOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.scalekit.grpc.buf.validate.ValidateProto.internal_static_buf_validate_MessageConstraints_descriptor;
+      return com.scalekit.grpc.buf.validate.ValidateProto.internal_static_buf_validate_PredefinedConstraints_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.scalekit.grpc.buf.validate.ValidateProto.internal_static_buf_validate_MessageConstraints_fieldAccessorTable
+      return com.scalekit.grpc.buf.validate.ValidateProto.internal_static_buf_validate_PredefinedConstraints_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.scalekit.grpc.buf.validate.MessageConstraints.class, com.scalekit.grpc.buf.validate.MessageConstraints.Builder.class);
+              com.scalekit.grpc.buf.validate.PredefinedConstraints.class, com.scalekit.grpc.buf.validate.PredefinedConstraints.Builder.class);
     }
 
-    // Construct using com.scalekit.grpc.buf.validate.MessageConstraints.newBuilder()
+    // Construct using com.scalekit.grpc.buf.validate.PredefinedConstraints.newBuilder()
     private Builder() {
 
     }
@@ -440,31 +369,30 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      disabled_ = false;
       if (celBuilder_ == null) {
         cel_ = java.util.Collections.emptyList();
       } else {
         cel_ = null;
         celBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.scalekit.grpc.buf.validate.ValidateProto.internal_static_buf_validate_MessageConstraints_descriptor;
+      return com.scalekit.grpc.buf.validate.ValidateProto.internal_static_buf_validate_PredefinedConstraints_descriptor;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.buf.validate.MessageConstraints getDefaultInstanceForType() {
-      return com.scalekit.grpc.buf.validate.MessageConstraints.getDefaultInstance();
+    public com.scalekit.grpc.buf.validate.PredefinedConstraints getDefaultInstanceForType() {
+      return com.scalekit.grpc.buf.validate.PredefinedConstraints.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.buf.validate.MessageConstraints build() {
-      com.scalekit.grpc.buf.validate.MessageConstraints result = buildPartial();
+    public com.scalekit.grpc.buf.validate.PredefinedConstraints build() {
+      com.scalekit.grpc.buf.validate.PredefinedConstraints result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -472,19 +400,19 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.buf.validate.MessageConstraints buildPartial() {
-      com.scalekit.grpc.buf.validate.MessageConstraints result = new com.scalekit.grpc.buf.validate.MessageConstraints(this);
+    public com.scalekit.grpc.buf.validate.PredefinedConstraints buildPartial() {
+      com.scalekit.grpc.buf.validate.PredefinedConstraints result = new com.scalekit.grpc.buf.validate.PredefinedConstraints(this);
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.scalekit.grpc.buf.validate.MessageConstraints result) {
+    private void buildPartialRepeatedFields(com.scalekit.grpc.buf.validate.PredefinedConstraints result) {
       if (celBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           cel_ = java.util.Collections.unmodifiableList(cel_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.cel_ = cel_;
       } else {
@@ -492,14 +420,8 @@ private static final long serialVersionUID = 0L;
       }
     }
 
-    private void buildPartial0(com.scalekit.grpc.buf.validate.MessageConstraints result) {
+    private void buildPartial0(com.scalekit.grpc.buf.validate.PredefinedConstraints result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.disabled_ = disabled_;
-        to_bitField0_ |= 0x00000001;
-      }
-      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -536,24 +458,21 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.scalekit.grpc.buf.validate.MessageConstraints) {
-        return mergeFrom((com.scalekit.grpc.buf.validate.MessageConstraints)other);
+      if (other instanceof com.scalekit.grpc.buf.validate.PredefinedConstraints) {
+        return mergeFrom((com.scalekit.grpc.buf.validate.PredefinedConstraints)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.scalekit.grpc.buf.validate.MessageConstraints other) {
-      if (other == com.scalekit.grpc.buf.validate.MessageConstraints.getDefaultInstance()) return this;
-      if (other.hasDisabled()) {
-        setDisabled(other.getDisabled());
-      }
+    public Builder mergeFrom(com.scalekit.grpc.buf.validate.PredefinedConstraints other) {
+      if (other == com.scalekit.grpc.buf.validate.PredefinedConstraints.getDefaultInstance()) return this;
       if (celBuilder_ == null) {
         if (!other.cel_.isEmpty()) {
           if (cel_.isEmpty()) {
             cel_ = other.cel_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureCelIsMutable();
             cel_.addAll(other.cel_);
@@ -566,7 +485,7 @@ private static final long serialVersionUID = 0L;
             celBuilder_.dispose();
             celBuilder_ = null;
             cel_ = other.cel_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             celBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getCelFieldBuilder() : null;
@@ -601,12 +520,7 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-              disabled_ = input.readBool();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 8
-            case 26: {
+            case 10: {
               com.scalekit.grpc.buf.validate.Constraint m =
                   input.readMessage(
                       com.scalekit.grpc.buf.validate.Constraint.PARSER,
@@ -618,7 +532,7 @@ private static final long serialVersionUID = 0L;
                 celBuilder_.addMessage(m);
               }
               break;
-            } // case 26
+            } // case 10
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -636,100 +550,12 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private boolean disabled_ ;
-    /**
-     * <pre>
-     * `disabled` is a boolean flag that, when set to true, nullifies any validation rules for this message.
-     * This includes any fields within the message that would otherwise support validation.
-     *
-     * ```proto
-     * message MyMessage {
-     *   // validation will be bypassed for this message
-     *   option (buf.validate.message).disabled = true;
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>optional bool disabled = 1 [json_name = "disabled"];</code>
-     * @return Whether the disabled field is set.
-     */
-    @java.lang.Override
-    public boolean hasDisabled() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <pre>
-     * `disabled` is a boolean flag that, when set to true, nullifies any validation rules for this message.
-     * This includes any fields within the message that would otherwise support validation.
-     *
-     * ```proto
-     * message MyMessage {
-     *   // validation will be bypassed for this message
-     *   option (buf.validate.message).disabled = true;
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>optional bool disabled = 1 [json_name = "disabled"];</code>
-     * @return The disabled.
-     */
-    @java.lang.Override
-    public boolean getDisabled() {
-      return disabled_;
-    }
-    /**
-     * <pre>
-     * `disabled` is a boolean flag that, when set to true, nullifies any validation rules for this message.
-     * This includes any fields within the message that would otherwise support validation.
-     *
-     * ```proto
-     * message MyMessage {
-     *   // validation will be bypassed for this message
-     *   option (buf.validate.message).disabled = true;
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>optional bool disabled = 1 [json_name = "disabled"];</code>
-     * @param value The disabled to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDisabled(boolean value) {
-
-      disabled_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * `disabled` is a boolean flag that, when set to true, nullifies any validation rules for this message.
-     * This includes any fields within the message that would otherwise support validation.
-     *
-     * ```proto
-     * message MyMessage {
-     *   // validation will be bypassed for this message
-     *   option (buf.validate.message).disabled = true;
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>optional bool disabled = 1 [json_name = "disabled"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDisabled() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      disabled_ = false;
-      onChanged();
-      return this;
-    }
-
     private java.util.List<com.scalekit.grpc.buf.validate.Constraint> cel_ =
       java.util.Collections.emptyList();
     private void ensureCelIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         cel_ = new java.util.ArrayList<com.scalekit.grpc.buf.validate.Constraint>(cel_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -738,25 +564,23 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public java.util.List<com.scalekit.grpc.buf.validate.Constraint> getCelList() {
       if (celBuilder_ == null) {
@@ -767,25 +591,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public int getCelCount() {
       if (celBuilder_ == null) {
@@ -796,25 +618,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public com.scalekit.grpc.buf.validate.Constraint getCel(int index) {
       if (celBuilder_ == null) {
@@ -825,25 +645,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public Builder setCel(
         int index, com.scalekit.grpc.buf.validate.Constraint value) {
@@ -861,25 +679,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public Builder setCel(
         int index, com.scalekit.grpc.buf.validate.Constraint.Builder builderForValue) {
@@ -894,25 +710,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public Builder addCel(com.scalekit.grpc.buf.validate.Constraint value) {
       if (celBuilder_ == null) {
@@ -929,25 +743,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public Builder addCel(
         int index, com.scalekit.grpc.buf.validate.Constraint value) {
@@ -965,25 +777,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public Builder addCel(
         com.scalekit.grpc.buf.validate.Constraint.Builder builderForValue) {
@@ -998,25 +808,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public Builder addCel(
         int index, com.scalekit.grpc.buf.validate.Constraint.Builder builderForValue) {
@@ -1031,25 +839,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public Builder addAllCel(
         java.lang.Iterable<? extends com.scalekit.grpc.buf.validate.Constraint> values) {
@@ -1065,30 +871,28 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public Builder clearCel() {
       if (celBuilder_ == null) {
         cel_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         celBuilder_.clear();
@@ -1097,25 +901,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public Builder removeCel(int index) {
       if (celBuilder_ == null) {
@@ -1129,25 +931,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public com.scalekit.grpc.buf.validate.Constraint.Builder getCelBuilder(
         int index) {
@@ -1155,25 +955,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public com.scalekit.grpc.buf.validate.ConstraintOrBuilder getCelOrBuilder(
         int index) {
@@ -1184,25 +982,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public java.util.List<? extends com.scalekit.grpc.buf.validate.ConstraintOrBuilder> 
          getCelOrBuilderList() {
@@ -1214,25 +1010,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public com.scalekit.grpc.buf.validate.Constraint.Builder addCelBuilder() {
       return getCelFieldBuilder().addBuilder(
@@ -1240,25 +1034,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public com.scalekit.grpc.buf.validate.Constraint.Builder addCelBuilder(
         int index) {
@@ -1267,25 +1059,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `cel` is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-     * These constraints are written in Common Expression Language (CEL) syntax. For more information on
+     * `cel` is a repeated field used to represent a textual expression
+     * in the Common Expression Language (CEL) syntax. For more information on
      * CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-     *
      *
      * ```proto
      * message MyMessage {
-     *   // The field `foo` must be greater than 42.
-     *   option (buf.validate.message).cel = {
+     *   // The field `value` must be greater than 42.
+     *   optional int32 value = 1 [(buf.validate.predefined).cel = {
      *     id: "my_message.value",
      *     message: "value must be greater than 42",
-     *     expression: "this.foo &gt; 42",
-     *   };
-     *   optional int32 foo = 1;
+     *     expression: "this &gt; 42",
+     *   }];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated .buf.validate.Constraint cel = 3 [json_name = "cel"];</code>
+     * <code>repeated .buf.validate.Constraint cel = 1 [json_name = "cel"];</code>
      */
     public java.util.List<com.scalekit.grpc.buf.validate.Constraint.Builder> 
          getCelBuilderList() {
@@ -1298,7 +1088,7 @@ private static final long serialVersionUID = 0L;
         celBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.scalekit.grpc.buf.validate.Constraint, com.scalekit.grpc.buf.validate.Constraint.Builder, com.scalekit.grpc.buf.validate.ConstraintOrBuilder>(
                 cel_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         cel_ = null;
@@ -1318,23 +1108,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:buf.validate.MessageConstraints)
+    // @@protoc_insertion_point(builder_scope:buf.validate.PredefinedConstraints)
   }
 
-  // @@protoc_insertion_point(class_scope:buf.validate.MessageConstraints)
-  private static final com.scalekit.grpc.buf.validate.MessageConstraints DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:buf.validate.PredefinedConstraints)
+  private static final com.scalekit.grpc.buf.validate.PredefinedConstraints DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.scalekit.grpc.buf.validate.MessageConstraints();
+    DEFAULT_INSTANCE = new com.scalekit.grpc.buf.validate.PredefinedConstraints();
   }
 
-  public static com.scalekit.grpc.buf.validate.MessageConstraints getDefaultInstance() {
+  public static com.scalekit.grpc.buf.validate.PredefinedConstraints getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<MessageConstraints>
-      PARSER = new com.google.protobuf.AbstractParser<MessageConstraints>() {
+  @java.lang.Deprecated public static final com.google.protobuf.Parser<PredefinedConstraints>
+      PARSER = new com.google.protobuf.AbstractParser<PredefinedConstraints>() {
     @java.lang.Override
-    public MessageConstraints parsePartialFrom(
+    public PredefinedConstraints parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1353,17 +1143,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<MessageConstraints> parser() {
+  public static com.google.protobuf.Parser<PredefinedConstraints> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<MessageConstraints> getParserForType() {
+  public com.google.protobuf.Parser<PredefinedConstraints> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.scalekit.grpc.buf.validate.MessageConstraints getDefaultInstanceForType() {
+  public com.scalekit.grpc.buf.validate.PredefinedConstraints getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
