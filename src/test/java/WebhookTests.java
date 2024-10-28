@@ -1,4 +1,3 @@
-import com.google.type.DateTime;
 import com.scalekit.exceptions.WebHookException;
 import com.scalekit.webhooks.ScalekitWebhook;
 import org.junit.jupiter.api.BeforeAll;
@@ -9,8 +8,6 @@ import javax.crypto.spec.SecretKeySpec;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.time.Instant;
-import java.time.OffsetDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
