@@ -123,6 +123,19 @@ public class ScalekitDirectoryClient implements DirectoryClient {
          return response.getDirectories(0);
     }
 
+    @Override
+    public Directory getDirectory(String directoryId, String organizationId) {
+        try {
+            GetDirectoryRequest request = GetDirectoryRequest.newBuilder()
+                    .setId(directoryId)
+                    .setOrganizationId(organizationId)
+                    .build();
+            return directoryStub.getDirectory(request).getDirectory();
+        } catch (StatusRuntimeException e) {
+            throw new APIException(e);
+        }
+    }
+
 
     private ListDirectoryResourceOptions validateOptions(ListDirectoryResourceOptions options){
         if (Objects.isNull(options)){
