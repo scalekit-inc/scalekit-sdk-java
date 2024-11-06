@@ -24,4 +24,8 @@ public interface OrganizationClient {
 
   Link generatePortalLink(String organizationId);
 
+  Organization updateOrganizationSettings(String organizationId, List<OrganizationSettingsFeature> settings);
+
+
+
 }

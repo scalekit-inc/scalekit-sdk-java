@@ -113,6 +113,16 @@ public class ScalekitDirectoryClient implements DirectoryClient {
         }
     }
 
+    @Override
+    public Directory getDirectoryByOrganizationId(String OrganizationId) {
+
+       ListDirectoriesResponse response = listDirectories(OrganizationId);
+       if (response.getDirectoriesCount() == 0){
+           throw new APIException("Directory does not exist for organization");
+       }
+         return response.getDirectories(0);
+    }
+
 
     private ListDirectoryResourceOptions validateOptions(ListDirectoryResourceOptions options){
         if (Objects.isNull(options)){
@@ -126,7 +136,6 @@ public class ScalekitDirectoryClient implements DirectoryClient {
         if (Objects.isNull(options.getPageToken())){
             options.setPageToken("");
         }
-
         return options;
     }
 

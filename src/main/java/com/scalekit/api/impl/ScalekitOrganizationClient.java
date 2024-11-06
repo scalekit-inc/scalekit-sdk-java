@@ -232,4 +232,17 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         }
     }
 
+    @Override
+    public Organization updateOrganizationSettings(String organizationId, List<OrganizationSettingsFeature> settings) {
+        UpdateOrganizationSettingsRequest request = UpdateOrganizationSettingsRequest.newBuilder()
+                .setId(organizationId)
+                .setSettings(OrganizationSettings.newBuilder().addAllFeatures(settings))
+                .build();
+        try {
+            GetOrganizationResponse  response = this.organizationStub.updateOrganizationSettings(request);
+            return response.getOrganization();
+        } catch (StatusRuntimeException e) {
+            throw new APIException(e);
+        }
+    }
 }
