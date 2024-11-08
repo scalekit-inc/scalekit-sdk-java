@@ -35,8 +35,7 @@ public class ScalekitClient {
 
 
         authenticationClient = new ScalekitAuthClient();
-        String token = authenticationClient.getClientAccessToken();
-        ScalekitCredentials credentials = new ScalekitCredentials(token);
+        ScalekitCredentials credentials = new ScalekitCredentials(authenticationClient);
         try {
             URL url = URI.create(environment.siteName).toURL();
             // Managed channel automatically handles channel closing
