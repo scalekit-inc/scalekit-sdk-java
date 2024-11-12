@@ -26,6 +26,4 @@ public interface OrganizationClient {
 
   Organization updateOrganizationSettings(String organizationId, List<OrganizationSettingsFeature> settings);
 
-
-
 }

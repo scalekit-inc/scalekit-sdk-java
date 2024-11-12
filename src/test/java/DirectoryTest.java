@@ -156,7 +156,7 @@ public class DirectoryTest {
     @Test
     public void GetDirectoryByOrganizationId(){
         var directory = client.directories().getDirectoryByOrganizationId(organizationId);
-        var directoryById = client.directories().getDirectory(directoryId, organizationId);
+        var directoryById = client.directories().getPrimaryDirectoryByOrganizationId(directoryId, organizationId);
         assertNotNull(directory);
         assertNotNull(directoryById);
         assertEquals(directory.getId(), directoryById.getId());

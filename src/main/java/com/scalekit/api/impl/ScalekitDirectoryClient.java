@@ -124,7 +124,7 @@ public class ScalekitDirectoryClient implements DirectoryClient {
     }
 
     @Override
-    public Directory getDirectory(String directoryId, String organizationId) {
+    public Directory getPrimaryDirectoryByOrganizationId(String directoryId, String organizationId) {
         try {
             GetDirectoryRequest request = GetDirectoryRequest.newBuilder()
                     .setId(directoryId)

@@ -16,5 +16,5 @@ public interface DirectoryClient {
 
     Directory getDirectoryByOrganizationId(String OrganizationId);
 
-    Directory getDirectory(String directoryId, String organizationId);
+    Directory getPrimaryDirectoryByOrganizationId(String directoryId, String organizationId);
 }
