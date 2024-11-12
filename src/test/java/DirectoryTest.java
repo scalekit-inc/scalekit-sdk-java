@@ -34,7 +34,7 @@ public class DirectoryTest {
         String environmentUrl = System.getenv("SCALEKIT_ENVIRONMENT_URL");
         String  clientId = System.getenv("SCALEKIT_CLIENT_ID");
         String apiSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
-        
+
 
         client = new ScalekitClient(environmentUrl, clientId, apiSecret);
     }
