@@ -30,14 +30,11 @@ public class DirectoryTest {
         updatedAfter = Timestamp.newBuilder().setSeconds(seconds).build();
 
 
-//        //Init client
-//        String environmentUrl = System.getenv("SCALEKIT_ENVIRONMENT_URL");
-//        String  clientId = System.getenv("SCALEKIT_CLIENT_ID");
-//        String apiSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
-
-        String environmentUrl = "https://well-equipped-boomslang.scalekit.cloud";
-        String  clientId = "skc_26602260880425255";
-        String apiSecret = "test_qxbBaKHcCJch1e4z4efPoNmDB6Mf5jupVdn5hfH7HL7gzq5apGG4tiCkDaHRkmY2";
+        //Init client
+        String environmentUrl = System.getenv("SCALEKIT_ENVIRONMENT_URL");
+        String  clientId = System.getenv("SCALEKIT_CLIENT_ID");
+        String apiSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
+        
 
         client = new ScalekitClient(environmentUrl, clientId, apiSecret);
     }
