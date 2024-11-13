@@ -30,10 +30,11 @@ public class DirectoryTest {
         updatedAfter = Timestamp.newBuilder().setSeconds(seconds).build();
 
 
-        //Init client
-        String environmentUrl = System.getenv("SCALEKIT_ENVIRONMENT_URL");
-        String  clientId = System.getenv("SCALEKIT_CLIENT_ID");
-        String apiSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
+
+
+        String environmentUrl = "https://well-equipped-boomslang.scalekit.cloud";
+        String  clientId = "skc_26602260880425255";
+        String apiSecret = "test_qxbBaKHcCJch1e4z4efPoNmDB6Mf5jupVdn5hfH7HL7gzq5apGG4tiCkDaHRkmY2";
 
 
         client = new ScalekitClient(environmentUrl, clientId, apiSecret);
@@ -155,8 +156,8 @@ public class DirectoryTest {
 
     @Test
     public void GetDirectoryByOrganizationId(){
-        var directory = client.directories().getDirectoryByOrganizationId(organizationId);
-        var directoryById = client.directories().getPrimaryDirectoryByOrganizationId(directoryId, organizationId);
+        var directory = client.directories().getPrimaryDirectoryByOrganizationId(organizationId);
+        var directoryById = client.directories().listDirectories(organizationId).getDirectories(0);
         assertNotNull(directory);
         assertNotNull(directoryById);
         assertEquals(directory.getId(), directoryById.getId());

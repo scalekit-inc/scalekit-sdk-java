@@ -14,7 +14,5 @@ public interface DirectoryClient {
 
     ToggleDirectoryResponse  disableDirectory(String directoryId, String organizationId);
 
-    Directory getDirectoryByOrganizationId(String OrganizationId);
-
-    Directory getPrimaryDirectoryByOrganizationId(String directoryId, String organizationId);
+    Directory getPrimaryDirectoryByOrganizationId(String organizationId);
 }

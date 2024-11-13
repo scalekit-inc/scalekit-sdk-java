@@ -114,26 +114,13 @@ public class ScalekitDirectoryClient implements DirectoryClient {
     }
 
     @Override
-    public Directory getDirectoryByOrganizationId(String OrganizationId) {
+    public Directory getPrimaryDirectoryByOrganizationId(String OrganizationId) {
 
        ListDirectoriesResponse response = listDirectories(OrganizationId);
        if (response.getDirectoriesCount() == 0){
            throw new APIException("Directory does not exist for organization");
        }
          return response.getDirectories(0);
-    }
-
-    @Override
-    public Directory getPrimaryDirectoryByOrganizationId(String directoryId, String organizationId) {
-        try {
-            GetDirectoryRequest request = GetDirectoryRequest.newBuilder()
-                    .setId(directoryId)
-                    .setOrganizationId(organizationId)
-                    .build();
-            return directoryStub.getDirectory(request).getDirectory();
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
     }
 
 
