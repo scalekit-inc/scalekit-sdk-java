@@ -30,12 +30,9 @@ public class DirectoryTest {
         updatedAfter = Timestamp.newBuilder().setSeconds(seconds).build();
 
 
-
-
-        String environmentUrl = "https://well-equipped-boomslang.scalekit.cloud";
-        String  clientId = "skc_26602260880425255";
-        String apiSecret = "test_qxbBaKHcCJch1e4z4efPoNmDB6Mf5jupVdn5hfH7HL7gzq5apGG4tiCkDaHRkmY2";
-
+        String environmentUrl = System.getenv("SCALEKIT_ENVIRONMENT_URL");
+        String  clientId = System.getenv("SCALEKIT_CLIENT_ID");
+        String apiSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
 
         client = new ScalekitClient(environmentUrl, clientId, apiSecret);
     }
@@ -45,6 +42,8 @@ public class DirectoryTest {
         ListDirectoriesResponse response = client.directories().listDirectories(organizationId);
         assertTrue(response.getDirectoriesCount() > 0);
 
+        var directoryById = client.directories().getDirectory(directoryId, organizationId);
+
         var directory = response.getDirectories(0);
         assertNotNull(directory);
         assertEquals(directoryId, directory.getId());
@@ -52,6 +51,9 @@ public class DirectoryTest {
         assertEquals(DirectoryProvider.OKTA, directory.getDirectoryProvider());
         assertTrue(directory.getStats().getTotalGroups() > 0);
         assertTrue(directory.getStats().getTotalUsers() > 0);
+        assertEquals(directoryById.getId(), directory.getId());
+        assertEquals(directoryById.getOrganizationId(), directory.getOrganizationId());
+
     }
 
     @Test
@@ -157,7 +159,7 @@ public class DirectoryTest {
     @Test
     public void GetDirectoryByOrganizationId(){
         var directory = client.directories().getPrimaryDirectoryByOrganizationId(organizationId);
-        var directoryById = client.directories().listDirectories(organizationId).getDirectories(0);
+        var directoryById = client.directories().getDirectory(directory.getId(), organizationId);
         assertNotNull(directory);
         assertNotNull(directoryById);
         assertEquals(directory.getId(), directoryById.getId());

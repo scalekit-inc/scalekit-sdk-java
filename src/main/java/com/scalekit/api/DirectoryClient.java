@@ -4,6 +4,8 @@ import com.scalekit.grpc.scalekit.v1.directories.*;
 
 public interface DirectoryClient {
 
+    Directory getDirectory(String directoryId, String organizationId);
+
     ListDirectoriesResponse listDirectories(String organizationId);
 
     ListDirectoryUsersResponse listDirectoryUsers(String directoryId, String organizationId, ListDirectoryResourceOptions options);
