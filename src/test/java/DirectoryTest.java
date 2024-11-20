@@ -1,10 +1,14 @@
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Timestamp;
 import com.scalekit.ScalekitClient;
-import com.scalekit.api.ListDirectoryResourceOptions;
+import com.scalekit.api.util.ListDirectoryResourceOptions;
+import com.scalekit.api.util.ListDirectoryUserResponse;
 import com.scalekit.grpc.scalekit.v1.directories.DirectoryProvider;
 import com.scalekit.grpc.scalekit.v1.directories.ListDirectoriesResponse;
 import com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsResponse;
-import com.scalekit.grpc.scalekit.v1.directories.ListDirectoryUsersResponse;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -16,8 +20,8 @@ public class DirectoryTest {
     private static String organizationId;
     private static String directoryId;
     private static Timestamp updatedAfter;
-
     private static ScalekitClient client;
+    private static final ObjectMapper mapper = new ObjectMapper();
 
     @BeforeAll
     static void init(){
@@ -57,7 +61,8 @@ public class DirectoryTest {
     }
 
     @Test
-    public void ListDirectoryUsers(){
+    public void ListDirectoryUsers() throws InvalidProtocolBufferException, JsonProcessingException {
+
         ListDirectoriesResponse response = client.directories().listDirectories(organizationId);
         assertTrue(response.getDirectoriesCount() > 0);
 
@@ -70,7 +75,7 @@ public class DirectoryTest {
                 .includeDetail(true)
                 .build();
 
-        ListDirectoryUsersResponse usersResponse = client
+        ListDirectoryUserResponse usersResponse = client
                 .directories()
                 .listDirectoryUsers(directory.getId(),organizationId,options);
 
@@ -81,6 +86,12 @@ public class DirectoryTest {
         assertNotNull(user.getId());
         assertNotNull(user.getEmail());
         assertNotNull(user.getUserDetail());
+
+        JsonNode node = mapper.readTree(user.getUserDetail());
+        assertNotNull(node);
+        assertEquals(node.get("id").asText(), user.getId());
+        assertEquals(node.get("email").asText(), user.getEmail());
+
     }
 
     @Test
@@ -98,7 +109,7 @@ public class DirectoryTest {
                 .updatedAfter(updatedAfter)
                 .build();
 
-        ListDirectoryUsersResponse usersResponse = client
+        ListDirectoryUserResponse usersResponse = client
                 .directories()
                 .listDirectoryUsers(directory.getId(),organizationId,options);
 
@@ -129,6 +140,7 @@ public class DirectoryTest {
                 .directories()
                 .listDirectoryGroups(directory.getId(),organizationId,options);
 
+
         assertTrue(groupsResponse.getGroupsCount() > 0);
 
         var group = groupsResponse.getGroups(0);
@@ -136,7 +148,6 @@ public class DirectoryTest {
         assertNotNull(group.getId());
         assertNotNull(group.getDisplayName());
         assertNotNull(group.getGroupDetail());
-
     }
 
     @Test

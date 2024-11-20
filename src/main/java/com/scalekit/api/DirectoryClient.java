@@ -1,5 +1,7 @@
 package com.scalekit.api;
 
+import com.scalekit.api.util.ListDirectoryResourceOptions;
+import com.scalekit.api.util.ListDirectoryUserResponse;
 import com.scalekit.grpc.scalekit.v1.directories.*;
 
 public interface DirectoryClient {
@@ -8,7 +10,7 @@ public interface DirectoryClient {
 
     ListDirectoriesResponse listDirectories(String organizationId);
 
-    ListDirectoryUsersResponse listDirectoryUsers(String directoryId, String organizationId, ListDirectoryResourceOptions options);
+    ListDirectoryUserResponse listDirectoryUsers(String directoryId, String organizationId, ListDirectoryResourceOptions options);
 
     ListDirectoryGroupsResponse listDirectoryGroups(String directoryId, String organizationId, ListDirectoryResourceOptions options);
 

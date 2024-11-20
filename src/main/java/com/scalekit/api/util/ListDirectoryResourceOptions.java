@@ -1,4 +1,4 @@
-package com.scalekit.api;
+package com.scalekit.api.util;
 
 
 import com.google.protobuf.Timestamp;

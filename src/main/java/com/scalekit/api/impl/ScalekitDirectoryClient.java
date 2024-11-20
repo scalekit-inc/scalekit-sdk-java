@@ -3,7 +3,8 @@ package com.scalekit.api.impl;
 import com.google.protobuf.Timestamp;
 import com.scalekit.Environment;
 import com.scalekit.api.DirectoryClient;
-import com.scalekit.api.ListDirectoryResourceOptions;
+import com.scalekit.api.util.ListDirectoryResourceOptions;
+import com.scalekit.api.util.ListDirectoryUserResponse;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.directories.*;
 import com.scalekit.internal.ScalekitCredentials;
@@ -60,7 +61,7 @@ public class ScalekitDirectoryClient implements DirectoryClient {
     }
 
     @Override
-    public ListDirectoryUsersResponse listDirectoryUsers(String directoryId, String organizationId, ListDirectoryResourceOptions options) {
+    public ListDirectoryUserResponse listDirectoryUsers(String directoryId, String organizationId, ListDirectoryResourceOptions options) {
 
 
         options = validateOptions(options);
@@ -74,9 +75,9 @@ public class ScalekitDirectoryClient implements DirectoryClient {
                 .setUpdatedAfter(options.getUpdatedAfter())
                 .build();
 
-
         try {
-            return directoryStub.listDirectoryUsers(request);
+            ListDirectoryUsersResponse grpcListDirectoryUsersResponse = directoryStub.listDirectoryUsers(request);
+            return new ListDirectoryUserResponse(grpcListDirectoryUsersResponse);
         } catch (StatusRuntimeException e) {
             throw new APIException(e);
         }
