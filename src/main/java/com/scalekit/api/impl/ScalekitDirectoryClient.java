@@ -3,6 +3,7 @@ package com.scalekit.api.impl;
 import com.google.protobuf.Timestamp;
 import com.scalekit.Environment;
 import com.scalekit.api.DirectoryClient;
+import com.scalekit.api.util.ListDirectoryGroupResponse;
 import com.scalekit.api.util.ListDirectoryResourceOptions;
 import com.scalekit.api.util.ListDirectoryUserResponse;
 import com.scalekit.exceptions.APIException;
@@ -84,7 +85,7 @@ public class ScalekitDirectoryClient implements DirectoryClient {
     }
 
     @Override
-    public ListDirectoryGroupsResponse listDirectoryGroups(String directoryId, String organizationId, ListDirectoryResourceOptions options) {
+    public ListDirectoryGroupResponse listDirectoryGroups(String directoryId, String organizationId, ListDirectoryResourceOptions options) {
         options = validateOptions(options);
         ListDirectoryGroupsRequest request = ListDirectoryGroupsRequest.newBuilder()
                 .setDirectoryId(directoryId)
@@ -95,7 +96,8 @@ public class ScalekitDirectoryClient implements DirectoryClient {
                 .build();
 
         try {
-            return directoryStub.listDirectoryGroups(request);
+            ListDirectoryGroupsResponse response = directoryStub.listDirectoryGroups(request);
+            return new ListDirectoryGroupResponse(response);
         } catch (StatusRuntimeException e) {
             throw new APIException(e);
         }

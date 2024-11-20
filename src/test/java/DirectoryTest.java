@@ -4,11 +4,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Timestamp;
 import com.scalekit.ScalekitClient;
+import com.scalekit.api.util.ListDirectoryGroupResponse;
 import com.scalekit.api.util.ListDirectoryResourceOptions;
 import com.scalekit.api.util.ListDirectoryUserResponse;
 import com.scalekit.grpc.scalekit.v1.directories.DirectoryProvider;
 import com.scalekit.grpc.scalekit.v1.directories.ListDirectoriesResponse;
-import com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsResponse;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -81,17 +81,18 @@ public class DirectoryTest {
 
         assertTrue(usersResponse.getUsersCount() > 1);
 
-        var user = usersResponse.getUsers(0);
-        assertNotNull(user);
-        assertNotNull(user.getId());
-        assertNotNull(user.getEmail());
-        assertNotNull(user.getUserDetail());
+        for (int i = 0; i < usersResponse.getUsersCount(); i++) {
+            var user = usersResponse.getUsers(i);
+            assertNotNull(user);
+            assertNotNull(user.getId());
+            assertNotNull(user.getEmail());
+            assertNotNull(user.getUserDetail());
 
-        JsonNode node = mapper.readTree(user.getUserDetail());
-        assertNotNull(node);
-        assertEquals(node.get("id").asText(), user.getId());
-        assertEquals(node.get("email").asText(), user.getEmail());
-
+            JsonNode node = mapper.readTree(user.getUserDetail());
+            assertNotNull(node);
+            assertEquals(node.get("id").asText(), user.getId());
+            assertEquals(node.get("email").asText(), user.getEmail());
+        }
     }
 
     @Test
@@ -123,34 +124,6 @@ public class DirectoryTest {
     }
 
     @Test
-    public void ListDirectoryGroups(){
-        ListDirectoriesResponse response = client.directories().listDirectories(organizationId);
-        assertTrue(response.getDirectoriesCount() > 0);
-
-        var directory = response.getDirectories(0);
-        assertNotNull(directory);
-
-        var options = ListDirectoryResourceOptions.builder()
-                .pageSize(10)
-                .pageToken("")
-                .includeDetail(true)
-                .build();
-
-        ListDirectoryGroupsResponse groupsResponse = client
-                .directories()
-                .listDirectoryGroups(directory.getId(),organizationId,options);
-
-
-        assertTrue(groupsResponse.getGroupsCount() > 0);
-
-        var group = groupsResponse.getGroups(0);
-        assertNotNull(group);
-        assertNotNull(group.getId());
-        assertNotNull(group.getDisplayName());
-        assertNotNull(group.getGroupDetail());
-    }
-
-    @Test
     public void EnableDisableDirectory(){
         try {
             var enableResponse = client.directories().enableDirectory(directoryId, organizationId);
@@ -164,6 +137,41 @@ public class DirectoryTest {
         }finally {
             //cleanup
             client.directories().enableDirectory(directoryId, organizationId);
+        }
+    }
+
+    @Test
+    public void ListDirectoryGroups() throws JsonProcessingException {
+        ListDirectoriesResponse response = client.directories().listDirectories(organizationId);
+        assertTrue(response.getDirectoriesCount() > 0);
+
+        var directory = response.getDirectories(0);
+        assertNotNull(directory);
+
+        var options = ListDirectoryResourceOptions.builder()
+                .pageSize(10)
+                .pageToken("")
+                .includeDetail(true)
+                .build();
+
+        ListDirectoryGroupResponse groupsResponse = client
+                .directories()
+                .listDirectoryGroups(directory.getId(),organizationId,options);
+
+
+        assertTrue(groupsResponse.getGroupsCount() > 0);
+
+        for (int i = 0; i < groupsResponse.getGroupsCount(); i++) {
+            var group = groupsResponse.getGroups(i);
+            assertNotNull(group);
+            assertNotNull(group.getId());
+            assertNotNull(group.getDisplayName());
+            assertNotNull(group.getGroupDetail());
+
+            JsonNode node = mapper.readTree(group.getGroupDetail());
+            assertNotNull(node);
+            assertEquals(node.get("id").asText(), group.getId());
+            assertEquals(node.get("display_name").asText(), group.getDisplayName());
         }
     }
 
