@@ -36,7 +36,6 @@ public class ScalekitOrganizationClient implements OrganizationClient {
      * create creates a new organization in Scalekit
      * @param organization: The organization to create
      * @return Organization: The organization created
-     * @throws APIException: If an error occurs
      */
     @Override
     public Organization create(CreateOrganization organization) {
@@ -57,7 +56,6 @@ public class ScalekitOrganizationClient implements OrganizationClient {
      * getById retrieves an organization by its ID
      * @param id: The organizations ID
      * @return Organization: The organization retrieved
-     * @throws APIException: If an error occurs
      */
     @Override
     public Organization getById(String id) {
@@ -80,7 +78,6 @@ public class ScalekitOrganizationClient implements OrganizationClient {
      * getByExternalId retrieves an organization by its external ID
      * @param externalId: The organizations external ID
      * @return Organization: The organization retrieved
-     * @throws APIException: If an error occurs
      */
     @Override
     public Organization getByExternalId(String externalId) {
@@ -103,7 +100,6 @@ public class ScalekitOrganizationClient implements OrganizationClient {
      * @param id: The organizations ID
      * @param organization: The organization to update
      * @return Organization: The organization updated
-     * @throws APIException: If an error occurs
      */
     @Override
     public Organization updateById(String id, UpdateOrganization organization) {
@@ -127,7 +123,6 @@ public class ScalekitOrganizationClient implements OrganizationClient {
      * @param externalId: The organizations external ID
      * @param organization: The organization to update
      * @return Organization: The organization updated
-     * @throws APIException: If an error occurs
      */
     @Override
     public Organization updateByExternalId(String externalId, UpdateOrganization organization) {
@@ -148,7 +143,6 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     /**
      * deleteById deletes an organization by its ID returns nothing if successful
      * @param id: The organizations ID
-     * @throws APIException: If an error occurs
      */
     @Override
     public void deleteById(String id) {
@@ -166,7 +160,6 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     /**
      * deleteByExternalId deletes an organization by its external ID returns nothing if successful
      * @param externalId: The organizations external ID
-     * @throws APIException: If an error occurs
      */
     @Override
     public void deleteByExternalId(String externalId) {
@@ -190,7 +183,6 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         * @param pageSize: The number of organizations to retrieve default page size is 10
         * @param pageToken: The page token to retrieve the next page
         * @return ListOrganizationsResponse: The list of organizations retrieved
-        * @throws APIException: If an error occurs
      */
     @Override
     public ListOrganizationsResponse listOrganizations(int pageSize, String pageToken) {
@@ -215,8 +207,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     /**
         * generatePortalLink generates a portal link for an organization
         * @param organizationId: The organization ID
-        * @return Link: The portal link generated
-        * @throws APIException: If an error occurs
+        * @return Link: The portal link generate
      */
     @Override
     public Link generatePortalLink(String organizationId) {
@@ -237,7 +228,6 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         * @param organizationId: The organization ID
         * @param settings: The settings to update
         * @return Organization: The organization updated
-        * @throws APIException: If an error occurs
      */
     @Override
     public Organization updateOrganizationSettings(String organizationId, List<OrganizationSettingsFeature> settings) {
