@@ -35,7 +35,6 @@ public class ScalekitDomainClient implements DomainClient {
         * @param organizationId: The organization ID
         * @param domainName: The domain name
         * @return Domain: The domain created
-        * @throws APIException: If an error occurs
      */
     @Override
     public Domain createDomain(String organizationId, String domainName) {
@@ -60,7 +59,6 @@ public class ScalekitDomainClient implements DomainClient {
         * @param organizationId: The organization ID
         * @param domainId: The domain ID
         * @return Domain: The domain retrieved
-        * @throws APIException: If an error occurs
      */
 
     @Override
@@ -81,8 +79,7 @@ public class ScalekitDomainClient implements DomainClient {
     /**
         * listDomainsByOrganizationId retrieves all domains for an organization
         * @param organizationId: The organization ID
-        * @return List<Domain>: The list of domains retrieved
-        * @throws APIException: If an error occurs
+        * @return List of Domain: The list of domains retrieved
      */
 
     @Override

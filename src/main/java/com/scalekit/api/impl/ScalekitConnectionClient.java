@@ -50,8 +50,7 @@ public class ScalekitConnectionClient implements ConnectionClient {
     /**
         * listConnectionsByDomain retrieves a list of connections by domain
         * @param domain: The domain
-        * @return List<Connection>: The list of connections
-        * @throws APIException: If an error occurs
+        * @return ListConnectionsResponse: The list of connections
      */
     @Override
     public ListConnectionsResponse listConnectionsByDomain(String domain) {
@@ -69,8 +68,7 @@ public class ScalekitConnectionClient implements ConnectionClient {
     /**
         * listConnectionsByOrganization retrieves a list of connections by organization
         * @param organizationId: The organization ID
-        * @return List<Connection>: The list of connections
-        * @throws APIException: If an error occurs
+        * @return ListConnectionsResponse: The list of connections
      */
     @Override
     public ListConnectionsResponse listConnectionsByOrganization(String organizationId) {
@@ -92,7 +90,6 @@ public class ScalekitConnectionClient implements ConnectionClient {
         * @param connectionId: The connection ID
         * @param organizationId: The organization ID
         * @return ToggleConnectionResponse: The response after enabling the connection
-        * @throws APIException: If an error occurs
      */
     @Override
     public ToggleConnectionResponse enableConnection(String connectionId, String organizationId) {
@@ -114,7 +111,6 @@ public class ScalekitConnectionClient implements ConnectionClient {
         * @param connectionId: The connection ID
         * @param organizationId: The organization ID
         * @return ToggleConnectionResponse: The response after disabling the connection
-        * @throws APIException: If an error occurs
      */
     @Override
     public ToggleConnectionResponse disableConnection(String connectionId, String organizationId) {
