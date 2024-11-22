@@ -27,7 +27,7 @@ public class ScalekitConnectionClient implements ConnectionClient {
     }
 
 
-    /*
+    /**
         * getConnectionById retrieves a connection by its ID
         * @param connectionId: The connection ID
         * @param organizationId: The organization ID
@@ -47,7 +47,7 @@ public class ScalekitConnectionClient implements ConnectionClient {
         }
     }
 
-    /*
+    /**
         * listConnectionsByDomain retrieves a list of connections by domain
         * @param domain: The domain
         * @return List<Connection>: The list of connections
@@ -66,7 +66,7 @@ public class ScalekitConnectionClient implements ConnectionClient {
         }
     }
 
-    /*
+    /**
         * listConnectionsByOrganization retrieves a list of connections by organization
         * @param organizationId: The organization ID
         * @return List<Connection>: The list of connections
@@ -86,6 +86,14 @@ public class ScalekitConnectionClient implements ConnectionClient {
         }
     }
 
+
+    /**
+        * enableConnection enables a connection by its ID and organization ID
+        * @param connectionId: The connection ID
+        * @param organizationId: The organization ID
+        * @return ToggleConnectionResponse: The response after enabling the connection
+        * @throws APIException: If an error occurs
+     */
     @Override
     public ToggleConnectionResponse enableConnection(String connectionId, String organizationId) {
         ToggleConnectionRequest request = ToggleConnectionRequest.newBuilder()
@@ -101,6 +109,13 @@ public class ScalekitConnectionClient implements ConnectionClient {
 
     }
 
+    /**
+        * disableConnection disables a connection by its ID and organization ID
+        * @param connectionId: The connection ID
+        * @param organizationId: The organization ID
+        * @return ToggleConnectionResponse: The response after disabling the connection
+        * @throws APIException: If an error occurs
+     */
     @Override
     public ToggleConnectionResponse disableConnection(String connectionId, String organizationId) {
         ToggleConnectionRequest request = ToggleConnectionRequest.newBuilder()

@@ -34,6 +34,16 @@ public class ScalekitDirectoryClient implements DirectoryClient {
 
     }
 
+
+
+    /**
+     * Retrieves a directory by its ID and organization ID.
+     *
+     * @param directoryId The ID of the directory.
+     * @param organizationId The ID of the organization.
+     * @return The directory retrieved.
+     * @throws APIException If an error occurs.
+     */
     @Override
     public Directory getDirectory(String directoryId, String organizationId) {
         GetDirectoryRequest request = GetDirectoryRequest.newBuilder()
@@ -48,6 +58,13 @@ public class ScalekitDirectoryClient implements DirectoryClient {
         }
     }
 
+    /**
+     * Lists all directories for a given organization ID.
+     *
+     * @param organizationId The ID of the organization.
+     * @return The list of directories.
+     * @throws APIException If an error occurs.
+     */
     @Override
     public ListDirectoriesResponse listDirectories(String organizationId) {
         ListDirectoriesRequest request = ListDirectoriesRequest.newBuilder()
@@ -61,6 +78,16 @@ public class ScalekitDirectoryClient implements DirectoryClient {
         }
     }
 
+
+    /**
+     * Lists all users in a directory with specified options.
+     *
+     * @param directoryId The ID of the directory.
+     * @param organizationId The ID of the organization.
+     * @param options The options for listing directory users.
+     * @return The list of directory users.
+     * @throws APIException If an error occurs.
+     */
     @Override
     public ListDirectoryUserResponse listDirectoryUsers(String directoryId, String organizationId, ListDirectoryResourceOptions options) {
 
@@ -84,6 +111,16 @@ public class ScalekitDirectoryClient implements DirectoryClient {
         }
     }
 
+
+    /**
+     * Lists all groups in a directory with specified options.
+     *
+     * @param directoryId The ID of the directory.
+     * @param organizationId The ID of the organization.
+     * @param options The options for listing directory groups.
+     * @return The list of directory groups.
+     * @throws APIException If an error occurs.
+     */
     @Override
     public ListDirectoryGroupResponse listDirectoryGroups(String directoryId, String organizationId, ListDirectoryResourceOptions options) {
         options = validateOptions(options);
@@ -103,6 +140,15 @@ public class ScalekitDirectoryClient implements DirectoryClient {
         }
     }
 
+
+    /**
+     * Enables a directory by its ID and organization ID.
+     *
+     * @param directoryId The ID of the directory.
+     * @param organizationId The ID of the organization.
+     * @return The response after enabling the directory.
+     * @throws APIException If an error occurs.
+     */
     @Override
     public ToggleDirectoryResponse enableDirectory(String directoryId, String organizationId) {
         ToggleDirectoryRequest request = ToggleDirectoryRequest.newBuilder()
@@ -117,6 +163,15 @@ public class ScalekitDirectoryClient implements DirectoryClient {
 
     }
 
+
+    /**
+     * Disables a directory by its ID and organization ID.
+     *
+     * @param directoryId The ID of the directory.
+     * @param organizationId The ID of the organization.
+     * @return The response after disabling the directory.
+     * @throws APIException If an error occurs.
+     */
     @Override
     public ToggleDirectoryResponse disableDirectory(String directoryId, String organizationId) {
         ToggleDirectoryRequest request = ToggleDirectoryRequest.newBuilder()
@@ -130,10 +185,17 @@ public class ScalekitDirectoryClient implements DirectoryClient {
         }
     }
 
+    /**
+     * Retrieves the primary directory for a given organization ID.
+     *
+     * @param organizationId The ID of the organization.
+     * @return The primary directory.
+     * @throws APIException If an error occurs.
+     */
     @Override
-    public Directory getPrimaryDirectoryByOrganizationId(String OrganizationId) {
+    public Directory getPrimaryDirectoryByOrganizationId(String organizationId) {
 
-       ListDirectoriesResponse response = listDirectories(OrganizationId);
+       ListDirectoriesResponse response = listDirectories(organizationId);
        if (response.getDirectoriesCount() == 0){
            throw new APIException("Directory does not exist for organization");
        }
