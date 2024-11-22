@@ -9,17 +9,17 @@ public interface UpdateOrganizationResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization"];</code>
+   * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the organization field is set.
    */
   boolean hasOrganization();
   /**
-   * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization"];</code>
+   * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The organization.
    */
   com.scalekit.grpc.scalekit.v1.organizations.Organization getOrganization();
   /**
-   * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization"];</code>
+   * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.organizations.OrganizationOrBuilder getOrganizationOrBuilder();
 }

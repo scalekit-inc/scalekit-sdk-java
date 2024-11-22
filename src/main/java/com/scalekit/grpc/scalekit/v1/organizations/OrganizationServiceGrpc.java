@@ -5,7 +5,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.64.0)",
+    value = "by gRPC proto compiler (version 1.67.1)",
     comments = "Source: scalekit/v1/organizations/organizations.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class OrganizationServiceGrpc {
@@ -325,6 +325,37 @@ public final class OrganizationServiceGrpc {
     return getGetPortalLinksMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationSettingsRequest,
+      com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationResponse> getUpdateOrganizationSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateOrganizationSettings",
+      requestType = com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationSettingsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationSettingsRequest,
+      com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationResponse> getUpdateOrganizationSettingsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationSettingsRequest, com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationResponse> getUpdateOrganizationSettingsMethod;
+    if ((getUpdateOrganizationSettingsMethod = OrganizationServiceGrpc.getUpdateOrganizationSettingsMethod) == null) {
+      synchronized (OrganizationServiceGrpc.class) {
+        if ((getUpdateOrganizationSettingsMethod = OrganizationServiceGrpc.getUpdateOrganizationSettingsMethod) == null) {
+          OrganizationServiceGrpc.getUpdateOrganizationSettingsMethod = getUpdateOrganizationSettingsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationSettingsRequest, com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateOrganizationSettings"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new OrganizationServiceMethodDescriptorSupplier("UpdateOrganizationSettings"))
+              .build();
+        }
+      }
+    }
+    return getUpdateOrganizationSettingsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -451,6 +482,13 @@ public final class OrganizationServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.GetPortalLinksResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPortalLinksMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void updateOrganizationSettings(com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateOrganizationSettingsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -568,6 +606,14 @@ public final class OrganizationServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPortalLinksMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void updateOrganizationSettings(com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateOrganizationSettingsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -663,6 +709,13 @@ public final class OrganizationServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.organizations.GetPortalLinksResponse getPortalLinks(com.scalekit.grpc.scalekit.v1.organizations.GetPortalLinkRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPortalLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationResponse updateOrganizationSettings(com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateOrganizationSettingsMethod(), getCallOptions(), request);
     }
   }
 
@@ -770,6 +823,14 @@ public final class OrganizationServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPortalLinksMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationResponse> updateOrganizationSettings(
+        com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateOrganizationSettingsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ORGANIZATION = 0;
@@ -782,6 +843,7 @@ public final class OrganizationServiceGrpc {
   private static final int METHODID_DELETE_PORTAL_LINK = 7;
   private static final int METHODID_DELETE_PORTAL_LINK_BY_ID = 8;
   private static final int METHODID_GET_PORTAL_LINKS = 9;
+  private static final int METHODID_UPDATE_ORGANIZATION_SETTINGS = 10;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -839,6 +901,10 @@ public final class OrganizationServiceGrpc {
         case METHODID_GET_PORTAL_LINKS:
           serviceImpl.getPortalLinks((com.scalekit.grpc.scalekit.v1.organizations.GetPortalLinkRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.GetPortalLinksResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_ORGANIZATION_SETTINGS:
+          serviceImpl.updateOrganizationSettings((com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -928,6 +994,13 @@ public final class OrganizationServiceGrpc {
               com.scalekit.grpc.scalekit.v1.organizations.GetPortalLinkRequest,
               com.scalekit.grpc.scalekit.v1.organizations.GetPortalLinksResponse>(
                 service, METHODID_GET_PORTAL_LINKS)))
+        .addMethod(
+          getUpdateOrganizationSettingsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationSettingsRequest,
+              com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationResponse>(
+                service, METHODID_UPDATE_ORGANIZATION_SETTINGS)))
         .build();
   }
 
@@ -986,6 +1059,7 @@ public final class OrganizationServiceGrpc {
               .addMethod(getDeletePortalLinkMethod())
               .addMethod(getDeletePortalLinkByIDMethod())
               .addMethod(getGetPortalLinksMethod())
+              .addMethod(getUpdateOrganizationSettingsMethod())
               .build();
         }
       }

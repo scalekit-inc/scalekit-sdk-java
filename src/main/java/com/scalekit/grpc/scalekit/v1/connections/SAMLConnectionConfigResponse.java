@@ -538,6 +538,32 @@ private static final long serialVersionUID = 0L;
     return wantRequestSigned_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : wantRequestSigned_;
   }
 
+  public static final int CERTIFICATE_ID_FIELD_NUMBER = 19;
+  private com.google.protobuf.StringValue certificateId_;
+  /**
+   * <code>.google.protobuf.StringValue certificate_id = 19 [json_name = "certificateId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the certificateId field is set.
+   */
+  @java.lang.Override
+  public boolean hasCertificateId() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   * <code>.google.protobuf.StringValue certificate_id = 19 [json_name = "certificateId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The certificateId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getCertificateId() {
+    return certificateId_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : certificateId_;
+  }
+  /**
+   * <code>.google.protobuf.StringValue certificate_id = 19 [json_name = "certificateId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getCertificateIdOrBuilder() {
+    return certificateId_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : certificateId_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -605,6 +631,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(18, getWantRequestSigned());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(19, getCertificateId());
     }
     getUnknownFields().writeTo(output);
   }
@@ -684,6 +713,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(18, getWantRequestSigned());
     }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(19, getCertificateId());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -761,6 +794,11 @@ private static final long serialVersionUID = 0L;
       if (!getWantRequestSigned()
           .equals(other.getWantRequestSigned())) return false;
     }
+    if (hasCertificateId() != other.hasCertificateId()) return false;
+    if (hasCertificateId()) {
+      if (!getCertificateId()
+          .equals(other.getCertificateId())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -829,6 +867,10 @@ private static final long serialVersionUID = 0L;
     if (hasWantRequestSigned()) {
       hash = (37 * hash) + WANT_REQUEST_SIGNED_FIELD_NUMBER;
       hash = (53 * hash) + getWantRequestSigned().hashCode();
+    }
+    if (hasCertificateId()) {
+      hash = (37 * hash) + CERTIFICATE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCertificateId().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -971,6 +1013,7 @@ private static final long serialVersionUID = 0L;
         getDefaultRedirectUriFieldBuilder();
         getAssertionEncryptedFieldBuilder();
         getWantRequestSignedFieldBuilder();
+        getCertificateIdFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1040,6 +1083,11 @@ private static final long serialVersionUID = 0L;
       if (wantRequestSignedBuilder_ != null) {
         wantRequestSignedBuilder_.dispose();
         wantRequestSignedBuilder_ = null;
+      }
+      certificateId_ = null;
+      if (certificateIdBuilder_ != null) {
+        certificateIdBuilder_.dispose();
+        certificateIdBuilder_ = null;
       }
       return this;
     }
@@ -1168,6 +1216,12 @@ private static final long serialVersionUID = 0L;
             ? wantRequestSigned_
             : wantRequestSignedBuilder_.build();
         to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.certificateId_ = certificateIdBuilder_ == null
+            ? certificateId_
+            : certificateIdBuilder_.build();
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1298,6 +1352,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasWantRequestSigned()) {
         mergeWantRequestSigned(other.getWantRequestSigned());
+      }
+      if (other.hasCertificateId()) {
+        mergeCertificateId(other.getCertificateId());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1443,6 +1500,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00020000;
               break;
             } // case 146
+            case 154: {
+              input.readMessage(
+                  getCertificateIdFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00040000;
+              break;
+            } // case 154
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3336,6 +3400,127 @@ private static final long serialVersionUID = 0L;
         wantRequestSigned_ = null;
       }
       return wantRequestSignedBuilder_;
+    }
+
+    private com.google.protobuf.StringValue certificateId_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> certificateIdBuilder_;
+    /**
+     * <code>.google.protobuf.StringValue certificate_id = 19 [json_name = "certificateId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the certificateId field is set.
+     */
+    public boolean hasCertificateId() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.StringValue certificate_id = 19 [json_name = "certificateId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The certificateId.
+     */
+    public com.google.protobuf.StringValue getCertificateId() {
+      if (certificateIdBuilder_ == null) {
+        return certificateId_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : certificateId_;
+      } else {
+        return certificateIdBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue certificate_id = 19 [json_name = "certificateId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setCertificateId(com.google.protobuf.StringValue value) {
+      if (certificateIdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        certificateId_ = value;
+      } else {
+        certificateIdBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue certificate_id = 19 [json_name = "certificateId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setCertificateId(
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (certificateIdBuilder_ == null) {
+        certificateId_ = builderForValue.build();
+      } else {
+        certificateIdBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue certificate_id = 19 [json_name = "certificateId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeCertificateId(com.google.protobuf.StringValue value) {
+      if (certificateIdBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0) &&
+          certificateId_ != null &&
+          certificateId_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getCertificateIdBuilder().mergeFrom(value);
+        } else {
+          certificateId_ = value;
+        }
+      } else {
+        certificateIdBuilder_.mergeFrom(value);
+      }
+      if (certificateId_ != null) {
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue certificate_id = 19 [json_name = "certificateId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearCertificateId() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      certificateId_ = null;
+      if (certificateIdBuilder_ != null) {
+        certificateIdBuilder_.dispose();
+        certificateIdBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue certificate_id = 19 [json_name = "certificateId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValue.Builder getCertificateIdBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return getCertificateIdFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue certificate_id = 19 [json_name = "certificateId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getCertificateIdOrBuilder() {
+      if (certificateIdBuilder_ != null) {
+        return certificateIdBuilder_.getMessageOrBuilder();
+      } else {
+        return certificateId_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : certificateId_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue certificate_id = 19 [json_name = "certificateId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getCertificateIdFieldBuilder() {
+      if (certificateIdBuilder_ == null) {
+        certificateIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getCertificateId(),
+                getParentForChildren(),
+                isClean());
+        certificateId_ = null;
+      }
+      return certificateIdBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

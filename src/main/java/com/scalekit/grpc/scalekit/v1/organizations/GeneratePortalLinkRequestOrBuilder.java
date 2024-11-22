@@ -19,4 +19,26 @@ public interface GeneratePortalLinkRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getIdBytes();
+
+  /**
+   * <code>optional bool sso = 2 [json_name = "sso"];</code>
+   * @return Whether the sso field is set.
+   */
+  boolean hasSso();
+  /**
+   * <code>optional bool sso = 2 [json_name = "sso"];</code>
+   * @return The sso.
+   */
+  boolean getSso();
+
+  /**
+   * <code>optional bool directory_sync = 3 [json_name = "directorySync"];</code>
+   * @return Whether the directorySync field is set.
+   */
+  boolean hasDirectorySync();
+  /**
+   * <code>optional bool directory_sync = 3 [json_name = "directorySync"];</code>
+   * @return The directorySync.
+   */
+  boolean getDirectorySync();
 }

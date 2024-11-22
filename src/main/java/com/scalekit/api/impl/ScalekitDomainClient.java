@@ -30,7 +30,7 @@ public class ScalekitDomainClient implements DomainClient {
     }
 
 
-    /*
+    /**
         * createDomain creates a new domain for the organization
         * @param organizationId: The organization ID
         * @param domainName: The domain name
@@ -55,7 +55,7 @@ public class ScalekitDomainClient implements DomainClient {
     }
 
 
-    /*
+    /**
         * getDomainById retrieves a domain by its ID
         * @param organizationId: The organization ID
         * @param domainId: The domain ID
@@ -78,7 +78,7 @@ public class ScalekitDomainClient implements DomainClient {
         }
     }
 
-    /*
+    /**
         * listDomainsByOrganizationId retrieves all domains for an organization
         * @param organizationId: The organization ID
         * @return List<Domain>: The list of domains retrieved

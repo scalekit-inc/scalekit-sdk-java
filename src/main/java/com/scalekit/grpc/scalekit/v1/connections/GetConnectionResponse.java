@@ -43,7 +43,7 @@ private static final long serialVersionUID = 0L;
   public static final int CONNECTION_FIELD_NUMBER = 1;
   private com.scalekit.grpc.scalekit.v1.connections.Connection connection_;
   /**
-   * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection"];</code>
+   * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the connection field is set.
    */
   @java.lang.Override
@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection"];</code>
+   * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connection.
    */
   @java.lang.Override
@@ -59,7 +59,7 @@ private static final long serialVersionUID = 0L;
     return connection_ == null ? com.scalekit.grpc.scalekit.v1.connections.Connection.getDefaultInstance() : connection_;
   }
   /**
-   * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection"];</code>
+   * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.connections.ConnectionOrBuilder getConnectionOrBuilder() {
@@ -417,14 +417,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.connections.Connection, com.scalekit.grpc.scalekit.v1.connections.Connection.Builder, com.scalekit.grpc.scalekit.v1.connections.ConnectionOrBuilder> connectionBuilder_;
     /**
-     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection"];</code>
+     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the connection field is set.
      */
     public boolean hasConnection() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection"];</code>
+     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The connection.
      */
     public com.scalekit.grpc.scalekit.v1.connections.Connection getConnection() {
@@ -435,7 +435,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection"];</code>
+     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setConnection(com.scalekit.grpc.scalekit.v1.connections.Connection value) {
       if (connectionBuilder_ == null) {
@@ -451,7 +451,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection"];</code>
+     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setConnection(
         com.scalekit.grpc.scalekit.v1.connections.Connection.Builder builderForValue) {
@@ -465,7 +465,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection"];</code>
+     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeConnection(com.scalekit.grpc.scalekit.v1.connections.Connection value) {
       if (connectionBuilder_ == null) {
@@ -486,7 +486,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection"];</code>
+     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearConnection() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -499,7 +499,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection"];</code>
+     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.connections.Connection.Builder getConnectionBuilder() {
       bitField0_ |= 0x00000001;
@@ -507,7 +507,7 @@ private static final long serialVersionUID = 0L;
       return getConnectionFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection"];</code>
+     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.connections.ConnectionOrBuilder getConnectionOrBuilder() {
       if (connectionBuilder_ != null) {
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection"];</code>
+     * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.connections.Connection, com.scalekit.grpc.scalekit.v1.connections.Connection.Builder, com.scalekit.grpc.scalekit.v1.connections.ConnectionOrBuilder> 

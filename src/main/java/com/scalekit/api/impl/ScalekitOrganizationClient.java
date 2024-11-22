@@ -32,7 +32,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
 
     }
 
-    /*
+    /**
      * create creates a new organization in Scalekit
      * @param organization: The organization to create
      * @return Organization: The organization created
@@ -53,7 +53,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
 
     }
 
-    /*
+    /**
      * getById retrieves an organization by its ID
      * @param id: The organizations ID
      * @return Organization: The organization retrieved
@@ -76,7 +76,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
 
     }
 
-    /*
+    /**
      * getByExternalId retrieves an organization by its external ID
      * @param externalId: The organizations external ID
      * @return Organization: The organization retrieved
@@ -98,7 +98,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
 
     }
 
-    /*
+    /**
      * updateById updates an organization by its ID
      * @param id: The organizations ID
      * @param organization: The organization to update
@@ -122,7 +122,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         }
     }
 
-    /*
+    /**
      * updateByExternalId updates an organization by its external ID
      * @param externalId: The organizations external ID
      * @param organization: The organization to update
@@ -145,7 +145,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         }
     }
 
-    /*
+    /**
      * deleteById deletes an organization by its ID returns nothing if successful
      * @param id: The organizations ID
      * @throws APIException: If an error occurs
@@ -163,7 +163,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         }
     }
 
-    /*
+    /**
      * deleteByExternalId deletes an organization by its external ID returns nothing if successful
      * @param externalId: The organizations external ID
      * @throws APIException: If an error occurs
@@ -183,7 +183,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
 
     }
 
-    /*
+    /**
         * distOrganizations retrieves a list of organizations
         * The response will have page token to retrieve the next page with the same size
         * <p>
@@ -212,7 +212,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         }
     }
 
-    /*
+    /**
         * generatePortalLink generates a portal link for an organization
         * @param organizationId: The organization ID
         * @return Link: The portal link generated
@@ -232,4 +232,24 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         }
     }
 
+    /**
+        * updateOrganizationSettings updates the settings for an organization
+        * @param organizationId: The organization ID
+        * @param settings: The settings to update
+        * @return Organization: The organization updated
+        * @throws APIException: If an error occurs
+     */
+    @Override
+    public Organization updateOrganizationSettings(String organizationId, List<OrganizationSettingsFeature> settings) {
+        UpdateOrganizationSettingsRequest request = UpdateOrganizationSettingsRequest.newBuilder()
+                .setId(organizationId)
+                .setSettings(OrganizationSettings.newBuilder().addAllFeatures(settings))
+                .build();
+        try {
+            GetOrganizationResponse  response = this.organizationStub.updateOrganizationSettings(request);
+            return response.getOrganization();
+        } catch (StatusRuntimeException e) {
+            throw new APIException(e);
+        }
+    }
 }

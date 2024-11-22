@@ -30,7 +30,7 @@
 Add this dependency to your project's build file:
 
 ```gradle
-implementation "com.scalekit:scalekit-sdk-java:1.0.1"
+implementation "com.scalekit:scalekit-sdk-java:1.0.2"
 ```
 
 ### Maven users
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.scalekit</groupId>
     <artifactId>scalekit-sdk-java</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 </dependency>
 ```
 

@@ -201,4 +201,19 @@ public interface SAMLConnectionConfigRequestOrBuilder extends
    * <code>.google.protobuf.BoolValue want_request_signed = 17 [json_name = "wantRequestSigned", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.BoolValueOrBuilder getWantRequestSignedOrBuilder();
+
+  /**
+   * <code>.google.protobuf.StringValue certificate_id = 18 [json_name = "certificateId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the certificateId field is set.
+   */
+  boolean hasCertificateId();
+  /**
+   * <code>.google.protobuf.StringValue certificate_id = 18 [json_name = "certificateId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The certificateId.
+   */
+  com.google.protobuf.StringValue getCertificateId();
+  /**
+   * <code>.google.protobuf.StringValue certificate_id = 18 [json_name = "certificateId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.StringValueOrBuilder getCertificateIdOrBuilder();
 }

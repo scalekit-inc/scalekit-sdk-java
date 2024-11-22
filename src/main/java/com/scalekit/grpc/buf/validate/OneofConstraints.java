@@ -588,7 +588,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<OneofConstraints>
+  @java.lang.Deprecated public static final com.google.protobuf.Parser<OneofConstraints>
       PARSER = new com.google.protobuf.AbstractParser<OneofConstraints>() {
     @java.lang.Override
     public OneofConstraints parsePartialFrom(

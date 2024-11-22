@@ -33,6 +33,10 @@ public enum SAMLSigningOptions
    * <code>SAML_RESPONSE_ASSERTION_SIGNING = 4;</code>
    */
   SAML_RESPONSE_ASSERTION_SIGNING(4),
+  /**
+   * <code>SAML_RESPONSE_OR_ASSERTION_SIGNING = 5;</code>
+   */
+  SAML_RESPONSE_OR_ASSERTION_SIGNING(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -56,6 +60,10 @@ public enum SAMLSigningOptions
    * <code>SAML_RESPONSE_ASSERTION_SIGNING = 4;</code>
    */
   public static final int SAML_RESPONSE_ASSERTION_SIGNING_VALUE = 4;
+  /**
+   * <code>SAML_RESPONSE_OR_ASSERTION_SIGNING = 5;</code>
+   */
+  public static final int SAML_RESPONSE_OR_ASSERTION_SIGNING_VALUE = 5;
 
 
   public final int getNumber() {
@@ -87,6 +95,7 @@ public enum SAMLSigningOptions
       case 2: return SAML_ONLY_RESPONSE_SIGNING;
       case 3: return SAML_ONLY_ASSERTION_SIGNING;
       case 4: return SAML_RESPONSE_ASSERTION_SIGNING;
+      case 5: return SAML_RESPONSE_OR_ASSERTION_SIGNING;
       default: return null;
     }
   }
@@ -117,7 +126,7 @@ public enum SAMLSigningOptions
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.connections.ConnectionsProto.getDescriptor().getEnumTypes().get(2);
+    return com.scalekit.grpc.scalekit.v1.connections.ConnectionsProto.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final SAMLSigningOptions[] VALUES = values();

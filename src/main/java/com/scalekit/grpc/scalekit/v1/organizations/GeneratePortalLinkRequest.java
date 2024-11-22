@@ -40,6 +40,7 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.organizations.GeneratePortalLinkRequest.class, com.scalekit.grpc.scalekit.v1.organizations.GeneratePortalLinkRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
@@ -79,6 +80,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SSO_FIELD_NUMBER = 2;
+  private boolean sso_ = false;
+  /**
+   * <code>optional bool sso = 2 [json_name = "sso"];</code>
+   * @return Whether the sso field is set.
+   */
+  @java.lang.Override
+  public boolean hasSso() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional bool sso = 2 [json_name = "sso"];</code>
+   * @return The sso.
+   */
+  @java.lang.Override
+  public boolean getSso() {
+    return sso_;
+  }
+
+  public static final int DIRECTORY_SYNC_FIELD_NUMBER = 3;
+  private boolean directorySync_ = false;
+  /**
+   * <code>optional bool directory_sync = 3 [json_name = "directorySync"];</code>
+   * @return Whether the directorySync field is set.
+   */
+  @java.lang.Override
+  public boolean hasDirectorySync() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional bool directory_sync = 3 [json_name = "directorySync"];</code>
+   * @return The directorySync.
+   */
+  @java.lang.Override
+  public boolean getDirectorySync() {
+    return directorySync_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -96,6 +135,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(2, sso_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(3, directorySync_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -107,6 +152,14 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(2, sso_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, directorySync_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -125,6 +178,16 @@ private static final long serialVersionUID = 0L;
 
     if (!getId()
         .equals(other.getId())) return false;
+    if (hasSso() != other.hasSso()) return false;
+    if (hasSso()) {
+      if (getSso()
+          != other.getSso()) return false;
+    }
+    if (hasDirectorySync() != other.hasDirectorySync()) return false;
+    if (hasDirectorySync()) {
+      if (getDirectorySync()
+          != other.getDirectorySync()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -138,6 +201,16 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
+    if (hasSso()) {
+      hash = (37 * hash) + SSO_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSso());
+    }
+    if (hasDirectorySync()) {
+      hash = (37 * hash) + DIRECTORY_SYNC_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getDirectorySync());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -270,6 +343,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       id_ = "";
+      sso_ = false;
+      directorySync_ = false;
       return this;
     }
 
@@ -306,6 +381,16 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.id_ = id_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sso_ = sso_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.directorySync_ = directorySync_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -357,6 +442,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasSso()) {
+        setSso(other.getSso());
+      }
+      if (other.hasDirectorySync()) {
+        setDirectorySync(other.getDirectorySync());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -388,6 +479,16 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
+            case 16: {
+              sso_ = input.readBool();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 16
+            case 24: {
+              directorySync_ = input.readBool();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 24
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -473,6 +574,86 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       id_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private boolean sso_ ;
+    /**
+     * <code>optional bool sso = 2 [json_name = "sso"];</code>
+     * @return Whether the sso field is set.
+     */
+    @java.lang.Override
+    public boolean hasSso() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional bool sso = 2 [json_name = "sso"];</code>
+     * @return The sso.
+     */
+    @java.lang.Override
+    public boolean getSso() {
+      return sso_;
+    }
+    /**
+     * <code>optional bool sso = 2 [json_name = "sso"];</code>
+     * @param value The sso to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSso(boolean value) {
+
+      sso_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional bool sso = 2 [json_name = "sso"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSso() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      sso_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean directorySync_ ;
+    /**
+     * <code>optional bool directory_sync = 3 [json_name = "directorySync"];</code>
+     * @return Whether the directorySync field is set.
+     */
+    @java.lang.Override
+    public boolean hasDirectorySync() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional bool directory_sync = 3 [json_name = "directorySync"];</code>
+     * @return The directorySync.
+     */
+    @java.lang.Override
+    public boolean getDirectorySync() {
+      return directorySync_;
+    }
+    /**
+     * <code>optional bool directory_sync = 3 [json_name = "directorySync"];</code>
+     * @param value The directorySync to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDirectorySync(boolean value) {
+
+      directorySync_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional bool directory_sync = 3 [json_name = "directorySync"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDirectorySync() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      directorySync_ = false;
       onChanged();
       return this;
     }

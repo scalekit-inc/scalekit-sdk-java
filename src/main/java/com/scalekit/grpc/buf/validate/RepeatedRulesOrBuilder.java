@@ -6,7 +6,8 @@ package com.scalekit.grpc.buf.validate;
 
 public interface RepeatedRulesOrBuilder extends
     // @@protoc_insertion_point(interface_extends:buf.validate.RepeatedRules)
-    com.google.protobuf.MessageOrBuilder {
+    com.google.protobuf.GeneratedMessageV3.
+        ExtendableMessageOrBuilder<RepeatedRules> {
 
   /**
    * <pre>
@@ -23,7 +24,7 @@ public interface RepeatedRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>optional uint64 min_items = 1 [json_name = "minItems", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 min_items = 1 [json_name = "minItems", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the minItems field is set.
    */
   boolean hasMinItems();
@@ -42,7 +43,7 @@ public interface RepeatedRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>optional uint64 min_items = 1 [json_name = "minItems", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 min_items = 1 [json_name = "minItems", (.buf.validate.predefined) = { ... }</code>
    * @return The minItems.
    */
   long getMinItems();
@@ -62,7 +63,7 @@ public interface RepeatedRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>optional uint64 max_items = 2 [json_name = "maxItems", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 max_items = 2 [json_name = "maxItems", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the maxItems field is set.
    */
   boolean hasMaxItems();
@@ -81,7 +82,7 @@ public interface RepeatedRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>optional uint64 max_items = 2 [json_name = "maxItems", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 max_items = 2 [json_name = "maxItems", (.buf.validate.predefined) = { ... }</code>
    * @return The maxItems.
    */
   long getMaxItems();
@@ -100,7 +101,7 @@ public interface RepeatedRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>optional bool unique = 3 [json_name = "unique", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional bool unique = 3 [json_name = "unique", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the unique field is set.
    */
   boolean hasUnique();
@@ -118,7 +119,7 @@ public interface RepeatedRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>optional bool unique = 3 [json_name = "unique", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional bool unique = 3 [json_name = "unique", (.buf.validate.predefined) = { ... }</code>
    * @return The unique.
    */
   boolean getUnique();

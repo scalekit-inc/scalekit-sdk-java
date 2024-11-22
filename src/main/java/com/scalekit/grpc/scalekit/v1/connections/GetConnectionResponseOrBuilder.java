@@ -9,17 +9,17 @@ public interface GetConnectionResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection"];</code>
+   * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the connection field is set.
    */
   boolean hasConnection();
   /**
-   * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection"];</code>
+   * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connection.
    */
   com.scalekit.grpc.scalekit.v1.connections.Connection getConnection();
   /**
-   * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection"];</code>
+   * <code>.scalekit.v1.connections.Connection connection = 1 [json_name = "connection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.connections.ConnectionOrBuilder getConnectionOrBuilder();
 }

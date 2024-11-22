@@ -141,7 +141,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object include_ = "";
   /**
-   * <code>optional string include = 4 [json_name = "include"];</code>
+   * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the include field is set.
    */
   @java.lang.Override
@@ -149,7 +149,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>optional string include = 4 [json_name = "include"];</code>
+   * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The include.
    */
   @java.lang.Override
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string include = 4 [json_name = "include"];</code>
+   * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for include.
    */
   @java.lang.Override
@@ -738,14 +738,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object include_ = "";
     /**
-     * <code>optional string include = 4 [json_name = "include"];</code>
+     * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the include field is set.
      */
     public boolean hasInclude() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional string include = 4 [json_name = "include"];</code>
+     * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The include.
      */
     public java.lang.String getInclude() {
@@ -761,7 +761,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string include = 4 [json_name = "include"];</code>
+     * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for include.
      */
     public com.google.protobuf.ByteString
@@ -778,7 +778,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string include = 4 [json_name = "include"];</code>
+     * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The include to set.
      * @return This builder for chaining.
      */
@@ -791,7 +791,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional string include = 4 [json_name = "include"];</code>
+     * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearInclude() {
@@ -801,7 +801,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional string include = 4 [json_name = "include"];</code>
+     * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for include to set.
      * @return This builder for chaining.
      */

@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
   private SearchOrganizationsResponse() {
     nextPageToken_ = "";
     organizations_ = java.util.Collections.emptyList();
+    prevPageToken_ = "";
   }
 
   @java.lang.Override
@@ -132,6 +133,45 @@ private static final long serialVersionUID = 0L;
     return organizations_.get(index);
   }
 
+  public static final int PREV_PAGE_TOKEN_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object prevPageToken_ = "";
+  /**
+   * <code>string prev_page_token = 4 [json_name = "prevPageToken"];</code>
+   * @return The prevPageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getPrevPageToken() {
+    java.lang.Object ref = prevPageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      prevPageToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string prev_page_token = 4 [json_name = "prevPageToken"];</code>
+   * @return The bytes for prevPageToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPrevPageTokenBytes() {
+    java.lang.Object ref = prevPageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      prevPageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -155,6 +195,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < organizations_.size(); i++) {
       output.writeMessage(3, organizations_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prevPageToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, prevPageToken_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -174,6 +217,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < organizations_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, organizations_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prevPageToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, prevPageToken_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -196,6 +242,8 @@ private static final long serialVersionUID = 0L;
         != other.getTotalSize()) return false;
     if (!getOrganizationsList()
         .equals(other.getOrganizationsList())) return false;
+    if (!getPrevPageToken()
+        .equals(other.getPrevPageToken())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -215,6 +263,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ORGANIZATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getOrganizationsList().hashCode();
     }
+    hash = (37 * hash) + PREV_PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getPrevPageToken().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -355,6 +405,7 @@ private static final long serialVersionUID = 0L;
         organizationsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
+      prevPageToken_ = "";
       return this;
     }
 
@@ -406,6 +457,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.totalSize_ = totalSize_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.prevPageToken_ = prevPageToken_;
       }
     }
 
@@ -487,6 +541,11 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (!other.getPrevPageToken().isEmpty()) {
+        prevPageToken_ = other.prevPageToken_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -536,6 +595,11 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 26
+            case 34: {
+              prevPageToken_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -895,6 +959,78 @@ private static final long serialVersionUID = 0L;
         organizations_ = null;
       }
       return organizationsBuilder_;
+    }
+
+    private java.lang.Object prevPageToken_ = "";
+    /**
+     * <code>string prev_page_token = 4 [json_name = "prevPageToken"];</code>
+     * @return The prevPageToken.
+     */
+    public java.lang.String getPrevPageToken() {
+      java.lang.Object ref = prevPageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        prevPageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string prev_page_token = 4 [json_name = "prevPageToken"];</code>
+     * @return The bytes for prevPageToken.
+     */
+    public com.google.protobuf.ByteString
+        getPrevPageTokenBytes() {
+      java.lang.Object ref = prevPageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        prevPageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string prev_page_token = 4 [json_name = "prevPageToken"];</code>
+     * @param value The prevPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrevPageToken(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      prevPageToken_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string prev_page_token = 4 [json_name = "prevPageToken"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPrevPageToken() {
+      prevPageToken_ = getDefaultInstance().getPrevPageToken();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string prev_page_token = 4 [json_name = "prevPageToken"];</code>
+     * @param value The bytes for prevPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrevPageTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      prevPageToken_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -9,25 +9,25 @@ public interface ListConnectionsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<com.scalekit.grpc.scalekit.v1.connections.ListConnection> 
       getConnectionsList();
   /**
-   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.connections.ListConnection getConnections(int index);
   /**
-   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   int getConnectionsCount();
   /**
-   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<? extends com.scalekit.grpc.scalekit.v1.connections.ListConnectionOrBuilder> 
       getConnectionsOrBuilderList();
   /**
-   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.connections.ListConnectionOrBuilder getConnectionsOrBuilder(
       int index);

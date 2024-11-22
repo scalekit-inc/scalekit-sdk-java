@@ -406,6 +406,44 @@ java.lang.String defaultValue) {
     return map.get(key);
   }
 
+  public static final int SETTINGS_FIELD_NUMBER = 8;
+  private com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings settings_;
+  /**
+   * <pre>
+   * Organization Settings
+   * </pre>
+   *
+   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+   * @return Whether the settings field is set.
+   */
+  @java.lang.Override
+  public boolean hasSettings() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <pre>
+   * Organization Settings
+   * </pre>
+   *
+   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+   * @return The settings.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings getSettings() {
+    return settings_ == null ? com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings.getDefaultInstance() : settings_;
+  }
+  /**
+   * <pre>
+   * Organization Settings
+   * </pre>
+   *
+   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettingsOrBuilder getSettingsOrBuilder() {
+    return settings_ == null ? com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings.getDefaultInstance() : settings_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -444,6 +482,9 @@ java.lang.String defaultValue) {
         internalGetMetadata(),
         MetadataDefaultEntryHolder.defaultEntry,
         7);
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(8, getSettings());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -484,6 +525,10 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, metadata__);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getSettings());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -521,6 +566,11 @@ java.lang.String defaultValue) {
     }
     if (!internalGetMetadata().equals(
         other.internalGetMetadata())) return false;
+    if (hasSettings() != other.hasSettings()) return false;
+    if (hasSettings()) {
+      if (!getSettings()
+          .equals(other.getSettings())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -553,6 +603,10 @@ java.lang.String defaultValue) {
     if (!internalGetMetadata().getMap().isEmpty()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetMetadata().hashCode();
+    }
+    if (hasSettings()) {
+      hash = (37 * hash) + SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getSettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -708,6 +762,7 @@ java.lang.String defaultValue) {
               .alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getSettingsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -729,6 +784,11 @@ java.lang.String defaultValue) {
       regionCode_ = 0;
       externalId_ = "";
       internalGetMutableMetadata().clear();
+      settings_ = null;
+      if (settingsBuilder_ != null) {
+        settingsBuilder_.dispose();
+        settingsBuilder_ = null;
+      }
       return this;
     }
 
@@ -791,6 +851,12 @@ java.lang.String defaultValue) {
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.settings_ = settingsBuilder_ == null
+            ? settings_
+            : settingsBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -866,6 +932,9 @@ java.lang.String defaultValue) {
       internalGetMutableMetadata().mergeFrom(
           other.internalGetMetadata());
       bitField0_ |= 0x00000040;
+      if (other.hasSettings()) {
+        mergeSettings(other.getSettings());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -935,6 +1004,13 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000040;
               break;
             } // case 58
+            case 66: {
+              input.readMessage(
+                  getSettingsFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 66
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1779,6 +1855,163 @@ java.lang.String defaultValue) {
           .putAll(values);
       bitField0_ |= 0x00000040;
       return this;
+    }
+
+    private com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings settings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings, com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings.Builder, com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettingsOrBuilder> settingsBuilder_;
+    /**
+     * <pre>
+     * Organization Settings
+     * </pre>
+     *
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+     * @return Whether the settings field is set.
+     */
+    public boolean hasSettings() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <pre>
+     * Organization Settings
+     * </pre>
+     *
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+     * @return The settings.
+     */
+    public com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings getSettings() {
+      if (settingsBuilder_ == null) {
+        return settings_ == null ? com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings.getDefaultInstance() : settings_;
+      } else {
+        return settingsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Organization Settings
+     * </pre>
+     *
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+     */
+    public Builder setSettings(com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings value) {
+      if (settingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        settings_ = value;
+      } else {
+        settingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Organization Settings
+     * </pre>
+     *
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+     */
+    public Builder setSettings(
+        com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings.Builder builderForValue) {
+      if (settingsBuilder_ == null) {
+        settings_ = builderForValue.build();
+      } else {
+        settingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Organization Settings
+     * </pre>
+     *
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+     */
+    public Builder mergeSettings(com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings value) {
+      if (settingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0) &&
+          settings_ != null &&
+          settings_ != com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings.getDefaultInstance()) {
+          getSettingsBuilder().mergeFrom(value);
+        } else {
+          settings_ = value;
+        }
+      } else {
+        settingsBuilder_.mergeFrom(value);
+      }
+      if (settings_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Organization Settings
+     * </pre>
+     *
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+     */
+    public Builder clearSettings() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      settings_ = null;
+      if (settingsBuilder_ != null) {
+        settingsBuilder_.dispose();
+        settingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Organization Settings
+     * </pre>
+     *
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings.Builder getSettingsBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Organization Settings
+     * </pre>
+     *
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettingsOrBuilder getSettingsOrBuilder() {
+      if (settingsBuilder_ != null) {
+        return settingsBuilder_.getMessageOrBuilder();
+      } else {
+        return settings_ == null ?
+            com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings.getDefaultInstance() : settings_;
+      }
+    }
+    /**
+     * <pre>
+     * Organization Settings
+     * </pre>
+     *
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings, com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings.Builder, com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettingsOrBuilder> 
+        getSettingsFieldBuilder() {
+      if (settingsBuilder_ == null) {
+        settingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings, com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings.Builder, com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettingsOrBuilder>(
+                getSettings(),
+                getParentForChildren(),
+                isClean());
+        settings_ = null;
+      }
+      return settingsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

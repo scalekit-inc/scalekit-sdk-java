@@ -203,4 +203,31 @@ java.lang.String defaultValue);
    */
   java.lang.String getMetadataOrThrow(
       java.lang.String key);
+
+  /**
+   * <pre>
+   * Organization Settings
+   * </pre>
+   *
+   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+   * @return Whether the settings field is set.
+   */
+  boolean hasSettings();
+  /**
+   * <pre>
+   * Organization Settings
+   * </pre>
+   *
+   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+   * @return The settings.
+   */
+  com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings getSettings();
+  /**
+   * <pre>
+   * Organization Settings
+   * </pre>
+   *
+   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+   */
+  com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettingsOrBuilder getSettingsOrBuilder();
 }

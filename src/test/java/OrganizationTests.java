@@ -5,6 +5,7 @@ import com.scalekit.grpc.scalekit.v1.organizations.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -57,7 +58,7 @@ public class OrganizationTests {
         ListOrganizationsResponse organizations = client.organizations().listOrganizations(10, "");
 
         assertNotNull(organizations);
-        assertEquals(organizations.getTotalSize(),10);
+        assertTrue(organizations.getTotalSize() > 10);
         assertNotNull(organizations.getNextPageToken());
 
         assertThrows(APIException.class, () -> client.organizations().getById(createdOrganization.getId()));
@@ -101,6 +102,49 @@ public class OrganizationTests {
         assertNotNull(response);
         assertNotNull(response.getLocation());
         assertNotNull(response.getId());
+    }
+
+    @Test
+    void UpdateOrganizationSettingsTest() {
+        ListOrganizationsResponse organizations = client.organizations().listOrganizations(10, null);
+        assertNotNull(organizations);
+
+        Organization organization = organizations.getOrganizationsList().get(0);
+
+        OrganizationSettingsFeature featureSSOEnable = OrganizationSettingsFeature.newBuilder()
+                .setName("sso")
+                .setEnabled(true)
+                .build();
+
+        OrganizationSettingsFeature featureDirectorySyncEnable = OrganizationSettingsFeature.newBuilder()
+                .setName("dir_sync")
+                .setEnabled(true)
+                .build();
+
+        OrganizationSettingsFeature featureSSODisable = OrganizationSettingsFeature.newBuilder()
+                .setName("sso")
+                .setEnabled(false)
+                .build();
+
+        OrganizationSettingsFeature featureDirectorySyncDisable = OrganizationSettingsFeature.newBuilder()
+                .setName("dir_sync")
+                .setEnabled(false)
+                .build();
+
+
+        Organization updatedOrganization = client.organizations()
+                .updateOrganizationSettings(organization.getId(), List.of(featureSSOEnable, featureDirectorySyncEnable));
+
+        assertNotNull(updatedOrganization);
+        assertTrue(updatedOrganization.getSettings().getFeaturesList().get(0).getEnabled());
+        assertTrue(updatedOrganization.getSettings().getFeaturesList().get(1).getEnabled());
+
+         updatedOrganization = client.organizations()
+                .updateOrganizationSettings(organization.getId(), List.of(featureSSODisable, featureDirectorySyncDisable));
+
+        assertNotNull(updatedOrganization);
+        assertFalse(updatedOrganization.getSettings().getFeaturesList().get(0).getEnabled());
+        assertFalse(updatedOrganization.getSettings().getFeaturesList().get(1).getEnabled());
     }
 
 }

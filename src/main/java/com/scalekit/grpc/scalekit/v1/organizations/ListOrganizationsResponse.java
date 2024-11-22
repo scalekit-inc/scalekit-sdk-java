@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
   private ListOrganizationsResponse() {
     nextPageToken_ = "";
     organizations_ = java.util.Collections.emptyList();
+    prevPageToken_ = "";
   }
 
   @java.lang.Override
@@ -45,7 +46,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
   /**
-   * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+   * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The nextPageToken.
    */
   @java.lang.Override
@@ -62,7 +63,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+   * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for nextPageToken.
    */
   @java.lang.Override
@@ -83,7 +84,7 @@ private static final long serialVersionUID = 0L;
   public static final int TOTAL_SIZE_FIELD_NUMBER = 2;
   private int totalSize_ = 0;
   /**
-   * <code>uint32 total_size = 2 [json_name = "totalSize"];</code>
+   * <code>uint32 total_size = 2 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The totalSize.
    */
   @java.lang.Override
@@ -95,14 +96,14 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private java.util.List<com.scalekit.grpc.scalekit.v1.organizations.Organization> organizations_;
   /**
-   * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+   * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<com.scalekit.grpc.scalekit.v1.organizations.Organization> getOrganizationsList() {
     return organizations_;
   }
   /**
-   * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+   * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.scalekit.grpc.scalekit.v1.organizations.OrganizationOrBuilder> 
@@ -110,26 +111,65 @@ private static final long serialVersionUID = 0L;
     return organizations_;
   }
   /**
-   * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+   * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public int getOrganizationsCount() {
     return organizations_.size();
   }
   /**
-   * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+   * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.organizations.Organization getOrganizations(int index) {
     return organizations_.get(index);
   }
   /**
-   * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+   * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.organizations.OrganizationOrBuilder getOrganizationsOrBuilder(
       int index) {
     return organizations_.get(index);
+  }
+
+  public static final int PREV_PAGE_TOKEN_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object prevPageToken_ = "";
+  /**
+   * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The prevPageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getPrevPageToken() {
+    java.lang.Object ref = prevPageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      prevPageToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for prevPageToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPrevPageTokenBytes() {
+    java.lang.Object ref = prevPageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      prevPageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -155,6 +195,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < organizations_.size(); i++) {
       output.writeMessage(3, organizations_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prevPageToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, prevPageToken_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -174,6 +217,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < organizations_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, organizations_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prevPageToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, prevPageToken_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -196,6 +242,8 @@ private static final long serialVersionUID = 0L;
         != other.getTotalSize()) return false;
     if (!getOrganizationsList()
         .equals(other.getOrganizationsList())) return false;
+    if (!getPrevPageToken()
+        .equals(other.getPrevPageToken())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -215,6 +263,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ORGANIZATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getOrganizationsList().hashCode();
     }
+    hash = (37 * hash) + PREV_PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getPrevPageToken().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -355,6 +405,7 @@ private static final long serialVersionUID = 0L;
         organizationsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
+      prevPageToken_ = "";
       return this;
     }
 
@@ -406,6 +457,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.totalSize_ = totalSize_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.prevPageToken_ = prevPageToken_;
       }
     }
 
@@ -487,6 +541,11 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (!other.getPrevPageToken().isEmpty()) {
+        prevPageToken_ = other.prevPageToken_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -536,6 +595,11 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 26
+            case 34: {
+              prevPageToken_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -555,7 +619,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nextPageToken_ = "";
     /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
@@ -571,7 +635,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString
@@ -588,7 +652,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The nextPageToken to set.
      * @return This builder for chaining.
      */
@@ -601,7 +665,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
@@ -611,7 +675,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for nextPageToken to set.
      * @return This builder for chaining.
      */
@@ -627,7 +691,7 @@ private static final long serialVersionUID = 0L;
 
     private int totalSize_ ;
     /**
-     * <code>uint32 total_size = 2 [json_name = "totalSize"];</code>
+     * <code>uint32 total_size = 2 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The totalSize.
      */
     @java.lang.Override
@@ -635,7 +699,7 @@ private static final long serialVersionUID = 0L;
       return totalSize_;
     }
     /**
-     * <code>uint32 total_size = 2 [json_name = "totalSize"];</code>
+     * <code>uint32 total_size = 2 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The totalSize to set.
      * @return This builder for chaining.
      */
@@ -647,7 +711,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>uint32 total_size = 2 [json_name = "totalSize"];</code>
+     * <code>uint32 total_size = 2 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearTotalSize() {
@@ -670,7 +734,7 @@ private static final long serialVersionUID = 0L;
         com.scalekit.grpc.scalekit.v1.organizations.Organization, com.scalekit.grpc.scalekit.v1.organizations.Organization.Builder, com.scalekit.grpc.scalekit.v1.organizations.OrganizationOrBuilder> organizationsBuilder_;
 
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.organizations.Organization> getOrganizationsList() {
       if (organizationsBuilder_ == null) {
@@ -680,7 +744,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public int getOrganizationsCount() {
       if (organizationsBuilder_ == null) {
@@ -690,7 +754,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.organizations.Organization getOrganizations(int index) {
       if (organizationsBuilder_ == null) {
@@ -700,7 +764,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setOrganizations(
         int index, com.scalekit.grpc.scalekit.v1.organizations.Organization value) {
@@ -717,7 +781,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setOrganizations(
         int index, com.scalekit.grpc.scalekit.v1.organizations.Organization.Builder builderForValue) {
@@ -731,7 +795,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addOrganizations(com.scalekit.grpc.scalekit.v1.organizations.Organization value) {
       if (organizationsBuilder_ == null) {
@@ -747,7 +811,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addOrganizations(
         int index, com.scalekit.grpc.scalekit.v1.organizations.Organization value) {
@@ -764,7 +828,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addOrganizations(
         com.scalekit.grpc.scalekit.v1.organizations.Organization.Builder builderForValue) {
@@ -778,7 +842,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addOrganizations(
         int index, com.scalekit.grpc.scalekit.v1.organizations.Organization.Builder builderForValue) {
@@ -792,7 +856,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addAllOrganizations(
         java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.organizations.Organization> values) {
@@ -807,7 +871,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearOrganizations() {
       if (organizationsBuilder_ == null) {
@@ -820,7 +884,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder removeOrganizations(int index) {
       if (organizationsBuilder_ == null) {
@@ -833,14 +897,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.organizations.Organization.Builder getOrganizationsBuilder(
         int index) {
       return getOrganizationsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.organizations.OrganizationOrBuilder getOrganizationsOrBuilder(
         int index) {
@@ -850,7 +914,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<? extends com.scalekit.grpc.scalekit.v1.organizations.OrganizationOrBuilder> 
          getOrganizationsOrBuilderList() {
@@ -861,14 +925,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.organizations.Organization.Builder addOrganizationsBuilder() {
       return getOrganizationsFieldBuilder().addBuilder(
           com.scalekit.grpc.scalekit.v1.organizations.Organization.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.organizations.Organization.Builder addOrganizationsBuilder(
         int index) {
@@ -876,7 +940,7 @@ private static final long serialVersionUID = 0L;
           index, com.scalekit.grpc.scalekit.v1.organizations.Organization.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations"];</code>
+     * <code>repeated .scalekit.v1.organizations.Organization organizations = 3 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.organizations.Organization.Builder> 
          getOrganizationsBuilderList() {
@@ -895,6 +959,78 @@ private static final long serialVersionUID = 0L;
         organizations_ = null;
       }
       return organizationsBuilder_;
+    }
+
+    private java.lang.Object prevPageToken_ = "";
+    /**
+     * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The prevPageToken.
+     */
+    public java.lang.String getPrevPageToken() {
+      java.lang.Object ref = prevPageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        prevPageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for prevPageToken.
+     */
+    public com.google.protobuf.ByteString
+        getPrevPageTokenBytes() {
+      java.lang.Object ref = prevPageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        prevPageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The prevPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrevPageToken(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      prevPageToken_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPrevPageToken() {
+      prevPageToken_ = getDefaultInstance().getPrevPageToken();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for prevPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrevPageTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      prevPageToken_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

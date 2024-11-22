@@ -60,6 +60,14 @@ public class ScalekitAuthClient implements AuthClient {
         }
     }
 
+
+    /**
+     * getAuthorizationUrl generates an authorization URL
+     * @param redirectUri: The redirect URI
+     * @param options: The AuthorizationUrlOptions
+     * @return URL: The authorization URL
+     * @throws APIException: If an error occurs
+     */
     public URL getAuthorizationUrl(String redirectUri, AuthorizationUrlOptions options){
         List<String> scopes = new ArrayList<>();
         scopes.add("openid");
@@ -114,6 +122,12 @@ public class ScalekitAuthClient implements AuthClient {
         }
     }
 
+    /**
+     * validateAccessToken validates an access token
+     * @param jwt: The JWT token
+     * @return boolean: True if the token is valid
+     * @throws APIException: If an error occurs
+     */
     public boolean validateAccessToken(String jwt) throws APIException{
         try {
             // TODO Optimization - Cache the keys
@@ -137,6 +151,14 @@ public class ScalekitAuthClient implements AuthClient {
         }
     }
 
+    /**
+     * authenticateWithCode authenticates with a code
+     * @param code: The code
+     * @param redirectUri: The redirect URI
+     * @param options: The AuthenticationOptions
+     * @return AuthenticationResponse: The authentication response
+     * @throws APIException: If an error occurs
+     */
     public AuthenticationResponse authenticateWithCode(String code, String redirectUri, AuthenticationOptions options) {
         if (code == null || code.isEmpty() || redirectUri == null || redirectUri.isEmpty()) {
             throw new APIException("code and redirect uri are required");
@@ -202,6 +224,12 @@ public class ScalekitAuthClient implements AuthClient {
         return objectMapper.readValue(response.body(), AuthenticationResponse.class);
     }
 
+    /**
+     * getIdpInitiatedLoginClaims gets the claims from an idpInitiatedLoginToken
+     * @param idpInitiatedLoginToken: The idpInitiatedLoginToken
+     * @return IdpInitiatedLoginClaims: The claims
+     * @throws APIException: If an error occurs
+     */
     public IdpInitiatedLoginClaims getIdpInitiatedLoginClaims(String idpInitiatedLoginToken) throws APIException {
         try {
             boolean isTokenValid = validateAccessToken(idpInitiatedLoginToken);

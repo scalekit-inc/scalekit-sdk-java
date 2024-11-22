@@ -5,7 +5,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.64.0)",
+    value = "by gRPC proto compiler (version 1.67.1)",
     comments = "Source: scalekit/v1/connections/connections.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConnectionServiceGrpc {
@@ -449,6 +449,37 @@ public final class ConnectionServiceGrpc {
     return getDisableConnectionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultRequest,
+      com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultResponse> getGetConnectionTestResultMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetConnectionTestResult",
+      requestType = com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultRequest,
+      com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultResponse> getGetConnectionTestResultMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultRequest, com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultResponse> getGetConnectionTestResultMethod;
+    if ((getGetConnectionTestResultMethod = ConnectionServiceGrpc.getGetConnectionTestResultMethod) == null) {
+      synchronized (ConnectionServiceGrpc.class) {
+        if ((getGetConnectionTestResultMethod = ConnectionServiceGrpc.getGetConnectionTestResultMethod) == null) {
+          ConnectionServiceGrpc.getGetConnectionTestResultMethod = getGetConnectionTestResultMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultRequest, com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetConnectionTestResult"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectionServiceMethodDescriptorSupplier("GetConnectionTestResult"))
+              .build();
+        }
+      }
+    }
+    return getGetConnectionTestResultMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -594,6 +625,13 @@ public final class ConnectionServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDisableConnectionMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void getConnectionTestResult(com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetConnectionTestResultMethod(), responseObserver);
+    }
   }
 
   /**
@@ -734,6 +772,14 @@ public final class ConnectionServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDisableConnectionMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getConnectionTestResult(com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetConnectionTestResultMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -848,6 +894,13 @@ public final class ConnectionServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse disableConnection(com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDisableConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultResponse getConnectionTestResult(com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConnectionTestResultMethod(), getCallOptions(), request);
     }
   }
 
@@ -978,6 +1031,14 @@ public final class ConnectionServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDisableConnectionMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultResponse> getConnectionTestResult(
+        com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetConnectionTestResultMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_PROVIDERS = 0;
@@ -994,6 +1055,7 @@ public final class ConnectionServiceGrpc {
   private static final int METHODID_ENABLE_CONNECTION = 11;
   private static final int METHODID_DISABLE_ENVIRONMENT_CONNECTION = 12;
   private static final int METHODID_DISABLE_CONNECTION = 13;
+  private static final int METHODID_GET_CONNECTION_TEST_RESULT = 14;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1067,6 +1129,10 @@ public final class ConnectionServiceGrpc {
         case METHODID_DISABLE_CONNECTION:
           serviceImpl.disableConnection((com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse>) responseObserver);
+          break;
+        case METHODID_GET_CONNECTION_TEST_RESULT:
+          serviceImpl.getConnectionTestResult((com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1184,6 +1250,13 @@ public final class ConnectionServiceGrpc {
               com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionRequest,
               com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse>(
                 service, METHODID_DISABLE_CONNECTION)))
+        .addMethod(
+          getGetConnectionTestResultMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultRequest,
+              com.scalekit.grpc.scalekit.v1.connections.GetConnectionTestResultResponse>(
+                service, METHODID_GET_CONNECTION_TEST_RESULT)))
         .build();
   }
 
@@ -1246,6 +1319,7 @@ public final class ConnectionServiceGrpc {
               .addMethod(getEnableConnectionMethod())
               .addMethod(getDisableEnvironmentConnectionMethod())
               .addMethod(getDisableConnectionMethod())
+              .addMethod(getGetConnectionTestResultMethod())
               .build();
         }
       }

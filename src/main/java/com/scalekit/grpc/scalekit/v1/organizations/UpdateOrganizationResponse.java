@@ -43,7 +43,7 @@ private static final long serialVersionUID = 0L;
   public static final int ORGANIZATION_FIELD_NUMBER = 1;
   private com.scalekit.grpc.scalekit.v1.organizations.Organization organization_;
   /**
-   * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization"];</code>
+   * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the organization field is set.
    */
   @java.lang.Override
@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization"];</code>
+   * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The organization.
    */
   @java.lang.Override
@@ -59,7 +59,7 @@ private static final long serialVersionUID = 0L;
     return organization_ == null ? com.scalekit.grpc.scalekit.v1.organizations.Organization.getDefaultInstance() : organization_;
   }
   /**
-   * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization"];</code>
+   * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.organizations.OrganizationOrBuilder getOrganizationOrBuilder() {
@@ -417,14 +417,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.organizations.Organization, com.scalekit.grpc.scalekit.v1.organizations.Organization.Builder, com.scalekit.grpc.scalekit.v1.organizations.OrganizationOrBuilder> organizationBuilder_;
     /**
-     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization"];</code>
+     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the organization field is set.
      */
     public boolean hasOrganization() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization"];</code>
+     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The organization.
      */
     public com.scalekit.grpc.scalekit.v1.organizations.Organization getOrganization() {
@@ -435,7 +435,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization"];</code>
+     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setOrganization(com.scalekit.grpc.scalekit.v1.organizations.Organization value) {
       if (organizationBuilder_ == null) {
@@ -451,7 +451,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization"];</code>
+     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setOrganization(
         com.scalekit.grpc.scalekit.v1.organizations.Organization.Builder builderForValue) {
@@ -465,7 +465,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization"];</code>
+     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeOrganization(com.scalekit.grpc.scalekit.v1.organizations.Organization value) {
       if (organizationBuilder_ == null) {
@@ -486,7 +486,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization"];</code>
+     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearOrganization() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -499,7 +499,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization"];</code>
+     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.organizations.Organization.Builder getOrganizationBuilder() {
       bitField0_ |= 0x00000001;
@@ -507,7 +507,7 @@ private static final long serialVersionUID = 0L;
       return getOrganizationFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization"];</code>
+     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.organizations.OrganizationOrBuilder getOrganizationOrBuilder() {
       if (organizationBuilder_ != null) {
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization"];</code>
+     * <code>.scalekit.v1.organizations.Organization organization = 1 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.organizations.Organization, com.scalekit.grpc.scalekit.v1.organizations.Organization.Builder, com.scalekit.grpc.scalekit.v1.organizations.OrganizationOrBuilder> 

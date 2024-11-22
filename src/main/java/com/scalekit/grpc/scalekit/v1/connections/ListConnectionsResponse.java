@@ -44,14 +44,14 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private java.util.List<com.scalekit.grpc.scalekit.v1.connections.ListConnection> connections_;
   /**
-   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<com.scalekit.grpc.scalekit.v1.connections.ListConnection> getConnectionsList() {
     return connections_;
   }
   /**
-   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.scalekit.grpc.scalekit.v1.connections.ListConnectionOrBuilder> 
@@ -59,21 +59,21 @@ private static final long serialVersionUID = 0L;
     return connections_;
   }
   /**
-   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public int getConnectionsCount() {
     return connections_.size();
   }
   /**
-   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.connections.ListConnection getConnections(int index) {
     return connections_.get(index);
   }
   /**
-   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+   * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.connections.ListConnectionOrBuilder getConnectionsOrBuilder(
@@ -468,7 +468,7 @@ private static final long serialVersionUID = 0L;
         com.scalekit.grpc.scalekit.v1.connections.ListConnection, com.scalekit.grpc.scalekit.v1.connections.ListConnection.Builder, com.scalekit.grpc.scalekit.v1.connections.ListConnectionOrBuilder> connectionsBuilder_;
 
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.connections.ListConnection> getConnectionsList() {
       if (connectionsBuilder_ == null) {
@@ -478,7 +478,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public int getConnectionsCount() {
       if (connectionsBuilder_ == null) {
@@ -488,7 +488,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.connections.ListConnection getConnections(int index) {
       if (connectionsBuilder_ == null) {
@@ -498,7 +498,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setConnections(
         int index, com.scalekit.grpc.scalekit.v1.connections.ListConnection value) {
@@ -515,7 +515,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setConnections(
         int index, com.scalekit.grpc.scalekit.v1.connections.ListConnection.Builder builderForValue) {
@@ -529,7 +529,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addConnections(com.scalekit.grpc.scalekit.v1.connections.ListConnection value) {
       if (connectionsBuilder_ == null) {
@@ -545,7 +545,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addConnections(
         int index, com.scalekit.grpc.scalekit.v1.connections.ListConnection value) {
@@ -562,7 +562,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addConnections(
         com.scalekit.grpc.scalekit.v1.connections.ListConnection.Builder builderForValue) {
@@ -576,7 +576,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addConnections(
         int index, com.scalekit.grpc.scalekit.v1.connections.ListConnection.Builder builderForValue) {
@@ -590,7 +590,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addAllConnections(
         java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.connections.ListConnection> values) {
@@ -605,7 +605,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearConnections() {
       if (connectionsBuilder_ == null) {
@@ -618,7 +618,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder removeConnections(int index) {
       if (connectionsBuilder_ == null) {
@@ -631,14 +631,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.connections.ListConnection.Builder getConnectionsBuilder(
         int index) {
       return getConnectionsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.connections.ListConnectionOrBuilder getConnectionsOrBuilder(
         int index) {
@@ -648,7 +648,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<? extends com.scalekit.grpc.scalekit.v1.connections.ListConnectionOrBuilder> 
          getConnectionsOrBuilderList() {
@@ -659,14 +659,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.connections.ListConnection.Builder addConnectionsBuilder() {
       return getConnectionsFieldBuilder().addBuilder(
           com.scalekit.grpc.scalekit.v1.connections.ListConnection.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.connections.ListConnection.Builder addConnectionsBuilder(
         int index) {
@@ -674,7 +674,7 @@ private static final long serialVersionUID = 0L;
           index, com.scalekit.grpc.scalekit.v1.connections.ListConnection.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections"];</code>
+     * <code>repeated .scalekit.v1.connections.ListConnection connections = 1 [json_name = "connections", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.connections.ListConnection.Builder> 
          getConnectionsBuilderList() {

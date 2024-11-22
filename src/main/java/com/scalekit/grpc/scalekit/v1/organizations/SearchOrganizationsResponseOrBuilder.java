@@ -49,4 +49,16 @@ public interface SearchOrganizationsResponseOrBuilder extends
    */
   com.scalekit.grpc.scalekit.v1.organizations.OrganizationOrBuilder getOrganizationsOrBuilder(
       int index);
+
+  /**
+   * <code>string prev_page_token = 4 [json_name = "prevPageToken"];</code>
+   * @return The prevPageToken.
+   */
+  java.lang.String getPrevPageToken();
+  /**
+   * <code>string prev_page_token = 4 [json_name = "prevPageToken"];</code>
+   * @return The bytes for prevPageToken.
+   */
+  com.google.protobuf.ByteString
+      getPrevPageTokenBytes();
 }

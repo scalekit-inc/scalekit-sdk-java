@@ -9,23 +9,23 @@ public interface ToggleConnectionResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>bool enabled = 1 [json_name = "enabled"];</code>
+   * <code>bool enabled = 1 [json_name = "enabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enabled.
    */
   boolean getEnabled();
 
   /**
-   * <code>optional string error_message = 2 [json_name = "errorMessage"];</code>
+   * <code>optional string error_message = 2 [json_name = "errorMessage", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the errorMessage field is set.
    */
   boolean hasErrorMessage();
   /**
-   * <code>optional string error_message = 2 [json_name = "errorMessage"];</code>
+   * <code>optional string error_message = 2 [json_name = "errorMessage", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
   /**
-   * <code>optional string error_message = 2 [json_name = "errorMessage"];</code>
+   * <code>optional string error_message = 2 [json_name = "errorMessage", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for errorMessage.
    */
   com.google.protobuf.ByteString
