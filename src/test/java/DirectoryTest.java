@@ -4,14 +4,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Timestamp;
 import com.scalekit.ScalekitClient;
-import com.scalekit.api.util.ListDirectoryGroupResponse;
-import com.scalekit.api.util.ListDirectoryResourceOptions;
-import com.scalekit.api.util.ListDirectoryUserResponse;
+import com.scalekit.api.util.*;
+import com.scalekit.grpc.scalekit.v1.directories.Directory;
 import com.scalekit.grpc.scalekit.v1.directories.DirectoryProvider;
 import com.scalekit.grpc.scalekit.v1.directories.ListDirectoriesResponse;
+import com.scalekit.grpc.scalekit.v1.directories.ToggleDirectoryResponse;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class DirectoryTest {
@@ -47,9 +46,9 @@ public class DirectoryTest {
         ListDirectoriesResponse response = client.directories().listDirectories(organizationId);
         assertTrue(response.getDirectoriesCount() > 0);
 
-        var directoryById = client.directories().getDirectory(directoryId, organizationId);
+        Directory directoryById = client.directories().getDirectory(directoryId, organizationId);
 
-        var directory = response.getDirectories(0);
+        Directory directory = response.getDirectories(0);
         assertNotNull(directory);
         assertEquals(directoryId, directory.getId());
         assertEquals(organizationId, directory.getOrganizationId());
@@ -67,10 +66,10 @@ public class DirectoryTest {
         ListDirectoriesResponse response = client.directories().listDirectories(organizationId);
         assertTrue(response.getDirectoriesCount() > 0);
 
-        var directory = response.getDirectories(0);
+        Directory directory = response.getDirectories(0);
         assertNotNull(directory);
 
-        var options = ListDirectoryResourceOptions.builder()
+        ListDirectoryResourceOptions options = ListDirectoryResourceOptions.builder()
                 .pageSize(10)
                 .pageToken("")
                 .includeDetail(true)
@@ -83,7 +82,7 @@ public class DirectoryTest {
         assertTrue(usersResponse.getUsersCount() > 1);
 
         for (int i = 0; i < usersResponse.getUsersCount(); i++) {
-            var user = usersResponse.getUsers(i);
+            DirectoryUser user = usersResponse.getUsers(i);
             assertNotNull(user);
             assertNotNull(user.getId());
             assertNotNull(user.getEmail());
@@ -101,10 +100,10 @@ public class DirectoryTest {
         ListDirectoriesResponse response = client.directories().listDirectories(organizationId);
         assertTrue(response.getDirectoriesCount() > 0);
 
-        var directory = response.getDirectories(0);
+        Directory directory = response.getDirectories(0);
         assertNotNull(directory);
 
-        var options = ListDirectoryResourceOptions.builder()
+        ListDirectoryResourceOptions options = ListDirectoryResourceOptions.builder()
                 .pageSize(10)
                 .pageToken("")
                 .includeDetail(true)
@@ -117,7 +116,7 @@ public class DirectoryTest {
 
         assertEquals(usersResponse.getUsersCount() ,1);
 
-        var user = usersResponse.getUsers(0);
+        DirectoryUser user = usersResponse.getUsers(0);
         assertNotNull(user);
         assertNotNull(user.getId());
         assertNotNull(user.getEmail());
@@ -127,10 +126,10 @@ public class DirectoryTest {
     @Test
     public void EnableDisableDirectory(){
         try {
-            var enableResponse = client.directories().enableDirectory(directoryId, organizationId);
+            ToggleDirectoryResponse enableResponse = client.directories().enableDirectory(directoryId, organizationId);
             assertTrue(enableResponse.getEnabled());
 
-            var disableResponse = client.directories().disableDirectory(directoryId, organizationId);
+            ToggleDirectoryResponse disableResponse = client.directories().disableDirectory(directoryId, organizationId);
             assertFalse(disableResponse.getEnabled());
         }
         catch (Exception e){
@@ -146,10 +145,10 @@ public class DirectoryTest {
         ListDirectoriesResponse response = client.directories().listDirectories(organizationId);
         assertTrue(response.getDirectoriesCount() > 0);
 
-        var directory = response.getDirectories(0);
+        Directory directory = response.getDirectories(0);
         assertNotNull(directory);
 
-        var options = ListDirectoryResourceOptions.builder()
+        ListDirectoryResourceOptions options = ListDirectoryResourceOptions.builder()
                 .pageSize(10)
                 .pageToken("")
                 .includeDetail(true)
@@ -163,7 +162,7 @@ public class DirectoryTest {
         assertTrue(groupsResponse.getGroupsCount() > 0);
 
         for (int i = 0; i < groupsResponse.getGroupsCount(); i++) {
-            var group = groupsResponse.getGroups(i);
+            DirectoryGroup group = groupsResponse.getGroups(i);
             assertNotNull(group);
             assertNotNull(group.getId());
             assertNotNull(group.getDisplayName());
@@ -178,8 +177,8 @@ public class DirectoryTest {
 
     @Test
     public void GetDirectoryByOrganizationId(){
-        var directory = client.directories().getPrimaryDirectoryByOrganizationId(organizationId);
-        var directoryById = client.directories().getDirectory(directory.getId(), organizationId);
+        Directory directory = client.directories().getPrimaryDirectoryByOrganizationId(organizationId);
+        Directory directoryById = client.directories().getDirectory(directory.getId(), organizationId);
         assertNotNull(directory);
         assertNotNull(directoryById);
         assertEquals(directory.getId(), directoryById.getId());
