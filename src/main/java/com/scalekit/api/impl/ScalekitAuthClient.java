@@ -144,10 +144,9 @@ public class ScalekitAuthClient implements AuthClient {
             // TODO Optimization - Cache the keys
             String keysJson = fetchJsonWebKeys();
 
-            // Parse the JSON keys into JsonWebKeySet
             JsonWebKeySet jsonWebKeySet = new JsonWebKeySet(keysJson);
 
-            // Setup the JWT signature verification
+
             JsonWebSignature jws = new JsonWebSignature();
             jws.setCompactSerialization(jwt);
 
@@ -165,16 +164,13 @@ public class ScalekitAuthClient implements AuthClient {
     private String fetchJsonWebKeys() throws IOException {
         String url = Environment.defaultConfig().siteName + KEYS_ENDPOINT;
 
-        // Create the GET request using Apache HttpClient
         HttpGet httpGet = new HttpGet(URI.create(url));
 
         try (CloseableHttpResponse response = httpClient.execute(httpGet)) {
-            // Check if the response status is OK (200)
             if (response.getStatusLine().getStatusCode() != 200) {
                 throw new IOException("Failed to fetch keys: " + EntityUtils.toString(response.getEntity()));
             }
 
-            // Extract the response body (keys JSON)
             HttpEntity entity = response.getEntity();
             return EntityUtils.toString(entity, StandardCharsets.UTF_8);
         }
