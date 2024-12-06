@@ -5,7 +5,7 @@ import com.scalekit.grpc.scalekit.v1.organizations.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
+import java.util.Arrays;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -133,14 +133,14 @@ public class OrganizationTests {
 
 
         Organization updatedOrganization = client.organizations()
-                .updateOrganizationSettings(organization.getId(), List.of(featureSSOEnable, featureDirectorySyncEnable));
+                .updateOrganizationSettings(organization.getId(), Arrays.asList(featureSSOEnable, featureDirectorySyncEnable));
 
         assertNotNull(updatedOrganization);
         assertTrue(updatedOrganization.getSettings().getFeaturesList().get(0).getEnabled());
         assertTrue(updatedOrganization.getSettings().getFeaturesList().get(1).getEnabled());
 
          updatedOrganization = client.organizations()
-                .updateOrganizationSettings(organization.getId(), List.of(featureSSODisable, featureDirectorySyncDisable));
+                .updateOrganizationSettings(organization.getId(), Arrays.asList(featureSSODisable, featureDirectorySyncDisable));
 
         assertNotNull(updatedOrganization);
         assertFalse(updatedOrganization.getSettings().getFeaturesList().get(0).getEnabled());
