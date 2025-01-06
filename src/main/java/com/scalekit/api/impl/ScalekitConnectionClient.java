@@ -116,4 +116,17 @@ public class ScalekitConnectionClient implements ConnectionClient {
                 return this.ConnectionStub.disableConnection(request);
             },this.credentials);
     }
+
+    @Override
+    public Connection createConnection(String organizationId, CreateConnection connection) {
+        return RetryExecuter.executeWithRetry(() -> {
+            CreateConnectionResponse response = this.ConnectionStub.createConnection(
+                    CreateConnectionRequest.newBuilder()
+                            .setOrganizationId(organizationId)
+                            .setConnection(connection)
+                            .build()
+            );
+            return response.getConnection();
+        },this.credentials);
+    }
 }
