@@ -1,6 +1,7 @@
 import com.scalekit.ScalekitClient;
 import com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.Operation;
 import com.scalekit.grpc.scalekit.v1.domains.Domain;
+import com.scalekit.grpc.scalekit.v1.organizations.Organization;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -23,15 +24,17 @@ public class DomainTests {
 
     @Test
     public void DomainTest(){
+        Organization organization  = client.organizations().listOrganizations(10, "").getOrganizationsList().get(0);
+        assert organization != null;
         String domainName = UUID.randomUUID().toString().substring(0,10);
-        Domain domain = client.domains().createDomain("org_26441296998563842", domainName);
+        Domain domain = client.domains().createDomain(organization.getId(), domainName);
         Assertions.assertEquals(domainName, domain.getDomain());
 
-        List<Domain> retrievedDomain = client.domains().listDomainsByOrganizationId("org_26441296998563842");
+        List<Domain> retrievedDomain = client.domains().listDomainsByOrganizationId(organization.getId());
         Assertions.assertFalse(retrievedDomain.isEmpty());
 
 
-        Domain retrievedDomainById = client.domains().getDomainById("org_26441296998563842", domain.getId());
+        Domain retrievedDomainById = client.domains().getDomainById(organization.getId(), domain.getId());
         Assertions.assertEquals(domain.getId(), retrievedDomainById.getId());
 
     }

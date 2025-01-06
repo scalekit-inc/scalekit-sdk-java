@@ -25,10 +25,6 @@ public class DirectoryTest {
     @BeforeAll
     static void init(){
 
-        organizationId = "org_43223111834796035";
-        directoryId = "dir_43223123058754084";
-
-        //25-Oct-2024 03:06pm
         long seconds = 1729851960L;
         updatedAfter = Timestamp.newBuilder().setSeconds(seconds).build();
 
@@ -37,6 +33,8 @@ public class DirectoryTest {
         String environmentUrl = System.getenv("SCALEKIT_ENVIRONMENT_URL");
         String  clientId = System.getenv("SCALEKIT_CLIENT_ID");
         String apiSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
+        organizationId = System.getenv("TEST_ORGANIZATION");
+        directoryId = System.getenv("TEST_DIRECTORY");
 
         client = new ScalekitClient(environmentUrl, clientId, apiSecret);
     }
@@ -114,7 +112,7 @@ public class DirectoryTest {
                 .directories()
                 .listDirectoryUsers(directory.getId(),organizationId,options);
 
-        assertEquals(usersResponse.getUsersCount() ,1);
+        assertEquals(usersResponse.getUsersCount() ,2);
 
         DirectoryUser user = usersResponse.getUsers(0);
         assertNotNull(user);
