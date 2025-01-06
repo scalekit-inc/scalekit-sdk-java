@@ -4,14 +4,6 @@ import com.scalekit.api.AuthClient;
 import io.grpc.CallCredentials;
 import io.grpc.Metadata;
 import io.grpc.Status;
-import org.jose4j.jwt.JwtClaims;
-import org.jose4j.jwt.MalformedClaimException;
-import org.jose4j.jwt.NumericDate;
-import org.jose4j.jwt.consumer.InvalidJwtException;
-import org.jose4j.jwt.consumer.JwtConsumer;
-import org.jose4j.jwt.consumer.JwtConsumerBuilder;
-
-import java.util.Objects;
 import java.util.concurrent.Executor;
 
 public class ScalekitCredentials extends CallCredentials {
