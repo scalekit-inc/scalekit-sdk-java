@@ -4,6 +4,7 @@ import com.scalekit.Environment;
 import com.scalekit.api.ConnectionClient;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.connections.*;
+import com.scalekit.internal.RetryExecuter;
 import com.scalekit.internal.ScalekitCredentials;
 import io.grpc.Deadline;
 import io.grpc.ManagedChannel;
@@ -13,9 +14,11 @@ import java.util.concurrent.TimeUnit;
 public class ScalekitConnectionClient implements ConnectionClient {
 
     private final ConnectionServiceGrpc.ConnectionServiceBlockingStub ConnectionStub;
+    private final ScalekitCredentials credentials;
 
     public ScalekitConnectionClient(ManagedChannel channel, ScalekitCredentials credentials){
         try {
+            this.credentials = credentials;
             this.ConnectionStub =  ConnectionServiceGrpc
                     .newBlockingStub(channel)
                     .withDeadline(Deadline.after(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS))
@@ -34,17 +37,15 @@ public class ScalekitConnectionClient implements ConnectionClient {
      */
     @Override
     public Connection getConnectionById(String connectionId, String organizationId) {
-        GetConnectionRequest request = GetConnectionRequest.newBuilder()
-                .setOrganizationId(organizationId)
-                .setId(connectionId)
-                .build();
-
-        try {
-            GetConnectionResponse response = ConnectionStub.getConnection(request);
+        return RetryExecuter.executeWithRetry(() -> {
+            GetConnectionResponse response = this.ConnectionStub.getConnection(
+                    GetConnectionRequest.newBuilder()
+                            .setId(connectionId)
+                            .setOrganizationId(organizationId)
+                            .build()
+            );
             return response.getConnection();
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        },this.credentials);
     }
 
     /**
@@ -54,15 +55,12 @@ public class ScalekitConnectionClient implements ConnectionClient {
      */
     @Override
     public ListConnectionsResponse listConnectionsByDomain(String domain) {
-        ListConnectionsRequest request = ListConnectionsRequest.newBuilder()
-                .setDomain(domain)
-                .setInclude("all")
-                .build();
-        try {
-            return ConnectionStub.listConnections(request);
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        return RetryExecuter.executeWithRetry(() -> this.ConnectionStub.listConnections(
+                ListConnectionsRequest.newBuilder()
+                        .setDomain(domain)
+                        .setInclude("all")
+                        .build()
+        ),this.credentials);
     }
 
     /**
@@ -72,16 +70,13 @@ public class ScalekitConnectionClient implements ConnectionClient {
      */
     @Override
     public ListConnectionsResponse listConnectionsByOrganization(String organizationId) {
-        ListConnectionsRequest request = ListConnectionsRequest.newBuilder()
-                .setInclude("all")
-                .setOrganizationId(organizationId)
-                .build();
 
-        try {
-            return ConnectionStub.listConnections(request);
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        return RetryExecuter.executeWithRetry(() -> this.ConnectionStub.listConnections(
+                ListConnectionsRequest.newBuilder()
+                        .setOrganizationId(organizationId)
+                        .setInclude("all")
+                        .build()
+        ),this.credentials);
     }
 
 
@@ -93,16 +88,14 @@ public class ScalekitConnectionClient implements ConnectionClient {
      */
     @Override
     public ToggleConnectionResponse enableConnection(String connectionId, String organizationId) {
-        ToggleConnectionRequest request = ToggleConnectionRequest.newBuilder()
-                .setOrganizationId(organizationId)
-                .setId(connectionId)
-                .build();
 
-        try {
-            return ConnectionStub.enableConnection(request);
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        return RetryExecuter.executeWithRetry(() -> {
+            ToggleConnectionRequest request = ToggleConnectionRequest.newBuilder()
+                    .setOrganizationId(organizationId)
+                    .setId(connectionId)
+                    .build();
+            return this.ConnectionStub.enableConnection(request);
+        },this.credentials);
 
     }
 
@@ -114,15 +107,13 @@ public class ScalekitConnectionClient implements ConnectionClient {
      */
     @Override
     public ToggleConnectionResponse disableConnection(String connectionId, String organizationId) {
-        ToggleConnectionRequest request = ToggleConnectionRequest.newBuilder()
-                .setOrganizationId(organizationId)
-                .setId(connectionId)
-                .build();
 
-        try {
-            return ConnectionStub.disableConnection(request);
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+            return RetryExecuter.executeWithRetry(() -> {
+                ToggleConnectionRequest request = ToggleConnectionRequest.newBuilder()
+                        .setOrganizationId(organizationId)
+                        .setId(connectionId)
+                        .build();
+                return this.ConnectionStub.disableConnection(request);
+            },this.credentials);
     }
 }

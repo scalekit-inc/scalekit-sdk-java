@@ -4,14 +4,20 @@ import com.scalekit.api.AuthClient;
 import io.grpc.CallCredentials;
 import io.grpc.Metadata;
 import io.grpc.Status;
+import org.jose4j.jwt.JwtClaims;
+import org.jose4j.jwt.MalformedClaimException;
+import org.jose4j.jwt.NumericDate;
+import org.jose4j.jwt.consumer.InvalidJwtException;
+import org.jose4j.jwt.consumer.JwtConsumer;
+import org.jose4j.jwt.consumer.JwtConsumerBuilder;
 
+import java.util.Objects;
 import java.util.concurrent.Executor;
 
 public class ScalekitCredentials extends CallCredentials {
 
     private  String token;
     private final AuthClient client;
-
 
     public ScalekitCredentials(AuthClient client) {
         this.client = client;
@@ -36,5 +42,13 @@ public class ScalekitCredentials extends CallCredentials {
                 metadataApplier.fail(Status.UNAUTHENTICATED.withCause(e));
             }
         });
+    }
+
+    public void updateCredentials() {
+        try {
+            this.token = client.getClientAccessToken();
+        } catch (Exception e) {
+            throw new RuntimeException("error getting access token", e);
+        }
     }
 }
