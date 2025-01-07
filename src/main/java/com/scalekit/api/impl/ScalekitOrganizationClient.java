@@ -2,18 +2,15 @@ package com.scalekit.api.impl;
 
 import com.scalekit.Environment;
 import com.scalekit.api.OrganizationClient;
-import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.organizations.*;
 import com.scalekit.internal.RetryExecuter;
 import com.scalekit.internal.ScalekitCredentials;
 import io.grpc.Deadline;
 import io.grpc.ManagedChannel;
-import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
 
@@ -227,8 +224,6 @@ public class ScalekitOrganizationClient implements OrganizationClient {
             return response.getOrganization();
         },this.credentials);
     }
-
-
 
 
 }

@@ -2,7 +2,6 @@ package com.scalekit.api.impl;
 
 import com.scalekit.Environment;
 import com.scalekit.api.ConnectionClient;
-import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.connections.*;
 import com.scalekit.internal.RetryExecuter;
 import com.scalekit.internal.ScalekitCredentials;

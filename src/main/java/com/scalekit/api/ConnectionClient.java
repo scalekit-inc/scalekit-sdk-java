@@ -2,8 +2,6 @@ package com.scalekit.api;
 
 import com.scalekit.grpc.scalekit.v1.connections.*;
 
-import java.util.List;
-
 public interface ConnectionClient {
     Connection getConnectionById(String connectionId, String organizationId);
 
@@ -15,6 +13,6 @@ public interface ConnectionClient {
 
     ToggleConnectionResponse disableConnection(String connectionId, String organizationId);
 
-    Connection createConnection(  String organizationId  ,CreateConnection connection);
+    Connection createConnection(String organizationId, CreateConnection connection);
 
 }
