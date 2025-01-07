@@ -4,12 +4,17 @@ import com.scalekit.api.AuthClient;
 import io.grpc.CallCredentials;
 import io.grpc.Metadata;
 import io.grpc.Status;
+import lombok.Getter;
+
+import java.time.Instant;
 import java.util.concurrent.Executor;
 
+@Getter
 public class ScalekitCredentials extends CallCredentials {
 
     private  String token;
     private final AuthClient client;
+    private Instant lastGenerated;
 
     public ScalekitCredentials(AuthClient client) {
         this.client = client;
@@ -36,10 +41,15 @@ public class ScalekitCredentials extends CallCredentials {
         });
     }
 
-    public void updateCredentials() {
+    public synchronized void updateCredentials() {
         try {
-            this.token = client.getClientAccessToken();
+            if (lastGenerated==null || Instant.now().isAfter(lastGenerated.plusSeconds(5))) {
+                this.token = client.getClientAccessToken();
+                this.lastGenerated = Instant.now();
+            }
+
         } catch (Exception e) {
+            this.lastGenerated = null;
             throw new RuntimeException("error getting access token", e);
         }
     }
