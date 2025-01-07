@@ -3,6 +3,10 @@ import com.scalekit.internal.ScalekitCredentials;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static java.lang.Thread.sleep;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -52,17 +56,25 @@ public class AuthTest {
         String token3 = credentials.getToken();
         assertNotEquals(token2, token3);
 
-        // Multiple threads trying to update token
-        for (int i = 0; i < 4; i++) {
-            new Thread(credentials::updateCredentials).start();
-        }
+        List<Thread> threads = Arrays.asList(
+                new Thread(credentials::updateCredentials),
+                new Thread(credentials::updateCredentials),
+                new Thread(credentials::updateCredentials),
+                new Thread(credentials::updateCredentials)
+        );
+
+        threads.forEach(Thread::start);
+        threads.forEach(thread -> {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+               fail();
+            }
+        });
+
 
         String  token4 = credentials.getToken();
         assertEquals(token3, token4);
     }
-
-
-
-
 
 }
