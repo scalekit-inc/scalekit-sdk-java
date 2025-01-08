@@ -192,6 +192,25 @@ public class ScalekitDirectoryClient implements DirectoryClient {
          return response.getDirectories(0);
     }
 
+    /**
+     * createDirectory creates a new directory in Scalekit
+     * @param organizationId: The ID of the organization.
+     * @param directory: The directory to create
+     * @return Directory: The directory created
+     */
+    @Override
+    public Directory createDirectory(String organizationId, CreateDirectory directory) {
+        return RetryExecuter.executeWithRetry(() -> {
+            CreateDirectoryResponse response = this.directoryStub.createDirectory(
+                    CreateDirectoryRequest.newBuilder()
+                            .setOrganizationId(organizationId)
+                            .setDirectory(directory)
+                            .build()
+            );
+            return response.getDirectory();
+        },this.credentials);
+    }
+
 
     private ListDirectoryResourceOptions validateOptions(ListDirectoryResourceOptions options){
         if (Objects.isNull(options)){

@@ -5,10 +5,9 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Timestamp;
 import com.scalekit.ScalekitClient;
 import com.scalekit.api.util.*;
-import com.scalekit.grpc.scalekit.v1.directories.Directory;
-import com.scalekit.grpc.scalekit.v1.directories.DirectoryProvider;
-import com.scalekit.grpc.scalekit.v1.directories.ListDirectoriesResponse;
-import com.scalekit.grpc.scalekit.v1.directories.ToggleDirectoryResponse;
+import com.scalekit.api.util.DirectoryGroup;
+import com.scalekit.api.util.DirectoryUser;
+import com.scalekit.grpc.scalekit.v1.directories.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -184,6 +183,21 @@ public class DirectoryTest {
         assertEquals(DirectoryProvider.OKTA, directory.getDirectoryProvider());
         assertTrue(directory.getStats().getTotalGroups() > 0);
         assertTrue(directory.getStats().getTotalUsers() > 0);
+    }
+
+    @Test
+    public void CreateDirectory(){
+
+       CreateDirectory createDirectory = CreateDirectory.newBuilder()
+                .setDirectoryType(DirectoryType.SCIM)
+                .setDirectoryProvider(DirectoryProvider.OKTA)
+                .build();
+
+        Directory directory = client.directories().createDirectory(organizationId, createDirectory);
+        assertNotNull(directory);
+        assertNotNull(directory.getId());
+        assertEquals(organizationId, directory.getOrganizationId());
+        assertEquals(DirectoryProvider.OKTA, directory.getDirectoryProvider());
     }
 
 }

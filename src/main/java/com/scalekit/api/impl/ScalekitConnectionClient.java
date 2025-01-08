@@ -116,6 +116,13 @@ public class ScalekitConnectionClient implements ConnectionClient {
             },this.credentials);
     }
 
+
+    /**
+     * createConnection creates a new connection in Scalekit for the organization
+     * @param organizationId: The organization ID
+     * @param connection: The connection to create
+     * @return Connection: The connection created
+     */
     @Override
     public Connection createConnection(String organizationId, CreateConnection connection) {
         return RetryExecuter.executeWithRetry(() -> {

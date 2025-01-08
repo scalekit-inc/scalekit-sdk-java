@@ -20,4 +20,6 @@ public interface DirectoryClient {
     ToggleDirectoryResponse  disableDirectory(String directoryId, String organizationId);
 
     Directory getPrimaryDirectoryByOrganizationId(String organizationId);
+
+    Directory createDirectory(String organizationId, CreateDirectory directory);
 }
