@@ -189,15 +189,14 @@ public class DirectoryTest {
     public void CreateDirectory(){
 
        CreateDirectory createDirectory = CreateDirectory.newBuilder()
-                .setDirectoryType(DirectoryType.SCIM)
                 .setDirectoryProvider(DirectoryProvider.OKTA)
                 .build();
-
         Directory directory = client.directories().createDirectory(organizationId, createDirectory);
         assertNotNull(directory);
         assertNotNull(directory.getId());
         assertEquals(organizationId, directory.getOrganizationId());
         assertEquals(DirectoryProvider.OKTA, directory.getDirectoryProvider());
+        assertEquals(DirectoryType.SCIM, directory.getDirectoryType());
     }
 
 }

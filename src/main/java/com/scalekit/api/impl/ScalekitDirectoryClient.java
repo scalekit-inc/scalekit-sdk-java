@@ -200,12 +200,21 @@ public class ScalekitDirectoryClient implements DirectoryClient {
      */
     @Override
     public Directory createDirectory(String organizationId, CreateDirectory directory) {
+
         return RetryExecuter.executeWithRetry(() -> {
             CreateDirectoryResponse response = this.directoryStub.createDirectory(
                     CreateDirectoryRequest.newBuilder()
                             .setOrganizationId(organizationId)
-                            .setDirectory(directory)
-                            .build()
+                            .setDirectory(
+                                    CreateDirectory.newBuilder()
+                                            .setDirectoryProvider(directory.getDirectoryProvider())
+                                            .setDirectoryType(
+                                                        // use SCIM by default
+                                                        directory.getDirectoryType() == DirectoryType.DIRECTORY_TYPE_UNSPECIFIED?
+                                                        DirectoryType.SCIM:
+                                                        directory.getDirectoryType())
+                                            .build()
+                            ).build()
             );
             return response.getDirectory();
         },this.credentials);
