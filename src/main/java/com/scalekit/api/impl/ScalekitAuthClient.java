@@ -154,6 +154,7 @@ public class ScalekitAuthClient implements AuthClient {
             JsonWebKey jwk = jwkSelector.select(jws, jsonWebKeySet.getJsonWebKeys());
             jws.setKey(jwk.getKey());
 
+
             // Verify the signature
             return jws.verifySignature();
         } catch (Exception e) {

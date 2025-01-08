@@ -8,6 +8,7 @@ import com.scalekit.api.util.ListDirectoryResourceOptions;
 import com.scalekit.api.util.ListDirectoryUserResponse;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.directories.*;
+import com.scalekit.internal.RetryExecuter;
 import com.scalekit.internal.ScalekitCredentials;
 import io.grpc.Deadline;
 import io.grpc.ManagedChannel;
@@ -19,9 +20,11 @@ import java.util.concurrent.TimeUnit;
 public class ScalekitDirectoryClient implements DirectoryClient {
 
     private final DirectoryServiceGrpc.DirectoryServiceBlockingStub directoryStub;
+    private final ScalekitCredentials credentials;
 
     public ScalekitDirectoryClient(ManagedChannel channel, ScalekitCredentials credentials){
         try {
+            this.credentials = credentials;
             this.directoryStub =  DirectoryServiceGrpc
                     .newBlockingStub(channel)
                     .withCallCredentials(credentials)
@@ -46,16 +49,15 @@ public class ScalekitDirectoryClient implements DirectoryClient {
      */
     @Override
     public Directory getDirectory(String directoryId, String organizationId) {
-        GetDirectoryRequest request = GetDirectoryRequest.newBuilder()
-                .setId(directoryId)
-                .setOrganizationId(organizationId)
-                .build();
-
-        try {
-            return directoryStub.getDirectory(request).getDirectory();
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        return RetryExecuter.executeWithRetry(() -> {
+            GetDirectoryResponse response = this.directoryStub.getDirectory(
+                    GetDirectoryRequest.newBuilder()
+                            .setId(directoryId)
+                            .setOrganizationId(organizationId)
+                            .build()
+            );
+            return response.getDirectory();
+        },this.credentials);
     }
 
     /**
@@ -67,15 +69,11 @@ public class ScalekitDirectoryClient implements DirectoryClient {
      */
     @Override
     public ListDirectoriesResponse listDirectories(String organizationId) {
-        ListDirectoriesRequest request = ListDirectoriesRequest.newBuilder()
-                .setOrganizationId(organizationId)
-                .build();
-
-        try {
-            return directoryStub.listDirectories(request);
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        return RetryExecuter.executeWithRetry(() -> this.directoryStub.listDirectories(
+                ListDirectoriesRequest.newBuilder()
+                        .setOrganizationId(organizationId)
+                        .build()
+        ),this.credentials);
     }
 
 
@@ -91,24 +89,21 @@ public class ScalekitDirectoryClient implements DirectoryClient {
     @Override
     public ListDirectoryUserResponse listDirectoryUsers(String directoryId, String organizationId, ListDirectoryResourceOptions options) {
 
-
         options = validateOptions(options);
 
-        ListDirectoryUsersRequest request = ListDirectoryUsersRequest.newBuilder()
-                .setDirectoryId(directoryId)
-                .setPageSize(options.getPageSize())
-                .setPageToken(options.getPageToken())
-                .setOrganizationId(organizationId)
-                .setIncludeDetail(options.isIncludeDetail())
-                .setUpdatedAfter(options.getUpdatedAfter())
-                .build();
-
-        try {
+        ListDirectoryResourceOptions finalOptions = options;
+        return RetryExecuter.executeWithRetry(() -> {
+            ListDirectoryUsersRequest request = ListDirectoryUsersRequest.newBuilder()
+                    .setDirectoryId(directoryId)
+                    .setPageSize(finalOptions.getPageSize())
+                    .setPageToken(finalOptions.getPageToken())
+                    .setOrganizationId(organizationId)
+                    .setIncludeDetail(finalOptions.isIncludeDetail())
+                    .setUpdatedAfter(finalOptions.getUpdatedAfter())
+                    .build();
             ListDirectoryUsersResponse grpcListDirectoryUsersResponse = directoryStub.listDirectoryUsers(request);
             return new ListDirectoryUserResponse(grpcListDirectoryUsersResponse);
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        },this.credentials);
     }
 
 
@@ -124,20 +119,18 @@ public class ScalekitDirectoryClient implements DirectoryClient {
     @Override
     public ListDirectoryGroupResponse listDirectoryGroups(String directoryId, String organizationId, ListDirectoryResourceOptions options) {
         options = validateOptions(options);
-        ListDirectoryGroupsRequest request = ListDirectoryGroupsRequest.newBuilder()
-                .setDirectoryId(directoryId)
-                .setPageSize(options.getPageSize())
-                .setPageToken(options.getPageToken())
-                .setIncludeDetail(options.isIncludeDetail())
-                .setOrganizationId(organizationId)
-                .build();
-
-        try {
-            ListDirectoryGroupsResponse response = directoryStub.listDirectoryGroups(request);
-            return new ListDirectoryGroupResponse(response);
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        ListDirectoryResourceOptions finalOptions = options;
+        return RetryExecuter.executeWithRetry(() -> {
+            ListDirectoryGroupsRequest request = ListDirectoryGroupsRequest.newBuilder()
+                    .setDirectoryId(directoryId)
+                    .setPageSize(finalOptions.getPageSize())
+                    .setPageToken(finalOptions.getPageToken())
+                    .setIncludeDetail(finalOptions.isIncludeDetail())
+                    .setOrganizationId(organizationId)
+                    .build();
+            ListDirectoryGroupsResponse grpcListDirectoryGroupsResponse = directoryStub.listDirectoryGroups(request);
+            return new ListDirectoryGroupResponse(grpcListDirectoryGroupsResponse);
+        },this.credentials);
     }
 
 
@@ -151,15 +144,14 @@ public class ScalekitDirectoryClient implements DirectoryClient {
      */
     @Override
     public ToggleDirectoryResponse enableDirectory(String directoryId, String organizationId) {
-        ToggleDirectoryRequest request = ToggleDirectoryRequest.newBuilder()
-                .setId(directoryId)
-                .setOrganizationId(organizationId)
-                .build();
-        try {
+
+       return RetryExecuter.executeWithRetry(() -> {
+            ToggleDirectoryRequest request = ToggleDirectoryRequest.newBuilder()
+                    .setId(directoryId)
+                    .setOrganizationId(organizationId)
+                    .build();
             return directoryStub.enableDirectory(request);
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        },this.credentials);
 
     }
 
@@ -174,15 +166,13 @@ public class ScalekitDirectoryClient implements DirectoryClient {
      */
     @Override
     public ToggleDirectoryResponse disableDirectory(String directoryId, String organizationId) {
-        ToggleDirectoryRequest request = ToggleDirectoryRequest.newBuilder()
-                .setId(directoryId)
-                .setOrganizationId(organizationId)
-                .build();
-        try {
+        return RetryExecuter.executeWithRetry(() -> {
+            ToggleDirectoryRequest request = ToggleDirectoryRequest.newBuilder()
+                    .setId(directoryId)
+                    .setOrganizationId(organizationId)
+                    .build();
             return directoryStub.disableDirectory(request);
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        },this.credentials);
     }
 
     /**
@@ -200,6 +190,34 @@ public class ScalekitDirectoryClient implements DirectoryClient {
            throw new APIException("Directory does not exist for organization");
        }
          return response.getDirectories(0);
+    }
+
+    /**
+     * createDirectory creates a new directory in Scalekit
+     * @param organizationId: The ID of the organization.
+     * @param directory: The directory to create
+     * @return Directory: The directory created
+     */
+    @Override
+    public Directory createDirectory(String organizationId, CreateDirectory directory) {
+
+        return RetryExecuter.executeWithRetry(() -> {
+            CreateDirectoryResponse response = this.directoryStub.createDirectory(
+                    CreateDirectoryRequest.newBuilder()
+                            .setOrganizationId(organizationId)
+                            .setDirectory(
+                                    CreateDirectory.newBuilder()
+                                            .setDirectoryProvider(directory.getDirectoryProvider())
+                                            .setDirectoryType(
+                                                        // use SCIM by default
+                                                        directory.getDirectoryType() == DirectoryType.DIRECTORY_TYPE_UNSPECIFIED?
+                                                        DirectoryType.SCIM:
+                                                        directory.getDirectoryType())
+                                            .build()
+                            ).build()
+            );
+            return response.getDirectory();
+        },this.credentials);
     }
 
 

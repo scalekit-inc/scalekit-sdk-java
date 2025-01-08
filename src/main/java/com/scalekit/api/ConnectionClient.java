@@ -1,10 +1,6 @@
 package com.scalekit.api;
 
-import com.scalekit.grpc.scalekit.v1.connections.Connection;
-import com.scalekit.grpc.scalekit.v1.connections.ListConnectionsResponse;
-import com.scalekit.grpc.scalekit.v1.connections.ToggleConnectionResponse;
-
-import java.util.List;
+import com.scalekit.grpc.scalekit.v1.connections.*;
 
 public interface ConnectionClient {
     Connection getConnectionById(String connectionId, String organizationId);
@@ -16,5 +12,7 @@ public interface ConnectionClient {
     ToggleConnectionResponse enableConnection(String connectionId, String organizationId);
 
     ToggleConnectionResponse disableConnection(String connectionId, String organizationId);
+
+    Connection createConnection(String organizationId, CreateConnection connection);
 
 }

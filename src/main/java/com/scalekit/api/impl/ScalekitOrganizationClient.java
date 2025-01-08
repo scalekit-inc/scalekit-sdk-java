@@ -2,8 +2,8 @@ package com.scalekit.api.impl;
 
 import com.scalekit.Environment;
 import com.scalekit.api.OrganizationClient;
-import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.organizations.*;
+import com.scalekit.internal.RetryExecuter;
 import com.scalekit.internal.ScalekitCredentials;
 import io.grpc.Deadline;
 import io.grpc.ManagedChannel;
@@ -17,14 +17,16 @@ import java.util.concurrent.TimeUnit;
 public class ScalekitOrganizationClient implements OrganizationClient {
 
     private final OrganizationServiceGrpc.OrganizationServiceBlockingStub organizationStub;
+    private final ScalekitCredentials credentials;
 
     public ScalekitOrganizationClient(ManagedChannel channel, ScalekitCredentials credentials){
         try {
+            this.credentials = credentials;
             this.organizationStub =  OrganizationServiceGrpc
                     .newBlockingStub(channel)
-                    .withCallCredentials(credentials)
-                    .withDeadline(Deadline.after(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS))
-            ;
+                    .withCallCredentials(this.credentials)
+                    .withDeadline(Deadline.after(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS));
+
         }
         catch (StatusRuntimeException e){
             throw new RuntimeException("Error creating Organization client", e);
@@ -39,16 +41,14 @@ public class ScalekitOrganizationClient implements OrganizationClient {
      */
     @Override
     public Organization create(CreateOrganization organization) {
-        try {
+        return RetryExecuter.executeWithRetry(() -> {
             CreateOrganizationResponse response = this.organizationStub.createOrganization(
                     CreateOrganizationRequest.newBuilder()
                             .setOrganization(organization)
                             .build()
             );
             return response.getOrganization();
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        },this.credentials);
 
     }
 
@@ -59,16 +59,14 @@ public class ScalekitOrganizationClient implements OrganizationClient {
      */
     @Override
     public Organization getById(String id) {
-        try {
+        return RetryExecuter.executeWithRetry(() -> {
             GetOrganizationResponse response = this.organizationStub.getOrganization(
                     GetOrganizationRequest.newBuilder()
                             .setId(id)
                             .build()
             );
             return response.getOrganization();
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        },this.credentials);
 
 
 
@@ -81,17 +79,14 @@ public class ScalekitOrganizationClient implements OrganizationClient {
      */
     @Override
     public Organization getByExternalId(String externalId) {
-        try {
+        return RetryExecuter.executeWithRetry(() -> {
             GetOrganizationResponse response = this.organizationStub.getOrganization(
                     GetOrganizationRequest.newBuilder()
                             .setExternalId(externalId)
                             .build()
             );
-
             return response.getOrganization();
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        },this.credentials);
 
     }
 
@@ -103,19 +98,15 @@ public class ScalekitOrganizationClient implements OrganizationClient {
      */
     @Override
     public Organization updateById(String id, UpdateOrganization organization) {
-
-        try {
+        return RetryExecuter.executeWithRetry(() -> {
             UpdateOrganizationResponse response = this.organizationStub.updateOrganization(
                     UpdateOrganizationRequest.newBuilder()
                             .setOrganization(organization)
                             .setId(id)
                             .build()
             );
-
             return response.getOrganization();
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        },this.credentials);
     }
 
     /**
@@ -126,7 +117,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
      */
     @Override
     public Organization updateByExternalId(String externalId, UpdateOrganization organization) {
-        try {
+        return RetryExecuter.executeWithRetry(() -> {
             UpdateOrganizationResponse response = this.organizationStub.updateOrganization(
                     UpdateOrganizationRequest.newBuilder()
                             .setOrganization(organization)
@@ -134,10 +125,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
                             .build()
             );
             return response.getOrganization();
-
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        },this.credentials);
     }
 
     /**
@@ -146,15 +134,14 @@ public class ScalekitOrganizationClient implements OrganizationClient {
      */
     @Override
     public void deleteById(String id) {
-        try {
+        RetryExecuter.executeWithRetry(() -> {
             this.organizationStub.deleteOrganization(
                     DeleteOrganizationRequest.newBuilder()
                             .setId(id)
                             .build()
             );
-        }catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+            return null;
+        },this.credentials);
     }
 
     /**
@@ -164,15 +151,14 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     @Override
     public void deleteByExternalId(String externalId) {
 
-        try {
+      RetryExecuter.executeWithRetry(() -> {
             this.organizationStub.deleteOrganization(
                     DeleteOrganizationRequest.newBuilder()
                             .setExternalId(externalId)
                             .build()
             );
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+            return null;
+        },this.credentials);
 
     }
 
@@ -185,23 +171,24 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         * @return ListOrganizationsResponse: The list of organizations retrieved
      */
     @Override
-    public ListOrganizationsResponse listOrganizations(int pageSize, String pageToken) {
-        if(Objects.isNull(pageToken)) {
-            pageToken = "";
+    public ListOrganizationsResponse listOrganizations( int pageSize, String pageToken) {
+        String finalPageToken = pageToken;
+        int finalPageSize = pageSize;
+        if (Objects.isNull(finalPageToken)) {
+            finalPageToken = "";
         }
-        if (pageSize <= 0) {
-            pageSize = 10;
+        if (finalPageSize <= 0) {
+            finalPageSize = 10;
         }
-        try {
-            return this.organizationStub.listOrganization(
-                    ListOrganizationsRequest.newBuilder()
-                            .setPageSize(pageSize)
-                            .setPageToken(pageToken)
-                            .build()
-            );
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        final String effectivePageToken = finalPageToken;
+        final int effectivePageSize = finalPageSize;
+        return RetryExecuter.executeWithRetry(() -> {
+            ListOrganizationsRequest request = ListOrganizationsRequest.newBuilder()
+                    .setPageSize(effectivePageSize)
+                    .setPageToken(effectivePageToken)
+                    .build();
+            return this.organizationStub.listOrganization(request);
+        },this.credentials);
     }
 
     /**
@@ -211,16 +198,13 @@ public class ScalekitOrganizationClient implements OrganizationClient {
      */
     @Override
     public Link generatePortalLink(String organizationId) {
-        GeneratePortalLinkRequest request = GeneratePortalLinkRequest.newBuilder()
-                .setId(organizationId)
-                .build();
-
-        try {
+        return  RetryExecuter.executeWithRetry(() -> {
+            GeneratePortalLinkRequest request = GeneratePortalLinkRequest.newBuilder()
+                    .setId(organizationId)
+                    .build();
             GeneratePortalLinkResponse response = this.organizationStub.generatePortalLink(request);
             return response.getLink();
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        },this.credentials);
     }
 
     /**
@@ -231,15 +215,15 @@ public class ScalekitOrganizationClient implements OrganizationClient {
      */
     @Override
     public Organization updateOrganizationSettings(String organizationId, List<OrganizationSettingsFeature> settings) {
-        UpdateOrganizationSettingsRequest request = UpdateOrganizationSettingsRequest.newBuilder()
-                .setId(organizationId)
-                .setSettings(OrganizationSettings.newBuilder().addAllFeatures(settings))
-                .build();
-        try {
+        return RetryExecuter.executeWithRetry(() -> {
+            UpdateOrganizationSettingsRequest request = UpdateOrganizationSettingsRequest.newBuilder()
+                    .setId(organizationId)
+                    .setSettings(OrganizationSettings.newBuilder().addAllFeatures(settings))
+                    .build();
             GetOrganizationResponse  response = this.organizationStub.updateOrganizationSettings(request);
             return response.getOrganization();
-        } catch (StatusRuntimeException e) {
-            throw new APIException(e);
-        }
+        },this.credentials);
     }
+
+
 }

@@ -5,10 +5,9 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Timestamp;
 import com.scalekit.ScalekitClient;
 import com.scalekit.api.util.*;
-import com.scalekit.grpc.scalekit.v1.directories.Directory;
-import com.scalekit.grpc.scalekit.v1.directories.DirectoryProvider;
-import com.scalekit.grpc.scalekit.v1.directories.ListDirectoriesResponse;
-import com.scalekit.grpc.scalekit.v1.directories.ToggleDirectoryResponse;
+import com.scalekit.api.util.DirectoryGroup;
+import com.scalekit.api.util.DirectoryUser;
+import com.scalekit.grpc.scalekit.v1.directories.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,10 +24,6 @@ public class DirectoryTest {
     @BeforeAll
     static void init(){
 
-        organizationId = "org_43223111834796035";
-        directoryId = "dir_43223123058754084";
-
-        //25-Oct-2024 03:06pm
         long seconds = 1729851960L;
         updatedAfter = Timestamp.newBuilder().setSeconds(seconds).build();
 
@@ -37,6 +32,8 @@ public class DirectoryTest {
         String environmentUrl = System.getenv("SCALEKIT_ENVIRONMENT_URL");
         String  clientId = System.getenv("SCALEKIT_CLIENT_ID");
         String apiSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
+        organizationId = System.getenv("TEST_ORGANIZATION");
+        directoryId = System.getenv("TEST_DIRECTORY");
 
         client = new ScalekitClient(environmentUrl, clientId, apiSecret);
     }
@@ -114,7 +111,7 @@ public class DirectoryTest {
                 .directories()
                 .listDirectoryUsers(directory.getId(),organizationId,options);
 
-        assertEquals(usersResponse.getUsersCount() ,1);
+        assertEquals(usersResponse.getUsersCount() ,2);
 
         DirectoryUser user = usersResponse.getUsers(0);
         assertNotNull(user);
@@ -186,6 +183,20 @@ public class DirectoryTest {
         assertEquals(DirectoryProvider.OKTA, directory.getDirectoryProvider());
         assertTrue(directory.getStats().getTotalGroups() > 0);
         assertTrue(directory.getStats().getTotalUsers() > 0);
+    }
+
+    @Test
+    public void CreateDirectory(){
+
+       CreateDirectory createDirectory = CreateDirectory.newBuilder()
+                .setDirectoryProvider(DirectoryProvider.OKTA)
+                .build();
+        Directory directory = client.directories().createDirectory(organizationId, createDirectory);
+        assertNotNull(directory);
+        assertNotNull(directory.getId());
+        assertEquals(organizationId, directory.getOrganizationId());
+        assertEquals(DirectoryProvider.OKTA, directory.getDirectoryProvider());
+        assertEquals(DirectoryType.SCIM, directory.getDirectoryType());
     }
 
 }
