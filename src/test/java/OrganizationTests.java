@@ -2,14 +2,17 @@
 import com.scalekit.ScalekitClient;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.organizations.*;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Slf4j
 public class OrganizationTests {
 
     private static ScalekitClient client;
@@ -94,14 +97,82 @@ public class OrganizationTests {
 
     @Test
     void GeneratePortalLinkTest() {
-        ListOrganizationsResponse organizations = client.organizations().listOrganizations(10, null);
-        assertNotNull(organizations);
+        CreateOrganization createOrganization = CreateOrganization.newBuilder()
+                .setDisplayName("tested for creating portal links")
+                .build();
+
+        Organization organization = client.organizations().create(createOrganization);
+        assertNotNull(organization);
+
+        OrganizationSettingsFeature featureSSOEnable = OrganizationSettingsFeature.newBuilder()
+                .setName("sso")
+                .setEnabled(true)
+                .build();
+
+        OrganizationSettingsFeature featureDirectorySyncEnable = OrganizationSettingsFeature.newBuilder()
+                .setName("dir_sync")
+                .setEnabled(true)
+                .build();
 
 
-        Link response = client.organizations().generatePortalLink(organizations.getOrganizationsList().get(0).getId());
-        assertNotNull(response);
-        assertNotNull(response.getLocation());
-        assertNotNull(response.getId());
+        Organization updatedOrganization = client.organizations()
+                .updateOrganizationSettings(organization.getId(), Arrays.asList(featureSSOEnable, featureDirectorySyncEnable));
+
+        // Generate link for each module available in the org.
+        // all can verified by visiting the link in browser
+        Link linkForDirectorySync = client.organizations().generatePortalLinkForFeatures(updatedOrganization.getId(), Collections.singletonList(Feature.dir_sync));
+        Link linkForSSO = client.organizations().generatePortalLinkForFeatures(updatedOrganization.getId(), Collections.singletonList(Feature.sso));
+        Link linkForBoth = client.organizations().generatePortalLinkForFeatures(updatedOrganization.getId(), Arrays.asList(Feature.sso, Feature.dir_sync));
+        Link linkWithDefaultFeatures = client.organizations().generatePortalLink(updatedOrganization.getId());
+
+        System.out.println("Link for Directory Sync: " + linkForDirectorySync.getLocation());
+        System.out.println("Link for SSO: " + linkForSSO.getLocation());
+        System.out.println("Link for Both: " + linkForBoth.getLocation());
+        System.out.println("Link with default features (whatever is enabled for the org): " + linkWithDefaultFeatures.getLocation());
+
+        assertNotNull(linkForDirectorySync);
+        assertNotNull(linkForDirectorySync.getLocation());
+        assertNotNull(linkForDirectorySync.getId());
+        assertNotNull(linkForSSO);
+        assertNotNull(linkForSSO.getLocation());
+        assertNotNull(linkForSSO.getId());
+        assertNotNull(linkForBoth);
+        assertNotNull(linkForBoth.getLocation());
+        assertNotNull(linkForBoth.getId());
+    }
+
+
+    @Test
+    void GeneratePortalLinkTestException() {
+        CreateOrganization createOrganization = CreateOrganization.newBuilder()
+                .setDisplayName("tested for creating portal links")
+                .build();
+
+        Organization organization = client.organizations().create(createOrganization);
+        assertNotNull(organization);
+
+        OrganizationSettingsFeature featureSSOEnable = OrganizationSettingsFeature.newBuilder()
+                .setName("sso")
+                .setEnabled(false)
+                .build();
+
+        OrganizationSettingsFeature featureDirectorySyncEnable = OrganizationSettingsFeature.newBuilder()
+                .setName("dir_sync")
+                .setEnabled(false)
+                .build();
+
+
+        Organization updatedOrganization = client.organizations()
+                .updateOrganizationSettings(organization.getId(), Arrays.asList(featureSSOEnable, featureDirectorySyncEnable));
+
+        try{
+            // directory sync not enabled
+            Link linkForDirectorySync = client.organizations().generatePortalLinkForFeatures(updatedOrganization.getId(), Collections.singletonList(Feature.dir_sync));
+        } catch (APIException e) {
+            assertEquals("INVALID_ARGUMENT", e.getScalekitErrorCode());
+        }
+
+
     }
 
     @Test

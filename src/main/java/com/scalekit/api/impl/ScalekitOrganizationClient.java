@@ -9,6 +9,8 @@ import io.grpc.Deadline;
 import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
@@ -198,9 +200,15 @@ public class ScalekitOrganizationClient implements OrganizationClient {
      */
     @Override
     public Link generatePortalLink(String organizationId) {
-        return  RetryExecuter.executeWithRetry(() -> {
+       return generatePortalLinkForFeatures(organizationId, Collections.emptyList());
+    }
+
+    @Override
+    public Link generatePortalLinkForFeatures(String organizationId, List<Feature> features) {
+        return RetryExecuter.executeWithRetry(() -> {
             GeneratePortalLinkRequest request = GeneratePortalLinkRequest.newBuilder()
                     .setId(organizationId)
+                    .addAllFeatures(features)
                     .build();
             GeneratePortalLinkResponse response = this.organizationStub.generatePortalLink(request);
             return response.getLink();
