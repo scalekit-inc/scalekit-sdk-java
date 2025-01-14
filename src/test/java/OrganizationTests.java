@@ -25,7 +25,7 @@ public class OrganizationTests {
     }
 
     @Test
-    void OrganizationsTest(){
+    void OrganizationsTest() {
         String organizationName = "Tested from Sdk 1";
         CreateOrganization createOrganization = CreateOrganization.newBuilder()
                 .setDisplayName(organizationName)
@@ -34,6 +34,7 @@ public class OrganizationTests {
                 .build();
 
         Organization createdOrganization       = client.organizations().create(createOrganization);
+
         Organization retrievedOrganizationById = client.organizations().getById(createdOrganization.getId());
         Organization retrieveByExternalId      = client.organizations().getByExternalId(createdOrganization.getExternalId());
         Organization updatedOrganizationById   = client.organizations().updateById(
@@ -49,6 +50,7 @@ public class OrganizationTests {
                         .setDisplayName("Updated name again")
                         .build()
         );
+
 
         client.organizations().deleteById(createdOrganization.getId());
         // create again with same external Id

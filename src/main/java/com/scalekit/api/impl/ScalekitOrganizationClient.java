@@ -5,7 +5,6 @@ import com.scalekit.api.OrganizationClient;
 import com.scalekit.grpc.scalekit.v1.organizations.*;
 import com.scalekit.internal.RetryExecuter;
 import com.scalekit.internal.ScalekitCredentials;
-import io.grpc.Deadline;
 import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
 
@@ -24,8 +23,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
             this.credentials = credentials;
             this.organizationStub =  OrganizationServiceGrpc
                     .newBlockingStub(channel)
-                    .withCallCredentials(this.credentials)
-                    .withDeadline(Deadline.after(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS));
+                    .withCallCredentials(this.credentials);
 
         }
         catch (StatusRuntimeException e){
@@ -42,7 +40,9 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     @Override
     public Organization create(CreateOrganization organization) {
         return RetryExecuter.executeWithRetry(() -> {
-            CreateOrganizationResponse response = this.organizationStub.createOrganization(
+            CreateOrganizationResponse response = this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .createOrganization(
                     CreateOrganizationRequest.newBuilder()
                             .setOrganization(organization)
                             .build()
@@ -60,7 +60,9 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     @Override
     public Organization getById(String id) {
         return RetryExecuter.executeWithRetry(() -> {
-            GetOrganizationResponse response = this.organizationStub.getOrganization(
+            GetOrganizationResponse response = this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                            .getOrganization(
                     GetOrganizationRequest.newBuilder()
                             .setId(id)
                             .build()
@@ -80,7 +82,9 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     @Override
     public Organization getByExternalId(String externalId) {
         return RetryExecuter.executeWithRetry(() -> {
-            GetOrganizationResponse response = this.organizationStub.getOrganization(
+            GetOrganizationResponse response = this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                            .getOrganization(
                     GetOrganizationRequest.newBuilder()
                             .setExternalId(externalId)
                             .build()
@@ -99,7 +103,9 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     @Override
     public Organization updateById(String id, UpdateOrganization organization) {
         return RetryExecuter.executeWithRetry(() -> {
-            UpdateOrganizationResponse response = this.organizationStub.updateOrganization(
+            UpdateOrganizationResponse response = this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .updateOrganization(
                     UpdateOrganizationRequest.newBuilder()
                             .setOrganization(organization)
                             .setId(id)
@@ -118,7 +124,9 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     @Override
     public Organization updateByExternalId(String externalId, UpdateOrganization organization) {
         return RetryExecuter.executeWithRetry(() -> {
-            UpdateOrganizationResponse response = this.organizationStub.updateOrganization(
+            UpdateOrganizationResponse response = this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .updateOrganization(
                     UpdateOrganizationRequest.newBuilder()
                             .setOrganization(organization)
                             .setExternalId(externalId)
@@ -135,7 +143,9 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     @Override
     public void deleteById(String id) {
         RetryExecuter.executeWithRetry(() -> {
-            this.organizationStub.deleteOrganization(
+            this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .deleteOrganization(
                     DeleteOrganizationRequest.newBuilder()
                             .setId(id)
                             .build()
@@ -152,7 +162,9 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     public void deleteByExternalId(String externalId) {
 
       RetryExecuter.executeWithRetry(() -> {
-            this.organizationStub.deleteOrganization(
+            this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .deleteOrganization(
                     DeleteOrganizationRequest.newBuilder()
                             .setExternalId(externalId)
                             .build()
@@ -187,7 +199,9 @@ public class ScalekitOrganizationClient implements OrganizationClient {
                     .setPageSize(effectivePageSize)
                     .setPageToken(effectivePageToken)
                     .build();
-            return this.organizationStub.listOrganization(request);
+            return this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .listOrganization(request);
         },this.credentials);
     }
 
@@ -202,7 +216,9 @@ public class ScalekitOrganizationClient implements OrganizationClient {
             GeneratePortalLinkRequest request = GeneratePortalLinkRequest.newBuilder()
                     .setId(organizationId)
                     .build();
-            GeneratePortalLinkResponse response = this.organizationStub.generatePortalLink(request);
+            GeneratePortalLinkResponse response = this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .generatePortalLink(request);
             return response.getLink();
         },this.credentials);
     }
@@ -220,7 +236,9 @@ public class ScalekitOrganizationClient implements OrganizationClient {
                     .setId(organizationId)
                     .setSettings(OrganizationSettings.newBuilder().addAllFeatures(settings))
                     .build();
-            GetOrganizationResponse  response = this.organizationStub.updateOrganizationSettings(request);
+            GetOrganizationResponse  response = this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .updateOrganizationSettings(request);
             return response.getOrganization();
         },this.credentials);
     }
