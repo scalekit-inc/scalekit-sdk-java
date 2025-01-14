@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.UUID;
 
-import static java.lang.Thread.sleep;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class OrganizationTests {
@@ -52,7 +51,7 @@ public class OrganizationTests {
                         .build()
         );
 
-        sleep(5000);
+
         client.organizations().deleteById(createdOrganization.getId());
         // create again with same external Id
         Organization reCreatedOrganization = client.organizations().create(createOrganization);
