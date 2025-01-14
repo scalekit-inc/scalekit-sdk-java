@@ -20,7 +20,6 @@ public class ScalekitConnectionClient implements ConnectionClient {
             this.credentials = credentials;
             this.ConnectionStub =  ConnectionServiceGrpc
                     .newBlockingStub(channel)
-                    .withDeadline(Deadline.after(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS))
                     .withCallCredentials(credentials);
         }
         catch (StatusRuntimeException e){
@@ -37,7 +36,9 @@ public class ScalekitConnectionClient implements ConnectionClient {
     @Override
     public Connection getConnectionById(String connectionId, String organizationId) {
         return RetryExecuter.executeWithRetry(() -> {
-            GetConnectionResponse response = this.ConnectionStub.getConnection(
+            GetConnectionResponse response = this.ConnectionStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .getConnection(
                     GetConnectionRequest.newBuilder()
                             .setId(connectionId)
                             .setOrganizationId(organizationId)
@@ -54,7 +55,9 @@ public class ScalekitConnectionClient implements ConnectionClient {
      */
     @Override
     public ListConnectionsResponse listConnectionsByDomain(String domain) {
-        return RetryExecuter.executeWithRetry(() -> this.ConnectionStub.listConnections(
+        return RetryExecuter.executeWithRetry(() -> this.ConnectionStub
+                .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                .listConnections(
                 ListConnectionsRequest.newBuilder()
                         .setDomain(domain)
                         .setInclude("all")
@@ -70,7 +73,9 @@ public class ScalekitConnectionClient implements ConnectionClient {
     @Override
     public ListConnectionsResponse listConnectionsByOrganization(String organizationId) {
 
-        return RetryExecuter.executeWithRetry(() -> this.ConnectionStub.listConnections(
+        return RetryExecuter.executeWithRetry(() -> this.ConnectionStub
+                .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                .listConnections(
                 ListConnectionsRequest.newBuilder()
                         .setOrganizationId(organizationId)
                         .setInclude("all")
@@ -93,7 +98,9 @@ public class ScalekitConnectionClient implements ConnectionClient {
                     .setOrganizationId(organizationId)
                     .setId(connectionId)
                     .build();
-            return this.ConnectionStub.enableConnection(request);
+            return this.ConnectionStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .enableConnection(request);
         },this.credentials);
 
     }
@@ -112,7 +119,9 @@ public class ScalekitConnectionClient implements ConnectionClient {
                         .setOrganizationId(organizationId)
                         .setId(connectionId)
                         .build();
-                return this.ConnectionStub.disableConnection(request);
+                return this.ConnectionStub
+                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .disableConnection(request);
             },this.credentials);
     }
 
@@ -126,7 +135,9 @@ public class ScalekitConnectionClient implements ConnectionClient {
     @Override
     public Connection createConnection(String organizationId, CreateConnection connection) {
         return RetryExecuter.executeWithRetry(() -> {
-            CreateConnectionResponse response = this.ConnectionStub.createConnection(
+            CreateConnectionResponse response = this.ConnectionStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .createConnection(
                     CreateConnectionRequest.newBuilder()
                             .setOrganizationId(organizationId)
                             .setConnection(connection)

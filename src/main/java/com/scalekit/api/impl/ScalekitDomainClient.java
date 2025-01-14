@@ -23,7 +23,6 @@ public class ScalekitDomainClient implements DomainClient {
             this.credentials = credentials;
             this.domainStub = DomainServiceGrpc
                     .newBlockingStub(channel)
-                    .withDeadline(Deadline.after(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS))
                     .withCallCredentials(credentials);
         } catch (StatusRuntimeException e) {
             throw new APIException(e);
@@ -42,7 +41,9 @@ public class ScalekitDomainClient implements DomainClient {
     @Override
     public Domain createDomain(String organizationId, String domainName) {
         return RetryExecuter.executeWithRetry(() -> {
-            CreateDomainResponse response = this.domainStub.createDomain(
+            CreateDomainResponse response = this.domainStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .createDomain(
                     CreateDomainRequest.newBuilder()
                             .setOrganizationId(organizationId)
                             .setDomain(CreateDomain.newBuilder()
@@ -66,7 +67,9 @@ public class ScalekitDomainClient implements DomainClient {
     @Override
     public Domain getDomainById(String organizationId, String domainId) {
         return RetryExecuter.executeWithRetry(() -> {
-            GetDomainResponse response = this.domainStub.getDomain(
+            GetDomainResponse response = this.domainStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .getDomain(
                     GetDomainRequest.newBuilder()
                             .setOrganizationId(organizationId)
                             .setId(domainId)
@@ -87,7 +90,9 @@ public class ScalekitDomainClient implements DomainClient {
     public List<Domain> listDomainsByOrganizationId(String organizationId) {
 
         return RetryExecuter.executeWithRetry(() -> {
-            ListDomainResponse response = this.domainStub.listDomains(
+            ListDomainResponse response = this.domainStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .listDomains(
                     ListDomainRequest.newBuilder()
                             .setOrganizationId(organizationId)
                             .build());
