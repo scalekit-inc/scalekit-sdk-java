@@ -1,5 +1,7 @@
 package com.scalekit;
 
+import com.scalekit.internal.Constants;
+
 public class Environment {
 
     /**
@@ -23,7 +25,9 @@ public class Environment {
         this.clientId = clientId;
         this.clientSecret = clientSecret;
         this.siteName = siteName;
-        this.timeout = System.getenv("SCALEKIT_TIMEOUT") != null ? Integer.parseInt(System.getenv("SCALEKIT_TIMEOUT")) : 10000;
+        this.timeout = System.getenv(Constants.SCALEKIT_REQUEST_TIMEOUT) != null ?
+                Integer.parseInt(System.getenv(Constants.SCALEKIT_REQUEST_TIMEOUT)) :
+                10000;
     }
 
     public static void configure(String siteName, String clientId, String clientSecret) {
