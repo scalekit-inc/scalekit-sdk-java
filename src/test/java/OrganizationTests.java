@@ -25,7 +25,7 @@ public class OrganizationTests {
     }
 
     @Test
-    void OrganizationsTest() throws InterruptedException {
+    void OrganizationsTest() {
         String organizationName = "Tested from Sdk 1";
         CreateOrganization createOrganization = CreateOrganization.newBuilder()
                 .setDisplayName(organizationName)
@@ -63,7 +63,7 @@ public class OrganizationTests {
         assertTrue(organizations.getTotalSize() > 10);
         assertNotNull(organizations.getNextPageToken());
 
-        //assertThrows(APIException.class, () -> client.organizations().getById(createdOrganization.getId()));
+        assertThrows(APIException.class, () -> client.organizations().getById(createdOrganization.getId()));
         assertThrows(APIException.class, () -> client.organizations().getById(reCreatedOrganization.getId()));
         assertThrows(APIException.class, () -> client.organizations().getById(reCreatedOrganization.getExternalId()));
         assertEquals(organizationName, createdOrganization.getDisplayName());
