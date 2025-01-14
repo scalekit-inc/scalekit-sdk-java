@@ -10,7 +10,6 @@ import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.directories.*;
 import com.scalekit.internal.RetryExecuter;
 import com.scalekit.internal.ScalekitCredentials;
-import io.grpc.Deadline;
 import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
 

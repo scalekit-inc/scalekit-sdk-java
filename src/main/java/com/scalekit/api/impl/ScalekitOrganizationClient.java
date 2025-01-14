@@ -5,7 +5,6 @@ import com.scalekit.api.OrganizationClient;
 import com.scalekit.grpc.scalekit.v1.organizations.*;
 import com.scalekit.internal.RetryExecuter;
 import com.scalekit.internal.ScalekitCredentials;
-import io.grpc.Deadline;
 import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
 
