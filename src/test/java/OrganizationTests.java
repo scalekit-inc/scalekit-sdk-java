@@ -122,9 +122,14 @@ public class OrganizationTests {
 
         // Generate link for each module available in the org.
         // all can verified by visiting the link in browser
-        Link linkForDirectorySync = client.organizations().generatePortalLinkForFeatures(updatedOrganization.getId(), Collections.singletonList(Feature.dir_sync));
-        Link linkForSSO = client.organizations().generatePortalLinkForFeatures(updatedOrganization.getId(), Collections.singletonList(Feature.sso));
-        Link linkForBoth = client.organizations().generatePortalLinkForFeatures(updatedOrganization.getId(), Arrays.asList(Feature.sso, Feature.dir_sync));
+        Link linkForDirectorySync = client.organizations().generatePortalLink(updatedOrganization.getId(),
+                Collections.singletonList(Feature.dir_sync));
+        Link linkForSSO = client.organizations().generatePortalLink(updatedOrganization.getId(),
+                Collections.singletonList(Feature.sso));
+        Link linkForBoth = client.organizations().generatePortalLink(updatedOrganization.getId(),
+                Arrays.asList(Feature.sso, Feature.dir_sync));
+
+
         Link linkWithDefaultFeatures = client.organizations().generatePortalLink(updatedOrganization.getId());
 
         System.out.println("Link for Directory Sync: " + linkForDirectorySync.getLocation());
@@ -169,7 +174,7 @@ public class OrganizationTests {
 
         try{
             // directory sync not enabled
-            Link linkForDirectorySync = client.organizations().generatePortalLinkForFeatures(updatedOrganization.getId(), Collections.singletonList(Feature.dir_sync));
+            Link linkForDirectorySync = client.organizations().generatePortalLink(updatedOrganization.getId(), Collections.singletonList(Feature.dir_sync));
         } catch (APIException e) {
             assertEquals("INVALID_ARGUMENT", e.getScalekitErrorCode());
         }
