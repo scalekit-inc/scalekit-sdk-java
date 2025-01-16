@@ -7,7 +7,7 @@ import com.scalekit.internal.RetryExecuter;
 import com.scalekit.internal.ScalekitCredentials;
 import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
-
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
@@ -212,9 +212,22 @@ public class ScalekitOrganizationClient implements OrganizationClient {
      */
     @Override
     public Link generatePortalLink(String organizationId) {
-        return  RetryExecuter.executeWithRetry(() -> {
+       return generatePortalLink(organizationId, Collections.emptyList());
+    }
+
+
+    /**
+     * generatePortalLink generates a portal link for an organization
+     * @param organizationId: The organization ID
+     * @param features: The features for which the portal link is generated
+     * @return Link: The portal link generate
+     */
+    @Override
+    public Link generatePortalLink(String organizationId, List<Feature> features) {
+        return RetryExecuter.executeWithRetry(() -> {
             GeneratePortalLinkRequest request = GeneratePortalLinkRequest.newBuilder()
                     .setId(organizationId)
+                    .addAllFeatures(features)
                     .build();
             GeneratePortalLinkResponse response = this.organizationStub
                     .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
@@ -222,6 +235,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
             return response.getLink();
         },this.credentials);
     }
+
 
     /**
         * updateOrganizationSettings updates the settings for an organization

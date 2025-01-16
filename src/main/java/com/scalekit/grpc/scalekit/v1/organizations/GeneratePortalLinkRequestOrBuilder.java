@@ -21,24 +21,77 @@ public interface GeneratePortalLinkRequestOrBuilder extends
       getIdBytes();
 
   /**
-   * <code>optional bool sso = 2 [json_name = "sso"];</code>
+   * <pre>
+   * Deprecated: Use features
+   * </pre>
+   *
+   * <code>optional bool sso = 2 [json_name = "sso", deprecated = true];</code>
+   * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.sso is deprecated.
+   *     See scalekit/v1/organizations/organizations.proto;l=647
    * @return Whether the sso field is set.
    */
-  boolean hasSso();
+  @java.lang.Deprecated boolean hasSso();
   /**
-   * <code>optional bool sso = 2 [json_name = "sso"];</code>
+   * <pre>
+   * Deprecated: Use features
+   * </pre>
+   *
+   * <code>optional bool sso = 2 [json_name = "sso", deprecated = true];</code>
+   * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.sso is deprecated.
+   *     See scalekit/v1/organizations/organizations.proto;l=647
    * @return The sso.
    */
-  boolean getSso();
+  @java.lang.Deprecated boolean getSso();
 
   /**
-   * <code>optional bool directory_sync = 3 [json_name = "directorySync"];</code>
+   * <pre>
+   * Deprecated: Use features
+   * </pre>
+   *
+   * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true];</code>
+   * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.directory_sync is deprecated.
+   *     See scalekit/v1/organizations/organizations.proto;l=650
    * @return Whether the directorySync field is set.
    */
-  boolean hasDirectorySync();
+  @java.lang.Deprecated boolean hasDirectorySync();
   /**
-   * <code>optional bool directory_sync = 3 [json_name = "directorySync"];</code>
+   * <pre>
+   * Deprecated: Use features
+   * </pre>
+   *
+   * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true];</code>
+   * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.directory_sync is deprecated.
+   *     See scalekit/v1/organizations/organizations.proto;l=650
    * @return The directorySync.
    */
-  boolean getDirectorySync();
+  @java.lang.Deprecated boolean getDirectorySync();
+
+  /**
+   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
+   * @return A list containing the features.
+   */
+  java.util.List<com.scalekit.grpc.scalekit.v1.organizations.Feature> getFeaturesList();
+  /**
+   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
+   * @return The count of features.
+   */
+  int getFeaturesCount();
+  /**
+   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
+   * @param index The index of the element to return.
+   * @return The features at the given index.
+   */
+  com.scalekit.grpc.scalekit.v1.organizations.Feature getFeatures(int index);
+  /**
+   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
+   * @return A list containing the enum numeric values on the wire for features.
+   */
+  java.util.List<java.lang.Integer>
+  getFeaturesValueList();
+  /**
+   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of features at the given index.
+   */
+  int getFeaturesValue(int index);
 }
