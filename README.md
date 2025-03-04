@@ -65,6 +65,15 @@ public class ScalekitExample {
 }
 ```
 
+##### Minimum Requirements
+
+The Scalekit Java SDK is designed to operate with the following environment:
+
+| Component | Version |
+| --------- | ------- |
+| Java      | 8+      |
+
+> **Tip:** While our Java SDK requires Java 8 as the baseline, we suggest upgrading to more recent LTS versions such as Java 11 or Java 17. These updates deliver performance improvements and enhanced security.
 
 ## Examples - SSO with Spring Boot
 
