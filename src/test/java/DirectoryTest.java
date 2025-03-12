@@ -111,7 +111,7 @@ public class DirectoryTest {
                 .directories()
                 .listDirectoryUsers(directory.getId(),organizationId,options);
 
-        assertEquals(usersResponse.getUsersCount() ,2);
+        assertEquals(usersResponse.getUsersCount() ,3);
 
         DirectoryUser user = usersResponse.getUsers(0);
         assertNotNull(user);

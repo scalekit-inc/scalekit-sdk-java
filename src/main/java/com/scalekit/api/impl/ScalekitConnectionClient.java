@@ -1,5 +1,6 @@
 package com.scalekit.api.impl;
 
+import com.google.protobuf.Empty;
 import com.scalekit.Environment;
 import com.scalekit.api.ConnectionClient;
 import com.scalekit.grpc.scalekit.v1.connections.*;
@@ -144,5 +145,26 @@ public class ScalekitConnectionClient implements ConnectionClient {
             );
             return response.getConnection();
         },this.credentials);
+    }
+
+
+    /**
+     * deleteConnection deletes a connection by its ID and organization ID
+     * @param connectionId: The connection ID
+     * @param organizationId: The organization ID
+     */
+    @Override
+    public void  deleteConnection(String connectionId, String organizationId) {
+         RetryExecuter.executeWithRetry(()->{
+           Empty response = this.ConnectionStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .deleteConnection(
+                    DeleteConnectionRequest.newBuilder()
+                            .setId(connectionId)
+                            .setOrganizationId(organizationId)
+                            .build()
+            );
+             return null;
+         },this.credentials);
     }
 }
