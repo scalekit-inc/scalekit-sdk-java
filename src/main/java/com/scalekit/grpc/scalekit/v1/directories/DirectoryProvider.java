@@ -33,6 +33,14 @@ public enum DirectoryProvider
    * <code>ONELOGIN = 5;</code>
    */
   ONELOGIN(5),
+  /**
+   * <code>JUMPCLOUD = 6;</code>
+   */
+  JUMPCLOUD(6),
+  /**
+   * <code>PING_IDENTITY = 7;</code>
+   */
+  PING_IDENTITY(7),
   UNRECOGNIZED(-1),
   ;
 
@@ -60,6 +68,14 @@ public enum DirectoryProvider
    * <code>ONELOGIN = 5;</code>
    */
   public static final int ONELOGIN_VALUE = 5;
+  /**
+   * <code>JUMPCLOUD = 6;</code>
+   */
+  public static final int JUMPCLOUD_VALUE = 6;
+  /**
+   * <code>PING_IDENTITY = 7;</code>
+   */
+  public static final int PING_IDENTITY_VALUE = 7;
 
 
   public final int getNumber() {
@@ -92,6 +108,8 @@ public enum DirectoryProvider
       case 3: return MICROSOFT_AD;
       case 4: return AUTH0;
       case 5: return ONELOGIN;
+      case 6: return JUMPCLOUD;
+      case 7: return PING_IDENTITY;
       default: return null;
     }
   }

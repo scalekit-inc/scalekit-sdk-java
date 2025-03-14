@@ -46,6 +46,37 @@ public final class DirectoryServiceGrpc {
     return getCreateDirectoryMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.directories.DeleteDirectoryRequest,
+      com.google.protobuf.Empty> getDeleteDirectoryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDirectory",
+      requestType = com.scalekit.grpc.scalekit.v1.directories.DeleteDirectoryRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.directories.DeleteDirectoryRequest,
+      com.google.protobuf.Empty> getDeleteDirectoryMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.directories.DeleteDirectoryRequest, com.google.protobuf.Empty> getDeleteDirectoryMethod;
+    if ((getDeleteDirectoryMethod = DirectoryServiceGrpc.getDeleteDirectoryMethod) == null) {
+      synchronized (DirectoryServiceGrpc.class) {
+        if ((getDeleteDirectoryMethod = DirectoryServiceGrpc.getDeleteDirectoryMethod) == null) {
+          DirectoryServiceGrpc.getDeleteDirectoryMethod = getDeleteDirectoryMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.directories.DeleteDirectoryRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteDirectory"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.directories.DeleteDirectoryRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new DirectoryServiceMethodDescriptorSupplier("DeleteDirectory"))
+              .build();
+        }
+      }
+    }
+    return getDeleteDirectoryMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.directories.UpdateDirectoryRequest,
       com.scalekit.grpc.scalekit.v1.directories.UpdateDirectoryResponse> getUpdateDirectoryMethod;
 
@@ -444,6 +475,13 @@ public final class DirectoryServiceGrpc {
 
     /**
      */
+    default void deleteDirectory(com.scalekit.grpc.scalekit.v1.directories.DeleteDirectoryRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteDirectoryMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void updateDirectory(com.scalekit.grpc.scalekit.v1.directories.UpdateDirectoryRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.directories.UpdateDirectoryResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateDirectoryMethod(), responseObserver);
@@ -553,6 +591,14 @@ public final class DirectoryServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.directories.CreateDirectoryResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateDirectoryMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteDirectory(com.scalekit.grpc.scalekit.v1.directories.DeleteDirectoryRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteDirectoryMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -669,6 +715,13 @@ public final class DirectoryServiceGrpc {
 
     /**
      */
+    public com.google.protobuf.Empty deleteDirectory(com.scalekit.grpc.scalekit.v1.directories.DeleteDirectoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDirectoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.scalekit.grpc.scalekit.v1.directories.UpdateDirectoryResponse updateDirectory(com.scalekit.grpc.scalekit.v1.directories.UpdateDirectoryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDirectoryMethod(), getCallOptions(), request);
@@ -771,6 +824,14 @@ public final class DirectoryServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteDirectory(
+        com.scalekit.grpc.scalekit.v1.directories.DeleteDirectoryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteDirectoryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.directories.UpdateDirectoryResponse> updateDirectory(
         com.scalekit.grpc.scalekit.v1.directories.UpdateDirectoryRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -859,17 +920,18 @@ public final class DirectoryServiceGrpc {
   }
 
   private static final int METHODID_CREATE_DIRECTORY = 0;
-  private static final int METHODID_UPDATE_DIRECTORY = 1;
-  private static final int METHODID_ASSIGN_ROLES = 2;
-  private static final int METHODID_UPDATE_ATTRIBUTES = 3;
-  private static final int METHODID_GET_DIRECTORY = 4;
-  private static final int METHODID_LIST_DIRECTORIES = 5;
-  private static final int METHODID_ENABLE_DIRECTORY = 6;
-  private static final int METHODID_DISABLE_DIRECTORY = 7;
-  private static final int METHODID_LIST_DIRECTORY_USERS = 8;
-  private static final int METHODID_LIST_DIRECTORY_GROUPS = 9;
-  private static final int METHODID_CREATE_DIRECTORY_SECRET = 10;
-  private static final int METHODID_REGENERATE_DIRECTORY_SECRET = 11;
+  private static final int METHODID_DELETE_DIRECTORY = 1;
+  private static final int METHODID_UPDATE_DIRECTORY = 2;
+  private static final int METHODID_ASSIGN_ROLES = 3;
+  private static final int METHODID_UPDATE_ATTRIBUTES = 4;
+  private static final int METHODID_GET_DIRECTORY = 5;
+  private static final int METHODID_LIST_DIRECTORIES = 6;
+  private static final int METHODID_ENABLE_DIRECTORY = 7;
+  private static final int METHODID_DISABLE_DIRECTORY = 8;
+  private static final int METHODID_LIST_DIRECTORY_USERS = 9;
+  private static final int METHODID_LIST_DIRECTORY_GROUPS = 10;
+  private static final int METHODID_CREATE_DIRECTORY_SECRET = 11;
+  private static final int METHODID_REGENERATE_DIRECTORY_SECRET = 12;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -891,6 +953,10 @@ public final class DirectoryServiceGrpc {
         case METHODID_CREATE_DIRECTORY:
           serviceImpl.createDirectory((com.scalekit.grpc.scalekit.v1.directories.CreateDirectoryRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.directories.CreateDirectoryResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_DIRECTORY:
+          serviceImpl.deleteDirectory((com.scalekit.grpc.scalekit.v1.directories.DeleteDirectoryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_UPDATE_DIRECTORY:
           serviceImpl.updateDirectory((com.scalekit.grpc.scalekit.v1.directories.UpdateDirectoryRequest) request,
@@ -961,6 +1027,13 @@ public final class DirectoryServiceGrpc {
               com.scalekit.grpc.scalekit.v1.directories.CreateDirectoryRequest,
               com.scalekit.grpc.scalekit.v1.directories.CreateDirectoryResponse>(
                 service, METHODID_CREATE_DIRECTORY)))
+        .addMethod(
+          getDeleteDirectoryMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.directories.DeleteDirectoryRequest,
+              com.google.protobuf.Empty>(
+                service, METHODID_DELETE_DIRECTORY)))
         .addMethod(
           getUpdateDirectoryMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1087,6 +1160,7 @@ public final class DirectoryServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new DirectoryServiceFileDescriptorSupplier())
               .addMethod(getCreateDirectoryMethod())
+              .addMethod(getDeleteDirectoryMethod())
               .addMethod(getUpdateDirectoryMethod())
               .addMethod(getAssignRolesMethod())
               .addMethod(getUpdateAttributesMethod())

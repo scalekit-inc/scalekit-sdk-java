@@ -18,7 +18,6 @@ private static final long serialVersionUID = 0L;
   }
   private GeneratePortalLinkRequest() {
     id_ = "";
-    features_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -84,122 +83,40 @@ private static final long serialVersionUID = 0L;
   public static final int SSO_FIELD_NUMBER = 2;
   private boolean sso_ = false;
   /**
-   * <pre>
-   * Deprecated: Use features
-   * </pre>
-   *
-   * <code>optional bool sso = 2 [json_name = "sso", deprecated = true];</code>
-   * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.sso is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=647
+   * <code>optional bool sso = 2 [json_name = "sso"];</code>
    * @return Whether the sso field is set.
    */
   @java.lang.Override
-  @java.lang.Deprecated public boolean hasSso() {
+  public boolean hasSso() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <pre>
-   * Deprecated: Use features
-   * </pre>
-   *
-   * <code>optional bool sso = 2 [json_name = "sso", deprecated = true];</code>
-   * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.sso is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=647
+   * <code>optional bool sso = 2 [json_name = "sso"];</code>
    * @return The sso.
    */
   @java.lang.Override
-  @java.lang.Deprecated public boolean getSso() {
+  public boolean getSso() {
     return sso_;
   }
 
   public static final int DIRECTORY_SYNC_FIELD_NUMBER = 3;
   private boolean directorySync_ = false;
   /**
-   * <pre>
-   * Deprecated: Use features
-   * </pre>
-   *
-   * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true];</code>
-   * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.directory_sync is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=650
+   * <code>optional bool directory_sync = 3 [json_name = "directorySync"];</code>
    * @return Whether the directorySync field is set.
    */
   @java.lang.Override
-  @java.lang.Deprecated public boolean hasDirectorySync() {
+  public boolean hasDirectorySync() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <pre>
-   * Deprecated: Use features
-   * </pre>
-   *
-   * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true];</code>
-   * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.directory_sync is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=650
+   * <code>optional bool directory_sync = 3 [json_name = "directorySync"];</code>
    * @return The directorySync.
    */
   @java.lang.Override
-  @java.lang.Deprecated public boolean getDirectorySync() {
+  public boolean getDirectorySync() {
     return directorySync_;
   }
-
-  public static final int FEATURES_FIELD_NUMBER = 4;
-  @SuppressWarnings("serial")
-  private java.util.List<java.lang.Integer> features_;
-  private static final com.google.protobuf.Internal.ListAdapter.Converter<
-      java.lang.Integer, com.scalekit.grpc.scalekit.v1.organizations.Feature> features_converter_ =
-          new com.google.protobuf.Internal.ListAdapter.Converter<
-              java.lang.Integer, com.scalekit.grpc.scalekit.v1.organizations.Feature>() {
-            public com.scalekit.grpc.scalekit.v1.organizations.Feature convert(java.lang.Integer from) {
-              com.scalekit.grpc.scalekit.v1.organizations.Feature result = com.scalekit.grpc.scalekit.v1.organizations.Feature.forNumber(from);
-              return result == null ? com.scalekit.grpc.scalekit.v1.organizations.Feature.UNRECOGNIZED : result;
-            }
-          };
-  /**
-   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
-   * @return A list containing the features.
-   */
-  @java.lang.Override
-  public java.util.List<com.scalekit.grpc.scalekit.v1.organizations.Feature> getFeaturesList() {
-    return new com.google.protobuf.Internal.ListAdapter<
-        java.lang.Integer, com.scalekit.grpc.scalekit.v1.organizations.Feature>(features_, features_converter_);
-  }
-  /**
-   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
-   * @return The count of features.
-   */
-  @java.lang.Override
-  public int getFeaturesCount() {
-    return features_.size();
-  }
-  /**
-   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
-   * @param index The index of the element to return.
-   * @return The features at the given index.
-   */
-  @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.organizations.Feature getFeatures(int index) {
-    return features_converter_.convert(features_.get(index));
-  }
-  /**
-   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
-   * @return A list containing the enum numeric values on the wire for features.
-   */
-  @java.lang.Override
-  public java.util.List<java.lang.Integer>
-  getFeaturesValueList() {
-    return features_;
-  }
-  /**
-   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
-   * @param index The index of the value to return.
-   * @return The enum numeric value on the wire of features at the given index.
-   */
-  @java.lang.Override
-  public int getFeaturesValue(int index) {
-    return features_.get(index);
-  }
-  private int featuresMemoizedSerializedSize;
 
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
@@ -215,7 +132,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
@@ -224,13 +140,6 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(3, directorySync_);
-    }
-    if (getFeaturesList().size() > 0) {
-      output.writeUInt32NoTag(34);
-      output.writeUInt32NoTag(featuresMemoizedSerializedSize);
-    }
-    for (int i = 0; i < features_.size(); i++) {
-      output.writeEnumNoTag(features_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -251,18 +160,6 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(3, directorySync_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < features_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeEnumSizeNoTag(features_.get(i));
-      }
-      size += dataSize;
-      if (!getFeaturesList().isEmpty()) {  size += 1;
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32SizeNoTag(dataSize);
-      }featuresMemoizedSerializedSize = dataSize;
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -291,7 +188,6 @@ private static final long serialVersionUID = 0L;
       if (getDirectorySync()
           != other.getDirectorySync()) return false;
     }
-    if (!features_.equals(other.features_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -314,10 +210,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DIRECTORY_SYNC_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getDirectorySync());
-    }
-    if (getFeaturesCount() > 0) {
-      hash = (37 * hash) + FEATURES_FIELD_NUMBER;
-      hash = (53 * hash) + features_.hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -453,8 +345,6 @@ private static final long serialVersionUID = 0L;
       id_ = "";
       sso_ = false;
       directorySync_ = false;
-      features_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -481,18 +371,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.scalekit.grpc.scalekit.v1.organizations.GeneratePortalLinkRequest buildPartial() {
       com.scalekit.grpc.scalekit.v1.organizations.GeneratePortalLinkRequest result = new com.scalekit.grpc.scalekit.v1.organizations.GeneratePortalLinkRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.organizations.GeneratePortalLinkRequest result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        features_ = java.util.Collections.unmodifiableList(features_);
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.features_ = features_;
     }
 
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.organizations.GeneratePortalLinkRequest result) {
@@ -567,16 +448,6 @@ private static final long serialVersionUID = 0L;
       if (other.hasDirectorySync()) {
         setDirectorySync(other.getDirectorySync());
       }
-      if (!other.features_.isEmpty()) {
-        if (features_.isEmpty()) {
-          features_ = other.features_;
-          bitField0_ = (bitField0_ & ~0x00000008);
-        } else {
-          ensureFeaturesIsMutable();
-          features_.addAll(other.features_);
-        }
-        onChanged();
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -618,23 +489,6 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000004;
               break;
             } // case 24
-            case 32: {
-              int tmpRaw = input.readEnum();
-              ensureFeaturesIsMutable();
-              features_.add(tmpRaw);
-              break;
-            } // case 32
-            case 34: {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while(input.getBytesUntilLimit() > 0) {
-                int tmpRaw = input.readEnum();
-                ensureFeaturesIsMutable();
-                features_.add(tmpRaw);
-              }
-              input.popLimit(oldLimit);
-              break;
-            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -726,45 +580,27 @@ private static final long serialVersionUID = 0L;
 
     private boolean sso_ ;
     /**
-     * <pre>
-     * Deprecated: Use features
-     * </pre>
-     *
-     * <code>optional bool sso = 2 [json_name = "sso", deprecated = true];</code>
-     * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.sso is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=647
+     * <code>optional bool sso = 2 [json_name = "sso"];</code>
      * @return Whether the sso field is set.
      */
     @java.lang.Override
-    @java.lang.Deprecated public boolean hasSso() {
+    public boolean hasSso() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <pre>
-     * Deprecated: Use features
-     * </pre>
-     *
-     * <code>optional bool sso = 2 [json_name = "sso", deprecated = true];</code>
-     * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.sso is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=647
+     * <code>optional bool sso = 2 [json_name = "sso"];</code>
      * @return The sso.
      */
     @java.lang.Override
-    @java.lang.Deprecated public boolean getSso() {
+    public boolean getSso() {
       return sso_;
     }
     /**
-     * <pre>
-     * Deprecated: Use features
-     * </pre>
-     *
-     * <code>optional bool sso = 2 [json_name = "sso", deprecated = true];</code>
-     * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.sso is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=647
+     * <code>optional bool sso = 2 [json_name = "sso"];</code>
      * @param value The sso to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder setSso(boolean value) {
+    public Builder setSso(boolean value) {
 
       sso_ = value;
       bitField0_ |= 0x00000002;
@@ -772,16 +608,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Deprecated: Use features
-     * </pre>
-     *
-     * <code>optional bool sso = 2 [json_name = "sso", deprecated = true];</code>
-     * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.sso is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=647
+     * <code>optional bool sso = 2 [json_name = "sso"];</code>
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder clearSso() {
+    public Builder clearSso() {
       bitField0_ = (bitField0_ & ~0x00000002);
       sso_ = false;
       onChanged();
@@ -790,45 +620,27 @@ private static final long serialVersionUID = 0L;
 
     private boolean directorySync_ ;
     /**
-     * <pre>
-     * Deprecated: Use features
-     * </pre>
-     *
-     * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true];</code>
-     * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.directory_sync is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=650
+     * <code>optional bool directory_sync = 3 [json_name = "directorySync"];</code>
      * @return Whether the directorySync field is set.
      */
     @java.lang.Override
-    @java.lang.Deprecated public boolean hasDirectorySync() {
+    public boolean hasDirectorySync() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <pre>
-     * Deprecated: Use features
-     * </pre>
-     *
-     * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true];</code>
-     * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.directory_sync is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=650
+     * <code>optional bool directory_sync = 3 [json_name = "directorySync"];</code>
      * @return The directorySync.
      */
     @java.lang.Override
-    @java.lang.Deprecated public boolean getDirectorySync() {
+    public boolean getDirectorySync() {
       return directorySync_;
     }
     /**
-     * <pre>
-     * Deprecated: Use features
-     * </pre>
-     *
-     * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true];</code>
-     * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.directory_sync is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=650
+     * <code>optional bool directory_sync = 3 [json_name = "directorySync"];</code>
      * @param value The directorySync to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder setDirectorySync(boolean value) {
+    public Builder setDirectorySync(boolean value) {
 
       directorySync_ = value;
       bitField0_ |= 0x00000004;
@@ -836,158 +648,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Deprecated: Use features
-     * </pre>
-     *
-     * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true];</code>
-     * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.directory_sync is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=650
+     * <code>optional bool directory_sync = 3 [json_name = "directorySync"];</code>
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder clearDirectorySync() {
+    public Builder clearDirectorySync() {
       bitField0_ = (bitField0_ & ~0x00000004);
       directorySync_ = false;
-      onChanged();
-      return this;
-    }
-
-    private java.util.List<java.lang.Integer> features_ =
-      java.util.Collections.emptyList();
-    private void ensureFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
-        features_ = new java.util.ArrayList<java.lang.Integer>(features_);
-        bitField0_ |= 0x00000008;
-      }
-    }
-    /**
-     * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
-     * @return A list containing the features.
-     */
-    public java.util.List<com.scalekit.grpc.scalekit.v1.organizations.Feature> getFeaturesList() {
-      return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, com.scalekit.grpc.scalekit.v1.organizations.Feature>(features_, features_converter_);
-    }
-    /**
-     * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
-     * @return The count of features.
-     */
-    public int getFeaturesCount() {
-      return features_.size();
-    }
-    /**
-     * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
-     * @param index The index of the element to return.
-     * @return The features at the given index.
-     */
-    public com.scalekit.grpc.scalekit.v1.organizations.Feature getFeatures(int index) {
-      return features_converter_.convert(features_.get(index));
-    }
-    /**
-     * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
-     * @param index The index to set the value at.
-     * @param value The features to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFeatures(
-        int index, com.scalekit.grpc.scalekit.v1.organizations.Feature value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureFeaturesIsMutable();
-      features_.set(index, value.getNumber());
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
-     * @param value The features to add.
-     * @return This builder for chaining.
-     */
-    public Builder addFeatures(com.scalekit.grpc.scalekit.v1.organizations.Feature value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureFeaturesIsMutable();
-      features_.add(value.getNumber());
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
-     * @param values The features to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllFeatures(
-        java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.organizations.Feature> values) {
-      ensureFeaturesIsMutable();
-      for (com.scalekit.grpc.scalekit.v1.organizations.Feature value : values) {
-        features_.add(value.getNumber());
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearFeatures() {
-      features_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
-     * @return A list containing the enum numeric values on the wire for features.
-     */
-    public java.util.List<java.lang.Integer>
-    getFeaturesValueList() {
-      return java.util.Collections.unmodifiableList(features_);
-    }
-    /**
-     * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of features at the given index.
-     */
-    public int getFeaturesValue(int index) {
-      return features_.get(index);
-    }
-    /**
-     * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
-     * @param index The index to set the value at.
-     * @param value The enum numeric value on the wire for features to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFeaturesValue(
-        int index, int value) {
-      ensureFeaturesIsMutable();
-      features_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
-     * @param value The enum numeric value on the wire for features to add.
-     * @return This builder for chaining.
-     */
-    public Builder addFeaturesValue(int value) {
-      ensureFeaturesIsMutable();
-      features_.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
-     * @param values The enum numeric values on the wire for features to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllFeaturesValue(
-        java.lang.Iterable<java.lang.Integer> values) {
-      ensureFeaturesIsMutable();
-      for (int value : values) {
-        features_.add(value);
-      }
       onChanged();
       return this;
     }
