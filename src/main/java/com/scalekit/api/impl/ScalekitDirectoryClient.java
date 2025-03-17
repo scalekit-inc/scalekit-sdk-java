@@ -1,5 +1,6 @@
 package com.scalekit.api.impl;
 
+import com.google.protobuf.Empty;
 import com.google.protobuf.Timestamp;
 import com.scalekit.Environment;
 import com.scalekit.api.DirectoryClient;
@@ -228,6 +229,28 @@ public class ScalekitDirectoryClient implements DirectoryClient {
                             ).build()
             );
             return response.getDirectory();
+        },this.credentials);
+    }
+
+
+    /**
+     * Deletes a directory by its ID and organization ID.
+     *
+     * @param directoryId The ID of the directory.
+     * @param organizationId The ID of the organization.
+     * @throws APIException If an error occurs.
+     */
+    @Override
+    public void deleteDirectory(String directoryId, String organizationId) {
+        RetryExecuter.executeWithRetry(() -> {
+            DeleteDirectoryRequest request = DeleteDirectoryRequest.newBuilder()
+                    .setId(directoryId)
+                    .setOrganizationId(organizationId)
+                    .build();
+            directoryStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .deleteDirectory(request);
+            return null;
         },this.credentials);
     }
 
