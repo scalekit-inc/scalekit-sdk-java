@@ -29,6 +29,10 @@ public enum ConnectionType
    * <code>OAUTH = 4;</code>
    */
   OAUTH(4),
+  /**
+   * <code>PASSWORDLESS = 5;</code>
+   */
+  PASSWORDLESS(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -52,6 +56,10 @@ public enum ConnectionType
    * <code>OAUTH = 4;</code>
    */
   public static final int OAUTH_VALUE = 4;
+  /**
+   * <code>PASSWORDLESS = 5;</code>
+   */
+  public static final int PASSWORDLESS_VALUE = 5;
 
 
   public final int getNumber() {
@@ -83,6 +91,7 @@ public enum ConnectionType
       case 2: return SAML;
       case 3: return PASSWORD;
       case 4: return OAUTH;
+      case 5: return PASSWORDLESS;
       default: return null;
     }
   }
@@ -113,7 +122,7 @@ public enum ConnectionType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.connections.ConnectionsProto.getDescriptor().getEnumTypes().get(7);
+    return com.scalekit.grpc.scalekit.v1.connections.ConnectionsProto.getDescriptor().getEnumTypes().get(8);
   }
 
   private static final ConnectionType[] VALUES = values();

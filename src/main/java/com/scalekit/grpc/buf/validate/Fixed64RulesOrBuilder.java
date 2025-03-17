@@ -233,7 +233,7 @@ public interface Fixed64RulesOrBuilder extends
    * ```proto
    * message MyFixed64 {
    *   // value must be in list [1, 2, 3]
-   *   repeated fixed64 value = 1 (buf.validate.field).fixed64 = { in: [1, 2, 3] };
+   *   fixed64 value = 1 [(buf.validate.field).fixed64 = { in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -251,7 +251,7 @@ public interface Fixed64RulesOrBuilder extends
    * ```proto
    * message MyFixed64 {
    *   // value must be in list [1, 2, 3]
-   *   repeated fixed64 value = 1 (buf.validate.field).fixed64 = { in: [1, 2, 3] };
+   *   fixed64 value = 1 [(buf.validate.field).fixed64 = { in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -269,7 +269,7 @@ public interface Fixed64RulesOrBuilder extends
    * ```proto
    * message MyFixed64 {
    *   // value must be in list [1, 2, 3]
-   *   repeated fixed64 value = 1 (buf.validate.field).fixed64 = { in: [1, 2, 3] };
+   *   fixed64 value = 1 [(buf.validate.field).fixed64 = { in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -289,7 +289,7 @@ public interface Fixed64RulesOrBuilder extends
    * ```proto
    * message MyFixed64 {
    *   // value must not be in list [1, 2, 3]
-   *   repeated fixed64 value = 1 (buf.validate.field).fixed64 = { not_in: [1, 2, 3] };
+   *   fixed64 value = 1 [(buf.validate.field).fixed64 = { not_in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -307,7 +307,7 @@ public interface Fixed64RulesOrBuilder extends
    * ```proto
    * message MyFixed64 {
    *   // value must not be in list [1, 2, 3]
-   *   repeated fixed64 value = 1 (buf.validate.field).fixed64 = { not_in: [1, 2, 3] };
+   *   fixed64 value = 1 [(buf.validate.field).fixed64 = { not_in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -325,7 +325,7 @@ public interface Fixed64RulesOrBuilder extends
    * ```proto
    * message MyFixed64 {
    *   // value must not be in list [1, 2, 3]
-   *   repeated fixed64 value = 1 (buf.validate.field).fixed64 = { not_in: [1, 2, 3] };
+   *   fixed64 value = 1 [(buf.validate.field).fixed64 = { not_in: [1, 2, 3] }];
    * }
    * ```
    * </pre>

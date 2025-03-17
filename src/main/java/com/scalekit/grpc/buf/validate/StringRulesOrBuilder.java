@@ -587,7 +587,7 @@ public interface StringRulesOrBuilder extends
    * ```proto
    * message MyString {
    *   // value must be in list ["apple", "banana"]
-   *   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+   *   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
    * }
    * ```
    * </pre>
@@ -606,7 +606,7 @@ public interface StringRulesOrBuilder extends
    * ```proto
    * message MyString {
    *   // value must be in list ["apple", "banana"]
-   *   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+   *   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
    * }
    * ```
    * </pre>
@@ -624,7 +624,7 @@ public interface StringRulesOrBuilder extends
    * ```proto
    * message MyString {
    *   // value must be in list ["apple", "banana"]
-   *   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+   *   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
    * }
    * ```
    * </pre>
@@ -643,7 +643,7 @@ public interface StringRulesOrBuilder extends
    * ```proto
    * message MyString {
    *   // value must be in list ["apple", "banana"]
-   *   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+   *   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
    * }
    * ```
    * </pre>
@@ -663,7 +663,7 @@ public interface StringRulesOrBuilder extends
    * ```proto
    * message MyString {
    *   // value must not be in list ["orange", "grape"]
-   *   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+   *   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
    * }
    * ```
    * </pre>
@@ -681,7 +681,7 @@ public interface StringRulesOrBuilder extends
    * ```proto
    * message MyString {
    *   // value must not be in list ["orange", "grape"]
-   *   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+   *   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
    * }
    * ```
    * </pre>
@@ -698,7 +698,7 @@ public interface StringRulesOrBuilder extends
    * ```proto
    * message MyString {
    *   // value must not be in list ["orange", "grape"]
-   *   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+   *   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
    * }
    * ```
    * </pre>
@@ -716,7 +716,7 @@ public interface StringRulesOrBuilder extends
    * ```proto
    * message MyString {
    *   // value must not be in list ["orange", "grape"]
-   *   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+   *   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
    * }
    * ```
    * </pre>
@@ -731,7 +731,7 @@ public interface StringRulesOrBuilder extends
   /**
    * <pre>
    * `email` specifies that the field value must be a valid email address
-   * (addr-spec only) as defined by [RFC 5322](https://tools.ietf.org/html/rfc5322#section-3.4.1).
+   * (addr-spec only) as defined by [RFC 5322](https://datatracker.ietf.org/doc/html/rfc5322#section-3.4.1).
    * If the field value isn't a valid email address, an error message will be generated.
    *
    * ```proto
@@ -749,7 +749,7 @@ public interface StringRulesOrBuilder extends
   /**
    * <pre>
    * `email` specifies that the field value must be a valid email address
-   * (addr-spec only) as defined by [RFC 5322](https://tools.ietf.org/html/rfc5322#section-3.4.1).
+   * (addr-spec only) as defined by [RFC 5322](https://datatracker.ietf.org/doc/html/rfc5322#section-3.4.1).
    * If the field value isn't a valid email address, an error message will be generated.
    *
    * ```proto
@@ -768,7 +768,7 @@ public interface StringRulesOrBuilder extends
   /**
    * <pre>
    * `hostname` specifies that the field value must be a valid
-   * hostname as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5). This constraint doesn't support
+   * hostname as defined by [RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034#section-3.5). This constraint doesn't support
    * internationalized domain names (IDNs). If the field value isn't a
    * valid hostname, an error message will be generated.
    *
@@ -787,7 +787,7 @@ public interface StringRulesOrBuilder extends
   /**
    * <pre>
    * `hostname` specifies that the field value must be a valid
-   * hostname as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5). This constraint doesn't support
+   * hostname as defined by [RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034#section-3.5). This constraint doesn't support
    * internationalized domain names (IDNs). If the field value isn't a
    * valid hostname, an error message will be generated.
    *
@@ -919,9 +919,10 @@ public interface StringRulesOrBuilder extends
 
   /**
    * <pre>
-   * `uri` specifies that the field value must be a valid,
-   * absolute URI as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3). If the field value isn't a valid,
-   * absolute URI, an error message will be generated.
+   * `uri` specifies that the field value must be a valid URI as defined by
+   * [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986#section-3).
+   *
+   * If the field value isn't a valid URI, an error message will be generated.
    *
    * ```proto
    * message MyString {
@@ -937,9 +938,10 @@ public interface StringRulesOrBuilder extends
   boolean hasUri();
   /**
    * <pre>
-   * `uri` specifies that the field value must be a valid,
-   * absolute URI as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3). If the field value isn't a valid,
-   * absolute URI, an error message will be generated.
+   * `uri` specifies that the field value must be a valid URI as defined by
+   * [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986#section-3).
+   *
+   * If the field value isn't a valid URI, an error message will be generated.
    *
    * ```proto
    * message MyString {
@@ -956,13 +958,18 @@ public interface StringRulesOrBuilder extends
 
   /**
    * <pre>
-   * `uri_ref` specifies that the field value must be a valid URI
-   * as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3) and may be either relative or absolute. If the
-   * field value isn't a valid URI, an error message will be generated.
+   * `uri_ref` specifies that the field value must be a valid URI Reference as
+   * defined by [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986#section-4.1).
+   *
+   * A URI Reference is either a [URI](https://datatracker.ietf.org/doc/html/rfc3986#section-3),
+   * or a [Relative Reference](https://datatracker.ietf.org/doc/html/rfc3986#section-4.2).
+   *
+   * If the field value isn't a valid URI Reference, an error message will be
+   * generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid URI
+   *   // value must be a valid URI Reference
    *   string value = 1 [(buf.validate.field).string.uri_ref = true];
    * }
    * ```
@@ -974,13 +981,18 @@ public interface StringRulesOrBuilder extends
   boolean hasUriRef();
   /**
    * <pre>
-   * `uri_ref` specifies that the field value must be a valid URI
-   * as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3) and may be either relative or absolute. If the
-   * field value isn't a valid URI, an error message will be generated.
+   * `uri_ref` specifies that the field value must be a valid URI Reference as
+   * defined by [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986#section-4.1).
+   *
+   * A URI Reference is either a [URI](https://datatracker.ietf.org/doc/html/rfc3986#section-3),
+   * or a [Relative Reference](https://datatracker.ietf.org/doc/html/rfc3986#section-4.2).
+   *
+   * If the field value isn't a valid URI Reference, an error message will be
+   * generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid URI
+   *   // value must be a valid URI Reference
    *   string value = 1 [(buf.validate.field).string.uri_ref = true];
    * }
    * ```
@@ -994,7 +1006,7 @@ public interface StringRulesOrBuilder extends
   /**
    * <pre>
    * `address` specifies that the field value must be either a valid hostname
-   * as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5)
+   * as defined by [RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034#section-3.5)
    * (which doesn't support internationalized domain names or IDNs) or a valid
    * IP (v4 or v6). If the field value isn't a valid hostname or IP, an error
    * message will be generated.
@@ -1014,7 +1026,7 @@ public interface StringRulesOrBuilder extends
   /**
    * <pre>
    * `address` specifies that the field value must be either a valid hostname
-   * as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5)
+   * as defined by [RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034#section-3.5)
    * (which doesn't support internationalized domain names or IDNs) or a valid
    * IP (v4 or v6). If the field value isn't a valid hostname or IP, an error
    * message will be generated.
@@ -1035,7 +1047,7 @@ public interface StringRulesOrBuilder extends
   /**
    * <pre>
    * `uuid` specifies that the field value must be a valid UUID as defined by
-   * [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2). If the
+   * [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2). If the
    * field value isn't a valid UUID, an error message will be generated.
    *
    * ```proto
@@ -1053,7 +1065,7 @@ public interface StringRulesOrBuilder extends
   /**
    * <pre>
    * `uuid` specifies that the field value must be a valid UUID as defined by
-   * [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2). If the
+   * [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2). If the
    * field value isn't a valid UUID, an error message will be generated.
    *
    * ```proto
@@ -1072,7 +1084,7 @@ public interface StringRulesOrBuilder extends
   /**
    * <pre>
    * `tuuid` (trimmed UUID) specifies that the field value must be a valid UUID as
-   * defined by [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2) with all dashes
+   * defined by [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2) with all dashes
    * omitted. If the field value isn't a valid UUID without dashes, an error message
    * will be generated.
    *
@@ -1091,7 +1103,7 @@ public interface StringRulesOrBuilder extends
   /**
    * <pre>
    * `tuuid` (trimmed UUID) specifies that the field value must be a valid UUID as
-   * defined by [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2) with all dashes
+   * defined by [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2) with all dashes
    * omitted. If the field value isn't a valid UUID without dashes, an error message
    * will be generated.
    *
@@ -1387,8 +1399,8 @@ public interface StringRulesOrBuilder extends
    * | Name                          | Number | Description                               |
    * |-------------------------------|--------|-------------------------------------------|
    * | KNOWN_REGEX_UNSPECIFIED       | 0      |                                           |
-   * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2)  |
-   * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2.4) |
+   * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2)  |
+   * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.4) |
    * </pre>
    *
    * <code>.buf.validate.KnownRegex well_known_regex = 24 [json_name = "wellKnownRegex", (.buf.validate.predefined) = { ... }</code>
@@ -1415,8 +1427,8 @@ public interface StringRulesOrBuilder extends
    * | Name                          | Number | Description                               |
    * |-------------------------------|--------|-------------------------------------------|
    * | KNOWN_REGEX_UNSPECIFIED       | 0      |                                           |
-   * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2)  |
-   * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2.4) |
+   * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2)  |
+   * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.4) |
    * </pre>
    *
    * <code>.buf.validate.KnownRegex well_known_regex = 24 [json_name = "wellKnownRegex", (.buf.validate.predefined) = { ... }</code>
@@ -1428,7 +1440,7 @@ public interface StringRulesOrBuilder extends
    * <pre>
    * This applies to regexes `HTTP_HEADER_NAME` and `HTTP_HEADER_VALUE` to
    * enable strict header validation. By default, this is true, and HTTP header
-   * validations are [RFC-compliant](https://tools.ietf.org/html/rfc7230#section-3). Setting to false will enable looser
+   * validations are [RFC-compliant](https://datatracker.ietf.org/doc/html/rfc7230#section-3). Setting to false will enable looser
    * validations that only disallow `&#92;r&#92;n&#92;0` characters, which can be used to
    * bypass header matching rules.
    *
@@ -1448,7 +1460,7 @@ public interface StringRulesOrBuilder extends
    * <pre>
    * This applies to regexes `HTTP_HEADER_NAME` and `HTTP_HEADER_VALUE` to
    * enable strict header validation. By default, this is true, and HTTP header
-   * validations are [RFC-compliant](https://tools.ietf.org/html/rfc7230#section-3). Setting to false will enable looser
+   * validations are [RFC-compliant](https://datatracker.ietf.org/doc/html/rfc7230#section-3). Setting to false will enable looser
    * validations that only disallow `&#92;r&#92;n&#92;0` characters, which can be used to
    * bypass header matching rules.
    *
@@ -1474,8 +1486,8 @@ public interface StringRulesOrBuilder extends
    * ```proto
    * message MyString {
    *   string value = 1 [
-   *     (buf.validate.field).string.example = 1,
-   *     (buf.validate.field).string.example = 2
+   *     (buf.validate.field).string.example = "hello",
+   *     (buf.validate.field).string.example = "world"
    *   ];
    * }
    * ```
@@ -1495,8 +1507,8 @@ public interface StringRulesOrBuilder extends
    * ```proto
    * message MyString {
    *   string value = 1 [
-   *     (buf.validate.field).string.example = 1,
-   *     (buf.validate.field).string.example = 2
+   *     (buf.validate.field).string.example = "hello",
+   *     (buf.validate.field).string.example = "world"
    *   ];
    * }
    * ```
@@ -1515,8 +1527,8 @@ public interface StringRulesOrBuilder extends
    * ```proto
    * message MyString {
    *   string value = 1 [
-   *     (buf.validate.field).string.example = 1,
-   *     (buf.validate.field).string.example = 2
+   *     (buf.validate.field).string.example = "hello",
+   *     (buf.validate.field).string.example = "world"
    *   ];
    * }
    * ```
@@ -1536,8 +1548,8 @@ public interface StringRulesOrBuilder extends
    * ```proto
    * message MyString {
    *   string value = 1 [
-   *     (buf.validate.field).string.example = 1,
-   *     (buf.validate.field).string.example = 2
+   *     (buf.validate.field).string.example = "hello",
+   *     (buf.validate.field).string.example = "world"
    *   ];
    * }
    * ```

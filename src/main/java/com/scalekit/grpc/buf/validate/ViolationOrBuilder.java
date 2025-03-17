@@ -10,35 +10,192 @@ public interface ViolationOrBuilder extends
 
   /**
    * <pre>
-   * `field_path` is a machine-readable identifier that points to the specific field that failed the validation.
+   * `field` is a machine-readable path to the field that failed validation.
    * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
+   *
+   * For example, consider the following message:
+   *
+   * ```proto
+   * message Message {
+   *   bool a = 1 [(buf.validate.field).required = true];
+   * }
+   * ```
+   *
+   * It could produce the following violation:
+   *
+   * ```textproto
+   * violation {
+   *   field { element { field_number: 1, field_name: "a", field_type: 8 } }
+   *   ...
+   * }
+   * ```
    * </pre>
    *
-   * <code>optional string field_path = 1 [json_name = "fieldPath"];</code>
-   * @return Whether the fieldPath field is set.
+   * <code>optional .buf.validate.FieldPath field = 5 [json_name = "field"];</code>
+   * @return Whether the field field is set.
    */
-  boolean hasFieldPath();
+  boolean hasField();
   /**
    * <pre>
-   * `field_path` is a machine-readable identifier that points to the specific field that failed the validation.
+   * `field` is a machine-readable path to the field that failed validation.
    * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
+   *
+   * For example, consider the following message:
+   *
+   * ```proto
+   * message Message {
+   *   bool a = 1 [(buf.validate.field).required = true];
+   * }
+   * ```
+   *
+   * It could produce the following violation:
+   *
+   * ```textproto
+   * violation {
+   *   field { element { field_number: 1, field_name: "a", field_type: 8 } }
+   *   ...
+   * }
+   * ```
    * </pre>
    *
-   * <code>optional string field_path = 1 [json_name = "fieldPath"];</code>
-   * @return The fieldPath.
+   * <code>optional .buf.validate.FieldPath field = 5 [json_name = "field"];</code>
+   * @return The field.
    */
-  java.lang.String getFieldPath();
+  com.scalekit.grpc.buf.validate.FieldPath getField();
   /**
    * <pre>
-   * `field_path` is a machine-readable identifier that points to the specific field that failed the validation.
+   * `field` is a machine-readable path to the field that failed validation.
    * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
+   *
+   * For example, consider the following message:
+   *
+   * ```proto
+   * message Message {
+   *   bool a = 1 [(buf.validate.field).required = true];
+   * }
+   * ```
+   *
+   * It could produce the following violation:
+   *
+   * ```textproto
+   * violation {
+   *   field { element { field_number: 1, field_name: "a", field_type: 8 } }
+   *   ...
+   * }
+   * ```
    * </pre>
    *
-   * <code>optional string field_path = 1 [json_name = "fieldPath"];</code>
-   * @return The bytes for fieldPath.
+   * <code>optional .buf.validate.FieldPath field = 5 [json_name = "field"];</code>
    */
-  com.google.protobuf.ByteString
-      getFieldPathBytes();
+  com.scalekit.grpc.buf.validate.FieldPathOrBuilder getFieldOrBuilder();
+
+  /**
+   * <pre>
+   * `rule` is a machine-readable path that points to the specific constraint rule that failed validation.
+   * This will be a nested field starting from the FieldConstraints of the field that failed validation.
+   * For custom constraints, this will provide the path of the constraint, e.g. `cel[0]`.
+   *
+   * For example, consider the following message:
+   *
+   * ```proto
+   * message Message {
+   *   bool a = 1 [(buf.validate.field).required = true];
+   *   bool b = 2 [(buf.validate.field).cel = {
+   *     id: "custom_constraint",
+   *     expression: "!this ? 'b must be true': ''"
+   *   }]
+   * }
+   * ```
+   *
+   * It could produce the following violations:
+   *
+   * ```textproto
+   * violation {
+   *   rule { element { field_number: 25, field_name: "required", field_type: 8 } }
+   *   ...
+   * }
+   * violation {
+   *   rule { element { field_number: 23, field_name: "cel", field_type: 11, index: 0 } }
+   *   ...
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>optional .buf.validate.FieldPath rule = 6 [json_name = "rule"];</code>
+   * @return Whether the rule field is set.
+   */
+  boolean hasRule();
+  /**
+   * <pre>
+   * `rule` is a machine-readable path that points to the specific constraint rule that failed validation.
+   * This will be a nested field starting from the FieldConstraints of the field that failed validation.
+   * For custom constraints, this will provide the path of the constraint, e.g. `cel[0]`.
+   *
+   * For example, consider the following message:
+   *
+   * ```proto
+   * message Message {
+   *   bool a = 1 [(buf.validate.field).required = true];
+   *   bool b = 2 [(buf.validate.field).cel = {
+   *     id: "custom_constraint",
+   *     expression: "!this ? 'b must be true': ''"
+   *   }]
+   * }
+   * ```
+   *
+   * It could produce the following violations:
+   *
+   * ```textproto
+   * violation {
+   *   rule { element { field_number: 25, field_name: "required", field_type: 8 } }
+   *   ...
+   * }
+   * violation {
+   *   rule { element { field_number: 23, field_name: "cel", field_type: 11, index: 0 } }
+   *   ...
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>optional .buf.validate.FieldPath rule = 6 [json_name = "rule"];</code>
+   * @return The rule.
+   */
+  com.scalekit.grpc.buf.validate.FieldPath getRule();
+  /**
+   * <pre>
+   * `rule` is a machine-readable path that points to the specific constraint rule that failed validation.
+   * This will be a nested field starting from the FieldConstraints of the field that failed validation.
+   * For custom constraints, this will provide the path of the constraint, e.g. `cel[0]`.
+   *
+   * For example, consider the following message:
+   *
+   * ```proto
+   * message Message {
+   *   bool a = 1 [(buf.validate.field).required = true];
+   *   bool b = 2 [(buf.validate.field).cel = {
+   *     id: "custom_constraint",
+   *     expression: "!this ? 'b must be true': ''"
+   *   }]
+   * }
+   * ```
+   *
+   * It could produce the following violations:
+   *
+   * ```textproto
+   * violation {
+   *   rule { element { field_number: 25, field_name: "required", field_type: 8 } }
+   *   ...
+   * }
+   * violation {
+   *   rule { element { field_number: 23, field_name: "cel", field_type: 11, index: 0 } }
+   *   ...
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>optional .buf.validate.FieldPath rule = 6 [json_name = "rule"];</code>
+   */
+  com.scalekit.grpc.buf.validate.FieldPathOrBuilder getRuleOrBuilder();
 
   /**
    * <pre>

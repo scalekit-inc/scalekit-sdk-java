@@ -233,7 +233,7 @@ public interface SFixed32RulesOrBuilder extends
    * ```proto
    * message MySFixed32 {
    *   // value must be in list [1, 2, 3]
-   *   repeated sfixed32 value = 1 (buf.validate.field).sfixed32 = { in: [1, 2, 3] };
+   *   sfixed32 value = 1 [(buf.validate.field).sfixed32 = { in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -251,7 +251,7 @@ public interface SFixed32RulesOrBuilder extends
    * ```proto
    * message MySFixed32 {
    *   // value must be in list [1, 2, 3]
-   *   repeated sfixed32 value = 1 (buf.validate.field).sfixed32 = { in: [1, 2, 3] };
+   *   sfixed32 value = 1 [(buf.validate.field).sfixed32 = { in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -269,7 +269,7 @@ public interface SFixed32RulesOrBuilder extends
    * ```proto
    * message MySFixed32 {
    *   // value must be in list [1, 2, 3]
-   *   repeated sfixed32 value = 1 (buf.validate.field).sfixed32 = { in: [1, 2, 3] };
+   *   sfixed32 value = 1 [(buf.validate.field).sfixed32 = { in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -289,7 +289,7 @@ public interface SFixed32RulesOrBuilder extends
    * ```proto
    * message MySFixed32 {
    *   // value must not be in list [1, 2, 3]
-   *   repeated sfixed32 value = 1 (buf.validate.field).sfixed32 = { not_in: [1, 2, 3] };
+   *   sfixed32 value = 1 [(buf.validate.field).sfixed32 = { not_in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -307,7 +307,7 @@ public interface SFixed32RulesOrBuilder extends
    * ```proto
    * message MySFixed32 {
    *   // value must not be in list [1, 2, 3]
-   *   repeated sfixed32 value = 1 (buf.validate.field).sfixed32 = { not_in: [1, 2, 3] };
+   *   sfixed32 value = 1 [(buf.validate.field).sfixed32 = { not_in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -325,7 +325,7 @@ public interface SFixed32RulesOrBuilder extends
    * ```proto
    * message MySFixed32 {
    *   // value must not be in list [1, 2, 3]
-   *   repeated sfixed32 value = 1 (buf.validate.field).sfixed32 = { not_in: [1, 2, 3] };
+   *   sfixed32 value = 1 [(buf.validate.field).sfixed32 = { not_in: [1, 2, 3] }];
    * }
    * ```
    * </pre>

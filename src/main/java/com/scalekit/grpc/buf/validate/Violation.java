@@ -32,7 +32,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Violation() {
-    fieldPath_ = "";
     constraintId_ = "";
     message_ = "";
   }
@@ -58,68 +57,215 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
-  public static final int FIELD_PATH_FIELD_NUMBER = 1;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object fieldPath_ = "";
+  public static final int FIELD_FIELD_NUMBER = 5;
+  private com.scalekit.grpc.buf.validate.FieldPath field_;
   /**
    * <pre>
-   * `field_path` is a machine-readable identifier that points to the specific field that failed the validation.
+   * `field` is a machine-readable path to the field that failed validation.
    * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
+   *
+   * For example, consider the following message:
+   *
+   * ```proto
+   * message Message {
+   *   bool a = 1 [(buf.validate.field).required = true];
+   * }
+   * ```
+   *
+   * It could produce the following violation:
+   *
+   * ```textproto
+   * violation {
+   *   field { element { field_number: 1, field_name: "a", field_type: 8 } }
+   *   ...
+   * }
+   * ```
    * </pre>
    *
-   * <code>optional string field_path = 1 [json_name = "fieldPath"];</code>
-   * @return Whether the fieldPath field is set.
+   * <code>optional .buf.validate.FieldPath field = 5 [json_name = "field"];</code>
+   * @return Whether the field field is set.
    */
   @java.lang.Override
-  public boolean hasFieldPath() {
+  public boolean hasField() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
-   * `field_path` is a machine-readable identifier that points to the specific field that failed the validation.
+   * `field` is a machine-readable path to the field that failed validation.
    * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
+   *
+   * For example, consider the following message:
+   *
+   * ```proto
+   * message Message {
+   *   bool a = 1 [(buf.validate.field).required = true];
+   * }
+   * ```
+   *
+   * It could produce the following violation:
+   *
+   * ```textproto
+   * violation {
+   *   field { element { field_number: 1, field_name: "a", field_type: 8 } }
+   *   ...
+   * }
+   * ```
    * </pre>
    *
-   * <code>optional string field_path = 1 [json_name = "fieldPath"];</code>
-   * @return The fieldPath.
+   * <code>optional .buf.validate.FieldPath field = 5 [json_name = "field"];</code>
+   * @return The field.
    */
   @java.lang.Override
-  public java.lang.String getFieldPath() {
-    java.lang.Object ref = fieldPath_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        fieldPath_ = s;
-      }
-      return s;
-    }
+  public com.scalekit.grpc.buf.validate.FieldPath getField() {
+    return field_ == null ? com.scalekit.grpc.buf.validate.FieldPath.getDefaultInstance() : field_;
   }
   /**
    * <pre>
-   * `field_path` is a machine-readable identifier that points to the specific field that failed the validation.
+   * `field` is a machine-readable path to the field that failed validation.
    * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
+   *
+   * For example, consider the following message:
+   *
+   * ```proto
+   * message Message {
+   *   bool a = 1 [(buf.validate.field).required = true];
+   * }
+   * ```
+   *
+   * It could produce the following violation:
+   *
+   * ```textproto
+   * violation {
+   *   field { element { field_number: 1, field_name: "a", field_type: 8 } }
+   *   ...
+   * }
+   * ```
    * </pre>
    *
-   * <code>optional string field_path = 1 [json_name = "fieldPath"];</code>
-   * @return The bytes for fieldPath.
+   * <code>optional .buf.validate.FieldPath field = 5 [json_name = "field"];</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getFieldPathBytes() {
-    java.lang.Object ref = fieldPath_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      fieldPath_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.scalekit.grpc.buf.validate.FieldPathOrBuilder getFieldOrBuilder() {
+    return field_ == null ? com.scalekit.grpc.buf.validate.FieldPath.getDefaultInstance() : field_;
+  }
+
+  public static final int RULE_FIELD_NUMBER = 6;
+  private com.scalekit.grpc.buf.validate.FieldPath rule_;
+  /**
+   * <pre>
+   * `rule` is a machine-readable path that points to the specific constraint rule that failed validation.
+   * This will be a nested field starting from the FieldConstraints of the field that failed validation.
+   * For custom constraints, this will provide the path of the constraint, e.g. `cel[0]`.
+   *
+   * For example, consider the following message:
+   *
+   * ```proto
+   * message Message {
+   *   bool a = 1 [(buf.validate.field).required = true];
+   *   bool b = 2 [(buf.validate.field).cel = {
+   *     id: "custom_constraint",
+   *     expression: "!this ? 'b must be true': ''"
+   *   }]
+   * }
+   * ```
+   *
+   * It could produce the following violations:
+   *
+   * ```textproto
+   * violation {
+   *   rule { element { field_number: 25, field_name: "required", field_type: 8 } }
+   *   ...
+   * }
+   * violation {
+   *   rule { element { field_number: 23, field_name: "cel", field_type: 11, index: 0 } }
+   *   ...
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>optional .buf.validate.FieldPath rule = 6 [json_name = "rule"];</code>
+   * @return Whether the rule field is set.
+   */
+  @java.lang.Override
+  public boolean hasRule() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <pre>
+   * `rule` is a machine-readable path that points to the specific constraint rule that failed validation.
+   * This will be a nested field starting from the FieldConstraints of the field that failed validation.
+   * For custom constraints, this will provide the path of the constraint, e.g. `cel[0]`.
+   *
+   * For example, consider the following message:
+   *
+   * ```proto
+   * message Message {
+   *   bool a = 1 [(buf.validate.field).required = true];
+   *   bool b = 2 [(buf.validate.field).cel = {
+   *     id: "custom_constraint",
+   *     expression: "!this ? 'b must be true': ''"
+   *   }]
+   * }
+   * ```
+   *
+   * It could produce the following violations:
+   *
+   * ```textproto
+   * violation {
+   *   rule { element { field_number: 25, field_name: "required", field_type: 8 } }
+   *   ...
+   * }
+   * violation {
+   *   rule { element { field_number: 23, field_name: "cel", field_type: 11, index: 0 } }
+   *   ...
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>optional .buf.validate.FieldPath rule = 6 [json_name = "rule"];</code>
+   * @return The rule.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.buf.validate.FieldPath getRule() {
+    return rule_ == null ? com.scalekit.grpc.buf.validate.FieldPath.getDefaultInstance() : rule_;
+  }
+  /**
+   * <pre>
+   * `rule` is a machine-readable path that points to the specific constraint rule that failed validation.
+   * This will be a nested field starting from the FieldConstraints of the field that failed validation.
+   * For custom constraints, this will provide the path of the constraint, e.g. `cel[0]`.
+   *
+   * For example, consider the following message:
+   *
+   * ```proto
+   * message Message {
+   *   bool a = 1 [(buf.validate.field).required = true];
+   *   bool b = 2 [(buf.validate.field).cel = {
+   *     id: "custom_constraint",
+   *     expression: "!this ? 'b must be true': ''"
+   *   }]
+   * }
+   * ```
+   *
+   * It could produce the following violations:
+   *
+   * ```textproto
+   * violation {
+   *   rule { element { field_number: 25, field_name: "required", field_type: 8 } }
+   *   ...
+   * }
+   * violation {
+   *   rule { element { field_number: 23, field_name: "cel", field_type: 11, index: 0 } }
+   *   ...
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>optional .buf.validate.FieldPath rule = 6 [json_name = "rule"];</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.buf.validate.FieldPathOrBuilder getRuleOrBuilder() {
+    return rule_ == null ? com.scalekit.grpc.buf.validate.FieldPath.getDefaultInstance() : rule_;
   }
 
   public static final int CONSTRAINT_ID_FIELD_NUMBER = 2;
@@ -136,7 +282,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasConstraintId() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    * <pre>
@@ -200,7 +346,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasMessage() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    * <pre>
@@ -262,7 +408,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasForKey() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    * <pre>
@@ -291,17 +437,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fieldPath_);
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, constraintId_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeBool(4, forKey_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getField());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(6, getRule());
     }
     getUnknownFields().writeTo(output);
   }
@@ -312,18 +461,23 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fieldPath_);
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, constraintId_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, forKey_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getField());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getRule());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -340,10 +494,15 @@ private static final long serialVersionUID = 0L;
     }
     com.scalekit.grpc.buf.validate.Violation other = (com.scalekit.grpc.buf.validate.Violation) obj;
 
-    if (hasFieldPath() != other.hasFieldPath()) return false;
-    if (hasFieldPath()) {
-      if (!getFieldPath()
-          .equals(other.getFieldPath())) return false;
+    if (hasField() != other.hasField()) return false;
+    if (hasField()) {
+      if (!getField()
+          .equals(other.getField())) return false;
+    }
+    if (hasRule() != other.hasRule()) return false;
+    if (hasRule()) {
+      if (!getRule()
+          .equals(other.getRule())) return false;
     }
     if (hasConstraintId() != other.hasConstraintId()) return false;
     if (hasConstraintId()) {
@@ -371,9 +530,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasFieldPath()) {
-      hash = (37 * hash) + FIELD_PATH_FIELD_NUMBER;
-      hash = (53 * hash) + getFieldPath().hashCode();
+    if (hasField()) {
+      hash = (37 * hash) + FIELD_FIELD_NUMBER;
+      hash = (53 * hash) + getField().hashCode();
+    }
+    if (hasRule()) {
+      hash = (37 * hash) + RULE_FIELD_NUMBER;
+      hash = (53 * hash) + getRule().hashCode();
     }
     if (hasConstraintId()) {
       hash = (37 * hash) + CONSTRAINT_ID_FIELD_NUMBER;
@@ -522,19 +685,35 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.scalekit.grpc.buf.validate.Violation.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getFieldFieldBuilder();
+        getRuleFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      fieldPath_ = "";
+      field_ = null;
+      if (fieldBuilder_ != null) {
+        fieldBuilder_.dispose();
+        fieldBuilder_ = null;
+      }
+      rule_ = null;
+      if (ruleBuilder_ != null) {
+        ruleBuilder_.dispose();
+        ruleBuilder_ = null;
+      }
       constraintId_ = "";
       message_ = "";
       forKey_ = false;
@@ -573,20 +752,28 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.fieldPath_ = fieldPath_;
+        result.field_ = fieldBuilder_ == null
+            ? field_
+            : fieldBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.constraintId_ = constraintId_;
+        result.rule_ = ruleBuilder_ == null
+            ? rule_
+            : ruleBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.message_ = message_;
+        result.constraintId_ = constraintId_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.forKey_ = forKey_;
+        result.message_ = message_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.forKey_ = forKey_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -635,19 +822,20 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.scalekit.grpc.buf.validate.Violation other) {
       if (other == com.scalekit.grpc.buf.validate.Violation.getDefaultInstance()) return this;
-      if (other.hasFieldPath()) {
-        fieldPath_ = other.fieldPath_;
-        bitField0_ |= 0x00000001;
-        onChanged();
+      if (other.hasField()) {
+        mergeField(other.getField());
+      }
+      if (other.hasRule()) {
+        mergeRule(other.getRule());
       }
       if (other.hasConstraintId()) {
         constraintId_ = other.constraintId_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasMessage()) {
         message_ = other.message_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasForKey()) {
@@ -679,26 +867,35 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              fieldPath_ = input.readBytes();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 10
             case 18: {
               constraintId_ = input.readBytes();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               break;
             } // case 18
             case 26: {
               message_ = input.readBytes();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               break;
             } // case 26
             case 32: {
               forKey_ = input.readBool();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               break;
             } // case 32
+            case 42: {
+              input.readMessage(
+                  getFieldFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000001;
+              break;
+            } // case 42
+            case 50: {
+              input.readMessage(
+                  getRuleFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 50
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -716,114 +913,723 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object fieldPath_ = "";
+    private com.scalekit.grpc.buf.validate.FieldPath field_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.buf.validate.FieldPath, com.scalekit.grpc.buf.validate.FieldPath.Builder, com.scalekit.grpc.buf.validate.FieldPathOrBuilder> fieldBuilder_;
     /**
      * <pre>
-     * `field_path` is a machine-readable identifier that points to the specific field that failed the validation.
+     * `field` is a machine-readable path to the field that failed validation.
      * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     * }
+     * ```
+     *
+     * It could produce the following violation:
+     *
+     * ```textproto
+     * violation {
+     *   field { element { field_number: 1, field_name: "a", field_type: 8 } }
+     *   ...
+     * }
+     * ```
      * </pre>
      *
-     * <code>optional string field_path = 1 [json_name = "fieldPath"];</code>
-     * @return Whether the fieldPath field is set.
+     * <code>optional .buf.validate.FieldPath field = 5 [json_name = "field"];</code>
+     * @return Whether the field field is set.
      */
-    public boolean hasFieldPath() {
+    public boolean hasField() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
-     * `field_path` is a machine-readable identifier that points to the specific field that failed the validation.
+     * `field` is a machine-readable path to the field that failed validation.
      * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     * }
+     * ```
+     *
+     * It could produce the following violation:
+     *
+     * ```textproto
+     * violation {
+     *   field { element { field_number: 1, field_name: "a", field_type: 8 } }
+     *   ...
+     * }
+     * ```
      * </pre>
      *
-     * <code>optional string field_path = 1 [json_name = "fieldPath"];</code>
-     * @return The fieldPath.
+     * <code>optional .buf.validate.FieldPath field = 5 [json_name = "field"];</code>
+     * @return The field.
      */
-    public java.lang.String getFieldPath() {
-      java.lang.Object ref = fieldPath_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          fieldPath_ = s;
+    public com.scalekit.grpc.buf.validate.FieldPath getField() {
+      if (fieldBuilder_ == null) {
+        return field_ == null ? com.scalekit.grpc.buf.validate.FieldPath.getDefaultInstance() : field_;
+      } else {
+        return fieldBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * `field` is a machine-readable path to the field that failed validation.
+     * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     * }
+     * ```
+     *
+     * It could produce the following violation:
+     *
+     * ```textproto
+     * violation {
+     *   field { element { field_number: 1, field_name: "a", field_type: 8 } }
+     *   ...
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>optional .buf.validate.FieldPath field = 5 [json_name = "field"];</code>
+     */
+    public Builder setField(com.scalekit.grpc.buf.validate.FieldPath value) {
+      if (fieldBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
         }
-        return s;
+        field_ = value;
       } else {
-        return (java.lang.String) ref;
+        fieldBuilder_.setMessage(value);
       }
-    }
-    /**
-     * <pre>
-     * `field_path` is a machine-readable identifier that points to the specific field that failed the validation.
-     * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
-     * </pre>
-     *
-     * <code>optional string field_path = 1 [json_name = "fieldPath"];</code>
-     * @return The bytes for fieldPath.
-     */
-    public com.google.protobuf.ByteString
-        getFieldPathBytes() {
-      java.lang.Object ref = fieldPath_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        fieldPath_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * `field_path` is a machine-readable identifier that points to the specific field that failed the validation.
-     * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
-     * </pre>
-     *
-     * <code>optional string field_path = 1 [json_name = "fieldPath"];</code>
-     * @param value The fieldPath to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFieldPath(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      fieldPath_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * `field_path` is a machine-readable identifier that points to the specific field that failed the validation.
+     * `field` is a machine-readable path to the field that failed validation.
      * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     * }
+     * ```
+     *
+     * It could produce the following violation:
+     *
+     * ```textproto
+     * violation {
+     *   field { element { field_number: 1, field_name: "a", field_type: 8 } }
+     *   ...
+     * }
+     * ```
      * </pre>
      *
-     * <code>optional string field_path = 1 [json_name = "fieldPath"];</code>
-     * @return This builder for chaining.
+     * <code>optional .buf.validate.FieldPath field = 5 [json_name = "field"];</code>
      */
-    public Builder clearFieldPath() {
-      fieldPath_ = getDefaultInstance().getFieldPath();
+    public Builder setField(
+        com.scalekit.grpc.buf.validate.FieldPath.Builder builderForValue) {
+      if (fieldBuilder_ == null) {
+        field_ = builderForValue.build();
+      } else {
+        fieldBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * `field` is a machine-readable path to the field that failed validation.
+     * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     * }
+     * ```
+     *
+     * It could produce the following violation:
+     *
+     * ```textproto
+     * violation {
+     *   field { element { field_number: 1, field_name: "a", field_type: 8 } }
+     *   ...
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>optional .buf.validate.FieldPath field = 5 [json_name = "field"];</code>
+     */
+    public Builder mergeField(com.scalekit.grpc.buf.validate.FieldPath value) {
+      if (fieldBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0) &&
+          field_ != null &&
+          field_ != com.scalekit.grpc.buf.validate.FieldPath.getDefaultInstance()) {
+          getFieldBuilder().mergeFrom(value);
+        } else {
+          field_ = value;
+        }
+      } else {
+        fieldBuilder_.mergeFrom(value);
+      }
+      if (field_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * `field` is a machine-readable path to the field that failed validation.
+     * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     * }
+     * ```
+     *
+     * It could produce the following violation:
+     *
+     * ```textproto
+     * violation {
+     *   field { element { field_number: 1, field_name: "a", field_type: 8 } }
+     *   ...
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>optional .buf.validate.FieldPath field = 5 [json_name = "field"];</code>
+     */
+    public Builder clearField() {
       bitField0_ = (bitField0_ & ~0x00000001);
+      field_ = null;
+      if (fieldBuilder_ != null) {
+        fieldBuilder_.dispose();
+        fieldBuilder_ = null;
+      }
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * `field_path` is a machine-readable identifier that points to the specific field that failed the validation.
+     * `field` is a machine-readable path to the field that failed validation.
      * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     * }
+     * ```
+     *
+     * It could produce the following violation:
+     *
+     * ```textproto
+     * violation {
+     *   field { element { field_number: 1, field_name: "a", field_type: 8 } }
+     *   ...
+     * }
+     * ```
      * </pre>
      *
-     * <code>optional string field_path = 1 [json_name = "fieldPath"];</code>
-     * @param value The bytes for fieldPath to set.
-     * @return This builder for chaining.
+     * <code>optional .buf.validate.FieldPath field = 5 [json_name = "field"];</code>
      */
-    public Builder setFieldPathBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      fieldPath_ = value;
+    public com.scalekit.grpc.buf.validate.FieldPath.Builder getFieldBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
+      return getFieldFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * `field` is a machine-readable path to the field that failed validation.
+     * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     * }
+     * ```
+     *
+     * It could produce the following violation:
+     *
+     * ```textproto
+     * violation {
+     *   field { element { field_number: 1, field_name: "a", field_type: 8 } }
+     *   ...
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>optional .buf.validate.FieldPath field = 5 [json_name = "field"];</code>
+     */
+    public com.scalekit.grpc.buf.validate.FieldPathOrBuilder getFieldOrBuilder() {
+      if (fieldBuilder_ != null) {
+        return fieldBuilder_.getMessageOrBuilder();
+      } else {
+        return field_ == null ?
+            com.scalekit.grpc.buf.validate.FieldPath.getDefaultInstance() : field_;
+      }
+    }
+    /**
+     * <pre>
+     * `field` is a machine-readable path to the field that failed validation.
+     * This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     * }
+     * ```
+     *
+     * It could produce the following violation:
+     *
+     * ```textproto
+     * violation {
+     *   field { element { field_number: 1, field_name: "a", field_type: 8 } }
+     *   ...
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>optional .buf.validate.FieldPath field = 5 [json_name = "field"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.buf.validate.FieldPath, com.scalekit.grpc.buf.validate.FieldPath.Builder, com.scalekit.grpc.buf.validate.FieldPathOrBuilder> 
+        getFieldFieldBuilder() {
+      if (fieldBuilder_ == null) {
+        fieldBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.buf.validate.FieldPath, com.scalekit.grpc.buf.validate.FieldPath.Builder, com.scalekit.grpc.buf.validate.FieldPathOrBuilder>(
+                getField(),
+                getParentForChildren(),
+                isClean());
+        field_ = null;
+      }
+      return fieldBuilder_;
+    }
+
+    private com.scalekit.grpc.buf.validate.FieldPath rule_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.buf.validate.FieldPath, com.scalekit.grpc.buf.validate.FieldPath.Builder, com.scalekit.grpc.buf.validate.FieldPathOrBuilder> ruleBuilder_;
+    /**
+     * <pre>
+     * `rule` is a machine-readable path that points to the specific constraint rule that failed validation.
+     * This will be a nested field starting from the FieldConstraints of the field that failed validation.
+     * For custom constraints, this will provide the path of the constraint, e.g. `cel[0]`.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     *   bool b = 2 [(buf.validate.field).cel = {
+     *     id: "custom_constraint",
+     *     expression: "!this ? 'b must be true': ''"
+     *   }]
+     * }
+     * ```
+     *
+     * It could produce the following violations:
+     *
+     * ```textproto
+     * violation {
+     *   rule { element { field_number: 25, field_name: "required", field_type: 8 } }
+     *   ...
+     * }
+     * violation {
+     *   rule { element { field_number: 23, field_name: "cel", field_type: 11, index: 0 } }
+     *   ...
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>optional .buf.validate.FieldPath rule = 6 [json_name = "rule"];</code>
+     * @return Whether the rule field is set.
+     */
+    public boolean hasRule() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * `rule` is a machine-readable path that points to the specific constraint rule that failed validation.
+     * This will be a nested field starting from the FieldConstraints of the field that failed validation.
+     * For custom constraints, this will provide the path of the constraint, e.g. `cel[0]`.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     *   bool b = 2 [(buf.validate.field).cel = {
+     *     id: "custom_constraint",
+     *     expression: "!this ? 'b must be true': ''"
+     *   }]
+     * }
+     * ```
+     *
+     * It could produce the following violations:
+     *
+     * ```textproto
+     * violation {
+     *   rule { element { field_number: 25, field_name: "required", field_type: 8 } }
+     *   ...
+     * }
+     * violation {
+     *   rule { element { field_number: 23, field_name: "cel", field_type: 11, index: 0 } }
+     *   ...
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>optional .buf.validate.FieldPath rule = 6 [json_name = "rule"];</code>
+     * @return The rule.
+     */
+    public com.scalekit.grpc.buf.validate.FieldPath getRule() {
+      if (ruleBuilder_ == null) {
+        return rule_ == null ? com.scalekit.grpc.buf.validate.FieldPath.getDefaultInstance() : rule_;
+      } else {
+        return ruleBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * `rule` is a machine-readable path that points to the specific constraint rule that failed validation.
+     * This will be a nested field starting from the FieldConstraints of the field that failed validation.
+     * For custom constraints, this will provide the path of the constraint, e.g. `cel[0]`.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     *   bool b = 2 [(buf.validate.field).cel = {
+     *     id: "custom_constraint",
+     *     expression: "!this ? 'b must be true': ''"
+     *   }]
+     * }
+     * ```
+     *
+     * It could produce the following violations:
+     *
+     * ```textproto
+     * violation {
+     *   rule { element { field_number: 25, field_name: "required", field_type: 8 } }
+     *   ...
+     * }
+     * violation {
+     *   rule { element { field_number: 23, field_name: "cel", field_type: 11, index: 0 } }
+     *   ...
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>optional .buf.validate.FieldPath rule = 6 [json_name = "rule"];</code>
+     */
+    public Builder setRule(com.scalekit.grpc.buf.validate.FieldPath value) {
+      if (ruleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rule_ = value;
+      } else {
+        ruleBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
+    }
+    /**
+     * <pre>
+     * `rule` is a machine-readable path that points to the specific constraint rule that failed validation.
+     * This will be a nested field starting from the FieldConstraints of the field that failed validation.
+     * For custom constraints, this will provide the path of the constraint, e.g. `cel[0]`.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     *   bool b = 2 [(buf.validate.field).cel = {
+     *     id: "custom_constraint",
+     *     expression: "!this ? 'b must be true': ''"
+     *   }]
+     * }
+     * ```
+     *
+     * It could produce the following violations:
+     *
+     * ```textproto
+     * violation {
+     *   rule { element { field_number: 25, field_name: "required", field_type: 8 } }
+     *   ...
+     * }
+     * violation {
+     *   rule { element { field_number: 23, field_name: "cel", field_type: 11, index: 0 } }
+     *   ...
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>optional .buf.validate.FieldPath rule = 6 [json_name = "rule"];</code>
+     */
+    public Builder setRule(
+        com.scalekit.grpc.buf.validate.FieldPath.Builder builderForValue) {
+      if (ruleBuilder_ == null) {
+        rule_ = builderForValue.build();
+      } else {
+        ruleBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * `rule` is a machine-readable path that points to the specific constraint rule that failed validation.
+     * This will be a nested field starting from the FieldConstraints of the field that failed validation.
+     * For custom constraints, this will provide the path of the constraint, e.g. `cel[0]`.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     *   bool b = 2 [(buf.validate.field).cel = {
+     *     id: "custom_constraint",
+     *     expression: "!this ? 'b must be true': ''"
+     *   }]
+     * }
+     * ```
+     *
+     * It could produce the following violations:
+     *
+     * ```textproto
+     * violation {
+     *   rule { element { field_number: 25, field_name: "required", field_type: 8 } }
+     *   ...
+     * }
+     * violation {
+     *   rule { element { field_number: 23, field_name: "cel", field_type: 11, index: 0 } }
+     *   ...
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>optional .buf.validate.FieldPath rule = 6 [json_name = "rule"];</code>
+     */
+    public Builder mergeRule(com.scalekit.grpc.buf.validate.FieldPath value) {
+      if (ruleBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0) &&
+          rule_ != null &&
+          rule_ != com.scalekit.grpc.buf.validate.FieldPath.getDefaultInstance()) {
+          getRuleBuilder().mergeFrom(value);
+        } else {
+          rule_ = value;
+        }
+      } else {
+        ruleBuilder_.mergeFrom(value);
+      }
+      if (rule_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * `rule` is a machine-readable path that points to the specific constraint rule that failed validation.
+     * This will be a nested field starting from the FieldConstraints of the field that failed validation.
+     * For custom constraints, this will provide the path of the constraint, e.g. `cel[0]`.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     *   bool b = 2 [(buf.validate.field).cel = {
+     *     id: "custom_constraint",
+     *     expression: "!this ? 'b must be true': ''"
+     *   }]
+     * }
+     * ```
+     *
+     * It could produce the following violations:
+     *
+     * ```textproto
+     * violation {
+     *   rule { element { field_number: 25, field_name: "required", field_type: 8 } }
+     *   ...
+     * }
+     * violation {
+     *   rule { element { field_number: 23, field_name: "cel", field_type: 11, index: 0 } }
+     *   ...
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>optional .buf.validate.FieldPath rule = 6 [json_name = "rule"];</code>
+     */
+    public Builder clearRule() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      rule_ = null;
+      if (ruleBuilder_ != null) {
+        ruleBuilder_.dispose();
+        ruleBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * `rule` is a machine-readable path that points to the specific constraint rule that failed validation.
+     * This will be a nested field starting from the FieldConstraints of the field that failed validation.
+     * For custom constraints, this will provide the path of the constraint, e.g. `cel[0]`.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     *   bool b = 2 [(buf.validate.field).cel = {
+     *     id: "custom_constraint",
+     *     expression: "!this ? 'b must be true': ''"
+     *   }]
+     * }
+     * ```
+     *
+     * It could produce the following violations:
+     *
+     * ```textproto
+     * violation {
+     *   rule { element { field_number: 25, field_name: "required", field_type: 8 } }
+     *   ...
+     * }
+     * violation {
+     *   rule { element { field_number: 23, field_name: "cel", field_type: 11, index: 0 } }
+     *   ...
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>optional .buf.validate.FieldPath rule = 6 [json_name = "rule"];</code>
+     */
+    public com.scalekit.grpc.buf.validate.FieldPath.Builder getRuleBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getRuleFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * `rule` is a machine-readable path that points to the specific constraint rule that failed validation.
+     * This will be a nested field starting from the FieldConstraints of the field that failed validation.
+     * For custom constraints, this will provide the path of the constraint, e.g. `cel[0]`.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     *   bool b = 2 [(buf.validate.field).cel = {
+     *     id: "custom_constraint",
+     *     expression: "!this ? 'b must be true': ''"
+     *   }]
+     * }
+     * ```
+     *
+     * It could produce the following violations:
+     *
+     * ```textproto
+     * violation {
+     *   rule { element { field_number: 25, field_name: "required", field_type: 8 } }
+     *   ...
+     * }
+     * violation {
+     *   rule { element { field_number: 23, field_name: "cel", field_type: 11, index: 0 } }
+     *   ...
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>optional .buf.validate.FieldPath rule = 6 [json_name = "rule"];</code>
+     */
+    public com.scalekit.grpc.buf.validate.FieldPathOrBuilder getRuleOrBuilder() {
+      if (ruleBuilder_ != null) {
+        return ruleBuilder_.getMessageOrBuilder();
+      } else {
+        return rule_ == null ?
+            com.scalekit.grpc.buf.validate.FieldPath.getDefaultInstance() : rule_;
+      }
+    }
+    /**
+     * <pre>
+     * `rule` is a machine-readable path that points to the specific constraint rule that failed validation.
+     * This will be a nested field starting from the FieldConstraints of the field that failed validation.
+     * For custom constraints, this will provide the path of the constraint, e.g. `cel[0]`.
+     *
+     * For example, consider the following message:
+     *
+     * ```proto
+     * message Message {
+     *   bool a = 1 [(buf.validate.field).required = true];
+     *   bool b = 2 [(buf.validate.field).cel = {
+     *     id: "custom_constraint",
+     *     expression: "!this ? 'b must be true': ''"
+     *   }]
+     * }
+     * ```
+     *
+     * It could produce the following violations:
+     *
+     * ```textproto
+     * violation {
+     *   rule { element { field_number: 25, field_name: "required", field_type: 8 } }
+     *   ...
+     * }
+     * violation {
+     *   rule { element { field_number: 23, field_name: "cel", field_type: 11, index: 0 } }
+     *   ...
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>optional .buf.validate.FieldPath rule = 6 [json_name = "rule"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.buf.validate.FieldPath, com.scalekit.grpc.buf.validate.FieldPath.Builder, com.scalekit.grpc.buf.validate.FieldPathOrBuilder> 
+        getRuleFieldBuilder() {
+      if (ruleBuilder_ == null) {
+        ruleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.buf.validate.FieldPath, com.scalekit.grpc.buf.validate.FieldPath.Builder, com.scalekit.grpc.buf.validate.FieldPathOrBuilder>(
+                getRule(),
+                getParentForChildren(),
+                isClean());
+        rule_ = null;
+      }
+      return ruleBuilder_;
     }
 
     private java.lang.Object constraintId_ = "";
@@ -837,7 +1643,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the constraintId field is set.
      */
     public boolean hasConstraintId() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <pre>
@@ -898,7 +1704,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       constraintId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -913,7 +1719,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearConstraintId() {
       constraintId_ = getDefaultInstance().getConstraintId();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -931,7 +1737,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       constraintId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -947,7 +1753,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the message field is set.
      */
     public boolean hasMessage() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <pre>
@@ -1008,7 +1814,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       message_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1023,7 +1829,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearMessage() {
       message_ = getDefaultInstance().getMessage();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1041,7 +1847,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       message_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1057,7 +1863,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean hasForKey() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <pre>
@@ -1083,7 +1889,7 @@ private static final long serialVersionUID = 0L;
     public Builder setForKey(boolean value) {
 
       forKey_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1096,7 +1902,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearForKey() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       forKey_ = false;
       onChanged();
       return this;

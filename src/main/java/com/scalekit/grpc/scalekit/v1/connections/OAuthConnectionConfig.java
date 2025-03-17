@@ -275,6 +275,58 @@ private static final long serialVersionUID = 0L;
     return pkceEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : pkceEnabled_;
   }
 
+  public static final int PROMPT_FIELD_NUMBER = 14;
+  private com.google.protobuf.StringValue prompt_;
+  /**
+   * <code>.google.protobuf.StringValue prompt = 14 [json_name = "prompt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the prompt field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrompt() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   * <code>.google.protobuf.StringValue prompt = 14 [json_name = "prompt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The prompt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getPrompt() {
+    return prompt_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : prompt_;
+  }
+  /**
+   * <code>.google.protobuf.StringValue prompt = 14 [json_name = "prompt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getPromptOrBuilder() {
+    return prompt_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : prompt_;
+  }
+
+  public static final int USE_PLATFORM_CREDS_FIELD_NUMBER = 15;
+  private com.google.protobuf.BoolValue usePlatformCreds_;
+  /**
+   * <code>.google.protobuf.BoolValue use_platform_creds = 15 [json_name = "usePlatformCreds", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the usePlatformCreds field is set.
+   */
+  @java.lang.Override
+  public boolean hasUsePlatformCreds() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue use_platform_creds = 15 [json_name = "usePlatformCreds", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The usePlatformCreds.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getUsePlatformCreds() {
+    return usePlatformCreds_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : usePlatformCreds_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue use_platform_creds = 15 [json_name = "usePlatformCreds", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getUsePlatformCredsOrBuilder() {
+    return usePlatformCreds_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : usePlatformCreds_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -312,6 +364,12 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(13, getPkceEnabled());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(14, getPrompt());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(15, getUsePlatformCreds());
     }
     getUnknownFields().writeTo(output);
   }
@@ -356,6 +414,14 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getPkceEnabled());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getPrompt());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, getUsePlatformCreds());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -406,6 +472,16 @@ private static final long serialVersionUID = 0L;
       if (!getPkceEnabled()
           .equals(other.getPkceEnabled())) return false;
     }
+    if (hasPrompt() != other.hasPrompt()) return false;
+    if (hasPrompt()) {
+      if (!getPrompt()
+          .equals(other.getPrompt())) return false;
+    }
+    if (hasUsePlatformCreds() != other.hasUsePlatformCreds()) return false;
+    if (hasUsePlatformCreds()) {
+      if (!getUsePlatformCreds()
+          .equals(other.getUsePlatformCreds())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -446,6 +522,14 @@ private static final long serialVersionUID = 0L;
     if (hasPkceEnabled()) {
       hash = (37 * hash) + PKCE_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + getPkceEnabled().hashCode();
+    }
+    if (hasPrompt()) {
+      hash = (37 * hash) + PROMPT_FIELD_NUMBER;
+      hash = (53 * hash) + getPrompt().hashCode();
+    }
+    if (hasUsePlatformCreds()) {
+      hash = (37 * hash) + USE_PLATFORM_CREDS_FIELD_NUMBER;
+      hash = (53 * hash) + getUsePlatformCreds().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -583,6 +667,8 @@ private static final long serialVersionUID = 0L;
         getClientIdFieldBuilder();
         getClientSecretFieldBuilder();
         getPkceEnabledFieldBuilder();
+        getPromptFieldBuilder();
+        getUsePlatformCredsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -621,6 +707,16 @@ private static final long serialVersionUID = 0L;
       if (pkceEnabledBuilder_ != null) {
         pkceEnabledBuilder_.dispose();
         pkceEnabledBuilder_ = null;
+      }
+      prompt_ = null;
+      if (promptBuilder_ != null) {
+        promptBuilder_.dispose();
+        promptBuilder_ = null;
+      }
+      usePlatformCreds_ = null;
+      if (usePlatformCredsBuilder_ != null) {
+        usePlatformCredsBuilder_.dispose();
+        usePlatformCredsBuilder_ = null;
       }
       return this;
     }
@@ -698,6 +794,18 @@ private static final long serialVersionUID = 0L;
             ? pkceEnabled_
             : pkceEnabledBuilder_.build();
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.prompt_ = promptBuilder_ == null
+            ? prompt_
+            : promptBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.usePlatformCreds_ = usePlatformCredsBuilder_ == null
+            ? usePlatformCreds_
+            : usePlatformCredsBuilder_.build();
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -779,6 +887,12 @@ private static final long serialVersionUID = 0L;
       if (other.hasPkceEnabled()) {
         mergePkceEnabled(other.getPkceEnabled());
       }
+      if (other.hasPrompt()) {
+        mergePrompt(other.getPrompt());
+      }
+      if (other.hasUsePlatformCreds()) {
+        mergeUsePlatformCreds(other.getUsePlatformCreds());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -858,6 +972,20 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000080;
               break;
             } // case 106
+            case 114: {
+              input.readMessage(
+                  getPromptFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 114
+            case 122: {
+              input.readMessage(
+                  getUsePlatformCredsFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 122
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1782,6 +1910,248 @@ private static final long serialVersionUID = 0L;
         pkceEnabled_ = null;
       }
       return pkceEnabledBuilder_;
+    }
+
+    private com.google.protobuf.StringValue prompt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> promptBuilder_;
+    /**
+     * <code>.google.protobuf.StringValue prompt = 14 [json_name = "prompt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the prompt field is set.
+     */
+    public boolean hasPrompt() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <code>.google.protobuf.StringValue prompt = 14 [json_name = "prompt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The prompt.
+     */
+    public com.google.protobuf.StringValue getPrompt() {
+      if (promptBuilder_ == null) {
+        return prompt_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : prompt_;
+      } else {
+        return promptBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue prompt = 14 [json_name = "prompt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setPrompt(com.google.protobuf.StringValue value) {
+      if (promptBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        prompt_ = value;
+      } else {
+        promptBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue prompt = 14 [json_name = "prompt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setPrompt(
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (promptBuilder_ == null) {
+        prompt_ = builderForValue.build();
+      } else {
+        promptBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue prompt = 14 [json_name = "prompt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergePrompt(com.google.protobuf.StringValue value) {
+      if (promptBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0) &&
+          prompt_ != null &&
+          prompt_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getPromptBuilder().mergeFrom(value);
+        } else {
+          prompt_ = value;
+        }
+      } else {
+        promptBuilder_.mergeFrom(value);
+      }
+      if (prompt_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue prompt = 14 [json_name = "prompt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearPrompt() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      prompt_ = null;
+      if (promptBuilder_ != null) {
+        promptBuilder_.dispose();
+        promptBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue prompt = 14 [json_name = "prompt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValue.Builder getPromptBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getPromptFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue prompt = 14 [json_name = "prompt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getPromptOrBuilder() {
+      if (promptBuilder_ != null) {
+        return promptBuilder_.getMessageOrBuilder();
+      } else {
+        return prompt_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : prompt_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue prompt = 14 [json_name = "prompt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getPromptFieldBuilder() {
+      if (promptBuilder_ == null) {
+        promptBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getPrompt(),
+                getParentForChildren(),
+                isClean());
+        prompt_ = null;
+      }
+      return promptBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue usePlatformCreds_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> usePlatformCredsBuilder_;
+    /**
+     * <code>.google.protobuf.BoolValue use_platform_creds = 15 [json_name = "usePlatformCreds", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the usePlatformCreds field is set.
+     */
+    public boolean hasUsePlatformCreds() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <code>.google.protobuf.BoolValue use_platform_creds = 15 [json_name = "usePlatformCreds", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The usePlatformCreds.
+     */
+    public com.google.protobuf.BoolValue getUsePlatformCreds() {
+      if (usePlatformCredsBuilder_ == null) {
+        return usePlatformCreds_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : usePlatformCreds_;
+      } else {
+        return usePlatformCredsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue use_platform_creds = 15 [json_name = "usePlatformCreds", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setUsePlatformCreds(com.google.protobuf.BoolValue value) {
+      if (usePlatformCredsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        usePlatformCreds_ = value;
+      } else {
+        usePlatformCredsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue use_platform_creds = 15 [json_name = "usePlatformCreds", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setUsePlatformCreds(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (usePlatformCredsBuilder_ == null) {
+        usePlatformCreds_ = builderForValue.build();
+      } else {
+        usePlatformCredsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue use_platform_creds = 15 [json_name = "usePlatformCreds", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeUsePlatformCreds(com.google.protobuf.BoolValue value) {
+      if (usePlatformCredsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0) &&
+          usePlatformCreds_ != null &&
+          usePlatformCreds_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getUsePlatformCredsBuilder().mergeFrom(value);
+        } else {
+          usePlatformCreds_ = value;
+        }
+      } else {
+        usePlatformCredsBuilder_.mergeFrom(value);
+      }
+      if (usePlatformCreds_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue use_platform_creds = 15 [json_name = "usePlatformCreds", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearUsePlatformCreds() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      usePlatformCreds_ = null;
+      if (usePlatformCredsBuilder_ != null) {
+        usePlatformCredsBuilder_.dispose();
+        usePlatformCredsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue use_platform_creds = 15 [json_name = "usePlatformCreds", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getUsePlatformCredsBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getUsePlatformCredsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue use_platform_creds = 15 [json_name = "usePlatformCreds", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getUsePlatformCredsOrBuilder() {
+      if (usePlatformCredsBuilder_ != null) {
+        return usePlatformCredsBuilder_.getMessageOrBuilder();
+      } else {
+        return usePlatformCreds_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : usePlatformCreds_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue use_platform_creds = 15 [json_name = "usePlatformCreds", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getUsePlatformCredsFieldBuilder() {
+      if (usePlatformCredsBuilder_ == null) {
+        usePlatformCredsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getUsePlatformCreds(),
+                getParentForChildren(),
+                isClean());
+        usePlatformCreds_ = null;
+      }
+      return usePlatformCredsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

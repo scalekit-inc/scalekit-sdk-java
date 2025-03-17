@@ -70,6 +70,7 @@ private static final long serialVersionUID = 0L;
     OIDC_CONFIG(18),
     SAML_CONFIG(19),
     OAUTH_CONFIG(20),
+    PASSWORDLESS_CONFIG(22),
     SETTINGS_NOT_SET(0);
     private final int value;
     private SettingsCase(int value) {
@@ -90,6 +91,7 @@ private static final long serialVersionUID = 0L;
         case 18: return OIDC_CONFIG;
         case 19: return SAML_CONFIG;
         case 20: return OAUTH_CONFIG;
+        case 22: return PASSWORDLESS_CONFIG;
         case 0: return SETTINGS_NOT_SET;
         default: return null;
       }
@@ -587,6 +589,37 @@ java.lang.String defaultValue) {
     return com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig.getDefaultInstance();
   }
 
+  public static final int PASSWORDLESS_CONFIG_FIELD_NUMBER = 22;
+  /**
+   * <code>.scalekit.v1.connections.PasswordLessConfig passwordless_config = 22 [json_name = "passwordlessConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the passwordlessConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPasswordlessConfig() {
+    return settingsCase_ == 22;
+  }
+  /**
+   * <code>.scalekit.v1.connections.PasswordLessConfig passwordless_config = 22 [json_name = "passwordlessConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The passwordlessConfig.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig getPasswordlessConfig() {
+    if (settingsCase_ == 22) {
+       return (com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig.getDefaultInstance();
+  }
+  /**
+   * <code>.scalekit.v1.connections.PasswordLessConfig passwordless_config = 22 [json_name = "passwordlessConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfigOrBuilder getPasswordlessConfigOrBuilder() {
+    if (settingsCase_ == 22) {
+       return (com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig.getDefaultInstance();
+  }
+
   public static final int KEY_ID_FIELD_NUMBER = 21;
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyId_ = "";
@@ -702,6 +735,9 @@ java.lang.String defaultValue) {
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21, keyId_);
     }
+    if (settingsCase_ == 22) {
+      output.writeMessage(22, (com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig) settings_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -780,6 +816,10 @@ java.lang.String defaultValue) {
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, keyId_);
     }
+    if (settingsCase_ == 22) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(22, (com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig) settings_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -844,6 +884,10 @@ java.lang.String defaultValue) {
       case 20:
         if (!getOauthConfig()
             .equals(other.getOauthConfig())) return false;
+        break;
+      case 22:
+        if (!getPasswordlessConfig()
+            .equals(other.getPasswordlessConfig())) return false;
         break;
       case 0:
       default:
@@ -911,6 +955,10 @@ java.lang.String defaultValue) {
       case 20:
         hash = (37 * hash) + OAUTH_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getOauthConfig().hashCode();
+        break;
+      case 22:
+        hash = (37 * hash) + PASSWORDLESS_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getPasswordlessConfig().hashCode();
         break;
       case 0:
       default:
@@ -1105,6 +1153,9 @@ java.lang.String defaultValue) {
       if (oauthConfigBuilder_ != null) {
         oauthConfigBuilder_.clear();
       }
+      if (passwordlessConfigBuilder_ != null) {
+        passwordlessConfigBuilder_.clear();
+      }
       keyId_ = "";
       settingsCase_ = 0;
       settings_ = null;
@@ -1190,7 +1241,7 @@ java.lang.String defaultValue) {
             : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.keyId_ = keyId_;
         to_bitField0_ |= 0x00000008;
       }
@@ -1211,6 +1262,10 @@ java.lang.String defaultValue) {
       if (settingsCase_ == 20 &&
           oauthConfigBuilder_ != null) {
         result.settings_ = oauthConfigBuilder_.build();
+      }
+      if (settingsCase_ == 22 &&
+          passwordlessConfigBuilder_ != null) {
+        result.settings_ = passwordlessConfigBuilder_.build();
       }
     }
 
@@ -1307,7 +1362,7 @@ java.lang.String defaultValue) {
       }
       if (other.hasKeyId()) {
         keyId_ = other.keyId_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       switch (other.getSettingsCase()) {
@@ -1321,6 +1376,10 @@ java.lang.String defaultValue) {
         }
         case OAUTH_CONFIG: {
           mergeOauthConfig(other.getOauthConfig());
+          break;
+        }
+        case PASSWORDLESS_CONFIG: {
+          mergePasswordlessConfig(other.getPasswordlessConfig());
           break;
         }
         case SETTINGS_NOT_SET: {
@@ -1449,9 +1508,16 @@ java.lang.String defaultValue) {
             } // case 162
             case 170: {
               keyId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00010000;
+              bitField0_ |= 0x00020000;
               break;
             } // case 170
+            case 178: {
+              input.readMessage(
+                  getPasswordlessConfigFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              settingsCase_ = 22;
+              break;
+            } // case 178
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2850,13 +2916,155 @@ java.lang.String defaultValue) {
       return oauthConfigBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig, com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfigOrBuilder> passwordlessConfigBuilder_;
+    /**
+     * <code>.scalekit.v1.connections.PasswordLessConfig passwordless_config = 22 [json_name = "passwordlessConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the passwordlessConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasPasswordlessConfig() {
+      return settingsCase_ == 22;
+    }
+    /**
+     * <code>.scalekit.v1.connections.PasswordLessConfig passwordless_config = 22 [json_name = "passwordlessConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The passwordlessConfig.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig getPasswordlessConfig() {
+      if (passwordlessConfigBuilder_ == null) {
+        if (settingsCase_ == 22) {
+          return (com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig.getDefaultInstance();
+      } else {
+        if (settingsCase_ == 22) {
+          return passwordlessConfigBuilder_.getMessage();
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.PasswordLessConfig passwordless_config = 22 [json_name = "passwordlessConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setPasswordlessConfig(com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig value) {
+      if (passwordlessConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        settings_ = value;
+        onChanged();
+      } else {
+        passwordlessConfigBuilder_.setMessage(value);
+      }
+      settingsCase_ = 22;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.PasswordLessConfig passwordless_config = 22 [json_name = "passwordlessConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setPasswordlessConfig(
+        com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig.Builder builderForValue) {
+      if (passwordlessConfigBuilder_ == null) {
+        settings_ = builderForValue.build();
+        onChanged();
+      } else {
+        passwordlessConfigBuilder_.setMessage(builderForValue.build());
+      }
+      settingsCase_ = 22;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.PasswordLessConfig passwordless_config = 22 [json_name = "passwordlessConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergePasswordlessConfig(com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig value) {
+      if (passwordlessConfigBuilder_ == null) {
+        if (settingsCase_ == 22 &&
+            settings_ != com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig.getDefaultInstance()) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig.newBuilder((com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig) settings_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          settings_ = value;
+        }
+        onChanged();
+      } else {
+        if (settingsCase_ == 22) {
+          passwordlessConfigBuilder_.mergeFrom(value);
+        } else {
+          passwordlessConfigBuilder_.setMessage(value);
+        }
+      }
+      settingsCase_ = 22;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.PasswordLessConfig passwordless_config = 22 [json_name = "passwordlessConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearPasswordlessConfig() {
+      if (passwordlessConfigBuilder_ == null) {
+        if (settingsCase_ == 22) {
+          settingsCase_ = 0;
+          settings_ = null;
+          onChanged();
+        }
+      } else {
+        if (settingsCase_ == 22) {
+          settingsCase_ = 0;
+          settings_ = null;
+        }
+        passwordlessConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.PasswordLessConfig passwordless_config = 22 [json_name = "passwordlessConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig.Builder getPasswordlessConfigBuilder() {
+      return getPasswordlessConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.connections.PasswordLessConfig passwordless_config = 22 [json_name = "passwordlessConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfigOrBuilder getPasswordlessConfigOrBuilder() {
+      if ((settingsCase_ == 22) && (passwordlessConfigBuilder_ != null)) {
+        return passwordlessConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (settingsCase_ == 22) {
+          return (com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.PasswordLessConfig passwordless_config = 22 [json_name = "passwordlessConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig, com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfigOrBuilder> 
+        getPasswordlessConfigFieldBuilder() {
+      if (passwordlessConfigBuilder_ == null) {
+        if (!(settingsCase_ == 22)) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig.getDefaultInstance();
+        }
+        passwordlessConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig, com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfigOrBuilder>(
+                (com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig) settings_,
+                getParentForChildren(),
+                isClean());
+        settings_ = null;
+      }
+      settingsCase_ = 22;
+      onChanged();
+      return passwordlessConfigBuilder_;
+    }
+
     private java.lang.Object keyId_ = "";
     /**
      * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the keyId field is set.
      */
     public boolean hasKeyId() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -2900,7 +3108,7 @@ java.lang.String defaultValue) {
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       keyId_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -2910,7 +3118,7 @@ java.lang.String defaultValue) {
      */
     public Builder clearKeyId() {
       keyId_ = getDefaultInstance().getKeyId();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -2924,7 +3132,7 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       keyId_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }

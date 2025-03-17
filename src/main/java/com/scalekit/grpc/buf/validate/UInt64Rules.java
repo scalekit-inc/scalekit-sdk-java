@@ -409,7 +409,7 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyUInt64 {
    *   // value must be in list [1, 2, 3]
-   *   repeated uint64 value = 1 (buf.validate.field).uint64 = { in: [1, 2, 3] };
+   *   uint64 value = 1 [(buf.validate.field).uint64 = { in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -431,7 +431,7 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyUInt64 {
    *   // value must be in list [1, 2, 3]
-   *   repeated uint64 value = 1 (buf.validate.field).uint64 = { in: [1, 2, 3] };
+   *   uint64 value = 1 [(buf.validate.field).uint64 = { in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -451,7 +451,7 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyUInt64 {
    *   // value must be in list [1, 2, 3]
-   *   repeated uint64 value = 1 (buf.validate.field).uint64 = { in: [1, 2, 3] };
+   *   uint64 value = 1 [(buf.validate.field).uint64 = { in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -477,7 +477,7 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyUInt64 {
    *   // value must not be in list [1, 2, 3]
-   *   repeated uint64 value = 1 (buf.validate.field).uint64 = { not_in: [1, 2, 3] };
+   *   uint64 value = 1 [(buf.validate.field).uint64 = { not_in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -499,7 +499,7 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyUInt64 {
    *   // value must not be in list [1, 2, 3]
-   *   repeated uint64 value = 1 (buf.validate.field).uint64 = { not_in: [1, 2, 3] };
+   *   uint64 value = 1 [(buf.validate.field).uint64 = { not_in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -519,7 +519,7 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyUInt64 {
    *   // value must not be in list [1, 2, 3]
-   *   repeated uint64 value = 1 (buf.validate.field).uint64 = { not_in: [1, 2, 3] };
+   *   uint64 value = 1 [(buf.validate.field).uint64 = { not_in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -1861,7 +1861,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyUInt64 {
      *   // value must be in list [1, 2, 3]
-     *   repeated uint64 value = 1 (buf.validate.field).uint64 = { in: [1, 2, 3] };
+     *   uint64 value = 1 [(buf.validate.field).uint64 = { in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -1883,7 +1883,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyUInt64 {
      *   // value must be in list [1, 2, 3]
-     *   repeated uint64 value = 1 (buf.validate.field).uint64 = { in: [1, 2, 3] };
+     *   uint64 value = 1 [(buf.validate.field).uint64 = { in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -1903,7 +1903,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyUInt64 {
      *   // value must be in list [1, 2, 3]
-     *   repeated uint64 value = 1 (buf.validate.field).uint64 = { in: [1, 2, 3] };
+     *   uint64 value = 1 [(buf.validate.field).uint64 = { in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -1924,7 +1924,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyUInt64 {
      *   // value must be in list [1, 2, 3]
-     *   repeated uint64 value = 1 (buf.validate.field).uint64 = { in: [1, 2, 3] };
+     *   uint64 value = 1 [(buf.validate.field).uint64 = { in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -1952,7 +1952,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyUInt64 {
      *   // value must be in list [1, 2, 3]
-     *   repeated uint64 value = 1 (buf.validate.field).uint64 = { in: [1, 2, 3] };
+     *   uint64 value = 1 [(buf.validate.field).uint64 = { in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -1978,7 +1978,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyUInt64 {
      *   // value must be in list [1, 2, 3]
-     *   repeated uint64 value = 1 (buf.validate.field).uint64 = { in: [1, 2, 3] };
+     *   uint64 value = 1 [(buf.validate.field).uint64 = { in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -2005,7 +2005,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyUInt64 {
      *   // value must be in list [1, 2, 3]
-     *   repeated uint64 value = 1 (buf.validate.field).uint64 = { in: [1, 2, 3] };
+     *   uint64 value = 1 [(buf.validate.field).uint64 = { in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -2036,7 +2036,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyUInt64 {
      *   // value must not be in list [1, 2, 3]
-     *   repeated uint64 value = 1 (buf.validate.field).uint64 = { not_in: [1, 2, 3] };
+     *   uint64 value = 1 [(buf.validate.field).uint64 = { not_in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -2058,7 +2058,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyUInt64 {
      *   // value must not be in list [1, 2, 3]
-     *   repeated uint64 value = 1 (buf.validate.field).uint64 = { not_in: [1, 2, 3] };
+     *   uint64 value = 1 [(buf.validate.field).uint64 = { not_in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -2078,7 +2078,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyUInt64 {
      *   // value must not be in list [1, 2, 3]
-     *   repeated uint64 value = 1 (buf.validate.field).uint64 = { not_in: [1, 2, 3] };
+     *   uint64 value = 1 [(buf.validate.field).uint64 = { not_in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -2099,7 +2099,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyUInt64 {
      *   // value must not be in list [1, 2, 3]
-     *   repeated uint64 value = 1 (buf.validate.field).uint64 = { not_in: [1, 2, 3] };
+     *   uint64 value = 1 [(buf.validate.field).uint64 = { not_in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -2127,7 +2127,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyUInt64 {
      *   // value must not be in list [1, 2, 3]
-     *   repeated uint64 value = 1 (buf.validate.field).uint64 = { not_in: [1, 2, 3] };
+     *   uint64 value = 1 [(buf.validate.field).uint64 = { not_in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -2153,7 +2153,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyUInt64 {
      *   // value must not be in list [1, 2, 3]
-     *   repeated uint64 value = 1 (buf.validate.field).uint64 = { not_in: [1, 2, 3] };
+     *   uint64 value = 1 [(buf.validate.field).uint64 = { not_in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -2180,7 +2180,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyUInt64 {
      *   // value must not be in list [1, 2, 3]
-     *   repeated uint64 value = 1 (buf.validate.field).uint64 = { not_in: [1, 2, 3] };
+     *   uint64 value = 1 [(buf.validate.field).uint64 = { not_in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
