@@ -19,7 +19,7 @@ public enum KnownRegex
   KNOWN_REGEX_UNSPECIFIED(0),
   /**
    * <pre>
-   * HTTP header name as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2).
+   * HTTP header name as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2).
    * </pre>
    *
    * <code>KNOWN_REGEX_HTTP_HEADER_NAME = 1;</code>
@@ -27,7 +27,7 @@ public enum KnownRegex
   KNOWN_REGEX_HTTP_HEADER_NAME(1),
   /**
    * <pre>
-   * HTTP header value as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2.4).
+   * HTTP header value as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.4).
    * </pre>
    *
    * <code>KNOWN_REGEX_HTTP_HEADER_VALUE = 2;</code>
@@ -41,7 +41,7 @@ public enum KnownRegex
   public static final int KNOWN_REGEX_UNSPECIFIED_VALUE = 0;
   /**
    * <pre>
-   * HTTP header name as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2).
+   * HTTP header name as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2).
    * </pre>
    *
    * <code>KNOWN_REGEX_HTTP_HEADER_NAME = 1;</code>
@@ -49,7 +49,7 @@ public enum KnownRegex
   public static final int KNOWN_REGEX_HTTP_HEADER_NAME_VALUE = 1;
   /**
    * <pre>
-   * HTTP header value as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2.4).
+   * HTTP header value as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.4).
    * </pre>
    *
    * <code>KNOWN_REGEX_HTTP_HEADER_VALUE = 2;</code>

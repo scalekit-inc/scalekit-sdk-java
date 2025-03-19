@@ -22,4 +22,6 @@ public interface DirectoryClient {
     Directory getPrimaryDirectoryByOrganizationId(String organizationId);
 
     Directory createDirectory(String organizationId, CreateDirectory directory);
+
+    void deleteDirectory(String directoryId, String organizationId);
 }

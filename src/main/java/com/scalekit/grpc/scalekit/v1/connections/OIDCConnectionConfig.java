@@ -392,6 +392,84 @@ private static final long serialVersionUID = 0L;
     return pkceEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : pkceEnabled_;
   }
 
+  public static final int IDP_LOGOUT_REQUIRED_FIELD_NUMBER = 14;
+  private com.google.protobuf.BoolValue idpLogoutRequired_;
+  /**
+   * <code>.google.protobuf.BoolValue idp_logout_required = 14 [json_name = "idpLogoutRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the idpLogoutRequired field is set.
+   */
+  @java.lang.Override
+  public boolean hasIdpLogoutRequired() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue idp_logout_required = 14 [json_name = "idpLogoutRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The idpLogoutRequired.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getIdpLogoutRequired() {
+    return idpLogoutRequired_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : idpLogoutRequired_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue idp_logout_required = 14 [json_name = "idpLogoutRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getIdpLogoutRequiredOrBuilder() {
+    return idpLogoutRequired_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : idpLogoutRequired_;
+  }
+
+  public static final int POST_LOGOUT_REDIRECT_URI_FIELD_NUMBER = 15;
+  private com.google.protobuf.StringValue postLogoutRedirectUri_;
+  /**
+   * <code>.google.protobuf.StringValue post_logout_redirect_uri = 15 [json_name = "postLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the postLogoutRedirectUri field is set.
+   */
+  @java.lang.Override
+  public boolean hasPostLogoutRedirectUri() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   * <code>.google.protobuf.StringValue post_logout_redirect_uri = 15 [json_name = "postLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The postLogoutRedirectUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getPostLogoutRedirectUri() {
+    return postLogoutRedirectUri_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : postLogoutRedirectUri_;
+  }
+  /**
+   * <code>.google.protobuf.StringValue post_logout_redirect_uri = 15 [json_name = "postLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getPostLogoutRedirectUriOrBuilder() {
+    return postLogoutRedirectUri_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : postLogoutRedirectUri_;
+  }
+
+  public static final int BACKCHANNEL_LOGOUT_REDIRECT_URI_FIELD_NUMBER = 16;
+  private com.google.protobuf.StringValue backchannelLogoutRedirectUri_;
+  /**
+   * <code>.google.protobuf.StringValue backchannel_logout_redirect_uri = 16 [json_name = "backchannelLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the backchannelLogoutRedirectUri field is set.
+   */
+  @java.lang.Override
+  public boolean hasBackchannelLogoutRedirectUri() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+  /**
+   * <code>.google.protobuf.StringValue backchannel_logout_redirect_uri = 16 [json_name = "backchannelLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The backchannelLogoutRedirectUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getBackchannelLogoutRedirectUri() {
+    return backchannelLogoutRedirectUri_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : backchannelLogoutRedirectUri_;
+  }
+  /**
+   * <code>.google.protobuf.StringValue backchannel_logout_redirect_uri = 16 [json_name = "backchannelLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getBackchannelLogoutRedirectUriOrBuilder() {
+    return backchannelLogoutRedirectUri_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : backchannelLogoutRedirectUri_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -446,6 +524,15 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(13, getPkceEnabled());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(14, getIdpLogoutRequired());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(15, getPostLogoutRedirectUri());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(16, getBackchannelLogoutRedirectUri());
     }
     getUnknownFields().writeTo(output);
   }
@@ -511,6 +598,18 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getPkceEnabled());
     }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getIdpLogoutRequired());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, getPostLogoutRedirectUri());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, getBackchannelLogoutRedirectUri());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -575,6 +674,21 @@ private static final long serialVersionUID = 0L;
       if (!getPkceEnabled()
           .equals(other.getPkceEnabled())) return false;
     }
+    if (hasIdpLogoutRequired() != other.hasIdpLogoutRequired()) return false;
+    if (hasIdpLogoutRequired()) {
+      if (!getIdpLogoutRequired()
+          .equals(other.getIdpLogoutRequired())) return false;
+    }
+    if (hasPostLogoutRedirectUri() != other.hasPostLogoutRedirectUri()) return false;
+    if (hasPostLogoutRedirectUri()) {
+      if (!getPostLogoutRedirectUri()
+          .equals(other.getPostLogoutRedirectUri())) return false;
+    }
+    if (hasBackchannelLogoutRedirectUri() != other.hasBackchannelLogoutRedirectUri()) return false;
+    if (hasBackchannelLogoutRedirectUri()) {
+      if (!getBackchannelLogoutRedirectUri()
+          .equals(other.getBackchannelLogoutRedirectUri())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -629,6 +743,18 @@ private static final long serialVersionUID = 0L;
     if (hasPkceEnabled()) {
       hash = (37 * hash) + PKCE_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + getPkceEnabled().hashCode();
+    }
+    if (hasIdpLogoutRequired()) {
+      hash = (37 * hash) + IDP_LOGOUT_REQUIRED_FIELD_NUMBER;
+      hash = (53 * hash) + getIdpLogoutRequired().hashCode();
+    }
+    if (hasPostLogoutRedirectUri()) {
+      hash = (37 * hash) + POST_LOGOUT_REDIRECT_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getPostLogoutRedirectUri().hashCode();
+    }
+    if (hasBackchannelLogoutRedirectUri()) {
+      hash = (37 * hash) + BACKCHANNEL_LOGOUT_REDIRECT_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getBackchannelLogoutRedirectUri().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -769,6 +895,9 @@ private static final long serialVersionUID = 0L;
         getClientIdFieldBuilder();
         getClientSecretFieldBuilder();
         getPkceEnabledFieldBuilder();
+        getIdpLogoutRequiredFieldBuilder();
+        getPostLogoutRedirectUriFieldBuilder();
+        getBackchannelLogoutRedirectUriFieldBuilder();
       }
     }
     @java.lang.Override
@@ -823,6 +952,21 @@ private static final long serialVersionUID = 0L;
       if (pkceEnabledBuilder_ != null) {
         pkceEnabledBuilder_.dispose();
         pkceEnabledBuilder_ = null;
+      }
+      idpLogoutRequired_ = null;
+      if (idpLogoutRequiredBuilder_ != null) {
+        idpLogoutRequiredBuilder_.dispose();
+        idpLogoutRequiredBuilder_ = null;
+      }
+      postLogoutRedirectUri_ = null;
+      if (postLogoutRedirectUriBuilder_ != null) {
+        postLogoutRedirectUriBuilder_.dispose();
+        postLogoutRedirectUriBuilder_ = null;
+      }
+      backchannelLogoutRedirectUri_ = null;
+      if (backchannelLogoutRedirectUriBuilder_ != null) {
+        backchannelLogoutRedirectUriBuilder_.dispose();
+        backchannelLogoutRedirectUriBuilder_ = null;
       }
       return this;
     }
@@ -927,6 +1071,24 @@ private static final long serialVersionUID = 0L;
             : pkceEnabledBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.idpLogoutRequired_ = idpLogoutRequiredBuilder_ == null
+            ? idpLogoutRequired_
+            : idpLogoutRequiredBuilder_.build();
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.postLogoutRedirectUri_ = postLogoutRedirectUriBuilder_ == null
+            ? postLogoutRedirectUri_
+            : postLogoutRedirectUriBuilder_.build();
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.backchannelLogoutRedirectUri_ = backchannelLogoutRedirectUriBuilder_ == null
+            ? backchannelLogoutRedirectUri_
+            : backchannelLogoutRedirectUriBuilder_.build();
+        to_bitField0_ |= 0x00000800;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1018,6 +1180,15 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasPkceEnabled()) {
         mergePkceEnabled(other.getPkceEnabled());
+      }
+      if (other.hasIdpLogoutRequired()) {
+        mergeIdpLogoutRequired(other.getIdpLogoutRequired());
+      }
+      if (other.hasPostLogoutRedirectUri()) {
+        mergePostLogoutRedirectUri(other.getPostLogoutRedirectUri());
+      }
+      if (other.hasBackchannelLogoutRedirectUri()) {
+        mergeBackchannelLogoutRedirectUri(other.getBackchannelLogoutRedirectUri());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1135,6 +1306,27 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000800;
               break;
             } // case 106
+            case 114: {
+              input.readMessage(
+                  getIdpLogoutRequiredFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00001000;
+              break;
+            } // case 114
+            case 122: {
+              input.readMessage(
+                  getPostLogoutRedirectUriFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00002000;
+              break;
+            } // case 122
+            case 130: {
+              input.readMessage(
+                  getBackchannelLogoutRedirectUriFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00004000;
+              break;
+            } // case 130
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2504,6 +2696,369 @@ private static final long serialVersionUID = 0L;
         pkceEnabled_ = null;
       }
       return pkceEnabledBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue idpLogoutRequired_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> idpLogoutRequiredBuilder_;
+    /**
+     * <code>.google.protobuf.BoolValue idp_logout_required = 14 [json_name = "idpLogoutRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the idpLogoutRequired field is set.
+     */
+    public boolean hasIdpLogoutRequired() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_logout_required = 14 [json_name = "idpLogoutRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The idpLogoutRequired.
+     */
+    public com.google.protobuf.BoolValue getIdpLogoutRequired() {
+      if (idpLogoutRequiredBuilder_ == null) {
+        return idpLogoutRequired_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : idpLogoutRequired_;
+      } else {
+        return idpLogoutRequiredBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_logout_required = 14 [json_name = "idpLogoutRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setIdpLogoutRequired(com.google.protobuf.BoolValue value) {
+      if (idpLogoutRequiredBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        idpLogoutRequired_ = value;
+      } else {
+        idpLogoutRequiredBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_logout_required = 14 [json_name = "idpLogoutRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setIdpLogoutRequired(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (idpLogoutRequiredBuilder_ == null) {
+        idpLogoutRequired_ = builderForValue.build();
+      } else {
+        idpLogoutRequiredBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_logout_required = 14 [json_name = "idpLogoutRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeIdpLogoutRequired(com.google.protobuf.BoolValue value) {
+      if (idpLogoutRequiredBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0) &&
+          idpLogoutRequired_ != null &&
+          idpLogoutRequired_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getIdpLogoutRequiredBuilder().mergeFrom(value);
+        } else {
+          idpLogoutRequired_ = value;
+        }
+      } else {
+        idpLogoutRequiredBuilder_.mergeFrom(value);
+      }
+      if (idpLogoutRequired_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_logout_required = 14 [json_name = "idpLogoutRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearIdpLogoutRequired() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      idpLogoutRequired_ = null;
+      if (idpLogoutRequiredBuilder_ != null) {
+        idpLogoutRequiredBuilder_.dispose();
+        idpLogoutRequiredBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_logout_required = 14 [json_name = "idpLogoutRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getIdpLogoutRequiredBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getIdpLogoutRequiredFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_logout_required = 14 [json_name = "idpLogoutRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getIdpLogoutRequiredOrBuilder() {
+      if (idpLogoutRequiredBuilder_ != null) {
+        return idpLogoutRequiredBuilder_.getMessageOrBuilder();
+      } else {
+        return idpLogoutRequired_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : idpLogoutRequired_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_logout_required = 14 [json_name = "idpLogoutRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getIdpLogoutRequiredFieldBuilder() {
+      if (idpLogoutRequiredBuilder_ == null) {
+        idpLogoutRequiredBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getIdpLogoutRequired(),
+                getParentForChildren(),
+                isClean());
+        idpLogoutRequired_ = null;
+      }
+      return idpLogoutRequiredBuilder_;
+    }
+
+    private com.google.protobuf.StringValue postLogoutRedirectUri_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> postLogoutRedirectUriBuilder_;
+    /**
+     * <code>.google.protobuf.StringValue post_logout_redirect_uri = 15 [json_name = "postLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the postLogoutRedirectUri field is set.
+     */
+    public boolean hasPostLogoutRedirectUri() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.StringValue post_logout_redirect_uri = 15 [json_name = "postLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The postLogoutRedirectUri.
+     */
+    public com.google.protobuf.StringValue getPostLogoutRedirectUri() {
+      if (postLogoutRedirectUriBuilder_ == null) {
+        return postLogoutRedirectUri_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : postLogoutRedirectUri_;
+      } else {
+        return postLogoutRedirectUriBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue post_logout_redirect_uri = 15 [json_name = "postLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setPostLogoutRedirectUri(com.google.protobuf.StringValue value) {
+      if (postLogoutRedirectUriBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        postLogoutRedirectUri_ = value;
+      } else {
+        postLogoutRedirectUriBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue post_logout_redirect_uri = 15 [json_name = "postLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setPostLogoutRedirectUri(
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (postLogoutRedirectUriBuilder_ == null) {
+        postLogoutRedirectUri_ = builderForValue.build();
+      } else {
+        postLogoutRedirectUriBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue post_logout_redirect_uri = 15 [json_name = "postLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergePostLogoutRedirectUri(com.google.protobuf.StringValue value) {
+      if (postLogoutRedirectUriBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0) &&
+          postLogoutRedirectUri_ != null &&
+          postLogoutRedirectUri_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getPostLogoutRedirectUriBuilder().mergeFrom(value);
+        } else {
+          postLogoutRedirectUri_ = value;
+        }
+      } else {
+        postLogoutRedirectUriBuilder_.mergeFrom(value);
+      }
+      if (postLogoutRedirectUri_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue post_logout_redirect_uri = 15 [json_name = "postLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearPostLogoutRedirectUri() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      postLogoutRedirectUri_ = null;
+      if (postLogoutRedirectUriBuilder_ != null) {
+        postLogoutRedirectUriBuilder_.dispose();
+        postLogoutRedirectUriBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue post_logout_redirect_uri = 15 [json_name = "postLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValue.Builder getPostLogoutRedirectUriBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getPostLogoutRedirectUriFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue post_logout_redirect_uri = 15 [json_name = "postLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getPostLogoutRedirectUriOrBuilder() {
+      if (postLogoutRedirectUriBuilder_ != null) {
+        return postLogoutRedirectUriBuilder_.getMessageOrBuilder();
+      } else {
+        return postLogoutRedirectUri_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : postLogoutRedirectUri_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue post_logout_redirect_uri = 15 [json_name = "postLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getPostLogoutRedirectUriFieldBuilder() {
+      if (postLogoutRedirectUriBuilder_ == null) {
+        postLogoutRedirectUriBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getPostLogoutRedirectUri(),
+                getParentForChildren(),
+                isClean());
+        postLogoutRedirectUri_ = null;
+      }
+      return postLogoutRedirectUriBuilder_;
+    }
+
+    private com.google.protobuf.StringValue backchannelLogoutRedirectUri_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> backchannelLogoutRedirectUriBuilder_;
+    /**
+     * <code>.google.protobuf.StringValue backchannel_logout_redirect_uri = 16 [json_name = "backchannelLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the backchannelLogoutRedirectUri field is set.
+     */
+    public boolean hasBackchannelLogoutRedirectUri() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.StringValue backchannel_logout_redirect_uri = 16 [json_name = "backchannelLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The backchannelLogoutRedirectUri.
+     */
+    public com.google.protobuf.StringValue getBackchannelLogoutRedirectUri() {
+      if (backchannelLogoutRedirectUriBuilder_ == null) {
+        return backchannelLogoutRedirectUri_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : backchannelLogoutRedirectUri_;
+      } else {
+        return backchannelLogoutRedirectUriBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue backchannel_logout_redirect_uri = 16 [json_name = "backchannelLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setBackchannelLogoutRedirectUri(com.google.protobuf.StringValue value) {
+      if (backchannelLogoutRedirectUriBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        backchannelLogoutRedirectUri_ = value;
+      } else {
+        backchannelLogoutRedirectUriBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue backchannel_logout_redirect_uri = 16 [json_name = "backchannelLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setBackchannelLogoutRedirectUri(
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (backchannelLogoutRedirectUriBuilder_ == null) {
+        backchannelLogoutRedirectUri_ = builderForValue.build();
+      } else {
+        backchannelLogoutRedirectUriBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue backchannel_logout_redirect_uri = 16 [json_name = "backchannelLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeBackchannelLogoutRedirectUri(com.google.protobuf.StringValue value) {
+      if (backchannelLogoutRedirectUriBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0) &&
+          backchannelLogoutRedirectUri_ != null &&
+          backchannelLogoutRedirectUri_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getBackchannelLogoutRedirectUriBuilder().mergeFrom(value);
+        } else {
+          backchannelLogoutRedirectUri_ = value;
+        }
+      } else {
+        backchannelLogoutRedirectUriBuilder_.mergeFrom(value);
+      }
+      if (backchannelLogoutRedirectUri_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue backchannel_logout_redirect_uri = 16 [json_name = "backchannelLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearBackchannelLogoutRedirectUri() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      backchannelLogoutRedirectUri_ = null;
+      if (backchannelLogoutRedirectUriBuilder_ != null) {
+        backchannelLogoutRedirectUriBuilder_.dispose();
+        backchannelLogoutRedirectUriBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue backchannel_logout_redirect_uri = 16 [json_name = "backchannelLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValue.Builder getBackchannelLogoutRedirectUriBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getBackchannelLogoutRedirectUriFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue backchannel_logout_redirect_uri = 16 [json_name = "backchannelLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getBackchannelLogoutRedirectUriOrBuilder() {
+      if (backchannelLogoutRedirectUriBuilder_ != null) {
+        return backchannelLogoutRedirectUriBuilder_.getMessageOrBuilder();
+      } else {
+        return backchannelLogoutRedirectUri_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : backchannelLogoutRedirectUri_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue backchannel_logout_redirect_uri = 16 [json_name = "backchannelLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getBackchannelLogoutRedirectUriFieldBuilder() {
+      if (backchannelLogoutRedirectUriBuilder_ == null) {
+        backchannelLogoutRedirectUriBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getBackchannelLogoutRedirectUri(),
+                getParentForChildren(),
+                isClean());
+        backchannelLogoutRedirectUri_ = null;
+      }
+      return backchannelLogoutRedirectUriBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

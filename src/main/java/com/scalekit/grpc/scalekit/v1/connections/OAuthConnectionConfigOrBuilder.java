@@ -134,4 +134,34 @@ public interface OAuthConnectionConfigOrBuilder extends
    * <code>.google.protobuf.BoolValue pkce_enabled = 13 [json_name = "pkceEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.BoolValueOrBuilder getPkceEnabledOrBuilder();
+
+  /**
+   * <code>.google.protobuf.StringValue prompt = 14 [json_name = "prompt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the prompt field is set.
+   */
+  boolean hasPrompt();
+  /**
+   * <code>.google.protobuf.StringValue prompt = 14 [json_name = "prompt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The prompt.
+   */
+  com.google.protobuf.StringValue getPrompt();
+  /**
+   * <code>.google.protobuf.StringValue prompt = 14 [json_name = "prompt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.StringValueOrBuilder getPromptOrBuilder();
+
+  /**
+   * <code>.google.protobuf.BoolValue use_platform_creds = 15 [json_name = "usePlatformCreds", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the usePlatformCreds field is set.
+   */
+  boolean hasUsePlatformCreds();
+  /**
+   * <code>.google.protobuf.BoolValue use_platform_creds = 15 [json_name = "usePlatformCreds", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The usePlatformCreds.
+   */
+  com.google.protobuf.BoolValue getUsePlatformCreds();
+  /**
+   * <code>.google.protobuf.BoolValue use_platform_creds = 15 [json_name = "usePlatformCreds", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getUsePlatformCredsOrBuilder();
 }

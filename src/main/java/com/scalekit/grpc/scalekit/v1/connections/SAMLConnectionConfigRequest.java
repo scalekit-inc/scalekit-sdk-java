@@ -402,6 +402,32 @@ private static final long serialVersionUID = 0L;
     return certificateId_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : certificateId_;
   }
 
+  public static final int IDP_SLO_REQUIRED_FIELD_NUMBER = 19;
+  private com.google.protobuf.BoolValue idpSloRequired_;
+  /**
+   * <code>.google.protobuf.BoolValue idp_slo_required = 19 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the idpSloRequired field is set.
+   */
+  @java.lang.Override
+  public boolean hasIdpSloRequired() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue idp_slo_required = 19 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The idpSloRequired.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getIdpSloRequired() {
+    return idpSloRequired_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : idpSloRequired_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue idp_slo_required = 19 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getIdpSloRequiredOrBuilder() {
+    return idpSloRequired_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : idpSloRequired_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -460,6 +486,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(18, getCertificateId());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(19, getIdpSloRequired());
     }
     getUnknownFields().writeTo(output);
   }
@@ -529,6 +558,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(18, getCertificateId());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(19, getIdpSloRequired());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -604,6 +637,11 @@ private static final long serialVersionUID = 0L;
       if (!getCertificateId()
           .equals(other.getCertificateId())) return false;
     }
+    if (hasIdpSloRequired() != other.hasIdpSloRequired()) return false;
+    if (hasIdpSloRequired()) {
+      if (!getIdpSloRequired()
+          .equals(other.getIdpSloRequired())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -666,6 +704,10 @@ private static final long serialVersionUID = 0L;
     if (hasCertificateId()) {
       hash = (37 * hash) + CERTIFICATE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCertificateId().hashCode();
+    }
+    if (hasIdpSloRequired()) {
+      hash = (37 * hash) + IDP_SLO_REQUIRED_FIELD_NUMBER;
+      hash = (53 * hash) + getIdpSloRequired().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -808,6 +850,7 @@ private static final long serialVersionUID = 0L;
         getAssertionEncryptedFieldBuilder();
         getWantRequestSignedFieldBuilder();
         getCertificateIdFieldBuilder();
+        getIdpSloRequiredFieldBuilder();
       }
     }
     @java.lang.Override
@@ -872,6 +915,11 @@ private static final long serialVersionUID = 0L;
       if (certificateIdBuilder_ != null) {
         certificateIdBuilder_.dispose();
         certificateIdBuilder_ = null;
+      }
+      idpSloRequired_ = null;
+      if (idpSloRequiredBuilder_ != null) {
+        idpSloRequiredBuilder_.dispose();
+        idpSloRequiredBuilder_ = null;
       }
       return this;
     }
@@ -985,6 +1033,12 @@ private static final long serialVersionUID = 0L;
             : certificateIdBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.idpSloRequired_ = idpSloRequiredBuilder_ == null
+            ? idpSloRequired_
+            : idpSloRequiredBuilder_.build();
+        to_bitField0_ |= 0x00000800;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1076,6 +1130,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCertificateId()) {
         mergeCertificateId(other.getCertificateId());
+      }
+      if (other.hasIdpSloRequired()) {
+        mergeIdpSloRequired(other.getIdpSloRequired());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1200,6 +1257,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00004000;
               break;
             } // case 146
+            case 154: {
+              input.readMessage(
+                  getIdpSloRequiredFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00008000;
+              break;
+            } // case 154
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2758,6 +2822,127 @@ private static final long serialVersionUID = 0L;
         certificateId_ = null;
       }
       return certificateIdBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue idpSloRequired_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> idpSloRequiredBuilder_;
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 19 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the idpSloRequired field is set.
+     */
+    public boolean hasIdpSloRequired() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 19 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The idpSloRequired.
+     */
+    public com.google.protobuf.BoolValue getIdpSloRequired() {
+      if (idpSloRequiredBuilder_ == null) {
+        return idpSloRequired_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : idpSloRequired_;
+      } else {
+        return idpSloRequiredBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 19 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setIdpSloRequired(com.google.protobuf.BoolValue value) {
+      if (idpSloRequiredBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        idpSloRequired_ = value;
+      } else {
+        idpSloRequiredBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 19 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setIdpSloRequired(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (idpSloRequiredBuilder_ == null) {
+        idpSloRequired_ = builderForValue.build();
+      } else {
+        idpSloRequiredBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 19 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeIdpSloRequired(com.google.protobuf.BoolValue value) {
+      if (idpSloRequiredBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0) &&
+          idpSloRequired_ != null &&
+          idpSloRequired_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getIdpSloRequiredBuilder().mergeFrom(value);
+        } else {
+          idpSloRequired_ = value;
+        }
+      } else {
+        idpSloRequiredBuilder_.mergeFrom(value);
+      }
+      if (idpSloRequired_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 19 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearIdpSloRequired() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      idpSloRequired_ = null;
+      if (idpSloRequiredBuilder_ != null) {
+        idpSloRequiredBuilder_.dispose();
+        idpSloRequiredBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 19 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getIdpSloRequiredBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return getIdpSloRequiredFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 19 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getIdpSloRequiredOrBuilder() {
+      if (idpSloRequiredBuilder_ != null) {
+        return idpSloRequiredBuilder_.getMessageOrBuilder();
+      } else {
+        return idpSloRequired_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : idpSloRequired_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 19 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getIdpSloRequiredFieldBuilder() {
+      if (idpSloRequiredBuilder_ == null) {
+        idpSloRequiredBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getIdpSloRequired(),
+                getParentForChildren(),
+                isClean());
+        idpSloRequired_ = null;
+      }
+      return idpSloRequiredBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

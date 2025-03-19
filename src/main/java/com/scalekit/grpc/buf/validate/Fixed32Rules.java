@@ -408,7 +408,7 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyFixed32 {
    *   // value must be in list [1, 2, 3]
-   *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { in: [1, 2, 3] };
+   *   fixed32 value = 1 [(buf.validate.field).fixed32 = { in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -430,7 +430,7 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyFixed32 {
    *   // value must be in list [1, 2, 3]
-   *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { in: [1, 2, 3] };
+   *   fixed32 value = 1 [(buf.validate.field).fixed32 = { in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -450,7 +450,7 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyFixed32 {
    *   // value must be in list [1, 2, 3]
-   *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { in: [1, 2, 3] };
+   *   fixed32 value = 1 [(buf.validate.field).fixed32 = { in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -476,7 +476,7 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyFixed32 {
    *   // value must not be in list [1, 2, 3]
-   *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { not_in: [1, 2, 3] };
+   *   fixed32 value = 1 [(buf.validate.field).fixed32 = { not_in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -498,7 +498,7 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyFixed32 {
    *   // value must not be in list [1, 2, 3]
-   *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { not_in: [1, 2, 3] };
+   *   fixed32 value = 1 [(buf.validate.field).fixed32 = { not_in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyFixed32 {
    *   // value must not be in list [1, 2, 3]
-   *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { not_in: [1, 2, 3] };
+   *   fixed32 value = 1 [(buf.validate.field).fixed32 = { not_in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
@@ -1854,7 +1854,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFixed32 {
      *   // value must be in list [1, 2, 3]
-     *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { in: [1, 2, 3] };
+     *   fixed32 value = 1 [(buf.validate.field).fixed32 = { in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -1876,7 +1876,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFixed32 {
      *   // value must be in list [1, 2, 3]
-     *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { in: [1, 2, 3] };
+     *   fixed32 value = 1 [(buf.validate.field).fixed32 = { in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -1896,7 +1896,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFixed32 {
      *   // value must be in list [1, 2, 3]
-     *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { in: [1, 2, 3] };
+     *   fixed32 value = 1 [(buf.validate.field).fixed32 = { in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -1917,7 +1917,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFixed32 {
      *   // value must be in list [1, 2, 3]
-     *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { in: [1, 2, 3] };
+     *   fixed32 value = 1 [(buf.validate.field).fixed32 = { in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -1945,7 +1945,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFixed32 {
      *   // value must be in list [1, 2, 3]
-     *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { in: [1, 2, 3] };
+     *   fixed32 value = 1 [(buf.validate.field).fixed32 = { in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -1971,7 +1971,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFixed32 {
      *   // value must be in list [1, 2, 3]
-     *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { in: [1, 2, 3] };
+     *   fixed32 value = 1 [(buf.validate.field).fixed32 = { in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -1998,7 +1998,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFixed32 {
      *   // value must be in list [1, 2, 3]
-     *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { in: [1, 2, 3] };
+     *   fixed32 value = 1 [(buf.validate.field).fixed32 = { in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -2035,7 +2035,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFixed32 {
      *   // value must not be in list [1, 2, 3]
-     *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { not_in: [1, 2, 3] };
+     *   fixed32 value = 1 [(buf.validate.field).fixed32 = { not_in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -2057,7 +2057,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFixed32 {
      *   // value must not be in list [1, 2, 3]
-     *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { not_in: [1, 2, 3] };
+     *   fixed32 value = 1 [(buf.validate.field).fixed32 = { not_in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -2077,7 +2077,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFixed32 {
      *   // value must not be in list [1, 2, 3]
-     *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { not_in: [1, 2, 3] };
+     *   fixed32 value = 1 [(buf.validate.field).fixed32 = { not_in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -2098,7 +2098,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFixed32 {
      *   // value must not be in list [1, 2, 3]
-     *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { not_in: [1, 2, 3] };
+     *   fixed32 value = 1 [(buf.validate.field).fixed32 = { not_in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -2126,7 +2126,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFixed32 {
      *   // value must not be in list [1, 2, 3]
-     *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { not_in: [1, 2, 3] };
+     *   fixed32 value = 1 [(buf.validate.field).fixed32 = { not_in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -2152,7 +2152,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFixed32 {
      *   // value must not be in list [1, 2, 3]
-     *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { not_in: [1, 2, 3] };
+     *   fixed32 value = 1 [(buf.validate.field).fixed32 = { not_in: [1, 2, 3] }];
      * }
      * ```
      * </pre>
@@ -2179,7 +2179,7 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFixed32 {
      *   // value must not be in list [1, 2, 3]
-     *   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { not_in: [1, 2, 3] };
+     *   fixed32 value = 1 [(buf.validate.field).fixed32 = { not_in: [1, 2, 3] }];
      * }
      * ```
      * </pre>

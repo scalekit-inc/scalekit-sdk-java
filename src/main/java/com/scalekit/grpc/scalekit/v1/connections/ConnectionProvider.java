@@ -69,6 +69,10 @@ public enum ConnectionProvider
    * <code>IDP_SIMULATOR = 14;</code>
    */
   IDP_SIMULATOR(14),
+  /**
+   * <code>SCALEKIT = 15;</code>
+   */
+  SCALEKIT(15),
   UNRECOGNIZED(-1),
   ;
 
@@ -132,6 +136,10 @@ public enum ConnectionProvider
    * <code>IDP_SIMULATOR = 14;</code>
    */
   public static final int IDP_SIMULATOR_VALUE = 14;
+  /**
+   * <code>SCALEKIT = 15;</code>
+   */
+  public static final int SCALEKIT_VALUE = 15;
 
 
   public final int getNumber() {
@@ -173,6 +181,7 @@ public enum ConnectionProvider
       case 12: return SALESFORCE;
       case 13: return MICROSOFT;
       case 14: return IDP_SIMULATOR;
+      case 15: return SCALEKIT;
       default: return null;
     }
   }
@@ -203,7 +212,7 @@ public enum ConnectionProvider
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.connections.ConnectionsProto.getDescriptor().getEnumTypes().get(9);
+    return com.scalekit.grpc.scalekit.v1.connections.ConnectionsProto.getDescriptor().getEnumTypes().get(10);
   }
 
   private static final ConnectionProvider[] VALUES = values();

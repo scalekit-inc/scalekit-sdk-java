@@ -227,6 +227,21 @@ java.lang.String defaultValue);
   com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfigOrBuilder getOauthConfigOrBuilder();
 
   /**
+   * <code>.scalekit.v1.connections.PasswordLessConfig passwordless_config = 22 [json_name = "passwordlessConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the passwordlessConfig field is set.
+   */
+  boolean hasPasswordlessConfig();
+  /**
+   * <code>.scalekit.v1.connections.PasswordLessConfig passwordless_config = 22 [json_name = "passwordlessConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The passwordlessConfig.
+   */
+  com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig getPasswordlessConfig();
+  /**
+   * <code>.scalekit.v1.connections.PasswordLessConfig passwordless_config = 22 [json_name = "passwordlessConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfigOrBuilder getPasswordlessConfigOrBuilder();
+
+  /**
    * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the keyId field is set.
    */

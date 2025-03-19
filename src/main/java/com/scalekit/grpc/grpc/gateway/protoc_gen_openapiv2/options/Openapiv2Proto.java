@@ -111,6 +111,16 @@ public final class Openapiv2Proto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grpc_gateway_protoc_gen_openapiv2_options_Schema_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_grpc_gateway_protoc_gen_openapiv2_options_EnumSchema_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grpc_gateway_protoc_gen_openapiv2_options_EnumSchema_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_grpc_gateway_protoc_gen_openapiv2_options_EnumSchema_ExtensionsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grpc_gateway_protoc_gen_openapiv2_options_EnumSchema_ExtensionsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_grpc_gateway_protoc_gen_openapiv2_options_JSONSchema_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -299,103 +309,115 @@ public final class Openapiv2Proto {
       "only\030\003 \001(\010R\010readOnly\022e\n\rexternal_docs\030\005 " +
       "\001(\0132@.grpc.gateway.protoc_gen_openapiv2." +
       "options.ExternalDocumentationR\014externalD" +
-      "ocs\022\030\n\007example\030\006 \001(\tR\007exampleJ\004\010\004\020\005\"\327\n\n\n" +
-      "JSONSchema\022\020\n\003ref\030\003 \001(\tR\003ref\022\024\n\005title\030\005 " +
-      "\001(\tR\005title\022 \n\013description\030\006 \001(\tR\013descrip" +
-      "tion\022\030\n\007default\030\007 \001(\tR\007default\022\033\n\tread_o" +
-      "nly\030\010 \001(\010R\010readOnly\022\030\n\007example\030\t \001(\tR\007ex" +
-      "ample\022\037\n\013multiple_of\030\n \001(\001R\nmultipleOf\022\030" +
-      "\n\007maximum\030\013 \001(\001R\007maximum\022+\n\021exclusive_ma" +
-      "ximum\030\014 \001(\010R\020exclusiveMaximum\022\030\n\007minimum" +
-      "\030\r \001(\001R\007minimum\022+\n\021exclusive_minimum\030\016 \001" +
-      "(\010R\020exclusiveMinimum\022\035\n\nmax_length\030\017 \001(\004" +
-      "R\tmaxLength\022\035\n\nmin_length\030\020 \001(\004R\tminLeng" +
-      "th\022\030\n\007pattern\030\021 \001(\tR\007pattern\022\033\n\tmax_item" +
-      "s\030\024 \001(\004R\010maxItems\022\033\n\tmin_items\030\025 \001(\004R\010mi" +
-      "nItems\022!\n\014unique_items\030\026 \001(\010R\013uniqueItem" +
-      "s\022%\n\016max_properties\030\030 \001(\004R\rmaxProperties" +
-      "\022%\n\016min_properties\030\031 \001(\004R\rminProperties\022" +
-      "\032\n\010required\030\032 \003(\tR\010required\022\024\n\005array\030\" \003" +
-      "(\tR\005array\022_\n\004type\030# \003(\0162K.grpc.gateway.p" +
-      "rotoc_gen_openapiv2.options.JSONSchema.J" +
-      "SONSchemaSimpleTypesR\004type\022\026\n\006format\030$ \001" +
-      "(\tR\006format\022\022\n\004enum\030. \003(\tR\004enum\022z\n\023field_" +
-      "configuration\030\351\007 \001(\0132H.grpc.gateway.prot" +
-      "oc_gen_openapiv2.options.JSONSchema.Fiel" +
-      "dConfigurationR\022fieldConfiguration\022e\n\nex" +
-      "tensions\0300 \003(\0132E.grpc.gateway.protoc_gen" +
-      "_openapiv2.options.JSONSchema.Extensions" +
-      "EntryR\nextensions\032<\n\022FieldConfiguration\022" +
-      "&\n\017path_param_name\030/ \001(\tR\rpathParamName\032" +
+      "ocs\022\030\n\007example\030\006 \001(\tR\007exampleJ\004\010\004\020\005\"\350\003\n\n" +
+      "EnumSchema\022 \n\013description\030\001 \001(\tR\013descrip" +
+      "tion\022\030\n\007default\030\002 \001(\tR\007default\022\024\n\005title\030" +
+      "\003 \001(\tR\005title\022\032\n\010required\030\004 \001(\010R\010required" +
+      "\022\033\n\tread_only\030\005 \001(\010R\010readOnly\022e\n\rexterna" +
+      "l_docs\030\006 \001(\0132@.grpc.gateway.protoc_gen_o" +
+      "penapiv2.options.ExternalDocumentationR\014" +
+      "externalDocs\022\030\n\007example\030\007 \001(\tR\007example\022\020" +
+      "\n\003ref\030\010 \001(\tR\003ref\022e\n\nextensions\030\t \003(\0132E.g" +
+      "rpc.gateway.protoc_gen_openapiv2.options" +
+      ".EnumSchema.ExtensionsEntryR\nextensions\032" +
       "U\n\017ExtensionsEntry\022\020\n\003key\030\001 \001(\tR\003key\022,\n\005" +
       "value\030\002 \001(\0132\026.google.protobuf.ValueR\005val" +
-      "ue:\0028\001\"w\n\025JSONSchemaSimpleTypes\022\013\n\007UNKNO" +
-      "WN\020\000\022\t\n\005ARRAY\020\001\022\013\n\007BOOLEAN\020\002\022\013\n\007INTEGER\020" +
-      "\003\022\010\n\004NULL\020\004\022\n\n\006NUMBER\020\005\022\n\n\006OBJECT\020\006\022\n\n\006S" +
-      "TRING\020\007J\004\010\001\020\002J\004\010\002\020\003J\004\010\004\020\005J\004\010\022\020\023J\004\010\023\020\024J\004\010" +
-      "\027\020\030J\004\010\033\020\034J\004\010\034\020\035J\004\010\035\020\036J\004\010\036\020\"J\004\010%\020*J\004\010*\020+J" +
-      "\004\010+\020.\"\331\002\n\003Tag\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013des" +
-      "cription\030\002 \001(\tR\013description\022e\n\rexternal_" +
-      "docs\030\003 \001(\0132@.grpc.gateway.protoc_gen_ope" +
-      "napiv2.options.ExternalDocumentationR\014ex" +
-      "ternalDocs\022^\n\nextensions\030\004 \003(\0132>.grpc.ga" +
-      "teway.protoc_gen_openapiv2.options.Tag.E" +
-      "xtensionsEntryR\nextensions\032U\n\017Extensions" +
-      "Entry\022\020\n\003key\030\001 \001(\tR\003key\022,\n\005value\030\002 \001(\0132\026" +
-      ".google.protobuf.ValueR\005value:\0028\001\"\367\001\n\023Se" +
-      "curityDefinitions\022h\n\010security\030\001 \003(\0132L.gr" +
+      "ue:\0028\001\"\327\n\n\nJSONSchema\022\020\n\003ref\030\003 \001(\tR\003ref\022" +
+      "\024\n\005title\030\005 \001(\tR\005title\022 \n\013description\030\006 \001" +
+      "(\tR\013description\022\030\n\007default\030\007 \001(\tR\007defaul" +
+      "t\022\033\n\tread_only\030\010 \001(\010R\010readOnly\022\030\n\007exampl" +
+      "e\030\t \001(\tR\007example\022\037\n\013multiple_of\030\n \001(\001R\nm" +
+      "ultipleOf\022\030\n\007maximum\030\013 \001(\001R\007maximum\022+\n\021e" +
+      "xclusive_maximum\030\014 \001(\010R\020exclusiveMaximum" +
+      "\022\030\n\007minimum\030\r \001(\001R\007minimum\022+\n\021exclusive_" +
+      "minimum\030\016 \001(\010R\020exclusiveMinimum\022\035\n\nmax_l" +
+      "ength\030\017 \001(\004R\tmaxLength\022\035\n\nmin_length\030\020 \001" +
+      "(\004R\tminLength\022\030\n\007pattern\030\021 \001(\tR\007pattern\022" +
+      "\033\n\tmax_items\030\024 \001(\004R\010maxItems\022\033\n\tmin_item" +
+      "s\030\025 \001(\004R\010minItems\022!\n\014unique_items\030\026 \001(\010R" +
+      "\013uniqueItems\022%\n\016max_properties\030\030 \001(\004R\rma" +
+      "xProperties\022%\n\016min_properties\030\031 \001(\004R\rmin" +
+      "Properties\022\032\n\010required\030\032 \003(\tR\010required\022\024" +
+      "\n\005array\030\" \003(\tR\005array\022_\n\004type\030# \003(\0162K.grp" +
+      "c.gateway.protoc_gen_openapiv2.options.J" +
+      "SONSchema.JSONSchemaSimpleTypesR\004type\022\026\n" +
+      "\006format\030$ \001(\tR\006format\022\022\n\004enum\030. \003(\tR\004enu" +
+      "m\022z\n\023field_configuration\030\351\007 \001(\0132H.grpc.g" +
+      "ateway.protoc_gen_openapiv2.options.JSON" +
+      "Schema.FieldConfigurationR\022fieldConfigur" +
+      "ation\022e\n\nextensions\0300 \003(\0132E.grpc.gateway" +
+      ".protoc_gen_openapiv2.options.JSONSchema" +
+      ".ExtensionsEntryR\nextensions\032<\n\022FieldCon" +
+      "figuration\022&\n\017path_param_name\030/ \001(\tR\rpat" +
+      "hParamName\032U\n\017ExtensionsEntry\022\020\n\003key\030\001 \001" +
+      "(\tR\003key\022,\n\005value\030\002 \001(\0132\026.google.protobuf" +
+      ".ValueR\005value:\0028\001\"w\n\025JSONSchemaSimpleTyp" +
+      "es\022\013\n\007UNKNOWN\020\000\022\t\n\005ARRAY\020\001\022\013\n\007BOOLEAN\020\002\022" +
+      "\013\n\007INTEGER\020\003\022\010\n\004NULL\020\004\022\n\n\006NUMBER\020\005\022\n\n\006OB" +
+      "JECT\020\006\022\n\n\006STRING\020\007J\004\010\001\020\002J\004\010\002\020\003J\004\010\004\020\005J\004\010\022" +
+      "\020\023J\004\010\023\020\024J\004\010\027\020\030J\004\010\033\020\034J\004\010\034\020\035J\004\010\035\020\036J\004\010\036\020\"J\004" +
+      "\010%\020*J\004\010*\020+J\004\010+\020.\"\331\002\n\003Tag\022\022\n\004name\030\001 \001(\tR\004" +
+      "name\022 \n\013description\030\002 \001(\tR\013description\022e" +
+      "\n\rexternal_docs\030\003 \001(\0132@.grpc.gateway.pro" +
+      "toc_gen_openapiv2.options.ExternalDocume" +
+      "ntationR\014externalDocs\022^\n\nextensions\030\004 \003(" +
+      "\0132>.grpc.gateway.protoc_gen_openapiv2.op" +
+      "tions.Tag.ExtensionsEntryR\nextensions\032U\n" +
+      "\017ExtensionsEntry\022\020\n\003key\030\001 \001(\tR\003key\022,\n\005va" +
+      "lue\030\002 \001(\0132\026.google.protobuf.ValueR\005value" +
+      ":\0028\001\"\367\001\n\023SecurityDefinitions\022h\n\010security" +
+      "\030\001 \003(\0132L.grpc.gateway.protoc_gen_openapi" +
+      "v2.options.SecurityDefinitions.SecurityE" +
+      "ntryR\010security\032v\n\rSecurityEntry\022\020\n\003key\030\001" +
+      " \001(\tR\003key\022O\n\005value\030\002 \001(\01329.grpc.gateway." +
+      "protoc_gen_openapiv2.options.SecuritySch" +
+      "emeR\005value:\0028\001\"\377\006\n\016SecurityScheme\022R\n\004typ" +
+      "e\030\001 \001(\0162>.grpc.gateway.protoc_gen_openap" +
+      "iv2.options.SecurityScheme.TypeR\004type\022 \n" +
+      "\013description\030\002 \001(\tR\013description\022\022\n\004name\030" +
+      "\003 \001(\tR\004name\022L\n\002in\030\004 \001(\0162<.grpc.gateway.p" +
+      "rotoc_gen_openapiv2.options.SecuritySche" +
+      "me.InR\002in\022R\n\004flow\030\005 \001(\0162>.grpc.gateway.p" +
+      "rotoc_gen_openapiv2.options.SecuritySche" +
+      "me.FlowR\004flow\022+\n\021authorization_url\030\006 \001(\t" +
+      "R\020authorizationUrl\022\033\n\ttoken_url\030\007 \001(\tR\010t" +
+      "okenUrl\022I\n\006scopes\030\010 \001(\01321.grpc.gateway.p" +
+      "rotoc_gen_openapiv2.options.ScopesR\006scop" +
+      "es\022i\n\nextensions\030\t \003(\0132I.grpc.gateway.pr" +
+      "otoc_gen_openapiv2.options.SecuritySchem" +
+      "e.ExtensionsEntryR\nextensions\032U\n\017Extensi" +
+      "onsEntry\022\020\n\003key\030\001 \001(\tR\003key\022,\n\005value\030\002 \001(" +
+      "\0132\026.google.protobuf.ValueR\005value:\0028\001\"K\n\004" +
+      "Type\022\020\n\014TYPE_INVALID\020\000\022\016\n\nTYPE_BASIC\020\001\022\020" +
+      "\n\014TYPE_API_KEY\020\002\022\017\n\013TYPE_OAUTH2\020\003\"1\n\002In\022" +
+      "\016\n\nIN_INVALID\020\000\022\014\n\010IN_QUERY\020\001\022\r\n\tIN_HEAD" +
+      "ER\020\002\"j\n\004Flow\022\020\n\014FLOW_INVALID\020\000\022\021\n\rFLOW_I" +
+      "MPLICIT\020\001\022\021\n\rFLOW_PASSWORD\020\002\022\024\n\020FLOW_APP" +
+      "LICATION\020\003\022\024\n\020FLOW_ACCESS_CODE\020\004\"\366\002\n\023Sec" +
+      "urityRequirement\022\212\001\n\024security_requiremen" +
+      "t\030\001 \003(\0132W.grpc.gateway.protoc_gen_openap" +
+      "iv2.options.SecurityRequirement.Security" +
+      "RequirementEntryR\023securityRequirement\0320\n" +
+      "\030SecurityRequirementValue\022\024\n\005scope\030\001 \003(\t" +
+      "R\005scope\032\237\001\n\030SecurityRequirementEntry\022\020\n\003" +
+      "key\030\001 \001(\tR\003key\022m\n\005value\030\002 \001(\0132W.grpc.gat" +
+      "eway.protoc_gen_openapiv2.options.Securi" +
+      "tyRequirement.SecurityRequirementValueR\005" +
+      "value:\0028\001\"\226\001\n\006Scopes\022R\n\005scope\030\001 \003(\0132<.gr" +
       "pc.gateway.protoc_gen_openapiv2.options." +
-      "SecurityDefinitions.SecurityEntryR\010secur" +
-      "ity\032v\n\rSecurityEntry\022\020\n\003key\030\001 \001(\tR\003key\022O" +
-      "\n\005value\030\002 \001(\01329.grpc.gateway.protoc_gen_" +
-      "openapiv2.options.SecuritySchemeR\005value:" +
-      "\0028\001\"\377\006\n\016SecurityScheme\022R\n\004type\030\001 \001(\0162>.g" +
-      "rpc.gateway.protoc_gen_openapiv2.options" +
-      ".SecurityScheme.TypeR\004type\022 \n\013descriptio" +
-      "n\030\002 \001(\tR\013description\022\022\n\004name\030\003 \001(\tR\004name" +
-      "\022L\n\002in\030\004 \001(\0162<.grpc.gateway.protoc_gen_o" +
-      "penapiv2.options.SecurityScheme.InR\002in\022R" +
-      "\n\004flow\030\005 \001(\0162>.grpc.gateway.protoc_gen_o" +
-      "penapiv2.options.SecurityScheme.FlowR\004fl" +
-      "ow\022+\n\021authorization_url\030\006 \001(\tR\020authoriza" +
-      "tionUrl\022\033\n\ttoken_url\030\007 \001(\tR\010tokenUrl\022I\n\006" +
-      "scopes\030\010 \001(\01321.grpc.gateway.protoc_gen_o" +
-      "penapiv2.options.ScopesR\006scopes\022i\n\nexten" +
-      "sions\030\t \003(\0132I.grpc.gateway.protoc_gen_op" +
-      "enapiv2.options.SecurityScheme.Extension" +
-      "sEntryR\nextensions\032U\n\017ExtensionsEntry\022\020\n" +
-      "\003key\030\001 \001(\tR\003key\022,\n\005value\030\002 \001(\0132\026.google." +
-      "protobuf.ValueR\005value:\0028\001\"K\n\004Type\022\020\n\014TYP" +
-      "E_INVALID\020\000\022\016\n\nTYPE_BASIC\020\001\022\020\n\014TYPE_API_" +
-      "KEY\020\002\022\017\n\013TYPE_OAUTH2\020\003\"1\n\002In\022\016\n\nIN_INVAL" +
-      "ID\020\000\022\014\n\010IN_QUERY\020\001\022\r\n\tIN_HEADER\020\002\"j\n\004Flo" +
-      "w\022\020\n\014FLOW_INVALID\020\000\022\021\n\rFLOW_IMPLICIT\020\001\022\021" +
-      "\n\rFLOW_PASSWORD\020\002\022\024\n\020FLOW_APPLICATION\020\003\022" +
-      "\024\n\020FLOW_ACCESS_CODE\020\004\"\366\002\n\023SecurityRequir" +
-      "ement\022\212\001\n\024security_requirement\030\001 \003(\0132W.g" +
-      "rpc.gateway.protoc_gen_openapiv2.options" +
-      ".SecurityRequirement.SecurityRequirement" +
-      "EntryR\023securityRequirement\0320\n\030SecurityRe" +
-      "quirementValue\022\024\n\005scope\030\001 \003(\tR\005scope\032\237\001\n" +
-      "\030SecurityRequirementEntry\022\020\n\003key\030\001 \001(\tR\003" +
-      "key\022m\n\005value\030\002 \001(\0132W.grpc.gateway.protoc" +
-      "_gen_openapiv2.options.SecurityRequireme" +
-      "nt.SecurityRequirementValueR\005value:\0028\001\"\226" +
-      "\001\n\006Scopes\022R\n\005scope\030\001 \003(\0132<.grpc.gateway." +
-      "protoc_gen_openapiv2.options.Scopes.Scop" +
-      "eEntryR\005scope\0328\n\nScopeEntry\022\020\n\003key\030\001 \001(\t" +
-      "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001*;\n\006Schem" +
-      "e\022\013\n\007UNKNOWN\020\000\022\010\n\004HTTP\020\001\022\t\n\005HTTPS\020\002\022\006\n\002W" +
-      "S\020\003\022\007\n\003WSS\020\004B\325\002\n;com.scalekit.grpc.grpc." +
-      "gateway.protoc_gen_openapiv2.optionsB\016Op" +
-      "enapiv2ProtoP\001ZFgithub.com/grpc-ecosyste" +
-      "m/grpc-gateway/v2/protoc-gen-openapiv2/o" +
-      "ptions\242\002\004GGPO\252\002\'Grpc.Gateway.ProtocGenOp" +
-      "enapiv2.Options\312\002\'Grpc\\Gateway\\ProtocGen" +
-      "Openapiv2\\Options\342\0023Grpc\\Gateway\\ProtocG" +
-      "enOpenapiv2\\Options\\GPBMetadata\352\002*Grpc::" +
-      "Gateway::ProtocGenOpenapiv2::Optionsb\006pr" +
-      "oto3"
+      "Scopes.ScopeEntryR\005scope\0328\n\nScopeEntry\022\020" +
+      "\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\002" +
+      "8\001*;\n\006Scheme\022\013\n\007UNKNOWN\020\000\022\010\n\004HTTP\020\001\022\t\n\005H" +
+      "TTPS\020\002\022\006\n\002WS\020\003\022\007\n\003WSS\020\004B\325\002\n;com.scalekit" +
+      ".grpc.grpc.gateway.protoc_gen_openapiv2." +
+      "optionsB\016Openapiv2ProtoP\001ZFgithub.com/gr" +
+      "pc-ecosystem/grpc-gateway/v2/protoc-gen-" +
+      "openapiv2/options\242\002\004GGPO\252\002\'Grpc.Gateway." +
+      "ProtocGenOpenapiv2.Options\312\002\'Grpc\\Gatewa" +
+      "y\\ProtocGenOpenapiv2\\Options\342\0023Grpc\\Gate" +
+      "way\\ProtocGenOpenapiv2\\Options\\GPBMetada" +
+      "ta\352\002*Grpc::Gateway::ProtocGenOpenapiv2::" +
+      "Optionsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -516,8 +538,20 @@ public final class Openapiv2Proto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_gateway_protoc_gen_openapiv2_options_Schema_descriptor,
         new java.lang.String[] { "JsonSchema", "Discriminator", "ReadOnly", "ExternalDocs", "Example", });
-    internal_static_grpc_gateway_protoc_gen_openapiv2_options_JSONSchema_descriptor =
+    internal_static_grpc_gateway_protoc_gen_openapiv2_options_EnumSchema_descriptor =
       getDescriptor().getMessageTypes().get(11);
+    internal_static_grpc_gateway_protoc_gen_openapiv2_options_EnumSchema_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_grpc_gateway_protoc_gen_openapiv2_options_EnumSchema_descriptor,
+        new java.lang.String[] { "Description", "Default", "Title", "Required", "ReadOnly", "ExternalDocs", "Example", "Ref", "Extensions", });
+    internal_static_grpc_gateway_protoc_gen_openapiv2_options_EnumSchema_ExtensionsEntry_descriptor =
+      internal_static_grpc_gateway_protoc_gen_openapiv2_options_EnumSchema_descriptor.getNestedTypes().get(0);
+    internal_static_grpc_gateway_protoc_gen_openapiv2_options_EnumSchema_ExtensionsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_grpc_gateway_protoc_gen_openapiv2_options_EnumSchema_ExtensionsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_grpc_gateway_protoc_gen_openapiv2_options_JSONSchema_descriptor =
+      getDescriptor().getMessageTypes().get(12);
     internal_static_grpc_gateway_protoc_gen_openapiv2_options_JSONSchema_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_gateway_protoc_gen_openapiv2_options_JSONSchema_descriptor,
@@ -535,7 +569,7 @@ public final class Openapiv2Proto {
         internal_static_grpc_gateway_protoc_gen_openapiv2_options_JSONSchema_ExtensionsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_grpc_gateway_protoc_gen_openapiv2_options_Tag_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_grpc_gateway_protoc_gen_openapiv2_options_Tag_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_gateway_protoc_gen_openapiv2_options_Tag_descriptor,
@@ -547,7 +581,7 @@ public final class Openapiv2Proto {
         internal_static_grpc_gateway_protoc_gen_openapiv2_options_Tag_ExtensionsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_grpc_gateway_protoc_gen_openapiv2_options_SecurityDefinitions_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_grpc_gateway_protoc_gen_openapiv2_options_SecurityDefinitions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_gateway_protoc_gen_openapiv2_options_SecurityDefinitions_descriptor,
@@ -559,7 +593,7 @@ public final class Openapiv2Proto {
         internal_static_grpc_gateway_protoc_gen_openapiv2_options_SecurityDefinitions_SecurityEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_grpc_gateway_protoc_gen_openapiv2_options_SecurityScheme_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_grpc_gateway_protoc_gen_openapiv2_options_SecurityScheme_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_gateway_protoc_gen_openapiv2_options_SecurityScheme_descriptor,
@@ -571,7 +605,7 @@ public final class Openapiv2Proto {
         internal_static_grpc_gateway_protoc_gen_openapiv2_options_SecurityScheme_ExtensionsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_grpc_gateway_protoc_gen_openapiv2_options_SecurityRequirement_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_grpc_gateway_protoc_gen_openapiv2_options_SecurityRequirement_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_gateway_protoc_gen_openapiv2_options_SecurityRequirement_descriptor,
@@ -589,7 +623,7 @@ public final class Openapiv2Proto {
         internal_static_grpc_gateway_protoc_gen_openapiv2_options_SecurityRequirement_SecurityRequirementEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_grpc_gateway_protoc_gen_openapiv2_options_Scopes_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_grpc_gateway_protoc_gen_openapiv2_options_Scopes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_gateway_protoc_gen_openapiv2_options_Scopes_descriptor,

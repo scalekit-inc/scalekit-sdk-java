@@ -1,13 +1,13 @@
 import com.scalekit.Environment;
 import com.scalekit.ScalekitClient;
+import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.connections.*;
 import com.scalekit.grpc.scalekit.v1.organizations.CreateOrganization;
 import com.scalekit.grpc.scalekit.v1.organizations.Organization;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ConnectionTests {
 
@@ -74,6 +74,31 @@ public class ConnectionTests {
         assertEquals(ConnectionProvider.OKTA, connection.getProvider());
         String connectionURL  =Environment.defaultConfig().siteName + "/sso/v1/oidc/" + connection.getId() + "/test";
         assertEquals(connectionURL, connection.getTestConnectionUri());
+
+    }
+
+  @Test
+    public void DeleteConnectionTest(){
+
+        Organization organization = client.organizations().create(
+                CreateOrganization.newBuilder()
+                        .setDisplayName("Test Organization For Connection Deletion")
+                        .build()
+        );
+
+        assert organization != null;
+
+        Connection connection = client.connections().createConnection(organization.getId(), CreateConnection.newBuilder()
+                        .setProvider(ConnectionProvider.OKTA)
+                        .setType(ConnectionType.OIDC)
+                .build());
+
+        assert connection != null;
+
+        client.connections().deleteConnection(connection.getId(), organization.getId());
+
+      assertThrows(APIException.class, () -> client.connections().getConnectionById(connection.getId(),organization.getId()));
+
 
     }
 }

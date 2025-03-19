@@ -216,4 +216,19 @@ public interface SAMLConnectionConfigRequestOrBuilder extends
    * <code>.google.protobuf.StringValue certificate_id = 18 [json_name = "certificateId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.StringValueOrBuilder getCertificateIdOrBuilder();
+
+  /**
+   * <code>.google.protobuf.BoolValue idp_slo_required = 19 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the idpSloRequired field is set.
+   */
+  boolean hasIdpSloRequired();
+  /**
+   * <code>.google.protobuf.BoolValue idp_slo_required = 19 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The idpSloRequired.
+   */
+  com.google.protobuf.BoolValue getIdpSloRequired();
+  /**
+   * <code>.google.protobuf.BoolValue idp_slo_required = 19 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getIdpSloRequiredOrBuilder();
 }

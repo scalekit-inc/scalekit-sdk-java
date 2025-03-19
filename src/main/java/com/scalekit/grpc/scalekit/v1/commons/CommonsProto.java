@@ -15,6 +15,26 @@ public final class CommonsProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_commons_OrganizationMembership_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_commons_OrganizationMembership_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_commons_UserProfile_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_commons_UserProfile_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_commons_UserProfile_MetadataEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_commons_UserProfile_MetadataEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_commons_UserProfile_CustomAttributesEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_commons_UserProfile_CustomAttributesEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -30,16 +50,48 @@ public final class CommonsProto {
       "gle/api/field_behavior.proto\032\031google/pro" +
       "tobuf/any.proto\032\036google/protobuf/duratio" +
       "n.proto\032\033google/protobuf/empty.proto\032\037go" +
-      "ogle/protobuf/timestamp.proto*9\n\nRegionC" +
-      "ode\022\033\n\027REGION_CODE_UNSPECIFIED\020\000\022\006\n\002US\020\001" +
-      "\022\006\n\002EU\020\002*E\n\017EnvironmentType\022 \n\034ENVIRONME" +
-      "NT_TYPE_UNSPECIFIED\020\000\022\007\n\003PRD\020\001\022\007\n\003DEV\020\002B" +
-      "\326\001\n%com.scalekit.grpc.scalekit.v1.common" +
-      "sB\014CommonsProtoP\001Z1github.com/scalekit-i" +
-      "nc/scalekit/pkg/grpc/commons\242\002\003SVC\252\002\023Sca" +
-      "lekit.V1.Commons\312\002\023Scalekit\\V1\\Commons\342\002" +
-      "\037Scalekit\\V1\\Commons\\GPBMetadata\352\002\025Scale" +
-      "kit::V1::Commonsb\006proto3"
+      "ogle/protobuf/timestamp.proto\"\270\002\n\026Organi" +
+      "zationMembership\022\016\n\002id\030\001 \001(\tR\002id\022L\n\021memb" +
+      "ership_status\030\002 \001(\0162\037.scalekit.v1.common" +
+      "s.UserStatusR\020membershipStatus\0227\n\004role\030\003" +
+      " \001(\0162#.scalekit.v1.commons.MembershipRol" +
+      "eR\004role\022\027\n\004name\030\004 \001(\tH\000R\004name\210\001\001\022e\n\031prim" +
+      "ary_identity_provider\030\005 \001(\0162).scalekit.v" +
+      "1.commons.IdentityProviderTypeR\027primaryI" +
+      "dentityProviderB\007\n\005_name\"\263\004\n\013UserProfile" +
+      "\022\023\n\002id\030\001 \001(\tB\003\340A\003R\002id\022\'\n\nfirst_name\030\002 \001(" +
+      "\tB\010\272H\005r\003\030\310\001R\tfirstName\022%\n\tlast_name\030\003 \001(" +
+      "\tB\010\272H\005r\003\030\310\001R\010lastName\022\022\n\004name\030\004 \001(\tR\004nam" +
+      "e\022\026\n\006locale\030\005 \001(\tR\006locale\022*\n\016email_verif" +
+      "ied\030\006 \001(\010B\003\340A\003R\remailVerified\022e\n\010metadat" +
+      "a\030\007 \003(\0132..scalekit.v1.commons.UserProfil" +
+      "e.MetadataEntryB\031\272H\026\232\001\023\020\036\"\006r\004\020\003\030\031*\007r\005\020\001\030" +
+      "\200\002R\010metadata\022~\n\021custom_attributes\030\010 \003(\0132" +
+      "6.scalekit.v1.commons.UserProfile.Custom" +
+      "AttributesEntryB\031\272H\026\232\001\023\020d\"\006r\004\020\003\030\031*\007r\005\020\001\030" +
+      "\200\002R\020customAttributes\032;\n\rMetadataEntry\022\020\n" +
+      "\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028" +
+      "\001\032C\n\025CustomAttributesEntry\022\020\n\003key\030\001 \001(\tR" +
+      "\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001*9\n\nRegion" +
+      "Code\022\033\n\027REGION_CODE_UNSPECIFIED\020\000\022\006\n\002US\020" +
+      "\001\022\006\n\002EU\020\002*E\n\017EnvironmentType\022 \n\034ENVIRONM" +
+      "ENT_TYPE_UNSPECIFIED\020\000\022\007\n\003PRD\020\001\022\007\n\003DEV\020\002" +
+      "*C\n\nUserStatus\022\033\n\027USER_STATUS_UNSPECIFIE" +
+      "D\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020\002*F\n\016Members" +
+      "hipRole\022\037\n\033MEMBERSHIP_ROLE_UNSPECIFIED\020\000" +
+      "\022\t\n\005ADMIN\020\001\022\010\n\004USER\020\002*\216\002\n\024IdentityProvid" +
+      "erType\022!\n\035IDENTITY_PROVIDER_UNSPECIFIED\020" +
+      "\000\022\010\n\004OKTA\020\001\022\n\n\006GOOGLE\020\002\022\020\n\014MICROSOFT_AD\020" +
+      "\003\022\t\n\005AUTH0\020\004\022\014\n\010ONELOGIN\020\005\022\021\n\rPING_IDENT" +
+      "ITY\020\006\022\r\n\tJUMPCLOUD\020\007\022\n\n\006CUSTOM\020\010\022\n\n\006GITH" +
+      "UB\020\t\022\n\n\006GITLAB\020\n\022\014\n\010LINKEDIN\020\013\022\016\n\nSALESF" +
+      "ORCE\020\014\022\r\n\tMICROSOFT\020\r\022\021\n\rIDP_SIMULATOR\020\016" +
+      "\022\014\n\010SCALEKIT\020\017B\326\001\n%com.scalekit.grpc.sca" +
+      "lekit.v1.commonsB\014CommonsProtoP\001Z1github" +
+      ".com/scalekit-inc/scalekit/pkg/grpc/comm" +
+      "ons\242\002\003SVC\252\002\023Scalekit.V1.Commons\312\002\023Scalek" +
+      "it\\V1\\Commons\342\002\037Scalekit\\V1\\Commons\\GPBM" +
+      "etadata\352\002\025Scalekit::V1::Commonsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -52,6 +104,36 @@ public final class CommonsProto {
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         });
+    internal_static_scalekit_v1_commons_OrganizationMembership_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_scalekit_v1_commons_OrganizationMembership_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_commons_OrganizationMembership_descriptor,
+        new java.lang.String[] { "Id", "MembershipStatus", "Role", "Name", "PrimaryIdentityProvider", });
+    internal_static_scalekit_v1_commons_UserProfile_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_scalekit_v1_commons_UserProfile_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_commons_UserProfile_descriptor,
+        new java.lang.String[] { "Id", "FirstName", "LastName", "Name", "Locale", "EmailVerified", "Metadata", "CustomAttributes", });
+    internal_static_scalekit_v1_commons_UserProfile_MetadataEntry_descriptor =
+      internal_static_scalekit_v1_commons_UserProfile_descriptor.getNestedTypes().get(0);
+    internal_static_scalekit_v1_commons_UserProfile_MetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_commons_UserProfile_MetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_scalekit_v1_commons_UserProfile_CustomAttributesEntry_descriptor =
+      internal_static_scalekit_v1_commons_UserProfile_descriptor.getNestedTypes().get(1);
+    internal_static_scalekit_v1_commons_UserProfile_CustomAttributesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_commons_UserProfile_CustomAttributesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);
+    registry.add(com.scalekit.grpc.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     com.scalekit.grpc.buf.validate.ValidateProto.getDescriptor();
     com.scalekit.grpc.google.api.AnnotationsProto.getDescriptor();
     com.scalekit.grpc.google.api.FieldBehaviorProto.getDescriptor();

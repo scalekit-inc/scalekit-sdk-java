@@ -564,6 +564,58 @@ private static final long serialVersionUID = 0L;
     return certificateId_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : certificateId_;
   }
 
+  public static final int IDP_SLO_REQUIRED_FIELD_NUMBER = 20;
+  private com.google.protobuf.BoolValue idpSloRequired_;
+  /**
+   * <code>.google.protobuf.BoolValue idp_slo_required = 20 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the idpSloRequired field is set.
+   */
+  @java.lang.Override
+  public boolean hasIdpSloRequired() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue idp_slo_required = 20 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The idpSloRequired.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getIdpSloRequired() {
+    return idpSloRequired_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : idpSloRequired_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue idp_slo_required = 20 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getIdpSloRequiredOrBuilder() {
+    return idpSloRequired_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : idpSloRequired_;
+  }
+
+  public static final int SP_SLO_URL_FIELD_NUMBER = 21;
+  private com.google.protobuf.StringValue spSloUrl_;
+  /**
+   * <code>.google.protobuf.StringValue sp_slo_url = 21 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the spSloUrl field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpSloUrl() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   * <code>.google.protobuf.StringValue sp_slo_url = 21 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The spSloUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getSpSloUrl() {
+    return spSloUrl_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : spSloUrl_;
+  }
+  /**
+   * <code>.google.protobuf.StringValue sp_slo_url = 21 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getSpSloUrlOrBuilder() {
+    return spSloUrl_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : spSloUrl_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -634,6 +686,12 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(19, getCertificateId());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(20, getIdpSloRequired());
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(21, getSpSloUrl());
     }
     getUnknownFields().writeTo(output);
   }
@@ -717,6 +775,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(19, getCertificateId());
     }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(20, getIdpSloRequired());
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(21, getSpSloUrl());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -799,6 +865,16 @@ private static final long serialVersionUID = 0L;
       if (!getCertificateId()
           .equals(other.getCertificateId())) return false;
     }
+    if (hasIdpSloRequired() != other.hasIdpSloRequired()) return false;
+    if (hasIdpSloRequired()) {
+      if (!getIdpSloRequired()
+          .equals(other.getIdpSloRequired())) return false;
+    }
+    if (hasSpSloUrl() != other.hasSpSloUrl()) return false;
+    if (hasSpSloUrl()) {
+      if (!getSpSloUrl()
+          .equals(other.getSpSloUrl())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -871,6 +947,14 @@ private static final long serialVersionUID = 0L;
     if (hasCertificateId()) {
       hash = (37 * hash) + CERTIFICATE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCertificateId().hashCode();
+    }
+    if (hasIdpSloRequired()) {
+      hash = (37 * hash) + IDP_SLO_REQUIRED_FIELD_NUMBER;
+      hash = (53 * hash) + getIdpSloRequired().hashCode();
+    }
+    if (hasSpSloUrl()) {
+      hash = (37 * hash) + SP_SLO_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getSpSloUrl().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1014,6 +1098,8 @@ private static final long serialVersionUID = 0L;
         getAssertionEncryptedFieldBuilder();
         getWantRequestSignedFieldBuilder();
         getCertificateIdFieldBuilder();
+        getIdpSloRequiredFieldBuilder();
+        getSpSloUrlFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1088,6 +1174,16 @@ private static final long serialVersionUID = 0L;
       if (certificateIdBuilder_ != null) {
         certificateIdBuilder_.dispose();
         certificateIdBuilder_ = null;
+      }
+      idpSloRequired_ = null;
+      if (idpSloRequiredBuilder_ != null) {
+        idpSloRequiredBuilder_.dispose();
+        idpSloRequiredBuilder_ = null;
+      }
+      spSloUrl_ = null;
+      if (spSloUrlBuilder_ != null) {
+        spSloUrlBuilder_.dispose();
+        spSloUrlBuilder_ = null;
       }
       return this;
     }
@@ -1223,6 +1319,18 @@ private static final long serialVersionUID = 0L;
             : certificateIdBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.idpSloRequired_ = idpSloRequiredBuilder_ == null
+            ? idpSloRequired_
+            : idpSloRequiredBuilder_.build();
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.spSloUrl_ = spSloUrlBuilder_ == null
+            ? spSloUrl_
+            : spSloUrlBuilder_.build();
+        to_bitField0_ |= 0x00001000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1355,6 +1463,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCertificateId()) {
         mergeCertificateId(other.getCertificateId());
+      }
+      if (other.hasIdpSloRequired()) {
+        mergeIdpSloRequired(other.getIdpSloRequired());
+      }
+      if (other.hasSpSloUrl()) {
+        mergeSpSloUrl(other.getSpSloUrl());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1507,6 +1621,20 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00040000;
               break;
             } // case 154
+            case 162: {
+              input.readMessage(
+                  getIdpSloRequiredFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00080000;
+              break;
+            } // case 162
+            case 170: {
+              input.readMessage(
+                  getSpSloUrlFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00100000;
+              break;
+            } // case 170
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3521,6 +3649,248 @@ private static final long serialVersionUID = 0L;
         certificateId_ = null;
       }
       return certificateIdBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue idpSloRequired_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> idpSloRequiredBuilder_;
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 20 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the idpSloRequired field is set.
+     */
+    public boolean hasIdpSloRequired() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 20 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The idpSloRequired.
+     */
+    public com.google.protobuf.BoolValue getIdpSloRequired() {
+      if (idpSloRequiredBuilder_ == null) {
+        return idpSloRequired_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : idpSloRequired_;
+      } else {
+        return idpSloRequiredBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 20 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setIdpSloRequired(com.google.protobuf.BoolValue value) {
+      if (idpSloRequiredBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        idpSloRequired_ = value;
+      } else {
+        idpSloRequiredBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 20 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setIdpSloRequired(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (idpSloRequiredBuilder_ == null) {
+        idpSloRequired_ = builderForValue.build();
+      } else {
+        idpSloRequiredBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 20 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeIdpSloRequired(com.google.protobuf.BoolValue value) {
+      if (idpSloRequiredBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0) &&
+          idpSloRequired_ != null &&
+          idpSloRequired_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getIdpSloRequiredBuilder().mergeFrom(value);
+        } else {
+          idpSloRequired_ = value;
+        }
+      } else {
+        idpSloRequiredBuilder_.mergeFrom(value);
+      }
+      if (idpSloRequired_ != null) {
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 20 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearIdpSloRequired() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      idpSloRequired_ = null;
+      if (idpSloRequiredBuilder_ != null) {
+        idpSloRequiredBuilder_.dispose();
+        idpSloRequiredBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 20 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getIdpSloRequiredBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return getIdpSloRequiredFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 20 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getIdpSloRequiredOrBuilder() {
+      if (idpSloRequiredBuilder_ != null) {
+        return idpSloRequiredBuilder_.getMessageOrBuilder();
+      } else {
+        return idpSloRequired_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : idpSloRequired_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue idp_slo_required = 20 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getIdpSloRequiredFieldBuilder() {
+      if (idpSloRequiredBuilder_ == null) {
+        idpSloRequiredBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getIdpSloRequired(),
+                getParentForChildren(),
+                isClean());
+        idpSloRequired_ = null;
+      }
+      return idpSloRequiredBuilder_;
+    }
+
+    private com.google.protobuf.StringValue spSloUrl_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> spSloUrlBuilder_;
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 21 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the spSloUrl field is set.
+     */
+    public boolean hasSpSloUrl() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 21 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The spSloUrl.
+     */
+    public com.google.protobuf.StringValue getSpSloUrl() {
+      if (spSloUrlBuilder_ == null) {
+        return spSloUrl_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : spSloUrl_;
+      } else {
+        return spSloUrlBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 21 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setSpSloUrl(com.google.protobuf.StringValue value) {
+      if (spSloUrlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spSloUrl_ = value;
+      } else {
+        spSloUrlBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 21 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setSpSloUrl(
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (spSloUrlBuilder_ == null) {
+        spSloUrl_ = builderForValue.build();
+      } else {
+        spSloUrlBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 21 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeSpSloUrl(com.google.protobuf.StringValue value) {
+      if (spSloUrlBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0) &&
+          spSloUrl_ != null &&
+          spSloUrl_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getSpSloUrlBuilder().mergeFrom(value);
+        } else {
+          spSloUrl_ = value;
+        }
+      } else {
+        spSloUrlBuilder_.mergeFrom(value);
+      }
+      if (spSloUrl_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 21 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearSpSloUrl() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      spSloUrl_ = null;
+      if (spSloUrlBuilder_ != null) {
+        spSloUrlBuilder_.dispose();
+        spSloUrlBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 21 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValue.Builder getSpSloUrlBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return getSpSloUrlFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 21 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getSpSloUrlOrBuilder() {
+      if (spSloUrlBuilder_ != null) {
+        return spSloUrlBuilder_.getMessageOrBuilder();
+      } else {
+        return spSloUrl_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : spSloUrl_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 21 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getSpSloUrlFieldBuilder() {
+      if (spSloUrlBuilder_ == null) {
+        spSloUrlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getSpSloUrl(),
+                getParentForChildren(),
+                isClean());
+        spSloUrl_ = null;
+      }
+      return spSloUrlBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

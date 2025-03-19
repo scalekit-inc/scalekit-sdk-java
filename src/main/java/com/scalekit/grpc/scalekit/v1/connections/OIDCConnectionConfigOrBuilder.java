@@ -194,4 +194,49 @@ public interface OIDCConnectionConfigOrBuilder extends
    * <code>.google.protobuf.BoolValue pkce_enabled = 13 [json_name = "pkceEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.BoolValueOrBuilder getPkceEnabledOrBuilder();
+
+  /**
+   * <code>.google.protobuf.BoolValue idp_logout_required = 14 [json_name = "idpLogoutRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the idpLogoutRequired field is set.
+   */
+  boolean hasIdpLogoutRequired();
+  /**
+   * <code>.google.protobuf.BoolValue idp_logout_required = 14 [json_name = "idpLogoutRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The idpLogoutRequired.
+   */
+  com.google.protobuf.BoolValue getIdpLogoutRequired();
+  /**
+   * <code>.google.protobuf.BoolValue idp_logout_required = 14 [json_name = "idpLogoutRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getIdpLogoutRequiredOrBuilder();
+
+  /**
+   * <code>.google.protobuf.StringValue post_logout_redirect_uri = 15 [json_name = "postLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the postLogoutRedirectUri field is set.
+   */
+  boolean hasPostLogoutRedirectUri();
+  /**
+   * <code>.google.protobuf.StringValue post_logout_redirect_uri = 15 [json_name = "postLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The postLogoutRedirectUri.
+   */
+  com.google.protobuf.StringValue getPostLogoutRedirectUri();
+  /**
+   * <code>.google.protobuf.StringValue post_logout_redirect_uri = 15 [json_name = "postLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.StringValueOrBuilder getPostLogoutRedirectUriOrBuilder();
+
+  /**
+   * <code>.google.protobuf.StringValue backchannel_logout_redirect_uri = 16 [json_name = "backchannelLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the backchannelLogoutRedirectUri field is set.
+   */
+  boolean hasBackchannelLogoutRedirectUri();
+  /**
+   * <code>.google.protobuf.StringValue backchannel_logout_redirect_uri = 16 [json_name = "backchannelLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The backchannelLogoutRedirectUri.
+   */
+  com.google.protobuf.StringValue getBackchannelLogoutRedirectUri();
+  /**
+   * <code>.google.protobuf.StringValue backchannel_logout_redirect_uri = 16 [json_name = "backchannelLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.StringValueOrBuilder getBackchannelLogoutRedirectUriOrBuilder();
 }

@@ -7,7 +7,9 @@ import com.scalekit.ScalekitClient;
 import com.scalekit.api.util.*;
 import com.scalekit.api.util.DirectoryGroup;
 import com.scalekit.api.util.DirectoryUser;
+import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.directories.*;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -111,7 +113,7 @@ public class DirectoryTest {
                 .directories()
                 .listDirectoryUsers(directory.getId(),organizationId,options);
 
-        assertEquals(usersResponse.getUsersCount() ,2);
+        assertEquals(usersResponse.getUsersCount() ,3);
 
         DirectoryUser user = usersResponse.getUsers(0);
         assertNotNull(user);
@@ -197,6 +199,34 @@ public class DirectoryTest {
         assertEquals(organizationId, directory.getOrganizationId());
         assertEquals(DirectoryProvider.OKTA, directory.getDirectoryProvider());
         assertEquals(DirectoryType.SCIM, directory.getDirectoryType());
+    }
+
+    @Test
+    public void DeleteDirectory(){
+        CreateDirectory createDirectory = CreateDirectory.newBuilder()
+                .setDirectoryProvider(DirectoryProvider.OKTA)
+                .build();
+        Directory directory = client.directories().createDirectory(organizationId, createDirectory);
+        assertNotNull(directory);
+        assertNotNull(directory.getId());
+        assertEquals(organizationId, directory.getOrganizationId());
+        assertEquals(DirectoryProvider.OKTA, directory.getDirectoryProvider());
+        assertEquals(DirectoryType.SCIM, directory.getDirectoryType());
+
+
+        // trying to delete enabled directory
+        Assertions.assertThrows(APIException.class, () -> {
+            client.directories().deleteDirectory(directory.getId(), organizationId);
+        });
+
+        // disable directory
+        client.directories().disableDirectory(directory.getId(), organizationId);
+
+        client.directories().deleteDirectory(directory.getId(), organizationId);
+
+        //get deleted directory
+        assertThrows(APIException.class, () -> client.directories().getDirectory(directory.getId(), organizationId));
+
     }
 
 }

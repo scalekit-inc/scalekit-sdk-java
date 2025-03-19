@@ -126,7 +126,7 @@ public enum SAMLSigningOptions
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.connections.ConnectionsProto.getDescriptor().getEnumTypes().get(3);
+    return com.scalekit.grpc.scalekit.v1.connections.ConnectionsProto.getDescriptor().getEnumTypes().get(4);
   }
 
   private static final SAMLSigningOptions[] VALUES = values();
