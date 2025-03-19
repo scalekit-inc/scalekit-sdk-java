@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.scalekit</groupId>
     <artifactId>scalekit-sdk-java</artifactId>
-    <version>1.1.2</version>
+    <version>1.1.3</version>
 </dependency>
 ```
 
