@@ -278,4 +278,29 @@ public class ScalekitAuthClient implements AuthClient {
             throw new APIException("Failed to verify and consume idpInitiatedLoginToken, error: " + e.getMessage());
         }
     }
+
+    /**
+     * Refreshes an access token using a refresh token
+     * @param refreshToken The refresh token to use
+     * @return AuthenticationResponse containing the new access token and refresh token
+     * @throws APIException if the refresh token is invalid or expired
+     */
+    @Override
+    public AuthenticationResponse refreshToken(String refreshToken) throws APIException {
+        if (refreshToken == null || refreshToken.isEmpty()) {
+            throw new APIException("refresh token is required");
+        }
+
+        Map<String, String> params = new HashMap<>();
+        params.put("refresh_token", refreshToken);
+        params.put("grant_type", "refresh_token");
+        params.put("client_id", Environment.defaultConfig().clientId);
+        params.put("client_secret", Environment.defaultConfig().clientSecret);
+
+        try {
+            return authenticate(params);
+        } catch (IOException | InterruptedException | URISyntaxException e) {
+            throw new APIException("Failed to refresh token: " + e.getMessage());
+        }
+    }
 }

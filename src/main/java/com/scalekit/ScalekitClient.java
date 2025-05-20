@@ -26,6 +26,8 @@ public class ScalekitClient {
 
     private final DirectoryClient directoryClient ;
 
+    private final UserClient userClient;
+
     private final Webhook webhook;
 
     public ScalekitClient(String siteName, String clientId, String clientSecret) {
@@ -48,6 +50,7 @@ public class ScalekitClient {
             domainClient = new ScalekitDomainClient(channel, credentials);
             connectionClient = new ScalekitConnectionClient(channel, credentials);
             directoryClient = new ScalekitDirectoryClient(channel, credentials);
+            userClient = new ScalekitUserClient(channel, credentials);
 
             webhook = new ScalekitWebhook();
 
@@ -81,6 +84,10 @@ public class ScalekitClient {
 
     public DirectoryClient directories() {
         return this.directoryClient;
+    }
+
+    public UserClient users() {
+        return this.userClient;
     }
 
 }

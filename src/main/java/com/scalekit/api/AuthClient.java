@@ -19,4 +19,5 @@ public interface AuthClient {
 
      IdpInitiatedLoginClaims getIdpInitiatedLoginClaims(String idpInitiatedLoginToken) throws APIException;
 
+     AuthenticationResponse refreshToken(String refreshToken) throws APIException;
 }
