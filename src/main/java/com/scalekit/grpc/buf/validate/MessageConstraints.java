@@ -609,7 +609,7 @@ private static final long serialVersionUID = 0L;
             case 26: {
               com.scalekit.grpc.buf.validate.Constraint m =
                   input.readMessage(
-                      com.scalekit.grpc.buf.validate.Constraint.PARSER,
+                      com.scalekit.grpc.buf.validate.Constraint.parser(),
                       extensionRegistry);
               if (celBuilder_ == null) {
                 ensureCelIsMutable();
@@ -1331,7 +1331,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<MessageConstraints>
+  private static final com.google.protobuf.Parser<MessageConstraints>
       PARSER = new com.google.protobuf.AbstractParser<MessageConstraints>() {
     @java.lang.Override
     public MessageConstraints parsePartialFrom(

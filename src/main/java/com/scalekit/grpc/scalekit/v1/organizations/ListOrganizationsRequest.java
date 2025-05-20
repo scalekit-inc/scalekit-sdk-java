@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   }
   private ListOrganizationsRequest() {
     pageToken_ = "";
+    externalId_ = "";
   }
 
   @java.lang.Override
@@ -40,6 +41,7 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.organizations.ListOrganizationsRequest.class, com.scalekit.grpc.scalekit.v1.organizations.ListOrganizationsRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PAGE_SIZE_FIELD_NUMBER = 1;
   private int pageSize_ = 0;
   /**
@@ -90,6 +92,53 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int EXTERNAL_ID_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object externalId_ = "";
+  /**
+   * <code>optional string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the externalId field is set.
+   */
+  @java.lang.Override
+  public boolean hasExternalId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The externalId.
+   */
+  @java.lang.Override
+  public java.lang.String getExternalId() {
+    java.lang.Object ref = externalId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      externalId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for externalId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getExternalIdBytes() {
+    java.lang.Object ref = externalId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      externalId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -110,6 +159,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pageToken_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, externalId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -125,6 +177,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pageToken_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, externalId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -145,6 +200,11 @@ private static final long serialVersionUID = 0L;
         != other.getPageSize()) return false;
     if (!getPageToken()
         .equals(other.getPageToken())) return false;
+    if (hasExternalId() != other.hasExternalId()) return false;
+    if (hasExternalId()) {
+      if (!getExternalId()
+          .equals(other.getExternalId())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -160,6 +220,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    if (hasExternalId()) {
+      hash = (37 * hash) + EXTERNAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getExternalId().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -293,6 +357,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       pageSize_ = 0;
       pageToken_ = "";
+      externalId_ = "";
       return this;
     }
 
@@ -332,6 +397,12 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.pageToken_ = pageToken_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.externalId_ = externalId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -386,6 +457,11 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasExternalId()) {
+        externalId_ = other.externalId_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -422,6 +498,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 18
+            case 26: {
+              externalId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -539,6 +620,85 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       pageToken_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object externalId_ = "";
+    /**
+     * <code>optional string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the externalId field is set.
+     */
+    public boolean hasExternalId() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The externalId.
+     */
+    public java.lang.String getExternalId() {
+      java.lang.Object ref = externalId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        externalId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for externalId.
+     */
+    public com.google.protobuf.ByteString
+        getExternalIdBytes() {
+      java.lang.Object ref = externalId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        externalId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The externalId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExternalId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      externalId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearExternalId() {
+      externalId_ = getDefaultInstance().getExternalId();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for externalId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExternalIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      externalId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -6,8 +6,7 @@ package com.scalekit.grpc.buf.validate;
 
 public interface MapRulesOrBuilder extends
     // @@protoc_insertion_point(interface_extends:buf.validate.MapRules)
-    com.google.protobuf.GeneratedMessageV3.
-        ExtendableMessageOrBuilder<MapRules> {
+    com.google.protobuf.MessageOrBuilder {
 
   /**
    * <pre>
@@ -22,7 +21,7 @@ public interface MapRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>optional uint64 min_pairs = 1 [json_name = "minPairs", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional uint64 min_pairs = 1 [json_name = "minPairs", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the minPairs field is set.
    */
   boolean hasMinPairs();
@@ -39,7 +38,7 @@ public interface MapRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>optional uint64 min_pairs = 1 [json_name = "minPairs", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional uint64 min_pairs = 1 [json_name = "minPairs", (.buf.validate.priv.field) = { ... }</code>
    * @return The minPairs.
    */
   long getMinPairs();
@@ -57,7 +56,7 @@ public interface MapRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>optional uint64 max_pairs = 2 [json_name = "maxPairs", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional uint64 max_pairs = 2 [json_name = "maxPairs", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the maxPairs field is set.
    */
   boolean hasMaxPairs();
@@ -74,7 +73,7 @@ public interface MapRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>optional uint64 max_pairs = 2 [json_name = "maxPairs", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional uint64 max_pairs = 2 [json_name = "maxPairs", (.buf.validate.priv.field) = { ... }</code>
    * @return The maxPairs.
    */
   long getMaxPairs();

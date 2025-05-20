@@ -77,6 +77,37 @@ public final class DomainServiceGrpc {
     return getUpdateDomainMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.domains.VerifyDomainRequest,
+      com.google.protobuf.BoolValue> getVerifyDomainMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "VerifyDomain",
+      requestType = com.scalekit.grpc.scalekit.v1.domains.VerifyDomainRequest.class,
+      responseType = com.google.protobuf.BoolValue.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.domains.VerifyDomainRequest,
+      com.google.protobuf.BoolValue> getVerifyDomainMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.domains.VerifyDomainRequest, com.google.protobuf.BoolValue> getVerifyDomainMethod;
+    if ((getVerifyDomainMethod = DomainServiceGrpc.getVerifyDomainMethod) == null) {
+      synchronized (DomainServiceGrpc.class) {
+        if ((getVerifyDomainMethod = DomainServiceGrpc.getVerifyDomainMethod) == null) {
+          DomainServiceGrpc.getVerifyDomainMethod = getVerifyDomainMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.domains.VerifyDomainRequest, com.google.protobuf.BoolValue>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VerifyDomain"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.domains.VerifyDomainRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.BoolValue.getDefaultInstance()))
+              .setSchemaDescriptor(new DomainServiceMethodDescriptorSupplier("VerifyDomain"))
+              .build();
+        }
+      }
+    }
+    return getVerifyDomainMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.domains.GetDomainRequest,
       com.scalekit.grpc.scalekit.v1.domains.GetDomainResponse> getGetDomainMethod;
 
@@ -265,6 +296,13 @@ public final class DomainServiceGrpc {
 
     /**
      */
+    default void verifyDomain(com.scalekit.grpc.scalekit.v1.domains.VerifyDomainRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.BoolValue> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVerifyDomainMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void getDomain(com.scalekit.grpc.scalekit.v1.domains.GetDomainRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.domains.GetDomainResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDomainMethod(), responseObserver);
@@ -337,6 +375,14 @@ public final class DomainServiceGrpc {
 
     /**
      */
+    public void verifyDomain(com.scalekit.grpc.scalekit.v1.domains.VerifyDomainRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.BoolValue> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getVerifyDomainMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void getDomain(com.scalekit.grpc.scalekit.v1.domains.GetDomainRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.domains.GetDomainResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -396,6 +442,13 @@ public final class DomainServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.domains.UpdateDomainResponse updateDomain(com.scalekit.grpc.scalekit.v1.domains.UpdateDomainRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDomainMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.google.protobuf.BoolValue verifyDomain(com.scalekit.grpc.scalekit.v1.domains.VerifyDomainRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVerifyDomainMethod(), getCallOptions(), request);
     }
 
     /**
@@ -461,6 +514,14 @@ public final class DomainServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.BoolValue> verifyDomain(
+        com.scalekit.grpc.scalekit.v1.domains.VerifyDomainRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getVerifyDomainMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.domains.GetDomainResponse> getDomain(
         com.scalekit.grpc.scalekit.v1.domains.GetDomainRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -494,10 +555,11 @@ public final class DomainServiceGrpc {
 
   private static final int METHODID_CREATE_DOMAIN = 0;
   private static final int METHODID_UPDATE_DOMAIN = 1;
-  private static final int METHODID_GET_DOMAIN = 2;
-  private static final int METHODID_DELETE_DOMAIN = 3;
-  private static final int METHODID_LIST_DOMAINS = 4;
-  private static final int METHODID_LIST_AUTHORIZED_DOMAINS = 5;
+  private static final int METHODID_VERIFY_DOMAIN = 2;
+  private static final int METHODID_GET_DOMAIN = 3;
+  private static final int METHODID_DELETE_DOMAIN = 4;
+  private static final int METHODID_LIST_DOMAINS = 5;
+  private static final int METHODID_LIST_AUTHORIZED_DOMAINS = 6;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -523,6 +585,10 @@ public final class DomainServiceGrpc {
         case METHODID_UPDATE_DOMAIN:
           serviceImpl.updateDomain((com.scalekit.grpc.scalekit.v1.domains.UpdateDomainRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.domains.UpdateDomainResponse>) responseObserver);
+          break;
+        case METHODID_VERIFY_DOMAIN:
+          serviceImpl.verifyDomain((com.scalekit.grpc.scalekit.v1.domains.VerifyDomainRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.BoolValue>) responseObserver);
           break;
         case METHODID_GET_DOMAIN:
           serviceImpl.getDomain((com.scalekit.grpc.scalekit.v1.domains.GetDomainRequest) request,
@@ -572,6 +638,13 @@ public final class DomainServiceGrpc {
               com.scalekit.grpc.scalekit.v1.domains.UpdateDomainRequest,
               com.scalekit.grpc.scalekit.v1.domains.UpdateDomainResponse>(
                 service, METHODID_UPDATE_DOMAIN)))
+        .addMethod(
+          getVerifyDomainMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.domains.VerifyDomainRequest,
+              com.google.protobuf.BoolValue>(
+                service, METHODID_VERIFY_DOMAIN)))
         .addMethod(
           getGetDomainMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -650,6 +723,7 @@ public final class DomainServiceGrpc {
               .setSchemaDescriptor(new DomainServiceFileDescriptorSupplier())
               .addMethod(getCreateDomainMethod())
               .addMethod(getUpdateDomainMethod())
+              .addMethod(getVerifyDomainMethod())
               .addMethod(getGetDomainMethod())
               .addMethod(getDeleteDomainMethod())
               .addMethod(getListDomainsMethod())

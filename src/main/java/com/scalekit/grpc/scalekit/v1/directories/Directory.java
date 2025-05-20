@@ -24,6 +24,9 @@ private static final long serialVersionUID = 0L;
     directoryProvider_ = 0;
     directoryEndpoint_ = "";
     secrets_ = java.util.Collections.emptyList();
+    status_ = "";
+    email_ = "";
+    groupsTracked_ = "";
   }
 
   @java.lang.Override
@@ -417,6 +420,123 @@ private static final long serialVersionUID = 0L;
     return attributeMappings_ == null ? com.scalekit.grpc.scalekit.v1.directories.AttributeMappings.getDefaultInstance() : attributeMappings_;
   }
 
+  public static final int STATUS_FIELD_NUMBER = 15;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object status_ = "";
+  /**
+   * <code>string status = 15 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The status.
+   */
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string status = 15 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for status.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EMAIL_FIELD_NUMBER = 16;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object email_ = "";
+  /**
+   * <code>string email = 16 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The email.
+   */
+  @java.lang.Override
+  public java.lang.String getEmail() {
+    java.lang.Object ref = email_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      email_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string email = 16 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for email.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEmailBytes() {
+    java.lang.Object ref = email_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      email_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int GROUPS_TRACKED_FIELD_NUMBER = 17;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object groupsTracked_ = "";
+  /**
+   * <code>string groups_tracked = 17 [json_name = "groupsTracked", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The groupsTracked.
+   */
+  @java.lang.Override
+  public java.lang.String getGroupsTracked() {
+    java.lang.Object ref = groupsTracked_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      groupsTracked_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string groups_tracked = 17 [json_name = "groupsTracked", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for groupsTracked.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getGroupsTrackedBytes() {
+    java.lang.Object ref = groupsTracked_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      groupsTracked_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -472,6 +592,15 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(14, getAttributeMappings());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, status_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, email_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupsTracked_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, groupsTracked_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -534,6 +663,15 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, getAttributeMappings());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, status_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, email_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupsTracked_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, groupsTracked_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -587,6 +725,12 @@ private static final long serialVersionUID = 0L;
       if (!getAttributeMappings()
           .equals(other.getAttributeMappings())) return false;
     }
+    if (!getStatus()
+        .equals(other.getStatus())) return false;
+    if (!getEmail()
+        .equals(other.getEmail())) return false;
+    if (!getGroupsTracked()
+        .equals(other.getGroupsTracked())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -637,6 +781,12 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ATTRIBUTE_MAPPINGS_FIELD_NUMBER;
       hash = (53 * hash) + getAttributeMappings().hashCode();
     }
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getStatus().hashCode();
+    hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+    hash = (53 * hash) + getEmail().hashCode();
+    hash = (37 * hash) + GROUPS_TRACKED_FIELD_NUMBER;
+    hash = (53 * hash) + getGroupsTracked().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -814,6 +964,9 @@ private static final long serialVersionUID = 0L;
         attributeMappingsBuilder_.dispose();
         attributeMappingsBuilder_ = null;
       }
+      status_ = "";
+      email_ = "";
+      groupsTracked_ = "";
       return this;
     }
 
@@ -911,6 +1064,15 @@ private static final long serialVersionUID = 0L;
             ? attributeMappings_
             : attributeMappingsBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.status_ = status_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.email_ = email_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.groupsTracked_ = groupsTracked_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1032,6 +1194,21 @@ private static final long serialVersionUID = 0L;
       if (other.hasAttributeMappings()) {
         mergeAttributeMappings(other.getAttributeMappings());
       }
+      if (!other.getStatus().isEmpty()) {
+        status_ = other.status_;
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      if (!other.getEmail().isEmpty()) {
+        email_ = other.email_;
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      if (!other.getGroupsTracked().isEmpty()) {
+        groupsTracked_ = other.groupsTracked_;
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1144,6 +1321,21 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00002000;
               break;
             } // case 114
+            case 122: {
+              status_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00004000;
+              break;
+            } // case 122
+            case 130: {
+              email_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00008000;
+              break;
+            } // case 130
+            case 138: {
+              groupsTracked_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00010000;
+              break;
+            } // case 138
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2373,6 +2565,222 @@ private static final long serialVersionUID = 0L;
         attributeMappings_ = null;
       }
       return attributeMappingsBuilder_;
+    }
+
+    private java.lang.Object status_ = "";
+    /**
+     * <code>string status = 15 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The status.
+     */
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string status = 15 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string status = 15 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      status_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 15 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      status_ = getDefaultInstance().getStatus();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 15 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      status_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object email_ = "";
+    /**
+     * <code>string email = 16 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The email.
+     */
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        email_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string email = 16 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for email.
+     */
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string email = 16 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The email to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmail(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      email_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string email = 16 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEmail() {
+      email_ = getDefaultInstance().getEmail();
+      bitField0_ = (bitField0_ & ~0x00008000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string email = 16 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for email to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmailBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      email_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object groupsTracked_ = "";
+    /**
+     * <code>string groups_tracked = 17 [json_name = "groupsTracked", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The groupsTracked.
+     */
+    public java.lang.String getGroupsTracked() {
+      java.lang.Object ref = groupsTracked_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        groupsTracked_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string groups_tracked = 17 [json_name = "groupsTracked", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for groupsTracked.
+     */
+    public com.google.protobuf.ByteString
+        getGroupsTrackedBytes() {
+      java.lang.Object ref = groupsTracked_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        groupsTracked_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string groups_tracked = 17 [json_name = "groupsTracked", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The groupsTracked to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGroupsTracked(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      groupsTracked_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string groups_tracked = 17 [json_name = "groupsTracked", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearGroupsTracked() {
+      groupsTracked_ = getDefaultInstance().getGroupsTracked();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string groups_tracked = 17 [json_name = "groupsTracked", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for groupsTracked to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGroupsTrackedBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      groupsTracked_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

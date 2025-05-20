@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
 
   /**
    * <pre>
-   * `Type` is a supported HTTP header type.
+   * `Type` is a a supported HTTP header type.
    * See https://swagger.io/specification/v2/#parameterType.
    * </pre>
    *

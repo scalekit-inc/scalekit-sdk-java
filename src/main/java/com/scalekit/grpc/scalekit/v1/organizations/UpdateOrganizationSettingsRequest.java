@@ -83,7 +83,7 @@ private static final long serialVersionUID = 0L;
   public static final int SETTINGS_FIELD_NUMBER = 2;
   private com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings settings_;
   /**
-   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the settings field is set.
    */
   @java.lang.Override
@@ -91,7 +91,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The settings.
    */
   @java.lang.Override
@@ -99,7 +99,7 @@ private static final long serialVersionUID = 0L;
     return settings_ == null ? com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings.getDefaultInstance() : settings_;
   }
   /**
-   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettingsOrBuilder getSettingsOrBuilder() {
@@ -553,14 +553,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings, com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings.Builder, com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettingsOrBuilder> settingsBuilder_;
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the settings field is set.
      */
     public boolean hasSettings() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The settings.
      */
     public com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings getSettings() {
@@ -571,7 +571,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setSettings(com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings value) {
       if (settingsBuilder_ == null) {
@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setSettings(
         com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings.Builder builderForValue) {
@@ -601,7 +601,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeSettings(com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings value) {
       if (settingsBuilder_ == null) {
@@ -622,7 +622,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearSettings() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -635,7 +635,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings.Builder getSettingsBuilder() {
       bitField0_ |= 0x00000002;
@@ -643,7 +643,7 @@ private static final long serialVersionUID = 0L;
       return getSettingsFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettingsOrBuilder getSettingsOrBuilder() {
       if (settingsBuilder_ != null) {
@@ -654,7 +654,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings, com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings.Builder, com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettingsOrBuilder> 

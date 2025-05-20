@@ -95,7 +95,7 @@ public enum ConfigurationType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.connections.ConnectionsProto.getDescriptor().getEnumTypes().get(0);
+    return com.scalekit.grpc.scalekit.v1.connections.ConnectionsProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final ConfigurationType[] VALUES = values();

@@ -59,10 +59,6 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
   /**
-   * <pre>
-   * Name of the org to be used in display
-   * </pre>
-   *
    * <code>string display_name = 4 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The displayName.
    */
@@ -80,10 +76,6 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * Name of the org to be used in display
-   * </pre>
-   *
    * <code>string display_name = 4 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for displayName.
    */
@@ -105,10 +97,6 @@ private static final long serialVersionUID = 0L;
   public static final int REGION_CODE_FIELD_NUMBER = 5;
   private int regionCode_ = 0;
   /**
-   * <pre>
-   * Optional regioncode
-   * </pre>
-   *
    * <code>.scalekit.v1.commons.RegionCode region_code = 5 [json_name = "regionCode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enum numeric value on the wire for regionCode.
    */
@@ -116,10 +104,6 @@ private static final long serialVersionUID = 0L;
     return regionCode_;
   }
   /**
-   * <pre>
-   * Optional regioncode
-   * </pre>
-   *
    * <code>.scalekit.v1.commons.RegionCode region_code = 5 [json_name = "regionCode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The regionCode.
    */
@@ -132,10 +116,6 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object externalId_ = "";
   /**
-   * <pre>
-   * External Id is useful to store a unique identifier for a given Org that. The unique Identifier can be the id of your tenant / org in your SaaSApp
-   * </pre>
-   *
    * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the externalId field is set.
    */
@@ -144,10 +124,6 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <pre>
-   * External Id is useful to store a unique identifier for a given Org that. The unique Identifier can be the id of your tenant / org in your SaaSApp
-   * </pre>
-   *
    * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The externalId.
    */
@@ -165,10 +141,6 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * External Id is useful to store a unique identifier for a given Org that. The unique Identifier can be the id of your tenant / org in your SaaSApp
-   * </pre>
-   *
    * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for externalId.
    */
@@ -214,10 +186,6 @@ private static final long serialVersionUID = 0L;
     return internalGetMetadata().getMap().size();
   }
   /**
-   * <pre>
-   * Key value pairs extension attributes.
-   * </pre>
-   *
    * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
    */
   @java.lang.Override
@@ -235,10 +203,6 @@ private static final long serialVersionUID = 0L;
     return getMetadataMap();
   }
   /**
-   * <pre>
-   * Key value pairs extension attributes.
-   * </pre>
-   *
    * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
    */
   @java.lang.Override
@@ -246,10 +210,6 @@ private static final long serialVersionUID = 0L;
     return internalGetMetadata().getMap();
   }
   /**
-   * <pre>
-   * Key value pairs extension attributes.
-   * </pre>
-   *
    * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
    */
   @java.lang.Override
@@ -264,10 +224,6 @@ java.lang.String defaultValue) {
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <pre>
-   * Key value pairs extension attributes.
-   * </pre>
-   *
    * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
    */
   @java.lang.Override
@@ -725,10 +681,6 @@ java.lang.String defaultValue) {
 
     private java.lang.Object displayName_ = "";
     /**
-     * <pre>
-     * Name of the org to be used in display
-     * </pre>
-     *
      * <code>string display_name = 4 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The displayName.
      */
@@ -745,10 +697,6 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <pre>
-     * Name of the org to be used in display
-     * </pre>
-     *
      * <code>string display_name = 4 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for displayName.
      */
@@ -766,10 +714,6 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <pre>
-     * Name of the org to be used in display
-     * </pre>
-     *
      * <code>string display_name = 4 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -783,10 +727,6 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <pre>
-     * Name of the org to be used in display
-     * </pre>
-     *
      * <code>string display_name = 4 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
@@ -797,10 +737,6 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <pre>
-     * Name of the org to be used in display
-     * </pre>
-     *
      * <code>string display_name = 4 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -817,10 +753,6 @@ java.lang.String defaultValue) {
 
     private int regionCode_ = 0;
     /**
-     * <pre>
-     * Optional regioncode
-     * </pre>
-     *
      * <code>.scalekit.v1.commons.RegionCode region_code = 5 [json_name = "regionCode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The enum numeric value on the wire for regionCode.
      */
@@ -828,10 +760,6 @@ java.lang.String defaultValue) {
       return regionCode_;
     }
     /**
-     * <pre>
-     * Optional regioncode
-     * </pre>
-     *
      * <code>.scalekit.v1.commons.RegionCode region_code = 5 [json_name = "regionCode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The enum numeric value on the wire for regionCode to set.
      * @return This builder for chaining.
@@ -843,10 +771,6 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <pre>
-     * Optional regioncode
-     * </pre>
-     *
      * <code>.scalekit.v1.commons.RegionCode region_code = 5 [json_name = "regionCode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The regionCode.
      */
@@ -856,10 +780,6 @@ java.lang.String defaultValue) {
       return result == null ? com.scalekit.grpc.scalekit.v1.commons.RegionCode.UNRECOGNIZED : result;
     }
     /**
-     * <pre>
-     * Optional regioncode
-     * </pre>
-     *
      * <code>.scalekit.v1.commons.RegionCode region_code = 5 [json_name = "regionCode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The regionCode to set.
      * @return This builder for chaining.
@@ -874,10 +794,6 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <pre>
-     * Optional regioncode
-     * </pre>
-     *
      * <code>.scalekit.v1.commons.RegionCode region_code = 5 [json_name = "regionCode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
@@ -890,10 +806,6 @@ java.lang.String defaultValue) {
 
     private java.lang.Object externalId_ = "";
     /**
-     * <pre>
-     * External Id is useful to store a unique identifier for a given Org that. The unique Identifier can be the id of your tenant / org in your SaaSApp
-     * </pre>
-     *
      * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the externalId field is set.
      */
@@ -901,10 +813,6 @@ java.lang.String defaultValue) {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <pre>
-     * External Id is useful to store a unique identifier for a given Org that. The unique Identifier can be the id of your tenant / org in your SaaSApp
-     * </pre>
-     *
      * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The externalId.
      */
@@ -921,10 +829,6 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <pre>
-     * External Id is useful to store a unique identifier for a given Org that. The unique Identifier can be the id of your tenant / org in your SaaSApp
-     * </pre>
-     *
      * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for externalId.
      */
@@ -942,10 +846,6 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <pre>
-     * External Id is useful to store a unique identifier for a given Org that. The unique Identifier can be the id of your tenant / org in your SaaSApp
-     * </pre>
-     *
      * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The externalId to set.
      * @return This builder for chaining.
@@ -959,10 +859,6 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <pre>
-     * External Id is useful to store a unique identifier for a given Org that. The unique Identifier can be the id of your tenant / org in your SaaSApp
-     * </pre>
-     *
      * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
@@ -973,10 +869,6 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <pre>
-     * External Id is useful to store a unique identifier for a given Org that. The unique Identifier can be the id of your tenant / org in your SaaSApp
-     * </pre>
-     *
      * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for externalId to set.
      * @return This builder for chaining.
@@ -1018,10 +910,6 @@ java.lang.String defaultValue) {
       return internalGetMetadata().getMap().size();
     }
     /**
-     * <pre>
-     * Key value pairs extension attributes.
-     * </pre>
-     *
      * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
      */
     @java.lang.Override
@@ -1039,10 +927,6 @@ java.lang.String defaultValue) {
       return getMetadataMap();
     }
     /**
-     * <pre>
-     * Key value pairs extension attributes.
-     * </pre>
-     *
      * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
      */
     @java.lang.Override
@@ -1050,10 +934,6 @@ java.lang.String defaultValue) {
       return internalGetMetadata().getMap();
     }
     /**
-     * <pre>
-     * Key value pairs extension attributes.
-     * </pre>
-     *
      * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
      */
     @java.lang.Override
@@ -1068,10 +948,6 @@ java.lang.String defaultValue) {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <pre>
-     * Key value pairs extension attributes.
-     * </pre>
-     *
      * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
      */
     @java.lang.Override
@@ -1092,10 +968,6 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <pre>
-     * Key value pairs extension attributes.
-     * </pre>
-     *
      * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
      */
     public Builder removeMetadata(
@@ -1115,10 +987,6 @@ java.lang.String defaultValue) {
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
-     * <pre>
-     * Key value pairs extension attributes.
-     * </pre>
-     *
      * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
      */
     public Builder putMetadata(
@@ -1132,10 +1000,6 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <pre>
-     * Key value pairs extension attributes.
-     * </pre>
-     *
      * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
      */
     public Builder putAllMetadata(

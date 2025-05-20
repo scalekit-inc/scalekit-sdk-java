@@ -12,19 +12,17 @@ package com.scalekit.grpc.buf.validate;
  * Protobuf type {@code buf.validate.EnumRules}
  */
 public final class EnumRules extends
-    com.google.protobuf.GeneratedMessageV3.ExtendableMessage<
-      EnumRules> implements
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:buf.validate.EnumRules)
     EnumRulesOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use EnumRules.newBuilder() to construct.
-  private EnumRules(com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<com.scalekit.grpc.buf.validate.EnumRules, ?> builder) {
+  private EnumRules(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private EnumRules() {
     in_ = emptyIntList();
     notIn_ = emptyIntList();
-    example_ = emptyIntList();
   }
 
   @java.lang.Override
@@ -69,7 +67,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional int32 const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional int32 const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the const field is set.
    */
   @java.lang.Override
@@ -95,7 +93,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional int32 const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional int32 const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
    * @return The const.
    */
   @java.lang.Override
@@ -182,7 +180,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
    * @return A list containing the in.
    */
   @java.lang.Override
@@ -210,7 +208,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
    * @return The count of in.
    */
   public int getInCount() {
@@ -236,13 +234,14 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The in at the given index.
    */
   public int getIn(int index) {
     return in_.getInt(index);
   }
+  private int inMemoizedSerializedSize = -1;
 
   public static final int NOT_IN_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
@@ -268,7 +267,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
    * @return A list containing the notIn.
    */
   @java.lang.Override
@@ -296,7 +295,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
    * @return The count of notIn.
    */
   public int getNotInCount() {
@@ -322,99 +321,14 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The notIn at the given index.
    */
   public int getNotIn(int index) {
     return notIn_.getInt(index);
   }
-
-  public static final int EXAMPLE_FIELD_NUMBER = 5;
-  @SuppressWarnings("serial")
-  private com.google.protobuf.Internal.IntList example_ =
-      emptyIntList();
-  /**
-   * <pre>
-   * `example` specifies values that the field may have. These values SHOULD
-   * conform to other constraints. `example` values will not impact validation
-   * but may be used as helpful guidance on how to populate the given field.
-   *
-   * ```proto
-   * enum MyEnum {
-   *   MY_ENUM_UNSPECIFIED = 0;
-   *   MY_ENUM_VALUE1 = 1;
-   *   MY_ENUM_VALUE2 = 2;
-   * }
-   *
-   * message MyMessage {
-   *     (buf.validate.field).enum.example = 1,
-   *     (buf.validate.field).enum.example = 2
-   * }
-   * ```
-   * </pre>
-   *
-   * <code>repeated int32 example = 5 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   * @return A list containing the example.
-   */
-  @java.lang.Override
-  public java.util.List<java.lang.Integer>
-      getExampleList() {
-    return example_;
-  }
-  /**
-   * <pre>
-   * `example` specifies values that the field may have. These values SHOULD
-   * conform to other constraints. `example` values will not impact validation
-   * but may be used as helpful guidance on how to populate the given field.
-   *
-   * ```proto
-   * enum MyEnum {
-   *   MY_ENUM_UNSPECIFIED = 0;
-   *   MY_ENUM_VALUE1 = 1;
-   *   MY_ENUM_VALUE2 = 2;
-   * }
-   *
-   * message MyMessage {
-   *     (buf.validate.field).enum.example = 1,
-   *     (buf.validate.field).enum.example = 2
-   * }
-   * ```
-   * </pre>
-   *
-   * <code>repeated int32 example = 5 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   * @return The count of example.
-   */
-  public int getExampleCount() {
-    return example_.size();
-  }
-  /**
-   * <pre>
-   * `example` specifies values that the field may have. These values SHOULD
-   * conform to other constraints. `example` values will not impact validation
-   * but may be used as helpful guidance on how to populate the given field.
-   *
-   * ```proto
-   * enum MyEnum {
-   *   MY_ENUM_UNSPECIFIED = 0;
-   *   MY_ENUM_VALUE1 = 1;
-   *   MY_ENUM_VALUE2 = 2;
-   * }
-   *
-   * message MyMessage {
-   *     (buf.validate.field).enum.example = 1,
-   *     (buf.validate.field).enum.example = 2
-   * }
-   * ```
-   * </pre>
-   *
-   * <code>repeated int32 example = 5 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   * @param index The index of the element to return.
-   * @return The example at the given index.
-   */
-  public int getExample(int index) {
-    return example_.getInt(index);
-  }
+  private int notInMemoizedSerializedSize = -1;
 
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
@@ -423,10 +337,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (!extensionsAreInitialized()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -434,25 +344,27 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    com.google.protobuf.GeneratedMessageV3
-      .ExtendableMessage<com.scalekit.grpc.buf.validate.EnumRules>.ExtensionWriter
-        extensionWriter = newExtensionWriter();
+    getSerializedSize();
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(1, const_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(2, definedOnly_);
     }
+    if (getInList().size() > 0) {
+      output.writeUInt32NoTag(26);
+      output.writeUInt32NoTag(inMemoizedSerializedSize);
+    }
     for (int i = 0; i < in_.size(); i++) {
-      output.writeInt32(3, in_.getInt(i));
+      output.writeInt32NoTag(in_.getInt(i));
+    }
+    if (getNotInList().size() > 0) {
+      output.writeUInt32NoTag(34);
+      output.writeUInt32NoTag(notInMemoizedSerializedSize);
     }
     for (int i = 0; i < notIn_.size(); i++) {
-      output.writeInt32(4, notIn_.getInt(i));
+      output.writeInt32NoTag(notIn_.getInt(i));
     }
-    for (int i = 0; i < example_.size(); i++) {
-      output.writeInt32(5, example_.getInt(i));
-    }
-    extensionWriter.writeUntil(536870912, output);
     getUnknownFields().writeTo(output);
   }
 
@@ -477,7 +389,12 @@ private static final long serialVersionUID = 0L;
           .computeInt32SizeNoTag(in_.getInt(i));
       }
       size += dataSize;
-      size += 1 * getInList().size();
+      if (!getInList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      inMemoizedSerializedSize = dataSize;
     }
     {
       int dataSize = 0;
@@ -486,18 +403,13 @@ private static final long serialVersionUID = 0L;
           .computeInt32SizeNoTag(notIn_.getInt(i));
       }
       size += dataSize;
-      size += 1 * getNotInList().size();
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < example_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeInt32SizeNoTag(example_.getInt(i));
+      if (!getNotInList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
       }
-      size += dataSize;
-      size += 1 * getExampleList().size();
+      notInMemoizedSerializedSize = dataSize;
     }
-    size += extensionsSerializedSize();
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -527,11 +439,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getInList())) return false;
     if (!getNotInList()
         .equals(other.getNotInList())) return false;
-    if (!getExampleList()
-        .equals(other.getExampleList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-    if (!getExtensionFields().equals(other.getExtensionFields()))
-      return false;
     return true;
   }
 
@@ -559,11 +467,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + NOT_IN_FIELD_NUMBER;
       hash = (53 * hash) + getNotInList().hashCode();
     }
-    if (getExampleCount() > 0) {
-      hash = (37 * hash) + EXAMPLE_FIELD_NUMBER;
-      hash = (53 * hash) + getExampleList().hashCode();
-    }
-    hash = hashFields(hash, getExtensionFields());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -669,8 +572,7 @@ private static final long serialVersionUID = 0L;
    * Protobuf type {@code buf.validate.EnumRules}
    */
   public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<
-        com.scalekit.grpc.buf.validate.EnumRules, Builder> implements
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:buf.validate.EnumRules)
       com.scalekit.grpc.buf.validate.EnumRulesOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -704,7 +606,6 @@ private static final long serialVersionUID = 0L;
       definedOnly_ = false;
       in_ = emptyIntList();
       notIn_ = emptyIntList();
-      example_ = emptyIntList();
       return this;
     }
 
@@ -755,10 +656,6 @@ private static final long serialVersionUID = 0L;
         notIn_.makeImmutable();
         result.notIn_ = notIn_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        example_.makeImmutable();
-        result.example_ = example_;
-      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -793,33 +690,6 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return super.addRepeatedField(field, value);
-    }
-    @java.lang.Override
-    public <Type> Builder setExtension(
-        com.google.protobuf.GeneratedMessage.GeneratedExtension<
-            com.scalekit.grpc.buf.validate.EnumRules, Type> extension,
-        Type value) {
-      return super.setExtension(extension, value);
-    }
-    @java.lang.Override
-    public <Type> Builder setExtension(
-        com.google.protobuf.GeneratedMessage.GeneratedExtension<
-            com.scalekit.grpc.buf.validate.EnumRules, java.util.List<Type>> extension,
-        int index, Type value) {
-      return super.setExtension(extension, index, value);
-    }
-    @java.lang.Override
-    public <Type> Builder addExtension(
-        com.google.protobuf.GeneratedMessage.GeneratedExtension<
-            com.scalekit.grpc.buf.validate.EnumRules, java.util.List<Type>> extension,
-        Type value) {
-      return super.addExtension(extension, value);
-    }
-    @java.lang.Override
-    public <T> Builder clearExtension(
-        com.google.protobuf.GeneratedMessage.GeneratedExtension<
-            com.scalekit.grpc.buf.validate.EnumRules, T> extension) {
-      return super.clearExtension(extension);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -861,18 +731,6 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
-      if (!other.example_.isEmpty()) {
-        if (example_.isEmpty()) {
-          example_ = other.example_;
-          example_.makeImmutable();
-          bitField0_ |= 0x00000010;
-        } else {
-          ensureExampleIsMutable();
-          example_.addAll(other.example_);
-        }
-        onChanged();
-      }
-      this.mergeExtensionFields(other);
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -880,9 +738,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      if (!extensionsAreInitialized()) {
-        return false;
-      }
       return true;
     }
 
@@ -944,22 +799,6 @@ private static final long serialVersionUID = 0L;
               input.popLimit(limit);
               break;
             } // case 34
-            case 40: {
-              int v = input.readInt32();
-              ensureExampleIsMutable();
-              example_.addInt(v);
-              break;
-            } // case 40
-            case 42: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              ensureExampleIsMutable();
-              while (input.getBytesUntilLimit() > 0) {
-                example_.addInt(input.readInt32());
-              }
-              input.popLimit(limit);
-              break;
-            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -997,7 +836,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional int32 const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional int32 const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the const field is set.
      */
     @java.lang.Override
@@ -1023,7 +862,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional int32 const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional int32 const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      * @return The const.
      */
     @java.lang.Override
@@ -1049,7 +888,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional int32 const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional int32 const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      * @param value The const to set.
      * @return This builder for chaining.
      */
@@ -1079,7 +918,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional int32 const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional int32 const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearConst() {
@@ -1228,7 +1067,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      * @return A list containing the in.
      */
     public java.util.List<java.lang.Integer>
@@ -1256,7 +1095,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      * @return The count of in.
      */
     public int getInCount() {
@@ -1282,7 +1121,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The in at the given index.
      */
@@ -1309,7 +1148,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      * @param index The index to set the value at.
      * @param value The in to set.
      * @return This builder for chaining.
@@ -1343,7 +1182,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      * @param value The in to add.
      * @return This builder for chaining.
      */
@@ -1375,7 +1214,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      * @param values The in to add.
      * @return This builder for chaining.
      */
@@ -1408,7 +1247,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated int32 in = 3 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearIn() {
@@ -1445,7 +1284,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      * @return A list containing the notIn.
      */
     public java.util.List<java.lang.Integer>
@@ -1473,7 +1312,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      * @return The count of notIn.
      */
     public int getNotInCount() {
@@ -1499,7 +1338,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The notIn at the given index.
      */
@@ -1526,7 +1365,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      * @param index The index to set the value at.
      * @param value The notIn to set.
      * @return This builder for chaining.
@@ -1560,7 +1399,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      * @param value The notIn to add.
      * @return This builder for chaining.
      */
@@ -1592,7 +1431,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      * @param values The notIn to add.
      * @return This builder for chaining.
      */
@@ -1625,229 +1464,12 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated int32 not_in = 4 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearNotIn() {
       notIn_ = emptyIntList();
       bitField0_ = (bitField0_ & ~0x00000008);
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.Internal.IntList example_ = emptyIntList();
-    private void ensureExampleIsMutable() {
-      if (!example_.isModifiable()) {
-        example_ = makeMutableCopy(example_);
-      }
-      bitField0_ |= 0x00000010;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * enum MyEnum {
-     *   MY_ENUM_UNSPECIFIED = 0;
-     *   MY_ENUM_VALUE1 = 1;
-     *   MY_ENUM_VALUE2 = 2;
-     * }
-     *
-     * message MyMessage {
-     *     (buf.validate.field).enum.example = 1,
-     *     (buf.validate.field).enum.example = 2
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated int32 example = 5 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     * @return A list containing the example.
-     */
-    public java.util.List<java.lang.Integer>
-        getExampleList() {
-      example_.makeImmutable();
-      return example_;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * enum MyEnum {
-     *   MY_ENUM_UNSPECIFIED = 0;
-     *   MY_ENUM_VALUE1 = 1;
-     *   MY_ENUM_VALUE2 = 2;
-     * }
-     *
-     * message MyMessage {
-     *     (buf.validate.field).enum.example = 1,
-     *     (buf.validate.field).enum.example = 2
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated int32 example = 5 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     * @return The count of example.
-     */
-    public int getExampleCount() {
-      return example_.size();
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * enum MyEnum {
-     *   MY_ENUM_UNSPECIFIED = 0;
-     *   MY_ENUM_VALUE1 = 1;
-     *   MY_ENUM_VALUE2 = 2;
-     * }
-     *
-     * message MyMessage {
-     *     (buf.validate.field).enum.example = 1,
-     *     (buf.validate.field).enum.example = 2
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated int32 example = 5 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     * @param index The index of the element to return.
-     * @return The example at the given index.
-     */
-    public int getExample(int index) {
-      return example_.getInt(index);
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * enum MyEnum {
-     *   MY_ENUM_UNSPECIFIED = 0;
-     *   MY_ENUM_VALUE1 = 1;
-     *   MY_ENUM_VALUE2 = 2;
-     * }
-     *
-     * message MyMessage {
-     *     (buf.validate.field).enum.example = 1,
-     *     (buf.validate.field).enum.example = 2
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated int32 example = 5 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     * @param index The index to set the value at.
-     * @param value The example to set.
-     * @return This builder for chaining.
-     */
-    public Builder setExample(
-        int index, int value) {
-
-      ensureExampleIsMutable();
-      example_.setInt(index, value);
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * enum MyEnum {
-     *   MY_ENUM_UNSPECIFIED = 0;
-     *   MY_ENUM_VALUE1 = 1;
-     *   MY_ENUM_VALUE2 = 2;
-     * }
-     *
-     * message MyMessage {
-     *     (buf.validate.field).enum.example = 1,
-     *     (buf.validate.field).enum.example = 2
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated int32 example = 5 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     * @param value The example to add.
-     * @return This builder for chaining.
-     */
-    public Builder addExample(int value) {
-
-      ensureExampleIsMutable();
-      example_.addInt(value);
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * enum MyEnum {
-     *   MY_ENUM_UNSPECIFIED = 0;
-     *   MY_ENUM_VALUE1 = 1;
-     *   MY_ENUM_VALUE2 = 2;
-     * }
-     *
-     * message MyMessage {
-     *     (buf.validate.field).enum.example = 1,
-     *     (buf.validate.field).enum.example = 2
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated int32 example = 5 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     * @param values The example to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllExample(
-        java.lang.Iterable<? extends java.lang.Integer> values) {
-      ensureExampleIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, example_);
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * enum MyEnum {
-     *   MY_ENUM_UNSPECIFIED = 0;
-     *   MY_ENUM_VALUE1 = 1;
-     *   MY_ENUM_VALUE2 = 2;
-     * }
-     *
-     * message MyMessage {
-     *     (buf.validate.field).enum.example = 1,
-     *     (buf.validate.field).enum.example = 2
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated int32 example = 5 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearExample() {
-      example_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1877,7 +1499,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<EnumRules>
+  private static final com.google.protobuf.Parser<EnumRules>
       PARSER = new com.google.protobuf.AbstractParser<EnumRules>() {
     @java.lang.Override
     public EnumRules parsePartialFrom(

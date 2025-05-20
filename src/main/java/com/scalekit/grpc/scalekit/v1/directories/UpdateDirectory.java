@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
     directoryProvider_ = 0;
     status_ = 0;
     mappings_ = java.util.Collections.emptyList();
+    groups_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -189,6 +190,47 @@ private static final long serialVersionUID = 0L;
     return mappings_.get(index);
   }
 
+  public static final int GROUPS_FIELD_NUMBER = 15;
+  @SuppressWarnings("serial")
+  private java.util.List<com.scalekit.grpc.scalekit.v1.directories.ExternalGroup> groups_;
+  /**
+   * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.scalekit.grpc.scalekit.v1.directories.ExternalGroup> getGroupsList() {
+    return groups_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.scalekit.grpc.scalekit.v1.directories.ExternalGroupOrBuilder> 
+      getGroupsOrBuilderList() {
+    return groups_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public int getGroupsCount() {
+    return groups_.size();
+  }
+  /**
+   * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.directories.ExternalGroup getGroups(int index) {
+    return groups_.get(index);
+  }
+  /**
+   * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.directories.ExternalGroupOrBuilder getGroupsOrBuilder(
+      int index) {
+    return groups_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -220,6 +262,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < mappings_.size(); i++) {
       output.writeMessage(10, mappings_.get(i));
+    }
+    for (int i = 0; i < groups_.size(); i++) {
+      output.writeMessage(15, groups_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -253,6 +298,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, mappings_.get(i));
     }
+    for (int i = 0; i < groups_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, groups_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -277,6 +326,8 @@ private static final long serialVersionUID = 0L;
     if (status_ != other.status_) return false;
     if (!getMappingsList()
         .equals(other.getMappingsList())) return false;
+    if (!getGroupsList()
+        .equals(other.getGroupsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -302,6 +353,10 @@ private static final long serialVersionUID = 0L;
     if (getMappingsCount() > 0) {
       hash = (37 * hash) + MAPPINGS_FIELD_NUMBER;
       hash = (53 * hash) + getMappingsList().hashCode();
+    }
+    if (getGroupsCount() > 0) {
+      hash = (37 * hash) + GROUPS_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -446,6 +501,13 @@ private static final long serialVersionUID = 0L;
         mappingsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000020);
+      if (groupsBuilder_ == null) {
+        groups_ = java.util.Collections.emptyList();
+      } else {
+        groups_ = null;
+        groupsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -487,6 +549,15 @@ private static final long serialVersionUID = 0L;
         result.mappings_ = mappings_;
       } else {
         result.mappings_ = mappingsBuilder_.build();
+      }
+      if (groupsBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          groups_ = java.util.Collections.unmodifiableList(groups_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.groups_ = groups_;
+      } else {
+        result.groups_ = groupsBuilder_.build();
       }
     }
 
@@ -596,6 +667,32 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (groupsBuilder_ == null) {
+        if (!other.groups_.isEmpty()) {
+          if (groups_.isEmpty()) {
+            groups_ = other.groups_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureGroupsIsMutable();
+            groups_.addAll(other.groups_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.groups_.isEmpty()) {
+          if (groupsBuilder_.isEmpty()) {
+            groupsBuilder_.dispose();
+            groupsBuilder_ = null;
+            groups_ = other.groups_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            groupsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getGroupsFieldBuilder() : null;
+          } else {
+            groupsBuilder_.addAllMessages(other.groups_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -660,6 +757,19 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 82
+            case 122: {
+              com.scalekit.grpc.scalekit.v1.directories.ExternalGroup m =
+                  input.readMessage(
+                      com.scalekit.grpc.scalekit.v1.directories.ExternalGroup.parser(),
+                      extensionRegistry);
+              if (groupsBuilder_ == null) {
+                ensureGroupsIsMutable();
+                groups_.add(m);
+              } else {
+                groupsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 122
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1178,6 +1288,246 @@ private static final long serialVersionUID = 0L;
         mappings_ = null;
       }
       return mappingsBuilder_;
+    }
+
+    private java.util.List<com.scalekit.grpc.scalekit.v1.directories.ExternalGroup> groups_ =
+      java.util.Collections.emptyList();
+    private void ensureGroupsIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        groups_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.directories.ExternalGroup>(groups_);
+        bitField0_ |= 0x00000040;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.directories.ExternalGroup, com.scalekit.grpc.scalekit.v1.directories.ExternalGroup.Builder, com.scalekit.grpc.scalekit.v1.directories.ExternalGroupOrBuilder> groupsBuilder_;
+
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.directories.ExternalGroup> getGroupsList() {
+      if (groupsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(groups_);
+      } else {
+        return groupsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public int getGroupsCount() {
+      if (groupsBuilder_ == null) {
+        return groups_.size();
+      } else {
+        return groupsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.directories.ExternalGroup getGroups(int index) {
+      if (groupsBuilder_ == null) {
+        return groups_.get(index);
+      } else {
+        return groupsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setGroups(
+        int index, com.scalekit.grpc.scalekit.v1.directories.ExternalGroup value) {
+      if (groupsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGroupsIsMutable();
+        groups_.set(index, value);
+        onChanged();
+      } else {
+        groupsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setGroups(
+        int index, com.scalekit.grpc.scalekit.v1.directories.ExternalGroup.Builder builderForValue) {
+      if (groupsBuilder_ == null) {
+        ensureGroupsIsMutable();
+        groups_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        groupsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addGroups(com.scalekit.grpc.scalekit.v1.directories.ExternalGroup value) {
+      if (groupsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGroupsIsMutable();
+        groups_.add(value);
+        onChanged();
+      } else {
+        groupsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addGroups(
+        int index, com.scalekit.grpc.scalekit.v1.directories.ExternalGroup value) {
+      if (groupsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGroupsIsMutable();
+        groups_.add(index, value);
+        onChanged();
+      } else {
+        groupsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addGroups(
+        com.scalekit.grpc.scalekit.v1.directories.ExternalGroup.Builder builderForValue) {
+      if (groupsBuilder_ == null) {
+        ensureGroupsIsMutable();
+        groups_.add(builderForValue.build());
+        onChanged();
+      } else {
+        groupsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addGroups(
+        int index, com.scalekit.grpc.scalekit.v1.directories.ExternalGroup.Builder builderForValue) {
+      if (groupsBuilder_ == null) {
+        ensureGroupsIsMutable();
+        groups_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        groupsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addAllGroups(
+        java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.directories.ExternalGroup> values) {
+      if (groupsBuilder_ == null) {
+        ensureGroupsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, groups_);
+        onChanged();
+      } else {
+        groupsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearGroups() {
+      if (groupsBuilder_ == null) {
+        groups_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        groupsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder removeGroups(int index) {
+      if (groupsBuilder_ == null) {
+        ensureGroupsIsMutable();
+        groups_.remove(index);
+        onChanged();
+      } else {
+        groupsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.directories.ExternalGroup.Builder getGroupsBuilder(
+        int index) {
+      return getGroupsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.directories.ExternalGroupOrBuilder getGroupsOrBuilder(
+        int index) {
+      if (groupsBuilder_ == null) {
+        return groups_.get(index);  } else {
+        return groupsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<? extends com.scalekit.grpc.scalekit.v1.directories.ExternalGroupOrBuilder> 
+         getGroupsOrBuilderList() {
+      if (groupsBuilder_ != null) {
+        return groupsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(groups_);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.directories.ExternalGroup.Builder addGroupsBuilder() {
+      return getGroupsFieldBuilder().addBuilder(
+          com.scalekit.grpc.scalekit.v1.directories.ExternalGroup.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.directories.ExternalGroup.Builder addGroupsBuilder(
+        int index) {
+      return getGroupsFieldBuilder().addBuilder(
+          index, com.scalekit.grpc.scalekit.v1.directories.ExternalGroup.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.directories.ExternalGroup.Builder> 
+         getGroupsBuilderList() {
+      return getGroupsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.directories.ExternalGroup, com.scalekit.grpc.scalekit.v1.directories.ExternalGroup.Builder, com.scalekit.grpc.scalekit.v1.directories.ExternalGroupOrBuilder> 
+        getGroupsFieldBuilder() {
+      if (groupsBuilder_ == null) {
+        groupsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.directories.ExternalGroup, com.scalekit.grpc.scalekit.v1.directories.ExternalGroup.Builder, com.scalekit.grpc.scalekit.v1.directories.ExternalGroupOrBuilder>(
+                groups_,
+                ((bitField0_ & 0x00000040) != 0),
+                getParentForChildren(),
+                isClean());
+        groups_ = null;
+      }
+      return groupsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

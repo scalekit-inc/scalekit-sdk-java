@@ -58,13 +58,17 @@ public enum AuthenticationType
    */
   WORKSPACE_SESSION(80),
   /**
+   * <code>WORKSPACE_SESSION_CUSTOMER_PORTAL = 112;</code>
+   */
+  WORKSPACE_SESSION_CUSTOMER_PORTAL(112),
+  /**
    * <pre>
    * workspace_id,organization_id is in claims and UI in audience
    * </pre>
    *
-   * <code>WORKSPACE_SESSION_CUSTOMER_PORTAL = 112;</code>
+   * <code>WORKSPACE_SESSION_CUSTOMER_PORTAL_CLIENT = 116;</code>
    */
-  WORKSPACE_SESSION_CUSTOMER_PORTAL(112),
+  WORKSPACE_SESSION_CUSTOMER_PORTAL_CLIENT(116),
   /**
    * <pre>
    * user_id is in claims
@@ -157,13 +161,17 @@ public enum AuthenticationType
    */
   public static final int WORKSPACE_SESSION_VALUE = 80;
   /**
+   * <code>WORKSPACE_SESSION_CUSTOMER_PORTAL = 112;</code>
+   */
+  public static final int WORKSPACE_SESSION_CUSTOMER_PORTAL_VALUE = 112;
+  /**
    * <pre>
    * workspace_id,organization_id is in claims and UI in audience
    * </pre>
    *
-   * <code>WORKSPACE_SESSION_CUSTOMER_PORTAL = 112;</code>
+   * <code>WORKSPACE_SESSION_CUSTOMER_PORTAL_CLIENT = 116;</code>
    */
-  public static final int WORKSPACE_SESSION_CUSTOMER_PORTAL_VALUE = 112;
+  public static final int WORKSPACE_SESSION_CUSTOMER_PORTAL_CLIENT_VALUE = 116;
   /**
    * <pre>
    * user_id is in claims
@@ -237,6 +245,7 @@ public enum AuthenticationType
       case 16: return SESSION;
       case 80: return WORKSPACE_SESSION;
       case 112: return WORKSPACE_SESSION_CUSTOMER_PORTAL;
+      case 116: return WORKSPACE_SESSION_CUSTOMER_PORTAL_CLIENT;
       case 8: return USER;
       case 4: return CLIENT;
       case 20: return SESSION_CLIENT;

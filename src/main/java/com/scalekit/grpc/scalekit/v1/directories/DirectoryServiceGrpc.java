@@ -108,6 +108,37 @@ public final class DirectoryServiceGrpc {
     return getUpdateDirectoryMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.directories.AssignGroupsForDirectoryRequest,
+      com.google.protobuf.Empty> getAssignGroupsForDirectoryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AssignGroupsForDirectory",
+      requestType = com.scalekit.grpc.scalekit.v1.directories.AssignGroupsForDirectoryRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.directories.AssignGroupsForDirectoryRequest,
+      com.google.protobuf.Empty> getAssignGroupsForDirectoryMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.directories.AssignGroupsForDirectoryRequest, com.google.protobuf.Empty> getAssignGroupsForDirectoryMethod;
+    if ((getAssignGroupsForDirectoryMethod = DirectoryServiceGrpc.getAssignGroupsForDirectoryMethod) == null) {
+      synchronized (DirectoryServiceGrpc.class) {
+        if ((getAssignGroupsForDirectoryMethod = DirectoryServiceGrpc.getAssignGroupsForDirectoryMethod) == null) {
+          DirectoryServiceGrpc.getAssignGroupsForDirectoryMethod = getAssignGroupsForDirectoryMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.directories.AssignGroupsForDirectoryRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AssignGroupsForDirectory"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.directories.AssignGroupsForDirectoryRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new DirectoryServiceMethodDescriptorSupplier("AssignGroupsForDirectory"))
+              .build();
+        }
+      }
+    }
+    return getAssignGroupsForDirectoryMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.directories.AssignRolesRequest,
       com.scalekit.grpc.scalekit.v1.directories.AssignRolesResponse> getAssignRolesMethod;
 
@@ -356,6 +387,37 @@ public final class DirectoryServiceGrpc {
     return getListDirectoryGroupsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsSummaryRequest,
+      com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsResponse> getListDirectoryGroupsSummaryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDirectoryGroupsSummary",
+      requestType = com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsSummaryRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsSummaryRequest,
+      com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsResponse> getListDirectoryGroupsSummaryMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsSummaryRequest, com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsResponse> getListDirectoryGroupsSummaryMethod;
+    if ((getListDirectoryGroupsSummaryMethod = DirectoryServiceGrpc.getListDirectoryGroupsSummaryMethod) == null) {
+      synchronized (DirectoryServiceGrpc.class) {
+        if ((getListDirectoryGroupsSummaryMethod = DirectoryServiceGrpc.getListDirectoryGroupsSummaryMethod) == null) {
+          DirectoryServiceGrpc.getListDirectoryGroupsSummaryMethod = getListDirectoryGroupsSummaryMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsSummaryRequest, com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDirectoryGroupsSummary"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsSummaryRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new DirectoryServiceMethodDescriptorSupplier("ListDirectoryGroupsSummary"))
+              .build();
+        }
+      }
+    }
+    return getListDirectoryGroupsSummaryMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.directories.CreateDirectorySecretRequest,
       com.scalekit.grpc.scalekit.v1.directories.CreateDirectorySecretResponse> getCreateDirectorySecretMethod;
 
@@ -416,6 +478,37 @@ public final class DirectoryServiceGrpc {
       }
     }
     return getRegenerateDirectorySecretMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.directories.TriggerDirectorySyncRequest,
+      com.google.protobuf.Empty> getTriggerDirectorySyncMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TriggerDirectorySync",
+      requestType = com.scalekit.grpc.scalekit.v1.directories.TriggerDirectorySyncRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.directories.TriggerDirectorySyncRequest,
+      com.google.protobuf.Empty> getTriggerDirectorySyncMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.directories.TriggerDirectorySyncRequest, com.google.protobuf.Empty> getTriggerDirectorySyncMethod;
+    if ((getTriggerDirectorySyncMethod = DirectoryServiceGrpc.getTriggerDirectorySyncMethod) == null) {
+      synchronized (DirectoryServiceGrpc.class) {
+        if ((getTriggerDirectorySyncMethod = DirectoryServiceGrpc.getTriggerDirectorySyncMethod) == null) {
+          DirectoryServiceGrpc.getTriggerDirectorySyncMethod = getTriggerDirectorySyncMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.directories.TriggerDirectorySyncRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TriggerDirectorySync"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.directories.TriggerDirectorySyncRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new DirectoryServiceMethodDescriptorSupplier("TriggerDirectorySync"))
+              .build();
+        }
+      }
+    }
+    return getTriggerDirectorySyncMethod;
   }
 
   /**
@@ -489,6 +582,13 @@ public final class DirectoryServiceGrpc {
 
     /**
      */
+    default void assignGroupsForDirectory(com.scalekit.grpc.scalekit.v1.directories.AssignGroupsForDirectoryRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAssignGroupsForDirectoryMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void assignRoles(com.scalekit.grpc.scalekit.v1.directories.AssignRolesRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.directories.AssignRolesResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAssignRolesMethod(), responseObserver);
@@ -545,6 +645,13 @@ public final class DirectoryServiceGrpc {
 
     /**
      */
+    default void listDirectoryGroupsSummary(com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsSummaryRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDirectoryGroupsSummaryMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void createDirectorySecret(com.scalekit.grpc.scalekit.v1.directories.CreateDirectorySecretRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.directories.CreateDirectorySecretResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateDirectorySecretMethod(), responseObserver);
@@ -555,6 +662,13 @@ public final class DirectoryServiceGrpc {
     default void regenerateDirectorySecret(com.scalekit.grpc.scalekit.v1.directories.RegenerateDirectorySecretRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.directories.RegenerateDirectorySecretResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRegenerateDirectorySecretMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void triggerDirectorySync(com.scalekit.grpc.scalekit.v1.directories.TriggerDirectorySyncRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTriggerDirectorySyncMethod(), responseObserver);
     }
   }
 
@@ -607,6 +721,14 @@ public final class DirectoryServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.directories.UpdateDirectoryResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateDirectoryMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void assignGroupsForDirectory(com.scalekit.grpc.scalekit.v1.directories.AssignGroupsForDirectoryRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAssignGroupsForDirectoryMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -675,6 +797,14 @@ public final class DirectoryServiceGrpc {
 
     /**
      */
+    public void listDirectoryGroupsSummary(com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsSummaryRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDirectoryGroupsSummaryMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void createDirectorySecret(com.scalekit.grpc.scalekit.v1.directories.CreateDirectorySecretRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.directories.CreateDirectorySecretResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -687,6 +817,14 @@ public final class DirectoryServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.directories.RegenerateDirectorySecretResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRegenerateDirectorySecretMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void triggerDirectorySync(com.scalekit.grpc.scalekit.v1.directories.TriggerDirectorySyncRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTriggerDirectorySyncMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -725,6 +863,13 @@ public final class DirectoryServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.directories.UpdateDirectoryResponse updateDirectory(com.scalekit.grpc.scalekit.v1.directories.UpdateDirectoryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDirectoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.google.protobuf.Empty assignGroupsForDirectory(com.scalekit.grpc.scalekit.v1.directories.AssignGroupsForDirectoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAssignGroupsForDirectoryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -785,6 +930,13 @@ public final class DirectoryServiceGrpc {
 
     /**
      */
+    public com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsResponse listDirectoryGroupsSummary(com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsSummaryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDirectoryGroupsSummaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.scalekit.grpc.scalekit.v1.directories.CreateDirectorySecretResponse createDirectorySecret(com.scalekit.grpc.scalekit.v1.directories.CreateDirectorySecretRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateDirectorySecretMethod(), getCallOptions(), request);
@@ -795,6 +947,13 @@ public final class DirectoryServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.directories.RegenerateDirectorySecretResponse regenerateDirectorySecret(com.scalekit.grpc.scalekit.v1.directories.RegenerateDirectorySecretRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRegenerateDirectorySecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.google.protobuf.Empty triggerDirectorySync(com.scalekit.grpc.scalekit.v1.directories.TriggerDirectorySyncRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTriggerDirectorySyncMethod(), getCallOptions(), request);
     }
   }
 
@@ -836,6 +995,14 @@ public final class DirectoryServiceGrpc {
         com.scalekit.grpc.scalekit.v1.directories.UpdateDirectoryRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateDirectoryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> assignGroupsForDirectory(
+        com.scalekit.grpc.scalekit.v1.directories.AssignGroupsForDirectoryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAssignGroupsForDirectoryMethod(), getCallOptions()), request);
     }
 
     /**
@@ -904,6 +1071,14 @@ public final class DirectoryServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsResponse> listDirectoryGroupsSummary(
+        com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsSummaryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDirectoryGroupsSummaryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.directories.CreateDirectorySecretResponse> createDirectorySecret(
         com.scalekit.grpc.scalekit.v1.directories.CreateDirectorySecretRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -917,21 +1092,32 @@ public final class DirectoryServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRegenerateDirectorySecretMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> triggerDirectorySync(
+        com.scalekit.grpc.scalekit.v1.directories.TriggerDirectorySyncRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTriggerDirectorySyncMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_DIRECTORY = 0;
   private static final int METHODID_DELETE_DIRECTORY = 1;
   private static final int METHODID_UPDATE_DIRECTORY = 2;
-  private static final int METHODID_ASSIGN_ROLES = 3;
-  private static final int METHODID_UPDATE_ATTRIBUTES = 4;
-  private static final int METHODID_GET_DIRECTORY = 5;
-  private static final int METHODID_LIST_DIRECTORIES = 6;
-  private static final int METHODID_ENABLE_DIRECTORY = 7;
-  private static final int METHODID_DISABLE_DIRECTORY = 8;
-  private static final int METHODID_LIST_DIRECTORY_USERS = 9;
-  private static final int METHODID_LIST_DIRECTORY_GROUPS = 10;
-  private static final int METHODID_CREATE_DIRECTORY_SECRET = 11;
-  private static final int METHODID_REGENERATE_DIRECTORY_SECRET = 12;
+  private static final int METHODID_ASSIGN_GROUPS_FOR_DIRECTORY = 3;
+  private static final int METHODID_ASSIGN_ROLES = 4;
+  private static final int METHODID_UPDATE_ATTRIBUTES = 5;
+  private static final int METHODID_GET_DIRECTORY = 6;
+  private static final int METHODID_LIST_DIRECTORIES = 7;
+  private static final int METHODID_ENABLE_DIRECTORY = 8;
+  private static final int METHODID_DISABLE_DIRECTORY = 9;
+  private static final int METHODID_LIST_DIRECTORY_USERS = 10;
+  private static final int METHODID_LIST_DIRECTORY_GROUPS = 11;
+  private static final int METHODID_LIST_DIRECTORY_GROUPS_SUMMARY = 12;
+  private static final int METHODID_CREATE_DIRECTORY_SECRET = 13;
+  private static final int METHODID_REGENERATE_DIRECTORY_SECRET = 14;
+  private static final int METHODID_TRIGGER_DIRECTORY_SYNC = 15;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -961,6 +1147,10 @@ public final class DirectoryServiceGrpc {
         case METHODID_UPDATE_DIRECTORY:
           serviceImpl.updateDirectory((com.scalekit.grpc.scalekit.v1.directories.UpdateDirectoryRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.directories.UpdateDirectoryResponse>) responseObserver);
+          break;
+        case METHODID_ASSIGN_GROUPS_FOR_DIRECTORY:
+          serviceImpl.assignGroupsForDirectory((com.scalekit.grpc.scalekit.v1.directories.AssignGroupsForDirectoryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_ASSIGN_ROLES:
           serviceImpl.assignRoles((com.scalekit.grpc.scalekit.v1.directories.AssignRolesRequest) request,
@@ -994,6 +1184,10 @@ public final class DirectoryServiceGrpc {
           serviceImpl.listDirectoryGroups((com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsResponse>) responseObserver);
           break;
+        case METHODID_LIST_DIRECTORY_GROUPS_SUMMARY:
+          serviceImpl.listDirectoryGroupsSummary((com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsSummaryRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsResponse>) responseObserver);
+          break;
         case METHODID_CREATE_DIRECTORY_SECRET:
           serviceImpl.createDirectorySecret((com.scalekit.grpc.scalekit.v1.directories.CreateDirectorySecretRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.directories.CreateDirectorySecretResponse>) responseObserver);
@@ -1001,6 +1195,10 @@ public final class DirectoryServiceGrpc {
         case METHODID_REGENERATE_DIRECTORY_SECRET:
           serviceImpl.regenerateDirectorySecret((com.scalekit.grpc.scalekit.v1.directories.RegenerateDirectorySecretRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.directories.RegenerateDirectorySecretResponse>) responseObserver);
+          break;
+        case METHODID_TRIGGER_DIRECTORY_SYNC:
+          serviceImpl.triggerDirectorySync((com.scalekit.grpc.scalekit.v1.directories.TriggerDirectorySyncRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1041,6 +1239,13 @@ public final class DirectoryServiceGrpc {
               com.scalekit.grpc.scalekit.v1.directories.UpdateDirectoryRequest,
               com.scalekit.grpc.scalekit.v1.directories.UpdateDirectoryResponse>(
                 service, METHODID_UPDATE_DIRECTORY)))
+        .addMethod(
+          getAssignGroupsForDirectoryMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.directories.AssignGroupsForDirectoryRequest,
+              com.google.protobuf.Empty>(
+                service, METHODID_ASSIGN_GROUPS_FOR_DIRECTORY)))
         .addMethod(
           getAssignRolesMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1098,6 +1303,13 @@ public final class DirectoryServiceGrpc {
               com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsResponse>(
                 service, METHODID_LIST_DIRECTORY_GROUPS)))
         .addMethod(
+          getListDirectoryGroupsSummaryMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsSummaryRequest,
+              com.scalekit.grpc.scalekit.v1.directories.ListDirectoryGroupsResponse>(
+                service, METHODID_LIST_DIRECTORY_GROUPS_SUMMARY)))
+        .addMethod(
           getCreateDirectorySecretMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -1111,6 +1323,13 @@ public final class DirectoryServiceGrpc {
               com.scalekit.grpc.scalekit.v1.directories.RegenerateDirectorySecretRequest,
               com.scalekit.grpc.scalekit.v1.directories.RegenerateDirectorySecretResponse>(
                 service, METHODID_REGENERATE_DIRECTORY_SECRET)))
+        .addMethod(
+          getTriggerDirectorySyncMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.directories.TriggerDirectorySyncRequest,
+              com.google.protobuf.Empty>(
+                service, METHODID_TRIGGER_DIRECTORY_SYNC)))
         .build();
   }
 
@@ -1162,6 +1381,7 @@ public final class DirectoryServiceGrpc {
               .addMethod(getCreateDirectoryMethod())
               .addMethod(getDeleteDirectoryMethod())
               .addMethod(getUpdateDirectoryMethod())
+              .addMethod(getAssignGroupsForDirectoryMethod())
               .addMethod(getAssignRolesMethod())
               .addMethod(getUpdateAttributesMethod())
               .addMethod(getGetDirectoryMethod())
@@ -1170,8 +1390,10 @@ public final class DirectoryServiceGrpc {
               .addMethod(getDisableDirectoryMethod())
               .addMethod(getListDirectoryUsersMethod())
               .addMethod(getListDirectoryGroupsMethod())
+              .addMethod(getListDirectoryGroupsSummaryMethod())
               .addMethod(getCreateDirectorySecretMethod())
               .addMethod(getRegenerateDirectorySecretMethod())
+              .addMethod(getTriggerDirectorySyncMethod())
               .build();
         }
       }

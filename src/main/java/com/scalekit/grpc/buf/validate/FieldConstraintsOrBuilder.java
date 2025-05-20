@@ -138,32 +138,7 @@ public interface FieldConstraintsOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>optional bool required = 25 [json_name = "required"];</code>
-   * @return Whether the required field is set.
-   */
-  boolean hasRequired();
-  /**
-   * <pre>
-   * If `required` is true, the field must be populated. A populated field can be
-   * described as "serialized in the wire format," which includes:
-   *
-   * - the following "nullable" fields must be explicitly set to be considered populated:
-   *   - singular message fields (whose fields may be unpopulated/default values)
-   *   - member fields of a oneof (may be their default value)
-   *   - proto3 optional fields (may be their default value)
-   *   - proto2 scalar fields (both optional and required)
-   * - proto3 scalar fields must be non-zero to be considered populated
-   * - repeated and map fields must be non-empty to be considered populated
-   *
-   * ```proto
-   * message MyMessage {
-   *   // The field `value` must be set to a non-null value.
-   *   optional MyOtherMessage value = 1 [(buf.validate.field).required = true];
-   * }
-   * ```
-   * </pre>
-   *
-   * <code>optional bool required = 25 [json_name = "required"];</code>
+   * <code>bool required = 25 [json_name = "required"];</code>
    * @return The required.
    */
   boolean getRequired();
@@ -185,10 +160,10 @@ public interface FieldConstraintsOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>optional .buf.validate.Ignore ignore = 27 [json_name = "ignore"];</code>
-   * @return Whether the ignore field is set.
+   * <code>.buf.validate.Ignore ignore = 27 [json_name = "ignore"];</code>
+   * @return The enum numeric value on the wire for ignore.
    */
-  boolean hasIgnore();
+  int getIgnoreValue();
   /**
    * <pre>
    * Skip validation on the field if its value matches the specified criteria.
@@ -206,7 +181,7 @@ public interface FieldConstraintsOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>optional .buf.validate.Ignore ignore = 27 [json_name = "ignore"];</code>
+   * <code>.buf.validate.Ignore ignore = 27 [json_name = "ignore"];</code>
    * @return The ignore.
    */
   com.scalekit.grpc.buf.validate.Ignore getIgnore();
@@ -561,6 +536,30 @@ public interface FieldConstraintsOrBuilder extends
    * <code>.buf.validate.TimestampRules timestamp = 22 [json_name = "timestamp"];</code>
    */
   com.scalekit.grpc.buf.validate.TimestampRulesOrBuilder getTimestampOrBuilder();
+
+  /**
+   * <pre>
+   * DEPRECATED: use ignore=IGNORE_ALWAYS instead. TODO: remove this field pre-v1.
+   * </pre>
+   *
+   * <code>bool skipped = 24 [json_name = "skipped", deprecated = true];</code>
+   * @deprecated buf.validate.FieldConstraints.skipped is deprecated.
+   *     See buf/validate/validate.proto;l=196
+   * @return The skipped.
+   */
+  @java.lang.Deprecated boolean getSkipped();
+
+  /**
+   * <pre>
+   * DEPRECATED: use ignore=IGNORE_IF_UNPOPULATED instead. TODO: remove this field pre-v1.
+   * </pre>
+   *
+   * <code>bool ignore_empty = 26 [json_name = "ignoreEmpty", deprecated = true];</code>
+   * @deprecated buf.validate.FieldConstraints.ignore_empty is deprecated.
+   *     See buf/validate/validate.proto;l=198
+   * @return The ignoreEmpty.
+   */
+  @java.lang.Deprecated boolean getIgnoreEmpty();
 
   com.scalekit.grpc.buf.validate.FieldConstraints.TypeCase getTypeCase();
 }

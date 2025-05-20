@@ -82,4 +82,41 @@ public interface ListConnectionOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUiButtonTitleBytes();
+
+  /**
+   * <code>repeated string domains = 8 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the domains.
+   */
+  java.util.List<java.lang.String>
+      getDomainsList();
+  /**
+   * <code>repeated string domains = 8 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of domains.
+   */
+  int getDomainsCount();
+  /**
+   * <code>repeated string domains = 8 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The domains at the given index.
+   */
+  java.lang.String getDomains(int index);
+  /**
+   * <code>repeated string domains = 8 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the domains at the given index.
+   */
+  com.google.protobuf.ByteString
+      getDomainsBytes(int index);
+
+  /**
+   * <code>string OrganizationName = 9 [json_name = "OrganizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The organizationName.
+   */
+  java.lang.String getOrganizationName();
+  /**
+   * <code>string OrganizationName = 9 [json_name = "OrganizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for organizationName.
+   */
+  com.google.protobuf.ByteString
+      getOrganizationNameBytes();
 }

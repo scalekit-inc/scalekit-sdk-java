@@ -75,4 +75,15 @@ public interface ListDirectoryGroupsRequestOrBuilder extends
    * @return The includeDetail.
    */
   boolean getIncludeDetail();
+
+  /**
+   * <code>optional bool include_external_groups = 7 [json_name = "includeExternalGroups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the includeExternalGroups field is set.
+   */
+  boolean hasIncludeExternalGroups();
+  /**
+   * <code>optional bool include_external_groups = 7 [json_name = "includeExternalGroups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The includeExternalGroups.
+   */
+  boolean getIncludeExternalGroups();
 }

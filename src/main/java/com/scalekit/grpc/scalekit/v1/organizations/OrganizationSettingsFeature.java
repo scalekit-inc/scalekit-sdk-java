@@ -44,7 +44,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
   /**
-   * <code>string name = 1 [json_name = "name"];</code>
+   * <code>string name = 1 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The name.
    */
   @java.lang.Override
@@ -61,7 +61,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string name = 1 [json_name = "name"];</code>
+   * <code>string name = 1 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -82,7 +82,7 @@ private static final long serialVersionUID = 0L;
   public static final int ENABLED_FIELD_NUMBER = 2;
   private boolean enabled_ = false;
   /**
-   * <code>bool enabled = 2 [json_name = "enabled"];</code>
+   * <code>bool enabled = 2 [json_name = "enabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enabled.
    */
   @java.lang.Override
@@ -442,7 +442,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
+     * <code>string name = 1 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -458,7 +458,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
+     * <code>string name = 1 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -475,7 +475,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
+     * <code>string name = 1 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -488,7 +488,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
+     * <code>string name = 1 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -498,7 +498,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 1 [json_name = "name"];</code>
+     * <code>string name = 1 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -514,7 +514,7 @@ private static final long serialVersionUID = 0L;
 
     private boolean enabled_ ;
     /**
-     * <code>bool enabled = 2 [json_name = "enabled"];</code>
+     * <code>bool enabled = 2 [json_name = "enabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The enabled.
      */
     @java.lang.Override
@@ -522,7 +522,7 @@ private static final long serialVersionUID = 0L;
       return enabled_;
     }
     /**
-     * <code>bool enabled = 2 [json_name = "enabled"];</code>
+     * <code>bool enabled = 2 [json_name = "enabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
@@ -534,7 +534,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool enabled = 2 [json_name = "enabled"];</code>
+     * <code>bool enabled = 2 [json_name = "enabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {

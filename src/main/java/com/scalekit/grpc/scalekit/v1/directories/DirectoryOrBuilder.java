@@ -179,4 +179,40 @@ public interface DirectoryOrBuilder extends
    * <code>.scalekit.v1.directories.AttributeMappings attribute_mappings = 14 [json_name = "attributeMappings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.directories.AttributeMappingsOrBuilder getAttributeMappingsOrBuilder();
+
+  /**
+   * <code>string status = 15 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The status.
+   */
+  java.lang.String getStatus();
+  /**
+   * <code>string status = 15 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for status.
+   */
+  com.google.protobuf.ByteString
+      getStatusBytes();
+
+  /**
+   * <code>string email = 16 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The email.
+   */
+  java.lang.String getEmail();
+  /**
+   * <code>string email = 16 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for email.
+   */
+  com.google.protobuf.ByteString
+      getEmailBytes();
+
+  /**
+   * <code>string groups_tracked = 17 [json_name = "groupsTracked", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The groupsTracked.
+   */
+  java.lang.String getGroupsTracked();
+  /**
+   * <code>string groups_tracked = 17 [json_name = "groupsTracked", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for groupsTracked.
+   */
+  com.google.protobuf.ByteString
+      getGroupsTrackedBytes();
 }
