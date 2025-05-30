@@ -23,6 +23,8 @@ public class Constants {
 
     public static final String KEYS_ENDPOINT = "/keys";
 
+    public static final String LOGOUT_ENDPOINT = "end-session";
+
 
     public static final Metadata.Key<String> AUTHORIZATION_METADATA_KEY = Metadata.Key.of("Authorization", ASCII_STRING_MARSHALLER);
 
