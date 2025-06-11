@@ -17,7 +17,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DeleteUserRequest() {
-    organizationId_ = "";
   }
 
   @java.lang.Override
@@ -46,9 +45,8 @@ private static final long serialVersionUID = 0L;
   public enum IdentitiesCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    ID(2),
-    EXTERNAL_ID(3),
-    IDENTITY(4),
+    ID(1),
+    EXTERNAL_ID(2),
     IDENTITIES_NOT_SET(0);
     private final int value;
     private IdentitiesCase(int value) {
@@ -66,9 +64,8 @@ private static final long serialVersionUID = 0L;
 
     public static IdentitiesCase forNumber(int value) {
       switch (value) {
-        case 2: return ID;
-        case 3: return EXTERNAL_ID;
-        case 4: return IDENTITY;
+        case 1: return ID;
+        case 2: return EXTERNAL_ID;
         case 0: return IDENTITIES_NOT_SET;
         default: return null;
       }
@@ -84,60 +81,21 @@ private static final long serialVersionUID = 0L;
         identitiesCase_);
   }
 
-  public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object organizationId_ = "";
+  public static final int ID_FIELD_NUMBER = 1;
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The organizationId.
-   */
-  @java.lang.Override
-  public java.lang.String getOrganizationId() {
-    java.lang.Object ref = organizationId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      organizationId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for organizationId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getOrganizationIdBytes() {
-    java.lang.Object ref = organizationId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      organizationId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int ID_FIELD_NUMBER = 2;
-  /**
-   * <code>string id = 2 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the id field is set.
    */
   public boolean hasId() {
-    return identitiesCase_ == 2;
+    return identitiesCase_ == 1;
   }
   /**
-   * <code>string id = 2 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = "";
-    if (identitiesCase_ == 2) {
+    if (identitiesCase_ == 1) {
       ref = identities_;
     }
     if (ref instanceof java.lang.String) {
@@ -146,19 +104,71 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (identitiesCase_ == 2) {
+      if (identitiesCase_ == 1) {
         identities_ = s;
       }
       return s;
     }
   }
   /**
-   * <code>string id = 2 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = "";
+    if (identitiesCase_ == 1) {
+      ref = identities_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (identitiesCase_ == 1) {
+        identities_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EXTERNAL_ID_FIELD_NUMBER = 2;
+  /**
+   * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the externalId field is set.
+   */
+  public boolean hasExternalId() {
+    return identitiesCase_ == 2;
+  }
+  /**
+   * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The externalId.
+   */
+  public java.lang.String getExternalId() {
+    java.lang.Object ref = "";
+    if (identitiesCase_ == 2) {
+      ref = identities_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (identitiesCase_ == 2) {
+        identities_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for externalId.
+   */
+  public com.google.protobuf.ByteString
+      getExternalIdBytes() {
+    java.lang.Object ref = "";
     if (identitiesCase_ == 2) {
       ref = identities_;
     }
@@ -167,110 +177,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       if (identitiesCase_ == 2) {
-        identities_ = b;
-      }
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int EXTERNAL_ID_FIELD_NUMBER = 3;
-  /**
-   * <code>string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the externalId field is set.
-   */
-  public boolean hasExternalId() {
-    return identitiesCase_ == 3;
-  }
-  /**
-   * <code>string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The externalId.
-   */
-  public java.lang.String getExternalId() {
-    java.lang.Object ref = "";
-    if (identitiesCase_ == 3) {
-      ref = identities_;
-    }
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      if (identitiesCase_ == 3) {
-        identities_ = s;
-      }
-      return s;
-    }
-  }
-  /**
-   * <code>string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for externalId.
-   */
-  public com.google.protobuf.ByteString
-      getExternalIdBytes() {
-    java.lang.Object ref = "";
-    if (identitiesCase_ == 3) {
-      ref = identities_;
-    }
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      if (identitiesCase_ == 3) {
-        identities_ = b;
-      }
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int IDENTITY_FIELD_NUMBER = 4;
-  /**
-   * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the identity field is set.
-   */
-  public boolean hasIdentity() {
-    return identitiesCase_ == 4;
-  }
-  /**
-   * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The identity.
-   */
-  public java.lang.String getIdentity() {
-    java.lang.Object ref = "";
-    if (identitiesCase_ == 4) {
-      ref = identities_;
-    }
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      if (identitiesCase_ == 4) {
-        identities_ = s;
-      }
-      return s;
-    }
-  }
-  /**
-   * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for identity.
-   */
-  public com.google.protobuf.ByteString
-      getIdentityBytes() {
-    java.lang.Object ref = "";
-    if (identitiesCase_ == 4) {
-      ref = identities_;
-    }
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      if (identitiesCase_ == 4) {
         identities_ = b;
       }
       return b;
@@ -293,17 +199,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
+    if (identitiesCase_ == 1) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, identities_);
     }
     if (identitiesCase_ == 2) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, identities_);
-    }
-    if (identitiesCase_ == 3) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, identities_);
-    }
-    if (identitiesCase_ == 4) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, identities_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -314,17 +214,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
+    if (identitiesCase_ == 1) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, identities_);
     }
     if (identitiesCase_ == 2) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, identities_);
-    }
-    if (identitiesCase_ == 3) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, identities_);
-    }
-    if (identitiesCase_ == 4) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, identities_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -341,21 +235,15 @@ private static final long serialVersionUID = 0L;
     }
     com.scalekit.grpc.scalekit.v1.users.DeleteUserRequest other = (com.scalekit.grpc.scalekit.v1.users.DeleteUserRequest) obj;
 
-    if (!getOrganizationId()
-        .equals(other.getOrganizationId())) return false;
     if (!getIdentitiesCase().equals(other.getIdentitiesCase())) return false;
     switch (identitiesCase_) {
-      case 2:
+      case 1:
         if (!getId()
             .equals(other.getId())) return false;
         break;
-      case 3:
+      case 2:
         if (!getExternalId()
             .equals(other.getExternalId())) return false;
-        break;
-      case 4:
-        if (!getIdentity()
-            .equals(other.getIdentity())) return false;
         break;
       case 0:
       default:
@@ -371,20 +259,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getOrganizationId().hashCode();
     switch (identitiesCase_) {
-      case 2:
+      case 1:
         hash = (37 * hash) + ID_FIELD_NUMBER;
         hash = (53 * hash) + getId().hashCode();
         break;
-      case 3:
+      case 2:
         hash = (37 * hash) + EXTERNAL_ID_FIELD_NUMBER;
         hash = (53 * hash) + getExternalId().hashCode();
-        break;
-      case 4:
-        hash = (37 * hash) + IDENTITY_FIELD_NUMBER;
-        hash = (53 * hash) + getIdentity().hashCode();
         break;
       case 0:
       default:
@@ -520,7 +402,6 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      organizationId_ = "";
       identitiesCase_ = 0;
       identities_ = null;
       return this;
@@ -557,9 +438,6 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.users.DeleteUserRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.organizationId_ = organizationId_;
-      }
     }
 
     private void buildPartialOneofs(com.scalekit.grpc.scalekit.v1.users.DeleteUserRequest result) {
@@ -611,26 +489,15 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.users.DeleteUserRequest other) {
       if (other == com.scalekit.grpc.scalekit.v1.users.DeleteUserRequest.getDefaultInstance()) return this;
-      if (!other.getOrganizationId().isEmpty()) {
-        organizationId_ = other.organizationId_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
       switch (other.getIdentitiesCase()) {
         case ID: {
-          identitiesCase_ = 2;
+          identitiesCase_ = 1;
           identities_ = other.identities_;
           onChanged();
           break;
         }
         case EXTERNAL_ID: {
-          identitiesCase_ = 3;
-          identities_ = other.identities_;
-          onChanged();
-          break;
-        }
-        case IDENTITY: {
-          identitiesCase_ = 4;
+          identitiesCase_ = 2;
           identities_ = other.identities_;
           onChanged();
           break;
@@ -666,8 +533,9 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              organizationId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
+              java.lang.String s = input.readStringRequireUtf8();
+              identitiesCase_ = 1;
+              identities_ = s;
               break;
             } // case 10
             case 18: {
@@ -676,18 +544,6 @@ private static final long serialVersionUID = 0L;
               identities_ = s;
               break;
             } // case 18
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-              identitiesCase_ = 3;
-              identities_ = s;
-              break;
-            } // case 26
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-              identitiesCase_ = 4;
-              identities_ = s;
-              break;
-            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -720,101 +576,29 @@ private static final long serialVersionUID = 0L;
 
     private int bitField0_;
 
-    private java.lang.Object organizationId_ = "";
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The organizationId.
-     */
-    public java.lang.String getOrganizationId() {
-      java.lang.Object ref = organizationId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        organizationId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for organizationId.
-     */
-    public com.google.protobuf.ByteString
-        getOrganizationIdBytes() {
-      java.lang.Object ref = organizationId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        organizationId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The organizationId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOrganizationId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      organizationId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearOrganizationId() {
-      organizationId_ = getDefaultInstance().getOrganizationId();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for organizationId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOrganizationIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      organizationId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
-    /**
-     * <code>string id = 2 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the id field is set.
      */
     @java.lang.Override
     public boolean hasId() {
-      return identitiesCase_ == 2;
+      return identitiesCase_ == 1;
     }
     /**
-     * <code>string id = 2 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The id.
      */
     @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = "";
-      if (identitiesCase_ == 2) {
+      if (identitiesCase_ == 1) {
         ref = identities_;
       }
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (identitiesCase_ == 2) {
+        if (identitiesCase_ == 1) {
           identities_ = s;
         }
         return s;
@@ -823,21 +607,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string id = 2 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for id.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = "";
-      if (identitiesCase_ == 2) {
+      if (identitiesCase_ == 1) {
         ref = identities_;
       }
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        if (identitiesCase_ == 2) {
+        if (identitiesCase_ == 1) {
           identities_ = b;
         }
         return b;
@@ -846,24 +630,24 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string id = 2 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      identitiesCase_ = 2;
+      identitiesCase_ = 1;
       identities_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string id = 2 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      if (identitiesCase_ == 2) {
+      if (identitiesCase_ == 1) {
         identitiesCase_ = 0;
         identities_ = null;
         onChanged();
@@ -871,7 +655,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string id = 2 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
@@ -879,35 +663,35 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      identitiesCase_ = 2;
+      identitiesCase_ = 1;
       identities_ = value;
       onChanged();
       return this;
     }
 
     /**
-     * <code>string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the externalId field is set.
      */
     @java.lang.Override
     public boolean hasExternalId() {
-      return identitiesCase_ == 3;
+      return identitiesCase_ == 2;
     }
     /**
-     * <code>string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The externalId.
      */
     @java.lang.Override
     public java.lang.String getExternalId() {
       java.lang.Object ref = "";
-      if (identitiesCase_ == 3) {
+      if (identitiesCase_ == 2) {
         ref = identities_;
       }
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (identitiesCase_ == 3) {
+        if (identitiesCase_ == 2) {
           identities_ = s;
         }
         return s;
@@ -916,21 +700,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for externalId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
         getExternalIdBytes() {
       java.lang.Object ref = "";
-      if (identitiesCase_ == 3) {
+      if (identitiesCase_ == 2) {
         ref = identities_;
       }
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        if (identitiesCase_ == 3) {
+        if (identitiesCase_ == 2) {
           identities_ = b;
         }
         return b;
@@ -939,24 +723,24 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The externalId to set.
      * @return This builder for chaining.
      */
     public Builder setExternalId(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      identitiesCase_ = 3;
+      identitiesCase_ = 2;
       identities_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearExternalId() {
-      if (identitiesCase_ == 3) {
+      if (identitiesCase_ == 2) {
         identitiesCase_ = 0;
         identities_ = null;
         onChanged();
@@ -964,7 +748,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for externalId to set.
      * @return This builder for chaining.
      */
@@ -972,100 +756,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      identitiesCase_ = 3;
-      identities_ = value;
-      onChanged();
-      return this;
-    }
-
-    /**
-     * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the identity field is set.
-     */
-    @java.lang.Override
-    public boolean hasIdentity() {
-      return identitiesCase_ == 4;
-    }
-    /**
-     * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The identity.
-     */
-    @java.lang.Override
-    public java.lang.String getIdentity() {
-      java.lang.Object ref = "";
-      if (identitiesCase_ == 4) {
-        ref = identities_;
-      }
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (identitiesCase_ == 4) {
-          identities_ = s;
-        }
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for identity.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIdentityBytes() {
-      java.lang.Object ref = "";
-      if (identitiesCase_ == 4) {
-        ref = identities_;
-      }
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        if (identitiesCase_ == 4) {
-          identities_ = b;
-        }
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The identity to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdentity(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      identitiesCase_ = 4;
-      identities_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearIdentity() {
-      if (identitiesCase_ == 4) {
-        identitiesCase_ = 0;
-        identities_ = null;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for identity to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdentityBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      identitiesCase_ = 4;
+      identitiesCase_ = 2;
       identities_ = value;
       onChanged();
       return this;

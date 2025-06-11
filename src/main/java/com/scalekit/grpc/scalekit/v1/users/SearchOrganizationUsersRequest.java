@@ -5,19 +5,20 @@
 package com.scalekit.grpc.scalekit.v1.users;
 
 /**
- * Protobuf type {@code scalekit.v1.users.ListUserRequest}
+ * Protobuf type {@code scalekit.v1.users.SearchOrganizationUsersRequest}
  */
-public final class ListUserRequest extends
+public final class SearchOrganizationUsersRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:scalekit.v1.users.ListUserRequest)
-    ListUserRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:scalekit.v1.users.SearchOrganizationUsersRequest)
+    SearchOrganizationUsersRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ListUserRequest.newBuilder() to construct.
-  private ListUserRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SearchOrganizationUsersRequest.newBuilder() to construct.
+  private SearchOrganizationUsersRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ListUserRequest() {
+  private SearchOrganizationUsersRequest() {
     organizationId_ = "";
+    query_ = "";
     pageToken_ = "";
   }
 
@@ -25,20 +26,20 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ListUserRequest();
+    return new SearchOrganizationUsersRequest();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_ListUserRequest_descriptor;
+    return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_SearchOrganizationUsersRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_ListUserRequest_fieldAccessorTable
+    return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_SearchOrganizationUsersRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.scalekit.grpc.scalekit.v1.users.ListUserRequest.class, com.scalekit.grpc.scalekit.v1.users.ListUserRequest.Builder.class);
+            com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest.class, com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest.Builder.class);
   }
 
   public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
@@ -80,10 +81,49 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PAGE_SIZE_FIELD_NUMBER = 2;
+  public static final int QUERY_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object query_ = "";
+  /**
+   * <code>string query = 2 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The query.
+   */
+  @java.lang.Override
+  public java.lang.String getQuery() {
+    java.lang.Object ref = query_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      query_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string query = 2 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for query.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getQueryBytes() {
+    java.lang.Object ref = query_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      query_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
   /**
-   * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>uint32 page_size = 3 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageSize.
    */
   @java.lang.Override
@@ -91,11 +131,11 @@ private static final long serialVersionUID = 0L;
     return pageSize_;
   }
 
-  public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
+  public static final int PAGE_TOKEN_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
   /**
-   * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string page_token = 4 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageToken.
    */
   @java.lang.Override
@@ -112,7 +152,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string page_token = 4 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for pageToken.
    */
   @java.lang.Override
@@ -147,11 +187,14 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, query_);
+    }
     if (pageSize_ != 0) {
-      output.writeUInt32(2, pageSize_);
+      output.writeUInt32(3, pageSize_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pageToken_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -165,12 +208,15 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, query_);
+    }
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, pageSize_);
+        .computeUInt32Size(3, pageSize_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pageToken_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -182,13 +228,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.scalekit.grpc.scalekit.v1.users.ListUserRequest)) {
+    if (!(obj instanceof com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest)) {
       return super.equals(obj);
     }
-    com.scalekit.grpc.scalekit.v1.users.ListUserRequest other = (com.scalekit.grpc.scalekit.v1.users.ListUserRequest) obj;
+    com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest other = (com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest) obj;
 
     if (!getOrganizationId()
         .equals(other.getOrganizationId())) return false;
+    if (!getQuery()
+        .equals(other.getQuery())) return false;
     if (getPageSize()
         != other.getPageSize()) return false;
     if (!getPageToken()
@@ -206,6 +254,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getOrganizationId().hashCode();
+    hash = (37 * hash) + QUERY_FIELD_NUMBER;
+    hash = (53 * hash) + getQuery().hashCode();
     hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
@@ -215,44 +265,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserRequest parseFrom(byte[] data)
+  public static com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserRequest parseFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -260,26 +310,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserRequest parseDelimitedFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -292,7 +342,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.scalekit.grpc.scalekit.v1.users.ListUserRequest prototype) {
+  public static Builder newBuilder(com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -308,26 +358,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code scalekit.v1.users.ListUserRequest}
+   * Protobuf type {@code scalekit.v1.users.SearchOrganizationUsersRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:scalekit.v1.users.ListUserRequest)
-      com.scalekit.grpc.scalekit.v1.users.ListUserRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:scalekit.v1.users.SearchOrganizationUsersRequest)
+      com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_ListUserRequest_descriptor;
+      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_SearchOrganizationUsersRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_ListUserRequest_fieldAccessorTable
+      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_SearchOrganizationUsersRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.scalekit.grpc.scalekit.v1.users.ListUserRequest.class, com.scalekit.grpc.scalekit.v1.users.ListUserRequest.Builder.class);
+              com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest.class, com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest.Builder.class);
     }
 
-    // Construct using com.scalekit.grpc.scalekit.v1.users.ListUserRequest.newBuilder()
+    // Construct using com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest.newBuilder()
     private Builder() {
 
     }
@@ -342,6 +392,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       organizationId_ = "";
+      query_ = "";
       pageSize_ = 0;
       pageToken_ = "";
       return this;
@@ -350,17 +401,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_ListUserRequest_descriptor;
+      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_SearchOrganizationUsersRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.users.ListUserRequest getDefaultInstanceForType() {
-      return com.scalekit.grpc.scalekit.v1.users.ListUserRequest.getDefaultInstance();
+    public com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest getDefaultInstanceForType() {
+      return com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.users.ListUserRequest build() {
-      com.scalekit.grpc.scalekit.v1.users.ListUserRequest result = buildPartial();
+    public com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest build() {
+      com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -368,22 +419,25 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.users.ListUserRequest buildPartial() {
-      com.scalekit.grpc.scalekit.v1.users.ListUserRequest result = new com.scalekit.grpc.scalekit.v1.users.ListUserRequest(this);
+    public com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest buildPartial() {
+      com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest result = new com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.scalekit.grpc.scalekit.v1.users.ListUserRequest result) {
+    private void buildPartial0(com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.organizationId_ = organizationId_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.pageSize_ = pageSize_;
+        result.query_ = query_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.pageToken_ = pageToken_;
       }
     }
@@ -422,19 +476,24 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.scalekit.grpc.scalekit.v1.users.ListUserRequest) {
-        return mergeFrom((com.scalekit.grpc.scalekit.v1.users.ListUserRequest)other);
+      if (other instanceof com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest) {
+        return mergeFrom((com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.users.ListUserRequest other) {
-      if (other == com.scalekit.grpc.scalekit.v1.users.ListUserRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest other) {
+      if (other == com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest.getDefaultInstance()) return this;
       if (!other.getOrganizationId().isEmpty()) {
         organizationId_ = other.organizationId_;
         bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      if (!other.getQuery().isEmpty()) {
+        query_ = other.query_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -442,7 +501,7 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -476,16 +535,21 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
-            case 16: {
-              pageSize_ = input.readUInt32();
+            case 18: {
+              query_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
-            } // case 16
-            case 26: {
-              pageToken_ = input.readStringRequireUtf8();
+            } // case 18
+            case 24: {
+              pageSize_ = input.readUInt32();
               bitField0_ |= 0x00000004;
               break;
-            } // case 26
+            } // case 24
+            case 34: {
+              pageToken_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -575,9 +639,81 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object query_ = "";
+    /**
+     * <code>string query = 2 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The query.
+     */
+    public java.lang.String getQuery() {
+      java.lang.Object ref = query_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        query_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string query = 2 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for query.
+     */
+    public com.google.protobuf.ByteString
+        getQueryBytes() {
+      java.lang.Object ref = query_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        query_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string query = 2 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The query to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuery(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      query_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string query = 2 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearQuery() {
+      query_ = getDefaultInstance().getQuery();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string query = 2 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for query to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueryBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      query_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private int pageSize_ ;
     /**
-     * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>uint32 page_size = 3 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The pageSize.
      */
     @java.lang.Override
@@ -585,23 +721,23 @@ private static final long serialVersionUID = 0L;
       return pageSize_;
     }
     /**
-     * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>uint32 page_size = 3 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The pageSize to set.
      * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>uint32 page_size = 3 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -609,7 +745,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object pageToken_ = "";
     /**
-     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string page_token = 4 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The pageToken.
      */
     public java.lang.String getPageToken() {
@@ -625,7 +761,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string page_token = 4 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString
@@ -642,7 +778,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string page_token = 4 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The pageToken to set.
      * @return This builder for chaining.
      */
@@ -650,22 +786,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       pageToken_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string page_token = 4 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
       pageToken_ = getDefaultInstance().getPageToken();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
     /**
-     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string page_token = 4 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
      */
@@ -674,7 +810,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       pageToken_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -691,23 +827,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:scalekit.v1.users.ListUserRequest)
+    // @@protoc_insertion_point(builder_scope:scalekit.v1.users.SearchOrganizationUsersRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:scalekit.v1.users.ListUserRequest)
-  private static final com.scalekit.grpc.scalekit.v1.users.ListUserRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:scalekit.v1.users.SearchOrganizationUsersRequest)
+  private static final com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.scalekit.grpc.scalekit.v1.users.ListUserRequest();
+    DEFAULT_INSTANCE = new com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest();
   }
 
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserRequest getDefaultInstance() {
+  public static com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListUserRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ListUserRequest>() {
+  private static final com.google.protobuf.Parser<SearchOrganizationUsersRequest>
+      PARSER = new com.google.protobuf.AbstractParser<SearchOrganizationUsersRequest>() {
     @java.lang.Override
-    public ListUserRequest parsePartialFrom(
+    public SearchOrganizationUsersRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -726,17 +862,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<ListUserRequest> parser() {
+  public static com.google.protobuf.Parser<SearchOrganizationUsersRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListUserRequest> getParserForType() {
+  public com.google.protobuf.Parser<SearchOrganizationUsersRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.users.ListUserRequest getDefaultInstanceForType() {
+  public com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

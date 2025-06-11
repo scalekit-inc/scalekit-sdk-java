@@ -75,11 +75,23 @@ public interface UserProfileOrBuilder extends
   boolean getEmailVerified();
 
   /**
-   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string phone_number = 7 [json_name = "phoneNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The phoneNumber.
+   */
+  java.lang.String getPhoneNumber();
+  /**
+   * <code>string phone_number = 7 [json_name = "phoneNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for phoneNumber.
+   */
+  com.google.protobuf.ByteString
+      getPhoneNumberBytes();
+
+  /**
+   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   int getMetadataCount();
   /**
-   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   boolean containsMetadata(
       java.lang.String key);
@@ -90,12 +102,12 @@ public interface UserProfileOrBuilder extends
   java.util.Map<java.lang.String, java.lang.String>
   getMetadata();
   /**
-   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getMetadataMap();
   /**
-   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   /* nullable */
 java.lang.String getMetadataOrDefault(
@@ -103,17 +115,17 @@ java.lang.String getMetadataOrDefault(
       /* nullable */
 java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.lang.String getMetadataOrThrow(
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, string&gt; custom_attributes = 8 [json_name = "customAttributes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_attributes = 9 [json_name = "customAttributes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   int getCustomAttributesCount();
   /**
-   * <code>map&lt;string, string&gt; custom_attributes = 8 [json_name = "customAttributes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_attributes = 9 [json_name = "customAttributes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   boolean containsCustomAttributes(
       java.lang.String key);
@@ -124,12 +136,12 @@ java.lang.String defaultValue);
   java.util.Map<java.lang.String, java.lang.String>
   getCustomAttributes();
   /**
-   * <code>map&lt;string, string&gt; custom_attributes = 8 [json_name = "customAttributes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_attributes = 9 [json_name = "customAttributes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getCustomAttributesMap();
   /**
-   * <code>map&lt;string, string&gt; custom_attributes = 8 [json_name = "customAttributes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_attributes = 9 [json_name = "customAttributes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   /* nullable */
 java.lang.String getCustomAttributesOrDefault(
@@ -137,7 +149,7 @@ java.lang.String getCustomAttributesOrDefault(
       /* nullable */
 java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; custom_attributes = 8 [json_name = "customAttributes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_attributes = 9 [json_name = "customAttributes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.lang.String getCustomAttributesOrThrow(
       java.lang.String key);

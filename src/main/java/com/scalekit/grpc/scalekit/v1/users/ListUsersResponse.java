@@ -5,20 +5,20 @@
 package com.scalekit.grpc.scalekit.v1.users;
 
 /**
- * Protobuf type {@code scalekit.v1.users.ListUserResponse}
+ * Protobuf type {@code scalekit.v1.users.ListUsersResponse}
  */
-public final class ListUserResponse extends
+public final class ListUsersResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:scalekit.v1.users.ListUserResponse)
-    ListUserResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:scalekit.v1.users.ListUsersResponse)
+    ListUsersResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ListUserResponse.newBuilder() to construct.
-  private ListUserResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ListUsersResponse.newBuilder() to construct.
+  private ListUsersResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ListUserResponse() {
-    nextPageToken_ = "";
+  private ListUsersResponse() {
     users_ = java.util.Collections.emptyList();
+    nextPageToken_ = "";
     prevPageToken_ = "";
   }
 
@@ -26,27 +26,68 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ListUserResponse();
+    return new ListUsersResponse();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_ListUserResponse_descriptor;
+    return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_ListUsersResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_ListUserResponse_fieldAccessorTable
+    return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_ListUsersResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.scalekit.grpc.scalekit.v1.users.ListUserResponse.class, com.scalekit.grpc.scalekit.v1.users.ListUserResponse.Builder.class);
+            com.scalekit.grpc.scalekit.v1.users.ListUsersResponse.class, com.scalekit.grpc.scalekit.v1.users.ListUsersResponse.Builder.class);
   }
 
-  public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 1;
+  public static final int USERS_FIELD_NUMBER = 1;
+  @SuppressWarnings("serial")
+  private java.util.List<com.scalekit.grpc.scalekit.v1.users.User> users_;
+  /**
+   * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.scalekit.grpc.scalekit.v1.users.User> getUsersList() {
+    return users_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.scalekit.grpc.scalekit.v1.users.UserOrBuilder> 
+      getUsersOrBuilderList() {
+    return users_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public int getUsersCount() {
+    return users_.size();
+  }
+  /**
+   * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.users.User getUsers(int index) {
+    return users_.get(index);
+  }
+  /**
+   * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.users.UserOrBuilder getUsersOrBuilder(
+      int index) {
+    return users_.get(index);
+  }
+
+  public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
   /**
-   * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The nextPageToken.
    */
   @java.lang.Override
@@ -63,7 +104,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for nextPageToken.
    */
   @java.lang.Override
@@ -81,56 +122,15 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TOTAL_SIZE_FIELD_NUMBER = 2;
+  public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
   /**
-   * <code>uint32 total_size = 2 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>uint32 total_size = 3 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The totalSize.
    */
   @java.lang.Override
   public int getTotalSize() {
     return totalSize_;
-  }
-
-  public static final int USERS_FIELD_NUMBER = 3;
-  @SuppressWarnings("serial")
-  private java.util.List<com.scalekit.grpc.scalekit.v1.users.User> users_;
-  /**
-   * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  @java.lang.Override
-  public java.util.List<com.scalekit.grpc.scalekit.v1.users.User> getUsersList() {
-    return users_;
-  }
-  /**
-   * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  @java.lang.Override
-  public java.util.List<? extends com.scalekit.grpc.scalekit.v1.users.UserOrBuilder> 
-      getUsersOrBuilderList() {
-    return users_;
-  }
-  /**
-   * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  @java.lang.Override
-  public int getUsersCount() {
-    return users_.size();
-  }
-  /**
-   * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.users.User getUsers(int index) {
-    return users_.get(index);
-  }
-  /**
-   * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.users.UserOrBuilder getUsersOrBuilder(
-      int index) {
-    return users_.get(index);
   }
 
   public static final int PREV_PAGE_TOKEN_FIELD_NUMBER = 4;
@@ -186,14 +186,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    for (int i = 0; i < users_.size(); i++) {
+      output.writeMessage(1, users_.get(i));
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nextPageToken_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
     if (totalSize_ != 0) {
-      output.writeUInt32(2, totalSize_);
-    }
-    for (int i = 0; i < users_.size(); i++) {
-      output.writeMessage(3, users_.get(i));
+      output.writeUInt32(3, totalSize_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prevPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, prevPageToken_);
@@ -207,16 +207,16 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    for (int i = 0; i < users_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, users_.get(i));
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nextPageToken_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     if (totalSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, totalSize_);
-    }
-    for (int i = 0; i < users_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, users_.get(i));
+        .computeUInt32Size(3, totalSize_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prevPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, prevPageToken_);
@@ -231,17 +231,17 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.scalekit.grpc.scalekit.v1.users.ListUserResponse)) {
+    if (!(obj instanceof com.scalekit.grpc.scalekit.v1.users.ListUsersResponse)) {
       return super.equals(obj);
     }
-    com.scalekit.grpc.scalekit.v1.users.ListUserResponse other = (com.scalekit.grpc.scalekit.v1.users.ListUserResponse) obj;
+    com.scalekit.grpc.scalekit.v1.users.ListUsersResponse other = (com.scalekit.grpc.scalekit.v1.users.ListUsersResponse) obj;
 
+    if (!getUsersList()
+        .equals(other.getUsersList())) return false;
     if (!getNextPageToken()
         .equals(other.getNextPageToken())) return false;
     if (getTotalSize()
         != other.getTotalSize()) return false;
-    if (!getUsersList()
-        .equals(other.getUsersList())) return false;
     if (!getPrevPageToken()
         .equals(other.getPrevPageToken())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -255,14 +255,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getNextPageToken().hashCode();
-    hash = (37 * hash) + TOTAL_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getTotalSize();
     if (getUsersCount() > 0) {
       hash = (37 * hash) + USERS_FIELD_NUMBER;
       hash = (53 * hash) + getUsersList().hashCode();
     }
+    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getNextPageToken().hashCode();
+    hash = (37 * hash) + TOTAL_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getTotalSize();
     hash = (37 * hash) + PREV_PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPrevPageToken().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -270,44 +270,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.ListUsersResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.ListUsersResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.ListUsersResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.ListUsersResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserResponse parseFrom(byte[] data)
+  public static com.scalekit.grpc.scalekit.v1.users.ListUsersResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.ListUsersResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserResponse parseFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.scalekit.v1.users.ListUsersResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.ListUsersResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -315,26 +315,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.scalekit.v1.users.ListUsersResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserResponse parseDelimitedFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.ListUsersResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.ListUsersResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.ListUsersResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -347,7 +347,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.scalekit.grpc.scalekit.v1.users.ListUserResponse prototype) {
+  public static Builder newBuilder(com.scalekit.grpc.scalekit.v1.users.ListUsersResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -363,26 +363,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code scalekit.v1.users.ListUserResponse}
+   * Protobuf type {@code scalekit.v1.users.ListUsersResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:scalekit.v1.users.ListUserResponse)
-      com.scalekit.grpc.scalekit.v1.users.ListUserResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:scalekit.v1.users.ListUsersResponse)
+      com.scalekit.grpc.scalekit.v1.users.ListUsersResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_ListUserResponse_descriptor;
+      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_ListUsersResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_ListUserResponse_fieldAccessorTable
+      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_ListUsersResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.scalekit.grpc.scalekit.v1.users.ListUserResponse.class, com.scalekit.grpc.scalekit.v1.users.ListUserResponse.Builder.class);
+              com.scalekit.grpc.scalekit.v1.users.ListUsersResponse.class, com.scalekit.grpc.scalekit.v1.users.ListUsersResponse.Builder.class);
     }
 
-    // Construct using com.scalekit.grpc.scalekit.v1.users.ListUserResponse.newBuilder()
+    // Construct using com.scalekit.grpc.scalekit.v1.users.ListUsersResponse.newBuilder()
     private Builder() {
 
     }
@@ -396,15 +396,15 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      nextPageToken_ = "";
-      totalSize_ = 0;
       if (usersBuilder_ == null) {
         users_ = java.util.Collections.emptyList();
       } else {
         users_ = null;
         usersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
+      nextPageToken_ = "";
+      totalSize_ = 0;
       prevPageToken_ = "";
       return this;
     }
@@ -412,17 +412,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_ListUserResponse_descriptor;
+      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_ListUsersResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.users.ListUserResponse getDefaultInstanceForType() {
-      return com.scalekit.grpc.scalekit.v1.users.ListUserResponse.getDefaultInstance();
+    public com.scalekit.grpc.scalekit.v1.users.ListUsersResponse getDefaultInstanceForType() {
+      return com.scalekit.grpc.scalekit.v1.users.ListUsersResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.users.ListUserResponse build() {
-      com.scalekit.grpc.scalekit.v1.users.ListUserResponse result = buildPartial();
+    public com.scalekit.grpc.scalekit.v1.users.ListUsersResponse build() {
+      com.scalekit.grpc.scalekit.v1.users.ListUsersResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -430,19 +430,19 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.users.ListUserResponse buildPartial() {
-      com.scalekit.grpc.scalekit.v1.users.ListUserResponse result = new com.scalekit.grpc.scalekit.v1.users.ListUserResponse(this);
+    public com.scalekit.grpc.scalekit.v1.users.ListUsersResponse buildPartial() {
+      com.scalekit.grpc.scalekit.v1.users.ListUsersResponse result = new com.scalekit.grpc.scalekit.v1.users.ListUsersResponse(this);
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.users.ListUserResponse result) {
+    private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.users.ListUsersResponse result) {
       if (usersBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           users_ = java.util.Collections.unmodifiableList(users_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.users_ = users_;
       } else {
@@ -450,12 +450,12 @@ private static final long serialVersionUID = 0L;
       }
     }
 
-    private void buildPartial0(com.scalekit.grpc.scalekit.v1.users.ListUserResponse result) {
+    private void buildPartial0(com.scalekit.grpc.scalekit.v1.users.ListUsersResponse result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.nextPageToken_ = nextPageToken_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.totalSize_ = totalSize_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
@@ -497,29 +497,21 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.scalekit.grpc.scalekit.v1.users.ListUserResponse) {
-        return mergeFrom((com.scalekit.grpc.scalekit.v1.users.ListUserResponse)other);
+      if (other instanceof com.scalekit.grpc.scalekit.v1.users.ListUsersResponse) {
+        return mergeFrom((com.scalekit.grpc.scalekit.v1.users.ListUsersResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.users.ListUserResponse other) {
-      if (other == com.scalekit.grpc.scalekit.v1.users.ListUserResponse.getDefaultInstance()) return this;
-      if (!other.getNextPageToken().isEmpty()) {
-        nextPageToken_ = other.nextPageToken_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
-      if (other.getTotalSize() != 0) {
-        setTotalSize(other.getTotalSize());
-      }
+    public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.users.ListUsersResponse other) {
+      if (other == com.scalekit.grpc.scalekit.v1.users.ListUsersResponse.getDefaultInstance()) return this;
       if (usersBuilder_ == null) {
         if (!other.users_.isEmpty()) {
           if (users_.isEmpty()) {
             users_ = other.users_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureUsersIsMutable();
             users_.addAll(other.users_);
@@ -532,7 +524,7 @@ private static final long serialVersionUID = 0L;
             usersBuilder_.dispose();
             usersBuilder_ = null;
             users_ = other.users_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
             usersBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getUsersFieldBuilder() : null;
@@ -540,6 +532,14 @@ private static final long serialVersionUID = 0L;
             usersBuilder_.addAllMessages(other.users_);
           }
         }
+      }
+      if (!other.getNextPageToken().isEmpty()) {
+        nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.getTotalSize() != 0) {
+        setTotalSize(other.getTotalSize());
       }
       if (!other.getPrevPageToken().isEmpty()) {
         prevPageToken_ = other.prevPageToken_;
@@ -573,16 +573,6 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              nextPageToken_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 10
-            case 16: {
-              totalSize_ = input.readUInt32();
-              bitField0_ |= 0x00000002;
-              break;
-            } // case 16
-            case 26: {
               com.scalekit.grpc.scalekit.v1.users.User m =
                   input.readMessage(
                       com.scalekit.grpc.scalekit.v1.users.User.parser(),
@@ -594,7 +584,17 @@ private static final long serialVersionUID = 0L;
                 usersBuilder_.addMessage(m);
               }
               break;
-            } // case 26
+            } // case 10
+            case 18: {
+              nextPageToken_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
+            case 24: {
+              totalSize_ = input.readUInt32();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 24
             case 34: {
               prevPageToken_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
@@ -617,116 +617,12 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object nextPageToken_ = "";
-    /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The nextPageToken.
-     */
-    public java.lang.String getNextPageToken() {
-      java.lang.Object ref = nextPageToken_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        nextPageToken_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for nextPageToken.
-     */
-    public com.google.protobuf.ByteString
-        getNextPageTokenBytes() {
-      java.lang.Object ref = nextPageToken_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nextPageToken_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The nextPageToken to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNextPageToken(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      nextPageToken_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearNextPageToken() {
-      nextPageToken_ = getDefaultInstance().getNextPageToken();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for nextPageToken to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNextPageTokenBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      nextPageToken_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
-    private int totalSize_ ;
-    /**
-     * <code>uint32 total_size = 2 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The totalSize.
-     */
-    @java.lang.Override
-    public int getTotalSize() {
-      return totalSize_;
-    }
-    /**
-     * <code>uint32 total_size = 2 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The totalSize to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTotalSize(int value) {
-
-      totalSize_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>uint32 total_size = 2 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTotalSize() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      totalSize_ = 0;
-      onChanged();
-      return this;
-    }
-
     private java.util.List<com.scalekit.grpc.scalekit.v1.users.User> users_ =
       java.util.Collections.emptyList();
     private void ensureUsersIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         users_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.users.User>(users_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -734,7 +630,7 @@ private static final long serialVersionUID = 0L;
         com.scalekit.grpc.scalekit.v1.users.User, com.scalekit.grpc.scalekit.v1.users.User.Builder, com.scalekit.grpc.scalekit.v1.users.UserOrBuilder> usersBuilder_;
 
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.users.User> getUsersList() {
       if (usersBuilder_ == null) {
@@ -744,7 +640,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public int getUsersCount() {
       if (usersBuilder_ == null) {
@@ -754,7 +650,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.users.User getUsers(int index) {
       if (usersBuilder_ == null) {
@@ -764,7 +660,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setUsers(
         int index, com.scalekit.grpc.scalekit.v1.users.User value) {
@@ -781,7 +677,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setUsers(
         int index, com.scalekit.grpc.scalekit.v1.users.User.Builder builderForValue) {
@@ -795,7 +691,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addUsers(com.scalekit.grpc.scalekit.v1.users.User value) {
       if (usersBuilder_ == null) {
@@ -811,7 +707,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addUsers(
         int index, com.scalekit.grpc.scalekit.v1.users.User value) {
@@ -828,7 +724,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addUsers(
         com.scalekit.grpc.scalekit.v1.users.User.Builder builderForValue) {
@@ -842,7 +738,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addUsers(
         int index, com.scalekit.grpc.scalekit.v1.users.User.Builder builderForValue) {
@@ -856,7 +752,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addAllUsers(
         java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.users.User> values) {
@@ -871,12 +767,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearUsers() {
       if (usersBuilder_ == null) {
         users_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         usersBuilder_.clear();
@@ -884,7 +780,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder removeUsers(int index) {
       if (usersBuilder_ == null) {
@@ -897,14 +793,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.users.User.Builder getUsersBuilder(
         int index) {
       return getUsersFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.users.UserOrBuilder getUsersOrBuilder(
         int index) {
@@ -914,7 +810,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<? extends com.scalekit.grpc.scalekit.v1.users.UserOrBuilder> 
          getUsersOrBuilderList() {
@@ -925,14 +821,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.users.User.Builder addUsersBuilder() {
       return getUsersFieldBuilder().addBuilder(
           com.scalekit.grpc.scalekit.v1.users.User.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.users.User.Builder addUsersBuilder(
         int index) {
@@ -940,7 +836,7 @@ private static final long serialVersionUID = 0L;
           index, com.scalekit.grpc.scalekit.v1.users.User.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.users.User users = 3 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.users.User users = 1 [json_name = "users", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.users.User.Builder> 
          getUsersBuilderList() {
@@ -953,12 +849,116 @@ private static final long serialVersionUID = 0L;
         usersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.scalekit.grpc.scalekit.v1.users.User, com.scalekit.grpc.scalekit.v1.users.User.Builder, com.scalekit.grpc.scalekit.v1.users.UserOrBuilder>(
                 users_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         users_ = null;
       }
       return usersBuilder_;
+    }
+
+    private java.lang.Object nextPageToken_ = "";
+    /**
+     * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The nextPageToken.
+     */
+    public java.lang.String getNextPageToken() {
+      java.lang.Object ref = nextPageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextPageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for nextPageToken.
+     */
+    public com.google.protobuf.ByteString
+        getNextPageTokenBytes() {
+      java.lang.Object ref = nextPageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nextPageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageToken(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNextPageToken() {
+      nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private int totalSize_ ;
+    /**
+     * <code>uint32 total_size = 3 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The totalSize.
+     */
+    @java.lang.Override
+    public int getTotalSize() {
+      return totalSize_;
+    }
+    /**
+     * <code>uint32 total_size = 3 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The totalSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalSize(int value) {
+
+      totalSize_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint32 total_size = 3 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalSize() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      totalSize_ = 0;
+      onChanged();
+      return this;
     }
 
     private java.lang.Object prevPageToken_ = "";
@@ -1045,23 +1045,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:scalekit.v1.users.ListUserResponse)
+    // @@protoc_insertion_point(builder_scope:scalekit.v1.users.ListUsersResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:scalekit.v1.users.ListUserResponse)
-  private static final com.scalekit.grpc.scalekit.v1.users.ListUserResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:scalekit.v1.users.ListUsersResponse)
+  private static final com.scalekit.grpc.scalekit.v1.users.ListUsersResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.scalekit.grpc.scalekit.v1.users.ListUserResponse();
+    DEFAULT_INSTANCE = new com.scalekit.grpc.scalekit.v1.users.ListUsersResponse();
   }
 
-  public static com.scalekit.grpc.scalekit.v1.users.ListUserResponse getDefaultInstance() {
+  public static com.scalekit.grpc.scalekit.v1.users.ListUsersResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListUserResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListUserResponse>() {
+  private static final com.google.protobuf.Parser<ListUsersResponse>
+      PARSER = new com.google.protobuf.AbstractParser<ListUsersResponse>() {
     @java.lang.Override
-    public ListUserResponse parsePartialFrom(
+    public ListUsersResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1080,17 +1080,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<ListUserResponse> parser() {
+  public static com.google.protobuf.Parser<ListUsersResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListUserResponse> getParserForType() {
+  public com.google.protobuf.Parser<ListUsersResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.users.ListUserResponse getDefaultInstanceForType() {
+  public com.scalekit.grpc.scalekit.v1.users.ListUsersResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

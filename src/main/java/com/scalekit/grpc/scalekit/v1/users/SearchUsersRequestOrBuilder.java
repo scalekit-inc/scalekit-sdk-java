@@ -4,21 +4,21 @@
 // Protobuf Java Version: 3.25.3
 package com.scalekit.grpc.scalekit.v1.users;
 
-public interface ListUserRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:scalekit.v1.users.ListUserRequest)
+public interface SearchUsersRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:scalekit.v1.users.SearchUsersRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The organizationId.
+   * <code>string query = 1 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The query.
    */
-  java.lang.String getOrganizationId();
+  java.lang.String getQuery();
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for organizationId.
+   * <code>string query = 1 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for query.
    */
   com.google.protobuf.ByteString
-      getOrganizationIdBytes();
+      getQueryBytes();
 
   /**
    * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>

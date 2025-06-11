@@ -92,74 +92,50 @@ public interface UserOrBuilder extends
       getExternalIdBytes();
 
   /**
-   * <code>string identity = 8 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The identity.
-   */
-  java.lang.String getIdentity();
-  /**
-   * <code>string identity = 8 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for identity.
-   */
-  com.google.protobuf.ByteString
-      getIdentityBytes();
-
-  /**
-   * <code>string phone_number = 9 [json_name = "phoneNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The phoneNumber.
-   */
-  java.lang.String getPhoneNumber();
-  /**
-   * <code>string phone_number = 9 [json_name = "phoneNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for phoneNumber.
-   */
-  com.google.protobuf.ByteString
-      getPhoneNumberBytes();
-
-  /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership> 
-      getOrganizationsList();
+      getMembershipsList();
   /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership getOrganizations(int index);
+  com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership getMemberships(int index);
   /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  int getOrganizationsCount();
+  int getMembershipsCount();
   /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<? extends com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder> 
-      getOrganizationsOrBuilderList();
+      getMembershipsOrBuilderList();
   /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder getOrganizationsOrBuilder(
+  com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder getMembershipsOrBuilder(
       int index);
 
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.commons.UserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the userProfile field is set.
    */
   boolean hasUserProfile();
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.commons.UserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The userProfile.
    */
   com.scalekit.grpc.scalekit.v1.commons.UserProfile getUserProfile();
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.commons.UserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder getUserProfileOrBuilder();
 
   /**
-   * <code>map&lt;string, string&gt; metadata = 12 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   int getMetadataCount();
   /**
-   * <code>map&lt;string, string&gt; metadata = 12 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   boolean containsMetadata(
       java.lang.String key);
@@ -170,12 +146,12 @@ public interface UserOrBuilder extends
   java.util.Map<java.lang.String, java.lang.String>
   getMetadata();
   /**
-   * <code>map&lt;string, string&gt; metadata = 12 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getMetadataMap();
   /**
-   * <code>map&lt;string, string&gt; metadata = 12 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   /* nullable */
 java.lang.String getMetadataOrDefault(
@@ -183,23 +159,23 @@ java.lang.String getMetadataOrDefault(
       /* nullable */
 java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; metadata = 12 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.lang.String getMetadataOrThrow(
       java.lang.String key);
 
   /**
-   * <code>.google.protobuf.Timestamp last_login = 13 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the lastLogin field is set.
    */
   boolean hasLastLogin();
   /**
-   * <code>.google.protobuf.Timestamp last_login = 13 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The lastLogin.
    */
   com.google.protobuf.Timestamp getLastLogin();
   /**
-   * <code>.google.protobuf.Timestamp last_login = 13 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getLastLoginOrBuilder();
 }

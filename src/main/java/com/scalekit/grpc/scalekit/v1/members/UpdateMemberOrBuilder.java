@@ -93,17 +93,17 @@ java.lang.String defaultValue);
       java.lang.String key);
 
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 10 [json_name = "userProfile"];</code>
+   * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
    * @return Whether the userProfile field is set.
    */
   boolean hasUserProfile();
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 10 [json_name = "userProfile"];</code>
+   * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
    * @return The userProfile.
    */
-  com.scalekit.grpc.scalekit.v1.commons.UserProfile getUserProfile();
+  com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile getUserProfile();
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 10 [json_name = "userProfile"];</code>
+   * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
    */
-  com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder getUserProfileOrBuilder();
+  com.scalekit.grpc.scalekit.v1.users.UpdateUserProfileOrBuilder getUserProfileOrBuilder();
 }

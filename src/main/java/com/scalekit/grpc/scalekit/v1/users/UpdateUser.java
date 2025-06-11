@@ -37,7 +37,7 @@ private static final long serialVersionUID = 0L;
   protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
       int number) {
     switch (number) {
-      case 8:
+      case 9:
         return internalGetMetadata();
       default:
         throw new RuntimeException(
@@ -53,11 +53,11 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
-  public static final int EXTERNAL_ID_FIELD_NUMBER = 7;
+  public static final int EXTERNAL_ID_FIELD_NUMBER = 6;
   @SuppressWarnings("serial")
   private volatile java.lang.Object externalId_ = "";
   /**
-   * <code>optional string external_id = 7 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the externalId field is set.
    */
   @java.lang.Override
@@ -65,7 +65,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional string external_id = 7 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The externalId.
    */
   @java.lang.Override
@@ -82,7 +82,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string external_id = 7 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for externalId.
    */
   @java.lang.Override
@@ -100,7 +100,33 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int METADATA_FIELD_NUMBER = 8;
+  public static final int USER_PROFILE_FIELD_NUMBER = 8;
+  private com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile userProfile_;
+  /**
+   * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the userProfile field is set.
+   */
+  @java.lang.Override
+  public boolean hasUserProfile() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The userProfile.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile getUserProfile() {
+    return userProfile_ == null ? com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.getDefaultInstance() : userProfile_;
+  }
+  /**
+   * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.users.UpdateUserProfileOrBuilder getUserProfileOrBuilder() {
+    return userProfile_ == null ? com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.getDefaultInstance() : userProfile_;
+  }
+
+  public static final int METADATA_FIELD_NUMBER = 9;
   private static final class MetadataDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         java.lang.String, java.lang.String> defaultEntry =
@@ -127,7 +153,7 @@ private static final long serialVersionUID = 0L;
     return internalGetMetadata().getMap().size();
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public boolean containsMetadata(
@@ -144,14 +170,14 @@ private static final long serialVersionUID = 0L;
     return getMetadataMap();
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public /* nullable */
@@ -165,7 +191,7 @@ java.lang.String defaultValue) {
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.lang.String getMetadataOrThrow(
@@ -177,32 +203,6 @@ java.lang.String defaultValue) {
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
-  }
-
-  public static final int USER_PROFILE_FIELD_NUMBER = 9;
-  private com.scalekit.grpc.scalekit.v1.commons.UserProfile userProfile_;
-  /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 9 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the userProfile field is set.
-   */
-  @java.lang.Override
-  public boolean hasUserProfile() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 9 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The userProfile.
-   */
-  @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.commons.UserProfile getUserProfile() {
-    return userProfile_ == null ? com.scalekit.grpc.scalekit.v1.commons.UserProfile.getDefaultInstance() : userProfile_;
-  }
-  /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 9 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder getUserProfileOrBuilder() {
-    return userProfile_ == null ? com.scalekit.grpc.scalekit.v1.commons.UserProfile.getDefaultInstance() : userProfile_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -220,17 +220,17 @@ java.lang.String defaultValue) {
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, externalId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, externalId_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(8, getUserProfile());
     }
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
         internalGetMetadata(),
         MetadataDefaultEntryHolder.defaultEntry,
-        8);
-    if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(9, getUserProfile());
-    }
+        9);
     getUnknownFields().writeTo(output);
   }
 
@@ -241,7 +241,11 @@ java.lang.String defaultValue) {
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, externalId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, externalId_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getUserProfile());
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
          : internalGetMetadata().getMap().entrySet()) {
@@ -251,11 +255,7 @@ java.lang.String defaultValue) {
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, metadata__);
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getUserProfile());
+          .computeMessageSize(9, metadata__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -277,13 +277,13 @@ java.lang.String defaultValue) {
       if (!getExternalId()
           .equals(other.getExternalId())) return false;
     }
-    if (!internalGetMetadata().equals(
-        other.internalGetMetadata())) return false;
     if (hasUserProfile() != other.hasUserProfile()) return false;
     if (hasUserProfile()) {
       if (!getUserProfile()
           .equals(other.getUserProfile())) return false;
     }
+    if (!internalGetMetadata().equals(
+        other.internalGetMetadata())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -299,13 +299,13 @@ java.lang.String defaultValue) {
       hash = (37 * hash) + EXTERNAL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getExternalId().hashCode();
     }
-    if (!internalGetMetadata().getMap().isEmpty()) {
-      hash = (37 * hash) + METADATA_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetMetadata().hashCode();
-    }
     if (hasUserProfile()) {
       hash = (37 * hash) + USER_PROFILE_FIELD_NUMBER;
       hash = (53 * hash) + getUserProfile().hashCode();
+    }
+    if (!internalGetMetadata().getMap().isEmpty()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetMetadata().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -420,7 +420,7 @@ java.lang.String defaultValue) {
     protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
         int number) {
       switch (number) {
-        case 8:
+        case 9:
           return internalGetMetadata();
         default:
           throw new RuntimeException(
@@ -431,7 +431,7 @@ java.lang.String defaultValue) {
     protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
         int number) {
       switch (number) {
-        case 8:
+        case 9:
           return internalGetMutableMetadata();
         default:
           throw new RuntimeException(
@@ -467,12 +467,12 @@ java.lang.String defaultValue) {
       super.clear();
       bitField0_ = 0;
       externalId_ = "";
-      internalGetMutableMetadata().clear();
       userProfile_ = null;
       if (userProfileBuilder_ != null) {
         userProfileBuilder_.dispose();
         userProfileBuilder_ = null;
       }
+      internalGetMutableMetadata().clear();
       return this;
     }
 
@@ -512,14 +512,14 @@ java.lang.String defaultValue) {
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.metadata_ = internalGetMetadata();
-        result.metadata_.makeImmutable();
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.userProfile_ = userProfileBuilder_ == null
             ? userProfile_
             : userProfileBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -573,12 +573,12 @@ java.lang.String defaultValue) {
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      internalGetMutableMetadata().mergeFrom(
-          other.internalGetMetadata());
-      bitField0_ |= 0x00000002;
       if (other.hasUserProfile()) {
         mergeUserProfile(other.getUserProfile());
       }
+      internalGetMutableMetadata().mergeFrom(
+          other.internalGetMetadata());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -605,24 +605,24 @@ java.lang.String defaultValue) {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 50: {
               externalId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
-            } // case 58
+            } // case 50
             case 66: {
+              input.readMessage(
+                  getUserProfileFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 66
+            case 74: {
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               metadata__ = input.readMessage(
                   MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               internalGetMutableMetadata().getMutableMap().put(
                   metadata__.getKey(), metadata__.getValue());
-              bitField0_ |= 0x00000002;
-              break;
-            } // case 66
-            case 74: {
-              input.readMessage(
-                  getUserProfileFieldBuilder().getBuilder(),
-                  extensionRegistry);
               bitField0_ |= 0x00000004;
               break;
             } // case 74
@@ -645,14 +645,14 @@ java.lang.String defaultValue) {
 
     private java.lang.Object externalId_ = "";
     /**
-     * <code>optional string external_id = 7 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the externalId field is set.
      */
     public boolean hasExternalId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>optional string external_id = 7 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The externalId.
      */
     public java.lang.String getExternalId() {
@@ -668,7 +668,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string external_id = 7 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for externalId.
      */
     public com.google.protobuf.ByteString
@@ -685,7 +685,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string external_id = 7 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The externalId to set.
      * @return This builder for chaining.
      */
@@ -698,7 +698,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>optional string external_id = 7 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearExternalId() {
@@ -708,7 +708,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>optional string external_id = 7 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for externalId to set.
      * @return This builder for chaining.
      */
@@ -720,6 +720,127 @@ java.lang.String defaultValue) {
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile userProfile_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile, com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.Builder, com.scalekit.grpc.scalekit.v1.users.UpdateUserProfileOrBuilder> userProfileBuilder_;
+    /**
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the userProfile field is set.
+     */
+    public boolean hasUserProfile() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The userProfile.
+     */
+    public com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile getUserProfile() {
+      if (userProfileBuilder_ == null) {
+        return userProfile_ == null ? com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.getDefaultInstance() : userProfile_;
+      } else {
+        return userProfileBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setUserProfile(com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile value) {
+      if (userProfileBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        userProfile_ = value;
+      } else {
+        userProfileBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setUserProfile(
+        com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.Builder builderForValue) {
+      if (userProfileBuilder_ == null) {
+        userProfile_ = builderForValue.build();
+      } else {
+        userProfileBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeUserProfile(com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile value) {
+      if (userProfileBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0) &&
+          userProfile_ != null &&
+          userProfile_ != com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.getDefaultInstance()) {
+          getUserProfileBuilder().mergeFrom(value);
+        } else {
+          userProfile_ = value;
+        }
+      } else {
+        userProfileBuilder_.mergeFrom(value);
+      }
+      if (userProfile_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearUserProfile() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      userProfile_ = null;
+      if (userProfileBuilder_ != null) {
+        userProfileBuilder_.dispose();
+        userProfileBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.Builder getUserProfileBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getUserProfileFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.users.UpdateUserProfileOrBuilder getUserProfileOrBuilder() {
+      if (userProfileBuilder_ != null) {
+        return userProfileBuilder_.getMessageOrBuilder();
+      } else {
+        return userProfile_ == null ?
+            com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.getDefaultInstance() : userProfile_;
+      }
+    }
+    /**
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile, com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.Builder, com.scalekit.grpc.scalekit.v1.users.UpdateUserProfileOrBuilder> 
+        getUserProfileFieldBuilder() {
+      if (userProfileBuilder_ == null) {
+        userProfileBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile, com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.Builder, com.scalekit.grpc.scalekit.v1.users.UpdateUserProfileOrBuilder>(
+                getUserProfile(),
+                getParentForChildren(),
+                isClean());
+        userProfile_ = null;
+      }
+      return userProfileBuilder_;
     }
 
     private com.google.protobuf.MapField<
@@ -741,7 +862,7 @@ java.lang.String defaultValue) {
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return metadata_;
     }
@@ -749,7 +870,7 @@ java.lang.String defaultValue) {
       return internalGetMetadata().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
     public boolean containsMetadata(
@@ -766,14 +887,14 @@ java.lang.String defaultValue) {
       return getMetadataMap();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
     public /* nullable */
@@ -787,7 +908,7 @@ java.lang.String defaultValue) {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
     public java.lang.String getMetadataOrThrow(
@@ -801,13 +922,13 @@ java.lang.String defaultValue) {
       return map.get(key);
     }
     public Builder clearMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableMetadata().getMutableMap()
           .clear();
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder removeMetadata(
         java.lang.String key) {
@@ -822,11 +943,11 @@ java.lang.String defaultValue) {
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
         getMutableMetadata() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder putMetadata(
         java.lang.String key,
@@ -835,139 +956,18 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException("map value"); }
       internalGetMutableMetadata().getMutableMap()
           .put(key, value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder putAllMetadata(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap()
           .putAll(values);
-      bitField0_ |= 0x00000002;
-      return this;
-    }
-
-    private com.scalekit.grpc.scalekit.v1.commons.UserProfile userProfile_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.commons.UserProfile, com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder, com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder> userProfileBuilder_;
-    /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 9 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the userProfile field is set.
-     */
-    public boolean hasUserProfile() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 9 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The userProfile.
-     */
-    public com.scalekit.grpc.scalekit.v1.commons.UserProfile getUserProfile() {
-      if (userProfileBuilder_ == null) {
-        return userProfile_ == null ? com.scalekit.grpc.scalekit.v1.commons.UserProfile.getDefaultInstance() : userProfile_;
-      } else {
-        return userProfileBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 9 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setUserProfile(com.scalekit.grpc.scalekit.v1.commons.UserProfile value) {
-      if (userProfileBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        userProfile_ = value;
-      } else {
-        userProfileBuilder_.setMessage(value);
-      }
       bitField0_ |= 0x00000004;
-      onChanged();
       return this;
-    }
-    /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 9 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setUserProfile(
-        com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder builderForValue) {
-      if (userProfileBuilder_ == null) {
-        userProfile_ = builderForValue.build();
-      } else {
-        userProfileBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 9 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder mergeUserProfile(com.scalekit.grpc.scalekit.v1.commons.UserProfile value) {
-      if (userProfileBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0) &&
-          userProfile_ != null &&
-          userProfile_ != com.scalekit.grpc.scalekit.v1.commons.UserProfile.getDefaultInstance()) {
-          getUserProfileBuilder().mergeFrom(value);
-        } else {
-          userProfile_ = value;
-        }
-      } else {
-        userProfileBuilder_.mergeFrom(value);
-      }
-      if (userProfile_ != null) {
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 9 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder clearUserProfile() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      userProfile_ = null;
-      if (userProfileBuilder_ != null) {
-        userProfileBuilder_.dispose();
-        userProfileBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 9 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder getUserProfileBuilder() {
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return getUserProfileFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 9 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder getUserProfileOrBuilder() {
-      if (userProfileBuilder_ != null) {
-        return userProfileBuilder_.getMessageOrBuilder();
-      } else {
-        return userProfile_ == null ?
-            com.scalekit.grpc.scalekit.v1.commons.UserProfile.getDefaultInstance() : userProfile_;
-      }
-    }
-    /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 9 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.commons.UserProfile, com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder, com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder> 
-        getUserProfileFieldBuilder() {
-      if (userProfileBuilder_ == null) {
-        userProfileBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.scalekit.grpc.scalekit.v1.commons.UserProfile, com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder, com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder>(
-                getUserProfile(),
-                getParentForChildren(),
-                isClean());
-        userProfile_ = null;
-      }
-      return userProfileBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

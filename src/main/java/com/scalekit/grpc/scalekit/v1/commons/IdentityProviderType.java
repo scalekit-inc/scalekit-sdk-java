@@ -221,7 +221,7 @@ public enum IdentityProviderType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.commons.CommonsProto.getDescriptor().getEnumTypes().get(4);
+    return com.scalekit.grpc.scalekit.v1.commons.CommonsProto.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final IdentityProviderType[] VALUES = values();

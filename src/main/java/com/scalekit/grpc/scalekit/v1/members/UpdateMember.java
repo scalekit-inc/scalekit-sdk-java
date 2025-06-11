@@ -254,9 +254,9 @@ java.lang.String defaultValue) {
   }
 
   public static final int USER_PROFILE_FIELD_NUMBER = 10;
-  private com.scalekit.grpc.scalekit.v1.commons.UserProfile userProfile_;
+  private com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile userProfile_;
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 10 [json_name = "userProfile"];</code>
+   * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
    * @return Whether the userProfile field is set.
    */
   @java.lang.Override
@@ -264,19 +264,19 @@ java.lang.String defaultValue) {
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 10 [json_name = "userProfile"];</code>
+   * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
    * @return The userProfile.
    */
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.commons.UserProfile getUserProfile() {
-    return userProfile_ == null ? com.scalekit.grpc.scalekit.v1.commons.UserProfile.getDefaultInstance() : userProfile_;
+  public com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile getUserProfile() {
+    return userProfile_ == null ? com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.getDefaultInstance() : userProfile_;
   }
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 10 [json_name = "userProfile"];</code>
+   * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
    */
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder getUserProfileOrBuilder() {
-    return userProfile_ == null ? com.scalekit.grpc.scalekit.v1.commons.UserProfile.getDefaultInstance() : userProfile_;
+  public com.scalekit.grpc.scalekit.v1.users.UpdateUserProfileOrBuilder getUserProfileOrBuilder() {
+    return userProfile_ == null ? com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.getDefaultInstance() : userProfile_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1120,31 +1120,31 @@ java.lang.String defaultValue) {
       return this;
     }
 
-    private com.scalekit.grpc.scalekit.v1.commons.UserProfile userProfile_;
+    private com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile userProfile_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.commons.UserProfile, com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder, com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder> userProfileBuilder_;
+        com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile, com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.Builder, com.scalekit.grpc.scalekit.v1.users.UpdateUserProfileOrBuilder> userProfileBuilder_;
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 10 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
      * @return Whether the userProfile field is set.
      */
     public boolean hasUserProfile() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 10 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
      * @return The userProfile.
      */
-    public com.scalekit.grpc.scalekit.v1.commons.UserProfile getUserProfile() {
+    public com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile getUserProfile() {
       if (userProfileBuilder_ == null) {
-        return userProfile_ == null ? com.scalekit.grpc.scalekit.v1.commons.UserProfile.getDefaultInstance() : userProfile_;
+        return userProfile_ == null ? com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.getDefaultInstance() : userProfile_;
       } else {
         return userProfileBuilder_.getMessage();
       }
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 10 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
      */
-    public Builder setUserProfile(com.scalekit.grpc.scalekit.v1.commons.UserProfile value) {
+    public Builder setUserProfile(com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile value) {
       if (userProfileBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1158,10 +1158,10 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 10 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
      */
     public Builder setUserProfile(
-        com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder builderForValue) {
+        com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.Builder builderForValue) {
       if (userProfileBuilder_ == null) {
         userProfile_ = builderForValue.build();
       } else {
@@ -1172,13 +1172,13 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 10 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
      */
-    public Builder mergeUserProfile(com.scalekit.grpc.scalekit.v1.commons.UserProfile value) {
+    public Builder mergeUserProfile(com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile value) {
       if (userProfileBuilder_ == null) {
         if (((bitField0_ & 0x00000010) != 0) &&
           userProfile_ != null &&
-          userProfile_ != com.scalekit.grpc.scalekit.v1.commons.UserProfile.getDefaultInstance()) {
+          userProfile_ != com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.getDefaultInstance()) {
           getUserProfileBuilder().mergeFrom(value);
         } else {
           userProfile_ = value;
@@ -1193,7 +1193,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 10 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
      */
     public Builder clearUserProfile() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -1206,33 +1206,33 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 10 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
      */
-    public com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder getUserProfileBuilder() {
+    public com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.Builder getUserProfileBuilder() {
       bitField0_ |= 0x00000010;
       onChanged();
       return getUserProfileFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 10 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
      */
-    public com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder getUserProfileOrBuilder() {
+    public com.scalekit.grpc.scalekit.v1.users.UpdateUserProfileOrBuilder getUserProfileOrBuilder() {
       if (userProfileBuilder_ != null) {
         return userProfileBuilder_.getMessageOrBuilder();
       } else {
         return userProfile_ == null ?
-            com.scalekit.grpc.scalekit.v1.commons.UserProfile.getDefaultInstance() : userProfile_;
+            com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.getDefaultInstance() : userProfile_;
       }
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 10 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.commons.UserProfile, com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder, com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder> 
+        com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile, com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.Builder, com.scalekit.grpc.scalekit.v1.users.UpdateUserProfileOrBuilder> 
         getUserProfileFieldBuilder() {
       if (userProfileBuilder_ == null) {
         userProfileBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.scalekit.grpc.scalekit.v1.commons.UserProfile, com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder, com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder>(
+            com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile, com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.Builder, com.scalekit.grpc.scalekit.v1.users.UpdateUserProfileOrBuilder>(
                 getUserProfile(),
                 getParentForChildren(),
                 isClean());

@@ -109,12 +109,12 @@ public interface ListConnectionOrBuilder extends
       getDomainsBytes(int index);
 
   /**
-   * <code>string OrganizationName = 9 [json_name = "OrganizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string organization_name = 9 [json_name = "organizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The organizationName.
    */
   java.lang.String getOrganizationName();
   /**
-   * <code>string OrganizationName = 9 [json_name = "OrganizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string organization_name = 9 [json_name = "organizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for organizationName.
    */
   com.google.protobuf.ByteString

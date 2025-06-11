@@ -2,18 +2,22 @@ package com.scalekit.api;
 
 import com.scalekit.grpc.scalekit.v1.users.*;
 
-
 public interface UserClient {
-
-    CreateUserResponse createUser(String organizationId, CreateUserRequest request);
-
-    UpdateUserResponse updateUser(String organizationId, String userId, UpdateUserRequest request);
+    CreateUserAndMembershipResponse createUserAndMembership(String organizationId, CreateUserAndMembershipRequest request);
 
     GetUserResponse getUser(String organizationId, String userId);
 
-    ListUserResponse listUsers(String organizationId, ListUserRequest request);
+    ListUsersResponse listUsers(String organizationId, ListUsersRequest request);
+
+    UpdateUserResponse updateUser(String organizationId, String userId, UpdateUserRequest request);
 
     void deleteUser(String organizationId, String userId);
 
-    AddUserResponse addUserToOrganization(String organizationId, String userId, AddUserRequest request);
+    CreateMembershipResponse createMembership(String organizationId, String userId, CreateMembershipRequest request);
+
+    void deleteMembership(String organizationId, String userId);
+
+    UpdateMembershipResponse updateMembership(String organizationId, String userId, UpdateMembershipRequest request);
+
+    ListOrganizationUsersResponse listOrganizationUsers(String organizationId, ListOrganizationUsersRequest request);
 } 

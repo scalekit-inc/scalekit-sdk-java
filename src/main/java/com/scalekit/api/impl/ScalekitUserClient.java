@@ -10,9 +10,7 @@ import io.grpc.StatusRuntimeException;
 
 import java.util.concurrent.TimeUnit;
 
-
 public class ScalekitUserClient implements UserClient {
-    
     private final UserServiceGrpc.UserServiceBlockingStub userService;
     private final ScalekitCredentials credentials;
 
@@ -27,19 +25,52 @@ public class ScalekitUserClient implements UserClient {
     }
 
     /**
-     * Creates a new user in the specified organization
+     * Creates a new user and membership in the specified organization
      * @param organizationId: The organization ID
-     * @param request: The create user request containing user details
-     * @return CreateUserResponse: The response containing the created user
+     * @param request: The create user and membership request containing user details
+     * @return CreateUserAndMembershipResponse: The response containing the created user
      */
     @Override
-    public CreateUserResponse createUser(String organizationId, CreateUserRequest request) {
+    public CreateUserAndMembershipResponse createUserAndMembership(String organizationId, CreateUserAndMembershipRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return userService
                     .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
-                    .createUser(request.toBuilder()
+                    .createUserAndMembership(request.toBuilder()
                             .setOrganizationId(organizationId)
                             .build());
+        }, this.credentials);
+    }
+
+    /**
+     * Retrieves a user from the specified organization
+     * @param organizationId: The organization ID
+     * @param userId: The ID of the user to retrieve
+     * @return GetUserResponse: The response containing the user details
+     */
+    @Override
+    public GetUserResponse getUser(String organizationId, String userId) {
+        return RetryExecuter.executeWithRetry(() -> {
+            GetUserRequest request = GetUserRequest.newBuilder()
+                    .setId(userId)
+                    .build();
+            return userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .getUser(request);
+        }, this.credentials);
+    }
+
+    /**
+     * Lists users in the specified organization with optional filtering and pagination
+     * @param organizationId: The organization ID
+     * @param request: The list users request containing filters and pagination options
+     * @return ListUsersResponse: The response containing the list of users and pagination info
+     */
+    @Override
+    public ListUsersResponse listUsers(String organizationId, ListUsersRequest request) {
+        return RetryExecuter.executeWithRetry(() -> {
+            return userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .listUsers(request);
         }, this.credentials);
     }
 
@@ -56,44 +87,7 @@ public class ScalekitUserClient implements UserClient {
             return userService
                     .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .updateUser(request.toBuilder()
-                            .setOrganizationId(organizationId)
                             .setId(userId)
-                            .build());
-        }, this.credentials);
-    }
-
-    /**
-     * Retrieves a user from the specified organization
-     * @param organizationId: The organization ID
-     * @param userId: The ID of the user to retrieve
-     * @return GetUserResponse: The response containing the user details
-     */
-    @Override
-    public GetUserResponse getUser(String organizationId, String userId) {
-        return RetryExecuter.executeWithRetry(() -> {
-            GetUserRequest request = GetUserRequest.newBuilder()
-                    .setOrganizationId(organizationId)
-                    .setId(userId)
-                    .build();
-            return userService
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
-                    .getUser(request);
-        }, this.credentials);
-    }
-
-    /**
-     * Lists users in the specified organization with optional filtering and pagination
-     * @param organizationId: The organization ID
-     * @param request: The list users request containing filters and pagination options
-     * @return ListUserResponse: The response containing the list of users and pagination info
-     */
-    @Override
-    public ListUserResponse listUsers(String organizationId, ListUserRequest request) {
-        return RetryExecuter.executeWithRetry(() -> {
-            return userService
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
-                    .listUsers(request.toBuilder()
-                            .setOrganizationId(organizationId)
                             .build());
         }, this.credentials);
     }
@@ -107,7 +101,6 @@ public class ScalekitUserClient implements UserClient {
     public void deleteUser(String organizationId, String userId) {
         RetryExecuter.executeWithRetry(() -> {
             DeleteUserRequest request = DeleteUserRequest.newBuilder()
-                    .setOrganizationId(organizationId)
                     .setId(userId)
                     .build();
             userService
@@ -118,20 +111,75 @@ public class ScalekitUserClient implements UserClient {
     }
 
     /**
-     * Adds an existing user to an organization
+     * Creates a membership for a user in the specified organization
      * @param organizationId: The organization ID
-     * @param userId: The ID of the user to add
-     * @param request: The add user request containing additional details
-     * @return AddUserResponse: The response containing the updated user membership
+     * @param userId: The ID of the user to create membership for
+     * @param request: The create membership request containing membership details
+     * @return CreateMembershipResponse: The response containing the created membership
      */
     @Override
-    public AddUserResponse addUserToOrganization(String organizationId, String userId, AddUserRequest request) {
+    public CreateMembershipResponse createMembership(String organizationId, String userId, CreateMembershipRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return userService
                     .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
-                    .addUserToOrganization(request.toBuilder()
+                    .createMembership(request.toBuilder()
                             .setOrganizationId(organizationId)
                             .setId(userId)
+                            .build());
+        }, this.credentials);
+    }
+
+    /**
+     * Deletes a membership for a user from the specified organization
+     * @param organizationId: The organization ID
+     * @param userId: The ID of the user whose membership to delete
+     */
+    @Override
+    public void deleteMembership(String organizationId, String userId) {
+        RetryExecuter.executeWithRetry(() -> {
+            DeleteMembershipRequest request = DeleteMembershipRequest.newBuilder()
+                    .setOrganizationId(organizationId)
+                    .setId(userId)
+                    .build();
+            userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .deleteMembership(request);
+            return null;
+        }, this.credentials);
+    }
+
+    /**
+     * Updates a membership for a user in the specified organization
+     * @param organizationId: The organization ID
+     * @param userId: The ID of the user whose membership to update
+     * @param request: The update membership request containing the changes
+     * @return UpdateMembershipResponse: The response containing the updated membership
+     */
+    @Override
+    public UpdateMembershipResponse updateMembership(String organizationId, String userId, UpdateMembershipRequest request) {
+        return RetryExecuter.executeWithRetry(() -> {
+            return userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .updateMembership(request.toBuilder()
+                            .setOrganizationId(organizationId)
+                            .setId(userId)
+                            .build());
+        }, this.credentials);
+    }
+
+    /**
+     * Lists users in the specified organization with optional filtering and pagination
+     * @param organizationId: The organization ID
+     * @param request: The list organization users request containing filters and pagination options
+     * @return ListOrganizationUsersResponse: The response containing the list of users and pagination info
+     */
+    @Override
+    public ListOrganizationUsersResponse listOrganizationUsers(String organizationId, ListOrganizationUsersRequest request) {
+        return RetryExecuter.executeWithRetry(() -> {
+            return userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .listOrganizationUsers(request.toBuilder()
+                            .setOrganizationId(organizationId)
                             .build());
         }, this.credentials);
     }

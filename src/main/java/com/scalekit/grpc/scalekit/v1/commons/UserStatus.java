@@ -21,6 +21,14 @@ public enum UserStatus
    * <code>INACTIVE = 2;</code>
    */
   INACTIVE(2),
+  /**
+   * <code>INVITED = 3;</code>
+   */
+  INVITED(3),
+  /**
+   * <code>PENDING = 4;</code>
+   */
+  PENDING(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -36,6 +44,14 @@ public enum UserStatus
    * <code>INACTIVE = 2;</code>
    */
   public static final int INACTIVE_VALUE = 2;
+  /**
+   * <code>INVITED = 3;</code>
+   */
+  public static final int INVITED_VALUE = 3;
+  /**
+   * <code>PENDING = 4;</code>
+   */
+  public static final int PENDING_VALUE = 4;
 
 
   public final int getNumber() {
@@ -65,6 +81,8 @@ public enum UserStatus
       case 0: return USER_STATUS_UNSPECIFIED;
       case 1: return ACTIVE;
       case 2: return INACTIVE;
+      case 3: return INVITED;
+      case 4: return PENDING;
       default: return null;
     }
   }

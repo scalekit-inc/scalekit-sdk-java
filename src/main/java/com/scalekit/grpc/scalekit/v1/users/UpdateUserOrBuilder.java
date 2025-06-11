@@ -9,28 +9,43 @@ public interface UpdateUserOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>optional string external_id = 7 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the externalId field is set.
    */
   boolean hasExternalId();
   /**
-   * <code>optional string external_id = 7 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The externalId.
    */
   java.lang.String getExternalId();
   /**
-   * <code>optional string external_id = 7 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for externalId.
    */
   com.google.protobuf.ByteString
       getExternalIdBytes();
 
   /**
-   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the userProfile field is set.
+   */
+  boolean hasUserProfile();
+  /**
+   * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The userProfile.
+   */
+  com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile getUserProfile();
+  /**
+   * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.users.UpdateUserProfileOrBuilder getUserProfileOrBuilder();
+
+  /**
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   int getMetadataCount();
   /**
-   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   boolean containsMetadata(
       java.lang.String key);
@@ -41,12 +56,12 @@ public interface UpdateUserOrBuilder extends
   java.util.Map<java.lang.String, java.lang.String>
   getMetadata();
   /**
-   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getMetadataMap();
   /**
-   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   /* nullable */
 java.lang.String getMetadataOrDefault(
@@ -54,23 +69,8 @@ java.lang.String getMetadataOrDefault(
       /* nullable */
 java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.lang.String getMetadataOrThrow(
       java.lang.String key);
-
-  /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 9 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the userProfile field is set.
-   */
-  boolean hasUserProfile();
-  /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 9 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The userProfile.
-   */
-  com.scalekit.grpc.scalekit.v1.commons.UserProfile getUserProfile();
-  /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 9 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder getUserProfileOrBuilder();
 }

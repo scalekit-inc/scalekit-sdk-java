@@ -21,9 +21,7 @@ private static final long serialVersionUID = 0L;
     environmentId_ = "";
     email_ = "";
     externalId_ = "";
-    identity_ = "";
-    phoneNumber_ = "";
-    organizations_ = java.util.Collections.emptyList();
+    memberships_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -43,7 +41,7 @@ private static final long serialVersionUID = 0L;
   protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
       int number) {
     switch (number) {
-      case 12:
+      case 9:
         return internalGetMetadata();
       default:
         throw new RuntimeException(
@@ -275,129 +273,51 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int IDENTITY_FIELD_NUMBER = 8;
+  public static final int MEMBERSHIPS_FIELD_NUMBER = 7;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object identity_ = "";
+  private java.util.List<com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership> memberships_;
   /**
-   * <code>string identity = 8 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The identity.
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public java.lang.String getIdentity() {
-    java.lang.Object ref = identity_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      identity_ = s;
-      return s;
-    }
+  public java.util.List<com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership> getMembershipsList() {
+    return memberships_;
   }
   /**
-   * <code>string identity = 8 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for identity.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getIdentityBytes() {
-    java.lang.Object ref = identity_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      identity_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int PHONE_NUMBER_FIELD_NUMBER = 9;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object phoneNumber_ = "";
-  /**
-   * <code>string phone_number = 9 [json_name = "phoneNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The phoneNumber.
-   */
-  @java.lang.Override
-  public java.lang.String getPhoneNumber() {
-    java.lang.Object ref = phoneNumber_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      phoneNumber_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string phone_number = 9 [json_name = "phoneNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for phoneNumber.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getPhoneNumberBytes() {
-    java.lang.Object ref = phoneNumber_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      phoneNumber_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int ORGANIZATIONS_FIELD_NUMBER = 10;
-  @SuppressWarnings("serial")
-  private java.util.List<com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership> organizations_;
-  /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  @java.lang.Override
-  public java.util.List<com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership> getOrganizationsList() {
-    return organizations_;
-  }
-  /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder> 
-      getOrganizationsOrBuilderList() {
-    return organizations_;
+      getMembershipsOrBuilderList() {
+    return memberships_;
   }
   /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public int getOrganizationsCount() {
-    return organizations_.size();
+  public int getMembershipsCount() {
+    return memberships_.size();
   }
   /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership getOrganizations(int index) {
-    return organizations_.get(index);
+  public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership getMemberships(int index) {
+    return memberships_.get(index);
   }
   /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder getOrganizationsOrBuilder(
+  public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder getMembershipsOrBuilder(
       int index) {
-    return organizations_.get(index);
+    return memberships_.get(index);
   }
 
-  public static final int USER_PROFILE_FIELD_NUMBER = 11;
+  public static final int USER_PROFILE_FIELD_NUMBER = 8;
   private com.scalekit.grpc.scalekit.v1.commons.UserProfile userProfile_;
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.commons.UserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the userProfile field is set.
    */
   @java.lang.Override
@@ -405,7 +325,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.commons.UserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The userProfile.
    */
   @java.lang.Override
@@ -413,14 +333,14 @@ private static final long serialVersionUID = 0L;
     return userProfile_ == null ? com.scalekit.grpc.scalekit.v1.commons.UserProfile.getDefaultInstance() : userProfile_;
   }
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.commons.UserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder getUserProfileOrBuilder() {
     return userProfile_ == null ? com.scalekit.grpc.scalekit.v1.commons.UserProfile.getDefaultInstance() : userProfile_;
   }
 
-  public static final int METADATA_FIELD_NUMBER = 12;
+  public static final int METADATA_FIELD_NUMBER = 9;
   private static final class MetadataDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         java.lang.String, java.lang.String> defaultEntry =
@@ -447,7 +367,7 @@ private static final long serialVersionUID = 0L;
     return internalGetMetadata().getMap().size();
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 12 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public boolean containsMetadata(
@@ -464,14 +384,14 @@ private static final long serialVersionUID = 0L;
     return getMetadataMap();
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 12 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 12 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public /* nullable */
@@ -485,7 +405,7 @@ java.lang.String defaultValue) {
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 12 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.lang.String getMetadataOrThrow(
@@ -499,10 +419,10 @@ java.lang.String defaultValue) {
     return map.get(key);
   }
 
-  public static final int LAST_LOGIN_FIELD_NUMBER = 13;
+  public static final int LAST_LOGIN_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp lastLogin_;
   /**
-   * <code>.google.protobuf.Timestamp last_login = 13 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the lastLogin field is set.
    */
   @java.lang.Override
@@ -510,7 +430,7 @@ java.lang.String defaultValue) {
     return ((bitField0_ & 0x00000010) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp last_login = 13 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The lastLogin.
    */
   @java.lang.Override
@@ -518,7 +438,7 @@ java.lang.String defaultValue) {
     return lastLogin_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastLogin_;
   }
   /**
-   * <code>.google.protobuf.Timestamp last_login = 13 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastLoginOrBuilder() {
@@ -557,26 +477,20 @@ java.lang.String defaultValue) {
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, externalId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identity_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, identity_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phoneNumber_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, phoneNumber_);
-    }
-    for (int i = 0; i < organizations_.size(); i++) {
-      output.writeMessage(10, organizations_.get(i));
+    for (int i = 0; i < memberships_.size(); i++) {
+      output.writeMessage(7, memberships_.get(i));
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeMessage(11, getUserProfile());
+      output.writeMessage(8, getUserProfile());
     }
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
         internalGetMetadata(),
         MetadataDefaultEntryHolder.defaultEntry,
-        12);
+        9);
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeMessage(13, getLastLogin());
+      output.writeMessage(10, getLastLogin());
     }
     getUnknownFields().writeTo(output);
   }
@@ -607,19 +521,13 @@ java.lang.String defaultValue) {
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, externalId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(identity_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, identity_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phoneNumber_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, phoneNumber_);
-    }
-    for (int i = 0; i < organizations_.size(); i++) {
+    for (int i = 0; i < memberships_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, organizations_.get(i));
+        .computeMessageSize(7, memberships_.get(i));
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getUserProfile());
+        .computeMessageSize(8, getUserProfile());
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
          : internalGetMetadata().getMap().entrySet()) {
@@ -629,11 +537,11 @@ java.lang.String defaultValue) {
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, metadata__);
+          .computeMessageSize(9, metadata__);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, getLastLogin());
+        .computeMessageSize(10, getLastLogin());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -671,12 +579,8 @@ java.lang.String defaultValue) {
       if (!getExternalId()
           .equals(other.getExternalId())) return false;
     }
-    if (!getIdentity()
-        .equals(other.getIdentity())) return false;
-    if (!getPhoneNumber()
-        .equals(other.getPhoneNumber())) return false;
-    if (!getOrganizationsList()
-        .equals(other.getOrganizationsList())) return false;
+    if (!getMembershipsList()
+        .equals(other.getMembershipsList())) return false;
     if (hasUserProfile() != other.hasUserProfile()) return false;
     if (hasUserProfile()) {
       if (!getUserProfile()
@@ -718,13 +622,9 @@ java.lang.String defaultValue) {
       hash = (37 * hash) + EXTERNAL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getExternalId().hashCode();
     }
-    hash = (37 * hash) + IDENTITY_FIELD_NUMBER;
-    hash = (53 * hash) + getIdentity().hashCode();
-    hash = (37 * hash) + PHONE_NUMBER_FIELD_NUMBER;
-    hash = (53 * hash) + getPhoneNumber().hashCode();
-    if (getOrganizationsCount() > 0) {
-      hash = (37 * hash) + ORGANIZATIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationsList().hashCode();
+    if (getMembershipsCount() > 0) {
+      hash = (37 * hash) + MEMBERSHIPS_FIELD_NUMBER;
+      hash = (53 * hash) + getMembershipsList().hashCode();
     }
     if (hasUserProfile()) {
       hash = (37 * hash) + USER_PROFILE_FIELD_NUMBER;
@@ -851,7 +751,7 @@ java.lang.String defaultValue) {
     protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
         int number) {
       switch (number) {
-        case 12:
+        case 9:
           return internalGetMetadata();
         default:
           throw new RuntimeException(
@@ -862,7 +762,7 @@ java.lang.String defaultValue) {
     protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
         int number) {
       switch (number) {
-        case 12:
+        case 9:
           return internalGetMutableMetadata();
         default:
           throw new RuntimeException(
@@ -892,7 +792,7 @@ java.lang.String defaultValue) {
               .alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
-        getOrganizationsFieldBuilder();
+        getMembershipsFieldBuilder();
         getUserProfileFieldBuilder();
         getLastLoginFieldBuilder();
       }
@@ -915,15 +815,13 @@ java.lang.String defaultValue) {
       }
       email_ = "";
       externalId_ = "";
-      identity_ = "";
-      phoneNumber_ = "";
-      if (organizationsBuilder_ == null) {
-        organizations_ = java.util.Collections.emptyList();
+      if (membershipsBuilder_ == null) {
+        memberships_ = java.util.Collections.emptyList();
       } else {
-        organizations_ = null;
-        organizationsBuilder_.clear();
+        memberships_ = null;
+        membershipsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000040);
       userProfile_ = null;
       if (userProfileBuilder_ != null) {
         userProfileBuilder_.dispose();
@@ -968,14 +866,14 @@ java.lang.String defaultValue) {
     }
 
     private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.users.User result) {
-      if (organizationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
-          organizations_ = java.util.Collections.unmodifiableList(organizations_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+      if (membershipsBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          memberships_ = java.util.Collections.unmodifiableList(memberships_);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
-        result.organizations_ = organizations_;
+        result.memberships_ = memberships_;
       } else {
-        result.organizations_ = organizationsBuilder_.build();
+        result.memberships_ = membershipsBuilder_.build();
       }
     }
 
@@ -1007,23 +905,17 @@ java.lang.String defaultValue) {
         result.externalId_ = externalId_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.identity_ = identity_;
-      }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.phoneNumber_ = phoneNumber_;
-      }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.userProfile_ = userProfileBuilder_ == null
             ? userProfile_
             : userProfileBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.lastLogin_ = lastLoginBuilder_ == null
             ? lastLogin_
             : lastLoginBuilder_.build();
@@ -1102,39 +994,29 @@ java.lang.String defaultValue) {
         bitField0_ |= 0x00000020;
         onChanged();
       }
-      if (!other.getIdentity().isEmpty()) {
-        identity_ = other.identity_;
-        bitField0_ |= 0x00000040;
-        onChanged();
-      }
-      if (!other.getPhoneNumber().isEmpty()) {
-        phoneNumber_ = other.phoneNumber_;
-        bitField0_ |= 0x00000080;
-        onChanged();
-      }
-      if (organizationsBuilder_ == null) {
-        if (!other.organizations_.isEmpty()) {
-          if (organizations_.isEmpty()) {
-            organizations_ = other.organizations_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+      if (membershipsBuilder_ == null) {
+        if (!other.memberships_.isEmpty()) {
+          if (memberships_.isEmpty()) {
+            memberships_ = other.memberships_;
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
-            ensureOrganizationsIsMutable();
-            organizations_.addAll(other.organizations_);
+            ensureMembershipsIsMutable();
+            memberships_.addAll(other.memberships_);
           }
           onChanged();
         }
       } else {
-        if (!other.organizations_.isEmpty()) {
-          if (organizationsBuilder_.isEmpty()) {
-            organizationsBuilder_.dispose();
-            organizationsBuilder_ = null;
-            organizations_ = other.organizations_;
-            bitField0_ = (bitField0_ & ~0x00000100);
-            organizationsBuilder_ = 
+        if (!other.memberships_.isEmpty()) {
+          if (membershipsBuilder_.isEmpty()) {
+            membershipsBuilder_.dispose();
+            membershipsBuilder_ = null;
+            memberships_ = other.memberships_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            membershipsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getOrganizationsFieldBuilder() : null;
+                 getMembershipsFieldBuilder() : null;
           } else {
-            organizationsBuilder_.addAllMessages(other.organizations_);
+            membershipsBuilder_.addAllMessages(other.memberships_);
           }
         }
       }
@@ -1143,7 +1025,7 @@ java.lang.String defaultValue) {
       }
       internalGetMutableMetadata().mergeFrom(
           other.internalGetMetadata());
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000100;
       if (other.hasLastLogin()) {
         mergeLastLogin(other.getLastLogin());
       }
@@ -1207,52 +1089,42 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000020;
               break;
             } // case 50
-            case 66: {
-              identity_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
-              break;
-            } // case 66
-            case 74: {
-              phoneNumber_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
-              break;
-            } // case 74
-            case 82: {
+            case 58: {
               com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership m =
                   input.readMessage(
                       com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.parser(),
                       extensionRegistry);
-              if (organizationsBuilder_ == null) {
-                ensureOrganizationsIsMutable();
-                organizations_.add(m);
+              if (membershipsBuilder_ == null) {
+                ensureMembershipsIsMutable();
+                memberships_.add(m);
               } else {
-                organizationsBuilder_.addMessage(m);
+                membershipsBuilder_.addMessage(m);
               }
               break;
-            } // case 82
-            case 90: {
+            } // case 58
+            case 66: {
               input.readMessage(
                   getUserProfileFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000080;
               break;
-            } // case 90
-            case 98: {
+            } // case 66
+            case 74: {
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               metadata__ = input.readMessage(
                   MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               internalGetMutableMetadata().getMutableMap().put(
                   metadata__.getKey(), metadata__.getValue());
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000100;
               break;
-            } // case 98
-            case 106: {
+            } // case 74
+            case 82: {
               input.readMessage(
                   getLastLoginFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00000200;
               break;
-            } // case 106
+            } // case 82
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1807,402 +1679,258 @@ java.lang.String defaultValue) {
       return this;
     }
 
-    private java.lang.Object identity_ = "";
-    /**
-     * <code>string identity = 8 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The identity.
-     */
-    public java.lang.String getIdentity() {
-      java.lang.Object ref = identity_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        identity_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string identity = 8 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for identity.
-     */
-    public com.google.protobuf.ByteString
-        getIdentityBytes() {
-      java.lang.Object ref = identity_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        identity_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string identity = 8 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The identity to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdentity(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      identity_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string identity = 8 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearIdentity() {
-      identity_ = getDefaultInstance().getIdentity();
-      bitField0_ = (bitField0_ & ~0x00000040);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string identity = 8 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for identity to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdentityBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      identity_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object phoneNumber_ = "";
-    /**
-     * <code>string phone_number = 9 [json_name = "phoneNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The phoneNumber.
-     */
-    public java.lang.String getPhoneNumber() {
-      java.lang.Object ref = phoneNumber_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        phoneNumber_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string phone_number = 9 [json_name = "phoneNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for phoneNumber.
-     */
-    public com.google.protobuf.ByteString
-        getPhoneNumberBytes() {
-      java.lang.Object ref = phoneNumber_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        phoneNumber_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string phone_number = 9 [json_name = "phoneNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The phoneNumber to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPhoneNumber(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      phoneNumber_ = value;
-      bitField0_ |= 0x00000080;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string phone_number = 9 [json_name = "phoneNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPhoneNumber() {
-      phoneNumber_ = getDefaultInstance().getPhoneNumber();
-      bitField0_ = (bitField0_ & ~0x00000080);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string phone_number = 9 [json_name = "phoneNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for phoneNumber to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPhoneNumberBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      phoneNumber_ = value;
-      bitField0_ |= 0x00000080;
-      onChanged();
-      return this;
-    }
-
-    private java.util.List<com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership> organizations_ =
+    private java.util.List<com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership> memberships_ =
       java.util.Collections.emptyList();
-    private void ensureOrganizationsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
-        organizations_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership>(organizations_);
-        bitField0_ |= 0x00000100;
+    private void ensureMembershipsIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        memberships_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership>(memberships_);
+        bitField0_ |= 0x00000040;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder> organizationsBuilder_;
+        com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder> membershipsBuilder_;
 
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public java.util.List<com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership> getOrganizationsList() {
-      if (organizationsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(organizations_);
+    public java.util.List<com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership> getMembershipsList() {
+      if (membershipsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(memberships_);
       } else {
-        return organizationsBuilder_.getMessageList();
+        return membershipsBuilder_.getMessageList();
       }
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public int getOrganizationsCount() {
-      if (organizationsBuilder_ == null) {
-        return organizations_.size();
+    public int getMembershipsCount() {
+      if (membershipsBuilder_ == null) {
+        return memberships_.size();
       } else {
-        return organizationsBuilder_.getCount();
+        return membershipsBuilder_.getCount();
       }
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership getOrganizations(int index) {
-      if (organizationsBuilder_ == null) {
-        return organizations_.get(index);
+    public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership getMemberships(int index) {
+      if (membershipsBuilder_ == null) {
+        return memberships_.get(index);
       } else {
-        return organizationsBuilder_.getMessage(index);
+        return membershipsBuilder_.getMessage(index);
       }
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder setOrganizations(
+    public Builder setMemberships(
         int index, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership value) {
-      if (organizationsBuilder_ == null) {
+      if (membershipsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureOrganizationsIsMutable();
-        organizations_.set(index, value);
+        ensureMembershipsIsMutable();
+        memberships_.set(index, value);
         onChanged();
       } else {
-        organizationsBuilder_.setMessage(index, value);
+        membershipsBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder setOrganizations(
+    public Builder setMemberships(
         int index, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder builderForValue) {
-      if (organizationsBuilder_ == null) {
-        ensureOrganizationsIsMutable();
-        organizations_.set(index, builderForValue.build());
+      if (membershipsBuilder_ == null) {
+        ensureMembershipsIsMutable();
+        memberships_.set(index, builderForValue.build());
         onChanged();
       } else {
-        organizationsBuilder_.setMessage(index, builderForValue.build());
+        membershipsBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder addOrganizations(com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership value) {
-      if (organizationsBuilder_ == null) {
+    public Builder addMemberships(com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership value) {
+      if (membershipsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureOrganizationsIsMutable();
-        organizations_.add(value);
+        ensureMembershipsIsMutable();
+        memberships_.add(value);
         onChanged();
       } else {
-        organizationsBuilder_.addMessage(value);
+        membershipsBuilder_.addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder addOrganizations(
+    public Builder addMemberships(
         int index, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership value) {
-      if (organizationsBuilder_ == null) {
+      if (membershipsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureOrganizationsIsMutable();
-        organizations_.add(index, value);
+        ensureMembershipsIsMutable();
+        memberships_.add(index, value);
         onChanged();
       } else {
-        organizationsBuilder_.addMessage(index, value);
+        membershipsBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder addOrganizations(
+    public Builder addMemberships(
         com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder builderForValue) {
-      if (organizationsBuilder_ == null) {
-        ensureOrganizationsIsMutable();
-        organizations_.add(builderForValue.build());
+      if (membershipsBuilder_ == null) {
+        ensureMembershipsIsMutable();
+        memberships_.add(builderForValue.build());
         onChanged();
       } else {
-        organizationsBuilder_.addMessage(builderForValue.build());
+        membershipsBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder addOrganizations(
+    public Builder addMemberships(
         int index, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder builderForValue) {
-      if (organizationsBuilder_ == null) {
-        ensureOrganizationsIsMutable();
-        organizations_.add(index, builderForValue.build());
+      if (membershipsBuilder_ == null) {
+        ensureMembershipsIsMutable();
+        memberships_.add(index, builderForValue.build());
         onChanged();
       } else {
-        organizationsBuilder_.addMessage(index, builderForValue.build());
+        membershipsBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder addAllOrganizations(
+    public Builder addAllMemberships(
         java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership> values) {
-      if (organizationsBuilder_ == null) {
-        ensureOrganizationsIsMutable();
+      if (membershipsBuilder_ == null) {
+        ensureMembershipsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, organizations_);
+            values, memberships_);
         onChanged();
       } else {
-        organizationsBuilder_.addAllMessages(values);
+        membershipsBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder clearOrganizations() {
-      if (organizationsBuilder_ == null) {
-        organizations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+    public Builder clearMemberships() {
+      if (membershipsBuilder_ == null) {
+        memberships_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
-        organizationsBuilder_.clear();
+        membershipsBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder removeOrganizations(int index) {
-      if (organizationsBuilder_ == null) {
-        ensureOrganizationsIsMutable();
-        organizations_.remove(index);
+    public Builder removeMemberships(int index) {
+      if (membershipsBuilder_ == null) {
+        ensureMembershipsIsMutable();
+        memberships_.remove(index);
         onChanged();
       } else {
-        organizationsBuilder_.remove(index);
+        membershipsBuilder_.remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder getOrganizationsBuilder(
+    public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder getMembershipsBuilder(
         int index) {
-      return getOrganizationsFieldBuilder().getBuilder(index);
+      return getMembershipsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder getOrganizationsOrBuilder(
+    public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder getMembershipsOrBuilder(
         int index) {
-      if (organizationsBuilder_ == null) {
-        return organizations_.get(index);  } else {
-        return organizationsBuilder_.getMessageOrBuilder(index);
+      if (membershipsBuilder_ == null) {
+        return memberships_.get(index);  } else {
+        return membershipsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<? extends com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder> 
-         getOrganizationsOrBuilderList() {
-      if (organizationsBuilder_ != null) {
-        return organizationsBuilder_.getMessageOrBuilderList();
+         getMembershipsOrBuilderList() {
+      if (membershipsBuilder_ != null) {
+        return membershipsBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(organizations_);
+        return java.util.Collections.unmodifiableList(memberships_);
       }
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder addOrganizationsBuilder() {
-      return getOrganizationsFieldBuilder().addBuilder(
+    public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder addMembershipsBuilder() {
+      return getMembershipsFieldBuilder().addBuilder(
           com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder addOrganizationsBuilder(
+    public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder addMembershipsBuilder(
         int index) {
-      return getOrganizationsFieldBuilder().addBuilder(
+      return getMembershipsFieldBuilder().addBuilder(
           index, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership memberships = 7 [json_name = "memberships", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder> 
-         getOrganizationsBuilderList() {
-      return getOrganizationsFieldBuilder().getBuilderList();
+         getMembershipsBuilderList() {
+      return getMembershipsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder> 
-        getOrganizationsFieldBuilder() {
-      if (organizationsBuilder_ == null) {
-        organizationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+        getMembershipsFieldBuilder() {
+      if (membershipsBuilder_ == null) {
+        membershipsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder>(
-                organizations_,
-                ((bitField0_ & 0x00000100) != 0),
+                memberships_,
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
-        organizations_ = null;
+        memberships_ = null;
       }
-      return organizationsBuilder_;
+      return membershipsBuilder_;
     }
 
     private com.scalekit.grpc.scalekit.v1.commons.UserProfile userProfile_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.commons.UserProfile, com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder, com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder> userProfileBuilder_;
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the userProfile field is set.
      */
     public boolean hasUserProfile() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The userProfile.
      */
     public com.scalekit.grpc.scalekit.v1.commons.UserProfile getUserProfile() {
@@ -2213,7 +1941,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setUserProfile(com.scalekit.grpc.scalekit.v1.commons.UserProfile value) {
       if (userProfileBuilder_ == null) {
@@ -2224,12 +1952,12 @@ java.lang.String defaultValue) {
       } else {
         userProfileBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setUserProfile(
         com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder builderForValue) {
@@ -2238,16 +1966,16 @@ java.lang.String defaultValue) {
       } else {
         userProfileBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeUserProfile(com.scalekit.grpc.scalekit.v1.commons.UserProfile value) {
       if (userProfileBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0) &&
+        if (((bitField0_ & 0x00000080) != 0) &&
           userProfile_ != null &&
           userProfile_ != com.scalekit.grpc.scalekit.v1.commons.UserProfile.getDefaultInstance()) {
           getUserProfileBuilder().mergeFrom(value);
@@ -2258,16 +1986,16 @@ java.lang.String defaultValue) {
         userProfileBuilder_.mergeFrom(value);
       }
       if (userProfile_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearUserProfile() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000080);
       userProfile_ = null;
       if (userProfileBuilder_ != null) {
         userProfileBuilder_.dispose();
@@ -2277,15 +2005,15 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder getUserProfileBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getUserProfileFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder getUserProfileOrBuilder() {
       if (userProfileBuilder_ != null) {
@@ -2296,7 +2024,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 8 [json_name = "userProfile", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.commons.UserProfile, com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder, com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder> 
@@ -2331,7 +2059,7 @@ java.lang.String defaultValue) {
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000100;
       onChanged();
       return metadata_;
     }
@@ -2339,7 +2067,7 @@ java.lang.String defaultValue) {
       return internalGetMetadata().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 12 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
     public boolean containsMetadata(
@@ -2356,14 +2084,14 @@ java.lang.String defaultValue) {
       return getMetadataMap();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 12 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 12 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
     public /* nullable */
@@ -2377,7 +2105,7 @@ java.lang.String defaultValue) {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 12 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
     public java.lang.String getMetadataOrThrow(
@@ -2391,13 +2119,13 @@ java.lang.String defaultValue) {
       return map.get(key);
     }
     public Builder clearMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableMetadata().getMutableMap()
           .clear();
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 12 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder removeMetadata(
         java.lang.String key) {
@@ -2412,11 +2140,11 @@ java.lang.String defaultValue) {
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
         getMutableMetadata() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000100;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 12 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder putMetadata(
         java.lang.String key,
@@ -2425,17 +2153,17 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException("map value"); }
       internalGetMutableMetadata().getMutableMap()
           .put(key, value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 12 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 9 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder putAllMetadata(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap()
           .putAll(values);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -2443,14 +2171,14 @@ java.lang.String defaultValue) {
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastLoginBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp last_login = 13 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the lastLogin field is set.
      */
     public boolean hasLastLogin() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp last_login = 13 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The lastLogin.
      */
     public com.google.protobuf.Timestamp getLastLogin() {
@@ -2461,7 +2189,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp last_login = 13 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setLastLogin(com.google.protobuf.Timestamp value) {
       if (lastLoginBuilder_ == null) {
@@ -2472,12 +2200,12 @@ java.lang.String defaultValue) {
       } else {
         lastLoginBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp last_login = 13 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setLastLogin(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2486,16 +2214,16 @@ java.lang.String defaultValue) {
       } else {
         lastLoginBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp last_login = 13 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeLastLogin(com.google.protobuf.Timestamp value) {
       if (lastLoginBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0) &&
+        if (((bitField0_ & 0x00000200) != 0) &&
           lastLogin_ != null &&
           lastLogin_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getLastLoginBuilder().mergeFrom(value);
@@ -2506,16 +2234,16 @@ java.lang.String defaultValue) {
         lastLoginBuilder_.mergeFrom(value);
       }
       if (lastLogin_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp last_login = 13 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearLastLogin() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000200);
       lastLogin_ = null;
       if (lastLoginBuilder_ != null) {
         lastLoginBuilder_.dispose();
@@ -2525,15 +2253,15 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp last_login = 13 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastLoginBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getLastLoginFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp last_login = 13 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getLastLoginOrBuilder() {
       if (lastLoginBuilder_ != null) {
@@ -2544,7 +2272,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp last_login = 13 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 

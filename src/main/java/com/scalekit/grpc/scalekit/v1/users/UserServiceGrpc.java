@@ -15,35 +15,128 @@ public final class UserServiceGrpc {
   public static final java.lang.String SERVICE_NAME = "scalekit.v1.users.UserService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.CreateUserRequest,
-      com.scalekit.grpc.scalekit.v1.users.CreateUserResponse> getCreateUserMethod;
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.GetUserRequest,
+      com.scalekit.grpc.scalekit.v1.users.GetUserResponse> getGetUserMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateUser",
-      requestType = com.scalekit.grpc.scalekit.v1.users.CreateUserRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.users.CreateUserResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "GetUser",
+      requestType = com.scalekit.grpc.scalekit.v1.users.GetUserRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.users.GetUserResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.CreateUserRequest,
-      com.scalekit.grpc.scalekit.v1.users.CreateUserResponse> getCreateUserMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.CreateUserRequest, com.scalekit.grpc.scalekit.v1.users.CreateUserResponse> getCreateUserMethod;
-    if ((getCreateUserMethod = UserServiceGrpc.getCreateUserMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.GetUserRequest,
+      com.scalekit.grpc.scalekit.v1.users.GetUserResponse> getGetUserMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.GetUserRequest, com.scalekit.grpc.scalekit.v1.users.GetUserResponse> getGetUserMethod;
+    if ((getGetUserMethod = UserServiceGrpc.getGetUserMethod) == null) {
       synchronized (UserServiceGrpc.class) {
-        if ((getCreateUserMethod = UserServiceGrpc.getCreateUserMethod) == null) {
-          UserServiceGrpc.getCreateUserMethod = getCreateUserMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.users.CreateUserRequest, com.scalekit.grpc.scalekit.v1.users.CreateUserResponse>newBuilder()
+        if ((getGetUserMethod = UserServiceGrpc.getGetUserMethod) == null) {
+          UserServiceGrpc.getGetUserMethod = getGetUserMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.users.GetUserRequest, com.scalekit.grpc.scalekit.v1.users.GetUserResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateUser"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetUser"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.users.CreateUserRequest.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.users.GetUserRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.users.CreateUserResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("CreateUser"))
+                  com.scalekit.grpc.scalekit.v1.users.GetUserResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("GetUser"))
               .build();
         }
       }
     }
-    return getCreateUserMethod;
+    return getGetUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.ListUsersRequest,
+      com.scalekit.grpc.scalekit.v1.users.ListUsersResponse> getListUsersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListUsers",
+      requestType = com.scalekit.grpc.scalekit.v1.users.ListUsersRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.users.ListUsersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.ListUsersRequest,
+      com.scalekit.grpc.scalekit.v1.users.ListUsersResponse> getListUsersMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.ListUsersRequest, com.scalekit.grpc.scalekit.v1.users.ListUsersResponse> getListUsersMethod;
+    if ((getListUsersMethod = UserServiceGrpc.getListUsersMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getListUsersMethod = UserServiceGrpc.getListUsersMethod) == null) {
+          UserServiceGrpc.getListUsersMethod = getListUsersMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.users.ListUsersRequest, com.scalekit.grpc.scalekit.v1.users.ListUsersResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListUsers"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.users.ListUsersRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.users.ListUsersResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("ListUsers"))
+              .build();
+        }
+      }
+    }
+    return getListUsersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.SearchUsersRequest,
+      com.scalekit.grpc.scalekit.v1.users.SearchUsersResponse> getSearchUsersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchUsers",
+      requestType = com.scalekit.grpc.scalekit.v1.users.SearchUsersRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.users.SearchUsersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.SearchUsersRequest,
+      com.scalekit.grpc.scalekit.v1.users.SearchUsersResponse> getSearchUsersMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.SearchUsersRequest, com.scalekit.grpc.scalekit.v1.users.SearchUsersResponse> getSearchUsersMethod;
+    if ((getSearchUsersMethod = UserServiceGrpc.getSearchUsersMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getSearchUsersMethod = UserServiceGrpc.getSearchUsersMethod) == null) {
+          UserServiceGrpc.getSearchUsersMethod = getSearchUsersMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.users.SearchUsersRequest, com.scalekit.grpc.scalekit.v1.users.SearchUsersResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchUsers"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.users.SearchUsersRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.users.SearchUsersResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("SearchUsers"))
+              .build();
+        }
+      }
+    }
+    return getSearchUsersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest,
+      com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersResponse> getSearchOrganizationUsersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchOrganizationUsers",
+      requestType = com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest,
+      com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersResponse> getSearchOrganizationUsersMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest, com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersResponse> getSearchOrganizationUsersMethod;
+    if ((getSearchOrganizationUsersMethod = UserServiceGrpc.getSearchOrganizationUsersMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getSearchOrganizationUsersMethod = UserServiceGrpc.getSearchOrganizationUsersMethod) == null) {
+          UserServiceGrpc.getSearchOrganizationUsersMethod = getSearchOrganizationUsersMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest, com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchOrganizationUsers"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("SearchOrganizationUsers"))
+              .build();
+        }
+      }
+    }
+    return getSearchOrganizationUsersMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.UpdateUserRequest,
@@ -77,68 +170,6 @@ public final class UserServiceGrpc {
     return getUpdateUserMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.GetUserRequest,
-      com.scalekit.grpc.scalekit.v1.users.GetUserResponse> getGetUserMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetUser",
-      requestType = com.scalekit.grpc.scalekit.v1.users.GetUserRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.users.GetUserResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.GetUserRequest,
-      com.scalekit.grpc.scalekit.v1.users.GetUserResponse> getGetUserMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.GetUserRequest, com.scalekit.grpc.scalekit.v1.users.GetUserResponse> getGetUserMethod;
-    if ((getGetUserMethod = UserServiceGrpc.getGetUserMethod) == null) {
-      synchronized (UserServiceGrpc.class) {
-        if ((getGetUserMethod = UserServiceGrpc.getGetUserMethod) == null) {
-          UserServiceGrpc.getGetUserMethod = getGetUserMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.users.GetUserRequest, com.scalekit.grpc.scalekit.v1.users.GetUserResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetUser"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.users.GetUserRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.users.GetUserResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("GetUser"))
-              .build();
-        }
-      }
-    }
-    return getGetUserMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.ListUserRequest,
-      com.scalekit.grpc.scalekit.v1.users.ListUserResponse> getListUsersMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListUsers",
-      requestType = com.scalekit.grpc.scalekit.v1.users.ListUserRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.users.ListUserResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.ListUserRequest,
-      com.scalekit.grpc.scalekit.v1.users.ListUserResponse> getListUsersMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.ListUserRequest, com.scalekit.grpc.scalekit.v1.users.ListUserResponse> getListUsersMethod;
-    if ((getListUsersMethod = UserServiceGrpc.getListUsersMethod) == null) {
-      synchronized (UserServiceGrpc.class) {
-        if ((getListUsersMethod = UserServiceGrpc.getListUsersMethod) == null) {
-          UserServiceGrpc.getListUsersMethod = getListUsersMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.users.ListUserRequest, com.scalekit.grpc.scalekit.v1.users.ListUserResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListUsers"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.users.ListUserRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.users.ListUserResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("ListUsers"))
-              .build();
-        }
-      }
-    }
-    return getListUsersMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.DeleteUserRequest,
       com.google.protobuf.Empty> getDeleteUserMethod;
 
@@ -170,35 +201,159 @@ public final class UserServiceGrpc {
     return getDeleteUserMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.AddUserRequest,
-      com.scalekit.grpc.scalekit.v1.users.AddUserResponse> getAddUserToOrganizationMethod;
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.CreateMembershipRequest,
+      com.scalekit.grpc.scalekit.v1.users.CreateMembershipResponse> getCreateMembershipMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "AddUserToOrganization",
-      requestType = com.scalekit.grpc.scalekit.v1.users.AddUserRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.users.AddUserResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "CreateMembership",
+      requestType = com.scalekit.grpc.scalekit.v1.users.CreateMembershipRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.users.CreateMembershipResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.AddUserRequest,
-      com.scalekit.grpc.scalekit.v1.users.AddUserResponse> getAddUserToOrganizationMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.AddUserRequest, com.scalekit.grpc.scalekit.v1.users.AddUserResponse> getAddUserToOrganizationMethod;
-    if ((getAddUserToOrganizationMethod = UserServiceGrpc.getAddUserToOrganizationMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.CreateMembershipRequest,
+      com.scalekit.grpc.scalekit.v1.users.CreateMembershipResponse> getCreateMembershipMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.CreateMembershipRequest, com.scalekit.grpc.scalekit.v1.users.CreateMembershipResponse> getCreateMembershipMethod;
+    if ((getCreateMembershipMethod = UserServiceGrpc.getCreateMembershipMethod) == null) {
       synchronized (UserServiceGrpc.class) {
-        if ((getAddUserToOrganizationMethod = UserServiceGrpc.getAddUserToOrganizationMethod) == null) {
-          UserServiceGrpc.getAddUserToOrganizationMethod = getAddUserToOrganizationMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.users.AddUserRequest, com.scalekit.grpc.scalekit.v1.users.AddUserResponse>newBuilder()
+        if ((getCreateMembershipMethod = UserServiceGrpc.getCreateMembershipMethod) == null) {
+          UserServiceGrpc.getCreateMembershipMethod = getCreateMembershipMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.users.CreateMembershipRequest, com.scalekit.grpc.scalekit.v1.users.CreateMembershipResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddUserToOrganization"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateMembership"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.users.AddUserRequest.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.users.CreateMembershipRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.users.AddUserResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("AddUserToOrganization"))
+                  com.scalekit.grpc.scalekit.v1.users.CreateMembershipResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("CreateMembership"))
               .build();
         }
       }
     }
-    return getAddUserToOrganizationMethod;
+    return getCreateMembershipMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.DeleteMembershipRequest,
+      com.google.protobuf.Empty> getDeleteMembershipMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteMembership",
+      requestType = com.scalekit.grpc.scalekit.v1.users.DeleteMembershipRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.DeleteMembershipRequest,
+      com.google.protobuf.Empty> getDeleteMembershipMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.DeleteMembershipRequest, com.google.protobuf.Empty> getDeleteMembershipMethod;
+    if ((getDeleteMembershipMethod = UserServiceGrpc.getDeleteMembershipMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getDeleteMembershipMethod = UserServiceGrpc.getDeleteMembershipMethod) == null) {
+          UserServiceGrpc.getDeleteMembershipMethod = getDeleteMembershipMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.users.DeleteMembershipRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteMembership"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.users.DeleteMembershipRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("DeleteMembership"))
+              .build();
+        }
+      }
+    }
+    return getDeleteMembershipMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest,
+      com.scalekit.grpc.scalekit.v1.users.UpdateMembershipResponse> getUpdateMembershipMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateMembership",
+      requestType = com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.users.UpdateMembershipResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest,
+      com.scalekit.grpc.scalekit.v1.users.UpdateMembershipResponse> getUpdateMembershipMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest, com.scalekit.grpc.scalekit.v1.users.UpdateMembershipResponse> getUpdateMembershipMethod;
+    if ((getUpdateMembershipMethod = UserServiceGrpc.getUpdateMembershipMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getUpdateMembershipMethod = UserServiceGrpc.getUpdateMembershipMethod) == null) {
+          UserServiceGrpc.getUpdateMembershipMethod = getUpdateMembershipMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest, com.scalekit.grpc.scalekit.v1.users.UpdateMembershipResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateMembership"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.users.UpdateMembershipResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("UpdateMembership"))
+              .build();
+        }
+      }
+    }
+    return getUpdateMembershipMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipRequest,
+      com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipResponse> getCreateUserAndMembershipMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateUserAndMembership",
+      requestType = com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipRequest,
+      com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipResponse> getCreateUserAndMembershipMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipRequest, com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipResponse> getCreateUserAndMembershipMethod;
+    if ((getCreateUserAndMembershipMethod = UserServiceGrpc.getCreateUserAndMembershipMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getCreateUserAndMembershipMethod = UserServiceGrpc.getCreateUserAndMembershipMethod) == null) {
+          UserServiceGrpc.getCreateUserAndMembershipMethod = getCreateUserAndMembershipMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipRequest, com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateUserAndMembership"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("CreateUserAndMembership"))
+              .build();
+        }
+      }
+    }
+    return getCreateUserAndMembershipMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersRequest,
+      com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersResponse> getListOrganizationUsersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListOrganizationUsers",
+      requestType = com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersRequest,
+      com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersResponse> getListOrganizationUsersMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersRequest, com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersResponse> getListOrganizationUsersMethod;
+    if ((getListOrganizationUsersMethod = UserServiceGrpc.getListOrganizationUsersMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getListOrganizationUsersMethod = UserServiceGrpc.getListOrganizationUsersMethod) == null) {
+          UserServiceGrpc.getListOrganizationUsersMethod = getListOrganizationUsersMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersRequest, com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListOrganizationUsers"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("ListOrganizationUsers"))
+              .build();
+        }
+      }
+    }
+    return getListOrganizationUsersMethod;
   }
 
   /**
@@ -250,10 +405,34 @@ public final class UserServiceGrpc {
   public interface AsyncService {
 
     /**
+     * <pre>
+     * Users
+     * </pre>
      */
-    default void createUser(com.scalekit.grpc.scalekit.v1.users.CreateUserRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.CreateUserResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateUserMethod(), responseObserver);
+    default void getUser(com.scalekit.grpc.scalekit.v1.users.GetUserRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetUserResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetUserMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listUsers(com.scalekit.grpc.scalekit.v1.users.ListUsersRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.ListUsersResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListUsersMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void searchUsers(com.scalekit.grpc.scalekit.v1.users.SearchUsersRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.SearchUsersResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchUsersMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void searchOrganizationUsers(com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchOrganizationUsersMethod(), responseObserver);
     }
 
     /**
@@ -265,30 +444,53 @@ public final class UserServiceGrpc {
 
     /**
      */
-    default void getUser(com.scalekit.grpc.scalekit.v1.users.GetUserRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetUserResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetUserMethod(), responseObserver);
-    }
-
-    /**
-     */
-    default void listUsers(com.scalekit.grpc.scalekit.v1.users.ListUserRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.ListUserResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListUsersMethod(), responseObserver);
-    }
-
-    /**
-     */
     default void deleteUser(com.scalekit.grpc.scalekit.v1.users.DeleteUserRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteUserMethod(), responseObserver);
     }
 
     /**
+     * <pre>
+     * Memberships
+     * </pre>
      */
-    default void addUserToOrganization(com.scalekit.grpc.scalekit.v1.users.AddUserRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.AddUserResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAddUserToOrganizationMethod(), responseObserver);
+    default void createMembership(com.scalekit.grpc.scalekit.v1.users.CreateMembershipRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.CreateMembershipResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateMembershipMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * TODO Check cascade behaviour currently its ignored
+     * </pre>
+     */
+    default void deleteMembership(com.scalekit.grpc.scalekit.v1.users.DeleteMembershipRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteMembershipMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateMembership(com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.UpdateMembershipResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateMembershipMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void createUserAndMembership(com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateUserAndMembershipMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * only memberships of the organization
+     * </pre>
+     */
+    default void listOrganizationUsers(com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListOrganizationUsersMethod(), responseObserver);
     }
   }
 
@@ -320,11 +522,38 @@ public final class UserServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Users
+     * </pre>
      */
-    public void createUser(com.scalekit.grpc.scalekit.v1.users.CreateUserRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.CreateUserResponse> responseObserver) {
+    public void getUser(com.scalekit.grpc.scalekit.v1.users.GetUserRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetUserResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateUserMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listUsers(com.scalekit.grpc.scalekit.v1.users.ListUsersRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.ListUsersResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListUsersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void searchUsers(com.scalekit.grpc.scalekit.v1.users.SearchUsersRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.SearchUsersResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSearchUsersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void searchOrganizationUsers(com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSearchOrganizationUsersMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -337,22 +566,6 @@ public final class UserServiceGrpc {
 
     /**
      */
-    public void getUser(com.scalekit.grpc.scalekit.v1.users.GetUserRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetUserResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetUserMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void listUsers(com.scalekit.grpc.scalekit.v1.users.ListUserRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.ListUserResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListUsersMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
     public void deleteUser(com.scalekit.grpc.scalekit.v1.users.DeleteUserRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -360,11 +573,52 @@ public final class UserServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Memberships
+     * </pre>
      */
-    public void addUserToOrganization(com.scalekit.grpc.scalekit.v1.users.AddUserRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.AddUserResponse> responseObserver) {
+    public void createMembership(com.scalekit.grpc.scalekit.v1.users.CreateMembershipRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.CreateMembershipResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getAddUserToOrganizationMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getCreateMembershipMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * TODO Check cascade behaviour currently its ignored
+     * </pre>
+     */
+    public void deleteMembership(com.scalekit.grpc.scalekit.v1.users.DeleteMembershipRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteMembershipMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateMembership(com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.UpdateMembershipResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateMembershipMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createUserAndMembership(com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateUserAndMembershipMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * only memberships of the organization
+     * </pre>
+     */
+    public void listOrganizationUsers(com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListOrganizationUsersMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -385,10 +639,34 @@ public final class UserServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Users
+     * </pre>
      */
-    public com.scalekit.grpc.scalekit.v1.users.CreateUserResponse createUser(com.scalekit.grpc.scalekit.v1.users.CreateUserRequest request) {
+    public com.scalekit.grpc.scalekit.v1.users.GetUserResponse getUser(com.scalekit.grpc.scalekit.v1.users.GetUserRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateUserMethod(), getCallOptions(), request);
+          getChannel(), getGetUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.users.ListUsersResponse listUsers(com.scalekit.grpc.scalekit.v1.users.ListUsersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUsersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.users.SearchUsersResponse searchUsers(com.scalekit.grpc.scalekit.v1.users.SearchUsersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchUsersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersResponse searchOrganizationUsers(com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchOrganizationUsersMethod(), getCallOptions(), request);
     }
 
     /**
@@ -400,30 +678,53 @@ public final class UserServiceGrpc {
 
     /**
      */
-    public com.scalekit.grpc.scalekit.v1.users.GetUserResponse getUser(com.scalekit.grpc.scalekit.v1.users.GetUserRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetUserMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.scalekit.grpc.scalekit.v1.users.ListUserResponse listUsers(com.scalekit.grpc.scalekit.v1.users.ListUserRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListUsersMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
     public com.google.protobuf.Empty deleteUser(com.scalekit.grpc.scalekit.v1.users.DeleteUserRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteUserMethod(), getCallOptions(), request);
     }
 
     /**
+     * <pre>
+     * Memberships
+     * </pre>
      */
-    public com.scalekit.grpc.scalekit.v1.users.AddUserResponse addUserToOrganization(com.scalekit.grpc.scalekit.v1.users.AddUserRequest request) {
+    public com.scalekit.grpc.scalekit.v1.users.CreateMembershipResponse createMembership(com.scalekit.grpc.scalekit.v1.users.CreateMembershipRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getAddUserToOrganizationMethod(), getCallOptions(), request);
+          getChannel(), getCreateMembershipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * TODO Check cascade behaviour currently its ignored
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteMembership(com.scalekit.grpc.scalekit.v1.users.DeleteMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMembershipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.users.UpdateMembershipResponse updateMembership(com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMembershipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipResponse createUserAndMembership(com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateUserAndMembershipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * only memberships of the organization
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersResponse listOrganizationUsers(com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOrganizationUsersMethod(), getCallOptions(), request);
     }
   }
 
@@ -444,11 +745,38 @@ public final class UserServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Users
+     * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.users.CreateUserResponse> createUser(
-        com.scalekit.grpc.scalekit.v1.users.CreateUserRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.users.GetUserResponse> getUser(
+        com.scalekit.grpc.scalekit.v1.users.GetUserRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateUserMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.users.ListUsersResponse> listUsers(
+        com.scalekit.grpc.scalekit.v1.users.ListUsersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListUsersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.users.SearchUsersResponse> searchUsers(
+        com.scalekit.grpc.scalekit.v1.users.SearchUsersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSearchUsersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersResponse> searchOrganizationUsers(
+        com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSearchOrganizationUsersMethod(), getCallOptions()), request);
     }
 
     /**
@@ -461,22 +789,6 @@ public final class UserServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.users.GetUserResponse> getUser(
-        com.scalekit.grpc.scalekit.v1.users.GetUserRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetUserMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.users.ListUserResponse> listUsers(
-        com.scalekit.grpc.scalekit.v1.users.ListUserRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListUsersMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteUser(
         com.scalekit.grpc.scalekit.v1.users.DeleteUserRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -484,20 +796,66 @@ public final class UserServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Memberships
+     * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.users.AddUserResponse> addUserToOrganization(
-        com.scalekit.grpc.scalekit.v1.users.AddUserRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.users.CreateMembershipResponse> createMembership(
+        com.scalekit.grpc.scalekit.v1.users.CreateMembershipRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getAddUserToOrganizationMethod(), getCallOptions()), request);
+          getChannel().newCall(getCreateMembershipMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * TODO Check cascade behaviour currently its ignored
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteMembership(
+        com.scalekit.grpc.scalekit.v1.users.DeleteMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteMembershipMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.users.UpdateMembershipResponse> updateMembership(
+        com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateMembershipMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipResponse> createUserAndMembership(
+        com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateUserAndMembershipMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * only memberships of the organization
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersResponse> listOrganizationUsers(
+        com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListOrganizationUsersMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_CREATE_USER = 0;
-  private static final int METHODID_UPDATE_USER = 1;
-  private static final int METHODID_GET_USER = 2;
-  private static final int METHODID_LIST_USERS = 3;
-  private static final int METHODID_DELETE_USER = 4;
-  private static final int METHODID_ADD_USER_TO_ORGANIZATION = 5;
+  private static final int METHODID_GET_USER = 0;
+  private static final int METHODID_LIST_USERS = 1;
+  private static final int METHODID_SEARCH_USERS = 2;
+  private static final int METHODID_SEARCH_ORGANIZATION_USERS = 3;
+  private static final int METHODID_UPDATE_USER = 4;
+  private static final int METHODID_DELETE_USER = 5;
+  private static final int METHODID_CREATE_MEMBERSHIP = 6;
+  private static final int METHODID_DELETE_MEMBERSHIP = 7;
+  private static final int METHODID_UPDATE_MEMBERSHIP = 8;
+  private static final int METHODID_CREATE_USER_AND_MEMBERSHIP = 9;
+  private static final int METHODID_LIST_ORGANIZATION_USERS = 10;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -516,29 +874,49 @@ public final class UserServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_CREATE_USER:
-          serviceImpl.createUser((com.scalekit.grpc.scalekit.v1.users.CreateUserRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.CreateUserResponse>) responseObserver);
-          break;
-        case METHODID_UPDATE_USER:
-          serviceImpl.updateUser((com.scalekit.grpc.scalekit.v1.users.UpdateUserRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.UpdateUserResponse>) responseObserver);
-          break;
         case METHODID_GET_USER:
           serviceImpl.getUser((com.scalekit.grpc.scalekit.v1.users.GetUserRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetUserResponse>) responseObserver);
           break;
         case METHODID_LIST_USERS:
-          serviceImpl.listUsers((com.scalekit.grpc.scalekit.v1.users.ListUserRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.ListUserResponse>) responseObserver);
+          serviceImpl.listUsers((com.scalekit.grpc.scalekit.v1.users.ListUsersRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.ListUsersResponse>) responseObserver);
+          break;
+        case METHODID_SEARCH_USERS:
+          serviceImpl.searchUsers((com.scalekit.grpc.scalekit.v1.users.SearchUsersRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.SearchUsersResponse>) responseObserver);
+          break;
+        case METHODID_SEARCH_ORGANIZATION_USERS:
+          serviceImpl.searchOrganizationUsers((com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_USER:
+          serviceImpl.updateUser((com.scalekit.grpc.scalekit.v1.users.UpdateUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.UpdateUserResponse>) responseObserver);
           break;
         case METHODID_DELETE_USER:
           serviceImpl.deleteUser((com.scalekit.grpc.scalekit.v1.users.DeleteUserRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
-        case METHODID_ADD_USER_TO_ORGANIZATION:
-          serviceImpl.addUserToOrganization((com.scalekit.grpc.scalekit.v1.users.AddUserRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.AddUserResponse>) responseObserver);
+        case METHODID_CREATE_MEMBERSHIP:
+          serviceImpl.createMembership((com.scalekit.grpc.scalekit.v1.users.CreateMembershipRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.CreateMembershipResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_MEMBERSHIP:
+          serviceImpl.deleteMembership((com.scalekit.grpc.scalekit.v1.users.DeleteMembershipRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_MEMBERSHIP:
+          serviceImpl.updateMembership((com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.UpdateMembershipResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_USER_AND_MEMBERSHIP:
+          serviceImpl.createUserAndMembership((com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipResponse>) responseObserver);
+          break;
+        case METHODID_LIST_ORGANIZATION_USERS:
+          serviceImpl.listOrganizationUsers((com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -559,20 +937,6 @@ public final class UserServiceGrpc {
   public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
     return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
         .addMethod(
-          getCreateUserMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.users.CreateUserRequest,
-              com.scalekit.grpc.scalekit.v1.users.CreateUserResponse>(
-                service, METHODID_CREATE_USER)))
-        .addMethod(
-          getUpdateUserMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.users.UpdateUserRequest,
-              com.scalekit.grpc.scalekit.v1.users.UpdateUserResponse>(
-                service, METHODID_UPDATE_USER)))
-        .addMethod(
           getGetUserMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -583,9 +947,30 @@ public final class UserServiceGrpc {
           getListUsersMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.users.ListUserRequest,
-              com.scalekit.grpc.scalekit.v1.users.ListUserResponse>(
+              com.scalekit.grpc.scalekit.v1.users.ListUsersRequest,
+              com.scalekit.grpc.scalekit.v1.users.ListUsersResponse>(
                 service, METHODID_LIST_USERS)))
+        .addMethod(
+          getSearchUsersMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.users.SearchUsersRequest,
+              com.scalekit.grpc.scalekit.v1.users.SearchUsersResponse>(
+                service, METHODID_SEARCH_USERS)))
+        .addMethod(
+          getSearchOrganizationUsersMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersRequest,
+              com.scalekit.grpc.scalekit.v1.users.SearchOrganizationUsersResponse>(
+                service, METHODID_SEARCH_ORGANIZATION_USERS)))
+        .addMethod(
+          getUpdateUserMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.users.UpdateUserRequest,
+              com.scalekit.grpc.scalekit.v1.users.UpdateUserResponse>(
+                service, METHODID_UPDATE_USER)))
         .addMethod(
           getDeleteUserMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -594,12 +979,40 @@ public final class UserServiceGrpc {
               com.google.protobuf.Empty>(
                 service, METHODID_DELETE_USER)))
         .addMethod(
-          getAddUserToOrganizationMethod(),
+          getCreateMembershipMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.users.AddUserRequest,
-              com.scalekit.grpc.scalekit.v1.users.AddUserResponse>(
-                service, METHODID_ADD_USER_TO_ORGANIZATION)))
+              com.scalekit.grpc.scalekit.v1.users.CreateMembershipRequest,
+              com.scalekit.grpc.scalekit.v1.users.CreateMembershipResponse>(
+                service, METHODID_CREATE_MEMBERSHIP)))
+        .addMethod(
+          getDeleteMembershipMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.users.DeleteMembershipRequest,
+              com.google.protobuf.Empty>(
+                service, METHODID_DELETE_MEMBERSHIP)))
+        .addMethod(
+          getUpdateMembershipMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest,
+              com.scalekit.grpc.scalekit.v1.users.UpdateMembershipResponse>(
+                service, METHODID_UPDATE_MEMBERSHIP)))
+        .addMethod(
+          getCreateUserAndMembershipMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipRequest,
+              com.scalekit.grpc.scalekit.v1.users.CreateUserAndMembershipResponse>(
+                service, METHODID_CREATE_USER_AND_MEMBERSHIP)))
+        .addMethod(
+          getListOrganizationUsersMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersRequest,
+              com.scalekit.grpc.scalekit.v1.users.ListOrganizationUsersResponse>(
+                service, METHODID_LIST_ORGANIZATION_USERS)))
         .build();
   }
 
@@ -648,12 +1061,17 @@ public final class UserServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new UserServiceFileDescriptorSupplier())
-              .addMethod(getCreateUserMethod())
-              .addMethod(getUpdateUserMethod())
               .addMethod(getGetUserMethod())
               .addMethod(getListUsersMethod())
+              .addMethod(getSearchUsersMethod())
+              .addMethod(getSearchOrganizationUsersMethod())
+              .addMethod(getUpdateUserMethod())
               .addMethod(getDeleteUserMethod())
-              .addMethod(getAddUserToOrganizationMethod())
+              .addMethod(getCreateMembershipMethod())
+              .addMethod(getDeleteMembershipMethod())
+              .addMethod(getUpdateMembershipMethod())
+              .addMethod(getCreateUserAndMembershipMethod())
+              .addMethod(getListOrganizationUsersMethod())
               .build();
         }
       }

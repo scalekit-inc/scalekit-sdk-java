@@ -106,89 +106,90 @@ public final class MembersProto {
       "tobuf/empty.proto\032\037google/protobuf/times" +
       "tamp.proto\032!scalekit/v1/commons/commons." +
       "proto\032!scalekit/v1/options/options.proto" +
-      "\"\274\005\n\006Member\022\016\n\002id\030\001 \001(\tR\002id\022;\n\013create_ti" +
-      "me\030\002 \001(\0132\032.google.protobuf.TimestampR\ncr" +
-      "eateTime\022;\n\013update_time\030\003 \001(\0132\032.google.p" +
-      "rotobuf.TimestampR\nupdateTime\022!\n\014workspa" +
-      "ce_id\030\004 \001(\tR\013workspaceId\0223\n\004role\030\005 \001(\0162\037" +
-      ".scalekit.v1.members.MemberRoleR\004role\022,\n" +
-      "\nfirst_name\030\006 \001(\tB\010\272H\005r\003\030\310\001H\000R\tfirstName" +
-      "\210\001\001\022*\n\tlast_name\030\007 \001(\tB\010\272H\005r\003\030\310\001H\001R\010last" +
-      "Name\210\001\001\022\035\n\005email\030\010 \001(\tB\007\272H\004r\002`\001R\005email\022`" +
-      "\n\010metadata\030\t \003(\0132).scalekit.v1.members.M" +
-      "ember.MetadataEntryB\031\272H\026\232\001\023\020\n\"\006r\004\020\003\030\031*\007r" +
-      "\005\020\001\030\200\002R\010metadata\022V\n\rorganizations\030\n \003(\0132" +
-      "+.scalekit.v1.commons.OrganizationMember" +
-      "shipB\003\340A\003R\rorganizations\022C\n\014user_profile" +
-      "\030\013 \001(\0132 .scalekit.v1.commons.UserProfile" +
-      "R\013userProfile\032;\n\rMetadataEntry\022\020\n\003key\030\001 " +
-      "\001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\r\n\013_f" +
-      "irst_nameB\014\n\n_last_name\"R\n\023CreateMemberR" +
-      "equest\022;\n\006member\030\001 \001(\0132\033.scalekit.v1.mem" +
-      "bers.MemberB\006\272H\003\310\001\001R\006member\"K\n\024CreateMem" +
-      "berResponse\0223\n\006member\030\001 \001(\0132\033.scalekit.v" +
-      "1.members.MemberR\006member\"\302\003\n\014UpdateMembe" +
-      "r\0228\n\004role\030\005 \001(\0162\037.scalekit.v1.members.Me" +
-      "mberRoleH\000R\004role\210\001\001\022.\n\nfirst_name\030\006 \001(\tB" +
-      "\n\272H\007r\005\020\001\030\310\001H\001R\tfirstName\210\001\001\022,\n\tlast_name" +
-      "\030\007 \001(\tB\n\272H\007r\005\020\001\030\310\001H\002R\010lastName\210\001\001\022f\n\010met" +
-      "adata\030\t \003(\0132/.scalekit.v1.members.Update" +
-      "Member.MetadataEntryB\031\272H\026\232\001\023\020\n\"\006r\004\020\003\030\031*\007" +
-      "r\005\020\001\030\200\002R\010metadata\022C\n\014user_profile\030\n \001(\0132" +
-      " .scalekit.v1.commons.UserProfileR\013userP" +
-      "rofile\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003ke" +
-      "y\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\007\n\005_roleB\r\n\013" +
-      "_first_nameB\014\n\n_last_nameJ\004\010\004\020\005J\004\010\010\020\t\"W\n" +
-      "\032UpdateCurrentMemberRequest\0229\n\006member\030\001 " +
-      "\001(\0132!.scalekit.v1.members.UpdateMemberR\006" +
-      "member\"k\n\023UpdateMemberRequest\022\031\n\002id\030\001 \001(" +
-      "\tB\t\272H\006r\004\020\023\030\031R\002id\0229\n\006member\030\002 \001(\0132!.scale" +
-      "kit.v1.members.UpdateMemberR\006member\"K\n\024U" +
-      "pdateMemberResponse\0223\n\006member\030\001 \001(\0132\033.sc" +
-      "alekit.v1.members.MemberR\006member\"\031\n\027GetC" +
-      "urrentMemberRequest\"-\n\020GetMemberRequest\022" +
-      "\031\n\002id\030\001 \001(\tB\t\272H\006r\004\020\023\030\031R\002id\"H\n\021GetMemberR" +
-      "esponse\0223\n\006member\030\001 \001(\0132\033.scalekit.v1.me" +
-      "mbers.MemberR\006member\"O\n\021ListMemberReques" +
-      "t\022\033\n\tpage_size\030\001 \001(\rR\010pageSize\022\035\n\npage_t" +
-      "oken\030\002 \001(\tR\tpageToken\"\222\001\n\022ListMemberResp" +
-      "onse\022&\n\017next_page_token\030\001 \001(\tR\rnextPageT" +
-      "oken\022\035\n\ntotal_size\030\002 \001(\rR\ttotalSize\0225\n\007m" +
-      "embers\030\003 \003(\0132\033.scalekit.v1.members.Membe" +
-      "rR\007members\"0\n\023DeleteMemberRequest\022\031\n\002id\030" +
-      "\001 \001(\tB\t\272H\006r\004\020\023\030\031R\002id*>\n\nMemberRole\022\033\n\027ME" +
-      "MBER_ROLE_UNSPECIFIED\020\000\022\t\n\005ADMIN\020\001\022\010\n\004US" +
-      "ER\020\0022\323\007\n\016MembersService\022\212\001\n\014CreateMember" +
-      "\022(.scalekit.v1.members.CreateMemberReque" +
-      "st\032).scalekit.v1.members.CreateMemberRes" +
-      "ponse\"%\202\265\030\002\030@\202\323\344\223\002\031\"\017/api/v1/members:\006me" +
-      "mber\022\235\001\n\023UpdateCurrentMember\022/.scalekit." +
-      "v1.members.UpdateCurrentMemberRequest\032)." +
-      "scalekit.v1.members.UpdateMemberResponse" +
-      "\"*\202\265\030\002\030P\202\323\344\223\002\0362\024/api/v1/members:this:\006me" +
-      "mber\022\217\001\n\014UpdateMember\022(.scalekit.v1.memb" +
-      "ers.UpdateMemberRequest\032).scalekit.v1.me" +
-      "mbers.UpdateMemberResponse\"*\202\265\030\002\030@\202\323\344\223\002\036" +
-      "2\024/api/v1/members/{id}:\006member\022\214\001\n\020GetCu" +
-      "rrentMember\022,.scalekit.v1.members.GetCur" +
-      "rentMemberRequest\032&.scalekit.v1.members." +
-      "GetMemberResponse\"\"\202\265\030\002\030P\202\323\344\223\002\026\022\024/api/v1" +
-      "/members:this\022~\n\tGetMember\022%.scalekit.v1" +
-      ".members.GetMemberRequest\032&.scalekit.v1." +
-      "members.GetMemberResponse\"\"\202\265\030\002\030@\202\323\344\223\002\026\022" +
-      "\024/api/v1/members/{id}\022}\n\013ListMembers\022&.s" +
-      "calekit.v1.members.ListMemberRequest\032\'.s" +
-      "calekit.v1.members.ListMemberResponse\"\035\202" +
-      "\265\030\002\030@\202\323\344\223\002\021\022\017/api/v1/members\022t\n\014DeleteMe" +
-      "mber\022(.scalekit.v1.members.DeleteMemberR" +
-      "equest\032\026.google.protobuf.Empty\"\"\202\265\030\002\030@\202\323" +
-      "\344\223\002\026*\024/api/v1/members/{id}B\326\001\n%com.scale" +
-      "kit.grpc.scalekit.v1.membersB\014MembersPro" +
-      "toP\001Z1github.com/scalekit-inc/scalekit/p" +
-      "kg/grpc/members\242\002\003SVM\252\002\023Scalekit.V1.Memb" +
-      "ers\312\002\023Scalekit\\V1\\Members\342\002\037Scalekit\\V1\\" +
-      "Members\\GPBMetadata\352\002\025Scalekit::V1::Memb" +
-      "ersb\006proto3"
+      "\032\035scalekit/v1/users/users.proto\"\274\005\n\006Memb" +
+      "er\022\016\n\002id\030\001 \001(\tR\002id\022;\n\013create_time\030\002 \001(\0132" +
+      "\032.google.protobuf.TimestampR\ncreateTime\022" +
+      ";\n\013update_time\030\003 \001(\0132\032.google.protobuf.T" +
+      "imestampR\nupdateTime\022!\n\014workspace_id\030\004 \001" +
+      "(\tR\013workspaceId\0223\n\004role\030\005 \001(\0162\037.scalekit" +
+      ".v1.members.MemberRoleR\004role\022,\n\nfirst_na" +
+      "me\030\006 \001(\tB\010\272H\005r\003\030\310\001H\000R\tfirstName\210\001\001\022*\n\tla" +
+      "st_name\030\007 \001(\tB\010\272H\005r\003\030\310\001H\001R\010lastName\210\001\001\022\035" +
+      "\n\005email\030\010 \001(\tB\007\272H\004r\002`\001R\005email\022`\n\010metadat" +
+      "a\030\t \003(\0132).scalekit.v1.members.Member.Met" +
+      "adataEntryB\031\272H\026\232\001\023\020\n\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010m" +
+      "etadata\022V\n\rorganizations\030\n \003(\0132+.scaleki" +
+      "t.v1.commons.OrganizationMembershipB\003\340A\003" +
+      "R\rorganizations\022C\n\014user_profile\030\013 \001(\0132 ." +
+      "scalekit.v1.commons.UserProfileR\013userPro" +
+      "file\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022" +
+      "\024\n\005value\030\002 \001(\tR\005value:\0028\001B\r\n\013_first_name" +
+      "B\014\n\n_last_name\"R\n\023CreateMemberRequest\022;\n" +
+      "\006member\030\001 \001(\0132\033.scalekit.v1.members.Memb" +
+      "erB\006\272H\003\310\001\001R\006member\"K\n\024CreateMemberRespon" +
+      "se\0223\n\006member\030\001 \001(\0132\033.scalekit.v1.members" +
+      ".MemberR\006member\"\306\003\n\014UpdateMember\0228\n\004role" +
+      "\030\005 \001(\0162\037.scalekit.v1.members.MemberRoleH" +
+      "\000R\004role\210\001\001\022.\n\nfirst_name\030\006 \001(\tB\n\272H\007r\005\020\001\030" +
+      "\310\001H\001R\tfirstName\210\001\001\022,\n\tlast_name\030\007 \001(\tB\n\272" +
+      "H\007r\005\020\001\030\310\001H\002R\010lastName\210\001\001\022f\n\010metadata\030\t \003" +
+      "(\0132/.scalekit.v1.members.UpdateMember.Me" +
+      "tadataEntryB\031\272H\026\232\001\023\020\n\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010" +
+      "metadata\022G\n\014user_profile\030\n \001(\0132$.scaleki" +
+      "t.v1.users.UpdateUserProfileR\013userProfil" +
+      "e\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005" +
+      "value\030\002 \001(\tR\005value:\0028\001B\007\n\005_roleB\r\n\013_firs" +
+      "t_nameB\014\n\n_last_nameJ\004\010\004\020\005J\004\010\010\020\t\"W\n\032Upda" +
+      "teCurrentMemberRequest\0229\n\006member\030\001 \001(\0132!" +
+      ".scalekit.v1.members.UpdateMemberR\006membe" +
+      "r\"k\n\023UpdateMemberRequest\022\031\n\002id\030\001 \001(\tB\t\272H" +
+      "\006r\004\020\023\030\031R\002id\0229\n\006member\030\002 \001(\0132!.scalekit.v" +
+      "1.members.UpdateMemberR\006member\"K\n\024Update" +
+      "MemberResponse\0223\n\006member\030\001 \001(\0132\033.scaleki" +
+      "t.v1.members.MemberR\006member\"\031\n\027GetCurren" +
+      "tMemberRequest\"-\n\020GetMemberRequest\022\031\n\002id" +
+      "\030\001 \001(\tB\t\272H\006r\004\020\023\030\031R\002id\"H\n\021GetMemberRespon" +
+      "se\0223\n\006member\030\001 \001(\0132\033.scalekit.v1.members" +
+      ".MemberR\006member\"O\n\021ListMemberRequest\022\033\n\t" +
+      "page_size\030\001 \001(\rR\010pageSize\022\035\n\npage_token\030" +
+      "\002 \001(\tR\tpageToken\"\222\001\n\022ListMemberResponse\022" +
+      "&\n\017next_page_token\030\001 \001(\tR\rnextPageToken\022" +
+      "\035\n\ntotal_size\030\002 \001(\rR\ttotalSize\0225\n\007member" +
+      "s\030\003 \003(\0132\033.scalekit.v1.members.MemberR\007me" +
+      "mbers\"0\n\023DeleteMemberRequest\022\031\n\002id\030\001 \001(\t" +
+      "B\t\272H\006r\004\020\023\030\031R\002id*>\n\nMemberRole\022\033\n\027MEMBER_" +
+      "ROLE_UNSPECIFIED\020\000\022\t\n\005ADMIN\020\001\022\010\n\004USER\020\0022" +
+      "\323\007\n\016MembersService\022\212\001\n\014CreateMember\022(.sc" +
+      "alekit.v1.members.CreateMemberRequest\032)." +
+      "scalekit.v1.members.CreateMemberResponse" +
+      "\"%\202\265\030\002\030@\202\323\344\223\002\031\"\017/api/v1/members:\006member\022" +
+      "\235\001\n\023UpdateCurrentMember\022/.scalekit.v1.me" +
+      "mbers.UpdateCurrentMemberRequest\032).scale" +
+      "kit.v1.members.UpdateMemberResponse\"*\202\265\030" +
+      "\002\030P\202\323\344\223\002\0362\024/api/v1/members:this:\006member\022" +
+      "\217\001\n\014UpdateMember\022(.scalekit.v1.members.U" +
+      "pdateMemberRequest\032).scalekit.v1.members" +
+      ".UpdateMemberResponse\"*\202\265\030\002\030@\202\323\344\223\002\0362\024/ap" +
+      "i/v1/members/{id}:\006member\022\214\001\n\020GetCurrent" +
+      "Member\022,.scalekit.v1.members.GetCurrentM" +
+      "emberRequest\032&.scalekit.v1.members.GetMe" +
+      "mberResponse\"\"\202\265\030\002\030P\202\323\344\223\002\026\022\024/api/v1/memb" +
+      "ers:this\022~\n\tGetMember\022%.scalekit.v1.memb" +
+      "ers.GetMemberRequest\032&.scalekit.v1.membe" +
+      "rs.GetMemberResponse\"\"\202\265\030\002\030@\202\323\344\223\002\026\022\024/api" +
+      "/v1/members/{id}\022}\n\013ListMembers\022&.scalek" +
+      "it.v1.members.ListMemberRequest\032\'.scalek" +
+      "it.v1.members.ListMemberResponse\"\035\202\265\030\002\030@" +
+      "\202\323\344\223\002\021\022\017/api/v1/members\022t\n\014DeleteMember\022" +
+      "(.scalekit.v1.members.DeleteMemberReques" +
+      "t\032\026.google.protobuf.Empty\"\"\202\265\030\002\030@\202\323\344\223\002\026*" +
+      "\024/api/v1/members/{id}B\326\001\n%com.scalekit.g" +
+      "rpc.scalekit.v1.membersB\014MembersProtoP\001Z" +
+      "1github.com/scalekit-inc/scalekit/pkg/gr" +
+      "pc/members\242\002\003SVM\252\002\023Scalekit.V1.Members\312\002" +
+      "\023Scalekit\\V1\\Members\342\002\037Scalekit\\V1\\Membe" +
+      "rs\\GPBMetadata\352\002\025Scalekit::V1::Membersb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -200,6 +201,7 @@ public final class MembersProto {
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.scalekit.grpc.scalekit.v1.commons.CommonsProto.getDescriptor(),
           com.scalekit.grpc.scalekit.v1.options.OptionsProto.getDescriptor(),
+          com.scalekit.grpc.scalekit.v1.users.UsersProto.getDescriptor(),
         });
     internal_static_scalekit_v1_members_Member_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -306,6 +308,7 @@ public final class MembersProto {
     com.google.protobuf.TimestampProto.getDescriptor();
     com.scalekit.grpc.scalekit.v1.commons.CommonsProto.getDescriptor();
     com.scalekit.grpc.scalekit.v1.options.OptionsProto.getDescriptor();
+    com.scalekit.grpc.scalekit.v1.users.UsersProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

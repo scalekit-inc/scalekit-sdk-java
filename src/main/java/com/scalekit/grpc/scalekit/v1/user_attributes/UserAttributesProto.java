@@ -125,43 +125,43 @@ public final class UserAttributesProto {
       "7.scalekit.v1.user_attributes.CreateUser" +
       "AttributeRequest\0328.scalekit.v1.user_attr" +
       "ibutes.CreateUserAttributeResponse\"l\202\265\030\002" +
-      "\0304\202\323\344\223\002`\"\033/api/v1/sso-user-attributes:\016u" +
+      "\030t\202\323\344\223\002`\"\033/api/v1/sso-user-attributes:\016u" +
       "ser_attributeZ1\"\037/api/v1/user-profile-at" +
       "tributes:\016user_attribute\022\266\001\n\025ListSsoUser" +
       "Attributes\022\026.google.protobuf.Empty\0327.sca" +
       "lekit.v1.user_attributes.ListUserAttribu" +
-      "tesResponse\"L\202\265\030\002\0304\202\323\344\223\002@\022\033/api/v1/sso-u" +
+      "tesResponse\"L\202\265\030\002\030t\202\323\344\223\002@\022\033/api/v1/sso-u" +
       "ser-attributesZ!\022\037/api/v1/user-profile-a" +
       "ttributes\022\205\002\n\026UpdateSsoUserAttribute\0227.s" +
       "calekit.v1.user_attributes.UpdateUserAtt" +
       "ributeRequest\0328.scalekit.v1.user_attribu" +
-      "tes.UpdateUserAttributeResponse\"x\202\265\030\002\0304\202" +
+      "tes.UpdateUserAttributeResponse\"x\202\265\030\002\030t\202" +
       "\323\344\223\002l2!/api/v1/sso-user-attributes/{key}" +
       ":\016user_attributeZ72%/api/v1/user-profile" +
       "-attributes/{key}:\016user_attribute\022\303\001\n\026De" +
       "leteSsoUserAttribute\0227.scalekit.v1.user_" +
       "attributes.DeleteUserAttributeRequest\032\026." +
-      "google.protobuf.Empty\"X\202\265\030\002\0304\202\323\344\223\002L*!/ap" +
+      "google.protobuf.Empty\"X\202\265\030\002\030t\202\323\344\223\002L*!/ap" +
       "i/v1/sso-user-attributes/{key}Z\'*%/api/v" +
       "1/user-profile-attributes/{key}\022\322\001\n\034Crea" +
       "teDirectoryUserAttribute\0227.scalekit.v1.u" +
       "ser_attributes.CreateUserAttributeReques" +
       "t\0328.scalekit.v1.user_attributes.CreateUs" +
-      "erAttributeResponse\"?\202\265\030\002\0304\202\323\344\223\0023\"!/api/" +
+      "erAttributeResponse\"?\202\265\030\002\030t\202\323\344\223\0023\"!/api/" +
       "v1/directory-user-attributes:\016user_attri" +
       "bute\022\237\001\n\033ListDirectoryUserAttributes\022\026.g" +
       "oogle.protobuf.Empty\0327.scalekit.v1.user_" +
       "attributes.ListUserAttributesResponse\"/\202" +
-      "\265\030\002\0304\202\323\344\223\002#\022!/api/v1/directory-user-attr" +
+      "\265\030\002\030t\202\323\344\223\002#\022!/api/v1/directory-user-attr" +
       "ibutes\022\330\001\n\034UpdateDirectoryUserAttribute\022" +
       "7.scalekit.v1.user_attributes.UpdateUser" +
       "AttributeRequest\0328.scalekit.v1.user_attr" +
       "ibutes.UpdateUserAttributeResponse\"E\202\265\030\002" +
-      "\0304\202\323\344\223\00292\'/api/v1/directory-user-attribu" +
+      "\030t\202\323\344\223\00292\'/api/v1/directory-user-attribu" +
       "tes/{key}:\016user_attribute\022\246\001\n\034DeleteDire" +
       "ctoryUserAttribute\0227.scalekit.v1.user_at" +
       "tributes.DeleteUserAttributeRequest\032\026.go" +
-      "ogle.protobuf.Empty\"5\202\265\030\002\0304\202\323\344\223\002)*\'/api/" +
+      "ogle.protobuf.Empty\"5\202\265\030\002\030t\202\323\344\223\002)*\'/api/" +
       "v1/directory-user-attributes/{key}B\211\002\n-c" +
       "om.scalekit.grpc.scalekit.v1.user_attrib" +
       "utesB\023UserAttributesProtoP\001Z9github.com/" +

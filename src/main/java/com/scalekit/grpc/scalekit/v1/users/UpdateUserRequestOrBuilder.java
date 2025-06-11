@@ -9,80 +9,51 @@ public interface UpdateUserRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The organizationId.
-   */
-  java.lang.String getOrganizationId();
-  /**
-   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for organizationId.
-   */
-  com.google.protobuf.ByteString
-      getOrganizationIdBytes();
-
-  /**
-   * <code>string id = 2 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the id field is set.
    */
   boolean hasId();
   /**
-   * <code>string id = 2 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The id.
    */
   java.lang.String getId();
   /**
-   * <code>string id = 2 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
 
   /**
-   * <code>string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the externalId field is set.
    */
   boolean hasExternalId();
   /**
-   * <code>string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The externalId.
    */
   java.lang.String getExternalId();
   /**
-   * <code>string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for externalId.
    */
   com.google.protobuf.ByteString
       getExternalIdBytes();
 
   /**
-   * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the identity field is set.
-   */
-  boolean hasIdentity();
-  /**
-   * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The identity.
-   */
-  java.lang.String getIdentity();
-  /**
-   * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for identity.
-   */
-  com.google.protobuf.ByteString
-      getIdentityBytes();
-
-  /**
-   * <code>.scalekit.v1.users.UpdateUser user = 5 [json_name = "user", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.users.UpdateUser user = 3 [json_name = "user", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the user field is set.
    */
   boolean hasUser();
   /**
-   * <code>.scalekit.v1.users.UpdateUser user = 5 [json_name = "user", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.users.UpdateUser user = 3 [json_name = "user", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The user.
    */
   com.scalekit.grpc.scalekit.v1.users.UpdateUser getUser();
   /**
-   * <code>.scalekit.v1.users.UpdateUser user = 5 [json_name = "user", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.users.UpdateUser user = 3 [json_name = "user", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.users.UpdateUserOrBuilder getUserOrBuilder();
 

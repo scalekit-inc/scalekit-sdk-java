@@ -267,11 +267,11 @@ private static final long serialVersionUID = 0L;
     return domains_.getByteString(index);
   }
 
-  public static final int ORGANIZATIONNAME_FIELD_NUMBER = 9;
+  public static final int ORGANIZATION_NAME_FIELD_NUMBER = 9;
   @SuppressWarnings("serial")
   private volatile java.lang.Object organizationName_ = "";
   /**
-   * <code>string OrganizationName = 9 [json_name = "OrganizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string organization_name = 9 [json_name = "organizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The organizationName.
    */
   @java.lang.Override
@@ -288,7 +288,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string OrganizationName = 9 [json_name = "OrganizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string organization_name = 9 [json_name = "organizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for organizationName.
    */
   @java.lang.Override
@@ -452,7 +452,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DOMAINS_FIELD_NUMBER;
       hash = (53 * hash) + getDomainsList().hashCode();
     }
-    hash = (37 * hash) + ORGANIZATIONNAME_FIELD_NUMBER;
+    hash = (37 * hash) + ORGANIZATION_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getOrganizationName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1353,7 +1353,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object organizationName_ = "";
     /**
-     * <code>string OrganizationName = 9 [json_name = "OrganizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string organization_name = 9 [json_name = "organizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The organizationName.
      */
     public java.lang.String getOrganizationName() {
@@ -1369,7 +1369,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string OrganizationName = 9 [json_name = "OrganizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string organization_name = 9 [json_name = "organizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for organizationName.
      */
     public com.google.protobuf.ByteString
@@ -1386,7 +1386,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string OrganizationName = 9 [json_name = "OrganizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string organization_name = 9 [json_name = "organizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The organizationName to set.
      * @return This builder for chaining.
      */
@@ -1399,7 +1399,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string OrganizationName = 9 [json_name = "OrganizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string organization_name = 9 [json_name = "organizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearOrganizationName() {
@@ -1409,7 +1409,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string OrganizationName = 9 [json_name = "OrganizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string organization_name = 9 [json_name = "organizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for organizationName to set.
      * @return This builder for chaining.
      */

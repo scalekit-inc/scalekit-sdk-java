@@ -4,8 +4,8 @@
 // Protobuf Java Version: 3.25.3
 package com.scalekit.grpc.scalekit.v1.users;
 
-public interface AddUserRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:scalekit.v1.users.AddUserRequest)
+public interface DeleteMembershipRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:scalekit.v1.users.DeleteMembershipRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -55,21 +55,15 @@ public interface AddUserRequestOrBuilder extends
       getExternalIdBytes();
 
   /**
-   * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the identity field is set.
+   * <code>optional bool cascade = 5 [json_name = "cascade", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the cascade field is set.
    */
-  boolean hasIdentity();
+  boolean hasCascade();
   /**
-   * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The identity.
+   * <code>optional bool cascade = 5 [json_name = "cascade", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The cascade.
    */
-  java.lang.String getIdentity();
-  /**
-   * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for identity.
-   */
-  com.google.protobuf.ByteString
-      getIdentityBytes();
+  boolean getCascade();
 
-  com.scalekit.grpc.scalekit.v1.users.AddUserRequest.IdentitiesCase getIdentitiesCase();
+  com.scalekit.grpc.scalekit.v1.users.DeleteMembershipRequest.IdentitiesCase getIdentitiesCase();
 }

@@ -5,18 +5,18 @@
 package com.scalekit.grpc.scalekit.v1.users;
 
 /**
- * Protobuf type {@code scalekit.v1.users.AddUserRequest}
+ * Protobuf type {@code scalekit.v1.users.UpdateMembershipRequest}
  */
-public final class AddUserRequest extends
+public final class UpdateMembershipRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:scalekit.v1.users.AddUserRequest)
-    AddUserRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:scalekit.v1.users.UpdateMembershipRequest)
+    UpdateMembershipRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use AddUserRequest.newBuilder() to construct.
-  private AddUserRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateMembershipRequest.newBuilder() to construct.
+  private UpdateMembershipRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private AddUserRequest() {
+  private UpdateMembershipRequest() {
     organizationId_ = "";
   }
 
@@ -24,22 +24,23 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new AddUserRequest();
+    return new UpdateMembershipRequest();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_AddUserRequest_descriptor;
+    return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_UpdateMembershipRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_AddUserRequest_fieldAccessorTable
+    return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_UpdateMembershipRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.scalekit.grpc.scalekit.v1.users.AddUserRequest.class, com.scalekit.grpc.scalekit.v1.users.AddUserRequest.Builder.class);
+            com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest.class, com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest.Builder.class);
   }
 
+  private int bitField0_;
   private int identitiesCase_ = 0;
   @SuppressWarnings("serial")
   private java.lang.Object identities_;
@@ -48,7 +49,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     ID(2),
     EXTERNAL_ID(3),
-    IDENTITY(4),
     IDENTITIES_NOT_SET(0);
     private final int value;
     private IdentitiesCase(int value) {
@@ -68,7 +68,6 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 2: return ID;
         case 3: return EXTERNAL_ID;
-        case 4: return IDENTITY;
         case 0: return IDENTITIES_NOT_SET;
         default: return null;
       }
@@ -227,56 +226,30 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int IDENTITY_FIELD_NUMBER = 4;
+  public static final int MEMBERSHIP_FIELD_NUMBER = 5;
+  private com.scalekit.grpc.scalekit.v1.users.UpdateMembership membership_;
   /**
-   * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the identity field is set.
+   * <code>.scalekit.v1.users.UpdateMembership membership = 5 [json_name = "membership", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the membership field is set.
    */
-  public boolean hasIdentity() {
-    return identitiesCase_ == 4;
+  @java.lang.Override
+  public boolean hasMembership() {
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The identity.
+   * <code>.scalekit.v1.users.UpdateMembership membership = 5 [json_name = "membership", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The membership.
    */
-  public java.lang.String getIdentity() {
-    java.lang.Object ref = "";
-    if (identitiesCase_ == 4) {
-      ref = identities_;
-    }
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      if (identitiesCase_ == 4) {
-        identities_ = s;
-      }
-      return s;
-    }
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.users.UpdateMembership getMembership() {
+    return membership_ == null ? com.scalekit.grpc.scalekit.v1.users.UpdateMembership.getDefaultInstance() : membership_;
   }
   /**
-   * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for identity.
+   * <code>.scalekit.v1.users.UpdateMembership membership = 5 [json_name = "membership", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  public com.google.protobuf.ByteString
-      getIdentityBytes() {
-    java.lang.Object ref = "";
-    if (identitiesCase_ == 4) {
-      ref = identities_;
-    }
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      if (identitiesCase_ == 4) {
-        identities_ = b;
-      }
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.users.UpdateMembershipOrBuilder getMembershipOrBuilder() {
+    return membership_ == null ? com.scalekit.grpc.scalekit.v1.users.UpdateMembership.getDefaultInstance() : membership_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -302,8 +275,8 @@ private static final long serialVersionUID = 0L;
     if (identitiesCase_ == 3) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, identities_);
     }
-    if (identitiesCase_ == 4) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, identities_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getMembership());
     }
     getUnknownFields().writeTo(output);
   }
@@ -323,8 +296,9 @@ private static final long serialVersionUID = 0L;
     if (identitiesCase_ == 3) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, identities_);
     }
-    if (identitiesCase_ == 4) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, identities_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getMembership());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -336,13 +310,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.scalekit.grpc.scalekit.v1.users.AddUserRequest)) {
+    if (!(obj instanceof com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest)) {
       return super.equals(obj);
     }
-    com.scalekit.grpc.scalekit.v1.users.AddUserRequest other = (com.scalekit.grpc.scalekit.v1.users.AddUserRequest) obj;
+    com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest other = (com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest) obj;
 
     if (!getOrganizationId()
         .equals(other.getOrganizationId())) return false;
+    if (hasMembership() != other.hasMembership()) return false;
+    if (hasMembership()) {
+      if (!getMembership()
+          .equals(other.getMembership())) return false;
+    }
     if (!getIdentitiesCase().equals(other.getIdentitiesCase())) return false;
     switch (identitiesCase_) {
       case 2:
@@ -352,10 +331,6 @@ private static final long serialVersionUID = 0L;
       case 3:
         if (!getExternalId()
             .equals(other.getExternalId())) return false;
-        break;
-      case 4:
-        if (!getIdentity()
-            .equals(other.getIdentity())) return false;
         break;
       case 0:
       default:
@@ -373,6 +348,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getOrganizationId().hashCode();
+    if (hasMembership()) {
+      hash = (37 * hash) + MEMBERSHIP_FIELD_NUMBER;
+      hash = (53 * hash) + getMembership().hashCode();
+    }
     switch (identitiesCase_) {
       case 2:
         hash = (37 * hash) + ID_FIELD_NUMBER;
@@ -382,10 +361,6 @@ private static final long serialVersionUID = 0L;
         hash = (37 * hash) + EXTERNAL_ID_FIELD_NUMBER;
         hash = (53 * hash) + getExternalId().hashCode();
         break;
-      case 4:
-        hash = (37 * hash) + IDENTITY_FIELD_NUMBER;
-        hash = (53 * hash) + getIdentity().hashCode();
-        break;
       case 0:
       default:
     }
@@ -394,44 +369,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.scalekit.grpc.scalekit.v1.users.AddUserRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.AddUserRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.AddUserRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.AddUserRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.AddUserRequest parseFrom(byte[] data)
+  public static com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.AddUserRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.AddUserRequest parseFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.AddUserRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -439,26 +414,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.scalekit.grpc.scalekit.v1.users.AddUserRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.scalekit.grpc.scalekit.v1.users.AddUserRequest parseDelimitedFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.AddUserRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.scalekit.v1.users.AddUserRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -471,7 +446,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.scalekit.grpc.scalekit.v1.users.AddUserRequest prototype) {
+  public static Builder newBuilder(com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -487,40 +462,51 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code scalekit.v1.users.AddUserRequest}
+   * Protobuf type {@code scalekit.v1.users.UpdateMembershipRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:scalekit.v1.users.AddUserRequest)
-      com.scalekit.grpc.scalekit.v1.users.AddUserRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:scalekit.v1.users.UpdateMembershipRequest)
+      com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_AddUserRequest_descriptor;
+      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_UpdateMembershipRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_AddUserRequest_fieldAccessorTable
+      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_UpdateMembershipRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.scalekit.grpc.scalekit.v1.users.AddUserRequest.class, com.scalekit.grpc.scalekit.v1.users.AddUserRequest.Builder.class);
+              com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest.class, com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest.Builder.class);
     }
 
-    // Construct using com.scalekit.grpc.scalekit.v1.users.AddUserRequest.newBuilder()
+    // Construct using com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getMembershipFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
       organizationId_ = "";
+      membership_ = null;
+      if (membershipBuilder_ != null) {
+        membershipBuilder_.dispose();
+        membershipBuilder_ = null;
+      }
       identitiesCase_ = 0;
       identities_ = null;
       return this;
@@ -529,17 +515,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_AddUserRequest_descriptor;
+      return com.scalekit.grpc.scalekit.v1.users.UsersProto.internal_static_scalekit_v1_users_UpdateMembershipRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.users.AddUserRequest getDefaultInstanceForType() {
-      return com.scalekit.grpc.scalekit.v1.users.AddUserRequest.getDefaultInstance();
+    public com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest getDefaultInstanceForType() {
+      return com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.users.AddUserRequest build() {
-      com.scalekit.grpc.scalekit.v1.users.AddUserRequest result = buildPartial();
+    public com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest build() {
+      com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -547,22 +533,30 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.users.AddUserRequest buildPartial() {
-      com.scalekit.grpc.scalekit.v1.users.AddUserRequest result = new com.scalekit.grpc.scalekit.v1.users.AddUserRequest(this);
+    public com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest buildPartial() {
+      com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest result = new com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       buildPartialOneofs(result);
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.scalekit.grpc.scalekit.v1.users.AddUserRequest result) {
+    private void buildPartial0(com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.organizationId_ = organizationId_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.membership_ = membershipBuilder_ == null
+            ? membership_
+            : membershipBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
-    private void buildPartialOneofs(com.scalekit.grpc.scalekit.v1.users.AddUserRequest result) {
+    private void buildPartialOneofs(com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest result) {
       result.identitiesCase_ = identitiesCase_;
       result.identities_ = this.identities_;
     }
@@ -601,20 +595,23 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.scalekit.grpc.scalekit.v1.users.AddUserRequest) {
-        return mergeFrom((com.scalekit.grpc.scalekit.v1.users.AddUserRequest)other);
+      if (other instanceof com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest) {
+        return mergeFrom((com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.users.AddUserRequest other) {
-      if (other == com.scalekit.grpc.scalekit.v1.users.AddUserRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest other) {
+      if (other == com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest.getDefaultInstance()) return this;
       if (!other.getOrganizationId().isEmpty()) {
         organizationId_ = other.organizationId_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.hasMembership()) {
+        mergeMembership(other.getMembership());
       }
       switch (other.getIdentitiesCase()) {
         case ID: {
@@ -625,12 +622,6 @@ private static final long serialVersionUID = 0L;
         }
         case EXTERNAL_ID: {
           identitiesCase_ = 3;
-          identities_ = other.identities_;
-          onChanged();
-          break;
-        }
-        case IDENTITY: {
-          identitiesCase_ = 4;
           identities_ = other.identities_;
           onChanged();
           break;
@@ -682,12 +673,13 @@ private static final long serialVersionUID = 0L;
               identities_ = s;
               break;
             } // case 26
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-              identitiesCase_ = 4;
-              identities_ = s;
+            case 42: {
+              input.readMessage(
+                  getMembershipFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000008;
               break;
-            } // case 34
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -978,97 +970,125 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.scalekit.grpc.scalekit.v1.users.UpdateMembership membership_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.users.UpdateMembership, com.scalekit.grpc.scalekit.v1.users.UpdateMembership.Builder, com.scalekit.grpc.scalekit.v1.users.UpdateMembershipOrBuilder> membershipBuilder_;
     /**
-     * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the identity field is set.
+     * <code>.scalekit.v1.users.UpdateMembership membership = 5 [json_name = "membership", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the membership field is set.
      */
-    @java.lang.Override
-    public boolean hasIdentity() {
-      return identitiesCase_ == 4;
+    public boolean hasMembership() {
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The identity.
+     * <code>.scalekit.v1.users.UpdateMembership membership = 5 [json_name = "membership", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The membership.
      */
-    @java.lang.Override
-    public java.lang.String getIdentity() {
-      java.lang.Object ref = "";
-      if (identitiesCase_ == 4) {
-        ref = identities_;
-      }
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (identitiesCase_ == 4) {
-          identities_ = s;
-        }
-        return s;
+    public com.scalekit.grpc.scalekit.v1.users.UpdateMembership getMembership() {
+      if (membershipBuilder_ == null) {
+        return membership_ == null ? com.scalekit.grpc.scalekit.v1.users.UpdateMembership.getDefaultInstance() : membership_;
       } else {
-        return (java.lang.String) ref;
+        return membershipBuilder_.getMessage();
       }
     }
     /**
-     * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for identity.
+     * <code>.scalekit.v1.users.UpdateMembership membership = 5 [json_name = "membership", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIdentityBytes() {
-      java.lang.Object ref = "";
-      if (identitiesCase_ == 4) {
-        ref = identities_;
-      }
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        if (identitiesCase_ == 4) {
-          identities_ = b;
+    public Builder setMembership(com.scalekit.grpc.scalekit.v1.users.UpdateMembership value) {
+      if (membershipBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
         }
-        return b;
+        membership_ = value;
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        membershipBuilder_.setMessage(value);
       }
-    }
-    /**
-     * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The identity to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdentity(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      identitiesCase_ = 4;
-      identities_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
+     * <code>.scalekit.v1.users.UpdateMembership membership = 5 [json_name = "membership", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder clearIdentity() {
-      if (identitiesCase_ == 4) {
-        identitiesCase_ = 0;
-        identities_ = null;
+    public Builder setMembership(
+        com.scalekit.grpc.scalekit.v1.users.UpdateMembership.Builder builderForValue) {
+      if (membershipBuilder_ == null) {
+        membership_ = builderForValue.build();
+      } else {
+        membershipBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.users.UpdateMembership membership = 5 [json_name = "membership", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeMembership(com.scalekit.grpc.scalekit.v1.users.UpdateMembership value) {
+      if (membershipBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0) &&
+          membership_ != null &&
+          membership_ != com.scalekit.grpc.scalekit.v1.users.UpdateMembership.getDefaultInstance()) {
+          getMembershipBuilder().mergeFrom(value);
+        } else {
+          membership_ = value;
+        }
+      } else {
+        membershipBuilder_.mergeFrom(value);
+      }
+      if (membership_ != null) {
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>string identity = 4 [json_name = "identity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for identity to set.
-     * @return This builder for chaining.
+     * <code>.scalekit.v1.users.UpdateMembership membership = 5 [json_name = "membership", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder setIdentityBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      identitiesCase_ = 4;
-      identities_ = value;
+    public Builder clearMembership() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      membership_ = null;
+      if (membershipBuilder_ != null) {
+        membershipBuilder_.dispose();
+        membershipBuilder_ = null;
+      }
       onChanged();
       return this;
+    }
+    /**
+     * <code>.scalekit.v1.users.UpdateMembership membership = 5 [json_name = "membership", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.users.UpdateMembership.Builder getMembershipBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getMembershipFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.users.UpdateMembership membership = 5 [json_name = "membership", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.users.UpdateMembershipOrBuilder getMembershipOrBuilder() {
+      if (membershipBuilder_ != null) {
+        return membershipBuilder_.getMessageOrBuilder();
+      } else {
+        return membership_ == null ?
+            com.scalekit.grpc.scalekit.v1.users.UpdateMembership.getDefaultInstance() : membership_;
+      }
+    }
+    /**
+     * <code>.scalekit.v1.users.UpdateMembership membership = 5 [json_name = "membership", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.users.UpdateMembership, com.scalekit.grpc.scalekit.v1.users.UpdateMembership.Builder, com.scalekit.grpc.scalekit.v1.users.UpdateMembershipOrBuilder> 
+        getMembershipFieldBuilder() {
+      if (membershipBuilder_ == null) {
+        membershipBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.users.UpdateMembership, com.scalekit.grpc.scalekit.v1.users.UpdateMembership.Builder, com.scalekit.grpc.scalekit.v1.users.UpdateMembershipOrBuilder>(
+                getMembership(),
+                getParentForChildren(),
+                isClean());
+        membership_ = null;
+      }
+      return membershipBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -1083,23 +1103,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:scalekit.v1.users.AddUserRequest)
+    // @@protoc_insertion_point(builder_scope:scalekit.v1.users.UpdateMembershipRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:scalekit.v1.users.AddUserRequest)
-  private static final com.scalekit.grpc.scalekit.v1.users.AddUserRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:scalekit.v1.users.UpdateMembershipRequest)
+  private static final com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.scalekit.grpc.scalekit.v1.users.AddUserRequest();
+    DEFAULT_INSTANCE = new com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest();
   }
 
-  public static com.scalekit.grpc.scalekit.v1.users.AddUserRequest getDefaultInstance() {
+  public static com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AddUserRequest>
-      PARSER = new com.google.protobuf.AbstractParser<AddUserRequest>() {
+  private static final com.google.protobuf.Parser<UpdateMembershipRequest>
+      PARSER = new com.google.protobuf.AbstractParser<UpdateMembershipRequest>() {
     @java.lang.Override
-    public AddUserRequest parsePartialFrom(
+    public UpdateMembershipRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1118,17 +1138,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<AddUserRequest> parser() {
+  public static com.google.protobuf.Parser<UpdateMembershipRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<AddUserRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpdateMembershipRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.users.AddUserRequest getDefaultInstanceForType() {
+  public com.scalekit.grpc.scalekit.v1.users.UpdateMembershipRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

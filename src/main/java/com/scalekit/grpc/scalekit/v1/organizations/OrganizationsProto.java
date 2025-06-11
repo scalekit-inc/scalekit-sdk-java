@@ -539,7 +539,7 @@ public final class OrganizationsProto {
       " the complete organization object with I" +
       "D, display name, settings, and metadata\022" +
       "6\n4\0322.scalekit.v1.organizations.GetOrgan" +
-      "izationResponse\202\265\030\002\0304\202\323\344\223\002\034\022\032/api/v1/org" +
+      "izationResponse\202\265\030\002\030t\202\323\344\223\002\034\022\032/api/v1/org" +
       "anizations/{id}\022\304\004\n\020ListOrganization\0223.s" +
       "calekit.v1.organizations.ListOrganizatio" +
       "nsRequest\0324.scalekit.v1.organizations.Li" +

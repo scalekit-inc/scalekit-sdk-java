@@ -4,8 +4,8 @@
 // Protobuf Java Version: 3.25.3
 package com.scalekit.grpc.scalekit.v1.users;
 
-public interface CreateUserResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:scalekit.v1.users.CreateUserResponse)
+public interface CreateMembershipResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:scalekit.v1.users.CreateMembershipResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
