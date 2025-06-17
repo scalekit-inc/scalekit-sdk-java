@@ -5,13 +5,13 @@ import com.scalekit.grpc.scalekit.v1.users.*;
 public interface UserClient {
     CreateUserAndMembershipResponse createUserAndMembership(String organizationId, CreateUserAndMembershipRequest request);
 
-    GetUserResponse getUser(String organizationId, String userId);
+    GetUserResponse getUser(String userId);
 
-    ListUsersResponse listUsers(String organizationId, ListUsersRequest request);
+    ListUsersResponse listUsers(ListUsersRequest request);
 
-    UpdateUserResponse updateUser(String organizationId, String userId, UpdateUserRequest request);
+    UpdateUserResponse updateUser(String userId, UpdateUserRequest request);
 
-    void deleteUser(String organizationId, String userId);
+    void deleteUser(String userId);
 
     CreateMembershipResponse createMembership(String organizationId, String userId, CreateMembershipRequest request);
 

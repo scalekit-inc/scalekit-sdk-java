@@ -43,12 +43,11 @@ public class ScalekitUserClient implements UserClient {
 
     /**
      * Retrieves a user from the specified organization
-     * @param organizationId: The organization ID
      * @param userId: The ID of the user to retrieve
      * @return GetUserResponse: The response containing the user details
      */
     @Override
-    public GetUserResponse getUser(String organizationId, String userId) {
+    public GetUserResponse getUser(String userId) {
         return RetryExecuter.executeWithRetry(() -> {
             GetUserRequest request = GetUserRequest.newBuilder()
                     .setId(userId)
@@ -61,12 +60,11 @@ public class ScalekitUserClient implements UserClient {
 
     /**
      * Lists users in the specified organization with optional filtering and pagination
-     * @param organizationId: The organization ID
      * @param request: The list users request containing filters and pagination options
      * @return ListUsersResponse: The response containing the list of users and pagination info
      */
     @Override
-    public ListUsersResponse listUsers(String organizationId, ListUsersRequest request) {
+    public ListUsersResponse listUsers(ListUsersRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return userService
                     .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
@@ -76,13 +74,12 @@ public class ScalekitUserClient implements UserClient {
 
     /**
      * Updates an existing user in the specified organization
-     * @param organizationId: The organization ID
      * @param userId: The ID of the user to update
      * @param request: The update user request containing the changes
      * @return UpdateUserResponse: The response containing the updated user
      */
     @Override
-    public UpdateUserResponse updateUser(String organizationId, String userId, UpdateUserRequest request) {
+    public UpdateUserResponse updateUser(String userId, UpdateUserRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return userService
                     .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
@@ -94,11 +91,10 @@ public class ScalekitUserClient implements UserClient {
 
     /**
      * Deletes a user from the specified organization
-     * @param organizationId: The organization ID
      * @param userId: The ID of the user to delete
      */
     @Override
-    public void deleteUser(String organizationId, String userId) {
+    public void deleteUser(String userId) {
         RetryExecuter.executeWithRetry(() -> {
             DeleteUserRequest request = DeleteUserRequest.newBuilder()
                     .setId(userId)
