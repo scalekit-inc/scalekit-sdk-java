@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
   /**
-   * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The id.
    */
   @java.lang.Override
@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for id.
    */
   @java.lang.Override
@@ -85,7 +85,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object environmentId_ = "";
   /**
-   * <code>string environment_id = 2 [json_name = "environmentId", (.buf.validate.field) = { ... }</code>
+   * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The environmentId.
    */
   @java.lang.Override
@@ -102,7 +102,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string environment_id = 2 [json_name = "environmentId", (.buf.validate.field) = { ... }</code>
+   * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for environmentId.
    */
   @java.lang.Override
@@ -123,7 +123,7 @@ private static final long serialVersionUID = 0L;
   public static final int SESSION_SETTINGS_FIELD_NUMBER = 3;
   private com.scalekit.grpc.scalekit.v1.organizations.OrganizationSessionSettings sessionSettings_;
   /**
-   * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the sessionSettings field is set.
    */
   @java.lang.Override
@@ -131,7 +131,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The sessionSettings.
    */
   @java.lang.Override
@@ -139,7 +139,7 @@ private static final long serialVersionUID = 0L;
     return sessionSettings_ == null ? com.scalekit.grpc.scalekit.v1.organizations.OrganizationSessionSettings.getDefaultInstance() : sessionSettings_;
   }
   /**
-   * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.organizations.OrganizationSessionSettingsOrBuilder getSessionSettingsOrBuilder() {
@@ -543,7 +543,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object id_ = "";
     /**
-     * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The id.
      */
     public java.lang.String getId() {
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
@@ -576,7 +576,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -589,7 +589,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
@@ -615,7 +615,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object environmentId_ = "";
     /**
-     * <code>string environment_id = 2 [json_name = "environmentId", (.buf.validate.field) = { ... }</code>
+     * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The environmentId.
      */
     public java.lang.String getEnvironmentId() {
@@ -631,7 +631,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string environment_id = 2 [json_name = "environmentId", (.buf.validate.field) = { ... }</code>
+     * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for environmentId.
      */
     public com.google.protobuf.ByteString
@@ -648,7 +648,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string environment_id = 2 [json_name = "environmentId", (.buf.validate.field) = { ... }</code>
+     * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The environmentId to set.
      * @return This builder for chaining.
      */
@@ -661,7 +661,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string environment_id = 2 [json_name = "environmentId", (.buf.validate.field) = { ... }</code>
+     * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearEnvironmentId() {
@@ -671,7 +671,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string environment_id = 2 [json_name = "environmentId", (.buf.validate.field) = { ... }</code>
+     * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for environmentId to set.
      * @return This builder for chaining.
      */
@@ -689,14 +689,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.organizations.OrganizationSessionSettings, com.scalekit.grpc.scalekit.v1.organizations.OrganizationSessionSettings.Builder, com.scalekit.grpc.scalekit.v1.organizations.OrganizationSessionSettingsOrBuilder> sessionSettingsBuilder_;
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the sessionSettings field is set.
      */
     public boolean hasSessionSettings() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The sessionSettings.
      */
     public com.scalekit.grpc.scalekit.v1.organizations.OrganizationSessionSettings getSessionSettings() {
@@ -707,7 +707,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setSessionSettings(com.scalekit.grpc.scalekit.v1.organizations.OrganizationSessionSettings value) {
       if (sessionSettingsBuilder_ == null) {
@@ -723,7 +723,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setSessionSettings(
         com.scalekit.grpc.scalekit.v1.organizations.OrganizationSessionSettings.Builder builderForValue) {
@@ -737,7 +737,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeSessionSettings(com.scalekit.grpc.scalekit.v1.organizations.OrganizationSessionSettings value) {
       if (sessionSettingsBuilder_ == null) {
@@ -758,7 +758,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearSessionSettings() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -771,7 +771,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.organizations.OrganizationSessionSettings.Builder getSessionSettingsBuilder() {
       bitField0_ |= 0x00000004;
@@ -779,7 +779,7 @@ private static final long serialVersionUID = 0L;
       return getSessionSettingsFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.organizations.OrganizationSessionSettingsOrBuilder getSessionSettingsOrBuilder() {
       if (sessionSettingsBuilder_ != null) {
@@ -790,7 +790,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.organizations.OrganizationSessionSettings, com.scalekit.grpc.scalekit.v1.organizations.OrganizationSessionSettings.Builder, com.scalekit.grpc.scalekit.v1.organizations.OrganizationSessionSettingsOrBuilder> 

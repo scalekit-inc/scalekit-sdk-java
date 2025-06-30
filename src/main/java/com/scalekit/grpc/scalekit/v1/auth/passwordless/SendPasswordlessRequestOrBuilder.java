@@ -80,4 +80,38 @@ public interface SendPasswordlessRequestOrBuilder extends
    * @return The expiresIn.
    */
   int getExpiresIn();
+
+  /**
+   * <code>map&lt;string, string&gt; template_variables = 6 [json_name = "templateVariables", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  int getTemplateVariablesCount();
+  /**
+   * <code>map&lt;string, string&gt; template_variables = 6 [json_name = "templateVariables", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  boolean containsTemplateVariables(
+      java.lang.String key);
+  /**
+   * Use {@link #getTemplateVariablesMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getTemplateVariables();
+  /**
+   * <code>map&lt;string, string&gt; template_variables = 6 [json_name = "templateVariables", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getTemplateVariablesMap();
+  /**
+   * <code>map&lt;string, string&gt; template_variables = 6 [json_name = "templateVariables", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  /* nullable */
+java.lang.String getTemplateVariablesOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue);
+  /**
+   * <code>map&lt;string, string&gt; template_variables = 6 [json_name = "templateVariables", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.lang.String getTemplateVariablesOrThrow(
+      java.lang.String key);
 }

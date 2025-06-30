@@ -387,6 +387,316 @@ public final class ClientServiceGrpc {
     return getDeleteOrganizationClientMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.CreateApplicationRequest,
+      com.scalekit.grpc.scalekit.v1.clients.CreateApplicationResponse> getCreateApplicationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateApplication",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.CreateApplicationRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.CreateApplicationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.CreateApplicationRequest,
+      com.scalekit.grpc.scalekit.v1.clients.CreateApplicationResponse> getCreateApplicationMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.CreateApplicationRequest, com.scalekit.grpc.scalekit.v1.clients.CreateApplicationResponse> getCreateApplicationMethod;
+    if ((getCreateApplicationMethod = ClientServiceGrpc.getCreateApplicationMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getCreateApplicationMethod = ClientServiceGrpc.getCreateApplicationMethod) == null) {
+          ClientServiceGrpc.getCreateApplicationMethod = getCreateApplicationMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.CreateApplicationRequest, com.scalekit.grpc.scalekit.v1.clients.CreateApplicationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateApplication"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.CreateApplicationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.CreateApplicationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("CreateApplication"))
+              .build();
+        }
+      }
+    }
+    return getCreateApplicationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.GetApplicationRequest,
+      com.scalekit.grpc.scalekit.v1.clients.GetApplicationResponse> getGetApplicationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetApplication",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.GetApplicationRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.GetApplicationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.GetApplicationRequest,
+      com.scalekit.grpc.scalekit.v1.clients.GetApplicationResponse> getGetApplicationMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.GetApplicationRequest, com.scalekit.grpc.scalekit.v1.clients.GetApplicationResponse> getGetApplicationMethod;
+    if ((getGetApplicationMethod = ClientServiceGrpc.getGetApplicationMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getGetApplicationMethod = ClientServiceGrpc.getGetApplicationMethod) == null) {
+          ClientServiceGrpc.getGetApplicationMethod = getGetApplicationMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.GetApplicationRequest, com.scalekit.grpc.scalekit.v1.clients.GetApplicationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetApplication"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.GetApplicationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.GetApplicationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("GetApplication"))
+              .build();
+        }
+      }
+    }
+    return getGetApplicationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.ListApplicationsRequest,
+      com.scalekit.grpc.scalekit.v1.clients.ListApplicationsResponse> getListApplicationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListApplications",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.ListApplicationsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.ListApplicationsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.ListApplicationsRequest,
+      com.scalekit.grpc.scalekit.v1.clients.ListApplicationsResponse> getListApplicationsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.ListApplicationsRequest, com.scalekit.grpc.scalekit.v1.clients.ListApplicationsResponse> getListApplicationsMethod;
+    if ((getListApplicationsMethod = ClientServiceGrpc.getListApplicationsMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getListApplicationsMethod = ClientServiceGrpc.getListApplicationsMethod) == null) {
+          ClientServiceGrpc.getListApplicationsMethod = getListApplicationsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.ListApplicationsRequest, com.scalekit.grpc.scalekit.v1.clients.ListApplicationsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListApplications"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.ListApplicationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.ListApplicationsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("ListApplications"))
+              .build();
+        }
+      }
+    }
+    return getListApplicationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationRequest,
+      com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationResponse> getUpdateApplicationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateApplication",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationRequest,
+      com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationResponse> getUpdateApplicationMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationRequest, com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationResponse> getUpdateApplicationMethod;
+    if ((getUpdateApplicationMethod = ClientServiceGrpc.getUpdateApplicationMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getUpdateApplicationMethod = ClientServiceGrpc.getUpdateApplicationMethod) == null) {
+          ClientServiceGrpc.getUpdateApplicationMethod = getUpdateApplicationMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationRequest, com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateApplication"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("UpdateApplication"))
+              .build();
+        }
+      }
+    }
+    return getUpdateApplicationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientRequest,
+      com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientResponse> getCreateApplicationClientMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateApplicationClient",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientRequest,
+      com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientResponse> getCreateApplicationClientMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientRequest, com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientResponse> getCreateApplicationClientMethod;
+    if ((getCreateApplicationClientMethod = ClientServiceGrpc.getCreateApplicationClientMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getCreateApplicationClientMethod = ClientServiceGrpc.getCreateApplicationClientMethod) == null) {
+          ClientServiceGrpc.getCreateApplicationClientMethod = getCreateApplicationClientMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientRequest, com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateApplicationClient"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("CreateApplicationClient"))
+              .build();
+        }
+      }
+    }
+    return getCreateApplicationClientMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientRequest,
+      com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientResponse> getGetApplicationClientMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetApplicationClient",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientRequest,
+      com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientResponse> getGetApplicationClientMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientRequest, com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientResponse> getGetApplicationClientMethod;
+    if ((getGetApplicationClientMethod = ClientServiceGrpc.getGetApplicationClientMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getGetApplicationClientMethod = ClientServiceGrpc.getGetApplicationClientMethod) == null) {
+          ClientServiceGrpc.getGetApplicationClientMethod = getGetApplicationClientMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientRequest, com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetApplicationClient"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("GetApplicationClient"))
+              .build();
+        }
+      }
+    }
+    return getGetApplicationClientMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest,
+      com.scalekit.grpc.scalekit.v1.clients.RegisterClientResponse> getRegisterClientMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RegisterClient",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.RegisterClientResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest,
+      com.scalekit.grpc.scalekit.v1.clients.RegisterClientResponse> getRegisterClientMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest, com.scalekit.grpc.scalekit.v1.clients.RegisterClientResponse> getRegisterClientMethod;
+    if ((getRegisterClientMethod = ClientServiceGrpc.getRegisterClientMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getRegisterClientMethod = ClientServiceGrpc.getRegisterClientMethod) == null) {
+          ClientServiceGrpc.getRegisterClientMethod = getRegisterClientMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest, com.scalekit.grpc.scalekit.v1.clients.RegisterClientResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RegisterClient"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.RegisterClientResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("RegisterClient"))
+              .build();
+        }
+      }
+    }
+    return getRegisterClientMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.CreateScopeRequest,
+      com.scalekit.grpc.scalekit.v1.clients.CreateScopeResponse> getCreateScopeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateScope",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.CreateScopeRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.CreateScopeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.CreateScopeRequest,
+      com.scalekit.grpc.scalekit.v1.clients.CreateScopeResponse> getCreateScopeMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.CreateScopeRequest, com.scalekit.grpc.scalekit.v1.clients.CreateScopeResponse> getCreateScopeMethod;
+    if ((getCreateScopeMethod = ClientServiceGrpc.getCreateScopeMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getCreateScopeMethod = ClientServiceGrpc.getCreateScopeMethod) == null) {
+          ClientServiceGrpc.getCreateScopeMethod = getCreateScopeMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.CreateScopeRequest, com.scalekit.grpc.scalekit.v1.clients.CreateScopeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateScope"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.CreateScopeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.CreateScopeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("CreateScope"))
+              .build();
+        }
+      }
+    }
+    return getCreateScopeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.ListScopesRequest,
+      com.scalekit.grpc.scalekit.v1.clients.ListScopesResponse> getListScopesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListScopes",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.ListScopesRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.ListScopesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.ListScopesRequest,
+      com.scalekit.grpc.scalekit.v1.clients.ListScopesResponse> getListScopesMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.ListScopesRequest, com.scalekit.grpc.scalekit.v1.clients.ListScopesResponse> getListScopesMethod;
+    if ((getListScopesMethod = ClientServiceGrpc.getListScopesMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getListScopesMethod = ClientServiceGrpc.getListScopesMethod) == null) {
+          ClientServiceGrpc.getListScopesMethod = getListScopesMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.ListScopesRequest, com.scalekit.grpc.scalekit.v1.clients.ListScopesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListScopes"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.ListScopesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.ListScopesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("ListScopes"))
+              .build();
+        }
+      }
+    }
+    return getListScopesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+      com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse> getGetConsentDetailsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetConsentDetails",
+      requestType = com.google.protobuf.Empty.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+      com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse> getGetConsentDetailsMethod() {
+    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse> getGetConsentDetailsMethod;
+    if ((getGetConsentDetailsMethod = ClientServiceGrpc.getGetConsentDetailsMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getGetConsentDetailsMethod = ClientServiceGrpc.getGetConsentDetailsMethod) == null) {
+          ClientServiceGrpc.getGetConsentDetailsMethod = getGetConsentDetailsMethod =
+              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetConsentDetails"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("GetConsentDetails"))
+              .build();
+        }
+      }
+    }
+    return getGetConsentDetailsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -518,6 +828,76 @@ public final class ClientServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteOrganizationClientMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void createApplication(com.scalekit.grpc.scalekit.v1.clients.CreateApplicationRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.CreateApplicationResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateApplicationMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getApplication(com.scalekit.grpc.scalekit.v1.clients.GetApplicationRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.GetApplicationResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetApplicationMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listApplications(com.scalekit.grpc.scalekit.v1.clients.ListApplicationsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListApplicationsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListApplicationsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateApplication(com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateApplicationMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void createApplicationClient(com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateApplicationClientMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getApplicationClient(com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetApplicationClientMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void registerClient(com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.RegisterClientResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRegisterClientMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void createScope(com.scalekit.grpc.scalekit.v1.clients.CreateScopeRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.CreateScopeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateScopeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listScopes(com.scalekit.grpc.scalekit.v1.clients.ListScopesRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListScopesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListScopesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getConsentDetails(com.google.protobuf.Empty request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetConsentDetailsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -642,6 +1022,86 @@ public final class ClientServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteOrganizationClientMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void createApplication(com.scalekit.grpc.scalekit.v1.clients.CreateApplicationRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.CreateApplicationResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateApplicationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getApplication(com.scalekit.grpc.scalekit.v1.clients.GetApplicationRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.GetApplicationResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetApplicationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listApplications(com.scalekit.grpc.scalekit.v1.clients.ListApplicationsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListApplicationsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListApplicationsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateApplication(com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateApplicationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createApplicationClient(com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateApplicationClientMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getApplicationClient(com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetApplicationClientMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void registerClient(com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.RegisterClientResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRegisterClientMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createScope(com.scalekit.grpc.scalekit.v1.clients.CreateScopeRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.CreateScopeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateScopeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listScopes(com.scalekit.grpc.scalekit.v1.clients.ListScopesRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListScopesResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListScopesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getConsentDetails(com.google.protobuf.Empty request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetConsentDetailsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -742,6 +1202,76 @@ public final class ClientServiceGrpc {
     public com.google.protobuf.Empty deleteOrganizationClient(com.scalekit.grpc.scalekit.v1.clients.DeleteOrganizationClientRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteOrganizationClientMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.CreateApplicationResponse createApplication(com.scalekit.grpc.scalekit.v1.clients.CreateApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateApplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.GetApplicationResponse getApplication(com.scalekit.grpc.scalekit.v1.clients.GetApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetApplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ListApplicationsResponse listApplications(com.scalekit.grpc.scalekit.v1.clients.ListApplicationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListApplicationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationResponse updateApplication(com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateApplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientResponse createApplicationClient(com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateApplicationClientMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientResponse getApplicationClient(com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetApplicationClientMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.RegisterClientResponse registerClient(com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRegisterClientMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.CreateScopeResponse createScope(com.scalekit.grpc.scalekit.v1.clients.CreateScopeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateScopeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ListScopesResponse listScopes(com.scalekit.grpc.scalekit.v1.clients.ListScopesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListScopesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse getConsentDetails(com.google.protobuf.Empty request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConsentDetailsMethod(), getCallOptions(), request);
     }
   }
 
@@ -856,6 +1386,86 @@ public final class ClientServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteOrganizationClientMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.CreateApplicationResponse> createApplication(
+        com.scalekit.grpc.scalekit.v1.clients.CreateApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateApplicationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.GetApplicationResponse> getApplication(
+        com.scalekit.grpc.scalekit.v1.clients.GetApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetApplicationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.ListApplicationsResponse> listApplications(
+        com.scalekit.grpc.scalekit.v1.clients.ListApplicationsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListApplicationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationResponse> updateApplication(
+        com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateApplicationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientResponse> createApplicationClient(
+        com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateApplicationClientMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientResponse> getApplicationClient(
+        com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetApplicationClientMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.RegisterClientResponse> registerClient(
+        com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRegisterClientMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.CreateScopeResponse> createScope(
+        com.scalekit.grpc.scalekit.v1.clients.CreateScopeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateScopeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.ListScopesResponse> listScopes(
+        com.scalekit.grpc.scalekit.v1.clients.ListScopesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListScopesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse> getConsentDetails(
+        com.google.protobuf.Empty request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetConsentDetailsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CLIENT = 0;
@@ -870,6 +1480,16 @@ public final class ClientServiceGrpc {
   private static final int METHODID_DELETE_ORGANIZATION_CLIENT_SECRET = 9;
   private static final int METHODID_UPDATE_ORGANIZATION_CLIENT = 10;
   private static final int METHODID_DELETE_ORGANIZATION_CLIENT = 11;
+  private static final int METHODID_CREATE_APPLICATION = 12;
+  private static final int METHODID_GET_APPLICATION = 13;
+  private static final int METHODID_LIST_APPLICATIONS = 14;
+  private static final int METHODID_UPDATE_APPLICATION = 15;
+  private static final int METHODID_CREATE_APPLICATION_CLIENT = 16;
+  private static final int METHODID_GET_APPLICATION_CLIENT = 17;
+  private static final int METHODID_REGISTER_CLIENT = 18;
+  private static final int METHODID_CREATE_SCOPE = 19;
+  private static final int METHODID_LIST_SCOPES = 20;
+  private static final int METHODID_GET_CONSENT_DETAILS = 21;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -935,6 +1555,46 @@ public final class ClientServiceGrpc {
         case METHODID_DELETE_ORGANIZATION_CLIENT:
           serviceImpl.deleteOrganizationClient((com.scalekit.grpc.scalekit.v1.clients.DeleteOrganizationClientRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_APPLICATION:
+          serviceImpl.createApplication((com.scalekit.grpc.scalekit.v1.clients.CreateApplicationRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.CreateApplicationResponse>) responseObserver);
+          break;
+        case METHODID_GET_APPLICATION:
+          serviceImpl.getApplication((com.scalekit.grpc.scalekit.v1.clients.GetApplicationRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.GetApplicationResponse>) responseObserver);
+          break;
+        case METHODID_LIST_APPLICATIONS:
+          serviceImpl.listApplications((com.scalekit.grpc.scalekit.v1.clients.ListApplicationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListApplicationsResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_APPLICATION:
+          serviceImpl.updateApplication((com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_APPLICATION_CLIENT:
+          serviceImpl.createApplicationClient((com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientResponse>) responseObserver);
+          break;
+        case METHODID_GET_APPLICATION_CLIENT:
+          serviceImpl.getApplicationClient((com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientResponse>) responseObserver);
+          break;
+        case METHODID_REGISTER_CLIENT:
+          serviceImpl.registerClient((com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.RegisterClientResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_SCOPE:
+          serviceImpl.createScope((com.scalekit.grpc.scalekit.v1.clients.CreateScopeRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.CreateScopeResponse>) responseObserver);
+          break;
+        case METHODID_LIST_SCOPES:
+          serviceImpl.listScopes((com.scalekit.grpc.scalekit.v1.clients.ListScopesRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListScopesResponse>) responseObserver);
+          break;
+        case METHODID_GET_CONSENT_DETAILS:
+          serviceImpl.getConsentDetails((com.google.protobuf.Empty) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1038,6 +1698,76 @@ public final class ClientServiceGrpc {
               com.scalekit.grpc.scalekit.v1.clients.DeleteOrganizationClientRequest,
               com.google.protobuf.Empty>(
                 service, METHODID_DELETE_ORGANIZATION_CLIENT)))
+        .addMethod(
+          getCreateApplicationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.CreateApplicationRequest,
+              com.scalekit.grpc.scalekit.v1.clients.CreateApplicationResponse>(
+                service, METHODID_CREATE_APPLICATION)))
+        .addMethod(
+          getGetApplicationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.GetApplicationRequest,
+              com.scalekit.grpc.scalekit.v1.clients.GetApplicationResponse>(
+                service, METHODID_GET_APPLICATION)))
+        .addMethod(
+          getListApplicationsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.ListApplicationsRequest,
+              com.scalekit.grpc.scalekit.v1.clients.ListApplicationsResponse>(
+                service, METHODID_LIST_APPLICATIONS)))
+        .addMethod(
+          getUpdateApplicationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationRequest,
+              com.scalekit.grpc.scalekit.v1.clients.UpdateApplicationResponse>(
+                service, METHODID_UPDATE_APPLICATION)))
+        .addMethod(
+          getCreateApplicationClientMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientRequest,
+              com.scalekit.grpc.scalekit.v1.clients.CreateApplicationClientResponse>(
+                service, METHODID_CREATE_APPLICATION_CLIENT)))
+        .addMethod(
+          getGetApplicationClientMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientRequest,
+              com.scalekit.grpc.scalekit.v1.clients.GetApplicationClientResponse>(
+                service, METHODID_GET_APPLICATION_CLIENT)))
+        .addMethod(
+          getRegisterClientMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest,
+              com.scalekit.grpc.scalekit.v1.clients.RegisterClientResponse>(
+                service, METHODID_REGISTER_CLIENT)))
+        .addMethod(
+          getCreateScopeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.CreateScopeRequest,
+              com.scalekit.grpc.scalekit.v1.clients.CreateScopeResponse>(
+                service, METHODID_CREATE_SCOPE)))
+        .addMethod(
+          getListScopesMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.ListScopesRequest,
+              com.scalekit.grpc.scalekit.v1.clients.ListScopesResponse>(
+                service, METHODID_LIST_SCOPES)))
+        .addMethod(
+          getGetConsentDetailsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.google.protobuf.Empty,
+              com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse>(
+                service, METHODID_GET_CONSENT_DETAILS)))
         .build();
   }
 
@@ -1098,6 +1828,16 @@ public final class ClientServiceGrpc {
               .addMethod(getDeleteOrganizationClientSecretMethod())
               .addMethod(getUpdateOrganizationClientMethod())
               .addMethod(getDeleteOrganizationClientMethod())
+              .addMethod(getCreateApplicationMethod())
+              .addMethod(getGetApplicationMethod())
+              .addMethod(getListApplicationsMethod())
+              .addMethod(getUpdateApplicationMethod())
+              .addMethod(getCreateApplicationClientMethod())
+              .addMethod(getGetApplicationClientMethod())
+              .addMethod(getRegisterClientMethod())
+              .addMethod(getCreateScopeMethod())
+              .addMethod(getListScopesMethod())
+              .addMethod(getGetConsentDetailsMethod())
               .build();
         }
       }

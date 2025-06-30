@@ -27,6 +27,9 @@ private static final long serialVersionUID = 0L;
     audience_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     customClaims_ = java.util.Collections.emptyList();
+    applicationId_ = "";
+    redirectUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -425,6 +428,82 @@ private static final long serialVersionUID = 0L;
     return expiry_;
   }
 
+  public static final int APPLICATION_ID_FIELD_NUMBER = 12;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object applicationId_ = "";
+  /**
+   * <code>string application_id = 12 [json_name = "applicationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The applicationId.
+   */
+  @java.lang.Override
+  public java.lang.String getApplicationId() {
+    java.lang.Object ref = applicationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      applicationId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string application_id = 12 [json_name = "applicationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for applicationId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getApplicationIdBytes() {
+    java.lang.Object ref = applicationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      applicationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REDIRECT_URIS_FIELD_NUMBER = 13;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList redirectUris_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string redirect_uris = 13 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the redirectUris.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getRedirectUrisList() {
+    return redirectUris_;
+  }
+  /**
+   * <code>repeated string redirect_uris = 13 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of redirectUris.
+   */
+  public int getRedirectUrisCount() {
+    return redirectUris_.size();
+  }
+  /**
+   * <code>repeated string redirect_uris = 13 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The redirectUris at the given index.
+   */
+  public java.lang.String getRedirectUris(int index) {
+    return redirectUris_.get(index);
+  }
+  /**
+   * <code>repeated string redirect_uris = 13 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the redirectUris at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getRedirectUrisBytes(int index) {
+    return redirectUris_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -471,6 +550,12 @@ private static final long serialVersionUID = 0L;
     }
     if (expiry_ != 0L) {
       output.writeInt64(11, expiry_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(applicationId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, applicationId_);
+    }
+    for (int i = 0; i < redirectUris_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, redirectUris_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -529,6 +614,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(11, expiry_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(applicationId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, applicationId_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < redirectUris_.size(); i++) {
+        dataSize += computeStringSizeNoTag(redirectUris_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getRedirectUrisList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -572,6 +668,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCustomClaimsList())) return false;
     if (getExpiry()
         != other.getExpiry()) return false;
+    if (!getApplicationId()
+        .equals(other.getApplicationId())) return false;
+    if (!getRedirectUrisList()
+        .equals(other.getRedirectUrisList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -618,6 +718,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + EXPIRY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getExpiry());
+    hash = (37 * hash) + APPLICATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getApplicationId().hashCode();
+    if (getRedirectUrisCount() > 0) {
+      hash = (37 * hash) + REDIRECT_URIS_FIELD_NUMBER;
+      hash = (53 * hash) + getRedirectUrisList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -791,6 +897,9 @@ private static final long serialVersionUID = 0L;
       }
       bitField0_ = (bitField0_ & ~0x00000200);
       expiry_ = 0L;
+      applicationId_ = "";
+      redirectUris_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -881,6 +990,13 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.expiry_ = expiry_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.applicationId_ = applicationId_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        redirectUris_.makeImmutable();
+        result.redirectUris_ = redirectUris_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1030,6 +1146,21 @@ private static final long serialVersionUID = 0L;
       if (other.getExpiry() != 0L) {
         setExpiry(other.getExpiry());
       }
+      if (!other.getApplicationId().isEmpty()) {
+        applicationId_ = other.applicationId_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      if (!other.redirectUris_.isEmpty()) {
+        if (redirectUris_.isEmpty()) {
+          redirectUris_ = other.redirectUris_;
+          bitField0_ |= 0x00001000;
+        } else {
+          ensureRedirectUrisIsMutable();
+          redirectUris_.addAll(other.redirectUris_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1133,6 +1264,17 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000400;
               break;
             } // case 88
+            case 98: {
+              applicationId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 98
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureRedirectUrisIsMutable();
+              redirectUris_.add(s);
+              break;
+            } // case 106
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2410,6 +2552,189 @@ private static final long serialVersionUID = 0L;
     public Builder clearExpiry() {
       bitField0_ = (bitField0_ & ~0x00000400);
       expiry_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object applicationId_ = "";
+    /**
+     * <code>string application_id = 12 [json_name = "applicationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The applicationId.
+     */
+    public java.lang.String getApplicationId() {
+      java.lang.Object ref = applicationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        applicationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string application_id = 12 [json_name = "applicationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for applicationId.
+     */
+    public com.google.protobuf.ByteString
+        getApplicationIdBytes() {
+      java.lang.Object ref = applicationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        applicationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string application_id = 12 [json_name = "applicationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The applicationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApplicationId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      applicationId_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string application_id = 12 [json_name = "applicationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearApplicationId() {
+      applicationId_ = getDefaultInstance().getApplicationId();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string application_id = 12 [json_name = "applicationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for applicationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApplicationIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      applicationId_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList redirectUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureRedirectUrisIsMutable() {
+      if (!redirectUris_.isModifiable()) {
+        redirectUris_ = new com.google.protobuf.LazyStringArrayList(redirectUris_);
+      }
+      bitField0_ |= 0x00001000;
+    }
+    /**
+     * <code>repeated string redirect_uris = 13 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the redirectUris.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getRedirectUrisList() {
+      redirectUris_.makeImmutable();
+      return redirectUris_;
+    }
+    /**
+     * <code>repeated string redirect_uris = 13 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of redirectUris.
+     */
+    public int getRedirectUrisCount() {
+      return redirectUris_.size();
+    }
+    /**
+     * <code>repeated string redirect_uris = 13 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The redirectUris at the given index.
+     */
+    public java.lang.String getRedirectUris(int index) {
+      return redirectUris_.get(index);
+    }
+    /**
+     * <code>repeated string redirect_uris = 13 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the redirectUris at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getRedirectUrisBytes(int index) {
+      return redirectUris_.getByteString(index);
+    }
+    /**
+     * <code>repeated string redirect_uris = 13 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The redirectUris to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRedirectUris(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureRedirectUrisIsMutable();
+      redirectUris_.set(index, value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string redirect_uris = 13 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The redirectUris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRedirectUris(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureRedirectUrisIsMutable();
+      redirectUris_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string redirect_uris = 13 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The redirectUris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRedirectUris(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureRedirectUrisIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, redirectUris_);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string redirect_uris = 13 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRedirectUris() {
+      redirectUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00001000);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string redirect_uris = 13 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the redirectUris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRedirectUrisBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureRedirectUrisIsMutable();
+      redirectUris_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

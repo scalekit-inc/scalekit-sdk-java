@@ -125,19 +125,19 @@ private static final long serialVersionUID = 0L;
   public static final int MEMBERSHIP_STATUS_FIELD_NUMBER = 3;
   private int membershipStatus_ = 0;
   /**
-   * <code>.scalekit.v1.commons.UserStatus membership_status = 3 [json_name = "membershipStatus"];</code>
+   * <code>.scalekit.v1.commons.MembershipStatus membership_status = 3 [json_name = "membershipStatus"];</code>
    * @return The enum numeric value on the wire for membershipStatus.
    */
   @java.lang.Override public int getMembershipStatusValue() {
     return membershipStatus_;
   }
   /**
-   * <code>.scalekit.v1.commons.UserStatus membership_status = 3 [json_name = "membershipStatus"];</code>
+   * <code>.scalekit.v1.commons.MembershipStatus membership_status = 3 [json_name = "membershipStatus"];</code>
    * @return The membershipStatus.
    */
-  @java.lang.Override public com.scalekit.grpc.scalekit.v1.commons.UserStatus getMembershipStatus() {
-    com.scalekit.grpc.scalekit.v1.commons.UserStatus result = com.scalekit.grpc.scalekit.v1.commons.UserStatus.forNumber(membershipStatus_);
-    return result == null ? com.scalekit.grpc.scalekit.v1.commons.UserStatus.UNRECOGNIZED : result;
+  @java.lang.Override public com.scalekit.grpc.scalekit.v1.commons.MembershipStatus getMembershipStatus() {
+    com.scalekit.grpc.scalekit.v1.commons.MembershipStatus result = com.scalekit.grpc.scalekit.v1.commons.MembershipStatus.forNumber(membershipStatus_);
+    return result == null ? com.scalekit.grpc.scalekit.v1.commons.MembershipStatus.UNRECOGNIZED : result;
   }
 
   public static final int ROLES_FIELD_NUMBER = 4;
@@ -345,7 +345,7 @@ java.lang.String defaultValue) {
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getJoinTime());
     }
-    if (membershipStatus_ != com.scalekit.grpc.scalekit.v1.commons.UserStatus.USER_STATUS_UNSPECIFIED.getNumber()) {
+    if (membershipStatus_ != com.scalekit.grpc.scalekit.v1.commons.MembershipStatus.Membership_Status_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, membershipStatus_);
     }
     for (int i = 0; i < roles_.size(); i++) {
@@ -379,7 +379,7 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getJoinTime());
     }
-    if (membershipStatus_ != com.scalekit.grpc.scalekit.v1.commons.UserStatus.USER_STATUS_UNSPECIFIED.getNumber()) {
+    if (membershipStatus_ != com.scalekit.grpc.scalekit.v1.commons.MembershipStatus.Membership_Status_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, membershipStatus_);
     }
@@ -1099,14 +1099,14 @@ java.lang.String defaultValue) {
 
     private int membershipStatus_ = 0;
     /**
-     * <code>.scalekit.v1.commons.UserStatus membership_status = 3 [json_name = "membershipStatus"];</code>
+     * <code>.scalekit.v1.commons.MembershipStatus membership_status = 3 [json_name = "membershipStatus"];</code>
      * @return The enum numeric value on the wire for membershipStatus.
      */
     @java.lang.Override public int getMembershipStatusValue() {
       return membershipStatus_;
     }
     /**
-     * <code>.scalekit.v1.commons.UserStatus membership_status = 3 [json_name = "membershipStatus"];</code>
+     * <code>.scalekit.v1.commons.MembershipStatus membership_status = 3 [json_name = "membershipStatus"];</code>
      * @param value The enum numeric value on the wire for membershipStatus to set.
      * @return This builder for chaining.
      */
@@ -1117,20 +1117,20 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.scalekit.v1.commons.UserStatus membership_status = 3 [json_name = "membershipStatus"];</code>
+     * <code>.scalekit.v1.commons.MembershipStatus membership_status = 3 [json_name = "membershipStatus"];</code>
      * @return The membershipStatus.
      */
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.commons.UserStatus getMembershipStatus() {
-      com.scalekit.grpc.scalekit.v1.commons.UserStatus result = com.scalekit.grpc.scalekit.v1.commons.UserStatus.forNumber(membershipStatus_);
-      return result == null ? com.scalekit.grpc.scalekit.v1.commons.UserStatus.UNRECOGNIZED : result;
+    public com.scalekit.grpc.scalekit.v1.commons.MembershipStatus getMembershipStatus() {
+      com.scalekit.grpc.scalekit.v1.commons.MembershipStatus result = com.scalekit.grpc.scalekit.v1.commons.MembershipStatus.forNumber(membershipStatus_);
+      return result == null ? com.scalekit.grpc.scalekit.v1.commons.MembershipStatus.UNRECOGNIZED : result;
     }
     /**
-     * <code>.scalekit.v1.commons.UserStatus membership_status = 3 [json_name = "membershipStatus"];</code>
+     * <code>.scalekit.v1.commons.MembershipStatus membership_status = 3 [json_name = "membershipStatus"];</code>
      * @param value The membershipStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setMembershipStatus(com.scalekit.grpc.scalekit.v1.commons.UserStatus value) {
+    public Builder setMembershipStatus(com.scalekit.grpc.scalekit.v1.commons.MembershipStatus value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1140,7 +1140,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.scalekit.v1.commons.UserStatus membership_status = 3 [json_name = "membershipStatus"];</code>
+     * <code>.scalekit.v1.commons.MembershipStatus membership_status = 3 [json_name = "membershipStatus"];</code>
      * @return This builder for chaining.
      */
     public Builder clearMembershipStatus() {

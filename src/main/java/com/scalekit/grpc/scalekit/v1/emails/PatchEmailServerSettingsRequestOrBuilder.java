@@ -21,17 +21,17 @@ public interface PatchEmailServerSettingsRequestOrBuilder extends
       getServerIdBytes();
 
   /**
-   * <code>.scalekit.v1.emails.SMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.emails.PatchSMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
    * @return Whether the settings field is set.
    */
   boolean hasSettings();
   /**
-   * <code>.scalekit.v1.emails.SMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.emails.PatchSMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
    * @return The settings.
    */
-  com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings getSettings();
+  com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings getSettings();
   /**
-   * <code>.scalekit.v1.emails.SMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.emails.PatchSMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
    */
-  com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettingsOrBuilder getSettingsOrBuilder();
+  com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettingsOrBuilder getSettingsOrBuilder();
 }

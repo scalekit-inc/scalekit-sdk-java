@@ -480,6 +480,37 @@ public final class EnvironmentServiceGrpc {
     return getUpdateFeaturesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.EnableFSAFeatureRequest,
+      com.google.protobuf.Empty> getEnableFSAFeatureMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EnableFSAFeature",
+      requestType = com.scalekit.grpc.scalekit.v1.environments.EnableFSAFeatureRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.EnableFSAFeatureRequest,
+      com.google.protobuf.Empty> getEnableFSAFeatureMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.EnableFSAFeatureRequest, com.google.protobuf.Empty> getEnableFSAFeatureMethod;
+    if ((getEnableFSAFeatureMethod = EnvironmentServiceGrpc.getEnableFSAFeatureMethod) == null) {
+      synchronized (EnvironmentServiceGrpc.class) {
+        if ((getEnableFSAFeatureMethod = EnvironmentServiceGrpc.getEnableFSAFeatureMethod) == null) {
+          EnvironmentServiceGrpc.getEnableFSAFeatureMethod = getEnableFSAFeatureMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.environments.EnableFSAFeatureRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EnableFSAFeature"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.environments.EnableFSAFeatureRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new EnvironmentServiceMethodDescriptorSupplier("EnableFSAFeature"))
+              .build();
+        }
+      }
+    }
+    return getEnableFSAFeatureMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.EnableFeatureRequest,
       com.google.protobuf.Empty> getEnableFeatureMethod;
 
@@ -1007,6 +1038,13 @@ public final class EnvironmentServiceGrpc {
 
     /**
      */
+    default void enableFSAFeature(com.scalekit.grpc.scalekit.v1.environments.EnableFSAFeatureRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEnableFSAFeatureMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void enableFeature(com.scalekit.grpc.scalekit.v1.environments.EnableFeatureRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEnableFeatureMethod(), responseObserver);
@@ -1239,6 +1277,14 @@ public final class EnvironmentServiceGrpc {
 
     /**
      */
+    public void enableFSAFeature(com.scalekit.grpc.scalekit.v1.environments.EnableFSAFeatureRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEnableFSAFeatureMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void enableFeature(com.scalekit.grpc.scalekit.v1.environments.EnableFeatureRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -1453,6 +1499,13 @@ public final class EnvironmentServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.environments.GetFeaturesResponse updateFeatures(com.scalekit.grpc.scalekit.v1.environments.UpdateFeaturesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateFeaturesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.google.protobuf.Empty enableFSAFeature(com.scalekit.grpc.scalekit.v1.environments.EnableFSAFeatureRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEnableFSAFeatureMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1678,6 +1731,14 @@ public final class EnvironmentServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> enableFSAFeature(
+        com.scalekit.grpc.scalekit.v1.environments.EnableFSAFeatureRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEnableFSAFeatureMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> enableFeature(
         com.scalekit.grpc.scalekit.v1.environments.EnableFeatureRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -1788,18 +1849,19 @@ public final class EnvironmentServiceGrpc {
   private static final int METHODID_GET_PORTAL_CUSTOMIZATION = 12;
   private static final int METHODID_CREATE_ASSET_UPLOAD_URL = 13;
   private static final int METHODID_UPDATE_FEATURES = 14;
-  private static final int METHODID_ENABLE_FEATURE = 15;
-  private static final int METHODID_DISABLE_FEATURE = 16;
-  private static final int METHODID_GET_FEATURES = 17;
-  private static final int METHODID_CREATE_ENVIRONMENT_SESSION_SETTINGS = 18;
-  private static final int METHODID_CREATE_ENVIRONMENT_USER_MANAGEMENT = 19;
-  private static final int METHODID_GET_ENVIRONMENT_SESSION_SETTINGS = 20;
-  private static final int METHODID_GET_ENVIRONMENT_USER_MANAGEMENT = 21;
-  private static final int METHODID_UPDATE_ENVIRONMENT_SESSION_SETTINGS = 22;
-  private static final int METHODID_UPDATE_ENVIRONMENT_USER_MANAGEMENT = 23;
-  private static final int METHODID_GET_CONTEXT = 24;
-  private static final int METHODID_UPDATE_CONTEXT = 25;
-  private static final int METHODID_GET_CURRENT_SESSION = 26;
+  private static final int METHODID_ENABLE_FSAFEATURE = 15;
+  private static final int METHODID_ENABLE_FEATURE = 16;
+  private static final int METHODID_DISABLE_FEATURE = 17;
+  private static final int METHODID_GET_FEATURES = 18;
+  private static final int METHODID_CREATE_ENVIRONMENT_SESSION_SETTINGS = 19;
+  private static final int METHODID_CREATE_ENVIRONMENT_USER_MANAGEMENT = 20;
+  private static final int METHODID_GET_ENVIRONMENT_SESSION_SETTINGS = 21;
+  private static final int METHODID_GET_ENVIRONMENT_USER_MANAGEMENT = 22;
+  private static final int METHODID_UPDATE_ENVIRONMENT_SESSION_SETTINGS = 23;
+  private static final int METHODID_UPDATE_ENVIRONMENT_USER_MANAGEMENT = 24;
+  private static final int METHODID_GET_CONTEXT = 25;
+  private static final int METHODID_UPDATE_CONTEXT = 26;
+  private static final int METHODID_GET_CURRENT_SESSION = 27;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1877,6 +1939,10 @@ public final class EnvironmentServiceGrpc {
         case METHODID_UPDATE_FEATURES:
           serviceImpl.updateFeatures((com.scalekit.grpc.scalekit.v1.environments.UpdateFeaturesRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.GetFeaturesResponse>) responseObserver);
+          break;
+        case METHODID_ENABLE_FSAFEATURE:
+          serviceImpl.enableFSAFeature((com.scalekit.grpc.scalekit.v1.environments.EnableFSAFeatureRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_ENABLE_FEATURE:
           serviceImpl.enableFeature((com.scalekit.grpc.scalekit.v1.environments.EnableFeatureRequest) request,
@@ -2050,6 +2116,13 @@ public final class EnvironmentServiceGrpc {
               com.scalekit.grpc.scalekit.v1.environments.GetFeaturesResponse>(
                 service, METHODID_UPDATE_FEATURES)))
         .addMethod(
+          getEnableFSAFeatureMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.environments.EnableFSAFeatureRequest,
+              com.google.protobuf.Empty>(
+                service, METHODID_ENABLE_FSAFEATURE)))
+        .addMethod(
           getEnableFeatureMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -2196,6 +2269,7 @@ public final class EnvironmentServiceGrpc {
               .addMethod(getGetPortalCustomizationMethod())
               .addMethod(getCreateAssetUploadURLMethod())
               .addMethod(getUpdateFeaturesMethod())
+              .addMethod(getEnableFSAFeatureMethod())
               .addMethod(getEnableFeatureMethod())
               .addMethod(getDisableFeatureMethod())
               .addMethod(getGetFeaturesMethod())

@@ -35,6 +35,18 @@ private static final long serialVersionUID = 0L;
     return com.scalekit.grpc.scalekit.v1.auth.passwordless.PasswordlessProto.internal_static_scalekit_v1_auth_passwordless_SendPasswordlessRequest_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 6:
+        return internalGetTemplateVariables();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -221,6 +233,85 @@ private static final long serialVersionUID = 0L;
     return expiresIn_;
   }
 
+  public static final int TEMPLATE_VARIABLES_FIELD_NUMBER = 6;
+  private static final class TemplateVariablesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                com.scalekit.grpc.scalekit.v1.auth.passwordless.PasswordlessProto.internal_static_scalekit_v1_auth_passwordless_SendPasswordlessRequest_TemplateVariablesEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> templateVariables_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetTemplateVariables() {
+    if (templateVariables_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          TemplateVariablesDefaultEntryHolder.defaultEntry);
+    }
+    return templateVariables_;
+  }
+  public int getTemplateVariablesCount() {
+    return internalGetTemplateVariables().getMap().size();
+  }
+  /**
+   * <code>map&lt;string, string&gt; template_variables = 6 [json_name = "templateVariables", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public boolean containsTemplateVariables(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    return internalGetTemplateVariables().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getTemplateVariablesMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getTemplateVariables() {
+    return getTemplateVariablesMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; template_variables = 6 [json_name = "templateVariables", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getTemplateVariablesMap() {
+    return internalGetTemplateVariables().getMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; template_variables = 6 [json_name = "templateVariables", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public /* nullable */
+java.lang.String getTemplateVariablesOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetTemplateVariables().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, string&gt; template_variables = 6 [json_name = "templateVariables", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.lang.String getTemplateVariablesOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetTemplateVariables().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -250,6 +341,12 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeUInt32(5, expiresIn_);
     }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetTemplateVariables(),
+        TemplateVariablesDefaultEntryHolder.defaultEntry,
+        6);
     getUnknownFields().writeTo(output);
   }
 
@@ -275,6 +372,16 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(5, expiresIn_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetTemplateVariables().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      templateVariables__ = TemplateVariablesDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, templateVariables__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -312,6 +419,8 @@ private static final long serialVersionUID = 0L;
       if (getExpiresIn()
           != other.getExpiresIn()) return false;
     }
+    if (!internalGetTemplateVariables().equals(
+        other.internalGetTemplateVariables())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -340,6 +449,10 @@ private static final long serialVersionUID = 0L;
     if (hasExpiresIn()) {
       hash = (37 * hash) + EXPIRES_IN_FIELD_NUMBER;
       hash = (53 * hash) + getExpiresIn();
+    }
+    if (!internalGetTemplateVariables().getMap().isEmpty()) {
+      hash = (37 * hash) + TEMPLATE_VARIABLES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetTemplateVariables().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -450,6 +563,28 @@ private static final long serialVersionUID = 0L;
       return com.scalekit.grpc.scalekit.v1.auth.passwordless.PasswordlessProto.internal_static_scalekit_v1_auth_passwordless_SendPasswordlessRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 6:
+          return internalGetTemplateVariables();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 6:
+          return internalGetMutableTemplateVariables();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -477,6 +612,7 @@ private static final long serialVersionUID = 0L;
       magiclinkAuthUri_ = "";
       state_ = "";
       expiresIn_ = 0;
+      internalGetMutableTemplateVariables().clear();
       return this;
     }
 
@@ -529,6 +665,10 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.expiresIn_ = expiresIn_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.templateVariables_ = internalGetTemplateVariables();
+        result.templateVariables_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -598,6 +738,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasExpiresIn()) {
         setExpiresIn(other.getExpiresIn());
       }
+      internalGetMutableTemplateVariables().mergeFrom(
+          other.internalGetTemplateVariables());
+      bitField0_ |= 0x00000020;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -649,6 +792,15 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 40
+            case 50: {
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              templateVariables__ = input.readMessage(
+                  TemplateVariablesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              internalGetMutableTemplateVariables().getMutableMap().put(
+                  templateVariables__.getKey(), templateVariables__.getValue());
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 50
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -993,6 +1145,133 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000010);
       expiresIn_ = 0;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> templateVariables_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetTemplateVariables() {
+      if (templateVariables_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            TemplateVariablesDefaultEntryHolder.defaultEntry);
+      }
+      return templateVariables_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableTemplateVariables() {
+      if (templateVariables_ == null) {
+        templateVariables_ = com.google.protobuf.MapField.newMapField(
+            TemplateVariablesDefaultEntryHolder.defaultEntry);
+      }
+      if (!templateVariables_.isMutable()) {
+        templateVariables_ = templateVariables_.copy();
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return templateVariables_;
+    }
+    public int getTemplateVariablesCount() {
+      return internalGetTemplateVariables().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; template_variables = 6 [json_name = "templateVariables", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    @java.lang.Override
+    public boolean containsTemplateVariables(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetTemplateVariables().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getTemplateVariablesMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getTemplateVariables() {
+      return getTemplateVariablesMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; template_variables = 6 [json_name = "templateVariables", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getTemplateVariablesMap() {
+      return internalGetTemplateVariables().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; template_variables = 6 [json_name = "templateVariables", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+java.lang.String getTemplateVariablesOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetTemplateVariables().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; template_variables = 6 [json_name = "templateVariables", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    @java.lang.Override
+    public java.lang.String getTemplateVariablesOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetTemplateVariables().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    public Builder clearTemplateVariables() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      internalGetMutableTemplateVariables().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; template_variables = 6 [json_name = "templateVariables", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder removeTemplateVariables(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      internalGetMutableTemplateVariables().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+        getMutableTemplateVariables() {
+      bitField0_ |= 0x00000020;
+      return internalGetMutableTemplateVariables().getMutableMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; template_variables = 6 [json_name = "templateVariables", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder putTemplateVariables(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) { throw new NullPointerException("map value"); }
+      internalGetMutableTemplateVariables().getMutableMap()
+          .put(key, value);
+      bitField0_ |= 0x00000020;
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; template_variables = 6 [json_name = "templateVariables", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder putAllTemplateVariables(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableTemplateVariables().getMutableMap()
+          .putAll(values);
+      bitField0_ |= 0x00000020;
       return this;
     }
     @java.lang.Override

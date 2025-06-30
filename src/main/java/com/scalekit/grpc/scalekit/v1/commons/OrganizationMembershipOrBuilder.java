@@ -36,15 +36,15 @@ public interface OrganizationMembershipOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getJoinTimeOrBuilder();
 
   /**
-   * <code>.scalekit.v1.commons.UserStatus membership_status = 3 [json_name = "membershipStatus"];</code>
+   * <code>.scalekit.v1.commons.MembershipStatus membership_status = 3 [json_name = "membershipStatus"];</code>
    * @return The enum numeric value on the wire for membershipStatus.
    */
   int getMembershipStatusValue();
   /**
-   * <code>.scalekit.v1.commons.UserStatus membership_status = 3 [json_name = "membershipStatus"];</code>
+   * <code>.scalekit.v1.commons.MembershipStatus membership_status = 3 [json_name = "membershipStatus"];</code>
    * @return The membershipStatus.
    */
-  com.scalekit.grpc.scalekit.v1.commons.UserStatus getMembershipStatus();
+  com.scalekit.grpc.scalekit.v1.commons.MembershipStatus getMembershipStatus();
 
   /**
    * <code>repeated .scalekit.v1.commons.Role roles = 4 [json_name = "roles"];</code>

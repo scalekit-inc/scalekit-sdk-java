@@ -173,33 +173,33 @@ public final class DomainsProto {
       "\n\010VERIFIED\020\002\022\n\n\006FAILED\020\0032\207\013\n\rDomainServi" +
       "ce\022\325\001\n\014CreateDomain\022(.scalekit.v1.domain" +
       "s.CreateDomainRequest\032).scalekit.v1.doma" +
-      "ins.CreateDomainResponse\"p\202\265\030\002\030\024\202\323\344\223\002d\"/" +
+      "ins.CreateDomainResponse\"p\202\265\030\002\030t\202\323\344\223\002d\"/" +
       "/api/v1/organizations/{organization_id}/" +
       "domains:\006domainZ)\"\037/api/v1/organizations" +
       "/-/domains:\006domain\022\332\001\n\014UpdateDomain\022(.sc" +
       "alekit.v1.domains.UpdateDomainRequest\032)." +
       "scalekit.v1.domains.UpdateDomainResponse" +
-      "\"u\202\265\030\002\030T\202\323\344\223\002i24/api/v1/organizations/{o" +
+      "\"u\202\265\030\002\030t\202\323\344\223\002i24/api/v1/organizations/{o" +
       "rganization_id}/domains/{id}:\006domainZ)2\037" +
       "/api/v1/organizations/-/domains:\006domain\022" +
       "\316\001\n\014VerifyDomain\022(.scalekit.v1.domains.V" +
       "erifyDomainRequest\032\032.google.protobuf.Boo" +
-      "lValue\"x\202\265\030\002\030T\202\323\344\223\002l2;/api/v1/organizati" +
+      "lValue\"x\202\265\030\002\030t\202\323\344\223\002l2;/api/v1/organizati" +
       "ons/{organization_id}/domains/{id}:verif" +
       "yZ-2+/api/v1/organizations/-/domains/{id" +
       "}:verify\022\306\001\n\tGetDomain\022%.scalekit.v1.dom" +
       "ains.GetDomainRequest\032&.scalekit.v1.doma" +
-      "ins.GetDomainResponse\"j\202\265\030\002\030T\202\323\344\223\002^\0224/ap" +
+      "ins.GetDomainResponse\"j\202\265\030\002\030t\202\323\344\223\002^\0224/ap" +
       "i/v1/organizations/{organization_id}/dom" +
       "ains/{id}Z&\022$/api/v1/organizations/-/dom" +
       "ains/{id}\022\274\001\n\014DeleteDomain\022(.scalekit.v1" +
       ".domains.DeleteDomainRequest\032\026.google.pr" +
-      "otobuf.Empty\"j\202\265\030\002\030T\202\323\344\223\002^*4/api/v1/orga" +
+      "otobuf.Empty\"j\202\265\030\002\030t\202\323\344\223\002^*4/api/v1/orga" +
       "nizations/{organization_id}/domains/{id}" +
       "Z&*$/api/v1/organizations/-/domains/{id}" +
       "\022\300\001\n\013ListDomains\022&.scalekit.v1.domains.L" +
       "istDomainRequest\032\'.scalekit.v1.domains.L" +
-      "istDomainResponse\"`\202\265\030\002\030T\202\323\344\223\002T\022//api/v1" +
+      "istDomainResponse\"`\202\265\030\002\030t\202\323\344\223\002T\022//api/v1" +
       "/organizations/{organization_id}/domains" +
       "Z!\022\037/api/v1/organizations/-/domains\022\244\001\n\025" +
       "ListAuthorizedDomains\0220.scalekit.v1.doma" +

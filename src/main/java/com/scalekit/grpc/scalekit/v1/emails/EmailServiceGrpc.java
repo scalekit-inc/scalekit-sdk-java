@@ -108,6 +108,68 @@ public final class EmailServiceGrpc {
     return getUpdateEmailTemplateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+      com.scalekit.grpc.scalekit.v1.emails.GetEmailConfigurationResponse> getGetEmailConfigurationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEmailConfiguration",
+      requestType = com.google.protobuf.Empty.class,
+      responseType = com.scalekit.grpc.scalekit.v1.emails.GetEmailConfigurationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+      com.scalekit.grpc.scalekit.v1.emails.GetEmailConfigurationResponse> getGetEmailConfigurationMethod() {
+    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.scalekit.grpc.scalekit.v1.emails.GetEmailConfigurationResponse> getGetEmailConfigurationMethod;
+    if ((getGetEmailConfigurationMethod = EmailServiceGrpc.getGetEmailConfigurationMethod) == null) {
+      synchronized (EmailServiceGrpc.class) {
+        if ((getGetEmailConfigurationMethod = EmailServiceGrpc.getGetEmailConfigurationMethod) == null) {
+          EmailServiceGrpc.getGetEmailConfigurationMethod = getGetEmailConfigurationMethod =
+              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.scalekit.grpc.scalekit.v1.emails.GetEmailConfigurationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEmailConfiguration"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.emails.GetEmailConfigurationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new EmailServiceMethodDescriptorSupplier("GetEmailConfiguration"))
+              .build();
+        }
+      }
+    }
+    return getGetEmailConfigurationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationRequest,
+      com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationResponse> getUpsertEmailConfigurationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpsertEmailConfiguration",
+      requestType = com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationRequest,
+      com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationResponse> getUpsertEmailConfigurationMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationRequest, com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationResponse> getUpsertEmailConfigurationMethod;
+    if ((getUpsertEmailConfigurationMethod = EmailServiceGrpc.getUpsertEmailConfigurationMethod) == null) {
+      synchronized (EmailServiceGrpc.class) {
+        if ((getUpsertEmailConfigurationMethod = EmailServiceGrpc.getUpsertEmailConfigurationMethod) == null) {
+          EmailServiceGrpc.getUpsertEmailConfigurationMethod = getUpsertEmailConfigurationMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationRequest, com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpsertEmailConfiguration"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new EmailServiceMethodDescriptorSupplier("UpsertEmailConfiguration"))
+              .build();
+        }
+      }
+    }
+    return getUpsertEmailConfigurationMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.emails.EnableEmailTemplateRequest,
       com.scalekit.grpc.scalekit.v1.emails.EnableEmailTemplateResponse> getEnableEmailTemplateMethod;
 
@@ -551,6 +613,20 @@ public final class EmailServiceGrpc {
 
     /**
      */
+    default void getEmailConfiguration(com.google.protobuf.Empty request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.emails.GetEmailConfigurationResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEmailConfigurationMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void upsertEmailConfiguration(com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpsertEmailConfigurationMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void enableEmailTemplate(com.scalekit.grpc.scalekit.v1.emails.EnableEmailTemplateRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.emails.EnableEmailTemplateResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEnableEmailTemplateMethod(), responseObserver);
@@ -686,6 +762,22 @@ public final class EmailServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.emails.GetEmailTemplateResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateEmailTemplateMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getEmailConfiguration(com.google.protobuf.Empty request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.emails.GetEmailConfigurationResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetEmailConfigurationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void upsertEmailConfiguration(com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpsertEmailConfigurationMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -827,6 +919,20 @@ public final class EmailServiceGrpc {
 
     /**
      */
+    public com.scalekit.grpc.scalekit.v1.emails.GetEmailConfigurationResponse getEmailConfiguration(com.google.protobuf.Empty request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEmailConfigurationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationResponse upsertEmailConfiguration(com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpsertEmailConfigurationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.scalekit.grpc.scalekit.v1.emails.EnableEmailTemplateResponse enableEmailTemplate(com.scalekit.grpc.scalekit.v1.emails.EnableEmailTemplateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getEnableEmailTemplateMethod(), getCallOptions(), request);
@@ -955,6 +1061,22 @@ public final class EmailServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.emails.GetEmailConfigurationResponse> getEmailConfiguration(
+        com.google.protobuf.Empty request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetEmailConfigurationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationResponse> upsertEmailConfiguration(
+        com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpsertEmailConfigurationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.emails.EnableEmailTemplateResponse> enableEmailTemplate(
         com.scalekit.grpc.scalekit.v1.emails.EnableEmailTemplateRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -1056,18 +1178,20 @@ public final class EmailServiceGrpc {
   private static final int METHODID_GET_TEMPLATE_PLACEHOLDERS = 0;
   private static final int METHODID_CREATE_EMAIL_TEMPLATE = 1;
   private static final int METHODID_UPDATE_EMAIL_TEMPLATE = 2;
-  private static final int METHODID_ENABLE_EMAIL_TEMPLATE = 3;
-  private static final int METHODID_DISABLE_EMAIL_TEMPLATE = 4;
-  private static final int METHODID_GET_EMAIL_TEMPLATE = 5;
-  private static final int METHODID_LIST_EMAIL_TEMPLATES = 6;
-  private static final int METHODID_DELETE_EMAIL_TEMPLATE = 7;
-  private static final int METHODID_CREATE_EMAIL_SERVER = 8;
-  private static final int METHODID_UPDATE_EMAIL_SERVER_SETTINGS = 9;
-  private static final int METHODID_ENABLE_EMAIL_SERVER = 10;
-  private static final int METHODID_DISABLE_EMAIL_SERVER = 11;
-  private static final int METHODID_GET_EMAIL_SERVER = 12;
-  private static final int METHODID_LIST_EMAIL_SERVERS = 13;
-  private static final int METHODID_DELETE_EMAIL_SERVER = 14;
+  private static final int METHODID_GET_EMAIL_CONFIGURATION = 3;
+  private static final int METHODID_UPSERT_EMAIL_CONFIGURATION = 4;
+  private static final int METHODID_ENABLE_EMAIL_TEMPLATE = 5;
+  private static final int METHODID_DISABLE_EMAIL_TEMPLATE = 6;
+  private static final int METHODID_GET_EMAIL_TEMPLATE = 7;
+  private static final int METHODID_LIST_EMAIL_TEMPLATES = 8;
+  private static final int METHODID_DELETE_EMAIL_TEMPLATE = 9;
+  private static final int METHODID_CREATE_EMAIL_SERVER = 10;
+  private static final int METHODID_UPDATE_EMAIL_SERVER_SETTINGS = 11;
+  private static final int METHODID_ENABLE_EMAIL_SERVER = 12;
+  private static final int METHODID_DISABLE_EMAIL_SERVER = 13;
+  private static final int METHODID_GET_EMAIL_SERVER = 14;
+  private static final int METHODID_LIST_EMAIL_SERVERS = 15;
+  private static final int METHODID_DELETE_EMAIL_SERVER = 16;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1097,6 +1221,14 @@ public final class EmailServiceGrpc {
         case METHODID_UPDATE_EMAIL_TEMPLATE:
           serviceImpl.updateEmailTemplate((com.scalekit.grpc.scalekit.v1.emails.PatchEmailTemplateRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.emails.GetEmailTemplateResponse>) responseObserver);
+          break;
+        case METHODID_GET_EMAIL_CONFIGURATION:
+          serviceImpl.getEmailConfiguration((com.google.protobuf.Empty) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.emails.GetEmailConfigurationResponse>) responseObserver);
+          break;
+        case METHODID_UPSERT_EMAIL_CONFIGURATION:
+          serviceImpl.upsertEmailConfiguration((com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationResponse>) responseObserver);
           break;
         case METHODID_ENABLE_EMAIL_TEMPLATE:
           serviceImpl.enableEmailTemplate((com.scalekit.grpc.scalekit.v1.emails.EnableEmailTemplateRequest) request,
@@ -1185,6 +1317,20 @@ public final class EmailServiceGrpc {
               com.scalekit.grpc.scalekit.v1.emails.PatchEmailTemplateRequest,
               com.scalekit.grpc.scalekit.v1.emails.GetEmailTemplateResponse>(
                 service, METHODID_UPDATE_EMAIL_TEMPLATE)))
+        .addMethod(
+          getGetEmailConfigurationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.google.protobuf.Empty,
+              com.scalekit.grpc.scalekit.v1.emails.GetEmailConfigurationResponse>(
+                service, METHODID_GET_EMAIL_CONFIGURATION)))
+        .addMethod(
+          getUpsertEmailConfigurationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationRequest,
+              com.scalekit.grpc.scalekit.v1.emails.UpsertEmailConfigurationResponse>(
+                service, METHODID_UPSERT_EMAIL_CONFIGURATION)))
         .addMethod(
           getEnableEmailTemplateMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1320,6 +1466,8 @@ public final class EmailServiceGrpc {
               .addMethod(getGetTemplatePlaceholdersMethod())
               .addMethod(getCreateEmailTemplateMethod())
               .addMethod(getUpdateEmailTemplateMethod())
+              .addMethod(getGetEmailConfigurationMethod())
+              .addMethod(getUpsertEmailConfigurationMethod())
               .addMethod(getEnableEmailTemplateMethod())
               .addMethod(getDisableEmailTemplateMethod())
               .addMethod(getGetEmailTemplateMethod())

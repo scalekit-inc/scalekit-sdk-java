@@ -174,17 +174,12 @@ public interface ClientOrBuilder extends
       getBackChannelLogoutUrisBytes(int index);
 
   /**
-   * <code>optional string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the initiateLoginUri field is set.
-   */
-  boolean hasInitiateLoginUri();
-  /**
-   * <code>optional string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The initiateLoginUri.
    */
   java.lang.String getInitiateLoginUri();
   /**
-   * <code>optional string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for initiateLoginUri.
    */
   com.google.protobuf.ByteString

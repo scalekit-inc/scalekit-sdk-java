@@ -81,9 +81,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SETTINGS_FIELD_NUMBER = 2;
-  private com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings settings_;
+  private com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings settings_;
   /**
-   * <code>.scalekit.v1.emails.SMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.emails.PatchSMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
    * @return Whether the settings field is set.
    */
   @java.lang.Override
@@ -91,19 +91,19 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.scalekit.v1.emails.SMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.emails.PatchSMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
    * @return The settings.
    */
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings getSettings() {
-    return settings_ == null ? com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings.getDefaultInstance() : settings_;
+  public com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings getSettings() {
+    return settings_ == null ? com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings.getDefaultInstance() : settings_;
   }
   /**
-   * <code>.scalekit.v1.emails.SMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.emails.PatchSMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
    */
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettingsOrBuilder getSettingsOrBuilder() {
-    return settings_ == null ? com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings.getDefaultInstance() : settings_;
+  public com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettingsOrBuilder getSettingsOrBuilder() {
+    return settings_ == null ? com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings.getDefaultInstance() : settings_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -549,31 +549,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings settings_;
+    private com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings settings_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings, com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings.Builder, com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettingsOrBuilder> settingsBuilder_;
+        com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings, com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings.Builder, com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettingsOrBuilder> settingsBuilder_;
     /**
-     * <code>.scalekit.v1.emails.SMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.emails.PatchSMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
      * @return Whether the settings field is set.
      */
     public boolean hasSettings() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.scalekit.v1.emails.SMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.emails.PatchSMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
      * @return The settings.
      */
-    public com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings getSettings() {
+    public com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings getSettings() {
       if (settingsBuilder_ == null) {
-        return settings_ == null ? com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings.getDefaultInstance() : settings_;
+        return settings_ == null ? com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings.getDefaultInstance() : settings_;
       } else {
         return settingsBuilder_.getMessage();
       }
     }
     /**
-     * <code>.scalekit.v1.emails.SMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.emails.PatchSMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
      */
-    public Builder setSettings(com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings value) {
+    public Builder setSettings(com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings value) {
       if (settingsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -587,10 +587,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.emails.SMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.emails.PatchSMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
      */
     public Builder setSettings(
-        com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings.Builder builderForValue) {
+        com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings.Builder builderForValue) {
       if (settingsBuilder_ == null) {
         settings_ = builderForValue.build();
       } else {
@@ -601,13 +601,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.emails.SMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.emails.PatchSMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
      */
-    public Builder mergeSettings(com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings value) {
+    public Builder mergeSettings(com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings value) {
       if (settingsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0) &&
           settings_ != null &&
-          settings_ != com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings.getDefaultInstance()) {
+          settings_ != com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings.getDefaultInstance()) {
           getSettingsBuilder().mergeFrom(value);
         } else {
           settings_ = value;
@@ -622,7 +622,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.emails.SMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.emails.PatchSMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
      */
     public Builder clearSettings() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -635,33 +635,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.emails.SMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.emails.PatchSMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
      */
-    public com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings.Builder getSettingsBuilder() {
+    public com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings.Builder getSettingsBuilder() {
       bitField0_ |= 0x00000002;
       onChanged();
       return getSettingsFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.emails.SMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.emails.PatchSMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
      */
-    public com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettingsOrBuilder getSettingsOrBuilder() {
+    public com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettingsOrBuilder getSettingsOrBuilder() {
       if (settingsBuilder_ != null) {
         return settingsBuilder_.getMessageOrBuilder();
       } else {
         return settings_ == null ?
-            com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings.getDefaultInstance() : settings_;
+            com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings.getDefaultInstance() : settings_;
       }
     }
     /**
-     * <code>.scalekit.v1.emails.SMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.emails.PatchSMTPServerSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings, com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings.Builder, com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettingsOrBuilder> 
+        com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings, com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings.Builder, com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettingsOrBuilder> 
         getSettingsFieldBuilder() {
       if (settingsBuilder_ == null) {
         settingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings, com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettings.Builder, com.scalekit.grpc.scalekit.v1.emails.SMTPServerSettingsOrBuilder>(
+            com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings, com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettings.Builder, com.scalekit.grpc.scalekit.v1.emails.PatchSMTPServerSettingsOrBuilder>(
                 getSettings(),
                 getParentForChildren(),
                 isClean());

@@ -106,15 +106,23 @@ private static final long serialVersionUID = 0L;
     return user_ == null ? com.scalekit.grpc.scalekit.v1.users.CreateUser.getDefaultInstance() : user_;
   }
 
-  public static final int SEND_ACTIVATION_EMAIL_FIELD_NUMBER = 3;
-  private boolean sendActivationEmail_ = false;
+  public static final int SEND_INVITATION_EMAIL_FIELD_NUMBER = 3;
+  private boolean sendInvitationEmail_ = false;
   /**
-   * <code>bool send_activation_email = 3 [json_name = "sendActivationEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The sendActivationEmail.
+   * <code>optional bool send_invitation_email = 3 [json_name = "sendInvitationEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the sendInvitationEmail field is set.
    */
   @java.lang.Override
-  public boolean getSendActivationEmail() {
-    return sendActivationEmail_;
+  public boolean hasSendInvitationEmail() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional bool send_invitation_email = 3 [json_name = "sendInvitationEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The sendInvitationEmail.
+   */
+  @java.lang.Override
+  public boolean getSendInvitationEmail() {
+    return sendInvitationEmail_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -137,8 +145,8 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getUser());
     }
-    if (sendActivationEmail_ != false) {
-      output.writeBool(3, sendActivationEmail_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(3, sendInvitationEmail_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -156,9 +164,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getUser());
     }
-    if (sendActivationEmail_ != false) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, sendActivationEmail_);
+        .computeBoolSize(3, sendInvitationEmail_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -182,8 +190,11 @@ private static final long serialVersionUID = 0L;
       if (!getUser()
           .equals(other.getUser())) return false;
     }
-    if (getSendActivationEmail()
-        != other.getSendActivationEmail()) return false;
+    if (hasSendInvitationEmail() != other.hasSendInvitationEmail()) return false;
+    if (hasSendInvitationEmail()) {
+      if (getSendInvitationEmail()
+          != other.getSendInvitationEmail()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -201,9 +212,11 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_FIELD_NUMBER;
       hash = (53 * hash) + getUser().hashCode();
     }
-    hash = (37 * hash) + SEND_ACTIVATION_EMAIL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getSendActivationEmail());
+    if (hasSendInvitationEmail()) {
+      hash = (37 * hash) + SEND_INVITATION_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSendInvitationEmail());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -347,7 +360,7 @@ private static final long serialVersionUID = 0L;
         userBuilder_.dispose();
         userBuilder_ = null;
       }
-      sendActivationEmail_ = false;
+      sendInvitationEmail_ = false;
       return this;
     }
 
@@ -392,7 +405,8 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.sendActivationEmail_ = sendActivationEmail_;
+        result.sendInvitationEmail_ = sendInvitationEmail_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -449,8 +463,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasUser()) {
         mergeUser(other.getUser());
       }
-      if (other.getSendActivationEmail() != false) {
-        setSendActivationEmail(other.getSendActivationEmail());
+      if (other.hasSendInvitationEmail()) {
+        setSendInvitationEmail(other.getSendInvitationEmail());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -491,7 +505,7 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 18
             case 24: {
-              sendActivationEmail_ = input.readBool();
+              sendInvitationEmail_ = input.readBool();
               bitField0_ |= 0x00000004;
               break;
             } // case 24
@@ -705,34 +719,42 @@ private static final long serialVersionUID = 0L;
       return userBuilder_;
     }
 
-    private boolean sendActivationEmail_ ;
+    private boolean sendInvitationEmail_ ;
     /**
-     * <code>bool send_activation_email = 3 [json_name = "sendActivationEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The sendActivationEmail.
+     * <code>optional bool send_invitation_email = 3 [json_name = "sendInvitationEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the sendInvitationEmail field is set.
      */
     @java.lang.Override
-    public boolean getSendActivationEmail() {
-      return sendActivationEmail_;
+    public boolean hasSendInvitationEmail() {
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>bool send_activation_email = 3 [json_name = "sendActivationEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The sendActivationEmail to set.
+     * <code>optional bool send_invitation_email = 3 [json_name = "sendInvitationEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The sendInvitationEmail.
+     */
+    @java.lang.Override
+    public boolean getSendInvitationEmail() {
+      return sendInvitationEmail_;
+    }
+    /**
+     * <code>optional bool send_invitation_email = 3 [json_name = "sendInvitationEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The sendInvitationEmail to set.
      * @return This builder for chaining.
      */
-    public Builder setSendActivationEmail(boolean value) {
+    public Builder setSendInvitationEmail(boolean value) {
 
-      sendActivationEmail_ = value;
+      sendInvitationEmail_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>bool send_activation_email = 3 [json_name = "sendActivationEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional bool send_invitation_email = 3 [json_name = "sendInvitationEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearSendActivationEmail() {
+    public Builder clearSendInvitationEmail() {
       bitField0_ = (bitField0_ & ~0x00000004);
-      sendActivationEmail_ = false;
+      sendInvitationEmail_ = false;
       onChanged();
       return this;
     }

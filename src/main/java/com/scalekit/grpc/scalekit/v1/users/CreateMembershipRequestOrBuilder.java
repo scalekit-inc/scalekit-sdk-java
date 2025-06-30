@@ -70,10 +70,15 @@ public interface CreateMembershipRequestOrBuilder extends
       getExternalIdBytes();
 
   /**
-   * <code>bool send_activation_email = 5 [json_name = "sendActivationEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The sendActivationEmail.
+   * <code>optional bool send_invitation_email = 5 [json_name = "sendInvitationEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the sendInvitationEmail field is set.
    */
-  boolean getSendActivationEmail();
+  boolean hasSendInvitationEmail();
+  /**
+   * <code>optional bool send_invitation_email = 5 [json_name = "sendInvitationEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The sendInvitationEmail.
+   */
+  boolean getSendInvitationEmail();
 
   com.scalekit.grpc.scalekit.v1.users.CreateMembershipRequest.IdentitiesCase getIdentitiesCase();
 }

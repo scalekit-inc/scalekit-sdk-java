@@ -229,7 +229,7 @@ public final class RolesProto {
       "an OrganizationJ\025\"org_121312434123312\"\272H" +
       "\013r\t\020\001\030 :\003orgR\005orgId\022Z\n\002id\030\002 \001(\tBJ\222A52\033Un" +
       "ique identifier to a roleJ\026\"role_1213124" +
-      "34123312\"\272H\017r\n\020\001\030 :\004role\310\001\001R\002id2\320\027\n\014Role" +
+      "34123312\"\272H\017r\n\020\001\030 :\004role\310\001\001R\002id2\253\030\n\014Role" +
       "sService\022\301\001\n\nCreateRole\022$.scalekit.v1.ro" +
       "les.CreateRoleRequest\032%.scalekit.v1.role" +
       "s.CreateRoleResponse\"f\202\265\030\002\030P\372\322\344\223\002\t\022\007PREV" +
@@ -254,63 +254,65 @@ public final class RolesProto {
       "t\032\026.google.protobuf.Empty\"j\202\265\030\002\030P\372\322\344\223\002\t\022" +
       "\007PREVIEW\202\323\344\223\002O*(/api/v1/environments/{en" +
       "v_id}/roles/{id}Z#*!/api/v1/environments" +
-      "/-/roles/{id}\022\237\003\n\026CreateOrganizationRole" +
+      "/-/roles/{id}\022\257\003\n\026CreateOrganizationRole" +
       "\0220.scalekit.v1.roles.CreateOrganizationR" +
       "oleRequest\0321.scalekit.v1.roles.CreateOrg" +
-      "anizationRoleResponse\"\237\002\222A\343\001\n\004Role\022\036Crea" +
-      "te a new Organization Role\032SCreate a new" +
-      " organization role to represent a specif" +
-      "ic role within the organizationJf\n\003201\022_" +
-      "\n&Organization Role created successfully" +
-      "\0225\n3\0321.scalekit.v1.roles.CreateOrganizat" +
-      "ionRoleResponse\202\265\030\002\030T\202\323\344\223\002,\"$/api/v1/org" +
-      "anizations/{org_id}/roles:\004role\022\227\003\n\026Upda" +
-      "teOrganizationRole\0220.scalekit.v1.roles.U" +
-      "pdateOrganizationRoleRequest\0321.scalekit." +
-      "v1.roles.UpdateOrganizationRoleResponse\"" +
-      "\227\002\222A\326\001\n\004Role\022$Update an existing Organiz" +
-      "ation Role\032@Update an existing organizat" +
-      "ion role using its unique identifierJf\n\003" +
-      "200\022_\n&Organization Role updated success" +
-      "fully\0225\n3\0321.scalekit.v1.roles.UpdateOrga" +
-      "nizationRoleResponse\202\265\030\002\030T\202\323\344\223\0021\032)/api/v" +
-      "1/organizations/{org_id}/roles/{id}:\004rol" +
-      "e\022\237\003\n\023GetOrganizationRole\022-.scalekit.v1." +
-      "roles.GetOrganizationRoleRequest\032..scale" +
-      "kit.v1.roles.GetOrganizationRoleResponse" +
-      "\"\250\002\222A\355\001\n\004Role\022\032Retrieve Organization Rol" +
-      "e\032ZFetch detailed information about a sp" +
-      "ecific organization role using its uniqu" +
-      "e identifier.Jm\n\003200\022f\n0Successfully ret" +
-      "rieved organization role details\0222\n0\032..s" +
-      "calekit.v1.roles.GetOrganizationRoleResp" +
-      "onse\202\265\030\002\030t\202\323\344\223\002+\022)/api/v1/organizations/" +
-      "{org_id}/roles/{id}\022\354\003\n\025ListOrganization" +
-      "Roles\022/.scalekit.v1.roles.ListOrganizati" +
-      "onRolesRequest\0320.scalekit.v1.roles.ListO" +
-      "rganizationRolesResponse\"\357\002\222A\271\002\n\005Roles\022\033" +
-      "List All Organization Roles\032\212\001Retrieve a" +
-      " paginated list of all roles within the " +
-      "organization. Use the page_token from th" +
-      "e response to access subsequent pages of" +
-      " resultsJ\205\001\n\003200\022~\nFSuccessfully retriev" +
-      "ed the list of roles within the given or" +
-      "ganization\0224\n2\0320.scalekit.v1.roles.ListO" +
-      "rganizationRolesResponse\202\265\030\002\030t\202\323\344\223\002&\022$/a" +
-      "pi/v1/organizations/{org_id}/roles\022\255\002\n\026D" +
-      "eleteOrganizationRole\0220.scalekit.v1.role" +
-      "s.DeleteOrganizationRoleRequest\032\026.google" +
-      ".protobuf.Empty\"\310\001\222A\215\001\n\004Role\022\033Delete an " +
-      "Organization Role\032IRemove an existing ro" +
-      "le from the organization using its uniqu" +
-      "e identifierJ\035\n\003200\022\026\n\024Deleted Successfu" +
-      "lly\202\265\030\002\030T\202\323\344\223\002+*)/api/v1/organizations/{" +
-      "org_id}/roles/{id}B\310\001\n#com.scalekit.grpc" +
-      ".scalekit.v1.rolesB\nRolesProtoP\001Z/github" +
-      ".com/scalekit-inc/scalekit/pkg/grpc/role" +
-      "s\242\002\003SVR\252\002\021Scalekit.V1.Roles\312\002\021Scalekit\\V" +
-      "1\\Roles\342\002\035Scalekit\\V1\\Roles\\GPBMetadata\352" +
-      "\002\023Scalekit::V1::Rolesb\006proto3"
+      "anizationRoleResponse\"\257\002\222A\344\001\n\005Roles\022\036Cre" +
+      "ate a new Organization Role\032SCreate a ne" +
+      "w organization role to represent a speci" +
+      "fic role within the organizationJf\n\003201\022" +
+      "_\n&Organization Role created successfull" +
+      "y\0225\n3\0321.scalekit.v1.roles.CreateOrganiza" +
+      "tionRoleResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
+      "\223\002,\"$/api/v1/organizations/{org_id}/role" +
+      "s:\004role\022\247\003\n\026UpdateOrganizationRole\0220.sca" +
+      "lekit.v1.roles.UpdateOrganizationRoleReq" +
+      "uest\0321.scalekit.v1.roles.UpdateOrganizat" +
+      "ionRoleResponse\"\247\002\222A\327\001\n\005Roles\022$Update an" +
+      " existing Organization Role\032@Update an e" +
+      "xisting organization role using its uniq" +
+      "ue identifierJf\n\003200\022_\n&Organization Rol" +
+      "e updated successfully\0225\n3\0321.scalekit.v1" +
+      ".roles.UpdateOrganizationRoleResponse\202\265\030" +
+      "\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0021\032)/api/v1/organi" +
+      "zations/{org_id}/roles/{id}:\004role\022\257\003\n\023Ge" +
+      "tOrganizationRole\022-.scalekit.v1.roles.Ge" +
+      "tOrganizationRoleRequest\032..scalekit.v1.r" +
+      "oles.GetOrganizationRoleResponse\"\270\002\222A\356\001\n" +
+      "\005Roles\022\032Retrieve Organization Role\032ZFetc" +
+      "h detailed information about a specific " +
+      "organization role using its unique ident" +
+      "ifier.Jm\n\003200\022f\n0Successfully retrieved " +
+      "organization role details\0222\n0\032..scalekit" +
+      ".v1.roles.GetOrganizationRoleResponse\202\265\030" +
+      "\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002+\022)/api/v1/organi" +
+      "zations/{org_id}/roles/{id}\022\373\003\n\025ListOrga" +
+      "nizationRoles\022/.scalekit.v1.roles.ListOr" +
+      "ganizationRolesRequest\0320.scalekit.v1.rol" +
+      "es.ListOrganizationRolesResponse\"\376\002\222A\271\002\n" +
+      "\005Roles\022\033List All Organization Roles\032\212\001Re" +
+      "trieve a paginated list of all roles wit" +
+      "hin the organization. Use the page_token" +
+      " from the response to access subsequent " +
+      "pages of resultsJ\205\001\n\003200\022~\nFSuccessfully" +
+      " retrieved the list of roles within the " +
+      "given organization\0224\n2\0320.scalekit.v1.rol" +
+      "es.ListOrganizationRolesResponse\202\265\030\002\030t\372\322" +
+      "\344\223\002\t\022\007PREVIEW\202\323\344\223\002&\022$/api/v1/organizatio" +
+      "ns/{org_id}/roles\022\275\002\n\026DeleteOrganization" +
+      "Role\0220.scalekit.v1.roles.DeleteOrganizat" +
+      "ionRoleRequest\032\026.google.protobuf.Empty\"\330" +
+      "\001\222A\216\001\n\005Roles\022\033Delete an Organization Rol" +
+      "e\032IRemove an existing role from the orga" +
+      "nization using its unique identifierJ\035\n\003" +
+      "200\022\026\n\024Deleted Successfully\202\265\030\002\030T\372\322\344\223\002\t\022" +
+      "\007PREVIEW\202\323\344\223\002+*)/api/v1/organizations/{o" +
+      "rg_id}/roles/{id}\032\n\222A\007\n\005RolesB\310\001\n#com.sc" +
+      "alekit.grpc.scalekit.v1.rolesB\nRolesProt" +
+      "oP\001Z/github.com/scalekit-inc/scalekit/pk" +
+      "g/grpc/roles\242\002\003SVR\252\002\021Scalekit.V1.Roles\312\002" +
+      "\021Scalekit\\V1\\Roles\342\002\035Scalekit\\V1\\Roles\\G" +
+      "PBMetadata\352\002\023Scalekit::V1::Rolesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -462,6 +464,7 @@ public final class RolesProto {
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Schema);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Tag);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

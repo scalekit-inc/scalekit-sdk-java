@@ -378,15 +378,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object initiateLoginUri_ = "";
   /**
-   * <code>optional string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the initiateLoginUri field is set.
-   */
-  @java.lang.Override
-  public boolean hasInitiateLoginUri() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <code>optional string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The initiateLoginUri.
    */
   @java.lang.Override
@@ -403,7 +395,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for initiateLoginUri.
    */
   @java.lang.Override
@@ -499,7 +491,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < backChannelLogoutUris_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, backChannelLogoutUris_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initiateLoginUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, initiateLoginUri_);
     }
     for (int i = 0; i < postLoginUris_.size(); i++) {
@@ -559,7 +551,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getBackChannelLogoutUrisList().size();
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initiateLoginUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, initiateLoginUri_);
     }
     {
@@ -609,11 +601,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPostLogoutRedirectUrisList())) return false;
     if (!getBackChannelLogoutUrisList()
         .equals(other.getBackChannelLogoutUrisList())) return false;
-    if (hasInitiateLoginUri() != other.hasInitiateLoginUri()) return false;
-    if (hasInitiateLoginUri()) {
-      if (!getInitiateLoginUri()
-          .equals(other.getInitiateLoginUri())) return false;
-    }
+    if (!getInitiateLoginUri()
+        .equals(other.getInitiateLoginUri())) return false;
     if (!getPostLoginUrisList()
         .equals(other.getPostLoginUrisList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -657,10 +646,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BACK_CHANNEL_LOGOUT_URIS_FIELD_NUMBER;
       hash = (53 * hash) + getBackChannelLogoutUrisList().hashCode();
     }
-    if (hasInitiateLoginUri()) {
-      hash = (37 * hash) + INITIATE_LOGIN_URI_FIELD_NUMBER;
-      hash = (53 * hash) + getInitiateLoginUri().hashCode();
-    }
+    hash = (37 * hash) + INITIATE_LOGIN_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getInitiateLoginUri().hashCode();
     if (getPostLoginUrisCount() > 0) {
       hash = (37 * hash) + POST_LOGIN_URIS_FIELD_NUMBER;
       hash = (53 * hash) + getPostLoginUrisList().hashCode();
@@ -915,7 +902,6 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.initiateLoginUri_ = initiateLoginUri_;
-        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         postLoginUris_.makeImmutable();
@@ -1045,7 +1031,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
-      if (other.hasInitiateLoginUri()) {
+      if (!other.getInitiateLoginUri().isEmpty()) {
         initiateLoginUri_ = other.initiateLoginUri_;
         bitField0_ |= 0x00000200;
         onChanged();
@@ -2207,14 +2193,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object initiateLoginUri_ = "";
     /**
-     * <code>optional string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the initiateLoginUri field is set.
-     */
-    public boolean hasInitiateLoginUri() {
-      return ((bitField0_ & 0x00000200) != 0);
-    }
-    /**
-     * <code>optional string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The initiateLoginUri.
      */
     public java.lang.String getInitiateLoginUri() {
@@ -2230,7 +2209,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for initiateLoginUri.
      */
     public com.google.protobuf.ByteString
@@ -2247,7 +2226,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The initiateLoginUri to set.
      * @return This builder for chaining.
      */
@@ -2260,7 +2239,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearInitiateLoginUri() {
@@ -2270,7 +2249,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string initiate_login_uri = 10 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for initiateLoginUri to set.
      * @return This builder for chaining.
      */

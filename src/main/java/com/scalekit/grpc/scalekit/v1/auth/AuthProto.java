@@ -95,6 +95,21 @@ public final class AuthProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_auth_SignupOrganizationResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_auth_UpdateLoginUserDetailsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_auth_UpdateLoginUserDetailsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_auth_User_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_auth_User_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_auth_GetAuthStateResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_auth_GetAuthStateResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -107,111 +122,178 @@ public final class AuthProto {
       "\n\033scalekit/v1/auth/auth.proto\022\020scalekit." +
       "v1.auth\032\033buf/validate/validate.proto\032\034go" +
       "ogle/api/annotations.proto\032\037google/api/f" +
-      "ield_behavior.proto\032\033google/protobuf/emp" +
-      "ty.proto\032\034google/protobuf/struct.proto\032\037" +
-      "google/protobuf/timestamp.proto\032.protoc-" +
-      "gen-openapiv2/options/annotations.proto\032" +
-      "!scalekit/v1/commons/commons.proto\032)scal" +
-      "ekit/v1/connections/connections.proto\032!s" +
-      "calekit/v1/options/options.proto\"Z\n\027List" +
-      "AuthMethodsResponse\022?\n\014auth_methods\030\001 \003(" +
-      "\0132\034.scalekit.v1.auth.AuthMethodR\013authMet" +
-      "hods\"\301\005\n\nAuthMethod\022}\n\rconnection_id\030\001 \001" +
-      "(\tBX\222AL22Unique identifier for the conne" +
-      "ction to be toggledJ\026\"conn_1213124341233" +
-      "12\"\272H\006r\004\020\001\030 R\014connectionId\022P\n\017connection" +
-      "_type\030\002 \001(\0162\'.scalekit.v1.connections.Co" +
-      "nnectionTypeR\016connectionType\022G\n\010provider" +
-      "\030\003 \001(\0162+.scalekit.v1.connections.Connect" +
-      "ionProviderR\010provider\022\223\001\n\023auth_initiatio" +
-      "n_uri\030\004 \001(\tBc\222AV2\036URI to initiate the co" +
-      "nnectionJ4\"https://sso.acmecorp.com/sso/" +
-      "v1/oidc/conn_123/init\"\272H\007r\005\020\001\030\377\001R\021authIn" +
-      "itiationUri\022z\n\021passwordless_type\030\005 \001(\0162)" +
-      ".scalekit.v1.connections.PasswordlessTyp" +
-      "eB\035\222A\0322\021Passwordless typeJ\005\"OTP\"H\000R\020pass" +
-      "wordlessType\210\001\001\022W\n\025code_challenge_length" +
-      "\030\006 \001(\rB\036\222A\0332\026Length of the OTP codeJ\0016H\001" +
-      "R\023codeChallengeLength\210\001\001B\024\n\022_passwordles" +
-      "s_typeB\030\n\026_code_challenge_length\"m\n\032Disc" +
-      "overyAuthMethodRequest\022O\n\021discovery_requ" +
-      "est\030\002 \001(\0132\".scalekit.v1.auth.DiscoveryRe" +
-      "questR\020discoveryRequest\"\263\001\n\020DiscoveryReq" +
-      "uest\022c\n\005email\030\001 \001(\tBM\222AA2*user identifie" +
-      "r like email or phone numberJ\023\"john@acme" +
-      "corp.com\"\272H\006r\004\020\003\030dR\005email\022:\n\006intent\030\002 \001(" +
-      "\0162\030.scalekit.v1.auth.IntentB\010\272H\005\202\001\002\020\001R\006i" +
-      "ntent\"\\\n\033DiscoveryAuthMethodResponse\022=\n\013" +
-      "auth_method\030\001 \001(\0132\034.scalekit.v1.auth.Aut" +
-      "hMethodR\nauthMethod\"\036\n\034GetAuthCustomizat" +
-      "ionsRequest\"o\n\035GetAuthCustomizationsResp" +
-      "onse\022N\n\026customization_settings\030\002 \001(\0132\027.g" +
-      "oogle.protobuf.StructR\025customizationSett" +
-      "ings\"N\n\027GetAuthFeaturesResponse\0223\n\010featu" +
-      "res\030\001 \001(\0132\027.google.protobuf.StructR\010feat" +
-      "ures\"R\n\031VerifyPasswordLessRequest\0225\n\007otp" +
-      "_req\030\002 \001(\0132\034.scalekit.v1.auth.OTPRequest" +
-      "R\006otpReq\"\034\n\032VerifyPasswordLessResponse\"i" +
-      "\n\nOTPRequest\022[\n\016code_challenge\030\001 \001(\tB4\222A" +
-      "(2\034OTP sent to the user\'s emailJ\010\"123456" +
-      "\"\272H\006r\004\020\005\030\006R\rcodeChallenge\"\324\001\n\035ListUserOr" +
-      "ganizationsResponse\022D\n\rorganizations\030\001 \003" +
-      "(\0132\036.scalekit.v1.auth.OrganizationR\rorga" +
-      "nizations\0221\n\004user\030\002 \001(\0132\035.scalekit.v1.au" +
-      "th.UserDetailsR\004user\022:\n\006intent\030\003 \001(\0162\030.s" +
-      "calekit.v1.auth.IntentB\010\272H\005\202\001\002\020\001R\006intent" +
-      "\"_\n\014Organization\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name" +
-      "\030\002 \001(\tR\004name\022+\n\021membership_status\030\003 \001(\tR" +
-      "\020membershipStatus\"_\n\013UserDetails\022\024\n\005emai" +
-      "l\030\001 \001(\tR\005email\022\035\n\nfirst_name\030\002 \001(\tR\tfirs" +
-      "tName\022\033\n\tlast_name\030\003 \001(\tR\010lastName\"\304\001\n\031S" +
-      "ignupOrganizationRequest\022+\n\021organization" +
-      "_name\030\001 \001(\tR\020organizationName\022\035\n\nfirst_n" +
-      "ame\030\002 \001(\tR\tfirstName\022\033\n\tlast_name\030\003 \001(\tR" +
-      "\010lastName\022\033\n\tfull_name\030\004 \001(\tR\010fullName\022!" +
-      "\n\014phone_number\030\005 \001(\tR\013phoneNumber\"r\n\032Sig" +
-      "nupOrganizationResponse\022\'\n\017organization_" +
-      "id\030\001 \001(\tR\016organizationId\022+\n\021organization" +
-      "_name\030\002 \001(\tR\020organizationName*:\n\006Intent\022" +
-      "\026\n\022INTENT_UNSPECIFIED\020\000\022\013\n\007sign_in\020\001\022\013\n\007" +
-      "sign_up\020\0022\210\n\n\013AuthService\022w\n\017ListAuthMet" +
-      "hods\022\026.google.protobuf.Empty\032).scalekit." +
-      "v1.auth.ListAuthMethodsResponse\"!\202\265\030\002\030\001\202" +
-      "\323\344\223\002\025\022\023/api/v1/authmethods\022\253\001\n\023Discovery" +
-      "AuthMethod\022,.scalekit.v1.auth.DiscoveryA" +
-      "uthMethodRequest\032-.scalekit.v1.auth.Disc" +
-      "overyAuthMethodResponse\"7\202\265\030\002\030\001\202\323\344\223\002+\"\026/" +
-      "api/v1/auth:discovery:\021discovery_request" +
-      "\022\253\001\n\025VerifyPasswordLessOtp\022+.scalekit.v1" +
-      ".auth.VerifyPasswordLessRequest\032,.scalek" +
-      "it.v1.auth.VerifyPasswordLessResponse\"7\202" +
-      "\265\030\002\030\001\202\323\344\223\002+\" /api/v1/auth/passwordless:v" +
-      "erify:\007otp_req\022t\n\022ResendPasswordless\022\026.g" +
-      "oogle.protobuf.Empty\032\026.google.protobuf.E" +
-      "mpty\".\202\265\030\002\030\001\202\323\344\223\002\"\" /api/v1/auth/passwor" +
-      "dless:resend\022\212\001\n\025ListUserOrganizations\022\026" +
-      ".google.protobuf.Empty\032/.scalekit.v1.aut" +
-      "h.ListUserOrganizationsResponse\"(\202\265\030\002\030\001\202" +
-      "\323\344\223\002\034\022\032/api/v1/auth:organizations\022\225\001\n\022Si" +
-      "gnupOrganization\022+.scalekit.v1.auth.Sign" +
-      "upOrganizationRequest\032,.scalekit.v1.auth" +
-      ".SignupOrganizationResponse\"$\202\265\030\002\030\001\202\323\344\223\002" +
-      "\030\"\023/api/v1/auth:signup:\001*\022h\n\020GetActiveSe" +
-      "ssion\022\026.google.protobuf.Empty\032\026.google.p" +
-      "rotobuf.Empty\"$\202\265\030\002\030\001\202\323\344\223\002\030\022\026/api/v1/ses" +
-      "sion:active\022\243\001\n\025GetAuthCustomizations\022.." +
-      "scalekit.v1.auth.GetAuthCustomizationsRe" +
-      "quest\032/.scalekit.v1.auth.GetAuthCustomiz" +
-      "ationsResponse\")\202\265\030\002\030\001\202\323\344\223\002\035\022\033/api/v1/au" +
-      "th:customizations\022y\n\017GetAuthFeatures\022\026.g" +
-      "oogle.protobuf.Empty\032).scalekit.v1.auth." +
-      "GetAuthFeaturesResponse\"#\202\265\030\002\030\001\202\323\344\223\002\027\022\025/" +
-      "api/v1/auth:featuresB\301\001\n\"com.scalekit.gr" +
-      "pc.scalekit.v1.authB\tAuthProtoP\001Z.github" +
-      ".com/scalekit-inc/scalekit/pkg/grpc/auth" +
-      "\242\002\003SVA\252\002\020Scalekit.V1.Auth\312\002\020Scalekit\\V1\\" +
-      "Auth\342\002\034Scalekit\\V1\\Auth\\GPBMetadata\352\002\022Sc" +
-      "alekit::V1::Authb\006proto3"
+      "ield_behavior.proto\032\033google/api/visibili" +
+      "ty.proto\032\033google/protobuf/empty.proto\032\034g" +
+      "oogle/protobuf/struct.proto\032\037google/prot" +
+      "obuf/timestamp.proto\032.protoc-gen-openapi" +
+      "v2/options/annotations.proto\032!scalekit/v" +
+      "1/commons/commons.proto\032)scalekit/v1/con" +
+      "nections/connections.proto\032!scalekit/v1/" +
+      "options/options.proto\"Z\n\027ListAuthMethods" +
+      "Response\022?\n\014auth_methods\030\001 \003(\0132\034.scaleki" +
+      "t.v1.auth.AuthMethodR\013authMethods\"\301\005\n\nAu" +
+      "thMethod\022}\n\rconnection_id\030\001 \001(\tBX\222AL22Un" +
+      "ique identifier for the connection to be" +
+      " toggledJ\026\"conn_121312434123312\"\272H\006r\004\020\001\030" +
+      " R\014connectionId\022P\n\017connection_type\030\002 \001(\016" +
+      "2\'.scalekit.v1.connections.ConnectionTyp" +
+      "eR\016connectionType\022G\n\010provider\030\003 \001(\0162+.sc" +
+      "alekit.v1.connections.ConnectionProvider" +
+      "R\010provider\022\223\001\n\023auth_initiation_uri\030\004 \001(\t" +
+      "Bc\222AV2\036URI to initiate the connectionJ4\"" +
+      "https://sso.acmecorp.com/sso/v1/oidc/con" +
+      "n_123/init\"\272H\007r\005\020\001\030\377\001R\021authInitiationUri" +
+      "\022z\n\021passwordless_type\030\005 \001(\0162).scalekit.v" +
+      "1.connections.PasswordlessTypeB\035\222A\0322\021Pas" +
+      "swordless typeJ\005\"OTP\"H\000R\020passwordlessTyp" +
+      "e\210\001\001\022W\n\025code_challenge_length\030\006 \001(\rB\036\222A\033" +
+      "2\026Length of the OTP codeJ\0016H\001R\023codeChall" +
+      "engeLength\210\001\001B\024\n\022_passwordless_typeB\030\n\026_" +
+      "code_challenge_length\"m\n\032DiscoveryAuthMe" +
+      "thodRequest\022O\n\021discovery_request\030\002 \001(\0132\"" +
+      ".scalekit.v1.auth.DiscoveryRequestR\020disc" +
+      "overyRequest\"\263\001\n\020DiscoveryRequest\022c\n\005ema" +
+      "il\030\001 \001(\tBM\222AA2*user identifier like emai" +
+      "l or phone numberJ\023\"john@acmecorp.com\"\272H" +
+      "\006r\004\020\003\030dR\005email\022:\n\006intent\030\002 \001(\0162\030.scaleki" +
+      "t.v1.auth.IntentB\010\272H\005\202\001\002\020\001R\006intent\"\\\n\033Di" +
+      "scoveryAuthMethodResponse\022=\n\013auth_method" +
+      "\030\001 \001(\0132\034.scalekit.v1.auth.AuthMethodR\nau" +
+      "thMethod\"\036\n\034GetAuthCustomizationsRequest" +
+      "\"o\n\035GetAuthCustomizationsResponse\022N\n\026cus" +
+      "tomization_settings\030\002 \001(\0132\027.google.proto" +
+      "buf.StructR\025customizationSettings\"N\n\027Get" +
+      "AuthFeaturesResponse\0223\n\010features\030\001 \001(\0132\027" +
+      ".google.protobuf.StructR\010features\"R\n\031Ver" +
+      "ifyPasswordLessRequest\0225\n\007otp_req\030\002 \001(\0132" +
+      "\034.scalekit.v1.auth.OTPRequestR\006otpReq\"\034\n" +
+      "\032VerifyPasswordLessResponse\"i\n\nOTPReques" +
+      "t\022[\n\016code_challenge\030\001 \001(\tB4\222A(2\034OTP sent" +
+      " to the user\'s emailJ\010\"123456\"\272H\006r\004\020\005\030\006R" +
+      "\rcodeChallenge\"\324\001\n\035ListUserOrganizations" +
+      "Response\022D\n\rorganizations\030\001 \003(\0132\036.scalek" +
+      "it.v1.auth.OrganizationR\rorganizations\0221" +
+      "\n\004user\030\002 \001(\0132\035.scalekit.v1.auth.UserDeta" +
+      "ilsR\004user\022:\n\006intent\030\003 \001(\0162\030.scalekit.v1." +
+      "auth.IntentB\010\272H\005\202\001\002\020\001R\006intent\"_\n\014Organiz" +
+      "ation\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004nam" +
+      "e\022+\n\021membership_status\030\003 \001(\tR\020membership" +
+      "Status\"_\n\013UserDetails\022\024\n\005email\030\001 \001(\tR\005em" +
+      "ail\022\035\n\nfirst_name\030\002 \001(\tR\tfirstName\022\033\n\tla" +
+      "st_name\030\003 \001(\tR\010lastName\"\304\001\n\031SignupOrgani" +
+      "zationRequest\022+\n\021organization_name\030\001 \001(\t" +
+      "R\020organizationName\022\035\n\nfirst_name\030\002 \001(\tR\t" +
+      "firstName\022\033\n\tlast_name\030\003 \001(\tR\010lastName\022\033" +
+      "\n\tfull_name\030\004 \001(\tR\010fullName\022!\n\014phone_num" +
+      "ber\030\005 \001(\tR\013phoneNumber\"r\n\032SignupOrganiza" +
+      "tionResponse\022\'\n\017organization_id\030\001 \001(\tR\016o" +
+      "rganizationId\022+\n\021organization_name\030\002 \001(\t" +
+      "R\020organizationName\"\326\002\n\035UpdateLoginUserDe" +
+      "tailsRequest\022v\n\rconnection_id\030\001 \001(\tBQ\222AE" +
+      "2+Connection ID. Unique ID for the conne" +
+      "ctionJ\026\"conn_121312434123312\"\272H\006r\004\020\001\030 R\014" +
+      "connectionId\022\220\001\n\020login_request_id\030\002 \001(\tB" +
+      "f\222A]2BLogin Request ID that was shared a" +
+      "s part of authorization initiateJ\027\"lri_7" +
+      "3415099636808061\"\272H\003\310\001\001R\016loginRequestId\022" +
+      "*\n\004user\030\003 \001(\0132\026.scalekit.v1.auth.UserR\004u" +
+      "ser\"\220\014\n\004User\022\203\001\n\003sub\030\001 \001(\tBq\222Ag2WSubject" +
+      " identifier for the user (typically a un" +
+      "ique user ID from the identity provider)" +
+      "J\014\"1234567890\"\272H\004r\002\020\001R\003sub\022R\n\005email\030\002 \001(" +
+      "\tB<\222A22\034User\'s primary email addressJ\022\"u" +
+      "ser@example.com\"\272H\004r\002\020\001R\005email\022=\n\ngiven_" +
+      "name\030\003 \001(\tB\036\222A\0332\021User\'s first nameJ\006\"Joh" +
+      "n\"R\tgivenName\022=\n\013family_name\030\004 \001(\tB\034\222A\0312" +
+      "\020User\'s last nameJ\005\"Doe\"R\nfamilyName\022\210\001\n" +
+      "\016email_verified\030\005 \001(\010Ba\222A^2VIndicates wh" +
+      "ether the user\'s email address has been " +
+      "verified by the identity provider.J\004true" +
+      "R\remailVerified\022c\n\014phone_number\030\006 \001(\tB@\222" +
+      "A=2,User\'s primary phone number in E.164" +
+      " format.J\r\"+1234567890\"R\013phoneNumber\022\225\001\n" +
+      "\025phone_number_verified\030\007 \001(\010Ba\222A^2UIndic" +
+      "ates whether the user\'s phone number has" +
+      " been verified by the identity provider." +
+      "J\005falseR\023phoneNumberVerified\022B\n\004name\030\010 \001" +
+      "(\tB.\222A+2\035Full display name of the userJ\n" +
+      "\"John Doe\"R\004name\022b\n\022preferred_username\030\t" +
+      " \001(\tB3\222A02#User\'s preferred username or " +
+      "handleJ\t\"johndoe\"R\021preferredUsername\022b\n\007" +
+      "picture\030\n \001(\tBH\222AE2!URL to the user\'s pr" +
+      "ofile pictureJ \"https://example.com/avat" +
+      "ar.jpg\"R\007picture\022X\n\006gender\030\013 \001(\tB@\222A=23U" +
+      "ser\'s gender as reported by the identity" +
+      " provider.J\006\"male\"R\006gender\022e\n\006locale\030\014 \001" +
+      "(\tBM\222AJ2?User\'s locale or language prefe" +
+      "rence (IETF BCP 47 language tag)J\007\"en-US" +
+      "\"R\006locale\022f\n\006groups\030\r \003(\tBN\222AK2/List of " +
+      "group names or IDs the user belongs to.J" +
+      "\030[\"admins\", \"developers\"]R\006groups\022\362\001\n\021cu" +
+      "stom_attributes\030\016 \001(\0132\027.google.protobuf." +
+      "StructB\253\001\222A\247\0012mCustom attributes for the" +
+      " user, represented as a key-value map. U" +
+      "sed for additional identity provider cla" +
+      "ims.J6{\"department\": \"Engineering\", \"emp" +
+      "loyee_id\": \"E12345\"}R\020customAttributes\"R" +
+      "\n\024GetAuthStateResponse\022:\n\nauth_state\030\001 \001" +
+      "(\0162\033.scalekit.v1.auth.AuthStateR\tauthSta" +
+      "te*:\n\006Intent\022\026\n\022INTENT_UNSPECIFIED\020\000\022\013\n\007" +
+      "sign_in\020\001\022\013\n\007sign_up\020\002*u\n\tAuthState\022\022\n\016A" +
+      "UTHENTICATION\020\000\022\031\n\025ORGANIZATION_SWITCHER" +
+      "\020\001\022 \n\034ORGANIZATION_SWITCHER_SIGNUP\020\002\022\027\n\023" +
+      "ORGANIZATION_SIGNUP\020\0032\247\016\n\013AuthService\022w\n" +
+      "\017ListAuthMethods\022\026.google.protobuf.Empty" +
+      "\032).scalekit.v1.auth.ListAuthMethodsRespo" +
+      "nse\"!\202\265\030\002\030\001\202\323\344\223\002\025\022\023/api/v1/authmethods\022\253" +
+      "\001\n\023DiscoveryAuthMethod\022,.scalekit.v1.aut" +
+      "h.DiscoveryAuthMethodRequest\032-.scalekit." +
+      "v1.auth.DiscoveryAuthMethodResponse\"7\202\265\030" +
+      "\002\030\001\202\323\344\223\002+\"\026/api/v1/auth:discovery:\021disco" +
+      "very_request\022\253\001\n\025VerifyPasswordLessOtp\022+" +
+      ".scalekit.v1.auth.VerifyPasswordLessRequ" +
+      "est\032,.scalekit.v1.auth.VerifyPasswordLes" +
+      "sResponse\"7\202\265\030\002\030\001\202\323\344\223\002+\" /api/v1/auth/pa" +
+      "sswordless:verify:\007otp_req\022t\n\022ResendPass" +
+      "wordless\022\026.google.protobuf.Empty\032\026.googl" +
+      "e.protobuf.Empty\".\202\265\030\002\030\001\202\323\344\223\002\"\" /api/v1/" +
+      "auth/passwordless:resend\022\212\001\n\025ListUserOrg" +
+      "anizations\022\026.google.protobuf.Empty\032/.sca" +
+      "lekit.v1.auth.ListUserOrganizationsRespo" +
+      "nse\"(\202\265\030\002\030\001\202\323\344\223\002\034\022\032/api/v1/auth:organiza" +
+      "tions\022\225\001\n\022SignupOrganization\022+.scalekit." +
+      "v1.auth.SignupOrganizationRequest\032,.scal" +
+      "ekit.v1.auth.SignupOrganizationResponse\"" +
+      "$\202\265\030\002\030\001\202\323\344\223\002\030\"\023/api/v1/auth:signup:\001*\022p\n" +
+      "\014GetAuthState\022\026.google.protobuf.Empty\032&." +
+      "scalekit.v1.auth.GetAuthStateResponse\" \202" +
+      "\265\030\002\030\001\202\323\344\223\002\024\022\022/api/v1/auth/state\022[\n\006Logou" +
+      "t\022\026.google.protobuf.Empty\032\026.google.proto" +
+      "buf.Empty\"!\202\265\030\002\030\001\202\323\344\223\002\025\"\023/api/v1/auth/lo" +
+      "gout\022h\n\020GetActiveSession\022\026.google.protob" +
+      "uf.Empty\032\026.google.protobuf.Empty\"$\202\265\030\002\030\001" +
+      "\202\323\344\223\002\030\022\026/api/v1/session:active\022\243\001\n\025GetAu" +
+      "thCustomizations\022..scalekit.v1.auth.GetA" +
+      "uthCustomizationsRequest\032/.scalekit.v1.a" +
+      "uth.GetAuthCustomizationsResponse\")\202\265\030\002\030" +
+      "\001\202\323\344\223\002\035\022\033/api/v1/auth:customizations\022y\n\017" +
+      "GetAuthFeatures\022\026.google.protobuf.Empty\032" +
+      ").scalekit.v1.auth.GetAuthFeaturesRespon" +
+      "se\"#\202\265\030\002\030\001\202\323\344\223\002\027\022\025/api/v1/auth:features\022" +
+      "\315\002\n\026UpdateLoginUserDetails\022/.scalekit.v1" +
+      ".auth.UpdateLoginUserDetailsRequest\032\026.go" +
+      "ogle.protobuf.Empty\"\351\001\222Az\n\013Connections\022%" +
+      "Update User Details for login request\032%U" +
+      "pdate User Details for login requestJ\035\n\003" +
+      "200\022\026\n\024Deleted Successfully\202\265\030\002\030\004\372\322\344\223\002\t\022" +
+      "\007PREVIEW\202\323\344\223\002Q\"I/api/v1/connections/{con" +
+      "nection_id}/auth-requests/{login_request" +
+      "_id}/user:\004userB\301\001\n\"com.scalekit.grpc.sc" +
+      "alekit.v1.authB\tAuthProtoP\001Z.github.com/" +
+      "scalekit-inc/scalekit/pkg/grpc/auth\242\002\003SV" +
+      "A\252\002\020Scalekit.V1.Auth\312\002\020Scalekit\\V1\\Auth\342" +
+      "\002\034Scalekit\\V1\\Auth\\GPBMetadata\352\002\022Scaleki" +
+      "t::V1::Authb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -219,6 +301,7 @@ public final class AuthProto {
           com.scalekit.grpc.buf.validate.ValidateProto.getDescriptor(),
           com.scalekit.grpc.google.api.AnnotationsProto.getDescriptor(),
           com.scalekit.grpc.google.api.FieldBehaviorProto.getDescriptor(),
+          com.scalekit.grpc.google.api.VisibilityProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
@@ -323,17 +406,38 @@ public final class AuthProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_SignupOrganizationResponse_descriptor,
         new java.lang.String[] { "OrganizationId", "OrganizationName", });
+    internal_static_scalekit_v1_auth_UpdateLoginUserDetailsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_scalekit_v1_auth_UpdateLoginUserDetailsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_auth_UpdateLoginUserDetailsRequest_descriptor,
+        new java.lang.String[] { "ConnectionId", "LoginRequestId", "User", });
+    internal_static_scalekit_v1_auth_User_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_scalekit_v1_auth_User_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_auth_User_descriptor,
+        new java.lang.String[] { "Sub", "Email", "GivenName", "FamilyName", "EmailVerified", "PhoneNumber", "PhoneNumberVerified", "Name", "PreferredUsername", "Picture", "Gender", "Locale", "Groups", "CustomAttributes", });
+    internal_static_scalekit_v1_auth_GetAuthStateResponse_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_scalekit_v1_auth_GetAuthStateResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_auth_GetAuthStateResponse_descriptor,
+        new java.lang.String[] { "AuthState", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
+    registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.scalekit.grpc.buf.validate.ValidateProto.getDescriptor();
     com.scalekit.grpc.google.api.AnnotationsProto.getDescriptor();
     com.scalekit.grpc.google.api.FieldBehaviorProto.getDescriptor();
+    com.scalekit.grpc.google.api.VisibilityProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
