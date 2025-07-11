@@ -20,23 +20,78 @@ public interface PasswordLessConfigOrBuilder extends
   com.scalekit.grpc.scalekit.v1.connections.PasswordlessType getType();
 
   /**
-   * <code>int32 frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional .google.protobuf.UInt32Value frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the frequency field is set.
+   */
+  boolean hasFrequency();
+  /**
+   * <code>optional .google.protobuf.UInt32Value frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The frequency.
    */
-  int getFrequency();
+  com.google.protobuf.UInt32Value getFrequency();
+  /**
+   * <code>optional .google.protobuf.UInt32Value frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.UInt32ValueOrBuilder getFrequencyOrBuilder();
 
   /**
-   * <code>.google.protobuf.Duration validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional .google.protobuf.UInt32Value validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the validity field is set.
    */
   boolean hasValidity();
   /**
-   * <code>.google.protobuf.Duration validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional .google.protobuf.UInt32Value validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The validity.
    */
-  com.google.protobuf.Duration getValidity();
+  com.google.protobuf.UInt32Value getValidity();
   /**
-   * <code>.google.protobuf.Duration validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional .google.protobuf.UInt32Value validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  com.google.protobuf.DurationOrBuilder getValidityOrBuilder();
+  com.google.protobuf.UInt32ValueOrBuilder getValidityOrBuilder();
+
+  /**
+   * <code>optional .google.protobuf.BoolValue enforce_same_browser_origin = 4 [json_name = "enforceSameBrowserOrigin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the enforceSameBrowserOrigin field is set.
+   */
+  boolean hasEnforceSameBrowserOrigin();
+  /**
+   * <code>optional .google.protobuf.BoolValue enforce_same_browser_origin = 4 [json_name = "enforceSameBrowserOrigin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enforceSameBrowserOrigin.
+   */
+  com.google.protobuf.BoolValue getEnforceSameBrowserOrigin();
+  /**
+   * <code>optional .google.protobuf.BoolValue enforce_same_browser_origin = 4 [json_name = "enforceSameBrowserOrigin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getEnforceSameBrowserOriginOrBuilder();
+
+  /**
+   * <code>optional .google.protobuf.UInt32Value code_challenge_length = 5 [json_name = "codeChallengeLength", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the codeChallengeLength field is set.
+   */
+  boolean hasCodeChallengeLength();
+  /**
+   * <code>optional .google.protobuf.UInt32Value code_challenge_length = 5 [json_name = "codeChallengeLength", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The codeChallengeLength.
+   */
+  com.google.protobuf.UInt32Value getCodeChallengeLength();
+  /**
+   * <code>optional .google.protobuf.UInt32Value code_challenge_length = 5 [json_name = "codeChallengeLength", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.UInt32ValueOrBuilder getCodeChallengeLengthOrBuilder();
+
+  /**
+   * <code>optional .scalekit.v1.connections.CodeChallengeType code_challenge_type = 6 [json_name = "codeChallengeType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the codeChallengeType field is set.
+   */
+  boolean hasCodeChallengeType();
+  /**
+   * <code>optional .scalekit.v1.connections.CodeChallengeType code_challenge_type = 6 [json_name = "codeChallengeType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for codeChallengeType.
+   */
+  int getCodeChallengeTypeValue();
+  /**
+   * <code>optional .scalekit.v1.connections.CodeChallengeType code_challenge_type = 6 [json_name = "codeChallengeType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The codeChallengeType.
+   */
+  com.scalekit.grpc.scalekit.v1.connections.CodeChallengeType getCodeChallengeType();
 }

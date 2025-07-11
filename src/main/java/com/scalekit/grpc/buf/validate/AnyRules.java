@@ -573,15 +573,15 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+              java.lang.String s = input.readStringRequireUtf8();
               ensureInIsMutable();
-              in_.add(bs);
+              in_.add(s);
               break;
             } // case 18
             case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+              java.lang.String s = input.readStringRequireUtf8();
               ensureNotInIsMutable();
-              notIn_.add(bs);
+              notIn_.add(s);
               break;
             } // case 26
             default: {
@@ -821,6 +821,7 @@ private static final long serialVersionUID = 0L;
     public Builder addInBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       ensureInIsMutable();
       in_.add(value);
       bitField0_ |= 0x00000001;
@@ -1030,6 +1031,7 @@ private static final long serialVersionUID = 0L;
     public Builder addNotInBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       ensureNotInIsMutable();
       notIn_.add(value);
       bitField0_ |= 0x00000002;
@@ -1062,7 +1064,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<AnyRules>
+  private static final com.google.protobuf.Parser<AnyRules>
       PARSER = new com.google.protobuf.AbstractParser<AnyRules>() {
     @java.lang.Override
     public AnyRules parsePartialFrom(

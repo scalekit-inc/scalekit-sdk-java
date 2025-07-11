@@ -216,6 +216,25 @@ private static final long serialVersionUID = 0L;
     return includeDetail_;
   }
 
+  public static final int INCLUDE_EXTERNAL_GROUPS_FIELD_NUMBER = 7;
+  private boolean includeExternalGroups_ = false;
+  /**
+   * <code>optional bool include_external_groups = 7 [json_name = "includeExternalGroups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the includeExternalGroups field is set.
+   */
+  @java.lang.Override
+  public boolean hasIncludeExternalGroups() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>optional bool include_external_groups = 7 [json_name = "includeExternalGroups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The includeExternalGroups.
+   */
+  @java.lang.Override
+  public boolean getIncludeExternalGroups() {
+    return includeExternalGroups_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -248,6 +267,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(6, includeDetail_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(7, includeExternalGroups_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -277,6 +299,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(6, includeDetail_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, includeExternalGroups_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -311,6 +337,11 @@ private static final long serialVersionUID = 0L;
       if (getIncludeDetail()
           != other.getIncludeDetail()) return false;
     }
+    if (hasIncludeExternalGroups() != other.hasIncludeExternalGroups()) return false;
+    if (hasIncludeExternalGroups()) {
+      if (getIncludeExternalGroups()
+          != other.getIncludeExternalGroups()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -338,6 +369,11 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + INCLUDE_DETAIL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIncludeDetail());
+    }
+    if (hasIncludeExternalGroups()) {
+      hash = (37 * hash) + INCLUDE_EXTERNAL_GROUPS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIncludeExternalGroups());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -486,6 +522,7 @@ private static final long serialVersionUID = 0L;
         updatedAfterBuilder_ = null;
       }
       includeDetail_ = false;
+      includeExternalGroups_ = false;
       return this;
     }
 
@@ -541,6 +578,10 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.includeDetail_ = includeDetail_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.includeExternalGroups_ = includeExternalGroups_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -613,6 +654,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasIncludeDetail()) {
         setIncludeDetail(other.getIncludeDetail());
       }
+      if (other.hasIncludeExternalGroups()) {
+        setIncludeExternalGroups(other.getIncludeExternalGroups());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -671,6 +715,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000020;
               break;
             } // case 48
+            case 56: {
+              includeExternalGroups_ = input.readBool();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 56
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1093,6 +1142,46 @@ private static final long serialVersionUID = 0L;
     public Builder clearIncludeDetail() {
       bitField0_ = (bitField0_ & ~0x00000020);
       includeDetail_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean includeExternalGroups_ ;
+    /**
+     * <code>optional bool include_external_groups = 7 [json_name = "includeExternalGroups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the includeExternalGroups field is set.
+     */
+    @java.lang.Override
+    public boolean hasIncludeExternalGroups() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>optional bool include_external_groups = 7 [json_name = "includeExternalGroups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The includeExternalGroups.
+     */
+    @java.lang.Override
+    public boolean getIncludeExternalGroups() {
+      return includeExternalGroups_;
+    }
+    /**
+     * <code>optional bool include_external_groups = 7 [json_name = "includeExternalGroups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The includeExternalGroups to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludeExternalGroups(boolean value) {
+
+      includeExternalGroups_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional bool include_external_groups = 7 [json_name = "includeExternalGroups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludeExternalGroups() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      includeExternalGroups_ = false;
       onChanged();
       return this;
     }

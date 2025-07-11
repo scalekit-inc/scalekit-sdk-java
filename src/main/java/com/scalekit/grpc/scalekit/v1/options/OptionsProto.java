@@ -46,22 +46,23 @@ public final class OptionsProto {
       "ptor.proto\"\206\001\n\nAuthOption\022X\n\023authenticat" +
       "ion_type\030\003 \001(\0162\'.scalekit.v1.options.Aut" +
       "henticationTypeR\022authenticationType\022\036\n\np" +
-      "ermission\030\001 \001(\tR\npermission*\206\002\n\022Authenti" +
+      "ermission\030\001 \001(\tR\npermission*\264\002\n\022Authenti" +
       "cationType\022\013\n\007BLOCKED\020\000\022\010\n\004NONE\020\001\022\r\n\tWOR" +
       "KSPACE\020@\022\023\n\017CUSTOMER_PORTAL\020 \022\013\n\007SESSION" +
       "\020\020\022\025\n\021WORKSPACE_SESSION\020P\022%\n!WORKSPACE_S" +
-      "ESSION_CUSTOMER_PORTAL\020p\022\010\n\004USER\020\010\022\n\n\006CL" +
-      "IENT\020\004\022\022\n\016SESSION_CLIENT\020\024\022\034\n\030WORKSPACE_" +
-      "SESSION_CLIENT\020T\022\"\n\036CUSTOMER_PORTAL_SESS" +
-      "ION_CLIENT\0204:b\n\013auth_option\022\036.google.pro" +
-      "tobuf.MethodOptions\030\320\206\003 \001(\0132\037.scalekit.v" +
-      "1.options.AuthOptionR\nauthOptionB\331\001\n%com" +
-      ".scalekit.grpc.scalekit.v1.optionsB\014Opti" +
-      "onsProtoP\001Z4github.com/scalekit-inc/scal" +
-      "ekit/pkg/grpc/authoption\242\002\003SVO\252\002\023Scaleki" +
-      "t.V1.Options\312\002\023Scalekit\\V1\\Options\342\002\037Sca" +
-      "lekit\\V1\\Options\\GPBMetadata\352\002\025Scalekit:" +
-      ":V1::Optionsb\006proto3"
+      "ESSION_CUSTOMER_PORTAL\020p\022,\n(WORKSPACE_SE" +
+      "SSION_CUSTOMER_PORTAL_CLIENT\020t\022\010\n\004USER\020\010" +
+      "\022\n\n\006CLIENT\020\004\022\022\n\016SESSION_CLIENT\020\024\022\034\n\030WORK" +
+      "SPACE_SESSION_CLIENT\020T\022\"\n\036CUSTOMER_PORTA" +
+      "L_SESSION_CLIENT\0204:b\n\013auth_option\022\036.goog" +
+      "le.protobuf.MethodOptions\030\320\206\003 \001(\0132\037.scal" +
+      "ekit.v1.options.AuthOptionR\nauthOptionB\331" +
+      "\001\n%com.scalekit.grpc.scalekit.v1.options" +
+      "B\014OptionsProtoP\001Z4github.com/scalekit-in" +
+      "c/scalekit/pkg/grpc/authoption\242\002\003SVO\252\002\023S" +
+      "calekit.V1.Options\312\002\023Scalekit\\V1\\Options" +
+      "\342\002\037Scalekit\\V1\\Options\\GPBMetadata\352\002\025Sca" +
+      "lekit::V1::Optionsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

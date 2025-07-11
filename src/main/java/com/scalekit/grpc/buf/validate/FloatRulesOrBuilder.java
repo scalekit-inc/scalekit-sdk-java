@@ -6,8 +6,7 @@ package com.scalekit.grpc.buf.validate;
 
 public interface FloatRulesOrBuilder extends
     // @@protoc_insertion_point(interface_extends:buf.validate.FloatRules)
-    com.google.protobuf.GeneratedMessageV3.
-        ExtendableMessageOrBuilder<FloatRules> {
+    com.google.protobuf.MessageOrBuilder {
 
   /**
    * <pre>
@@ -22,7 +21,7 @@ public interface FloatRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>optional float const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional float const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the const field is set.
    */
   boolean hasConst();
@@ -39,7 +38,7 @@ public interface FloatRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>optional float const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional float const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
    * @return The const.
    */
   float getConst();
@@ -58,7 +57,7 @@ public interface FloatRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>float lt = 2 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+   * <code>float lt = 2 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the lt field is set.
    */
   boolean hasLt();
@@ -76,7 +75,7 @@ public interface FloatRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>float lt = 2 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+   * <code>float lt = 2 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
    * @return The lt.
    */
   float getLt();
@@ -95,7 +94,7 @@ public interface FloatRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>float lte = 3 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+   * <code>float lte = 3 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the lte field is set.
    */
   boolean hasLte();
@@ -113,7 +112,7 @@ public interface FloatRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>float lte = 3 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+   * <code>float lte = 3 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
    * @return The lte.
    */
   float getLte();
@@ -140,7 +139,7 @@ public interface FloatRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>float gt = 4 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+   * <code>float gt = 4 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the gt field is set.
    */
   boolean hasGt();
@@ -166,7 +165,7 @@ public interface FloatRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>float gt = 4 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+   * <code>float gt = 4 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
    * @return The gt.
    */
   float getGt();
@@ -193,7 +192,7 @@ public interface FloatRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>float gte = 5 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+   * <code>float gte = 5 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the gte field is set.
    */
   boolean hasGte();
@@ -219,7 +218,7 @@ public interface FloatRulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>float gte = 5 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+   * <code>float gte = 5 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
    * @return The gte.
    */
   float getGte();
@@ -233,12 +232,12 @@ public interface FloatRulesOrBuilder extends
    * ```proto
    * message MyFloat {
    *   // value must be in list [1.0, 2.0, 3.0]
-   *   float value = 1 [(buf.validate.field).float = { in: [1.0, 2.0, 3.0] }];
+   *   repeated float value = 1 (buf.validate.field).float = { in: [1.0, 2.0, 3.0] };
    * }
    * ```
    * </pre>
    *
-   * <code>repeated float in = 6 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated float in = 6 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
    * @return A list containing the in.
    */
   java.util.List<java.lang.Float> getInList();
@@ -251,12 +250,12 @@ public interface FloatRulesOrBuilder extends
    * ```proto
    * message MyFloat {
    *   // value must be in list [1.0, 2.0, 3.0]
-   *   float value = 1 [(buf.validate.field).float = { in: [1.0, 2.0, 3.0] }];
+   *   repeated float value = 1 (buf.validate.field).float = { in: [1.0, 2.0, 3.0] };
    * }
    * ```
    * </pre>
    *
-   * <code>repeated float in = 6 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated float in = 6 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
    * @return The count of in.
    */
   int getInCount();
@@ -269,12 +268,12 @@ public interface FloatRulesOrBuilder extends
    * ```proto
    * message MyFloat {
    *   // value must be in list [1.0, 2.0, 3.0]
-   *   float value = 1 [(buf.validate.field).float = { in: [1.0, 2.0, 3.0] }];
+   *   repeated float value = 1 (buf.validate.field).float = { in: [1.0, 2.0, 3.0] };
    * }
    * ```
    * </pre>
    *
-   * <code>repeated float in = 6 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated float in = 6 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The in at the given index.
    */
@@ -289,12 +288,12 @@ public interface FloatRulesOrBuilder extends
    * ```proto
    * message MyFloat {
    *   // value must not be in list [1.0, 2.0, 3.0]
-   *   float value = 1 [(buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] }];
+   *   repeated float value = 1 (buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] };
    * }
    * ```
    * </pre>
    *
-   * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
    * @return A list containing the notIn.
    */
   java.util.List<java.lang.Float> getNotInList();
@@ -307,12 +306,12 @@ public interface FloatRulesOrBuilder extends
    * ```proto
    * message MyFloat {
    *   // value must not be in list [1.0, 2.0, 3.0]
-   *   float value = 1 [(buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] }];
+   *   repeated float value = 1 (buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] };
    * }
    * ```
    * </pre>
    *
-   * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
    * @return The count of notIn.
    */
   int getNotInCount();
@@ -325,12 +324,12 @@ public interface FloatRulesOrBuilder extends
    * ```proto
    * message MyFloat {
    *   // value must not be in list [1.0, 2.0, 3.0]
-   *   float value = 1 [(buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] }];
+   *   repeated float value = 1 (buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] };
    * }
    * ```
    * </pre>
    *
-   * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The notIn at the given index.
    */
@@ -342,82 +341,10 @@ public interface FloatRulesOrBuilder extends
    * infinite or NaN, an error message is generated.
    * </pre>
    *
-   * <code>optional bool finite = 8 [json_name = "finite", (.buf.validate.predefined) = { ... }</code>
-   * @return Whether the finite field is set.
-   */
-  boolean hasFinite();
-  /**
-   * <pre>
-   * `finite` requires the field value to be finite. If the field value is
-   * infinite or NaN, an error message is generated.
-   * </pre>
-   *
-   * <code>optional bool finite = 8 [json_name = "finite", (.buf.validate.predefined) = { ... }</code>
+   * <code>bool finite = 8 [json_name = "finite", (.buf.validate.priv.field) = { ... }</code>
    * @return The finite.
    */
   boolean getFinite();
-
-  /**
-   * <pre>
-   * `example` specifies values that the field may have. These values SHOULD
-   * conform to other constraints. `example` values will not impact validation
-   * but may be used as helpful guidance on how to populate the given field.
-   *
-   * ```proto
-   * message MyFloat {
-   *   float value = 1 [
-   *     (buf.validate.field).float.example = 1.0,
-   *     (buf.validate.field).float.example = "Infinity"
-   *   ];
-   * }
-   * ```
-   * </pre>
-   *
-   * <code>repeated float example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   * @return A list containing the example.
-   */
-  java.util.List<java.lang.Float> getExampleList();
-  /**
-   * <pre>
-   * `example` specifies values that the field may have. These values SHOULD
-   * conform to other constraints. `example` values will not impact validation
-   * but may be used as helpful guidance on how to populate the given field.
-   *
-   * ```proto
-   * message MyFloat {
-   *   float value = 1 [
-   *     (buf.validate.field).float.example = 1.0,
-   *     (buf.validate.field).float.example = "Infinity"
-   *   ];
-   * }
-   * ```
-   * </pre>
-   *
-   * <code>repeated float example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   * @return The count of example.
-   */
-  int getExampleCount();
-  /**
-   * <pre>
-   * `example` specifies values that the field may have. These values SHOULD
-   * conform to other constraints. `example` values will not impact validation
-   * but may be used as helpful guidance on how to populate the given field.
-   *
-   * ```proto
-   * message MyFloat {
-   *   float value = 1 [
-   *     (buf.validate.field).float.example = 1.0,
-   *     (buf.validate.field).float.example = "Infinity"
-   *   ];
-   * }
-   * ```
-   * </pre>
-   *
-   * <code>repeated float example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   * @param index The index of the element to return.
-   * @return The example at the given index.
-   */
-  float getExample(int index);
 
   com.scalekit.grpc.buf.validate.FloatRules.LessThanCase getLessThanCase();
 

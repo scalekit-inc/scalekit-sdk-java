@@ -25,9 +25,9 @@ public interface GeneratePortalLinkRequestOrBuilder extends
    * Deprecated: Use features
    * </pre>
    *
-   * <code>optional bool sso = 2 [json_name = "sso", deprecated = true];</code>
+   * <code>optional bool sso = 2 [json_name = "sso", deprecated = true, (.google.api.field_visibility) = { ... }</code>
    * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.sso is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=647
+   *     See scalekit/v1/organizations/organizations.proto;l=1436
    * @return Whether the sso field is set.
    */
   @java.lang.Deprecated boolean hasSso();
@@ -36,9 +36,9 @@ public interface GeneratePortalLinkRequestOrBuilder extends
    * Deprecated: Use features
    * </pre>
    *
-   * <code>optional bool sso = 2 [json_name = "sso", deprecated = true];</code>
+   * <code>optional bool sso = 2 [json_name = "sso", deprecated = true, (.google.api.field_visibility) = { ... }</code>
    * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.sso is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=647
+   *     See scalekit/v1/organizations/organizations.proto;l=1436
    * @return The sso.
    */
   @java.lang.Deprecated boolean getSso();
@@ -48,9 +48,9 @@ public interface GeneratePortalLinkRequestOrBuilder extends
    * Deprecated: Use features
    * </pre>
    *
-   * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true];</code>
+   * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true, (.google.api.field_visibility) = { ... }</code>
    * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.directory_sync is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=650
+   *     See scalekit/v1/organizations/organizations.proto;l=1442
    * @return Whether the directorySync field is set.
    */
   @java.lang.Deprecated boolean hasDirectorySync();
@@ -59,37 +59,37 @@ public interface GeneratePortalLinkRequestOrBuilder extends
    * Deprecated: Use features
    * </pre>
    *
-   * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true];</code>
+   * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true, (.google.api.field_visibility) = { ... }</code>
    * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.directory_sync is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=650
+   *     See scalekit/v1/organizations/organizations.proto;l=1442
    * @return The directorySync.
    */
   @java.lang.Deprecated boolean getDirectorySync();
 
   /**
-   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
+   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return A list containing the features.
    */
   java.util.List<com.scalekit.grpc.scalekit.v1.organizations.Feature> getFeaturesList();
   /**
-   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
+   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The count of features.
    */
   int getFeaturesCount();
   /**
-   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
+   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The features at the given index.
    */
   com.scalekit.grpc.scalekit.v1.organizations.Feature getFeatures(int index);
   /**
-   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
+   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return A list containing the enum numeric values on the wire for features.
    */
   java.util.List<java.lang.Integer>
   getFeaturesValueList();
   /**
-   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features"];</code>
+   * <code>repeated .scalekit.v1.organizations.Feature features = 4 [json_name = "features", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of features at the given index.
    */

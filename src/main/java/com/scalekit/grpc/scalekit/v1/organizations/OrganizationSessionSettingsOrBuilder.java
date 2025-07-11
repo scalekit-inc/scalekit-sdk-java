@@ -9,62 +9,62 @@ public interface OrganizationSessionSettingsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout"];</code>
+   * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the absoluteSessionTimeout field is set.
    */
   boolean hasAbsoluteSessionTimeout();
   /**
-   * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout"];</code>
+   * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The absoluteSessionTimeout.
    */
   com.google.protobuf.Int32Value getAbsoluteSessionTimeout();
   /**
-   * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout"];</code>
+   * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.Int32ValueOrBuilder getAbsoluteSessionTimeoutOrBuilder();
 
   /**
-   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled"];</code>
+   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the sessionManagementEnabled field is set.
    */
   boolean hasSessionManagementEnabled();
   /**
-   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled"];</code>
+   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The sessionManagementEnabled.
    */
   com.google.protobuf.BoolValue getSessionManagementEnabled();
   /**
-   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled"];</code>
+   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.BoolValueOrBuilder getSessionManagementEnabledOrBuilder();
 
   /**
-   * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout"];</code>
+   * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the idleSessionTimeout field is set.
    */
   boolean hasIdleSessionTimeout();
   /**
-   * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout"];</code>
+   * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The idleSessionTimeout.
    */
   com.google.protobuf.Int32Value getIdleSessionTimeout();
   /**
-   * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout"];</code>
+   * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.Int32ValueOrBuilder getIdleSessionTimeoutOrBuilder();
 
   /**
-   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled"];</code>
+   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the idleSessionEnabled field is set.
    */
   boolean hasIdleSessionEnabled();
   /**
-   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled"];</code>
+   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The idleSessionEnabled.
    */
   com.google.protobuf.BoolValue getIdleSessionEnabled();
   /**
-   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled"];</code>
+   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.BoolValueOrBuilder getIdleSessionEnabledOrBuilder();
 }

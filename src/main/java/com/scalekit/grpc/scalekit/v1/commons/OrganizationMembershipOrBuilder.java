@@ -9,64 +9,126 @@ public interface OrganizationMembershipOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string id = 1 [json_name = "id"];</code>
-   * @return The id.
+   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The organizationId.
    */
-  java.lang.String getId();
+  java.lang.String getOrganizationId();
   /**
-   * <code>string id = 1 [json_name = "id"];</code>
-   * @return The bytes for id.
+   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for organizationId.
    */
   com.google.protobuf.ByteString
-      getIdBytes();
+      getOrganizationIdBytes();
 
   /**
-   * <code>.scalekit.v1.commons.UserStatus membership_status = 2 [json_name = "membershipStatus"];</code>
+   * <code>.google.protobuf.Timestamp join_time = 2 [json_name = "joinTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the joinTime field is set.
+   */
+  boolean hasJoinTime();
+  /**
+   * <code>.google.protobuf.Timestamp join_time = 2 [json_name = "joinTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The joinTime.
+   */
+  com.google.protobuf.Timestamp getJoinTime();
+  /**
+   * <code>.google.protobuf.Timestamp join_time = 2 [json_name = "joinTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getJoinTimeOrBuilder();
+
+  /**
+   * <code>.scalekit.v1.commons.MembershipStatus membership_status = 3 [json_name = "membershipStatus"];</code>
    * @return The enum numeric value on the wire for membershipStatus.
    */
   int getMembershipStatusValue();
   /**
-   * <code>.scalekit.v1.commons.UserStatus membership_status = 2 [json_name = "membershipStatus"];</code>
+   * <code>.scalekit.v1.commons.MembershipStatus membership_status = 3 [json_name = "membershipStatus"];</code>
    * @return The membershipStatus.
    */
-  com.scalekit.grpc.scalekit.v1.commons.UserStatus getMembershipStatus();
+  com.scalekit.grpc.scalekit.v1.commons.MembershipStatus getMembershipStatus();
 
   /**
-   * <code>.scalekit.v1.commons.MembershipRole role = 3 [json_name = "role"];</code>
-   * @return The enum numeric value on the wire for role.
+   * <code>repeated .scalekit.v1.commons.Role roles = 4 [json_name = "roles"];</code>
    */
-  int getRoleValue();
+  java.util.List<com.scalekit.grpc.scalekit.v1.commons.Role> 
+      getRolesList();
   /**
-   * <code>.scalekit.v1.commons.MembershipRole role = 3 [json_name = "role"];</code>
-   * @return The role.
+   * <code>repeated .scalekit.v1.commons.Role roles = 4 [json_name = "roles"];</code>
    */
-  com.scalekit.grpc.scalekit.v1.commons.MembershipRole getRole();
+  com.scalekit.grpc.scalekit.v1.commons.Role getRoles(int index);
+  /**
+   * <code>repeated .scalekit.v1.commons.Role roles = 4 [json_name = "roles"];</code>
+   */
+  int getRolesCount();
+  /**
+   * <code>repeated .scalekit.v1.commons.Role roles = 4 [json_name = "roles"];</code>
+   */
+  java.util.List<? extends com.scalekit.grpc.scalekit.v1.commons.RoleOrBuilder> 
+      getRolesOrBuilderList();
+  /**
+   * <code>repeated .scalekit.v1.commons.Role roles = 4 [json_name = "roles"];</code>
+   */
+  com.scalekit.grpc.scalekit.v1.commons.RoleOrBuilder getRolesOrBuilder(
+      int index);
 
   /**
-   * <code>optional string name = 4 [json_name = "name"];</code>
+   * <code>optional string name = 5 [json_name = "name"];</code>
    * @return Whether the name field is set.
    */
   boolean hasName();
   /**
-   * <code>optional string name = 4 [json_name = "name"];</code>
+   * <code>optional string name = 5 [json_name = "name"];</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
-   * <code>optional string name = 4 [json_name = "name"];</code>
+   * <code>optional string name = 5 [json_name = "name"];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
-   * <code>.scalekit.v1.commons.IdentityProviderType primary_identity_provider = 5 [json_name = "primaryIdentityProvider"];</code>
+   * <code>.scalekit.v1.commons.IdentityProviderType primary_identity_provider = 6 [json_name = "primaryIdentityProvider"];</code>
    * @return The enum numeric value on the wire for primaryIdentityProvider.
    */
   int getPrimaryIdentityProviderValue();
   /**
-   * <code>.scalekit.v1.commons.IdentityProviderType primary_identity_provider = 5 [json_name = "primaryIdentityProvider"];</code>
+   * <code>.scalekit.v1.commons.IdentityProviderType primary_identity_provider = 6 [json_name = "primaryIdentityProvider"];</code>
    * @return The primaryIdentityProvider.
    */
   com.scalekit.grpc.scalekit.v1.commons.IdentityProviderType getPrimaryIdentityProvider();
+
+  /**
+   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  int getMetadataCount();
+  /**
+   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  boolean containsMetadata(
+      java.lang.String key);
+  /**
+   * Use {@link #getMetadataMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getMetadata();
+  /**
+   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getMetadataMap();
+  /**
+   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  /* nullable */
+java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue);
+  /**
+   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.lang.String getMetadataOrThrow(
+      java.lang.String key);
 }

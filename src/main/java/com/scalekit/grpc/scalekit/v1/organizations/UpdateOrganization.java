@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
   /**
-   * <code>optional string display_name = 4 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+   * <code>optional string display_name = 4 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the displayName field is set.
    */
   @java.lang.Override
@@ -70,7 +70,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional string display_name = 4 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+   * <code>optional string display_name = 4 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The displayName.
    */
   @java.lang.Override
@@ -87,7 +87,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string display_name = 4 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+   * <code>optional string display_name = 4 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for displayName.
    */
   @java.lang.Override
@@ -109,7 +109,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object externalId_ = "";
   /**
-   * <code>optional string external_id = 6 [json_name = "externalId"];</code>
+   * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the externalId field is set.
    */
   @java.lang.Override
@@ -117,7 +117,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>optional string external_id = 6 [json_name = "externalId"];</code>
+   * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The externalId.
    */
   @java.lang.Override
@@ -134,7 +134,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string external_id = 6 [json_name = "externalId"];</code>
+   * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for externalId.
    */
   @java.lang.Override
@@ -179,7 +179,7 @@ private static final long serialVersionUID = 0L;
     return internalGetMetadata().getMap().size();
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public boolean containsMetadata(
@@ -196,14 +196,14 @@ private static final long serialVersionUID = 0L;
     return getMetadataMap();
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public /* nullable */
@@ -217,7 +217,7 @@ java.lang.String defaultValue) {
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.lang.String getMetadataOrThrow(
@@ -662,14 +662,14 @@ java.lang.String defaultValue) {
 
     private java.lang.Object displayName_ = "";
     /**
-     * <code>optional string display_name = 4 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+     * <code>optional string display_name = 4 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the displayName field is set.
      */
     public boolean hasDisplayName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>optional string display_name = 4 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+     * <code>optional string display_name = 4 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The displayName.
      */
     public java.lang.String getDisplayName() {
@@ -685,7 +685,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string display_name = 4 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+     * <code>optional string display_name = 4 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
@@ -702,7 +702,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string display_name = 4 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+     * <code>optional string display_name = 4 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The displayName to set.
      * @return This builder for chaining.
      */
@@ -715,7 +715,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>optional string display_name = 4 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+     * <code>optional string display_name = 4 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
@@ -725,7 +725,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>optional string display_name = 4 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+     * <code>optional string display_name = 4 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
      */
@@ -741,14 +741,14 @@ java.lang.String defaultValue) {
 
     private java.lang.Object externalId_ = "";
     /**
-     * <code>optional string external_id = 6 [json_name = "externalId"];</code>
+     * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the externalId field is set.
      */
     public boolean hasExternalId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional string external_id = 6 [json_name = "externalId"];</code>
+     * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The externalId.
      */
     public java.lang.String getExternalId() {
@@ -764,7 +764,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string external_id = 6 [json_name = "externalId"];</code>
+     * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for externalId.
      */
     public com.google.protobuf.ByteString
@@ -781,7 +781,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string external_id = 6 [json_name = "externalId"];</code>
+     * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The externalId to set.
      * @return This builder for chaining.
      */
@@ -794,7 +794,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>optional string external_id = 6 [json_name = "externalId"];</code>
+     * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearExternalId() {
@@ -804,7 +804,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>optional string external_id = 6 [json_name = "externalId"];</code>
+     * <code>optional string external_id = 6 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for externalId to set.
      * @return This builder for chaining.
      */
@@ -845,7 +845,7 @@ java.lang.String defaultValue) {
       return internalGetMetadata().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
     public boolean containsMetadata(
@@ -862,14 +862,14 @@ java.lang.String defaultValue) {
       return getMetadataMap();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
     public /* nullable */
@@ -883,7 +883,7 @@ java.lang.String defaultValue) {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
     public java.lang.String getMetadataOrThrow(
@@ -903,7 +903,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder removeMetadata(
         java.lang.String key) {
@@ -922,7 +922,7 @@ java.lang.String defaultValue) {
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder putMetadata(
         java.lang.String key,
@@ -935,7 +935,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder putAllMetadata(
         java.util.Map<java.lang.String, java.lang.String> values) {

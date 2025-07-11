@@ -9,77 +9,89 @@ public interface UserProfileOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string id = 1 [json_name = "id", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The id.
    */
   java.lang.String getId();
   /**
-   * <code>string id = 1 [json_name = "id", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
 
   /**
-   * <code>string first_name = 2 [json_name = "firstName", (.buf.validate.field) = { ... }</code>
+   * <code>string first_name = 2 [json_name = "firstName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The firstName.
    */
   java.lang.String getFirstName();
   /**
-   * <code>string first_name = 2 [json_name = "firstName", (.buf.validate.field) = { ... }</code>
+   * <code>string first_name = 2 [json_name = "firstName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for firstName.
    */
   com.google.protobuf.ByteString
       getFirstNameBytes();
 
   /**
-   * <code>string last_name = 3 [json_name = "lastName", (.buf.validate.field) = { ... }</code>
+   * <code>string last_name = 3 [json_name = "lastName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The lastName.
    */
   java.lang.String getLastName();
   /**
-   * <code>string last_name = 3 [json_name = "lastName", (.buf.validate.field) = { ... }</code>
+   * <code>string last_name = 3 [json_name = "lastName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for lastName.
    */
   com.google.protobuf.ByteString
       getLastNameBytes();
 
   /**
-   * <code>string name = 4 [json_name = "name"];</code>
+   * <code>string name = 4 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
-   * <code>string name = 4 [json_name = "name"];</code>
+   * <code>string name = 4 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
-   * <code>string locale = 5 [json_name = "locale"];</code>
+   * <code>string locale = 5 [json_name = "locale", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The locale.
    */
   java.lang.String getLocale();
   /**
-   * <code>string locale = 5 [json_name = "locale"];</code>
+   * <code>string locale = 5 [json_name = "locale", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for locale.
    */
   com.google.protobuf.ByteString
       getLocaleBytes();
 
   /**
-   * <code>bool email_verified = 6 [json_name = "emailVerified", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>bool email_verified = 6 [json_name = "emailVerified", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The emailVerified.
    */
   boolean getEmailVerified();
 
   /**
-   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
+   * <code>string phone_number = 7 [json_name = "phoneNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The phoneNumber.
+   */
+  java.lang.String getPhoneNumber();
+  /**
+   * <code>string phone_number = 7 [json_name = "phoneNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for phoneNumber.
+   */
+  com.google.protobuf.ByteString
+      getPhoneNumberBytes();
+
+  /**
+   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   int getMetadataCount();
   /**
-   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   boolean containsMetadata(
       java.lang.String key);
@@ -90,12 +102,12 @@ public interface UserProfileOrBuilder extends
   java.util.Map<java.lang.String, java.lang.String>
   getMetadata();
   /**
-   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getMetadataMap();
   /**
-   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   /* nullable */
 java.lang.String getMetadataOrDefault(
@@ -103,17 +115,17 @@ java.lang.String getMetadataOrDefault(
       /* nullable */
 java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 8 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.lang.String getMetadataOrThrow(
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, string&gt; custom_attributes = 8 [json_name = "customAttributes", (.buf.validate.field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_attributes = 9 [json_name = "customAttributes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   int getCustomAttributesCount();
   /**
-   * <code>map&lt;string, string&gt; custom_attributes = 8 [json_name = "customAttributes", (.buf.validate.field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_attributes = 9 [json_name = "customAttributes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   boolean containsCustomAttributes(
       java.lang.String key);
@@ -124,12 +136,12 @@ java.lang.String defaultValue);
   java.util.Map<java.lang.String, java.lang.String>
   getCustomAttributes();
   /**
-   * <code>map&lt;string, string&gt; custom_attributes = 8 [json_name = "customAttributes", (.buf.validate.field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_attributes = 9 [json_name = "customAttributes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getCustomAttributesMap();
   /**
-   * <code>map&lt;string, string&gt; custom_attributes = 8 [json_name = "customAttributes", (.buf.validate.field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_attributes = 9 [json_name = "customAttributes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   /* nullable */
 java.lang.String getCustomAttributesOrDefault(
@@ -137,7 +149,7 @@ java.lang.String getCustomAttributesOrDefault(
       /* nullable */
 java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; custom_attributes = 8 [json_name = "customAttributes", (.buf.validate.field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_attributes = 9 [json_name = "customAttributes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.lang.String getCustomAttributesOrThrow(
       java.lang.String key);

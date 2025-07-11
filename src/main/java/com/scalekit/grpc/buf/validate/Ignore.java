@@ -53,7 +53,8 @@ public enum Ignore
   /**
    * <pre>
    * Validation is skipped if the field is unpopulated. This rule is redundant
-   * if the field is already nullable.
+   * if the field is already nullable. This value is equivalent behavior to the
+   * deprecated ignore_empty rule.
    *
    * ```proto
    * syntax="proto3
@@ -176,8 +177,25 @@ public enum Ignore
    * <code>IGNORE_ALWAYS = 3;</code>
    */
   IGNORE_ALWAYS(3),
+  UNRECOGNIZED(-1),
   ;
 
+  /**
+   * <pre>
+   * Deprecated: Use IGNORE_IF_UNPOPULATED instead. TODO: Remove this value pre-v1.
+   * </pre>
+   *
+   * <code>IGNORE_EMPTY = 1 [deprecated = true];</code>
+   */
+  public static final Ignore IGNORE_EMPTY = IGNORE_IF_UNPOPULATED;
+  /**
+   * <pre>
+   * Deprecated: Use IGNORE_IF_DEFAULT_VALUE. TODO: Remove this value pre-v1.
+   * </pre>
+   *
+   * <code>IGNORE_DEFAULT = 2 [deprecated = true];</code>
+   */
+  public static final Ignore IGNORE_DEFAULT = IGNORE_IF_DEFAULT_VALUE;
   /**
    * <pre>
    * Validation is only skipped if it's an unpopulated nullable fields.
@@ -217,7 +235,8 @@ public enum Ignore
   /**
    * <pre>
    * Validation is skipped if the field is unpopulated. This rule is redundant
-   * if the field is already nullable.
+   * if the field is already nullable. This value is equivalent behavior to the
+   * deprecated ignore_empty rule.
    *
    * ```proto
    * syntax="proto3
@@ -340,9 +359,29 @@ public enum Ignore
    * <code>IGNORE_ALWAYS = 3;</code>
    */
   public static final int IGNORE_ALWAYS_VALUE = 3;
+  /**
+   * <pre>
+   * Deprecated: Use IGNORE_IF_UNPOPULATED instead. TODO: Remove this value pre-v1.
+   * </pre>
+   *
+   * <code>IGNORE_EMPTY = 1 [deprecated = true];</code>
+   */
+  @java.lang.Deprecated public static final int IGNORE_EMPTY_VALUE = 1;
+  /**
+   * <pre>
+   * Deprecated: Use IGNORE_IF_DEFAULT_VALUE. TODO: Remove this value pre-v1.
+   * </pre>
+   *
+   * <code>IGNORE_DEFAULT = 2 [deprecated = true];</code>
+   */
+  @java.lang.Deprecated public static final int IGNORE_DEFAULT_VALUE = 2;
 
 
   public final int getNumber() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalArgumentException(
+          "Can't get the number of an unknown enum value.");
+    }
     return value;
   }
 
@@ -384,6 +423,10 @@ public enum Ignore
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalStateException(
+          "Can't get the descriptor of an unrecognized enum value.");
+    }
     return getDescriptor().getValues().get(ordinal());
   }
   public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -395,13 +438,20 @@ public enum Ignore
     return com.scalekit.grpc.buf.validate.ValidateProto.getDescriptor().getEnumTypes().get(0);
   }
 
-  private static final Ignore[] VALUES = values();
-
+  private static final Ignore[] VALUES = getStaticValuesArray();
+  private static Ignore[] getStaticValuesArray() {
+    return new Ignore[] {
+    IGNORE_UNSPECIFIED, IGNORE_IF_UNPOPULATED, IGNORE_IF_DEFAULT_VALUE, IGNORE_ALWAYS, IGNORE_EMPTY, IGNORE_DEFAULT, 
+    };
+  }
   public static Ignore valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
         "EnumValueDescriptor is not for this type.");
+    }
+    if (desc.getIndex() == -1) {
+      return UNRECOGNIZED;
     }
     return VALUES[desc.getIndex()];
   }

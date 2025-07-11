@@ -12,19 +12,17 @@ package com.scalekit.grpc.buf.validate;
  * Protobuf type {@code buf.validate.DurationRules}
  */
 public final class DurationRules extends
-    com.google.protobuf.GeneratedMessageV3.ExtendableMessage<
-      DurationRules> implements
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:buf.validate.DurationRules)
     DurationRulesOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use DurationRules.newBuilder() to construct.
-  private DurationRules(com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<com.scalekit.grpc.buf.validate.DurationRules, ?> builder) {
+  private DurationRules(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private DurationRules() {
     in_ = java.util.Collections.emptyList();
     notIn_ = java.util.Collections.emptyList();
-    example_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -148,7 +146,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the const field is set.
    */
   @java.lang.Override
@@ -169,7 +167,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
    * @return The const.
    */
   @java.lang.Override
@@ -190,7 +188,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getConstOrBuilder() {
@@ -212,7 +210,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the lt field is set.
    */
   @java.lang.Override
@@ -233,7 +231,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
    * @return The lt.
    */
   @java.lang.Override
@@ -257,7 +255,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getLtOrBuilder() {
@@ -282,7 +280,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the lte field is set.
    */
   @java.lang.Override
@@ -303,7 +301,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
    * @return The lte.
    */
   @java.lang.Override
@@ -327,7 +325,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getLteOrBuilder() {
@@ -360,7 +358,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the gt field is set.
    */
   @java.lang.Override
@@ -389,7 +387,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
    * @return The gt.
    */
   @java.lang.Override
@@ -421,7 +419,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getGtOrBuilder() {
@@ -454,7 +452,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the gte field is set.
    */
   @java.lang.Override
@@ -483,7 +481,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
    * @return The gte.
    */
   @java.lang.Override
@@ -515,7 +513,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getGteOrBuilder() {
@@ -542,7 +540,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<com.google.protobuf.Duration> getInList() {
@@ -562,7 +560,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.protobuf.DurationOrBuilder> 
@@ -583,7 +581,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public int getInCount() {
@@ -603,7 +601,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.Duration getIn(int index) {
@@ -623,7 +621,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getInOrBuilder(
@@ -649,7 +647,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<com.google.protobuf.Duration> getNotInList() {
@@ -670,7 +668,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.protobuf.DurationOrBuilder> 
@@ -692,7 +690,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public int getNotInCount() {
@@ -713,7 +711,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.Duration getNotIn(int index) {
@@ -734,128 +732,12 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getNotInOrBuilder(
       int index) {
     return notIn_.get(index);
-  }
-
-  public static final int EXAMPLE_FIELD_NUMBER = 9;
-  @SuppressWarnings("serial")
-  private java.util.List<com.google.protobuf.Duration> example_;
-  /**
-   * <pre>
-   * `example` specifies values that the field may have. These values SHOULD
-   * conform to other constraints. `example` values will not impact validation
-   * but may be used as helpful guidance on how to populate the given field.
-   *
-   * ```proto
-   * message MyDuration {
-   *   google.protobuf.Duration value = 1 [
-   *     (buf.validate.field).duration.example = { seconds: 1 },
-   *     (buf.validate.field).duration.example = { seconds: 2 },
-   *   ];
-   * }
-   * ```
-   * </pre>
-   *
-   * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   */
-  @java.lang.Override
-  public java.util.List<com.google.protobuf.Duration> getExampleList() {
-    return example_;
-  }
-  /**
-   * <pre>
-   * `example` specifies values that the field may have. These values SHOULD
-   * conform to other constraints. `example` values will not impact validation
-   * but may be used as helpful guidance on how to populate the given field.
-   *
-   * ```proto
-   * message MyDuration {
-   *   google.protobuf.Duration value = 1 [
-   *     (buf.validate.field).duration.example = { seconds: 1 },
-   *     (buf.validate.field).duration.example = { seconds: 2 },
-   *   ];
-   * }
-   * ```
-   * </pre>
-   *
-   * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   */
-  @java.lang.Override
-  public java.util.List<? extends com.google.protobuf.DurationOrBuilder> 
-      getExampleOrBuilderList() {
-    return example_;
-  }
-  /**
-   * <pre>
-   * `example` specifies values that the field may have. These values SHOULD
-   * conform to other constraints. `example` values will not impact validation
-   * but may be used as helpful guidance on how to populate the given field.
-   *
-   * ```proto
-   * message MyDuration {
-   *   google.protobuf.Duration value = 1 [
-   *     (buf.validate.field).duration.example = { seconds: 1 },
-   *     (buf.validate.field).duration.example = { seconds: 2 },
-   *   ];
-   * }
-   * ```
-   * </pre>
-   *
-   * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   */
-  @java.lang.Override
-  public int getExampleCount() {
-    return example_.size();
-  }
-  /**
-   * <pre>
-   * `example` specifies values that the field may have. These values SHOULD
-   * conform to other constraints. `example` values will not impact validation
-   * but may be used as helpful guidance on how to populate the given field.
-   *
-   * ```proto
-   * message MyDuration {
-   *   google.protobuf.Duration value = 1 [
-   *     (buf.validate.field).duration.example = { seconds: 1 },
-   *     (buf.validate.field).duration.example = { seconds: 2 },
-   *   ];
-   * }
-   * ```
-   * </pre>
-   *
-   * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.Duration getExample(int index) {
-    return example_.get(index);
-  }
-  /**
-   * <pre>
-   * `example` specifies values that the field may have. These values SHOULD
-   * conform to other constraints. `example` values will not impact validation
-   * but may be used as helpful guidance on how to populate the given field.
-   *
-   * ```proto
-   * message MyDuration {
-   *   google.protobuf.Duration value = 1 [
-   *     (buf.validate.field).duration.example = { seconds: 1 },
-   *     (buf.validate.field).duration.example = { seconds: 2 },
-   *   ];
-   * }
-   * ```
-   * </pre>
-   *
-   * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.DurationOrBuilder getExampleOrBuilder(
-      int index) {
-    return example_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -865,10 +747,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (!extensionsAreInitialized()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -876,9 +754,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    com.google.protobuf.GeneratedMessageV3
-      .ExtendableMessage<com.scalekit.grpc.buf.validate.DurationRules>.ExtensionWriter
-        extensionWriter = newExtensionWriter();
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getConst());
     }
@@ -900,10 +775,6 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < notIn_.size(); i++) {
       output.writeMessage(8, notIn_.get(i));
     }
-    for (int i = 0; i < example_.size(); i++) {
-      output.writeMessage(9, example_.get(i));
-    }
-    extensionWriter.writeUntil(536870912, output);
     getUnknownFields().writeTo(output);
   }
 
@@ -941,11 +812,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, notIn_.get(i));
     }
-    for (int i = 0; i < example_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, example_.get(i));
-    }
-    size += extensionsSerializedSize();
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -970,8 +836,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getInList())) return false;
     if (!getNotInList()
         .equals(other.getNotInList())) return false;
-    if (!getExampleList()
-        .equals(other.getExampleList())) return false;
     if (!getLessThanCase().equals(other.getLessThanCase())) return false;
     switch (lessThanCase_) {
       case 3:
@@ -999,8 +863,6 @@ private static final long serialVersionUID = 0L;
       default:
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-    if (!getExtensionFields().equals(other.getExtensionFields()))
-      return false;
     return true;
   }
 
@@ -1022,10 +884,6 @@ private static final long serialVersionUID = 0L;
     if (getNotInCount() > 0) {
       hash = (37 * hash) + NOT_IN_FIELD_NUMBER;
       hash = (53 * hash) + getNotInList().hashCode();
-    }
-    if (getExampleCount() > 0) {
-      hash = (37 * hash) + EXAMPLE_FIELD_NUMBER;
-      hash = (53 * hash) + getExampleList().hashCode();
     }
     switch (lessThanCase_) {
       case 3:
@@ -1051,7 +909,6 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
-    hash = hashFields(hash, getExtensionFields());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1157,8 +1014,7 @@ private static final long serialVersionUID = 0L;
    * Protobuf type {@code buf.validate.DurationRules}
    */
   public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<
-        com.scalekit.grpc.buf.validate.DurationRules, Builder> implements
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:buf.validate.DurationRules)
       com.scalekit.grpc.buf.validate.DurationRulesOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -1190,7 +1046,6 @@ private static final long serialVersionUID = 0L;
         getConstFieldBuilder();
         getInFieldBuilder();
         getNotInFieldBuilder();
-        getExampleFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1228,13 +1083,6 @@ private static final long serialVersionUID = 0L;
         notInBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000040);
-      if (exampleBuilder_ == null) {
-        example_ = java.util.Collections.emptyList();
-      } else {
-        example_ = null;
-        exampleBuilder_.clear();
-      }
-      bitField0_ = (bitField0_ & ~0x00000080);
       lessThanCase_ = 0;
       lessThan_ = null;
       greaterThanCase_ = 0;
@@ -1290,15 +1138,6 @@ private static final long serialVersionUID = 0L;
         result.notIn_ = notIn_;
       } else {
         result.notIn_ = notInBuilder_.build();
-      }
-      if (exampleBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
-          example_ = java.util.Collections.unmodifiableList(example_);
-          bitField0_ = (bitField0_ & ~0x00000080);
-        }
-        result.example_ = example_;
-      } else {
-        result.example_ = exampleBuilder_.build();
       }
     }
 
@@ -1370,33 +1209,6 @@ private static final long serialVersionUID = 0L;
       return super.addRepeatedField(field, value);
     }
     @java.lang.Override
-    public <Type> Builder setExtension(
-        com.google.protobuf.GeneratedMessage.GeneratedExtension<
-            com.scalekit.grpc.buf.validate.DurationRules, Type> extension,
-        Type value) {
-      return super.setExtension(extension, value);
-    }
-    @java.lang.Override
-    public <Type> Builder setExtension(
-        com.google.protobuf.GeneratedMessage.GeneratedExtension<
-            com.scalekit.grpc.buf.validate.DurationRules, java.util.List<Type>> extension,
-        int index, Type value) {
-      return super.setExtension(extension, index, value);
-    }
-    @java.lang.Override
-    public <Type> Builder addExtension(
-        com.google.protobuf.GeneratedMessage.GeneratedExtension<
-            com.scalekit.grpc.buf.validate.DurationRules, java.util.List<Type>> extension,
-        Type value) {
-      return super.addExtension(extension, value);
-    }
-    @java.lang.Override
-    public <T> Builder clearExtension(
-        com.google.protobuf.GeneratedMessage.GeneratedExtension<
-            com.scalekit.grpc.buf.validate.DurationRules, T> extension) {
-      return super.clearExtension(extension);
-    }
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.scalekit.grpc.buf.validate.DurationRules) {
         return mergeFrom((com.scalekit.grpc.buf.validate.DurationRules)other);
@@ -1463,32 +1275,6 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      if (exampleBuilder_ == null) {
-        if (!other.example_.isEmpty()) {
-          if (example_.isEmpty()) {
-            example_ = other.example_;
-            bitField0_ = (bitField0_ & ~0x00000080);
-          } else {
-            ensureExampleIsMutable();
-            example_.addAll(other.example_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.example_.isEmpty()) {
-          if (exampleBuilder_.isEmpty()) {
-            exampleBuilder_.dispose();
-            exampleBuilder_ = null;
-            example_ = other.example_;
-            bitField0_ = (bitField0_ & ~0x00000080);
-            exampleBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getExampleFieldBuilder() : null;
-          } else {
-            exampleBuilder_.addAllMessages(other.example_);
-          }
-        }
-      }
       switch (other.getLessThanCase()) {
         case LT: {
           mergeLt(other.getLt());
@@ -1515,7 +1301,6 @@ private static final long serialVersionUID = 0L;
           break;
         }
       }
-      this.mergeExtensionFields(other);
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1523,9 +1308,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      if (!extensionsAreInitialized()) {
-        return false;
-      }
       return true;
     }
 
@@ -1606,19 +1388,6 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 66
-            case 74: {
-              com.google.protobuf.Duration m =
-                  input.readMessage(
-                      com.google.protobuf.Duration.parser(),
-                      extensionRegistry);
-              if (exampleBuilder_ == null) {
-                ensureExampleIsMutable();
-                example_.add(m);
-              } else {
-                exampleBuilder_.addMessage(m);
-              }
-              break;
-            } // case 74
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1683,7 +1452,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the const field is set.
      */
     public boolean hasConst() {
@@ -1703,7 +1472,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      * @return The const.
      */
     public com.google.protobuf.Duration getConst() {
@@ -1727,7 +1496,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setConst(com.google.protobuf.Duration value) {
       if (constBuilder_ == null) {
@@ -1756,7 +1525,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setConst(
         com.google.protobuf.Duration.Builder builderForValue) {
@@ -1783,7 +1552,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder mergeConst(com.google.protobuf.Duration value) {
       if (constBuilder_ == null) {
@@ -1817,7 +1586,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder clearConst() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -1843,7 +1612,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Duration.Builder getConstBuilder() {
       bitField0_ |= 0x00000001;
@@ -1864,7 +1633,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.DurationOrBuilder getConstOrBuilder() {
       if (constBuilder_ != null) {
@@ -1888,7 +1657,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
@@ -1920,7 +1689,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the lt field is set.
      */
     @java.lang.Override
@@ -1941,7 +1710,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      * @return The lt.
      */
     @java.lang.Override
@@ -1972,7 +1741,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setLt(com.google.protobuf.Duration value) {
       if (ltBuilder_ == null) {
@@ -2001,7 +1770,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setLt(
         com.google.protobuf.Duration.Builder builderForValue) {
@@ -2028,7 +1797,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder mergeLt(com.google.protobuf.Duration value) {
       if (ltBuilder_ == null) {
@@ -2064,7 +1833,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder clearLt() {
       if (ltBuilder_ == null) {
@@ -2096,7 +1865,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Duration.Builder getLtBuilder() {
       return getLtFieldBuilder().getBuilder();
@@ -2115,7 +1884,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getLtOrBuilder() {
@@ -2142,7 +1911,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
@@ -2179,7 +1948,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the lte field is set.
      */
     @java.lang.Override
@@ -2200,7 +1969,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      * @return The lte.
      */
     @java.lang.Override
@@ -2231,7 +2000,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setLte(com.google.protobuf.Duration value) {
       if (lteBuilder_ == null) {
@@ -2260,7 +2029,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setLte(
         com.google.protobuf.Duration.Builder builderForValue) {
@@ -2287,7 +2056,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder mergeLte(com.google.protobuf.Duration value) {
       if (lteBuilder_ == null) {
@@ -2323,7 +2092,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder clearLte() {
       if (lteBuilder_ == null) {
@@ -2355,7 +2124,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Duration.Builder getLteBuilder() {
       return getLteFieldBuilder().getBuilder();
@@ -2374,7 +2143,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getLteOrBuilder() {
@@ -2401,7 +2170,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
@@ -2446,7 +2215,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the gt field is set.
      */
     @java.lang.Override
@@ -2475,7 +2244,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      * @return The gt.
      */
     @java.lang.Override
@@ -2514,7 +2283,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setGt(com.google.protobuf.Duration value) {
       if (gtBuilder_ == null) {
@@ -2551,7 +2320,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setGt(
         com.google.protobuf.Duration.Builder builderForValue) {
@@ -2586,7 +2355,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder mergeGt(com.google.protobuf.Duration value) {
       if (gtBuilder_ == null) {
@@ -2630,7 +2399,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder clearGt() {
       if (gtBuilder_ == null) {
@@ -2670,7 +2439,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Duration.Builder getGtBuilder() {
       return getGtFieldBuilder().getBuilder();
@@ -2697,7 +2466,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getGtOrBuilder() {
@@ -2732,7 +2501,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
@@ -2777,7 +2546,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the gte field is set.
      */
     @java.lang.Override
@@ -2806,7 +2575,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      * @return The gte.
      */
     @java.lang.Override
@@ -2845,7 +2614,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setGte(com.google.protobuf.Duration value) {
       if (gteBuilder_ == null) {
@@ -2882,7 +2651,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setGte(
         com.google.protobuf.Duration.Builder builderForValue) {
@@ -2917,7 +2686,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder mergeGte(com.google.protobuf.Duration value) {
       if (gteBuilder_ == null) {
@@ -2961,7 +2730,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder clearGte() {
       if (gteBuilder_ == null) {
@@ -3001,7 +2770,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Duration.Builder getGteBuilder() {
       return getGteFieldBuilder().getBuilder();
@@ -3028,7 +2797,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getGteOrBuilder() {
@@ -3063,7 +2832,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Duration gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
@@ -3110,7 +2879,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public java.util.List<com.google.protobuf.Duration> getInList() {
       if (inBuilder_ == null) {
@@ -3133,7 +2902,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public int getInCount() {
       if (inBuilder_ == null) {
@@ -3156,7 +2925,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Duration getIn(int index) {
       if (inBuilder_ == null) {
@@ -3179,7 +2948,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setIn(
         int index, com.google.protobuf.Duration value) {
@@ -3209,7 +2978,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setIn(
         int index, com.google.protobuf.Duration.Builder builderForValue) {
@@ -3236,7 +3005,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder addIn(com.google.protobuf.Duration value) {
       if (inBuilder_ == null) {
@@ -3265,7 +3034,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder addIn(
         int index, com.google.protobuf.Duration value) {
@@ -3295,7 +3064,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder addIn(
         com.google.protobuf.Duration.Builder builderForValue) {
@@ -3322,7 +3091,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder addIn(
         int index, com.google.protobuf.Duration.Builder builderForValue) {
@@ -3349,7 +3118,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder addAllIn(
         java.lang.Iterable<? extends com.google.protobuf.Duration> values) {
@@ -3377,7 +3146,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder clearIn() {
       if (inBuilder_ == null) {
@@ -3403,7 +3172,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder removeIn(int index) {
       if (inBuilder_ == null) {
@@ -3429,7 +3198,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Duration.Builder getInBuilder(
         int index) {
@@ -3449,7 +3218,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.DurationOrBuilder getInOrBuilder(
         int index) {
@@ -3472,7 +3241,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public java.util.List<? extends com.google.protobuf.DurationOrBuilder> 
          getInOrBuilderList() {
@@ -3496,7 +3265,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Duration.Builder addInBuilder() {
       return getInFieldBuilder().addBuilder(
@@ -3516,7 +3285,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Duration.Builder addInBuilder(
         int index) {
@@ -3537,7 +3306,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration in = 7 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      */
     public java.util.List<com.google.protobuf.Duration.Builder> 
          getInBuilderList() {
@@ -3585,7 +3354,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public java.util.List<com.google.protobuf.Duration> getNotInList() {
       if (notInBuilder_ == null) {
@@ -3609,7 +3378,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public int getNotInCount() {
       if (notInBuilder_ == null) {
@@ -3633,7 +3402,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Duration getNotIn(int index) {
       if (notInBuilder_ == null) {
@@ -3657,7 +3426,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setNotIn(
         int index, com.google.protobuf.Duration value) {
@@ -3688,7 +3457,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setNotIn(
         int index, com.google.protobuf.Duration.Builder builderForValue) {
@@ -3716,7 +3485,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder addNotIn(com.google.protobuf.Duration value) {
       if (notInBuilder_ == null) {
@@ -3746,7 +3515,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder addNotIn(
         int index, com.google.protobuf.Duration value) {
@@ -3777,7 +3546,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder addNotIn(
         com.google.protobuf.Duration.Builder builderForValue) {
@@ -3805,7 +3574,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder addNotIn(
         int index, com.google.protobuf.Duration.Builder builderForValue) {
@@ -3833,7 +3602,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder addAllNotIn(
         java.lang.Iterable<? extends com.google.protobuf.Duration> values) {
@@ -3862,7 +3631,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder clearNotIn() {
       if (notInBuilder_ == null) {
@@ -3889,7 +3658,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder removeNotIn(int index) {
       if (notInBuilder_ == null) {
@@ -3916,7 +3685,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Duration.Builder getNotInBuilder(
         int index) {
@@ -3937,7 +3706,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.DurationOrBuilder getNotInOrBuilder(
         int index) {
@@ -3961,7 +3730,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public java.util.List<? extends com.google.protobuf.DurationOrBuilder> 
          getNotInOrBuilderList() {
@@ -3986,7 +3755,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Duration.Builder addNotInBuilder() {
       return getNotInFieldBuilder().addBuilder(
@@ -4007,7 +3776,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Duration.Builder addNotInBuilder(
         int index) {
@@ -4029,7 +3798,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated .google.protobuf.Duration not_in = 8 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      */
     public java.util.List<com.google.protobuf.Duration.Builder> 
          getNotInBuilderList() {
@@ -4048,516 +3817,6 @@ private static final long serialVersionUID = 0L;
         notIn_ = null;
       }
       return notInBuilder_;
-    }
-
-    private java.util.List<com.google.protobuf.Duration> example_ =
-      java.util.Collections.emptyList();
-    private void ensureExampleIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
-        example_ = new java.util.ArrayList<com.google.protobuf.Duration>(example_);
-        bitField0_ |= 0x00000080;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> exampleBuilder_;
-
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public java.util.List<com.google.protobuf.Duration> getExampleList() {
-      if (exampleBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(example_);
-      } else {
-        return exampleBuilder_.getMessageList();
-      }
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public int getExampleCount() {
-      if (exampleBuilder_ == null) {
-        return example_.size();
-      } else {
-        return exampleBuilder_.getCount();
-      }
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public com.google.protobuf.Duration getExample(int index) {
-      if (exampleBuilder_ == null) {
-        return example_.get(index);
-      } else {
-        return exampleBuilder_.getMessage(index);
-      }
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder setExample(
-        int index, com.google.protobuf.Duration value) {
-      if (exampleBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureExampleIsMutable();
-        example_.set(index, value);
-        onChanged();
-      } else {
-        exampleBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder setExample(
-        int index, com.google.protobuf.Duration.Builder builderForValue) {
-      if (exampleBuilder_ == null) {
-        ensureExampleIsMutable();
-        example_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        exampleBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder addExample(com.google.protobuf.Duration value) {
-      if (exampleBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureExampleIsMutable();
-        example_.add(value);
-        onChanged();
-      } else {
-        exampleBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder addExample(
-        int index, com.google.protobuf.Duration value) {
-      if (exampleBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureExampleIsMutable();
-        example_.add(index, value);
-        onChanged();
-      } else {
-        exampleBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder addExample(
-        com.google.protobuf.Duration.Builder builderForValue) {
-      if (exampleBuilder_ == null) {
-        ensureExampleIsMutable();
-        example_.add(builderForValue.build());
-        onChanged();
-      } else {
-        exampleBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder addExample(
-        int index, com.google.protobuf.Duration.Builder builderForValue) {
-      if (exampleBuilder_ == null) {
-        ensureExampleIsMutable();
-        example_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        exampleBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder addAllExample(
-        java.lang.Iterable<? extends com.google.protobuf.Duration> values) {
-      if (exampleBuilder_ == null) {
-        ensureExampleIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, example_);
-        onChanged();
-      } else {
-        exampleBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder clearExample() {
-      if (exampleBuilder_ == null) {
-        example_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
-        onChanged();
-      } else {
-        exampleBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder removeExample(int index) {
-      if (exampleBuilder_ == null) {
-        ensureExampleIsMutable();
-        example_.remove(index);
-        onChanged();
-      } else {
-        exampleBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public com.google.protobuf.Duration.Builder getExampleBuilder(
-        int index) {
-      return getExampleFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public com.google.protobuf.DurationOrBuilder getExampleOrBuilder(
-        int index) {
-      if (exampleBuilder_ == null) {
-        return example_.get(index);  } else {
-        return exampleBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public java.util.List<? extends com.google.protobuf.DurationOrBuilder> 
-         getExampleOrBuilderList() {
-      if (exampleBuilder_ != null) {
-        return exampleBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(example_);
-      }
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public com.google.protobuf.Duration.Builder addExampleBuilder() {
-      return getExampleFieldBuilder().addBuilder(
-          com.google.protobuf.Duration.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public com.google.protobuf.Duration.Builder addExampleBuilder(
-        int index) {
-      return getExampleFieldBuilder().addBuilder(
-          index, com.google.protobuf.Duration.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyDuration {
-     *   google.protobuf.Duration value = 1 [
-     *     (buf.validate.field).duration.example = { seconds: 1 },
-     *     (buf.validate.field).duration.example = { seconds: 2 },
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Duration example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public java.util.List<com.google.protobuf.Duration.Builder> 
-         getExampleBuilderList() {
-      return getExampleFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
-        getExampleFieldBuilder() {
-      if (exampleBuilder_ == null) {
-        exampleBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                example_,
-                ((bitField0_ & 0x00000080) != 0),
-                getParentForChildren(),
-                isClean());
-        example_ = null;
-      }
-      return exampleBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -4585,7 +3844,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<DurationRules>
+  private static final com.google.protobuf.Parser<DurationRules>
       PARSER = new com.google.protobuf.AbstractParser<DurationRules>() {
     @java.lang.Override
     public DurationRules parsePartialFrom(

@@ -23,6 +23,9 @@ private static final long serialVersionUID = 0L;
     status_ = 0;
     organizationId_ = "";
     uiButtonTitle_ = "";
+    domains_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    organizationName_ = "";
   }
 
   @java.lang.Override
@@ -227,6 +230,82 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DOMAINS_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList domains_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string domains = 8 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the domains.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getDomainsList() {
+    return domains_;
+  }
+  /**
+   * <code>repeated string domains = 8 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of domains.
+   */
+  public int getDomainsCount() {
+    return domains_.size();
+  }
+  /**
+   * <code>repeated string domains = 8 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The domains at the given index.
+   */
+  public java.lang.String getDomains(int index) {
+    return domains_.get(index);
+  }
+  /**
+   * <code>repeated string domains = 8 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the domains at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getDomainsBytes(int index) {
+    return domains_.getByteString(index);
+  }
+
+  public static final int ORGANIZATION_NAME_FIELD_NUMBER = 9;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object organizationName_ = "";
+  /**
+   * <code>string organization_name = 9 [json_name = "organizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The organizationName.
+   */
+  @java.lang.Override
+  public java.lang.String getOrganizationName() {
+    java.lang.Object ref = organizationName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      organizationName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string organization_name = 9 [json_name = "organizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for organizationName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOrganizationNameBytes() {
+    java.lang.Object ref = organizationName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      organizationName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -262,6 +341,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uiButtonTitle_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, uiButtonTitle_);
     }
+    for (int i = 0; i < domains_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, domains_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, organizationName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -296,6 +381,17 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uiButtonTitle_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, uiButtonTitle_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < domains_.size(); i++) {
+        dataSize += computeStringSizeNoTag(domains_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDomainsList().size();
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, organizationName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -322,6 +418,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getOrganizationId())) return false;
     if (!getUiButtonTitle()
         .equals(other.getUiButtonTitle())) return false;
+    if (!getDomainsList()
+        .equals(other.getDomainsList())) return false;
+    if (!getOrganizationName()
+        .equals(other.getOrganizationName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -348,6 +448,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getOrganizationId().hashCode();
     hash = (37 * hash) + UI_BUTTON_TITLE_FIELD_NUMBER;
     hash = (53 * hash) + getUiButtonTitle().hashCode();
+    if (getDomainsCount() > 0) {
+      hash = (37 * hash) + DOMAINS_FIELD_NUMBER;
+      hash = (53 * hash) + getDomainsList().hashCode();
+    }
+    hash = (37 * hash) + ORGANIZATION_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getOrganizationName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -486,6 +592,9 @@ private static final long serialVersionUID = 0L;
       enabled_ = false;
       organizationId_ = "";
       uiButtonTitle_ = "";
+      domains_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      organizationName_ = "";
       return this;
     }
 
@@ -539,6 +648,13 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.uiButtonTitle_ = uiButtonTitle_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        domains_.makeImmutable();
+        result.domains_ = domains_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.organizationName_ = organizationName_;
       }
     }
 
@@ -613,6 +729,21 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (!other.domains_.isEmpty()) {
+        if (domains_.isEmpty()) {
+          domains_ = other.domains_;
+          bitField0_ |= 0x00000080;
+        } else {
+          ensureDomainsIsMutable();
+          domains_.addAll(other.domains_);
+        }
+        onChanged();
+      }
+      if (!other.getOrganizationName().isEmpty()) {
+        organizationName_ = other.organizationName_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -674,6 +805,17 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000040;
               break;
             } // case 58
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureDomainsIsMutable();
+              domains_.add(s);
+              break;
+            } // case 66
+            case 74: {
+              organizationName_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 74
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1094,6 +1236,189 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       uiButtonTitle_ = value;
       bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList domains_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureDomainsIsMutable() {
+      if (!domains_.isModifiable()) {
+        domains_ = new com.google.protobuf.LazyStringArrayList(domains_);
+      }
+      bitField0_ |= 0x00000080;
+    }
+    /**
+     * <code>repeated string domains = 8 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the domains.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getDomainsList() {
+      domains_.makeImmutable();
+      return domains_;
+    }
+    /**
+     * <code>repeated string domains = 8 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of domains.
+     */
+    public int getDomainsCount() {
+      return domains_.size();
+    }
+    /**
+     * <code>repeated string domains = 8 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The domains at the given index.
+     */
+    public java.lang.String getDomains(int index) {
+      return domains_.get(index);
+    }
+    /**
+     * <code>repeated string domains = 8 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the domains at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getDomainsBytes(int index) {
+      return domains_.getByteString(index);
+    }
+    /**
+     * <code>repeated string domains = 8 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The domains to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDomains(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureDomainsIsMutable();
+      domains_.set(index, value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string domains = 8 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The domains to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDomains(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureDomainsIsMutable();
+      domains_.add(value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string domains = 8 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The domains to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDomains(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureDomainsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, domains_);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string domains = 8 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDomains() {
+      domains_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000080);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string domains = 8 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the domains to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDomainsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureDomainsIsMutable();
+      domains_.add(value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object organizationName_ = "";
+    /**
+     * <code>string organization_name = 9 [json_name = "organizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The organizationName.
+     */
+    public java.lang.String getOrganizationName() {
+      java.lang.Object ref = organizationName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string organization_name = 9 [json_name = "organizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for organizationName.
+     */
+    public com.google.protobuf.ByteString
+        getOrganizationNameBytes() {
+      java.lang.Object ref = organizationName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string organization_name = 9 [json_name = "organizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The organizationName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationName(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      organizationName_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string organization_name = 9 [json_name = "organizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOrganizationName() {
+      organizationName_ = getDefaultInstance().getOrganizationName();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string organization_name = 9 [json_name = "organizationName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for organizationName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      organizationName_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

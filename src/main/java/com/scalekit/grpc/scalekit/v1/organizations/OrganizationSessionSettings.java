@@ -43,7 +43,7 @@ private static final long serialVersionUID = 0L;
   public static final int ABSOLUTE_SESSION_TIMEOUT_FIELD_NUMBER = 1;
   private com.google.protobuf.Int32Value absoluteSessionTimeout_;
   /**
-   * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout"];</code>
+   * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the absoluteSessionTimeout field is set.
    */
   @java.lang.Override
@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout"];</code>
+   * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The absoluteSessionTimeout.
    */
   @java.lang.Override
@@ -59,7 +59,7 @@ private static final long serialVersionUID = 0L;
     return absoluteSessionTimeout_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : absoluteSessionTimeout_;
   }
   /**
-   * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout"];</code>
+   * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.Int32ValueOrBuilder getAbsoluteSessionTimeoutOrBuilder() {
@@ -69,7 +69,7 @@ private static final long serialVersionUID = 0L;
   public static final int SESSION_MANAGEMENT_ENABLED_FIELD_NUMBER = 2;
   private com.google.protobuf.BoolValue sessionManagementEnabled_;
   /**
-   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled"];</code>
+   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the sessionManagementEnabled field is set.
    */
   @java.lang.Override
@@ -77,7 +77,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled"];</code>
+   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The sessionManagementEnabled.
    */
   @java.lang.Override
@@ -85,7 +85,7 @@ private static final long serialVersionUID = 0L;
     return sessionManagementEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : sessionManagementEnabled_;
   }
   /**
-   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled"];</code>
+   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getSessionManagementEnabledOrBuilder() {
@@ -95,7 +95,7 @@ private static final long serialVersionUID = 0L;
   public static final int IDLE_SESSION_TIMEOUT_FIELD_NUMBER = 3;
   private com.google.protobuf.Int32Value idleSessionTimeout_;
   /**
-   * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout"];</code>
+   * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the idleSessionTimeout field is set.
    */
   @java.lang.Override
@@ -103,7 +103,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout"];</code>
+   * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The idleSessionTimeout.
    */
   @java.lang.Override
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
     return idleSessionTimeout_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : idleSessionTimeout_;
   }
   /**
-   * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout"];</code>
+   * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.Int32ValueOrBuilder getIdleSessionTimeoutOrBuilder() {
@@ -121,7 +121,7 @@ private static final long serialVersionUID = 0L;
   public static final int IDLE_SESSION_ENABLED_FIELD_NUMBER = 4;
   private com.google.protobuf.BoolValue idleSessionEnabled_;
   /**
-   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled"];</code>
+   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the idleSessionEnabled field is set.
    */
   @java.lang.Override
@@ -129,7 +129,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled"];</code>
+   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The idleSessionEnabled.
    */
   @java.lang.Override
@@ -137,7 +137,7 @@ private static final long serialVersionUID = 0L;
     return idleSessionEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : idleSessionEnabled_;
   }
   /**
-   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled"];</code>
+   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getIdleSessionEnabledOrBuilder() {
@@ -609,14 +609,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> absoluteSessionTimeoutBuilder_;
     /**
-     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the absoluteSessionTimeout field is set.
      */
     public boolean hasAbsoluteSessionTimeout() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The absoluteSessionTimeout.
      */
     public com.google.protobuf.Int32Value getAbsoluteSessionTimeout() {
@@ -627,7 +627,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setAbsoluteSessionTimeout(com.google.protobuf.Int32Value value) {
       if (absoluteSessionTimeoutBuilder_ == null) {
@@ -643,7 +643,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setAbsoluteSessionTimeout(
         com.google.protobuf.Int32Value.Builder builderForValue) {
@@ -657,7 +657,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeAbsoluteSessionTimeout(com.google.protobuf.Int32Value value) {
       if (absoluteSessionTimeoutBuilder_ == null) {
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearAbsoluteSessionTimeout() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -691,7 +691,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Int32Value.Builder getAbsoluteSessionTimeoutBuilder() {
       bitField0_ |= 0x00000001;
@@ -699,7 +699,7 @@ private static final long serialVersionUID = 0L;
       return getAbsoluteSessionTimeoutFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Int32ValueOrBuilder getAbsoluteSessionTimeoutOrBuilder() {
       if (absoluteSessionTimeoutBuilder_ != null) {
@@ -710,7 +710,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value absolute_session_timeout = 1 [json_name = "absoluteSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> 
@@ -730,14 +730,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> sessionManagementEnabledBuilder_;
     /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled"];</code>
+     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the sessionManagementEnabled field is set.
      */
     public boolean hasSessionManagementEnabled() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled"];</code>
+     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The sessionManagementEnabled.
      */
     public com.google.protobuf.BoolValue getSessionManagementEnabled() {
@@ -748,7 +748,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled"];</code>
+     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setSessionManagementEnabled(com.google.protobuf.BoolValue value) {
       if (sessionManagementEnabledBuilder_ == null) {
@@ -764,7 +764,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled"];</code>
+     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setSessionManagementEnabled(
         com.google.protobuf.BoolValue.Builder builderForValue) {
@@ -778,7 +778,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled"];</code>
+     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeSessionManagementEnabled(com.google.protobuf.BoolValue value) {
       if (sessionManagementEnabledBuilder_ == null) {
@@ -799,7 +799,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled"];</code>
+     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearSessionManagementEnabled() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -812,7 +812,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled"];</code>
+     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.BoolValue.Builder getSessionManagementEnabledBuilder() {
       bitField0_ |= 0x00000002;
@@ -820,7 +820,7 @@ private static final long serialVersionUID = 0L;
       return getSessionManagementEnabledFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled"];</code>
+     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.BoolValueOrBuilder getSessionManagementEnabledOrBuilder() {
       if (sessionManagementEnabledBuilder_ != null) {
@@ -831,7 +831,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled"];</code>
+     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
@@ -851,14 +851,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> idleSessionTimeoutBuilder_;
     /**
-     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the idleSessionTimeout field is set.
      */
     public boolean hasIdleSessionTimeout() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The idleSessionTimeout.
      */
     public com.google.protobuf.Int32Value getIdleSessionTimeout() {
@@ -869,7 +869,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setIdleSessionTimeout(com.google.protobuf.Int32Value value) {
       if (idleSessionTimeoutBuilder_ == null) {
@@ -885,7 +885,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setIdleSessionTimeout(
         com.google.protobuf.Int32Value.Builder builderForValue) {
@@ -899,7 +899,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeIdleSessionTimeout(com.google.protobuf.Int32Value value) {
       if (idleSessionTimeoutBuilder_ == null) {
@@ -920,7 +920,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearIdleSessionTimeout() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -933,7 +933,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Int32Value.Builder getIdleSessionTimeoutBuilder() {
       bitField0_ |= 0x00000004;
@@ -941,7 +941,7 @@ private static final long serialVersionUID = 0L;
       return getIdleSessionTimeoutFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Int32ValueOrBuilder getIdleSessionTimeoutOrBuilder() {
       if (idleSessionTimeoutBuilder_ != null) {
@@ -952,7 +952,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout"];</code>
+     * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> 
@@ -972,14 +972,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> idleSessionEnabledBuilder_;
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled"];</code>
+     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the idleSessionEnabled field is set.
      */
     public boolean hasIdleSessionEnabled() {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled"];</code>
+     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The idleSessionEnabled.
      */
     public com.google.protobuf.BoolValue getIdleSessionEnabled() {
@@ -990,7 +990,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled"];</code>
+     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setIdleSessionEnabled(com.google.protobuf.BoolValue value) {
       if (idleSessionEnabledBuilder_ == null) {
@@ -1006,7 +1006,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled"];</code>
+     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setIdleSessionEnabled(
         com.google.protobuf.BoolValue.Builder builderForValue) {
@@ -1020,7 +1020,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled"];</code>
+     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeIdleSessionEnabled(com.google.protobuf.BoolValue value) {
       if (idleSessionEnabledBuilder_ == null) {
@@ -1041,7 +1041,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled"];</code>
+     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearIdleSessionEnabled() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1054,7 +1054,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled"];</code>
+     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.BoolValue.Builder getIdleSessionEnabledBuilder() {
       bitField0_ |= 0x00000008;
@@ -1062,7 +1062,7 @@ private static final long serialVersionUID = 0L;
       return getIdleSessionEnabledFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled"];</code>
+     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.BoolValueOrBuilder getIdleSessionEnabledOrBuilder() {
       if (idleSessionEnabledBuilder_ != null) {
@@ -1073,7 +1073,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled"];</code>
+     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 

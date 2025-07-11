@@ -7,6 +7,7 @@ import com.scalekit.internal.http.AuthorizationUrlOptions;
 import com.scalekit.internal.http.IdpInitiatedLoginClaims;
 
 import java.net.URL;
+import java.util.Map;
 
 public interface AuthClient {
      URL getAuthorizationUrl(String redirectUri, AuthorizationUrlOptions options);
@@ -19,4 +20,7 @@ public interface AuthClient {
 
      IdpInitiatedLoginClaims getIdpInitiatedLoginClaims(String idpInitiatedLoginToken) throws APIException;
 
+     AuthenticationResponse refreshToken(String refreshToken) throws APIException;
+
+     Map<String, Object> validateAccessTokenAndGetClaims(String jwt) throws APIException;
 }

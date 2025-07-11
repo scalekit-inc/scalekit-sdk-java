@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   }
   private PasswordLessConfig() {
     type_ = 0;
+    codeChallengeType_ = 0;
   }
 
   @java.lang.Override
@@ -60,40 +61,132 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int FREQUENCY_FIELD_NUMBER = 2;
-  private int frequency_ = 0;
+  private com.google.protobuf.UInt32Value frequency_;
   /**
-   * <code>int32 frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional .google.protobuf.UInt32Value frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the frequency field is set.
+   */
+  @java.lang.Override
+  public boolean hasFrequency() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional .google.protobuf.UInt32Value frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The frequency.
    */
   @java.lang.Override
-  public int getFrequency() {
-    return frequency_;
+  public com.google.protobuf.UInt32Value getFrequency() {
+    return frequency_ == null ? com.google.protobuf.UInt32Value.getDefaultInstance() : frequency_;
+  }
+  /**
+   * <code>optional .google.protobuf.UInt32Value frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt32ValueOrBuilder getFrequencyOrBuilder() {
+    return frequency_ == null ? com.google.protobuf.UInt32Value.getDefaultInstance() : frequency_;
   }
 
   public static final int VALIDITY_FIELD_NUMBER = 3;
-  private com.google.protobuf.Duration validity_;
+  private com.google.protobuf.UInt32Value validity_;
   /**
-   * <code>.google.protobuf.Duration validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional .google.protobuf.UInt32Value validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the validity field is set.
    */
   @java.lang.Override
   public boolean hasValidity() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>.google.protobuf.Duration validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional .google.protobuf.UInt32Value validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The validity.
    */
   @java.lang.Override
-  public com.google.protobuf.Duration getValidity() {
-    return validity_ == null ? com.google.protobuf.Duration.getDefaultInstance() : validity_;
+  public com.google.protobuf.UInt32Value getValidity() {
+    return validity_ == null ? com.google.protobuf.UInt32Value.getDefaultInstance() : validity_;
   }
   /**
-   * <code>.google.protobuf.Duration validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional .google.protobuf.UInt32Value validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public com.google.protobuf.DurationOrBuilder getValidityOrBuilder() {
-    return validity_ == null ? com.google.protobuf.Duration.getDefaultInstance() : validity_;
+  public com.google.protobuf.UInt32ValueOrBuilder getValidityOrBuilder() {
+    return validity_ == null ? com.google.protobuf.UInt32Value.getDefaultInstance() : validity_;
+  }
+
+  public static final int ENFORCE_SAME_BROWSER_ORIGIN_FIELD_NUMBER = 4;
+  private com.google.protobuf.BoolValue enforceSameBrowserOrigin_;
+  /**
+   * <code>optional .google.protobuf.BoolValue enforce_same_browser_origin = 4 [json_name = "enforceSameBrowserOrigin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the enforceSameBrowserOrigin field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnforceSameBrowserOrigin() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>optional .google.protobuf.BoolValue enforce_same_browser_origin = 4 [json_name = "enforceSameBrowserOrigin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enforceSameBrowserOrigin.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getEnforceSameBrowserOrigin() {
+    return enforceSameBrowserOrigin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enforceSameBrowserOrigin_;
+  }
+  /**
+   * <code>optional .google.protobuf.BoolValue enforce_same_browser_origin = 4 [json_name = "enforceSameBrowserOrigin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getEnforceSameBrowserOriginOrBuilder() {
+    return enforceSameBrowserOrigin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enforceSameBrowserOrigin_;
+  }
+
+  public static final int CODE_CHALLENGE_LENGTH_FIELD_NUMBER = 5;
+  private com.google.protobuf.UInt32Value codeChallengeLength_;
+  /**
+   * <code>optional .google.protobuf.UInt32Value code_challenge_length = 5 [json_name = "codeChallengeLength", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the codeChallengeLength field is set.
+   */
+  @java.lang.Override
+  public boolean hasCodeChallengeLength() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <code>optional .google.protobuf.UInt32Value code_challenge_length = 5 [json_name = "codeChallengeLength", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The codeChallengeLength.
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt32Value getCodeChallengeLength() {
+    return codeChallengeLength_ == null ? com.google.protobuf.UInt32Value.getDefaultInstance() : codeChallengeLength_;
+  }
+  /**
+   * <code>optional .google.protobuf.UInt32Value code_challenge_length = 5 [json_name = "codeChallengeLength", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt32ValueOrBuilder getCodeChallengeLengthOrBuilder() {
+    return codeChallengeLength_ == null ? com.google.protobuf.UInt32Value.getDefaultInstance() : codeChallengeLength_;
+  }
+
+  public static final int CODE_CHALLENGE_TYPE_FIELD_NUMBER = 6;
+  private int codeChallengeType_ = 0;
+  /**
+   * <code>optional .scalekit.v1.connections.CodeChallengeType code_challenge_type = 6 [json_name = "codeChallengeType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the codeChallengeType field is set.
+   */
+  @java.lang.Override public boolean hasCodeChallengeType() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <code>optional .scalekit.v1.connections.CodeChallengeType code_challenge_type = 6 [json_name = "codeChallengeType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for codeChallengeType.
+   */
+  @java.lang.Override public int getCodeChallengeTypeValue() {
+    return codeChallengeType_;
+  }
+  /**
+   * <code>optional .scalekit.v1.connections.CodeChallengeType code_challenge_type = 6 [json_name = "codeChallengeType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The codeChallengeType.
+   */
+  @java.lang.Override public com.scalekit.grpc.scalekit.v1.connections.CodeChallengeType getCodeChallengeType() {
+    com.scalekit.grpc.scalekit.v1.connections.CodeChallengeType result = com.scalekit.grpc.scalekit.v1.connections.CodeChallengeType.forNumber(codeChallengeType_);
+    return result == null ? com.scalekit.grpc.scalekit.v1.connections.CodeChallengeType.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -113,11 +206,20 @@ private static final long serialVersionUID = 0L;
     if (type_ != com.scalekit.grpc.scalekit.v1.connections.PasswordlessType.PasswordlessType_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, type_);
     }
-    if (frequency_ != 0) {
-      output.writeInt32(2, frequency_);
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(2, getFrequency());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(3, getValidity());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(4, getEnforceSameBrowserOrigin());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(5, getCodeChallengeLength());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeEnum(6, codeChallengeType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -132,13 +234,25 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, type_);
     }
-    if (frequency_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, frequency_);
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getFrequency());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getValidity());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getEnforceSameBrowserOrigin());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getCodeChallengeLength());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(6, codeChallengeType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -156,12 +270,29 @@ private static final long serialVersionUID = 0L;
     com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig other = (com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig) obj;
 
     if (type_ != other.type_) return false;
-    if (getFrequency()
-        != other.getFrequency()) return false;
+    if (hasFrequency() != other.hasFrequency()) return false;
+    if (hasFrequency()) {
+      if (!getFrequency()
+          .equals(other.getFrequency())) return false;
+    }
     if (hasValidity() != other.hasValidity()) return false;
     if (hasValidity()) {
       if (!getValidity()
           .equals(other.getValidity())) return false;
+    }
+    if (hasEnforceSameBrowserOrigin() != other.hasEnforceSameBrowserOrigin()) return false;
+    if (hasEnforceSameBrowserOrigin()) {
+      if (!getEnforceSameBrowserOrigin()
+          .equals(other.getEnforceSameBrowserOrigin())) return false;
+    }
+    if (hasCodeChallengeLength() != other.hasCodeChallengeLength()) return false;
+    if (hasCodeChallengeLength()) {
+      if (!getCodeChallengeLength()
+          .equals(other.getCodeChallengeLength())) return false;
+    }
+    if (hasCodeChallengeType() != other.hasCodeChallengeType()) return false;
+    if (hasCodeChallengeType()) {
+      if (codeChallengeType_ != other.codeChallengeType_) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -176,11 +307,25 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
-    hash = (37 * hash) + FREQUENCY_FIELD_NUMBER;
-    hash = (53 * hash) + getFrequency();
+    if (hasFrequency()) {
+      hash = (37 * hash) + FREQUENCY_FIELD_NUMBER;
+      hash = (53 * hash) + getFrequency().hashCode();
+    }
     if (hasValidity()) {
       hash = (37 * hash) + VALIDITY_FIELD_NUMBER;
       hash = (53 * hash) + getValidity().hashCode();
+    }
+    if (hasEnforceSameBrowserOrigin()) {
+      hash = (37 * hash) + ENFORCE_SAME_BROWSER_ORIGIN_FIELD_NUMBER;
+      hash = (53 * hash) + getEnforceSameBrowserOrigin().hashCode();
+    }
+    if (hasCodeChallengeLength()) {
+      hash = (37 * hash) + CODE_CHALLENGE_LENGTH_FIELD_NUMBER;
+      hash = (53 * hash) + getCodeChallengeLength().hashCode();
+    }
+    if (hasCodeChallengeType()) {
+      hash = (37 * hash) + CODE_CHALLENGE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + codeChallengeType_;
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -312,7 +457,10 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getFrequencyFieldBuilder();
         getValidityFieldBuilder();
+        getEnforceSameBrowserOriginFieldBuilder();
+        getCodeChallengeLengthFieldBuilder();
       }
     }
     @java.lang.Override
@@ -320,12 +468,27 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       type_ = 0;
-      frequency_ = 0;
+      frequency_ = null;
+      if (frequencyBuilder_ != null) {
+        frequencyBuilder_.dispose();
+        frequencyBuilder_ = null;
+      }
       validity_ = null;
       if (validityBuilder_ != null) {
         validityBuilder_.dispose();
         validityBuilder_ = null;
       }
+      enforceSameBrowserOrigin_ = null;
+      if (enforceSameBrowserOriginBuilder_ != null) {
+        enforceSameBrowserOriginBuilder_.dispose();
+        enforceSameBrowserOriginBuilder_ = null;
+      }
+      codeChallengeLength_ = null;
+      if (codeChallengeLengthBuilder_ != null) {
+        codeChallengeLengthBuilder_.dispose();
+        codeChallengeLengthBuilder_ = null;
+      }
+      codeChallengeType_ = 0;
       return this;
     }
 
@@ -362,15 +525,34 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.type_ = type_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.frequency_ = frequency_;
-      }
       int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.frequency_ = frequencyBuilder_ == null
+            ? frequency_
+            : frequencyBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.validity_ = validityBuilder_ == null
             ? validity_
             : validityBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.enforceSameBrowserOrigin_ = enforceSameBrowserOriginBuilder_ == null
+            ? enforceSameBrowserOrigin_
+            : enforceSameBrowserOriginBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.codeChallengeLength_ = codeChallengeLengthBuilder_ == null
+            ? codeChallengeLength_
+            : codeChallengeLengthBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.codeChallengeType_ = codeChallengeType_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -422,11 +604,20 @@ private static final long serialVersionUID = 0L;
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
-      if (other.getFrequency() != 0) {
-        setFrequency(other.getFrequency());
+      if (other.hasFrequency()) {
+        mergeFrequency(other.getFrequency());
       }
       if (other.hasValidity()) {
         mergeValidity(other.getValidity());
+      }
+      if (other.hasEnforceSameBrowserOrigin()) {
+        mergeEnforceSameBrowserOrigin(other.getEnforceSameBrowserOrigin());
+      }
+      if (other.hasCodeChallengeLength()) {
+        mergeCodeChallengeLength(other.getCodeChallengeLength());
+      }
+      if (other.hasCodeChallengeType()) {
+        setCodeChallengeType(other.getCodeChallengeType());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -459,11 +650,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 8
-            case 16: {
-              frequency_ = input.readInt32();
+            case 18: {
+              input.readMessage(
+                  getFrequencyFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00000002;
               break;
-            } // case 16
+            } // case 18
             case 26: {
               input.readMessage(
                   getValidityFieldBuilder().getBuilder(),
@@ -471,6 +664,25 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000004;
               break;
             } // case 26
+            case 34: {
+              input.readMessage(
+                  getEnforceSameBrowserOriginFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
+            case 42: {
+              input.readMessage(
+                  getCodeChallengeLengthFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 42
+            case 48: {
+              codeChallengeType_ = input.readEnum();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 48
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -541,63 +753,152 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int frequency_ ;
+    private com.google.protobuf.UInt32Value frequency_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt32Value, com.google.protobuf.UInt32Value.Builder, com.google.protobuf.UInt32ValueOrBuilder> frequencyBuilder_;
     /**
-     * <code>int32 frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The frequency.
+     * <code>optional .google.protobuf.UInt32Value frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the frequency field is set.
      */
-    @java.lang.Override
-    public int getFrequency() {
-      return frequency_;
+    public boolean hasFrequency() {
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>int32 frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The frequency to set.
-     * @return This builder for chaining.
+     * <code>optional .google.protobuf.UInt32Value frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The frequency.
      */
-    public Builder setFrequency(int value) {
-
-      frequency_ = value;
+    public com.google.protobuf.UInt32Value getFrequency() {
+      if (frequencyBuilder_ == null) {
+        return frequency_ == null ? com.google.protobuf.UInt32Value.getDefaultInstance() : frequency_;
+      } else {
+        return frequencyBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.UInt32Value frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setFrequency(com.google.protobuf.UInt32Value value) {
+      if (frequencyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        frequency_ = value;
+      } else {
+        frequencyBuilder_.setMessage(value);
+      }
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
+     * <code>optional .google.protobuf.UInt32Value frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder clearFrequency() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      frequency_ = 0;
+    public Builder setFrequency(
+        com.google.protobuf.UInt32Value.Builder builderForValue) {
+      if (frequencyBuilder_ == null) {
+        frequency_ = builderForValue.build();
+      } else {
+        frequencyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
-
-    private com.google.protobuf.Duration validity_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> validityBuilder_;
     /**
-     * <code>.google.protobuf.Duration validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.UInt32Value frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeFrequency(com.google.protobuf.UInt32Value value) {
+      if (frequencyBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0) &&
+          frequency_ != null &&
+          frequency_ != com.google.protobuf.UInt32Value.getDefaultInstance()) {
+          getFrequencyBuilder().mergeFrom(value);
+        } else {
+          frequency_ = value;
+        }
+      } else {
+        frequencyBuilder_.mergeFrom(value);
+      }
+      if (frequency_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.UInt32Value frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearFrequency() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      frequency_ = null;
+      if (frequencyBuilder_ != null) {
+        frequencyBuilder_.dispose();
+        frequencyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.UInt32Value frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.UInt32Value.Builder getFrequencyBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getFrequencyFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>optional .google.protobuf.UInt32Value frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.UInt32ValueOrBuilder getFrequencyOrBuilder() {
+      if (frequencyBuilder_ != null) {
+        return frequencyBuilder_.getMessageOrBuilder();
+      } else {
+        return frequency_ == null ?
+            com.google.protobuf.UInt32Value.getDefaultInstance() : frequency_;
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.UInt32Value frequency = 2 [json_name = "frequency", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt32Value, com.google.protobuf.UInt32Value.Builder, com.google.protobuf.UInt32ValueOrBuilder> 
+        getFrequencyFieldBuilder() {
+      if (frequencyBuilder_ == null) {
+        frequencyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt32Value, com.google.protobuf.UInt32Value.Builder, com.google.protobuf.UInt32ValueOrBuilder>(
+                getFrequency(),
+                getParentForChildren(),
+                isClean());
+        frequency_ = null;
+      }
+      return frequencyBuilder_;
+    }
+
+    private com.google.protobuf.UInt32Value validity_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt32Value, com.google.protobuf.UInt32Value.Builder, com.google.protobuf.UInt32ValueOrBuilder> validityBuilder_;
+    /**
+     * <code>optional .google.protobuf.UInt32Value validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the validity field is set.
      */
     public boolean hasValidity() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>.google.protobuf.Duration validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.UInt32Value validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The validity.
      */
-    public com.google.protobuf.Duration getValidity() {
+    public com.google.protobuf.UInt32Value getValidity() {
       if (validityBuilder_ == null) {
-        return validity_ == null ? com.google.protobuf.Duration.getDefaultInstance() : validity_;
+        return validity_ == null ? com.google.protobuf.UInt32Value.getDefaultInstance() : validity_;
       } else {
         return validityBuilder_.getMessage();
       }
     }
     /**
-     * <code>.google.protobuf.Duration validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.UInt32Value validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder setValidity(com.google.protobuf.Duration value) {
+    public Builder setValidity(com.google.protobuf.UInt32Value value) {
       if (validityBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -611,10 +912,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Duration validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.UInt32Value validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setValidity(
-        com.google.protobuf.Duration.Builder builderForValue) {
+        com.google.protobuf.UInt32Value.Builder builderForValue) {
       if (validityBuilder_ == null) {
         validity_ = builderForValue.build();
       } else {
@@ -625,13 +926,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Duration validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.UInt32Value validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder mergeValidity(com.google.protobuf.Duration value) {
+    public Builder mergeValidity(com.google.protobuf.UInt32Value value) {
       if (validityBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0) &&
           validity_ != null &&
-          validity_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          validity_ != com.google.protobuf.UInt32Value.getDefaultInstance()) {
           getValidityBuilder().mergeFrom(value);
         } else {
           validity_ = value;
@@ -646,7 +947,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Duration validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.UInt32Value validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearValidity() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -659,39 +960,341 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Duration validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.UInt32Value validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.google.protobuf.Duration.Builder getValidityBuilder() {
+    public com.google.protobuf.UInt32Value.Builder getValidityBuilder() {
       bitField0_ |= 0x00000004;
       onChanged();
       return getValidityFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Duration validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.UInt32Value validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.google.protobuf.DurationOrBuilder getValidityOrBuilder() {
+    public com.google.protobuf.UInt32ValueOrBuilder getValidityOrBuilder() {
       if (validityBuilder_ != null) {
         return validityBuilder_.getMessageOrBuilder();
       } else {
         return validity_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : validity_;
+            com.google.protobuf.UInt32Value.getDefaultInstance() : validity_;
       }
     }
     /**
-     * <code>.google.protobuf.Duration validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.UInt32Value validity = 3 [json_name = "validity", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+        com.google.protobuf.UInt32Value, com.google.protobuf.UInt32Value.Builder, com.google.protobuf.UInt32ValueOrBuilder> 
         getValidityFieldBuilder() {
       if (validityBuilder_ == null) {
         validityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+            com.google.protobuf.UInt32Value, com.google.protobuf.UInt32Value.Builder, com.google.protobuf.UInt32ValueOrBuilder>(
                 getValidity(),
                 getParentForChildren(),
                 isClean());
         validity_ = null;
       }
       return validityBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue enforceSameBrowserOrigin_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> enforceSameBrowserOriginBuilder_;
+    /**
+     * <code>optional .google.protobuf.BoolValue enforce_same_browser_origin = 4 [json_name = "enforceSameBrowserOrigin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the enforceSameBrowserOrigin field is set.
+     */
+    public boolean hasEnforceSameBrowserOrigin() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional .google.protobuf.BoolValue enforce_same_browser_origin = 4 [json_name = "enforceSameBrowserOrigin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enforceSameBrowserOrigin.
+     */
+    public com.google.protobuf.BoolValue getEnforceSameBrowserOrigin() {
+      if (enforceSameBrowserOriginBuilder_ == null) {
+        return enforceSameBrowserOrigin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enforceSameBrowserOrigin_;
+      } else {
+        return enforceSameBrowserOriginBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.BoolValue enforce_same_browser_origin = 4 [json_name = "enforceSameBrowserOrigin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setEnforceSameBrowserOrigin(com.google.protobuf.BoolValue value) {
+      if (enforceSameBrowserOriginBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        enforceSameBrowserOrigin_ = value;
+      } else {
+        enforceSameBrowserOriginBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.BoolValue enforce_same_browser_origin = 4 [json_name = "enforceSameBrowserOrigin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setEnforceSameBrowserOrigin(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (enforceSameBrowserOriginBuilder_ == null) {
+        enforceSameBrowserOrigin_ = builderForValue.build();
+      } else {
+        enforceSameBrowserOriginBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.BoolValue enforce_same_browser_origin = 4 [json_name = "enforceSameBrowserOrigin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeEnforceSameBrowserOrigin(com.google.protobuf.BoolValue value) {
+      if (enforceSameBrowserOriginBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0) &&
+          enforceSameBrowserOrigin_ != null &&
+          enforceSameBrowserOrigin_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getEnforceSameBrowserOriginBuilder().mergeFrom(value);
+        } else {
+          enforceSameBrowserOrigin_ = value;
+        }
+      } else {
+        enforceSameBrowserOriginBuilder_.mergeFrom(value);
+      }
+      if (enforceSameBrowserOrigin_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.BoolValue enforce_same_browser_origin = 4 [json_name = "enforceSameBrowserOrigin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearEnforceSameBrowserOrigin() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      enforceSameBrowserOrigin_ = null;
+      if (enforceSameBrowserOriginBuilder_ != null) {
+        enforceSameBrowserOriginBuilder_.dispose();
+        enforceSameBrowserOriginBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.BoolValue enforce_same_browser_origin = 4 [json_name = "enforceSameBrowserOrigin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getEnforceSameBrowserOriginBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getEnforceSameBrowserOriginFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>optional .google.protobuf.BoolValue enforce_same_browser_origin = 4 [json_name = "enforceSameBrowserOrigin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getEnforceSameBrowserOriginOrBuilder() {
+      if (enforceSameBrowserOriginBuilder_ != null) {
+        return enforceSameBrowserOriginBuilder_.getMessageOrBuilder();
+      } else {
+        return enforceSameBrowserOrigin_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : enforceSameBrowserOrigin_;
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.BoolValue enforce_same_browser_origin = 4 [json_name = "enforceSameBrowserOrigin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getEnforceSameBrowserOriginFieldBuilder() {
+      if (enforceSameBrowserOriginBuilder_ == null) {
+        enforceSameBrowserOriginBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getEnforceSameBrowserOrigin(),
+                getParentForChildren(),
+                isClean());
+        enforceSameBrowserOrigin_ = null;
+      }
+      return enforceSameBrowserOriginBuilder_;
+    }
+
+    private com.google.protobuf.UInt32Value codeChallengeLength_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt32Value, com.google.protobuf.UInt32Value.Builder, com.google.protobuf.UInt32ValueOrBuilder> codeChallengeLengthBuilder_;
+    /**
+     * <code>optional .google.protobuf.UInt32Value code_challenge_length = 5 [json_name = "codeChallengeLength", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the codeChallengeLength field is set.
+     */
+    public boolean hasCodeChallengeLength() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>optional .google.protobuf.UInt32Value code_challenge_length = 5 [json_name = "codeChallengeLength", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The codeChallengeLength.
+     */
+    public com.google.protobuf.UInt32Value getCodeChallengeLength() {
+      if (codeChallengeLengthBuilder_ == null) {
+        return codeChallengeLength_ == null ? com.google.protobuf.UInt32Value.getDefaultInstance() : codeChallengeLength_;
+      } else {
+        return codeChallengeLengthBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.UInt32Value code_challenge_length = 5 [json_name = "codeChallengeLength", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setCodeChallengeLength(com.google.protobuf.UInt32Value value) {
+      if (codeChallengeLengthBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        codeChallengeLength_ = value;
+      } else {
+        codeChallengeLengthBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.UInt32Value code_challenge_length = 5 [json_name = "codeChallengeLength", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setCodeChallengeLength(
+        com.google.protobuf.UInt32Value.Builder builderForValue) {
+      if (codeChallengeLengthBuilder_ == null) {
+        codeChallengeLength_ = builderForValue.build();
+      } else {
+        codeChallengeLengthBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.UInt32Value code_challenge_length = 5 [json_name = "codeChallengeLength", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeCodeChallengeLength(com.google.protobuf.UInt32Value value) {
+      if (codeChallengeLengthBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0) &&
+          codeChallengeLength_ != null &&
+          codeChallengeLength_ != com.google.protobuf.UInt32Value.getDefaultInstance()) {
+          getCodeChallengeLengthBuilder().mergeFrom(value);
+        } else {
+          codeChallengeLength_ = value;
+        }
+      } else {
+        codeChallengeLengthBuilder_.mergeFrom(value);
+      }
+      if (codeChallengeLength_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.UInt32Value code_challenge_length = 5 [json_name = "codeChallengeLength", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearCodeChallengeLength() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      codeChallengeLength_ = null;
+      if (codeChallengeLengthBuilder_ != null) {
+        codeChallengeLengthBuilder_.dispose();
+        codeChallengeLengthBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.UInt32Value code_challenge_length = 5 [json_name = "codeChallengeLength", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.UInt32Value.Builder getCodeChallengeLengthBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getCodeChallengeLengthFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>optional .google.protobuf.UInt32Value code_challenge_length = 5 [json_name = "codeChallengeLength", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.UInt32ValueOrBuilder getCodeChallengeLengthOrBuilder() {
+      if (codeChallengeLengthBuilder_ != null) {
+        return codeChallengeLengthBuilder_.getMessageOrBuilder();
+      } else {
+        return codeChallengeLength_ == null ?
+            com.google.protobuf.UInt32Value.getDefaultInstance() : codeChallengeLength_;
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.UInt32Value code_challenge_length = 5 [json_name = "codeChallengeLength", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt32Value, com.google.protobuf.UInt32Value.Builder, com.google.protobuf.UInt32ValueOrBuilder> 
+        getCodeChallengeLengthFieldBuilder() {
+      if (codeChallengeLengthBuilder_ == null) {
+        codeChallengeLengthBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt32Value, com.google.protobuf.UInt32Value.Builder, com.google.protobuf.UInt32ValueOrBuilder>(
+                getCodeChallengeLength(),
+                getParentForChildren(),
+                isClean());
+        codeChallengeLength_ = null;
+      }
+      return codeChallengeLengthBuilder_;
+    }
+
+    private int codeChallengeType_ = 0;
+    /**
+     * <code>optional .scalekit.v1.connections.CodeChallengeType code_challenge_type = 6 [json_name = "codeChallengeType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the codeChallengeType field is set.
+     */
+    @java.lang.Override public boolean hasCodeChallengeType() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.CodeChallengeType code_challenge_type = 6 [json_name = "codeChallengeType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enum numeric value on the wire for codeChallengeType.
+     */
+    @java.lang.Override public int getCodeChallengeTypeValue() {
+      return codeChallengeType_;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.CodeChallengeType code_challenge_type = 6 [json_name = "codeChallengeType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enum numeric value on the wire for codeChallengeType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCodeChallengeTypeValue(int value) {
+      codeChallengeType_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.CodeChallengeType code_challenge_type = 6 [json_name = "codeChallengeType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The codeChallengeType.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.CodeChallengeType getCodeChallengeType() {
+      com.scalekit.grpc.scalekit.v1.connections.CodeChallengeType result = com.scalekit.grpc.scalekit.v1.connections.CodeChallengeType.forNumber(codeChallengeType_);
+      return result == null ? com.scalekit.grpc.scalekit.v1.connections.CodeChallengeType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.CodeChallengeType code_challenge_type = 6 [json_name = "codeChallengeType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The codeChallengeType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCodeChallengeType(com.scalekit.grpc.scalekit.v1.connections.CodeChallengeType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      codeChallengeType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.CodeChallengeType code_challenge_type = 6 [json_name = "codeChallengeType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCodeChallengeType() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      codeChallengeType_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -21,12 +21,24 @@ public interface RoleAssignmentOrBuilder extends
       getGroupIdBytes();
 
   /**
-   * <code>string role_id = 2 [json_name = "roleId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string role_name = 2 [json_name = "roleName", (.buf.validate.field) = { ... }</code>
+   * @return The roleName.
+   */
+  java.lang.String getRoleName();
+  /**
+   * <code>string role_name = 2 [json_name = "roleName", (.buf.validate.field) = { ... }</code>
+   * @return The bytes for roleName.
+   */
+  com.google.protobuf.ByteString
+      getRoleNameBytes();
+
+  /**
+   * <code>string role_id = 3 [json_name = "roleId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The roleId.
    */
   java.lang.String getRoleId();
   /**
-   * <code>string role_id = 2 [json_name = "roleId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string role_id = 3 [json_name = "roleId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for roleId.
    */
   com.google.protobuf.ByteString

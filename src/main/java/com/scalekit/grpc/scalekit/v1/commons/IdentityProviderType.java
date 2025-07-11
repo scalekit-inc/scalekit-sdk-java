@@ -73,6 +73,10 @@ public enum IdentityProviderType
    * <code>SCALEKIT = 15;</code>
    */
   SCALEKIT(15),
+  /**
+   * <code>ADFS = 16;</code>
+   */
+  ADFS(16),
   UNRECOGNIZED(-1),
   ;
 
@@ -140,6 +144,10 @@ public enum IdentityProviderType
    * <code>SCALEKIT = 15;</code>
    */
   public static final int SCALEKIT_VALUE = 15;
+  /**
+   * <code>ADFS = 16;</code>
+   */
+  public static final int ADFS_VALUE = 16;
 
 
   public final int getNumber() {
@@ -182,6 +190,7 @@ public enum IdentityProviderType
       case 13: return MICROSOFT;
       case 14: return IDP_SIMULATOR;
       case 15: return SCALEKIT;
+      case 16: return ADFS;
       default: return null;
     }
   }
@@ -212,7 +221,7 @@ public enum IdentityProviderType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.commons.CommonsProto.getDescriptor().getEnumTypes().get(4);
+    return com.scalekit.grpc.scalekit.v1.commons.CommonsProto.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final IdentityProviderType[] VALUES = values();

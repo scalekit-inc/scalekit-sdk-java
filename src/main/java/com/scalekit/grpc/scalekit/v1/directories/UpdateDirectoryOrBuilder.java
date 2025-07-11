@@ -82,4 +82,28 @@ public interface UpdateDirectoryOrBuilder extends
    */
   com.scalekit.grpc.scalekit.v1.directories.DirectoryMappingOrBuilder getMappingsOrBuilder(
       int index);
+
+  /**
+   * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<com.scalekit.grpc.scalekit.v1.directories.ExternalGroup> 
+      getGroupsList();
+  /**
+   * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.directories.ExternalGroup getGroups(int index);
+  /**
+   * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  int getGroupsCount();
+  /**
+   * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<? extends com.scalekit.grpc.scalekit.v1.directories.ExternalGroupOrBuilder> 
+      getGroupsOrBuilderList();
+  /**
+   * <code>repeated .scalekit.v1.directories.ExternalGroup groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.directories.ExternalGroupOrBuilder getGroupsOrBuilder(
+      int index);
 }

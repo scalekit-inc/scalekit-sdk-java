@@ -13,19 +13,17 @@ package com.scalekit.grpc.buf.validate;
  * Protobuf type {@code buf.validate.FloatRules}
  */
 public final class FloatRules extends
-    com.google.protobuf.GeneratedMessageV3.ExtendableMessage<
-      FloatRules> implements
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:buf.validate.FloatRules)
     FloatRulesOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use FloatRules.newBuilder() to construct.
-  private FloatRules(com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<com.scalekit.grpc.buf.validate.FloatRules, ?> builder) {
+  private FloatRules(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private FloatRules() {
     in_ = emptyFloatList();
     notIn_ = emptyFloatList();
-    example_ = emptyFloatList();
   }
 
   @java.lang.Override
@@ -148,7 +146,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional float const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional float const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the const field is set.
    */
   @java.lang.Override
@@ -168,7 +166,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional float const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional float const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
    * @return The const.
    */
   @java.lang.Override
@@ -191,7 +189,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>float lt = 2 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+   * <code>float lt = 2 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the lt field is set.
    */
   @java.lang.Override
@@ -212,7 +210,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>float lt = 2 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+   * <code>float lt = 2 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
    * @return The lt.
    */
   @java.lang.Override
@@ -238,7 +236,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>float lte = 3 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+   * <code>float lte = 3 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the lte field is set.
    */
   @java.lang.Override
@@ -259,7 +257,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>float lte = 3 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+   * <code>float lte = 3 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
    * @return The lte.
    */
   @java.lang.Override
@@ -293,7 +291,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>float gt = 4 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+   * <code>float gt = 4 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the gt field is set.
    */
   @java.lang.Override
@@ -322,7 +320,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>float gt = 4 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+   * <code>float gt = 4 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
    * @return The gt.
    */
   @java.lang.Override
@@ -356,7 +354,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>float gte = 5 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+   * <code>float gte = 5 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the gte field is set.
    */
   @java.lang.Override
@@ -385,7 +383,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>float gte = 5 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+   * <code>float gte = 5 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
    * @return The gte.
    */
   @java.lang.Override
@@ -409,12 +407,12 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyFloat {
    *   // value must be in list [1.0, 2.0, 3.0]
-   *   float value = 1 [(buf.validate.field).float = { in: [1.0, 2.0, 3.0] }];
+   *   repeated float value = 1 (buf.validate.field).float = { in: [1.0, 2.0, 3.0] };
    * }
    * ```
    * </pre>
    *
-   * <code>repeated float in = 6 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated float in = 6 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
    * @return A list containing the in.
    */
   @java.lang.Override
@@ -431,12 +429,12 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyFloat {
    *   // value must be in list [1.0, 2.0, 3.0]
-   *   float value = 1 [(buf.validate.field).float = { in: [1.0, 2.0, 3.0] }];
+   *   repeated float value = 1 (buf.validate.field).float = { in: [1.0, 2.0, 3.0] };
    * }
    * ```
    * </pre>
    *
-   * <code>repeated float in = 6 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated float in = 6 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
    * @return The count of in.
    */
   public int getInCount() {
@@ -451,18 +449,19 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyFloat {
    *   // value must be in list [1.0, 2.0, 3.0]
-   *   float value = 1 [(buf.validate.field).float = { in: [1.0, 2.0, 3.0] }];
+   *   repeated float value = 1 (buf.validate.field).float = { in: [1.0, 2.0, 3.0] };
    * }
    * ```
    * </pre>
    *
-   * <code>repeated float in = 6 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated float in = 6 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The in at the given index.
    */
   public float getIn(int index) {
     return in_.getFloat(index);
   }
+  private int inMemoizedSerializedSize = -1;
 
   public static final int NOT_IN_FIELD_NUMBER = 7;
   @SuppressWarnings("serial")
@@ -477,12 +476,12 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyFloat {
    *   // value must not be in list [1.0, 2.0, 3.0]
-   *   float value = 1 [(buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] }];
+   *   repeated float value = 1 (buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] };
    * }
    * ```
    * </pre>
    *
-   * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
    * @return A list containing the notIn.
    */
   @java.lang.Override
@@ -499,12 +498,12 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyFloat {
    *   // value must not be in list [1.0, 2.0, 3.0]
-   *   float value = 1 [(buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] }];
+   *   repeated float value = 1 (buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] };
    * }
    * ```
    * </pre>
    *
-   * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
    * @return The count of notIn.
    */
   public int getNotInCount() {
@@ -519,18 +518,19 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyFloat {
    *   // value must not be in list [1.0, 2.0, 3.0]
-   *   float value = 1 [(buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] }];
+   *   repeated float value = 1 (buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] };
    * }
    * ```
    * </pre>
    *
-   * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+   * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The notIn at the given index.
    */
   public float getNotIn(int index) {
     return notIn_.getFloat(index);
   }
+  private int notInMemoizedSerializedSize = -1;
 
   public static final int FINITE_FIELD_NUMBER = 8;
   private boolean finite_ = false;
@@ -540,99 +540,12 @@ private static final long serialVersionUID = 0L;
    * infinite or NaN, an error message is generated.
    * </pre>
    *
-   * <code>optional bool finite = 8 [json_name = "finite", (.buf.validate.predefined) = { ... }</code>
-   * @return Whether the finite field is set.
-   */
-  @java.lang.Override
-  public boolean hasFinite() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   * `finite` requires the field value to be finite. If the field value is
-   * infinite or NaN, an error message is generated.
-   * </pre>
-   *
-   * <code>optional bool finite = 8 [json_name = "finite", (.buf.validate.predefined) = { ... }</code>
+   * <code>bool finite = 8 [json_name = "finite", (.buf.validate.priv.field) = { ... }</code>
    * @return The finite.
    */
   @java.lang.Override
   public boolean getFinite() {
     return finite_;
-  }
-
-  public static final int EXAMPLE_FIELD_NUMBER = 9;
-  @SuppressWarnings("serial")
-  private com.google.protobuf.Internal.FloatList example_ =
-      emptyFloatList();
-  /**
-   * <pre>
-   * `example` specifies values that the field may have. These values SHOULD
-   * conform to other constraints. `example` values will not impact validation
-   * but may be used as helpful guidance on how to populate the given field.
-   *
-   * ```proto
-   * message MyFloat {
-   *   float value = 1 [
-   *     (buf.validate.field).float.example = 1.0,
-   *     (buf.validate.field).float.example = "Infinity"
-   *   ];
-   * }
-   * ```
-   * </pre>
-   *
-   * <code>repeated float example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   * @return A list containing the example.
-   */
-  @java.lang.Override
-  public java.util.List<java.lang.Float>
-      getExampleList() {
-    return example_;
-  }
-  /**
-   * <pre>
-   * `example` specifies values that the field may have. These values SHOULD
-   * conform to other constraints. `example` values will not impact validation
-   * but may be used as helpful guidance on how to populate the given field.
-   *
-   * ```proto
-   * message MyFloat {
-   *   float value = 1 [
-   *     (buf.validate.field).float.example = 1.0,
-   *     (buf.validate.field).float.example = "Infinity"
-   *   ];
-   * }
-   * ```
-   * </pre>
-   *
-   * <code>repeated float example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   * @return The count of example.
-   */
-  public int getExampleCount() {
-    return example_.size();
-  }
-  /**
-   * <pre>
-   * `example` specifies values that the field may have. These values SHOULD
-   * conform to other constraints. `example` values will not impact validation
-   * but may be used as helpful guidance on how to populate the given field.
-   *
-   * ```proto
-   * message MyFloat {
-   *   float value = 1 [
-   *     (buf.validate.field).float.example = 1.0,
-   *     (buf.validate.field).float.example = "Infinity"
-   *   ];
-   * }
-   * ```
-   * </pre>
-   *
-   * <code>repeated float example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   * @param index The index of the element to return.
-   * @return The example at the given index.
-   */
-  public float getExample(int index) {
-    return example_.getFloat(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -642,10 +555,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (!extensionsAreInitialized()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -653,9 +562,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    com.google.protobuf.GeneratedMessageV3
-      .ExtendableMessage<com.scalekit.grpc.buf.validate.FloatRules>.ExtensionWriter
-        extensionWriter = newExtensionWriter();
+    getSerializedSize();
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeFloat(1, const_);
     }
@@ -675,19 +582,23 @@ private static final long serialVersionUID = 0L;
       output.writeFloat(
           5, (float)((java.lang.Float) greaterThan_));
     }
+    if (getInList().size() > 0) {
+      output.writeUInt32NoTag(50);
+      output.writeUInt32NoTag(inMemoizedSerializedSize);
+    }
     for (int i = 0; i < in_.size(); i++) {
-      output.writeFloat(6, in_.getFloat(i));
+      output.writeFloatNoTag(in_.getFloat(i));
+    }
+    if (getNotInList().size() > 0) {
+      output.writeUInt32NoTag(58);
+      output.writeUInt32NoTag(notInMemoizedSerializedSize);
     }
     for (int i = 0; i < notIn_.size(); i++) {
-      output.writeFloat(7, notIn_.getFloat(i));
+      output.writeFloatNoTag(notIn_.getFloat(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (finite_ != false) {
       output.writeBool(8, finite_);
     }
-    for (int i = 0; i < example_.size(); i++) {
-      output.writeFloat(9, example_.getFloat(i));
-    }
-    extensionWriter.writeUntil(536870912, output);
     getUnknownFields().writeTo(output);
   }
 
@@ -725,25 +636,28 @@ private static final long serialVersionUID = 0L;
       int dataSize = 0;
       dataSize = 4 * getInList().size();
       size += dataSize;
-      size += 1 * getInList().size();
+      if (!getInList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      inMemoizedSerializedSize = dataSize;
     }
     {
       int dataSize = 0;
       dataSize = 4 * getNotInList().size();
       size += dataSize;
-      size += 1 * getNotInList().size();
+      if (!getNotInList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      notInMemoizedSerializedSize = dataSize;
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (finite_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(8, finite_);
     }
-    {
-      int dataSize = 0;
-      dataSize = 4 * getExampleList().size();
-      size += dataSize;
-      size += 1 * getExampleList().size();
-    }
-    size += extensionsSerializedSize();
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -769,13 +683,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getInList())) return false;
     if (!getNotInList()
         .equals(other.getNotInList())) return false;
-    if (hasFinite() != other.hasFinite()) return false;
-    if (hasFinite()) {
-      if (getFinite()
-          != other.getFinite()) return false;
-    }
-    if (!getExampleList()
-        .equals(other.getExampleList())) return false;
+    if (getFinite()
+        != other.getFinite()) return false;
     if (!getLessThanCase().equals(other.getLessThanCase())) return false;
     switch (lessThanCase_) {
       case 2:
@@ -807,8 +716,6 @@ private static final long serialVersionUID = 0L;
       default:
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-    if (!getExtensionFields().equals(other.getExtensionFields()))
-      return false;
     return true;
   }
 
@@ -832,15 +739,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + NOT_IN_FIELD_NUMBER;
       hash = (53 * hash) + getNotInList().hashCode();
     }
-    if (hasFinite()) {
-      hash = (37 * hash) + FINITE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getFinite());
-    }
-    if (getExampleCount() > 0) {
-      hash = (37 * hash) + EXAMPLE_FIELD_NUMBER;
-      hash = (53 * hash) + getExampleList().hashCode();
-    }
+    hash = (37 * hash) + FINITE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getFinite());
     switch (lessThanCase_) {
       case 2:
         hash = (37 * hash) + LT_FIELD_NUMBER;
@@ -869,7 +770,6 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
-    hash = hashFields(hash, getExtensionFields());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -976,8 +876,7 @@ private static final long serialVersionUID = 0L;
    * Protobuf type {@code buf.validate.FloatRules}
    */
   public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<
-        com.scalekit.grpc.buf.validate.FloatRules, Builder> implements
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:buf.validate.FloatRules)
       com.scalekit.grpc.buf.validate.FloatRulesOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -1011,7 +910,6 @@ private static final long serialVersionUID = 0L;
       in_ = emptyFloatList();
       notIn_ = emptyFloatList();
       finite_ = false;
-      example_ = emptyFloatList();
       lessThanCase_ = 0;
       lessThan_ = null;
       greaterThanCase_ = 0;
@@ -1065,11 +963,6 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.finite_ = finite_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        example_.makeImmutable();
-        result.example_ = example_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1114,33 +1007,6 @@ private static final long serialVersionUID = 0L;
       return super.addRepeatedField(field, value);
     }
     @java.lang.Override
-    public <Type> Builder setExtension(
-        com.google.protobuf.GeneratedMessage.GeneratedExtension<
-            com.scalekit.grpc.buf.validate.FloatRules, Type> extension,
-        Type value) {
-      return super.setExtension(extension, value);
-    }
-    @java.lang.Override
-    public <Type> Builder setExtension(
-        com.google.protobuf.GeneratedMessage.GeneratedExtension<
-            com.scalekit.grpc.buf.validate.FloatRules, java.util.List<Type>> extension,
-        int index, Type value) {
-      return super.setExtension(extension, index, value);
-    }
-    @java.lang.Override
-    public <Type> Builder addExtension(
-        com.google.protobuf.GeneratedMessage.GeneratedExtension<
-            com.scalekit.grpc.buf.validate.FloatRules, java.util.List<Type>> extension,
-        Type value) {
-      return super.addExtension(extension, value);
-    }
-    @java.lang.Override
-    public <T> Builder clearExtension(
-        com.google.protobuf.GeneratedMessage.GeneratedExtension<
-            com.scalekit.grpc.buf.validate.FloatRules, T> extension) {
-      return super.clearExtension(extension);
-    }
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.scalekit.grpc.buf.validate.FloatRules) {
         return mergeFrom((com.scalekit.grpc.buf.validate.FloatRules)other);
@@ -1177,19 +1043,8 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
-      if (other.hasFinite()) {
+      if (other.getFinite() != false) {
         setFinite(other.getFinite());
-      }
-      if (!other.example_.isEmpty()) {
-        if (example_.isEmpty()) {
-          example_ = other.example_;
-          example_.makeImmutable();
-          bitField0_ |= 0x00000100;
-        } else {
-          ensureExampleIsMutable();
-          example_.addAll(other.example_);
-        }
-        onChanged();
       }
       switch (other.getLessThanCase()) {
         case LT: {
@@ -1217,7 +1072,6 @@ private static final long serialVersionUID = 0L;
           break;
         }
       }
-      this.mergeExtensionFields(other);
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1225,9 +1079,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      if (!extensionsAreInitialized()) {
-        return false;
-      }
       return true;
     }
 
@@ -1311,23 +1162,6 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000080;
               break;
             } // case 64
-            case 77: {
-              float v = input.readFloat();
-              ensureExampleIsMutable();
-              example_.addFloat(v);
-              break;
-            } // case 77
-            case 74: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              int alloc = length > 4096 ? 4096 : length;
-              ensureExampleIsMutable(alloc / 4);
-              while (input.getBytesUntilLimit() > 0) {
-                example_.addFloat(input.readFloat());
-              }
-              input.popLimit(limit);
-              break;
-            } // case 74
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1389,7 +1223,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional float const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional float const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the const field is set.
      */
     @java.lang.Override
@@ -1409,7 +1243,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional float const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional float const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      * @return The const.
      */
     @java.lang.Override
@@ -1429,7 +1263,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional float const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional float const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      * @param value The const to set.
      * @return This builder for chaining.
      */
@@ -1453,7 +1287,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional float const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional float const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearConst() {
@@ -1477,7 +1311,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>float lt = 2 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>float lt = 2 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the lt field is set.
      */
     public boolean hasLt() {
@@ -1497,7 +1331,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>float lt = 2 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>float lt = 2 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      * @return The lt.
      */
     public float getLt() {
@@ -1520,7 +1354,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>float lt = 2 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>float lt = 2 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      * @param value The lt to set.
      * @return This builder for chaining.
      */
@@ -1545,7 +1379,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>float lt = 2 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>float lt = 2 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearLt() {
@@ -1571,7 +1405,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>float lte = 3 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>float lte = 3 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the lte field is set.
      */
     public boolean hasLte() {
@@ -1591,7 +1425,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>float lte = 3 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>float lte = 3 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      * @return The lte.
      */
     public float getLte() {
@@ -1614,7 +1448,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>float lte = 3 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>float lte = 3 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      * @param value The lte to set.
      * @return This builder for chaining.
      */
@@ -1639,7 +1473,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>float lte = 3 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>float lte = 3 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearLte() {
@@ -1673,7 +1507,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>float gt = 4 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>float gt = 4 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the gt field is set.
      */
     public boolean hasGt() {
@@ -1701,7 +1535,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>float gt = 4 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>float gt = 4 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      * @return The gt.
      */
     public float getGt() {
@@ -1732,7 +1566,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>float gt = 4 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>float gt = 4 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      * @param value The gt to set.
      * @return This builder for chaining.
      */
@@ -1765,7 +1599,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>float gt = 4 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>float gt = 4 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearGt() {
@@ -1799,7 +1633,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>float gte = 5 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>float gte = 5 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the gte field is set.
      */
     public boolean hasGte() {
@@ -1827,7 +1661,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>float gte = 5 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>float gte = 5 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      * @return The gte.
      */
     public float getGte() {
@@ -1858,7 +1692,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>float gte = 5 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>float gte = 5 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      * @param value The gte to set.
      * @return This builder for chaining.
      */
@@ -1891,7 +1725,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>float gte = 5 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>float gte = 5 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearGte() {
@@ -1925,12 +1759,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFloat {
      *   // value must be in list [1.0, 2.0, 3.0]
-     *   float value = 1 [(buf.validate.field).float = { in: [1.0, 2.0, 3.0] }];
+     *   repeated float value = 1 (buf.validate.field).float = { in: [1.0, 2.0, 3.0] };
      * }
      * ```
      * </pre>
      *
-     * <code>repeated float in = 6 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated float in = 6 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      * @return A list containing the in.
      */
     public java.util.List<java.lang.Float>
@@ -1947,12 +1781,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFloat {
      *   // value must be in list [1.0, 2.0, 3.0]
-     *   float value = 1 [(buf.validate.field).float = { in: [1.0, 2.0, 3.0] }];
+     *   repeated float value = 1 (buf.validate.field).float = { in: [1.0, 2.0, 3.0] };
      * }
      * ```
      * </pre>
      *
-     * <code>repeated float in = 6 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated float in = 6 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      * @return The count of in.
      */
     public int getInCount() {
@@ -1967,12 +1801,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFloat {
      *   // value must be in list [1.0, 2.0, 3.0]
-     *   float value = 1 [(buf.validate.field).float = { in: [1.0, 2.0, 3.0] }];
+     *   repeated float value = 1 (buf.validate.field).float = { in: [1.0, 2.0, 3.0] };
      * }
      * ```
      * </pre>
      *
-     * <code>repeated float in = 6 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated float in = 6 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The in at the given index.
      */
@@ -1988,12 +1822,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFloat {
      *   // value must be in list [1.0, 2.0, 3.0]
-     *   float value = 1 [(buf.validate.field).float = { in: [1.0, 2.0, 3.0] }];
+     *   repeated float value = 1 (buf.validate.field).float = { in: [1.0, 2.0, 3.0] };
      * }
      * ```
      * </pre>
      *
-     * <code>repeated float in = 6 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated float in = 6 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      * @param index The index to set the value at.
      * @param value The in to set.
      * @return This builder for chaining.
@@ -2016,12 +1850,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFloat {
      *   // value must be in list [1.0, 2.0, 3.0]
-     *   float value = 1 [(buf.validate.field).float = { in: [1.0, 2.0, 3.0] }];
+     *   repeated float value = 1 (buf.validate.field).float = { in: [1.0, 2.0, 3.0] };
      * }
      * ```
      * </pre>
      *
-     * <code>repeated float in = 6 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated float in = 6 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      * @param value The in to add.
      * @return This builder for chaining.
      */
@@ -2042,12 +1876,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFloat {
      *   // value must be in list [1.0, 2.0, 3.0]
-     *   float value = 1 [(buf.validate.field).float = { in: [1.0, 2.0, 3.0] }];
+     *   repeated float value = 1 (buf.validate.field).float = { in: [1.0, 2.0, 3.0] };
      * }
      * ```
      * </pre>
      *
-     * <code>repeated float in = 6 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated float in = 6 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      * @param values The in to add.
      * @return This builder for chaining.
      */
@@ -2069,12 +1903,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFloat {
      *   // value must be in list [1.0, 2.0, 3.0]
-     *   float value = 1 [(buf.validate.field).float = { in: [1.0, 2.0, 3.0] }];
+     *   repeated float value = 1 (buf.validate.field).float = { in: [1.0, 2.0, 3.0] };
      * }
      * ```
      * </pre>
      *
-     * <code>repeated float in = 6 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated float in = 6 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearIn() {
@@ -2106,12 +1940,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFloat {
      *   // value must not be in list [1.0, 2.0, 3.0]
-     *   float value = 1 [(buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] }];
+     *   repeated float value = 1 (buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] };
      * }
      * ```
      * </pre>
      *
-     * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      * @return A list containing the notIn.
      */
     public java.util.List<java.lang.Float>
@@ -2128,12 +1962,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFloat {
      *   // value must not be in list [1.0, 2.0, 3.0]
-     *   float value = 1 [(buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] }];
+     *   repeated float value = 1 (buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] };
      * }
      * ```
      * </pre>
      *
-     * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      * @return The count of notIn.
      */
     public int getNotInCount() {
@@ -2148,12 +1982,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFloat {
      *   // value must not be in list [1.0, 2.0, 3.0]
-     *   float value = 1 [(buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] }];
+     *   repeated float value = 1 (buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] };
      * }
      * ```
      * </pre>
      *
-     * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The notIn at the given index.
      */
@@ -2169,12 +2003,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFloat {
      *   // value must not be in list [1.0, 2.0, 3.0]
-     *   float value = 1 [(buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] }];
+     *   repeated float value = 1 (buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] };
      * }
      * ```
      * </pre>
      *
-     * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      * @param index The index to set the value at.
      * @param value The notIn to set.
      * @return This builder for chaining.
@@ -2197,12 +2031,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFloat {
      *   // value must not be in list [1.0, 2.0, 3.0]
-     *   float value = 1 [(buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] }];
+     *   repeated float value = 1 (buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] };
      * }
      * ```
      * </pre>
      *
-     * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      * @param value The notIn to add.
      * @return This builder for chaining.
      */
@@ -2223,12 +2057,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFloat {
      *   // value must not be in list [1.0, 2.0, 3.0]
-     *   float value = 1 [(buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] }];
+     *   repeated float value = 1 (buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] };
      * }
      * ```
      * </pre>
      *
-     * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      * @param values The notIn to add.
      * @return This builder for chaining.
      */
@@ -2250,12 +2084,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyFloat {
      *   // value must not be in list [1.0, 2.0, 3.0]
-     *   float value = 1 [(buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] }];
+     *   repeated float value = 1 (buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] };
      * }
      * ```
      * </pre>
      *
-     * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
+     * <code>repeated float not_in = 7 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearNotIn() {
@@ -2272,20 +2106,7 @@ private static final long serialVersionUID = 0L;
      * infinite or NaN, an error message is generated.
      * </pre>
      *
-     * <code>optional bool finite = 8 [json_name = "finite", (.buf.validate.predefined) = { ... }</code>
-     * @return Whether the finite field is set.
-     */
-    @java.lang.Override
-    public boolean hasFinite() {
-      return ((bitField0_ & 0x00000080) != 0);
-    }
-    /**
-     * <pre>
-     * `finite` requires the field value to be finite. If the field value is
-     * infinite or NaN, an error message is generated.
-     * </pre>
-     *
-     * <code>optional bool finite = 8 [json_name = "finite", (.buf.validate.predefined) = { ... }</code>
+     * <code>bool finite = 8 [json_name = "finite", (.buf.validate.priv.field) = { ... }</code>
      * @return The finite.
      */
     @java.lang.Override
@@ -2298,7 +2119,7 @@ private static final long serialVersionUID = 0L;
      * infinite or NaN, an error message is generated.
      * </pre>
      *
-     * <code>optional bool finite = 8 [json_name = "finite", (.buf.validate.predefined) = { ... }</code>
+     * <code>bool finite = 8 [json_name = "finite", (.buf.validate.priv.field) = { ... }</code>
      * @param value The finite to set.
      * @return This builder for chaining.
      */
@@ -2315,207 +2136,12 @@ private static final long serialVersionUID = 0L;
      * infinite or NaN, an error message is generated.
      * </pre>
      *
-     * <code>optional bool finite = 8 [json_name = "finite", (.buf.validate.predefined) = { ... }</code>
+     * <code>bool finite = 8 [json_name = "finite", (.buf.validate.priv.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearFinite() {
       bitField0_ = (bitField0_ & ~0x00000080);
       finite_ = false;
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.Internal.FloatList example_ = emptyFloatList();
-    private void ensureExampleIsMutable() {
-      if (!example_.isModifiable()) {
-        example_ = makeMutableCopy(example_);
-      }
-      bitField0_ |= 0x00000100;
-    }
-    private void ensureExampleIsMutable(int capacity) {
-      if (!example_.isModifiable()) {
-        example_ = makeMutableCopy(example_, capacity);
-      }
-      bitField0_ |= 0x00000100;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyFloat {
-     *   float value = 1 [
-     *     (buf.validate.field).float.example = 1.0,
-     *     (buf.validate.field).float.example = "Infinity"
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated float example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     * @return A list containing the example.
-     */
-    public java.util.List<java.lang.Float>
-        getExampleList() {
-      example_.makeImmutable();
-      return example_;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyFloat {
-     *   float value = 1 [
-     *     (buf.validate.field).float.example = 1.0,
-     *     (buf.validate.field).float.example = "Infinity"
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated float example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     * @return The count of example.
-     */
-    public int getExampleCount() {
-      return example_.size();
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyFloat {
-     *   float value = 1 [
-     *     (buf.validate.field).float.example = 1.0,
-     *     (buf.validate.field).float.example = "Infinity"
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated float example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     * @param index The index of the element to return.
-     * @return The example at the given index.
-     */
-    public float getExample(int index) {
-      return example_.getFloat(index);
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyFloat {
-     *   float value = 1 [
-     *     (buf.validate.field).float.example = 1.0,
-     *     (buf.validate.field).float.example = "Infinity"
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated float example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     * @param index The index to set the value at.
-     * @param value The example to set.
-     * @return This builder for chaining.
-     */
-    public Builder setExample(
-        int index, float value) {
-
-      ensureExampleIsMutable();
-      example_.setFloat(index, value);
-      bitField0_ |= 0x00000100;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyFloat {
-     *   float value = 1 [
-     *     (buf.validate.field).float.example = 1.0,
-     *     (buf.validate.field).float.example = "Infinity"
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated float example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     * @param value The example to add.
-     * @return This builder for chaining.
-     */
-    public Builder addExample(float value) {
-
-      ensureExampleIsMutable();
-      example_.addFloat(value);
-      bitField0_ |= 0x00000100;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyFloat {
-     *   float value = 1 [
-     *     (buf.validate.field).float.example = 1.0,
-     *     (buf.validate.field).float.example = "Infinity"
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated float example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     * @param values The example to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllExample(
-        java.lang.Iterable<? extends java.lang.Float> values) {
-      ensureExampleIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, example_);
-      bitField0_ |= 0x00000100;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * `example` specifies values that the field may have. These values SHOULD
-     * conform to other constraints. `example` values will not impact validation
-     * but may be used as helpful guidance on how to populate the given field.
-     *
-     * ```proto
-     * message MyFloat {
-     *   float value = 1 [
-     *     (buf.validate.field).float.example = 1.0,
-     *     (buf.validate.field).float.example = "Infinity"
-     *   ];
-     * }
-     * ```
-     * </pre>
-     *
-     * <code>repeated float example = 9 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearExample() {
-      example_ = emptyFloatList();
-      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2545,7 +2171,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<FloatRules>
+  private static final com.google.protobuf.Parser<FloatRules>
       PARSER = new com.google.protobuf.AbstractParser<FloatRules>() {
     @java.lang.Override
     public FloatRules parsePartialFrom(

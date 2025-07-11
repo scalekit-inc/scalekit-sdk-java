@@ -9,24 +9,24 @@ public interface CreateOrganizationSessionSettingsRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The id.
    */
   java.lang.String getId();
   /**
-   * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
 
   /**
-   * <code>string environment_id = 2 [json_name = "environmentId", (.buf.validate.field) = { ... }</code>
+   * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The environmentId.
    */
   java.lang.String getEnvironmentId();
   /**
-   * <code>string environment_id = 2 [json_name = "environmentId", (.buf.validate.field) = { ... }</code>
+   * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for environmentId.
    */
   com.google.protobuf.ByteString

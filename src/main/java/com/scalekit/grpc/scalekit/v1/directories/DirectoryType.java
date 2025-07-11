@@ -21,6 +21,10 @@ public enum DirectoryType
    * <code>LDAP = 2;</code>
    */
   LDAP(2),
+  /**
+   * <code>POLL = 3;</code>
+   */
+  POLL(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -36,6 +40,10 @@ public enum DirectoryType
    * <code>LDAP = 2;</code>
    */
   public static final int LDAP_VALUE = 2;
+  /**
+   * <code>POLL = 3;</code>
+   */
+  public static final int POLL_VALUE = 3;
 
 
   public final int getNumber() {
@@ -65,6 +73,7 @@ public enum DirectoryType
       case 0: return DIRECTORY_TYPE_UNSPECIFIED;
       case 1: return SCIM;
       case 2: return LDAP;
+      case 3: return POLL;
       default: return null;
     }
   }

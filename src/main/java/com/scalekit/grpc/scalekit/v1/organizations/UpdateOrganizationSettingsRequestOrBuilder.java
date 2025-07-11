@@ -21,17 +21,17 @@ public interface UpdateOrganizationSettingsRequestOrBuilder extends
       getIdBytes();
 
   /**
-   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the settings field is set.
    */
   boolean hasSettings();
   /**
-   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The settings.
    */
   com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings getSettings();
   /**
-   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettingsOrBuilder getSettingsOrBuilder();
 }

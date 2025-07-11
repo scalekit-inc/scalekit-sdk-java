@@ -25,4 +25,21 @@ public interface ListOrganizationsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();
+
+  /**
+   * <code>optional string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the externalId field is set.
+   */
+  boolean hasExternalId();
+  /**
+   * <code>optional string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The externalId.
+   */
+  java.lang.String getExternalId();
+  /**
+   * <code>optional string external_id = 3 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for externalId.
+   */
+  com.google.protobuf.ByteString
+      getExternalIdBytes();
 }

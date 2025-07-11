@@ -5,19 +5,35 @@
 package com.scalekit.grpc.scalekit.v1.organizations;
 
 /**
+ * <pre>
+ * Feature represents the available features that can be enabled for an organization's portal link
+ * </pre>
+ *
  * Protobuf enum {@code scalekit.v1.organizations.Feature}
  */
 public enum Feature
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   * <pre>
+   * UNSPECIFIED represents an unset or invalid feature value
+   * </pre>
+   *
    * <code>UNSPECIFIED = 0;</code>
    */
   UNSPECIFIED(0),
   /**
+   * <pre>
+   * dir_sync enables directory synchronization configuration in the portal
+   * </pre>
+   *
    * <code>dir_sync = 1;</code>
    */
   dir_sync(1),
   /**
+   * <pre>
+   * sso enables Single Sign-On (SSO) configuration in the portal
+   * </pre>
+   *
    * <code>sso = 2;</code>
    */
   sso(2),
@@ -25,14 +41,26 @@ public enum Feature
   ;
 
   /**
+   * <pre>
+   * UNSPECIFIED represents an unset or invalid feature value
+   * </pre>
+   *
    * <code>UNSPECIFIED = 0;</code>
    */
   public static final int UNSPECIFIED_VALUE = 0;
   /**
+   * <pre>
+   * dir_sync enables directory synchronization configuration in the portal
+   * </pre>
+   *
    * <code>dir_sync = 1;</code>
    */
   public static final int dir_sync_VALUE = 1;
   /**
+   * <pre>
+   * sso enables Single Sign-On (SSO) configuration in the portal
+   * </pre>
+   *
    * <code>sso = 2;</code>
    */
   public static final int sso_VALUE = 2;

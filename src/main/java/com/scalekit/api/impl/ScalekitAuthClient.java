@@ -31,6 +31,7 @@ import java.net.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.Map;
 
 import static com.scalekit.internal.Constants.*;
 
@@ -125,6 +126,9 @@ public class ScalekitAuthClient implements AuthClient {
             if (options.getProvider() != null && !options.getProvider().isEmpty()) {
                 qs.add("provider=" + URLEncoder.encode(options.getProvider(), StandardCharsets.UTF_8.name()));
             }
+            if (options.getPrompt() != null && !options.getPrompt().isEmpty()) {
+                qs.add("prompt=" + URLEncoder.encode(options.getPrompt(), StandardCharsets.UTF_8.name()));
+            }
 
             String urlString = String.format("%s/%s?%s", Environment.defaultConfig().siteName , AUTHORIZATION_ENDPOINT, qs);
 
@@ -146,6 +150,47 @@ public class ScalekitAuthClient implements AuthClient {
 
             JsonWebKeySet jsonWebKeySet = new JsonWebKeySet(keysJson);
 
+            JsonWebSignature jws = new JsonWebSignature();
+            jws.setCompactSerialization(jwt);
+
+            VerificationJwkSelector jwkSelector = new VerificationJwkSelector();
+            JsonWebKey jwk = jwkSelector.select(jws, jsonWebKeySet.getJsonWebKeys());
+            jws.setKey(jwk.getKey());
+
+            //  verify the signature
+            boolean isSignatureValid = jws.verifySignature();
+            if (!isSignatureValid) {
+                return false;
+            }
+
+            //  verify the expiry
+            JwtConsumer jwtConsumer = new JwtConsumerBuilder()
+                .setRequireExpirationTime()
+                .setAllowedClockSkewInSeconds(30)
+                .setSkipSignatureVerification() // Already verified above
+                .setSkipDefaultAudienceValidation()
+                .build();
+
+            // This will throw an exception if the token is expired
+            jwtConsumer.processToClaims(jwt);
+
+            return true;
+        } catch (Exception e) {
+            throw new APIException("Failed to validate token: " + e.getMessage());
+        }
+    }
+
+    /**
+     * validateAccessTokenAndGetClaims validates an access token and returns the decoded claims
+     * @param jwt: The JWT token
+     * @return Map<String, Object>: The decoded claims from the token
+     */
+    public Map<String, Object> validateAccessTokenAndGetClaims(String jwt) throws APIException {
+        try {
+            // TODO Optimization - Cache the keys
+            String keysJson = fetchJsonWebKeys();
+
+            JsonWebKeySet jsonWebKeySet = new JsonWebKeySet(keysJson);
 
             JsonWebSignature jws = new JsonWebSignature();
             jws.setCompactSerialization(jwt);
@@ -154,11 +199,27 @@ public class ScalekitAuthClient implements AuthClient {
             JsonWebKey jwk = jwkSelector.select(jws, jsonWebKeySet.getJsonWebKeys());
             jws.setKey(jwk.getKey());
 
+            //  verify the signature
+            boolean isSignatureValid = jws.verifySignature();
+            if (!isSignatureValid) {
+                throw new APIException("Invalid token signature");
+            }
 
-            // Verify the signature
-            return jws.verifySignature();
+            //  verify the expiry and get claims
+            JwtConsumer jwtConsumer = new JwtConsumerBuilder()
+                .setRequireExpirationTime()
+                .setAllowedClockSkewInSeconds(30)
+                .setSkipSignatureVerification() // Already verified above
+                .setSkipDefaultAudienceValidation()
+                .build();
+
+            // This will throw an exception if the token is expired
+            JwtClaims jwtClaims = jwtConsumer.processToClaims(jwt);
+
+            // Convert JWT claims to Map
+            return objectMapper.readValue(jwtClaims.toJson(), new com.fasterxml.jackson.core.type.TypeReference<Map<String, Object>>() {});
         } catch (Exception e) {
-            throw new APIException("Failed to validate token: " + e.getMessage());
+            throw new APIException("Failed to validate token and get claims: " + e.getMessage());
         }
     }
 
@@ -276,6 +337,59 @@ public class ScalekitAuthClient implements AuthClient {
                     IdpInitiatedLoginClaims.class);
         } catch (IOException | InvalidJwtException e) {
             throw new APIException("Failed to verify and consume idpInitiatedLoginToken, error: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Refreshes an access token using a refresh token
+     * @param refreshToken The refresh token to use
+     * @return AuthenticationResponse containing the new access token and refresh token
+     * @throws APIException if the refresh token is invalid or expired
+     */
+    @Override
+    public AuthenticationResponse refreshToken(String refreshToken) throws APIException {
+        if (refreshToken == null || refreshToken.isEmpty()) {
+            throw new APIException("refresh token is required");
+        }
+
+        Map<String, String> params = new HashMap<>();
+        params.put("refresh_token", refreshToken);
+        params.put("grant_type", "refresh_token");
+        params.put("client_id", Environment.defaultConfig().clientId);
+        params.put("client_secret", Environment.defaultConfig().clientSecret);
+
+        try {
+            return authenticate(params);
+        } catch (IOException | InterruptedException | URISyntaxException e) {
+            throw new APIException("Failed to refresh token: " + e.getMessage());
+        }
+    }
+
+    /**
+     * getLogoutUrl generates a logout URL
+     * @param options: The LogoutUrlOptions
+     * @return URL: The logout URL
+     */
+    public URL getLogoutUrl(LogoutUrlOptions options) {
+        StringJoiner qs = new StringJoiner("&");
+
+        try {
+            if (options.getIdTokenHint() != null && !options.getIdTokenHint().isEmpty()) {
+                qs.add("id_token_hint=" + URLEncoder.encode(options.getIdTokenHint(), StandardCharsets.UTF_8.name()));
+            }
+
+            if (options.getPostLogoutRedirectUri() != null && !options.getPostLogoutRedirectUri().isEmpty()) {
+                qs.add("post_logout_redirect_uri=" + URLEncoder.encode(options.getPostLogoutRedirectUri(), StandardCharsets.UTF_8.name()));
+            }
+
+            if (options.getState() != null && !options.getState().isEmpty()) {
+                qs.add("state=" + URLEncoder.encode(options.getState(), StandardCharsets.UTF_8.name()));
+            }
+
+            String urlString = String.format("%s/%s?%s", Environment.defaultConfig().siteName, LOGOUT_ENDPOINT, qs);
+            return new URL(urlString);
+        } catch (MalformedURLException | UnsupportedEncodingException e) {
+            throw new APIException("Invalid URL: " + e.getMessage());
         }
     }
 }

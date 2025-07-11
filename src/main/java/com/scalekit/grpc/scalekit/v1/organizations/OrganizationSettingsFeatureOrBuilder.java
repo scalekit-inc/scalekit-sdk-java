@@ -9,19 +9,19 @@ public interface OrganizationSettingsFeatureOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string name = 1 [json_name = "name"];</code>
+   * <code>string name = 1 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
-   * <code>string name = 1 [json_name = "name"];</code>
+   * <code>string name = 1 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
-   * <code>bool enabled = 2 [json_name = "enabled"];</code>
+   * <code>bool enabled = 2 [json_name = "enabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enabled.
    */
   boolean getEnabled();

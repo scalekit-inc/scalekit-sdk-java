@@ -9,41 +9,41 @@ public interface CreateOrganizationSessionSettingsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string environment_id = 1 [json_name = "environmentId"];</code>
+   * <code>string environment_id = 1 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The environmentId.
    */
   java.lang.String getEnvironmentId();
   /**
-   * <code>string environment_id = 1 [json_name = "environmentId"];</code>
+   * <code>string environment_id = 1 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for environmentId.
    */
   com.google.protobuf.ByteString
       getEnvironmentIdBytes();
 
   /**
-   * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 2 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The organizationId.
    */
   java.lang.String getOrganizationId();
   /**
-   * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 2 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for organizationId.
    */
   com.google.protobuf.ByteString
       getOrganizationIdBytes();
 
   /**
-   * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings"];</code>
+   * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the sessionSettings field is set.
    */
   boolean hasSessionSettings();
   /**
-   * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings"];</code>
+   * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The sessionSettings.
    */
   com.scalekit.grpc.scalekit.v1.organizations.OrganizationSessionSettings getSessionSettings();
   /**
-   * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings"];</code>
+   * <code>.scalekit.v1.organizations.OrganizationSessionSettings session_settings = 3 [json_name = "sessionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.organizations.OrganizationSessionSettingsOrBuilder getSessionSettingsOrBuilder();
 }

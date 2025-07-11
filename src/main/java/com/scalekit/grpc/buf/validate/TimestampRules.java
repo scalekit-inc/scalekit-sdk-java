@@ -12,17 +12,15 @@ package com.scalekit.grpc.buf.validate;
  * Protobuf type {@code buf.validate.TimestampRules}
  */
 public final class TimestampRules extends
-    com.google.protobuf.GeneratedMessageV3.ExtendableMessage<
-      TimestampRules> implements
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:buf.validate.TimestampRules)
     TimestampRulesOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use TimestampRules.newBuilder() to construct.
-  private TimestampRules(com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<com.scalekit.grpc.buf.validate.TimestampRules, ?> builder) {
+  private TimestampRules(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
   private TimestampRules() {
-    example_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -148,7 +146,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the const field is set.
    */
   @java.lang.Override
@@ -167,7 +165,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
    * @return The const.
    */
   @java.lang.Override
@@ -186,7 +184,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getConstOrBuilder() {
@@ -206,7 +204,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the lt field is set.
    */
   @java.lang.Override
@@ -225,7 +223,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
    * @return The lt.
    */
   @java.lang.Override
@@ -247,7 +245,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLtOrBuilder() {
@@ -270,7 +268,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the lte field is set.
    */
   @java.lang.Override
@@ -289,7 +287,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
    * @return The lte.
    */
   @java.lang.Override
@@ -311,7 +309,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLteOrBuilder() {
@@ -334,7 +332,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>bool lt_now = 7 [json_name = "ltNow", (.buf.validate.predefined) = { ... }</code>
+   * <code>bool lt_now = 7 [json_name = "ltNow", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the ltNow field is set.
    */
   @java.lang.Override
@@ -353,7 +351,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>bool lt_now = 7 [json_name = "ltNow", (.buf.validate.predefined) = { ... }</code>
+   * <code>bool lt_now = 7 [json_name = "ltNow", (.buf.validate.priv.field) = { ... }</code>
    * @return The ltNow.
    */
   @java.lang.Override
@@ -387,7 +385,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the gt field is set.
    */
   @java.lang.Override
@@ -416,7 +414,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
    * @return The gt.
    */
   @java.lang.Override
@@ -448,7 +446,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getGtOrBuilder() {
@@ -481,7 +479,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the gte field is set.
    */
   @java.lang.Override
@@ -510,7 +508,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
    * @return The gte.
    */
   @java.lang.Override
@@ -542,7 +540,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+   * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getGteOrBuilder() {
@@ -565,7 +563,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>bool gt_now = 8 [json_name = "gtNow", (.buf.validate.predefined) = { ... }</code>
+   * <code>bool gt_now = 8 [json_name = "gtNow", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the gtNow field is set.
    */
   @java.lang.Override
@@ -584,7 +582,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>bool gt_now = 8 [json_name = "gtNow", (.buf.validate.predefined) = { ... }</code>
+   * <code>bool gt_now = 8 [json_name = "gtNow", (.buf.validate.priv.field) = { ... }</code>
    * @return The gtNow.
    */
   @java.lang.Override
@@ -609,7 +607,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.priv.field) = { ... }</code>
    * @return Whether the within field is set.
    */
   @java.lang.Override
@@ -628,7 +626,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.priv.field) = { ... }</code>
    * @return The within.
    */
   @java.lang.Override
@@ -647,52 +645,11 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.predefined) = { ... }</code>
+   * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.priv.field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getWithinOrBuilder() {
     return within_ == null ? com.google.protobuf.Duration.getDefaultInstance() : within_;
-  }
-
-  public static final int EXAMPLE_FIELD_NUMBER = 10;
-  @SuppressWarnings("serial")
-  private java.util.List<com.google.protobuf.Timestamp> example_;
-  /**
-   * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   */
-  @java.lang.Override
-  public java.util.List<com.google.protobuf.Timestamp> getExampleList() {
-    return example_;
-  }
-  /**
-   * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   */
-  @java.lang.Override
-  public java.util.List<? extends com.google.protobuf.TimestampOrBuilder> 
-      getExampleOrBuilderList() {
-    return example_;
-  }
-  /**
-   * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   */
-  @java.lang.Override
-  public int getExampleCount() {
-    return example_.size();
-  }
-  /**
-   * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.Timestamp getExample(int index) {
-    return example_.get(index);
-  }
-  /**
-   * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getExampleOrBuilder(
-      int index) {
-    return example_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -702,10 +659,6 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (!extensionsAreInitialized()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -713,9 +666,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    com.google.protobuf.GeneratedMessageV3
-      .ExtendableMessage<com.scalekit.grpc.buf.validate.TimestampRules>.ExtensionWriter
-        extensionWriter = newExtensionWriter();
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getConst());
     }
@@ -742,10 +692,6 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(9, getWithin());
     }
-    for (int i = 0; i < example_.size(); i++) {
-      output.writeMessage(10, example_.get(i));
-    }
-    extensionWriter.writeUntil(536870912, output);
     getUnknownFields().writeTo(output);
   }
 
@@ -789,11 +735,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getWithin());
     }
-    for (int i = 0; i < example_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, example_.get(i));
-    }
-    size += extensionsSerializedSize();
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -819,8 +760,6 @@ private static final long serialVersionUID = 0L;
       if (!getWithin()
           .equals(other.getWithin())) return false;
     }
-    if (!getExampleList()
-        .equals(other.getExampleList())) return false;
     if (!getLessThanCase().equals(other.getLessThanCase())) return false;
     switch (lessThanCase_) {
       case 3:
@@ -856,8 +795,6 @@ private static final long serialVersionUID = 0L;
       default:
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-    if (!getExtensionFields().equals(other.getExtensionFields()))
-      return false;
     return true;
   }
 
@@ -875,10 +812,6 @@ private static final long serialVersionUID = 0L;
     if (hasWithin()) {
       hash = (37 * hash) + WITHIN_FIELD_NUMBER;
       hash = (53 * hash) + getWithin().hashCode();
-    }
-    if (getExampleCount() > 0) {
-      hash = (37 * hash) + EXAMPLE_FIELD_NUMBER;
-      hash = (53 * hash) + getExampleList().hashCode();
     }
     switch (lessThanCase_) {
       case 3:
@@ -914,7 +847,6 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
-    hash = hashFields(hash, getExtensionFields());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1020,8 +952,7 @@ private static final long serialVersionUID = 0L;
    * Protobuf type {@code buf.validate.TimestampRules}
    */
   public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<
-        com.scalekit.grpc.buf.validate.TimestampRules, Builder> implements
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:buf.validate.TimestampRules)
       com.scalekit.grpc.buf.validate.TimestampRulesOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -1052,7 +983,6 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getConstFieldBuilder();
         getWithinFieldBuilder();
-        getExampleFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1081,13 +1011,6 @@ private static final long serialVersionUID = 0L;
         withinBuilder_.dispose();
         withinBuilder_ = null;
       }
-      if (exampleBuilder_ == null) {
-        example_ = java.util.Collections.emptyList();
-      } else {
-        example_ = null;
-        exampleBuilder_.clear();
-      }
-      bitField0_ = (bitField0_ & ~0x00000100);
       lessThanCase_ = 0;
       lessThan_ = null;
       greaterThanCase_ = 0;
@@ -1118,23 +1041,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.scalekit.grpc.buf.validate.TimestampRules buildPartial() {
       com.scalekit.grpc.buf.validate.TimestampRules result = new com.scalekit.grpc.buf.validate.TimestampRules(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       buildPartialOneofs(result);
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.scalekit.grpc.buf.validate.TimestampRules result) {
-      if (exampleBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
-          example_ = java.util.Collections.unmodifiableList(example_);
-          bitField0_ = (bitField0_ & ~0x00000100);
-        }
-        result.example_ = example_;
-      } else {
-        result.example_ = exampleBuilder_.build();
-      }
     }
 
     private void buildPartial0(com.scalekit.grpc.buf.validate.TimestampRules result) {
@@ -1211,33 +1121,6 @@ private static final long serialVersionUID = 0L;
       return super.addRepeatedField(field, value);
     }
     @java.lang.Override
-    public <Type> Builder setExtension(
-        com.google.protobuf.GeneratedMessage.GeneratedExtension<
-            com.scalekit.grpc.buf.validate.TimestampRules, Type> extension,
-        Type value) {
-      return super.setExtension(extension, value);
-    }
-    @java.lang.Override
-    public <Type> Builder setExtension(
-        com.google.protobuf.GeneratedMessage.GeneratedExtension<
-            com.scalekit.grpc.buf.validate.TimestampRules, java.util.List<Type>> extension,
-        int index, Type value) {
-      return super.setExtension(extension, index, value);
-    }
-    @java.lang.Override
-    public <Type> Builder addExtension(
-        com.google.protobuf.GeneratedMessage.GeneratedExtension<
-            com.scalekit.grpc.buf.validate.TimestampRules, java.util.List<Type>> extension,
-        Type value) {
-      return super.addExtension(extension, value);
-    }
-    @java.lang.Override
-    public <T> Builder clearExtension(
-        com.google.protobuf.GeneratedMessage.GeneratedExtension<
-            com.scalekit.grpc.buf.validate.TimestampRules, T> extension) {
-      return super.clearExtension(extension);
-    }
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.scalekit.grpc.buf.validate.TimestampRules) {
         return mergeFrom((com.scalekit.grpc.buf.validate.TimestampRules)other);
@@ -1254,32 +1137,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasWithin()) {
         mergeWithin(other.getWithin());
-      }
-      if (exampleBuilder_ == null) {
-        if (!other.example_.isEmpty()) {
-          if (example_.isEmpty()) {
-            example_ = other.example_;
-            bitField0_ = (bitField0_ & ~0x00000100);
-          } else {
-            ensureExampleIsMutable();
-            example_.addAll(other.example_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.example_.isEmpty()) {
-          if (exampleBuilder_.isEmpty()) {
-            exampleBuilder_.dispose();
-            exampleBuilder_ = null;
-            example_ = other.example_;
-            bitField0_ = (bitField0_ & ~0x00000100);
-            exampleBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getExampleFieldBuilder() : null;
-          } else {
-            exampleBuilder_.addAllMessages(other.example_);
-          }
-        }
       }
       switch (other.getLessThanCase()) {
         case LT: {
@@ -1315,7 +1172,6 @@ private static final long serialVersionUID = 0L;
           break;
         }
       }
-      this.mergeExtensionFields(other);
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1323,9 +1179,6 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
-      if (!extensionsAreInitialized()) {
-        return false;
-      }
       return true;
     }
 
@@ -1397,19 +1250,6 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000080;
               break;
             } // case 74
-            case 82: {
-              com.google.protobuf.Timestamp m =
-                  input.readMessage(
-                      com.google.protobuf.Timestamp.parser(),
-                      extensionRegistry);
-              if (exampleBuilder_ == null) {
-                ensureExampleIsMutable();
-                example_.add(m);
-              } else {
-                exampleBuilder_.addMessage(m);
-              }
-              break;
-            } // case 82
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1472,7 +1312,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the const field is set.
      */
     public boolean hasConst() {
@@ -1490,7 +1330,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      * @return The const.
      */
     public com.google.protobuf.Timestamp getConst() {
@@ -1512,7 +1352,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setConst(com.google.protobuf.Timestamp value) {
       if (constBuilder_ == null) {
@@ -1539,7 +1379,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setConst(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1564,7 +1404,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder mergeConst(com.google.protobuf.Timestamp value) {
       if (constBuilder_ == null) {
@@ -1596,7 +1436,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder clearConst() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -1620,7 +1460,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getConstBuilder() {
       bitField0_ |= 0x00000001;
@@ -1639,7 +1479,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getConstOrBuilder() {
       if (constBuilder_ != null) {
@@ -1661,7 +1501,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp const = 2 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1691,7 +1531,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the lt field is set.
      */
     @java.lang.Override
@@ -1710,7 +1550,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      * @return The lt.
      */
     @java.lang.Override
@@ -1739,7 +1579,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setLt(com.google.protobuf.Timestamp value) {
       if (ltBuilder_ == null) {
@@ -1766,7 +1606,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setLt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1791,7 +1631,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder mergeLt(com.google.protobuf.Timestamp value) {
       if (ltBuilder_ == null) {
@@ -1825,7 +1665,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder clearLt() {
       if (ltBuilder_ == null) {
@@ -1855,7 +1695,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getLtBuilder() {
       return getLtFieldBuilder().getBuilder();
@@ -1872,7 +1712,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getLtOrBuilder() {
@@ -1897,7 +1737,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lt = 3 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1932,7 +1772,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the lte field is set.
      */
     @java.lang.Override
@@ -1951,7 +1791,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      * @return The lte.
      */
     @java.lang.Override
@@ -1980,7 +1820,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setLte(com.google.protobuf.Timestamp value) {
       if (lteBuilder_ == null) {
@@ -2007,7 +1847,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setLte(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2032,7 +1872,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder mergeLte(com.google.protobuf.Timestamp value) {
       if (lteBuilder_ == null) {
@@ -2066,7 +1906,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder clearLte() {
       if (lteBuilder_ == null) {
@@ -2096,7 +1936,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getLteBuilder() {
       return getLteFieldBuilder().getBuilder();
@@ -2113,7 +1953,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getLteOrBuilder() {
@@ -2138,7 +1978,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp lte = 4 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2171,7 +2011,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>bool lt_now = 7 [json_name = "ltNow", (.buf.validate.predefined) = { ... }</code>
+     * <code>bool lt_now = 7 [json_name = "ltNow", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the ltNow field is set.
      */
     public boolean hasLtNow() {
@@ -2189,7 +2029,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>bool lt_now = 7 [json_name = "ltNow", (.buf.validate.predefined) = { ... }</code>
+     * <code>bool lt_now = 7 [json_name = "ltNow", (.buf.validate.priv.field) = { ... }</code>
      * @return The ltNow.
      */
     public boolean getLtNow() {
@@ -2210,7 +2050,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>bool lt_now = 7 [json_name = "ltNow", (.buf.validate.predefined) = { ... }</code>
+     * <code>bool lt_now = 7 [json_name = "ltNow", (.buf.validate.priv.field) = { ... }</code>
      * @param value The ltNow to set.
      * @return This builder for chaining.
      */
@@ -2233,7 +2073,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>bool lt_now = 7 [json_name = "ltNow", (.buf.validate.predefined) = { ... }</code>
+     * <code>bool lt_now = 7 [json_name = "ltNow", (.buf.validate.priv.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearLtNow() {
@@ -2269,7 +2109,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the gt field is set.
      */
     @java.lang.Override
@@ -2298,7 +2138,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      * @return The gt.
      */
     @java.lang.Override
@@ -2337,7 +2177,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setGt(com.google.protobuf.Timestamp value) {
       if (gtBuilder_ == null) {
@@ -2374,7 +2214,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setGt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2409,7 +2249,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder mergeGt(com.google.protobuf.Timestamp value) {
       if (gtBuilder_ == null) {
@@ -2453,7 +2293,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder clearGt() {
       if (gtBuilder_ == null) {
@@ -2493,7 +2333,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getGtBuilder() {
       return getGtFieldBuilder().getBuilder();
@@ -2520,7 +2360,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getGtOrBuilder() {
@@ -2555,7 +2395,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gt = 5 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2600,7 +2440,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the gte field is set.
      */
     @java.lang.Override
@@ -2629,7 +2469,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      * @return The gte.
      */
     @java.lang.Override
@@ -2668,7 +2508,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setGte(com.google.protobuf.Timestamp value) {
       if (gteBuilder_ == null) {
@@ -2705,7 +2545,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setGte(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2740,7 +2580,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder mergeGte(com.google.protobuf.Timestamp value) {
       if (gteBuilder_ == null) {
@@ -2784,7 +2624,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder clearGte() {
       if (gteBuilder_ == null) {
@@ -2824,7 +2664,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getGteBuilder() {
       return getGteFieldBuilder().getBuilder();
@@ -2851,7 +2691,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getGteOrBuilder() {
@@ -2886,7 +2726,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
+     * <code>.google.protobuf.Timestamp gte = 6 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2919,7 +2759,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>bool gt_now = 8 [json_name = "gtNow", (.buf.validate.predefined) = { ... }</code>
+     * <code>bool gt_now = 8 [json_name = "gtNow", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the gtNow field is set.
      */
     public boolean hasGtNow() {
@@ -2937,7 +2777,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>bool gt_now = 8 [json_name = "gtNow", (.buf.validate.predefined) = { ... }</code>
+     * <code>bool gt_now = 8 [json_name = "gtNow", (.buf.validate.priv.field) = { ... }</code>
      * @return The gtNow.
      */
     public boolean getGtNow() {
@@ -2958,7 +2798,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>bool gt_now = 8 [json_name = "gtNow", (.buf.validate.predefined) = { ... }</code>
+     * <code>bool gt_now = 8 [json_name = "gtNow", (.buf.validate.priv.field) = { ... }</code>
      * @param value The gtNow to set.
      * @return This builder for chaining.
      */
@@ -2981,7 +2821,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>bool gt_now = 8 [json_name = "gtNow", (.buf.validate.predefined) = { ... }</code>
+     * <code>bool gt_now = 8 [json_name = "gtNow", (.buf.validate.priv.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearGtNow() {
@@ -3008,7 +2848,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.priv.field) = { ... }</code>
      * @return Whether the within field is set.
      */
     public boolean hasWithin() {
@@ -3026,7 +2866,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.priv.field) = { ... }</code>
      * @return The within.
      */
     public com.google.protobuf.Duration getWithin() {
@@ -3048,7 +2888,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setWithin(com.google.protobuf.Duration value) {
       if (withinBuilder_ == null) {
@@ -3075,7 +2915,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder setWithin(
         com.google.protobuf.Duration.Builder builderForValue) {
@@ -3100,7 +2940,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder mergeWithin(com.google.protobuf.Duration value) {
       if (withinBuilder_ == null) {
@@ -3132,7 +2972,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.priv.field) = { ... }</code>
      */
     public Builder clearWithin() {
       bitField0_ = (bitField0_ & ~0x00000080);
@@ -3156,7 +2996,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.Duration.Builder getWithinBuilder() {
       bitField0_ |= 0x00000080;
@@ -3175,7 +3015,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.priv.field) = { ... }</code>
      */
     public com.google.protobuf.DurationOrBuilder getWithinOrBuilder() {
       if (withinBuilder_ != null) {
@@ -3197,7 +3037,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.predefined) = { ... }</code>
+     * <code>optional .google.protobuf.Duration within = 9 [json_name = "within", (.buf.validate.priv.field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
@@ -3211,246 +3051,6 @@ private static final long serialVersionUID = 0L;
         within_ = null;
       }
       return withinBuilder_;
-    }
-
-    private java.util.List<com.google.protobuf.Timestamp> example_ =
-      java.util.Collections.emptyList();
-    private void ensureExampleIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
-        example_ = new java.util.ArrayList<com.google.protobuf.Timestamp>(example_);
-        bitField0_ |= 0x00000100;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> exampleBuilder_;
-
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public java.util.List<com.google.protobuf.Timestamp> getExampleList() {
-      if (exampleBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(example_);
-      } else {
-        return exampleBuilder_.getMessageList();
-      }
-    }
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public int getExampleCount() {
-      if (exampleBuilder_ == null) {
-        return example_.size();
-      } else {
-        return exampleBuilder_.getCount();
-      }
-    }
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public com.google.protobuf.Timestamp getExample(int index) {
-      if (exampleBuilder_ == null) {
-        return example_.get(index);
-      } else {
-        return exampleBuilder_.getMessage(index);
-      }
-    }
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder setExample(
-        int index, com.google.protobuf.Timestamp value) {
-      if (exampleBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureExampleIsMutable();
-        example_.set(index, value);
-        onChanged();
-      } else {
-        exampleBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder setExample(
-        int index, com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (exampleBuilder_ == null) {
-        ensureExampleIsMutable();
-        example_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        exampleBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder addExample(com.google.protobuf.Timestamp value) {
-      if (exampleBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureExampleIsMutable();
-        example_.add(value);
-        onChanged();
-      } else {
-        exampleBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder addExample(
-        int index, com.google.protobuf.Timestamp value) {
-      if (exampleBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureExampleIsMutable();
-        example_.add(index, value);
-        onChanged();
-      } else {
-        exampleBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder addExample(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (exampleBuilder_ == null) {
-        ensureExampleIsMutable();
-        example_.add(builderForValue.build());
-        onChanged();
-      } else {
-        exampleBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder addExample(
-        int index, com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (exampleBuilder_ == null) {
-        ensureExampleIsMutable();
-        example_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        exampleBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder addAllExample(
-        java.lang.Iterable<? extends com.google.protobuf.Timestamp> values) {
-      if (exampleBuilder_ == null) {
-        ensureExampleIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, example_);
-        onChanged();
-      } else {
-        exampleBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder clearExample() {
-      if (exampleBuilder_ == null) {
-        example_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
-        onChanged();
-      } else {
-        exampleBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public Builder removeExample(int index) {
-      if (exampleBuilder_ == null) {
-        ensureExampleIsMutable();
-        example_.remove(index);
-        onChanged();
-      } else {
-        exampleBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public com.google.protobuf.Timestamp.Builder getExampleBuilder(
-        int index) {
-      return getExampleFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getExampleOrBuilder(
-        int index) {
-      if (exampleBuilder_ == null) {
-        return example_.get(index);  } else {
-        return exampleBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public java.util.List<? extends com.google.protobuf.TimestampOrBuilder> 
-         getExampleOrBuilderList() {
-      if (exampleBuilder_ != null) {
-        return exampleBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(example_);
-      }
-    }
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public com.google.protobuf.Timestamp.Builder addExampleBuilder() {
-      return getExampleFieldBuilder().addBuilder(
-          com.google.protobuf.Timestamp.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public com.google.protobuf.Timestamp.Builder addExampleBuilder(
-        int index) {
-      return getExampleFieldBuilder().addBuilder(
-          index, com.google.protobuf.Timestamp.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .google.protobuf.Timestamp example = 10 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
-     */
-    public java.util.List<com.google.protobuf.Timestamp.Builder> 
-         getExampleBuilderList() {
-      return getExampleFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-        getExampleFieldBuilder() {
-      if (exampleBuilder_ == null) {
-        exampleBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                example_,
-                ((bitField0_ & 0x00000100) != 0),
-                getParentForChildren(),
-                isClean());
-        example_ = null;
-      }
-      return exampleBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -3478,7 +3078,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<TimestampRules>
+  private static final com.google.protobuf.Parser<TimestampRules>
       PARSER = new com.google.protobuf.AbstractParser<TimestampRules>() {
     @java.lang.Override
     public TimestampRules parsePartialFrom(

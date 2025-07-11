@@ -201,6 +201,68 @@ public final class ConnectionServiceGrpc {
     return getListConnectionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsRequest,
+      com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsResponse> getListOrganizationConnectionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListOrganizationConnections",
+      requestType = com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsRequest,
+      com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsResponse> getListOrganizationConnectionsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsRequest, com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsResponse> getListOrganizationConnectionsMethod;
+    if ((getListOrganizationConnectionsMethod = ConnectionServiceGrpc.getListOrganizationConnectionsMethod) == null) {
+      synchronized (ConnectionServiceGrpc.class) {
+        if ((getListOrganizationConnectionsMethod = ConnectionServiceGrpc.getListOrganizationConnectionsMethod) == null) {
+          ConnectionServiceGrpc.getListOrganizationConnectionsMethod = getListOrganizationConnectionsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsRequest, com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListOrganizationConnections"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectionServiceMethodDescriptorSupplier("ListOrganizationConnections"))
+              .build();
+        }
+      }
+    }
+    return getListOrganizationConnectionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsRequest,
+      com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsResponse> getSearchOrganizationConnectionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchOrganizationConnections",
+      requestType = com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsRequest,
+      com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsResponse> getSearchOrganizationConnectionsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsRequest, com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsResponse> getSearchOrganizationConnectionsMethod;
+    if ((getSearchOrganizationConnectionsMethod = ConnectionServiceGrpc.getSearchOrganizationConnectionsMethod) == null) {
+      synchronized (ConnectionServiceGrpc.class) {
+        if ((getSearchOrganizationConnectionsMethod = ConnectionServiceGrpc.getSearchOrganizationConnectionsMethod) == null) {
+          ConnectionServiceGrpc.getSearchOrganizationConnectionsMethod = getSearchOrganizationConnectionsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsRequest, com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchOrganizationConnections"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectionServiceMethodDescriptorSupplier("SearchOrganizationConnections"))
+              .build();
+        }
+      }
+    }
+    return getSearchOrganizationConnectionsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest,
       com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse> getUpdateEnvironmentConnectionMethod;
 
@@ -572,6 +634,20 @@ public final class ConnectionServiceGrpc {
 
     /**
      */
+    default void listOrganizationConnections(com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListOrganizationConnectionsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void searchOrganizationConnections(com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchOrganizationConnectionsMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void updateEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateEnvironmentConnectionMethod(), responseObserver);
@@ -711,6 +787,22 @@ public final class ConnectionServiceGrpc {
 
     /**
      */
+    public void listOrganizationConnections(com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListOrganizationConnectionsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void searchOrganizationConnections(com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSearchOrganizationConnectionsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void updateEnvironmentConnection(com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -838,6 +930,20 @@ public final class ConnectionServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.connections.ListConnectionsResponse listConnections(com.scalekit.grpc.scalekit.v1.connections.ListConnectionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsResponse listOrganizationConnections(com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOrganizationConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsResponse searchOrganizationConnections(com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchOrganizationConnectionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -970,6 +1076,22 @@ public final class ConnectionServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsResponse> listOrganizationConnections(
+        com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListOrganizationConnectionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsResponse> searchOrganizationConnections(
+        com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSearchOrganizationConnectionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse> updateEnvironmentConnection(
         com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -1047,15 +1169,17 @@ public final class ConnectionServiceGrpc {
   private static final int METHODID_GET_ENVIRONMENT_CONNECTION = 3;
   private static final int METHODID_GET_CONNECTION = 4;
   private static final int METHODID_LIST_CONNECTIONS = 5;
-  private static final int METHODID_UPDATE_ENVIRONMENT_CONNECTION = 6;
-  private static final int METHODID_UPDATE_CONNECTION = 7;
-  private static final int METHODID_DELETE_ENVIRONMENT_CONNECTION = 8;
-  private static final int METHODID_DELETE_CONNECTION = 9;
-  private static final int METHODID_ENABLE_ENVIRONMENT_CONNECTION = 10;
-  private static final int METHODID_ENABLE_CONNECTION = 11;
-  private static final int METHODID_DISABLE_ENVIRONMENT_CONNECTION = 12;
-  private static final int METHODID_DISABLE_CONNECTION = 13;
-  private static final int METHODID_GET_CONNECTION_TEST_RESULT = 14;
+  private static final int METHODID_LIST_ORGANIZATION_CONNECTIONS = 6;
+  private static final int METHODID_SEARCH_ORGANIZATION_CONNECTIONS = 7;
+  private static final int METHODID_UPDATE_ENVIRONMENT_CONNECTION = 8;
+  private static final int METHODID_UPDATE_CONNECTION = 9;
+  private static final int METHODID_DELETE_ENVIRONMENT_CONNECTION = 10;
+  private static final int METHODID_DELETE_CONNECTION = 11;
+  private static final int METHODID_ENABLE_ENVIRONMENT_CONNECTION = 12;
+  private static final int METHODID_ENABLE_CONNECTION = 13;
+  private static final int METHODID_DISABLE_ENVIRONMENT_CONNECTION = 14;
+  private static final int METHODID_DISABLE_CONNECTION = 15;
+  private static final int METHODID_GET_CONNECTION_TEST_RESULT = 16;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1097,6 +1221,14 @@ public final class ConnectionServiceGrpc {
         case METHODID_LIST_CONNECTIONS:
           serviceImpl.listConnections((com.scalekit.grpc.scalekit.v1.connections.ListConnectionsRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ListConnectionsResponse>) responseObserver);
+          break;
+        case METHODID_LIST_ORGANIZATION_CONNECTIONS:
+          serviceImpl.listOrganizationConnections((com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsResponse>) responseObserver);
+          break;
+        case METHODID_SEARCH_ORGANIZATION_CONNECTIONS:
+          serviceImpl.searchOrganizationConnections((com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsResponse>) responseObserver);
           break;
         case METHODID_UPDATE_ENVIRONMENT_CONNECTION:
           serviceImpl.updateEnvironmentConnection((com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest) request,
@@ -1194,6 +1326,20 @@ public final class ConnectionServiceGrpc {
               com.scalekit.grpc.scalekit.v1.connections.ListConnectionsRequest,
               com.scalekit.grpc.scalekit.v1.connections.ListConnectionsResponse>(
                 service, METHODID_LIST_CONNECTIONS)))
+        .addMethod(
+          getListOrganizationConnectionsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsRequest,
+              com.scalekit.grpc.scalekit.v1.connections.ListOrganizationConnectionsResponse>(
+                service, METHODID_LIST_ORGANIZATION_CONNECTIONS)))
+        .addMethod(
+          getSearchOrganizationConnectionsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsRequest,
+              com.scalekit.grpc.scalekit.v1.connections.SearchOrganizationConnectionsResponse>(
+                service, METHODID_SEARCH_ORGANIZATION_CONNECTIONS)))
         .addMethod(
           getUpdateEnvironmentConnectionMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1311,6 +1457,8 @@ public final class ConnectionServiceGrpc {
               .addMethod(getGetEnvironmentConnectionMethod())
               .addMethod(getGetConnectionMethod())
               .addMethod(getListConnectionsMethod())
+              .addMethod(getListOrganizationConnectionsMethod())
+              .addMethod(getSearchOrganizationConnectionsMethod())
               .addMethod(getUpdateEnvironmentConnectionMethod())
               .addMethod(getUpdateConnectionMethod())
               .addMethod(getDeleteEnvironmentConnectionMethod())
