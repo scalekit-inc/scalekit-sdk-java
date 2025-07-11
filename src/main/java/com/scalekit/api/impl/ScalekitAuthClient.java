@@ -183,7 +183,7 @@ public class ScalekitAuthClient implements AuthClient {
     /**
      * validateAccessTokenAndGetClaims validates an access token and returns the decoded claims
      * @param jwt: The JWT token
-     * @return Map<String, Object>: The decoded claims from the token
+     * @return a Map&lt;String, Object&gt; containing the decoded claims from the token
      */
     public Map<String, Object> validateAccessTokenAndGetClaims(String jwt) throws APIException {
         try {
