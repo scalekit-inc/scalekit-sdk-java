@@ -4,7 +4,7 @@ import io.grpc.Metadata;
 import static io.grpc.Metadata.ASCII_STRING_MARSHALLER;
 public class Constants {
 
-    public static String version = "1.1.2";
+    public static String version = "1.1.4";
     public static String SCALEKIT_REQUEST_TIMEOUT = "SCALEKIT_REQUEST_TIMEOUT";
     public static final String BEARER_TYPE = "Bearer";
 
@@ -24,7 +24,6 @@ public class Constants {
     public static final String KEYS_ENDPOINT = "/keys";
 
     public static final String LOGOUT_ENDPOINT = "oidc/logout";
-
 
     public static final Metadata.Key<String> AUTHORIZATION_METADATA_KEY = Metadata.Key.of("Authorization", ASCII_STRING_MARSHALLER);
 
