@@ -31,6 +31,7 @@ import java.net.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.Map;
 
 import static com.scalekit.internal.Constants.*;
 
@@ -176,6 +177,49 @@ public class ScalekitAuthClient implements AuthClient {
             return true;
         } catch (Exception e) {
             throw new APIException("Failed to validate token: " + e.getMessage());
+        }
+    }
+
+    /**
+     * validateAccessTokenAndGetClaims validates an access token and returns the decoded claims
+     * @param jwt: The JWT token
+     * @return Map<String, Object>: The decoded claims from the token
+     */
+    public Map<String, Object> validateAccessTokenAndGetClaims(String jwt) throws APIException {
+        try {
+            // TODO Optimization - Cache the keys
+            String keysJson = fetchJsonWebKeys();
+
+            JsonWebKeySet jsonWebKeySet = new JsonWebKeySet(keysJson);
+
+            JsonWebSignature jws = new JsonWebSignature();
+            jws.setCompactSerialization(jwt);
+
+            VerificationJwkSelector jwkSelector = new VerificationJwkSelector();
+            JsonWebKey jwk = jwkSelector.select(jws, jsonWebKeySet.getJsonWebKeys());
+            jws.setKey(jwk.getKey());
+
+            //  verify the signature
+            boolean isSignatureValid = jws.verifySignature();
+            if (!isSignatureValid) {
+                throw new APIException("Invalid token signature");
+            }
+
+            //  verify the expiry and get claims
+            JwtConsumer jwtConsumer = new JwtConsumerBuilder()
+                .setRequireExpirationTime()
+                .setAllowedClockSkewInSeconds(30)
+                .setSkipSignatureVerification() // Already verified above
+                .setSkipDefaultAudienceValidation()
+                .build();
+
+            // This will throw an exception if the token is expired
+            JwtClaims jwtClaims = jwtConsumer.processToClaims(jwt);
+
+            // Convert JWT claims to Map
+            return objectMapper.readValue(jwtClaims.toJson(), new com.fasterxml.jackson.core.type.TypeReference<Map<String, Object>>() {});
+        } catch (Exception e) {
+            throw new APIException("Failed to validate token and get claims: " + e.getMessage());
         }
     }
 
