@@ -1,5 +1,7 @@
 import com.scalekit.ScalekitClient;
 import com.scalekit.exceptions.APIException;
+import com.scalekit.grpc.scalekit.v1.organizations.CreateOrganization;
+import com.scalekit.grpc.scalekit.v1.organizations.Organization;
 import com.scalekit.grpc.scalekit.v1.users.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -10,7 +12,7 @@ public class UserTests {
 
     private static ScalekitClient client;
     private static String testOrg;
-    private static String testOrg2;
+
 
     @BeforeAll
     static void init() {
@@ -19,7 +21,6 @@ public class UserTests {
         String  clientId = System.getenv("SCALEKIT_CLIENT_ID");
         String apiSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
         testOrg = System.getenv("TEST_ORGANIZATION");
-        testOrg2 = System.getenv("TEST_ORGANIZATION2");
         client = new ScalekitClient(environmentUrl, clientId, apiSecret);
     }
 
@@ -99,8 +100,10 @@ public class UserTests {
     @Test
     public void testCreateAndDeleteUser() {
         // Create a user
+
+        String userEmail =  "sdktest" + System.currentTimeMillis()  + "@example.com"; // Unique email for each test run
         CreateUser user = CreateUser.newBuilder()
-            .setEmail("testin@example.com")
+            .setEmail(userEmail)
             .build();
 
         CreateUserAndMembershipRequest createRequest = CreateUserAndMembershipRequest.newBuilder()
@@ -131,8 +134,10 @@ public class UserTests {
     @Test
     public void testAddUserToOrganization() {
         // First create a user
+
+        String userEmail =  "sdktest" + System.currentTimeMillis()  + "@example.com"; // Unique email for each test run
         CreateUser user = CreateUser.newBuilder()
-            .setEmail("org2.user@example.com")
+            .setEmail(userEmail)
             .build();
 
         CreateUserAndMembershipRequest createRequest = CreateUserAndMembershipRequest.newBuilder()
@@ -149,19 +154,29 @@ public class UserTests {
         CreateMembership membership = CreateMembership.newBuilder()
             .build(); // Add any required membership fields here if needed
 
+        Organization testOrgUser = client.organizations().create(
+                CreateOrganization.newBuilder()
+                        .setDisplayName("Test Organization For User Membership")
+                        .build()
+        );
+
         CreateMembershipRequest addRequest = CreateMembershipRequest.newBuilder()
-            .setOrganizationId(testOrg2)
+            .setOrganizationId(testOrgUser.getId())
             .setId(userId)  // Set the user ID
             .setMembership(membership)  // Set the required membership field
             .build();
 
-        CreateMembershipResponse addResponse = client.users().createMembership(testOrg2, userId, addRequest);
+
+
+        CreateMembershipResponse addResponse = client.users().createMembership(testOrgUser.getId(), userId, addRequest);
         assertNotNull(addResponse);
         assertNotNull(addResponse.getUser());
-        String userId2 = addResponse.getUser().getId();
+
 
         // Cleanup
         client.users().deleteUser(userId);
-        client.users().deleteUser(userId2);
+        client.organizations().deleteById(testOrgUser.getId());
+
+
     }
 } 
