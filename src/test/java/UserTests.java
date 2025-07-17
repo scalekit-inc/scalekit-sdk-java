@@ -12,7 +12,7 @@ public class UserTests {
 
     private static ScalekitClient client;
     private static String testOrg;
-    private static String testOrgUser;
+
 
     @BeforeAll
     static void init() {
@@ -21,7 +21,6 @@ public class UserTests {
         String  clientId = System.getenv("SCALEKIT_CLIENT_ID");
         String apiSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
         testOrg = System.getenv("TEST_ORGANIZATION");
-        testOrgUser = System.getenv("TEST_USER_ORGANIZATION");
         client = new ScalekitClient(environmentUrl, clientId, apiSecret);
     }
 
