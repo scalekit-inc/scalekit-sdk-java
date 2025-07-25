@@ -28,6 +28,8 @@ public class ScalekitClient {
 
     private final UserClient userClient;
 
+    private final PasswordlessClient passwordlessClient;
+
     private final Webhook webhook;
 
     public ScalekitClient(String siteName, String clientId, String clientSecret) {
@@ -51,6 +53,7 @@ public class ScalekitClient {
             connectionClient = new ScalekitConnectionClient(channel, credentials);
             directoryClient = new ScalekitDirectoryClient(channel, credentials);
             userClient = new ScalekitUserClient(channel, credentials);
+            passwordlessClient = new ScalekitPasswordlessClient(channel, credentials);
 
             webhook = new ScalekitWebhook();
 
@@ -88,6 +91,10 @@ public class ScalekitClient {
 
     public UserClient users() {
         return this.userClient;
+    }
+
+    public PasswordlessClient passwordless() {
+        return this.passwordlessClient;
     }
 
 }

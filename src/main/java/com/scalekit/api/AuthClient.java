@@ -20,7 +20,7 @@ public interface AuthClient {
 
      IdpInitiatedLoginClaims getIdpInitiatedLoginClaims(String idpInitiatedLoginToken) throws APIException;
 
-     AuthenticationResponse refreshToken(String refreshToken) throws APIException;
+     AuthenticationResponse refreshAccessToken(String refreshToken) throws APIException;
 
      Map<String, Object> validateAccessTokenAndGetClaims(String jwt) throws APIException;
 }

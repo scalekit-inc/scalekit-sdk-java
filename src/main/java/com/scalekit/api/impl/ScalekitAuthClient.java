@@ -347,7 +347,7 @@ public class ScalekitAuthClient implements AuthClient {
      * @throws APIException if the refresh token is invalid or expired
      */
     @Override
-    public AuthenticationResponse refreshToken(String refreshToken) throws APIException {
+    public AuthenticationResponse refreshAccessToken(String refreshToken) throws APIException {
         if (refreshToken == null || refreshToken.isEmpty()) {
             throw new APIException("refresh token is required");
         }
