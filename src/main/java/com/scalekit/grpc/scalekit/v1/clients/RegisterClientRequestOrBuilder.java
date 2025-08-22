@@ -9,16 +9,16 @@ public interface RegisterClientRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string app_id = 1 [json_name = "appId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The appId.
+   * <code>string res_id = 1 [json_name = "resId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resId.
    */
-  java.lang.String getAppId();
+  java.lang.String getResId();
   /**
-   * <code>string app_id = 1 [json_name = "appId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for appId.
+   * <code>string res_id = 1 [json_name = "resId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for resId.
    */
   com.google.protobuf.ByteString
-      getAppIdBytes();
+      getResIdBytes();
 
   /**
    * <code>.scalekit.v1.clients.RegisterClient client = 2 [json_name = "client", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>

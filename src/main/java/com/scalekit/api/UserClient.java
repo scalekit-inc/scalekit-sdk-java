@@ -20,4 +20,6 @@ public interface UserClient {
     UpdateMembershipResponse updateMembership(String organizationId, String userId, UpdateMembershipRequest request);
 
     ListOrganizationUsersResponse listOrganizationUsers(String organizationId, ListOrganizationUsersRequest request);
+
+    ResendInviteResponse resendInvite(String organizationId, String userId);
 } 

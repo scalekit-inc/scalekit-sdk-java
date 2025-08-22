@@ -134,4 +134,29 @@ java.lang.String defaultValue);
    */
   java.lang.String getMetadataOrThrow(
       java.lang.String key);
+
+  /**
+   * <code>repeated string internal_events = 8 [json_name = "internalEvents"];</code>
+   * @return A list containing the internalEvents.
+   */
+  java.util.List<java.lang.String>
+      getInternalEventsList();
+  /**
+   * <code>repeated string internal_events = 8 [json_name = "internalEvents"];</code>
+   * @return The count of internalEvents.
+   */
+  int getInternalEventsCount();
+  /**
+   * <code>repeated string internal_events = 8 [json_name = "internalEvents"];</code>
+   * @param index The index of the element to return.
+   * @return The internalEvents at the given index.
+   */
+  java.lang.String getInternalEvents(int index);
+  /**
+   * <code>repeated string internal_events = 8 [json_name = "internalEvents"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the internalEvents at the given index.
+   */
+  com.google.protobuf.ByteString
+      getInternalEventsBytes(int index);
 }

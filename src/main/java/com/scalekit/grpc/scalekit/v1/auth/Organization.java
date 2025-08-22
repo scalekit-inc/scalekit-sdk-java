@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     name_ = "";
     membershipStatus_ = "";
+    invitationInvitedBy_ = "";
   }
 
   @java.lang.Override
@@ -42,6 +43,7 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.auth.Organization.class, com.scalekit.grpc.scalekit.v1.auth.Organization.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
@@ -159,6 +161,131 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int INVITATION_INVITED_BY_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object invitationInvitedBy_ = "";
+  /**
+   * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
+   * @return Whether the invitationInvitedBy field is set.
+   */
+  @java.lang.Override
+  public boolean hasInvitationInvitedBy() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
+   * @return The invitationInvitedBy.
+   */
+  @java.lang.Override
+  public java.lang.String getInvitationInvitedBy() {
+    java.lang.Object ref = invitationInvitedBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      invitationInvitedBy_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
+   * @return The bytes for invitationInvitedBy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getInvitationInvitedByBytes() {
+    java.lang.Object ref = invitationInvitedBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      invitationInvitedBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int INVITATION_ACCEPTED_AT_FIELD_NUMBER = 5;
+  private com.google.protobuf.Timestamp invitationAcceptedAt_;
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_accepted_at = 5 [json_name = "invitationAcceptedAt"];</code>
+   * @return Whether the invitationAcceptedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasInvitationAcceptedAt() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_accepted_at = 5 [json_name = "invitationAcceptedAt"];</code>
+   * @return The invitationAcceptedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getInvitationAcceptedAt() {
+    return invitationAcceptedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : invitationAcceptedAt_;
+  }
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_accepted_at = 5 [json_name = "invitationAcceptedAt"];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getInvitationAcceptedAtOrBuilder() {
+    return invitationAcceptedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : invitationAcceptedAt_;
+  }
+
+  public static final int INVITATION_CREATED_AT_FIELD_NUMBER = 6;
+  private com.google.protobuf.Timestamp invitationCreatedAt_;
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_created_at = 6 [json_name = "invitationCreatedAt"];</code>
+   * @return Whether the invitationCreatedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasInvitationCreatedAt() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_created_at = 6 [json_name = "invitationCreatedAt"];</code>
+   * @return The invitationCreatedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getInvitationCreatedAt() {
+    return invitationCreatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : invitationCreatedAt_;
+  }
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_created_at = 6 [json_name = "invitationCreatedAt"];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getInvitationCreatedAtOrBuilder() {
+    return invitationCreatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : invitationCreatedAt_;
+  }
+
+  public static final int INVITATION_EXPIRES_AT_FIELD_NUMBER = 7;
+  private com.google.protobuf.Timestamp invitationExpiresAt_;
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_expires_at = 7 [json_name = "invitationExpiresAt"];</code>
+   * @return Whether the invitationExpiresAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasInvitationExpiresAt() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_expires_at = 7 [json_name = "invitationExpiresAt"];</code>
+   * @return The invitationExpiresAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getInvitationExpiresAt() {
+    return invitationExpiresAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : invitationExpiresAt_;
+  }
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_expires_at = 7 [json_name = "invitationExpiresAt"];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getInvitationExpiresAtOrBuilder() {
+    return invitationExpiresAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : invitationExpiresAt_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -182,6 +309,18 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(membershipStatus_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, membershipStatus_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, invitationInvitedBy_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(5, getInvitationAcceptedAt());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(6, getInvitationCreatedAt());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(7, getInvitationExpiresAt());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -199,6 +338,21 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(membershipStatus_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, membershipStatus_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, invitationInvitedBy_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getInvitationAcceptedAt());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getInvitationCreatedAt());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getInvitationExpiresAt());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -221,6 +375,26 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (!getMembershipStatus()
         .equals(other.getMembershipStatus())) return false;
+    if (hasInvitationInvitedBy() != other.hasInvitationInvitedBy()) return false;
+    if (hasInvitationInvitedBy()) {
+      if (!getInvitationInvitedBy()
+          .equals(other.getInvitationInvitedBy())) return false;
+    }
+    if (hasInvitationAcceptedAt() != other.hasInvitationAcceptedAt()) return false;
+    if (hasInvitationAcceptedAt()) {
+      if (!getInvitationAcceptedAt()
+          .equals(other.getInvitationAcceptedAt())) return false;
+    }
+    if (hasInvitationCreatedAt() != other.hasInvitationCreatedAt()) return false;
+    if (hasInvitationCreatedAt()) {
+      if (!getInvitationCreatedAt()
+          .equals(other.getInvitationCreatedAt())) return false;
+    }
+    if (hasInvitationExpiresAt() != other.hasInvitationExpiresAt()) return false;
+    if (hasInvitationExpiresAt()) {
+      if (!getInvitationExpiresAt()
+          .equals(other.getInvitationExpiresAt())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -238,6 +412,22 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + MEMBERSHIP_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getMembershipStatus().hashCode();
+    if (hasInvitationInvitedBy()) {
+      hash = (37 * hash) + INVITATION_INVITED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getInvitationInvitedBy().hashCode();
+    }
+    if (hasInvitationAcceptedAt()) {
+      hash = (37 * hash) + INVITATION_ACCEPTED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getInvitationAcceptedAt().hashCode();
+    }
+    if (hasInvitationCreatedAt()) {
+      hash = (37 * hash) + INVITATION_CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getInvitationCreatedAt().hashCode();
+    }
+    if (hasInvitationExpiresAt()) {
+      hash = (37 * hash) + INVITATION_EXPIRES_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getInvitationExpiresAt().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -357,13 +547,21 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.scalekit.grpc.scalekit.v1.auth.Organization.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getInvitationAcceptedAtFieldBuilder();
+        getInvitationCreatedAtFieldBuilder();
+        getInvitationExpiresAtFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -372,6 +570,22 @@ private static final long serialVersionUID = 0L;
       id_ = "";
       name_ = "";
       membershipStatus_ = "";
+      invitationInvitedBy_ = "";
+      invitationAcceptedAt_ = null;
+      if (invitationAcceptedAtBuilder_ != null) {
+        invitationAcceptedAtBuilder_.dispose();
+        invitationAcceptedAtBuilder_ = null;
+      }
+      invitationCreatedAt_ = null;
+      if (invitationCreatedAtBuilder_ != null) {
+        invitationCreatedAtBuilder_.dispose();
+        invitationCreatedAtBuilder_ = null;
+      }
+      invitationExpiresAt_ = null;
+      if (invitationExpiresAtBuilder_ != null) {
+        invitationExpiresAtBuilder_.dispose();
+        invitationExpiresAtBuilder_ = null;
+      }
       return this;
     }
 
@@ -414,6 +628,30 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.membershipStatus_ = membershipStatus_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.invitationInvitedBy_ = invitationInvitedBy_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.invitationAcceptedAt_ = invitationAcceptedAtBuilder_ == null
+            ? invitationAcceptedAt_
+            : invitationAcceptedAtBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.invitationCreatedAt_ = invitationCreatedAtBuilder_ == null
+            ? invitationCreatedAt_
+            : invitationCreatedAtBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.invitationExpiresAt_ = invitationExpiresAtBuilder_ == null
+            ? invitationExpiresAt_
+            : invitationExpiresAtBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -475,6 +713,20 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasInvitationInvitedBy()) {
+        invitationInvitedBy_ = other.invitationInvitedBy_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (other.hasInvitationAcceptedAt()) {
+        mergeInvitationAcceptedAt(other.getInvitationAcceptedAt());
+      }
+      if (other.hasInvitationCreatedAt()) {
+        mergeInvitationCreatedAt(other.getInvitationCreatedAt());
+      }
+      if (other.hasInvitationExpiresAt()) {
+        mergeInvitationExpiresAt(other.getInvitationExpiresAt());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -516,6 +768,32 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000004;
               break;
             } // case 26
+            case 34: {
+              invitationInvitedBy_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
+            case 42: {
+              input.readMessage(
+                  getInvitationAcceptedAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 42
+            case 50: {
+              input.readMessage(
+                  getInvitationCreatedAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 50
+            case 58: {
+              input.readMessage(
+                  getInvitationExpiresAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 58
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -747,6 +1025,448 @@ private static final long serialVersionUID = 0L;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object invitationInvitedBy_ = "";
+    /**
+     * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
+     * @return Whether the invitationInvitedBy field is set.
+     */
+    public boolean hasInvitationInvitedBy() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
+     * @return The invitationInvitedBy.
+     */
+    public java.lang.String getInvitationInvitedBy() {
+      java.lang.Object ref = invitationInvitedBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        invitationInvitedBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
+     * @return The bytes for invitationInvitedBy.
+     */
+    public com.google.protobuf.ByteString
+        getInvitationInvitedByBytes() {
+      java.lang.Object ref = invitationInvitedBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        invitationInvitedBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
+     * @param value The invitationInvitedBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInvitationInvitedBy(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      invitationInvitedBy_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInvitationInvitedBy() {
+      invitationInvitedBy_ = getDefaultInstance().getInvitationInvitedBy();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
+     * @param value The bytes for invitationInvitedBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInvitationInvitedByBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      invitationInvitedBy_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp invitationAcceptedAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> invitationAcceptedAtBuilder_;
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_accepted_at = 5 [json_name = "invitationAcceptedAt"];</code>
+     * @return Whether the invitationAcceptedAt field is set.
+     */
+    public boolean hasInvitationAcceptedAt() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_accepted_at = 5 [json_name = "invitationAcceptedAt"];</code>
+     * @return The invitationAcceptedAt.
+     */
+    public com.google.protobuf.Timestamp getInvitationAcceptedAt() {
+      if (invitationAcceptedAtBuilder_ == null) {
+        return invitationAcceptedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : invitationAcceptedAt_;
+      } else {
+        return invitationAcceptedAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_accepted_at = 5 [json_name = "invitationAcceptedAt"];</code>
+     */
+    public Builder setInvitationAcceptedAt(com.google.protobuf.Timestamp value) {
+      if (invitationAcceptedAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        invitationAcceptedAt_ = value;
+      } else {
+        invitationAcceptedAtBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_accepted_at = 5 [json_name = "invitationAcceptedAt"];</code>
+     */
+    public Builder setInvitationAcceptedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (invitationAcceptedAtBuilder_ == null) {
+        invitationAcceptedAt_ = builderForValue.build();
+      } else {
+        invitationAcceptedAtBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_accepted_at = 5 [json_name = "invitationAcceptedAt"];</code>
+     */
+    public Builder mergeInvitationAcceptedAt(com.google.protobuf.Timestamp value) {
+      if (invitationAcceptedAtBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0) &&
+          invitationAcceptedAt_ != null &&
+          invitationAcceptedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getInvitationAcceptedAtBuilder().mergeFrom(value);
+        } else {
+          invitationAcceptedAt_ = value;
+        }
+      } else {
+        invitationAcceptedAtBuilder_.mergeFrom(value);
+      }
+      if (invitationAcceptedAt_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_accepted_at = 5 [json_name = "invitationAcceptedAt"];</code>
+     */
+    public Builder clearInvitationAcceptedAt() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      invitationAcceptedAt_ = null;
+      if (invitationAcceptedAtBuilder_ != null) {
+        invitationAcceptedAtBuilder_.dispose();
+        invitationAcceptedAtBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_accepted_at = 5 [json_name = "invitationAcceptedAt"];</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getInvitationAcceptedAtBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getInvitationAcceptedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_accepted_at = 5 [json_name = "invitationAcceptedAt"];</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getInvitationAcceptedAtOrBuilder() {
+      if (invitationAcceptedAtBuilder_ != null) {
+        return invitationAcceptedAtBuilder_.getMessageOrBuilder();
+      } else {
+        return invitationAcceptedAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : invitationAcceptedAt_;
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_accepted_at = 5 [json_name = "invitationAcceptedAt"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getInvitationAcceptedAtFieldBuilder() {
+      if (invitationAcceptedAtBuilder_ == null) {
+        invitationAcceptedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getInvitationAcceptedAt(),
+                getParentForChildren(),
+                isClean());
+        invitationAcceptedAt_ = null;
+      }
+      return invitationAcceptedAtBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp invitationCreatedAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> invitationCreatedAtBuilder_;
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_created_at = 6 [json_name = "invitationCreatedAt"];</code>
+     * @return Whether the invitationCreatedAt field is set.
+     */
+    public boolean hasInvitationCreatedAt() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_created_at = 6 [json_name = "invitationCreatedAt"];</code>
+     * @return The invitationCreatedAt.
+     */
+    public com.google.protobuf.Timestamp getInvitationCreatedAt() {
+      if (invitationCreatedAtBuilder_ == null) {
+        return invitationCreatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : invitationCreatedAt_;
+      } else {
+        return invitationCreatedAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_created_at = 6 [json_name = "invitationCreatedAt"];</code>
+     */
+    public Builder setInvitationCreatedAt(com.google.protobuf.Timestamp value) {
+      if (invitationCreatedAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        invitationCreatedAt_ = value;
+      } else {
+        invitationCreatedAtBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_created_at = 6 [json_name = "invitationCreatedAt"];</code>
+     */
+    public Builder setInvitationCreatedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (invitationCreatedAtBuilder_ == null) {
+        invitationCreatedAt_ = builderForValue.build();
+      } else {
+        invitationCreatedAtBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_created_at = 6 [json_name = "invitationCreatedAt"];</code>
+     */
+    public Builder mergeInvitationCreatedAt(com.google.protobuf.Timestamp value) {
+      if (invitationCreatedAtBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0) &&
+          invitationCreatedAt_ != null &&
+          invitationCreatedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getInvitationCreatedAtBuilder().mergeFrom(value);
+        } else {
+          invitationCreatedAt_ = value;
+        }
+      } else {
+        invitationCreatedAtBuilder_.mergeFrom(value);
+      }
+      if (invitationCreatedAt_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_created_at = 6 [json_name = "invitationCreatedAt"];</code>
+     */
+    public Builder clearInvitationCreatedAt() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      invitationCreatedAt_ = null;
+      if (invitationCreatedAtBuilder_ != null) {
+        invitationCreatedAtBuilder_.dispose();
+        invitationCreatedAtBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_created_at = 6 [json_name = "invitationCreatedAt"];</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getInvitationCreatedAtBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getInvitationCreatedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_created_at = 6 [json_name = "invitationCreatedAt"];</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getInvitationCreatedAtOrBuilder() {
+      if (invitationCreatedAtBuilder_ != null) {
+        return invitationCreatedAtBuilder_.getMessageOrBuilder();
+      } else {
+        return invitationCreatedAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : invitationCreatedAt_;
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_created_at = 6 [json_name = "invitationCreatedAt"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getInvitationCreatedAtFieldBuilder() {
+      if (invitationCreatedAtBuilder_ == null) {
+        invitationCreatedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getInvitationCreatedAt(),
+                getParentForChildren(),
+                isClean());
+        invitationCreatedAt_ = null;
+      }
+      return invitationCreatedAtBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp invitationExpiresAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> invitationExpiresAtBuilder_;
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_expires_at = 7 [json_name = "invitationExpiresAt"];</code>
+     * @return Whether the invitationExpiresAt field is set.
+     */
+    public boolean hasInvitationExpiresAt() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_expires_at = 7 [json_name = "invitationExpiresAt"];</code>
+     * @return The invitationExpiresAt.
+     */
+    public com.google.protobuf.Timestamp getInvitationExpiresAt() {
+      if (invitationExpiresAtBuilder_ == null) {
+        return invitationExpiresAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : invitationExpiresAt_;
+      } else {
+        return invitationExpiresAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_expires_at = 7 [json_name = "invitationExpiresAt"];</code>
+     */
+    public Builder setInvitationExpiresAt(com.google.protobuf.Timestamp value) {
+      if (invitationExpiresAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        invitationExpiresAt_ = value;
+      } else {
+        invitationExpiresAtBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_expires_at = 7 [json_name = "invitationExpiresAt"];</code>
+     */
+    public Builder setInvitationExpiresAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (invitationExpiresAtBuilder_ == null) {
+        invitationExpiresAt_ = builderForValue.build();
+      } else {
+        invitationExpiresAtBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_expires_at = 7 [json_name = "invitationExpiresAt"];</code>
+     */
+    public Builder mergeInvitationExpiresAt(com.google.protobuf.Timestamp value) {
+      if (invitationExpiresAtBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0) &&
+          invitationExpiresAt_ != null &&
+          invitationExpiresAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getInvitationExpiresAtBuilder().mergeFrom(value);
+        } else {
+          invitationExpiresAt_ = value;
+        }
+      } else {
+        invitationExpiresAtBuilder_.mergeFrom(value);
+      }
+      if (invitationExpiresAt_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_expires_at = 7 [json_name = "invitationExpiresAt"];</code>
+     */
+    public Builder clearInvitationExpiresAt() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      invitationExpiresAt_ = null;
+      if (invitationExpiresAtBuilder_ != null) {
+        invitationExpiresAtBuilder_.dispose();
+        invitationExpiresAtBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_expires_at = 7 [json_name = "invitationExpiresAt"];</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getInvitationExpiresAtBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getInvitationExpiresAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_expires_at = 7 [json_name = "invitationExpiresAt"];</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getInvitationExpiresAtOrBuilder() {
+      if (invitationExpiresAtBuilder_ != null) {
+        return invitationExpiresAtBuilder_.getMessageOrBuilder();
+      } else {
+        return invitationExpiresAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : invitationExpiresAt_;
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp invitation_expires_at = 7 [json_name = "invitationExpiresAt"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getInvitationExpiresAtFieldBuilder() {
+      if (invitationExpiresAtBuilder_ == null) {
+        invitationExpiresAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getInvitationExpiresAt(),
+                getParentForChildren(),
+                isClean());
+        invitationExpiresAt_ = null;
+      }
+      return invitationExpiresAtBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

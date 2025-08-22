@@ -27,7 +27,7 @@ private static final long serialVersionUID = 0L;
     audience_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     customClaims_ = java.util.Collections.emptyList();
-    applicationId_ = "";
+    resourceId_ = "";
     redirectUris_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
   }
@@ -428,39 +428,39 @@ private static final long serialVersionUID = 0L;
     return expiry_;
   }
 
-  public static final int APPLICATION_ID_FIELD_NUMBER = 12;
+  public static final int RESOURCE_ID_FIELD_NUMBER = 12;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object applicationId_ = "";
+  private volatile java.lang.Object resourceId_ = "";
   /**
-   * <code>string application_id = 12 [json_name = "applicationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The applicationId.
+   * <code>string resource_id = 12 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resourceId.
    */
   @java.lang.Override
-  public java.lang.String getApplicationId() {
-    java.lang.Object ref = applicationId_;
+  public java.lang.String getResourceId() {
+    java.lang.Object ref = resourceId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      applicationId_ = s;
+      resourceId_ = s;
       return s;
     }
   }
   /**
-   * <code>string application_id = 12 [json_name = "applicationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for applicationId.
+   * <code>string resource_id = 12 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for resourceId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getApplicationIdBytes() {
-    java.lang.Object ref = applicationId_;
+      getResourceIdBytes() {
+    java.lang.Object ref = resourceId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      applicationId_ = b;
+      resourceId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -551,8 +551,8 @@ private static final long serialVersionUID = 0L;
     if (expiry_ != 0L) {
       output.writeInt64(11, expiry_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(applicationId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, applicationId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, resourceId_);
     }
     for (int i = 0; i < redirectUris_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, redirectUris_.getRaw(i));
@@ -614,8 +614,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(11, expiry_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(applicationId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, applicationId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, resourceId_);
     }
     {
       int dataSize = 0;
@@ -668,8 +668,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCustomClaimsList())) return false;
     if (getExpiry()
         != other.getExpiry()) return false;
-    if (!getApplicationId()
-        .equals(other.getApplicationId())) return false;
+    if (!getResourceId()
+        .equals(other.getResourceId())) return false;
     if (!getRedirectUrisList()
         .equals(other.getRedirectUrisList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -718,8 +718,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + EXPIRY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getExpiry());
-    hash = (37 * hash) + APPLICATION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getApplicationId().hashCode();
+    hash = (37 * hash) + RESOURCE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getResourceId().hashCode();
     if (getRedirectUrisCount() > 0) {
       hash = (37 * hash) + REDIRECT_URIS_FIELD_NUMBER;
       hash = (53 * hash) + getRedirectUrisList().hashCode();
@@ -897,7 +897,7 @@ private static final long serialVersionUID = 0L;
       }
       bitField0_ = (bitField0_ & ~0x00000200);
       expiry_ = 0L;
-      applicationId_ = "";
+      resourceId_ = "";
       redirectUris_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
@@ -992,7 +992,7 @@ private static final long serialVersionUID = 0L;
         result.expiry_ = expiry_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.applicationId_ = applicationId_;
+        result.resourceId_ = resourceId_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         redirectUris_.makeImmutable();
@@ -1146,8 +1146,8 @@ private static final long serialVersionUID = 0L;
       if (other.getExpiry() != 0L) {
         setExpiry(other.getExpiry());
       }
-      if (!other.getApplicationId().isEmpty()) {
-        applicationId_ = other.applicationId_;
+      if (!other.getResourceId().isEmpty()) {
+        resourceId_ = other.resourceId_;
         bitField0_ |= 0x00000800;
         onChanged();
       }
@@ -1265,7 +1265,7 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 88
             case 98: {
-              applicationId_ = input.readStringRequireUtf8();
+              resourceId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000800;
               break;
             } // case 98
@@ -2556,73 +2556,73 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object applicationId_ = "";
+    private java.lang.Object resourceId_ = "";
     /**
-     * <code>string application_id = 12 [json_name = "applicationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The applicationId.
+     * <code>string resource_id = 12 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The resourceId.
      */
-    public java.lang.String getApplicationId() {
-      java.lang.Object ref = applicationId_;
+    public java.lang.String getResourceId() {
+      java.lang.Object ref = resourceId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        applicationId_ = s;
+        resourceId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string application_id = 12 [json_name = "applicationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for applicationId.
+     * <code>string resource_id = 12 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for resourceId.
      */
     public com.google.protobuf.ByteString
-        getApplicationIdBytes() {
-      java.lang.Object ref = applicationId_;
+        getResourceIdBytes() {
+      java.lang.Object ref = resourceId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        applicationId_ = b;
+        resourceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string application_id = 12 [json_name = "applicationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The applicationId to set.
+     * <code>string resource_id = 12 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The resourceId to set.
      * @return This builder for chaining.
      */
-    public Builder setApplicationId(
+    public Builder setResourceId(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      applicationId_ = value;
+      resourceId_ = value;
       bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
     /**
-     * <code>string application_id = 12 [json_name = "applicationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string resource_id = 12 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearApplicationId() {
-      applicationId_ = getDefaultInstance().getApplicationId();
+    public Builder clearResourceId() {
+      resourceId_ = getDefaultInstance().getResourceId();
       bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
     /**
-     * <code>string application_id = 12 [json_name = "applicationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for applicationId to set.
+     * <code>string resource_id = 12 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for resourceId to set.
      * @return This builder for chaining.
      */
-    public Builder setApplicationIdBytes(
+    public Builder setResourceIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      applicationId_ = value;
+      resourceId_ = value;
       bitField0_ |= 0x00000800;
       onChanged();
       return this;

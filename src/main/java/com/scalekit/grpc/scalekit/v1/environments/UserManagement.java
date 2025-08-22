@@ -190,9 +190,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INVITATION_EXPIRY_FIELD_NUMBER = 7;
-  private com.google.protobuf.Int32Value invitationExpiry_;
+  private com.google.protobuf.UInt32Value invitationExpiry_;
   /**
-   * <code>.google.protobuf.Int32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
+   * <code>.google.protobuf.UInt32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
    * @return Whether the invitationExpiry field is set.
    */
   @java.lang.Override
@@ -200,19 +200,19 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000020) != 0);
   }
   /**
-   * <code>.google.protobuf.Int32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
+   * <code>.google.protobuf.UInt32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
    * @return The invitationExpiry.
    */
   @java.lang.Override
-  public com.google.protobuf.Int32Value getInvitationExpiry() {
-    return invitationExpiry_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : invitationExpiry_;
+  public com.google.protobuf.UInt32Value getInvitationExpiry() {
+    return invitationExpiry_ == null ? com.google.protobuf.UInt32Value.getDefaultInstance() : invitationExpiry_;
   }
   /**
-   * <code>.google.protobuf.Int32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
+   * <code>.google.protobuf.UInt32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
    */
   @java.lang.Override
-  public com.google.protobuf.Int32ValueOrBuilder getInvitationExpiryOrBuilder() {
-    return invitationExpiry_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : invitationExpiry_;
+  public com.google.protobuf.UInt32ValueOrBuilder getInvitationExpiryOrBuilder() {
+    return invitationExpiry_ == null ? com.google.protobuf.UInt32Value.getDefaultInstance() : invitationExpiry_;
   }
 
   public static final int ORGANIZATION_META_NAME_FIELD_NUMBER = 8;
@@ -1496,31 +1496,31 @@ private static final long serialVersionUID = 0L;
       return maxUsersLimitBuilder_;
     }
 
-    private com.google.protobuf.Int32Value invitationExpiry_;
+    private com.google.protobuf.UInt32Value invitationExpiry_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> invitationExpiryBuilder_;
+        com.google.protobuf.UInt32Value, com.google.protobuf.UInt32Value.Builder, com.google.protobuf.UInt32ValueOrBuilder> invitationExpiryBuilder_;
     /**
-     * <code>.google.protobuf.Int32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
+     * <code>.google.protobuf.UInt32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
      * @return Whether the invitationExpiry field is set.
      */
     public boolean hasInvitationExpiry() {
       return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>.google.protobuf.Int32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
+     * <code>.google.protobuf.UInt32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
      * @return The invitationExpiry.
      */
-    public com.google.protobuf.Int32Value getInvitationExpiry() {
+    public com.google.protobuf.UInt32Value getInvitationExpiry() {
       if (invitationExpiryBuilder_ == null) {
-        return invitationExpiry_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : invitationExpiry_;
+        return invitationExpiry_ == null ? com.google.protobuf.UInt32Value.getDefaultInstance() : invitationExpiry_;
       } else {
         return invitationExpiryBuilder_.getMessage();
       }
     }
     /**
-     * <code>.google.protobuf.Int32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
+     * <code>.google.protobuf.UInt32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
      */
-    public Builder setInvitationExpiry(com.google.protobuf.Int32Value value) {
+    public Builder setInvitationExpiry(com.google.protobuf.UInt32Value value) {
       if (invitationExpiryBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1534,10 +1534,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
+     * <code>.google.protobuf.UInt32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
      */
     public Builder setInvitationExpiry(
-        com.google.protobuf.Int32Value.Builder builderForValue) {
+        com.google.protobuf.UInt32Value.Builder builderForValue) {
       if (invitationExpiryBuilder_ == null) {
         invitationExpiry_ = builderForValue.build();
       } else {
@@ -1548,13 +1548,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
+     * <code>.google.protobuf.UInt32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
      */
-    public Builder mergeInvitationExpiry(com.google.protobuf.Int32Value value) {
+    public Builder mergeInvitationExpiry(com.google.protobuf.UInt32Value value) {
       if (invitationExpiryBuilder_ == null) {
         if (((bitField0_ & 0x00000040) != 0) &&
           invitationExpiry_ != null &&
-          invitationExpiry_ != com.google.protobuf.Int32Value.getDefaultInstance()) {
+          invitationExpiry_ != com.google.protobuf.UInt32Value.getDefaultInstance()) {
           getInvitationExpiryBuilder().mergeFrom(value);
         } else {
           invitationExpiry_ = value;
@@ -1569,7 +1569,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
+     * <code>.google.protobuf.UInt32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
      */
     public Builder clearInvitationExpiry() {
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -1582,33 +1582,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
+     * <code>.google.protobuf.UInt32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
      */
-    public com.google.protobuf.Int32Value.Builder getInvitationExpiryBuilder() {
+    public com.google.protobuf.UInt32Value.Builder getInvitationExpiryBuilder() {
       bitField0_ |= 0x00000040;
       onChanged();
       return getInvitationExpiryFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Int32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
+     * <code>.google.protobuf.UInt32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
      */
-    public com.google.protobuf.Int32ValueOrBuilder getInvitationExpiryOrBuilder() {
+    public com.google.protobuf.UInt32ValueOrBuilder getInvitationExpiryOrBuilder() {
       if (invitationExpiryBuilder_ != null) {
         return invitationExpiryBuilder_.getMessageOrBuilder();
       } else {
         return invitationExpiry_ == null ?
-            com.google.protobuf.Int32Value.getDefaultInstance() : invitationExpiry_;
+            com.google.protobuf.UInt32Value.getDefaultInstance() : invitationExpiry_;
       }
     }
     /**
-     * <code>.google.protobuf.Int32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
+     * <code>.google.protobuf.UInt32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> 
+        com.google.protobuf.UInt32Value, com.google.protobuf.UInt32Value.Builder, com.google.protobuf.UInt32ValueOrBuilder> 
         getInvitationExpiryFieldBuilder() {
       if (invitationExpiryBuilder_ == null) {
         invitationExpiryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder>(
+            com.google.protobuf.UInt32Value, com.google.protobuf.UInt32Value.Builder, com.google.protobuf.UInt32ValueOrBuilder>(
                 getInvitationExpiry(),
                 getParentForChildren(),
                 isClean());

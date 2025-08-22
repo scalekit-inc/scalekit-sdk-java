@@ -41,11 +41,37 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
-  public static final int ENV_ID_FIELD_NUMBER = 1;
+  public static final int SCOPE_FIELD_NUMBER = 1;
+  private com.scalekit.grpc.scalekit.v1.clients.CreateScope scope_;
+  /**
+   * <code>.scalekit.v1.clients.CreateScope scope = 1 [json_name = "scope", (.buf.validate.field) = { ... }</code>
+   * @return Whether the scope field is set.
+   */
+  @java.lang.Override
+  public boolean hasScope() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>.scalekit.v1.clients.CreateScope scope = 1 [json_name = "scope", (.buf.validate.field) = { ... }</code>
+   * @return The scope.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.CreateScope getScope() {
+    return scope_ == null ? com.scalekit.grpc.scalekit.v1.clients.CreateScope.getDefaultInstance() : scope_;
+  }
+  /**
+   * <code>.scalekit.v1.clients.CreateScope scope = 1 [json_name = "scope", (.buf.validate.field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.CreateScopeOrBuilder getScopeOrBuilder() {
+    return scope_ == null ? com.scalekit.grpc.scalekit.v1.clients.CreateScope.getDefaultInstance() : scope_;
+  }
+
+  public static final int ENV_ID_FIELD_NUMBER = 2;
   @SuppressWarnings("serial")
   private volatile java.lang.Object envId_ = "";
   /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+   * <code>string env_id = 2 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The envId.
    */
   @java.lang.Override
@@ -62,7 +88,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+   * <code>string env_id = 2 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for envId.
    */
   @java.lang.Override
@@ -80,32 +106,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SCOPE_FIELD_NUMBER = 2;
-  private com.scalekit.grpc.scalekit.v1.clients.CreateScope scope_;
-  /**
-   * <code>.scalekit.v1.clients.CreateScope scope = 2 [json_name = "scope", (.buf.validate.field) = { ... }</code>
-   * @return Whether the scope field is set.
-   */
-  @java.lang.Override
-  public boolean hasScope() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <code>.scalekit.v1.clients.CreateScope scope = 2 [json_name = "scope", (.buf.validate.field) = { ... }</code>
-   * @return The scope.
-   */
-  @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.clients.CreateScope getScope() {
-    return scope_ == null ? com.scalekit.grpc.scalekit.v1.clients.CreateScope.getDefaultInstance() : scope_;
-  }
-  /**
-   * <code>.scalekit.v1.clients.CreateScope scope = 2 [json_name = "scope", (.buf.validate.field) = { ... }</code>
-   */
-  @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.clients.CreateScopeOrBuilder getScopeOrBuilder() {
-    return scope_ == null ? com.scalekit.grpc.scalekit.v1.clients.CreateScope.getDefaultInstance() : scope_;
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -120,11 +120,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(envId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, envId_);
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(2, getScope());
+      output.writeMessage(1, getScope());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(envId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, envId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -135,12 +135,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(envId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, envId_);
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getScope());
+        .computeMessageSize(1, getScope());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(envId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, envId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -157,13 +157,13 @@ private static final long serialVersionUID = 0L;
     }
     com.scalekit.grpc.scalekit.v1.clients.CreateScopeRequest other = (com.scalekit.grpc.scalekit.v1.clients.CreateScopeRequest) obj;
 
-    if (!getEnvId()
-        .equals(other.getEnvId())) return false;
     if (hasScope() != other.hasScope()) return false;
     if (hasScope()) {
       if (!getScope()
           .equals(other.getScope())) return false;
     }
+    if (!getEnvId()
+        .equals(other.getEnvId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -175,12 +175,12 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ENV_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getEnvId().hashCode();
     if (hasScope()) {
       hash = (37 * hash) + SCOPE_FIELD_NUMBER;
       hash = (53 * hash) + getScope().hashCode();
     }
+    hash = (37 * hash) + ENV_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getEnvId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -318,12 +318,12 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      envId_ = "";
       scope_ = null;
       if (scopeBuilder_ != null) {
         scopeBuilder_.dispose();
         scopeBuilder_ = null;
       }
+      envId_ = "";
       return this;
     }
 
@@ -357,15 +357,15 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.clients.CreateScopeRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.envId_ = envId_;
-      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000001) != 0)) {
         result.scope_ = scopeBuilder_ == null
             ? scope_
             : scopeBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.envId_ = envId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -414,13 +414,13 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.clients.CreateScopeRequest other) {
       if (other == com.scalekit.grpc.scalekit.v1.clients.CreateScopeRequest.getDefaultInstance()) return this;
-      if (!other.getEnvId().isEmpty()) {
-        envId_ = other.envId_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
       if (other.hasScope()) {
         mergeScope(other.getScope());
+      }
+      if (!other.getEnvId().isEmpty()) {
+        envId_ = other.envId_;
+        bitField0_ |= 0x00000002;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -449,14 +449,14 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              envId_ = input.readStringRequireUtf8();
+              input.readMessage(
+                  getScopeFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
-              input.readMessage(
-                  getScopeFieldBuilder().getBuilder(),
-                  extensionRegistry);
+              envId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
             } // case 18
@@ -477,9 +477,130 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
+    private com.scalekit.grpc.scalekit.v1.clients.CreateScope scope_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.CreateScope, com.scalekit.grpc.scalekit.v1.clients.CreateScope.Builder, com.scalekit.grpc.scalekit.v1.clients.CreateScopeOrBuilder> scopeBuilder_;
+    /**
+     * <code>.scalekit.v1.clients.CreateScope scope = 1 [json_name = "scope", (.buf.validate.field) = { ... }</code>
+     * @return Whether the scope field is set.
+     */
+    public boolean hasScope() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.scalekit.v1.clients.CreateScope scope = 1 [json_name = "scope", (.buf.validate.field) = { ... }</code>
+     * @return The scope.
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.CreateScope getScope() {
+      if (scopeBuilder_ == null) {
+        return scope_ == null ? com.scalekit.grpc.scalekit.v1.clients.CreateScope.getDefaultInstance() : scope_;
+      } else {
+        return scopeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.clients.CreateScope scope = 1 [json_name = "scope", (.buf.validate.field) = { ... }</code>
+     */
+    public Builder setScope(com.scalekit.grpc.scalekit.v1.clients.CreateScope value) {
+      if (scopeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        scope_ = value;
+      } else {
+        scopeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.CreateScope scope = 1 [json_name = "scope", (.buf.validate.field) = { ... }</code>
+     */
+    public Builder setScope(
+        com.scalekit.grpc.scalekit.v1.clients.CreateScope.Builder builderForValue) {
+      if (scopeBuilder_ == null) {
+        scope_ = builderForValue.build();
+      } else {
+        scopeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.CreateScope scope = 1 [json_name = "scope", (.buf.validate.field) = { ... }</code>
+     */
+    public Builder mergeScope(com.scalekit.grpc.scalekit.v1.clients.CreateScope value) {
+      if (scopeBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0) &&
+          scope_ != null &&
+          scope_ != com.scalekit.grpc.scalekit.v1.clients.CreateScope.getDefaultInstance()) {
+          getScopeBuilder().mergeFrom(value);
+        } else {
+          scope_ = value;
+        }
+      } else {
+        scopeBuilder_.mergeFrom(value);
+      }
+      if (scope_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.CreateScope scope = 1 [json_name = "scope", (.buf.validate.field) = { ... }</code>
+     */
+    public Builder clearScope() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      scope_ = null;
+      if (scopeBuilder_ != null) {
+        scopeBuilder_.dispose();
+        scopeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.CreateScope scope = 1 [json_name = "scope", (.buf.validate.field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.CreateScope.Builder getScopeBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getScopeFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.clients.CreateScope scope = 1 [json_name = "scope", (.buf.validate.field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.CreateScopeOrBuilder getScopeOrBuilder() {
+      if (scopeBuilder_ != null) {
+        return scopeBuilder_.getMessageOrBuilder();
+      } else {
+        return scope_ == null ?
+            com.scalekit.grpc.scalekit.v1.clients.CreateScope.getDefaultInstance() : scope_;
+      }
+    }
+    /**
+     * <code>.scalekit.v1.clients.CreateScope scope = 1 [json_name = "scope", (.buf.validate.field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.CreateScope, com.scalekit.grpc.scalekit.v1.clients.CreateScope.Builder, com.scalekit.grpc.scalekit.v1.clients.CreateScopeOrBuilder> 
+        getScopeFieldBuilder() {
+      if (scopeBuilder_ == null) {
+        scopeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.clients.CreateScope, com.scalekit.grpc.scalekit.v1.clients.CreateScope.Builder, com.scalekit.grpc.scalekit.v1.clients.CreateScopeOrBuilder>(
+                getScope(),
+                getParentForChildren(),
+                isClean());
+        scope_ = null;
+      }
+      return scopeBuilder_;
+    }
+
     private java.lang.Object envId_ = "";
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+     * <code>string env_id = 2 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The envId.
      */
     public java.lang.String getEnvId() {
@@ -495,7 +616,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+     * <code>string env_id = 2 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for envId.
      */
     public com.google.protobuf.ByteString
@@ -512,7 +633,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+     * <code>string env_id = 2 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The envId to set.
      * @return This builder for chaining.
      */
@@ -520,22 +641,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       envId_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+     * <code>string env_id = 2 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearEnvId() {
       envId_ = getDefaultInstance().getEnvId();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+     * <code>string env_id = 2 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for envId to set.
      * @return This builder for chaining.
      */
@@ -544,130 +665,9 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       envId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
-    private com.scalekit.grpc.scalekit.v1.clients.CreateScope scope_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.clients.CreateScope, com.scalekit.grpc.scalekit.v1.clients.CreateScope.Builder, com.scalekit.grpc.scalekit.v1.clients.CreateScopeOrBuilder> scopeBuilder_;
-    /**
-     * <code>.scalekit.v1.clients.CreateScope scope = 2 [json_name = "scope", (.buf.validate.field) = { ... }</code>
-     * @return Whether the scope field is set.
-     */
-    public boolean hasScope() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>.scalekit.v1.clients.CreateScope scope = 2 [json_name = "scope", (.buf.validate.field) = { ... }</code>
-     * @return The scope.
-     */
-    public com.scalekit.grpc.scalekit.v1.clients.CreateScope getScope() {
-      if (scopeBuilder_ == null) {
-        return scope_ == null ? com.scalekit.grpc.scalekit.v1.clients.CreateScope.getDefaultInstance() : scope_;
-      } else {
-        return scopeBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.scalekit.v1.clients.CreateScope scope = 2 [json_name = "scope", (.buf.validate.field) = { ... }</code>
-     */
-    public Builder setScope(com.scalekit.grpc.scalekit.v1.clients.CreateScope value) {
-      if (scopeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        scope_ = value;
-      } else {
-        scopeBuilder_.setMessage(value);
-      }
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
-    }
-    /**
-     * <code>.scalekit.v1.clients.CreateScope scope = 2 [json_name = "scope", (.buf.validate.field) = { ... }</code>
-     */
-    public Builder setScope(
-        com.scalekit.grpc.scalekit.v1.clients.CreateScope.Builder builderForValue) {
-      if (scopeBuilder_ == null) {
-        scope_ = builderForValue.build();
-      } else {
-        scopeBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.clients.CreateScope scope = 2 [json_name = "scope", (.buf.validate.field) = { ... }</code>
-     */
-    public Builder mergeScope(com.scalekit.grpc.scalekit.v1.clients.CreateScope value) {
-      if (scopeBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0) &&
-          scope_ != null &&
-          scope_ != com.scalekit.grpc.scalekit.v1.clients.CreateScope.getDefaultInstance()) {
-          getScopeBuilder().mergeFrom(value);
-        } else {
-          scope_ = value;
-        }
-      } else {
-        scopeBuilder_.mergeFrom(value);
-      }
-      if (scope_ != null) {
-        bitField0_ |= 0x00000002;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.clients.CreateScope scope = 2 [json_name = "scope", (.buf.validate.field) = { ... }</code>
-     */
-    public Builder clearScope() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      scope_ = null;
-      if (scopeBuilder_ != null) {
-        scopeBuilder_.dispose();
-        scopeBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.clients.CreateScope scope = 2 [json_name = "scope", (.buf.validate.field) = { ... }</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.clients.CreateScope.Builder getScopeBuilder() {
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return getScopeFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.scalekit.v1.clients.CreateScope scope = 2 [json_name = "scope", (.buf.validate.field) = { ... }</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.clients.CreateScopeOrBuilder getScopeOrBuilder() {
-      if (scopeBuilder_ != null) {
-        return scopeBuilder_.getMessageOrBuilder();
-      } else {
-        return scope_ == null ?
-            com.scalekit.grpc.scalekit.v1.clients.CreateScope.getDefaultInstance() : scope_;
-      }
-    }
-    /**
-     * <code>.scalekit.v1.clients.CreateScope scope = 2 [json_name = "scope", (.buf.validate.field) = { ... }</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.clients.CreateScope, com.scalekit.grpc.scalekit.v1.clients.CreateScope.Builder, com.scalekit.grpc.scalekit.v1.clients.CreateScopeOrBuilder> 
-        getScopeFieldBuilder() {
-      if (scopeBuilder_ == null) {
-        scopeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.scalekit.grpc.scalekit.v1.clients.CreateScope, com.scalekit.grpc.scalekit.v1.clients.CreateScope.Builder, com.scalekit.grpc.scalekit.v1.clients.CreateScopeOrBuilder>(
-                getScope(),
-                getParentForChildren(),
-                isClean());
-        scope_ = null;
-      }
-      return scopeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

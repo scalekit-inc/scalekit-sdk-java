@@ -44,7 +44,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object envId_ = "";
   /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+   * <code>string env_id = 1 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The envId.
    */
   @java.lang.Override
@@ -61,7 +61,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+   * <code>string env_id = 1 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for envId.
    */
   @java.lang.Override
@@ -407,7 +407,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object envId_ = "";
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+     * <code>string env_id = 1 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The envId.
      */
     public java.lang.String getEnvId() {
@@ -423,7 +423,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+     * <code>string env_id = 1 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for envId.
      */
     public com.google.protobuf.ByteString
@@ -440,7 +440,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+     * <code>string env_id = 1 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The envId to set.
      * @return This builder for chaining.
      */
@@ -453,7 +453,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+     * <code>string env_id = 1 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearEnvId() {
@@ -463,7 +463,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+     * <code>string env_id = 1 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for envId to set.
      * @return This builder for chaining.
      */

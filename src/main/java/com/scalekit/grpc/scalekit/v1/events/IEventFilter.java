@@ -21,6 +21,8 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.LazyStringArrayList.emptyList();
     tenantId_ = "";
     source_ = 0;
+    internalEvents_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -307,6 +309,43 @@ java.lang.String defaultValue) {
     return map.get(key);
   }
 
+  public static final int INTERNAL_EVENTS_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList internalEvents_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string internal_events = 8 [json_name = "internalEvents"];</code>
+   * @return A list containing the internalEvents.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getInternalEventsList() {
+    return internalEvents_;
+  }
+  /**
+   * <code>repeated string internal_events = 8 [json_name = "internalEvents"];</code>
+   * @return The count of internalEvents.
+   */
+  public int getInternalEventsCount() {
+    return internalEvents_.size();
+  }
+  /**
+   * <code>repeated string internal_events = 8 [json_name = "internalEvents"];</code>
+   * @param index The index of the element to return.
+   * @return The internalEvents at the given index.
+   */
+  public java.lang.String getInternalEvents(int index) {
+    return internalEvents_.get(index);
+  }
+  /**
+   * <code>repeated string internal_events = 8 [json_name = "internalEvents"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the internalEvents at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getInternalEventsBytes(int index) {
+    return internalEvents_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -345,6 +384,9 @@ java.lang.String defaultValue) {
         internalGetMetadata(),
         MetadataDefaultEntryHolder.defaultEntry,
         7);
+    for (int i = 0; i < internalEvents_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, internalEvents_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -391,6 +433,14 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, metadata__);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < internalEvents_.size(); i++) {
+        dataSize += computeStringSizeNoTag(internalEvents_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getInternalEventsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -428,6 +478,8 @@ java.lang.String defaultValue) {
     if (source_ != other.source_) return false;
     if (!internalGetMetadata().equals(
         other.internalGetMetadata())) return false;
+    if (!getInternalEventsList()
+        .equals(other.getInternalEventsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -462,6 +514,10 @@ java.lang.String defaultValue) {
     if (!internalGetMetadata().getMap().isEmpty()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetMetadata().hashCode();
+    }
+    if (getInternalEventsCount() > 0) {
+      hash = (37 * hash) + INTERNAL_EVENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getInternalEventsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -644,6 +700,8 @@ java.lang.String defaultValue) {
       }
       source_ = 0;
       internalGetMutableMetadata().clear();
+      internalEvents_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -709,6 +767,10 @@ java.lang.String defaultValue) {
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        internalEvents_.makeImmutable();
+        result.internalEvents_ = internalEvents_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -787,6 +849,16 @@ java.lang.String defaultValue) {
       internalGetMutableMetadata().mergeFrom(
           other.internalGetMetadata());
       bitField0_ |= 0x00000040;
+      if (!other.internalEvents_.isEmpty()) {
+        if (internalEvents_.isEmpty()) {
+          internalEvents_ = other.internalEvents_;
+          bitField0_ |= 0x00000080;
+        } else {
+          ensureInternalEventsIsMutable();
+          internalEvents_.addAll(other.internalEvents_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -859,6 +931,12 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000040;
               break;
             } // case 58
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureInternalEventsIsMutable();
+              internalEvents_.add(s);
+              break;
+            } // case 66
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1599,6 +1677,117 @@ java.lang.String defaultValue) {
       internalGetMutableMetadata().getMutableMap()
           .putAll(values);
       bitField0_ |= 0x00000040;
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList internalEvents_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureInternalEventsIsMutable() {
+      if (!internalEvents_.isModifiable()) {
+        internalEvents_ = new com.google.protobuf.LazyStringArrayList(internalEvents_);
+      }
+      bitField0_ |= 0x00000080;
+    }
+    /**
+     * <code>repeated string internal_events = 8 [json_name = "internalEvents"];</code>
+     * @return A list containing the internalEvents.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getInternalEventsList() {
+      internalEvents_.makeImmutable();
+      return internalEvents_;
+    }
+    /**
+     * <code>repeated string internal_events = 8 [json_name = "internalEvents"];</code>
+     * @return The count of internalEvents.
+     */
+    public int getInternalEventsCount() {
+      return internalEvents_.size();
+    }
+    /**
+     * <code>repeated string internal_events = 8 [json_name = "internalEvents"];</code>
+     * @param index The index of the element to return.
+     * @return The internalEvents at the given index.
+     */
+    public java.lang.String getInternalEvents(int index) {
+      return internalEvents_.get(index);
+    }
+    /**
+     * <code>repeated string internal_events = 8 [json_name = "internalEvents"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the internalEvents at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getInternalEventsBytes(int index) {
+      return internalEvents_.getByteString(index);
+    }
+    /**
+     * <code>repeated string internal_events = 8 [json_name = "internalEvents"];</code>
+     * @param index The index to set the value at.
+     * @param value The internalEvents to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalEvents(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureInternalEventsIsMutable();
+      internalEvents_.set(index, value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string internal_events = 8 [json_name = "internalEvents"];</code>
+     * @param value The internalEvents to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInternalEvents(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureInternalEventsIsMutable();
+      internalEvents_.add(value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string internal_events = 8 [json_name = "internalEvents"];</code>
+     * @param values The internalEvents to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllInternalEvents(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureInternalEventsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, internalEvents_);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string internal_events = 8 [json_name = "internalEvents"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInternalEvents() {
+      internalEvents_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000080);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string internal_events = 8 [json_name = "internalEvents"];</code>
+     * @param value The bytes of the internalEvents to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInternalEventsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureInternalEventsIsMutable();
+      internalEvents_.add(value);
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     @java.lang.Override

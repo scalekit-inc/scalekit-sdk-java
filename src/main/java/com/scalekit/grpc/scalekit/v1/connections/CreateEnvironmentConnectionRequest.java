@@ -66,6 +66,32 @@ private static final long serialVersionUID = 0L;
     return connection_ == null ? com.scalekit.grpc.scalekit.v1.connections.CreateConnection.getDefaultInstance() : connection_;
   }
 
+  public static final int FLAGS_FIELD_NUMBER = 2;
+  private com.scalekit.grpc.scalekit.v1.connections.Flags flags_;
+  /**
+   * <code>optional .scalekit.v1.connections.Flags flags = 2 [json_name = "flags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the flags field is set.
+   */
+  @java.lang.Override
+  public boolean hasFlags() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional .scalekit.v1.connections.Flags flags = 2 [json_name = "flags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The flags.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.Flags getFlags() {
+    return flags_ == null ? com.scalekit.grpc.scalekit.v1.connections.Flags.getDefaultInstance() : flags_;
+  }
+  /**
+   * <code>optional .scalekit.v1.connections.Flags flags = 2 [json_name = "flags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.FlagsOrBuilder getFlagsOrBuilder() {
+    return flags_ == null ? com.scalekit.grpc.scalekit.v1.connections.Flags.getDefaultInstance() : flags_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -83,6 +109,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getConnection());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(2, getFlags());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -95,6 +124,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getConnection());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getFlags());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -116,6 +149,11 @@ private static final long serialVersionUID = 0L;
       if (!getConnection()
           .equals(other.getConnection())) return false;
     }
+    if (hasFlags() != other.hasFlags()) return false;
+    if (hasFlags()) {
+      if (!getFlags()
+          .equals(other.getFlags())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -130,6 +168,10 @@ private static final long serialVersionUID = 0L;
     if (hasConnection()) {
       hash = (37 * hash) + CONNECTION_FIELD_NUMBER;
       hash = (53 * hash) + getConnection().hashCode();
+    }
+    if (hasFlags()) {
+      hash = (37 * hash) + FLAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getFlags().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -262,6 +304,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getConnectionFieldBuilder();
+        getFlagsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -272,6 +315,11 @@ private static final long serialVersionUID = 0L;
       if (connectionBuilder_ != null) {
         connectionBuilder_.dispose();
         connectionBuilder_ = null;
+      }
+      flags_ = null;
+      if (flagsBuilder_ != null) {
+        flagsBuilder_.dispose();
+        flagsBuilder_ = null;
       }
       return this;
     }
@@ -312,6 +360,12 @@ private static final long serialVersionUID = 0L;
             ? connection_
             : connectionBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.flags_ = flagsBuilder_ == null
+            ? flags_
+            : flagsBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -363,6 +417,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasConnection()) {
         mergeConnection(other.getConnection());
       }
+      if (other.hasFlags()) {
+        mergeFlags(other.getFlags());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -396,6 +453,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
+            case 18: {
+              input.readMessage(
+                  getFlagsFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -532,6 +596,127 @@ private static final long serialVersionUID = 0L;
         connection_ = null;
       }
       return connectionBuilder_;
+    }
+
+    private com.scalekit.grpc.scalekit.v1.connections.Flags flags_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.Flags, com.scalekit.grpc.scalekit.v1.connections.Flags.Builder, com.scalekit.grpc.scalekit.v1.connections.FlagsOrBuilder> flagsBuilder_;
+    /**
+     * <code>optional .scalekit.v1.connections.Flags flags = 2 [json_name = "flags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the flags field is set.
+     */
+    public boolean hasFlags() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.Flags flags = 2 [json_name = "flags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The flags.
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.Flags getFlags() {
+      if (flagsBuilder_ == null) {
+        return flags_ == null ? com.scalekit.grpc.scalekit.v1.connections.Flags.getDefaultInstance() : flags_;
+      } else {
+        return flagsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.Flags flags = 2 [json_name = "flags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setFlags(com.scalekit.grpc.scalekit.v1.connections.Flags value) {
+      if (flagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        flags_ = value;
+      } else {
+        flagsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.Flags flags = 2 [json_name = "flags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setFlags(
+        com.scalekit.grpc.scalekit.v1.connections.Flags.Builder builderForValue) {
+      if (flagsBuilder_ == null) {
+        flags_ = builderForValue.build();
+      } else {
+        flagsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.Flags flags = 2 [json_name = "flags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeFlags(com.scalekit.grpc.scalekit.v1.connections.Flags value) {
+      if (flagsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0) &&
+          flags_ != null &&
+          flags_ != com.scalekit.grpc.scalekit.v1.connections.Flags.getDefaultInstance()) {
+          getFlagsBuilder().mergeFrom(value);
+        } else {
+          flags_ = value;
+        }
+      } else {
+        flagsBuilder_.mergeFrom(value);
+      }
+      if (flags_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.Flags flags = 2 [json_name = "flags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearFlags() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      flags_ = null;
+      if (flagsBuilder_ != null) {
+        flagsBuilder_.dispose();
+        flagsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.Flags flags = 2 [json_name = "flags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.Flags.Builder getFlagsBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getFlagsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.Flags flags = 2 [json_name = "flags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.FlagsOrBuilder getFlagsOrBuilder() {
+      if (flagsBuilder_ != null) {
+        return flagsBuilder_.getMessageOrBuilder();
+      } else {
+        return flags_ == null ?
+            com.scalekit.grpc.scalekit.v1.connections.Flags.getDefaultInstance() : flags_;
+      }
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.Flags flags = 2 [json_name = "flags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.Flags, com.scalekit.grpc.scalekit.v1.connections.Flags.Builder, com.scalekit.grpc.scalekit.v1.connections.FlagsOrBuilder> 
+        getFlagsFieldBuilder() {
+      if (flagsBuilder_ == null) {
+        flagsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.connections.Flags, com.scalekit.grpc.scalekit.v1.connections.Flags.Builder, com.scalekit.grpc.scalekit.v1.connections.FlagsOrBuilder>(
+                getFlags(),
+                getParentForChildren(),
+                isClean());
+        flags_ = null;
+      }
+      return flagsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

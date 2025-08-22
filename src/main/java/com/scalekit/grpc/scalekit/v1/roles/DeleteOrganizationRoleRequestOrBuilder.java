@@ -21,14 +21,31 @@ public interface DeleteOrganizationRoleRequestOrBuilder extends
       getOrgIdBytes();
 
   /**
-   * <code>string id = 2 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The id.
+   * <code>string role_name = 2 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The roleName.
    */
-  java.lang.String getId();
+  java.lang.String getRoleName();
   /**
-   * <code>string id = 2 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for id.
+   * <code>string role_name = 2 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for roleName.
    */
   com.google.protobuf.ByteString
-      getIdBytes();
+      getRoleNameBytes();
+
+  /**
+   * <code>optional string reassign_role_name = 3 [json_name = "reassignRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the reassignRoleName field is set.
+   */
+  boolean hasReassignRoleName();
+  /**
+   * <code>optional string reassign_role_name = 3 [json_name = "reassignRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The reassignRoleName.
+   */
+  java.lang.String getReassignRoleName();
+  /**
+   * <code>optional string reassign_role_name = 3 [json_name = "reassignRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for reassignRoleName.
+   */
+  com.google.protobuf.ByteString
+      getReassignRoleNameBytes();
 }

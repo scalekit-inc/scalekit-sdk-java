@@ -21,7 +21,8 @@ private static final long serialVersionUID = 0L;
     membershipStatus_ = 0;
     roles_ = java.util.Collections.emptyList();
     name_ = "";
-    primaryIdentityProvider_ = 0;
+    displayName_ = "";
+    invitedBy_ = "";
   }
 
   @java.lang.Override
@@ -185,7 +186,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
   /**
-   * <code>optional string name = 5 [json_name = "name"];</code>
+   * <code>optional string name = 5 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the name field is set.
    */
   @java.lang.Override
@@ -193,7 +194,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>optional string name = 5 [json_name = "name"];</code>
+   * <code>optional string name = 5 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The name.
    */
   @java.lang.Override
@@ -210,7 +211,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string name = 5 [json_name = "name"];</code>
+   * <code>optional string name = 5 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -226,24 +227,6 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int PRIMARY_IDENTITY_PROVIDER_FIELD_NUMBER = 6;
-  private int primaryIdentityProvider_ = 0;
-  /**
-   * <code>.scalekit.v1.commons.IdentityProviderType primary_identity_provider = 6 [json_name = "primaryIdentityProvider"];</code>
-   * @return The enum numeric value on the wire for primaryIdentityProvider.
-   */
-  @java.lang.Override public int getPrimaryIdentityProviderValue() {
-    return primaryIdentityProvider_;
-  }
-  /**
-   * <code>.scalekit.v1.commons.IdentityProviderType primary_identity_provider = 6 [json_name = "primaryIdentityProvider"];</code>
-   * @return The primaryIdentityProvider.
-   */
-  @java.lang.Override public com.scalekit.grpc.scalekit.v1.commons.IdentityProviderType getPrimaryIdentityProvider() {
-    com.scalekit.grpc.scalekit.v1.commons.IdentityProviderType result = com.scalekit.grpc.scalekit.v1.commons.IdentityProviderType.forNumber(primaryIdentityProvider_);
-    return result == null ? com.scalekit.grpc.scalekit.v1.commons.IdentityProviderType.UNRECOGNIZED : result;
   }
 
   public static final int METADATA_FIELD_NUMBER = 7;
@@ -325,6 +308,178 @@ java.lang.String defaultValue) {
     return map.get(key);
   }
 
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 9;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
+  /**
+   * <code>optional string display_name = 9 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the displayName field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisplayName() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>optional string display_name = 9 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string display_name = 9 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int INVITED_BY_FIELD_NUMBER = 10;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object invitedBy_ = "";
+  /**
+   * <code>optional string invited_by = 10 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the invitedBy field is set.
+   */
+  @java.lang.Override
+  public boolean hasInvitedBy() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <code>optional string invited_by = 10 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The invitedBy.
+   */
+  @java.lang.Override
+  public java.lang.String getInvitedBy() {
+    java.lang.Object ref = invitedBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      invitedBy_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string invited_by = 10 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for invitedBy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getInvitedByBytes() {
+    java.lang.Object ref = invitedBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      invitedBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CREATED_AT_FIELD_NUMBER = 11;
+  private com.google.protobuf.Timestamp createdAt_;
+  /**
+   * <code>optional .google.protobuf.Timestamp created_at = 11 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the createdAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreatedAt() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <code>optional .google.protobuf.Timestamp created_at = 11 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The createdAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreatedAt() {
+    return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+  }
+  /**
+   * <code>optional .google.protobuf.Timestamp created_at = 11 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+    return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+  }
+
+  public static final int ACCEPTED_AT_FIELD_NUMBER = 12;
+  private com.google.protobuf.Timestamp acceptedAt_;
+  /**
+   * <code>optional .google.protobuf.Timestamp accepted_at = 12 [json_name = "acceptedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the acceptedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasAcceptedAt() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   * <code>optional .google.protobuf.Timestamp accepted_at = 12 [json_name = "acceptedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The acceptedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getAcceptedAt() {
+    return acceptedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : acceptedAt_;
+  }
+  /**
+   * <code>optional .google.protobuf.Timestamp accepted_at = 12 [json_name = "acceptedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getAcceptedAtOrBuilder() {
+    return acceptedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : acceptedAt_;
+  }
+
+  public static final int EXPIRES_AT_FIELD_NUMBER = 13;
+  private com.google.protobuf.Timestamp expiresAt_;
+  /**
+   * <code>optional .google.protobuf.Timestamp expires_at = 13 [json_name = "expiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the expiresAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpiresAt() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   * <code>optional .google.protobuf.Timestamp expires_at = 13 [json_name = "expiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The expiresAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getExpiresAt() {
+    return expiresAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiresAt_;
+  }
+  /**
+   * <code>optional .google.protobuf.Timestamp expires_at = 13 [json_name = "expiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder() {
+    return expiresAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiresAt_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -354,15 +509,27 @@ java.lang.String defaultValue) {
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
     }
-    if (primaryIdentityProvider_ != com.scalekit.grpc.scalekit.v1.commons.IdentityProviderType.IDENTITY_PROVIDER_UNSPECIFIED.getNumber()) {
-      output.writeEnum(6, primaryIdentityProvider_);
-    }
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
         internalGetMetadata(),
         MetadataDefaultEntryHolder.defaultEntry,
         7);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, displayName_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, invitedBy_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(11, getCreatedAt());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(12, getAcceptedAt());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(13, getExpiresAt());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -390,10 +557,6 @@ java.lang.String defaultValue) {
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
     }
-    if (primaryIdentityProvider_ != com.scalekit.grpc.scalekit.v1.commons.IdentityProviderType.IDENTITY_PROVIDER_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(6, primaryIdentityProvider_);
-    }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
          : internalGetMetadata().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
@@ -403,6 +566,24 @@ java.lang.String defaultValue) {
           .build();
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, metadata__);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, displayName_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, invitedBy_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getCreatedAt());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getAcceptedAt());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, getExpiresAt());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -434,9 +615,33 @@ java.lang.String defaultValue) {
       if (!getName()
           .equals(other.getName())) return false;
     }
-    if (primaryIdentityProvider_ != other.primaryIdentityProvider_) return false;
     if (!internalGetMetadata().equals(
         other.internalGetMetadata())) return false;
+    if (hasDisplayName() != other.hasDisplayName()) return false;
+    if (hasDisplayName()) {
+      if (!getDisplayName()
+          .equals(other.getDisplayName())) return false;
+    }
+    if (hasInvitedBy() != other.hasInvitedBy()) return false;
+    if (hasInvitedBy()) {
+      if (!getInvitedBy()
+          .equals(other.getInvitedBy())) return false;
+    }
+    if (hasCreatedAt() != other.hasCreatedAt()) return false;
+    if (hasCreatedAt()) {
+      if (!getCreatedAt()
+          .equals(other.getCreatedAt())) return false;
+    }
+    if (hasAcceptedAt() != other.hasAcceptedAt()) return false;
+    if (hasAcceptedAt()) {
+      if (!getAcceptedAt()
+          .equals(other.getAcceptedAt())) return false;
+    }
+    if (hasExpiresAt() != other.hasExpiresAt()) return false;
+    if (hasExpiresAt()) {
+      if (!getExpiresAt()
+          .equals(other.getExpiresAt())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -464,11 +669,29 @@ java.lang.String defaultValue) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
     }
-    hash = (37 * hash) + PRIMARY_IDENTITY_PROVIDER_FIELD_NUMBER;
-    hash = (53 * hash) + primaryIdentityProvider_;
     if (!internalGetMetadata().getMap().isEmpty()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetMetadata().hashCode();
+    }
+    if (hasDisplayName()) {
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+    }
+    if (hasInvitedBy()) {
+      hash = (37 * hash) + INVITED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getInvitedBy().hashCode();
+    }
+    if (hasCreatedAt()) {
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt().hashCode();
+    }
+    if (hasAcceptedAt()) {
+      hash = (37 * hash) + ACCEPTED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getAcceptedAt().hashCode();
+    }
+    if (hasExpiresAt()) {
+      hash = (37 * hash) + EXPIRES_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getExpiresAt().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -624,6 +847,9 @@ java.lang.String defaultValue) {
               .alwaysUseFieldBuilders) {
         getJoinTimeFieldBuilder();
         getRolesFieldBuilder();
+        getCreatedAtFieldBuilder();
+        getAcceptedAtFieldBuilder();
+        getExpiresAtFieldBuilder();
       }
     }
     @java.lang.Override
@@ -645,8 +871,24 @@ java.lang.String defaultValue) {
       }
       bitField0_ = (bitField0_ & ~0x00000008);
       name_ = "";
-      primaryIdentityProvider_ = 0;
       internalGetMutableMetadata().clear();
+      displayName_ = "";
+      invitedBy_ = "";
+      createdAt_ = null;
+      if (createdAtBuilder_ != null) {
+        createdAtBuilder_.dispose();
+        createdAtBuilder_ = null;
+      }
+      acceptedAt_ = null;
+      if (acceptedAtBuilder_ != null) {
+        acceptedAtBuilder_.dispose();
+        acceptedAtBuilder_ = null;
+      }
+      expiresAt_ = null;
+      if (expiresAtBuilder_ != null) {
+        expiresAtBuilder_.dispose();
+        expiresAtBuilder_ = null;
+      }
       return this;
     }
 
@@ -711,11 +953,34 @@ java.lang.String defaultValue) {
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.primaryIdentityProvider_ = primaryIdentityProvider_;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.displayName_ = displayName_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.invitedBy_ = invitedBy_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.createdAt_ = createdAtBuilder_ == null
+            ? createdAt_
+            : createdAtBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.acceptedAt_ = acceptedAtBuilder_ == null
+            ? acceptedAt_
+            : acceptedAtBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.expiresAt_ = expiresAtBuilder_ == null
+            ? expiresAt_
+            : expiresAtBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -806,12 +1071,28 @@ java.lang.String defaultValue) {
         bitField0_ |= 0x00000010;
         onChanged();
       }
-      if (other.primaryIdentityProvider_ != 0) {
-        setPrimaryIdentityProviderValue(other.getPrimaryIdentityProviderValue());
-      }
       internalGetMutableMetadata().mergeFrom(
           other.internalGetMetadata());
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
+      if (other.hasDisplayName()) {
+        displayName_ = other.displayName_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (other.hasInvitedBy()) {
+        invitedBy_ = other.invitedBy_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (other.hasCreatedAt()) {
+        mergeCreatedAt(other.getCreatedAt());
+      }
+      if (other.hasAcceptedAt()) {
+        mergeAcceptedAt(other.getAcceptedAt());
+      }
+      if (other.hasExpiresAt()) {
+        mergeExpiresAt(other.getExpiresAt());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -873,20 +1154,46 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000010;
               break;
             } // case 42
-            case 48: {
-              primaryIdentityProvider_ = input.readEnum();
-              bitField0_ |= 0x00000020;
-              break;
-            } // case 48
             case 58: {
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               metadata__ = input.readMessage(
                   MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               internalGetMutableMetadata().getMutableMap().put(
                   metadata__.getKey(), metadata__.getValue());
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000020;
               break;
             } // case 58
+            case 74: {
+              displayName_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 74
+            case 82: {
+              invitedBy_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 82
+            case 90: {
+              input.readMessage(
+                  getCreatedAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 90
+            case 98: {
+              input.readMessage(
+                  getAcceptedAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 98
+            case 106: {
+              input.readMessage(
+                  getExpiresAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000400;
+              break;
+            } // case 106
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1392,14 +1699,14 @@ java.lang.String defaultValue) {
 
     private java.lang.Object name_ = "";
     /**
-     * <code>optional string name = 5 [json_name = "name"];</code>
+     * <code>optional string name = 5 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the name field is set.
      */
     public boolean hasName() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>optional string name = 5 [json_name = "name"];</code>
+     * <code>optional string name = 5 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -1415,7 +1722,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string name = 5 [json_name = "name"];</code>
+     * <code>optional string name = 5 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -1432,7 +1739,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string name = 5 [json_name = "name"];</code>
+     * <code>optional string name = 5 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -1445,7 +1752,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>optional string name = 5 [json_name = "name"];</code>
+     * <code>optional string name = 5 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -1455,7 +1762,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>optional string name = 5 [json_name = "name"];</code>
+     * <code>optional string name = 5 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -1465,59 +1772,6 @@ java.lang.String defaultValue) {
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-
-    private int primaryIdentityProvider_ = 0;
-    /**
-     * <code>.scalekit.v1.commons.IdentityProviderType primary_identity_provider = 6 [json_name = "primaryIdentityProvider"];</code>
-     * @return The enum numeric value on the wire for primaryIdentityProvider.
-     */
-    @java.lang.Override public int getPrimaryIdentityProviderValue() {
-      return primaryIdentityProvider_;
-    }
-    /**
-     * <code>.scalekit.v1.commons.IdentityProviderType primary_identity_provider = 6 [json_name = "primaryIdentityProvider"];</code>
-     * @param value The enum numeric value on the wire for primaryIdentityProvider to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPrimaryIdentityProviderValue(int value) {
-      primaryIdentityProvider_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.commons.IdentityProviderType primary_identity_provider = 6 [json_name = "primaryIdentityProvider"];</code>
-     * @return The primaryIdentityProvider.
-     */
-    @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.commons.IdentityProviderType getPrimaryIdentityProvider() {
-      com.scalekit.grpc.scalekit.v1.commons.IdentityProviderType result = com.scalekit.grpc.scalekit.v1.commons.IdentityProviderType.forNumber(primaryIdentityProvider_);
-      return result == null ? com.scalekit.grpc.scalekit.v1.commons.IdentityProviderType.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.scalekit.v1.commons.IdentityProviderType primary_identity_provider = 6 [json_name = "primaryIdentityProvider"];</code>
-     * @param value The primaryIdentityProvider to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPrimaryIdentityProvider(com.scalekit.grpc.scalekit.v1.commons.IdentityProviderType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000020;
-      primaryIdentityProvider_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.commons.IdentityProviderType primary_identity_provider = 6 [json_name = "primaryIdentityProvider"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPrimaryIdentityProvider() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      primaryIdentityProvider_ = 0;
       onChanged();
       return this;
     }
@@ -1541,7 +1795,7 @@ java.lang.String defaultValue) {
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return metadata_;
     }
@@ -1601,7 +1855,7 @@ java.lang.String defaultValue) {
       return map.get(key);
     }
     public Builder clearMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableMetadata().getMutableMap()
           .clear();
       return this;
@@ -1622,7 +1876,7 @@ java.lang.String defaultValue) {
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
         getMutableMetadata() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -1635,7 +1889,7 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException("map value"); }
       internalGetMutableMetadata().getMutableMap()
           .put(key, value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -1645,8 +1899,529 @@ java.lang.String defaultValue) {
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap()
           .putAll(values);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       return this;
+    }
+
+    private java.lang.Object displayName_ = "";
+    /**
+     * <code>optional string display_name = 9 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the displayName field is set.
+     */
+    public boolean hasDisplayName() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>optional string display_name = 9 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string display_name = 9 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString
+        getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string display_name = 9 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      displayName_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string display_name = 9 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+      displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string display_name = 9 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      displayName_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object invitedBy_ = "";
+    /**
+     * <code>optional string invited_by = 10 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the invitedBy field is set.
+     */
+    public boolean hasInvitedBy() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <code>optional string invited_by = 10 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The invitedBy.
+     */
+    public java.lang.String getInvitedBy() {
+      java.lang.Object ref = invitedBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        invitedBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string invited_by = 10 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for invitedBy.
+     */
+    public com.google.protobuf.ByteString
+        getInvitedByBytes() {
+      java.lang.Object ref = invitedBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        invitedBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string invited_by = 10 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The invitedBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInvitedBy(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      invitedBy_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string invited_by = 10 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInvitedBy() {
+      invitedBy_ = getDefaultInstance().getInvitedBy();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string invited_by = 10 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for invitedBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInvitedByBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      invitedBy_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp createdAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
+    /**
+     * <code>optional .google.protobuf.Timestamp created_at = 11 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the createdAt field is set.
+     */
+    public boolean hasCreatedAt() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp created_at = 11 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The createdAt.
+     */
+    public com.google.protobuf.Timestamp getCreatedAt() {
+      if (createdAtBuilder_ == null) {
+        return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+      } else {
+        return createdAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp created_at = 11 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
+      if (createdAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createdAt_ = value;
+      } else {
+        createdAtBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp created_at = 11 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setCreatedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createdAtBuilder_ == null) {
+        createdAt_ = builderForValue.build();
+      } else {
+        createdAtBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp created_at = 11 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
+      if (createdAtBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0) &&
+          createdAt_ != null &&
+          createdAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreatedAtBuilder().mergeFrom(value);
+        } else {
+          createdAt_ = value;
+        }
+      } else {
+        createdAtBuilder_.mergeFrom(value);
+      }
+      if (createdAt_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp created_at = 11 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearCreatedAt() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      createdAt_ = null;
+      if (createdAtBuilder_ != null) {
+        createdAtBuilder_.dispose();
+        createdAtBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp created_at = 11 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getCreatedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp created_at = 11 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+      if (createdAtBuilder_ != null) {
+        return createdAtBuilder_.getMessageOrBuilder();
+      } else {
+        return createdAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp created_at = 11 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getCreatedAtFieldBuilder() {
+      if (createdAtBuilder_ == null) {
+        createdAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getCreatedAt(),
+                getParentForChildren(),
+                isClean());
+        createdAt_ = null;
+      }
+      return createdAtBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp acceptedAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> acceptedAtBuilder_;
+    /**
+     * <code>optional .google.protobuf.Timestamp accepted_at = 12 [json_name = "acceptedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the acceptedAt field is set.
+     */
+    public boolean hasAcceptedAt() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp accepted_at = 12 [json_name = "acceptedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The acceptedAt.
+     */
+    public com.google.protobuf.Timestamp getAcceptedAt() {
+      if (acceptedAtBuilder_ == null) {
+        return acceptedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : acceptedAt_;
+      } else {
+        return acceptedAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp accepted_at = 12 [json_name = "acceptedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setAcceptedAt(com.google.protobuf.Timestamp value) {
+      if (acceptedAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        acceptedAt_ = value;
+      } else {
+        acceptedAtBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp accepted_at = 12 [json_name = "acceptedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setAcceptedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (acceptedAtBuilder_ == null) {
+        acceptedAt_ = builderForValue.build();
+      } else {
+        acceptedAtBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp accepted_at = 12 [json_name = "acceptedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeAcceptedAt(com.google.protobuf.Timestamp value) {
+      if (acceptedAtBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0) &&
+          acceptedAt_ != null &&
+          acceptedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getAcceptedAtBuilder().mergeFrom(value);
+        } else {
+          acceptedAt_ = value;
+        }
+      } else {
+        acceptedAtBuilder_.mergeFrom(value);
+      }
+      if (acceptedAt_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp accepted_at = 12 [json_name = "acceptedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearAcceptedAt() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      acceptedAt_ = null;
+      if (acceptedAtBuilder_ != null) {
+        acceptedAtBuilder_.dispose();
+        acceptedAtBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp accepted_at = 12 [json_name = "acceptedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getAcceptedAtBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getAcceptedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp accepted_at = 12 [json_name = "acceptedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getAcceptedAtOrBuilder() {
+      if (acceptedAtBuilder_ != null) {
+        return acceptedAtBuilder_.getMessageOrBuilder();
+      } else {
+        return acceptedAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : acceptedAt_;
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp accepted_at = 12 [json_name = "acceptedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getAcceptedAtFieldBuilder() {
+      if (acceptedAtBuilder_ == null) {
+        acceptedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getAcceptedAt(),
+                getParentForChildren(),
+                isClean());
+        acceptedAt_ = null;
+      }
+      return acceptedAtBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp expiresAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expiresAtBuilder_;
+    /**
+     * <code>optional .google.protobuf.Timestamp expires_at = 13 [json_name = "expiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the expiresAt field is set.
+     */
+    public boolean hasExpiresAt() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp expires_at = 13 [json_name = "expiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The expiresAt.
+     */
+    public com.google.protobuf.Timestamp getExpiresAt() {
+      if (expiresAtBuilder_ == null) {
+        return expiresAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiresAt_;
+      } else {
+        return expiresAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp expires_at = 13 [json_name = "expiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setExpiresAt(com.google.protobuf.Timestamp value) {
+      if (expiresAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expiresAt_ = value;
+      } else {
+        expiresAtBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp expires_at = 13 [json_name = "expiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setExpiresAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (expiresAtBuilder_ == null) {
+        expiresAt_ = builderForValue.build();
+      } else {
+        expiresAtBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp expires_at = 13 [json_name = "expiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeExpiresAt(com.google.protobuf.Timestamp value) {
+      if (expiresAtBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0) &&
+          expiresAt_ != null &&
+          expiresAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpiresAtBuilder().mergeFrom(value);
+        } else {
+          expiresAt_ = value;
+        }
+      } else {
+        expiresAtBuilder_.mergeFrom(value);
+      }
+      if (expiresAt_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp expires_at = 13 [json_name = "expiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearExpiresAt() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      expiresAt_ = null;
+      if (expiresAtBuilder_ != null) {
+        expiresAtBuilder_.dispose();
+        expiresAtBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp expires_at = 13 [json_name = "expiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getExpiresAtBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getExpiresAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp expires_at = 13 [json_name = "expiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder() {
+      if (expiresAtBuilder_ != null) {
+        return expiresAtBuilder_.getMessageOrBuilder();
+      } else {
+        return expiresAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : expiresAt_;
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.Timestamp expires_at = 13 [json_name = "expiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getExpiresAtFieldBuilder() {
+      if (expiresAtBuilder_ == null) {
+        expiresAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getExpiresAt(),
+                getParentForChildren(),
+                isClean());
+        expiresAt_ = null;
+      }
+      return expiresAtBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Scope() {
+    id_ = "";
     name_ = "";
     description_ = "";
   }
@@ -41,11 +42,50 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.clients.Scope.class, com.scalekit.grpc.scalekit.v1.clients.Scope.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
+  public static final int ID_FIELD_NUMBER = 1;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
+  /**
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The id.
+   */
+  @java.lang.Override
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      id_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for id.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getIdBytes() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NAME_FIELD_NUMBER = 2;
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
   /**
-   * <code>string name = 1 [json_name = "name", (.buf.validate.field) = { ... }</code>
+   * <code>string name = 2 [json_name = "name", (.buf.validate.field) = { ... }</code>
    * @return The name.
    */
   @java.lang.Override
@@ -62,7 +102,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string name = 1 [json_name = "name", (.buf.validate.field) = { ... }</code>
+   * <code>string name = 2 [json_name = "name", (.buf.validate.field) = { ... }</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -80,11 +120,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 2;
+  public static final int DESCRIPTION_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
   /**
-   * <code>string description = 2 [json_name = "description", (.buf.validate.field) = { ... }</code>
+   * <code>string description = 3 [json_name = "description", (.buf.validate.field) = { ... }</code>
    * @return The description.
    */
   @java.lang.Override
@@ -101,7 +141,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string description = 2 [json_name = "description", (.buf.validate.field) = { ... }</code>
+   * <code>string description = 3 [json_name = "description", (.buf.validate.field) = { ... }</code>
    * @return The bytes for description.
    */
   @java.lang.Override
@@ -119,10 +159,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ENABLED_FIELD_NUMBER = 3;
+  public static final int ENABLED_FIELD_NUMBER = 4;
   private boolean enabled_ = false;
   /**
-   * <code>bool enabled = 3 [json_name = "enabled", (.buf.validate.field) = { ... }</code>
+   * <code>bool enabled = 4 [json_name = "enabled", (.buf.validate.field) = { ... }</code>
    * @return The enabled.
    */
   @java.lang.Override
@@ -144,14 +184,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
     if (enabled_ != false) {
-      output.writeBool(3, enabled_);
+      output.writeBool(4, enabled_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -162,15 +205,18 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
     if (enabled_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, enabled_);
+        .computeBoolSize(4, enabled_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -187,6 +233,8 @@ private static final long serialVersionUID = 0L;
     }
     com.scalekit.grpc.scalekit.v1.clients.Scope other = (com.scalekit.grpc.scalekit.v1.clients.Scope) obj;
 
+    if (!getId()
+        .equals(other.getId())) return false;
     if (!getName()
         .equals(other.getName())) return false;
     if (!getDescription()
@@ -204,6 +252,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
@@ -342,6 +392,7 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      id_ = "";
       name_ = "";
       description_ = "";
       enabled_ = false;
@@ -379,12 +430,15 @@ private static final long serialVersionUID = 0L;
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.clients.Scope result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.name_ = name_;
+        result.id_ = id_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.description_ = description_;
+        result.name_ = name_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.enabled_ = enabled_;
       }
     }
@@ -433,14 +487,19 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.clients.Scope other) {
       if (other == com.scalekit.grpc.scalekit.v1.clients.Scope.getDefaultInstance()) return this;
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getEnabled() != false) {
@@ -473,20 +532,25 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              name_ = input.readStringRequireUtf8();
+              id_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
-              description_ = input.readStringRequireUtf8();
+              name_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
             } // case 18
-            case 24: {
-              enabled_ = input.readBool();
+            case 26: {
+              description_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
-            } // case 24
+            } // case 26
+            case 32: {
+              enabled_ = input.readBool();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 32
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -504,9 +568,81 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
+    private java.lang.Object id_ = "";
+    /**
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The id.
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      id_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearId() {
+      id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      id_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object name_ = "";
     /**
-     * <code>string name = 1 [json_name = "name", (.buf.validate.field) = { ... }</code>
+     * <code>string name = 2 [json_name = "name", (.buf.validate.field) = { ... }</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -522,7 +658,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 1 [json_name = "name", (.buf.validate.field) = { ... }</code>
+     * <code>string name = 2 [json_name = "name", (.buf.validate.field) = { ... }</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -539,7 +675,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 1 [json_name = "name", (.buf.validate.field) = { ... }</code>
+     * <code>string name = 2 [json_name = "name", (.buf.validate.field) = { ... }</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -547,22 +683,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 1 [json_name = "name", (.buf.validate.field) = { ... }</code>
+     * <code>string name = 2 [json_name = "name", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 1 [json_name = "name", (.buf.validate.field) = { ... }</code>
+     * <code>string name = 2 [json_name = "name", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -571,14 +707,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
     private java.lang.Object description_ = "";
     /**
-     * <code>string description = 2 [json_name = "description", (.buf.validate.field) = { ... }</code>
+     * <code>string description = 3 [json_name = "description", (.buf.validate.field) = { ... }</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -594,7 +730,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string description = 2 [json_name = "description", (.buf.validate.field) = { ... }</code>
+     * <code>string description = 3 [json_name = "description", (.buf.validate.field) = { ... }</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -611,7 +747,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string description = 2 [json_name = "description", (.buf.validate.field) = { ... }</code>
+     * <code>string description = 3 [json_name = "description", (.buf.validate.field) = { ... }</code>
      * @param value The description to set.
      * @return This builder for chaining.
      */
@@ -619,22 +755,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       description_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>string description = 2 [json_name = "description", (.buf.validate.field) = { ... }</code>
+     * <code>string description = 3 [json_name = "description", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <code>string description = 2 [json_name = "description", (.buf.validate.field) = { ... }</code>
+     * <code>string description = 3 [json_name = "description", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
@@ -643,14 +779,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
     private boolean enabled_ ;
     /**
-     * <code>bool enabled = 3 [json_name = "enabled", (.buf.validate.field) = { ... }</code>
+     * <code>bool enabled = 4 [json_name = "enabled", (.buf.validate.field) = { ... }</code>
      * @return The enabled.
      */
     @java.lang.Override
@@ -658,23 +794,23 @@ private static final long serialVersionUID = 0L;
       return enabled_;
     }
     /**
-     * <code>bool enabled = 3 [json_name = "enabled", (.buf.validate.field) = { ... }</code>
+     * <code>bool enabled = 4 [json_name = "enabled", (.buf.validate.field) = { ... }</code>
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>bool enabled = 3 [json_name = "enabled", (.buf.validate.field) = { ... }</code>
+     * <code>bool enabled = 4 [json_name = "enabled", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       enabled_ = false;
       onChanged();
       return this;

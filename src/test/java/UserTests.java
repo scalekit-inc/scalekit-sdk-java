@@ -179,4 +179,38 @@ public class UserTests {
 
 
     }
+
+    @Test
+    public void testResendInvite() {
+        // Create a user with invitation email
+        String userEmail = "resend.invite.test" + System.currentTimeMillis() + "@example.com";
+        CreateUser user = CreateUser.newBuilder()
+                .setEmail(userEmail)
+                .build();
+
+        CreateUserAndMembershipRequest createRequest = CreateUserAndMembershipRequest.newBuilder()
+                .setOrganizationId(testOrg)
+                .setUser(user)
+                .setSendInvitationEmail(true)
+                .build();
+
+        CreateUserAndMembershipResponse createdUser = client.users().createUserAndMembership(testOrg, createRequest);
+        assertNotNull(createdUser);
+        assertEquals(user.getEmail(), createdUser.getUser().getEmail());
+        String userId = createdUser.getUser().getId();
+
+        // Resend invite
+        ResendInviteResponse resendResponse = client.users().resendInvite(testOrg, userId);
+        assertNotNull(resendResponse);
+        assertNotNull(resendResponse.getInvite());
+        assertEquals(userId, resendResponse.getInvite().getUserId());
+        assertEquals(testOrg, resendResponse.getInvite().getOrganizationId());
+        assertEquals("PENDING_INVITE", resendResponse.getInvite().getStatus());
+        assertNotNull(resendResponse.getInvite().getCreatedAt());
+        assertNotNull(resendResponse.getInvite().getExpiresAt());
+        assertEquals(1, resendResponse.getInvite().getResentCount());
+
+        // Cleanup
+        client.users().deleteUser(userId);
+    }
 } 

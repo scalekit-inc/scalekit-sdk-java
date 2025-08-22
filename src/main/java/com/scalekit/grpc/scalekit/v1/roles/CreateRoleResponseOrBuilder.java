@@ -9,17 +9,17 @@ public interface CreateRoleResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.scalekit.v1.roles.Role role = 1 [json_name = "role"];</code>
+   * <code>.scalekit.v1.roles.Role role = 1 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the role field is set.
    */
   boolean hasRole();
   /**
-   * <code>.scalekit.v1.roles.Role role = 1 [json_name = "role"];</code>
+   * <code>.scalekit.v1.roles.Role role = 1 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The role.
    */
   com.scalekit.grpc.scalekit.v1.roles.Role getRole();
   /**
-   * <code>.scalekit.v1.roles.Role role = 1 [json_name = "role"];</code>
+   * <code>.scalekit.v1.roles.Role role = 1 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.roles.RoleOrBuilder getRoleOrBuilder();
 }

@@ -15,128 +15,35 @@ public final class MigrationServiceGrpc {
   public static final java.lang.String SERVICE_NAME = "scalekit.v1.migrations.MigrationService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse> getMigrateIdpSimulatorMethod;
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrateFSARequest,
+      com.scalekit.grpc.scalekit.v1.migrations.MigrationFSAResponse> getMigrateFSADataMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "MigrateIdpSimulator",
-      requestType = com.google.protobuf.Empty.class,
-      responseType = com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "MigrateFSAData",
+      requestType = com.scalekit.grpc.scalekit.v1.migrations.MigrateFSARequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.migrations.MigrationFSAResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse> getMigrateIdpSimulatorMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse> getMigrateIdpSimulatorMethod;
-    if ((getMigrateIdpSimulatorMethod = MigrationServiceGrpc.getMigrateIdpSimulatorMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrateFSARequest,
+      com.scalekit.grpc.scalekit.v1.migrations.MigrationFSAResponse> getMigrateFSADataMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrateFSARequest, com.scalekit.grpc.scalekit.v1.migrations.MigrationFSAResponse> getMigrateFSADataMethod;
+    if ((getMigrateFSADataMethod = MigrationServiceGrpc.getMigrateFSADataMethod) == null) {
       synchronized (MigrationServiceGrpc.class) {
-        if ((getMigrateIdpSimulatorMethod = MigrationServiceGrpc.getMigrateIdpSimulatorMethod) == null) {
-          MigrationServiceGrpc.getMigrateIdpSimulatorMethod = getMigrateIdpSimulatorMethod =
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse>newBuilder()
+        if ((getMigrateFSADataMethod = MigrationServiceGrpc.getMigrateFSADataMethod) == null) {
+          MigrationServiceGrpc.getMigrateFSADataMethod = getMigrateFSADataMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.migrations.MigrateFSARequest, com.scalekit.grpc.scalekit.v1.migrations.MigrationFSAResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MigrateIdpSimulator"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MigrateFSAData"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.migrations.MigrateFSARequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MigrationServiceMethodDescriptorSupplier("MigrateIdpSimulator"))
+                  com.scalekit.grpc.scalekit.v1.migrations.MigrationFSAResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MigrationServiceMethodDescriptorSupplier("MigrateFSAData"))
               .build();
         }
       }
     }
-    return getMigrateIdpSimulatorMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest,
-      com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse> getMigrateSAMLMetadataMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "MigrateSAMLMetadata",
-      requestType = com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest,
-      com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse> getMigrateSAMLMetadataMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest, com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse> getMigrateSAMLMetadataMethod;
-    if ((getMigrateSAMLMetadataMethod = MigrationServiceGrpc.getMigrateSAMLMetadataMethod) == null) {
-      synchronized (MigrationServiceGrpc.class) {
-        if ((getMigrateSAMLMetadataMethod = MigrationServiceGrpc.getMigrateSAMLMetadataMethod) == null) {
-          MigrationServiceGrpc.getMigrateSAMLMetadataMethod = getMigrateSAMLMetadataMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest, com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MigrateSAMLMetadata"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MigrationServiceMethodDescriptorSupplier("MigrateSAMLMetadata"))
-              .build();
-        }
-      }
-    }
-    return getMigrateSAMLMetadataMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse> getMigrateWebhookProviderMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "MigrateWebhookProvider",
-      requestType = com.google.protobuf.Empty.class,
-      responseType = com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse> getMigrateWebhookProviderMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse> getMigrateWebhookProviderMethod;
-    if ((getMigrateWebhookProviderMethod = MigrationServiceGrpc.getMigrateWebhookProviderMethod) == null) {
-      synchronized (MigrationServiceGrpc.class) {
-        if ((getMigrateWebhookProviderMethod = MigrationServiceGrpc.getMigrateWebhookProviderMethod) == null) {
-          MigrationServiceGrpc.getMigrateWebhookProviderMethod = getMigrateWebhookProviderMethod =
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MigrateWebhookProvider"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MigrationServiceMethodDescriptorSupplier("MigrateWebhookProvider"))
-              .build();
-        }
-      }
-    }
-    return getMigrateWebhookProviderMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest,
-      com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse> getCreateNewSAMLCertificateMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateNewSAMLCertificate",
-      requestType = com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest,
-      com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse> getCreateNewSAMLCertificateMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest, com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse> getCreateNewSAMLCertificateMethod;
-    if ((getCreateNewSAMLCertificateMethod = MigrationServiceGrpc.getCreateNewSAMLCertificateMethod) == null) {
-      synchronized (MigrationServiceGrpc.class) {
-        if ((getCreateNewSAMLCertificateMethod = MigrationServiceGrpc.getCreateNewSAMLCertificateMethod) == null) {
-          MigrationServiceGrpc.getCreateNewSAMLCertificateMethod = getCreateNewSAMLCertificateMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest, com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateNewSAMLCertificate"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new MigrationServiceMethodDescriptorSupplier("CreateNewSAMLCertificate"))
-              .build();
-        }
-      }
-    }
-    return getCreateNewSAMLCertificateMethod;
+    return getMigrateFSADataMethod;
   }
 
   /**
@@ -189,30 +96,9 @@ public final class MigrationServiceGrpc {
 
     /**
      */
-    default void migrateIdpSimulator(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMigrateIdpSimulatorMethod(), responseObserver);
-    }
-
-    /**
-     */
-    default void migrateSAMLMetadata(com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMigrateSAMLMetadataMethod(), responseObserver);
-    }
-
-    /**
-     */
-    default void migrateWebhookProvider(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMigrateWebhookProviderMethod(), responseObserver);
-    }
-
-    /**
-     */
-    default void createNewSAMLCertificate(com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateNewSAMLCertificateMethod(), responseObserver);
+    default void migrateFSAData(com.scalekit.grpc.scalekit.v1.migrations.MigrateFSARequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrationFSAResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMigrateFSADataMethod(), responseObserver);
     }
   }
 
@@ -245,34 +131,10 @@ public final class MigrationServiceGrpc {
 
     /**
      */
-    public void migrateIdpSimulator(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse> responseObserver) {
+    public void migrateFSAData(com.scalekit.grpc.scalekit.v1.migrations.MigrateFSARequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrationFSAResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getMigrateIdpSimulatorMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void migrateSAMLMetadata(com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getMigrateSAMLMetadataMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void migrateWebhookProvider(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getMigrateWebhookProviderMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void createNewSAMLCertificate(com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateNewSAMLCertificateMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getMigrateFSADataMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -294,30 +156,9 @@ public final class MigrationServiceGrpc {
 
     /**
      */
-    public com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse migrateIdpSimulator(com.google.protobuf.Empty request) {
+    public com.scalekit.grpc.scalekit.v1.migrations.MigrationFSAResponse migrateFSAData(com.scalekit.grpc.scalekit.v1.migrations.MigrateFSARequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getMigrateIdpSimulatorMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse migrateSAMLMetadata(com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getMigrateSAMLMetadataMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse migrateWebhookProvider(com.google.protobuf.Empty request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getMigrateWebhookProviderMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse createNewSAMLCertificate(com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateNewSAMLCertificateMethod(), getCallOptions(), request);
+          getChannel(), getMigrateFSADataMethod(), getCallOptions(), request);
     }
   }
 
@@ -339,41 +180,14 @@ public final class MigrationServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse> migrateIdpSimulator(
-        com.google.protobuf.Empty request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.migrations.MigrationFSAResponse> migrateFSAData(
+        com.scalekit.grpc.scalekit.v1.migrations.MigrateFSARequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getMigrateIdpSimulatorMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse> migrateSAMLMetadata(
-        com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getMigrateSAMLMetadataMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse> migrateWebhookProvider(
-        com.google.protobuf.Empty request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getMigrateWebhookProviderMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse> createNewSAMLCertificate(
-        com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateNewSAMLCertificateMethod(), getCallOptions()), request);
+          getChannel().newCall(getMigrateFSADataMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_MIGRATE_IDP_SIMULATOR = 0;
-  private static final int METHODID_MIGRATE_SAMLMETADATA = 1;
-  private static final int METHODID_MIGRATE_WEBHOOK_PROVIDER = 2;
-  private static final int METHODID_CREATE_NEW_SAMLCERTIFICATE = 3;
+  private static final int METHODID_MIGRATE_FSADATA = 0;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -392,21 +206,9 @@ public final class MigrationServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_MIGRATE_IDP_SIMULATOR:
-          serviceImpl.migrateIdpSimulator((com.google.protobuf.Empty) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse>) responseObserver);
-          break;
-        case METHODID_MIGRATE_SAMLMETADATA:
-          serviceImpl.migrateSAMLMetadata((com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse>) responseObserver);
-          break;
-        case METHODID_MIGRATE_WEBHOOK_PROVIDER:
-          serviceImpl.migrateWebhookProvider((com.google.protobuf.Empty) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse>) responseObserver);
-          break;
-        case METHODID_CREATE_NEW_SAMLCERTIFICATE:
-          serviceImpl.createNewSAMLCertificate((com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse>) responseObserver);
+        case METHODID_MIGRATE_FSADATA:
+          serviceImpl.migrateFSAData((com.scalekit.grpc.scalekit.v1.migrations.MigrateFSARequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrationFSAResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -427,33 +229,12 @@ public final class MigrationServiceGrpc {
   public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
     return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
         .addMethod(
-          getMigrateIdpSimulatorMethod(),
+          getMigrateFSADataMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.google.protobuf.Empty,
-              com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse>(
-                service, METHODID_MIGRATE_IDP_SIMULATOR)))
-        .addMethod(
-          getMigrateSAMLMetadataMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest,
-              com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse>(
-                service, METHODID_MIGRATE_SAMLMETADATA)))
-        .addMethod(
-          getMigrateWebhookProviderMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.google.protobuf.Empty,
-              com.scalekit.grpc.scalekit.v1.migrations.MigrationServiceResponse>(
-                service, METHODID_MIGRATE_WEBHOOK_PROVIDER)))
-        .addMethod(
-          getCreateNewSAMLCertificateMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLRequest,
-              com.scalekit.grpc.scalekit.v1.migrations.MigrationSAMLResponse>(
-                service, METHODID_CREATE_NEW_SAMLCERTIFICATE)))
+              com.scalekit.grpc.scalekit.v1.migrations.MigrateFSARequest,
+              com.scalekit.grpc.scalekit.v1.migrations.MigrationFSAResponse>(
+                service, METHODID_MIGRATE_FSADATA)))
         .build();
   }
 
@@ -502,10 +283,7 @@ public final class MigrationServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new MigrationServiceFileDescriptorSupplier())
-              .addMethod(getMigrateIdpSimulatorMethod())
-              .addMethod(getMigrateSAMLMetadataMethod())
-              .addMethod(getMigrateWebhookProviderMethod())
-              .addMethod(getCreateNewSAMLCertificateMethod())
+              .addMethod(getMigrateFSADataMethod())
               .build();
         }
       }

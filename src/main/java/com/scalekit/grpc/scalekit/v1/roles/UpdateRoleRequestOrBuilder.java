@@ -9,41 +9,29 @@ public interface UpdateRoleRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-   * @return The envId.
+   * <code>string role_name = 2 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The roleName.
    */
-  java.lang.String getEnvId();
+  java.lang.String getRoleName();
   /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for envId.
-   */
-  com.google.protobuf.ByteString
-      getEnvIdBytes();
-
-  /**
-   * <code>string id = 2 [json_name = "id", (.buf.validate.field) = { ... }</code>
-   * @return The id.
-   */
-  java.lang.String getId();
-  /**
-   * <code>string id = 2 [json_name = "id", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for id.
+   * <code>string role_name = 2 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for roleName.
    */
   com.google.protobuf.ByteString
-      getIdBytes();
+      getRoleNameBytes();
 
   /**
-   * <code>.scalekit.v1.roles.UpdateRole role = 3 [json_name = "role", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.roles.UpdateRole role = 3 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the role field is set.
    */
   boolean hasRole();
   /**
-   * <code>.scalekit.v1.roles.UpdateRole role = 3 [json_name = "role", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.roles.UpdateRole role = 3 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The role.
    */
   com.scalekit.grpc.scalekit.v1.roles.UpdateRole getRole();
   /**
-   * <code>.scalekit.v1.roles.UpdateRole role = 3 [json_name = "role", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.roles.UpdateRole role = 3 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.roles.UpdateRoleOrBuilder getRoleOrBuilder();
 }

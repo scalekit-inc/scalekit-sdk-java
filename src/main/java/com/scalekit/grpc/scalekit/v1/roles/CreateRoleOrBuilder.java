@@ -50,13 +50,44 @@ public interface CreateRoleOrBuilder extends
       getDescriptionBytes();
 
   /**
-   * <code>optional bool default = 5 [json_name = "default", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the default field is set.
+   * <code>optional string extends = 8 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the extends field is set.
    */
-  boolean hasDefault();
+  boolean hasExtends();
   /**
-   * <code>optional bool default = 5 [json_name = "default", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The default.
+   * <code>optional string extends = 8 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The extends.
    */
-  boolean getDefault();
+  java.lang.String getExtends();
+  /**
+   * <code>optional string extends = 8 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for extends.
+   */
+  com.google.protobuf.ByteString
+      getExtendsBytes();
+
+  /**
+   * <code>repeated string permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the permissions.
+   */
+  java.util.List<java.lang.String>
+      getPermissionsList();
+  /**
+   * <code>repeated string permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of permissions.
+   */
+  int getPermissionsCount();
+  /**
+   * <code>repeated string permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The permissions at the given index.
+   */
+  java.lang.String getPermissions(int index);
+  /**
+   * <code>repeated string permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the permissions at the given index.
+   */
+  com.google.protobuf.ByteString
+      getPermissionsBytes(int index);
 }

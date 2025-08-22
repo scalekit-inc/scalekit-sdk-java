@@ -114,104 +114,112 @@ public final class DomainsProto {
       "s.CreateDomainR\006domainB\014\n\nidentitiesB\020\n\016" +
       "_connection_id\"K\n\024CreateDomainResponse\0223" +
       "\n\006domain\030\001 \001(\0132\033.scalekit.v1.domains.Dom" +
-      "ainR\006domain\"5\n\014CreateDomain\022%\n\006domain\030\001 " +
-      "\001(\tB\r\272H\nr\005\020\004\030\377\001\310\001\001R\006domain\"\216\002\n\023UpdateDom" +
-      "ainRequest\0224\n\017organization_id\030\001 \001(\tB\t\272H\006" +
-      "r\004\020\001\030 H\000R\016organizationId\022,\n\013external_id\030" +
-      "\002 \001(\tB\t\272H\006r\004\020\001\030 H\000R\nexternalId\022(\n\rconnec" +
-      "tion_id\030\003 \001(\tH\001R\014connectionId\210\001\001\022\016\n\002id\030\004" +
-      " \001(\tR\002id\0229\n\006domain\030\005 \001(\0132!.scalekit.v1.d" +
-      "omains.UpdateDomainR\006domainB\014\n\nidentitie" +
-      "sB\020\n\016_connection_id\"\016\n\014UpdateDomain\"K\n\024U" +
-      "pdateDomainResponse\0223\n\006domain\030\001 \001(\0132\033.sc" +
-      "alekit.v1.domains.DomainR\006domain\"\224\001\n\020Get" +
-      "DomainRequest\0224\n\017organization_id\030\001 \001(\tB\t" +
-      "\272H\006r\004\020\001\030 H\000R\016organizationId\022,\n\013external_" +
-      "id\030\002 \001(\tB\t\272H\006r\004\020\001\030 H\000R\nexternalId\022\016\n\002id\030" +
-      "\003 \001(\tR\002idB\014\n\nidentities\"H\n\021GetDomainResp" +
-      "onse\0223\n\006domain\030\001 \001(\0132\033.scalekit.v1.domai" +
-      "ns.DomainR\006domain\"\323\001\n\023DeleteDomainReques" +
-      "t\022\016\n\002id\030\001 \001(\tR\002id\0224\n\017organization_id\030\002 \001" +
-      "(\tB\t\272H\006r\004\020\001\030 H\000R\016organizationId\022,\n\013exter" +
-      "nal_id\030\003 \001(\tB\t\272H\006r\004\020\001\030 H\000R\nexternalId\022(\n" +
-      "\rconnection_id\030\004 \001(\tH\001R\014connectionId\210\001\001B" +
-      "\014\n\nidentitiesB\020\n\016_connection_id\"\344\002\n\021List" +
-      "DomainRequest\0224\n\017organization_id\030\001 \001(\tB\t" +
-      "\272H\006r\004\020\001\030 H\000R\016organizationId\022,\n\013external_" +
-      "id\030\002 \001(\tB\t\272H\006r\004\020\001\030 H\000R\nexternalId\022(\n\rcon" +
-      "nection_id\030\003 \001(\tH\001R\014connectionId\210\001\001\022\035\n\007i" +
-      "nclude\030\004 \001(\tH\002R\007include\210\001\001\0228\n\tpage_size\030" +
-      "\005 \001(\0132\033.google.protobuf.Int32ValueR\010page" +
-      "Size\022<\n\013page_number\030\006 \001(\0132\033.google.proto" +
-      "buf.Int32ValueR\npageNumberB\014\n\nidentities" +
-      "B\020\n\016_connection_idB\n\n\010_include\"\247\001\n\023Verif" +
-      "yDomainRequest\0224\n\017organization_id\030\001 \001(\tB" +
-      "\t\272H\006r\004\020\001\030 H\000R\016organizationId\022,\n\013external" +
-      "_id\030\002 \001(\tB\t\272H\006r\004\020\001\030 H\000R\nexternalId\022\036\n\002id" +
-      "\030\004 \001(\tB\016\272H\013r\t\020\001\030 :\003domR\002idB\014\n\nidentities" +
-      "\"\211\001\n\022ListDomainResponse\022\033\n\tpage_size\030\001 \001" +
-      "(\005R\010pageSize\022\037\n\013page_number\030\002 \001(\005R\npageN" +
-      "umber\0225\n\007domains\030\003 \003(\0132\033.scalekit.v1.dom" +
-      "ains.DomainR\007domains\"5\n\033ListAuthorizedDo" +
-      "mainRequest\022\026\n\006origin\030\001 \001(\tR\006origin\"8\n\034L" +
-      "istAuthorizedDomainResponse\022\030\n\007domains\030\001" +
-      " \003(\tR\007domains\"\376\003\n\006Domain\022\016\n\002id\030\001 \001(\tR\002id" +
-      "\022\026\n\006domain\030\002 \001(\tR\006domain\022%\n\016environment_" +
-      "id\030\003 \001(\tR\renvironmentId\022\'\n\017organization_" +
-      "id\030\004 \001(\tR\016organizationId\022#\n\rconnection_i" +
-      "d\030\005 \001(\tR\014connectionId\022$\n\016txt_record_key\030" +
-      "\006 \001(\tR\014txtRecordKey\022*\n\021txt_record_secret" +
-      "\030\007 \001(\tR\017txtRecordSecret\022X\n\023verification_" +
-      "status\030\010 \001(\0162\'.scalekit.v1.domains.Verif" +
-      "icationStatusR\022verificationStatus\022;\n\013cre" +
-      "ate_time\030\t \001(\0132\032.google.protobuf.Timesta" +
-      "mpR\ncreateTime\022;\n\013update_time\030\n \001(\0132\032.go" +
-      "ogle.protobuf.TimestampR\nupdateTime\022\"\n\nc" +
-      "reated_by\030\013 \001(\tH\000R\tcreatedBy\210\001\001B\r\n\013_crea" +
-      "ted_by*`\n\022VerificationStatus\022#\n\037VERIFICA" +
-      "TION_STATUS_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\014" +
-      "\n\010VERIFIED\020\002\022\n\n\006FAILED\020\0032\207\013\n\rDomainServi" +
-      "ce\022\325\001\n\014CreateDomain\022(.scalekit.v1.domain" +
-      "s.CreateDomainRequest\032).scalekit.v1.doma" +
-      "ins.CreateDomainResponse\"p\202\265\030\002\030t\202\323\344\223\002d\"/" +
-      "/api/v1/organizations/{organization_id}/" +
-      "domains:\006domainZ)\"\037/api/v1/organizations" +
-      "/-/domains:\006domain\022\332\001\n\014UpdateDomain\022(.sc" +
-      "alekit.v1.domains.UpdateDomainRequest\032)." +
-      "scalekit.v1.domains.UpdateDomainResponse" +
-      "\"u\202\265\030\002\030t\202\323\344\223\002i24/api/v1/organizations/{o" +
-      "rganization_id}/domains/{id}:\006domainZ)2\037" +
-      "/api/v1/organizations/-/domains:\006domain\022" +
-      "\316\001\n\014VerifyDomain\022(.scalekit.v1.domains.V" +
-      "erifyDomainRequest\032\032.google.protobuf.Boo" +
-      "lValue\"x\202\265\030\002\030t\202\323\344\223\002l2;/api/v1/organizati" +
-      "ons/{organization_id}/domains/{id}:verif" +
-      "yZ-2+/api/v1/organizations/-/domains/{id" +
-      "}:verify\022\306\001\n\tGetDomain\022%.scalekit.v1.dom" +
-      "ains.GetDomainRequest\032&.scalekit.v1.doma" +
-      "ins.GetDomainResponse\"j\202\265\030\002\030t\202\323\344\223\002^\0224/ap" +
-      "i/v1/organizations/{organization_id}/dom" +
-      "ains/{id}Z&\022$/api/v1/organizations/-/dom" +
-      "ains/{id}\022\274\001\n\014DeleteDomain\022(.scalekit.v1" +
-      ".domains.DeleteDomainRequest\032\026.google.pr" +
-      "otobuf.Empty\"j\202\265\030\002\030t\202\323\344\223\002^*4/api/v1/orga" +
-      "nizations/{organization_id}/domains/{id}" +
-      "Z&*$/api/v1/organizations/-/domains/{id}" +
-      "\022\300\001\n\013ListDomains\022&.scalekit.v1.domains.L" +
-      "istDomainRequest\032\'.scalekit.v1.domains.L" +
-      "istDomainResponse\"`\202\265\030\002\030t\202\323\344\223\002T\022//api/v1" +
-      "/organizations/{organization_id}/domains" +
-      "Z!\022\037/api/v1/organizations/-/domains\022\244\001\n\025" +
-      "ListAuthorizedDomains\0220.scalekit.v1.doma" +
-      "ins.ListAuthorizedDomainRequest\0321.scalek" +
-      "it.v1.domains.ListAuthorizedDomainRespon" +
-      "se\"&\202\265\030\002\030\001\202\323\344\223\002\032\022\030/api/v1/domains/{origi" +
-      "n}B\326\001\n%com.scalekit.grpc.scalekit.v1.dom" +
-      "ainsB\014DomainsProtoP\001Z1github.com/scaleki" +
-      "t-inc/scalekit/pkg/grpc/domains\242\002\003SVD\252\002\023" +
-      "Scalekit.V1.Domains\312\002\023Scalekit\\V1\\Domain" +
-      "s\342\002\037Scalekit\\V1\\Domains\\GPBMetadata\352\002\025Sc" +
-      "alekit::V1::Domainsb\006proto3"
+      "ainR\006domain\"w\n\014CreateDomain\022%\n\006domain\030\001 " +
+      "\001(\tB\r\272H\nr\005\020\004\030\377\001\310\001\001R\006domain\022@\n\013domain_typ" +
+      "e\030\002 \001(\0162\037.scalekit.v1.domains.DomainType" +
+      "R\ndomainType\"\216\002\n\023UpdateDomainRequest\0224\n\017" +
+      "organization_id\030\001 \001(\tB\t\272H\006r\004\020\001\030 H\000R\016orga" +
+      "nizationId\022,\n\013external_id\030\002 \001(\tB\t\272H\006r\004\020\001" +
+      "\030 H\000R\nexternalId\022(\n\rconnection_id\030\003 \001(\tH" +
+      "\001R\014connectionId\210\001\001\022\016\n\002id\030\004 \001(\tR\002id\0229\n\006do" +
+      "main\030\005 \001(\0132!.scalekit.v1.domains.UpdateD" +
+      "omainR\006domainB\014\n\nidentitiesB\020\n\016_connecti" +
+      "on_id\"\016\n\014UpdateDomain\"K\n\024UpdateDomainRes" +
+      "ponse\0223\n\006domain\030\001 \001(\0132\033.scalekit.v1.doma" +
+      "ins.DomainR\006domain\"\224\001\n\020GetDomainRequest\022" +
+      "4\n\017organization_id\030\001 \001(\tB\t\272H\006r\004\020\001\030 H\000R\016o" +
+      "rganizationId\022,\n\013external_id\030\002 \001(\tB\t\272H\006r" +
+      "\004\020\001\030 H\000R\nexternalId\022\016\n\002id\030\003 \001(\tR\002idB\014\n\ni" +
+      "dentities\"H\n\021GetDomainResponse\0223\n\006domain" +
+      "\030\001 \001(\0132\033.scalekit.v1.domains.DomainR\006dom" +
+      "ain\"\323\001\n\023DeleteDomainRequest\022\016\n\002id\030\001 \001(\tR" +
+      "\002id\0224\n\017organization_id\030\002 \001(\tB\t\272H\006r\004\020\001\030 H" +
+      "\000R\016organizationId\022,\n\013external_id\030\003 \001(\tB\t" +
+      "\272H\006r\004\020\001\030 H\000R\nexternalId\022(\n\rconnection_id" +
+      "\030\004 \001(\tH\001R\014connectionId\210\001\001B\014\n\nidentitiesB" +
+      "\020\n\016_connection_id\"\246\003\n\021ListDomainRequest\022" +
+      "4\n\017organization_id\030\001 \001(\tB\t\272H\006r\004\020\001\030 H\000R\016o" +
+      "rganizationId\022,\n\013external_id\030\002 \001(\tB\t\272H\006r" +
+      "\004\020\001\030 H\000R\nexternalId\022(\n\rconnection_id\030\003 \001" +
+      "(\tH\001R\014connectionId\210\001\001\022\035\n\007include\030\004 \001(\tH\002" +
+      "R\007include\210\001\001\0228\n\tpage_size\030\005 \001(\0132\033.google" +
+      ".protobuf.Int32ValueR\010pageSize\022<\n\013page_n" +
+      "umber\030\006 \001(\0132\033.google.protobuf.Int32Value" +
+      "R\npageNumber\022@\n\013domain_type\030\007 \001(\0162\037.scal" +
+      "ekit.v1.domains.DomainTypeR\ndomainTypeB\014" +
+      "\n\nidentitiesB\020\n\016_connection_idB\n\n\010_inclu" +
+      "de\"\247\001\n\023VerifyDomainRequest\0224\n\017organizati" +
+      "on_id\030\001 \001(\tB\t\272H\006r\004\020\001\030 H\000R\016organizationId" +
+      "\022,\n\013external_id\030\002 \001(\tB\t\272H\006r\004\020\001\030 H\000R\nexte" +
+      "rnalId\022\036\n\002id\030\004 \001(\tB\016\272H\013r\t\020\001\030 :\003domR\002idB\014" +
+      "\n\nidentities\"\211\001\n\022ListDomainResponse\022\033\n\tp" +
+      "age_size\030\001 \001(\005R\010pageSize\022\037\n\013page_number\030" +
+      "\002 \001(\005R\npageNumber\0225\n\007domains\030\003 \003(\0132\033.sca" +
+      "lekit.v1.domains.DomainR\007domains\"5\n\033List" +
+      "AuthorizedDomainRequest\022\026\n\006origin\030\001 \001(\tR" +
+      "\006origin\"8\n\034ListAuthorizedDomainResponse\022" +
+      "\030\n\007domains\030\001 \003(\tR\007domains\"\300\004\n\006Domain\022\016\n\002" +
+      "id\030\001 \001(\tR\002id\022\026\n\006domain\030\002 \001(\tR\006domain\022%\n\016" +
+      "environment_id\030\003 \001(\tR\renvironmentId\022\'\n\017o" +
+      "rganization_id\030\004 \001(\tR\016organizationId\022#\n\r" +
+      "connection_id\030\005 \001(\tR\014connectionId\022$\n\016txt" +
+      "_record_key\030\006 \001(\tR\014txtRecordKey\022*\n\021txt_r" +
+      "ecord_secret\030\007 \001(\tR\017txtRecordSecret\022X\n\023v" +
+      "erification_status\030\010 \001(\0162\'.scalekit.v1.d" +
+      "omains.VerificationStatusR\022verificationS" +
+      "tatus\022;\n\013create_time\030\t \001(\0132\032.google.prot" +
+      "obuf.TimestampR\ncreateTime\022;\n\013update_tim" +
+      "e\030\n \001(\0132\032.google.protobuf.TimestampR\nupd" +
+      "ateTime\022\"\n\ncreated_by\030\013 \001(\tH\000R\tcreatedBy" +
+      "\210\001\001\022@\n\013domain_type\030\014 \001(\0162\037.scalekit.v1.d" +
+      "omains.DomainTypeR\ndomainTypeB\r\n\013_create" +
+      "d_by*`\n\022VerificationStatus\022#\n\037VERIFICATI" +
+      "ON_STATUS_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\014\n\010" +
+      "VERIFIED\020\002\022\n\n\006FAILED\020\003*`\n\nDomainType\022\033\n\027" +
+      "DOMAIN_TYPE_UNSPECIFIED\020\000\022\030\n\024HOME_REALM_" +
+      "DISCOVERY\020\001\022\033\n\027JIT_PROVISIONING_DOMAIN\020\002" +
+      "2\207\013\n\rDomainService\022\325\001\n\014CreateDomain\022(.sc" +
+      "alekit.v1.domains.CreateDomainRequest\032)." +
+      "scalekit.v1.domains.CreateDomainResponse" +
+      "\"p\202\265\030\002\030t\202\323\344\223\002d\"//api/v1/organizations/{o" +
+      "rganization_id}/domains:\006domainZ)\"\037/api/" +
+      "v1/organizations/-/domains:\006domain\022\332\001\n\014U" +
+      "pdateDomain\022(.scalekit.v1.domains.Update" +
+      "DomainRequest\032).scalekit.v1.domains.Upda" +
+      "teDomainResponse\"u\202\265\030\002\030t\202\323\344\223\002i24/api/v1/" +
+      "organizations/{organization_id}/domains/" +
+      "{id}:\006domainZ)2\037/api/v1/organizations/-/" +
+      "domains:\006domain\022\316\001\n\014VerifyDomain\022(.scale" +
+      "kit.v1.domains.VerifyDomainRequest\032\032.goo" +
+      "gle.protobuf.BoolValue\"x\202\265\030\002\030t\202\323\344\223\002l2;/a" +
+      "pi/v1/organizations/{organization_id}/do" +
+      "mains/{id}:verifyZ-2+/api/v1/organizatio" +
+      "ns/-/domains/{id}:verify\022\306\001\n\tGetDomain\022%" +
+      ".scalekit.v1.domains.GetDomainRequest\032&." +
+      "scalekit.v1.domains.GetDomainResponse\"j\202" +
+      "\265\030\002\030t\202\323\344\223\002^\0224/api/v1/organizations/{orga" +
+      "nization_id}/domains/{id}Z&\022$/api/v1/org" +
+      "anizations/-/domains/{id}\022\274\001\n\014DeleteDoma" +
+      "in\022(.scalekit.v1.domains.DeleteDomainReq" +
+      "uest\032\026.google.protobuf.Empty\"j\202\265\030\002\030t\202\323\344\223" +
+      "\002^*4/api/v1/organizations/{organization_" +
+      "id}/domains/{id}Z&*$/api/v1/organization" +
+      "s/-/domains/{id}\022\300\001\n\013ListDomains\022&.scale" +
+      "kit.v1.domains.ListDomainRequest\032\'.scale" +
+      "kit.v1.domains.ListDomainResponse\"`\202\265\030\002\030" +
+      "t\202\323\344\223\002T\022//api/v1/organizations/{organiza" +
+      "tion_id}/domainsZ!\022\037/api/v1/organization" +
+      "s/-/domains\022\244\001\n\025ListAuthorizedDomains\0220." +
+      "scalekit.v1.domains.ListAuthorizedDomain" +
+      "Request\0321.scalekit.v1.domains.ListAuthor" +
+      "izedDomainResponse\"&\202\265\030\002\030\001\202\323\344\223\002\032\022\030/api/v" +
+      "1/domains/{origin}B\326\001\n%com.scalekit.grpc" +
+      ".scalekit.v1.domainsB\014DomainsProtoP\001Z1gi" +
+      "thub.com/scalekit-inc/scalekit/pkg/grpc/" +
+      "domains\242\002\003SVD\252\002\023Scalekit.V1.Domains\312\002\023Sc" +
+      "alekit\\V1\\Domains\342\002\037Scalekit\\V1\\Domains\\" +
+      "GPBMetadata\352\002\025Scalekit::V1::Domainsb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -241,7 +249,7 @@ public final class DomainsProto {
     internal_static_scalekit_v1_domains_CreateDomain_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_domains_CreateDomain_descriptor,
-        new java.lang.String[] { "Domain", });
+        new java.lang.String[] { "Domain", "DomainType", });
     internal_static_scalekit_v1_domains_UpdateDomainRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_scalekit_v1_domains_UpdateDomainRequest_fieldAccessorTable = new
@@ -283,7 +291,7 @@ public final class DomainsProto {
     internal_static_scalekit_v1_domains_ListDomainRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_domains_ListDomainRequest_descriptor,
-        new java.lang.String[] { "OrganizationId", "ExternalId", "ConnectionId", "Include", "PageSize", "PageNumber", "Identities", });
+        new java.lang.String[] { "OrganizationId", "ExternalId", "ConnectionId", "Include", "PageSize", "PageNumber", "DomainType", "Identities", });
     internal_static_scalekit_v1_domains_VerifyDomainRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_scalekit_v1_domains_VerifyDomainRequest_fieldAccessorTable = new
@@ -313,7 +321,7 @@ public final class DomainsProto {
     internal_static_scalekit_v1_domains_Domain_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_domains_Domain_descriptor,
-        new java.lang.String[] { "Id", "Domain", "EnvironmentId", "OrganizationId", "ConnectionId", "TxtRecordKey", "TxtRecordSecret", "VerificationStatus", "CreateTime", "UpdateTime", "CreatedBy", });
+        new java.lang.String[] { "Id", "Domain", "EnvironmentId", "OrganizationId", "ConnectionId", "TxtRecordKey", "TxtRecordSecret", "VerificationStatus", "CreateTime", "UpdateTime", "CreatedBy", "DomainType", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);

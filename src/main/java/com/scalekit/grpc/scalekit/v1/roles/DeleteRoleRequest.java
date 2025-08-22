@@ -17,8 +17,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DeleteRoleRequest() {
-    envId_ = "";
-    id_ = "";
+    roleName_ = "";
+    reassignRoleId_ = "";
+    reassignRoleName_ = "";
   }
 
   @java.lang.Override
@@ -41,78 +42,140 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.roles.DeleteRoleRequest.class, com.scalekit.grpc.scalekit.v1.roles.DeleteRoleRequest.Builder.class);
   }
 
-  public static final int ENV_ID_FIELD_NUMBER = 1;
+  private int bitField0_;
+  public static final int ROLE_NAME_FIELD_NUMBER = 2;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object envId_ = "";
+  private volatile java.lang.Object roleName_ = "";
   /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-   * @return The envId.
+   * <code>string role_name = 2 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The roleName.
    */
   @java.lang.Override
-  public java.lang.String getEnvId() {
-    java.lang.Object ref = envId_;
+  public java.lang.String getRoleName() {
+    java.lang.Object ref = roleName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      envId_ = s;
+      roleName_ = s;
       return s;
     }
   }
   /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for envId.
+   * <code>string role_name = 2 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for roleName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getEnvIdBytes() {
-    java.lang.Object ref = envId_;
+      getRoleNameBytes() {
+    java.lang.Object ref = roleName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      envId_ = b;
+      roleName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int ID_FIELD_NUMBER = 2;
+  public static final int REASSIGN_ROLE_ID_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object id_ = "";
+  private volatile java.lang.Object reassignRoleId_ = "";
   /**
-   * <code>string id = 2 [json_name = "id", (.buf.validate.field) = { ... }</code>
-   * @return The id.
+   * <code>optional string reassign_role_id = 3 [json_name = "reassignRoleId", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @deprecated scalekit.v1.roles.DeleteRoleRequest.reassign_role_id is deprecated.
+   *     See scalekit/v1/roles/roles.proto;l=1096
+   * @return Whether the reassignRoleId field is set.
    */
   @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
+  @java.lang.Deprecated public boolean hasReassignRoleId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional string reassign_role_id = 3 [json_name = "reassignRoleId", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @deprecated scalekit.v1.roles.DeleteRoleRequest.reassign_role_id is deprecated.
+   *     See scalekit/v1/roles/roles.proto;l=1096
+   * @return The reassignRoleId.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public java.lang.String getReassignRoleId() {
+    java.lang.Object ref = reassignRoleId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      id_ = s;
+      reassignRoleId_ = s;
       return s;
     }
   }
   /**
-   * <code>string id = 2 [json_name = "id", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for id.
+   * <code>optional string reassign_role_id = 3 [json_name = "reassignRoleId", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @deprecated scalekit.v1.roles.DeleteRoleRequest.reassign_role_id is deprecated.
+   *     See scalekit/v1/roles/roles.proto;l=1096
+   * @return The bytes for reassignRoleId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getIdBytes() {
-    java.lang.Object ref = id_;
+  @java.lang.Deprecated public com.google.protobuf.ByteString
+      getReassignRoleIdBytes() {
+    java.lang.Object ref = reassignRoleId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      id_ = b;
+      reassignRoleId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REASSIGN_ROLE_NAME_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reassignRoleName_ = "";
+  /**
+   * <code>optional string reassign_role_name = 4 [json_name = "reassignRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the reassignRoleName field is set.
+   */
+  @java.lang.Override
+  public boolean hasReassignRoleName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional string reassign_role_name = 4 [json_name = "reassignRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The reassignRoleName.
+   */
+  @java.lang.Override
+  public java.lang.String getReassignRoleName() {
+    java.lang.Object ref = reassignRoleName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      reassignRoleName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string reassign_role_name = 4 [json_name = "reassignRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for reassignRoleName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getReassignRoleNameBytes() {
+    java.lang.Object ref = reassignRoleName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      reassignRoleName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -133,11 +196,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(envId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, envId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, roleName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reassignRoleId_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, reassignRoleName_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -148,11 +214,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(envId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, envId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, roleName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reassignRoleId_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, reassignRoleName_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -169,10 +238,18 @@ private static final long serialVersionUID = 0L;
     }
     com.scalekit.grpc.scalekit.v1.roles.DeleteRoleRequest other = (com.scalekit.grpc.scalekit.v1.roles.DeleteRoleRequest) obj;
 
-    if (!getEnvId()
-        .equals(other.getEnvId())) return false;
-    if (!getId()
-        .equals(other.getId())) return false;
+    if (!getRoleName()
+        .equals(other.getRoleName())) return false;
+    if (hasReassignRoleId() != other.hasReassignRoleId()) return false;
+    if (hasReassignRoleId()) {
+      if (!getReassignRoleId()
+          .equals(other.getReassignRoleId())) return false;
+    }
+    if (hasReassignRoleName() != other.hasReassignRoleName()) return false;
+    if (hasReassignRoleName()) {
+      if (!getReassignRoleName()
+          .equals(other.getReassignRoleName())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -184,10 +261,16 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ENV_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getEnvId().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
+    hash = (37 * hash) + ROLE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getRoleName().hashCode();
+    if (hasReassignRoleId()) {
+      hash = (37 * hash) + REASSIGN_ROLE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getReassignRoleId().hashCode();
+    }
+    if (hasReassignRoleName()) {
+      hash = (37 * hash) + REASSIGN_ROLE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getReassignRoleName().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -319,8 +402,9 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      envId_ = "";
-      id_ = "";
+      roleName_ = "";
+      reassignRoleId_ = "";
+      reassignRoleName_ = "";
       return this;
     }
 
@@ -355,11 +439,18 @@ private static final long serialVersionUID = 0L;
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.roles.DeleteRoleRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.envId_ = envId_;
+        result.roleName_ = roleName_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.id_ = id_;
+        result.reassignRoleId_ = reassignRoleId_;
+        to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.reassignRoleName_ = reassignRoleName_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -406,14 +497,19 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.roles.DeleteRoleRequest other) {
       if (other == com.scalekit.grpc.scalekit.v1.roles.DeleteRoleRequest.getDefaultInstance()) return this;
-      if (!other.getEnvId().isEmpty()) {
-        envId_ = other.envId_;
+      if (!other.getRoleName().isEmpty()) {
+        roleName_ = other.roleName_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getId().isEmpty()) {
-        id_ = other.id_;
+      if (other.hasReassignRoleId()) {
+        reassignRoleId_ = other.reassignRoleId_;
         bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasReassignRoleName()) {
+        reassignRoleName_ = other.reassignRoleName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -442,16 +538,21 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              envId_ = input.readStringRequireUtf8();
+            case 18: {
+              roleName_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
-            } // case 10
-            case 18: {
-              id_ = input.readStringRequireUtf8();
+            } // case 18
+            case 26: {
+              reassignRoleId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
-            } // case 18
+            } // case 26
+            case 34: {
+              reassignRoleName_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -469,146 +570,244 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object envId_ = "";
+    private java.lang.Object roleName_ = "";
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-     * @return The envId.
+     * <code>string role_name = 2 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The roleName.
      */
-    public java.lang.String getEnvId() {
-      java.lang.Object ref = envId_;
+    public java.lang.String getRoleName() {
+      java.lang.Object ref = roleName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        envId_ = s;
+        roleName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-     * @return The bytes for envId.
+     * <code>string role_name = 2 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for roleName.
      */
     public com.google.protobuf.ByteString
-        getEnvIdBytes() {
-      java.lang.Object ref = envId_;
+        getRoleNameBytes() {
+      java.lang.Object ref = roleName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        envId_ = b;
+        roleName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-     * @param value The envId to set.
+     * <code>string role_name = 2 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The roleName to set.
      * @return This builder for chaining.
      */
-    public Builder setEnvId(
+    public Builder setRoleName(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      envId_ = value;
+      roleName_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+     * <code>string role_name = 2 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearEnvId() {
-      envId_ = getDefaultInstance().getEnvId();
+    public Builder clearRoleName() {
+      roleName_ = getDefaultInstance().getRoleName();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-     * @param value The bytes for envId to set.
+     * <code>string role_name = 2 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for roleName to set.
      * @return This builder for chaining.
      */
-    public Builder setEnvIdBytes(
+    public Builder setRoleNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      envId_ = value;
+      roleName_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private java.lang.Object id_ = "";
+    private java.lang.Object reassignRoleId_ = "";
     /**
-     * <code>string id = 2 [json_name = "id", (.buf.validate.field) = { ... }</code>
-     * @return The id.
+     * <code>optional string reassign_role_id = 3 [json_name = "reassignRoleId", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.roles.DeleteRoleRequest.reassign_role_id is deprecated.
+     *     See scalekit/v1/roles/roles.proto;l=1096
+     * @return Whether the reassignRoleId field is set.
      */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
+    @java.lang.Deprecated public boolean hasReassignRoleId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional string reassign_role_id = 3 [json_name = "reassignRoleId", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.roles.DeleteRoleRequest.reassign_role_id is deprecated.
+     *     See scalekit/v1/roles/roles.proto;l=1096
+     * @return The reassignRoleId.
+     */
+    @java.lang.Deprecated public java.lang.String getReassignRoleId() {
+      java.lang.Object ref = reassignRoleId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        reassignRoleId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string id = 2 [json_name = "id", (.buf.validate.field) = { ... }</code>
-     * @return The bytes for id.
+     * <code>optional string reassign_role_id = 3 [json_name = "reassignRoleId", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.roles.DeleteRoleRequest.reassign_role_id is deprecated.
+     *     See scalekit/v1/roles/roles.proto;l=1096
+     * @return The bytes for reassignRoleId.
      */
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
+    @java.lang.Deprecated public com.google.protobuf.ByteString
+        getReassignRoleIdBytes() {
+      java.lang.Object ref = reassignRoleId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        id_ = b;
+        reassignRoleId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string id = 2 [json_name = "id", (.buf.validate.field) = { ... }</code>
-     * @param value The id to set.
+     * <code>optional string reassign_role_id = 3 [json_name = "reassignRoleId", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.roles.DeleteRoleRequest.reassign_role_id is deprecated.
+     *     See scalekit/v1/roles/roles.proto;l=1096
+     * @param value The reassignRoleId to set.
      * @return This builder for chaining.
      */
-    public Builder setId(
+    @java.lang.Deprecated public Builder setReassignRoleId(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      id_ = value;
+      reassignRoleId_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>string id = 2 [json_name = "id", (.buf.validate.field) = { ... }</code>
+     * <code>optional string reassign_role_id = 3 [json_name = "reassignRoleId", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.roles.DeleteRoleRequest.reassign_role_id is deprecated.
+     *     See scalekit/v1/roles/roles.proto;l=1096
      * @return This builder for chaining.
      */
-    public Builder clearId() {
-      id_ = getDefaultInstance().getId();
+    @java.lang.Deprecated public Builder clearReassignRoleId() {
+      reassignRoleId_ = getDefaultInstance().getReassignRoleId();
       bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
     /**
-     * <code>string id = 2 [json_name = "id", (.buf.validate.field) = { ... }</code>
-     * @param value The bytes for id to set.
+     * <code>optional string reassign_role_id = 3 [json_name = "reassignRoleId", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.roles.DeleteRoleRequest.reassign_role_id is deprecated.
+     *     See scalekit/v1/roles/roles.proto;l=1096
+     * @param value The bytes for reassignRoleId to set.
      * @return This builder for chaining.
      */
-    public Builder setIdBytes(
+    @java.lang.Deprecated public Builder setReassignRoleIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      id_ = value;
+      reassignRoleId_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object reassignRoleName_ = "";
+    /**
+     * <code>optional string reassign_role_name = 4 [json_name = "reassignRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the reassignRoleName field is set.
+     */
+    public boolean hasReassignRoleName() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional string reassign_role_name = 4 [json_name = "reassignRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The reassignRoleName.
+     */
+    public java.lang.String getReassignRoleName() {
+      java.lang.Object ref = reassignRoleName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reassignRoleName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string reassign_role_name = 4 [json_name = "reassignRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for reassignRoleName.
+     */
+    public com.google.protobuf.ByteString
+        getReassignRoleNameBytes() {
+      java.lang.Object ref = reassignRoleName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reassignRoleName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string reassign_role_name = 4 [json_name = "reassignRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The reassignRoleName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReassignRoleName(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      reassignRoleName_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string reassign_role_name = 4 [json_name = "reassignRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearReassignRoleName() {
+      reassignRoleName_ = getDefaultInstance().getReassignRoleName();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string reassign_role_name = 4 [json_name = "reassignRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for reassignRoleName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReassignRoleNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      reassignRoleName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

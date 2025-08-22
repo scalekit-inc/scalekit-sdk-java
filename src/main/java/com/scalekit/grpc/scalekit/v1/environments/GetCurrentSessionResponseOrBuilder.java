@@ -66,4 +66,21 @@ public interface GetCurrentSessionResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSubjectBytes();
+
+  /**
+   * <code>optional string email = 5 [json_name = "email"];</code>
+   * @return Whether the email field is set.
+   */
+  boolean hasEmail();
+  /**
+   * <code>optional string email = 5 [json_name = "email"];</code>
+   * @return The email.
+   */
+  java.lang.String getEmail();
+  /**
+   * <code>optional string email = 5 [json_name = "email"];</code>
+   * @return The bytes for email.
+   */
+  com.google.protobuf.ByteString
+      getEmailBytes();
 }

@@ -327,6 +327,32 @@ private static final long serialVersionUID = 0L;
     return usePlatformCreds_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : usePlatformCreds_;
   }
 
+  public static final int ACCESS_TYPE_FIELD_NUMBER = 16;
+  private com.google.protobuf.StringValue accessType_;
+  /**
+   * <code>.google.protobuf.StringValue access_type = 16 [json_name = "accessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the accessType field is set.
+   */
+  @java.lang.Override
+  public boolean hasAccessType() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   * <code>.google.protobuf.StringValue access_type = 16 [json_name = "accessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The accessType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getAccessType() {
+    return accessType_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : accessType_;
+  }
+  /**
+   * <code>.google.protobuf.StringValue access_type = 16 [json_name = "accessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getAccessTypeOrBuilder() {
+    return accessType_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : accessType_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -370,6 +396,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(15, getUsePlatformCreds());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(16, getAccessType());
     }
     getUnknownFields().writeTo(output);
   }
@@ -422,6 +451,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, getUsePlatformCreds());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, getAccessType());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -482,6 +515,11 @@ private static final long serialVersionUID = 0L;
       if (!getUsePlatformCreds()
           .equals(other.getUsePlatformCreds())) return false;
     }
+    if (hasAccessType() != other.hasAccessType()) return false;
+    if (hasAccessType()) {
+      if (!getAccessType()
+          .equals(other.getAccessType())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -530,6 +568,10 @@ private static final long serialVersionUID = 0L;
     if (hasUsePlatformCreds()) {
       hash = (37 * hash) + USE_PLATFORM_CREDS_FIELD_NUMBER;
       hash = (53 * hash) + getUsePlatformCreds().hashCode();
+    }
+    if (hasAccessType()) {
+      hash = (37 * hash) + ACCESS_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getAccessType().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -669,6 +711,7 @@ private static final long serialVersionUID = 0L;
         getPkceEnabledFieldBuilder();
         getPromptFieldBuilder();
         getUsePlatformCredsFieldBuilder();
+        getAccessTypeFieldBuilder();
       }
     }
     @java.lang.Override
@@ -717,6 +760,11 @@ private static final long serialVersionUID = 0L;
       if (usePlatformCredsBuilder_ != null) {
         usePlatformCredsBuilder_.dispose();
         usePlatformCredsBuilder_ = null;
+      }
+      accessType_ = null;
+      if (accessTypeBuilder_ != null) {
+        accessTypeBuilder_.dispose();
+        accessTypeBuilder_ = null;
       }
       return this;
     }
@@ -807,6 +855,12 @@ private static final long serialVersionUID = 0L;
             : usePlatformCredsBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.accessType_ = accessTypeBuilder_ == null
+            ? accessType_
+            : accessTypeBuilder_.build();
+        to_bitField0_ |= 0x00000100;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -892,6 +946,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasUsePlatformCreds()) {
         mergeUsePlatformCreds(other.getUsePlatformCreds());
+      }
+      if (other.hasAccessType()) {
+        mergeAccessType(other.getAccessType());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -986,6 +1043,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000200;
               break;
             } // case 122
+            case 130: {
+              input.readMessage(
+                  getAccessTypeFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000400;
+              break;
+            } // case 130
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2152,6 +2216,127 @@ private static final long serialVersionUID = 0L;
         usePlatformCreds_ = null;
       }
       return usePlatformCredsBuilder_;
+    }
+
+    private com.google.protobuf.StringValue accessType_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> accessTypeBuilder_;
+    /**
+     * <code>.google.protobuf.StringValue access_type = 16 [json_name = "accessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the accessType field is set.
+     */
+    public boolean hasAccessType() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     * <code>.google.protobuf.StringValue access_type = 16 [json_name = "accessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The accessType.
+     */
+    public com.google.protobuf.StringValue getAccessType() {
+      if (accessTypeBuilder_ == null) {
+        return accessType_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : accessType_;
+      } else {
+        return accessTypeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue access_type = 16 [json_name = "accessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setAccessType(com.google.protobuf.StringValue value) {
+      if (accessTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        accessType_ = value;
+      } else {
+        accessTypeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue access_type = 16 [json_name = "accessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setAccessType(
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (accessTypeBuilder_ == null) {
+        accessType_ = builderForValue.build();
+      } else {
+        accessTypeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue access_type = 16 [json_name = "accessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeAccessType(com.google.protobuf.StringValue value) {
+      if (accessTypeBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0) &&
+          accessType_ != null &&
+          accessType_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getAccessTypeBuilder().mergeFrom(value);
+        } else {
+          accessType_ = value;
+        }
+      } else {
+        accessTypeBuilder_.mergeFrom(value);
+      }
+      if (accessType_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue access_type = 16 [json_name = "accessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearAccessType() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      accessType_ = null;
+      if (accessTypeBuilder_ != null) {
+        accessTypeBuilder_.dispose();
+        accessTypeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue access_type = 16 [json_name = "accessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValue.Builder getAccessTypeBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getAccessTypeFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue access_type = 16 [json_name = "accessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getAccessTypeOrBuilder() {
+      if (accessTypeBuilder_ != null) {
+        return accessTypeBuilder_.getMessageOrBuilder();
+      } else {
+        return accessType_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : accessType_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue access_type = 16 [json_name = "accessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getAccessTypeFieldBuilder() {
+      if (accessTypeBuilder_ == null) {
+        accessTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getAccessType(),
+                getParentForChildren(),
+                isClean());
+        accessType_ = null;
+      }
+      return accessTypeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

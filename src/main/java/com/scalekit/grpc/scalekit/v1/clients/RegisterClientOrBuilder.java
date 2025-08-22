@@ -58,29 +58,16 @@ public interface RegisterClientOrBuilder extends
       getRedirectUrisBytes(int index);
 
   /**
-   * <code>repeated string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return A list containing the scope.
+   * <code>string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The scope.
    */
-  java.util.List<java.lang.String>
-      getScopeList();
+  java.lang.String getScope();
   /**
-   * <code>repeated string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The count of scope.
-   */
-  int getScopeCount();
-  /**
-   * <code>repeated string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @param index The index of the element to return.
-   * @return The scope at the given index.
-   */
-  java.lang.String getScope(int index);
-  /**
-   * <code>repeated string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the scope at the given index.
+   * <code>string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for scope.
    */
   com.google.protobuf.ByteString
-      getScopeBytes(int index);
+      getScopeBytes();
 
   /**
    * <code>string client_uri = 5 [json_name = "clientUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>

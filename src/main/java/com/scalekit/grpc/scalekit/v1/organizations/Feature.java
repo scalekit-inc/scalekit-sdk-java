@@ -15,42 +15,50 @@ public enum Feature
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
    * <pre>
-   * UNSPECIFIED represents an unset or invalid feature value
+   * An unspecified or invalid feature value
    * </pre>
    *
-   * <code>UNSPECIFIED = 0;</code>
+   * <code>FEATURE_UNSPECIFIED = 0;</code>
    */
-  UNSPECIFIED(0),
+  FEATURE_UNSPECIFIED(0, 0),
   /**
    * <pre>
-   * dir_sync enables directory synchronization configuration in the portal
+   * Enables directory synchronization configuration in the portal
    * </pre>
    *
    * <code>dir_sync = 1;</code>
    */
-  dir_sync(1),
+  dir_sync(2, 1),
   /**
    * <pre>
-   * sso enables Single Sign-On (SSO) configuration in the portal
+   * Enables Single Sign-On (SSO) configuration in the portal
    * </pre>
    *
    * <code>sso = 2;</code>
    */
-  sso(2),
-  UNRECOGNIZED(-1),
+  sso(3, 2),
+  UNRECOGNIZED(-1, -1),
   ;
 
   /**
-   * <pre>
-   * UNSPECIFIED represents an unset or invalid feature value
-   * </pre>
-   *
-   * <code>UNSPECIFIED = 0;</code>
+   * <code>UNSPECIFIED = 0 [deprecated = true];</code>
    */
-  public static final int UNSPECIFIED_VALUE = 0;
+  public static final Feature UNSPECIFIED = FEATURE_UNSPECIFIED;
   /**
    * <pre>
-   * dir_sync enables directory synchronization configuration in the portal
+   * An unspecified or invalid feature value
+   * </pre>
+   *
+   * <code>FEATURE_UNSPECIFIED = 0;</code>
+   */
+  public static final int FEATURE_UNSPECIFIED_VALUE = 0;
+  /**
+   * <code>UNSPECIFIED = 0 [deprecated = true];</code>
+   */
+  @java.lang.Deprecated public static final int UNSPECIFIED_VALUE = 0;
+  /**
+   * <pre>
+   * Enables directory synchronization configuration in the portal
    * </pre>
    *
    * <code>dir_sync = 1;</code>
@@ -58,7 +66,7 @@ public enum Feature
   public static final int dir_sync_VALUE = 1;
   /**
    * <pre>
-   * sso enables Single Sign-On (SSO) configuration in the portal
+   * Enables Single Sign-On (SSO) configuration in the portal
    * </pre>
    *
    * <code>sso = 2;</code>
@@ -67,7 +75,7 @@ public enum Feature
 
 
   public final int getNumber() {
-    if (this == UNRECOGNIZED) {
+    if (index == -1) {
       throw new java.lang.IllegalArgumentException(
           "Can't get the number of an unknown enum value.");
     }
@@ -90,7 +98,7 @@ public enum Feature
    */
   public static Feature forNumber(int value) {
     switch (value) {
-      case 0: return UNSPECIFIED;
+      case 0: return FEATURE_UNSPECIFIED;
       case 1: return dir_sync;
       case 2: return sso;
       default: return null;
@@ -111,11 +119,11 @@ public enum Feature
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
-    if (this == UNRECOGNIZED) {
+    if (index == -1) {
       throw new java.lang.IllegalStateException(
           "Can't get the descriptor of an unrecognized enum value.");
     }
-    return getDescriptor().getValues().get(ordinal());
+    return getDescriptor().getValues().get(index);
   }
   public final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptorForType() {
@@ -126,8 +134,12 @@ public enum Feature
     return com.scalekit.grpc.scalekit.v1.organizations.OrganizationsProto.getDescriptor().getEnumTypes().get(0);
   }
 
-  private static final Feature[] VALUES = values();
-
+  private static final Feature[] VALUES = getStaticValuesArray();
+  private static Feature[] getStaticValuesArray() {
+    return new Feature[] {
+    FEATURE_UNSPECIFIED, UNSPECIFIED, dir_sync, sso, 
+    };
+  }
   public static Feature valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
@@ -140,9 +152,11 @@ public enum Feature
     return VALUES[desc.getIndex()];
   }
 
+  private final int index;
   private final int value;
 
-  private Feature(int value) {
+  private Feature(int index, int value) {
+    this.index = index;
     this.value = value;
   }
 

@@ -179,4 +179,23 @@ public class ScalekitUserClient implements UserClient {
                             .build());
         }, this.credentials);
     }
+
+    /**
+     * Resends an invitation email to a user who has a pending invitation
+     * @param organizationId: The organization ID containing the pending invitation
+     * @param userId: The ID of the user who has a pending invitation
+     * @return ResendInviteResponse: The response containing the resent invitation details
+     */
+    @Override
+    public ResendInviteResponse resendInvite(String organizationId, String userId) {
+        return RetryExecuter.executeWithRetry(() -> {
+            ResendInviteRequest request = ResendInviteRequest.newBuilder()
+                    .setOrganizationId(organizationId)
+                    .setId(userId)
+                    .build();
+            return userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .resendInvite(request);
+        }, this.credentials);
+    }
 } 

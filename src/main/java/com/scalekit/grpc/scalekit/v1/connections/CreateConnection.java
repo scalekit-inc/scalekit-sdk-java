@@ -19,6 +19,8 @@ private static final long serialVersionUID = 0L;
   private CreateConnection() {
     provider_ = 0;
     type_ = 0;
+    providerKey_ = "";
+    keyId_ = "";
   }
 
   @java.lang.Override
@@ -41,17 +43,18 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.connections.CreateConnection.class, com.scalekit.grpc.scalekit.v1.connections.CreateConnection.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROVIDER_FIELD_NUMBER = 1;
   private int provider_ = 0;
   /**
-   * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enum numeric value on the wire for provider.
    */
   @java.lang.Override public int getProviderValue() {
     return provider_;
   }
   /**
-   * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The provider.
    */
   @java.lang.Override public com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider getProvider() {
@@ -77,6 +80,92 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.scalekit.grpc.scalekit.v1.connections.ConnectionType.UNRECOGNIZED : result;
   }
 
+  public static final int PROVIDER_KEY_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object providerKey_ = "";
+  /**
+   * <code>string provider_key = 3 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The providerKey.
+   */
+  @java.lang.Override
+  public java.lang.String getProviderKey() {
+    java.lang.Object ref = providerKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      providerKey_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string provider_key = 3 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for providerKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProviderKeyBytes() {
+    java.lang.Object ref = providerKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      providerKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int KEY_ID_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyId_ = "";
+  /**
+   * <code>optional string key_id = 4 [json_name = "keyId"];</code>
+   * @return Whether the keyId field is set.
+   */
+  @java.lang.Override
+  public boolean hasKeyId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional string key_id = 4 [json_name = "keyId"];</code>
+   * @return The keyId.
+   */
+  @java.lang.Override
+  public java.lang.String getKeyId() {
+    java.lang.Object ref = keyId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      keyId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string key_id = 4 [json_name = "keyId"];</code>
+   * @return The bytes for keyId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getKeyIdBytes() {
+    java.lang.Object ref = keyId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      keyId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -97,6 +186,12 @@ private static final long serialVersionUID = 0L;
     if (type_ != com.scalekit.grpc.scalekit.v1.connections.ConnectionType.INVALID.getNumber()) {
       output.writeEnum(2, type_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(providerKey_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, providerKey_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, keyId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -113,6 +208,12 @@ private static final long serialVersionUID = 0L;
     if (type_ != com.scalekit.grpc.scalekit.v1.connections.ConnectionType.INVALID.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, type_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(providerKey_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, providerKey_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, keyId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -131,6 +232,13 @@ private static final long serialVersionUID = 0L;
 
     if (provider_ != other.provider_) return false;
     if (type_ != other.type_) return false;
+    if (!getProviderKey()
+        .equals(other.getProviderKey())) return false;
+    if (hasKeyId() != other.hasKeyId()) return false;
+    if (hasKeyId()) {
+      if (!getKeyId()
+          .equals(other.getKeyId())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -146,6 +254,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + provider_;
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
+    hash = (37 * hash) + PROVIDER_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getProviderKey().hashCode();
+    if (hasKeyId()) {
+      hash = (37 * hash) + KEY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyId().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -279,6 +393,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       provider_ = 0;
       type_ = 0;
+      providerKey_ = "";
+      keyId_ = "";
       return this;
     }
 
@@ -318,6 +434,15 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.type_ = type_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.providerKey_ = providerKey_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.keyId_ = keyId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -370,6 +495,16 @@ private static final long serialVersionUID = 0L;
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
+      if (!other.getProviderKey().isEmpty()) {
+        providerKey_ = other.providerKey_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (other.hasKeyId()) {
+        keyId_ = other.keyId_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -406,6 +541,16 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 16
+            case 26: {
+              providerKey_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 26
+            case 34: {
+              keyId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -425,14 +570,14 @@ private static final long serialVersionUID = 0L;
 
     private int provider_ = 0;
     /**
-     * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The enum numeric value on the wire for provider.
      */
     @java.lang.Override public int getProviderValue() {
       return provider_;
     }
     /**
-     * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The enum numeric value on the wire for provider to set.
      * @return This builder for chaining.
      */
@@ -443,7 +588,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The provider.
      */
     @java.lang.Override
@@ -452,7 +597,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider.UNRECOGNIZED : result;
     }
     /**
-     * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The provider to set.
      * @return This builder for chaining.
      */
@@ -466,7 +611,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearProvider() {
@@ -525,6 +670,157 @@ private static final long serialVersionUID = 0L;
     public Builder clearType() {
       bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object providerKey_ = "";
+    /**
+     * <code>string provider_key = 3 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The providerKey.
+     */
+    public java.lang.String getProviderKey() {
+      java.lang.Object ref = providerKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        providerKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string provider_key = 3 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for providerKey.
+     */
+    public com.google.protobuf.ByteString
+        getProviderKeyBytes() {
+      java.lang.Object ref = providerKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        providerKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string provider_key = 3 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The providerKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProviderKey(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      providerKey_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string provider_key = 3 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProviderKey() {
+      providerKey_ = getDefaultInstance().getProviderKey();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string provider_key = 3 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for providerKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProviderKeyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      providerKey_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object keyId_ = "";
+    /**
+     * <code>optional string key_id = 4 [json_name = "keyId"];</code>
+     * @return Whether the keyId field is set.
+     */
+    public boolean hasKeyId() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional string key_id = 4 [json_name = "keyId"];</code>
+     * @return The keyId.
+     */
+    public java.lang.String getKeyId() {
+      java.lang.Object ref = keyId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        keyId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string key_id = 4 [json_name = "keyId"];</code>
+     * @return The bytes for keyId.
+     */
+    public com.google.protobuf.ByteString
+        getKeyIdBytes() {
+      java.lang.Object ref = keyId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        keyId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string key_id = 4 [json_name = "keyId"];</code>
+     * @param value The keyId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      keyId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string key_id = 4 [json_name = "keyId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearKeyId() {
+      keyId_ = getDefaultInstance().getKeyId();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string key_id = 4 [json_name = "keyId"];</code>
+     * @param value The bytes for keyId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      keyId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

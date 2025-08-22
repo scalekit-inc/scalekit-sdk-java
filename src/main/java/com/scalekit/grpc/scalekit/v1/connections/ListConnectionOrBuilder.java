@@ -119,4 +119,43 @@ public interface ListConnectionOrBuilder extends
    */
   com.google.protobuf.ByteString
       getOrganizationNameBytes();
+
+  /**
+   * <code>string provider_key = 10 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The providerKey.
+   */
+  java.lang.String getProviderKey();
+  /**
+   * <code>string provider_key = 10 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for providerKey.
+   */
+  com.google.protobuf.ByteString
+      getProviderKeyBytes();
+
+  /**
+   * <code>string key_id = 11 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The keyId.
+   */
+  java.lang.String getKeyId();
+  /**
+   * <code>string key_id = 11 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for keyId.
+   */
+  com.google.protobuf.ByteString
+      getKeyIdBytes();
+
+  /**
+   * <code>.google.protobuf.Timestamp created_at = 12 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the createdAt field is set.
+   */
+  boolean hasCreatedAt();
+  /**
+   * <code>.google.protobuf.Timestamp created_at = 12 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The createdAt.
+   */
+  com.google.protobuf.Timestamp getCreatedAt();
+  /**
+   * <code>.google.protobuf.Timestamp created_at = 12 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
 }

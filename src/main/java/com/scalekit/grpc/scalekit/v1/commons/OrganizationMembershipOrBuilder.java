@@ -71,32 +71,21 @@ public interface OrganizationMembershipOrBuilder extends
       int index);
 
   /**
-   * <code>optional string name = 5 [json_name = "name"];</code>
+   * <code>optional string name = 5 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the name field is set.
    */
   boolean hasName();
   /**
-   * <code>optional string name = 5 [json_name = "name"];</code>
+   * <code>optional string name = 5 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
-   * <code>optional string name = 5 [json_name = "name"];</code>
+   * <code>optional string name = 5 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
-
-  /**
-   * <code>.scalekit.v1.commons.IdentityProviderType primary_identity_provider = 6 [json_name = "primaryIdentityProvider"];</code>
-   * @return The enum numeric value on the wire for primaryIdentityProvider.
-   */
-  int getPrimaryIdentityProviderValue();
-  /**
-   * <code>.scalekit.v1.commons.IdentityProviderType primary_identity_provider = 6 [json_name = "primaryIdentityProvider"];</code>
-   * @return The primaryIdentityProvider.
-   */
-  com.scalekit.grpc.scalekit.v1.commons.IdentityProviderType getPrimaryIdentityProvider();
 
   /**
    * <code>map&lt;string, string&gt; metadata = 7 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -131,4 +120,83 @@ java.lang.String defaultValue);
    */
   java.lang.String getMetadataOrThrow(
       java.lang.String key);
+
+  /**
+   * <code>optional string display_name = 9 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the displayName field is set.
+   */
+  boolean hasDisplayName();
+  /**
+   * <code>optional string display_name = 9 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   * <code>optional string display_name = 9 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString
+      getDisplayNameBytes();
+
+  /**
+   * <code>optional string invited_by = 10 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the invitedBy field is set.
+   */
+  boolean hasInvitedBy();
+  /**
+   * <code>optional string invited_by = 10 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The invitedBy.
+   */
+  java.lang.String getInvitedBy();
+  /**
+   * <code>optional string invited_by = 10 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for invitedBy.
+   */
+  com.google.protobuf.ByteString
+      getInvitedByBytes();
+
+  /**
+   * <code>optional .google.protobuf.Timestamp created_at = 11 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the createdAt field is set.
+   */
+  boolean hasCreatedAt();
+  /**
+   * <code>optional .google.protobuf.Timestamp created_at = 11 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The createdAt.
+   */
+  com.google.protobuf.Timestamp getCreatedAt();
+  /**
+   * <code>optional .google.protobuf.Timestamp created_at = 11 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
+
+  /**
+   * <code>optional .google.protobuf.Timestamp accepted_at = 12 [json_name = "acceptedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the acceptedAt field is set.
+   */
+  boolean hasAcceptedAt();
+  /**
+   * <code>optional .google.protobuf.Timestamp accepted_at = 12 [json_name = "acceptedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The acceptedAt.
+   */
+  com.google.protobuf.Timestamp getAcceptedAt();
+  /**
+   * <code>optional .google.protobuf.Timestamp accepted_at = 12 [json_name = "acceptedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getAcceptedAtOrBuilder();
+
+  /**
+   * <code>optional .google.protobuf.Timestamp expires_at = 13 [json_name = "expiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the expiresAt field is set.
+   */
+  boolean hasExpiresAt();
+  /**
+   * <code>optional .google.protobuf.Timestamp expires_at = 13 [json_name = "expiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The expiresAt.
+   */
+  com.google.protobuf.Timestamp getExpiresAt();
+  /**
+   * <code>optional .google.protobuf.Timestamp expires_at = 13 [json_name = "expiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder();
 }

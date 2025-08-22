@@ -191,4 +191,16 @@ java.lang.String defaultValue);
    * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile"];</code>
    */
   com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder getUserProfileOrBuilder();
+
+  /**
+   * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The externalId.
+   */
+  java.lang.String getExternalId();
+  /**
+   * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for externalId.
+   */
+  com.google.protobuf.ByteString
+      getExternalIdBytes();
 }

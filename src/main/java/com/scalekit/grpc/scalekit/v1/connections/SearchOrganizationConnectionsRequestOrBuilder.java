@@ -26,20 +26,21 @@ public interface SearchOrganizationConnectionsRequestOrBuilder extends
       getQueryBytes();
 
   /**
-   * <code>optional .scalekit.v1.connections.ConnectionProvider provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the provider field is set.
    */
   boolean hasProvider();
   /**
-   * <code>optional .scalekit.v1.connections.ConnectionProvider provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The enum numeric value on the wire for provider.
-   */
-  int getProviderValue();
-  /**
-   * <code>optional .scalekit.v1.connections.ConnectionProvider provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The provider.
    */
-  com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider getProvider();
+  java.lang.String getProvider();
+  /**
+   * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for provider.
+   */
+  com.google.protobuf.ByteString
+      getProviderBytes();
 
   /**
    * <code>optional .scalekit.v1.connections.ConnectionStatus status = 3 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -72,6 +73,17 @@ public interface SearchOrganizationConnectionsRequestOrBuilder extends
    * @return The connectionType.
    */
   com.scalekit.grpc.scalekit.v1.connections.ConnectionType getConnectionType();
+
+  /**
+   * <code>optional bool enabled = 7 [json_name = "enabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the enabled field is set.
+   */
+  boolean hasEnabled();
+  /**
+   * <code>optional bool enabled = 7 [json_name = "enabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enabled.
+   */
+  boolean getEnabled();
 
   /**
    * <code>uint32 page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>

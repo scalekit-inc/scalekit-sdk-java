@@ -9,12 +9,12 @@ public interface CreateConnectionOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enum numeric value on the wire for provider.
    */
   int getProviderValue();
   /**
-   * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.connections.ConnectionProvider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The provider.
    */
   com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider getProvider();
@@ -29,4 +29,33 @@ public interface CreateConnectionOrBuilder extends
    * @return The type.
    */
   com.scalekit.grpc.scalekit.v1.connections.ConnectionType getType();
+
+  /**
+   * <code>string provider_key = 3 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The providerKey.
+   */
+  java.lang.String getProviderKey();
+  /**
+   * <code>string provider_key = 3 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for providerKey.
+   */
+  com.google.protobuf.ByteString
+      getProviderKeyBytes();
+
+  /**
+   * <code>optional string key_id = 4 [json_name = "keyId"];</code>
+   * @return Whether the keyId field is set.
+   */
+  boolean hasKeyId();
+  /**
+   * <code>optional string key_id = 4 [json_name = "keyId"];</code>
+   * @return The keyId.
+   */
+  java.lang.String getKeyId();
+  /**
+   * <code>optional string key_id = 4 [json_name = "keyId"];</code>
+   * @return The bytes for keyId.
+   */
+  com.google.protobuf.ByteString
+      getKeyIdBytes();
 }

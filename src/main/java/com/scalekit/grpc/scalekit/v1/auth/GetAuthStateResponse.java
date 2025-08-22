@@ -72,7 +72,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (authState_ != com.scalekit.grpc.scalekit.v1.auth.AuthState.AUTHENTICATION.getNumber()) {
+    if (authState_ != com.scalekit.grpc.scalekit.v1.auth.AuthState.AUTH_STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, authState_);
     }
     getUnknownFields().writeTo(output);
@@ -84,7 +84,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (authState_ != com.scalekit.grpc.scalekit.v1.auth.AuthState.AUTHENTICATION.getNumber()) {
+    if (authState_ != com.scalekit.grpc.scalekit.v1.auth.AuthState.AUTH_STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, authState_);
     }

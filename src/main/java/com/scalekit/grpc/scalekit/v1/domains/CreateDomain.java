@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   }
   private CreateDomain() {
     domain_ = "";
+    domainType_ = 0;
   }
 
   @java.lang.Override
@@ -79,6 +80,24 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DOMAIN_TYPE_FIELD_NUMBER = 2;
+  private int domainType_ = 0;
+  /**
+   * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+   * @return The enum numeric value on the wire for domainType.
+   */
+  @java.lang.Override public int getDomainTypeValue() {
+    return domainType_;
+  }
+  /**
+   * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+   * @return The domainType.
+   */
+  @java.lang.Override public com.scalekit.grpc.scalekit.v1.domains.DomainType getDomainType() {
+    com.scalekit.grpc.scalekit.v1.domains.DomainType result = com.scalekit.grpc.scalekit.v1.domains.DomainType.forNumber(domainType_);
+    return result == null ? com.scalekit.grpc.scalekit.v1.domains.DomainType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -96,6 +115,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, domain_);
     }
+    if (domainType_ != com.scalekit.grpc.scalekit.v1.domains.DomainType.DOMAIN_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(2, domainType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -107,6 +129,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, domain_);
+    }
+    if (domainType_ != com.scalekit.grpc.scalekit.v1.domains.DomainType.DOMAIN_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(2, domainType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -125,6 +151,7 @@ private static final long serialVersionUID = 0L;
 
     if (!getDomain()
         .equals(other.getDomain())) return false;
+    if (domainType_ != other.domainType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -138,6 +165,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
     hash = (53 * hash) + getDomain().hashCode();
+    hash = (37 * hash) + DOMAIN_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + domainType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -270,6 +299,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       domain_ = "";
+      domainType_ = 0;
       return this;
     }
 
@@ -305,6 +335,9 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.domain_ = domain_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.domainType_ = domainType_;
       }
     }
 
@@ -357,6 +390,9 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.domainType_ != 0) {
+        setDomainTypeValue(other.getDomainTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -388,6 +424,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
+            case 16: {
+              domainType_ = input.readEnum();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 16
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -473,6 +514,59 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       domain_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private int domainType_ = 0;
+    /**
+     * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+     * @return The enum numeric value on the wire for domainType.
+     */
+    @java.lang.Override public int getDomainTypeValue() {
+      return domainType_;
+    }
+    /**
+     * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+     * @param value The enum numeric value on the wire for domainType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDomainTypeValue(int value) {
+      domainType_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+     * @return The domainType.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.domains.DomainType getDomainType() {
+      com.scalekit.grpc.scalekit.v1.domains.DomainType result = com.scalekit.grpc.scalekit.v1.domains.DomainType.forNumber(domainType_);
+      return result == null ? com.scalekit.grpc.scalekit.v1.domains.DomainType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+     * @param value The domainType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDomainType(com.scalekit.grpc.scalekit.v1.domains.DomainType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      domainType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDomainType() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      domainType_ = 0;
       onChanged();
       return this;
     }

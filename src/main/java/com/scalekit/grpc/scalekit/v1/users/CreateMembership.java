@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   }
   private CreateMembership() {
     roles_ = java.util.Collections.emptyList();
+    inviterEmail_ = "";
   }
 
   @java.lang.Override
@@ -52,6 +53,7 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.users.CreateMembership.class, com.scalekit.grpc.scalekit.v1.users.CreateMembership.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ROLES_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
   private java.util.List<com.scalekit.grpc.scalekit.v1.commons.Role> roles_;
@@ -172,6 +174,53 @@ java.lang.String defaultValue) {
     return map.get(key);
   }
 
+  public static final int INVITER_EMAIL_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object inviterEmail_ = "";
+  /**
+   * <code>optional string inviter_email = 8 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the inviterEmail field is set.
+   */
+  @java.lang.Override
+  public boolean hasInviterEmail() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional string inviter_email = 8 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The inviterEmail.
+   */
+  @java.lang.Override
+  public java.lang.String getInviterEmail() {
+    java.lang.Object ref = inviterEmail_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      inviterEmail_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string inviter_email = 8 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for inviterEmail.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getInviterEmailBytes() {
+    java.lang.Object ref = inviterEmail_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      inviterEmail_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -195,6 +244,9 @@ java.lang.String defaultValue) {
         internalGetMetadata(),
         MetadataDefaultEntryHolder.defaultEntry,
         7);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, inviterEmail_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -218,6 +270,9 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, metadata__);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, inviterEmail_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -237,6 +292,11 @@ java.lang.String defaultValue) {
         .equals(other.getRolesList())) return false;
     if (!internalGetMetadata().equals(
         other.internalGetMetadata())) return false;
+    if (hasInviterEmail() != other.hasInviterEmail()) return false;
+    if (hasInviterEmail()) {
+      if (!getInviterEmail()
+          .equals(other.getInviterEmail())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -255,6 +315,10 @@ java.lang.String defaultValue) {
     if (!internalGetMetadata().getMap().isEmpty()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetMetadata().hashCode();
+    }
+    if (hasInviterEmail()) {
+      hash = (37 * hash) + INVITER_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getInviterEmail().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -417,6 +481,7 @@ java.lang.String defaultValue) {
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableMetadata().clear();
+      inviterEmail_ = "";
       return this;
     }
 
@@ -467,6 +532,12 @@ java.lang.String defaultValue) {
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.inviterEmail_ = inviterEmail_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -542,6 +613,11 @@ java.lang.String defaultValue) {
       internalGetMutableMetadata().mergeFrom(
           other.internalGetMetadata());
       bitField0_ |= 0x00000002;
+      if (other.hasInviterEmail()) {
+        inviterEmail_ = other.inviterEmail_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -590,6 +666,11 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000002;
               break;
             } // case 58
+            case 66: {
+              inviterEmail_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 66
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -971,6 +1052,85 @@ java.lang.String defaultValue) {
       internalGetMutableMetadata().getMutableMap()
           .putAll(values);
       bitField0_ |= 0x00000002;
+      return this;
+    }
+
+    private java.lang.Object inviterEmail_ = "";
+    /**
+     * <code>optional string inviter_email = 8 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the inviterEmail field is set.
+     */
+    public boolean hasInviterEmail() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional string inviter_email = 8 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The inviterEmail.
+     */
+    public java.lang.String getInviterEmail() {
+      java.lang.Object ref = inviterEmail_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        inviterEmail_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string inviter_email = 8 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for inviterEmail.
+     */
+    public com.google.protobuf.ByteString
+        getInviterEmailBytes() {
+      java.lang.Object ref = inviterEmail_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        inviterEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string inviter_email = 8 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The inviterEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInviterEmail(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      inviterEmail_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string inviter_email = 8 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInviterEmail() {
+      inviterEmail_ = getDefaultInstance().getInviterEmail();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string inviter_email = 8 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for inviterEmail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInviterEmailBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      inviterEmail_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     @java.lang.Override

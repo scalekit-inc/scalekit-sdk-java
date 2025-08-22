@@ -236,6 +236,32 @@ private static final long serialVersionUID = 0L;
     return validationErrorInfo_ == null ? com.scalekit.grpc.scalekit.v1.errdetails.ValidationErrorInfo.getDefaultInstance() : validationErrorInfo_;
   }
 
+  public static final int TOOL_ERROR_INFO_FIELD_NUMBER = 9;
+  private com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo toolErrorInfo_;
+  /**
+   * <code>optional .scalekit.v1.errdetails.ToolErrorInfo tool_error_info = 9 [json_name = "toolErrorInfo"];</code>
+   * @return Whether the toolErrorInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasToolErrorInfo() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   * <code>optional .scalekit.v1.errdetails.ToolErrorInfo tool_error_info = 9 [json_name = "toolErrorInfo"];</code>
+   * @return The toolErrorInfo.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo getToolErrorInfo() {
+    return toolErrorInfo_ == null ? com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo.getDefaultInstance() : toolErrorInfo_;
+  }
+  /**
+   * <code>optional .scalekit.v1.errdetails.ToolErrorInfo tool_error_info = 9 [json_name = "toolErrorInfo"];</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfoOrBuilder getToolErrorInfoOrBuilder() {
+    return toolErrorInfo_ == null ? com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo.getDefaultInstance() : toolErrorInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -270,6 +296,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(8, getValidationErrorInfo());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(9, getToolErrorInfo());
     }
     getUnknownFields().writeTo(output);
   }
@@ -306,6 +335,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getValidationErrorInfo());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getToolErrorInfo());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -354,6 +387,11 @@ private static final long serialVersionUID = 0L;
       if (!getValidationErrorInfo()
           .equals(other.getValidationErrorInfo())) return false;
     }
+    if (hasToolErrorInfo() != other.hasToolErrorInfo()) return false;
+    if (hasToolErrorInfo()) {
+      if (!getToolErrorInfo()
+          .equals(other.getToolErrorInfo())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -390,6 +428,10 @@ private static final long serialVersionUID = 0L;
     if (hasValidationErrorInfo()) {
       hash = (37 * hash) + VALIDATION_ERROR_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getValidationErrorInfo().hashCode();
+    }
+    if (hasToolErrorInfo()) {
+      hash = (37 * hash) + TOOL_ERROR_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getToolErrorInfo().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -527,6 +569,7 @@ private static final long serialVersionUID = 0L;
         getResourceInfoFieldBuilder();
         getRequestInfoFieldBuilder();
         getValidationErrorInfoFieldBuilder();
+        getToolErrorInfoFieldBuilder();
       }
     }
     @java.lang.Override
@@ -563,6 +606,11 @@ private static final long serialVersionUID = 0L;
       if (validationErrorInfoBuilder_ != null) {
         validationErrorInfoBuilder_.dispose();
         validationErrorInfoBuilder_ = null;
+      }
+      toolErrorInfo_ = null;
+      if (toolErrorInfoBuilder_ != null) {
+        toolErrorInfoBuilder_.dispose();
+        toolErrorInfoBuilder_ = null;
       }
       return this;
     }
@@ -637,6 +685,12 @@ private static final long serialVersionUID = 0L;
             : validationErrorInfoBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.toolErrorInfo_ = toolErrorInfoBuilder_ == null
+            ? toolErrorInfo_
+            : toolErrorInfoBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -706,6 +760,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasValidationErrorInfo()) {
         mergeValidationErrorInfo(other.getValidationErrorInfo());
+      }
+      if (other.hasToolErrorInfo()) {
+        mergeToolErrorInfo(other.getToolErrorInfo());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -780,6 +837,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000040;
               break;
             } // case 66
+            case 74: {
+              input.readMessage(
+                  getToolErrorInfoFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 74
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1593,6 +1657,127 @@ private static final long serialVersionUID = 0L;
         validationErrorInfo_ = null;
       }
       return validationErrorInfoBuilder_;
+    }
+
+    private com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo toolErrorInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo, com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo.Builder, com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfoOrBuilder> toolErrorInfoBuilder_;
+    /**
+     * <code>optional .scalekit.v1.errdetails.ToolErrorInfo tool_error_info = 9 [json_name = "toolErrorInfo"];</code>
+     * @return Whether the toolErrorInfo field is set.
+     */
+    public boolean hasToolErrorInfo() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <code>optional .scalekit.v1.errdetails.ToolErrorInfo tool_error_info = 9 [json_name = "toolErrorInfo"];</code>
+     * @return The toolErrorInfo.
+     */
+    public com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo getToolErrorInfo() {
+      if (toolErrorInfoBuilder_ == null) {
+        return toolErrorInfo_ == null ? com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo.getDefaultInstance() : toolErrorInfo_;
+      } else {
+        return toolErrorInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .scalekit.v1.errdetails.ToolErrorInfo tool_error_info = 9 [json_name = "toolErrorInfo"];</code>
+     */
+    public Builder setToolErrorInfo(com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo value) {
+      if (toolErrorInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        toolErrorInfo_ = value;
+      } else {
+        toolErrorInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.errdetails.ToolErrorInfo tool_error_info = 9 [json_name = "toolErrorInfo"];</code>
+     */
+    public Builder setToolErrorInfo(
+        com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo.Builder builderForValue) {
+      if (toolErrorInfoBuilder_ == null) {
+        toolErrorInfo_ = builderForValue.build();
+      } else {
+        toolErrorInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.errdetails.ToolErrorInfo tool_error_info = 9 [json_name = "toolErrorInfo"];</code>
+     */
+    public Builder mergeToolErrorInfo(com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo value) {
+      if (toolErrorInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0) &&
+          toolErrorInfo_ != null &&
+          toolErrorInfo_ != com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo.getDefaultInstance()) {
+          getToolErrorInfoBuilder().mergeFrom(value);
+        } else {
+          toolErrorInfo_ = value;
+        }
+      } else {
+        toolErrorInfoBuilder_.mergeFrom(value);
+      }
+      if (toolErrorInfo_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.errdetails.ToolErrorInfo tool_error_info = 9 [json_name = "toolErrorInfo"];</code>
+     */
+    public Builder clearToolErrorInfo() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      toolErrorInfo_ = null;
+      if (toolErrorInfoBuilder_ != null) {
+        toolErrorInfoBuilder_.dispose();
+        toolErrorInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.errdetails.ToolErrorInfo tool_error_info = 9 [json_name = "toolErrorInfo"];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo.Builder getToolErrorInfoBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getToolErrorInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>optional .scalekit.v1.errdetails.ToolErrorInfo tool_error_info = 9 [json_name = "toolErrorInfo"];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfoOrBuilder getToolErrorInfoOrBuilder() {
+      if (toolErrorInfoBuilder_ != null) {
+        return toolErrorInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return toolErrorInfo_ == null ?
+            com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo.getDefaultInstance() : toolErrorInfo_;
+      }
+    }
+    /**
+     * <code>optional .scalekit.v1.errdetails.ToolErrorInfo tool_error_info = 9 [json_name = "toolErrorInfo"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo, com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo.Builder, com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfoOrBuilder> 
+        getToolErrorInfoFieldBuilder() {
+      if (toolErrorInfoBuilder_ == null) {
+        toolErrorInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo, com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo.Builder, com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfoOrBuilder>(
+                getToolErrorInfo(),
+                getParentForChildren(),
+                isClean());
+        toolErrorInfo_ = null;
+      }
+      return toolErrorInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

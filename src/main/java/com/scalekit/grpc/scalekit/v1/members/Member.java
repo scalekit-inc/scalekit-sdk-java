@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     lastName_ = "";
     email_ = "";
     organizations_ = java.util.Collections.emptyList();
+    externalId_ = "";
   }
 
   @java.lang.Override
@@ -486,6 +487,45 @@ java.lang.String defaultValue) {
     return userProfile_ == null ? com.scalekit.grpc.scalekit.v1.commons.UserProfile.getDefaultInstance() : userProfile_;
   }
 
+  public static final int EXTERNAL_ID_FIELD_NUMBER = 12;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object externalId_ = "";
+  /**
+   * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The externalId.
+   */
+  @java.lang.Override
+  public java.lang.String getExternalId() {
+    java.lang.Object ref = externalId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      externalId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for externalId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getExternalIdBytes() {
+    java.lang.Object ref = externalId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      externalId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -535,6 +575,9 @@ java.lang.String defaultValue) {
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(11, getUserProfile());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, externalId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -590,6 +633,9 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, getUserProfile());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, externalId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -641,6 +687,8 @@ java.lang.String defaultValue) {
       if (!getUserProfile()
           .equals(other.getUserProfile())) return false;
     }
+    if (!getExternalId()
+        .equals(other.getExternalId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -688,6 +736,8 @@ java.lang.String defaultValue) {
       hash = (37 * hash) + USER_PROFILE_FIELD_NUMBER;
       hash = (53 * hash) + getUserProfile().hashCode();
     }
+    hash = (37 * hash) + EXTERNAL_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getExternalId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -879,6 +929,7 @@ java.lang.String defaultValue) {
         userProfileBuilder_.dispose();
         userProfileBuilder_ = null;
       }
+      externalId_ = "";
       return this;
     }
 
@@ -967,6 +1018,9 @@ java.lang.String defaultValue) {
             ? userProfile_
             : userProfileBuilder_.build();
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.externalId_ = externalId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1081,6 +1135,11 @@ java.lang.String defaultValue) {
       if (other.hasUserProfile()) {
         mergeUserProfile(other.getUserProfile());
       }
+      if (!other.getExternalId().isEmpty()) {
+        externalId_ = other.externalId_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1180,6 +1239,11 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000400;
               break;
             } // case 90
+            case 98: {
+              externalId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 98
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2352,6 +2416,78 @@ java.lang.String defaultValue) {
         userProfile_ = null;
       }
       return userProfileBuilder_;
+    }
+
+    private java.lang.Object externalId_ = "";
+    /**
+     * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The externalId.
+     */
+    public java.lang.String getExternalId() {
+      java.lang.Object ref = externalId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        externalId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for externalId.
+     */
+    public com.google.protobuf.ByteString
+        getExternalIdBytes() {
+      java.lang.Object ref = externalId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        externalId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The externalId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExternalId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      externalId_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearExternalId() {
+      externalId_ = getDefaultInstance().getExternalId();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for externalId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExternalIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      externalId_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

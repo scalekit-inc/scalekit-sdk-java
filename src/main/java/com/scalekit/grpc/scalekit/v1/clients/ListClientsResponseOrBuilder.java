@@ -20,7 +20,7 @@ public interface ListClientsResponseOrBuilder extends
 
   /**
    * <pre>
-   * List of client applications
+   * List of client resources
    * </pre>
    *
    * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -29,7 +29,7 @@ public interface ListClientsResponseOrBuilder extends
       getClientsList();
   /**
    * <pre>
-   * List of client applications
+   * List of client resources
    * </pre>
    *
    * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -37,7 +37,7 @@ public interface ListClientsResponseOrBuilder extends
   com.scalekit.grpc.scalekit.v1.clients.Client getClients(int index);
   /**
    * <pre>
-   * List of client applications
+   * List of client resources
    * </pre>
    *
    * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -45,7 +45,7 @@ public interface ListClientsResponseOrBuilder extends
   int getClientsCount();
   /**
    * <pre>
-   * List of client applications
+   * List of client resources
    * </pre>
    *
    * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -54,7 +54,7 @@ public interface ListClientsResponseOrBuilder extends
       getClientsOrBuilderList();
   /**
    * <pre>
-   * List of client applications
+   * List of client resources
    * </pre>
    *
    * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>

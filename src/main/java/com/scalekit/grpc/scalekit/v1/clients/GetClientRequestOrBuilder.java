@@ -10,7 +10,7 @@ public interface GetClientRequestOrBuilder extends
 
   /**
    * <pre>
-   * Unique identifier of the client application to retrieve
+   * Unique identifier of the client resource to retrieve
    * </pre>
    *
    * <code>string client_id = 1 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -19,7 +19,7 @@ public interface GetClientRequestOrBuilder extends
   java.lang.String getClientId();
   /**
    * <pre>
-   * Unique identifier of the client application to retrieve
+   * Unique identifier of the client resource to retrieve
    * </pre>
    *
    * <code>string client_id = 1 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>

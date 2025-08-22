@@ -43,4 +43,66 @@ public interface OrganizationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getMembershipStatusBytes();
+
+  /**
+   * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
+   * @return Whether the invitationInvitedBy field is set.
+   */
+  boolean hasInvitationInvitedBy();
+  /**
+   * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
+   * @return The invitationInvitedBy.
+   */
+  java.lang.String getInvitationInvitedBy();
+  /**
+   * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
+   * @return The bytes for invitationInvitedBy.
+   */
+  com.google.protobuf.ByteString
+      getInvitationInvitedByBytes();
+
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_accepted_at = 5 [json_name = "invitationAcceptedAt"];</code>
+   * @return Whether the invitationAcceptedAt field is set.
+   */
+  boolean hasInvitationAcceptedAt();
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_accepted_at = 5 [json_name = "invitationAcceptedAt"];</code>
+   * @return The invitationAcceptedAt.
+   */
+  com.google.protobuf.Timestamp getInvitationAcceptedAt();
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_accepted_at = 5 [json_name = "invitationAcceptedAt"];</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getInvitationAcceptedAtOrBuilder();
+
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_created_at = 6 [json_name = "invitationCreatedAt"];</code>
+   * @return Whether the invitationCreatedAt field is set.
+   */
+  boolean hasInvitationCreatedAt();
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_created_at = 6 [json_name = "invitationCreatedAt"];</code>
+   * @return The invitationCreatedAt.
+   */
+  com.google.protobuf.Timestamp getInvitationCreatedAt();
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_created_at = 6 [json_name = "invitationCreatedAt"];</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getInvitationCreatedAtOrBuilder();
+
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_expires_at = 7 [json_name = "invitationExpiresAt"];</code>
+   * @return Whether the invitationExpiresAt field is set.
+   */
+  boolean hasInvitationExpiresAt();
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_expires_at = 7 [json_name = "invitationExpiresAt"];</code>
+   * @return The invitationExpiresAt.
+   */
+  com.google.protobuf.Timestamp getInvitationExpiresAt();
+  /**
+   * <code>optional .google.protobuf.Timestamp invitation_expires_at = 7 [json_name = "invitationExpiresAt"];</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getInvitationExpiresAtOrBuilder();
 }

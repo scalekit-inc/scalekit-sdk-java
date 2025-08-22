@@ -44,14 +44,14 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private java.util.List<com.scalekit.grpc.scalekit.v1.roles.Role> roles_;
   /**
-   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<com.scalekit.grpc.scalekit.v1.roles.Role> getRolesList() {
     return roles_;
   }
   /**
-   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.scalekit.grpc.scalekit.v1.roles.RoleOrBuilder> 
@@ -59,21 +59,21 @@ private static final long serialVersionUID = 0L;
     return roles_;
   }
   /**
-   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public int getRolesCount() {
     return roles_.size();
   }
   /**
-   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.roles.Role getRoles(int index) {
     return roles_.get(index);
   }
   /**
-   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.roles.RoleOrBuilder getRolesOrBuilder(
@@ -468,7 +468,7 @@ private static final long serialVersionUID = 0L;
         com.scalekit.grpc.scalekit.v1.roles.Role, com.scalekit.grpc.scalekit.v1.roles.Role.Builder, com.scalekit.grpc.scalekit.v1.roles.RoleOrBuilder> rolesBuilder_;
 
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.roles.Role> getRolesList() {
       if (rolesBuilder_ == null) {
@@ -478,7 +478,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public int getRolesCount() {
       if (rolesBuilder_ == null) {
@@ -488,7 +488,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.roles.Role getRoles(int index) {
       if (rolesBuilder_ == null) {
@@ -498,7 +498,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setRoles(
         int index, com.scalekit.grpc.scalekit.v1.roles.Role value) {
@@ -515,7 +515,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setRoles(
         int index, com.scalekit.grpc.scalekit.v1.roles.Role.Builder builderForValue) {
@@ -529,7 +529,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addRoles(com.scalekit.grpc.scalekit.v1.roles.Role value) {
       if (rolesBuilder_ == null) {
@@ -545,7 +545,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addRoles(
         int index, com.scalekit.grpc.scalekit.v1.roles.Role value) {
@@ -562,7 +562,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addRoles(
         com.scalekit.grpc.scalekit.v1.roles.Role.Builder builderForValue) {
@@ -576,7 +576,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addRoles(
         int index, com.scalekit.grpc.scalekit.v1.roles.Role.Builder builderForValue) {
@@ -590,7 +590,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addAllRoles(
         java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.roles.Role> values) {
@@ -605,7 +605,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearRoles() {
       if (rolesBuilder_ == null) {
@@ -618,7 +618,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder removeRoles(int index) {
       if (rolesBuilder_ == null) {
@@ -631,14 +631,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.roles.Role.Builder getRolesBuilder(
         int index) {
       return getRolesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.roles.RoleOrBuilder getRolesOrBuilder(
         int index) {
@@ -648,7 +648,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<? extends com.scalekit.grpc.scalekit.v1.roles.RoleOrBuilder> 
          getRolesOrBuilderList() {
@@ -659,14 +659,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.roles.Role.Builder addRolesBuilder() {
       return getRolesFieldBuilder().addBuilder(
           com.scalekit.grpc.scalekit.v1.roles.Role.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.roles.Role.Builder addRolesBuilder(
         int index) {
@@ -674,7 +674,7 @@ private static final long serialVersionUID = 0L;
           index, com.scalekit.grpc.scalekit.v1.roles.Role.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+     * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.roles.Role.Builder> 
          getRolesBuilderList() {

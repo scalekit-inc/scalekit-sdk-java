@@ -57,79 +57,85 @@ public interface ApplicationOrBuilder extends
       getDescriptionBytes();
 
   /**
-   * <code>.scalekit.v1.clients.ApplicationType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.clients.ResourceType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enum numeric value on the wire for applicationType.
    */
   int getApplicationTypeValue();
   /**
-   * <code>.scalekit.v1.clients.ApplicationType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.clients.ResourceType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The applicationType.
    */
-  com.scalekit.grpc.scalekit.v1.clients.ApplicationType getApplicationType();
+  com.scalekit.grpc.scalekit.v1.clients.ResourceType getApplicationType();
 
   /**
-   * <code>bool third_party = 6 [json_name = "thirdParty", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The thirdParty.
+   * <code>bool disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The disableDynamicClientRegistration.
    */
-  boolean getThirdParty();
+  boolean getDisableDynamicClientRegistration();
 
   /**
-   * <code>bool allow_dynamic_client_registration = 7 [json_name = "allowDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The allowDynamicClientRegistration.
-   */
-  boolean getAllowDynamicClientRegistration();
-
-  /**
-   * <code>string logo_uri = 8 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string logo_uri = 7 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The logoUri.
    */
   java.lang.String getLogoUri();
   /**
-   * <code>string logo_uri = 8 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string logo_uri = 7 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for logoUri.
    */
   com.google.protobuf.ByteString
       getLogoUriBytes();
 
   /**
-   * <code>int64 access_token_expiry = 9 [json_name = "accessTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>int64 access_token_expiry = 8 [json_name = "accessTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The accessTokenExpiry.
    */
   long getAccessTokenExpiry();
 
   /**
-   * <code>int64 refresh_token_expiry = 10 [json_name = "refreshTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>int64 refresh_token_expiry = 9 [json_name = "refreshTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The refreshTokenExpiry.
    */
   long getRefreshTokenExpiry();
 
   /**
-   * <code>.google.protobuf.Timestamp create_time = 11 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp create_time = 10 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
-   * <code>.google.protobuf.Timestamp create_time = 11 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp create_time = 10 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
-   * <code>.google.protobuf.Timestamp create_time = 11 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp create_time = 10 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp update_time = 12 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp update_time = 11 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
-   * <code>.google.protobuf.Timestamp update_time = 12 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp update_time = 11 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
-   * <code>.google.protobuf.Timestamp update_time = 12 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp update_time = 11 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   * <code>string provider = 12 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The provider.
+   */
+  java.lang.String getProvider();
+  /**
+   * <code>string provider = 12 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for provider.
+   */
+  com.google.protobuf.ByteString
+      getProviderBytes();
 }

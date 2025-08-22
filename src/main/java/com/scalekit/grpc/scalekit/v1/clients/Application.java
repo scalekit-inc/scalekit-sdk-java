@@ -5,6 +5,10 @@
 package com.scalekit.grpc.scalekit.v1.clients;
 
 /**
+ * <pre>
+ * for backward compatibility
+ * </pre>
+ *
  * Protobuf type {@code scalekit.v1.clients.Application}
  */
 public final class Application extends
@@ -23,6 +27,7 @@ private static final long serialVersionUID = 0L;
     description_ = "";
     applicationType_ = 0;
     logoUri_ = "";
+    provider_ = "";
   }
 
   @java.lang.Override
@@ -205,48 +210,37 @@ private static final long serialVersionUID = 0L;
   public static final int APPLICATION_TYPE_FIELD_NUMBER = 5;
   private int applicationType_ = 0;
   /**
-   * <code>.scalekit.v1.clients.ApplicationType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.clients.ResourceType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enum numeric value on the wire for applicationType.
    */
   @java.lang.Override public int getApplicationTypeValue() {
     return applicationType_;
   }
   /**
-   * <code>.scalekit.v1.clients.ApplicationType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.clients.ResourceType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The applicationType.
    */
-  @java.lang.Override public com.scalekit.grpc.scalekit.v1.clients.ApplicationType getApplicationType() {
-    com.scalekit.grpc.scalekit.v1.clients.ApplicationType result = com.scalekit.grpc.scalekit.v1.clients.ApplicationType.forNumber(applicationType_);
-    return result == null ? com.scalekit.grpc.scalekit.v1.clients.ApplicationType.UNRECOGNIZED : result;
+  @java.lang.Override public com.scalekit.grpc.scalekit.v1.clients.ResourceType getApplicationType() {
+    com.scalekit.grpc.scalekit.v1.clients.ResourceType result = com.scalekit.grpc.scalekit.v1.clients.ResourceType.forNumber(applicationType_);
+    return result == null ? com.scalekit.grpc.scalekit.v1.clients.ResourceType.UNRECOGNIZED : result;
   }
 
-  public static final int THIRD_PARTY_FIELD_NUMBER = 6;
-  private boolean thirdParty_ = false;
+  public static final int DISABLE_DYNAMIC_CLIENT_REGISTRATION_FIELD_NUMBER = 6;
+  private boolean disableDynamicClientRegistration_ = false;
   /**
-   * <code>bool third_party = 6 [json_name = "thirdParty", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The thirdParty.
+   * <code>bool disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The disableDynamicClientRegistration.
    */
   @java.lang.Override
-  public boolean getThirdParty() {
-    return thirdParty_;
+  public boolean getDisableDynamicClientRegistration() {
+    return disableDynamicClientRegistration_;
   }
 
-  public static final int ALLOW_DYNAMIC_CLIENT_REGISTRATION_FIELD_NUMBER = 7;
-  private boolean allowDynamicClientRegistration_ = false;
-  /**
-   * <code>bool allow_dynamic_client_registration = 7 [json_name = "allowDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The allowDynamicClientRegistration.
-   */
-  @java.lang.Override
-  public boolean getAllowDynamicClientRegistration() {
-    return allowDynamicClientRegistration_;
-  }
-
-  public static final int LOGO_URI_FIELD_NUMBER = 8;
+  public static final int LOGO_URI_FIELD_NUMBER = 7;
   @SuppressWarnings("serial")
   private volatile java.lang.Object logoUri_ = "";
   /**
-   * <code>string logo_uri = 8 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string logo_uri = 7 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The logoUri.
    */
   @java.lang.Override
@@ -263,7 +257,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string logo_uri = 8 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string logo_uri = 7 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for logoUri.
    */
   @java.lang.Override
@@ -281,10 +275,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ACCESS_TOKEN_EXPIRY_FIELD_NUMBER = 9;
+  public static final int ACCESS_TOKEN_EXPIRY_FIELD_NUMBER = 8;
   private long accessTokenExpiry_ = 0L;
   /**
-   * <code>int64 access_token_expiry = 9 [json_name = "accessTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>int64 access_token_expiry = 8 [json_name = "accessTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The accessTokenExpiry.
    */
   @java.lang.Override
@@ -292,10 +286,10 @@ private static final long serialVersionUID = 0L;
     return accessTokenExpiry_;
   }
 
-  public static final int REFRESH_TOKEN_EXPIRY_FIELD_NUMBER = 10;
+  public static final int REFRESH_TOKEN_EXPIRY_FIELD_NUMBER = 9;
   private long refreshTokenExpiry_ = 0L;
   /**
-   * <code>int64 refresh_token_expiry = 10 [json_name = "refreshTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>int64 refresh_token_expiry = 9 [json_name = "refreshTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The refreshTokenExpiry.
    */
   @java.lang.Override
@@ -303,10 +297,10 @@ private static final long serialVersionUID = 0L;
     return refreshTokenExpiry_;
   }
 
-  public static final int CREATE_TIME_FIELD_NUMBER = 11;
+  public static final int CREATE_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp createTime_;
   /**
-   * <code>.google.protobuf.Timestamp create_time = 11 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp create_time = 10 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the createTime field is set.
    */
   @java.lang.Override
@@ -314,7 +308,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp create_time = 11 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp create_time = 10 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The createTime.
    */
   @java.lang.Override
@@ -322,17 +316,17 @@ private static final long serialVersionUID = 0L;
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
-   * <code>.google.protobuf.Timestamp create_time = 11 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp create_time = 10 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
-  public static final int UPDATE_TIME_FIELD_NUMBER = 12;
+  public static final int UPDATE_TIME_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp updateTime_;
   /**
-   * <code>.google.protobuf.Timestamp update_time = 12 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp update_time = 11 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the updateTime field is set.
    */
   @java.lang.Override
@@ -340,7 +334,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp update_time = 12 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp update_time = 11 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The updateTime.
    */
   @java.lang.Override
@@ -348,11 +342,50 @@ private static final long serialVersionUID = 0L;
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
   /**
-   * <code>.google.protobuf.Timestamp update_time = 12 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp update_time = 11 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  public static final int PROVIDER_FIELD_NUMBER = 12;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object provider_ = "";
+  /**
+   * <code>string provider = 12 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The provider.
+   */
+  @java.lang.Override
+  public java.lang.String getProvider() {
+    java.lang.Object ref = provider_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      provider_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string provider = 12 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for provider.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProviderBytes() {
+    java.lang.Object ref = provider_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      provider_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -381,29 +414,29 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
     }
-    if (applicationType_ != com.scalekit.grpc.scalekit.v1.clients.ApplicationType.APPLICATION_TYPE_UNSPECIFIED.getNumber()) {
+    if (applicationType_ != com.scalekit.grpc.scalekit.v1.clients.ResourceType.RESOURCE_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, applicationType_);
     }
-    if (thirdParty_ != false) {
-      output.writeBool(6, thirdParty_);
-    }
-    if (allowDynamicClientRegistration_ != false) {
-      output.writeBool(7, allowDynamicClientRegistration_);
+    if (disableDynamicClientRegistration_ != false) {
+      output.writeBool(6, disableDynamicClientRegistration_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logoUri_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, logoUri_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, logoUri_);
     }
     if (accessTokenExpiry_ != 0L) {
-      output.writeInt64(9, accessTokenExpiry_);
+      output.writeInt64(8, accessTokenExpiry_);
     }
     if (refreshTokenExpiry_ != 0L) {
-      output.writeInt64(10, refreshTokenExpiry_);
+      output.writeInt64(9, refreshTokenExpiry_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(11, getCreateTime());
+      output.writeMessage(10, getCreateTime());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(12, getUpdateTime());
+      output.writeMessage(11, getUpdateTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(provider_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, provider_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -426,36 +459,35 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
     }
-    if (applicationType_ != com.scalekit.grpc.scalekit.v1.clients.ApplicationType.APPLICATION_TYPE_UNSPECIFIED.getNumber()) {
+    if (applicationType_ != com.scalekit.grpc.scalekit.v1.clients.ResourceType.RESOURCE_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(5, applicationType_);
     }
-    if (thirdParty_ != false) {
+    if (disableDynamicClientRegistration_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(6, thirdParty_);
-    }
-    if (allowDynamicClientRegistration_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(7, allowDynamicClientRegistration_);
+        .computeBoolSize(6, disableDynamicClientRegistration_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logoUri_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, logoUri_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, logoUri_);
     }
     if (accessTokenExpiry_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(9, accessTokenExpiry_);
+        .computeInt64Size(8, accessTokenExpiry_);
     }
     if (refreshTokenExpiry_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(10, refreshTokenExpiry_);
+        .computeInt64Size(9, refreshTokenExpiry_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getCreateTime());
+        .computeMessageSize(10, getCreateTime());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, getUpdateTime());
+        .computeMessageSize(11, getUpdateTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(provider_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, provider_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -481,10 +513,8 @@ private static final long serialVersionUID = 0L;
     if (!getDescription()
         .equals(other.getDescription())) return false;
     if (applicationType_ != other.applicationType_) return false;
-    if (getThirdParty()
-        != other.getThirdParty()) return false;
-    if (getAllowDynamicClientRegistration()
-        != other.getAllowDynamicClientRegistration()) return false;
+    if (getDisableDynamicClientRegistration()
+        != other.getDisableDynamicClientRegistration()) return false;
     if (!getLogoUri()
         .equals(other.getLogoUri())) return false;
     if (getAccessTokenExpiry()
@@ -501,6 +531,8 @@ private static final long serialVersionUID = 0L;
       if (!getUpdateTime()
           .equals(other.getUpdateTime())) return false;
     }
+    if (!getProvider()
+        .equals(other.getProvider())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -522,12 +554,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + APPLICATION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + applicationType_;
-    hash = (37 * hash) + THIRD_PARTY_FIELD_NUMBER;
+    hash = (37 * hash) + DISABLE_DYNAMIC_CLIENT_REGISTRATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getThirdParty());
-    hash = (37 * hash) + ALLOW_DYNAMIC_CLIENT_REGISTRATION_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getAllowDynamicClientRegistration());
+        getDisableDynamicClientRegistration());
     hash = (37 * hash) + LOGO_URI_FIELD_NUMBER;
     hash = (53 * hash) + getLogoUri().hashCode();
     hash = (37 * hash) + ACCESS_TOKEN_EXPIRY_FIELD_NUMBER;
@@ -544,6 +573,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
+    hash = (37 * hash) + PROVIDER_FIELD_NUMBER;
+    hash = (53 * hash) + getProvider().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -642,6 +673,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * for backward compatibility
+   * </pre>
+   *
    * Protobuf type {@code scalekit.v1.clients.Application}
    */
   public static final class Builder extends
@@ -687,8 +722,7 @@ private static final long serialVersionUID = 0L;
       resourceId_ = "";
       description_ = "";
       applicationType_ = 0;
-      thirdParty_ = false;
-      allowDynamicClientRegistration_ = false;
+      disableDynamicClientRegistration_ = false;
       logoUri_ = "";
       accessTokenExpiry_ = 0L;
       refreshTokenExpiry_ = 0L;
@@ -702,6 +736,7 @@ private static final long serialVersionUID = 0L;
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
+      provider_ = "";
       return this;
     }
 
@@ -751,32 +786,32 @@ private static final long serialVersionUID = 0L;
         result.applicationType_ = applicationType_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.thirdParty_ = thirdParty_;
+        result.disableDynamicClientRegistration_ = disableDynamicClientRegistration_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.allowDynamicClientRegistration_ = allowDynamicClientRegistration_;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.logoUri_ = logoUri_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.accessTokenExpiry_ = accessTokenExpiry_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.refreshTokenExpiry_ = refreshTokenExpiry_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.createTime_ = createTimeBuilder_ == null
             ? createTime_
             : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null
             ? updateTime_
             : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.provider_ = provider_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -848,15 +883,12 @@ private static final long serialVersionUID = 0L;
       if (other.applicationType_ != 0) {
         setApplicationTypeValue(other.getApplicationTypeValue());
       }
-      if (other.getThirdParty() != false) {
-        setThirdParty(other.getThirdParty());
-      }
-      if (other.getAllowDynamicClientRegistration() != false) {
-        setAllowDynamicClientRegistration(other.getAllowDynamicClientRegistration());
+      if (other.getDisableDynamicClientRegistration() != false) {
+        setDisableDynamicClientRegistration(other.getDisableDynamicClientRegistration());
       }
       if (!other.getLogoUri().isEmpty()) {
         logoUri_ = other.logoUri_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.getAccessTokenExpiry() != 0L) {
@@ -870,6 +902,11 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (!other.getProvider().isEmpty()) {
+        provider_ = other.provider_;
+        bitField0_ |= 0x00000800;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -923,41 +960,41 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 40
             case 48: {
-              thirdParty_ = input.readBool();
+              disableDynamicClientRegistration_ = input.readBool();
               bitField0_ |= 0x00000020;
               break;
             } // case 48
-            case 56: {
-              allowDynamicClientRegistration_ = input.readBool();
+            case 58: {
+              logoUri_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000040;
               break;
-            } // case 56
-            case 66: {
-              logoUri_ = input.readStringRequireUtf8();
+            } // case 58
+            case 64: {
+              accessTokenExpiry_ = input.readInt64();
               bitField0_ |= 0x00000080;
               break;
-            } // case 66
+            } // case 64
             case 72: {
-              accessTokenExpiry_ = input.readInt64();
+              refreshTokenExpiry_ = input.readInt64();
               bitField0_ |= 0x00000100;
               break;
             } // case 72
-            case 80: {
-              refreshTokenExpiry_ = input.readInt64();
-              bitField0_ |= 0x00000200;
-              break;
-            } // case 80
-            case 90: {
+            case 82: {
               input.readMessage(
                   getCreateTimeFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 82
+            case 90: {
+              input.readMessage(
+                  getUpdateTimeFieldBuilder().getBuilder(),
                   extensionRegistry);
               bitField0_ |= 0x00000400;
               break;
             } // case 90
             case 98: {
-              input.readMessage(
-                  getUpdateTimeFieldBuilder().getBuilder(),
-                  extensionRegistry);
+              provider_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000800;
               break;
             } // case 98
@@ -1268,14 +1305,14 @@ private static final long serialVersionUID = 0L;
 
     private int applicationType_ = 0;
     /**
-     * <code>.scalekit.v1.clients.ApplicationType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.clients.ResourceType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The enum numeric value on the wire for applicationType.
      */
     @java.lang.Override public int getApplicationTypeValue() {
       return applicationType_;
     }
     /**
-     * <code>.scalekit.v1.clients.ApplicationType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.clients.ResourceType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The enum numeric value on the wire for applicationType to set.
      * @return This builder for chaining.
      */
@@ -1286,20 +1323,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.clients.ApplicationType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.clients.ResourceType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The applicationType.
      */
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.clients.ApplicationType getApplicationType() {
-      com.scalekit.grpc.scalekit.v1.clients.ApplicationType result = com.scalekit.grpc.scalekit.v1.clients.ApplicationType.forNumber(applicationType_);
-      return result == null ? com.scalekit.grpc.scalekit.v1.clients.ApplicationType.UNRECOGNIZED : result;
+    public com.scalekit.grpc.scalekit.v1.clients.ResourceType getApplicationType() {
+      com.scalekit.grpc.scalekit.v1.clients.ResourceType result = com.scalekit.grpc.scalekit.v1.clients.ResourceType.forNumber(applicationType_);
+      return result == null ? com.scalekit.grpc.scalekit.v1.clients.ResourceType.UNRECOGNIZED : result;
     }
     /**
-     * <code>.scalekit.v1.clients.ApplicationType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.clients.ResourceType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The applicationType to set.
      * @return This builder for chaining.
      */
-    public Builder setApplicationType(com.scalekit.grpc.scalekit.v1.clients.ApplicationType value) {
+    public Builder setApplicationType(com.scalekit.grpc.scalekit.v1.clients.ResourceType value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1309,7 +1346,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.clients.ApplicationType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.clients.ResourceType application_type = 5 [json_name = "applicationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearApplicationType() {
@@ -1319,73 +1356,41 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean thirdParty_ ;
+    private boolean disableDynamicClientRegistration_ ;
     /**
-     * <code>bool third_party = 6 [json_name = "thirdParty", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The thirdParty.
+     * <code>bool disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The disableDynamicClientRegistration.
      */
     @java.lang.Override
-    public boolean getThirdParty() {
-      return thirdParty_;
+    public boolean getDisableDynamicClientRegistration() {
+      return disableDynamicClientRegistration_;
     }
     /**
-     * <code>bool third_party = 6 [json_name = "thirdParty", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The thirdParty to set.
+     * <code>bool disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The disableDynamicClientRegistration to set.
      * @return This builder for chaining.
      */
-    public Builder setThirdParty(boolean value) {
+    public Builder setDisableDynamicClientRegistration(boolean value) {
 
-      thirdParty_ = value;
+      disableDynamicClientRegistration_ = value;
       bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
     /**
-     * <code>bool third_party = 6 [json_name = "thirdParty", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>bool disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearThirdParty() {
+    public Builder clearDisableDynamicClientRegistration() {
       bitField0_ = (bitField0_ & ~0x00000020);
-      thirdParty_ = false;
-      onChanged();
-      return this;
-    }
-
-    private boolean allowDynamicClientRegistration_ ;
-    /**
-     * <code>bool allow_dynamic_client_registration = 7 [json_name = "allowDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The allowDynamicClientRegistration.
-     */
-    @java.lang.Override
-    public boolean getAllowDynamicClientRegistration() {
-      return allowDynamicClientRegistration_;
-    }
-    /**
-     * <code>bool allow_dynamic_client_registration = 7 [json_name = "allowDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The allowDynamicClientRegistration to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAllowDynamicClientRegistration(boolean value) {
-
-      allowDynamicClientRegistration_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>bool allow_dynamic_client_registration = 7 [json_name = "allowDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAllowDynamicClientRegistration() {
-      bitField0_ = (bitField0_ & ~0x00000040);
-      allowDynamicClientRegistration_ = false;
+      disableDynamicClientRegistration_ = false;
       onChanged();
       return this;
     }
 
     private java.lang.Object logoUri_ = "";
     /**
-     * <code>string logo_uri = 8 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string logo_uri = 7 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The logoUri.
      */
     public java.lang.String getLogoUri() {
@@ -1401,7 +1406,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string logo_uri = 8 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string logo_uri = 7 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for logoUri.
      */
     public com.google.protobuf.ByteString
@@ -1418,7 +1423,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string logo_uri = 8 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string logo_uri = 7 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The logoUri to set.
      * @return This builder for chaining.
      */
@@ -1426,22 +1431,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       logoUri_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
     /**
-     * <code>string logo_uri = 8 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string logo_uri = 7 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearLogoUri() {
       logoUri_ = getDefaultInstance().getLogoUri();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
     /**
-     * <code>string logo_uri = 8 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string logo_uri = 7 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for logoUri to set.
      * @return This builder for chaining.
      */
@@ -1450,14 +1455,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       logoUri_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
 
     private long accessTokenExpiry_ ;
     /**
-     * <code>int64 access_token_expiry = 9 [json_name = "accessTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>int64 access_token_expiry = 8 [json_name = "accessTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The accessTokenExpiry.
      */
     @java.lang.Override
@@ -1465,23 +1470,23 @@ private static final long serialVersionUID = 0L;
       return accessTokenExpiry_;
     }
     /**
-     * <code>int64 access_token_expiry = 9 [json_name = "accessTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>int64 access_token_expiry = 8 [json_name = "accessTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The accessTokenExpiry to set.
      * @return This builder for chaining.
      */
     public Builder setAccessTokenExpiry(long value) {
 
       accessTokenExpiry_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 access_token_expiry = 9 [json_name = "accessTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>int64 access_token_expiry = 8 [json_name = "accessTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearAccessTokenExpiry() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000080);
       accessTokenExpiry_ = 0L;
       onChanged();
       return this;
@@ -1489,7 +1494,7 @@ private static final long serialVersionUID = 0L;
 
     private long refreshTokenExpiry_ ;
     /**
-     * <code>int64 refresh_token_expiry = 10 [json_name = "refreshTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>int64 refresh_token_expiry = 9 [json_name = "refreshTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The refreshTokenExpiry.
      */
     @java.lang.Override
@@ -1497,23 +1502,23 @@ private static final long serialVersionUID = 0L;
       return refreshTokenExpiry_;
     }
     /**
-     * <code>int64 refresh_token_expiry = 10 [json_name = "refreshTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>int64 refresh_token_expiry = 9 [json_name = "refreshTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The refreshTokenExpiry to set.
      * @return This builder for chaining.
      */
     public Builder setRefreshTokenExpiry(long value) {
 
       refreshTokenExpiry_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 refresh_token_expiry = 10 [json_name = "refreshTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>int64 refresh_token_expiry = 9 [json_name = "refreshTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearRefreshTokenExpiry() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000100);
       refreshTokenExpiry_ = 0L;
       onChanged();
       return this;
@@ -1523,14 +1528,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp create_time = 11 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp create_time = 10 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 11 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp create_time = 10 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
@@ -1541,7 +1546,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 11 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp create_time = 10 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1552,12 +1557,12 @@ private static final long serialVersionUID = 0L;
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 11 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp create_time = 10 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setCreateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1566,16 +1571,16 @@ private static final long serialVersionUID = 0L;
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 11 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp create_time = 10 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0) &&
+        if (((bitField0_ & 0x00000200) != 0) &&
           createTime_ != null &&
           createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -1586,16 +1591,16 @@ private static final long serialVersionUID = 0L;
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 11 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp create_time = 10 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000200);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1605,15 +1610,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 11 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp create_time = 10 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 11 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp create_time = 10 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -1624,7 +1629,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 11 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp create_time = 10 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1644,14 +1649,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp update_time = 12 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp update_time = 11 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 12 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp update_time = 11 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
@@ -1662,7 +1667,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 12 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp update_time = 11 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -1673,12 +1678,12 @@ private static final long serialVersionUID = 0L;
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 12 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp update_time = 11 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setUpdateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1687,16 +1692,16 @@ private static final long serialVersionUID = 0L;
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 12 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp update_time = 11 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0) &&
+        if (((bitField0_ & 0x00000400) != 0) &&
           updateTime_ != null &&
           updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -1707,16 +1712,16 @@ private static final long serialVersionUID = 0L;
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 12 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp update_time = 11 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000400);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -1726,15 +1731,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 12 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp update_time = 11 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 12 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp update_time = 11 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -1745,7 +1750,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 12 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp update_time = 11 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1759,6 +1764,78 @@ private static final long serialVersionUID = 0L;
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private java.lang.Object provider_ = "";
+    /**
+     * <code>string provider = 12 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The provider.
+     */
+    public java.lang.String getProvider() {
+      java.lang.Object ref = provider_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        provider_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string provider = 12 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for provider.
+     */
+    public com.google.protobuf.ByteString
+        getProviderBytes() {
+      java.lang.Object ref = provider_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        provider_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string provider = 12 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The provider to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProvider(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      provider_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string provider = 12 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProvider() {
+      provider_ = getDefaultInstance().getProvider();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string provider = 12 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for provider to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProviderBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      provider_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

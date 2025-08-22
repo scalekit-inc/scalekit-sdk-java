@@ -179,16 +179,16 @@ public interface RegisterClientResponseOrBuilder extends
   long getExpiry();
 
   /**
-   * <code>string application_id = 11 [json_name = "applicationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The applicationId.
+   * <code>string resource_id = 11 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resourceId.
    */
-  java.lang.String getApplicationId();
+  java.lang.String getResourceId();
   /**
-   * <code>string application_id = 11 [json_name = "applicationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for applicationId.
+   * <code>string resource_id = 11 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for resourceId.
    */
   com.google.protobuf.ByteString
-      getApplicationIdBytes();
+      getResourceIdBytes();
 
   /**
    * <pre>

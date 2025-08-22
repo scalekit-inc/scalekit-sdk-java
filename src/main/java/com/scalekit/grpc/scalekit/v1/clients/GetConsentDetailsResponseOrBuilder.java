@@ -9,19 +9,19 @@ public interface GetConsentDetailsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.scalekit.v1.clients.Application application = 1 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the application field is set.
+   * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the resource field is set.
    */
-  boolean hasApplication();
+  boolean hasResource();
   /**
-   * <code>.scalekit.v1.clients.Application application = 1 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The application.
+   * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resource.
    */
-  com.scalekit.grpc.scalekit.v1.clients.Application getApplication();
+  com.scalekit.grpc.scalekit.v1.clients.Resource getResource();
   /**
-   * <code>.scalekit.v1.clients.Application application = 1 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  com.scalekit.grpc.scalekit.v1.clients.ApplicationOrBuilder getApplicationOrBuilder();
+  com.scalekit.grpc.scalekit.v1.clients.ResourceOrBuilder getResourceOrBuilder();
 
   /**
    * <code>.scalekit.v1.clients.User user = 2 [json_name = "user", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -76,4 +76,19 @@ public interface GetConsentDetailsResponseOrBuilder extends
    */
   com.scalekit.grpc.scalekit.v1.clients.ConsentScopeOrBuilder getScopesOrBuilder(
       int index);
+
+  /**
+   * <code>.scalekit.v1.clients.Application application = 5 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the application field is set.
+   */
+  boolean hasApplication();
+  /**
+   * <code>.scalekit.v1.clients.Application application = 5 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The application.
+   */
+  com.scalekit.grpc.scalekit.v1.clients.Application getApplication();
+  /**
+   * <code>.scalekit.v1.clients.Application application = 5 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.clients.ApplicationOrBuilder getApplicationOrBuilder();
 }

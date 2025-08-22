@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.LazyStringArrayList.emptyList();
     organizationId_ = "";
     source_ = 0;
+    authRequestId_ = "";
   }
 
   @java.lang.Override
@@ -175,10 +176,6 @@ private static final long serialVersionUID = 0L;
   public static final int SOURCE_FIELD_NUMBER = 5;
   private int source_ = 0;
   /**
-   * <pre>
-   *  optional MetadataFilter metadata_filter = 6;
-   * </pre>
-   *
    * <code>.scalekit.v1.events.Source source = 5 [json_name = "source"];</code>
    * @return The enum numeric value on the wire for source.
    */
@@ -186,16 +183,87 @@ private static final long serialVersionUID = 0L;
     return source_;
   }
   /**
-   * <pre>
-   *  optional MetadataFilter metadata_filter = 6;
-   * </pre>
-   *
    * <code>.scalekit.v1.events.Source source = 5 [json_name = "source"];</code>
    * @return The source.
    */
   @java.lang.Override public com.scalekit.grpc.scalekit.v1.events.Source getSource() {
     com.scalekit.grpc.scalekit.v1.events.Source result = com.scalekit.grpc.scalekit.v1.events.Source.forNumber(source_);
     return result == null ? com.scalekit.grpc.scalekit.v1.events.Source.UNRECOGNIZED : result;
+  }
+
+  public static final int AUTH_REQUEST_ID_FIELD_NUMBER = 6;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object authRequestId_ = "";
+  /**
+   * <pre>
+   * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
+   *  keys: {
+   *    string: {
+   *      min_len: 3
+   *      max_len: 25
+   *    }
+   *  }
+   *  values: {
+   *    string: {
+   *      min_len: 1
+   *      max_len: 2000
+   *    }
+   *  }
+   * }];
+   *  optional MetadataFilter metadata_filter = 6;
+   * </pre>
+   *
+   * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+   * @return The authRequestId.
+   */
+  @java.lang.Override
+  public java.lang.String getAuthRequestId() {
+    java.lang.Object ref = authRequestId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      authRequestId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
+   *  keys: {
+   *    string: {
+   *      min_len: 3
+   *      max_len: 25
+   *    }
+   *  }
+   *  values: {
+   *    string: {
+   *      min_len: 1
+   *      max_len: 2000
+   *    }
+   *  }
+   * }];
+   *  optional MetadataFilter metadata_filter = 6;
+   * </pre>
+   *
+   * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+   * @return The bytes for authRequestId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAuthRequestIdBytes() {
+    java.lang.Object ref = authRequestId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      authRequestId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -226,6 +294,9 @@ private static final long serialVersionUID = 0L;
     }
     if (source_ != com.scalekit.grpc.scalekit.v1.events.Source.SOURCE_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, source_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authRequestId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, authRequestId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -259,6 +330,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(5, source_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authRequestId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, authRequestId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -289,6 +363,8 @@ private static final long serialVersionUID = 0L;
     if (!getOrganizationId()
         .equals(other.getOrganizationId())) return false;
     if (source_ != other.source_) return false;
+    if (!getAuthRequestId()
+        .equals(other.getAuthRequestId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -316,6 +392,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getOrganizationId().hashCode();
     hash = (37 * hash) + SOURCE_FIELD_NUMBER;
     hash = (53 * hash) + source_;
+    hash = (37 * hash) + AUTH_REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getAuthRequestId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -468,6 +546,7 @@ private static final long serialVersionUID = 0L;
       }
       organizationId_ = "";
       source_ = 0;
+      authRequestId_ = "";
       return this;
     }
 
@@ -523,6 +602,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.source_ = source_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.authRequestId_ = authRequestId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -595,6 +677,11 @@ private static final long serialVersionUID = 0L;
       if (other.source_ != 0) {
         setSourceValue(other.getSourceValue());
       }
+      if (!other.getAuthRequestId().isEmpty()) {
+        authRequestId_ = other.authRequestId_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -651,6 +738,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 40
+            case 50: {
+              authRequestId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 50
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1095,10 +1187,6 @@ private static final long serialVersionUID = 0L;
 
     private int source_ = 0;
     /**
-     * <pre>
-     *  optional MetadataFilter metadata_filter = 6;
-     * </pre>
-     *
      * <code>.scalekit.v1.events.Source source = 5 [json_name = "source"];</code>
      * @return The enum numeric value on the wire for source.
      */
@@ -1106,10 +1194,6 @@ private static final long serialVersionUID = 0L;
       return source_;
     }
     /**
-     * <pre>
-     *  optional MetadataFilter metadata_filter = 6;
-     * </pre>
-     *
      * <code>.scalekit.v1.events.Source source = 5 [json_name = "source"];</code>
      * @param value The enum numeric value on the wire for source to set.
      * @return This builder for chaining.
@@ -1121,10 +1205,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *  optional MetadataFilter metadata_filter = 6;
-     * </pre>
-     *
      * <code>.scalekit.v1.events.Source source = 5 [json_name = "source"];</code>
      * @return The source.
      */
@@ -1134,10 +1214,6 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.scalekit.grpc.scalekit.v1.events.Source.UNRECOGNIZED : result;
     }
     /**
-     * <pre>
-     *  optional MetadataFilter metadata_filter = 6;
-     * </pre>
-     *
      * <code>.scalekit.v1.events.Source source = 5 [json_name = "source"];</code>
      * @param value The source to set.
      * @return This builder for chaining.
@@ -1152,16 +1228,174 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *  optional MetadataFilter metadata_filter = 6;
-     * </pre>
-     *
      * <code>.scalekit.v1.events.Source source = 5 [json_name = "source"];</code>
      * @return This builder for chaining.
      */
     public Builder clearSource() {
       bitField0_ = (bitField0_ & ~0x00000010);
       source_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object authRequestId_ = "";
+    /**
+     * <pre>
+     * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
+     *  keys: {
+     *    string: {
+     *      min_len: 3
+     *      max_len: 25
+     *    }
+     *  }
+     *  values: {
+     *    string: {
+     *      min_len: 1
+     *      max_len: 2000
+     *    }
+     *  }
+     * }];
+     *  optional MetadataFilter metadata_filter = 6;
+     * </pre>
+     *
+     * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+     * @return The authRequestId.
+     */
+    public java.lang.String getAuthRequestId() {
+      java.lang.Object ref = authRequestId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        authRequestId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
+     *  keys: {
+     *    string: {
+     *      min_len: 3
+     *      max_len: 25
+     *    }
+     *  }
+     *  values: {
+     *    string: {
+     *      min_len: 1
+     *      max_len: 2000
+     *    }
+     *  }
+     * }];
+     *  optional MetadataFilter metadata_filter = 6;
+     * </pre>
+     *
+     * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+     * @return The bytes for authRequestId.
+     */
+    public com.google.protobuf.ByteString
+        getAuthRequestIdBytes() {
+      java.lang.Object ref = authRequestId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        authRequestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
+     *  keys: {
+     *    string: {
+     *      min_len: 3
+     *      max_len: 25
+     *    }
+     *  }
+     *  values: {
+     *    string: {
+     *      min_len: 1
+     *      max_len: 2000
+     *    }
+     *  }
+     * }];
+     *  optional MetadataFilter metadata_filter = 6;
+     * </pre>
+     *
+     * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+     * @param value The authRequestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthRequestId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      authRequestId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
+     *  keys: {
+     *    string: {
+     *      min_len: 3
+     *      max_len: 25
+     *    }
+     *  }
+     *  values: {
+     *    string: {
+     *      min_len: 1
+     *      max_len: 2000
+     *    }
+     *  }
+     * }];
+     *  optional MetadataFilter metadata_filter = 6;
+     * </pre>
+     *
+     * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAuthRequestId() {
+      authRequestId_ = getDefaultInstance().getAuthRequestId();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
+     *  keys: {
+     *    string: {
+     *      min_len: 3
+     *      max_len: 25
+     *    }
+     *  }
+     *  values: {
+     *    string: {
+     *      min_len: 1
+     *      max_len: 2000
+     *    }
+     *  }
+     * }];
+     *  optional MetadataFilter metadata_filter = 6;
+     * </pre>
+     *
+     * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+     * @param value The bytes for authRequestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthRequestIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      authRequestId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

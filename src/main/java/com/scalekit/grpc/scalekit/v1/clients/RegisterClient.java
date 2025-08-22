@@ -21,8 +21,7 @@ private static final long serialVersionUID = 0L;
     description_ = "";
     redirectUris_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-    scope_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    scope_ = "";
     clientUri_ = "";
     logoUri_ = "";
     tosUri_ = "";
@@ -166,39 +165,41 @@ private static final long serialVersionUID = 0L;
 
   public static final int SCOPE_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList scope_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private volatile java.lang.Object scope_ = "";
   /**
-   * <code>repeated string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return A list containing the scope.
+   * <code>string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The scope.
    */
-  public com.google.protobuf.ProtocolStringList
-      getScopeList() {
-    return scope_;
+  @java.lang.Override
+  public java.lang.String getScope() {
+    java.lang.Object ref = scope_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      scope_ = s;
+      return s;
+    }
   }
   /**
-   * <code>repeated string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The count of scope.
+   * <code>string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for scope.
    */
-  public int getScopeCount() {
-    return scope_.size();
-  }
-  /**
-   * <code>repeated string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @param index The index of the element to return.
-   * @return The scope at the given index.
-   */
-  public java.lang.String getScope(int index) {
-    return scope_.get(index);
-  }
-  /**
-   * <code>repeated string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the scope at the given index.
-   */
+  @java.lang.Override
   public com.google.protobuf.ByteString
-      getScopeBytes(int index) {
-    return scope_.getByteString(index);
+      getScopeBytes() {
+    java.lang.Object ref = scope_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      scope_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int CLIENT_URI_FIELD_NUMBER = 5;
@@ -380,8 +381,8 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < redirectUris_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, redirectUris_.getRaw(i));
     }
-    for (int i = 0; i < scope_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, scope_.getRaw(i));
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scope_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, scope_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, clientUri_);
@@ -418,13 +419,8 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getRedirectUrisList().size();
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < scope_.size(); i++) {
-        dataSize += computeStringSizeNoTag(scope_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getScopeList().size();
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scope_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, scope_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, clientUri_);
@@ -459,8 +455,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDescription())) return false;
     if (!getRedirectUrisList()
         .equals(other.getRedirectUrisList())) return false;
-    if (!getScopeList()
-        .equals(other.getScopeList())) return false;
+    if (!getScope()
+        .equals(other.getScope())) return false;
     if (!getClientUri()
         .equals(other.getClientUri())) return false;
     if (!getLogoUri()
@@ -488,10 +484,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + REDIRECT_URIS_FIELD_NUMBER;
       hash = (53 * hash) + getRedirectUrisList().hashCode();
     }
-    if (getScopeCount() > 0) {
-      hash = (37 * hash) + SCOPE_FIELD_NUMBER;
-      hash = (53 * hash) + getScopeList().hashCode();
-    }
+    hash = (37 * hash) + SCOPE_FIELD_NUMBER;
+    hash = (53 * hash) + getScope().hashCode();
     hash = (37 * hash) + CLIENT_URI_FIELD_NUMBER;
     hash = (53 * hash) + getClientUri().hashCode();
     hash = (37 * hash) + LOGO_URI_FIELD_NUMBER;
@@ -635,8 +629,7 @@ private static final long serialVersionUID = 0L;
       description_ = "";
       redirectUris_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-      scope_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      scope_ = "";
       clientUri_ = "";
       logoUri_ = "";
       tosUri_ = "";
@@ -685,7 +678,6 @@ private static final long serialVersionUID = 0L;
         result.redirectUris_ = redirectUris_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        scope_.makeImmutable();
         result.scope_ = scope_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
@@ -766,14 +758,9 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
-      if (!other.scope_.isEmpty()) {
-        if (scope_.isEmpty()) {
-          scope_ = other.scope_;
-          bitField0_ |= 0x00000008;
-        } else {
-          ensureScopeIsMutable();
-          scope_.addAll(other.scope_);
-        }
+      if (!other.getScope().isEmpty()) {
+        scope_ = other.scope_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getClientUri().isEmpty()) {
@@ -839,9 +826,8 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 26
             case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-              ensureScopeIsMutable();
-              scope_.add(s);
+              scope_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
               break;
             } // case 34
             case 42: {
@@ -1136,112 +1122,73 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList scope_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-    private void ensureScopeIsMutable() {
-      if (!scope_.isModifiable()) {
-        scope_ = new com.google.protobuf.LazyStringArrayList(scope_);
+    private java.lang.Object scope_ = "";
+    /**
+     * <code>string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The scope.
+     */
+    public java.lang.String getScope() {
+      java.lang.Object ref = scope_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        scope_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
       }
-      bitField0_ |= 0x00000008;
     }
     /**
-     * <code>repeated string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return A list containing the scope.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getScopeList() {
-      scope_.makeImmutable();
-      return scope_;
-    }
-    /**
-     * <code>repeated string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The count of scope.
-     */
-    public int getScopeCount() {
-      return scope_.size();
-    }
-    /**
-     * <code>repeated string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param index The index of the element to return.
-     * @return The scope at the given index.
-     */
-    public java.lang.String getScope(int index) {
-      return scope_.get(index);
-    }
-    /**
-     * <code>repeated string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the scope at the given index.
+     * <code>string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for scope.
      */
     public com.google.protobuf.ByteString
-        getScopeBytes(int index) {
-      return scope_.getByteString(index);
+        getScopeBytes() {
+      java.lang.Object ref = scope_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        scope_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
     /**
-     * <code>repeated string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param index The index to set the value at.
+     * <code>string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The scope to set.
      * @return This builder for chaining.
      */
     public Builder setScope(
-        int index, java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      ensureScopeIsMutable();
-      scope_.set(index, value);
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The scope to add.
-     * @return This builder for chaining.
-     */
-    public Builder addScope(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      ensureScopeIsMutable();
-      scope_.add(value);
+      scope_ = value;
       bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param values The scope to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllScope(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureScopeIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, scope_);
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearScope() {
-      scope_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);;
+      scope_ = getDefaultInstance().getScope();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes of the scope to add.
+     * <code>string scope = 4 [json_name = "scope", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for scope to set.
      * @return This builder for chaining.
      */
-    public Builder addScopeBytes(
+    public Builder setScopeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      ensureScopeIsMutable();
-      scope_.add(value);
+      scope_ = value;
       bitField0_ |= 0x00000008;
       onChanged();
       return this;

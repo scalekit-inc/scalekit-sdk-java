@@ -25,6 +25,10 @@ public enum MembershipStatus
    * <code>PENDING_INVITE = 3;</code>
    */
   PENDING_INVITE(3),
+  /**
+   * <code>INVITE_EXPIRED = 4;</code>
+   */
+  INVITE_EXPIRED(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -44,6 +48,10 @@ public enum MembershipStatus
    * <code>PENDING_INVITE = 3;</code>
    */
   public static final int PENDING_INVITE_VALUE = 3;
+  /**
+   * <code>INVITE_EXPIRED = 4;</code>
+   */
+  public static final int INVITE_EXPIRED_VALUE = 4;
 
 
   public final int getNumber() {
@@ -74,6 +82,7 @@ public enum MembershipStatus
       case 1: return ACTIVE;
       case 2: return INACTIVE;
       case 3: return PENDING_INVITE;
+      case 4: return INVITE_EXPIRED;
       default: return null;
     }
   }

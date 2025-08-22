@@ -9,29 +9,29 @@ public interface CreateScopeRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-   * @return The envId.
-   */
-  java.lang.String getEnvId();
-  /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for envId.
-   */
-  com.google.protobuf.ByteString
-      getEnvIdBytes();
-
-  /**
-   * <code>.scalekit.v1.clients.CreateScope scope = 2 [json_name = "scope", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.clients.CreateScope scope = 1 [json_name = "scope", (.buf.validate.field) = { ... }</code>
    * @return Whether the scope field is set.
    */
   boolean hasScope();
   /**
-   * <code>.scalekit.v1.clients.CreateScope scope = 2 [json_name = "scope", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.clients.CreateScope scope = 1 [json_name = "scope", (.buf.validate.field) = { ... }</code>
    * @return The scope.
    */
   com.scalekit.grpc.scalekit.v1.clients.CreateScope getScope();
   /**
-   * <code>.scalekit.v1.clients.CreateScope scope = 2 [json_name = "scope", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.clients.CreateScope scope = 1 [json_name = "scope", (.buf.validate.field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.clients.CreateScopeOrBuilder getScopeOrBuilder();
+
+  /**
+   * <code>string env_id = 2 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The envId.
+   */
+  java.lang.String getEnvId();
+  /**
+   * <code>string env_id = 2 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for envId.
+   */
+  com.google.protobuf.ByteString
+      getEnvIdBytes();
 }

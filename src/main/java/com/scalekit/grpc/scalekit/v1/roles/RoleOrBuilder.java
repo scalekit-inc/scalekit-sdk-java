@@ -9,56 +9,109 @@ public interface RoleOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The id.
    */
   java.lang.String getId();
   /**
-   * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
 
   /**
-   * <code>string name = 2 [json_name = "name", (.buf.validate.field) = { ... }</code>
+   * <code>string name = 2 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
-   * <code>string name = 2 [json_name = "name", (.buf.validate.field) = { ... }</code>
+   * <code>string name = 2 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
-   * <code>string display_name = 3 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+   * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
-   * <code>string display_name = 3 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+   * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString
       getDisplayNameBytes();
 
   /**
-   * <code>string description = 4 [json_name = "description", (.buf.validate.field) = { ... }</code>
+   * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The description.
    */
   java.lang.String getDescription();
   /**
-   * <code>string description = 4 [json_name = "description", (.buf.validate.field) = { ... }</code>
+   * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
 
   /**
-   * <code>bool default = 5 [json_name = "default"];</code>
-   * @return The default.
+   * <code>bool default_creator = 6 [json_name = "defaultCreator", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The defaultCreator.
    */
-  boolean getDefault();
+  boolean getDefaultCreator();
+
+  /**
+   * <code>bool default_member = 7 [json_name = "defaultMember", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The defaultMember.
+   */
+  boolean getDefaultMember();
+
+  /**
+   * <code>optional string extends = 8 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the extends field is set.
+   */
+  boolean hasExtends();
+  /**
+   * <code>optional string extends = 8 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The extends.
+   */
+  java.lang.String getExtends();
+  /**
+   * <code>optional string extends = 8 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for extends.
+   */
+  com.google.protobuf.ByteString
+      getExtendsBytes();
+
+  /**
+   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<com.scalekit.grpc.scalekit.v1.roles.Permission> 
+      getPermissionsList();
+  /**
+   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.roles.Permission getPermissions(int index);
+  /**
+   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  int getPermissionsCount();
+  /**
+   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<? extends com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder> 
+      getPermissionsOrBuilderList();
+  /**
+   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder getPermissionsOrBuilder(
+      int index);
+
+  /**
+   * <code>int32 dependent_roles_count = 10 [json_name = "dependentRolesCount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The dependentRolesCount.
+   */
+  int getDependentRolesCount();
 }

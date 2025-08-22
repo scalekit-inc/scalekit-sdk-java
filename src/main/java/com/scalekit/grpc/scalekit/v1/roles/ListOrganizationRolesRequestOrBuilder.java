@@ -19,4 +19,21 @@ public interface ListOrganizationRolesRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getOrgIdBytes();
+
+  /**
+   * <code>optional string include = 2 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the include field is set.
+   */
+  boolean hasInclude();
+  /**
+   * <code>optional string include = 2 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The include.
+   */
+  java.lang.String getInclude();
+  /**
+   * <code>optional string include = 2 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for include.
+   */
+  com.google.protobuf.ByteString
+      getIncludeBytes();
 }

@@ -17,7 +17,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListRolesRequest() {
-    envId_ = "";
+    include_ = "";
   }
 
   @java.lang.Override
@@ -40,39 +40,48 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.roles.ListRolesRequest.class, com.scalekit.grpc.scalekit.v1.roles.ListRolesRequest.Builder.class);
   }
 
-  public static final int ENV_ID_FIELD_NUMBER = 1;
+  private int bitField0_;
+  public static final int INCLUDE_FIELD_NUMBER = 2;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object envId_ = "";
+  private volatile java.lang.Object include_ = "";
   /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-   * @return The envId.
+   * <code>optional string include = 2 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the include field is set.
    */
   @java.lang.Override
-  public java.lang.String getEnvId() {
-    java.lang.Object ref = envId_;
+  public boolean hasInclude() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional string include = 2 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The include.
+   */
+  @java.lang.Override
+  public java.lang.String getInclude() {
+    java.lang.Object ref = include_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      envId_ = s;
+      include_ = s;
       return s;
     }
   }
   /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for envId.
+   * <code>optional string include = 2 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for include.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getEnvIdBytes() {
-    java.lang.Object ref = envId_;
+      getIncludeBytes() {
+    java.lang.Object ref = include_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      envId_ = b;
+      include_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -93,8 +102,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(envId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, envId_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, include_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -105,8 +114,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(envId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, envId_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, include_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -123,8 +132,11 @@ private static final long serialVersionUID = 0L;
     }
     com.scalekit.grpc.scalekit.v1.roles.ListRolesRequest other = (com.scalekit.grpc.scalekit.v1.roles.ListRolesRequest) obj;
 
-    if (!getEnvId()
-        .equals(other.getEnvId())) return false;
+    if (hasInclude() != other.hasInclude()) return false;
+    if (hasInclude()) {
+      if (!getInclude()
+          .equals(other.getInclude())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -136,8 +148,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ENV_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getEnvId().hashCode();
+    if (hasInclude()) {
+      hash = (37 * hash) + INCLUDE_FIELD_NUMBER;
+      hash = (53 * hash) + getInclude().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -269,7 +283,7 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      envId_ = "";
+      include_ = "";
       return this;
     }
 
@@ -303,9 +317,12 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.roles.ListRolesRequest result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.envId_ = envId_;
+        result.include_ = include_;
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -352,8 +369,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.roles.ListRolesRequest other) {
       if (other == com.scalekit.grpc.scalekit.v1.roles.ListRolesRequest.getDefaultInstance()) return this;
-      if (!other.getEnvId().isEmpty()) {
-        envId_ = other.envId_;
+      if (other.hasInclude()) {
+        include_ = other.include_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
@@ -383,11 +400,11 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              envId_ = input.readStringRequireUtf8();
+            case 18: {
+              include_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
-            } // case 10
+            } // case 18
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -405,73 +422,80 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object envId_ = "";
+    private java.lang.Object include_ = "";
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-     * @return The envId.
+     * <code>optional string include = 2 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the include field is set.
      */
-    public java.lang.String getEnvId() {
-      java.lang.Object ref = envId_;
+    public boolean hasInclude() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional string include = 2 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The include.
+     */
+    public java.lang.String getInclude() {
+      java.lang.Object ref = include_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        envId_ = s;
+        include_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-     * @return The bytes for envId.
+     * <code>optional string include = 2 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for include.
      */
     public com.google.protobuf.ByteString
-        getEnvIdBytes() {
-      java.lang.Object ref = envId_;
+        getIncludeBytes() {
+      java.lang.Object ref = include_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        envId_ = b;
+        include_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-     * @param value The envId to set.
+     * <code>optional string include = 2 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The include to set.
      * @return This builder for chaining.
      */
-    public Builder setEnvId(
+    public Builder setInclude(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      envId_ = value;
+      include_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+     * <code>optional string include = 2 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearEnvId() {
-      envId_ = getDefaultInstance().getEnvId();
+    public Builder clearInclude() {
+      include_ = getDefaultInstance().getInclude();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-     * @param value The bytes for envId to set.
+     * <code>optional string include = 2 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for include to set.
      * @return This builder for chaining.
      */
-    public Builder setEnvIdBytes(
+    public Builder setIncludeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      envId_ = value;
+      include_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
