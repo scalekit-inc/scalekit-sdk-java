@@ -41,30 +41,30 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
-  public static final int APPLICATION_FIELD_NUMBER = 1;
-  private com.scalekit.grpc.scalekit.v1.clients.Application application_;
+  public static final int RESOURCE_FIELD_NUMBER = 1;
+  private com.scalekit.grpc.scalekit.v1.clients.Resource resource_;
   /**
-   * <code>.scalekit.v1.clients.Application application = 1 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the application field is set.
+   * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the resource field is set.
    */
   @java.lang.Override
-  public boolean hasApplication() {
+  public boolean hasResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.scalekit.v1.clients.Application application = 1 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The application.
+   * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resource.
    */
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.clients.Application getApplication() {
-    return application_ == null ? com.scalekit.grpc.scalekit.v1.clients.Application.getDefaultInstance() : application_;
+  public com.scalekit.grpc.scalekit.v1.clients.Resource getResource() {
+    return resource_ == null ? com.scalekit.grpc.scalekit.v1.clients.Resource.getDefaultInstance() : resource_;
   }
   /**
-   * <code>.scalekit.v1.clients.Application application = 1 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.clients.ApplicationOrBuilder getApplicationOrBuilder() {
-    return application_ == null ? com.scalekit.grpc.scalekit.v1.clients.Application.getDefaultInstance() : application_;
+  public com.scalekit.grpc.scalekit.v1.clients.ResourceOrBuilder getResourceOrBuilder() {
+    return resource_ == null ? com.scalekit.grpc.scalekit.v1.clients.Resource.getDefaultInstance() : resource_;
   }
 
   public static final int USER_FIELD_NUMBER = 2;
@@ -160,6 +160,32 @@ private static final long serialVersionUID = 0L;
     return scopes_.get(index);
   }
 
+  public static final int APPLICATION_FIELD_NUMBER = 5;
+  private com.scalekit.grpc.scalekit.v1.clients.Application application_;
+  /**
+   * <code>.scalekit.v1.clients.Application application = 5 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the application field is set.
+   */
+  @java.lang.Override
+  public boolean hasApplication() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <code>.scalekit.v1.clients.Application application = 5 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The application.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.Application getApplication() {
+    return application_ == null ? com.scalekit.grpc.scalekit.v1.clients.Application.getDefaultInstance() : application_;
+  }
+  /**
+   * <code>.scalekit.v1.clients.Application application = 5 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.ApplicationOrBuilder getApplicationOrBuilder() {
+    return application_ == null ? com.scalekit.grpc.scalekit.v1.clients.Application.getDefaultInstance() : application_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -175,7 +201,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(1, getApplication());
+      output.writeMessage(1, getResource());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getUser());
@@ -185,6 +211,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < scopes_.size(); i++) {
       output.writeMessage(4, scopes_.get(i));
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(5, getApplication());
     }
     getUnknownFields().writeTo(output);
   }
@@ -197,7 +226,7 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getApplication());
+        .computeMessageSize(1, getResource());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -210,6 +239,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < scopes_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, scopes_.get(i));
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getApplication());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -226,10 +259,10 @@ private static final long serialVersionUID = 0L;
     }
     com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse other = (com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse) obj;
 
-    if (hasApplication() != other.hasApplication()) return false;
-    if (hasApplication()) {
-      if (!getApplication()
-          .equals(other.getApplication())) return false;
+    if (hasResource() != other.hasResource()) return false;
+    if (hasResource()) {
+      if (!getResource()
+          .equals(other.getResource())) return false;
     }
     if (hasUser() != other.hasUser()) return false;
     if (hasUser()) {
@@ -243,6 +276,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!getScopesList()
         .equals(other.getScopesList())) return false;
+    if (hasApplication() != other.hasApplication()) return false;
+    if (hasApplication()) {
+      if (!getApplication()
+          .equals(other.getApplication())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -254,9 +292,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasApplication()) {
-      hash = (37 * hash) + APPLICATION_FIELD_NUMBER;
-      hash = (53 * hash) + getApplication().hashCode();
+    if (hasResource()) {
+      hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getResource().hashCode();
     }
     if (hasUser()) {
       hash = (37 * hash) + USER_FIELD_NUMBER;
@@ -269,6 +307,10 @@ private static final long serialVersionUID = 0L;
     if (getScopesCount() > 0) {
       hash = (37 * hash) + SCOPES_FIELD_NUMBER;
       hash = (53 * hash) + getScopesList().hashCode();
+    }
+    if (hasApplication()) {
+      hash = (37 * hash) + APPLICATION_FIELD_NUMBER;
+      hash = (53 * hash) + getApplication().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -400,20 +442,21 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getApplicationFieldBuilder();
+        getResourceFieldBuilder();
         getUserFieldBuilder();
         getClientFieldBuilder();
         getScopesFieldBuilder();
+        getApplicationFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      application_ = null;
-      if (applicationBuilder_ != null) {
-        applicationBuilder_.dispose();
-        applicationBuilder_ = null;
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
+        resourceBuilder_ = null;
       }
       user_ = null;
       if (userBuilder_ != null) {
@@ -432,6 +475,11 @@ private static final long serialVersionUID = 0L;
         scopesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
+      application_ = null;
+      if (applicationBuilder_ != null) {
+        applicationBuilder_.dispose();
+        applicationBuilder_ = null;
+      }
       return this;
     }
 
@@ -480,9 +528,9 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.application_ = applicationBuilder_ == null
-            ? application_
-            : applicationBuilder_.build();
+        result.resource_ = resourceBuilder_ == null
+            ? resource_
+            : resourceBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
@@ -496,6 +544,12 @@ private static final long serialVersionUID = 0L;
             ? client_
             : clientBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.application_ = applicationBuilder_ == null
+            ? application_
+            : applicationBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -544,8 +598,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse other) {
       if (other == com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse.getDefaultInstance()) return this;
-      if (other.hasApplication()) {
-        mergeApplication(other.getApplication());
+      if (other.hasResource()) {
+        mergeResource(other.getResource());
       }
       if (other.hasUser()) {
         mergeUser(other.getUser());
@@ -579,6 +633,9 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (other.hasApplication()) {
+        mergeApplication(other.getApplication());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -607,7 +664,7 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               input.readMessage(
-                  getApplicationFieldBuilder().getBuilder(),
+                  getResourceFieldBuilder().getBuilder(),
                   extensionRegistry);
               bitField0_ |= 0x00000001;
               break;
@@ -639,6 +696,13 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 34
+            case 42: {
+              input.readMessage(
+                  getApplicationFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -656,125 +720,125 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private com.scalekit.grpc.scalekit.v1.clients.Application application_;
+    private com.scalekit.grpc.scalekit.v1.clients.Resource resource_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.clients.Application, com.scalekit.grpc.scalekit.v1.clients.Application.Builder, com.scalekit.grpc.scalekit.v1.clients.ApplicationOrBuilder> applicationBuilder_;
+        com.scalekit.grpc.scalekit.v1.clients.Resource, com.scalekit.grpc.scalekit.v1.clients.Resource.Builder, com.scalekit.grpc.scalekit.v1.clients.ResourceOrBuilder> resourceBuilder_;
     /**
-     * <code>.scalekit.v1.clients.Application application = 1 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the application field is set.
+     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the resource field is set.
      */
-    public boolean hasApplication() {
+    public boolean hasResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.scalekit.v1.clients.Application application = 1 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The application.
+     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The resource.
      */
-    public com.scalekit.grpc.scalekit.v1.clients.Application getApplication() {
-      if (applicationBuilder_ == null) {
-        return application_ == null ? com.scalekit.grpc.scalekit.v1.clients.Application.getDefaultInstance() : application_;
+    public com.scalekit.grpc.scalekit.v1.clients.Resource getResource() {
+      if (resourceBuilder_ == null) {
+        return resource_ == null ? com.scalekit.grpc.scalekit.v1.clients.Resource.getDefaultInstance() : resource_;
       } else {
-        return applicationBuilder_.getMessage();
+        return resourceBuilder_.getMessage();
       }
     }
     /**
-     * <code>.scalekit.v1.clients.Application application = 1 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder setApplication(com.scalekit.grpc.scalekit.v1.clients.Application value) {
-      if (applicationBuilder_ == null) {
+    public Builder setResource(com.scalekit.grpc.scalekit.v1.clients.Resource value) {
+      if (resourceBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        application_ = value;
+        resource_ = value;
       } else {
-        applicationBuilder_.setMessage(value);
+        resourceBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>.scalekit.v1.clients.Application application = 1 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder setApplication(
-        com.scalekit.grpc.scalekit.v1.clients.Application.Builder builderForValue) {
-      if (applicationBuilder_ == null) {
-        application_ = builderForValue.build();
+    public Builder setResource(
+        com.scalekit.grpc.scalekit.v1.clients.Resource.Builder builderForValue) {
+      if (resourceBuilder_ == null) {
+        resource_ = builderForValue.build();
       } else {
-        applicationBuilder_.setMessage(builderForValue.build());
+        resourceBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>.scalekit.v1.clients.Application application = 1 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder mergeApplication(com.scalekit.grpc.scalekit.v1.clients.Application value) {
-      if (applicationBuilder_ == null) {
+    public Builder mergeResource(com.scalekit.grpc.scalekit.v1.clients.Resource value) {
+      if (resourceBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0) &&
-          application_ != null &&
-          application_ != com.scalekit.grpc.scalekit.v1.clients.Application.getDefaultInstance()) {
-          getApplicationBuilder().mergeFrom(value);
+          resource_ != null &&
+          resource_ != com.scalekit.grpc.scalekit.v1.clients.Resource.getDefaultInstance()) {
+          getResourceBuilder().mergeFrom(value);
         } else {
-          application_ = value;
+          resource_ = value;
         }
       } else {
-        applicationBuilder_.mergeFrom(value);
+        resourceBuilder_.mergeFrom(value);
       }
-      if (application_ != null) {
+      if (resource_ != null) {
         bitField0_ |= 0x00000001;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.scalekit.v1.clients.Application application = 1 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder clearApplication() {
+    public Builder clearResource() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      application_ = null;
-      if (applicationBuilder_ != null) {
-        applicationBuilder_.dispose();
-        applicationBuilder_ = null;
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
+        resourceBuilder_ = null;
       }
       onChanged();
       return this;
     }
     /**
-     * <code>.scalekit.v1.clients.Application application = 1 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.scalekit.grpc.scalekit.v1.clients.Application.Builder getApplicationBuilder() {
+    public com.scalekit.grpc.scalekit.v1.clients.Resource.Builder getResourceBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
-      return getApplicationFieldBuilder().getBuilder();
+      return getResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.clients.Application application = 1 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.scalekit.grpc.scalekit.v1.clients.ApplicationOrBuilder getApplicationOrBuilder() {
-      if (applicationBuilder_ != null) {
-        return applicationBuilder_.getMessageOrBuilder();
+    public com.scalekit.grpc.scalekit.v1.clients.ResourceOrBuilder getResourceOrBuilder() {
+      if (resourceBuilder_ != null) {
+        return resourceBuilder_.getMessageOrBuilder();
       } else {
-        return application_ == null ?
-            com.scalekit.grpc.scalekit.v1.clients.Application.getDefaultInstance() : application_;
+        return resource_ == null ?
+            com.scalekit.grpc.scalekit.v1.clients.Resource.getDefaultInstance() : resource_;
       }
     }
     /**
-     * <code>.scalekit.v1.clients.Application application = 1 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.clients.Application, com.scalekit.grpc.scalekit.v1.clients.Application.Builder, com.scalekit.grpc.scalekit.v1.clients.ApplicationOrBuilder> 
-        getApplicationFieldBuilder() {
-      if (applicationBuilder_ == null) {
-        applicationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.scalekit.grpc.scalekit.v1.clients.Application, com.scalekit.grpc.scalekit.v1.clients.Application.Builder, com.scalekit.grpc.scalekit.v1.clients.ApplicationOrBuilder>(
-                getApplication(),
+        com.scalekit.grpc.scalekit.v1.clients.Resource, com.scalekit.grpc.scalekit.v1.clients.Resource.Builder, com.scalekit.grpc.scalekit.v1.clients.ResourceOrBuilder> 
+        getResourceFieldBuilder() {
+      if (resourceBuilder_ == null) {
+        resourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.clients.Resource, com.scalekit.grpc.scalekit.v1.clients.Resource.Builder, com.scalekit.grpc.scalekit.v1.clients.ResourceOrBuilder>(
+                getResource(),
                 getParentForChildren(),
                 isClean());
-        application_ = null;
+        resource_ = null;
       }
-      return applicationBuilder_;
+      return resourceBuilder_;
     }
 
     private com.scalekit.grpc.scalekit.v1.clients.User user_;
@@ -1257,6 +1321,127 @@ private static final long serialVersionUID = 0L;
         scopes_ = null;
       }
       return scopesBuilder_;
+    }
+
+    private com.scalekit.grpc.scalekit.v1.clients.Application application_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.Application, com.scalekit.grpc.scalekit.v1.clients.Application.Builder, com.scalekit.grpc.scalekit.v1.clients.ApplicationOrBuilder> applicationBuilder_;
+    /**
+     * <code>.scalekit.v1.clients.Application application = 5 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the application field is set.
+     */
+    public boolean hasApplication() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>.scalekit.v1.clients.Application application = 5 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The application.
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.Application getApplication() {
+      if (applicationBuilder_ == null) {
+        return application_ == null ? com.scalekit.grpc.scalekit.v1.clients.Application.getDefaultInstance() : application_;
+      } else {
+        return applicationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.clients.Application application = 5 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setApplication(com.scalekit.grpc.scalekit.v1.clients.Application value) {
+      if (applicationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        application_ = value;
+      } else {
+        applicationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.Application application = 5 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setApplication(
+        com.scalekit.grpc.scalekit.v1.clients.Application.Builder builderForValue) {
+      if (applicationBuilder_ == null) {
+        application_ = builderForValue.build();
+      } else {
+        applicationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.Application application = 5 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeApplication(com.scalekit.grpc.scalekit.v1.clients.Application value) {
+      if (applicationBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0) &&
+          application_ != null &&
+          application_ != com.scalekit.grpc.scalekit.v1.clients.Application.getDefaultInstance()) {
+          getApplicationBuilder().mergeFrom(value);
+        } else {
+          application_ = value;
+        }
+      } else {
+        applicationBuilder_.mergeFrom(value);
+      }
+      if (application_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.Application application = 5 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearApplication() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      application_ = null;
+      if (applicationBuilder_ != null) {
+        applicationBuilder_.dispose();
+        applicationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.Application application = 5 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.Application.Builder getApplicationBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getApplicationFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.clients.Application application = 5 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ApplicationOrBuilder getApplicationOrBuilder() {
+      if (applicationBuilder_ != null) {
+        return applicationBuilder_.getMessageOrBuilder();
+      } else {
+        return application_ == null ?
+            com.scalekit.grpc.scalekit.v1.clients.Application.getDefaultInstance() : application_;
+      }
+    }
+    /**
+     * <code>.scalekit.v1.clients.Application application = 5 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.Application, com.scalekit.grpc.scalekit.v1.clients.Application.Builder, com.scalekit.grpc.scalekit.v1.clients.ApplicationOrBuilder> 
+        getApplicationFieldBuilder() {
+      if (applicationBuilder_ == null) {
+        applicationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.clients.Application, com.scalekit.grpc.scalekit.v1.clients.Application.Builder, com.scalekit.grpc.scalekit.v1.clients.ApplicationOrBuilder>(
+                getApplication(),
+                getParentForChildren(),
+                isClean());
+        application_ = null;
+      }
+      return applicationBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

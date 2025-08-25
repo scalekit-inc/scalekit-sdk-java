@@ -106,5 +106,16 @@ public interface ListDomainRequestOrBuilder extends
    */
   com.google.protobuf.Int32ValueOrBuilder getPageNumberOrBuilder();
 
+  /**
+   * <code>.scalekit.v1.domains.DomainType domain_type = 7 [json_name = "domainType"];</code>
+   * @return The enum numeric value on the wire for domainType.
+   */
+  int getDomainTypeValue();
+  /**
+   * <code>.scalekit.v1.domains.DomainType domain_type = 7 [json_name = "domainType"];</code>
+   * @return The domainType.
+   */
+  com.scalekit.grpc.scalekit.v1.domains.DomainType getDomainType();
+
   com.scalekit.grpc.scalekit.v1.domains.ListDomainRequest.IdentitiesCase getIdentitiesCase();
 }

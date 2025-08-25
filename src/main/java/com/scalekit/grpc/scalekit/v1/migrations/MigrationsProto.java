@@ -26,6 +26,16 @@ public final class MigrationsProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_migrations_MigrationSAMLRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_migrations_MigrateFSARequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_migrations_MigrateFSARequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_migrations_MigrationFSAResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_migrations_MigrationFSAResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_migrations_MigrationSAMLResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -52,33 +62,32 @@ public final class MigrationsProto {
       "ts\030\002 \001(\005R\022failedEnvironments\"f\n\024Migratio" +
       "nSAMLRequest\022\'\n\017environment_ids\030\001 \003(\003R\016e" +
       "nvironmentIds\022%\n\nbatch_size\030\002 \001(\005B\006\272H\003\310\001" +
-      "\001R\tbatchSize\"{\n\025MigrationSAMLResponse\0221\n" +
-      "\024success_environments\030\001 \001(\005R\023successEnvi" +
-      "ronments\022/\n\023failed_environments\030\002 \001(\005R\022f" +
-      "ailedEnvironments2\256\005\n\020MigrationService\022\227" +
-      "\001\n\023MigrateIdpSimulator\022\026.google.protobuf" +
-      ".Empty\0320.scalekit.v1.migrations.Migratio" +
-      "nServiceResponse\"6\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202" +
-      "\323\344\223\002\033\"\031/migrations/idp-simulator\022\252\001\n\023Mig" +
-      "rateSAMLMetadata\022,.scalekit.v1.migration" +
-      "s.MigrationSAMLRequest\032-.scalekit.v1.mig" +
-      "rations.MigrationSAMLResponse\"6\202\265\030\002\030\001\372\322\344" +
-      "\223\002\t\022\007PREVIEW\202\323\344\223\002\033\"\031/migrations/saml-met" +
-      "adata\022\235\001\n\026MigrateWebhookProvider\022\026.googl" +
-      "e.protobuf.Empty\0320.scalekit.v1.migration" +
-      "s.MigrationServiceResponse\"9\202\265\030\002\030\001\372\322\344\223\002\t" +
-      "\022\007PREVIEW\202\323\344\223\002\036\"\034/migrations/webhook-pro" +
-      "vider\022\262\001\n\030CreateNewSAMLCertificate\022,.sca" +
-      "lekit.v1.migrations.MigrationSAMLRequest" +
-      "\032-.scalekit.v1.migrations.MigrationSAMLR" +
-      "esponse\"9\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\036\"\034/m" +
-      "igrations/saml-certificateB\353\001\n(com.scale" +
-      "kit.grpc.scalekit.v1.migrationsB\017Migrati" +
-      "onsProtoP\001Z4github.com/scalekit-inc/scal" +
-      "ekit/pkg/grpc/migrations\242\002\003SVM\252\002\026Scaleki" +
-      "t.V1.Migrations\312\002\026Scalekit\\V1\\Migrations" +
-      "\342\002\"Scalekit\\V1\\Migrations\\GPBMetadata\352\002\030" +
-      "Scalekit::V1::Migrationsb\006proto3"
+      "\001R\tbatchSize\"\255\001\n\021MigrateFSARequest\022\'\n\017en" +
+      "vironment_ids\030\001 \003(\003R\016environmentIds\022H\n\td" +
+      "ata_type\030\002 \001(\0162#.scalekit.v1.migrations." +
+      "FSADataTypeB\006\272H\003\310\001\001R\010dataType\022%\n\nbatch_s" +
+      "ize\030\003 \001(\005B\006\272H\003\310\001\001R\tbatchSize\"z\n\024Migratio" +
+      "nFSAResponse\0221\n\024success_environments\030\001 \001" +
+      "(\005R\023successEnvironments\022/\n\023failed_enviro" +
+      "nments\030\002 \001(\005R\022failedEnvironments\"{\n\025Migr" +
+      "ationSAMLResponse\0221\n\024success_environment" +
+      "s\030\001 \001(\005R\023successEnvironments\022/\n\023failed_e" +
+      "nvironments\030\002 \001(\005R\022failedEnvironments*\210\001" +
+      "\n\013FSADataType\022\035\n\031FSA_DATA_TYPE_UNSPECIFI" +
+      "ED\020\000\022\034\n\030FSA_DATA_TYPE_CONNECTION\020\001\022\031\n\025FS" +
+      "A_DATA_TYPE_SESSION\020\002\022!\n\035FSA_DATA_TYPE_U" +
+      "SER_MANAGEMENT\020\0032\261\001\n\020MigrationService\022\234\001" +
+      "\n\016MigrateFSAData\022).scalekit.v1.migration" +
+      "s.MigrateFSARequest\032,.scalekit.v1.migrat" +
+      "ions.MigrationFSAResponse\"1\202\265\030\002\030\001\372\322\344\223\002\t\022" +
+      "\007PREVIEW\202\323\344\223\002\026\"\024/migrations/fsa-dataB\353\001\n" +
+      "(com.scalekit.grpc.scalekit.v1.migration" +
+      "sB\017MigrationsProtoP\001Z4github.com/scaleki" +
+      "t-inc/scalekit/pkg/grpc/migrations\242\002\003SVM" +
+      "\252\002\026Scalekit.V1.Migrations\312\002\026Scalekit\\V1\\" +
+      "Migrations\342\002\"Scalekit\\V1\\Migrations\\GPBM" +
+      "etadata\352\002\030Scalekit::V1::Migrationsb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -103,8 +112,20 @@ public final class MigrationsProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_MigrationSAMLRequest_descriptor,
         new java.lang.String[] { "EnvironmentIds", "BatchSize", });
-    internal_static_scalekit_v1_migrations_MigrationSAMLResponse_descriptor =
+    internal_static_scalekit_v1_migrations_MigrateFSARequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_scalekit_v1_migrations_MigrateFSARequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_migrations_MigrateFSARequest_descriptor,
+        new java.lang.String[] { "EnvironmentIds", "DataType", "BatchSize", });
+    internal_static_scalekit_v1_migrations_MigrationFSAResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_scalekit_v1_migrations_MigrationFSAResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_migrations_MigrationFSAResponse_descriptor,
+        new java.lang.String[] { "SuccessEnvironments", "FailedEnvironments", });
+    internal_static_scalekit_v1_migrations_MigrationSAMLResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_scalekit_v1_migrations_MigrationSAMLResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_MigrationSAMLResponse_descriptor,

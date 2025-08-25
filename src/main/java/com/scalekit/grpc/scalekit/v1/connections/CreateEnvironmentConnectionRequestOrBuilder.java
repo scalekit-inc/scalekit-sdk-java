@@ -22,4 +22,19 @@ public interface CreateEnvironmentConnectionRequestOrBuilder extends
    * <code>.scalekit.v1.connections.CreateConnection connection = 1 [json_name = "connection", (.buf.validate.field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.connections.CreateConnectionOrBuilder getConnectionOrBuilder();
+
+  /**
+   * <code>optional .scalekit.v1.connections.Flags flags = 2 [json_name = "flags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the flags field is set.
+   */
+  boolean hasFlags();
+  /**
+   * <code>optional .scalekit.v1.connections.Flags flags = 2 [json_name = "flags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The flags.
+   */
+  com.scalekit.grpc.scalekit.v1.connections.Flags getFlags();
+  /**
+   * <code>optional .scalekit.v1.connections.Flags flags = 2 [json_name = "flags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.connections.FlagsOrBuilder getFlagsOrBuilder();
 }

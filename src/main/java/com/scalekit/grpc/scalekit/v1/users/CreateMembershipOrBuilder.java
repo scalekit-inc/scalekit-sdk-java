@@ -65,4 +65,21 @@ java.lang.String defaultValue);
    */
   java.lang.String getMetadataOrThrow(
       java.lang.String key);
+
+  /**
+   * <code>optional string inviter_email = 8 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the inviterEmail field is set.
+   */
+  boolean hasInviterEmail();
+  /**
+   * <code>optional string inviter_email = 8 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The inviterEmail.
+   */
+  java.lang.String getInviterEmail();
+  /**
+   * <code>optional string inviter_email = 8 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for inviterEmail.
+   */
+  com.google.protobuf.ByteString
+      getInviterEmailBytes();
 }

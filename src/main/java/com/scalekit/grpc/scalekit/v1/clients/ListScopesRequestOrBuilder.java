@@ -9,12 +9,12 @@ public interface ListScopesRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+   * <code>string env_id = 1 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The envId.
    */
   java.lang.String getEnvId();
   /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
+   * <code>string env_id = 1 [json_name = "envId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for envId.
    */
   com.google.protobuf.ByteString

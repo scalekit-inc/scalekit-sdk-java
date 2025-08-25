@@ -109,4 +109,19 @@ public interface ErrorInfoOrBuilder extends
    * <code>optional .scalekit.v1.errdetails.ValidationErrorInfo validation_error_info = 8 [json_name = "validationErrorInfo"];</code>
    */
   com.scalekit.grpc.scalekit.v1.errdetails.ValidationErrorInfoOrBuilder getValidationErrorInfoOrBuilder();
+
+  /**
+   * <code>optional .scalekit.v1.errdetails.ToolErrorInfo tool_error_info = 9 [json_name = "toolErrorInfo"];</code>
+   * @return Whether the toolErrorInfo field is set.
+   */
+  boolean hasToolErrorInfo();
+  /**
+   * <code>optional .scalekit.v1.errdetails.ToolErrorInfo tool_error_info = 9 [json_name = "toolErrorInfo"];</code>
+   * @return The toolErrorInfo.
+   */
+  com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo getToolErrorInfo();
+  /**
+   * <code>optional .scalekit.v1.errdetails.ToolErrorInfo tool_error_info = 9 [json_name = "toolErrorInfo"];</code>
+   */
+  com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfoOrBuilder getToolErrorInfoOrBuilder();
 }

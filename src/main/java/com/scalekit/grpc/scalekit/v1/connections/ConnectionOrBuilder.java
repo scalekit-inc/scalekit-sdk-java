@@ -242,21 +242,72 @@ java.lang.String defaultValue);
   com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfigOrBuilder getPasswordlessConfigOrBuilder();
 
   /**
-   * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 26 [json_name = "staticConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the staticConfig field is set.
+   */
+  boolean hasStaticConfig();
+  /**
+   * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 26 [json_name = "staticConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The staticConfig.
+   */
+  com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig getStaticConfig();
+  /**
+   * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 26 [json_name = "staticConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfigOrBuilder getStaticConfigOrBuilder();
+
+  /**
+   * <code>optional string key_id = 25 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the keyId field is set.
    */
   boolean hasKeyId();
   /**
-   * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string key_id = 25 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The keyId.
    */
   java.lang.String getKeyId();
   /**
-   * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string key_id = 25 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for keyId.
    */
   com.google.protobuf.ByteString
       getKeyIdBytes();
+
+  /**
+   * <code>string provider_key = 23 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The providerKey.
+   */
+  java.lang.String getProviderKey();
+  /**
+   * <code>string provider_key = 23 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for providerKey.
+   */
+  com.google.protobuf.ByteString
+      getProviderKeyBytes();
+
+  /**
+   * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<com.scalekit.grpc.scalekit.v1.domains.Domain> 
+      getDomainsList();
+  /**
+   * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.domains.Domain getDomains(int index);
+  /**
+   * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  int getDomainsCount();
+  /**
+   * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<? extends com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder> 
+      getDomainsOrBuilderList();
+  /**
+   * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder getDomainsOrBuilder(
+      int index);
 
   com.scalekit.grpc.scalekit.v1.connections.Connection.SettingsCase getSettingsCase();
 }

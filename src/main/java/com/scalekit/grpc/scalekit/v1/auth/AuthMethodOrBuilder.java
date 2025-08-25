@@ -32,15 +32,16 @@ public interface AuthMethodOrBuilder extends
   com.scalekit.grpc.scalekit.v1.connections.ConnectionType getConnectionType();
 
   /**
-   * <code>.scalekit.v1.connections.ConnectionProvider provider = 3 [json_name = "provider"];</code>
-   * @return The enum numeric value on the wire for provider.
-   */
-  int getProviderValue();
-  /**
-   * <code>.scalekit.v1.connections.ConnectionProvider provider = 3 [json_name = "provider"];</code>
+   * <code>string provider = 3 [json_name = "provider"];</code>
    * @return The provider.
    */
-  com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider getProvider();
+  java.lang.String getProvider();
+  /**
+   * <code>string provider = 3 [json_name = "provider"];</code>
+   * @return The bytes for provider.
+   */
+  com.google.protobuf.ByteString
+      getProviderBytes();
 
   /**
    * <code>string auth_initiation_uri = 4 [json_name = "authInitiationUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>

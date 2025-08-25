@@ -77,6 +77,74 @@ public enum ObjectType
    * <code>Email = 16;</code>
    */
   Email(16),
+  /**
+   * <code>AuthRequest = 17;</code>
+   */
+  AuthRequest(17),
+  /**
+   * <code>SAMLRequest = 18;</code>
+   */
+  SAMLRequest(18),
+  /**
+   * <code>SAMLResponse = 19;</code>
+   */
+  SAMLResponse(19),
+  /**
+   * <code>TokenClaims = 20;</code>
+   */
+  TokenClaims(20),
+  /**
+   * <code>OIDCReqParams = 21;</code>
+   */
+  OIDCReqParams(21),
+  /**
+   * <code>OIDCRespClaims = 22;</code>
+   */
+  OIDCRespClaims(22),
+  /**
+   * <code>SSOError = 23;</code>
+   */
+  SSOError(23),
+  /**
+   * <code>GenericError = 24;</code>
+   */
+  GenericError(24),
+  /**
+   * <code>RefreshTokens = 25;</code>
+   */
+  RefreshTokens(25),
+  /**
+   * <code>EndSessionRequest = 26;</code>
+   */
+  EndSessionRequest(26),
+  /**
+   * <code>LogoutTokenClaims = 27;</code>
+   */
+  LogoutTokenClaims(27),
+  /**
+   * <code>OAuthResponse = 28;</code>
+   */
+  OAuthResponse(28),
+  /**
+   * <code>JSON = 29;</code>
+   */
+  JSON(29),
+  /**
+   * <code>SKErrors = 30;</code>
+   */
+  SKErrors(30),
+  /**
+   * <code>OrgMembership = 31;</code>
+   */
+  OrgMembership(31),
+  /**
+   * <code>UserProfile = 32;</code>
+   */
+  UserProfile(32),
+  /**
+   * <code>IDPInitiatedPayload = 33;</code>
+   */
+  IDPInitiatedPayload(33),
   UNRECOGNIZED(-1),
   ;
 
@@ -148,6 +216,74 @@ public enum ObjectType
    * <code>Email = 16;</code>
    */
   public static final int Email_VALUE = 16;
+  /**
+   * <code>AuthRequest = 17;</code>
+   */
+  public static final int AuthRequest_VALUE = 17;
+  /**
+   * <code>SAMLRequest = 18;</code>
+   */
+  public static final int SAMLRequest_VALUE = 18;
+  /**
+   * <code>SAMLResponse = 19;</code>
+   */
+  public static final int SAMLResponse_VALUE = 19;
+  /**
+   * <code>TokenClaims = 20;</code>
+   */
+  public static final int TokenClaims_VALUE = 20;
+  /**
+   * <code>OIDCReqParams = 21;</code>
+   */
+  public static final int OIDCReqParams_VALUE = 21;
+  /**
+   * <code>OIDCRespClaims = 22;</code>
+   */
+  public static final int OIDCRespClaims_VALUE = 22;
+  /**
+   * <code>SSOError = 23;</code>
+   */
+  public static final int SSOError_VALUE = 23;
+  /**
+   * <code>GenericError = 24;</code>
+   */
+  public static final int GenericError_VALUE = 24;
+  /**
+   * <code>RefreshTokens = 25;</code>
+   */
+  public static final int RefreshTokens_VALUE = 25;
+  /**
+   * <code>EndSessionRequest = 26;</code>
+   */
+  public static final int EndSessionRequest_VALUE = 26;
+  /**
+   * <code>LogoutTokenClaims = 27;</code>
+   */
+  public static final int LogoutTokenClaims_VALUE = 27;
+  /**
+   * <code>OAuthResponse = 28;</code>
+   */
+  public static final int OAuthResponse_VALUE = 28;
+  /**
+   * <code>JSON = 29;</code>
+   */
+  public static final int JSON_VALUE = 29;
+  /**
+   * <code>SKErrors = 30;</code>
+   */
+  public static final int SKErrors_VALUE = 30;
+  /**
+   * <code>OrgMembership = 31;</code>
+   */
+  public static final int OrgMembership_VALUE = 31;
+  /**
+   * <code>UserProfile = 32;</code>
+   */
+  public static final int UserProfile_VALUE = 32;
+  /**
+   * <code>IDPInitiatedPayload = 33;</code>
+   */
+  public static final int IDPInitiatedPayload_VALUE = 33;
 
 
   public final int getNumber() {
@@ -191,6 +327,23 @@ public enum ObjectType
       case 14: return Domain;
       case 15: return EmailServer;
       case 16: return Email;
+      case 17: return AuthRequest;
+      case 18: return SAMLRequest;
+      case 19: return SAMLResponse;
+      case 20: return TokenClaims;
+      case 21: return OIDCReqParams;
+      case 22: return OIDCRespClaims;
+      case 23: return SSOError;
+      case 24: return GenericError;
+      case 25: return RefreshTokens;
+      case 26: return EndSessionRequest;
+      case 27: return LogoutTokenClaims;
+      case 28: return OAuthResponse;
+      case 29: return JSON;
+      case 30: return SKErrors;
+      case 31: return OrgMembership;
+      case 32: return UserProfile;
+      case 33: return IDPInitiatedPayload;
       default: return null;
     }
   }

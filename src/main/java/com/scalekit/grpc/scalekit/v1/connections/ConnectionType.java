@@ -33,6 +33,18 @@ public enum ConnectionType
    * <code>PASSWORDLESS = 5;</code>
    */
   PASSWORDLESS(5),
+  /**
+   * <code>BASIC = 6;</code>
+   */
+  BASIC(6),
+  /**
+   * <code>BEARER = 7;</code>
+   */
+  BEARER(7),
+  /**
+   * <code>API_KEY = 8;</code>
+   */
+  API_KEY(8),
   UNRECOGNIZED(-1),
   ;
 
@@ -60,6 +72,18 @@ public enum ConnectionType
    * <code>PASSWORDLESS = 5;</code>
    */
   public static final int PASSWORDLESS_VALUE = 5;
+  /**
+   * <code>BASIC = 6;</code>
+   */
+  public static final int BASIC_VALUE = 6;
+  /**
+   * <code>BEARER = 7;</code>
+   */
+  public static final int BEARER_VALUE = 7;
+  /**
+   * <code>API_KEY = 8;</code>
+   */
+  public static final int API_KEY_VALUE = 8;
 
 
   public final int getNumber() {
@@ -92,6 +116,9 @@ public enum ConnectionType
       case 3: return PASSWORD;
       case 4: return OAUTH;
       case 5: return PASSWORDLESS;
+      case 6: return BASIC;
+      case 7: return BEARER;
+      case 8: return API_KEY;
       default: return null;
     }
   }

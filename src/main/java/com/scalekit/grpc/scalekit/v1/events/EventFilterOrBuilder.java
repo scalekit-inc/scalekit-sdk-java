@@ -76,21 +76,61 @@ public interface EventFilterOrBuilder extends
       getOrganizationIdBytes();
 
   /**
-   * <pre>
-   *  optional MetadataFilter metadata_filter = 6;
-   * </pre>
-   *
    * <code>.scalekit.v1.events.Source source = 5 [json_name = "source"];</code>
    * @return The enum numeric value on the wire for source.
    */
   int getSourceValue();
   /**
-   * <pre>
-   *  optional MetadataFilter metadata_filter = 6;
-   * </pre>
-   *
    * <code>.scalekit.v1.events.Source source = 5 [json_name = "source"];</code>
    * @return The source.
    */
   com.scalekit.grpc.scalekit.v1.events.Source getSource();
+
+  /**
+   * <pre>
+   * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
+   *  keys: {
+   *    string: {
+   *      min_len: 3
+   *      max_len: 25
+   *    }
+   *  }
+   *  values: {
+   *    string: {
+   *      min_len: 1
+   *      max_len: 2000
+   *    }
+   *  }
+   * }];
+   *  optional MetadataFilter metadata_filter = 6;
+   * </pre>
+   *
+   * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+   * @return The authRequestId.
+   */
+  java.lang.String getAuthRequestId();
+  /**
+   * <pre>
+   * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
+   *  keys: {
+   *    string: {
+   *      min_len: 3
+   *      max_len: 25
+   *    }
+   *  }
+   *  values: {
+   *    string: {
+   *      min_len: 1
+   *      max_len: 2000
+   *    }
+   *  }
+   * }];
+   *  optional MetadataFilter metadata_filter = 6;
+   * </pre>
+   *
+   * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+   * @return The bytes for authRequestId.
+   */
+  com.google.protobuf.ByteString
+      getAuthRequestIdBytes();
 }

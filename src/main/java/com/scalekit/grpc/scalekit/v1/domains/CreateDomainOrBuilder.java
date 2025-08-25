@@ -19,4 +19,15 @@ public interface CreateDomainOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDomainBytes();
+
+  /**
+   * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+   * @return The enum numeric value on the wire for domainType.
+   */
+  int getDomainTypeValue();
+  /**
+   * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+   * @return The domainType.
+   */
+  com.scalekit.grpc.scalekit.v1.domains.DomainType getDomainType();
 }

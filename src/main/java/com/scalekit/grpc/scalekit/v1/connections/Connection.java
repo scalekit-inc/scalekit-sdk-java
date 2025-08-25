@@ -26,6 +26,8 @@ private static final long serialVersionUID = 0L;
     configurationType_ = 0;
     testConnectionUri_ = "";
     keyId_ = "";
+    providerKey_ = "";
+    domains_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -71,6 +73,7 @@ private static final long serialVersionUID = 0L;
     SAML_CONFIG(19),
     OAUTH_CONFIG(20),
     PASSWORDLESS_CONFIG(22),
+    STATIC_CONFIG(26),
     SETTINGS_NOT_SET(0);
     private final int value;
     private SettingsCase(int value) {
@@ -92,6 +95,7 @@ private static final long serialVersionUID = 0L;
         case 19: return SAML_CONFIG;
         case 20: return OAUTH_CONFIG;
         case 22: return PASSWORDLESS_CONFIG;
+        case 26: return STATIC_CONFIG;
         case 0: return SETTINGS_NOT_SET;
         default: return null;
       }
@@ -620,11 +624,42 @@ java.lang.String defaultValue) {
     return com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig.getDefaultInstance();
   }
 
-  public static final int KEY_ID_FIELD_NUMBER = 21;
+  public static final int STATIC_CONFIG_FIELD_NUMBER = 26;
+  /**
+   * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 26 [json_name = "staticConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the staticConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasStaticConfig() {
+    return settingsCase_ == 26;
+  }
+  /**
+   * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 26 [json_name = "staticConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The staticConfig.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig getStaticConfig() {
+    if (settingsCase_ == 26) {
+       return (com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.getDefaultInstance();
+  }
+  /**
+   * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 26 [json_name = "staticConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfigOrBuilder getStaticConfigOrBuilder() {
+    if (settingsCase_ == 26) {
+       return (com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.getDefaultInstance();
+  }
+
+  public static final int KEY_ID_FIELD_NUMBER = 25;
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyId_ = "";
   /**
-   * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string key_id = 25 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the keyId field is set.
    */
   @java.lang.Override
@@ -632,7 +667,7 @@ java.lang.String defaultValue) {
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string key_id = 25 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The keyId.
    */
   @java.lang.Override
@@ -649,7 +684,7 @@ java.lang.String defaultValue) {
     }
   }
   /**
-   * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string key_id = 25 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for keyId.
    */
   @java.lang.Override
@@ -665,6 +700,86 @@ java.lang.String defaultValue) {
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int PROVIDER_KEY_FIELD_NUMBER = 23;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object providerKey_ = "";
+  /**
+   * <code>string provider_key = 23 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The providerKey.
+   */
+  @java.lang.Override
+  public java.lang.String getProviderKey() {
+    java.lang.Object ref = providerKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      providerKey_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string provider_key = 23 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for providerKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProviderKeyBytes() {
+    java.lang.Object ref = providerKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      providerKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DOMAINS_FIELD_NUMBER = 24;
+  @SuppressWarnings("serial")
+  private java.util.List<com.scalekit.grpc.scalekit.v1.domains.Domain> domains_;
+  /**
+   * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.scalekit.grpc.scalekit.v1.domains.Domain> getDomainsList() {
+    return domains_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder> 
+      getDomainsOrBuilderList() {
+    return domains_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public int getDomainsCount() {
+    return domains_.size();
+  }
+  /**
+   * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.domains.Domain getDomains(int index) {
+    return domains_.get(index);
+  }
+  /**
+   * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder getDomainsOrBuilder(
+      int index) {
+    return domains_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -732,11 +847,20 @@ java.lang.String defaultValue) {
     if (settingsCase_ == 20) {
       output.writeMessage(20, (com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig) settings_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, keyId_);
-    }
     if (settingsCase_ == 22) {
       output.writeMessage(22, (com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig) settings_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(providerKey_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 23, providerKey_);
+    }
+    for (int i = 0; i < domains_.size(); i++) {
+      output.writeMessage(24, domains_.get(i));
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 25, keyId_);
+    }
+    if (settingsCase_ == 26) {
+      output.writeMessage(26, (com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -813,12 +937,23 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(20, (com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig) settings_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, keyId_);
-    }
     if (settingsCase_ == 22) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(22, (com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig) settings_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(providerKey_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, providerKey_);
+    }
+    for (int i = 0; i < domains_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(24, domains_.get(i));
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, keyId_);
+    }
+    if (settingsCase_ == 26) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(26, (com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -871,6 +1006,10 @@ java.lang.String defaultValue) {
       if (!getKeyId()
           .equals(other.getKeyId())) return false;
     }
+    if (!getProviderKey()
+        .equals(other.getProviderKey())) return false;
+    if (!getDomainsList()
+        .equals(other.getDomainsList())) return false;
     if (!getSettingsCase().equals(other.getSettingsCase())) return false;
     switch (settingsCase_) {
       case 18:
@@ -888,6 +1027,10 @@ java.lang.String defaultValue) {
       case 22:
         if (!getPasswordlessConfig()
             .equals(other.getPasswordlessConfig())) return false;
+        break;
+      case 26:
+        if (!getStaticConfig()
+            .equals(other.getStaticConfig())) return false;
         break;
       case 0:
       default:
@@ -943,6 +1086,12 @@ java.lang.String defaultValue) {
       hash = (37 * hash) + KEY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getKeyId().hashCode();
     }
+    hash = (37 * hash) + PROVIDER_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getProviderKey().hashCode();
+    if (getDomainsCount() > 0) {
+      hash = (37 * hash) + DOMAINS_FIELD_NUMBER;
+      hash = (53 * hash) + getDomainsList().hashCode();
+    }
     switch (settingsCase_) {
       case 18:
         hash = (37 * hash) + OIDC_CONFIG_FIELD_NUMBER;
@@ -959,6 +1108,10 @@ java.lang.String defaultValue) {
       case 22:
         hash = (37 * hash) + PASSWORDLESS_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getPasswordlessConfig().hashCode();
+        break;
+      case 26:
+        hash = (37 * hash) + STATIC_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getStaticConfig().hashCode();
         break;
       case 0:
       default:
@@ -1117,6 +1270,7 @@ java.lang.String defaultValue) {
               .alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getDomainsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1156,7 +1310,18 @@ java.lang.String defaultValue) {
       if (passwordlessConfigBuilder_ != null) {
         passwordlessConfigBuilder_.clear();
       }
+      if (staticConfigBuilder_ != null) {
+        staticConfigBuilder_.clear();
+      }
       keyId_ = "";
+      providerKey_ = "";
+      if (domainsBuilder_ == null) {
+        domains_ = java.util.Collections.emptyList();
+      } else {
+        domains_ = null;
+        domainsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00100000);
       settingsCase_ = 0;
       settings_ = null;
       return this;
@@ -1185,10 +1350,23 @@ java.lang.String defaultValue) {
     @java.lang.Override
     public com.scalekit.grpc.scalekit.v1.connections.Connection buildPartial() {
       com.scalekit.grpc.scalekit.v1.connections.Connection result = new com.scalekit.grpc.scalekit.v1.connections.Connection(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.connections.Connection result) {
+      if (domainsBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)) {
+          domains_ = java.util.Collections.unmodifiableList(domains_);
+          bitField0_ = (bitField0_ & ~0x00100000);
+        }
+        result.domains_ = domains_;
+      } else {
+        result.domains_ = domainsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.connections.Connection result) {
@@ -1241,9 +1419,12 @@ java.lang.String defaultValue) {
             : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.keyId_ = keyId_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.providerKey_ = providerKey_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1266,6 +1447,10 @@ java.lang.String defaultValue) {
       if (settingsCase_ == 22 &&
           passwordlessConfigBuilder_ != null) {
         result.settings_ = passwordlessConfigBuilder_.build();
+      }
+      if (settingsCase_ == 26 &&
+          staticConfigBuilder_ != null) {
+        result.settings_ = staticConfigBuilder_.build();
       }
     }
 
@@ -1362,8 +1547,39 @@ java.lang.String defaultValue) {
       }
       if (other.hasKeyId()) {
         keyId_ = other.keyId_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
+      }
+      if (!other.getProviderKey().isEmpty()) {
+        providerKey_ = other.providerKey_;
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      if (domainsBuilder_ == null) {
+        if (!other.domains_.isEmpty()) {
+          if (domains_.isEmpty()) {
+            domains_ = other.domains_;
+            bitField0_ = (bitField0_ & ~0x00100000);
+          } else {
+            ensureDomainsIsMutable();
+            domains_.addAll(other.domains_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.domains_.isEmpty()) {
+          if (domainsBuilder_.isEmpty()) {
+            domainsBuilder_.dispose();
+            domainsBuilder_ = null;
+            domains_ = other.domains_;
+            bitField0_ = (bitField0_ & ~0x00100000);
+            domainsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getDomainsFieldBuilder() : null;
+          } else {
+            domainsBuilder_.addAllMessages(other.domains_);
+          }
+        }
       }
       switch (other.getSettingsCase()) {
         case OIDC_CONFIG: {
@@ -1380,6 +1596,10 @@ java.lang.String defaultValue) {
         }
         case PASSWORDLESS_CONFIG: {
           mergePasswordlessConfig(other.getPasswordlessConfig());
+          break;
+        }
+        case STATIC_CONFIG: {
+          mergeStaticConfig(other.getStaticConfig());
           break;
         }
         case SETTINGS_NOT_SET: {
@@ -1506,11 +1726,6 @@ java.lang.String defaultValue) {
               settingsCase_ = 20;
               break;
             } // case 162
-            case 170: {
-              keyId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00020000;
-              break;
-            } // case 170
             case 178: {
               input.readMessage(
                   getPasswordlessConfigFieldBuilder().getBuilder(),
@@ -1518,6 +1733,36 @@ java.lang.String defaultValue) {
               settingsCase_ = 22;
               break;
             } // case 178
+            case 186: {
+              providerKey_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00080000;
+              break;
+            } // case 186
+            case 194: {
+              com.scalekit.grpc.scalekit.v1.domains.Domain m =
+                  input.readMessage(
+                      com.scalekit.grpc.scalekit.v1.domains.Domain.parser(),
+                      extensionRegistry);
+              if (domainsBuilder_ == null) {
+                ensureDomainsIsMutable();
+                domains_.add(m);
+              } else {
+                domainsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 194
+            case 202: {
+              keyId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00040000;
+              break;
+            } // case 202
+            case 210: {
+              input.readMessage(
+                  getStaticConfigFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              settingsCase_ = 26;
+              break;
+            } // case 210
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3058,16 +3303,158 @@ java.lang.String defaultValue) {
       return passwordlessConfigBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig, com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfigOrBuilder> staticConfigBuilder_;
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 26 [json_name = "staticConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the staticConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasStaticConfig() {
+      return settingsCase_ == 26;
+    }
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 26 [json_name = "staticConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The staticConfig.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig getStaticConfig() {
+      if (staticConfigBuilder_ == null) {
+        if (settingsCase_ == 26) {
+          return (com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.getDefaultInstance();
+      } else {
+        if (settingsCase_ == 26) {
+          return staticConfigBuilder_.getMessage();
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 26 [json_name = "staticConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setStaticConfig(com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig value) {
+      if (staticConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        settings_ = value;
+        onChanged();
+      } else {
+        staticConfigBuilder_.setMessage(value);
+      }
+      settingsCase_ = 26;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 26 [json_name = "staticConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setStaticConfig(
+        com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.Builder builderForValue) {
+      if (staticConfigBuilder_ == null) {
+        settings_ = builderForValue.build();
+        onChanged();
+      } else {
+        staticConfigBuilder_.setMessage(builderForValue.build());
+      }
+      settingsCase_ = 26;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 26 [json_name = "staticConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeStaticConfig(com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig value) {
+      if (staticConfigBuilder_ == null) {
+        if (settingsCase_ == 26 &&
+            settings_ != com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.getDefaultInstance()) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.newBuilder((com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          settings_ = value;
+        }
+        onChanged();
+      } else {
+        if (settingsCase_ == 26) {
+          staticConfigBuilder_.mergeFrom(value);
+        } else {
+          staticConfigBuilder_.setMessage(value);
+        }
+      }
+      settingsCase_ = 26;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 26 [json_name = "staticConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearStaticConfig() {
+      if (staticConfigBuilder_ == null) {
+        if (settingsCase_ == 26) {
+          settingsCase_ = 0;
+          settings_ = null;
+          onChanged();
+        }
+      } else {
+        if (settingsCase_ == 26) {
+          settingsCase_ = 0;
+          settings_ = null;
+        }
+        staticConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 26 [json_name = "staticConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.Builder getStaticConfigBuilder() {
+      return getStaticConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 26 [json_name = "staticConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfigOrBuilder getStaticConfigOrBuilder() {
+      if ((settingsCase_ == 26) && (staticConfigBuilder_ != null)) {
+        return staticConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (settingsCase_ == 26) {
+          return (com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 26 [json_name = "staticConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig, com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfigOrBuilder> 
+        getStaticConfigFieldBuilder() {
+      if (staticConfigBuilder_ == null) {
+        if (!(settingsCase_ == 26)) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.getDefaultInstance();
+        }
+        staticConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig, com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfigOrBuilder>(
+                (com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_,
+                getParentForChildren(),
+                isClean());
+        settings_ = null;
+      }
+      settingsCase_ = 26;
+      onChanged();
+      return staticConfigBuilder_;
+    }
+
     private java.lang.Object keyId_ = "";
     /**
-     * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string key_id = 25 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the keyId field is set.
      */
     public boolean hasKeyId() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
-     * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string key_id = 25 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The keyId.
      */
     public java.lang.String getKeyId() {
@@ -3083,7 +3470,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string key_id = 25 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for keyId.
      */
     public com.google.protobuf.ByteString
@@ -3100,7 +3487,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string key_id = 25 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The keyId to set.
      * @return This builder for chaining.
      */
@@ -3108,22 +3495,22 @@ java.lang.String defaultValue) {
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       keyId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string key_id = 25 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearKeyId() {
       keyId_ = getDefaultInstance().getKeyId();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string key_id = 21 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string key_id = 25 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for keyId to set.
      * @return This builder for chaining.
      */
@@ -3132,9 +3519,321 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       keyId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object providerKey_ = "";
+    /**
+     * <code>string provider_key = 23 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The providerKey.
+     */
+    public java.lang.String getProviderKey() {
+      java.lang.Object ref = providerKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        providerKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string provider_key = 23 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for providerKey.
+     */
+    public com.google.protobuf.ByteString
+        getProviderKeyBytes() {
+      java.lang.Object ref = providerKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        providerKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string provider_key = 23 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The providerKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProviderKey(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      providerKey_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string provider_key = 23 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProviderKey() {
+      providerKey_ = getDefaultInstance().getProviderKey();
+      bitField0_ = (bitField0_ & ~0x00080000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string provider_key = 23 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for providerKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProviderKeyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      providerKey_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.scalekit.grpc.scalekit.v1.domains.Domain> domains_ =
+      java.util.Collections.emptyList();
+    private void ensureDomainsIsMutable() {
+      if (!((bitField0_ & 0x00100000) != 0)) {
+        domains_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.domains.Domain>(domains_);
+        bitField0_ |= 0x00100000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.domains.Domain, com.scalekit.grpc.scalekit.v1.domains.Domain.Builder, com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder> domainsBuilder_;
+
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.domains.Domain> getDomainsList() {
+      if (domainsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(domains_);
+      } else {
+        return domainsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public int getDomainsCount() {
+      if (domainsBuilder_ == null) {
+        return domains_.size();
+      } else {
+        return domainsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.domains.Domain getDomains(int index) {
+      if (domainsBuilder_ == null) {
+        return domains_.get(index);
+      } else {
+        return domainsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setDomains(
+        int index, com.scalekit.grpc.scalekit.v1.domains.Domain value) {
+      if (domainsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDomainsIsMutable();
+        domains_.set(index, value);
+        onChanged();
+      } else {
+        domainsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setDomains(
+        int index, com.scalekit.grpc.scalekit.v1.domains.Domain.Builder builderForValue) {
+      if (domainsBuilder_ == null) {
+        ensureDomainsIsMutable();
+        domains_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        domainsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addDomains(com.scalekit.grpc.scalekit.v1.domains.Domain value) {
+      if (domainsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDomainsIsMutable();
+        domains_.add(value);
+        onChanged();
+      } else {
+        domainsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addDomains(
+        int index, com.scalekit.grpc.scalekit.v1.domains.Domain value) {
+      if (domainsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDomainsIsMutable();
+        domains_.add(index, value);
+        onChanged();
+      } else {
+        domainsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addDomains(
+        com.scalekit.grpc.scalekit.v1.domains.Domain.Builder builderForValue) {
+      if (domainsBuilder_ == null) {
+        ensureDomainsIsMutable();
+        domains_.add(builderForValue.build());
+        onChanged();
+      } else {
+        domainsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addDomains(
+        int index, com.scalekit.grpc.scalekit.v1.domains.Domain.Builder builderForValue) {
+      if (domainsBuilder_ == null) {
+        ensureDomainsIsMutable();
+        domains_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        domainsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addAllDomains(
+        java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.domains.Domain> values) {
+      if (domainsBuilder_ == null) {
+        ensureDomainsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, domains_);
+        onChanged();
+      } else {
+        domainsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearDomains() {
+      if (domainsBuilder_ == null) {
+        domains_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00100000);
+        onChanged();
+      } else {
+        domainsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder removeDomains(int index) {
+      if (domainsBuilder_ == null) {
+        ensureDomainsIsMutable();
+        domains_.remove(index);
+        onChanged();
+      } else {
+        domainsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.domains.Domain.Builder getDomainsBuilder(
+        int index) {
+      return getDomainsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder getDomainsOrBuilder(
+        int index) {
+      if (domainsBuilder_ == null) {
+        return domains_.get(index);  } else {
+        return domainsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<? extends com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder> 
+         getDomainsOrBuilderList() {
+      if (domainsBuilder_ != null) {
+        return domainsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(domains_);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.domains.Domain.Builder addDomainsBuilder() {
+      return getDomainsFieldBuilder().addBuilder(
+          com.scalekit.grpc.scalekit.v1.domains.Domain.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.domains.Domain.Builder addDomainsBuilder(
+        int index) {
+      return getDomainsFieldBuilder().addBuilder(
+          index, com.scalekit.grpc.scalekit.v1.domains.Domain.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .scalekit.v1.domains.Domain domains = 24 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.domains.Domain.Builder> 
+         getDomainsBuilderList() {
+      return getDomainsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.domains.Domain, com.scalekit.grpc.scalekit.v1.domains.Domain.Builder, com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder> 
+        getDomainsFieldBuilder() {
+      if (domainsBuilder_ == null) {
+        domainsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.domains.Domain, com.scalekit.grpc.scalekit.v1.domains.Domain.Builder, com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder>(
+                domains_,
+                ((bitField0_ & 0x00100000) != 0),
+                getParentForChildren(),
+                isClean());
+        domains_ = null;
+      }
+      return domainsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

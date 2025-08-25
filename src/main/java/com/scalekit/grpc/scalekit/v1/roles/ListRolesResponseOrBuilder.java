@@ -9,25 +9,25 @@ public interface ListRolesResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<com.scalekit.grpc.scalekit.v1.roles.Role> 
       getRolesList();
   /**
-   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.roles.Role getRoles(int index);
   /**
-   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   int getRolesCount();
   /**
-   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<? extends com.scalekit.grpc.scalekit.v1.roles.RoleOrBuilder> 
       getRolesOrBuilderList();
   /**
-   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles"];</code>
+   * <code>repeated .scalekit.v1.roles.Role roles = 1 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.roles.RoleOrBuilder getRolesOrBuilder(
       int index);

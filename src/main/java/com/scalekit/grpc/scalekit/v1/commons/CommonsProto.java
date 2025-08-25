@@ -62,7 +62,7 @@ public final class CommonsProto {
       "roto\032\036google/protobuf/duration.proto\032\033go" +
       "ogle/protobuf/empty.proto\032\037google/protob" +
       "uf/timestamp.proto\032.protoc-gen-openapiv2" +
-      "/options/annotations.proto\"\217\007\n\026Organizat" +
+      "/options/annotations.proto\"\271\013\n\026Organizat" +
       "ionMembership\022\206\001\n\017organization_id\030\001 \001(\tB" +
       "]\222AZ2@Unique identifier for the organiza" +
       "tion. Immutable and read-only.J\026\"org_123" +
@@ -73,78 +73,97 @@ public final class CommonsProto {
       "R\010joinTime\022R\n\021membership_status\030\003 \001(\0162%." +
       "scalekit.v1.commons.MembershipStatusR\020me" +
       "mbershipStatus\022/\n\005roles\030\004 \003(\0132\031.scalekit" +
-      ".v1.commons.RoleR\005roles\022\027\n\004name\030\005 \001(\tH\000R" +
-      "\004name\210\001\001\022e\n\031primary_identity_provider\030\006 " +
-      "\001(\0162).scalekit.v1.commons.IdentityProvid" +
-      "erTypeR\027primaryIdentityProvider\022\224\002\n\010meta" +
-      "data\030\007 \003(\01329.scalekit.v1.commons.Organiz" +
-      "ationMembership.MetadataEntryB\274\001\222A\237\0012dCu" +
-      "stom key-value pairs for storing additio" +
-      "nal user context. Keys (3-25 chars), val" +
-      "ues (1-256 chars).J7{\"department\": \"engi" +
-      "neering\", \"location\": \"nyc-office\"}\272H\026\232\001" +
-      "\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metadata\032;\n\rMetada" +
-      "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t" +
-      "R\005value:\0028\001B\007\n\005_name\"*\n\004Role\022\016\n\002id\030\001 \001(\t" +
-      "R\002id\022\022\n\004name\030\002 \001(\tR\004name\"\231\014\n\013UserProfile" +
-      "\022\211\001\n\002id\030\001 \001(\tBy\222As2QUnique system-genera" +
-      "ted identifier for the user profile. Imm" +
-      "utable and read-only.J\036\"usr_profile_1234" +
-      "abcd5678efgh\"\340A\003R\002id\022^\n\nfirst_name\030\002 \001(\t" +
-      "B?\222A42*User\'s given name. Maximum 200 ch" +
-      "aracters.J\006\"John\"\272H\005r\003\030\310\001R\tfirstName\022\\\n\t" +
-      "last_name\030\003 \001(\tB?\222A42+User\'s family name" +
-      ". Maximum 200 characters.J\005\"Doe\"\272H\005r\003\030\310\001" +
-      "R\010lastName\022v\n\004name\030\004 \001(\tBb\222A_2IFull name" +
-      " in display format. Typically combines f" +
-      "irst_name and last_name.J\022\"John Michael " +
-      "Doe\"R\004name\022y\n\006locale\030\005 \001(\tBa\222A^2SUser\'s " +
-      "localization preference in BCP-47 format" +
-      ". Defaults to organization settings.J\007\"e" +
-      "n-US\"R\006locale\022\222\001\n\016email_verified\030\006 \001(\010Bk" +
-      "\222Ae2]Indicates if the user\'s email addre" +
-      "ss has been verified. Automatically upda" +
-      "ted by the system.J\004true\340A\003R\remailVerifi" +
-      "ed\022\212\001\n\014phone_number\030\007 \001(\tBg\222Ad2RPhone nu" +
-      "mber in E.164 international format. Requ" +
-      "ired for SMS-based authentication.J\016\"+14" +
-      "155552671\"R\013phoneNumber\022\207\002\n\010metadata\030\010 \003" +
-      "(\0132..scalekit.v1.commons.UserProfile.Met" +
-      "adataEntryB\272\001\222A\235\0012^System-managed key-va" +
-      "lue pairs for internal tracking. Keys (3" +
-      "-25 chars), values (1-256 chars).J;{\"acc" +
-      "ount_status\": \"active\", \"signup_source\":" +
-      " \"mobile_app\"}\272H\026\232\001\023\020\036\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R" +
-      "\010metadata\022\236\002\n\021custom_attributes\030\t \003(\01326." +
-      "scalekit.v1.commons.UserProfile.CustomAt" +
-      "tributesEntryB\270\001\222A\233\0012ZCustom attributes " +
-      "for extended user profile data. Keys (3-" +
-      "25 chars), values (1-256 chars).J={\"depa" +
-      "rtment\": \"engineering\", \"security_cleara" +
-      "nce\": \"level2\"}\272H\026\232\001\023\020d\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002" +
-      "R\020customAttributes\032;\n\rMetadataEntry\022\020\n\003k" +
-      "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032" +
-      "C\n\025CustomAttributesEntry\022\020\n\003key\030\001 \001(\tR\003k" +
-      "ey\022\024\n\005value\030\002 \001(\tR\005value:\0028\001*9\n\nRegionCo" +
-      "de\022\033\n\027REGION_CODE_UNSPECIFIED\020\000\022\006\n\002US\020\001\022" +
-      "\006\n\002EU\020\002*E\n\017EnvironmentType\022 \n\034ENVIRONMEN" +
-      "T_TYPE_UNSPECIFIED\020\000\022\007\n\003PRD\020\001\022\007\n\003DEV\020\002*c" +
-      "\n\020MembershipStatus\022!\n\035Membership_Status_" +
-      "UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020\002\022" +
-      "\022\n\016PENDING_INVITE\020\003*\230\002\n\024IdentityProvider" +
-      "Type\022!\n\035IDENTITY_PROVIDER_UNSPECIFIED\020\000\022" +
-      "\010\n\004OKTA\020\001\022\n\n\006GOOGLE\020\002\022\020\n\014MICROSOFT_AD\020\003\022" +
-      "\t\n\005AUTH0\020\004\022\014\n\010ONELOGIN\020\005\022\021\n\rPING_IDENTIT" +
-      "Y\020\006\022\r\n\tJUMPCLOUD\020\007\022\n\n\006CUSTOM\020\010\022\n\n\006GITHUB" +
-      "\020\t\022\n\n\006GITLAB\020\n\022\014\n\010LINKEDIN\020\013\022\016\n\nSALESFOR" +
-      "CE\020\014\022\r\n\tMICROSOFT\020\r\022\021\n\rIDP_SIMULATOR\020\016\022\014" +
-      "\n\010SCALEKIT\020\017\022\010\n\004ADFS\020\020B\326\001\n%com.scalekit." +
-      "grpc.scalekit.v1.commonsB\014CommonsProtoP\001" +
-      "Z1github.com/scalekit-inc/scalekit/pkg/g" +
-      "rpc/commons\242\002\003SVC\252\002\023Scalekit.V1.Commons\312" +
-      "\002\023Scalekit\\V1\\Commons\342\002\037Scalekit\\V1\\Comm" +
-      "ons\\GPBMetadata\352\002\025Scalekit::V1::Commonsb" +
-      "\006proto3"
+      ".v1.commons.RoleR\005roles\022Q\n\004name\030\005 \001(\tB8\222" +
+      "A52\'Display name for the Organization na" +
+      "me.J\n\"AcmeCorp\"H\000R\004name\210\001\001\022\224\002\n\010metadata\030" +
+      "\007 \003(\01329.scalekit.v1.commons.Organization" +
+      "Membership.MetadataEntryB\274\001\222A\237\0012dCustom " +
+      "key-value pairs for storing additional u" +
+      "ser context. Keys (3-25 chars), values (" +
+      "1-256 chars).J7{\"department\": \"engineeri" +
+      "ng\", \"location\": \"nyc-office\"}\272H\026\232\001\023\020\024\"\006" +
+      "r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metadata\022`\n\014display_nam" +
+      "e\030\t \001(\tB8\222A52\'Display name for the Organ" +
+      "ization name.J\n\"AcmeCorp\"H\001R\013displayName" +
+      "\210\001\001\022N\n\ninvited_by\030\n \001(\tB*\222A\'2%ID of the " +
+      "user who invited this user.H\002R\tinvitedBy" +
+      "\210\001\001\022o\n\ncreated_at\030\013 \001(\0132\032.google.protobu" +
+      "f.TimestampB/\222A,2*Timestamp when the inv" +
+      "itation was created.H\003R\tcreatedAt\210\001\001\022w\n\013" +
+      "accepted_at\030\014 \001(\0132\032.google.protobuf.Time" +
+      "stampB5\222A220Timestamp when the user acce" +
+      "pted the invitation.H\004R\nacceptedAt\210\001\001\022k\n" +
+      "\nexpires_at\030\r \001(\0132\032.google.protobuf.Time" +
+      "stampB+\222A(2&Timestamp when the invitatio" +
+      "n expired.H\005R\texpiresAt\210\001\001\032;\n\rMetadataEn" +
+      "try\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005va" +
+      "lue:\0028\001B\007\n\005_nameB\017\n\r_display_nameB\r\n\013_in" +
+      "vited_byB\r\n\013_created_atB\016\n\014_accepted_atB" +
+      "\r\n\013_expires_at\"\340\001\n\004Role\0229\n\002id\030\001 \001(\tB)\222A#" +
+      "2\007Role IDJ\030\"role_79643236410327240\"\340A\003R\002" +
+      "id\022G\n\004name\030\002 \001(\tB3\222A02\"Unique key identi" +
+      "fier for the roleJ\n\"team_dev\"R\004name\022T\n\014d" +
+      "isplay_name\030\003 \001(\tB1\222A.2 Human-readable n" +
+      "ame for the roleJ\n\"Dev Team\"R\013displayNam" +
+      "e\"\231\014\n\013UserProfile\022\211\001\n\002id\030\001 \001(\tBy\222As2QUni" +
+      "que system-generated identifier for the " +
+      "user profile. Immutable and read-only.J\036" +
+      "\"usr_profile_1234abcd5678efgh\"\340A\003R\002id\022^\n" +
+      "\nfirst_name\030\002 \001(\tB?\222A42*User\'s given nam" +
+      "e. Maximum 200 characters.J\006\"John\"\272H\005r\003\030" +
+      "\310\001R\tfirstName\022\\\n\tlast_name\030\003 \001(\tB?\222A42+U" +
+      "ser\'s family name. Maximum 200 character" +
+      "s.J\005\"Doe\"\272H\005r\003\030\310\001R\010lastName\022v\n\004name\030\004 \001(" +
+      "\tBb\222A_2IFull name in display format. Typ" +
+      "ically combines first_name and last_name" +
+      ".J\022\"John Michael Doe\"R\004name\022y\n\006locale\030\005 " +
+      "\001(\tBa\222A^2SUser\'s localization preference" +
+      " in BCP-47 format. Defaults to organizat" +
+      "ion settings.J\007\"en-US\"R\006locale\022\222\001\n\016email" +
+      "_verified\030\006 \001(\010Bk\222Ae2]Indicates if the u" +
+      "ser\'s email address has been verified. A" +
+      "utomatically updated by the system.J\004tru" +
+      "e\340A\003R\remailVerified\022\212\001\n\014phone_number\030\007 \001" +
+      "(\tBg\222Ad2RPhone number in E.164 internati" +
+      "onal format. Required for SMS-based auth" +
+      "entication.J\016\"+14155552671\"R\013phoneNumber" +
+      "\022\207\002\n\010metadata\030\010 \003(\0132..scalekit.v1.common" +
+      "s.UserProfile.MetadataEntryB\272\001\222A\235\0012^Syst" +
+      "em-managed key-value pairs for internal " +
+      "tracking. Keys (3-25 chars), values (1-2" +
+      "56 chars).J;{\"account_status\": \"active\"," +
+      " \"signup_source\": \"mobile_app\"}\272H\026\232\001\023\020\036\"" +
+      "\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metadata\022\236\002\n\021custom_at" +
+      "tributes\030\t \003(\01326.scalekit.v1.commons.Use" +
+      "rProfile.CustomAttributesEntryB\270\001\222A\233\0012ZC" +
+      "ustom attributes for extended user profi" +
+      "le data. Keys (3-25 chars), values (1-25" +
+      "6 chars).J={\"department\": \"engineering\"," +
+      " \"security_clearance\": \"level2\"}\272H\026\232\001\023\020d" +
+      "\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\020customAttributes\032;\n\rM" +
+      "etadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030" +
+      "\002 \001(\tR\005value:\0028\001\032C\n\025CustomAttributesEntr" +
+      "y\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005valu" +
+      "e:\0028\001*9\n\nRegionCode\022\033\n\027REGION_CODE_UNSPE" +
+      "CIFIED\020\000\022\006\n\002US\020\001\022\006\n\002EU\020\002*E\n\017EnvironmentT" +
+      "ype\022 \n\034ENVIRONMENT_TYPE_UNSPECIFIED\020\000\022\007\n" +
+      "\003PRD\020\001\022\007\n\003DEV\020\002*w\n\020MembershipStatus\022!\n\035M" +
+      "embership_Status_UNSPECIFIED\020\000\022\n\n\006ACTIVE" +
+      "\020\001\022\014\n\010INACTIVE\020\002\022\022\n\016PENDING_INVITE\020\003\022\022\n\016" +
+      "INVITE_EXPIRED\020\004*\230\002\n\024IdentityProviderTyp" +
+      "e\022!\n\035IDENTITY_PROVIDER_UNSPECIFIED\020\000\022\010\n\004" +
+      "OKTA\020\001\022\n\n\006GOOGLE\020\002\022\020\n\014MICROSOFT_AD\020\003\022\t\n\005" +
+      "AUTH0\020\004\022\014\n\010ONELOGIN\020\005\022\021\n\rPING_IDENTITY\020\006" +
+      "\022\r\n\tJUMPCLOUD\020\007\022\n\n\006CUSTOM\020\010\022\n\n\006GITHUB\020\t\022" +
+      "\n\n\006GITLAB\020\n\022\014\n\010LINKEDIN\020\013\022\016\n\nSALESFORCE\020" +
+      "\014\022\r\n\tMICROSOFT\020\r\022\021\n\rIDP_SIMULATOR\020\016\022\014\n\010S" +
+      "CALEKIT\020\017\022\010\n\004ADFS\020\020B\326\001\n%com.scalekit.grp" +
+      "c.scalekit.v1.commonsB\014CommonsProtoP\001Z1g" +
+      "ithub.com/scalekit-inc/scalekit/pkg/grpc" +
+      "/commons\242\002\003SVC\252\002\023Scalekit.V1.Commons\312\002\023S" +
+      "calekit\\V1\\Commons\342\002\037Scalekit\\V1\\Commons" +
+      "\\GPBMetadata\352\002\025Scalekit::V1::Commonsb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -164,7 +183,7 @@ public final class CommonsProto {
     internal_static_scalekit_v1_commons_OrganizationMembership_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_commons_OrganizationMembership_descriptor,
-        new java.lang.String[] { "OrganizationId", "JoinTime", "MembershipStatus", "Roles", "Name", "PrimaryIdentityProvider", "Metadata", });
+        new java.lang.String[] { "OrganizationId", "JoinTime", "MembershipStatus", "Roles", "Name", "Metadata", "DisplayName", "InvitedBy", "CreatedAt", "AcceptedAt", "ExpiresAt", });
     internal_static_scalekit_v1_commons_OrganizationMembership_MetadataEntry_descriptor =
       internal_static_scalekit_v1_commons_OrganizationMembership_descriptor.getNestedTypes().get(0);
     internal_static_scalekit_v1_commons_OrganizationMembership_MetadataEntry_fieldAccessorTable = new
@@ -176,7 +195,7 @@ public final class CommonsProto {
     internal_static_scalekit_v1_commons_Role_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_commons_Role_descriptor,
-        new java.lang.String[] { "Id", "Name", });
+        new java.lang.String[] { "Id", "Name", "DisplayName", });
     internal_static_scalekit_v1_commons_UserProfile_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_scalekit_v1_commons_UserProfile_fieldAccessorTable = new

@@ -133,4 +133,16 @@ public interface ScalekitEventOrBuilder extends
    * <code>.google.protobuf.Struct data = 9 [json_name = "data"];</code>
    */
   com.google.protobuf.StructOrBuilder getDataOrBuilder();
+
+  /**
+   * <code>string display = 10 [json_name = "display"];</code>
+   * @return The display.
+   */
+  java.lang.String getDisplay();
+  /**
+   * <code>string display = 10 [json_name = "display"];</code>
+   * @return The bytes for display.
+   */
+  com.google.protobuf.ByteString
+      getDisplayBytes();
 }

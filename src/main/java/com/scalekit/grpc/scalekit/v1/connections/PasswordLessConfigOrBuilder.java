@@ -94,4 +94,19 @@ public interface PasswordLessConfigOrBuilder extends
    * @return The codeChallengeType.
    */
   com.scalekit.grpc.scalekit.v1.connections.CodeChallengeType getCodeChallengeType();
+
+  /**
+   * <code>optional .google.protobuf.BoolValue regenerate_passwordless_credentials_on_resend = 7 [json_name = "regeneratePasswordlessCredentialsOnResend", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the regeneratePasswordlessCredentialsOnResend field is set.
+   */
+  boolean hasRegeneratePasswordlessCredentialsOnResend();
+  /**
+   * <code>optional .google.protobuf.BoolValue regenerate_passwordless_credentials_on_resend = 7 [json_name = "regeneratePasswordlessCredentialsOnResend", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The regeneratePasswordlessCredentialsOnResend.
+   */
+  com.google.protobuf.BoolValue getRegeneratePasswordlessCredentialsOnResend();
+  /**
+   * <code>optional .google.protobuf.BoolValue regenerate_passwordless_credentials_on_resend = 7 [json_name = "regeneratePasswordlessCredentialsOnResend", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getRegeneratePasswordlessCredentialsOnResendOrBuilder();
 }

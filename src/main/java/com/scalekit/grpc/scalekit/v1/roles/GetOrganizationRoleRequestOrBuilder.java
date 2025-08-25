@@ -21,14 +21,31 @@ public interface GetOrganizationRoleRequestOrBuilder extends
       getOrgIdBytes();
 
   /**
-   * <code>string id = 2 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The id.
+   * <code>string role_name = 2 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The roleName.
    */
-  java.lang.String getId();
+  java.lang.String getRoleName();
   /**
-   * <code>string id = 2 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for id.
+   * <code>string role_name = 2 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for roleName.
    */
   com.google.protobuf.ByteString
-      getIdBytes();
+      getRoleNameBytes();
+
+  /**
+   * <code>optional string include = 3 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the include field is set.
+   */
+  boolean hasInclude();
+  /**
+   * <code>optional string include = 3 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The include.
+   */
+  java.lang.String getInclude();
+  /**
+   * <code>optional string include = 3 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for include.
+   */
+  com.google.protobuf.ByteString
+      getIncludeBytes();
 }

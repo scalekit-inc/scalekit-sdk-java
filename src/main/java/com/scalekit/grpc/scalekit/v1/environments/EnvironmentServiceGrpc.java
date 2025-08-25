@@ -883,6 +883,37 @@ public final class EnvironmentServiceGrpc {
     return getGetCurrentSessionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceRequest,
+      com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceResponse> getGetScalekitResourcesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetScalekitResources",
+      requestType = com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceRequest,
+      com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceResponse> getGetScalekitResourcesMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceRequest, com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceResponse> getGetScalekitResourcesMethod;
+    if ((getGetScalekitResourcesMethod = EnvironmentServiceGrpc.getGetScalekitResourcesMethod) == null) {
+      synchronized (EnvironmentServiceGrpc.class) {
+        if ((getGetScalekitResourcesMethod = EnvironmentServiceGrpc.getGetScalekitResourcesMethod) == null) {
+          EnvironmentServiceGrpc.getGetScalekitResourcesMethod = getGetScalekitResourcesMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceRequest, com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetScalekitResources"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new EnvironmentServiceMethodDescriptorSupplier("GetScalekitResources"))
+              .build();
+        }
+      }
+    }
+    return getGetScalekitResourcesMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -1125,6 +1156,13 @@ public final class EnvironmentServiceGrpc {
     default void getCurrentSession(com.scalekit.grpc.scalekit.v1.environments.GetCurrentSessionRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.GetCurrentSessionResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCurrentSessionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getScalekitResources(com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetScalekitResourcesMethod(), responseObserver);
     }
   }
 
@@ -1378,6 +1416,14 @@ public final class EnvironmentServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCurrentSessionMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getScalekitResources(com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetScalekitResourcesMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1590,6 +1636,13 @@ public final class EnvironmentServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.environments.GetCurrentSessionResponse getCurrentSession(com.scalekit.grpc.scalekit.v1.environments.GetCurrentSessionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCurrentSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceResponse getScalekitResources(com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetScalekitResourcesMethod(), getCallOptions(), request);
     }
   }
 
@@ -1832,6 +1885,14 @@ public final class EnvironmentServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCurrentSessionMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceResponse> getScalekitResources(
+        com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetScalekitResourcesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ENVIRONMENT = 0;
@@ -1862,6 +1923,7 @@ public final class EnvironmentServiceGrpc {
   private static final int METHODID_GET_CONTEXT = 25;
   private static final int METHODID_UPDATE_CONTEXT = 26;
   private static final int METHODID_GET_CURRENT_SESSION = 27;
+  private static final int METHODID_GET_SCALEKIT_RESOURCES = 28;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1991,6 +2053,10 @@ public final class EnvironmentServiceGrpc {
         case METHODID_GET_CURRENT_SESSION:
           serviceImpl.getCurrentSession((com.scalekit.grpc.scalekit.v1.environments.GetCurrentSessionRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.GetCurrentSessionResponse>) responseObserver);
+          break;
+        case METHODID_GET_SCALEKIT_RESOURCES:
+          serviceImpl.getScalekitResources((com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2206,6 +2272,13 @@ public final class EnvironmentServiceGrpc {
               com.scalekit.grpc.scalekit.v1.environments.GetCurrentSessionRequest,
               com.scalekit.grpc.scalekit.v1.environments.GetCurrentSessionResponse>(
                 service, METHODID_GET_CURRENT_SESSION)))
+        .addMethod(
+          getGetScalekitResourcesMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceRequest,
+              com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceResponse>(
+                service, METHODID_GET_SCALEKIT_RESOURCES)))
         .build();
   }
 
@@ -2282,6 +2355,7 @@ public final class EnvironmentServiceGrpc {
               .addMethod(getGetContextMethod())
               .addMethod(getUpdateContextMethod())
               .addMethod(getGetCurrentSessionMethod())
+              .addMethod(getGetScalekitResourcesMethod())
               .build();
         }
       }

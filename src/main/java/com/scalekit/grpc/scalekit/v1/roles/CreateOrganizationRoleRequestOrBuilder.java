@@ -21,17 +21,17 @@ public interface CreateOrganizationRoleRequestOrBuilder extends
       getOrgIdBytes();
 
   /**
-   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.roles.CreateOrganizationRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the role field is set.
    */
   boolean hasRole();
   /**
-   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.roles.CreateOrganizationRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The role.
    */
-  com.scalekit.grpc.scalekit.v1.roles.CreateRole getRole();
+  com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole getRole();
   /**
-   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.roles.CreateOrganizationRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  com.scalekit.grpc.scalekit.v1.roles.CreateRoleOrBuilder getRoleOrBuilder();
+  com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRoleOrBuilder getRoleOrBuilder();
 }

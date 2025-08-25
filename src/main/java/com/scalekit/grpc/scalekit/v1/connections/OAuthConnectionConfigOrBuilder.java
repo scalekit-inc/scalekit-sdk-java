@@ -164,4 +164,19 @@ public interface OAuthConnectionConfigOrBuilder extends
    * <code>.google.protobuf.BoolValue use_platform_creds = 15 [json_name = "usePlatformCreds", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.BoolValueOrBuilder getUsePlatformCredsOrBuilder();
+
+  /**
+   * <code>.google.protobuf.StringValue access_type = 16 [json_name = "accessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the accessType field is set.
+   */
+  boolean hasAccessType();
+  /**
+   * <code>.google.protobuf.StringValue access_type = 16 [json_name = "accessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The accessType.
+   */
+  com.google.protobuf.StringValue getAccessType();
+  /**
+   * <code>.google.protobuf.StringValue access_type = 16 [json_name = "accessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.StringValueOrBuilder getAccessTypeOrBuilder();
 }

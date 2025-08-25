@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
   private AuthMethod() {
     connectionId_ = "";
     connectionType_ = 0;
-    provider_ = 0;
+    provider_ = "";
     authInitiationUri_ = "";
     passwordlessType_ = 0;
   }
@@ -103,21 +103,42 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PROVIDER_FIELD_NUMBER = 3;
-  private int provider_ = 0;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object provider_ = "";
   /**
-   * <code>.scalekit.v1.connections.ConnectionProvider provider = 3 [json_name = "provider"];</code>
-   * @return The enum numeric value on the wire for provider.
-   */
-  @java.lang.Override public int getProviderValue() {
-    return provider_;
-  }
-  /**
-   * <code>.scalekit.v1.connections.ConnectionProvider provider = 3 [json_name = "provider"];</code>
+   * <code>string provider = 3 [json_name = "provider"];</code>
    * @return The provider.
    */
-  @java.lang.Override public com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider getProvider() {
-    com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider result = com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider.forNumber(provider_);
-    return result == null ? com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider.UNRECOGNIZED : result;
+  @java.lang.Override
+  public java.lang.String getProvider() {
+    java.lang.Object ref = provider_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      provider_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string provider = 3 [json_name = "provider"];</code>
+   * @return The bytes for provider.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProviderBytes() {
+    java.lang.Object ref = provider_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      provider_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int AUTH_INITIATION_URI_FIELD_NUMBER = 4;
@@ -223,8 +244,8 @@ private static final long serialVersionUID = 0L;
     if (connectionType_ != com.scalekit.grpc.scalekit.v1.connections.ConnectionType.INVALID.getNumber()) {
       output.writeEnum(2, connectionType_);
     }
-    if (provider_ != com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider.CONNECTION_PROVIDER_UNSPECIFIED.getNumber()) {
-      output.writeEnum(3, provider_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(provider_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, provider_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authInitiationUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, authInitiationUri_);
@@ -251,9 +272,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, connectionType_);
     }
-    if (provider_ != com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider.CONNECTION_PROVIDER_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, provider_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(provider_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, provider_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authInitiationUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, authInitiationUri_);
@@ -284,7 +304,8 @@ private static final long serialVersionUID = 0L;
     if (!getConnectionId()
         .equals(other.getConnectionId())) return false;
     if (connectionType_ != other.connectionType_) return false;
-    if (provider_ != other.provider_) return false;
+    if (!getProvider()
+        .equals(other.getProvider())) return false;
     if (!getAuthInitiationUri()
         .equals(other.getAuthInitiationUri())) return false;
     if (hasPasswordlessType() != other.hasPasswordlessType()) return false;
@@ -312,7 +333,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + CONNECTION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + connectionType_;
     hash = (37 * hash) + PROVIDER_FIELD_NUMBER;
-    hash = (53 * hash) + provider_;
+    hash = (53 * hash) + getProvider().hashCode();
     hash = (37 * hash) + AUTH_INITIATION_URI_FIELD_NUMBER;
     hash = (53 * hash) + getAuthInitiationUri().hashCode();
     if (hasPasswordlessType()) {
@@ -456,7 +477,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       connectionId_ = "";
       connectionType_ = 0;
-      provider_ = 0;
+      provider_ = "";
       authInitiationUri_ = "";
       passwordlessType_ = 0;
       codeChallengeLength_ = 0;
@@ -569,8 +590,10 @@ private static final long serialVersionUID = 0L;
       if (other.connectionType_ != 0) {
         setConnectionTypeValue(other.getConnectionTypeValue());
       }
-      if (other.provider_ != 0) {
-        setProviderValue(other.getProviderValue());
+      if (!other.getProvider().isEmpty()) {
+        provider_ = other.provider_;
+        bitField0_ |= 0x00000004;
+        onChanged();
       }
       if (!other.getAuthInitiationUri().isEmpty()) {
         authInitiationUri_ = other.authInitiationUri_;
@@ -619,11 +642,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 16
-            case 24: {
-              provider_ = input.readEnum();
+            case 26: {
+              provider_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
-            } // case 24
+            } // case 26
             case 34: {
               authInitiationUri_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
@@ -781,55 +804,74 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int provider_ = 0;
+    private java.lang.Object provider_ = "";
     /**
-     * <code>.scalekit.v1.connections.ConnectionProvider provider = 3 [json_name = "provider"];</code>
-     * @return The enum numeric value on the wire for provider.
+     * <code>string provider = 3 [json_name = "provider"];</code>
+     * @return The provider.
      */
-    @java.lang.Override public int getProviderValue() {
-      return provider_;
+    public java.lang.String getProvider() {
+      java.lang.Object ref = provider_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        provider_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>.scalekit.v1.connections.ConnectionProvider provider = 3 [json_name = "provider"];</code>
-     * @param value The enum numeric value on the wire for provider to set.
+     * <code>string provider = 3 [json_name = "provider"];</code>
+     * @return The bytes for provider.
+     */
+    public com.google.protobuf.ByteString
+        getProviderBytes() {
+      java.lang.Object ref = provider_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        provider_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string provider = 3 [json_name = "provider"];</code>
+     * @param value The provider to set.
      * @return This builder for chaining.
      */
-    public Builder setProviderValue(int value) {
+    public Builder setProvider(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
       provider_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>.scalekit.v1.connections.ConnectionProvider provider = 3 [json_name = "provider"];</code>
-     * @return The provider.
-     */
-    @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider getProvider() {
-      com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider result = com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider.forNumber(provider_);
-      return result == null ? com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.scalekit.v1.connections.ConnectionProvider provider = 3 [json_name = "provider"];</code>
-     * @param value The provider to set.
+     * <code>string provider = 3 [json_name = "provider"];</code>
      * @return This builder for chaining.
      */
-    public Builder setProvider(com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000004;
-      provider_ = value.getNumber();
+    public Builder clearProvider() {
+      provider_ = getDefaultInstance().getProvider();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <code>.scalekit.v1.connections.ConnectionProvider provider = 3 [json_name = "provider"];</code>
+     * <code>string provider = 3 [json_name = "provider"];</code>
+     * @param value The bytes for provider to set.
      * @return This builder for chaining.
      */
-    public Builder clearProvider() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      provider_ = 0;
+    public Builder setProviderBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      provider_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

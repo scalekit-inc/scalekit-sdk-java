@@ -26,6 +26,11 @@ public final class RolesProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_roles_CreateRole_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_CreateOrganizationRole_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_CreateOrganizationRole_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_roles_CreateRoleRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -120,6 +125,146 @@ public final class RolesProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_roles_DeleteOrganizationRoleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_GetRoleUsersCountRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_GetRoleUsersCountRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_GetRoleUsersCountResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_GetRoleUsersCountResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_UpdateDefaultRolesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_UpdateDefaultRolesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_UpdateDefaultOrganizationRolesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_UpdateDefaultOrganizationRolesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_UpdateDefaultRolesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_UpdateDefaultRolesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_UpdateDefaultOrganizationRolesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_UpdateDefaultOrganizationRolesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_UpdateDefaultRole_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_UpdateDefaultRole_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_Permission_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_Permission_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_CreatePermission_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_CreatePermission_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_CreatePermissionRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_CreatePermissionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_CreatePermissionResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_CreatePermissionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_GetPermissionRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_GetPermissionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_GetPermissionResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_GetPermissionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_UpdatePermissionRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_UpdatePermissionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_UpdatePermissionResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_UpdatePermissionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_ListPermissionsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_ListPermissionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_ListPermissionsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_ListPermissionsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_DeletePermissionRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_DeletePermissionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_ListRolePermissionsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_ListRolePermissionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_ListRolePermissionsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_ListRolePermissionsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_AddPermissionsToRoleRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_AddPermissionsToRoleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_AddPermissionsToRoleResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_AddPermissionsToRoleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_RemovePermissionFromRoleRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_RemovePermissionFromRoleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_ListEffectiveRolePermissionsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_ListEffectiveRolePermissionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_ListEffectiveRolePermissionsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_ListEffectiveRolePermissionsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_ListDependentRolesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_ListDependentRolesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_ListDependentRolesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_ListDependentRolesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_roles_DeleteRoleBaseRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_roles_DeleteRoleBaseRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -140,179 +285,799 @@ public final class RolesProto {
       "to\032.protoc-gen-openapiv2/options/annotat" +
       "ions.proto\032!scalekit/v1/commons/commons." +
       "proto\032!scalekit/v1/options/options.proto" +
-      "\"\300\001\n\004Role\022\037\n\002id\030\001 \001(\tB\017\272H\014r\n\020\001\030 :\004roleR\002" +
-      "id\022 \n\004name\030\002 \001(\tB\014\272H\tr\004\020\001\030d\310\001\001R\004name\022/\n\014" +
-      "display_name\030\003 \001(\tB\014\272H\tr\004\020\001\030d\310\001\001R\013displa" +
-      "yName\022*\n\013description\030\004 \001(\tB\010\272H\005r\003\030\320\017R\013de" +
-      "scription\022\030\n\007default\030\005 \001(\010R\007default\"\362\003\n\n" +
-      "CreateRole\022t\n\004name\030\002 \001(\tB`\222A;2&Unique Na" +
-      "me of the Organization\'s RoleJ\021\"org_view" +
-      "er_role\"\272H\037r\032\020\001\030d2\024^[a-zA-Z0-9_]{1,64}$\310" +
-      "\001\001R\004name\022w\n\014display_name\030\003 \001(\tBT\222AE2\'Dis" +
-      "play Name of the Organization\'s RoleJ\032\"O" +
-      "rganization Viewer Role\"\272H\tr\004\020\001\030d\310\001\001R\013di" +
-      "splayName\022\240\001\n\013description\030\004 \001(\tBy\222An2&De" +
-      "scription of the Organization\'s RoleJD\"O" +
-      "rganization Viewer Role will be used onl" +
-      "y for viewing the objects\"\272H\005r\003\030\320\017H\000R\013de" +
-      "scription\210\001\001\0226\n\007default\030\005 \001(\010B\027\222A\0242\014Defa" +
-      "ult RoleJ\004trueH\001R\007default\210\001\001B\016\n\014_descrip" +
-      "tionB\n\n\010_default\"u\n\021CreateRoleRequest\022%\n" +
-      "\006env_id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003envR\005envId\0229\n\004" +
-      "role\030\002 \001(\0132\035.scalekit.v1.roles.CreateRol" +
-      "eB\006\272H\003\310\001\001R\004role\"A\n\022CreateRoleResponse\022+\n" +
-      "\004role\030\001 \001(\0132\027.scalekit.v1.roles.RoleR\004ro" +
-      "le\"[\n\016GetRoleRequest\022%\n\006env_id\030\001 \001(\tB\016\272H" +
-      "\013r\t\020\001\030 :\003envR\005envId\022\"\n\002id\030\002 \001(\tB\022\272H\017r\n\020\001" +
-      "\030 :\004role\310\001\001R\002id\">\n\017GetRoleResponse\022+\n\004ro" +
-      "le\030\001 \001(\0132\027.scalekit.v1.roles.RoleR\004role\"" +
-      "4\n\020ListRolesRequest\022 \n\006env_id\030\001 \001(\tB\t\272H\006" +
-      "r\004\020\000\030 R\005envId\"B\n\021ListRolesResponse\022-\n\005ro" +
-      "les\030\001 \003(\0132\027.scalekit.v1.roles.RoleR\005role" +
-      "s\"\221\003\n\nUpdateRole\022y\n\014display_name\030\001 \001(\tBQ" +
-      "\222AE2\'Display Name of the Organization\'s " +
-      "RoleJ\032\"Organization Viewer Role\"\272H\006r\004\020\001\030" +
-      "dH\000R\013displayName\210\001\001\022\242\001\n\013description\030\002 \001(" +
-      "\tB{\222An2&Description of the Organization\'" +
-      "s RoleJD\"Organization Viewer Role will b" +
-      "e used only for viewing the objects\"\272H\007r" +
-      "\005\020\001\030\320\017H\001R\013description\210\001\001\0226\n\007default\030\003 \001(" +
-      "\010B\027\222A\0242\014Default RoleJ\004trueH\002R\007default\210\001\001" +
-      "B\017\n\r_display_nameB\016\n\014_descriptionB\n\n\010_de" +
-      "fault\"\231\001\n\021UpdateRoleRequest\022%\n\006env_id\030\001 " +
-      "\001(\tB\016\272H\013r\t\020\001\030 :\003envR\005envId\022\"\n\002id\030\002 \001(\tB\022" +
-      "\272H\017r\n\020\001\030 :\004role\310\001\001R\002id\0229\n\004role\030\003 \001(\0132\035.s" +
-      "calekit.v1.roles.UpdateRoleB\006\272H\003\310\001\001R\004rol" +
-      "e\"A\n\022UpdateRoleResponse\022+\n\004role\030\001 \001(\0132\027." +
-      "scalekit.v1.roles.RoleR\004role\"^\n\021DeleteRo" +
-      "leRequest\022%\n\006env_id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003en" +
-      "vR\005envId\022\"\n\002id\030\002 \001(\tB\022\272H\017r\n\020\001\030 :\004role\310\001\001" +
-      "R\002id\"\337\001\n\035CreateOrganizationRoleRequest\022e" +
-      "\n\006org_id\030\001 \001(\tBN\222A=2$Unique identifier t" +
-      "o an OrganizationJ\025\"org_121312434123312\"" +
-      "\272H\013r\t\020\001\030 :\003orgR\005orgId\022W\n\004role\030\002 \001(\0132\035.sc" +
-      "alekit.v1.roles.CreateRoleB$\222A\0332\031Organiz" +
-      "ation role details\272H\003\310\001\001R\004role\"M\n\036Create" +
-      "OrganizationRoleResponse\022+\n\004role\030\001 \001(\0132\027" +
-      ".scalekit.v1.roles.RoleR\004role\"\337\001\n\032GetOrg" +
-      "anizationRoleRequest\022e\n\006org_id\030\001 \001(\tBN\222A" +
-      "=2$Unique identifier to an OrganizationJ" +
-      "\025\"org_121312434123312\"\272H\013r\t\020\001\030 :\003orgR\005or" +
-      "gId\022Z\n\002id\030\002 \001(\tBJ\222A52\033Unique identifier " +
-      "to a roleJ\026\"role_121312434123312\"\272H\017r\n\020\001" +
-      "\030 :\004role\310\001\001R\002id\"J\n\033GetOrganizationRoleRe" +
-      "sponse\022+\n\004role\030\001 \001(\0132\027.scalekit.v1.roles" +
-      ".RoleR\004role\"\353\002\n\034ListOrganizationRolesReq" +
-      "uest\022h\n\006org_id\030\001 \001(\tBQ\222A=2$Unique identi" +
-      "fier to an OrganizationJ\025\"org_1213124341" +
-      "23312\"\272H\016r\t\020\001\030 :\003org\310\001\001R\005orgId:\340\001\222A\334\001\n\266\001" +
-      "*\027List Organization Roles2\221\001Retrieve a p" +
-      "aginated list of all organizations withi" +
-      "n the environment. Use the page_token fr" +
-      "om the response to access subsequent pag" +
-      "es of results\322\001\006org_id2!{\"org_id\" : \"org" +
-      "_8756865685762\" }\"j\n\035ListOrganizationRol" +
-      "esResponse\022I\n\005roles\030\001 \003(\0132\027.scalekit.v1." +
-      "roles.RoleB\032\222A\0272\025List of roles objectsR\005" +
-      "roles\"\273\002\n\035UpdateOrganizationRoleRequest\022" +
-      "e\n\006org_id\030\001 \001(\tBN\222A=2$Unique identifier " +
-      "to an OrganizationJ\025\"org_121312434123312" +
-      "\"\272H\013r\t\020\001\030 :\003orgR\005orgId\022Z\n\002id\030\002 \001(\tBJ\222A52" +
-      "\033Unique identifier to a roleJ\026\"role_1213" +
-      "12434123312\"\272H\017r\n\020\001\030 :\004role\310\001\001R\002id\022W\n\004ro" +
-      "le\030\003 \001(\0132\035.scalekit.v1.roles.UpdateRoleB" +
-      "$\222A\0332\031Organization role details\272H\003\310\001\001R\004r" +
-      "ole\"M\n\036UpdateOrganizationRoleResponse\022+\n" +
-      "\004role\030\001 \001(\0132\027.scalekit.v1.roles.RoleR\004ro" +
-      "le\"\342\001\n\035DeleteOrganizationRoleRequest\022e\n\006" +
-      "org_id\030\001 \001(\tBN\222A=2$Unique identifier to " +
-      "an OrganizationJ\025\"org_121312434123312\"\272H" +
-      "\013r\t\020\001\030 :\003orgR\005orgId\022Z\n\002id\030\002 \001(\tBJ\222A52\033Un" +
-      "ique identifier to a roleJ\026\"role_1213124" +
-      "34123312\"\272H\017r\n\020\001\030 :\004role\310\001\001R\002id2\253\030\n\014Role" +
-      "sService\022\301\001\n\nCreateRole\022$.scalekit.v1.ro" +
-      "les.CreateRoleRequest\032%.scalekit.v1.role" +
-      "s.CreateRoleResponse\"f\202\265\030\002\030P\372\322\344\223\002\t\022\007PREV" +
-      "IEW\202\323\344\223\002K\"#/api/v1/environments/{env_id}" +
-      "/roles:\004roleZ\036\"\034/api/v1/environments/-/r" +
-      "oles\022\313\001\n\nUpdateRole\022$.scalekit.v1.roles." +
-      "UpdateRoleRequest\032%.scalekit.v1.roles.Up" +
-      "dateRoleResponse\"p\202\265\030\002\030P\372\322\344\223\002\t\022\007PREVIEW\202" +
-      "\323\344\223\002U\032(/api/v1/environments/{env_id}/rol" +
-      "es/{id}:\004roleZ#\032!/api/v1/environments/-/" +
-      "roles/{id}\022\274\001\n\007GetRole\022!.scalekit.v1.rol" +
-      "es.GetRoleRequest\032\".scalekit.v1.roles.Ge" +
-      "tRoleResponse\"j\202\265\030\002\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
-      "\002O\022(/api/v1/environments/{env_id}/roles/" +
-      "{id}Z#\022!/api/v1/environments/-/roles/{id" +
-      "}\022\270\001\n\tListRoles\022#.scalekit.v1.roles.List" +
-      "RolesRequest\032$.scalekit.v1.roles.ListRol" +
-      "esResponse\"`\202\265\030\002\030p\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002E\022" +
-      "#/api/v1/environments/{env_id}/rolesZ\036\022\034" +
-      "/api/v1/environments/-/roles\022\266\001\n\nDeleteR" +
-      "ole\022$.scalekit.v1.roles.DeleteRoleReques" +
-      "t\032\026.google.protobuf.Empty\"j\202\265\030\002\030P\372\322\344\223\002\t\022" +
-      "\007PREVIEW\202\323\344\223\002O*(/api/v1/environments/{en" +
-      "v_id}/roles/{id}Z#*!/api/v1/environments" +
-      "/-/roles/{id}\022\257\003\n\026CreateOrganizationRole" +
-      "\0220.scalekit.v1.roles.CreateOrganizationR" +
-      "oleRequest\0321.scalekit.v1.roles.CreateOrg" +
-      "anizationRoleResponse\"\257\002\222A\344\001\n\005Roles\022\036Cre" +
-      "ate a new Organization Role\032SCreate a ne" +
-      "w organization role to represent a speci" +
-      "fic role within the organizationJf\n\003201\022" +
-      "_\n&Organization Role created successfull" +
-      "y\0225\n3\0321.scalekit.v1.roles.CreateOrganiza" +
-      "tionRoleResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
-      "\223\002,\"$/api/v1/organizations/{org_id}/role" +
-      "s:\004role\022\247\003\n\026UpdateOrganizationRole\0220.sca" +
-      "lekit.v1.roles.UpdateOrganizationRoleReq" +
-      "uest\0321.scalekit.v1.roles.UpdateOrganizat" +
-      "ionRoleResponse\"\247\002\222A\327\001\n\005Roles\022$Update an" +
-      " existing Organization Role\032@Update an e" +
-      "xisting organization role using its uniq" +
-      "ue identifierJf\n\003200\022_\n&Organization Rol" +
-      "e updated successfully\0225\n3\0321.scalekit.v1" +
-      ".roles.UpdateOrganizationRoleResponse\202\265\030" +
-      "\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0021\032)/api/v1/organi" +
-      "zations/{org_id}/roles/{id}:\004role\022\257\003\n\023Ge" +
-      "tOrganizationRole\022-.scalekit.v1.roles.Ge" +
-      "tOrganizationRoleRequest\032..scalekit.v1.r" +
-      "oles.GetOrganizationRoleResponse\"\270\002\222A\356\001\n" +
-      "\005Roles\022\032Retrieve Organization Role\032ZFetc" +
-      "h detailed information about a specific " +
-      "organization role using its unique ident" +
-      "ifier.Jm\n\003200\022f\n0Successfully retrieved " +
-      "organization role details\0222\n0\032..scalekit" +
-      ".v1.roles.GetOrganizationRoleResponse\202\265\030" +
-      "\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002+\022)/api/v1/organi" +
-      "zations/{org_id}/roles/{id}\022\373\003\n\025ListOrga" +
-      "nizationRoles\022/.scalekit.v1.roles.ListOr" +
-      "ganizationRolesRequest\0320.scalekit.v1.rol" +
-      "es.ListOrganizationRolesResponse\"\376\002\222A\271\002\n" +
-      "\005Roles\022\033List All Organization Roles\032\212\001Re" +
-      "trieve a paginated list of all roles wit" +
-      "hin the organization. Use the page_token" +
-      " from the response to access subsequent " +
-      "pages of resultsJ\205\001\n\003200\022~\nFSuccessfully" +
-      " retrieved the list of roles within the " +
-      "given organization\0224\n2\0320.scalekit.v1.rol" +
-      "es.ListOrganizationRolesResponse\202\265\030\002\030t\372\322" +
-      "\344\223\002\t\022\007PREVIEW\202\323\344\223\002&\022$/api/v1/organizatio" +
-      "ns/{org_id}/roles\022\275\002\n\026DeleteOrganization" +
-      "Role\0220.scalekit.v1.roles.DeleteOrganizat" +
-      "ionRoleRequest\032\026.google.protobuf.Empty\"\330" +
-      "\001\222A\216\001\n\005Roles\022\033Delete an Organization Rol" +
-      "e\032IRemove an existing role from the orga" +
-      "nization using its unique identifierJ\035\n\003" +
-      "200\022\026\n\024Deleted Successfully\202\265\030\002\030T\372\322\344\223\002\t\022" +
-      "\007PREVIEW\202\323\344\223\002+*)/api/v1/organizations/{o" +
-      "rg_id}/roles/{id}\032\n\222A\007\n\005RolesB\310\001\n#com.sc" +
-      "alekit.grpc.scalekit.v1.rolesB\nRolesProt" +
-      "oP\001Z/github.com/scalekit-inc/scalekit/pk" +
-      "g/grpc/roles\242\002\003SVR\252\002\021Scalekit.V1.Roles\312\002" +
-      "\021Scalekit\\V1\\Roles\342\002\035Scalekit\\V1\\Roles\\G" +
-      "PBMetadata\352\002\023Scalekit::V1::Rolesb\006proto3"
+      "\"\367\013\n\004Role\022y\n\002id\030\001 \001(\tBi\222Ac2HUnique syste" +
+      "m-generated identifier for the role. Imm" +
+      "utable once created.J\027\"role_1234abcd5678" +
+      "efgh\"\340A\003R\002id\022\225\001\n\004name\030\002 \001(\tB\200\001\222Aq2]Uniqu" +
+      "e name identifier for the role. Must be " +
+      "alphanumeric with underscores, 1-100 cha" +
+      "racters.J\020\"content_editor\"\272H\tr\004\020\001\030d\310\001\001R\004" +
+      "name\022\224\001\n\014display_name\030\003 \001(\tBq\222Ab2NHuman-" +
+      "readable display name for the role. Used" +
+      " in user interfaces and reports.J\020\"Conte" +
+      "nt Editor\"\272H\tr\004\020\001\030d\310\001\001R\013displayName\022\311\001\n\013" +
+      "description\030\004 \001(\tB\246\001\222A\242\0012UDetailed descr" +
+      "iption of the role\'s purpose and capabil" +
+      "ities. Maximum 2000 characters.JI\"Can cr" +
+      "eate, edit, and publish content but cann" +
+      "ot delete or manage users\"R\013description\022" +
+      "}\n\017default_creator\030\006 \001(\010BT\222AQ2IIndicates" +
+      " if this role is the default creator rol" +
+      "e for new organizations.J\004trueR\016defaultC" +
+      "reator\022r\n\016default_member\030\007 \001(\010BK\222AH2@Ind" +
+      "icates if this role is the default membe" +
+      "r role for new users.J\004trueR\rdefaultMemb" +
+      "er\022\246\001\n\007extends\030\010 \001(\tB\206\001\222Ad2TName of the " +
+      "base role that this role extends. Enable" +
+      "s hierarchical role inheritance.J\014\"admin" +
+      "_role\"\272H\034r\032\020\001\030d2\024^[a-zA-Z0-9_]{1,64}$H\000R" +
+      "\007extends\210\001\001\022\267\002\n\013permissions\030\t \003(\0132\035.scal" +
+      "ekit.v1.roles.PermissionB\365\001\222A\361\0012wList of" +
+      " permissions directly assigned to this r" +
+      "ole. Only included when \'include\' parame" +
+      "ter is specified in the request.Jv[{\"nam" +
+      "e\": \"read:content\", \"display_name\": \"Rea" +
+      "d Content\"}, {\"name\": \"write:content\", \"" +
+      "display_name\": \"Write Content\"}]R\013permis" +
+      "sions\022\220\001\n\025dependent_roles_count\030\n \001(\005B\\\222" +
+      "AY2TNumber of roles that extend from thi" +
+      "s role (dependent roles count). Read-onl" +
+      "y field.J\0013R\023dependentRolesCountB\n\n\010_ext" +
+      "endsJ\004\010\005\020\006\"\316\t\n\nCreateRole\022\361\001\n\004name\030\002 \001(\t" +
+      "B\334\001\222A\266\0012\241\001Unique name identifier for the" +
+      " role. Must be alphanumeric with undersc" +
+      "ores, 1-64 characters. This name is used" +
+      " in API calls and cannot be changed afte" +
+      "r creation.J\020\"content_editor\"\272H\037r\032\020\001\030d2\024" +
+      "^[a-zA-Z0-9_]{1,64}$\310\001\001R\004name\022\262\001\n\014displa" +
+      "y_name\030\003 \001(\tB\216\001\222A\1772kHuman-readable displ" +
+      "ay name for the role. Used in user inter" +
+      "faces, reports, and user-facing communic" +
+      "ations.J\020\"Content Editor\"\272H\tr\004\020\001\030d\310\001\001R\013d" +
+      "isplayName\022\373\001\n\013description\030\004 \001(\tB\323\001\222A\307\0012" +
+      "jDetailed description of the role\'s purp" +
+      "ose, capabilities, and intended use case" +
+      "s. Maximum 2000 characters.JY\"Can create" +
+      ", edit, and publish content but cannot d" +
+      "elete content or manage user accounts\"\272H" +
+      "\005r\003\030\320\017H\000R\013description\210\001\001\022\340\001\n\007extends\030\010 \001" +
+      "(\tB\300\001\222A\235\0012\220\001Name of the base role that t" +
+      "his role extends. Enables hierarchical r" +
+      "ole inheritance where this role inherits" +
+      " all permissions from the base role.J\010\"v" +
+      "iewer\"\272H\034r\032\020\001\030d2\024^[a-zA-Z0-9_]{1,64}$H\001R" +
+      "\007extends\210\001\001\022\207\002\n\013permissions\030\t \003(\tB\344\001\222A\276\001" +
+      "2\205\001List of permission names to assign to" +
+      " this role. Permissions must exist in th" +
+      "e current environment. Maximum 100 permi" +
+      "ssions per role.J4[\"read:content\", \"writ" +
+      "e:content\", \"publish:content\"]\272H\037\222\001\034\020d\"\030" +
+      "r\026\020\001\030@2\020^[a-zA-Z0-9_:]+$R\013permissionsB\016\n" +
+      "\014_descriptionB\n\n\010_extendsJ\004\010\005\020\006J\004\010\006\020\007J\004\010" +
+      "\007\020\010\"\244\006\n\026CreateOrganizationRole\022t\n\004name\030\002" +
+      " \001(\tB`\222A;2&Unique name of the organizati" +
+      "on\'s roleJ\021\"org_viewer_role\"\272H\037r\032\020\001\030d2\024^" +
+      "[a-zA-Z0-9_]{1,64}$\310\001\001R\004name\022w\n\014display_" +
+      "name\030\003 \001(\tBT\222AE2\'Display name of the org" +
+      "anization\'s roleJ\032\"Organization Viewer R" +
+      "ole\"\272H\tr\004\020\001\030d\310\001\001R\013displayName\022\240\001\n\013descri" +
+      "ption\030\004 \001(\tBy\222An2&Description of the org" +
+      "anization\'s roleJD\"Organization Viewer R" +
+      "ole will be used only for viewing the ob" +
+      "jects\"\272H\005r\003\030\320\017H\000R\013description\210\001\001\022v\n\007exte" +
+      "nds\030\010 \001(\tBW\222A52%Base role name for hiera" +
+      "rchical rolesJ\014\"admin_role\"\272H\034r\032\020\001\030d2\024^[" +
+      "a-zA-Z0-9_]{1,64}$H\001R\007extends\210\001\001\022\321\001\n\013per" +
+      "missions\030\t \003(\tB\256\001\222A\210\0012cList of permissio" +
+      "n names to assign to this role. Permissi" +
+      "ons must exist in the current environmen" +
+      "t.J![\"read:users\", \"write:documents\"]\272H\037" +
+      "\222\001\034\020d\"\030r\026\020\001\030@2\020^[a-zA-Z0-9_:]+$R\013permiss" +
+      "ionsB\016\n\014_descriptionB\n\n\010_extendsJ\004\010\005\020\006J\004" +
+      "\010\006\020\007J\004\010\007\020\010\"\334\002\n\021CreateRoleRequest\022\300\002\n\004rol" +
+      "e\030\002 \001(\0132\035.scalekit.v1.roles.CreateRoleB\214" +
+      "\002\222A\202\0022lRole configuration details includ" +
+      "ing name, display name, description, per" +
+      "missions, and inheritance settings.J\221\001{\"" +
+      "name\": \"content_editor\", \"display_name\":" +
+      " \"Content Editor\", \"description\": \"Can e" +
+      "dit content\", \"permissions\": [\"read:cont" +
+      "ent\", \"write:content\"]}\272H\003\310\001\001R\004roleJ\004\010\001\020" +
+      "\002\"\232\002\n\022CreateRoleResponse\022\203\002\n\004role\030\001 \001(\0132" +
+      "\027.scalekit.v1.roles.RoleB\325\001\222A\321\0012OThe cre" +
+      "ated role object with system-generated I" +
+      "D and all configuration details.J~{\"id\":" +
+      " \"role_1234abcd5678efgh\", \"name\": \"conte" +
+      "nt_editor\", \"display_name\": \"Content Edi" +
+      "tor\", \"description\": \"Can edit content\"}" +
+      "R\004role\"\347\003\n\016GetRoleRequest\022\276\001\n\trole_name\030" +
+      "\002 \001(\tB\240\001\222A{2gUnique name identifier of t" +
+      "he role to retrieve. Must be alphanumeri" +
+      "c with underscores, 1-64 characters.J\020\"c" +
+      "ontent_editor\"\272H\037r\032\020\001\030d2\024^[a-zA-Z0-9_]{1" +
+      ",64}$\310\001\001R\010roleName\022\201\002\n\007include\030\003 \001(\tB\341\001\222" +
+      "A\270\0012\246\001Include additional data in the res" +
+      "ponse. Valid values: \'permissions\' (dire" +
+      "ct permissions only), \'permissions:all\' " +
+      "(includes inherited permissions from rol" +
+      "e hierarchy)J\r\"permissions\"\272H\"r R\000R\013perm" +
+      "issionsR\017permissions:allH\000R\007include\210\001\001B\n" +
+      "\n\010_includeJ\004\010\001\020\002\"\276\002\n\017GetRoleResponse\022\252\002\n" +
+      "\004role\030\001 \001(\0132\027.scalekit.v1.roles.RoleB\374\001\222" +
+      "A\370\0012QThe complete role object with all m" +
+      "etadata, permissions, and inheritance de" +
+      "tails.J\242\001{\"id\": \"role_1234abcd5678efgh\"," +
+      " \"name\": \"content_editor\", \"display_name" +
+      "\": \"Content Editor\", \"permissions\": [{\"n" +
+      "ame\": \"read:content\"}], \"dependent_roles" +
+      "_count\": 2}R\004role\"\250\002\n\020ListRolesRequest\022\201" +
+      "\002\n\007include\030\002 \001(\tB\341\001\222A\270\0012\246\001Include additi" +
+      "onal data in the response. Valid values:" +
+      " \'permissions\' (direct permissions only)" +
+      ", \'permissions:all\' (includes inherited " +
+      "permissions from role hierarchy)J\r\"permi" +
+      "ssions\"\272H\"r R\000R\013permissionsR\017permissions" +
+      ":allH\000R\007include\210\001\001B\n\n\010_includeJ\004\010\001\020\002\"\311\002\n" +
+      "\021ListRolesResponse\022\263\002\n\005roles\030\001 \003(\0132\027.sca" +
+      "lekit.v1.roles.RoleB\203\002\222A\377\0012ZList of all " +
+      "roles in the environment with their meta" +
+      "data and optionally their permissions.J\240" +
+      "\001[{\"id\": \"role_1234abcd5678efgh\", \"name\"" +
+      ": \"admin\", \"display_name\": \"Administrato" +
+      "r\"}, {\"id\": \"role_9876zyxw5432vuts\", \"na" +
+      "me\": \"viewer\", \"display_name\": \"Viewer\"}" +
+      "]R\005roles\"\335\010\n\nUpdateRole\022\274\001\n\014display_name" +
+      "\030\001 \001(\tB\223\001\222A\206\0012kHuman-readable display na" +
+      "me for the role. Used in user interfaces" +
+      ", reports, and user-facing communication" +
+      "s.J\027\"Senior Content Editor\"\272H\006r\004\020\001\030dH\000R\013" +
+      "displayName\210\001\001\022\204\002\n\013description\030\002 \001(\tB\334\001\222" +
+      "A\316\0012jDetailed description of the role\'s " +
+      "purpose, capabilities, and intended use " +
+      "cases. Maximum 2000 characters.J`\"Can cr" +
+      "eate, edit, publish, and approve content" +
+      ". Cannot delete content or manage user a" +
+      "ccounts.\"\272H\007r\005\020\001\030\320\017H\001R\013description\210\001\001\022\350\001" +
+      "\n\007extends\030\006 \001(\tB\310\001\222A\245\0012\220\001Name of the bas" +
+      "e role that this role extends. Enables h" +
+      "ierarchical role inheritance where this " +
+      "role inherits all permissions from the b" +
+      "ase role.J\020\"content_editor\"\272H\034r\032\020\001\030d2\024^[" +
+      "a-zA-Z0-9_]{1,64}$H\002R\007extends\210\001\001\022\336\002\n\013per" +
+      "missions\030\007 \003(\tB\273\002\222A\225\0022\311\001List of permissi" +
+      "on names to assign to this role. When pr" +
+      "ovided, this replaces all existing role-" +
+      "permission mappings. Permissions must ex" +
+      "ist in the current environment. Maximum " +
+      "100 permissions per role.JG[\"read:conten" +
+      "t\", \"write:content\", \"publish:content\", " +
+      "\"approve:content\"]\272H\037\222\001\034\020d\"\030r\026\020\001\030@2\020^[a-" +
+      "zA-Z0-9_:]+$R\013permissionsB\017\n\r_display_na" +
+      "meB\016\n\014_descriptionB\n\n\010_extendsJ\004\010\003\020\004J\004\010\004" +
+      "\020\005J\004\010\005\020\006\"\253\003\n\021UpdateRoleRequest\022\274\001\n\trole_" +
+      "name\030\002 \001(\tB\236\001\222Ay2eUnique name identifier" +
+      " of the role to update. Must be alphanum" +
+      "eric with underscores, 1-64 characters.J" +
+      "\020\"content_editor\"\272H\037r\032\020\001\030d2\024^[a-zA-Z0-9_" +
+      "]{1,64}$\310\001\001R\010roleName\022\320\001\n\004role\030\003 \001(\0132\035.s" +
+      "calekit.v1.roles.UpdateRoleB\234\001\222A\222\0012>Role" +
+      " fields to update. Only specified fields" +
+      " will be modified.JP{\"display_name\": \"Se" +
+      "nior Editor\", \"description\": \"Can edit a" +
+      "nd approve content\"}\272H\003\310\001\001R\004roleJ\004\010\001\020\002\"\226" +
+      "\002\n\022UpdateRoleResponse\022\377\001\n\004role\030\001 \001(\0132\027.s" +
+      "calekit.v1.roles.RoleB\321\001\222A\315\0012?The update" +
+      "d role object with all current configura" +
+      "tion details.J\211\001{\"id\": \"role_1234abcd567" +
+      "8efgh\", \"name\": \"content_editor\", \"displ" +
+      "ay_name\": \"Senior Editor\", \"description\"" +
+      ": \"Can edit and approve content\"}R\004role\"" +
+      "\272\004\n\021DeleteRoleRequest\022\266\001\n\trole_name\030\002 \001(" +
+      "\tB\230\001\222As2eUnique name identifier of the r" +
+      "ole to delete. Must be alphanumeric with" +
+      " underscores, 1-64 characters.J\n\"old_rol" +
+      "e\"\272H\037r\032\020\001\030d2\024^[a-zA-Z0-9_]{1,64}$\310\001\001R\010ro" +
+      "leName\022\232\001\n\020reassign_role_id\030\003 \001(\tBk\030\001\222AG" +
+      "26Role name to reassign users to when de" +
+      "leting this roleJ\r\"member_role\"\272H\034r\032\020\001\030d" +
+      "2\024^[a-zA-Z0-9_]{1,64}$H\000R\016reassignRoleId" +
+      "\210\001\001\022\234\001\n\022reassign_role_name\030\004 \001(\tBi\222AG26R" +
+      "ole name to reassign users to when delet" +
+      "ing this roleJ\r\"member_role\"\272H\034r\032\020\001\030d2\024^" +
+      "[a-zA-Z0-9_]{1,64}$H\001R\020reassignRoleName\210" +
+      "\001\001B\023\n\021_reassign_role_idB\025\n\023_reassign_rol" +
+      "e_nameJ\004\010\001\020\002\"\354\001\n\035CreateOrganizationRoleR" +
+      "equest\022f\n\006org_id\030\001 \001(\tBO\222A>2%Unique iden" +
+      "tifier of the organizationJ\025\"org_1213124" +
+      "34123312\"\272H\013r\t\020\001\030 :\003orgR\005orgId\022c\n\004role\030\002" +
+      " \001(\0132).scalekit.v1.roles.CreateOrganizat" +
+      "ionRoleB$\222A\0332\031Organization role details\272" +
+      "H\003\310\001\001R\004role\"M\n\036CreateOrganizationRoleRes" +
+      "ponse\022+\n\004role\030\001 \001(\0132\027.scalekit.v1.roles." +
+      "RoleR\004role\"\353\003\n\032GetOrganizationRoleReques" +
+      "t\022f\n\006org_id\030\001 \001(\tBO\222A>2%Unique identifie" +
+      "r of the organizationJ\025\"org_121312434123" +
+      "312\"\272H\013r\t\020\001\030 :\003orgR\005orgId\022i\n\trole_name\030\002" +
+      " \001(\tBL\222A\'2\027Unique name of the roleJ\014\"adm" +
+      "in_role\"\272H\037r\032\020\001\030d2\024^[a-zA-Z0-9_]{1,64}$\310" +
+      "\001\001R\010roleName\022\355\001\n\007include\030\003 \001(\tB\315\001\222A\244\0012\222\001" +
+      "Include additional data in the response." +
+      " Valid values: \'permissions\' (direct per" +
+      "missions only), \'permissions:all\' (inclu" +
+      "des inherited permissions)J\r\"permissions" +
+      "\"\272H\"r R\000R\013permissionsR\017permissions:allH\000" +
+      "R\007include\210\001\001B\n\n\010_include\"J\n\033GetOrganizat" +
+      "ionRoleResponse\022+\n\004role\030\001 \001(\0132\027.scalekit" +
+      ".v1.roles.RoleR\004role\"\342\004\n\034ListOrganizatio" +
+      "nRolesRequest\022i\n\006org_id\030\001 \001(\tBR\222A>2%Uniq" +
+      "ue identifier of the organizationJ\025\"org_" +
+      "121312434123312\"\272H\016r\t\020\001\030 :\003org\310\001\001R\005orgId" +
+      "\022\355\001\n\007include\030\002 \001(\tB\315\001\222A\244\0012\222\001Include addi" +
+      "tional data in the response. Valid value" +
+      "s: \'permissions\' (direct permissions onl" +
+      "y), \'permissions:all\' (includes inherite" +
+      "d permissions)J\r\"permissions\"\272H\"r R\000R\013pe" +
+      "rmissionsR\017permissions:allH\000R\007include\210\001\001" +
+      ":\332\001\222A\326\001\n\260\001*\027List organization roles2\213\001Re" +
+      "trieves a paginated list of all roles wi" +
+      "thin the organization. Use the page_toke" +
+      "n from the response to access subsequent" +
+      " pages of results\322\001\006org_id2!{\"org_id\" : " +
+      "\"org_8756865685762\" }B\n\n\010_include\"j\n\035Lis" +
+      "tOrganizationRolesResponse\022I\n\005roles\030\001 \003(" +
+      "\0132\027.scalekit.v1.roles.RoleB\032\222A\0272\025List of" +
+      " roles objectsR\005roles\"\313\002\n\035UpdateOrganiza" +
+      "tionRoleRequest\022f\n\006org_id\030\001 \001(\tBO\222A>2%Un" +
+      "ique identifier of the organizationJ\025\"or" +
+      "g_121312434123312\"\272H\013r\t\020\001\030 :\003orgR\005orgId\022" +
+      "i\n\trole_name\030\002 \001(\tBL\222A\'2\027Unique name of " +
+      "the roleJ\014\"admin_role\"\272H\037r\032\020\001\030d2\024^[a-zA-" +
+      "Z0-9_]{1,64}$\310\001\001R\010roleName\022W\n\004role\030\003 \001(\013" +
+      "2\035.scalekit.v1.roles.UpdateRoleB$\222A\0332\031Or" +
+      "ganization role details\272H\003\310\001\001R\004role\"M\n\036U" +
+      "pdateOrganizationRoleResponse\022+\n\004role\030\001 " +
+      "\001(\0132\027.scalekit.v1.roles.RoleR\004role\"\250\003\n\035D" +
+      "eleteOrganizationRoleRequest\022f\n\006org_id\030\001" +
+      " \001(\tBO\222A>2%Unique identifier of the orga" +
+      "nizationJ\025\"org_121312434123312\"\272H\013r\t\020\001\030 " +
+      ":\003orgR\005orgId\022i\n\trole_name\030\002 \001(\tBL\222A\'2\027Un" +
+      "ique name of the roleJ\014\"admin_role\"\272H\037r\032" +
+      "\020\001\030d2\024^[a-zA-Z0-9_]{1,64}$\310\001\001R\010roleName\022" +
+      "\234\001\n\022reassign_role_name\030\003 \001(\tBi\222AG26Role " +
+      "name to reassign users to when deleting " +
+      "this roleJ\r\"member_role\"\272H\034r\032\020\001\030d2\024^[a-z" +
+      "A-Z0-9_]{1,64}$H\000R\020reassignRoleName\210\001\001B\025" +
+      "\n\023_reassign_role_name\"\213\001\n\030GetRoleUsersCo" +
+      "untRequest\022i\n\trole_name\030\002 \001(\tBL\222A\'2\027Uniq" +
+      "ue name of the roleJ\014\"admin_role\"\272H\037r\032\020\001" +
+      "\030d2\024^[a-zA-Z0-9_]{1,64}$\310\001\001R\010roleNameJ\004\010" +
+      "\001\020\002\"k\n\031GetRoleUsersCountResponse\022N\n\005coun" +
+      "t\030\001 \001(\003B8\222A.2(Number of users associated" +
+      " with the roleJ\00210\272H\004\032\002 \000R\005count\"\360\t\n\031Upd" +
+      "ateDefaultRolesRequest\022\236\002\n\017default_creat" +
+      "or\030\002 \001(\0132$.scalekit.v1.roles.UpdateDefau" +
+      "ltRoleB\316\001\030\001\222A\310\0012JDefault creator role (d" +
+      "eprecated - use default_creator_role fie" +
+      "ld instead)Jz{\"id\": \"role_1234567890\", \"" +
+      "name\": \"creator\", \"display_name\": \"Creat" +
+      "or Role\", \"description\": \"Role for creat" +
+      "ing resources\"}R\016defaultCreator\022\225\002\n\016defa" +
+      "ult_member\030\003 \001(\0132$.scalekit.v1.roles.Upd" +
+      "ateDefaultRoleB\307\001\030\001\222A\301\0012HDefault member " +
+      "role (deprecated - use default_member_ro" +
+      "le field instead)Ju{\"id\": \"role_09876543" +
+      "21\", \"name\": \"member\", \"display_name\": \"" +
+      "Member Role\", \"description\": \"Role for r" +
+      "egular members\"}R\rdefaultMember\022\266\002\n\024defa" +
+      "ult_creator_role\030\004 \001(\tB\376\001\222A\333\0012\315\001Name of " +
+      "the role to set as the default creator r" +
+      "ole. This role will be automatically ass" +
+      "igned to users who create new resources " +
+      "in the environment. Must be a valid role" +
+      " name that exists in the environment.J\t\"" +
+      "creator\"\272H\034r\032\020\000\030d2\024^[a-zA-Z0-9_]{1,64}$H" +
+      "\000R\022defaultCreatorRole\210\001\001\022\251\002\n\023default_mem" +
+      "ber_role\030\005 \001(\tB\363\001\222A\320\0012\303\001Name of the role" +
+      " to set as the default member role. This" +
+      " role will be automatically assigned to " +
+      "new users when they join the environment" +
+      ". Must be a valid role name that exists " +
+      "in the environment.J\010\"member\"\272H\034r\032\020\000\030d2\024" +
+      "^[a-zA-Z0-9_]{1,64}$H\001R\021defaultMemberRol" +
+      "e\210\001\001B\027\n\025_default_creator_roleB\026\n\024_defaul" +
+      "t_member_roleJ\004\010\001\020\002\"\234\002\n%UpdateDefaultOrg" +
+      "anizationRolesRequest\022i\n\006org_id\030\001 \001(\tBR\222" +
+      "A>2%Unique identifier of the organizatio" +
+      "nJ\025\"org_121312434123312\"\272H\016r\t\020\001\030 :\003org\310\001" +
+      "\001R\005orgId\022\207\001\n\023default_member_role\030\002 \001(\tBW" +
+      "\222A22&Unique name of the default member r" +
+      "oleJ\010\"member\"\272H\037r\032\020\001\030d2\024^[a-zA-Z0-9_]{1," +
+      "64}$\310\001\001R\021defaultMemberRole\"\306\005\n\032UpdateDef" +
+      "aultRolesResponse\022\326\002\n\017default_creator\030\001 " +
+      "\001(\0132\027.scalekit.v1.roles.RoleB\223\002\222A\217\0022\220\001Th" +
+      "e role that is now set as the default cr" +
+      "eator role for the environment. Contains" +
+      " complete role information including per" +
+      "missions and metadata.Jz{\"id\": \"role_123" +
+      "4567890\", \"name\": \"creator\", \"display_na" +
+      "me\": \"Creator Role\", \"description\": \"Rol" +
+      "e for creating resources\"}R\016defaultCreat" +
+      "or\022\316\002\n\016default_member\030\002 \001(\0132\027.scalekit.v" +
+      "1.roles.RoleB\215\002\222A\211\0022\217\001The role that is n" +
+      "ow set as the default member role for th" +
+      "e environment. Contains complete role in" +
+      "formation including permissions and meta" +
+      "data.Ju{\"id\": \"role_0987654321\", \"name\":" +
+      " \"member\", \"display_name\": \"Member Role\"" +
+      ", \"description\": \"Role for regular membe" +
+      "rs\"}R\rdefaultMember\"\204\002\n&UpdateDefaultOrg" +
+      "anizationRolesResponse\022\331\001\n\016default_membe" +
+      "r\030\002 \001(\0132\027.scalekit.v1.roles.RoleB\230\001\222A\224\0012" +
+      "\033Updated default member roleJu{\"id\": \"ro" +
+      "le_0987654321\", \"name\": \"member\", \"displ" +
+      "ay_name\": \"Member Role\", \"description\": " +
+      "\"Role for regular members\"}R\rdefaultMemb" +
+      "er\"\236\001\n\021UpdateDefaultRole\022\037\n\002id\030\001 \001(\tB\017\272H" +
+      "\014r\n\020\001\030 :\004roleR\002id\022_\n\004name\030\002 \001(\tBF\222A$2\027Un" +
+      "ique name of the roleJ\t\"creator\"\272H\034r\032\020\000\030" +
+      "d2\024^[a-zA-Z0-9_]{1,64}$H\000R\004name\210\001\001B\007\n\005_n" +
+      "ame\"\207\002\n\nPermission\022\037\n\002id\030\001 \001(\tB\017\272H\014r\n\020\001\030" +
+      " :\004permR\002id\0222\n\004name\030\002 \001(\tB\036\272H\033r\026\020\001\030d2\020^[" +
+      "a-zA-Z0-9_:]+$\310\001\001R\004name\022*\n\013description\030\003" +
+      " \001(\tB\010\272H\005r\003\030\320\017R\013description\022;\n\013create_ti" +
+      "me\030\004 \001(\0132\032.google.protobuf.TimestampR\ncr" +
+      "eateTime\022;\n\013update_time\030\005 \001(\0132\032.google.p" +
+      "rotobuf.TimestampR\nupdateTime\"\201\002\n\020Create" +
+      "Permission\022n\n\004name\030\001 \001(\tBZ\222A42 Unique na" +
+      "me/ID of the permissionJ\020\"read:documents" +
+      "\"\272H r\033\020\001\030d2\025^[a-zA-Z0-9_:]{1,64}$\310\001\001R\004na" +
+      "me\022}\n\013description\030\002 \001(\tB[\222AP2\035Descriptio" +
+      "n of the permissionJ/\"Allows user to rea" +
+      "d documents from the system\"\272H\005r\003\030\320\017R\013de" +
+      "scription\"f\n\027CreatePermissionRequest\022K\n\n" +
+      "permission\030\001 \001(\0132#.scalekit.v1.roles.Cre" +
+      "atePermissionB\006\272H\003\310\001\001R\npermission\"Y\n\030Cre" +
+      "atePermissionResponse\022=\n\npermission\030\001 \001(" +
+      "\0132\035.scalekit.v1.roles.PermissionR\npermis" +
+      "sion\"\210\001\n\024GetPermissionRequest\022p\n\017permiss" +
+      "ion_name\030\001 \001(\tBG\222A&2\026Name of the permiss" +
+      "ionJ\014\"read:users\"\272H\033r\026\020\001\030@2\020^[a-zA-Z0-9_" +
+      ":]+$\310\001\001R\016permissionName\"V\n\025GetPermission" +
+      "Response\022=\n\npermission\030\001 \001(\0132\035.scalekit." +
+      "v1.roles.PermissionR\npermission\"\330\001\n\027Upda" +
+      "tePermissionRequest\022p\n\017permission_name\030\001" +
+      " \001(\tBG\222A&2\026Name of the permissionJ\014\"read" +
+      "_users\"\272H\033r\026\020\001\030@2\020^[a-zA-Z0-9_:]+$\310\001\001R\016p" +
+      "ermissionName\022K\n\npermission\030\003 \001(\0132#.scal" +
+      "ekit.v1.roles.CreatePermissionB\006\272H\003\310\001\001R\n" +
+      "permission\"Y\n\030UpdatePermissionResponse\022=" +
+      "\n\npermission\030\001 \001(\0132\035.scalekit.v1.roles.P" +
+      "ermissionR\npermission\"\203\002\n\026ListPermission" +
+      "sRequest\022d\n\npage_token\030\001 \001(\tB@\222A=2+Page " +
+      "token to retrieve next page of resultsJ\016" +
+      "\"token_abc123\"H\000R\tpageToken\210\001\001\022f\n\tpage_s" +
+      "ize\030\002 \001(\rBD\222A822Number of permissions to" +
+      " return per page (max 100)J\00250\272H\006*\004\030d(\001H" +
+      "\001R\010pageSize\210\001\001B\r\n\013_page_tokenB\014\n\n_page_s" +
+      "ize\"\370\002\n\027ListPermissionsResponse\022?\n\013permi" +
+      "ssions\030\001 \003(\0132\035.scalekit.v1.roles.Permiss" +
+      "ionR\013permissions\022g\n\017prev_page_token\030\002 \001(" +
+      "\tB?\222A<2*Token to retrieve previous page " +
+      "of resultsJ\016\"token_def456\"R\rprevPageToke" +
+      "n\022c\n\017next_page_token\030\003 \001(\tB;\222A82&Token t" +
+      "o retrieve next page of resultsJ\016\"token_" +
+      "def456\"R\rnextPageToken\022N\n\ntotal_size\030\004 \001" +
+      "(\rB/\222A,2%Total number of permissions ava" +
+      "ilableJ\003150R\ttotalSize\"\213\001\n\027DeletePermiss" +
+      "ionRequest\022p\n\017permission_name\030\001 \001(\tBG\222A&" +
+      "2\026Name of the permissionJ\014\"read_users\"\272H" +
+      "\033r\026\020\001\030@2\020^[a-zA-Z0-9_:]+$\310\001\001R\016permission" +
+      "Name\"u\n\032ListRolePermissionsRequest\022W\n\tro" +
+      "le_name\030\001 \001(\tB:\222A\0312\020Name of the roleJ\005ad",
+      "min\272H\033r\026\020\001\030@2\020^[a-zA-Z0-9_-]+$\310\001\001R\010roleN" +
+      "ame\"\226\001\n\033ListRolePermissionsResponse\022w\n\013p" +
+      "ermissions\030\001 \003(\0132\035.scalekit.v1.roles.Per" +
+      "missionB6\222A321List of permissions direct" +
+      "ly assigned to the roleR\013permissions\"\373\001\n" +
+      "\033AddPermissionsToRoleRequest\022W\n\trole_nam" +
+      "e\030\001 \001(\tB:\222A\0312\020Name of the roleJ\005admin\272H\033" +
+      "r\026\020\001\030@2\020^[a-zA-Z0-9_:]+$\310\001\001R\010roleName\022\202\001" +
+      "\n\020permission_names\030\002 \003(\tBW\222A-2+List of p" +
+      "ermission names to add to the role\272H$\222\001\036" +
+      "\010\001\020d\"\030r\026\020\001\030@2\020^[a-zA-Z0-9_:]+$\310\001\001R\017permi" +
+      "ssionNames\"\243\001\n\034AddPermissionsToRoleRespo" +
+      "nse\022\202\001\n\013permissions\030\001 \003(\0132\035.scalekit.v1." +
+      "roles.PermissionBA\222A>2<List of all permi" +
+      "ssions belonging to the role after addit" +
+      "ionR\013permissions\"\363\001\n\037RemovePermissionFro" +
+      "mRoleRequest\022V\n\trole_name\030\001 \001(\tB9\222A\0312\020Na" +
+      "me of the roleJ\005admin\272H\032r\025\020\001\030@2\017^[a-zA-Z" +
+      "0-9_]+$\310\001\001R\010roleName\022x\n\017permission_name\030" +
+      "\002 \001(\tBO\222A.2 Name of the permission to re" +
+      "moveJ\nread_users\272H\033r\026\020\001\030@2\020^[a-zA-Z0-9_:" +
+      "]+$\310\001\001R\016permissionName\"}\n#ListEffectiveR" +
+      "olePermissionsRequest\022V\n\trole_name\030\001 \001(\t" +
+      "B9\222A\0312\020Name of the roleJ\005admin\272H\032r\025\020\001\030@2" +
+      "\017^[a-zA-Z0-9_]+$\310\001\001R\010roleName\"\272\001\n$ListEf" +
+      "fectiveRolePermissionsResponse\022\221\001\n\013permi" +
+      "ssions\030\001 \003(\0132\035.scalekit.v1.roles.Permiss" +
+      "ionBP\222AM2KList of all effective permissi" +
+      "ons including those inherited from base " +
+      "rolesR\013permissions\"x\n\031ListDependentRoles" +
+      "Request\022[\n\trole_name\030\001 \001(\tB>\222A\0362\025Name of" +
+      " the base roleJ\005admin\272H\032r\025\020\001\030@2\017^[a-zA-Z" +
+      "0-9_]+$\310\001\001R\010roleName\"i\n\032ListDependentRol" +
+      "esResponse\022K\n\005roles\030\001 \003(\0132\027.scalekit.v1." +
+      "roles.RoleB\034\222A\0312\027List of dependent roles" +
+      "R\005roles\"\375\001\n\025DeleteRoleBaseRequest\022\343\001\n\tro" +
+      "le_name\030\001 \001(\tB\305\001\222A\244\0012\221\001Unique name ident" +
+      "ifier of the role whose base inheritance" +
+      " relationship should be removed. Must be" +
+      " alphanumeric with underscores, 1-64 cha" +
+      "racters.J\016content_editor\272H\032r\025\020\001\030@2\017^[a-z" +
+      "A-Z0-9_]+$\310\001\001R\010roleName2\272o\n\014RolesService" +
+      "\022\207\010\n\nCreateRole\022$.scalekit.v1.roles.Crea" +
+      "teRoleRequest\032%.scalekit.v1.roles.Create" +
+      "RoleResponse\"\253\007\222A\206\007\n\005Roles\022\036Create new r" +
+      "ole in environment\032\210\003Creates a new role " +
+      "within the environment with specified pe" +
+      "rmissions and metadata. Use this endpoin" +
+      "t to define custom roles that can be ass" +
+      "igned to users or groups. You can create" +
+      " hierarchical roles by extending existin" +
+      "g roles, assign specific permissions, an" +
+      "d configure display information. Roles a" +
+      "re the foundation of your access control" +
+      " system and determine what actions users" +
+      " can perform.J\231\001\n\003201\022\221\001\ndRole created s" +
+      "uccessfully. Returns the complete role o" +
+      "bject with system-generated ID and times" +
+      "tamps.\022)\n\'\032%.scalekit.v1.roles.CreateRol" +
+      "eResponsej\265\002\n\rx-codeSamples\022\243\0022\240\002\n\235\002*\232\002\n" +
+      "\025\n\005label\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python" +
+      "\n\356\001\n\006source\022\343\001\032\340\001from scalekit.v1.roles." +
+      "roles_pb2 import CreateRole\n\nrole = Crea" +
+      "teRole(\n    name=\"viewer\",\n    display_n" +
+      "ame=\"Viewer\",\n    description=\"Read-only" +
+      " access\",\n)\ncreate_response = scalekit_c" +
+      "lient.roles.create_role(\n    role=role,\n" +
+      ")\202\265\030\002\030T\202\323\344\223\002\025\"\r/api/v1/roles:\004role\022\226\010\n\nU" +
+      "pdateRole\022$.scalekit.v1.roles.UpdateRole" +
+      "Request\032%.scalekit.v1.roles.UpdateRoleRe" +
+      "sponse\"\272\007\222A\211\007\n\005Roles\022\027Update role inform" +
+      "ation\032\366\002Modifies an existing role\'s prop" +
+      "erties including display name, descripti" +
+      "on, permissions, and inheritance. Use th" +
+      "is endpoint to update role metadata, cha" +
+      "nge permission assignments, or modify ro" +
+      "le hierarchy. Only the fields you specif" +
+      "y will be updated, leaving other propert" +
+      "ies unchanged. When updating permissions" +
+      ", the new list replaces all existing per" +
+      "missions for the role.J\211\001\n\003200\022\201\001\nTRole " +
+      "updated successfully. Returns the modifi" +
+      "ed role object with updated timestamps.\022" +
+      ")\n\'\032%.scalekit.v1.roles.UpdateRoleRespon" +
+      "sej\341\002\n\rx-codeSamples\022\317\0022\314\002\n\311\002*\306\002\n\025\n\005labe" +
+      "l\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python\n\232\002\n\006so" +
+      "urce\022\217\002\032\214\002from scalekit.v1.roles.roles_p" +
+      "b2 import UpdateRole\n\nupdate_role = Upda" +
+      "teRole(\n    display_name=\"Viewer (Limite" +
+      "d)\",\n    description=\"Read-only access, " +
+      "no billing\",\n)\nupdated_role = scalekit_c" +
+      "lient.roles.update_role(\n    role_id=\"ro" +
+      "le_123456789\",\n    role=update_role,\n)\202\265" +
+      "\030\002\030T\202\323\344\223\002!\032\031/api/v1/roles/{role_name}:\004r" +
+      "ole\022\243\006\n\007GetRole\022!.scalekit.v1.roles.GetR" +
+      "oleRequest\032\".scalekit.v1.roles.GetRoleRe" +
+      "sponse\"\320\005\222A\245\005\n\005Roles\022\020Get role details\032\251" +
+      "\002Retrieves complete information for a sp" +
+      "ecific role including metadata and inher" +
+      "itance details (base role and dependent " +
+      "role count). Use this endpoint to audit " +
+      "role configuration and understand the ro" +
+      "le\'s place in the hierarchy. To view the" +
+      " role\'s permissions, use the ListRolePer" +
+      "missions endpoint.J\271\001\n\003200\022\261\001\n\206\001Successf" +
+      "ully retrieved role details. Returns the" +
+      " role object including metadata and inhe" +
+      "ritance details. Permissions are not inc" +
+      "luded.\022&\n$\032\".scalekit.v1.roles.GetRoleRe" +
+      "sponsej\241\001\n\rx-codeSamples\022\217\0012\214\001\n\211\001*\206\001\n\025\n\005" +
+      "label\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python\n[\n" +
+      "\006source\022Q\032Orole_response = scalekit_clie" +
+      "nt.roles.get_role(\n    role_id=\"role_123" +
+      "456789\",\n)\202\265\030\002\030T\202\323\344\223\002\033\022\031/api/v1/roles/{r" +
+      "ole_name}\022\300\006\n\tListRoles\022#.scalekit.v1.ro" +
+      "les.ListRolesRequest\032$.scalekit.v1.roles" +
+      ".ListRolesResponse\"\347\005\222A\310\005\n\005Roles\022\035List a" +
+      "ll roles in environment\032\367\002Retrieves a co" +
+      "mprehensive list of all roles available " +
+      "within the environment. Use this endpoin" +
+      "t to view all role definitions, includin" +
+      "g system default roles and custom roles." +
+      " You can optionally include permission d" +
+      "etails for each role to understand their" +
+      " capabilities. This is useful for role m" +
+      "anagement, auditing, or understanding th" +
+      "e available access levels in your system" +
+      ".J\241\001\n\003200\022\231\001\nmSuccessfully retrieved lis" +
+      "t of roles. Returns all roles with their" +
+      " metadata and optionally their permissio" +
+      "ns.\022(\n&\032$.scalekit.v1.roles.ListRolesRes" +
+      "ponsej\201\001\n\rx-codeSamples\022p2n\nl*j\n\025\n\005label" +
+      "\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python\n?\n\006sour" +
+      "ce\0225\0323roles_response = scalekit_client.r" +
+      "oles.list_roles()\202\265\030\002\030t\202\323\344\223\002\017\022\r/api/v1/r" +
+      "oles\022\277\007\n\nDeleteRole\022$.scalekit.v1.roles." +
+      "DeleteRoleRequest\032\026.google.protobuf.Empt" +
+      "y\"\362\006\222A\307\006\n\005Roles\022\036Delete role and reassig" +
+      "n users\032\273\004Permanently removes a role fro" +
+      "m the environment and reassigns users wh" +
+      "o had that role to a different role. Use" +
+      " this endpoint when you need to clean up" +
+      " unused roles or restructure your access" +
+      " control system. The role cannot be dele" +
+      "ted if it has dependent roles (roles tha" +
+      "t extend it) unless you specify a replac" +
+      "ement role. If users are assigned to the" +
+      " role being deleted, you must provide a " +
+      "reassign_role_name to move those users t" +
+      "o a different role before deletion can p" +
+      "roceed. This action cannot be undone, so" +
+      " ensure no critical users depend on the " +
+      "role before deletion.JM\n\003200\022F\nDRole suc" +
+      "cessfully deleted and users reassigned. " +
+      "No content returned.j\220\001\n\rx-codeSamples\022\177" +
+      "2}\n{*y\n\025\n\005label\022\014\032\nPython SDK\n\020\n\004lang\022\010\032" +
+      "\006python\nN\n\006source\022D\032Bscalekit_client.rol" +
+      "es.delete_role(\n    role_id=\"role_123456" +
+      "789\",\n)\202\265\030\002\030T\202\323\344\223\002\033*\031/api/v1/roles/{role" +
+      "_name}\022\261\003\n\026CreateOrganizationRole\0220.scal" +
+      "ekit.v1.roles.CreateOrganizationRoleRequ" +
+      "est\0321.scalekit.v1.roles.CreateOrganizati" +
+      "onRoleResponse\"\261\002\222A\346\001\n\005Roles\022\036Create a n" +
+      "ew organization role\032UCreates a new orga" +
+      "nization role to represent a specific ro" +
+      "le within the organization.Jf\n\003201\022_\n&Or" +
+      "ganization role created successfully\0225\n3" +
+      "\0321.scalekit.v1.roles.CreateOrganizationR" +
+      "oleResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002,\"$" +
+      "/api/v1/organizations/{org_id}/roles:\004ro" +
+      "le\022\260\003\n\026UpdateOrganizationRole\0220.scalekit" +
+      ".v1.roles.UpdateOrganizationRoleRequest\032" +
+      "1.scalekit.v1.roles.UpdateOrganizationRo" +
+      "leResponse\"\260\002\222A\331\001\n\005Roles\022$Update an exis" +
+      "ting organization role\032BUpdates an exist" +
+      "ing organization role using its unique i" +
+      "dentifier.Jf\n\003200\022_\n&Organization role u" +
+      "pdated successfully\0225\n3\0321.scalekit.v1.ro" +
+      "les.UpdateOrganizationRoleResponse\202\265\030\002\030T" +
+      "\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0028\0320/api/v1/organizat" +
+      "ions/{org_id}/roles/{role_name}:\004role\022\266\003" +
+      "\n\023GetOrganizationRole\022-.scalekit.v1.role" +
+      "s.GetOrganizationRoleRequest\032..scalekit." +
+      "v1.roles.GetOrganizationRoleResponse\"\277\002\222" +
+      "A\356\001\n\005Roles\022\032Retrieve organization role\032Z" +
+      "Fetch detailed information about a speci" +
+      "fic organization role using its unique i" +
+      "dentifier.Jm\n\003200\022f\n0Successfully retrie" +
+      "ved organization role details\0222\n0\032..scal" +
+      "ekit.v1.roles.GetOrganizationRoleRespons" +
+      "e\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0022\0220/api/v1/or" +
+      "ganizations/{org_id}/roles/{role_name}\022\375" +
+      "\003\n\025ListOrganizationRoles\022/.scalekit.v1.r" +
+      "oles.ListOrganizationRolesRequest\0320.scal" +
+      "ekit.v1.roles.ListOrganizationRolesRespo" +
+      "nse\"\200\003\222A\273\002\n\005Roles\022\033List all organization" +
+      " roles\032\214\001Retrieves a paginated list of a" +
+      "ll roles within the organization. Use th" +
+      "e page_token from the response to access" +
+      " subsequent pages of results.J\205\001\n\003200\022~\n" +
+      "FSuccessfully retrieved the list of role" +
+      "s within the given organization\0224\n2\0320.sc" +
+      "alekit.v1.roles.ListOrganizationRolesRes" +
+      "ponse\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002&\022$/api/v" +
+      "1/organizations/{org_id}/roles\022\306\002\n\026Delet" +
+      "eOrganizationRole\0220.scalekit.v1.roles.De" +
+      "leteOrganizationRoleRequest\032\026.google.pro" +
+      "tobuf.Empty\"\341\001\222A\220\001\n\005Roles\022\033Delete an org" +
+      "anization role\032KRemoves an existing role" +
+      " from the organization using its unique " +
+      "identifier.J\035\n\003200\022\026\n\024Deleted successful" +
+      "ly\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0022*0/api/v1/o" +
+      "rganizations/{org_id}/roles/{role_name}\022" +
+      "\231\005\n\021GetRoleUsersCount\022+.scalekit.v1.role" +
+      "s.GetRoleUsersCountRequest\032,.scalekit.v1" +
+      ".roles.GetRoleUsersCountResponse\"\250\004\222A\361\003\n" +
+      "\005Roles\022\034Retrieve user count for role\032\324\002R" +
+      "etrieves the total number of users curre" +
+      "ntly assigned to the specified role. Use" +
+      " this endpoint to monitor role usage or " +
+      "enforce limits based on user assignments" +
+      ". Provide the role\'s unique name as a pa" +
+      "th parameter. The response includes the " +
+      "user count for the requested role. This " +
+      "operation does not modify any data and h" +
+      "as no side effects.Js\n\003200\022l\n8Successful" +
+      "ly retrieved user count for the specifie" +
+      "d role\0220\n.\032,.scalekit.v1.roles.GetRoleUs" +
+      "ersCountResponse\202\265\030\002\030T\202\323\344\223\002\'\022%/api/v1/ro" +
+      "les/{role_name}/users:count\022\236\006\n\022UpdateDe" +
+      "faultRoles\022,.scalekit.v1.roles.UpdateDef" +
+      "aultRolesRequest\032-.scalekit.v1.roles.Upd" +
+      "ateDefaultRolesResponse\"\252\005\222A\337\004\n\005Roles\022$S" +
+      "et default creator and member roles\032\317\003Up" +
+      "dates the default creator and member rol" +
+      "es for the current environment. Use this" +
+      " endpoint to configure which roles are a" +
+      "utomatically assigned to new users when " +
+      "they join the environment. You can speci" +
+      "fy role names for both creator and membe" +
+      "r default roles. The system will validat" +
+      "e that the specified roles exist and upd" +
+      "ate the environment settings accordingly" +
+      ". Returns the updated default role objec" +
+      "ts including their complete role informa" +
+      "tion and permissions.J^\n\003200\022W\n\"Default " +
+      "roles updated successfully\0221\n/\032-.scaleki" +
+      "t.v1.roles.UpdateDefaultRolesResponse\202\265\030" +
+      "\002\030T\202\323\344\223\002;2\032/api/v1/roles:set_defaults:\001*" +
+      "Z\0322\025/api/v1/roles/default:\001*\022\270\003\n\036UpdateD" +
+      "efaultOrganizationRoles\0228.scalekit.v1.ro" +
+      "les.UpdateDefaultOrganizationRolesReques" +
+      "t\0329.scalekit.v1.roles.UpdateDefaultOrgan" +
+      "izationRolesResponse\"\240\002\222A\313\001\n\005Roles\022!Upda" +
+      "te default organization roles\0323Update th" +
+      "e default member role for the organizati" +
+      "onJj\n\003200\022c\n\"Default roles updated succe" +
+      "ssfully\022=\n;\0329.scalekit.v1.roles.UpdateDe" +
+      "faultOrganizationRolesResponse\202\265\030\002\030T\372\322\344\223" +
+      "\002\t\022\007PREVIEW\202\323\344\223\002621/api/v1/organizations" +
+      "/{org_id}/roles:set_defaults:\001*\022\352\002\n\022List" +
+      "DependentRoles\022,.scalekit.v1.roles.ListD" +
+      "ependentRolesRequest\032-.scalekit.v1.roles" +
+      ".ListDependentRolesResponse\"\366\001\222A\300\001\n\005Role" +
+      "s\022\024List dependent roles\032=Retrieves roles" +
+      " that directly extend the specified base" +
+      " role.Jb\n\003200\022[\n&Successfully retrieved " +
+      "dependent roles\0221\n/\032-.scalekit.v1.roles." +
+      "ListDependentRolesResponse\202\265\030\002\030t\202\323\344\223\002&\022$" +
+      "/api/v1/roles/{role_name}/dependents\022\267\006\n" +
+      "\016DeleteRoleBase\022(.scalekit.v1.roles.Dele" +
+      "teRoleBaseRequest\032\026.google.protobuf.Empt" +
+      "y\"\342\005\222A\262\005\n\005Roles\022$Delete role inheritance" +
+      " relationship\032\206\004Removes the base role in" +
+      "heritance relationship for a specified r" +
+      "ole, effectively eliminating all inherit" +
+      "ed permissions from the base role. Use t" +
+      "his endpoint when you want to break the " +
+      "hierarchical relationship between roles " +
+      "and remove inherited permissions. The ro" +
+      "le will retain only its directly assigne" +
+      "d permissions after this operation. This" +
+      " action cannot be undone, so ensure the " +
+      "role has sufficient direct permissions b" +
+      "efore removing inheritance. Returns no c" +
+      "ontent on successful removal of the base" +
+      " relationship.Jz\n\003200\022s\nqBase role inher" +
+      "itance relationship successfully removed" +
+      ". The role now has only its directly ass" +
+      "igned permissions.\202\265\030\002\030T\202\323\344\223\002 *\036/api/v1/" +
+      "roles/{role_name}/base\022\337\003\n\020CreatePermiss" +
+      "ion\022*.scalekit.v1.roles.CreatePermission" +
+      "Request\032+.scalekit.v1.roles.CreatePermis" +
+      "sionResponse\"\361\002\222A\300\002\n\013Permissions\022\027Create" +
+      " a new permission\032\274\001Creates a permission" +
+      " that represents a specific action users" +
+      " can perform. Provide a unique name (for" +
+      " example, \'read:documents\') and an optio" +
+      "nal description. Returns the created per" +
+      "mission.JY\n\003201\022R\n\037Permission created su" +
+      "ccessfully\022/\n-\032+.scalekit.v1.roles.Creat" +
+      "ePermissionResponse\202\265\030\002\030T\202\323\344\223\002!\"\023/api/v1" +
+      "/permissions:\npermission\022\365\002\n\rGetPermissi" +
+      "on\022\'.scalekit.v1.roles.GetPermissionRequ" +
+      "est\032(.scalekit.v1.roles.GetPermissionRes" +
+      "ponse\"\220\002\222A\331\001\n\013Permissions\022\023Retrieve perm" +
+      "ission\032SFetch detailed information about" +
+      " a specific permission using its unique " +
+      "identifier.J`\n\003200\022Y\n)Successfully retri" +
+      "eved permission details\022,\n*\032(.scalekit.v" +
+      "1.roles.GetPermissionResponse\202\265\030\002\030T\202\323\344\223\002" +
+      "\'\022%/api/v1/permissions/{permission_name}" +
+      "\022\307\003\n\020UpdatePermission\022*.scalekit.v1.role" +
+      "s.UpdatePermissionRequest\032+.scalekit.v1." +
+      "roles.UpdatePermissionResponse\"\331\002\222A\226\002\n\013P" +
+      "ermissions\022\035Update an existing permissio" +
+      "n\032\214\001Updates a permission\'s attributes su" +
+      "ch as description. The permission is ide" +
+      "ntified by its name in the path. Returns" +
+      " the updated permission.JY\n\003200\022R\n\037Permi" +
+      "ssion updated successfully\022/\n-\032+.scaleki" +
+      "t.v1.roles.UpdatePermissionResponse\202\265\030\002\030" +
+      "T\202\323\344\223\0023\032%/api/v1/permissions/{permission" +
+      "_name}:\npermission\022\260\003\n\017ListPermissions\022)" +
+      ".scalekit.v1.roles.ListPermissionsReques" +
+      "t\032*.scalekit.v1.roles.ListPermissionsRes" +
+      "ponse\"\305\002\222A\240\002\n\013Permissions\022\024List all perm" +
+      "issions\032\221\001Retrieves a paginated list of " +
+      "all permissions within the environment. " +
+      "Use the page_token from the response to " +
+      "access subsequent pages of results.Jg\n\0032" +
+      "00\022`\n.Successfully retrieved the list of" +
+      " permissions\022.\n,\032*.scalekit.v1.roles.Lis" +
+      "tPermissionsResponse\202\265\030\002\030T\202\323\344\223\002\025\022\023/api/v" +
+      "1/permissions\022\215\002\n\020DeletePermission\022*.sca" +
+      "lekit.v1.roles.DeletePermissionRequest\032\026" +
+      ".google.protobuf.Empty\"\264\001\222A~\n\013Permission" +
+      "s\022\023Delete a permission\032;Removes an exist" +
+      "ing permission using its unique identifi" +
+      "er.J\035\n\003200\022\026\n\024Deleted successfully\202\265\030\002\030T" +
+      "\202\323\344\223\002\'*%/api/v1/permissions/{permission_" +
+      "name}\022\246\003\n\023ListRolePermissions\022-.scalekit" +
+      ".v1.roles.ListRolePermissionsRequest\032..s" +
+      "calekit.v1.roles.ListRolePermissionsResp" +
+      "onse\"\257\002\222A\370\001\n\005Roles\022\025List role permission" +
+      "s\032rLists permissions directly assigned t" +
+      "o the specified role. Inherited permissi" +
+      "ons from base roles are not included.Jd\n" +
+      "\003200\022]\n\'Successfully retrieved role perm" +
+      "issions\0222\n0\032..scalekit.v1.roles.ListRole" +
+      "PermissionsResponse\202\265\030\002\030T\202\323\344\223\002\'\022%/api/v1" +
+      "/roles/{role_name}/permissions\022\223\003\n\024AddPe" +
+      "rmissionsToRole\022..scalekit.v1.roles.AddP" +
+      "ermissionsToRoleRequest\032/.scalekit.v1.ro" +
+      "les.AddPermissionsToRoleResponse\"\231\002\222A\337\001\n" +
+      "\005Roles\022\027Add permissions to role\032WAdds on" +
+      "e or more permissions to the specified r" +
+      "ole. Existing assignments are preserved." +
+      "Jd\n\003200\022]\n&Permissions added to role suc" +
+      "cessfully\0223\n1\032/.scalekit.v1.roles.AddPer" +
+      "missionsToRoleResponse\202\265\030\002\030T\202\323\344\223\002*\"%/api" +
+      "/v1/roles/{role_name}/permissions:\001*\022\264\002\n" +
+      "\030RemovePermissionFromRole\0222.scalekit.v1." +
+      "roles.RemovePermissionFromRoleRequest\032\026." +
+      "google.protobuf.Empty\"\313\001\222A\202\001\n\005Roles\022\033Rem" +
+      "ove permission from role\032(Remove a speci" +
+      "fic permission from a roleJ2\n\003200\022+\n)Per" +
+      "mission removed from role successfully\202\265" +
+      "\030\002\030T\202\323\344\223\0029*7/api/v1/roles/{role_name}/pe" +
+      "rmissions/{permission_name}\022\221\006\n\034ListEffe" +
+      "ctiveRolePermissions\0226.scalekit.v1.roles" +
+      ".ListEffectiveRolePermissionsRequest\0327.s" +
+      "calekit.v1.roles.ListEffectiveRolePermis" +
+      "sionsResponse\"\377\004\222A\304\004\n\005Roles\022#List effect" +
+      "ive permissions for role\032\227\003Retrieves all" +
+      " effective permissions assigned to a rol" +
+      "e, including permissions inherited from " +
+      "any base roles. Use this endpoint to vie" +
+      "w the complete set of permissions that a" +
+      "pply to a role, accounting for both dire" +
+      "ct assignments and inherited permissions" +
+      ". Provide the role name as a path parame" +
+      "ter. Returns a list of permission names " +
+      "representing the full set of effective p" +
+      "ermissions for the specified role.J|\n\00320" +
+      "0\022u\n6Returns the list of effective permi" +
+      "ssions for the role\022;\n9\0327.scalekit.v1.ro" +
+      "les.ListEffectiveRolePermissionsResponse" +
+      "\202\265\030\002\030T\202\323\344\223\002+\022)/api/v1/roles/{role_name}/" +
+      "permissions:all\032\342\002\222A\336\002\n\005Roles\022\324\002Role-bas" +
+      "ed access control (RBAC) for defining an" +
+      "d managing permissions in an environment" +
+      ". Create and update custom roles with ex" +
+      "plicit permissions, model role hierarchi" +
+      "es through inheritance, view dependent r" +
+      "oles, manage role-permission assignments" +
+      ", and list roles and permissions. Also p" +
+      "rovides a utility to count users assigne" +
+      "d to a role.B\310\001\n#com.scalekit.grpc.scale" +
+      "kit.v1.rolesB\nRolesProtoP\001Z/github.com/s",
+      "calekit-inc/scalekit/pkg/grpc/roles\242\002\003SV" +
+      "R\252\002\021Scalekit.V1.Roles\312\002\021Scalekit\\V1\\Role" +
+      "s\342\002\035Scalekit\\V1\\Roles\\GPBMetadata\352\002\023Scal" +
+      "ekit::V1::Rolesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -335,130 +1100,305 @@ public final class RolesProto {
     internal_static_scalekit_v1_roles_Role_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_Role_descriptor,
-        new java.lang.String[] { "Id", "Name", "DisplayName", "Description", "Default", });
+        new java.lang.String[] { "Id", "Name", "DisplayName", "Description", "DefaultCreator", "DefaultMember", "Extends", "Permissions", "DependentRolesCount", });
     internal_static_scalekit_v1_roles_CreateRole_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_scalekit_v1_roles_CreateRole_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_CreateRole_descriptor,
-        new java.lang.String[] { "Name", "DisplayName", "Description", "Default", });
-    internal_static_scalekit_v1_roles_CreateRoleRequest_descriptor =
+        new java.lang.String[] { "Name", "DisplayName", "Description", "Extends", "Permissions", });
+    internal_static_scalekit_v1_roles_CreateOrganizationRole_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_scalekit_v1_roles_CreateOrganizationRole_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_CreateOrganizationRole_descriptor,
+        new java.lang.String[] { "Name", "DisplayName", "Description", "Extends", "Permissions", });
+    internal_static_scalekit_v1_roles_CreateRoleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_scalekit_v1_roles_CreateRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_CreateRoleRequest_descriptor,
-        new java.lang.String[] { "EnvId", "Role", });
+        new java.lang.String[] { "Role", });
     internal_static_scalekit_v1_roles_CreateRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_scalekit_v1_roles_CreateRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_CreateRoleResponse_descriptor,
         new java.lang.String[] { "Role", });
     internal_static_scalekit_v1_roles_GetRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_scalekit_v1_roles_GetRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_GetRoleRequest_descriptor,
-        new java.lang.String[] { "EnvId", "Id", });
+        new java.lang.String[] { "RoleName", "Include", });
     internal_static_scalekit_v1_roles_GetRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_scalekit_v1_roles_GetRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_GetRoleResponse_descriptor,
         new java.lang.String[] { "Role", });
     internal_static_scalekit_v1_roles_ListRolesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_scalekit_v1_roles_ListRolesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_ListRolesRequest_descriptor,
-        new java.lang.String[] { "EnvId", });
+        new java.lang.String[] { "Include", });
     internal_static_scalekit_v1_roles_ListRolesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_scalekit_v1_roles_ListRolesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_ListRolesResponse_descriptor,
         new java.lang.String[] { "Roles", });
     internal_static_scalekit_v1_roles_UpdateRole_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_scalekit_v1_roles_UpdateRole_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_UpdateRole_descriptor,
-        new java.lang.String[] { "DisplayName", "Description", "Default", });
+        new java.lang.String[] { "DisplayName", "Description", "Extends", "Permissions", });
     internal_static_scalekit_v1_roles_UpdateRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_scalekit_v1_roles_UpdateRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_UpdateRoleRequest_descriptor,
-        new java.lang.String[] { "EnvId", "Id", "Role", });
+        new java.lang.String[] { "RoleName", "Role", });
     internal_static_scalekit_v1_roles_UpdateRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_scalekit_v1_roles_UpdateRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_UpdateRoleResponse_descriptor,
         new java.lang.String[] { "Role", });
     internal_static_scalekit_v1_roles_DeleteRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_scalekit_v1_roles_DeleteRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_DeleteRoleRequest_descriptor,
-        new java.lang.String[] { "EnvId", "Id", });
+        new java.lang.String[] { "RoleName", "ReassignRoleId", "ReassignRoleName", });
     internal_static_scalekit_v1_roles_CreateOrganizationRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_scalekit_v1_roles_CreateOrganizationRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_CreateOrganizationRoleRequest_descriptor,
         new java.lang.String[] { "OrgId", "Role", });
     internal_static_scalekit_v1_roles_CreateOrganizationRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_scalekit_v1_roles_CreateOrganizationRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_CreateOrganizationRoleResponse_descriptor,
         new java.lang.String[] { "Role", });
     internal_static_scalekit_v1_roles_GetOrganizationRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_scalekit_v1_roles_GetOrganizationRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_GetOrganizationRoleRequest_descriptor,
-        new java.lang.String[] { "OrgId", "Id", });
+        new java.lang.String[] { "OrgId", "RoleName", "Include", });
     internal_static_scalekit_v1_roles_GetOrganizationRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_scalekit_v1_roles_GetOrganizationRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_GetOrganizationRoleResponse_descriptor,
         new java.lang.String[] { "Role", });
     internal_static_scalekit_v1_roles_ListOrganizationRolesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_scalekit_v1_roles_ListOrganizationRolesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_ListOrganizationRolesRequest_descriptor,
-        new java.lang.String[] { "OrgId", });
+        new java.lang.String[] { "OrgId", "Include", });
     internal_static_scalekit_v1_roles_ListOrganizationRolesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_scalekit_v1_roles_ListOrganizationRolesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_ListOrganizationRolesResponse_descriptor,
         new java.lang.String[] { "Roles", });
     internal_static_scalekit_v1_roles_UpdateOrganizationRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_scalekit_v1_roles_UpdateOrganizationRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_UpdateOrganizationRoleRequest_descriptor,
-        new java.lang.String[] { "OrgId", "Id", "Role", });
+        new java.lang.String[] { "OrgId", "RoleName", "Role", });
     internal_static_scalekit_v1_roles_UpdateOrganizationRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_scalekit_v1_roles_UpdateOrganizationRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_UpdateOrganizationRoleResponse_descriptor,
         new java.lang.String[] { "Role", });
     internal_static_scalekit_v1_roles_DeleteOrganizationRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_scalekit_v1_roles_DeleteOrganizationRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_roles_DeleteOrganizationRoleRequest_descriptor,
-        new java.lang.String[] { "OrgId", "Id", });
+        new java.lang.String[] { "OrgId", "RoleName", "ReassignRoleName", });
+    internal_static_scalekit_v1_roles_GetRoleUsersCountRequest_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_scalekit_v1_roles_GetRoleUsersCountRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_GetRoleUsersCountRequest_descriptor,
+        new java.lang.String[] { "RoleName", });
+    internal_static_scalekit_v1_roles_GetRoleUsersCountResponse_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_scalekit_v1_roles_GetRoleUsersCountResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_GetRoleUsersCountResponse_descriptor,
+        new java.lang.String[] { "Count", });
+    internal_static_scalekit_v1_roles_UpdateDefaultRolesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_scalekit_v1_roles_UpdateDefaultRolesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_UpdateDefaultRolesRequest_descriptor,
+        new java.lang.String[] { "DefaultCreator", "DefaultMember", "DefaultCreatorRole", "DefaultMemberRole", });
+    internal_static_scalekit_v1_roles_UpdateDefaultOrganizationRolesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_scalekit_v1_roles_UpdateDefaultOrganizationRolesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_UpdateDefaultOrganizationRolesRequest_descriptor,
+        new java.lang.String[] { "OrgId", "DefaultMemberRole", });
+    internal_static_scalekit_v1_roles_UpdateDefaultRolesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_scalekit_v1_roles_UpdateDefaultRolesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_UpdateDefaultRolesResponse_descriptor,
+        new java.lang.String[] { "DefaultCreator", "DefaultMember", });
+    internal_static_scalekit_v1_roles_UpdateDefaultOrganizationRolesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_scalekit_v1_roles_UpdateDefaultOrganizationRolesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_UpdateDefaultOrganizationRolesResponse_descriptor,
+        new java.lang.String[] { "DefaultMember", });
+    internal_static_scalekit_v1_roles_UpdateDefaultRole_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_scalekit_v1_roles_UpdateDefaultRole_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_UpdateDefaultRole_descriptor,
+        new java.lang.String[] { "Id", "Name", });
+    internal_static_scalekit_v1_roles_Permission_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_scalekit_v1_roles_Permission_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_Permission_descriptor,
+        new java.lang.String[] { "Id", "Name", "Description", "CreateTime", "UpdateTime", });
+    internal_static_scalekit_v1_roles_CreatePermission_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_scalekit_v1_roles_CreatePermission_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_CreatePermission_descriptor,
+        new java.lang.String[] { "Name", "Description", });
+    internal_static_scalekit_v1_roles_CreatePermissionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_scalekit_v1_roles_CreatePermissionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_CreatePermissionRequest_descriptor,
+        new java.lang.String[] { "Permission", });
+    internal_static_scalekit_v1_roles_CreatePermissionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_scalekit_v1_roles_CreatePermissionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_CreatePermissionResponse_descriptor,
+        new java.lang.String[] { "Permission", });
+    internal_static_scalekit_v1_roles_GetPermissionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_scalekit_v1_roles_GetPermissionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_GetPermissionRequest_descriptor,
+        new java.lang.String[] { "PermissionName", });
+    internal_static_scalekit_v1_roles_GetPermissionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(34);
+    internal_static_scalekit_v1_roles_GetPermissionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_GetPermissionResponse_descriptor,
+        new java.lang.String[] { "Permission", });
+    internal_static_scalekit_v1_roles_UpdatePermissionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(35);
+    internal_static_scalekit_v1_roles_UpdatePermissionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_UpdatePermissionRequest_descriptor,
+        new java.lang.String[] { "PermissionName", "Permission", });
+    internal_static_scalekit_v1_roles_UpdatePermissionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(36);
+    internal_static_scalekit_v1_roles_UpdatePermissionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_UpdatePermissionResponse_descriptor,
+        new java.lang.String[] { "Permission", });
+    internal_static_scalekit_v1_roles_ListPermissionsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(37);
+    internal_static_scalekit_v1_roles_ListPermissionsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_ListPermissionsRequest_descriptor,
+        new java.lang.String[] { "PageToken", "PageSize", });
+    internal_static_scalekit_v1_roles_ListPermissionsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(38);
+    internal_static_scalekit_v1_roles_ListPermissionsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_ListPermissionsResponse_descriptor,
+        new java.lang.String[] { "Permissions", "PrevPageToken", "NextPageToken", "TotalSize", });
+    internal_static_scalekit_v1_roles_DeletePermissionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(39);
+    internal_static_scalekit_v1_roles_DeletePermissionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_DeletePermissionRequest_descriptor,
+        new java.lang.String[] { "PermissionName", });
+    internal_static_scalekit_v1_roles_ListRolePermissionsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(40);
+    internal_static_scalekit_v1_roles_ListRolePermissionsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_ListRolePermissionsRequest_descriptor,
+        new java.lang.String[] { "RoleName", });
+    internal_static_scalekit_v1_roles_ListRolePermissionsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(41);
+    internal_static_scalekit_v1_roles_ListRolePermissionsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_ListRolePermissionsResponse_descriptor,
+        new java.lang.String[] { "Permissions", });
+    internal_static_scalekit_v1_roles_AddPermissionsToRoleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(42);
+    internal_static_scalekit_v1_roles_AddPermissionsToRoleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_AddPermissionsToRoleRequest_descriptor,
+        new java.lang.String[] { "RoleName", "PermissionNames", });
+    internal_static_scalekit_v1_roles_AddPermissionsToRoleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(43);
+    internal_static_scalekit_v1_roles_AddPermissionsToRoleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_AddPermissionsToRoleResponse_descriptor,
+        new java.lang.String[] { "Permissions", });
+    internal_static_scalekit_v1_roles_RemovePermissionFromRoleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(44);
+    internal_static_scalekit_v1_roles_RemovePermissionFromRoleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_RemovePermissionFromRoleRequest_descriptor,
+        new java.lang.String[] { "RoleName", "PermissionName", });
+    internal_static_scalekit_v1_roles_ListEffectiveRolePermissionsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(45);
+    internal_static_scalekit_v1_roles_ListEffectiveRolePermissionsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_ListEffectiveRolePermissionsRequest_descriptor,
+        new java.lang.String[] { "RoleName", });
+    internal_static_scalekit_v1_roles_ListEffectiveRolePermissionsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(46);
+    internal_static_scalekit_v1_roles_ListEffectiveRolePermissionsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_ListEffectiveRolePermissionsResponse_descriptor,
+        new java.lang.String[] { "Permissions", });
+    internal_static_scalekit_v1_roles_ListDependentRolesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(47);
+    internal_static_scalekit_v1_roles_ListDependentRolesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_ListDependentRolesRequest_descriptor,
+        new java.lang.String[] { "RoleName", });
+    internal_static_scalekit_v1_roles_ListDependentRolesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(48);
+    internal_static_scalekit_v1_roles_ListDependentRolesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_ListDependentRolesResponse_descriptor,
+        new java.lang.String[] { "Roles", });
+    internal_static_scalekit_v1_roles_DeleteRoleBaseRequest_descriptor =
+      getDescriptor().getMessageTypes().get(49);
+    internal_static_scalekit_v1_roles_DeleteRoleBaseRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_roles_DeleteRoleBaseRequest_descriptor,
+        new java.lang.String[] { "RoleName", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);
+    registry.add(com.scalekit.grpc.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
     registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);

@@ -60,7 +60,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.scalekit.grpc.scalekit.v1.clients.Client> clients_;
   /**
    * <pre>
-   * List of client applications
+   * List of client resources
    * </pre>
    *
    * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -71,7 +71,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of client applications
+   * List of client resources
    * </pre>
    *
    * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -83,7 +83,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of client applications
+   * List of client resources
    * </pre>
    *
    * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -94,7 +94,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of client applications
+   * List of client resources
    * </pre>
    *
    * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -105,7 +105,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of client applications
+   * List of client resources
    * </pre>
    *
    * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -571,7 +571,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -585,7 +585,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -613,7 +613,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -634,7 +634,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -652,7 +652,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -672,7 +672,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -693,7 +693,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -711,7 +711,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -729,7 +729,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -748,7 +748,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -765,7 +765,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -782,7 +782,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -793,7 +793,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -807,7 +807,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -822,7 +822,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -833,7 +833,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -845,7 +845,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of client applications
+     * List of client resources
      * </pre>
      *
      * <code>repeated .scalekit.v1.clients.Client clients = 2 [json_name = "clients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>

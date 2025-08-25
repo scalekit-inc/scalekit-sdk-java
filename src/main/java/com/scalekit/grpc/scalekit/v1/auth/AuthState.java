@@ -10,40 +10,128 @@ package com.scalekit.grpc.scalekit.v1.auth;
 public enum AuthState
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>AUTHENTICATION = 0;</code>
+   * <code>AUTH_STATE_UNSPECIFIED = 0;</code>
    */
-  AUTHENTICATION(0),
+  AUTH_STATE_UNSPECIFIED(0),
   /**
-   * <code>ORGANIZATION_SWITCHER = 1;</code>
+   * <code>AUTHENTICATION_IN_PROGRESS = 1;</code>
    */
-  ORGANIZATION_SWITCHER(1),
+  AUTHENTICATION_IN_PROGRESS(1),
   /**
-   * <code>ORGANIZATION_SWITCHER_SIGNUP = 2;</code>
+   * <code>ORGANIZATION_SWITCHER = 2;</code>
    */
-  ORGANIZATION_SWITCHER_SIGNUP(2),
+  ORGANIZATION_SWITCHER(2),
   /**
-   * <code>ORGANIZATION_SIGNUP = 3;</code>
+   * <code>ORGANIZATION_SELECTED = 3;</code>
    */
-  ORGANIZATION_SIGNUP(3),
+  ORGANIZATION_SELECTED(3),
+  /**
+   * <code>ORGANIZATION_SIGNUP = 4;</code>
+   */
+  ORGANIZATION_SIGNUP(4),
+  /**
+   * <code>ORGANIZATION_SWITCHER_SIGNUP = 5;</code>
+   */
+  ORGANIZATION_SWITCHER_SIGNUP(5),
+  /**
+   * <code>OTP_VERIFICATION_PENDING = 6;</code>
+   */
+  OTP_VERIFICATION_PENDING(6),
+  /**
+   * <code>MAGIC_LINK_SENT = 7;</code>
+   */
+  MAGIC_LINK_SENT(7),
+  /**
+   * <code>LINK_SENT_OTP_VERIFICATION_PENDING = 8;</code>
+   */
+  LINK_SENT_OTP_VERIFICATION_PENDING(8),
+  /**
+   * <code>OTP_VERIFIED = 9;</code>
+   */
+  OTP_VERIFIED(9),
+  /**
+   * <code>LINK_VERIFIED = 10;</code>
+   */
+  LINK_VERIFIED(10),
+  /**
+   * <code>SSO_AUTHENTICATED = 11;</code>
+   */
+  SSO_AUTHENTICATED(11),
+  /**
+   * <code>ORG_USER_CREATED = 12;</code>
+   */
+  ORG_USER_CREATED(12),
+  /**
+   * <code>AUTHENTICATION_COMPLETED = 13;</code>
+   */
+  AUTHENTICATION_COMPLETED(13),
+  /**
+   * <code>AUTHENTICATION_FAILED = 14;</code>
+   */
+  AUTHENTICATION_FAILED(14),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>AUTHENTICATION = 0;</code>
+   * <code>AUTH_STATE_UNSPECIFIED = 0;</code>
    */
-  public static final int AUTHENTICATION_VALUE = 0;
+  public static final int AUTH_STATE_UNSPECIFIED_VALUE = 0;
   /**
-   * <code>ORGANIZATION_SWITCHER = 1;</code>
+   * <code>AUTHENTICATION_IN_PROGRESS = 1;</code>
    */
-  public static final int ORGANIZATION_SWITCHER_VALUE = 1;
+  public static final int AUTHENTICATION_IN_PROGRESS_VALUE = 1;
   /**
-   * <code>ORGANIZATION_SWITCHER_SIGNUP = 2;</code>
+   * <code>ORGANIZATION_SWITCHER = 2;</code>
    */
-  public static final int ORGANIZATION_SWITCHER_SIGNUP_VALUE = 2;
+  public static final int ORGANIZATION_SWITCHER_VALUE = 2;
   /**
-   * <code>ORGANIZATION_SIGNUP = 3;</code>
+   * <code>ORGANIZATION_SELECTED = 3;</code>
    */
-  public static final int ORGANIZATION_SIGNUP_VALUE = 3;
+  public static final int ORGANIZATION_SELECTED_VALUE = 3;
+  /**
+   * <code>ORGANIZATION_SIGNUP = 4;</code>
+   */
+  public static final int ORGANIZATION_SIGNUP_VALUE = 4;
+  /**
+   * <code>ORGANIZATION_SWITCHER_SIGNUP = 5;</code>
+   */
+  public static final int ORGANIZATION_SWITCHER_SIGNUP_VALUE = 5;
+  /**
+   * <code>OTP_VERIFICATION_PENDING = 6;</code>
+   */
+  public static final int OTP_VERIFICATION_PENDING_VALUE = 6;
+  /**
+   * <code>MAGIC_LINK_SENT = 7;</code>
+   */
+  public static final int MAGIC_LINK_SENT_VALUE = 7;
+  /**
+   * <code>LINK_SENT_OTP_VERIFICATION_PENDING = 8;</code>
+   */
+  public static final int LINK_SENT_OTP_VERIFICATION_PENDING_VALUE = 8;
+  /**
+   * <code>OTP_VERIFIED = 9;</code>
+   */
+  public static final int OTP_VERIFIED_VALUE = 9;
+  /**
+   * <code>LINK_VERIFIED = 10;</code>
+   */
+  public static final int LINK_VERIFIED_VALUE = 10;
+  /**
+   * <code>SSO_AUTHENTICATED = 11;</code>
+   */
+  public static final int SSO_AUTHENTICATED_VALUE = 11;
+  /**
+   * <code>ORG_USER_CREATED = 12;</code>
+   */
+  public static final int ORG_USER_CREATED_VALUE = 12;
+  /**
+   * <code>AUTHENTICATION_COMPLETED = 13;</code>
+   */
+  public static final int AUTHENTICATION_COMPLETED_VALUE = 13;
+  /**
+   * <code>AUTHENTICATION_FAILED = 14;</code>
+   */
+  public static final int AUTHENTICATION_FAILED_VALUE = 14;
 
 
   public final int getNumber() {
@@ -70,10 +158,21 @@ public enum AuthState
    */
   public static AuthState forNumber(int value) {
     switch (value) {
-      case 0: return AUTHENTICATION;
-      case 1: return ORGANIZATION_SWITCHER;
-      case 2: return ORGANIZATION_SWITCHER_SIGNUP;
-      case 3: return ORGANIZATION_SIGNUP;
+      case 0: return AUTH_STATE_UNSPECIFIED;
+      case 1: return AUTHENTICATION_IN_PROGRESS;
+      case 2: return ORGANIZATION_SWITCHER;
+      case 3: return ORGANIZATION_SELECTED;
+      case 4: return ORGANIZATION_SIGNUP;
+      case 5: return ORGANIZATION_SWITCHER_SIGNUP;
+      case 6: return OTP_VERIFICATION_PENDING;
+      case 7: return MAGIC_LINK_SENT;
+      case 8: return LINK_SENT_OTP_VERIFICATION_PENDING;
+      case 9: return OTP_VERIFIED;
+      case 10: return LINK_VERIFIED;
+      case 11: return SSO_AUTHENTICATED;
+      case 12: return ORG_USER_CREATED;
+      case 13: return AUTHENTICATION_COMPLETED;
+      case 14: return AUTHENTICATION_FAILED;
       default: return null;
     }
   }

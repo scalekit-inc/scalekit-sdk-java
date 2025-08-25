@@ -19,6 +19,9 @@ private static final long serialVersionUID = 0L;
   private UpdateRole() {
     displayName_ = "";
     description_ = "";
+    extends_ = "";
+    permissions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -136,23 +139,88 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DEFAULT_FIELD_NUMBER = 3;
-  private boolean default_ = false;
+  public static final int EXTENDS_FIELD_NUMBER = 6;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object extends_ = "";
   /**
-   * <code>optional bool default = 3 [json_name = "default", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the default field is set.
+   * <code>optional string extends = 6 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the extends field is set.
    */
   @java.lang.Override
-  public boolean hasDefault() {
+  public boolean hasExtends() {
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>optional bool default = 3 [json_name = "default", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The default.
+   * <code>optional string extends = 6 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The extends.
    */
   @java.lang.Override
-  public boolean getDefault() {
-    return default_;
+  public java.lang.String getExtends() {
+    java.lang.Object ref = extends_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      extends_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string extends = 6 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for extends.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getExtendsBytes() {
+    java.lang.Object ref = extends_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      extends_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PERMISSIONS_FIELD_NUMBER = 7;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList permissions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string permissions = 7 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the permissions.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getPermissionsList() {
+    return permissions_;
+  }
+  /**
+   * <code>repeated string permissions = 7 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of permissions.
+   */
+  public int getPermissionsCount() {
+    return permissions_.size();
+  }
+  /**
+   * <code>repeated string permissions = 7 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The permissions at the given index.
+   */
+  public java.lang.String getPermissions(int index) {
+    return permissions_.get(index);
+  }
+  /**
+   * <code>repeated string permissions = 7 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the permissions at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getPermissionsBytes(int index) {
+    return permissions_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -176,7 +244,10 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeBool(3, default_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, extends_);
+    }
+    for (int i = 0; i < permissions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, permissions_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -194,8 +265,15 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, default_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, extends_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < permissions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(permissions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getPermissionsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -222,11 +300,13 @@ private static final long serialVersionUID = 0L;
       if (!getDescription()
           .equals(other.getDescription())) return false;
     }
-    if (hasDefault() != other.hasDefault()) return false;
-    if (hasDefault()) {
-      if (getDefault()
-          != other.getDefault()) return false;
+    if (hasExtends() != other.hasExtends()) return false;
+    if (hasExtends()) {
+      if (!getExtends()
+          .equals(other.getExtends())) return false;
     }
+    if (!getPermissionsList()
+        .equals(other.getPermissionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -246,10 +326,13 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
     }
-    if (hasDefault()) {
-      hash = (37 * hash) + DEFAULT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getDefault());
+    if (hasExtends()) {
+      hash = (37 * hash) + EXTENDS_FIELD_NUMBER;
+      hash = (53 * hash) + getExtends().hashCode();
+    }
+    if (getPermissionsCount() > 0) {
+      hash = (37 * hash) + PERMISSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getPermissionsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -384,7 +467,9 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       displayName_ = "";
       description_ = "";
-      default_ = false;
+      extends_ = "";
+      permissions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -428,8 +513,12 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.default_ = default_;
+        result.extends_ = extends_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        permissions_.makeImmutable();
+        result.permissions_ = permissions_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -488,8 +577,20 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (other.hasDefault()) {
-        setDefault(other.getDefault());
+      if (other.hasExtends()) {
+        extends_ = other.extends_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.permissions_.isEmpty()) {
+        if (permissions_.isEmpty()) {
+          permissions_ = other.permissions_;
+          bitField0_ |= 0x00000008;
+        } else {
+          ensurePermissionsIsMutable();
+          permissions_.addAll(other.permissions_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -527,11 +628,17 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 18
-            case 24: {
-              default_ = input.readBool();
+            case 50: {
+              extends_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
-            } // case 24
+            } // case 50
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensurePermissionsIsMutable();
+              permissions_.add(s);
+              break;
+            } // case 58
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -707,42 +814,192 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean default_ ;
+    private java.lang.Object extends_ = "";
     /**
-     * <code>optional bool default = 3 [json_name = "default", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the default field is set.
+     * <code>optional string extends = 6 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the extends field is set.
      */
-    @java.lang.Override
-    public boolean hasDefault() {
+    public boolean hasExtends() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional bool default = 3 [json_name = "default", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The default.
+     * <code>optional string extends = 6 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The extends.
      */
-    @java.lang.Override
-    public boolean getDefault() {
-      return default_;
+    public java.lang.String getExtends() {
+      java.lang.Object ref = extends_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        extends_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>optional bool default = 3 [json_name = "default", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The default to set.
+     * <code>optional string extends = 6 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for extends.
+     */
+    public com.google.protobuf.ByteString
+        getExtendsBytes() {
+      java.lang.Object ref = extends_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        extends_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string extends = 6 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The extends to set.
      * @return This builder for chaining.
      */
-    public Builder setDefault(boolean value) {
-
-      default_ = value;
+    public Builder setExtends(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      extends_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>optional bool default = 3 [json_name = "default", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string extends = 6 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearDefault() {
+    public Builder clearExtends() {
+      extends_ = getDefaultInstance().getExtends();
       bitField0_ = (bitField0_ & ~0x00000004);
-      default_ = false;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string extends = 6 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for extends to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExtendsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      extends_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList permissions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensurePermissionsIsMutable() {
+      if (!permissions_.isModifiable()) {
+        permissions_ = new com.google.protobuf.LazyStringArrayList(permissions_);
+      }
+      bitField0_ |= 0x00000008;
+    }
+    /**
+     * <code>repeated string permissions = 7 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the permissions.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getPermissionsList() {
+      permissions_.makeImmutable();
+      return permissions_;
+    }
+    /**
+     * <code>repeated string permissions = 7 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of permissions.
+     */
+    public int getPermissionsCount() {
+      return permissions_.size();
+    }
+    /**
+     * <code>repeated string permissions = 7 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The permissions at the given index.
+     */
+    public java.lang.String getPermissions(int index) {
+      return permissions_.get(index);
+    }
+    /**
+     * <code>repeated string permissions = 7 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the permissions at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getPermissionsBytes(int index) {
+      return permissions_.getByteString(index);
+    }
+    /**
+     * <code>repeated string permissions = 7 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The permissions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPermissions(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensurePermissionsIsMutable();
+      permissions_.set(index, value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string permissions = 7 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The permissions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPermissions(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensurePermissionsIsMutable();
+      permissions_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string permissions = 7 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The permissions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllPermissions(
+        java.lang.Iterable<java.lang.String> values) {
+      ensurePermissionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, permissions_);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string permissions = 7 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPermissions() {
+      permissions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string permissions = 7 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the permissions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPermissionsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensurePermissionsIsMutable();
+      permissions_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

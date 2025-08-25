@@ -95,19 +95,19 @@ public interface UserManagementOrBuilder extends
   com.google.protobuf.Int32ValueOrBuilder getMaxUsersLimitOrBuilder();
 
   /**
-   * <code>.google.protobuf.Int32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
+   * <code>.google.protobuf.UInt32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
    * @return Whether the invitationExpiry field is set.
    */
   boolean hasInvitationExpiry();
   /**
-   * <code>.google.protobuf.Int32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
+   * <code>.google.protobuf.UInt32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
    * @return The invitationExpiry.
    */
-  com.google.protobuf.Int32Value getInvitationExpiry();
+  com.google.protobuf.UInt32Value getInvitationExpiry();
   /**
-   * <code>.google.protobuf.Int32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
+   * <code>.google.protobuf.UInt32Value invitation_expiry = 7 [json_name = "invitationExpiry", (.buf.validate.field) = { ... }</code>
    */
-  com.google.protobuf.Int32ValueOrBuilder getInvitationExpiryOrBuilder();
+  com.google.protobuf.UInt32ValueOrBuilder getInvitationExpiryOrBuilder();
 
   /**
    * <code>.google.protobuf.StringValue organization_meta_name = 8 [json_name = "organizationMetaName", (.buf.validate.field) = { ... }</code>

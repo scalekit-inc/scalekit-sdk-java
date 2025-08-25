@@ -9,29 +9,17 @@ public interface CreateRoleRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-   * @return The envId.
-   */
-  java.lang.String getEnvId();
-  /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for envId.
-   */
-  com.google.protobuf.ByteString
-      getEnvIdBytes();
-
-  /**
-   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the role field is set.
    */
   boolean hasRole();
   /**
-   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The role.
    */
   com.scalekit.grpc.scalekit.v1.roles.CreateRole getRole();
   /**
-   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.roles.CreateRoleOrBuilder getRoleOrBuilder();
 }

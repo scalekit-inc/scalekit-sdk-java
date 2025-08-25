@@ -166,21 +166,48 @@ java.lang.String defaultValue);
   com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfigOrBuilder getPasswordlessConfigOrBuilder();
 
   /**
-   * <code>optional string key_id = 19 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 23 [json_name = "staticConfig"];</code>
+   * @return Whether the staticConfig field is set.
+   */
+  boolean hasStaticConfig();
+  /**
+   * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 23 [json_name = "staticConfig"];</code>
+   * @return The staticConfig.
+   */
+  com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig getStaticConfig();
+  /**
+   * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 23 [json_name = "staticConfig"];</code>
+   */
+  com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfigOrBuilder getStaticConfigOrBuilder();
+
+  /**
+   * <code>optional string key_id = 22 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
    * @return Whether the keyId field is set.
    */
   boolean hasKeyId();
   /**
-   * <code>optional string key_id = 19 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
+   * <code>optional string key_id = 22 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
    * @return The keyId.
    */
   java.lang.String getKeyId();
   /**
-   * <code>optional string key_id = 19 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
+   * <code>optional string key_id = 22 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
    * @return The bytes for keyId.
    */
   com.google.protobuf.ByteString
       getKeyIdBytes();
+
+  /**
+   * <code>string provider_key = 21 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The providerKey.
+   */
+  java.lang.String getProviderKey();
+  /**
+   * <code>string provider_key = 21 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for providerKey.
+   */
+  com.google.protobuf.ByteString
+      getProviderKeyBytes();
 
   com.scalekit.grpc.scalekit.v1.connections.UpdateConnection.SettingsCase getSettingsCase();
 }

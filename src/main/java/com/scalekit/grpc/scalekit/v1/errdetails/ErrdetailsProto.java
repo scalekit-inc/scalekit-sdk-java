@@ -60,6 +60,11 @@ public final class ErrdetailsProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_errdetails_LocalizedMessageInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_errdetails_ToolErrorInfo_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_errdetails_ToolErrorInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -71,7 +76,7 @@ public final class ErrdetailsProto {
     java.lang.String[] descriptorData = {
       "\n\'scalekit/v1/errdetails/errdetails.prot" +
       "o\022\026scalekit.v1.errdetails\032\036google/protob" +
-      "uf/duration.proto\"\226\005\n\tErrorInfo\022\035\n\nerror" +
+      "uf/duration.proto\"\376\005\n\tErrorInfo\022\035\n\nerror" +
       "_code\030\001 \001(\tR\terrorCode\022E\n\ndebug_info\030\002 \001" +
       "(\0132!.scalekit.v1.errdetails.DebugInfoH\000R" +
       "\tdebugInfo\210\001\001\022B\n\thelp_info\030\003 \001(\0132 .scale" +
@@ -85,34 +90,40 @@ public final class ErrdetailsProto {
       "tInfoH\004R\013requestInfo\210\001\001\022d\n\025validation_er" +
       "ror_info\030\010 \001(\0132+.scalekit.v1.errdetails." +
       "ValidationErrorInfoH\005R\023validationErrorIn" +
-      "fo\210\001\001B\r\n\013_debug_infoB\014\n\n_help_infoB\031\n\027_l" +
-      "ocalized_message_infoB\020\n\016_resource_infoB" +
-      "\017\n\r_request_infoB\030\n\026_validation_error_in" +
-      "fo\"H\n\tDebugInfo\022#\n\rstack_entries\030\001 \003(\tR\014" +
-      "stackEntries\022\026\n\006detail\030\002 \001(\tR\006detail\"\346\001\n" +
-      "\023ValidationErrorInfo\022e\n\020field_violations" +
-      "\030\001 \003(\0132:.scalekit.v1.errdetails.Validati" +
-      "onErrorInfo.FieldViolationR\017fieldViolati" +
-      "ons\032h\n\016FieldViolation\022\024\n\005field\030\001 \001(\tR\005fi" +
-      "eld\022 \n\013description\030\002 \001(\tR\013description\022\036\n" +
-      "\nconstraint\030\003 \001(\tR\nconstraint\"O\n\013Request" +
-      "Info\022\035\n\nrequest_id\030\001 \001(\tR\trequestId\022!\n\014s" +
-      "erving_data\030\002 \001(\tR\013servingData\"\220\001\n\014Resou" +
-      "rceInfo\022#\n\rresource_type\030\001 \001(\tR\014resource" +
-      "Type\022#\n\rresource_name\030\002 \001(\tR\014resourceNam" +
-      "e\022\024\n\005owner\030\003 \001(\tR\005owner\022 \n\013description\030\004" +
-      " \001(\tR\013description\"\203\001\n\010HelpInfo\022;\n\005links\030" +
-      "\001 \003(\0132%.scalekit.v1.errdetails.HelpInfo." +
-      "LinkR\005links\032:\n\004Link\022 \n\013description\030\001 \001(\t" +
-      "R\013description\022\020\n\003url\030\002 \001(\tR\003url\"H\n\024Local" +
-      "izedMessageInfo\022\026\n\006locale\030\001 \001(\tR\006locale\022" +
-      "\030\n\007message\030\002 \001(\tR\007messageB\353\001\n(com.scalek" +
-      "it.grpc.scalekit.v1.errdetailsB\017Errdetai" +
-      "lsProtoP\001Z4github.com/scalekit-inc/scale" +
-      "kit/pkg/grpc/errdetails\242\002\003SVE\252\002\026Scalekit" +
-      ".V1.Errdetails\312\002\026Scalekit\\V1\\Errdetails\342" +
-      "\002\"Scalekit\\V1\\Errdetails\\GPBMetadata\352\002\030S" +
-      "calekit::V1::Errdetailsb\006proto3"
+      "fo\210\001\001\022R\n\017tool_error_info\030\t \001(\0132%.scaleki" +
+      "t.v1.errdetails.ToolErrorInfoH\006R\rtoolErr" +
+      "orInfo\210\001\001B\r\n\013_debug_infoB\014\n\n_help_infoB\031" +
+      "\n\027_localized_message_infoB\020\n\016_resource_i" +
+      "nfoB\017\n\r_request_infoB\030\n\026_validation_erro" +
+      "r_infoB\022\n\020_tool_error_info\"H\n\tDebugInfo\022" +
+      "#\n\rstack_entries\030\001 \003(\tR\014stackEntries\022\026\n\006" +
+      "detail\030\002 \001(\tR\006detail\"\346\001\n\023ValidationError" +
+      "Info\022e\n\020field_violations\030\001 \003(\0132:.scaleki" +
+      "t.v1.errdetails.ValidationErrorInfo.Fiel" +
+      "dViolationR\017fieldViolations\032h\n\016FieldViol" +
+      "ation\022\024\n\005field\030\001 \001(\tR\005field\022 \n\013descripti" +
+      "on\030\002 \001(\tR\013description\022\036\n\nconstraint\030\003 \001(" +
+      "\tR\nconstraint\"O\n\013RequestInfo\022\035\n\nrequest_" +
+      "id\030\001 \001(\tR\trequestId\022!\n\014serving_data\030\002 \001(" +
+      "\tR\013servingData\"\220\001\n\014ResourceInfo\022#\n\rresou" +
+      "rce_type\030\001 \001(\tR\014resourceType\022#\n\rresource" +
+      "_name\030\002 \001(\tR\014resourceName\022\024\n\005owner\030\003 \001(\t" +
+      "R\005owner\022 \n\013description\030\004 \001(\tR\013descriptio" +
+      "n\"\203\001\n\010HelpInfo\022;\n\005links\030\001 \003(\0132%.scalekit" +
+      ".v1.errdetails.HelpInfo.LinkR\005links\032:\n\004L" +
+      "ink\022 \n\013description\030\001 \001(\tR\013description\022\020\n" +
+      "\003url\030\002 \001(\tR\003url\"H\n\024LocalizedMessageInfo\022" +
+      "\026\n\006locale\030\001 \001(\tR\006locale\022\030\n\007message\030\002 \001(\t" +
+      "R\007message\"\210\001\n\rToolErrorInfo\022!\n\014execution" +
+      "_id\030\001 \001(\tR\013executionId\022,\n\022tool_error_mes" +
+      "sage\030\002 \001(\tR\020toolErrorMessage\022&\n\017tool_err" +
+      "or_code\030\003 \001(\tR\rtoolErrorCodeB\353\001\n(com.sca" +
+      "lekit.grpc.scalekit.v1.errdetailsB\017Errde" +
+      "tailsProtoP\001Z4github.com/scalekit-inc/sc" +
+      "alekit/pkg/grpc/errdetails\242\002\003SVE\252\002\026Scale" +
+      "kit.V1.Errdetails\312\002\026Scalekit\\V1\\Errdetai" +
+      "ls\342\002\"Scalekit\\V1\\Errdetails\\GPBMetadata\352" +
+      "\002\030Scalekit::V1::Errdetailsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -124,7 +135,7 @@ public final class ErrdetailsProto {
     internal_static_scalekit_v1_errdetails_ErrorInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_errdetails_ErrorInfo_descriptor,
-        new java.lang.String[] { "ErrorCode", "DebugInfo", "HelpInfo", "LocalizedMessageInfo", "ResourceInfo", "RequestInfo", "ValidationErrorInfo", });
+        new java.lang.String[] { "ErrorCode", "DebugInfo", "HelpInfo", "LocalizedMessageInfo", "ResourceInfo", "RequestInfo", "ValidationErrorInfo", "ToolErrorInfo", });
     internal_static_scalekit_v1_errdetails_DebugInfo_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_scalekit_v1_errdetails_DebugInfo_fieldAccessorTable = new
@@ -173,6 +184,12 @@ public final class ErrdetailsProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_errdetails_LocalizedMessageInfo_descriptor,
         new java.lang.String[] { "Locale", "Message", });
+    internal_static_scalekit_v1_errdetails_ToolErrorInfo_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_scalekit_v1_errdetails_ToolErrorInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_errdetails_ToolErrorInfo_descriptor,
+        new java.lang.String[] { "ExecutionId", "ToolErrorMessage", "ToolErrorCode", });
     com.google.protobuf.DurationProto.getDescriptor();
   }
 

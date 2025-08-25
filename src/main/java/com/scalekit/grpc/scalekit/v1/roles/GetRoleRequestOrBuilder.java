@@ -9,26 +9,31 @@ public interface GetRoleRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-   * @return The envId.
+   * <code>string role_name = 2 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The roleName.
    */
-  java.lang.String getEnvId();
+  java.lang.String getRoleName();
   /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for envId.
+   * <code>string role_name = 2 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for roleName.
    */
   com.google.protobuf.ByteString
-      getEnvIdBytes();
+      getRoleNameBytes();
 
   /**
-   * <code>string id = 2 [json_name = "id", (.buf.validate.field) = { ... }</code>
-   * @return The id.
+   * <code>optional string include = 3 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the include field is set.
    */
-  java.lang.String getId();
+  boolean hasInclude();
   /**
-   * <code>string id = 2 [json_name = "id", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for id.
+   * <code>optional string include = 3 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The include.
+   */
+  java.lang.String getInclude();
+  /**
+   * <code>optional string include = 3 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for include.
    */
   com.google.protobuf.ByteString
-      getIdBytes();
+      getIncludeBytes();
 }

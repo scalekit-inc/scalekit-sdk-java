@@ -17,7 +17,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreateRoleRequest() {
-    envId_ = "";
   }
 
   @java.lang.Override
@@ -41,49 +40,10 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
-  public static final int ENV_ID_FIELD_NUMBER = 1;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object envId_ = "";
-  /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-   * @return The envId.
-   */
-  @java.lang.Override
-  public java.lang.String getEnvId() {
-    java.lang.Object ref = envId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      envId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-   * @return The bytes for envId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getEnvIdBytes() {
-    java.lang.Object ref = envId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      envId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int ROLE_FIELD_NUMBER = 2;
   private com.scalekit.grpc.scalekit.v1.roles.CreateRole role_;
   /**
-   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the role field is set.
    */
   @java.lang.Override
@@ -91,7 +51,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The role.
    */
   @java.lang.Override
@@ -99,7 +59,7 @@ private static final long serialVersionUID = 0L;
     return role_ == null ? com.scalekit.grpc.scalekit.v1.roles.CreateRole.getDefaultInstance() : role_;
   }
   /**
-   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.roles.CreateRoleOrBuilder getRoleOrBuilder() {
@@ -120,9 +80,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(envId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, envId_);
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getRole());
     }
@@ -135,9 +92,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(envId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, envId_);
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getRole());
@@ -157,8 +111,6 @@ private static final long serialVersionUID = 0L;
     }
     com.scalekit.grpc.scalekit.v1.roles.CreateRoleRequest other = (com.scalekit.grpc.scalekit.v1.roles.CreateRoleRequest) obj;
 
-    if (!getEnvId()
-        .equals(other.getEnvId())) return false;
     if (hasRole() != other.hasRole()) return false;
     if (hasRole()) {
       if (!getRole()
@@ -175,8 +127,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ENV_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getEnvId().hashCode();
     if (hasRole()) {
       hash = (37 * hash) + ROLE_FIELD_NUMBER;
       hash = (53 * hash) + getRole().hashCode();
@@ -318,7 +268,6 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      envId_ = "";
       role_ = null;
       if (roleBuilder_ != null) {
         roleBuilder_.dispose();
@@ -357,11 +306,8 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.roles.CreateRoleRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.envId_ = envId_;
-      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000001) != 0)) {
         result.role_ = roleBuilder_ == null
             ? role_
             : roleBuilder_.build();
@@ -414,11 +360,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.roles.CreateRoleRequest other) {
       if (other == com.scalekit.grpc.scalekit.v1.roles.CreateRoleRequest.getDefaultInstance()) return this;
-      if (!other.getEnvId().isEmpty()) {
-        envId_ = other.envId_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
       if (other.hasRole()) {
         mergeRole(other.getRole());
       }
@@ -448,16 +389,11 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              envId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 10
             case 18: {
               input.readMessage(
                   getRoleFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000001;
               break;
             } // case 18
             default: {
@@ -477,90 +413,18 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object envId_ = "";
-    /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-     * @return The envId.
-     */
-    public java.lang.String getEnvId() {
-      java.lang.Object ref = envId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        envId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-     * @return The bytes for envId.
-     */
-    public com.google.protobuf.ByteString
-        getEnvIdBytes() {
-      java.lang.Object ref = envId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        envId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-     * @param value The envId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEnvId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      envId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearEnvId() {
-      envId_ = getDefaultInstance().getEnvId();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string env_id = 1 [json_name = "envId", (.buf.validate.field) = { ... }</code>
-     * @param value The bytes for envId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEnvIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      envId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
     private com.scalekit.grpc.scalekit.v1.roles.CreateRole role_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.roles.CreateRole, com.scalekit.grpc.scalekit.v1.roles.CreateRole.Builder, com.scalekit.grpc.scalekit.v1.roles.CreateRoleOrBuilder> roleBuilder_;
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the role field is set.
      */
     public boolean hasRole() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The role.
      */
     public com.scalekit.grpc.scalekit.v1.roles.CreateRole getRole() {
@@ -571,7 +435,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setRole(com.scalekit.grpc.scalekit.v1.roles.CreateRole value) {
       if (roleBuilder_ == null) {
@@ -582,12 +446,12 @@ private static final long serialVersionUID = 0L;
       } else {
         roleBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setRole(
         com.scalekit.grpc.scalekit.v1.roles.CreateRole.Builder builderForValue) {
@@ -596,16 +460,16 @@ private static final long serialVersionUID = 0L;
       } else {
         roleBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeRole(com.scalekit.grpc.scalekit.v1.roles.CreateRole value) {
       if (roleBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0) &&
+        if (((bitField0_ & 0x00000001) != 0) &&
           role_ != null &&
           role_ != com.scalekit.grpc.scalekit.v1.roles.CreateRole.getDefaultInstance()) {
           getRoleBuilder().mergeFrom(value);
@@ -616,16 +480,16 @@ private static final long serialVersionUID = 0L;
         roleBuilder_.mergeFrom(value);
       }
       if (role_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearRole() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       role_ = null;
       if (roleBuilder_ != null) {
         roleBuilder_.dispose();
@@ -635,15 +499,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.roles.CreateRole.Builder getRoleBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRoleFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.roles.CreateRoleOrBuilder getRoleOrBuilder() {
       if (roleBuilder_ != null) {
@@ -654,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.buf.validate.field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.roles.CreateRole, com.scalekit.grpc.scalekit.v1.roles.CreateRole.Builder, com.scalekit.grpc.scalekit.v1.roles.CreateRoleOrBuilder> 

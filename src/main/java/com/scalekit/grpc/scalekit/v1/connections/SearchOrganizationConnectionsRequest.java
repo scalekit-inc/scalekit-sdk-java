@@ -18,7 +18,7 @@ private static final long serialVersionUID = 0L;
   }
   private SearchOrganizationConnectionsRequest() {
     query_ = "";
-    provider_ = 0;
+    provider_ = "";
     status_ = 0;
     connectionType_ = 0;
     pageToken_ = "";
@@ -93,28 +93,50 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PROVIDER_FIELD_NUMBER = 2;
-  private int provider_ = 0;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object provider_ = "";
   /**
-   * <code>optional .scalekit.v1.connections.ConnectionProvider provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the provider field is set.
    */
-  @java.lang.Override public boolean hasProvider() {
+  @java.lang.Override
+  public boolean hasProvider() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>optional .scalekit.v1.connections.ConnectionProvider provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The enum numeric value on the wire for provider.
-   */
-  @java.lang.Override public int getProviderValue() {
-    return provider_;
-  }
-  /**
-   * <code>optional .scalekit.v1.connections.ConnectionProvider provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The provider.
    */
-  @java.lang.Override public com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider getProvider() {
-    com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider result = com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider.forNumber(provider_);
-    return result == null ? com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider.UNRECOGNIZED : result;
+  @java.lang.Override
+  public java.lang.String getProvider() {
+    java.lang.Object ref = provider_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      provider_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for provider.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProviderBytes() {
+    java.lang.Object ref = provider_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      provider_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int STATUS_FIELD_NUMBER = 3;
@@ -165,6 +187,25 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override public com.scalekit.grpc.scalekit.v1.connections.ConnectionType getConnectionType() {
     com.scalekit.grpc.scalekit.v1.connections.ConnectionType result = com.scalekit.grpc.scalekit.v1.connections.ConnectionType.forNumber(connectionType_);
     return result == null ? com.scalekit.grpc.scalekit.v1.connections.ConnectionType.UNRECOGNIZED : result;
+  }
+
+  public static final int ENABLED_FIELD_NUMBER = 7;
+  private boolean enabled_ = false;
+  /**
+   * <code>optional bool enabled = 7 [json_name = "enabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the enabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnabled() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <code>optional bool enabled = 7 [json_name = "enabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enabled.
+   */
+  @java.lang.Override
+  public boolean getEnabled() {
+    return enabled_;
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 5;
@@ -235,7 +276,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, query_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(2, provider_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, provider_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeEnum(3, status_);
@@ -248,6 +289,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, pageToken_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeBool(7, enabled_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -262,8 +306,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, query_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, provider_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, provider_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -279,6 +322,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, pageToken_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, enabled_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -302,7 +349,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasProvider() != other.hasProvider()) return false;
     if (hasProvider()) {
-      if (provider_ != other.provider_) return false;
+      if (!getProvider()
+          .equals(other.getProvider())) return false;
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
@@ -311,6 +359,11 @@ private static final long serialVersionUID = 0L;
     if (hasConnectionType() != other.hasConnectionType()) return false;
     if (hasConnectionType()) {
       if (connectionType_ != other.connectionType_) return false;
+    }
+    if (hasEnabled() != other.hasEnabled()) return false;
+    if (hasEnabled()) {
+      if (getEnabled()
+          != other.getEnabled()) return false;
     }
     if (getPageSize()
         != other.getPageSize()) return false;
@@ -333,7 +386,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasProvider()) {
       hash = (37 * hash) + PROVIDER_FIELD_NUMBER;
-      hash = (53 * hash) + provider_;
+      hash = (53 * hash) + getProvider().hashCode();
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
@@ -342,6 +395,11 @@ private static final long serialVersionUID = 0L;
     if (hasConnectionType()) {
       hash = (37 * hash) + CONNECTION_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + connectionType_;
+    }
+    if (hasEnabled()) {
+      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getEnabled());
     }
     hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getPageSize();
@@ -479,9 +537,10 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       query_ = "";
-      provider_ = 0;
+      provider_ = "";
       status_ = 0;
       connectionType_ = 0;
+      enabled_ = false;
       pageSize_ = 0;
       pageToken_ = "";
       return this;
@@ -535,9 +594,13 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.pageSize_ = pageSize_;
+        result.enabled_ = enabled_;
+        to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.pageToken_ = pageToken_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -593,7 +656,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasProvider()) {
-        setProvider(other.getProvider());
+        provider_ = other.provider_;
+        bitField0_ |= 0x00000002;
+        onChanged();
       }
       if (other.hasStatus()) {
         setStatus(other.getStatus());
@@ -601,12 +666,15 @@ private static final long serialVersionUID = 0L;
       if (other.hasConnectionType()) {
         setConnectionType(other.getConnectionType());
       }
+      if (other.hasEnabled()) {
+        setEnabled(other.getEnabled());
+      }
       if (other.getPageSize() != 0) {
         setPageSize(other.getPageSize());
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -640,11 +708,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
-            case 16: {
-              provider_ = input.readEnum();
+            case 18: {
+              provider_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
-            } // case 16
+            } // case 18
             case 24: {
               status_ = input.readEnum();
               bitField0_ |= 0x00000004;
@@ -657,14 +725,19 @@ private static final long serialVersionUID = 0L;
             } // case 32
             case 40: {
               pageSize_ = input.readUInt32();
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               break;
             } // case 40
             case 50: {
               pageToken_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               break;
             } // case 50
+            case 56: {
+              enabled_ = input.readBool();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 56
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -761,62 +834,81 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int provider_ = 0;
+    private java.lang.Object provider_ = "";
     /**
-     * <code>optional .scalekit.v1.connections.ConnectionProvider provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the provider field is set.
      */
-    @java.lang.Override public boolean hasProvider() {
+    public boolean hasProvider() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional .scalekit.v1.connections.ConnectionProvider provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The enum numeric value on the wire for provider.
+     * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The provider.
      */
-    @java.lang.Override public int getProviderValue() {
-      return provider_;
+    public java.lang.String getProvider() {
+      java.lang.Object ref = provider_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        provider_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>optional .scalekit.v1.connections.ConnectionProvider provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The enum numeric value on the wire for provider to set.
+     * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for provider.
+     */
+    public com.google.protobuf.ByteString
+        getProviderBytes() {
+      java.lang.Object ref = provider_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        provider_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The provider to set.
      * @return This builder for chaining.
      */
-    public Builder setProviderValue(int value) {
+    public Builder setProvider(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
       provider_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .scalekit.v1.connections.ConnectionProvider provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The provider.
-     */
-    @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider getProvider() {
-      com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider result = com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider.forNumber(provider_);
-      return result == null ? com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>optional .scalekit.v1.connections.ConnectionProvider provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The provider to set.
+     * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder setProvider(com.scalekit.grpc.scalekit.v1.connections.ConnectionProvider value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      provider_ = value.getNumber();
+    public Builder clearProvider() {
+      provider_ = getDefaultInstance().getProvider();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
     /**
-     * <code>optional .scalekit.v1.connections.ConnectionProvider provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for provider to set.
      * @return This builder for chaining.
      */
-    public Builder clearProvider() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      provider_ = 0;
+    public Builder setProviderBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      provider_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -941,6 +1033,46 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean enabled_ ;
+    /**
+     * <code>optional bool enabled = 7 [json_name = "enabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the enabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnabled() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>optional bool enabled = 7 [json_name = "enabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+    /**
+     * <code>optional bool enabled = 7 [json_name = "enabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnabled(boolean value) {
+
+      enabled_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional bool enabled = 7 [json_name = "enabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      enabled_ = false;
+      onChanged();
+      return this;
+    }
+
     private int pageSize_ ;
     /**
      * <code>uint32 page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -958,7 +1090,7 @@ private static final long serialVersionUID = 0L;
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -967,7 +1099,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1016,7 +1148,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       pageToken_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1026,7 +1158,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearPageToken() {
       pageToken_ = getDefaultInstance().getPageToken();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1040,7 +1172,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       pageToken_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

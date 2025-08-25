@@ -45,7 +45,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object clientId_ = "";
   /**
    * <pre>
-   * Unique identifier of the client application to retrieve
+   * Unique identifier of the client resource to retrieve
    * </pre>
    *
    * <code>string client_id = 1 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -66,7 +66,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Unique identifier of the client application to retrieve
+   * Unique identifier of the client resource to retrieve
    * </pre>
    *
    * <code>string client_id = 1 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -416,7 +416,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object clientId_ = "";
     /**
      * <pre>
-     * Unique identifier of the client application to retrieve
+     * Unique identifier of the client resource to retrieve
      * </pre>
      *
      * <code>string client_id = 1 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -436,7 +436,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Unique identifier of the client application to retrieve
+     * Unique identifier of the client resource to retrieve
      * </pre>
      *
      * <code>string client_id = 1 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -457,7 +457,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Unique identifier of the client application to retrieve
+     * Unique identifier of the client resource to retrieve
      * </pre>
      *
      * <code>string client_id = 1 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -474,7 +474,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Unique identifier of the client application to retrieve
+     * Unique identifier of the client resource to retrieve
      * </pre>
      *
      * <code>string client_id = 1 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -488,7 +488,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Unique identifier of the client application to retrieve
+     * Unique identifier of the client resource to retrieve
      * </pre>
      *
      * <code>string client_id = 1 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>

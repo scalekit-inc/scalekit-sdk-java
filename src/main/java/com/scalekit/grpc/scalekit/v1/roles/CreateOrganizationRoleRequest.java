@@ -81,9 +81,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ROLE_FIELD_NUMBER = 2;
-  private com.scalekit.grpc.scalekit.v1.roles.CreateRole role_;
+  private com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole role_;
   /**
-   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.roles.CreateOrganizationRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the role field is set.
    */
   @java.lang.Override
@@ -91,19 +91,19 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.roles.CreateOrganizationRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The role.
    */
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.roles.CreateRole getRole() {
-    return role_ == null ? com.scalekit.grpc.scalekit.v1.roles.CreateRole.getDefaultInstance() : role_;
+  public com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole getRole() {
+    return role_ == null ? com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole.getDefaultInstance() : role_;
   }
   /**
-   * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.roles.CreateOrganizationRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.roles.CreateRoleOrBuilder getRoleOrBuilder() {
-    return role_ == null ? com.scalekit.grpc.scalekit.v1.roles.CreateRole.getDefaultInstance() : role_;
+  public com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRoleOrBuilder getRoleOrBuilder() {
+    return role_ == null ? com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole.getDefaultInstance() : role_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -549,31 +549,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.scalekit.grpc.scalekit.v1.roles.CreateRole role_;
+    private com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole role_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.roles.CreateRole, com.scalekit.grpc.scalekit.v1.roles.CreateRole.Builder, com.scalekit.grpc.scalekit.v1.roles.CreateRoleOrBuilder> roleBuilder_;
+        com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole, com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole.Builder, com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRoleOrBuilder> roleBuilder_;
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateOrganizationRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the role field is set.
      */
     public boolean hasRole() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateOrganizationRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The role.
      */
-    public com.scalekit.grpc.scalekit.v1.roles.CreateRole getRole() {
+    public com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole getRole() {
       if (roleBuilder_ == null) {
-        return role_ == null ? com.scalekit.grpc.scalekit.v1.roles.CreateRole.getDefaultInstance() : role_;
+        return role_ == null ? com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole.getDefaultInstance() : role_;
       } else {
         return roleBuilder_.getMessage();
       }
     }
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateOrganizationRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder setRole(com.scalekit.grpc.scalekit.v1.roles.CreateRole value) {
+    public Builder setRole(com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole value) {
       if (roleBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -587,10 +587,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateOrganizationRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setRole(
-        com.scalekit.grpc.scalekit.v1.roles.CreateRole.Builder builderForValue) {
+        com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole.Builder builderForValue) {
       if (roleBuilder_ == null) {
         role_ = builderForValue.build();
       } else {
@@ -601,13 +601,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateOrganizationRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder mergeRole(com.scalekit.grpc.scalekit.v1.roles.CreateRole value) {
+    public Builder mergeRole(com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole value) {
       if (roleBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0) &&
           role_ != null &&
-          role_ != com.scalekit.grpc.scalekit.v1.roles.CreateRole.getDefaultInstance()) {
+          role_ != com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole.getDefaultInstance()) {
           getRoleBuilder().mergeFrom(value);
         } else {
           role_ = value;
@@ -622,7 +622,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateOrganizationRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearRole() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -635,33 +635,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateOrganizationRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.scalekit.grpc.scalekit.v1.roles.CreateRole.Builder getRoleBuilder() {
+    public com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole.Builder getRoleBuilder() {
       bitField0_ |= 0x00000002;
       onChanged();
       return getRoleFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateOrganizationRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.scalekit.grpc.scalekit.v1.roles.CreateRoleOrBuilder getRoleOrBuilder() {
+    public com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRoleOrBuilder getRoleOrBuilder() {
       if (roleBuilder_ != null) {
         return roleBuilder_.getMessageOrBuilder();
       } else {
         return role_ == null ?
-            com.scalekit.grpc.scalekit.v1.roles.CreateRole.getDefaultInstance() : role_;
+            com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole.getDefaultInstance() : role_;
       }
     }
     /**
-     * <code>.scalekit.v1.roles.CreateRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.roles.CreateOrganizationRole role = 2 [json_name = "role", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.roles.CreateRole, com.scalekit.grpc.scalekit.v1.roles.CreateRole.Builder, com.scalekit.grpc.scalekit.v1.roles.CreateRoleOrBuilder> 
+        com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole, com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole.Builder, com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRoleOrBuilder> 
         getRoleFieldBuilder() {
       if (roleBuilder_ == null) {
         roleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.scalekit.grpc.scalekit.v1.roles.CreateRole, com.scalekit.grpc.scalekit.v1.roles.CreateRole.Builder, com.scalekit.grpc.scalekit.v1.roles.CreateRoleOrBuilder>(
+            com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole, com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRole.Builder, com.scalekit.grpc.scalekit.v1.roles.CreateOrganizationRoleOrBuilder>(
                 getRole(),
                 getParentForChildren(),
                 isClean());

@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     type_ = 0;
     configurationType_ = 0;
     keyId_ = "";
+    providerKey_ = "";
   }
 
   @java.lang.Override
@@ -66,6 +67,7 @@ private static final long serialVersionUID = 0L;
     SAML_CONFIG(17),
     OAUTH_CONFIG(18),
     PASSWORDLESS_CONFIG(20),
+    STATIC_CONFIG(23),
     SETTINGS_NOT_SET(0);
     private final int value;
     private SettingsCase(int value) {
@@ -87,6 +89,7 @@ private static final long serialVersionUID = 0L;
         case 17: return SAML_CONFIG;
         case 18: return OAUTH_CONFIG;
         case 20: return PASSWORDLESS_CONFIG;
+        case 23: return STATIC_CONFIG;
         case 0: return SETTINGS_NOT_SET;
         default: return null;
       }
@@ -411,11 +414,42 @@ java.lang.String defaultValue) {
     return com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig.getDefaultInstance();
   }
 
-  public static final int KEY_ID_FIELD_NUMBER = 19;
+  public static final int STATIC_CONFIG_FIELD_NUMBER = 23;
+  /**
+   * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 23 [json_name = "staticConfig"];</code>
+   * @return Whether the staticConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasStaticConfig() {
+    return settingsCase_ == 23;
+  }
+  /**
+   * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 23 [json_name = "staticConfig"];</code>
+   * @return The staticConfig.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig getStaticConfig() {
+    if (settingsCase_ == 23) {
+       return (com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.getDefaultInstance();
+  }
+  /**
+   * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 23 [json_name = "staticConfig"];</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfigOrBuilder getStaticConfigOrBuilder() {
+    if (settingsCase_ == 23) {
+       return (com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.getDefaultInstance();
+  }
+
+  public static final int KEY_ID_FIELD_NUMBER = 22;
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyId_ = "";
   /**
-   * <code>optional string key_id = 19 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
+   * <code>optional string key_id = 22 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
    * @return Whether the keyId field is set.
    */
   @java.lang.Override
@@ -423,7 +457,7 @@ java.lang.String defaultValue) {
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>optional string key_id = 19 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
+   * <code>optional string key_id = 22 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
    * @return The keyId.
    */
   @java.lang.Override
@@ -440,7 +474,7 @@ java.lang.String defaultValue) {
     }
   }
   /**
-   * <code>optional string key_id = 19 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
+   * <code>optional string key_id = 22 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
    * @return The bytes for keyId.
    */
   @java.lang.Override
@@ -452,6 +486,45 @@ java.lang.String defaultValue) {
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       keyId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PROVIDER_KEY_FIELD_NUMBER = 21;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object providerKey_ = "";
+  /**
+   * <code>string provider_key = 21 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The providerKey.
+   */
+  @java.lang.Override
+  public java.lang.String getProviderKey() {
+    java.lang.Object ref = providerKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      providerKey_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string provider_key = 21 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for providerKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProviderKeyBytes() {
+    java.lang.Object ref = providerKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      providerKey_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -502,11 +575,17 @@ java.lang.String defaultValue) {
     if (settingsCase_ == 18) {
       output.writeMessage(18, (com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig) settings_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, keyId_);
-    }
     if (settingsCase_ == 20) {
       output.writeMessage(20, (com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig) settings_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(providerKey_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, providerKey_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, keyId_);
+    }
+    if (settingsCase_ == 23) {
+      output.writeMessage(23, (com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -559,12 +638,19 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(18, (com.scalekit.grpc.scalekit.v1.connections.OAuthConnectionConfig) settings_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, keyId_);
-    }
     if (settingsCase_ == 20) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(20, (com.scalekit.grpc.scalekit.v1.connections.PasswordLessConfig) settings_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(providerKey_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, providerKey_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, keyId_);
+    }
+    if (settingsCase_ == 23) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(23, (com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -601,6 +687,8 @@ java.lang.String defaultValue) {
       if (!getKeyId()
           .equals(other.getKeyId())) return false;
     }
+    if (!getProviderKey()
+        .equals(other.getProviderKey())) return false;
     if (!getSettingsCase().equals(other.getSettingsCase())) return false;
     switch (settingsCase_) {
       case 16:
@@ -618,6 +706,10 @@ java.lang.String defaultValue) {
       case 20:
         if (!getPasswordlessConfig()
             .equals(other.getPasswordlessConfig())) return false;
+        break;
+      case 23:
+        if (!getStaticConfig()
+            .equals(other.getStaticConfig())) return false;
         break;
       case 0:
       default:
@@ -655,6 +747,8 @@ java.lang.String defaultValue) {
       hash = (37 * hash) + KEY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getKeyId().hashCode();
     }
+    hash = (37 * hash) + PROVIDER_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getProviderKey().hashCode();
     switch (settingsCase_) {
       case 16:
         hash = (37 * hash) + OIDC_CONFIG_FIELD_NUMBER;
@@ -671,6 +765,10 @@ java.lang.String defaultValue) {
       case 20:
         hash = (37 * hash) + PASSWORDLESS_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getPasswordlessConfig().hashCode();
+        break;
+      case 23:
+        hash = (37 * hash) + STATIC_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getStaticConfig().hashCode();
         break;
       case 0:
       default:
@@ -861,7 +959,11 @@ java.lang.String defaultValue) {
       if (passwordlessConfigBuilder_ != null) {
         passwordlessConfigBuilder_.clear();
       }
+      if (staticConfigBuilder_ != null) {
+        staticConfigBuilder_.clear();
+      }
       keyId_ = "";
+      providerKey_ = "";
       settingsCase_ = 0;
       settings_ = null;
       return this;
@@ -924,9 +1026,12 @@ java.lang.String defaultValue) {
         result.attributeMapping_ = internalGetAttributeMapping();
         result.attributeMapping_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.keyId_ = keyId_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.providerKey_ = providerKey_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -949,6 +1054,10 @@ java.lang.String defaultValue) {
       if (settingsCase_ == 20 &&
           passwordlessConfigBuilder_ != null) {
         result.settings_ = passwordlessConfigBuilder_.build();
+      }
+      if (settingsCase_ == 23 &&
+          staticConfigBuilder_ != null) {
+        result.settings_ = staticConfigBuilder_.build();
       }
     }
 
@@ -1016,7 +1125,12 @@ java.lang.String defaultValue) {
       bitField0_ |= 0x00000020;
       if (other.hasKeyId()) {
         keyId_ = other.keyId_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      if (!other.getProviderKey().isEmpty()) {
+        providerKey_ = other.providerKey_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       switch (other.getSettingsCase()) {
@@ -1034,6 +1148,10 @@ java.lang.String defaultValue) {
         }
         case PASSWORDLESS_CONFIG: {
           mergePasswordlessConfig(other.getPasswordlessConfig());
+          break;
+        }
+        case STATIC_CONFIG: {
+          mergeStaticConfig(other.getStaticConfig());
           break;
         }
         case SETTINGS_NOT_SET: {
@@ -1125,11 +1243,6 @@ java.lang.String defaultValue) {
               settingsCase_ = 18;
               break;
             } // case 146
-            case 154: {
-              keyId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000400;
-              break;
-            } // case 154
             case 162: {
               input.readMessage(
                   getPasswordlessConfigFieldBuilder().getBuilder(),
@@ -1137,6 +1250,23 @@ java.lang.String defaultValue) {
               settingsCase_ = 20;
               break;
             } // case 162
+            case 170: {
+              providerKey_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00001000;
+              break;
+            } // case 170
+            case 178: {
+              keyId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 178
+            case 186: {
+              input.readMessage(
+                  getStaticConfigFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              settingsCase_ = 23;
+              break;
+            } // case 186
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2265,16 +2395,158 @@ java.lang.String defaultValue) {
       return passwordlessConfigBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig, com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfigOrBuilder> staticConfigBuilder_;
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 23 [json_name = "staticConfig"];</code>
+     * @return Whether the staticConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasStaticConfig() {
+      return settingsCase_ == 23;
+    }
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 23 [json_name = "staticConfig"];</code>
+     * @return The staticConfig.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig getStaticConfig() {
+      if (staticConfigBuilder_ == null) {
+        if (settingsCase_ == 23) {
+          return (com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.getDefaultInstance();
+      } else {
+        if (settingsCase_ == 23) {
+          return staticConfigBuilder_.getMessage();
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 23 [json_name = "staticConfig"];</code>
+     */
+    public Builder setStaticConfig(com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig value) {
+      if (staticConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        settings_ = value;
+        onChanged();
+      } else {
+        staticConfigBuilder_.setMessage(value);
+      }
+      settingsCase_ = 23;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 23 [json_name = "staticConfig"];</code>
+     */
+    public Builder setStaticConfig(
+        com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.Builder builderForValue) {
+      if (staticConfigBuilder_ == null) {
+        settings_ = builderForValue.build();
+        onChanged();
+      } else {
+        staticConfigBuilder_.setMessage(builderForValue.build());
+      }
+      settingsCase_ = 23;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 23 [json_name = "staticConfig"];</code>
+     */
+    public Builder mergeStaticConfig(com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig value) {
+      if (staticConfigBuilder_ == null) {
+        if (settingsCase_ == 23 &&
+            settings_ != com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.getDefaultInstance()) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.newBuilder((com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          settings_ = value;
+        }
+        onChanged();
+      } else {
+        if (settingsCase_ == 23) {
+          staticConfigBuilder_.mergeFrom(value);
+        } else {
+          staticConfigBuilder_.setMessage(value);
+        }
+      }
+      settingsCase_ = 23;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 23 [json_name = "staticConfig"];</code>
+     */
+    public Builder clearStaticConfig() {
+      if (staticConfigBuilder_ == null) {
+        if (settingsCase_ == 23) {
+          settingsCase_ = 0;
+          settings_ = null;
+          onChanged();
+        }
+      } else {
+        if (settingsCase_ == 23) {
+          settingsCase_ = 0;
+          settings_ = null;
+        }
+        staticConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 23 [json_name = "staticConfig"];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.Builder getStaticConfigBuilder() {
+      return getStaticConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 23 [json_name = "staticConfig"];</code>
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfigOrBuilder getStaticConfigOrBuilder() {
+      if ((settingsCase_ == 23) && (staticConfigBuilder_ != null)) {
+        return staticConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (settingsCase_ == 23) {
+          return (com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.StaticAuthConfig static_config = 23 [json_name = "staticConfig"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig, com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfigOrBuilder> 
+        getStaticConfigFieldBuilder() {
+      if (staticConfigBuilder_ == null) {
+        if (!(settingsCase_ == 23)) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.getDefaultInstance();
+        }
+        staticConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig, com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfigOrBuilder>(
+                (com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_,
+                getParentForChildren(),
+                isClean());
+        settings_ = null;
+      }
+      settingsCase_ = 23;
+      onChanged();
+      return staticConfigBuilder_;
+    }
+
     private java.lang.Object keyId_ = "";
     /**
-     * <code>optional string key_id = 19 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
+     * <code>optional string key_id = 22 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
      * @return Whether the keyId field is set.
      */
     public boolean hasKeyId() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
-     * <code>optional string key_id = 19 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
+     * <code>optional string key_id = 22 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
      * @return The keyId.
      */
     public java.lang.String getKeyId() {
@@ -2290,7 +2562,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string key_id = 19 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
+     * <code>optional string key_id = 22 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
      * @return The bytes for keyId.
      */
     public com.google.protobuf.ByteString
@@ -2307,7 +2579,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string key_id = 19 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
+     * <code>optional string key_id = 22 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
      * @param value The keyId to set.
      * @return This builder for chaining.
      */
@@ -2315,22 +2587,22 @@ java.lang.String defaultValue) {
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       keyId_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string key_id = 19 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
+     * <code>optional string key_id = 22 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearKeyId() {
       keyId_ = getDefaultInstance().getKeyId();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string key_id = 19 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
+     * <code>optional string key_id = 22 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
      * @param value The bytes for keyId to set.
      * @return This builder for chaining.
      */
@@ -2339,7 +2611,79 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       keyId_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object providerKey_ = "";
+    /**
+     * <code>string provider_key = 21 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The providerKey.
+     */
+    public java.lang.String getProviderKey() {
+      java.lang.Object ref = providerKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        providerKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string provider_key = 21 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for providerKey.
+     */
+    public com.google.protobuf.ByteString
+        getProviderKeyBytes() {
+      java.lang.Object ref = providerKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        providerKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string provider_key = 21 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The providerKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProviderKey(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      providerKey_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string provider_key = 21 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProviderKey() {
+      providerKey_ = getDefaultInstance().getProviderKey();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string provider_key = 21 [json_name = "providerKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for providerKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProviderKeyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      providerKey_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

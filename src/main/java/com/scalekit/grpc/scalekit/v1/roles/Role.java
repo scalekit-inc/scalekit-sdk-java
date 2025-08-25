@@ -21,6 +21,8 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     displayName_ = "";
     description_ = "";
+    extends_ = "";
+    permissions_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -43,11 +45,12 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.roles.Role.class, com.scalekit.grpc.scalekit.v1.roles.Role.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
   /**
-   * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The id.
    */
   @java.lang.Override
@@ -64,7 +67,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for id.
    */
   @java.lang.Override
@@ -86,7 +89,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
   /**
-   * <code>string name = 2 [json_name = "name", (.buf.validate.field) = { ... }</code>
+   * <code>string name = 2 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The name.
    */
   @java.lang.Override
@@ -103,7 +106,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string name = 2 [json_name = "name", (.buf.validate.field) = { ... }</code>
+   * <code>string name = 2 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -125,7 +128,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
   /**
-   * <code>string display_name = 3 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+   * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The displayName.
    */
   @java.lang.Override
@@ -142,7 +145,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string display_name = 3 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+   * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for displayName.
    */
   @java.lang.Override
@@ -164,7 +167,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
   /**
-   * <code>string description = 4 [json_name = "description", (.buf.validate.field) = { ... }</code>
+   * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The description.
    */
   @java.lang.Override
@@ -181,7 +184,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string description = 4 [json_name = "description", (.buf.validate.field) = { ... }</code>
+   * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for description.
    */
   @java.lang.Override
@@ -199,15 +202,125 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DEFAULT_FIELD_NUMBER = 5;
-  private boolean default_ = false;
+  public static final int DEFAULT_CREATOR_FIELD_NUMBER = 6;
+  private boolean defaultCreator_ = false;
   /**
-   * <code>bool default = 5 [json_name = "default"];</code>
-   * @return The default.
+   * <code>bool default_creator = 6 [json_name = "defaultCreator", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The defaultCreator.
    */
   @java.lang.Override
-  public boolean getDefault() {
-    return default_;
+  public boolean getDefaultCreator() {
+    return defaultCreator_;
+  }
+
+  public static final int DEFAULT_MEMBER_FIELD_NUMBER = 7;
+  private boolean defaultMember_ = false;
+  /**
+   * <code>bool default_member = 7 [json_name = "defaultMember", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The defaultMember.
+   */
+  @java.lang.Override
+  public boolean getDefaultMember() {
+    return defaultMember_;
+  }
+
+  public static final int EXTENDS_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object extends_ = "";
+  /**
+   * <code>optional string extends = 8 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the extends field is set.
+   */
+  @java.lang.Override
+  public boolean hasExtends() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional string extends = 8 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The extends.
+   */
+  @java.lang.Override
+  public java.lang.String getExtends() {
+    java.lang.Object ref = extends_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      extends_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string extends = 8 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for extends.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getExtendsBytes() {
+    java.lang.Object ref = extends_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      extends_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PERMISSIONS_FIELD_NUMBER = 9;
+  @SuppressWarnings("serial")
+  private java.util.List<com.scalekit.grpc.scalekit.v1.roles.Permission> permissions_;
+  /**
+   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.scalekit.grpc.scalekit.v1.roles.Permission> getPermissionsList() {
+    return permissions_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder> 
+      getPermissionsOrBuilderList() {
+    return permissions_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public int getPermissionsCount() {
+    return permissions_.size();
+  }
+  /**
+   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.roles.Permission getPermissions(int index) {
+    return permissions_.get(index);
+  }
+  /**
+   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder getPermissionsOrBuilder(
+      int index) {
+    return permissions_.get(index);
+  }
+
+  public static final int DEPENDENT_ROLES_COUNT_FIELD_NUMBER = 10;
+  private int dependentRolesCount_ = 0;
+  /**
+   * <code>int32 dependent_roles_count = 10 [json_name = "dependentRolesCount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The dependentRolesCount.
+   */
+  @java.lang.Override
+  public int getDependentRolesCount() {
+    return dependentRolesCount_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -236,8 +349,20 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
     }
-    if (default_ != false) {
-      output.writeBool(5, default_);
+    if (defaultCreator_ != false) {
+      output.writeBool(6, defaultCreator_);
+    }
+    if (defaultMember_ != false) {
+      output.writeBool(7, defaultMember_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, extends_);
+    }
+    for (int i = 0; i < permissions_.size(); i++) {
+      output.writeMessage(9, permissions_.get(i));
+    }
+    if (dependentRolesCount_ != 0) {
+      output.writeInt32(10, dependentRolesCount_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -260,9 +385,24 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
     }
-    if (default_ != false) {
+    if (defaultCreator_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(5, default_);
+        .computeBoolSize(6, defaultCreator_);
+    }
+    if (defaultMember_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, defaultMember_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, extends_);
+    }
+    for (int i = 0; i < permissions_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, permissions_.get(i));
+    }
+    if (dependentRolesCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(10, dependentRolesCount_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -287,8 +427,19 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDisplayName())) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
-    if (getDefault()
-        != other.getDefault()) return false;
+    if (getDefaultCreator()
+        != other.getDefaultCreator()) return false;
+    if (getDefaultMember()
+        != other.getDefaultMember()) return false;
+    if (hasExtends() != other.hasExtends()) return false;
+    if (hasExtends()) {
+      if (!getExtends()
+          .equals(other.getExtends())) return false;
+    }
+    if (!getPermissionsList()
+        .equals(other.getPermissionsList())) return false;
+    if (getDependentRolesCount()
+        != other.getDependentRolesCount()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -308,9 +459,22 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + DEFAULT_FIELD_NUMBER;
+    hash = (37 * hash) + DEFAULT_CREATOR_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getDefault());
+        getDefaultCreator());
+    hash = (37 * hash) + DEFAULT_MEMBER_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getDefaultMember());
+    if (hasExtends()) {
+      hash = (37 * hash) + EXTENDS_FIELD_NUMBER;
+      hash = (53 * hash) + getExtends().hashCode();
+    }
+    if (getPermissionsCount() > 0) {
+      hash = (37 * hash) + PERMISSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getPermissionsList().hashCode();
+    }
+    hash = (37 * hash) + DEPENDENT_ROLES_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getDependentRolesCount();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -446,7 +610,17 @@ private static final long serialVersionUID = 0L;
       name_ = "";
       displayName_ = "";
       description_ = "";
-      default_ = false;
+      defaultCreator_ = false;
+      defaultMember_ = false;
+      extends_ = "";
+      if (permissionsBuilder_ == null) {
+        permissions_ = java.util.Collections.emptyList();
+      } else {
+        permissions_ = null;
+        permissionsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000080);
+      dependentRolesCount_ = 0;
       return this;
     }
 
@@ -473,9 +647,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.scalekit.grpc.scalekit.v1.roles.Role buildPartial() {
       com.scalekit.grpc.scalekit.v1.roles.Role result = new com.scalekit.grpc.scalekit.v1.roles.Role(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.roles.Role result) {
+      if (permissionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)) {
+          permissions_ = java.util.Collections.unmodifiableList(permissions_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.permissions_ = permissions_;
+      } else {
+        result.permissions_ = permissionsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.roles.Role result) {
@@ -493,8 +680,20 @@ private static final long serialVersionUID = 0L;
         result.description_ = description_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.default_ = default_;
+        result.defaultCreator_ = defaultCreator_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.defaultMember_ = defaultMember_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.extends_ = extends_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.dependentRolesCount_ = dependentRolesCount_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -561,8 +760,45 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000008;
         onChanged();
       }
-      if (other.getDefault() != false) {
-        setDefault(other.getDefault());
+      if (other.getDefaultCreator() != false) {
+        setDefaultCreator(other.getDefaultCreator());
+      }
+      if (other.getDefaultMember() != false) {
+        setDefaultMember(other.getDefaultMember());
+      }
+      if (other.hasExtends()) {
+        extends_ = other.extends_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (permissionsBuilder_ == null) {
+        if (!other.permissions_.isEmpty()) {
+          if (permissions_.isEmpty()) {
+            permissions_ = other.permissions_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensurePermissionsIsMutable();
+            permissions_.addAll(other.permissions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.permissions_.isEmpty()) {
+          if (permissionsBuilder_.isEmpty()) {
+            permissionsBuilder_.dispose();
+            permissionsBuilder_ = null;
+            permissions_ = other.permissions_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            permissionsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getPermissionsFieldBuilder() : null;
+          } else {
+            permissionsBuilder_.addAllMessages(other.permissions_);
+          }
+        }
+      }
+      if (other.getDependentRolesCount() != 0) {
+        setDependentRolesCount(other.getDependentRolesCount());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -610,11 +846,39 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 34
-            case 40: {
-              default_ = input.readBool();
+            case 48: {
+              defaultCreator_ = input.readBool();
               bitField0_ |= 0x00000010;
               break;
-            } // case 40
+            } // case 48
+            case 56: {
+              defaultMember_ = input.readBool();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 56
+            case 66: {
+              extends_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 66
+            case 74: {
+              com.scalekit.grpc.scalekit.v1.roles.Permission m =
+                  input.readMessage(
+                      com.scalekit.grpc.scalekit.v1.roles.Permission.parser(),
+                      extensionRegistry);
+              if (permissionsBuilder_ == null) {
+                ensurePermissionsIsMutable();
+                permissions_.add(m);
+              } else {
+                permissionsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 74
+            case 80: {
+              dependentRolesCount_ = input.readInt32();
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 80
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -634,7 +898,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object id_ = "";
     /**
-     * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The id.
      */
     public java.lang.String getId() {
@@ -650,7 +914,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
@@ -667,7 +931,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -680,7 +944,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
@@ -690,7 +954,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string id = 1 [json_name = "id", (.buf.validate.field) = { ... }</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
@@ -706,7 +970,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
-     * <code>string name = 2 [json_name = "name", (.buf.validate.field) = { ... }</code>
+     * <code>string name = 2 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -722,7 +986,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 2 [json_name = "name", (.buf.validate.field) = { ... }</code>
+     * <code>string name = 2 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -739,7 +1003,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 2 [json_name = "name", (.buf.validate.field) = { ... }</code>
+     * <code>string name = 2 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -752,7 +1016,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 2 [json_name = "name", (.buf.validate.field) = { ... }</code>
+     * <code>string name = 2 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -762,7 +1026,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 2 [json_name = "name", (.buf.validate.field) = { ... }</code>
+     * <code>string name = 2 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -778,7 +1042,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object displayName_ = "";
     /**
-     * <code>string display_name = 3 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+     * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The displayName.
      */
     public java.lang.String getDisplayName() {
@@ -794,7 +1058,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string display_name = 3 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+     * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
@@ -811,7 +1075,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string display_name = 3 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+     * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The displayName to set.
      * @return This builder for chaining.
      */
@@ -824,7 +1088,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string display_name = 3 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+     * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
@@ -834,7 +1098,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string display_name = 3 [json_name = "displayName", (.buf.validate.field) = { ... }</code>
+     * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
      */
@@ -850,7 +1114,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
-     * <code>string description = 4 [json_name = "description", (.buf.validate.field) = { ... }</code>
+     * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -866,7 +1130,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string description = 4 [json_name = "description", (.buf.validate.field) = { ... }</code>
+     * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -883,7 +1147,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string description = 4 [json_name = "description", (.buf.validate.field) = { ... }</code>
+     * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The description to set.
      * @return This builder for chaining.
      */
@@ -896,7 +1160,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string description = 4 [json_name = "description", (.buf.validate.field) = { ... }</code>
+     * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
@@ -906,7 +1170,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string description = 4 [json_name = "description", (.buf.validate.field) = { ... }</code>
+     * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
@@ -920,34 +1184,417 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean default_ ;
+    private boolean defaultCreator_ ;
     /**
-     * <code>bool default = 5 [json_name = "default"];</code>
-     * @return The default.
+     * <code>bool default_creator = 6 [json_name = "defaultCreator", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The defaultCreator.
      */
     @java.lang.Override
-    public boolean getDefault() {
-      return default_;
+    public boolean getDefaultCreator() {
+      return defaultCreator_;
     }
     /**
-     * <code>bool default = 5 [json_name = "default"];</code>
-     * @param value The default to set.
+     * <code>bool default_creator = 6 [json_name = "defaultCreator", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The defaultCreator to set.
      * @return This builder for chaining.
      */
-    public Builder setDefault(boolean value) {
+    public Builder setDefaultCreator(boolean value) {
 
-      default_ = value;
+      defaultCreator_ = value;
       bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>bool default = 5 [json_name = "default"];</code>
+     * <code>bool default_creator = 6 [json_name = "defaultCreator", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearDefault() {
+    public Builder clearDefaultCreator() {
       bitField0_ = (bitField0_ & ~0x00000010);
-      default_ = false;
+      defaultCreator_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean defaultMember_ ;
+    /**
+     * <code>bool default_member = 7 [json_name = "defaultMember", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The defaultMember.
+     */
+    @java.lang.Override
+    public boolean getDefaultMember() {
+      return defaultMember_;
+    }
+    /**
+     * <code>bool default_member = 7 [json_name = "defaultMember", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The defaultMember to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultMember(boolean value) {
+
+      defaultMember_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool default_member = 7 [json_name = "defaultMember", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDefaultMember() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      defaultMember_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object extends_ = "";
+    /**
+     * <code>optional string extends = 8 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the extends field is set.
+     */
+    public boolean hasExtends() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>optional string extends = 8 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The extends.
+     */
+    public java.lang.String getExtends() {
+      java.lang.Object ref = extends_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        extends_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string extends = 8 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for extends.
+     */
+    public com.google.protobuf.ByteString
+        getExtendsBytes() {
+      java.lang.Object ref = extends_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        extends_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string extends = 8 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The extends to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExtends(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      extends_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string extends = 8 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearExtends() {
+      extends_ = getDefaultInstance().getExtends();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string extends = 8 [json_name = "extends", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for extends to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExtendsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      extends_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.scalekit.grpc.scalekit.v1.roles.Permission> permissions_ =
+      java.util.Collections.emptyList();
+    private void ensurePermissionsIsMutable() {
+      if (!((bitField0_ & 0x00000080) != 0)) {
+        permissions_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.roles.Permission>(permissions_);
+        bitField0_ |= 0x00000080;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.roles.Permission, com.scalekit.grpc.scalekit.v1.roles.Permission.Builder, com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder> permissionsBuilder_;
+
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.roles.Permission> getPermissionsList() {
+      if (permissionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(permissions_);
+      } else {
+        return permissionsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public int getPermissionsCount() {
+      if (permissionsBuilder_ == null) {
+        return permissions_.size();
+      } else {
+        return permissionsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.roles.Permission getPermissions(int index) {
+      if (permissionsBuilder_ == null) {
+        return permissions_.get(index);
+      } else {
+        return permissionsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setPermissions(
+        int index, com.scalekit.grpc.scalekit.v1.roles.Permission value) {
+      if (permissionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePermissionsIsMutable();
+        permissions_.set(index, value);
+        onChanged();
+      } else {
+        permissionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setPermissions(
+        int index, com.scalekit.grpc.scalekit.v1.roles.Permission.Builder builderForValue) {
+      if (permissionsBuilder_ == null) {
+        ensurePermissionsIsMutable();
+        permissions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        permissionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addPermissions(com.scalekit.grpc.scalekit.v1.roles.Permission value) {
+      if (permissionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePermissionsIsMutable();
+        permissions_.add(value);
+        onChanged();
+      } else {
+        permissionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addPermissions(
+        int index, com.scalekit.grpc.scalekit.v1.roles.Permission value) {
+      if (permissionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePermissionsIsMutable();
+        permissions_.add(index, value);
+        onChanged();
+      } else {
+        permissionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addPermissions(
+        com.scalekit.grpc.scalekit.v1.roles.Permission.Builder builderForValue) {
+      if (permissionsBuilder_ == null) {
+        ensurePermissionsIsMutable();
+        permissions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        permissionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addPermissions(
+        int index, com.scalekit.grpc.scalekit.v1.roles.Permission.Builder builderForValue) {
+      if (permissionsBuilder_ == null) {
+        ensurePermissionsIsMutable();
+        permissions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        permissionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addAllPermissions(
+        java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.roles.Permission> values) {
+      if (permissionsBuilder_ == null) {
+        ensurePermissionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, permissions_);
+        onChanged();
+      } else {
+        permissionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearPermissions() {
+      if (permissionsBuilder_ == null) {
+        permissions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        permissionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder removePermissions(int index) {
+      if (permissionsBuilder_ == null) {
+        ensurePermissionsIsMutable();
+        permissions_.remove(index);
+        onChanged();
+      } else {
+        permissionsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.roles.Permission.Builder getPermissionsBuilder(
+        int index) {
+      return getPermissionsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder getPermissionsOrBuilder(
+        int index) {
+      if (permissionsBuilder_ == null) {
+        return permissions_.get(index);  } else {
+        return permissionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<? extends com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder> 
+         getPermissionsOrBuilderList() {
+      if (permissionsBuilder_ != null) {
+        return permissionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(permissions_);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.roles.Permission.Builder addPermissionsBuilder() {
+      return getPermissionsFieldBuilder().addBuilder(
+          com.scalekit.grpc.scalekit.v1.roles.Permission.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.roles.Permission.Builder addPermissionsBuilder(
+        int index) {
+      return getPermissionsFieldBuilder().addBuilder(
+          index, com.scalekit.grpc.scalekit.v1.roles.Permission.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.roles.Permission.Builder> 
+         getPermissionsBuilderList() {
+      return getPermissionsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.roles.Permission, com.scalekit.grpc.scalekit.v1.roles.Permission.Builder, com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder> 
+        getPermissionsFieldBuilder() {
+      if (permissionsBuilder_ == null) {
+        permissionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.roles.Permission, com.scalekit.grpc.scalekit.v1.roles.Permission.Builder, com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder>(
+                permissions_,
+                ((bitField0_ & 0x00000080) != 0),
+                getParentForChildren(),
+                isClean());
+        permissions_ = null;
+      }
+      return permissionsBuilder_;
+    }
+
+    private int dependentRolesCount_ ;
+    /**
+     * <code>int32 dependent_roles_count = 10 [json_name = "dependentRolesCount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The dependentRolesCount.
+     */
+    @java.lang.Override
+    public int getDependentRolesCount() {
+      return dependentRolesCount_;
+    }
+    /**
+     * <code>int32 dependent_roles_count = 10 [json_name = "dependentRolesCount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The dependentRolesCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDependentRolesCount(int value) {
+
+      dependentRolesCount_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 dependent_roles_count = 10 [json_name = "dependentRolesCount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDependentRolesCount() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      dependentRolesCount_ = 0;
       onChanged();
       return this;
     }

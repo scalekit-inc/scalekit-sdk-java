@@ -189,6 +189,32 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.scalekit.grpc.scalekit.v1.connections.CodeChallengeType.UNRECOGNIZED : result;
   }
 
+  public static final int REGENERATE_PASSWORDLESS_CREDENTIALS_ON_RESEND_FIELD_NUMBER = 7;
+  private com.google.protobuf.BoolValue regeneratePasswordlessCredentialsOnResend_;
+  /**
+   * <code>optional .google.protobuf.BoolValue regenerate_passwordless_credentials_on_resend = 7 [json_name = "regeneratePasswordlessCredentialsOnResend", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the regeneratePasswordlessCredentialsOnResend field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegeneratePasswordlessCredentialsOnResend() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   * <code>optional .google.protobuf.BoolValue regenerate_passwordless_credentials_on_resend = 7 [json_name = "regeneratePasswordlessCredentialsOnResend", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The regeneratePasswordlessCredentialsOnResend.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getRegeneratePasswordlessCredentialsOnResend() {
+    return regeneratePasswordlessCredentialsOnResend_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : regeneratePasswordlessCredentialsOnResend_;
+  }
+  /**
+   * <code>optional .google.protobuf.BoolValue regenerate_passwordless_credentials_on_resend = 7 [json_name = "regeneratePasswordlessCredentialsOnResend", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getRegeneratePasswordlessCredentialsOnResendOrBuilder() {
+    return regeneratePasswordlessCredentialsOnResend_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : regeneratePasswordlessCredentialsOnResend_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -220,6 +246,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeEnum(6, codeChallengeType_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(7, getRegeneratePasswordlessCredentialsOnResend());
     }
     getUnknownFields().writeTo(output);
   }
@@ -253,6 +282,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(6, codeChallengeType_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getRegeneratePasswordlessCredentialsOnResend());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -294,6 +327,11 @@ private static final long serialVersionUID = 0L;
     if (hasCodeChallengeType()) {
       if (codeChallengeType_ != other.codeChallengeType_) return false;
     }
+    if (hasRegeneratePasswordlessCredentialsOnResend() != other.hasRegeneratePasswordlessCredentialsOnResend()) return false;
+    if (hasRegeneratePasswordlessCredentialsOnResend()) {
+      if (!getRegeneratePasswordlessCredentialsOnResend()
+          .equals(other.getRegeneratePasswordlessCredentialsOnResend())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -326,6 +364,10 @@ private static final long serialVersionUID = 0L;
     if (hasCodeChallengeType()) {
       hash = (37 * hash) + CODE_CHALLENGE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + codeChallengeType_;
+    }
+    if (hasRegeneratePasswordlessCredentialsOnResend()) {
+      hash = (37 * hash) + REGENERATE_PASSWORDLESS_CREDENTIALS_ON_RESEND_FIELD_NUMBER;
+      hash = (53 * hash) + getRegeneratePasswordlessCredentialsOnResend().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -461,6 +503,7 @@ private static final long serialVersionUID = 0L;
         getValidityFieldBuilder();
         getEnforceSameBrowserOriginFieldBuilder();
         getCodeChallengeLengthFieldBuilder();
+        getRegeneratePasswordlessCredentialsOnResendFieldBuilder();
       }
     }
     @java.lang.Override
@@ -489,6 +532,11 @@ private static final long serialVersionUID = 0L;
         codeChallengeLengthBuilder_ = null;
       }
       codeChallengeType_ = 0;
+      regeneratePasswordlessCredentialsOnResend_ = null;
+      if (regeneratePasswordlessCredentialsOnResendBuilder_ != null) {
+        regeneratePasswordlessCredentialsOnResendBuilder_.dispose();
+        regeneratePasswordlessCredentialsOnResendBuilder_ = null;
+      }
       return this;
     }
 
@@ -553,6 +601,12 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.codeChallengeType_ = codeChallengeType_;
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.regeneratePasswordlessCredentialsOnResend_ = regeneratePasswordlessCredentialsOnResendBuilder_ == null
+            ? regeneratePasswordlessCredentialsOnResend_
+            : regeneratePasswordlessCredentialsOnResendBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -619,6 +673,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasCodeChallengeType()) {
         setCodeChallengeType(other.getCodeChallengeType());
       }
+      if (other.hasRegeneratePasswordlessCredentialsOnResend()) {
+        mergeRegeneratePasswordlessCredentialsOnResend(other.getRegeneratePasswordlessCredentialsOnResend());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -683,6 +740,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000020;
               break;
             } // case 48
+            case 58: {
+              input.readMessage(
+                  getRegeneratePasswordlessCredentialsOnResendFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 58
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1295,6 +1359,127 @@ private static final long serialVersionUID = 0L;
       codeChallengeType_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.BoolValue regeneratePasswordlessCredentialsOnResend_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> regeneratePasswordlessCredentialsOnResendBuilder_;
+    /**
+     * <code>optional .google.protobuf.BoolValue regenerate_passwordless_credentials_on_resend = 7 [json_name = "regeneratePasswordlessCredentialsOnResend", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the regeneratePasswordlessCredentialsOnResend field is set.
+     */
+    public boolean hasRegeneratePasswordlessCredentialsOnResend() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>optional .google.protobuf.BoolValue regenerate_passwordless_credentials_on_resend = 7 [json_name = "regeneratePasswordlessCredentialsOnResend", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The regeneratePasswordlessCredentialsOnResend.
+     */
+    public com.google.protobuf.BoolValue getRegeneratePasswordlessCredentialsOnResend() {
+      if (regeneratePasswordlessCredentialsOnResendBuilder_ == null) {
+        return regeneratePasswordlessCredentialsOnResend_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : regeneratePasswordlessCredentialsOnResend_;
+      } else {
+        return regeneratePasswordlessCredentialsOnResendBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.BoolValue regenerate_passwordless_credentials_on_resend = 7 [json_name = "regeneratePasswordlessCredentialsOnResend", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setRegeneratePasswordlessCredentialsOnResend(com.google.protobuf.BoolValue value) {
+      if (regeneratePasswordlessCredentialsOnResendBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        regeneratePasswordlessCredentialsOnResend_ = value;
+      } else {
+        regeneratePasswordlessCredentialsOnResendBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.BoolValue regenerate_passwordless_credentials_on_resend = 7 [json_name = "regeneratePasswordlessCredentialsOnResend", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setRegeneratePasswordlessCredentialsOnResend(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (regeneratePasswordlessCredentialsOnResendBuilder_ == null) {
+        regeneratePasswordlessCredentialsOnResend_ = builderForValue.build();
+      } else {
+        regeneratePasswordlessCredentialsOnResendBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.BoolValue regenerate_passwordless_credentials_on_resend = 7 [json_name = "regeneratePasswordlessCredentialsOnResend", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeRegeneratePasswordlessCredentialsOnResend(com.google.protobuf.BoolValue value) {
+      if (regeneratePasswordlessCredentialsOnResendBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0) &&
+          regeneratePasswordlessCredentialsOnResend_ != null &&
+          regeneratePasswordlessCredentialsOnResend_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getRegeneratePasswordlessCredentialsOnResendBuilder().mergeFrom(value);
+        } else {
+          regeneratePasswordlessCredentialsOnResend_ = value;
+        }
+      } else {
+        regeneratePasswordlessCredentialsOnResendBuilder_.mergeFrom(value);
+      }
+      if (regeneratePasswordlessCredentialsOnResend_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.BoolValue regenerate_passwordless_credentials_on_resend = 7 [json_name = "regeneratePasswordlessCredentialsOnResend", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearRegeneratePasswordlessCredentialsOnResend() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      regeneratePasswordlessCredentialsOnResend_ = null;
+      if (regeneratePasswordlessCredentialsOnResendBuilder_ != null) {
+        regeneratePasswordlessCredentialsOnResendBuilder_.dispose();
+        regeneratePasswordlessCredentialsOnResendBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .google.protobuf.BoolValue regenerate_passwordless_credentials_on_resend = 7 [json_name = "regeneratePasswordlessCredentialsOnResend", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getRegeneratePasswordlessCredentialsOnResendBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getRegeneratePasswordlessCredentialsOnResendFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>optional .google.protobuf.BoolValue regenerate_passwordless_credentials_on_resend = 7 [json_name = "regeneratePasswordlessCredentialsOnResend", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getRegeneratePasswordlessCredentialsOnResendOrBuilder() {
+      if (regeneratePasswordlessCredentialsOnResendBuilder_ != null) {
+        return regeneratePasswordlessCredentialsOnResendBuilder_.getMessageOrBuilder();
+      } else {
+        return regeneratePasswordlessCredentialsOnResend_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : regeneratePasswordlessCredentialsOnResend_;
+      }
+    }
+    /**
+     * <code>optional .google.protobuf.BoolValue regenerate_passwordless_credentials_on_resend = 7 [json_name = "regeneratePasswordlessCredentialsOnResend", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getRegeneratePasswordlessCredentialsOnResendFieldBuilder() {
+      if (regeneratePasswordlessCredentialsOnResendBuilder_ == null) {
+        regeneratePasswordlessCredentialsOnResendBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getRegeneratePasswordlessCredentialsOnResend(),
+                getParentForChildren(),
+                isClean());
+        regeneratePasswordlessCredentialsOnResend_ = null;
+      }
+      return regeneratePasswordlessCredentialsOnResendBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

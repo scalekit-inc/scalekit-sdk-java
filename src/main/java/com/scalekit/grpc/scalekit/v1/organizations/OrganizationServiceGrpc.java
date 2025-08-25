@@ -480,6 +480,68 @@ public final class OrganizationServiceGrpc {
     return getDeleteOrganizationSessionSettingsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest,
+      com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse> getUpdateUserManagementSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateUserManagementSettings",
+      requestType = com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest,
+      com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse> getUpdateUserManagementSettingsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest, com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse> getUpdateUserManagementSettingsMethod;
+    if ((getUpdateUserManagementSettingsMethod = OrganizationServiceGrpc.getUpdateUserManagementSettingsMethod) == null) {
+      synchronized (OrganizationServiceGrpc.class) {
+        if ((getUpdateUserManagementSettingsMethod = OrganizationServiceGrpc.getUpdateUserManagementSettingsMethod) == null) {
+          OrganizationServiceGrpc.getUpdateUserManagementSettingsMethod = getUpdateUserManagementSettingsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest, com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateUserManagementSettings"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new OrganizationServiceMethodDescriptorSupplier("UpdateUserManagementSettings"))
+              .build();
+        }
+      }
+    }
+    return getUpdateUserManagementSettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsRequest,
+      com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsResponse> getGetOrganizationUserManagementSettingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetOrganizationUserManagementSetting",
+      requestType = com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsRequest,
+      com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsResponse> getGetOrganizationUserManagementSettingMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsRequest, com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsResponse> getGetOrganizationUserManagementSettingMethod;
+    if ((getGetOrganizationUserManagementSettingMethod = OrganizationServiceGrpc.getGetOrganizationUserManagementSettingMethod) == null) {
+      synchronized (OrganizationServiceGrpc.class) {
+        if ((getGetOrganizationUserManagementSettingMethod = OrganizationServiceGrpc.getGetOrganizationUserManagementSettingMethod) == null) {
+          OrganizationServiceGrpc.getGetOrganizationUserManagementSettingMethod = getGetOrganizationUserManagementSettingMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsRequest, com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetOrganizationUserManagementSetting"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new OrganizationServiceMethodDescriptorSupplier("GetOrganizationUserManagementSetting"))
+              .build();
+        }
+      }
+    }
+    return getGetOrganizationUserManagementSettingMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -641,6 +703,23 @@ public final class OrganizationServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteOrganizationSessionSettingsMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     * Update user management setting for an organization
+     * </pre>
+     */
+    default void updateUserManagementSettings(com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateUserManagementSettingsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getOrganizationUserManagementSetting(com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetOrganizationUserManagementSettingMethod(), responseObserver);
+    }
   }
 
   /**
@@ -798,6 +877,25 @@ public final class OrganizationServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteOrganizationSessionSettingsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Update user management setting for an organization
+     * </pre>
+     */
+    public void updateUserManagementSettings(com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateUserManagementSettingsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getOrganizationUserManagementSetting(com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetOrganizationUserManagementSettingMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -928,6 +1026,23 @@ public final class OrganizationServiceGrpc {
     public com.google.protobuf.Empty deleteOrganizationSessionSettings(com.scalekit.grpc.scalekit.v1.organizations.DeleteOrganizationSessionSettingsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteOrganizationSessionSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Update user management setting for an organization
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse updateUserManagementSettings(com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateUserManagementSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsResponse getOrganizationUserManagementSetting(com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetOrganizationUserManagementSettingMethod(), getCallOptions(), request);
     }
   }
 
@@ -1075,6 +1190,25 @@ public final class OrganizationServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteOrganizationSessionSettingsMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Update user management setting for an organization
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse> updateUserManagementSettings(
+        com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateUserManagementSettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsResponse> getOrganizationUserManagementSetting(
+        com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetOrganizationUserManagementSettingMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ORGANIZATION = 0;
@@ -1092,6 +1226,8 @@ public final class OrganizationServiceGrpc {
   private static final int METHODID_GET_ORGANIZATION_SESSION_SETTINGS = 12;
   private static final int METHODID_UPDATE_ORGANIZATION_SESSION_SETTINGS = 13;
   private static final int METHODID_DELETE_ORGANIZATION_SESSION_SETTINGS = 14;
+  private static final int METHODID_UPDATE_USER_MANAGEMENT_SETTINGS = 15;
+  private static final int METHODID_GET_ORGANIZATION_USER_MANAGEMENT_SETTING = 16;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1169,6 +1305,14 @@ public final class OrganizationServiceGrpc {
         case METHODID_DELETE_ORGANIZATION_SESSION_SETTINGS:
           serviceImpl.deleteOrganizationSessionSettings((com.scalekit.grpc.scalekit.v1.organizations.DeleteOrganizationSessionSettingsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_USER_MANAGEMENT_SETTINGS:
+          serviceImpl.updateUserManagementSettings((com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse>) responseObserver);
+          break;
+        case METHODID_GET_ORGANIZATION_USER_MANAGEMENT_SETTING:
+          serviceImpl.getOrganizationUserManagementSetting((com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1293,6 +1437,20 @@ public final class OrganizationServiceGrpc {
               com.scalekit.grpc.scalekit.v1.organizations.DeleteOrganizationSessionSettingsRequest,
               com.google.protobuf.Empty>(
                 service, METHODID_DELETE_ORGANIZATION_SESSION_SETTINGS)))
+        .addMethod(
+          getUpdateUserManagementSettingsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest,
+              com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse>(
+                service, METHODID_UPDATE_USER_MANAGEMENT_SETTINGS)))
+        .addMethod(
+          getGetOrganizationUserManagementSettingMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsRequest,
+              com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsResponse>(
+                service, METHODID_GET_ORGANIZATION_USER_MANAGEMENT_SETTING)))
         .build();
   }
 
@@ -1356,6 +1514,8 @@ public final class OrganizationServiceGrpc {
               .addMethod(getGetOrganizationSessionSettingsMethod())
               .addMethod(getUpdateOrganizationSessionSettingsMethod())
               .addMethod(getDeleteOrganizationSessionSettingsMethod())
+              .addMethod(getUpdateUserManagementSettingsMethod())
+              .addMethod(getGetOrganizationUserManagementSettingMethod())
               .build();
         }
       }

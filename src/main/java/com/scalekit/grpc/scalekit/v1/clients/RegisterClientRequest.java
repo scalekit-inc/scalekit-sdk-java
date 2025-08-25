@@ -17,7 +17,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private RegisterClientRequest() {
-    appId_ = "";
+    resId_ = "";
   }
 
   @java.lang.Override
@@ -41,39 +41,39 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
-  public static final int APP_ID_FIELD_NUMBER = 1;
+  public static final int RES_ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object appId_ = "";
+  private volatile java.lang.Object resId_ = "";
   /**
-   * <code>string app_id = 1 [json_name = "appId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The appId.
+   * <code>string res_id = 1 [json_name = "resId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resId.
    */
   @java.lang.Override
-  public java.lang.String getAppId() {
-    java.lang.Object ref = appId_;
+  public java.lang.String getResId() {
+    java.lang.Object ref = resId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      appId_ = s;
+      resId_ = s;
       return s;
     }
   }
   /**
-   * <code>string app_id = 1 [json_name = "appId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for appId.
+   * <code>string res_id = 1 [json_name = "resId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for resId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getAppIdBytes() {
-    java.lang.Object ref = appId_;
+      getResIdBytes() {
+    java.lang.Object ref = resId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      appId_ = b;
+      resId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -120,8 +120,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, appId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getClient());
@@ -135,8 +135,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, appId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -157,8 +157,8 @@ private static final long serialVersionUID = 0L;
     }
     com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest other = (com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest) obj;
 
-    if (!getAppId()
-        .equals(other.getAppId())) return false;
+    if (!getResId()
+        .equals(other.getResId())) return false;
     if (hasClient() != other.hasClient()) return false;
     if (hasClient()) {
       if (!getClient()
@@ -175,8 +175,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + APP_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getAppId().hashCode();
+    hash = (37 * hash) + RES_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getResId().hashCode();
     if (hasClient()) {
       hash = (37 * hash) + CLIENT_FIELD_NUMBER;
       hash = (53 * hash) + getClient().hashCode();
@@ -318,7 +318,7 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      appId_ = "";
+      resId_ = "";
       client_ = null;
       if (clientBuilder_ != null) {
         clientBuilder_.dispose();
@@ -358,7 +358,7 @@ private static final long serialVersionUID = 0L;
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.appId_ = appId_;
+        result.resId_ = resId_;
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
@@ -414,8 +414,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest other) {
       if (other == com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest.getDefaultInstance()) return this;
-      if (!other.getAppId().isEmpty()) {
-        appId_ = other.appId_;
+      if (!other.getResId().isEmpty()) {
+        resId_ = other.resId_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
@@ -449,7 +449,7 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              appId_ = input.readStringRequireUtf8();
+              resId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
             } // case 10
@@ -477,73 +477,73 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object appId_ = "";
+    private java.lang.Object resId_ = "";
     /**
-     * <code>string app_id = 1 [json_name = "appId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The appId.
+     * <code>string res_id = 1 [json_name = "resId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The resId.
      */
-    public java.lang.String getAppId() {
-      java.lang.Object ref = appId_;
+    public java.lang.String getResId() {
+      java.lang.Object ref = resId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        appId_ = s;
+        resId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string app_id = 1 [json_name = "appId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for appId.
+     * <code>string res_id = 1 [json_name = "resId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for resId.
      */
     public com.google.protobuf.ByteString
-        getAppIdBytes() {
-      java.lang.Object ref = appId_;
+        getResIdBytes() {
+      java.lang.Object ref = resId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        appId_ = b;
+        resId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string app_id = 1 [json_name = "appId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The appId to set.
+     * <code>string res_id = 1 [json_name = "resId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The resId to set.
      * @return This builder for chaining.
      */
-    public Builder setAppId(
+    public Builder setResId(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      appId_ = value;
+      resId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>string app_id = 1 [json_name = "appId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string res_id = 1 [json_name = "resId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearAppId() {
-      appId_ = getDefaultInstance().getAppId();
+    public Builder clearResId() {
+      resId_ = getDefaultInstance().getResId();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>string app_id = 1 [json_name = "appId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for appId to set.
+     * <code>string res_id = 1 [json_name = "resId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for resId to set.
      * @return This builder for chaining.
      */
-    public Builder setAppIdBytes(
+    public Builder setResIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      appId_ = value;
+      resId_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
