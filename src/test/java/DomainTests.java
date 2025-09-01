@@ -1,6 +1,9 @@
 import com.scalekit.ScalekitClient;
 import com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.Operation;
 import com.scalekit.grpc.scalekit.v1.domains.Domain;
+import com.scalekit.grpc.scalekit.v1.domains.DomainType;
+import com.scalekit.grpc.scalekit.v1.domains.CreateDomainRequest;
+import com.scalekit.grpc.scalekit.v1.domains.CreateDomain;
 import com.scalekit.grpc.scalekit.v1.organizations.Organization;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -27,15 +30,78 @@ public class DomainTests {
         Organization organization  = client.organizations().listOrganizations(10, "").getOrganizationsList().get(0);
         assert organization != null;
         String domainName = UUID.randomUUID().toString().substring(0,10);
-        Domain domain = client.domains().createDomain(organization.getId(), domainName);
+        
+        CreateDomainRequest request = CreateDomainRequest.newBuilder()
+                .setOrganizationId(organization.getId())
+                .setDomain(CreateDomain.newBuilder()
+                        .setDomain(domainName)
+                        .build())
+                .build();
+        
+        Domain domain = client.domains().createDomain(request);
         Assertions.assertEquals(domainName, domain.getDomain());
 
         List<Domain> retrievedDomain = client.domains().listDomainsByOrganizationId(organization.getId());
         Assertions.assertFalse(retrievedDomain.isEmpty());
 
-
         Domain retrievedDomainById = client.domains().getDomainById(organization.getId(), domain.getId());
         Assertions.assertEquals(domain.getId(), retrievedDomainById.getId());
+    }
 
+    @Test
+    public void testCreateDomainWithHomeRealmDiscoveryType() {
+        Organization organization = client.organizations().listOrganizations(10, "").getOrganizationsList().get(0);
+        assert organization != null;
+        String domainName = UUID.randomUUID().toString().substring(0, 10);
+        
+        CreateDomainRequest request = CreateDomainRequest.newBuilder()
+                .setOrganizationId(organization.getId())
+                .setDomain(CreateDomain.newBuilder()
+                        .setDomain(domainName)
+                        .setDomainType(DomainType.HOME_REALM_DISCOVERY)
+                        .build())
+                .build();
+        
+        Domain domain = client.domains().createDomain(request);
+        Assertions.assertEquals(domainName, domain.getDomain());
+        Assertions.assertEquals(DomainType.HOME_REALM_DISCOVERY, domain.getDomainType());
+    }
+
+    @Test
+    public void testCreateDomainWithJitProvisioningDomainType() {
+        Organization organization = client.organizations().listOrganizations(10, "").getOrganizationsList().get(0);
+        assert organization != null;
+        String domainName = UUID.randomUUID().toString().substring(0, 10);
+        
+        CreateDomainRequest request = CreateDomainRequest.newBuilder()
+                .setOrganizationId(organization.getId())
+                .setDomain(CreateDomain.newBuilder()
+                        .setDomain(domainName)
+                        .setDomainType(DomainType.JIT_PROVISIONING_DOMAIN)
+                        .build())
+                .build();
+        
+        Domain domain = client.domains().createDomain(request);
+        Assertions.assertEquals(domainName, domain.getDomain());
+        Assertions.assertEquals(DomainType.JIT_PROVISIONING_DOMAIN, domain.getDomainType());
+    }
+
+    @Test
+    public void testCreateDomainWithoutDomainType() {
+        Organization organization = client.organizations().listOrganizations(10, "").getOrganizationsList().get(0);
+        assert organization != null;
+        String domainName = UUID.randomUUID().toString().substring(0, 10);
+        
+        CreateDomainRequest request = CreateDomainRequest.newBuilder()
+                .setOrganizationId(organization.getId())
+                .setDomain(CreateDomain.newBuilder()
+                        .setDomain(domainName)
+                        .build())
+                .build();
+        
+        Domain domain = client.domains().createDomain(request);
+        Assertions.assertEquals(domainName, domain.getDomain());
+        // When domainType is not specified, it should default to DOMAIN_TYPE_UNSPECIFIED
+        Assertions.assertEquals(DomainType.DOMAIN_TYPE_UNSPECIFIED, domain.getDomainType());
     }
 }
