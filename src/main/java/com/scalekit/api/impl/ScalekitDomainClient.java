@@ -139,4 +139,25 @@ public class ScalekitDomainClient implements DomainClient {
             return response.getDomainsList();}, this.credentials);
 
     }
+
+        /**
+     * deleteDomain deletes a domain by its ID
+     *
+     * @param organizationId: The organization ID
+     * @param domainId: The domain ID
+     */
+    @Override
+    public void deleteDomain(String organizationId, String domainId) {
+        RetryExecuter.executeWithRetry(() -> {
+            this.domainStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .deleteDomain(
+                    DeleteDomainRequest.newBuilder() 
+                            .setOrganizationId(organizationId)
+                            .setId(domainId)
+                            .build());
+            return null; 
+        }, this.credentials);
+    }
+
 }

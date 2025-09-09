@@ -35,4 +35,11 @@ public interface DomainClient {
     Domain getDomainById(String organizationId, String domainId);
 
     List<Domain> listDomainsByOrganizationId(String organizationId);
+
+    /**
+     * deleteDomain deletes a domain by its ID
+     * @param organizationId: The organization ID
+     * @param domainId: The domain ID
+     */
+    void deleteDomain(String organizationId, String domainId);
 }

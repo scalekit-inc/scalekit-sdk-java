@@ -104,4 +104,32 @@ public class DomainTests {
         // When domainType is not specified, it should default to DOMAIN_TYPE_UNSPECIFIED
         Assertions.assertEquals(DomainType.DOMAIN_TYPE_UNSPECIFIED, domain.getDomainType());
     }
+
+    @Test
+    public void testDeleteDomain() {
+        Organization organization = client.organizations().listOrganizations(10, "").getOrganizationsList().get(0);
+        assert organization != null;
+        String domainName = UUID.randomUUID().toString().substring(0, 10);
+        
+        // Create a domain first
+        Domain domain = client.domains().createDomain(organization.getId(), domainName, null);
+        Assertions.assertEquals(domainName, domain.getDomain());
+        Assertions.assertNotNull(domain.getId());
+        
+        // Verify the domain exists
+        Domain retrievedDomain = client.domains().getDomainById(organization.getId(), domain.getId());
+        Assertions.assertEquals(domain.getId(), retrievedDomain.getId());
+        
+        // Delete the domain
+        client.domains().deleteDomain(organization.getId(), domain.getId());
+        
+        // Verify the domain is deleted by trying to get it (should throw an exception)
+        try {
+            client.domains().getDomainById(organization.getId(), domain.getId());
+            Assertions.fail("Domain should have been deleted");
+        } catch (Exception e) {
+            // Expected behavior - domain should not exist after deletion
+            Assertions.assertTrue(e.getMessage().contains("not found") || e.getMessage().contains("NOT_FOUND"));
+        }
+    }
 }
