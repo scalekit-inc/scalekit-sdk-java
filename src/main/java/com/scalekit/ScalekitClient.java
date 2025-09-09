@@ -30,6 +30,9 @@ public class ScalekitClient {
 
     private final PasswordlessClient passwordlessClient;
 
+    private final RoleClient roleClient;
+
+    private final PermissionClient permissionClient;
     private final Webhook webhook;
 
     public ScalekitClient(String siteName, String clientId, String clientSecret) {
@@ -54,7 +57,8 @@ public class ScalekitClient {
             directoryClient = new ScalekitDirectoryClient(channel, credentials);
             userClient = new ScalekitUserClient(channel, credentials);
             passwordlessClient = new ScalekitPasswordlessClient(channel, credentials);
-
+            roleClient = new ScalekitRoleClient(channel, credentials);
+            permissionClient = new ScalekitPermissionClient(channel, credentials);
             webhook = new ScalekitWebhook();
 
         } catch (MalformedURLException e) {
@@ -95,6 +99,14 @@ public class ScalekitClient {
 
     public PasswordlessClient passwordless() {
         return this.passwordlessClient;
+    }
+
+    public RoleClient roles() {
+        return this.roleClient;
+    }
+
+    public PermissionClient permissions() {
+        return this.permissionClient;
     }
 
 }
