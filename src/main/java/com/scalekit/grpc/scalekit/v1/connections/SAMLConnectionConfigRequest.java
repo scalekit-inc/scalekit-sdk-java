@@ -428,6 +428,84 @@ private static final long serialVersionUID = 0L;
     return idpSloRequired_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : idpSloRequired_;
   }
 
+  public static final int SP_ENTITY_ID_FIELD_NUMBER = 20;
+  private com.google.protobuf.StringValue spEntityId_;
+  /**
+   * <code>.google.protobuf.StringValue sp_entity_id = 20 [json_name = "spEntityId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the spEntityId field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpEntityId() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   * <code>.google.protobuf.StringValue sp_entity_id = 20 [json_name = "spEntityId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The spEntityId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getSpEntityId() {
+    return spEntityId_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : spEntityId_;
+  }
+  /**
+   * <code>.google.protobuf.StringValue sp_entity_id = 20 [json_name = "spEntityId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getSpEntityIdOrBuilder() {
+    return spEntityId_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : spEntityId_;
+  }
+
+  public static final int SP_ASSERTION_URL_FIELD_NUMBER = 21;
+  private com.google.protobuf.StringValue spAssertionUrl_;
+  /**
+   * <code>.google.protobuf.StringValue sp_assertion_url = 21 [json_name = "spAssertionUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the spAssertionUrl field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpAssertionUrl() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+  /**
+   * <code>.google.protobuf.StringValue sp_assertion_url = 21 [json_name = "spAssertionUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The spAssertionUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getSpAssertionUrl() {
+    return spAssertionUrl_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : spAssertionUrl_;
+  }
+  /**
+   * <code>.google.protobuf.StringValue sp_assertion_url = 21 [json_name = "spAssertionUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getSpAssertionUrlOrBuilder() {
+    return spAssertionUrl_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : spAssertionUrl_;
+  }
+
+  public static final int SP_SLO_URL_FIELD_NUMBER = 22;
+  private com.google.protobuf.StringValue spSloUrl_;
+  /**
+   * <code>.google.protobuf.StringValue sp_slo_url = 22 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the spSloUrl field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpSloUrl() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+  /**
+   * <code>.google.protobuf.StringValue sp_slo_url = 22 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The spSloUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getSpSloUrl() {
+    return spSloUrl_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : spSloUrl_;
+  }
+  /**
+   * <code>.google.protobuf.StringValue sp_slo_url = 22 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getSpSloUrlOrBuilder() {
+    return spSloUrl_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : spSloUrl_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -489,6 +567,15 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(19, getIdpSloRequired());
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(20, getSpEntityId());
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      output.writeMessage(21, getSpAssertionUrl());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(22, getSpSloUrl());
     }
     getUnknownFields().writeTo(output);
   }
@@ -562,6 +649,18 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(19, getIdpSloRequired());
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(20, getSpEntityId());
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(21, getSpAssertionUrl());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(22, getSpSloUrl());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -642,6 +741,21 @@ private static final long serialVersionUID = 0L;
       if (!getIdpSloRequired()
           .equals(other.getIdpSloRequired())) return false;
     }
+    if (hasSpEntityId() != other.hasSpEntityId()) return false;
+    if (hasSpEntityId()) {
+      if (!getSpEntityId()
+          .equals(other.getSpEntityId())) return false;
+    }
+    if (hasSpAssertionUrl() != other.hasSpAssertionUrl()) return false;
+    if (hasSpAssertionUrl()) {
+      if (!getSpAssertionUrl()
+          .equals(other.getSpAssertionUrl())) return false;
+    }
+    if (hasSpSloUrl() != other.hasSpSloUrl()) return false;
+    if (hasSpSloUrl()) {
+      if (!getSpSloUrl()
+          .equals(other.getSpSloUrl())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -708,6 +822,18 @@ private static final long serialVersionUID = 0L;
     if (hasIdpSloRequired()) {
       hash = (37 * hash) + IDP_SLO_REQUIRED_FIELD_NUMBER;
       hash = (53 * hash) + getIdpSloRequired().hashCode();
+    }
+    if (hasSpEntityId()) {
+      hash = (37 * hash) + SP_ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpEntityId().hashCode();
+    }
+    if (hasSpAssertionUrl()) {
+      hash = (37 * hash) + SP_ASSERTION_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getSpAssertionUrl().hashCode();
+    }
+    if (hasSpSloUrl()) {
+      hash = (37 * hash) + SP_SLO_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getSpSloUrl().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -851,6 +977,9 @@ private static final long serialVersionUID = 0L;
         getWantRequestSignedFieldBuilder();
         getCertificateIdFieldBuilder();
         getIdpSloRequiredFieldBuilder();
+        getSpEntityIdFieldBuilder();
+        getSpAssertionUrlFieldBuilder();
+        getSpSloUrlFieldBuilder();
       }
     }
     @java.lang.Override
@@ -920,6 +1049,21 @@ private static final long serialVersionUID = 0L;
       if (idpSloRequiredBuilder_ != null) {
         idpSloRequiredBuilder_.dispose();
         idpSloRequiredBuilder_ = null;
+      }
+      spEntityId_ = null;
+      if (spEntityIdBuilder_ != null) {
+        spEntityIdBuilder_.dispose();
+        spEntityIdBuilder_ = null;
+      }
+      spAssertionUrl_ = null;
+      if (spAssertionUrlBuilder_ != null) {
+        spAssertionUrlBuilder_.dispose();
+        spAssertionUrlBuilder_ = null;
+      }
+      spSloUrl_ = null;
+      if (spSloUrlBuilder_ != null) {
+        spSloUrlBuilder_.dispose();
+        spSloUrlBuilder_ = null;
       }
       return this;
     }
@@ -1039,6 +1183,24 @@ private static final long serialVersionUID = 0L;
             : idpSloRequiredBuilder_.build();
         to_bitField0_ |= 0x00000800;
       }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.spEntityId_ = spEntityIdBuilder_ == null
+            ? spEntityId_
+            : spEntityIdBuilder_.build();
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.spAssertionUrl_ = spAssertionUrlBuilder_ == null
+            ? spAssertionUrl_
+            : spAssertionUrlBuilder_.build();
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.spSloUrl_ = spSloUrlBuilder_ == null
+            ? spSloUrl_
+            : spSloUrlBuilder_.build();
+        to_bitField0_ |= 0x00004000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1133,6 +1295,15 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasIdpSloRequired()) {
         mergeIdpSloRequired(other.getIdpSloRequired());
+      }
+      if (other.hasSpEntityId()) {
+        mergeSpEntityId(other.getSpEntityId());
+      }
+      if (other.hasSpAssertionUrl()) {
+        mergeSpAssertionUrl(other.getSpAssertionUrl());
+      }
+      if (other.hasSpSloUrl()) {
+        mergeSpSloUrl(other.getSpSloUrl());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1264,6 +1435,27 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00008000;
               break;
             } // case 154
+            case 162: {
+              input.readMessage(
+                  getSpEntityIdFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00010000;
+              break;
+            } // case 162
+            case 170: {
+              input.readMessage(
+                  getSpAssertionUrlFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00020000;
+              break;
+            } // case 170
+            case 178: {
+              input.readMessage(
+                  getSpSloUrlFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00040000;
+              break;
+            } // case 178
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2943,6 +3135,369 @@ private static final long serialVersionUID = 0L;
         idpSloRequired_ = null;
       }
       return idpSloRequiredBuilder_;
+    }
+
+    private com.google.protobuf.StringValue spEntityId_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> spEntityIdBuilder_;
+    /**
+     * <code>.google.protobuf.StringValue sp_entity_id = 20 [json_name = "spEntityId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the spEntityId field is set.
+     */
+    public boolean hasSpEntityId() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_entity_id = 20 [json_name = "spEntityId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The spEntityId.
+     */
+    public com.google.protobuf.StringValue getSpEntityId() {
+      if (spEntityIdBuilder_ == null) {
+        return spEntityId_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : spEntityId_;
+      } else {
+        return spEntityIdBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_entity_id = 20 [json_name = "spEntityId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setSpEntityId(com.google.protobuf.StringValue value) {
+      if (spEntityIdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spEntityId_ = value;
+      } else {
+        spEntityIdBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_entity_id = 20 [json_name = "spEntityId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setSpEntityId(
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (spEntityIdBuilder_ == null) {
+        spEntityId_ = builderForValue.build();
+      } else {
+        spEntityIdBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_entity_id = 20 [json_name = "spEntityId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeSpEntityId(com.google.protobuf.StringValue value) {
+      if (spEntityIdBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0) &&
+          spEntityId_ != null &&
+          spEntityId_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getSpEntityIdBuilder().mergeFrom(value);
+        } else {
+          spEntityId_ = value;
+        }
+      } else {
+        spEntityIdBuilder_.mergeFrom(value);
+      }
+      if (spEntityId_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_entity_id = 20 [json_name = "spEntityId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearSpEntityId() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      spEntityId_ = null;
+      if (spEntityIdBuilder_ != null) {
+        spEntityIdBuilder_.dispose();
+        spEntityIdBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_entity_id = 20 [json_name = "spEntityId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValue.Builder getSpEntityIdBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return getSpEntityIdFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_entity_id = 20 [json_name = "spEntityId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getSpEntityIdOrBuilder() {
+      if (spEntityIdBuilder_ != null) {
+        return spEntityIdBuilder_.getMessageOrBuilder();
+      } else {
+        return spEntityId_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : spEntityId_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_entity_id = 20 [json_name = "spEntityId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getSpEntityIdFieldBuilder() {
+      if (spEntityIdBuilder_ == null) {
+        spEntityIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getSpEntityId(),
+                getParentForChildren(),
+                isClean());
+        spEntityId_ = null;
+      }
+      return spEntityIdBuilder_;
+    }
+
+    private com.google.protobuf.StringValue spAssertionUrl_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> spAssertionUrlBuilder_;
+    /**
+     * <code>.google.protobuf.StringValue sp_assertion_url = 21 [json_name = "spAssertionUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the spAssertionUrl field is set.
+     */
+    public boolean hasSpAssertionUrl() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_assertion_url = 21 [json_name = "spAssertionUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The spAssertionUrl.
+     */
+    public com.google.protobuf.StringValue getSpAssertionUrl() {
+      if (spAssertionUrlBuilder_ == null) {
+        return spAssertionUrl_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : spAssertionUrl_;
+      } else {
+        return spAssertionUrlBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_assertion_url = 21 [json_name = "spAssertionUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setSpAssertionUrl(com.google.protobuf.StringValue value) {
+      if (spAssertionUrlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spAssertionUrl_ = value;
+      } else {
+        spAssertionUrlBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_assertion_url = 21 [json_name = "spAssertionUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setSpAssertionUrl(
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (spAssertionUrlBuilder_ == null) {
+        spAssertionUrl_ = builderForValue.build();
+      } else {
+        spAssertionUrlBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_assertion_url = 21 [json_name = "spAssertionUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeSpAssertionUrl(com.google.protobuf.StringValue value) {
+      if (spAssertionUrlBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0) &&
+          spAssertionUrl_ != null &&
+          spAssertionUrl_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getSpAssertionUrlBuilder().mergeFrom(value);
+        } else {
+          spAssertionUrl_ = value;
+        }
+      } else {
+        spAssertionUrlBuilder_.mergeFrom(value);
+      }
+      if (spAssertionUrl_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_assertion_url = 21 [json_name = "spAssertionUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearSpAssertionUrl() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      spAssertionUrl_ = null;
+      if (spAssertionUrlBuilder_ != null) {
+        spAssertionUrlBuilder_.dispose();
+        spAssertionUrlBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_assertion_url = 21 [json_name = "spAssertionUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValue.Builder getSpAssertionUrlBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getSpAssertionUrlFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_assertion_url = 21 [json_name = "spAssertionUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getSpAssertionUrlOrBuilder() {
+      if (spAssertionUrlBuilder_ != null) {
+        return spAssertionUrlBuilder_.getMessageOrBuilder();
+      } else {
+        return spAssertionUrl_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : spAssertionUrl_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_assertion_url = 21 [json_name = "spAssertionUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getSpAssertionUrlFieldBuilder() {
+      if (spAssertionUrlBuilder_ == null) {
+        spAssertionUrlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getSpAssertionUrl(),
+                getParentForChildren(),
+                isClean());
+        spAssertionUrl_ = null;
+      }
+      return spAssertionUrlBuilder_;
+    }
+
+    private com.google.protobuf.StringValue spSloUrl_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> spSloUrlBuilder_;
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 22 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the spSloUrl field is set.
+     */
+    public boolean hasSpSloUrl() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 22 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The spSloUrl.
+     */
+    public com.google.protobuf.StringValue getSpSloUrl() {
+      if (spSloUrlBuilder_ == null) {
+        return spSloUrl_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : spSloUrl_;
+      } else {
+        return spSloUrlBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 22 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setSpSloUrl(com.google.protobuf.StringValue value) {
+      if (spSloUrlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spSloUrl_ = value;
+      } else {
+        spSloUrlBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 22 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setSpSloUrl(
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (spSloUrlBuilder_ == null) {
+        spSloUrl_ = builderForValue.build();
+      } else {
+        spSloUrlBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 22 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeSpSloUrl(com.google.protobuf.StringValue value) {
+      if (spSloUrlBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0) &&
+          spSloUrl_ != null &&
+          spSloUrl_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getSpSloUrlBuilder().mergeFrom(value);
+        } else {
+          spSloUrl_ = value;
+        }
+      } else {
+        spSloUrlBuilder_.mergeFrom(value);
+      }
+      if (spSloUrl_ != null) {
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 22 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearSpSloUrl() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      spSloUrl_ = null;
+      if (spSloUrlBuilder_ != null) {
+        spSloUrlBuilder_.dispose();
+        spSloUrlBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 22 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValue.Builder getSpSloUrlBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return getSpSloUrlFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 22 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getSpSloUrlOrBuilder() {
+      if (spSloUrlBuilder_ != null) {
+        return spSloUrlBuilder_.getMessageOrBuilder();
+      } else {
+        return spSloUrl_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : spSloUrl_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue sp_slo_url = 22 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getSpSloUrlFieldBuilder() {
+      if (spSloUrlBuilder_ == null) {
+        spSloUrlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getSpSloUrl(),
+                getParentForChildren(),
+                isClean());
+        spSloUrl_ = null;
+      }
+      return spSloUrlBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

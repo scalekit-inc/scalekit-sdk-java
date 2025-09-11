@@ -86,27 +86,27 @@ public interface RoleOrBuilder extends
       getExtendsBytes();
 
   /**
-   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  java.util.List<com.scalekit.grpc.scalekit.v1.roles.Permission> 
+  java.util.List<com.scalekit.grpc.scalekit.v1.roles.RolePermission> 
       getPermissionsList();
   /**
-   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  com.scalekit.grpc.scalekit.v1.roles.Permission getPermissions(int index);
+  com.scalekit.grpc.scalekit.v1.roles.RolePermission getPermissions(int index);
   /**
-   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   int getPermissionsCount();
   /**
-   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  java.util.List<? extends com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder> 
+  java.util.List<? extends com.scalekit.grpc.scalekit.v1.roles.RolePermissionOrBuilder> 
       getPermissionsOrBuilderList();
   /**
-   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder getPermissionsOrBuilder(
+  com.scalekit.grpc.scalekit.v1.roles.RolePermissionOrBuilder getPermissionsOrBuilder(
       int index);
 
   /**
@@ -114,4 +114,10 @@ public interface RoleOrBuilder extends
    * @return The dependentRolesCount.
    */
   int getDependentRolesCount();
+
+  /**
+   * <code>bool is_org_role = 11 [json_name = "isOrgRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isOrgRole.
+   */
+  boolean getIsOrgRole();
 }

@@ -25,6 +25,10 @@ public enum VerificationStatus
    * <code>FAILED = 3;</code>
    */
   FAILED(3),
+  /**
+   * <code>AUTO_VERIFIED = 4;</code>
+   */
+  AUTO_VERIFIED(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -44,6 +48,10 @@ public enum VerificationStatus
    * <code>FAILED = 3;</code>
    */
   public static final int FAILED_VALUE = 3;
+  /**
+   * <code>AUTO_VERIFIED = 4;</code>
+   */
+  public static final int AUTO_VERIFIED_VALUE = 4;
 
 
   public final int getNumber() {
@@ -74,6 +82,7 @@ public enum VerificationStatus
       case 1: return PENDING;
       case 2: return VERIFIED;
       case 3: return FAILED;
+      case 4: return AUTO_VERIFIED;
       default: return null;
     }
   }

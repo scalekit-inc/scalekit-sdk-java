@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     identifier_ = "";
     toolName_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+    query_ = "";
   }
 
   @java.lang.Override
@@ -185,6 +186,53 @@ private static final long serialVersionUID = 0L;
     return toolName_.getByteString(index);
   }
 
+  public static final int QUERY_FIELD_NUMBER = 5;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object query_ = "";
+  /**
+   * <code>optional string query = 5 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the query field is set.
+   */
+  @java.lang.Override
+  public boolean hasQuery() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional string query = 5 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The query.
+   */
+  @java.lang.Override
+  public java.lang.String getQuery() {
+    java.lang.Object ref = query_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      query_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string query = 5 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for query.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getQueryBytes() {
+    java.lang.Object ref = query_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      query_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -210,6 +258,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < toolName_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, toolName_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, query_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -238,6 +289,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getToolNameList().size();
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, query_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -264,6 +318,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getIdentifier())) return false;
     if (!getToolNameList()
         .equals(other.getToolNameList())) return false;
+    if (hasQuery() != other.hasQuery()) return false;
+    if (hasQuery()) {
+      if (!getQuery()
+          .equals(other.getQuery())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -286,6 +345,10 @@ private static final long serialVersionUID = 0L;
     if (getToolNameCount() > 0) {
       hash = (37 * hash) + TOOL_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getToolNameList().hashCode();
+    }
+    if (hasQuery()) {
+      hash = (37 * hash) + QUERY_FIELD_NUMBER;
+      hash = (53 * hash) + getQuery().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -433,6 +496,7 @@ private static final long serialVersionUID = 0L;
       identifier_ = "";
       toolName_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+      query_ = "";
       return this;
     }
 
@@ -482,6 +546,10 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         toolName_.makeImmutable();
         result.toolName_ = toolName_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.query_ = query_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -553,6 +621,11 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (other.hasQuery()) {
+        query_ = other.query_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -602,6 +675,11 @@ private static final long serialVersionUID = 0L;
               toolName_.add(s);
               break;
             } // case 34
+            case 42: {
+              query_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -991,6 +1069,85 @@ private static final long serialVersionUID = 0L;
       ensureToolNameIsMutable();
       toolName_.add(value);
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object query_ = "";
+    /**
+     * <code>optional string query = 5 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the query field is set.
+     */
+    public boolean hasQuery() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>optional string query = 5 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The query.
+     */
+    public java.lang.String getQuery() {
+      java.lang.Object ref = query_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        query_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string query = 5 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for query.
+     */
+    public com.google.protobuf.ByteString
+        getQueryBytes() {
+      java.lang.Object ref = query_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        query_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string query = 5 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The query to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuery(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      query_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string query = 5 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearQuery() {
+      query_ = getDefaultInstance().getQuery();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string query = 5 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for query to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueryBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      query_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -9,14 +9,30 @@ public interface AssignRoleRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string id = 1 [json_name = "id", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @deprecated scalekit.v1.users.AssignRoleRequest.id is deprecated.
+   *     See scalekit/v1/users/users.proto;l=1785
    * @return The id.
    */
-  java.lang.String getId();
+  @java.lang.Deprecated java.lang.String getId();
   /**
-   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string id = 1 [json_name = "id", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @deprecated scalekit.v1.users.AssignRoleRequest.id is deprecated.
+   *     See scalekit/v1/users/users.proto;l=1785
    * @return The bytes for id.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getIdBytes();
+
+  /**
+   * <code>string role_name = 2 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The roleName.
+   */
+  java.lang.String getRoleName();
+  /**
+   * <code>string role_name = 2 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for roleName.
+   */
+  com.google.protobuf.ByteString
+      getRoleNameBytes();
 }

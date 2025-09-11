@@ -15,27 +15,27 @@ public final class AuthServiceGrpc {
   public static final java.lang.String SERVICE_NAME = "scalekit.v1.auth.AuthService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsRequest,
       com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsResponse> getListAuthMethodsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ListAuthMethods",
-      requestType = com.google.protobuf.Empty.class,
+      requestType = com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsRequest.class,
       responseType = com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsRequest,
       com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsResponse> getListAuthMethodsMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsResponse> getListAuthMethodsMethod;
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsRequest, com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsResponse> getListAuthMethodsMethod;
     if ((getListAuthMethodsMethod = AuthServiceGrpc.getListAuthMethodsMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getListAuthMethodsMethod = AuthServiceGrpc.getListAuthMethodsMethod) == null) {
           AuthServiceGrpc.getListAuthMethodsMethod = getListAuthMethodsMethod =
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsRequest, com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAuthMethods"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsResponse.getDefaultInstance()))
               .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("ListAuthMethods"))
@@ -437,7 +437,7 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    default void listAuthMethods(com.google.protobuf.Empty request,
+    default void listAuthMethods(com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAuthMethodsMethod(), responseObserver);
     }
@@ -549,7 +549,7 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    public void listAuthMethods(com.google.protobuf.Empty request,
+    public void listAuthMethods(com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAuthMethodsMethod(), getCallOptions()), request, responseObserver);
@@ -662,7 +662,7 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    public com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsResponse listAuthMethods(com.google.protobuf.Empty request) {
+    public com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsResponse listAuthMethods(com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListAuthMethodsMethod(), getCallOptions(), request);
     }
@@ -764,7 +764,7 @@ public final class AuthServiceGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsResponse> listAuthMethods(
-        com.google.protobuf.Empty request) {
+        com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAuthMethodsMethod(), getCallOptions()), request);
     }
@@ -889,7 +889,7 @@ public final class AuthServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_LIST_AUTH_METHODS:
-          serviceImpl.listAuthMethods((com.google.protobuf.Empty) request,
+          serviceImpl.listAuthMethods((com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsResponse>) responseObserver);
           break;
         case METHODID_DISCOVERY_AUTH_METHOD:
@@ -958,7 +958,7 @@ public final class AuthServiceGrpc {
           getListAuthMethodsMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.google.protobuf.Empty,
+              com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsRequest,
               com.scalekit.grpc.scalekit.v1.auth.ListAuthMethodsResponse>(
                 service, METHODID_LIST_AUTH_METHODS)))
         .addMethod(

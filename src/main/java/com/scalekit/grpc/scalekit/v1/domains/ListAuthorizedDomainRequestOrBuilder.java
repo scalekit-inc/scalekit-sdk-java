@@ -9,12 +9,12 @@ public interface ListAuthorizedDomainRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string origin = 1 [json_name = "origin"];</code>
+   * <code>string origin = 1 [json_name = "origin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The origin.
    */
   java.lang.String getOrigin();
   /**
-   * <code>string origin = 1 [json_name = "origin"];</code>
+   * <code>string origin = 1 [json_name = "origin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for origin.
    */
   com.google.protobuf.ByteString

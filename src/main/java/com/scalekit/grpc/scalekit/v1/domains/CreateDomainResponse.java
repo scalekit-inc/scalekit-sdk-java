@@ -43,7 +43,7 @@ private static final long serialVersionUID = 0L;
   public static final int DOMAIN_FIELD_NUMBER = 1;
   private com.scalekit.grpc.scalekit.v1.domains.Domain domain_;
   /**
-   * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain"];</code>
+   * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the domain field is set.
    */
   @java.lang.Override
@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain"];</code>
+   * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The domain.
    */
   @java.lang.Override
@@ -59,7 +59,7 @@ private static final long serialVersionUID = 0L;
     return domain_ == null ? com.scalekit.grpc.scalekit.v1.domains.Domain.getDefaultInstance() : domain_;
   }
   /**
-   * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain"];</code>
+   * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder getDomainOrBuilder() {
@@ -417,14 +417,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.domains.Domain, com.scalekit.grpc.scalekit.v1.domains.Domain.Builder, com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder> domainBuilder_;
     /**
-     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the domain field is set.
      */
     public boolean hasDomain() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The domain.
      */
     public com.scalekit.grpc.scalekit.v1.domains.Domain getDomain() {
@@ -435,7 +435,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setDomain(com.scalekit.grpc.scalekit.v1.domains.Domain value) {
       if (domainBuilder_ == null) {
@@ -451,7 +451,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setDomain(
         com.scalekit.grpc.scalekit.v1.domains.Domain.Builder builderForValue) {
@@ -465,7 +465,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeDomain(com.scalekit.grpc.scalekit.v1.domains.Domain value) {
       if (domainBuilder_ == null) {
@@ -486,7 +486,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearDomain() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -499,7 +499,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.domains.Domain.Builder getDomainBuilder() {
       bitField0_ |= 0x00000001;
@@ -507,7 +507,7 @@ private static final long serialVersionUID = 0L;
       return getDomainFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder getDomainOrBuilder() {
       if (domainBuilder_ != null) {
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.domains.Domain, com.scalekit.grpc.scalekit.v1.domains.Domain.Builder, com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder> 

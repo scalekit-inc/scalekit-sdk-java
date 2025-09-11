@@ -33,14 +33,14 @@ public interface RemoveUserRoleRequestOrBuilder extends
       getUserIdBytes();
 
   /**
-   * <code>string role_id = 3 [json_name = "roleId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The roleId.
+   * <code>string role_name = 3 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The roleName.
    */
-  java.lang.String getRoleId();
+  java.lang.String getRoleName();
   /**
-   * <code>string role_id = 3 [json_name = "roleId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for roleId.
+   * <code>string role_name = 3 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for roleName.
    */
   com.google.protobuf.ByteString
-      getRoleIdBytes();
+      getRoleNameBytes();
 }

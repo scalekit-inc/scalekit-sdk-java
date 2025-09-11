@@ -44,7 +44,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object origin_ = "";
   /**
-   * <code>string origin = 1 [json_name = "origin"];</code>
+   * <code>string origin = 1 [json_name = "origin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The origin.
    */
   @java.lang.Override
@@ -61,7 +61,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string origin = 1 [json_name = "origin"];</code>
+   * <code>string origin = 1 [json_name = "origin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for origin.
    */
   @java.lang.Override
@@ -407,7 +407,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object origin_ = "";
     /**
-     * <code>string origin = 1 [json_name = "origin"];</code>
+     * <code>string origin = 1 [json_name = "origin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The origin.
      */
     public java.lang.String getOrigin() {
@@ -423,7 +423,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string origin = 1 [json_name = "origin"];</code>
+     * <code>string origin = 1 [json_name = "origin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for origin.
      */
     public com.google.protobuf.ByteString
@@ -440,7 +440,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string origin = 1 [json_name = "origin"];</code>
+     * <code>string origin = 1 [json_name = "origin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The origin to set.
      * @return This builder for chaining.
      */
@@ -453,7 +453,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string origin = 1 [json_name = "origin"];</code>
+     * <code>string origin = 1 [json_name = "origin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearOrigin() {
@@ -463,7 +463,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string origin = 1 [json_name = "origin"];</code>
+     * <code>string origin = 1 [json_name = "origin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for origin to set.
      * @return This builder for chaining.
      */

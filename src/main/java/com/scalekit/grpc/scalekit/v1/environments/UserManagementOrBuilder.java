@@ -110,17 +110,56 @@ public interface UserManagementOrBuilder extends
   com.google.protobuf.UInt32ValueOrBuilder getInvitationExpiryOrBuilder();
 
   /**
-   * <code>.google.protobuf.StringValue organization_meta_name = 8 [json_name = "organizationMetaName", (.buf.validate.field) = { ... }</code>
-   * @return Whether the organizationMetaName field is set.
+   * <pre>
+   * Indicates whether disposable email domains are blocked for user signup/invite.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue block_disposable_email_domains = 9 [json_name = "blockDisposableEmailDomains"];</code>
+   * @return Whether the blockDisposableEmailDomains field is set.
    */
-  boolean hasOrganizationMetaName();
+  boolean hasBlockDisposableEmailDomains();
   /**
-   * <code>.google.protobuf.StringValue organization_meta_name = 8 [json_name = "organizationMetaName", (.buf.validate.field) = { ... }</code>
-   * @return The organizationMetaName.
+   * <pre>
+   * Indicates whether disposable email domains are blocked for user signup/invite.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue block_disposable_email_domains = 9 [json_name = "blockDisposableEmailDomains"];</code>
+   * @return The blockDisposableEmailDomains.
    */
-  com.google.protobuf.StringValue getOrganizationMetaName();
+  com.google.protobuf.BoolValue getBlockDisposableEmailDomains();
   /**
-   * <code>.google.protobuf.StringValue organization_meta_name = 8 [json_name = "organizationMetaName", (.buf.validate.field) = { ... }</code>
+   * <pre>
+   * Indicates whether disposable email domains are blocked for user signup/invite.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue block_disposable_email_domains = 9 [json_name = "blockDisposableEmailDomains"];</code>
    */
-  com.google.protobuf.StringValueOrBuilder getOrganizationMetaNameOrBuilder();
+  com.google.protobuf.BoolValueOrBuilder getBlockDisposableEmailDomainsOrBuilder();
+
+  /**
+   * <pre>
+   * Indicates whether public email domains are blocked for user signup/invite.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue block_public_email_domains = 10 [json_name = "blockPublicEmailDomains"];</code>
+   * @return Whether the blockPublicEmailDomains field is set.
+   */
+  boolean hasBlockPublicEmailDomains();
+  /**
+   * <pre>
+   * Indicates whether public email domains are blocked for user signup/invite.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue block_public_email_domains = 10 [json_name = "blockPublicEmailDomains"];</code>
+   * @return The blockPublicEmailDomains.
+   */
+  com.google.protobuf.BoolValue getBlockPublicEmailDomains();
+  /**
+   * <pre>
+   * Indicates whether public email domains are blocked for user signup/invite.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue block_public_email_domains = 10 [json_name = "blockPublicEmailDomains"];</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getBlockPublicEmailDomainsOrBuilder();
 }

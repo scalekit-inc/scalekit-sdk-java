@@ -23,7 +23,7 @@ private static final long serialVersionUID = 0L;
     environmentId_ = "";
     organizationId_ = "";
     object_ = 0;
-    display_ = "";
+    displayName_ = "";
   }
 
   @java.lang.Override
@@ -340,39 +340,39 @@ private static final long serialVersionUID = 0L;
     return data_ == null ? com.google.protobuf.Struct.getDefaultInstance() : data_;
   }
 
-  public static final int DISPLAY_FIELD_NUMBER = 10;
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 10;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object display_ = "";
+  private volatile java.lang.Object displayName_ = "";
   /**
-   * <code>string display = 10 [json_name = "display"];</code>
-   * @return The display.
+   * <code>string display_name = 10 [json_name = "displayName"];</code>
+   * @return The displayName.
    */
   @java.lang.Override
-  public java.lang.String getDisplay() {
-    java.lang.Object ref = display_;
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      display_ = s;
+      displayName_ = s;
       return s;
     }
   }
   /**
-   * <code>string display = 10 [json_name = "display"];</code>
-   * @return The bytes for display.
+   * <code>string display_name = 10 [json_name = "displayName"];</code>
+   * @return The bytes for displayName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getDisplayBytes() {
-    java.lang.Object ref = display_;
+      getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      display_ = b;
+      displayName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -417,8 +417,8 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(9, getData());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(display_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, display_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, displayName_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -456,8 +456,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getData());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(display_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, display_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, displayName_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -498,8 +498,8 @@ private static final long serialVersionUID = 0L;
       if (!getData()
           .equals(other.getData())) return false;
     }
-    if (!getDisplay()
-        .equals(other.getDisplay())) return false;
+    if (!getDisplayName()
+        .equals(other.getDisplayName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -533,8 +533,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
     }
-    hash = (37 * hash) + DISPLAY_FIELD_NUMBER;
-    hash = (53 * hash) + getDisplay().hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -689,7 +689,7 @@ private static final long serialVersionUID = 0L;
         dataBuilder_.dispose();
         dataBuilder_ = null;
       }
-      display_ = "";
+      displayName_ = "";
       return this;
     }
 
@@ -756,7 +756,7 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.display_ = display_;
+        result.displayName_ = displayName_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -839,8 +839,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasData()) {
         mergeData(other.getData());
       }
-      if (!other.getDisplay().isEmpty()) {
-        display_ = other.display_;
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
         bitField0_ |= 0x00000100;
         onChanged();
       }
@@ -915,7 +915,7 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 74
             case 82: {
-              display_ = input.readStringRequireUtf8();
+              displayName_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000100;
               break;
             } // case 82
@@ -1654,73 +1654,73 @@ private static final long serialVersionUID = 0L;
       return dataBuilder_;
     }
 
-    private java.lang.Object display_ = "";
+    private java.lang.Object displayName_ = "";
     /**
-     * <code>string display = 10 [json_name = "display"];</code>
-     * @return The display.
+     * <code>string display_name = 10 [json_name = "displayName"];</code>
+     * @return The displayName.
      */
-    public java.lang.String getDisplay() {
-      java.lang.Object ref = display_;
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        display_ = s;
+        displayName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string display = 10 [json_name = "display"];</code>
-     * @return The bytes for display.
+     * <code>string display_name = 10 [json_name = "displayName"];</code>
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
-        getDisplayBytes() {
-      java.lang.Object ref = display_;
+        getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        display_ = b;
+        displayName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string display = 10 [json_name = "display"];</code>
-     * @param value The display to set.
+     * <code>string display_name = 10 [json_name = "displayName"];</code>
+     * @param value The displayName to set.
      * @return This builder for chaining.
      */
-    public Builder setDisplay(
+    public Builder setDisplayName(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      display_ = value;
+      displayName_ = value;
       bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
     /**
-     * <code>string display = 10 [json_name = "display"];</code>
+     * <code>string display_name = 10 [json_name = "displayName"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearDisplay() {
-      display_ = getDefaultInstance().getDisplay();
+    public Builder clearDisplayName() {
+      displayName_ = getDefaultInstance().getDisplayName();
       bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
     /**
-     * <code>string display = 10 [json_name = "display"];</code>
-     * @param value The bytes for display to set.
+     * <code>string display_name = 10 [json_name = "displayName"];</code>
+     * @param value The bytes for displayName to set.
      * @return This builder for chaining.
      */
-    public Builder setDisplayBytes(
+    public Builder setDisplayNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      display_ = value;
+      displayName_ = value;
       bitField0_ |= 0x00000100;
       onChanged();
       return this;

@@ -33,6 +33,10 @@ public enum ConnectorType
    * <code>CUSTOM = 5;</code>
    */
   CUSTOM(5),
+  /**
+   * <code>BASIC = 6;</code>
+   */
+  BASIC(6),
   UNRECOGNIZED(-1),
   ;
 
@@ -60,6 +64,10 @@ public enum ConnectorType
    * <code>CUSTOM = 5;</code>
    */
   public static final int CUSTOM_VALUE = 5;
+  /**
+   * <code>BASIC = 6;</code>
+   */
+  public static final int BASIC_VALUE = 6;
 
 
   public final int getNumber() {
@@ -92,6 +100,7 @@ public enum ConnectorType
       case 3: return BASIC_AUTH;
       case 4: return BEARER_TOKEN;
       case 5: return CUSTOM;
+      case 6: return BASIC;
       default: return null;
     }
   }

@@ -102,7 +102,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=1731
+   *     See scalekit/v1/organizations/organizations.proto;l=1585
    * @return The enum numeric value on the wire for deprecatedPlaceholder.
    */
   @java.lang.Override @java.lang.Deprecated public int getDeprecatedPlaceholderValue() {
@@ -115,7 +115,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=1731
+   *     See scalekit/v1/organizations/organizations.proto;l=1585
    * @return The deprecatedPlaceholder.
    */
   @java.lang.Override @java.lang.Deprecated public com.google.protobuf.NullValue getDeprecatedPlaceholder() {
@@ -780,7 +780,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=1731
+     *     See scalekit/v1/organizations/organizations.proto;l=1585
      * @return The enum numeric value on the wire for deprecatedPlaceholder.
      */
     @java.lang.Override @java.lang.Deprecated public int getDeprecatedPlaceholderValue() {
@@ -793,7 +793,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=1731
+     *     See scalekit/v1/organizations/organizations.proto;l=1585
      * @param value The enum numeric value on the wire for deprecatedPlaceholder to set.
      * @return This builder for chaining.
      */
@@ -810,7 +810,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=1731
+     *     See scalekit/v1/organizations/organizations.proto;l=1585
      * @return The deprecatedPlaceholder.
      */
     @java.lang.Override
@@ -825,7 +825,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=1731
+     *     See scalekit/v1/organizations/organizations.proto;l=1585
      * @param value The deprecatedPlaceholder to set.
      * @return This builder for chaining.
      */
@@ -845,7 +845,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=1731
+     *     See scalekit/v1/organizations/organizations.proto;l=1585
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearDeprecatedPlaceholder() {

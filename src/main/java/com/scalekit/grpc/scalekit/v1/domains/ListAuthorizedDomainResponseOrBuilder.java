@@ -9,24 +9,24 @@ public interface ListAuthorizedDomainResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated string domains = 1 [json_name = "domains"];</code>
+   * <code>repeated string domains = 1 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return A list containing the domains.
    */
   java.util.List<java.lang.String>
       getDomainsList();
   /**
-   * <code>repeated string domains = 1 [json_name = "domains"];</code>
+   * <code>repeated string domains = 1 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The count of domains.
    */
   int getDomainsCount();
   /**
-   * <code>repeated string domains = 1 [json_name = "domains"];</code>
+   * <code>repeated string domains = 1 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The domains at the given index.
    */
   java.lang.String getDomains(int index);
   /**
-   * <code>repeated string domains = 1 [json_name = "domains"];</code>
+   * <code>repeated string domains = 1 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the domains at the given index.
    */

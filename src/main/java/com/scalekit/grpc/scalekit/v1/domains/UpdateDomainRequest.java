@@ -86,14 +86,14 @@ private static final long serialVersionUID = 0L;
 
   public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the organizationId field is set.
    */
   public boolean hasOrganizationId() {
     return identitiesCase_ == 1;
   }
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The organizationId.
    */
   public java.lang.String getOrganizationId() {
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for organizationId.
    */
   public com.google.protobuf.ByteString
@@ -138,14 +138,14 @@ private static final long serialVersionUID = 0L;
 
   public static final int EXTERNAL_ID_FIELD_NUMBER = 2;
   /**
-   * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+   * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the externalId field is set.
    */
   public boolean hasExternalId() {
     return identitiesCase_ == 2;
   }
   /**
-   * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+   * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The externalId.
    */
   public java.lang.String getExternalId() {
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+   * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for externalId.
    */
   public com.google.protobuf.ByteString
@@ -192,7 +192,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object connectionId_ = "";
   /**
-   * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+   * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the connectionId field is set.
    */
   @java.lang.Override
@@ -200,7 +200,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+   * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connectionId.
    */
   @java.lang.Override
@@ -217,7 +217,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+   * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for connectionId.
    */
   @java.lang.Override
@@ -239,7 +239,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
   /**
-   * <code>string id = 4 [json_name = "id"];</code>
+   * <code>string id = 4 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The id.
    */
   @java.lang.Override
@@ -256,7 +256,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string id = 4 [json_name = "id"];</code>
+   * <code>string id = 4 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for id.
    */
   @java.lang.Override
@@ -277,7 +277,7 @@ private static final long serialVersionUID = 0L;
   public static final int DOMAIN_FIELD_NUMBER = 5;
   private com.scalekit.grpc.scalekit.v1.domains.UpdateDomain domain_;
   /**
-   * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain"];</code>
+   * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the domain field is set.
    */
   @java.lang.Override
@@ -285,7 +285,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain"];</code>
+   * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The domain.
    */
   @java.lang.Override
@@ -293,7 +293,7 @@ private static final long serialVersionUID = 0L;
     return domain_ == null ? com.scalekit.grpc.scalekit.v1.domains.UpdateDomain.getDefaultInstance() : domain_;
   }
   /**
-   * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain"];</code>
+   * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.domains.UpdateDomainOrBuilder getDomainOrBuilder() {
@@ -791,7 +791,7 @@ private static final long serialVersionUID = 0L;
     private int bitField0_;
 
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the organizationId field is set.
      */
     @java.lang.Override
@@ -799,7 +799,7 @@ private static final long serialVersionUID = 0L;
       return identitiesCase_ == 1;
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The organizationId.
      */
     @java.lang.Override
@@ -821,7 +821,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for organizationId.
      */
     @java.lang.Override
@@ -844,7 +844,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The organizationId to set.
      * @return This builder for chaining.
      */
@@ -857,7 +857,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearOrganizationId() {
@@ -869,7 +869,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for organizationId to set.
      * @return This builder for chaining.
      */
@@ -884,7 +884,7 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
-     * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the externalId field is set.
      */
     @java.lang.Override
@@ -892,7 +892,7 @@ private static final long serialVersionUID = 0L;
       return identitiesCase_ == 2;
     }
     /**
-     * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The externalId.
      */
     @java.lang.Override
@@ -914,7 +914,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for externalId.
      */
     @java.lang.Override
@@ -937,7 +937,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The externalId to set.
      * @return This builder for chaining.
      */
@@ -950,7 +950,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearExternalId() {
@@ -962,7 +962,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for externalId to set.
      * @return This builder for chaining.
      */
@@ -978,14 +978,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object connectionId_ = "";
     /**
-     * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+     * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the connectionId field is set.
      */
     public boolean hasConnectionId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+     * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The connectionId.
      */
     public java.lang.String getConnectionId() {
@@ -1001,7 +1001,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+     * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for connectionId.
      */
     public com.google.protobuf.ByteString
@@ -1018,7 +1018,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+     * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The connectionId to set.
      * @return This builder for chaining.
      */
@@ -1031,7 +1031,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+     * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearConnectionId() {
@@ -1041,7 +1041,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+     * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for connectionId to set.
      * @return This builder for chaining.
      */
@@ -1057,7 +1057,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object id_ = "";
     /**
-     * <code>string id = 4 [json_name = "id"];</code>
+     * <code>string id = 4 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The id.
      */
     public java.lang.String getId() {
@@ -1073,7 +1073,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string id = 4 [json_name = "id"];</code>
+     * <code>string id = 4 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
@@ -1090,7 +1090,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string id = 4 [json_name = "id"];</code>
+     * <code>string id = 4 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -1103,7 +1103,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string id = 4 [json_name = "id"];</code>
+     * <code>string id = 4 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
@@ -1113,7 +1113,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string id = 4 [json_name = "id"];</code>
+     * <code>string id = 4 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
@@ -1131,14 +1131,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.domains.UpdateDomain, com.scalekit.grpc.scalekit.v1.domains.UpdateDomain.Builder, com.scalekit.grpc.scalekit.v1.domains.UpdateDomainOrBuilder> domainBuilder_;
     /**
-     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the domain field is set.
      */
     public boolean hasDomain() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The domain.
      */
     public com.scalekit.grpc.scalekit.v1.domains.UpdateDomain getDomain() {
@@ -1149,7 +1149,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setDomain(com.scalekit.grpc.scalekit.v1.domains.UpdateDomain value) {
       if (domainBuilder_ == null) {
@@ -1165,7 +1165,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setDomain(
         com.scalekit.grpc.scalekit.v1.domains.UpdateDomain.Builder builderForValue) {
@@ -1179,7 +1179,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeDomain(com.scalekit.grpc.scalekit.v1.domains.UpdateDomain value) {
       if (domainBuilder_ == null) {
@@ -1200,7 +1200,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearDomain() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -1213,7 +1213,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.domains.UpdateDomain.Builder getDomainBuilder() {
       bitField0_ |= 0x00000010;
@@ -1221,7 +1221,7 @@ private static final long serialVersionUID = 0L;
       return getDomainFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.domains.UpdateDomainOrBuilder getDomainOrBuilder() {
       if (domainBuilder_ != null) {
@@ -1232,7 +1232,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain"];</code>
+     * <code>.scalekit.v1.domains.UpdateDomain domain = 5 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.domains.UpdateDomain, com.scalekit.grpc.scalekit.v1.domains.UpdateDomain.Builder, com.scalekit.grpc.scalekit.v1.domains.UpdateDomainOrBuilder> 

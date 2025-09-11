@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringArrayList domains_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
   /**
-   * <code>repeated string domains = 1 [json_name = "domains"];</code>
+   * <code>repeated string domains = 1 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return A list containing the domains.
    */
   public com.google.protobuf.ProtocolStringList
@@ -54,14 +54,14 @@ private static final long serialVersionUID = 0L;
     return domains_;
   }
   /**
-   * <code>repeated string domains = 1 [json_name = "domains"];</code>
+   * <code>repeated string domains = 1 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The count of domains.
    */
   public int getDomainsCount() {
     return domains_.size();
   }
   /**
-   * <code>repeated string domains = 1 [json_name = "domains"];</code>
+   * <code>repeated string domains = 1 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The domains at the given index.
    */
@@ -69,7 +69,7 @@ private static final long serialVersionUID = 0L;
     return domains_.get(index);
   }
   /**
-   * <code>repeated string domains = 1 [json_name = "domains"];</code>
+   * <code>repeated string domains = 1 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the domains at the given index.
    */
@@ -428,7 +428,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ |= 0x00000001;
     }
     /**
-     * <code>repeated string domains = 1 [json_name = "domains"];</code>
+     * <code>repeated string domains = 1 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return A list containing the domains.
      */
     public com.google.protobuf.ProtocolStringList
@@ -437,14 +437,14 @@ private static final long serialVersionUID = 0L;
       return domains_;
     }
     /**
-     * <code>repeated string domains = 1 [json_name = "domains"];</code>
+     * <code>repeated string domains = 1 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The count of domains.
      */
     public int getDomainsCount() {
       return domains_.size();
     }
     /**
-     * <code>repeated string domains = 1 [json_name = "domains"];</code>
+     * <code>repeated string domains = 1 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The domains at the given index.
      */
@@ -452,7 +452,7 @@ private static final long serialVersionUID = 0L;
       return domains_.get(index);
     }
     /**
-     * <code>repeated string domains = 1 [json_name = "domains"];</code>
+     * <code>repeated string domains = 1 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the domains at the given index.
      */
@@ -461,7 +461,7 @@ private static final long serialVersionUID = 0L;
       return domains_.getByteString(index);
     }
     /**
-     * <code>repeated string domains = 1 [json_name = "domains"];</code>
+     * <code>repeated string domains = 1 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index to set the value at.
      * @param value The domains to set.
      * @return This builder for chaining.
@@ -476,7 +476,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string domains = 1 [json_name = "domains"];</code>
+     * <code>repeated string domains = 1 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The domains to add.
      * @return This builder for chaining.
      */
@@ -490,7 +490,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string domains = 1 [json_name = "domains"];</code>
+     * <code>repeated string domains = 1 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param values The domains to add.
      * @return This builder for chaining.
      */
@@ -504,7 +504,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string domains = 1 [json_name = "domains"];</code>
+     * <code>repeated string domains = 1 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDomains() {
@@ -515,7 +515,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string domains = 1 [json_name = "domains"];</code>
+     * <code>repeated string domains = 1 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes of the domains to add.
      * @return This builder for chaining.
      */

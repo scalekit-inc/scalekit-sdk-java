@@ -77,6 +77,37 @@ public final class ToolServiceGrpc {
     return getListToolsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsRequest,
+      com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsResponse> getListScopedToolsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListScopedTools",
+      requestType = com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsRequest,
+      com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsResponse> getListScopedToolsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsRequest, com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsResponse> getListScopedToolsMethod;
+    if ((getListScopedToolsMethod = ToolServiceGrpc.getListScopedToolsMethod) == null) {
+      synchronized (ToolServiceGrpc.class) {
+        if ((getListScopedToolsMethod = ToolServiceGrpc.getListScopedToolsMethod) == null) {
+          ToolServiceGrpc.getListScopedToolsMethod = getListScopedToolsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsRequest, com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListScopedTools"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ToolServiceMethodDescriptorSupplier("ListScopedTools"))
+              .build();
+        }
+      }
+    }
+    return getListScopedToolsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultRequest,
       com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultResponse> getSetToolDefaultMethod;
 
@@ -265,6 +296,13 @@ public final class ToolServiceGrpc {
 
     /**
      */
+    default void listScopedTools(com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListScopedToolsMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void setToolDefault(com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetToolDefaultMethod(), responseObserver);
@@ -337,6 +375,14 @@ public final class ToolServiceGrpc {
 
     /**
      */
+    public void listScopedTools(com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListScopedToolsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void setToolDefault(com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -396,6 +442,13 @@ public final class ToolServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.tools.ListToolsResponse listTools(com.scalekit.grpc.scalekit.v1.tools.ListToolsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListToolsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsResponse listScopedTools(com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListScopedToolsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -461,6 +514,14 @@ public final class ToolServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsResponse> listScopedTools(
+        com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListScopedToolsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultResponse> setToolDefault(
         com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -494,10 +555,11 @@ public final class ToolServiceGrpc {
 
   private static final int METHODID_CREATE_TOOL = 0;
   private static final int METHODID_LIST_TOOLS = 1;
-  private static final int METHODID_SET_TOOL_DEFAULT = 2;
-  private static final int METHODID_UPDATE_TOOL = 3;
-  private static final int METHODID_DELETE_TOOL = 4;
-  private static final int METHODID_EXECUTE_TOOL = 5;
+  private static final int METHODID_LIST_SCOPED_TOOLS = 2;
+  private static final int METHODID_SET_TOOL_DEFAULT = 3;
+  private static final int METHODID_UPDATE_TOOL = 4;
+  private static final int METHODID_DELETE_TOOL = 5;
+  private static final int METHODID_EXECUTE_TOOL = 6;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -523,6 +585,10 @@ public final class ToolServiceGrpc {
         case METHODID_LIST_TOOLS:
           serviceImpl.listTools((com.scalekit.grpc.scalekit.v1.tools.ListToolsRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.ListToolsResponse>) responseObserver);
+          break;
+        case METHODID_LIST_SCOPED_TOOLS:
+          serviceImpl.listScopedTools((com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsResponse>) responseObserver);
           break;
         case METHODID_SET_TOOL_DEFAULT:
           serviceImpl.setToolDefault((com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultRequest) request,
@@ -572,6 +638,13 @@ public final class ToolServiceGrpc {
               com.scalekit.grpc.scalekit.v1.tools.ListToolsRequest,
               com.scalekit.grpc.scalekit.v1.tools.ListToolsResponse>(
                 service, METHODID_LIST_TOOLS)))
+        .addMethod(
+          getListScopedToolsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsRequest,
+              com.scalekit.grpc.scalekit.v1.tools.ListScopedToolsResponse>(
+                service, METHODID_LIST_SCOPED_TOOLS)))
         .addMethod(
           getSetToolDefaultMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -650,6 +723,7 @@ public final class ToolServiceGrpc {
               .setSchemaDescriptor(new ToolServiceFileDescriptorSupplier())
               .addMethod(getCreateToolMethod())
               .addMethod(getListToolsMethod())
+              .addMethod(getListScopedToolsMethod())
               .addMethod(getSetToolDefaultMethod())
               .addMethod(getUpdateToolMethod())
               .addMethod(getDeleteToolMethod())

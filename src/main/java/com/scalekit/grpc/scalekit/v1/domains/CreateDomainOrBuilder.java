@@ -9,24 +9,24 @@ public interface CreateDomainOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string domain = 1 [json_name = "domain", (.buf.validate.field) = { ... }</code>
+   * <code>string domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The domain.
    */
   java.lang.String getDomain();
   /**
-   * <code>string domain = 1 [json_name = "domain", (.buf.validate.field) = { ... }</code>
+   * <code>string domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for domain.
    */
   com.google.protobuf.ByteString
       getDomainBytes();
 
   /**
-   * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+   * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enum numeric value on the wire for domainType.
    */
   int getDomainTypeValue();
   /**
-   * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+   * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The domainType.
    */
   com.scalekit.grpc.scalekit.v1.domains.DomainType getDomainType();

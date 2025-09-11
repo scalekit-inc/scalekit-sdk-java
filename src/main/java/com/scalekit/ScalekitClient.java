@@ -32,6 +32,8 @@ public class ScalekitClient {
 
     private final Webhook webhook;
 
+    private final SessionClient sessionClient;
+
     public ScalekitClient(String siteName, String clientId, String clientSecret) {
 
         Environment.configure(siteName,clientId,clientSecret);
@@ -54,6 +56,7 @@ public class ScalekitClient {
             directoryClient = new ScalekitDirectoryClient(channel, credentials);
             userClient = new ScalekitUserClient(channel, credentials);
             passwordlessClient = new ScalekitPasswordlessClient(channel, credentials);
+            sessionClient = new ScalekitSessionClient(channel, credentials);
 
             webhook = new ScalekitWebhook();
 
@@ -97,4 +100,7 @@ public class ScalekitClient {
         return this.passwordlessClient;
     }
 
+    public SessionClient sessions() {
+        return this.sessionClient;
+    }
 }
