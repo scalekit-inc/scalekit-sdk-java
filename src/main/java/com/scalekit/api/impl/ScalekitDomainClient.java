@@ -29,12 +29,11 @@ public class ScalekitDomainClient implements DomainClient {
 
     }
 
-
     /**
      * createDomain creates a new domain for the organization
      *
      * @param organizationId: The organization ID
-     * @param domainName:     The domain name
+     * @param domainName: The domain name
      * @return Domain: The domain created
      */
     @Override
@@ -50,6 +49,48 @@ public class ScalekitDomainClient implements DomainClient {
                                     .build()
                             ).build()
             );
+            return response.getDomain();
+        }, this.credentials);
+    }
+
+    /**
+     * createDomain creates a new domain for the organization with specified domain type
+     *
+     * @param organizationId: The organization ID
+     * @param domainName: The domain name
+     * @param domainType: The type of domain
+     * @return Domain: The domain created
+     */
+    @Override
+    public Domain createDomain(String organizationId, String domainName, DomainType domainType) {
+        return RetryExecuter.executeWithRetry(() -> {
+            CreateDomainResponse response = this.domainStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .createDomain(
+                    CreateDomainRequest.newBuilder()
+                            .setOrganizationId(organizationId)
+                            .setDomain(CreateDomain.newBuilder()
+                                    .setDomain(domainName)
+                                    .setDomainType(domainType)
+                                    .build()
+                            ).build()
+            );
+            return response.getDomain();
+        }, this.credentials);
+    }
+
+    /**
+     * createDomain creates a new domain using a request object
+     *
+     * @param request: The create domain request containing domain details and optional domain type
+     * @return Domain: The domain created
+     */
+    @Override
+    public Domain createDomain(CreateDomainRequest request) {
+        return RetryExecuter.executeWithRetry(() -> {
+            CreateDomainResponse response = this.domainStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .createDomain(request);
             return response.getDomain();
         }, this.credentials);
     }
@@ -98,4 +139,25 @@ public class ScalekitDomainClient implements DomainClient {
             return response.getDomainsList();}, this.credentials);
 
     }
+
+        /**
+     * deleteDomain deletes a domain by its ID
+     *
+     * @param organizationId: The organization ID
+     * @param domainId: The domain ID
+     */
+    @Override
+    public void deleteDomain(String organizationId, String domainId) {
+        RetryExecuter.executeWithRetry(() -> {
+            this.domainStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .deleteDomain(
+                    DeleteDomainRequest.newBuilder() 
+                            .setOrganizationId(organizationId)
+                            .setId(domainId)
+                            .build());
+            return null; 
+        }, this.credentials);
+    }
+
 }
