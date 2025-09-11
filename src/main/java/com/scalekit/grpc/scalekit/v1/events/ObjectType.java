@@ -145,6 +145,10 @@ public enum ObjectType
    * <code>IDPInitiatedPayload = 33;</code>
    */
   IDPInitiatedPayload(33),
+  /**
+   * <code>DeviceDetails = 34;</code>
+   */
+  DeviceDetails(34),
   UNRECOGNIZED(-1),
   ;
 
@@ -284,6 +288,10 @@ public enum ObjectType
    * <code>IDPInitiatedPayload = 33;</code>
    */
   public static final int IDPInitiatedPayload_VALUE = 33;
+  /**
+   * <code>DeviceDetails = 34;</code>
+   */
+  public static final int DeviceDetails_VALUE = 34;
 
 
   public final int getNumber() {
@@ -344,6 +352,7 @@ public enum ObjectType
       case 31: return OrgMembership;
       case 32: return UserProfile;
       case 33: return IDPInitiatedPayload;
+      case 34: return DeviceDetails;
       default: return null;
     }
   }

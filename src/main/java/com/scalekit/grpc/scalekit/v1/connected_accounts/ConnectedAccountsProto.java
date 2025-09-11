@@ -392,86 +392,86 @@ public final class ConnectedAccountsProto {
       "1\n\007details\030\001 \001(\0132\027.google.protobuf.Struc" +
       "tR\007details*_\n\017ConnectorStatus\022!\n\035CONNECT" +
       "ION_STATUS_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\013\n\007" +
-      "EXPIRED\020\002\022\020\n\014PENDING_AUTH\020\003*v\n\rConnector" +
-      "Type\022\037\n\033CONNECTION_TYPE_UNSPECIFIED\020\000\022\t\n" +
-      "\005OAUTH\020\001\022\013\n\007API_KEY\020\002\022\016\n\nBASIC_AUTH\020\003\022\020\n" +
-      "\014BEARER_TOKEN\020\004\022\n\n\006CUSTOM\020\0052\260\025\n\027Connecte" +
-      "dAccountService\022\320\002\n\025ListConnectedAccount" +
-      "s\022<.scalekit.v1.connected_accounts.ListC" +
-      "onnectedAccountsRequest\032=.scalekit.v1.co" +
-      "nnected_accounts.ListConnectedAccountsRe" +
-      "sponse\"\271\001\222A\177\n\rAppConnectors\022\033List all co" +
-      "nnected accounts\032QList all connected acc" +
-      "ounts, optionally filtered by connection" +
-      " and/or identifier.\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW" +
-      "\202\323\344\223\002\034\022\032/api/v1/connected_accounts\022\212\003\n\027S" +
-      "earchConnectedAccounts\022>.scalekit.v1.con" +
-      "nected_accounts.SearchConnectedAccountsR" +
-      "equest\032?.scalekit.v1.connected_accounts." +
-      "SearchConnectedAccountsResponse\"\355\001\222A\253\001\n\r" +
-      "AppConnectors\022\031Search connected accounts" +
-      "\032\177Search for connected accounts in your " +
-      "environment using a text query that matc" +
-      "hes against identifiers, providers, or c" +
-      "onnectors\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002#\022!/a" +
-      "pi/v1/connected_accounts:search\022\243\002\n\026Crea" +
-      "teConnectedAccount\022=.scalekit.v1.connect" +
-      "ed_accounts.CreateConnectedAccountReques" +
-      "t\032>.scalekit.v1.connected_accounts.Creat" +
-      "eConnectedAccountResponse\"\211\001\222AL\n\rAppConn" +
-      "ectors\022\032Create a connected account\032\037Crea" +
-      "te a new connected account.\202\265\030\002\030t\372\322\344\223\002\t\022" +
-      "\007PREVIEW\202\323\344\223\002\037\"\032/api/v1/connected_accoun" +
-      "ts:\001*\022\251\002\n\026UpdateConnectedAccount\022=.scale" +
-      "kit.v1.connected_accounts.UpdateConnecte" +
-      "dAccountRequest\032>.scalekit.v1.connected_" +
-      "accounts.UpdateConnectedAccountResponse\"" +
-      "\217\001\222AR\n\rAppConnectors\022\032Update a connected" +
-      " account\032%Update an existing connected a" +
-      "ccount.\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\037\032\032/api" +
-      "/v1/connected_accounts:\001*\022\246\002\n\026DeleteConn" +
-      "ectedAccount\022=.scalekit.v1.connected_acc" +
-      "ounts.DeleteConnectedAccountRequest\032>.sc" +
-      "alekit.v1.connected_accounts.DeleteConne" +
-      "ctedAccountResponse\"\214\001\222AH\n\rAppConnectors" +
-      "\022\032Delete a connected account\032\033Delete a c" +
-      "onnected account.\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323" +
-      "\344\223\002&\"!/api/v1/connected_accounts:delete:" +
-      "\001*\022\341\002\n\037GetMagicLinkForConnectedAccount\022F" +
-      ".scalekit.v1.connected_accounts.GetMagic" +
-      "LinkForConnectedAccountRequest\032G.scaleki" +
-      "t.v1.connected_accounts.GetMagicLinkForC" +
-      "onnectedAccountResponse\"\254\001\222Ad\n\rAppConnec" +
-      "tors\022(Get a magic link for a connected a" +
-      "ccount\032)Get a magic link for a connected" +
-      " account.\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002*\"%/a" +
-      "pi/v1/connected_accounts/magic_link:\001*\022\314" +
-      "\002\n\027GetConnectedAccountAuth\022F.scalekit.v1" +
-      ".connected_accounts.GetConnectedAccountB" +
-      "yIdentifierRequest\032G.scalekit.v1.connect" +
-      "ed_accounts.GetConnectedAccountByIdentif" +
-      "ierResponse\"\237\001\222A`\n\rAppConnectors\022#Get co" +
-      "nnected account by identifier\032*Get a con" +
-      "nected account by its identifier.\202\265\030\002\030t\372" +
-      "\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002!\022\037/api/v1/connected_" +
-      "accounts/auth\022\206\003\n+GetMagicLinkForConnect" +
-      "edAccountWithRedirect\022N.scalekit.v1.conn" +
-      "ected_accounts.GetMagicLinkForConnectedA" +
-      "ccountRedirectRequest\032O.scalekit.v1.conn" +
-      "ected_accounts.GetMagicLinkForConnectedA" +
-      "ccountRedirectResponse\"\265\001\222Ad\n\rAppConnect" +
-      "ors\022(Get a magic link for a connected ac" +
-      "count\032)Get a magic link for a connected " +
-      "account.\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0023\"./ap" +
-      "i/v1/connected_accounts/magic_link/redir" +
-      "ect:\001*B\236\002\n0com.scalekit.grpc.scalekit.v1" +
-      ".connected_accountsB\026ConnectedAccountsPr" +
-      "otoP\001Z<github.com/scalekit-inc/scalekit/" +
-      "pkg/grpc/connected_accounts\242\002\003SVC\252\002\035Scal" +
-      "ekit.V1.ConnectedAccounts\312\002\035Scalekit\\V1\\" +
-      "ConnectedAccounts\342\002)Scalekit\\V1\\Connecte" +
-      "dAccounts\\GPBMetadata\352\002\037Scalekit::V1::Co" +
-      "nnectedAccountsb\006proto3"
+      "EXPIRED\020\002\022\020\n\014PENDING_AUTH\020\003*\201\001\n\rConnecto" +
+      "rType\022\037\n\033CONNECTION_TYPE_UNSPECIFIED\020\000\022\t" +
+      "\n\005OAUTH\020\001\022\013\n\007API_KEY\020\002\022\016\n\nBASIC_AUTH\020\003\022\020" +
+      "\n\014BEARER_TOKEN\020\004\022\n\n\006CUSTOM\020\005\022\t\n\005BASIC\020\0062" +
+      "\260\025\n\027ConnectedAccountService\022\320\002\n\025ListConn" +
+      "ectedAccounts\022<.scalekit.v1.connected_ac" +
+      "counts.ListConnectedAccountsRequest\032=.sc" +
+      "alekit.v1.connected_accounts.ListConnect" +
+      "edAccountsResponse\"\271\001\222A\177\n\rAppConnectors\022" +
+      "\033List all connected accounts\032QList all c" +
+      "onnected accounts, optionally filtered b" +
+      "y connection and/or identifier.\202\265\030\002\030t\372\322\344" +
+      "\223\002\t\022\007PREVIEW\202\323\344\223\002\034\022\032/api/v1/connected_ac" +
+      "counts\022\212\003\n\027SearchConnectedAccounts\022>.sca" +
+      "lekit.v1.connected_accounts.SearchConnec" +
+      "tedAccountsRequest\032?.scalekit.v1.connect" +
+      "ed_accounts.SearchConnectedAccountsRespo" +
+      "nse\"\355\001\222A\253\001\n\rAppConnectors\022\031Search connec" +
+      "ted accounts\032\177Search for connected accou" +
+      "nts in your environment using a text que" +
+      "ry that matches against identifiers, pro" +
+      "viders, or connectors\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVI" +
+      "EW\202\323\344\223\002#\022!/api/v1/connected_accounts:sea" +
+      "rch\022\243\002\n\026CreateConnectedAccount\022=.scaleki" +
+      "t.v1.connected_accounts.CreateConnectedA" +
+      "ccountRequest\032>.scalekit.v1.connected_ac" +
+      "counts.CreateConnectedAccountResponse\"\211\001" +
+      "\222AL\n\rAppConnectors\022\032Create a connected a" +
+      "ccount\032\037Create a new connected account.\202" +
+      "\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\037\"\032/api/v1/conn" +
+      "ected_accounts:\001*\022\251\002\n\026UpdateConnectedAcc" +
+      "ount\022=.scalekit.v1.connected_accounts.Up" +
+      "dateConnectedAccountRequest\032>.scalekit.v" +
+      "1.connected_accounts.UpdateConnectedAcco" +
+      "untResponse\"\217\001\222AR\n\rAppConnectors\022\032Update" +
+      " a connected account\032%Update an existing" +
+      " connected account.\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW" +
+      "\202\323\344\223\002\037\032\032/api/v1/connected_accounts:\001*\022\246\002" +
+      "\n\026DeleteConnectedAccount\022=.scalekit.v1.c" +
+      "onnected_accounts.DeleteConnectedAccount" +
+      "Request\032>.scalekit.v1.connected_accounts" +
+      ".DeleteConnectedAccountResponse\"\214\001\222AH\n\rA" +
+      "ppConnectors\022\032Delete a connected account" +
+      "\032\033Delete a connected account.\202\265\030\002\030t\372\322\344\223\002" +
+      "\t\022\007PREVIEW\202\323\344\223\002&\"!/api/v1/connected_acco" +
+      "unts:delete:\001*\022\341\002\n\037GetMagicLinkForConnec" +
+      "tedAccount\022F.scalekit.v1.connected_accou" +
+      "nts.GetMagicLinkForConnectedAccountReque" +
+      "st\032G.scalekit.v1.connected_accounts.GetM" +
+      "agicLinkForConnectedAccountResponse\"\254\001\222A" +
+      "d\n\rAppConnectors\022(Get a magic link for a" +
+      " connected account\032)Get a magic link for" +
+      " a connected account.\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVI" +
+      "EW\202\323\344\223\002*\"%/api/v1/connected_accounts/mag" +
+      "ic_link:\001*\022\314\002\n\027GetConnectedAccountAuth\022F" +
+      ".scalekit.v1.connected_accounts.GetConne" +
+      "ctedAccountByIdentifierRequest\032G.scaleki" +
+      "t.v1.connected_accounts.GetConnectedAcco" +
+      "untByIdentifierResponse\"\237\001\222A`\n\rAppConnec" +
+      "tors\022#Get connected account by identifie" +
+      "r\032*Get a connected account by its identi" +
+      "fier.\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002!\022\037/api/v" +
+      "1/connected_accounts/auth\022\206\003\n+GetMagicLi" +
+      "nkForConnectedAccountWithRedirect\022N.scal" +
+      "ekit.v1.connected_accounts.GetMagicLinkF" +
+      "orConnectedAccountRedirectRequest\032O.scal" +
+      "ekit.v1.connected_accounts.GetMagicLinkF" +
+      "orConnectedAccountRedirectResponse\"\265\001\222Ad" +
+      "\n\rAppConnectors\022(Get a magic link for a " +
+      "connected account\032)Get a magic link for " +
+      "a connected account.\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIE" +
+      "W\202\323\344\223\0023\"./api/v1/connected_accounts/magi" +
+      "c_link/redirect:\001*B\236\002\n0com.scalekit.grpc" +
+      ".scalekit.v1.connected_accountsB\026Connect" +
+      "edAccountsProtoP\001Z<github.com/scalekit-i" +
+      "nc/scalekit/pkg/grpc/connected_accounts\242" +
+      "\002\003SVC\252\002\035Scalekit.V1.ConnectedAccounts\312\002\035" +
+      "Scalekit\\V1\\ConnectedAccounts\342\002)Scalekit" +
+      "\\V1\\ConnectedAccounts\\GPBMetadata\352\002\037Scal" +
+      "ekit::V1::ConnectedAccountsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

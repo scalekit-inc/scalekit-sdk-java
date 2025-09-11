@@ -43,7 +43,7 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_SIZE_FIELD_NUMBER = 1;
   private int pageSize_ = 0;
   /**
-   * <code>int32 page_size = 1 [json_name = "pageSize"];</code>
+   * <code>int32 page_size = 1 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageSize.
    */
   @java.lang.Override
@@ -54,7 +54,7 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_NUMBER_FIELD_NUMBER = 2;
   private int pageNumber_ = 0;
   /**
-   * <code>int32 page_number = 2 [json_name = "pageNumber"];</code>
+   * <code>int32 page_number = 2 [json_name = "pageNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageNumber.
    */
   @java.lang.Override
@@ -66,14 +66,14 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private java.util.List<com.scalekit.grpc.scalekit.v1.domains.Domain> domains_;
   /**
-   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<com.scalekit.grpc.scalekit.v1.domains.Domain> getDomainsList() {
     return domains_;
   }
   /**
-   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder> 
@@ -81,21 +81,21 @@ private static final long serialVersionUID = 0L;
     return domains_;
   }
   /**
-   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public int getDomainsCount() {
     return domains_.size();
   }
   /**
-   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.domains.Domain getDomains(int index) {
     return domains_.get(index);
   }
   /**
-   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder getDomainsOrBuilder(
@@ -525,7 +525,7 @@ private static final long serialVersionUID = 0L;
 
     private int pageSize_ ;
     /**
-     * <code>int32 page_size = 1 [json_name = "pageSize"];</code>
+     * <code>int32 page_size = 1 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The pageSize.
      */
     @java.lang.Override
@@ -533,7 +533,7 @@ private static final long serialVersionUID = 0L;
       return pageSize_;
     }
     /**
-     * <code>int32 page_size = 1 [json_name = "pageSize"];</code>
+     * <code>int32 page_size = 1 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The pageSize to set.
      * @return This builder for chaining.
      */
@@ -545,7 +545,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 page_size = 1 [json_name = "pageSize"];</code>
+     * <code>int32 page_size = 1 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
@@ -557,7 +557,7 @@ private static final long serialVersionUID = 0L;
 
     private int pageNumber_ ;
     /**
-     * <code>int32 page_number = 2 [json_name = "pageNumber"];</code>
+     * <code>int32 page_number = 2 [json_name = "pageNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The pageNumber.
      */
     @java.lang.Override
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
       return pageNumber_;
     }
     /**
-     * <code>int32 page_number = 2 [json_name = "pageNumber"];</code>
+     * <code>int32 page_number = 2 [json_name = "pageNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The pageNumber to set.
      * @return This builder for chaining.
      */
@@ -577,7 +577,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 page_number = 2 [json_name = "pageNumber"];</code>
+     * <code>int32 page_number = 2 [json_name = "pageNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearPageNumber() {
@@ -600,7 +600,7 @@ private static final long serialVersionUID = 0L;
         com.scalekit.grpc.scalekit.v1.domains.Domain, com.scalekit.grpc.scalekit.v1.domains.Domain.Builder, com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder> domainsBuilder_;
 
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.domains.Domain> getDomainsList() {
       if (domainsBuilder_ == null) {
@@ -610,7 +610,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public int getDomainsCount() {
       if (domainsBuilder_ == null) {
@@ -620,7 +620,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.domains.Domain getDomains(int index) {
       if (domainsBuilder_ == null) {
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setDomains(
         int index, com.scalekit.grpc.scalekit.v1.domains.Domain value) {
@@ -647,7 +647,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setDomains(
         int index, com.scalekit.grpc.scalekit.v1.domains.Domain.Builder builderForValue) {
@@ -661,7 +661,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addDomains(com.scalekit.grpc.scalekit.v1.domains.Domain value) {
       if (domainsBuilder_ == null) {
@@ -677,7 +677,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addDomains(
         int index, com.scalekit.grpc.scalekit.v1.domains.Domain value) {
@@ -694,7 +694,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addDomains(
         com.scalekit.grpc.scalekit.v1.domains.Domain.Builder builderForValue) {
@@ -708,7 +708,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addDomains(
         int index, com.scalekit.grpc.scalekit.v1.domains.Domain.Builder builderForValue) {
@@ -722,7 +722,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addAllDomains(
         java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.domains.Domain> values) {
@@ -737,7 +737,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearDomains() {
       if (domainsBuilder_ == null) {
@@ -750,7 +750,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder removeDomains(int index) {
       if (domainsBuilder_ == null) {
@@ -763,14 +763,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.domains.Domain.Builder getDomainsBuilder(
         int index) {
       return getDomainsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder getDomainsOrBuilder(
         int index) {
@@ -780,7 +780,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<? extends com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder> 
          getDomainsOrBuilderList() {
@@ -791,14 +791,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.domains.Domain.Builder addDomainsBuilder() {
       return getDomainsFieldBuilder().addBuilder(
           com.scalekit.grpc.scalekit.v1.domains.Domain.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.domains.Domain.Builder addDomainsBuilder(
         int index) {
@@ -806,7 +806,7 @@ private static final long serialVersionUID = 0L;
           index, com.scalekit.grpc.scalekit.v1.domains.Domain.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+     * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.domains.Domain.Builder> 
          getDomainsBuilderList() {

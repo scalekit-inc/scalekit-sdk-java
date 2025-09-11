@@ -14,13 +14,13 @@ public enum DomainType
    */
   DOMAIN_TYPE_UNSPECIFIED(0),
   /**
-   * <code>HOME_REALM_DISCOVERY = 1;</code>
+   * <code>ALLOWED_EMAIL_DOMAIN = 1;</code>
    */
-  HOME_REALM_DISCOVERY(1),
+  ALLOWED_EMAIL_DOMAIN(1),
   /**
-   * <code>JIT_PROVISIONING_DOMAIN = 2;</code>
+   * <code>ORGANIZATION_DOMAIN = 2;</code>
    */
-  JIT_PROVISIONING_DOMAIN(2),
+  ORGANIZATION_DOMAIN(2),
   UNRECOGNIZED(-1),
   ;
 
@@ -29,13 +29,13 @@ public enum DomainType
    */
   public static final int DOMAIN_TYPE_UNSPECIFIED_VALUE = 0;
   /**
-   * <code>HOME_REALM_DISCOVERY = 1;</code>
+   * <code>ALLOWED_EMAIL_DOMAIN = 1;</code>
    */
-  public static final int HOME_REALM_DISCOVERY_VALUE = 1;
+  public static final int ALLOWED_EMAIL_DOMAIN_VALUE = 1;
   /**
-   * <code>JIT_PROVISIONING_DOMAIN = 2;</code>
+   * <code>ORGANIZATION_DOMAIN = 2;</code>
    */
-  public static final int JIT_PROVISIONING_DOMAIN_VALUE = 2;
+  public static final int ORGANIZATION_DOMAIN_VALUE = 2;
 
 
   public final int getNumber() {
@@ -63,8 +63,8 @@ public enum DomainType
   public static DomainType forNumber(int value) {
     switch (value) {
       case 0: return DOMAIN_TYPE_UNSPECIFIED;
-      case 1: return HOME_REALM_DISCOVERY;
-      case 2: return JIT_PROVISIONING_DOMAIN;
+      case 1: return ALLOWED_EMAIL_DOMAIN;
+      case 2: return ORGANIZATION_DOMAIN;
       default: return null;
     }
   }

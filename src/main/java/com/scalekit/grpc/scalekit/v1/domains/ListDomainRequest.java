@@ -87,14 +87,14 @@ private static final long serialVersionUID = 0L;
 
   public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the organizationId field is set.
    */
   public boolean hasOrganizationId() {
     return identitiesCase_ == 1;
   }
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The organizationId.
    */
   public java.lang.String getOrganizationId() {
@@ -115,7 +115,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for organizationId.
    */
   public com.google.protobuf.ByteString
@@ -139,14 +139,14 @@ private static final long serialVersionUID = 0L;
 
   public static final int EXTERNAL_ID_FIELD_NUMBER = 2;
   /**
-   * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+   * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the externalId field is set.
    */
   public boolean hasExternalId() {
     return identitiesCase_ == 2;
   }
   /**
-   * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+   * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The externalId.
    */
   public java.lang.String getExternalId() {
@@ -167,7 +167,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+   * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for externalId.
    */
   public com.google.protobuf.ByteString
@@ -193,7 +193,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object connectionId_ = "";
   /**
-   * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+   * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the connectionId field is set.
    */
   @java.lang.Override
@@ -201,7 +201,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+   * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connectionId.
    */
   @java.lang.Override
@@ -218,7 +218,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+   * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for connectionId.
    */
   @java.lang.Override
@@ -240,7 +240,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object include_ = "";
   /**
-   * <code>optional string include = 4 [json_name = "include"];</code>
+   * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the include field is set.
    */
   @java.lang.Override
@@ -248,7 +248,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>optional string include = 4 [json_name = "include"];</code>
+   * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The include.
    */
   @java.lang.Override
@@ -265,7 +265,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string include = 4 [json_name = "include"];</code>
+   * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for include.
    */
   @java.lang.Override
@@ -286,7 +286,7 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_SIZE_FIELD_NUMBER = 5;
   private com.google.protobuf.Int32Value pageSize_;
   /**
-   * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize"];</code>
+   * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the pageSize field is set.
    */
   @java.lang.Override
@@ -294,7 +294,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize"];</code>
+   * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageSize.
    */
   @java.lang.Override
@@ -302,7 +302,7 @@ private static final long serialVersionUID = 0L;
     return pageSize_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : pageSize_;
   }
   /**
-   * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize"];</code>
+   * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.Int32ValueOrBuilder getPageSizeOrBuilder() {
@@ -312,7 +312,7 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_NUMBER_FIELD_NUMBER = 6;
   private com.google.protobuf.Int32Value pageNumber_;
   /**
-   * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber"];</code>
+   * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the pageNumber field is set.
    */
   @java.lang.Override
@@ -320,7 +320,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber"];</code>
+   * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageNumber.
    */
   @java.lang.Override
@@ -328,7 +328,7 @@ private static final long serialVersionUID = 0L;
     return pageNumber_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : pageNumber_;
   }
   /**
-   * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber"];</code>
+   * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.Int32ValueOrBuilder getPageNumberOrBuilder() {
@@ -338,14 +338,14 @@ private static final long serialVersionUID = 0L;
   public static final int DOMAIN_TYPE_FIELD_NUMBER = 7;
   private int domainType_ = 0;
   /**
-   * <code>.scalekit.v1.domains.DomainType domain_type = 7 [json_name = "domainType"];</code>
+   * <code>.scalekit.v1.domains.DomainType domain_type = 7 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enum numeric value on the wire for domainType.
    */
   @java.lang.Override public int getDomainTypeValue() {
     return domainType_;
   }
   /**
-   * <code>.scalekit.v1.domains.DomainType domain_type = 7 [json_name = "domainType"];</code>
+   * <code>.scalekit.v1.domains.DomainType domain_type = 7 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The domainType.
    */
   @java.lang.Override public com.scalekit.grpc.scalekit.v1.domains.DomainType getDomainType() {
@@ -910,7 +910,7 @@ private static final long serialVersionUID = 0L;
     private int bitField0_;
 
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the organizationId field is set.
      */
     @java.lang.Override
@@ -918,7 +918,7 @@ private static final long serialVersionUID = 0L;
       return identitiesCase_ == 1;
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The organizationId.
      */
     @java.lang.Override
@@ -940,7 +940,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for organizationId.
      */
     @java.lang.Override
@@ -963,7 +963,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The organizationId to set.
      * @return This builder for chaining.
      */
@@ -976,7 +976,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearOrganizationId() {
@@ -988,7 +988,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.buf.validate.field) = { ... }</code>
+     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for organizationId to set.
      * @return This builder for chaining.
      */
@@ -1003,7 +1003,7 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
-     * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the externalId field is set.
      */
     @java.lang.Override
@@ -1011,7 +1011,7 @@ private static final long serialVersionUID = 0L;
       return identitiesCase_ == 2;
     }
     /**
-     * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The externalId.
      */
     @java.lang.Override
@@ -1033,7 +1033,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for externalId.
      */
     @java.lang.Override
@@ -1056,7 +1056,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The externalId to set.
      * @return This builder for chaining.
      */
@@ -1069,7 +1069,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearExternalId() {
@@ -1081,7 +1081,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string external_id = 2 [json_name = "externalId", (.buf.validate.field) = { ... }</code>
+     * <code>string external_id = 2 [json_name = "externalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for externalId to set.
      * @return This builder for chaining.
      */
@@ -1097,14 +1097,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object connectionId_ = "";
     /**
-     * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+     * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the connectionId field is set.
      */
     public boolean hasConnectionId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+     * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The connectionId.
      */
     public java.lang.String getConnectionId() {
@@ -1120,7 +1120,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+     * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for connectionId.
      */
     public com.google.protobuf.ByteString
@@ -1137,7 +1137,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+     * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The connectionId to set.
      * @return This builder for chaining.
      */
@@ -1150,7 +1150,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+     * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearConnectionId() {
@@ -1160,7 +1160,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional string connection_id = 3 [json_name = "connectionId"];</code>
+     * <code>optional string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for connectionId to set.
      * @return This builder for chaining.
      */
@@ -1176,14 +1176,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object include_ = "";
     /**
-     * <code>optional string include = 4 [json_name = "include"];</code>
+     * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the include field is set.
      */
     public boolean hasInclude() {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>optional string include = 4 [json_name = "include"];</code>
+     * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The include.
      */
     public java.lang.String getInclude() {
@@ -1199,7 +1199,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string include = 4 [json_name = "include"];</code>
+     * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for include.
      */
     public com.google.protobuf.ByteString
@@ -1216,7 +1216,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string include = 4 [json_name = "include"];</code>
+     * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The include to set.
      * @return This builder for chaining.
      */
@@ -1229,7 +1229,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional string include = 4 [json_name = "include"];</code>
+     * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearInclude() {
@@ -1239,7 +1239,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional string include = 4 [json_name = "include"];</code>
+     * <code>optional string include = 4 [json_name = "include", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for include to set.
      * @return This builder for chaining.
      */
@@ -1257,14 +1257,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> pageSizeBuilder_;
     /**
-     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize"];</code>
+     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the pageSize field is set.
      */
     public boolean hasPageSize() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize"];</code>
+     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The pageSize.
      */
     public com.google.protobuf.Int32Value getPageSize() {
@@ -1275,7 +1275,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize"];</code>
+     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setPageSize(com.google.protobuf.Int32Value value) {
       if (pageSizeBuilder_ == null) {
@@ -1291,7 +1291,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize"];</code>
+     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setPageSize(
         com.google.protobuf.Int32Value.Builder builderForValue) {
@@ -1305,7 +1305,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize"];</code>
+     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergePageSize(com.google.protobuf.Int32Value value) {
       if (pageSizeBuilder_ == null) {
@@ -1326,7 +1326,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize"];</code>
+     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearPageSize() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -1339,7 +1339,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize"];</code>
+     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Int32Value.Builder getPageSizeBuilder() {
       bitField0_ |= 0x00000010;
@@ -1347,7 +1347,7 @@ private static final long serialVersionUID = 0L;
       return getPageSizeFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize"];</code>
+     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Int32ValueOrBuilder getPageSizeOrBuilder() {
       if (pageSizeBuilder_ != null) {
@@ -1358,7 +1358,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize"];</code>
+     * <code>.google.protobuf.Int32Value page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> 
@@ -1378,14 +1378,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> pageNumberBuilder_;
     /**
-     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber"];</code>
+     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the pageNumber field is set.
      */
     public boolean hasPageNumber() {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber"];</code>
+     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The pageNumber.
      */
     public com.google.protobuf.Int32Value getPageNumber() {
@@ -1396,7 +1396,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber"];</code>
+     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setPageNumber(com.google.protobuf.Int32Value value) {
       if (pageNumberBuilder_ == null) {
@@ -1412,7 +1412,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber"];</code>
+     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setPageNumber(
         com.google.protobuf.Int32Value.Builder builderForValue) {
@@ -1426,7 +1426,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber"];</code>
+     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergePageNumber(com.google.protobuf.Int32Value value) {
       if (pageNumberBuilder_ == null) {
@@ -1447,7 +1447,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber"];</code>
+     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearPageNumber() {
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -1460,7 +1460,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber"];</code>
+     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Int32Value.Builder getPageNumberBuilder() {
       bitField0_ |= 0x00000020;
@@ -1468,7 +1468,7 @@ private static final long serialVersionUID = 0L;
       return getPageNumberFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber"];</code>
+     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Int32ValueOrBuilder getPageNumberOrBuilder() {
       if (pageNumberBuilder_ != null) {
@@ -1479,7 +1479,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber"];</code>
+     * <code>.google.protobuf.Int32Value page_number = 6 [json_name = "pageNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> 
@@ -1497,14 +1497,14 @@ private static final long serialVersionUID = 0L;
 
     private int domainType_ = 0;
     /**
-     * <code>.scalekit.v1.domains.DomainType domain_type = 7 [json_name = "domainType"];</code>
+     * <code>.scalekit.v1.domains.DomainType domain_type = 7 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The enum numeric value on the wire for domainType.
      */
     @java.lang.Override public int getDomainTypeValue() {
       return domainType_;
     }
     /**
-     * <code>.scalekit.v1.domains.DomainType domain_type = 7 [json_name = "domainType"];</code>
+     * <code>.scalekit.v1.domains.DomainType domain_type = 7 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The enum numeric value on the wire for domainType to set.
      * @return This builder for chaining.
      */
@@ -1515,7 +1515,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.domains.DomainType domain_type = 7 [json_name = "domainType"];</code>
+     * <code>.scalekit.v1.domains.DomainType domain_type = 7 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The domainType.
      */
     @java.lang.Override
@@ -1524,7 +1524,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.scalekit.grpc.scalekit.v1.domains.DomainType.UNRECOGNIZED : result;
     }
     /**
-     * <code>.scalekit.v1.domains.DomainType domain_type = 7 [json_name = "domainType"];</code>
+     * <code>.scalekit.v1.domains.DomainType domain_type = 7 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The domainType to set.
      * @return This builder for chaining.
      */
@@ -1538,7 +1538,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.domains.DomainType domain_type = 7 [json_name = "domainType"];</code>
+     * <code>.scalekit.v1.domains.DomainType domain_type = 7 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDomainType() {

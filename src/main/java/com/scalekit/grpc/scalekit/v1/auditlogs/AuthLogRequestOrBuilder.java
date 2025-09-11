@@ -142,4 +142,16 @@ public interface AuthLogRequestOrBuilder extends
    */
   com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetailsOrBuilder getConnectionDetailsOrBuilder(
       int index);
+
+  /**
+   * <code>string workflow = 11 [json_name = "workflow"];</code>
+   * @return The workflow.
+   */
+  java.lang.String getWorkflow();
+  /**
+   * <code>string workflow = 11 [json_name = "workflow"];</code>
+   * @return The bytes for workflow.
+   */
+  com.google.protobuf.ByteString
+      getWorkflowBytes();
 }

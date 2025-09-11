@@ -9,37 +9,37 @@ public interface ListDomainResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 page_size = 1 [json_name = "pageSize"];</code>
+   * <code>int32 page_size = 1 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageSize.
    */
   int getPageSize();
 
   /**
-   * <code>int32 page_number = 2 [json_name = "pageNumber"];</code>
+   * <code>int32 page_number = 2 [json_name = "pageNumber", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageNumber.
    */
   int getPageNumber();
 
   /**
-   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<com.scalekit.grpc.scalekit.v1.domains.Domain> 
       getDomainsList();
   /**
-   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.domains.Domain getDomains(int index);
   /**
-   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   int getDomainsCount();
   /**
-   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<? extends com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder> 
       getDomainsOrBuilderList();
   /**
-   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains"];</code>
+   * <code>repeated .scalekit.v1.domains.Domain domains = 3 [json_name = "domains", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder getDomainsOrBuilder(
       int index);

@@ -194,12 +194,12 @@ public final class PasswordlessProto {
       "mplate*7\n\014TemplateType\022\017\n\013UNSPECIFIED\020\000\022" +
       "\n\n\006SIGNIN\020\001\022\n\n\006SIGNUP\020\002*V\n\020PasswordlessT" +
       "ype\022!\n\035PASSWORDLESS_TYPE_UNSPECIFIED\020\000\022\007" +
-      "\n\003OTP\020\001\022\010\n\004LINK\020\002\022\014\n\010LINK_OTP\020\0032\351!\n\023Pass" +
-      "wordlessService\022\333\014\n\025SendPasswordlessEmai" +
+      "\n\003OTP\020\001\022\010\n\004LINK\020\002\022\014\n\010LINK_OTP\020\0032\254\016\n\023Pass" +
+      "wordlessService\022\264\004\n\025SendPasswordlessEmai" +
       "l\0226.scalekit.v1.auth.passwordless.SendPa" +
       "sswordlessRequest\0327.scalekit.v1.auth.pas" +
-      "swordless.SendPasswordlessResponse\"\320\013\222A\234" +
-      "\013\n\021Passwordless Auth\022\027Send passwordless " +
+      "swordless.SendPasswordlessResponse\"\251\003\222A\365" +
+      "\002\n\021Passwordless Auth\022\027Send passwordless " +
       "email\032tSend a verification email contain" +
       "ing either a verification code (OTP), ma" +
       "gic link, or both to a user\'s email addr" +
@@ -208,109 +208,47 @@ public final class PasswordlessProto {
       "e authentication request details includi" +
       "ng expiration time and auth request ID\0226" +
       "\n4\0322#/definitions/passwordlessSendPasswo" +
-      "rdlessResponsej\244\010\n\rx-codeSamples\022\222\0102\217\010\n\374" +
-      "\002*\371\002\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004lang\022\014\032\n" +
-      "javascript\n\310\002\n\006source\022\275\002\032\272\002const respons" +
-      "e = await scalekit.passwordless.\n  sendP" +
-      "asswordlessEmail(\n\t\"john.doe@example.com" +
-      "\",\n\t{\n\t\ttemplate: \"SIGNIN\",\n\t\texpiresIn:" +
-      " 100,\n\t\tmagiclinkAuthUri: \"https://www.g" +
-      "oogle.com\",\n\t\ttemplateVariables: {\n\t\t\tem" +
-      "ployeeID: \"EMP523\",\n\t\t\tteamName: \"Alpha " +
-      "Team\",\n\t\t\tsupportEmail: \"support@yourcom" +
-      "pany.com\",\n\t\t},\n\t}\n);\n\215\005*\212\005\n\021\n\005label\022\010\032\006" +
-      "Go SDK\n\014\n\004lang\022\004\032\002go\n\346\004\n\006source\022\333\004\032\330\004tem" +
-      "plateType := scalekit.TemplateTypeSignin" +
-      "\nresponse, err := client.Passwordless()." +
-      "SendPasswordlessEmail(\n    ctx,\n    \"joh" +
-      "n.doe@example.com\",\n    &scalekit.SendPa" +
-      "sswordlessOptions{\n        Template:    " +
-      "     &templateType,\n        ExpiresIn:  " +
-      "      100,\n        MagiclinkAuthUri: \"ht" +
-      "tps://www.google.com\",\n        TemplateV" +
-      "ariables: map[string]string{\n           " +
-      " \"employeeID\":    \"EMP523\",\n            " +
-      "\"teamName\":      \"Alpha Team\",\n         " +
-      "   \"supportEmail\":  \"support@yourcompany" +
-      ".com\",\n        },\n    },\n)\n\nif err != ni" +
-      "l {\n    // Handle error\n    return\n}\n\nau" +
-      "thRequestId := response.AuthRequestId\202\265\030" +
-      "\002\030\004\202\323\344\223\002$\"\037/api/v1/passwordless/email/se" +
-      "nd:\001*\022\274\013\n\027VerifyPasswordlessEmail\0228.scal" +
-      "ekit.v1.auth.passwordless.VerifyPassword" +
-      "LessRequest\0329.scalekit.v1.auth.passwordl" +
-      "ess.VerifyPasswordLessResponse\"\253\n\222A\365\t\n\021P" +
-      "asswordless Auth\022\031Verify passwordless em" +
-      "ail\032MVerify a user\'s identity using eith" +
-      "er a verification code or magic link tok" +
-      "enJ\222\001\n\003200\022\212\001\nISuccessfully verified the" +
-      " passwordless authentication. Returns us" +
-      "er email\022=\n;\0329.scalekit.v1.auth.password" +
-      "less.VerifyPasswordLessResponsej\340\007\n\rx-co" +
-      "deSamples\022\316\0072\313\007\n\254\002*\251\002\n\026\n\005label\022\r\032\013Node.j" +
-      "s SDK\n\024\n\004lang\022\014\032\njavascript\n\370\001\n\006source\022\355" +
-      "\001\032\352\001const { authRequestId } = sendRespon" +
-      "se;\nconst verifyResponse = await scaleki" +
-      "t.passwordless.\n  verifyPasswordlessEmai" +
-      "l(\n\t// Verification Code (OTP)\n\t{ code: " +
-      "\"123456\" },\n\t// Magic Link Token\n\t{ link" +
-      "Token: link_token },\n\tauthRequestId\n);\n\231" +
-      "\005*\226\005\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n\362\004" +
-      "\n\006source\022\347\004\032\344\004// Verify with OTP code\nve" +
-      "rifyResponse, err := client.Passwordless" +
-      "().VerifyPasswordlessEmail(\n    ctx,\n   " +
-      " &scalekit.VerifyPasswordlessOptions{\n  " +
-      "      Code:          \"123456\", // OTP co" +
-      "de\n        AuthRequestId: authRequestId," +
-      "\n    },\n)\n\nif err != nil {\n    // Handle" +
-      " error\n    return\n}\n\n// Verify with magi" +
-      "c link token\nverifyResponse, err := clie" +
-      "nt.Passwordless().VerifyPasswordlessEmai" +
-      "l(\n    ctx,\n    &scalekit.VerifyPassword" +
-      "lessOptions{\n        LinkToken: linkToke" +
-      "n, // Magic link token\n    },\n)\n\nif err " +
-      "!= nil {\n    // Handle error\n    return\n" +
-      "}\n\n// User verified successfully\nuserEma" +
-      "il := verifyResponse.Email\202\265\030\002\030\004\202\323\344\223\002&\"!" +
-      "/api/v1/passwordless/email/verify:\001*\022\330\007\n" +
-      "\027ResendPasswordlessEmail\0228.scalekit.v1.a" +
-      "uth.passwordless.ResendPasswordlessReque" +
-      "st\0327.scalekit.v1.auth.passwordless.SendP" +
-      "asswordlessResponse\"\311\006\222A\223\006\n\021Passwordless" +
-      " Auth\022\031Resend passwordless email\032bResend" +
-      " a verification email if the user didn\'t" +
-      " receive it or if the previous code/link" +
-      " has expiredJ\313\001\n\003200\022\303\001\n\203\001Successfully r" +
-      "esent the passwordless authentication em" +
-      "ail. Returns updated authentication requ" +
-      "est details with new expiration time.\022;\n" +
-      "9\0327.scalekit.v1.auth.passwordless.SendPa" +
-      "sswordlessResponsej\260\003\n\rx-codeSamples\022\236\0032" +
-      "\233\003\n\313\001*\310\001\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004lang" +
-      "\022\014\032\njavascript\n\227\001\n\006source\022\214\001\032\211\001const { a" +
-      "uthRequestId } = sendResponse;\nconst res" +
-      "endResponse = await scalekit.passwordles" +
-      "s\n.resendPasswordlessEmail(\n    authRequ" +
-      "estId\n);\n\312\001*\307\001\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lan" +
-      "g\022\004\032\002go\n\243\001\n\006source\022\230\001\032\225\001resendResponse, " +
-      "err := client.Passwordless().ResendPassw" +
-      "ordlessEmail(\n    ctx,\n    authRequestId" +
-      ",\n)\n\nif err != nil {\n    // Handle error" +
-      "\n    return\n}\202\265\030\002\030\004\202\323\344\223\002&\"!/api/v1/passw" +
-      "ordless/email/resend:\001*\032\331\001\222A\325\001\n\021Password" +
-      "less Auth\022\277\001Endpoints for sending and ve" +
-      "rifying passwordless authentication emai" +
-      "ls. These APIs allow users to authentica" +
-      "te without passwords by receiving a veri" +
-      "fication code or magic link in their ema" +
-      "il.B\231\002\n/com.scalekit.grpc.scalekit.v1.au" +
-      "th.passwordlessB\021PasswordlessProtoP\001Z;gi" +
-      "thub.com/scalekit-inc/scalekit/pkg/grpc/" +
-      "auth/passwordless\242\002\004SVAP\252\002\035Scalekit.V1.A" +
-      "uth.Passwordless\312\002\035Scalekit\\V1\\Auth\\Pass" +
-      "wordless\342\002)Scalekit\\V1\\Auth\\Passwordless" +
-      "\\GPBMetadata\352\002 Scalekit::V1::Auth::Passw" +
-      "ordlessb\006proto3"
+      "rdlessResponse\202\265\030\002\030\004\202\323\344\223\002$\"\037/api/v1/pass" +
+      "wordless/email/send:\001*\022\331\003\n\027VerifyPasswor" +
+      "dlessEmail\0228.scalekit.v1.auth.passwordle" +
+      "ss.VerifyPasswordLessRequest\0329.scalekit." +
+      "v1.auth.passwordless.VerifyPasswordLessR" +
+      "esponse\"\310\002\222A\222\002\n\021Passwordless Auth\022\031Verif" +
+      "y passwordless email\032MVerify a user\'s id" +
+      "entity using either a verification code " +
+      "or magic link tokenJ\222\001\n\003200\022\212\001\nISuccessf" +
+      "ully verified the passwordless authentic" +
+      "ation. Returns user email\022=\n;\0329.scalekit" +
+      ".v1.auth.passwordless.VerifyPasswordLess" +
+      "Response\202\265\030\002\030\004\202\323\344\223\002&\"!/api/v1/passwordle" +
+      "ss/email/verify:\001*\022\245\004\n\027ResendPasswordles" +
+      "sEmail\0228.scalekit.v1.auth.passwordless.R" +
+      "esendPasswordlessRequest\0327.scalekit.v1.a" +
+      "uth.passwordless.SendPasswordlessRespons" +
+      "e\"\226\003\222A\340\002\n\021Passwordless Auth\022\031Resend pass" +
+      "wordless email\032bResend a verification em" +
+      "ail if the user didn\'t receive it or if " +
+      "the previous code/link has expiredJ\313\001\n\0032" +
+      "00\022\303\001\n\203\001Successfully resent the password" +
+      "less authentication email. Returns updat" +
+      "ed authentication request details with n" +
+      "ew expiration time.\022;\n9\0327.scalekit.v1.au" +
+      "th.passwordless.SendPasswordlessResponse" +
+      "\202\265\030\002\030\004\202\323\344\223\002&\"!/api/v1/passwordless/email" +
+      "/resend:\001*\032\331\001\222A\325\001\n\021Passwordless Auth\022\277\001E" +
+      "ndpoints for sending and verifying passw" +
+      "ordless authentication emails. These API" +
+      "s allow users to authenticate without pa" +
+      "sswords by receiving a verification code" +
+      " or magic link in their email.B\231\002\n/com.s" +
+      "calekit.grpc.scalekit.v1.auth.passwordle" +
+      "ssB\021PasswordlessProtoP\001Z;github.com/scal" +
+      "ekit-inc/scalekit/pkg/grpc/auth/password" +
+      "less\242\002\004SVAP\252\002\035Scalekit.V1.Auth.Passwordl" +
+      "ess\312\002\035Scalekit\\V1\\Auth\\Passwordless\342\002)Sc" +
+      "alekit\\V1\\Auth\\Passwordless\\GPBMetadata\352" +
+      "\002 Scalekit::V1::Auth::Passwordlessb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

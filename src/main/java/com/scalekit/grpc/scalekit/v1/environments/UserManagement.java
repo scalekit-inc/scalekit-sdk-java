@@ -215,30 +215,80 @@ private static final long serialVersionUID = 0L;
     return invitationExpiry_ == null ? com.google.protobuf.UInt32Value.getDefaultInstance() : invitationExpiry_;
   }
 
-  public static final int ORGANIZATION_META_NAME_FIELD_NUMBER = 8;
-  private com.google.protobuf.StringValue organizationMetaName_;
+  public static final int BLOCK_DISPOSABLE_EMAIL_DOMAINS_FIELD_NUMBER = 9;
+  private com.google.protobuf.BoolValue blockDisposableEmailDomains_;
   /**
-   * <code>.google.protobuf.StringValue organization_meta_name = 8 [json_name = "organizationMetaName", (.buf.validate.field) = { ... }</code>
-   * @return Whether the organizationMetaName field is set.
+   * <pre>
+   * Indicates whether disposable email domains are blocked for user signup/invite.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue block_disposable_email_domains = 9 [json_name = "blockDisposableEmailDomains"];</code>
+   * @return Whether the blockDisposableEmailDomains field is set.
    */
   @java.lang.Override
-  public boolean hasOrganizationMetaName() {
+  public boolean hasBlockDisposableEmailDomains() {
     return ((bitField0_ & 0x00000040) != 0);
   }
   /**
-   * <code>.google.protobuf.StringValue organization_meta_name = 8 [json_name = "organizationMetaName", (.buf.validate.field) = { ... }</code>
-   * @return The organizationMetaName.
+   * <pre>
+   * Indicates whether disposable email domains are blocked for user signup/invite.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue block_disposable_email_domains = 9 [json_name = "blockDisposableEmailDomains"];</code>
+   * @return The blockDisposableEmailDomains.
    */
   @java.lang.Override
-  public com.google.protobuf.StringValue getOrganizationMetaName() {
-    return organizationMetaName_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : organizationMetaName_;
+  public com.google.protobuf.BoolValue getBlockDisposableEmailDomains() {
+    return blockDisposableEmailDomains_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : blockDisposableEmailDomains_;
   }
   /**
-   * <code>.google.protobuf.StringValue organization_meta_name = 8 [json_name = "organizationMetaName", (.buf.validate.field) = { ... }</code>
+   * <pre>
+   * Indicates whether disposable email domains are blocked for user signup/invite.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue block_disposable_email_domains = 9 [json_name = "blockDisposableEmailDomains"];</code>
    */
   @java.lang.Override
-  public com.google.protobuf.StringValueOrBuilder getOrganizationMetaNameOrBuilder() {
-    return organizationMetaName_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : organizationMetaName_;
+  public com.google.protobuf.BoolValueOrBuilder getBlockDisposableEmailDomainsOrBuilder() {
+    return blockDisposableEmailDomains_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : blockDisposableEmailDomains_;
+  }
+
+  public static final int BLOCK_PUBLIC_EMAIL_DOMAINS_FIELD_NUMBER = 10;
+  private com.google.protobuf.BoolValue blockPublicEmailDomains_;
+  /**
+   * <pre>
+   * Indicates whether public email domains are blocked for user signup/invite.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue block_public_email_domains = 10 [json_name = "blockPublicEmailDomains"];</code>
+   * @return Whether the blockPublicEmailDomains field is set.
+   */
+  @java.lang.Override
+  public boolean hasBlockPublicEmailDomains() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   * <pre>
+   * Indicates whether public email domains are blocked for user signup/invite.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue block_public_email_domains = 10 [json_name = "blockPublicEmailDomains"];</code>
+   * @return The blockPublicEmailDomains.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getBlockPublicEmailDomains() {
+    return blockPublicEmailDomains_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : blockPublicEmailDomains_;
+  }
+  /**
+   * <pre>
+   * Indicates whether public email domains are blocked for user signup/invite.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue block_public_email_domains = 10 [json_name = "blockPublicEmailDomains"];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getBlockPublicEmailDomainsOrBuilder() {
+    return blockPublicEmailDomains_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : blockPublicEmailDomains_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -277,7 +327,10 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(7, getInvitationExpiry());
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeMessage(8, getOrganizationMetaName());
+      output.writeMessage(9, getBlockDisposableEmailDomains());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(10, getBlockPublicEmailDomains());
     }
     getUnknownFields().writeTo(output);
   }
@@ -318,7 +371,11 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getOrganizationMetaName());
+        .computeMessageSize(9, getBlockDisposableEmailDomains());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, getBlockPublicEmailDomains());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -366,10 +423,15 @@ private static final long serialVersionUID = 0L;
       if (!getInvitationExpiry()
           .equals(other.getInvitationExpiry())) return false;
     }
-    if (hasOrganizationMetaName() != other.hasOrganizationMetaName()) return false;
-    if (hasOrganizationMetaName()) {
-      if (!getOrganizationMetaName()
-          .equals(other.getOrganizationMetaName())) return false;
+    if (hasBlockDisposableEmailDomains() != other.hasBlockDisposableEmailDomains()) return false;
+    if (hasBlockDisposableEmailDomains()) {
+      if (!getBlockDisposableEmailDomains()
+          .equals(other.getBlockDisposableEmailDomains())) return false;
+    }
+    if (hasBlockPublicEmailDomains() != other.hasBlockPublicEmailDomains()) return false;
+    if (hasBlockPublicEmailDomains()) {
+      if (!getBlockPublicEmailDomains()
+          .equals(other.getBlockPublicEmailDomains())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -408,9 +470,13 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + INVITATION_EXPIRY_FIELD_NUMBER;
       hash = (53 * hash) + getInvitationExpiry().hashCode();
     }
-    if (hasOrganizationMetaName()) {
-      hash = (37 * hash) + ORGANIZATION_META_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationMetaName().hashCode();
+    if (hasBlockDisposableEmailDomains()) {
+      hash = (37 * hash) + BLOCK_DISPOSABLE_EMAIL_DOMAINS_FIELD_NUMBER;
+      hash = (53 * hash) + getBlockDisposableEmailDomains().hashCode();
+    }
+    if (hasBlockPublicEmailDomains()) {
+      hash = (37 * hash) + BLOCK_PUBLIC_EMAIL_DOMAINS_FIELD_NUMBER;
+      hash = (53 * hash) + getBlockPublicEmailDomains().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -548,7 +614,8 @@ private static final long serialVersionUID = 0L;
         getEnableMaxUsersLimitFieldBuilder();
         getMaxUsersLimitFieldBuilder();
         getInvitationExpiryFieldBuilder();
-        getOrganizationMetaNameFieldBuilder();
+        getBlockDisposableEmailDomainsFieldBuilder();
+        getBlockPublicEmailDomainsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -586,10 +653,15 @@ private static final long serialVersionUID = 0L;
         invitationExpiryBuilder_.dispose();
         invitationExpiryBuilder_ = null;
       }
-      organizationMetaName_ = null;
-      if (organizationMetaNameBuilder_ != null) {
-        organizationMetaNameBuilder_.dispose();
-        organizationMetaNameBuilder_ = null;
+      blockDisposableEmailDomains_ = null;
+      if (blockDisposableEmailDomainsBuilder_ != null) {
+        blockDisposableEmailDomainsBuilder_.dispose();
+        blockDisposableEmailDomainsBuilder_ = null;
+      }
+      blockPublicEmailDomains_ = null;
+      if (blockPublicEmailDomainsBuilder_ != null) {
+        blockPublicEmailDomainsBuilder_.dispose();
+        blockPublicEmailDomainsBuilder_ = null;
       }
       return this;
     }
@@ -665,10 +737,16 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.organizationMetaName_ = organizationMetaNameBuilder_ == null
-            ? organizationMetaName_
-            : organizationMetaNameBuilder_.build();
+        result.blockDisposableEmailDomains_ = blockDisposableEmailDomainsBuilder_ == null
+            ? blockDisposableEmailDomains_
+            : blockDisposableEmailDomainsBuilder_.build();
         to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.blockPublicEmailDomains_ = blockPublicEmailDomainsBuilder_ == null
+            ? blockPublicEmailDomains_
+            : blockPublicEmailDomainsBuilder_.build();
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -738,8 +816,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasInvitationExpiry()) {
         mergeInvitationExpiry(other.getInvitationExpiry());
       }
-      if (other.hasOrganizationMetaName()) {
-        mergeOrganizationMetaName(other.getOrganizationMetaName());
+      if (other.hasBlockDisposableEmailDomains()) {
+        mergeBlockDisposableEmailDomains(other.getBlockDisposableEmailDomains());
+      }
+      if (other.hasBlockPublicEmailDomains()) {
+        mergeBlockPublicEmailDomains(other.getBlockPublicEmailDomains());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -814,13 +895,20 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000040;
               break;
             } // case 58
-            case 66: {
+            case 74: {
               input.readMessage(
-                  getOrganizationMetaNameFieldBuilder().getBuilder(),
+                  getBlockDisposableEmailDomainsFieldBuilder().getBuilder(),
                   extensionRegistry);
               bitField0_ |= 0x00000080;
               break;
-            } // case 66
+            } // case 74
+            case 82: {
+              input.readMessage(
+                  getBlockPublicEmailDomainsFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 82
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1617,125 +1705,318 @@ private static final long serialVersionUID = 0L;
       return invitationExpiryBuilder_;
     }
 
-    private com.google.protobuf.StringValue organizationMetaName_;
+    private com.google.protobuf.BoolValue blockDisposableEmailDomains_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> organizationMetaNameBuilder_;
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> blockDisposableEmailDomainsBuilder_;
     /**
-     * <code>.google.protobuf.StringValue organization_meta_name = 8 [json_name = "organizationMetaName", (.buf.validate.field) = { ... }</code>
-     * @return Whether the organizationMetaName field is set.
+     * <pre>
+     * Indicates whether disposable email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_disposable_email_domains = 9 [json_name = "blockDisposableEmailDomains"];</code>
+     * @return Whether the blockDisposableEmailDomains field is set.
      */
-    public boolean hasOrganizationMetaName() {
+    public boolean hasBlockDisposableEmailDomains() {
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>.google.protobuf.StringValue organization_meta_name = 8 [json_name = "organizationMetaName", (.buf.validate.field) = { ... }</code>
-     * @return The organizationMetaName.
+     * <pre>
+     * Indicates whether disposable email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_disposable_email_domains = 9 [json_name = "blockDisposableEmailDomains"];</code>
+     * @return The blockDisposableEmailDomains.
      */
-    public com.google.protobuf.StringValue getOrganizationMetaName() {
-      if (organizationMetaNameBuilder_ == null) {
-        return organizationMetaName_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : organizationMetaName_;
+    public com.google.protobuf.BoolValue getBlockDisposableEmailDomains() {
+      if (blockDisposableEmailDomainsBuilder_ == null) {
+        return blockDisposableEmailDomains_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : blockDisposableEmailDomains_;
       } else {
-        return organizationMetaNameBuilder_.getMessage();
+        return blockDisposableEmailDomainsBuilder_.getMessage();
       }
     }
     /**
-     * <code>.google.protobuf.StringValue organization_meta_name = 8 [json_name = "organizationMetaName", (.buf.validate.field) = { ... }</code>
+     * <pre>
+     * Indicates whether disposable email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_disposable_email_domains = 9 [json_name = "blockDisposableEmailDomains"];</code>
      */
-    public Builder setOrganizationMetaName(com.google.protobuf.StringValue value) {
-      if (organizationMetaNameBuilder_ == null) {
+    public Builder setBlockDisposableEmailDomains(com.google.protobuf.BoolValue value) {
+      if (blockDisposableEmailDomainsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        organizationMetaName_ = value;
+        blockDisposableEmailDomains_ = value;
       } else {
-        organizationMetaNameBuilder_.setMessage(value);
+        blockDisposableEmailDomainsBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.StringValue organization_meta_name = 8 [json_name = "organizationMetaName", (.buf.validate.field) = { ... }</code>
+     * <pre>
+     * Indicates whether disposable email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_disposable_email_domains = 9 [json_name = "blockDisposableEmailDomains"];</code>
      */
-    public Builder setOrganizationMetaName(
-        com.google.protobuf.StringValue.Builder builderForValue) {
-      if (organizationMetaNameBuilder_ == null) {
-        organizationMetaName_ = builderForValue.build();
+    public Builder setBlockDisposableEmailDomains(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (blockDisposableEmailDomainsBuilder_ == null) {
+        blockDisposableEmailDomains_ = builderForValue.build();
       } else {
-        organizationMetaNameBuilder_.setMessage(builderForValue.build());
+        blockDisposableEmailDomainsBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.StringValue organization_meta_name = 8 [json_name = "organizationMetaName", (.buf.validate.field) = { ... }</code>
+     * <pre>
+     * Indicates whether disposable email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_disposable_email_domains = 9 [json_name = "blockDisposableEmailDomains"];</code>
      */
-    public Builder mergeOrganizationMetaName(com.google.protobuf.StringValue value) {
-      if (organizationMetaNameBuilder_ == null) {
+    public Builder mergeBlockDisposableEmailDomains(com.google.protobuf.BoolValue value) {
+      if (blockDisposableEmailDomainsBuilder_ == null) {
         if (((bitField0_ & 0x00000080) != 0) &&
-          organizationMetaName_ != null &&
-          organizationMetaName_ != com.google.protobuf.StringValue.getDefaultInstance()) {
-          getOrganizationMetaNameBuilder().mergeFrom(value);
+          blockDisposableEmailDomains_ != null &&
+          blockDisposableEmailDomains_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getBlockDisposableEmailDomainsBuilder().mergeFrom(value);
         } else {
-          organizationMetaName_ = value;
+          blockDisposableEmailDomains_ = value;
         }
       } else {
-        organizationMetaNameBuilder_.mergeFrom(value);
+        blockDisposableEmailDomainsBuilder_.mergeFrom(value);
       }
-      if (organizationMetaName_ != null) {
+      if (blockDisposableEmailDomains_ != null) {
         bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.google.protobuf.StringValue organization_meta_name = 8 [json_name = "organizationMetaName", (.buf.validate.field) = { ... }</code>
+     * <pre>
+     * Indicates whether disposable email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_disposable_email_domains = 9 [json_name = "blockDisposableEmailDomains"];</code>
      */
-    public Builder clearOrganizationMetaName() {
+    public Builder clearBlockDisposableEmailDomains() {
       bitField0_ = (bitField0_ & ~0x00000080);
-      organizationMetaName_ = null;
-      if (organizationMetaNameBuilder_ != null) {
-        organizationMetaNameBuilder_.dispose();
-        organizationMetaNameBuilder_ = null;
+      blockDisposableEmailDomains_ = null;
+      if (blockDisposableEmailDomainsBuilder_ != null) {
+        blockDisposableEmailDomainsBuilder_.dispose();
+        blockDisposableEmailDomainsBuilder_ = null;
       }
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.StringValue organization_meta_name = 8 [json_name = "organizationMetaName", (.buf.validate.field) = { ... }</code>
+     * <pre>
+     * Indicates whether disposable email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_disposable_email_domains = 9 [json_name = "blockDisposableEmailDomains"];</code>
      */
-    public com.google.protobuf.StringValue.Builder getOrganizationMetaNameBuilder() {
+    public com.google.protobuf.BoolValue.Builder getBlockDisposableEmailDomainsBuilder() {
       bitField0_ |= 0x00000080;
       onChanged();
-      return getOrganizationMetaNameFieldBuilder().getBuilder();
+      return getBlockDisposableEmailDomainsFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.StringValue organization_meta_name = 8 [json_name = "organizationMetaName", (.buf.validate.field) = { ... }</code>
+     * <pre>
+     * Indicates whether disposable email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_disposable_email_domains = 9 [json_name = "blockDisposableEmailDomains"];</code>
      */
-    public com.google.protobuf.StringValueOrBuilder getOrganizationMetaNameOrBuilder() {
-      if (organizationMetaNameBuilder_ != null) {
-        return organizationMetaNameBuilder_.getMessageOrBuilder();
+    public com.google.protobuf.BoolValueOrBuilder getBlockDisposableEmailDomainsOrBuilder() {
+      if (blockDisposableEmailDomainsBuilder_ != null) {
+        return blockDisposableEmailDomainsBuilder_.getMessageOrBuilder();
       } else {
-        return organizationMetaName_ == null ?
-            com.google.protobuf.StringValue.getDefaultInstance() : organizationMetaName_;
+        return blockDisposableEmailDomains_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : blockDisposableEmailDomains_;
       }
     }
     /**
-     * <code>.google.protobuf.StringValue organization_meta_name = 8 [json_name = "organizationMetaName", (.buf.validate.field) = { ... }</code>
+     * <pre>
+     * Indicates whether disposable email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_disposable_email_domains = 9 [json_name = "blockDisposableEmailDomains"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
-        getOrganizationMetaNameFieldBuilder() {
-      if (organizationMetaNameBuilder_ == null) {
-        organizationMetaNameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
-                getOrganizationMetaName(),
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getBlockDisposableEmailDomainsFieldBuilder() {
+      if (blockDisposableEmailDomainsBuilder_ == null) {
+        blockDisposableEmailDomainsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getBlockDisposableEmailDomains(),
                 getParentForChildren(),
                 isClean());
-        organizationMetaName_ = null;
+        blockDisposableEmailDomains_ = null;
       }
-      return organizationMetaNameBuilder_;
+      return blockDisposableEmailDomainsBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue blockPublicEmailDomains_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> blockPublicEmailDomainsBuilder_;
+    /**
+     * <pre>
+     * Indicates whether public email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_public_email_domains = 10 [json_name = "blockPublicEmailDomains"];</code>
+     * @return Whether the blockPublicEmailDomains field is set.
+     */
+    public boolean hasBlockPublicEmailDomains() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <pre>
+     * Indicates whether public email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_public_email_domains = 10 [json_name = "blockPublicEmailDomains"];</code>
+     * @return The blockPublicEmailDomains.
+     */
+    public com.google.protobuf.BoolValue getBlockPublicEmailDomains() {
+      if (blockPublicEmailDomainsBuilder_ == null) {
+        return blockPublicEmailDomains_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : blockPublicEmailDomains_;
+      } else {
+        return blockPublicEmailDomainsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Indicates whether public email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_public_email_domains = 10 [json_name = "blockPublicEmailDomains"];</code>
+     */
+    public Builder setBlockPublicEmailDomains(com.google.protobuf.BoolValue value) {
+      if (blockPublicEmailDomainsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        blockPublicEmailDomains_ = value;
+      } else {
+        blockPublicEmailDomainsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether public email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_public_email_domains = 10 [json_name = "blockPublicEmailDomains"];</code>
+     */
+    public Builder setBlockPublicEmailDomains(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (blockPublicEmailDomainsBuilder_ == null) {
+        blockPublicEmailDomains_ = builderForValue.build();
+      } else {
+        blockPublicEmailDomainsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether public email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_public_email_domains = 10 [json_name = "blockPublicEmailDomains"];</code>
+     */
+    public Builder mergeBlockPublicEmailDomains(com.google.protobuf.BoolValue value) {
+      if (blockPublicEmailDomainsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0) &&
+          blockPublicEmailDomains_ != null &&
+          blockPublicEmailDomains_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getBlockPublicEmailDomainsBuilder().mergeFrom(value);
+        } else {
+          blockPublicEmailDomains_ = value;
+        }
+      } else {
+        blockPublicEmailDomainsBuilder_.mergeFrom(value);
+      }
+      if (blockPublicEmailDomains_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether public email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_public_email_domains = 10 [json_name = "blockPublicEmailDomains"];</code>
+     */
+    public Builder clearBlockPublicEmailDomains() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      blockPublicEmailDomains_ = null;
+      if (blockPublicEmailDomainsBuilder_ != null) {
+        blockPublicEmailDomainsBuilder_.dispose();
+        blockPublicEmailDomainsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether public email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_public_email_domains = 10 [json_name = "blockPublicEmailDomains"];</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getBlockPublicEmailDomainsBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getBlockPublicEmailDomainsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Indicates whether public email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_public_email_domains = 10 [json_name = "blockPublicEmailDomains"];</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getBlockPublicEmailDomainsOrBuilder() {
+      if (blockPublicEmailDomainsBuilder_ != null) {
+        return blockPublicEmailDomainsBuilder_.getMessageOrBuilder();
+      } else {
+        return blockPublicEmailDomains_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : blockPublicEmailDomains_;
+      }
+    }
+    /**
+     * <pre>
+     * Indicates whether public email domains are blocked for user signup/invite.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue block_public_email_domains = 10 [json_name = "blockPublicEmailDomains"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getBlockPublicEmailDomainsFieldBuilder() {
+      if (blockPublicEmailDomainsBuilder_ == null) {
+        blockPublicEmailDomainsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getBlockPublicEmailDomains(),
+                getParentForChildren(),
+                isClean());
+        blockPublicEmailDomains_ = null;
+      }
+      return blockPublicEmailDomainsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
