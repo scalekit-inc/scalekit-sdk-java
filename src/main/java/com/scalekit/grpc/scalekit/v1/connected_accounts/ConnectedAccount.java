@@ -382,6 +382,32 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int API_CONFIG_FIELD_NUMBER = 12;
+  private com.google.protobuf.Struct apiConfig_;
+  /**
+   * <code>.google.protobuf.Struct api_config = 12 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the apiConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasApiConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <code>.google.protobuf.Struct api_config = 12 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The apiConfig.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getApiConfig() {
+    return apiConfig_ == null ? com.google.protobuf.Struct.getDefaultInstance() : apiConfig_;
+  }
+  /**
+   * <code>.google.protobuf.Struct api_config = 12 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getApiConfigOrBuilder() {
+    return apiConfig_ == null ? com.google.protobuf.Struct.getDefaultInstance() : apiConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -428,6 +454,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, connectionId_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(12, getApiConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -477,6 +506,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, connectionId_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getApiConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -524,6 +557,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getId())) return false;
     if (!getConnectionId()
         .equals(other.getConnectionId())) return false;
+    if (hasApiConfig() != other.hasApiConfig()) return false;
+    if (hasApiConfig()) {
+      if (!getApiConfig()
+          .equals(other.getApiConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -565,6 +603,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + CONNECTION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getConnectionId().hashCode();
+    if (hasApiConfig()) {
+      hash = (37 * hash) + API_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getApiConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -699,6 +741,7 @@ private static final long serialVersionUID = 0L;
         getTokenExpiresAtFieldBuilder();
         getUpdatedAtFieldBuilder();
         getLastUsedAtFieldBuilder();
+        getApiConfigFieldBuilder();
       }
     }
     @java.lang.Override
@@ -732,6 +775,11 @@ private static final long serialVersionUID = 0L;
       }
       id_ = "";
       connectionId_ = "";
+      apiConfig_ = null;
+      if (apiConfigBuilder_ != null) {
+        apiConfigBuilder_.dispose();
+        apiConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -810,6 +858,12 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.connectionId_ = connectionId_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.apiConfig_ = apiConfigBuilder_ == null
+            ? apiConfig_
+            : apiConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -901,6 +955,9 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000400;
         onChanged();
       }
+      if (other.hasApiConfig()) {
+        mergeApiConfig(other.getApiConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -990,6 +1047,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000400;
               break;
             } // case 90
+            case 98: {
+              input.readMessage(
+                  getApiConfigFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 98
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1955,6 +2019,127 @@ private static final long serialVersionUID = 0L;
       bitField0_ |= 0x00000400;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Struct apiConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> apiConfigBuilder_;
+    /**
+     * <code>.google.protobuf.Struct api_config = 12 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the apiConfig field is set.
+     */
+    public boolean hasApiConfig() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Struct api_config = 12 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The apiConfig.
+     */
+    public com.google.protobuf.Struct getApiConfig() {
+      if (apiConfigBuilder_ == null) {
+        return apiConfig_ == null ? com.google.protobuf.Struct.getDefaultInstance() : apiConfig_;
+      } else {
+        return apiConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.Struct api_config = 12 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setApiConfig(com.google.protobuf.Struct value) {
+      if (apiConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        apiConfig_ = value;
+      } else {
+        apiConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct api_config = 12 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setApiConfig(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (apiConfigBuilder_ == null) {
+        apiConfig_ = builderForValue.build();
+      } else {
+        apiConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct api_config = 12 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeApiConfig(com.google.protobuf.Struct value) {
+      if (apiConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0) &&
+          apiConfig_ != null &&
+          apiConfig_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getApiConfigBuilder().mergeFrom(value);
+        } else {
+          apiConfig_ = value;
+        }
+      } else {
+        apiConfigBuilder_.mergeFrom(value);
+      }
+      if (apiConfig_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct api_config = 12 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearApiConfig() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      apiConfig_ = null;
+      if (apiConfigBuilder_ != null) {
+        apiConfigBuilder_.dispose();
+        apiConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct api_config = 12 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.Struct.Builder getApiConfigBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getApiConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Struct api_config = 12 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StructOrBuilder getApiConfigOrBuilder() {
+      if (apiConfigBuilder_ != null) {
+        return apiConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return apiConfig_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : apiConfig_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Struct api_config = 12 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getApiConfigFieldBuilder() {
+      if (apiConfigBuilder_ == null) {
+        apiConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getApiConfig(),
+                getParentForChildren(),
+                isClean());
+        apiConfig_ = null;
+      }
+      return apiConfigBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

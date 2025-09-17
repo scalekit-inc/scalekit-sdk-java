@@ -235,266 +235,267 @@ public final class EmailsProto {
       "\340A\003R\014placeholders\022\030\n\007display\030\005 \001(\010R\007disp" +
       "lay\022L\n\020default_template\030\006 \001(\0132\034.scalekit" +
       ".v1.emails.TemplateB\003\340A\003R\017defaultTemplat" +
-      "e\"\263\001\n\013Placeholder\022\036\n\004name\030\001 \001(\tB\n\272H\007r\005\020\001" +
+      "e\"\340\001\n\013Placeholder\022\036\n\004name\030\001 \001(\tB\n\272H\007r\005\020\001" +
       "\030\377\001R\004name\022 \n\005title\030\002 \001(\tB\n\272H\007r\005\020\001\030\377\001R\005ti" +
       "tle\022,\n\013description\030\003 \001(\tB\n\272H\007r\005\020\001\030\377\001R\013de" +
       "scription\022\030\n\007display\030\004 \001(\010R\007display\022\032\n\010c" +
-      "ategory\030\005 \001(\tR\010category\"\352\002\n\010Template\022>\n\n" +
-      "updated_at\030\001 \001(\0132\032.google.protobuf.Times" +
-      "tampB\003\340A\003R\tupdatedAt\022\023\n\002id\030\002 \001(\tB\003\340A\003R\002i" +
-      "d\022>\n\010use_case\030\003 \001(\0162#.scalekit.v1.emails" +
-      ".TemplateUsecaseR\007useCase\022\030\n\007enabled\030\004 \001" +
-      "(\010R\007enabled\022$\n\007subject\030\005 \001(\tB\n\272H\007r\005\020\001\030\377\001" +
-      "R\007subject\022.\n\014html_content\030\006 \001(\tB\013\272H\010r\006\020\001" +
-      "(\200\200@R\013htmlContent\0220\n\rplain_content\030\007 \001(\t" +
-      "B\013\272H\010r\006\020\001(\200\200@R\014plainContent\022\'\n\014placehold" +
-      "ers\030\010 \003(\tB\003\340A\003R\014placeholders\"\310\002\n\023CreateE" +
-      "mailTemplate\022>\n\nupdated_at\030\001 \001(\0132\032.googl" +
-      "e.protobuf.TimestampB\003\340A\003R\tupdatedAt\022\023\n\002" +
-      "id\030\002 \001(\tB\003\340A\003R\002id\022K\n\010use_case\030\003 \001(\0162#.sc" +
-      "alekit.v1.emails.TemplateUsecaseB\013\272H\010\202\001\002" +
-      "\020\001\310\001\001R\007useCase\022\'\n\007subject\030\004 \001(\tB\r\272H\nr\005\020\001" +
-      "\030\377\001\310\001\001R\007subject\0221\n\014html_content\030\005 \001(\tB\016\272" +
-      "H\013r\006\020\001(\200\200@\310\001\001R\013htmlContent\0223\n\rplain_cont" +
-      "ent\030\006 \001(\tB\016\272H\013r\006\020\001(\200\200@\310\001\001R\014plainContent\"" +
-      "\235\001\n\032CreateEmailTemplateRequest\0222\n\017organi" +
-      "zation_id\030\001 \001(\tB\t\272H\006r\004\020\000\030 R\016organization" +
-      "Id\022K\n\010template\030\002 \001(\0132\'.scalekit.v1.email" +
-      "s.CreateEmailTemplateB\006\272H\003\310\001\001R\010template\"" +
-      "_\n\033CreateEmailTemplateResponse\022@\n\010templa" +
-      "te\030\001 \001(\0132\034.scalekit.v1.emails.TemplateB\006" +
-      "\272H\003\310\001\001R\010template\"\204\001\n\032EnableEmailTemplate" +
-      "Request\0222\n\017organization_id\030\001 \001(\tB\t\272H\006r\004\020" +
-      "\000\030 R\016organizationId\0222\n\013template_id\030\002 \001(\t" +
-      "B\021\272H\016r\t\020\001\030 :\003tpl\310\001\001R\ntemplateId\"\336\001\n\033Enab" +
-      "leEmailTemplateResponse\022Z\n\022active_templa" +
-      "te_id\030\001 \001(\0132\034.google.protobuf.StringValu" +
-      "eB\016\272H\013r\t\020\001\030 :\003tplR\020activeTemplateId\022c\n\027l" +
-      "ast_active_template_id\030\002 \001(\0132\034.google.pr" +
-      "otobuf.StringValueB\016\272H\013r\t\020\001\030 :\003tplR\024last" +
-      "ActiveTemplateId\"\205\001\n\033DisableEmailTemplat" +
-      "eRequest\0222\n\017organization_id\030\001 \001(\tB\t\272H\006r\004" +
-      "\020\000\030 R\016organizationId\0222\n\013template_id\030\002 \001(" +
-      "\tB\021\272H\016r\t\020\001\030 :\003tpl\310\001\001R\ntemplateId\"\201\001\n\027Get" +
+      "ategory\030\005 \001(\tR\010category\022+\n\021category_prio" +
+      "rity\030\006 \001(\005R\020categoryPriority\"\352\002\n\010Templat" +
+      "e\022>\n\nupdated_at\030\001 \001(\0132\032.google.protobuf." +
+      "TimestampB\003\340A\003R\tupdatedAt\022\023\n\002id\030\002 \001(\tB\003\340" +
+      "A\003R\002id\022>\n\010use_case\030\003 \001(\0162#.scalekit.v1.e" +
+      "mails.TemplateUsecaseR\007useCase\022\030\n\007enable" +
+      "d\030\004 \001(\010R\007enabled\022$\n\007subject\030\005 \001(\tB\n\272H\007r\005" +
+      "\020\001\030\377\001R\007subject\022.\n\014html_content\030\006 \001(\tB\013\272H" +
+      "\010r\006\020\001(\200\200@R\013htmlContent\0220\n\rplain_content\030" +
+      "\007 \001(\tB\013\272H\010r\006\020\001(\200\200@R\014plainContent\022\'\n\014plac" +
+      "eholders\030\010 \003(\tB\003\340A\003R\014placeholders\"\310\002\n\023Cr" +
+      "eateEmailTemplate\022>\n\nupdated_at\030\001 \001(\0132\032." +
+      "google.protobuf.TimestampB\003\340A\003R\tupdatedA" +
+      "t\022\023\n\002id\030\002 \001(\tB\003\340A\003R\002id\022K\n\010use_case\030\003 \001(\016" +
+      "2#.scalekit.v1.emails.TemplateUsecaseB\013\272" +
+      "H\010\202\001\002\020\001\310\001\001R\007useCase\022\'\n\007subject\030\004 \001(\tB\r\272H" +
+      "\nr\005\020\001\030\377\001\310\001\001R\007subject\0221\n\014html_content\030\005 \001" +
+      "(\tB\016\272H\013r\006\020\001(\200\200@\310\001\001R\013htmlContent\0223\n\rplain" +
+      "_content\030\006 \001(\tB\016\272H\013r\006\020\001(\200\200@\310\001\001R\014plainCon" +
+      "tent\"\235\001\n\032CreateEmailTemplateRequest\0222\n\017o" +
+      "rganization_id\030\001 \001(\tB\t\272H\006r\004\020\000\030 R\016organiz" +
+      "ationId\022K\n\010template\030\002 \001(\0132\'.scalekit.v1." +
+      "emails.CreateEmailTemplateB\006\272H\003\310\001\001R\010temp" +
+      "late\"_\n\033CreateEmailTemplateResponse\022@\n\010t" +
+      "emplate\030\001 \001(\0132\034.scalekit.v1.emails.Templ" +
+      "ateB\006\272H\003\310\001\001R\010template\"\204\001\n\032EnableEmailTem" +
+      "plateRequest\0222\n\017organization_id\030\001 \001(\tB\t\272" +
+      "H\006r\004\020\000\030 R\016organizationId\0222\n\013template_id\030" +
+      "\002 \001(\tB\021\272H\016r\t\020\001\030 :\003tpl\310\001\001R\ntemplateId\"\336\001\n" +
+      "\033EnableEmailTemplateResponse\022Z\n\022active_t" +
+      "emplate_id\030\001 \001(\0132\034.google.protobuf.Strin" +
+      "gValueB\016\272H\013r\t\020\001\030 :\003tplR\020activeTemplateId" +
+      "\022c\n\027last_active_template_id\030\002 \001(\0132\034.goog" +
+      "le.protobuf.StringValueB\016\272H\013r\t\020\001\030 :\003tplR" +
+      "\024lastActiveTemplateId\"\205\001\n\033DisableEmailTe" +
+      "mplateRequest\0222\n\017organization_id\030\001 \001(\tB\t" +
+      "\272H\006r\004\020\000\030 R\016organizationId\0222\n\013template_id" +
+      "\030\002 \001(\tB\021\272H\016r\t\020\001\030 :\003tpl\310\001\001R\ntemplateId\"\201\001" +
+      "\n\027GetEmailTemplateRequest\0222\n\017organizatio" +
+      "n_id\030\001 \001(\tB\t\272H\006r\004\020\000\030 R\016organizationId\0222\n" +
+      "\013template_id\030\002 \001(\tB\021\272H\016r\t\020\001\030 :\003tpl\310\001\001R\nt" +
+      "emplateId\"T\n\030GetEmailTemplateResponse\0228\n" +
+      "\010template\030\001 \001(\0132\034.scalekit.v1.emails.Tem" +
+      "plateR\010template\"N\n\030ListEmailTemplateRequ" +
+      "est\0222\n\017organization_id\030\001 \001(\tB\t\272H\006r\004\020\000\030 R" +
+      "\016organizationId\"W\n\031ListEmailTemplateResp" +
+      "onse\022:\n\ttemplates\030\001 \003(\0132\034.scalekit.v1.em" +
+      "ails.TemplateR\ttemplates\"\220\003\n\016UpdateTempl" +
+      "ate\022)\n\007subject\030\001 \001(\tB\n\272H\007r\005\020\001\030\377\001H\000R\007subj" +
+      "ect\210\001\001\0223\n\014html_content\030\002 \001(\tB\013\272H\010r\006\020\001(\200\200" +
+      "@H\001R\013htmlContent\210\001\001\0225\n\rplain_content\030\003 \001" +
+      "(\tB\013\272H\010r\006\020\001(\200\200@H\002R\014plainContent\210\001\001:\267\001\272H\263" +
+      "\001\032\260\001\n\033at_least_one_field_required\022IAt le" +
+      "ast one of \'subject\', \'html_content\', or" +
+      " \'plain_content\' must be set\032Fhas(this.s" +
+      "ubject) || has(this.html_content) || has" +
+      "(this.plain_content)B\n\n\010_subjectB\017\n\r_htm" +
+      "l_contentB\020\n\016_plain_content\"\226\003\n\035GetEmail" +
+      "ConfigurationResponse\022i\n\021default_from_na" +
+      "me\030\001 \001(\tB=\222A:28Default email from name w" +
+      "hen using scalekit email serverR\017default" +
+      "FromName\022x\n\024default_from_address\030\002 \001(\tBF" +
+      "\222A=2;Default email from address when usi" +
+      "ng scalekit email server\272H\003\310\001\001R\022defaultF" +
+      "romAddress\022W\n\025email_server_selected\030\003 \001(" +
+      "\0162#.scalekit.v1.emails.EmailServerTypeR\023" +
+      "emailServerSelected\0227\n\006server\030\004 \001(\0132\037.sc" +
+      "alekit.v1.emails.EmailServerR\006server\"\231\001\n" +
+      "\037UpsertEmailConfigurationRequest\022*\n\021defa" +
+      "ult_from_name\030\001 \001(\tR\017defaultFromName\022J\n\006" +
+      "server\030\002 \001(\01322.scalekit.v1.emails.Upsert" +
+      "EmailConfigurationServerR\006server\"\237\002\n\036Ups" +
+      "ertEmailConfigurationServer\022\016\n\002id\030\001 \001(\tR" +
+      "\002id\022K\n\010provider\030\002 \001(\0162\'.scalekit.v1.emai" +
+      "ls.EmailServerProviderB\006\272H\003\310\001\001R\010provider" +
+      "\022<\n\007enabled\030\003 \001(\0132\032.google.protobuf.Bool" +
+      "ValueB\006\272H\003\310\001\001R\007enabled\022b\n\010settings\030\004 \001(\013" +
+      "2>.scalekit.v1.emails.UpsertEmailConfigu" +
+      "rationSMTPServerSettingsB\006\272H\003\310\001\001R\010settin" +
+      "gs\"\214\002\n*UpsertEmailConfigurationSMTPServe" +
+      "rSettings\022!\n\004host\030\001 \001(\tB\r\272H\nr\005\020\001\030\377\001\310\001\001R\004" +
+      "host\022\032\n\004port\030\002 \001(\003B\006\272H\003\310\001\001R\004port\022)\n\010user" +
+      "name\030\003 \001(\tB\r\272H\nr\005\020\001\030\377\001\310\001\001R\010username\022\032\n\010p" +
+      "assword\030\004 \001(\tR\010password\022,\n\nfrom_email\030\005 " +
+      "\001(\tB\r\272H\nr\005\020\001\030\377\001\310\001\001R\tfromEmail\022*\n\tfrom_na" +
+      "me\030\006 \001(\tB\r\272H\nr\005\020\001\030\377\001\310\001\001R\010fromName\"\222\002\n Up" +
+      "sertEmailConfigurationResponse\022*\n\021defaul" +
+      "t_from_name\030\001 \001(\tR\017defaultFromName\0220\n\024de" +
+      "fault_from_address\030\002 \001(\tR\022defaultFromAdd" +
+      "ress\022W\n\025email_server_selected\030\003 \001(\0162#.sc" +
+      "alekit.v1.emails.EmailServerTypeR\023emailS" +
+      "erverSelected\0227\n\006server\030\004 \001(\0132\037.scalekit" +
+      ".v1.emails.EmailServerR\006server\"\210\002\n\031Patch" +
       "EmailTemplateRequest\0222\n\017organization_id\030" +
       "\001 \001(\tB\t\272H\006r\004\020\000\030 R\016organizationId\0222\n\013temp" +
       "late_id\030\002 \001(\tB\021\272H\016r\t\020\001\030 :\003tpl\310\001\001R\ntempla" +
-      "teId\"T\n\030GetEmailTemplateResponse\0228\n\010temp" +
-      "late\030\001 \001(\0132\034.scalekit.v1.emails.Template" +
-      "R\010template\"N\n\030ListEmailTemplateRequest\0222" +
-      "\n\017organization_id\030\001 \001(\tB\t\272H\006r\004\020\000\030 R\016orga" +
-      "nizationId\"W\n\031ListEmailTemplateResponse\022" +
-      ":\n\ttemplates\030\001 \003(\0132\034.scalekit.v1.emails." +
-      "TemplateR\ttemplates\"\220\003\n\016UpdateTemplate\022)" +
-      "\n\007subject\030\001 \001(\tB\n\272H\007r\005\020\001\030\377\001H\000R\007subject\210\001" +
-      "\001\0223\n\014html_content\030\002 \001(\tB\013\272H\010r\006\020\001(\200\200@H\001R\013" +
-      "htmlContent\210\001\001\0225\n\rplain_content\030\003 \001(\tB\013\272" +
-      "H\010r\006\020\001(\200\200@H\002R\014plainContent\210\001\001:\267\001\272H\263\001\032\260\001\n" +
-      "\033at_least_one_field_required\022IAt least o" +
-      "ne of \'subject\', \'html_content\', or \'pla" +
-      "in_content\' must be set\032Fhas(this.subjec" +
-      "t) || has(this.html_content) || has(this" +
-      ".plain_content)B\n\n\010_subjectB\017\n\r_html_con" +
-      "tentB\020\n\016_plain_content\"\226\003\n\035GetEmailConfi" +
-      "gurationResponse\022i\n\021default_from_name\030\001 " +
-      "\001(\tB=\222A:28Default email from name when u" +
-      "sing scalekit email serverR\017defaultFromN" +
-      "ame\022x\n\024default_from_address\030\002 \001(\tBF\222A=2;" +
-      "Default email from address when using sc" +
-      "alekit email server\272H\003\310\001\001R\022defaultFromAd" +
-      "dress\022W\n\025email_server_selected\030\003 \001(\0162#.s" +
-      "calekit.v1.emails.EmailServerTypeR\023email" +
-      "ServerSelected\0227\n\006server\030\004 \001(\0132\037.scaleki" +
-      "t.v1.emails.EmailServerR\006server\"\231\001\n\037Upse" +
-      "rtEmailConfigurationRequest\022*\n\021default_f" +
-      "rom_name\030\001 \001(\tR\017defaultFromName\022J\n\006serve" +
-      "r\030\002 \001(\01322.scalekit.v1.emails.UpsertEmail" +
-      "ConfigurationServerR\006server\"\237\002\n\036UpsertEm" +
-      "ailConfigurationServer\022\016\n\002id\030\001 \001(\tR\002id\022K" +
-      "\n\010provider\030\002 \001(\0162\'.scalekit.v1.emails.Em" +
-      "ailServerProviderB\006\272H\003\310\001\001R\010provider\022<\n\007e" +
-      "nabled\030\003 \001(\0132\032.google.protobuf.BoolValue" +
-      "B\006\272H\003\310\001\001R\007enabled\022b\n\010settings\030\004 \001(\0132>.sc" +
-      "alekit.v1.emails.UpsertEmailConfiguratio" +
-      "nSMTPServerSettingsB\006\272H\003\310\001\001R\010settings\"\214\002" +
-      "\n*UpsertEmailConfigurationSMTPServerSett" +
-      "ings\022!\n\004host\030\001 \001(\tB\r\272H\nr\005\020\001\030\377\001\310\001\001R\004host\022" +
-      "\032\n\004port\030\002 \001(\003B\006\272H\003\310\001\001R\004port\022)\n\010username\030" +
-      "\003 \001(\tB\r\272H\nr\005\020\001\030\377\001\310\001\001R\010username\022\032\n\010passwo" +
-      "rd\030\004 \001(\tR\010password\022,\n\nfrom_email\030\005 \001(\tB\r" +
-      "\272H\nr\005\020\001\030\377\001\310\001\001R\tfromEmail\022*\n\tfrom_name\030\006 " +
-      "\001(\tB\r\272H\nr\005\020\001\030\377\001\310\001\001R\010fromName\"\222\002\n UpsertE" +
-      "mailConfigurationResponse\022*\n\021default_fro" +
-      "m_name\030\001 \001(\tR\017defaultFromName\0220\n\024default" +
-      "_from_address\030\002 \001(\tR\022defaultFromAddress\022" +
-      "W\n\025email_server_selected\030\003 \001(\0162#.scaleki" +
-      "t.v1.emails.EmailServerTypeR\023emailServer" +
-      "Selected\0227\n\006server\030\004 \001(\0132\037.scalekit.v1.e" +
-      "mails.EmailServerR\006server\"\210\002\n\031PatchEmail" +
-      "TemplateRequest\0222\n\017organization_id\030\001 \001(\t" +
-      "B\t\272H\006r\004\020\000\030 R\016organizationId\0222\n\013template_" +
-      "id\030\002 \001(\tB\021\272H\016r\t\020\001\030 :\003tpl\310\001\001R\ntemplateId\022" +
-      "F\n\010template\030\004 \001(\0132\".scalekit.v1.emails.U" +
-      "pdateTemplateB\006\272H\003\310\001\001R\010template\022;\n\013updat" +
-      "e_mask\030c \001(\0132\032.google.protobuf.FieldMask" +
-      "R\nupdateMask\"\204\001\n\032DeleteEmailTemplateRequ" +
-      "est\0222\n\017organization_id\030\001 \001(\tB\t\272H\006r\004\020\000\030 R" +
-      "\016organizationId\0222\n\013template_id\030\002 \001(\tB\021\272H" +
-      "\016r\t\020\001\030 :\003tpl\310\001\001R\ntemplateId\"\254\002\n\013EmailSer" +
-      "ver\022>\n\nupdated_at\030\001 \001(\0132\032.google.protobu" +
-      "f.TimestampB\003\340A\003R\tupdatedAt\022\023\n\002id\030\002 \001(\tB" +
-      "\003\340A\003R\002id\022K\n\010provider\030\003 \001(\0162\'.scalekit.v1" +
-      ".emails.EmailServerProviderB\006\272H\003\310\001\001R\010pro" +
-      "vider\022\030\n\007enabled\030\004 \001(\010R\007enabled\022U\n\rsmtp_" +
-      "settings\030\005 \001(\0132&.scalekit.v1.emails.SMTP" +
-      "ServerSettingsB\006\272H\003\310\001\001H\000R\014smtpSettingsB\n" +
-      "\n\010settings\"\206\002\n\022SMTPServerSettings\022!\n\004hos" +
-      "t\030\001 \001(\tB\r\272H\nr\005\020\001\030\377\001\310\001\001R\004host\022\032\n\004port\030\002 \001" +
-      "(\003B\006\272H\003\310\001\001R\004port\022)\n\010username\030\003 \001(\tB\r\272H\nr" +
-      "\005\020\001\030\377\001\310\001\001R\010username\022,\n\010password\030\004 \001(\tB\020\340" +
-      "A\004\272H\nr\005\020\001\030\377\001\310\001\001R\010password\022,\n\nfrom_email\030" +
-      "\005 \001(\tB\r\272H\nr\005\020\001\030\377\001\310\001\001R\tfromEmail\022*\n\tfrom_" +
-      "name\030\006 \001(\tB\r\272H\nr\005\020\001\030\377\001\310\001\001R\010fromName\"\376\001\n\027" +
-      "PatchSMTPServerSettings\022!\n\004host\030\001 \001(\tB\r\272" +
-      "H\nr\005\020\001\030\377\001\310\001\001R\004host\022\032\n\004port\030\002 \001(\003B\006\272H\003\310\001\001" +
-      "R\004port\022)\n\010username\030\003 \001(\tB\r\272H\nr\005\020\001\030\377\001\310\001\001R" +
-      "\010username\022\037\n\010password\030\004 \001(\tB\003\340A\004R\010passwo" +
-      "rd\022,\n\nfrom_email\030\005 \001(\tB\r\272H\nr\005\020\001\030\377\001\310\001\001R\tf" +
-      "romEmail\022*\n\tfrom_name\030\006 \001(\tB\r\272H\nr\005\020\001\030\377\001\310" +
-      "\001\001R\010fromName\"\253\001\n\030CreateEmailServerReques" +
-      "t\022K\n\010provider\030\001 \001(\0162\'.scalekit.v1.emails" +
-      ".EmailServerProviderB\006\272H\003\310\001\001R\010provider\022B" +
-      "\n\010settings\030\002 \001(\0132&.scalekit.v1.emails.SM" +
-      "TPServerSettingsR\010settings\"\\\n\031CreateEmai" +
-      "lServerResponse\022?\n\006server\030\001 \001(\0132\037.scalek" +
-      "it.v1.emails.EmailServerB\006\272H\003\310\001\001R\006server" +
-      "\"G\n\025GetEmailServerRequest\022.\n\tserver_id\030\001" +
-      " \001(\tB\021\272H\016r\t\020\001\030 :\003esr\310\001\001R\010serverId\"Q\n\026Get" +
-      "EmailServerResponse\0227\n\006server\030\001 \001(\0132\037.sc" +
-      "alekit.v1.emails.EmailServerR\006server\"J\n\030" +
-      "EnableEmailServerRequest\022.\n\tserver_id\030\001 " +
-      "\001(\tB\021\272H\016r\t\020\001\030 :\003esr\310\001\001R\010serverId\"\324\001\n\031Ena" +
-      "bleEmailServerResponse\022V\n\020active_server_" +
-      "id\030\001 \001(\0132\034.google.protobuf.StringValueB\016" +
-      "\272H\013r\t\020\001\030 :\003esrR\016activeServerId\022_\n\025last_a" +
-      "ctive_server_id\030\002 \001(\0132\034.google.protobuf." +
-      "StringValueB\016\272H\013r\t\020\001\030 :\003esrR\022lastActiveS" +
-      "erverId\"K\n\031DisableEmailServerRequest\022.\n\t" +
-      "server_id\030\001 \001(\tB\021\272H\016r\t\020\001\030 :\003esr\310\001\001R\010serv" +
-      "erId\"T\n\027ListEmailServerResponse\0229\n\007serve" +
-      "rs\030\001 \003(\0132\037.scalekit.v1.emails.EmailServe" +
-      "rR\007servers\"\242\001\n\037PatchEmailServerSettingsR" +
-      "equest\022.\n\tserver_id\030\001 \001(\tB\021\272H\016r\t\020\001\030 :\003es" +
-      "r\310\001\001R\010serverId\022O\n\010settings\030\002 \001(\0132+.scale" +
-      "kit.v1.emails.PatchSMTPServerSettingsB\006\272" +
-      "H\003\310\001\001R\010settings\"J\n\030DeleteEmailServerRequ" +
-      "est\022.\n\tserver_id\030\001 \001(\tB\021\272H\016r\t\020\001\030 :\003esr\310\001" +
-      "\001R\010serverId*\224\002\n\017TemplateUsecase\022 \n\034TEMPL" +
-      "ATE_USECASE_UNSPECIFIED\020\000\022\t\n\005LOGIN\020\001\022\r\n\t" +
-      "OTP_LOGIN\020\002\022\021\n\rMEMBER_INVITE\020\003\022\017\n\013USER_I" +
-      "NVITE\020\004\022\016\n\nUSER_LOGIN\020\005\022\n\n\006SIGNUP\020\006\022\022\n\016U" +
-      "SER_LOGIN_OTP\020\007\022\023\n\017USER_LOGIN_LINK\020\010\022\027\n\023" +
-      "USER_LOGIN_LINK_OTP\020\t\022\023\n\017USER_SIGNUP_OTP" +
-      "\020\n\022\024\n\020USER_SIGNUP_LINK\020\013\022\030\n\024USER_SIGNUP_" +
-      "LINK_OTP\020\014*=\n\017EmailServerType\022\017\n\013UNSPECI" +
-      "FIED\020\000\022\013\n\007INHOUSE\020\001\022\014\n\010CUSTOMER\020\002*Z\n\023Ema" +
-      "ilServerProvider\022\034\n\030EMAIL_SERVER_UNSPECI" +
-      "FIED\020\000\022\014\n\010SENDGRID\020\001\022\014\n\010POSTMARK\020\002\022\t\n\005OT" +
-      "HER\020\0032\325\033\n\014EmailService\022\246\001\n\027GetTemplatePl" +
-      "aceholders\022*.scalekit.v1.emails.GetPlace" +
-      "holdersRequest\032+.scalekit.v1.emails.GetP" +
-      "laceholdersResponse\"2\202\265\030\002\030T\202\323\344\223\002&\022$/api/" +
-      "v1/email/templates/placeholders\022\216\001\n\023GetT" +
-      "emplateUseCases\022\026.google.protobuf.Empty\032" +
-      "/.scalekit.v1.emails.GetTemplateUseCases" +
-      "Response\".\202\265\030\002\030\001\202\323\344\223\002\"\022 /api/v1/email/te" +
-      "mplates/usecases\022\375\001\n\023CreateEmailTemplate" +
-      "\022..scalekit.v1.emails.CreateEmailTemplat" +
-      "eRequest\032/.scalekit.v1.emails.CreateEmai" +
-      "lTemplateResponse\"\204\001\202\265\030\002\030T\202\323\344\223\002x\"7/api/v" +
-      "1/organizations/{organization_id}/email/" +
-      "templates:\010templateZ3\"\'/api/v1/organizat" +
-      "ions/-/email/templates:\010template\022\226\002\n\023Upd" +
-      "ateEmailTemplate\022-.scalekit.v1.emails.Pa" +
-      "tchEmailTemplateRequest\032,.scalekit.v1.em" +
-      "ails.GetEmailTemplateResponse\"\241\001\202\265\030\002\030T\202\323" +
-      "\344\223\002\224\0012E/api/v1/organizations/{organizati" +
-      "on_id}/email/templates/{template_id}:\010te" +
-      "mplateZA25/api/v1/organizations/-/email/" +
-      "templates/{template_id}:\010template\022\216\001\n\025Ge" +
-      "tEmailConfiguration\022\026.google.protobuf.Em" +
-      "pty\0321.scalekit.v1.emails.GetEmailConfigu" +
-      "rationResponse\"*\202\265\030\002\030P\202\323\344\223\002\036\022\034/api/v1/em" +
-      "ails/configuration\022\264\001\n\030UpsertEmailConfig" +
-      "uration\0223.scalekit.v1.emails.UpsertEmail" +
-      "ConfigurationRequest\0324.scalekit.v1.email" +
-      "s.UpsertEmailConfigurationResponse\"-\202\265\030\002" +
-      "\030P\202\323\344\223\002!\"\034/api/v1/emails/configuration:\001" +
-      "*\022\224\002\n\023EnableEmailTemplate\022..scalekit.v1." +
-      "emails.EnableEmailTemplateRequest\032/.scal" +
-      "ekit.v1.emails.EnableEmailTemplateRespon" +
-      "se\"\233\001\202\265\030\002\030T\202\323\344\223\002\216\0012L/api/v1/organization" +
-      "s/{organization_id}/email/templates/{tem" +
-      "plate_id}:enableZ>2</api/v1/organization" +
-      "s/-/email/templates/{template_id}:enable" +
-      "\022\377\001\n\024DisableEmailTemplate\022/.scalekit.v1." +
-      "emails.DisableEmailTemplateRequest\032\026.goo" +
-      "gle.protobuf.Empty\"\235\001\202\265\030\002\030T\202\323\344\223\002\220\0012M/api" +
-      "/v1/organizations/{organization_id}/emai" +
-      "l/templates/{template_id}:disableZ?2=/ap" +
-      "i/v1/organizations/-/email/templates/{te" +
-      "mplate_id}:disable\022\375\001\n\020GetEmailTemplate\022" +
-      "+.scalekit.v1.emails.GetEmailTemplateReq" +
-      "uest\032,.scalekit.v1.emails.GetEmailTempla" +
-      "teResponse\"\215\001\202\265\030\002\030T\202\323\344\223\002\200\001\022E/api/v1/orga" +
-      "nizations/{organization_id}/email/templa" +
-      "tes/{template_id}Z7\0225/api/v1/organizatio" +
-      "ns/-/email/templates/{template_id}\022\343\001\n\022L" +
-      "istEmailTemplates\022,.scalekit.v1.emails.L" +
-      "istEmailTemplateRequest\032-.scalekit.v1.em" +
-      "ails.ListEmailTemplateResponse\"p\202\265\030\002\030T\202\323" +
-      "\344\223\002d\0227/api/v1/organizations/{organizatio" +
-      "n_id}/email/templatesZ)\022\'/api/v1/organiz" +
-      "ations/-/email/templates\022\355\001\n\023DeleteEmail" +
-      "Template\022..scalekit.v1.emails.DeleteEmai" +
-      "lTemplateRequest\032\026.google.protobuf.Empty" +
-      "\"\215\001\202\265\030\002\030T\202\323\344\223\002\200\001*E/api/v1/organizations/" +
-      "{organization_id}/email/templates/{templ" +
-      "ate_id}Z7*5/api/v1/organizations/-/email" +
-      "/templates/{template_id}\022\230\001\n\021CreateEmail" +
-      "Server\022,.scalekit.v1.emails.CreateEmailS" +
-      "erverRequest\032-.scalekit.v1.emails.Create" +
-      "EmailServerResponse\"&\202\265\030\002\030T\202\323\344\223\002\032\"\025/api/" +
-      "v1/email/servers:\001*\022\267\001\n\031UpdateEmailServe" +
-      "rSettings\0223.scalekit.v1.emails.PatchEmai" +
-      "lServerSettingsRequest\032*.scalekit.v1.ema" +
-      "ils.GetEmailServerResponse\"9\202\265\030\002\030T\202\323\344\223\002-" +
-      "\032!/api/v1/email/servers/{server_id}:\010set" +
-      "tings\022\250\001\n\021EnableEmailServer\022,.scalekit.v" +
-      "1.emails.EnableEmailServerRequest\032-.scal" +
-      "ekit.v1.emails.EnableEmailServerResponse" +
-      "\"6\202\265\030\002\030T\202\323\344\223\002*2(/api/v1/email/servers/{s" +
-      "erver_id}:enable\022\224\001\n\022DisableEmailServer\022" +
-      "-.scalekit.v1.emails.DisableEmailServerR" +
-      "equest\032\026.google.protobuf.Empty\"7\202\265\030\002\030T\202\323" +
-      "\344\223\002+2)/api/v1/email/servers/{server_id}:" +
-      "disable\022\230\001\n\016GetEmailServer\022).scalekit.v1" +
-      ".emails.GetEmailServerRequest\032*.scalekit" +
-      ".v1.emails.GetEmailServerResponse\"/\202\265\030\002\030" +
-      "T\202\323\344\223\002#\022!/api/v1/email/servers/{server_i" +
-      "d}\022|\n\020ListEmailServers\022\026.google.protobuf" +
-      ".Empty\032+.scalekit.v1.emails.ListEmailSer" +
-      "verResponse\"#\202\265\030\002\030T\202\323\344\223\002\027\022\025/api/v1/email" +
-      "/servers\022\212\001\n\021DeleteEmailServer\022,.scaleki" +
-      "t.v1.emails.DeleteEmailServerRequest\032\026.g" +
-      "oogle.protobuf.Empty\"/\202\265\030\002\030T\202\323\344\223\002#*!/api" +
-      "/v1/email/servers/{server_id}B\317\001\n$com.sc" +
-      "alekit.grpc.scalekit.v1.emailsB\013EmailsPr" +
-      "otoP\001Z0github.com/scalekit-inc/scalekit/" +
-      "pkg/grpc/emails\242\002\003SVE\252\002\022Scalekit.V1.Emai" +
-      "ls\312\002\022Scalekit\\V1\\Emails\342\002\036Scalekit\\V1\\Em" +
-      "ails\\GPBMetadata\352\002\024Scalekit::V1::Emailsb" +
-      "\006proto3"
+      "teId\022F\n\010template\030\004 \001(\0132\".scalekit.v1.ema" +
+      "ils.UpdateTemplateB\006\272H\003\310\001\001R\010template\022;\n\013" +
+      "update_mask\030c \001(\0132\032.google.protobuf.Fiel" +
+      "dMaskR\nupdateMask\"\204\001\n\032DeleteEmailTemplat" +
+      "eRequest\0222\n\017organization_id\030\001 \001(\tB\t\272H\006r\004" +
+      "\020\000\030 R\016organizationId\0222\n\013template_id\030\002 \001(" +
+      "\tB\021\272H\016r\t\020\001\030 :\003tpl\310\001\001R\ntemplateId\"\254\002\n\013Ema" +
+      "ilServer\022>\n\nupdated_at\030\001 \001(\0132\032.google.pr" +
+      "otobuf.TimestampB\003\340A\003R\tupdatedAt\022\023\n\002id\030\002" +
+      " \001(\tB\003\340A\003R\002id\022K\n\010provider\030\003 \001(\0162\'.scalek" +
+      "it.v1.emails.EmailServerProviderB\006\272H\003\310\001\001" +
+      "R\010provider\022\030\n\007enabled\030\004 \001(\010R\007enabled\022U\n\r" +
+      "smtp_settings\030\005 \001(\0132&.scalekit.v1.emails" +
+      ".SMTPServerSettingsB\006\272H\003\310\001\001H\000R\014smtpSetti" +
+      "ngsB\n\n\010settings\"\206\002\n\022SMTPServerSettings\022!" +
+      "\n\004host\030\001 \001(\tB\r\272H\nr\005\020\001\030\377\001\310\001\001R\004host\022\032\n\004por" +
+      "t\030\002 \001(\003B\006\272H\003\310\001\001R\004port\022)\n\010username\030\003 \001(\tB" +
+      "\r\272H\nr\005\020\001\030\377\001\310\001\001R\010username\022,\n\010password\030\004 \001" +
+      "(\tB\020\340A\004\272H\nr\005\020\001\030\377\001\310\001\001R\010password\022,\n\nfrom_e" +
+      "mail\030\005 \001(\tB\r\272H\nr\005\020\001\030\377\001\310\001\001R\tfromEmail\022*\n\t" +
+      "from_name\030\006 \001(\tB\r\272H\nr\005\020\001\030\377\001\310\001\001R\010fromName" +
+      "\"\376\001\n\027PatchSMTPServerSettings\022!\n\004host\030\001 \001" +
+      "(\tB\r\272H\nr\005\020\001\030\377\001\310\001\001R\004host\022\032\n\004port\030\002 \001(\003B\006\272" +
+      "H\003\310\001\001R\004port\022)\n\010username\030\003 \001(\tB\r\272H\nr\005\020\001\030\377" +
+      "\001\310\001\001R\010username\022\037\n\010password\030\004 \001(\tB\003\340A\004R\010p" +
+      "assword\022,\n\nfrom_email\030\005 \001(\tB\r\272H\nr\005\020\001\030\377\001\310" +
+      "\001\001R\tfromEmail\022*\n\tfrom_name\030\006 \001(\tB\r\272H\nr\005\020" +
+      "\001\030\377\001\310\001\001R\010fromName\"\253\001\n\030CreateEmailServerR" +
+      "equest\022K\n\010provider\030\001 \001(\0162\'.scalekit.v1.e" +
+      "mails.EmailServerProviderB\006\272H\003\310\001\001R\010provi" +
+      "der\022B\n\010settings\030\002 \001(\0132&.scalekit.v1.emai" +
+      "ls.SMTPServerSettingsR\010settings\"\\\n\031Creat" +
+      "eEmailServerResponse\022?\n\006server\030\001 \001(\0132\037.s" +
+      "calekit.v1.emails.EmailServerB\006\272H\003\310\001\001R\006s" +
+      "erver\"G\n\025GetEmailServerRequest\022.\n\tserver" +
+      "_id\030\001 \001(\tB\021\272H\016r\t\020\001\030 :\003esr\310\001\001R\010serverId\"Q" +
+      "\n\026GetEmailServerResponse\0227\n\006server\030\001 \001(\013" +
+      "2\037.scalekit.v1.emails.EmailServerR\006serve" +
+      "r\"J\n\030EnableEmailServerRequest\022.\n\tserver_" +
+      "id\030\001 \001(\tB\021\272H\016r\t\020\001\030 :\003esr\310\001\001R\010serverId\"\324\001" +
+      "\n\031EnableEmailServerResponse\022V\n\020active_se" +
+      "rver_id\030\001 \001(\0132\034.google.protobuf.StringVa" +
+      "lueB\016\272H\013r\t\020\001\030 :\003esrR\016activeServerId\022_\n\025l" +
+      "ast_active_server_id\030\002 \001(\0132\034.google.prot" +
+      "obuf.StringValueB\016\272H\013r\t\020\001\030 :\003esrR\022lastAc" +
+      "tiveServerId\"K\n\031DisableEmailServerReques" +
+      "t\022.\n\tserver_id\030\001 \001(\tB\021\272H\016r\t\020\001\030 :\003esr\310\001\001R" +
+      "\010serverId\"T\n\027ListEmailServerResponse\0229\n\007" +
+      "servers\030\001 \003(\0132\037.scalekit.v1.emails.Email" +
+      "ServerR\007servers\"\242\001\n\037PatchEmailServerSett" +
+      "ingsRequest\022.\n\tserver_id\030\001 \001(\tB\021\272H\016r\t\020\001\030" +
+      " :\003esr\310\001\001R\010serverId\022O\n\010settings\030\002 \001(\0132+." +
+      "scalekit.v1.emails.PatchSMTPServerSettin" +
+      "gsB\006\272H\003\310\001\001R\010settings\"J\n\030DeleteEmailServe" +
+      "rRequest\022.\n\tserver_id\030\001 \001(\tB\021\272H\016r\t\020\001\030 :\003" +
+      "esr\310\001\001R\010serverId*\224\002\n\017TemplateUsecase\022 \n\034" +
+      "TEMPLATE_USECASE_UNSPECIFIED\020\000\022\t\n\005LOGIN\020" +
+      "\001\022\r\n\tOTP_LOGIN\020\002\022\021\n\rMEMBER_INVITE\020\003\022\017\n\013U" +
+      "SER_INVITE\020\004\022\016\n\nUSER_LOGIN\020\005\022\n\n\006SIGNUP\020\006" +
+      "\022\022\n\016USER_LOGIN_OTP\020\007\022\023\n\017USER_LOGIN_LINK\020" +
+      "\010\022\027\n\023USER_LOGIN_LINK_OTP\020\t\022\023\n\017USER_SIGNU" +
+      "P_OTP\020\n\022\024\n\020USER_SIGNUP_LINK\020\013\022\030\n\024USER_SI" +
+      "GNUP_LINK_OTP\020\014*=\n\017EmailServerType\022\017\n\013UN" +
+      "SPECIFIED\020\000\022\013\n\007INHOUSE\020\001\022\014\n\010CUSTOMER\020\002*Z" +
+      "\n\023EmailServerProvider\022\034\n\030EMAIL_SERVER_UN" +
+      "SPECIFIED\020\000\022\014\n\010SENDGRID\020\001\022\014\n\010POSTMARK\020\002\022" +
+      "\t\n\005OTHER\020\0032\325\033\n\014EmailService\022\246\001\n\027GetTempl" +
+      "atePlaceholders\022*.scalekit.v1.emails.Get" +
+      "PlaceholdersRequest\032+.scalekit.v1.emails" +
+      ".GetPlaceholdersResponse\"2\202\265\030\002\030T\202\323\344\223\002&\022$" +
+      "/api/v1/email/templates/placeholders\022\216\001\n" +
+      "\023GetTemplateUseCases\022\026.google.protobuf.E" +
+      "mpty\032/.scalekit.v1.emails.GetTemplateUse" +
+      "CasesResponse\".\202\265\030\002\030\001\202\323\344\223\002\"\022 /api/v1/ema" +
+      "il/templates/usecases\022\375\001\n\023CreateEmailTem" +
+      "plate\022..scalekit.v1.emails.CreateEmailTe" +
+      "mplateRequest\032/.scalekit.v1.emails.Creat" +
+      "eEmailTemplateResponse\"\204\001\202\265\030\002\030T\202\323\344\223\002x\"7/" +
+      "api/v1/organizations/{organization_id}/e" +
+      "mail/templates:\010templateZ3\"\'/api/v1/orga" +
+      "nizations/-/email/templates:\010template\022\226\002" +
+      "\n\023UpdateEmailTemplate\022-.scalekit.v1.emai" +
+      "ls.PatchEmailTemplateRequest\032,.scalekit." +
+      "v1.emails.GetEmailTemplateResponse\"\241\001\202\265\030" +
+      "\002\030T\202\323\344\223\002\224\0012E/api/v1/organizations/{organ" +
+      "ization_id}/email/templates/{template_id" +
+      "}:\010templateZA25/api/v1/organizations/-/e" +
+      "mail/templates/{template_id}:\010template\022\216" +
+      "\001\n\025GetEmailConfiguration\022\026.google.protob" +
+      "uf.Empty\0321.scalekit.v1.emails.GetEmailCo" +
+      "nfigurationResponse\"*\202\265\030\002\030P\202\323\344\223\002\036\022\034/api/" +
+      "v1/emails/configuration\022\264\001\n\030UpsertEmailC" +
+      "onfiguration\0223.scalekit.v1.emails.Upsert" +
+      "EmailConfigurationRequest\0324.scalekit.v1." +
+      "emails.UpsertEmailConfigurationResponse\"" +
+      "-\202\265\030\002\030P\202\323\344\223\002!\"\034/api/v1/emails/configurat" +
+      "ion:\001*\022\224\002\n\023EnableEmailTemplate\022..scaleki" +
+      "t.v1.emails.EnableEmailTemplateRequest\032/" +
+      ".scalekit.v1.emails.EnableEmailTemplateR" +
+      "esponse\"\233\001\202\265\030\002\030T\202\323\344\223\002\216\0012L/api/v1/organiz" +
+      "ations/{organization_id}/email/templates" +
+      "/{template_id}:enableZ>2</api/v1/organiz" +
+      "ations/-/email/templates/{template_id}:e" +
+      "nable\022\377\001\n\024DisableEmailTemplate\022/.scaleki" +
+      "t.v1.emails.DisableEmailTemplateRequest\032" +
+      "\026.google.protobuf.Empty\"\235\001\202\265\030\002\030T\202\323\344\223\002\220\0012" +
+      "M/api/v1/organizations/{organization_id}" +
+      "/email/templates/{template_id}:disableZ?" +
+      "2=/api/v1/organizations/-/email/template" +
+      "s/{template_id}:disable\022\375\001\n\020GetEmailTemp" +
+      "late\022+.scalekit.v1.emails.GetEmailTempla" +
+      "teRequest\032,.scalekit.v1.emails.GetEmailT" +
+      "emplateResponse\"\215\001\202\265\030\002\030T\202\323\344\223\002\200\001\022E/api/v1" +
+      "/organizations/{organization_id}/email/t" +
+      "emplates/{template_id}Z7\0225/api/v1/organi" +
+      "zations/-/email/templates/{template_id}\022" +
+      "\343\001\n\022ListEmailTemplates\022,.scalekit.v1.ema" +
+      "ils.ListEmailTemplateRequest\032-.scalekit." +
+      "v1.emails.ListEmailTemplateResponse\"p\202\265\030" +
+      "\002\030T\202\323\344\223\002d\0227/api/v1/organizations/{organi" +
+      "zation_id}/email/templatesZ)\022\'/api/v1/or" +
+      "ganizations/-/email/templates\022\355\001\n\023Delete" +
+      "EmailTemplate\022..scalekit.v1.emails.Delet" +
+      "eEmailTemplateRequest\032\026.google.protobuf." +
+      "Empty\"\215\001\202\265\030\002\030T\202\323\344\223\002\200\001*E/api/v1/organizat" +
+      "ions/{organization_id}/email/templates/{" +
+      "template_id}Z7*5/api/v1/organizations/-/" +
+      "email/templates/{template_id}\022\230\001\n\021Create" +
+      "EmailServer\022,.scalekit.v1.emails.CreateE" +
+      "mailServerRequest\032-.scalekit.v1.emails.C" +
+      "reateEmailServerResponse\"&\202\265\030\002\030T\202\323\344\223\002\032\"\025" +
+      "/api/v1/email/servers:\001*\022\267\001\n\031UpdateEmail" +
+      "ServerSettings\0223.scalekit.v1.emails.Patc" +
+      "hEmailServerSettingsRequest\032*.scalekit.v" +
+      "1.emails.GetEmailServerResponse\"9\202\265\030\002\030T\202" +
+      "\323\344\223\002-\032!/api/v1/email/servers/{server_id}" +
+      ":\010settings\022\250\001\n\021EnableEmailServer\022,.scale" +
+      "kit.v1.emails.EnableEmailServerRequest\032-" +
+      ".scalekit.v1.emails.EnableEmailServerRes" +
+      "ponse\"6\202\265\030\002\030T\202\323\344\223\002*2(/api/v1/email/serve" +
+      "rs/{server_id}:enable\022\224\001\n\022DisableEmailSe" +
+      "rver\022-.scalekit.v1.emails.DisableEmailSe" +
+      "rverRequest\032\026.google.protobuf.Empty\"7\202\265\030" +
+      "\002\030T\202\323\344\223\002+2)/api/v1/email/servers/{server" +
+      "_id}:disable\022\230\001\n\016GetEmailServer\022).scalek" +
+      "it.v1.emails.GetEmailServerRequest\032*.sca" +
+      "lekit.v1.emails.GetEmailServerResponse\"/" +
+      "\202\265\030\002\030T\202\323\344\223\002#\022!/api/v1/email/servers/{ser" +
+      "ver_id}\022|\n\020ListEmailServers\022\026.google.pro" +
+      "tobuf.Empty\032+.scalekit.v1.emails.ListEma" +
+      "ilServerResponse\"#\202\265\030\002\030T\202\323\344\223\002\027\022\025/api/v1/" +
+      "email/servers\022\212\001\n\021DeleteEmailServer\022,.sc" +
+      "alekit.v1.emails.DeleteEmailServerReques" +
+      "t\032\026.google.protobuf.Empty\"/\202\265\030\002\030T\202\323\344\223\002#*" +
+      "!/api/v1/email/servers/{server_id}B\317\001\n$c" +
+      "om.scalekit.grpc.scalekit.v1.emailsB\013Ema" +
+      "ilsProtoP\001Z0github.com/scalekit-inc/scal" +
+      "ekit/pkg/grpc/emails\242\002\003SVE\252\002\022Scalekit.V1" +
+      ".Emails\312\002\022Scalekit\\V1\\Emails\342\002\036Scalekit\\" +
+      "V1\\Emails\\GPBMetadata\352\002\024Scalekit::V1::Em" +
+      "ailsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -539,7 +540,7 @@ public final class EmailsProto {
     internal_static_scalekit_v1_emails_Placeholder_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_emails_Placeholder_descriptor,
-        new java.lang.String[] { "Name", "Title", "Description", "Display", "Category", });
+        new java.lang.String[] { "Name", "Title", "Description", "Display", "Category", "CategoryPriority", });
     internal_static_scalekit_v1_emails_Template_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_scalekit_v1_emails_Template_fieldAccessorTable = new

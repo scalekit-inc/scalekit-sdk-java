@@ -45,7 +45,7 @@ public interface OrganizationUserManagementSettingsOrBuilder extends
    *
    * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=1731
+   *     See scalekit/v1/organizations/organizations.proto;l=1585
    * @return The enum numeric value on the wire for deprecatedPlaceholder.
    */
   @java.lang.Deprecated int getDeprecatedPlaceholderValue();
@@ -56,7 +56,7 @@ public interface OrganizationUserManagementSettingsOrBuilder extends
    *
    * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=1731
+   *     See scalekit/v1/organizations/organizations.proto;l=1585
    * @return The deprecatedPlaceholder.
    */
   @java.lang.Deprecated com.google.protobuf.NullValue getDeprecatedPlaceholder();

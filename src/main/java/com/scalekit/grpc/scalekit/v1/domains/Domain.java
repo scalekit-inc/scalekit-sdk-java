@@ -21,11 +21,9 @@ private static final long serialVersionUID = 0L;
     domain_ = "";
     environmentId_ = "";
     organizationId_ = "";
-    connectionId_ = "";
     txtRecordKey_ = "";
     txtRecordSecret_ = "";
     verificationStatus_ = 0;
-    createdBy_ = "";
     domainType_ = 0;
   }
 
@@ -54,7 +52,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
   /**
-   * <code>string id = 1 [json_name = "id"];</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The id.
    */
   @java.lang.Override
@@ -71,7 +69,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string id = 1 [json_name = "id"];</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for id.
    */
   @java.lang.Override
@@ -93,7 +91,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object domain_ = "";
   /**
-   * <code>string domain = 2 [json_name = "domain"];</code>
+   * <code>string domain = 2 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The domain.
    */
   @java.lang.Override
@@ -110,7 +108,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string domain = 2 [json_name = "domain"];</code>
+   * <code>string domain = 2 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for domain.
    */
   @java.lang.Override
@@ -132,7 +130,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object environmentId_ = "";
   /**
-   * <code>string environment_id = 3 [json_name = "environmentId"];</code>
+   * <code>string environment_id = 3 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The environmentId.
    */
   @java.lang.Override
@@ -149,7 +147,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string environment_id = 3 [json_name = "environmentId"];</code>
+   * <code>string environment_id = 3 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for environmentId.
    */
   @java.lang.Override
@@ -171,7 +169,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object organizationId_ = "";
   /**
-   * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 4 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The organizationId.
    */
   @java.lang.Override
@@ -188,7 +186,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 4 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for organizationId.
    */
   @java.lang.Override
@@ -206,50 +204,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CONNECTION_ID_FIELD_NUMBER = 5;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object connectionId_ = "";
-  /**
-   * <code>string connection_id = 5 [json_name = "connectionId"];</code>
-   * @return The connectionId.
-   */
-  @java.lang.Override
-  public java.lang.String getConnectionId() {
-    java.lang.Object ref = connectionId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      connectionId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string connection_id = 5 [json_name = "connectionId"];</code>
-   * @return The bytes for connectionId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getConnectionIdBytes() {
-    java.lang.Object ref = connectionId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      connectionId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int TXT_RECORD_KEY_FIELD_NUMBER = 6;
   @SuppressWarnings("serial")
   private volatile java.lang.Object txtRecordKey_ = "";
   /**
-   * <code>string txt_record_key = 6 [json_name = "txtRecordKey"];</code>
+   * <code>string txt_record_key = 6 [json_name = "txtRecordKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The txtRecordKey.
    */
   @java.lang.Override
@@ -266,7 +225,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string txt_record_key = 6 [json_name = "txtRecordKey"];</code>
+   * <code>string txt_record_key = 6 [json_name = "txtRecordKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for txtRecordKey.
    */
   @java.lang.Override
@@ -288,7 +247,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object txtRecordSecret_ = "";
   /**
-   * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret"];</code>
+   * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The txtRecordSecret.
    */
   @java.lang.Override
@@ -305,7 +264,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret"];</code>
+   * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for txtRecordSecret.
    */
   @java.lang.Override
@@ -326,14 +285,14 @@ private static final long serialVersionUID = 0L;
   public static final int VERIFICATION_STATUS_FIELD_NUMBER = 8;
   private int verificationStatus_ = 0;
   /**
-   * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus"];</code>
+   * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enum numeric value on the wire for verificationStatus.
    */
   @java.lang.Override public int getVerificationStatusValue() {
     return verificationStatus_;
   }
   /**
-   * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus"];</code>
+   * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The verificationStatus.
    */
   @java.lang.Override public com.scalekit.grpc.scalekit.v1.domains.VerificationStatus getVerificationStatus() {
@@ -344,7 +303,7 @@ private static final long serialVersionUID = 0L;
   public static final int CREATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp createTime_;
   /**
-   * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime"];</code>
+   * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the createTime field is set.
    */
   @java.lang.Override
@@ -352,7 +311,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime"];</code>
+   * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The createTime.
    */
   @java.lang.Override
@@ -360,7 +319,7 @@ private static final long serialVersionUID = 0L;
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
-   * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime"];</code>
+   * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -370,7 +329,7 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp updateTime_;
   /**
-   * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime"];</code>
+   * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the updateTime field is set.
    */
   @java.lang.Override
@@ -378,7 +337,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime"];</code>
+   * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The updateTime.
    */
   @java.lang.Override
@@ -386,71 +345,24 @@ private static final long serialVersionUID = 0L;
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
   /**
-   * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime"];</code>
+   * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
-  public static final int CREATED_BY_FIELD_NUMBER = 11;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object createdBy_ = "";
-  /**
-   * <code>optional string created_by = 11 [json_name = "createdBy"];</code>
-   * @return Whether the createdBy field is set.
-   */
-  @java.lang.Override
-  public boolean hasCreatedBy() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <code>optional string created_by = 11 [json_name = "createdBy"];</code>
-   * @return The createdBy.
-   */
-  @java.lang.Override
-  public java.lang.String getCreatedBy() {
-    java.lang.Object ref = createdBy_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      createdBy_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>optional string created_by = 11 [json_name = "createdBy"];</code>
-   * @return The bytes for createdBy.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCreatedByBytes() {
-    java.lang.Object ref = createdBy_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      createdBy_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int DOMAIN_TYPE_FIELD_NUMBER = 12;
   private int domainType_ = 0;
   /**
-   * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType"];</code>
+   * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enum numeric value on the wire for domainType.
    */
   @java.lang.Override public int getDomainTypeValue() {
     return domainType_;
   }
   /**
-   * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType"];</code>
+   * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The domainType.
    */
   @java.lang.Override public com.scalekit.grpc.scalekit.v1.domains.DomainType getDomainType() {
@@ -484,9 +396,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, organizationId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectionId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, connectionId_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(txtRecordKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, txtRecordKey_);
     }
@@ -501,9 +410,6 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(10, getUpdateTime());
-    }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, createdBy_);
     }
     if (domainType_ != com.scalekit.grpc.scalekit.v1.domains.DomainType.DOMAIN_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(12, domainType_);
@@ -529,9 +435,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, organizationId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectionId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, connectionId_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(txtRecordKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, txtRecordKey_);
     }
@@ -549,9 +452,6 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getUpdateTime());
-    }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, createdBy_);
     }
     if (domainType_ != com.scalekit.grpc.scalekit.v1.domains.DomainType.DOMAIN_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
@@ -580,8 +480,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getEnvironmentId())) return false;
     if (!getOrganizationId()
         .equals(other.getOrganizationId())) return false;
-    if (!getConnectionId()
-        .equals(other.getConnectionId())) return false;
     if (!getTxtRecordKey()
         .equals(other.getTxtRecordKey())) return false;
     if (!getTxtRecordSecret()
@@ -596,11 +494,6 @@ private static final long serialVersionUID = 0L;
     if (hasUpdateTime()) {
       if (!getUpdateTime()
           .equals(other.getUpdateTime())) return false;
-    }
-    if (hasCreatedBy() != other.hasCreatedBy()) return false;
-    if (hasCreatedBy()) {
-      if (!getCreatedBy()
-          .equals(other.getCreatedBy())) return false;
     }
     if (domainType_ != other.domainType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -622,8 +515,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getEnvironmentId().hashCode();
     hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getOrganizationId().hashCode();
-    hash = (37 * hash) + CONNECTION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getConnectionId().hashCode();
     hash = (37 * hash) + TXT_RECORD_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getTxtRecordKey().hashCode();
     hash = (37 * hash) + TXT_RECORD_SECRET_FIELD_NUMBER;
@@ -637,10 +528,6 @@ private static final long serialVersionUID = 0L;
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
-    }
-    if (hasCreatedBy()) {
-      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
-      hash = (53 * hash) + getCreatedBy().hashCode();
     }
     hash = (37 * hash) + DOMAIN_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + domainType_;
@@ -786,7 +673,6 @@ private static final long serialVersionUID = 0L;
       domain_ = "";
       environmentId_ = "";
       organizationId_ = "";
-      connectionId_ = "";
       txtRecordKey_ = "";
       txtRecordSecret_ = "";
       verificationStatus_ = 0;
@@ -800,7 +686,6 @@ private static final long serialVersionUID = 0L;
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      createdBy_ = "";
       domainType_ = 0;
       return this;
     }
@@ -848,35 +733,28 @@ private static final long serialVersionUID = 0L;
         result.organizationId_ = organizationId_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.connectionId_ = connectionId_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.txtRecordKey_ = txtRecordKey_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.txtRecordSecret_ = txtRecordSecret_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.verificationStatus_ = verificationStatus_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.createTime_ = createTimeBuilder_ == null
             ? createTime_
             : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null
             ? updateTime_
             : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.createdBy_ = createdBy_;
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.domainType_ = domainType_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -946,19 +824,14 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000008;
         onChanged();
       }
-      if (!other.getConnectionId().isEmpty()) {
-        connectionId_ = other.connectionId_;
-        bitField0_ |= 0x00000010;
-        onChanged();
-      }
       if (!other.getTxtRecordKey().isEmpty()) {
         txtRecordKey_ = other.txtRecordKey_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getTxtRecordSecret().isEmpty()) {
         txtRecordSecret_ = other.txtRecordSecret_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.verificationStatus_ != 0) {
@@ -969,11 +842,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
-      }
-      if (other.hasCreatedBy()) {
-        createdBy_ = other.createdBy_;
-        bitField0_ |= 0x00000400;
-        onChanged();
       }
       if (other.domainType_ != 0) {
         setDomainTypeValue(other.getDomainTypeValue());
@@ -1024,48 +892,38 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 34
-            case 42: {
-              connectionId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
-              break;
-            } // case 42
             case 50: {
               txtRecordKey_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000010;
               break;
             } // case 50
             case 58: {
               txtRecordSecret_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000020;
               break;
             } // case 58
             case 64: {
               verificationStatus_ = input.readEnum();
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000040;
               break;
             } // case 64
             case 74: {
               input.readMessage(
                   getCreateTimeFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000080;
               break;
             } // case 74
             case 82: {
               input.readMessage(
                   getUpdateTimeFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000100;
               break;
             } // case 82
-            case 90: {
-              createdBy_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000400;
-              break;
-            } // case 90
             case 96: {
               domainType_ = input.readEnum();
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00000200;
               break;
             } // case 96
             default: {
@@ -1087,7 +945,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object id_ = "";
     /**
-     * <code>string id = 1 [json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The id.
      */
     public java.lang.String getId() {
@@ -1103,7 +961,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string id = 1 [json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
@@ -1120,7 +978,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string id = 1 [json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -1133,7 +991,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string id = 1 [json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
@@ -1143,7 +1001,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string id = 1 [json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
@@ -1159,7 +1017,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object domain_ = "";
     /**
-     * <code>string domain = 2 [json_name = "domain"];</code>
+     * <code>string domain = 2 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The domain.
      */
     public java.lang.String getDomain() {
@@ -1175,7 +1033,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string domain = 2 [json_name = "domain"];</code>
+     * <code>string domain = 2 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for domain.
      */
     public com.google.protobuf.ByteString
@@ -1192,7 +1050,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string domain = 2 [json_name = "domain"];</code>
+     * <code>string domain = 2 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The domain to set.
      * @return This builder for chaining.
      */
@@ -1205,7 +1063,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string domain = 2 [json_name = "domain"];</code>
+     * <code>string domain = 2 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDomain() {
@@ -1215,7 +1073,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string domain = 2 [json_name = "domain"];</code>
+     * <code>string domain = 2 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for domain to set.
      * @return This builder for chaining.
      */
@@ -1231,7 +1089,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object environmentId_ = "";
     /**
-     * <code>string environment_id = 3 [json_name = "environmentId"];</code>
+     * <code>string environment_id = 3 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The environmentId.
      */
     public java.lang.String getEnvironmentId() {
@@ -1247,7 +1105,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string environment_id = 3 [json_name = "environmentId"];</code>
+     * <code>string environment_id = 3 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for environmentId.
      */
     public com.google.protobuf.ByteString
@@ -1264,7 +1122,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string environment_id = 3 [json_name = "environmentId"];</code>
+     * <code>string environment_id = 3 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The environmentId to set.
      * @return This builder for chaining.
      */
@@ -1277,7 +1135,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string environment_id = 3 [json_name = "environmentId"];</code>
+     * <code>string environment_id = 3 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearEnvironmentId() {
@@ -1287,7 +1145,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string environment_id = 3 [json_name = "environmentId"];</code>
+     * <code>string environment_id = 3 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for environmentId to set.
      * @return This builder for chaining.
      */
@@ -1303,7 +1161,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object organizationId_ = "";
     /**
-     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 4 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The organizationId.
      */
     public java.lang.String getOrganizationId() {
@@ -1319,7 +1177,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 4 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for organizationId.
      */
     public com.google.protobuf.ByteString
@@ -1336,7 +1194,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 4 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The organizationId to set.
      * @return This builder for chaining.
      */
@@ -1349,7 +1207,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 4 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearOrganizationId() {
@@ -1359,7 +1217,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 4 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for organizationId to set.
      * @return This builder for chaining.
      */
@@ -1373,81 +1231,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object connectionId_ = "";
-    /**
-     * <code>string connection_id = 5 [json_name = "connectionId"];</code>
-     * @return The connectionId.
-     */
-    public java.lang.String getConnectionId() {
-      java.lang.Object ref = connectionId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        connectionId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string connection_id = 5 [json_name = "connectionId"];</code>
-     * @return The bytes for connectionId.
-     */
-    public com.google.protobuf.ByteString
-        getConnectionIdBytes() {
-      java.lang.Object ref = connectionId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        connectionId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string connection_id = 5 [json_name = "connectionId"];</code>
-     * @param value The connectionId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setConnectionId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      connectionId_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string connection_id = 5 [json_name = "connectionId"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearConnectionId() {
-      connectionId_ = getDefaultInstance().getConnectionId();
-      bitField0_ = (bitField0_ & ~0x00000010);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string connection_id = 5 [json_name = "connectionId"];</code>
-     * @param value The bytes for connectionId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setConnectionIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      connectionId_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object txtRecordKey_ = "";
     /**
-     * <code>string txt_record_key = 6 [json_name = "txtRecordKey"];</code>
+     * <code>string txt_record_key = 6 [json_name = "txtRecordKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The txtRecordKey.
      */
     public java.lang.String getTxtRecordKey() {
@@ -1463,7 +1249,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string txt_record_key = 6 [json_name = "txtRecordKey"];</code>
+     * <code>string txt_record_key = 6 [json_name = "txtRecordKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for txtRecordKey.
      */
     public com.google.protobuf.ByteString
@@ -1480,7 +1266,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string txt_record_key = 6 [json_name = "txtRecordKey"];</code>
+     * <code>string txt_record_key = 6 [json_name = "txtRecordKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The txtRecordKey to set.
      * @return This builder for chaining.
      */
@@ -1488,22 +1274,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       txtRecordKey_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>string txt_record_key = 6 [json_name = "txtRecordKey"];</code>
+     * <code>string txt_record_key = 6 [json_name = "txtRecordKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearTxtRecordKey() {
       txtRecordKey_ = getDefaultInstance().getTxtRecordKey();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
     /**
-     * <code>string txt_record_key = 6 [json_name = "txtRecordKey"];</code>
+     * <code>string txt_record_key = 6 [json_name = "txtRecordKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for txtRecordKey to set.
      * @return This builder for chaining.
      */
@@ -1512,14 +1298,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       txtRecordKey_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
     private java.lang.Object txtRecordSecret_ = "";
     /**
-     * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret"];</code>
+     * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The txtRecordSecret.
      */
     public java.lang.String getTxtRecordSecret() {
@@ -1535,7 +1321,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret"];</code>
+     * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for txtRecordSecret.
      */
     public com.google.protobuf.ByteString
@@ -1552,7 +1338,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret"];</code>
+     * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The txtRecordSecret to set.
      * @return This builder for chaining.
      */
@@ -1560,22 +1346,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       txtRecordSecret_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
     /**
-     * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret"];</code>
+     * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearTxtRecordSecret() {
       txtRecordSecret_ = getDefaultInstance().getTxtRecordSecret();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
     /**
-     * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret"];</code>
+     * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for txtRecordSecret to set.
      * @return This builder for chaining.
      */
@@ -1584,32 +1370,32 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       txtRecordSecret_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
 
     private int verificationStatus_ = 0;
     /**
-     * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus"];</code>
+     * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The enum numeric value on the wire for verificationStatus.
      */
     @java.lang.Override public int getVerificationStatusValue() {
       return verificationStatus_;
     }
     /**
-     * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus"];</code>
+     * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The enum numeric value on the wire for verificationStatus to set.
      * @return This builder for chaining.
      */
     public Builder setVerificationStatusValue(int value) {
       verificationStatus_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
     /**
-     * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus"];</code>
+     * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The verificationStatus.
      */
     @java.lang.Override
@@ -1618,7 +1404,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.scalekit.grpc.scalekit.v1.domains.VerificationStatus.UNRECOGNIZED : result;
     }
     /**
-     * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus"];</code>
+     * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The verificationStatus to set.
      * @return This builder for chaining.
      */
@@ -1626,17 +1412,17 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000040;
       verificationStatus_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus"];</code>
+     * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearVerificationStatus() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000040);
       verificationStatus_ = 0;
       onChanged();
       return this;
@@ -1646,14 +1432,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
@@ -1664,7 +1450,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1675,12 +1461,12 @@ private static final long serialVersionUID = 0L;
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setCreateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1689,16 +1475,16 @@ private static final long serialVersionUID = 0L;
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0) &&
+        if (((bitField0_ & 0x00000080) != 0) &&
           createTime_ != null &&
           createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -1709,16 +1495,16 @@ private static final long serialVersionUID = 0L;
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000080);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1728,15 +1514,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -1747,7 +1533,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1767,14 +1553,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
@@ -1785,7 +1571,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -1796,12 +1582,12 @@ private static final long serialVersionUID = 0L;
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setUpdateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1810,16 +1596,16 @@ private static final long serialVersionUID = 0L;
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0) &&
+        if (((bitField0_ & 0x00000100) != 0) &&
           updateTime_ != null &&
           updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -1830,16 +1616,16 @@ private static final long serialVersionUID = 0L;
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000100);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -1849,15 +1635,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -1868,7 +1654,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1884,106 +1670,27 @@ private static final long serialVersionUID = 0L;
       return updateTimeBuilder_;
     }
 
-    private java.lang.Object createdBy_ = "";
-    /**
-     * <code>optional string created_by = 11 [json_name = "createdBy"];</code>
-     * @return Whether the createdBy field is set.
-     */
-    public boolean hasCreatedBy() {
-      return ((bitField0_ & 0x00000400) != 0);
-    }
-    /**
-     * <code>optional string created_by = 11 [json_name = "createdBy"];</code>
-     * @return The createdBy.
-     */
-    public java.lang.String getCreatedBy() {
-      java.lang.Object ref = createdBy_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        createdBy_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>optional string created_by = 11 [json_name = "createdBy"];</code>
-     * @return The bytes for createdBy.
-     */
-    public com.google.protobuf.ByteString
-        getCreatedByBytes() {
-      java.lang.Object ref = createdBy_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        createdBy_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>optional string created_by = 11 [json_name = "createdBy"];</code>
-     * @param value The createdBy to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCreatedBy(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      createdBy_ = value;
-      bitField0_ |= 0x00000400;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string created_by = 11 [json_name = "createdBy"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCreatedBy() {
-      createdBy_ = getDefaultInstance().getCreatedBy();
-      bitField0_ = (bitField0_ & ~0x00000400);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string created_by = 11 [json_name = "createdBy"];</code>
-     * @param value The bytes for createdBy to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCreatedByBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      createdBy_ = value;
-      bitField0_ |= 0x00000400;
-      onChanged();
-      return this;
-    }
-
     private int domainType_ = 0;
     /**
-     * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType"];</code>
+     * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The enum numeric value on the wire for domainType.
      */
     @java.lang.Override public int getDomainTypeValue() {
       return domainType_;
     }
     /**
-     * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType"];</code>
+     * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The enum numeric value on the wire for domainType to set.
      * @return This builder for chaining.
      */
     public Builder setDomainTypeValue(int value) {
       domainType_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
-     * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType"];</code>
+     * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The domainType.
      */
     @java.lang.Override
@@ -1992,7 +1699,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.scalekit.grpc.scalekit.v1.domains.DomainType.UNRECOGNIZED : result;
     }
     /**
-     * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType"];</code>
+     * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The domainType to set.
      * @return This builder for chaining.
      */
@@ -2000,17 +1707,17 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000200;
       domainType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType"];</code>
+     * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDomainType() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000200);
       domainType_ = 0;
       onChanged();
       return this;

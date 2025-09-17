@@ -236,6 +236,32 @@ private static final long serialVersionUID = 0L;
     return displayPriority_;
   }
 
+  public static final int COMING_SOON_FIELD_NUMBER = 9;
+  private com.google.protobuf.BoolValue comingSoon_;
+  /**
+   * <code>.google.protobuf.BoolValue coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the comingSoon field is set.
+   */
+  @java.lang.Override
+  public boolean hasComingSoon() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The comingSoon.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getComingSoon() {
+    return comingSoon_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : comingSoon_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getComingSoonOrBuilder() {
+    return comingSoon_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : comingSoon_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -267,6 +293,9 @@ private static final long serialVersionUID = 0L;
     }
     if (displayPriority_ != 0) {
       output.writeInt32(8, displayPriority_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(9, getComingSoon());
     }
     getUnknownFields().writeTo(output);
   }
@@ -302,6 +331,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(8, displayPriority_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getComingSoon());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -332,6 +365,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getIconSrc())) return false;
     if (getDisplayPriority()
         != other.getDisplayPriority()) return false;
+    if (hasComingSoon() != other.hasComingSoon()) return false;
+    if (hasComingSoon()) {
+      if (!getComingSoon()
+          .equals(other.getComingSoon())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -359,6 +397,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getIconSrc().hashCode();
     hash = (37 * hash) + DISPLAY_PRIORITY_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayPriority();
+    if (hasComingSoon()) {
+      hash = (37 * hash) + COMING_SOON_FIELD_NUMBER;
+      hash = (53 * hash) + getComingSoon().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -490,6 +532,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getAuthPatternsFieldBuilder();
+        getComingSoonFieldBuilder();
       }
     }
     @java.lang.Override
@@ -507,6 +550,11 @@ private static final long serialVersionUID = 0L;
       }
       iconSrc_ = "";
       displayPriority_ = 0;
+      comingSoon_ = null;
+      if (comingSoonBuilder_ != null) {
+        comingSoonBuilder_.dispose();
+        comingSoonBuilder_ = null;
+      }
       return this;
     }
 
@@ -562,6 +610,12 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.displayPriority_ = displayPriority_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.comingSoon_ = comingSoonBuilder_ == null
+            ? comingSoon_
+            : comingSoonBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -641,6 +695,9 @@ private static final long serialVersionUID = 0L;
       if (other.getDisplayPriority() != 0) {
         setDisplayPriority(other.getDisplayPriority());
       }
+      if (other.hasComingSoon()) {
+        mergeComingSoon(other.getComingSoon());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -700,6 +757,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000020;
               break;
             } // case 64
+            case 74: {
+              input.readMessage(
+                  getComingSoonFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 74
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1195,6 +1259,127 @@ private static final long serialVersionUID = 0L;
       displayPriority_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.BoolValue comingSoon_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> comingSoonBuilder_;
+    /**
+     * <code>.google.protobuf.BoolValue coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the comingSoon field is set.
+     */
+    public boolean hasComingSoon() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>.google.protobuf.BoolValue coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The comingSoon.
+     */
+    public com.google.protobuf.BoolValue getComingSoon() {
+      if (comingSoonBuilder_ == null) {
+        return comingSoon_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : comingSoon_;
+      } else {
+        return comingSoonBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setComingSoon(com.google.protobuf.BoolValue value) {
+      if (comingSoonBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        comingSoon_ = value;
+      } else {
+        comingSoonBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setComingSoon(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (comingSoonBuilder_ == null) {
+        comingSoon_ = builderForValue.build();
+      } else {
+        comingSoonBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeComingSoon(com.google.protobuf.BoolValue value) {
+      if (comingSoonBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0) &&
+          comingSoon_ != null &&
+          comingSoon_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getComingSoonBuilder().mergeFrom(value);
+        } else {
+          comingSoon_ = value;
+        }
+      } else {
+        comingSoonBuilder_.mergeFrom(value);
+      }
+      if (comingSoon_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearComingSoon() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      comingSoon_ = null;
+      if (comingSoonBuilder_ != null) {
+        comingSoonBuilder_.dispose();
+        comingSoonBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getComingSoonBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getComingSoonFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getComingSoonOrBuilder() {
+      if (comingSoonBuilder_ != null) {
+        return comingSoonBuilder_.getMessageOrBuilder();
+      } else {
+        return comingSoon_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : comingSoon_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getComingSoonFieldBuilder() {
+      if (comingSoonBuilder_ == null) {
+        comingSoonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getComingSoon(),
+                getParentForChildren(),
+                isClean());
+        comingSoon_ = null;
+      }
+      return comingSoonBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

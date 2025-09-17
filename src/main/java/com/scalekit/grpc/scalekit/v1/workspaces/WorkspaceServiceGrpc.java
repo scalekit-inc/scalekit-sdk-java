@@ -294,6 +294,99 @@ public final class WorkspaceServiceGrpc {
     return getGetBillingPortalMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest,
+      com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoResponse> getGetBillingInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBillingInfo",
+      requestType = com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest,
+      com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoResponse> getGetBillingInfoMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest, com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoResponse> getGetBillingInfoMethod;
+    if ((getGetBillingInfoMethod = WorkspaceServiceGrpc.getGetBillingInfoMethod) == null) {
+      synchronized (WorkspaceServiceGrpc.class) {
+        if ((getGetBillingInfoMethod = WorkspaceServiceGrpc.getGetBillingInfoMethod) == null) {
+          WorkspaceServiceGrpc.getGetBillingInfoMethod = getGetBillingInfoMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest, com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBillingInfo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new WorkspaceServiceMethodDescriptorSupplier("GetBillingInfo"))
+              .build();
+        }
+      }
+    }
+    return getGetBillingInfoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageRequest,
+      com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageResponse> getGetProductUsageMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetProductUsage",
+      requestType = com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageRequest,
+      com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageResponse> getGetProductUsageMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageRequest, com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageResponse> getGetProductUsageMethod;
+    if ((getGetProductUsageMethod = WorkspaceServiceGrpc.getGetProductUsageMethod) == null) {
+      synchronized (WorkspaceServiceGrpc.class) {
+        if ((getGetProductUsageMethod = WorkspaceServiceGrpc.getGetProductUsageMethod) == null) {
+          WorkspaceServiceGrpc.getGetProductUsageMethod = getGetProductUsageMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageRequest, com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProductUsage"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new WorkspaceServiceMethodDescriptorSupplier("GetProductUsage"))
+              .build();
+        }
+      }
+    }
+    return getGetProductUsageMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogRequest,
+      com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogResponse> getGetProductCatalogMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetProductCatalog",
+      requestType = com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogRequest,
+      com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogResponse> getGetProductCatalogMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogRequest, com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogResponse> getGetProductCatalogMethod;
+    if ((getGetProductCatalogMethod = WorkspaceServiceGrpc.getGetProductCatalogMethod) == null) {
+      synchronized (WorkspaceServiceGrpc.class) {
+        if ((getGetProductCatalogMethod = WorkspaceServiceGrpc.getGetProductCatalogMethod) == null) {
+          WorkspaceServiceGrpc.getGetProductCatalogMethod = getGetProductCatalogMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogRequest, com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProductCatalog"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new WorkspaceServiceMethodDescriptorSupplier("GetProductCatalog"))
+              .build();
+        }
+      }
+    }
+    return getGetProductCatalogMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -404,6 +497,27 @@ public final class WorkspaceServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.GetBillingPortalResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBillingPortalMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void getBillingInfo(com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBillingInfoMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getProductUsage(com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetProductUsageMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getProductCatalog(com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetProductCatalogMethod(), responseObserver);
+    }
   }
 
   /**
@@ -504,6 +618,30 @@ public final class WorkspaceServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetBillingPortalMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getBillingInfo(com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBillingInfoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getProductUsage(com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetProductUsageMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getProductCatalog(com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetProductCatalogMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -583,6 +721,27 @@ public final class WorkspaceServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.workspaces.GetBillingPortalResponse getBillingPortal(com.scalekit.grpc.scalekit.v1.workspaces.GetBillingPortalRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBillingPortalMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoResponse getBillingInfo(com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBillingInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageResponse getProductUsage(com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProductUsageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogResponse getProductCatalog(com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProductCatalogMethod(), getCallOptions(), request);
     }
   }
 
@@ -673,6 +832,30 @@ public final class WorkspaceServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetBillingPortalMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoResponse> getBillingInfo(
+        com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBillingInfoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageResponse> getProductUsage(
+        com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetProductUsageMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogResponse> getProductCatalog(
+        com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetProductCatalogMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_WORKSPACE = 0;
@@ -684,6 +867,9 @@ public final class WorkspaceServiceGrpc {
   private static final int METHODID_GET_WORKSPACE_SUBSCRIPTIONS = 6;
   private static final int METHODID_GET_WORKSPACE_PRICING_TABLE = 7;
   private static final int METHODID_GET_BILLING_PORTAL = 8;
+  private static final int METHODID_GET_BILLING_INFO = 9;
+  private static final int METHODID_GET_PRODUCT_USAGE = 10;
+  private static final int METHODID_GET_PRODUCT_CATALOG = 11;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -737,6 +923,18 @@ public final class WorkspaceServiceGrpc {
         case METHODID_GET_BILLING_PORTAL:
           serviceImpl.getBillingPortal((com.scalekit.grpc.scalekit.v1.workspaces.GetBillingPortalRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.GetBillingPortalResponse>) responseObserver);
+          break;
+        case METHODID_GET_BILLING_INFO:
+          serviceImpl.getBillingInfo((com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoResponse>) responseObserver);
+          break;
+        case METHODID_GET_PRODUCT_USAGE:
+          serviceImpl.getProductUsage((com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageResponse>) responseObserver);
+          break;
+        case METHODID_GET_PRODUCT_CATALOG:
+          serviceImpl.getProductCatalog((com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -819,6 +1017,27 @@ public final class WorkspaceServiceGrpc {
               com.scalekit.grpc.scalekit.v1.workspaces.GetBillingPortalRequest,
               com.scalekit.grpc.scalekit.v1.workspaces.GetBillingPortalResponse>(
                 service, METHODID_GET_BILLING_PORTAL)))
+        .addMethod(
+          getGetBillingInfoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest,
+              com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoResponse>(
+                service, METHODID_GET_BILLING_INFO)))
+        .addMethod(
+          getGetProductUsageMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageRequest,
+              com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageResponse>(
+                service, METHODID_GET_PRODUCT_USAGE)))
+        .addMethod(
+          getGetProductCatalogMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogRequest,
+              com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogResponse>(
+                service, METHODID_GET_PRODUCT_CATALOG)))
         .build();
   }
 
@@ -876,6 +1095,9 @@ public final class WorkspaceServiceGrpc {
               .addMethod(getGetWorkspaceSubscriptionsMethod())
               .addMethod(getGetWorkspacePricingTableMethod())
               .addMethod(getGetBillingPortalMethod())
+              .addMethod(getGetBillingInfoMethod())
+              .addMethod(getGetProductUsageMethod())
+              .addMethod(getGetProductCatalogMethod())
               .build();
         }
       }

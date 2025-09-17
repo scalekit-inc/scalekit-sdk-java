@@ -45,7 +45,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object domain_ = "";
   /**
-   * <code>string domain = 1 [json_name = "domain", (.buf.validate.field) = { ... }</code>
+   * <code>string domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The domain.
    */
   @java.lang.Override
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string domain = 1 [json_name = "domain", (.buf.validate.field) = { ... }</code>
+   * <code>string domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for domain.
    */
   @java.lang.Override
@@ -83,14 +83,14 @@ private static final long serialVersionUID = 0L;
   public static final int DOMAIN_TYPE_FIELD_NUMBER = 2;
   private int domainType_ = 0;
   /**
-   * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+   * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enum numeric value on the wire for domainType.
    */
   @java.lang.Override public int getDomainTypeValue() {
     return domainType_;
   }
   /**
-   * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+   * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The domainType.
    */
   @java.lang.Override public com.scalekit.grpc.scalekit.v1.domains.DomainType getDomainType() {
@@ -448,7 +448,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object domain_ = "";
     /**
-     * <code>string domain = 1 [json_name = "domain", (.buf.validate.field) = { ... }</code>
+     * <code>string domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The domain.
      */
     public java.lang.String getDomain() {
@@ -464,7 +464,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string domain = 1 [json_name = "domain", (.buf.validate.field) = { ... }</code>
+     * <code>string domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for domain.
      */
     public com.google.protobuf.ByteString
@@ -481,7 +481,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string domain = 1 [json_name = "domain", (.buf.validate.field) = { ... }</code>
+     * <code>string domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The domain to set.
      * @return This builder for chaining.
      */
@@ -494,7 +494,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string domain = 1 [json_name = "domain", (.buf.validate.field) = { ... }</code>
+     * <code>string domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDomain() {
@@ -504,7 +504,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string domain = 1 [json_name = "domain", (.buf.validate.field) = { ... }</code>
+     * <code>string domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for domain to set.
      * @return This builder for chaining.
      */
@@ -520,14 +520,14 @@ private static final long serialVersionUID = 0L;
 
     private int domainType_ = 0;
     /**
-     * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+     * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The enum numeric value on the wire for domainType.
      */
     @java.lang.Override public int getDomainTypeValue() {
       return domainType_;
     }
     /**
-     * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+     * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The enum numeric value on the wire for domainType to set.
      * @return This builder for chaining.
      */
@@ -538,7 +538,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+     * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The domainType.
      */
     @java.lang.Override
@@ -547,7 +547,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.scalekit.grpc.scalekit.v1.domains.DomainType.UNRECOGNIZED : result;
     }
     /**
-     * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+     * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The domainType to set.
      * @return This builder for chaining.
      */
@@ -561,7 +561,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType"];</code>
+     * <code>.scalekit.v1.domains.DomainType domain_type = 2 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDomainType() {

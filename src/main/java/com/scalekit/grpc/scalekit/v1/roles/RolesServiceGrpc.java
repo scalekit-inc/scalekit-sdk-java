@@ -356,6 +356,37 @@ public final class RolesServiceGrpc {
     return getGetRoleUsersCountMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountRequest,
+      com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountResponse> getGetOrganizationRoleUsersCountMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetOrganizationRoleUsersCount",
+      requestType = com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountRequest,
+      com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountResponse> getGetOrganizationRoleUsersCountMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountRequest, com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountResponse> getGetOrganizationRoleUsersCountMethod;
+    if ((getGetOrganizationRoleUsersCountMethod = RolesServiceGrpc.getGetOrganizationRoleUsersCountMethod) == null) {
+      synchronized (RolesServiceGrpc.class) {
+        if ((getGetOrganizationRoleUsersCountMethod = RolesServiceGrpc.getGetOrganizationRoleUsersCountMethod) == null) {
+          RolesServiceGrpc.getGetOrganizationRoleUsersCountMethod = getGetOrganizationRoleUsersCountMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountRequest, com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetOrganizationRoleUsersCount"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new RolesServiceMethodDescriptorSupplier("GetOrganizationRoleUsersCount"))
+              .build();
+        }
+      }
+    }
+    return getGetOrganizationRoleUsersCountMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.roles.UpdateDefaultRolesRequest,
       com.scalekit.grpc.scalekit.v1.roles.UpdateDefaultRolesResponse> getUpdateDefaultRolesMethod;
 
@@ -478,6 +509,37 @@ public final class RolesServiceGrpc {
       }
     }
     return getDeleteRoleBaseMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.roles.DeleteOrganizationRoleBaseRequest,
+      com.google.protobuf.Empty> getDeleteOrganizationRoleBaseMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteOrganizationRoleBase",
+      requestType = com.scalekit.grpc.scalekit.v1.roles.DeleteOrganizationRoleBaseRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.roles.DeleteOrganizationRoleBaseRequest,
+      com.google.protobuf.Empty> getDeleteOrganizationRoleBaseMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.roles.DeleteOrganizationRoleBaseRequest, com.google.protobuf.Empty> getDeleteOrganizationRoleBaseMethod;
+    if ((getDeleteOrganizationRoleBaseMethod = RolesServiceGrpc.getDeleteOrganizationRoleBaseMethod) == null) {
+      synchronized (RolesServiceGrpc.class) {
+        if ((getDeleteOrganizationRoleBaseMethod = RolesServiceGrpc.getDeleteOrganizationRoleBaseMethod) == null) {
+          RolesServiceGrpc.getDeleteOrganizationRoleBaseMethod = getDeleteOrganizationRoleBaseMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.roles.DeleteOrganizationRoleBaseRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteOrganizationRoleBase"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.roles.DeleteOrganizationRoleBaseRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new RolesServiceMethodDescriptorSupplier("DeleteOrganizationRoleBase"))
+              .build();
+        }
+      }
+    }
+    return getDeleteOrganizationRoleBaseMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.roles.CreatePermissionRequest,
@@ -886,6 +948,13 @@ public final class RolesServiceGrpc {
 
     /**
      */
+    default void getOrganizationRoleUsersCount(com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetOrganizationRoleUsersCountMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void updateDefaultRoles(com.scalekit.grpc.scalekit.v1.roles.UpdateDefaultRolesRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.roles.UpdateDefaultRolesResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateDefaultRolesMethod(), responseObserver);
@@ -913,6 +982,13 @@ public final class RolesServiceGrpc {
     default void deleteRoleBase(com.scalekit.grpc.scalekit.v1.roles.DeleteRoleBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteRoleBaseMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteOrganizationRoleBase(com.scalekit.grpc.scalekit.v1.roles.DeleteOrganizationRoleBaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteOrganizationRoleBaseMethod(), responseObserver);
     }
 
     /**
@@ -1102,6 +1178,14 @@ public final class RolesServiceGrpc {
 
     /**
      */
+    public void getOrganizationRoleUsersCount(com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetOrganizationRoleUsersCountMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void updateDefaultRoles(com.scalekit.grpc.scalekit.v1.roles.UpdateDefaultRolesRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.roles.UpdateDefaultRolesResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -1133,6 +1217,14 @@ public final class RolesServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteRoleBaseMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteOrganizationRoleBase(com.scalekit.grpc.scalekit.v1.roles.DeleteOrganizationRoleBaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteOrganizationRoleBaseMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1309,6 +1401,13 @@ public final class RolesServiceGrpc {
 
     /**
      */
+    public com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountResponse getOrganizationRoleUsersCount(com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetOrganizationRoleUsersCountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.scalekit.grpc.scalekit.v1.roles.UpdateDefaultRolesResponse updateDefaultRoles(com.scalekit.grpc.scalekit.v1.roles.UpdateDefaultRolesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDefaultRolesMethod(), getCallOptions(), request);
@@ -1336,6 +1435,13 @@ public final class RolesServiceGrpc {
     public com.google.protobuf.Empty deleteRoleBase(com.scalekit.grpc.scalekit.v1.roles.DeleteRoleBaseRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteRoleBaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.google.protobuf.Empty deleteOrganizationRoleBase(com.scalekit.grpc.scalekit.v1.roles.DeleteOrganizationRoleBaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteOrganizationRoleBaseMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1514,6 +1620,14 @@ public final class RolesServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountResponse> getOrganizationRoleUsersCount(
+        com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetOrganizationRoleUsersCountMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.roles.UpdateDefaultRolesResponse> updateDefaultRoles(
         com.scalekit.grpc.scalekit.v1.roles.UpdateDefaultRolesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -1545,6 +1659,14 @@ public final class RolesServiceGrpc {
         com.scalekit.grpc.scalekit.v1.roles.DeleteRoleBaseRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteRoleBaseMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteOrganizationRoleBase(
+        com.scalekit.grpc.scalekit.v1.roles.DeleteOrganizationRoleBaseRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteOrganizationRoleBaseMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1637,19 +1759,21 @@ public final class RolesServiceGrpc {
   private static final int METHODID_LIST_ORGANIZATION_ROLES = 8;
   private static final int METHODID_DELETE_ORGANIZATION_ROLE = 9;
   private static final int METHODID_GET_ROLE_USERS_COUNT = 10;
-  private static final int METHODID_UPDATE_DEFAULT_ROLES = 11;
-  private static final int METHODID_UPDATE_DEFAULT_ORGANIZATION_ROLES = 12;
-  private static final int METHODID_LIST_DEPENDENT_ROLES = 13;
-  private static final int METHODID_DELETE_ROLE_BASE = 14;
-  private static final int METHODID_CREATE_PERMISSION = 15;
-  private static final int METHODID_GET_PERMISSION = 16;
-  private static final int METHODID_UPDATE_PERMISSION = 17;
-  private static final int METHODID_LIST_PERMISSIONS = 18;
-  private static final int METHODID_DELETE_PERMISSION = 19;
-  private static final int METHODID_LIST_ROLE_PERMISSIONS = 20;
-  private static final int METHODID_ADD_PERMISSIONS_TO_ROLE = 21;
-  private static final int METHODID_REMOVE_PERMISSION_FROM_ROLE = 22;
-  private static final int METHODID_LIST_EFFECTIVE_ROLE_PERMISSIONS = 23;
+  private static final int METHODID_GET_ORGANIZATION_ROLE_USERS_COUNT = 11;
+  private static final int METHODID_UPDATE_DEFAULT_ROLES = 12;
+  private static final int METHODID_UPDATE_DEFAULT_ORGANIZATION_ROLES = 13;
+  private static final int METHODID_LIST_DEPENDENT_ROLES = 14;
+  private static final int METHODID_DELETE_ROLE_BASE = 15;
+  private static final int METHODID_DELETE_ORGANIZATION_ROLE_BASE = 16;
+  private static final int METHODID_CREATE_PERMISSION = 17;
+  private static final int METHODID_GET_PERMISSION = 18;
+  private static final int METHODID_UPDATE_PERMISSION = 19;
+  private static final int METHODID_LIST_PERMISSIONS = 20;
+  private static final int METHODID_DELETE_PERMISSION = 21;
+  private static final int METHODID_LIST_ROLE_PERMISSIONS = 22;
+  private static final int METHODID_ADD_PERMISSIONS_TO_ROLE = 23;
+  private static final int METHODID_REMOVE_PERMISSION_FROM_ROLE = 24;
+  private static final int METHODID_LIST_EFFECTIVE_ROLE_PERMISSIONS = 25;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1712,6 +1836,10 @@ public final class RolesServiceGrpc {
           serviceImpl.getRoleUsersCount((com.scalekit.grpc.scalekit.v1.roles.GetRoleUsersCountRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.roles.GetRoleUsersCountResponse>) responseObserver);
           break;
+        case METHODID_GET_ORGANIZATION_ROLE_USERS_COUNT:
+          serviceImpl.getOrganizationRoleUsersCount((com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountResponse>) responseObserver);
+          break;
         case METHODID_UPDATE_DEFAULT_ROLES:
           serviceImpl.updateDefaultRoles((com.scalekit.grpc.scalekit.v1.roles.UpdateDefaultRolesRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.roles.UpdateDefaultRolesResponse>) responseObserver);
@@ -1726,6 +1854,10 @@ public final class RolesServiceGrpc {
           break;
         case METHODID_DELETE_ROLE_BASE:
           serviceImpl.deleteRoleBase((com.scalekit.grpc.scalekit.v1.roles.DeleteRoleBaseRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_DELETE_ORGANIZATION_ROLE_BASE:
+          serviceImpl.deleteOrganizationRoleBase((com.scalekit.grpc.scalekit.v1.roles.DeleteOrganizationRoleBaseRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_CREATE_PERMISSION:
@@ -1860,6 +1992,13 @@ public final class RolesServiceGrpc {
               com.scalekit.grpc.scalekit.v1.roles.GetRoleUsersCountResponse>(
                 service, METHODID_GET_ROLE_USERS_COUNT)))
         .addMethod(
+          getGetOrganizationRoleUsersCountMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountRequest,
+              com.scalekit.grpc.scalekit.v1.roles.GetOrganizationRoleUsersCountResponse>(
+                service, METHODID_GET_ORGANIZATION_ROLE_USERS_COUNT)))
+        .addMethod(
           getUpdateDefaultRolesMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -1887,6 +2026,13 @@ public final class RolesServiceGrpc {
               com.scalekit.grpc.scalekit.v1.roles.DeleteRoleBaseRequest,
               com.google.protobuf.Empty>(
                 service, METHODID_DELETE_ROLE_BASE)))
+        .addMethod(
+          getDeleteOrganizationRoleBaseMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.roles.DeleteOrganizationRoleBaseRequest,
+              com.google.protobuf.Empty>(
+                service, METHODID_DELETE_ORGANIZATION_ROLE_BASE)))
         .addMethod(
           getCreatePermissionMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2009,10 +2155,12 @@ public final class RolesServiceGrpc {
               .addMethod(getListOrganizationRolesMethod())
               .addMethod(getDeleteOrganizationRoleMethod())
               .addMethod(getGetRoleUsersCountMethod())
+              .addMethod(getGetOrganizationRoleUsersCountMethod())
               .addMethod(getUpdateDefaultRolesMethod())
               .addMethod(getUpdateDefaultOrganizationRolesMethod())
               .addMethod(getListDependentRolesMethod())
               .addMethod(getDeleteRoleBaseMethod())
+              .addMethod(getDeleteOrganizationRoleBaseMethod())
               .addMethod(getCreatePermissionMethod())
               .addMethod(getGetPermissionMethod())
               .addMethod(getUpdatePermissionMethod())

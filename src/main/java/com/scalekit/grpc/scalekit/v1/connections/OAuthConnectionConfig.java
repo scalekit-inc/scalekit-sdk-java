@@ -353,6 +353,32 @@ private static final long serialVersionUID = 0L;
     return accessType_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : accessType_;
   }
 
+  public static final int CUSTOM_SCOPE_NAME_FIELD_NUMBER = 17;
+  private com.google.protobuf.StringValue customScopeName_;
+  /**
+   * <code>.google.protobuf.StringValue custom_scope_name = 17 [json_name = "customScopeName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the customScopeName field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomScopeName() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   * <code>.google.protobuf.StringValue custom_scope_name = 17 [json_name = "customScopeName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The customScopeName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getCustomScopeName() {
+    return customScopeName_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : customScopeName_;
+  }
+  /**
+   * <code>.google.protobuf.StringValue custom_scope_name = 17 [json_name = "customScopeName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getCustomScopeNameOrBuilder() {
+    return customScopeName_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : customScopeName_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -399,6 +425,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(16, getAccessType());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(17, getCustomScopeName());
     }
     getUnknownFields().writeTo(output);
   }
@@ -455,6 +484,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(16, getAccessType());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(17, getCustomScopeName());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -520,6 +553,11 @@ private static final long serialVersionUID = 0L;
       if (!getAccessType()
           .equals(other.getAccessType())) return false;
     }
+    if (hasCustomScopeName() != other.hasCustomScopeName()) return false;
+    if (hasCustomScopeName()) {
+      if (!getCustomScopeName()
+          .equals(other.getCustomScopeName())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -572,6 +610,10 @@ private static final long serialVersionUID = 0L;
     if (hasAccessType()) {
       hash = (37 * hash) + ACCESS_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getAccessType().hashCode();
+    }
+    if (hasCustomScopeName()) {
+      hash = (37 * hash) + CUSTOM_SCOPE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomScopeName().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -712,6 +754,7 @@ private static final long serialVersionUID = 0L;
         getPromptFieldBuilder();
         getUsePlatformCredsFieldBuilder();
         getAccessTypeFieldBuilder();
+        getCustomScopeNameFieldBuilder();
       }
     }
     @java.lang.Override
@@ -765,6 +808,11 @@ private static final long serialVersionUID = 0L;
       if (accessTypeBuilder_ != null) {
         accessTypeBuilder_.dispose();
         accessTypeBuilder_ = null;
+      }
+      customScopeName_ = null;
+      if (customScopeNameBuilder_ != null) {
+        customScopeNameBuilder_.dispose();
+        customScopeNameBuilder_ = null;
       }
       return this;
     }
@@ -861,6 +909,12 @@ private static final long serialVersionUID = 0L;
             : accessTypeBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.customScopeName_ = customScopeNameBuilder_ == null
+            ? customScopeName_
+            : customScopeNameBuilder_.build();
+        to_bitField0_ |= 0x00000200;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -949,6 +1003,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasAccessType()) {
         mergeAccessType(other.getAccessType());
+      }
+      if (other.hasCustomScopeName()) {
+        mergeCustomScopeName(other.getCustomScopeName());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1050,6 +1107,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000400;
               break;
             } // case 130
+            case 138: {
+              input.readMessage(
+                  getCustomScopeNameFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 138
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2337,6 +2401,127 @@ private static final long serialVersionUID = 0L;
         accessType_ = null;
       }
       return accessTypeBuilder_;
+    }
+
+    private com.google.protobuf.StringValue customScopeName_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> customScopeNameBuilder_;
+    /**
+     * <code>.google.protobuf.StringValue custom_scope_name = 17 [json_name = "customScopeName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the customScopeName field is set.
+     */
+    public boolean hasCustomScopeName() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     * <code>.google.protobuf.StringValue custom_scope_name = 17 [json_name = "customScopeName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The customScopeName.
+     */
+    public com.google.protobuf.StringValue getCustomScopeName() {
+      if (customScopeNameBuilder_ == null) {
+        return customScopeName_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : customScopeName_;
+      } else {
+        return customScopeNameBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue custom_scope_name = 17 [json_name = "customScopeName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setCustomScopeName(com.google.protobuf.StringValue value) {
+      if (customScopeNameBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customScopeName_ = value;
+      } else {
+        customScopeNameBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue custom_scope_name = 17 [json_name = "customScopeName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setCustomScopeName(
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (customScopeNameBuilder_ == null) {
+        customScopeName_ = builderForValue.build();
+      } else {
+        customScopeNameBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue custom_scope_name = 17 [json_name = "customScopeName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeCustomScopeName(com.google.protobuf.StringValue value) {
+      if (customScopeNameBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0) &&
+          customScopeName_ != null &&
+          customScopeName_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getCustomScopeNameBuilder().mergeFrom(value);
+        } else {
+          customScopeName_ = value;
+        }
+      } else {
+        customScopeNameBuilder_.mergeFrom(value);
+      }
+      if (customScopeName_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue custom_scope_name = 17 [json_name = "customScopeName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearCustomScopeName() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      customScopeName_ = null;
+      if (customScopeNameBuilder_ != null) {
+        customScopeNameBuilder_.dispose();
+        customScopeNameBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue custom_scope_name = 17 [json_name = "customScopeName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValue.Builder getCustomScopeNameBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getCustomScopeNameFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue custom_scope_name = 17 [json_name = "customScopeName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getCustomScopeNameOrBuilder() {
+      if (customScopeNameBuilder_ != null) {
+        return customScopeNameBuilder_.getMessageOrBuilder();
+      } else {
+        return customScopeName_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : customScopeName_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue custom_scope_name = 17 [json_name = "customScopeName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getCustomScopeNameFieldBuilder() {
+      if (customScopeNameBuilder_ == null) {
+        customScopeNameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getCustomScopeName(),
+                getParentForChildren(),
+                isClean());
+        customScopeName_ = null;
+      }
+      return customScopeNameBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

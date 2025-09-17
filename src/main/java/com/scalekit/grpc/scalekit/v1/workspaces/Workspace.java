@@ -20,6 +20,8 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     displayName_ = "";
     regionCode_ = 0;
+    billingCustomerId_ = "";
+    billingSubscriptionId_ = "";
   }
 
   @java.lang.Override
@@ -191,6 +193,110 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.scalekit.grpc.scalekit.v1.commons.RegionCode.UNRECOGNIZED : result;
   }
 
+  public static final int EXTENDED_INFO_FIELD_NUMBER = 7;
+  private com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo extendedInfo_;
+  /**
+   * <code>.scalekit.v1.workspaces.WorkspaceExtendedInfo extended_info = 7 [json_name = "extendedInfo"];</code>
+   * @return Whether the extendedInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasExtendedInfo() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>.scalekit.v1.workspaces.WorkspaceExtendedInfo extended_info = 7 [json_name = "extendedInfo"];</code>
+   * @return The extendedInfo.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo getExtendedInfo() {
+    return extendedInfo_ == null ? com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo.getDefaultInstance() : extendedInfo_;
+  }
+  /**
+   * <code>.scalekit.v1.workspaces.WorkspaceExtendedInfo extended_info = 7 [json_name = "extendedInfo"];</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfoOrBuilder getExtendedInfoOrBuilder() {
+    return extendedInfo_ == null ? com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo.getDefaultInstance() : extendedInfo_;
+  }
+
+  public static final int BILLING_CUSTOMER_ID_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object billingCustomerId_ = "";
+  /**
+   * <code>string billing_customer_id = 8 [json_name = "billingCustomerId"];</code>
+   * @return The billingCustomerId.
+   */
+  @java.lang.Override
+  public java.lang.String getBillingCustomerId() {
+    java.lang.Object ref = billingCustomerId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      billingCustomerId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string billing_customer_id = 8 [json_name = "billingCustomerId"];</code>
+   * @return The bytes for billingCustomerId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getBillingCustomerIdBytes() {
+    java.lang.Object ref = billingCustomerId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      billingCustomerId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BILLING_SUBSCRIPTION_ID_FIELD_NUMBER = 9;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object billingSubscriptionId_ = "";
+  /**
+   * <code>string billing_subscription_id = 9 [json_name = "billingSubscriptionId"];</code>
+   * @return The billingSubscriptionId.
+   */
+  @java.lang.Override
+  public java.lang.String getBillingSubscriptionId() {
+    java.lang.Object ref = billingSubscriptionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      billingSubscriptionId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string billing_subscription_id = 9 [json_name = "billingSubscriptionId"];</code>
+   * @return The bytes for billingSubscriptionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getBillingSubscriptionIdBytes() {
+    java.lang.Object ref = billingSubscriptionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      billingSubscriptionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -220,6 +326,15 @@ private static final long serialVersionUID = 0L;
     if (regionCode_ != com.scalekit.grpc.scalekit.v1.commons.RegionCode.REGION_CODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(6, regionCode_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(7, getExtendedInfo());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingCustomerId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, billingCustomerId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingSubscriptionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, billingSubscriptionId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -246,6 +361,16 @@ private static final long serialVersionUID = 0L;
     if (regionCode_ != com.scalekit.grpc.scalekit.v1.commons.RegionCode.REGION_CODE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(6, regionCode_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getExtendedInfo());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingCustomerId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, billingCustomerId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingSubscriptionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, billingSubscriptionId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -277,6 +402,15 @@ private static final long serialVersionUID = 0L;
     if (!getDisplayName()
         .equals(other.getDisplayName())) return false;
     if (regionCode_ != other.regionCode_) return false;
+    if (hasExtendedInfo() != other.hasExtendedInfo()) return false;
+    if (hasExtendedInfo()) {
+      if (!getExtendedInfo()
+          .equals(other.getExtendedInfo())) return false;
+    }
+    if (!getBillingCustomerId()
+        .equals(other.getBillingCustomerId())) return false;
+    if (!getBillingSubscriptionId()
+        .equals(other.getBillingSubscriptionId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -302,6 +436,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + REGION_CODE_FIELD_NUMBER;
     hash = (53 * hash) + regionCode_;
+    if (hasExtendedInfo()) {
+      hash = (37 * hash) + EXTENDED_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getExtendedInfo().hashCode();
+    }
+    hash = (37 * hash) + BILLING_CUSTOMER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getBillingCustomerId().hashCode();
+    hash = (37 * hash) + BILLING_SUBSCRIPTION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getBillingSubscriptionId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -434,6 +576,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getExtendedInfoFieldBuilder();
       }
     }
     @java.lang.Override
@@ -453,6 +596,13 @@ private static final long serialVersionUID = 0L;
       }
       displayName_ = "";
       regionCode_ = 0;
+      extendedInfo_ = null;
+      if (extendedInfoBuilder_ != null) {
+        extendedInfoBuilder_.dispose();
+        extendedInfoBuilder_ = null;
+      }
+      billingCustomerId_ = "";
+      billingSubscriptionId_ = "";
       return this;
     }
 
@@ -507,6 +657,18 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.regionCode_ = regionCode_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.extendedInfo_ = extendedInfoBuilder_ == null
+            ? extendedInfo_
+            : extendedInfoBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.billingCustomerId_ = billingCustomerId_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.billingSubscriptionId_ = billingSubscriptionId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -574,6 +736,19 @@ private static final long serialVersionUID = 0L;
       if (other.regionCode_ != 0) {
         setRegionCodeValue(other.getRegionCodeValue());
       }
+      if (other.hasExtendedInfo()) {
+        mergeExtendedInfo(other.getExtendedInfo());
+      }
+      if (!other.getBillingCustomerId().isEmpty()) {
+        billingCustomerId_ = other.billingCustomerId_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (!other.getBillingSubscriptionId().isEmpty()) {
+        billingSubscriptionId_ = other.billingSubscriptionId_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -629,6 +804,23 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 48
+            case 58: {
+              input.readMessage(
+                  getExtendedInfoFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 58
+            case 66: {
+              billingCustomerId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 66
+            case 74: {
+              billingSubscriptionId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 74
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1081,6 +1273,271 @@ private static final long serialVersionUID = 0L;
     public Builder clearRegionCode() {
       bitField0_ = (bitField0_ & ~0x00000010);
       regionCode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo extendedInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo, com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo.Builder, com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfoOrBuilder> extendedInfoBuilder_;
+    /**
+     * <code>.scalekit.v1.workspaces.WorkspaceExtendedInfo extended_info = 7 [json_name = "extendedInfo"];</code>
+     * @return Whether the extendedInfo field is set.
+     */
+    public boolean hasExtendedInfo() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <code>.scalekit.v1.workspaces.WorkspaceExtendedInfo extended_info = 7 [json_name = "extendedInfo"];</code>
+     * @return The extendedInfo.
+     */
+    public com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo getExtendedInfo() {
+      if (extendedInfoBuilder_ == null) {
+        return extendedInfo_ == null ? com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo.getDefaultInstance() : extendedInfo_;
+      } else {
+        return extendedInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.workspaces.WorkspaceExtendedInfo extended_info = 7 [json_name = "extendedInfo"];</code>
+     */
+    public Builder setExtendedInfo(com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo value) {
+      if (extendedInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        extendedInfo_ = value;
+      } else {
+        extendedInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.workspaces.WorkspaceExtendedInfo extended_info = 7 [json_name = "extendedInfo"];</code>
+     */
+    public Builder setExtendedInfo(
+        com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo.Builder builderForValue) {
+      if (extendedInfoBuilder_ == null) {
+        extendedInfo_ = builderForValue.build();
+      } else {
+        extendedInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.workspaces.WorkspaceExtendedInfo extended_info = 7 [json_name = "extendedInfo"];</code>
+     */
+    public Builder mergeExtendedInfo(com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo value) {
+      if (extendedInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0) &&
+          extendedInfo_ != null &&
+          extendedInfo_ != com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo.getDefaultInstance()) {
+          getExtendedInfoBuilder().mergeFrom(value);
+        } else {
+          extendedInfo_ = value;
+        }
+      } else {
+        extendedInfoBuilder_.mergeFrom(value);
+      }
+      if (extendedInfo_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.workspaces.WorkspaceExtendedInfo extended_info = 7 [json_name = "extendedInfo"];</code>
+     */
+    public Builder clearExtendedInfo() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      extendedInfo_ = null;
+      if (extendedInfoBuilder_ != null) {
+        extendedInfoBuilder_.dispose();
+        extendedInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.workspaces.WorkspaceExtendedInfo extended_info = 7 [json_name = "extendedInfo"];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo.Builder getExtendedInfoBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getExtendedInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.workspaces.WorkspaceExtendedInfo extended_info = 7 [json_name = "extendedInfo"];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfoOrBuilder getExtendedInfoOrBuilder() {
+      if (extendedInfoBuilder_ != null) {
+        return extendedInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return extendedInfo_ == null ?
+            com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo.getDefaultInstance() : extendedInfo_;
+      }
+    }
+    /**
+     * <code>.scalekit.v1.workspaces.WorkspaceExtendedInfo extended_info = 7 [json_name = "extendedInfo"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo, com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo.Builder, com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfoOrBuilder> 
+        getExtendedInfoFieldBuilder() {
+      if (extendedInfoBuilder_ == null) {
+        extendedInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo, com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo.Builder, com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfoOrBuilder>(
+                getExtendedInfo(),
+                getParentForChildren(),
+                isClean());
+        extendedInfo_ = null;
+      }
+      return extendedInfoBuilder_;
+    }
+
+    private java.lang.Object billingCustomerId_ = "";
+    /**
+     * <code>string billing_customer_id = 8 [json_name = "billingCustomerId"];</code>
+     * @return The billingCustomerId.
+     */
+    public java.lang.String getBillingCustomerId() {
+      java.lang.Object ref = billingCustomerId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        billingCustomerId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string billing_customer_id = 8 [json_name = "billingCustomerId"];</code>
+     * @return The bytes for billingCustomerId.
+     */
+    public com.google.protobuf.ByteString
+        getBillingCustomerIdBytes() {
+      java.lang.Object ref = billingCustomerId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        billingCustomerId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string billing_customer_id = 8 [json_name = "billingCustomerId"];</code>
+     * @param value The billingCustomerId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBillingCustomerId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      billingCustomerId_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string billing_customer_id = 8 [json_name = "billingCustomerId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBillingCustomerId() {
+      billingCustomerId_ = getDefaultInstance().getBillingCustomerId();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string billing_customer_id = 8 [json_name = "billingCustomerId"];</code>
+     * @param value The bytes for billingCustomerId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBillingCustomerIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      billingCustomerId_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object billingSubscriptionId_ = "";
+    /**
+     * <code>string billing_subscription_id = 9 [json_name = "billingSubscriptionId"];</code>
+     * @return The billingSubscriptionId.
+     */
+    public java.lang.String getBillingSubscriptionId() {
+      java.lang.Object ref = billingSubscriptionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        billingSubscriptionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string billing_subscription_id = 9 [json_name = "billingSubscriptionId"];</code>
+     * @return The bytes for billingSubscriptionId.
+     */
+    public com.google.protobuf.ByteString
+        getBillingSubscriptionIdBytes() {
+      java.lang.Object ref = billingSubscriptionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        billingSubscriptionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string billing_subscription_id = 9 [json_name = "billingSubscriptionId"];</code>
+     * @param value The billingSubscriptionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBillingSubscriptionId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      billingSubscriptionId_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string billing_subscription_id = 9 [json_name = "billingSubscriptionId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBillingSubscriptionId() {
+      billingSubscriptionId_ = getDefaultInstance().getBillingSubscriptionId();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string billing_subscription_id = 9 [json_name = "billingSubscriptionId"];</code>
+     * @param value The bytes for billingSubscriptionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBillingSubscriptionIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      billingSubscriptionId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

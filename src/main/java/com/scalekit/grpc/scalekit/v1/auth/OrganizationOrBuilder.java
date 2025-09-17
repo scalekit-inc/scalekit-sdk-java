@@ -45,21 +45,21 @@ public interface OrganizationOrBuilder extends
       getMembershipStatusBytes();
 
   /**
-   * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
-   * @return Whether the invitationInvitedBy field is set.
+   * <code>optional string invitation_inviter_email = 4 [json_name = "invitationInviterEmail"];</code>
+   * @return Whether the invitationInviterEmail field is set.
    */
-  boolean hasInvitationInvitedBy();
+  boolean hasInvitationInviterEmail();
   /**
-   * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
-   * @return The invitationInvitedBy.
+   * <code>optional string invitation_inviter_email = 4 [json_name = "invitationInviterEmail"];</code>
+   * @return The invitationInviterEmail.
    */
-  java.lang.String getInvitationInvitedBy();
+  java.lang.String getInvitationInviterEmail();
   /**
-   * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
-   * @return The bytes for invitationInvitedBy.
+   * <code>optional string invitation_inviter_email = 4 [json_name = "invitationInviterEmail"];</code>
+   * @return The bytes for invitationInviterEmail.
    */
   com.google.protobuf.ByteString
-      getInvitationInvitedByBytes();
+      getInvitationInviterEmailBytes();
 
   /**
    * <code>optional .google.protobuf.Timestamp invitation_accepted_at = 5 [json_name = "invitationAcceptedAt"];</code>

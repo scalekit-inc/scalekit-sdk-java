@@ -72,4 +72,43 @@ public interface WorkspaceOrBuilder extends
    * @return The regionCode.
    */
   com.scalekit.grpc.scalekit.v1.commons.RegionCode getRegionCode();
+
+  /**
+   * <code>.scalekit.v1.workspaces.WorkspaceExtendedInfo extended_info = 7 [json_name = "extendedInfo"];</code>
+   * @return Whether the extendedInfo field is set.
+   */
+  boolean hasExtendedInfo();
+  /**
+   * <code>.scalekit.v1.workspaces.WorkspaceExtendedInfo extended_info = 7 [json_name = "extendedInfo"];</code>
+   * @return The extendedInfo.
+   */
+  com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfo getExtendedInfo();
+  /**
+   * <code>.scalekit.v1.workspaces.WorkspaceExtendedInfo extended_info = 7 [json_name = "extendedInfo"];</code>
+   */
+  com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceExtendedInfoOrBuilder getExtendedInfoOrBuilder();
+
+  /**
+   * <code>string billing_customer_id = 8 [json_name = "billingCustomerId"];</code>
+   * @return The billingCustomerId.
+   */
+  java.lang.String getBillingCustomerId();
+  /**
+   * <code>string billing_customer_id = 8 [json_name = "billingCustomerId"];</code>
+   * @return The bytes for billingCustomerId.
+   */
+  com.google.protobuf.ByteString
+      getBillingCustomerIdBytes();
+
+  /**
+   * <code>string billing_subscription_id = 9 [json_name = "billingSubscriptionId"];</code>
+   * @return The billingSubscriptionId.
+   */
+  java.lang.String getBillingSubscriptionId();
+  /**
+   * <code>string billing_subscription_id = 9 [json_name = "billingSubscriptionId"];</code>
+   * @return The bytes for billingSubscriptionId.
+   */
+  com.google.protobuf.ByteString
+      getBillingSubscriptionIdBytes();
 }

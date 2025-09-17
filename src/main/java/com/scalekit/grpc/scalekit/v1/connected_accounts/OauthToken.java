@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     refreshToken_ = "";
     scopes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+    domain_ = "";
   }
 
   @java.lang.Override
@@ -158,6 +159,45 @@ private static final long serialVersionUID = 0L;
     return scopes_.getByteString(index);
   }
 
+  public static final int DOMAIN_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object domain_ = "";
+  /**
+   * <code>string domain = 4 [json_name = "domain"];</code>
+   * @return The domain.
+   */
+  @java.lang.Override
+  public java.lang.String getDomain() {
+    java.lang.Object ref = domain_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      domain_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string domain = 4 [json_name = "domain"];</code>
+   * @return The bytes for domain.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDomainBytes() {
+    java.lang.Object ref = domain_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      domain_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -180,6 +220,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < scopes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, scopes_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, domain_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -204,6 +247,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getScopesList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, domain_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -225,6 +271,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getRefreshToken())) return false;
     if (!getScopesList()
         .equals(other.getScopesList())) return false;
+    if (!getDomain()
+        .equals(other.getDomain())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -244,6 +292,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SCOPES_FIELD_NUMBER;
       hash = (53 * hash) + getScopesList().hashCode();
     }
+    hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
+    hash = (53 * hash) + getDomain().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -379,6 +429,7 @@ private static final long serialVersionUID = 0L;
       refreshToken_ = "";
       scopes_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+      domain_ = "";
       return this;
     }
 
@@ -421,6 +472,9 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         scopes_.makeImmutable();
         result.scopes_ = scopes_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.domain_ = domain_;
       }
     }
 
@@ -488,6 +542,11 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (!other.getDomain().isEmpty()) {
+        domain_ = other.domain_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -530,6 +589,11 @@ private static final long serialVersionUID = 0L;
               scopes_.add(s);
               break;
             } // case 26
+            case 34: {
+              domain_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -798,6 +862,78 @@ private static final long serialVersionUID = 0L;
       ensureScopesIsMutable();
       scopes_.add(value);
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object domain_ = "";
+    /**
+     * <code>string domain = 4 [json_name = "domain"];</code>
+     * @return The domain.
+     */
+    public java.lang.String getDomain() {
+      java.lang.Object ref = domain_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        domain_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string domain = 4 [json_name = "domain"];</code>
+     * @return The bytes for domain.
+     */
+    public com.google.protobuf.ByteString
+        getDomainBytes() {
+      java.lang.Object ref = domain_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        domain_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string domain = 4 [json_name = "domain"];</code>
+     * @param value The domain to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDomain(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      domain_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string domain = 4 [json_name = "domain"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDomain() {
+      domain_ = getDefaultInstance().getDomain();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string domain = 4 [json_name = "domain"];</code>
+     * @param value The bytes for domain to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDomainBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      domain_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
