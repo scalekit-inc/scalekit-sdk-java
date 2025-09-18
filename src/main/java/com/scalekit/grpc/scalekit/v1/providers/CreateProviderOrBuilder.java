@@ -101,4 +101,10 @@ public interface CreateProviderOrBuilder extends
    * @return The displayPriority.
    */
   int getDisplayPriority();
+
+  /**
+   * <code>bool coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The comingSoon.
+   */
+  boolean getComingSoon();
 }

@@ -210,6 +210,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CATEGORY_PRIORITY_FIELD_NUMBER = 6;
+  private int categoryPriority_ = 0;
+  /**
+   * <code>int32 category_priority = 6 [json_name = "categoryPriority"];</code>
+   * @return The categoryPriority.
+   */
+  @java.lang.Override
+  public int getCategoryPriority() {
+    return categoryPriority_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -239,6 +250,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(category_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, category_);
     }
+    if (categoryPriority_ != 0) {
+      output.writeInt32(6, categoryPriority_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -263,6 +277,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(category_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, category_);
+    }
+    if (categoryPriority_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(6, categoryPriority_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -289,6 +307,8 @@ private static final long serialVersionUID = 0L;
         != other.getDisplay()) return false;
     if (!getCategory()
         .equals(other.getCategory())) return false;
+    if (getCategoryPriority()
+        != other.getCategoryPriority()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -311,6 +331,8 @@ private static final long serialVersionUID = 0L;
         getDisplay());
     hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
     hash = (53 * hash) + getCategory().hashCode();
+    hash = (37 * hash) + CATEGORY_PRIORITY_FIELD_NUMBER;
+    hash = (53 * hash) + getCategoryPriority();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -447,6 +469,7 @@ private static final long serialVersionUID = 0L;
       description_ = "";
       display_ = false;
       category_ = "";
+      categoryPriority_ = 0;
       return this;
     }
 
@@ -494,6 +517,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.category_ = category_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.categoryPriority_ = categoryPriority_;
       }
     }
 
@@ -564,6 +590,9 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.getCategoryPriority() != 0) {
+        setCategoryPriority(other.getCategoryPriority());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -615,6 +644,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 42
+            case 48: {
+              categoryPriority_ = input.readInt32();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 48
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -948,6 +982,38 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       category_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private int categoryPriority_ ;
+    /**
+     * <code>int32 category_priority = 6 [json_name = "categoryPriority"];</code>
+     * @return The categoryPriority.
+     */
+    @java.lang.Override
+    public int getCategoryPriority() {
+      return categoryPriority_;
+    }
+    /**
+     * <code>int32 category_priority = 6 [json_name = "categoryPriority"];</code>
+     * @param value The categoryPriority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCategoryPriority(int value) {
+
+      categoryPriority_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 category_priority = 6 [json_name = "categoryPriority"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCategoryPriority() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      categoryPriority_ = 0;
       onChanged();
       return this;
     }

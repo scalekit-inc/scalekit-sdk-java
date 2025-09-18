@@ -113,4 +113,10 @@ public interface ProviderOrBuilder extends
    * @return The displayPriority.
    */
   int getDisplayPriority();
+
+  /**
+   * <code>bool coming_soon = 9 [json_name = "comingSoon"];</code>
+   * @return The comingSoon.
+   */
+  boolean getComingSoon();
 }

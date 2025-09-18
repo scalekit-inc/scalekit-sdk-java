@@ -231,4 +231,49 @@ public interface SAMLConnectionConfigRequestOrBuilder extends
    * <code>.google.protobuf.BoolValue idp_slo_required = 19 [json_name = "idpSloRequired", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.BoolValueOrBuilder getIdpSloRequiredOrBuilder();
+
+  /**
+   * <code>.google.protobuf.StringValue sp_entity_id = 20 [json_name = "spEntityId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the spEntityId field is set.
+   */
+  boolean hasSpEntityId();
+  /**
+   * <code>.google.protobuf.StringValue sp_entity_id = 20 [json_name = "spEntityId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The spEntityId.
+   */
+  com.google.protobuf.StringValue getSpEntityId();
+  /**
+   * <code>.google.protobuf.StringValue sp_entity_id = 20 [json_name = "spEntityId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.StringValueOrBuilder getSpEntityIdOrBuilder();
+
+  /**
+   * <code>.google.protobuf.StringValue sp_assertion_url = 21 [json_name = "spAssertionUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the spAssertionUrl field is set.
+   */
+  boolean hasSpAssertionUrl();
+  /**
+   * <code>.google.protobuf.StringValue sp_assertion_url = 21 [json_name = "spAssertionUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The spAssertionUrl.
+   */
+  com.google.protobuf.StringValue getSpAssertionUrl();
+  /**
+   * <code>.google.protobuf.StringValue sp_assertion_url = 21 [json_name = "spAssertionUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.StringValueOrBuilder getSpAssertionUrlOrBuilder();
+
+  /**
+   * <code>.google.protobuf.StringValue sp_slo_url = 22 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the spSloUrl field is set.
+   */
+  boolean hasSpSloUrl();
+  /**
+   * <code>.google.protobuf.StringValue sp_slo_url = 22 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The spSloUrl.
+   */
+  com.google.protobuf.StringValue getSpSloUrl();
+  /**
+   * <code>.google.protobuf.StringValue sp_slo_url = 22 [json_name = "spSloUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.StringValueOrBuilder getSpSloUrlOrBuilder();
 }

@@ -320,6 +320,17 @@ private static final long serialVersionUID = 0L;
     return displayPriority_;
   }
 
+  public static final int COMING_SOON_FIELD_NUMBER = 9;
+  private boolean comingSoon_ = false;
+  /**
+   * <code>bool coming_soon = 9 [json_name = "comingSoon"];</code>
+   * @return The comingSoon.
+   */
+  @java.lang.Override
+  public boolean getComingSoon() {
+    return comingSoon_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -357,6 +368,9 @@ private static final long serialVersionUID = 0L;
     }
     if (displayPriority_ != 0) {
       output.writeInt32(8, displayPriority_);
+    }
+    if (comingSoon_ != false) {
+      output.writeBool(9, comingSoon_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -398,6 +412,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(8, displayPriority_);
     }
+    if (comingSoon_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(9, comingSoon_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -432,6 +450,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getIconSrc())) return false;
     if (getDisplayPriority()
         != other.getDisplayPriority()) return false;
+    if (getComingSoon()
+        != other.getComingSoon()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -463,6 +483,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getIconSrc().hashCode();
     hash = (37 * hash) + DISPLAY_PRIORITY_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayPriority();
+    hash = (37 * hash) + COMING_SOON_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getComingSoon());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -617,6 +640,7 @@ private static final long serialVersionUID = 0L;
       }
       iconSrc_ = "";
       displayPriority_ = 0;
+      comingSoon_ = false;
       return this;
     }
 
@@ -678,6 +702,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.displayPriority_ = displayPriority_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.comingSoon_ = comingSoon_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -767,6 +794,9 @@ private static final long serialVersionUID = 0L;
       if (other.getDisplayPriority() != 0) {
         setDisplayPriority(other.getDisplayPriority());
       }
+      if (other.getComingSoon() != false) {
+        setComingSoon(other.getComingSoon());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -836,6 +866,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000080;
               break;
             } // case 64
+            case 72: {
+              comingSoon_ = input.readBool();
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 72
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1473,6 +1508,38 @@ private static final long serialVersionUID = 0L;
     public Builder clearDisplayPriority() {
       bitField0_ = (bitField0_ & ~0x00000080);
       displayPriority_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean comingSoon_ ;
+    /**
+     * <code>bool coming_soon = 9 [json_name = "comingSoon"];</code>
+     * @return The comingSoon.
+     */
+    @java.lang.Override
+    public boolean getComingSoon() {
+      return comingSoon_;
+    }
+    /**
+     * <code>bool coming_soon = 9 [json_name = "comingSoon"];</code>
+     * @param value The comingSoon to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComingSoon(boolean value) {
+
+      comingSoon_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool coming_soon = 9 [json_name = "comingSoon"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearComingSoon() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      comingSoon_ = false;
       onChanged();
       return this;
     }

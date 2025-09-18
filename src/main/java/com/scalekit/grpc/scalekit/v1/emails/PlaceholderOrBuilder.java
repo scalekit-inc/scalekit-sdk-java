@@ -61,4 +61,10 @@ public interface PlaceholderOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCategoryBytes();
+
+  /**
+   * <code>int32 category_priority = 6 [json_name = "categoryPriority"];</code>
+   * @return The categoryPriority.
+   */
+  int getCategoryPriority();
 }

@@ -9,17 +9,17 @@ public interface GetDomainResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain"];</code>
+   * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the domain field is set.
    */
   boolean hasDomain();
   /**
-   * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain"];</code>
+   * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The domain.
    */
   com.scalekit.grpc.scalekit.v1.domains.Domain getDomain();
   /**
-   * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain"];</code>
+   * <code>.scalekit.v1.domains.Domain domain = 1 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder getDomainOrBuilder();
 }

@@ -9,154 +9,125 @@ public interface DomainOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string id = 1 [json_name = "id"];</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The id.
    */
   java.lang.String getId();
   /**
-   * <code>string id = 1 [json_name = "id"];</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
 
   /**
-   * <code>string domain = 2 [json_name = "domain"];</code>
+   * <code>string domain = 2 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The domain.
    */
   java.lang.String getDomain();
   /**
-   * <code>string domain = 2 [json_name = "domain"];</code>
+   * <code>string domain = 2 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for domain.
    */
   com.google.protobuf.ByteString
       getDomainBytes();
 
   /**
-   * <code>string environment_id = 3 [json_name = "environmentId"];</code>
+   * <code>string environment_id = 3 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The environmentId.
    */
   java.lang.String getEnvironmentId();
   /**
-   * <code>string environment_id = 3 [json_name = "environmentId"];</code>
+   * <code>string environment_id = 3 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for environmentId.
    */
   com.google.protobuf.ByteString
       getEnvironmentIdBytes();
 
   /**
-   * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 4 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The organizationId.
    */
   java.lang.String getOrganizationId();
   /**
-   * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 4 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for organizationId.
    */
   com.google.protobuf.ByteString
       getOrganizationIdBytes();
 
   /**
-   * <code>string connection_id = 5 [json_name = "connectionId"];</code>
-   * @return The connectionId.
-   */
-  java.lang.String getConnectionId();
-  /**
-   * <code>string connection_id = 5 [json_name = "connectionId"];</code>
-   * @return The bytes for connectionId.
-   */
-  com.google.protobuf.ByteString
-      getConnectionIdBytes();
-
-  /**
-   * <code>string txt_record_key = 6 [json_name = "txtRecordKey"];</code>
+   * <code>string txt_record_key = 6 [json_name = "txtRecordKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The txtRecordKey.
    */
   java.lang.String getTxtRecordKey();
   /**
-   * <code>string txt_record_key = 6 [json_name = "txtRecordKey"];</code>
+   * <code>string txt_record_key = 6 [json_name = "txtRecordKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for txtRecordKey.
    */
   com.google.protobuf.ByteString
       getTxtRecordKeyBytes();
 
   /**
-   * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret"];</code>
+   * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The txtRecordSecret.
    */
   java.lang.String getTxtRecordSecret();
   /**
-   * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret"];</code>
+   * <code>string txt_record_secret = 7 [json_name = "txtRecordSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for txtRecordSecret.
    */
   com.google.protobuf.ByteString
       getTxtRecordSecretBytes();
 
   /**
-   * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus"];</code>
+   * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enum numeric value on the wire for verificationStatus.
    */
   int getVerificationStatusValue();
   /**
-   * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus"];</code>
+   * <code>.scalekit.v1.domains.VerificationStatus verification_status = 8 [json_name = "verificationStatus", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The verificationStatus.
    */
   com.scalekit.grpc.scalekit.v1.domains.VerificationStatus getVerificationStatus();
 
   /**
-   * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime"];</code>
+   * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
-   * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime"];</code>
+   * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
-   * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime"];</code>
+   * <code>.google.protobuf.Timestamp create_time = 9 [json_name = "createTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime"];</code>
+   * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
-   * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime"];</code>
+   * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
-   * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime"];</code>
+   * <code>.google.protobuf.Timestamp update_time = 10 [json_name = "updateTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
   /**
-   * <code>optional string created_by = 11 [json_name = "createdBy"];</code>
-   * @return Whether the createdBy field is set.
-   */
-  boolean hasCreatedBy();
-  /**
-   * <code>optional string created_by = 11 [json_name = "createdBy"];</code>
-   * @return The createdBy.
-   */
-  java.lang.String getCreatedBy();
-  /**
-   * <code>optional string created_by = 11 [json_name = "createdBy"];</code>
-   * @return The bytes for createdBy.
-   */
-  com.google.protobuf.ByteString
-      getCreatedByBytes();
-
-  /**
-   * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType"];</code>
+   * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enum numeric value on the wire for domainType.
    */
   int getDomainTypeValue();
   /**
-   * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType"];</code>
+   * <code>.scalekit.v1.domains.DomainType domain_type = 12 [json_name = "domainType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The domainType.
    */
   com.scalekit.grpc.scalekit.v1.domains.DomainType getDomainType();

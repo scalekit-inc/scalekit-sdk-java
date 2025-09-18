@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
   private SearchConnectedAccountsRequest() {
     query_ = "";
     pageToken_ = "";
+    connectionId_ = "";
   }
 
   @java.lang.Override
@@ -130,6 +131,45 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CONNECTION_ID_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object connectionId_ = "";
+  /**
+   * <code>string connection_id = 4 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The connectionId.
+   */
+  @java.lang.Override
+  public java.lang.String getConnectionId() {
+    java.lang.Object ref = connectionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      connectionId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string connection_id = 4 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for connectionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getConnectionIdBytes() {
+    java.lang.Object ref = connectionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      connectionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -153,6 +193,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, connectionId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -171,6 +214,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, connectionId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -193,6 +239,8 @@ private static final long serialVersionUID = 0L;
         != other.getPageSize()) return false;
     if (!getPageToken()
         .equals(other.getPageToken())) return false;
+    if (!getConnectionId()
+        .equals(other.getConnectionId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -210,6 +258,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + CONNECTION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getConnectionId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -344,6 +394,7 @@ private static final long serialVersionUID = 0L;
       query_ = "";
       pageSize_ = 0;
       pageToken_ = "";
+      connectionId_ = "";
       return this;
     }
 
@@ -385,6 +436,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.connectionId_ = connectionId_;
       }
     }
 
@@ -445,6 +499,11 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.getConnectionId().isEmpty()) {
+        connectionId_ = other.connectionId_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -486,6 +545,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000004;
               break;
             } // case 26
+            case 34: {
+              connectionId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -675,6 +739,78 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       pageToken_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object connectionId_ = "";
+    /**
+     * <code>string connection_id = 4 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The connectionId.
+     */
+    public java.lang.String getConnectionId() {
+      java.lang.Object ref = connectionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        connectionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string connection_id = 4 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for connectionId.
+     */
+    public com.google.protobuf.ByteString
+        getConnectionIdBytes() {
+      java.lang.Object ref = connectionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        connectionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string connection_id = 4 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The connectionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectionId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      connectionId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string connection_id = 4 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearConnectionId() {
+      connectionId_ = getDefaultInstance().getConnectionId();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string connection_id = 4 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for connectionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectionIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      connectionId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

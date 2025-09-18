@@ -63,254 +63,192 @@ public final class PasswordlessProto {
       "estamp.proto\032.protoc-gen-openapiv2/optio" +
       "ns/annotations.proto\032!scalekit/v1/common" +
       "s/commons.proto\032!scalekit/v1/options/opt" +
-      "ions.proto\"\310\020\n\027SendPasswordlessRequest\022\255" +
-      "\001\n\005email\030\001 \001(\tB\226\001\222A\205\0012kEmail address whe" +
+      "ions.proto\"\312\020\n\027SendPasswordlessRequest\022\257" +
+      "\001\n\005email\030\001 \001(\tB\230\001\222A\205\0012kEmail address whe" +
       "re the passwordless authentication crede" +
       "ntials will be sent. Must be a valid ema" +
-      "il format.J\026\"john.doe@example.com\"\272H\nr\005\020" +
-      "\001\030\300\002\310\001\001R\005email\022\246\002\n\010template\030\002 \001(\0162+.scal" +
-      "ekit.v1.auth.passwordless.TemplateTypeB\327" +
-      "\001\222A\313\0012\276\001Specifies the authentication int" +
-      "ent for the passwordless request. Use SI" +
-      "GNIN for existing users or SIGNUP for ne" +
-      "w user registration. This affects the em" +
-      "ail template and user experience flow.J\010" +
-      "\"SIGNIN\"\272H\005\202\001\002\020\001H\000R\010template\210\001\001\022\251\002\n\022magi" +
-      "clink_auth_uri\030\003 \001(\tB\365\001\222A\344\0012\257\001Your appli" +
-      "cation\'s callback URL where users will b" +
-      "e redirected after clicking the magic li" +
-      "nk in their email. The link token will b" +
-      "e appended as a query parameter as link_" +
-      "tokenJ0\"https://yourapp.com/auth/passwor" +
-      "dless/callback\"\340A\001\272H\007r\005\020\001\030\350\007H\001R\020magiclin" +
-      "kAuthUri\210\001\001\022\233\002\n\005state\030\004 \001(\tB\377\001\222A\356\0012\331\001Cus" +
-      "tom state parameter that will be returne" +
-      "d unchanged in the verification response" +
-      ". Use this to maintain application state" +
-      " between the authentication request and " +
-      "callback, such as the intended destinati" +
-      "on after loginJ\020\"d62ivasry29lso\"\340A\001\272H\007r\005" +
-      "\020\001\030\350\007H\002R\005state\210\001\001\022\246\001\n\nexpires_in\030\005 \001(\rB\201" +
-      "\001\222A{2tTime in seconds until the password" +
-      "less authentication expires. If not spec" +
-      "ified, defaults to 300 seconds (5 minute" +
-      "s)J\003300\340A\001H\003R\texpiresIn\210\001\001\022\335\005\n\022template_" +
-      "variables\030\006 \003(\0132M.scalekit.v1.auth.passw" +
-      "ordless.SendPasswordlessRequest.Template" +
-      "VariablesEntryB\336\004\222A\317\0042\232\004A set of key-val" +
-      "ue pairs to personalize the email templa" +
-      "te.\n\n* You may include up to 30 key-valu" +
-      "e pairs.\n* The following variable names " +
-      "are reserved by the system and cannot be" +
-      " supplied: `otp`, `expiry_time_relative`" +
-      ", `link`, `expire_time`, `expiry_time`.\n" +
-      "* Every variable referenced in your emai" +
-      "l template must be included as a key-val" +
-      "ue pair.\n\nUse these variables to insert " +
-      "custom information, such as a team name," +
-      " URL or the user\'s employee ID. All vari" +
-      "ables are interpolated before the email " +
-      "is sent, regardless of the email provide" +
-      "r.J0{\"custom_variable_key\": \"custom_vari" +
-      "able_value\"}\340A\001\272H\005\232\001\002\020\036R\021templateVariabl" +
-      "es\032D\n\026TemplateVariablesEntry\022\020\n\003key\030\001 \001(" +
-      "\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\013\n\t_tem" +
-      "plateB\025\n\023_magiclink_auth_uriB\010\n\006_stateB\r" +
-      "\n\013_expires_in\"\234\007\n\030SendPasswordlessRespon" +
-      "se\022\305\001\n\017auth_request_id\030\001 \001(\tB\234\001\222A\225\0012]Uni" +
-      "que identifier for this passwordless aut" +
-      "hentication request. Use this ID to rese" +
-      "nd emails.J4\"h5Y8kT5RVwaea5WEgW4n-6C-aO_" +
-      "-fuTUW7Vb9-Rh3AcY9qxZqQ\"\340A\003R\rauthRequest" +
-      "Id\022\314\001\n\nexpires_at\030\002 \001(\003B\254\001\222A\245\0012\226\001Unix ti" +
-      "mestamp (seconds since epoch) when the p" +
-      "asswordless authentication will expire. " +
-      "After this time, the OTP or magic link w" +
-      "ill no longer be valid.J\n1748696575\340A\003R\t" +
-      "expiresAt\022\276\001\n\nexpires_in\030\003 \001(\rB\236\001\222A\227\0012\217\001" +
-      "Number of seconds from now until the pas" +
-      "swordless authentication expires. This i" +
-      "s a convenience field calculated from th" +
-      "e expires_at timestamp.J\003300\340A\003R\texpires" +
-      "In\022\247\002\n\021passwordless_type\030\004 \001(\0162/.scaleki" +
-      "t.v1.auth.passwordless.PasswordlessTypeB" +
-      "\310\001\222A\274\0012\262\001Type of passwordless authentica" +
-      "tion that was sent via email. OTP sends " +
-      "a numeric code, LINK sends a clickable m" +
-      "agic link, and LINK_OTP provides both op" +
-      "tions for user convenience.J\005\"OTP\"\272H\005\202\001\002" +
-      "\020\001R\020passwordlessType\"\264\006\n\031VerifyPasswordL" +
-      "essRequest\022\275\001\n\004code\030\001 \001(\tB\246\001\222A\231\0012\214\001The V" +
-      "erification Code (OTP) received via emai" +
-      "l. This is typically a 6-digit numeric c" +
-      "ode that users enter manually to verify " +
-      "their identity.J\010\"123456\"\272H\006r\004\020\001\030\024H\000R\004co" +
-      "de\022\212\002\n\nlink_token\030\002 \001(\tB\350\001\222A\333\0012\260\001The uni" +
-      "que token from the magic link URL receiv" +
-      "ed via email. Extract this token when us" +
-      "ers click the magic link and are redirec" +
-      "ted to your application to later verify " +
-      "the user.J&\"afe9d61c-d80d-4020-a8ee-6176" +
-      "5ab71cb3\"\272H\006r\004\020\001\030dH\000R\tlinkToken\022\242\002\n\017auth" +
-      "_request_id\030\003 \001(\tB\364\001\222A\350\0012\257\001The authentic" +
-      "ation request identifier returned from t" +
-      "he send passwordless email endpoint. Req" +
-      "uired when verifying OTP codes to link t" +
-      "he verification with the original reques" +
-      "t.J4\"h5Y8kT5RVwaea5WEgW4n-6C-aO_-fuTUW7V" +
-      "b9-Rh3AcY9qxZqQ\"\272H\005r\003\030\310\001H\001R\rauthRequestI" +
-      "d\210\001\001B\021\n\017auth_credentialB\022\n\020_auth_request" +
-      "_id\"\301\002\n\031ResendPasswordlessRequest\022\243\002\n\017au" +
-      "th_request_id\030\001 \001(\tB\372\001\222A\351\0012\260\001The authent" +
-      "ication request identifier from the orig" +
-      "inal send passwordless email request. Us" +
-      "e this to resend the Verification Code (" +
-      "OTP) or Magic Link to the same email add" +
-      "ress.J4\"h5Y8kT5RVwaea5WEgW4n-6C-aO_-fuTU" +
-      "W7Vb9-Rh3AcY9qxZqQ\"\272H\nr\005\020\001\030\310\001\310\001\001R\rauthRe" +
-      "questId\"\224\007\n\032VerifyPasswordLessResponse\022\274" +
-      "\001\n\005email\030\001 \001(\tB\245\001\222A\236\0012\203\001Email address of" +
-      " the successfully authenticated user. Th" +
-      "is confirms which email account was veri" +
-      "fied through the passwordless flow.J\026\"jo" +
-      "hn.doe@example.com\"\340A\003R\005email\022\350\001\n\005state\030" +
-      "\002 \001(\tB\314\001\222A\305\0012\255\001The custom state paramete" +
-      "r that was provided in the original auth" +
-      "entication request, returned unchanged. " +
-      "Use this to restore your application\'s c" +
-      "ontext after authentication.J\023\"kdt7yiag2" +
-      "8t341fr1\"\340A\003H\000R\005state\210\001\001\022\313\001\n\010template\030\003 " +
-      "\001(\0162+.scalekit.v1.auth.passwordless.Temp" +
-      "lateTypeB}\222Ar2fSpecifies which email tem" +
-      "plate to choose. For User Signin choose " +
-      "SIGNIN and for User Signup use SIGNUPJ\010\"" +
-      "SIGNIN\"\272H\005\202\001\002\020\001H\001R\010template\210\001\001\022\346\001\n\021passw" +
-      "ordless_type\030\004 \001(\0162/.scalekit.v1.auth.pa" +
-      "sswordless.PasswordlessTypeB\207\001\222A|2sThe t" +
-      "ype of passwordless authentication that " +
-      "was successfully verified, confirming wh" +
-      "ich method the user completed.J\005\"OTP\"\272H\005" +
-      "\202\001\002\020\001R\020passwordlessTypeB\010\n\006_stateB\013\n\t_te" +
-      "mplate*7\n\014TemplateType\022\017\n\013UNSPECIFIED\020\000\022" +
-      "\n\n\006SIGNIN\020\001\022\n\n\006SIGNUP\020\002*V\n\020PasswordlessT" +
-      "ype\022!\n\035PASSWORDLESS_TYPE_UNSPECIFIED\020\000\022\007" +
-      "\n\003OTP\020\001\022\010\n\004LINK\020\002\022\014\n\010LINK_OTP\020\0032\351!\n\023Pass" +
-      "wordlessService\022\333\014\n\025SendPasswordlessEmai" +
-      "l\0226.scalekit.v1.auth.passwordless.SendPa" +
-      "sswordlessRequest\0327.scalekit.v1.auth.pas" +
-      "swordless.SendPasswordlessResponse\"\320\013\222A\234" +
-      "\013\n\021Passwordless Auth\022\027Send passwordless " +
-      "email\032tSend a verification email contain" +
-      "ing either a verification code (OTP), ma" +
-      "gic link, or both to a user\'s email addr" +
-      "essJ\320\001\n\003200\022\310\001\n\215\001Successfully sent passw" +
-      "ordless authentication email. Returns th" +
-      "e authentication request details includi" +
-      "ng expiration time and auth request ID\0226" +
-      "\n4\0322#/definitions/passwordlessSendPasswo" +
-      "rdlessResponsej\244\010\n\rx-codeSamples\022\222\0102\217\010\n\374" +
-      "\002*\371\002\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004lang\022\014\032\n" +
-      "javascript\n\310\002\n\006source\022\275\002\032\272\002const respons" +
-      "e = await scalekit.passwordless.\n  sendP" +
-      "asswordlessEmail(\n\t\"john.doe@example.com" +
-      "\",\n\t{\n\t\ttemplate: \"SIGNIN\",\n\t\texpiresIn:" +
-      " 100,\n\t\tmagiclinkAuthUri: \"https://www.g" +
-      "oogle.com\",\n\t\ttemplateVariables: {\n\t\t\tem" +
-      "ployeeID: \"EMP523\",\n\t\t\tteamName: \"Alpha " +
-      "Team\",\n\t\t\tsupportEmail: \"support@yourcom" +
-      "pany.com\",\n\t\t},\n\t}\n);\n\215\005*\212\005\n\021\n\005label\022\010\032\006" +
-      "Go SDK\n\014\n\004lang\022\004\032\002go\n\346\004\n\006source\022\333\004\032\330\004tem" +
-      "plateType := scalekit.TemplateTypeSignin" +
-      "\nresponse, err := client.Passwordless()." +
-      "SendPasswordlessEmail(\n    ctx,\n    \"joh" +
-      "n.doe@example.com\",\n    &scalekit.SendPa" +
-      "sswordlessOptions{\n        Template:    " +
-      "     &templateType,\n        ExpiresIn:  " +
-      "      100,\n        MagiclinkAuthUri: \"ht" +
-      "tps://www.google.com\",\n        TemplateV" +
-      "ariables: map[string]string{\n           " +
-      " \"employeeID\":    \"EMP523\",\n            " +
-      "\"teamName\":      \"Alpha Team\",\n         " +
-      "   \"supportEmail\":  \"support@yourcompany" +
-      ".com\",\n        },\n    },\n)\n\nif err != ni" +
-      "l {\n    // Handle error\n    return\n}\n\nau" +
-      "thRequestId := response.AuthRequestId\202\265\030" +
-      "\002\030\004\202\323\344\223\002$\"\037/api/v1/passwordless/email/se" +
-      "nd:\001*\022\274\013\n\027VerifyPasswordlessEmail\0228.scal" +
-      "ekit.v1.auth.passwordless.VerifyPassword" +
-      "LessRequest\0329.scalekit.v1.auth.passwordl" +
-      "ess.VerifyPasswordLessResponse\"\253\n\222A\365\t\n\021P" +
-      "asswordless Auth\022\031Verify passwordless em" +
-      "ail\032MVerify a user\'s identity using eith" +
-      "er a verification code or magic link tok" +
-      "enJ\222\001\n\003200\022\212\001\nISuccessfully verified the" +
-      " passwordless authentication. Returns us" +
-      "er email\022=\n;\0329.scalekit.v1.auth.password" +
-      "less.VerifyPasswordLessResponsej\340\007\n\rx-co" +
-      "deSamples\022\316\0072\313\007\n\254\002*\251\002\n\026\n\005label\022\r\032\013Node.j" +
-      "s SDK\n\024\n\004lang\022\014\032\njavascript\n\370\001\n\006source\022\355" +
-      "\001\032\352\001const { authRequestId } = sendRespon" +
-      "se;\nconst verifyResponse = await scaleki" +
-      "t.passwordless.\n  verifyPasswordlessEmai" +
-      "l(\n\t// Verification Code (OTP)\n\t{ code: " +
-      "\"123456\" },\n\t// Magic Link Token\n\t{ link" +
-      "Token: link_token },\n\tauthRequestId\n);\n\231" +
-      "\005*\226\005\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n\362\004" +
-      "\n\006source\022\347\004\032\344\004// Verify with OTP code\nve" +
-      "rifyResponse, err := client.Passwordless" +
-      "().VerifyPasswordlessEmail(\n    ctx,\n   " +
-      " &scalekit.VerifyPasswordlessOptions{\n  " +
-      "      Code:          \"123456\", // OTP co" +
-      "de\n        AuthRequestId: authRequestId," +
-      "\n    },\n)\n\nif err != nil {\n    // Handle" +
-      " error\n    return\n}\n\n// Verify with magi" +
-      "c link token\nverifyResponse, err := clie" +
-      "nt.Passwordless().VerifyPasswordlessEmai" +
-      "l(\n    ctx,\n    &scalekit.VerifyPassword" +
-      "lessOptions{\n        LinkToken: linkToke" +
-      "n, // Magic link token\n    },\n)\n\nif err " +
-      "!= nil {\n    // Handle error\n    return\n" +
-      "}\n\n// User verified successfully\nuserEma" +
-      "il := verifyResponse.Email\202\265\030\002\030\004\202\323\344\223\002&\"!" +
-      "/api/v1/passwordless/email/verify:\001*\022\330\007\n" +
-      "\027ResendPasswordlessEmail\0228.scalekit.v1.a" +
-      "uth.passwordless.ResendPasswordlessReque" +
-      "st\0327.scalekit.v1.auth.passwordless.SendP" +
-      "asswordlessResponse\"\311\006\222A\223\006\n\021Passwordless" +
-      " Auth\022\031Resend passwordless email\032bResend" +
-      " a verification email if the user didn\'t" +
-      " receive it or if the previous code/link" +
-      " has expiredJ\313\001\n\003200\022\303\001\n\203\001Successfully r" +
-      "esent the passwordless authentication em" +
-      "ail. Returns updated authentication requ" +
-      "est details with new expiration time.\022;\n" +
-      "9\0327.scalekit.v1.auth.passwordless.SendPa" +
-      "sswordlessResponsej\260\003\n\rx-codeSamples\022\236\0032" +
-      "\233\003\n\313\001*\310\001\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004lang" +
-      "\022\014\032\njavascript\n\227\001\n\006source\022\214\001\032\211\001const { a" +
-      "uthRequestId } = sendResponse;\nconst res" +
-      "endResponse = await scalekit.passwordles" +
-      "s\n.resendPasswordlessEmail(\n    authRequ" +
-      "estId\n);\n\312\001*\307\001\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lan" +
-      "g\022\004\032\002go\n\243\001\n\006source\022\230\001\032\225\001resendResponse, " +
-      "err := client.Passwordless().ResendPassw" +
-      "ordlessEmail(\n    ctx,\n    authRequestId" +
-      ",\n)\n\nif err != nil {\n    // Handle error" +
-      "\n    return\n}\202\265\030\002\030\004\202\323\344\223\002&\"!/api/v1/passw" +
-      "ordless/email/resend:\001*\032\331\001\222A\325\001\n\021Password" +
-      "less Auth\022\277\001Endpoints for sending and ve" +
-      "rifying passwordless authentication emai" +
-      "ls. These APIs allow users to authentica" +
-      "te without passwords by receiving a veri" +
-      "fication code or magic link in their ema" +
-      "il.B\231\002\n/com.scalekit.grpc.scalekit.v1.au" +
-      "th.passwordlessB\021PasswordlessProtoP\001Z;gi" +
-      "thub.com/scalekit-inc/scalekit/pkg/grpc/" +
-      "auth/passwordless\242\002\004SVAP\252\002\035Scalekit.V1.A" +
-      "uth.Passwordless\312\002\035Scalekit\\V1\\Auth\\Pass" +
-      "wordless\342\002)Scalekit\\V1\\Auth\\Passwordless" +
-      "\\GPBMetadata\352\002 Scalekit::V1::Auth::Passw" +
-      "ordlessb\006proto3"
+      "il format.J\026\"john.doe@example.com\"\272H\014r\007\020" +
+      "\001\030\300\002`\001\310\001\001R\005email\022\246\002\n\010template\030\002 \001(\0162+.sc" +
+      "alekit.v1.auth.passwordless.TemplateType" +
+      "B\327\001\222A\313\0012\276\001Specifies the authentication i" +
+      "ntent for the passwordless request. Use " +
+      "SIGNIN for existing users or SIGNUP for " +
+      "new user registration. This affects the " +
+      "email template and user experience flow." +
+      "J\010\"SIGNIN\"\272H\005\202\001\002\020\001H\000R\010template\210\001\001\022\251\002\n\022ma" +
+      "giclink_auth_uri\030\003 \001(\tB\365\001\222A\344\0012\257\001Your app" +
+      "lication\'s callback URL where users will" +
+      " be redirected after clicking the magic " +
+      "link in their email. The link token will" +
+      " be appended as a query parameter as lin" +
+      "k_tokenJ0\"https://yourapp.com/auth/passw" +
+      "ordless/callback\"\340A\001\272H\007r\005\020\001\030\350\007H\001R\020magicl" +
+      "inkAuthUri\210\001\001\022\233\002\n\005state\030\004 \001(\tB\377\001\222A\356\0012\331\001C" +
+      "ustom state parameter that will be retur" +
+      "ned unchanged in the verification respon" +
+      "se. Use this to maintain application sta" +
+      "te between the authentication request an" +
+      "d callback, such as the intended destina" +
+      "tion after loginJ\020\"d62ivasry29lso\"\340A\001\272H\007" +
+      "r\005\020\001\030\350\007H\002R\005state\210\001\001\022\246\001\n\nexpires_in\030\005 \001(\r" +
+      "B\201\001\222A{2tTime in seconds until the passwo" +
+      "rdless authentication expires. If not sp" +
+      "ecified, defaults to 300 seconds (5 minu" +
+      "tes)J\003300\340A\001H\003R\texpiresIn\210\001\001\022\335\005\n\022templat" +
+      "e_variables\030\006 \003(\0132M.scalekit.v1.auth.pas" +
+      "swordless.SendPasswordlessRequest.Templa" +
+      "teVariablesEntryB\336\004\222A\317\0042\232\004A set of key-v" +
+      "alue pairs to personalize the email temp" +
+      "late.\n\n* You may include up to 30 key-va" +
+      "lue pairs.\n* The following variable name" +
+      "s are reserved by the system and cannot " +
+      "be supplied: `otp`, `expiry_time_relativ" +
+      "e`, `link`, `expire_time`, `expiry_time`" +
+      ".\n* Every variable referenced in your em" +
+      "ail template must be included as a key-v" +
+      "alue pair.\n\nUse these variables to inser" +
+      "t custom information, such as a team nam" +
+      "e, URL or the user\'s employee ID. All va" +
+      "riables are interpolated before the emai" +
+      "l is sent, regardless of the email provi" +
+      "der.J0{\"custom_variable_key\": \"custom_va" +
+      "riable_value\"}\340A\001\272H\005\232\001\002\020\036R\021templateVaria" +
+      "bles\032D\n\026TemplateVariablesEntry\022\020\n\003key\030\001 " +
+      "\001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\013\n\t_t" +
+      "emplateB\025\n\023_magiclink_auth_uriB\010\n\006_state" +
+      "B\r\n\013_expires_in\"\234\007\n\030SendPasswordlessResp" +
+      "onse\022\305\001\n\017auth_request_id\030\001 \001(\tB\234\001\222A\225\0012]U" +
+      "nique identifier for this passwordless a" +
+      "uthentication request. Use this ID to re" +
+      "send emails.J4\"h5Y8kT5RVwaea5WEgW4n-6C-a" +
+      "O_-fuTUW7Vb9-Rh3AcY9qxZqQ\"\340A\003R\rauthReque" +
+      "stId\022\314\001\n\nexpires_at\030\002 \001(\003B\254\001\222A\245\0012\226\001Unix " +
+      "timestamp (seconds since epoch) when the" +
+      " passwordless authentication will expire" +
+      ". After this time, the OTP or magic link" +
+      " will no longer be valid.J\n1748696575\340A\003" +
+      "R\texpiresAt\022\276\001\n\nexpires_in\030\003 \001(\rB\236\001\222A\227\0012" +
+      "\217\001Number of seconds from now until the p" +
+      "asswordless authentication expires. This" +
+      " is a convenience field calculated from " +
+      "the expires_at timestamp.J\003300\340A\003R\texpir" +
+      "esIn\022\247\002\n\021passwordless_type\030\004 \001(\0162/.scale" +
+      "kit.v1.auth.passwordless.PasswordlessTyp" +
+      "eB\310\001\222A\274\0012\262\001Type of passwordless authenti" +
+      "cation that was sent via email. OTP send" +
+      "s a numeric code, LINK sends a clickable" +
+      " magic link, and LINK_OTP provides both " +
+      "options for user convenience.J\005\"OTP\"\272H\005\202" +
+      "\001\002\020\001R\020passwordlessType\"\264\006\n\031VerifyPasswor" +
+      "dLessRequest\022\275\001\n\004code\030\001 \001(\tB\246\001\222A\231\0012\214\001The" +
+      " Verification Code (OTP) received via em" +
+      "ail. This is typically a 6-digit numeric" +
+      " code that users enter manually to verif" +
+      "y their identity.J\010\"123456\"\272H\006r\004\020\001\030\024H\000R\004" +
+      "code\022\212\002\n\nlink_token\030\002 \001(\tB\350\001\222A\333\0012\260\001The u" +
+      "nique token from the magic link URL rece" +
+      "ived via email. Extract this token when " +
+      "users click the magic link and are redir" +
+      "ected to your application to later verif" +
+      "y the user.J&\"afe9d61c-d80d-4020-a8ee-61" +
+      "765ab71cb3\"\272H\006r\004\020\001\030dH\000R\tlinkToken\022\242\002\n\017au" +
+      "th_request_id\030\003 \001(\tB\364\001\222A\350\0012\257\001The authent" +
+      "ication request identifier returned from" +
+      " the send passwordless email endpoint. R" +
+      "equired when verifying OTP codes to link" +
+      " the verification with the original requ" +
+      "est.J4\"h5Y8kT5RVwaea5WEgW4n-6C-aO_-fuTUW" +
+      "7Vb9-Rh3AcY9qxZqQ\"\272H\005r\003\030\310\001H\001R\rauthReques" +
+      "tId\210\001\001B\021\n\017auth_credentialB\022\n\020_auth_reque" +
+      "st_id\"\301\002\n\031ResendPasswordlessRequest\022\243\002\n\017" +
+      "auth_request_id\030\001 \001(\tB\372\001\222A\351\0012\260\001The authe" +
+      "ntication request identifier from the or" +
+      "iginal send passwordless email request. " +
+      "Use this to resend the Verification Code" +
+      " (OTP) or Magic Link to the same email a" +
+      "ddress.J4\"h5Y8kT5RVwaea5WEgW4n-6C-aO_-fu" +
+      "TUW7Vb9-Rh3AcY9qxZqQ\"\272H\nr\005\020\001\030\310\001\310\001\001R\rauth" +
+      "RequestId\"\224\007\n\032VerifyPasswordLessResponse" +
+      "\022\274\001\n\005email\030\001 \001(\tB\245\001\222A\236\0012\203\001Email address " +
+      "of the successfully authenticated user. " +
+      "This confirms which email account was ve" +
+      "rified through the passwordless flow.J\026\"" +
+      "john.doe@example.com\"\340A\003R\005email\022\350\001\n\005stat" +
+      "e\030\002 \001(\tB\314\001\222A\305\0012\255\001The custom state parame" +
+      "ter that was provided in the original au" +
+      "thentication request, returned unchanged" +
+      ". Use this to restore your application\'s" +
+      " context after authentication.J\023\"kdt7yia" +
+      "g28t341fr1\"\340A\003H\000R\005state\210\001\001\022\313\001\n\010template\030" +
+      "\003 \001(\0162+.scalekit.v1.auth.passwordless.Te" +
+      "mplateTypeB}\222Ar2fSpecifies which email t" +
+      "emplate to choose. For User Signin choos" +
+      "e SIGNIN and for User Signup use SIGNUPJ" +
+      "\010\"SIGNIN\"\272H\005\202\001\002\020\001H\001R\010template\210\001\001\022\346\001\n\021pas" +
+      "swordless_type\030\004 \001(\0162/.scalekit.v1.auth." +
+      "passwordless.PasswordlessTypeB\207\001\222A|2sThe" +
+      " type of passwordless authentication tha" +
+      "t was successfully verified, confirming " +
+      "which method the user completed.J\005\"OTP\"\272" +
+      "H\005\202\001\002\020\001R\020passwordlessTypeB\010\n\006_stateB\013\n\t_" +
+      "template*7\n\014TemplateType\022\017\n\013UNSPECIFIED\020" +
+      "\000\022\n\n\006SIGNIN\020\001\022\n\n\006SIGNUP\020\002*V\n\020Passwordles" +
+      "sType\022!\n\035PASSWORDLESS_TYPE_UNSPECIFIED\020\000" +
+      "\022\007\n\003OTP\020\001\022\010\n\004LINK\020\002\022\014\n\010LINK_OTP\020\0032\254\016\n\023Pa" +
+      "sswordlessService\022\264\004\n\025SendPasswordlessEm" +
+      "ail\0226.scalekit.v1.auth.passwordless.Send" +
+      "PasswordlessRequest\0327.scalekit.v1.auth.p" +
+      "asswordless.SendPasswordlessResponse\"\251\003\222" +
+      "A\365\002\n\021Passwordless Auth\022\027Send passwordles" +
+      "s email\032tSend a verification email conta" +
+      "ining either a verification code (OTP), " +
+      "magic link, or both to a user\'s email ad" +
+      "dressJ\320\001\n\003200\022\310\001\n\215\001Successfully sent pas" +
+      "swordless authentication email. Returns " +
+      "the authentication request details inclu" +
+      "ding expiration time and auth request ID" +
+      "\0226\n4\0322#/definitions/passwordlessSendPass" +
+      "wordlessResponse\202\265\030\002\030\004\202\323\344\223\002$\"\037/api/v1/pa" +
+      "sswordless/email/send:\001*\022\331\003\n\027VerifyPassw" +
+      "ordlessEmail\0228.scalekit.v1.auth.password" +
+      "less.VerifyPasswordLessRequest\0329.scaleki" +
+      "t.v1.auth.passwordless.VerifyPasswordLes" +
+      "sResponse\"\310\002\222A\222\002\n\021Passwordless Auth\022\031Ver" +
+      "ify passwordless email\032MVerify a user\'s " +
+      "identity using either a verification cod" +
+      "e or magic link tokenJ\222\001\n\003200\022\212\001\nISucces" +
+      "sfully verified the passwordless authent" +
+      "ication. Returns user email\022=\n;\0329.scalek" +
+      "it.v1.auth.passwordless.VerifyPasswordLe" +
+      "ssResponse\202\265\030\002\030\004\202\323\344\223\002&\"!/api/v1/password" +
+      "less/email/verify:\001*\022\245\004\n\027ResendPasswordl" +
+      "essEmail\0228.scalekit.v1.auth.passwordless" +
+      ".ResendPasswordlessRequest\0327.scalekit.v1" +
+      ".auth.passwordless.SendPasswordlessRespo" +
+      "nse\"\226\003\222A\340\002\n\021Passwordless Auth\022\031Resend pa" +
+      "sswordless email\032bResend a verification " +
+      "email if the user didn\'t receive it or i" +
+      "f the previous code/link has expiredJ\313\001\n" +
+      "\003200\022\303\001\n\203\001Successfully resent the passwo" +
+      "rdless authentication email. Returns upd" +
+      "ated authentication request details with" +
+      " new expiration time.\022;\n9\0327.scalekit.v1." +
+      "auth.passwordless.SendPasswordlessRespon" +
+      "se\202\265\030\002\030\004\202\323\344\223\002&\"!/api/v1/passwordless/ema" +
+      "il/resend:\001*\032\331\001\222A\325\001\n\021Passwordless Auth\022\277" +
+      "\001Endpoints for sending and verifying pas" +
+      "swordless authentication emails. These A" +
+      "PIs allow users to authenticate without " +
+      "passwords by receiving a verification co" +
+      "de or magic link in their email.B\231\002\n/com" +
+      ".scalekit.grpc.scalekit.v1.auth.password" +
+      "lessB\021PasswordlessProtoP\001Z;github.com/sc" +
+      "alekit-inc/scalekit/pkg/grpc/auth/passwo" +
+      "rdless\242\002\004SVAP\252\002\035Scalekit.V1.Auth.Passwor" +
+      "dless\312\002\035Scalekit\\V1\\Auth\\Passwordless\342\002)" +
+      "Scalekit\\V1\\Auth\\Passwordless\\GPBMetadat" +
+      "a\352\002 Scalekit::V1::Auth::Passwordlessb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

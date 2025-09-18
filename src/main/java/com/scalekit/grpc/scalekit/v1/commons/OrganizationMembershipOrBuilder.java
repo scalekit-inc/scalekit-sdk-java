@@ -139,21 +139,21 @@ java.lang.String defaultValue);
       getDisplayNameBytes();
 
   /**
-   * <code>optional string invited_by = 10 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the invitedBy field is set.
+   * <code>optional string inviter_email = 10 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the inviterEmail field is set.
    */
-  boolean hasInvitedBy();
+  boolean hasInviterEmail();
   /**
-   * <code>optional string invited_by = 10 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The invitedBy.
+   * <code>optional string inviter_email = 10 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The inviterEmail.
    */
-  java.lang.String getInvitedBy();
+  java.lang.String getInviterEmail();
   /**
-   * <code>optional string invited_by = 10 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for invitedBy.
+   * <code>optional string inviter_email = 10 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for inviterEmail.
    */
   com.google.protobuf.ByteString
-      getInvitedByBytes();
+      getInviterEmailBytes();
 
   /**
    * <code>optional .google.protobuf.Timestamp created_at = 11 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>

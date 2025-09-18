@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     connectionProvider_ = "";
     status_ = "";
     connectionDetails_ = java.util.Collections.emptyList();
+    workflow_ = "";
   }
 
   @java.lang.Override
@@ -428,6 +429,45 @@ private static final long serialVersionUID = 0L;
     return connectionDetails_.get(index);
   }
 
+  public static final int WORKFLOW_FIELD_NUMBER = 11;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workflow_ = "";
+  /**
+   * <code>string workflow = 11 [json_name = "workflow"];</code>
+   * @return The workflow.
+   */
+  @java.lang.Override
+  public java.lang.String getWorkflow() {
+    java.lang.Object ref = workflow_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      workflow_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string workflow = 11 [json_name = "workflow"];</code>
+   * @return The bytes for workflow.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getWorkflowBytes() {
+    java.lang.Object ref = workflow_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      workflow_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -472,6 +512,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < connectionDetails_.size(); i++) {
       output.writeMessage(10, connectionDetails_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflow_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, workflow_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -513,6 +556,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, connectionDetails_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflow_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, workflow_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -551,6 +597,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getConnectionDetailsList()
         .equals(other.getConnectionDetailsList())) return false;
+    if (!getWorkflow()
+        .equals(other.getWorkflow())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -586,6 +634,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CONNECTION_DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getConnectionDetailsList().hashCode();
     }
+    hash = (37 * hash) + WORKFLOW_FIELD_NUMBER;
+    hash = (53 * hash) + getWorkflow().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -744,6 +794,7 @@ private static final long serialVersionUID = 0L;
         connectionDetailsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000200);
+      workflow_ = "";
       return this;
     }
 
@@ -820,6 +871,9 @@ private static final long serialVersionUID = 0L;
             ? timestamp_
             : timestampBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.workflow_ = workflow_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -937,6 +991,11 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (!other.getWorkflow().isEmpty()) {
+        workflow_ = other.workflow_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1023,6 +1082,11 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 82
+            case 90: {
+              workflow_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000400;
+              break;
+            } // case 90
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1975,6 +2039,78 @@ private static final long serialVersionUID = 0L;
         connectionDetails_ = null;
       }
       return connectionDetailsBuilder_;
+    }
+
+    private java.lang.Object workflow_ = "";
+    /**
+     * <code>string workflow = 11 [json_name = "workflow"];</code>
+     * @return The workflow.
+     */
+    public java.lang.String getWorkflow() {
+      java.lang.Object ref = workflow_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        workflow_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string workflow = 11 [json_name = "workflow"];</code>
+     * @return The bytes for workflow.
+     */
+    public com.google.protobuf.ByteString
+        getWorkflowBytes() {
+      java.lang.Object ref = workflow_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        workflow_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string workflow = 11 [json_name = "workflow"];</code>
+     * @param value The workflow to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkflow(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      workflow_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string workflow = 11 [json_name = "workflow"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkflow() {
+      workflow_ = getDefaultInstance().getWorkflow();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string workflow = 11 [json_name = "workflow"];</code>
+     * @param value The bytes for workflow to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkflowBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      workflow_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -36,6 +36,16 @@ public final class MigrationsProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_migrations_MigrationFSAResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_migrations_MigrateStripeCustomersRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_migrations_MigrateStripeCustomersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_migrations_MigrateStripeCustomersResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_migrations_MigrateStripeCustomersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_migrations_MigrationSAMLResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -69,25 +79,36 @@ public final class MigrationsProto {
       "ize\030\003 \001(\005B\006\272H\003\310\001\001R\tbatchSize\"z\n\024Migratio" +
       "nFSAResponse\0221\n\024success_environments\030\001 \001" +
       "(\005R\023successEnvironments\022/\n\023failed_enviro" +
-      "nments\030\002 \001(\005R\022failedEnvironments\"{\n\025Migr" +
-      "ationSAMLResponse\0221\n\024success_environment" +
-      "s\030\001 \001(\005R\023successEnvironments\022/\n\023failed_e" +
-      "nvironments\030\002 \001(\005R\022failedEnvironments*\210\001" +
-      "\n\013FSADataType\022\035\n\031FSA_DATA_TYPE_UNSPECIFI" +
-      "ED\020\000\022\034\n\030FSA_DATA_TYPE_CONNECTION\020\001\022\031\n\025FS" +
-      "A_DATA_TYPE_SESSION\020\002\022!\n\035FSA_DATA_TYPE_U" +
-      "SER_MANAGEMENT\020\0032\261\001\n\020MigrationService\022\234\001" +
-      "\n\016MigrateFSAData\022).scalekit.v1.migration" +
-      "s.MigrateFSARequest\032,.scalekit.v1.migrat" +
-      "ions.MigrationFSAResponse\"1\202\265\030\002\030\001\372\322\344\223\002\t\022" +
-      "\007PREVIEW\202\323\344\223\002\026\"\024/migrations/fsa-dataB\353\001\n" +
-      "(com.scalekit.grpc.scalekit.v1.migration" +
-      "sB\017MigrationsProtoP\001Z4github.com/scaleki" +
-      "t-inc/scalekit/pkg/grpc/migrations\242\002\003SVM" +
-      "\252\002\026Scalekit.V1.Migrations\312\002\026Scalekit\\V1\\" +
-      "Migrations\342\002\"Scalekit\\V1\\Migrations\\GPBM" +
-      "etadata\352\002\030Scalekit::V1::Migrationsb\006prot" +
-      "o3"
+      "nments\030\002 \001(\005R\022failedEnvironments\"k\n\035Migr" +
+      "ateStripeCustomersRequest\022#\n\rworkspace_i" +
+      "ds\030\001 \003(\003R\014workspaceIds\022%\n\nbatch_size\030\002 \001" +
+      "(\005B\006\272H\003\310\001\001R\tbatchSize\"\243\001\n\036MigrateStripeC" +
+      "ustomersResponse\022-\n\022success_workspaces\030\001" +
+      " \001(\005R\021successWorkspaces\022+\n\021failed_worksp" +
+      "aces\030\002 \001(\005R\020failedWorkspaces\022%\n\016error_me" +
+      "ssages\030\003 \003(\tR\rerrorMessages\"{\n\025Migration" +
+      "SAMLResponse\0221\n\024success_environments\030\001 \001" +
+      "(\005R\023successEnvironments\022/\n\023failed_enviro" +
+      "nments\030\002 \001(\005R\022failedEnvironments*\210\001\n\013FSA" +
+      "DataType\022\035\n\031FSA_DATA_TYPE_UNSPECIFIED\020\000\022" +
+      "\034\n\030FSA_DATA_TYPE_CONNECTION\020\001\022\031\n\025FSA_DAT" +
+      "A_TYPE_SESSION\020\002\022!\n\035FSA_DATA_TYPE_USER_M" +
+      "ANAGEMENT\020\0032\366\002\n\020MigrationService\022\234\001\n\016Mig" +
+      "rateFSAData\022).scalekit.v1.migrations.Mig" +
+      "rateFSARequest\032,.scalekit.v1.migrations." +
+      "MigrationFSAResponse\"1\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREV" +
+      "IEW\202\323\344\223\002\026\"\024/migrations/fsa-data\022\302\001\n\026Migr" +
+      "ateStripeCustomers\0225.scalekit.v1.migrati" +
+      "ons.MigrateStripeCustomersRequest\0326.scal" +
+      "ekit.v1.migrations.MigrateStripeCustomer" +
+      "sResponse\"9\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\036\"\034" +
+      "/migrations/stripe-customersB\353\001\n(com.sca" +
+      "lekit.grpc.scalekit.v1.migrationsB\017Migra" +
+      "tionsProtoP\001Z4github.com/scalekit-inc/sc" +
+      "alekit/pkg/grpc/migrations\242\002\003SVM\252\002\026Scale" +
+      "kit.V1.Migrations\312\002\026Scalekit\\V1\\Migratio" +
+      "ns\342\002\"Scalekit\\V1\\Migrations\\GPBMetadata\352" +
+      "\002\030Scalekit::V1::Migrationsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -124,8 +145,20 @@ public final class MigrationsProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_MigrationFSAResponse_descriptor,
         new java.lang.String[] { "SuccessEnvironments", "FailedEnvironments", });
-    internal_static_scalekit_v1_migrations_MigrationSAMLResponse_descriptor =
+    internal_static_scalekit_v1_migrations_MigrateStripeCustomersRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_scalekit_v1_migrations_MigrateStripeCustomersRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_migrations_MigrateStripeCustomersRequest_descriptor,
+        new java.lang.String[] { "WorkspaceIds", "BatchSize", });
+    internal_static_scalekit_v1_migrations_MigrateStripeCustomersResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_scalekit_v1_migrations_MigrateStripeCustomersResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_migrations_MigrateStripeCustomersResponse_descriptor,
+        new java.lang.String[] { "SuccessWorkspaces", "FailedWorkspaces", "ErrorMessages", });
+    internal_static_scalekit_v1_migrations_MigrationSAMLResponse_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_scalekit_v1_migrations_MigrationSAMLResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_MigrationSAMLResponse_descriptor,

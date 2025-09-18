@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
   private RemoveUserRoleRequest() {
     organizationId_ = "";
     userId_ = "";
-    roleId_ = "";
+    roleName_ = "";
   }
 
   @java.lang.Override
@@ -120,39 +120,39 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ROLE_ID_FIELD_NUMBER = 3;
+  public static final int ROLE_NAME_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object roleId_ = "";
+  private volatile java.lang.Object roleName_ = "";
   /**
-   * <code>string role_id = 3 [json_name = "roleId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The roleId.
+   * <code>string role_name = 3 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The roleName.
    */
   @java.lang.Override
-  public java.lang.String getRoleId() {
-    java.lang.Object ref = roleId_;
+  public java.lang.String getRoleName() {
+    java.lang.Object ref = roleName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      roleId_ = s;
+      roleName_ = s;
       return s;
     }
   }
   /**
-   * <code>string role_id = 3 [json_name = "roleId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for roleId.
+   * <code>string role_name = 3 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for roleName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getRoleIdBytes() {
-    java.lang.Object ref = roleId_;
+      getRoleNameBytes() {
+    java.lang.Object ref = roleName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      roleId_ = b;
+      roleName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -179,8 +179,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, roleId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, roleName_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -197,8 +197,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, roleId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, roleName_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -219,8 +219,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getOrganizationId())) return false;
     if (!getUserId()
         .equals(other.getUserId())) return false;
-    if (!getRoleId()
-        .equals(other.getRoleId())) return false;
+    if (!getRoleName()
+        .equals(other.getRoleName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -236,8 +236,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getOrganizationId().hashCode();
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserId().hashCode();
-    hash = (37 * hash) + ROLE_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRoleId().hashCode();
+    hash = (37 * hash) + ROLE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getRoleName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -371,7 +371,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       organizationId_ = "";
       userId_ = "";
-      roleId_ = "";
+      roleName_ = "";
       return this;
     }
 
@@ -412,7 +412,7 @@ private static final long serialVersionUID = 0L;
         result.userId_ = userId_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.roleId_ = roleId_;
+        result.roleName_ = roleName_;
       }
     }
 
@@ -470,8 +470,8 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (!other.getRoleId().isEmpty()) {
-        roleId_ = other.roleId_;
+      if (!other.getRoleName().isEmpty()) {
+        roleName_ = other.roleName_;
         bitField0_ |= 0x00000004;
         onChanged();
       }
@@ -512,7 +512,7 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 18
             case 26: {
-              roleId_ = input.readStringRequireUtf8();
+              roleName_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
@@ -677,73 +677,73 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object roleId_ = "";
+    private java.lang.Object roleName_ = "";
     /**
-     * <code>string role_id = 3 [json_name = "roleId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The roleId.
+     * <code>string role_name = 3 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The roleName.
      */
-    public java.lang.String getRoleId() {
-      java.lang.Object ref = roleId_;
+    public java.lang.String getRoleName() {
+      java.lang.Object ref = roleName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        roleId_ = s;
+        roleName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string role_id = 3 [json_name = "roleId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for roleId.
+     * <code>string role_name = 3 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for roleName.
      */
     public com.google.protobuf.ByteString
-        getRoleIdBytes() {
-      java.lang.Object ref = roleId_;
+        getRoleNameBytes() {
+      java.lang.Object ref = roleName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        roleId_ = b;
+        roleName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string role_id = 3 [json_name = "roleId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The roleId to set.
+     * <code>string role_name = 3 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The roleName to set.
      * @return This builder for chaining.
      */
-    public Builder setRoleId(
+    public Builder setRoleName(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      roleId_ = value;
+      roleName_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>string role_id = 3 [json_name = "roleId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string role_name = 3 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearRoleId() {
-      roleId_ = getDefaultInstance().getRoleId();
+    public Builder clearRoleName() {
+      roleName_ = getDefaultInstance().getRoleName();
       bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <code>string role_id = 3 [json_name = "roleId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for roleId to set.
+     * <code>string role_name = 3 [json_name = "roleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for roleName to set.
      * @return This builder for chaining.
      */
-    public Builder setRoleIdBytes(
+    public Builder setRoleNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      roleId_ = value;
+      roleName_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;

@@ -45,6 +45,10 @@ public enum EventTarget
    * <code>EMAIL = 8;</code>
    */
   EMAIL(8),
+  /**
+   * <code>CONNECTED_ACCOUNT = 9;</code>
+   */
+  CONNECTED_ACCOUNT(9),
   UNRECOGNIZED(-1),
   ;
 
@@ -84,6 +88,10 @@ public enum EventTarget
    * <code>EMAIL = 8;</code>
    */
   public static final int EMAIL_VALUE = 8;
+  /**
+   * <code>CONNECTED_ACCOUNT = 9;</code>
+   */
+  public static final int CONNECTED_ACCOUNT_VALUE = 9;
 
 
   public final int getNumber() {
@@ -119,6 +127,7 @@ public enum EventTarget
       case 6: return TEMPLATE;
       case 7: return EMAIL_SERVER;
       case 8: return EMAIL;
+      case 9: return CONNECTED_ACCOUNT;
       default: return null;
     }
   }

@@ -37,4 +37,16 @@ public interface SearchConnectedAccountsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();
+
+  /**
+   * <code>string connection_id = 4 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The connectionId.
+   */
+  java.lang.String getConnectionId();
+  /**
+   * <code>string connection_id = 4 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for connectionId.
+   */
+  com.google.protobuf.ByteString
+      getConnectionIdBytes();
 }

@@ -22,4 +22,19 @@ public interface UpdateConnectedAccountOrBuilder extends
    * <code>.scalekit.v1.connected_accounts.AuthorizationDetails authorization_details = 5 [json_name = "authorizationDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizationDetailsOrBuilder getAuthorizationDetailsOrBuilder();
+
+  /**
+   * <code>.google.protobuf.Struct api_config = 10 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the apiConfig field is set.
+   */
+  boolean hasApiConfig();
+  /**
+   * <code>.google.protobuf.Struct api_config = 10 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The apiConfig.
+   */
+  com.google.protobuf.Struct getApiConfig();
+  /**
+   * <code>.google.protobuf.Struct api_config = 10 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.StructOrBuilder getApiConfigOrBuilder();
 }

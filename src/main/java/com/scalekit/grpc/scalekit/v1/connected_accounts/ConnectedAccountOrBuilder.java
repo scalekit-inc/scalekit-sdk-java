@@ -149,4 +149,19 @@ public interface ConnectedAccountOrBuilder extends
    */
   com.google.protobuf.ByteString
       getConnectionIdBytes();
+
+  /**
+   * <code>.google.protobuf.Struct api_config = 12 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the apiConfig field is set.
+   */
+  boolean hasApiConfig();
+  /**
+   * <code>.google.protobuf.Struct api_config = 12 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The apiConfig.
+   */
+  com.google.protobuf.Struct getApiConfig();
+  /**
+   * <code>.google.protobuf.Struct api_config = 12 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.StructOrBuilder getApiConfigOrBuilder();
 }

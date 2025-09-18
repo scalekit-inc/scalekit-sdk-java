@@ -273,41 +273,41 @@ private static final long serialVersionUID = 0L;
 
   public static final int PERMISSIONS_FIELD_NUMBER = 9;
   @SuppressWarnings("serial")
-  private java.util.List<com.scalekit.grpc.scalekit.v1.roles.Permission> permissions_;
+  private java.util.List<com.scalekit.grpc.scalekit.v1.roles.RolePermission> permissions_;
   /**
-   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public java.util.List<com.scalekit.grpc.scalekit.v1.roles.Permission> getPermissionsList() {
+  public java.util.List<com.scalekit.grpc.scalekit.v1.roles.RolePermission> getPermissionsList() {
     return permissions_;
   }
   /**
-   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder> 
+  public java.util.List<? extends com.scalekit.grpc.scalekit.v1.roles.RolePermissionOrBuilder> 
       getPermissionsOrBuilderList() {
     return permissions_;
   }
   /**
-   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public int getPermissionsCount() {
     return permissions_.size();
   }
   /**
-   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.roles.Permission getPermissions(int index) {
+  public com.scalekit.grpc.scalekit.v1.roles.RolePermission getPermissions(int index) {
     return permissions_.get(index);
   }
   /**
-   * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder getPermissionsOrBuilder(
+  public com.scalekit.grpc.scalekit.v1.roles.RolePermissionOrBuilder getPermissionsOrBuilder(
       int index) {
     return permissions_.get(index);
   }
@@ -321,6 +321,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public int getDependentRolesCount() {
     return dependentRolesCount_;
+  }
+
+  public static final int IS_ORG_ROLE_FIELD_NUMBER = 11;
+  private boolean isOrgRole_ = false;
+  /**
+   * <code>bool is_org_role = 11 [json_name = "isOrgRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isOrgRole.
+   */
+  @java.lang.Override
+  public boolean getIsOrgRole() {
+    return isOrgRole_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -364,6 +375,9 @@ private static final long serialVersionUID = 0L;
     if (dependentRolesCount_ != 0) {
       output.writeInt32(10, dependentRolesCount_);
     }
+    if (isOrgRole_ != false) {
+      output.writeBool(11, isOrgRole_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -404,6 +418,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(10, dependentRolesCount_);
     }
+    if (isOrgRole_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(11, isOrgRole_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -440,6 +458,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPermissionsList())) return false;
     if (getDependentRolesCount()
         != other.getDependentRolesCount()) return false;
+    if (getIsOrgRole()
+        != other.getIsOrgRole()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -475,6 +495,9 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + DEPENDENT_ROLES_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getDependentRolesCount();
+    hash = (37 * hash) + IS_ORG_ROLE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsOrgRole());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -621,6 +644,7 @@ private static final long serialVersionUID = 0L;
       }
       bitField0_ = (bitField0_ & ~0x00000080);
       dependentRolesCount_ = 0;
+      isOrgRole_ = false;
       return this;
     }
 
@@ -692,6 +716,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.dependentRolesCount_ = dependentRolesCount_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.isOrgRole_ = isOrgRole_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -800,6 +827,9 @@ private static final long serialVersionUID = 0L;
       if (other.getDependentRolesCount() != 0) {
         setDependentRolesCount(other.getDependentRolesCount());
       }
+      if (other.getIsOrgRole() != false) {
+        setIsOrgRole(other.getIsOrgRole());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -862,9 +892,9 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 66
             case 74: {
-              com.scalekit.grpc.scalekit.v1.roles.Permission m =
+              com.scalekit.grpc.scalekit.v1.roles.RolePermission m =
                   input.readMessage(
-                      com.scalekit.grpc.scalekit.v1.roles.Permission.parser(),
+                      com.scalekit.grpc.scalekit.v1.roles.RolePermission.parser(),
                       extensionRegistry);
               if (permissionsBuilder_ == null) {
                 ensurePermissionsIsMutable();
@@ -879,6 +909,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000100;
               break;
             } // case 80
+            case 88: {
+              isOrgRole_ = input.readBool();
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 88
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1327,22 +1362,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<com.scalekit.grpc.scalekit.v1.roles.Permission> permissions_ =
+    private java.util.List<com.scalekit.grpc.scalekit.v1.roles.RolePermission> permissions_ =
       java.util.Collections.emptyList();
     private void ensurePermissionsIsMutable() {
       if (!((bitField0_ & 0x00000080) != 0)) {
-        permissions_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.roles.Permission>(permissions_);
+        permissions_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.roles.RolePermission>(permissions_);
         bitField0_ |= 0x00000080;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.roles.Permission, com.scalekit.grpc.scalekit.v1.roles.Permission.Builder, com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder> permissionsBuilder_;
+        com.scalekit.grpc.scalekit.v1.roles.RolePermission, com.scalekit.grpc.scalekit.v1.roles.RolePermission.Builder, com.scalekit.grpc.scalekit.v1.roles.RolePermissionOrBuilder> permissionsBuilder_;
 
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public java.util.List<com.scalekit.grpc.scalekit.v1.roles.Permission> getPermissionsList() {
+    public java.util.List<com.scalekit.grpc.scalekit.v1.roles.RolePermission> getPermissionsList() {
       if (permissionsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(permissions_);
       } else {
@@ -1350,7 +1385,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public int getPermissionsCount() {
       if (permissionsBuilder_ == null) {
@@ -1360,9 +1395,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.scalekit.grpc.scalekit.v1.roles.Permission getPermissions(int index) {
+    public com.scalekit.grpc.scalekit.v1.roles.RolePermission getPermissions(int index) {
       if (permissionsBuilder_ == null) {
         return permissions_.get(index);
       } else {
@@ -1370,10 +1405,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setPermissions(
-        int index, com.scalekit.grpc.scalekit.v1.roles.Permission value) {
+        int index, com.scalekit.grpc.scalekit.v1.roles.RolePermission value) {
       if (permissionsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1387,10 +1422,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setPermissions(
-        int index, com.scalekit.grpc.scalekit.v1.roles.Permission.Builder builderForValue) {
+        int index, com.scalekit.grpc.scalekit.v1.roles.RolePermission.Builder builderForValue) {
       if (permissionsBuilder_ == null) {
         ensurePermissionsIsMutable();
         permissions_.set(index, builderForValue.build());
@@ -1401,9 +1436,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder addPermissions(com.scalekit.grpc.scalekit.v1.roles.Permission value) {
+    public Builder addPermissions(com.scalekit.grpc.scalekit.v1.roles.RolePermission value) {
       if (permissionsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1417,10 +1452,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addPermissions(
-        int index, com.scalekit.grpc.scalekit.v1.roles.Permission value) {
+        int index, com.scalekit.grpc.scalekit.v1.roles.RolePermission value) {
       if (permissionsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1434,10 +1469,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addPermissions(
-        com.scalekit.grpc.scalekit.v1.roles.Permission.Builder builderForValue) {
+        com.scalekit.grpc.scalekit.v1.roles.RolePermission.Builder builderForValue) {
       if (permissionsBuilder_ == null) {
         ensurePermissionsIsMutable();
         permissions_.add(builderForValue.build());
@@ -1448,10 +1483,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addPermissions(
-        int index, com.scalekit.grpc.scalekit.v1.roles.Permission.Builder builderForValue) {
+        int index, com.scalekit.grpc.scalekit.v1.roles.RolePermission.Builder builderForValue) {
       if (permissionsBuilder_ == null) {
         ensurePermissionsIsMutable();
         permissions_.add(index, builderForValue.build());
@@ -1462,10 +1497,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addAllPermissions(
-        java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.roles.Permission> values) {
+        java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.roles.RolePermission> values) {
       if (permissionsBuilder_ == null) {
         ensurePermissionsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1477,7 +1512,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearPermissions() {
       if (permissionsBuilder_ == null) {
@@ -1490,7 +1525,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder removePermissions(int index) {
       if (permissionsBuilder_ == null) {
@@ -1503,16 +1538,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.scalekit.grpc.scalekit.v1.roles.Permission.Builder getPermissionsBuilder(
+    public com.scalekit.grpc.scalekit.v1.roles.RolePermission.Builder getPermissionsBuilder(
         int index) {
       return getPermissionsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder getPermissionsOrBuilder(
+    public com.scalekit.grpc.scalekit.v1.roles.RolePermissionOrBuilder getPermissionsOrBuilder(
         int index) {
       if (permissionsBuilder_ == null) {
         return permissions_.get(index);  } else {
@@ -1520,9 +1555,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public java.util.List<? extends com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder> 
+    public java.util.List<? extends com.scalekit.grpc.scalekit.v1.roles.RolePermissionOrBuilder> 
          getPermissionsOrBuilderList() {
       if (permissionsBuilder_ != null) {
         return permissionsBuilder_.getMessageOrBuilderList();
@@ -1531,33 +1566,33 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.scalekit.grpc.scalekit.v1.roles.Permission.Builder addPermissionsBuilder() {
+    public com.scalekit.grpc.scalekit.v1.roles.RolePermission.Builder addPermissionsBuilder() {
       return getPermissionsFieldBuilder().addBuilder(
-          com.scalekit.grpc.scalekit.v1.roles.Permission.getDefaultInstance());
+          com.scalekit.grpc.scalekit.v1.roles.RolePermission.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.scalekit.grpc.scalekit.v1.roles.Permission.Builder addPermissionsBuilder(
+    public com.scalekit.grpc.scalekit.v1.roles.RolePermission.Builder addPermissionsBuilder(
         int index) {
       return getPermissionsFieldBuilder().addBuilder(
-          index, com.scalekit.grpc.scalekit.v1.roles.Permission.getDefaultInstance());
+          index, com.scalekit.grpc.scalekit.v1.roles.RolePermission.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.roles.Permission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated .scalekit.v1.roles.RolePermission permissions = 9 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public java.util.List<com.scalekit.grpc.scalekit.v1.roles.Permission.Builder> 
+    public java.util.List<com.scalekit.grpc.scalekit.v1.roles.RolePermission.Builder> 
          getPermissionsBuilderList() {
       return getPermissionsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.roles.Permission, com.scalekit.grpc.scalekit.v1.roles.Permission.Builder, com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder> 
+        com.scalekit.grpc.scalekit.v1.roles.RolePermission, com.scalekit.grpc.scalekit.v1.roles.RolePermission.Builder, com.scalekit.grpc.scalekit.v1.roles.RolePermissionOrBuilder> 
         getPermissionsFieldBuilder() {
       if (permissionsBuilder_ == null) {
         permissionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.scalekit.grpc.scalekit.v1.roles.Permission, com.scalekit.grpc.scalekit.v1.roles.Permission.Builder, com.scalekit.grpc.scalekit.v1.roles.PermissionOrBuilder>(
+            com.scalekit.grpc.scalekit.v1.roles.RolePermission, com.scalekit.grpc.scalekit.v1.roles.RolePermission.Builder, com.scalekit.grpc.scalekit.v1.roles.RolePermissionOrBuilder>(
                 permissions_,
                 ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
@@ -1595,6 +1630,38 @@ private static final long serialVersionUID = 0L;
     public Builder clearDependentRolesCount() {
       bitField0_ = (bitField0_ & ~0x00000100);
       dependentRolesCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean isOrgRole_ ;
+    /**
+     * <code>bool is_org_role = 11 [json_name = "isOrgRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The isOrgRole.
+     */
+    @java.lang.Override
+    public boolean getIsOrgRole() {
+      return isOrgRole_;
+    }
+    /**
+     * <code>bool is_org_role = 11 [json_name = "isOrgRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The isOrgRole to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsOrgRole(boolean value) {
+
+      isOrgRole_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_org_role = 11 [json_name = "isOrgRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsOrgRole() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      isOrgRole_ = false;
       onChanged();
       return this;
     }
