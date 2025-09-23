@@ -58,13 +58,13 @@ public class DomainTests {
                 .setOrganizationId(organization.getId())
                 .setDomain(CreateDomain.newBuilder()
                         .setDomain(domainName)
-                        .setDomainType(DomainType.HOME_REALM_DISCOVERY)
+                        .setDomainType(DomainType.ORGANIZATION_DOMAIN)
                         .build())
                 .build();
         
         Domain domain = client.domains().createDomain(request);
         Assertions.assertEquals(domainName, domain.getDomain());
-        Assertions.assertEquals(DomainType.HOME_REALM_DISCOVERY, domain.getDomainType());
+        Assertions.assertEquals(DomainType.ORGANIZATION_DOMAIN, domain.getDomainType());
     }
 
     @Test
@@ -77,13 +77,13 @@ public class DomainTests {
                 .setOrganizationId(organization.getId())
                 .setDomain(CreateDomain.newBuilder()
                         .setDomain(domainName)
-                        .setDomainType(DomainType.JIT_PROVISIONING_DOMAIN)
+                        .setDomainType(DomainType.ALLOWED_EMAIL_DOMAIN)
                         .build())
                 .build();
         
         Domain domain = client.domains().createDomain(request);
         Assertions.assertEquals(domainName, domain.getDomain());
-        Assertions.assertEquals(DomainType.JIT_PROVISIONING_DOMAIN, domain.getDomainType());
+        Assertions.assertEquals(DomainType.ALLOWED_EMAIL_DOMAIN, domain.getDomainType());
     }
 
     @Test
