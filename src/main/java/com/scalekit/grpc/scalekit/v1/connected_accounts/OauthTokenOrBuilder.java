@@ -56,4 +56,16 @@ public interface OauthTokenOrBuilder extends
    */
   com.google.protobuf.ByteString
       getScopesBytes(int index);
+
+  /**
+   * <code>string domain = 4 [json_name = "domain"];</code>
+   * @return The domain.
+   */
+  java.lang.String getDomain();
+  /**
+   * <code>string domain = 4 [json_name = "domain"];</code>
+   * @return The bytes for domain.
+   */
+  com.google.protobuf.ByteString
+      getDomainBytes();
 }

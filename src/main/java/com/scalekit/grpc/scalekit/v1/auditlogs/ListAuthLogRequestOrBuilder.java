@@ -39,16 +39,29 @@ public interface ListAuthLogRequestOrBuilder extends
       getEmailBytes();
 
   /**
-   * <code>string status = 4 [json_name = "status"];</code>
-   * @return The status.
+   * <code>repeated string status = 4 [json_name = "status"];</code>
+   * @return A list containing the status.
    */
-  java.lang.String getStatus();
+  java.util.List<java.lang.String>
+      getStatusList();
   /**
-   * <code>string status = 4 [json_name = "status"];</code>
-   * @return The bytes for status.
+   * <code>repeated string status = 4 [json_name = "status"];</code>
+   * @return The count of status.
+   */
+  int getStatusCount();
+  /**
+   * <code>repeated string status = 4 [json_name = "status"];</code>
+   * @param index The index of the element to return.
+   * @return The status at the given index.
+   */
+  java.lang.String getStatus(int index);
+  /**
+   * <code>repeated string status = 4 [json_name = "status"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the status at the given index.
    */
   com.google.protobuf.ByteString
-      getStatusBytes();
+      getStatusBytes(int index);
 
   /**
    * <code>.google.protobuf.Timestamp start_time = 5 [json_name = "startTime"];</code>

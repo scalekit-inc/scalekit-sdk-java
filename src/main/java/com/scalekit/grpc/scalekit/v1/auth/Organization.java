@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     name_ = "";
     membershipStatus_ = "";
-    invitationInvitedBy_ = "";
+    invitationInviterEmail_ = "";
   }
 
   @java.lang.Override
@@ -161,47 +161,47 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int INVITATION_INVITED_BY_FIELD_NUMBER = 4;
+  public static final int INVITATION_INVITER_EMAIL_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object invitationInvitedBy_ = "";
+  private volatile java.lang.Object invitationInviterEmail_ = "";
   /**
-   * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
-   * @return Whether the invitationInvitedBy field is set.
+   * <code>optional string invitation_inviter_email = 4 [json_name = "invitationInviterEmail"];</code>
+   * @return Whether the invitationInviterEmail field is set.
    */
   @java.lang.Override
-  public boolean hasInvitationInvitedBy() {
+  public boolean hasInvitationInviterEmail() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
-   * @return The invitationInvitedBy.
+   * <code>optional string invitation_inviter_email = 4 [json_name = "invitationInviterEmail"];</code>
+   * @return The invitationInviterEmail.
    */
   @java.lang.Override
-  public java.lang.String getInvitationInvitedBy() {
-    java.lang.Object ref = invitationInvitedBy_;
+  public java.lang.String getInvitationInviterEmail() {
+    java.lang.Object ref = invitationInviterEmail_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      invitationInvitedBy_ = s;
+      invitationInviterEmail_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
-   * @return The bytes for invitationInvitedBy.
+   * <code>optional string invitation_inviter_email = 4 [json_name = "invitationInviterEmail"];</code>
+   * @return The bytes for invitationInviterEmail.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getInvitationInvitedByBytes() {
-    java.lang.Object ref = invitationInvitedBy_;
+      getInvitationInviterEmailBytes() {
+    java.lang.Object ref = invitationInviterEmail_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      invitationInvitedBy_ = b;
+      invitationInviterEmail_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -310,7 +310,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, membershipStatus_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, invitationInvitedBy_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, invitationInviterEmail_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(5, getInvitationAcceptedAt());
@@ -340,7 +340,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, membershipStatus_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, invitationInvitedBy_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, invitationInviterEmail_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -375,10 +375,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (!getMembershipStatus()
         .equals(other.getMembershipStatus())) return false;
-    if (hasInvitationInvitedBy() != other.hasInvitationInvitedBy()) return false;
-    if (hasInvitationInvitedBy()) {
-      if (!getInvitationInvitedBy()
-          .equals(other.getInvitationInvitedBy())) return false;
+    if (hasInvitationInviterEmail() != other.hasInvitationInviterEmail()) return false;
+    if (hasInvitationInviterEmail()) {
+      if (!getInvitationInviterEmail()
+          .equals(other.getInvitationInviterEmail())) return false;
     }
     if (hasInvitationAcceptedAt() != other.hasInvitationAcceptedAt()) return false;
     if (hasInvitationAcceptedAt()) {
@@ -412,9 +412,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + MEMBERSHIP_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getMembershipStatus().hashCode();
-    if (hasInvitationInvitedBy()) {
-      hash = (37 * hash) + INVITATION_INVITED_BY_FIELD_NUMBER;
-      hash = (53 * hash) + getInvitationInvitedBy().hashCode();
+    if (hasInvitationInviterEmail()) {
+      hash = (37 * hash) + INVITATION_INVITER_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getInvitationInviterEmail().hashCode();
     }
     if (hasInvitationAcceptedAt()) {
       hash = (37 * hash) + INVITATION_ACCEPTED_AT_FIELD_NUMBER;
@@ -570,7 +570,7 @@ private static final long serialVersionUID = 0L;
       id_ = "";
       name_ = "";
       membershipStatus_ = "";
-      invitationInvitedBy_ = "";
+      invitationInviterEmail_ = "";
       invitationAcceptedAt_ = null;
       if (invitationAcceptedAtBuilder_ != null) {
         invitationAcceptedAtBuilder_.dispose();
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.invitationInvitedBy_ = invitationInvitedBy_;
+        result.invitationInviterEmail_ = invitationInviterEmail_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
@@ -713,8 +713,8 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (other.hasInvitationInvitedBy()) {
-        invitationInvitedBy_ = other.invitationInvitedBy_;
+      if (other.hasInvitationInviterEmail()) {
+        invitationInviterEmail_ = other.invitationInviterEmail_;
         bitField0_ |= 0x00000008;
         onChanged();
       }
@@ -769,7 +769,7 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 26
             case 34: {
-              invitationInvitedBy_ = input.readStringRequireUtf8();
+              invitationInviterEmail_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               break;
             } // case 34
@@ -1027,80 +1027,80 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object invitationInvitedBy_ = "";
+    private java.lang.Object invitationInviterEmail_ = "";
     /**
-     * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
-     * @return Whether the invitationInvitedBy field is set.
+     * <code>optional string invitation_inviter_email = 4 [json_name = "invitationInviterEmail"];</code>
+     * @return Whether the invitationInviterEmail field is set.
      */
-    public boolean hasInvitationInvitedBy() {
+    public boolean hasInvitationInviterEmail() {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
-     * @return The invitationInvitedBy.
+     * <code>optional string invitation_inviter_email = 4 [json_name = "invitationInviterEmail"];</code>
+     * @return The invitationInviterEmail.
      */
-    public java.lang.String getInvitationInvitedBy() {
-      java.lang.Object ref = invitationInvitedBy_;
+    public java.lang.String getInvitationInviterEmail() {
+      java.lang.Object ref = invitationInviterEmail_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        invitationInvitedBy_ = s;
+        invitationInviterEmail_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
-     * @return The bytes for invitationInvitedBy.
+     * <code>optional string invitation_inviter_email = 4 [json_name = "invitationInviterEmail"];</code>
+     * @return The bytes for invitationInviterEmail.
      */
     public com.google.protobuf.ByteString
-        getInvitationInvitedByBytes() {
-      java.lang.Object ref = invitationInvitedBy_;
+        getInvitationInviterEmailBytes() {
+      java.lang.Object ref = invitationInviterEmail_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        invitationInvitedBy_ = b;
+        invitationInviterEmail_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
-     * @param value The invitationInvitedBy to set.
+     * <code>optional string invitation_inviter_email = 4 [json_name = "invitationInviterEmail"];</code>
+     * @param value The invitationInviterEmail to set.
      * @return This builder for chaining.
      */
-    public Builder setInvitationInvitedBy(
+    public Builder setInvitationInviterEmail(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      invitationInvitedBy_ = value;
+      invitationInviterEmail_ = value;
       bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
+     * <code>optional string invitation_inviter_email = 4 [json_name = "invitationInviterEmail"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearInvitationInvitedBy() {
-      invitationInvitedBy_ = getDefaultInstance().getInvitationInvitedBy();
+    public Builder clearInvitationInviterEmail() {
+      invitationInviterEmail_ = getDefaultInstance().getInvitationInviterEmail();
       bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string invitation_invited_by = 4 [json_name = "invitationInvitedBy"];</code>
-     * @param value The bytes for invitationInvitedBy to set.
+     * <code>optional string invitation_inviter_email = 4 [json_name = "invitationInviterEmail"];</code>
+     * @param value The bytes for invitationInviterEmail to set.
      * @return This builder for chaining.
      */
-    public Builder setInvitationInvitedByBytes(
+    public Builder setInvitationInviterEmailBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      invitationInvitedBy_ = value;
+      invitationInviterEmail_ = value;
       bitField0_ |= 0x00000008;
       onChanged();
       return this;

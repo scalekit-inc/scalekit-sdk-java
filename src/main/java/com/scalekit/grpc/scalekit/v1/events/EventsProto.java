@@ -208,42 +208,43 @@ public final class EventsProto {
       "D\n\nEventActor\022\025\n\021ACTOR_UNSPECIFIED\020\000\022\t\n\005" +
       "HUMAN\020\001\022\013\n\007MACHINE\020\002\022\007\n\003API\020\003*<\n\006Source\022" +
       "\026\n\022SOURCE_UNSPECIFIED\020\000\022\014\n\010SCALEKIT\020\001\022\014\n" +
-      "\010DIR_SYNC\020\002*\237\001\n\013EventTarget\022\034\n\030EVENT_TAR" +
+      "\010DIR_SYNC\020\002*\266\001\n\013EventTarget\022\034\n\030EVENT_TAR" +
       "GET_UNSPECIFIED\020\000\022\r\n\tWORKSPACE\020\001\022\017\n\013ENVI" +
       "RONMENT\020\002\022\020\n\014ORGANIZATION\020\003\022\010\n\004USER\020\004\022\013\n" +
       "\007SESSION\020\005\022\014\n\010TEMPLATE\020\006\022\020\n\014EMAIL_SERVER" +
-      "\020\007\022\t\n\005EMAIL\020\010*M\n\rEventCategory\022\034\n\030EVENT_" +
-      "SOURCE_UNSPECIFIED\020\000\022\010\n\004CORE\020\001\022\007\n\003SSO\020\002\022" +
-      "\013\n\007DIRSYNC\020\003*\337\004\n\nObjectType\022\033\n\027OBJECT_TY" +
-      "PE_UNSPECIFIED\020\000\022\r\n\tWorkspace\020\001\022\017\n\013Envir" +
-      "onment\020\002\022\020\n\014Organization\020\003\022\016\n\nConnection" +
-      "\020\004\022\010\n\004User\020\005\022\010\n\004Role\020\006\022\024\n\020CustomAttribut" +
-      "es\020\007\022\r\n\tDirectory\020\010\022\021\n\rDirectoryUser\020\t\022\022" +
-      "\n\016DirectoryGroup\020\n\022\013\n\007Session\020\013\022\014\n\010Templ" +
-      "ate\020\014\022\007\n\003Job\020\r\022\n\n\006Domain\020\016\022\017\n\013EmailServe" +
-      "r\020\017\022\t\n\005Email\020\020\022\017\n\013AuthRequest\020\021\022\017\n\013SAMLR" +
-      "equest\020\022\022\020\n\014SAMLResponse\020\023\022\017\n\013TokenClaim" +
-      "s\020\024\022\021\n\rOIDCReqParams\020\025\022\022\n\016OIDCRespClaims" +
-      "\020\026\022\014\n\010SSOError\020\027\022\020\n\014GenericError\020\030\022\021\n\rRe" +
-      "freshTokens\020\031\022\025\n\021EndSessionRequest\020\032\022\025\n\021" +
-      "LogoutTokenClaims\020\033\022\021\n\rOAuthResponse\020\034\022\010" +
-      "\n\004JSON\020\035\022\014\n\010SKErrors\020\036\022\021\n\rOrgMembership\020" +
-      "\037\022\017\n\013UserProfile\020 \022\027\n\023IDPInitiatedPayloa" +
-      "d\020!\022\021\n\rDeviceDetails\020\"2\302\002\n\rEventsService" +
-      "\022\201\001\n\nListEvents\022%.scalekit.v1.events.Lis" +
-      "tEventsRequest\032&.scalekit.v1.events.List" +
-      "EventsResponse\"$\202\265\030\002\030t\202\323\344\223\002\030\"\016/api/v1/ev" +
-      "ents:\006filter\022\254\001\n\017SendCustomEvent\022*.scale" +
-      "kit.v1.events.SendCustomEventRequest\032+.s" +
-      "calekit.v1.events.SendCustomEventRespons" +
-      "e\"@\202\265\030\002\030p\202\323\344\223\0024\"+/api/v1/events/frontend" +
-      "_events/{event_type}:\005eventB\317\001\n$com.scal" +
-      "ekit.grpc.scalekit.v1.eventsB\013EventsProt" +
-      "oP\001Z0github.com/scalekit-inc/scalekit/pk" +
-      "g/grpc/events\242\002\003SVE\252\002\022Scalekit.V1.Events" +
-      "\312\002\022Scalekit\\V1\\Events\342\002\036Scalekit\\V1\\Even" +
-      "ts\\GPBMetadata\352\002\024Scalekit::V1::Eventsb\006p" +
-      "roto3"
+      "\020\007\022\t\n\005EMAIL\020\010\022\025\n\021CONNECTED_ACCOUNT\020\t*M\n\r" +
+      "EventCategory\022\034\n\030EVENT_SOURCE_UNSPECIFIE" +
+      "D\020\000\022\010\n\004CORE\020\001\022\007\n\003SSO\020\002\022\013\n\007DIRSYNC\020\003*\354\004\n\n" +
+      "ObjectType\022\033\n\027OBJECT_TYPE_UNSPECIFIED\020\000\022" +
+      "\r\n\tWorkspace\020\001\022\017\n\013Environment\020\002\022\020\n\014Organ" +
+      "ization\020\003\022\016\n\nConnection\020\004\022\010\n\004User\020\005\022\010\n\004R" +
+      "ole\020\006\022\024\n\020CustomAttributes\020\007\022\r\n\tDirectory" +
+      "\020\010\022\021\n\rDirectoryUser\020\t\022\022\n\016DirectoryGroup\020" +
+      "\n\022\013\n\007Session\020\013\022\014\n\010Template\020\014\022\007\n\003Job\020\r\022\n\n" +
+      "\006Domain\020\016\022\017\n\013EmailServer\020\017\022\t\n\005Email\020\020\022\017\n" +
+      "\013AuthRequest\020\021\022\017\n\013SAMLRequest\020\022\022\020\n\014SAMLR" +
+      "esponse\020\023\022\017\n\013TokenClaims\020\024\022\021\n\rOIDCReqPar" +
+      "ams\020\025\022\022\n\016OIDCRespClaims\020\026\022\014\n\010SSOError\020\027\022" +
+      "\020\n\014GenericError\020\030\022\021\n\rRefreshTokens\020\031\022\025\n\021" +
+      "EndSessionRequest\020\032\022\025\n\021LogoutTokenClaims" +
+      "\020\033\022\021\n\rOAuthResponse\020\034\022\010\n\004JSON\020\035\022\014\n\010SKErr" +
+      "ors\020\036\022\021\n\rOrgMembership\020\037\022\017\n\013UserProfile\020" +
+      " \022\027\n\023IDPInitiatedPayload\020!\022\021\n\rDeviceDeta" +
+      "ils\020\"\022\013\n\007Actions\020#2\302\002\n\rEventsService\022\201\001\n" +
+      "\nListEvents\022%.scalekit.v1.events.ListEve" +
+      "ntsRequest\032&.scalekit.v1.events.ListEven" +
+      "tsResponse\"$\202\265\030\002\030t\202\323\344\223\002\030\"\016/api/v1/events" +
+      ":\006filter\022\254\001\n\017SendCustomEvent\022*.scalekit." +
+      "v1.events.SendCustomEventRequest\032+.scale" +
+      "kit.v1.events.SendCustomEventResponse\"@\202" +
+      "\265\030\002\030p\202\323\344\223\0024\"+/api/v1/events/frontend_eve" +
+      "nts/{event_type}:\005eventB\317\001\n$com.scalekit" +
+      ".grpc.scalekit.v1.eventsB\013EventsProtoP\001Z" +
+      "0github.com/scalekit-inc/scalekit/pkg/gr" +
+      "pc/events\242\002\003SVE\252\002\022Scalekit.V1.Events\312\002\022S" +
+      "calekit\\V1\\Events\342\002\036Scalekit\\V1\\Events\\G" +
+      "PBMetadata\352\002\024Scalekit::V1::Eventsb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

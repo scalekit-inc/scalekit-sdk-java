@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetResourceClientResponse() {
+    consentedUsers_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -40,32 +41,6 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
-  public static final int RESOURCE_FIELD_NUMBER = 1;
-  private com.scalekit.grpc.scalekit.v1.clients.Resource resource_;
-  /**
-   * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the resource field is set.
-   */
-  @java.lang.Override
-  public boolean hasResource() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The resource.
-   */
-  @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.clients.Resource getResource() {
-    return resource_ == null ? com.scalekit.grpc.scalekit.v1.clients.Resource.getDefaultInstance() : resource_;
-  }
-  /**
-   * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.clients.ResourceOrBuilder getResourceOrBuilder() {
-    return resource_ == null ? com.scalekit.grpc.scalekit.v1.clients.Resource.getDefaultInstance() : resource_;
-  }
-
   public static final int CLIENT_FIELD_NUMBER = 2;
   private com.scalekit.grpc.scalekit.v1.clients.M2MClient client_;
   /**
@@ -74,7 +49,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasClient() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <code>.scalekit.v1.clients.M2MClient client = 2 [json_name = "client", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -92,6 +67,47 @@ private static final long serialVersionUID = 0L;
     return client_ == null ? com.scalekit.grpc.scalekit.v1.clients.M2MClient.getDefaultInstance() : client_;
   }
 
+  public static final int CONSENTED_USERS_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private java.util.List<com.scalekit.grpc.scalekit.v1.clients.ConsentedUser> consentedUsers_;
+  /**
+   * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.scalekit.grpc.scalekit.v1.clients.ConsentedUser> getConsentedUsersList() {
+    return consentedUsers_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.scalekit.grpc.scalekit.v1.clients.ConsentedUserOrBuilder> 
+      getConsentedUsersOrBuilderList() {
+    return consentedUsers_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public int getConsentedUsersCount() {
+    return consentedUsers_.size();
+  }
+  /**
+   * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.ConsentedUser getConsentedUsers(int index) {
+    return consentedUsers_.get(index);
+  }
+  /**
+   * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.ConsentedUserOrBuilder getConsentedUsersOrBuilder(
+      int index) {
+    return consentedUsers_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -107,10 +123,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(1, getResource());
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getClient());
+    }
+    for (int i = 0; i < consentedUsers_.size(); i++) {
+      output.writeMessage(3, consentedUsers_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -123,11 +139,11 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getResource());
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getClient());
+    }
+    for (int i = 0; i < consentedUsers_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, consentedUsers_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -144,16 +160,13 @@ private static final long serialVersionUID = 0L;
     }
     com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse other = (com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse) obj;
 
-    if (hasResource() != other.hasResource()) return false;
-    if (hasResource()) {
-      if (!getResource()
-          .equals(other.getResource())) return false;
-    }
     if (hasClient() != other.hasClient()) return false;
     if (hasClient()) {
       if (!getClient()
           .equals(other.getClient())) return false;
     }
+    if (!getConsentedUsersList()
+        .equals(other.getConsentedUsersList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -165,13 +178,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasResource()) {
-      hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
-      hash = (53 * hash) + getResource().hashCode();
-    }
     if (hasClient()) {
       hash = (37 * hash) + CLIENT_FIELD_NUMBER;
       hash = (53 * hash) + getClient().hashCode();
+    }
+    if (getConsentedUsersCount() > 0) {
+      hash = (37 * hash) + CONSENTED_USERS_FIELD_NUMBER;
+      hash = (53 * hash) + getConsentedUsersList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -303,24 +316,26 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getResourceFieldBuilder();
         getClientFieldBuilder();
+        getConsentedUsersFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      resource_ = null;
-      if (resourceBuilder_ != null) {
-        resourceBuilder_.dispose();
-        resourceBuilder_ = null;
-      }
       client_ = null;
       if (clientBuilder_ != null) {
         clientBuilder_.dispose();
         clientBuilder_ = null;
       }
+      if (consentedUsersBuilder_ == null) {
+        consentedUsers_ = java.util.Collections.emptyList();
+      } else {
+        consentedUsers_ = null;
+        consentedUsersBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -347,25 +362,32 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse buildPartial() {
       com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse result = new com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse result) {
+      if (consentedUsersBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          consentedUsers_ = java.util.Collections.unmodifiableList(consentedUsers_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.consentedUsers_ = consentedUsers_;
+      } else {
+        result.consentedUsers_ = consentedUsersBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.resource_ = resourceBuilder_ == null
-            ? resource_
-            : resourceBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.client_ = clientBuilder_ == null
             ? client_
             : clientBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000001;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -414,11 +436,34 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse other) {
       if (other == com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse.getDefaultInstance()) return this;
-      if (other.hasResource()) {
-        mergeResource(other.getResource());
-      }
       if (other.hasClient()) {
         mergeClient(other.getClient());
+      }
+      if (consentedUsersBuilder_ == null) {
+        if (!other.consentedUsers_.isEmpty()) {
+          if (consentedUsers_.isEmpty()) {
+            consentedUsers_ = other.consentedUsers_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureConsentedUsersIsMutable();
+            consentedUsers_.addAll(other.consentedUsers_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.consentedUsers_.isEmpty()) {
+          if (consentedUsersBuilder_.isEmpty()) {
+            consentedUsersBuilder_.dispose();
+            consentedUsersBuilder_ = null;
+            consentedUsers_ = other.consentedUsers_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            consentedUsersBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getConsentedUsersFieldBuilder() : null;
+          } else {
+            consentedUsersBuilder_.addAllMessages(other.consentedUsers_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -446,20 +491,26 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              input.readMessage(
-                  getResourceFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 10
             case 18: {
               input.readMessage(
                   getClientFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000001;
               break;
             } // case 18
+            case 26: {
+              com.scalekit.grpc.scalekit.v1.clients.ConsentedUser m =
+                  input.readMessage(
+                      com.scalekit.grpc.scalekit.v1.clients.ConsentedUser.parser(),
+                      extensionRegistry);
+              if (consentedUsersBuilder_ == null) {
+                ensureConsentedUsersIsMutable();
+                consentedUsers_.add(m);
+              } else {
+                consentedUsersBuilder_.addMessage(m);
+              }
+              break;
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -477,127 +528,6 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private com.scalekit.grpc.scalekit.v1.clients.Resource resource_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.clients.Resource, com.scalekit.grpc.scalekit.v1.clients.Resource.Builder, com.scalekit.grpc.scalekit.v1.clients.ResourceOrBuilder> resourceBuilder_;
-    /**
-     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the resource field is set.
-     */
-    public boolean hasResource() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The resource.
-     */
-    public com.scalekit.grpc.scalekit.v1.clients.Resource getResource() {
-      if (resourceBuilder_ == null) {
-        return resource_ == null ? com.scalekit.grpc.scalekit.v1.clients.Resource.getDefaultInstance() : resource_;
-      } else {
-        return resourceBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setResource(com.scalekit.grpc.scalekit.v1.clients.Resource value) {
-      if (resourceBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        resource_ = value;
-      } else {
-        resourceBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setResource(
-        com.scalekit.grpc.scalekit.v1.clients.Resource.Builder builderForValue) {
-      if (resourceBuilder_ == null) {
-        resource_ = builderForValue.build();
-      } else {
-        resourceBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder mergeResource(com.scalekit.grpc.scalekit.v1.clients.Resource value) {
-      if (resourceBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0) &&
-          resource_ != null &&
-          resource_ != com.scalekit.grpc.scalekit.v1.clients.Resource.getDefaultInstance()) {
-          getResourceBuilder().mergeFrom(value);
-        } else {
-          resource_ = value;
-        }
-      } else {
-        resourceBuilder_.mergeFrom(value);
-      }
-      if (resource_ != null) {
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder clearResource() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      resource_ = null;
-      if (resourceBuilder_ != null) {
-        resourceBuilder_.dispose();
-        resourceBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.clients.Resource.Builder getResourceBuilder() {
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return getResourceFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.clients.ResourceOrBuilder getResourceOrBuilder() {
-      if (resourceBuilder_ != null) {
-        return resourceBuilder_.getMessageOrBuilder();
-      } else {
-        return resource_ == null ?
-            com.scalekit.grpc.scalekit.v1.clients.Resource.getDefaultInstance() : resource_;
-      }
-    }
-    /**
-     * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.clients.Resource, com.scalekit.grpc.scalekit.v1.clients.Resource.Builder, com.scalekit.grpc.scalekit.v1.clients.ResourceOrBuilder> 
-        getResourceFieldBuilder() {
-      if (resourceBuilder_ == null) {
-        resourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.scalekit.grpc.scalekit.v1.clients.Resource, com.scalekit.grpc.scalekit.v1.clients.Resource.Builder, com.scalekit.grpc.scalekit.v1.clients.ResourceOrBuilder>(
-                getResource(),
-                getParentForChildren(),
-                isClean());
-        resource_ = null;
-      }
-      return resourceBuilder_;
-    }
-
     private com.scalekit.grpc.scalekit.v1.clients.M2MClient client_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.clients.M2MClient, com.scalekit.grpc.scalekit.v1.clients.M2MClient.Builder, com.scalekit.grpc.scalekit.v1.clients.M2MClientOrBuilder> clientBuilder_;
@@ -606,7 +536,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the client field is set.
      */
     public boolean hasClient() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>.scalekit.v1.clients.M2MClient client = 2 [json_name = "client", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -631,7 +561,7 @@ private static final long serialVersionUID = 0L;
       } else {
         clientBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -645,7 +575,7 @@ private static final long serialVersionUID = 0L;
       } else {
         clientBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -654,7 +584,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeClient(com.scalekit.grpc.scalekit.v1.clients.M2MClient value) {
       if (clientBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0) &&
+        if (((bitField0_ & 0x00000001) != 0) &&
           client_ != null &&
           client_ != com.scalekit.grpc.scalekit.v1.clients.M2MClient.getDefaultInstance()) {
           getClientBuilder().mergeFrom(value);
@@ -665,7 +595,7 @@ private static final long serialVersionUID = 0L;
         clientBuilder_.mergeFrom(value);
       }
       if (client_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       return this;
@@ -674,7 +604,7 @@ private static final long serialVersionUID = 0L;
      * <code>.scalekit.v1.clients.M2MClient client = 2 [json_name = "client", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearClient() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       client_ = null;
       if (clientBuilder_ != null) {
         clientBuilder_.dispose();
@@ -687,7 +617,7 @@ private static final long serialVersionUID = 0L;
      * <code>.scalekit.v1.clients.M2MClient client = 2 [json_name = "client", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.clients.M2MClient.Builder getClientBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return getClientFieldBuilder().getBuilder();
     }
@@ -717,6 +647,246 @@ private static final long serialVersionUID = 0L;
         client_ = null;
       }
       return clientBuilder_;
+    }
+
+    private java.util.List<com.scalekit.grpc.scalekit.v1.clients.ConsentedUser> consentedUsers_ =
+      java.util.Collections.emptyList();
+    private void ensureConsentedUsersIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        consentedUsers_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.clients.ConsentedUser>(consentedUsers_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.ConsentedUser, com.scalekit.grpc.scalekit.v1.clients.ConsentedUser.Builder, com.scalekit.grpc.scalekit.v1.clients.ConsentedUserOrBuilder> consentedUsersBuilder_;
+
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.clients.ConsentedUser> getConsentedUsersList() {
+      if (consentedUsersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(consentedUsers_);
+      } else {
+        return consentedUsersBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public int getConsentedUsersCount() {
+      if (consentedUsersBuilder_ == null) {
+        return consentedUsers_.size();
+      } else {
+        return consentedUsersBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ConsentedUser getConsentedUsers(int index) {
+      if (consentedUsersBuilder_ == null) {
+        return consentedUsers_.get(index);
+      } else {
+        return consentedUsersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setConsentedUsers(
+        int index, com.scalekit.grpc.scalekit.v1.clients.ConsentedUser value) {
+      if (consentedUsersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConsentedUsersIsMutable();
+        consentedUsers_.set(index, value);
+        onChanged();
+      } else {
+        consentedUsersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setConsentedUsers(
+        int index, com.scalekit.grpc.scalekit.v1.clients.ConsentedUser.Builder builderForValue) {
+      if (consentedUsersBuilder_ == null) {
+        ensureConsentedUsersIsMutable();
+        consentedUsers_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        consentedUsersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addConsentedUsers(com.scalekit.grpc.scalekit.v1.clients.ConsentedUser value) {
+      if (consentedUsersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConsentedUsersIsMutable();
+        consentedUsers_.add(value);
+        onChanged();
+      } else {
+        consentedUsersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addConsentedUsers(
+        int index, com.scalekit.grpc.scalekit.v1.clients.ConsentedUser value) {
+      if (consentedUsersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConsentedUsersIsMutable();
+        consentedUsers_.add(index, value);
+        onChanged();
+      } else {
+        consentedUsersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addConsentedUsers(
+        com.scalekit.grpc.scalekit.v1.clients.ConsentedUser.Builder builderForValue) {
+      if (consentedUsersBuilder_ == null) {
+        ensureConsentedUsersIsMutable();
+        consentedUsers_.add(builderForValue.build());
+        onChanged();
+      } else {
+        consentedUsersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addConsentedUsers(
+        int index, com.scalekit.grpc.scalekit.v1.clients.ConsentedUser.Builder builderForValue) {
+      if (consentedUsersBuilder_ == null) {
+        ensureConsentedUsersIsMutable();
+        consentedUsers_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        consentedUsersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addAllConsentedUsers(
+        java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.clients.ConsentedUser> values) {
+      if (consentedUsersBuilder_ == null) {
+        ensureConsentedUsersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, consentedUsers_);
+        onChanged();
+      } else {
+        consentedUsersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearConsentedUsers() {
+      if (consentedUsersBuilder_ == null) {
+        consentedUsers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        consentedUsersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder removeConsentedUsers(int index) {
+      if (consentedUsersBuilder_ == null) {
+        ensureConsentedUsersIsMutable();
+        consentedUsers_.remove(index);
+        onChanged();
+      } else {
+        consentedUsersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ConsentedUser.Builder getConsentedUsersBuilder(
+        int index) {
+      return getConsentedUsersFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ConsentedUserOrBuilder getConsentedUsersOrBuilder(
+        int index) {
+      if (consentedUsersBuilder_ == null) {
+        return consentedUsers_.get(index);  } else {
+        return consentedUsersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<? extends com.scalekit.grpc.scalekit.v1.clients.ConsentedUserOrBuilder> 
+         getConsentedUsersOrBuilderList() {
+      if (consentedUsersBuilder_ != null) {
+        return consentedUsersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(consentedUsers_);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ConsentedUser.Builder addConsentedUsersBuilder() {
+      return getConsentedUsersFieldBuilder().addBuilder(
+          com.scalekit.grpc.scalekit.v1.clients.ConsentedUser.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ConsentedUser.Builder addConsentedUsersBuilder(
+        int index) {
+      return getConsentedUsersFieldBuilder().addBuilder(
+          index, com.scalekit.grpc.scalekit.v1.clients.ConsentedUser.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.clients.ConsentedUser.Builder> 
+         getConsentedUsersBuilderList() {
+      return getConsentedUsersFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.ConsentedUser, com.scalekit.grpc.scalekit.v1.clients.ConsentedUser.Builder, com.scalekit.grpc.scalekit.v1.clients.ConsentedUserOrBuilder> 
+        getConsentedUsersFieldBuilder() {
+      if (consentedUsersBuilder_ == null) {
+        consentedUsersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.clients.ConsentedUser, com.scalekit.grpc.scalekit.v1.clients.ConsentedUser.Builder, com.scalekit.grpc.scalekit.v1.clients.ConsentedUserOrBuilder>(
+                consentedUsers_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        consentedUsers_ = null;
+      }
+      return consentedUsersBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

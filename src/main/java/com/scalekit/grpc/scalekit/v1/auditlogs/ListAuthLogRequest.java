@@ -19,7 +19,8 @@ private static final long serialVersionUID = 0L;
   private ListAuthLogRequest() {
     pageToken_ = "";
     email_ = "";
-    status_ = "";
+    status_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -134,41 +135,39 @@ private static final long serialVersionUID = 0L;
 
   public static final int STATUS_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object status_ = "";
+  private com.google.protobuf.LazyStringArrayList status_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
-   * <code>string status = 4 [json_name = "status"];</code>
-   * @return The status.
+   * <code>repeated string status = 4 [json_name = "status"];</code>
+   * @return A list containing the status.
    */
-  @java.lang.Override
-  public java.lang.String getStatus() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      status_ = s;
-      return s;
-    }
+  public com.google.protobuf.ProtocolStringList
+      getStatusList() {
+    return status_;
   }
   /**
-   * <code>string status = 4 [json_name = "status"];</code>
-   * @return The bytes for status.
+   * <code>repeated string status = 4 [json_name = "status"];</code>
+   * @return The count of status.
    */
-  @java.lang.Override
+  public int getStatusCount() {
+    return status_.size();
+  }
+  /**
+   * <code>repeated string status = 4 [json_name = "status"];</code>
+   * @param index The index of the element to return.
+   * @return The status at the given index.
+   */
+  public java.lang.String getStatus(int index) {
+    return status_.get(index);
+  }
+  /**
+   * <code>repeated string status = 4 [json_name = "status"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the status at the given index.
+   */
   public com.google.protobuf.ByteString
-      getStatusBytes() {
-    java.lang.Object ref = status_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      status_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+      getStatusBytes(int index) {
+    return status_.getByteString(index);
   }
 
   public static final int START_TIME_FIELD_NUMBER = 5;
@@ -246,8 +245,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status_);
+    for (int i = 0; i < status_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status_.getRaw(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(5, getStartTime());
@@ -274,8 +273,13 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status_);
+    {
+      int dataSize = 0;
+      for (int i = 0; i < status_.size(); i++) {
+        dataSize += computeStringSizeNoTag(status_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getStatusList().size();
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -306,8 +310,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPageToken())) return false;
     if (!getEmail()
         .equals(other.getEmail())) return false;
-    if (!getStatus()
-        .equals(other.getStatus())) return false;
+    if (!getStatusList()
+        .equals(other.getStatusList())) return false;
     if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
       if (!getStartTime()
@@ -335,8 +339,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + EMAIL_FIELD_NUMBER;
     hash = (53 * hash) + getEmail().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + getStatus().hashCode();
+    if (getStatusCount() > 0) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatusList().hashCode();
+    }
     if (hasStartTime()) {
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getStartTime().hashCode();
@@ -486,7 +492,8 @@ private static final long serialVersionUID = 0L;
       pageSize_ = 0;
       pageToken_ = "";
       email_ = "";
-      status_ = "";
+      status_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       startTime_ = null;
       if (startTimeBuilder_ != null) {
         startTimeBuilder_.dispose();
@@ -540,6 +547,7 @@ private static final long serialVersionUID = 0L;
         result.email_ = email_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        status_.makeImmutable();
         result.status_ = status_;
       }
       int to_bitField0_ = 0;
@@ -615,9 +623,14 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (!other.getStatus().isEmpty()) {
-        status_ = other.status_;
-        bitField0_ |= 0x00000008;
+      if (!other.status_.isEmpty()) {
+        if (status_.isEmpty()) {
+          status_ = other.status_;
+          bitField0_ |= 0x00000008;
+        } else {
+          ensureStatusIsMutable();
+          status_.addAll(other.status_);
+        }
         onChanged();
       }
       if (other.hasStartTime()) {
@@ -668,8 +681,9 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 26
             case 34: {
-              status_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureStatusIsMutable();
+              status_.add(s);
               break;
             } // case 34
             case 42: {
@@ -879,73 +893,112 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object status_ = "";
-    /**
-     * <code>string status = 4 [json_name = "status"];</code>
-     * @return The status.
-     */
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
+    private com.google.protobuf.LazyStringArrayList status_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureStatusIsMutable() {
+      if (!status_.isModifiable()) {
+        status_ = new com.google.protobuf.LazyStringArrayList(status_);
       }
+      bitField0_ |= 0x00000008;
     }
     /**
-     * <code>string status = 4 [json_name = "status"];</code>
-     * @return The bytes for status.
+     * <code>repeated string status = 4 [json_name = "status"];</code>
+     * @return A list containing the status.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getStatusList() {
+      status_.makeImmutable();
+      return status_;
+    }
+    /**
+     * <code>repeated string status = 4 [json_name = "status"];</code>
+     * @return The count of status.
+     */
+    public int getStatusCount() {
+      return status_.size();
+    }
+    /**
+     * <code>repeated string status = 4 [json_name = "status"];</code>
+     * @param index The index of the element to return.
+     * @return The status at the given index.
+     */
+    public java.lang.String getStatus(int index) {
+      return status_.get(index);
+    }
+    /**
+     * <code>repeated string status = 4 [json_name = "status"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the status at the given index.
      */
     public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getStatusBytes(int index) {
+      return status_.getByteString(index);
     }
     /**
-     * <code>string status = 4 [json_name = "status"];</code>
+     * <code>repeated string status = 4 [json_name = "status"];</code>
+     * @param index The index to set the value at.
      * @param value The status to set.
      * @return This builder for chaining.
      */
     public Builder setStatus(
-        java.lang.String value) {
+        int index, java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      status_ = value;
+      ensureStatusIsMutable();
+      status_.set(index, value);
       bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>string status = 4 [json_name = "status"];</code>
+     * <code>repeated string status = 4 [json_name = "status"];</code>
+     * @param value The status to add.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00000008);
+    public Builder addStatus(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureStatusIsMutable();
+      status_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>string status = 4 [json_name = "status"];</code>
-     * @param value The bytes for status to set.
+     * <code>repeated string status = 4 [json_name = "status"];</code>
+     * @param values The status to add.
      * @return This builder for chaining.
      */
-    public Builder setStatusBytes(
+    public Builder addAllStatus(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureStatusIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, status_);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string status = 4 [json_name = "status"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      status_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string status = 4 [json_name = "status"];</code>
+     * @param value The bytes of the status to add.
+     * @return This builder for chaining.
+     */
+    public Builder addStatusBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      status_ = value;
+      ensureStatusIsMutable();
+      status_.add(value);
       bitField0_ |= 0x00000008;
       onChanged();
       return this;

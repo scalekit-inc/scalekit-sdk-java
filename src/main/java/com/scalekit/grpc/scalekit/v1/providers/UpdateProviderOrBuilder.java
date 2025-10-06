@@ -89,4 +89,19 @@ public interface UpdateProviderOrBuilder extends
    * @return The displayPriority.
    */
   int getDisplayPriority();
+
+  /**
+   * <code>.google.protobuf.BoolValue coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the comingSoon field is set.
+   */
+  boolean hasComingSoon();
+  /**
+   * <code>.google.protobuf.BoolValue coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The comingSoon.
+   */
+  com.google.protobuf.BoolValue getComingSoon();
+  /**
+   * <code>.google.protobuf.BoolValue coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getComingSoonOrBuilder();
 }

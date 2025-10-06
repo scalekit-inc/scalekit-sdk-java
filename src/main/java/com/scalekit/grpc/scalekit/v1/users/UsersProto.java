@@ -670,599 +670,599 @@ public final class UsersProto {
       "R\005value:\0028\001\032C\n\025CustomAttributesEntry\022\020\n\003" +
       "key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001" +
       "B\r\n\013_first_nameB\014\n\n_last_nameB\007\n\005_nameB\t" +
-      "\n\007_localeB\017\n\r_phone_numberJ\004\010\001\020\002J\004\010\006\020\007\"\353" +
+      "\n\007_localeB\017\n\r_phone_numberJ\004\010\001\020\002J\004\010\006\020\007\"\371" +
       "\007\n\006Invite\022l\n\017organization_id\030\001 \001(\tBC\222A@2" +
       "-The organization to which the invite be" +
       "longs.J\017\"org_987654321\"R\016organizationId\022" +
       "\177\n\007user_id\030\002 \001(\tBf\222Ac2SUser ID to whom t" +
       "he invite is sent. May be empty if the u" +
       "ser has not signed up yet.J\014\"usr_123456\"" +
-      "R\006userId\022t\n\ninvited_by\030\003 \001(\tBP\222AM2;Ident" +
-      "ifier of the user or system that initiat" +
-      "ed the invite.J\016\"admin_998877\"H\000R\tinvite" +
-      "dBy\210\001\001\022x\n\006status\030\004 \001(\tB`\222A]2ICurrent sta" +
-      "tus of the invite (e.g., pending, accept" +
-      "ed, expired, revoked).J\020\"pending_invite\"" +
-      "R\006status\022\211\001\n\ncreated_at\030\005 \001(\0132\032.google.p" +
-      "rotobuf.TimestampBN\222AK21Timestamp when t" +
-      "he invite was originally created.J\026\"2025" +
-      "-07-10T08:00:00Z\"R\tcreatedAt\022}\n\nexpires_" +
-      "at\030\006 \001(\0132\032.google.protobuf.TimestampBB\222A" +
-      "?2%The time at which the invite expires." +
-      "J\026\"2025-12-31T23:59:59Z\"R\texpiresAt\022\217\001\n\t" +
-      "resent_at\030\007 \001(\0132\032.google.protobuf.Timest" +
-      "ampBV\222AS29Timestamp when the invite was " +
-      "last resent, if applicable.J\026\"2025-07-15" +
-      "T09:30:00Z\"R\010resentAt\022V\n\014resent_count\030\010 " +
-      "\001(\005B3\222A02+Number of times the invite has" +
-      " been resent.J\0012R\013resentCountB\r\n\013_invite" +
-      "d_by\"\243\003\n\023ResendInviteRequest\022\323\001\n\017organiz" +
-      "ation_id\030\001 \001(\tB\251\001\222A\226\0012|Unique identifier" +
-      " of the organization containing the pend" +
-      "ing invitation. Must start with \'org_\' a" +
-      "nd be 1-32 characters long.J\026\"org_1234ab" +
-      "cd5678efgh\"\272H\014r\n\020\001\030 :\004org_R\016organization" +
-      "Id\022\265\001\n\002id\030\002 \001(\tB\244\001\222A\221\0012wSystem-generated" +
-      " user ID of the user who has a pending i" +
-      "nvitation. Must start with \'usr_\' and be" +
-      " 19-25 characters long.J\026\"usr_1234abcd56" +
-      "78efgh\"\272H\014r\n\020\023\030\031:\004usr_R\002id\"\341\002\n\024ResendInv" +
-      "iteResponse\022\310\002\n\006invite\030\001 \001(\0132\031.scalekit." +
-      "v1.users.InviteB\224\002\222A\220\0022\201\001Updated invitat" +
-      "ion object containing the resent invitat" +
-      "ion details, including new expiration ti" +
-      "me and incremented resend counter.J\211\001{\"o" +
-      "rganization_id\": \"org_123\", \"user_id\": \"" +
-      "usr_456\", \"status\": \"pending_invite\", \"e" +
-      "xpires_at\": \"2025-12-31T23:59:59Z\", \"res" +
-      "ent_count\": 2}R\006invite\"\360\001\n\024ListUserRoles" +
-      "Request\022w\n\017organization_id\030\001 \001(\tBN\222A@2&U" +
-      "nique identifier for the organizationJ\026\"" +
-      "org_1234abcd5678efgh\"\272H\010r\006:\004org_R\016organi" +
-      "zationId\022_\n\007user_id\030\002 \001(\tBF\222A82\036Unique i" +
-      "dentifier for the userJ\026\"usr_1234abcd567" +
-      "8efgh\"\272H\010r\006:\004usr_R\006userId\"q\n\025ListUserRol" +
-      "esResponse\022X\n\005roles\030\001 \003(\0132\031.scalekit.v1." +
-      "commons.RoleB\'\222A$2\"List of roles assigne" +
-      "d to the userR\005roles\"\336\002\n\026AssignUserRoles" +
-      "Request\022w\n\017organization_id\030\001 \001(\tBN\222A@2&U" +
-      "nique identifier for the organizationJ\026\"" +
-      "org_1234abcd5678efgh\"\272H\010r\006:\004org_R\016organi" +
-      "zationId\022_\n\007user_id\030\002 \001(\tBF\222A82\036Unique i" +
-      "dentifier for the userJ\026\"usr_1234abcd567" +
-      "8efgh\"\272H\010r\006:\004usr_R\006userId\022j\n\005roles\030\003 \003(\013" +
-      "2$.scalekit.v1.users.AssignRoleRequestB." +
-      "\222A%2#List of roles to assign to the user" +
-      "\272H\003\310\001\001R\005roles\"\262\001\n\021AssignRoleRequest\022N\n\002i" +
-      "d\030\001 \001(\tB>\030\001\222A92\036Unique identifier for th" +
-      "e roleJ\027\"role_1234abcd5678efgh\"R\002id\022M\n\tr" +
-      "ole_name\030\002 \001(\tB0\222A$2\030Unique name for the" +
-      " roleJ\010\"viewer\"\272H\006r\004\020\000\030dR\010roleName\"\201\001\n\027A" +
-      "ssignUserRolesResponse\022f\n\005roles\030\001 \003(\0132\031." +
-      "scalekit.v1.commons.RoleB5\222A220List of a" +
-      "ll roles currently assigned to the userR" +
-      "\005roles\"\326\002\n\025RemoveUserRoleRequest\022w\n\017orga" +
-      "nization_id\030\001 \001(\tBN\222A@2&Unique identifie" +
-      "r for the organizationJ\026\"org_1234abcd567" +
-      "8efgh\"\272H\010r\006:\004org_R\016organizationId\022_\n\007use" +
-      "r_id\030\002 \001(\tBF\222A82\036Unique identifier for t" +
-      "he userJ\026\"usr_1234abcd5678efgh\"\272H\010r\006:\004us" +
-      "r_R\006userId\022c\n\trole_name\030\003 \001(\tBF\222AC2(Uniq" +
-      "ue identifier for the role to removeJ\027\"r" +
-      "ole_1234abcd5678efgh\"R\010roleName\"\366\001\n\032List" +
-      "UserPermissionsRequest\022w\n\017organization_i" +
-      "d\030\001 \001(\tBN\222A@2&Unique identifier for the " +
-      "organizationJ\026\"org_1234abcd5678efgh\"\272H\010r" +
-      "\006:\004org_R\016organizationId\022_\n\007user_id\030\002 \001(\t" +
-      "BF\222A82\036Unique identifier for the userJ\026\"" +
-      "usr_1234abcd5678efgh\"\272H\010r\006:\004usr_R\006userId" +
-      "\"\350\003\n\nPermission\022U\n\002id\030\001 \001(\tBE\222A?2$Unique" +
-      " identifier for the permissionJ\027\"perm_12" +
-      "34abcd5678efgh\"\340A\003R\002id\022R\n\004name\030\002 \001(\tB>\222A" +
-      ";2)Unique name identifier for the permis" +
-      "sionJ\016\"users.create\"R\004name\022^\n\014display_na" +
-      "me\030\003 \001(\tB;\222A82&Human-readable name for t" +
-      "he permissionJ\016\"Create Users\"R\013displayNa" +
-      "me\022u\n\013description\030\004 \001(\tBS\222AP2)Descriptio" +
-      "n of what the permission allowsJ#\"Allows" +
-      " creating new user accounts\"R\013descriptio" +
-      "n\022X\n\004tags\030\005 \003(\tBD\222AA2!Tags for categoriz" +
-      "ing permissionsJ\034[\"user-management\", \"ad" +
-      "min\"]R\004tags\"\217\001\n\033ListUserPermissionsRespo" +
-      "nse\022p\n\013permissions\030\001 \003(\0132\035.scalekit.v1.u" +
-      "sers.PermissionB/\222A,2*List of permission" +
-      "s the user has access toR\013permissions2\303\227" +
-      "\001\n\013UserService\022\270\003\n\007GetUser\022!.scalekit.v1" +
-      ".users.GetUserRequest\032\".scalekit.v1.user" +
-      "s.GetUserResponse\"\345\002\222A\301\002\n\005Users\022\010Get use" +
-      "r\032\216\001Retrieves all details for a user by " +
-      "system-generated user ID or external ID." +
-      " The response includes organization memb" +
-      "erships and user metadata.J\234\001\n\003200\022\224\001\njU" +
-      "ser details retrieved successfully. Retu" +
-      "rns full user object with system-generat" +
-      "ed fields and timestamps.\022&\n$\032\".scalekit" +
-      ".v1.users.GetUserResponse\202\265\030\002\030T\202\323\344\223\002\024\022\022/" +
-      "api/v1/users/{id}\022\272\t\n\tListUsers\022#.scalek" +
-      "it.v1.users.ListUsersRequest\032$.scalekit." +
-      "v1.users.ListUsersResponse\"\341\010\222A\302\010\n\005Users" +
-      "\022\035List all users in environment\032\274\002Retrie" +
-      "ves a paginated list of all users across" +
-      " your entire environment. Use this endpo" +
-      "int to view all users regardless of thei" +
-      "r organization memberships. This is usef" +
-      "ul for administrative purposes, user aud" +
-      "its, or when you need to see all users i" +
-      "n your Scalekit environment. Supports pa" +
-      "gination for large user bases.JA\n\003200\022:\n" +
-      "\016List of users.\022(\n&\032$.scalekit.v1.users." +
-      "ListUsersResponsej\227\005\n\rx-codeSamples\022\205\0052\202" +
-      "\005\n}*{\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004lang\022\014\032" +
-      "\njavascript\nK\n\006source\022A\032?const response " +
-      "= await sc.user.listUsers(\n  { pageSize:" +
-      " 100 });\n\254\001*\251\001\n\025\n\005label\022\014\032\nPython SDK\n\020\n" +
-      "\004lang\022\010\032\006python\n~\n\006source\022t\032r# pass empt" +
-      "y org to fetch all users in environment\n" +
-      "resp,_ = sc.users.list_users(organizatio" +
-      "n_id=\"\", page_size=100)\n\221\001*\216\001\n\021\n\005label\022\010" +
-      "\032\006Go SDK\n\014\n\004lang\022\004\032\002go\nk\n\006source\022a\032_all," +
-      " err := sc.User().ListOrganizationUsers(" +
-      "ctx, \"\", &scalekit.ListUsersOptions{Page" +
-      "Size: 100})\n\275\001*\272\001\n\023\n\005label\022\n\032\010Java SDK\n\016" +
-      "\n\004lang\022\006\032\004java\n\222\001\n\006source\022\207\001\032\204\001ListUsers" +
-      "Request lur = ListUsersRequest.\n  newBui" +
-      "lder().setPageSize(100).build();\nListUse" +
-      "rsResponse allUsers = users.listUsers(lu" +
-      "r);\202\265\030\002\030T\202\323\344\223\002\017\022\r/api/v1/users\022\313\003\n\013Searc" +
-      "hUsers\022%.scalekit.v1.users.SearchUsersRe" +
-      "quest\032&.scalekit.v1.users.SearchUsersRes" +
-      "ponse\"\354\002\222A\267\002\n\005Users\022\014Search users\032\205\001Sear" +
-      "ches for users in the environment by ema" +
-      "il, user ID, or external ID. Returns all" +
-      " users that match the query. Supports pa" +
-      "gination.J\227\001\n\003200\022\217\001\naReturns a list of " +
-      "matching users and a page token for pagi" +
-      "nation if there are additional results.\022" +
-      "*\n(\032&.scalekit.v1.users.SearchUsersRespo" +
-      "nse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\026\022\024/api/v1/" +
-      "users:search\022\340\004\n\027SearchOrganizationUsers" +
-      "\0221.scalekit.v1.users.SearchOrganizationU" +
-      "sersRequest\0322.scalekit.v1.users.SearchOr" +
-      "ganizationUsersResponse\"\335\003\222A\210\003\n\005Users\022\031S" +
-      "earch organization users\032\245\001Searches for " +
-      "users within a specific organization by " +
-      "email, user ID, or external ID. Returns " +
-      "all users in the organization that match" +
-      " the query. Supports pagination.J\273\001\n\003200" +
-      "\022\263\001\nyReturns a list of matching users wi" +
-      "thin the organization and a page token f" +
-      "or pagination if there are additional re" +
-      "sults.\0226\n4\0322.scalekit.v1.users.SearchOrg" +
-      "anizationUsersResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREV" +
-      "IEW\202\323\344\223\0026\0224/api/v1/organizations/{organi" +
-      "zation_id}/users:search\022\330\021\n\nUpdateUser\022$" +
-      ".scalekit.v1.users.UpdateUserRequest\032%.s" +
-      "calekit.v1.users.UpdateUserResponse\"\374\020\222A" +
-      "\322\020\n\005Users\022\027Update user information\032\341\002Mod" +
-      "ifies user account information including" +
-      " profile details, metadata, and external" +
-      " ID. Use this endpoint to update a user\'" +
-      "s personal information, contact details," +
-      " or custom metadata. You can update the " +
-      "user\'s profile, phone number, and metada" +
-      "ta fields. Note that fields like user ID" +
-      ", email address, environment ID, and cre" +
-      "ation time cannot be modified.J\211\001\n\003200\022\201" +
-      "\001\nTUser updated successfully. Returns th" +
-      "e modified user object with updated time" +
-      "stamps.\022)\n\'\032%.scalekit.v1.users.UpdateUs" +
-      "erResponsej\277\014\n\rx-codeSamples\022\255\0142\252\014\n\321\001*\316\001" +
-      "\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004lang\022\014\032\njava" +
-      "script\n\235\001\n\006source\022\222\001\032\217\001await sc.user.upd" +
-      "ateUser(\"usr_123\", {\n\tuserProfile: {\n\t\tf" +
-      "irstName: \"John\",\n\t\tlastName: \"Smith\",\n\t" +
-      "},\n\tmetadata: {\n\t\tdepartment: \"sales\",\n\t" +
-      "},\n});\n\340\004*\335\004\n\025\n\005label\022\014\032\nPython SDK\n\020\n\004l" +
-      "ang\022\010\032\006python\n\261\004\n\006source\022\246\004\032\243\004import os\n" +
-      "from scalekit import ScalekitClient\nfrom" +
-      " scalekit.v1.users.users_pb2 import Upda" +
-      "teUser\nfrom scalekit.v1.commons.\n  commo" +
-      "ns_pb2 import UserProfile\nsc = ScalekitC" +
-      "lient(\n    env_url=os.getenv(\"SCALEKIT_E" +
-      "NV_URL\"),\n    client_id=os.getenv(\"SCALE" +
-      "KIT_CLIENT_ID\"),\n    client_secret=os.ge" +
-      "tenv(\"SCALEKIT_CLIENT_SECRET\"),\n)\nupdate" +
-      "_user = UpdateUser(\n    user_profile=Use" +
-      "rProfile(\n        first_name=\"John\",\n   " +
-      "     last_name=\"Smith\"\n    ),\n    metada" +
-      "ta={\"department\": \"sales\"}\n)\nsc.users.up" +
-      "date_user(organization_id=\"org_123\", \n  " +
-      "user=update_user)\n\256\002*\253\002\n\021\n\005label\022\010\032\006Go S" +
-      "DK\n\014\n\004lang\022\004\032\002go\n\207\002\n\006source\022\374\001\032\371\001upd := " +
-      "&usersv1.UpdateUser{\n    UserProfile: &u" +
-      "sersv1.UpdateUserProfile{\n        FirstN" +
-      "ame: \"John\",\n        LastName:  \"Smith\"," +
-      "\n    },\n    Metadata: map[string]string{" +
-      "\n        \"department\": \"sales\",\n    },\n}" +
-      "\nsc.User().UpdateUser(ctx, \"usr_123\", up" +
-      "d)\n\277\003*\274\003\n\023\n\005label\022\n\032\010Java SDK\n\016\n\004lang\022\006\032" +
-      "\004java\n\224\003\n\006source\022\211\003\032\206\003UpdateUser upd = U" +
-      "pdateUser.newBuilder()\n        .setUserP" +
-      "rofile(\n          UpdateUserProfile.newB" +
-      "uilder()\n                .setFirstName(\"" +
-      "John\")\n                .setLastName(\"Smi" +
-      "th\")\n                .build())\n        ." +
-      "putMetadata(\"department\", \"sales\")\n     " +
-      "   .build();\nUpdateUserRequest updReq = " +
-      "UpdateUserRequest.\n  newBuilder().setUse" +
-      "r(upd).build();\nusers.updateUser(\"usr_12" +
-      "3\", updReq);\202\265\030\002\030T\202\323\344\223\002\0322\022/api/v1/users/" +
-      "{id}:\004user\022\320\007\n\nDeleteUser\022$.scalekit.v1." +
-      "users.DeleteUserRequest\032\026.google.protobu" +
-      "f.Empty\"\203\007\222A\337\006\n\005Users\022\027Delete user perma" +
-      "nently\032\260\002Permanently removes a user from" +
-      " your environment and deletes all associ" +
-      "ated data. Use this endpoint when you ne" +
-      "ed to completely remove a user account. " +
-      "This action deletes the user\'s profile, " +
-      "memberships, and all related data across" +
-      " all organizations. This operation canno" +
-      "t be undone, so use with caution.J7\n\003200" +
-      "\0220\n.User successfully deleted. No conten" +
-      "t returnedj\320\003\n\rx-codeSamples\022\276\0032\273\003\nb*`\n\026" +
-      "\n\005label\022\r\032\013Node.js SDK\n\024\n\004lang\022\014\032\njavasc" +
-      "ript\n0\n\006source\022&\032$await sc.user.deleteUs" +
-      "er(\"usr_123\");\n~*|\n\025\n\005label\022\014\032\nPython SD" +
-      "K\n\020\n\004lang\022\010\032\006python\nQ\n\006source\022G\032Esc.user" +
-      "s.delete_user(organization_id=\"org_123\"," +
-      " \n  user_id=\"usr_123\")\n\201\001*\177\n\021\n\005label\022\010\032\006" +
-      "Go SDK\n\014\n\004lang\022\004\032\002go\n\\\n\006source\022R\032Pif err" +
-      " := sc.User().DeleteUser(ctx, \n  \"usr_12" +
-      "3\"); err != nil {\n    panic(err)\n}\nQ*O\n\023" +
-      "\n\005label\022\n\032\010Java SDK\n\016\n\004lang\022\006\032\004java\n(\n\006s" +
-      "ource\022\036\032\034users.deleteUser(\"usr_123\");\202\265\030" +
-      "\002\030T\202\323\344\223\002\024*\022/api/v1/users/{id}\022\241\030\n\020Create" +
-      "Membership\022*.scalekit.v1.users.CreateMem" +
-      "bershipRequest\032+.scalekit.v1.users.Creat" +
-      "eMembershipResponse\"\263\027\222A\327\026\n\005Users\022!Add e" +
-      "xisting user to organization\032\225\002Adds an e" +
-      "xisting user to an organization and assi" +
-      "gns them specific roles and permissions." +
-      " Use this endpoint when you want to gran" +
-      "t an existing user access to a particula" +
-      "r organization. You can specify roles, m" +
-      "etadata, and other membership details du" +
-      "ring the invitation process.J\231\001\n\003201\022\221\001\n" +
-      "^User successfully added to the organiza" +
-      "tion. Returns details of the updated mem" +
-      "bership details\022/\n-\032+.scalekit.v1.users." +
-      "CreateMembershipResponsej\366\022\n\rx-codeSampl" +
-      "es\022\344\0222\341\022\n\222\003*\217\003\n\026\n\005label\022\r\032\013Node.js SDK\n\024" +
-      "\n\004lang\022\014\032\njavascript\n\336\002\n\006source\022\323\002\032\320\002imp" +
-      "ort { ScalekitClient } from \"@scalekit-s" +
-      "dk/node\";\nconst sc = new ScalekitClient(" +
-      "\n\tprocess.env.SCALEKIT_ENV_URL,\n\tprocess" +
-      ".env.SCALEKIT_CLIENT_ID,\n\tprocess.env.SC" +
-      "ALEKIT_CLIENT_SECRET\n);\nawait sc.user.cr" +
-      "eateMembership(\"org_123\", \"usr_123\", {\n\t" +
-      "roles: [\"admin\"],\n\tmetadata: {\n\t\tdepartm" +
-      "ent: \"engineering\",\n\t\tlocation: \"nyc-off" +
-      "ice\",\n\t},\n});\n\340\003*\335\003\n\025\n\005label\022\014\032\nPython S" +
-      "DK\n\020\n\004lang\022\010\032\006python\n\261\003\n\006source\022\246\003\032\243\003imp" +
-      "ort os\nfrom scalekit import ScalekitClie" +
-      "nt\nsc = ScalekitClient(\n    env_url=os.g" +
-      "etenv(\"SCALEKIT_ENV_URL\"),\n    client_id" +
-      "=os.getenv(\"SCALEKIT_CLIENT_ID\"),\n    cl" +
-      "ient_secret=os.getenv(\"SCALEKIT_CLIENT_S" +
-      "ECRET\"),\n)\n# The Python SDK currently ex" +
-      "poses a helper that \n  #simply links an " +
-      "existing\n# user to an organization.\nresp" +
-      ", _ = sc.users.add_user_to_organization(" +
-      "\n    organization_id=\"org_123\",\n    user" +
-      "_id=\"usr_123\",\n)\n\205\005*\202\005\n\021\n\005label\022\010\032\006Go SD" +
-      "K\n\014\n\004lang\022\004\032\002go\n\336\004\n\006source\022\323\004\032\320\004func mai" +
-      "n() {\n    sc := scalekit.NewScalekitClie" +
-      "nt(\n        os.Getenv(\"SCALEKIT_ENV_URL\"" +
-      "),\n        os.Getenv(\"SCALEKIT_CLIENT_ID" +
-      "\"),\n        os.Getenv(\"SCALEKIT_CLIENT_S" +
-      "ECRET\"),\n    )\n    membership := &usersv" +
-      "1.CreateMembership{\n        Roles: []*us" +
-      "ersv1.Role{{Name: \"admin\"}},\n        Met" +
-      "adata: map[string]string{\n            \"d" +
-      "epartment\": \"engineering\",\n            \"" +
-      "location\":   \"nyc-office\",\n        },\n  " +
-      "  }\n    resp, \n      err := sc.User().Cr" +
-      "eateMembership(\n        context.Backgrou" +
-      "nd(), \"org_123\", \n          \"usr_123\", m" +
-      "embership, false)\n    if err != nil {\n  " +
-      "      panic(err)\n    }\n}\n\336\006*\333\006\n\023\n\005label\022" +
-      "\n\032\010Java SDK\n\016\n\004lang\022\006\032\004java\n\263\006\n\006source\022\250" +
-      "\006\032\245\006import com.scalekit.ScalekitClient;\n" +
-      "import com.scalekit.api.UserClient;\nimpo" +
-      "rt com.scalekit.grpc.scalekit.v1.users.*" +
-      ";\nScalekitClient sk = new ScalekitClient" +
-      "(\n    System.getenv(\"SCALEKIT_ENV_URL\")," +
-      "\n    System.getenv(\"SCALEKIT_CLIENT_ID\")" +
-      ",\n    System.getenv(\"SCALEKIT_CLIENT_SEC" +
-      "RET\")\n);\nUserClient users = sk.users();\n" +
-      "CreateMembershipRequest membershipReq = " +
-      "CreateMemb\n  ershipRequest.newBuilder()\n" +
-      "        .setMembership(\n          Create" +
-      "Membership.newBuilder()\n                " +
-      ".addRoles(Role.newBuilder(\n             " +
-      "     ).setName(\"admin\").build())\n       " +
-      "         .putMetadata(\"department\", \"eng" +
-      "ineering\")\n                .putMetadata(" +
-      "\"location\", \"nyc-office\")\n              " +
-      "  .build())\n        .build();\nCreateMemb" +
-      "ershipResponse res = users.\n  createMemb" +
-      "ership(\"org_123\", \"usr_123\", \n    member" +
-      "shipReq);\202\265\030\002\030T\202\323\344\223\002L\">/api/v1/membershi" +
-      "ps/organizations/{organization_id}/users" +
-      "/{id}:\nmembership\022\260\005\n\020DeleteMembership\022*" +
-      ".scalekit.v1.users.DeleteMembershipReque" +
-      "st\032\026.google.protobuf.Empty\"\327\004\222A\207\004\n\005Users" +
-      "\022\'Delete organization membership for use" +
-      "r\032\334\001Removes a user from an organization " +
-      "by user ID or external ID. If the user h" +
-      "as no memberships left and cascade is tr" +
-      "ue, the user is also deleted. This actio" +
-      "n is irreversible and may also remove re" +
-      "lated group memberships.JC\n\003200\022<\n:User " +
-      "successfully marked for deletion. No con" +
-      "tent returnedj\260\001\n\rx-codeSamples\022\236\0012\233\001\n\230\001" +
-      "*\225\001\n\025\n\005label\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006py" +
-      "thon\nj\n\006source\022`\032^response = scalekit_cl" +
-      "ient.users.delete_membership(\n  organiza" +
-      "tion_id=org_id,user_id=user_id\n)\202\265\030\002\030T\202\323" +
-      "\344\223\002@*>/api/v1/memberships/organizations/" +
-      "{organization_id}/users/{id}\022\214\004\n\020UpdateM" +
-      "embership\022*.scalekit.v1.users.UpdateMemb" +
-      "ershipRequest\032+.scalekit.v1.users.Update" +
-      "MembershipResponse\"\236\003\222A\263\002\n\005Users\022\'Update" +
-      " organization membership for user\032\203\001Upda" +
-      "tes a user\'s membership details within a" +
-      "n organization by user ID or external ID" +
-      ". You can update roles and membership me" +
-      "tadata.J{\n\003200\022t\nAMembership updated suc" +
-      "cessfully. Returns the updated user obje" +
-      "ct.\022/\n-\032+.scalekit.v1.users.UpdateMember" +
-      "shipResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002L2" +
-      ">/api/v1/memberships/organizations/{orga" +
-      "nization_id}/users/{id}:\nmembership\022\235\030\n\027" +
-      "CreateUserAndMembership\0221.scalekit.v1.us" +
-      "ers.CreateUserAndMembershipRequest\0322.sca" +
-      "lekit.v1.users.CreateUserAndMembershipRe" +
-      "sponse\"\232\027\222A\325\026\n\005Users\022\037Create new user in" +
-      " organization\032\203\003Creates a new user accou" +
-      "nt and immediately adds them to the spec" +
-      "ified organization. Use this endpoint wh" +
-      "en you want to create a user and grant t" +
-      "hem access to an organization in a singl" +
-      "e operation. You can provide user profil" +
-      "e information, assign roles, and configu" +
-      "re membership metadata. The user receive" +
-      "s an activation email unless this featur" +
-      "e is disabled in the organization settin" +
-      "gs.J\263\001\n\003201\022\253\001\nqUser created successfull" +
-      "y. Returns the created user object, incl" +
-      "uding system-generated identifiers and t" +
-      "imestamps\0226\n4\0322.scalekit.v1.users.Create" +
-      "UserAndMembershipResponsej\356\021\n\rx-codeSamp" +
-      "les\022\334\0212\331\021\n\320\002*\315\002\n\026\n\005label\022\r\032\013Node.js SDK\n" +
-      "\024\n\004lang\022\014\032\njavascript\n\234\002\n\006source\022\221\002\032\216\002co" +
-      "nst {\n   user } = await sc.user.\n    cre" +
-      "ateUserAndMembership(\"org_123\", {\n\temail" +
-      ": \"user@example.com\",\n\texternalId: \"ext_" +
-      "12345a67b89c\",\n\tmetadata: { department: " +
-      "\"engineering\", \n\t  location: \"nyc-office" +
-      "\" },\n\tuserProfile: {\n\t\tfirstName: \"John\"" +
-      ",\n\t\tlastName: \"Doe\",\n\t},\n});\n\252\005*\247\005\n\025\n\005la" +
-      "bel\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python\n\373\004\n\006" +
-      "source\022\360\004\032\355\004import os\nfrom scalekit impo" +
-      "rt ScalekitClient\nfrom scalekit.v1.users" +
-      ".users_pb2 import User\nfrom scalekit.v1." +
-      "commons.\n  commons_pb2 import UserProfil" +
-      "e\nsc = ScalekitClient(\n    env_url=os.ge",
-      "tenv(\"SCALEKIT_ENV_URL\"),\n    client_id=" +
-      "os.getenv(\"SCALEKIT_CLIENT_ID\"),\n    cli" +
-      "ent_secret=os.getenv(\"SCALEKIT_CLIENT_SE" +
-      "CRET\"),\n)\nuser_msg = User(\n    email=\"us" +
-      "er@example.com\",\n    external_id=\"ext_12" +
-      "345a67b89c\",\n    metadata={\"department\":" +
-      " \"engineering\", \"location\": \"nyc-office\"" +
-      "},\n    user_profile=UserProfile(\n       " +
-      " first_name=\"John\",\n        last_name=\"D" +
-      "oe\"\n    )\n)\ncreate_resp, \n  _ = sc.users" +
-      ".create_user(\"org_123\", user_msg)\n\361\003*\356\003\n" +
-      "\021\n\005label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n\312\003\n\006sou" +
-      "rce\022\277\003\032\274\003newUser := &usersv1.CreateUser{" +
-      "\n    Email:      \"user@example.com\",\n   " +
-      " ExternalId: \"ext_12345a67b89c\",\n    Met" +
-      "adata: map[string]string{\n        \"depar" +
-      "tment\": \"engineering\",\n        \"location" +
-      "\":   \"nyc-office\",\n    },\n    UserProfil" +
-      "e: &usersv1.CreateUserProfile{\n        F" +
-      "irstName: \"John\",\n        LastName:  \"Do" +
-      "e\",\n    },\n}\ncuResp, \n  err := sc.User()" +
-      ".CreateUserAndMembership(ctx, \"org_123\"," +
-      " newUser, false)\nif err != nil { /* hand" +
-      "le error */ }\n\342\005*\337\005\n\023\n\005label\022\n\032\010Java SDK" +
-      "\n\016\n\004lang\022\006\032\004java\n\267\005\n\006source\022\254\005\032\251\005CreateU" +
-      "ser createUser = CreateUser.newBuilder()" +
-      "\n        .setEmail(\"user@example.com\")\n " +
-      "       .setExternalId(\"ext_12345a67b89c\"" +
-      ")\n        .putMetadata(\"department\", \"en" +
-      "gineering\")\n        .putMetadata(\"locati" +
-      "on\", \"nyc-office\")\n        .setUserProfi" +
-      "le(\n          CreateUserProfile.newBuild" +
-      "er()\n                .setFirstName(\"John" +
-      "\")\n                .setLastName(\"Doe\")\n " +
-      "               .build())\n        .build(" +
-      ");\nCreateUserAndMembershipRequest cuReq " +
-      "= CreateUserA\n  ndMembershipRequest.newB" +
-      "uilder()\n        .setUser(createUser)\n  " +
-      "      .build();\nCreateUserAndMembershipR" +
-      "esponse cuResp = users.\n  createUserAndM" +
-      "embership(\"org_123\", cuReq);\nSystem.out." +
-      "println(cuResp.getUser().getId());\202\265\030\002\030T" +
-      "\202\323\344\223\0025\"-/api/v1/organizations/{organizat" +
-      "ion_id}/users:\004user\022\244\013\n\025ListOrganization" +
-      "Users\022/.scalekit.v1.users.ListOrganizati" +
-      "onUsersRequest\0320.scalekit.v1.users.ListO" +
-      "rganizationUsersResponse\"\247\n\222A\350\t\n\005Users\022\027" +
-      "List organization users\032\207\002Retrieves a pa" +
-      "ginated list of all users who are member" +
-      "s of the specified organization. Use thi" +
-      "s endpoint to view all users with access" +
-      " to a particular organization, including" +
-      " their roles, metadata, and membership d" +
-      "etails. Supports pagination for large us" +
-      "er lists.J{\n\003200\022t\n<Successfully retriev" +
-      "ed the list of users in the organization" +
-      "\0224\n2\0320.scalekit.v1.users.ListOrganizatio" +
-      "nUsersResponsej\276\006\n\rx-codeSamples\022\254\0062\251\006\n\264" +
-      "\001*\261\001\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004lang\022\014\032\n" +
-      "javascript\n\200\001\n\006source\022v\032tconst response " +
-      "= await sc.user.\n  listOrganizationUsers" +
-      "(\"org_123\", {\n\tpageSize: 50,\n});\nconsole" +
-      ".log(response.users);\n\177*}\n\025\n\005label\022\014\032\nPy" +
-      "thon SDK\n\020\n\004lang\022\010\032\006python\nR\n\006source\022H\032F" +
-      "resp, _ = sc.users.list_users(organizati" +
-      "on_id=\"org_123\", page_size=50)\n\333\001*\330\001\n\021\n\005" +
-      "label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n\264\001\n\006source" +
-      "\022\251\001\032\246\001list, \n  err := sc.User().ListOrga" +
-      "nizationUsers(ctx, \"org_123\", &scalekit." +
-      "ListUsersOptions{PageSize: 50})\nif err !" +
-      "= nil { /* handle error */ }\nfmt.Println" +
-      "(list.Users)\n\220\002*\215\002\n\023\n\005label\022\n\032\010Java SDK\n" +
-      "\016\n\004lang\022\006\032\004java\n\345\001\n\006source\022\332\001\032\327\001ListOrga" +
-      "nizationUsersRequest listReq = ListOrgan" +
-      "iz\n  ationUsersRequest.newBuilder()\n    " +
-      "    .setPageSize(50)\n        .build();\nL" +
-      "istOrganizationUsersResponse list = user" +
-      "s.\n  listOrganizationUsers(\"org_123\", li" +
-      "stReq);\202\265\030\002\030T\202\323\344\223\002/\022-/api/v1/organizatio" +
-      "ns/{organization_id}/users\022\222\020\n\014ResendInv" +
-      "ite\022&.scalekit.v1.users.ResendInviteRequ" +
-      "est\032\'.scalekit.v1.users.ResendInviteResp" +
-      "onse\"\260\017\222A\332\016\n\005Users\022\034Resend user invitati" +
-      "on email\032\341\004Resends an invitation email t" +
-      "o a user who has a pending or expired in" +
-      "vitation in the specified organization. " +
-      "If the invitation has expired, a new inv" +
-      "itation will be automatically created an" +
-      "d sent. If the invitation is still valid" +
-      ", a reminder email will be sent instead." +
-      " Use this endpoint when a user hasn\'t re" +
-      "sponded to their initial invitation and " +
-      "you need to send them a reminder or when" +
-      " the original invitation has expired. Th" +
-      "e invitation email includes a secure mag" +
-      "ic link that allows the user to complete" +
-      " their account setup and join the organi" +
-      "zation. Each resend operation increments" +
-      " the resent counter.J\247\002\n\003200\022\237\002\n\357\001Succes" +
-      "sfully resent the invitation email. Retu" +
-      "rns the updated invitation object with o" +
-      "rganization ID, user ID, membership stat" +
-      "us, timestamps, and resent count. If exp" +
-      "ired, a new invitation is created; other" +
-      "wise, the existing one is resent.\022+\n)\032\'." +
-      "scalekit.v1.users.ResendInviteResponseJ\217" +
-      "\002\n\003400\022\207\002\n\335\001Invalid request \342\200\224 common c" +
-      "auses include user ID or organization ID" +
-      " is invalid, full-stack authentication i" +
-      "s disabled, user profile is missing, inv" +
-      "ite already accepted, or missing expiry " +
-      "time in user management settings.\022%\n#\032!." +
-      "scalekit.v1.errdetails.ErrorInfoJ\235\002\n\003404" +
-      "\022\225\002\n\353\001Resource not found \342\200\224 the specifi" +
-      "ed user, organization, membership, or in" +
-      "vitation could not be found in the speci" +
-      "fied environment. Verify that all IDs ar" +
-      "e correct and that the resources exist b" +
-      "efore attempting to resend an invitation" +
-      ".\022%\n#\032!.scalekit.v1.errdetails.ErrorInfo" +
-      "J\362\002\n\003500\022\352\002\n\300\002Internal server error \342\200\224 " +
-      "an unexpected error occurred while proce" +
-      "ssing the invitation resend request. Thi" +
-      "s may be due to database connectivity is" +
-      "sues, problems generating the secure mag" +
-      "ic link, email delivery service failures" +
-      ", or transaction errors during invitatio" +
-      "n processing. Contact support if the pro" +
-      "blem persists.\022%\n#\032!.scalekit.v1.errdeta" +
-      "ils.ErrorInfo\202\265\030\002\030T\202\323\344\223\002F2A/api/v1/invit" +
-      "es/organizations/{organization_id}/users" +
-      "/{id}/resend:\001*\022\356\003\n\rListUserRoles\022\'.scal" +
-      "ekit.v1.users.ListUserRolesRequest\032(.sca" +
-      "lekit.v1.users.ListUserRolesResponse\"\211\003\222" +
-      "A\253\002\n\005Users\022\017List user roles\032\232\001Retrieves " +
-      "all roles assigned to a user within a sp" +
-      "ecific organization. This includes both " +
-      "direct role assignments and inherited ro" +
-      "les from role hierarchy.Jt\n\003200\022m\n=Succe" +
-      "ssfully retrieved the list of roles assi" +
-      "gned to the user\022,\n*\032(.scalekit.v1.users" +
-      ".ListUserRolesResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREV" +
-      "IEW\202\323\344\223\002?\022=/api/v1/organizations/{organi" +
-      "zation_id}/users/{user_id}/roles\022\342\003\n\017Ass" +
-      "ignUserRoles\022).scalekit.v1.users.AssignU" +
-      "serRolesRequest\032*.scalekit.v1.users.Assi" +
-      "gnUserRolesResponse\"\367\002\222A\222\002\n\005Users\022\024Assig" +
-      "n roles to user\032\220\001Assigns one or more ro" +
-      "les to a user within a specific organiza" +
-      "tion. This operation adds to existing ro" +
-      "le assignments rather than replacing the" +
-      "m.J`\n\003200\022Y\n\'Successfully assigned roles" +
-      " to the user\022.\n,\032*.scalekit.v1.users.Ass" +
-      "ignUserRolesResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIE" +
-      "W\202\323\344\223\002F\"=/api/v1/organizations/{organiza" +
-      "tion_id}/users/{user_id}/roles:\005roles\022\250\003" +
-      "\n\016RemoveUserRole\022(.scalekit.v1.users.Rem" +
-      "oveUserRoleRequest\032\026.google.protobuf.Emp" +
-      "ty\"\323\002\222A\351\001\n\005Users\022\025Remove role from user\032" +
-      "\232\001Removes a specific role assignment fro" +
-      "m a user within an organization. This on" +
-      "ly removes direct role assignments, not " +
-      "inherited roles from role hierarchy.J,\n\003" +
-      "200\022%\n#Role successfully removed from us" +
-      "er\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002K*I/api/v1/o" +
-      "rganizations/{organization_id}/users/{us" +
-      "er_id}/roles/{role_name}\022\252\004\n\023ListUserPer" +
-      "missions\022-.scalekit.v1.users.ListUserPer" +
-      "missionsRequest\032..scalekit.v1.users.List" +
-      "UserPermissionsResponse\"\263\003\222A\317\002\n\005Users\022\025L" +
-      "ist user permissions\032\264\001Retrieves all per" +
-      "missions a user has access to within a s" +
-      "pecific organization. This includes perm" +
-      "issions from direct role assignments and" +
-      " inherited permissions from role hierarc" +
-      "hy.Jx\n\003200\022q\n;Successfully retrieved the" +
-      " list of permissions for the user\0222\n0\032.." +
-      "scalekit.v1.users.ListUserPermissionsRes" +
-      "ponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002E\022C/api/v" +
-      "1/organizations/{organization_id}/users/" +
-      "{user_id}/permissions\032\354\003\222A\350\003\n\005Users\022\336\003Co" +
-      "mprehensive user management operations i" +
-      "ncluding user lifecycle, organization me" +
-      "mberships, and invitation workflows. Thi" +
-      "s service provides endpoints for creatin" +
-      "g, retrieving, updating, and deleting us" +
-      "er accounts across your Scalekit environ" +
-      "ment. It supports both individual user o" +
-      "perations and bulk operations for user a" +
-      "dministration, including user search, pa" +
-      "gination, and metadata management. The s" +
-      "ervice also handles user invitations and" +
-      " organization membership management.B\310\001\n" +
-      "#com.scalekit.grpc.scalekit.v1.usersB\nUs" +
-      "ersProtoP\001Z/github.com/scalekit-inc/scal" +
-      "ekit/pkg/grpc/users\242\002\003SVU\252\002\021Scalekit.V1." +
-      "Users\312\002\021Scalekit\\V1\\Users\342\002\035Scalekit\\V1\\" +
-      "Users\\GPBMetadata\352\002\023Scalekit::V1::Usersb" +
-      "\006proto3"
+      "R\006userId\022\177\n\rinviter_email\030\003 \001(\tBU\222AR2;Id" +
+      "entifier of the user or system that init" +
+      "iated the invite.J\023\"admin@example.com\"H\000" +
+      "R\014inviterEmail\210\001\001\022x\n\006status\030\004 \001(\tB`\222A]2I" +
+      "Current status of the invite (e.g., pend" +
+      "ing, accepted, expired, revoked).J\020\"pend" +
+      "ing_invite\"R\006status\022\211\001\n\ncreated_at\030\005 \001(\013" +
+      "2\032.google.protobuf.TimestampBN\222AK21Times" +
+      "tamp when the invite was originally crea" +
+      "ted.J\026\"2025-07-10T08:00:00Z\"R\tcreatedAt\022" +
+      "}\n\nexpires_at\030\006 \001(\0132\032.google.protobuf.Ti" +
+      "mestampBB\222A?2%The time at which the invi" +
+      "te expires.J\026\"2025-12-31T23:59:59Z\"R\texp" +
+      "iresAt\022\217\001\n\tresent_at\030\007 \001(\0132\032.google.prot" +
+      "obuf.TimestampBV\222AS29Timestamp when the " +
+      "invite was last resent, if applicable.J\026" +
+      "\"2025-07-15T09:30:00Z\"R\010resentAt\022V\n\014rese" +
+      "nt_count\030\010 \001(\005B3\222A02+Number of times the" +
+      " invite has been resent.J\0012R\013resentCount" +
+      "B\020\n\016_inviter_email\"\243\003\n\023ResendInviteReque" +
+      "st\022\323\001\n\017organization_id\030\001 \001(\tB\251\001\222A\226\0012|Uni" +
+      "que identifier of the organization conta" +
+      "ining the pending invitation. Must start" +
+      " with \'org_\' and be 1-32 characters long" +
+      ".J\026\"org_1234abcd5678efgh\"\272H\014r\n\020\001\030 :\004org_" +
+      "R\016organizationId\022\265\001\n\002id\030\002 \001(\tB\244\001\222A\221\0012wSy" +
+      "stem-generated user ID of the user who h" +
+      "as a pending invitation. Must start with" +
+      " \'usr_\' and be 19-25 characters long.J\026\"" +
+      "usr_1234abcd5678efgh\"\272H\014r\n\020\023\030\031:\004usr_R\002id" +
+      "\"\341\002\n\024ResendInviteResponse\022\310\002\n\006invite\030\001 \001" +
+      "(\0132\031.scalekit.v1.users.InviteB\224\002\222A\220\0022\201\001U" +
+      "pdated invitation object containing the " +
+      "resent invitation details, including new" +
+      " expiration time and incremented resend " +
+      "counter.J\211\001{\"organization_id\": \"org_123\"" +
+      ", \"user_id\": \"usr_456\", \"status\": \"pendi" +
+      "ng_invite\", \"expires_at\": \"2025-12-31T23" +
+      ":59:59Z\", \"resent_count\": 2}R\006invite\"\360\001\n" +
+      "\024ListUserRolesRequest\022w\n\017organization_id" +
+      "\030\001 \001(\tBN\222A@2&Unique identifier for the o" +
+      "rganizationJ\026\"org_1234abcd5678efgh\"\272H\010r\006" +
+      ":\004org_R\016organizationId\022_\n\007user_id\030\002 \001(\tB" +
+      "F\222A82\036Unique identifier for the userJ\026\"u" +
+      "sr_1234abcd5678efgh\"\272H\010r\006:\004usr_R\006userId\"" +
+      "q\n\025ListUserRolesResponse\022X\n\005roles\030\001 \003(\0132" +
+      "\031.scalekit.v1.commons.RoleB\'\222A$2\"List of" +
+      " roles assigned to the userR\005roles\"\336\002\n\026A" +
+      "ssignUserRolesRequest\022w\n\017organization_id" +
+      "\030\001 \001(\tBN\222A@2&Unique identifier for the o" +
+      "rganizationJ\026\"org_1234abcd5678efgh\"\272H\010r\006" +
+      ":\004org_R\016organizationId\022_\n\007user_id\030\002 \001(\tB" +
+      "F\222A82\036Unique identifier for the userJ\026\"u" +
+      "sr_1234abcd5678efgh\"\272H\010r\006:\004usr_R\006userId\022" +
+      "j\n\005roles\030\003 \003(\0132$.scalekit.v1.users.Assig" +
+      "nRoleRequestB.\222A%2#List of roles to assi" +
+      "gn to the user\272H\003\310\001\001R\005roles\"\262\001\n\021AssignRo" +
+      "leRequest\022N\n\002id\030\001 \001(\tB>\030\001\222A92\036Unique ide" +
+      "ntifier for the roleJ\027\"role_1234abcd5678" +
+      "efgh\"R\002id\022M\n\trole_name\030\002 \001(\tB0\222A$2\030Uniqu" +
+      "e name for the roleJ\010\"viewer\"\272H\006r\004\020\000\030dR\010" +
+      "roleName\"\201\001\n\027AssignUserRolesResponse\022f\n\005" +
+      "roles\030\001 \003(\0132\031.scalekit.v1.commons.RoleB5" +
+      "\222A220List of all roles currently assigne" +
+      "d to the userR\005roles\"\326\002\n\025RemoveUserRoleR" +
+      "equest\022w\n\017organization_id\030\001 \001(\tBN\222A@2&Un" +
+      "ique identifier for the organizationJ\026\"o" +
+      "rg_1234abcd5678efgh\"\272H\010r\006:\004org_R\016organiz" +
+      "ationId\022_\n\007user_id\030\002 \001(\tBF\222A82\036Unique id" +
+      "entifier for the userJ\026\"usr_1234abcd5678" +
+      "efgh\"\272H\010r\006:\004usr_R\006userId\022c\n\trole_name\030\003 " +
+      "\001(\tBF\222AC2(Unique identifier for the role" +
+      " to removeJ\027\"role_1234abcd5678efgh\"R\010rol" +
+      "eName\"\366\001\n\032ListUserPermissionsRequest\022w\n\017" +
+      "organization_id\030\001 \001(\tBN\222A@2&Unique ident" +
+      "ifier for the organizationJ\026\"org_1234abc" +
+      "d5678efgh\"\272H\010r\006:\004org_R\016organizationId\022_\n" +
+      "\007user_id\030\002 \001(\tBF\222A82\036Unique identifier f" +
+      "or the userJ\026\"usr_1234abcd5678efgh\"\272H\010r\006" +
+      ":\004usr_R\006userId\"\350\003\n\nPermission\022U\n\002id\030\001 \001(" +
+      "\tBE\222A?2$Unique identifier for the permis" +
+      "sionJ\027\"perm_1234abcd5678efgh\"\340A\003R\002id\022R\n\004" +
+      "name\030\002 \001(\tB>\222A;2)Unique name identifier " +
+      "for the permissionJ\016\"users.create\"R\004name" +
+      "\022^\n\014display_name\030\003 \001(\tB;\222A82&Human-reada" +
+      "ble name for the permissionJ\016\"Create Use" +
+      "rs\"R\013displayName\022u\n\013description\030\004 \001(\tBS\222" +
+      "AP2)Description of what the permission a" +
+      "llowsJ#\"Allows creating new user account" +
+      "s\"R\013description\022X\n\004tags\030\005 \003(\tBD\222AA2!Tags" +
+      " for categorizing permissionsJ\034[\"user-ma" +
+      "nagement\", \"admin\"]R\004tags\"\217\001\n\033ListUserPe" +
+      "rmissionsResponse\022p\n\013permissions\030\001 \003(\0132\035" +
+      ".scalekit.v1.users.PermissionB/\222A,2*List" +
+      " of permissions the user has access toR\013" +
+      "permissions2\264\227\001\n\013UserService\022\270\003\n\007GetUser" +
+      "\022!.scalekit.v1.users.GetUserRequest\032\".sc" +
+      "alekit.v1.users.GetUserResponse\"\345\002\222A\301\002\n\005" +
+      "Users\022\010Get user\032\216\001Retrieves all details " +
+      "for a user by system-generated user ID o" +
+      "r external ID. The response includes org" +
+      "anization memberships and user metadata." +
+      "J\234\001\n\003200\022\224\001\njUser details retrieved succ" +
+      "essfully. Returns full user object with " +
+      "system-generated fields and timestamps.\022" +
+      "&\n$\032\".scalekit.v1.users.GetUserResponse\202" +
+      "\265\030\002\030T\202\323\344\223\002\024\022\022/api/v1/users/{id}\022\272\t\n\tList" +
+      "Users\022#.scalekit.v1.users.ListUsersReque" +
+      "st\032$.scalekit.v1.users.ListUsersResponse" +
+      "\"\341\010\222A\302\010\n\005Users\022\035List all users in enviro" +
+      "nment\032\274\002Retrieves a paginated list of al" +
+      "l users across your entire environment. " +
+      "Use this endpoint to view all users rega" +
+      "rdless of their organization memberships" +
+      ". This is useful for administrative purp" +
+      "oses, user audits, or when you need to s" +
+      "ee all users in your Scalekit environmen" +
+      "t. Supports pagination for large user ba" +
+      "ses.JA\n\003200\022:\n\016List of users.\022(\n&\032$.scal" +
+      "ekit.v1.users.ListUsersResponsej\227\005\n\rx-co" +
+      "deSamples\022\205\0052\202\005\n}*{\n\026\n\005label\022\r\032\013Node.js " +
+      "SDK\n\024\n\004lang\022\014\032\njavascript\nK\n\006source\022A\032?c" +
+      "onst response = await sc.user.listUsers(" +
+      "\n  { pageSize: 100 });\n\254\001*\251\001\n\025\n\005label\022\014\032" +
+      "\nPython SDK\n\020\n\004lang\022\010\032\006python\n~\n\006source\022" +
+      "t\032r# pass empty org to fetch all users i" +
+      "n environment\nresp,_ = sc.users.list_use" +
+      "rs(organization_id=\"\", page_size=100)\n\221\001" +
+      "*\216\001\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\nk\n\006" +
+      "source\022a\032_all, err := sc.User().ListOrga" +
+      "nizationUsers(ctx, \"\", &scalekit.ListUse" +
+      "rsOptions{PageSize: 100})\n\275\001*\272\001\n\023\n\005label" +
+      "\022\n\032\010Java SDK\n\016\n\004lang\022\006\032\004java\n\222\001\n\006source\022" +
+      "\207\001\032\204\001ListUsersRequest lur = ListUsersReq" +
+      "uest.\n  newBuilder().setPageSize(100).bu" +
+      "ild();\nListUsersResponse allUsers = user" +
+      "s.listUsers(lur);\202\265\030\002\030T\202\323\344\223\002\017\022\r/api/v1/u" +
+      "sers\022\313\003\n\013SearchUsers\022%.scalekit.v1.users" +
+      ".SearchUsersRequest\032&.scalekit.v1.users." +
+      "SearchUsersResponse\"\354\002\222A\267\002\n\005Users\022\014Searc" +
+      "h users\032\205\001Searches for users in the envi" +
+      "ronment by email, user ID, or external I" +
+      "D. Returns all users that match the quer" +
+      "y. Supports pagination.J\227\001\n\003200\022\217\001\naRetu" +
+      "rns a list of matching users and a page " +
+      "token for pagination if there are additi" +
+      "onal results.\022*\n(\032&.scalekit.v1.users.Se" +
+      "archUsersResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323" +
+      "\344\223\002\026\022\024/api/v1/users:search\022\340\004\n\027SearchOrg" +
+      "anizationUsers\0221.scalekit.v1.users.Searc" +
+      "hOrganizationUsersRequest\0322.scalekit.v1." +
+      "users.SearchOrganizationUsersResponse\"\335\003" +
+      "\222A\210\003\n\005Users\022\031Search organization users\032\245" +
+      "\001Searches for users within a specific or" +
+      "ganization by email, user ID, or externa" +
+      "l ID. Returns all users in the organizat" +
+      "ion that match the query. Supports pagin" +
+      "ation.J\273\001\n\003200\022\263\001\nyReturns a list of mat" +
+      "ching users within the organization and " +
+      "a page token for pagination if there are" +
+      " additional results.\0226\n4\0322.scalekit.v1.u" +
+      "sers.SearchOrganizationUsersResponse\202\265\030\002" +
+      "\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0026\0224/api/v1/organiz" +
+      "ations/{organization_id}/users:search\022\330\021" +
+      "\n\nUpdateUser\022$.scalekit.v1.users.UpdateU" +
+      "serRequest\032%.scalekit.v1.users.UpdateUse" +
+      "rResponse\"\374\020\222A\322\020\n\005Users\022\027Update user inf" +
+      "ormation\032\341\002Modifies user account informa" +
+      "tion including profile details, metadata" +
+      ", and external ID. Use this endpoint to " +
+      "update a user\'s personal information, co" +
+      "ntact details, or custom metadata. You c" +
+      "an update the user\'s profile, phone numb" +
+      "er, and metadata fields. Note that field" +
+      "s like user ID, email address, environme" +
+      "nt ID, and creation time cannot be modif" +
+      "ied.J\211\001\n\003200\022\201\001\nTUser updated successful" +
+      "ly. Returns the modified user object wit" +
+      "h updated timestamps.\022)\n\'\032%.scalekit.v1." +
+      "users.UpdateUserResponsej\277\014\n\rx-codeSampl" +
+      "es\022\255\0142\252\014\n\321\001*\316\001\n\026\n\005label\022\r\032\013Node.js SDK\n\024" +
+      "\n\004lang\022\014\032\njavascript\n\235\001\n\006source\022\222\001\032\217\001awa" +
+      "it sc.user.updateUser(\"usr_123\", {\n\tuser" +
+      "Profile: {\n\t\tfirstName: \"John\",\n\t\tlastNa" +
+      "me: \"Smith\",\n\t},\n\tmetadata: {\n\t\tdepartme" +
+      "nt: \"sales\",\n\t},\n});\n\340\004*\335\004\n\025\n\005label\022\014\032\nP" +
+      "ython SDK\n\020\n\004lang\022\010\032\006python\n\261\004\n\006source\022\246" +
+      "\004\032\243\004import os\nfrom scalekit import Scale" +
+      "kitClient\nfrom scalekit.v1.users.users_p" +
+      "b2 import UpdateUser\nfrom scalekit.v1.co" +
+      "mmons.\n  commons_pb2 import UserProfile\n" +
+      "sc = ScalekitClient(\n    env_url=os.gete" +
+      "nv(\"SCALEKIT_ENV_URL\"),\n    client_id=os" +
+      ".getenv(\"SCALEKIT_CLIENT_ID\"),\n    clien" +
+      "t_secret=os.getenv(\"SCALEKIT_CLIENT_SECR" +
+      "ET\"),\n)\nupdate_user = UpdateUser(\n    us" +
+      "er_profile=UserProfile(\n        first_na" +
+      "me=\"John\",\n        last_name=\"Smith\"\n   " +
+      " ),\n    metadata={\"department\": \"sales\"}" +
+      "\n)\nsc.users.update_user(organization_id=" +
+      "\"org_123\", \n  user=update_user)\n\256\002*\253\002\n\021\n" +
+      "\005label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n\207\002\n\006sourc" +
+      "e\022\374\001\032\371\001upd := &usersv1.UpdateUser{\n    U" +
+      "serProfile: &usersv1.UpdateUserProfile{\n" +
+      "        FirstName: \"John\",\n        LastN" +
+      "ame:  \"Smith\",\n    },\n    Metadata: map[" +
+      "string]string{\n        \"department\": \"sa" +
+      "les\",\n    },\n}\nsc.User().UpdateUser(ctx," +
+      " \"usr_123\", upd)\n\277\003*\274\003\n\023\n\005label\022\n\032\010Java " +
+      "SDK\n\016\n\004lang\022\006\032\004java\n\224\003\n\006source\022\211\003\032\206\003Upda" +
+      "teUser upd = UpdateUser.newBuilder()\n   " +
+      "     .setUserProfile(\n          UpdateUs" +
+      "erProfile.newBuilder()\n                ." +
+      "setFirstName(\"John\")\n                .se" +
+      "tLastName(\"Smith\")\n                .buil" +
+      "d())\n        .putMetadata(\"department\", " +
+      "\"sales\")\n        .build();\nUpdateUserReq" +
+      "uest updReq = UpdateUserRequest.\n  newBu" +
+      "ilder().setUser(upd).build();\nusers.upda" +
+      "teUser(\"usr_123\", updReq);\202\265\030\002\030T\202\323\344\223\002\0322\022" +
+      "/api/v1/users/{id}:\004user\022\320\007\n\nDeleteUser\022" +
+      "$.scalekit.v1.users.DeleteUserRequest\032\026." +
+      "google.protobuf.Empty\"\203\007\222A\337\006\n\005Users\022\027Del" +
+      "ete user permanently\032\260\002Permanently remov" +
+      "es a user from your environment and dele" +
+      "tes all associated data. Use this endpoi" +
+      "nt when you need to completely remove a " +
+      "user account. This action deletes the us" +
+      "er\'s profile, memberships, and all relat" +
+      "ed data across all organizations. This o" +
+      "peration cannot be undone, so use with c" +
+      "aution.J7\n\003200\0220\n.User successfully dele" +
+      "ted. No content returnedj\320\003\n\rx-codeSampl" +
+      "es\022\276\0032\273\003\nb*`\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004" +
+      "lang\022\014\032\njavascript\n0\n\006source\022&\032$await sc" +
+      ".user.deleteUser(\"usr_123\");\n~*|\n\025\n\005labe" +
+      "l\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python\nQ\n\006sou" +
+      "rce\022G\032Esc.users.delete_user(organization" +
+      "_id=\"org_123\", \n  user_id=\"usr_123\")\n\201\001*" +
+      "\177\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n\\\n\006so" +
+      "urce\022R\032Pif err := sc.User().DeleteUser(c" +
+      "tx, \n  \"usr_123\"); err != nil {\n    pani" +
+      "c(err)\n}\nQ*O\n\023\n\005label\022\n\032\010Java SDK\n\016\n\004lan" +
+      "g\022\006\032\004java\n(\n\006source\022\036\032\034users.deleteUser(" +
+      "\"usr_123\");\202\265\030\002\030T\202\323\344\223\002\024*\022/api/v1/users/{" +
+      "id}\022\241\030\n\020CreateMembership\022*.scalekit.v1.u" +
+      "sers.CreateMembershipRequest\032+.scalekit." +
+      "v1.users.CreateMembershipResponse\"\263\027\222A\327\026" +
+      "\n\005Users\022!Add existing user to organizati" +
+      "on\032\225\002Adds an existing user to an organiz" +
+      "ation and assigns them specific roles an" +
+      "d permissions. Use this endpoint when yo" +
+      "u want to grant an existing user access " +
+      "to a particular organization. You can sp" +
+      "ecify roles, metadata, and other members" +
+      "hip details during the invitation proces" +
+      "s.J\231\001\n\003201\022\221\001\n^User successfully added t" +
+      "o the organization. Returns details of t" +
+      "he updated membership details\022/\n-\032+.scal" +
+      "ekit.v1.users.CreateMembershipResponsej\366" +
+      "\022\n\rx-codeSamples\022\344\0222\341\022\n\222\003*\217\003\n\026\n\005label\022\r\032" +
+      "\013Node.js SDK\n\024\n\004lang\022\014\032\njavascript\n\336\002\n\006s" +
+      "ource\022\323\002\032\320\002import { ScalekitClient } fro" +
+      "m \"@scalekit-sdk/node\";\nconst sc = new S" +
+      "calekitClient(\n\tprocess.env.SCALEKIT_ENV" +
+      "_URL,\n\tprocess.env.SCALEKIT_CLIENT_ID,\n\t" +
+      "process.env.SCALEKIT_CLIENT_SECRET\n);\naw" +
+      "ait sc.user.createMembership(\"org_123\", " +
+      "\"usr_123\", {\n\troles: [\"admin\"],\n\tmetadat" +
+      "a: {\n\t\tdepartment: \"engineering\",\n\t\tloca" +
+      "tion: \"nyc-office\",\n\t},\n});\n\340\003*\335\003\n\025\n\005lab" +
+      "el\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python\n\261\003\n\006s" +
+      "ource\022\246\003\032\243\003import os\nfrom scalekit impor" +
+      "t ScalekitClient\nsc = ScalekitClient(\n  " +
+      "  env_url=os.getenv(\"SCALEKIT_ENV_URL\")," +
+      "\n    client_id=os.getenv(\"SCALEKIT_CLIEN" +
+      "T_ID\"),\n    client_secret=os.getenv(\"SCA" +
+      "LEKIT_CLIENT_SECRET\"),\n)\n# The Python SD" +
+      "K currently exposes a helper that \n  #si" +
+      "mply links an existing\n# user to an orga" +
+      "nization.\nresp, _ = sc.users.add_user_to" +
+      "_organization(\n    organization_id=\"org_" +
+      "123\",\n    user_id=\"usr_123\",\n)\n\205\005*\202\005\n\021\n\005" +
+      "label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n\336\004\n\006source" +
+      "\022\323\004\032\320\004func main() {\n    sc := scalekit.N" +
+      "ewScalekitClient(\n        os.Getenv(\"SCA" +
+      "LEKIT_ENV_URL\"),\n        os.Getenv(\"SCAL" +
+      "EKIT_CLIENT_ID\"),\n        os.Getenv(\"SCA" +
+      "LEKIT_CLIENT_SECRET\"),\n    )\n    members" +
+      "hip := &usersv1.CreateMembership{\n      " +
+      "  Roles: []*usersv1.Role{{Name: \"admin\"}" +
+      "},\n        Metadata: map[string]string{\n" +
+      "            \"department\": \"engineering\"," +
+      "\n            \"location\":   \"nyc-office\"," +
+      "\n        },\n    }\n    resp, \n      err :" +
+      "= sc.User().CreateMembership(\n        co" +
+      "ntext.Background(), \"org_123\", \n        " +
+      "  \"usr_123\", membership, false)\n    if e" +
+      "rr != nil {\n        panic(err)\n    }\n}\n\336" +
+      "\006*\333\006\n\023\n\005label\022\n\032\010Java SDK\n\016\n\004lang\022\006\032\004jav" +
+      "a\n\263\006\n\006source\022\250\006\032\245\006import com.scalekit.Sc" +
+      "alekitClient;\nimport com.scalekit.api.Us" +
+      "erClient;\nimport com.scalekit.grpc.scale" +
+      "kit.v1.users.*;\nScalekitClient sk = new " +
+      "ScalekitClient(\n    System.getenv(\"SCALE" +
+      "KIT_ENV_URL\"),\n    System.getenv(\"SCALEK" +
+      "IT_CLIENT_ID\"),\n    System.getenv(\"SCALE" +
+      "KIT_CLIENT_SECRET\")\n);\nUserClient users " +
+      "= sk.users();\nCreateMembershipRequest me" +
+      "mbershipReq = CreateMemb\n  ershipRequest" +
+      ".newBuilder()\n        .setMembership(\n  " +
+      "        CreateMembership.newBuilder()\n  " +
+      "              .addRoles(Role.newBuilder(" +
+      "\n                  ).setName(\"admin\").bu" +
+      "ild())\n                .putMetadata(\"dep" +
+      "artment\", \"engineering\")\n               " +
+      " .putMetadata(\"location\", \"nyc-office\")\n" +
+      "                .build())\n        .build" +
+      "();\nCreateMembershipResponse res = users" +
+      ".\n  createMembership(\"org_123\", \"usr_123" +
+      "\", \n    membershipReq);\202\265\030\002\030T\202\323\344\223\002L\">/ap" +
+      "i/v1/memberships/organizations/{organiza" +
+      "tion_id}/users/{id}:\nmembership\022\260\005\n\020Dele" +
+      "teMembership\022*.scalekit.v1.users.DeleteM" +
+      "embershipRequest\032\026.google.protobuf.Empty" +
+      "\"\327\004\222A\207\004\n\005Users\022\'Delete organization memb" +
+      "ership for user\032\334\001Removes a user from an" +
+      " organization by user ID or external ID." +
+      " If the user has no memberships left and" +
+      " cascade is true, the user is also delet" +
+      "ed. This action is irreversible and may " +
+      "also remove related group memberships.JC" +
+      "\n\003200\022<\n:User successfully marked for de" +
+      "letion. No content returnedj\260\001\n\rx-codeSa" +
+      "mples\022\236\0012\233\001\n\230\001*\225\001\n\025\n\005label\022\014\032\nPython SDK" +
+      "\n\020\n\004lang\022\010\032\006python\nj\n\006source\022`\032^response" +
+      " = scalekit_client.users.delete_membersh" +
+      "ip(\n  organization_id=org_id,user_id=use" +
+      "r_id\n)\202\265\030\002\030T\202\323\344\223\002@*>/api/v1/memberships/" +
+      "organizations/{organization_id}/users/{i" +
+      "d}\022\375\003\n\020UpdateMembership\022*.scalekit.v1.us" +
+      "ers.UpdateMembershipRequest\032+.scalekit.v" +
+      "1.users.UpdateMembershipResponse\"\217\003\222A\263\002\n" +
+      "\005Users\022\'Update organization membership f" +
+      "or user\032\203\001Updates a user\'s membership de" +
+      "tails within an organization by user ID " +
+      "or external ID. You can update roles and" +
+      " membership metadata.J{\n\003200\022t\nAMembersh" +
+      "ip updated successfully. Returns the upd" +
+      "ated user object.\022/\n-\032+.scalekit.v1.user" +
+      "s.UpdateMembershipResponse\202\265\030\002\030T\202\323\344\223\002L2>" +
+      "/api/v1/memberships/organizations/{organ" +
+      "ization_id}/users/{id}:\nmembership\022\235\030\n\027C" +
+      "reateUserAndMembership\0221.scalekit.v1.use" +
+      "rs.CreateUserAndMembershipRequest\0322.scal" +
+      "ekit.v1.users.CreateUserAndMembershipRes" +
+      "ponse\"\232\027\222A\325\026\n\005Users\022\037Create new user in " +
+      "organization\032\203\003Creates a new user accoun" +
+      "t and immediately adds them to the speci" +
+      "fied organization. Use this endpoint whe" +
+      "n you want to create a user and grant th" +
+      "em access to an organization in a single" +
+      " operation. You can provide user profile" +
+      " information, assign roles, and configur" +
+      "e membership metadata. The user receives" +
+      " an activation email unless this feature" +
+      " is disabled in the organization setting" +
+      "s.J\263\001\n\003201\022\253\001\nqUser created successfully" +
+      ". Returns the created user object, inclu" +
+      "ding system-generated identifiers and ti" +
+      "mestamps\0226\n4\0322.scalekit.v1.users.CreateU" +
+      "serAndMembershipResponsej\356\021\n\rx-codeSampl" +
+      "es\022\334\0212\331\021\n\320\002*\315\002\n\026\n\005label\022\r\032\013Node.js SDK\n\024" +
+      "\n\004lang\022\014\032\njavascript\n\234\002\n\006source\022\221\002\032\216\002con" +
+      "st {\n   user } = await sc.user.\n    crea" +
+      "teUserAndMembership(\"org_123\", {\n\temail:" +
+      " \"user@example.com\",\n\texternalId: \"ext_1" +
+      "2345a67b89c\",\n\tmetadata: { department: \"" +
+      "engineering\", \n\t  location: \"nyc-office\"" +
+      " },\n\tuserProfile: {\n\t\tfirstName: \"John\"," +
+      "\n\t\tlastName: \"Doe\",\n\t},\n});\n\252\005*\247\005\n\025\n\005lab" +
+      "el\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python\n\373\004\n\006s" +
+      "ource\022\360\004\032\355\004import os\nfrom scalekit impor" +
+      "t ScalekitClient\nfrom scalekit.v1.users." +
+      "users_pb2 import User\nfrom scalekit.v1.c" +
+      "ommons.\n  commons_pb2 import UserProfile" +
+      "\nsc = ScalekitClient(\n    env_url=os.get",
+      "env(\"SCALEKIT_ENV_URL\"),\n    client_id=o" +
+      "s.getenv(\"SCALEKIT_CLIENT_ID\"),\n    clie" +
+      "nt_secret=os.getenv(\"SCALEKIT_CLIENT_SEC" +
+      "RET\"),\n)\nuser_msg = User(\n    email=\"use" +
+      "r@example.com\",\n    external_id=\"ext_123" +
+      "45a67b89c\",\n    metadata={\"department\": " +
+      "\"engineering\", \"location\": \"nyc-office\"}" +
+      ",\n    user_profile=UserProfile(\n        " +
+      "first_name=\"John\",\n        last_name=\"Do" +
+      "e\"\n    )\n)\ncreate_resp, \n  _ = sc.users." +
+      "create_user(\"org_123\", user_msg)\n\361\003*\356\003\n\021" +
+      "\n\005label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n\312\003\n\006sour" +
+      "ce\022\277\003\032\274\003newUser := &usersv1.CreateUser{\n" +
+      "    Email:      \"user@example.com\",\n    " +
+      "ExternalId: \"ext_12345a67b89c\",\n    Meta" +
+      "data: map[string]string{\n        \"depart" +
+      "ment\": \"engineering\",\n        \"location\"" +
+      ":   \"nyc-office\",\n    },\n    UserProfile" +
+      ": &usersv1.CreateUserProfile{\n        Fi" +
+      "rstName: \"John\",\n        LastName:  \"Doe" +
+      "\",\n    },\n}\ncuResp, \n  err := sc.User()." +
+      "CreateUserAndMembership(ctx, \"org_123\", " +
+      "newUser, false)\nif err != nil { /* handl" +
+      "e error */ }\n\342\005*\337\005\n\023\n\005label\022\n\032\010Java SDK\n" +
+      "\016\n\004lang\022\006\032\004java\n\267\005\n\006source\022\254\005\032\251\005CreateUs" +
+      "er createUser = CreateUser.newBuilder()\n" +
+      "        .setEmail(\"user@example.com\")\n  " +
+      "      .setExternalId(\"ext_12345a67b89c\")" +
+      "\n        .putMetadata(\"department\", \"eng" +
+      "ineering\")\n        .putMetadata(\"locatio" +
+      "n\", \"nyc-office\")\n        .setUserProfil" +
+      "e(\n          CreateUserProfile.newBuilde" +
+      "r()\n                .setFirstName(\"John\"" +
+      ")\n                .setLastName(\"Doe\")\n  " +
+      "              .build())\n        .build()" +
+      ";\nCreateUserAndMembershipRequest cuReq =" +
+      " CreateUserA\n  ndMembershipRequest.newBu" +
+      "ilder()\n        .setUser(createUser)\n   " +
+      "     .build();\nCreateUserAndMembershipRe" +
+      "sponse cuResp = users.\n  createUserAndMe" +
+      "mbership(\"org_123\", cuReq);\nSystem.out.p" +
+      "rintln(cuResp.getUser().getId());\202\265\030\002\030T\202" +
+      "\323\344\223\0025\"-/api/v1/organizations/{organizati" +
+      "on_id}/users:\004user\022\244\013\n\025ListOrganizationU" +
+      "sers\022/.scalekit.v1.users.ListOrganizatio" +
+      "nUsersRequest\0320.scalekit.v1.users.ListOr" +
+      "ganizationUsersResponse\"\247\n\222A\350\t\n\005Users\022\027L" +
+      "ist organization users\032\207\002Retrieves a pag" +
+      "inated list of all users who are members" +
+      " of the specified organization. Use this" +
+      " endpoint to view all users with access " +
+      "to a particular organization, including " +
+      "their roles, metadata, and membership de" +
+      "tails. Supports pagination for large use" +
+      "r lists.J{\n\003200\022t\n<Successfully retrieve" +
+      "d the list of users in the organization\022" +
+      "4\n2\0320.scalekit.v1.users.ListOrganization" +
+      "UsersResponsej\276\006\n\rx-codeSamples\022\254\0062\251\006\n\264\001" +
+      "*\261\001\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004lang\022\014\032\nj" +
+      "avascript\n\200\001\n\006source\022v\032tconst response =" +
+      " await sc.user.\n  listOrganizationUsers(" +
+      "\"org_123\", {\n\tpageSize: 50,\n});\nconsole." +
+      "log(response.users);\n\177*}\n\025\n\005label\022\014\032\nPyt" +
+      "hon SDK\n\020\n\004lang\022\010\032\006python\nR\n\006source\022H\032Fr" +
+      "esp, _ = sc.users.list_users(organizatio" +
+      "n_id=\"org_123\", page_size=50)\n\333\001*\330\001\n\021\n\005l" +
+      "abel\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n\264\001\n\006source\022" +
+      "\251\001\032\246\001list, \n  err := sc.User().ListOrgan" +
+      "izationUsers(ctx, \"org_123\", &scalekit.L" +
+      "istUsersOptions{PageSize: 50})\nif err !=" +
+      " nil { /* handle error */ }\nfmt.Println(" +
+      "list.Users)\n\220\002*\215\002\n\023\n\005label\022\n\032\010Java SDK\n\016" +
+      "\n\004lang\022\006\032\004java\n\345\001\n\006source\022\332\001\032\327\001ListOrgan" +
+      "izationUsersRequest listReq = ListOrgani" +
+      "z\n  ationUsersRequest.newBuilder()\n     " +
+      "   .setPageSize(50)\n        .build();\nLi" +
+      "stOrganizationUsersResponse list = users" +
+      ".\n  listOrganizationUsers(\"org_123\", lis" +
+      "tReq);\202\265\030\002\030T\202\323\344\223\002/\022-/api/v1/organization" +
+      "s/{organization_id}/users\022\222\020\n\014ResendInvi" +
+      "te\022&.scalekit.v1.users.ResendInviteReque" +
+      "st\032\'.scalekit.v1.users.ResendInviteRespo" +
+      "nse\"\260\017\222A\332\016\n\005Users\022\034Resend user invitatio" +
+      "n email\032\341\004Resends an invitation email to" +
+      " a user who has a pending or expired inv" +
+      "itation in the specified organization. I" +
+      "f the invitation has expired, a new invi" +
+      "tation will be automatically created and" +
+      " sent. If the invitation is still valid," +
+      " a reminder email will be sent instead. " +
+      "Use this endpoint when a user hasn\'t res" +
+      "ponded to their initial invitation and y" +
+      "ou need to send them a reminder or when " +
+      "the original invitation has expired. The" +
+      " invitation email includes a secure magi" +
+      "c link that allows the user to complete " +
+      "their account setup and join the organiz" +
+      "ation. Each resend operation increments " +
+      "the resent counter.J\247\002\n\003200\022\237\002\n\357\001Success" +
+      "fully resent the invitation email. Retur" +
+      "ns the updated invitation object with or" +
+      "ganization ID, user ID, membership statu" +
+      "s, timestamps, and resent count. If expi" +
+      "red, a new invitation is created; otherw" +
+      "ise, the existing one is resent.\022+\n)\032\'.s" +
+      "calekit.v1.users.ResendInviteResponseJ\217\002" +
+      "\n\003400\022\207\002\n\335\001Invalid request \342\200\224 common ca" +
+      "uses include user ID or organization ID " +
+      "is invalid, full-stack authentication is" +
+      " disabled, user profile is missing, invi" +
+      "te already accepted, or missing expiry t" +
+      "ime in user management settings.\022%\n#\032!.s" +
+      "calekit.v1.errdetails.ErrorInfoJ\235\002\n\003404\022" +
+      "\225\002\n\353\001Resource not found \342\200\224 the specifie" +
+      "d user, organization, membership, or inv" +
+      "itation could not be found in the specif" +
+      "ied environment. Verify that all IDs are" +
+      " correct and that the resources exist be" +
+      "fore attempting to resend an invitation." +
+      "\022%\n#\032!.scalekit.v1.errdetails.ErrorInfoJ" +
+      "\362\002\n\003500\022\352\002\n\300\002Internal server error \342\200\224 a" +
+      "n unexpected error occurred while proces" +
+      "sing the invitation resend request. This" +
+      " may be due to database connectivity iss" +
+      "ues, problems generating the secure magi" +
+      "c link, email delivery service failures," +
+      " or transaction errors during invitation" +
+      " processing. Contact support if the prob" +
+      "lem persists.\022%\n#\032!.scalekit.v1.errdetai" +
+      "ls.ErrorInfo\202\265\030\002\030T\202\323\344\223\002F2A/api/v1/invite" +
+      "s/organizations/{organization_id}/users/" +
+      "{id}/resend:\001*\022\356\003\n\rListUserRoles\022\'.scale" +
+      "kit.v1.users.ListUserRolesRequest\032(.scal" +
+      "ekit.v1.users.ListUserRolesResponse\"\211\003\222A" +
+      "\253\002\n\005Users\022\017List user roles\032\232\001Retrieves a" +
+      "ll roles assigned to a user within a spe" +
+      "cific organization. This includes both d" +
+      "irect role assignments and inherited rol" +
+      "es from role hierarchy.Jt\n\003200\022m\n=Succes" +
+      "sfully retrieved the list of roles assig" +
+      "ned to the user\022,\n*\032(.scalekit.v1.users." +
+      "ListUserRolesResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVI" +
+      "EW\202\323\344\223\002?\022=/api/v1/organizations/{organiz" +
+      "ation_id}/users/{user_id}/roles\022\342\003\n\017Assi" +
+      "gnUserRoles\022).scalekit.v1.users.AssignUs" +
+      "erRolesRequest\032*.scalekit.v1.users.Assig" +
+      "nUserRolesResponse\"\367\002\222A\222\002\n\005Users\022\024Assign" +
+      " roles to user\032\220\001Assigns one or more rol" +
+      "es to a user within a specific organizat" +
+      "ion. This operation adds to existing rol" +
+      "e assignments rather than replacing them" +
+      ".J`\n\003200\022Y\n\'Successfully assigned roles " +
+      "to the user\022.\n,\032*.scalekit.v1.users.Assi" +
+      "gnUserRolesResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW" +
+      "\202\323\344\223\002F\"=/api/v1/organizations/{organizat" +
+      "ion_id}/users/{user_id}/roles:\005roles\022\250\003\n" +
+      "\016RemoveUserRole\022(.scalekit.v1.users.Remo" +
+      "veUserRoleRequest\032\026.google.protobuf.Empt" +
+      "y\"\323\002\222A\351\001\n\005Users\022\025Remove role from user\032\232" +
+      "\001Removes a specific role assignment from" +
+      " a user within an organization. This onl" +
+      "y removes direct role assignments, not i" +
+      "nherited roles from role hierarchy.J,\n\0032" +
+      "00\022%\n#Role successfully removed from use" +
+      "r\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002K*I/api/v1/or" +
+      "ganizations/{organization_id}/users/{use" +
+      "r_id}/roles/{role_name}\022\252\004\n\023ListUserPerm" +
+      "issions\022-.scalekit.v1.users.ListUserPerm" +
+      "issionsRequest\032..scalekit.v1.users.ListU" +
+      "serPermissionsResponse\"\263\003\222A\317\002\n\005Users\022\025Li" +
+      "st user permissions\032\264\001Retrieves all perm" +
+      "issions a user has access to within a sp" +
+      "ecific organization. This includes permi" +
+      "ssions from direct role assignments and " +
+      "inherited permissions from role hierarch" +
+      "y.Jx\n\003200\022q\n;Successfully retrieved the " +
+      "list of permissions for the user\0222\n0\032..s" +
+      "calekit.v1.users.ListUserPermissionsResp" +
+      "onse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002E\022C/api/v1" +
+      "/organizations/{organization_id}/users/{" +
+      "user_id}/permissions\032\354\003\222A\350\003\n\005Users\022\336\003Com" +
+      "prehensive user management operations in" +
+      "cluding user lifecycle, organization mem" +
+      "berships, and invitation workflows. This" +
+      " service provides endpoints for creating" +
+      ", retrieving, updating, and deleting use" +
+      "r accounts across your Scalekit environm" +
+      "ent. It supports both individual user op" +
+      "erations and bulk operations for user ad" +
+      "ministration, including user search, pag" +
+      "ination, and metadata management. The se" +
+      "rvice also handles user invitations and " +
+      "organization membership management.B\310\001\n#" +
+      "com.scalekit.grpc.scalekit.v1.usersB\nUse" +
+      "rsProtoP\001Z/github.com/scalekit-inc/scale" +
+      "kit/pkg/grpc/users\242\002\003SVU\252\002\021Scalekit.V1.U" +
+      "sers\312\002\021Scalekit\\V1\\Users\342\002\035Scalekit\\V1\\U" +
+      "sers\\GPBMetadata\352\002\023Scalekit::V1::Usersb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1499,7 +1499,7 @@ public final class UsersProto {
     internal_static_scalekit_v1_users_Invite_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_users_Invite_descriptor,
-        new java.lang.String[] { "OrganizationId", "UserId", "InvitedBy", "Status", "CreatedAt", "ExpiresAt", "ResentAt", "ResentCount", });
+        new java.lang.String[] { "OrganizationId", "UserId", "InviterEmail", "Status", "CreatedAt", "ExpiresAt", "ResentAt", "ResentCount", });
     internal_static_scalekit_v1_users_ResendInviteRequest_descriptor =
       getDescriptor().getMessageTypes().get(28);
     internal_static_scalekit_v1_users_ResendInviteRequest_fieldAccessorTable = new

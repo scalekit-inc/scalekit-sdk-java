@@ -1,13 +1,17 @@
 package com.scalekit.api;
 
-import com.scalekit.grpc.scalekit.v1.auditlogs.RevokeSessionResponse;
-import com.scalekit.grpc.scalekit.v1.auditlogs.SessionDetails;
-import com.scalekit.grpc.scalekit.v1.auditlogs.UserSessionDetails;
+import com.scalekit.grpc.scalekit.v1.sessions.RevokeAllUserSessionsResponse;
+import com.scalekit.grpc.scalekit.v1.sessions.RevokeSessionResponse;
+import com.scalekit.grpc.scalekit.v1.sessions.SessionDetails;
+import com.scalekit.grpc.scalekit.v1.sessions.UserSessionDetails;
+import com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilter;
 
 public interface SessionClient {
     SessionDetails getSession(String sessionId);
 
-    UserSessionDetails getUserSessions(String userId);
+    UserSessionDetails getUserSessions(String userId, Integer pageSize, String pageToken, UserSessionFilter filter);
 
     RevokeSessionResponse revokeSession(String sessionId);
+
+    RevokeAllUserSessionsResponse revokeAllUserSessions(String userId);
 } 

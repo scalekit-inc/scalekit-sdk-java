@@ -722,7 +722,7 @@ public final class ConnectionsProto {
       "nnel logout redirect uri where idp sends" +
       " logout_tokenJ>\"https://yourapp.com/sso/" +
       "v1/oidc/conn_1234/backchannel-logout\"\340A\003" +
-      "R\034backchannelLogoutRedirectUri\"\205\t\n\025OAuth" +
+      "R\034backchannelLogoutRedirectUri\"\365\t\n\025OAuth" +
       "ConnectionConfig\022\204\001\n\rauthorize_uri\030\003 \001(\013" +
       "2\034.google.protobuf.StringValueBA\222A>2\rAut" +
       "horize URIJ-\"https://youridp.com/service" +
@@ -751,612 +751,615 @@ public final class ConnectionsProto {
       "lueB#\222A 2\030Use Scalekit credentialsJ\004true" +
       "R\020usePlatformCreds\022Z\n\013access_type\030\020 \001(\0132" +
       "\034.google.protobuf.StringValueB\033\222A\0302\013Acce" +
-      "ss TypeJ\t\"offline\"R\naccessType\"\364\007\n\022Passw" +
-      "ordLessConfig\022]\n\004type\030\001 \001(\0162).scalekit.v" +
-      "1.connections.PasswordlessTypeB\036\222A\0332\021Pas" +
-      "swordless TypeJ\006\"LINK\"R\004type\022W\n\tfrequenc" +
-      "y\030\002 \001(\0132\034.google.protobuf.UInt32ValueB\026\222" +
-      "A\0232\016Link FrequencyJ\0011H\000R\tfrequency\210\001\001\022a\n" +
-      "\010validity\030\003 \001(\0132\034.google.protobuf.UInt32" +
-      "ValueB\"\222A\0372\030Link Validity in SecondsJ\00360" +
-      "0H\001R\010validity\210\001\001\022\206\001\n\033enforce_same_browse" +
-      "r_origin\030\004 \001(\0132\032.google.protobuf.BoolVal" +
-      "ueB&\222A#2\033Enforce Same Browser OriginJ\004tr" +
-      "ueH\002R\030enforceSameBrowserOrigin\210\001\001\022t\n\025cod" +
-      "e_challenge_length\030\005 \001(\0132\034.google.protob" +
-      "uf.UInt32ValueB\035\222A\0322\025Code Challenge Leng" +
-      "thJ\0016H\003R\023codeChallengeLength\210\001\001\022\204\001\n\023code" +
-      "_challenge_type\030\006 \001(\0162*.scalekit.v1.conn" +
-      "ections.CodeChallengeTypeB#\222A 2\023Code Cha" +
-      "llenge TypeJ\t\"NUMERIC\"H\004R\021codeChallengeT" +
-      "ype\210\001\001\022\235\001\n-regenerate_passwordless_crede" +
-      "ntials_on_resend\030\007 \001(\0132\032.google.protobuf" +
-      ".BoolValueB\032\222A\0272\017Regenerate the J\004trueH\005" +
-      "R)regeneratePasswordlessCredentialsOnRes" +
-      "end\210\001\001B\014\n\n_frequencyB\013\n\t_validityB\036\n\034_en" +
-      "force_same_browser_originB\030\n\026_code_chall" +
-      "enge_lengthB\026\n\024_code_challenge_typeB0\n._" +
-      "regenerate_passwordless_credentials_on_r" +
-      "esend\"P\n\020StaticAuthConfig\022<\n\rstatic_conf" +
-      "ig\030\001 \001(\0132\027.google.protobuf.StructR\014stati" +
-      "cConfig\"\361\022\n\033SAMLConnectionConfigRequest\022" +
-      "\212\001\n\020idp_metadata_url\030\001 \001(\0132\034.google.prot" +
+      "ss TypeJ\t\"offline\"R\naccessType\022n\n\021custom" +
+      "_scope_name\030\021 \001(\0132\034.google.protobuf.Stri" +
+      "ngValueB$\222A!2\021Custom Scope NameJ\014\"user_s" +
+      "cope\"R\017customScopeName\"\364\007\n\022PasswordLessC" +
+      "onfig\022]\n\004type\030\001 \001(\0162).scalekit.v1.connec" +
+      "tions.PasswordlessTypeB\036\222A\0332\021Passwordles" +
+      "s TypeJ\006\"LINK\"R\004type\022W\n\tfrequency\030\002 \001(\0132" +
+      "\034.google.protobuf.UInt32ValueB\026\222A\0232\016Link" +
+      " FrequencyJ\0011H\000R\tfrequency\210\001\001\022a\n\010validit" +
+      "y\030\003 \001(\0132\034.google.protobuf.UInt32ValueB\"\222" +
+      "A\0372\030Link Validity in SecondsJ\003600H\001R\010val" +
+      "idity\210\001\001\022\206\001\n\033enforce_same_browser_origin" +
+      "\030\004 \001(\0132\032.google.protobuf.BoolValueB&\222A#2" +
+      "\033Enforce Same Browser OriginJ\004trueH\002R\030en" +
+      "forceSameBrowserOrigin\210\001\001\022t\n\025code_challe" +
+      "nge_length\030\005 \001(\0132\034.google.protobuf.UInt3" +
+      "2ValueB\035\222A\0322\025Code Challenge LengthJ\0016H\003R" +
+      "\023codeChallengeLength\210\001\001\022\204\001\n\023code_challen" +
+      "ge_type\030\006 \001(\0162*.scalekit.v1.connections." +
+      "CodeChallengeTypeB#\222A 2\023Code Challenge T" +
+      "ypeJ\t\"NUMERIC\"H\004R\021codeChallengeType\210\001\001\022\235" +
+      "\001\n-regenerate_passwordless_credentials_o" +
+      "n_resend\030\007 \001(\0132\032.google.protobuf.BoolVal" +
+      "ueB\032\222A\0272\017Regenerate the J\004trueH\005R)regene" +
+      "ratePasswordlessCredentialsOnResend\210\001\001B\014" +
+      "\n\n_frequencyB\013\n\t_validityB\036\n\034_enforce_sa" +
+      "me_browser_originB\030\n\026_code_challenge_len" +
+      "gthB\026\n\024_code_challenge_typeB0\n._regenera" +
+      "te_passwordless_credentials_on_resend\"P\n" +
+      "\020StaticAuthConfig\022<\n\rstatic_config\030\001 \001(\013" +
+      "2\027.google.protobuf.StructR\014staticConfig\"" +
+      "\361\022\n\033SAMLConnectionConfigRequest\022\212\001\n\020idp_" +
+      "metadata_url\030\001 \001(\0132\034.google.protobuf.Str" +
+      "ingValueBB\222A?2\020IDP Metadata URLJ+\"https:" +
+      "//youridp.com/service/saml/metadata\"R\016id" +
+      "pMetadataUrl\022x\n\ridp_entity_id\030\002 \001(\0132\034.go" +
+      "ogle.protobuf.StringValueB6\222A32\rIDP Enti" +
+      "ty IDJ\"\"https://youridp.com/service/saml" +
+      "\"R\013idpEntityId\022v\n\013idp_sso_url\030\003 \001(\0132\034.go" +
+      "ogle.protobuf.StringValueB8\222A52\013IDP SSO " +
+      "URLJ&\"https://youridp.com/service/saml/s" +
+      "so\"R\tidpSsoUrl\022[\n\017idp_certificate\030\004 \001(\0132" +
+      "\034.google.protobuf.StringValueB\024\222A\0212\017IDP " +
+      "CertificateR\016idpCertificate\022v\n\013idp_slo_u" +
+      "rl\030\005 \001(\0132\034.google.protobuf.StringValueB8" +
+      "\222A52\013IDP SLO URLJ&\"https://youridp.com/s" +
+      "ervice/saml/slo\"R\tidpSloUrl\022l\n\017ui_button" +
+      "_title\030\006 \001(\0132\034.google.protobuf.StringVal" +
+      "ueB&\222A#2\017UI Button TitleJ\020\"Login with SS" +
+      "O\"R\ruiButtonTitle\022t\n\022idp_name_id_format\030" +
+      "\007 \001(\0162%.scalekit.v1.connections.NameIdFo" +
+      "rmatB \222A\0352\022IDP Name ID FormatJ\007\"EMAIL\"R\017" +
+      "idpNameIdFormat\022\211\001\n\027idp_sso_request_bind" +
+      "ing\030\010 \001(\0162\'.scalekit.v1.connections.Requ" +
+      "estBindingB)\222A&2\027IDP SSO Request Binding" +
+      "J\013\"HTTP_POST\"R\024idpSsoRequestBinding\022\215\001\n\027" +
+      "idp_slo_request_binding\030\t \001(\0162\'.scalekit" +
+      ".v1.connections.RequestBindingB-\222A*2\027IDP" +
+      " SLO Request BindingJ\017\"HTTP_REDIRECT\"R\024i" +
+      "dpSloRequestBinding\022\223\001\n\023saml_signing_opt" +
+      "ion\030\n \001(\0162+.scalekit.v1.connections.SAML" +
+      "SigningOptionsB6\222A32\023SAML Signing Option" +
+      "J\034\"SAML_ONLY_RESPONSE_SIGNING\"R\021samlSign" +
+      "ingOption\022S\n\013force_authn\030\016 \001(\0132\032.google." +
+      "protobuf.BoolValueB\026\222A\0232\013Force AuthnJ\004tr" +
+      "ueR\nforceAuthn\022\226\001\n\024default_redirect_uri\030" +
+      "\017 \001(\0132\034.google.protobuf.StringValueBF\222AC" +
+      "2\024Default Redirect URIJ+\"https://yourapp" +
+      ".com/service/saml/redirect\"R\022defaultRedi" +
+      "rectUri\022k\n\023assertion_encrypted\030\020 \001(\0132\032.g" +
+      "oogle.protobuf.BoolValueB\036\222A\0332\023Assertion" +
+      " EncryptedJ\004trueR\022assertionEncrypted\022j\n\023" +
+      "want_request_signed\030\021 \001(\0132\032.google.proto" +
+      "buf.BoolValueB\036\222A\0332\023Want Request SignedJ" +
+      "\004trueR\021wantRequestSigned\022q\n\016certificate_" +
+      "id\030\022 \001(\0132\034.google.protobuf.StringValueB," +
+      "\222A)2\016Certificate IDJ\027\"cer_35585423166144" +
+      "613\"R\rcertificateId\022b\n\020idp_slo_required\030" +
+      "\023 \001(\0132\032.google.protobuf.BoolValueB\034\222A\0312\021" +
+      "Enable IDP logoutJ\004trueR\016idpSloRequired\022" +
+      "\220\001\n\014sp_entity_id\030\024 \001(\0132\034.google.protobuf" +
+      ".StringValueBP\222AM2\032Service Provider Enti" +
+      "ty IDJ/\"https://env.scalekit.com/sso/v1/" +
+      "saml/conn_123\"R\nspEntityId\022\237\001\n\020sp_assert" +
+      "ion_url\030\025 \001(\0132\034.google.protobuf.StringVa" +
+      "lueBW\222AT2\030Service Provider SSO URLJ8\"htt" +
+      "ps://env.scalekit.com/sso/v1/saml/conn_1" +
+      "23/callback\"R\016spAssertionUrl\022\216\001\n\nsp_slo_" +
+      "url\030\026 \001(\0132\034.google.protobuf.StringValueB" +
+      "R\222AO2\030Service Provider SLO URLJ3\"https:/" +
+      "/env.scalekit.com/sso/v1/saml/conn_123/s" +
+      "lo\"R\010spSloUrlJ\004\010\013\020\014\"\371\023\n\034SAMLConnectionCo" +
+      "nfigResponse\022W\n\014sp_entity_id\030\001 \001(\tB5\222A22" +
+      "\014SP Entity IDJ\"\"https://yourapp.com/serv" +
+      "ice/saml\"R\nspEntityId\022m\n\020sp_assertion_ur" +
+      "l\030\002 \001(\tBC\222A@2\020SP Assertion URLJ,\"https:/" +
+      "/youridp.com/service/saml/assertion\"R\016sp" +
+      "AssertionUrl\022i\n\017sp_metadata_url\030\003 \001(\tBA\222" +
+      "A>2\017SP Metadata URLJ+\"https://youridp.co" +
+      "m/service/saml/metadata\"R\rspMetadataUrl\022" +
+      "\212\001\n\020idp_metadata_url\030\004 \001(\0132\034.google.prot" +
       "obuf.StringValueBB\222A?2\020IDP Metadata URLJ" +
       "+\"https://youridp.com/service/saml/metad" +
-      "ata\"R\016idpMetadataUrl\022x\n\ridp_entity_id\030\002 " +
+      "ata\"R\016idpMetadataUrl\022x\n\ridp_entity_id\030\005 " +
       "\001(\0132\034.google.protobuf.StringValueB6\222A32\r" +
       "IDP Entity IDJ\"\"https://youridp.com/serv" +
-      "ice/saml\"R\013idpEntityId\022v\n\013idp_sso_url\030\003 " +
+      "ice/saml\"R\013idpEntityId\022v\n\013idp_sso_url\030\006 " +
       "\001(\0132\034.google.protobuf.StringValueB8\222A52\013" +
       "IDP SSO URLJ&\"https://youridp.com/servic" +
-      "e/saml/sso\"R\tidpSsoUrl\022[\n\017idp_certificat" +
-      "e\030\004 \001(\0132\034.google.protobuf.StringValueB\024\222" +
-      "A\0212\017IDP CertificateR\016idpCertificate\022v\n\013i" +
-      "dp_slo_url\030\005 \001(\0132\034.google.protobuf.Strin" +
-      "gValueB8\222A52\013IDP SLO URLJ&\"https://youri" +
-      "dp.com/service/saml/slo\"R\tidpSloUrl\022l\n\017u" +
-      "i_button_title\030\006 \001(\0132\034.google.protobuf.S" +
-      "tringValueB&\222A#2\017UI Button TitleJ\020\"Login" +
-      " with SSO\"R\ruiButtonTitle\022t\n\022idp_name_id" +
-      "_format\030\007 \001(\0162%.scalekit.v1.connections." +
-      "NameIdFormatB \222A\0352\022IDP Name ID FormatJ\007\"" +
-      "EMAIL\"R\017idpNameIdFormat\022\211\001\n\027idp_sso_requ" +
-      "est_binding\030\010 \001(\0162\'.scalekit.v1.connecti" +
-      "ons.RequestBindingB)\222A&2\027IDP SSO Request" +
-      " BindingJ\013\"HTTP_POST\"R\024idpSsoRequestBind" +
-      "ing\022\215\001\n\027idp_slo_request_binding\030\t \001(\0162\'." +
-      "scalekit.v1.connections.RequestBindingB-" +
-      "\222A*2\027IDP SLO Request BindingJ\017\"HTTP_REDI" +
-      "RECT\"R\024idpSloRequestBinding\022\223\001\n\023saml_sig" +
-      "ning_option\030\n \001(\0162+.scalekit.v1.connecti" +
-      "ons.SAMLSigningOptionsB6\222A32\023SAML Signin" +
-      "g OptionJ\034\"SAML_ONLY_RESPONSE_SIGNING\"R\021" +
-      "samlSigningOption\022S\n\013force_authn\030\016 \001(\0132\032" +
-      ".google.protobuf.BoolValueB\026\222A\0232\013Force A" +
-      "uthnJ\004trueR\nforceAuthn\022\226\001\n\024default_redir" +
-      "ect_uri\030\017 \001(\0132\034.google.protobuf.StringVa" +
-      "lueBF\222AC2\024Default Redirect URIJ+\"https:/" +
-      "/yourapp.com/service/saml/redirect\"R\022def" +
-      "aultRedirectUri\022k\n\023assertion_encrypted\030\020" +
-      " \001(\0132\032.google.protobuf.BoolValueB\036\222A\0332\023A" +
-      "ssertion EncryptedJ\004trueR\022assertionEncry" +
-      "pted\022j\n\023want_request_signed\030\021 \001(\0132\032.goog" +
-      "le.protobuf.BoolValueB\036\222A\0332\023Want Request" +
-      " SignedJ\004trueR\021wantRequestSigned\022q\n\016cert" +
-      "ificate_id\030\022 \001(\0132\034.google.protobuf.Strin" +
-      "gValueB,\222A)2\016Certificate IDJ\027\"cer_355854" +
-      "23166144613\"R\rcertificateId\022b\n\020idp_slo_r" +
-      "equired\030\023 \001(\0132\032.google.protobuf.BoolValu" +
-      "eB\034\222A\0312\021Enable IDP logoutJ\004trueR\016idpSloR" +
-      "equired\022\220\001\n\014sp_entity_id\030\024 \001(\0132\034.google." +
-      "protobuf.StringValueBP\222AM2\032Service Provi" +
-      "der Entity IDJ/\"https://env.scalekit.com" +
-      "/sso/v1/saml/conn_123\"R\nspEntityId\022\237\001\n\020s" +
-      "p_assertion_url\030\025 \001(\0132\034.google.protobuf." +
-      "StringValueBW\222AT2\030Service Provider SSO U" +
-      "RLJ8\"https://env.scalekit.com/sso/v1/sam" +
-      "l/conn_123/callback\"R\016spAssertionUrl\022\216\001\n" +
-      "\nsp_slo_url\030\026 \001(\0132\034.google.protobuf.Stri" +
-      "ngValueBR\222AO2\030Service Provider SLO URLJ3" +
-      "\"https://env.scalekit.com/sso/v1/saml/co" +
-      "nn_123/slo\"R\010spSloUrlJ\004\010\013\020\014\"\371\023\n\034SAMLConn" +
-      "ectionConfigResponse\022W\n\014sp_entity_id\030\001 \001" +
-      "(\tB5\222A22\014SP Entity IDJ\"\"https://yourapp." +
-      "com/service/saml\"R\nspEntityId\022m\n\020sp_asse" +
-      "rtion_url\030\002 \001(\tBC\222A@2\020SP Assertion URLJ," +
-      "\"https://youridp.com/service/saml/assert" +
-      "ion\"R\016spAssertionUrl\022i\n\017sp_metadata_url\030" +
-      "\003 \001(\tBA\222A>2\017SP Metadata URLJ+\"https://yo" +
-      "uridp.com/service/saml/metadata\"R\rspMeta" +
-      "dataUrl\022\212\001\n\020idp_metadata_url\030\004 \001(\0132\034.goo" +
-      "gle.protobuf.StringValueBB\222A?2\020IDP Metad" +
-      "ata URLJ+\"https://youridp.com/service/sa" +
-      "ml/metadata\"R\016idpMetadataUrl\022x\n\ridp_enti" +
-      "ty_id\030\005 \001(\0132\034.google.protobuf.StringValu" +
-      "eB6\222A32\rIDP Entity IDJ\"\"https://youridp." +
-      "com/service/saml\"R\013idpEntityId\022v\n\013idp_ss" +
-      "o_url\030\006 \001(\0132\034.google.protobuf.StringValu" +
-      "eB8\222A52\013IDP SSO URLJ&\"https://youridp.co" +
-      "m/service/saml/sso\"R\tidpSsoUrl\022i\n\020idp_ce" +
-      "rtificates\030\007 \003(\0132\'.scalekit.v1.connectio" +
-      "ns.IDPCertificateB\025\222A\0222\020IDP Certificates" +
-      "R\017idpCertificates\022v\n\013idp_slo_url\030\010 \001(\0132\034" +
-      ".google.protobuf.StringValueB8\222A52\013IDP S" +
-      "LO URLJ&\"https://youridp.com/service/sam" +
-      "l/slo\"R\tidpSloUrl\022l\n\017ui_button_title\030\t \001" +
-      "(\0132\034.google.protobuf.StringValueB&\222A#2\017U" +
-      "I Button TitleJ\020\"Login with SSO\"R\ruiButt" +
-      "onTitle\022t\n\022idp_name_id_format\030\n \001(\0162%.sc" +
-      "alekit.v1.connections.NameIdFormatB \222A\0352" +
-      "\022IDP Name ID FormatJ\007\"EMAIL\"R\017idpNameIdF" +
-      "ormat\022\211\001\n\027idp_sso_request_binding\030\013 \001(\0162" +
-      "\'.scalekit.v1.connections.RequestBinding" +
-      "B)\222A&2\027IDP SSO Request BindingJ\013\"HTTP_PO" +
-      "ST\"R\024idpSsoRequestBinding\022\211\001\n\027idp_slo_re" +
-      "quest_binding\030\014 \001(\0162\'.scalekit.v1.connec" +
-      "tions.RequestBindingB)\222A&2\027IDP SLO Reque" +
-      "st BindingJ\013\"HTTP_POST\"R\024idpSloRequestBi" +
-      "nding\022\223\001\n\023saml_signing_option\030\r \001(\0162+.sc" +
-      "alekit.v1.connections.SAMLSigningOptions" +
-      "B6\222A32\023SAML Signing OptionJ\034\"SAML_ONLY_R" +
-      "ESPONSE_SIGNING\"R\021samlSigningOption\022{\n\031a" +
-      "llow_idp_initiated_login\030\016 \001(\0132\032.google." +
-      "protobuf.BoolValueB$\222A!2\031Allow IDP Initi" +
-      "ated LoginJ\004trueR\026allowIdpInitiatedLogin" +
-      "\022S\n\013force_authn\030\017 \001(\0132\032.google.protobuf." +
-      "BoolValueB\026\222A\0232\013Force AuthnJ\004trueR\nforce" +
-      "Authn\022\226\001\n\024default_redirect_uri\030\020 \001(\0132\034.g" +
-      "oogle.protobuf.StringValueBF\222AC2\024Default" +
-      " Redirect URIJ+\"https://yourapp.com/serv" +
-      "ice/saml/redirect\"R\022defaultRedirectUri\022k" +
-      "\n\023assertion_encrypted\030\021 \001(\0132\032.google.pro" +
-      "tobuf.BoolValueB\036\222A\0332\023Assertion Encrypte" +
-      "dJ\004trueR\022assertionEncrypted\022j\n\023want_requ" +
-      "est_signed\030\022 \001(\0132\032.google.protobuf.BoolV" +
-      "alueB\036\222A\0332\023Want Request SignedJ\004trueR\021wa" +
-      "ntRequestSigned\022q\n\016certificate_id\030\023 \001(\0132" +
-      "\034.google.protobuf.StringValueB,\222A)2\016Cert" +
-      "ificate IDJ\027\"cer_35585423166144613\"R\rcer" +
-      "tificateId\022b\n\020idp_slo_required\030\024 \001(\0132\032.g" +
-      "oogle.protobuf.BoolValueB\034\222A\0312\021Enable ID" +
-      "P logoutJ\004trueR\016idpSloRequired\022\226\001\n\nsp_sl" +
-      "o_url\030\025 \001(\0132\034.google.protobuf.StringValu" +
-      "eBZ\222AT2\030Service Provider SLO urlJ8\"https" +
-      "://yourapp.com/sso/v1/saml/conn_1234/slo" +
-      "/callback\"\340A\003R\010spSloUrl\"\277\003\n\016IDPCertifica" +
-      "te\0226\n\013certificate\030\001 \001(\tB\024\222A\0212\017IDP Certif" +
-      "icateR\013certificate\022s\n\013create_time\030\002 \001(\0132" +
-      "\032.google.protobuf.TimestampB6\222A32\031Certif" +
-      "icate Creation TimeJ\026\"2021-09-01T00:00:0" +
-      "0Z\"R\ncreateTime\022q\n\013expiry_time\030\003 \001(\0132\032.g" +
-      "oogle.protobuf.TimestampB4\222A12\027Certifica" +
-      "te Expiry TimeJ\026\"2021-09-01T00:00:00Z\"R\n" +
-      "expiryTime\0228\n\002id\030\004 \001(\tB(\222A%2\016Certificate" +
-      " IDJ\023\"cert_123123123123\"R\002id\022S\n\006issuer\030\005" +
-      " \001(\tB;\222A82\022Certificate IssuerJ\"\"https://" +
-      "youridp.com/service/saml\"R\006issuer\"b\n\026Get" +
-      "OIDCMetadataRequest\022H\n\010metadata\030\001 \001(\0132,." +
-      "scalekit.v1.connections.OIDCMetadataRequ" +
-      "estR\010metadata\"9\n\023OIDCMetadataRequest\022\"\n\006" +
-      "issuer\030\001 \001(\tB\n\272H\007r\005\020\001\030\310\001R\006issuer\"\327\001\n\027Get" +
-      "OIDCMetadataResponse\022\026\n\006issuer\030\001 \001(\tR\006is" +
-      "suer\0225\n\026authorization_endpoint\030\002 \001(\tR\025au" +
-      "thorizationEndpoint\022%\n\016token_endpoint\030\003 " +
-      "\001(\tR\rtokenEndpoint\022+\n\021userinfo_endpoint\030" +
-      "\004 \001(\tR\020userinfoEndpoint\022\031\n\010jwks_uri\030\005 \001(" +
-      "\tR\007jwksUri\"b\n\026GetSAMLMetadataRequest\022H\n\010" +
-      "metadata\030\001 \001(\0132,.scalekit.v1.connections" +
-      ".SAMLMetadataRequestR\010metadata\"D\n\023SAMLMe" +
-      "tadataRequest\022-\n\014metadata_url\030\001 \001(\tB\n\272H\007" +
-      "r\005\020\001\030\310\001R\013metadataUrl\"\264\002\n\027GetSAMLMetadata" +
-      "Response\022\"\n\ridp_entity_id\030\001 \001(\tR\013idpEnti" +
-      "tyId\022\036\n\013idp_sso_url\030\002 \001(\tR\tidpSsoUrl\022\036\n\013" +
-      "idp_slo_url\030\003 \001(\tR\tidpSloUrl\022)\n\020idp_cert" +
-      "ificates\030\004 \003(\tR\017idpCertificates\022+\n\022idp_n" +
-      "ame_id_format\030\005 \001(\tR\017idpNameIdFormat\022\'\n\017" +
-      "request_binding\030\006 \001(\tR\016requestBinding\0224\n" +
-      "\026want_assertions_signed\030\007 \001(\010R\024wantAsser" +
-      "tionsSigned\"u\n GetSAMLCertificateDetails" +
-      "Request\022Q\n\013certificate\030\001 \001(\0132/.scalekit." +
-      "v1.connections.SAMLCertificateRequestR\013c" +
-      "ertificate\"5\n\026SAMLCertificateRequest\022\033\n\004" +
-      "text\030\001 \001(\tB\007\272H\004r\002\020\001R\004text\"\245\001\n!GetSAMLCer" +
-      "tificateDetailsResponse\022\022\n\004text\030\001 \001(\tR\004t" +
-      "ext\022\033\n\tnot_after\030\002 \001(\003R\010notAfter\022\035\n\nnot_" +
-      "before\030\003 \001(\003R\tnotBefore\022\030\n\007subject\030\004 \001(\t" +
-      "R\007subject\022\026\n\006issuer\030\005 \001(\tR\006issuer\"\206\001\n\036Ge" +
-      "tConnectionTestResultRequest\022,\n\rconnecti" +
-      "on_id\030\001 \001(\tB\007\272H\004r\002\020\001R\014connectionId\0226\n\017te" +
-      "st_request_id\030\002 \001(\tB\016\272H\013r\t\020\001:\005test_R\rtes" +
-      "tRequestId\"\275\002\n\037GetConnectionTestResultRe" +
-      "sponse\022A\n\006status\030\001 \001(\0162).scalekit.v1.con" +
-      "nections.TestResultStatusR\006status\022 \n\tuse" +
-      "r_info\030\002 \001(\tH\000R\010userInfo\210\001\001\022\031\n\005error\030\003 \001" +
-      "(\tH\001R\005error\210\001\001\0220\n\021error_description\030\004 \001(" +
-      "\tH\002R\020errorDescription\210\001\001\022(\n\rerror_detail" +
-      "s\030\005 \001(\tH\003R\014errorDetails\210\001\001B\014\n\n_user_info" +
-      "B\010\n\006_errorB\024\n\022_error_descriptionB\020\n\016_err" +
-      "or_details\"\032\n\030PasswordConnectionConfig\"9" +
-      "\n\005Flags\022\031\n\010is_login\030\001 \001(\010R\007isLogin\022\025\n\006is" +
-      "_app\030\002 \001(\010R\005isApp\"\252\003\n\031ListAppConnections" +
-      "Request\022\200\001\n\tpage_size\030\001 \001(\rBc\222AY2SMaximu" +
-      "m number of organizations to return per " +
-      "page. Value must be between 1 and 30.J\0023" +
-      "0\272H\004*\002\030\036R\010pageSize\022\245\001\n\npage_token\030\002 \001(\tB" +
-      "\205\001\222A\201\0012aToken from a previous response f" +
-      "or pagination. Provide this to retrieve " +
-      "the next page of results.J\034eyJwYWdlIjoyL" +
-      "CJsaW1pdCI6MzB9R\tpageToken\022U\n\010provider\030\003" +
-      " \001(\tB4\222A(2\036Filter connections by provide" +
-      "rJ\006\"OKTA\"\272H\006r\004\020\001\0302H\000R\010provider\210\001\001B\013\n\t_pr" +
-      "ovider\"\352\003\n\032ListAppConnectionsResponse\022\201\001" +
-      "\n\013connections\030\001 \003(\0132\'.scalekit.v1.connec" +
-      "tions.ListConnectionB6\222A321List of conne" +
-      "ctions matching the request criteriaR\013co" +
-      "nnections\022o\n\017next_page_token\030\002 \001(\tBG\222AD2" +
-      "\"Token for the next page of resultsJ\036\"ey" +
-      "JwYWdlIjoyLCJsaW1pdCI6MzB9\"R\rnextPageTok" +
-      "en\022s\n\017prev_page_token\030\003 \001(\tBK\222AH2&Token " +
-      "for the previous page of resultsJ\036\"eyJwY" +
-      "WdlIjoyLCJsaW1pdCI6MzB9\"R\rprevPageToken\022" +
-      "b\n\ntotal_size\030\004 \001(\rBC\222A@29Total number o" +
-      "f connections matching the request crite" +
-      "riaJ\003100R\ttotalSize*W\n\021CodeChallengeType" +
-      "\022#\n\037CODE_CHALLENGE_TYPE_UNSPECIFIED\020\000\022\013\n" +
-      "\007NUMERIC\020\001\022\020\n\014ALPHANUMERIC\020\002*R\n\021Configur" +
-      "ationType\022\"\n\036CONFIGURATION_TYPE_UNSPECIF" +
-      "IED\020\000\022\r\n\tDISCOVERY\020\001\022\n\n\006MANUAL\020\002*a\n\014Name" +
-      "IdFormat\022\026\n\022NAME_ID_FORMAT_NIL\020\000\022\017\n\013UNSP" +
-      "ECIFIED\020\001\022\t\n\005EMAIL\020\002\022\r\n\tTRANSIENT\020\003\022\016\n\nP" +
-      "ERSISTENT\020\004*U\n\020PasswordlessType\022 \n\034Passw" +
-      "ordlessType_UNSPECIFIED\020\000\022\010\n\004LINK\020\001\022\007\n\003O" +
-      "TP\020\002\022\014\n\010LINK_OTP\020\003*9\n\020TestResultStatus\022\013" +
-      "\n\007PENDING\020\000\022\013\n\007SUCCESS\020\001\022\013\n\007FAILURE\020\002*\330\001" +
-      "\n\022SAMLSigningOptions\022$\n SAML_SIGNING_OPT" +
-      "IONS_UNSPECIFIED\020\000\022\016\n\nNO_SIGNING\020\001\022\036\n\032SA" +
-      "ML_ONLY_RESPONSE_SIGNING\020\002\022\037\n\033SAML_ONLY_" +
-      "ASSERTION_SIGNING\020\003\022#\n\037SAML_RESPONSE_ASS" +
-      "ERTION_SIGNING\020\004\022&\n\"SAML_RESPONSE_OR_ASS" +
-      "ERTION_SIGNING\020\005*S\n\016RequestBinding\022\037\n\033RE" +
-      "QUEST_BINDING_UNSPECIFIED\020\000\022\r\n\tHTTP_POST" +
-      "\020\001\022\021\n\rHTTP_REDIRECT\020\002*P\n\rTokenAuthType\022\037" +
-      "\n\033TOKEN_AUTH_TYPE_UNSPECIFIED\020\000\022\016\n\nURL_P" +
-      "ARAMS\020\001\022\016\n\nBASIC_AUTH\020\002*c\n\tOIDCScope\022\032\n\026" +
-      "OIDC_SCOPE_UNSPECIFIED\020\000\022\n\n\006openid\020\001\022\013\n\007" +
-      "profile\020\002\022\t\n\005email\020\003\022\013\n\007address\020\004\022\t\n\005pho" +
-      "ne\020\005*\200\001\n\016ConnectionType\022\013\n\007INVALID\020\000\022\010\n\004" +
-      "OIDC\020\001\022\010\n\004SAML\020\002\022\014\n\010PASSWORD\020\003\022\t\n\005OAUTH\020" +
-      "\004\022\020\n\014PASSWORDLESS\020\005\022\t\n\005BASIC\020\006\022\n\n\006BEARER" +
-      "\020\007\022\013\n\007API_KEY\020\010*`\n\020ConnectionStatus\022!\n\035C" +
-      "ONNECTION_STATUS_UNSPECIFIED\020\000\022\t\n\005DRAFT\020" +
-      "\001\022\017\n\013IN_PROGRESS\020\002\022\r\n\tCOMPLETED\020\003*\230\002\n\022Co" +
-      "nnectionProvider\022#\n\037CONNECTION_PROVIDER_" +
-      "UNSPECIFIED\020\000\022\010\n\004OKTA\020\001\022\n\n\006GOOGLE\020\002\022\020\n\014M" +
-      "ICROSOFT_AD\020\003\022\t\n\005AUTH0\020\004\022\014\n\010ONELOGIN\020\005\022\021" +
-      "\n\rPING_IDENTITY\020\006\022\r\n\tJUMPCLOUD\020\007\022\n\n\006CUST" +
-      "OM\020\010\022\n\n\006GITHUB\020\t\022\n\n\006GITLAB\020\n\022\014\n\010LINKEDIN" +
-      "\020\013\022\016\n\nSALESFORCE\020\014\022\r\n\tMICROSOFT\020\r\022\021\n\rIDP" +
-      "_SIMULATOR\020\016\022\014\n\010SCALEKIT\020\017\022\010\n\004ADFS\020\0202\210h\n" +
-      "\021ConnectionService\022\221\003\n\033CreateEnvironment" +
-      "Connection\022;.scalekit.v1.connections.Cre" +
-      "ateEnvironmentConnectionRequest\0321.scalek" +
-      "it.v1.connections.CreateConnectionRespon" +
-      "se\"\201\002\222A\301\001\n\013Connections\022\027Create a new con" +
-      "nection\0328Establish a new connection for " +
-      "the specified environmentJ_\n\003201\022X\n\037Conn" +
-      "ection created successfully\0225\n3\0321.scalek" +
-      "it.v1.connections.CreateConnectionRespon" +
-      "se\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002!\"\023/api/v1/c" +
-      "onnections:\nconnection\022\226\010\n\020CreateConnect" +
-      "ion\0220.scalekit.v1.connections.CreateConn" +
-      "ectionRequest\0321.scalekit.v1.connections." +
-      "CreateConnectionResponse\"\234\007\222A\274\006\n\013Connect" +
-      "ions\022\027Create a new connection\032=Establish" +
-      " a new SSO connection for the specified " +
-      "organizationJ_\n\003201\022X\n\037Connection create" +
-      "d successfully\0225\n3\0321.scalekit.v1.connect" +
-      "ions.CreateConnectionResponsej\363\004\n\rx-code" +
-      "Samples\022\341\0042\336\004\n\231\001*\226\001\n\026\n\005label\022\r\032\013Node.js " +
-      "SDK\n\024\n\004lang\022\014\032\njavascript\nf\n\006source\022\\\032Zc" +
-      "onst connection = await sc.connection.cr" +
-      "eateConnection(organizationId, connectio" +
-      "nConfig);\n\220\001*\215\001\n\025\n\005label\022\014\032\nPython SDK\n\020" +
-      "\n\004lang\022\010\032\006python\nb\n\006source\022X\032Vconnection" +
-      " = sc.connection.create_connection(\n  or" +
-      "ganization_id,\n  connection_config\n)\n\223\001*" +
-      "\220\001\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\nm\n\006s" +
-      "ource\022c\032aconnection, err := sc.Connectio" +
-      "n.CreateConnection(\n  ctx,\n  organizatio" +
-      "nId,\n  connectionConfig,\n)\n\226\001*\223\001\n\023\n\005labe" +
-      "l\022\n\032\010Java SDK\n\016\n\004lang\022\006\032\004java\nl\n\006source\022" +
-      "b\032`Connection connection = client.connec" +
-      "tions().createConnection(organizationId," +
-      " connectionConfig);\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW" +
-      "\202\323\344\223\002A\"3/api/v1/organizations/{organizat" +
-      "ion_id}/connections:\nconnection\022\272\004\n\031Assi" +
-      "gnDomainsToConnection\0229.scalekit.v1.conn" +
-      "ections.AssignDomainsToConnectionRequest" +
-      "\032:.scalekit.v1.connections.AssignDomains" +
-      "ToConnectionResponse\"\245\003\222A\266\002\n\013Connections" +
-      "\022\036Assign domains to a connection\032\236\001Assig" +
-      "ns one or more domains to a specific con" +
-      "nection within an organization. This all" +
-      "ows the connection to be used for authen" +
-      "tication on the specified domainsJf\n\003200" +
-      "\022_\n\035Domains assigned successfully\022>\n<\032:." +
-      "scalekit.v1.connections.AssignDomainsToC" +
-      "onnectionResponse\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323" +
-      "\344\223\002P\032K/api/v1/organizations/{organizatio" +
-      "n_id}/connections/{connection_id}/domain" +
-      "s:\001*\022\262\003\n\030GetEnvironmentConnection\0228.scal" +
-      "ekit.v1.connections.GetEnvironmentConnec" +
-      "tionRequest\032..scalekit.v1.connections.Ge" +
-      "tConnectionResponse\"\253\002\222A\347\001\n\013Connections\022" +
-      "\033Retrieve connection details\032SObtain det" +
-      "ailed information about a specific conne" +
-      "ction using its unique identifierJf\n\003200" +
-      "\022_\n)Successfully retrieved connection de" +
-      "tails\0222\n0\032..scalekit.v1.connections.GetC" +
-      "onnectionResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323" +
-      "\344\223\002%\022#/api/v1/connections/{connection_id" +
-      "}\022\241\t\n\rGetConnection\022-.scalekit.v1.connec" +
-      "tions.GetConnectionRequest\032..scalekit.v1" +
-      ".connections.GetConnectionResponse\"\260\010\222A\346" +
-      "\007\n\013Connections\022\026Get connection details\032\321" +
-      "\001Retrieves the complete configuration an" +
-      "d status details for a specific connecti" +
-      "on by its ID within an organization. Ret" +
-      "urns all connection properties including" +
-      " provider settings, protocols, and curre" +
-      "nt status.J\205\001\n\003200\022~\nHSuccessfully retri",
-      "eved connection details for the specifie" +
-      "d organization\0222\n0\032..scalekit.v1.connect" +
-      "ions.GetConnectionResponsej\342\004\n\rx-codeSam" +
-      "ples\022\320\0042\315\004\n\230\001*\225\001\n\026\n\005label\022\r\032\013Node.js SDK" +
-      "\n\024\n\004lang\022\014\032\njavascript\ne\n\006source\022[\032Ycons" +
-      "t connection = await sc.connection.getCo" +
-      "nnection(\n  organizationId,\n  connection" +
-      "Id\n);\n\212\001*\207\001\n\025\n\005label\022\014\032\nPython SDK\n\020\n\004la" +
-      "ng\022\010\032\006python\n\\\n\006source\022R\032Pconnection = s" +
-      "c.connection.get_connection(\n  organizat" +
-      "ion_id,\n  connection_id,\n)\n\214\001*\211\001\n\021\n\005labe" +
-      "l\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\nf\n\006source\022\\\032Zc" +
-      "onnection, err := sc.Connection.GetConne" +
-      "ction(\n  ctx,\n  organizationId,\n  connec" +
-      "tionId,\n)\n\223\001*\220\001\n\023\n\005label\022\n\032\010Java SDK\n\016\n\004" +
-      "lang\022\006\032\004java\ni\n\006source\022_\032]Connection con" +
-      "nection = client.connections().getConnec" +
-      "tionById(connectionId, organizationId);\202" +
-      "\265\030\002\030t\202\323\344\223\002:\0228/api/v1/organizations/{orga" +
-      "nization_id}/connections/{id}\022\277\014\n\017ListCo" +
-      "nnections\022/.scalekit.v1.connections.List" +
-      "ConnectionsRequest\0320.scalekit.v1.connect" +
-      "ions.ListConnectionsResponse\"\310\013\222A\243\013\n\013Con" +
-      "nections\022\020List connections\0322Retrieves a " +
-      "list of connections in the environmentJa" +
-      "\n\003200\022Z\n\"Successfully retrieved connecti" +
-      "ons\0224\n2\0320.scalekit.v1.connections.ListCo" +
-      "nnectionsResponsej\352\t\n\rx-codeSamples\022\330\t2\325" +
-      "\t\n\245\002*\242\002\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004lang\022" +
-      "\014\032\njavascript\n\361\001\n\006source\022\346\001\032\343\001// List co" +
-      "nnections by organization id\nconst conne" +
-      "ctions = await scalekit.connection.listC" +
-      "onnections(organizationId);\n\n// List con" +
-      "nections by domain\nconst connections = a" +
-      "wait scalekit.connection.listConnections" +
-      "ByDomain(domain);\n\246\002*\243\002\n\025\n\005label\022\014\032\nPyth" +
-      "on SDK\n\020\n\004lang\022\010\032\006python\n\367\001\n\006source\022\354\001\032\351" +
-      "\001# List connections by organization id\nc" +
-      "onnections = scalekit_client.connection." +
-      "list_connections(\n  organization_id\n)\n\n#" +
-      " List connections by domain\nresponse = s" +
-      "calekit_client.connection.list_connectio" +
-      "ns_by_domain(domain=\"example.com\")\n\255\002*\252\002" +
-      "\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n\206\002\n\006so" +
-      "urce\022\373\001\032\370\001// List connections by organiz" +
-      "ation id\nconnections, err := scalekitCli" +
-      "ent.Connection().ListConnections(\n  ctx," +
-      "\n  organizationId\n)\n\n// List connections" +
-      " by domain\nconnections, err := scalekitC" +
-      "lient.Connection().ListConnectionsByDoma" +
-      "in(ctx, \n  domain)\n\321\002*\316\002\n\023\n\005label\022\n\032\010Jav" +
-      "a SDK\n\016\n\004lang\022\006\032\004java\n\246\002\n\006source\022\233\002\032\230\002//" +
-      " List connections by organization id\nLis" +
-      "tConnectionsResponse response = scalekit" +
-      "Client.connections(\n  ).listConnections(" +
-      "organizationId);\n\n// List connections by" +
-      " domain\nListConnectionsResponse response" +
-      " = scalekitClient.connections(\n  ).listC" +
-      "onnectionsByDomain(\"your-domain.com\");\202\265" +
-      "\030\002\030t\202\323\344\223\002\025\022\023/api/v1/connections\022\265\003\n\033List" +
-      "OrganizationConnections\022;.scalekit.v1.co" +
-      "nnections.ListOrganizationConnectionsReq" +
-      "uest\032<.scalekit.v1.connections.ListOrgan" +
-      "izationConnectionsResponse\"\232\002\222A\326\001\n\013Conne" +
-      "ctions\022\035List organization connections\0329R" +
-      "etrieves a list of connections for all t" +
-      "he organizationsJm\n\003200\022f\n\"Successfully " +
-      "retrieved connections\022@\n>\032<.scalekit.v1." +
-      "connections.ListOrganizationConnectionsR" +
-      "esponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\022#/api" +
-      "/v1/organizations/-/connections\022\315\003\n\035Sear" +
-      "chOrganizationConnections\022=.scalekit.v1." +
-      "connections.SearchOrganizationConnection" +
-      "sRequest\032>.scalekit.v1.connections.Searc" +
-      "hOrganizationConnectionsResponse\"\254\002\222A\341\001\n" +
-      "\013Connections\022\037Search organization connec" +
-      "tions\032DSearch with query or filters prov" +
-      "ided and return list of connectionsJk\n\0032" +
-      "00\022d\n\036Successfully found connections\022B\n@" +
-      "\032>.scalekit.v1.connections.SearchOrganiz" +
-      "ationConnectionsResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PR" +
-      "EVIEW\202\323\344\223\002,\022*/api/v1/organizations/-/con" +
-      "nections:search\022\361\002\n\033UpdateEnvironmentCon" +
-      "nection\022;.scalekit.v1.connections.Update" +
-      "EnvironmentConnectionRequest\0321.scalekit." +
-      "v1.connections.UpdateConnectionResponse\"" +
-      "\341\001\222A\221\001\n\013Connections\022\023Update a connection" +
-      "\032\027Update a SSO ConnectionJT\n\003200\022M\n\024Upda" +
-      "ted Successfully\0225\n3\0321.scalekit.v1.conne" +
-      "ctions.UpdateConnectionResponse\202\265\030\002\030T\372\322\344" +
-      "\223\002\t\022\007PREVIEW\202\323\344\223\00212#/api/v1/connections/" +
-      "{connection_id}:\nconnection\022\264\010\n\020UpdateCo" +
-      "nnection\0220.scalekit.v1.connections.Updat" +
-      "eConnectionRequest\0321.scalekit.v1.connect" +
-      "ions.UpdateConnectionResponse\"\272\007\222A\325\006\n\013Co" +
-      "nnections\022$Update a connection for organ" +
-      "ization\032\027Update a SSO ConnectionJT\n\003200\022" +
-      "M\n\024Updated Successfully\0225\n3\0321.scalekit.v" +
-      "1.connections.UpdateConnectionResponsej\260" +
-      "\005\n\rx-codeSamples\022\236\0052\233\005\n\247\001*\244\001\n\026\n\005label\022\r\032" +
-      "\013Node.js SDK\n\024\n\004lang\022\014\032\njavascript\nt\n\006so" +
-      "urce\022j\032hconst connection = await sc.conn" +
-      "ection.updateConnection(organizationId, " +
-      "connectionId, connectionConfig);\n\241\001*\236\001\n\025" +
-      "\n\005label\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python\n" +
-      "s\n\006source\022i\032gconnection = sc.connection." +
-      "update_connection(\n  organization_id,\n  " +
-      "connection_id,\n  connection_config\n)\n\243\001*" +
-      "\240\001\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n}\n\006s" +
-      "ource\022s\032qconnection, err := sc.Connectio" +
-      "n.UpdateConnection(\n  ctx,\n  organizatio" +
-      "nId,\n  connectionId,\n  connectionConfig," +
-      "\n)\n\244\001*\241\001\n\023\n\005label\022\n\032\010Java SDK\n\016\n\004lang\022\006\032" +
-      "\004java\nz\n\006source\022p\032nConnection connection" +
-      " = client.connections().updateConnection" +
-      "(connectionId, organizationId, connectio" +
-      "nConfig);\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002F28/a" +
+      "e/saml/sso\"R\tidpSsoUrl\022i\n\020idp_certificat" +
+      "es\030\007 \003(\0132\'.scalekit.v1.connections.IDPCe" +
+      "rtificateB\025\222A\0222\020IDP CertificatesR\017idpCer" +
+      "tificates\022v\n\013idp_slo_url\030\010 \001(\0132\034.google." +
+      "protobuf.StringValueB8\222A52\013IDP SLO URLJ&" +
+      "\"https://youridp.com/service/saml/slo\"R\t" +
+      "idpSloUrl\022l\n\017ui_button_title\030\t \001(\0132\034.goo" +
+      "gle.protobuf.StringValueB&\222A#2\017UI Button" +
+      " TitleJ\020\"Login with SSO\"R\ruiButtonTitle\022" +
+      "t\n\022idp_name_id_format\030\n \001(\0162%.scalekit.v" +
+      "1.connections.NameIdFormatB \222A\0352\022IDP Nam" +
+      "e ID FormatJ\007\"EMAIL\"R\017idpNameIdFormat\022\211\001" +
+      "\n\027idp_sso_request_binding\030\013 \001(\0162\'.scalek" +
+      "it.v1.connections.RequestBindingB)\222A&2\027I" +
+      "DP SSO Request BindingJ\013\"HTTP_POST\"R\024idp" +
+      "SsoRequestBinding\022\211\001\n\027idp_slo_request_bi" +
+      "nding\030\014 \001(\0162\'.scalekit.v1.connections.Re" +
+      "questBindingB)\222A&2\027IDP SLO Request Bindi" +
+      "ngJ\013\"HTTP_POST\"R\024idpSloRequestBinding\022\223\001" +
+      "\n\023saml_signing_option\030\r \001(\0162+.scalekit.v" +
+      "1.connections.SAMLSigningOptionsB6\222A32\023S" +
+      "AML Signing OptionJ\034\"SAML_ONLY_RESPONSE_" +
+      "SIGNING\"R\021samlSigningOption\022{\n\031allow_idp" +
+      "_initiated_login\030\016 \001(\0132\032.google.protobuf" +
+      ".BoolValueB$\222A!2\031Allow IDP Initiated Log" +
+      "inJ\004trueR\026allowIdpInitiatedLogin\022S\n\013forc" +
+      "e_authn\030\017 \001(\0132\032.google.protobuf.BoolValu" +
+      "eB\026\222A\0232\013Force AuthnJ\004trueR\nforceAuthn\022\226\001" +
+      "\n\024default_redirect_uri\030\020 \001(\0132\034.google.pr" +
+      "otobuf.StringValueBF\222AC2\024Default Redirec" +
+      "t URIJ+\"https://yourapp.com/service/saml" +
+      "/redirect\"R\022defaultRedirectUri\022k\n\023assert" +
+      "ion_encrypted\030\021 \001(\0132\032.google.protobuf.Bo" +
+      "olValueB\036\222A\0332\023Assertion EncryptedJ\004trueR" +
+      "\022assertionEncrypted\022j\n\023want_request_sign" +
+      "ed\030\022 \001(\0132\032.google.protobuf.BoolValueB\036\222A" +
+      "\0332\023Want Request SignedJ\004trueR\021wantReques" +
+      "tSigned\022q\n\016certificate_id\030\023 \001(\0132\034.google" +
+      ".protobuf.StringValueB,\222A)2\016Certificate " +
+      "IDJ\027\"cer_35585423166144613\"R\rcertificate" +
+      "Id\022b\n\020idp_slo_required\030\024 \001(\0132\032.google.pr" +
+      "otobuf.BoolValueB\034\222A\0312\021Enable IDP logout" +
+      "J\004trueR\016idpSloRequired\022\226\001\n\nsp_slo_url\030\025 " +
+      "\001(\0132\034.google.protobuf.StringValueBZ\222AT2\030" +
+      "Service Provider SLO urlJ8\"https://youra" +
+      "pp.com/sso/v1/saml/conn_1234/slo/callbac" +
+      "k\"\340A\003R\010spSloUrl\"\277\003\n\016IDPCertificate\0226\n\013ce" +
+      "rtificate\030\001 \001(\tB\024\222A\0212\017IDP CertificateR\013c" +
+      "ertificate\022s\n\013create_time\030\002 \001(\0132\032.google" +
+      ".protobuf.TimestampB6\222A32\031Certificate Cr" +
+      "eation TimeJ\026\"2021-09-01T00:00:00Z\"R\ncre" +
+      "ateTime\022q\n\013expiry_time\030\003 \001(\0132\032.google.pr" +
+      "otobuf.TimestampB4\222A12\027Certificate Expir" +
+      "y TimeJ\026\"2021-09-01T00:00:00Z\"R\nexpiryTi" +
+      "me\0228\n\002id\030\004 \001(\tB(\222A%2\016Certificate IDJ\023\"ce" +
+      "rt_123123123123\"R\002id\022S\n\006issuer\030\005 \001(\tB;\222A" +
+      "82\022Certificate IssuerJ\"\"https://youridp." +
+      "com/service/saml\"R\006issuer\"b\n\026GetOIDCMeta" +
+      "dataRequest\022H\n\010metadata\030\001 \001(\0132,.scalekit" +
+      ".v1.connections.OIDCMetadataRequestR\010met" +
+      "adata\"9\n\023OIDCMetadataRequest\022\"\n\006issuer\030\001" +
+      " \001(\tB\n\272H\007r\005\020\001\030\310\001R\006issuer\"\327\001\n\027GetOIDCMeta" +
+      "dataResponse\022\026\n\006issuer\030\001 \001(\tR\006issuer\0225\n\026" +
+      "authorization_endpoint\030\002 \001(\tR\025authorizat" +
+      "ionEndpoint\022%\n\016token_endpoint\030\003 \001(\tR\rtok" +
+      "enEndpoint\022+\n\021userinfo_endpoint\030\004 \001(\tR\020u" +
+      "serinfoEndpoint\022\031\n\010jwks_uri\030\005 \001(\tR\007jwksU" +
+      "ri\"b\n\026GetSAMLMetadataRequest\022H\n\010metadata" +
+      "\030\001 \001(\0132,.scalekit.v1.connections.SAMLMet" +
+      "adataRequestR\010metadata\"D\n\023SAMLMetadataRe" +
+      "quest\022-\n\014metadata_url\030\001 \001(\tB\n\272H\007r\005\020\001\030\310\001R" +
+      "\013metadataUrl\"\264\002\n\027GetSAMLMetadataResponse" +
+      "\022\"\n\ridp_entity_id\030\001 \001(\tR\013idpEntityId\022\036\n\013" +
+      "idp_sso_url\030\002 \001(\tR\tidpSsoUrl\022\036\n\013idp_slo_" +
+      "url\030\003 \001(\tR\tidpSloUrl\022)\n\020idp_certificates" +
+      "\030\004 \003(\tR\017idpCertificates\022+\n\022idp_name_id_f" +
+      "ormat\030\005 \001(\tR\017idpNameIdFormat\022\'\n\017request_" +
+      "binding\030\006 \001(\tR\016requestBinding\0224\n\026want_as" +
+      "sertions_signed\030\007 \001(\010R\024wantAssertionsSig" +
+      "ned\"u\n GetSAMLCertificateDetailsRequest\022" +
+      "Q\n\013certificate\030\001 \001(\0132/.scalekit.v1.conne" +
+      "ctions.SAMLCertificateRequestR\013certifica" +
+      "te\"5\n\026SAMLCertificateRequest\022\033\n\004text\030\001 \001" +
+      "(\tB\007\272H\004r\002\020\001R\004text\"\245\001\n!GetSAMLCertificate" +
+      "DetailsResponse\022\022\n\004text\030\001 \001(\tR\004text\022\033\n\tn" +
+      "ot_after\030\002 \001(\003R\010notAfter\022\035\n\nnot_before\030\003" +
+      " \001(\003R\tnotBefore\022\030\n\007subject\030\004 \001(\tR\007subjec" +
+      "t\022\026\n\006issuer\030\005 \001(\tR\006issuer\"\206\001\n\036GetConnect" +
+      "ionTestResultRequest\022,\n\rconnection_id\030\001 " +
+      "\001(\tB\007\272H\004r\002\020\001R\014connectionId\0226\n\017test_reque" +
+      "st_id\030\002 \001(\tB\016\272H\013r\t\020\001:\005test_R\rtestRequest" +
+      "Id\"\275\002\n\037GetConnectionTestResultResponse\022A" +
+      "\n\006status\030\001 \001(\0162).scalekit.v1.connections" +
+      ".TestResultStatusR\006status\022 \n\tuser_info\030\002" +
+      " \001(\tH\000R\010userInfo\210\001\001\022\031\n\005error\030\003 \001(\tH\001R\005er" +
+      "ror\210\001\001\0220\n\021error_description\030\004 \001(\tH\002R\020err" +
+      "orDescription\210\001\001\022(\n\rerror_details\030\005 \001(\tH" +
+      "\003R\014errorDetails\210\001\001B\014\n\n_user_infoB\010\n\006_err" +
+      "orB\024\n\022_error_descriptionB\020\n\016_error_detai" +
+      "ls\"\032\n\030PasswordConnectionConfig\"9\n\005Flags\022" +
+      "\031\n\010is_login\030\001 \001(\010R\007isLogin\022\025\n\006is_app\030\002 \001" +
+      "(\010R\005isApp\"\252\003\n\031ListAppConnectionsRequest\022" +
+      "\200\001\n\tpage_size\030\001 \001(\rBc\222AY2SMaximum number" +
+      " of organizations to return per page. Va" +
+      "lue must be between 1 and 30.J\00230\272H\004*\002\030\036" +
+      "R\010pageSize\022\245\001\n\npage_token\030\002 \001(\tB\205\001\222A\201\0012a" +
+      "Token from a previous response for pagin" +
+      "ation. Provide this to retrieve the next" +
+      " page of results.J\034eyJwYWdlIjoyLCJsaW1pd" +
+      "CI6MzB9R\tpageToken\022U\n\010provider\030\003 \001(\tB4\222A" +
+      "(2\036Filter connections by providerJ\006\"OKTA" +
+      "\"\272H\006r\004\020\001\0302H\000R\010provider\210\001\001B\013\n\t_provider\"\352" +
+      "\003\n\032ListAppConnectionsResponse\022\201\001\n\013connec" +
+      "tions\030\001 \003(\0132\'.scalekit.v1.connections.Li" +
+      "stConnectionB6\222A321List of connections m" +
+      "atching the request criteriaR\013connection" +
+      "s\022o\n\017next_page_token\030\002 \001(\tBG\222AD2\"Token f" +
+      "or the next page of resultsJ\036\"eyJwYWdlIj" +
+      "oyLCJsaW1pdCI6MzB9\"R\rnextPageToken\022s\n\017pr" +
+      "ev_page_token\030\003 \001(\tBK\222AH2&Token for the " +
+      "previous page of resultsJ\036\"eyJwYWdlIjoyL" +
+      "CJsaW1pdCI6MzB9\"R\rprevPageToken\022b\n\ntotal" +
+      "_size\030\004 \001(\rBC\222A@29Total number of connec" +
+      "tions matching the request criteriaJ\003100" +
+      "R\ttotalSize*W\n\021CodeChallengeType\022#\n\037CODE" +
+      "_CHALLENGE_TYPE_UNSPECIFIED\020\000\022\013\n\007NUMERIC" +
+      "\020\001\022\020\n\014ALPHANUMERIC\020\002*R\n\021ConfigurationTyp" +
+      "e\022\"\n\036CONFIGURATION_TYPE_UNSPECIFIED\020\000\022\r\n" +
+      "\tDISCOVERY\020\001\022\n\n\006MANUAL\020\002*a\n\014NameIdFormat" +
+      "\022\026\n\022NAME_ID_FORMAT_NIL\020\000\022\017\n\013UNSPECIFIED\020" +
+      "\001\022\t\n\005EMAIL\020\002\022\r\n\tTRANSIENT\020\003\022\016\n\nPERSISTEN" +
+      "T\020\004*U\n\020PasswordlessType\022 \n\034PasswordlessT" +
+      "ype_UNSPECIFIED\020\000\022\010\n\004LINK\020\001\022\007\n\003OTP\020\002\022\014\n\010" +
+      "LINK_OTP\020\003*9\n\020TestResultStatus\022\013\n\007PENDIN" +
+      "G\020\000\022\013\n\007SUCCESS\020\001\022\013\n\007FAILURE\020\002*\330\001\n\022SAMLSi" +
+      "gningOptions\022$\n SAML_SIGNING_OPTIONS_UNS" +
+      "PECIFIED\020\000\022\016\n\nNO_SIGNING\020\001\022\036\n\032SAML_ONLY_" +
+      "RESPONSE_SIGNING\020\002\022\037\n\033SAML_ONLY_ASSERTIO" +
+      "N_SIGNING\020\003\022#\n\037SAML_RESPONSE_ASSERTION_S" +
+      "IGNING\020\004\022&\n\"SAML_RESPONSE_OR_ASSERTION_S" +
+      "IGNING\020\005*S\n\016RequestBinding\022\037\n\033REQUEST_BI" +
+      "NDING_UNSPECIFIED\020\000\022\r\n\tHTTP_POST\020\001\022\021\n\rHT" +
+      "TP_REDIRECT\020\002*P\n\rTokenAuthType\022\037\n\033TOKEN_" +
+      "AUTH_TYPE_UNSPECIFIED\020\000\022\016\n\nURL_PARAMS\020\001\022" +
+      "\016\n\nBASIC_AUTH\020\002*c\n\tOIDCScope\022\032\n\026OIDC_SCO" +
+      "PE_UNSPECIFIED\020\000\022\n\n\006openid\020\001\022\013\n\007profile\020" +
+      "\002\022\t\n\005email\020\003\022\013\n\007address\020\004\022\t\n\005phone\020\005*\200\001\n" +
+      "\016ConnectionType\022\013\n\007INVALID\020\000\022\010\n\004OIDC\020\001\022\010" +
+      "\n\004SAML\020\002\022\014\n\010PASSWORD\020\003\022\t\n\005OAUTH\020\004\022\020\n\014PAS" +
+      "SWORDLESS\020\005\022\t\n\005BASIC\020\006\022\n\n\006BEARER\020\007\022\013\n\007AP" +
+      "I_KEY\020\010*`\n\020ConnectionStatus\022!\n\035CONNECTIO" +
+      "N_STATUS_UNSPECIFIED\020\000\022\t\n\005DRAFT\020\001\022\017\n\013IN_" +
+      "PROGRESS\020\002\022\r\n\tCOMPLETED\020\003*\230\002\n\022Connection" +
+      "Provider\022#\n\037CONNECTION_PROVIDER_UNSPECIF" +
+      "IED\020\000\022\010\n\004OKTA\020\001\022\n\n\006GOOGLE\020\002\022\020\n\014MICROSOFT" +
+      "_AD\020\003\022\t\n\005AUTH0\020\004\022\014\n\010ONELOGIN\020\005\022\021\n\rPING_I" +
+      "DENTITY\020\006\022\r\n\tJUMPCLOUD\020\007\022\n\n\006CUSTOM\020\010\022\n\n\006" +
+      "GITHUB\020\t\022\n\n\006GITLAB\020\n\022\014\n\010LINKEDIN\020\013\022\016\n\nSA" +
+      "LESFORCE\020\014\022\r\n\tMICROSOFT\020\r\022\021\n\rIDP_SIMULAT" +
+      "OR\020\016\022\014\n\010SCALEKIT\020\017\022\010\n\004ADFS\020\0202\210h\n\021Connect" +
+      "ionService\022\221\003\n\033CreateEnvironmentConnecti" +
+      "on\022;.scalekit.v1.connections.CreateEnvir" +
+      "onmentConnectionRequest\0321.scalekit.v1.co" +
+      "nnections.CreateConnectionResponse\"\201\002\222A\301" +
+      "\001\n\013Connections\022\027Create a new connection\032" +
+      "8Establish a new connection for the spec" +
+      "ified environmentJ_\n\003201\022X\n\037Connection c" +
+      "reated successfully\0225\n3\0321.scalekit.v1.co" +
+      "nnections.CreateConnectionResponse\202\265\030\002\030T" +
+      "\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002!\"\023/api/v1/connectio" +
+      "ns:\nconnection\022\226\010\n\020CreateConnection\0220.sc" +
+      "alekit.v1.connections.CreateConnectionRe" +
+      "quest\0321.scalekit.v1.connections.CreateCo" +
+      "nnectionResponse\"\234\007\222A\274\006\n\013Connections\022\027Cr" +
+      "eate a new connection\032=Establish a new S" +
+      "SO connection for the specified organiza" +
+      "tionJ_\n\003201\022X\n\037Connection created succes" +
+      "sfully\0225\n3\0321.scalekit.v1.connections.Cre" +
+      "ateConnectionResponsej\363\004\n\rx-codeSamples\022" +
+      "\341\0042\336\004\n\231\001*\226\001\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004l" +
+      "ang\022\014\032\njavascript\nf\n\006source\022\\\032Zconst con" +
+      "nection = await sc.connection.createConn" +
+      "ection(organizationId, connectionConfig)" +
+      ";\n\220\001*\215\001\n\025\n\005label\022\014\032\nPython SDK\n\020\n\004lang\022\010" +
+      "\032\006python\nb\n\006source\022X\032Vconnection = sc.co" +
+      "nnection.create_connection(\n  organizati" +
+      "on_id,\n  connection_config\n)\n\223\001*\220\001\n\021\n\005la" +
+      "bel\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\nm\n\006source\022c\032" +
+      "aconnection, err := sc.Connection.Create" +
+      "Connection(\n  ctx,\n  organizationId,\n  c" +
+      "onnectionConfig,\n)\n\226\001*\223\001\n\023\n\005label\022\n\032\010Jav" +
+      "a SDK\n\016\n\004lang\022\006\032\004java\nl\n\006source\022b\032`Conne" +
+      "ction connection = client.connections()." +
+      "createConnection(organizationId, connect" +
+      "ionConfig);\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002A\"3" +
+      "/api/v1/organizations/{organization_id}/" +
+      "connections:\nconnection\022\272\004\n\031AssignDomain" +
+      "sToConnection\0229.scalekit.v1.connections." +
+      "AssignDomainsToConnectionRequest\032:.scale" +
+      "kit.v1.connections.AssignDomainsToConnec" +
+      "tionResponse\"\245\003\222A\266\002\n\013Connections\022\036Assign" +
+      " domains to a connection\032\236\001Assigns one o" +
+      "r more domains to a specific connection " +
+      "within an organization. This allows the " +
+      "connection to be used for authentication" +
+      " on the specified domainsJf\n\003200\022_\n\035Doma" +
+      "ins assigned successfully\022>\n<\032:.scalekit" +
+      ".v1.connections.AssignDomainsToConnectio" +
+      "nResponse\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002P\032K/a" +
       "pi/v1/organizations/{organization_id}/co" +
-      "nnections/{id}:\nconnection\022\222\002\n\033DeleteEnv" +
-      "ironmentConnection\022;.scalekit.v1.connect" +
-      "ions.DeleteEnvironmentConnectionRequest\032" +
-      "\026.google.protobuf.Empty\"\235\001\222AZ\n\013Connectio" +
-      "ns\022\023Delete a connection\032\027Delete a SSO Co" +
-      "nnectionJ\035\n\003200\022\026\n\024Deleted Successfully\202" +
-      "\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%*#/api/v1/conn" +
-      "ections/{connection_id}\022\300\006\n\020DeleteConnec" +
-      "tion\0220.scalekit.v1.connections.DeleteCon" +
-      "nectionRequest\032\026.google.protobuf.Empty\"\341" +
-      "\005\222A\210\005\n\013Connections\022$Delete a connection " +
-      "for organization\032\027Delete a SSO Connectio" +
-      "nJ\035\n\003200\022\026\n\024Deleted Successfullyj\232\004\n\rx-c" +
-      "odeSamples\022\210\0042\205\004\n\201\001*\177\n\026\n\005label\022\r\032\013Node.j" +
-      "s SDK\n\024\n\004lang\022\014\032\njavascript\nO\n\006source\022E\032" +
-      "Cawait sc.connection.deleteConnection(or" +
-      "ganizationId, connectionId);\n~*|\n\025\n\005labe" +
-      "l\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python\nQ\n\006sou" +
-      "rce\022G\032Esc.connection.delete_connection(\n" +
-      "  organization_id,\n  connection_id\n)\n\203\001*" +
-      "\200\001\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n]\n\006s" +
-      "ource\022S\032Qerr := sc.Connection.DeleteConn" +
-      "ection(\n  ctx,\n  organizationId,\n  conne" +
-      "ctionId,\n)\ny*w\n\023\n\005label\022\n\032\010Java SDK\n\016\n\004l" +
-      "ang\022\006\032\004java\nP\n\006source\022F\032Dclient.connecti" +
-      "ons().deleteConnection(connectionId, org" +
-      "anizationId);\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002:" +
-      "*8/api/v1/organizations/{organization_id" +
-      "}/connections/{id}\022\337\002\n\033EnableEnvironment" +
-      "Connection\022;.scalekit.v1.connections.Tog" +
-      "gleEnvironmentConnectionRequest\0321.scalek" +
-      "it.v1.connections.ToggleConnectionRespon" +
-      "se\"\317\001\222A\204\001\n\013Connections\022\023Enable a connect" +
-      "ion\032\027Enable a SSO ConnectionJG\n\003200\022@\n\007S" +
-      "uccess\0225\n3\0321.scalekit.v1.connections.Tog" +
-      "gleConnectionResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVI" +
-      "EW\202\323\344\223\002,2*/api/v1/connections/{connectio" +
-      "n_id}:enable\022\226\t\n\020EnableConnection\0220.scal" +
-      "ekit.v1.connections.ToggleConnectionRequ" +
-      "est\0321.scalekit.v1.connections.ToggleConn" +
-      "ectionResponse\"\234\010\222A\313\007\n\013Connections\022\036Enab" +
-      "le organization connection\032\356\001Activate an" +
-      " existing connection for the specified o" +
-      "rganization. When enabled, users can aut" +
-      "henticate using this connection. This en" +
-      "dpoint changes the connection state from" +
-      " disabled to enabled without modifying o" +
-      "ther configuration settingsJ_\n\003200\022X\n\037Co" +
-      "nnection enabled successfully\0225\n3\0321.scal" +
-      "ekit.v1.connections.ToggleConnectionResp" +
-      "onsej\311\004\n\rx-codeSamples\022\267\0042\264\004\n\201\001*\177\n\026\n\005lab" +
-      "el\022\r\032\013Node.js SDK\n\024\n\004lang\022\014\032\njavascript\n" +
-      "O\n\006source\022E\032Cawait sc.connection.enableC" +
-      "onnection(organizationId, connectionId);" +
-      "\n\177*}\n\025\n\005label\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006p" +
-      "ython\nR\n\006source\022H\032Fsc.connection.enable_" +
-      "connection(\n  organization_id,\n  connect" +
-      "ion_id,\n)\n\203\001*\200\001\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004la" +
-      "ng\022\004\032\002go\n]\n\006source\022S\032Qerr := sc.Connecti" +
-      "on.EnableConnection(\n  ctx,\n  organizati" +
-      "onId,\n  connectionId,\n)\n\246\001*\243\001\n\023\n\005label\022\n" +
-      "\032\010Java SDK\n\016\n\004lang\022\006\032\004java\n|\n\006source\022r\032p" +
-      "ToggleConnectionResponse response = scal" +
-      "ekitClient.connections().enableConnectio" +
-      "n(connectionId, organizationId);\202\265\030\002\030t\202\323" +
-      "\344\223\002A2?/api/v1/organizations/{organizatio" +
-      "n_id}/connections/{id}:enable\022\343\002\n\034Disabl" +
-      "eEnvironmentConnection\022;.scalekit.v1.con" +
-      "nections.ToggleEnvironmentConnectionRequ" +
-      "est\0321.scalekit.v1.connections.ToggleConn" +
-      "ectionResponse\"\322\001\222A\206\001\n\013Connections\022\024Disa" +
-      "ble a connection\032\030Disable a SSO Connecti" +
-      "onJG\n\003200\022@\n\007Success\0225\n3\0321.scalekit.v1.c" +
-      "onnections.ToggleConnectionResponse\202\265\030\002\030" +
-      "T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002-2+/api/v1/connecti" +
-      "ons/{connection_id}:disable\022\244\t\n\021DisableC" +
-      "onnection\0220.scalekit.v1.connections.Togg" +
-      "leConnectionRequest\0321.scalekit.v1.connec" +
-      "tions.ToggleConnectionResponse\"\251\010\222A\327\007\n\013C" +
-      "onnections\022\037Disable organization connect" +
-      "ion\032\364\001Deactivate an existing connection " +
-      "for the specified organization. When dis" +
-      "abled, users cannot authenticate using t" +
-      "his connection. This endpoint changes th" +
-      "e connection state from enabled to disab" +
-      "led without modifying other configuratio" +
-      "n settingsJ`\n\003200\022Y\n Connection disabled" +
-      " successfully\0225\n3\0321.scalekit.v1.connecti" +
-      "ons.ToggleConnectionResponsej\315\004\n\rx-codeS" +
-      "amples\022\273\0042\270\004\n\203\001*\200\001\n\026\n\005label\022\r\032\013Node.js S" +
-      "DK\n\024\n\004lang\022\014\032\njavascript\nP\n\006source\022F\032Daw" +
-      "ait sc.connection.disableConnection(orga" +
-      "nizationId, connectionId);\n\177*}\n\025\n\005label\022" +
-      "\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python\nR\n\006sourc" +
-      "e\022H\032Fsc.connection.disable_connection(\n " +
-      " organization_id,\n  connection_id\n)\n\204\001*\201" +
-      "\001\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n^\n\006so" +
-      "urce\022T\032Rerr := sc.Connection.DisableConn" +
-      "ection(\n  ctx,\n  organizationId,\n  conne" +
-      "ctionId,\n)\n\247\001*\244\001\n\023\n\005label\022\n\032\010Java SDK\n\016\n" +
-      "\004lang\022\006\032\004java\n}\n\006source\022s\032qToggleConnect" +
-      "ionResponse response = scalekitClient.co" +
-      "nnections().disableConnection(connection" +
-      "Id, organizationId);\202\265\030\002\030t\202\323\344\223\002B2@/api/v" +
-      "1/organizations/{organization_id}/connec" +
-      "tions/{id}:disable\022\200\003\n\027GetConnectionTest" +
-      "Result\0227.scalekit.v1.connections.GetConn" +
-      "ectionTestResultRequest\0328.scalekit.v1.co" +
-      "nnections.GetConnectionTestResultRespons" +
-      "e\"\361\001\222A\215\001\n\013Connections\022\026Test connection r" +
-      "esult\032\026Connection test resultJN\n\003200\022G\n\007" +
-      "Success\022<\n:\0328.scalekit.v1.connections.Ge" +
-      "tConnectionTestResultResponse\202\265\030\002\030t\372\322\344\223\002" +
-      "\t\022\007PREVIEW\202\323\344\223\002E\022C/api/v1/connections/{c" +
-      "onnection_id}/test-requests/{test_reques" +
-      "t_id}\022\272\007\n\022ListAppConnections\0222.scalekit." +
-      "v1.connections.ListAppConnectionsRequest" +
-      "\0323.scalekit.v1.connections.ListAppConnec" +
-      "tionsResponse\"\272\006\222A\202\006\n\013Connections\022\024List " +
-      "App connections\0326Retrieves a list of app" +
-      " connections in the environmentJa\n\003200\022Z" +
-      "\n\"Successfully retrieved connections\0224\n2" +
-      "\0320.scalekit.v1.connections.ListConnectio" +
-      "nsResponsej\301\004\n\rx-codeSamples\022\257\0042\254\004\n\207\001*\204\001" +
-      "\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004lang\022\014\032\njava" +
-      "script\nT\n\006source\022J\032Hconst connections = " +
-      "await sc.connection.listConnections(orga" +
-      "nizationId);\nz*x\n\025\n\005label\022\014\032\nPython SDK\n" +
-      "\020\n\004lang\022\010\032\006python\nM\n\006source\022C\032Aconnectio" +
-      "ns = sc.connection.list_connections(\n  o" +
-      "rganization_id\n)\n}*{\n\021\n\005label\022\010\032\006Go SDK\n" +
-      "\014\n\004lang\022\004\032\002go\nX\n\006source\022N\032Lconnections, " +
-      "err := sc.Connection.ListConnections(\n  " +
-      "ctx,\n  organizationId\n)\n\244\001*\241\001\n\023\n\005label\022\n" +
-      "\032\010Java SDK\n\016\n\004lang\022\006\032\004java\nz\n\006source\022p\032n" +
+      "nnections/{connection_id}/domains:\001*\022\262\003\n" +
+      "\030GetEnvironmentConnection\0228.scalekit.v1." +
+      "connections.GetEnvironmentConnectionRequ" +
+      "est\032..scalekit.v1.connections.GetConnect" +
+      "ionResponse\"\253\002\222A\347\001\n\013Connections\022\033Retriev" +
+      "e connection details\032SObtain detailed in" +
+      "formation about a specific connection us" +
+      "ing its unique identifierJf\n\003200\022_\n)Succ" +
+      "essfully retrieved connection details\0222\n" +
+      "0\032..scalekit.v1.connections.GetConnectio" +
+      "nResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\022#/a" +
+      "pi/v1/connections/{connection_id}\022\241\t\n\rGe" +
+      "tConnection\022-.scalekit.v1.connections.Ge" +
+      "tConnectionRequest\032..scalekit.v1.connect" +
+      "ions.GetConnectionResponse\"\260\010\222A\346\007\n\013Conne" +
+      "ctions\022\026Get connection details\032\321\001Retriev" +
+      "es the complete configuration and status" +
+      " details for a specific connection by it" +
+      "s ID within an organization. Returns all",
+      " connection properties including provide" +
+      "r settings, protocols, and current statu" +
+      "s.J\205\001\n\003200\022~\nHSuccessfully retrieved con" +
+      "nection details for the specified organi" +
+      "zation\0222\n0\032..scalekit.v1.connections.Get" +
+      "ConnectionResponsej\342\004\n\rx-codeSamples\022\320\0042" +
+      "\315\004\n\230\001*\225\001\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004lang" +
+      "\022\014\032\njavascript\ne\n\006source\022[\032Yconst connec" +
+      "tion = await sc.connection.getConnection" +
+      "(\n  organizationId,\n  connectionId\n);\n\212\001" +
+      "*\207\001\n\025\n\005label\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006py" +
+      "thon\n\\\n\006source\022R\032Pconnection = sc.connec" +
+      "tion.get_connection(\n  organization_id,\n" +
+      "  connection_id,\n)\n\214\001*\211\001\n\021\n\005label\022\010\032\006Go " +
+      "SDK\n\014\n\004lang\022\004\032\002go\nf\n\006source\022\\\032Zconnectio" +
+      "n, err := sc.Connection.GetConnection(\n " +
+      " ctx,\n  organizationId,\n  connectionId,\n" +
+      ")\n\223\001*\220\001\n\023\n\005label\022\n\032\010Java SDK\n\016\n\004lang\022\006\032\004" +
+      "java\ni\n\006source\022_\032]Connection connection " +
+      "= client.connections().getConnectionById" +
+      "(connectionId, organizationId);\202\265\030\002\030t\202\323\344" +
+      "\223\002:\0228/api/v1/organizations/{organization" +
+      "_id}/connections/{id}\022\277\014\n\017ListConnection" +
+      "s\022/.scalekit.v1.connections.ListConnecti" +
+      "onsRequest\0320.scalekit.v1.connections.Lis" +
+      "tConnectionsResponse\"\310\013\222A\243\013\n\013Connections" +
+      "\022\020List connections\0322Retrieves a list of " +
+      "connections in the environmentJa\n\003200\022Z\n" +
+      "\"Successfully retrieved connections\0224\n2\032" +
+      "0.scalekit.v1.connections.ListConnection" +
+      "sResponsej\352\t\n\rx-codeSamples\022\330\t2\325\t\n\245\002*\242\002\n" +
+      "\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004lang\022\014\032\njavas" +
+      "cript\n\361\001\n\006source\022\346\001\032\343\001// List connection" +
+      "s by organization id\nconst connections =" +
+      " await scalekit.connection.listConnectio" +
+      "ns(organizationId);\n\n// List connections" +
+      " by domain\nconst connections = await sca" +
+      "lekit.connection.listConnectionsByDomain" +
+      "(domain);\n\246\002*\243\002\n\025\n\005label\022\014\032\nPython SDK\n\020" +
+      "\n\004lang\022\010\032\006python\n\367\001\n\006source\022\354\001\032\351\001# List " +
+      "connections by organization id\nconnectio" +
+      "ns = scalekit_client.connection.list_con" +
+      "nections(\n  organization_id\n)\n\n# List co" +
+      "nnections by domain\nresponse = scalekit_" +
+      "client.connection.list_connections_by_do" +
+      "main(domain=\"example.com\")\n\255\002*\252\002\n\021\n\005labe" +
+      "l\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n\206\002\n\006source\022\373\001\032" +
+      "\370\001// List connections by organization id" +
+      "\nconnections, err := scalekitClient.Conn" +
+      "ection().ListConnections(\n  ctx,\n  organ" +
+      "izationId\n)\n\n// List connections by doma" +
+      "in\nconnections, err := scalekitClient.Co" +
+      "nnection().ListConnectionsByDomain(ctx, " +
+      "\n  domain)\n\321\002*\316\002\n\023\n\005label\022\n\032\010Java SDK\n\016\n" +
+      "\004lang\022\006\032\004java\n\246\002\n\006source\022\233\002\032\230\002// List co" +
+      "nnections by organization id\nListConnect" +
+      "ionsResponse response = scalekitClient.c" +
+      "onnections(\n  ).listConnections(organiza" +
+      "tionId);\n\n// List connections by domain\n" +
       "ListConnectionsResponse response = scale" +
-      "kitClient.connections().listConnectionsB" +
-      "yOrganization(organizationId);\202\265\030\002\030t\372\322\344\223" +
-      "\002\t\022\007PREVIEW\202\323\344\223\002\031\022\027/api/v1/connections/a" +
-      "pp\032\232\001\222A\226\001\n\013Connections\022\206\001Manage enterpri" +
-      "se connections for your Scalekit environ" +
-      "ment. This service provides endpoints fo" +
-      "r retrieving, and updating connections.B" +
-      "\362\001\n)com.scalekit.grpc.scalekit.v1.connec" +
-      "tionsB\020ConnectionsProtoP\001Z5github.com/sc" +
-      "alekit-inc/scalekit/pkg/grpc/connections" +
-      "\242\002\003SVC\252\002\027Scalekit.V1.Connections\312\002\027Scale" +
-      "kit\\V1\\Connections\342\002#Scalekit\\V1\\Connect" +
-      "ions\\GPBMetadata\352\002\031Scalekit::V1::Connect" +
-      "ionsb\006proto3"
+      "kitClient.connections(\n  ).listConnectio" +
+      "nsByDomain(\"your-domain.com\");\202\265\030\002\030t\202\323\344\223" +
+      "\002\025\022\023/api/v1/connections\022\265\003\n\033ListOrganiza" +
+      "tionConnections\022;.scalekit.v1.connection" +
+      "s.ListOrganizationConnectionsRequest\032<.s" +
+      "calekit.v1.connections.ListOrganizationC" +
+      "onnectionsResponse\"\232\002\222A\326\001\n\013Connections\022\035" +
+      "List organization connections\0329Retrieves" +
+      " a list of connections for all the organ" +
+      "izationsJm\n\003200\022f\n\"Successfully retrieve" +
+      "d connections\022@\n>\032<.scalekit.v1.connecti" +
+      "ons.ListOrganizationConnectionsResponse\202" +
+      "\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\022#/api/v1/orga" +
+      "nizations/-/connections\022\315\003\n\035SearchOrgani" +
+      "zationConnections\022=.scalekit.v1.connecti" +
+      "ons.SearchOrganizationConnectionsRequest" +
+      "\032>.scalekit.v1.connections.SearchOrganiz" +
+      "ationConnectionsResponse\"\254\002\222A\341\001\n\013Connect" +
+      "ions\022\037Search organization connections\032DS" +
+      "earch with query or filters provided and" +
+      " return list of connectionsJk\n\003200\022d\n\036Su" +
+      "ccessfully found connections\022B\n@\032>.scale" +
+      "kit.v1.connections.SearchOrganizationCon" +
+      "nectionsResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
+      "\223\002,\022*/api/v1/organizations/-/connections" +
+      ":search\022\361\002\n\033UpdateEnvironmentConnection\022" +
+      ";.scalekit.v1.connections.UpdateEnvironm" +
+      "entConnectionRequest\0321.scalekit.v1.conne" +
+      "ctions.UpdateConnectionResponse\"\341\001\222A\221\001\n\013" +
+      "Connections\022\023Update a connection\032\027Update" +
+      " a SSO ConnectionJT\n\003200\022M\n\024Updated Succ" +
+      "essfully\0225\n3\0321.scalekit.v1.connections.U" +
+      "pdateConnectionResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PRE" +
+      "VIEW\202\323\344\223\00212#/api/v1/connections/{connect" +
+      "ion_id}:\nconnection\022\264\010\n\020UpdateConnection" +
+      "\0220.scalekit.v1.connections.UpdateConnect" +
+      "ionRequest\0321.scalekit.v1.connections.Upd" +
+      "ateConnectionResponse\"\272\007\222A\325\006\n\013Connection" +
+      "s\022$Update a connection for organization\032" +
+      "\027Update a SSO ConnectionJT\n\003200\022M\n\024Updat" +
+      "ed Successfully\0225\n3\0321.scalekit.v1.connec" +
+      "tions.UpdateConnectionResponsej\260\005\n\rx-cod" +
+      "eSamples\022\236\0052\233\005\n\247\001*\244\001\n\026\n\005label\022\r\032\013Node.js" +
+      " SDK\n\024\n\004lang\022\014\032\njavascript\nt\n\006source\022j\032h" +
+      "const connection = await sc.connection.u" +
+      "pdateConnection(organizationId, connecti" +
+      "onId, connectionConfig);\n\241\001*\236\001\n\025\n\005label\022" +
+      "\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python\ns\n\006sourc" +
+      "e\022i\032gconnection = sc.connection.update_c" +
+      "onnection(\n  organization_id,\n  connecti" +
+      "on_id,\n  connection_config\n)\n\243\001*\240\001\n\021\n\005la" +
+      "bel\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n}\n\006source\022s\032" +
+      "qconnection, err := sc.Connection.Update" +
+      "Connection(\n  ctx,\n  organizationId,\n  c" +
+      "onnectionId,\n  connectionConfig,\n)\n\244\001*\241\001" +
+      "\n\023\n\005label\022\n\032\010Java SDK\n\016\n\004lang\022\006\032\004java\nz\n" +
+      "\006source\022p\032nConnection connection = clien" +
+      "t.connections().updateConnection(connect" +
+      "ionId, organizationId, connectionConfig)" +
+      ";\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002F28/api/v1/or" +
+      "ganizations/{organization_id}/connection" +
+      "s/{id}:\nconnection\022\222\002\n\033DeleteEnvironment" +
+      "Connection\022;.scalekit.v1.connections.Del" +
+      "eteEnvironmentConnectionRequest\032\026.google" +
+      ".protobuf.Empty\"\235\001\222AZ\n\013Connections\022\023Dele" +
+      "te a connection\032\027Delete a SSO Connection" +
+      "J\035\n\003200\022\026\n\024Deleted Successfully\202\265\030\002\030T\372\322\344" +
+      "\223\002\t\022\007PREVIEW\202\323\344\223\002%*#/api/v1/connections/" +
+      "{connection_id}\022\300\006\n\020DeleteConnection\0220.s" +
+      "calekit.v1.connections.DeleteConnectionR" +
+      "equest\032\026.google.protobuf.Empty\"\341\005\222A\210\005\n\013C" +
+      "onnections\022$Delete a connection for orga" +
+      "nization\032\027Delete a SSO ConnectionJ\035\n\003200" +
+      "\022\026\n\024Deleted Successfullyj\232\004\n\rx-codeSampl" +
+      "es\022\210\0042\205\004\n\201\001*\177\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n" +
+      "\004lang\022\014\032\njavascript\nO\n\006source\022E\032Cawait s" +
+      "c.connection.deleteConnection(organizati" +
+      "onId, connectionId);\n~*|\n\025\n\005label\022\014\032\nPyt" +
+      "hon SDK\n\020\n\004lang\022\010\032\006python\nQ\n\006source\022G\032Es" +
+      "c.connection.delete_connection(\n  organi" +
+      "zation_id,\n  connection_id\n)\n\203\001*\200\001\n\021\n\005la" +
+      "bel\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n]\n\006source\022S\032" +
+      "Qerr := sc.Connection.DeleteConnection(\n" +
+      "  ctx,\n  organizationId,\n  connectionId," +
+      "\n)\ny*w\n\023\n\005label\022\n\032\010Java SDK\n\016\n\004lang\022\006\032\004j" +
+      "ava\nP\n\006source\022F\032Dclient.connections().de" +
+      "leteConnection(connectionId, organizatio" +
+      "nId);\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002:*8/api/v" +
+      "1/organizations/{organization_id}/connec" +
+      "tions/{id}\022\337\002\n\033EnableEnvironmentConnecti" +
+      "on\022;.scalekit.v1.connections.ToggleEnvir" +
+      "onmentConnectionRequest\0321.scalekit.v1.co" +
+      "nnections.ToggleConnectionResponse\"\317\001\222A\204" +
+      "\001\n\013Connections\022\023Enable a connection\032\027Ena" +
+      "ble a SSO ConnectionJG\n\003200\022@\n\007Success\0225" +
+      "\n3\0321.scalekit.v1.connections.ToggleConne" +
+      "ctionResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002," +
+      "2*/api/v1/connections/{connection_id}:en" +
+      "able\022\226\t\n\020EnableConnection\0220.scalekit.v1." +
+      "connections.ToggleConnectionRequest\0321.sc" +
+      "alekit.v1.connections.ToggleConnectionRe" +
+      "sponse\"\234\010\222A\313\007\n\013Connections\022\036Enable organ" +
+      "ization connection\032\356\001Activate an existin" +
+      "g connection for the specified organizat" +
+      "ion. When enabled, users can authenticat" +
+      "e using this connection. This endpoint c" +
+      "hanges the connection state from disable" +
+      "d to enabled without modifying other con" +
+      "figuration settingsJ_\n\003200\022X\n\037Connection" +
+      " enabled successfully\0225\n3\0321.scalekit.v1." +
+      "connections.ToggleConnectionResponsej\311\004\n" +
+      "\rx-codeSamples\022\267\0042\264\004\n\201\001*\177\n\026\n\005label\022\r\032\013No" +
+      "de.js SDK\n\024\n\004lang\022\014\032\njavascript\nO\n\006sourc" +
+      "e\022E\032Cawait sc.connection.enableConnectio" +
+      "n(organizationId, connectionId);\n\177*}\n\025\n\005" +
+      "label\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python\nR\n" +
+      "\006source\022H\032Fsc.connection.enable_connecti" +
+      "on(\n  organization_id,\n  connection_id,\n" +
+      ")\n\203\001*\200\001\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go" +
+      "\n]\n\006source\022S\032Qerr := sc.Connection.Enabl" +
+      "eConnection(\n  ctx,\n  organizationId,\n  " +
+      "connectionId,\n)\n\246\001*\243\001\n\023\n\005label\022\n\032\010Java S" +
+      "DK\n\016\n\004lang\022\006\032\004java\n|\n\006source\022r\032pToggleCo" +
+      "nnectionResponse response = scalekitClie" +
+      "nt.connections().enableConnection(connec" +
+      "tionId, organizationId);\202\265\030\002\030t\202\323\344\223\002A2?/a" +
+      "pi/v1/organizations/{organization_id}/co" +
+      "nnections/{id}:enable\022\343\002\n\034DisableEnviron" +
+      "mentConnection\022;.scalekit.v1.connections" +
+      ".ToggleEnvironmentConnectionRequest\0321.sc" +
+      "alekit.v1.connections.ToggleConnectionRe" +
+      "sponse\"\322\001\222A\206\001\n\013Connections\022\024Disable a co" +
+      "nnection\032\030Disable a SSO ConnectionJG\n\00320" +
+      "0\022@\n\007Success\0225\n3\0321.scalekit.v1.connectio" +
+      "ns.ToggleConnectionResponse\202\265\030\002\030T\372\322\344\223\002\t\022" +
+      "\007PREVIEW\202\323\344\223\002-2+/api/v1/connections/{con" +
+      "nection_id}:disable\022\244\t\n\021DisableConnectio" +
+      "n\0220.scalekit.v1.connections.ToggleConnec" +
+      "tionRequest\0321.scalekit.v1.connections.To" +
+      "ggleConnectionResponse\"\251\010\222A\327\007\n\013Connectio" +
+      "ns\022\037Disable organization connection\032\364\001De" +
+      "activate an existing connection for the " +
+      "specified organization. When disabled, u" +
+      "sers cannot authenticate using this conn" +
+      "ection. This endpoint changes the connec" +
+      "tion state from enabled to disabled with" +
+      "out modifying other configuration settin" +
+      "gsJ`\n\003200\022Y\n Connection disabled success" +
+      "fully\0225\n3\0321.scalekit.v1.connections.Togg" +
+      "leConnectionResponsej\315\004\n\rx-codeSamples\022\273" +
+      "\0042\270\004\n\203\001*\200\001\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004la" +
+      "ng\022\014\032\njavascript\nP\n\006source\022F\032Dawait sc.c" +
+      "onnection.disableConnection(organization" +
+      "Id, connectionId);\n\177*}\n\025\n\005label\022\014\032\nPytho" +
+      "n SDK\n\020\n\004lang\022\010\032\006python\nR\n\006source\022H\032Fsc." +
+      "connection.disable_connection(\n  organiz" +
+      "ation_id,\n  connection_id\n)\n\204\001*\201\001\n\021\n\005lab" +
+      "el\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n^\n\006source\022T\032R" +
+      "err := sc.Connection.DisableConnection(\n" +
+      "  ctx,\n  organizationId,\n  connectionId," +
+      "\n)\n\247\001*\244\001\n\023\n\005label\022\n\032\010Java SDK\n\016\n\004lang\022\006\032" +
+      "\004java\n}\n\006source\022s\032qToggleConnectionRespo" +
+      "nse response = scalekitClient.connection" +
+      "s().disableConnection(connectionId, orga" +
+      "nizationId);\202\265\030\002\030t\202\323\344\223\002B2@/api/v1/organi" +
+      "zations/{organization_id}/connections/{i" +
+      "d}:disable\022\200\003\n\027GetConnectionTestResult\0227" +
+      ".scalekit.v1.connections.GetConnectionTe" +
+      "stResultRequest\0328.scalekit.v1.connection" +
+      "s.GetConnectionTestResultResponse\"\361\001\222A\215\001" +
+      "\n\013Connections\022\026Test connection result\032\026C" +
+      "onnection test resultJN\n\003200\022G\n\007Success\022" +
+      "<\n:\0328.scalekit.v1.connections.GetConnect" +
+      "ionTestResultResponse\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVI" +
+      "EW\202\323\344\223\002E\022C/api/v1/connections/{connectio" +
+      "n_id}/test-requests/{test_request_id}\022\272\007" +
+      "\n\022ListAppConnections\0222.scalekit.v1.conne" +
+      "ctions.ListAppConnectionsRequest\0323.scale" +
+      "kit.v1.connections.ListAppConnectionsRes" +
+      "ponse\"\272\006\222A\202\006\n\013Connections\022\024List App conn" +
+      "ections\0326Retrieves a list of app connect" +
+      "ions in the environmentJa\n\003200\022Z\n\"Succes" +
+      "sfully retrieved connections\0224\n2\0320.scale" +
+      "kit.v1.connections.ListConnectionsRespon" +
+      "sej\301\004\n\rx-codeSamples\022\257\0042\254\004\n\207\001*\204\001\n\026\n\005labe" +
+      "l\022\r\032\013Node.js SDK\n\024\n\004lang\022\014\032\njavascript\nT" +
+      "\n\006source\022J\032Hconst connections = await sc" +
+      ".connection.listConnections(organization" +
+      "Id);\nz*x\n\025\n\005label\022\014\032\nPython SDK\n\020\n\004lang\022" +
+      "\010\032\006python\nM\n\006source\022C\032Aconnections = sc." +
+      "connection.list_connections(\n  organizat" +
+      "ion_id\n)\n}*{\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lang\022" +
+      "\004\032\002go\nX\n\006source\022N\032Lconnections, err := s" +
+      "c.Connection.ListConnections(\n  ctx,\n  o" +
+      "rganizationId\n)\n\244\001*\241\001\n\023\n\005label\022\n\032\010Java S" +
+      "DK\n\016\n\004lang\022\006\032\004java\nz\n\006source\022p\032nListConn" +
+      "ectionsResponse response = scalekitClien" +
+      "t.connections().listConnectionsByOrganiz" +
+      "ation(organizationId);\202\265\030\002\030t\372\322\344\223\002\t\022\007PREV" +
+      "IEW\202\323\344\223\002\031\022\027/api/v1/connections/app\032\232\001\222A\226" +
+      "\001\n\013Connections\022\206\001Manage enterprise conne" +
+      "ctions for your Scalekit environment. Th" +
+      "is service provides endpoints for retrie" +
+      "ving, and updating connections.B\362\001\n)com." +
+      "scalekit.grpc.scalekit.v1.connectionsB\020C" +
+      "onnectionsProtoP\001Z5github.com/scalekit-i" +
+      "nc/scalekit/pkg/grpc/connections\242\002\003SVC\252\002" +
+      "\027Scalekit.V1.Connections\312\002\027Scalekit\\V1\\C" +
+      "onnections\342\002#Scalekit\\V1\\Connections\\GPB" +
+      "Metadata\352\002\031Scalekit::V1::Connectionsb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1572,7 +1575,7 @@ public final class ConnectionsProto {
     internal_static_scalekit_v1_connections_OAuthConnectionConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_connections_OAuthConnectionConfig_descriptor,
-        new java.lang.String[] { "AuthorizeUri", "TokenUri", "UserInfoUri", "ClientId", "ClientSecret", "Scopes", "RedirectUri", "PkceEnabled", "Prompt", "UsePlatformCreds", "AccessType", });
+        new java.lang.String[] { "AuthorizeUri", "TokenUri", "UserInfoUri", "ClientId", "ClientSecret", "Scopes", "RedirectUri", "PkceEnabled", "Prompt", "UsePlatformCreds", "AccessType", "CustomScopeName", });
     internal_static_scalekit_v1_connections_PasswordLessConfig_descriptor =
       getDescriptor().getMessageTypes().get(31);
     internal_static_scalekit_v1_connections_PasswordLessConfig_fieldAccessorTable = new

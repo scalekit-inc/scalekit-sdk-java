@@ -226,4 +226,10 @@ public interface M2MClientOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRedirectUrisBytes(int index);
+
+  /**
+   * <code>bool is_dcr = 15 [json_name = "isDcr", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isDcr.
+   */
+  boolean getIsDcr();
 }

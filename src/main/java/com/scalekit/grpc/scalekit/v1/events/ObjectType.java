@@ -149,6 +149,10 @@ public enum ObjectType
    * <code>DeviceDetails = 34;</code>
    */
   DeviceDetails(34),
+  /**
+   * <code>Actions = 35;</code>
+   */
+  Actions(35),
   UNRECOGNIZED(-1),
   ;
 
@@ -292,6 +296,10 @@ public enum ObjectType
    * <code>DeviceDetails = 34;</code>
    */
   public static final int DeviceDetails_VALUE = 34;
+  /**
+   * <code>Actions = 35;</code>
+   */
+  public static final int Actions_VALUE = 35;
 
 
   public final int getNumber() {
@@ -353,6 +361,7 @@ public enum ObjectType
       case 32: return UserProfile;
       case 33: return IDPInitiatedPayload;
       case 34: return DeviceDetails;
+      case 35: return Actions;
       default: return null;
     }
   }

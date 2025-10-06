@@ -29,6 +29,7 @@ private static final long serialVersionUID = 0L;
     resourceId_ = "";
     redirectUris_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+    clientSecret_ = "";
   }
 
   @java.lang.Override
@@ -432,10 +433,6 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringArrayList redirectUris_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
   /**
-   * <pre>
-   *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
-   * </pre>
-   *
    * <code>repeated string redirect_uris = 12 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return A list containing the redirectUris.
    */
@@ -444,10 +441,6 @@ private static final long serialVersionUID = 0L;
     return redirectUris_;
   }
   /**
-   * <pre>
-   *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
-   * </pre>
-   *
    * <code>repeated string redirect_uris = 12 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The count of redirectUris.
    */
@@ -455,10 +448,6 @@ private static final long serialVersionUID = 0L;
     return redirectUris_.size();
   }
   /**
-   * <pre>
-   *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
-   * </pre>
-   *
    * <code>repeated string redirect_uris = 12 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The redirectUris at the given index.
@@ -467,10 +456,6 @@ private static final long serialVersionUID = 0L;
     return redirectUris_.get(index);
   }
   /**
-   * <pre>
-   *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
-   * </pre>
-   *
    * <code>repeated string redirect_uris = 12 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the redirectUris at the given index.
@@ -478,6 +463,60 @@ private static final long serialVersionUID = 0L;
   public com.google.protobuf.ByteString
       getRedirectUrisBytes(int index) {
     return redirectUris_.getByteString(index);
+  }
+
+  public static final int CLIENT_SECRET_FIELD_NUMBER = 13;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientSecret_ = "";
+  /**
+   * <code>string client_secret = 13 [json_name = "clientSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The clientSecret.
+   */
+  @java.lang.Override
+  public java.lang.String getClientSecret() {
+    java.lang.Object ref = clientSecret_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      clientSecret_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string client_secret = 13 [json_name = "clientSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for clientSecret.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getClientSecretBytes() {
+    java.lang.Object ref = clientSecret_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      clientSecret_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CLIENT_SECRET_EXPIRES_AT_FIELD_NUMBER = 14;
+  private int clientSecretExpiresAt_ = 0;
+  /**
+   * <pre>
+   *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
+   * </pre>
+   *
+   * <code>int32 client_secret_expires_at = 14 [json_name = "clientSecretExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The clientSecretExpiresAt.
+   */
+  @java.lang.Override
+  public int getClientSecretExpiresAt() {
+    return clientSecretExpiresAt_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -529,6 +568,12 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < redirectUris_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, redirectUris_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientSecret_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, clientSecret_);
+    }
+    if (clientSecretExpiresAt_ != 0) {
+      output.writeInt32(14, clientSecretExpiresAt_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -595,6 +640,13 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getRedirectUrisList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientSecret_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, clientSecret_);
+    }
+    if (clientSecretExpiresAt_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(14, clientSecretExpiresAt_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -640,6 +692,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getResourceId())) return false;
     if (!getRedirectUrisList()
         .equals(other.getRedirectUrisList())) return false;
+    if (!getClientSecret()
+        .equals(other.getClientSecret())) return false;
+    if (getClientSecretExpiresAt()
+        != other.getClientSecretExpiresAt()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -690,6 +746,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + REDIRECT_URIS_FIELD_NUMBER;
       hash = (53 * hash) + getRedirectUrisList().hashCode();
     }
+    hash = (37 * hash) + CLIENT_SECRET_FIELD_NUMBER;
+    hash = (53 * hash) + getClientSecret().hashCode();
+    hash = (37 * hash) + CLIENT_SECRET_EXPIRES_AT_FIELD_NUMBER;
+    hash = (53 * hash) + getClientSecretExpiresAt();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -865,6 +925,8 @@ private static final long serialVersionUID = 0L;
       resourceId_ = "";
       redirectUris_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+      clientSecret_ = "";
+      clientSecretExpiresAt_ = 0;
       return this;
     }
 
@@ -959,6 +1021,12 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000800) != 0)) {
         redirectUris_.makeImmutable();
         result.redirectUris_ = redirectUris_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.clientSecret_ = clientSecret_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.clientSecretExpiresAt_ = clientSecretExpiresAt_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1118,6 +1186,14 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (!other.getClientSecret().isEmpty()) {
+        clientSecret_ = other.clientSecret_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      if (other.getClientSecretExpiresAt() != 0) {
+        setClientSecretExpiresAt(other.getClientSecretExpiresAt());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1227,6 +1303,16 @@ private static final long serialVersionUID = 0L;
               redirectUris_.add(s);
               break;
             } // case 98
+            case 106: {
+              clientSecret_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00001000;
+              break;
+            } // case 106
+            case 112: {
+              clientSecretExpiresAt_ = input.readInt32();
+              bitField0_ |= 0x00002000;
+              break;
+            } // case 112
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2517,10 +2603,6 @@ private static final long serialVersionUID = 0L;
       bitField0_ |= 0x00000800;
     }
     /**
-     * <pre>
-     *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
-     * </pre>
-     *
      * <code>repeated string redirect_uris = 12 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return A list containing the redirectUris.
      */
@@ -2530,10 +2612,6 @@ private static final long serialVersionUID = 0L;
       return redirectUris_;
     }
     /**
-     * <pre>
-     *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
-     * </pre>
-     *
      * <code>repeated string redirect_uris = 12 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The count of redirectUris.
      */
@@ -2541,10 +2619,6 @@ private static final long serialVersionUID = 0L;
       return redirectUris_.size();
     }
     /**
-     * <pre>
-     *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
-     * </pre>
-     *
      * <code>repeated string redirect_uris = 12 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The redirectUris at the given index.
@@ -2553,10 +2627,6 @@ private static final long serialVersionUID = 0L;
       return redirectUris_.get(index);
     }
     /**
-     * <pre>
-     *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
-     * </pre>
-     *
      * <code>repeated string redirect_uris = 12 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the redirectUris at the given index.
@@ -2566,10 +2636,6 @@ private static final long serialVersionUID = 0L;
       return redirectUris_.getByteString(index);
     }
     /**
-     * <pre>
-     *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
-     * </pre>
-     *
      * <code>repeated string redirect_uris = 12 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index to set the value at.
      * @param value The redirectUris to set.
@@ -2585,10 +2651,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
-     * </pre>
-     *
      * <code>repeated string redirect_uris = 12 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The redirectUris to add.
      * @return This builder for chaining.
@@ -2603,10 +2665,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
-     * </pre>
-     *
      * <code>repeated string redirect_uris = 12 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param values The redirectUris to add.
      * @return This builder for chaining.
@@ -2621,10 +2679,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
-     * </pre>
-     *
      * <code>repeated string redirect_uris = 12 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
@@ -2636,10 +2690,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
-     * </pre>
-     *
      * <code>repeated string redirect_uris = 12 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes of the redirectUris to add.
      * @return This builder for chaining.
@@ -2651,6 +2701,122 @@ private static final long serialVersionUID = 0L;
       ensureRedirectUrisIsMutable();
       redirectUris_.add(value);
       bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object clientSecret_ = "";
+    /**
+     * <code>string client_secret = 13 [json_name = "clientSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The clientSecret.
+     */
+    public java.lang.String getClientSecret() {
+      java.lang.Object ref = clientSecret_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientSecret_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string client_secret = 13 [json_name = "clientSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for clientSecret.
+     */
+    public com.google.protobuf.ByteString
+        getClientSecretBytes() {
+      java.lang.Object ref = clientSecret_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientSecret_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string client_secret = 13 [json_name = "clientSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The clientSecret to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientSecret(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      clientSecret_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string client_secret = 13 [json_name = "clientSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearClientSecret() {
+      clientSecret_ = getDefaultInstance().getClientSecret();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string client_secret = 13 [json_name = "clientSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for clientSecret to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientSecretBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      clientSecret_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private int clientSecretExpiresAt_ ;
+    /**
+     * <pre>
+     *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
+     * </pre>
+     *
+     * <code>int32 client_secret_expires_at = 14 [json_name = "clientSecretExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The clientSecretExpiresAt.
+     */
+    @java.lang.Override
+    public int getClientSecretExpiresAt() {
+      return clientSecretExpiresAt_;
+    }
+    /**
+     * <pre>
+     *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
+     * </pre>
+     *
+     * <code>int32 client_secret_expires_at = 14 [json_name = "clientSecretExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The clientSecretExpiresAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientSecretExpiresAt(int value) {
+
+      clientSecretExpiresAt_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
+     * </pre>
+     *
+     * <code>int32 client_secret_expires_at = 14 [json_name = "clientSecretExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearClientSecretExpiresAt() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      clientSecretExpiresAt_ = 0;
       onChanged();
       return this;
     }

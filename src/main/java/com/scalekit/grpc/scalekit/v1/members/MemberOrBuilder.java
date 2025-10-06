@@ -203,4 +203,29 @@ java.lang.String defaultValue);
    */
   com.google.protobuf.ByteString
       getExternalIdBytes();
+
+  /**
+   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+   * @return A list containing the workspaceIds.
+   */
+  java.util.List<java.lang.String>
+      getWorkspaceIdsList();
+  /**
+   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+   * @return The count of workspaceIds.
+   */
+  int getWorkspaceIdsCount();
+  /**
+   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+   * @param index The index of the element to return.
+   * @return The workspaceIds at the given index.
+   */
+  java.lang.String getWorkspaceIds(int index);
+  /**
+   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the workspaceIds at the given index.
+   */
+  com.google.protobuf.ByteString
+      getWorkspaceIdsBytes(int index);
 }

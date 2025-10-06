@@ -2,7 +2,7 @@ package com.scalekit.api.impl;
 
 import com.scalekit.Environment;
 import com.scalekit.api.SessionClient;
-import com.scalekit.grpc.scalekit.v1.auditlogs.*;
+import com.scalekit.grpc.scalekit.v1.sessions.*;
 import com.scalekit.internal.RetryExecuter;
 import com.scalekit.internal.ScalekitCredentials;
 import io.grpc.ManagedChannel;
@@ -36,12 +36,25 @@ public class ScalekitSessionClient implements SessionClient {
     }
 
     @Override
-    public UserSessionDetails getUserSessions(String userId) {
+    public UserSessionDetails getUserSessions(String userId, Integer pageSize, String pageToken, UserSessionFilter filter) {
+        UserSessionDetailsRequest.Builder requestBuilder = UserSessionDetailsRequest.newBuilder()
+                .setUserId(userId);
+
+        if (pageSize != null) {
+            requestBuilder.setPageSize(pageSize);
+        }
+
+        if (pageToken != null && !pageToken.trim().isEmpty()) {
+            requestBuilder.setPageToken(pageToken);
+        }
+
+        if (filter != null) {
+            requestBuilder.setFilter(filter);
+        }
+
         return RetryExecuter.executeWithRetry(() -> this.sessionStub
                 .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
-                .getUserSessions(UserSessionDetailsRequest.newBuilder()
-                        .setUserId(userId)
-                        .build()), this.credentials);
+                .getUserSessions(requestBuilder.build()), this.credentials);
     }
 
     @Override
@@ -50,6 +63,15 @@ public class ScalekitSessionClient implements SessionClient {
                 .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                 .revokeSession(RevokeSessionRequest.newBuilder()
                         .setSessionId(sessionId)
+                        .build()), this.credentials);
+    }
+
+    @Override
+    public RevokeAllUserSessionsResponse revokeAllUserSessions(String userId) {
+        return RetryExecuter.executeWithRetry(() -> this.sessionStub
+                .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                .revokeAllUserSessions(RevokeAllUserSessionsRequest.newBuilder()
+                        .setUserId(userId)
                         .build()), this.credentials);
     }
 } 

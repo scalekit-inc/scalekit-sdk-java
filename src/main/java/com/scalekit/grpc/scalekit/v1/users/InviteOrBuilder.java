@@ -33,21 +33,21 @@ public interface InviteOrBuilder extends
       getUserIdBytes();
 
   /**
-   * <code>optional string invited_by = 3 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the invitedBy field is set.
+   * <code>optional string inviter_email = 3 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the inviterEmail field is set.
    */
-  boolean hasInvitedBy();
+  boolean hasInviterEmail();
   /**
-   * <code>optional string invited_by = 3 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The invitedBy.
+   * <code>optional string inviter_email = 3 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The inviterEmail.
    */
-  java.lang.String getInvitedBy();
+  java.lang.String getInviterEmail();
   /**
-   * <code>optional string invited_by = 3 [json_name = "invitedBy", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for invitedBy.
+   * <code>optional string inviter_email = 3 [json_name = "inviterEmail", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for inviterEmail.
    */
   com.google.protobuf.ByteString
-      getInvitedByBytes();
+      getInviterEmailBytes();
 
   /**
    * <code>string status = 4 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>

@@ -25,6 +25,8 @@ private static final long serialVersionUID = 0L;
     email_ = "";
     organizations_ = java.util.Collections.emptyList();
     externalId_ = "";
+    workspaceIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -526,6 +528,43 @@ java.lang.String defaultValue) {
     }
   }
 
+  public static final int WORKSPACE_IDS_FIELD_NUMBER = 13;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList workspaceIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+   * @return A list containing the workspaceIds.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getWorkspaceIdsList() {
+    return workspaceIds_;
+  }
+  /**
+   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+   * @return The count of workspaceIds.
+   */
+  public int getWorkspaceIdsCount() {
+    return workspaceIds_.size();
+  }
+  /**
+   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+   * @param index The index of the element to return.
+   * @return The workspaceIds at the given index.
+   */
+  public java.lang.String getWorkspaceIds(int index) {
+    return workspaceIds_.get(index);
+  }
+  /**
+   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the workspaceIds at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getWorkspaceIdsBytes(int index) {
+    return workspaceIds_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -578,6 +617,9 @@ java.lang.String defaultValue) {
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, externalId_);
+    }
+    for (int i = 0; i < workspaceIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, workspaceIds_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -636,6 +678,14 @@ java.lang.String defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, externalId_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < workspaceIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(workspaceIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getWorkspaceIdsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -689,6 +739,8 @@ java.lang.String defaultValue) {
     }
     if (!getExternalId()
         .equals(other.getExternalId())) return false;
+    if (!getWorkspaceIdsList()
+        .equals(other.getWorkspaceIdsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -738,6 +790,10 @@ java.lang.String defaultValue) {
     }
     hash = (37 * hash) + EXTERNAL_ID_FIELD_NUMBER;
     hash = (53 * hash) + getExternalId().hashCode();
+    if (getWorkspaceIdsCount() > 0) {
+      hash = (37 * hash) + WORKSPACE_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkspaceIdsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -930,6 +986,8 @@ java.lang.String defaultValue) {
         userProfileBuilder_ = null;
       }
       externalId_ = "";
+      workspaceIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1021,6 +1079,10 @@ java.lang.String defaultValue) {
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.externalId_ = externalId_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        workspaceIds_.makeImmutable();
+        result.workspaceIds_ = workspaceIds_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1140,6 +1202,16 @@ java.lang.String defaultValue) {
         bitField0_ |= 0x00000800;
         onChanged();
       }
+      if (!other.workspaceIds_.isEmpty()) {
+        if (workspaceIds_.isEmpty()) {
+          workspaceIds_ = other.workspaceIds_;
+          bitField0_ |= 0x00001000;
+        } else {
+          ensureWorkspaceIdsIsMutable();
+          workspaceIds_.addAll(other.workspaceIds_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1244,6 +1316,12 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000800;
               break;
             } // case 98
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureWorkspaceIdsIsMutable();
+              workspaceIds_.add(s);
+              break;
+            } // case 106
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2486,6 +2564,117 @@ java.lang.String defaultValue) {
       checkByteStringIsUtf8(value);
       externalId_ = value;
       bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList workspaceIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureWorkspaceIdsIsMutable() {
+      if (!workspaceIds_.isModifiable()) {
+        workspaceIds_ = new com.google.protobuf.LazyStringArrayList(workspaceIds_);
+      }
+      bitField0_ |= 0x00001000;
+    }
+    /**
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * @return A list containing the workspaceIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getWorkspaceIdsList() {
+      workspaceIds_.makeImmutable();
+      return workspaceIds_;
+    }
+    /**
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * @return The count of workspaceIds.
+     */
+    public int getWorkspaceIdsCount() {
+      return workspaceIds_.size();
+    }
+    /**
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * @param index The index of the element to return.
+     * @return The workspaceIds at the given index.
+     */
+    public java.lang.String getWorkspaceIds(int index) {
+      return workspaceIds_.get(index);
+    }
+    /**
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the workspaceIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getWorkspaceIdsBytes(int index) {
+      return workspaceIds_.getByteString(index);
+    }
+    /**
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * @param index The index to set the value at.
+     * @param value The workspaceIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkspaceIds(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureWorkspaceIdsIsMutable();
+      workspaceIds_.set(index, value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * @param value The workspaceIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addWorkspaceIds(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureWorkspaceIdsIsMutable();
+      workspaceIds_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * @param values The workspaceIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllWorkspaceIds(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureWorkspaceIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, workspaceIds_);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkspaceIds() {
+      workspaceIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00001000);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * @param value The bytes of the workspaceIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addWorkspaceIdsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureWorkspaceIdsIsMutable();
+      workspaceIds_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

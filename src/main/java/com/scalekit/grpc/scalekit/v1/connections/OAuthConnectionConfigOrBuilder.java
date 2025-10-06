@@ -179,4 +179,19 @@ public interface OAuthConnectionConfigOrBuilder extends
    * <code>.google.protobuf.StringValue access_type = 16 [json_name = "accessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.StringValueOrBuilder getAccessTypeOrBuilder();
+
+  /**
+   * <code>.google.protobuf.StringValue custom_scope_name = 17 [json_name = "customScopeName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the customScopeName field is set.
+   */
+  boolean hasCustomScopeName();
+  /**
+   * <code>.google.protobuf.StringValue custom_scope_name = 17 [json_name = "customScopeName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The customScopeName.
+   */
+  com.google.protobuf.StringValue getCustomScopeName();
+  /**
+   * <code>.google.protobuf.StringValue custom_scope_name = 17 [json_name = "customScopeName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.StringValueOrBuilder getCustomScopeNameOrBuilder();
 }

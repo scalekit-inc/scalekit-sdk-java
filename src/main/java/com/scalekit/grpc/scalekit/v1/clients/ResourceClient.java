@@ -24,7 +24,8 @@ private static final long serialVersionUID = 0L;
     audience_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     customClaims_ = java.util.Collections.emptyList();
-    redirectUri_ = "";
+    redirectUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -251,43 +252,41 @@ private static final long serialVersionUID = 0L;
     return expiry_;
   }
 
-  public static final int REDIRECT_URI_FIELD_NUMBER = 7;
+  public static final int REDIRECT_URIS_FIELD_NUMBER = 7;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object redirectUri_ = "";
+  private com.google.protobuf.LazyStringArrayList redirectUris_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
-   * <code>string redirect_uri = 7 [json_name = "redirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The redirectUri.
+   * <code>repeated string redirect_uris = 7 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the redirectUris.
    */
-  @java.lang.Override
-  public java.lang.String getRedirectUri() {
-    java.lang.Object ref = redirectUri_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      redirectUri_ = s;
-      return s;
-    }
+  public com.google.protobuf.ProtocolStringList
+      getRedirectUrisList() {
+    return redirectUris_;
   }
   /**
-   * <code>string redirect_uri = 7 [json_name = "redirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for redirectUri.
+   * <code>repeated string redirect_uris = 7 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of redirectUris.
    */
-  @java.lang.Override
+  public int getRedirectUrisCount() {
+    return redirectUris_.size();
+  }
+  /**
+   * <code>repeated string redirect_uris = 7 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The redirectUris at the given index.
+   */
+  public java.lang.String getRedirectUris(int index) {
+    return redirectUris_.get(index);
+  }
+  /**
+   * <code>repeated string redirect_uris = 7 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the redirectUris at the given index.
+   */
   public com.google.protobuf.ByteString
-      getRedirectUriBytes() {
-    java.lang.Object ref = redirectUri_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      redirectUri_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+      getRedirectUrisBytes(int index) {
+    return redirectUris_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -322,8 +321,8 @@ private static final long serialVersionUID = 0L;
     if (expiry_ != 0L) {
       output.writeInt64(6, expiry_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redirectUri_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, redirectUri_);
+    for (int i = 0; i < redirectUris_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, redirectUris_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -364,8 +363,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, expiry_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redirectUri_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, redirectUri_);
+    {
+      int dataSize = 0;
+      for (int i = 0; i < redirectUris_.size(); i++) {
+        dataSize += computeStringSizeNoTag(redirectUris_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getRedirectUrisList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -394,8 +398,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCustomClaimsList())) return false;
     if (getExpiry()
         != other.getExpiry()) return false;
-    if (!getRedirectUri()
-        .equals(other.getRedirectUri())) return false;
+    if (!getRedirectUrisList()
+        .equals(other.getRedirectUrisList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -426,8 +430,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + EXPIRY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getExpiry());
-    hash = (37 * hash) + REDIRECT_URI_FIELD_NUMBER;
-    hash = (53 * hash) + getRedirectUri().hashCode();
+    if (getRedirectUrisCount() > 0) {
+      hash = (37 * hash) + REDIRECT_URIS_FIELD_NUMBER;
+      hash = (53 * hash) + getRedirectUrisList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -573,7 +579,8 @@ private static final long serialVersionUID = 0L;
       }
       bitField0_ = (bitField0_ & ~0x00000010);
       expiry_ = 0L;
-      redirectUri_ = "";
+      redirectUris_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -638,7 +645,8 @@ private static final long serialVersionUID = 0L;
         result.expiry_ = expiry_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.redirectUri_ = redirectUri_;
+        redirectUris_.makeImmutable();
+        result.redirectUris_ = redirectUris_;
       }
     }
 
@@ -745,9 +753,14 @@ private static final long serialVersionUID = 0L;
       if (other.getExpiry() != 0L) {
         setExpiry(other.getExpiry());
       }
-      if (!other.getRedirectUri().isEmpty()) {
-        redirectUri_ = other.redirectUri_;
-        bitField0_ |= 0x00000040;
+      if (!other.redirectUris_.isEmpty()) {
+        if (redirectUris_.isEmpty()) {
+          redirectUris_ = other.redirectUris_;
+          bitField0_ |= 0x00000040;
+        } else {
+          ensureRedirectUrisIsMutable();
+          redirectUris_.addAll(other.redirectUris_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -817,8 +830,9 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 48
             case 58: {
-              redirectUri_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureRedirectUrisIsMutable();
+              redirectUris_.add(s);
               break;
             } // case 58
             default: {
@@ -1476,73 +1490,112 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object redirectUri_ = "";
-    /**
-     * <code>string redirect_uri = 7 [json_name = "redirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The redirectUri.
-     */
-    public java.lang.String getRedirectUri() {
-      java.lang.Object ref = redirectUri_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        redirectUri_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
+    private com.google.protobuf.LazyStringArrayList redirectUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureRedirectUrisIsMutable() {
+      if (!redirectUris_.isModifiable()) {
+        redirectUris_ = new com.google.protobuf.LazyStringArrayList(redirectUris_);
       }
+      bitField0_ |= 0x00000040;
     }
     /**
-     * <code>string redirect_uri = 7 [json_name = "redirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for redirectUri.
+     * <code>repeated string redirect_uris = 7 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the redirectUris.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getRedirectUrisList() {
+      redirectUris_.makeImmutable();
+      return redirectUris_;
+    }
+    /**
+     * <code>repeated string redirect_uris = 7 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of redirectUris.
+     */
+    public int getRedirectUrisCount() {
+      return redirectUris_.size();
+    }
+    /**
+     * <code>repeated string redirect_uris = 7 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The redirectUris at the given index.
+     */
+    public java.lang.String getRedirectUris(int index) {
+      return redirectUris_.get(index);
+    }
+    /**
+     * <code>repeated string redirect_uris = 7 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the redirectUris at the given index.
      */
     public com.google.protobuf.ByteString
-        getRedirectUriBytes() {
-      java.lang.Object ref = redirectUri_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        redirectUri_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getRedirectUrisBytes(int index) {
+      return redirectUris_.getByteString(index);
     }
     /**
-     * <code>string redirect_uri = 7 [json_name = "redirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The redirectUri to set.
+     * <code>repeated string redirect_uris = 7 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The redirectUris to set.
      * @return This builder for chaining.
      */
-    public Builder setRedirectUri(
-        java.lang.String value) {
+    public Builder setRedirectUris(
+        int index, java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      redirectUri_ = value;
+      ensureRedirectUrisIsMutable();
+      redirectUris_.set(index, value);
       bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
     /**
-     * <code>string redirect_uri = 7 [json_name = "redirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated string redirect_uris = 7 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The redirectUris to add.
      * @return This builder for chaining.
      */
-    public Builder clearRedirectUri() {
-      redirectUri_ = getDefaultInstance().getRedirectUri();
-      bitField0_ = (bitField0_ & ~0x00000040);
+    public Builder addRedirectUris(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureRedirectUrisIsMutable();
+      redirectUris_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
     /**
-     * <code>string redirect_uri = 7 [json_name = "redirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for redirectUri to set.
+     * <code>repeated string redirect_uris = 7 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The redirectUris to add.
      * @return This builder for chaining.
      */
-    public Builder setRedirectUriBytes(
+    public Builder addAllRedirectUris(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureRedirectUrisIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, redirectUris_);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string redirect_uris = 7 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRedirectUris() {
+      redirectUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000040);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string redirect_uris = 7 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the redirectUris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRedirectUrisBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      redirectUri_ = value;
+      ensureRedirectUrisIsMutable();
+      redirectUris_.add(value);
       bitField0_ |= 0x00000040;
       onChanged();
       return this;

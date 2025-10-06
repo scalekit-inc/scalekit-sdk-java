@@ -51,7 +51,7 @@ public final class AuditlogsProto {
       "ekit/v1/options/options.proto\"\360\001\n\022ListAu" +
       "thLogRequest\022\033\n\tpage_size\030\001 \001(\rR\010pageSiz" +
       "e\022\035\n\npage_token\030\002 \001(\tR\tpageToken\022\024\n\005emai" +
-      "l\030\003 \001(\tR\005email\022\026\n\006status\030\004 \001(\tR\006status\0229" +
+      "l\030\003 \001(\tR\005email\022\026\n\006status\030\004 \003(\tR\006status\0229" +
       "\n\nstart_time\030\005 \001(\0132\032.google.protobuf.Tim" +
       "estampR\tstartTime\0225\n\010end_time\030\006 \001(\0132\032.go" +
       "ogle.protobuf.TimestampR\007endTime\"\317\001\n\023Lis" +
