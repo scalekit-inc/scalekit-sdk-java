@@ -17,11 +17,11 @@ public class ScalekitWebhook implements Webhook {
     private static final long WEBHOOK_TOLERANCE_IN_SECONDS = 300;
 
     public boolean verifyWebhookPayload(String secret, Map<String, String> headers, byte[] payload) throws WebHookException {
-        String webhookId = headers.get("webhook-id");
-        String webhookTimestamp = headers.get("webhook-timestamp");
-        String webhookSignature = headers.get("webhook-signature");
+        return verifyPayloadSignature(secret, headers.get("webhook-id"), headers.get("webhook-timestamp"), headers.get("webhook-signature"), payload);
+    }
 
-        if (webhookId == null || webhookTimestamp == null || webhookSignature == null) {
+    protected boolean verifyPayloadSignature(String secret, String id, String timestamp, String signature, byte[] payload) throws WebHookException {
+        if (id == null || timestamp == null || signature == null) {
             throw new WebHookException("Missing required headers");
         }
 
@@ -31,23 +31,23 @@ public class ScalekitWebhook implements Webhook {
         }
 
         byte[] secretBytes = Base64.getDecoder().decode(secretParts[1]);
-        Date timestamp = verifyTimestamp(webhookTimestamp);
+        Date timestampDate = verifyTimestamp(timestamp);
 
-        String data = String.format("%s.%d.%s", webhookId, timestamp.getTime() / 1000, new String(payload));
+        String data = String.format("%s.%d.%s", id, timestampDate.getTime() / 1000, new String(payload));
         String computedSignature = computeSignature(secretBytes, data);
 
-        String[] receivedSignatures = webhookSignature.split(" ");
+        String[] receivedSignatures = signature.split(" ");
         for (String versionedSignature : receivedSignatures) {
             String[] signatureParts = versionedSignature.split(",");
             if (signatureParts.length < 2) {
                 continue;
             }
             String version = signatureParts[0];
-            String signature = signatureParts[1];
+            String sig = signatureParts[1];
             if (!version.equals(WEBHOOK_SIGNATURE_VERSION)) {
                 continue;
             }
-            if (MessageDigest.isEqual(signature.getBytes(), computedSignature.getBytes())) {
+            if (MessageDigest.isEqual(sig.getBytes(), computedSignature.getBytes())) {
                 return true;
             }
         }
