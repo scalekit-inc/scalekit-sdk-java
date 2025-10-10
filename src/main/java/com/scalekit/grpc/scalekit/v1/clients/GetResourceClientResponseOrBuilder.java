@@ -9,21 +9,6 @@ public interface GetResourceClientResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the resource field is set.
-   */
-  boolean hasResource();
-  /**
-   * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The resource.
-   */
-  com.scalekit.grpc.scalekit.v1.clients.Resource getResource();
-  /**
-   * <code>.scalekit.v1.clients.Resource resource = 1 [json_name = "resource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  com.scalekit.grpc.scalekit.v1.clients.ResourceOrBuilder getResourceOrBuilder();
-
-  /**
    * <code>.scalekit.v1.clients.M2MClient client = 2 [json_name = "client", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the client field is set.
    */
@@ -37,4 +22,28 @@ public interface GetResourceClientResponseOrBuilder extends
    * <code>.scalekit.v1.clients.M2MClient client = 2 [json_name = "client", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.clients.M2MClientOrBuilder getClientOrBuilder();
+
+  /**
+   * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<com.scalekit.grpc.scalekit.v1.clients.ConsentedUser> 
+      getConsentedUsersList();
+  /**
+   * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.clients.ConsentedUser getConsentedUsers(int index);
+  /**
+   * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  int getConsentedUsersCount();
+  /**
+   * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<? extends com.scalekit.grpc.scalekit.v1.clients.ConsentedUserOrBuilder> 
+      getConsentedUsersOrBuilderList();
+  /**
+   * <code>repeated .scalekit.v1.clients.ConsentedUser consented_users = 3 [json_name = "consentedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.clients.ConsentedUserOrBuilder getConsentedUsersOrBuilder(
+      int index);
 }

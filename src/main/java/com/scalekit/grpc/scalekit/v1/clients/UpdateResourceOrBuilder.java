@@ -122,4 +122,21 @@ public interface UpdateResourceOrBuilder extends
    */
   com.google.protobuf.ByteString
       getScopesBytes(int index);
+
+  /**
+   * <code>.scalekit.v1.clients.ResourceCustomConnectionSettings custom_connection_settings = 13 [json_name = "customConnectionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the customConnectionSettings field is set.
+   */
+  boolean hasCustomConnectionSettings();
+  /**
+   * <code>.scalekit.v1.clients.ResourceCustomConnectionSettings custom_connection_settings = 13 [json_name = "customConnectionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The customConnectionSettings.
+   */
+  com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings getCustomConnectionSettings();
+  /**
+   * <code>.scalekit.v1.clients.ResourceCustomConnectionSettings custom_connection_settings = 13 [json_name = "customConnectionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettingsOrBuilder getCustomConnectionSettingsOrBuilder();
+
+  com.scalekit.grpc.scalekit.v1.clients.UpdateResource.SettingsCase getSettingsCase();
 }

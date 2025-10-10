@@ -201,4 +201,25 @@ public interface ResourceOrBuilder extends
    */
   com.scalekit.grpc.scalekit.v1.clients.ScopeOrBuilder getScopesOrBuilder(
       int index);
+
+  /**
+   * <code>.scalekit.v1.clients.ResourceConnection connection_details = 17 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the connectionDetails field is set.
+   */
+  boolean hasConnectionDetails();
+  /**
+   * <code>.scalekit.v1.clients.ResourceConnection connection_details = 17 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The connectionDetails.
+   */
+  com.scalekit.grpc.scalekit.v1.clients.ResourceConnection getConnectionDetails();
+  /**
+   * <code>.scalekit.v1.clients.ResourceConnection connection_details = 17 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.clients.ResourceConnectionOrBuilder getConnectionDetailsOrBuilder();
+
+  /**
+   * <code>bool disallow_connection_update = 18 [json_name = "disallowConnectionUpdate", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The disallowConnectionUpdate.
+   */
+  boolean getDisallowConnectionUpdate();
 }

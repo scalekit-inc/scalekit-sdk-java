@@ -113,14 +113,27 @@ public interface ResourceClientOrBuilder extends
   long getExpiry();
 
   /**
-   * <code>string redirect_uri = 7 [json_name = "redirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The redirectUri.
+   * <code>repeated string redirect_uris = 7 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the redirectUris.
    */
-  java.lang.String getRedirectUri();
+  java.util.List<java.lang.String>
+      getRedirectUrisList();
   /**
-   * <code>string redirect_uri = 7 [json_name = "redirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for redirectUri.
+   * <code>repeated string redirect_uris = 7 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of redirectUris.
+   */
+  int getRedirectUrisCount();
+  /**
+   * <code>repeated string redirect_uris = 7 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The redirectUris at the given index.
+   */
+  java.lang.String getRedirectUris(int index);
+  /**
+   * <code>repeated string redirect_uris = 7 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the redirectUris at the given index.
    */
   com.google.protobuf.ByteString
-      getRedirectUriBytes();
+      getRedirectUrisBytes(int index);
 }

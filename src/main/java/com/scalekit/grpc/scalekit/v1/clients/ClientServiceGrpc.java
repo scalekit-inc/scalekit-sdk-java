@@ -635,6 +635,37 @@ public final class ClientServiceGrpc {
     return getCreateResourceClientMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientRequest,
+      com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse> getUpdateResourceClientMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateResourceClient",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientRequest,
+      com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse> getUpdateResourceClientMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientRequest, com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse> getUpdateResourceClientMethod;
+    if ((getUpdateResourceClientMethod = ClientServiceGrpc.getUpdateResourceClientMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getUpdateResourceClientMethod = ClientServiceGrpc.getUpdateResourceClientMethod) == null) {
+          ClientServiceGrpc.getUpdateResourceClientMethod = getUpdateResourceClientMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientRequest, com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateResourceClient"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("UpdateResourceClient"))
+              .build();
+        }
+      }
+    }
+    return getUpdateResourceClientMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.GetResourceClientRequest,
       com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse> getGetResourceClientMethod;
 
@@ -664,6 +695,68 @@ public final class ClientServiceGrpc {
       }
     }
     return getGetResourceClientMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsRequest,
+      com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse> getListResourceClientsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListResourceClients",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsRequest,
+      com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse> getListResourceClientsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsRequest, com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse> getListResourceClientsMethod;
+    if ((getListResourceClientsMethod = ClientServiceGrpc.getListResourceClientsMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getListResourceClientsMethod = ClientServiceGrpc.getListResourceClientsMethod) == null) {
+          ClientServiceGrpc.getListResourceClientsMethod = getListResourceClientsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsRequest, com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListResourceClients"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("ListResourceClients"))
+              .build();
+        }
+      }
+    }
+    return getListResourceClientsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientRequest,
+      com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse> getDeleteResourceClientMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteResourceClient",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientRequest,
+      com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse> getDeleteResourceClientMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientRequest, com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse> getDeleteResourceClientMethod;
+    if ((getDeleteResourceClientMethod = ClientServiceGrpc.getDeleteResourceClientMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getDeleteResourceClientMethod = ClientServiceGrpc.getDeleteResourceClientMethod) == null) {
+          ClientServiceGrpc.getDeleteResourceClientMethod = getDeleteResourceClientMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientRequest, com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteResourceClient"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("DeleteResourceClient"))
+              .build();
+        }
+      }
+    }
+    return getDeleteResourceClientMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest,
@@ -850,6 +943,68 @@ public final class ClientServiceGrpc {
       }
     }
     return getGetConsentDetailsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentRequest,
+      com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentResponse> getRevokeUserConsentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RevokeUserConsent",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentRequest,
+      com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentResponse> getRevokeUserConsentMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentRequest, com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentResponse> getRevokeUserConsentMethod;
+    if ((getRevokeUserConsentMethod = ClientServiceGrpc.getRevokeUserConsentMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getRevokeUserConsentMethod = ClientServiceGrpc.getRevokeUserConsentMethod) == null) {
+          ClientServiceGrpc.getRevokeUserConsentMethod = getRevokeUserConsentMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentRequest, com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RevokeUserConsent"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("RevokeUserConsent"))
+              .build();
+        }
+      }
+    }
+    return getRevokeUserConsentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionRequest,
+      com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionResponse> getEnsureResourceConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EnsureResourceConnection",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionRequest,
+      com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionResponse> getEnsureResourceConnectionMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionRequest, com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionResponse> getEnsureResourceConnectionMethod;
+    if ((getEnsureResourceConnectionMethod = ClientServiceGrpc.getEnsureResourceConnectionMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getEnsureResourceConnectionMethod = ClientServiceGrpc.getEnsureResourceConnectionMethod) == null) {
+          ClientServiceGrpc.getEnsureResourceConnectionMethod = getEnsureResourceConnectionMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionRequest, com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EnsureResourceConnection"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("EnsureResourceConnection"))
+              .build();
+        }
+      }
+    }
+    return getEnsureResourceConnectionMethod;
   }
 
   /**
@@ -1042,9 +1197,30 @@ public final class ClientServiceGrpc {
 
     /**
      */
+    default void updateResourceClient(com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateResourceClientMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void getResourceClient(com.scalekit.grpc.scalekit.v1.clients.GetResourceClientRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetResourceClientMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listResourceClients(com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListResourceClientsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteResourceClient(com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteResourceClientMethod(), responseObserver);
     }
 
     /**
@@ -1090,6 +1266,20 @@ public final class ClientServiceGrpc {
     default void getConsentDetails(com.google.protobuf.Empty request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetConsentDetailsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void revokeUserConsent(com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRevokeUserConsentMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void ensureResourceConnection(com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEnsureResourceConnectionMethod(), responseObserver);
     }
   }
 
@@ -1282,10 +1472,34 @@ public final class ClientServiceGrpc {
 
     /**
      */
+    public void updateResourceClient(com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateResourceClientMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void getResourceClient(com.scalekit.grpc.scalekit.v1.clients.GetResourceClientRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetResourceClientMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listResourceClients(com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListResourceClientsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteResourceClient(com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteResourceClientMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1337,6 +1551,22 @@ public final class ClientServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetConsentDetailsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void revokeUserConsent(com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRevokeUserConsentMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void ensureResourceConnection(com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEnsureResourceConnectionMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -1498,9 +1728,30 @@ public final class ClientServiceGrpc {
 
     /**
      */
+    public com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse updateResourceClient(com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateResourceClientMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse getResourceClient(com.scalekit.grpc.scalekit.v1.clients.GetResourceClientRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetResourceClientMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse listResourceClients(com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListResourceClientsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse deleteResourceClient(com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteResourceClientMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1546,6 +1797,20 @@ public final class ClientServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse getConsentDetails(com.google.protobuf.Empty request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetConsentDetailsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentResponse revokeUserConsent(com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRevokeUserConsentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionResponse ensureResourceConnection(com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEnsureResourceConnectionMethod(), getCallOptions(), request);
     }
   }
 
@@ -1727,10 +1992,34 @@ public final class ClientServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse> updateResourceClient(
+        com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateResourceClientMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse> getResourceClient(
         com.scalekit.grpc.scalekit.v1.clients.GetResourceClientRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetResourceClientMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse> listResourceClients(
+        com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListResourceClientsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse> deleteResourceClient(
+        com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteResourceClientMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1783,6 +2072,22 @@ public final class ClientServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetConsentDetailsMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentResponse> revokeUserConsent(
+        com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRevokeUserConsentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionResponse> ensureResourceConnection(
+        com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEnsureResourceConnectionMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CLIENT = 0;
@@ -1805,13 +2110,18 @@ public final class ClientServiceGrpc {
   private static final int METHODID_DELETE_RESOURCE = 17;
   private static final int METHODID_DELETE_RESOURCE_PROVIDER = 18;
   private static final int METHODID_CREATE_RESOURCE_CLIENT = 19;
-  private static final int METHODID_GET_RESOURCE_CLIENT = 20;
-  private static final int METHODID_REGISTER_CLIENT = 21;
-  private static final int METHODID_CREATE_SCOPE = 22;
-  private static final int METHODID_LIST_SCOPES = 23;
-  private static final int METHODID_UPDATE_SCOPE = 24;
-  private static final int METHODID_DELETE_SCOPE = 25;
-  private static final int METHODID_GET_CONSENT_DETAILS = 26;
+  private static final int METHODID_UPDATE_RESOURCE_CLIENT = 20;
+  private static final int METHODID_GET_RESOURCE_CLIENT = 21;
+  private static final int METHODID_LIST_RESOURCE_CLIENTS = 22;
+  private static final int METHODID_DELETE_RESOURCE_CLIENT = 23;
+  private static final int METHODID_REGISTER_CLIENT = 24;
+  private static final int METHODID_CREATE_SCOPE = 25;
+  private static final int METHODID_LIST_SCOPES = 26;
+  private static final int METHODID_UPDATE_SCOPE = 27;
+  private static final int METHODID_DELETE_SCOPE = 28;
+  private static final int METHODID_GET_CONSENT_DETAILS = 29;
+  private static final int METHODID_REVOKE_USER_CONSENT = 30;
+  private static final int METHODID_ENSURE_RESOURCE_CONNECTION = 31;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1910,9 +2220,21 @@ public final class ClientServiceGrpc {
           serviceImpl.createResourceClient((com.scalekit.grpc.scalekit.v1.clients.CreateResourceClientRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.CreateResourceClientResponse>) responseObserver);
           break;
+        case METHODID_UPDATE_RESOURCE_CLIENT:
+          serviceImpl.updateResourceClient((com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse>) responseObserver);
+          break;
         case METHODID_GET_RESOURCE_CLIENT:
           serviceImpl.getResourceClient((com.scalekit.grpc.scalekit.v1.clients.GetResourceClientRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse>) responseObserver);
+          break;
+        case METHODID_LIST_RESOURCE_CLIENTS:
+          serviceImpl.listResourceClients((com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_RESOURCE_CLIENT:
+          serviceImpl.deleteResourceClient((com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse>) responseObserver);
           break;
         case METHODID_REGISTER_CLIENT:
           serviceImpl.registerClient((com.scalekit.grpc.scalekit.v1.clients.RegisterClientRequest) request,
@@ -1937,6 +2259,14 @@ public final class ClientServiceGrpc {
         case METHODID_GET_CONSENT_DETAILS:
           serviceImpl.getConsentDetails((com.google.protobuf.Empty) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse>) responseObserver);
+          break;
+        case METHODID_REVOKE_USER_CONSENT:
+          serviceImpl.revokeUserConsent((com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentResponse>) responseObserver);
+          break;
+        case METHODID_ENSURE_RESOURCE_CONNECTION:
+          serviceImpl.ensureResourceConnection((com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2097,12 +2427,33 @@ public final class ClientServiceGrpc {
               com.scalekit.grpc.scalekit.v1.clients.CreateResourceClientResponse>(
                 service, METHODID_CREATE_RESOURCE_CLIENT)))
         .addMethod(
+          getUpdateResourceClientMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientRequest,
+              com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse>(
+                service, METHODID_UPDATE_RESOURCE_CLIENT)))
+        .addMethod(
           getGetResourceClientMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               com.scalekit.grpc.scalekit.v1.clients.GetResourceClientRequest,
               com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse>(
                 service, METHODID_GET_RESOURCE_CLIENT)))
+        .addMethod(
+          getListResourceClientsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsRequest,
+              com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse>(
+                service, METHODID_LIST_RESOURCE_CLIENTS)))
+        .addMethod(
+          getDeleteResourceClientMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientRequest,
+              com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse>(
+                service, METHODID_DELETE_RESOURCE_CLIENT)))
         .addMethod(
           getRegisterClientMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2145,6 +2496,20 @@ public final class ClientServiceGrpc {
               com.google.protobuf.Empty,
               com.scalekit.grpc.scalekit.v1.clients.GetConsentDetailsResponse>(
                 service, METHODID_GET_CONSENT_DETAILS)))
+        .addMethod(
+          getRevokeUserConsentMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentRequest,
+              com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentResponse>(
+                service, METHODID_REVOKE_USER_CONSENT)))
+        .addMethod(
+          getEnsureResourceConnectionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionRequest,
+              com.scalekit.grpc.scalekit.v1.clients.EnsureResourceConnectionResponse>(
+                service, METHODID_ENSURE_RESOURCE_CONNECTION)))
         .build();
   }
 
@@ -2213,13 +2578,18 @@ public final class ClientServiceGrpc {
               .addMethod(getDeleteResourceMethod())
               .addMethod(getDeleteResourceProviderMethod())
               .addMethod(getCreateResourceClientMethod())
+              .addMethod(getUpdateResourceClientMethod())
               .addMethod(getGetResourceClientMethod())
+              .addMethod(getListResourceClientsMethod())
+              .addMethod(getDeleteResourceClientMethod())
               .addMethod(getRegisterClientMethod())
               .addMethod(getCreateScopeMethod())
               .addMethod(getListScopesMethod())
               .addMethod(getUpdateScopeMethod())
               .addMethod(getDeleteScopeMethod())
               .addMethod(getGetConsentDetailsMethod())
+              .addMethod(getRevokeUserConsentMethod())
+              .addMethod(getEnsureResourceConnectionMethod())
               .build();
         }
       }

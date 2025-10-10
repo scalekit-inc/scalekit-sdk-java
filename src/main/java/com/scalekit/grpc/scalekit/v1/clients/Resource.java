@@ -532,6 +532,43 @@ private static final long serialVersionUID = 0L;
     return scopes_.get(index);
   }
 
+  public static final int CONNECTION_DETAILS_FIELD_NUMBER = 17;
+  private com.scalekit.grpc.scalekit.v1.clients.ResourceConnection connectionDetails_;
+  /**
+   * <code>.scalekit.v1.clients.ResourceConnection connection_details = 17 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the connectionDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasConnectionDetails() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <code>.scalekit.v1.clients.ResourceConnection connection_details = 17 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The connectionDetails.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.ResourceConnection getConnectionDetails() {
+    return connectionDetails_ == null ? com.scalekit.grpc.scalekit.v1.clients.ResourceConnection.getDefaultInstance() : connectionDetails_;
+  }
+  /**
+   * <code>.scalekit.v1.clients.ResourceConnection connection_details = 17 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.ResourceConnectionOrBuilder getConnectionDetailsOrBuilder() {
+    return connectionDetails_ == null ? com.scalekit.grpc.scalekit.v1.clients.ResourceConnection.getDefaultInstance() : connectionDetails_;
+  }
+
+  public static final int DISALLOW_CONNECTION_UPDATE_FIELD_NUMBER = 18;
+  private boolean disallowConnectionUpdate_ = false;
+  /**
+   * <code>bool disallow_connection_update = 18 [json_name = "disallowConnectionUpdate", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The disallowConnectionUpdate.
+   */
+  @java.lang.Override
+  public boolean getDisallowConnectionUpdate() {
+    return disallowConnectionUpdate_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -593,6 +630,12 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < scopes_.size(); i++) {
       output.writeMessage(16, scopes_.get(i));
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(17, getConnectionDetails());
+    }
+    if (disallowConnectionUpdate_ != false) {
+      output.writeBool(18, disallowConnectionUpdate_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -659,6 +702,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(16, scopes_.get(i));
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(17, getConnectionDetails());
+    }
+    if (disallowConnectionUpdate_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(18, disallowConnectionUpdate_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -714,6 +765,13 @@ private static final long serialVersionUID = 0L;
         .equals(other.getResourceId())) return false;
     if (!getScopesList()
         .equals(other.getScopesList())) return false;
+    if (hasConnectionDetails() != other.hasConnectionDetails()) return false;
+    if (hasConnectionDetails()) {
+      if (!getConnectionDetails()
+          .equals(other.getConnectionDetails())) return false;
+    }
+    if (getDisallowConnectionUpdate()
+        != other.getDisallowConnectionUpdate()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -768,6 +826,13 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SCOPES_FIELD_NUMBER;
       hash = (53 * hash) + getScopesList().hashCode();
     }
+    if (hasConnectionDetails()) {
+      hash = (37 * hash) + CONNECTION_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getConnectionDetails().hashCode();
+    }
+    hash = (37 * hash) + DISALLOW_CONNECTION_UPDATE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getDisallowConnectionUpdate());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -902,6 +967,7 @@ private static final long serialVersionUID = 0L;
         getUpdateTimeFieldBuilder();
         getProtectedMetadataFieldBuilder();
         getScopesFieldBuilder();
+        getConnectionDetailsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -942,6 +1008,12 @@ private static final long serialVersionUID = 0L;
         scopesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00008000);
+      connectionDetails_ = null;
+      if (connectionDetailsBuilder_ != null) {
+        connectionDetailsBuilder_.dispose();
+        connectionDetailsBuilder_ = null;
+      }
+      disallowConnectionUpdate_ = false;
       return this;
     }
 
@@ -1042,6 +1114,15 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.resourceId_ = resourceId_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.connectionDetails_ = connectionDetailsBuilder_ == null
+            ? connectionDetails_
+            : connectionDetailsBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.disallowConnectionUpdate_ = disallowConnectionUpdate_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1177,6 +1258,12 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (other.hasConnectionDetails()) {
+        mergeConnectionDetails(other.getConnectionDetails());
+      }
+      if (other.getDisallowConnectionUpdate() != false) {
+        setDisallowConnectionUpdate(other.getDisallowConnectionUpdate());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1297,6 +1384,18 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 130
+            case 138: {
+              input.readMessage(
+                  getConnectionDetailsFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00010000;
+              break;
+            } // case 138
+            case 144: {
+              disallowConnectionUpdate_ = input.readBool();
+              bitField0_ |= 0x00020000;
+              break;
+            } // case 144
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2640,6 +2739,159 @@ private static final long serialVersionUID = 0L;
         scopes_ = null;
       }
       return scopesBuilder_;
+    }
+
+    private com.scalekit.grpc.scalekit.v1.clients.ResourceConnection connectionDetails_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.ResourceConnection, com.scalekit.grpc.scalekit.v1.clients.ResourceConnection.Builder, com.scalekit.grpc.scalekit.v1.clients.ResourceConnectionOrBuilder> connectionDetailsBuilder_;
+    /**
+     * <code>.scalekit.v1.clients.ResourceConnection connection_details = 17 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the connectionDetails field is set.
+     */
+    public boolean hasConnectionDetails() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceConnection connection_details = 17 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The connectionDetails.
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ResourceConnection getConnectionDetails() {
+      if (connectionDetailsBuilder_ == null) {
+        return connectionDetails_ == null ? com.scalekit.grpc.scalekit.v1.clients.ResourceConnection.getDefaultInstance() : connectionDetails_;
+      } else {
+        return connectionDetailsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceConnection connection_details = 17 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setConnectionDetails(com.scalekit.grpc.scalekit.v1.clients.ResourceConnection value) {
+      if (connectionDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        connectionDetails_ = value;
+      } else {
+        connectionDetailsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceConnection connection_details = 17 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setConnectionDetails(
+        com.scalekit.grpc.scalekit.v1.clients.ResourceConnection.Builder builderForValue) {
+      if (connectionDetailsBuilder_ == null) {
+        connectionDetails_ = builderForValue.build();
+      } else {
+        connectionDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceConnection connection_details = 17 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeConnectionDetails(com.scalekit.grpc.scalekit.v1.clients.ResourceConnection value) {
+      if (connectionDetailsBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0) &&
+          connectionDetails_ != null &&
+          connectionDetails_ != com.scalekit.grpc.scalekit.v1.clients.ResourceConnection.getDefaultInstance()) {
+          getConnectionDetailsBuilder().mergeFrom(value);
+        } else {
+          connectionDetails_ = value;
+        }
+      } else {
+        connectionDetailsBuilder_.mergeFrom(value);
+      }
+      if (connectionDetails_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceConnection connection_details = 17 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearConnectionDetails() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      connectionDetails_ = null;
+      if (connectionDetailsBuilder_ != null) {
+        connectionDetailsBuilder_.dispose();
+        connectionDetailsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceConnection connection_details = 17 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ResourceConnection.Builder getConnectionDetailsBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return getConnectionDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceConnection connection_details = 17 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ResourceConnectionOrBuilder getConnectionDetailsOrBuilder() {
+      if (connectionDetailsBuilder_ != null) {
+        return connectionDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        return connectionDetails_ == null ?
+            com.scalekit.grpc.scalekit.v1.clients.ResourceConnection.getDefaultInstance() : connectionDetails_;
+      }
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceConnection connection_details = 17 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.ResourceConnection, com.scalekit.grpc.scalekit.v1.clients.ResourceConnection.Builder, com.scalekit.grpc.scalekit.v1.clients.ResourceConnectionOrBuilder> 
+        getConnectionDetailsFieldBuilder() {
+      if (connectionDetailsBuilder_ == null) {
+        connectionDetailsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.clients.ResourceConnection, com.scalekit.grpc.scalekit.v1.clients.ResourceConnection.Builder, com.scalekit.grpc.scalekit.v1.clients.ResourceConnectionOrBuilder>(
+                getConnectionDetails(),
+                getParentForChildren(),
+                isClean());
+        connectionDetails_ = null;
+      }
+      return connectionDetailsBuilder_;
+    }
+
+    private boolean disallowConnectionUpdate_ ;
+    /**
+     * <code>bool disallow_connection_update = 18 [json_name = "disallowConnectionUpdate", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The disallowConnectionUpdate.
+     */
+    @java.lang.Override
+    public boolean getDisallowConnectionUpdate() {
+      return disallowConnectionUpdate_;
+    }
+    /**
+     * <code>bool disallow_connection_update = 18 [json_name = "disallowConnectionUpdate", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The disallowConnectionUpdate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisallowConnectionUpdate(boolean value) {
+
+      disallowConnectionUpdate_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool disallow_connection_update = 18 [json_name = "disallowConnectionUpdate", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDisallowConnectionUpdate() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      disallowConnectionUpdate_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

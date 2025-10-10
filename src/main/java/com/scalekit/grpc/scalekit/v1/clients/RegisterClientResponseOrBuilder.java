@@ -191,43 +191,49 @@ public interface RegisterClientResponseOrBuilder extends
       getResourceIdBytes();
 
   /**
-   * <pre>
-   *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
-   * </pre>
-   *
    * <code>repeated string redirect_uris = 12 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return A list containing the redirectUris.
    */
   java.util.List<java.lang.String>
       getRedirectUrisList();
   /**
-   * <pre>
-   *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
-   * </pre>
-   *
    * <code>repeated string redirect_uris = 12 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The count of redirectUris.
    */
   int getRedirectUrisCount();
   /**
-   * <pre>
-   *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
-   * </pre>
-   *
    * <code>repeated string redirect_uris = 12 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The redirectUris at the given index.
    */
   java.lang.String getRedirectUris(int index);
   /**
-   * <pre>
-   *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
-   * </pre>
-   *
    * <code>repeated string redirect_uris = 12 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the redirectUris at the given index.
    */
   com.google.protobuf.ByteString
       getRedirectUrisBytes(int index);
+
+  /**
+   * <code>string client_secret = 13 [json_name = "clientSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The clientSecret.
+   */
+  java.lang.String getClientSecret();
+  /**
+   * <code>string client_secret = 13 [json_name = "clientSecret", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for clientSecret.
+   */
+  com.google.protobuf.ByteString
+      getClientSecretBytes();
+
+  /**
+   * <pre>
+   *  M2MClient client = 1 [(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {description: "Details of the registered client"}];
+   * </pre>
+   *
+   * <code>int32 client_secret_expires_at = 14 [json_name = "clientSecretExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The clientSecretExpiresAt.
+   */
+  int getClientSecretExpiresAt();
 }

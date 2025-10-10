@@ -47,6 +47,46 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.clients.UpdateResource.class, com.scalekit.grpc.scalekit.v1.clients.UpdateResource.Builder.class);
   }
 
+  private int settingsCase_ = 0;
+  @SuppressWarnings("serial")
+  private java.lang.Object settings_;
+  public enum SettingsCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    CUSTOM_CONNECTION_SETTINGS(13),
+    SETTINGS_NOT_SET(0);
+    private final int value;
+    private SettingsCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SettingsCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SettingsCase forNumber(int value) {
+      switch (value) {
+        case 13: return CUSTOM_CONNECTION_SETTINGS;
+        case 0: return SETTINGS_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SettingsCase
+  getSettingsCase() {
+    return SettingsCase.forNumber(
+        settingsCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
@@ -351,6 +391,37 @@ private static final long serialVersionUID = 0L;
     return scopes_.getByteString(index);
   }
 
+  public static final int CUSTOM_CONNECTION_SETTINGS_FIELD_NUMBER = 13;
+  /**
+   * <code>.scalekit.v1.clients.ResourceCustomConnectionSettings custom_connection_settings = 13 [json_name = "customConnectionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the customConnectionSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomConnectionSettings() {
+    return settingsCase_ == 13;
+  }
+  /**
+   * <code>.scalekit.v1.clients.ResourceCustomConnectionSettings custom_connection_settings = 13 [json_name = "customConnectionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The customConnectionSettings.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings getCustomConnectionSettings() {
+    if (settingsCase_ == 13) {
+       return (com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings.getDefaultInstance();
+  }
+  /**
+   * <code>.scalekit.v1.clients.ResourceCustomConnectionSettings custom_connection_settings = 13 [json_name = "customConnectionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettingsOrBuilder getCustomConnectionSettingsOrBuilder() {
+    if (settingsCase_ == 13) {
+       return (com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -394,6 +465,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < scopes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, scopes_.getRaw(i));
+    }
+    if (settingsCase_ == 13) {
+      output.writeMessage(13, (com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings) settings_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -442,6 +516,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getScopesList().size();
     }
+    if (settingsCase_ == 13) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, (com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings) settings_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -477,6 +555,15 @@ private static final long serialVersionUID = 0L;
         .equals(other.getResourceId())) return false;
     if (!getScopesList()
         .equals(other.getScopesList())) return false;
+    if (!getSettingsCase().equals(other.getSettingsCase())) return false;
+    switch (settingsCase_) {
+      case 13:
+        if (!getCustomConnectionSettings()
+            .equals(other.getCustomConnectionSettings())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -512,6 +599,14 @@ private static final long serialVersionUID = 0L;
     if (getScopesCount() > 0) {
       hash = (37 * hash) + SCOPES_FIELD_NUMBER;
       hash = (53 * hash) + getScopesList().hashCode();
+    }
+    switch (settingsCase_) {
+      case 13:
+        hash = (37 * hash) + CUSTOM_CONNECTION_SETTINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomConnectionSettings().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -655,6 +750,11 @@ private static final long serialVersionUID = 0L;
       resourceId_ = "";
       scopes_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+      if (customConnectionSettingsBuilder_ != null) {
+        customConnectionSettingsBuilder_.clear();
+      }
+      settingsCase_ = 0;
+      settings_ = null;
       return this;
     }
 
@@ -682,6 +782,7 @@ private static final long serialVersionUID = 0L;
     public com.scalekit.grpc.scalekit.v1.clients.UpdateResource buildPartial() {
       com.scalekit.grpc.scalekit.v1.clients.UpdateResource result = new com.scalekit.grpc.scalekit.v1.clients.UpdateResource(this);
       if (bitField0_ != 0) { buildPartial0(result); }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -718,6 +819,15 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000200) != 0)) {
         scopes_.makeImmutable();
         result.scopes_ = scopes_;
+      }
+    }
+
+    private void buildPartialOneofs(com.scalekit.grpc.scalekit.v1.clients.UpdateResource result) {
+      result.settingsCase_ = settingsCase_;
+      result.settings_ = this.settings_;
+      if (settingsCase_ == 13 &&
+          customConnectionSettingsBuilder_ != null) {
+        result.settings_ = customConnectionSettingsBuilder_.build();
       }
     }
 
@@ -814,6 +924,15 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      switch (other.getSettingsCase()) {
+        case CUSTOM_CONNECTION_SETTINGS: {
+          mergeCustomConnectionSettings(other.getCustomConnectionSettings());
+          break;
+        }
+        case SETTINGS_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -891,6 +1010,13 @@ private static final long serialVersionUID = 0L;
               scopes_.add(s);
               break;
             } // case 98
+            case 106: {
+              input.readMessage(
+                  getCustomConnectionSettingsFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              settingsCase_ = 13;
+              break;
+            } // case 106
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -906,6 +1032,21 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int settingsCase_ = 0;
+    private java.lang.Object settings_;
+    public SettingsCase
+        getSettingsCase() {
+      return SettingsCase.forNumber(
+          settingsCase_);
+    }
+
+    public Builder clearSettings() {
+      settingsCase_ = 0;
+      settings_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
@@ -1545,6 +1686,148 @@ private static final long serialVersionUID = 0L;
       bitField0_ |= 0x00000200;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings, com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings.Builder, com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettingsOrBuilder> customConnectionSettingsBuilder_;
+    /**
+     * <code>.scalekit.v1.clients.ResourceCustomConnectionSettings custom_connection_settings = 13 [json_name = "customConnectionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the customConnectionSettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomConnectionSettings() {
+      return settingsCase_ == 13;
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceCustomConnectionSettings custom_connection_settings = 13 [json_name = "customConnectionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The customConnectionSettings.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings getCustomConnectionSettings() {
+      if (customConnectionSettingsBuilder_ == null) {
+        if (settingsCase_ == 13) {
+          return (com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings.getDefaultInstance();
+      } else {
+        if (settingsCase_ == 13) {
+          return customConnectionSettingsBuilder_.getMessage();
+        }
+        return com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceCustomConnectionSettings custom_connection_settings = 13 [json_name = "customConnectionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setCustomConnectionSettings(com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings value) {
+      if (customConnectionSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        settings_ = value;
+        onChanged();
+      } else {
+        customConnectionSettingsBuilder_.setMessage(value);
+      }
+      settingsCase_ = 13;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceCustomConnectionSettings custom_connection_settings = 13 [json_name = "customConnectionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setCustomConnectionSettings(
+        com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings.Builder builderForValue) {
+      if (customConnectionSettingsBuilder_ == null) {
+        settings_ = builderForValue.build();
+        onChanged();
+      } else {
+        customConnectionSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      settingsCase_ = 13;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceCustomConnectionSettings custom_connection_settings = 13 [json_name = "customConnectionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeCustomConnectionSettings(com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings value) {
+      if (customConnectionSettingsBuilder_ == null) {
+        if (settingsCase_ == 13 &&
+            settings_ != com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings.getDefaultInstance()) {
+          settings_ = com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings.newBuilder((com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings) settings_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          settings_ = value;
+        }
+        onChanged();
+      } else {
+        if (settingsCase_ == 13) {
+          customConnectionSettingsBuilder_.mergeFrom(value);
+        } else {
+          customConnectionSettingsBuilder_.setMessage(value);
+        }
+      }
+      settingsCase_ = 13;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceCustomConnectionSettings custom_connection_settings = 13 [json_name = "customConnectionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearCustomConnectionSettings() {
+      if (customConnectionSettingsBuilder_ == null) {
+        if (settingsCase_ == 13) {
+          settingsCase_ = 0;
+          settings_ = null;
+          onChanged();
+        }
+      } else {
+        if (settingsCase_ == 13) {
+          settingsCase_ = 0;
+          settings_ = null;
+        }
+        customConnectionSettingsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceCustomConnectionSettings custom_connection_settings = 13 [json_name = "customConnectionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings.Builder getCustomConnectionSettingsBuilder() {
+      return getCustomConnectionSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceCustomConnectionSettings custom_connection_settings = 13 [json_name = "customConnectionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettingsOrBuilder getCustomConnectionSettingsOrBuilder() {
+      if ((settingsCase_ == 13) && (customConnectionSettingsBuilder_ != null)) {
+        return customConnectionSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        if (settingsCase_ == 13) {
+          return (com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceCustomConnectionSettings custom_connection_settings = 13 [json_name = "customConnectionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings, com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings.Builder, com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettingsOrBuilder> 
+        getCustomConnectionSettingsFieldBuilder() {
+      if (customConnectionSettingsBuilder_ == null) {
+        if (!(settingsCase_ == 13)) {
+          settings_ = com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings.getDefaultInstance();
+        }
+        customConnectionSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings, com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings.Builder, com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettingsOrBuilder>(
+                (com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings) settings_,
+                getParentForChildren(),
+                isClean());
+        settings_ = null;
+      }
+      settingsCase_ = 13;
+      onChanged();
+      return customConnectionSettingsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

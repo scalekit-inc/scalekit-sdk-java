@@ -504,6 +504,17 @@ private static final long serialVersionUID = 0L;
     return redirectUris_.getByteString(index);
   }
 
+  public static final int IS_DCR_FIELD_NUMBER = 15;
+  private boolean isDcr_ = false;
+  /**
+   * <code>bool is_dcr = 15 [json_name = "isDcr", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isDcr.
+   */
+  @java.lang.Override
+  public boolean getIsDcr() {
+    return isDcr_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -556,6 +567,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < redirectUris_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, redirectUris_.getRaw(i));
+    }
+    if (isDcr_ != false) {
+      output.writeBool(15, isDcr_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -625,6 +639,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getRedirectUrisList().size();
     }
+    if (isDcr_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(15, isDcr_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -672,6 +690,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getResourceId())) return false;
     if (!getRedirectUrisList()
         .equals(other.getRedirectUrisList())) return false;
+    if (getIsDcr()
+        != other.getIsDcr()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -724,6 +744,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + REDIRECT_URIS_FIELD_NUMBER;
       hash = (53 * hash) + getRedirectUrisList().hashCode();
     }
+    hash = (37 * hash) + IS_DCR_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsDcr());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -900,6 +923,7 @@ private static final long serialVersionUID = 0L;
       resourceId_ = "";
       redirectUris_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+      isDcr_ = false;
       return this;
     }
 
@@ -997,6 +1021,9 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00001000) != 0)) {
         redirectUris_.makeImmutable();
         result.redirectUris_ = redirectUris_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.isDcr_ = isDcr_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1161,6 +1188,9 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (other.getIsDcr() != false) {
+        setIsDcr(other.getIsDcr());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1275,6 +1305,11 @@ private static final long serialVersionUID = 0L;
               redirectUris_.add(s);
               break;
             } // case 106
+            case 120: {
+              isDcr_ = input.readBool();
+              bitField0_ |= 0x00002000;
+              break;
+            } // case 120
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2735,6 +2770,38 @@ private static final long serialVersionUID = 0L;
       ensureRedirectUrisIsMutable();
       redirectUris_.add(value);
       bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private boolean isDcr_ ;
+    /**
+     * <code>bool is_dcr = 15 [json_name = "isDcr", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The isDcr.
+     */
+    @java.lang.Override
+    public boolean getIsDcr() {
+      return isDcr_;
+    }
+    /**
+     * <code>bool is_dcr = 15 [json_name = "isDcr", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The isDcr to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsDcr(boolean value) {
+
+      isDcr_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_dcr = 15 [json_name = "isDcr", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsDcr() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      isDcr_ = false;
       onChanged();
       return this;
     }
