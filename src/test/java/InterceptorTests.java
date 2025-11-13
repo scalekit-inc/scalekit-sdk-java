@@ -95,7 +95,7 @@ public class InterceptorTests {
 
     @Test
     public void testVerifyInterceptorPayload_InvalidSecret() {
-        String secret = "invalid_secret";
+        String secret = "invalidsecret";
         String payload = "{\"test\":\"payload\"}";
 
         Map<String, String> headers = new HashMap<>();
