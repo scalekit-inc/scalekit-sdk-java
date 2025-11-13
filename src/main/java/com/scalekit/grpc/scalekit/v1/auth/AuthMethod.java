@@ -224,6 +224,63 @@ private static final long serialVersionUID = 0L;
     return codeChallengeLength_;
   }
 
+  public static final int ENABLE_WEBAUTHN_AUTO_REGISTRATION_FIELD_NUMBER = 7;
+  private boolean enableWebauthnAutoRegistration_ = false;
+  /**
+   * <code>optional bool enable_webauthn_auto_registration = 7 [json_name = "enableWebauthnAutoRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the enableWebauthnAutoRegistration field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableWebauthnAutoRegistration() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>optional bool enable_webauthn_auto_registration = 7 [json_name = "enableWebauthnAutoRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enableWebauthnAutoRegistration.
+   */
+  @java.lang.Override
+  public boolean getEnableWebauthnAutoRegistration() {
+    return enableWebauthnAutoRegistration_;
+  }
+
+  public static final int SHOW_PASSKEY_BUTTON_FIELD_NUMBER = 8;
+  private boolean showPasskeyButton_ = false;
+  /**
+   * <code>optional bool show_passkey_button = 8 [json_name = "showPasskeyButton", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the showPasskeyButton field is set.
+   */
+  @java.lang.Override
+  public boolean hasShowPasskeyButton() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <code>optional bool show_passkey_button = 8 [json_name = "showPasskeyButton", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The showPasskeyButton.
+   */
+  @java.lang.Override
+  public boolean getShowPasskeyButton() {
+    return showPasskeyButton_;
+  }
+
+  public static final int ENABLE_WEBAUTHN_CONDITIONAL_LOGIN_FIELD_NUMBER = 9;
+  private boolean enableWebauthnConditionalLogin_ = false;
+  /**
+   * <code>optional bool enable_webauthn_conditional_login = 9 [json_name = "enableWebauthnConditionalLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the enableWebauthnConditionalLogin field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableWebauthnConditionalLogin() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <code>optional bool enable_webauthn_conditional_login = 9 [json_name = "enableWebauthnConditionalLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enableWebauthnConditionalLogin.
+   */
+  @java.lang.Override
+  public boolean getEnableWebauthnConditionalLogin() {
+    return enableWebauthnConditionalLogin_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -256,6 +313,15 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeUInt32(6, codeChallengeLength_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(7, enableWebauthnAutoRegistration_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeBool(8, showPasskeyButton_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeBool(9, enableWebauthnConditionalLogin_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -285,6 +351,18 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(6, codeChallengeLength_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, enableWebauthnAutoRegistration_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(8, showPasskeyButton_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(9, enableWebauthnConditionalLogin_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -317,6 +395,21 @@ private static final long serialVersionUID = 0L;
       if (getCodeChallengeLength()
           != other.getCodeChallengeLength()) return false;
     }
+    if (hasEnableWebauthnAutoRegistration() != other.hasEnableWebauthnAutoRegistration()) return false;
+    if (hasEnableWebauthnAutoRegistration()) {
+      if (getEnableWebauthnAutoRegistration()
+          != other.getEnableWebauthnAutoRegistration()) return false;
+    }
+    if (hasShowPasskeyButton() != other.hasShowPasskeyButton()) return false;
+    if (hasShowPasskeyButton()) {
+      if (getShowPasskeyButton()
+          != other.getShowPasskeyButton()) return false;
+    }
+    if (hasEnableWebauthnConditionalLogin() != other.hasEnableWebauthnConditionalLogin()) return false;
+    if (hasEnableWebauthnConditionalLogin()) {
+      if (getEnableWebauthnConditionalLogin()
+          != other.getEnableWebauthnConditionalLogin()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -343,6 +436,21 @@ private static final long serialVersionUID = 0L;
     if (hasCodeChallengeLength()) {
       hash = (37 * hash) + CODE_CHALLENGE_LENGTH_FIELD_NUMBER;
       hash = (53 * hash) + getCodeChallengeLength();
+    }
+    if (hasEnableWebauthnAutoRegistration()) {
+      hash = (37 * hash) + ENABLE_WEBAUTHN_AUTO_REGISTRATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getEnableWebauthnAutoRegistration());
+    }
+    if (hasShowPasskeyButton()) {
+      hash = (37 * hash) + SHOW_PASSKEY_BUTTON_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getShowPasskeyButton());
+    }
+    if (hasEnableWebauthnConditionalLogin()) {
+      hash = (37 * hash) + ENABLE_WEBAUTHN_CONDITIONAL_LOGIN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getEnableWebauthnConditionalLogin());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -481,6 +589,9 @@ private static final long serialVersionUID = 0L;
       authInitiationUri_ = "";
       passwordlessType_ = 0;
       codeChallengeLength_ = 0;
+      enableWebauthnAutoRegistration_ = false;
+      showPasskeyButton_ = false;
+      enableWebauthnConditionalLogin_ = false;
       return this;
     }
 
@@ -534,6 +645,18 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.codeChallengeLength_ = codeChallengeLength_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.enableWebauthnAutoRegistration_ = enableWebauthnAutoRegistration_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.showPasskeyButton_ = showPasskeyButton_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.enableWebauthnConditionalLogin_ = enableWebauthnConditionalLogin_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -606,6 +729,15 @@ private static final long serialVersionUID = 0L;
       if (other.hasCodeChallengeLength()) {
         setCodeChallengeLength(other.getCodeChallengeLength());
       }
+      if (other.hasEnableWebauthnAutoRegistration()) {
+        setEnableWebauthnAutoRegistration(other.getEnableWebauthnAutoRegistration());
+      }
+      if (other.hasShowPasskeyButton()) {
+        setShowPasskeyButton(other.getShowPasskeyButton());
+      }
+      if (other.hasEnableWebauthnConditionalLogin()) {
+        setEnableWebauthnConditionalLogin(other.getEnableWebauthnConditionalLogin());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -662,6 +794,21 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000020;
               break;
             } // case 48
+            case 56: {
+              enableWebauthnAutoRegistration_ = input.readBool();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 56
+            case 64: {
+              showPasskeyButton_ = input.readBool();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 64
+            case 72: {
+              enableWebauthnConditionalLogin_ = input.readBool();
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 72
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1044,6 +1191,126 @@ private static final long serialVersionUID = 0L;
     public Builder clearCodeChallengeLength() {
       bitField0_ = (bitField0_ & ~0x00000020);
       codeChallengeLength_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableWebauthnAutoRegistration_ ;
+    /**
+     * <code>optional bool enable_webauthn_auto_registration = 7 [json_name = "enableWebauthnAutoRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the enableWebauthnAutoRegistration field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableWebauthnAutoRegistration() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>optional bool enable_webauthn_auto_registration = 7 [json_name = "enableWebauthnAutoRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enableWebauthnAutoRegistration.
+     */
+    @java.lang.Override
+    public boolean getEnableWebauthnAutoRegistration() {
+      return enableWebauthnAutoRegistration_;
+    }
+    /**
+     * <code>optional bool enable_webauthn_auto_registration = 7 [json_name = "enableWebauthnAutoRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enableWebauthnAutoRegistration to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableWebauthnAutoRegistration(boolean value) {
+
+      enableWebauthnAutoRegistration_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional bool enable_webauthn_auto_registration = 7 [json_name = "enableWebauthnAutoRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableWebauthnAutoRegistration() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      enableWebauthnAutoRegistration_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean showPasskeyButton_ ;
+    /**
+     * <code>optional bool show_passkey_button = 8 [json_name = "showPasskeyButton", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the showPasskeyButton field is set.
+     */
+    @java.lang.Override
+    public boolean hasShowPasskeyButton() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <code>optional bool show_passkey_button = 8 [json_name = "showPasskeyButton", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The showPasskeyButton.
+     */
+    @java.lang.Override
+    public boolean getShowPasskeyButton() {
+      return showPasskeyButton_;
+    }
+    /**
+     * <code>optional bool show_passkey_button = 8 [json_name = "showPasskeyButton", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The showPasskeyButton to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShowPasskeyButton(boolean value) {
+
+      showPasskeyButton_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional bool show_passkey_button = 8 [json_name = "showPasskeyButton", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearShowPasskeyButton() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      showPasskeyButton_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableWebauthnConditionalLogin_ ;
+    /**
+     * <code>optional bool enable_webauthn_conditional_login = 9 [json_name = "enableWebauthnConditionalLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the enableWebauthnConditionalLogin field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableWebauthnConditionalLogin() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <code>optional bool enable_webauthn_conditional_login = 9 [json_name = "enableWebauthnConditionalLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enableWebauthnConditionalLogin.
+     */
+    @java.lang.Override
+    public boolean getEnableWebauthnConditionalLogin() {
+      return enableWebauthnConditionalLogin_;
+    }
+    /**
+     * <code>optional bool enable_webauthn_conditional_login = 9 [json_name = "enableWebauthnConditionalLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enableWebauthnConditionalLogin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableWebauthnConditionalLogin(boolean value) {
+
+      enableWebauthnConditionalLogin_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional bool enable_webauthn_conditional_login = 9 [json_name = "enableWebauthnConditionalLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableWebauthnConditionalLogin() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      enableWebauthnConditionalLogin_ = false;
       onChanged();
       return this;
     }

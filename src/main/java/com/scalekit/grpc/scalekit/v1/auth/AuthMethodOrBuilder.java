@@ -81,4 +81,37 @@ public interface AuthMethodOrBuilder extends
    * @return The codeChallengeLength.
    */
   int getCodeChallengeLength();
+
+  /**
+   * <code>optional bool enable_webauthn_auto_registration = 7 [json_name = "enableWebauthnAutoRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the enableWebauthnAutoRegistration field is set.
+   */
+  boolean hasEnableWebauthnAutoRegistration();
+  /**
+   * <code>optional bool enable_webauthn_auto_registration = 7 [json_name = "enableWebauthnAutoRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enableWebauthnAutoRegistration.
+   */
+  boolean getEnableWebauthnAutoRegistration();
+
+  /**
+   * <code>optional bool show_passkey_button = 8 [json_name = "showPasskeyButton", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the showPasskeyButton field is set.
+   */
+  boolean hasShowPasskeyButton();
+  /**
+   * <code>optional bool show_passkey_button = 8 [json_name = "showPasskeyButton", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The showPasskeyButton.
+   */
+  boolean getShowPasskeyButton();
+
+  /**
+   * <code>optional bool enable_webauthn_conditional_login = 9 [json_name = "enableWebauthnConditionalLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the enableWebauthnConditionalLogin field is set.
+   */
+  boolean hasEnableWebauthnConditionalLogin();
+  /**
+   * <code>optional bool enable_webauthn_conditional_login = 9 [json_name = "enableWebauthnConditionalLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enableWebauthnConditionalLogin.
+   */
+  boolean getEnableWebauthnConditionalLogin();
 }

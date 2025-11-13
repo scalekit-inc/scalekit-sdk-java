@@ -27,6 +27,9 @@ private static final long serialVersionUID = 0L;
     status_ = "";
     connectionDetails_ = java.util.Collections.emptyList();
     workflow_ = "";
+    resourceId_ = "";
+    resourceName_ = "";
+    resourceType_ = "";
   }
 
   @java.lang.Override
@@ -468,6 +471,123 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int RESOURCE_ID_FIELD_NUMBER = 12;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceId_ = "";
+  /**
+   * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+   * @return The resourceId.
+   */
+  @java.lang.Override
+  public java.lang.String getResourceId() {
+    java.lang.Object ref = resourceId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resourceId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+   * @return The bytes for resourceId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getResourceIdBytes() {
+    java.lang.Object ref = resourceId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      resourceId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RESOURCE_NAME_FIELD_NUMBER = 13;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceName_ = "";
+  /**
+   * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+   * @return The resourceName.
+   */
+  @java.lang.Override
+  public java.lang.String getResourceName() {
+    java.lang.Object ref = resourceName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resourceName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+   * @return The bytes for resourceName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getResourceNameBytes() {
+    java.lang.Object ref = resourceName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      resourceName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RESOURCE_TYPE_FIELD_NUMBER = 14;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceType_ = "";
+  /**
+   * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+   * @return The resourceType.
+   */
+  @java.lang.Override
+  public java.lang.String getResourceType() {
+    java.lang.Object ref = resourceType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resourceType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+   * @return The bytes for resourceType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getResourceTypeBytes() {
+    java.lang.Object ref = resourceType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      resourceType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -515,6 +635,15 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflow_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, workflow_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, resourceId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, resourceName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, resourceType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -559,6 +688,15 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflow_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, workflow_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, resourceId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, resourceName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, resourceType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -599,6 +737,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getConnectionDetailsList())) return false;
     if (!getWorkflow()
         .equals(other.getWorkflow())) return false;
+    if (!getResourceId()
+        .equals(other.getResourceId())) return false;
+    if (!getResourceName()
+        .equals(other.getResourceName())) return false;
+    if (!getResourceType()
+        .equals(other.getResourceType())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -636,6 +780,12 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + WORKFLOW_FIELD_NUMBER;
     hash = (53 * hash) + getWorkflow().hashCode();
+    hash = (37 * hash) + RESOURCE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getResourceId().hashCode();
+    hash = (37 * hash) + RESOURCE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getResourceName().hashCode();
+    hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getResourceType().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -795,6 +945,9 @@ private static final long serialVersionUID = 0L;
       }
       bitField0_ = (bitField0_ & ~0x00000200);
       workflow_ = "";
+      resourceId_ = "";
+      resourceName_ = "";
+      resourceType_ = "";
       return this;
     }
 
@@ -874,6 +1027,15 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.workflow_ = workflow_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.resourceId_ = resourceId_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.resourceName_ = resourceName_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.resourceType_ = resourceType_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -996,6 +1158,21 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000400;
         onChanged();
       }
+      if (!other.getResourceId().isEmpty()) {
+        resourceId_ = other.resourceId_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      if (!other.getResourceName().isEmpty()) {
+        resourceName_ = other.resourceName_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      if (!other.getResourceType().isEmpty()) {
+        resourceType_ = other.resourceType_;
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1087,6 +1264,21 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000400;
               break;
             } // case 90
+            case 98: {
+              resourceId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 98
+            case 106: {
+              resourceName_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00001000;
+              break;
+            } // case 106
+            case 114: {
+              resourceType_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00002000;
+              break;
+            } // case 114
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2109,6 +2301,222 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       workflow_ = value;
       bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object resourceId_ = "";
+    /**
+     * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+     * @return The resourceId.
+     */
+    public java.lang.String getResourceId() {
+      java.lang.Object ref = resourceId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+     * @return The bytes for resourceId.
+     */
+    public com.google.protobuf.ByteString
+        getResourceIdBytes() {
+      java.lang.Object ref = resourceId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resourceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+     * @param value The resourceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      resourceId_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceId() {
+      resourceId_ = getDefaultInstance().getResourceId();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+     * @param value The bytes for resourceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      resourceId_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object resourceName_ = "";
+    /**
+     * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+     * @return The resourceName.
+     */
+    public java.lang.String getResourceName() {
+      java.lang.Object ref = resourceName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+     * @return The bytes for resourceName.
+     */
+    public com.google.protobuf.ByteString
+        getResourceNameBytes() {
+      java.lang.Object ref = resourceName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resourceName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+     * @param value The resourceName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceName(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      resourceName_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceName() {
+      resourceName_ = getDefaultInstance().getResourceName();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+     * @param value The bytes for resourceName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      resourceName_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object resourceType_ = "";
+    /**
+     * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+     * @return The resourceType.
+     */
+    public java.lang.String getResourceType() {
+      java.lang.Object ref = resourceType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+     * @return The bytes for resourceType.
+     */
+    public com.google.protobuf.ByteString
+        getResourceTypeBytes() {
+      java.lang.Object ref = resourceType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resourceType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+     * @param value The resourceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceType(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      resourceType_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceType() {
+      resourceType_ = getDefaultInstance().getResourceType();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+     * @param value The bytes for resourceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      resourceType_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

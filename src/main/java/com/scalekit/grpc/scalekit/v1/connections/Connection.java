@@ -74,6 +74,7 @@ private static final long serialVersionUID = 0L;
     OAUTH_CONFIG(20),
     PASSWORDLESS_CONFIG(22),
     STATIC_CONFIG(26),
+    WEBAUTHN_CONFIG(27),
     SETTINGS_NOT_SET(0);
     private final int value;
     private SettingsCase(int value) {
@@ -96,6 +97,7 @@ private static final long serialVersionUID = 0L;
         case 20: return OAUTH_CONFIG;
         case 22: return PASSWORDLESS_CONFIG;
         case 26: return STATIC_CONFIG;
+        case 27: return WEBAUTHN_CONFIG;
         case 0: return SETTINGS_NOT_SET;
         default: return null;
       }
@@ -655,6 +657,37 @@ java.lang.String defaultValue) {
     return com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig.getDefaultInstance();
   }
 
+  public static final int WEBAUTHN_CONFIG_FIELD_NUMBER = 27;
+  /**
+   * <code>.scalekit.v1.connections.WebAuthConfiguration webauthn_config = 27 [json_name = "webauthnConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the webauthnConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWebauthnConfig() {
+    return settingsCase_ == 27;
+  }
+  /**
+   * <code>.scalekit.v1.connections.WebAuthConfiguration webauthn_config = 27 [json_name = "webauthnConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The webauthnConfig.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration getWebauthnConfig() {
+    if (settingsCase_ == 27) {
+       return (com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration.getDefaultInstance();
+  }
+  /**
+   * <code>.scalekit.v1.connections.WebAuthConfiguration webauthn_config = 27 [json_name = "webauthnConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.WebAuthConfigurationOrBuilder getWebauthnConfigOrBuilder() {
+    if (settingsCase_ == 27) {
+       return (com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration.getDefaultInstance();
+  }
+
   public static final int KEY_ID_FIELD_NUMBER = 25;
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyId_ = "";
@@ -782,6 +815,32 @@ java.lang.String defaultValue) {
     return domains_.get(index);
   }
 
+  public static final int SYNC_USER_PROFILE_ON_SIGNIN_FIELD_NUMBER = 28;
+  private com.google.protobuf.BoolValue syncUserProfileOnSignin_;
+  /**
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the syncUserProfileOnSignin field is set.
+   */
+  @java.lang.Override
+  public boolean hasSyncUserProfileOnSignin() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The syncUserProfileOnSignin.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getSyncUserProfileOnSignin() {
+    return syncUserProfileOnSignin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnSignin_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnSigninOrBuilder() {
+    return syncUserProfileOnSignin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnSignin_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -861,6 +920,12 @@ java.lang.String defaultValue) {
     }
     if (settingsCase_ == 26) {
       output.writeMessage(26, (com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_);
+    }
+    if (settingsCase_ == 27) {
+      output.writeMessage(27, (com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration) settings_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(28, getSyncUserProfileOnSignin());
     }
     getUnknownFields().writeTo(output);
   }
@@ -955,6 +1020,14 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(26, (com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfig) settings_);
     }
+    if (settingsCase_ == 27) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(27, (com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration) settings_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(28, getSyncUserProfileOnSignin());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1010,6 +1083,11 @@ java.lang.String defaultValue) {
         .equals(other.getProviderKey())) return false;
     if (!getDomainsList()
         .equals(other.getDomainsList())) return false;
+    if (hasSyncUserProfileOnSignin() != other.hasSyncUserProfileOnSignin()) return false;
+    if (hasSyncUserProfileOnSignin()) {
+      if (!getSyncUserProfileOnSignin()
+          .equals(other.getSyncUserProfileOnSignin())) return false;
+    }
     if (!getSettingsCase().equals(other.getSettingsCase())) return false;
     switch (settingsCase_) {
       case 18:
@@ -1031,6 +1109,10 @@ java.lang.String defaultValue) {
       case 26:
         if (!getStaticConfig()
             .equals(other.getStaticConfig())) return false;
+        break;
+      case 27:
+        if (!getWebauthnConfig()
+            .equals(other.getWebauthnConfig())) return false;
         break;
       case 0:
       default:
@@ -1092,6 +1174,10 @@ java.lang.String defaultValue) {
       hash = (37 * hash) + DOMAINS_FIELD_NUMBER;
       hash = (53 * hash) + getDomainsList().hashCode();
     }
+    if (hasSyncUserProfileOnSignin()) {
+      hash = (37 * hash) + SYNC_USER_PROFILE_ON_SIGNIN_FIELD_NUMBER;
+      hash = (53 * hash) + getSyncUserProfileOnSignin().hashCode();
+    }
     switch (settingsCase_) {
       case 18:
         hash = (37 * hash) + OIDC_CONFIG_FIELD_NUMBER;
@@ -1112,6 +1198,10 @@ java.lang.String defaultValue) {
       case 26:
         hash = (37 * hash) + STATIC_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getStaticConfig().hashCode();
+        break;
+      case 27:
+        hash = (37 * hash) + WEBAUTHN_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getWebauthnConfig().hashCode();
         break;
       case 0:
       default:
@@ -1271,6 +1361,7 @@ java.lang.String defaultValue) {
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getDomainsFieldBuilder();
+        getSyncUserProfileOnSigninFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1313,6 +1404,9 @@ java.lang.String defaultValue) {
       if (staticConfigBuilder_ != null) {
         staticConfigBuilder_.clear();
       }
+      if (webauthnConfigBuilder_ != null) {
+        webauthnConfigBuilder_.clear();
+      }
       keyId_ = "";
       providerKey_ = "";
       if (domainsBuilder_ == null) {
@@ -1321,7 +1415,12 @@ java.lang.String defaultValue) {
         domains_ = null;
         domainsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
+      syncUserProfileOnSignin_ = null;
+      if (syncUserProfileOnSigninBuilder_ != null) {
+        syncUserProfileOnSigninBuilder_.dispose();
+        syncUserProfileOnSigninBuilder_ = null;
+      }
       settingsCase_ = 0;
       settings_ = null;
       return this;
@@ -1359,9 +1458,9 @@ java.lang.String defaultValue) {
 
     private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.connections.Connection result) {
       if (domainsBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)) {
+        if (((bitField0_ & 0x00200000) != 0)) {
           domains_ = java.util.Collections.unmodifiableList(domains_);
-          bitField0_ = (bitField0_ & ~0x00100000);
+          bitField0_ = (bitField0_ & ~0x00200000);
         }
         result.domains_ = domains_;
       } else {
@@ -1419,12 +1518,18 @@ java.lang.String defaultValue) {
             : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.keyId_ = keyId_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.providerKey_ = providerKey_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.syncUserProfileOnSignin_ = syncUserProfileOnSigninBuilder_ == null
+            ? syncUserProfileOnSignin_
+            : syncUserProfileOnSigninBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1451,6 +1556,10 @@ java.lang.String defaultValue) {
       if (settingsCase_ == 26 &&
           staticConfigBuilder_ != null) {
         result.settings_ = staticConfigBuilder_.build();
+      }
+      if (settingsCase_ == 27 &&
+          webauthnConfigBuilder_ != null) {
+        result.settings_ = webauthnConfigBuilder_.build();
       }
     }
 
@@ -1547,19 +1656,19 @@ java.lang.String defaultValue) {
       }
       if (other.hasKeyId()) {
         keyId_ = other.keyId_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (!other.getProviderKey().isEmpty()) {
         providerKey_ = other.providerKey_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (domainsBuilder_ == null) {
         if (!other.domains_.isEmpty()) {
           if (domains_.isEmpty()) {
             domains_ = other.domains_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00200000);
           } else {
             ensureDomainsIsMutable();
             domains_.addAll(other.domains_);
@@ -1572,7 +1681,7 @@ java.lang.String defaultValue) {
             domainsBuilder_.dispose();
             domainsBuilder_ = null;
             domains_ = other.domains_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00200000);
             domainsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getDomainsFieldBuilder() : null;
@@ -1580,6 +1689,9 @@ java.lang.String defaultValue) {
             domainsBuilder_.addAllMessages(other.domains_);
           }
         }
+      }
+      if (other.hasSyncUserProfileOnSignin()) {
+        mergeSyncUserProfileOnSignin(other.getSyncUserProfileOnSignin());
       }
       switch (other.getSettingsCase()) {
         case OIDC_CONFIG: {
@@ -1600,6 +1712,10 @@ java.lang.String defaultValue) {
         }
         case STATIC_CONFIG: {
           mergeStaticConfig(other.getStaticConfig());
+          break;
+        }
+        case WEBAUTHN_CONFIG: {
+          mergeWebauthnConfig(other.getWebauthnConfig());
           break;
         }
         case SETTINGS_NOT_SET: {
@@ -1735,7 +1851,7 @@ java.lang.String defaultValue) {
             } // case 178
             case 186: {
               providerKey_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00080000;
+              bitField0_ |= 0x00100000;
               break;
             } // case 186
             case 194: {
@@ -1753,7 +1869,7 @@ java.lang.String defaultValue) {
             } // case 194
             case 202: {
               keyId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00040000;
+              bitField0_ |= 0x00080000;
               break;
             } // case 202
             case 210: {
@@ -1763,6 +1879,20 @@ java.lang.String defaultValue) {
               settingsCase_ = 26;
               break;
             } // case 210
+            case 218: {
+              input.readMessage(
+                  getWebauthnConfigFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              settingsCase_ = 27;
+              break;
+            } // case 218
+            case 226: {
+              input.readMessage(
+                  getSyncUserProfileOnSigninFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00400000;
+              break;
+            } // case 226
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3445,13 +3575,155 @@ java.lang.String defaultValue) {
       return staticConfigBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration, com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration.Builder, com.scalekit.grpc.scalekit.v1.connections.WebAuthConfigurationOrBuilder> webauthnConfigBuilder_;
+    /**
+     * <code>.scalekit.v1.connections.WebAuthConfiguration webauthn_config = 27 [json_name = "webauthnConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the webauthnConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasWebauthnConfig() {
+      return settingsCase_ == 27;
+    }
+    /**
+     * <code>.scalekit.v1.connections.WebAuthConfiguration webauthn_config = 27 [json_name = "webauthnConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The webauthnConfig.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration getWebauthnConfig() {
+      if (webauthnConfigBuilder_ == null) {
+        if (settingsCase_ == 27) {
+          return (com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration.getDefaultInstance();
+      } else {
+        if (settingsCase_ == 27) {
+          return webauthnConfigBuilder_.getMessage();
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.WebAuthConfiguration webauthn_config = 27 [json_name = "webauthnConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setWebauthnConfig(com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration value) {
+      if (webauthnConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        settings_ = value;
+        onChanged();
+      } else {
+        webauthnConfigBuilder_.setMessage(value);
+      }
+      settingsCase_ = 27;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.WebAuthConfiguration webauthn_config = 27 [json_name = "webauthnConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setWebauthnConfig(
+        com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration.Builder builderForValue) {
+      if (webauthnConfigBuilder_ == null) {
+        settings_ = builderForValue.build();
+        onChanged();
+      } else {
+        webauthnConfigBuilder_.setMessage(builderForValue.build());
+      }
+      settingsCase_ = 27;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.WebAuthConfiguration webauthn_config = 27 [json_name = "webauthnConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeWebauthnConfig(com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration value) {
+      if (webauthnConfigBuilder_ == null) {
+        if (settingsCase_ == 27 &&
+            settings_ != com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration.getDefaultInstance()) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration.newBuilder((com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration) settings_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          settings_ = value;
+        }
+        onChanged();
+      } else {
+        if (settingsCase_ == 27) {
+          webauthnConfigBuilder_.mergeFrom(value);
+        } else {
+          webauthnConfigBuilder_.setMessage(value);
+        }
+      }
+      settingsCase_ = 27;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.WebAuthConfiguration webauthn_config = 27 [json_name = "webauthnConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearWebauthnConfig() {
+      if (webauthnConfigBuilder_ == null) {
+        if (settingsCase_ == 27) {
+          settingsCase_ = 0;
+          settings_ = null;
+          onChanged();
+        }
+      } else {
+        if (settingsCase_ == 27) {
+          settingsCase_ = 0;
+          settings_ = null;
+        }
+        webauthnConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.WebAuthConfiguration webauthn_config = 27 [json_name = "webauthnConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration.Builder getWebauthnConfigBuilder() {
+      return getWebauthnConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.connections.WebAuthConfiguration webauthn_config = 27 [json_name = "webauthnConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.WebAuthConfigurationOrBuilder getWebauthnConfigOrBuilder() {
+      if ((settingsCase_ == 27) && (webauthnConfigBuilder_ != null)) {
+        return webauthnConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (settingsCase_ == 27) {
+          return (com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.WebAuthConfiguration webauthn_config = 27 [json_name = "webauthnConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration, com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration.Builder, com.scalekit.grpc.scalekit.v1.connections.WebAuthConfigurationOrBuilder> 
+        getWebauthnConfigFieldBuilder() {
+      if (webauthnConfigBuilder_ == null) {
+        if (!(settingsCase_ == 27)) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration.getDefaultInstance();
+        }
+        webauthnConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration, com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration.Builder, com.scalekit.grpc.scalekit.v1.connections.WebAuthConfigurationOrBuilder>(
+                (com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration) settings_,
+                getParentForChildren(),
+                isClean());
+        settings_ = null;
+      }
+      settingsCase_ = 27;
+      onChanged();
+      return webauthnConfigBuilder_;
+    }
+
     private java.lang.Object keyId_ = "";
     /**
      * <code>optional string key_id = 25 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the keyId field is set.
      */
     public boolean hasKeyId() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      * <code>optional string key_id = 25 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -3495,7 +3767,7 @@ java.lang.String defaultValue) {
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       keyId_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -3505,7 +3777,7 @@ java.lang.String defaultValue) {
      */
     public Builder clearKeyId() {
       keyId_ = getDefaultInstance().getKeyId();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -3519,7 +3791,7 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       keyId_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -3567,7 +3839,7 @@ java.lang.String defaultValue) {
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       providerKey_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -3577,7 +3849,7 @@ java.lang.String defaultValue) {
      */
     public Builder clearProviderKey() {
       providerKey_ = getDefaultInstance().getProviderKey();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -3591,7 +3863,7 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       providerKey_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -3599,9 +3871,9 @@ java.lang.String defaultValue) {
     private java.util.List<com.scalekit.grpc.scalekit.v1.domains.Domain> domains_ =
       java.util.Collections.emptyList();
     private void ensureDomainsIsMutable() {
-      if (!((bitField0_ & 0x00100000) != 0)) {
+      if (!((bitField0_ & 0x00200000) != 0)) {
         domains_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.domains.Domain>(domains_);
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
        }
     }
 
@@ -3751,7 +4023,7 @@ java.lang.String defaultValue) {
     public Builder clearDomains() {
       if (domainsBuilder_ == null) {
         domains_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         onChanged();
       } else {
         domainsBuilder_.clear();
@@ -3828,12 +4100,133 @@ java.lang.String defaultValue) {
         domainsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.scalekit.grpc.scalekit.v1.domains.Domain, com.scalekit.grpc.scalekit.v1.domains.Domain.Builder, com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder>(
                 domains_,
-                ((bitField0_ & 0x00100000) != 0),
+                ((bitField0_ & 0x00200000) != 0),
                 getParentForChildren(),
                 isClean());
         domains_ = null;
       }
       return domainsBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue syncUserProfileOnSignin_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> syncUserProfileOnSigninBuilder_;
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the syncUserProfileOnSignin field is set.
+     */
+    public boolean hasSyncUserProfileOnSignin() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The syncUserProfileOnSignin.
+     */
+    public com.google.protobuf.BoolValue getSyncUserProfileOnSignin() {
+      if (syncUserProfileOnSigninBuilder_ == null) {
+        return syncUserProfileOnSignin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnSignin_;
+      } else {
+        return syncUserProfileOnSigninBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setSyncUserProfileOnSignin(com.google.protobuf.BoolValue value) {
+      if (syncUserProfileOnSigninBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        syncUserProfileOnSignin_ = value;
+      } else {
+        syncUserProfileOnSigninBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setSyncUserProfileOnSignin(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (syncUserProfileOnSigninBuilder_ == null) {
+        syncUserProfileOnSignin_ = builderForValue.build();
+      } else {
+        syncUserProfileOnSigninBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeSyncUserProfileOnSignin(com.google.protobuf.BoolValue value) {
+      if (syncUserProfileOnSigninBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0) &&
+          syncUserProfileOnSignin_ != null &&
+          syncUserProfileOnSignin_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getSyncUserProfileOnSigninBuilder().mergeFrom(value);
+        } else {
+          syncUserProfileOnSignin_ = value;
+        }
+      } else {
+        syncUserProfileOnSigninBuilder_.mergeFrom(value);
+      }
+      if (syncUserProfileOnSignin_ != null) {
+        bitField0_ |= 0x00400000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearSyncUserProfileOnSignin() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      syncUserProfileOnSignin_ = null;
+      if (syncUserProfileOnSigninBuilder_ != null) {
+        syncUserProfileOnSigninBuilder_.dispose();
+        syncUserProfileOnSigninBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getSyncUserProfileOnSigninBuilder() {
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return getSyncUserProfileOnSigninFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnSigninOrBuilder() {
+      if (syncUserProfileOnSigninBuilder_ != null) {
+        return syncUserProfileOnSigninBuilder_.getMessageOrBuilder();
+      } else {
+        return syncUserProfileOnSignin_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnSignin_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getSyncUserProfileOnSigninFieldBuilder() {
+      if (syncUserProfileOnSigninBuilder_ == null) {
+        syncUserProfileOnSigninBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getSyncUserProfileOnSignin(),
+                getParentForChildren(),
+                isClean());
+        syncUserProfileOnSignin_ = null;
+      }
+      return syncUserProfileOnSigninBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

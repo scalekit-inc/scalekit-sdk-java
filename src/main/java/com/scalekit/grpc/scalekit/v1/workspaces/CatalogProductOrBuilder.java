@@ -51,11 +51,11 @@ public interface CatalogProductOrBuilder extends
   boolean getActive();
 
   /**
-   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata"];</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
    */
   int getMetadataCount();
   /**
-   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata"];</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
    */
   boolean containsMetadata(
       java.lang.String key);
@@ -66,12 +66,12 @@ public interface CatalogProductOrBuilder extends
   java.util.Map<java.lang.String, java.lang.String>
   getMetadata();
   /**
-   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata"];</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getMetadataMap();
   /**
-   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata"];</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
    */
   /* nullable */
 java.lang.String getMetadataOrDefault(
@@ -79,7 +79,7 @@ java.lang.String getMetadataOrDefault(
       /* nullable */
 java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata"];</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
    */
   java.lang.String getMetadataOrThrow(
       java.lang.String key);

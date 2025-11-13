@@ -53,7 +53,7 @@
 Add this dependency to your project's build file:
 
 ```gradle
-implementation "com.scalekit:scalekit-sdk-java:2.0.5"
+implementation "com.scalekit:scalekit-sdk-java:2.0.6"
 ```
 
 ### Maven users

@@ -9,60 +9,60 @@ public interface LocationOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string region = 1 [json_name = "region"];</code>
+   * <code>string region = 1 [json_name = "region", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The region.
    */
   java.lang.String getRegion();
   /**
-   * <code>string region = 1 [json_name = "region"];</code>
+   * <code>string region = 1 [json_name = "region", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for region.
    */
   com.google.protobuf.ByteString
       getRegionBytes();
 
   /**
-   * <code>string region_subdivision = 2 [json_name = "regionSubdivision"];</code>
+   * <code>string region_subdivision = 2 [json_name = "regionSubdivision", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The regionSubdivision.
    */
   java.lang.String getRegionSubdivision();
   /**
-   * <code>string region_subdivision = 2 [json_name = "regionSubdivision"];</code>
+   * <code>string region_subdivision = 2 [json_name = "regionSubdivision", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for regionSubdivision.
    */
   com.google.protobuf.ByteString
       getRegionSubdivisionBytes();
 
   /**
-   * <code>string city = 3 [json_name = "city"];</code>
+   * <code>string city = 3 [json_name = "city", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The city.
    */
   java.lang.String getCity();
   /**
-   * <code>string city = 3 [json_name = "city"];</code>
+   * <code>string city = 3 [json_name = "city", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for city.
    */
   com.google.protobuf.ByteString
       getCityBytes();
 
   /**
-   * <code>string latitude = 4 [json_name = "latitude"];</code>
+   * <code>string latitude = 4 [json_name = "latitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The latitude.
    */
   java.lang.String getLatitude();
   /**
-   * <code>string latitude = 4 [json_name = "latitude"];</code>
+   * <code>string latitude = 4 [json_name = "latitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for latitude.
    */
   com.google.protobuf.ByteString
       getLatitudeBytes();
 
   /**
-   * <code>string longitude = 5 [json_name = "longitude"];</code>
+   * <code>string longitude = 5 [json_name = "longitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The longitude.
    */
   java.lang.String getLongitude();
   /**
-   * <code>string longitude = 5 [json_name = "longitude"];</code>
+   * <code>string longitude = 5 [json_name = "longitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for longitude.
    */
   com.google.protobuf.ByteString

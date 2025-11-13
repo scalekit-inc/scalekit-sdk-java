@@ -48,7 +48,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
   /**
-   * <code>string region = 1 [json_name = "region"];</code>
+   * <code>string region = 1 [json_name = "region", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The region.
    */
   @java.lang.Override
@@ -65,7 +65,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string region = 1 [json_name = "region"];</code>
+   * <code>string region = 1 [json_name = "region", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for region.
    */
   @java.lang.Override
@@ -87,7 +87,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object regionSubdivision_ = "";
   /**
-   * <code>string region_subdivision = 2 [json_name = "regionSubdivision"];</code>
+   * <code>string region_subdivision = 2 [json_name = "regionSubdivision", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The regionSubdivision.
    */
   @java.lang.Override
@@ -104,7 +104,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string region_subdivision = 2 [json_name = "regionSubdivision"];</code>
+   * <code>string region_subdivision = 2 [json_name = "regionSubdivision", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for regionSubdivision.
    */
   @java.lang.Override
@@ -126,7 +126,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object city_ = "";
   /**
-   * <code>string city = 3 [json_name = "city"];</code>
+   * <code>string city = 3 [json_name = "city", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The city.
    */
   @java.lang.Override
@@ -143,7 +143,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string city = 3 [json_name = "city"];</code>
+   * <code>string city = 3 [json_name = "city", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for city.
    */
   @java.lang.Override
@@ -165,7 +165,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object latitude_ = "";
   /**
-   * <code>string latitude = 4 [json_name = "latitude"];</code>
+   * <code>string latitude = 4 [json_name = "latitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The latitude.
    */
   @java.lang.Override
@@ -182,7 +182,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string latitude = 4 [json_name = "latitude"];</code>
+   * <code>string latitude = 4 [json_name = "latitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for latitude.
    */
   @java.lang.Override
@@ -204,7 +204,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object longitude_ = "";
   /**
-   * <code>string longitude = 5 [json_name = "longitude"];</code>
+   * <code>string longitude = 5 [json_name = "longitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The longitude.
    */
   @java.lang.Override
@@ -221,7 +221,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string longitude = 5 [json_name = "longitude"];</code>
+   * <code>string longitude = 5 [json_name = "longitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for longitude.
    */
   @java.lang.Override
@@ -663,7 +663,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object region_ = "";
     /**
-     * <code>string region = 1 [json_name = "region"];</code>
+     * <code>string region = 1 [json_name = "region", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The region.
      */
     public java.lang.String getRegion() {
@@ -679,7 +679,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string region = 1 [json_name = "region"];</code>
+     * <code>string region = 1 [json_name = "region", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for region.
      */
     public com.google.protobuf.ByteString
@@ -696,7 +696,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string region = 1 [json_name = "region"];</code>
+     * <code>string region = 1 [json_name = "region", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The region to set.
      * @return This builder for chaining.
      */
@@ -709,7 +709,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string region = 1 [json_name = "region"];</code>
+     * <code>string region = 1 [json_name = "region", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
@@ -719,7 +719,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string region = 1 [json_name = "region"];</code>
+     * <code>string region = 1 [json_name = "region", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for region to set.
      * @return This builder for chaining.
      */
@@ -735,7 +735,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object regionSubdivision_ = "";
     /**
-     * <code>string region_subdivision = 2 [json_name = "regionSubdivision"];</code>
+     * <code>string region_subdivision = 2 [json_name = "regionSubdivision", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The regionSubdivision.
      */
     public java.lang.String getRegionSubdivision() {
@@ -751,7 +751,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string region_subdivision = 2 [json_name = "regionSubdivision"];</code>
+     * <code>string region_subdivision = 2 [json_name = "regionSubdivision", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for regionSubdivision.
      */
     public com.google.protobuf.ByteString
@@ -768,7 +768,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string region_subdivision = 2 [json_name = "regionSubdivision"];</code>
+     * <code>string region_subdivision = 2 [json_name = "regionSubdivision", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The regionSubdivision to set.
      * @return This builder for chaining.
      */
@@ -781,7 +781,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string region_subdivision = 2 [json_name = "regionSubdivision"];</code>
+     * <code>string region_subdivision = 2 [json_name = "regionSubdivision", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearRegionSubdivision() {
@@ -791,7 +791,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string region_subdivision = 2 [json_name = "regionSubdivision"];</code>
+     * <code>string region_subdivision = 2 [json_name = "regionSubdivision", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for regionSubdivision to set.
      * @return This builder for chaining.
      */
@@ -807,7 +807,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object city_ = "";
     /**
-     * <code>string city = 3 [json_name = "city"];</code>
+     * <code>string city = 3 [json_name = "city", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The city.
      */
     public java.lang.String getCity() {
@@ -823,7 +823,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string city = 3 [json_name = "city"];</code>
+     * <code>string city = 3 [json_name = "city", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for city.
      */
     public com.google.protobuf.ByteString
@@ -840,7 +840,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string city = 3 [json_name = "city"];</code>
+     * <code>string city = 3 [json_name = "city", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The city to set.
      * @return This builder for chaining.
      */
@@ -853,7 +853,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string city = 3 [json_name = "city"];</code>
+     * <code>string city = 3 [json_name = "city", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearCity() {
@@ -863,7 +863,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string city = 3 [json_name = "city"];</code>
+     * <code>string city = 3 [json_name = "city", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for city to set.
      * @return This builder for chaining.
      */
@@ -879,7 +879,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object latitude_ = "";
     /**
-     * <code>string latitude = 4 [json_name = "latitude"];</code>
+     * <code>string latitude = 4 [json_name = "latitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The latitude.
      */
     public java.lang.String getLatitude() {
@@ -895,7 +895,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string latitude = 4 [json_name = "latitude"];</code>
+     * <code>string latitude = 4 [json_name = "latitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for latitude.
      */
     public com.google.protobuf.ByteString
@@ -912,7 +912,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string latitude = 4 [json_name = "latitude"];</code>
+     * <code>string latitude = 4 [json_name = "latitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The latitude to set.
      * @return This builder for chaining.
      */
@@ -925,7 +925,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string latitude = 4 [json_name = "latitude"];</code>
+     * <code>string latitude = 4 [json_name = "latitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearLatitude() {
@@ -935,7 +935,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string latitude = 4 [json_name = "latitude"];</code>
+     * <code>string latitude = 4 [json_name = "latitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for latitude to set.
      * @return This builder for chaining.
      */
@@ -951,7 +951,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object longitude_ = "";
     /**
-     * <code>string longitude = 5 [json_name = "longitude"];</code>
+     * <code>string longitude = 5 [json_name = "longitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The longitude.
      */
     public java.lang.String getLongitude() {
@@ -967,7 +967,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string longitude = 5 [json_name = "longitude"];</code>
+     * <code>string longitude = 5 [json_name = "longitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for longitude.
      */
     public com.google.protobuf.ByteString
@@ -984,7 +984,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string longitude = 5 [json_name = "longitude"];</code>
+     * <code>string longitude = 5 [json_name = "longitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The longitude to set.
      * @return This builder for chaining.
      */
@@ -997,7 +997,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string longitude = 5 [json_name = "longitude"];</code>
+     * <code>string longitude = 5 [json_name = "longitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearLongitude() {
@@ -1007,7 +1007,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string longitude = 5 [json_name = "longitude"];</code>
+     * <code>string longitude = 5 [json_name = "longitude", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for longitude to set.
      * @return This builder for chaining.
      */

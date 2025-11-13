@@ -9,17 +9,17 @@ public interface RevokeSessionResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession"];</code>
+   * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the revokedSession field is set.
    */
   boolean hasRevokedSession();
   /**
-   * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession"];</code>
+   * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The revokedSession.
    */
   com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetails getRevokedSession();
   /**
-   * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession"];</code>
+   * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetailsOrBuilder getRevokedSessionOrBuilder();
 }

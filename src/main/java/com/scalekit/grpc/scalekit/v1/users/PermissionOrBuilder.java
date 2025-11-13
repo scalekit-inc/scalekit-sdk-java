@@ -33,48 +33,36 @@ public interface PermissionOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The displayName.
-   */
-  java.lang.String getDisplayName();
-  /**
-   * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for displayName.
-   */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
-
-  /**
-   * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string description = 3 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The description.
    */
   java.lang.String getDescription();
   /**
-   * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string description = 3 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
 
   /**
-   * <code>repeated string tags = 5 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated string tags = 4 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String>
       getTagsList();
   /**
-   * <code>repeated string tags = 5 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated string tags = 4 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The count of tags.
    */
   int getTagsCount();
   /**
-   * <code>repeated string tags = 5 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated string tags = 4 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
   /**
-   * <code>repeated string tags = 5 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated string tags = 4 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the tags at the given index.
    */

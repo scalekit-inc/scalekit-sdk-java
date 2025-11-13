@@ -43,7 +43,7 @@ private static final long serialVersionUID = 0L;
   public static final int REVOKED_SESSION_FIELD_NUMBER = 1;
   private com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetails revokedSession_;
   /**
-   * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession"];</code>
+   * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the revokedSession field is set.
    */
   @java.lang.Override
@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession"];</code>
+   * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The revokedSession.
    */
   @java.lang.Override
@@ -59,7 +59,7 @@ private static final long serialVersionUID = 0L;
     return revokedSession_ == null ? com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetails.getDefaultInstance() : revokedSession_;
   }
   /**
-   * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession"];</code>
+   * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetailsOrBuilder getRevokedSessionOrBuilder() {
@@ -417,14 +417,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetails, com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetails.Builder, com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetailsOrBuilder> revokedSessionBuilder_;
     /**
-     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession"];</code>
+     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the revokedSession field is set.
      */
     public boolean hasRevokedSession() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession"];</code>
+     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The revokedSession.
      */
     public com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetails getRevokedSession() {
@@ -435,7 +435,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession"];</code>
+     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setRevokedSession(com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetails value) {
       if (revokedSessionBuilder_ == null) {
@@ -451,7 +451,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession"];</code>
+     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setRevokedSession(
         com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetails.Builder builderForValue) {
@@ -465,7 +465,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession"];</code>
+     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeRevokedSession(com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetails value) {
       if (revokedSessionBuilder_ == null) {
@@ -486,7 +486,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession"];</code>
+     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearRevokedSession() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -499,7 +499,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession"];</code>
+     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetails.Builder getRevokedSessionBuilder() {
       bitField0_ |= 0x00000001;
@@ -507,7 +507,7 @@ private static final long serialVersionUID = 0L;
       return getRevokedSessionFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession"];</code>
+     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetailsOrBuilder getRevokedSessionOrBuilder() {
       if (revokedSessionBuilder_ != null) {
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession"];</code>
+     * <code>.scalekit.v1.sessions.RevokedSessionDetails revoked_session = 1 [json_name = "revokedSession", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetails, com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetails.Builder, com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetailsOrBuilder> 

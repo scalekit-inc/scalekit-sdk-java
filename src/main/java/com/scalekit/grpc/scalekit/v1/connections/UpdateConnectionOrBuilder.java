@@ -181,6 +181,21 @@ java.lang.String defaultValue);
   com.scalekit.grpc.scalekit.v1.connections.StaticAuthConfigOrBuilder getStaticConfigOrBuilder();
 
   /**
+   * <code>.scalekit.v1.connections.WebAuthConfiguration webauthn_config = 24 [json_name = "webauthnConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the webauthnConfig field is set.
+   */
+  boolean hasWebauthnConfig();
+  /**
+   * <code>.scalekit.v1.connections.WebAuthConfiguration webauthn_config = 24 [json_name = "webauthnConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The webauthnConfig.
+   */
+  com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration getWebauthnConfig();
+  /**
+   * <code>.scalekit.v1.connections.WebAuthConfiguration webauthn_config = 24 [json_name = "webauthnConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.connections.WebAuthConfigurationOrBuilder getWebauthnConfigOrBuilder();
+
+  /**
    * <code>optional string key_id = 22 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
    * @return Whether the keyId field is set.
    */
@@ -208,6 +223,21 @@ java.lang.String defaultValue);
    */
   com.google.protobuf.ByteString
       getProviderKeyBytes();
+
+  /**
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 25 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the syncUserProfileOnSignin field is set.
+   */
+  boolean hasSyncUserProfileOnSignin();
+  /**
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 25 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The syncUserProfileOnSignin.
+   */
+  com.google.protobuf.BoolValue getSyncUserProfileOnSignin();
+  /**
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 25 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnSigninOrBuilder();
 
   com.scalekit.grpc.scalekit.v1.connections.UpdateConnection.SettingsCase getSettingsCase();
 }

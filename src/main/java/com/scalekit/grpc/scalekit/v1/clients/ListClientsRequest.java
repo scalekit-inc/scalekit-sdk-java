@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListClientsRequest() {
+    clientType_ = "";
   }
 
   @java.lang.Override
@@ -54,6 +55,53 @@ private static final long serialVersionUID = 0L;
     return includePlainSecret_;
   }
 
+  public static final int CLIENT_TYPE_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientType_ = "";
+  /**
+   * <pre>
+   * Filter clients by type. Defaults to WEB if not specified.
+   * </pre>
+   *
+   * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The clientType.
+   */
+  @java.lang.Override
+  public java.lang.String getClientType() {
+    java.lang.Object ref = clientType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      clientType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Filter clients by type. Defaults to WEB if not specified.
+   * </pre>
+   *
+   * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for clientType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getClientTypeBytes() {
+    java.lang.Object ref = clientType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      clientType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -71,6 +119,9 @@ private static final long serialVersionUID = 0L;
     if (includePlainSecret_ != false) {
       output.writeBool(1, includePlainSecret_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clientType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -83,6 +134,9 @@ private static final long serialVersionUID = 0L;
     if (includePlainSecret_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(1, includePlainSecret_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clientType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -101,6 +155,8 @@ private static final long serialVersionUID = 0L;
 
     if (getIncludePlainSecret()
         != other.getIncludePlainSecret()) return false;
+    if (!getClientType()
+        .equals(other.getClientType())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -115,6 +171,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + INCLUDE_PLAIN_SECRET_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIncludePlainSecret());
+    hash = (37 * hash) + CLIENT_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getClientType().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -247,6 +305,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       includePlainSecret_ = false;
+      clientType_ = "";
       return this;
     }
 
@@ -282,6 +341,9 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.includePlainSecret_ = includePlainSecret_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clientType_ = clientType_;
       }
     }
 
@@ -332,6 +394,11 @@ private static final long serialVersionUID = 0L;
       if (other.getIncludePlainSecret() != false) {
         setIncludePlainSecret(other.getIncludePlainSecret());
       }
+      if (!other.getClientType().isEmpty()) {
+        clientType_ = other.clientType_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -363,6 +430,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 8
+            case 18: {
+              clientType_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -420,6 +492,98 @@ private static final long serialVersionUID = 0L;
     public Builder clearIncludePlainSecret() {
       bitField0_ = (bitField0_ & ~0x00000001);
       includePlainSecret_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object clientType_ = "";
+    /**
+     * <pre>
+     * Filter clients by type. Defaults to WEB if not specified.
+     * </pre>
+     *
+     * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The clientType.
+     */
+    public java.lang.String getClientType() {
+      java.lang.Object ref = clientType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter clients by type. Defaults to WEB if not specified.
+     * </pre>
+     *
+     * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for clientType.
+     */
+    public com.google.protobuf.ByteString
+        getClientTypeBytes() {
+      java.lang.Object ref = clientType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter clients by type. Defaults to WEB if not specified.
+     * </pre>
+     *
+     * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The clientType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientType(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      clientType_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter clients by type. Defaults to WEB if not specified.
+     * </pre>
+     *
+     * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearClientType() {
+      clientType_ = getDefaultInstance().getClientType();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter clients by type. Defaults to WEB if not specified.
+     * </pre>
+     *
+     * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for clientType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      clientType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

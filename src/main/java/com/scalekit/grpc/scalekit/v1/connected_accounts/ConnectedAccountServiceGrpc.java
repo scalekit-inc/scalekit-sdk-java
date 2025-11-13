@@ -232,37 +232,6 @@ public final class ConnectedAccountServiceGrpc {
     return getGetConnectedAccountAuthMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectRequest,
-      com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectResponse> getGetMagicLinkForConnectedAccountWithRedirectMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetMagicLinkForConnectedAccountWithRedirect",
-      requestType = com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectRequest,
-      com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectResponse> getGetMagicLinkForConnectedAccountWithRedirectMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectResponse> getGetMagicLinkForConnectedAccountWithRedirectMethod;
-    if ((getGetMagicLinkForConnectedAccountWithRedirectMethod = ConnectedAccountServiceGrpc.getGetMagicLinkForConnectedAccountWithRedirectMethod) == null) {
-      synchronized (ConnectedAccountServiceGrpc.class) {
-        if ((getGetMagicLinkForConnectedAccountWithRedirectMethod = ConnectedAccountServiceGrpc.getGetMagicLinkForConnectedAccountWithRedirectMethod) == null) {
-          ConnectedAccountServiceGrpc.getGetMagicLinkForConnectedAccountWithRedirectMethod = getGetMagicLinkForConnectedAccountWithRedirectMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMagicLinkForConnectedAccountWithRedirect"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new ConnectedAccountServiceMethodDescriptorSupplier("GetMagicLinkForConnectedAccountWithRedirect"))
-              .build();
-        }
-      }
-    }
-    return getGetMagicLinkForConnectedAccountWithRedirectMethod;
-  }
-
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -362,13 +331,6 @@ public final class ConnectedAccountServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetConnectedAccountAuthMethod(), responseObserver);
     }
-
-    /**
-     */
-    default void getMagicLinkForConnectedAccountWithRedirect(com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMagicLinkForConnectedAccountWithRedirectMethod(), responseObserver);
-    }
   }
 
   /**
@@ -456,14 +418,6 @@ public final class ConnectedAccountServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetConnectedAccountAuthMethod(), getCallOptions()), request, responseObserver);
     }
-
-    /**
-     */
-    public void getMagicLinkForConnectedAccountWithRedirect(com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetMagicLinkForConnectedAccountWithRedirectMethod(), getCallOptions()), request, responseObserver);
-    }
   }
 
   /**
@@ -532,13 +486,6 @@ public final class ConnectedAccountServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse getConnectedAccountAuth(com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetConnectedAccountAuthMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectResponse getMagicLinkForConnectedAccountWithRedirect(com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetMagicLinkForConnectedAccountWithRedirectMethod(), getCallOptions(), request);
     }
   }
 
@@ -616,14 +563,6 @@ public final class ConnectedAccountServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetConnectedAccountAuthMethod(), getCallOptions()), request);
     }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectResponse> getMagicLinkForConnectedAccountWithRedirect(
-        com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetMagicLinkForConnectedAccountWithRedirectMethod(), getCallOptions()), request);
-    }
   }
 
   private static final int METHODID_LIST_CONNECTED_ACCOUNTS = 0;
@@ -633,7 +572,6 @@ public final class ConnectedAccountServiceGrpc {
   private static final int METHODID_DELETE_CONNECTED_ACCOUNT = 4;
   private static final int METHODID_GET_MAGIC_LINK_FOR_CONNECTED_ACCOUNT = 5;
   private static final int METHODID_GET_CONNECTED_ACCOUNT_AUTH = 6;
-  private static final int METHODID_GET_MAGIC_LINK_FOR_CONNECTED_ACCOUNT_WITH_REDIRECT = 7;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -679,10 +617,6 @@ public final class ConnectedAccountServiceGrpc {
         case METHODID_GET_CONNECTED_ACCOUNT_AUTH:
           serviceImpl.getConnectedAccountAuth((com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse>) responseObserver);
-          break;
-        case METHODID_GET_MAGIC_LINK_FOR_CONNECTED_ACCOUNT_WITH_REDIRECT:
-          serviceImpl.getMagicLinkForConnectedAccountWithRedirect((com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -751,13 +685,6 @@ public final class ConnectedAccountServiceGrpc {
               com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest,
               com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse>(
                 service, METHODID_GET_CONNECTED_ACCOUNT_AUTH)))
-        .addMethod(
-          getGetMagicLinkForConnectedAccountWithRedirectMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectRequest,
-              com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRedirectResponse>(
-                service, METHODID_GET_MAGIC_LINK_FOR_CONNECTED_ACCOUNT_WITH_REDIRECT)))
         .build();
   }
 
@@ -813,7 +740,6 @@ public final class ConnectedAccountServiceGrpc {
               .addMethod(getDeleteConnectedAccountMethod())
               .addMethod(getGetMagicLinkForConnectedAccountMethod())
               .addMethod(getGetConnectedAccountAuthMethod())
-              .addMethod(getGetMagicLinkForConnectedAccountWithRedirectMethod())
               .build();
         }
       }

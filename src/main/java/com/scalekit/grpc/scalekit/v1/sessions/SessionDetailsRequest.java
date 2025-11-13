@@ -44,7 +44,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object sessionId_ = "";
   /**
-   * <code>string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }</code>
+   * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The sessionId.
    */
   @java.lang.Override
@@ -61,7 +61,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }</code>
+   * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for sessionId.
    */
   @java.lang.Override
@@ -407,7 +407,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object sessionId_ = "";
     /**
-     * <code>string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }</code>
+     * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The sessionId.
      */
     public java.lang.String getSessionId() {
@@ -423,7 +423,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }</code>
+     * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for sessionId.
      */
     public com.google.protobuf.ByteString
@@ -440,7 +440,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }</code>
+     * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The sessionId to set.
      * @return This builder for chaining.
      */
@@ -453,7 +453,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }</code>
+     * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearSessionId() {
@@ -463,7 +463,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }</code>
+     * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for sessionId to set.
      * @return This builder for chaining.
      */

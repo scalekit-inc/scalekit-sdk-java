@@ -9,22 +9,6 @@ public interface UpdateMemberOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>optional .scalekit.v1.members.MemberRole role = 5 [json_name = "role"];</code>
-   * @return Whether the role field is set.
-   */
-  boolean hasRole();
-  /**
-   * <code>optional .scalekit.v1.members.MemberRole role = 5 [json_name = "role"];</code>
-   * @return The enum numeric value on the wire for role.
-   */
-  int getRoleValue();
-  /**
-   * <code>optional .scalekit.v1.members.MemberRole role = 5 [json_name = "role"];</code>
-   * @return The role.
-   */
-  com.scalekit.grpc.scalekit.v1.members.MemberRole getRole();
-
-  /**
    * <code>optional string first_name = 6 [json_name = "firstName", (.buf.validate.field) = { ... }</code>
    * @return Whether the firstName field is set.
    */

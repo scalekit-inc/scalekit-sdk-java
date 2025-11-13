@@ -21,28 +21,28 @@ public interface UserProfileOrBuilder extends
       getIdBytes();
 
   /**
-   * <code>string first_name = 2 [json_name = "firstName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The firstName.
+   * <code>string given_name = 2 [json_name = "givenName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The givenName.
    */
-  java.lang.String getFirstName();
+  java.lang.String getGivenName();
   /**
-   * <code>string first_name = 2 [json_name = "firstName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for firstName.
+   * <code>string given_name = 2 [json_name = "givenName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for givenName.
    */
   com.google.protobuf.ByteString
-      getFirstNameBytes();
+      getGivenNameBytes();
 
   /**
-   * <code>string last_name = 3 [json_name = "lastName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The lastName.
+   * <code>string family_name = 3 [json_name = "familyName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The familyName.
    */
-  java.lang.String getLastName();
+  java.lang.String getFamilyName();
   /**
-   * <code>string last_name = 3 [json_name = "lastName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for lastName.
+   * <code>string family_name = 3 [json_name = "familyName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for familyName.
    */
   com.google.protobuf.ByteString
-      getLastNameBytes();
+      getFamilyNameBytes();
 
   /**
    * <code>string name = 4 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -153,4 +153,103 @@ java.lang.String defaultValue);
    */
   java.lang.String getCustomAttributesOrThrow(
       java.lang.String key);
+
+  /**
+   * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
+   *     See scalekit/v1/commons/commons.proto;l=195
+   * @return The firstName.
+   */
+  @java.lang.Deprecated java.lang.String getFirstName();
+  /**
+   * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
+   *     See scalekit/v1/commons/commons.proto;l=195
+   * @return The bytes for firstName.
+   */
+  @java.lang.Deprecated com.google.protobuf.ByteString
+      getFirstNameBytes();
+
+  /**
+   * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
+   *     See scalekit/v1/commons/commons.proto;l=204
+   * @return The lastName.
+   */
+  @java.lang.Deprecated java.lang.String getLastName();
+  /**
+   * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
+   *     See scalekit/v1/commons/commons.proto;l=204
+   * @return The bytes for lastName.
+   */
+  @java.lang.Deprecated com.google.protobuf.ByteString
+      getLastNameBytes();
+
+  /**
+   * <code>string preferred_username = 12 [json_name = "preferredUsername", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The preferredUsername.
+   */
+  java.lang.String getPreferredUsername();
+  /**
+   * <code>string preferred_username = 12 [json_name = "preferredUsername", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for preferredUsername.
+   */
+  com.google.protobuf.ByteString
+      getPreferredUsernameBytes();
+
+  /**
+   * <code>bool phone_number_verified = 13 [json_name = "phoneNumberVerified", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The phoneNumberVerified.
+   */
+  boolean getPhoneNumberVerified();
+
+  /**
+   * <code>string picture = 14 [json_name = "picture", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The picture.
+   */
+  java.lang.String getPicture();
+  /**
+   * <code>string picture = 14 [json_name = "picture", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for picture.
+   */
+  com.google.protobuf.ByteString
+      getPictureBytes();
+
+  /**
+   * <code>repeated string groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the groups.
+   */
+  java.util.List<java.lang.String>
+      getGroupsList();
+  /**
+   * <code>repeated string groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of groups.
+   */
+  int getGroupsCount();
+  /**
+   * <code>repeated string groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The groups at the given index.
+   */
+  java.lang.String getGroups(int index);
+  /**
+   * <code>repeated string groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the groups at the given index.
+   */
+  com.google.protobuf.ByteString
+      getGroupsBytes(int index);
+
+  /**
+   * <code>string gender = 16 [json_name = "gender", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The gender.
+   */
+  java.lang.String getGender();
+  /**
+   * <code>string gender = 16 [json_name = "gender", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for gender.
+   */
+  com.google.protobuf.ByteString
+      getGenderBytes();
 }

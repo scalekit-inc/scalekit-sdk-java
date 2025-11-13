@@ -9,47 +9,47 @@ public interface UserSessionDetailsRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
+   * <code>string user_id = 1 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The userId.
    */
   java.lang.String getUserId();
   /**
-   * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
+   * <code>string user_id = 1 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for userId.
    */
   com.google.protobuf.ByteString
       getUserIdBytes();
 
   /**
-   * <code>uint32 page_size = 2 [json_name = "pageSize"];</code>
+   * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageSize.
    */
   int getPageSize();
 
   /**
-   * <code>string page_token = 3 [json_name = "pageToken"];</code>
+   * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
-   * <code>string page_token = 3 [json_name = "pageToken"];</code>
+   * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();
 
   /**
-   * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter"];</code>
+   * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
   /**
-   * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter"];</code>
+   * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The filter.
    */
   com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilter getFilter();
   /**
-   * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter"];</code>
+   * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilterOrBuilder getFilterOrBuilder();
 }

@@ -154,4 +154,40 @@ public interface AuthLogRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getWorkflowBytes();
+
+  /**
+   * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+   * @return The resourceId.
+   */
+  java.lang.String getResourceId();
+  /**
+   * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+   * @return The bytes for resourceId.
+   */
+  com.google.protobuf.ByteString
+      getResourceIdBytes();
+
+  /**
+   * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+   * @return The resourceName.
+   */
+  java.lang.String getResourceName();
+  /**
+   * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+   * @return The bytes for resourceName.
+   */
+  com.google.protobuf.ByteString
+      getResourceNameBytes();
+
+  /**
+   * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+   * @return The resourceType.
+   */
+  java.lang.String getResourceType();
+  /**
+   * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+   * @return The bytes for resourceType.
+   */
+  com.google.protobuf.ByteString
+      getResourceTypeBytes();
 }

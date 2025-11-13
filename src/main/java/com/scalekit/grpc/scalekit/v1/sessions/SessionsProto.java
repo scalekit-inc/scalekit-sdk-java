@@ -61,6 +61,11 @@ public final class SessionsProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_sessions_SessionDetails_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_sessions_DeviceDetails_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_sessions_DeviceDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_sessions_RevokedSessionDetails_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -83,108 +88,419 @@ public final class SessionsProto {
       "calekit.v1.sessions\032\033buf/validate/valida" +
       "te.proto\032\034google/api/annotations.proto\032\033" +
       "google/api/visibility.proto\032\037google/prot" +
-      "obuf/timestamp.proto\032!scalekit/v1/option" +
-      "s/options.proto\"N\n\025SessionDetailsRequest" +
-      "\0225\n\nsession_id\030\001 \001(\tB\026\272H\023r\0162\014^ses_[0-9]+" +
-      "$\310\001\001R\tsessionId\"\311\001\n\031UserSessionDetailsRe" +
-      "quest\022/\n\007user_id\030\001 \001(\tB\026\272H\023r\0162\014^usr_[0-9" +
-      "]+$\310\001\001R\006userId\022\033\n\tpage_size\030\002 \001(\rR\010pageS" +
-      "ize\022\035\n\npage_token\030\003 \001(\tR\tpageToken\022?\n\006fi" +
-      "lter\030\004 \001(\0132\'.scalekit.v1.sessions.UserSe" +
-      "ssionFilterR\006filter\"\235\001\n\021UserSessionFilte" +
-      "r\022\026\n\006status\030\001 \003(\tR\006status\0229\n\nstart_time\030" +
-      "\002 \001(\0132\032.google.protobuf.TimestampR\tstart" +
-      "Time\0225\n\010end_time\030\003 \001(\0132\032.google.protobuf" +
-      ".TimestampR\007endTime\"M\n\024RevokeSessionRequ" +
-      "est\0225\n\nsession_id\030\001 \001(\tB\026\272H\023r\0162\014^ses_[0-" +
-      "9]+$\310\001\001R\tsessionId\"m\n\025RevokeSessionRespo" +
-      "nse\022T\n\017revoked_session\030\001 \001(\0132+.scalekit." +
-      "v1.sessions.RevokedSessionDetailsR\016revok" +
-      "edSession\"O\n\034RevokeAllUserSessionsReques" +
-      "t\022/\n\007user_id\030\001 \001(\tB\026\272H\023r\0162\014^usr_[0-9]+$\310" +
-      "\001\001R\006userId\"\234\001\n\035RevokeAllUserSessionsResp" +
-      "onse\022V\n\020revoked_sessions\030\001 \003(\0132+.scaleki" +
-      "t.v1.sessions.RevokedSessionDetailsR\017rev" +
-      "okedSessions\022#\n\rtotal_revoked\030\002 \001(\rR\014tot" +
-      "alRevoked\"\305\001\n\022UserSessionDetails\022@\n\010sess" +
-      "ions\030\001 \003(\0132$.scalekit.v1.sessions.Sessio" +
-      "nDetailsR\010sessions\022&\n\017next_page_token\030\002 " +
-      "\001(\tR\rnextPageToken\022&\n\017prev_page_token\030\003 " +
-      "\001(\tR\rprevPageToken\022\035\n\ntotal_size\030\004 \001(\rR\t" +
-      "totalSize\"\240\n\n\016SessionDetails\022\035\n\nsession_" +
-      "id\030\001 \001(\tR\tsessionId\022\027\n\007user_id\030\002 \001(\tR\006us" +
-      "erId\022?\n\033authenticated_organizations\030\003 \003(" +
-      "\tR\032authenticatedOrganizations\022\'\n\017organiz" +
-      "ation_id\030\004 \001(\tR\016organizationId\0229\n\ncreate" +
-      "d_at\030\005 \001(\0132\032.google.protobuf.TimestampR\t" +
-      "createdAt\0229\n\nupdated_at\030\006 \001(\0132\032.google.p" +
-      "rotobuf.TimestampR\tupdatedAt\022B\n\017idle_exp" +
-      "ires_at\030\007 \001(\0132\032.google.protobuf.Timestam" +
-      "pR\ridleExpiresAt\022J\n\023absolute_expires_at\030" +
-      "\010 \001(\0132\032.google.protobuf.TimestampR\021absol" +
-      "uteExpiresAt\0229\n\nexpired_at\030\t \001(\0132\032.googl" +
-      "e.protobuf.TimestampR\texpiredAt\0227\n\tlogou" +
-      "t_at\030\n \001(\0132\032.google.protobuf.TimestampR\010" +
-      "logoutAt\022\026\n\006status\030\013 \001(\tR\006status\022,\n\022init" +
-      "ial_user_agent\030\014 \001(\tR\020initialUserAgent\022\035" +
-      "\n\ninitial_os\030\r \001(\tR\tinitialOs\022,\n\022initial" +
-      "_os_version\030\016 \001(\tR\020initialOsVersion\022\'\n\017i" +
-      "nitial_browser\030\017 \001(\tR\016initialBrowser\0226\n\027" +
-      "initial_browser_version\030\020 \001(\tR\025initialBr" +
-      "owserVersion\022.\n\023initial_device_type\030\021 \001(" +
-      "\tR\021initialDeviceType\022\035\n\ninitial_ip\030\023 \001(\t" +
-      "R\tinitialIp\022I\n\020initial_location\030\024 \001(\0132\036." +
-      "scalekit.v1.sessions.LocationR\017initialLo" +
-      "cation\022*\n\021latest_user_agent\030\025 \001(\tR\017lates" +
-      "tUserAgent\022\033\n\tlatest_os\030\026 \001(\tR\010latestOs\022" +
-      "*\n\021latest_os_version\030\027 \001(\tR\017latestOsVers" +
-      "ion\022%\n\016latest_browser\030\030 \001(\tR\rlatestBrows" +
-      "er\0224\n\026latest_browser_version\030\031 \001(\tR\024late" +
-      "stBrowserVersion\022,\n\022latest_device_type\030\032" +
-      " \001(\tR\020latestDeviceType\022\033\n\tlatest_ip\030\034 \001(" +
-      "\tR\010latestIp\022G\n\017latest_location\030\035 \001(\0132\036.s" +
-      "calekit.v1.sessions.LocationR\016latestLoca" +
-      "tion\"\341\003\n\025RevokedSessionDetails\022\035\n\nsessio" +
-      "n_id\030\001 \001(\tR\tsessionId\022\027\n\007user_id\030\002 \001(\tR\006" +
-      "userId\0229\n\ncreated_at\030\005 \001(\0132\032.google.prot" +
-      "obuf.TimestampR\tcreatedAt\0229\n\nupdated_at\030" +
-      "\006 \001(\0132\032.google.protobuf.TimestampR\tupdat" +
-      "edAt\022B\n\017idle_expires_at\030\007 \001(\0132\032.google.p" +
-      "rotobuf.TimestampR\ridleExpiresAt\022J\n\023abso" +
+      "obuf/timestamp.proto\032.protoc-gen-openapi" +
+      "v2/options/annotations.proto\032!scalekit/v" +
+      "1/options/options.proto\"\255\001\n\025SessionDetai" +
+      "lsRequest\022\223\001\n\nsession_id\030\001 \001(\tBt\222A[2AUni" +
+      "que identifier for the session. Must sta" +
+      "rt with \'ses_\' prefix.J\026\"ses_12345678901" +
+      "23456\"\272H\023r\0162\014^ses_[0-9]+$\310\001\001R\tsessionId\"" +
+      "\310\007\n\031UserSessionDetailsRequest\022\246\001\n\007user_i" +
+      "d\030\001 \001(\tB\214\001\222As2YUnique identifier for the" +
+      " user whose sessions to retrieve. Must s" +
+      "tart with \'usr_\' prefix.J\026\"usr_123456789" +
+      "0123456\"\272H\023r\0162\014^usr_[0-9]+$\310\001\001R\006userId\022\364" +
+      "\001\n\tpage_size\030\002 \001(\rB\326\001\222A\322\0012\313\001Maximum numb" +
+      "er of sessions to return in a single pag" +
+      "e. Optional parameter. If not specified," +
+      " defaults to a server-defined limit. Use" +
+      " smaller values for faster responses, la" +
+      "rger values for fewer requests.J\00250R\010pag" +
+      "eSize\022\233\002\n\npage_token\030\003 \001(\tB\373\001\222A\367\0012\300\001Pagi" +
+      "nation token from the previous response " +
+      "for retrieving the next page of results." +
+      " Leave empty for the first page. Use the" +
+      " next_page_token from a previous respons" +
+      "e to fetch subsequent pages.J2\"eyJwYWdlI" +
+      "jogMiwgImxhc3RfaWQiOiAic2VzXzEyMzQ1In0=\"" +
+      "R\tpageToken\022\354\001\n\006filter\030\004 \001(\0132\'.scalekit." +
+      "v1.sessions.UserSessionFilterB\252\001\222A\246\0012\243\001O" +
+      "ptional filter criteria to narrow sessio" +
+      "n results. Can filter by one or more sta" +
+      "tuses and/or a time range of creation da" +
+      "tes. Leave empty to retrieve all session" +
+      "s.R\006filter\"\260\006\n\021UserSessionFilter\022\257\002\n\006sta" +
+      "tus\030\001 \003(\tB\226\002\222A\222\0022\203\002Filter sessions by on" +
+      "e or more status values. Possible values" +
+      ": \'active\', \'expired\', \'revoked\', \'logou" +
+      "t\'. Leave empty to include all statuses." +
+      " Multiple values use OR logic (e.g., sta" +
+      "tus=[\'active\', \'expired\'] returns sessio" +
+      "ns that are either active OR expired).J\n" +
+      "[\"active\"]R\006status\022\372\001\n\nstart_time\030\002 \001(\0132" +
+      "\032.google.protobuf.TimestampB\276\001\222A\272\0012\237\001Fil" +
+      "ter to include only sessions created on " +
+      "or after this timestamp. Optional. Uses " +
+      "RFC 3339 format. Useful for querying ses" +
+      "sions within a specific time window.J\026\"2" +
+      "025-01-01T00:00:00Z\"R\tstartTime\022\353\001\n\010end_" +
+      "time\030\003 \001(\0132\032.google.protobuf.TimestampB\263" +
+      "\001\222A\257\0012\224\001Filter to include only sessions " +
+      "created on or before this timestamp. Opt" +
+      "ional. Uses RFC 3339 format. Must be aft" +
+      "er start_time if both are specified.J\026\"2" +
+      "025-12-31T23:59:59Z\"R\007endTime\"\266\001\n\024Revoke" +
+      "SessionRequest\022\235\001\n\nsession_id\030\001 \001(\tB~\222Ae" +
+      "2KUnique identifier for the session to r" +
+      "evoke. Must start with \'ses_\' prefix.J\026\"" +
+      "ses_1234567890123456\"\272H\023r\0162\014^ses_[0-9]+$" +
+      "\310\001\001R\tsessionId\"\366\001\n\025RevokeSessionResponse" +
+      "\022\334\001\n\017revoked_session\030\001 \001(\0132+.scalekit.v1" +
+      ".sessions.RevokedSessionDetailsB\205\001\222A\201\0012\177" +
+      "Details of the revoked session including" +
+      " session ID, user ID, creation and revoc" +
+      "ation timestamps, and final device infor" +
+      "mation.R\016revokedSession\"\317\001\n\034RevokeAllUse" +
+      "rSessionsRequest\022\256\001\n\007user_id\030\001 \001(\tB\224\001\222A{" +
+      "2aUnique identifier for the user whose a" +
+      "ll sessions will be revoked. Must start " +
+      "with \'usr_\' prefix.J\026\"usr_12345678901234" +
+      "56\"\272H\023r\0162\014^usr_[0-9]+$\310\001\001R\006userId\"\227\003\n\035Re" +
+      "vokeAllUserSessionsResponse\022\351\001\n\020revoked_" +
+      "sessions\030\001 \003(\0132+.scalekit.v1.sessions.Re" +
+      "vokedSessionDetailsB\220\001\222A\214\0012\211\001List of all" +
+      " sessions that were revoked, including d" +
+      "etailed information for each revoked ses" +
+      "sion with IDs, timestamps, and device de" +
+      "tails.R\017revokedSessions\022\211\001\n\rtotal_revoke" +
+      "d\030\002 \001(\rBd\222Aa2\\Total count of active sess" +
+      "ions that were revoked. Useful for confi" +
+      "rmation and audit logging.J\0015R\014totalRevo" +
+      "ked\"\261\007\n\022UserSessionDetails\022\332\001\n\010sessions\030" +
+      "\001 \003(\0132$.scalekit.v1.sessions.SessionDeta" +
+      "ilsB\227\001\222A\223\0012\220\001Array of session objects fo" +
+      "r the requested user. May contain fewer " +
+      "entries than the requested page_size whe" +
+      "n reaching the final page of results.R\010s" +
+      "essions\022\363\001\n\017next_page_token\030\002 \001(\tB\312\001\222A\306\001" +
+      "2\217\001Pagination token for retrieving the n" +
+      "ext page of results. Empty string if the" +
+      "re are no more pages (you have reached t" +
+      "he final page of results).J2\"eyJwYWdlIjo" +
+      "gMiwgImxhc3RfaWQiOiAic2VzXzEyMzQ1In0=\"R\r" +
+      "nextPageToken\022\366\001\n\017prev_page_token\030\003 \001(\tB" +
+      "\315\001\222A\311\0012\222\001Pagination token for retrieving" +
+      " the previous page of results. Empty str" +
+      "ing for the first page. Use this to navi" +
+      "gate backward through result pages.J2\"ey" +
+      "JwYWdlIjogMCwgImZpcnN0X2lkIjogInNlc183OT" +
+      "AxIn0=\"R\rprevPageToken\022\316\001\n\ntotal_size\030\004 " +
+      "\001(\rB\256\001\222A\252\0012\243\001Total number of sessions ma" +
+      "tching the applied filter criteria, rega" +
+      "rdless of pagination. This represents th" +
+      "e complete result set size before pagina" +
+      "tion is applied.J\00242R\ttotalSize\"\202\033\n\016Sess" +
+      "ionDetails\022\240\001\n\nsession_id\030\001 \001(\tB\200\001\222A}2cU" +
+      "nique identifier for the session. System" +
+      "-generated read-only field used to refer" +
+      "ence this session.J\026\"ses_123456789012345" +
+      "6\"R\tsessionId\022\207\001\n\007user_id\030\002 \001(\tBn\222Ak2QUn" +
+      "ique identifier for the user who owns an" +
+      "d is authenticated within this session.J" +
+      "\026\"usr_1234567890123456\"R\006userId\022\234\002\n\033auth" +
+      "enticated_organizations\030\003 \003(\tB\332\001\222A\326\0012\273\001L" +
+      "ist of organization IDs that have been a" +
+      "uthenticated for this user within the cu" +
+      "rrent session. Contains all organization" +
+      "s where the user has successfully comple" +
+      "ted SSO or authentication.J\026[\"org_123\", " +
+      "\"org_456\"]R\032authenticatedOrganizations\022\350" +
+      "\001\n\017organization_id\030\004 \001(\tB\276\001\222A\272\0012\237\001Organi" +
+      "zation ID for the user\'s most recently a" +
+      "ctive organization within this session. " +
+      "This represents the primary organization" +
+      " context for the current session.J\026\"org_" +
+      "1234567890123456\"R\016organizationId\022\350\001\n\ncr" +
+      "eated_at\030\005 \001(\0132\032.google.protobuf.Timesta" +
+      "mpB\254\001\222A\250\0012\215\001Timestamp indicating when th" +
+      "e session was created. This is set once " +
+      "at session creation and remains constant" +
+      " throughout the session lifetime.J\026\"2025" +
+      "-01-15T10:30:00Z\"R\tcreatedAt\022\363\001\n\nupdated" +
+      "_at\030\006 \001(\0132\032.google.protobuf.TimestampB\267\001" +
+      "\222A\263\0012\230\001Timestamp indicating when the ses" +
+      "sion was last updated. Updated whenever " +
+      "session state changes such as organizati" +
+      "on context changes or metadata updates.J" +
+      "\026\"2025-01-15T10:45:00Z\"R\tupdatedAt\022\272\002\n\017i" +
+      "dle_expires_at\030\007 \001(\0132\032.google.protobuf.T" +
+      "imestampB\365\001\222A\361\0012\326\001Projected expiration t" +
+      "imestamp if the session remains idle wit" +
+      "hout user activity. This timestamp is re" +
+      "calculated with each user activity. Sess" +
+      "ion will be automatically terminated at " +
+      "this time if no activity occurs.J\026\"2025-" +
+      "01-15T11:30:00Z\"R\ridleExpiresAt\022\244\002\n\023abso" +
       "lute_expires_at\030\010 \001(\0132\032.google.protobuf." +
-      "TimestampR\021absoluteExpiresAt\0229\n\nexpired_" +
-      "at\030\t \001(\0132\032.google.protobuf.TimestampR\tex" +
-      "piredAt\0227\n\tlogout_at\030\n \001(\0132\032.google.prot" +
-      "obuf.TimestampR\010logoutAt\022\026\n\006status\030\013 \001(\t" +
-      "R\006status\"\237\001\n\010Location\022\026\n\006region\030\001 \001(\tR\006r" +
-      "egion\022-\n\022region_subdivision\030\002 \001(\tR\021regio" +
-      "nSubdivision\022\022\n\004city\030\003 \001(\tR\004city\022\032\n\010lati" +
-      "tude\030\004 \001(\tR\010latitude\022\034\n\tlongitude\030\005 \001(\tR" +
-      "\tlongitude2\323\005\n\016SessionService\022\233\001\n\nGetSes" +
-      "sion\022+.scalekit.v1.sessions.SessionDetai" +
-      "lsRequest\032$.scalekit.v1.sessions.Session" +
-      "Details\":\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\037\022\035/a" +
-      "pi/v1/sessions/{session_id}\022\253\001\n\rRevokeSe" +
-      "ssion\022*.scalekit.v1.sessions.RevokeSessi" +
-      "onRequest\032+.scalekit.v1.sessions.RevokeS" +
-      "essionResponse\"A\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
-      "\223\002&\"$/api/v1/sessions/{session_id}/revok" +
-      "e\022\253\001\n\017GetUserSessions\022/.scalekit.v1.sess" +
-      "ions.UserSessionDetailsRequest\032(.scaleki" +
-      "t.v1.sessions.UserSessionDetails\"=\202\265\030\002\030T" +
-      "\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\"\022 /api/v1/users/{us" +
-      "er_id}/sessions\022\306\001\n\025RevokeAllUserSession" +
-      "s\0222.scalekit.v1.sessions.RevokeAllUserSe" +
-      "ssionsRequest\0323.scalekit.v1.sessions.Rev" +
-      "okeAllUserSessionsResponse\"D\202\265\030\002\030T\372\322\344\223\002\t" +
-      "\022\007PREVIEW\202\323\344\223\002)\"\'/api/v1/users/{user_id}" +
-      "/sessions/revokeB\335\001\n&com.scalekit.grpc.s" +
-      "calekit.v1.sessionsB\rSessionsProtoP\001Z2gi" +
-      "thub.com/scalekit-inc/scalekit/pkg/grpc/" +
-      "sessions\242\002\003SVS\252\002\024Scalekit.V1.Sessions\312\002\024" +
-      "Scalekit\\V1\\Sessions\342\002 Scalekit\\V1\\Sessi" +
-      "ons\\GPBMetadata\352\002\026Scalekit::V1::Sessions" +
-      "b\006proto3"
+      "TimestampB\327\001\222A\323\0012\270\001Hard expiration times" +
+      "tamp for the session regardless of user " +
+      "activity. The session will be forcibly t" +
+      "erminated at this time. This represents " +
+      "the maximum session lifetime from creati" +
+      "on.J\026\"2025-01-22T10:30:00Z\"R\021absoluteExp" +
+      "iresAt\022\344\002\n\nexpired_at\030\t \001(\0132\032.google.pro" +
+      "tobuf.TimestampB\250\002\222A\244\0022\211\002Timestamp when " +
+      "the session was terminated. Null if the " +
+      "session is still active. Set when the se" +
+      "ssion expires due to reaching idle_expir" +
+      "es_at or absolute_expires_at timeout, or" +
+      " when administratively revoked. Not set " +
+      "for user-initiated logout (see logout_at" +
+      " instead).J\026\"2025-01-15T12:00:00Z\"R\texpi" +
+      "redAt\022\224\002\n\tlogout_at\030\n \001(\0132\032.google.proto" +
+      "buf.TimestampB\332\001\222A\326\0012\273\001Timestamp when th" +
+      "e user explicitly logged out from the se" +
+      "ssion. Null if the user has not logged o" +
+      "ut. When set, indicates the session ende" +
+      "d due to explicit user logout rather tha" +
+      "n timeout.J\026\"2025-01-15T14:00:00Z\"R\010logo" +
+      "utAt\022\367\002\n\006status\030\013 \001(\tB\336\002\222A\332\0022\315\002Current o" +
+      "perational status of the session. Possib" +
+      "le values: \'active\' (session is valid an" +
+      "d requests are allowed), \'expired\' (sess" +
+      "ion terminated due to idle or absolute t" +
+      "imeout), \'revoked\' (session was administ" +
+      "ratively revoked), \'logout\' (user explic" +
+      "itly logged out). Use this to determine " +
+      "if the session can be used for new reque" +
+      "sts.J\010\"active\"R\006status\022\331\001\n\006device\030\014 \001(\0132" +
+      "#.scalekit.v1.sessions.DeviceDetailsB\233\001\222" +
+      "A\227\0012\224\001Complete device metadata associate" +
+      "d with this session including browser, o" +
+      "perating system, device type, and geogra" +
+      "phic location based on IP address.R\006devi" +
+      "ce\022\237\002\n\016last_active_at\030\r \001(\0132\032.google.pro" +
+      "tobuf.TimestampB\334\001\222A\330\0012\275\001Timestamp of th" +
+      "e most recent user activity detected in " +
+      "this session. Updated on each API reques" +
+      "t or user interaction. Used to determine" +
+      " if a session has exceeded the idle time" +
+      "out threshold.J\026\"2025-01-15T10:55:30Z\"R\014" +
+      "lastActiveAt\"\355\r\n\rDeviceDetails\022\342\002\n\nuser_" +
+      "agent\030\014 \001(\tB\302\002\222A\276\0022\302\001Complete HTTP User-" +
+      "Agent header string from the client requ" +
+      "est. Contains browser type, version, and" +
+      " operating system information. Used for " +
+      "detailed device fingerprinting and user " +
+      "agent analysis.Jw\"Mozilla/5.0 (Macintosh" +
+      "; Intel Mac OS X 10_15_7) AppleWebKit/53" +
+      "7.36 (KHTML, like Gecko) Chrome/120.0.0." +
+      "0 Safari/537.36\"R\tuserAgent\022\226\001\n\002os\030\r \001(\t" +
+      "B\205\001\222A\201\0012vOperating system name extracted" +
+      " from the user agent and device headers." +
+      " Examples: macOS, Windows, Linux, iOS, A" +
+      "ndroid.J\007\"macOS\"R\002os\022\206\001\n\nos_version\030\016 \001(" +
+      "\tBg\222Ad2ZVersion of the operating system." +
+      " Represents the specific OS release the " +
+      "device is running.J\006\"14.2\"R\tosVersion\022\227\001" +
+      "\n\007browser\030\017 \001(\tB}\222Az2nBrowser name and f" +
+      "amily extracted from the user agent. Exa" +
+      "mples: Chrome, Safari, Firefox, Edge, Mo" +
+      "bile Safari.J\010\"Chrome\"R\007browser\022\241\001\n\017brow" +
+      "ser_version\030\020 \001(\tBx\222Au2fVersion of the b" +
+      "rowser application. Represents the speci" +
+      "fic release version of the browser being" +
+      " used.J\013\"120.0.0.0\"R\016browserVersion\022\232\002\n\013" +
+      "device_type\030\021 \001(\tB\370\001\222A\364\0012\346\001Categorized d" +
+      "evice type classification. Possible valu" +
+      "es: \'desktop\' (traditional computers), \'" +
+      "mobile\' (smartphones and small tablets)," +
+      " \'tablet\' (large tablets), \'other\'. Usef" +
+      "ul for displaying session information by" +
+      " device category.J\t\"desktop\"R\ndeviceType" +
+      "\022\343\001\n\002ip\030\023 \001(\tB\322\001\222A\316\0012\276\001IP address of the" +
+      " device that initiated the session. This" +
+      " is the public-facing IP address used to" +
+      " connect to the application. Useful for " +
+      "security audits and geographic distribut" +
+      "ion analysis.J\013\"192.0.2.1\"R\002ip\022\223\002\n\010locat" +
+      "ion\030\024 \001(\0132\036.scalekit.v1.sessions.Locatio" +
+      "nB\326\001\222A\322\0012\317\001Geographic location informati" +
+      "on derived from IP address geolocation. " +
+      "Includes country, region, city, and coor" +
+      "dinates. Note: Based on IP location data" +
+      " and may not represent the user\'s exact " +
+      "physical location.R\010location\"\310\017\n\025Revoked" +
+      "SessionDetails\022\210\001\n\nsession_id\030\001 \001(\tBi\222Af" +
+      "2LUnique identifier for the revoked sess" +
+      "ion. System-generated read-only field.J\026" +
+      "\"ses_1234567890123456\"R\tsessionId\022l\n\007use" +
+      "r_id\030\002 \001(\tBS\222AP26Unique identifier for t" +
+      "he user who owned this session.J\026\"usr_12" +
+      "34567890123456\"R\006userId\022\247\001\n\ncreated_at\030\005" +
+      " \001(\0132\032.google.protobuf.TimestampBl\222Ai2OT" +
+      "imestamp indicating when the session was" +
+      " originally created before revocation.J\026" +
+      "\"2025-01-15T10:30:00Z\"R\tcreatedAt\022\242\001\n\nup" +
+      "dated_at\030\006 \001(\0132\032.google.protobuf.Timesta" +
+      "mpBg\222Ad2JTimestamp indicating when the s" +
+      "ession was last modified before revocati" +
+      "on.J\026\"2025-01-15T10:45:00Z\"R\tupdatedAt\022\373" +
+      "\001\n\017idle_expires_at\030\007 \001(\0132\032.google.protob" +
+      "uf.TimestampB\266\001\222A\262\0012\227\001The idle expiratio" +
+      "n timestamp that was configured for this" +
+      " session before revocation. Represents w" +
+      "hen the session would have expired due t" +
+      "o inactivity.J\026\"2025-01-15T11:30:00Z\"R\ri" +
+      "dleExpiresAt\022\372\001\n\023absolute_expires_at\030\010 \001" +
+      "(\0132\032.google.protobuf.TimestampB\255\001\222A\251\0012\216\001" +
+      "The absolute expiration timestamp that w" +
+      "as configured for this session before re" +
+      "vocation. Represents the hard deadline r" +
+      "egardless of activity.J\026\"2025-01-22T10:3" +
+      "0:00Z\"R\021absoluteExpiresAt\022\305\001\n\nexpired_at" +
+      "\030\t \001(\0132\032.google.protobuf.TimestampB\211\001\222A\205" +
+      "\0012kTimestamp when the session was actual" +
+      "ly terminated. Set to the revocation tim" +
+      "e when the session is revoked.J\026\"2025-01" +
+      "-15T12:00:00Z\"R\texpiredAt\022\314\001\n\tlogout_at\030" +
+      "\n \001(\0132\032.google.protobuf.TimestampB\222\001\222A\216\001" +
+      "2tTimestamp when the user explicitly log" +
+      "ged out (if applicable). Null if the ses" +
+      "sion was revoked without prior logout.J\026" +
+      "\"2025-01-15T14:00:00Z\"R\010logoutAt\022\354\001\n\006sta" +
+      "tus\030\013 \001(\tB\323\001\222A\317\0012\301\001Status of the session" +
+      " after revocation. Always \'revoked\' sinc" +
+      "e only active sessions can be revoked. S" +
+      "essions that were already expired or log" +
+      "ged out are not included in the revocati" +
+      "on response.J\t\"revoked\"R\006status\022\345\001\n\016last" +
+      "_active_at\030\014 \001(\0132\032.google.protobuf.Times" +
+      "tampB\242\001\222A\236\0012\203\001Timestamp of the last reco" +
+      "rded user activity in this session befor" +
+      "e revocation. Helps identify inactive se" +
+      "ssions that were revoked.J\026\"2025-01-15T1" +
+      "0:55:30Z\"R\014lastActiveAt\"\236\007\n\010Location\022\254\001\n" +
+      "\006region\030\001 \001(\tB\223\001\222A\217\0012|Geographic region " +
+      "name derived from IP geolocation. Repres" +
+      "ents the country-level location (e.g., \'" +
+      "United States\', \'France\').J\017\"United Stat" +
+      "es\"R\006region\022\275\001\n\022region_subdivision\030\002 \001(\t" +
+      "B\215\001\222A\211\0012\200\001Regional subdivision code or n" +
+      "ame (e.g., state abbreviation for US, pr" +
+      "ovince for Canada). Two-letter ISO forma" +
+      "t when applicable.J\004\"CA\"R\021regionSubdivis" +
+      "ion\022\231\001\n\004city\030\003 \001(\tB\204\001\222A\200\0012mCity name whe" +
+      "re the session originated based on IP ge" +
+      "olocation. Approximate location derived " +
+      "from IP address.J\017\"San Francisco\"R\004city\022" +
+      "\276\001\n\010latitude\030\004 \001(\tB\241\001\222A\235\0012\217\001Latitude coo" +
+      "rdinate of the estimated location. Decim" +
+      "al format (e.g., \'37.7749\'). Note: Repre" +
+      "sents IP geolocation center and may not " +
+      "be precise.J\t\"37.7749\"R\010latitude\022\305\001\n\tlon" +
+      "gitude\030\005 \001(\tB\246\001\222A\242\0012\222\001Longitude coordina" +
+      "te of the estimated location. Decimal fo" +
+      "rmat (e.g., \'-122.4194\'). Note: Represen" +
+      "ts IP geolocation center and may not be " +
+      "precise.J\013\"-122.4194\"R\tlongitude2\310\037\n\016Ses" +
+      "sionService\022\333\006\n\nGetSession\022+.scalekit.v1" +
+      ".sessions.SessionDetailsRequest\032$.scalek" +
+      "it.v1.sessions.SessionDetails\"\371\005\222A\312\005\n\010Se" +
+      "ssions\022\023Get session details\032\315\004Retrieves " +
+      "comprehensive details for a specific use" +
+      "r session including authentication statu" +
+      "s, device information, and expiration ti" +
+      "melines. Use this endpoint to fetch curr" +
+      "ent session metadata for security audits" +
+      ", session validation, or to display sess" +
+      "ion information in user account manageme" +
+      "nt interfaces. Returns all session prope" +
+      "rties including the user ID, authenticat" +
+      "ed organizations, device details with br" +
+      "owser/OS information, IP address and geo" +
+      "location, and all relevant timestamps (c" +
+      "reation, last activity, idle expiration," +
+      " absolute expiration, and actual expirat" +
+      "ion if applicable).JY\n\003200\022R\n&Successful" +
+      "ly retrieved session details\022(\n&\032$.scale" +
+      "kit.v1.sessions.SessionDetails\202\265\030\002\030T\202\323\344\223" +
+      "\002\037\022\035/api/v1/sessions/{session_id}\022\242\006\n\rRe" +
+      "vokeSession\022*.scalekit.v1.sessions.Revok" +
+      "eSessionRequest\032+.scalekit.v1.sessions.R" +
+      "evokeSessionResponse\"\267\005\222A\201\005\n\010Sessions\022\023R" +
+      "evoke user session\032\336\003Immediately invalid" +
+      "ates a specific user session by session " +
+      "ID, setting its status to \'revoked\'. Onc" +
+      "e revoked, the session cannot be used fo" +
+      "r any future API requests or application" +
+      " access. Use this endpoint to implement " +
+      "session-level logout, force a user to re" +
+      "authenticate on a specific device, or te" +
+      "rminate suspicious sessions. The revocat" +
+      "ion is instantaneous and irreversible. R" +
+      "eturns the revoked session details inclu" +
+      "ding the session ID, user ID, and the re" +
+      "vocation timestamp.J\177\n\003200\022x\nESuccessful" +
+      "ly revoked the session. Returns the revo" +
+      "ked session details\022/\n-\032+.scalekit.v1.se" +
+      "ssions.RevokeSessionResponse\202\265\030\002\030T\202\323\344\223\002&" +
+      "\"$/api/v1/sessions/{session_id}/revoke\022\260" +
+      "\007\n\017GetUserSessions\022/.scalekit.v1.session" +
+      "s.UserSessionDetailsRequest\032(.scalekit.v" +
+      "1.sessions.UserSessionDetails\"\301\006\222A\217\006\n\010Se" +
+      "ssions\022\022List user sessions\032\327\004Retrieves a" +
+      " paginated list of all sessions associat" +
+      "ed with a specific user across all devic" +
+      "es and browsers. Use this endpoint to au" +
+      "dit user activity, display all active se" +
+      "ssions in account management interfaces," +
+      " or verify user authentication status ac" +
+      "ross devices. Supports filtering by sess" +
+      "ion status (active, expired, revoked, lo" +
+      "gout) and time range (creation date). Re" +
+      "turns session details for each session i" +
+      "ncluding device information, IP address," +
+      " geolocation, and current status. The re" +
+      "sponse includes pagination metadata (pag" +
+      "e tokens and total count) to handle larg" +
+      "e session lists efficiently.J\224\001\n\003200\022\214\001\n" +
+      "\\Successfully retrieved user sessions. R" +
+      "eturns a list of sessions with paginatio" +
+      "n information\022,\n*\032(.scalekit.v1.sessions" +
+      ".UserSessionDetails\202\265\030\002\030T\202\323\344\223\002\"\022 /api/v1" +
+      "/users/{user_id}/sessions\022\276\007\n\025RevokeAllU" +
+      "serSessions\0222.scalekit.v1.sessions.Revok" +
+      "eAllUserSessionsRequest\0323.scalekit.v1.se" +
+      "ssions.RevokeAllUserSessionsResponse\"\273\006\222" +
+      "A\202\006\n\010Sessions\022\030Revoke all user sessions\032" +
+      "\271\004Immediately invalidates all active ses" +
+      "sions for a specific user across all dev" +
+      "ices and browsers, setting their status " +
+      "to \'revoked\'. Use this endpoint to imple" +
+      "ment global logout functionality, force " +
+      "re-authentication after security inciden" +
+      "ts, or terminate all sessions following " +
+      "a password reset or credential compromis" +
+      "e. Only active sessions are revoked; alr" +
+      "eady expired, logout, or previously revo" +
+      "ked sessions remain unchanged. The revoc" +
+      "ation is atomic and instantaneous. Retur" +
+      "ns a list of all revoked sessions with t" +
+      "heir details and a total count of sessio" +
+      "ns revoked.J\237\001\n\003200\022\227\001\n\\Successfully rev" +
+      "oked all user sessions. Returns the list" +
+      " of revoked sessions and total count\0227\n5" +
+      "\0323.scalekit.v1.sessions.RevokeAllUserSes" +
+      "sionsResponse\202\265\030\002\030T\202\323\344\223\002)\"\'/api/v1/users" +
+      "/{user_id}/sessions/revoke\032\276\003\222A\272\003\n\010Sessi",
+      "ons\022\255\003Comprehensive session management f" +
+      "or user authentication and authorization" +
+      ". This service provides endpoints for re" +
+      "trieving session details, managing user " +
+      "sessions across devices, revoking indivi" +
+      "dual sessions, and terminating all activ" +
+      "e sessions for a user. It supports sessi" +
+      "on auditing, device tracking, and securi" +
+      "ty monitoring with detailed session meta" +
+      "data including device information, IP ge" +
+      "olocation, and activity timestamps.B\335\001\n&" +
+      "com.scalekit.grpc.scalekit.v1.sessionsB\r" +
+      "SessionsProtoP\001Z2github.com/scalekit-inc" +
+      "/scalekit/pkg/grpc/sessions\242\002\003SVS\252\002\024Scal" +
+      "ekit.V1.Sessions\312\002\024Scalekit\\V1\\Sessions\342" +
+      "\002 Scalekit\\V1\\Sessions\\GPBMetadata\352\002\026Sca" +
+      "lekit::V1::Sessionsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -193,6 +509,7 @@ public final class SessionsProto {
           com.scalekit.grpc.google.api.AnnotationsProto.getDescriptor(),
           com.scalekit.grpc.google.api.VisibilityProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor(),
           com.scalekit.grpc.scalekit.v1.options.OptionsProto.getDescriptor(),
         });
     internal_static_scalekit_v1_sessions_SessionDetailsRequest_descriptor =
@@ -248,15 +565,21 @@ public final class SessionsProto {
     internal_static_scalekit_v1_sessions_SessionDetails_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_sessions_SessionDetails_descriptor,
-        new java.lang.String[] { "SessionId", "UserId", "AuthenticatedOrganizations", "OrganizationId", "CreatedAt", "UpdatedAt", "IdleExpiresAt", "AbsoluteExpiresAt", "ExpiredAt", "LogoutAt", "Status", "InitialUserAgent", "InitialOs", "InitialOsVersion", "InitialBrowser", "InitialBrowserVersion", "InitialDeviceType", "InitialIp", "InitialLocation", "LatestUserAgent", "LatestOs", "LatestOsVersion", "LatestBrowser", "LatestBrowserVersion", "LatestDeviceType", "LatestIp", "LatestLocation", });
-    internal_static_scalekit_v1_sessions_RevokedSessionDetails_descriptor =
+        new java.lang.String[] { "SessionId", "UserId", "AuthenticatedOrganizations", "OrganizationId", "CreatedAt", "UpdatedAt", "IdleExpiresAt", "AbsoluteExpiresAt", "ExpiredAt", "LogoutAt", "Status", "Device", "LastActiveAt", });
+    internal_static_scalekit_v1_sessions_DeviceDetails_descriptor =
       getDescriptor().getMessageTypes().get(9);
+    internal_static_scalekit_v1_sessions_DeviceDetails_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_sessions_DeviceDetails_descriptor,
+        new java.lang.String[] { "UserAgent", "Os", "OsVersion", "Browser", "BrowserVersion", "DeviceType", "Ip", "Location", });
+    internal_static_scalekit_v1_sessions_RevokedSessionDetails_descriptor =
+      getDescriptor().getMessageTypes().get(10);
     internal_static_scalekit_v1_sessions_RevokedSessionDetails_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_sessions_RevokedSessionDetails_descriptor,
-        new java.lang.String[] { "SessionId", "UserId", "CreatedAt", "UpdatedAt", "IdleExpiresAt", "AbsoluteExpiresAt", "ExpiredAt", "LogoutAt", "Status", });
+        new java.lang.String[] { "SessionId", "UserId", "CreatedAt", "UpdatedAt", "IdleExpiresAt", "AbsoluteExpiresAt", "ExpiredAt", "LogoutAt", "Status", "LastActiveAt", });
     internal_static_scalekit_v1_sessions_Location_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_scalekit_v1_sessions_Location_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_sessions_Location_descriptor,
@@ -265,7 +588,9 @@ public final class SessionsProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
-    registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Tag);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
@@ -273,6 +598,7 @@ public final class SessionsProto {
     com.scalekit.grpc.google.api.AnnotationsProto.getDescriptor();
     com.scalekit.grpc.google.api.VisibilityProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor();
     com.scalekit.grpc.scalekit.v1.options.OptionsProto.getDescriptor();
   }
 

@@ -162,4 +162,31 @@ public interface UserManagementOrBuilder extends
    * <code>.google.protobuf.BoolValue block_public_email_domains = 10 [json_name = "blockPublicEmailDomains"];</code>
    */
   com.google.protobuf.BoolValueOrBuilder getBlockPublicEmailDomainsOrBuilder();
+
+  /**
+   * <pre>
+   * Indicates whether the identity provider profile is re-synced on every sign-in.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 11 [json_name = "syncUserProfileOnSignin"];</code>
+   * @return Whether the syncUserProfileOnSignin field is set.
+   */
+  boolean hasSyncUserProfileOnSignin();
+  /**
+   * <pre>
+   * Indicates whether the identity provider profile is re-synced on every sign-in.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 11 [json_name = "syncUserProfileOnSignin"];</code>
+   * @return The syncUserProfileOnSignin.
+   */
+  com.google.protobuf.BoolValue getSyncUserProfileOnSignin();
+  /**
+   * <pre>
+   * Indicates whether the identity provider profile is re-synced on every sign-in.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 11 [json_name = "syncUserProfileOnSignin"];</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnSigninOrBuilder();
 }

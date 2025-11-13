@@ -19,7 +19,6 @@ private static final long serialVersionUID = 0L;
   private Permission() {
     id_ = "";
     name_ = "";
-    displayName_ = "";
     description_ = "";
     tags_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
@@ -123,50 +122,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object displayName_ = "";
-  /**
-   * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The displayName.
-   */
-  @java.lang.Override
-  public java.lang.String getDisplayName() {
-    java.lang.Object ref = displayName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      displayName_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for displayName.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getDisplayNameBytes() {
-    java.lang.Object ref = displayName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      displayName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DESCRIPTION_FIELD_NUMBER = 4;
+  public static final int DESCRIPTION_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
   /**
-   * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string description = 3 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The description.
    */
   @java.lang.Override
@@ -183,7 +143,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string description = 3 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for description.
    */
   @java.lang.Override
@@ -201,12 +161,12 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TAGS_FIELD_NUMBER = 5;
+  public static final int TAGS_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
   /**
-   * <code>repeated string tags = 5 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated string tags = 4 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return A list containing the tags.
    */
   public com.google.protobuf.ProtocolStringList
@@ -214,14 +174,14 @@ private static final long serialVersionUID = 0L;
     return tags_;
   }
   /**
-   * <code>repeated string tags = 5 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated string tags = 4 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The count of tags.
    */
   public int getTagsCount() {
     return tags_.size();
   }
   /**
-   * <code>repeated string tags = 5 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated string tags = 4 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The tags at the given index.
    */
@@ -229,7 +189,7 @@ private static final long serialVersionUID = 0L;
     return tags_.get(index);
   }
   /**
-   * <code>repeated string tags = 5 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>repeated string tags = 4 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the tags at the given index.
    */
@@ -258,14 +218,11 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, displayName_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
     for (int i = 0; i < tags_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, tags_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tags_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -282,11 +239,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, displayName_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
     {
       int dataSize = 0;
@@ -315,8 +269,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getId())) return false;
     if (!getName()
         .equals(other.getName())) return false;
-    if (!getDisplayName()
-        .equals(other.getDisplayName())) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
     if (!getTagsList()
@@ -336,8 +288,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
     if (getTagsCount() > 0) {
@@ -477,7 +427,6 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       id_ = "";
       name_ = "";
-      displayName_ = "";
       description_ = "";
       tags_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
@@ -521,12 +470,9 @@ private static final long serialVersionUID = 0L;
         result.name_ = name_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.displayName_ = displayName_;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         tags_.makeImmutable();
         result.tags_ = tags_;
       }
@@ -586,20 +532,15 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (!other.getDisplayName().isEmpty()) {
-        displayName_ = other.displayName_;
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000008;
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -643,21 +584,16 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 18
             case 26: {
-              displayName_ = input.readStringRequireUtf8();
+              description_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
-              description_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
-              break;
-            } // case 34
-            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
               ensureTagsIsMutable();
               tags_.add(s);
               break;
-            } // case 42
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -819,81 +755,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object displayName_ = "";
-    /**
-     * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The displayName.
-     */
-    public java.lang.String getDisplayName() {
-      java.lang.Object ref = displayName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        displayName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for displayName.
-     */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
-      java.lang.Object ref = displayName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        displayName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The displayName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDisplayName(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      displayName_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDisplayName() {
-      displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000004);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for displayName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDisplayNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      displayName_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object description_ = "";
     /**
-     * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string description = 3 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -909,7 +773,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string description = 3 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -926,7 +790,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string description = 3 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The description to set.
      * @return This builder for chaining.
      */
@@ -934,22 +798,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       description_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string description = 3 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string description = 3 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
@@ -958,7 +822,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -969,10 +833,10 @@ private static final long serialVersionUID = 0L;
       if (!tags_.isModifiable()) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
     }
     /**
-     * <code>repeated string tags = 5 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated string tags = 4 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList
@@ -981,14 +845,14 @@ private static final long serialVersionUID = 0L;
       return tags_;
     }
     /**
-     * <code>repeated string tags = 5 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated string tags = 4 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The count of tags.
      */
     public int getTagsCount() {
       return tags_.size();
     }
     /**
-     * <code>repeated string tags = 5 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated string tags = 4 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The tags at the given index.
      */
@@ -996,7 +860,7 @@ private static final long serialVersionUID = 0L;
       return tags_.get(index);
     }
     /**
-     * <code>repeated string tags = 5 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated string tags = 4 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the tags at the given index.
      */
@@ -1005,7 +869,7 @@ private static final long serialVersionUID = 0L;
       return tags_.getByteString(index);
     }
     /**
-     * <code>repeated string tags = 5 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated string tags = 4 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index to set the value at.
      * @param value The tags to set.
      * @return This builder for chaining.
@@ -1015,12 +879,12 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureTagsIsMutable();
       tags_.set(index, value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string tags = 5 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated string tags = 4 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The tags to add.
      * @return This builder for chaining.
      */
@@ -1029,12 +893,12 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureTagsIsMutable();
       tags_.add(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string tags = 5 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated string tags = 4 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param values The tags to add.
      * @return This builder for chaining.
      */
@@ -1043,23 +907,23 @@ private static final long serialVersionUID = 0L;
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, tags_);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string tags = 5 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated string tags = 4 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearTags() {
       tags_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);;
+      bitField0_ = (bitField0_ & ~0x00000008);;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string tags = 5 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>repeated string tags = 4 [json_name = "tags", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes of the tags to add.
      * @return This builder for chaining.
      */
@@ -1069,7 +933,7 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

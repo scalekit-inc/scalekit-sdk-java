@@ -44,7 +44,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object userId_ = "";
   /**
-   * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
+   * <code>string user_id = 1 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The userId.
    */
   @java.lang.Override
@@ -61,7 +61,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
+   * <code>string user_id = 1 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for userId.
    */
   @java.lang.Override
@@ -407,7 +407,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object userId_ = "";
     /**
-     * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
+     * <code>string user_id = 1 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The userId.
      */
     public java.lang.String getUserId() {
@@ -423,7 +423,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
+     * <code>string user_id = 1 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for userId.
      */
     public com.google.protobuf.ByteString
@@ -440,7 +440,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
+     * <code>string user_id = 1 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The userId to set.
      * @return This builder for chaining.
      */
@@ -453,7 +453,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
+     * <code>string user_id = 1 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearUserId() {
@@ -463,7 +463,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
+     * <code>string user_id = 1 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for userId to set.
      * @return This builder for chaining.
      */
