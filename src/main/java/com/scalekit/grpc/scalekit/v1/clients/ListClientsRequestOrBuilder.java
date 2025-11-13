@@ -17,4 +17,24 @@ public interface ListClientsRequestOrBuilder extends
    * @return The includePlainSecret.
    */
   boolean getIncludePlainSecret();
+
+  /**
+   * <pre>
+   * Filter clients by type. Defaults to WEB if not specified.
+   * </pre>
+   *
+   * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The clientType.
+   */
+  java.lang.String getClientType();
+  /**
+   * <pre>
+   * Filter clients by type. Defaults to WEB if not specified.
+   * </pre>
+   *
+   * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for clientType.
+   */
+  com.google.protobuf.ByteString
+      getClientTypeBytes();
 }

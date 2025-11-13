@@ -9,55 +9,55 @@ public interface UserSessionDetailsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .scalekit.v1.sessions.SessionDetails sessions = 1 [json_name = "sessions"];</code>
+   * <code>repeated .scalekit.v1.sessions.SessionDetails sessions = 1 [json_name = "sessions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<com.scalekit.grpc.scalekit.v1.sessions.SessionDetails> 
       getSessionsList();
   /**
-   * <code>repeated .scalekit.v1.sessions.SessionDetails sessions = 1 [json_name = "sessions"];</code>
+   * <code>repeated .scalekit.v1.sessions.SessionDetails sessions = 1 [json_name = "sessions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.sessions.SessionDetails getSessions(int index);
   /**
-   * <code>repeated .scalekit.v1.sessions.SessionDetails sessions = 1 [json_name = "sessions"];</code>
+   * <code>repeated .scalekit.v1.sessions.SessionDetails sessions = 1 [json_name = "sessions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   int getSessionsCount();
   /**
-   * <code>repeated .scalekit.v1.sessions.SessionDetails sessions = 1 [json_name = "sessions"];</code>
+   * <code>repeated .scalekit.v1.sessions.SessionDetails sessions = 1 [json_name = "sessions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<? extends com.scalekit.grpc.scalekit.v1.sessions.SessionDetailsOrBuilder> 
       getSessionsOrBuilderList();
   /**
-   * <code>repeated .scalekit.v1.sessions.SessionDetails sessions = 1 [json_name = "sessions"];</code>
+   * <code>repeated .scalekit.v1.sessions.SessionDetails sessions = 1 [json_name = "sessions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.sessions.SessionDetailsOrBuilder getSessionsOrBuilder(
       int index);
 
   /**
-   * <code>string next_page_token = 2 [json_name = "nextPageToken"];</code>
+   * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
-   * <code>string next_page_token = 2 [json_name = "nextPageToken"];</code>
+   * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString
       getNextPageTokenBytes();
 
   /**
-   * <code>string prev_page_token = 3 [json_name = "prevPageToken"];</code>
+   * <code>string prev_page_token = 3 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The prevPageToken.
    */
   java.lang.String getPrevPageToken();
   /**
-   * <code>string prev_page_token = 3 [json_name = "prevPageToken"];</code>
+   * <code>string prev_page_token = 3 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for prevPageToken.
    */
   com.google.protobuf.ByteString
       getPrevPageTokenBytes();
 
   /**
-   * <code>uint32 total_size = 4 [json_name = "totalSize"];</code>
+   * <code>uint32 total_size = 4 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The totalSize.
    */
   int getTotalSize();

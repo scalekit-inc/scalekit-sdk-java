@@ -766,7 +766,7 @@ public final class RolesProto {
       "le_name\030\002 \001(\tB_\222A:21Name of the organiza" +
       "tion role to remove base fromJ\005admin\272H\037r" +
       "\032\020\001\030d2\024^[a-zA-Z0-9_]{1,64}$\310\001\001R\010roleName" +
-      "2\340\304\001\n\014RolesService\022\207\010\n\nCreateRole\022$.scal" +
+      "2\302\304\001\n\014RolesService\022\207\010\n\nCreateRole\022$.scal" +
       "ekit.v1.roles.CreateRoleRequest\032%.scalek" +
       "it.v1.roles.CreateRoleResponse\"\253\007\222A\206\007\n\005R" +
       "oles\022\036Create new role in environment\032\210\003C" +
@@ -1042,10 +1042,10 @@ public final class RolesProto {
       ".roles.GetOrganizationRoleUsersCountResp" +
       "onse\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002>\022</api/v1" +
       "/organizations/{org_id}/roles/{role_name" +
-      "}/users:count\022\255\006\n\022UpdateDefaultRoles\022,.s" +
+      "}/users:count\022\236\006\n\022UpdateDefaultRoles\022,.s" +
       "calekit.v1.roles.UpdateDefaultRolesReque" +
       "st\032-.scalekit.v1.roles.UpdateDefaultRole" +
-      "sResponse\"\271\005\222A\337\004\n\005Roles\022$Set default cre" +
+      "sResponse\"\252\005\222A\337\004\n\005Roles\022$Set default cre" +
       "ator and member roles\032\317\003Updates the defa" +
       "ult creator and member roles for the cur" +
       "rent environment. Use this endpoint to c" +
@@ -1060,347 +1060,347 @@ public final class RolesProto {
       "heir complete role information and permi" +
       "ssions.J^\n\003200\022W\n\"Default roles updated " +
       "successfully\0221\n/\032-.scalekit.v1.roles.Upd" +
-      "ateDefaultRolesResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PRE" +
-      "VIEW\202\323\344\223\002;2\032/api/v1/roles:set_defaults:\001" +
-      "*Z\0322\025/api/v1/roles/default:\001*\022\332\006\n\036Update" +
-      "DefaultOrganizationRoles\0228.scalekit.v1.r" +
-      "oles.UpdateDefaultOrganizationRolesReque" +
-      "st\0329.scalekit.v1.roles.UpdateDefaultOrga" +
-      "nizationRolesResponse\"\302\005\222A\355\004\n\005Roles\022\036Set" +
-      " default organization roles\032\370\002Updates th" +
-      "e default member role for the specified " +
-      "organization. Use this endpoint to confi" +
-      "gure which role is automatically assigne" +
-      "d to new users when they join the organi" +
-      "zation. The system will validate that th" +
-      "e specified role exists and update the o" +
-      "rganization settings accordingly. This c" +
-      "onfiguration affects all new user invita" +
-      "tions and memberships within the organiz" +
-      "ation.J\310\001\n\003200\022\300\001\n\177Default organization " +
-      "roles updated successfully. Returns the " +
-      "updated default member role object with " +
-      "complete role information.\022=\n;\0329.scaleki" +
-      "t.v1.roles.UpdateDefaultOrganizationRole" +
-      "sResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002621/a" +
-      "pi/v1/organizations/{org_id}/roles:set_d" +
-      "efaults:\001*\022\244\010\n\022ListDependentRoles\022,.scal" +
-      "ekit.v1.roles.ListDependentRolesRequest\032" +
-      "-.scalekit.v1.roles.ListDependentRolesRe" +
-      "sponse\"\260\007\222A\372\006\n\005Roles\022\024List dependent rol" +
-      "es\032\374\004Retrieves all roles that directly e" +
-      "xtend the specified base role through in" +
-      "heritance. Use this endpoint to understa" +
-      "nd the role hierarchy and identify which" +
-      " roles inherit permissions from a partic" +
-      "ular base role. Provide the base role na",
-      "me as a path parameter, and the response" +
-      " will include all dependent roles with t" +
-      "heir metadata and permission information" +
-      ". This operation is useful for auditing " +
-      "role inheritance relationships, understa" +
-      "nding the impact of changes to base role" +
-      "s, or managing role hierarchies effectiv" +
-      "ely. Returns a list of dependent role ob" +
-      "jects including their names, display nam" +
-      "es, descriptions, and permission details" +
-      ".J\333\001\n\003200\022\323\001\n\235\001Successfully retrieved de" +
-      "pendent roles. Returns a list of all rol" +
-      "es that extend the specified base role, " +
-      "including their metadata and permission " +
-      "information.\0221\n/\032-.scalekit.v1.roles.Lis" +
-      "tDependentRolesResponse\202\265\030\002\030t\202\323\344\223\002&\022$/ap" +
-      "i/v1/roles/{role_name}/dependents\022\267\006\n\016De" +
-      "leteRoleBase\022(.scalekit.v1.roles.DeleteR" +
-      "oleBaseRequest\032\026.google.protobuf.Empty\"\342" +
-      "\005\222A\262\005\n\005Roles\022$Delete role inheritance re" +
-      "lationship\032\206\004Removes the base role inher" +
-      "itance relationship for a specified role" +
-      ", effectively eliminating all inherited " +
-      "permissions from the base role. Use this" +
-      " endpoint when you want to break the hie" +
-      "rarchical relationship between roles and" +
-      " remove inherited permissions. The role " +
-      "will retain only its directly assigned p" +
-      "ermissions after this operation. This ac" +
-      "tion cannot be undone, so ensure the rol" +
-      "e has sufficient direct permissions befo" +
-      "re removing inheritance. Returns no cont" +
-      "ent on successful removal of the base re" +
-      "lationship.Jz\n\003200\022s\nqBase role inherita" +
-      "nce relationship successfully removed. T" +
-      "he role now has only its directly assign" +
-      "ed permissions.\202\265\030\002\030T\202\323\344\223\002 *\036/api/v1/rol" +
-      "es/{role_name}/base\022\346\006\n\032DeleteOrganizati" +
-      "onRoleBase\0224.scalekit.v1.roles.DeleteOrg" +
-      "anizationRoleBaseRequest\032\026.google.protob" +
-      "uf.Empty\"\371\005\222A\243\005\n\005Roles\022$Remove organizat" +
-      "ion role inheritance\032\350\003Removes the base " +
+      "ateDefaultRolesResponse\202\265\030\002\030T\202\323\344\223\002;2\032/ap" +
+      "i/v1/roles:set_defaults:\001*Z\0322\025/api/v1/ro" +
+      "les/default:\001*\022\313\006\n\036UpdateDefaultOrganiza" +
+      "tionRoles\0228.scalekit.v1.roles.UpdateDefa" +
+      "ultOrganizationRolesRequest\0329.scalekit.v" +
+      "1.roles.UpdateDefaultOrganizationRolesRe" +
+      "sponse\"\263\005\222A\355\004\n\005Roles\022\036Set default organi" +
+      "zation roles\032\370\002Updates the default membe" +
+      "r role for the specified organization. U" +
+      "se this endpoint to configure which role" +
+      " is automatically assigned to new users " +
+      "when they join the organization. The sys" +
+      "tem will validate that the specified rol" +
+      "e exists and update the organization set" +
+      "tings accordingly. This configuration af" +
+      "fects all new user invitations and membe" +
+      "rships within the organization.J\310\001\n\003200\022" +
+      "\300\001\n\177Default organization roles updated s" +
+      "uccessfully. Returns the updated default" +
+      " member role object with complete role i" +
+      "nformation.\022=\n;\0329.scalekit.v1.roles.Upda" +
+      "teDefaultOrganizationRolesResponse\202\265\030\002\030T" +
+      "\202\323\344\223\002621/api/v1/organizations/{org_id}/r" +
+      "oles:set_defaults:\001*\022\244\010\n\022ListDependentRo" +
+      "les\022,.scalekit.v1.roles.ListDependentRol" +
+      "esRequest\032-.scalekit.v1.roles.ListDepend" +
+      "entRolesResponse\"\260\007\222A\372\006\n\005Roles\022\024List dep" +
+      "endent roles\032\374\004Retrieves all roles that " +
+      "directly extend the specified base role " +
+      "through inheritance. Use this endpoint t" +
+      "o understand the role hierarchy and iden" +
+      "tify which roles inherit permissions fro" +
+      "m a particular base role. Provide the ba" +
+      "se role name as a path parameter, and th",
+      "e response will include all dependent ro" +
+      "les with their metadata and permission i" +
+      "nformation. This operation is useful for" +
+      " auditing role inheritance relationships" +
+      ", understanding the impact of changes to" +
+      " base roles, or managing role hierarchie" +
+      "s effectively. Returns a list of depende" +
+      "nt role objects including their names, d" +
+      "isplay names, descriptions, and permissi" +
+      "on details.J\333\001\n\003200\022\323\001\n\235\001Successfully re" +
+      "trieved dependent roles. Returns a list " +
+      "of all roles that extend the specified b" +
+      "ase role, including their metadata and p" +
+      "ermission information.\0221\n/\032-.scalekit.v1" +
+      ".roles.ListDependentRolesResponse\202\265\030\002\030t\202" +
+      "\323\344\223\002&\022$/api/v1/roles/{role_name}/depende" +
+      "nts\022\267\006\n\016DeleteRoleBase\022(.scalekit.v1.rol" +
+      "es.DeleteRoleBaseRequest\032\026.google.protob" +
+      "uf.Empty\"\342\005\222A\262\005\n\005Roles\022$Delete role inhe" +
+      "ritance relationship\032\206\004Removes the base " +
       "role inheritance relationship for a spec" +
-      "ified organization role, effectively eli" +
-      "minating all inherited permissions from " +
-      "the base role. Use this endpoint when yo" +
-      "u want to break the hierarchical relatio" +
-      "nship between roles and remove inherited" +
-      " permissions within the organization. Th" +
-      "e role will retain only its directly ass" +
-      "igned permissions after this operation. " +
-      "This action cannot be undone, so ensure " +
-      "the role has sufficient direct permissio" +
-      "ns before removing inheritance.J\210\001\n\003200\022" +
-      "\200\001\n~Organization role base inheritance r" +
-      "elationship successfully removed. The ro" +
-      "le now has only its directly assigned pe" +
-      "rmissions.\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0027*5/" +
-      "api/v1/organizations/{org_id}/roles/{rol" +
-      "e_name}/base\022\317\007\n\020CreatePermission\022*.scal" +
-      "ekit.v1.roles.CreatePermissionRequest\032+." +
-      "scalekit.v1.roles.CreatePermissionRespon" +
-      "se\"\341\006\222A\260\006\n\013Permissions\022\025Create new permi" +
-      "ssion\032\306\004Creates a new permission that re" +
-      "presents a specific action users can per" +
-      "form within the environment. Use this en" +
-      "dpoint to define granular access control" +
-      "s for your RBAC system. You can provide " +
-      "a unique permission name following the f" +
-      "ormat \'action:resource\' (for example, \'r" +
-      "ead:documents\', \'write:users\') and an op" +
-      "tional description explaining the permis" +
-      "sion\'s purpose. The permission name must" +
-      " be unique across the environment and fo" +
-      "llows alphanumeric naming conventions wi" +
-      "th colons and underscores. Returns the c" +
-      "reated permission object including syste" +
-      "m-generated ID and timestamps.J\300\001\n\003201\022\270" +
-      "\001\n\204\001Permission created successfully. Ret" +
-      "urns the complete permission object with" +
-      " system-generated ID, name, description," +
-      " and timestamps.\022/\n-\032+.scalekit.v1.roles" +
-      ".CreatePermissionResponse\202\265\030\002\030T\202\323\344\223\002!\"\023/" +
-      "api/v1/permissions:\npermission\022\275\007\n\rGetPe" +
-      "rmission\022\'.scalekit.v1.roles.GetPermissi" +
-      "onRequest\032(.scalekit.v1.roles.GetPermiss" +
-      "ionResponse\"\330\006\222A\241\006\n\013Permissions\022\033Retriev" +
-      "e permission details\032\252\004Retrieves complet" +
-      "e information for a specific permission " +
-      "by its unique name identifier. Use this " +
-      "endpoint to view permission details incl" +
-      "uding description, creation time, and la" +
-      "st update time. Provide the permission n" +
-      "ame in the path parameter following the " +
-      "format \'action:resource\' (for example, \'" +
-      "read:documents\'). This operation is usef" +
-      "ul for auditing permission definitions, " +
-      "understanding permission purposes, or ve" +
-      "rifying permission existence before assi" +
-      "gnment. Returns the complete permission " +
-      "object with all metadata and system-gene" +
-      "rated timestamps.J\307\001\n\003200\022\277\001\n\216\001Successfu" +
-      "lly retrieved permission details. Return" +
-      "s the complete permission object includi" +
-      "ng name, description, creation time, and" +
-      " update time.\022,\n*\032(.scalekit.v1.roles.Ge" +
-      "tPermissionResponse\202\265\030\002\030T\202\323\344\223\002\'\022%/api/v1" +
-      "/permissions/{permission_name}\022\203\010\n\020Updat" +
-      "ePermission\022*.scalekit.v1.roles.UpdatePe" +
-      "rmissionRequest\032+.scalekit.v1.roles.Upda" +
-      "tePermissionResponse\"\225\007\222A\322\006\n\013Permissions" +
-      "\022\031Update permission details\032\371\004Modifies a" +
-      "n existing permission\'s attributes inclu" +
-      "ding description and metadata. Use this " +
-      "endpoint to update permission descriptio" +
-      "ns or clarify permission purposes after " +
-      "creation. The permission is identified b" +
-      "y its unique name in the path parameter," +
-      " and only the fields you specify in the " +
-      "request body will be updated. Note that " +
-      "the permission name itself cannot be cha" +
-      "nged as it serves as the immutable ident" +
-      "ifier. This operation is useful for main" +
-      "taining clear documentation of permissio" +
-      "n purposes or updating descriptions to r" +
-      "eflect changes in system functionality. " +
-      "Returns the updated permission object wi" +
-      "th modified timestamps.J\253\001\n\003200\022\243\001\npPerm" +
-      "ission updated successfully. Returns the" +
-      " modified permission object with updated" +
-      " description and timestamps.\022/\n-\032+.scale" +
-      "kit.v1.roles.UpdatePermissionResponse\202\265\030" +
-      "\002\030T\202\323\344\223\0023\032%/api/v1/permissions/{permissi" +
-      "on_name}:\npermission\022\361\007\n\017ListPermissions" +
-      "\022).scalekit.v1.roles.ListPermissionsRequ" +
-      "est\032*.scalekit.v1.roles.ListPermissionsR" +
-      "esponse\"\206\007\222A\341\006\n\013Permissions\022\024List all pe" +
-      "rmissions\032\353\004Retrieves a comprehensive, p" +
-      "aginated list of all permissions availab" +
-      "le within the environment. Use this endp" +
-      "oint to view all permission definitions " +
-      "for auditing, role management, or unders" +
-      "tanding the complete set of available ac" +
-      "cess controls. The response includes pag" +
-      "ination tokens to navigate through large" +
-      " sets of permissions efficiently. Each p" +
-      "ermission object contains the permission" +
-      " name, description, creation time, and l" +
-      "ast update time. This operation is usefu" +
-      "l for building permission selection inte" +
-      "rfaces, auditing permission usage, or un" +
-      "derstanding the scope of available acces" +
-      "s controls in your RBAC system.J\315\001\n\003200\022" +
-      "\305\001\n\222\001Successfully retrieved the list of " +
-      "permissions. Returns a paginated list of" +
-      " permission objects with metadata and pa" +
-      "gination tokens for navigation.\022.\n,\032*.sc" +
-      "alekit.v1.roles.ListPermissionsResponse\202" +
-      "\265\030\002\030T\202\323\344\223\002\025\022\023/api/v1/permissions\022\320\006\n\020Del" +
-      "etePermission\022*.scalekit.v1.roles.Delete" +
-      "PermissionRequest\032\026.google.protobuf.Empt" +
-      "y\"\367\005\222A\300\005\n\013Permissions\022\021Delete permission" +
-      "\032\335\004Permanently removes a permission from" +
-      " the environment using its unique name i" +
-      "dentifier. Use this endpoint when you ne" +
-      "ed to clean up unused permissions or rem" +
-      "ove access controls that are no longer r" +
-      "elevant. The permission is identified by" +
-      " its name in the path parameter followin" +
-      "g the format \'action:resource\'. This ope" +
-      "ration cannot be undone, so ensure no ac" +
-      "tive roles depend on the permission befo" +
-      "re deletion. If the permission is curren" +
-      "tly assigned to any roles, you may need " +
-      "to remove those assignments first or upd" +
-      "ate the roles to use alternative permiss" +
-      "ions. Returns no content on successful d" +
-      "eletion.J>\n\003200\0227\n5Permission successful" +
-      "ly deleted. No content returned.\202\265\030\002\030T\202\323" +
-      "\344\223\002\'*%/api/v1/permissions/{permission_na" +
-      "me}\022\200\t\n\023ListRolePermissions\022-.scalekit.v" +
-      "1.roles.ListRolePermissionsRequest\032..sca" +
-      "lekit.v1.roles.ListRolePermissionsRespon" +
-      "se\"\211\010\222A\322\007\n\005Roles\022\031List permissions for r" +
-      "ole\032\327\005Retrieves all permissions directly" +
+      "ified role, effectively eliminating all " +
+      "inherited permissions from the base role" +
+      ". Use this endpoint when you want to bre" +
+      "ak the hierarchical relationship between" +
+      " roles and remove inherited permissions." +
+      " The role will retain only its directly " +
+      "assigned permissions after this operatio" +
+      "n. This action cannot be undone, so ensu" +
+      "re the role has sufficient direct permis" +
+      "sions before removing inheritance. Retur" +
+      "ns no content on successful removal of t" +
+      "he base relationship.Jz\n\003200\022s\nqBase rol" +
+      "e inheritance relationship successfully " +
+      "removed. The role now has only its direc" +
+      "tly assigned permissions.\202\265\030\002\030T\202\323\344\223\002 *\036/" +
+      "api/v1/roles/{role_name}/base\022\346\006\n\032Delete" +
+      "OrganizationRoleBase\0224.scalekit.v1.roles" +
+      ".DeleteOrganizationRoleBaseRequest\032\026.goo" +
+      "gle.protobuf.Empty\"\371\005\222A\243\005\n\005Roles\022$Remove" +
+      " organization role inheritance\032\350\003Removes" +
+      " the base role inheritance relationship " +
+      "for a specified organization role, effec" +
+      "tively eliminating all inherited permiss" +
+      "ions from the base role. Use this endpoi" +
+      "nt when you want to break the hierarchic" +
+      "al relationship between roles and remove" +
+      " inherited permissions within the organi" +
+      "zation. The role will retain only its di" +
+      "rectly assigned permissions after this o" +
+      "peration. This action cannot be undone, " +
+      "so ensure the role has sufficient direct" +
+      " permissions before removing inheritance" +
+      ".J\210\001\n\003200\022\200\001\n~Organization role base inh" +
+      "eritance relationship successfully remov" +
+      "ed. The role now has only its directly a" +
+      "ssigned permissions.\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIE" +
+      "W\202\323\344\223\0027*5/api/v1/organizations/{org_id}/" +
+      "roles/{role_name}/base\022\317\007\n\020CreatePermiss" +
+      "ion\022*.scalekit.v1.roles.CreatePermission" +
+      "Request\032+.scalekit.v1.roles.CreatePermis" +
+      "sionResponse\"\341\006\222A\260\006\n\013Permissions\022\025Create" +
+      " new permission\032\306\004Creates a new permissi" +
+      "on that represents a specific action use" +
+      "rs can perform within the environment. U" +
+      "se this endpoint to define granular acce" +
+      "ss controls for your RBAC system. You ca" +
+      "n provide a unique permission name follo" +
+      "wing the format \'action:resource\' (for e" +
+      "xample, \'read:documents\', \'write:users\')" +
+      " and an optional description explaining " +
+      "the permission\'s purpose. The permission" +
+      " name must be unique across the environm" +
+      "ent and follows alphanumeric naming conv" +
+      "entions with colons and underscores. Ret" +
+      "urns the created permission object inclu" +
+      "ding system-generated ID and timestamps." +
+      "J\300\001\n\003201\022\270\001\n\204\001Permission created success" +
+      "fully. Returns the complete permission o" +
+      "bject with system-generated ID, name, de" +
+      "scription, and timestamps.\022/\n-\032+.scaleki" +
+      "t.v1.roles.CreatePermissionResponse\202\265\030\002\030" +
+      "T\202\323\344\223\002!\"\023/api/v1/permissions:\npermission" +
+      "\022\275\007\n\rGetPermission\022\'.scalekit.v1.roles.G" +
+      "etPermissionRequest\032(.scalekit.v1.roles." +
+      "GetPermissionResponse\"\330\006\222A\241\006\n\013Permission" +
+      "s\022\033Retrieve permission details\032\252\004Retriev" +
+      "es complete information for a specific p" +
+      "ermission by its unique name identifier." +
+      " Use this endpoint to view permission de" +
+      "tails including description, creation ti" +
+      "me, and last update time. Provide the pe" +
+      "rmission name in the path parameter foll" +
+      "owing the format \'action:resource\' (for " +
+      "example, \'read:documents\'). This operati" +
+      "on is useful for auditing permission def" +
+      "initions, understanding permission purpo" +
+      "ses, or verifying permission existence b" +
+      "efore assignment. Returns the complete p" +
+      "ermission object with all metadata and s" +
+      "ystem-generated timestamps.J\307\001\n\003200\022\277\001\n\216" +
+      "\001Successfully retrieved permission detai" +
+      "ls. Returns the complete permission obje" +
+      "ct including name, description, creation" +
+      " time, and update time.\022,\n*\032(.scalekit.v" +
+      "1.roles.GetPermissionResponse\202\265\030\002\030T\202\323\344\223\002" +
+      "\'\022%/api/v1/permissions/{permission_name}" +
+      "\022\203\010\n\020UpdatePermission\022*.scalekit.v1.role" +
+      "s.UpdatePermissionRequest\032+.scalekit.v1." +
+      "roles.UpdatePermissionResponse\"\225\007\222A\322\006\n\013P" +
+      "ermissions\022\031Update permission details\032\371\004" +
+      "Modifies an existing permission\'s attrib" +
+      "utes including description and metadata." +
+      " Use this endpoint to update permission " +
+      "descriptions or clarify permission purpo" +
+      "ses after creation. The permission is id" +
+      "entified by its unique name in the path " +
+      "parameter, and only the fields you speci" +
+      "fy in the request body will be updated. " +
+      "Note that the permission name itself can" +
+      "not be changed as it serves as the immut" +
+      "able identifier. This operation is usefu" +
+      "l for maintaining clear documentation of" +
+      " permission purposes or updating descrip" +
+      "tions to reflect changes in system funct" +
+      "ionality. Returns the updated permission" +
+      " object with modified timestamps.J\253\001\n\00320" +
+      "0\022\243\001\npPermission updated successfully. R" +
+      "eturns the modified permission object wi" +
+      "th updated description and timestamps.\022/" +
+      "\n-\032+.scalekit.v1.roles.UpdatePermissionR" +
+      "esponse\202\265\030\002\030T\202\323\344\223\0023\032%/api/v1/permissions" +
+      "/{permission_name}:\npermission\022\361\007\n\017ListP" +
+      "ermissions\022).scalekit.v1.roles.ListPermi" +
+      "ssionsRequest\032*.scalekit.v1.roles.ListPe" +
+      "rmissionsResponse\"\206\007\222A\341\006\n\013Permissions\022\024L" +
+      "ist all permissions\032\353\004Retrieves a compre" +
+      "hensive, paginated list of all permissio" +
+      "ns available within the environment. Use" +
+      " this endpoint to view all permission de" +
+      "finitions for auditing, role management," +
+      " or understanding the complete set of av" +
+      "ailable access controls. The response in" +
+      "cludes pagination tokens to navigate thr" +
+      "ough large sets of permissions efficient" +
+      "ly. Each permission object contains the " +
+      "permission name, description, creation t" +
+      "ime, and last update time. This operatio" +
+      "n is useful for building permission sele" +
+      "ction interfaces, auditing permission us" +
+      "age, or understanding the scope of avail" +
+      "able access controls in your RBAC system" +
+      ".J\315\001\n\003200\022\305\001\n\222\001Successfully retrieved th" +
+      "e list of permissions. Returns a paginat" +
+      "ed list of permission objects with metad" +
+      "ata and pagination tokens for navigation" +
+      ".\022.\n,\032*.scalekit.v1.roles.ListPermission" +
+      "sResponse\202\265\030\002\030T\202\323\344\223\002\025\022\023/api/v1/permissio" +
+      "ns\022\320\006\n\020DeletePermission\022*.scalekit.v1.ro" +
+      "les.DeletePermissionRequest\032\026.google.pro" +
+      "tobuf.Empty\"\367\005\222A\300\005\n\013Permissions\022\021Delete " +
+      "permission\032\335\004Permanently removes a permi" +
+      "ssion from the environment using its uni" +
+      "que name identifier. Use this endpoint w" +
+      "hen you need to clean up unused permissi" +
+      "ons or remove access controls that are n" +
+      "o longer relevant. The permission is ide" +
+      "ntified by its name in the path paramete" +
+      "r following the format \'action:resource\'" +
+      ". This operation cannot be undone, so en" +
+      "sure no active roles depend on the permi" +
+      "ssion before deletion. If the permission" +
+      " is currently assigned to any roles, you" +
+      " may need to remove those assignments fi" +
+      "rst or update the roles to use alternati" +
+      "ve permissions. Returns no content on su" +
+      "ccessful deletion.J>\n\003200\0227\n5Permission " +
+      "successfully deleted. No content returne" +
+      "d.\202\265\030\002\030T\202\323\344\223\002\'*%/api/v1/permissions/{per" +
+      "mission_name}\022\200\t\n\023ListRolePermissions\022-." +
+      "scalekit.v1.roles.ListRolePermissionsReq" +
+      "uest\032..scalekit.v1.roles.ListRolePermiss" +
+      "ionsResponse\"\211\010\222A\322\007\n\005Roles\022\031List permiss" +
+      "ions for role\032\327\005Retrieves all permission" +
+      "s directly assigned to the specified rol" +
+      "e, excluding permissions inherited from " +
+      "base roles. Use this endpoint to view th" +
+      "e explicit permission assignments for a " +
+      "role, which is useful for understanding " +
+      "direct role capabilities, auditing permi" +
+      "ssion assignments, or managing role-perm" +
+      "ission relationships. Provide the role n" +
+      "ame as a path parameter, and the respons" +
+      "e will include only the permissions that" +
+      " are directly assigned to that role. Thi" +
+      "s operation does not include inherited p" +
+      "ermissions from role hierarchies - use L" +
+      "istEffectiveRolePermissions to see the c" +
+      "omplete set of permissions including inh" +
+      "eritance. Returns a list of permission o" +
+      "bjects with their names, descriptions, a" +
+      "nd assignment metadata.J\323\001\n\003200\022\313\001\n\224\001Suc" +
+      "cessfully retrieved role permissions. Re" +
+      "turns a list of all permissions directly" +
       " assigned to the specified role, excludi" +
-      "ng permissions inherited from base roles" +
-      ". Use this endpoint to view the explicit" +
-      " permission assignments for a role, whic" +
-      "h is useful for understanding direct rol" +
-      "e capabilities, auditing permission assi" +
-      "gnments, or managing role-permission rel" +
-      "ationships. Provide the role name as a p" +
-      "ath parameter, and the response will inc" +
-      "lude only the permissions that are direc" +
-      "tly assigned to that role. This operatio" +
-      "n does not include inherited permissions" +
-      " from role hierarchies - use ListEffecti" +
-      "veRolePermissions to see the complete se" +
-      "t of permissions including inheritance. " +
-      "Returns a list of permission objects wit" +
-      "h their names, descriptions, and assignm" +
-      "ent metadata.J\323\001\n\003200\022\313\001\n\224\001Successfully " +
-      "retrieved role permissions. Returns a li" +
-      "st of all permissions directly assigned " +
-      "to the specified role, excluding inherit" +
-      "ed permissions.\0222\n0\032..scalekit.v1.roles." +
-      "ListRolePermissionsResponse\202\265\030\002\030T\202\323\344\223\002\'\022" +
-      "%/api/v1/roles/{role_name}/permissions\022\372" +
-      "\010\n\024AddPermissionsToRole\022..scalekit.v1.ro" +
-      "les.AddPermissionsToRoleRequest\032/.scalek" +
-      "it.v1.roles.AddPermissionsToRoleResponse" +
-      "\"\200\010\222A\306\007\n\005Roles\022\027Add permissions to role\032" +
-      "\275\005Adds one or more permissions to the sp" +
-      "ecified role while preserving existing p" +
-      "ermission assignments. Use this endpoint" +
-      " to grant additional capabilities to a r" +
-      "ole without affecting its current permis" +
-      "sion set. Provide the role name as a pat" +
-      "h parameter and a list of permission nam" +
-      "es in the request body. The system will " +
-      "validate that all specified permissions " +
-      "exist in the environment and add them to" +
-      " the role. Existing permission assignmen" +
-      "ts remain unchanged, making this operati" +
-      "on safe for incremental permission manag" +
-      "ement. This is useful for gradually expa" +
-      "nding role capabilities or adding new pe" +
-      "rmissions as your system evolves. Return" +
-      "s the updated list of all permissions no" +
-      "w assigned to the role.J\343\001\n\003200\022\333\001\n\243\001Per" +
-      "missions added to role successfully. Ret" +
-      "urns the complete list of all permission" +
-      "s now assigned to the role, including bo" +
-      "th existing and newly added permissions." +
-      "\0223\n1\032/.scalekit.v1.roles.AddPermissionsT" +
-      "oRoleResponse\202\265\030\002\030T\202\323\344\223\002*\"%/api/v1/roles" +
-      "/{role_name}/permissions:\001*\022\267\007\n\030RemovePe" +
-      "rmissionFromRole\0222.scalekit.v1.roles.Rem" +
-      "ovePermissionFromRoleRequest\032\026.google.pr" +
-      "otobuf.Empty\"\316\006\222A\205\006\n\005Roles\022\033Remove permi" +
-      "ssion from role\032\224\005Removes a specific per" +
-      "mission from the specified role, revokin" +
-      "g that capability from all users assigne" +
-      "d to the role. Use this endpoint to rest" +
-      "rict role capabilities or remove unneces" +
-      "sary permissions. Provide both the role " +
-      "name and permission name as path paramet" +
-      "ers. This operation only affects the dir" +
-      "ect permission assignment and does not i" +
-      "mpact permissions inherited from base ro" +
-      "les. If the permission is inherited thro" +
-      "ugh role hierarchy, you may need to modi" +
-      "fy the base role instead. This is useful" +
-      " for fine-tuning role permissions, imple" +
-      "menting least-privilege access controls," +
-      " or removing deprecated permissions. Ret" +
-      "urns no content on successful removal.JH" +
-      "\n\003200\022A\n?Permission removed from role su" +
-      "ccessfully. No content returned.\202\265\030\002\030T\202\323" +
-      "\344\223\0029*7/api/v1/roles/{role_name}/permissi" +
-      "ons/{permission_name}\022\337\t\n\034ListEffectiveR" +
-      "olePermissions\0226.scalekit.v1.roles.ListE" +
-      "ffectiveRolePermissionsRequest\0327.scaleki" +
-      "t.v1.roles.ListEffectiveRolePermissionsR" +
-      "esponse\"\315\010\222A\222\010\n\005Roles\022#List effective pe" +
-      "rmissions for role\032\331\005Retrieves the compl" +
-      "ete set of effective permissions for a r" +
-      "ole, including both directly assigned pe" +
-      "rmissions and permissions inherited from" +
-      " base roles through the role hierarchy. " +
-      "Use this endpoint to understand the full" +
-      " scope of capabilities available to user" +
-      "s assigned to a specific role. Provide t" +
-      "he role name as a path parameter, and th" +
-      "e response will include all permissions " +
-      "that apply to the role, accounting for i" +
-      "nheritance relationships. This operation" +
-      " is essential for auditing role capabili" +
-      "ties, understanding permission inheritan" +
-      "ce, or verifying the complete access sco" +
-      "pe before role assignment. Returns a com" +
-      "prehensive list of permission names repr" +
-      "esenting the full set of effective permi" +
-      "ssions for the specified role.J\207\002\n\003200\022\377" +
-      "\001\n\277\001Successfully retrieved effective per" +
-      "missions. Returns the complete list of a" +
-      "ll permissions that apply to the role, i" +
-      "ncluding both direct assignments and inh" +
-      "erited permissions from base roles.\022;\n9\032" +
-      "7.scalekit.v1.roles.ListEffectiveRolePer" +
-      "missionsResponse\202\265\030\002\030T\202\323\344\223\002+\022)/api/v1/ro" +
-      "les/{role_name}/permissions:all\032\342\002\222A\336\002\n\005" +
-      "Roles\022\324\002Role-based access control (RBAC)" +
-      " for defining and managing permissions i" +
-      "n an environment. Create and update cust" +
-      "om roles with explicit permissions, mode" +
-      "l role hierarchies through inheritance, " +
-      "view dependent roles, manage role-permis" +
-      "sion assignments, and list roles and per" +
-      "missions. Also provides a utility to cou" +
-      "nt users assigned to a role.B\310\001\n#com.sca" +
-      "lekit.grpc.scalekit.v1.rolesB\nRolesProto" +
-      "P\001Z/github.com/scalekit-inc/scalekit/pkg" +
-      "/grpc/roles\242\002\003SVR\252\002\021Scalekit.V1.Roles\312\002\021" +
-      "Scalekit\\V1\\Roles\342\002\035Scalekit\\V1\\Roles\\GP" +
-      "BMetadata\352\002\023Scalekit::V1::Rolesb\006proto3"
+      "ng inherited permissions.\0222\n0\032..scalekit" +
+      ".v1.roles.ListRolePermissionsResponse\202\265\030" +
+      "\002\030T\202\323\344\223\002\'\022%/api/v1/roles/{role_name}/per" +
+      "missions\022\372\010\n\024AddPermissionsToRole\022..scal" +
+      "ekit.v1.roles.AddPermissionsToRoleReques" +
+      "t\032/.scalekit.v1.roles.AddPermissionsToRo" +
+      "leResponse\"\200\010\222A\306\007\n\005Roles\022\027Add permission" +
+      "s to role\032\275\005Adds one or more permissions" +
+      " to the specified role while preserving " +
+      "existing permission assignments. Use thi" +
+      "s endpoint to grant additional capabilit" +
+      "ies to a role without affecting its curr" +
+      "ent permission set. Provide the role nam" +
+      "e as a path parameter and a list of perm" +
+      "ission names in the request body. The sy" +
+      "stem will validate that all specified pe" +
+      "rmissions exist in the environment and a" +
+      "dd them to the role. Existing permission" +
+      " assignments remain unchanged, making th" +
+      "is operation safe for incremental permis" +
+      "sion management. This is useful for grad" +
+      "ually expanding role capabilities or add" +
+      "ing new permissions as your system evolv" +
+      "es. Returns the updated list of all perm" +
+      "issions now assigned to the role.J\343\001\n\00320" +
+      "0\022\333\001\n\243\001Permissions added to role success" +
+      "fully. Returns the complete list of all " +
+      "permissions now assigned to the role, in" +
+      "cluding both existing and newly added pe" +
+      "rmissions.\0223\n1\032/.scalekit.v1.roles.AddPe" +
+      "rmissionsToRoleResponse\202\265\030\002\030T\202\323\344\223\002*\"%/ap" +
+      "i/v1/roles/{role_name}/permissions:\001*\022\267\007" +
+      "\n\030RemovePermissionFromRole\0222.scalekit.v1" +
+      ".roles.RemovePermissionFromRoleRequest\032\026" +
+      ".google.protobuf.Empty\"\316\006\222A\205\006\n\005Roles\022\033Re" +
+      "move permission from role\032\224\005Removes a sp" +
+      "ecific permission from the specified rol" +
+      "e, revoking that capability from all use" +
+      "rs assigned to the role. Use this endpoi" +
+      "nt to restrict role capabilities or remo" +
+      "ve unnecessary permissions. Provide both" +
+      " the role name and permission name as pa" +
+      "th parameters. This operation only affec" +
+      "ts the direct permission assignment and " +
+      "does not impact permissions inherited fr" +
+      "om base roles. If the permission is inhe" +
+      "rited through role hierarchy, you may ne" +
+      "ed to modify the base role instead. This" +
+      " is useful for fine-tuning role permissi" +
+      "ons, implementing least-privilege access" +
+      " controls, or removing deprecated permis" +
+      "sions. Returns no content on successful " +
+      "removal.JH\n\003200\022A\n?Permission removed fr" +
+      "om role successfully. No content returne" +
+      "d.\202\265\030\002\030T\202\323\344\223\0029*7/api/v1/roles/{role_name" +
+      "}/permissions/{permission_name}\022\337\t\n\034List" +
+      "EffectiveRolePermissions\0226.scalekit.v1.r" +
+      "oles.ListEffectiveRolePermissionsRequest" +
+      "\0327.scalekit.v1.roles.ListEffectiveRolePe" +
+      "rmissionsResponse\"\315\010\222A\222\010\n\005Roles\022#List ef" +
+      "fective permissions for role\032\331\005Retrieves" +
+      " the complete set of effective permissio" +
+      "ns for a role, including both directly a" +
+      "ssigned permissions and permissions inhe" +
+      "rited from base roles through the role h" +
+      "ierarchy. Use this endpoint to understan" +
+      "d the full scope of capabilities availab" +
+      "le to users assigned to a specific role." +
+      " Provide the role name as a path paramet" +
+      "er, and the response will include all pe" +
+      "rmissions that apply to the role, accoun" +
+      "ting for inheritance relationships. This" +
+      " operation is essential for auditing rol" +
+      "e capabilities, understanding permission" +
+      " inheritance, or verifying the complete " +
+      "access scope before role assignment. Ret" +
+      "urns a comprehensive list of permission " +
+      "names representing the full set of effec" +
+      "tive permissions for the specified role." +
+      "J\207\002\n\003200\022\377\001\n\277\001Successfully retrieved eff" +
+      "ective permissions. Returns the complete" +
+      " list of all permissions that apply to t" +
+      "he role, including both direct assignmen" +
+      "ts and inherited permissions from base r" +
+      "oles.\022;\n9\0327.scalekit.v1.roles.ListEffect" +
+      "iveRolePermissionsResponse\202\265\030\002\030T\202\323\344\223\002+\022)" +
+      "/api/v1/roles/{role_name}/permissions:al" +
+      "l\032\342\002\222A\336\002\n\005Roles\022\324\002Role-based access cont" +
+      "rol (RBAC) for defining and managing per" +
+      "missions in an environment. Create and u" +
+      "pdate custom roles with explicit permiss" +
+      "ions, model role hierarchies through inh" +
+      "eritance, view dependent roles, manage r" +
+      "ole-permission assignments, and list rol" +
+      "es and permissions. Also provides a util" +
+      "ity to count users assigned to a role.B\310" +
+      "\001\n#com.scalekit.grpc.scalekit.v1.rolesB\n" +
+      "RolesProtoP\001Z/github.com/scalekit-inc/sc" +
+      "alekit/pkg/grpc/roles\242\002\003SVR\252\002\021Scalekit.V" +
+      "1.Roles\312\002\021Scalekit\\V1\\Roles\342\002\035Scalekit\\V" +
+      "1\\Roles\\GPBMetadata\352\002\023Scalekit::V1::Role" +
+      "sb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

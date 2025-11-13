@@ -18,11 +18,18 @@ private static final long serialVersionUID = 0L;
   }
   private UserProfile() {
     id_ = "";
-    firstName_ = "";
-    lastName_ = "";
+    givenName_ = "";
+    familyName_ = "";
     name_ = "";
     locale_ = "";
     phoneNumber_ = "";
+    firstName_ = "";
+    lastName_ = "";
+    preferredUsername_ = "";
+    picture_ = "";
+    groups_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    gender_ = "";
   }
 
   @java.lang.Override
@@ -98,78 +105,78 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int FIRST_NAME_FIELD_NUMBER = 2;
+  public static final int GIVEN_NAME_FIELD_NUMBER = 2;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object firstName_ = "";
+  private volatile java.lang.Object givenName_ = "";
   /**
-   * <code>string first_name = 2 [json_name = "firstName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The firstName.
+   * <code>string given_name = 2 [json_name = "givenName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The givenName.
    */
   @java.lang.Override
-  public java.lang.String getFirstName() {
-    java.lang.Object ref = firstName_;
+  public java.lang.String getGivenName() {
+    java.lang.Object ref = givenName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      firstName_ = s;
+      givenName_ = s;
       return s;
     }
   }
   /**
-   * <code>string first_name = 2 [json_name = "firstName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for firstName.
+   * <code>string given_name = 2 [json_name = "givenName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for givenName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getFirstNameBytes() {
-    java.lang.Object ref = firstName_;
+      getGivenNameBytes() {
+    java.lang.Object ref = givenName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      firstName_ = b;
+      givenName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int LAST_NAME_FIELD_NUMBER = 3;
+  public static final int FAMILY_NAME_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object lastName_ = "";
+  private volatile java.lang.Object familyName_ = "";
   /**
-   * <code>string last_name = 3 [json_name = "lastName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The lastName.
+   * <code>string family_name = 3 [json_name = "familyName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The familyName.
    */
   @java.lang.Override
-  public java.lang.String getLastName() {
-    java.lang.Object ref = lastName_;
+  public java.lang.String getFamilyName() {
+    java.lang.Object ref = familyName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      lastName_ = s;
+      familyName_ = s;
       return s;
     }
   }
   /**
-   * <code>string last_name = 3 [json_name = "lastName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for lastName.
+   * <code>string family_name = 3 [json_name = "familyName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for familyName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getLastNameBytes() {
-    java.lang.Object ref = lastName_;
+      getFamilyNameBytes() {
+    java.lang.Object ref = familyName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      lastName_ = b;
+      familyName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -462,6 +469,257 @@ java.lang.String defaultValue) {
     return map.get(key);
   }
 
+  public static final int FIRST_NAME_FIELD_NUMBER = 21;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object firstName_ = "";
+  /**
+   * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
+   *     See scalekit/v1/commons/commons.proto;l=195
+   * @return The firstName.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public java.lang.String getFirstName() {
+    java.lang.Object ref = firstName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      firstName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
+   *     See scalekit/v1/commons/commons.proto;l=195
+   * @return The bytes for firstName.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public com.google.protobuf.ByteString
+      getFirstNameBytes() {
+    java.lang.Object ref = firstName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      firstName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LAST_NAME_FIELD_NUMBER = 22;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object lastName_ = "";
+  /**
+   * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
+   *     See scalekit/v1/commons/commons.proto;l=204
+   * @return The lastName.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public java.lang.String getLastName() {
+    java.lang.Object ref = lastName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      lastName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
+   *     See scalekit/v1/commons/commons.proto;l=204
+   * @return The bytes for lastName.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public com.google.protobuf.ByteString
+      getLastNameBytes() {
+    java.lang.Object ref = lastName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      lastName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PREFERRED_USERNAME_FIELD_NUMBER = 12;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object preferredUsername_ = "";
+  /**
+   * <code>string preferred_username = 12 [json_name = "preferredUsername", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The preferredUsername.
+   */
+  @java.lang.Override
+  public java.lang.String getPreferredUsername() {
+    java.lang.Object ref = preferredUsername_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      preferredUsername_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string preferred_username = 12 [json_name = "preferredUsername", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for preferredUsername.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPreferredUsernameBytes() {
+    java.lang.Object ref = preferredUsername_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      preferredUsername_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PHONE_NUMBER_VERIFIED_FIELD_NUMBER = 13;
+  private boolean phoneNumberVerified_ = false;
+  /**
+   * <code>bool phone_number_verified = 13 [json_name = "phoneNumberVerified", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The phoneNumberVerified.
+   */
+  @java.lang.Override
+  public boolean getPhoneNumberVerified() {
+    return phoneNumberVerified_;
+  }
+
+  public static final int PICTURE_FIELD_NUMBER = 14;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object picture_ = "";
+  /**
+   * <code>string picture = 14 [json_name = "picture", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The picture.
+   */
+  @java.lang.Override
+  public java.lang.String getPicture() {
+    java.lang.Object ref = picture_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      picture_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string picture = 14 [json_name = "picture", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for picture.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPictureBytes() {
+    java.lang.Object ref = picture_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      picture_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int GROUPS_FIELD_NUMBER = 15;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList groups_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the groups.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getGroupsList() {
+    return groups_;
+  }
+  /**
+   * <code>repeated string groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of groups.
+   */
+  public int getGroupsCount() {
+    return groups_.size();
+  }
+  /**
+   * <code>repeated string groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The groups at the given index.
+   */
+  public java.lang.String getGroups(int index) {
+    return groups_.get(index);
+  }
+  /**
+   * <code>repeated string groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the groups at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getGroupsBytes(int index) {
+    return groups_.getByteString(index);
+  }
+
+  public static final int GENDER_FIELD_NUMBER = 16;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gender_ = "";
+  /**
+   * <code>string gender = 16 [json_name = "gender", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The gender.
+   */
+  @java.lang.Override
+  public java.lang.String getGender() {
+    java.lang.Object ref = gender_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      gender_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string gender = 16 [json_name = "gender", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for gender.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getGenderBytes() {
+    java.lang.Object ref = gender_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      gender_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -479,11 +737,11 @@ java.lang.String defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firstName_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, firstName_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(givenName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, givenName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, lastName_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(familyName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, familyName_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
@@ -509,6 +767,27 @@ java.lang.String defaultValue) {
         internalGetCustomAttributes(),
         CustomAttributesDefaultEntryHolder.defaultEntry,
         9);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preferredUsername_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, preferredUsername_);
+    }
+    if (phoneNumberVerified_ != false) {
+      output.writeBool(13, phoneNumberVerified_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(picture_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, picture_);
+    }
+    for (int i = 0; i < groups_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, groups_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gender_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, gender_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firstName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, firstName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, lastName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -521,11 +800,11 @@ java.lang.String defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firstName_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, firstName_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(givenName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, givenName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, lastName_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(familyName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, familyName_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
@@ -560,6 +839,33 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, customAttributes__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preferredUsername_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, preferredUsername_);
+    }
+    if (phoneNumberVerified_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(13, phoneNumberVerified_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(picture_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, picture_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < groups_.size(); i++) {
+        dataSize += computeStringSizeNoTag(groups_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getGroupsList().size();
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gender_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, gender_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firstName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, firstName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, lastName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -577,10 +883,10 @@ java.lang.String defaultValue) {
 
     if (!getId()
         .equals(other.getId())) return false;
-    if (!getFirstName()
-        .equals(other.getFirstName())) return false;
-    if (!getLastName()
-        .equals(other.getLastName())) return false;
+    if (!getGivenName()
+        .equals(other.getGivenName())) return false;
+    if (!getFamilyName()
+        .equals(other.getFamilyName())) return false;
     if (!getName()
         .equals(other.getName())) return false;
     if (!getLocale()
@@ -593,6 +899,20 @@ java.lang.String defaultValue) {
         other.internalGetMetadata())) return false;
     if (!internalGetCustomAttributes().equals(
         other.internalGetCustomAttributes())) return false;
+    if (!getFirstName()
+        .equals(other.getFirstName())) return false;
+    if (!getLastName()
+        .equals(other.getLastName())) return false;
+    if (!getPreferredUsername()
+        .equals(other.getPreferredUsername())) return false;
+    if (getPhoneNumberVerified()
+        != other.getPhoneNumberVerified()) return false;
+    if (!getPicture()
+        .equals(other.getPicture())) return false;
+    if (!getGroupsList()
+        .equals(other.getGroupsList())) return false;
+    if (!getGender()
+        .equals(other.getGender())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -606,10 +926,10 @@ java.lang.String defaultValue) {
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + FIRST_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getFirstName().hashCode();
-    hash = (37 * hash) + LAST_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getLastName().hashCode();
+    hash = (37 * hash) + GIVEN_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getGivenName().hashCode();
+    hash = (37 * hash) + FAMILY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getFamilyName().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + LOCALE_FIELD_NUMBER;
@@ -627,6 +947,23 @@ java.lang.String defaultValue) {
       hash = (37 * hash) + CUSTOM_ATTRIBUTES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetCustomAttributes().hashCode();
     }
+    hash = (37 * hash) + FIRST_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getFirstName().hashCode();
+    hash = (37 * hash) + LAST_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getLastName().hashCode();
+    hash = (37 * hash) + PREFERRED_USERNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getPreferredUsername().hashCode();
+    hash = (37 * hash) + PHONE_NUMBER_VERIFIED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getPhoneNumberVerified());
+    hash = (37 * hash) + PICTURE_FIELD_NUMBER;
+    hash = (53 * hash) + getPicture().hashCode();
+    if (getGroupsCount() > 0) {
+      hash = (37 * hash) + GROUPS_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupsList().hashCode();
+    }
+    hash = (37 * hash) + GENDER_FIELD_NUMBER;
+    hash = (53 * hash) + getGender().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -785,14 +1122,22 @@ java.lang.String defaultValue) {
       super.clear();
       bitField0_ = 0;
       id_ = "";
-      firstName_ = "";
-      lastName_ = "";
+      givenName_ = "";
+      familyName_ = "";
       name_ = "";
       locale_ = "";
       emailVerified_ = false;
       phoneNumber_ = "";
       internalGetMutableMetadata().clear();
       internalGetMutableCustomAttributes().clear();
+      firstName_ = "";
+      lastName_ = "";
+      preferredUsername_ = "";
+      phoneNumberVerified_ = false;
+      picture_ = "";
+      groups_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      gender_ = "";
       return this;
     }
 
@@ -830,10 +1175,10 @@ java.lang.String defaultValue) {
         result.id_ = id_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.firstName_ = firstName_;
+        result.givenName_ = givenName_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.lastName_ = lastName_;
+        result.familyName_ = familyName_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.name_ = name_;
@@ -854,6 +1199,28 @@ java.lang.String defaultValue) {
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.customAttributes_ = internalGetCustomAttributes();
         result.customAttributes_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.firstName_ = firstName_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.lastName_ = lastName_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.preferredUsername_ = preferredUsername_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.phoneNumberVerified_ = phoneNumberVerified_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.picture_ = picture_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        groups_.makeImmutable();
+        result.groups_ = groups_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.gender_ = gender_;
       }
     }
 
@@ -906,13 +1273,13 @@ java.lang.String defaultValue) {
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getFirstName().isEmpty()) {
-        firstName_ = other.firstName_;
+      if (!other.getGivenName().isEmpty()) {
+        givenName_ = other.givenName_;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (!other.getLastName().isEmpty()) {
-        lastName_ = other.lastName_;
+      if (!other.getFamilyName().isEmpty()) {
+        familyName_ = other.familyName_;
         bitField0_ |= 0x00000004;
         onChanged();
       }
@@ -940,6 +1307,44 @@ java.lang.String defaultValue) {
       internalGetMutableCustomAttributes().mergeFrom(
           other.internalGetCustomAttributes());
       bitField0_ |= 0x00000100;
+      if (!other.getFirstName().isEmpty()) {
+        firstName_ = other.firstName_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (!other.getLastName().isEmpty()) {
+        lastName_ = other.lastName_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (!other.getPreferredUsername().isEmpty()) {
+        preferredUsername_ = other.preferredUsername_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      if (other.getPhoneNumberVerified() != false) {
+        setPhoneNumberVerified(other.getPhoneNumberVerified());
+      }
+      if (!other.getPicture().isEmpty()) {
+        picture_ = other.picture_;
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      if (!other.groups_.isEmpty()) {
+        if (groups_.isEmpty()) {
+          groups_ = other.groups_;
+          bitField0_ |= 0x00004000;
+        } else {
+          ensureGroupsIsMutable();
+          groups_.addAll(other.groups_);
+        }
+        onChanged();
+      }
+      if (!other.getGender().isEmpty()) {
+        gender_ = other.gender_;
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -972,12 +1377,12 @@ java.lang.String defaultValue) {
               break;
             } // case 10
             case 18: {
-              firstName_ = input.readStringRequireUtf8();
+              givenName_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
-              lastName_ = input.readStringRequireUtf8();
+              familyName_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
@@ -1019,6 +1424,42 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000100;
               break;
             } // case 74
+            case 98: {
+              preferredUsername_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 98
+            case 104: {
+              phoneNumberVerified_ = input.readBool();
+              bitField0_ |= 0x00001000;
+              break;
+            } // case 104
+            case 114: {
+              picture_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00002000;
+              break;
+            } // case 114
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureGroupsIsMutable();
+              groups_.add(s);
+              break;
+            } // case 122
+            case 130: {
+              gender_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00008000;
+              break;
+            } // case 130
+            case 170: {
+              firstName_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 170
+            case 178: {
+              lastName_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000400;
+              break;
+            } // case 178
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1108,145 +1549,145 @@ java.lang.String defaultValue) {
       return this;
     }
 
-    private java.lang.Object firstName_ = "";
+    private java.lang.Object givenName_ = "";
     /**
-     * <code>string first_name = 2 [json_name = "firstName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The firstName.
+     * <code>string given_name = 2 [json_name = "givenName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The givenName.
      */
-    public java.lang.String getFirstName() {
-      java.lang.Object ref = firstName_;
+    public java.lang.String getGivenName() {
+      java.lang.Object ref = givenName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        firstName_ = s;
+        givenName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string first_name = 2 [json_name = "firstName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for firstName.
+     * <code>string given_name = 2 [json_name = "givenName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for givenName.
      */
     public com.google.protobuf.ByteString
-        getFirstNameBytes() {
-      java.lang.Object ref = firstName_;
+        getGivenNameBytes() {
+      java.lang.Object ref = givenName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        firstName_ = b;
+        givenName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string first_name = 2 [json_name = "firstName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The firstName to set.
+     * <code>string given_name = 2 [json_name = "givenName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The givenName to set.
      * @return This builder for chaining.
      */
-    public Builder setFirstName(
+    public Builder setGivenName(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      firstName_ = value;
+      givenName_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>string first_name = 2 [json_name = "firstName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string given_name = 2 [json_name = "givenName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearFirstName() {
-      firstName_ = getDefaultInstance().getFirstName();
+    public Builder clearGivenName() {
+      givenName_ = getDefaultInstance().getGivenName();
       bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
     /**
-     * <code>string first_name = 2 [json_name = "firstName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for firstName to set.
+     * <code>string given_name = 2 [json_name = "givenName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for givenName to set.
      * @return This builder for chaining.
      */
-    public Builder setFirstNameBytes(
+    public Builder setGivenNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      firstName_ = value;
+      givenName_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private java.lang.Object lastName_ = "";
+    private java.lang.Object familyName_ = "";
     /**
-     * <code>string last_name = 3 [json_name = "lastName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The lastName.
+     * <code>string family_name = 3 [json_name = "familyName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The familyName.
      */
-    public java.lang.String getLastName() {
-      java.lang.Object ref = lastName_;
+    public java.lang.String getFamilyName() {
+      java.lang.Object ref = familyName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        lastName_ = s;
+        familyName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string last_name = 3 [json_name = "lastName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for lastName.
+     * <code>string family_name = 3 [json_name = "familyName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for familyName.
      */
     public com.google.protobuf.ByteString
-        getLastNameBytes() {
-      java.lang.Object ref = lastName_;
+        getFamilyNameBytes() {
+      java.lang.Object ref = familyName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        lastName_ = b;
+        familyName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string last_name = 3 [json_name = "lastName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The lastName to set.
+     * <code>string family_name = 3 [json_name = "familyName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The familyName to set.
      * @return This builder for chaining.
      */
-    public Builder setLastName(
+    public Builder setFamilyName(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      lastName_ = value;
+      familyName_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>string last_name = 3 [json_name = "lastName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string family_name = 3 [json_name = "familyName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearLastName() {
-      lastName_ = getDefaultInstance().getLastName();
+    public Builder clearFamilyName() {
+      familyName_ = getDefaultInstance().getFamilyName();
       bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <code>string last_name = 3 [json_name = "lastName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for lastName to set.
+     * <code>string family_name = 3 [json_name = "familyName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for familyName to set.
      * @return This builder for chaining.
      */
-    public Builder setLastNameBytes(
+    public Builder setFamilyNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      lastName_ = value;
+      familyName_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
@@ -1751,6 +2192,529 @@ java.lang.String defaultValue) {
       internalGetMutableCustomAttributes().getMutableMap()
           .putAll(values);
       bitField0_ |= 0x00000100;
+      return this;
+    }
+
+    private java.lang.Object firstName_ = "";
+    /**
+     * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
+     *     See scalekit/v1/commons/commons.proto;l=195
+     * @return The firstName.
+     */
+    @java.lang.Deprecated public java.lang.String getFirstName() {
+      java.lang.Object ref = firstName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        firstName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
+     *     See scalekit/v1/commons/commons.proto;l=195
+     * @return The bytes for firstName.
+     */
+    @java.lang.Deprecated public com.google.protobuf.ByteString
+        getFirstNameBytes() {
+      java.lang.Object ref = firstName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        firstName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
+     *     See scalekit/v1/commons/commons.proto;l=195
+     * @param value The firstName to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder setFirstName(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      firstName_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
+     *     See scalekit/v1/commons/commons.proto;l=195
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder clearFirstName() {
+      firstName_ = getDefaultInstance().getFirstName();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
+     *     See scalekit/v1/commons/commons.proto;l=195
+     * @param value The bytes for firstName to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder setFirstNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      firstName_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object lastName_ = "";
+    /**
+     * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
+     *     See scalekit/v1/commons/commons.proto;l=204
+     * @return The lastName.
+     */
+    @java.lang.Deprecated public java.lang.String getLastName() {
+      java.lang.Object ref = lastName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        lastName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
+     *     See scalekit/v1/commons/commons.proto;l=204
+     * @return The bytes for lastName.
+     */
+    @java.lang.Deprecated public com.google.protobuf.ByteString
+        getLastNameBytes() {
+      java.lang.Object ref = lastName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        lastName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
+     *     See scalekit/v1/commons/commons.proto;l=204
+     * @param value The lastName to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder setLastName(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      lastName_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
+     *     See scalekit/v1/commons/commons.proto;l=204
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder clearLastName() {
+      lastName_ = getDefaultInstance().getLastName();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
+     *     See scalekit/v1/commons/commons.proto;l=204
+     * @param value The bytes for lastName to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder setLastNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      lastName_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object preferredUsername_ = "";
+    /**
+     * <code>string preferred_username = 12 [json_name = "preferredUsername", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The preferredUsername.
+     */
+    public java.lang.String getPreferredUsername() {
+      java.lang.Object ref = preferredUsername_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        preferredUsername_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string preferred_username = 12 [json_name = "preferredUsername", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for preferredUsername.
+     */
+    public com.google.protobuf.ByteString
+        getPreferredUsernameBytes() {
+      java.lang.Object ref = preferredUsername_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        preferredUsername_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string preferred_username = 12 [json_name = "preferredUsername", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The preferredUsername to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreferredUsername(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      preferredUsername_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string preferred_username = 12 [json_name = "preferredUsername", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPreferredUsername() {
+      preferredUsername_ = getDefaultInstance().getPreferredUsername();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string preferred_username = 12 [json_name = "preferredUsername", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for preferredUsername to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreferredUsernameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      preferredUsername_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private boolean phoneNumberVerified_ ;
+    /**
+     * <code>bool phone_number_verified = 13 [json_name = "phoneNumberVerified", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The phoneNumberVerified.
+     */
+    @java.lang.Override
+    public boolean getPhoneNumberVerified() {
+      return phoneNumberVerified_;
+    }
+    /**
+     * <code>bool phone_number_verified = 13 [json_name = "phoneNumberVerified", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The phoneNumberVerified to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPhoneNumberVerified(boolean value) {
+
+      phoneNumberVerified_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool phone_number_verified = 13 [json_name = "phoneNumberVerified", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPhoneNumberVerified() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      phoneNumberVerified_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object picture_ = "";
+    /**
+     * <code>string picture = 14 [json_name = "picture", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The picture.
+     */
+    public java.lang.String getPicture() {
+      java.lang.Object ref = picture_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        picture_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string picture = 14 [json_name = "picture", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for picture.
+     */
+    public com.google.protobuf.ByteString
+        getPictureBytes() {
+      java.lang.Object ref = picture_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        picture_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string picture = 14 [json_name = "picture", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The picture to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPicture(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      picture_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string picture = 14 [json_name = "picture", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPicture() {
+      picture_ = getDefaultInstance().getPicture();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string picture = 14 [json_name = "picture", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for picture to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPictureBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      picture_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList groups_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureGroupsIsMutable() {
+      if (!groups_.isModifiable()) {
+        groups_ = new com.google.protobuf.LazyStringArrayList(groups_);
+      }
+      bitField0_ |= 0x00004000;
+    }
+    /**
+     * <code>repeated string groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the groups.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getGroupsList() {
+      groups_.makeImmutable();
+      return groups_;
+    }
+    /**
+     * <code>repeated string groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of groups.
+     */
+    public int getGroupsCount() {
+      return groups_.size();
+    }
+    /**
+     * <code>repeated string groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The groups at the given index.
+     */
+    public java.lang.String getGroups(int index) {
+      return groups_.get(index);
+    }
+    /**
+     * <code>repeated string groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the groups at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getGroupsBytes(int index) {
+      return groups_.getByteString(index);
+    }
+    /**
+     * <code>repeated string groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The groups to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGroups(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureGroupsIsMutable();
+      groups_.set(index, value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The groups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addGroups(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureGroupsIsMutable();
+      groups_.add(value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The groups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllGroups(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureGroupsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, groups_);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearGroups() {
+      groups_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00004000);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string groups = 15 [json_name = "groups", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the groups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addGroupsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureGroupsIsMutable();
+      groups_.add(value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object gender_ = "";
+    /**
+     * <code>string gender = 16 [json_name = "gender", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The gender.
+     */
+    public java.lang.String getGender() {
+      java.lang.Object ref = gender_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gender_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string gender = 16 [json_name = "gender", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for gender.
+     */
+    public com.google.protobuf.ByteString
+        getGenderBytes() {
+      java.lang.Object ref = gender_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        gender_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string gender = 16 [json_name = "gender", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The gender to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGender(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      gender_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string gender = 16 [json_name = "gender", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearGender() {
+      gender_ = getDefaultInstance().getGender();
+      bitField0_ = (bitField0_ & ~0x00008000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string gender = 16 [json_name = "gender", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for gender to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGenderBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      gender_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     @java.lang.Override

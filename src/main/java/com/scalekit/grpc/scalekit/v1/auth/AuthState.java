@@ -69,6 +69,10 @@ public enum AuthState
    * <code>AUTHENTICATION_FAILED = 14;</code>
    */
   AUTHENTICATION_FAILED(14),
+  /**
+   * <code>WEBAUTHN_VERIFIED = 15;</code>
+   */
+  WEBAUTHN_VERIFIED(15),
   UNRECOGNIZED(-1),
   ;
 
@@ -132,6 +136,10 @@ public enum AuthState
    * <code>AUTHENTICATION_FAILED = 14;</code>
    */
   public static final int AUTHENTICATION_FAILED_VALUE = 14;
+  /**
+   * <code>WEBAUTHN_VERIFIED = 15;</code>
+   */
+  public static final int WEBAUTHN_VERIFIED_VALUE = 15;
 
 
   public final int getNumber() {
@@ -173,6 +181,7 @@ public enum AuthState
       case 12: return ORG_USER_CREATED;
       case 13: return AUTHENTICATION_COMPLETED;
       case 14: return AUTHENTICATION_FAILED;
+      case 15: return WEBAUTHN_VERIFIED;
       default: return null;
     }
   }

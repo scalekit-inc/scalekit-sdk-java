@@ -153,6 +153,26 @@ public enum ObjectType
    * <code>Actions = 35;</code>
    */
   Actions(35),
+  /**
+   * <code>InterceptorEvent = 36;</code>
+   */
+  InterceptorEvent(36),
+  /**
+   * <code>Permission = 37;</code>
+   */
+  Permission(37),
+  /**
+   * <code>OrgMembershipEvent = 38;</code>
+   */
+  OrgMembershipEvent(38),
+  /**
+   * <code>UserLoginEvent = 39;</code>
+   */
+  UserLoginEvent(39),
+  /**
+   * <code>UserLogoutEvent = 40;</code>
+   */
+  UserLogoutEvent(40),
   UNRECOGNIZED(-1),
   ;
 
@@ -300,6 +320,26 @@ public enum ObjectType
    * <code>Actions = 35;</code>
    */
   public static final int Actions_VALUE = 35;
+  /**
+   * <code>InterceptorEvent = 36;</code>
+   */
+  public static final int InterceptorEvent_VALUE = 36;
+  /**
+   * <code>Permission = 37;</code>
+   */
+  public static final int Permission_VALUE = 37;
+  /**
+   * <code>OrgMembershipEvent = 38;</code>
+   */
+  public static final int OrgMembershipEvent_VALUE = 38;
+  /**
+   * <code>UserLoginEvent = 39;</code>
+   */
+  public static final int UserLoginEvent_VALUE = 39;
+  /**
+   * <code>UserLogoutEvent = 40;</code>
+   */
+  public static final int UserLogoutEvent_VALUE = 40;
 
 
   public final int getNumber() {
@@ -362,6 +402,11 @@ public enum ObjectType
       case 33: return IDPInitiatedPayload;
       case 34: return DeviceDetails;
       case 35: return Actions;
+      case 36: return InterceptorEvent;
+      case 37: return Permission;
+      case 38: return OrgMembershipEvent;
+      case 39: return UserLoginEvent;
+      case 40: return UserLogoutEvent;
       default: return null;
     }
   }

@@ -330,7 +330,7 @@ public final class DomainsProto {
       "ILED\020\003\022\021\n\rAUTO_VERIFIED\020\004*\\\n\nDomainType\022" +
       "\033\n\027DOMAIN_TYPE_UNSPECIFIED\020\000\022\030\n\024ALLOWED_" +
       "EMAIL_DOMAIN\020\001\022\027\n\023ORGANIZATION_DOMAIN\020\0022" +
-      "\231%\n\rDomainService\022\371\006\n\014CreateDomain\022(.sca" +
+      "\247(\n\rDomainService\022\371\006\n\014CreateDomain\022(.sca" +
       "lekit.v1.domains.CreateDomainRequest\032).s" +
       "calekit.v1.domains.CreateDomainResponse\"" +
       "\223\006\222A\312\005\n\007Domains\022\rCreate Domain\032\262\003Creates" +
@@ -449,12 +449,22 @@ public final class DomainsProto {
       "orized domains.\0225\n3\0321.scalekit.v1.domain" +
       "s.ListAuthorizedDomainResponse\202\265\030\002\030\001\372\322\344\223" +
       "\002\t\022\007PREVIEW\202\323\344\223\002\032\022\030/api/v1/domains/{orig" +
-      "in}B\326\001\n%com.scalekit.grpc.scalekit.v1.do" +
-      "mainsB\014DomainsProtoP\001Z1github.com/scalek" +
-      "it-inc/scalekit/pkg/grpc/domains\242\002\003SVD\252\002" +
-      "\023Scalekit.V1.Domains\312\002\023Scalekit\\V1\\Domai" +
-      "ns\342\002\037Scalekit\\V1\\Domains\\GPBMetadata\352\002\025S" +
-      "calekit::V1::Domainsb\006proto3"
+      "in}\032\213\003\222A\207\003\n\007Domains\022\373\002Domain management " +
+      "for organization email domains and SSO c" +
+      "onfigurations. This service provides end" +
+      "points for creating, retrieving, listing" +
+      ", and deleting domains that are associat" +
+      "ed with organizations. It supports domai" +
+      "n type configuration for email domain al" +
+      "lowlists and SSO identification, and pro" +
+      "vides comprehensive domain metadata incl" +
+      "uding status and connection associations" +
+      ".B\326\001\n%com.scalekit.grpc.scalekit.v1.doma" +
+      "insB\014DomainsProtoP\001Z1github.com/scalekit" +
+      "-inc/scalekit/pkg/grpc/domains\242\002\003SVD\252\002\023S" +
+      "calekit.V1.Domains\312\002\023Scalekit\\V1\\Domains" +
+      "\342\002\037Scalekit\\V1\\Domains\\GPBMetadata\352\002\025Sca" +
+      "lekit::V1::Domainsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -567,6 +577,7 @@ public final class DomainsProto {
     registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Tag);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

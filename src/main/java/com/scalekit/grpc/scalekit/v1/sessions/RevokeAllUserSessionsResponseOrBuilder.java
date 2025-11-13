@@ -9,31 +9,31 @@ public interface RevokeAllUserSessionsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .scalekit.v1.sessions.RevokedSessionDetails revoked_sessions = 1 [json_name = "revokedSessions"];</code>
+   * <code>repeated .scalekit.v1.sessions.RevokedSessionDetails revoked_sessions = 1 [json_name = "revokedSessions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetails> 
       getRevokedSessionsList();
   /**
-   * <code>repeated .scalekit.v1.sessions.RevokedSessionDetails revoked_sessions = 1 [json_name = "revokedSessions"];</code>
+   * <code>repeated .scalekit.v1.sessions.RevokedSessionDetails revoked_sessions = 1 [json_name = "revokedSessions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetails getRevokedSessions(int index);
   /**
-   * <code>repeated .scalekit.v1.sessions.RevokedSessionDetails revoked_sessions = 1 [json_name = "revokedSessions"];</code>
+   * <code>repeated .scalekit.v1.sessions.RevokedSessionDetails revoked_sessions = 1 [json_name = "revokedSessions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   int getRevokedSessionsCount();
   /**
-   * <code>repeated .scalekit.v1.sessions.RevokedSessionDetails revoked_sessions = 1 [json_name = "revokedSessions"];</code>
+   * <code>repeated .scalekit.v1.sessions.RevokedSessionDetails revoked_sessions = 1 [json_name = "revokedSessions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<? extends com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetailsOrBuilder> 
       getRevokedSessionsOrBuilderList();
   /**
-   * <code>repeated .scalekit.v1.sessions.RevokedSessionDetails revoked_sessions = 1 [json_name = "revokedSessions"];</code>
+   * <code>repeated .scalekit.v1.sessions.RevokedSessionDetails revoked_sessions = 1 [json_name = "revokedSessions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.sessions.RevokedSessionDetailsOrBuilder getRevokedSessionsOrBuilder(
       int index);
 
   /**
-   * <code>uint32 total_revoked = 2 [json_name = "totalRevoked"];</code>
+   * <code>uint32 total_revoked = 2 [json_name = "totalRevoked", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The totalRevoked.
    */
   int getTotalRevoked();

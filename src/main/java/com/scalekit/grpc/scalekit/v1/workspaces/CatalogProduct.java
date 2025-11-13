@@ -210,7 +210,7 @@ private static final long serialVersionUID = 0L;
     return internalGetMetadata().getMap().size();
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata"];</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
    */
   @java.lang.Override
   public boolean containsMetadata(
@@ -227,14 +227,14 @@ private static final long serialVersionUID = 0L;
     return getMetadataMap();
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata"];</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata"];</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
    */
   @java.lang.Override
   public /* nullable */
@@ -248,7 +248,7 @@ java.lang.String defaultValue) {
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata"];</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
    */
   @java.lang.Override
   public java.lang.String getMetadataOrThrow(
@@ -1059,7 +1059,7 @@ java.lang.String defaultValue) {
       return internalGetMetadata().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata"];</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
      */
     @java.lang.Override
     public boolean containsMetadata(
@@ -1076,14 +1076,14 @@ java.lang.String defaultValue) {
       return getMetadataMap();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata"];</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata"];</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
      */
     @java.lang.Override
     public /* nullable */
@@ -1097,7 +1097,7 @@ java.lang.String defaultValue) {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata"];</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
      */
     @java.lang.Override
     public java.lang.String getMetadataOrThrow(
@@ -1117,7 +1117,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata"];</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
      */
     public Builder removeMetadata(
         java.lang.String key) {
@@ -1136,7 +1136,7 @@ java.lang.String defaultValue) {
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata"];</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
      */
     public Builder putMetadata(
         java.lang.String key,
@@ -1149,7 +1149,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata"];</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [json_name = "metadata", (.buf.validate.field) = { ... }</code>
      */
     public Builder putAllMetadata(
         java.util.Map<java.lang.String, java.lang.String> values) {

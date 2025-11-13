@@ -49,6 +49,14 @@ public enum EventTarget
    * <code>CONNECTED_ACCOUNT = 9;</code>
    */
   CONNECTED_ACCOUNT(9),
+  /**
+   * <code>ROLE = 10;</code>
+   */
+  ROLE(10),
+  /**
+   * <code>PERMISSION = 11;</code>
+   */
+  PERMISSION(11),
   UNRECOGNIZED(-1),
   ;
 
@@ -92,6 +100,14 @@ public enum EventTarget
    * <code>CONNECTED_ACCOUNT = 9;</code>
    */
   public static final int CONNECTED_ACCOUNT_VALUE = 9;
+  /**
+   * <code>ROLE = 10;</code>
+   */
+  public static final int ROLE_VALUE = 10;
+  /**
+   * <code>PERMISSION = 11;</code>
+   */
+  public static final int PERMISSION_VALUE = 11;
 
 
   public final int getNumber() {
@@ -128,6 +144,8 @@ public enum EventTarget
       case 7: return EMAIL_SERVER;
       case 8: return EMAIL;
       case 9: return CONNECTED_ACCOUNT;
+      case 10: return ROLE;
+      case 11: return PERMISSION;
       default: return null;
     }
   }

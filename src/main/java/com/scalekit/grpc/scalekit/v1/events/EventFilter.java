@@ -22,6 +22,9 @@ private static final long serialVersionUID = 0L;
     organizationId_ = "";
     source_ = 0;
     authRequestId_ = "";
+    interceptorId_ = "";
+    interceptorStatus_ = "";
+    interceptorDecision_ = "";
   }
 
   @java.lang.Override
@@ -195,6 +198,139 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object authRequestId_ = "";
   /**
+   * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+   * @return The authRequestId.
+   */
+  @java.lang.Override
+  public java.lang.String getAuthRequestId() {
+    java.lang.Object ref = authRequestId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      authRequestId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+   * @return The bytes for authRequestId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAuthRequestIdBytes() {
+    java.lang.Object ref = authRequestId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      authRequestId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int INTERCEPTOR_ID_FIELD_NUMBER = 7;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object interceptorId_ = "";
+  /**
+   * <code>optional string interceptor_id = 7 [json_name = "interceptorId"];</code>
+   * @return Whether the interceptorId field is set.
+   */
+  @java.lang.Override
+  public boolean hasInterceptorId() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>optional string interceptor_id = 7 [json_name = "interceptorId"];</code>
+   * @return The interceptorId.
+   */
+  @java.lang.Override
+  public java.lang.String getInterceptorId() {
+    java.lang.Object ref = interceptorId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      interceptorId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string interceptor_id = 7 [json_name = "interceptorId"];</code>
+   * @return The bytes for interceptorId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getInterceptorIdBytes() {
+    java.lang.Object ref = interceptorId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      interceptorId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int INTERCEPTOR_STATUS_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object interceptorStatus_ = "";
+  /**
+   * <code>optional string interceptor_status = 8 [json_name = "interceptorStatus"];</code>
+   * @return Whether the interceptorStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasInterceptorStatus() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <code>optional string interceptor_status = 8 [json_name = "interceptorStatus"];</code>
+   * @return The interceptorStatus.
+   */
+  @java.lang.Override
+  public java.lang.String getInterceptorStatus() {
+    java.lang.Object ref = interceptorStatus_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      interceptorStatus_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string interceptor_status = 8 [json_name = "interceptorStatus"];</code>
+   * @return The bytes for interceptorStatus.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getInterceptorStatusBytes() {
+    java.lang.Object ref = interceptorStatus_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      interceptorStatus_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int INTERCEPTOR_DECISION_FIELD_NUMBER = 9;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object interceptorDecision_ = "";
+  /**
    * <pre>
    * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
    *  keys: {
@@ -213,19 +349,45 @@ private static final long serialVersionUID = 0L;
    *  optional MetadataFilter metadata_filter = 6;
    * </pre>
    *
-   * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
-   * @return The authRequestId.
+   * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+   * @return Whether the interceptorDecision field is set.
    */
   @java.lang.Override
-  public java.lang.String getAuthRequestId() {
-    java.lang.Object ref = authRequestId_;
+  public boolean hasInterceptorDecision() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <pre>
+   * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
+   *  keys: {
+   *    string: {
+   *      min_len: 3
+   *      max_len: 25
+   *    }
+   *  }
+   *  values: {
+   *    string: {
+   *      min_len: 1
+   *      max_len: 2000
+   *    }
+   *  }
+   * }];
+   *  optional MetadataFilter metadata_filter = 6;
+   * </pre>
+   *
+   * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+   * @return The interceptorDecision.
+   */
+  @java.lang.Override
+  public java.lang.String getInterceptorDecision() {
+    java.lang.Object ref = interceptorDecision_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      authRequestId_ = s;
+      interceptorDecision_ = s;
       return s;
     }
   }
@@ -248,18 +410,18 @@ private static final long serialVersionUID = 0L;
    *  optional MetadataFilter metadata_filter = 6;
    * </pre>
    *
-   * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
-   * @return The bytes for authRequestId.
+   * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+   * @return The bytes for interceptorDecision.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getAuthRequestIdBytes() {
-    java.lang.Object ref = authRequestId_;
+      getInterceptorDecisionBytes() {
+    java.lang.Object ref = interceptorDecision_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      authRequestId_ = b;
+      interceptorDecision_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -298,6 +460,15 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authRequestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, authRequestId_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, interceptorId_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, interceptorStatus_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, interceptorDecision_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -333,6 +504,15 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authRequestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, authRequestId_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, interceptorId_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, interceptorStatus_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, interceptorDecision_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -365,6 +545,21 @@ private static final long serialVersionUID = 0L;
     if (source_ != other.source_) return false;
     if (!getAuthRequestId()
         .equals(other.getAuthRequestId())) return false;
+    if (hasInterceptorId() != other.hasInterceptorId()) return false;
+    if (hasInterceptorId()) {
+      if (!getInterceptorId()
+          .equals(other.getInterceptorId())) return false;
+    }
+    if (hasInterceptorStatus() != other.hasInterceptorStatus()) return false;
+    if (hasInterceptorStatus()) {
+      if (!getInterceptorStatus()
+          .equals(other.getInterceptorStatus())) return false;
+    }
+    if (hasInterceptorDecision() != other.hasInterceptorDecision()) return false;
+    if (hasInterceptorDecision()) {
+      if (!getInterceptorDecision()
+          .equals(other.getInterceptorDecision())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -394,6 +589,18 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + source_;
     hash = (37 * hash) + AUTH_REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getAuthRequestId().hashCode();
+    if (hasInterceptorId()) {
+      hash = (37 * hash) + INTERCEPTOR_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getInterceptorId().hashCode();
+    }
+    if (hasInterceptorStatus()) {
+      hash = (37 * hash) + INTERCEPTOR_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getInterceptorStatus().hashCode();
+    }
+    if (hasInterceptorDecision()) {
+      hash = (37 * hash) + INTERCEPTOR_DECISION_FIELD_NUMBER;
+      hash = (53 * hash) + getInterceptorDecision().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -547,6 +754,9 @@ private static final long serialVersionUID = 0L;
       organizationId_ = "";
       source_ = 0;
       authRequestId_ = "";
+      interceptorId_ = "";
+      interceptorStatus_ = "";
+      interceptorDecision_ = "";
       return this;
     }
 
@@ -605,6 +815,18 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.authRequestId_ = authRequestId_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.interceptorId_ = interceptorId_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.interceptorStatus_ = interceptorStatus_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.interceptorDecision_ = interceptorDecision_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -682,6 +904,21 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (other.hasInterceptorId()) {
+        interceptorId_ = other.interceptorId_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (other.hasInterceptorStatus()) {
+        interceptorStatus_ = other.interceptorStatus_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (other.hasInterceptorDecision()) {
+        interceptorDecision_ = other.interceptorDecision_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -743,6 +980,21 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000020;
               break;
             } // case 50
+            case 58: {
+              interceptorId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 58
+            case 66: {
+              interceptorStatus_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 66
+            case 74: {
+              interceptorDecision_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 74
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1240,6 +1492,236 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object authRequestId_ = "";
     /**
+     * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+     * @return The authRequestId.
+     */
+    public java.lang.String getAuthRequestId() {
+      java.lang.Object ref = authRequestId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        authRequestId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+     * @return The bytes for authRequestId.
+     */
+    public com.google.protobuf.ByteString
+        getAuthRequestIdBytes() {
+      java.lang.Object ref = authRequestId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        authRequestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+     * @param value The authRequestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthRequestId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      authRequestId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAuthRequestId() {
+      authRequestId_ = getDefaultInstance().getAuthRequestId();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+     * @param value The bytes for authRequestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthRequestIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      authRequestId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object interceptorId_ = "";
+    /**
+     * <code>optional string interceptor_id = 7 [json_name = "interceptorId"];</code>
+     * @return Whether the interceptorId field is set.
+     */
+    public boolean hasInterceptorId() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>optional string interceptor_id = 7 [json_name = "interceptorId"];</code>
+     * @return The interceptorId.
+     */
+    public java.lang.String getInterceptorId() {
+      java.lang.Object ref = interceptorId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        interceptorId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string interceptor_id = 7 [json_name = "interceptorId"];</code>
+     * @return The bytes for interceptorId.
+     */
+    public com.google.protobuf.ByteString
+        getInterceptorIdBytes() {
+      java.lang.Object ref = interceptorId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        interceptorId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string interceptor_id = 7 [json_name = "interceptorId"];</code>
+     * @param value The interceptorId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInterceptorId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      interceptorId_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string interceptor_id = 7 [json_name = "interceptorId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInterceptorId() {
+      interceptorId_ = getDefaultInstance().getInterceptorId();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string interceptor_id = 7 [json_name = "interceptorId"];</code>
+     * @param value The bytes for interceptorId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInterceptorIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      interceptorId_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object interceptorStatus_ = "";
+    /**
+     * <code>optional string interceptor_status = 8 [json_name = "interceptorStatus"];</code>
+     * @return Whether the interceptorStatus field is set.
+     */
+    public boolean hasInterceptorStatus() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <code>optional string interceptor_status = 8 [json_name = "interceptorStatus"];</code>
+     * @return The interceptorStatus.
+     */
+    public java.lang.String getInterceptorStatus() {
+      java.lang.Object ref = interceptorStatus_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        interceptorStatus_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string interceptor_status = 8 [json_name = "interceptorStatus"];</code>
+     * @return The bytes for interceptorStatus.
+     */
+    public com.google.protobuf.ByteString
+        getInterceptorStatusBytes() {
+      java.lang.Object ref = interceptorStatus_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        interceptorStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string interceptor_status = 8 [json_name = "interceptorStatus"];</code>
+     * @param value The interceptorStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInterceptorStatus(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      interceptorStatus_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string interceptor_status = 8 [json_name = "interceptorStatus"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInterceptorStatus() {
+      interceptorStatus_ = getDefaultInstance().getInterceptorStatus();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string interceptor_status = 8 [json_name = "interceptorStatus"];</code>
+     * @param value The bytes for interceptorStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInterceptorStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      interceptorStatus_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object interceptorDecision_ = "";
+    /**
      * <pre>
      * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
      *  keys: {
@@ -1258,16 +1740,41 @@ private static final long serialVersionUID = 0L;
      *  optional MetadataFilter metadata_filter = 6;
      * </pre>
      *
-     * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
-     * @return The authRequestId.
+     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+     * @return Whether the interceptorDecision field is set.
      */
-    public java.lang.String getAuthRequestId() {
-      java.lang.Object ref = authRequestId_;
+    public boolean hasInterceptorDecision() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <pre>
+     * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
+     *  keys: {
+     *    string: {
+     *      min_len: 3
+     *      max_len: 25
+     *    }
+     *  }
+     *  values: {
+     *    string: {
+     *      min_len: 1
+     *      max_len: 2000
+     *    }
+     *  }
+     * }];
+     *  optional MetadataFilter metadata_filter = 6;
+     * </pre>
+     *
+     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+     * @return The interceptorDecision.
+     */
+    public java.lang.String getInterceptorDecision() {
+      java.lang.Object ref = interceptorDecision_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        authRequestId_ = s;
+        interceptorDecision_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1292,17 +1799,17 @@ private static final long serialVersionUID = 0L;
      *  optional MetadataFilter metadata_filter = 6;
      * </pre>
      *
-     * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
-     * @return The bytes for authRequestId.
+     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+     * @return The bytes for interceptorDecision.
      */
     public com.google.protobuf.ByteString
-        getAuthRequestIdBytes() {
-      java.lang.Object ref = authRequestId_;
+        getInterceptorDecisionBytes() {
+      java.lang.Object ref = interceptorDecision_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        authRequestId_ = b;
+        interceptorDecision_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1327,15 +1834,15 @@ private static final long serialVersionUID = 0L;
      *  optional MetadataFilter metadata_filter = 6;
      * </pre>
      *
-     * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
-     * @param value The authRequestId to set.
+     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+     * @param value The interceptorDecision to set.
      * @return This builder for chaining.
      */
-    public Builder setAuthRequestId(
+    public Builder setInterceptorDecision(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      authRequestId_ = value;
-      bitField0_ |= 0x00000020;
+      interceptorDecision_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1358,12 +1865,12 @@ private static final long serialVersionUID = 0L;
      *  optional MetadataFilter metadata_filter = 6;
      * </pre>
      *
-     * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearAuthRequestId() {
-      authRequestId_ = getDefaultInstance().getAuthRequestId();
-      bitField0_ = (bitField0_ & ~0x00000020);
+    public Builder clearInterceptorDecision() {
+      interceptorDecision_ = getDefaultInstance().getInterceptorDecision();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -1386,16 +1893,16 @@ private static final long serialVersionUID = 0L;
      *  optional MetadataFilter metadata_filter = 6;
      * </pre>
      *
-     * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
-     * @param value The bytes for authRequestId to set.
+     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+     * @param value The bytes for interceptorDecision to set.
      * @return This builder for chaining.
      */
-    public Builder setAuthRequestIdBytes(
+    public Builder setInterceptorDecisionBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      authRequestId_ = value;
-      bitField0_ |= 0x00000020;
+      interceptorDecision_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

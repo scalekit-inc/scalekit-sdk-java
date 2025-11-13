@@ -232,6 +232,37 @@ public final class AuthServiceGrpc {
     return getGetAuthStateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorRequest,
+      com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorResponse> getGetAuthErrorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAuthError",
+      requestType = com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorRequest,
+      com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorResponse> getGetAuthErrorMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorRequest, com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorResponse> getGetAuthErrorMethod;
+    if ((getGetAuthErrorMethod = AuthServiceGrpc.getGetAuthErrorMethod) == null) {
+      synchronized (AuthServiceGrpc.class) {
+        if ((getGetAuthErrorMethod = AuthServiceGrpc.getGetAuthErrorMethod) == null) {
+          AuthServiceGrpc.getGetAuthErrorMethod = getGetAuthErrorMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorRequest, com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAuthError"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetAuthError"))
+              .build();
+        }
+      }
+    }
+    return getGetAuthErrorMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
       com.google.protobuf.Empty> getLogoutMethod;
 
@@ -261,37 +292,6 @@ public final class AuthServiceGrpc {
       }
     }
     return getLogoutMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      com.google.protobuf.Empty> getGetActiveSessionMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetActiveSession",
-      requestType = com.google.protobuf.Empty.class,
-      responseType = com.google.protobuf.Empty.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      com.google.protobuf.Empty> getGetActiveSessionMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.google.protobuf.Empty> getGetActiveSessionMethod;
-    if ((getGetActiveSessionMethod = AuthServiceGrpc.getGetActiveSessionMethod) == null) {
-      synchronized (AuthServiceGrpc.class) {
-        if ((getGetActiveSessionMethod = AuthServiceGrpc.getGetActiveSessionMethod) == null) {
-          AuthServiceGrpc.getGetActiveSessionMethod = getGetActiveSessionMethod =
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.google.protobuf.Empty>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetActiveSession"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetActiveSession"))
-              .build();
-        }
-      }
-    }
-    return getGetActiveSessionMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.GetAuthCustomizationsRequest,
@@ -486,16 +486,16 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    default void logout(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLogoutMethod(), responseObserver);
+    default void getAuthError(com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAuthErrorMethod(), responseObserver);
     }
 
     /**
      */
-    default void getActiveSession(com.google.protobuf.Empty request,
+    default void logout(com.google.protobuf.Empty request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetActiveSessionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLogoutMethod(), responseObserver);
     }
 
     /**
@@ -605,18 +605,18 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    public void logout(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+    public void getAuthError(com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getLogoutMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetAuthErrorMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void getActiveSession(com.google.protobuf.Empty request,
+    public void logout(com.google.protobuf.Empty request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetActiveSessionMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getLogoutMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -711,16 +711,16 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    public com.google.protobuf.Empty logout(com.google.protobuf.Empty request) {
+    public com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorResponse getAuthError(com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getLogoutMethod(), getCallOptions(), request);
+          getChannel(), getGetAuthErrorMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.google.protobuf.Empty getActiveSession(com.google.protobuf.Empty request) {
+    public com.google.protobuf.Empty logout(com.google.protobuf.Empty request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetActiveSessionMethod(), getCallOptions(), request);
+          getChannel(), getLogoutMethod(), getCallOptions(), request);
     }
 
     /**
@@ -819,18 +819,18 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> logout(
-        com.google.protobuf.Empty request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorResponse> getAuthError(
+        com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getLogoutMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetAuthErrorMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> getActiveSession(
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> logout(
         com.google.protobuf.Empty request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetActiveSessionMethod(), getCallOptions()), request);
+          getChannel().newCall(getLogoutMethod(), getCallOptions()), request);
     }
 
     /**
@@ -865,8 +865,8 @@ public final class AuthServiceGrpc {
   private static final int METHODID_LIST_USER_ORGANIZATIONS = 4;
   private static final int METHODID_SIGNUP_ORGANIZATION = 5;
   private static final int METHODID_GET_AUTH_STATE = 6;
-  private static final int METHODID_LOGOUT = 7;
-  private static final int METHODID_GET_ACTIVE_SESSION = 8;
+  private static final int METHODID_GET_AUTH_ERROR = 7;
+  private static final int METHODID_LOGOUT = 8;
   private static final int METHODID_GET_AUTH_CUSTOMIZATIONS = 9;
   private static final int METHODID_GET_AUTH_FEATURES = 10;
   private static final int METHODID_UPDATE_LOGIN_USER_DETAILS = 11;
@@ -916,12 +916,12 @@ public final class AuthServiceGrpc {
           serviceImpl.getAuthState((com.google.protobuf.Empty) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse>) responseObserver);
           break;
+        case METHODID_GET_AUTH_ERROR:
+          serviceImpl.getAuthError((com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorResponse>) responseObserver);
+          break;
         case METHODID_LOGOUT:
           serviceImpl.logout((com.google.protobuf.Empty) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
-          break;
-        case METHODID_GET_ACTIVE_SESSION:
-          serviceImpl.getActiveSession((com.google.protobuf.Empty) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_GET_AUTH_CUSTOMIZATIONS:
@@ -1004,19 +1004,19 @@ public final class AuthServiceGrpc {
               com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse>(
                 service, METHODID_GET_AUTH_STATE)))
         .addMethod(
+          getGetAuthErrorMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorRequest,
+              com.scalekit.grpc.scalekit.v1.auth.GetAuthErrorResponse>(
+                service, METHODID_GET_AUTH_ERROR)))
+        .addMethod(
           getLogoutMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               com.google.protobuf.Empty,
               com.google.protobuf.Empty>(
                 service, METHODID_LOGOUT)))
-        .addMethod(
-          getGetActiveSessionMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.google.protobuf.Empty,
-              com.google.protobuf.Empty>(
-                service, METHODID_GET_ACTIVE_SESSION)))
         .addMethod(
           getGetAuthCustomizationsMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1093,8 +1093,8 @@ public final class AuthServiceGrpc {
               .addMethod(getListUserOrganizationsMethod())
               .addMethod(getSignupOrganizationMethod())
               .addMethod(getGetAuthStateMethod())
+              .addMethod(getGetAuthErrorMethod())
               .addMethod(getLogoutMethod())
-              .addMethod(getGetActiveSessionMethod())
               .addMethod(getGetAuthCustomizationsMethod())
               .addMethod(getGetAuthFeaturesMethod())
               .addMethod(getUpdateLoginUserDetailsMethod())

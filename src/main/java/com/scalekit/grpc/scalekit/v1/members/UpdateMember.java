@@ -17,7 +17,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UpdateMember() {
-    role_ = 0;
     firstName_ = "";
     lastName_ = "";
   }
@@ -55,31 +54,6 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
-  public static final int ROLE_FIELD_NUMBER = 5;
-  private int role_ = 0;
-  /**
-   * <code>optional .scalekit.v1.members.MemberRole role = 5 [json_name = "role"];</code>
-   * @return Whether the role field is set.
-   */
-  @java.lang.Override public boolean hasRole() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <code>optional .scalekit.v1.members.MemberRole role = 5 [json_name = "role"];</code>
-   * @return The enum numeric value on the wire for role.
-   */
-  @java.lang.Override public int getRoleValue() {
-    return role_;
-  }
-  /**
-   * <code>optional .scalekit.v1.members.MemberRole role = 5 [json_name = "role"];</code>
-   * @return The role.
-   */
-  @java.lang.Override public com.scalekit.grpc.scalekit.v1.members.MemberRole getRole() {
-    com.scalekit.grpc.scalekit.v1.members.MemberRole result = com.scalekit.grpc.scalekit.v1.members.MemberRole.forNumber(role_);
-    return result == null ? com.scalekit.grpc.scalekit.v1.members.MemberRole.UNRECOGNIZED : result;
-  }
-
   public static final int FIRST_NAME_FIELD_NUMBER = 6;
   @SuppressWarnings("serial")
   private volatile java.lang.Object firstName_ = "";
@@ -89,7 +63,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasFirstName() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <code>optional string first_name = 6 [json_name = "firstName", (.buf.validate.field) = { ... }</code>
@@ -136,7 +110,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasLastName() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <code>optional string last_name = 7 [json_name = "lastName", (.buf.validate.field) = { ... }</code>
@@ -261,7 +235,7 @@ java.lang.String defaultValue) {
    */
   @java.lang.Override
   public boolean hasUserProfile() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
@@ -294,12 +268,9 @@ java.lang.String defaultValue) {
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(5, role_);
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, firstName_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, lastName_);
     }
     com.google.protobuf.GeneratedMessageV3
@@ -308,7 +279,7 @@ java.lang.String defaultValue) {
         internalGetMetadata(),
         MetadataDefaultEntryHolder.defaultEntry,
         9);
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(10, getUserProfile());
     }
     getUnknownFields().writeTo(output);
@@ -321,13 +292,9 @@ java.lang.String defaultValue) {
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(5, role_);
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, firstName_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, lastName_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
@@ -340,7 +307,7 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, metadata__);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getUserProfile());
     }
@@ -359,10 +326,6 @@ java.lang.String defaultValue) {
     }
     com.scalekit.grpc.scalekit.v1.members.UpdateMember other = (com.scalekit.grpc.scalekit.v1.members.UpdateMember) obj;
 
-    if (hasRole() != other.hasRole()) return false;
-    if (hasRole()) {
-      if (role_ != other.role_) return false;
-    }
     if (hasFirstName() != other.hasFirstName()) return false;
     if (hasFirstName()) {
       if (!getFirstName()
@@ -391,10 +354,6 @@ java.lang.String defaultValue) {
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasRole()) {
-      hash = (37 * hash) + ROLE_FIELD_NUMBER;
-      hash = (53 * hash) + role_;
-    }
     if (hasFirstName()) {
       hash = (37 * hash) + FIRST_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getFirstName().hashCode();
@@ -570,7 +529,6 @@ java.lang.String defaultValue) {
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      role_ = 0;
       firstName_ = "";
       lastName_ = "";
       internalGetMutableMetadata().clear();
@@ -614,26 +572,22 @@ java.lang.String defaultValue) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.role_ = role_;
+        result.firstName_ = firstName_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.firstName_ = firstName_;
+        result.lastName_ = lastName_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.lastName_ = lastName_;
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.userProfile_ = userProfileBuilder_ == null
             ? userProfile_
             : userProfileBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -682,22 +636,19 @@ java.lang.String defaultValue) {
 
     public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.members.UpdateMember other) {
       if (other == com.scalekit.grpc.scalekit.v1.members.UpdateMember.getDefaultInstance()) return this;
-      if (other.hasRole()) {
-        setRole(other.getRole());
-      }
       if (other.hasFirstName()) {
         firstName_ = other.firstName_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasLastName()) {
         lastName_ = other.lastName_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       internalGetMutableMetadata().mergeFrom(
           other.internalGetMetadata());
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       if (other.hasUserProfile()) {
         mergeUserProfile(other.getUserProfile());
       }
@@ -727,19 +678,14 @@ java.lang.String defaultValue) {
             case 0:
               done = true;
               break;
-            case 40: {
-              role_ = input.readEnum();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 40
             case 50: {
               firstName_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000001;
               break;
             } // case 50
             case 58: {
               lastName_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000002;
               break;
             } // case 58
             case 74: {
@@ -748,14 +694,14 @@ java.lang.String defaultValue) {
                   MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               internalGetMutableMetadata().getMutableMap().put(
                   metadata__.getKey(), metadata__.getValue());
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000004;
               break;
             } // case 74
             case 82: {
               input.readMessage(
                   getUserProfileFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000008;
               break;
             } // case 82
             default: {
@@ -775,73 +721,13 @@ java.lang.String defaultValue) {
     }
     private int bitField0_;
 
-    private int role_ = 0;
-    /**
-     * <code>optional .scalekit.v1.members.MemberRole role = 5 [json_name = "role"];</code>
-     * @return Whether the role field is set.
-     */
-    @java.lang.Override public boolean hasRole() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>optional .scalekit.v1.members.MemberRole role = 5 [json_name = "role"];</code>
-     * @return The enum numeric value on the wire for role.
-     */
-    @java.lang.Override public int getRoleValue() {
-      return role_;
-    }
-    /**
-     * <code>optional .scalekit.v1.members.MemberRole role = 5 [json_name = "role"];</code>
-     * @param value The enum numeric value on the wire for role to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRoleValue(int value) {
-      role_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional .scalekit.v1.members.MemberRole role = 5 [json_name = "role"];</code>
-     * @return The role.
-     */
-    @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.members.MemberRole getRole() {
-      com.scalekit.grpc.scalekit.v1.members.MemberRole result = com.scalekit.grpc.scalekit.v1.members.MemberRole.forNumber(role_);
-      return result == null ? com.scalekit.grpc.scalekit.v1.members.MemberRole.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>optional .scalekit.v1.members.MemberRole role = 5 [json_name = "role"];</code>
-     * @param value The role to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRole(com.scalekit.grpc.scalekit.v1.members.MemberRole value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      role_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional .scalekit.v1.members.MemberRole role = 5 [json_name = "role"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearRole() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      role_ = 0;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object firstName_ = "";
     /**
      * <code>optional string first_name = 6 [json_name = "firstName", (.buf.validate.field) = { ... }</code>
      * @return Whether the firstName field is set.
      */
     public boolean hasFirstName() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>optional string first_name = 6 [json_name = "firstName", (.buf.validate.field) = { ... }</code>
@@ -885,7 +771,7 @@ java.lang.String defaultValue) {
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       firstName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -895,7 +781,7 @@ java.lang.String defaultValue) {
      */
     public Builder clearFirstName() {
       firstName_ = getDefaultInstance().getFirstName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -909,7 +795,7 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       firstName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -920,7 +806,7 @@ java.lang.String defaultValue) {
      * @return Whether the lastName field is set.
      */
     public boolean hasLastName() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>optional string last_name = 7 [json_name = "lastName", (.buf.validate.field) = { ... }</code>
@@ -964,7 +850,7 @@ java.lang.String defaultValue) {
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       lastName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -974,7 +860,7 @@ java.lang.String defaultValue) {
      */
     public Builder clearLastName() {
       lastName_ = getDefaultInstance().getLastName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -988,7 +874,7 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       lastName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1012,7 +898,7 @@ java.lang.String defaultValue) {
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return metadata_;
     }
@@ -1072,7 +958,7 @@ java.lang.String defaultValue) {
       return map.get(key);
     }
     public Builder clearMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableMetadata().getMutableMap()
           .clear();
       return this;
@@ -1093,7 +979,7 @@ java.lang.String defaultValue) {
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
         getMutableMetadata() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -1106,7 +992,7 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException("map value"); }
       internalGetMutableMetadata().getMutableMap()
           .put(key, value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1116,7 +1002,7 @@ java.lang.String defaultValue) {
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap()
           .putAll(values);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1128,7 +1014,7 @@ java.lang.String defaultValue) {
      * @return Whether the userProfile field is set.
      */
     public boolean hasUserProfile() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
@@ -1153,7 +1039,7 @@ java.lang.String defaultValue) {
       } else {
         userProfileBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1167,7 +1053,7 @@ java.lang.String defaultValue) {
       } else {
         userProfileBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1176,7 +1062,7 @@ java.lang.String defaultValue) {
      */
     public Builder mergeUserProfile(com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile value) {
       if (userProfileBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0) &&
+        if (((bitField0_ & 0x00000008) != 0) &&
           userProfile_ != null &&
           userProfile_ != com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.getDefaultInstance()) {
           getUserProfileBuilder().mergeFrom(value);
@@ -1187,7 +1073,7 @@ java.lang.String defaultValue) {
         userProfileBuilder_.mergeFrom(value);
       }
       if (userProfile_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1196,7 +1082,7 @@ java.lang.String defaultValue) {
      * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
      */
     public Builder clearUserProfile() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       userProfile_ = null;
       if (userProfileBuilder_ != null) {
         userProfileBuilder_.dispose();
@@ -1209,7 +1095,7 @@ java.lang.String defaultValue) {
      * <code>.scalekit.v1.users.UpdateUserProfile user_profile = 10 [json_name = "userProfile"];</code>
      */
     public com.scalekit.grpc.scalekit.v1.users.UpdateUserProfile.Builder getUserProfileBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getUserProfileFieldBuilder().getBuilder();
     }

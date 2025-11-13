@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object userId_ = "";
   /**
-   * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
+   * <code>string user_id = 1 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The userId.
    */
   @java.lang.Override
@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
+   * <code>string user_id = 1 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for userId.
    */
   @java.lang.Override
@@ -84,7 +84,7 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
   /**
-   * <code>uint32 page_size = 2 [json_name = "pageSize"];</code>
+   * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageSize.
    */
   @java.lang.Override
@@ -96,7 +96,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
   /**
-   * <code>string page_token = 3 [json_name = "pageToken"];</code>
+   * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageToken.
    */
   @java.lang.Override
@@ -113,7 +113,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string page_token = 3 [json_name = "pageToken"];</code>
+   * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for pageToken.
    */
   @java.lang.Override
@@ -134,7 +134,7 @@ private static final long serialVersionUID = 0L;
   public static final int FILTER_FIELD_NUMBER = 4;
   private com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilter filter_;
   /**
-   * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter"];</code>
+   * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the filter field is set.
    */
   @java.lang.Override
@@ -142,7 +142,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter"];</code>
+   * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The filter.
    */
   @java.lang.Override
@@ -150,7 +150,7 @@ private static final long serialVersionUID = 0L;
     return filter_ == null ? com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilter.getDefaultInstance() : filter_;
   }
   /**
-   * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter"];</code>
+   * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilterOrBuilder getFilterOrBuilder() {
@@ -577,7 +577,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object userId_ = "";
     /**
-     * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
+     * <code>string user_id = 1 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The userId.
      */
     public java.lang.String getUserId() {
@@ -593,7 +593,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
+     * <code>string user_id = 1 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for userId.
      */
     public com.google.protobuf.ByteString
@@ -610,7 +610,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
+     * <code>string user_id = 1 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The userId to set.
      * @return This builder for chaining.
      */
@@ -623,7 +623,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
+     * <code>string user_id = 1 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearUserId() {
@@ -633,7 +633,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }</code>
+     * <code>string user_id = 1 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for userId to set.
      * @return This builder for chaining.
      */
@@ -649,7 +649,7 @@ private static final long serialVersionUID = 0L;
 
     private int pageSize_ ;
     /**
-     * <code>uint32 page_size = 2 [json_name = "pageSize"];</code>
+     * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The pageSize.
      */
     @java.lang.Override
@@ -657,7 +657,7 @@ private static final long serialVersionUID = 0L;
       return pageSize_;
     }
     /**
-     * <code>uint32 page_size = 2 [json_name = "pageSize"];</code>
+     * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The pageSize to set.
      * @return This builder for chaining.
      */
@@ -669,7 +669,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>uint32 page_size = 2 [json_name = "pageSize"];</code>
+     * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
@@ -681,7 +681,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object pageToken_ = "";
     /**
-     * <code>string page_token = 3 [json_name = "pageToken"];</code>
+     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The pageToken.
      */
     public java.lang.String getPageToken() {
@@ -697,7 +697,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string page_token = 3 [json_name = "pageToken"];</code>
+     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString
@@ -714,7 +714,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string page_token = 3 [json_name = "pageToken"];</code>
+     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The pageToken to set.
      * @return This builder for chaining.
      */
@@ -727,7 +727,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string page_token = 3 [json_name = "pageToken"];</code>
+     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
@@ -737,7 +737,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string page_token = 3 [json_name = "pageToken"];</code>
+     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
      */
@@ -755,14 +755,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilter, com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilter.Builder, com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilterOrBuilder> filterBuilder_;
     /**
-     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter"];</code>
+     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the filter field is set.
      */
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter"];</code>
+     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The filter.
      */
     public com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilter getFilter() {
@@ -773,7 +773,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter"];</code>
+     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setFilter(com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilter value) {
       if (filterBuilder_ == null) {
@@ -789,7 +789,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter"];</code>
+     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setFilter(
         com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilter.Builder builderForValue) {
@@ -803,7 +803,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter"];</code>
+     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeFilter(com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilter value) {
       if (filterBuilder_ == null) {
@@ -824,7 +824,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter"];</code>
+     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearFilter() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -837,7 +837,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter"];</code>
+     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilter.Builder getFilterBuilder() {
       bitField0_ |= 0x00000008;
@@ -845,7 +845,7 @@ private static final long serialVersionUID = 0L;
       return getFilterFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter"];</code>
+     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilterOrBuilder getFilterOrBuilder() {
       if (filterBuilder_ != null) {
@@ -856,7 +856,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter"];</code>
+     * <code>.scalekit.v1.sessions.UserSessionFilter filter = 4 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilter, com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilter.Builder, com.scalekit.grpc.scalekit.v1.sessions.UserSessionFilterOrBuilder> 

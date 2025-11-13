@@ -70,6 +70,146 @@ public final class McpProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_mcp_DeleteMcpResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_CreateMcpConfigRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_CreateMcpConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_CreateMcpConfigResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_CreateMcpConfigResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_UpdateMcpConfigRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_UpdateMcpConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_UpdateMcpConfigResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_UpdateMcpConfigResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_DeleteMcpConfigRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_DeleteMcpConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_DeleteMcpConfigResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_DeleteMcpConfigResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_GetMcpConfigRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_GetMcpConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_GetMcpConfigResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_GetMcpConfigResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_ListMcpConfigsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_ListMcpConfigsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_ListMcpConfigsRequest_Filter_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_ListMcpConfigsRequest_Filter_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_ListMcpConfigsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_ListMcpConfigsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_EnsureMcpInstanceRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_EnsureMcpInstanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_EnsureMcpInstanceResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_EnsureMcpInstanceResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_ListMcpInstancesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_ListMcpInstancesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_ListMcpInstancesRequest_Filter_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_ListMcpInstancesRequest_Filter_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_ListMcpInstancesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_ListMcpInstancesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_DeleteMcpInstanceRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_DeleteMcpInstanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_DeleteMcpInstanceResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_DeleteMcpInstanceResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_UpdateMcpInstanceRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_UpdateMcpInstanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_UpdateMcpInstanceResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_UpdateMcpInstanceResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_GetMcpInstanceRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_GetMcpInstanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_GetMcpInstanceResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_GetMcpInstanceResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_GetMcpInstanceAuthStateRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_GetMcpInstanceAuthStateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_McpInstanceConnectionAuthState_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_McpInstanceConnectionAuthState_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_GetMcpInstanceAuthStateResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_GetMcpInstanceAuthStateResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_McpInstance_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_McpInstance_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_McpConfig_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_McpConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_mcp_McpConfigConnectionToolMapping_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_mcp_McpConfigConnectionToolMapping_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -125,36 +265,305 @@ public final class McpProto {
       ".scalekit.v1.mcp.McpB\021\222A\0162\014List of MCPsR" +
       "\004mcps\"M\n\020DeleteMcpRequest\0229\n\006mcp_id\030\001 \001(" +
       "\tB\"\222A\0312\027ID of the MCP to delete\272H\003\310\001\001R\005m" +
-      "cpId\"\023\n\021DeleteMcpResponse2\257\007\n\nMcpService" +
-      "\022\250\002\n\tCreateMcp\022!.scalekit.v1.mcp.CreateM" +
-      "cpRequest\032\".scalekit.v1.mcp.CreateMcpRes" +
-      "ponse\"\323\001\222A\261\001\n\003mcp\022ACreates or returns th" +
-      "e existing MCP with the given configurat" +
-      "ion.\032gCreates a new MCP for the configur" +
-      "ation. If same configuration exists, it " +
-      "will return the existing MCP.\202\265\030\002\030t\202\323\344\223\002" +
-      "\022\"\013/api/v1/mcp:\003mcp\022\276\001\n\006GetMcp\022\036.scaleki" +
-      "t.v1.mcp.GetMcpRequest\032\037.scalekit.v1.mcp" +
-      ".GetMcpResponse\"s\222AN\n\003mcp\022\032Get an existi" +
-      "ng MCP by ID.\032+Returns the existing MCP " +
-      "with the given ID.\202\265\030\002\030t\202\323\344\223\002\026\022\024/api/v1/" +
-      "mcp/{mcp_id}\022\371\001\n\007ListMcp\022\037.scalekit.v1.m" +
-      "cp.ListMcpRequest\032 .scalekit.v1.mcp.List" +
-      "McpResponse\"\252\001\222A\215\001\n\003mcp\022 List MCPs with " +
-      "optional filters.\032dReturns a list of exi" +
-      "sting MCPs, optionally filtered by conne" +
-      "cted_account_identifier and link_token.\202" +
-      "\265\030\002\030t\202\323\344\223\002\r\022\013/api/v1/mcp\022\270\001\n\tDeleteMcp\022!" +
-      ".scalekit.v1.mcp.DeleteMcpRequest\032\".scal" +
-      "ekit.v1.mcp.DeleteMcpResponse\"d\222A?\n\003mcp\022" +
-      "\024Delete an MCP by ID.\032\"Deletes the MCP w" +
-      "ith the given ID.\202\265\030\002\030t\202\323\344\223\002\026*\024/api/v1/m" +
-      "cp/{mcp_id}B\272\001\n!com.scalekit.grpc.scalek" +
-      "it.v1.mcpB\010McpProtoP\001Z-github.com/scalek" +
-      "it-inc/scalekit/pkg/grpc/mcp\242\002\003SVM\252\002\017Sca" +
-      "lekit.V1.Mcp\312\002\017Scalekit\\V1\\Mcp\342\002\033Scaleki" +
-      "t\\V1\\Mcp\\GPBMetadata\352\002\021Scalekit::V1::Mcp" +
-      "b\006proto3"
+      "cpId\"\023\n\021DeleteMcpResponse\"|\n\026CreateMcpCo" +
+      "nfigRequest\022b\n\006config\030\001 \001(\0132\032.scalekit.v" +
+      "1.mcp.McpConfigB.\222A%2#MCP configuration " +
+      "details to create\272H\003\310\001\001R\006config\"q\n\027Creat" +
+      "eMcpConfigResponse\022V\n\006config\030\001 \001(\0132\032.sca" +
+      "lekit.v1.mcp.McpConfigB\"\222A\0372\035The created" +
+      " MCP configurationR\006config\"\257\003\n\026UpdateMcp" +
+      "ConfigRequest\022j\n\tconfig_id\030\001 \001(\tBM\222A@2%I" +
+      "D of the MCP configuration to updateJ\027\"c" +
+      "fg_85630864460904897\"\272H\007r\002\020\001\310\001\001R\010configI" +
+      "d\022w\n\013description\030\002 \001(\tBU\222AR2-Updated des" +
+      "cription for the MCP configurationJ!\"Upd" +
+      "ated daily summarizer config\"R\013descripti" +
+      "on\022\257\001\n\030connection_tool_mappings\030\003 \003(\0132/." +
+      "scalekit.v1.mcp.McpConfigConnectionToolM" +
+      "appingBD\222AA2?Updated list of connection-" +
+      "to-tool mappings for this MCP configR\026co" +
+      "nnectionToolMappings\"q\n\027UpdateMcpConfigR" +
+      "esponse\022V\n\006config\030\001 \001(\0132\032.scalekit.v1.mc" +
+      "p.McpConfigB\"\222A\0372\035The updated MCP config" +
+      "urationR\006config\"\204\001\n\026DeleteMcpConfigReque" +
+      "st\022j\n\tconfig_id\030\001 \001(\tBM\222A@2%ID of the MC" +
+      "P configuration to deleteJ\027\"cfg_85630864" +
+      "460904897\"\272H\007r\002\020\001\310\001\001R\010configId\"\031\n\027Delete" +
+      "McpConfigResponse\"\200\001\n\023GetMcpConfigReques" +
+      "t\022i\n\tconfig_id\030\001 \001(\tBL\222A?2$ID of the MCP" +
+      " configuration to fetchJ\027\"cfg_8563086446" +
+      "0904897\"\272H\007r\002\020\001\310\001\001R\010configId\"p\n\024GetMcpCo" +
+      "nfigResponse\022X\n\006config\030\001 \001(\0132\032.scalekit." +
+      "v1.mcp.McpConfigB$\222A!2\037The requested MCP" +
+      " configurationR\006config\"\305\004\n\025ListMcpConfig" +
+      "sRequest\022E\n\006filter\030\001 \001(\0132-.scalekit.v1.m" +
+      "cp.ListMcpConfigsRequest.FilterR\006filter\022" +
+      "B\n\006search\030\002 \001(\tB*\222A\'2%Look ahead text se" +
+      "arch on config nameR\006search\022V\n\tpage_size" +
+      "\030\003 \001(\rB9\222A/2-Number of configs to return" +
+      " per page (max 30)\272H\004*\002\030\036R\010pageSize\022W\n\np" +
+      "age_token\030\004 \001(\tB8\222A523Pagination token t" +
+      "o fetch the next or previous pageR\tpageT" +
+      "oken\032\357\001\n\006Filter\0223\n\002id\030\001 \001(\tB#\222A 2\036Filter" +
+      " by MCP configuration idR\002id\022d\n\004name\030\002 \001" +
+      "(\tBP\222AM2KCase-insensitive prefix search " +
+      "on configuration name (minimum 3 charact" +
+      "ers)R\004name\022J\n\010provider\030\003 \001(\tB.\222A+2)Filte" +
+      "r configs that include this providerR\010pr" +
+      "ovider\"\360\002\n\026ListMcpConfigsResponse\022U\n\007con" +
+      "figs\030\001 \003(\0132\032.scalekit.v1.mcp.McpConfigB\037" +
+      "\222A\0342\032List of MCP configurationsR\007configs" +
+      "\022T\n\017next_page_token\030\002 \001(\tB,\222A)2\'Paginati" +
+      "on token to fetch the next pageR\rnextPag" +
+      "eToken\022X\n\017prev_page_token\030\003 \001(\tB0\222A-2+Pa" +
+      "gination token to fetch the previous pag" +
+      "eR\rprevPageToken\022O\n\ntotal_size\030\004 \001(\rB0\222A" +
+      "-2+Total number of configs matching the " +
+      "filterR\ttotalSize\"\350\002\n\030EnsureMcpInstanceR" +
+      "equest\022J\n\004name\030\001 \001(\tB6\222A32!Display name " +
+      "for the MCP instanceJ\016\"daily-digest\"R\004na" +
+      "me\022\200\001\n\013config_name\030\002 \001(\tB_\222AR2<Name of t" +
+      "he MCP configuration to associate with t" +
+      "he instanceJ\022\"daily-summarizer\"\272H\007r\002\020\001\310\001" +
+      "\001R\nconfigName\022}\n\017user_identifier\030\003 \001(\tBT" +
+      "\222AG23Identifier for the end user request" +
+      "ing the instanceJ\020\"akshay.parihar\"\272H\007r\002\020" +
+      "\001\310\001\001R\016userIdentifier\"w\n\031EnsureMcpInstanc" +
+      "eResponse\022Z\n\010instance\030\001 \001(\0132\034.scalekit.v" +
+      "1.mcp.McpInstanceB \222A\0352\033Details of the M" +
+      "CP instanceR\010instance\"\203\005\n\027ListMcpInstanc" +
+      "esRequest\022G\n\006filter\030\001 \001(\0132/.scalekit.v1." +
+      "mcp.ListMcpInstancesRequest.FilterR\006filt" +
+      "er\022h\n\006search\030\002 \001(\tBP\222AM2KCase-insensitiv" +
+      "e look-ahead search across instance name" +
+      " and user identifierR\006search\022X\n\tpage_siz" +
+      "e\030\003 \001(\rB;\222A12/Number of instances to ret" +
+      "urn per page (max 30)\272H\004*\002\030\036R\010pageSize\022W" +
+      "\n\npage_token\030\004 \001(\tB8\222A523Pagination toke" +
+      "n to fetch the next or previous pageR\tpa" +
+      "geToken\032\201\002\n\006Filter\022.\n\002id\030\001 \001(\tB\036\222A\0332\031Fil" +
+      "ter by MCP instance idR\002id\0226\n\004name\030\002 \001(\t" +
+      "B\"\222A\0372\035Filter by exact instance nameR\004na" +
+      "me\022F\n\013config_name\030\003 \001(\tB%\222A\"2 Filter by " +
+      "MCP configuration nameR\nconfigName\022G\n\017us" +
+      "er_identifier\030\004 \001(\tB\036\222A\0332\031Filter by user" +
+      " identifierR\016userIdentifier\"\365\002\n\030ListMcpI" +
+      "nstancesResponse\022V\n\tinstances\030\001 \003(\0132\034.sc" +
+      "alekit.v1.mcp.McpInstanceB\032\222A\0272\025List of " +
+      "MCP instancesR\tinstances\022T\n\017next_page_to" +
+      "ken\030\002 \001(\tB,\222A)2\'Pagination token to fetc" +
+      "h the next pageR\rnextPageToken\022X\n\017prev_p" +
+      "age_token\030\003 \001(\tB0\222A-2+Pagination token t" +
+      "o fetch the previous pageR\rprevPageToken" +
+      "\022Q\n\ntotal_size\030\004 \001(\rB2\222A/2-Total number " +
+      "of instances matching the filterR\ttotalS" +
+      "ize\"\206\001\n\030DeleteMcpInstanceRequest\022j\n\013inst" +
+      "ance_id\030\001 \001(\tBI\222A<2 ID of the MCP instan" +
+      "ce to deleteJ\030\"inst_88630864544790977\"\272H" +
+      "\007r\002\020\001\310\001\001R\ninstanceId\"\033\n\031DeleteMcpInstanc" +
+      "eResponse\"\316\002\n\030UpdateMcpInstanceRequest\022j" +
+      "\n\013instance_id\030\001 \001(\tBI\222A<2 ID of the MCP " +
+      "instance to updateJ\030\"inst_88630864544790" +
+      "977\"\272H\007r\002\020\001\310\001\001R\ninstanceId\022V\n\004name\030\002 \001(\t" +
+      "BB\222A?2%New display name for the MCP inst" +
+      "anceJ\026\"daily-digest-updated\"R\004name\022n\n\013co" +
+      "nfig_name\030\003 \001(\tBM\222AJ24New MCP configurat" +
+      "ion name to attach to the instanceJ\022\"dai" +
+      "ly-summarizer\"R\nconfigName\"p\n\031UpdateMcpI" +
+      "nstanceResponse\022S\n\010instance\030\001 \001(\0132\034.scal" +
+      "ekit.v1.mcp.McpInstanceB\031\222A\0262\024Updated MC" +
+      "P instanceR\010instance\"\202\001\n\025GetMcpInstanceR" +
+      "equest\022i\n\013instance_id\030\001 \001(\tBH\222A;2\037ID of " +
+      "the MCP instance to fetchJ\030\"inst_8863086" +
+      "4544790977\"\272H\007r\002\020\001\310\001\001R\ninstanceId\"s\n\026Get" +
+      "McpInstanceResponse\022Y\n\010instance\030\001 \001(\0132\034." +
+      "scalekit.v1.mcp.McpInstanceB\037\222A\0342\032The re" +
+      "quested MCP instanceR\010instance\"\242\002\n\036GetMc" +
+      "pInstanceAuthStateRequest\022\210\001\n\013instance_i" +
+      "d\030\001 \001(\tBg\222AZ2>ID of the MCP instance who" +
+      "se connection statuses are requestedJ\030\"i" +
+      "nst_88630864544790977\"\272H\007r\002\020\001\310\001\001R\ninstan" +
+      "ceId\022u\n\022include_auth_links\030\002 \001(\010BG\222AD2BW" +
+      "hether to generate fresh authentication " +
+      "links for each connectionR\020includeAuthLi" +
+      "nks\"\301\004\n\036McpInstanceConnectionAuthState\022J" +
+      "\n\rconnection_id\030\001 \001(\tB%\222A\"2 Underlying c" +
+      "onnection identifierR\014connectionId\022P\n\017co" +
+      "nnection_name\030\002 \001(\tB\'\222A$2\"Developer-assi" +
+      "gned connection nameR\016connectionName\022@\n\010" +
+      "provider\030\003 \001(\tB$\222A!2\037Provider backing th" +
+      "e connectionR\010provider\022_\n\024connected_acco" +
+      "unt_id\030\004 \001(\tB-\222A*2(Connected account bac" +
+      "king the connectionR\022connectedAccountId\022" +
+      "u\n\030connected_account_status\030\005 \001(\tB;\222A826" +
+      "Current authentication status of the con" +
+      "nected accountR\026connectedAccountStatus\022g" +
+      "\n\023authentication_link\030\006 \001(\tB6\222A321Magic " +
+      "link for reconnecting the connected acco" +
+      "untR\022authenticationLink\"\254\001\n\037GetMcpInstan" +
+      "ceAuthStateResponse\022\210\001\n\013connections\030\001 \003(" +
+      "\0132/.scalekit.v1.mcp.McpInstanceConnectio" +
+      "nAuthStateB5\222A220Status of each connecti" +
+      "on mapped to the instanceR\013connections\"\360" +
+      "\005\n\013McpInstance\022O\n\002id\030\001 \001(\tB?\222A92\035Unique " +
+      "ID of the MCP instanceJ\030\"inst_8863086454" +
+      "4790977\"\340A\003R\002id\022K\n\004name\030\002 \001(\tB7\222A.2\034Disp" +
+      "lay name of the instanceJ\016\"daily-digest\"" +
+      "\272H\003\310\001\001R\004name\022|\n\017user_identifier\030\003 \001(\tBS\222" +
+      "AJ26Identifier for the user who owns or " +
+      "uses this instanceJ\020\"akshay.parihar\"\272H\003\310" +
+      "\001\001R\016userIdentifier\022\\\n\006config\030\004 \001(\0132\032.sca" +
+      "lekit.v1.mcp.McpConfigB(\222A%2#Configurati" +
+      "on backing this instanceR\006config\022\204\001\n\014las" +
+      "t_used_at\030\005 \001(\0132\032.google.protobuf.Timest" +
+      "ampBF\222AC2)Timestamp when the instance wa" +
+      "s last usedJ\026\"0001-01-01T00:00:00Z\"R\nlas" +
+      "tUsedAt\022\204\001\n\nupdated_at\030\006 \001(\0132\032.google.pr" +
+      "otobuf.TimestampBI\222AF2,Timestamp when th" +
+      "e instance was last updatedJ\026\"2025-10-07" +
+      "T12:21:00Z\"R\tupdatedAt\022Y\n\003url\030\007 \001(\tBG\222AD" +
+      "2\035URL to reach the MCP instanceJ#\"https:" +
+      "//example.com/mcp/v1/abc123\"R\003url\"\334\003\n\tMc" +
+      "pConfig\022L\n\002id\030\001 \001(\tB<\222A62\033Unique ID of t" +
+      "he MCP configJ\027\"cfg_85630864460904897\"\340A" +
+      "\003R\002id\022\\\n\004name\030\002 \001(\tBH\222A;2%Unique name fo" +
+      "r the MCP configurationJ\022\"daily-summariz" +
+      "er\"\272H\007r\002\020\001\310\001\001R\004name\022y\n\013description\030\003 \001(\t" +
+      "BW\222AT2$Description of the MCP configurat" +
+      "ionJ,\"Summarizes daily emails and posts " +
+      "to Slack\"R\013description\022\247\001\n\030connection_to" +
+      "ol_mappings\030\004 \003(\0132/.scalekit.v1.mcp.McpC" +
+      "onfigConnectionToolMappingB<\222A927List of" +
+      " connection-to-tool mappings for this MC" +
+      "P configR\026connectionToolMappings\"\225\005\n\036Mcp" +
+      "ConfigConnectionToolMapping\022H\n\rconnectio" +
+      "n_id\030\001 \001(\tB#\222A\0352\033Unique ID of the connec" +
+      "tion\340A\003R\014connectionId\022V\n\017connection_name" +
+      "\030\002 \001(\tB-\222A$2\"Developer-assigned connecti" +
+      "on name\272H\003\310\001\001R\016connectionName\022E\n\010provide" +
+      "r\030\003 \001(\tB)\222A#2!Provider name for this con" +
+      "nection\340A\003R\010provider\022[\n\005tools\030\004 \003(\tBE\222AB" +
+      "2@List of tool names linked to this conn" +
+      "ection (empty = all tools)R\005tools\022\201\001\n\024co" +
+      "nnected_account_id\030\005 \001(\tBJ\222AG2EConnected" +
+      " account backing this connection in the " +
+      "MCP instance contextH\000R\022connectedAccount" +
+      "Id\210\001\001\022s\n\030connected_account_status\030\006 \001(\tB" +
+      "4\222A12/Authentication status for the conn" +
+      "ected accountH\001R\026connectedAccountStatus\210" +
+      "\001\001B\027\n\025_connected_account_idB\033\n\031_connecte" +
+      "d_account_status2\235!\n\nMcpService\022\250\002\n\tCrea" +
+      "teMcp\022!.scalekit.v1.mcp.CreateMcpRequest" +
+      "\032\".scalekit.v1.mcp.CreateMcpResponse\"\323\001\222" +
+      "A\261\001\n\003mcp\022ACreates or returns the existin" +
+      "g MCP with the given configuration.\032gCre" +
+      "ates a new MCP for the configuration. If" +
+      " same configuration exists, it will retu" +
+      "rn the existing MCP.\202\265\030\002\030t\202\323\344\223\002\022\"\013/api/v" +
+      "1/mcp:\003mcp\022\276\001\n\006GetMcp\022\036.scalekit.v1.mcp." +
+      "GetMcpRequest\032\037.scalekit.v1.mcp.GetMcpRe" +
+      "sponse\"s\222AN\n\003mcp\022\032Get an existing MCP by" +
+      " ID.\032+Returns the existing MCP with the " +
+      "given ID.\202\265\030\002\030t\202\323\344\223\002\026\022\024/api/v1/mcp/{mcp_" +
+      "id}\022\371\001\n\007ListMcp\022\037.scalekit.v1.mcp.ListMc" +
+      "pRequest\032 .scalekit.v1.mcp.ListMcpRespon" +
+      "se\"\252\001\222A\215\001\n\003mcp\022 List MCPs with optional " +
+      "filters.\032dReturns a list of existing MCP" +
+      "s, optionally filtered by connected_acco" +
+      "unt_identifier and link_token.\202\265\030\002\030t\202\323\344\223" +
+      "\002\r\022\013/api/v1/mcp\022\270\001\n\tDeleteMcp\022!.scalekit" +
+      ".v1.mcp.DeleteMcpRequest\032\".scalekit.v1.m" +
+      "cp.DeleteMcpResponse\"d\222A?\n\003mcp\022\024Delete a" +
+      "n MCP by ID.\032\"Deletes the MCP with the g" +
+      "iven ID.\202\265\030\002\030t\202\323\344\223\002\026*\024/api/v1/mcp/{mcp_i" +
+      "d}\022\206\002\n\017CreateMcpConfig\022\'.scalekit.v1.mcp" +
+      ".CreateMcpConfigRequest\032(.scalekit.v1.mc" +
+      "p.CreateMcpConfigResponse\"\237\001\222As\n\013mcp-con" +
+      "figs\022\036Create a new MCP configuration\032DCr" +
+      "eates a new MCP configuration with a set" +
+      " of connections and tools.\202\265\030\002\030T\202\323\344\223\002\035\"\023" +
+      "/api/v1/mcp/configs:\006config\022\261\002\n\017UpdateMc" +
+      "pConfig\022\'.scalekit.v1.mcp.UpdateMcpConfi" +
+      "gRequest\032(.scalekit.v1.mcp.UpdateMcpConf" +
+      "igResponse\"\312\001\222A\226\001\n\013mcp-configs\022$Update a" +
+      "n existing MCP configuration\032aUpdates th" +
+      "e name, description, and connection-to-t" +
+      "ool mappings for an existing MCP configu" +
+      "ration.\202\265\030\002\030T\202\323\344\223\002$\032\037/api/v1/mcp/configs" +
+      "/{config_id}:\001*\022\236\002\n\016ListMcpConfigs\022&.sca" +
+      "lekit.v1.mcp.ListMcpConfigsRequest\032\'.sca" +
+      "lekit.v1.mcp.ListMcpConfigsResponse\"\272\001\222A" +
+      "\225\001\n\013mcp-configs\022\027List MCP configurations" +
+      "\032mLists MCP configurations for the curre" +
+      "nt environment with optional filters for" +
+      " id, name prefix, and provider.\202\265\030\002\030T\202\323\344" +
+      "\223\002\025\022\023/api/v1/mcp/configs\022\376\001\n\014GetMcpConfi" +
+      "g\022$.scalekit.v1.mcp.GetMcpConfigRequest\032" +
+      "%.scalekit.v1.mcp.GetMcpConfigResponse\"\240" +
+      "\001\222Ap\n\013mcp-configs\022\032Fetch an MCP configur" +
+      "ation\032EReturns a single MCP configuratio" +
+      "n for the current environment by ID.\202\265\030\002" +
+      "\030T\202\323\344\223\002!\022\037/api/v1/mcp/configs/{config_id" +
+      "}\022\247\002\n\017DeleteMcpConfig\022\'.scalekit.v1.mcp." +
+      "DeleteMcpConfigRequest\032(.scalekit.v1.mcp" +
+      ".DeleteMcpConfigResponse\"\300\001\222A\217\001\n\013mcp-con" +
+      "figs\022\033Delete an MCP configuration\032cDelet" +
+      "es the MCP configuration and any associa" +
+      "ted mappings and instances in the curren" +
+      "t environment.\202\265\030\002\030T\202\323\344\223\002!*\037/api/v1/mcp/" +
+      "configs/{config_id}\022\275\002\n\021EnsureMcpInstanc" +
+      "e\022).scalekit.v1.mcp.EnsureMcpInstanceReq" +
+      "uest\032*.scalekit.v1.mcp.EnsureMcpInstance" +
+      "Response\"\320\001\222A\246\001\n\rmcp-instances\022\035Get or c" +
+      "reate an MCP instance\032vReturns an existi" +
+      "ng MCP instance for the given configurat" +
+      "ion, name, and user identifier or create" +
+      "s one if none exists.\202\265\030\002\030T\202\323\344\223\002\032\"\025/api/" +
+      "v1/mcp/instances:\001*\022\322\002\n\020ListMcpInstances" +
+      "\022(.scalekit.v1.mcp.ListMcpInstancesReque" +
+      "st\032).scalekit.v1.mcp.ListMcpInstancesRes" +
+      "ponse\"\350\001\222A\301\001\n\rmcp-instances\022\022List MCP in" +
+      "stances\032\233\001Lists MCP instances for the cu" +
+      "rrent environment with optional filters " +
+      "for instance id, name, configuration, an" +
+      "d text search across name or user identi" +
+      "fier.\202\265\030\002\030T\202\323\344\223\002\027\022\025/api/v1/mcp/instances" +
+      "\022\203\002\n\021DeleteMcpInstance\022).scalekit.v1.mcp" +
+      ".DeleteMcpInstanceRequest\032*.scalekit.v1." +
+      "mcp.DeleteMcpInstanceResponse\"\226\001\222Ab\n\rmcp" +
+      "-instances\022\026Delete an MCP instance\0329Dele" +
+      "tes a single MCP instance in the current" +
+      " environment.\202\265\030\002\030T\202\323\344\223\002%*#/api/v1/mcp/i" +
+      "nstances/{instance_id}\022\311\002\n\021UpdateMcpInst" +
+      "ance\022).scalekit.v1.mcp.UpdateMcpInstance" +
+      "Request\032*.scalekit.v1.mcp.UpdateMcpInsta" +
+      "nceResponse\"\334\001\222A\244\001\n\rmcp-instances\022\026Updat" +
+      "e an MCP instance\032{Updates attributes of" +
+      " an MCP instance. Currently only the con" +
+      "fig name can be changed, which rebuilds " +
+      "the instance mappings.\202\265\030\002\030T\202\323\344\223\002(2#/api" +
+      "/v1/mcp/instances/{instance_id}:\001*\022\200\002\n\016G" +
+      "etMcpInstance\022&.scalekit.v1.mcp.GetMcpIn" +
+      "stanceRequest\032\'.scalekit.v1.mcp.GetMcpIn" +
+      "stanceResponse\"\234\001\222Ah\n\rmcp-instances\022\025Fet" +
+      "ch an MCP instance\032@Returns a single MCP" +
+      " instance for the current environment by" +
+      " ID.\202\265\030\002\030T\202\323\344\223\002%\022#/api/v1/mcp/instances/" +
+      "{instance_id}\022\370\002\n\027GetMcpInstanceAuthStat" +
+      "e\022/.scalekit.v1.mcp.GetMcpInstanceAuthSt" +
+      "ateRequest\0320.scalekit.v1.mcp.GetMcpInsta" +
+      "nceAuthStateResponse\"\371\001\222A\265\001\n\rmcp-instanc" +
+      "es\022/Fetch connection auth state for an M" +
+      "CP instance\032sReturns the connected accou" +
+      "nt status and fresh authentication links" +
+      " for each connection mapped to the MCP i" +
+      "nstance.\202\265\030\002\030T\202\323\344\223\0024\"2/api/v1/mcp/instan" +
+      "ces/{instance_id}:get_auth_stateB\272\001\n!com" +
+      ".scalekit.grpc.scalekit.v1.mcpB\010McpProto" +
+      "P\001Z-github.com/scalekit-inc/scalekit/pkg" +
+      "/grpc/mcp\242\002\003SVM\252\002\017Scalekit.V1.Mcp\312\002\017Scal" +
+      "ekit\\V1\\Mcp\342\002\033Scalekit\\V1\\Mcp\\GPBMetadat" +
+      "a\352\002\021Scalekit::V1::Mcpb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -236,6 +645,174 @@ public final class McpProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_mcp_DeleteMcpResponse_descriptor,
         new java.lang.String[] { });
+    internal_static_scalekit_v1_mcp_CreateMcpConfigRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_scalekit_v1_mcp_CreateMcpConfigRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_CreateMcpConfigRequest_descriptor,
+        new java.lang.String[] { "Config", });
+    internal_static_scalekit_v1_mcp_CreateMcpConfigResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_scalekit_v1_mcp_CreateMcpConfigResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_CreateMcpConfigResponse_descriptor,
+        new java.lang.String[] { "Config", });
+    internal_static_scalekit_v1_mcp_UpdateMcpConfigRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_scalekit_v1_mcp_UpdateMcpConfigRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_UpdateMcpConfigRequest_descriptor,
+        new java.lang.String[] { "ConfigId", "Description", "ConnectionToolMappings", });
+    internal_static_scalekit_v1_mcp_UpdateMcpConfigResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_scalekit_v1_mcp_UpdateMcpConfigResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_UpdateMcpConfigResponse_descriptor,
+        new java.lang.String[] { "Config", });
+    internal_static_scalekit_v1_mcp_DeleteMcpConfigRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_scalekit_v1_mcp_DeleteMcpConfigRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_DeleteMcpConfigRequest_descriptor,
+        new java.lang.String[] { "ConfigId", });
+    internal_static_scalekit_v1_mcp_DeleteMcpConfigResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_scalekit_v1_mcp_DeleteMcpConfigResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_DeleteMcpConfigResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_scalekit_v1_mcp_GetMcpConfigRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_scalekit_v1_mcp_GetMcpConfigRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_GetMcpConfigRequest_descriptor,
+        new java.lang.String[] { "ConfigId", });
+    internal_static_scalekit_v1_mcp_GetMcpConfigResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_scalekit_v1_mcp_GetMcpConfigResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_GetMcpConfigResponse_descriptor,
+        new java.lang.String[] { "Config", });
+    internal_static_scalekit_v1_mcp_ListMcpConfigsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_scalekit_v1_mcp_ListMcpConfigsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_ListMcpConfigsRequest_descriptor,
+        new java.lang.String[] { "Filter", "Search", "PageSize", "PageToken", });
+    internal_static_scalekit_v1_mcp_ListMcpConfigsRequest_Filter_descriptor =
+      internal_static_scalekit_v1_mcp_ListMcpConfigsRequest_descriptor.getNestedTypes().get(0);
+    internal_static_scalekit_v1_mcp_ListMcpConfigsRequest_Filter_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_ListMcpConfigsRequest_Filter_descriptor,
+        new java.lang.String[] { "Id", "Name", "Provider", });
+    internal_static_scalekit_v1_mcp_ListMcpConfigsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_scalekit_v1_mcp_ListMcpConfigsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_ListMcpConfigsResponse_descriptor,
+        new java.lang.String[] { "Configs", "NextPageToken", "PrevPageToken", "TotalSize", });
+    internal_static_scalekit_v1_mcp_EnsureMcpInstanceRequest_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_scalekit_v1_mcp_EnsureMcpInstanceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_EnsureMcpInstanceRequest_descriptor,
+        new java.lang.String[] { "Name", "ConfigName", "UserIdentifier", });
+    internal_static_scalekit_v1_mcp_EnsureMcpInstanceResponse_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_scalekit_v1_mcp_EnsureMcpInstanceResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_EnsureMcpInstanceResponse_descriptor,
+        new java.lang.String[] { "Instance", });
+    internal_static_scalekit_v1_mcp_ListMcpInstancesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_scalekit_v1_mcp_ListMcpInstancesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_ListMcpInstancesRequest_descriptor,
+        new java.lang.String[] { "Filter", "Search", "PageSize", "PageToken", });
+    internal_static_scalekit_v1_mcp_ListMcpInstancesRequest_Filter_descriptor =
+      internal_static_scalekit_v1_mcp_ListMcpInstancesRequest_descriptor.getNestedTypes().get(0);
+    internal_static_scalekit_v1_mcp_ListMcpInstancesRequest_Filter_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_ListMcpInstancesRequest_Filter_descriptor,
+        new java.lang.String[] { "Id", "Name", "ConfigName", "UserIdentifier", });
+    internal_static_scalekit_v1_mcp_ListMcpInstancesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_scalekit_v1_mcp_ListMcpInstancesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_ListMcpInstancesResponse_descriptor,
+        new java.lang.String[] { "Instances", "NextPageToken", "PrevPageToken", "TotalSize", });
+    internal_static_scalekit_v1_mcp_DeleteMcpInstanceRequest_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_scalekit_v1_mcp_DeleteMcpInstanceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_DeleteMcpInstanceRequest_descriptor,
+        new java.lang.String[] { "InstanceId", });
+    internal_static_scalekit_v1_mcp_DeleteMcpInstanceResponse_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_scalekit_v1_mcp_DeleteMcpInstanceResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_DeleteMcpInstanceResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_scalekit_v1_mcp_UpdateMcpInstanceRequest_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_scalekit_v1_mcp_UpdateMcpInstanceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_UpdateMcpInstanceRequest_descriptor,
+        new java.lang.String[] { "InstanceId", "Name", "ConfigName", });
+    internal_static_scalekit_v1_mcp_UpdateMcpInstanceResponse_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_scalekit_v1_mcp_UpdateMcpInstanceResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_UpdateMcpInstanceResponse_descriptor,
+        new java.lang.String[] { "Instance", });
+    internal_static_scalekit_v1_mcp_GetMcpInstanceRequest_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_scalekit_v1_mcp_GetMcpInstanceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_GetMcpInstanceRequest_descriptor,
+        new java.lang.String[] { "InstanceId", });
+    internal_static_scalekit_v1_mcp_GetMcpInstanceResponse_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_scalekit_v1_mcp_GetMcpInstanceResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_GetMcpInstanceResponse_descriptor,
+        new java.lang.String[] { "Instance", });
+    internal_static_scalekit_v1_mcp_GetMcpInstanceAuthStateRequest_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_scalekit_v1_mcp_GetMcpInstanceAuthStateRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_GetMcpInstanceAuthStateRequest_descriptor,
+        new java.lang.String[] { "InstanceId", "IncludeAuthLinks", });
+    internal_static_scalekit_v1_mcp_McpInstanceConnectionAuthState_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_scalekit_v1_mcp_McpInstanceConnectionAuthState_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_McpInstanceConnectionAuthState_descriptor,
+        new java.lang.String[] { "ConnectionId", "ConnectionName", "Provider", "ConnectedAccountId", "ConnectedAccountStatus", "AuthenticationLink", });
+    internal_static_scalekit_v1_mcp_GetMcpInstanceAuthStateResponse_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_scalekit_v1_mcp_GetMcpInstanceAuthStateResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_GetMcpInstanceAuthStateResponse_descriptor,
+        new java.lang.String[] { "Connections", });
+    internal_static_scalekit_v1_mcp_McpInstance_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_scalekit_v1_mcp_McpInstance_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_McpInstance_descriptor,
+        new java.lang.String[] { "Id", "Name", "UserIdentifier", "Config", "LastUsedAt", "UpdatedAt", "Url", });
+    internal_static_scalekit_v1_mcp_McpConfig_descriptor =
+      getDescriptor().getMessageTypes().get(34);
+    internal_static_scalekit_v1_mcp_McpConfig_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_McpConfig_descriptor,
+        new java.lang.String[] { "Id", "Name", "Description", "ConnectionToolMappings", });
+    internal_static_scalekit_v1_mcp_McpConfigConnectionToolMapping_descriptor =
+      getDescriptor().getMessageTypes().get(35);
+    internal_static_scalekit_v1_mcp_McpConfigConnectionToolMapping_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_mcp_McpConfigConnectionToolMapping_descriptor,
+        new java.lang.String[] { "ConnectionId", "ConnectionName", "Provider", "Tools", "ConnectedAccountId", "ConnectedAccountStatus", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);

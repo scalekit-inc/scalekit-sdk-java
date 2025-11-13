@@ -47,7 +47,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object sessionId_ = "";
   /**
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
+   * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The sessionId.
    */
   @java.lang.Override
@@ -64,7 +64,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
+   * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for sessionId.
    */
   @java.lang.Override
@@ -86,7 +86,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object userId_ = "";
   /**
-   * <code>string user_id = 2 [json_name = "userId"];</code>
+   * <code>string user_id = 2 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The userId.
    */
   @java.lang.Override
@@ -103,7 +103,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string user_id = 2 [json_name = "userId"];</code>
+   * <code>string user_id = 2 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for userId.
    */
   @java.lang.Override
@@ -124,7 +124,7 @@ private static final long serialVersionUID = 0L;
   public static final int CREATED_AT_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createdAt_;
   /**
-   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the createdAt field is set.
    */
   @java.lang.Override
@@ -132,7 +132,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
@@ -150,7 +150,7 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATED_AT_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp updatedAt_;
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the updatedAt field is set.
    */
   @java.lang.Override
@@ -158,7 +158,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The updatedAt.
    */
   @java.lang.Override
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
     return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
@@ -176,7 +176,7 @@ private static final long serialVersionUID = 0L;
   public static final int IDLE_EXPIRES_AT_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp idleExpiresAt_;
   /**
-   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the idleExpiresAt field is set.
    */
   @java.lang.Override
@@ -184,7 +184,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The idleExpiresAt.
    */
   @java.lang.Override
@@ -192,7 +192,7 @@ private static final long serialVersionUID = 0L;
     return idleExpiresAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : idleExpiresAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getIdleExpiresAtOrBuilder() {
@@ -202,7 +202,7 @@ private static final long serialVersionUID = 0L;
   public static final int ABSOLUTE_EXPIRES_AT_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp absoluteExpiresAt_;
   /**
-   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the absoluteExpiresAt field is set.
    */
   @java.lang.Override
@@ -210,7 +210,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The absoluteExpiresAt.
    */
   @java.lang.Override
@@ -218,7 +218,7 @@ private static final long serialVersionUID = 0L;
     return absoluteExpiresAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : absoluteExpiresAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getAbsoluteExpiresAtOrBuilder() {
@@ -228,7 +228,7 @@ private static final long serialVersionUID = 0L;
   public static final int EXPIRED_AT_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp expiredAt_;
   /**
-   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the expiredAt field is set.
    */
   @java.lang.Override
@@ -236,7 +236,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000010) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The expiredAt.
    */
   @java.lang.Override
@@ -244,7 +244,7 @@ private static final long serialVersionUID = 0L;
     return expiredAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiredAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpiredAtOrBuilder() {
@@ -254,7 +254,7 @@ private static final long serialVersionUID = 0L;
   public static final int LOGOUT_AT_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp logoutAt_;
   /**
-   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the logoutAt field is set.
    */
   @java.lang.Override
@@ -262,7 +262,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000020) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The logoutAt.
    */
   @java.lang.Override
@@ -270,7 +270,7 @@ private static final long serialVersionUID = 0L;
     return logoutAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : logoutAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLogoutAtOrBuilder() {
@@ -281,7 +281,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
   /**
-   * <code>string status = 11 [json_name = "status"];</code>
+   * <code>string status = 11 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The status.
    */
   @java.lang.Override
@@ -298,7 +298,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string status = 11 [json_name = "status"];</code>
+   * <code>string status = 11 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for status.
    */
   @java.lang.Override
@@ -314,6 +314,32 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int LAST_ACTIVE_AT_FIELD_NUMBER = 12;
+  private com.google.protobuf.Timestamp lastActiveAt_;
+  /**
+   * <code>.google.protobuf.Timestamp last_active_at = 12 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the lastActiveAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasLastActiveAt() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   * <code>.google.protobuf.Timestamp last_active_at = 12 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The lastActiveAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getLastActiveAt() {
+    return lastActiveAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastActiveAt_;
+  }
+  /**
+   * <code>.google.protobuf.Timestamp last_active_at = 12 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getLastActiveAtOrBuilder() {
+    return lastActiveAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastActiveAt_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -357,6 +383,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, status_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(12, getLastActiveAt());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -398,6 +427,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, status_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getLastActiveAt());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -450,6 +483,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!getStatus()
         .equals(other.getStatus())) return false;
+    if (hasLastActiveAt() != other.hasLastActiveAt()) return false;
+    if (hasLastActiveAt()) {
+      if (!getLastActiveAt()
+          .equals(other.getLastActiveAt())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -491,6 +529,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getStatus().hashCode();
+    if (hasLastActiveAt()) {
+      hash = (37 * hash) + LAST_ACTIVE_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getLastActiveAt().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -627,6 +669,7 @@ private static final long serialVersionUID = 0L;
         getAbsoluteExpiresAtFieldBuilder();
         getExpiredAtFieldBuilder();
         getLogoutAtFieldBuilder();
+        getLastActiveAtFieldBuilder();
       }
     }
     @java.lang.Override
@@ -666,6 +709,11 @@ private static final long serialVersionUID = 0L;
         logoutAtBuilder_ = null;
       }
       status_ = "";
+      lastActiveAt_ = null;
+      if (lastActiveAtBuilder_ != null) {
+        lastActiveAtBuilder_.dispose();
+        lastActiveAtBuilder_ = null;
+      }
       return this;
     }
 
@@ -744,6 +792,12 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.status_ = status_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.lastActiveAt_ = lastActiveAtBuilder_ == null
+            ? lastActiveAt_
+            : lastActiveAtBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -824,6 +878,9 @@ private static final long serialVersionUID = 0L;
         status_ = other.status_;
         bitField0_ |= 0x00000100;
         onChanged();
+      }
+      if (other.hasLastActiveAt()) {
+        mergeLastActiveAt(other.getLastActiveAt());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -908,6 +965,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000100;
               break;
             } // case 90
+            case 98: {
+              input.readMessage(
+                  getLastActiveAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 98
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -927,7 +991,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object sessionId_ = "";
     /**
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The sessionId.
      */
     public java.lang.String getSessionId() {
@@ -943,7 +1007,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for sessionId.
      */
     public com.google.protobuf.ByteString
@@ -960,7 +1024,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The sessionId to set.
      * @return This builder for chaining.
      */
@@ -973,7 +1037,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearSessionId() {
@@ -983,7 +1047,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for sessionId to set.
      * @return This builder for chaining.
      */
@@ -999,7 +1063,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object userId_ = "";
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * <code>string user_id = 2 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The userId.
      */
     public java.lang.String getUserId() {
@@ -1015,7 +1079,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * <code>string user_id = 2 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for userId.
      */
     public com.google.protobuf.ByteString
@@ -1032,7 +1096,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * <code>string user_id = 2 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The userId to set.
      * @return This builder for chaining.
      */
@@ -1045,7 +1109,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * <code>string user_id = 2 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearUserId() {
@@ -1055,7 +1119,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * <code>string user_id = 2 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for userId to set.
      * @return This builder for chaining.
      */
@@ -1073,14 +1137,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the createdAt field is set.
      */
     public boolean hasCreatedAt() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The createdAt.
      */
     public com.google.protobuf.Timestamp getCreatedAt() {
@@ -1091,7 +1155,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
       if (createdAtBuilder_ == null) {
@@ -1107,7 +1171,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setCreatedAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1121,7 +1185,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
       if (createdAtBuilder_ == null) {
@@ -1142,7 +1206,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearCreatedAt() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1155,7 +1219,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
       bitField0_ |= 0x00000004;
@@ -1163,7 +1227,7 @@ private static final long serialVersionUID = 0L;
       return getCreatedAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
       if (createdAtBuilder_ != null) {
@@ -1174,7 +1238,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1194,14 +1258,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updatedAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the updatedAt field is set.
      */
     public boolean hasUpdatedAt() {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The updatedAt.
      */
     public com.google.protobuf.Timestamp getUpdatedAt() {
@@ -1212,7 +1276,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setUpdatedAt(com.google.protobuf.Timestamp value) {
       if (updatedAtBuilder_ == null) {
@@ -1228,7 +1292,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setUpdatedAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1242,7 +1306,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeUpdatedAt(com.google.protobuf.Timestamp value) {
       if (updatedAtBuilder_ == null) {
@@ -1263,7 +1327,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearUpdatedAt() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1276,7 +1340,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdatedAtBuilder() {
       bitField0_ |= 0x00000008;
@@ -1284,7 +1348,7 @@ private static final long serialVersionUID = 0L;
       return getUpdatedAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
       if (updatedAtBuilder_ != null) {
@@ -1295,7 +1359,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1315,14 +1379,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> idleExpiresAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the idleExpiresAt field is set.
      */
     public boolean hasIdleExpiresAt() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The idleExpiresAt.
      */
     public com.google.protobuf.Timestamp getIdleExpiresAt() {
@@ -1333,7 +1397,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setIdleExpiresAt(com.google.protobuf.Timestamp value) {
       if (idleExpiresAtBuilder_ == null) {
@@ -1349,7 +1413,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setIdleExpiresAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1363,7 +1427,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeIdleExpiresAt(com.google.protobuf.Timestamp value) {
       if (idleExpiresAtBuilder_ == null) {
@@ -1384,7 +1448,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearIdleExpiresAt() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -1397,7 +1461,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getIdleExpiresAtBuilder() {
       bitField0_ |= 0x00000010;
@@ -1405,7 +1469,7 @@ private static final long serialVersionUID = 0L;
       return getIdleExpiresAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getIdleExpiresAtOrBuilder() {
       if (idleExpiresAtBuilder_ != null) {
@@ -1416,7 +1480,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1436,14 +1500,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> absoluteExpiresAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the absoluteExpiresAt field is set.
      */
     public boolean hasAbsoluteExpiresAt() {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The absoluteExpiresAt.
      */
     public com.google.protobuf.Timestamp getAbsoluteExpiresAt() {
@@ -1454,7 +1518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setAbsoluteExpiresAt(com.google.protobuf.Timestamp value) {
       if (absoluteExpiresAtBuilder_ == null) {
@@ -1470,7 +1534,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setAbsoluteExpiresAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1484,7 +1548,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeAbsoluteExpiresAt(com.google.protobuf.Timestamp value) {
       if (absoluteExpiresAtBuilder_ == null) {
@@ -1505,7 +1569,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearAbsoluteExpiresAt() {
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -1518,7 +1582,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getAbsoluteExpiresAtBuilder() {
       bitField0_ |= 0x00000020;
@@ -1526,7 +1590,7 @@ private static final long serialVersionUID = 0L;
       return getAbsoluteExpiresAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getAbsoluteExpiresAtOrBuilder() {
       if (absoluteExpiresAtBuilder_ != null) {
@@ -1537,7 +1601,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1557,14 +1621,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expiredAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the expiredAt field is set.
      */
     public boolean hasExpiredAt() {
       return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The expiredAt.
      */
     public com.google.protobuf.Timestamp getExpiredAt() {
@@ -1575,7 +1639,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setExpiredAt(com.google.protobuf.Timestamp value) {
       if (expiredAtBuilder_ == null) {
@@ -1591,7 +1655,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setExpiredAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1605,7 +1669,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeExpiredAt(com.google.protobuf.Timestamp value) {
       if (expiredAtBuilder_ == null) {
@@ -1626,7 +1690,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearExpiredAt() {
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -1639,7 +1703,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getExpiredAtBuilder() {
       bitField0_ |= 0x00000040;
@@ -1647,7 +1711,7 @@ private static final long serialVersionUID = 0L;
       return getExpiredAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getExpiredAtOrBuilder() {
       if (expiredAtBuilder_ != null) {
@@ -1658,7 +1722,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1678,14 +1742,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> logoutAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the logoutAt field is set.
      */
     public boolean hasLogoutAt() {
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The logoutAt.
      */
     public com.google.protobuf.Timestamp getLogoutAt() {
@@ -1696,7 +1760,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setLogoutAt(com.google.protobuf.Timestamp value) {
       if (logoutAtBuilder_ == null) {
@@ -1712,7 +1776,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setLogoutAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1726,7 +1790,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeLogoutAt(com.google.protobuf.Timestamp value) {
       if (logoutAtBuilder_ == null) {
@@ -1747,7 +1811,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearLogoutAt() {
       bitField0_ = (bitField0_ & ~0x00000080);
@@ -1760,7 +1824,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getLogoutAtBuilder() {
       bitField0_ |= 0x00000080;
@@ -1768,7 +1832,7 @@ private static final long serialVersionUID = 0L;
       return getLogoutAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getLogoutAtOrBuilder() {
       if (logoutAtBuilder_ != null) {
@@ -1779,7 +1843,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1797,7 +1861,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object status_ = "";
     /**
-     * <code>string status = 11 [json_name = "status"];</code>
+     * <code>string status = 11 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The status.
      */
     public java.lang.String getStatus() {
@@ -1813,7 +1877,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string status = 11 [json_name = "status"];</code>
+     * <code>string status = 11 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for status.
      */
     public com.google.protobuf.ByteString
@@ -1830,7 +1894,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string status = 11 [json_name = "status"];</code>
+     * <code>string status = 11 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The status to set.
      * @return This builder for chaining.
      */
@@ -1843,7 +1907,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string status = 11 [json_name = "status"];</code>
+     * <code>string status = 11 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
@@ -1853,7 +1917,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string status = 11 [json_name = "status"];</code>
+     * <code>string status = 11 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
@@ -1865,6 +1929,127 @@ private static final long serialVersionUID = 0L;
       bitField0_ |= 0x00000100;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp lastActiveAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastActiveAtBuilder_;
+    /**
+     * <code>.google.protobuf.Timestamp last_active_at = 12 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the lastActiveAt field is set.
+     */
+    public boolean hasLastActiveAt() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Timestamp last_active_at = 12 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The lastActiveAt.
+     */
+    public com.google.protobuf.Timestamp getLastActiveAt() {
+      if (lastActiveAtBuilder_ == null) {
+        return lastActiveAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastActiveAt_;
+      } else {
+        return lastActiveAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.Timestamp last_active_at = 12 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setLastActiveAt(com.google.protobuf.Timestamp value) {
+      if (lastActiveAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lastActiveAt_ = value;
+      } else {
+        lastActiveAtBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp last_active_at = 12 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setLastActiveAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (lastActiveAtBuilder_ == null) {
+        lastActiveAt_ = builderForValue.build();
+      } else {
+        lastActiveAtBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp last_active_at = 12 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeLastActiveAt(com.google.protobuf.Timestamp value) {
+      if (lastActiveAtBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0) &&
+          lastActiveAt_ != null &&
+          lastActiveAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastActiveAtBuilder().mergeFrom(value);
+        } else {
+          lastActiveAt_ = value;
+        }
+      } else {
+        lastActiveAtBuilder_.mergeFrom(value);
+      }
+      if (lastActiveAt_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp last_active_at = 12 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearLastActiveAt() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      lastActiveAt_ = null;
+      if (lastActiveAtBuilder_ != null) {
+        lastActiveAtBuilder_.dispose();
+        lastActiveAtBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp last_active_at = 12 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getLastActiveAtBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getLastActiveAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Timestamp last_active_at = 12 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getLastActiveAtOrBuilder() {
+      if (lastActiveAtBuilder_ != null) {
+        return lastActiveAtBuilder_.getMessageOrBuilder();
+      } else {
+        return lastActiveAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : lastActiveAt_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Timestamp last_active_at = 12 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getLastActiveAtFieldBuilder() {
+      if (lastActiveAtBuilder_ == null) {
+        lastActiveAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getLastActiveAt(),
+                getParentForChildren(),
+                isClean());
+        lastActiveAt_ = null;
+      }
+      return lastActiveAtBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

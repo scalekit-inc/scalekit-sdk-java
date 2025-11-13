@@ -9,12 +9,12 @@ public interface RevokeSessionRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }</code>
+   * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The sessionId.
    */
   java.lang.String getSessionId();
   /**
-   * <code>string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }</code>
+   * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for sessionId.
    */
   com.google.protobuf.ByteString

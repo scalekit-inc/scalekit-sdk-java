@@ -9,128 +9,143 @@ public interface RevokedSessionDetailsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
+   * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The sessionId.
    */
   java.lang.String getSessionId();
   /**
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
+   * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for sessionId.
    */
   com.google.protobuf.ByteString
       getSessionIdBytes();
 
   /**
-   * <code>string user_id = 2 [json_name = "userId"];</code>
+   * <code>string user_id = 2 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The userId.
    */
   java.lang.String getUserId();
   /**
-   * <code>string user_id = 2 [json_name = "userId"];</code>
+   * <code>string user_id = 2 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for userId.
    */
   com.google.protobuf.ByteString
       getUserIdBytes();
 
   /**
-   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the createdAt field is set.
    */
   boolean hasCreatedAt();
   /**
-   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The createdAt.
    */
   com.google.protobuf.Timestamp getCreatedAt();
   /**
-   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the updatedAt field is set.
    */
   boolean hasUpdatedAt();
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The updatedAt.
    */
   com.google.protobuf.Timestamp getUpdatedAt();
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the idleExpiresAt field is set.
    */
   boolean hasIdleExpiresAt();
   /**
-   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The idleExpiresAt.
    */
   com.google.protobuf.Timestamp getIdleExpiresAt();
   /**
-   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getIdleExpiresAtOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the absoluteExpiresAt field is set.
    */
   boolean hasAbsoluteExpiresAt();
   /**
-   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The absoluteExpiresAt.
    */
   com.google.protobuf.Timestamp getAbsoluteExpiresAt();
   /**
-   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getAbsoluteExpiresAtOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the expiredAt field is set.
    */
   boolean hasExpiredAt();
   /**
-   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The expiredAt.
    */
   com.google.protobuf.Timestamp getExpiredAt();
   /**
-   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getExpiredAtOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the logoutAt field is set.
    */
   boolean hasLogoutAt();
   /**
-   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The logoutAt.
    */
   com.google.protobuf.Timestamp getLogoutAt();
   /**
-   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getLogoutAtOrBuilder();
 
   /**
-   * <code>string status = 11 [json_name = "status"];</code>
+   * <code>string status = 11 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The status.
    */
   java.lang.String getStatus();
   /**
-   * <code>string status = 11 [json_name = "status"];</code>
+   * <code>string status = 11 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for status.
    */
   com.google.protobuf.ByteString
       getStatusBytes();
+
+  /**
+   * <code>.google.protobuf.Timestamp last_active_at = 12 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the lastActiveAt field is set.
+   */
+  boolean hasLastActiveAt();
+  /**
+   * <code>.google.protobuf.Timestamp last_active_at = 12 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The lastActiveAt.
+   */
+  com.google.protobuf.Timestamp getLastActiveAt();
+  /**
+   * <code>.google.protobuf.Timestamp last_active_at = 12 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getLastActiveAtOrBuilder();
 }

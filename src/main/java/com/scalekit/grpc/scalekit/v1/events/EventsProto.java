@@ -187,64 +187,72 @@ public final class EventsProto {
       "\021\"\006r\004\020\003\030\031*\007r\005\020\001\030\320\017R\010metadata\022\'\n\017internal" +
       "_events\030\010 \003(\tR\016internalEvents\032;\n\rMetadat" +
       "aEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR" +
-      "\005value:\0028\001\"\245\002\n\013EventFilter\022\037\n\013event_type" +
+      "\005value:\0028\001\"\200\004\n\013EventFilter\022\037\n\013event_type" +
       "s\030\001 \003(\tR\neventTypes\0229\n\nstart_time\030\002 \001(\0132" +
       "\032.google.protobuf.TimestampR\tstartTime\0225" +
       "\n\010end_time\030\003 \001(\0132\032.google.protobuf.Times" +
       "tampR\007endTime\022\'\n\017organization_id\030\004 \001(\tR\016" +
       "organizationId\0222\n\006source\030\005 \001(\0162\032.scaleki" +
       "t.v1.events.SourceR\006source\022&\n\017auth_reque" +
-      "st_id\030\006 \001(\tR\rauthRequestId\"\232\003\n\rScalekitE" +
-      "vent\022!\n\014spec_version\030\001 \001(\tR\013specVersion\022" +
-      "\036\n\002id\030\002 \001(\tB\016\272H\013r\t\020\001\030 :\003evtR\002id\022\022\n\004type\030" +
-      "\003 \001(\tR\004type\022;\n\013occurred_at\030\004 \001(\0132\032.googl" +
-      "e.protobuf.TimestampR\noccurredAt\022%\n\016envi" +
-      "ronment_id\030\006 \001(\tR\renvironmentId\022,\n\017organ" +
-      "ization_id\030\007 \001(\tH\000R\016organizationId\210\001\001\0226\n" +
-      "\006object\030\010 \001(\0162\036.scalekit.v1.events.Objec" +
-      "tTypeR\006object\022+\n\004data\030\t \001(\0132\027.google.pro" +
-      "tobuf.StructR\004data\022!\n\014display_name\030\n \001(\t" +
-      "R\013displayNameB\022\n\020_organization_idJ\004\010\005\020\006*" +
-      "D\n\nEventActor\022\025\n\021ACTOR_UNSPECIFIED\020\000\022\t\n\005" +
-      "HUMAN\020\001\022\013\n\007MACHINE\020\002\022\007\n\003API\020\003*<\n\006Source\022" +
-      "\026\n\022SOURCE_UNSPECIFIED\020\000\022\014\n\010SCALEKIT\020\001\022\014\n" +
-      "\010DIR_SYNC\020\002*\266\001\n\013EventTarget\022\034\n\030EVENT_TAR" +
-      "GET_UNSPECIFIED\020\000\022\r\n\tWORKSPACE\020\001\022\017\n\013ENVI" +
-      "RONMENT\020\002\022\020\n\014ORGANIZATION\020\003\022\010\n\004USER\020\004\022\013\n" +
-      "\007SESSION\020\005\022\014\n\010TEMPLATE\020\006\022\020\n\014EMAIL_SERVER" +
-      "\020\007\022\t\n\005EMAIL\020\010\022\025\n\021CONNECTED_ACCOUNT\020\t*M\n\r" +
-      "EventCategory\022\034\n\030EVENT_SOURCE_UNSPECIFIE" +
-      "D\020\000\022\010\n\004CORE\020\001\022\007\n\003SSO\020\002\022\013\n\007DIRSYNC\020\003*\354\004\n\n" +
-      "ObjectType\022\033\n\027OBJECT_TYPE_UNSPECIFIED\020\000\022" +
-      "\r\n\tWorkspace\020\001\022\017\n\013Environment\020\002\022\020\n\014Organ" +
-      "ization\020\003\022\016\n\nConnection\020\004\022\010\n\004User\020\005\022\010\n\004R" +
-      "ole\020\006\022\024\n\020CustomAttributes\020\007\022\r\n\tDirectory" +
-      "\020\010\022\021\n\rDirectoryUser\020\t\022\022\n\016DirectoryGroup\020" +
-      "\n\022\013\n\007Session\020\013\022\014\n\010Template\020\014\022\007\n\003Job\020\r\022\n\n" +
-      "\006Domain\020\016\022\017\n\013EmailServer\020\017\022\t\n\005Email\020\020\022\017\n" +
-      "\013AuthRequest\020\021\022\017\n\013SAMLRequest\020\022\022\020\n\014SAMLR" +
-      "esponse\020\023\022\017\n\013TokenClaims\020\024\022\021\n\rOIDCReqPar" +
-      "ams\020\025\022\022\n\016OIDCRespClaims\020\026\022\014\n\010SSOError\020\027\022" +
-      "\020\n\014GenericError\020\030\022\021\n\rRefreshTokens\020\031\022\025\n\021" +
-      "EndSessionRequest\020\032\022\025\n\021LogoutTokenClaims" +
-      "\020\033\022\021\n\rOAuthResponse\020\034\022\010\n\004JSON\020\035\022\014\n\010SKErr" +
-      "ors\020\036\022\021\n\rOrgMembership\020\037\022\017\n\013UserProfile\020" +
-      " \022\027\n\023IDPInitiatedPayload\020!\022\021\n\rDeviceDeta" +
-      "ils\020\"\022\013\n\007Actions\020#2\302\002\n\rEventsService\022\201\001\n" +
-      "\nListEvents\022%.scalekit.v1.events.ListEve" +
-      "ntsRequest\032&.scalekit.v1.events.ListEven" +
-      "tsResponse\"$\202\265\030\002\030t\202\323\344\223\002\030\"\016/api/v1/events" +
-      ":\006filter\022\254\001\n\017SendCustomEvent\022*.scalekit." +
-      "v1.events.SendCustomEventRequest\032+.scale" +
-      "kit.v1.events.SendCustomEventResponse\"@\202" +
-      "\265\030\002\030p\202\323\344\223\0024\"+/api/v1/events/frontend_eve" +
-      "nts/{event_type}:\005eventB\317\001\n$com.scalekit" +
-      ".grpc.scalekit.v1.eventsB\013EventsProtoP\001Z" +
-      "0github.com/scalekit-inc/scalekit/pkg/gr" +
-      "pc/events\242\002\003SVE\252\002\022Scalekit.V1.Events\312\002\022S" +
-      "calekit\\V1\\Events\342\002\036Scalekit\\V1\\Events\\G" +
-      "PBMetadata\352\002\024Scalekit::V1::Eventsb\006proto" +
-      "3"
+      "st_id\030\006 \001(\tR\rauthRequestId\022*\n\016intercepto" +
+      "r_id\030\007 \001(\tH\000R\rinterceptorId\210\001\001\0222\n\022interc" +
+      "eptor_status\030\010 \001(\tH\001R\021interceptorStatus\210" +
+      "\001\001\0226\n\024interceptor_decision\030\t \001(\tH\002R\023inte" +
+      "rceptorDecision\210\001\001B\021\n\017_interceptor_idB\025\n" +
+      "\023_interceptor_statusB\027\n\025_interceptor_dec" +
+      "ision\"\232\003\n\rScalekitEvent\022!\n\014spec_version\030" +
+      "\001 \001(\tR\013specVersion\022\036\n\002id\030\002 \001(\tB\016\272H\013r\t\020\001\030" +
+      " :\003evtR\002id\022\022\n\004type\030\003 \001(\tR\004type\022;\n\013occurr" +
+      "ed_at\030\004 \001(\0132\032.google.protobuf.TimestampR" +
+      "\noccurredAt\022%\n\016environment_id\030\006 \001(\tR\renv" +
+      "ironmentId\022,\n\017organization_id\030\007 \001(\tH\000R\016o" +
+      "rganizationId\210\001\001\0226\n\006object\030\010 \001(\0162\036.scale" +
+      "kit.v1.events.ObjectTypeR\006object\022+\n\004data" +
+      "\030\t \001(\0132\027.google.protobuf.StructR\004data\022!\n" +
+      "\014display_name\030\n \001(\tR\013displayNameB\022\n\020_org" +
+      "anization_idJ\004\010\005\020\006*D\n\nEventActor\022\025\n\021ACTO" +
+      "R_UNSPECIFIED\020\000\022\t\n\005HUMAN\020\001\022\013\n\007MACHINE\020\002\022" +
+      "\007\n\003API\020\003*<\n\006Source\022\026\n\022SOURCE_UNSPECIFIED" +
+      "\020\000\022\014\n\010SCALEKIT\020\001\022\014\n\010DIR_SYNC\020\002*\320\001\n\013Event" +
+      "Target\022\034\n\030EVENT_TARGET_UNSPECIFIED\020\000\022\r\n\t" +
+      "WORKSPACE\020\001\022\017\n\013ENVIRONMENT\020\002\022\020\n\014ORGANIZA" +
+      "TION\020\003\022\010\n\004USER\020\004\022\013\n\007SESSION\020\005\022\014\n\010TEMPLAT" +
+      "E\020\006\022\020\n\014EMAIL_SERVER\020\007\022\t\n\005EMAIL\020\010\022\025\n\021CONN" +
+      "ECTED_ACCOUNT\020\t\022\010\n\004ROLE\020\n\022\016\n\nPERMISSION\020" +
+      "\013*M\n\rEventCategory\022\034\n\030EVENT_SOURCE_UNSPE" +
+      "CIFIED\020\000\022\010\n\004CORE\020\001\022\007\n\003SSO\020\002\022\013\n\007DIRSYNC\020\003" +
+      "*\323\005\n\nObjectType\022\033\n\027OBJECT_TYPE_UNSPECIFI" +
+      "ED\020\000\022\r\n\tWorkspace\020\001\022\017\n\013Environment\020\002\022\020\n\014" +
+      "Organization\020\003\022\016\n\nConnection\020\004\022\010\n\004User\020\005" +
+      "\022\010\n\004Role\020\006\022\024\n\020CustomAttributes\020\007\022\r\n\tDire" +
+      "ctory\020\010\022\021\n\rDirectoryUser\020\t\022\022\n\016DirectoryG" +
+      "roup\020\n\022\013\n\007Session\020\013\022\014\n\010Template\020\014\022\007\n\003Job" +
+      "\020\r\022\n\n\006Domain\020\016\022\017\n\013EmailServer\020\017\022\t\n\005Email" +
+      "\020\020\022\017\n\013AuthRequest\020\021\022\017\n\013SAMLRequest\020\022\022\020\n\014" +
+      "SAMLResponse\020\023\022\017\n\013TokenClaims\020\024\022\021\n\rOIDCR" +
+      "eqParams\020\025\022\022\n\016OIDCRespClaims\020\026\022\014\n\010SSOErr" +
+      "or\020\027\022\020\n\014GenericError\020\030\022\021\n\rRefreshTokens\020" +
+      "\031\022\025\n\021EndSessionRequest\020\032\022\025\n\021LogoutTokenC" +
+      "laims\020\033\022\021\n\rOAuthResponse\020\034\022\010\n\004JSON\020\035\022\014\n\010" +
+      "SKErrors\020\036\022\021\n\rOrgMembership\020\037\022\017\n\013UserPro" +
+      "file\020 \022\027\n\023IDPInitiatedPayload\020!\022\021\n\rDevic" +
+      "eDetails\020\"\022\013\n\007Actions\020#\022\024\n\020InterceptorEv" +
+      "ent\020$\022\016\n\nPermission\020%\022\026\n\022OrgMembershipEv" +
+      "ent\020&\022\022\n\016UserLoginEvent\020\'\022\023\n\017UserLogoutE" +
+      "vent\020(2\302\002\n\rEventsService\022\201\001\n\nListEvents\022" +
+      "%.scalekit.v1.events.ListEventsRequest\032&" +
+      ".scalekit.v1.events.ListEventsResponse\"$" +
+      "\202\265\030\002\030t\202\323\344\223\002\030\"\016/api/v1/events:\006filter\022\254\001\n" +
+      "\017SendCustomEvent\022*.scalekit.v1.events.Se" +
+      "ndCustomEventRequest\032+.scalekit.v1.event" +
+      "s.SendCustomEventResponse\"@\202\265\030\002\030p\202\323\344\223\0024\"" +
+      "+/api/v1/events/frontend_events/{event_t" +
+      "ype}:\005eventB\317\001\n$com.scalekit.grpc.scalek" +
+      "it.v1.eventsB\013EventsProtoP\001Z0github.com/" +
+      "scalekit-inc/scalekit/pkg/grpc/events\242\002\003" +
+      "SVE\252\002\022Scalekit.V1.Events\312\002\022Scalekit\\V1\\E" +
+      "vents\342\002\036Scalekit\\V1\\Events\\GPBMetadata\352\002" +
+      "\024Scalekit::V1::Eventsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -355,7 +363,7 @@ public final class EventsProto {
     internal_static_scalekit_v1_events_EventFilter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_events_EventFilter_descriptor,
-        new java.lang.String[] { "EventTypes", "StartTime", "EndTime", "OrganizationId", "Source", "AuthRequestId", });
+        new java.lang.String[] { "EventTypes", "StartTime", "EndTime", "OrganizationId", "Source", "AuthRequestId", "InterceptorId", "InterceptorStatus", "InterceptorDecision", });
     internal_static_scalekit_v1_events_ScalekitEvent_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_scalekit_v1_events_ScalekitEvent_fieldAccessorTable = new

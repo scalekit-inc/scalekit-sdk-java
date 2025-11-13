@@ -9,24 +9,24 @@ public interface UserSessionFilterOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated string status = 1 [json_name = "status"];</code>
+   * <code>repeated string status = 1 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return A list containing the status.
    */
   java.util.List<java.lang.String>
       getStatusList();
   /**
-   * <code>repeated string status = 1 [json_name = "status"];</code>
+   * <code>repeated string status = 1 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The count of status.
    */
   int getStatusCount();
   /**
-   * <code>repeated string status = 1 [json_name = "status"];</code>
+   * <code>repeated string status = 1 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The status at the given index.
    */
   java.lang.String getStatus(int index);
   /**
-   * <code>repeated string status = 1 [json_name = "status"];</code>
+   * <code>repeated string status = 1 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the status at the given index.
    */
@@ -34,32 +34,32 @@ public interface UserSessionFilterOrBuilder extends
       getStatusBytes(int index);
 
   /**
-   * <code>.google.protobuf.Timestamp start_time = 2 [json_name = "startTime"];</code>
+   * <code>.google.protobuf.Timestamp start_time = 2 [json_name = "startTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
-   * <code>.google.protobuf.Timestamp start_time = 2 [json_name = "startTime"];</code>
+   * <code>.google.protobuf.Timestamp start_time = 2 [json_name = "startTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
-   * <code>.google.protobuf.Timestamp start_time = 2 [json_name = "startTime"];</code>
+   * <code>.google.protobuf.Timestamp start_time = 2 [json_name = "startTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp end_time = 3 [json_name = "endTime"];</code>
+   * <code>.google.protobuf.Timestamp end_time = 3 [json_name = "endTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
-   * <code>.google.protobuf.Timestamp end_time = 3 [json_name = "endTime"];</code>
+   * <code>.google.protobuf.Timestamp end_time = 3 [json_name = "endTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
-   * <code>.google.protobuf.Timestamp end_time = 3 [json_name = "endTime"];</code>
+   * <code>.google.protobuf.Timestamp end_time = 3 [json_name = "endTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 }

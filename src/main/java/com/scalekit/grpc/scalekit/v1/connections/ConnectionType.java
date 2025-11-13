@@ -45,6 +45,10 @@ public enum ConnectionType
    * <code>API_KEY = 8;</code>
    */
   API_KEY(8),
+  /**
+   * <code>WEBAUTHN = 9;</code>
+   */
+  WEBAUTHN(9),
   UNRECOGNIZED(-1),
   ;
 
@@ -84,6 +88,10 @@ public enum ConnectionType
    * <code>API_KEY = 8;</code>
    */
   public static final int API_KEY_VALUE = 8;
+  /**
+   * <code>WEBAUTHN = 9;</code>
+   */
+  public static final int WEBAUTHN_VALUE = 9;
 
 
   public final int getNumber() {
@@ -119,6 +127,7 @@ public enum ConnectionType
       case 6: return BASIC;
       case 7: return BEARER;
       case 8: return API_KEY;
+      case 9: return WEBAUTHN;
       default: return null;
     }
   }

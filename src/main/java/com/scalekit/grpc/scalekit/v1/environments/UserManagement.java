@@ -291,6 +291,44 @@ private static final long serialVersionUID = 0L;
     return blockPublicEmailDomains_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : blockPublicEmailDomains_;
   }
 
+  public static final int SYNC_USER_PROFILE_ON_SIGNIN_FIELD_NUMBER = 11;
+  private com.google.protobuf.BoolValue syncUserProfileOnSignin_;
+  /**
+   * <pre>
+   * Indicates whether the identity provider profile is re-synced on every sign-in.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 11 [json_name = "syncUserProfileOnSignin"];</code>
+   * @return Whether the syncUserProfileOnSignin field is set.
+   */
+  @java.lang.Override
+  public boolean hasSyncUserProfileOnSignin() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   * <pre>
+   * Indicates whether the identity provider profile is re-synced on every sign-in.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 11 [json_name = "syncUserProfileOnSignin"];</code>
+   * @return The syncUserProfileOnSignin.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getSyncUserProfileOnSignin() {
+    return syncUserProfileOnSignin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnSignin_;
+  }
+  /**
+   * <pre>
+   * Indicates whether the identity provider profile is re-synced on every sign-in.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 11 [json_name = "syncUserProfileOnSignin"];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnSigninOrBuilder() {
+    return syncUserProfileOnSignin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnSignin_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -331,6 +369,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(10, getBlockPublicEmailDomains());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(11, getSyncUserProfileOnSignin());
     }
     getUnknownFields().writeTo(output);
   }
@@ -376,6 +417,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getBlockPublicEmailDomains());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getSyncUserProfileOnSignin());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -433,6 +478,11 @@ private static final long serialVersionUID = 0L;
       if (!getBlockPublicEmailDomains()
           .equals(other.getBlockPublicEmailDomains())) return false;
     }
+    if (hasSyncUserProfileOnSignin() != other.hasSyncUserProfileOnSignin()) return false;
+    if (hasSyncUserProfileOnSignin()) {
+      if (!getSyncUserProfileOnSignin()
+          .equals(other.getSyncUserProfileOnSignin())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -477,6 +527,10 @@ private static final long serialVersionUID = 0L;
     if (hasBlockPublicEmailDomains()) {
       hash = (37 * hash) + BLOCK_PUBLIC_EMAIL_DOMAINS_FIELD_NUMBER;
       hash = (53 * hash) + getBlockPublicEmailDomains().hashCode();
+    }
+    if (hasSyncUserProfileOnSignin()) {
+      hash = (37 * hash) + SYNC_USER_PROFILE_ON_SIGNIN_FIELD_NUMBER;
+      hash = (53 * hash) + getSyncUserProfileOnSignin().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -616,6 +670,7 @@ private static final long serialVersionUID = 0L;
         getInvitationExpiryFieldBuilder();
         getBlockDisposableEmailDomainsFieldBuilder();
         getBlockPublicEmailDomainsFieldBuilder();
+        getSyncUserProfileOnSigninFieldBuilder();
       }
     }
     @java.lang.Override
@@ -662,6 +717,11 @@ private static final long serialVersionUID = 0L;
       if (blockPublicEmailDomainsBuilder_ != null) {
         blockPublicEmailDomainsBuilder_.dispose();
         blockPublicEmailDomainsBuilder_ = null;
+      }
+      syncUserProfileOnSignin_ = null;
+      if (syncUserProfileOnSigninBuilder_ != null) {
+        syncUserProfileOnSigninBuilder_.dispose();
+        syncUserProfileOnSigninBuilder_ = null;
       }
       return this;
     }
@@ -748,6 +808,12 @@ private static final long serialVersionUID = 0L;
             : blockPublicEmailDomainsBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.syncUserProfileOnSignin_ = syncUserProfileOnSigninBuilder_ == null
+            ? syncUserProfileOnSignin_
+            : syncUserProfileOnSigninBuilder_.build();
+        to_bitField0_ |= 0x00000100;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -821,6 +887,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasBlockPublicEmailDomains()) {
         mergeBlockPublicEmailDomains(other.getBlockPublicEmailDomains());
+      }
+      if (other.hasSyncUserProfileOnSignin()) {
+        mergeSyncUserProfileOnSignin(other.getSyncUserProfileOnSignin());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -909,6 +978,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000100;
               break;
             } // case 82
+            case 90: {
+              input.readMessage(
+                  getSyncUserProfileOnSigninFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 90
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2017,6 +2093,163 @@ private static final long serialVersionUID = 0L;
         blockPublicEmailDomains_ = null;
       }
       return blockPublicEmailDomainsBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue syncUserProfileOnSignin_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> syncUserProfileOnSigninBuilder_;
+    /**
+     * <pre>
+     * Indicates whether the identity provider profile is re-synced on every sign-in.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 11 [json_name = "syncUserProfileOnSignin"];</code>
+     * @return Whether the syncUserProfileOnSignin field is set.
+     */
+    public boolean hasSyncUserProfileOnSignin() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <pre>
+     * Indicates whether the identity provider profile is re-synced on every sign-in.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 11 [json_name = "syncUserProfileOnSignin"];</code>
+     * @return The syncUserProfileOnSignin.
+     */
+    public com.google.protobuf.BoolValue getSyncUserProfileOnSignin() {
+      if (syncUserProfileOnSigninBuilder_ == null) {
+        return syncUserProfileOnSignin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnSignin_;
+      } else {
+        return syncUserProfileOnSigninBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Indicates whether the identity provider profile is re-synced on every sign-in.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 11 [json_name = "syncUserProfileOnSignin"];</code>
+     */
+    public Builder setSyncUserProfileOnSignin(com.google.protobuf.BoolValue value) {
+      if (syncUserProfileOnSigninBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        syncUserProfileOnSignin_ = value;
+      } else {
+        syncUserProfileOnSigninBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether the identity provider profile is re-synced on every sign-in.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 11 [json_name = "syncUserProfileOnSignin"];</code>
+     */
+    public Builder setSyncUserProfileOnSignin(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (syncUserProfileOnSigninBuilder_ == null) {
+        syncUserProfileOnSignin_ = builderForValue.build();
+      } else {
+        syncUserProfileOnSigninBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether the identity provider profile is re-synced on every sign-in.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 11 [json_name = "syncUserProfileOnSignin"];</code>
+     */
+    public Builder mergeSyncUserProfileOnSignin(com.google.protobuf.BoolValue value) {
+      if (syncUserProfileOnSigninBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0) &&
+          syncUserProfileOnSignin_ != null &&
+          syncUserProfileOnSignin_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getSyncUserProfileOnSigninBuilder().mergeFrom(value);
+        } else {
+          syncUserProfileOnSignin_ = value;
+        }
+      } else {
+        syncUserProfileOnSigninBuilder_.mergeFrom(value);
+      }
+      if (syncUserProfileOnSignin_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether the identity provider profile is re-synced on every sign-in.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 11 [json_name = "syncUserProfileOnSignin"];</code>
+     */
+    public Builder clearSyncUserProfileOnSignin() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      syncUserProfileOnSignin_ = null;
+      if (syncUserProfileOnSigninBuilder_ != null) {
+        syncUserProfileOnSigninBuilder_.dispose();
+        syncUserProfileOnSigninBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether the identity provider profile is re-synced on every sign-in.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 11 [json_name = "syncUserProfileOnSignin"];</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getSyncUserProfileOnSigninBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getSyncUserProfileOnSigninFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Indicates whether the identity provider profile is re-synced on every sign-in.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 11 [json_name = "syncUserProfileOnSignin"];</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnSigninOrBuilder() {
+      if (syncUserProfileOnSigninBuilder_ != null) {
+        return syncUserProfileOnSigninBuilder_.getMessageOrBuilder();
+      } else {
+        return syncUserProfileOnSignin_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnSignin_;
+      }
+    }
+    /**
+     * <pre>
+     * Indicates whether the identity provider profile is re-synced on every sign-in.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 11 [json_name = "syncUserProfileOnSignin"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getSyncUserProfileOnSigninFieldBuilder() {
+      if (syncUserProfileOnSigninBuilder_ == null) {
+        syncUserProfileOnSigninBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getSyncUserProfileOnSignin(),
+                getParentForChildren(),
+                isClean());
+        syncUserProfileOnSignin_ = null;
+      }
+      return syncUserProfileOnSigninBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

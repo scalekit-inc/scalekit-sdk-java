@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     email_ = "";
     status_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+    resourceId_ = "";
   }
 
   @java.lang.Override
@@ -222,6 +223,45 @@ private static final long serialVersionUID = 0L;
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
+  public static final int RESOURCE_ID_FIELD_NUMBER = 7;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceId_ = "";
+  /**
+   * <code>string resource_id = 7 [json_name = "resourceId"];</code>
+   * @return The resourceId.
+   */
+  @java.lang.Override
+  public java.lang.String getResourceId() {
+    java.lang.Object ref = resourceId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resourceId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string resource_id = 7 [json_name = "resourceId"];</code>
+   * @return The bytes for resourceId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getResourceIdBytes() {
+    java.lang.Object ref = resourceId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      resourceId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -253,6 +293,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(6, getEndTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, resourceId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -289,6 +332,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getEndTime());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, resourceId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -322,6 +368,8 @@ private static final long serialVersionUID = 0L;
       if (!getEndTime()
           .equals(other.getEndTime())) return false;
     }
+    if (!getResourceId()
+        .equals(other.getResourceId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -351,6 +399,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime().hashCode();
     }
+    hash = (37 * hash) + RESOURCE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getResourceId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -504,6 +554,7 @@ private static final long serialVersionUID = 0L;
         endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
+      resourceId_ = "";
       return this;
     }
 
@@ -562,6 +613,9 @@ private static final long serialVersionUID = 0L;
             ? endTime_
             : endTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.resourceId_ = resourceId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -639,6 +693,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasEndTime()) {
         mergeEndTime(other.getEndTime());
       }
+      if (!other.getResourceId().isEmpty()) {
+        resourceId_ = other.resourceId_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -700,6 +759,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000020;
               break;
             } // case 50
+            case 58: {
+              resourceId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 58
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1244,6 +1308,78 @@ private static final long serialVersionUID = 0L;
         endTime_ = null;
       }
       return endTimeBuilder_;
+    }
+
+    private java.lang.Object resourceId_ = "";
+    /**
+     * <code>string resource_id = 7 [json_name = "resourceId"];</code>
+     * @return The resourceId.
+     */
+    public java.lang.String getResourceId() {
+      java.lang.Object ref = resourceId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string resource_id = 7 [json_name = "resourceId"];</code>
+     * @return The bytes for resourceId.
+     */
+    public com.google.protobuf.ByteString
+        getResourceIdBytes() {
+      java.lang.Object ref = resourceId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resourceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string resource_id = 7 [json_name = "resourceId"];</code>
+     * @param value The resourceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      resourceId_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string resource_id = 7 [json_name = "resourceId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceId() {
+      resourceId_ = getDefaultInstance().getResourceId();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string resource_id = 7 [json_name = "resourceId"];</code>
+     * @param value The bytes for resourceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      resourceId_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -92,4 +92,16 @@ public interface ListAuthLogRequestOrBuilder extends
    * <code>.google.protobuf.Timestamp end_time = 6 [json_name = "endTime"];</code>
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+
+  /**
+   * <code>string resource_id = 7 [json_name = "resourceId"];</code>
+   * @return The resourceId.
+   */
+  java.lang.String getResourceId();
+  /**
+   * <code>string resource_id = 7 [json_name = "resourceId"];</code>
+   * @return The bytes for resourceId.
+   */
+  com.google.protobuf.ByteString
+      getResourceIdBytes();
 }

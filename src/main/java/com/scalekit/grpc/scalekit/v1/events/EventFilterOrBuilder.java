@@ -87,28 +87,51 @@ public interface EventFilterOrBuilder extends
   com.scalekit.grpc.scalekit.v1.events.Source getSource();
 
   /**
-   * <pre>
-   * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
-   *  keys: {
-   *    string: {
-   *      min_len: 3
-   *      max_len: 25
-   *    }
-   *  }
-   *  values: {
-   *    string: {
-   *      min_len: 1
-   *      max_len: 2000
-   *    }
-   *  }
-   * }];
-   *  optional MetadataFilter metadata_filter = 6;
-   * </pre>
-   *
    * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
    * @return The authRequestId.
    */
   java.lang.String getAuthRequestId();
+  /**
+   * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
+   * @return The bytes for authRequestId.
+   */
+  com.google.protobuf.ByteString
+      getAuthRequestIdBytes();
+
+  /**
+   * <code>optional string interceptor_id = 7 [json_name = "interceptorId"];</code>
+   * @return Whether the interceptorId field is set.
+   */
+  boolean hasInterceptorId();
+  /**
+   * <code>optional string interceptor_id = 7 [json_name = "interceptorId"];</code>
+   * @return The interceptorId.
+   */
+  java.lang.String getInterceptorId();
+  /**
+   * <code>optional string interceptor_id = 7 [json_name = "interceptorId"];</code>
+   * @return The bytes for interceptorId.
+   */
+  com.google.protobuf.ByteString
+      getInterceptorIdBytes();
+
+  /**
+   * <code>optional string interceptor_status = 8 [json_name = "interceptorStatus"];</code>
+   * @return Whether the interceptorStatus field is set.
+   */
+  boolean hasInterceptorStatus();
+  /**
+   * <code>optional string interceptor_status = 8 [json_name = "interceptorStatus"];</code>
+   * @return The interceptorStatus.
+   */
+  java.lang.String getInterceptorStatus();
+  /**
+   * <code>optional string interceptor_status = 8 [json_name = "interceptorStatus"];</code>
+   * @return The bytes for interceptorStatus.
+   */
+  com.google.protobuf.ByteString
+      getInterceptorStatusBytes();
+
   /**
    * <pre>
    * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
@@ -128,9 +151,55 @@ public interface EventFilterOrBuilder extends
    *  optional MetadataFilter metadata_filter = 6;
    * </pre>
    *
-   * <code>string auth_request_id = 6 [json_name = "authRequestId"];</code>
-   * @return The bytes for authRequestId.
+   * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+   * @return Whether the interceptorDecision field is set.
+   */
+  boolean hasInterceptorDecision();
+  /**
+   * <pre>
+   * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
+   *  keys: {
+   *    string: {
+   *      min_len: 3
+   *      max_len: 25
+   *    }
+   *  }
+   *  values: {
+   *    string: {
+   *      min_len: 1
+   *      max_len: 2000
+   *    }
+   *  }
+   * }];
+   *  optional MetadataFilter metadata_filter = 6;
+   * </pre>
+   *
+   * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+   * @return The interceptorDecision.
+   */
+  java.lang.String getInterceptorDecision();
+  /**
+   * <pre>
+   * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
+   *  keys: {
+   *    string: {
+   *      min_len: 3
+   *      max_len: 25
+   *    }
+   *  }
+   *  values: {
+   *    string: {
+   *      min_len: 1
+   *      max_len: 2000
+   *    }
+   *  }
+   * }];
+   *  optional MetadataFilter metadata_filter = 6;
+   * </pre>
+   *
+   * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+   * @return The bytes for interceptorDecision.
    */
   com.google.protobuf.ByteString
-      getAuthRequestIdBytes();
+      getInterceptorDecisionBytes();
 }

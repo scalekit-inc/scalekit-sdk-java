@@ -23,20 +23,6 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.LazyStringArrayList.emptyList();
     organizationId_ = "";
     status_ = "";
-    initialUserAgent_ = "";
-    initialOs_ = "";
-    initialOsVersion_ = "";
-    initialBrowser_ = "";
-    initialBrowserVersion_ = "";
-    initialDeviceType_ = "";
-    initialIp_ = "";
-    latestUserAgent_ = "";
-    latestOs_ = "";
-    latestOsVersion_ = "";
-    latestBrowser_ = "";
-    latestBrowserVersion_ = "";
-    latestDeviceType_ = "";
-    latestIp_ = "";
   }
 
   @java.lang.Override
@@ -64,7 +50,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object sessionId_ = "";
   /**
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
+   * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The sessionId.
    */
   @java.lang.Override
@@ -81,7 +67,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string session_id = 1 [json_name = "sessionId"];</code>
+   * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for sessionId.
    */
   @java.lang.Override
@@ -103,7 +89,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object userId_ = "";
   /**
-   * <code>string user_id = 2 [json_name = "userId"];</code>
+   * <code>string user_id = 2 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The userId.
    */
   @java.lang.Override
@@ -120,7 +106,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string user_id = 2 [json_name = "userId"];</code>
+   * <code>string user_id = 2 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for userId.
    */
   @java.lang.Override
@@ -143,7 +129,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringArrayList authenticatedOrganizations_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
   /**
-   * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations"];</code>
+   * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return A list containing the authenticatedOrganizations.
    */
   public com.google.protobuf.ProtocolStringList
@@ -151,14 +137,14 @@ private static final long serialVersionUID = 0L;
     return authenticatedOrganizations_;
   }
   /**
-   * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations"];</code>
+   * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The count of authenticatedOrganizations.
    */
   public int getAuthenticatedOrganizationsCount() {
     return authenticatedOrganizations_.size();
   }
   /**
-   * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations"];</code>
+   * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The authenticatedOrganizations at the given index.
    */
@@ -166,7 +152,7 @@ private static final long serialVersionUID = 0L;
     return authenticatedOrganizations_.get(index);
   }
   /**
-   * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations"];</code>
+   * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the authenticatedOrganizations at the given index.
    */
@@ -179,7 +165,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object organizationId_ = "";
   /**
-   * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 4 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The organizationId.
    */
   @java.lang.Override
@@ -196,7 +182,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 4 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for organizationId.
    */
   @java.lang.Override
@@ -217,7 +203,7 @@ private static final long serialVersionUID = 0L;
   public static final int CREATED_AT_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createdAt_;
   /**
-   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the createdAt field is set.
    */
   @java.lang.Override
@@ -225,7 +211,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -233,7 +219,7 @@ private static final long serialVersionUID = 0L;
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
@@ -243,7 +229,7 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATED_AT_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp updatedAt_;
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the updatedAt field is set.
    */
   @java.lang.Override
@@ -251,7 +237,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The updatedAt.
    */
   @java.lang.Override
@@ -259,7 +245,7 @@ private static final long serialVersionUID = 0L;
     return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
@@ -269,7 +255,7 @@ private static final long serialVersionUID = 0L;
   public static final int IDLE_EXPIRES_AT_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp idleExpiresAt_;
   /**
-   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the idleExpiresAt field is set.
    */
   @java.lang.Override
@@ -277,7 +263,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The idleExpiresAt.
    */
   @java.lang.Override
@@ -285,7 +271,7 @@ private static final long serialVersionUID = 0L;
     return idleExpiresAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : idleExpiresAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getIdleExpiresAtOrBuilder() {
@@ -295,7 +281,7 @@ private static final long serialVersionUID = 0L;
   public static final int ABSOLUTE_EXPIRES_AT_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp absoluteExpiresAt_;
   /**
-   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the absoluteExpiresAt field is set.
    */
   @java.lang.Override
@@ -303,7 +289,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The absoluteExpiresAt.
    */
   @java.lang.Override
@@ -311,7 +297,7 @@ private static final long serialVersionUID = 0L;
     return absoluteExpiresAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : absoluteExpiresAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getAbsoluteExpiresAtOrBuilder() {
@@ -321,7 +307,7 @@ private static final long serialVersionUID = 0L;
   public static final int EXPIRED_AT_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp expiredAt_;
   /**
-   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the expiredAt field is set.
    */
   @java.lang.Override
@@ -329,7 +315,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000010) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The expiredAt.
    */
   @java.lang.Override
@@ -337,7 +323,7 @@ private static final long serialVersionUID = 0L;
     return expiredAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiredAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+   * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpiredAtOrBuilder() {
@@ -347,7 +333,7 @@ private static final long serialVersionUID = 0L;
   public static final int LOGOUT_AT_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp logoutAt_;
   /**
-   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the logoutAt field is set.
    */
   @java.lang.Override
@@ -355,7 +341,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000020) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The logoutAt.
    */
   @java.lang.Override
@@ -363,7 +349,7 @@ private static final long serialVersionUID = 0L;
     return logoutAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : logoutAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+   * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLogoutAtOrBuilder() {
@@ -374,7 +360,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
   /**
-   * <code>string status = 11 [json_name = "status"];</code>
+   * <code>string status = 11 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The status.
    */
   @java.lang.Override
@@ -391,7 +377,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string status = 11 [json_name = "status"];</code>
+   * <code>string status = 11 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for status.
    */
   @java.lang.Override
@@ -409,602 +395,56 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int INITIAL_USER_AGENT_FIELD_NUMBER = 12;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object initialUserAgent_ = "";
+  public static final int DEVICE_FIELD_NUMBER = 12;
+  private com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails device_;
   /**
-   * <code>string initial_user_agent = 12 [json_name = "initialUserAgent"];</code>
-   * @return The initialUserAgent.
+   * <code>.scalekit.v1.sessions.DeviceDetails device = 12 [json_name = "device", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the device field is set.
    */
   @java.lang.Override
-  public java.lang.String getInitialUserAgent() {
-    java.lang.Object ref = initialUserAgent_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      initialUserAgent_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string initial_user_agent = 12 [json_name = "initialUserAgent"];</code>
-   * @return The bytes for initialUserAgent.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getInitialUserAgentBytes() {
-    java.lang.Object ref = initialUserAgent_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      initialUserAgent_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int INITIAL_OS_FIELD_NUMBER = 13;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object initialOs_ = "";
-  /**
-   * <code>string initial_os = 13 [json_name = "initialOs"];</code>
-   * @return The initialOs.
-   */
-  @java.lang.Override
-  public java.lang.String getInitialOs() {
-    java.lang.Object ref = initialOs_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      initialOs_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string initial_os = 13 [json_name = "initialOs"];</code>
-   * @return The bytes for initialOs.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getInitialOsBytes() {
-    java.lang.Object ref = initialOs_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      initialOs_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int INITIAL_OS_VERSION_FIELD_NUMBER = 14;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object initialOsVersion_ = "";
-  /**
-   * <code>string initial_os_version = 14 [json_name = "initialOsVersion"];</code>
-   * @return The initialOsVersion.
-   */
-  @java.lang.Override
-  public java.lang.String getInitialOsVersion() {
-    java.lang.Object ref = initialOsVersion_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      initialOsVersion_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string initial_os_version = 14 [json_name = "initialOsVersion"];</code>
-   * @return The bytes for initialOsVersion.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getInitialOsVersionBytes() {
-    java.lang.Object ref = initialOsVersion_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      initialOsVersion_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int INITIAL_BROWSER_FIELD_NUMBER = 15;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object initialBrowser_ = "";
-  /**
-   * <code>string initial_browser = 15 [json_name = "initialBrowser"];</code>
-   * @return The initialBrowser.
-   */
-  @java.lang.Override
-  public java.lang.String getInitialBrowser() {
-    java.lang.Object ref = initialBrowser_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      initialBrowser_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string initial_browser = 15 [json_name = "initialBrowser"];</code>
-   * @return The bytes for initialBrowser.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getInitialBrowserBytes() {
-    java.lang.Object ref = initialBrowser_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      initialBrowser_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int INITIAL_BROWSER_VERSION_FIELD_NUMBER = 16;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object initialBrowserVersion_ = "";
-  /**
-   * <code>string initial_browser_version = 16 [json_name = "initialBrowserVersion"];</code>
-   * @return The initialBrowserVersion.
-   */
-  @java.lang.Override
-  public java.lang.String getInitialBrowserVersion() {
-    java.lang.Object ref = initialBrowserVersion_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      initialBrowserVersion_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string initial_browser_version = 16 [json_name = "initialBrowserVersion"];</code>
-   * @return The bytes for initialBrowserVersion.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getInitialBrowserVersionBytes() {
-    java.lang.Object ref = initialBrowserVersion_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      initialBrowserVersion_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int INITIAL_DEVICE_TYPE_FIELD_NUMBER = 17;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object initialDeviceType_ = "";
-  /**
-   * <code>string initial_device_type = 17 [json_name = "initialDeviceType"];</code>
-   * @return The initialDeviceType.
-   */
-  @java.lang.Override
-  public java.lang.String getInitialDeviceType() {
-    java.lang.Object ref = initialDeviceType_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      initialDeviceType_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string initial_device_type = 17 [json_name = "initialDeviceType"];</code>
-   * @return The bytes for initialDeviceType.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getInitialDeviceTypeBytes() {
-    java.lang.Object ref = initialDeviceType_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      initialDeviceType_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int INITIAL_IP_FIELD_NUMBER = 19;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object initialIp_ = "";
-  /**
-   * <code>string initial_ip = 19 [json_name = "initialIp"];</code>
-   * @return The initialIp.
-   */
-  @java.lang.Override
-  public java.lang.String getInitialIp() {
-    java.lang.Object ref = initialIp_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      initialIp_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string initial_ip = 19 [json_name = "initialIp"];</code>
-   * @return The bytes for initialIp.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getInitialIpBytes() {
-    java.lang.Object ref = initialIp_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      initialIp_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int INITIAL_LOCATION_FIELD_NUMBER = 20;
-  private com.scalekit.grpc.scalekit.v1.sessions.Location initialLocation_;
-  /**
-   * <code>.scalekit.v1.sessions.Location initial_location = 20 [json_name = "initialLocation"];</code>
-   * @return Whether the initialLocation field is set.
-   */
-  @java.lang.Override
-  public boolean hasInitialLocation() {
+  public boolean hasDevice() {
     return ((bitField0_ & 0x00000040) != 0);
   }
   /**
-   * <code>.scalekit.v1.sessions.Location initial_location = 20 [json_name = "initialLocation"];</code>
-   * @return The initialLocation.
+   * <code>.scalekit.v1.sessions.DeviceDetails device = 12 [json_name = "device", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The device.
    */
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.sessions.Location getInitialLocation() {
-    return initialLocation_ == null ? com.scalekit.grpc.scalekit.v1.sessions.Location.getDefaultInstance() : initialLocation_;
+  public com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails getDevice() {
+    return device_ == null ? com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails.getDefaultInstance() : device_;
   }
   /**
-   * <code>.scalekit.v1.sessions.Location initial_location = 20 [json_name = "initialLocation"];</code>
+   * <code>.scalekit.v1.sessions.DeviceDetails device = 12 [json_name = "device", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.sessions.LocationOrBuilder getInitialLocationOrBuilder() {
-    return initialLocation_ == null ? com.scalekit.grpc.scalekit.v1.sessions.Location.getDefaultInstance() : initialLocation_;
-  }
-
-  public static final int LATEST_USER_AGENT_FIELD_NUMBER = 21;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object latestUserAgent_ = "";
-  /**
-   * <code>string latest_user_agent = 21 [json_name = "latestUserAgent"];</code>
-   * @return The latestUserAgent.
-   */
-  @java.lang.Override
-  public java.lang.String getLatestUserAgent() {
-    java.lang.Object ref = latestUserAgent_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      latestUserAgent_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string latest_user_agent = 21 [json_name = "latestUserAgent"];</code>
-   * @return The bytes for latestUserAgent.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getLatestUserAgentBytes() {
-    java.lang.Object ref = latestUserAgent_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      latestUserAgent_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.scalekit.grpc.scalekit.v1.sessions.DeviceDetailsOrBuilder getDeviceOrBuilder() {
+    return device_ == null ? com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails.getDefaultInstance() : device_;
   }
 
-  public static final int LATEST_OS_FIELD_NUMBER = 22;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object latestOs_ = "";
+  public static final int LAST_ACTIVE_AT_FIELD_NUMBER = 13;
+  private com.google.protobuf.Timestamp lastActiveAt_;
   /**
-   * <code>string latest_os = 22 [json_name = "latestOs"];</code>
-   * @return The latestOs.
+   * <code>.google.protobuf.Timestamp last_active_at = 13 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the lastActiveAt field is set.
    */
   @java.lang.Override
-  public java.lang.String getLatestOs() {
-    java.lang.Object ref = latestOs_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      latestOs_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string latest_os = 22 [json_name = "latestOs"];</code>
-   * @return The bytes for latestOs.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getLatestOsBytes() {
-    java.lang.Object ref = latestOs_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      latestOs_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int LATEST_OS_VERSION_FIELD_NUMBER = 23;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object latestOsVersion_ = "";
-  /**
-   * <code>string latest_os_version = 23 [json_name = "latestOsVersion"];</code>
-   * @return The latestOsVersion.
-   */
-  @java.lang.Override
-  public java.lang.String getLatestOsVersion() {
-    java.lang.Object ref = latestOsVersion_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      latestOsVersion_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string latest_os_version = 23 [json_name = "latestOsVersion"];</code>
-   * @return The bytes for latestOsVersion.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getLatestOsVersionBytes() {
-    java.lang.Object ref = latestOsVersion_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      latestOsVersion_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int LATEST_BROWSER_FIELD_NUMBER = 24;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object latestBrowser_ = "";
-  /**
-   * <code>string latest_browser = 24 [json_name = "latestBrowser"];</code>
-   * @return The latestBrowser.
-   */
-  @java.lang.Override
-  public java.lang.String getLatestBrowser() {
-    java.lang.Object ref = latestBrowser_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      latestBrowser_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string latest_browser = 24 [json_name = "latestBrowser"];</code>
-   * @return The bytes for latestBrowser.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getLatestBrowserBytes() {
-    java.lang.Object ref = latestBrowser_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      latestBrowser_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int LATEST_BROWSER_VERSION_FIELD_NUMBER = 25;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object latestBrowserVersion_ = "";
-  /**
-   * <code>string latest_browser_version = 25 [json_name = "latestBrowserVersion"];</code>
-   * @return The latestBrowserVersion.
-   */
-  @java.lang.Override
-  public java.lang.String getLatestBrowserVersion() {
-    java.lang.Object ref = latestBrowserVersion_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      latestBrowserVersion_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string latest_browser_version = 25 [json_name = "latestBrowserVersion"];</code>
-   * @return The bytes for latestBrowserVersion.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getLatestBrowserVersionBytes() {
-    java.lang.Object ref = latestBrowserVersion_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      latestBrowserVersion_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int LATEST_DEVICE_TYPE_FIELD_NUMBER = 26;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object latestDeviceType_ = "";
-  /**
-   * <code>string latest_device_type = 26 [json_name = "latestDeviceType"];</code>
-   * @return The latestDeviceType.
-   */
-  @java.lang.Override
-  public java.lang.String getLatestDeviceType() {
-    java.lang.Object ref = latestDeviceType_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      latestDeviceType_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string latest_device_type = 26 [json_name = "latestDeviceType"];</code>
-   * @return The bytes for latestDeviceType.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getLatestDeviceTypeBytes() {
-    java.lang.Object ref = latestDeviceType_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      latestDeviceType_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int LATEST_IP_FIELD_NUMBER = 28;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object latestIp_ = "";
-  /**
-   * <code>string latest_ip = 28 [json_name = "latestIp"];</code>
-   * @return The latestIp.
-   */
-  @java.lang.Override
-  public java.lang.String getLatestIp() {
-    java.lang.Object ref = latestIp_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      latestIp_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string latest_ip = 28 [json_name = "latestIp"];</code>
-   * @return The bytes for latestIp.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getLatestIpBytes() {
-    java.lang.Object ref = latestIp_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      latestIp_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int LATEST_LOCATION_FIELD_NUMBER = 29;
-  private com.scalekit.grpc.scalekit.v1.sessions.Location latestLocation_;
-  /**
-   * <code>.scalekit.v1.sessions.Location latest_location = 29 [json_name = "latestLocation"];</code>
-   * @return Whether the latestLocation field is set.
-   */
-  @java.lang.Override
-  public boolean hasLatestLocation() {
+  public boolean hasLastActiveAt() {
     return ((bitField0_ & 0x00000080) != 0);
   }
   /**
-   * <code>.scalekit.v1.sessions.Location latest_location = 29 [json_name = "latestLocation"];</code>
-   * @return The latestLocation.
+   * <code>.google.protobuf.Timestamp last_active_at = 13 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The lastActiveAt.
    */
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.sessions.Location getLatestLocation() {
-    return latestLocation_ == null ? com.scalekit.grpc.scalekit.v1.sessions.Location.getDefaultInstance() : latestLocation_;
+  public com.google.protobuf.Timestamp getLastActiveAt() {
+    return lastActiveAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastActiveAt_;
   }
   /**
-   * <code>.scalekit.v1.sessions.Location latest_location = 29 [json_name = "latestLocation"];</code>
+   * <code>.google.protobuf.Timestamp last_active_at = 13 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.sessions.LocationOrBuilder getLatestLocationOrBuilder() {
-    return latestLocation_ == null ? com.scalekit.grpc.scalekit.v1.sessions.Location.getDefaultInstance() : latestLocation_;
+  public com.google.protobuf.TimestampOrBuilder getLastActiveAtOrBuilder() {
+    return lastActiveAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastActiveAt_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1054,53 +494,11 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, status_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initialUserAgent_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, initialUserAgent_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initialOs_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, initialOs_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initialOsVersion_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, initialOsVersion_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initialBrowser_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, initialBrowser_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initialBrowserVersion_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, initialBrowserVersion_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initialDeviceType_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, initialDeviceType_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initialIp_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, initialIp_);
-    }
     if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeMessage(20, getInitialLocation());
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestUserAgent_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, latestUserAgent_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestOs_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, latestOs_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestOsVersion_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 23, latestOsVersion_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestBrowser_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 24, latestBrowser_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestBrowserVersion_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 25, latestBrowserVersion_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestDeviceType_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 26, latestDeviceType_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestIp_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 28, latestIp_);
+      output.writeMessage(12, getDevice());
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeMessage(29, getLatestLocation());
+      output.writeMessage(13, getLastActiveAt());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1155,55 +553,13 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, status_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initialUserAgent_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, initialUserAgent_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initialOs_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, initialOs_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initialOsVersion_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, initialOsVersion_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initialBrowser_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, initialBrowser_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initialBrowserVersion_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, initialBrowserVersion_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initialDeviceType_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, initialDeviceType_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(initialIp_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, initialIp_);
-    }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(20, getInitialLocation());
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestUserAgent_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, latestUserAgent_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestOs_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, latestOs_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestOsVersion_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, latestOsVersion_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestBrowser_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, latestBrowser_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestBrowserVersion_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, latestBrowserVersion_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestDeviceType_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, latestDeviceType_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latestIp_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, latestIp_);
+        .computeMessageSize(12, getDevice());
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(29, getLatestLocation());
+        .computeMessageSize(13, getLastActiveAt());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1260,43 +616,15 @@ private static final long serialVersionUID = 0L;
     }
     if (!getStatus()
         .equals(other.getStatus())) return false;
-    if (!getInitialUserAgent()
-        .equals(other.getInitialUserAgent())) return false;
-    if (!getInitialOs()
-        .equals(other.getInitialOs())) return false;
-    if (!getInitialOsVersion()
-        .equals(other.getInitialOsVersion())) return false;
-    if (!getInitialBrowser()
-        .equals(other.getInitialBrowser())) return false;
-    if (!getInitialBrowserVersion()
-        .equals(other.getInitialBrowserVersion())) return false;
-    if (!getInitialDeviceType()
-        .equals(other.getInitialDeviceType())) return false;
-    if (!getInitialIp()
-        .equals(other.getInitialIp())) return false;
-    if (hasInitialLocation() != other.hasInitialLocation()) return false;
-    if (hasInitialLocation()) {
-      if (!getInitialLocation()
-          .equals(other.getInitialLocation())) return false;
+    if (hasDevice() != other.hasDevice()) return false;
+    if (hasDevice()) {
+      if (!getDevice()
+          .equals(other.getDevice())) return false;
     }
-    if (!getLatestUserAgent()
-        .equals(other.getLatestUserAgent())) return false;
-    if (!getLatestOs()
-        .equals(other.getLatestOs())) return false;
-    if (!getLatestOsVersion()
-        .equals(other.getLatestOsVersion())) return false;
-    if (!getLatestBrowser()
-        .equals(other.getLatestBrowser())) return false;
-    if (!getLatestBrowserVersion()
-        .equals(other.getLatestBrowserVersion())) return false;
-    if (!getLatestDeviceType()
-        .equals(other.getLatestDeviceType())) return false;
-    if (!getLatestIp()
-        .equals(other.getLatestIp())) return false;
-    if (hasLatestLocation() != other.hasLatestLocation()) return false;
-    if (hasLatestLocation()) {
-      if (!getLatestLocation()
-          .equals(other.getLatestLocation())) return false;
+    if (hasLastActiveAt() != other.hasLastActiveAt()) return false;
+    if (hasLastActiveAt()) {
+      if (!getLastActiveAt()
+          .equals(other.getLastActiveAt())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1345,41 +673,13 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getStatus().hashCode();
-    hash = (37 * hash) + INITIAL_USER_AGENT_FIELD_NUMBER;
-    hash = (53 * hash) + getInitialUserAgent().hashCode();
-    hash = (37 * hash) + INITIAL_OS_FIELD_NUMBER;
-    hash = (53 * hash) + getInitialOs().hashCode();
-    hash = (37 * hash) + INITIAL_OS_VERSION_FIELD_NUMBER;
-    hash = (53 * hash) + getInitialOsVersion().hashCode();
-    hash = (37 * hash) + INITIAL_BROWSER_FIELD_NUMBER;
-    hash = (53 * hash) + getInitialBrowser().hashCode();
-    hash = (37 * hash) + INITIAL_BROWSER_VERSION_FIELD_NUMBER;
-    hash = (53 * hash) + getInitialBrowserVersion().hashCode();
-    hash = (37 * hash) + INITIAL_DEVICE_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getInitialDeviceType().hashCode();
-    hash = (37 * hash) + INITIAL_IP_FIELD_NUMBER;
-    hash = (53 * hash) + getInitialIp().hashCode();
-    if (hasInitialLocation()) {
-      hash = (37 * hash) + INITIAL_LOCATION_FIELD_NUMBER;
-      hash = (53 * hash) + getInitialLocation().hashCode();
+    if (hasDevice()) {
+      hash = (37 * hash) + DEVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getDevice().hashCode();
     }
-    hash = (37 * hash) + LATEST_USER_AGENT_FIELD_NUMBER;
-    hash = (53 * hash) + getLatestUserAgent().hashCode();
-    hash = (37 * hash) + LATEST_OS_FIELD_NUMBER;
-    hash = (53 * hash) + getLatestOs().hashCode();
-    hash = (37 * hash) + LATEST_OS_VERSION_FIELD_NUMBER;
-    hash = (53 * hash) + getLatestOsVersion().hashCode();
-    hash = (37 * hash) + LATEST_BROWSER_FIELD_NUMBER;
-    hash = (53 * hash) + getLatestBrowser().hashCode();
-    hash = (37 * hash) + LATEST_BROWSER_VERSION_FIELD_NUMBER;
-    hash = (53 * hash) + getLatestBrowserVersion().hashCode();
-    hash = (37 * hash) + LATEST_DEVICE_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getLatestDeviceType().hashCode();
-    hash = (37 * hash) + LATEST_IP_FIELD_NUMBER;
-    hash = (53 * hash) + getLatestIp().hashCode();
-    if (hasLatestLocation()) {
-      hash = (37 * hash) + LATEST_LOCATION_FIELD_NUMBER;
-      hash = (53 * hash) + getLatestLocation().hashCode();
+    if (hasLastActiveAt()) {
+      hash = (37 * hash) + LAST_ACTIVE_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getLastActiveAt().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1517,8 +817,8 @@ private static final long serialVersionUID = 0L;
         getAbsoluteExpiresAtFieldBuilder();
         getExpiredAtFieldBuilder();
         getLogoutAtFieldBuilder();
-        getInitialLocationFieldBuilder();
-        getLatestLocationFieldBuilder();
+        getDeviceFieldBuilder();
+        getLastActiveAtFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1561,29 +861,15 @@ private static final long serialVersionUID = 0L;
         logoutAtBuilder_ = null;
       }
       status_ = "";
-      initialUserAgent_ = "";
-      initialOs_ = "";
-      initialOsVersion_ = "";
-      initialBrowser_ = "";
-      initialBrowserVersion_ = "";
-      initialDeviceType_ = "";
-      initialIp_ = "";
-      initialLocation_ = null;
-      if (initialLocationBuilder_ != null) {
-        initialLocationBuilder_.dispose();
-        initialLocationBuilder_ = null;
+      device_ = null;
+      if (deviceBuilder_ != null) {
+        deviceBuilder_.dispose();
+        deviceBuilder_ = null;
       }
-      latestUserAgent_ = "";
-      latestOs_ = "";
-      latestOsVersion_ = "";
-      latestBrowser_ = "";
-      latestBrowserVersion_ = "";
-      latestDeviceType_ = "";
-      latestIp_ = "";
-      latestLocation_ = null;
-      if (latestLocationBuilder_ != null) {
-        latestLocationBuilder_.dispose();
-        latestLocationBuilder_ = null;
+      lastActiveAt_ = null;
+      if (lastActiveAtBuilder_ != null) {
+        lastActiveAtBuilder_.dispose();
+        lastActiveAtBuilder_ = null;
       }
       return this;
     }
@@ -1672,57 +958,15 @@ private static final long serialVersionUID = 0L;
         result.status_ = status_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.initialUserAgent_ = initialUserAgent_;
-      }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.initialOs_ = initialOs_;
-      }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.initialOsVersion_ = initialOsVersion_;
-      }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.initialBrowser_ = initialBrowser_;
-      }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.initialBrowserVersion_ = initialBrowserVersion_;
-      }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.initialDeviceType_ = initialDeviceType_;
-      }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.initialIp_ = initialIp_;
-      }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.initialLocation_ = initialLocationBuilder_ == null
-            ? initialLocation_
-            : initialLocationBuilder_.build();
+        result.device_ = deviceBuilder_ == null
+            ? device_
+            : deviceBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.latestUserAgent_ = latestUserAgent_;
-      }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.latestOs_ = latestOs_;
-      }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.latestOsVersion_ = latestOsVersion_;
-      }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.latestBrowser_ = latestBrowser_;
-      }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
-        result.latestBrowserVersion_ = latestBrowserVersion_;
-      }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
-        result.latestDeviceType_ = latestDeviceType_;
-      }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.latestIp_ = latestIp_;
-      }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
-        result.latestLocation_ = latestLocationBuilder_ == null
-            ? latestLocation_
-            : latestLocationBuilder_.build();
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.lastActiveAt_ = lastActiveAtBuilder_ == null
+            ? lastActiveAt_
+            : lastActiveAtBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1820,81 +1064,11 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000400;
         onChanged();
       }
-      if (!other.getInitialUserAgent().isEmpty()) {
-        initialUserAgent_ = other.initialUserAgent_;
-        bitField0_ |= 0x00000800;
-        onChanged();
+      if (other.hasDevice()) {
+        mergeDevice(other.getDevice());
       }
-      if (!other.getInitialOs().isEmpty()) {
-        initialOs_ = other.initialOs_;
-        bitField0_ |= 0x00001000;
-        onChanged();
-      }
-      if (!other.getInitialOsVersion().isEmpty()) {
-        initialOsVersion_ = other.initialOsVersion_;
-        bitField0_ |= 0x00002000;
-        onChanged();
-      }
-      if (!other.getInitialBrowser().isEmpty()) {
-        initialBrowser_ = other.initialBrowser_;
-        bitField0_ |= 0x00004000;
-        onChanged();
-      }
-      if (!other.getInitialBrowserVersion().isEmpty()) {
-        initialBrowserVersion_ = other.initialBrowserVersion_;
-        bitField0_ |= 0x00008000;
-        onChanged();
-      }
-      if (!other.getInitialDeviceType().isEmpty()) {
-        initialDeviceType_ = other.initialDeviceType_;
-        bitField0_ |= 0x00010000;
-        onChanged();
-      }
-      if (!other.getInitialIp().isEmpty()) {
-        initialIp_ = other.initialIp_;
-        bitField0_ |= 0x00020000;
-        onChanged();
-      }
-      if (other.hasInitialLocation()) {
-        mergeInitialLocation(other.getInitialLocation());
-      }
-      if (!other.getLatestUserAgent().isEmpty()) {
-        latestUserAgent_ = other.latestUserAgent_;
-        bitField0_ |= 0x00080000;
-        onChanged();
-      }
-      if (!other.getLatestOs().isEmpty()) {
-        latestOs_ = other.latestOs_;
-        bitField0_ |= 0x00100000;
-        onChanged();
-      }
-      if (!other.getLatestOsVersion().isEmpty()) {
-        latestOsVersion_ = other.latestOsVersion_;
-        bitField0_ |= 0x00200000;
-        onChanged();
-      }
-      if (!other.getLatestBrowser().isEmpty()) {
-        latestBrowser_ = other.latestBrowser_;
-        bitField0_ |= 0x00400000;
-        onChanged();
-      }
-      if (!other.getLatestBrowserVersion().isEmpty()) {
-        latestBrowserVersion_ = other.latestBrowserVersion_;
-        bitField0_ |= 0x00800000;
-        onChanged();
-      }
-      if (!other.getLatestDeviceType().isEmpty()) {
-        latestDeviceType_ = other.latestDeviceType_;
-        bitField0_ |= 0x01000000;
-        onChanged();
-      }
-      if (!other.getLatestIp().isEmpty()) {
-        latestIp_ = other.latestIp_;
-        bitField0_ |= 0x02000000;
-        onChanged();
-      }
-      if (other.hasLatestLocation()) {
-        mergeLatestLocation(other.getLatestLocation());
+      if (other.hasLastActiveAt()) {
+        mergeLastActiveAt(other.getLastActiveAt());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1991,89 +1165,19 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 90
             case 98: {
-              initialUserAgent_ = input.readStringRequireUtf8();
+              input.readMessage(
+                  getDeviceFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00000800;
               break;
             } // case 98
             case 106: {
-              initialOs_ = input.readStringRequireUtf8();
+              input.readMessage(
+                  getLastActiveAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00001000;
               break;
             } // case 106
-            case 114: {
-              initialOsVersion_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00002000;
-              break;
-            } // case 114
-            case 122: {
-              initialBrowser_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00004000;
-              break;
-            } // case 122
-            case 130: {
-              initialBrowserVersion_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00008000;
-              break;
-            } // case 130
-            case 138: {
-              initialDeviceType_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00010000;
-              break;
-            } // case 138
-            case 154: {
-              initialIp_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00020000;
-              break;
-            } // case 154
-            case 162: {
-              input.readMessage(
-                  getInitialLocationFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              bitField0_ |= 0x00040000;
-              break;
-            } // case 162
-            case 170: {
-              latestUserAgent_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00080000;
-              break;
-            } // case 170
-            case 178: {
-              latestOs_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00100000;
-              break;
-            } // case 178
-            case 186: {
-              latestOsVersion_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00200000;
-              break;
-            } // case 186
-            case 194: {
-              latestBrowser_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00400000;
-              break;
-            } // case 194
-            case 202: {
-              latestBrowserVersion_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00800000;
-              break;
-            } // case 202
-            case 210: {
-              latestDeviceType_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x01000000;
-              break;
-            } // case 210
-            case 226: {
-              latestIp_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x02000000;
-              break;
-            } // case 226
-            case 234: {
-              input.readMessage(
-                  getLatestLocationFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              bitField0_ |= 0x04000000;
-              break;
-            } // case 234
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2093,7 +1197,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object sessionId_ = "";
     /**
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The sessionId.
      */
     public java.lang.String getSessionId() {
@@ -2109,7 +1213,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for sessionId.
      */
     public com.google.protobuf.ByteString
@@ -2126,7 +1230,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The sessionId to set.
      * @return This builder for chaining.
      */
@@ -2139,7 +1243,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearSessionId() {
@@ -2149,7 +1253,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string session_id = 1 [json_name = "sessionId"];</code>
+     * <code>string session_id = 1 [json_name = "sessionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for sessionId to set.
      * @return This builder for chaining.
      */
@@ -2165,7 +1269,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object userId_ = "";
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * <code>string user_id = 2 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The userId.
      */
     public java.lang.String getUserId() {
@@ -2181,7 +1285,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * <code>string user_id = 2 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for userId.
      */
     public com.google.protobuf.ByteString
@@ -2198,7 +1302,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * <code>string user_id = 2 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The userId to set.
      * @return This builder for chaining.
      */
@@ -2211,7 +1315,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * <code>string user_id = 2 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearUserId() {
@@ -2221,7 +1325,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * <code>string user_id = 2 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for userId to set.
      * @return This builder for chaining.
      */
@@ -2244,7 +1348,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ |= 0x00000004;
     }
     /**
-     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations"];</code>
+     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return A list containing the authenticatedOrganizations.
      */
     public com.google.protobuf.ProtocolStringList
@@ -2253,14 +1357,14 @@ private static final long serialVersionUID = 0L;
       return authenticatedOrganizations_;
     }
     /**
-     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations"];</code>
+     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The count of authenticatedOrganizations.
      */
     public int getAuthenticatedOrganizationsCount() {
       return authenticatedOrganizations_.size();
     }
     /**
-     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations"];</code>
+     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The authenticatedOrganizations at the given index.
      */
@@ -2268,7 +1372,7 @@ private static final long serialVersionUID = 0L;
       return authenticatedOrganizations_.get(index);
     }
     /**
-     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations"];</code>
+     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the authenticatedOrganizations at the given index.
      */
@@ -2277,7 +1381,7 @@ private static final long serialVersionUID = 0L;
       return authenticatedOrganizations_.getByteString(index);
     }
     /**
-     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations"];</code>
+     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index to set the value at.
      * @param value The authenticatedOrganizations to set.
      * @return This builder for chaining.
@@ -2292,7 +1396,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations"];</code>
+     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The authenticatedOrganizations to add.
      * @return This builder for chaining.
      */
@@ -2306,7 +1410,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations"];</code>
+     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param values The authenticatedOrganizations to add.
      * @return This builder for chaining.
      */
@@ -2320,7 +1424,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations"];</code>
+     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearAuthenticatedOrganizations() {
@@ -2331,7 +1435,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations"];</code>
+     * <code>repeated string authenticated_organizations = 3 [json_name = "authenticatedOrganizations", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes of the authenticatedOrganizations to add.
      * @return This builder for chaining.
      */
@@ -2348,7 +1452,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object organizationId_ = "";
     /**
-     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 4 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The organizationId.
      */
     public java.lang.String getOrganizationId() {
@@ -2364,7 +1468,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 4 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for organizationId.
      */
     public com.google.protobuf.ByteString
@@ -2381,7 +1485,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 4 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The organizationId to set.
      * @return This builder for chaining.
      */
@@ -2394,7 +1498,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 4 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearOrganizationId() {
@@ -2404,7 +1508,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string organization_id = 4 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 4 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for organizationId to set.
      * @return This builder for chaining.
      */
@@ -2422,14 +1526,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the createdAt field is set.
      */
     public boolean hasCreatedAt() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The createdAt.
      */
     public com.google.protobuf.Timestamp getCreatedAt() {
@@ -2440,7 +1544,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
       if (createdAtBuilder_ == null) {
@@ -2456,7 +1560,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setCreatedAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2470,7 +1574,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
       if (createdAtBuilder_ == null) {
@@ -2491,7 +1595,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearCreatedAt() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -2504,7 +1608,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
       bitField0_ |= 0x00000010;
@@ -2512,7 +1616,7 @@ private static final long serialVersionUID = 0L;
       return getCreatedAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
       if (createdAtBuilder_ != null) {
@@ -2523,7 +1627,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt"];</code>
+     * <code>.google.protobuf.Timestamp created_at = 5 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2543,14 +1647,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updatedAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the updatedAt field is set.
      */
     public boolean hasUpdatedAt() {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The updatedAt.
      */
     public com.google.protobuf.Timestamp getUpdatedAt() {
@@ -2561,7 +1665,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setUpdatedAt(com.google.protobuf.Timestamp value) {
       if (updatedAtBuilder_ == null) {
@@ -2577,7 +1681,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setUpdatedAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2591,7 +1695,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeUpdatedAt(com.google.protobuf.Timestamp value) {
       if (updatedAtBuilder_ == null) {
@@ -2612,7 +1716,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearUpdatedAt() {
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -2625,7 +1729,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdatedAtBuilder() {
       bitField0_ |= 0x00000020;
@@ -2633,7 +1737,7 @@ private static final long serialVersionUID = 0L;
       return getUpdatedAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
       if (updatedAtBuilder_ != null) {
@@ -2644,7 +1748,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt"];</code>
+     * <code>.google.protobuf.Timestamp updated_at = 6 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2664,14 +1768,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> idleExpiresAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the idleExpiresAt field is set.
      */
     public boolean hasIdleExpiresAt() {
       return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The idleExpiresAt.
      */
     public com.google.protobuf.Timestamp getIdleExpiresAt() {
@@ -2682,7 +1786,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setIdleExpiresAt(com.google.protobuf.Timestamp value) {
       if (idleExpiresAtBuilder_ == null) {
@@ -2698,7 +1802,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setIdleExpiresAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2712,7 +1816,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeIdleExpiresAt(com.google.protobuf.Timestamp value) {
       if (idleExpiresAtBuilder_ == null) {
@@ -2733,7 +1837,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearIdleExpiresAt() {
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -2746,7 +1850,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getIdleExpiresAtBuilder() {
       bitField0_ |= 0x00000040;
@@ -2754,7 +1858,7 @@ private static final long serialVersionUID = 0L;
       return getIdleExpiresAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getIdleExpiresAtOrBuilder() {
       if (idleExpiresAtBuilder_ != null) {
@@ -2765,7 +1869,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp idle_expires_at = 7 [json_name = "idleExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2785,14 +1889,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> absoluteExpiresAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the absoluteExpiresAt field is set.
      */
     public boolean hasAbsoluteExpiresAt() {
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The absoluteExpiresAt.
      */
     public com.google.protobuf.Timestamp getAbsoluteExpiresAt() {
@@ -2803,7 +1907,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setAbsoluteExpiresAt(com.google.protobuf.Timestamp value) {
       if (absoluteExpiresAtBuilder_ == null) {
@@ -2819,7 +1923,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setAbsoluteExpiresAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2833,7 +1937,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeAbsoluteExpiresAt(com.google.protobuf.Timestamp value) {
       if (absoluteExpiresAtBuilder_ == null) {
@@ -2854,7 +1958,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearAbsoluteExpiresAt() {
       bitField0_ = (bitField0_ & ~0x00000080);
@@ -2867,7 +1971,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getAbsoluteExpiresAtBuilder() {
       bitField0_ |= 0x00000080;
@@ -2875,7 +1979,7 @@ private static final long serialVersionUID = 0L;
       return getAbsoluteExpiresAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getAbsoluteExpiresAtOrBuilder() {
       if (absoluteExpiresAtBuilder_ != null) {
@@ -2886,7 +1990,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt"];</code>
+     * <code>.google.protobuf.Timestamp absolute_expires_at = 8 [json_name = "absoluteExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2906,14 +2010,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expiredAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the expiredAt field is set.
      */
     public boolean hasExpiredAt() {
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The expiredAt.
      */
     public com.google.protobuf.Timestamp getExpiredAt() {
@@ -2924,7 +2028,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setExpiredAt(com.google.protobuf.Timestamp value) {
       if (expiredAtBuilder_ == null) {
@@ -2940,7 +2044,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setExpiredAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2954,7 +2058,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeExpiredAt(com.google.protobuf.Timestamp value) {
       if (expiredAtBuilder_ == null) {
@@ -2975,7 +2079,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearExpiredAt() {
       bitField0_ = (bitField0_ & ~0x00000100);
@@ -2988,7 +2092,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getExpiredAtBuilder() {
       bitField0_ |= 0x00000100;
@@ -2996,7 +2100,7 @@ private static final long serialVersionUID = 0L;
       return getExpiredAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getExpiredAtOrBuilder() {
       if (expiredAtBuilder_ != null) {
@@ -3007,7 +2111,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt"];</code>
+     * <code>.google.protobuf.Timestamp expired_at = 9 [json_name = "expiredAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -3027,14 +2131,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> logoutAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the logoutAt field is set.
      */
     public boolean hasLogoutAt() {
       return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The logoutAt.
      */
     public com.google.protobuf.Timestamp getLogoutAt() {
@@ -3045,7 +2149,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setLogoutAt(com.google.protobuf.Timestamp value) {
       if (logoutAtBuilder_ == null) {
@@ -3061,7 +2165,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setLogoutAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -3075,7 +2179,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeLogoutAt(com.google.protobuf.Timestamp value) {
       if (logoutAtBuilder_ == null) {
@@ -3096,7 +2200,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearLogoutAt() {
       bitField0_ = (bitField0_ & ~0x00000200);
@@ -3109,7 +2213,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getLogoutAtBuilder() {
       bitField0_ |= 0x00000200;
@@ -3117,7 +2221,7 @@ private static final long serialVersionUID = 0L;
       return getLogoutAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getLogoutAtOrBuilder() {
       if (logoutAtBuilder_ != null) {
@@ -3128,7 +2232,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt"];</code>
+     * <code>.google.protobuf.Timestamp logout_at = 10 [json_name = "logoutAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -3146,7 +2250,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object status_ = "";
     /**
-     * <code>string status = 11 [json_name = "status"];</code>
+     * <code>string status = 11 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The status.
      */
     public java.lang.String getStatus() {
@@ -3162,7 +2266,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string status = 11 [json_name = "status"];</code>
+     * <code>string status = 11 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for status.
      */
     public com.google.protobuf.ByteString
@@ -3179,7 +2283,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string status = 11 [json_name = "status"];</code>
+     * <code>string status = 11 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The status to set.
      * @return This builder for chaining.
      */
@@ -3192,7 +2296,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string status = 11 [json_name = "status"];</code>
+     * <code>string status = 11 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
@@ -3202,7 +2306,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string status = 11 [json_name = "status"];</code>
+     * <code>string status = 11 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
@@ -3216,1254 +2320,246 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object initialUserAgent_ = "";
+    private com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails device_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails, com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails.Builder, com.scalekit.grpc.scalekit.v1.sessions.DeviceDetailsOrBuilder> deviceBuilder_;
     /**
-     * <code>string initial_user_agent = 12 [json_name = "initialUserAgent"];</code>
-     * @return The initialUserAgent.
+     * <code>.scalekit.v1.sessions.DeviceDetails device = 12 [json_name = "device", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the device field is set.
      */
-    public java.lang.String getInitialUserAgent() {
-      java.lang.Object ref = initialUserAgent_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        initialUserAgent_ = s;
-        return s;
+    public boolean hasDevice() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     * <code>.scalekit.v1.sessions.DeviceDetails device = 12 [json_name = "device", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The device.
+     */
+    public com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails getDevice() {
+      if (deviceBuilder_ == null) {
+        return device_ == null ? com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails.getDefaultInstance() : device_;
       } else {
-        return (java.lang.String) ref;
+        return deviceBuilder_.getMessage();
       }
     }
     /**
-     * <code>string initial_user_agent = 12 [json_name = "initialUserAgent"];</code>
-     * @return The bytes for initialUserAgent.
+     * <code>.scalekit.v1.sessions.DeviceDetails device = 12 [json_name = "device", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.google.protobuf.ByteString
-        getInitialUserAgentBytes() {
-      java.lang.Object ref = initialUserAgent_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        initialUserAgent_ = b;
-        return b;
+    public Builder setDevice(com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails value) {
+      if (deviceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        device_ = value;
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        deviceBuilder_.setMessage(value);
       }
-    }
-    /**
-     * <code>string initial_user_agent = 12 [json_name = "initialUserAgent"];</code>
-     * @param value The initialUserAgent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setInitialUserAgent(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      initialUserAgent_ = value;
       bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
     /**
-     * <code>string initial_user_agent = 12 [json_name = "initialUserAgent"];</code>
-     * @return This builder for chaining.
+     * <code>.scalekit.v1.sessions.DeviceDetails device = 12 [json_name = "device", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder clearInitialUserAgent() {
-      initialUserAgent_ = getDefaultInstance().getInitialUserAgent();
+    public Builder setDevice(
+        com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails.Builder builderForValue) {
+      if (deviceBuilder_ == null) {
+        device_ = builderForValue.build();
+      } else {
+        deviceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.sessions.DeviceDetails device = 12 [json_name = "device", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeDevice(com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails value) {
+      if (deviceBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0) &&
+          device_ != null &&
+          device_ != com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails.getDefaultInstance()) {
+          getDeviceBuilder().mergeFrom(value);
+        } else {
+          device_ = value;
+        }
+      } else {
+        deviceBuilder_.mergeFrom(value);
+      }
+      if (device_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.sessions.DeviceDetails device = 12 [json_name = "device", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearDevice() {
       bitField0_ = (bitField0_ & ~0x00000800);
+      device_ = null;
+      if (deviceBuilder_ != null) {
+        deviceBuilder_.dispose();
+        deviceBuilder_ = null;
+      }
       onChanged();
       return this;
     }
     /**
-     * <code>string initial_user_agent = 12 [json_name = "initialUserAgent"];</code>
-     * @param value The bytes for initialUserAgent to set.
-     * @return This builder for chaining.
+     * <code>.scalekit.v1.sessions.DeviceDetails device = 12 [json_name = "device", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder setInitialUserAgentBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      initialUserAgent_ = value;
+    public com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails.Builder getDeviceBuilder() {
       bitField0_ |= 0x00000800;
       onChanged();
-      return this;
+      return getDeviceFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.sessions.DeviceDetails device = 12 [json_name = "device", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.sessions.DeviceDetailsOrBuilder getDeviceOrBuilder() {
+      if (deviceBuilder_ != null) {
+        return deviceBuilder_.getMessageOrBuilder();
+      } else {
+        return device_ == null ?
+            com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails.getDefaultInstance() : device_;
+      }
+    }
+    /**
+     * <code>.scalekit.v1.sessions.DeviceDetails device = 12 [json_name = "device", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails, com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails.Builder, com.scalekit.grpc.scalekit.v1.sessions.DeviceDetailsOrBuilder> 
+        getDeviceFieldBuilder() {
+      if (deviceBuilder_ == null) {
+        deviceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails, com.scalekit.grpc.scalekit.v1.sessions.DeviceDetails.Builder, com.scalekit.grpc.scalekit.v1.sessions.DeviceDetailsOrBuilder>(
+                getDevice(),
+                getParentForChildren(),
+                isClean());
+        device_ = null;
+      }
+      return deviceBuilder_;
     }
 
-    private java.lang.Object initialOs_ = "";
+    private com.google.protobuf.Timestamp lastActiveAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastActiveAtBuilder_;
     /**
-     * <code>string initial_os = 13 [json_name = "initialOs"];</code>
-     * @return The initialOs.
+     * <code>.google.protobuf.Timestamp last_active_at = 13 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the lastActiveAt field is set.
      */
-    public java.lang.String getInitialOs() {
-      java.lang.Object ref = initialOs_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        initialOs_ = s;
-        return s;
+    public boolean hasLastActiveAt() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Timestamp last_active_at = 13 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The lastActiveAt.
+     */
+    public com.google.protobuf.Timestamp getLastActiveAt() {
+      if (lastActiveAtBuilder_ == null) {
+        return lastActiveAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastActiveAt_;
       } else {
-        return (java.lang.String) ref;
+        return lastActiveAtBuilder_.getMessage();
       }
     }
     /**
-     * <code>string initial_os = 13 [json_name = "initialOs"];</code>
-     * @return The bytes for initialOs.
+     * <code>.google.protobuf.Timestamp last_active_at = 13 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.google.protobuf.ByteString
-        getInitialOsBytes() {
-      java.lang.Object ref = initialOs_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        initialOs_ = b;
-        return b;
+    public Builder setLastActiveAt(com.google.protobuf.Timestamp value) {
+      if (lastActiveAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lastActiveAt_ = value;
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        lastActiveAtBuilder_.setMessage(value);
       }
-    }
-    /**
-     * <code>string initial_os = 13 [json_name = "initialOs"];</code>
-     * @param value The initialOs to set.
-     * @return This builder for chaining.
-     */
-    public Builder setInitialOs(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      initialOs_ = value;
       bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
     /**
-     * <code>string initial_os = 13 [json_name = "initialOs"];</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Timestamp last_active_at = 13 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder clearInitialOs() {
-      initialOs_ = getDefaultInstance().getInitialOs();
+    public Builder setLastActiveAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (lastActiveAtBuilder_ == null) {
+        lastActiveAt_ = builderForValue.build();
+      } else {
+        lastActiveAtBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp last_active_at = 13 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeLastActiveAt(com.google.protobuf.Timestamp value) {
+      if (lastActiveAtBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0) &&
+          lastActiveAt_ != null &&
+          lastActiveAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastActiveAtBuilder().mergeFrom(value);
+        } else {
+          lastActiveAt_ = value;
+        }
+      } else {
+        lastActiveAtBuilder_.mergeFrom(value);
+      }
+      if (lastActiveAt_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp last_active_at = 13 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearLastActiveAt() {
       bitField0_ = (bitField0_ & ~0x00001000);
+      lastActiveAt_ = null;
+      if (lastActiveAtBuilder_ != null) {
+        lastActiveAtBuilder_.dispose();
+        lastActiveAtBuilder_ = null;
+      }
       onChanged();
       return this;
     }
     /**
-     * <code>string initial_os = 13 [json_name = "initialOs"];</code>
-     * @param value The bytes for initialOs to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Timestamp last_active_at = 13 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder setInitialOsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      initialOs_ = value;
+    public com.google.protobuf.Timestamp.Builder getLastActiveAtBuilder() {
       bitField0_ |= 0x00001000;
       onChanged();
-      return this;
+      return getLastActiveAtFieldBuilder().getBuilder();
     }
-
-    private java.lang.Object initialOsVersion_ = "";
     /**
-     * <code>string initial_os_version = 14 [json_name = "initialOsVersion"];</code>
-     * @return The initialOsVersion.
+     * <code>.google.protobuf.Timestamp last_active_at = 13 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public java.lang.String getInitialOsVersion() {
-      java.lang.Object ref = initialOsVersion_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        initialOsVersion_ = s;
-        return s;
+    public com.google.protobuf.TimestampOrBuilder getLastActiveAtOrBuilder() {
+      if (lastActiveAtBuilder_ != null) {
+        return lastActiveAtBuilder_.getMessageOrBuilder();
       } else {
-        return (java.lang.String) ref;
+        return lastActiveAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : lastActiveAt_;
       }
     }
     /**
-     * <code>string initial_os_version = 14 [json_name = "initialOsVersion"];</code>
-     * @return The bytes for initialOsVersion.
-     */
-    public com.google.protobuf.ByteString
-        getInitialOsVersionBytes() {
-      java.lang.Object ref = initialOsVersion_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        initialOsVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string initial_os_version = 14 [json_name = "initialOsVersion"];</code>
-     * @param value The initialOsVersion to set.
-     * @return This builder for chaining.
-     */
-    public Builder setInitialOsVersion(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      initialOsVersion_ = value;
-      bitField0_ |= 0x00002000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string initial_os_version = 14 [json_name = "initialOsVersion"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearInitialOsVersion() {
-      initialOsVersion_ = getDefaultInstance().getInitialOsVersion();
-      bitField0_ = (bitField0_ & ~0x00002000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string initial_os_version = 14 [json_name = "initialOsVersion"];</code>
-     * @param value The bytes for initialOsVersion to set.
-     * @return This builder for chaining.
-     */
-    public Builder setInitialOsVersionBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      initialOsVersion_ = value;
-      bitField0_ |= 0x00002000;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object initialBrowser_ = "";
-    /**
-     * <code>string initial_browser = 15 [json_name = "initialBrowser"];</code>
-     * @return The initialBrowser.
-     */
-    public java.lang.String getInitialBrowser() {
-      java.lang.Object ref = initialBrowser_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        initialBrowser_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string initial_browser = 15 [json_name = "initialBrowser"];</code>
-     * @return The bytes for initialBrowser.
-     */
-    public com.google.protobuf.ByteString
-        getInitialBrowserBytes() {
-      java.lang.Object ref = initialBrowser_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        initialBrowser_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string initial_browser = 15 [json_name = "initialBrowser"];</code>
-     * @param value The initialBrowser to set.
-     * @return This builder for chaining.
-     */
-    public Builder setInitialBrowser(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      initialBrowser_ = value;
-      bitField0_ |= 0x00004000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string initial_browser = 15 [json_name = "initialBrowser"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearInitialBrowser() {
-      initialBrowser_ = getDefaultInstance().getInitialBrowser();
-      bitField0_ = (bitField0_ & ~0x00004000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string initial_browser = 15 [json_name = "initialBrowser"];</code>
-     * @param value The bytes for initialBrowser to set.
-     * @return This builder for chaining.
-     */
-    public Builder setInitialBrowserBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      initialBrowser_ = value;
-      bitField0_ |= 0x00004000;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object initialBrowserVersion_ = "";
-    /**
-     * <code>string initial_browser_version = 16 [json_name = "initialBrowserVersion"];</code>
-     * @return The initialBrowserVersion.
-     */
-    public java.lang.String getInitialBrowserVersion() {
-      java.lang.Object ref = initialBrowserVersion_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        initialBrowserVersion_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string initial_browser_version = 16 [json_name = "initialBrowserVersion"];</code>
-     * @return The bytes for initialBrowserVersion.
-     */
-    public com.google.protobuf.ByteString
-        getInitialBrowserVersionBytes() {
-      java.lang.Object ref = initialBrowserVersion_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        initialBrowserVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string initial_browser_version = 16 [json_name = "initialBrowserVersion"];</code>
-     * @param value The initialBrowserVersion to set.
-     * @return This builder for chaining.
-     */
-    public Builder setInitialBrowserVersion(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      initialBrowserVersion_ = value;
-      bitField0_ |= 0x00008000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string initial_browser_version = 16 [json_name = "initialBrowserVersion"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearInitialBrowserVersion() {
-      initialBrowserVersion_ = getDefaultInstance().getInitialBrowserVersion();
-      bitField0_ = (bitField0_ & ~0x00008000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string initial_browser_version = 16 [json_name = "initialBrowserVersion"];</code>
-     * @param value The bytes for initialBrowserVersion to set.
-     * @return This builder for chaining.
-     */
-    public Builder setInitialBrowserVersionBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      initialBrowserVersion_ = value;
-      bitField0_ |= 0x00008000;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object initialDeviceType_ = "";
-    /**
-     * <code>string initial_device_type = 17 [json_name = "initialDeviceType"];</code>
-     * @return The initialDeviceType.
-     */
-    public java.lang.String getInitialDeviceType() {
-      java.lang.Object ref = initialDeviceType_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        initialDeviceType_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string initial_device_type = 17 [json_name = "initialDeviceType"];</code>
-     * @return The bytes for initialDeviceType.
-     */
-    public com.google.protobuf.ByteString
-        getInitialDeviceTypeBytes() {
-      java.lang.Object ref = initialDeviceType_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        initialDeviceType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string initial_device_type = 17 [json_name = "initialDeviceType"];</code>
-     * @param value The initialDeviceType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setInitialDeviceType(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      initialDeviceType_ = value;
-      bitField0_ |= 0x00010000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string initial_device_type = 17 [json_name = "initialDeviceType"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearInitialDeviceType() {
-      initialDeviceType_ = getDefaultInstance().getInitialDeviceType();
-      bitField0_ = (bitField0_ & ~0x00010000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string initial_device_type = 17 [json_name = "initialDeviceType"];</code>
-     * @param value The bytes for initialDeviceType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setInitialDeviceTypeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      initialDeviceType_ = value;
-      bitField0_ |= 0x00010000;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object initialIp_ = "";
-    /**
-     * <code>string initial_ip = 19 [json_name = "initialIp"];</code>
-     * @return The initialIp.
-     */
-    public java.lang.String getInitialIp() {
-      java.lang.Object ref = initialIp_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        initialIp_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string initial_ip = 19 [json_name = "initialIp"];</code>
-     * @return The bytes for initialIp.
-     */
-    public com.google.protobuf.ByteString
-        getInitialIpBytes() {
-      java.lang.Object ref = initialIp_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        initialIp_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string initial_ip = 19 [json_name = "initialIp"];</code>
-     * @param value The initialIp to set.
-     * @return This builder for chaining.
-     */
-    public Builder setInitialIp(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      initialIp_ = value;
-      bitField0_ |= 0x00020000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string initial_ip = 19 [json_name = "initialIp"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearInitialIp() {
-      initialIp_ = getDefaultInstance().getInitialIp();
-      bitField0_ = (bitField0_ & ~0x00020000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string initial_ip = 19 [json_name = "initialIp"];</code>
-     * @param value The bytes for initialIp to set.
-     * @return This builder for chaining.
-     */
-    public Builder setInitialIpBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      initialIp_ = value;
-      bitField0_ |= 0x00020000;
-      onChanged();
-      return this;
-    }
-
-    private com.scalekit.grpc.scalekit.v1.sessions.Location initialLocation_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.sessions.Location, com.scalekit.grpc.scalekit.v1.sessions.Location.Builder, com.scalekit.grpc.scalekit.v1.sessions.LocationOrBuilder> initialLocationBuilder_;
-    /**
-     * <code>.scalekit.v1.sessions.Location initial_location = 20 [json_name = "initialLocation"];</code>
-     * @return Whether the initialLocation field is set.
-     */
-    public boolean hasInitialLocation() {
-      return ((bitField0_ & 0x00040000) != 0);
-    }
-    /**
-     * <code>.scalekit.v1.sessions.Location initial_location = 20 [json_name = "initialLocation"];</code>
-     * @return The initialLocation.
-     */
-    public com.scalekit.grpc.scalekit.v1.sessions.Location getInitialLocation() {
-      if (initialLocationBuilder_ == null) {
-        return initialLocation_ == null ? com.scalekit.grpc.scalekit.v1.sessions.Location.getDefaultInstance() : initialLocation_;
-      } else {
-        return initialLocationBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.scalekit.v1.sessions.Location initial_location = 20 [json_name = "initialLocation"];</code>
-     */
-    public Builder setInitialLocation(com.scalekit.grpc.scalekit.v1.sessions.Location value) {
-      if (initialLocationBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        initialLocation_ = value;
-      } else {
-        initialLocationBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00040000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.sessions.Location initial_location = 20 [json_name = "initialLocation"];</code>
-     */
-    public Builder setInitialLocation(
-        com.scalekit.grpc.scalekit.v1.sessions.Location.Builder builderForValue) {
-      if (initialLocationBuilder_ == null) {
-        initialLocation_ = builderForValue.build();
-      } else {
-        initialLocationBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00040000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.sessions.Location initial_location = 20 [json_name = "initialLocation"];</code>
-     */
-    public Builder mergeInitialLocation(com.scalekit.grpc.scalekit.v1.sessions.Location value) {
-      if (initialLocationBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0) &&
-          initialLocation_ != null &&
-          initialLocation_ != com.scalekit.grpc.scalekit.v1.sessions.Location.getDefaultInstance()) {
-          getInitialLocationBuilder().mergeFrom(value);
-        } else {
-          initialLocation_ = value;
-        }
-      } else {
-        initialLocationBuilder_.mergeFrom(value);
-      }
-      if (initialLocation_ != null) {
-        bitField0_ |= 0x00040000;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.sessions.Location initial_location = 20 [json_name = "initialLocation"];</code>
-     */
-    public Builder clearInitialLocation() {
-      bitField0_ = (bitField0_ & ~0x00040000);
-      initialLocation_ = null;
-      if (initialLocationBuilder_ != null) {
-        initialLocationBuilder_.dispose();
-        initialLocationBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.sessions.Location initial_location = 20 [json_name = "initialLocation"];</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.sessions.Location.Builder getInitialLocationBuilder() {
-      bitField0_ |= 0x00040000;
-      onChanged();
-      return getInitialLocationFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.scalekit.v1.sessions.Location initial_location = 20 [json_name = "initialLocation"];</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.sessions.LocationOrBuilder getInitialLocationOrBuilder() {
-      if (initialLocationBuilder_ != null) {
-        return initialLocationBuilder_.getMessageOrBuilder();
-      } else {
-        return initialLocation_ == null ?
-            com.scalekit.grpc.scalekit.v1.sessions.Location.getDefaultInstance() : initialLocation_;
-      }
-    }
-    /**
-     * <code>.scalekit.v1.sessions.Location initial_location = 20 [json_name = "initialLocation"];</code>
+     * <code>.google.protobuf.Timestamp last_active_at = 13 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.sessions.Location, com.scalekit.grpc.scalekit.v1.sessions.Location.Builder, com.scalekit.grpc.scalekit.v1.sessions.LocationOrBuilder> 
-        getInitialLocationFieldBuilder() {
-      if (initialLocationBuilder_ == null) {
-        initialLocationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.scalekit.grpc.scalekit.v1.sessions.Location, com.scalekit.grpc.scalekit.v1.sessions.Location.Builder, com.scalekit.grpc.scalekit.v1.sessions.LocationOrBuilder>(
-                getInitialLocation(),
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getLastActiveAtFieldBuilder() {
+      if (lastActiveAtBuilder_ == null) {
+        lastActiveAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getLastActiveAt(),
                 getParentForChildren(),
                 isClean());
-        initialLocation_ = null;
+        lastActiveAt_ = null;
       }
-      return initialLocationBuilder_;
-    }
-
-    private java.lang.Object latestUserAgent_ = "";
-    /**
-     * <code>string latest_user_agent = 21 [json_name = "latestUserAgent"];</code>
-     * @return The latestUserAgent.
-     */
-    public java.lang.String getLatestUserAgent() {
-      java.lang.Object ref = latestUserAgent_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        latestUserAgent_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string latest_user_agent = 21 [json_name = "latestUserAgent"];</code>
-     * @return The bytes for latestUserAgent.
-     */
-    public com.google.protobuf.ByteString
-        getLatestUserAgentBytes() {
-      java.lang.Object ref = latestUserAgent_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        latestUserAgent_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string latest_user_agent = 21 [json_name = "latestUserAgent"];</code>
-     * @param value The latestUserAgent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLatestUserAgent(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      latestUserAgent_ = value;
-      bitField0_ |= 0x00080000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string latest_user_agent = 21 [json_name = "latestUserAgent"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLatestUserAgent() {
-      latestUserAgent_ = getDefaultInstance().getLatestUserAgent();
-      bitField0_ = (bitField0_ & ~0x00080000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string latest_user_agent = 21 [json_name = "latestUserAgent"];</code>
-     * @param value The bytes for latestUserAgent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLatestUserAgentBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      latestUserAgent_ = value;
-      bitField0_ |= 0x00080000;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object latestOs_ = "";
-    /**
-     * <code>string latest_os = 22 [json_name = "latestOs"];</code>
-     * @return The latestOs.
-     */
-    public java.lang.String getLatestOs() {
-      java.lang.Object ref = latestOs_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        latestOs_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string latest_os = 22 [json_name = "latestOs"];</code>
-     * @return The bytes for latestOs.
-     */
-    public com.google.protobuf.ByteString
-        getLatestOsBytes() {
-      java.lang.Object ref = latestOs_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        latestOs_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string latest_os = 22 [json_name = "latestOs"];</code>
-     * @param value The latestOs to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLatestOs(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      latestOs_ = value;
-      bitField0_ |= 0x00100000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string latest_os = 22 [json_name = "latestOs"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLatestOs() {
-      latestOs_ = getDefaultInstance().getLatestOs();
-      bitField0_ = (bitField0_ & ~0x00100000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string latest_os = 22 [json_name = "latestOs"];</code>
-     * @param value The bytes for latestOs to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLatestOsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      latestOs_ = value;
-      bitField0_ |= 0x00100000;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object latestOsVersion_ = "";
-    /**
-     * <code>string latest_os_version = 23 [json_name = "latestOsVersion"];</code>
-     * @return The latestOsVersion.
-     */
-    public java.lang.String getLatestOsVersion() {
-      java.lang.Object ref = latestOsVersion_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        latestOsVersion_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string latest_os_version = 23 [json_name = "latestOsVersion"];</code>
-     * @return The bytes for latestOsVersion.
-     */
-    public com.google.protobuf.ByteString
-        getLatestOsVersionBytes() {
-      java.lang.Object ref = latestOsVersion_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        latestOsVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string latest_os_version = 23 [json_name = "latestOsVersion"];</code>
-     * @param value The latestOsVersion to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLatestOsVersion(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      latestOsVersion_ = value;
-      bitField0_ |= 0x00200000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string latest_os_version = 23 [json_name = "latestOsVersion"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLatestOsVersion() {
-      latestOsVersion_ = getDefaultInstance().getLatestOsVersion();
-      bitField0_ = (bitField0_ & ~0x00200000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string latest_os_version = 23 [json_name = "latestOsVersion"];</code>
-     * @param value The bytes for latestOsVersion to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLatestOsVersionBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      latestOsVersion_ = value;
-      bitField0_ |= 0x00200000;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object latestBrowser_ = "";
-    /**
-     * <code>string latest_browser = 24 [json_name = "latestBrowser"];</code>
-     * @return The latestBrowser.
-     */
-    public java.lang.String getLatestBrowser() {
-      java.lang.Object ref = latestBrowser_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        latestBrowser_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string latest_browser = 24 [json_name = "latestBrowser"];</code>
-     * @return The bytes for latestBrowser.
-     */
-    public com.google.protobuf.ByteString
-        getLatestBrowserBytes() {
-      java.lang.Object ref = latestBrowser_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        latestBrowser_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string latest_browser = 24 [json_name = "latestBrowser"];</code>
-     * @param value The latestBrowser to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLatestBrowser(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      latestBrowser_ = value;
-      bitField0_ |= 0x00400000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string latest_browser = 24 [json_name = "latestBrowser"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLatestBrowser() {
-      latestBrowser_ = getDefaultInstance().getLatestBrowser();
-      bitField0_ = (bitField0_ & ~0x00400000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string latest_browser = 24 [json_name = "latestBrowser"];</code>
-     * @param value The bytes for latestBrowser to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLatestBrowserBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      latestBrowser_ = value;
-      bitField0_ |= 0x00400000;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object latestBrowserVersion_ = "";
-    /**
-     * <code>string latest_browser_version = 25 [json_name = "latestBrowserVersion"];</code>
-     * @return The latestBrowserVersion.
-     */
-    public java.lang.String getLatestBrowserVersion() {
-      java.lang.Object ref = latestBrowserVersion_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        latestBrowserVersion_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string latest_browser_version = 25 [json_name = "latestBrowserVersion"];</code>
-     * @return The bytes for latestBrowserVersion.
-     */
-    public com.google.protobuf.ByteString
-        getLatestBrowserVersionBytes() {
-      java.lang.Object ref = latestBrowserVersion_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        latestBrowserVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string latest_browser_version = 25 [json_name = "latestBrowserVersion"];</code>
-     * @param value The latestBrowserVersion to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLatestBrowserVersion(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      latestBrowserVersion_ = value;
-      bitField0_ |= 0x00800000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string latest_browser_version = 25 [json_name = "latestBrowserVersion"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLatestBrowserVersion() {
-      latestBrowserVersion_ = getDefaultInstance().getLatestBrowserVersion();
-      bitField0_ = (bitField0_ & ~0x00800000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string latest_browser_version = 25 [json_name = "latestBrowserVersion"];</code>
-     * @param value The bytes for latestBrowserVersion to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLatestBrowserVersionBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      latestBrowserVersion_ = value;
-      bitField0_ |= 0x00800000;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object latestDeviceType_ = "";
-    /**
-     * <code>string latest_device_type = 26 [json_name = "latestDeviceType"];</code>
-     * @return The latestDeviceType.
-     */
-    public java.lang.String getLatestDeviceType() {
-      java.lang.Object ref = latestDeviceType_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        latestDeviceType_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string latest_device_type = 26 [json_name = "latestDeviceType"];</code>
-     * @return The bytes for latestDeviceType.
-     */
-    public com.google.protobuf.ByteString
-        getLatestDeviceTypeBytes() {
-      java.lang.Object ref = latestDeviceType_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        latestDeviceType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string latest_device_type = 26 [json_name = "latestDeviceType"];</code>
-     * @param value The latestDeviceType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLatestDeviceType(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      latestDeviceType_ = value;
-      bitField0_ |= 0x01000000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string latest_device_type = 26 [json_name = "latestDeviceType"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLatestDeviceType() {
-      latestDeviceType_ = getDefaultInstance().getLatestDeviceType();
-      bitField0_ = (bitField0_ & ~0x01000000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string latest_device_type = 26 [json_name = "latestDeviceType"];</code>
-     * @param value The bytes for latestDeviceType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLatestDeviceTypeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      latestDeviceType_ = value;
-      bitField0_ |= 0x01000000;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object latestIp_ = "";
-    /**
-     * <code>string latest_ip = 28 [json_name = "latestIp"];</code>
-     * @return The latestIp.
-     */
-    public java.lang.String getLatestIp() {
-      java.lang.Object ref = latestIp_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        latestIp_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string latest_ip = 28 [json_name = "latestIp"];</code>
-     * @return The bytes for latestIp.
-     */
-    public com.google.protobuf.ByteString
-        getLatestIpBytes() {
-      java.lang.Object ref = latestIp_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        latestIp_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string latest_ip = 28 [json_name = "latestIp"];</code>
-     * @param value The latestIp to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLatestIp(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      latestIp_ = value;
-      bitField0_ |= 0x02000000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string latest_ip = 28 [json_name = "latestIp"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLatestIp() {
-      latestIp_ = getDefaultInstance().getLatestIp();
-      bitField0_ = (bitField0_ & ~0x02000000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string latest_ip = 28 [json_name = "latestIp"];</code>
-     * @param value The bytes for latestIp to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLatestIpBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      latestIp_ = value;
-      bitField0_ |= 0x02000000;
-      onChanged();
-      return this;
-    }
-
-    private com.scalekit.grpc.scalekit.v1.sessions.Location latestLocation_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.sessions.Location, com.scalekit.grpc.scalekit.v1.sessions.Location.Builder, com.scalekit.grpc.scalekit.v1.sessions.LocationOrBuilder> latestLocationBuilder_;
-    /**
-     * <code>.scalekit.v1.sessions.Location latest_location = 29 [json_name = "latestLocation"];</code>
-     * @return Whether the latestLocation field is set.
-     */
-    public boolean hasLatestLocation() {
-      return ((bitField0_ & 0x04000000) != 0);
-    }
-    /**
-     * <code>.scalekit.v1.sessions.Location latest_location = 29 [json_name = "latestLocation"];</code>
-     * @return The latestLocation.
-     */
-    public com.scalekit.grpc.scalekit.v1.sessions.Location getLatestLocation() {
-      if (latestLocationBuilder_ == null) {
-        return latestLocation_ == null ? com.scalekit.grpc.scalekit.v1.sessions.Location.getDefaultInstance() : latestLocation_;
-      } else {
-        return latestLocationBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.scalekit.v1.sessions.Location latest_location = 29 [json_name = "latestLocation"];</code>
-     */
-    public Builder setLatestLocation(com.scalekit.grpc.scalekit.v1.sessions.Location value) {
-      if (latestLocationBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        latestLocation_ = value;
-      } else {
-        latestLocationBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x04000000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.sessions.Location latest_location = 29 [json_name = "latestLocation"];</code>
-     */
-    public Builder setLatestLocation(
-        com.scalekit.grpc.scalekit.v1.sessions.Location.Builder builderForValue) {
-      if (latestLocationBuilder_ == null) {
-        latestLocation_ = builderForValue.build();
-      } else {
-        latestLocationBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x04000000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.sessions.Location latest_location = 29 [json_name = "latestLocation"];</code>
-     */
-    public Builder mergeLatestLocation(com.scalekit.grpc.scalekit.v1.sessions.Location value) {
-      if (latestLocationBuilder_ == null) {
-        if (((bitField0_ & 0x04000000) != 0) &&
-          latestLocation_ != null &&
-          latestLocation_ != com.scalekit.grpc.scalekit.v1.sessions.Location.getDefaultInstance()) {
-          getLatestLocationBuilder().mergeFrom(value);
-        } else {
-          latestLocation_ = value;
-        }
-      } else {
-        latestLocationBuilder_.mergeFrom(value);
-      }
-      if (latestLocation_ != null) {
-        bitField0_ |= 0x04000000;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.sessions.Location latest_location = 29 [json_name = "latestLocation"];</code>
-     */
-    public Builder clearLatestLocation() {
-      bitField0_ = (bitField0_ & ~0x04000000);
-      latestLocation_ = null;
-      if (latestLocationBuilder_ != null) {
-        latestLocationBuilder_.dispose();
-        latestLocationBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.sessions.Location latest_location = 29 [json_name = "latestLocation"];</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.sessions.Location.Builder getLatestLocationBuilder() {
-      bitField0_ |= 0x04000000;
-      onChanged();
-      return getLatestLocationFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.scalekit.v1.sessions.Location latest_location = 29 [json_name = "latestLocation"];</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.sessions.LocationOrBuilder getLatestLocationOrBuilder() {
-      if (latestLocationBuilder_ != null) {
-        return latestLocationBuilder_.getMessageOrBuilder();
-      } else {
-        return latestLocation_ == null ?
-            com.scalekit.grpc.scalekit.v1.sessions.Location.getDefaultInstance() : latestLocation_;
-      }
-    }
-    /**
-     * <code>.scalekit.v1.sessions.Location latest_location = 29 [json_name = "latestLocation"];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.sessions.Location, com.scalekit.grpc.scalekit.v1.sessions.Location.Builder, com.scalekit.grpc.scalekit.v1.sessions.LocationOrBuilder> 
-        getLatestLocationFieldBuilder() {
-      if (latestLocationBuilder_ == null) {
-        latestLocationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.scalekit.grpc.scalekit.v1.sessions.Location, com.scalekit.grpc.scalekit.v1.sessions.Location.Builder, com.scalekit.grpc.scalekit.v1.sessions.LocationOrBuilder>(
-                getLatestLocation(),
-                getParentForChildren(),
-                isClean());
-        latestLocation_ = null;
-      }
-      return latestLocationBuilder_;
+      return lastActiveAtBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
