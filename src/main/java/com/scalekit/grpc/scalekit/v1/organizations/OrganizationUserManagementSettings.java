@@ -17,7 +17,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private OrganizationUserManagementSettings() {
-    deprecatedPlaceholder_ = 0;
   }
 
   @java.lang.Override
@@ -41,86 +40,30 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
-  public static final int JIT_PROVISIONING_WITH_SSO_ENABLED_FIELD_NUMBER = 1;
-  private com.google.protobuf.BoolValue jitProvisioningWithSsoEnabled_;
+  public static final int MAX_ALLOWED_USERS_FIELD_NUMBER = 1;
+  private com.google.protobuf.Int32Value maxAllowedUsers_;
   /**
-   * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 1 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the jitProvisioningWithSsoEnabled field is set.
+   * <code>.google.protobuf.Int32Value max_allowed_users = 1 [json_name = "maxAllowedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the maxAllowedUsers field is set.
    */
   @java.lang.Override
-  public boolean hasJitProvisioningWithSsoEnabled() {
+  public boolean hasMaxAllowedUsers() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 1 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The jitProvisioningWithSsoEnabled.
+   * <code>.google.protobuf.Int32Value max_allowed_users = 1 [json_name = "maxAllowedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The maxAllowedUsers.
    */
   @java.lang.Override
-  public com.google.protobuf.BoolValue getJitProvisioningWithSsoEnabled() {
-    return jitProvisioningWithSsoEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : jitProvisioningWithSsoEnabled_;
+  public com.google.protobuf.Int32Value getMaxAllowedUsers() {
+    return maxAllowedUsers_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : maxAllowedUsers_;
   }
   /**
-   * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 1 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Int32Value max_allowed_users = 1 [json_name = "maxAllowedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public com.google.protobuf.BoolValueOrBuilder getJitProvisioningWithSsoEnabledOrBuilder() {
-    return jitProvisioningWithSsoEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : jitProvisioningWithSsoEnabled_;
-  }
-
-  public static final int SYNC_USER_PROFILE_ON_SIGNIN_FIELD_NUMBER = 2;
-  private com.google.protobuf.BoolValue syncUserProfileOnSignin_;
-  /**
-   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 2 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the syncUserProfileOnSignin field is set.
-   */
-  @java.lang.Override
-  public boolean hasSyncUserProfileOnSignin() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 2 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The syncUserProfileOnSignin.
-   */
-  @java.lang.Override
-  public com.google.protobuf.BoolValue getSyncUserProfileOnSignin() {
-    return syncUserProfileOnSignin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnSignin_;
-  }
-  /**
-   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 2 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnSigninOrBuilder() {
-    return syncUserProfileOnSignin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnSignin_;
-  }
-
-  public static final int DEPRECATED_PLACEHOLDER_FIELD_NUMBER = 99;
-  private int deprecatedPlaceholder_ = 0;
-  /**
-   * <pre>
-   * Deprecated placeholder to ensure google.protobuf.NullValue is referenced in the schema, preventing unused-definition warnings.
-   * </pre>
-   *
-   * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=1585
-   * @return The enum numeric value on the wire for deprecatedPlaceholder.
-   */
-  @java.lang.Override @java.lang.Deprecated public int getDeprecatedPlaceholderValue() {
-    return deprecatedPlaceholder_;
-  }
-  /**
-   * <pre>
-   * Deprecated placeholder to ensure google.protobuf.NullValue is referenced in the schema, preventing unused-definition warnings.
-   * </pre>
-   *
-   * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=1585
-   * @return The deprecatedPlaceholder.
-   */
-  @java.lang.Override @java.lang.Deprecated public com.google.protobuf.NullValue getDeprecatedPlaceholder() {
-    com.google.protobuf.NullValue result = com.google.protobuf.NullValue.forNumber(deprecatedPlaceholder_);
-    return result == null ? com.google.protobuf.NullValue.UNRECOGNIZED : result;
+  public com.google.protobuf.Int32ValueOrBuilder getMaxAllowedUsersOrBuilder() {
+    return maxAllowedUsers_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : maxAllowedUsers_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -138,13 +81,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(1, getJitProvisioningWithSsoEnabled());
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(2, getSyncUserProfileOnSignin());
-    }
-    if (deprecatedPlaceholder_ != com.google.protobuf.NullValue.NULL_VALUE.getNumber()) {
-      output.writeEnum(99, deprecatedPlaceholder_);
+      output.writeMessage(1, getMaxAllowedUsers());
     }
     getUnknownFields().writeTo(output);
   }
@@ -157,15 +94,7 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getJitProvisioningWithSsoEnabled());
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getSyncUserProfileOnSignin());
-    }
-    if (deprecatedPlaceholder_ != com.google.protobuf.NullValue.NULL_VALUE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(99, deprecatedPlaceholder_);
+        .computeMessageSize(1, getMaxAllowedUsers());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -182,17 +111,11 @@ private static final long serialVersionUID = 0L;
     }
     com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettings other = (com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettings) obj;
 
-    if (hasJitProvisioningWithSsoEnabled() != other.hasJitProvisioningWithSsoEnabled()) return false;
-    if (hasJitProvisioningWithSsoEnabled()) {
-      if (!getJitProvisioningWithSsoEnabled()
-          .equals(other.getJitProvisioningWithSsoEnabled())) return false;
+    if (hasMaxAllowedUsers() != other.hasMaxAllowedUsers()) return false;
+    if (hasMaxAllowedUsers()) {
+      if (!getMaxAllowedUsers()
+          .equals(other.getMaxAllowedUsers())) return false;
     }
-    if (hasSyncUserProfileOnSignin() != other.hasSyncUserProfileOnSignin()) return false;
-    if (hasSyncUserProfileOnSignin()) {
-      if (!getSyncUserProfileOnSignin()
-          .equals(other.getSyncUserProfileOnSignin())) return false;
-    }
-    if (deprecatedPlaceholder_ != other.deprecatedPlaceholder_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -204,16 +127,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasJitProvisioningWithSsoEnabled()) {
-      hash = (37 * hash) + JIT_PROVISIONING_WITH_SSO_ENABLED_FIELD_NUMBER;
-      hash = (53 * hash) + getJitProvisioningWithSsoEnabled().hashCode();
+    if (hasMaxAllowedUsers()) {
+      hash = (37 * hash) + MAX_ALLOWED_USERS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxAllowedUsers().hashCode();
     }
-    if (hasSyncUserProfileOnSignin()) {
-      hash = (37 * hash) + SYNC_USER_PROFILE_ON_SIGNIN_FIELD_NUMBER;
-      hash = (53 * hash) + getSyncUserProfileOnSignin().hashCode();
-    }
-    hash = (37 * hash) + DEPRECATED_PLACEHOLDER_FIELD_NUMBER;
-    hash = (53 * hash) + deprecatedPlaceholder_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -344,25 +261,18 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getJitProvisioningWithSsoEnabledFieldBuilder();
-        getSyncUserProfileOnSigninFieldBuilder();
+        getMaxAllowedUsersFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      jitProvisioningWithSsoEnabled_ = null;
-      if (jitProvisioningWithSsoEnabledBuilder_ != null) {
-        jitProvisioningWithSsoEnabledBuilder_.dispose();
-        jitProvisioningWithSsoEnabledBuilder_ = null;
+      maxAllowedUsers_ = null;
+      if (maxAllowedUsersBuilder_ != null) {
+        maxAllowedUsersBuilder_.dispose();
+        maxAllowedUsersBuilder_ = null;
       }
-      syncUserProfileOnSignin_ = null;
-      if (syncUserProfileOnSigninBuilder_ != null) {
-        syncUserProfileOnSigninBuilder_.dispose();
-        syncUserProfileOnSigninBuilder_ = null;
-      }
-      deprecatedPlaceholder_ = 0;
       return this;
     }
 
@@ -398,19 +308,10 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.jitProvisioningWithSsoEnabled_ = jitProvisioningWithSsoEnabledBuilder_ == null
-            ? jitProvisioningWithSsoEnabled_
-            : jitProvisioningWithSsoEnabledBuilder_.build();
+        result.maxAllowedUsers_ = maxAllowedUsersBuilder_ == null
+            ? maxAllowedUsers_
+            : maxAllowedUsersBuilder_.build();
         to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.syncUserProfileOnSignin_ = syncUserProfileOnSigninBuilder_ == null
-            ? syncUserProfileOnSignin_
-            : syncUserProfileOnSigninBuilder_.build();
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.deprecatedPlaceholder_ = deprecatedPlaceholder_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -459,14 +360,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettings other) {
       if (other == com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettings.getDefaultInstance()) return this;
-      if (other.hasJitProvisioningWithSsoEnabled()) {
-        mergeJitProvisioningWithSsoEnabled(other.getJitProvisioningWithSsoEnabled());
-      }
-      if (other.hasSyncUserProfileOnSignin()) {
-        mergeSyncUserProfileOnSignin(other.getSyncUserProfileOnSignin());
-      }
-      if (other.deprecatedPlaceholder_ != 0) {
-        setDeprecatedPlaceholderValue(other.getDeprecatedPlaceholderValue());
+      if (other.hasMaxAllowedUsers()) {
+        mergeMaxAllowedUsers(other.getMaxAllowedUsers());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -496,23 +391,11 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               input.readMessage(
-                  getJitProvisioningWithSsoEnabledFieldBuilder().getBuilder(),
+                  getMaxAllowedUsersFieldBuilder().getBuilder(),
                   extensionRegistry);
               bitField0_ |= 0x00000001;
               break;
             } // case 10
-            case 18: {
-              input.readMessage(
-                  getSyncUserProfileOnSigninFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              bitField0_ |= 0x00000002;
-              break;
-            } // case 18
-            case 792: {
-              deprecatedPlaceholder_ = input.readEnum();
-              bitField0_ |= 0x00000004;
-              break;
-            } // case 792
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -530,329 +413,125 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private com.google.protobuf.BoolValue jitProvisioningWithSsoEnabled_;
+    private com.google.protobuf.Int32Value maxAllowedUsers_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> jitProvisioningWithSsoEnabledBuilder_;
+        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> maxAllowedUsersBuilder_;
     /**
-     * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 1 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the jitProvisioningWithSsoEnabled field is set.
+     * <code>.google.protobuf.Int32Value max_allowed_users = 1 [json_name = "maxAllowedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the maxAllowedUsers field is set.
      */
-    public boolean hasJitProvisioningWithSsoEnabled() {
+    public boolean hasMaxAllowedUsers() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 1 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The jitProvisioningWithSsoEnabled.
+     * <code>.google.protobuf.Int32Value max_allowed_users = 1 [json_name = "maxAllowedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The maxAllowedUsers.
      */
-    public com.google.protobuf.BoolValue getJitProvisioningWithSsoEnabled() {
-      if (jitProvisioningWithSsoEnabledBuilder_ == null) {
-        return jitProvisioningWithSsoEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : jitProvisioningWithSsoEnabled_;
+    public com.google.protobuf.Int32Value getMaxAllowedUsers() {
+      if (maxAllowedUsersBuilder_ == null) {
+        return maxAllowedUsers_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : maxAllowedUsers_;
       } else {
-        return jitProvisioningWithSsoEnabledBuilder_.getMessage();
+        return maxAllowedUsersBuilder_.getMessage();
       }
     }
     /**
-     * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 1 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Int32Value max_allowed_users = 1 [json_name = "maxAllowedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder setJitProvisioningWithSsoEnabled(com.google.protobuf.BoolValue value) {
-      if (jitProvisioningWithSsoEnabledBuilder_ == null) {
+    public Builder setMaxAllowedUsers(com.google.protobuf.Int32Value value) {
+      if (maxAllowedUsersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        jitProvisioningWithSsoEnabled_ = value;
+        maxAllowedUsers_ = value;
       } else {
-        jitProvisioningWithSsoEnabledBuilder_.setMessage(value);
+        maxAllowedUsersBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 1 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Int32Value max_allowed_users = 1 [json_name = "maxAllowedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder setJitProvisioningWithSsoEnabled(
-        com.google.protobuf.BoolValue.Builder builderForValue) {
-      if (jitProvisioningWithSsoEnabledBuilder_ == null) {
-        jitProvisioningWithSsoEnabled_ = builderForValue.build();
+    public Builder setMaxAllowedUsers(
+        com.google.protobuf.Int32Value.Builder builderForValue) {
+      if (maxAllowedUsersBuilder_ == null) {
+        maxAllowedUsers_ = builderForValue.build();
       } else {
-        jitProvisioningWithSsoEnabledBuilder_.setMessage(builderForValue.build());
+        maxAllowedUsersBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 1 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Int32Value max_allowed_users = 1 [json_name = "maxAllowedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder mergeJitProvisioningWithSsoEnabled(com.google.protobuf.BoolValue value) {
-      if (jitProvisioningWithSsoEnabledBuilder_ == null) {
+    public Builder mergeMaxAllowedUsers(com.google.protobuf.Int32Value value) {
+      if (maxAllowedUsersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0) &&
-          jitProvisioningWithSsoEnabled_ != null &&
-          jitProvisioningWithSsoEnabled_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
-          getJitProvisioningWithSsoEnabledBuilder().mergeFrom(value);
+          maxAllowedUsers_ != null &&
+          maxAllowedUsers_ != com.google.protobuf.Int32Value.getDefaultInstance()) {
+          getMaxAllowedUsersBuilder().mergeFrom(value);
         } else {
-          jitProvisioningWithSsoEnabled_ = value;
+          maxAllowedUsers_ = value;
         }
       } else {
-        jitProvisioningWithSsoEnabledBuilder_.mergeFrom(value);
+        maxAllowedUsersBuilder_.mergeFrom(value);
       }
-      if (jitProvisioningWithSsoEnabled_ != null) {
+      if (maxAllowedUsers_ != null) {
         bitField0_ |= 0x00000001;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 1 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Int32Value max_allowed_users = 1 [json_name = "maxAllowedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder clearJitProvisioningWithSsoEnabled() {
+    public Builder clearMaxAllowedUsers() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      jitProvisioningWithSsoEnabled_ = null;
-      if (jitProvisioningWithSsoEnabledBuilder_ != null) {
-        jitProvisioningWithSsoEnabledBuilder_.dispose();
-        jitProvisioningWithSsoEnabledBuilder_ = null;
+      maxAllowedUsers_ = null;
+      if (maxAllowedUsersBuilder_ != null) {
+        maxAllowedUsersBuilder_.dispose();
+        maxAllowedUsersBuilder_ = null;
       }
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 1 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Int32Value max_allowed_users = 1 [json_name = "maxAllowedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.google.protobuf.BoolValue.Builder getJitProvisioningWithSsoEnabledBuilder() {
+    public com.google.protobuf.Int32Value.Builder getMaxAllowedUsersBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
-      return getJitProvisioningWithSsoEnabledFieldBuilder().getBuilder();
+      return getMaxAllowedUsersFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 1 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Int32Value max_allowed_users = 1 [json_name = "maxAllowedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.google.protobuf.BoolValueOrBuilder getJitProvisioningWithSsoEnabledOrBuilder() {
-      if (jitProvisioningWithSsoEnabledBuilder_ != null) {
-        return jitProvisioningWithSsoEnabledBuilder_.getMessageOrBuilder();
+    public com.google.protobuf.Int32ValueOrBuilder getMaxAllowedUsersOrBuilder() {
+      if (maxAllowedUsersBuilder_ != null) {
+        return maxAllowedUsersBuilder_.getMessageOrBuilder();
       } else {
-        return jitProvisioningWithSsoEnabled_ == null ?
-            com.google.protobuf.BoolValue.getDefaultInstance() : jitProvisioningWithSsoEnabled_;
+        return maxAllowedUsers_ == null ?
+            com.google.protobuf.Int32Value.getDefaultInstance() : maxAllowedUsers_;
       }
     }
     /**
-     * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 1 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Int32Value max_allowed_users = 1 [json_name = "maxAllowedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
-        getJitProvisioningWithSsoEnabledFieldBuilder() {
-      if (jitProvisioningWithSsoEnabledBuilder_ == null) {
-        jitProvisioningWithSsoEnabledBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
-                getJitProvisioningWithSsoEnabled(),
+        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> 
+        getMaxAllowedUsersFieldBuilder() {
+      if (maxAllowedUsersBuilder_ == null) {
+        maxAllowedUsersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder>(
+                getMaxAllowedUsers(),
                 getParentForChildren(),
                 isClean());
-        jitProvisioningWithSsoEnabled_ = null;
+        maxAllowedUsers_ = null;
       }
-      return jitProvisioningWithSsoEnabledBuilder_;
-    }
-
-    private com.google.protobuf.BoolValue syncUserProfileOnSignin_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> syncUserProfileOnSigninBuilder_;
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 2 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the syncUserProfileOnSignin field is set.
-     */
-    public boolean hasSyncUserProfileOnSignin() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 2 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The syncUserProfileOnSignin.
-     */
-    public com.google.protobuf.BoolValue getSyncUserProfileOnSignin() {
-      if (syncUserProfileOnSigninBuilder_ == null) {
-        return syncUserProfileOnSignin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnSignin_;
-      } else {
-        return syncUserProfileOnSigninBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 2 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setSyncUserProfileOnSignin(com.google.protobuf.BoolValue value) {
-      if (syncUserProfileOnSigninBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        syncUserProfileOnSignin_ = value;
-      } else {
-        syncUserProfileOnSigninBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 2 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setSyncUserProfileOnSignin(
-        com.google.protobuf.BoolValue.Builder builderForValue) {
-      if (syncUserProfileOnSigninBuilder_ == null) {
-        syncUserProfileOnSignin_ = builderForValue.build();
-      } else {
-        syncUserProfileOnSigninBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 2 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder mergeSyncUserProfileOnSignin(com.google.protobuf.BoolValue value) {
-      if (syncUserProfileOnSigninBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0) &&
-          syncUserProfileOnSignin_ != null &&
-          syncUserProfileOnSignin_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
-          getSyncUserProfileOnSigninBuilder().mergeFrom(value);
-        } else {
-          syncUserProfileOnSignin_ = value;
-        }
-      } else {
-        syncUserProfileOnSigninBuilder_.mergeFrom(value);
-      }
-      if (syncUserProfileOnSignin_ != null) {
-        bitField0_ |= 0x00000002;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 2 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder clearSyncUserProfileOnSignin() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      syncUserProfileOnSignin_ = null;
-      if (syncUserProfileOnSigninBuilder_ != null) {
-        syncUserProfileOnSigninBuilder_.dispose();
-        syncUserProfileOnSigninBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 2 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public com.google.protobuf.BoolValue.Builder getSyncUserProfileOnSigninBuilder() {
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return getSyncUserProfileOnSigninFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 2 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnSigninOrBuilder() {
-      if (syncUserProfileOnSigninBuilder_ != null) {
-        return syncUserProfileOnSigninBuilder_.getMessageOrBuilder();
-      } else {
-        return syncUserProfileOnSignin_ == null ?
-            com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnSignin_;
-      }
-    }
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 2 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
-        getSyncUserProfileOnSigninFieldBuilder() {
-      if (syncUserProfileOnSigninBuilder_ == null) {
-        syncUserProfileOnSigninBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
-                getSyncUserProfileOnSignin(),
-                getParentForChildren(),
-                isClean());
-        syncUserProfileOnSignin_ = null;
-      }
-      return syncUserProfileOnSigninBuilder_;
-    }
-
-    private int deprecatedPlaceholder_ = 0;
-    /**
-     * <pre>
-     * Deprecated placeholder to ensure google.protobuf.NullValue is referenced in the schema, preventing unused-definition warnings.
-     * </pre>
-     *
-     * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=1585
-     * @return The enum numeric value on the wire for deprecatedPlaceholder.
-     */
-    @java.lang.Override @java.lang.Deprecated public int getDeprecatedPlaceholderValue() {
-      return deprecatedPlaceholder_;
-    }
-    /**
-     * <pre>
-     * Deprecated placeholder to ensure google.protobuf.NullValue is referenced in the schema, preventing unused-definition warnings.
-     * </pre>
-     *
-     * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=1585
-     * @param value The enum numeric value on the wire for deprecatedPlaceholder to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder setDeprecatedPlaceholderValue(int value) {
-      deprecatedPlaceholder_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Deprecated placeholder to ensure google.protobuf.NullValue is referenced in the schema, preventing unused-definition warnings.
-     * </pre>
-     *
-     * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=1585
-     * @return The deprecatedPlaceholder.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated public com.google.protobuf.NullValue getDeprecatedPlaceholder() {
-      com.google.protobuf.NullValue result = com.google.protobuf.NullValue.forNumber(deprecatedPlaceholder_);
-      return result == null ? com.google.protobuf.NullValue.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Deprecated placeholder to ensure google.protobuf.NullValue is referenced in the schema, preventing unused-definition warnings.
-     * </pre>
-     *
-     * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=1585
-     * @param value The deprecatedPlaceholder to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder setDeprecatedPlaceholder(com.google.protobuf.NullValue value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000004;
-      deprecatedPlaceholder_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Deprecated placeholder to ensure google.protobuf.NullValue is referenced in the schema, preventing unused-definition warnings.
-     * </pre>
-     *
-     * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-     *     See scalekit/v1/organizations/organizations.proto;l=1585
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder clearDeprecatedPlaceholder() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      deprecatedPlaceholder_ = 0;
-      onChanged();
-      return this;
+      return maxAllowedUsersBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

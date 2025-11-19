@@ -5,85 +5,45 @@
 package com.scalekit.grpc.scalekit.v1.organizations;
 
 /**
- * Protobuf type {@code scalekit.v1.organizations.UpdateUserManagementSettingsRequest}
+ * Protobuf type {@code scalekit.v1.organizations.UpsertUserManagementSettingsResponse}
  */
-public final class UpdateUserManagementSettingsRequest extends
+public final class UpsertUserManagementSettingsResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:scalekit.v1.organizations.UpdateUserManagementSettingsRequest)
-    UpdateUserManagementSettingsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:scalekit.v1.organizations.UpsertUserManagementSettingsResponse)
+    UpsertUserManagementSettingsResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use UpdateUserManagementSettingsRequest.newBuilder() to construct.
-  private UpdateUserManagementSettingsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpsertUserManagementSettingsResponse.newBuilder() to construct.
+  private UpsertUserManagementSettingsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private UpdateUserManagementSettingsRequest() {
-    organizationId_ = "";
+  private UpsertUserManagementSettingsResponse() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new UpdateUserManagementSettingsRequest();
+    return new UpsertUserManagementSettingsResponse();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.organizations.OrganizationsProto.internal_static_scalekit_v1_organizations_UpdateUserManagementSettingsRequest_descriptor;
+    return com.scalekit.grpc.scalekit.v1.organizations.OrganizationsProto.internal_static_scalekit_v1_organizations_UpsertUserManagementSettingsResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.scalekit.grpc.scalekit.v1.organizations.OrganizationsProto.internal_static_scalekit_v1_organizations_UpdateUserManagementSettingsRequest_fieldAccessorTable
+    return com.scalekit.grpc.scalekit.v1.organizations.OrganizationsProto.internal_static_scalekit_v1_organizations_UpsertUserManagementSettingsResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest.class, com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest.Builder.class);
+            com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse.class, com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse.Builder.class);
   }
 
   private int bitField0_;
-  public static final int ORGANIZATION_ID_FIELD_NUMBER = 1;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object organizationId_ = "";
-  /**
-   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The organizationId.
-   */
-  @java.lang.Override
-  public java.lang.String getOrganizationId() {
-    java.lang.Object ref = organizationId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      organizationId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for organizationId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getOrganizationIdBytes() {
-    java.lang.Object ref = organizationId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      organizationId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SETTINGS_FIELD_NUMBER = 2;
+  public static final int SETTINGS_FIELD_NUMBER = 1;
   private com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettings settings_;
   /**
-   * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 1 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the settings field is set.
    */
   @java.lang.Override
@@ -91,7 +51,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 1 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The settings.
    */
   @java.lang.Override
@@ -99,7 +59,7 @@ private static final long serialVersionUID = 0L;
     return settings_ == null ? com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettings.getDefaultInstance() : settings_;
   }
   /**
-   * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 1 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettingsOrBuilder getSettingsOrBuilder() {
@@ -120,11 +80,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, organizationId_);
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(2, getSettings());
+      output.writeMessage(1, getSettings());
     }
     getUnknownFields().writeTo(output);
   }
@@ -135,12 +92,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, organizationId_);
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getSettings());
+        .computeMessageSize(1, getSettings());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -152,13 +106,11 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest)) {
+    if (!(obj instanceof com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse)) {
       return super.equals(obj);
     }
-    com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest other = (com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest) obj;
+    com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse other = (com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse) obj;
 
-    if (!getOrganizationId()
-        .equals(other.getOrganizationId())) return false;
     if (hasSettings() != other.hasSettings()) return false;
     if (hasSettings()) {
       if (!getSettings()
@@ -175,8 +127,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getOrganizationId().hashCode();
     if (hasSettings()) {
       hash = (37 * hash) + SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getSettings().hashCode();
@@ -186,44 +136,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest parseFrom(byte[] data)
+  public static com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest parseFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -231,26 +181,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest parseDelimitedFrom(
+  public static com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -263,7 +213,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest prototype) {
+  public static Builder newBuilder(com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -279,26 +229,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code scalekit.v1.organizations.UpdateUserManagementSettingsRequest}
+   * Protobuf type {@code scalekit.v1.organizations.UpsertUserManagementSettingsResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:scalekit.v1.organizations.UpdateUserManagementSettingsRequest)
-      com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:scalekit.v1.organizations.UpsertUserManagementSettingsResponse)
+      com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.scalekit.grpc.scalekit.v1.organizations.OrganizationsProto.internal_static_scalekit_v1_organizations_UpdateUserManagementSettingsRequest_descriptor;
+      return com.scalekit.grpc.scalekit.v1.organizations.OrganizationsProto.internal_static_scalekit_v1_organizations_UpsertUserManagementSettingsResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.scalekit.grpc.scalekit.v1.organizations.OrganizationsProto.internal_static_scalekit_v1_organizations_UpdateUserManagementSettingsRequest_fieldAccessorTable
+      return com.scalekit.grpc.scalekit.v1.organizations.OrganizationsProto.internal_static_scalekit_v1_organizations_UpsertUserManagementSettingsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest.class, com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest.Builder.class);
+              com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse.class, com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse.Builder.class);
     }
 
-    // Construct using com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest.newBuilder()
+    // Construct using com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -318,7 +268,6 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      organizationId_ = "";
       settings_ = null;
       if (settingsBuilder_ != null) {
         settingsBuilder_.dispose();
@@ -330,17 +279,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.scalekit.grpc.scalekit.v1.organizations.OrganizationsProto.internal_static_scalekit_v1_organizations_UpdateUserManagementSettingsRequest_descriptor;
+      return com.scalekit.grpc.scalekit.v1.organizations.OrganizationsProto.internal_static_scalekit_v1_organizations_UpsertUserManagementSettingsResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest getDefaultInstanceForType() {
-      return com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest.getDefaultInstance();
+    public com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse getDefaultInstanceForType() {
+      return com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest build() {
-      com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest result = buildPartial();
+    public com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse build() {
+      com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -348,20 +297,17 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest buildPartial() {
-      com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest result = new com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest(this);
+    public com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse buildPartial() {
+      com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse result = new com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest result) {
+    private void buildPartial0(com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.organizationId_ = organizationId_;
-      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000001) != 0)) {
         result.settings_ = settingsBuilder_ == null
             ? settings_
             : settingsBuilder_.build();
@@ -404,21 +350,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest) {
-        return mergeFrom((com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest)other);
+      if (other instanceof com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse) {
+        return mergeFrom((com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest other) {
-      if (other == com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest.getDefaultInstance()) return this;
-      if (!other.getOrganizationId().isEmpty()) {
-        organizationId_ = other.organizationId_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
+    public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse other) {
+      if (other == com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse.getDefaultInstance()) return this;
       if (other.hasSettings()) {
         mergeSettings(other.getSettings());
       }
@@ -449,17 +390,12 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              organizationId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 10
-            case 18: {
               input.readMessage(
                   getSettingsFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000001;
               break;
-            } // case 18
+            } // case 10
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -477,90 +413,18 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object organizationId_ = "";
-    /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The organizationId.
-     */
-    public java.lang.String getOrganizationId() {
-      java.lang.Object ref = organizationId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        organizationId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for organizationId.
-     */
-    public com.google.protobuf.ByteString
-        getOrganizationIdBytes() {
-      java.lang.Object ref = organizationId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        organizationId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The organizationId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOrganizationId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      organizationId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearOrganizationId() {
-      organizationId_ = getDefaultInstance().getOrganizationId();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for organizationId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOrganizationIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      organizationId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
     private com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettings settings_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettings, com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettings.Builder, com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettingsOrBuilder> settingsBuilder_;
     /**
-     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 1 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the settings field is set.
      */
     public boolean hasSettings() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 1 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The settings.
      */
     public com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettings getSettings() {
@@ -571,7 +435,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 1 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setSettings(com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettings value) {
       if (settingsBuilder_ == null) {
@@ -582,12 +446,12 @@ private static final long serialVersionUID = 0L;
       } else {
         settingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 1 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setSettings(
         com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettings.Builder builderForValue) {
@@ -596,16 +460,16 @@ private static final long serialVersionUID = 0L;
       } else {
         settingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 1 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeSettings(com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettings value) {
       if (settingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0) &&
+        if (((bitField0_ & 0x00000001) != 0) &&
           settings_ != null &&
           settings_ != com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettings.getDefaultInstance()) {
           getSettingsBuilder().mergeFrom(value);
@@ -616,16 +480,16 @@ private static final long serialVersionUID = 0L;
         settingsBuilder_.mergeFrom(value);
       }
       if (settings_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 1 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearSettings() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       settings_ = null;
       if (settingsBuilder_ != null) {
         settingsBuilder_.dispose();
@@ -635,15 +499,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 1 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettings.Builder getSettingsBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSettingsFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 1 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettingsOrBuilder getSettingsOrBuilder() {
       if (settingsBuilder_ != null) {
@@ -654,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 2 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.scalekit.v1.organizations.OrganizationUserManagementSettings settings = 1 [json_name = "settings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettings, com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettings.Builder, com.scalekit.grpc.scalekit.v1.organizations.OrganizationUserManagementSettingsOrBuilder> 
@@ -682,23 +546,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:scalekit.v1.organizations.UpdateUserManagementSettingsRequest)
+    // @@protoc_insertion_point(builder_scope:scalekit.v1.organizations.UpsertUserManagementSettingsResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:scalekit.v1.organizations.UpdateUserManagementSettingsRequest)
-  private static final com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:scalekit.v1.organizations.UpsertUserManagementSettingsResponse)
+  private static final com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest();
+    DEFAULT_INSTANCE = new com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse();
   }
 
-  public static com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest getDefaultInstance() {
+  public static com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateUserManagementSettingsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<UpdateUserManagementSettingsRequest>() {
+  private static final com.google.protobuf.Parser<UpsertUserManagementSettingsResponse>
+      PARSER = new com.google.protobuf.AbstractParser<UpsertUserManagementSettingsResponse>() {
     @java.lang.Override
-    public UpdateUserManagementSettingsRequest parsePartialFrom(
+    public UpsertUserManagementSettingsResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -717,17 +581,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<UpdateUserManagementSettingsRequest> parser() {
+  public static com.google.protobuf.Parser<UpsertUserManagementSettingsResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UpdateUserManagementSettingsRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpsertUserManagementSettingsResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest getDefaultInstanceForType() {
+  public com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -28,4 +28,6 @@ public interface OrganizationClient {
 
   Organization updateOrganizationSettings(String organizationId, List<OrganizationSettingsFeature> settings);
 
+  OrganizationUserManagementSettings upsertUserManagementSettings(String organizationId, OrganizationUserManagementSettings settings);
+
 }

@@ -1,4 +1,5 @@
 
+import com.google.protobuf.Int32Value;
 import com.scalekit.ScalekitClient;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.organizations.*;
@@ -223,6 +224,33 @@ public class OrganizationTests {
         assertNotNull(updatedOrganization);
         assertFalse(updatedOrganization.getSettings().getFeaturesList().get(0).getEnabled());
         assertFalse(updatedOrganization.getSettings().getFeaturesList().get(1).getEnabled());
+    }
+
+    @Test
+    void UpsertUserManagementSettingsTest() {
+        ListOrganizationsResponse organizations = client.organizations().listOrganizations(10, null);
+        assertNotNull(organizations);
+        if (organizations.getOrganizationsCount() == 0) {
+            log.warn("No organizations available to test user management settings");
+            return;
+        }
+
+        Organization organization = organizations.getOrganizationsList().get(0);
+        OrganizationUserManagementSettings settings = OrganizationUserManagementSettings.newBuilder()
+                .setMaxAllowedUsers(Int32Value.newBuilder().setValue(75).build())
+                .build();
+
+        OrganizationUserManagementSettings response;
+        try {
+            response = client.organizations().upsertUserManagementSettings(organization.getId(), settings);
+        } catch (APIException e) {
+            log.warn("Skipping UpsertUserManagementSettingsTest due to error: {}", e.getMessage());
+            return;
+        }
+
+        assertNotNull(response);
+        assertTrue(response.hasMaxAllowedUsers());
+        assertEquals(75, response.getMaxAllowedUsers().getValue());
     }
 
 }

@@ -9,55 +9,17 @@ public interface OrganizationUserManagementSettingsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 1 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the jitProvisioningWithSsoEnabled field is set.
+   * <code>.google.protobuf.Int32Value max_allowed_users = 1 [json_name = "maxAllowedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the maxAllowedUsers field is set.
    */
-  boolean hasJitProvisioningWithSsoEnabled();
+  boolean hasMaxAllowedUsers();
   /**
-   * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 1 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The jitProvisioningWithSsoEnabled.
+   * <code>.google.protobuf.Int32Value max_allowed_users = 1 [json_name = "maxAllowedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The maxAllowedUsers.
    */
-  com.google.protobuf.BoolValue getJitProvisioningWithSsoEnabled();
+  com.google.protobuf.Int32Value getMaxAllowedUsers();
   /**
-   * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 1 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Int32Value max_allowed_users = 1 [json_name = "maxAllowedUsers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  com.google.protobuf.BoolValueOrBuilder getJitProvisioningWithSsoEnabledOrBuilder();
-
-  /**
-   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 2 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the syncUserProfileOnSignin field is set.
-   */
-  boolean hasSyncUserProfileOnSignin();
-  /**
-   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 2 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The syncUserProfileOnSignin.
-   */
-  com.google.protobuf.BoolValue getSyncUserProfileOnSignin();
-  /**
-   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 2 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnSigninOrBuilder();
-
-  /**
-   * <pre>
-   * Deprecated placeholder to ensure google.protobuf.NullValue is referenced in the schema, preventing unused-definition warnings.
-   * </pre>
-   *
-   * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=1585
-   * @return The enum numeric value on the wire for deprecatedPlaceholder.
-   */
-  @java.lang.Deprecated int getDeprecatedPlaceholderValue();
-  /**
-   * <pre>
-   * Deprecated placeholder to ensure google.protobuf.NullValue is referenced in the schema, preventing unused-definition warnings.
-   * </pre>
-   *
-   * <code>.google.protobuf.NullValue deprecated_placeholder = 99 [json_name = "deprecatedPlaceholder", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @deprecated scalekit.v1.organizations.OrganizationUserManagementSettings.deprecated_placeholder is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=1585
-   * @return The deprecatedPlaceholder.
-   */
-  @java.lang.Deprecated com.google.protobuf.NullValue getDeprecatedPlaceholder();
+  com.google.protobuf.Int32ValueOrBuilder getMaxAllowedUsersOrBuilder();
 }
