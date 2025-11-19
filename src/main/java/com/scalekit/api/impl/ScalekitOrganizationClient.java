@@ -257,5 +257,30 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         },this.credentials);
     }
 
+    /**
+     * upsertUserManagementSettings updates organization-level user management settings such as max allowed users.
+     * @param organizationId Organization identifier
+     * @param settings Desired settings payload
+     * @return Updated OrganizationUserManagementSettings response
+     */
+    @Override
+    public OrganizationUserManagementSettings upsertUserManagementSettings(String organizationId, OrganizationUserManagementSettings settings) {
+        return RetryExecuter.executeWithRetry(() -> {
+            OrganizationUserManagementSettings.Builder settingsBuilder = OrganizationUserManagementSettings.newBuilder();
+            if (settings != null) {
+                settingsBuilder.mergeFrom(settings);
+            }
+            UpsertUserManagementSettingsResponse response = this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .upsertUserManagementSettings(
+                            UpsertUserManagementSettingsRequest.newBuilder()
+                                    .setOrganizationId(organizationId)
+                                    .setSettings(settingsBuilder.build())
+                                    .build()
+                    );
+            return response.getSettings();
+        }, this.credentials);
+    }
+
 
 }
