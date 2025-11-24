@@ -480,35 +480,35 @@ public final class OrganizationServiceGrpc {
     return getDeleteOrganizationSessionSettingsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest,
-      com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse> getUpdateUserManagementSettingsMethod;
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsRequest,
+      com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse> getUpsertUserManagementSettingsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateUserManagementSettings",
-      requestType = com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "UpsertUserManagementSettings",
+      requestType = com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest,
-      com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse> getUpdateUserManagementSettingsMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest, com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse> getUpdateUserManagementSettingsMethod;
-    if ((getUpdateUserManagementSettingsMethod = OrganizationServiceGrpc.getUpdateUserManagementSettingsMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsRequest,
+      com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse> getUpsertUserManagementSettingsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsRequest, com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse> getUpsertUserManagementSettingsMethod;
+    if ((getUpsertUserManagementSettingsMethod = OrganizationServiceGrpc.getUpsertUserManagementSettingsMethod) == null) {
       synchronized (OrganizationServiceGrpc.class) {
-        if ((getUpdateUserManagementSettingsMethod = OrganizationServiceGrpc.getUpdateUserManagementSettingsMethod) == null) {
-          OrganizationServiceGrpc.getUpdateUserManagementSettingsMethod = getUpdateUserManagementSettingsMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest, com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse>newBuilder()
+        if ((getUpsertUserManagementSettingsMethod = OrganizationServiceGrpc.getUpsertUserManagementSettingsMethod) == null) {
+          OrganizationServiceGrpc.getUpsertUserManagementSettingsMethod = getUpsertUserManagementSettingsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsRequest, com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateUserManagementSettings"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpsertUserManagementSettings"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new OrganizationServiceMethodDescriptorSupplier("UpdateUserManagementSettings"))
+                  com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new OrganizationServiceMethodDescriptorSupplier("UpsertUserManagementSettings"))
               .build();
         }
       }
     }
-    return getUpdateUserManagementSettingsMethod;
+    return getUpsertUserManagementSettingsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsRequest,
@@ -709,9 +709,9 @@ public final class OrganizationServiceGrpc {
      * Update user management setting for an organization
      * </pre>
      */
-    default void updateUserManagementSettings(com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateUserManagementSettingsMethod(), responseObserver);
+    default void upsertUserManagementSettings(com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpsertUserManagementSettingsMethod(), responseObserver);
     }
 
     /**
@@ -883,10 +883,10 @@ public final class OrganizationServiceGrpc {
      * Update user management setting for an organization
      * </pre>
      */
-    public void updateUserManagementSettings(com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse> responseObserver) {
+    public void upsertUserManagementSettings(com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateUserManagementSettingsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getUpsertUserManagementSettingsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1033,9 +1033,9 @@ public final class OrganizationServiceGrpc {
      * Update user management setting for an organization
      * </pre>
      */
-    public com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse updateUserManagementSettings(com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest request) {
+    public com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse upsertUserManagementSettings(com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateUserManagementSettingsMethod(), getCallOptions(), request);
+          getChannel(), getUpsertUserManagementSettingsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1196,10 +1196,10 @@ public final class OrganizationServiceGrpc {
      * Update user management setting for an organization
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse> updateUserManagementSettings(
-        com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse> upsertUserManagementSettings(
+        com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateUserManagementSettingsMethod(), getCallOptions()), request);
+          getChannel().newCall(getUpsertUserManagementSettingsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1226,7 +1226,7 @@ public final class OrganizationServiceGrpc {
   private static final int METHODID_GET_ORGANIZATION_SESSION_SETTINGS = 12;
   private static final int METHODID_UPDATE_ORGANIZATION_SESSION_SETTINGS = 13;
   private static final int METHODID_DELETE_ORGANIZATION_SESSION_SETTINGS = 14;
-  private static final int METHODID_UPDATE_USER_MANAGEMENT_SETTINGS = 15;
+  private static final int METHODID_UPSERT_USER_MANAGEMENT_SETTINGS = 15;
   private static final int METHODID_GET_ORGANIZATION_USER_MANAGEMENT_SETTING = 16;
 
   private static final class MethodHandlers<Req, Resp> implements
@@ -1306,9 +1306,9 @@ public final class OrganizationServiceGrpc {
           serviceImpl.deleteOrganizationSessionSettings((com.scalekit.grpc.scalekit.v1.organizations.DeleteOrganizationSessionSettingsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
-        case METHODID_UPDATE_USER_MANAGEMENT_SETTINGS:
-          serviceImpl.updateUserManagementSettings((com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse>) responseObserver);
+        case METHODID_UPSERT_USER_MANAGEMENT_SETTINGS:
+          serviceImpl.upsertUserManagementSettings((com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse>) responseObserver);
           break;
         case METHODID_GET_ORGANIZATION_USER_MANAGEMENT_SETTING:
           serviceImpl.getOrganizationUserManagementSetting((com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationUserManagementSettingsRequest) request,
@@ -1438,12 +1438,12 @@ public final class OrganizationServiceGrpc {
               com.google.protobuf.Empty>(
                 service, METHODID_DELETE_ORGANIZATION_SESSION_SETTINGS)))
         .addMethod(
-          getUpdateUserManagementSettingsMethod(),
+          getUpsertUserManagementSettingsMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsRequest,
-              com.scalekit.grpc.scalekit.v1.organizations.UpdateUserManagementSettingsResponse>(
-                service, METHODID_UPDATE_USER_MANAGEMENT_SETTINGS)))
+              com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsRequest,
+              com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse>(
+                service, METHODID_UPSERT_USER_MANAGEMENT_SETTINGS)))
         .addMethod(
           getGetOrganizationUserManagementSettingMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1514,7 +1514,7 @@ public final class OrganizationServiceGrpc {
               .addMethod(getGetOrganizationSessionSettingsMethod())
               .addMethod(getUpdateOrganizationSessionSettingsMethod())
               .addMethod(getDeleteOrganizationSessionSettingsMethod())
-              .addMethod(getUpdateUserManagementSettingsMethod())
+              .addMethod(getUpsertUserManagementSettingsMethod())
               .addMethod(getGetOrganizationUserManagementSettingMethod())
               .build();
         }

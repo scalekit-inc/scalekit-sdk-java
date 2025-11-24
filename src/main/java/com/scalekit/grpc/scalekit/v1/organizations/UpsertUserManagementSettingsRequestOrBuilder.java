@@ -4,8 +4,8 @@
 // Protobuf Java Version: 3.25.3
 package com.scalekit.grpc.scalekit.v1.organizations;
 
-public interface UpdateUserManagementSettingsRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:scalekit.v1.organizations.UpdateUserManagementSettingsRequest)
+public interface UpsertUserManagementSettingsRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:scalekit.v1.organizations.UpsertUserManagementSettingsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
