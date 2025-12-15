@@ -190,4 +190,16 @@ public interface AuthLogRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getResourceTypeBytes();
+
+  /**
+   * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+   * @return The connectedAccountIdentifier.
+   */
+  java.lang.String getConnectedAccountIdentifier();
+  /**
+   * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+   * @return The bytes for connectedAccountIdentifier.
+   */
+  com.google.protobuf.ByteString
+      getConnectedAccountIdentifierBytes();
 }

@@ -136,6 +136,7 @@ public class ScalekitDomainClient implements DomainClient {
                     .listDomains(
                     ListDomainRequest.newBuilder()
                             .setOrganizationId(organizationId)
+                            .setPageSize(Int32Value.of(100))
                             .build());
             return response.getDomainsList();}, this.credentials);
 
@@ -146,6 +147,7 @@ public class ScalekitDomainClient implements DomainClient {
         return RetryExecuter.executeWithRetry(() -> {
             ListDomainRequest request = ListDomainRequest.newBuilder()
                     .setOrganizationId(organizationId)
+                    .setPageSize(Int32Value.of(100))
                     .setDomainType(domainType)
                     .build();
             ListDomainResponse response = this.domainStub

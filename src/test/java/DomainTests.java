@@ -18,9 +18,9 @@ public class DomainTests {
     @BeforeAll
     static void init(){
         //Init client
-        String environmentUrl = System.getenv("SCALEKIT_ENVIRONMENT_URL");
-        String  clientId = System.getenv("SCALEKIT_CLIENT_ID");
-        String apiSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
+        String environmentUrl = "https://scalekit-5ymxt5aaaena-dev.scalekit.cloud";
+        String  clientId = "skc_67019057341137178";
+        String apiSecret = "test_K5ldnscrtxCfgARXFBednkSqCewjVDybAhH1Jx2gyRkbnCNPbVXbDuvCLbr8fGij";
 
         client = new ScalekitClient(environmentUrl, clientId, apiSecret);
     }

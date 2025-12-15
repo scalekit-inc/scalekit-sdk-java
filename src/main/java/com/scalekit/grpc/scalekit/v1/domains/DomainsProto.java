@@ -131,340 +131,350 @@ public final class DomainsProto {
       "\022\232\001\n\006domain\030\001 \001(\0132\033.scalekit.v1.domains." +
       "DomainBe\222Ab2`The newly created domain ob" +
       "ject with all configuration details and " +
-      "system-generated identifiers.R\006domain\"\277\004" +
-      "\n\014CreateDomain\022\362\001\n\006domain\030\001 \001(\tB\331\001\222A\310\0012\257" +
+      "system-generated identifiers.R\006domain\"\346\004" +
+      "\n\014CreateDomain\022\366\001\n\006domain\030\001 \001(\tB\335\001\222A\314\0012\263" +
       "\001The domain name to be configured. Must " +
       "be a valid business domain you control. " +
-      "Public disposable domains (gmail.com, ou" +
-      "tlook.com, etc.) are automatically block" +
-      "ed for security.J\024\"customerdomain.com\"\272H" +
-      "\nr\005\020\004\030\377\001\310\001\001R\006domain\022\271\002\n\013domain_type\030\002 \001(" +
-      "\0162\037.scalekit.v1.domains.DomainTypeB\366\001\222A\362" +
-      "\0012\330\001The type of domain configuration. AL" +
-      "LOWED_EMAIL_DOMAIN enables automatic org" +
-      "anization suggestions for users with mat" +
-      "ching email domains during sign-in/sign-" +
-      "up. ORGANIZATION_DOMAIN is for primary o" +
-      "rganization domains.J\025\"ORGANIZATION_DOMA" +
-      "IN\"R\ndomainType\"\204\007\n\023UpdateDomainRequest\022" +
-      "\313\001\n\017organization_id\030\001 \001(\tB\237\001\222A\222\0012wScalek" +
-      "it-generated unique identifier for the o" +
-      "rganization. Use either this or external" +
-      "_id to identify the organization.J\027\"org_" +
-      "81667076086825451\"\272H\006r\004\020\001\030 H\000R\016organizat" +
-      "ionId\022\315\001\n\013external_id\030\002 \001(\tB\251\001\222A\215\0012{Your" +
-      " application\'s unique identifier for the" +
-      " organization. Alternative to organizati" +
-      "on_id for identifying the organization.J" +
-      "\016\"tenant_12345\"\272H\006r\004\020\001\030 \372\322\344\223\002\t\022\007PREVIEWH" +
-      "\000R\nexternalId\022\237\001\n\rconnection_id\030\003 \001(\tBu\222" +
-      "Ac2OOptional updated identity provider c" +
-      "onnection ID to associate with this doma" +
-      "in.J\020\"conn_123456789\"\372\322\344\223\002\t\022\007PREVIEWH\001R\014" +
-      "connectionId\210\001\001\022o\n\002id\030\004 \001(\tB_\222A\\2AScalek" +
-      "it-generated unique identifier of the do" +
-      "main to be updated.J\027\"dom_88351643129225" +
-      "005\"R\002id\022\233\001\n\006domain\030\005 \001(\0132!.scalekit.v1." +
-      "domains.UpdateDomainB`\222A]2[Domain update" +
-      " configuration. Currently empty as domai" +
-      "n name cannot be changed once created.R\006" +
-      "domainB\014\n\nidentitiesB\020\n\016_connection_id\"\016" +
-      "\n\014UpdateDomain\"\245\001\n\024UpdateDomainResponse\022" +
-      "\214\001\n\006domain\030\001 \001(\0132\033.scalekit.v1.domains.D" +
-      "omainBW\222AT2RThe updated domain object re" +
-      "flecting all changes made to the domain " +
-      "configuration.R\006domain\"\255\004\n\020GetDomainRequ" +
-      "est\022\313\001\n\017organization_id\030\001 \001(\tB\237\001\222A\222\0012wSc" +
-      "alekit-generated unique identifier for t" +
-      "he organization. Use either this or exte" +
-      "rnal_id to identify the organization.J\027\"" +
-      "org_81667076086825451\"\272H\006r\004\020\001\030 H\000R\016organ" +
-      "izationId\022\315\001\n\013external_id\030\002 \001(\tB\251\001\222A\215\0012{" +
-      "Your application\'s unique identifier for" +
-      " the organization. Alternative to organi" +
-      "zation_id for identifying the organizati" +
-      "on.J\016\"tenant_12345\"\272H\006r\004\020\001\030 \372\322\344\223\002\t\022\007PREV" +
-      "IEWH\000R\nexternalId\022m\n\002id\030\003 \001(\tB]\222AZ2?Scal" +
-      "ekit-generated unique identifier of the " +
-      "domain to retrieve.J\027\"dom_88351643129225" +
-      "005\"R\002idB\014\n\nidentities\"\252\001\n\021GetDomainResp" +
-      "onse\022\224\001\n\006domain\030\001 \001(\0132\033.scalekit.v1.doma" +
-      "ins.DomainB_\222A\\2ZThe requested domain ob" +
-      "ject with complete details including tim" +
-      "estamps, and configuration.R\006domain\"\353\005\n\023" +
-      "DeleteDomainRequest\022{\n\002id\030\001 \001(\tBk\222Ah2MSc" +
-      "alekit-generated unique identifier of th" +
-      "e domain to be permanently deleted.J\027\"do" +
-      "m_88351643129225005\"R\002id\022\313\001\n\017organizatio" +
-      "n_id\030\002 \001(\tB\237\001\222A\222\0012wScalekit-generated un" +
-      "ique identifier for the organization. Us" +
-      "e either this or external_id to identify" +
-      " the organization.J\027\"org_816670760868254" +
-      "51\"\272H\006r\004\020\001\030 H\000R\016organizationId\022\315\001\n\013exter" +
-      "nal_id\030\003 \001(\tB\251\001\222A\215\0012{Your application\'s " +
-      "unique identifier for the organization. " +
-      "Alternative to organization_id for ident" +
-      "ifying the organization.J\016\"tenant_12345\"" +
-      "\272H\006r\004\020\001\030 \372\322\344\223\002\t\022\007PREVIEWH\000R\nexternalId\022\230" +
-      "\001\n\rconnection_id\030\004 \001(\tBn\222A\\2HOptional co" +
-      "nnection ID for additional validation du" +
-      "ring domain deletion.J\020\"conn_123456789\"\372" +
-      "\322\344\223\002\t\022\007PREVIEWH\001R\014connectionId\210\001\001B\014\n\nide" +
-      "ntitiesB\020\n\016_connection_id\"\371\n\n\021ListDomain" +
-      "Request\022\313\001\n\017organization_id\030\001 \001(\tB\237\001\222A\222\001" +
-      "2wScalekit-generated unique identifier f" +
-      "or the organization. Use either this or " +
-      "external_id to identify the organization" +
-      ".J\027\"org_81667076086825451\"\272H\006r\004\020\001\030 H\000R\016o" +
-      "rganizationId\022\315\001\n\013external_id\030\002 \001(\tB\251\001\222A" +
-      "\215\0012{Your application\'s unique identifier" +
-      " for the organization. Alternative to or" +
-      "ganization_id for identifying the organi" +
-      "zation.J\016\"tenant_12345\"\272H\006r\004\020\001\030 \372\322\344\223\002\t\022\007" +
-      "PREVIEWH\000R\nexternalId\022\250\001\n\rconnection_id\030" +
-      "\003 \001(\tB~\222Al2XOptional filter to list doma" +
-      "ins associated with a specific identity " +
-      "provider connection.J\020\"conn_123456789\"\372\322" +
-      "\344\223\002\t\022\007PREVIEWH\001R\014connectionId\210\001\001\022\253\001\n\007inc" +
-      "lude\030\004 \001(\tB\213\001\222A\207\0012mOptional comma-separa" +
-      "ted list of additional fields to include" +
-      " in the response (e.g., \'verification_de" +
-      "tails\').J\026\"verification_details\"H\002R\007incl" +
-      "ude\210\001\001\022\217\001\n\tpage_size\030\005 \001(\0132\033.google.prot" +
-      "obuf.Int32ValueBU\222AR2LMaximum number of " +
-      "domains to return per page. Default is 3" +
-      "0, maximum is 100.J\00230R\010pageSize\022\202\001\n\013pag" +
-      "e_number\030\006 \001(\0132\033.google.protobuf.Int32Va" +
-      "lueBD\222AA2<Page number to retrieve (0-bas" +
-      "ed). Use 0 for the first page.J\0010R\npageN" +
-      "umber\022\251\002\n\013domain_type\030\007 \001(\0162\037.scalekit.v" +
-      "1.domains.DomainTypeB\346\001\222A\342\0012\307\001ALLOWED_EM" +
-      "AIL_DOMAIN enables users to join an orga" +
-      "nization with automatic suggestions in t" +
-      "he organization switcher.\n\nORGANIZATION_" +
-      "DOMAIN is used to identify the SSO conne" +
-      "ction for the organization.\n\nJ\026\"ALLOWED_" +
-      "EMAIL_DOMAIN\"R\ndomainTypeB\014\n\nidentitiesB" +
-      "\020\n\016_connection_idB\n\n\010_include\"\335\004\n\023Verify" +
-      "DomainRequest\022\313\001\n\017organization_id\030\001 \001(\tB" +
-      "\237\001\222A\222\0012wScalekit-generated unique identi" +
-      "fier for the organization. Use either th" +
-      "is or external_id to identify the organi" +
-      "zation.J\027\"org_81667076086825451\"\272H\006r\004\020\001\030" +
-      " H\000R\016organizationId\022\315\001\n\013external_id\030\002 \001(" +
-      "\tB\251\001\222A\215\0012{Your application\'s unique iden" +
-      "tifier for the organization. Alternative" +
-      " to organization_id for identifying the " +
-      "organization.J\016\"tenant_12345\"\272H\006r\004\020\001\030 \372\322" +
-      "\344\223\002\t\022\007PREVIEWH\000R\nexternalId\022\231\001\n\002id\030\004 \001(\t" +
-      "B\210\001\222Aw2\\Scalekit-generated unique identi" +
-      "fier of the domain to verify. Must start" +
-      " with \'dom_\' prefix.J\027\"dom_8835164312922" +
-      "5005\"\272H\013r\t\020\001\030 :\003domR\002idB\014\n\nidentities\"\342\002" +
-      "\n\022ListDomainResponse\022M\n\tpage_size\030\001 \001(\005B" +
-      "0\222A-2(Number of domains returned in this" +
-      " page.J\0011R\010pageSize\022X\n\013page_number\030\002 \001(\005" +
-      "B7\222A42/Current page number in the pagina" +
-      "tion sequence.J\0011R\npageNumber\022\242\001\n\007domain" +
-      "s\030\003 \003(\0132\033.scalekit.v1.domains.DomainBk\222A" +
-      "h2fArray of domain objects containing al" +
-      "l domain details including verification " +
-      "status and configuration.R\007domains\"\241\001\n\033L" +
-      "istAuthorizedDomainRequest\022\201\001\n\006origin\030\001 " +
-      "\001(\tBi\222Af2OThe origin URL to check for au" +
-      "thorized domains (e.g., https://app.exam" +
-      "ple.com).J\023\"https://myapp.com\"R\006origin\"\260" +
-      "\001\n\034ListAuthorizedDomainResponse\022\217\001\n\007doma" +
-      "ins\030\001 \003(\tBu\222Ar2LArray of domain names th" +
-      "at are authorized for use with the speci" +
-      "fied origin.J\"[\"example.com\", \"app.examp" +
-      "le.com\"]R\007domains\"\266\016\n\006Domain\022j\n\002id\030\001 \001(\t" +
-      "BZ\222AW2<Scalekit-generated unique identif" +
-      "ier for this domain record.J\027\"dom_883516" +
-      "43129225005\"R\002id\022\264\001\n\006domain\030\002 \001(\tB\233\001\222A\227\001" +
-      "2\177The business domain name that was conf" +
-      "igured for allowed email domain function" +
-      "ality (e.g., company.com, subdomain.comp" +
-      "any.com).J\024\"customerdomain.com\"R\006domain\022" +
-      "x\n\016environment_id\030\003 \001(\tBQ\222AN23The enviro" +
-      "nment ID where this domain is configured" +
-      ".J\027\"env_58345499215790610\"R\renvironmentI" +
-      "d\022t\n\017organization_id\030\004 \001(\tBK\222AH2-The org" +
-      "anization to which the domain belongs.J\027" +
-      "\"org_81667076086825451\"R\016organizationId\022" +
-      "\250\001\n\016txt_record_key\030\006 \001(\tB\201\001\222Ao2GThe DNS " +
-      "TXT record key that should be added to v" +
-      "erify domain ownership.J$\"scalekit-verif" +
-      "ication=abc123def456\"\372\322\344\223\002\t\022\007PREVIEWR\014tx" +
-      "tRecordKey\022\250\001\n\021txt_record_secret\030\007 \001(\tB|" +
-      "\222Aj2IThe DNS TXT record value that shoul" +
-      "d be added to verify domain ownership.J\035" +
-      "\"scalekit-verification-value\"\372\322\344\223\002\t\022\007PRE" +
-      "VIEWR\017txtRecordSecret\022\333\002\n\023verification_s" +
-      "tatus\030\010 \001(\0162\'.scalekit.v1.domains.Verifi" +
-      "cationStatusB\200\002\222A\355\0012\331\001Current verificati" +
-      "on status of the domain. AUTO_VERIFIED m" +
-      "eans the domain was automatically verifi" +
-      "ed without DNS changes, VERIFIED means m" +
-      "anually verified via DNS TXT record, PEN" +
-      "DING requires manual DNS configuration.J" +
-      "\017\"AUTO_VERIFIED\"\372\322\344\223\002\t\022\007PREVIEWR\022verific" +
-      "ationStatus\022\212\001\n\013create_time\030\t \001(\0132\032.goog" +
-      "le.protobuf.TimestampBM\222AJ2,Timestamp wh" +
-      "en the domain was first created.J\032\"2025-" +
-      "09-01T12:14:43.100Z\"R\ncreateTime\022\217\001\n\013upd" +
-      "ate_time\030\n \001(\0132\032.google.protobuf.Timesta" +
-      "mpBR\222AO2+Timestamp when the domain was l" +
-      "ast updated.J \"2025-09-01T12:14:43.11045" +
-      "5169Z\"R\nupdateTime\022\271\002\n\013domain_type\030\014 \001(\016" +
-      "2\037.scalekit.v1.domains.DomainTypeB\366\001\222A\362\001" +
-      "2\330\001The type of domain configuration. ALL" +
-      "OWED_EMAIL_DOMAIN enables automatic orga" +
-      "nization suggestions for users with matc" +
-      "hing email domains during sign-in/sign-u" +
-      "p. ORGANIZATION_DOMAIN is for primary or" +
-      "ganization domains.J\025\"ORGANIZATION_DOMAI" +
-      "N\"R\ndomainTypeJ\004\010\005\020\006J\004\010\013\020\014*s\n\022Verificati" +
-      "onStatus\022#\n\037VERIFICATION_STATUS_UNSPECIF" +
-      "IED\020\000\022\013\n\007PENDING\020\001\022\014\n\010VERIFIED\020\002\022\n\n\006FAIL" +
-      "ED\020\003\022\021\n\rAUTO_VERIFIED\020\004*\\\n\nDomainType\022\033\n" +
-      "\027DOMAIN_TYPE_UNSPECIFIED\020\000\022\030\n\024ALLOWED_EM" +
-      "AIL_DOMAIN\020\001\022\027\n\023ORGANIZATION_DOMAIN\020\0022\247(" +
-      "\n\rDomainService\022\371\006\n\014CreateDomain\022(.scale" +
-      "kit.v1.domains.CreateDomainRequest\032).sca" +
-      "lekit.v1.domains.CreateDomainResponse\"\223\006" +
-      "\222A\312\005\n\007Domains\022\rCreate Domain\032\262\003Creates a" +
-      " new domain and associates it with the s" +
-      "pecified organization. The domain can be" +
-      " configured as either an ALLOWED_EMAIL_D" +
-      "OMAIN for automatic organization suggest" +
-      "ions during user sign-in/sign-up, or as " +
-      "an ORGANIZATION_DOMAIN for SSO connectio" +
-      "n identification.\n\nThe domain must be a " +
-      "valid, business email domain that you co" +
-      "ntrol. Public disposable domains (gmail." +
-      "com, outlook.com, etc.) are automaticall" +
-      "y blocked for security.\n\nJX\n\003200\022Q\n Succ" +
-      "essfully created the domain.\022-\n+\032).scale" +
-      "kit.v1.domains.CreateDomainResponseJ\240\001\n\003" +
-      "400\022\230\001\noInvalid request \342\200\224 common cause" +
-      "s invalid domain format, public or dispo" +
-      "sable domain, or domain already exists.\022" +
-      "%\n#\032!#/definitions/errdetailsErrorInfo\202\265" +
-      "\030\002\030t\202\323\344\223\0029\"//api/v1/organizations/{organ" +
-      "ization_id}/domains:\006domain\022\331\005\n\014UpdateDo" +
-      "main\022(.scalekit.v1.domains.UpdateDomainR" +
-      "equest\032).scalekit.v1.domains.UpdateDomai" +
-      "nResponse\"\363\004\222A\226\004\n\007Domains\022\rUpdate Domain" +
-      "\032\241\003Updates an existing domain\'s configur" +
-      "ation within an organization. Currently " +
-      "supports updating domain metadata and co" +
-      "nfiguration settings.\n\nUse this endpoint" +
-      " to modify domain properties after initi" +
-      "al creation. Note that the domain name i" +
-      "tself cannot be changed once created.\n\nT" +
-      "he domain must belong to the specified o" +
-      "rganization and you must provide either " +
-      "the organization ID or external ID along" +
-      " with the domain ID.JX\n\003200\022Q\n Successfu" +
-      "lly updated the domain.\022-\n+\032).scalekit.v" +
-      "1.domains.UpdateDomainResponse\202\265\030\002\030t\372\322\344\223" +
-      "\002\t\022\007PREVIEW\202\323\344\223\002>24/api/v1/organizations" +
-      "/{organization_id}/domains/{id}:\006domain\022" +
-      "\352\006\n\014VerifyDomain\022(.scalekit.v1.domains.V" +
-      "erifyDomainRequest\032\032.google.protobuf.Boo" +
-      "lValue\"\223\006\222A\267\005\n\007Domains\022\rVerify Domain\032\236\004" +
-      "Initiates domain ownership verification " +
-      "by checking the DNS TXT record that shou" +
-      "ld be added to the domain\'s DNS configur" +
-      "ation.\n\nUse this endpoint to manually tr" +
-      "igger verification for domains that are " +
-      "in PENDING status. The system will check" +
-      " for the required TXT record and update " +
-      "the verification status accordingly.\n\nFo" +
-      "r automatically verified domains, this e" +
-      "ndpoint will return true immediately. Fo" +
-      "r domains requiring manual verification," +
-      " ensure the TXT record has been properly" +
-      " configured in your DNS settings before " +
-      "calling this endpoint.J|\n\003200\022u\nSDomain " +
-      "verification result. Returns true if ver" +
-      "ification succeeds, false otherwise.\022\036\n\034" +
-      "\032\032.google.protobuf.BoolValue\202\265\030\002\030t\372\322\344\223\002\t" +
-      "\022\007PREVIEW\202\323\344\223\002=2;/api/v1/organizations/{" +
-      "organization_id}/domains/{id}:verify\022\251\003\n" +
-      "\tGetDomain\022%.scalekit.v1.domains.GetDoma" +
-      "inRequest\032&.scalekit.v1.domains.GetDomai" +
-      "nResponse\"\314\002\222A\206\002\n\007Domains\022\nGet Domain\032\215\001" +
-      "Retrieves complete details for a specifi" +
-      "c allowed email domain or organization d" +
-      "omain, including timestamps, and configu" +
-      "ration information.\n\nJ_\n\003200\022X\n*Successf" +
-      "ully retrieved the domain details.\022*\n(\032&" +
-      ".scalekit.v1.domains.GetDomainResponse\202\265" +
-      "\030\002\030t\202\323\344\223\0026\0224/api/v1/organizations/{organ" +
-      "ization_id}/domains/{id}\022\342\003\n\014DeleteDomai" +
-      "n\022(.scalekit.v1.domains.DeleteDomainRequ" +
-      "est\032\026.google.protobuf.Empty\"\217\003\222A\311\002\n\007Doma" +
-      "ins\022\rDelete Domain\032\207\002Permanently removes" +
-      " an allowed email domain or organization" +
-      " domain from the organization configurat" +
-      "ion.\n\nUse this endpoint when you need to" +
-      " remove a domain that is no longer trust" +
-      "ed or when consolidating multiple domain" +
-      "s. Note that this action cannot be undon" +
-      "e.\n\nJ%\n\003200\022\036\n\034Domain successfully delet" +
-      "ed.\202\265\030\002\030t\202\323\344\223\0026*4/api/v1/organizations/{" +
-      "organization_id}/domains/{id}\022\236\005\n\013ListDo" +
-      "mains\022&.scalekit.v1.domains.ListDomainRe" +
-      "quest\032\'.scalekit.v1.domains.ListDomainRe" +
-      "sponse\"\275\004\222A\374\003\n\007Domains\022\014List Domains\032\377\002R" +
-      "etrieves a paginated list of all allowed" +
-      " email domains and organization domains " +
-      "configured for the specified organizatio" +
-      "n.Use this endpoint to view and manage d" +
-      "omain configurations.\n\nALLOWED_EMAIL_DOM" +
-      "AIN enables users to join an organizatio" +
-      "n with automatic suggestions in the orga" +
-      "nization switcher.\n\nORGANIZATION_DOMAIN " +
-      "is used to identify the SSO connection f" +
-      "or the organization.\n\nJa\n\003200\022Z\n+Success" +
-      "fully retrieved the list of domains.\022+\n)" +
-      "\032\'.scalekit.v1.domains.ListDomainRespons" +
-      "e\202\265\030\002\030t\202\323\344\223\0021\022//api/v1/organizations/{or" +
-      "ganization_id}/domains\022\220\005\n\025ListAuthorize" +
-      "dDomains\0220.scalekit.v1.domains.ListAutho" +
-      "rizedDomainRequest\0321.scalekit.v1.domains" +
-      ".ListAuthorizedDomainResponse\"\221\004\222A\330\003\n\007Do" +
-      "mains\022\027List Authorized Domains\032\273\002Retriev" +
-      "es a list of domains that are authorized" +
-      " for use with the specified origin URL.\n" +
-      "\nUse this endpoint to validate whether a" +
-      " particular domain is allowed for authen" +
-      "tication or other domain-restricted oper" +
-      "ations.\n\nThis is commonly used by fronte" +
-      "nd applications to verify domain allowli" +
-      "sts and CORS configurations.Jv\n\003200\022o\n6S" +
-      "uccessfully retrieved the list of author" +
-      "ized domains.\0225\n3\0321.scalekit.v1.domains." +
-      "ListAuthorizedDomainResponse\202\265\030\002\030\001\372\322\344\223\002\t" +
-      "\022\007PREVIEW\202\323\344\223\002\032\022\030/api/v1/domains/{origin" +
-      "}\032\213\003\222A\207\003\n\007Domains\022\373\002Domain management fo" +
-      "r organization email domains and SSO con" +
-      "figurations. This service provides endpo" +
-      "ints for creating, retrieving, listing, " +
-      "and deleting domains that are associated" +
-      " with organizations. It supports domain " +
-      "type configuration for email domain allo" +
-      "wlists and SSO identification, and provi" +
-      "des comprehensive domain metadata includ" +
-      "ing status and connection associations.B" +
-      "\326\001\n%com.scalekit.grpc.scalekit.v1.domain" +
-      "sB\014DomainsProtoP\001Z1github.com/scalekit-i" +
-      "nc/scalekit/pkg/grpc/domains\242\002\003SVD\252\002\023Sca" +
-      "lekit.V1.Domains\312\002\023Scalekit\\V1\\Domains\342\002" +
-      "\037Scalekit\\V1\\Domains\\GPBMetadata\352\002\025Scale" +
-      "kit::V1::Domainsb\006proto3"
+      "Public and disposable domains (gmail.com" +
+      ", outlook.com, etc.) are automatically b" +
+      "locked for security.J\024\"customerdomain.co" +
+      "m\"\272H\nr\005\020\004\030\377\001\310\001\001R\006domain\022\334\002\n\013domain_type\030" +
+      "\002 \001(\0162\037.scalekit.v1.domains.DomainTypeB\231" +
+      "\002\222A\225\0022\373\001The domain type.\n- ALLOWED_EMAIL" +
+      "_DOMAIN: trusted domain used to suggest " +
+      "the organization in the organization swi" +
+      "tcher during sign-in/sign-up.\n- ORGANIZA" +
+      "TION_DOMAIN: SSO discovery domain used t" +
+      "o route users to the correct SSO provide" +
+      "r and enforce SSO.\nJ\025\"ORGANIZATION_DOMAI" +
+      "N\"R\ndomainType\"\204\007\n\023UpdateDomainRequest\022\313" +
+      "\001\n\017organization_id\030\001 \001(\tB\237\001\222A\222\0012wScaleki" +
+      "t-generated unique identifier for the or" +
+      "ganization. Use either this or external_" +
+      "id to identify the organization.J\027\"org_8" +
+      "1667076086825451\"\272H\006r\004\020\001\030 H\000R\016organizati" +
+      "onId\022\315\001\n\013external_id\030\002 \001(\tB\251\001\222A\215\0012{Your " +
+      "application\'s unique identifier for the " +
+      "organization. Alternative to organizatio" +
+      "n_id for identifying the organization.J\016" +
+      "\"tenant_12345\"\272H\006r\004\020\001\030 \372\322\344\223\002\t\022\007PREVIEWH\000" +
+      "R\nexternalId\022\237\001\n\rconnection_id\030\003 \001(\tBu\222A" +
+      "c2OOptional updated identity provider co" +
+      "nnection ID to associate with this domai" +
+      "n.J\020\"conn_123456789\"\372\322\344\223\002\t\022\007PREVIEWH\001R\014c" +
+      "onnectionId\210\001\001\022o\n\002id\030\004 \001(\tB_\222A\\2AScaleki" +
+      "t-generated unique identifier of the dom" +
+      "ain to be updated.J\027\"dom_883516431292250" +
+      "05\"R\002id\022\233\001\n\006domain\030\005 \001(\0132!.scalekit.v1.d" +
+      "omains.UpdateDomainB`\222A]2[Domain update " +
+      "configuration. Currently empty as domain" +
+      " name cannot be changed once created.R\006d" +
+      "omainB\014\n\nidentitiesB\020\n\016_connection_id\"\016\n" +
+      "\014UpdateDomain\"\245\001\n\024UpdateDomainResponse\022\214" +
+      "\001\n\006domain\030\001 \001(\0132\033.scalekit.v1.domains.Do" +
+      "mainBW\222AT2RThe updated domain object ref" +
+      "lecting all changes made to the domain c" +
+      "onfiguration.R\006domain\"\255\004\n\020GetDomainReque" +
+      "st\022\313\001\n\017organization_id\030\001 \001(\tB\237\001\222A\222\0012wSca" +
+      "lekit-generated unique identifier for th" +
+      "e organization. Use either this or exter" +
+      "nal_id to identify the organization.J\027\"o" +
+      "rg_81667076086825451\"\272H\006r\004\020\001\030 H\000R\016organi" +
+      "zationId\022\315\001\n\013external_id\030\002 \001(\tB\251\001\222A\215\0012{Y" +
+      "our application\'s unique identifier for " +
+      "the organization. Alternative to organiz" +
+      "ation_id for identifying the organizatio" +
+      "n.J\016\"tenant_12345\"\272H\006r\004\020\001\030 \372\322\344\223\002\t\022\007PREVI" +
+      "EWH\000R\nexternalId\022m\n\002id\030\003 \001(\tB]\222AZ2?Scale" +
+      "kit-generated unique identifier of the d" +
+      "omain to retrieve.J\027\"dom_883516431292250" +
+      "05\"R\002idB\014\n\nidentities\"\266\001\n\021GetDomainRespo" +
+      "nse\022\240\001\n\006domain\030\001 \001(\0132\033.scalekit.v1.domai" +
+      "ns.DomainBk\222Ah2fThe requested domain obj" +
+      "ect with complete details including doma" +
+      "in type, timestamps and configuration.R\006" +
+      "domain\"\353\005\n\023DeleteDomainRequest\022{\n\002id\030\001 \001" +
+      "(\tBk\222Ah2MScalekit-generated unique ident" +
+      "ifier of the domain to be permanently de" +
+      "leted.J\027\"dom_88351643129225005\"R\002id\022\313\001\n\017" +
+      "organization_id\030\002 \001(\tB\237\001\222A\222\0012wScalekit-g" +
+      "enerated unique identifier for the organ" +
+      "ization. Use either this or external_id " +
+      "to identify the organization.J\027\"org_8166" +
+      "7076086825451\"\272H\006r\004\020\001\030 H\000R\016organizationI" +
+      "d\022\315\001\n\013external_id\030\003 \001(\tB\251\001\222A\215\0012{Your app" +
+      "lication\'s unique identifier for the org" +
+      "anization. Alternative to organization_i" +
+      "d for identifying the organization.J\016\"te" +
+      "nant_12345\"\272H\006r\004\020\001\030 \372\322\344\223\002\t\022\007PREVIEWH\000R\ne" +
+      "xternalId\022\230\001\n\rconnection_id\030\004 \001(\tBn\222A\\2H" +
+      "Optional connection ID for additional va" +
+      "lidation during domain deletion.J\020\"conn_" +
+      "123456789\"\372\322\344\223\002\t\022\007PREVIEWH\001R\014connectionI" +
+      "d\210\001\001B\014\n\nidentitiesB\020\n\016_connection_id\"\254\013\n" +
+      "\021ListDomainRequest\022\313\001\n\017organization_id\030\001" +
+      " \001(\tB\237\001\222A\222\0012wScalekit-generated unique i" +
+      "dentifier for the organization. Use eith" +
+      "er this or external_id to identify the o" +
+      "rganization.J\027\"org_81667076086825451\"\272H\006" +
+      "r\004\020\001\030 H\000R\016organizationId\022\315\001\n\013external_id" +
+      "\030\002 \001(\tB\251\001\222A\215\0012{Your application\'s unique" +
+      " identifier for the organization. Altern" +
+      "ative to organization_id for identifying" +
+      " the organization.J\016\"tenant_12345\"\272H\006r\004\020" +
+      "\001\030 \372\322\344\223\002\t\022\007PREVIEWH\000R\nexternalId\022\250\001\n\rcon" +
+      "nection_id\030\003 \001(\tB~\222Al2XOptional filter t" +
+      "o list domains associated with a specifi" +
+      "c identity provider connection.J\020\"conn_1" +
+      "23456789\"\372\322\344\223\002\t\022\007PREVIEWH\001R\014connectionId" +
+      "\210\001\001\022\253\001\n\007include\030\004 \001(\tB\213\001\222A\207\0012mOptional c" +
+      "omma-separated list of additional fields" +
+      " to include in the response (e.g., \'veri" +
+      "fication_details\').J\026\"verification_detai" +
+      "ls\"H\002R\007include\210\001\001\022\217\001\n\tpage_size\030\005 \001(\0132\033." +
+      "google.protobuf.Int32ValueBU\222AR2LMaximum" +
+      " number of domains to return per page. D" +
+      "efault is 30, maximum is 100.J\00230R\010pageS" +
+      "ize\022\202\001\n\013page_number\030\006 \001(\0132\033.google.proto" +
+      "buf.Int32ValueBD\222AA2<Page number to retr" +
+      "ieve (0-based). Use 0 for the first page" +
+      ".J\0010R\npageNumber\022\334\002\n\013domain_type\030\007 \001(\0162\037" +
+      ".scalekit.v1.domains.DomainTypeB\231\002\222A\225\0022\373" +
+      "\001The domain type.\n- ALLOWED_EMAIL_DOMAIN" +
+      ": trusted domain used to suggest the org" +
+      "anization in the organization switcher d" +
+      "uring sign-in/sign-up.\n- ORGANIZATION_DO" +
+      "MAIN: SSO discovery domain used to route" +
+      " users to the correct SSO provider and e" +
+      "nforce SSO.\nJ\025\"ORGANIZATION_DOMAIN\"R\ndom" +
+      "ainTypeB\014\n\nidentitiesB\020\n\016_connection_idB" +
+      "\n\n\010_include\"\335\004\n\023VerifyDomainRequest\022\313\001\n\017" +
+      "organization_id\030\001 \001(\tB\237\001\222A\222\0012wScalekit-g" +
+      "enerated unique identifier for the organ" +
+      "ization. Use either this or external_id " +
+      "to identify the organization.J\027\"org_8166" +
+      "7076086825451\"\272H\006r\004\020\001\030 H\000R\016organizationI" +
+      "d\022\315\001\n\013external_id\030\002 \001(\tB\251\001\222A\215\0012{Your app" +
+      "lication\'s unique identifier for the org" +
+      "anization. Alternative to organization_i" +
+      "d for identifying the organization.J\016\"te" +
+      "nant_12345\"\272H\006r\004\020\001\030 \372\322\344\223\002\t\022\007PREVIEWH\000R\ne" +
+      "xternalId\022\231\001\n\002id\030\004 \001(\tB\210\001\222Aw2\\Scalekit-g" +
+      "enerated unique identifier of the domain" +
+      " to verify. Must start with \'dom_\' prefi" +
+      "x.J\027\"dom_88351643129225005\"\272H\013r\t\020\001\030 :\003do" +
+      "mR\002idB\014\n\nidentities\"\342\002\n\022ListDomainRespon" +
+      "se\022M\n\tpage_size\030\001 \001(\005B0\222A-2(Number of do" +
+      "mains returned in this page.J\0011R\010pageSiz" +
+      "e\022X\n\013page_number\030\002 \001(\005B7\222A42/Current pag" +
+      "e number in the pagination sequence.J\0011R" +
+      "\npageNumber\022\242\001\n\007domains\030\003 \003(\0132\033.scalekit" +
+      ".v1.domains.DomainBk\222Ah2fArray of domain" +
+      " objects containing all domain details i" +
+      "ncluding verification status and configu" +
+      "ration.R\007domains\"\241\001\n\033ListAuthorizedDomai" +
+      "nRequest\022\201\001\n\006origin\030\001 \001(\tBi\222Af2OThe orig" +
+      "in URL to check for authorized domains (" +
+      "e.g., https://app.example.com).J\023\"https:" +
+      "//myapp.com\"R\006origin\"\260\001\n\034ListAuthorizedD" +
+      "omainResponse\022\217\001\n\007domains\030\001 \003(\tBu\222Ar2LAr" +
+      "ray of domain names that are authorized " +
+      "for use with the specified origin.J\"[\"ex" +
+      "ample.com\", \"app.example.com\"]R\007domains\"" +
+      "\266\016\n\006Domain\022j\n\002id\030\001 \001(\tBZ\222AW2<Scalekit-ge" +
+      "nerated unique identifier for this domai" +
+      "n record.J\027\"dom_88351643129225005\"R\002id\022\264" +
+      "\001\n\006domain\030\002 \001(\tB\233\001\222A\227\0012\177The business dom" +
+      "ain name that was configured for allowed" +
+      " email domain functionality (e.g., compa" +
+      "ny.com, subdomain.company.com).J\024\"custom" +
+      "erdomain.com\"R\006domain\022x\n\016environment_id\030" +
+      "\003 \001(\tBQ\222AN23The environment ID where thi" +
+      "s domain is configured.J\027\"env_5834549921" +
+      "5790610\"R\renvironmentId\022t\n\017organization_" +
+      "id\030\004 \001(\tBK\222AH2-The organization to which" +
+      " the domain belongs.J\027\"org_8166707608682" +
+      "5451\"R\016organizationId\022\250\001\n\016txt_record_key" +
+      "\030\006 \001(\tB\201\001\222Ao2GThe DNS TXT record key tha" +
+      "t should be added to verify domain owner" +
+      "ship.J$\"scalekit-verification=abc123def4" +
+      "56\"\372\322\344\223\002\t\022\007PREVIEWR\014txtRecordKey\022\250\001\n\021txt" +
+      "_record_secret\030\007 \001(\tB|\222Aj2IThe DNS TXT r" +
+      "ecord value that should be added to veri" +
+      "fy domain ownership.J\035\"scalekit-verifica" +
+      "tion-value\"\372\322\344\223\002\t\022\007PREVIEWR\017txtRecordSec" +
+      "ret\022\333\002\n\023verification_status\030\010 \001(\0162\'.scal" +
+      "ekit.v1.domains.VerificationStatusB\200\002\222A\355" +
+      "\0012\331\001Current verification status of the d" +
+      "omain. AUTO_VERIFIED means the domain wa" +
+      "s automatically verified without DNS cha" +
+      "nges, VERIFIED means manually verified v" +
+      "ia DNS TXT record, PENDING requires manu" +
+      "al DNS configuration.J\017\"AUTO_VERIFIED\"\372\322" +
+      "\344\223\002\t\022\007PREVIEWR\022verificationStatus\022\212\001\n\013cr" +
+      "eate_time\030\t \001(\0132\032.google.protobuf.Timest" +
+      "ampBM\222AJ2,Timestamp when the domain was " +
+      "first created.J\032\"2025-09-01T12:14:43.100" +
+      "Z\"R\ncreateTime\022\217\001\n\013update_time\030\n \001(\0132\032.g" +
+      "oogle.protobuf.TimestampBR\222AO2+Timestamp" +
+      " when the domain was last updated.J \"202" +
+      "5-09-01T12:14:43.110455169Z\"R\nupdateTime" +
+      "\022\271\002\n\013domain_type\030\014 \001(\0162\037.scalekit.v1.dom" +
+      "ains.DomainTypeB\366\001\222A\362\0012\330\001The type of dom" +
+      "ain configuration. ALLOWED_EMAIL_DOMAIN " +
+      "enables automatic organization suggestio" +
+      "ns for users with matching email domains" +
+      " during sign-in/sign-up. ORGANIZATION_DO" +
+      "MAIN is for primary organization domains" +
+      ".J\025\"ORGANIZATION_DOMAIN\"R\ndomainTypeJ\004\010\005" +
+      "\020\006J\004\010\013\020\014*s\n\022VerificationStatus\022#\n\037VERIFI" +
+      "CATION_STATUS_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001" +
+      "\022\014\n\010VERIFIED\020\002\022\n\n\006FAILED\020\003\022\021\n\rAUTO_VERIF" +
+      "IED\020\004*\\\n\nDomainType\022\033\n\027DOMAIN_TYPE_UNSPE" +
+      "CIFIED\020\000\022\030\n\024ALLOWED_EMAIL_DOMAIN\020\001\022\027\n\023OR" +
+      "GANIZATION_DOMAIN\020\0022\274*\n\rDomainService\022\374\007" +
+      "\n\014CreateDomain\022(.scalekit.v1.domains.Cre" +
+      "ateDomainRequest\032).scalekit.v1.domains.C" +
+      "reateDomainResponse\"\226\007\222A\315\006\n\007Domains\022\rCre" +
+      "ate Domain\032\265\004Creates and associates a do" +
+      "main with an organization.\n\nUse one of t" +
+      "he following domain types:\n- ALLOWED_EMA" +
+      "IL_DOMAIN: Adds a trusted email domain f" +
+      "or organization suggestions in the organ" +
+      "ization switcher during sign-in/sign-up " +
+      "(auth-method agnostic).\n- ORGANIZATION_D" +
+      "OMAIN: Enables SSO domain discovery. If " +
+      "a user signs in with a matching email do" +
+      "main, Scalekit redirects them to the org" +
+      "anization\342\200\231s SSO provider and enforces " +
+      "SSO.\n\nThe domain must be a valid busines" +
+      "s domain that you control. Public/dispos" +
+      "able domains (e.g., gmail.com) are block" +
+      "ed for security.\n\nJX\n\003200\022Q\n Successfull" +
+      "y created the domain.\022-\n+\032).scalekit.v1." +
+      "domains.CreateDomainResponseJ\240\001\n\003400\022\230\001\n" +
+      "oInvalid request \342\200\224 common causes inval" +
+      "id domain format, public or disposable d" +
+      "omain, or domain already exists.\022%\n#\032!#/" +
+      "definitions/errdetailsErrorInfo\202\265\030\002\030t\202\323\344" +
+      "\223\0029\"//api/v1/organizations/{organization" +
+      "_id}/domains:\006domain\022\331\005\n\014UpdateDomain\022(." +
+      "scalekit.v1.domains.UpdateDomainRequest\032" +
+      ").scalekit.v1.domains.UpdateDomainRespon" +
+      "se\"\363\004\222A\226\004\n\007Domains\022\rUpdate Domain\032\241\003Upda" +
+      "tes an existing domain\'s configuration w" +
+      "ithin an organization. Currently support" +
+      "s updating domain metadata and configura" +
+      "tion settings.\n\nUse this endpoint to mod" +
+      "ify domain properties after initial crea" +
+      "tion. Note that the domain name itself c" +
+      "annot be changed once created.\n\nThe doma" +
+      "in must belong to the specified organiza" +
+      "tion and you must provide either the org" +
+      "anization ID or external ID along with t" +
+      "he domain ID.JX\n\003200\022Q\n Successfully upd" +
+      "ated the domain.\022-\n+\032).scalekit.v1.domai" +
+      "ns.UpdateDomainResponse\202\265\030\002\030t\372\322\344\223\002\t\022\007PRE" +
+      "VIEW\202\323\344\223\002>24/api/v1/organizations/{organ" +
+      "ization_id}/domains/{id}:\006domain\022\352\006\n\014Ver" +
+      "ifyDomain\022(.scalekit.v1.domains.VerifyDo" +
+      "mainRequest\032\032.google.protobuf.BoolValue\"" +
+      "\223\006\222A\267\005\n\007Domains\022\rVerify Domain\032\236\004Initiat" +
+      "es domain ownership verification by chec" +
+      "king the DNS TXT record that should be a" +
+      "dded to the domain\'s DNS configuration.\n" +
+      "\nUse this endpoint to manually trigger v" +
+      "erification for domains that are in PEND" +
+      "ING status. The system will check for th" +
+      "e required TXT record and update the ver" +
+      "ification status accordingly.\n\nFor autom" +
+      "atically verified domains, this endpoint" +
+      " will return true immediately. For domai" +
+      "ns requiring manual verification, ensure" +
+      " the TXT record has been properly config" +
+      "ured in your DNS settings before calling" +
+      " this endpoint.J|\n\003200\022u\nSDomain verific" +
+      "ation result. Returns true if verificati" +
+      "on succeeds, false otherwise.\022\036\n\034\032\032.goog" +
+      "le.protobuf.BoolValue\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVI" +
+      "EW\202\323\344\223\002=2;/api/v1/organizations/{organiz" +
+      "ation_id}/domains/{id}:verify\022\206\003\n\tGetDom" +
+      "ain\022%.scalekit.v1.domains.GetDomainReque" +
+      "st\032&.scalekit.v1.domains.GetDomainRespon" +
+      "se\"\251\002\222A\343\001\n\007Domains\022\nGet Domain\032kRetrieve" +
+      "s complete details for a domain includin" +
+      "g domain type, timestamps, and configura" +
+      "tion information.\n\nJ_\n\003200\022X\n*Successful" +
+      "ly retrieved the domain details.\022*\n(\032&.s" +
+      "calekit.v1.domains.GetDomainResponse\202\265\030\002" +
+      "\030t\202\323\344\223\0026\0224/api/v1/organizations/{organiz" +
+      "ation_id}/domains/{id}\022\317\003\n\014DeleteDomain\022" +
+      "(.scalekit.v1.domains.DeleteDomainReques" +
+      "t\032\026.google.protobuf.Empty\"\374\002\222A\266\002\n\007Domain" +
+      "s\022\rDelete Domain\032\364\001Permanently removes a" +
+      " domain record from an organization.\n\n- " +
+      "Deleting an ORGANIZATION_DOMAIN disables" +
+      " SSO routing/enforcement for that domain" +
+      ".\n- Deleting an ALLOWED_EMAIL_DOMAIN sto" +
+      "ps organization suggestions for users wi" +
+      "th that email domain.\n\nJ%\n\003200\022\036\n\034Domain" +
+      " successfully deleted.\202\265\030\002\030t\202\323\344\223\0026*4/api" +
+      "/v1/organizations/{organization_id}/doma" +
+      "ins/{id}\022\371\005\n\013ListDomains\022&.scalekit.v1.d" +
+      "omains.ListDomainRequest\032\'.scalekit.v1.d" +
+      "omains.ListDomainResponse\"\230\005\222A\327\004\n\007Domain" +
+      "s\022\014List Domains\032\332\003Retrieves a paginated " +
+      "list of all domains configured for the s" +
+      "pecified organization.Domain types:\n- AL" +
+      "LOWED_EMAIL_DOMAIN: Trusted domains used" +
+      " to suggest the organization in the orga" +
+      "nization switcher during sign-in/sign-up" +
+      " (auth-method agnostic).\n- ORGANIZATION_" +
+      "DOMAIN: SSO discovery domains used to ro" +
+      "ute users to the correct SSO provider an" +
+      "d enforce SSO.\n\nALLOWED_EMAIL_DOMAIN ena" +
+      "bles users to join an organization with " +
+      "automatic suggestions in the organizatio" +
+      "n switcher.\nJa\n\003200\022Z\n+Successfully retr" +
+      "ieved the list of domains.\022+\n)\032\'.scaleki" +
+      "t.v1.domains.ListDomainResponse\202\265\030\002\030t\202\323\344" +
+      "\223\0021\022//api/v1/organizations/{organization" +
+      "_id}/domains\022\220\005\n\025ListAuthorizedDomains\0220" +
+      ".scalekit.v1.domains.ListAuthorizedDomai" +
+      "nRequest\0321.scalekit.v1.domains.ListAutho" +
+      "rizedDomainResponse\"\221\004\222A\330\003\n\007Domains\022\027Lis" +
+      "t Authorized Domains\032\273\002Retrieves a list " +
+      "of domains that are authorized for use w" +
+      "ith the specified origin URL.\n\nUse this " +
+      "endpoint to validate whether a particula" +
+      "r domain is allowed for authentication o" +
+      "r other domain-restricted operations.\n\nT" +
+      "his is commonly used by frontend applica" +
+      "tions to verify domain allowlists and CO" +
+      "RS configurations.Jv\n\003200\022o\n6Successfull" +
+      "y retrieved the list of authorized domai" +
+      "ns.\0225\n3\0321.scalekit.v1.domains.ListAuthor" +
+      "izedDomainResponse\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202" +
+      "\323\344\223\002\032\022\030/api/v1/domains/{origin}\032\370\003\222A\364\003\n\007" +
+      "Domains\022\350\003Manage organization-level doma" +
+      "ins. Scalekit supports two domain types:" +
+      "\n\n- ORGANIZATION_DOMAIN: Used for SSO do" +
+      "main discovery. When a user signs in wit" +
+      "h a matching email domain, Scalekit rout" +
+      "es them to the organization\342\200\231s SSO prov" +
+      "ider and enforces SSO.\n- ALLOWED_EMAIL_D" +
+      "OMAIN: Used to mark trusted email domain" +
+      "s for an organization. When a user signs" +
+      " in or signs up with a matching domain, " +
+      "Scalekit suggests the organization in th" +
+      "e organization switcher (authentication-" +
+      "method agnostic).\nB\326\001\n%com.scalekit.grpc" +
+      ".scalekit.v1.domainsB\014DomainsProtoP\001Z1gi" +
+      "thub.com/scalekit-inc/scalekit/pkg/grpc/" +
+      "domains\242\002\003SVD\252\002\023Scalekit.V1.Domains\312\002\023Sc" +
+      "alekit\\V1\\Domains\342\002\037Scalekit\\V1\\Domains\\" +
+      "GPBMetadata\352\002\025Scalekit::V1::Domainsb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

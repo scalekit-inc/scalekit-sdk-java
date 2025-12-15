@@ -48,49 +48,53 @@ public final class AuditlogsProto {
       "\025scalekit.v1.auditlogs\032\033buf/validate/val" +
       "idate.proto\032\034google/api/annotations.prot" +
       "o\032\037google/protobuf/timestamp.proto\032!scal" +
-      "ekit/v1/options/options.proto\"\221\002\n\022ListAu" +
+      "ekit/v1/options/options.proto\"\323\002\n\022ListAu" +
       "thLogRequest\022\033\n\tpage_size\030\001 \001(\rR\010pageSiz" +
       "e\022\035\n\npage_token\030\002 \001(\tR\tpageToken\022\024\n\005emai" +
       "l\030\003 \001(\tR\005email\022\026\n\006status\030\004 \003(\tR\006status\0229" +
       "\n\nstart_time\030\005 \001(\0132\032.google.protobuf.Tim" +
       "estampR\tstartTime\0225\n\010end_time\030\006 \001(\0132\032.go" +
       "ogle.protobuf.TimestampR\007endTime\022\037\n\013reso" +
-      "urce_id\030\007 \001(\tR\nresourceId\"\317\001\n\023ListAuthLo" +
-      "gResponse\022&\n\017next_page_token\030\001 \001(\tR\rnext" +
-      "PageToken\022&\n\017prev_page_token\030\002 \001(\tR\rprev" +
-      "PageToken\022\035\n\ntotal_size\030\003 \001(\rR\ttotalSize" +
-      "\022I\n\014authRequests\030\004 \003(\0132%.scalekit.v1.aud" +
-      "itlogs.AuthLogRequestR\014authRequests\"\317\004\n\016" +
-      "AuthLogRequest\022\'\n\017organization_id\030\001 \001(\tR" +
-      "\016organizationId\022%\n\016environment_id\030\002 \001(\tR" +
-      "\renvironmentId\022#\n\rconnection_id\030\003 \001(\tR\014c" +
-      "onnectionId\022&\n\017auth_request_id\030\004 \001(\tR\rau" +
-      "thRequestId\022\024\n\005email\030\005 \001(\tR\005email\022\'\n\017con" +
-      "nection_type\030\006 \001(\tR\016connectionType\022/\n\023co" +
-      "nnection_provider\030\007 \001(\tR\022connectionProvi" +
-      "der\022\026\n\006status\030\010 \001(\tR\006status\0228\n\ttimestamp" +
-      "\030\t \001(\0132\032.google.protobuf.TimestampR\ttime" +
-      "stamp\022W\n\022connection_details\030\n \003(\0132(.scal" +
-      "ekit.v1.auditlogs.ConnectionDetailsR\021con" +
-      "nectionDetails\022\032\n\010workflow\030\013 \001(\tR\010workfl" +
-      "ow\022\037\n\013resource_id\030\014 \001(\tR\nresourceId\022#\n\rr" +
-      "esource_name\030\r \001(\tR\014resourceName\022#\n\rreso" +
-      "urce_type\030\016 \001(\tR\014resourceType\"\273\001\n\021Connec" +
-      "tionDetails\022#\n\rconnection_id\030\001 \001(\tR\014conn" +
-      "ectionId\022\'\n\017organization_id\030\002 \001(\tR\016organ" +
-      "izationId\022\'\n\017connection_type\030\003 \001(\tR\016conn" +
-      "ectionType\022/\n\023connection_provider\030\004 \001(\tR" +
-      "\022connectionProvider2\262\001\n\020AuditLogsService" +
-      "\022\235\001\n\020ListAuthRequests\022).scalekit.v1.audi" +
-      "tlogs.ListAuthLogRequest\032*.scalekit.v1.a" +
-      "uditlogs.ListAuthLogResponse\"2\202\265\030\002\030T\202\323\344\223" +
-      "\002&\022$/api/v1/logs/authentication/requests" +
-      "B\344\001\n\'com.scalekit.grpc.scalekit.v1.audit" +
-      "logsB\016AuditlogsProtoP\001Z3github.com/scale" +
-      "kit-inc/scalekit/pkg/grpc/auditlogs\242\002\003SV" +
-      "A\252\002\025Scalekit.V1.Auditlogs\312\002\025Scalekit\\V1\\" +
-      "Auditlogs\342\002!Scalekit\\V1\\Auditlogs\\GPBMet" +
-      "adata\352\002\027Scalekit::V1::Auditlogsb\006proto3"
+      "urce_id\030\007 \001(\tR\nresourceId\022@\n\034connected_a" +
+      "ccount_identifier\030\010 \001(\tR\032connectedAccoun" +
+      "tIdentifier\"\317\001\n\023ListAuthLogResponse\022&\n\017n" +
+      "ext_page_token\030\001 \001(\tR\rnextPageToken\022&\n\017p" +
+      "rev_page_token\030\002 \001(\tR\rprevPageToken\022\035\n\nt" +
+      "otal_size\030\003 \001(\rR\ttotalSize\022I\n\014authReques" +
+      "ts\030\004 \003(\0132%.scalekit.v1.auditlogs.AuthLog" +
+      "RequestR\014authRequests\"\221\005\n\016AuthLogRequest" +
+      "\022\'\n\017organization_id\030\001 \001(\tR\016organizationI" +
+      "d\022%\n\016environment_id\030\002 \001(\tR\renvironmentId" +
+      "\022#\n\rconnection_id\030\003 \001(\tR\014connectionId\022&\n" +
+      "\017auth_request_id\030\004 \001(\tR\rauthRequestId\022\024\n" +
+      "\005email\030\005 \001(\tR\005email\022\'\n\017connection_type\030\006" +
+      " \001(\tR\016connectionType\022/\n\023connection_provi" +
+      "der\030\007 \001(\tR\022connectionProvider\022\026\n\006status\030" +
+      "\010 \001(\tR\006status\0228\n\ttimestamp\030\t \001(\0132\032.googl" +
+      "e.protobuf.TimestampR\ttimestamp\022W\n\022conne" +
+      "ction_details\030\n \003(\0132(.scalekit.v1.auditl" +
+      "ogs.ConnectionDetailsR\021connectionDetails" +
+      "\022\032\n\010workflow\030\013 \001(\tR\010workflow\022\037\n\013resource" +
+      "_id\030\014 \001(\tR\nresourceId\022#\n\rresource_name\030\r" +
+      " \001(\tR\014resourceName\022#\n\rresource_type\030\016 \001(" +
+      "\tR\014resourceType\022@\n\034connected_account_ide" +
+      "ntifier\030\017 \001(\tR\032connectedAccountIdentifie" +
+      "r\"\273\001\n\021ConnectionDetails\022#\n\rconnection_id" +
+      "\030\001 \001(\tR\014connectionId\022\'\n\017organization_id\030" +
+      "\002 \001(\tR\016organizationId\022\'\n\017connection_type" +
+      "\030\003 \001(\tR\016connectionType\022/\n\023connection_pro" +
+      "vider\030\004 \001(\tR\022connectionProvider2\262\001\n\020Audi" +
+      "tLogsService\022\235\001\n\020ListAuthRequests\022).scal" +
+      "ekit.v1.auditlogs.ListAuthLogRequest\032*.s" +
+      "calekit.v1.auditlogs.ListAuthLogResponse" +
+      "\"2\202\265\030\002\030T\202\323\344\223\002&\022$/api/v1/logs/authenticat" +
+      "ion/requestsB\344\001\n\'com.scalekit.grpc.scale" +
+      "kit.v1.auditlogsB\016AuditlogsProtoP\001Z3gith" +
+      "ub.com/scalekit-inc/scalekit/pkg/grpc/au" +
+      "ditlogs\242\002\003SVA\252\002\025Scalekit.V1.Auditlogs\312\002\025" +
+      "Scalekit\\V1\\Auditlogs\342\002!Scalekit\\V1\\Audi" +
+      "tlogs\\GPBMetadata\352\002\027Scalekit::V1::Auditl" +
+      "ogsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -105,7 +109,7 @@ public final class AuditlogsProto {
     internal_static_scalekit_v1_auditlogs_ListAuthLogRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auditlogs_ListAuthLogRequest_descriptor,
-        new java.lang.String[] { "PageSize", "PageToken", "Email", "Status", "StartTime", "EndTime", "ResourceId", });
+        new java.lang.String[] { "PageSize", "PageToken", "Email", "Status", "StartTime", "EndTime", "ResourceId", "ConnectedAccountIdentifier", });
     internal_static_scalekit_v1_auditlogs_ListAuthLogResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_scalekit_v1_auditlogs_ListAuthLogResponse_fieldAccessorTable = new
@@ -117,7 +121,7 @@ public final class AuditlogsProto {
     internal_static_scalekit_v1_auditlogs_AuthLogRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auditlogs_AuthLogRequest_descriptor,
-        new java.lang.String[] { "OrganizationId", "EnvironmentId", "ConnectionId", "AuthRequestId", "Email", "ConnectionType", "ConnectionProvider", "Status", "Timestamp", "ConnectionDetails", "Workflow", "ResourceId", "ResourceName", "ResourceType", });
+        new java.lang.String[] { "OrganizationId", "EnvironmentId", "ConnectionId", "AuthRequestId", "Email", "ConnectionType", "ConnectionProvider", "Status", "Timestamp", "ConnectionDetails", "Workflow", "ResourceId", "ResourceName", "ResourceType", "ConnectedAccountIdentifier", });
     internal_static_scalekit_v1_auditlogs_ConnectionDetails_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_scalekit_v1_auditlogs_ConnectionDetails_fieldAccessorTable = new

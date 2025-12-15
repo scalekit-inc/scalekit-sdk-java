@@ -104,4 +104,16 @@ public interface ListAuthLogRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getResourceIdBytes();
+
+  /**
+   * <code>string connected_account_identifier = 8 [json_name = "connectedAccountIdentifier"];</code>
+   * @return The connectedAccountIdentifier.
+   */
+  java.lang.String getConnectedAccountIdentifier();
+  /**
+   * <code>string connected_account_identifier = 8 [json_name = "connectedAccountIdentifier"];</code>
+   * @return The bytes for connectedAccountIdentifier.
+   */
+  com.google.protobuf.ByteString
+      getConnectedAccountIdentifierBytes();
 }

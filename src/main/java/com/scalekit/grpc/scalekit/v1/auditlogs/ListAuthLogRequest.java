@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
     status_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     resourceId_ = "";
+    connectedAccountIdentifier_ = "";
   }
 
   @java.lang.Override
@@ -262,6 +263,45 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CONNECTED_ACCOUNT_IDENTIFIER_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object connectedAccountIdentifier_ = "";
+  /**
+   * <code>string connected_account_identifier = 8 [json_name = "connectedAccountIdentifier"];</code>
+   * @return The connectedAccountIdentifier.
+   */
+  @java.lang.Override
+  public java.lang.String getConnectedAccountIdentifier() {
+    java.lang.Object ref = connectedAccountIdentifier_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      connectedAccountIdentifier_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string connected_account_identifier = 8 [json_name = "connectedAccountIdentifier"];</code>
+   * @return The bytes for connectedAccountIdentifier.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getConnectedAccountIdentifierBytes() {
+    java.lang.Object ref = connectedAccountIdentifier_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      connectedAccountIdentifier_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -296,6 +336,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, resourceId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectedAccountIdentifier_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, connectedAccountIdentifier_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -335,6 +378,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, resourceId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectedAccountIdentifier_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, connectedAccountIdentifier_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -370,6 +416,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getResourceId()
         .equals(other.getResourceId())) return false;
+    if (!getConnectedAccountIdentifier()
+        .equals(other.getConnectedAccountIdentifier())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -401,6 +449,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + RESOURCE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getResourceId().hashCode();
+    hash = (37 * hash) + CONNECTED_ACCOUNT_IDENTIFIER_FIELD_NUMBER;
+    hash = (53 * hash) + getConnectedAccountIdentifier().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -555,6 +605,7 @@ private static final long serialVersionUID = 0L;
         endTimeBuilder_ = null;
       }
       resourceId_ = "";
+      connectedAccountIdentifier_ = "";
       return this;
     }
 
@@ -616,6 +667,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.resourceId_ = resourceId_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.connectedAccountIdentifier_ = connectedAccountIdentifier_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -698,6 +752,11 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (!other.getConnectedAccountIdentifier().isEmpty()) {
+        connectedAccountIdentifier_ = other.connectedAccountIdentifier_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -764,6 +823,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000040;
               break;
             } // case 58
+            case 66: {
+              connectedAccountIdentifier_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 66
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1378,6 +1442,78 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       resourceId_ = value;
       bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object connectedAccountIdentifier_ = "";
+    /**
+     * <code>string connected_account_identifier = 8 [json_name = "connectedAccountIdentifier"];</code>
+     * @return The connectedAccountIdentifier.
+     */
+    public java.lang.String getConnectedAccountIdentifier() {
+      java.lang.Object ref = connectedAccountIdentifier_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        connectedAccountIdentifier_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string connected_account_identifier = 8 [json_name = "connectedAccountIdentifier"];</code>
+     * @return The bytes for connectedAccountIdentifier.
+     */
+    public com.google.protobuf.ByteString
+        getConnectedAccountIdentifierBytes() {
+      java.lang.Object ref = connectedAccountIdentifier_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        connectedAccountIdentifier_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string connected_account_identifier = 8 [json_name = "connectedAccountIdentifier"];</code>
+     * @param value The connectedAccountIdentifier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectedAccountIdentifier(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      connectedAccountIdentifier_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string connected_account_identifier = 8 [json_name = "connectedAccountIdentifier"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearConnectedAccountIdentifier() {
+      connectedAccountIdentifier_ = getDefaultInstance().getConnectedAccountIdentifier();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string connected_account_identifier = 8 [json_name = "connectedAccountIdentifier"];</code>
+     * @param value The bytes for connectedAccountIdentifier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectedAccountIdentifierBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      connectedAccountIdentifier_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
