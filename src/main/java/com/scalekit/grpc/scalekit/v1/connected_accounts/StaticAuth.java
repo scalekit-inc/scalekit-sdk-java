@@ -5,6 +5,10 @@
 package com.scalekit.grpc.scalekit.v1.connected_accounts;
 
 /**
+ * <pre>
+ * Static authentication credentials for API keys, bearer tokens, or basic auth
+ * </pre>
+ *
  * Protobuf type {@code scalekit.v1.connected_accounts.StaticAuth}
  */
 public final class StaticAuth extends
@@ -43,7 +47,7 @@ private static final long serialVersionUID = 0L;
   public static final int DETAILS_FIELD_NUMBER = 1;
   private com.google.protobuf.Struct details_;
   /**
-   * <code>.google.protobuf.Struct details = 1 [json_name = "details"];</code>
+   * <code>.google.protobuf.Struct details = 1 [json_name = "details", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the details field is set.
    */
   @java.lang.Override
@@ -51,7 +55,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.protobuf.Struct details = 1 [json_name = "details"];</code>
+   * <code>.google.protobuf.Struct details = 1 [json_name = "details", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The details.
    */
   @java.lang.Override
@@ -59,7 +63,7 @@ private static final long serialVersionUID = 0L;
     return details_ == null ? com.google.protobuf.Struct.getDefaultInstance() : details_;
   }
   /**
-   * <code>.google.protobuf.Struct details = 1 [json_name = "details"];</code>
+   * <code>.google.protobuf.Struct details = 1 [json_name = "details", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getDetailsOrBuilder() {
@@ -229,6 +233,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Static authentication credentials for API keys, bearer tokens, or basic auth
+   * </pre>
+   *
    * Protobuf type {@code scalekit.v1.connected_accounts.StaticAuth}
    */
   public static final class Builder extends
@@ -417,14 +425,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> detailsBuilder_;
     /**
-     * <code>.google.protobuf.Struct details = 1 [json_name = "details"];</code>
+     * <code>.google.protobuf.Struct details = 1 [json_name = "details", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the details field is set.
      */
     public boolean hasDetails() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.google.protobuf.Struct details = 1 [json_name = "details"];</code>
+     * <code>.google.protobuf.Struct details = 1 [json_name = "details", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The details.
      */
     public com.google.protobuf.Struct getDetails() {
@@ -435,7 +443,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Struct details = 1 [json_name = "details"];</code>
+     * <code>.google.protobuf.Struct details = 1 [json_name = "details", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setDetails(com.google.protobuf.Struct value) {
       if (detailsBuilder_ == null) {
@@ -451,7 +459,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Struct details = 1 [json_name = "details"];</code>
+     * <code>.google.protobuf.Struct details = 1 [json_name = "details", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setDetails(
         com.google.protobuf.Struct.Builder builderForValue) {
@@ -465,7 +473,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Struct details = 1 [json_name = "details"];</code>
+     * <code>.google.protobuf.Struct details = 1 [json_name = "details", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeDetails(com.google.protobuf.Struct value) {
       if (detailsBuilder_ == null) {
@@ -486,7 +494,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Struct details = 1 [json_name = "details"];</code>
+     * <code>.google.protobuf.Struct details = 1 [json_name = "details", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearDetails() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -499,7 +507,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Struct details = 1 [json_name = "details"];</code>
+     * <code>.google.protobuf.Struct details = 1 [json_name = "details", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Struct.Builder getDetailsBuilder() {
       bitField0_ |= 0x00000001;
@@ -507,7 +515,7 @@ private static final long serialVersionUID = 0L;
       return getDetailsFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Struct details = 1 [json_name = "details"];</code>
+     * <code>.google.protobuf.Struct details = 1 [json_name = "details", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.StructOrBuilder getDetailsOrBuilder() {
       if (detailsBuilder_ != null) {
@@ -518,7 +526,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Struct details = 1 [json_name = "details"];</code>
+     * <code>.google.protobuf.Struct details = 1 [json_name = "details", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 

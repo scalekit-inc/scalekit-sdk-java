@@ -25,6 +25,14 @@ public enum PaymentType
    * <code>OFFLINE = 3;</code>
    */
   OFFLINE(3),
+  /**
+   * <code>LINK = 4;</code>
+   */
+  LINK(4),
+  /**
+   * <code>PAYPAL = 5;</code>
+   */
+  PAYPAL(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -44,6 +52,14 @@ public enum PaymentType
    * <code>OFFLINE = 3;</code>
    */
   public static final int OFFLINE_VALUE = 3;
+  /**
+   * <code>LINK = 4;</code>
+   */
+  public static final int LINK_VALUE = 4;
+  /**
+   * <code>PAYPAL = 5;</code>
+   */
+  public static final int PAYPAL_VALUE = 5;
 
 
   public final int getNumber() {
@@ -74,6 +90,8 @@ public enum PaymentType
       case 1: return CARD;
       case 2: return BANK_ACCOUNT;
       case 3: return OFFLINE;
+      case 4: return LINK;
+      case 5: return PAYPAL;
       default: return null;
     }
   }

@@ -436,7 +436,7 @@ public final class ClientsProto {
       "CreateResourceRequest\022q\n\010resource\030\001 \001(\0132" +
       "#.scalekit.v1.clients.CreateResourceB0\222A" +
       "\'2%Details of the resource to be created" +
-      "\272H\003\310\001\001R\010resource\"\336\n\n\016CreateResource\022|\n\rr" +
+      "\272H\003\310\001\001R\010resource\"\227\r\n\016CreateResource\022|\n\rr" +
       "esource_type\030\001 \001(\0162!.scalekit.v1.clients" +
       ".ResourceTypeB4\222A+2\"Type of the resource" +
       " to be createdJ\005\"WEB\"\272H\003\310\001\001R\014resourceTyp" +
@@ -470,1531 +470,1495 @@ public final class ClientsProto {
       "esJ\036\"https://resource.example.com\"R\nreso" +
       "urceId\022i\n\006scopes\030\013 \003(\tBQ\222AN21List of OAu" +
       "th scopes associated with the resourceJ\031" +
-      "[\"usr:read\", \"usr:write\"]R\006scopes\"\214\006\n\016Re" +
-      "sourceClient\022D\n\004name\030\001 \001(\tB0\222A%2\022Name of" +
-      " the clientJ\017\"My API Client\"\272H\005r\003\030\200\001R\004na" +
-      "me\022\202\001\n\013description\030\002 \001(\tB`\222AU2\031Descripti" +
-      "on of the clientJ8\"Client for accessing " +
-      "your organization\'s API resources\"\272H\005r\003\030" +
-      "\200\004R\013description\0228\n\006scopes\030\003 \003(\tB \222A\0352\033OA" +
-      "uth scopes for the clientR\006scopes\022b\n\010aud" +
-      "ience\030\004 \003(\tBF\222AC2$OAuth audience values " +
-      "for the clientJ\033[\"https://api.example.co" +
-      "m\"]R\010audience\022\306\001\n\rcustom_claims\030\005 \003(\0132 ." +
-      "scalekit.v1.clients.CustomClaimB\177\222A|2zCu" +
-      "stom claims to be included in access tok" +
-      "ens. Please keep this to the essentials " +
-      "as this increases the size of the token." +
-      "R\014customClaims\022_\n\006expiry\030\006 \001(\003BG\222AD2<Exp" +
-      "iry time in seconds for the token genera" +
-      "ted by the clientJ\0043600R\006expiry\022g\n\rredir" +
-      "ect_uris\030\007 \003(\tBB\222A?2\033Redirect URI for th" +
-      "e clientJ [\"https://example.com/callback" +
-      "\"]R\014redirectUris\"y\n\026CreateResourceRespon" +
-      "se\022_\n\010resource\030\001 \001(\0132\035.scalekit.v1.clien" +
-      "ts.ResourceB$\222A!2\037Details of the created" +
-      " resourceR\010resource\"\222\001\n\022GetResourceReque" +
-      "st\022|\n\013resource_id\030\001 \001(\tB[\222AO24Unique ide" +
-      "ntifier of the client resource to retrie" +
-      "veJ\027\"app_69388798466720005\"\272H\006r\004\020\001\030 R\nre" +
-      "sourceId\"x\n\023GetResourceResponse\022a\n\010resou" +
-      "rce\030\001 \001(\0132\035.scalekit.v1.clients.Resource" +
-      "B&\222A#2!Details of the requested resource" +
-      "R\010resource\"\235\001\n\035DeleteResourceProviderReq" +
-      "uest\022|\n\013resource_id\030\001 \001(\tB[\222AO24Unique i" +
-      "dentifier of the client resource to retr" +
-      "ieveJ\027\"app_69388798466720005\"\272H\006r\004\020\001\030 R\n" +
-      "resourceId\"\223\001\n\025DeleteResourceRequest\022z\n\013" +
-      "resource_id\030\001 \001(\tBY\222AM22Unique identifie" +
-      "r of the client resource to deleteJ\027\"app" +
-      "_69388798466720005\"\272H\006r\004\020\001\030 R\nresourceId" +
-      "\"\346\013\n\013Application\022\206\001\n\002id\030\001 \001(\tBv\222As2XUniq" +
-      "ue identifier for the resource. Automati" +
-      "cally generated upon creation and immuta" +
-      "ble.J\027\"app_69388798466720005\"R\002id\022H\n\004nam" +
-      "e\030\002 \001(\tB4\222A)2\024Name of the resourceJ\021\"My " +
-      "API Resource\"\272H\005r\003\030\200\001R\004name\022\264\001\n\013resource" +
-      "_id\030\003 \001(\tB\222\001\222A\204\0012bResource identifier fo" +
-      "r the resource. This could  be the URL u" +
-      "sed to access the resource resourcesJ\036\"h" +
-      "ttps://resource.example.com\"\272H\007r\005\020\001\030\200\004R\n" +
-      "resourceId\022\206\001\n\013description\030\004 \001(\tBd\222AY2\033D" +
-      "escription of the resourceJ:\"Resource fo" +
-      "r accessing your organization\'s API reso" +
-      "urces\"\272H\005r\003\030\200\004R\013description\022t\n\020applicati" +
-      "on_type\030\005 \001(\0162!.scalekit.v1.clients.Reso" +
-      "urceTypeB&\222A\0352\024Type of the resourceJ\005\"WE" +
-      "B\"\272H\003\310\001\001R\017applicationType\022\245\001\n#disable_dy" +
-      "namic_client_registration\030\006 \001(\010BV\222AM2EIn" +
-      "dicates if dynamic client registration i" +
-      "s allowed for this resourceJ\004true\272H\003\310\001\001R" +
-      " disableDynamicClientRegistration\022a\n\010log" +
-      "o_uri\030\007 \001(\tBF\222A;2\031Logo URI for the resou" +
-      "rceJ\036\"https://example.com/logo.png\"\272H\005r\003" +
-      "\030\200\004R\007logoUri\022g\n\023access_token_expiry\030\010 \001(" +
-      "\003B7\222A42,Expiry time in seconds for the a" +
-      "ccess token.J\0043600R\021accessTokenExpiry\022k\n" +
-      "\024refresh_token_expiry\030\t \001(\003B9\222A62-Expiry" +
-      " time in seconds for the refresh token.J" +
-      "\00586400R\022refreshTokenExpiry\022\205\001\n\013create_ti" +
-      "me\030\n \001(\0132\032.google.protobuf.TimestampBH\222A" +
-      "E2\'Timestamp when the resource was creat" +
-      "edJ\032\"2024-01-05T14:48:00.000Z\"R\ncreateTi" +
-      "me\022\212\001\n\013update_time\030\013 \001(\0132\032.google.protob" +
-      "uf.TimestampBM\222AJ2,Timestamp when the re" +
-      "source was last updatedJ\032\"2024-01-05T14:" +
-      "48:00.000Z\"R\nupdateTime\022X\n\010provider\030\014 \001(" +
-      "\tB<\222A12$Connection provider for the reso" +
-      "urceJ\t\"DESCOPE\"\272H\005r\003\030\200\004R\010provider\"\357\026\n\010Re" +
-      "source\022\206\001\n\002id\030\001 \001(\tBv\222As2XUnique identif" +
-      "ier for the resource. Automatically gene" +
-      "rated upon creation and immutable.J\027\"app" +
-      "_69388798466720005\"R\002id\022H\n\004name\030\002 \001(\tB4\222" +
-      "A)2\024Name of the resourceJ\021\"My API Resour" +
-      "ce\"\272H\005r\003\030\200\001R\004name\022\266\001\n\014resource_uri\030\003 \001(\t" +
-      "B\222\001\222A\204\0012bResource identifier for the res" +
-      "ource. This could  be the URL used to ac" +
-      "cess the resource resourcesJ\036\"https://re" +
-      "source.example.com\"\272H\007r\005\020\001\030\200\004R\013resourceU" +
-      "ri\022\206\001\n\013description\030\004 \001(\tBd\222AY2\033Descripti" +
-      "on of the resourceJ:\"Resource for access" +
-      "ing your organization\'s API resources\"\272H" +
-      "\005r\003\030\200\004R\013description\022n\n\rresource_type\030\005 \001" +
-      "(\0162!.scalekit.v1.clients.ResourceTypeB&\222" +
-      "A\0352\024Type of the resourceJ\005\"WEB\"\272H\003\310\001\001R\014r" +
-      "esourceType\022\245\001\n#disable_dynamic_client_r" +
-      "egistration\030\006 \001(\010BV\222AM2EIndicates if dyn" +
-      "amic client registration is allowed for " +
-      "this resourceJ\004true\272H\003\310\001\001R disableDynami" +
-      "cClientRegistration\022a\n\010logo_uri\030\007 \001(\tBF\222" +
-      "A;2\031Logo URI for the resourceJ\036\"https://" +
-      "example.com/logo.png\"\272H\005r\003\030\200\004R\007logoUri\022g" +
-      "\n\023access_token_expiry\030\010 \001(\003B7\222A42,Expiry" +
-      " time in seconds for the access token.J\004" +
-      "3600R\021accessTokenExpiry\022k\n\024refresh_token" +
-      "_expiry\030\t \001(\003B9\222A62-Expiry time in secon" +
-      "ds for the refresh token.J\00586400R\022refres" +
-      "hTokenExpiry\022\205\001\n\013create_time\030\n \001(\0132\032.goo" +
-      "gle.protobuf.TimestampBH\222AE2\'Timestamp w" +
-      "hen the resource was createdJ\032\"2024-01-0" +
-      "5T14:48:00.000Z\"R\ncreateTime\022\212\001\n\013update_" +
-      "time\030\013 \001(\0132\032.google.protobuf.TimestampBM" +
-      "\222AJ2,Timestamp when the resource was las" +
-      "t updatedJ\032\"2024-01-05T14:48:00.000Z\"R\nu" +
-      "pdateTime\022X\n\010provider\030\014 \001(\tB<\222A12$Connec" +
-      "tion provider for the resourceJ\t\"DESCOPE" +
-      "\"\272H\005r\003\030\200\004R\010provider\022\313\003\n\022protected_metada" +
-      "ta\030\r \001(\0132\027.google.protobuf.StructB\202\003\222A\376\002" +
-      "2\202\001Protected metadata for the resource. " +
-      "This field is used to store additional i" +
-      "nformation that should not be exposed in" +
-      " public APIs.J\366\001{\"resource\": \"https://ex" +
-      "ample.com/mcp\",\"authorization_servers\": " +
-      "[\"https://example.scalekit.com/resources" +
-      "/res_123123123\"],\"bearer_methods_support" +
-      "ed\": [\"header\"],\"resource_documentation\"" +
-      ": \"https://example.com/docs\",\"scopes_sup" +
-      "ported\": [\"usr:read\"]}R\021protectedMetadat" +
-      "a\022\260\001\n\026protected_metadata_uri\030\016 \001(\tBz\222Aw2" +
-      "5URI to access the protected metadata fo" +
-      "r the resourceJ>\"https://example.com/.we" +
-      "ll-known/oauth-protected-resource/mcp\"R\024" +
-      "protectedMetadataUri\022\264\001\n\013resource_id\030\017 \001" +
+      "[\"usr:read\", \"usr:write\"]R\006scopes\022\254\001\n in" +
+      "tersect_scopes_user_permission\030\014 \001(\010Bc\222A" +
+      "`2XIndicates if the scopes should be int" +
+      "ersected with user permissions for granu" +
+      "lar controlJ\004trueR\035intersectScopesUserPe" +
+      "rmission\022\207\001\n\013enable_cimd\030\r \001(\010Bf\222Ac2ZSpe" +
+      "cifies whether Client-Initiated Metadata" +
+      " Discovery (CIMD) is activated for the r" +
+      "esourceJ\005falseR\nenableCimd\"\214\006\n\016ResourceC" +
+      "lient\022D\n\004name\030\001 \001(\tB0\222A%2\022Name of the cl" +
+      "ientJ\017\"My API Client\"\272H\005r\003\030\200\001R\004name\022\202\001\n\013" +
+      "description\030\002 \001(\tB`\222AU2\031Description of t" +
+      "he clientJ8\"Client for accessing your or" +
+      "ganization\'s API resources\"\272H\005r\003\030\200\004R\013des" +
+      "cription\0228\n\006scopes\030\003 \003(\tB \222A\0352\033OAuth sco" +
+      "pes for the clientR\006scopes\022b\n\010audience\030\004" +
+      " \003(\tBF\222AC2$OAuth audience values for the" +
+      " clientJ\033[\"https://api.example.com\"]R\010au" +
+      "dience\022\306\001\n\rcustom_claims\030\005 \003(\0132 .scaleki" +
+      "t.v1.clients.CustomClaimB\177\222A|2zCustom cl" +
+      "aims to be included in access tokens. Pl" +
+      "ease keep this to the essentials as this" +
+      " increases the size of the token.R\014custo" +
+      "mClaims\022_\n\006expiry\030\006 \001(\003BG\222AD2<Expiry tim" +
+      "e in seconds for the token generated by " +
+      "the clientJ\0043600R\006expiry\022g\n\rredirect_uri" +
+      "s\030\007 \003(\tBB\222A?2\033Redirect URI for the clien" +
+      "tJ [\"https://example.com/callback\"]R\014red" +
+      "irectUris\"y\n\026CreateResourceResponse\022_\n\010r" +
+      "esource\030\001 \001(\0132\035.scalekit.v1.clients.Reso" +
+      "urceB$\222A!2\037Details of the created resour" +
+      "ceR\010resource\"\222\001\n\022GetResourceRequest\022|\n\013r" +
+      "esource_id\030\001 \001(\tB[\222AO24Unique identifier" +
+      " of the client resource to retrieveJ\027\"ap" +
+      "p_69388798466720005\"\272H\006r\004\020\001\030 R\nresourceI" +
+      "d\"x\n\023GetResourceResponse\022a\n\010resource\030\001 \001" +
+      "(\0132\035.scalekit.v1.clients.ResourceB&\222A#2!" +
+      "Details of the requested resourceR\010resou" +
+      "rce\"\235\001\n\035DeleteResourceProviderRequest\022|\n" +
+      "\013resource_id\030\001 \001(\tB[\222AO24Unique identifi" +
+      "er of the client resource to retrieveJ\027\"" +
+      "app_69388798466720005\"\272H\006r\004\020\001\030 R\nresourc" +
+      "eId\"\223\001\n\025DeleteResourceRequest\022z\n\013resourc" +
+      "e_id\030\001 \001(\tBY\222AM22Unique identifier of th" +
+      "e client resource to deleteJ\027\"app_693887" +
+      "98466720005\"\272H\006r\004\020\001\030 R\nresourceId\"\346\013\n\013Ap" +
+      "plication\022\206\001\n\002id\030\001 \001(\tBv\222As2XUnique iden" +
+      "tifier for the resource. Automatically g" +
+      "enerated upon creation and immutable.J\027\"" +
+      "app_69388798466720005\"R\002id\022H\n\004name\030\002 \001(\t" +
+      "B4\222A)2\024Name of the resourceJ\021\"My API Res" +
+      "ource\"\272H\005r\003\030\200\001R\004name\022\264\001\n\013resource_id\030\003 \001" +
       "(\tB\222\001\222A\204\0012bResource identifier for the r" +
       "esource. This could  be the URL used to " +
       "access the resource resourcesJ\036\"https://" +
       "resource.example.com\"\272H\007r\005\020\001\030\200\004R\nresourc" +
-      "eId\022\373\001\n\006scopes\030\020 \003(\0132\032.scalekit.v1.clien" +
-      "ts.ScopeB\306\001\222A\302\0012OList of OAuth scopes as" +
-      "sociated with the resource with enabled " +
-      "or disabled flagJo[{\"id\": \"perm_\", \"name" +
-      "\": \"usr:read\", \"description\": \"Reading b" +
-      "asic information of the users\", \"enabled" +
-      "\": true}]R\006scopes\022\303\001\n\022connection_details" +
-      "\030\021 \001(\0132\'.scalekit.v1.clients.ResourceCon" +
-      "nectionBk\222Ae2cDetails of the own auth co" +
-      "nnection if any. For full stack this fie" +
-      "ld will be empty or not populated\340A\003R\021co" +
-      "nnectionDetails\022\221\001\n\032disallow_connection_" +
-      "update\030\022 \001(\010BS\222AM2DIndicates if updating" +
-      " the connection is disallowed for this r" +
-      "esourceJ\005false\340A\003R\030disallowConnectionUpd" +
-      "ate\"\362\001\n\025RegisterClientRequest\022i\n\006res_id\030" +
-      "\001 \001(\tBR\222AC2(Unique identifier of the cli" +
-      "ent resourceJ\027\"app_69388798466720005\"\272H\t" +
-      "r\004\020\001\030 \310\001\001R\005resId\022n\n\006client\030\002 \001(\0132#.scale" +
-      "kit.v1.clients.RegisterClientB1\222A(2&Deta" +
-      "ils of the client to be registered\272H\003\310\001\001" +
-      "R\006client\"\226\006\n\016RegisterClient\022Q\n\013client_na" +
-      "me\030\001 \001(\tB0\222A%2\022Name of the clientJ\017\"My A" +
-      "PI Client\"\272H\005r\003\030\200\001R\nclientName\022\202\001\n\013descr" +
-      "iption\030\002 \001(\tB`\222AU2\031Description of the cl" +
-      "ientJ8\"Client for accessing your organiz" +
-      "ation\'s API resources\"\272H\005r\003\030\200\004R\013descript" +
-      "ion\022g\n\rredirect_uris\030\003 \003(\tBB\222A?2\033Redirec" +
-      "t URI for the clientJ [\"https://example." +
-      "com/callback\"]R\014redirectUris\022Y\n\005scope\030\004 " +
-      "\001(\tBC\222A@2\033OAuth scopes for the clientJ![" +
-      "\"read:users\", \"write:resources\"]R\005scope\022" +
-      "T\n\nclient_uri\030\005 \001(\tB5\222A22\031Client URI for" +
-      " the clientJ\025\"https://example.com\"R\tclie" +
-      "ntUri\022W\n\010logo_uri\030\006 \001(\tB<\222A92\027Logo URI f" +
-      "or the clientJ\036\"https://example.com/logo" +
-      ".png\"R\007logoUri\022\\\n\007tos_uri\030\007 \001(\tBC\222A@2#Te" +
-      "rms of Service URI for the clientJ\031\"http" +
-      "s://example.com/tos\"R\006tosUri\022[\n\npolicy_u" +
-      "ri\030\010 \001(\tB<\222A92\031Policy URI for the client" +
-      "J\034\"https://example.com/policy\"R\tpolicyUr" +
-      "i\"\271\027\n\026RegisterClientResponse\022\374\001\n\tclient_" +
-      "id\030\001 \001(\tB\336\001\222A\332\0012\274\001The unique identifier " +
-      "for this M2M client. This ID is used to " +
-      "identify the client in API requests and " +
-      "logs. It is automatically generated when" +
-      " the client is created and cannot be mod" +
-      "ified.J\031\"m2morg_1231234233424344\"R\010clien" +
-      "tId\022\263\002\n\007secrets\030\002 \003(\0132!.scalekit.v1.clie" +
-      "nts.ClientSecretB\365\001\222A\361\0012\356\001List of client" +
-      " secrets associated with this client. Ea" +
-      "ch secret can be used for authentication" +
-      ", but only the most recently created sec" +
-      "ret is typically active. Secrets are sto" +
-      "red securely and their values are never " +
-      "returned after creation.R\007secrets\022\242\001\n\004na" +
-      "me\030\003 \001(\tB\215\001\222A\211\0012bThe display name of the" +
-      " M2M client. This name helps identify th" +
-      "e client in the dashboard and logs.J#\"Gi" +
-      "tHub Actions Deployment Service\"R\004name\022\332" +
-      "\001\n\013description\030\004 \001(\tB\267\001\222A\263\0012{A detailed " +
-      "description of the client\'s purpose and " +
-      "usage. This helps administrators underst" +
-      "and what the client is used for.J4\"Servi" +
-      "ce account for automated deployment proc" +
-      "esses\"R\013description\022\325\001\n\013create_time\030\005 \001(" +
-      "\0132\032.google.protobuf.TimestampB\227\001\222A\223\0012uTh" +
-      "e timestamp when this M2M client was cre" +
-      "ated. This field is automatically set by" +
-      " the server and cannot be modified.J\032\"20" +
-      "24-01-05T14:48:00.000Z\"R\ncreateTime\022\364\001\n\013" +
-      "update_time\030\006 \001(\0132\032.google.protobuf.Time" +
-      "stampB\266\001\222A\262\0012\223\001The timestamp when this M" +
-      "2M client was last updated. This field i" +
-      "s automatically updated by the server wh" +
-      "enever the client\'s configuration change" +
-      "s.J\032\"2024-01-05T14:48:00.000Z\"R\nupdateTi" +
-      "me\022\276\001\n\006scopes\030\007 \003(\tB\245\001\222A\241\0012uThe OAuth 2." +
-      "0 scopes granted to this client. These s" +
-      "copes determine what resources and actio" +
-      "ns the client can access.J([\"deploy:reso" +
-      "urces\", \"read:deployments\"]R\006scopes\022\307\001\n\010" +
-      "audience\030\010 \003(\tB\252\001\222A\246\0012\206\001The intended rec" +
-      "ipients of access tokens issued to this " +
-      "client. Each audience value should be a " +
-      "URI that identifies an API or service.J\033" +
-      "[\"https://api.example.com\"]R\010audience\022\354\001" +
-      "\n\rcustom_claims\030\t \003(\0132 .scalekit.v1.clie" +
-      "nts.CustomClaimB\244\001\222A\240\0012\235\001Additional clai" +
-      "ms included in access tokens issued to t" +
-      "his client. These claims provide context" +
-      " about the client and can be used for au" +
-      "thorization decisions.R\014customClaims\022\262\001\n" +
-      "\006expiry\030\n \001(\003B\231\001\222A\225\0012\214\001The lifetime of a" +
-      "ccess tokens issued to this client, in s" +
-      "econds. This determines how long a token" +
-      " remains valid before it must be refresh" +
-      "ed.J\0043600R\006expiry\022\304\001\n\013resource_id\030\013 \001(\tB" +
-      "\242\001\222A\236\0012\203\001The ID of the resource associat" +
-      "ed with this M2M client. This field is u" +
-      "sed to link the client to a specific res" +
-      "ource in the system.J\026\"app_1231234233424" +
-      "344\"R\nresourceId\022\321\001\n\rredirect_uris\030\014 \003(\t" +
-      "B\253\001\222A\247\0012\202\001The redirect URI for this M2M " +
-      "client. This URI is used in the OAuth 2." +
-      "0 authorization flow to redirect users a" +
-      "fter authentication.J [\"https://example." +
-      "com/callback\"]R\014redirectUris\022~\n\rclient_s" +
-      "ecret\030\r \001(\tBY\222AV24Client secret value (o" +
-      "nly returned once at creation)J\036\"CdExsdE" +
-      "rfccxDDssddfffgfeFHH1\"R\014clientSecret\022\316\001\n" +
-      "\030client_secret_expires_at\030\016 \001(\005B\224\001\222A\220\0012r" +
-      "Client secret expiry time in RFC3339 for" +
-      "mat. If the client secret does not expir" +
-      "e, this field will be set to null.J\032\"202" +
-      "4-12-31T23:59:59.000Z\"R\025clientSecretExpi" +
-      "resAt\"\276\002\n\024ListResourcesRequest\022r\n\rresour" +
-      "ce_type\030\001 \001(\0162!.scalekit.v1.clients.Reso" +
-      "urceTypeB*\222A!2\030Filter resources by typeJ" +
-      "\005\"WEB\"\272H\003\310\001\001R\014resourceType\022]\n\npage_token" +
-      "\030\002 \001(\tB>\222A;2\"Token for the next page of " +
-      "resultsJ\025\"next_page_token_123\"R\tpageToke" +
-      "n\022S\n\tpage_size\030\003 \001(\rB6\222A,2&Number of res" +
-      "ources to return per pageJ\00220\272H\004*\002\030\036R\010pa" +
-      "geSize\"\206\002\n\025ListResourcesResponse\022G\n\ntota" +
-      "l_size\030\001 \001(\rB(\222A%2#Total number of resou" +
-      "rces availableR\ttotalSize\022O\n\017next_page_t" +
-      "oken\030\002 \001(\tB\'\222A$2\"Token for the next page" +
-      " of resultsR\rnextPageToken\022S\n\tresources\030" +
-      "\003 \003(\0132\035.scalekit.v1.clients.ResourceB\026\222A" +
-      "\0232\021List of resourcesR\tresources\"\257\002\n\025Upda" +
-      "teResourceRequest\022s\n\013resource_id\030\001 \001(\tBR" +
-      "\222AF2+Unique identifier of the resource t" +
-      "o updateJ\027\"app_69388798466720005\"\272H\006r\004\020\001" +
-      "\030 R\nresourceId\022d\n\010resource\030\002 \001(\0132#.scale" +
-      "kit.v1.clients.UpdateResourceB#\222A\0322\030Upda" +
-      "ted resource details\272H\003\310\001\001R\010resource\022;\n\013" +
-      "update_mask\030c \001(\0132\032.google.protobuf.Fiel" +
-      "dMaskR\nupdateMask\"\243\013\n\016UpdateResource\022P\n\004" +
-      "name\030\001 \001(\tB<\222A12\024Name of the resourceJ\031\"" +
-      "My Updated API Resource\"\272H\005r\003\030\200\001R\004name\022\216" +
-      "\001\n\013description\030\002 \001(\tBl\222Aa2\033Description o" +
-      "f the resourceJB\"Updated resource for ac" +
-      "cessing your organization\'s API resource" +
-      "s\"\272H\005r\003\030\200\004R\013description\022\253\001\n\014resource_uri" +
-      "\030\003 \001(\tB\207\001\222A\203\0012aResource identifier for t" +
-      "he resource. This could be the URL used " +
-      "to access the resource resourcesJ\036\"https" +
-      "://resource.example.com\"R\013resourceUri\022g\n" +
-      "\023access_token_expiry\030\004 \001(\003B7\222A42,Expiry " +
-      "time in seconds for the access token.J\0043" +
-      "600R\021accessTokenExpiry\022k\n\024refresh_token_" +
-      "expiry\030\005 \001(\003B9\222A62-Expiry time in second" +
-      "s for the refresh token.J\00586400R\022refresh" +
-      "TokenExpiry\022\237\001\n#disable_dynamic_client_r" +
-      "egistration\030\006 \001(\010BP\222AM2EIndicates if dyn" +
-      "amic client registration is allowed for " +
-      "this resourceJ\004trueR disableDynamicClien" +
-      "tRegistration\022a\n\010logo_uri\030\007 \001(\tBF\222A;2\031Lo" +
-      "go URI for the resourceJ\036\"https://exampl" +
-      "e.com/logo.png\"\272H\005r\003\030\200\004R\007logoUri\022X\n\010prov" +
-      "ider\030\n \001(\tB<\222A12$Connection provider for" +
-      " the resourceJ\t\"DESCOPE\"\272H\005r\003\030\200\004R\010provid" +
-      "er\022\251\001\n\013resource_id\030\013 \001(\tB\207\001\222A\203\0012aResourc" +
-      "e identifier for the resource. This coul" +
-      "d be the URL used to access the resource" +
-      " resourcesJ\036\"https://resource.example.co" +
-      "m\"R\nresourceId\022i\n\006scopes\030\014 \003(\tBQ\222AN21Lis" +
-      "t of OAuth scopes associated with the re" +
-      "sourceJ\031[\"usr:read\", \"usr:write\"]R\006scope" +
-      "s\022\247\001\n\032custom_connection_settings\030\r \001(\01325" +
-      ".scalekit.v1.clients.ResourceCustomConne" +
-      "ctionSettingsB0\222A-2+Custom connection se" +
-      "ttings for the resourceH\000R\030customConnect" +
-      "ionSettingsB\n\n\010settings\"y\n\026UpdateResourc" +
-      "eResponse\022_\n\010resource\030\001 \001(\0132\035.scalekit.v" +
-      "1.clients.ResourceB$\222A!2\037Details of the " +
-      "updated resourceR\010resource\"\374\001\n\033CreateRes" +
-      "ourceClientRequest\022p\n\013resource_id\030\001 \001(\tB" +
-      "O\222AC2(Unique identifier of the client re" +
-      "sourceJ\027\"app_69388798466720005\"\272H\006r\004\020\001\030 " +
-      "R\nresourceId\022k\n\006client\030\002 \001(\0132#.scalekit." +
-      "v1.clients.ResourceClientB.\222A%2#Details " +
-      "of the client to be created\272H\003\310\001\001R\006clien" +
-      "t\"\370\001\n\034CreateResourceClientResponse\022Z\n\006cl" +
-      "ient\030\001 \001(\0132\036.scalekit.v1.clients.M2MClie" +
-      "ntB\"\222A\0372\035Details of the created clientR\006" +
-      "client\022|\n\014plain_secret\030\002 \001(\tBY\222AV24Clien" +
-      "t secret value (only returned once at cr" +
-      "eation)J\036\"CdExsdErfccxDDssddfffgfeFHH1\"R" +
-      "\013plainSecret\"\307\003\n\033UpdateResourceClientReq" +
-      "uest\022i\n\013resource_id\030\001 \001(\tBH\222A<2!Unique i" +
-      "dentifier of the resourceJ\027\"res_69388798" +
-      "466720005\"\272H\006r\004\020\001\030 R\nresourceId\022c\n\tclien" +
-      "t_id\030\002 \001(\tBF\222A:2\037Unique identifier of th" +
-      "e clientJ\027\"m2m_12345678901234567\"\272H\006r\004\020\001" +
-      "\030 R\010clientId\022f\n\006client\030\003 \001(\0132#.scalekit." +
-      "v1.clients.ResourceClientB)\222A 2\036Fields o" +
-      "f the client to update\272H\003\310\001\001R\006client\022p\n\013" +
-      "update_mask\030\004 \001(\0132\032.google.protobuf.Fiel" +
-      "dMaskB3\222A02.Mask specifying which fields" +
-      " should be updatedR\nupdateMask\"s\n\034Update" +
-      "ResourceClientResponse\022S\n\006client\030\001 \001(\0132\036" +
-      ".scalekit.v1.clients.M2MClientB\033\222A\0302\026Upd" +
-      "ated client detailsR\006client\"\226\002\n\030GetResou" +
-      "rceClientRequest\022u\n\013resource_id\030\001 \001(\tBT\222" +
-      "AH24Unique identifier of the client reso" +
-      "urce to retrieveJ\020\"skc_1234567890\"\272H\006r\004\020" +
-      "\001\030 R\nresourceId\022\202\001\n\tclient_id\030\002 \001(\tBe\222AY" +
-      "2<Unique identifier of the client associ" +
-      "ated with the resourceJ\031\"m2morg_12312342" +
-      "33424344\"\272H\006r\004\020\001\030 R\010clientId\"\250\002\n\031GetReso" +
-      "urceClientResponse\022\\\n\006client\030\002 \001(\0132\036.sca" +
-      "lekit.v1.clients.M2MClientB$\222A!2\037Details" +
-      " of the requested clientR\006client\022\246\001\n\017con",
-      "sented_users\030\003 \003(\0132\".scalekit.v1.clients" +
-      ".ConsentedUserBY\222AV2TList of user IDs wh" +
-      "o have consented to this client. Applica" +
-      "ble for DCR only clients.R\016consentedUser" +
-      "sJ\004\010\001\020\002\"\240\003\n\rConsentedUser\022\214\001\n\nconsent_id" +
-      "\030\001 \001(\tBm\222Aj2RThe unique identifier for t" +
-      "he consent record associated with this u" +
-      "ser and client.J\024\"usrcnst_1234567890\"R\tc" +
-      "onsentId\022\203\001\n\020external_user_id\030\002 \001(\tBY\222AV" +
-      "2BThe external user ID of the user who h" +
-      "as consented to this client.J\020\"usr_12345" +
-      "67890\"R\016externalUserId\022z\n\006scopes\030\003 \003(\tBb" +
-      "\222A_2:The scopes that the user has consen" +
-      "ted to for this client.J![\"read:users\", " +
-      "\"write:resources\"]R\006scopes\"\240\001\n\032ListResou" +
-      "rceClientsRequest\022\201\001\n\013resource_id\030\001 \001(\tB" +
-      "`\222AT2@Unique identifier of the resource " +
-      "whose clients are to be listedJ\020\"skc_123" +
-      "4567890\"\272H\006r\004\020\001\030 R\nresourceId\"\360\002\n\033ListRe" +
-      "sourceClientsResponse\022k\n\007clients\030\002 \003(\0132\036" +
-      ".scalekit.v1.clients.M2MClientB1\222A.2,Lis" +
-      "t of clients associated with the resourc" +
-      "eR\007clients\022i\n\021total_dcr_clients\030\003 \001(\005B=\222" +
-      "A:28Total number of DCR clients associat" +
-      "ed with the resourceR\017totalDcrClients\022s\n" +
-      "\024total_static_clients\030\004 \001(\005BA\222A>2<Total " +
-      "number of non-DCR clients associated wit" +
-      "h the resourceR\022totalStaticClientsJ\004\010\001\020\002" +
-      "\"\355\001\n\033DeleteResourceClientRequest\022i\n\013reso" +
-      "urce_id\030\001 \001(\tBH\222A<2!Unique identifier of" +
-      " the resourceJ\027\"app_69388798466720005\"\272H" +
-      "\006r\004\020\001\030 R\nresourceId\022c\n\tclient_id\030\002 \001(\tBF" +
-      "\222A:2\037Unique identifier of the clientJ\027\"m" +
-      "2m_12345678901234567\"\272H\006r\004\020\001\030 R\010clientId" +
-      "\"\036\n\034DeleteResourceClientResponse\"\216\002\n\037Cre" +
-      "ateOrganizationClientRequest\022z\n\017organiza" +
-      "tion_id\030\001 \001(\tBQ\222A?2%Unique identifier of" +
-      " the organizationJ\026\"org_1231234233424344" +
-      "\"\272H\014r\n\020\001\030 :\004org_R\016organizationId\022o\n\006clie" +
-      "nt\030\002 \001(\0132\'.scalekit.v1.clients.Organizat" +
-      "ionClientB.\222A%2#Details of the client to" +
-      " be created\272H\003\310\001\001R\006client\"\250\014\n\022Organizati" +
-      "onClient\022\347\001\n\004name\030\001 \001(\tB\322\001\222A\306\0012\236\001A descr" +
-      "iptive name for the API client that help" +
-      "s identify its purpose. This name is dis" +
-      "played in the dashboard and logs. Must b" +
-      "e between 1 and 128 characters.J#\"GitHub" +
-      " Actions Deployment Service\"\272H\005r\003\030\200\001R\004na" +
-      "me\022\210\002\n\013description\030\002 \001(\tB\345\001\222A\331\0012\216\001A deta" +
-      "iled explanation of the client\'s purpose" +
-      " and usage. This helps administrators un" +
-      "derstand what the client is used for and" +
-      " who manages it.JF\"Service account for G" +
-      "itHub Actions to deploy resources to pro" +
-      "duction\"\272H\005r\003\030\200\004R\013description\022\225\002\n\006scopes" +
-      "\030\003 \003(\tB\374\001\222A\370\0012\313\001OAuth 2.0 scopes that de" +
-      "fine the permissions granted to this cli" +
-      "ent. Each scope represents a specific pe" +
-      "rmission or set of permissions. The clie" +
-      "nt can only access resources that match " +
-      "its granted scopes.J([\"deploy:resources\"" +
-      ", \"read:deployments\"]R\006scopes\022\236\002\n\010audien" +
-      "ce\030\004 \003(\tB\201\002\222A\375\0012\250\001The intended recipient" +
-      "s of the access tokens issued to this cl" +
-      "ient. Each audience value should be a UR" +
-      "I that identifies the API or service tha" +
-      "t will validate the token.JP[\"https://ap" +
-      "i.example.com/api/analytics\", \"https://d" +
-      "eployment-api.acmecorp.com\"]R\010audience\022\202" +
-      "\003\n\rcustom_claims\030\005 \003(\0132 .scalekit.v1.cli" +
-      "ents.CustomClaimB\272\002\222A\266\0022\327\001Additional cla" +
-      "ims to be included in access tokens issu" +
-      "ed to this client. These claims provide " +
-      "context about the client and can be used" +
-      " for authorization decisions. Keep claim" +
-      "s minimal to avoid increasing token size" +
-      ".JZ[{\"key\": \"environment\", \"value\": \"pro" +
-      "duction\"}, {\"key\": \"service\", \"value\": \"" +
-      "deployment\"}]R\014customClaims\022_\n\006expiry\030\006 " +
-      "\001(\003BG\222AD2<Expiry time in seconds for the" +
-      " token generated by the clientJ\0043600R\006ex" +
-      "piry\"\374\001\n CreateOrganizationClientRespons" +
-      "e\022Z\n\006client\030\001 \001(\0132\036.scalekit.v1.clients." +
-      "M2MClientB\"\222A\0372\035Details of the created c" +
-      "lientR\006client\022|\n\014plain_secret\030\002 \001(\tBY\222AV" +
-      "24Client secret value (only returned onc" +
-      "e at creation)J\036\"CdExsdErfccxDDssddfffgf" +
-      "eFHH1\"R\013plainSecret\"\371\002\n\037UpdateOrganizati" +
-      "onClientRequest\022z\n\017organization_id\030\001 \001(\t" +
-      "BQ\222A?2%Unique identifier of the organiza" +
-      "tionJ\026\"org_1231234233424344\"\272H\014r\n\020\001\030 :\004o" +
-      "rg_R\016organizationId\022n\n\tclient_id\030\002 \001(\tBQ" +
-      "\222A<2\037Unique identifier of the clientJ\031\"m" +
-      "2morg_1231234233424344\"\272H\017r\r\020\001\030 :\007m2morg" +
-      "_R\010clientId\022j\n\006client\030\003 \001(\0132\'.scalekit.v" +
-      "1.clients.OrganizationClientB)\222A 2\036Updat" +
-      "ed details for the client\272H\003\310\001\001R\006client\"" +
-      "~\n UpdateOrganizationClientResponse\022Z\n\006c" +
-      "lient\030\001 \001(\0132\036.scalekit.v1.clients.M2MCli" +
-      "entB\"\222A\0372\035Updated details of the clientR" +
-      "\006client\"\351\027\n\tM2MClient\022\374\001\n\tclient_id\030\001 \001(" +
-      "\tB\336\001\222A\332\0012\274\001The unique identifier for thi" +
-      "s API client. This ID is used to identif" +
-      "y the client in API requests and logs. I" +
-      "t is automatically generated when the cl" +
-      "ient is created and cannot be modified.J" +
-      "\031\"m2morg_1231234233424344\"R\010clientId\022\263\002\n" +
-      "\007secrets\030\002 \003(\0132!.scalekit.v1.clients.Cli" +
-      "entSecretB\365\001\222A\361\0012\356\001List of client secret" +
-      "s associated with this client. Each secr" +
-      "et can be used for authentication, but o" +
-      "nly the most recently created secret is " +
-      "typically active. Secrets are stored sec" +
-      "urely and their values are never returne" +
-      "d after creation.R\007secrets\022\242\001\n\004name\030\003 \001(" +
-      "\tB\215\001\222A\211\0012bThe display name of the API cl" +
-      "ient. This name helps identify the clien" +
-      "t in the dashboard and logs.J#\"GitHub Ac" +
-      "tions Deployment Service\"R\004name\022\332\001\n\013desc" +
-      "ription\030\004 \001(\tB\267\001\222A\263\0012{A detailed descrip" +
-      "tion of the client\'s purpose and usage. " +
-      "This helps administrators understand wha" +
-      "t the client is used for.J4\"Service acco" +
-      "unt for automated deployment processes\"R" +
-      "\013description\022\367\001\n\017organization_id\030\005 \001(\tB\315" +
-      "\001\222A\311\0012\256\001The ID of the organization that " +
-      "owns this API client. This ID is used to" +
-      " associate the client with the correct o" +
-      "rganization and enforce organization-spe" +
-      "cific access controls.J\026\"org_12312342334" +
-      "24344\"R\016organizationId\022\325\001\n\013create_time\030\006" +
-      " \001(\0132\032.google.protobuf.TimestampB\227\001\222A\223\0012" +
-      "uThe timestamp when this API client was " +
-      "created. This field is automatically set" +
-      " by the server and cannot be modified.J\032" +
-      "\"2024-01-05T14:48:00.000Z\"R\ncreateTime\022\364" +
-      "\001\n\013update_time\030\007 \001(\0132\032.google.protobuf.T" +
-      "imestampB\266\001\222A\262\0012\223\001The timestamp when thi" +
-      "s API client was last updated. This fiel" +
-      "d is automatically updated by the server" +
-      " whenever the client\'s configuration cha" +
-      "nges.J\032\"2024-01-05T14:48:00.000Z\"R\nupdat" +
-      "eTime\022\276\001\n\006scopes\030\010 \003(\tB\245\001\222A\241\0012uThe OAuth" +
-      " 2.0 scopes granted to this client. Thes" +
-      "e scopes determine what resources and ac" +
-      "tions the client can access.J([\"deploy:r" +
-      "esources\", \"read:deployments\"]R\006scopes\022\307" +
-      "\001\n\010audience\030\t \003(\tB\252\001\222A\246\0012\206\001The intended " +
-      "recipients of access tokens issued to th" +
-      "is client. Each audience value should be" +
-      " a URI that identifies an API or service" +
-      ".J\033[\"https://api.example.com\"]R\010audience" +
-      "\022\354\001\n\rcustom_claims\030\n \003(\0132 .scalekit.v1.c" +
-      "lients.CustomClaimB\244\001\222A\240\0012\235\001Additional c" +
-      "laims included in access tokens issued t" +
-      "o this client. These claims provide cont" +
-      "ext about the client and can be used for" +
-      " authorization decisions.R\014customClaims\022" +
-      "_\n\006expiry\030\013 \001(\003BG\222AD2<Expiry time in sec" +
-      "onds for the token generated by the clie" +
-      "ntJ\0043600R\006expiry\022\304\001\n\013resource_id\030\014 \001(\tB\242" +
-      "\001\222A\236\0012\203\001The ID of the resource associate" +
-      "d with this M2M client. This field is us" +
-      "ed to link the client to a specific reso" +
-      "urce in the system.J\026\"app_12312342334243" +
-      "44\"R\nresourceId\022\321\001\n\rredirect_uris\030\r \003(\tB" +
-      "\253\001\222A\247\0012\202\001The redirect URI for this API c" +
-      "lient. This URI is used in the OAuth 2.0" +
-      " authorization flow to redirect users af" +
-      "ter authentication.J [\"https://example.c" +
-      "om/callback\"]R\014redirectUris\022\345\001\n\006is_dcr\030\017" +
-      " \001(\010B\315\001\222A\311\0012\277\001Indicates if the client wa" +
-      "s created via Dynamic Client Registratio" +
-      "n (DCR). Clients created through DCR may" +
-      " have different management and lifecycle" +
-      " policies compared to those created manu" +
-      "ally.J\005falseR\005isDcr\"\216\002\n\034GetOrganizationC" +
-      "lientRequest\022z\n\017organization_id\030\001 \001(\tBQ\222" +
-      "A?2%Unique identifier of the organizatio" +
-      "nJ\026\"org_1231234233424344\"\272H\014r\n\020\001\030 :\004org_" +
-      "R\016organizationId\022r\n\tclient_id\030\002 \001(\tBU\222A@" +
-      "2#Unique identifier of the API clientJ\031\"" +
-      "m2morg_1231234233424344\"\272H\017r\r\020\001\030 :\007m2mor" +
-      "g_R\010clientId\"}\n\035GetOrganizationClientRes" +
-      "ponse\022\\\n\006client\030\001 \001(\0132\036.scalekit.v1.clie" +
-      "nts.M2MClientB$\222A!2\037Details of the reque" +
-      "sted clientR\006client\"\324\002\n\013CustomClaim\022\267\001\n\003" +
-      "key\030\001 \001(\tB\244\001\222A\226\0012\204\001The name of the custo" +
-      "m claim. Must be between 1 and 128 chara" +
-      "cters. Use descriptive names that clearl" +
-      "y indicate the claim\'s purpose.J\r\"enviro" +
-      "nment\"\272H\007r\005\020\001\030\200\001R\003key\022\212\001\n\005value\030\002 \001(\tBt\222" +
-      "Aq2aThe value of the custom claim. This " +
-      "value will be included in access tokens " +
-      "issued to the client.J\014\"production\"R\005val" +
-      "ue\"\227\002\n%CreateOrganizationClientSecretReq" +
-      "uest\022z\n\017organization_id\030\001 \001(\tBQ\222A?2%Uniq" +
-      "ue identifier of the organizationJ\026\"org_" +
-      "1231234233424344\"\272H\014r\n\020\001\030 :\004org_R\016organi" +
-      "zationId\022r\n\tclient_id\030\002 \001(\tBU\222A@2#Unique" +
-      " identifier of the API clientJ\031\"m2morg_1" +
-      "231234233424344\"\272H\017r\r\020\001\030 :\007m2morg_R\010clie" +
-      "ntId\"\213\002\n&CreateOrganizationClientSecretR" +
-      "esponse\022{\n\014plain_secret\030\001 \001(\tBX\222AU24Clie" +
-      "nt secret value (only returned once at c" +
-      "reation)J\035\"m2morg_client_secret_xyz123\"R" +
-      "\013plainSecret\022d\n\006secret\030\002 \001(\0132!.scalekit." +
-      "v1.clients.ClientSecretB)\222A&2$Details of" +
-      " the created client secretR\006secret\"\202\003\n%D" +
-      "eleteOrganizationClientSecretRequest\022z\n\017" +
-      "organization_id\030\001 \001(\tBQ\222A?2%Unique ident" +
-      "ifier of the organizationJ\026\"org_12312342" +
-      "33424344\"\272H\014r\n\020\001\030 :\004org_R\016organizationId" +
-      "\022r\n\tclient_id\030\002 \001(\tBU\222A@2#Unique identif" +
-      "ier of the API clientJ\031\"m2morg_123123423" +
-      "3424344\"\272H\017r\r\020\001\030 :\007m2morg_R\010clientId\022i\n\t" +
-      "secret_id\030\003 \001(\tBL\222A@2&Unique identifier " +
-      "of the client secretJ\026\"sec_1231234233424" +
-      "344\"\272H\006r\004\020\001\030 R\010secretId\"\320\005\n\036ListOrganiza" +
-      "tionClientsRequest\022\261\001\n\017organization_id\030\001" +
-      " \001(\tB\207\001\222Au2[Unique identifier of the org" +
-      "anization whose clients to list. Must st" +
-      "art with \'org_\' prefix.J\026\"org_1231234233" +
-      "424344\"\272H\014r\n\020\001\030 :\004org_R\016organizationId\022r" +
-      "\n\tpage_size\030\002 \001(\rBU\222AR2LMaximum number o" +
-      "f API clients to return per page. Must b" +
-      "e between 10 and 100J\00230R\010pageSize\022\226\001\n\np" +
-      "age_token\030\003 \001(\tBw\222At2bPagination token f" +
-      "rom the previous response. Use to retrie" +
-      "ve the next page of organization clients" +
-      "J\016\"<page_token>\"R\tpageToken:\354\001\222A\350\001\n\250\001*!L" +
-      "ist Organization Clients Request2\202\001Reque" +
-      "st message for listing API clients withi" +
-      "n a specific organization. Supports pagi" +
-      "nation for handling large numbers of cli" +
-      "ents.*;\n\021API Documentation\022&https://docs" +
-      ".scalekit.com/m2m/overview\"\245\006\n\037ListOrgan" +
-      "izationClientsResponse\022\227\001\n\017next_page_tok" +
-      "en\030\001 \001(\tBo\222Al2UPagination token for the " +
-      "next page of results. Use this token to " +
-      "fetch the next page.J\023\"<next_page_token>" +
-      "\"R\rnextPageToken\022X\n\ntotal_size\030\002 \001(\rB9\222A" +
-      "620Total number of API clients in the or" +
-      "ganization.J\00230R\ttotalSize\022\340\001\n\007clients\030\003" +
-      " \003(\0132\036.scalekit.v1.clients.M2MClientB\245\001\222" +
-      "A\241\0012\236\001List of API client objects for the" +
-      " organization. Each client includes its " +
-      "configuration, metadata, and active secr" +
-      "ets (without exposing actual secret valu" +
-      "es).R\007clients\022\237\001\n\017prev_page_token\030\004 \001(\tB" +
-      "w\222At2]Pagination token for the previous " +
-      "page of results. Use this token to fetch" +
-      " the previous page.J\023\"<prev_page_token>\"" +
-      "R\rprevPageToken:\210\001\222A\204\001\n\201\001*\"List Organiza" +
-      "tion Clients Response2[Response message " +
-      "containing a paginated list of API clien" +
-      "ts for the specified organization.\"\203\003\n\037D" +
-      "eleteOrganizationClientRequest\022\260\001\n\017organ" +
-      "ization_id\030\001 \001(\tB\206\001\222At2ZUnique identifie" +
-      "r of the organization that owns the clie" +
-      "nt. Must start with \'org_\' prefix.J\026\"org" +
+      "eId\022\206\001\n\013description\030\004 \001(\tBd\222AY2\033Descript" +
+      "ion of the resourceJ:\"Resource for acces" +
+      "sing your organization\'s API resources\"\272" +
+      "H\005r\003\030\200\004R\013description\022t\n\020application_type" +
+      "\030\005 \001(\0162!.scalekit.v1.clients.ResourceTyp" +
+      "eB&\222A\0352\024Type of the resourceJ\005\"WEB\"\272H\003\310\001" +
+      "\001R\017applicationType\022\245\001\n#disable_dynamic_c" +
+      "lient_registration\030\006 \001(\010BV\222AM2EIndicates" +
+      " if dynamic client registration is allow" +
+      "ed for this resourceJ\004true\272H\003\310\001\001R disabl" +
+      "eDynamicClientRegistration\022a\n\010logo_uri\030\007" +
+      " \001(\tBF\222A;2\031Logo URI for the resourceJ\036\"h" +
+      "ttps://example.com/logo.png\"\272H\005r\003\030\200\004R\007lo" +
+      "goUri\022g\n\023access_token_expiry\030\010 \001(\003B7\222A42" +
+      ",Expiry time in seconds for the access t" +
+      "oken.J\0043600R\021accessTokenExpiry\022k\n\024refres" +
+      "h_token_expiry\030\t \001(\003B9\222A62-Expiry time i" +
+      "n seconds for the refresh token.J\00586400R" +
+      "\022refreshTokenExpiry\022\205\001\n\013create_time\030\n \001(" +
+      "\0132\032.google.protobuf.TimestampBH\222AE2\'Time" +
+      "stamp when the resource was createdJ\032\"20" +
+      "24-01-05T14:48:00.000Z\"R\ncreateTime\022\212\001\n\013" +
+      "update_time\030\013 \001(\0132\032.google.protobuf.Time" +
+      "stampBM\222AJ2,Timestamp when the resource " +
+      "was last updatedJ\032\"2024-01-05T14:48:00.0" +
+      "00Z\"R\nupdateTime\022X\n\010provider\030\014 \001(\tB<\222A12" +
+      "$Connection provider for the resourceJ\t\"" +
+      "DESCOPE\"\272H\005r\003\030\200\004R\010provider\"\244\031\n\010Resource\022" +
+      "\206\001\n\002id\030\001 \001(\tBv\222As2XUnique identifier for" +
+      " the resource. Automatically generated u" +
+      "pon creation and immutable.J\027\"app_693887" +
+      "98466720005\"R\002id\022H\n\004name\030\002 \001(\tB4\222A)2\024Nam" +
+      "e of the resourceJ\021\"My API Resource\"\272H\005r" +
+      "\003\030\200\001R\004name\022\264\001\n\014resource_uri\030\003 \001(\tB\220\001\222A\204\001" +
+      "2bResource identifier for the resource. " +
+      "This could  be the URL used to access th" +
+      "e resource resourcesJ\036\"https://resource." +
+      "example.com\"\272H\005r\003\030\200\004R\013resourceUri\022\206\001\n\013de" +
+      "scription\030\004 \001(\tBd\222AY2\033Description of the" +
+      " resourceJ:\"Resource for accessing your " +
+      "organization\'s API resources\"\272H\005r\003\030\200\004R\013d" +
+      "escription\022n\n\rresource_type\030\005 \001(\0162!.scal" +
+      "ekit.v1.clients.ResourceTypeB&\222A\0352\024Type " +
+      "of the resourceJ\005\"WEB\"\272H\003\310\001\001R\014resourceTy" +
+      "pe\022\245\001\n#disable_dynamic_client_registrati" +
+      "on\030\006 \001(\010BV\222AM2EIndicates if dynamic clie" +
+      "nt registration is allowed for this reso" +
+      "urceJ\004true\272H\003\310\001\001R disableDynamicClientRe" +
+      "gistration\022a\n\010logo_uri\030\007 \001(\tBF\222A;2\031Logo " +
+      "URI for the resourceJ\036\"https://example.c" +
+      "om/logo.png\"\272H\005r\003\030\200\004R\007logoUri\022g\n\023access_" +
+      "token_expiry\030\010 \001(\003B7\222A42,Expiry time in " +
+      "seconds for the access token.J\0043600R\021acc" +
+      "essTokenExpiry\022k\n\024refresh_token_expiry\030\t" +
+      " \001(\003B9\222A62-Expiry time in seconds for th" +
+      "e refresh token.J\00586400R\022refreshTokenExp" +
+      "iry\022\205\001\n\013create_time\030\n \001(\0132\032.google.proto" +
+      "buf.TimestampBH\222AE2\'Timestamp when the r" +
+      "esource was createdJ\032\"2024-01-05T14:48:0" +
+      "0.000Z\"R\ncreateTime\022\212\001\n\013update_time\030\013 \001(" +
+      "\0132\032.google.protobuf.TimestampBM\222AJ2,Time" +
+      "stamp when the resource was last updated" +
+      "J\032\"2024-01-05T14:48:00.000Z\"R\nupdateTime" +
+      "\022X\n\010provider\030\014 \001(\tB<\222A12$Connection prov" +
+      "ider for the resourceJ\t\"DESCOPE\"\272H\005r\003\030\200\004" +
+      "R\010provider\022\313\003\n\022protected_metadata\030\r \001(\0132" +
+      "\027.google.protobuf.StructB\202\003\222A\376\0022\202\001Protec" +
+      "ted metadata for the resource. This fiel" +
+      "d is used to store additional informatio" +
+      "n that should not be exposed in public A" +
+      "PIs.J\366\001{\"resource\": \"https://example.com" +
+      "/mcp\",\"authorization_servers\": [\"https:/" +
+      "/example.scalekit.com/resources/res_1231" +
+      "23123\"],\"bearer_methods_supported\": [\"he" +
+      "ader\"],\"resource_documentation\": \"https:" +
+      "//example.com/docs\",\"scopes_supported\": " +
+      "[\"usr:read\"]}R\021protectedMetadata\022\260\001\n\026pro" +
+      "tected_metadata_uri\030\016 \001(\tBz\222Aw25URI to a" +
+      "ccess the protected metadata for the res" +
+      "ourceJ>\"https://example.com/.well-known/" +
+      "oauth-protected-resource/mcp\"R\024protected" +
+      "MetadataUri\022\262\001\n\013resource_id\030\017 \001(\tB\220\001\222A\204\001" +
+      "2bResource identifier for the resource. " +
+      "This could  be the URL used to access th" +
+      "e resource resourcesJ\036\"https://resource." +
+      "example.com\"\272H\005r\003\030\200\004R\nresourceId\022\373\001\n\006sco" +
+      "pes\030\020 \003(\0132\032.scalekit.v1.clients.ScopeB\306\001" +
+      "\222A\302\0012OList of OAuth scopes associated wi" +
+      "th the resource with enabled or disabled" +
+      " flagJo[{\"id\": \"perm_\", \"name\": \"usr:rea" +
+      "d\", \"description\": \"Reading basic inform" +
+      "ation of the users\", \"enabled\": true}]R\006" +
+      "scopes\022\303\001\n\022connection_details\030\021 \001(\0132\'.sc" +
+      "alekit.v1.clients.ResourceConnectionBk\222A" +
+      "e2cDetails of the own auth connection if" +
+      " any. For full stack this field will be " +
+      "empty or not populated\340A\003R\021connectionDet" +
+      "ails\022\221\001\n\032disallow_connection_update\030\022 \001(" +
+      "\010BS\222AM2DIndicates if updating the connec" +
+      "tion is disallowed for this resourceJ\005fa" +
+      "lse\340A\003R\030disallowConnectionUpdate\022\254\001\n int" +
+      "ersect_scopes_user_permission\030\023 \001(\010Bc\222A`" +
+      "2XIndicates if the scopes should be inte" +
+      "rsected with user permissions for granul" +
+      "ar controlJ\004trueR\035intersectScopesUserPer" +
+      "mission\022\207\001\n\013enable_cimd\030\024 \001(\010Bf\222Ac2ZSpec" +
+      "ifies whether Client-Initiated Metadata " +
+      "Discovery (CIMD) is activated for the re" +
+      "sourceJ\005falseR\nenableCimd\"\362\001\n\025RegisterCl" +
+      "ientRequest\022i\n\006res_id\030\001 \001(\tBR\222AC2(Unique" +
+      " identifier of the client resourceJ\027\"app" +
+      "_69388798466720005\"\272H\tr\004\020\001\030 \310\001\001R\005resId\022n" +
+      "\n\006client\030\002 \001(\0132#.scalekit.v1.clients.Reg" +
+      "isterClientB1\222A(2&Details of the client " +
+      "to be registered\272H\003\310\001\001R\006client\"\226\006\n\016Regis" +
+      "terClient\022Q\n\013client_name\030\001 \001(\tB0\222A%2\022Nam" +
+      "e of the clientJ\017\"My API Client\"\272H\005r\003\030\200\001" +
+      "R\nclientName\022\202\001\n\013description\030\002 \001(\tB`\222AU2" +
+      "\031Description of the clientJ8\"Client for " +
+      "accessing your organization\'s API resour" +
+      "ces\"\272H\005r\003\030\200\004R\013description\022g\n\rredirect_ur" +
+      "is\030\003 \003(\tBB\222A?2\033Redirect URI for the clie" +
+      "ntJ [\"https://example.com/callback\"]R\014re" +
+      "directUris\022Y\n\005scope\030\004 \001(\tBC\222A@2\033OAuth sc" +
+      "opes for the clientJ![\"read:users\", \"wri" +
+      "te:resources\"]R\005scope\022T\n\nclient_uri\030\005 \001(" +
+      "\tB5\222A22\031Client URI for the clientJ\025\"http" +
+      "s://example.com\"R\tclientUri\022W\n\010logo_uri\030" +
+      "\006 \001(\tB<\222A92\027Logo URI for the clientJ\036\"ht" +
+      "tps://example.com/logo.png\"R\007logoUri\022\\\n\007" +
+      "tos_uri\030\007 \001(\tBC\222A@2#Terms of Service URI" +
+      " for the clientJ\031\"https://example.com/to" +
+      "s\"R\006tosUri\022[\n\npolicy_uri\030\010 \001(\tB<\222A92\031Pol" +
+      "icy URI for the clientJ\034\"https://example" +
+      ".com/policy\"R\tpolicyUri\"\271\027\n\026RegisterClie" +
+      "ntResponse\022\374\001\n\tclient_id\030\001 \001(\tB\336\001\222A\332\0012\274\001" +
+      "The unique identifier for this M2M clien" +
+      "t. This ID is used to identify the clien" +
+      "t in API requests and logs. It is automa" +
+      "tically generated when the client is cre" +
+      "ated and cannot be modified.J\031\"m2morg_12" +
+      "31234233424344\"R\010clientId\022\263\002\n\007secrets\030\002 " +
+      "\003(\0132!.scalekit.v1.clients.ClientSecretB\365" +
+      "\001\222A\361\0012\356\001List of client secrets associate" +
+      "d with this client. Each secret can be u" +
+      "sed for authentication, but only the mos" +
+      "t recently created secret is typically a" +
+      "ctive. Secrets are stored securely and t" +
+      "heir values are never returned after cre" +
+      "ation.R\007secrets\022\242\001\n\004name\030\003 \001(\tB\215\001\222A\211\0012bT" +
+      "he display name of the M2M client. This " +
+      "name helps identify the client in the da" +
+      "shboard and logs.J#\"GitHub Actions Deplo" +
+      "yment Service\"R\004name\022\332\001\n\013description\030\004 \001" +
+      "(\tB\267\001\222A\263\0012{A detailed description of the" +
+      " client\'s purpose and usage. This helps " +
+      "administrators understand what the clien" +
+      "t is used for.J4\"Service account for aut" +
+      "omated deployment processes\"R\013descriptio" +
+      "n\022\325\001\n\013create_time\030\005 \001(\0132\032.google.protobu" +
+      "f.TimestampB\227\001\222A\223\0012uThe timestamp when t" +
+      "his M2M client was created. This field i" +
+      "s automatically set by the server and ca" +
+      "nnot be modified.J\032\"2024-01-05T14:48:00." +
+      "000Z\"R\ncreateTime\022\364\001\n\013update_time\030\006 \001(\0132" +
+      "\032.google.protobuf.TimestampB\266\001\222A\262\0012\223\001The" +
+      " timestamp when this M2M client was last" +
+      " updated. This field is automatically up" +
+      "dated by the server whenever the client\'" +
+      "s configuration changes.J\032\"2024-01-05T14" +
+      ":48:00.000Z\"R\nupdateTime\022\276\001\n\006scopes\030\007 \003(" +
+      "\tB\245\001\222A\241\0012uThe OAuth 2.0 scopes granted t" +
+      "o this client. These scopes determine wh" +
+      "at resources and actions the client can " +
+      "access.J([\"deploy:resources\", \"read:depl" +
+      "oyments\"]R\006scopes\022\307\001\n\010audience\030\010 \003(\tB\252\001\222" +
+      "A\246\0012\206\001The intended recipients of access " +
+      "tokens issued to this client. Each audie" +
+      "nce value should be a URI that identifie" +
+      "s an API or service.J\033[\"https://api.exam" +
+      "ple.com\"]R\010audience\022\354\001\n\rcustom_claims\030\t " +
+      "\003(\0132 .scalekit.v1.clients.CustomClaimB\244\001" +
+      "\222A\240\0012\235\001Additional claims included in acc" +
+      "ess tokens issued to this client. These " +
+      "claims provide context about the client " +
+      "and can be used for authorization decisi" +
+      "ons.R\014customClaims\022\262\001\n\006expiry\030\n \001(\003B\231\001\222A" +
+      "\225\0012\214\001The lifetime of access tokens issue" +
+      "d to this client, in seconds. This deter" +
+      "mines how long a token remains valid bef" +
+      "ore it must be refreshed.J\0043600R\006expiry\022" +
+      "\304\001\n\013resource_id\030\013 \001(\tB\242\001\222A\236\0012\203\001The ID of" +
+      " the resource associated with this M2M c" +
+      "lient. This field is used to link the cl" +
+      "ient to a specific resource in the syste" +
+      "m.J\026\"app_1231234233424344\"R\nresourceId\022\321" +
+      "\001\n\rredirect_uris\030\014 \003(\tB\253\001\222A\247\0012\202\001The redi" +
+      "rect URI for this M2M client. This URI i" +
+      "s used in the OAuth 2.0 authorization fl" +
+      "ow to redirect users after authenticatio" +
+      "n.J [\"https://example.com/callback\"]R\014re" +
+      "directUris\022~\n\rclient_secret\030\r \001(\tBY\222AV24" +
+      "Client secret value (only returned once " +
+      "at creation)J\036\"CdExsdErfccxDDssddfffgfeF" +
+      "HH1\"R\014clientSecret\022\316\001\n\030client_secret_exp" +
+      "ires_at\030\016 \001(\005B\224\001\222A\220\0012rClient secret expi" +
+      "ry time in RFC3339 format. If the client" +
+      " secret does not expire, this field will" +
+      " be set to null.J\032\"2024-12-31T23:59:59.0" +
+      "00Z\"R\025clientSecretExpiresAt\"\276\002\n\024ListReso" +
+      "urcesRequest\022r\n\rresource_type\030\001 \001(\0162!.sc" +
+      "alekit.v1.clients.ResourceTypeB*\222A!2\030Fil" +
+      "ter resources by typeJ\005\"WEB\"\272H\003\310\001\001R\014reso" +
+      "urceType\022]\n\npage_token\030\002 \001(\tB>\222A;2\"Token" +
+      " for the next page of resultsJ\025\"next_pag" +
+      "e_token_123\"R\tpageToken\022S\n\tpage_size\030\003 \001" +
+      "(\rB6\222A,2&Number of resources to return p" +
+      "er pageJ\00220\272H\004*\002\030\036R\010pageSize\"\333\002\n\025ListRes" +
+      "ourcesResponse\022G\n\ntotal_size\030\001 \001(\rB(\222A%2" +
+      "#Total number of resources availableR\tto" +
+      "talSize\022O\n\017next_page_token\030\002 \001(\tB\'\222A$2\"T" +
+      "oken for the next page of resultsR\rnextP" +
+      "ageToken\022S\n\tresources\030\003 \003(\0132\035.scalekit.v" +
+      "1.clients.ResourceB\026\222A\0232\021List of resourc" +
+      "esR\tresources\022S\n\017prev_page_token\030\004 \001(\tB+" +
+      "\222A(2&Token for the previous page of resu" +
+      "ltsR\rprevPageToken\"\257\002\n\025UpdateResourceReq" +
+      "uest\022s\n\013resource_id\030\001 \001(\tBR\222AF2+Unique i" +
+      "dentifier of the resource to updateJ\027\"ap" +
+      "p_69388798466720005\"\272H\006r\004\020\001\030 R\nresourceI" +
+      "d\022d\n\010resource\030\002 \001(\0132#.scalekit.v1.client" +
+      "s.UpdateResourceB#\222A\0322\030Updated resource " +
+      "details\272H\003\310\001\001R\010resource\022;\n\013update_mask\030c" +
+      " \001(\0132\032.google.protobuf.FieldMaskR\nupdate" +
+      "Mask\"\251\016\n\016UpdateResource\022P\n\004name\030\001 \001(\tB<\222" +
+      "A12\024Name of the resourceJ\031\"My Updated AP" +
+      "I Resource\"\272H\005r\003\030\200\001R\004name\022\216\001\n\013descriptio" +
+      "n\030\002 \001(\tBl\222Aa2\033Description of the resourc" +
+      "eJB\"Updated resource for accessing your " +
+      "organization\'s API resources\"\272H\005r\003\030\200\004R\013d" +
+      "escription\022\253\001\n\014resource_uri\030\003 \001(\tB\207\001\222A\203\001" +
+      "2aResource identifier for the resource. " +
+      "This could be the URL used to access the" +
+      " resource resourcesJ\036\"https://resource.e" +
+      "xample.com\"R\013resourceUri\022g\n\023access_token" +
+      "_expiry\030\004 \001(\003B7\222A42,Expiry time in secon" +
+      "ds for the access token.J\0043600R\021accessTo" +
+      "kenExpiry\022k\n\024refresh_token_expiry\030\005 \001(\003B" +
+      "9\222A62-Expiry time in seconds for the ref" +
+      "resh token.J\00586400R\022refreshTokenExpiry\022\273" +
+      "\001\n#disable_dynamic_client_registration\030\006" +
+      " \001(\0132\032.google.protobuf.BoolValueBP\222AM2EI" +
+      "ndicates if dynamic client registration " +
+      "is allowed for this resourceJ\004trueR disa" +
+      "bleDynamicClientRegistration\022a\n\010logo_uri" +
+      "\030\007 \001(\tBF\222A;2\031Logo URI for the resourceJ\036" +
+      "\"https://example.com/logo.png\"\272H\005r\003\030\200\004R\007" +
+      "logoUri\022X\n\010provider\030\n \001(\tB<\222A12$Connecti" +
+      "on provider for the resourceJ\t\"DESCOPE\"\272" +
+      "H\005r\003\030\200\004R\010provider\022\251\001\n\013resource_id\030\013 \001(\tB" +
+      "\207\001\222A\203\0012aResource identifier for the reso" +
+      "urce. This could be the URL used to acce" +
+      "ss the resource resourcesJ\036\"https://reso" +
+      "urce.example.com\"R\nresourceId\022i\n\006scopes\030" +
+      "\014 \003(\tBQ\222AN21List of OAuth scopes associa" +
+      "ted with the resourceJ\031[\"usr:read\", \"usr" +
+      ":write\"]R\006scopes\022\247\001\n\032custom_connection_s" +
+      "ettings\030\r \001(\01325.scalekit.v1.clients.Reso" +
+      "urceCustomConnectionSettingsB0\222A-2+Custo" +
+      "m connection settings for the resourceH\000" +
+      "R\030customConnectionSettings\022\310\001\n intersect" +
+      "_scopes_user_permission\030\016 \001(\0132\032.google.p" +
+      "rotobuf.BoolValueBc\222A`2XIndicates if the" +
+      " scopes should be intersected with user " +
+      "permissions for granular controlJ\004trueR\035" +
+      "intersectScopesUserPermission\022\234\001\n\013enable" +
+      "_cimd\030\017 \001(\0132\032.google.protobuf.BoolValueB" +
+      "_\222A\\2SIndicates if CIMD (Client-Initiate" +
+      "d Metadata Discovery) is enabled for the" +
+      " resourceJ\005falseR\nenableCimdB\n\n\010settings" +
+      "\"y\n\026UpdateResourceResponse\022_\n\010resource\030\001" +
+      " \001(\0132\035.scalekit.v1.clients.ResourceB$\222A!" +
+      "2\037Details of the updated resourceR\010resou" +
+      "rce\"\374\001\n\033CreateResourceClientRequest\022p\n\013r" +
+      "esource_id\030\001 \001(\tBO\222AC2(Unique identifier" +
+      " of the client resourceJ\027\"app_6938879846" +
+      "6720005\"\272H\006r\004\020\001\030 R\nresourceId\022k\n\006client\030" +
+      "\002 \001(\0132#.scalekit.v1.clients.ResourceClie" +
+      "ntB.\222A%2#Details of the client to be cre" +
+      "ated\272H\003\310\001\001R\006client\"\370\001\n\034CreateResourceCli" +
+      "entResponse\022Z\n\006client\030\001 \001(\0132\036.scalekit.v" +
+      "1.clients.M2MClientB\"\222A\0372\035Details of the" +
+      " created clientR\006client\022|\n\014plain_secret\030",
+      "\002 \001(\tBY\222AV24Client secret value (only re" +
+      "turned once at creation)J\036\"CdExsdErfccxD" +
+      "DssddfffgfeFHH1\"R\013plainSecret\"\307\003\n\033Update" +
+      "ResourceClientRequest\022i\n\013resource_id\030\001 \001" +
+      "(\tBH\222A<2!Unique identifier of the resour" +
+      "ceJ\027\"res_69388798466720005\"\272H\006r\004\020\001\030 R\nre" +
+      "sourceId\022c\n\tclient_id\030\002 \001(\tBF\222A:2\037Unique" +
+      " identifier of the clientJ\027\"m2m_12345678" +
+      "901234567\"\272H\006r\004\020\001\030 R\010clientId\022f\n\006client\030" +
+      "\003 \001(\0132#.scalekit.v1.clients.ResourceClie" +
+      "ntB)\222A 2\036Fields of the client to update\272" +
+      "H\003\310\001\001R\006client\022p\n\013update_mask\030\004 \001(\0132\032.goo" +
+      "gle.protobuf.FieldMaskB3\222A02.Mask specif" +
+      "ying which fields should be updatedR\nupd" +
+      "ateMask\"s\n\034UpdateResourceClientResponse\022" +
+      "S\n\006client\030\001 \001(\0132\036.scalekit.v1.clients.M2" +
+      "MClientB\033\222A\0302\026Updated client detailsR\006cl" +
+      "ient\"\226\002\n\030GetResourceClientRequest\022u\n\013res" +
+      "ource_id\030\001 \001(\tBT\222AH24Unique identifier o" +
+      "f the client resource to retrieveJ\020\"skc_" +
+      "1234567890\"\272H\006r\004\020\001\030 R\nresourceId\022\202\001\n\tcli" +
+      "ent_id\030\002 \001(\tBe\222AY2<Unique identifier of " +
+      "the client associated with the resourceJ" +
+      "\031\"m2morg_1231234233424344\"\272H\006r\004\020\001\030 R\010cli" +
+      "entId\"\250\002\n\031GetResourceClientResponse\022\\\n\006c" +
+      "lient\030\002 \001(\0132\036.scalekit.v1.clients.M2MCli" +
+      "entB$\222A!2\037Details of the requested clien" +
+      "tR\006client\022\246\001\n\017consented_users\030\003 \003(\0132\".sc" +
+      "alekit.v1.clients.ConsentedUserBY\222AV2TLi" +
+      "st of user IDs who have consented to thi" +
+      "s client. Applicable for DCR only client" +
+      "s.R\016consentedUsersJ\004\010\001\020\002\"\240\003\n\rConsentedUs" +
+      "er\022\214\001\n\nconsent_id\030\001 \001(\tBm\222Aj2RThe unique" +
+      " identifier for the consent record assoc" +
+      "iated with this user and client.J\024\"usrcn" +
+      "st_1234567890\"R\tconsentId\022\203\001\n\020external_u" +
+      "ser_id\030\002 \001(\tBY\222AV2BThe external user ID " +
+      "of the user who has consented to this cl" +
+      "ient.J\020\"usr_1234567890\"R\016externalUserId\022" +
+      "z\n\006scopes\030\003 \003(\tBb\222A_2:The scopes that th" +
+      "e user has consented to for this client." +
+      "J![\"read:users\", \"write:resources\"]R\006sco" +
+      "pes\"\240\001\n\032ListResourceClientsRequest\022\201\001\n\013r" +
+      "esource_id\030\001 \001(\tB`\222AT2@Unique identifier" +
+      " of the resource whose clients are to be" +
+      " listedJ\020\"skc_1234567890\"\272H\006r\004\020\001\030 R\nreso" +
+      "urceId\"\360\002\n\033ListResourceClientsResponse\022k" +
+      "\n\007clients\030\002 \003(\0132\036.scalekit.v1.clients.M2" +
+      "MClientB1\222A.2,List of clients associated" +
+      " with the resourceR\007clients\022i\n\021total_dcr" +
+      "_clients\030\003 \001(\005B=\222A:28Total number of DCR" +
+      " clients associated with the resourceR\017t" +
+      "otalDcrClients\022s\n\024total_static_clients\030\004" +
+      " \001(\005BA\222A>2<Total number of non-DCR clien" +
+      "ts associated with the resourceR\022totalSt" +
+      "aticClientsJ\004\010\001\020\002\"\355\001\n\033DeleteResourceClie" +
+      "ntRequest\022i\n\013resource_id\030\001 \001(\tBH\222A<2!Uni" +
+      "que identifier of the resourceJ\027\"app_693" +
+      "88798466720005\"\272H\006r\004\020\001\030 R\nresourceId\022c\n\t" +
+      "client_id\030\002 \001(\tBF\222A:2\037Unique identifier " +
+      "of the clientJ\027\"m2m_12345678901234567\"\272H" +
+      "\006r\004\020\001\030 R\010clientId\"\036\n\034DeleteResourceClien" +
+      "tResponse\"\216\002\n\037CreateOrganizationClientRe" +
+      "quest\022z\n\017organization_id\030\001 \001(\tBQ\222A?2%Uni" +
+      "que identifier of the organizationJ\026\"org" +
       "_1231234233424344\"\272H\014r\n\020\001\030 :\004org_R\016organ" +
-      "izationId\022\254\001\n\tclient_id\030\002 \001(\tB\216\001\222Ay2\\Uni" +
-      "que identifier of the API client to perm" +
-      "anently delete. Must start with \'m2morg_" +
-      "\' prefix.J\031\"m2morg_1231234233424344\"\272H\017r" +
-      "\r\020\001\030 :\007m2morg_R\010clientId\"\245\001\n\020GetClientRe" +
-      "quest\022\220\001\n\tclient_id\030\001 \001(\tBs\222Ag2SUnique i" +
-      "dentifier of the client resource to retr" +
-      "ieve. Must be 1-32 characters long.J\020\"sk" +
-      "c_1234567890\"\272H\006r\004\020\001\030 R\010clientId\"\365\001\n\021Get" +
-      "ClientResponse\022\337\001\n\006client\030\001 \001(\0132\033.scalek" +
-      "it.v1.clients.ClientB\251\001\222A\245\0012\242\001Complete c" +
-      "lient configuration including authentica" +
-      "tion settings, redirect URIs, and secret" +
-      "s. This contains all current settings fo" +
-      "r the requested client resource.R\006client" +
-      "\"\305\003\n\022ListClientsRequest\022\331\001\n\024include_plai" +
-      "n_secret\030\001 \001(\010B\246\001\222A\242\0012\230\001Whether to inclu" +
-      "de plain secret values in the response. " +
-      "Should only be enabled during initial cr" +
-      "eation as secrets should be securely sto" +
-      "red immediately.J\005falseR\022includePlainSec" +
-      "ret\022\322\001\n\013client_type\030\002 \001(\tB\260\001\222A\254\0012\242\001Filte" +
-      "r clients by type. Valid values: WEB, M2" +
-      "M, M2M_ORG, M2M_USR, ALL. Defaults to WE" +
-      "B if not specified or empty. Returns an " +
-      "error if an invalid type is provided.J\005\"" +
-      "WEB\"R\nclientType\"\265\002\n\023ListClientsResponse" +
-      "\022Z\n\ntotal_size\030\001 \001(\rB;\222A822Total number " +
-      "of client resources in the workspace.J\0021" +
-      "2R\ttotalSize\022\301\001\n\007clients\030\002 \003(\0132\033.scaleki" +
-      "t.v1.clients.ClientB\211\001\222A\205\0012\202\001List of cli" +
-      "ent resource configurations matching the" +
-      " query criteria. Each client includes it" +
-      "s metadata and authentication settings.R" +
-      "\007clients\"\372\003\n\023UpdateClientRequest\022}\n\tclie" +
-      "nt_id\030\001 \001(\tB`\222AT2:Unique identifier of t" +
-      "he registered application to update.J\026\"s" +
-      "kc_01H9XPQR7ZY2AJKL\"\272H\006r\004\020\001\030 R\010clientId\022" +
-      "\237\002\n\006client\030\002 \001(\0132!.scalekit.v1.clients.U" +
-      "pdateClientB\343\001\222A\331\0012bApplication configur" +
-      "ation parameters to update. Contains red" +
-      "irect URIs and authentication settingsJs" +
-      "{\"redirect_uris\": [\"https://app.example." +
-      "com/callback\"], \"default_redirect_uri\": " +
-      "\"https://app.example.com/callback\"}\272H\003\310\001" +
-      "\001R\006client\022B\n\004mask\030\003 \001(\0132\032.google.protobu" +
-      "f.FieldMaskB\022\340A\003\372\322\344\223\002\t\022\007PREVIEWR\004mask\"\250\020" +
-      "\n\014UpdateClient\022\236\002\n\rredirect_uris\030\002 \003(\tB\370" +
-      "\001\222A\345\0012\234\001List of allowed redirect URIs fo" +
-      "r OAuth 2.0 authorization flows. Each UR" +
-      "I must be valid and use HTTPS in product" +
-      "ion environments. Maximum of 5 URIs allo" +
-      "wed.JD[\"https://app.example.com/callback" +
-      "\", \"https://dev.example.com/auth\"]\272H\014\222\001\t" +
-      "\030\001\"\005r\003\210\001\001R\014redirectUris\022\233\002\n\024default_redi" +
-      "rect_uri\030\003 \001(\tB\343\001\222A\247\0012\200\001Primary redirect" +
-      " URI used when none is specified in auth" +
-      "orization requests. Must exactly match o" +
-      "ne of the URIs in redirect_uris.J\"\"https" +
-      "://app.example.com/callback\"\272H5\272\0012\n\tvali" +
-      "d_uri\022\027uri must be a valid URI\032\014this.isU" +
-      "ri()H\000R\022defaultRedirectUri\210\001\001\022\303\002\n\030back_c" +
-      "hannel_logout_uris\030\004 \003(\tB\211\002\222A\366\0012\225\001HTTPS " +
-      "endpoints for receiving back-channel log" +
-      "out notifications. Required for implemen" +
-      "ting application-initiated logout flows " +
-      "and session management.J\\[\"https://app.e" +
-      "xample.com/backchannel-logout\", \"https:/" +
-      "/app.example.com/backchannel-logout\"]\272H\014" +
-      "\222\001\t\030\001\"\005r\003\210\001\001R\025backChannelLogoutUris\022\266\002\n\031" +
-      "post_logout_redirect_uris\030\005 \003(\tB\372\001\222A\347\0012\234" +
-      "\001Allowed URIs for post-logout redirectio" +
-      "n. These URIs are used when a user is re" +
-      "directed after logout. Must use HTTPS an" +
-      "d conform to security specifications.JF[" +
-      "\"https://app.example.com/logged-out\", \"h" +
-      "ttps://app.example.com/home\"]\272H\014\222\001\t\030\001\"\005r" +
-      "\003\210\001\001R\026postLogoutRedirectUris\022\377\001\n\022initiat" +
-      "e_login_uri\030\006 \001(\tB\313\001\222A\307\0012\243\001Pre-configure" +
-      "d URI for initiating login flows. This U" +
-      "RI is used to start authentication flows" +
-      " programmatically. Must use HTTPS protoc" +
-      "ol and contain a valid domain.J\037\"https:/" +
-      "/app.example.com/login\"H\001R\020initiateLogin" +
-      "Uri\210\001\001\022\243\002\n\017post_login_uris\030\007 \003(\tB\372\001\222A\347\0012" +
-      "\236\001List of allowed post login URIs for OA" +
-      "uth 2.0 authorization flows. Each URI mu" +
-      "st be valid and use HTTPS in production " +
-      "environments. Maximum of 5 URIs allowed." +
-      "JD[\"https://app.example.com/callback\", \"" +
-      "https://dev.example.com/auth\"]\272H\014\222\001\t\030\001\"\005" +
-      "r\003\210\001\001R\rpostLoginUris:\201\002\222A\375\001\n\275\001*\033Update C" +
-      "lient Configuration2\235\001Parameters for upd" +
-      "ating an API client application\'s config" +
-      "uration. This allows modification of red" +
-      "irect URIs, logout settings, and other s" +
-      "ecurity parameters.*;\n\021API Documentation" +
-      "\022&https://docs.scalekit.com/m2m/overview" +
-      "B\027\n\025_default_redirect_uriB\025\n\023_initiate_l" +
-      "ogin_uri\"\250\001\n\024UpdateClientResponse\022\217\001\n\006cl" +
-      "ient\030\001 \001(\0132\033.scalekit.v1.clients.ClientB" +
-      "Z\222AW2UUpdated application configuration " +
-      "with all current settings reflected in t" +
-      "he responseR\006client\"\256\001\n\031CreateClientSecr" +
-      "etRequest\022\220\001\n\tclient_id\030\001 \001(\tBs\222Ag2MUniq" +
-      "ue identifier of the client application " +
-      "for which to create a new secret.J\026\"skc_" +
-      "01H9XPQR7ZY2AJKL\"\272H\006r\004\020\001\030 R\010clientId\"\255\003\n" +
-      "\032CreateClientSecretResponse\022\306\001\n\014plain_se" +
-      "cret\030\001 \001(\tB\242\001\222A\236\0012\204\001Plaintext secret val" +
-      "ue. This value is only returned once at " +
-      "creation time and must be stored securel" +
-      "y. It cannot be retrieved again.J\025\"sec_p" +
-      "laintext123456\"R\013plainSecret\022\305\001\n\006secret\030" +
-      "\002 \001(\0132!.scalekit.v1.clients.ClientSecret" +
-      "B\211\001\222A\205\0012\202\001Metadata about the newly creat" +
-      "ed secret, including its ID, creation ti" +
-      "me, and status. Does not include the pla" +
-      "intext secret value.R\006secret\"\203\005\n\031UpdateC" +
-      "lientSecretRequest\022\217\001\n\tclient_id\030\001 \001(\tBr" +
-      "\222Af2LUnique identifier of the client app" +
-      "lication containing the secret to update" +
+      "izationId\022o\n\006client\030\002 \001(\0132\'.scalekit.v1." +
+      "clients.OrganizationClientB.\222A%2#Details" +
+      " of the client to be created\272H\003\310\001\001R\006clie" +
+      "nt\"\250\014\n\022OrganizationClient\022\347\001\n\004name\030\001 \001(\t" +
+      "B\322\001\222A\306\0012\236\001A descriptive name for the API" +
+      " client that helps identify its purpose." +
+      " This name is displayed in the dashboard" +
+      " and logs. Must be between 1 and 128 cha" +
+      "racters.J#\"GitHub Actions Deployment Ser" +
+      "vice\"\272H\005r\003\030\200\001R\004name\022\210\002\n\013description\030\002 \001(" +
+      "\tB\345\001\222A\331\0012\216\001A detailed explanation of the" +
+      " client\'s purpose and usage. This helps " +
+      "administrators understand what the clien" +
+      "t is used for and who manages it.JF\"Serv" +
+      "ice account for GitHub Actions to deploy" +
+      " resources to production\"\272H\005r\003\030\200\004R\013descr" +
+      "iption\022\225\002\n\006scopes\030\003 \003(\tB\374\001\222A\370\0012\313\001OAuth 2" +
+      ".0 scopes that define the permissions gr" +
+      "anted to this client. Each scope represe" +
+      "nts a specific permission or set of perm" +
+      "issions. The client can only access reso" +
+      "urces that match its granted scopes.J([\"" +
+      "deploy:resources\", \"read:deployments\"]R\006" +
+      "scopes\022\236\002\n\010audience\030\004 \003(\tB\201\002\222A\375\0012\250\001The i" +
+      "ntended recipients of the access tokens " +
+      "issued to this client. Each audience val" +
+      "ue should be a URI that identifies the A" +
+      "PI or service that will validate the tok" +
+      "en.JP[\"https://api.example.com/api/analy" +
+      "tics\", \"https://deployment-api.acmecorp." +
+      "com\"]R\010audience\022\202\003\n\rcustom_claims\030\005 \003(\0132" +
+      " .scalekit.v1.clients.CustomClaimB\272\002\222A\266\002" +
+      "2\327\001Additional claims to be included in a" +
+      "ccess tokens issued to this client. Thes" +
+      "e claims provide context about the clien" +
+      "t and can be used for authorization deci" +
+      "sions. Keep claims minimal to avoid incr" +
+      "easing token size.JZ[{\"key\": \"environmen" +
+      "t\", \"value\": \"production\"}, {\"key\": \"ser" +
+      "vice\", \"value\": \"deployment\"}]R\014customCl" +
+      "aims\022_\n\006expiry\030\006 \001(\003BG\222AD2<Expiry time i" +
+      "n seconds for the token generated by the" +
+      " clientJ\0043600R\006expiry\"\374\001\n CreateOrganiza" +
+      "tionClientResponse\022Z\n\006client\030\001 \001(\0132\036.sca" +
+      "lekit.v1.clients.M2MClientB\"\222A\0372\035Details" +
+      " of the created clientR\006client\022|\n\014plain_" +
+      "secret\030\002 \001(\tBY\222AV24Client secret value (" +
+      "only returned once at creation)J\036\"CdExsd" +
+      "ErfccxDDssddfffgfeFHH1\"R\013plainSecret\"\371\002\n" +
+      "\037UpdateOrganizationClientRequest\022z\n\017orga" +
+      "nization_id\030\001 \001(\tBQ\222A?2%Unique identifie" +
+      "r of the organizationJ\026\"org_123123423342" +
+      "4344\"\272H\014r\n\020\001\030 :\004org_R\016organizationId\022n\n\t" +
+      "client_id\030\002 \001(\tBQ\222A<2\037Unique identifier " +
+      "of the clientJ\031\"m2morg_1231234233424344\"" +
+      "\272H\017r\r\020\001\030 :\007m2morg_R\010clientId\022j\n\006client\030\003" +
+      " \001(\0132\'.scalekit.v1.clients.OrganizationC" +
+      "lientB)\222A 2\036Updated details for the clie" +
+      "nt\272H\003\310\001\001R\006client\"~\n UpdateOrganizationCl" +
+      "ientResponse\022Z\n\006client\030\001 \001(\0132\036.scalekit." +
+      "v1.clients.M2MClientB\"\222A\0372\035Updated detai" +
+      "ls of the clientR\006client\"\355\032\n\tM2MClient\022\374" +
+      "\001\n\tclient_id\030\001 \001(\tB\336\001\222A\332\0012\274\001The unique i" +
+      "dentifier for this API client. This ID i" +
+      "s used to identify the client in API req" +
+      "uests and logs. It is automatically gene" +
+      "rated when the client is created and can" +
+      "not be modified.J\031\"m2morg_12312342334243" +
+      "44\"R\010clientId\022\263\002\n\007secrets\030\002 \003(\0132!.scalek" +
+      "it.v1.clients.ClientSecretB\365\001\222A\361\0012\356\001List" +
+      " of client secrets associated with this " +
+      "client. Each secret can be used for auth" +
+      "entication, but only the most recently c" +
+      "reated secret is typically active. Secre" +
+      "ts are stored securely and their values " +
+      "are never returned after creation.R\007secr" +
+      "ets\022\242\001\n\004name\030\003 \001(\tB\215\001\222A\211\0012bThe display n" +
+      "ame of the API client. This name helps i" +
+      "dentify the client in the dashboard and " +
+      "logs.J#\"GitHub Actions Deployment Servic" +
+      "e\"R\004name\022\332\001\n\013description\030\004 \001(\tB\267\001\222A\263\0012{A" +
+      " detailed description of the client\'s pu" +
+      "rpose and usage. This helps administrato" +
+      "rs understand what the client is used fo" +
+      "r.J4\"Service account for automated deplo" +
+      "yment processes\"R\013description\022\367\001\n\017organi" +
+      "zation_id\030\005 \001(\tB\315\001\222A\311\0012\256\001The ID of the o" +
+      "rganization that owns this API client. T" +
+      "his ID is used to associate the client w" +
+      "ith the correct organization and enforce" +
+      " organization-specific access controls.J" +
+      "\026\"org_1231234233424344\"R\016organizationId\022" +
+      "\325\001\n\013create_time\030\006 \001(\0132\032.google.protobuf." +
+      "TimestampB\227\001\222A\223\0012uThe timestamp when thi" +
+      "s API client was created. This field is " +
+      "automatically set by the server and cann" +
+      "ot be modified.J\032\"2024-01-05T14:48:00.00" +
+      "0Z\"R\ncreateTime\022\364\001\n\013update_time\030\007 \001(\0132\032." +
+      "google.protobuf.TimestampB\266\001\222A\262\0012\223\001The t" +
+      "imestamp when this API client was last u" +
+      "pdated. This field is automatically upda" +
+      "ted by the server whenever the client\'s " +
+      "configuration changes.J\032\"2024-01-05T14:4" +
+      "8:00.000Z\"R\nupdateTime\022\276\001\n\006scopes\030\010 \003(\tB" +
+      "\245\001\222A\241\0012uThe OAuth 2.0 scopes granted to " +
+      "this client. These scopes determine what" +
+      " resources and actions the client can ac" +
+      "cess.J([\"deploy:resources\", \"read:deploy" +
+      "ments\"]R\006scopes\022\307\001\n\010audience\030\t \003(\tB\252\001\222A\246" +
+      "\0012\206\001The intended recipients of access to" +
+      "kens issued to this client. Each audienc" +
+      "e value should be a URI that identifies " +
+      "an API or service.J\033[\"https://api.exampl" +
+      "e.com\"]R\010audience\022\354\001\n\rcustom_claims\030\n \003(" +
+      "\0132 .scalekit.v1.clients.CustomClaimB\244\001\222A" +
+      "\240\0012\235\001Additional claims included in acces" +
+      "s tokens issued to this client. These cl" +
+      "aims provide context about the client an" +
+      "d can be used for authorization decision" +
+      "s.R\014customClaims\022_\n\006expiry\030\013 \001(\003BG\222AD2<E" +
+      "xpiry time in seconds for the token gene" +
+      "rated by the clientJ\0043600R\006expiry\022\304\001\n\013re" +
+      "source_id\030\014 \001(\tB\242\001\222A\236\0012\203\001The ID of the r" +
+      "esource associated with this M2M client." +
+      " This field is used to link the client t" +
+      "o a specific resource in the system.J\026\"a" +
+      "pp_1231234233424344\"R\nresourceId\022\321\001\n\rred" +
+      "irect_uris\030\r \003(\tB\253\001\222A\247\0012\202\001The redirect U" +
+      "RI for this API client. This URI is used" +
+      " in the OAuth 2.0 authorization flow to " +
+      "redirect users after authentication.J [\"" +
+      "https://example.com/callback\"]R\014redirect" +
+      "Uris\022\345\001\n\006is_dcr\030\017 \001(\010B\315\001\222A\311\0012\277\001Indicates" +
+      " if the client was created via Dynamic C" +
+      "lient Registration (DCR). Clients create" +
+      "d through DCR may have different managem" +
+      "ent and lifecycle policies compared to t" +
+      "hose created manually.J\005falseR\005isDcr\022\310\001\n" +
+      "\007is_cimd\030\020 \001(\010B\256\001\222A\252\0012\240\001Indicates if the" +
+      " client was created via Client-Initiated" +
+      " Management (CIMD). CIMD clients can upd" +
+      "ate their own configuration according to" +
+      " the CIMD specification.J\005falseR\006isCimd\022" +
+      "\266\001\n\014metadata_uri\030\021 \001(\tB\222\001\222A\216\0012`The URI t" +
+      "o the client\'s metadata, which is utiliz" +
+      "ed to obtain the client\'s configuration " +
+      "detailsJ*\"https://example.com/client-met" +
+      "adata.json\"R\013metadataUri\"\216\002\n\034GetOrganiza" +
+      "tionClientRequest\022z\n\017organization_id\030\001 \001" +
+      "(\tBQ\222A?2%Unique identifier of the organi" +
+      "zationJ\026\"org_1231234233424344\"\272H\014r\n\020\001\030 :" +
+      "\004org_R\016organizationId\022r\n\tclient_id\030\002 \001(\t" +
+      "BU\222A@2#Unique identifier of the API clie" +
+      "ntJ\031\"m2morg_1231234233424344\"\272H\017r\r\020\001\030 :\007" +
+      "m2morg_R\010clientId\"}\n\035GetOrganizationClie" +
+      "ntResponse\022\\\n\006client\030\001 \001(\0132\036.scalekit.v1" +
+      ".clients.M2MClientB$\222A!2\037Details of the " +
+      "requested clientR\006client\"\324\002\n\013CustomClaim" +
+      "\022\267\001\n\003key\030\001 \001(\tB\244\001\222A\226\0012\204\001The name of the " +
+      "custom claim. Must be between 1 and 128 " +
+      "characters. Use descriptive names that c" +
+      "learly indicate the claim\'s purpose.J\r\"e" +
+      "nvironment\"\272H\007r\005\020\001\030\200\001R\003key\022\212\001\n\005value\030\002 \001" +
+      "(\tBt\222Aq2aThe value of the custom claim. " +
+      "This value will be included in access to" +
+      "kens issued to the client.J\014\"production\"" +
+      "R\005value\"\227\002\n%CreateOrganizationClientSecr" +
+      "etRequest\022z\n\017organization_id\030\001 \001(\tBQ\222A?2" +
+      "%Unique identifier of the organizationJ\026" +
+      "\"org_1231234233424344\"\272H\014r\n\020\001\030 :\004org_R\016o" +
+      "rganizationId\022r\n\tclient_id\030\002 \001(\tBU\222A@2#U" +
+      "nique identifier of the API clientJ\031\"m2m" +
+      "org_1231234233424344\"\272H\017r\r\020\001\030 :\007m2morg_R" +
+      "\010clientId\"\213\002\n&CreateOrganizationClientSe" +
+      "cretResponse\022{\n\014plain_secret\030\001 \001(\tBX\222AU2" +
+      "4Client secret value (only returned once" +
+      " at creation)J\035\"m2morg_client_secret_xyz" +
+      "123\"R\013plainSecret\022d\n\006secret\030\002 \001(\0132!.scal" +
+      "ekit.v1.clients.ClientSecretB)\222A&2$Detai" +
+      "ls of the created client secretR\006secret\"" +
+      "\202\003\n%DeleteOrganizationClientSecretReques" +
+      "t\022z\n\017organization_id\030\001 \001(\tBQ\222A?2%Unique " +
+      "identifier of the organizationJ\026\"org_123" +
+      "1234233424344\"\272H\014r\n\020\001\030 :\004org_R\016organizat" +
+      "ionId\022r\n\tclient_id\030\002 \001(\tBU\222A@2#Unique id" +
+      "entifier of the API clientJ\031\"m2morg_1231" +
+      "234233424344\"\272H\017r\r\020\001\030 :\007m2morg_R\010clientI" +
+      "d\022i\n\tsecret_id\030\003 \001(\tBL\222A@2&Unique identi" +
+      "fier of the client secretJ\026\"sec_12312342" +
+      "33424344\"\272H\006r\004\020\001\030 R\010secretId\"\320\005\n\036ListOrg" +
+      "anizationClientsRequest\022\261\001\n\017organization" +
+      "_id\030\001 \001(\tB\207\001\222Au2[Unique identifier of th" +
+      "e organization whose clients to list. Mu" +
+      "st start with \'org_\' prefix.J\026\"org_12312" +
+      "34233424344\"\272H\014r\n\020\001\030 :\004org_R\016organizatio" +
+      "nId\022r\n\tpage_size\030\002 \001(\rBU\222AR2LMaximum num" +
+      "ber of API clients to return per page. M" +
+      "ust be between 10 and 100J\00230R\010pageSize\022" +
+      "\226\001\n\npage_token\030\003 \001(\tBw\222At2bPagination to" +
+      "ken from the previous response. Use to r" +
+      "etrieve the next page of organization cl" +
+      "ientsJ\016\"<page_token>\"R\tpageToken:\354\001\222A\350\001\n" +
+      "\250\001*!List Organization Clients Request2\202\001" +
+      "Request message for listing API clients " +
+      "within a specific organization. Supports" +
+      " pagination for handling large numbers o" +
+      "f clients.*;\n\021API Documentation\022&https:/" +
+      "/docs.scalekit.com/m2m/overview\"\245\006\n\037List" +
+      "OrganizationClientsResponse\022\227\001\n\017next_pag" +
+      "e_token\030\001 \001(\tBo\222Al2UPagination token for" +
+      " the next page of results. Use this toke" +
+      "n to fetch the next page.J\023\"<next_page_t" +
+      "oken>\"R\rnextPageToken\022X\n\ntotal_size\030\002 \001(" +
+      "\rB9\222A620Total number of API clients in t" +
+      "he organization.J\00230R\ttotalSize\022\340\001\n\007clie" +
+      "nts\030\003 \003(\0132\036.scalekit.v1.clients.M2MClien" +
+      "tB\245\001\222A\241\0012\236\001List of API client objects fo" +
+      "r the organization. Each client includes" +
+      " its configuration, metadata, and active" +
+      " secrets (without exposing actual secret" +
+      " values).R\007clients\022\237\001\n\017prev_page_token\030\004" +
+      " \001(\tBw\222At2]Pagination token for the prev" +
+      "ious page of results. Use this token to " +
+      "fetch the previous page.J\023\"<prev_page_to" +
+      "ken>\"R\rprevPageToken:\210\001\222A\204\001\n\201\001*\"List Org" +
+      "anization Clients Response2[Response mes" +
+      "sage containing a paginated list of API " +
+      "clients for the specified organization.\"" +
+      "\203\003\n\037DeleteOrganizationClientRequest\022\260\001\n\017" +
+      "organization_id\030\001 \001(\tB\206\001\222At2ZUnique iden" +
+      "tifier of the organization that owns the" +
+      " client. Must start with \'org_\' prefix.J" +
+      "\026\"org_1231234233424344\"\272H\014r\n\020\001\030 :\004org_R\016" +
+      "organizationId\022\254\001\n\tclient_id\030\002 \001(\tB\216\001\222Ay" +
+      "2\\Unique identifier of the API client to" +
+      " permanently delete. Must start with \'m2" +
+      "morg_\' prefix.J\031\"m2morg_1231234233424344" +
+      "\"\272H\017r\r\020\001\030 :\007m2morg_R\010clientId\"\245\001\n\020GetCli" +
+      "entRequest\022\220\001\n\tclient_id\030\001 \001(\tBs\222Ag2SUni" +
+      "que identifier of the client resource to" +
+      " retrieve. Must be 1-32 characters long." +
+      "J\020\"skc_1234567890\"\272H\006r\004\020\001\030 R\010clientId\"\365\001" +
+      "\n\021GetClientResponse\022\337\001\n\006client\030\001 \001(\0132\033.s" +
+      "calekit.v1.clients.ClientB\251\001\222A\245\0012\242\001Compl" +
+      "ete client configuration including authe" +
+      "ntication settings, redirect URIs, and s" +
+      "ecrets. This contains all current settin" +
+      "gs for the requested client resource.R\006c" +
+      "lient\"\305\003\n\022ListClientsRequest\022\331\001\n\024include" +
+      "_plain_secret\030\001 \001(\010B\246\001\222A\242\0012\230\001Whether to " +
+      "include plain secret values in the respo" +
+      "nse. Should only be enabled during initi" +
+      "al creation as secrets should be securel" +
+      "y stored immediately.J\005falseR\022includePla" +
+      "inSecret\022\322\001\n\013client_type\030\002 \001(\tB\260\001\222A\254\0012\242\001" +
+      "Filter clients by type. Valid values: WE" +
+      "B, M2M, M2M_ORG, M2M_USR, ALL. Defaults " +
+      "to WEB if not specified or empty. Return" +
+      "s an error if an invalid type is provide" +
+      "d.J\005\"WEB\"R\nclientType\"\265\002\n\023ListClientsRes" +
+      "ponse\022Z\n\ntotal_size\030\001 \001(\rB;\222A822Total nu" +
+      "mber of client resources in the workspac" +
+      "e.J\00212R\ttotalSize\022\301\001\n\007clients\030\002 \003(\0132\033.sc" +
+      "alekit.v1.clients.ClientB\211\001\222A\205\0012\202\001List o" +
+      "f client resource configurations matchin" +
+      "g the query criteria. Each client includ" +
+      "es its metadata and authentication setti" +
+      "ngs.R\007clients\"\372\003\n\023UpdateClientRequest\022}\n" +
+      "\tclient_id\030\001 \001(\tB`\222AT2:Unique identifier" +
+      " of the registered application to update" +
       ".J\026\"skc_01H9XPQR7ZY2AJKL\"\272H\006r\004\020\001\030 R\010clie" +
-      "ntId\022\253\001\n\tsecret_id\030\002 \001(\tB\215\001\222A\200\0012fUnique " +
-      "identifier of the client secret to updat" +
-      "e. This references a specific secret wit" +
-      "hin the client.J\026\"sec_01H9XPQR7ZY2AJKL\"\272" +
-      "H\006r\004\020\001\030 R\010secretId\022\260\001\n\006secret\030\003 \001(\0132\'.sc" +
-      "alekit.v1.clients.UpdateClientSecretBo\222A" +
-      "f2dUpdated settings for the secret. Curr" +
-      "ently supports modifying the secret\'s st" +
-      "atus (active/inactive).\272H\003\310\001\001R\006secret\022s\n" +
-      "\004mask\030\004 \001(\0132\032.google.protobuf.FieldMaskB" +
-      "C\222A@2>Specifies which fields to update. " +
-      "System-controlled parameter.R\004mask\"\354\001\n\022U" +
-      "pdateClientSecret\022\325\001\n\006status\030\001 \001(\0162\'.sca" +
-      "lekit.v1.clients.ClientSecretStatusB\223\001\222A" +
-      "\217\0012\202\001Status to set for the client secret",
-      ". Set to ACTIVE to enable the secret for" +
-      " authentication, or INACTIVE to temporar" +
-      "ily disable it.J\010INACTIVER\006status\"\347\001\n\032Up" +
-      "dateClientSecretResponse\022\310\001\n\006secret\030\001 \001(" +
-      "\0132!.scalekit.v1.clients.ClientSecretB\214\001\222" +
-      "A\210\0012\205\001Updated secret metadata, reflectin" +
-      "g the changes made by the update operati" +
-      "on. Note that the plaintext secret value" +
-      " is never returned.R\006secret\"\322\002\n\031DeleteCl" +
-      "ientSecretRequest\022\217\001\n\tclient_id\030\001 \001(\tBr\222" +
-      "Af2LUnique identifier of the client appl" +
-      "ication containing the secret to delete." +
-      "J\026\"skc_01H9XPQR7ZY2AJKL\"\272H\006r\004\020\001\030 R\010clien" +
-      "tId\022\242\001\n\tsecret_id\030\002 \001(\tB\204\001\222Ax2^Unique id" +
-      "entifier of the client secret to permane" +
-      "ntly delete. This operation cannot be un" +
-      "done.J\026\"sec_01H9XPQR7ZY2AJKL\"\272H\006r\004\020\001\030 R\010" +
-      "secretId\"\272\031\n\006Client\022\342\001\n\002id\030\001 \001(\tB\321\001\222A\315\0012" +
-      "\262\001Unique identifier for the client appli" +
-      "cation. This ID is automatically generat" +
-      "ed when the client is created and cannot" +
-      " be modified. Used in API requests and a" +
-      "uthentication flows.J\026\"skc_1234abcd5678e" +
-      "fgh\"R\002id\022\327\001\n\005keyId\030\002 \001(\tB\300\001\222A\274\0012\241\001Identi" +
-      "fier for the cryptographic key pair used" +
-      " to sign tokens. This key is used for JW" +
-      "T signing operations. Keys can be rotate" +
-      "d by generating new client secrets.J\026\"ke" +
-      "y_9876zyxw5432vuts\"R\005keyId\022\360\001\n\013create_ti" +
-      "me\030\003 \001(\0132\032.google.protobuf.TimestampB\262\001\222" +
-      "A\256\0012\217\001Timestamp indicating when the clie" +
-      "nt configuration was initially created. " +
-      "This field is automatically set by the s" +
-      "erver and cannot be modified.J\032\"2024-01-" +
-      "05T14:48:00.000Z\"R\ncreateTime\022\201\002\n\013update" +
-      "_time\030\004 \001(\0132\032.google.protobuf.TimestampB" +
-      "\303\001\222A\277\0012\240\001Timestamp of the last modificat" +
-      "ion to the client configuration. This fi" +
-      "eld is automatically updated by the serv" +
-      "er whenever any aspect of the client is " +
-      "modified.J\032\"2024-01-10T09:12:00.000Z\"R\nu" +
-      "pdateTime\022\325\002\n\rredirect_uris\030\005 \003(\tB\257\002\222A\253\002" +
-      "2\333\001List of allowed redirect URIs for OAu" +
-      "th 2.0 authorization flows. These URIs m" +
-      "ust use HTTPS protocol in production env" +
-      "ironments and comply with RFC 6749. User" +
-      "s will be redirected to one of these URI" +
-      "s after authorization.JK[\"https://auth.y" +
-      "our-app.com/callback\", \"https://scalekit" +
-      ".example.org/auth\"]R\014redirectUris\022\200\002\n\024de" +
-      "fault_redirect_uri\030\006 \001(\tB\315\001\222A\311\0012\240\001Primar" +
-      "y redirect URI used when none is explici" +
-      "tly specified in authorization requests." +
-      " This URI must exactly match one of the " +
-      "entries in the redirect_uris list.J$\"htt" +
-      "ps://auth.your-app.com/callback\"R\022defaul" +
-      "tRedirectUri\022\245\002\n\007secrets\030\007 \003(\0132!.scaleki" +
-      "t.v1.clients.ClientSecretB\347\001\222A\343\0012\340\001List " +
-      "of client secrets used for authenticatio" +
-      "n. Each secret is stored securely using " +
-      "one-way hashing (bcrypt). The plaintext " +
-      "secret values are only displayed during " +
-      "initial creation and must be stored secu" +
-      "rely by the client.R\007secrets\022\243\002\n\031post_lo" +
-      "gout_redirect_uris\030\010 \003(\tB\347\001\222A\343\0012\272\001Allowe" +
-      "d URIs for post-logout redirection. Thes" +
-      "e URIs are used when a user is redirecte" +
-      "d after signing out. Must use HTTPS and " +
-      "conform to OpenID Connect Session Manage" +
-      "ment specifications.J$[\"https://auth.you" +
-      "r-app.com/logout\"]R\026postLogoutRedirectUr" +
-      "is\022\311\002\n\030back_channel_logout_uris\030\t \003(\tB\217\002" +
-      "\222A\213\0022\330\001HTTPS endpoint for receiving back" +
-      "-channel logout notifications. This URI " +
-      "is called by the authentication server w" +
-      "hen a session expires or is terminated. " +
-      "Required for implementing relying party-" +
-      "initiated logout flows.J.\"https://auth.y" +
-      "our-app.com/backchannel-logout\"R\025backCha" +
-      "nnelLogoutUris\022\240\002\n\022initiate_login_uri\030\n " +
-      "\001(\tB\361\001\222A\355\0012\277\001Pre-configured URI for init" +
-      "iating login flows programmatically. Thi" +
-      "s URI must use the HTTPS scheme and cont" +
-      "ain a valid domain. Used for starting au" +
-      "thentication flows without user interact" +
-      "ion.J)\"https://auth.your-app.com/initiat" +
-      "e-auth\"R\020initiateLoginUri\022\253\002\n\017post_login" +
-      "_uris\030\013 \003(\tB\202\002\222A\376\0012\263\001List of allowed red" +
-      "irect URIs for OAuth 2.0 authorization f" +
-      "lows. These URIs must use HTTPS protocol" +
-      " in production environments and comply w" +
-      "ith RFC 6749. Maximum of 5 URIs allowed." +
-      "JF[\"https://auth.your-app.com/callback\"," +
-      " \"https://dev.example.com/auth\"]R\rpostLo" +
-      "ginUris:\263\001\222A\257\001\n\254\001*\022Client Application2\225\001" +
-      "Configuration for an API client applicat" +
-      "ion registered with Scalekit. Contains a" +
-      "uthentication settings, redirect URIs, a" +
-      "nd other security parameters.\"\301\023\n\014Client" +
-      "Secret\022\325\001\n\002id\030\001 \001(\tB\304\001\222A\300\0012\245\001The unique " +
-      "identifier for this client secret. This " +
-      "ID is used to reference the secret in AP" +
-      "I requests for management operations lik" +
-      "e updating or deleting the secret.J\026\"sec" +
-      "_1234abcd5678efgh\"R\002id\022\321\001\n\013create_time\030\002" +
-      " \001(\0132\032.google.protobuf.TimestampB\223\001\222A\217\0012" +
-      "qThe timestamp when this secret was crea" +
+      "ntId\022\237\002\n\006client\030\002 \001(\0132!.scalekit.v1.clie" +
+      "nts.UpdateClientB\343\001\222A\331\0012bApplication con" +
+      "figuration parameters to update. Contain" +
+      "s redirect URIs and authentication setti" +
+      "ngsJs{\"redirect_uris\": [\"https://app.exa" +
+      "mple.com/callback\"], \"default_redirect_u" +
+      "ri\": \"https://app.example.com/callback\"}" +
+      "\272H\003\310\001\001R\006client\022B\n\004mask\030\003 \001(\0132\032.google.pr" +
+      "otobuf.FieldMaskB\022\340A\003\372\322\344\223\002\t\022\007PREVIEWR\004ma" +
+      "sk\"\250\020\n\014UpdateClient\022\236\002\n\rredirect_uris\030\002 " +
+      "\003(\tB\370\001\222A\345\0012\234\001List of allowed redirect UR" +
+      "Is for OAuth 2.0 authorization flows. Ea" +
+      "ch URI must be valid and use HTTPS in pr" +
+      "oduction environments. Maximum of 5 URIs" +
+      " allowed.JD[\"https://app.example.com/cal" +
+      "lback\", \"https://dev.example.com/auth\"]\272" +
+      "H\014\222\001\t\030\001\"\005r\003\210\001\001R\014redirectUris\022\233\002\n\024default" +
+      "_redirect_uri\030\003 \001(\tB\343\001\222A\247\0012\200\001Primary red" +
+      "irect URI used when none is specified in" +
+      " authorization requests. Must exactly ma" +
+      "tch one of the URIs in redirect_uris.J\"\"" +
+      "https://app.example.com/callback\"\272H5\272\0012\n" +
+      "\tvalid_uri\022\027uri must be a valid URI\032\014thi" +
+      "s.isUri()H\000R\022defaultRedirectUri\210\001\001\022\303\002\n\030b" +
+      "ack_channel_logout_uris\030\004 \003(\tB\211\002\222A\366\0012\225\001H" +
+      "TTPS endpoints for receiving back-channe" +
+      "l logout notifications. Required for imp" +
+      "lementing application-initiated logout f" +
+      "lows and session management.J\\[\"https://" +
+      "app.example.com/backchannel-logout\", \"ht" +
+      "tps://app.example.com/backchannel-logout" +
+      "\"]\272H\014\222\001\t\030\001\"\005r\003\210\001\001R\025backChannelLogoutUris" +
+      "\022\266\002\n\031post_logout_redirect_uris\030\005 \003(\tB\372\001\222" +
+      "A\347\0012\234\001Allowed URIs for post-logout redir" +
+      "ection. These URIs are used when a user " +
+      "is redirected after logout. Must use HTT" +
+      "PS and conform to security specification" +
+      "s.JF[\"https://app.example.com/logged-out" +
+      "\", \"https://app.example.com/home\"]\272H\014\222\001\t" +
+      "\030\001\"\005r\003\210\001\001R\026postLogoutRedirectUris\022\377\001\n\022in" +
+      "itiate_login_uri\030\006 \001(\tB\313\001\222A\307\0012\243\001Pre-conf" +
+      "igured URI for initiating login flows. T" +
+      "his URI is used to start authentication " +
+      "flows programmatically. Must use HTTPS p" +
+      "rotocol and contain a valid domain.J\037\"ht" +
+      "tps://app.example.com/login\"H\001R\020initiate" +
+      "LoginUri\210\001\001\022\243\002\n\017post_login_uris\030\007 \003(\tB\372\001" +
+      "\222A\347\0012\236\001List of allowed post login URIs f" +
+      "or OAuth 2.0 authorization flows. Each U" +
+      "RI must be valid and use HTTPS in produc" +
+      "tion environments. Maximum of 5 URIs all" +
+      "owed.JD[\"https://app.example.com/callbac" +
+      "k\", \"https://dev.example.com/auth\"]\272H\014\222\001" +
+      "\t\030\001\"\005r\003\210\001\001R\rpostLoginUris:\201\002\222A\375\001\n\275\001*\033Upd" +
+      "ate Client Configuration2\235\001Parameters fo" +
+      "r updating an API client application\'s c" +
+      "onfiguration. This allows modification o" +
+      "f redirect URIs, logout settings, and ot" +
+      "her security parameters.*;\n\021API Document" +
+      "ation\022&https://docs.scalekit.com/m2m/ove" +
+      "rviewB\027\n\025_default_redirect_uriB\025\n\023_initi" +
+      "ate_login_uri\"\250\001\n\024UpdateClientResponse\022\217" +
+      "\001\n\006client\030\001 \001(\0132\033.scalekit.v1.clients.Cl",
+      "ientBZ\222AW2UUpdated application configura" +
+      "tion with all current settings reflected" +
+      " in the responseR\006client\"\256\001\n\031CreateClien" +
+      "tSecretRequest\022\220\001\n\tclient_id\030\001 \001(\tBs\222Ag2" +
+      "MUnique identifier of the client applica" +
+      "tion for which to create a new secret.J\026" +
+      "\"skc_01H9XPQR7ZY2AJKL\"\272H\006r\004\020\001\030 R\010clientI" +
+      "d\"\255\003\n\032CreateClientSecretResponse\022\306\001\n\014pla" +
+      "in_secret\030\001 \001(\tB\242\001\222A\236\0012\204\001Plaintext secre" +
+      "t value. This value is only returned onc" +
+      "e at creation time and must be stored se" +
+      "curely. It cannot be retrieved again.J\025\"" +
+      "sec_plaintext123456\"R\013plainSecret\022\305\001\n\006se" +
+      "cret\030\002 \001(\0132!.scalekit.v1.clients.ClientS" +
+      "ecretB\211\001\222A\205\0012\202\001Metadata about the newly " +
+      "created secret, including its ID, creati" +
+      "on time, and status. Does not include th" +
+      "e plaintext secret value.R\006secret\"\203\005\n\031Up" +
+      "dateClientSecretRequest\022\217\001\n\tclient_id\030\001 " +
+      "\001(\tBr\222Af2LUnique identifier of the clien" +
+      "t application containing the secret to u" +
+      "pdate.J\026\"skc_01H9XPQR7ZY2AJKL\"\272H\006r\004\020\001\030 R" +
+      "\010clientId\022\253\001\n\tsecret_id\030\002 \001(\tB\215\001\222A\200\0012fUn" +
+      "ique identifier of the client secret to " +
+      "update. This references a specific secre" +
+      "t within the client.J\026\"sec_01H9XPQR7ZY2A" +
+      "JKL\"\272H\006r\004\020\001\030 R\010secretId\022\260\001\n\006secret\030\003 \001(\013" +
+      "2\'.scalekit.v1.clients.UpdateClientSecre" +
+      "tBo\222Af2dUpdated settings for the secret." +
+      " Currently supports modifying the secret" +
+      "\'s status (active/inactive).\272H\003\310\001\001R\006secr" +
+      "et\022s\n\004mask\030\004 \001(\0132\032.google.protobuf.Field" +
+      "MaskBC\222A@2>Specifies which fields to upd" +
+      "ate. System-controlled parameter.R\004mask\"" +
+      "\354\001\n\022UpdateClientSecret\022\325\001\n\006status\030\001 \001(\0162" +
+      "\'.scalekit.v1.clients.ClientSecretStatus" +
+      "B\223\001\222A\217\0012\202\001Status to set for the client s" +
+      "ecret. Set to ACTIVE to enable the secre" +
+      "t for authentication, or INACTIVE to tem" +
+      "porarily disable it.J\010INACTIVER\006status\"\347" +
+      "\001\n\032UpdateClientSecretResponse\022\310\001\n\006secret" +
+      "\030\001 \001(\0132!.scalekit.v1.clients.ClientSecre" +
+      "tB\214\001\222A\210\0012\205\001Updated secret metadata, refl" +
+      "ecting the changes made by the update op" +
+      "eration. Note that the plaintext secret " +
+      "value is never returned.R\006secret\"\322\002\n\031Del" +
+      "eteClientSecretRequest\022\217\001\n\tclient_id\030\001 \001" +
+      "(\tBr\222Af2LUnique identifier of the client" +
+      " application containing the secret to de" +
+      "lete.J\026\"skc_01H9XPQR7ZY2AJKL\"\272H\006r\004\020\001\030 R\010" +
+      "clientId\022\242\001\n\tsecret_id\030\002 \001(\tB\204\001\222Ax2^Uniq" +
+      "ue identifier of the client secret to pe" +
+      "rmanently delete. This operation cannot " +
+      "be undone.J\026\"sec_01H9XPQR7ZY2AJKL\"\272H\006r\004\020" +
+      "\001\030 R\010secretId\"\272\031\n\006Client\022\342\001\n\002id\030\001 \001(\tB\321\001" +
+      "\222A\315\0012\262\001Unique identifier for the client " +
+      "application. This ID is automatically ge" +
+      "nerated when the client is created and c" +
+      "annot be modified. Used in API requests " +
+      "and authentication flows.J\026\"skc_1234abcd" +
+      "5678efgh\"R\002id\022\327\001\n\005keyId\030\002 \001(\tB\300\001\222A\274\0012\241\001I" +
+      "dentifier for the cryptographic key pair" +
+      " used to sign tokens. This key is used f" +
+      "or JWT signing operations. Keys can be r" +
+      "otated by generating new client secrets." +
+      "J\026\"key_9876zyxw5432vuts\"R\005keyId\022\360\001\n\013crea" +
+      "te_time\030\003 \001(\0132\032.google.protobuf.Timestam" +
+      "pB\262\001\222A\256\0012\217\001Timestamp indicating when the" +
+      " client configuration was initially crea" +
       "ted. This field is automatically set by " +
       "the server and cannot be modified.J\032\"202" +
-      "4-01-05T14:48:00.000Z\"R\ncreateTime\022\206\002\n\013u" +
-      "pdate_time\030\003 \001(\0132\032.google.protobuf.Times" +
-      "tampB\310\001\222A\304\0012\245\001The timestamp when this se" +
-      "cret was last updated. This field is aut" +
-      "omatically updated by the server when th" +
-      "e secret\'s status changes or other prope" +
-      "rties are modified.J\032\"2024-01-10T09:12:0" +
-      "0.000Z\"R\nupdateTime\022\202\002\n\rsecret_suffix\030\004 " +
-      "\001(\tB\334\001\222A\330\0012\315\001A suffix that helps identif" +
-      "y this secret. This is the last few char" +
-      "acters of the full secret value but is n" +
-      "ot sufficient for authentication. Helps " +
-      "identify which secret is being used in l" +
-      "ogs and debugging.J\006\"xyzw\"R\014secretSuffix" +
-      "\022\311\001\n\ncreated_by\030\005 \001(\tB\244\001\222A\240\0012\217\001The ident" +
-      "ifier of the user or system that created" +
-      " this secret. This field helps track who" +
-      " created the secret for audit and compli" +
-      "ance purposes.J\014\"user_12345\"H\000R\tcreatedB" +
-      "y\210\001\001\022\206\002\n\006status\030\006 \001(\0162\'.scalekit.v1.clie" +
-      "nts.ClientSecretStatusB\304\001\222A\300\0012\261\001The curr" +
-      "ent status of this secret. A secret must" +
-      " be ACTIVE to be used for authentication" +
-      ". INACTIVE secrets cannot be used for au" +
-      "thentication but are retained for audit " +
-      "purposes.J\n\"INACTIVE\"R\006status\022\214\002\n\013expire" +
-      "_time\030\007 \001(\0132\032.google.protobuf.TimestampB" +
-      "\316\001\222A\312\0012\253\001The timestamp when this secret " +
-      "will expire. After this time, the secret" +
-      " cannot be used for authentication regar" +
-      "dless of its status. If not set, the sec" +
-      "ret does not expire.J\032\"2025-01-05T14:48:" +
-      "00.000Z\"R\nexpireTime\022\246\002\n\016last_used_time\030" +
-      "\010 \001(\0132\032.google.protobuf.TimestampB\343\001\222A\337\001" +
-      "2\300\001The timestamp when this secret was la" +
-      "st used for authentication. This field h" +
-      "elps track secret usage for security mon" +
-      "itoring and identifying unused secrets t" +
-      "hat may be candidates for rotation.J\032\"20" +
-      "24-02-15T10:30:00.000Z\"R\014lastUsedTime\022\263\002" +
-      "\n\014plain_secret\030\t \001(\tB\212\002\222A\206\0022\327\001The full p" +
-      "laintext secret value. This field is onl" +
-      "y populated when the secret is first cre" +
-      "ated and is never stored by the server. " +
-      "It must be securely stored by the client" +
-      " application as it cannot be retrieved a" +
-      "gain.J*\"sec_1234567890abcdefghijklmnopqr" +
-      "stuvwxyz\"H\001R\013plainSecret\210\001\001:\223\001\222A\217\001\n\214\001*\rC" +
-      "lient Secret2{A secure credential used f" +
-      "or authenticating an API client. Each cl" +
-      "ient can have multiple secrets for key r" +
-      "otation purposes.B\r\n\013_created_byB\017\n\r_pla" +
-      "in_secret\"\270\002\n\005Scope\022\250\001\n\002id\030\001 \001(\tB\227\001\222A\212\0012" +
-      "tUnique identifier for the scope resourc" +
-      "e. Must be between 1 and 100 characters " +
-      "long and match the specified pattern.J\022\"" +
-      "scope_1234567890\"\272H\006r\004\020\001\030dR\002id\0226\n\004name\030\002" +
-      " \001(\tB\"\272H\037r\032\020\001\030d2\024^[a-zA-Z0-9:]{1,64}$\310\001\001" +
-      "R\004name\022*\n\013description\030\003 \001(\tB\010\272H\005r\003\030\320\017R\013d" +
-      "escription\022 \n\007enabled\030\004 \001(\010B\006\272H\003\310\001\001R\007ena" +
-      "bled\"q\n\013CreateScope\0226\n\004name\030\001 \001(\tB\"\272H\037r\032" +
-      "\020\001\030d2\024^[a-zA-Z0-9:]{1,64}$\310\001\001R\004name\022*\n\013d" +
-      "escription\030\002 \001(\tB\010\272H\005r\003\030\320\017R\013description\"" +
-      "\363\001\n\022CreateScopeRequest\022>\n\005scope\030\001 \001(\0132 ." +
-      "scalekit.v1.clients.CreateScopeB\006\272H\003\310\001\001R" +
-      "\005scope\022\234\001\n\006env_id\030\002 \001(\tB\204\001\222Ax2dUnique id" +
-      "entifier of the environment where the sc" +
-      "ope will be created. Must start with \'en" +
-      "v_\' prefix.J\020\"env_1234567890\"\272H\006r\004\020\000\030 R\005" +
-      "envId\"G\n\023CreateScopeResponse\0220\n\005scope\030\001 " +
-      "\001(\0132\032.scalekit.v1.clients.ScopeR\005scope\"\252" +
-      "\001\n\021ListScopesRequest\022\224\001\n\006env_id\030\001 \001(\tB}\222" +
-      "Aq2]Unique identifier of the environment" +
-      " for which to list scopes. Must start wi" +
-      "th \'env_\' prefix.J\020\"env_1234567890\"\272H\006r\004" +
-      "\020\000\030 R\005envId\"H\n\022ListScopesResponse\0222\n\006sco" +
-      "pes\030\001 \003(\0132\032.scalekit.v1.clients.ScopeR\006s" +
-      "copes\"o\n\022UpdateScopeRequest\022\031\n\002id\030\001 \001(\tB" +
-      "\t\272H\006r\004\020\001\030dR\002id\022>\n\005scope\030\002 \001(\0132 .scalekit" +
-      ".v1.clients.UpdateScopeB\006\272H\003\310\001\001R\005scope\"o" +
-      "\n\013UpdateScope\022*\n\013description\030\001 \001(\tB\010\272H\005r" +
-      "\003\030\320\017R\013description\0224\n\007enabled\030\002 \001(\0132\032.goo" +
-      "gle.protobuf.BoolValueR\007enabled\"G\n\023Updat" +
-      "eScopeResponse\0220\n\005scope\030\001 \001(\0132\032.scalekit" +
-      ".v1.clients.ScopeR\005scope\"1\n\022DeleteScopeR" +
-      "equest\022\033\n\002id\030\001 \001(\tB\013\272H\010r\006:\004scp_R\002id\"\334\004\n\031" +
-      "GetConsentDetailsResponse\022a\n\010resource\030\001 " +
-      "\001(\0132\035.scalekit.v1.clients.ResourceB&\222A#2" +
-      "!Details of the requested resourceR\010reso" +
-      "urce\022[\n\004user\030\002 \001(\0132\031.scalekit.v1.clients" +
-      ".UserB,\222A)2\'Details of the user who gran" +
-      "ted consentR\004user\022r\n\006client\030\003 \001(\0132\".scal" +
-      "ekit.v1.clients.ConsentClientB6\222A321Deta" +
-      "ils of the client resource requesting co" +
-      "nsentR\006client\022\233\001\n\006scopes\030\004 \003(\0132!.scaleki" +
-      "t.v1.clients.ConsentScopeB`\222A]2[List of " +
-      "scopes for which consent was granted. Ea" +
-      "ch scope includes its name and descripti" +
-      "on.R\006scopes\022m\n\013application\030\005 \001(\0132 .scale" +
-      "kit.v1.clients.ApplicationB)\222A&2$Details" +
-      " of the requested applicationR\013applicati" +
-      "on\"\315\001\n\rConsentClient\022o\n\004name\030\001 \001(\tB[\222AO2" +
-      ";Unique identifier of the client resourc" +
-      "e requesting consentJ\020\"skc_1234567890\"\272H" +
-      "\006r\004\020\001\030 R\004name\022(\n\013privacy_uri\030\002 \001(\tB\007\272H\004r" +
-      "\002\030dR\nprivacyUri\022!\n\007tos_uri\030\003 \001(\tB\010\272H\005r\003\030" +
-      "\320\017R\006tosUri\"\\\n\014ConsentScope\022 \n\004name\030\001 \001(\t" +
-      "B\014\272H\tr\004\020\001\030d\310\001\001R\004name\022*\n\013description\030\002 \001(" +
-      "\tB\010\272H\005r\003\030\320\017R\013description\"r\n\004User\022j\n\005emai" +
-      "l\030\001 \001(\tBT\222AQ28Email address of the user." +
-      " Must be a valid email format.J\025alice.do" +
-      "e@example.comR\005email\"\242\002\n\030RevokeUserConse" +
-      "ntRequest\022\207\001\n\tclient_id\030\001 \001(\tBj\222AX2DUniq" +
-      "ue identifier of the client resource for" +
-      " which to revoke consentJ\020\"m2m_123456789" +
-      "0\"\272H\014r\n\020\001\030 :\004m2m_R\010clientId\022|\n\nconsent_i" +
-      "d\030\002 \001(\tB]\222AG2/Unique identifier of the u" +
-      "ser consent to revokeJ\024\"usrcnst_12345678" +
-      "90\"\272H\020r\016\020\001\030 :\010usrcnst_R\tconsentId\"\033\n\031Rev" +
-      "okeUserConsentResponse\"\237\001\n\037EnsureResourc" +
-      "eConnectionRequest\022|\n\013resource_id\030\001 \001(\tB" +
-      "[\222AO24Unique identifier of the client re" +
-      "source to retrieveJ\027\"app_693887984667200" +
-      "05\"\272H\006r\004\020\001\030 R\nresourceId\"\324\001\n EnsureResou" +
-      "rceConnectionResponse\022\257\001\n\nconnection\030\001 \001" +
-      "(\0132\'.scalekit.v1.clients.ResourceConnect" +
-      "ionBf\222A]2[Details of the connection reso" +
-      "urce. Contains configuration settings an" +
-      "d status information.\272H\003\310\001\001R\nconnection\"" +
-      "\260\007\n\022ResourceConnection\022T\n\002id\030\001 \001(\tBD\222AA2" +
-      ",Unique identifier of the connection res" +
-      "ourceJ\021\"conn_1234567890\"R\002id\022\241\001\n\004type\030\002 " +
-      "\001(\0162+.scalekit.v1.clients.ResourceConnec" +
-      "tionTypeB`\222A]2QType of connection. Deter" +
-      "mines the authentication method used for" +
-      " the connection.J\010\"CUSTOM\"R\004type\022\224\001\n\006sta" +
-      "tus\030\003 \001(\tB|\222Ay2mCurrent status of the co" +
-      "nnection. Indicates whether the connecti" +
-      "on is active, inactive, or in an error s" +
-      "tate.J\010\"ACTIVE\"R\006status\022\211\001\n\007enabled\030\004 \001(" +
-      "\010Bo\222Al2dIndicates whether the connection" +
-      " is enabled. Disabled connections cannot" +
-      " be used for authentication.J\004trueR\007enab" +
-      "led\022\347\001\n\010settings\030\005 \001(\0132\027.google.protobuf" +
-      ".StructB\261\001\222A\255\0012kConfiguration settings f" +
-      "or the connection. The structure of this" +
-      " field varies based on the connection ty" +
-      "pe.J>{\"api_key\": \"abcd1234\", \"endpoint\":" +
-      " \"https://api.example.com\"}R\010settings\022\222\001" +
-      "\n\010provider\030\006 \001(\tBv\222As2^The provider of t" +
-      "he connection. Indicates the service or " +
-      "platform that manages the connection.J\021\"" +
-      "custom_provider\"R\010provider\"\334\001\n ResourceC" +
-      "ustomConnectionSettings\022\267\001\n\rauthorize_ur" +
-      "i\030\001 \001(\tB\221\001\222A\203\0012[The URI where users are " +
-      "redirected to authorize the application." +
-      " Must be a valid HTTPS URL.J$\"https://au" +
-      "th.example.com/authorize\"\272H\007r\005\020\001\210\001\001R\014aut" +
-      "horizeUri*k\n\014ResourceType\022\035\n\031RESOURCE_TY" +
-      "PE_UNSPECIFIED\020\000\022\007\n\003WEB\020\001\022\n\n\006MOBILE\020\002\022\013\n" +
-      "\007DESKTOP\020\003\022\n\n\006SERVER\020\004\022\016\n\nMCP_SERVER\020\005*." +
-      "\n\022ClientSecretStatus\022\n\n\006ACTIVE\020\000\022\014\n\010INAC" +
-      "TIVE\020\001*1\n\026ResourceConnectionType\022\013\n\007INVA" +
-      "LID\020\000\022\n\n\006CUSTOM\020\0012\312\233\001\n\rClientService\022\326\002\n" +
-      "\nListClient\022\'.scalekit.v1.clients.ListCl" +
-      "ientsRequest\032(.scalekit.v1.clients.ListC" +
-      "lientsResponse\"\364\001\222A\304\001\n\010API Auth\022\020List AP" +
-      "I clients\032GRetrieves a paginated list of" +
-      " API client applications in the workspac" +
-      "e.J]\n\003200\022V\n&List of clients returned su" +
-      "ccessfully.\022,\n*\032(.scalekit.v1.clients.Li" +
-      "stClientsResponse\202\265\030\002\030P\372\322\344\223\002\t\022\007PREVIEW\202\323" +
-      "\344\223\002\021\022\017/api/v1/clients\022\314\005\n\tGetClient\022%.sc" +
-      "alekit.v1.clients.GetClientRequest\032&.sca" +
-      "lekit.v1.clients.GetClientResponse\"\357\004\222A\263" +
-      "\004\n\016Client Configs\022\030Get Client Configurat" +
-      "ion\032\301\002Retrieves the complete configurati" +
-      "on for an M2M client, including authenti" +
-      "cation settings, scopes, and custom clai" +
-      "ms. Use this endpoint to view or verify " +
-      "client settings, such as allowed redirec" +
-      "t URIs, audience values, and token expir" +
-      "ation times. The response includes all c" +
-      "urrent client metadata and security para" +
-      "meters.J\302\001\n\003200\022\272\001\n\213\001Client configuratio" +
-      "n retrieved successfully. Returns full c" +
-      "lient metadata including scopes, audienc" +
-      "e, custom claims, and security settings." +
-      "\022*\n(\032&.scalekit.v1.clients.GetClientResp" +
-      "onse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\035\022\033/api/v1" +
-      "/clients/{client_id}\022\303\005\n\014UpdateClient\022(." +
-      "scalekit.v1.clients.UpdateClientRequest\032" +
-      ").scalekit.v1.clients.UpdateClientRespon" +
-      "se\"\335\004\222A\231\004\n\016Client Configs\022\033Update Client" +
-      " Configuration\032\260\002Updates the configurati" +
-      "on settings for an M2M client. This endp" +
-      "oint allows you to modify client propert" +
-      "ies such as redirect URIs, scopes, audie" +
-      "nce, and custom claims. Required fields " +
-      "include redirect_uris and default_redire" +
-      "ct_uri. Note that client_id and create_t" +
-      "ime are immutable and cannot be modified" +
-      ".J\266\001\n\003201\022\256\001\n}Client configuration updat" +
-      "ed successfully. Returns the updated cli" +
-      "ent resource with new update_time and al" +
-      "l current settings.\022-\n+\032).scalekit.v1.cl" +
-      "ients.UpdateClientResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007" +
-      "PREVIEW\202\323\344\223\002%2\033/api/v1/clients/{client_i" +
-      "d}:\006client\022\244\005\n\022CreateClientSecret\022..scal" +
-      "ekit.v1.clients.CreateClientSecretReques" +
-      "t\032/.scalekit.v1.clients.CreateClientSecr" +
-      "etResponse\"\254\004\222A\350\003\n\016Client Configs\022\024Creat" +
-      "e Client Secret\032\202\002Generates a new client" +
-      " secret for an API client. This endpoint" +
-      " creates a secure credential that can be" +
-      " used for OAuth 2.0 client credentials f" +
-      "low. The plain secret is only returned o" +
-      "nce during creation and should be stored" +
-      " securely by the client application.J\272\001\n" +
-      "\003201\022\262\001\n{Client secret created successfu" +
-      "lly. Returns the new secret ID and the p" +
-      "lain secret value (only available at cre" +
-      "ation time).\0223\n1\032/.scalekit.v1.clients.C" +
-      "reateClientSecretResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007P" +
-      "REVIEW\202\323\344\223\002%\"#/api/v1/clients/{client_id" +
-      "}/secrets\022\312\005\n\022UpdateClientSecret\022..scale" +
-      "kit.v1.clients.UpdateClientSecretRequest" +
-      "\032/.scalekit.v1.clients.UpdateClientSecre" +
-      "tResponse\"\322\004\222A\277\003\n\016Client Configs\022\024Update" +
-      " Client Secret\032\375\001Updates the status of a" +
-      " client secret. This endpoint allows you" +
-      " to activate or deactivate a client secr" +
-      "et. Use this to rotate secrets or revoke" +
-      " access for compromised credentials. The" +
-      " secret value itself cannot be modified " +
-      "- create a new secret instead.J\226\001\n\003200\022\216" +
-      "\001\nWClient secret updated successfully. R" +
-      "eturns the updated secret with its curre" +
-      "nt status.\0223\n1\032/.scalekit.v1.clients.Upd" +
-      "ateClientSecretResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PRE" +
-      "VIEW\202\323\344\223\002t\032//api/v1/clients/{client_id}/" +
-      "secrets/{secret_id}:\006secretZ92//api/v1/c" +
-      "lients/{client_id}/secrets/{secret_id}:\006" +
-      "secret\022\343\003\n\022DeleteClientSecret\022..scalekit" +
-      ".v1.clients.DeleteClientSecretRequest\032\026." +
-      "google.protobuf.Empty\"\204\003\222A\264\002\n\016Client Con" +
-      "figs\022\024Delete Client Secret\032\305\001Permanently" +
-      " deletes a client secret. This operation" +
-      " cannot be undone. Use this endpoint to " +
-      "remove compromised or unused secrets. Af" +
-      "ter deletion, the secret can no longer b" +
-      "e used for authentication.JD\n\003200\022=\n;Cli" +
-      "ent secret successfully deleted and no l" +
-      "onger accessible\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
-      "\223\0021*//api/v1/clients/{client_id}/secrets" +
-      "/{secret_id}\022\356\n\n\030CreateOrganizationClien" +
-      "t\0224.scalekit.v1.clients.CreateOrganizati" +
-      "onClientRequest\0325.scalekit.v1.clients.Cr" +
-      "eateOrganizationClientResponse\"\344\t\222A\233\t\n\010A" +
-      "PI Auth\022\036Create organization API client\032" +
-      "rCreates a new API client for an organiz" +
-      "ation. Returns the client details and a " +
-      "plain secret (available only once).J\236\002\n\003" +
-      "201\022\226\002\n\330\001API client created successfully" +
-      ". Returns the client ID and plain secret" +
-      " (only available at creation time). The " +
-      "client can be configured with scopes, au" +
-      "dience values, and custom claims for fin" +
-      "e-grained access control.\0229\n7\0325.scalekit" +
-      ".v1.clients.CreateOrganizationClientResp" +
-      "onsej\331\005\n\rx-codeSamples\022\307\0052\304\005\n\301\005*\276\005\n\025\n\005la" +
-      "bel\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python\n\222\005\n\006" +
-      "source\022\207\005\032\204\005from scalekit.v1.clients.cli" +
-      "ents_pb2 import OrganizationClient\n\nm2m_" +
-      "client = OrganizationClient(\n    name=\"G" +
-      "itHub Actions Deployment Service\",\n    d" +
-      "escription=\"Service account for GitHub A" +
-      "ctions to deploy applications to product" +
-      "ion\",\n    custom_claims=[\n        {\"key\"" +
-      ": \"github_repository\", \"value\": \"acmecor" +
-      "p/inventory-service\"},\n        {\"key\": \"" +
-      "environment\", \"value\": \"production_us\"}\n" +
-      "    ],\n    scopes=[\"deploy:applications\"" +
-      ", \"read:deployments\"],\n    audience=[\"de" +
-      "ployment-api.acmecorp.com\"],\n    expiry=" +
-      "3600\n)\n\nresponse = sc.m2m_client.create_" +
-      "organization_client(\n    organization_id" +
-      "=\"SCALEKIT_ORGANIZATION_ID\",\n    m2m_cli" +
-      "ent=m2m_client\n)\202\265\030\002\030T\202\323\344\223\0029\"//api/v1/or" +
-      "ganizations/{organization_id}/clients:\006c" +
-      "lient\022\242\007\n\025GetOrganizationClient\0221.scalek",
-      "it.v1.clients.GetOrganizationClientReque" +
-      "st\0322.scalekit.v1.clients.GetOrganization" +
-      "ClientResponse\"\241\006\222A\324\005\n\010API Auth\022\033Get org" +
-      "anization API client\032>Retrieves details " +
-      "of a specific API client in an organizat" +
-      "ion.J\375\001\n\003200\022\365\001\n\272\001Returns the complete A" +
-      "PI client configuration, including all c" +
-      "urrent settings and a list of active sec" +
-      "rets. Note that secret values are not in" +
-      "cluded in the response for security reas" +
-      "ons.\0226\n4\0322.scalekit.v1.clients.GetOrgani" +
-      "zationClientResponsej\352\002\n\rx-codeSamples\022\330" +
-      "\0022\325\002\n\322\002*\317\002\n\025\n\005label\022\014\032\nPython SDK\n\020\n\004lan" +
-      "g\022\010\032\006python\n\243\002\n\006source\022\230\002\032\225\002# Get client" +
-      " ID from environment variables\norg_id = " +
-      "\'SCALEKIT_ORGANIZATION_ID\'\nclient_id = o" +
-      "s.environ[\'M2M_CLIENT_ID\']\n\n# Fetch clie" +
-      "nt details for the specified organizatio" +
-      "n\nresponse = sc.m2m_client.get_organizat" +
-      "ion_client(\n    organization_id=org_id,\n" +
-      "    client_id=client_id\n)\202\265\030\002\030T\202\323\344\223\002=\022;/" +
-      "api/v1/organizations/{organization_id}/c" +
-      "lients/{client_id}\022\277\010\n\036CreateOrganizatio" +
-      "nClientSecret\022:.scalekit.v1.clients.Crea" +
-      "teOrganizationClientSecretRequest\032;.scal" +
+      "4-01-05T14:48:00.000Z\"R\ncreateTime\022\201\002\n\013u" +
+      "pdate_time\030\004 \001(\0132\032.google.protobuf.Times" +
+      "tampB\303\001\222A\277\0012\240\001Timestamp of the last modi" +
+      "fication to the client configuration. Th" +
+      "is field is automatically updated by the" +
+      " server whenever any aspect of the clien" +
+      "t is modified.J\032\"2024-01-10T09:12:00.000" +
+      "Z\"R\nupdateTime\022\325\002\n\rredirect_uris\030\005 \003(\tB\257" +
+      "\002\222A\253\0022\333\001List of allowed redirect URIs fo" +
+      "r OAuth 2.0 authorization flows. These U" +
+      "RIs must use HTTPS protocol in productio" +
+      "n environments and comply with RFC 6749." +
+      " Users will be redirected to one of thes" +
+      "e URIs after authorization.JK[\"https://a" +
+      "uth.your-app.com/callback\", \"https://sca" +
+      "lekit.example.org/auth\"]R\014redirectUris\022\200" +
+      "\002\n\024default_redirect_uri\030\006 \001(\tB\315\001\222A\311\0012\240\001P" +
+      "rimary redirect URI used when none is ex" +
+      "plicitly specified in authorization requ" +
+      "ests. This URI must exactly match one of" +
+      " the entries in the redirect_uris list.J" +
+      "$\"https://auth.your-app.com/callback\"R\022d" +
+      "efaultRedirectUri\022\245\002\n\007secrets\030\007 \003(\0132!.sc" +
+      "alekit.v1.clients.ClientSecretB\347\001\222A\343\0012\340\001" +
+      "List of client secrets used for authenti" +
+      "cation. Each secret is stored securely u" +
+      "sing one-way hashing (bcrypt). The plain" +
+      "text secret values are only displayed du" +
+      "ring initial creation and must be stored" +
+      " securely by the client.R\007secrets\022\243\002\n\031po" +
+      "st_logout_redirect_uris\030\010 \003(\tB\347\001\222A\343\0012\272\001A" +
+      "llowed URIs for post-logout redirection." +
+      " These URIs are used when a user is redi" +
+      "rected after signing out. Must use HTTPS" +
+      " and conform to OpenID Connect Session M" +
+      "anagement specifications.J$[\"https://aut" +
+      "h.your-app.com/logout\"]R\026postLogoutRedir" +
+      "ectUris\022\311\002\n\030back_channel_logout_uris\030\t \003" +
+      "(\tB\217\002\222A\213\0022\330\001HTTPS endpoint for receiving" +
+      " back-channel logout notifications. This" +
+      " URI is called by the authentication ser" +
+      "ver when a session expires or is termina" +
+      "ted. Required for implementing relying p" +
+      "arty-initiated logout flows.J.\"https://a" +
+      "uth.your-app.com/backchannel-logout\"R\025ba" +
+      "ckChannelLogoutUris\022\240\002\n\022initiate_login_u" +
+      "ri\030\n \001(\tB\361\001\222A\355\0012\277\001Pre-configured URI for" +
+      " initiating login flows programmatically" +
+      ". This URI must use the HTTPS scheme and" +
+      " contain a valid domain. Used for starti" +
+      "ng authentication flows without user int" +
+      "eraction.J)\"https://auth.your-app.com/in" +
+      "itiate-auth\"R\020initiateLoginUri\022\253\002\n\017post_" +
+      "login_uris\030\013 \003(\tB\202\002\222A\376\0012\263\001List of allowe" +
+      "d redirect URIs for OAuth 2.0 authorizat" +
+      "ion flows. These URIs must use HTTPS pro" +
+      "tocol in production environments and com" +
+      "ply with RFC 6749. Maximum of 5 URIs all" +
+      "owed.JF[\"https://auth.your-app.com/callb" +
+      "ack\", \"https://dev.example.com/auth\"]R\rp" +
+      "ostLoginUris:\263\001\222A\257\001\n\254\001*\022Client Applicati" +
+      "on2\225\001Configuration for an API client app" +
+      "lication registered with Scalekit. Conta" +
+      "ins authentication settings, redirect UR" +
+      "Is, and other security parameters.\"\301\023\n\014C" +
+      "lientSecret\022\325\001\n\002id\030\001 \001(\tB\304\001\222A\300\0012\245\001The un" +
+      "ique identifier for this client secret. " +
+      "This ID is used to reference the secret " +
+      "in API requests for management operation" +
+      "s like updating or deleting the secret.J" +
+      "\026\"sec_1234abcd5678efgh\"R\002id\022\321\001\n\013create_t" +
+      "ime\030\002 \001(\0132\032.google.protobuf.TimestampB\223\001" +
+      "\222A\217\0012qThe timestamp when this secret was" +
+      " created. This field is automatically se" +
+      "t by the server and cannot be modified.J" +
+      "\032\"2024-01-05T14:48:00.000Z\"R\ncreateTime\022" +
+      "\206\002\n\013update_time\030\003 \001(\0132\032.google.protobuf." +
+      "TimestampB\310\001\222A\304\0012\245\001The timestamp when th" +
+      "is secret was last updated. This field i" +
+      "s automatically updated by the server wh" +
+      "en the secret\'s status changes or other " +
+      "properties are modified.J\032\"2024-01-10T09" +
+      ":12:00.000Z\"R\nupdateTime\022\202\002\n\rsecret_suff" +
+      "ix\030\004 \001(\tB\334\001\222A\330\0012\315\001A suffix that helps id" +
+      "entify this secret. This is the last few" +
+      " characters of the full secret value but" +
+      " is not sufficient for authentication. H" +
+      "elps identify which secret is being used" +
+      " in logs and debugging.J\006\"xyzw\"R\014secretS" +
+      "uffix\022\311\001\n\ncreated_by\030\005 \001(\tB\244\001\222A\240\0012\217\001The " +
+      "identifier of the user or system that cr" +
+      "eated this secret. This field helps trac" +
+      "k who created the secret for audit and c" +
+      "ompliance purposes.J\014\"user_12345\"H\000R\tcre" +
+      "atedBy\210\001\001\022\206\002\n\006status\030\006 \001(\0162\'.scalekit.v1" +
+      ".clients.ClientSecretStatusB\304\001\222A\300\0012\261\001The" +
+      " current status of this secret. A secret" +
+      " must be ACTIVE to be used for authentic" +
+      "ation. INACTIVE secrets cannot be used f" +
+      "or authentication but are retained for a" +
+      "udit purposes.J\n\"INACTIVE\"R\006status\022\214\002\n\013e" +
+      "xpire_time\030\007 \001(\0132\032.google.protobuf.Times" +
+      "tampB\316\001\222A\312\0012\253\001The timestamp when this se" +
+      "cret will expire. After this time, the s" +
+      "ecret cannot be used for authentication " +
+      "regardless of its status. If not set, th" +
+      "e secret does not expire.J\032\"2025-01-05T1" +
+      "4:48:00.000Z\"R\nexpireTime\022\246\002\n\016last_used_" +
+      "time\030\010 \001(\0132\032.google.protobuf.TimestampB\343" +
+      "\001\222A\337\0012\300\001The timestamp when this secret w" +
+      "as last used for authentication. This fi" +
+      "eld helps track secret usage for securit" +
+      "y monitoring and identifying unused secr" +
+      "ets that may be candidates for rotation." +
+      "J\032\"2024-02-15T10:30:00.000Z\"R\014lastUsedTi" +
+      "me\022\263\002\n\014plain_secret\030\t \001(\tB\212\002\222A\206\0022\327\001The f" +
+      "ull plaintext secret value. This field i" +
+      "s only populated when the secret is firs" +
+      "t created and is never stored by the ser" +
+      "ver. It must be securely stored by the c" +
+      "lient application as it cannot be retrie" +
+      "ved again.J*\"sec_1234567890abcdefghijklm" +
+      "nopqrstuvwxyz\"H\001R\013plainSecret\210\001\001:\223\001\222A\217\001\n" +
+      "\214\001*\rClient Secret2{A secure credential u" +
+      "sed for authenticating an API client. Ea" +
+      "ch client can have multiple secrets for " +
+      "key rotation purposes.B\r\n\013_created_byB\017\n" +
+      "\r_plain_secret\"\270\002\n\005Scope\022\250\001\n\002id\030\001 \001(\tB\227\001" +
+      "\222A\212\0012tUnique identifier for the scope re" +
+      "source. Must be between 1 and 100 charac" +
+      "ters long and match the specified patter" +
+      "n.J\022\"scope_1234567890\"\272H\006r\004\020\001\030dR\002id\0226\n\004n" +
+      "ame\030\002 \001(\tB\"\272H\037r\032\020\001\030d2\024^[a-zA-Z0-9:]{1,64" +
+      "}$\310\001\001R\004name\022*\n\013description\030\003 \001(\tB\010\272H\005r\003\030" +
+      "\320\017R\013description\022 \n\007enabled\030\004 \001(\010B\006\272H\003\310\001\001" +
+      "R\007enabled\"q\n\013CreateScope\0226\n\004name\030\001 \001(\tB\"" +
+      "\272H\037r\032\020\001\030d2\024^[a-zA-Z0-9:]{1,64}$\310\001\001R\004name" +
+      "\022*\n\013description\030\002 \001(\tB\010\272H\005r\003\030\320\017R\013descrip" +
+      "tion\"\363\001\n\022CreateScopeRequest\022>\n\005scope\030\001 \001" +
+      "(\0132 .scalekit.v1.clients.CreateScopeB\006\272H" +
+      "\003\310\001\001R\005scope\022\234\001\n\006env_id\030\002 \001(\tB\204\001\222Ax2dUniq" +
+      "ue identifier of the environment where t" +
+      "he scope will be created. Must start wit" +
+      "h \'env_\' prefix.J\020\"env_1234567890\"\272H\006r\004\020" +
+      "\000\030 R\005envId\"G\n\023CreateScopeResponse\0220\n\005sco" +
+      "pe\030\001 \001(\0132\032.scalekit.v1.clients.ScopeR\005sc" +
+      "ope\"\252\001\n\021ListScopesRequest\022\224\001\n\006env_id\030\001 \001" +
+      "(\tB}\222Aq2]Unique identifier of the enviro" +
+      "nment for which to list scopes. Must sta" +
+      "rt with \'env_\' prefix.J\020\"env_1234567890\"" +
+      "\272H\006r\004\020\000\030 R\005envId\"H\n\022ListScopesResponse\0222" +
+      "\n\006scopes\030\001 \003(\0132\032.scalekit.v1.clients.Sco" +
+      "peR\006scopes\"o\n\022UpdateScopeRequest\022\031\n\002id\030\001" +
+      " \001(\tB\t\272H\006r\004\020\001\030dR\002id\022>\n\005scope\030\002 \001(\0132 .sca" +
+      "lekit.v1.clients.UpdateScopeB\006\272H\003\310\001\001R\005sc" +
+      "ope\"o\n\013UpdateScope\022*\n\013description\030\001 \001(\tB" +
+      "\010\272H\005r\003\030\320\017R\013description\0224\n\007enabled\030\002 \001(\0132" +
+      "\032.google.protobuf.BoolValueR\007enabled\"G\n\023" +
+      "UpdateScopeResponse\0220\n\005scope\030\001 \001(\0132\032.sca" +
+      "lekit.v1.clients.ScopeR\005scope\"1\n\022DeleteS" +
+      "copeRequest\022\033\n\002id\030\001 \001(\tB\013\272H\010r\006:\004scp_R\002id" +
+      "\"\334\004\n\031GetConsentDetailsResponse\022a\n\010resour" +
+      "ce\030\001 \001(\0132\035.scalekit.v1.clients.ResourceB" +
+      "&\222A#2!Details of the requested resourceR" +
+      "\010resource\022[\n\004user\030\002 \001(\0132\031.scalekit.v1.cl" +
+      "ients.UserB,\222A)2\'Details of the user who" +
+      " granted consentR\004user\022r\n\006client\030\003 \001(\0132\"" +
+      ".scalekit.v1.clients.ConsentClientB6\222A32" +
+      "1Details of the client resource requesti" +
+      "ng consentR\006client\022\233\001\n\006scopes\030\004 \003(\0132!.sc" +
+      "alekit.v1.clients.ConsentScopeB`\222A]2[Lis" +
+      "t of scopes for which consent was grante" +
+      "d. Each scope includes its name and desc" +
+      "ription.R\006scopes\022m\n\013application\030\005 \001(\0132 ." +
+      "scalekit.v1.clients.ApplicationB)\222A&2$De" +
+      "tails of the requested applicationR\013appl" +
+      "ication\"\272\005\n\rConsentClient\022R\n\004name\030\001 \001(\tB" +
+      ">\222A;2.Name of the client resource reques" +
+      "ting consentJ\t\"VS Code\"R\004name\022x\n\013privacy" +
+      "_uri\030\002 \001(\tBW\222AM2,Privacy policy URI of t" +
+      "he client applicationJ\035\"https://yourapp." +
+      "com/privacy\"\272H\004r\002\030dR\nprivacyUri\022q\n\007tos_u" +
+      "ri\030\003 \001(\tBX\222AM2.Terms of service URI of t" +
+      "he client applicationJ\033\"https://yourapp." +
+      "com/terms\"\272H\005r\003\030\320\017R\006tosUri\022o\n\tclient_id\030" +
+      "\004 \001(\tBR\222AO2;Unique identifier of the cli" +
+      "ent resource requesting consentJ\020\"m2m_12" +
+      "34567890\"R\010clientId\022\216\001\n\014metadata_uri\030\005 \001" +
+      "(\tBk\222Ah2AMetadata URI of the client appl" +
+      "ication - applicable for CIMD onlyJ#\"htt" +
+      "ps://example.com/metadata.json\"R\013metadat" +
+      "aUri\022f\n\010logo_uri\030\006 \001(\tBK\222AH2\"Logo URI of" +
+      " the client applicationJ\"\"https://cdn.ex" +
+      "ample.com/logo.png\"R\007logoUri\"\\\n\014ConsentS" +
+      "cope\022 \n\004name\030\001 \001(\tB\014\272H\tr\004\020\001\030d\310\001\001R\004name\022*" +
+      "\n\013description\030\002 \001(\tB\010\272H\005r\003\030\320\017R\013descripti" +
+      "on\"r\n\004User\022j\n\005email\030\001 \001(\tBT\222AQ28Email ad" +
+      "dress of the user. Must be a valid email" +
+      " format.J\025alice.doe@example.comR\005email\"\242" +
+      "\002\n\030RevokeUserConsentRequest\022\207\001\n\tclient_i" +
+      "d\030\001 \001(\tBj\222AX2DUnique identifier of the c" +
+      "lient resource for which to revoke conse" +
+      "ntJ\020\"m2m_1234567890\"\272H\014r\n\020\001\030 :\004m2m_R\010cli" +
+      "entId\022|\n\nconsent_id\030\002 \001(\tB]\222AG2/Unique i" +
+      "dentifier of the user consent to revokeJ" +
+      "\024\"usrcnst_1234567890\"\272H\020r\016\020\001\030 :\010usrcnst_" +
+      "R\tconsentId\"\033\n\031RevokeUserConsentResponse" +
+      "\"\237\001\n\037EnsureResourceConnectionRequest\022|\n\013" +
+      "resource_id\030\001 \001(\tB[\222AO24Unique identifie" +
+      "r of the client resource to retrieveJ\027\"a" +
+      "pp_69388798466720005\"\272H\006r\004\020\001\030 R\nresource" +
+      "Id\"\324\001\n EnsureResourceConnectionResponse\022" +
+      "\257\001\n\nconnection\030\001 \001(\0132\'.scalekit.v1.clien" +
+      "ts.ResourceConnectionBf\222A]2[Details of t" +
+      "he connection resource. Contains configu" +
+      "ration settings and status information.\272" +
+      "H\003\310\001\001R\nconnection\"\260\007\n\022ResourceConnection" +
+      "\022T\n\002id\030\001 \001(\tBD\222AA2,Unique identifier of " +
+      "the connection resourceJ\021\"conn_123456789" +
+      "0\"R\002id\022\241\001\n\004type\030\002 \001(\0162+.scalekit.v1.clie" +
+      "nts.ResourceConnectionTypeB`\222A]2QType of" +
+      " connection. Determines the authenticati" +
+      "on method used for the connection.J\010\"CUS" +
+      "TOM\"R\004type\022\224\001\n\006status\030\003 \001(\tB|\222Ay2mCurren" +
+      "t status of the connection. Indicates wh" +
+      "ether the connection is active, inactive" +
+      ", or in an error state.J\010\"ACTIVE\"R\006statu" +
+      "s\022\211\001\n\007enabled\030\004 \001(\010Bo\222Al2dIndicates whet" +
+      "her the connection is enabled. Disabled " +
+      "connections cannot be used for authentic" +
+      "ation.J\004trueR\007enabled\022\347\001\n\010settings\030\005 \001(\013" +
+      "2\027.google.protobuf.StructB\261\001\222A\255\0012kConfig" +
+      "uration settings for the connection. The" +
+      " structure of this field varies based on" +
+      " the connection type.J>{\"api_key\": \"abcd" +
+      "1234\", \"endpoint\": \"https://api.example." +
+      "com\"}R\010settings\022\222\001\n\010provider\030\006 \001(\tBv\222As2" +
+      "^The provider of the connection. Indicat" +
+      "es the service or platform that manages " +
+      "the connection.J\021\"custom_provider\"R\010prov" +
+      "ider\"\334\001\n ResourceCustomConnectionSetting" +
+      "s\022\267\001\n\rauthorize_uri\030\001 \001(\tB\221\001\222A\203\0012[The UR" +
+      "I where users are redirected to authoriz" +
+      "e the application. Must be a valid HTTPS" +
+      " URL.J$\"https://auth.example.com/authori" +
+      "ze\"\272H\007r\005\020\001\210\001\001R\014authorizeUri*k\n\014ResourceT" +
+      "ype\022\035\n\031RESOURCE_TYPE_UNSPECIFIED\020\000\022\007\n\003WE" +
+      "B\020\001\022\n\n\006MOBILE\020\002\022\013\n\007DESKTOP\020\003\022\n\n\006SERVER\020\004" +
+      "\022\016\n\nMCP_SERVER\020\005*.\n\022ClientSecretStatus\022\n" +
+      "\n\006ACTIVE\020\000\022\014\n\010INACTIVE\020\001*1\n\026ResourceConn" +
+      "ectionType\022\013\n\007INVALID\020\000\022\n\n\006CUSTOM\020\0012\311\200\001\n" +
+      "\rClientService\022\326\002\n\nListClient\022\'.scalekit" +
+      ".v1.clients.ListClientsRequest\032(.scaleki" +
+      "t.v1.clients.ListClientsResponse\"\364\001\222A\304\001\n" +
+      "\010API Auth\022\020List API clients\032GRetrieves a" +
+      " paginated list of API client applicatio" +
+      "ns in the workspace.J]\n\003200\022V\n&List of c" +
+      "lients returned successfully.\022,\n*\032(.scal" +
+      "ekit.v1.clients.ListClientsResponse\202\265\030\002\030" +
+      "P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\021\022\017/api/v1/clients\022" +
+      "\314\005\n\tGetClient\022%.scalekit.v1.clients.GetC" +
+      "lientRequest\032&.scalekit.v1.clients.GetCl" +
+      "ientResponse\"\357\004\222A\263\004\n\016Client Configs\022\030Get" +
+      " Client Configuration\032\301\002Retrieves the co" +
+      "mplete configuration for an M2M client, " +
+      "including authentication settings, scope" +
+      "s, and custom claims. Use this endpoint " +
+      "to view or verify client settings, such " +
+      "as allowed redirect URIs, audience value" +
+      "s, and token expiration times. The respo" +
+      "nse includes all current client metadata" +
+      " and security parameters.J\302\001\n\003200\022\272\001\n\213\001C" +
+      "lient configuration retrieved successful" +
+      "ly. Returns full client metadata includi" +
+      "ng scopes, audience, custom claims, and " +
+      "security settings.\022*\n(\032&.scalekit.v1.cli" +
+      "ents.GetClientResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREV" +
+      "IEW\202\323\344\223\002\035\022\033/api/v1/clients/{client_id}\022\303" +
+      "\005\n\014UpdateClient\022(.scalekit.v1.clients.Up" +
+      "dateClientRequest\032).scalekit.v1.clients." +
+      "UpdateClientResponse\"\335\004\222A\231\004\n\016Client Conf" +
+      "igs\022\033Update Client Configuration\032\260\002Updat" +
+      "es the configuration settings for an M2M" +
+      " client. This endpoint allows you to mod" +
+      "ify client properties such as redirect U" +
+      "RIs, scopes, audience, and custom claims" +
+      ". Required fields include redirect_uris " +
+      "and default_redirect_uri. Note that clie" +
+      "nt_id and create_time are immutable and " +
+      "cannot be modified.J\266\001\n\003201\022\256\001\n}Client c" +
+      "onfiguration updated successfully. Retur" +
+      "ns the updated client resource with new " +
+      "update_time and all current settings.\022-\n" +
+      "+\032).scalekit.v1.clients.UpdateClientResp" +
+      "onse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%2\033/api/v1" +
+      "/clients/{client_id}:\006client\022\244\005\n\022CreateC" +
+      "lientSecret\022..scalekit.v1.clients.Create" +
+      "ClientSecretRequest\032/.scalekit.v1.client" +
+      "s.CreateClientSecretResponse\"\254\004\222A\350\003\n\016Cli" +
+      "ent Configs\022\024Create Client Secret\032\202\002Gene" +
+      "rates a new client secret for an API cli" +
+      "ent. This endpoint creates a secure cred" +
+      "ential that can be used for OAuth 2.0 cl" +
+      "ient credentials flow. The plain secret " +
+      "is only returned once during creation an" +
+      "d should be stored securely by the clien" +
+      "t application.J\272\001\n\003201\022\262\001\n{Client secret" +
+      " created successfully. Returns the new s" +
+      "ecret ID and the plain secret value (onl" +
+      "y available at creation time).\0223\n1\032/.sca" +
+      "lekit.v1.clients.CreateClientSecretRespo" +
+      "nse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\"#/api/v1/" +
+      "clients/{client_id}/secrets\022\312\005\n\022UpdateCl" +
+      "ientSecret\022..scalekit.v1.clients.UpdateC" +
+      "lientSecretRequest\032/.scalekit.v1.clients" +
+      ".UpdateClientSecretResponse\"\322\004\222A\277\003\n\016Clie" +
+      "nt Configs\022\024Update Client Secret\032\375\001Updat" +
+      "es the status of a client secret. This e" +
+      "ndpoint allows you to activate or deacti" +
+      "vate a client secret. Use this to rotate" +
+      " secrets or revoke access for compromise" +
+      "d credentials. The secret value itself c" +
+      "annot be modified - create a new secret " +
+      "instead.J\226\001\n\003200\022\216\001\nWClient secret updat" +
+      "ed successfully. Returns the updated sec" +
+      "ret with its current status.\0223\n1\032/.scale" +
+      "kit.v1.clients.UpdateClientSecretRespons" +
+      "e\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002t\032//api/v1/cl" +
+      "ients/{client_id}/secrets/{secret_id}:\006s",
+      "ecretZ92//api/v1/clients/{client_id}/sec" +
+      "rets/{secret_id}:\006secret\022\343\003\n\022DeleteClien" +
+      "tSecret\022..scalekit.v1.clients.DeleteClie" +
+      "ntSecretRequest\032\026.google.protobuf.Empty\"" +
+      "\204\003\222A\264\002\n\016Client Configs\022\024Delete Client Se" +
+      "cret\032\305\001Permanently deletes a client secr" +
+      "et. This operation cannot be undone. Use" +
+      " this endpoint to remove compromised or " +
+      "unused secrets. After deletion, the secr" +
+      "et can no longer be used for authenticat" +
+      "ion.JD\n\003200\022=\n;Client secret successfull" +
+      "y deleted and no longer accessible\202\265\030\002\030T" +
+      "\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0021*//api/v1/clients/{" +
+      "client_id}/secrets/{secret_id}\022\222\005\n\030Creat" +
+      "eOrganizationClient\0224.scalekit.v1.client" +
+      "s.CreateOrganizationClientRequest\0325.scal" +
       "ekit.v1.clients.CreateOrganizationClient" +
-      "SecretResponse\"\243\007\222A\316\006\n\010API Auth\022%Create " +
-      "organization API client secret\032dCreates " +
-      "a new secret for an organization API cli" +
-      "ent. Returns the plain secret (available" +
-      " only once).J\376\001\n\003201\022\366\001\n\262\001Client secret " +
-      "created successfully. Returns the new se" +
-      "cret ID and the plain secret value (only" +
-      " available at creation time). The secret" +
-      " can be used immediately for authenticat" +
-      "ion.\022?\n=\032;.scalekit.v1.clients.CreateOrg" +
-      "anizationClientSecretResponsej\263\003\n\rx-code" +
-      "Samples\022\241\0032\236\003\n\233\003*\230\003\n\025\n\005label\022\014\032\nPython S" +
-      "DK\n\020\n\004lang\022\010\032\006python\n\354\002\n\006source\022\341\002\032\336\002# G" +
-      "et client ID from environment variables\n" +
-      "org_id = \'SCALEKIT_ORGANIZATION_ID\'\nclie" +
-      "nt_id = os.environ[\'M2M_CLIENT_ID\']\n\n# A" +
-      "dd a new secret to the specified client\n" +
-      "response = sc.m2m_client.add_organizatio" +
-      "n_client_secret(\n    organization_id=org" +
-      "_id,\n    client_id=client_id\n)\n\n# Extrac" +
-      "t the secret ID from the response\nsecret" +
-      "_id = response[0].secret.id\202\265\030\002\030T\202\323\344\223\002E\"" +
-      "C/api/v1/organizations/{organization_id}" +
-      "/clients/{client_id}/secrets\022\355\006\n\036DeleteO" +
-      "rganizationClientSecret\022:.scalekit.v1.cl" +
-      "ients.DeleteOrganizationClientSecretRequ" +
-      "est\032\026.google.protobuf.Empty\"\366\005\222A\225\005\n\010API " +
-      "Auth\022%Delete organization API client sec" +
-      "ret\032^Permanently deletes a secret from a" +
-      "n organization API client. This operatio" +
-      "n cannot be undone.JD\n\003200\022=\n;Client sec" +
-      "ret successfully deleted and no longer a" +
-      "ccessiblej\273\003\n\rx-codeSamples\022\251\0032\246\003\n\243\003*\240\003\n" +
-      "\025\n\005label\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python" +
-      "\n\364\002\n\006source\022\351\002\032\346\002# Get client and secret" +
-      " IDs from environment variables\norg_id =" +
-      " \'<SCALEKIT_ORGANIZATION_ID>\'\nclient_id " +
-      "= os.environ[\'M2M_CLIENT_ID\']\nsecret_id " +
-      "= os.environ[\'M2M_SECRET_ID\']\n\n# Remove " +
-      "the specified secret from the client\nres" +
-      "ponse = sc.m2m_client.remove_organizatio" +
-      "n_client_secret(\n    organization_id=org" +
-      "_id,\n    client_id=client_id,\n    secret" +
-      "_id=secret_id\n)\202\265\030\002\030T\202\323\344\223\002Q*O/api/v1/org" +
-      "anizations/{organization_id}/clients/{cl" +
-      "ient_id}/secrets/{secret_id}\022\326\t\n\030UpdateO" +
-      "rganizationClient\0224.scalekit.v1.clients." +
-      "UpdateOrganizationClientRequest\0325.scalek" +
-      "it.v1.clients.UpdateOrganizationClientRe" +
-      "sponse\"\314\010\222A\367\007\n\010API Auth\022\036Update organiza" +
-      "tion API client\032PUpdates an existing org" +
-      "anization API client. Only specified fie" +
-      "lds are modified.J\344\001\n\003200\022\334\001\n\236\001Returns t" +
-      "he updated organization API client with " +
-      "all current details reflected in the res" +
-      "ponse, including modified scopes, audien" +
-      "ce values, and custom claims.\0229\n7\0325.scal" +
-      "ekit.v1.clients.UpdateOrganizationClient" +
-      "Responsej\221\005\n\rx-codeSamples\022\377\0042\374\004\n\371\004*\366\004\n\025" +
-      "\n\005label\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python\n" +
-      "\312\004\n\006source\022\277\004\032\274\004from scalekit.v1.clients" +
-      ".clients_pb2 import OrganizationClient\n\n" +
-      "org_id = \'<SCALEKIT_ORGANIZATION_ID>\'\ncl" +
-      "ient_id = os.environ[\'M2M_CLIENT_ID\']\n\nu" +
-      "pdate_m2m_client = OrganizationClient(\n " +
-      "   description=\"Service account for GitH" +
-      "ub Actions to deploy applications to pro" +
-      "duction_eu\",\n    custom_claims=[\n       " +
-      " {\"key\": \"github_repository\", \"value\": \"" +
-      "acmecorp/inventory\"},\n        {\"key\": \"e" +
-      "nvironment\", \"value\": \"production_eu\"}\n " +
-      "   ]\n)\n\nresponse = sc.m2m_client.update_" +
-      "organization_client(\n    organization_id" +
-      "=org_id,\n    client_id=client_id,\n    m2" +
-      "m_client=update_m2m_client\n)\202\265\030\002\030T\202\323\344\223\002E" +
-      "2;/api/v1/organizations/{organization_id" +
-      "}/clients/{client_id}:\006client\022\223\007\n\030Delete" +
-      "OrganizationClient\0224.scalekit.v1.clients" +
-      ".DeleteOrganizationClientRequest\032\026.googl" +
-      "e.protobuf.Empty\"\250\006\222A\333\005\n\010API Auth\022\036Delet" +
-      "e organization API client\032\356\001Permanently " +
-      "deletes an API client from an organizati" +
-      "on. This operation cannot be undone and " +
-      "will revoke all access for the client. A" +
-      "ll associated secrets will also be inval" +
-      "idated. Use this endpoint to remove unus" +
-      "ed or compromised clients.JN\n\003200\022G\nEOrg" +
-      "anization API client successfully delete" +
-      "d and no longer accessiblej\355\002\n\rx-codeSam" +
-      "ples\022\333\0022\330\002\n\325\002*\322\002\n\025\n\005label\022\014\032\nPython SDK\n" +
-      "\020\n\004lang\022\010\032\006python\n\246\002\n\006source\022\233\002\032\230\002# Get " +
-      "client ID from environment variables\norg" +
-      "_id = \'<SCALEKIT_ORGANIZATION_ID>\'\nclien" +
-      "t_id = os.environ[\'M2M_CLIENT_ID\']\n\n# De" +
-      "lete the specified client from the organ" +
-      "ization\nresponse = sc.m2m_client.delete_" +
-      "organization_client(\n    organization_id" +
-      "=org_id,\n    client_id=client_id\n)\202\265\030\002\030T" +
-      "\202\323\344\223\002=*;/api/v1/organizations/{organizat" +
-      "ion_id}/clients/{client_id}\022\250\010\n\027ListOrga" +
-      "nizationClients\0223.scalekit.v1.clients.Li" +
-      "stOrganizationClientsRequest\0324.scalekit." +
-      "v1.clients.ListOrganizationClientsRespon" +
-      "se\"\241\007\222A\340\006\n\010API Auth\022\035List organization A" +
-      "PI clients\032\271\001Retrieves a paginated list " +
-      "of API clients for a specific organizati" +
-      "on. Returns client details including met" +
-      "adata, scopes, and secret information (w" +
-      "ithout exposing actual secret values).J\270" +
-      "\001\n\003200\022\260\001\ntList of organization API clie" +
-      "nts returned successfully. Each client i" +
-      "ncludes its configuration details and me" +
-      "tadata.\0228\n6\0324.scalekit.v1.clients.ListOr" +
-      "ganizationClientsResponsej\275\003\n\rx-codeSamp" +
-      "les\022\253\0032\250\003\n\245\003*\242\003\n\025\n\005label\022\014\032\nPython SDK\n\020" +
-      "\n\004lang\022\010\032\006python\n\366\002\n\006source\022\353\002\032\350\002# List " +
-      "clients for a specific organization\norg_" +
-      "id = \'SCALEKIT_ORGANIZATION_ID\'\n\n# Retri" +
-      "eve all clients with default pagination\n" +
-      "response = sc.m2m_client.list_organizati" +
-      "on_clients(\n    organization_id=org_id,\n" +
-      "    page_size=30\n)\n\n# Access the clients" +
-      " list\nclients = response.clients\nfor cli" +
-      "ent in clients:\n    print(f\"Client ID: {" +
-      "client.id}, Name: {client.name}\")\202\265\030\002\030T\202" +
-      "\323\344\223\0021\022//api/v1/organizations/{organizati" +
-      "on_id}/clients\022\225\003\n\016CreateResource\022*.scal" +
-      "ekit.v1.clients.CreateResourceRequest\032+." +
-      "scalekit.v1.clients.CreateResourceRespon" +
-      "se\"\251\002\222A\355\001\n\010API Auth\022\017Create Resource\032XCr" +
-      "eates a new client resource. The respons" +
-      "e includes the resource ID and other met" +
-      "adata.Jv\n\003201\022o\n<Resource created succes" +
-      "sfully. Returns the created resource.\022/\n" +
-      "-\032+.scalekit.v1.clients.CreateResourceRe" +
-      "sponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\035\"\021/api/" +
-      "v1/resources:\010resource\022\352\002\n\013GetResource\022\'" +
-      ".scalekit.v1.clients.GetResourceRequest\032" +
-      "(.scalekit.v1.clients.GetResourceRespons" +
-      "e\"\207\002\222A\307\001\n\010API Auth\022\014Get Resource\0326Retrie" +
-      "ves details of a specific client resourc" +
-      "e by ID.Ju\n\003200\022n\n>Resource details retr" +
-      "ieved successfully. Returns the resource" +
-      ".\022,\n*\032(.scalekit.v1.clients.GetResourceR" +
-      "esponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002!\022\037/api" +
-      "/v1/resources/{resource_id}\022\323\002\n\rListReso" +
-      "urces\022).scalekit.v1.clients.ListResource" +
-      "sRequest\032*.scalekit.v1.clients.ListResou" +
-      "rcesResponse\"\352\001\222A\270\001\n\010API Auth\022\021List appl" +
-      "ications\0326Retrieves a paginated list of " +
-      "API client applications.Ja\n\003200\022Z\n(List " +
-      "of resources returned successfully.\022.\n,\032" +
-      "*.scalekit.v1.clients.ListResourcesRespo" +
-      "nse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\023\022\021/api/v1/" +
-      "resources\022\223\003\n\016UpdateResource\022*.scalekit." +
-      "v1.clients.UpdateResourceRequest\032+.scale" +
-      "kit.v1.clients.UpdateResourceResponse\"\247\002" +
-      "\222A\335\001\n\010API Auth\022\017Update Resource\032HUpdates" +
-      " an existing client resource. Only speci" +
-      "fied fields are modified.Jv\n\003200\022o\n<Reso" +
-      "urce updated successfully. Returns the u" +
-      "pdated resource.\022/\n-\032+.scalekit.v1.clien" +
-      "ts.UpdateResourceResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007P" +
-      "REVIEW\202\323\344\223\002+2\037/api/v1/resources/{resourc" +
-      "e_id}:\010resource\022\223\003\n\016DeleteResource\022*.sca" +
-      "lekit.v1.clients.DeleteResourceRequest\032\026" +
-      ".google.protobuf.Empty\"\274\002\222A\374\001\n\010API Auth\022" +
-      "\017Delete Resource\032\235\001Permanently deletes a" +
-      " client resource. This operation cannot " +
-      "be undone and will remove the resource a" +
-      "long with all its associated clients and" +
-      " configurations.J?\n\003200\0228\n6Resource succ" +
+      "Response\"\210\004\222A\277\003\n\010API Auth\022\036Create organi" +
+      "zation API client\032rCreates a new API cli" +
+      "ent for an organization. Returns the cli" +
+      "ent details and a plain secret (availabl" +
+      "e only once).J\236\002\n\003201\022\226\002\n\330\001API client cr" +
+      "eated successfully. Returns the client I" +
+      "D and plain secret (only available at cr" +
+      "eation time). The client can be configur" +
+      "ed with scopes, audience values, and cus" +
+      "tom claims for fine-grained access contr" +
+      "ol.\0229\n7\0325.scalekit.v1.clients.CreateOrga" +
+      "nizationClientResponse\202\265\030\002\030T\202\323\344\223\0029\"//api" +
+      "/v1/organizations/{organization_id}/clie" +
+      "nts:\006client\022\265\004\n\025GetOrganizationClient\0221." +
+      "scalekit.v1.clients.GetOrganizationClien" +
+      "tRequest\0322.scalekit.v1.clients.GetOrgani" +
+      "zationClientResponse\"\264\003\222A\347\002\n\010API Auth\022\033G" +
+      "et organization API client\032>Retrieves de" +
+      "tails of a specific API client in an org" +
+      "anization.J\375\001\n\003200\022\365\001\n\272\001Returns the comp" +
+      "lete API client configuration, including" +
+      " all current settings and a list of acti" +
+      "ve secrets. Note that secret values are " +
+      "not included in the response for securit" +
+      "y reasons.\0226\n4\0322.scalekit.v1.clients.Get" +
+      "OrganizationClientResponse\202\265\030\002\030T\202\323\344\223\002=\022;" +
+      "/api/v1/organizations/{organization_id}/" +
+      "clients/{client_id}\022\211\005\n\036CreateOrganizati" +
+      "onClientSecret\022:.scalekit.v1.clients.Cre" +
+      "ateOrganizationClientSecretRequest\032;.sca" +
+      "lekit.v1.clients.CreateOrganizationClien" +
+      "tSecretResponse\"\355\003\222A\230\003\n\010API Auth\022%Create" +
+      " organization API client secret\032dCreates" +
+      " a new secret for an organization API cl" +
+      "ient. Returns the plain secret (availabl" +
+      "e only once).J\376\001\n\003201\022\366\001\n\262\001Client secret" +
+      " created successfully. Returns the new s" +
+      "ecret ID and the plain secret value (onl" +
+      "y available at creation time). The secre" +
+      "t can be used immediately for authentica" +
+      "tion.\022?\n=\032;.scalekit.v1.clients.CreateOr" +
+      "ganizationClientSecretResponse\202\265\030\002\030T\202\323\344\223" +
+      "\002E\"C/api/v1/organizations/{organization_" +
+      "id}/clients/{client_id}/secrets\022\257\003\n\036Dele" +
+      "teOrganizationClientSecret\022:.scalekit.v1" +
+      ".clients.DeleteOrganizationClientSecretR" +
+      "equest\032\026.google.protobuf.Empty\"\270\002\222A\327\001\n\010A" +
+      "PI Auth\022%Delete organization API client " +
+      "secret\032^Permanently deletes a secret fro" +
+      "m an organization API client. This opera" +
+      "tion cannot be undone.JD\n\003200\022=\n;Client " +
+      "secret successfully deleted and no longe" +
+      "r accessible\202\265\030\002\030T\202\323\344\223\002Q*O/api/v1/organi" +
+      "zations/{organization_id}/clients/{clien" +
+      "t_id}/secrets/{secret_id}\022\302\004\n\030UpdateOrga" +
+      "nizationClient\0224.scalekit.v1.clients.Upd" +
+      "ateOrganizationClientRequest\0325.scalekit." +
+      "v1.clients.UpdateOrganizationClientRespo" +
+      "nse\"\270\003\222A\343\002\n\010API Auth\022\036Update organizatio" +
+      "n API client\032PUpdates an existing organi" +
+      "zation API client. Only specified fields" +
+      " are modified.J\344\001\n\003200\022\334\001\n\236\001Returns the " +
+      "updated organization API client with all" +
+      " current details reflected in the respon" +
+      "se, including modified scopes, audience " +
+      "values, and custom claims.\0229\n7\0325.scaleki" +
+      "t.v1.clients.UpdateOrganizationClientRes" +
+      "ponse\202\265\030\002\030T\202\323\344\223\002E2;/api/v1/organizations" +
+      "/{organization_id}/clients/{client_id}:\006" +
+      "client\022\243\004\n\030DeleteOrganizationClient\0224.sc" +
+      "alekit.v1.clients.DeleteOrganizationClie" +
+      "ntRequest\032\026.google.protobuf.Empty\"\270\003\222A\353\002" +
+      "\n\010API Auth\022\036Delete organization API clie" +
+      "nt\032\356\001Permanently deletes an API client f" +
+      "rom an organization. This operation cann" +
+      "ot be undone and will revoke all access " +
+      "for the client. All associated secrets w" +
+      "ill also be invalidated. Use this endpoi" +
+      "nt to remove unused or compromised clien" +
+      "ts.JN\n\003200\022G\nEOrganization API client su" +
+      "ccessfully deleted and no longer accessi" +
+      "ble\202\265\030\002\030T\202\323\344\223\002=*;/api/v1/organizations/{" +
+      "organization_id}/clients/{client_id}\022\350\004\n" +
+      "\027ListOrganizationClients\0223.scalekit.v1.c" +
+      "lients.ListOrganizationClientsRequest\0324." +
+      "scalekit.v1.clients.ListOrganizationClie" +
+      "ntsResponse\"\341\003\222A\240\003\n\010API Auth\022\035List organ" +
+      "ization API clients\032\271\001Retrieves a pagina" +
+      "ted list of API clients for a specific o" +
+      "rganization. Returns client details incl" +
+      "uding metadata, scopes, and secret infor" +
+      "mation (without exposing actual secret v" +
+      "alues).J\270\001\n\003200\022\260\001\ntList of organization" +
+      " API clients returned successfully. Each" +
+      " client includes its configuration detai" +
+      "ls and metadata.\0228\n6\0324.scalekit.v1.clien" +
+      "ts.ListOrganizationClientsResponse\202\265\030\002\030T" +
+      "\202\323\344\223\0021\022//api/v1/organizations/{organizat" +
+      "ion_id}/clients\022\225\003\n\016CreateResource\022*.sca" +
+      "lekit.v1.clients.CreateResourceRequest\032+" +
+      ".scalekit.v1.clients.CreateResourceRespo" +
+      "nse\"\251\002\222A\355\001\n\010API Auth\022\017Create Resource\032XC" +
+      "reates a new client resource. The respon" +
+      "se includes the resource ID and other me" +
+      "tadata.Jv\n\003201\022o\n<Resource created succe" +
+      "ssfully. Returns the created resource.\022/" +
+      "\n-\032+.scalekit.v1.clients.CreateResourceR" +
+      "esponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\035\"\021/api" +
+      "/v1/resources:\010resource\022\352\002\n\013GetResource\022" +
+      "\'.scalekit.v1.clients.GetResourceRequest" +
+      "\032(.scalekit.v1.clients.GetResourceRespon" +
+      "se\"\207\002\222A\307\001\n\010API Auth\022\014Get Resource\0326Retri" +
+      "eves details of a specific client resour" +
+      "ce by ID.Ju\n\003200\022n\n>Resource details ret" +
+      "rieved successfully. Returns the resourc" +
+      "e.\022,\n*\032(.scalekit.v1.clients.GetResource" +
+      "Response\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002!\022\037/ap" +
+      "i/v1/resources/{resource_id}\022\323\002\n\rListRes" +
+      "ources\022).scalekit.v1.clients.ListResourc" +
+      "esRequest\032*.scalekit.v1.clients.ListReso" +
+      "urcesResponse\"\352\001\222A\270\001\n\010API Auth\022\021List app" +
+      "lications\0326Retrieves a paginated list of" +
+      " API client applications.Ja\n\003200\022Z\n(List" +
+      " of resources returned successfully.\022.\n," +
+      "\032*.scalekit.v1.clients.ListResourcesResp" +
+      "onse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\023\022\021/api/v1" +
+      "/resources\022\223\003\n\016UpdateResource\022*.scalekit" +
+      ".v1.clients.UpdateResourceRequest\032+.scal" +
+      "ekit.v1.clients.UpdateResourceResponse\"\247" +
+      "\002\222A\335\001\n\010API Auth\022\017Update Resource\032HUpdate" +
+      "s an existing client resource. Only spec" +
+      "ified fields are modified.Jv\n\003200\022o\n<Res" +
+      "ource updated successfully. Returns the " +
+      "updated resource.\022/\n-\032+.scalekit.v1.clie" +
+      "nts.UpdateResourceResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007" +
+      "PREVIEW\202\323\344\223\002+2\037/api/v1/resources/{resour" +
+      "ce_id}:\010resource\022\223\003\n\016DeleteResource\022*.sc" +
+      "alekit.v1.clients.DeleteResourceRequest\032" +
+      "\026.google.protobuf.Empty\"\274\002\222A\374\001\n\010API Auth" +
+      "\022\017Delete Resource\032\235\001Permanently deletes " +
+      "a client resource. This operation cannot" +
+      " be undone and will remove the resource " +
+      "along with all its associated clients an" +
+      "d configurations.J?\n\003200\0228\n6Resource suc" +
+      "cessfully deleted and no longer accessib" +
+      "le\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002!*\037/api/v1/r" +
+      "esources/{resource_id}\022\262\003\n\026DeleteResourc" +
+      "eProvider\0222.scalekit.v1.clients.DeleteRe" +
+      "sourceProviderRequest\032(.scalekit.v1.clie" +
+      "nts.GetResourceResponse\"\271\002\222A\351\001\n\010API Auth" +
+      "\022\035Delete Provider from resource\032GDelete " +
+      "Provider from resource to use scalekit f" +
+      "ull stack authenticationJu\n\003200\022n\n>Resou" +
+      "rce details retrieved successfully. Retu" +
+      "rns the resource.\022,\n*\032(.scalekit.v1.clie" +
+      "nts.GetResourceResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PRE" +
+      "VIEW\202\323\344\223\0021\032//api/v1/resources/{resource_" +
+      "id}/provider:delete\022\365\003\n\024CreateResourceCl" +
+      "ient\0220.scalekit.v1.clients.CreateResourc" +
+      "eClientRequest\0321.scalekit.v1.clients.Cre" +
+      "ateResourceClientResponse\"\367\002\222A\247\002\n\010API Au" +
+      "th\022\026Create Resource Client\032pCreates a ne" +
+      "w API client under the specified resourc" +
+      "e. Returns client details and the plain " +
+      "secret (shown once).J\220\001\n\003201\022\210\001\nOClient " +
+      "created successfully. Returns the client" +
+      " configuration and plain secret.\0225\n3\0321.s" +
+      "calekit.v1.clients.CreateResourceClientR" +
+      "esponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0021\"\'/api" +
+      "/v1/resources/{resource_id}/clients:\006cli" +
+      "ent\022\317\003\n\024UpdateResourceClient\0220.scalekit." +
+      "v1.clients.UpdateResourceClientRequest\0321" +
+      ".scalekit.v1.clients.UpdateResourceClien" +
+      "tResponse\"\321\002\222A\365\001\n\010API Auth\022\026Update Resou" +
+      "rce Client\032HUpdates the configuration of" +
+      " an API client under the specified resou" +
+      "rce.J\206\001\n\003200\022\177\nFClient updated successfu" +
+      "lly. Returns the updated client configur" +
+      "ation.\0225\n3\0321.scalekit.v1.clients.UpdateR" +
+      "esourceClientResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVI" +
+      "EW\202\323\344\223\002=23/api/v1/resources/{resource_id" +
+      "}/clients/{client_id}:\006client\022\316\003\n\021GetRes" +
+      "ourceClient\022-.scalekit.v1.clients.GetRes" +
+      "ourceClientRequest\032..scalekit.v1.clients" +
+      ".GetResourceClientResponse\"\331\002\222A\205\002\n\010API A" +
+      "uth\022\027Get Resource API Client\032JRetrieves " +
+      "details of a specific API client associa" +
+      "ted with an application.J\223\001\n\003200\022\213\001\nUCli" +
+      "ent details retrieved successfully. Retu" +
+      "rns the resource and client configuratio" +
+      "n.\0222\n0\032..scalekit.v1.clients.GetResource" +
+      "ClientResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002" +
+      "5\0223/api/v1/resources/{resource_id}/clien" +
+      "ts/{client_id}\022\347\003\n\023ListResourceClients\022/" +
+      ".scalekit.v1.clients.ListResourceClients" +
+      "Request\0320.scalekit.v1.clients.ListResour" +
+      "ceClientsResponse\"\354\002\222A\244\002\n\010API Auth\022\031List" +
+      " Resource API Clients\032PRetrieves a list " +
+      "of API clients associated with a specifi" +
+      "c application resource.J\252\001\n\003200\022\242\001\njList" +
+      " of clients retrieved successfully. Retu" +
+      "rns the resource details and associated " +
+      "client configurations.\0224\n2\0320.scalekit.v1" +
+      ".clients.ListResourceClientsResponse\202\265\030\002" +
+      "\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002)\022\'/api/v1/resourc" +
+      "es/{resource_id}/clients\022\207\003\n\024DeleteResou" +
+      "rceClient\0220.scalekit.v1.clients.DeleteRe" +
+      "sourceClientRequest\0321.scalekit.v1.client" +
+      "s.DeleteResourceClientResponse\"\211\002\222A\265\001\n\010A" +
+      "PI Auth\022\026Delete Resource Client\0323Deletes" +
+      " an API client under the specified resou" +
+      "rce.J\\\n\003200\022U\n\034Client deleted successful" +
+      "ly.\0225\n3\0321.scalekit.v1.clients.DeleteReso" +
+      "urceClientResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202" +
+      "\323\344\223\0025*3/api/v1/resources/{resource_id}/c" +
+      "lients/{client_id}\022\202\004\n\016RegisterClient\022*." +
+      "scalekit.v1.clients.RegisterClientReques" +
+      "t\032+.scalekit.v1.clients.RegisterClientRe" +
+      "sponse\"\226\003\222A\302\002\n\010API Auth\022\023Register API cl" +
+      "ient\032\204\001Registers a new API client under " +
+      "an existing resource using dynamic clien" +
+      "t registration. Returns the created clie" +
+      "nt and its secrets.J\231\001\n\003201\022\221\001\n^Client r" +
+      "egistered successfully. Returns client d" +
+      "etails and plain secret (available only " +
+      "once).\022/\n-\032+.scalekit.v1.clients.Registe" +
+      "rClientResponse\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
+      "\0025\"+/api/v1/resources/{res_id}/clients:r" +
+      "egister:\006client\022\266\005\n\013CreateScope\022\'.scalek" +
+      "it.v1.clients.CreateScopeRequest\032(.scale" +
+      "kit.v1.clients.CreateScopeResponse\"\323\004\210\002\001" +
+      "\222A\353\003\022\031Create scope (Deprecated)\032\241\002DEPREC" +
+      "ATED: Use permission management APIs ins" +
+      "tead. Creates a new OAuth scope for API " +
+      "authorization. Scopes define the level o" +
+      "f access granted to API clients. Reserve" +
+      "d OpenID Connect scopes (profile, email," +
+      " address, phone) cannot be created as th" +
+      "ey are automatically managed by the syst" +
+      "em.J\251\001\n\003201\022\241\001\nqOAuth scope created succ" +
+      "essfully. Returns the newly created scop" +
+      "e with its name, description, and enable" +
+      "d status.\022,\n*\032(.scalekit.v1.clients.Crea" +
+      "teScopeResponse\202\265\030\002\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
+      "\002F\"\016/api/v1/scopes:\005scopeZ-\"$/api/v1/env" +
+      "ironments/{env_id}/scopes:\005scope\022\351\003\n\nLis" +
+      "tScopes\022&.scalekit.v1.clients.ListScopes" +
+      "Request\032\'.scalekit.v1.clients.ListScopes" +
+      "Response\"\211\003\222A\262\002\022\013List scopes\032\177Retrieves " +
+      "all OAuth scopes configured for the envi" +
+      "ronment. Returns both custom scopes and " +
+      "system-managed OpenID Connect scopes.J\241\001" +
+      "\n\003200\022\231\001\njList of OAuth scopes returned " +
+      "successfully. Each scope includes its na" +
+      "me, description, and enabled status.\022+\n)" +
+      "\032\'.scalekit.v1.clients.ListScopesRespons" +
+      "e\202\265\030\002\030p\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0028\022\016/api/v1/sc" +
+      "opesZ&\022$/api/v1/environments/{env_id}/sc" +
+      "opes\022\257\004\n\013UpdateScope\022\'.scalekit.v1.clien" +
+      "ts.UpdateScopeRequest\032(.scalekit.v1.clie" +
+      "nts.UpdateScopeResponse\"\314\003\210\002\001\222A\216\003\022\031Updat" +
+      "e scope (Deprecated)\032\340\001DEPRECATED:  Use " +
+      "permission management APIs instead. Upda" +
+      "tes an existing OAuth scope\'s descriptio" +
+      "n and enabled status. Reserved OpenID Co" +
+      "nnect scopes (profile, email, address, p" +
+      "hone) cannot be modified through this en" +
+      "dpoint.J\215\001\n\003200\022\205\001\nUOAuth scope updated " +
+      "successfully. Returns the updated scope " +
+      "with all current details.\022,\n*\032(.scalekit" +
+      ".v1.clients.UpdateScopeResponse\202\265\030\002\030P\372\322\344" +
+      "\223\002\t\022\007PREVIEW\202\323\344\223\002\0342\023/api/v1/scopes/{id}:" +
+      "\005scope\022\340\003\n\013DeleteScope\022\'.scalekit.v1.cli" +
+      "ents.DeleteScopeRequest\032\026.google.protobu" +
+      "f.Empty\"\217\003\210\002\001\222A\330\002\022\031Delete scope (Depreca" +
+      "ted)\032\366\001DEPRECATED: Use permission manage" +
+      "ment APIs instead. Permanently deletes a" +
+      "n OAuth scope from the environment. This" +
+      " operation cannot be undone. Reserved Op" +
+      "enID Connect scopes (profile, email, add" +
+      "ress, phone) cannot be deleted through t" +
+      "his endpoint.JB\n\003200\022;\n9OAuth scope succ" +
       "essfully deleted and no longer accessibl" +
-      "e\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002!*\037/api/v1/re" +
-      "sources/{resource_id}\022\262\003\n\026DeleteResource" +
-      "Provider\0222.scalekit.v1.clients.DeleteRes" +
-      "ourceProviderRequest\032(.scalekit.v1.clien" +
-      "ts.GetResourceResponse\"\271\002\222A\351\001\n\010API Auth\022" +
-      "\035Delete Provider from resource\032GDelete P" +
-      "rovider from resource to use scalekit fu" +
-      "ll stack authenticationJu\n\003200\022n\n>Resour" +
-      "ce details retrieved successfully. Retur" +
-      "ns the resource.\022,\n*\032(.scalekit.v1.clien" +
-      "ts.GetResourceResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREV" +
-      "IEW\202\323\344\223\0021\032//api/v1/resources/{resource_i" +
-      "d}/provider:delete\022\365\003\n\024CreateResourceCli" +
-      "ent\0220.scalekit.v1.clients.CreateResource" +
-      "ClientRequest\0321.scalekit.v1.clients.Crea" +
-      "teResourceClientResponse\"\367\002\222A\247\002\n\010API Aut" +
-      "h\022\026Create Resource Client\032pCreates a new" +
-      " API client under the specified resource" +
-      ". Returns client details and the plain s" +
-      "ecret (shown once).J\220\001\n\003201\022\210\001\nOClient c" +
-      "reated successfully. Returns the client " +
-      "configuration and plain secret.\0225\n3\0321.sc" +
-      "alekit.v1.clients.CreateResourceClientRe" +
-      "sponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0021\"\'/api/" +
-      "v1/resources/{resource_id}/clients:\006clie" +
-      "nt\022\317\003\n\024UpdateResourceClient\0220.scalekit.v" +
-      "1.clients.UpdateResourceClientRequest\0321." +
-      "scalekit.v1.clients.UpdateResourceClient" +
-      "Response\"\321\002\222A\365\001\n\010API Auth\022\026Update Resour" +
-      "ce Client\032HUpdates the configuration of " +
-      "an API client under the specified resour" +
-      "ce.J\206\001\n\003200\022\177\nFClient updated successful" +
-      "ly. Returns the updated client configura" +
-      "tion.\0225\n3\0321.scalekit.v1.clients.UpdateRe" +
-      "sourceClientResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIE" +
-      "W\202\323\344\223\002=23/api/v1/resources/{resource_id}" +
-      "/clients/{client_id}:\006client\022\316\003\n\021GetReso" +
-      "urceClient\022-.scalekit.v1.clients.GetReso" +
-      "urceClientRequest\032..scalekit.v1.clients." +
-      "GetResourceClientResponse\"\331\002\222A\205\002\n\010API Au" +
-      "th\022\027Get Resource API Client\032JRetrieves d" +
-      "etails of a specific API client associat" +
-      "ed with an application.J\223\001\n\003200\022\213\001\nUClie" +
-      "nt details retrieved successfully. Retur" +
-      "ns the resource and client configuration" +
-      ".\0222\n0\032..scalekit.v1.clients.GetResourceC" +
-      "lientResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0025" +
-      "\0223/api/v1/resources/{resource_id}/client" +
-      "s/{client_id}\022\347\003\n\023ListResourceClients\022/." +
-      "scalekit.v1.clients.ListResourceClientsR" +
-      "equest\0320.scalekit.v1.clients.ListResourc" +
-      "eClientsResponse\"\354\002\222A\244\002\n\010API Auth\022\031List " +
-      "Resource API Clients\032PRetrieves a list o" +
-      "f API clients associated with a specific" +
-      " application resource.J\252\001\n\003200\022\242\001\njList " +
-      "of clients retrieved successfully. Retur" +
-      "ns the resource details and associated c" +
-      "lient configurations.\0224\n2\0320.scalekit.v1." +
-      "clients.ListResourceClientsResponse\202\265\030\002\030" +
-      "T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002)\022\'/api/v1/resource" +
-      "s/{resource_id}/clients\022\207\003\n\024DeleteResour" +
-      "ceClient\0220.scalekit.v1.clients.DeleteRes" +
-      "ourceClientRequest\0321.scalekit.v1.clients" +
-      ".DeleteResourceClientResponse\"\211\002\222A\265\001\n\010AP" +
-      "I Auth\022\026Delete Resource Client\0323Deletes " +
-      "an API client under the specified resour" +
-      "ce.J\\\n\003200\022U\n\034Client deleted successfull" +
-      "y.\0225\n3\0321.scalekit.v1.clients.DeleteResou" +
-      "rceClientResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323" +
-      "\344\223\0025*3/api/v1/resources/{resource_id}/cl" +
-      "ients/{client_id}\022\202\004\n\016RegisterClient\022*.s" +
-      "calekit.v1.clients.RegisterClientRequest" +
-      "\032+.scalekit.v1.clients.RegisterClientRes" +
-      "ponse\"\226\003\222A\302\002\n\010API Auth\022\023Register API cli" +
-      "ent\032\204\001Registers a new API client under a" +
-      "n existing resource using dynamic client" +
-      " registration. Returns the created clien" +
-      "t and its secrets.J\231\001\n\003201\022\221\001\n^Client re" +
-      "gistered successfully. Returns client de" +
-      "tails and plain secret (available only o" +
-      "nce).\022/\n-\032+.scalekit.v1.clients.Register" +
-      "ClientResponse\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002" +
-      "5\"+/api/v1/resources/{res_id}/clients:re" +
-      "gister:\006client\022\266\005\n\013CreateScope\022\'.scaleki" +
-      "t.v1.clients.CreateScopeRequest\032(.scalek" +
-      "it.v1.clients.CreateScopeResponse\"\323\004\210\002\001\222" +
-      "A\353\003\022\031Create scope (Deprecated)\032\241\002DEPRECA" +
-      "TED: Use permission management APIs inst" +
-      "ead. Creates a new OAuth scope for API a" +
-      "uthorization. Scopes define the level of" +
-      " access granted to API clients. Reserved" +
-      " OpenID Connect scopes (profile, email, " +
-      "address, phone) cannot be created as the" +
-      "y are automatically managed by the syste" +
-      "m.J\251\001\n\003201\022\241\001\nqOAuth scope created succe" +
-      "ssfully. Returns the newly created scope" +
-      " with its name, description, and enabled" +
-      " status.\022,\n*\032(.scalekit.v1.clients.Creat" +
-      "eScopeResponse\202\265\030\002\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002" +
-      "F\"\016/api/v1/scopes:\005scopeZ-\"$/api/v1/envi" +
-      "ronments/{env_id}/scopes:\005scope\022\351\003\n\nList" +
-      "Scopes\022&.scalekit.v1.clients.ListScopesR" +
-      "equest\032\'.scalekit.v1.clients.ListScopesR" +
-      "esponse\"\211\003\222A\262\002\022\013List scopes\032\177Retrieves a" +
-      "ll OAuth scopes configured for the envir" +
-      "onment. Returns both custom scopes and s" +
-      "ystem-managed OpenID Connect scopes.J\241\001\n" +
-      "\003200\022\231\001\njList of OAuth scopes returned s" +
-      "uccessfully. Each scope includes its nam" +
-      "e, description, and enabled status.\022+\n)\032" +
-      "\'.scalekit.v1.clients.ListScopesResponse" +
-      "\202\265\030\002\030p\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0028\022\016/api/v1/sco" +
-      "pesZ&\022$/api/v1/environments/{env_id}/sco" +
-      "pes\022\257\004\n\013UpdateScope\022\'.scalekit.v1.client" +
-      "s.UpdateScopeRequest\032(.scalekit.v1.clien" +
-      "ts.UpdateScopeResponse\"\314\003\210\002\001\222A\216\003\022\031Update" +
-      " scope (Deprecated)\032\340\001DEPRECATED:  Use p" +
-      "ermission management APIs instead. Updat" +
-      "es an existing OAuth scope\'s description" +
-      " and enabled status. Reserved OpenID Con" +
-      "nect scopes (profile, email, address, ph" +
-      "one) cannot be modified through this end" +
-      "point.J\215\001\n\003200\022\205\001\nUOAuth scope updated s" +
-      "uccessfully. Returns the updated scope w" +
-      "ith all current details.\022,\n*\032(.scalekit." +
-      "v1.clients.UpdateScopeResponse\202\265\030\002\030P\372\322\344\223" +
-      "\002\t\022\007PREVIEW\202\323\344\223\002\0342\023/api/v1/scopes/{id}:\005" +
-      "scope\022\340\003\n\013DeleteScope\022\'.scalekit.v1.clie" +
-      "nts.DeleteScopeRequest\032\026.google.protobuf" +
-      ".Empty\"\217\003\210\002\001\222A\330\002\022\031Delete scope (Deprecat" +
-      "ed)\032\366\001DEPRECATED: Use permission managem" +
-      "ent APIs instead. Permanently deletes an" +
-      " OAuth scope from the environment. This " +
-      "operation cannot be undone. Reserved Ope" +
-      "nID Connect scopes (profile, email, addr" +
-      "ess, phone) cannot be deleted through th" +
-      "is endpoint.JB\n\003200\022;\n9OAuth scope succe" +
-      "ssfully deleted and no longer accessible" +
-      "\202\265\030\002\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\025*\023/api/v1/sco" +
-      "pes/{id}\022\227\001\n\021GetConsentDetails\022\026.google." +
-      "protobuf.Empty\032..scalekit.v1.clients.Get" +
-      "ConsentDetailsResponse\":\202\265\030\002\030\001\372\322\344\223\002\t\022\007PR" +
-      "EVIEW\202\323\344\223\002\037\022\035/api/v1/oauth/consent/detai" +
-      "ls\022\302\001\n\021RevokeUserConsent\022-.scalekit.v1.c" +
-      "lients.RevokeUserConsentRequest\032..scalek" +
-      "it.v1.clients.RevokeUserConsentResponse\"" +
-      "N\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0023*1/api/v1/cl" +
-      "ients/{client_id}/consents/{consent_id}\022" +
-      "\352\003\n\030EnsureResourceConnection\0224.scalekit." +
-      "v1.clients.EnsureResourceConnectionReque" +
-      "st\0325.scalekit.v1.clients.EnsureResourceC" +
-      "onnectionResponse\"\340\002\222A\221\002\n\010API Auth\022!Get " +
-      "or Create Resource Connection\032SRetrieves" +
-      " an existing resource connection or crea" +
-      "tes a new one if it doesn\'t exist.J\214\001\n\0032" +
-      "00\022\204\001\nBReturns the existing or newly cre" +
-      "ated resource connection details.\022>\n<\032:." +
-      "scalekit.v1.clients.GetOrCreateResourceC" +
-      "onnectionResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323" +
-      "\344\223\0020\"+/api/v1/resources/{resource_id}/co" +
-      "nnections:\001*\032\270\003\222A\264\003\n\010API Auth\022\375\002Endpoint" +
-      "s for managing API client applications. " +
-      "API clients enable secure, automated int" +
-      "eractions between software systems witho" +
-      "ut human intervention. Each client is un" +
-      "iquely identified by a `client_id` and c" +
-      "an be configured with authentication set" +
-      "tings, redirect URIs, and security param" +
-      "eters. Use these endpoints to create, ma" +
-      "nage, and configure API clients for your" +
-      " API clients.\032(\022&https://docs.scalekit.c" +
-      "om/m2m/overviewB\326\001\n%com.scalekit.grpc.sc" +
-      "alekit.v1.clientsB\014ClientsProtoP\001Z1githu" +
-      "b.com/scalekit-inc/scalekit/pkg/grpc/cli" +
-      "ents\242\002\003SVC\252\002\023Scalekit.V1.Clients\312\002\023Scale" +
-      "kit\\V1\\Clients\342\002\037Scalekit\\V1\\Clients\\GPB" +
-      "Metadata\352\002\025Scalekit::V1::Clientsb\006proto3"
+      "e\202\265\030\002\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\025*\023/api/v1/sc" +
+      "opes/{id}\022\227\001\n\021GetConsentDetails\022\026.google" +
+      ".protobuf.Empty\032..scalekit.v1.clients.Ge" +
+      "tConsentDetailsResponse\":\202\265\030\002\030\001\372\322\344\223\002\t\022\007P" +
+      "REVIEW\202\323\344\223\002\037\022\035/api/v1/oauth/consent/deta" +
+      "ils\022\302\001\n\021RevokeUserConsent\022-.scalekit.v1." +
+      "clients.RevokeUserConsentRequest\032..scale" +
+      "kit.v1.clients.RevokeUserConsentResponse" +
+      "\"N\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0023*1/api/v1/c" +
+      "lients/{client_id}/consents/{consent_id}" +
+      "\022\352\003\n\030EnsureResourceConnection\0224.scalekit" +
+      ".v1.clients.EnsureResourceConnectionRequ" +
+      "est\0325.scalekit.v1.clients.EnsureResource" +
+      "ConnectionResponse\"\340\002\222A\221\002\n\010API Auth\022!Get" +
+      " or Create Resource Connection\032SRetrieve" +
+      "s an existing resource connection or cre" +
+      "ates a new one if it doesn\'t exist.J\214\001\n\003" +
+      "200\022\204\001\nBReturns the existing or newly cr" +
+      "eated resource connection details.\022>\n<\032:" +
+      ".scalekit.v1.clients.GetOrCreateResource" +
+      "ConnectionResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202" +
+      "\323\344\223\0020\"+/api/v1/resources/{resource_id}/c" +
+      "onnections:\001*\032\270\003\222A\264\003\n\010API Auth\022\375\002Endpoin" +
+      "ts for managing API client applications." +
+      " API clients enable secure, automated in" +
+      "teractions between software systems with" +
+      "out human intervention. Each client is u" +
+      "niquely identified by a `client_id` and " +
+      "can be configured with authentication se" +
+      "ttings, redirect URIs, and security para" +
+      "meters. Use these endpoints to create, m" +
+      "anage, and configure API clients for you" +
+      "r API clients.\032(\022&https://docs.scalekit." +
+      "com/m2m/overviewB\326\001\n%com.scalekit.grpc.s" +
+      "calekit.v1.clientsB\014ClientsProtoP\001Z1gith" +
+      "ub.com/scalekit-inc/scalekit/pkg/grpc/cl" +
+      "ients\242\002\003SVC\252\002\023Scalekit.V1.Clients\312\002\023Scal" +
+      "ekit\\V1\\Clients\342\002\037Scalekit\\V1\\Clients\\GP" +
+      "BMetadata\352\002\025Scalekit::V1::Clientsb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2026,7 +1990,7 @@ public final class ClientsProto {
     internal_static_scalekit_v1_clients_CreateResource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_clients_CreateResource_descriptor,
-        new java.lang.String[] { "ResourceType", "Name", "Description", "ResourceUri", "AccessTokenExpiry", "RefreshTokenExpiry", "DisableDynamicClientRegistration", "LogoUri", "Provider", "ResourceId", "Scopes", });
+        new java.lang.String[] { "ResourceType", "Name", "Description", "ResourceUri", "AccessTokenExpiry", "RefreshTokenExpiry", "DisableDynamicClientRegistration", "LogoUri", "Provider", "ResourceId", "Scopes", "IntersectScopesUserPermission", "EnableCimd", });
     internal_static_scalekit_v1_clients_ResourceClient_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_scalekit_v1_clients_ResourceClient_fieldAccessorTable = new
@@ -2074,7 +2038,7 @@ public final class ClientsProto {
     internal_static_scalekit_v1_clients_Resource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_clients_Resource_descriptor,
-        new java.lang.String[] { "Id", "Name", "ResourceUri", "Description", "ResourceType", "DisableDynamicClientRegistration", "LogoUri", "AccessTokenExpiry", "RefreshTokenExpiry", "CreateTime", "UpdateTime", "Provider", "ProtectedMetadata", "ProtectedMetadataUri", "ResourceId", "Scopes", "ConnectionDetails", "DisallowConnectionUpdate", });
+        new java.lang.String[] { "Id", "Name", "ResourceUri", "Description", "ResourceType", "DisableDynamicClientRegistration", "LogoUri", "AccessTokenExpiry", "RefreshTokenExpiry", "CreateTime", "UpdateTime", "Provider", "ProtectedMetadata", "ProtectedMetadataUri", "ResourceId", "Scopes", "ConnectionDetails", "DisallowConnectionUpdate", "IntersectScopesUserPermission", "EnableCimd", });
     internal_static_scalekit_v1_clients_RegisterClientRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_scalekit_v1_clients_RegisterClientRequest_fieldAccessorTable = new
@@ -2104,7 +2068,7 @@ public final class ClientsProto {
     internal_static_scalekit_v1_clients_ListResourcesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_clients_ListResourcesResponse_descriptor,
-        new java.lang.String[] { "TotalSize", "NextPageToken", "Resources", });
+        new java.lang.String[] { "TotalSize", "NextPageToken", "Resources", "PrevPageToken", });
     internal_static_scalekit_v1_clients_UpdateResourceRequest_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_scalekit_v1_clients_UpdateResourceRequest_fieldAccessorTable = new
@@ -2116,7 +2080,7 @@ public final class ClientsProto {
     internal_static_scalekit_v1_clients_UpdateResource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_clients_UpdateResource_descriptor,
-        new java.lang.String[] { "Name", "Description", "ResourceUri", "AccessTokenExpiry", "RefreshTokenExpiry", "DisableDynamicClientRegistration", "LogoUri", "Provider", "ResourceId", "Scopes", "CustomConnectionSettings", "Settings", });
+        new java.lang.String[] { "Name", "Description", "ResourceUri", "AccessTokenExpiry", "RefreshTokenExpiry", "DisableDynamicClientRegistration", "LogoUri", "Provider", "ResourceId", "Scopes", "CustomConnectionSettings", "IntersectScopesUserPermission", "EnableCimd", "Settings", });
     internal_static_scalekit_v1_clients_UpdateResourceResponse_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_scalekit_v1_clients_UpdateResourceResponse_fieldAccessorTable = new
@@ -2224,7 +2188,7 @@ public final class ClientsProto {
     internal_static_scalekit_v1_clients_M2MClient_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_clients_M2MClient_descriptor,
-        new java.lang.String[] { "ClientId", "Secrets", "Name", "Description", "OrganizationId", "CreateTime", "UpdateTime", "Scopes", "Audience", "CustomClaims", "Expiry", "ResourceId", "RedirectUris", "IsDcr", });
+        new java.lang.String[] { "ClientId", "Secrets", "Name", "Description", "OrganizationId", "CreateTime", "UpdateTime", "Scopes", "Audience", "CustomClaims", "Expiry", "ResourceId", "RedirectUris", "IsDcr", "IsCimd", "MetadataUri", });
     internal_static_scalekit_v1_clients_GetOrganizationClientRequest_descriptor =
       getDescriptor().getMessageTypes().get(35);
     internal_static_scalekit_v1_clients_GetOrganizationClientRequest_fieldAccessorTable = new
@@ -2440,7 +2404,7 @@ public final class ClientsProto {
     internal_static_scalekit_v1_clients_ConsentClient_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_clients_ConsentClient_descriptor,
-        new java.lang.String[] { "Name", "PrivacyUri", "TosUri", });
+        new java.lang.String[] { "Name", "PrivacyUri", "TosUri", "ClientId", "MetadataUri", "LogoUri", });
     internal_static_scalekit_v1_clients_ConsentScope_descriptor =
       getDescriptor().getMessageTypes().get(71);
     internal_static_scalekit_v1_clients_ConsentScope_fieldAccessorTable = new

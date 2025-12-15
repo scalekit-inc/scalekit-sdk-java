@@ -5,6 +5,10 @@
 package com.scalekit.grpc.scalekit.v1.connected_accounts;
 
 /**
+ * <pre>
+ * Authentication credentials container supporting multiple auth types
+ * </pre>
+ *
  * Protobuf type {@code scalekit.v1.connected_accounts.AuthorizationDetails}
  */
 public final class AuthorizationDetails extends
@@ -83,6 +87,10 @@ private static final long serialVersionUID = 0L;
 
   public static final int OAUTH_TOKEN_FIELD_NUMBER = 1;
   /**
+   * <pre>
+   * OAuth 2.0 credentials
+   * </pre>
+   *
    * <code>.scalekit.v1.connected_accounts.OauthToken oauth_token = 1 [json_name = "oauthToken"];</code>
    * @return Whether the oauthToken field is set.
    */
@@ -91,6 +99,10 @@ private static final long serialVersionUID = 0L;
     return detailsCase_ == 1;
   }
   /**
+   * <pre>
+   * OAuth 2.0 credentials
+   * </pre>
+   *
    * <code>.scalekit.v1.connected_accounts.OauthToken oauth_token = 1 [json_name = "oauthToken"];</code>
    * @return The oauthToken.
    */
@@ -102,6 +114,10 @@ private static final long serialVersionUID = 0L;
     return com.scalekit.grpc.scalekit.v1.connected_accounts.OauthToken.getDefaultInstance();
   }
   /**
+   * <pre>
+   * OAuth 2.0 credentials
+   * </pre>
+   *
    * <code>.scalekit.v1.connected_accounts.OauthToken oauth_token = 1 [json_name = "oauthToken"];</code>
    */
   @java.lang.Override
@@ -114,6 +130,10 @@ private static final long serialVersionUID = 0L;
 
   public static final int STATIC_AUTH_FIELD_NUMBER = 2;
   /**
+   * <pre>
+   * Static authentication credentials
+   * </pre>
+   *
    * <code>.scalekit.v1.connected_accounts.StaticAuth static_auth = 2 [json_name = "staticAuth"];</code>
    * @return Whether the staticAuth field is set.
    */
@@ -122,6 +142,10 @@ private static final long serialVersionUID = 0L;
     return detailsCase_ == 2;
   }
   /**
+   * <pre>
+   * Static authentication credentials
+   * </pre>
+   *
    * <code>.scalekit.v1.connected_accounts.StaticAuth static_auth = 2 [json_name = "staticAuth"];</code>
    * @return The staticAuth.
    */
@@ -133,6 +157,10 @@ private static final long serialVersionUID = 0L;
     return com.scalekit.grpc.scalekit.v1.connected_accounts.StaticAuth.getDefaultInstance();
   }
   /**
+   * <pre>
+   * Static authentication credentials
+   * </pre>
+   *
    * <code>.scalekit.v1.connected_accounts.StaticAuth static_auth = 2 [json_name = "staticAuth"];</code>
    */
   @java.lang.Override
@@ -329,6 +357,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Authentication credentials container supporting multiple auth types
+   * </pre>
+   *
    * Protobuf type {@code scalekit.v1.connected_accounts.AuthorizationDetails}
    */
   public static final class Builder extends
@@ -551,6 +583,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.connected_accounts.OauthToken, com.scalekit.grpc.scalekit.v1.connected_accounts.OauthToken.Builder, com.scalekit.grpc.scalekit.v1.connected_accounts.OauthTokenOrBuilder> oauthTokenBuilder_;
     /**
+     * <pre>
+     * OAuth 2.0 credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.OauthToken oauth_token = 1 [json_name = "oauthToken"];</code>
      * @return Whether the oauthToken field is set.
      */
@@ -559,6 +595,10 @@ private static final long serialVersionUID = 0L;
       return detailsCase_ == 1;
     }
     /**
+     * <pre>
+     * OAuth 2.0 credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.OauthToken oauth_token = 1 [json_name = "oauthToken"];</code>
      * @return The oauthToken.
      */
@@ -577,6 +617,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * OAuth 2.0 credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.OauthToken oauth_token = 1 [json_name = "oauthToken"];</code>
      */
     public Builder setOauthToken(com.scalekit.grpc.scalekit.v1.connected_accounts.OauthToken value) {
@@ -593,6 +637,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * OAuth 2.0 credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.OauthToken oauth_token = 1 [json_name = "oauthToken"];</code>
      */
     public Builder setOauthToken(
@@ -607,6 +655,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * OAuth 2.0 credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.OauthToken oauth_token = 1 [json_name = "oauthToken"];</code>
      */
     public Builder mergeOauthToken(com.scalekit.grpc.scalekit.v1.connected_accounts.OauthToken value) {
@@ -630,6 +682,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * OAuth 2.0 credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.OauthToken oauth_token = 1 [json_name = "oauthToken"];</code>
      */
     public Builder clearOauthToken() {
@@ -649,12 +705,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * OAuth 2.0 credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.OauthToken oauth_token = 1 [json_name = "oauthToken"];</code>
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.OauthToken.Builder getOauthTokenBuilder() {
       return getOauthTokenFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * OAuth 2.0 credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.OauthToken oauth_token = 1 [json_name = "oauthToken"];</code>
      */
     @java.lang.Override
@@ -669,6 +733,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * OAuth 2.0 credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.OauthToken oauth_token = 1 [json_name = "oauthToken"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -693,6 +761,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.connected_accounts.StaticAuth, com.scalekit.grpc.scalekit.v1.connected_accounts.StaticAuth.Builder, com.scalekit.grpc.scalekit.v1.connected_accounts.StaticAuthOrBuilder> staticAuthBuilder_;
     /**
+     * <pre>
+     * Static authentication credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.StaticAuth static_auth = 2 [json_name = "staticAuth"];</code>
      * @return Whether the staticAuth field is set.
      */
@@ -701,6 +773,10 @@ private static final long serialVersionUID = 0L;
       return detailsCase_ == 2;
     }
     /**
+     * <pre>
+     * Static authentication credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.StaticAuth static_auth = 2 [json_name = "staticAuth"];</code>
      * @return The staticAuth.
      */
@@ -719,6 +795,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Static authentication credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.StaticAuth static_auth = 2 [json_name = "staticAuth"];</code>
      */
     public Builder setStaticAuth(com.scalekit.grpc.scalekit.v1.connected_accounts.StaticAuth value) {
@@ -735,6 +815,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Static authentication credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.StaticAuth static_auth = 2 [json_name = "staticAuth"];</code>
      */
     public Builder setStaticAuth(
@@ -749,6 +833,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Static authentication credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.StaticAuth static_auth = 2 [json_name = "staticAuth"];</code>
      */
     public Builder mergeStaticAuth(com.scalekit.grpc.scalekit.v1.connected_accounts.StaticAuth value) {
@@ -772,6 +860,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Static authentication credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.StaticAuth static_auth = 2 [json_name = "staticAuth"];</code>
      */
     public Builder clearStaticAuth() {
@@ -791,12 +883,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Static authentication credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.StaticAuth static_auth = 2 [json_name = "staticAuth"];</code>
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.StaticAuth.Builder getStaticAuthBuilder() {
       return getStaticAuthFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Static authentication credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.StaticAuth static_auth = 2 [json_name = "staticAuth"];</code>
      */
     @java.lang.Override
@@ -811,6 +911,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Static authentication credentials
+     * </pre>
+     *
      * <code>.scalekit.v1.connected_accounts.StaticAuth static_auth = 2 [json_name = "staticAuth"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

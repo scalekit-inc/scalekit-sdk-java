@@ -573,37 +573,6 @@ public final class ConnectionServiceGrpc {
     return getListAppConnectionsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsRequest,
-      com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsResponse> getUpdateConnectionUserManagementSettingsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateConnectionUserManagementSettings",
-      requestType = com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsRequest,
-      com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsResponse> getUpdateConnectionUserManagementSettingsMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsRequest, com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsResponse> getUpdateConnectionUserManagementSettingsMethod;
-    if ((getUpdateConnectionUserManagementSettingsMethod = ConnectionServiceGrpc.getUpdateConnectionUserManagementSettingsMethod) == null) {
-      synchronized (ConnectionServiceGrpc.class) {
-        if ((getUpdateConnectionUserManagementSettingsMethod = ConnectionServiceGrpc.getUpdateConnectionUserManagementSettingsMethod) == null) {
-          ConnectionServiceGrpc.getUpdateConnectionUserManagementSettingsMethod = getUpdateConnectionUserManagementSettingsMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsRequest, com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateConnectionUserManagementSettings"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new ConnectionServiceMethodDescriptorSupplier("UpdateConnectionUserManagementSettings"))
-              .build();
-        }
-      }
-    }
-    return getUpdateConnectionUserManagementSettingsMethod;
-  }
-
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -777,13 +746,6 @@ public final class ConnectionServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ListAppConnectionsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAppConnectionsMethod(), responseObserver);
     }
-
-    /**
-     */
-    default void updateConnectionUserManagementSettings(com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateConnectionUserManagementSettingsMethod(), responseObserver);
-    }
   }
 
   /**
@@ -956,14 +918,6 @@ public final class ConnectionServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAppConnectionsMethod(), getCallOptions()), request, responseObserver);
     }
-
-    /**
-     */
-    public void updateConnectionUserManagementSettings(com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateConnectionUserManagementSettingsMethod(), getCallOptions()), request, responseObserver);
-    }
   }
 
   /**
@@ -1106,13 +1060,6 @@ public final class ConnectionServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.connections.ListAppConnectionsResponse listAppConnections(com.scalekit.grpc.scalekit.v1.connections.ListAppConnectionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListAppConnectionsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsResponse updateConnectionUserManagementSettings(com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateConnectionUserManagementSettingsMethod(), getCallOptions(), request);
     }
   }
 
@@ -1275,14 +1222,6 @@ public final class ConnectionServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAppConnectionsMethod(), getCallOptions()), request);
     }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsResponse> updateConnectionUserManagementSettings(
-        com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateConnectionUserManagementSettingsMethod(), getCallOptions()), request);
-    }
   }
 
   private static final int METHODID_CREATE_ENVIRONMENT_CONNECTION = 0;
@@ -1303,7 +1242,6 @@ public final class ConnectionServiceGrpc {
   private static final int METHODID_DISABLE_CONNECTION = 15;
   private static final int METHODID_GET_CONNECTION_TEST_RESULT = 16;
   private static final int METHODID_LIST_APP_CONNECTIONS = 17;
-  private static final int METHODID_UPDATE_CONNECTION_USER_MANAGEMENT_SETTINGS = 18;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1393,10 +1331,6 @@ public final class ConnectionServiceGrpc {
         case METHODID_LIST_APP_CONNECTIONS:
           serviceImpl.listAppConnections((com.scalekit.grpc.scalekit.v1.connections.ListAppConnectionsRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ListAppConnectionsResponse>) responseObserver);
-          break;
-        case METHODID_UPDATE_CONNECTION_USER_MANAGEMENT_SETTINGS:
-          serviceImpl.updateConnectionUserManagementSettings((com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1542,13 +1476,6 @@ public final class ConnectionServiceGrpc {
               com.scalekit.grpc.scalekit.v1.connections.ListAppConnectionsRequest,
               com.scalekit.grpc.scalekit.v1.connections.ListAppConnectionsResponse>(
                 service, METHODID_LIST_APP_CONNECTIONS)))
-        .addMethod(
-          getUpdateConnectionUserManagementSettingsMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsRequest,
-              com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionUserManagementSettingsResponse>(
-                service, METHODID_UPDATE_CONNECTION_USER_MANAGEMENT_SETTINGS)))
         .build();
   }
 
@@ -1615,7 +1542,6 @@ public final class ConnectionServiceGrpc {
               .addMethod(getDisableConnectionMethod())
               .addMethod(getGetConnectionTestResultMethod())
               .addMethod(getListAppConnectionsMethod())
-              .addMethod(getUpdateConnectionUserManagementSettingsMethod())
               .build();
         }
       }

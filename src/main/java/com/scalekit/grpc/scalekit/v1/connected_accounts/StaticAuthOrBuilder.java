@@ -9,17 +9,17 @@ public interface StaticAuthOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.protobuf.Struct details = 1 [json_name = "details"];</code>
+   * <code>.google.protobuf.Struct details = 1 [json_name = "details", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the details field is set.
    */
   boolean hasDetails();
   /**
-   * <code>.google.protobuf.Struct details = 1 [json_name = "details"];</code>
+   * <code>.google.protobuf.Struct details = 1 [json_name = "details", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The details.
    */
   com.google.protobuf.Struct getDetails();
   /**
-   * <code>.google.protobuf.Struct details = 1 [json_name = "details"];</code>
+   * <code>.google.protobuf.Struct details = 1 [json_name = "details", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.StructOrBuilder getDetailsOrBuilder();
 }

@@ -57,10 +57,19 @@ public interface UpdateResourceOrBuilder extends
   long getRefreshTokenExpiry();
 
   /**
-   * <code>bool disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.BoolValue disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the disableDynamicClientRegistration field is set.
+   */
+  boolean hasDisableDynamicClientRegistration();
+  /**
+   * <code>.google.protobuf.BoolValue disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The disableDynamicClientRegistration.
    */
-  boolean getDisableDynamicClientRegistration();
+  com.google.protobuf.BoolValue getDisableDynamicClientRegistration();
+  /**
+   * <code>.google.protobuf.BoolValue disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getDisableDynamicClientRegistrationOrBuilder();
 
   /**
    * <code>string logo_uri = 7 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -137,6 +146,36 @@ public interface UpdateResourceOrBuilder extends
    * <code>.scalekit.v1.clients.ResourceCustomConnectionSettings custom_connection_settings = 13 [json_name = "customConnectionSettings", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettingsOrBuilder getCustomConnectionSettingsOrBuilder();
+
+  /**
+   * <code>.google.protobuf.BoolValue intersect_scopes_user_permission = 14 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the intersectScopesUserPermission field is set.
+   */
+  boolean hasIntersectScopesUserPermission();
+  /**
+   * <code>.google.protobuf.BoolValue intersect_scopes_user_permission = 14 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The intersectScopesUserPermission.
+   */
+  com.google.protobuf.BoolValue getIntersectScopesUserPermission();
+  /**
+   * <code>.google.protobuf.BoolValue intersect_scopes_user_permission = 14 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getIntersectScopesUserPermissionOrBuilder();
+
+  /**
+   * <code>.google.protobuf.BoolValue enable_cimd = 15 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the enableCimd field is set.
+   */
+  boolean hasEnableCimd();
+  /**
+   * <code>.google.protobuf.BoolValue enable_cimd = 15 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enableCimd.
+   */
+  com.google.protobuf.BoolValue getEnableCimd();
+  /**
+   * <code>.google.protobuf.BoolValue enable_cimd = 15 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getEnableCimdOrBuilder();
 
   com.scalekit.grpc.scalekit.v1.clients.UpdateResource.SettingsCase getSettingsCase();
 }

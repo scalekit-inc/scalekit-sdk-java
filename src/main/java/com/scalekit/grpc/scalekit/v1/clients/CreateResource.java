@@ -338,25 +338,6 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringArrayList scopes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
   /**
-   * <pre>
-   *
-   *string tos_uri = 10 [
-   *(buf.validate.field).string = {max_len: 512},
-   *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-   *description: "Terms of Service URI for the resource"
-   *example: "&#92;"https://example.com/tos&#92;""
-   *}
-   *];
-   *
-   *string policy_uri = 11 [
-   *(buf.validate.field).string = {max_len: 512},
-   *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-   *description: "Policy URI for the resource"
-   *example: "&#92;"https://example.com/policy&#92;""
-   *}
-   *];
-   * </pre>
-   *
    * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return A list containing the scopes.
    */
@@ -365,25 +346,6 @@ private static final long serialVersionUID = 0L;
     return scopes_;
   }
   /**
-   * <pre>
-   *
-   *string tos_uri = 10 [
-   *(buf.validate.field).string = {max_len: 512},
-   *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-   *description: "Terms of Service URI for the resource"
-   *example: "&#92;"https://example.com/tos&#92;""
-   *}
-   *];
-   *
-   *string policy_uri = 11 [
-   *(buf.validate.field).string = {max_len: 512},
-   *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-   *description: "Policy URI for the resource"
-   *example: "&#92;"https://example.com/policy&#92;""
-   *}
-   *];
-   * </pre>
-   *
    * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The count of scopes.
    */
@@ -391,25 +353,6 @@ private static final long serialVersionUID = 0L;
     return scopes_.size();
   }
   /**
-   * <pre>
-   *
-   *string tos_uri = 10 [
-   *(buf.validate.field).string = {max_len: 512},
-   *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-   *description: "Terms of Service URI for the resource"
-   *example: "&#92;"https://example.com/tos&#92;""
-   *}
-   *];
-   *
-   *string policy_uri = 11 [
-   *(buf.validate.field).string = {max_len: 512},
-   *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-   *description: "Policy URI for the resource"
-   *example: "&#92;"https://example.com/policy&#92;""
-   *}
-   *];
-   * </pre>
-   *
    * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The scopes at the given index.
@@ -418,6 +361,29 @@ private static final long serialVersionUID = 0L;
     return scopes_.get(index);
   }
   /**
+   * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the scopes at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getScopesBytes(int index) {
+    return scopes_.getByteString(index);
+  }
+
+  public static final int INTERSECT_SCOPES_USER_PERMISSION_FIELD_NUMBER = 12;
+  private boolean intersectScopesUserPermission_ = false;
+  /**
+   * <code>bool intersect_scopes_user_permission = 12 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The intersectScopesUserPermission.
+   */
+  @java.lang.Override
+  public boolean getIntersectScopesUserPermission() {
+    return intersectScopesUserPermission_;
+  }
+
+  public static final int ENABLE_CIMD_FIELD_NUMBER = 13;
+  private boolean enableCimd_ = false;
+  /**
    * <pre>
    *
    *string tos_uri = 10 [
@@ -437,13 +403,12 @@ private static final long serialVersionUID = 0L;
    *];
    * </pre>
    *
-   * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the scopes at the given index.
+   * <code>bool enable_cimd = 13 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enableCimd.
    */
-  public com.google.protobuf.ByteString
-      getScopesBytes(int index) {
-    return scopes_.getByteString(index);
+  @java.lang.Override
+  public boolean getEnableCimd() {
+    return enableCimd_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -492,6 +457,12 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < scopes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, scopes_.getRaw(i));
+    }
+    if (intersectScopesUserPermission_ != false) {
+      output.writeBool(12, intersectScopesUserPermission_);
+    }
+    if (enableCimd_ != false) {
+      output.writeBool(13, enableCimd_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -544,6 +515,14 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getScopesList().size();
     }
+    if (intersectScopesUserPermission_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(12, intersectScopesUserPermission_);
+    }
+    if (enableCimd_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(13, enableCimd_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -580,6 +559,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getResourceId())) return false;
     if (!getScopesList()
         .equals(other.getScopesList())) return false;
+    if (getIntersectScopesUserPermission()
+        != other.getIntersectScopesUserPermission()) return false;
+    if (getEnableCimd()
+        != other.getEnableCimd()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -618,6 +601,12 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SCOPES_FIELD_NUMBER;
       hash = (53 * hash) + getScopesList().hashCode();
     }
+    hash = (37 * hash) + INTERSECT_SCOPES_USER_PERMISSION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIntersectScopesUserPermission());
+    hash = (37 * hash) + ENABLE_CIMD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEnableCimd());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -761,6 +750,8 @@ private static final long serialVersionUID = 0L;
       resourceId_ = "";
       scopes_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+      intersectScopesUserPermission_ = false;
+      enableCimd_ = false;
       return this;
     }
 
@@ -827,6 +818,12 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000400) != 0)) {
         scopes_.makeImmutable();
         result.scopes_ = scopes_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.intersectScopesUserPermission_ = intersectScopesUserPermission_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.enableCimd_ = enableCimd_;
       }
     }
 
@@ -926,6 +923,12 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (other.getIntersectScopesUserPermission() != false) {
+        setIntersectScopesUserPermission(other.getIntersectScopesUserPermission());
+      }
+      if (other.getEnableCimd() != false) {
+        setEnableCimd(other.getEnableCimd());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1008,6 +1011,16 @@ private static final long serialVersionUID = 0L;
               scopes_.add(s);
               break;
             } // case 90
+            case 96: {
+              intersectScopesUserPermission_ = input.readBool();
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 96
+            case 104: {
+              enableCimd_ = input.readBool();
+              bitField0_ |= 0x00001000;
+              break;
+            } // case 104
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1615,25 +1628,6 @@ private static final long serialVersionUID = 0L;
       bitField0_ |= 0x00000400;
     }
     /**
-     * <pre>
-     *
-     *string tos_uri = 10 [
-     *(buf.validate.field).string = {max_len: 512},
-     *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-     *description: "Terms of Service URI for the resource"
-     *example: "&#92;"https://example.com/tos&#92;""
-     *}
-     *];
-     *
-     *string policy_uri = 11 [
-     *(buf.validate.field).string = {max_len: 512},
-     *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-     *description: "Policy URI for the resource"
-     *example: "&#92;"https://example.com/policy&#92;""
-     *}
-     *];
-     * </pre>
-     *
      * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return A list containing the scopes.
      */
@@ -1643,25 +1637,6 @@ private static final long serialVersionUID = 0L;
       return scopes_;
     }
     /**
-     * <pre>
-     *
-     *string tos_uri = 10 [
-     *(buf.validate.field).string = {max_len: 512},
-     *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-     *description: "Terms of Service URI for the resource"
-     *example: "&#92;"https://example.com/tos&#92;""
-     *}
-     *];
-     *
-     *string policy_uri = 11 [
-     *(buf.validate.field).string = {max_len: 512},
-     *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-     *description: "Policy URI for the resource"
-     *example: "&#92;"https://example.com/policy&#92;""
-     *}
-     *];
-     * </pre>
-     *
      * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The count of scopes.
      */
@@ -1669,25 +1644,6 @@ private static final long serialVersionUID = 0L;
       return scopes_.size();
     }
     /**
-     * <pre>
-     *
-     *string tos_uri = 10 [
-     *(buf.validate.field).string = {max_len: 512},
-     *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-     *description: "Terms of Service URI for the resource"
-     *example: "&#92;"https://example.com/tos&#92;""
-     *}
-     *];
-     *
-     *string policy_uri = 11 [
-     *(buf.validate.field).string = {max_len: 512},
-     *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-     *description: "Policy URI for the resource"
-     *example: "&#92;"https://example.com/policy&#92;""
-     *}
-     *];
-     * </pre>
-     *
      * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The scopes at the given index.
@@ -1696,25 +1652,6 @@ private static final long serialVersionUID = 0L;
       return scopes_.get(index);
     }
     /**
-     * <pre>
-     *
-     *string tos_uri = 10 [
-     *(buf.validate.field).string = {max_len: 512},
-     *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-     *description: "Terms of Service URI for the resource"
-     *example: "&#92;"https://example.com/tos&#92;""
-     *}
-     *];
-     *
-     *string policy_uri = 11 [
-     *(buf.validate.field).string = {max_len: 512},
-     *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-     *description: "Policy URI for the resource"
-     *example: "&#92;"https://example.com/policy&#92;""
-     *}
-     *];
-     * </pre>
-     *
      * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the scopes at the given index.
@@ -1724,25 +1661,6 @@ private static final long serialVersionUID = 0L;
       return scopes_.getByteString(index);
     }
     /**
-     * <pre>
-     *
-     *string tos_uri = 10 [
-     *(buf.validate.field).string = {max_len: 512},
-     *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-     *description: "Terms of Service URI for the resource"
-     *example: "&#92;"https://example.com/tos&#92;""
-     *}
-     *];
-     *
-     *string policy_uri = 11 [
-     *(buf.validate.field).string = {max_len: 512},
-     *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-     *description: "Policy URI for the resource"
-     *example: "&#92;"https://example.com/policy&#92;""
-     *}
-     *];
-     * </pre>
-     *
      * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index to set the value at.
      * @param value The scopes to set.
@@ -1758,25 +1676,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *
-     *string tos_uri = 10 [
-     *(buf.validate.field).string = {max_len: 512},
-     *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-     *description: "Terms of Service URI for the resource"
-     *example: "&#92;"https://example.com/tos&#92;""
-     *}
-     *];
-     *
-     *string policy_uri = 11 [
-     *(buf.validate.field).string = {max_len: 512},
-     *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-     *description: "Policy URI for the resource"
-     *example: "&#92;"https://example.com/policy&#92;""
-     *}
-     *];
-     * </pre>
-     *
      * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The scopes to add.
      * @return This builder for chaining.
@@ -1791,25 +1690,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *
-     *string tos_uri = 10 [
-     *(buf.validate.field).string = {max_len: 512},
-     *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-     *description: "Terms of Service URI for the resource"
-     *example: "&#92;"https://example.com/tos&#92;""
-     *}
-     *];
-     *
-     *string policy_uri = 11 [
-     *(buf.validate.field).string = {max_len: 512},
-     *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-     *description: "Policy URI for the resource"
-     *example: "&#92;"https://example.com/policy&#92;""
-     *}
-     *];
-     * </pre>
-     *
      * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param values The scopes to add.
      * @return This builder for chaining.
@@ -1824,6 +1704,66 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearScopes() {
+      scopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000400);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the scopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addScopesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureScopesIsMutable();
+      scopes_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private boolean intersectScopesUserPermission_ ;
+    /**
+     * <code>bool intersect_scopes_user_permission = 12 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The intersectScopesUserPermission.
+     */
+    @java.lang.Override
+    public boolean getIntersectScopesUserPermission() {
+      return intersectScopesUserPermission_;
+    }
+    /**
+     * <code>bool intersect_scopes_user_permission = 12 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The intersectScopesUserPermission to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntersectScopesUserPermission(boolean value) {
+
+      intersectScopesUserPermission_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool intersect_scopes_user_permission = 12 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIntersectScopesUserPermission() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      intersectScopesUserPermission_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableCimd_ ;
+    /**
      * <pre>
      *
      *string tos_uri = 10 [
@@ -1843,13 +1783,41 @@ private static final long serialVersionUID = 0L;
      *];
      * </pre>
      *
-     * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>bool enable_cimd = 13 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enableCimd.
+     */
+    @java.lang.Override
+    public boolean getEnableCimd() {
+      return enableCimd_;
+    }
+    /**
+     * <pre>
+     *
+     *string tos_uri = 10 [
+     *(buf.validate.field).string = {max_len: 512},
+     *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
+     *description: "Terms of Service URI for the resource"
+     *example: "&#92;"https://example.com/tos&#92;""
+     *}
+     *];
+     *
+     *string policy_uri = 11 [
+     *(buf.validate.field).string = {max_len: 512},
+     *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
+     *description: "Policy URI for the resource"
+     *example: "&#92;"https://example.com/policy&#92;""
+     *}
+     *];
+     * </pre>
+     *
+     * <code>bool enable_cimd = 13 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enableCimd to set.
      * @return This builder for chaining.
      */
-    public Builder clearScopes() {
-      scopes_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000400);;
+    public Builder setEnableCimd(boolean value) {
+
+      enableCimd_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -1873,17 +1841,12 @@ private static final long serialVersionUID = 0L;
      *];
      * </pre>
      *
-     * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes of the scopes to add.
+     * <code>bool enable_cimd = 13 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder addScopesBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      ensureScopesIsMutable();
-      scopes_.add(value);
-      bitField0_ |= 0x00000400;
+    public Builder clearEnableCimd() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      enableCimd_ = false;
       onChanged();
       return this;
     }

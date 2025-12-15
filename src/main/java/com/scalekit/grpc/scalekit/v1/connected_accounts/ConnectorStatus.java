@@ -5,23 +5,43 @@
 package com.scalekit.grpc.scalekit.v1.connected_accounts;
 
 /**
+ * <pre>
+ * Status of a connected account indicating its current state
+ * </pre>
+ *
  * Protobuf enum {@code scalekit.v1.connected_accounts.ConnectorStatus}
  */
 public enum ConnectorStatus
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   * <pre>
+   * Default/unknown status
+   * </pre>
+   *
    * <code>CONNECTION_STATUS_UNSPECIFIED = 0;</code>
    */
   CONNECTION_STATUS_UNSPECIFIED(0),
   /**
+   * <pre>
+   * Account is connected and credentials are valid
+   * </pre>
+   *
    * <code>ACTIVE = 1;</code>
    */
   ACTIVE(1),
   /**
+   * <pre>
+   * Access token has expired and needs refresh
+   * </pre>
+   *
    * <code>EXPIRED = 2;</code>
    */
   EXPIRED(2),
   /**
+   * <pre>
+   * Account awaiting user authorization
+   * </pre>
+   *
    * <code>PENDING_AUTH = 3;</code>
    */
   PENDING_AUTH(3),
@@ -29,18 +49,34 @@ public enum ConnectorStatus
   ;
 
   /**
+   * <pre>
+   * Default/unknown status
+   * </pre>
+   *
    * <code>CONNECTION_STATUS_UNSPECIFIED = 0;</code>
    */
   public static final int CONNECTION_STATUS_UNSPECIFIED_VALUE = 0;
   /**
+   * <pre>
+   * Account is connected and credentials are valid
+   * </pre>
+   *
    * <code>ACTIVE = 1;</code>
    */
   public static final int ACTIVE_VALUE = 1;
   /**
+   * <pre>
+   * Access token has expired and needs refresh
+   * </pre>
+   *
    * <code>EXPIRED = 2;</code>
    */
   public static final int EXPIRED_VALUE = 2;
   /**
+   * <pre>
+   * Account awaiting user authorization
+   * </pre>
+   *
    * <code>PENDING_AUTH = 3;</code>
    */
   public static final int PENDING_AUTH_VALUE = 3;

@@ -111,4 +111,16 @@ public interface WorkspaceOrBuilder extends
    */
   com.google.protobuf.ByteString
       getBillingSubscriptionIdBytes();
+
+  /**
+   * <code>string auth_domain = 10 [json_name = "authDomain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The authDomain.
+   */
+  java.lang.String getAuthDomain();
+  /**
+   * <code>string auth_domain = 10 [json_name = "authDomain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for authDomain.
+   */
+  com.google.protobuf.ByteString
+      getAuthDomainBytes();
 }

@@ -69,20 +69,46 @@ public interface ProductUsageOrBuilder extends
       int index);
 
   /**
-   * <code>double total_product_amount = 5 [json_name = "totalProductAmount"];</code>
-   * @return The totalProductAmount.
+   * <code>double total_amount = 5 [json_name = "totalAmount"];</code>
+   * @return The totalAmount.
    */
-  double getTotalProductAmount();
+  double getTotalAmount();
 
   /**
-   * <code>string currency = 6 [json_name = "currency"];</code>
+   * <code>double total_count = 6 [json_name = "totalCount"];</code>
+   * @return The totalCount.
+   */
+  double getTotalCount();
+
+  /**
+   * <code>string currency = 7 [json_name = "currency"];</code>
    * @return The currency.
    */
   java.lang.String getCurrency();
   /**
-   * <code>string currency = 6 [json_name = "currency"];</code>
+   * <code>string currency = 7 [json_name = "currency"];</code>
    * @return The bytes for currency.
    */
   com.google.protobuf.ByteString
       getCurrencyBytes();
+
+  /**
+   * <pre>
+   * Aggregation method used for the underlying usage metric (e.g. sum, max)
+   * </pre>
+   *
+   * <code>string aggregation_method = 8 [json_name = "aggregationMethod"];</code>
+   * @return The aggregationMethod.
+   */
+  java.lang.String getAggregationMethod();
+  /**
+   * <pre>
+   * Aggregation method used for the underlying usage metric (e.g. sum, max)
+   * </pre>
+   *
+   * <code>string aggregation_method = 8 [json_name = "aggregationMethod"];</code>
+   * @return The bytes for aggregationMethod.
+   */
+  com.google.protobuf.ByteString
+      getAggregationMethodBytes();
 }

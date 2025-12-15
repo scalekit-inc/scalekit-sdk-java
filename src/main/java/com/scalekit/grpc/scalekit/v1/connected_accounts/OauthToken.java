@@ -5,6 +5,10 @@
 package com.scalekit.grpc.scalekit.v1.connected_accounts;
 
 /**
+ * <pre>
+ * OAuth 2.0 access and refresh tokens with scopes
+ * </pre>
+ *
  * Protobuf type {@code scalekit.v1.connected_accounts.OauthToken}
  */
 public final class OauthToken extends
@@ -48,7 +52,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object accessToken_ = "";
   /**
-   * <code>string access_token = 1 [json_name = "accessToken"];</code>
+   * <code>string access_token = 1 [json_name = "accessToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The accessToken.
    */
   @java.lang.Override
@@ -65,7 +69,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string access_token = 1 [json_name = "accessToken"];</code>
+   * <code>string access_token = 1 [json_name = "accessToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for accessToken.
    */
   @java.lang.Override
@@ -87,7 +91,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object refreshToken_ = "";
   /**
-   * <code>string refresh_token = 2 [json_name = "refreshToken"];</code>
+   * <code>string refresh_token = 2 [json_name = "refreshToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The refreshToken.
    */
   @java.lang.Override
@@ -104,7 +108,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string refresh_token = 2 [json_name = "refreshToken"];</code>
+   * <code>string refresh_token = 2 [json_name = "refreshToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for refreshToken.
    */
   @java.lang.Override
@@ -127,7 +131,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringArrayList scopes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
   /**
-   * <code>repeated string scopes = 3 [json_name = "scopes"];</code>
+   * <code>repeated string scopes = 3 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return A list containing the scopes.
    */
   public com.google.protobuf.ProtocolStringList
@@ -135,14 +139,14 @@ private static final long serialVersionUID = 0L;
     return scopes_;
   }
   /**
-   * <code>repeated string scopes = 3 [json_name = "scopes"];</code>
+   * <code>repeated string scopes = 3 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The count of scopes.
    */
   public int getScopesCount() {
     return scopes_.size();
   }
   /**
-   * <code>repeated string scopes = 3 [json_name = "scopes"];</code>
+   * <code>repeated string scopes = 3 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The scopes at the given index.
    */
@@ -150,7 +154,7 @@ private static final long serialVersionUID = 0L;
     return scopes_.get(index);
   }
   /**
-   * <code>repeated string scopes = 3 [json_name = "scopes"];</code>
+   * <code>repeated string scopes = 3 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the scopes at the given index.
    */
@@ -163,7 +167,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object domain_ = "";
   /**
-   * <code>string domain = 4 [json_name = "domain"];</code>
+   * <code>string domain = 4 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The domain.
    */
   @java.lang.Override
@@ -180,7 +184,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string domain = 4 [json_name = "domain"];</code>
+   * <code>string domain = 4 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for domain.
    */
   @java.lang.Override
@@ -392,6 +396,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * OAuth 2.0 access and refresh tokens with scopes
+   * </pre>
+   *
    * Protobuf type {@code scalekit.v1.connected_accounts.OauthToken}
    */
   public static final class Builder extends
@@ -613,7 +621,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object accessToken_ = "";
     /**
-     * <code>string access_token = 1 [json_name = "accessToken"];</code>
+     * <code>string access_token = 1 [json_name = "accessToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The accessToken.
      */
     public java.lang.String getAccessToken() {
@@ -629,7 +637,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string access_token = 1 [json_name = "accessToken"];</code>
+     * <code>string access_token = 1 [json_name = "accessToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for accessToken.
      */
     public com.google.protobuf.ByteString
@@ -646,7 +654,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string access_token = 1 [json_name = "accessToken"];</code>
+     * <code>string access_token = 1 [json_name = "accessToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The accessToken to set.
      * @return This builder for chaining.
      */
@@ -659,7 +667,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string access_token = 1 [json_name = "accessToken"];</code>
+     * <code>string access_token = 1 [json_name = "accessToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearAccessToken() {
@@ -669,7 +677,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string access_token = 1 [json_name = "accessToken"];</code>
+     * <code>string access_token = 1 [json_name = "accessToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for accessToken to set.
      * @return This builder for chaining.
      */
@@ -685,7 +693,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object refreshToken_ = "";
     /**
-     * <code>string refresh_token = 2 [json_name = "refreshToken"];</code>
+     * <code>string refresh_token = 2 [json_name = "refreshToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The refreshToken.
      */
     public java.lang.String getRefreshToken() {
@@ -701,7 +709,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string refresh_token = 2 [json_name = "refreshToken"];</code>
+     * <code>string refresh_token = 2 [json_name = "refreshToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for refreshToken.
      */
     public com.google.protobuf.ByteString
@@ -718,7 +726,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string refresh_token = 2 [json_name = "refreshToken"];</code>
+     * <code>string refresh_token = 2 [json_name = "refreshToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The refreshToken to set.
      * @return This builder for chaining.
      */
@@ -731,7 +739,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string refresh_token = 2 [json_name = "refreshToken"];</code>
+     * <code>string refresh_token = 2 [json_name = "refreshToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearRefreshToken() {
@@ -741,7 +749,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string refresh_token = 2 [json_name = "refreshToken"];</code>
+     * <code>string refresh_token = 2 [json_name = "refreshToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for refreshToken to set.
      * @return This builder for chaining.
      */
@@ -764,7 +772,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ |= 0x00000004;
     }
     /**
-     * <code>repeated string scopes = 3 [json_name = "scopes"];</code>
+     * <code>repeated string scopes = 3 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return A list containing the scopes.
      */
     public com.google.protobuf.ProtocolStringList
@@ -773,14 +781,14 @@ private static final long serialVersionUID = 0L;
       return scopes_;
     }
     /**
-     * <code>repeated string scopes = 3 [json_name = "scopes"];</code>
+     * <code>repeated string scopes = 3 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The count of scopes.
      */
     public int getScopesCount() {
       return scopes_.size();
     }
     /**
-     * <code>repeated string scopes = 3 [json_name = "scopes"];</code>
+     * <code>repeated string scopes = 3 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The scopes at the given index.
      */
@@ -788,7 +796,7 @@ private static final long serialVersionUID = 0L;
       return scopes_.get(index);
     }
     /**
-     * <code>repeated string scopes = 3 [json_name = "scopes"];</code>
+     * <code>repeated string scopes = 3 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the scopes at the given index.
      */
@@ -797,7 +805,7 @@ private static final long serialVersionUID = 0L;
       return scopes_.getByteString(index);
     }
     /**
-     * <code>repeated string scopes = 3 [json_name = "scopes"];</code>
+     * <code>repeated string scopes = 3 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param index The index to set the value at.
      * @param value The scopes to set.
      * @return This builder for chaining.
@@ -812,7 +820,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string scopes = 3 [json_name = "scopes"];</code>
+     * <code>repeated string scopes = 3 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The scopes to add.
      * @return This builder for chaining.
      */
@@ -826,7 +834,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string scopes = 3 [json_name = "scopes"];</code>
+     * <code>repeated string scopes = 3 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param values The scopes to add.
      * @return This builder for chaining.
      */
@@ -840,7 +848,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string scopes = 3 [json_name = "scopes"];</code>
+     * <code>repeated string scopes = 3 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearScopes() {
@@ -851,7 +859,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string scopes = 3 [json_name = "scopes"];</code>
+     * <code>repeated string scopes = 3 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes of the scopes to add.
      * @return This builder for chaining.
      */
@@ -868,7 +876,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object domain_ = "";
     /**
-     * <code>string domain = 4 [json_name = "domain"];</code>
+     * <code>string domain = 4 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The domain.
      */
     public java.lang.String getDomain() {
@@ -884,7 +892,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string domain = 4 [json_name = "domain"];</code>
+     * <code>string domain = 4 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for domain.
      */
     public com.google.protobuf.ByteString
@@ -901,7 +909,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string domain = 4 [json_name = "domain"];</code>
+     * <code>string domain = 4 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The domain to set.
      * @return This builder for chaining.
      */
@@ -914,7 +922,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string domain = 4 [json_name = "domain"];</code>
+     * <code>string domain = 4 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDomain() {
@@ -924,7 +932,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string domain = 4 [json_name = "domain"];</code>
+     * <code>string domain = 4 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for domain to set.
      * @return This builder for chaining.
      */

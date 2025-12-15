@@ -21,30 +21,6 @@ public interface BillingInfoOrBuilder extends
       getPlanNameBytes();
 
   /**
-   * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-   */
-  java.util.List<com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription> 
-      getSubscriptionsList();
-  /**
-   * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-   */
-  com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription getSubscriptions(int index);
-  /**
-   * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-   */
-  int getSubscriptionsCount();
-  /**
-   * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-   */
-  java.util.List<? extends com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscriptionOrBuilder> 
-      getSubscriptionsOrBuilderList();
-  /**
-   * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-   */
-  com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscriptionOrBuilder getSubscriptionsOrBuilder(
-      int index);
-
-  /**
    * <code>.scalekit.v1.workspaces.CurrentInvoice current_invoice = 3 [json_name = "currentInvoice"];</code>
    * @return Whether the currentInvoice field is set.
    */
@@ -127,4 +103,24 @@ public interface BillingInfoOrBuilder extends
    * <code>.scalekit.v1.workspaces.LastInvoice last_invoice = 7 [json_name = "lastInvoice"];</code>
    */
   com.scalekit.grpc.scalekit.v1.workspaces.LastInvoiceOrBuilder getLastInvoiceOrBuilder();
+
+  /**
+   * <pre>
+   * System-generated Stripe publishable key for client-side use (not a secret); read-only.
+   * </pre>
+   *
+   * <code>string publishable_token = 8 [json_name = "publishableToken", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The publishableToken.
+   */
+  java.lang.String getPublishableToken();
+  /**
+   * <pre>
+   * System-generated Stripe publishable key for client-side use (not a secret); read-only.
+   * </pre>
+   *
+   * <code>string publishable_token = 8 [json_name = "publishableToken", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for publishableToken.
+   */
+  com.google.protobuf.ByteString
+      getPublishableTokenBytes();
 }

@@ -4,7 +4,7 @@
 // Protobuf Java Version: 3.25.3
 package com.scalekit.grpc.scalekit.v1.auth;
 
-public interface VerifyPasswordLessResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:scalekit.v1.auth.VerifyPasswordLessResponse)
+public interface VerifyPasswordLessOtpResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:scalekit.v1.auth.VerifyPasswordLessOtpResponse)
     com.google.protobuf.MessageOrBuilder {
 }

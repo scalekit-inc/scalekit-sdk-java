@@ -1,5 +1,6 @@
 package com.scalekit.api.impl;
 
+import com.google.protobuf.Int32Value;
 import com.scalekit.Environment;
 import com.scalekit.api.DomainClient;
 import com.scalekit.exceptions.APIException;
@@ -138,6 +139,22 @@ public class ScalekitDomainClient implements DomainClient {
                             .build());
             return response.getDomainsList();}, this.credentials);
 
+    }
+
+    @Override
+    public List<Domain> listDomainsByOrganizationId(String organizationId, DomainType domainType) {
+        return RetryExecuter.executeWithRetry(() -> {
+            System.out.println("gRPC Path: /" + DomainServiceGrpc.SERVICE_NAME + "/ListDomains");
+            ListDomainRequest request = ListDomainRequest.newBuilder()
+                    .setOrganizationId(organizationId)
+                    .setDomainType(domainType)
+                    .setPageSize(Int32Value.of(100))
+                    .build();
+            ListDomainResponse response = this.domainStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .listDomains(request);
+            return response.getDomainsList();
+        }, this.credentials);
     }
 
         /**

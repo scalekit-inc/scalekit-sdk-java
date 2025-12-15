@@ -46,14 +46,14 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private java.util.List<com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList> connectedAccounts_;
   /**
-   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList> getConnectedAccountsList() {
     return connectedAccounts_;
   }
   /**
-   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForListOrBuilder> 
@@ -61,21 +61,21 @@ private static final long serialVersionUID = 0L;
     return connectedAccounts_;
   }
   /**
-   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public int getConnectedAccountsCount() {
     return connectedAccounts_.size();
   }
   /**
-   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList getConnectedAccounts(int index) {
     return connectedAccounts_.get(index);
   }
   /**
-   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForListOrBuilder getConnectedAccountsOrBuilder(
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
         com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList, com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList.Builder, com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForListOrBuilder> connectedAccountsBuilder_;
 
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList> getConnectedAccountsList() {
       if (connectedAccountsBuilder_ == null) {
@@ -640,7 +640,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public int getConnectedAccountsCount() {
       if (connectedAccountsBuilder_ == null) {
@@ -650,7 +650,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList getConnectedAccounts(int index) {
       if (connectedAccountsBuilder_ == null) {
@@ -660,7 +660,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setConnectedAccounts(
         int index, com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList value) {
@@ -677,7 +677,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setConnectedAccounts(
         int index, com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList.Builder builderForValue) {
@@ -691,7 +691,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addConnectedAccounts(com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList value) {
       if (connectedAccountsBuilder_ == null) {
@@ -707,7 +707,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addConnectedAccounts(
         int index, com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList value) {
@@ -724,7 +724,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addConnectedAccounts(
         com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList.Builder builderForValue) {
@@ -738,7 +738,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addConnectedAccounts(
         int index, com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList.Builder builderForValue) {
@@ -752,7 +752,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addAllConnectedAccounts(
         java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList> values) {
@@ -767,7 +767,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearConnectedAccounts() {
       if (connectedAccountsBuilder_ == null) {
@@ -780,7 +780,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder removeConnectedAccounts(int index) {
       if (connectedAccountsBuilder_ == null) {
@@ -793,14 +793,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList.Builder getConnectedAccountsBuilder(
         int index) {
       return getConnectedAccountsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForListOrBuilder getConnectedAccountsOrBuilder(
         int index) {
@@ -810,7 +810,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<? extends com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForListOrBuilder> 
          getConnectedAccountsOrBuilderList() {
@@ -821,14 +821,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList.Builder addConnectedAccountsBuilder() {
       return getConnectedAccountsFieldBuilder().addBuilder(
           com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList.Builder addConnectedAccountsBuilder(
         int index) {
@@ -836,7 +836,7 @@ private static final long serialVersionUID = 0L;
           index, com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+     * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList.Builder> 
          getConnectedAccountsBuilderList() {

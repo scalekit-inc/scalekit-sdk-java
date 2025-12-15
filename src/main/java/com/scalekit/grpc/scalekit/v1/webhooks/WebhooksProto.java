@@ -45,6 +45,46 @@ public final class WebhooksProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_webhooks_WebhookWrapperResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_webhooks_WebhookEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_webhooks_WebhookEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_webhooks_Empty_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_webhooks_Empty_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_webhooks_OrganizationEventData_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_webhooks_OrganizationEventData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_webhooks_OrganizationSettings_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_webhooks_OrganizationSettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_webhooks_FeatureFlag_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_webhooks_FeatureFlag_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_webhooks_UserEventData_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_webhooks_UserEventData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_webhooks_UserProfile_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_webhooks_UserProfile_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_webhooks_OrganizationReference_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_webhooks_OrganizationReference_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -56,50 +96,131 @@ public final class WebhooksProto {
     java.lang.String[] descriptorData = {
       "\n#scalekit/v1/webhooks/webhooks.proto\022\024s" +
       "calekit.v1.webhooks\032\033buf/validate/valida" +
-      "te.proto\032\034google/api/annotations.proto\032\033" +
-      "google/api/visibility.proto\032\034google/prot" +
-      "obuf/struct.proto\032!scalekit/v1/options/o" +
-      "ptions.proto\"A\n\024SendTestEventRequest\022)\n\n" +
-      "event_type\030\001 \001(\tB\n\272H\007r\005\020\001\030\377\001R\teventType\"" +
-      "t\n\025SendTestEventResponse\022\035\n\nevent_type\030\001" +
-      " \001(\tR\teventType\022<\n\revent_payload\030\002 \001(\0132\027" +
-      ".google.protobuf.StructR\014eventPayload\"\025\n" +
-      "\023GetPortalURLRequest\"(\n\024GetPortalURLResp" +
-      "onse\022\020\n\003url\030\001 \001(\tR\003url\"S\n\025WebhookWrapper" +
-      "Request\022:\n\014request_body\030\001 \001(\0132\027.google.p" +
-      "rotobuf.StructR\013requestBody\"V\n\026WebhookWr" +
-      "apperResponse\022<\n\rresponse_body\030\001 \001(\0132\027.g" +
-      "oogle.protobuf.StructR\014responseBody2\367\004\n\016" +
-      "WebhookService\022\220\001\n\014GetPortalURL\022).scalek" +
-      "it.v1.webhooks.GetPortalURLRequest\032*.sca" +
-      "lekit.v1.webhooks.GetPortalURLResponse\")" +
-      "\202\265\030\002\030T\202\323\344\223\002\035\022\033/api/v1/webhooks/portal-ur" +
-      "l\022\237\002\n\016WebhookWrapper\022+.scalekit.v1.webho" +
-      "oks.WebhookWrapperRequest\032\027.google.proto" +
-      "buf.Struct\"\306\001\202\265\030\002\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\252" +
-      "\001\022\026/api/v1/webhooks/wb/**Z&\"\026/api/v1/web" +
-      "hooks/wb/**:\014request_bodyZ&\032\026/api/v1/web" +
-      "hooks/wb/**:\014request_bodyZ&2\026/api/v1/web" +
-      "hooks/wb/**:\014request_bodyZ\030*\026/api/v1/web" +
-      "hooks/wb/**\022\257\001\n\rSendTestEvent\022*.scalekit" +
-      ".v1.webhooks.SendTestEventRequest\032+.scal" +
-      "ekit.v1.webhooks.SendTestEventResponse\"E" +
-      "\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002*\"(/api/v1/web" +
-      "hooks/test-event/{event_type}B\335\001\n&com.sc" +
-      "alekit.grpc.scalekit.v1.webhooksB\rWebhoo" +
-      "ksProtoP\001Z2github.com/scalekit-inc/scale" +
-      "kit/pkg/grpc/webhooks\242\002\003SVW\252\002\024Scalekit.V" +
-      "1.Webhooks\312\002\024Scalekit\\V1\\Webhooks\342\002 Scal" +
-      "ekit\\V1\\Webhooks\\GPBMetadata\352\002\026Scalekit:" +
-      ":V1::Webhooksb\006proto3"
+      "te.proto\032\034google/api/annotations.proto\032\037" +
+      "google/api/field_behavior.proto\032\033google/" +
+      "api/visibility.proto\032\034google/protobuf/st" +
+      "ruct.proto\032\037google/protobuf/timestamp.pr" +
+      "oto\032.protoc-gen-openapiv2/options/annota" +
+      "tions.proto\032!scalekit/v1/options/options" +
+      ".proto\"A\n\024SendTestEventRequest\022)\n\nevent_" +
+      "type\030\001 \001(\tB\n\272H\007r\005\020\001\030\377\001R\teventType\"t\n\025Sen" +
+      "dTestEventResponse\022\035\n\nevent_type\030\001 \001(\tR\t" +
+      "eventType\022<\n\revent_payload\030\002 \001(\0132\027.googl" +
+      "e.protobuf.StructR\014eventPayload\"\025\n\023GetPo" +
+      "rtalURLRequest\"(\n\024GetPortalURLResponse\022\020" +
+      "\n\003url\030\001 \001(\tR\003url\"\262\001\n\025WebhookWrapperReque" +
+      "st\022\207\001\n\014request_body\030\001 \001(\0132\027.google.proto" +
+      "buf.StructBF\222AC2ARequest body payload. O" +
+      "nly used for POST, PUT, and PATCH method" +
+      "s.H\000R\013requestBody\210\001\001B\017\n\r_request_body\"V\n" +
+      "\026WebhookWrapperResponse\022<\n\rresponse_body" +
+      "\030\001 \001(\0132\027.google.protobuf.StructR\014respons" +
+      "eBody\"\237\004\n\014WebhookEvent\022!\n\014spec_version\030\001" +
+      " \001(\tR\013specVersion\022\037\n\002id\030\002 \001(\tB\017\272H\014r\n\020\001\030 " +
+      ":\004evt_R\002id\0228\n\006object\030\003 \001(\0162 .scalekit.v1" +
+      ".webhooks.ObjectTypeR\006object\022;\n\013occurred" +
+      "_at\030\004 \001(\0132\032.google.protobuf.TimestampR\no" +
+      "ccurredAt\0226\n\016environment_id\030\006 \001(\tB\017\272H\014r\n" +
+      "\020\001\030 :\004env_R\renvironmentId\022=\n\017organizatio" +
+      "n_id\030\005 \001(\tB\017\272H\014r\n\020\001\030 :\004org_H\001R\016organizat" +
+      "ionId\210\001\001\0223\n\004type\030\007 \001(\0162\037.scalekit.v1.web" +
+      "hooks.EventTypeR\004type\022Q\n\014organization\030\010 " +
+      "\001(\0132+.scalekit.v1.webhooks.OrganizationE" +
+      "ventDataH\000R\014organization\0229\n\004user\030\t \001(\0132#" +
+      ".scalekit.v1.webhooks.UserEventDataH\000R\004u" +
+      "serB\006\n\004dataB\022\n\020_organization_id\"\007\n\005Empty" +
+      "\"\375\001\n\025OrganizationEventData\022\037\n\002id\030\001 \001(\tB\017" +
+      "\272H\014r\n\020\001\030 :\004org_R\002id\022$\n\013external_id\030\002 \001(\t" +
+      "H\000R\nexternalId\210\001\001\0228\n\010metadata\030\003 \001(\0132\027.go" +
+      "ogle.protobuf.StructH\001R\010metadata\210\001\001\022F\n\010s" +
+      "ettings\030\004 \001(\0132*.scalekit.v1.webhooks.Org" +
+      "anizationSettingsR\010settingsB\016\n\014_external" +
+      "_idB\013\n\t_metadata\"U\n\024OrganizationSettings" +
+      "\022=\n\010features\030\001 \003(\0132!.scalekit.v1.webhook" +
+      "s.FeatureFlagR\010features\";\n\013FeatureFlag\022\030" +
+      "\n\007enabled\030\001 \001(\010R\007enabled\022\022\n\004name\030\002 \001(\tR\004" +
+      "name\"\226\003\n\rUserEventData\022\037\n\002id\030\001 \001(\tB\017\272H\014r" +
+      "\n\020\001\030 :\004usr_R\002id\022\024\n\005email\030\002 \001(\tR\005email\022$\n" +
+      "\013external_id\030\003 \001(\tH\000R\nexternalId\210\001\001\022;\n\007p" +
+      "rofile\030\004 \001(\0132!.scalekit.v1.webhooks.User" +
+      "ProfileR\007profile\0229\n\ncreated_at\030\005 \001(\0132\032.g" +
+      "oogle.protobuf.TimestampR\tcreatedAt\0229\n\nu" +
+      "pdated_at\030\006 \001(\0132\032.google.protobuf.Timest" +
+      "ampR\tupdatedAt\022T\n\014organization\030\007 \001(\0132+.s" +
+      "calekit.v1.webhooks.OrganizationReferenc" +
+      "eH\001R\014organization\210\001\001B\016\n\014_external_idB\017\n\r" +
+      "_organization\"\310\001\n\013UserProfile\022\"\n\ngiven_n" +
+      "ame\030\001 \001(\tH\000R\tgivenName\210\001\001\022$\n\013family_name" +
+      "\030\002 \001(\tH\001R\nfamilyName\210\001\001\022\035\n\007picture\030\003 \001(\t" +
+      "H\002R\007picture\210\001\001\022%\n\016email_verified\030\004 \001(\010R\r" +
+      "emailVerifiedB\r\n\013_given_nameB\016\n\014_family_" +
+      "nameB\n\n\010_picture\"n\n\025OrganizationReferenc" +
+      "e\022\037\n\002id\030\001 \001(\tB\017\272H\014r\n\020\001\030 :\004org_R\002id\022$\n\013ex" +
+      "ternal_id\030\002 \001(\tH\000R\nexternalId\210\001\001B\016\n\014_ext" +
+      "ernal_id*x\n\nObjectType\022\033\n\027OBJECT_TYPE_UN" +
+      "SPECIFIED\020\000\022\020\n\014ORGANIZATION\020\001\022\010\n\004USER\020\002\022" +
+      "\022\n\016DIRECTORY_USER\020\003\022\016\n\nCONNECTION\020\004\022\r\n\tD" +
+      "IRECTORY\020\005*\307\002\n\tEventType\022\032\n\026EVENT_TYPE_U" +
+      "NSPECIFIED\020\000\022\030\n\024ORGANIZATION_CREATED\020\001\022\030" +
+      "\n\024ORGANIZATION_UPDATED\020\002\022\030\n\024ORGANIZATION" +
+      "_DELETED\020\003\022\017\n\013USER_SIGNUP\020\004\022\016\n\nUSER_LOGI" +
+      "N\020\005\022\017\n\013USER_LOGOUT\020\006\022 \n\034USER_ORGANIZATIO" +
+      "N_INVITATION\020\007\022(\n$USER_ORGANIZATION_MEMB" +
+      "ERSHIP_CREATED\020\010\022(\n$USER_ORGANIZATION_ME" +
+      "MBERSHIP_UPDATED\020\t\022(\n$USER_ORGANIZATION_" +
+      "MEMBERSHIP_DELETED\020\n2\362\n\n\016WebhookService\022" +
+      "\314\002\n\014GetPortalURL\022).scalekit.v1.webhooks." +
+      "GetPortalURLRequest\032*.scalekit.v1.webhoo" +
+      "ks.GetPortalURLResponse\"\344\001\222A\250\001\022\026Get webh" +
+      "ook portal URL\0322Retrieves the portal URL" +
+      " for webhook configurationJZ\n\003200\022S\n!Por" +
+      "tal URL retrieved successfully\022.\n,\032*.sca" +
+      "lekit.v1.webhooks.GetPortalURLResponse\202\265" +
+      "\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\035\022\033/api/v1/webho" +
+      "oks/portal-url\022\302\003\n\016WebhookWrapper\022+.scal" +
+      "ekit.v1.webhooks.WebhookWrapperRequest\032\027" +
+      ".google.protobuf.Struct\"\351\002\222A\237\001\022\017Webhook " +
+      "wrapper\032FWrapper endpoint for webhook re" +
+      "quests supporting multiple HTTP methodsJ" +
+      "D\n\003200\022=\n\036Request processed successfully" +
+      "\022\033\n\031\032\027.google.protobuf.Struct\202\265\030\002\030P\372\322\344\223\002" +
+      "\t\022\007PREVIEW\202\323\344\223\002\252\001\022\026/api/v1/webhooks/wb/*" +
+      "*Z&\"\026/api/v1/webhooks/wb/**:\014request_bod" +
+      "yZ&\032\026/api/v1/webhooks/wb/**:\014request_bod" +
+      "yZ&2\026/api/v1/webhooks/wb/**:\014request_bod" +
+      "yZ\030*\026/api/v1/webhooks/wb/**\022\327\002\n\rSendTest" +
+      "Event\022*.scalekit.v1.webhooks.SendTestEve" +
+      "ntRequest\032+.scalekit.v1.webhooks.SendTes" +
+      "tEventResponse\"\354\001\222A\243\001\022\027Send test webhook" +
+      " event\0320Sends a test webhook event of th" +
+      "e specified typeJV\n\003200\022O\n\034Test event se" +
+      "nt successfully\022/\n-\032+.scalekit.v1.webhoo" +
+      "ks.SendTestEventResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PR" +
+      "EVIEW\202\323\344\223\002*\"(/api/v1/webhooks/test-event" +
+      "/{event_type}\022\361\001\n\020SendWebhookEvent\022\".sca" +
+      "lekit.v1.webhooks.WebhookEvent\032\033.scaleki" +
+      "t.v1.webhooks.Empty\"\233\001\222Au\022\022Send webhook " +
+      "event\0321Receives a webhook event payload " +
+      "and processes itJ,\n\003200\022%\n#Webhook event" +
+      " received successfully\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
+      "\223\002\016\"\t/webhooks:\001*B\335\001\n&com.scalekit.grpc." +
+      "scalekit.v1.webhooksB\rWebhooksProtoP\001Z2g" +
+      "ithub.com/scalekit-inc/scalekit/pkg/grpc" +
+      "/webhooks\242\002\003SVW\252\002\024Scalekit.V1.Webhooks\312\002" +
+      "\024Scalekit\\V1\\Webhooks\342\002 Scalekit\\V1\\Webh" +
+      "ooks\\GPBMetadata\352\002\026Scalekit::V1::Webhook" +
+      "sb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.scalekit.grpc.buf.validate.ValidateProto.getDescriptor(),
           com.scalekit.grpc.google.api.AnnotationsProto.getDescriptor(),
+          com.scalekit.grpc.google.api.FieldBehaviorProto.getDescriptor(),
           com.scalekit.grpc.google.api.VisibilityProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
+          com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor(),
           com.scalekit.grpc.scalekit.v1.options.OptionsProto.getDescriptor(),
         });
     internal_static_scalekit_v1_webhooks_SendTestEventRequest_descriptor =
@@ -138,18 +259,71 @@ public final class WebhooksProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_webhooks_WebhookWrapperResponse_descriptor,
         new java.lang.String[] { "ResponseBody", });
+    internal_static_scalekit_v1_webhooks_WebhookEvent_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_scalekit_v1_webhooks_WebhookEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_webhooks_WebhookEvent_descriptor,
+        new java.lang.String[] { "SpecVersion", "Id", "Object", "OccurredAt", "EnvironmentId", "OrganizationId", "Type", "Organization", "User", "Data", });
+    internal_static_scalekit_v1_webhooks_Empty_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_scalekit_v1_webhooks_Empty_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_webhooks_Empty_descriptor,
+        new java.lang.String[] { });
+    internal_static_scalekit_v1_webhooks_OrganizationEventData_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_scalekit_v1_webhooks_OrganizationEventData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_webhooks_OrganizationEventData_descriptor,
+        new java.lang.String[] { "Id", "ExternalId", "Metadata", "Settings", });
+    internal_static_scalekit_v1_webhooks_OrganizationSettings_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_scalekit_v1_webhooks_OrganizationSettings_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_webhooks_OrganizationSettings_descriptor,
+        new java.lang.String[] { "Features", });
+    internal_static_scalekit_v1_webhooks_FeatureFlag_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_scalekit_v1_webhooks_FeatureFlag_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_webhooks_FeatureFlag_descriptor,
+        new java.lang.String[] { "Enabled", "Name", });
+    internal_static_scalekit_v1_webhooks_UserEventData_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_scalekit_v1_webhooks_UserEventData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_webhooks_UserEventData_descriptor,
+        new java.lang.String[] { "Id", "Email", "ExternalId", "Profile", "CreatedAt", "UpdatedAt", "Organization", });
+    internal_static_scalekit_v1_webhooks_UserProfile_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_scalekit_v1_webhooks_UserProfile_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_webhooks_UserProfile_descriptor,
+        new java.lang.String[] { "GivenName", "FamilyName", "Picture", "EmailVerified", });
+    internal_static_scalekit_v1_webhooks_OrganizationReference_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_scalekit_v1_webhooks_OrganizationReference_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_webhooks_OrganizationReference_descriptor,
+        new java.lang.String[] { "Id", "ExternalId", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
     registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.scalekit.grpc.buf.validate.ValidateProto.getDescriptor();
     com.scalekit.grpc.google.api.AnnotationsProto.getDescriptor();
+    com.scalekit.grpc.google.api.FieldBehaviorProto.getDescriptor();
     com.scalekit.grpc.google.api.VisibilityProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
+    com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor();
     com.scalekit.grpc.scalekit.v1.options.OptionsProto.getDescriptor();
   }
 

@@ -228,4 +228,21 @@ java.lang.String defaultValue);
    */
   com.google.protobuf.ByteString
       getWorkspaceIdsBytes(int index);
+
+  /**
+   * <code>optional string active_workspace_external_id = 14 [json_name = "activeWorkspaceExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the activeWorkspaceExternalId field is set.
+   */
+  boolean hasActiveWorkspaceExternalId();
+  /**
+   * <code>optional string active_workspace_external_id = 14 [json_name = "activeWorkspaceExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The activeWorkspaceExternalId.
+   */
+  java.lang.String getActiveWorkspaceExternalId();
+  /**
+   * <code>optional string active_workspace_external_id = 14 [json_name = "activeWorkspaceExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for activeWorkspaceExternalId.
+   */
+  com.google.protobuf.ByteString
+      getActiveWorkspaceExternalIdBytes();
 }

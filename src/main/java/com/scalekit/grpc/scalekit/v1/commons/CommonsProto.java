@@ -45,6 +45,11 @@ public final class CommonsProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_commons_UserProfile_CustomAttributesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_commons_ExternalIdentity_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_commons_ExternalIdentity_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -62,7 +67,7 @@ public final class CommonsProto {
       "roto\032\036google/protobuf/duration.proto\032\033go" +
       "ogle/protobuf/empty.proto\032\037google/protob" +
       "uf/timestamp.proto\032.protoc-gen-openapiv2" +
-      "/options/annotations.proto\"\227\r\n\026Organizat" +
+      "/options/annotations.proto\"\332\020\n\026Organizat" +
       "ionMembership\022\206\001\n\017organization_id\030\001 \001(\tB" +
       "]\222AZ2@Unique identifier for the organiza" +
       "tion. Immutable and read-only.J\026\"org_123" +
@@ -101,190 +106,239 @@ public final class CommonsProto {
       "\004R\nacceptedAt\210\001\001\022k\n\nexpires_at\030\r \001(\0132\032.g" +
       "oogle.protobuf.TimestampB+\222A(2&Timestamp" +
       " when the invitation expired.H\005R\texpires" +
-      "At\210\001\001\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key" +
-      "\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\007\n\005_nameB\017\n\r_" +
-      "display_nameB\020\n\016_inviter_emailB\r\n\013_creat" +
-      "ed_atB\016\n\014_accepted_atB\r\n\013_expires_at\"\337\002\n" +
-      "\004Role\0229\n\002id\030\001 \001(\tB)\222A#2\007Role IDJ\030\"role_7" +
-      "9643236410327240\"\340A\003R\002id\022\305\001\n\004name\030\002 \001(\tB" +
-      "\260\001\222A\254\0012\235\001Attribute name/identifier for t" +
-      "he role used in system operations and AP" +
-      "I calls. This should be a machine-readab" +
-      "le identifier that follows naming conven" +
-      "tions.J\n\"team_dev\"R\004name\022T\n\014display_name" +
-      "\030\003 \001(\tB1\222A.2 Human-readable name for the" +
-      " roleJ\n\"Dev Team\"R\013displayName\"\275/\n\013UserP" +
-      "rofile\022\211\001\n\002id\030\001 \001(\tBy\222As2QUnique system-" +
-      "generated identifier for the user profil" +
-      "e. Immutable and read-only.J\036\"usr_profil" +
-      "e_1234abcd5678efgh\"\340A\003R\002id\022\353\002\n\ngiven_nam" +
-      "e\030\002 \001(\tB\313\002\222A\277\0022\264\002The user\'s given name (" +
-      "first name). This field stores the user\'" +
-      "s first name and is used for personaliza" +
-      "tion, display purposes, and when generat" +
-      "ing the full display name. The given nam" +
-      "e appears in user interfaces, formal com" +
-      "munications, and user listings throughou" +
-      "t the system. Maximum 255 characters all" +
-      "owed.J\006\"John\"\272H\005r\003\030\377\001R\tgivenName\022\351\002\n\013fam" +
-      "ily_name\030\003 \001(\tB\307\002\222A\273\0022\261\002The user\'s famil" +
-      "y name (last name or surname). This fiel" +
-      "d stores the user\'s last name and is com" +
-      "bined with the given name to create the " +
-      "full display name. The family name is us" +
-      "ed in formal communications, user listin" +
-      "gs, and organizational directories throu" +
-      "ghout the system. Maximum 255 characters" +
-      " allowed.J\005\"Doe\"\272H\005r\003\030\377\001R\nfamilyName\022\353\003\n" +
-      "\004name\030\004 \001(\tB\326\003\222A\322\0032\273\003The user\'s complete" +
-      " display name in formatted form. This fi" +
-      "eld stores the full name as a single str" +
-      "ing and is typically used when you want " +
-      "to set the complete name rather than usi" +
-      "ng separate given and family names. This" +
-      " name appears in user interfaces, report" +
-      "s, directory listings, and anywhere a fo" +
-      "rmatted display name is needed. This fie" +
-      "ld serves as a formatted display name th" +
-      "at complements the individual given_name" +
-      " and family_name fields.J\022\"John Michael " +
-      "Doe\"R\004name\022\232\003\n\006locale\030\005 \001(\tB\201\003\222A\375\0022\361\002The" +
-      " user\'s preferred language and region se" +
-      "ttings using BCP-47 format codes. This f" +
-      "ield customizes the user\'s experience wi" +
-      "th localized content, date formats, numb" +
-      "er formatting, and UI language throughou" +
-      "t the system. When not specified, the us" +
-      "er inherits the organization\'s default l" +
-      "ocale settings. Common values include `e" +
-      "n-US`, `en-GB`, `fr-FR`, `de-DE`, and `e" +
-      "s-ES`.J\007\"en-US\"R\006locale\022\222\001\n\016email_verifi" +
-      "ed\030\006 \001(\010Bk\222Ae2]Indicates if the user\'s e" +
-      "mail address has been verified. Automati" +
-      "cally updated by the system.J\004true\340A\003R\re" +
-      "mailVerified\022\324\002\n\014phone_number\030\007 \001(\tB\260\002\222A" +
-      "\254\0022\231\002The user\'s phone number in E.164 in" +
-      "ternational format. This field stores th" +
-      "e phone number for user contact and iden" +
-      "tification purposes. The phone number mu" +
-      "st include the country code and be forma" +
-      "tted according to E.164 standards (e.g.," +
-      " `+1` for US numbers). This field is opt" +
-      "ional.J\016\"+14155552671\"R\013phoneNumber\022\240\005\n\010" +
-      "metadata\030\010 \003(\0132..scalekit.v1.commons.Use" +
-      "rProfile.MetadataEntryB\323\004\222A\266\0042\336\003Raw attr" +
-      "ibutes received from identity providers " +
-      "during authentication. This field stores" +
-      " the original user profile data as recei" +
-      "ved from external IdP systems (SAML, OID" +
-      "C, etc.) including provider-specific cla" +
-      "ims and attributes. These fields preserv" +
-      "e the complete set of attributes receive" +
-      "d from the identity source and are used " +
-      "for mapping, synchronization, and audit " +
-      "purposes. Keys must be 3-25 characters, " +
+      "At\210\001\001\022\250\003\n\023provisioning_method\030\016 \001(\tB\361\002\222A" +
+      "\355\0022\352\002How the user was provisioned. \nPoss" +
+      "ible values: \n- `jit_using_sso` (Just-in" +
+      "-time provisioning during SSO login)\n- `" +
+      "allowed_email_domain` (User joined via a" +
+      "llowed email domain matching)\n- `org_cre" +
+      "ator` (User created the organization)\n- " +
+      "`direct_provision` (User was directly pr" +
+      "ovisioned via API or SCIM)\n- `invitation" +
+      "` (User was invited and accepted an invi" +
+      "tation)H\006R\022provisioningMethod\210\001\001\032;\n\rMeta" +
+      "dataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001" +
+      "(\tR\005value:\0028\001B\007\n\005_nameB\017\n\r_display_nameB" +
+      "\020\n\016_inviter_emailB\r\n\013_created_atB\016\n\014_acc" +
+      "epted_atB\r\n\013_expires_atB\026\n\024_provisioning" +
+      "_method\"\337\002\n\004Role\0229\n\002id\030\001 \001(\tB)\222A#2\007Role " +
+      "IDJ\030\"role_79643236410327240\"\340A\003R\002id\022\305\001\n\004" +
+      "name\030\002 \001(\tB\260\001\222A\254\0012\235\001Attribute name/ident" +
+      "ifier for the role used in system operat" +
+      "ions and API calls. This should be a mac" +
+      "hine-readable identifier that follows na" +
+      "ming conventions.J\n\"team_dev\"R\004name\022T\n\014d" +
+      "isplay_name\030\003 \001(\tB1\222A.2 Human-readable n" +
+      "ame for the roleJ\n\"Dev Team\"R\013displayNam" +
+      "e\"\3470\n\013UserProfile\022\211\001\n\002id\030\001 \001(\tBy\222As2QUni" +
+      "que system-generated identifier for the " +
+      "user profile. Immutable and read-only.J\036" +
+      "\"usr_profile_1234abcd5678efgh\"\340A\003R\002id\022\353\002" +
+      "\n\ngiven_name\030\002 \001(\tB\313\002\222A\277\0022\264\002The user\'s g" +
+      "iven name (first name). This field store" +
+      "s the user\'s first name and is used for " +
+      "personalization, display purposes, and w" +
+      "hen generating the full display name. Th" +
+      "e given name appears in user interfaces," +
+      " formal communications, and user listing" +
+      "s throughout the system. Maximum 255 cha" +
+      "racters allowed.J\006\"John\"\272H\005r\003\030\377\001R\tgivenN" +
+      "ame\022\351\002\n\013family_name\030\003 \001(\tB\307\002\222A\273\0022\261\002The u" +
+      "ser\'s family name (last name or surname)" +
+      ". This field stores the user\'s last name" +
+      " and is combined with the given name to " +
+      "create the full display name. The family" +
+      " name is used in formal communications, " +
+      "user listings, and organizational direct" +
+      "ories throughout the system. Maximum 255" +
+      " characters allowed.J\005\"Doe\"\272H\005r\003\030\377\001R\nfam" +
+      "ilyName\022\353\003\n\004name\030\004 \001(\tB\326\003\222A\322\0032\273\003The user" +
+      "\'s complete display name in formatted fo" +
+      "rm. This field stores the full name as a" +
+      " single string and is typically used whe" +
+      "n you want to set the complete name rath" +
+      "er than using separate given and family " +
+      "names. This name appears in user interfa" +
+      "ces, reports, directory listings, and an" +
+      "ywhere a formatted display name is neede" +
+      "d. This field serves as a formatted disp" +
+      "lay name that complements the individual" +
+      " given_name and family_name fields.J\022\"Jo" +
+      "hn Michael Doe\"R\004name\022\232\003\n\006locale\030\005 \001(\tB\201" +
+      "\003\222A\375\0022\361\002The user\'s preferred language an" +
+      "d region settings using BCP-47 format co" +
+      "des. This field customizes the user\'s ex" +
+      "perience with localized content, date fo" +
+      "rmats, number formatting, and UI languag" +
+      "e throughout the system. When not specif" +
+      "ied, the user inherits the organization\'" +
+      "s default locale settings. Common values" +
+      " include `en-US`, `en-GB`, `fr-FR`, `de-" +
+      "DE`, and `es-ES`.J\007\"en-US\"R\006locale\022\222\001\n\016e" +
+      "mail_verified\030\006 \001(\010Bk\222Ae2]Indicates if t" +
+      "he user\'s email address has been verifie" +
+      "d. Automatically updated by the system.J" +
+      "\004true\340A\003R\remailVerified\022\324\002\n\014phone_number" +
+      "\030\007 \001(\tB\260\002\222A\254\0022\231\002The user\'s phone number " +
+      "in E.164 international format. This fiel" +
+      "d stores the phone number for user conta" +
+      "ct and identification purposes. The phon" +
+      "e number must include the country code a" +
+      "nd be formatted according to E.164 stand" +
+      "ards (e.g., `+1` for US numbers). This f" +
+      "ield is optional.J\016\"+14155552671\"R\013phone" +
+      "Number\022\240\005\n\010metadata\030\010 \003(\0132..scalekit.v1." +
+      "commons.UserProfile.MetadataEntryB\323\004\222A\266\004" +
+      "2\336\003Raw attributes received from identity" +
+      " providers during authentication. This f" +
+      "ield stores the original user profile da" +
+      "ta as received from external IdP systems" +
+      " (SAML, OIDC, etc.) including provider-s" +
+      "pecific claims and attributes. These fie" +
+      "lds preserve the complete set of attribu" +
+      "tes received from the identity source an" +
+      "d are used for mapping, synchronization," +
+      " and audit purposes. Keys must be 3-25 c" +
+      "haracters, values must be 1-256 characte" +
+      "rs, with a maximum of 20 key-value pairs" +
+      ".JS{\"idp_user_id\": \"12345\", \"department\"" +
+      ": \"engineering\", \"employee_type\": \"full-" +
+      "time\"}\272H\026\232\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metadat" +
+      "a\022\334\005\n\021custom_attributes\030\t \003(\01326.scalekit" +
+      ".v1.commons.UserProfile.CustomAttributes" +
+      "EntryB\366\004\222A\331\0042\227\004Custom attributes for ext" +
+      "ended user profile data and application-" +
+      "specific information. This field stores " +
+      "business-specific user data like departm" +
+      "ent, job title, security clearances, pro" +
+      "ject assignments, or any other organizat" +
+      "ional attributes your application requir" +
+      "es. Unlike system metadata, these attrib" +
+      "utes are typically managed by administra" +
+      "tors or applications and are visible to " +
+      "end users for personalization and busine" +
+      "ss logic. Keys must be 3-25 characters, " +
       "values must be 1-256 characters, with a " +
-      "maximum of 20 key-value pairs.JS{\"idp_us" +
-      "er_id\": \"12345\", \"department\": \"engineer" +
-      "ing\", \"employee_type\": \"full-time\"}\272H\026\232\001" +
-      "\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metadata\022\334\005\n\021custo" +
-      "m_attributes\030\t \003(\01326.scalekit.v1.commons" +
-      ".UserProfile.CustomAttributesEntryB\366\004\222A\331" +
-      "\0042\227\004Custom attributes for extended user " +
-      "profile data and application-specific in" +
-      "formation. This field stores business-sp" +
-      "ecific user data like department, job ti" +
-      "tle, security clearances, project assign" +
-      "ments, or any other organizational attri" +
-      "butes your application requires. Unlike " +
-      "system metadata, these attributes are ty" +
-      "pically managed by administrators or app" +
-      "lications and are visible to end users f" +
-      "or personalization and business logic. K" +
-      "eys must be 3-25 characters, values must" +
-      " be 1-256 characters, with a maximum of " +
-      "20 key-value pairs.J={\"department\": \"eng" +
-      "ineering\", \"security_clearance\": \"level2" +
-      "\"}\272H\026\232\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\020customAttri" +
-      "butes\022\224\001\n\nfirst_name\030\025 \001(\tBu\030\001\222AY2O[DEPR" +
-      "ECATED] Use given_name instead. User\'s g" +
-      "iven name. Maximum 255 characters.J\006\"Joh" +
-      "n\"\272H\005r\003\030\377\001\372\322\344\223\002\t\022\007PREVIEWR\tfirstName\022\223\001\n" +
-      "\tlast_name\030\026 \001(\tBv\030\001\222AZ2Q[DEPRECATED] Us" +
-      "e family_name instead. User\'s family nam" +
-      "e. Maximum 255 characters.J\005\"Doe\"\272H\005r\003\030\377" +
-      "\001\372\322\344\223\002\t\022\007PREVIEWR\010lastName\022\253\003\n\022preferred" +
-      "_username\030\014 \001(\tB\373\002\222A\357\0022\341\002The user\'s pref" +
-      "erred username for display and identific" +
-      "ation purposes. This field stores a cust" +
-      "om username that the user prefers to be " +
-      "known by, which may differ from their em" +
-      "ail or formal name. This username appear" +
-      "s in user interfaces, mentions, informal" +
-      " communications, and collaborative featu" +
-      "res throughout the system. Maximum 512 c" +
-      "haracters allowed.J\t\"johndoe\"\272H\005r\003\030\200\004R\021p" +
-      "referredUsername\022\236\001\n\025phone_number_verifi" +
-      "ed\030\r \001(\010Bj\222Ad2\\Indicates if the user\'s p" +
-      "hone number has been verified. Automatic" +
-      "ally updated by the system.J\004true\340A\003R\023ph" +
-      "oneNumberVerified\022\344\003\n\007picture\030\016 \001(\tB\311\003\222A" +
-      "\305\0032\240\003The URL to the user\'s profile pictu" +
-      "re or avatar image. This field stores th" +
-      "e location of the user\'s profile photo t" +
-      "hat appears in user interfaces, director" +
-      "y listings, and collaborative features t" +
-      "hroughout the system. The URL should poi" +
-      "nt to a publicly accessible image file. " +
-      "Supported formats typically include JPEG" +
-      ", PNG, and GIF. This image is used for v" +
-      "isual identification and personalization" +
-      " across the platform.J \"https://example." +
-      "com/avatar.jpg\"R\007picture\022\307\003\n\006groups\030\017 \003(" +
-      "\tB\256\003\222A\252\0032\217\003The list of group names the u" +
-      "ser belongs to within the organization. " +
-      "This field stores the user\'s group membe" +
-      "rships for role-based access control, te" +
-      "am assignments, and organizational struc" +
-      "ture. Groups are typically used for perm" +
-      "ission management, collaborative access," +
-      " and organizational hierarchy. Each grou" +
-      "p name represents a distinct organizatio" +
-      "nal unit or team that the user is associ" +
-      "ated with.J\026[\"admin\", \"developer\"]R\006grou" +
-      "ps\022\237\003\n\006gender\030\020 \001(\tB\206\003\222A\202\0032\367\002The user\'s " +
-      "gender identity information. This field " +
-      "stores the user\'s gender identity for pe" +
-      "rsonalization, compliance reporting, or " +
-      "organizational analytics purposes. This " +
-      "field supports any string value to accom" +
-      "modate diverse gender identities and sho" +
-      "uld be handled with appropriate privacy " +
-      "considerations according to your organiz" +
-      "ation\'s policies and applicable regulati" +
-      "ons.J\006\"male\"R\006gender\032;\n\rMetadataEntry\022\020\n" +
-      "\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028" +
-      "\001\032C\n\025CustomAttributesEntry\022\020\n\003key\030\001 \001(\tR" +
-      "\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001*9\n\nRegion" +
-      "Code\022\033\n\027REGION_CODE_UNSPECIFIED\020\000\022\006\n\002US\020" +
-      "\001\022\006\n\002EU\020\002*E\n\017EnvironmentType\022 \n\034ENVIRONM" +
-      "ENT_TYPE_UNSPECIFIED\020\000\022\007\n\003PRD\020\001\022\007\n\003DEV\020\002" +
-      "*w\n\020MembershipStatus\022!\n\035Membership_Statu" +
-      "s_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020" +
-      "\002\022\022\n\016PENDING_INVITE\020\003\022\022\n\016INVITE_EXPIRED\020" +
-      "\004*\230\002\n\024IdentityProviderType\022!\n\035IDENTITY_P" +
-      "ROVIDER_UNSPECIFIED\020\000\022\010\n\004OKTA\020\001\022\n\n\006GOOGL" +
-      "E\020\002\022\020\n\014MICROSOFT_AD\020\003\022\t\n\005AUTH0\020\004\022\014\n\010ONEL" +
-      "OGIN\020\005\022\021\n\rPING_IDENTITY\020\006\022\r\n\tJUMPCLOUD\020\007" +
-      "\022\n\n\006CUSTOM\020\010\022\n\n\006GITHUB\020\t\022\n\n\006GITLAB\020\n\022\014\n\010" +
-      "LINKEDIN\020\013\022\016\n\nSALESFORCE\020\014\022\r\n\tMICROSOFT\020" +
-      "\r\022\021\n\rIDP_SIMULATOR\020\016\022\014\n\010SCALEKIT\020\017\022\010\n\004AD" +
-      "FS\020\020B\326\001\n%com.scalekit.grpc.scalekit.v1.c" +
-      "ommonsB\014CommonsProtoP\001Z1github.com/scale" +
-      "kit-inc/scalekit/pkg/grpc/commons\242\002\003SVC\252" +
-      "\002\023Scalekit.V1.Commons\312\002\023Scalekit\\V1\\Comm" +
-      "ons\342\002\037Scalekit\\V1\\Commons\\GPBMetadata\352\002\025" +
-      "Scalekit::V1::Commonsb\006proto3"
+      "maximum of 20 key-value pairs.J={\"depart" +
+      "ment\": \"engineering\", \"security_clearanc" +
+      "e\": \"level2\"}\272H\026\232\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\020" +
+      "customAttributes\022\224\001\n\nfirst_name\030\025 \001(\tBu\030" +
+      "\001\222AY2O[DEPRECATED] Use given_name instea" +
+      "d. User\'s given name. Maximum 255 charac" +
+      "ters.J\006\"John\"\272H\005r\003\030\377\001\372\322\344\223\002\t\022\007PREVIEWR\tfi" +
+      "rstName\022\223\001\n\tlast_name\030\026 \001(\tBv\030\001\222AZ2Q[DEP" +
+      "RECATED] Use family_name instead. User\'s" +
+      " family name. Maximum 255 characters.J\005\"" +
+      "Doe\"\272H\005r\003\030\377\001\372\322\344\223\002\t\022\007PREVIEWR\010lastName\022\253\003" +
+      "\n\022preferred_username\030\014 \001(\tB\373\002\222A\357\0022\341\002The " +
+      "user\'s preferred username for display an" +
+      "d identification purposes. This field st" +
+      "ores a custom username that the user pre" +
+      "fers to be known by, which may differ fr" +
+      "om their email or formal name. This user" +
+      "name appears in user interfaces, mention" +
+      "s, informal communications, and collabor" +
+      "ative features throughout the system. Ma" +
+      "ximum 512 characters allowed.J\t\"johndoe\"" +
+      "\272H\005r\003\030\200\004R\021preferredUsername\022\236\001\n\025phone_nu" +
+      "mber_verified\030\r \001(\010Bj\222Ad2\\Indicates if t" +
+      "he user\'s phone number has been verified" +
+      ". Automatically updated by the system.J\004" +
+      "true\340A\003R\023phoneNumberVerified\022\344\003\n\007picture" +
+      "\030\016 \001(\tB\311\003\222A\305\0032\240\003The URL to the user\'s pr" +
+      "ofile picture or avatar image. This fiel" +
+      "d stores the location of the user\'s prof" +
+      "ile photo that appears in user interface" +
+      "s, directory listings, and collaborative" +
+      " features throughout the system. The URL" +
+      " should point to a publicly accessible i" +
+      "mage file. Supported formats typically i" +
+      "nclude JPEG, PNG, and GIF. This image is" +
+      " used for visual identification and pers" +
+      "onalization across the platform.J \"https" +
+      "://example.com/avatar.jpg\"R\007picture\022\307\003\n\006" +
+      "groups\030\017 \003(\tB\256\003\222A\252\0032\217\003The list of group " +
+      "names the user belongs to within the org" +
+      "anization. This field stores the user\'s " +
+      "group memberships for role-based access " +
+      "control, team assignments, and organizat" +
+      "ional structure. Groups are typically us" +
+      "ed for permission management, collaborat" +
+      "ive access, and organizational hierarchy" +
+      ". Each group name represents a distinct " +
+      "organizational unit or team that the use" +
+      "r is associated with.J\026[\"admin\", \"develo" +
+      "per\"]R\006groups\022\237\003\n\006gender\030\020 \001(\tB\206\003\222A\202\0032\367\002" +
+      "The user\'s gender identity information. " +
+      "This field stores the user\'s gender iden" +
+      "tity for personalization, compliance rep" +
+      "orting, or organizational analytics purp" +
+      "oses. This field supports any string val" +
+      "ue to accommodate diverse gender identit" +
+      "ies and should be handled with appropria" +
+      "te privacy considerations according to y" +
+      "our organization\'s policies and applicab" +
+      "le regulations.J\006\"male\"R\006gender\022\247\001\n\023exte" +
+      "rnal_identities\030\n \003(\0132%.scalekit.v1.comm" +
+      "ons.ExternalIdentityBO\222AI2GList of exter" +
+      "nal identity connections associated with" +
+      " the user profile.\340A\003R\022externalIdentitie" +
+      "s\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005" +
+      "value\030\002 \001(\tR\005value:\0028\001\032C\n\025CustomAttribut" +
+      "esEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t" +
+      "R\005value:\0028\001\"\244\n\n\020ExternalIdentity\022\226\001\n\rcon" +
+      "nection_id\030\001 \001(\tBq\222Ak2PUnique identifier" +
+      " for the external identity connection. I" +
+      "mmutable and read-only.J\027\"conn_1234abcd5" +
+      "678efgh\"\340A\003R\014connectionId\022c\n\017connection_" +
+      "type\030\002 \001(\tB:\222A42)Name of the external id" +
+      "entity connection.J\007\"OAUTH\"\340A\003R\016connecti" +
+      "onType\022\214\001\n\023connection_provider\030\003 \001(\0162).s" +
+      "calekit.v1.commons.IdentityProviderTypeB" +
+      "0\222A*2\036Type of the identity provider.J\010\"G" +
+      "OOGLE\"\340A\003R\022connectionProvider\022\251\001\n\022connec" +
+      "tion_user_id\030\004 \001(\tB{\222Au2aUnique identifi" +
+      "er for the user in the external identity" +
+      " provider system. Immutable and read-onl" +
+      "y.J\020\"ext_user_12345\"\340A\003R\020connectionUserI" +
+      "d\022\233\001\n\tis_social\030\005 \001(\010B~\222Ax2pIndicates if" +
+      " the identity provider is a social provi" +
+      "der (true) or enterprise/custom provider" +
+      " (false). Read-only.J\004true\340A\003R\010isSocial\022" +
+      "\303\001\n\017last_login_time\030\006 \001(\0132\032.google.proto" +
+      "buf.TimestampB\177\222Ay2wTimestamp of the use" +
+      "r\'s last successful login via this exter" +
+      "nal identity provider. Automatically upd" +
+      "ated by the system.\340A\003R\rlastLoginTime\022\243\001" +
+      "\n\014created_time\030\007 \001(\0132\032.google.protobuf.T" +
+      "imestampBd\222A^2\\Timestamp when this exter" +
+      "nal identity connection was first create" +
+      "d. Immutable and read-only.\340A\003R\013createdT" +
+      "ime\022\314\001\n\020last_synced_time\030\010 \001(\0132\032.google." +
+      "protobuf.TimestampB\205\001\222A\1772}Timestamp of t" +
+      "he last data synchronization for this ex" +
+      "ternal identity from the provider. Autom" +
+      "atically updated by the system.\340A\003R\016last" +
+      "SyncedTime*9\n\nRegionCode\022\033\n\027REGION_CODE_" +
+      "UNSPECIFIED\020\000\022\006\n\002US\020\001\022\006\n\002EU\020\002*E\n\017Environ" +
+      "mentType\022 \n\034ENVIRONMENT_TYPE_UNSPECIFIED" +
+      "\020\000\022\007\n\003PRD\020\001\022\007\n\003DEV\020\002*w\n\020MembershipStatus" +
+      "\022!\n\035Membership_Status_UNSPECIFIED\020\000\022\n\n\006A" +
+      "CTIVE\020\001\022\014\n\010INACTIVE\020\002\022\022\n\016PENDING_INVITE\020" +
+      "\003\022\022\n\016INVITE_EXPIRED\020\004*\230\002\n\024IdentityProvid" +
+      "erType\022!\n\035IDENTITY_PROVIDER_UNSPECIFIED\020" +
+      "\000\022\010\n\004OKTA\020\001\022\n\n\006GOOGLE\020\002\022\020\n\014MICROSOFT_AD\020" +
+      "\003\022\t\n\005AUTH0\020\004\022\014\n\010ONELOGIN\020\005\022\021\n\rPING_IDENT" +
+      "ITY\020\006\022\r\n\tJUMPCLOUD\020\007\022\n\n\006CUSTOM\020\010\022\n\n\006GITH" +
+      "UB\020\t\022\n\n\006GITLAB\020\n\022\014\n\010LINKEDIN\020\013\022\016\n\nSALESF" +
+      "ORCE\020\014\022\r\n\tMICROSOFT\020\r\022\021\n\rIDP_SIMULATOR\020\016" +
+      "\022\014\n\010SCALEKIT\020\017\022\010\n\004ADFS\020\020B\326\001\n%com.scaleki" +
+      "t.grpc.scalekit.v1.commonsB\014CommonsProto" +
+      "P\001Z1github.com/scalekit-inc/scalekit/pkg" +
+      "/grpc/commons\242\002\003SVC\252\002\023Scalekit.V1.Common" +
+      "s\312\002\023Scalekit\\V1\\Commons\342\002\037Scalekit\\V1\\Co" +
+      "mmons\\GPBMetadata\352\002\025Scalekit::V1::Common" +
+      "sb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -304,7 +358,7 @@ public final class CommonsProto {
     internal_static_scalekit_v1_commons_OrganizationMembership_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_commons_OrganizationMembership_descriptor,
-        new java.lang.String[] { "OrganizationId", "JoinTime", "MembershipStatus", "Roles", "Name", "Metadata", "DisplayName", "InviterEmail", "CreatedAt", "AcceptedAt", "ExpiresAt", });
+        new java.lang.String[] { "OrganizationId", "JoinTime", "MembershipStatus", "Roles", "Name", "Metadata", "DisplayName", "InviterEmail", "CreatedAt", "AcceptedAt", "ExpiresAt", "ProvisioningMethod", });
     internal_static_scalekit_v1_commons_OrganizationMembership_MetadataEntry_descriptor =
       internal_static_scalekit_v1_commons_OrganizationMembership_descriptor.getNestedTypes().get(0);
     internal_static_scalekit_v1_commons_OrganizationMembership_MetadataEntry_fieldAccessorTable = new
@@ -322,7 +376,7 @@ public final class CommonsProto {
     internal_static_scalekit_v1_commons_UserProfile_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_commons_UserProfile_descriptor,
-        new java.lang.String[] { "Id", "GivenName", "FamilyName", "Name", "Locale", "EmailVerified", "PhoneNumber", "Metadata", "CustomAttributes", "FirstName", "LastName", "PreferredUsername", "PhoneNumberVerified", "Picture", "Groups", "Gender", });
+        new java.lang.String[] { "Id", "GivenName", "FamilyName", "Name", "Locale", "EmailVerified", "PhoneNumber", "Metadata", "CustomAttributes", "FirstName", "LastName", "PreferredUsername", "PhoneNumberVerified", "Picture", "Groups", "Gender", "ExternalIdentities", });
     internal_static_scalekit_v1_commons_UserProfile_MetadataEntry_descriptor =
       internal_static_scalekit_v1_commons_UserProfile_descriptor.getNestedTypes().get(0);
     internal_static_scalekit_v1_commons_UserProfile_MetadataEntry_fieldAccessorTable = new
@@ -335,6 +389,12 @@ public final class CommonsProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_commons_UserProfile_CustomAttributesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    internal_static_scalekit_v1_commons_ExternalIdentity_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_scalekit_v1_commons_ExternalIdentity_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_commons_ExternalIdentity_descriptor,
+        new java.lang.String[] { "ConnectionId", "ConnectionType", "ConnectionProvider", "ConnectionUserId", "IsSocial", "LastLoginTime", "CreatedTime", "LastSyncedTime", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);

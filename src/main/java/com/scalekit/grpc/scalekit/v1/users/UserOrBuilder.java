@@ -165,17 +165,17 @@ java.lang.String defaultValue);
       java.lang.String key);
 
   /**
-   * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the lastLogin field is set.
+   * <code>.google.protobuf.Timestamp last_login_time = 10 [json_name = "lastLoginTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the lastLoginTime field is set.
    */
-  boolean hasLastLogin();
+  boolean hasLastLoginTime();
   /**
-   * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The lastLogin.
+   * <code>.google.protobuf.Timestamp last_login_time = 10 [json_name = "lastLoginTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The lastLoginTime.
    */
-  com.google.protobuf.Timestamp getLastLogin();
+  com.google.protobuf.Timestamp getLastLoginTime();
   /**
-   * <code>.google.protobuf.Timestamp last_login = 10 [json_name = "lastLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp last_login_time = 10 [json_name = "lastLoginTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  com.google.protobuf.TimestampOrBuilder getLastLoginOrBuilder();
+  com.google.protobuf.TimestampOrBuilder getLastLoginTimeOrBuilder();
 }

@@ -239,4 +239,34 @@ public interface OIDCConnectionConfigOrBuilder extends
    * <code>.google.protobuf.StringValue backchannel_logout_redirect_uri = 16 [json_name = "backchannelLogoutRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.StringValueOrBuilder getBackchannelLogoutRedirectUriOrBuilder();
+
+  /**
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_login = 17 [json_name = "syncUserProfileOnLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the syncUserProfileOnLogin field is set.
+   */
+  boolean hasSyncUserProfileOnLogin();
+  /**
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_login = 17 [json_name = "syncUserProfileOnLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The syncUserProfileOnLogin.
+   */
+  com.google.protobuf.BoolValue getSyncUserProfileOnLogin();
+  /**
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_login = 17 [json_name = "syncUserProfileOnLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnLoginOrBuilder();
+
+  /**
+   * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 18 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the jitProvisioningWithSsoEnabled field is set.
+   */
+  boolean hasJitProvisioningWithSsoEnabled();
+  /**
+   * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 18 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The jitProvisioningWithSsoEnabled.
+   */
+  com.google.protobuf.BoolValue getJitProvisioningWithSsoEnabled();
+  /**
+   * <code>.google.protobuf.BoolValue jit_provisioning_with_sso_enabled = 18 [json_name = "jitProvisioningWithSsoEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getJitProvisioningWithSsoEnabledOrBuilder();
 }

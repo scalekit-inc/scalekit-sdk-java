@@ -97,4 +97,78 @@ public interface PaymentMethodOrBuilder extends
    * @return The status.
    */
   com.scalekit.grpc.scalekit.v1.workspaces.PaymentMethodStatus getStatus();
+
+  /**
+   * <pre>
+   * Human-friendly account name like "Visa •••• 1234" or "Checking •••• 6789"
+   * </pre>
+   *
+   * <code>string account_name = 6 [json_name = "accountName"];</code>
+   * @return The accountName.
+   */
+  java.lang.String getAccountName();
+  /**
+   * <pre>
+   * Human-friendly account name like "Visa •••• 1234" or "Checking •••• 6789"
+   * </pre>
+   *
+   * <code>string account_name = 6 [json_name = "accountName"];</code>
+   * @return The bytes for accountName.
+   */
+  com.google.protobuf.ByteString
+      getAccountNameBytes();
+
+  /**
+   * <pre>
+   * Additional info for display (brand, last4, exp, email, etc.)
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; payment_info = 7 [json_name = "paymentInfo", (.buf.validate.field) = { ... }</code>
+   */
+  int getPaymentInfoCount();
+  /**
+   * <pre>
+   * Additional info for display (brand, last4, exp, email, etc.)
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; payment_info = 7 [json_name = "paymentInfo", (.buf.validate.field) = { ... }</code>
+   */
+  boolean containsPaymentInfo(
+      java.lang.String key);
+  /**
+   * Use {@link #getPaymentInfoMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getPaymentInfo();
+  /**
+   * <pre>
+   * Additional info for display (brand, last4, exp, email, etc.)
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; payment_info = 7 [json_name = "paymentInfo", (.buf.validate.field) = { ... }</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getPaymentInfoMap();
+  /**
+   * <pre>
+   * Additional info for display (brand, last4, exp, email, etc.)
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; payment_info = 7 [json_name = "paymentInfo", (.buf.validate.field) = { ... }</code>
+   */
+  /* nullable */
+java.lang.String getPaymentInfoOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue);
+  /**
+   * <pre>
+   * Additional info for display (brand, last4, exp, email, etc.)
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; payment_info = 7 [json_name = "paymentInfo", (.buf.validate.field) = { ... }</code>
+   */
+  java.lang.String getPaymentInfoOrThrow(
+      java.lang.String key);
 }

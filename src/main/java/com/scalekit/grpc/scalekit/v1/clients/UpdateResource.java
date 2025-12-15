@@ -47,6 +47,7 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.clients.UpdateResource.class, com.scalekit.grpc.scalekit.v1.clients.UpdateResource.Builder.class);
   }
 
+  private int bitField0_;
   private int settingsCase_ = 0;
   @SuppressWarnings("serial")
   private java.lang.Object settings_;
@@ -227,14 +228,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DISABLE_DYNAMIC_CLIENT_REGISTRATION_FIELD_NUMBER = 6;
-  private boolean disableDynamicClientRegistration_ = false;
+  private com.google.protobuf.BoolValue disableDynamicClientRegistration_;
   /**
-   * <code>bool disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.BoolValue disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the disableDynamicClientRegistration field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisableDynamicClientRegistration() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The disableDynamicClientRegistration.
    */
   @java.lang.Override
-  public boolean getDisableDynamicClientRegistration() {
-    return disableDynamicClientRegistration_;
+  public com.google.protobuf.BoolValue getDisableDynamicClientRegistration() {
+    return disableDynamicClientRegistration_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : disableDynamicClientRegistration_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getDisableDynamicClientRegistrationOrBuilder() {
+    return disableDynamicClientRegistration_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : disableDynamicClientRegistration_;
   }
 
   public static final int LOGO_URI_FIELD_NUMBER = 7;
@@ -422,6 +438,58 @@ private static final long serialVersionUID = 0L;
     return com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings.getDefaultInstance();
   }
 
+  public static final int INTERSECT_SCOPES_USER_PERMISSION_FIELD_NUMBER = 14;
+  private com.google.protobuf.BoolValue intersectScopesUserPermission_;
+  /**
+   * <code>.google.protobuf.BoolValue intersect_scopes_user_permission = 14 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the intersectScopesUserPermission field is set.
+   */
+  @java.lang.Override
+  public boolean hasIntersectScopesUserPermission() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue intersect_scopes_user_permission = 14 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The intersectScopesUserPermission.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getIntersectScopesUserPermission() {
+    return intersectScopesUserPermission_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : intersectScopesUserPermission_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue intersect_scopes_user_permission = 14 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getIntersectScopesUserPermissionOrBuilder() {
+    return intersectScopesUserPermission_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : intersectScopesUserPermission_;
+  }
+
+  public static final int ENABLE_CIMD_FIELD_NUMBER = 15;
+  private com.google.protobuf.BoolValue enableCimd_;
+  /**
+   * <code>.google.protobuf.BoolValue enable_cimd = 15 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the enableCimd field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableCimd() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue enable_cimd = 15 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enableCimd.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getEnableCimd() {
+    return enableCimd_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enableCimd_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue enable_cimd = 15 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getEnableCimdOrBuilder() {
+    return enableCimd_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enableCimd_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -451,8 +519,8 @@ private static final long serialVersionUID = 0L;
     if (refreshTokenExpiry_ != 0L) {
       output.writeInt64(5, refreshTokenExpiry_);
     }
-    if (disableDynamicClientRegistration_ != false) {
-      output.writeBool(6, disableDynamicClientRegistration_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(6, getDisableDynamicClientRegistration());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logoUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, logoUri_);
@@ -468,6 +536,12 @@ private static final long serialVersionUID = 0L;
     }
     if (settingsCase_ == 13) {
       output.writeMessage(13, (com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings) settings_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(14, getIntersectScopesUserPermission());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(15, getEnableCimd());
     }
     getUnknownFields().writeTo(output);
   }
@@ -495,9 +569,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, refreshTokenExpiry_);
     }
-    if (disableDynamicClientRegistration_ != false) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(6, disableDynamicClientRegistration_);
+        .computeMessageSize(6, getDisableDynamicClientRegistration());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logoUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, logoUri_);
@@ -519,6 +593,14 @@ private static final long serialVersionUID = 0L;
     if (settingsCase_ == 13) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, (com.scalekit.grpc.scalekit.v1.clients.ResourceCustomConnectionSettings) settings_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getIntersectScopesUserPermission());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, getEnableCimd());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -545,8 +627,11 @@ private static final long serialVersionUID = 0L;
         != other.getAccessTokenExpiry()) return false;
     if (getRefreshTokenExpiry()
         != other.getRefreshTokenExpiry()) return false;
-    if (getDisableDynamicClientRegistration()
-        != other.getDisableDynamicClientRegistration()) return false;
+    if (hasDisableDynamicClientRegistration() != other.hasDisableDynamicClientRegistration()) return false;
+    if (hasDisableDynamicClientRegistration()) {
+      if (!getDisableDynamicClientRegistration()
+          .equals(other.getDisableDynamicClientRegistration())) return false;
+    }
     if (!getLogoUri()
         .equals(other.getLogoUri())) return false;
     if (!getProvider()
@@ -555,6 +640,16 @@ private static final long serialVersionUID = 0L;
         .equals(other.getResourceId())) return false;
     if (!getScopesList()
         .equals(other.getScopesList())) return false;
+    if (hasIntersectScopesUserPermission() != other.hasIntersectScopesUserPermission()) return false;
+    if (hasIntersectScopesUserPermission()) {
+      if (!getIntersectScopesUserPermission()
+          .equals(other.getIntersectScopesUserPermission())) return false;
+    }
+    if (hasEnableCimd() != other.hasEnableCimd()) return false;
+    if (hasEnableCimd()) {
+      if (!getEnableCimd()
+          .equals(other.getEnableCimd())) return false;
+    }
     if (!getSettingsCase().equals(other.getSettingsCase())) return false;
     switch (settingsCase_) {
       case 13:
@@ -587,9 +682,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + REFRESH_TOKEN_EXPIRY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getRefreshTokenExpiry());
-    hash = (37 * hash) + DISABLE_DYNAMIC_CLIENT_REGISTRATION_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getDisableDynamicClientRegistration());
+    if (hasDisableDynamicClientRegistration()) {
+      hash = (37 * hash) + DISABLE_DYNAMIC_CLIENT_REGISTRATION_FIELD_NUMBER;
+      hash = (53 * hash) + getDisableDynamicClientRegistration().hashCode();
+    }
     hash = (37 * hash) + LOGO_URI_FIELD_NUMBER;
     hash = (53 * hash) + getLogoUri().hashCode();
     hash = (37 * hash) + PROVIDER_FIELD_NUMBER;
@@ -599,6 +695,14 @@ private static final long serialVersionUID = 0L;
     if (getScopesCount() > 0) {
       hash = (37 * hash) + SCOPES_FIELD_NUMBER;
       hash = (53 * hash) + getScopesList().hashCode();
+    }
+    if (hasIntersectScopesUserPermission()) {
+      hash = (37 * hash) + INTERSECT_SCOPES_USER_PERMISSION_FIELD_NUMBER;
+      hash = (53 * hash) + getIntersectScopesUserPermission().hashCode();
+    }
+    if (hasEnableCimd()) {
+      hash = (37 * hash) + ENABLE_CIMD_FIELD_NUMBER;
+      hash = (53 * hash) + getEnableCimd().hashCode();
     }
     switch (settingsCase_) {
       case 13:
@@ -727,13 +831,21 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.scalekit.grpc.scalekit.v1.clients.UpdateResource.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getDisableDynamicClientRegistrationFieldBuilder();
+        getIntersectScopesUserPermissionFieldBuilder();
+        getEnableCimdFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -744,7 +856,11 @@ private static final long serialVersionUID = 0L;
       resourceUri_ = "";
       accessTokenExpiry_ = 0L;
       refreshTokenExpiry_ = 0L;
-      disableDynamicClientRegistration_ = false;
+      disableDynamicClientRegistration_ = null;
+      if (disableDynamicClientRegistrationBuilder_ != null) {
+        disableDynamicClientRegistrationBuilder_.dispose();
+        disableDynamicClientRegistrationBuilder_ = null;
+      }
       logoUri_ = "";
       provider_ = "";
       resourceId_ = "";
@@ -752,6 +868,16 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.LazyStringArrayList.emptyList();
       if (customConnectionSettingsBuilder_ != null) {
         customConnectionSettingsBuilder_.clear();
+      }
+      intersectScopesUserPermission_ = null;
+      if (intersectScopesUserPermissionBuilder_ != null) {
+        intersectScopesUserPermissionBuilder_.dispose();
+        intersectScopesUserPermissionBuilder_ = null;
+      }
+      enableCimd_ = null;
+      if (enableCimdBuilder_ != null) {
+        enableCimdBuilder_.dispose();
+        enableCimdBuilder_ = null;
       }
       settingsCase_ = 0;
       settings_ = null;
@@ -804,8 +930,12 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.refreshTokenExpiry_ = refreshTokenExpiry_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.disableDynamicClientRegistration_ = disableDynamicClientRegistration_;
+        result.disableDynamicClientRegistration_ = disableDynamicClientRegistrationBuilder_ == null
+            ? disableDynamicClientRegistration_
+            : disableDynamicClientRegistrationBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.logoUri_ = logoUri_;
@@ -820,6 +950,19 @@ private static final long serialVersionUID = 0L;
         scopes_.makeImmutable();
         result.scopes_ = scopes_;
       }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.intersectScopesUserPermission_ = intersectScopesUserPermissionBuilder_ == null
+            ? intersectScopesUserPermission_
+            : intersectScopesUserPermissionBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.enableCimd_ = enableCimdBuilder_ == null
+            ? enableCimd_
+            : enableCimdBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.scalekit.grpc.scalekit.v1.clients.UpdateResource result) {
@@ -896,8 +1039,8 @@ private static final long serialVersionUID = 0L;
       if (other.getRefreshTokenExpiry() != 0L) {
         setRefreshTokenExpiry(other.getRefreshTokenExpiry());
       }
-      if (other.getDisableDynamicClientRegistration() != false) {
-        setDisableDynamicClientRegistration(other.getDisableDynamicClientRegistration());
+      if (other.hasDisableDynamicClientRegistration()) {
+        mergeDisableDynamicClientRegistration(other.getDisableDynamicClientRegistration());
       }
       if (!other.getLogoUri().isEmpty()) {
         logoUri_ = other.logoUri_;
@@ -923,6 +1066,12 @@ private static final long serialVersionUID = 0L;
           scopes_.addAll(other.scopes_);
         }
         onChanged();
+      }
+      if (other.hasIntersectScopesUserPermission()) {
+        mergeIntersectScopesUserPermission(other.getIntersectScopesUserPermission());
+      }
+      if (other.hasEnableCimd()) {
+        mergeEnableCimd(other.getEnableCimd());
       }
       switch (other.getSettingsCase()) {
         case CUSTOM_CONNECTION_SETTINGS: {
@@ -984,11 +1133,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 40
-            case 48: {
-              disableDynamicClientRegistration_ = input.readBool();
+            case 50: {
+              input.readMessage(
+                  getDisableDynamicClientRegistrationFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00000020;
               break;
-            } // case 48
+            } // case 50
             case 58: {
               logoUri_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000040;
@@ -1017,6 +1168,20 @@ private static final long serialVersionUID = 0L;
               settingsCase_ = 13;
               break;
             } // case 106
+            case 114: {
+              input.readMessage(
+                  getIntersectScopesUserPermissionFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 114
+            case 122: {
+              input.readMessage(
+                  getEnableCimdFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00001000;
+              break;
+            } // case 122
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1329,36 +1494,125 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean disableDynamicClientRegistration_ ;
+    private com.google.protobuf.BoolValue disableDynamicClientRegistration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> disableDynamicClientRegistrationBuilder_;
     /**
-     * <code>bool disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The disableDynamicClientRegistration.
+     * <code>.google.protobuf.BoolValue disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the disableDynamicClientRegistration field is set.
      */
-    @java.lang.Override
-    public boolean getDisableDynamicClientRegistration() {
-      return disableDynamicClientRegistration_;
+    public boolean hasDisableDynamicClientRegistration() {
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>bool disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The disableDynamicClientRegistration to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.BoolValue disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The disableDynamicClientRegistration.
      */
-    public Builder setDisableDynamicClientRegistration(boolean value) {
-
-      disableDynamicClientRegistration_ = value;
+    public com.google.protobuf.BoolValue getDisableDynamicClientRegistration() {
+      if (disableDynamicClientRegistrationBuilder_ == null) {
+        return disableDynamicClientRegistration_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : disableDynamicClientRegistration_;
+      } else {
+        return disableDynamicClientRegistrationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setDisableDynamicClientRegistration(com.google.protobuf.BoolValue value) {
+      if (disableDynamicClientRegistrationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        disableDynamicClientRegistration_ = value;
+      } else {
+        disableDynamicClientRegistrationBuilder_.setMessage(value);
+      }
       bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
     /**
-     * <code>bool disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.BoolValue disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setDisableDynamicClientRegistration(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (disableDynamicClientRegistrationBuilder_ == null) {
+        disableDynamicClientRegistration_ = builderForValue.build();
+      } else {
+        disableDynamicClientRegistrationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeDisableDynamicClientRegistration(com.google.protobuf.BoolValue value) {
+      if (disableDynamicClientRegistrationBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0) &&
+          disableDynamicClientRegistration_ != null &&
+          disableDynamicClientRegistration_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getDisableDynamicClientRegistrationBuilder().mergeFrom(value);
+        } else {
+          disableDynamicClientRegistration_ = value;
+        }
+      } else {
+        disableDynamicClientRegistrationBuilder_.mergeFrom(value);
+      }
+      if (disableDynamicClientRegistration_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearDisableDynamicClientRegistration() {
       bitField0_ = (bitField0_ & ~0x00000020);
-      disableDynamicClientRegistration_ = false;
+      disableDynamicClientRegistration_ = null;
+      if (disableDynamicClientRegistrationBuilder_ != null) {
+        disableDynamicClientRegistrationBuilder_.dispose();
+        disableDynamicClientRegistrationBuilder_ = null;
+      }
       onChanged();
       return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getDisableDynamicClientRegistrationBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getDisableDynamicClientRegistrationFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getDisableDynamicClientRegistrationOrBuilder() {
+      if (disableDynamicClientRegistrationBuilder_ != null) {
+        return disableDynamicClientRegistrationBuilder_.getMessageOrBuilder();
+      } else {
+        return disableDynamicClientRegistration_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : disableDynamicClientRegistration_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue disable_dynamic_client_registration = 6 [json_name = "disableDynamicClientRegistration", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getDisableDynamicClientRegistrationFieldBuilder() {
+      if (disableDynamicClientRegistrationBuilder_ == null) {
+        disableDynamicClientRegistrationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getDisableDynamicClientRegistration(),
+                getParentForChildren(),
+                isClean());
+        disableDynamicClientRegistration_ = null;
+      }
+      return disableDynamicClientRegistrationBuilder_;
     }
 
     private java.lang.Object logoUri_ = "";
@@ -1828,6 +2082,248 @@ private static final long serialVersionUID = 0L;
       settingsCase_ = 13;
       onChanged();
       return customConnectionSettingsBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue intersectScopesUserPermission_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> intersectScopesUserPermissionBuilder_;
+    /**
+     * <code>.google.protobuf.BoolValue intersect_scopes_user_permission = 14 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the intersectScopesUserPermission field is set.
+     */
+    public boolean hasIntersectScopesUserPermission() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     * <code>.google.protobuf.BoolValue intersect_scopes_user_permission = 14 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The intersectScopesUserPermission.
+     */
+    public com.google.protobuf.BoolValue getIntersectScopesUserPermission() {
+      if (intersectScopesUserPermissionBuilder_ == null) {
+        return intersectScopesUserPermission_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : intersectScopesUserPermission_;
+      } else {
+        return intersectScopesUserPermissionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue intersect_scopes_user_permission = 14 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setIntersectScopesUserPermission(com.google.protobuf.BoolValue value) {
+      if (intersectScopesUserPermissionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        intersectScopesUserPermission_ = value;
+      } else {
+        intersectScopesUserPermissionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue intersect_scopes_user_permission = 14 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setIntersectScopesUserPermission(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (intersectScopesUserPermissionBuilder_ == null) {
+        intersectScopesUserPermission_ = builderForValue.build();
+      } else {
+        intersectScopesUserPermissionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue intersect_scopes_user_permission = 14 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeIntersectScopesUserPermission(com.google.protobuf.BoolValue value) {
+      if (intersectScopesUserPermissionBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0) &&
+          intersectScopesUserPermission_ != null &&
+          intersectScopesUserPermission_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getIntersectScopesUserPermissionBuilder().mergeFrom(value);
+        } else {
+          intersectScopesUserPermission_ = value;
+        }
+      } else {
+        intersectScopesUserPermissionBuilder_.mergeFrom(value);
+      }
+      if (intersectScopesUserPermission_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue intersect_scopes_user_permission = 14 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearIntersectScopesUserPermission() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      intersectScopesUserPermission_ = null;
+      if (intersectScopesUserPermissionBuilder_ != null) {
+        intersectScopesUserPermissionBuilder_.dispose();
+        intersectScopesUserPermissionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue intersect_scopes_user_permission = 14 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getIntersectScopesUserPermissionBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getIntersectScopesUserPermissionFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue intersect_scopes_user_permission = 14 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getIntersectScopesUserPermissionOrBuilder() {
+      if (intersectScopesUserPermissionBuilder_ != null) {
+        return intersectScopesUserPermissionBuilder_.getMessageOrBuilder();
+      } else {
+        return intersectScopesUserPermission_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : intersectScopesUserPermission_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue intersect_scopes_user_permission = 14 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getIntersectScopesUserPermissionFieldBuilder() {
+      if (intersectScopesUserPermissionBuilder_ == null) {
+        intersectScopesUserPermissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getIntersectScopesUserPermission(),
+                getParentForChildren(),
+                isClean());
+        intersectScopesUserPermission_ = null;
+      }
+      return intersectScopesUserPermissionBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue enableCimd_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> enableCimdBuilder_;
+    /**
+     * <code>.google.protobuf.BoolValue enable_cimd = 15 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the enableCimd field is set.
+     */
+    public boolean hasEnableCimd() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.BoolValue enable_cimd = 15 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enableCimd.
+     */
+    public com.google.protobuf.BoolValue getEnableCimd() {
+      if (enableCimdBuilder_ == null) {
+        return enableCimd_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enableCimd_;
+      } else {
+        return enableCimdBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue enable_cimd = 15 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setEnableCimd(com.google.protobuf.BoolValue value) {
+      if (enableCimdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        enableCimd_ = value;
+      } else {
+        enableCimdBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue enable_cimd = 15 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setEnableCimd(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (enableCimdBuilder_ == null) {
+        enableCimd_ = builderForValue.build();
+      } else {
+        enableCimdBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue enable_cimd = 15 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeEnableCimd(com.google.protobuf.BoolValue value) {
+      if (enableCimdBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0) &&
+          enableCimd_ != null &&
+          enableCimd_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getEnableCimdBuilder().mergeFrom(value);
+        } else {
+          enableCimd_ = value;
+        }
+      } else {
+        enableCimdBuilder_.mergeFrom(value);
+      }
+      if (enableCimd_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue enable_cimd = 15 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearEnableCimd() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      enableCimd_ = null;
+      if (enableCimdBuilder_ != null) {
+        enableCimdBuilder_.dispose();
+        enableCimdBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue enable_cimd = 15 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getEnableCimdBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getEnableCimdFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue enable_cimd = 15 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getEnableCimdOrBuilder() {
+      if (enableCimdBuilder_ != null) {
+        return enableCimdBuilder_.getMessageOrBuilder();
+      } else {
+        return enableCimd_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : enableCimd_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue enable_cimd = 15 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getEnableCimdFieldBuilder() {
+      if (enableCimdBuilder_ == null) {
+        enableCimdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getEnableCimd(),
+                getParentForChildren(),
+                isClean());
+        enableCimd_ = null;
+      }
+      return enableCimdBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

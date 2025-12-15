@@ -620,7 +620,7 @@ public final class OrganizationsProto {
       "of organization settings.R\010settings*R\n\007F" +
       "eature\022\027\n\023FEATURE_UNSPECIFIED\020\000\022\023\n\013UNSPE" +
       "CIFIED\020\000\032\002\010\001\022\014\n\010dir_sync\020\001\022\007\n\003sso\020\002\032\002\020\0012" +
-      "\222{\n\023OrganizationService\022\210\004\n\022CreateOrgani" +
+      "\215L\n\023OrganizationService\022\210\004\n\022CreateOrgani" +
       "zation\0224.scalekit.v1.organizations.Creat" +
       "eOrganizationRequest\0325.scalekit.v1.organ" +
       "izations.CreateOrganizationResponse\"\204\003\222A",
@@ -633,11 +633,11 @@ public final class OrganizationsProto {
       "ith its unique identifier and settings\0229" +
       "\n7\0325.scalekit.v1.organizations.CreateOrg" +
       "anizationResponse\202\265\030\002\030T\202\323\344\223\002%\"\025/api/v1/o" +
-      "rganizations:\014organization\022\375\013\n\022UpdateOrg" +
+      "rganizations:\014organization\022\252\004\n\022UpdateOrg" +
       "anization\0224.scalekit.v1.organizations.Up" +
       "dateOrganizationRequest\0325.scalekit.v1.or" +
-      "ganizations.UpdateOrganizationResponse\"\371" +
-      "\n\222A\277\n\n\rOrganizations\022\033Update organizatio" +
+      "ganizations.UpdateOrganizationResponse\"\246" +
+      "\003\222A\354\002\n\rOrganizations\022\033Update organizatio" +
       "n details\032\241\001Updates an organization\'s di" +
       "splay name, external ID, or metadata. Re" +
       "quires a valid organization identifier. " +
@@ -646,437 +646,355 @@ public final class OrganizationsProto {
       "dated organization with all current deta" +
       "ils reflected in the response.\0229\n7\0325.sca" +
       "lekit.v1.organizations.UpdateOrganizatio" +
-      "nResponsej\320\007\n\rx-codeSamples\022\276\0072\273\007\n\320\001*\315\001\n" +
-      "\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004lang\022\014\032\njavas" +
-      "cript\n\234\001\n\006source\022\221\001\032\216\001const organization" +
-      " = await sc.organization.updateOrganizat" +
-      "ion(organization_id, {\n  displayName: \'d" +
-      "isplayName\',\n  externalId: \'externalId\'," +
-      "\n});\n\302\001*\277\001\n\025\n\005label\022\014\032\nPython SDK\n\020\n\004lan" +
-      "g\022\010\032\006python\n\223\001\n\006source\022\210\001\032\205\001organization" +
-      " = sc.organization.update_organization(o" +
-      "rganization_id, {\n  display_name: \"displ" +
-      "ay_name\",\n  external_id: \"external_id\"\n}" +
-      ")\n\353\001*\350\001\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go" +
-      "\n\304\001\n\006source\022\271\001\032\266\001organization, err := sc" +
-      ".Organization.UpdateOrganization(\n  ctx," +
-      "\n  organizationId,\n  &scalekit.UpdateOrg" +
-      "anization{\n    DisplayName: \"displayName" +
-      "\",\n    ExternalId: \"externalId\",\n  },\n)\n" +
-      "\262\002*\257\002\n\023\n\005label\022\n\032\010Java SDK\n\016\n\004lang\022\006\032\004ja" +
-      "va\n\207\002\n\006source\022\374\001\032\371\001UpdateOrganization up" +
-      "dateOrganization = UpdateOrganization.ne" +
-      "wBuilder()\n  .setDisplayName(\"Updated Or" +
-      "ganization Name\")\n  .build();\n\nOrganizat" +
-      "ion updatedOrganizationById = scalekitCl" +
-      "ient.organizations().updateById(organiza" +
-      "tionId, updateOrganization);\202\265\030\002\030T\202\323\344\223\002*" +
-      "2\032/api/v1/organizations/{id}:\014organizati" +
-      "on\022\357\013\n\017GetOrganization\0221.scalekit.v1.org" +
-      "anizations.GetOrganizationRequest\0322.scal" +
-      "ekit.v1.organizations.GetOrganizationRes" +
-      "ponse\"\364\n\222A\310\n\n\rOrganizations\022\030Get organiz" +
-      "ation details\032]Retrieves organization de" +
-      "tails by Scalekit ID, including name, re" +
-      "gion, metadata, and settingsJ\230\001\n\003200\022\220\001\n" +
-      "VReturns the complete organization objec" +
-      "t with ID, display name, settings, and m" +
-      "etadata\0226\n4\0322.scalekit.v1.organizations." +
-      "GetOrganizationResponsej\242\010\n\rx-codeSample" +
-      "s\022\220\0102\215\010\n\202\002*\377\001\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n" +
-      "\004lang\022\014\032\njavascript\n\316\001\n\006source\022\303\001\032\300\001cons" +
-      "t sc = new ScalekitClient(\n  <SCALEKIT_E" +
-      "NVIRONMENT_URL>,\n  <SCALEKIT_CLIENT_ID>," +
-      "\n  <SCALEKIT_CLIENT_SECRET>\n);\n\nconst or" +
-      "ganization = await sc.organization.getOr" +
-      "ganization(organization_id);\n\352\001*\347\001\n\025\n\005la" +
-      "bel\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python\n\273\001\n\006" +
-      "source\022\260\001\032\255\001sc = ScalekitClient(\n  <SCAL" +
-      "EKIT_ENVIRONMENT_URL>,\n  <SCALEKIT_CLIEN" +
-      "T_ID>,\n  <SCALEKIT_CLIENT_SECRET>\n)\n\norg" +
-      "anization = sc.organization.get_organiza" +
-      "tion(\n  organization_id\n)\n\372\001*\367\001\n\021\n\005label" +
-      "\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\n\323\001\n\006source\022\310\001\032\305" +
-      "\001sc := scalekit.NewScalekitClient(\n  <SC" +
-      "ALEKIT_ENVIRONMENT_URL>,\n  <SCALEKIT_CLI" +
-      "ENT_ID>,\n  <SCALEKIT_CLIENT_SECRET>\n)\n\no" +
-      "rganization, err := sc.Organization.GetO" +
-      "rganization(\n  ctx,\n  organizationId\n)\n\233" +
-      "\002*\230\002\n\023\n\005label\022\n\032\010Java SDK\n\016\n\004lang\022\006\032\004jav" +
-      "a\n\360\001\n\006source\022\345\001\032\342\001ScalekitClient scaleki" +
-      "tClient = new ScalekitClient(\n  \"<SCALEK" +
-      "IT_ENVIRONMENT_URL>\",\n  \"<SCALEKIT_CLIEN" +
-      "T_ID>\",\n  \"<SCALEKIT_CLIENT_SECRET>\"\n);\n" +
-      "\nOrganization organization = scalekitCli" +
-      "ent.organizations().getById(organization" +
-      "Id);\202\265\030\002\030t\202\323\344\223\002\034\022\032/api/v1/organizations/" +
-      "{id}\022\207\n\n\020ListOrganization\0223.scalekit.v1." +
+      "nResponse\202\265\030\002\030T\202\323\344\223\002*2\032/api/v1/organizat" +
+      "ions/{id}:\014organization\022\312\003\n\017GetOrganizat" +
+      "ion\0221.scalekit.v1.organizations.GetOrgan" +
+      "izationRequest\0322.scalekit.v1.organizatio" +
+      "ns.GetOrganizationResponse\"\317\002\222A\243\002\n\rOrgan" +
+      "izations\022\030Get organization details\032]Retr" +
+      "ieves organization details by Scalekit I" +
+      "D, including name, region, metadata, and" +
+      " settingsJ\230\001\n\003200\022\220\001\nVReturns the comple" +
+      "te organization object with ID, display " +
+      "name, settings, and metadata\0226\n4\0322.scale" +
+      "kit.v1.organizations.GetOrganizationResp" +
+      "onse\202\265\030\002\030t\202\323\344\223\002\034\022\032/api/v1/organizations/" +
+      "{id}\022\302\t\n\020ListOrganization\0223.scalekit.v1." +
       "organizations.ListOrganizationsRequest\0324" +
       ".scalekit.v1.organizations.ListOrganizat" +
-      "ionsResponse\"\207\t\222A\340\010\n\rOrganizations\022\022List" +
+      "ionsResponse\"\302\010\222A\233\010\n\rOrganizations\022\022List" +
       " organizations\032\240\001Retrieve a paginated li" +
       "st of organizations within your environm" +
       "ent. The response includes a `page_token" +
       "` that can be used to access subsequent " +
-      "pages of results.\"C\n%Learn more about or" +
-      "ganization listing\022\032https://docs.scaleki" +
-      "t.com/Js\n\003200\022l\n0Successfully retrieved " +
-      "the list of organizations\0228\n6\0324.scalekit" +
-      ".v1.organizations.ListOrganizationsRespo" +
-      "nseJ\033\n\003400\022\024\n\022Invalid page tokenj\300\005\n\rx-c" +
-      "odeSamples\022\256\0052\253\005\n\227\001*\224\001\n\026\n\005label\022\r\032\013Node." +
-      "js SDK\n\024\n\004lang\022\014\032\njavascript\nd\n\006source\022Z" +
-      "\032Xconst organizations = await scalekit.o" +
-      "rganization.listOrganization({\n  pageSiz" +
-      "e: 10,\n});\n\300\001*\275\001\n\025\n\005label\022\014\032\nPython SDK\n" +
-      "\020\n\004lang\022\010\032\006python\n\221\001\n\006source\022\206\001\032\203\001option" +
-      "s = ListOrganizationOptions()\noptions.pa" +
-      "ge_size = 10\n\norganizations = sc.organiz" +
-      "ation.list_organizations(\n  options=opti" +
-      "ons\n)\n\257\001*\254\001\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lang\022\004" +
-      "\032\002go\n\210\001\n\006source\022~\032|organizations, err :=" +
-      " sc.Organization.ListOrganizations(\n  ct" +
-      "x,\n  &scalekit.ListOrganizationOptions{\n" +
-      "    PageSize: 10,\n  }\n)\n\231\001*\226\001\n\023\n\005label\022\n" +
-      "\032\010Java SDK\n\016\n\004lang\022\006\032\004java\no\n\006source\022e\032c" +
-      "ListOrganizationsResponse organizations " +
-      "= scalekitClient.organizations().listOrg" +
-      "anizations(10, \"\");\202\265\030\002\030T\202\323\344\223\002\027\022\025/api/v1" +
-      "/organizations\022\361\004\n\022SearchOrganization\0225." +
-      "scalekit.v1.organizations.SearchOrganiza" +
-      "tionsRequest\0326.scalekit.v1.organizations" +
-      ".SearchOrganizationsResponse\"\353\003\222A\256\003\n\rOrg" +
-      "anizations\022\024Search organizations\032\324\001Searc" +
-      "hes for organizations in your environmen" +
-      "t using a query string. The query matche" +
-      "s against organization name, ID, or exte" +
-      "rnal ID. Returns multiple results when m" +
-      "ore than one organization matches the cr" +
-      "iteria.J\257\001\n\003200\022\247\001\niReturns a list of ma" +
-      "tching organizations and a page token fo" +
-      "r pagination if there are additional res" +
-      "ults.\022:\n8\0326.scalekit.v1.organizations.Se" +
-      "archOrganizationsResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007P" +
-      "REVIEW\202\323\344\223\002\036\022\034/api/v1/organizations:sear" +
-      "ch\022\313\007\n\022DeleteOrganization\0224.scalekit.v1." +
-      "organizations.DeleteOrganizationRequest\032" +
-      "\026.google.protobuf.Empty\"\346\006\222A\272\006\n\rOrganiza" +
-      "tions\022\026Delete an organization\032PRemove an" +
-      " existing organization from the environm" +
-      "ent using its unique identifierJC\n\003200\022<" +
-      "\n:Organization successfully deleted and " +
-      "no longer accessiblej\371\004\n\rx-codeSamples\022\347" +
-      "\0042\344\004\nw*u\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004lang" +
-      "\022\014\032\njavascript\nE\n\006source\022;\0329await sc.org" +
-      "anization.deleteOrganization(organizatio" +
-      "nId);\nm*k\n\025\n\005label\022\014\032\nPython SDK\n\020\n\004lang" +
-      "\022\010\032\006python\n@\n\006source\0226\0324sc.organization." +
-      "delete_organization(organization_id)\nu*s" +
-      "\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\nP\n\006sou" +
-      "rce\022F\032Derr := sc.Organization.DeleteOrga" +
-      "nization(\n  ctx,\n  organizationId\n)\n\202\002*\377" +
-      "\001\n\023\n\005label\022\n\032\010Java SDK\n\016\n\004lang\022\006\032\004java\n\327" +
-      "\001\n\006source\022\314\001\032\311\001ScalekitClient scalekitCl" +
-      "ient = new ScalekitClient(\n  \"<SCALEKIT_" +
-      "ENVIRONMENT_URL>\",\n  \"<SCALEKIT_CLIENT_I" +
-      "D>\",\n  \"<SCALEKIT_CLIENT_SECRET>\"\n);\n\nsc" +
-      "alekitClient.organizations().deleteById(" +
-      "organizationId);\202\265\030\002\030T\202\323\344\223\002\034*\032/api/v1/or" +
-      "ganizations/{id}\022\244\t\n\022GeneratePortalLink\022" +
-      "4.scalekit.v1.organizations.GeneratePort" +
-      "alLinkRequest\0325.scalekit.v1.organization" +
-      "s.GeneratePortalLinkResponse\"\240\010\222A\347\007\n\rOrg" +
-      "anizations\022\032Generate admin portal link\032\302" +
-      "\001Creates a time-limited Admin Portal URL" +
-      " for IT administrators to configure and " +
-      "manage Single Sign-On (SSO) connections " +
-      "within their organization. Generated lin" +
-      "ks expire after 7 days (168 hours).J\237\001\n\003" +
-      "200\022\227\001\nZAdmin Portal link generated succ" +
-      "essfully. Returns the portal URL and exp" +
-      "iration timestamp.\0229\n7\0325.scalekit.v1.org" +
-      "anizations.GeneratePortalLinkResponsej\322\004" +
-      "\n\rx-codeSamples\022\300\0042\275\004\n\206\001*\203\001\n\026\n\005label\022\r\032\013" +
-      "Node.js SDK\n\024\n\004lang\022\014\032\njavascript\nS\n\006sou" +
-      "rce\022I\032Gconst link = await sc.organizatio" +
-      "n.generatePortalLink(organization_id);\ny" +
-      "*w\n\025\n\005label\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006pyt" +
-      "hon\nL\n\006source\022B\032@link = sc.organization." +
-      "generate_portal_link(\n  organization_id\n" +
-      ")\n{*y\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\nV" +
-      "\n\006source\022L\032Jlink, err := sc.Organization" +
-      ".GeneratePortalLink(\n  ctx,\n  organizati" +
-      "onId\n)\n\271\001*\266\001\n\023\n\005label\022\n\032\010Java SDK\n\016\n\004lan" +
-      "g\022\006\032\004java\n\216\001\n\006source\022\203\001\032\200\001Link portalLin" +
-      "k = client\n  .organizations()\n  .generat" +
-      "ePortalLink(organizationId, Arrays.asLis" +
-      "t(Feature.sso, Feature.dir_sync));\202\265\030\002\030T" +
-      "\202\323\344\223\002)\032\'/api/v1/organizations/{id}/porta" +
-      "l_links\022\231\006\n\020DeletePortalLink\0222.scalekit." +
-      "v1.organizations.DeletePortalLinkRequest" +
-      "\032\026.google.protobuf.Empty\"\270\005\222A\360\004\n\014Admin P" +
-      "ortal\022\022Delete portal link\032)Revokes and d" +
-      "eletes an Admin portal link.J)\n\003200\022\"\n P" +
-      "ortal link deleted successfullyj\365\003\n\rx-co" +
-      "deSamples\022\343\0032\340\003\n}*{\n\026\n\005label\022\r\032\013Node.js " +
-      "SDK\n\024\n\004lang\022\014\032\njavascript\nK\n\006source\022A\032?a" +
-      "wait sc.organization.deletePortalLink(or" +
-      "ganizationId, linkId);\n{*y\n\025\n\005label\022\014\032\nP" +
-      "ython SDK\n\020\n\004lang\022\010\032\006python\nN\n\006source\022D\032" +
-      "Bsc.organization.delete_portal_link(\n  o" +
-      "rganization_id,\n  link_id\n)\n}*{\n\021\n\005label" +
-      "\022\010\032\006Go SDK\n\014\n\004lang\022\004\032\002go\nX\n\006source\022N\032Ler" +
-      "r := sc.Organization.DeletePortalLink(\n " +
-      " ctx,\n  organizationId,\n  linkId\n)\nc*a\n\023" +
-      "\n\005label\022\n\032\010Java SDK\n\016\n\004lang\022\006\032\004java\n:\n\006s" +
-      "ource\0220\032.// Hang in there. Coming soon! " +
-      "(Vroom! Vroom!)\202\265\030\002\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
-      "\002)*\'/api/v1/organizations/{id}/portal_li" +
-      "nks\022\237\002\n\024DeletePortalLinkByID\0226.scalekit." +
-      "v1.organizations.DeletePortalLinkByIdReq" +
-      "uest\032\026.google.protobuf.Empty\"\266\001\222Ae\n\014Admi" +
-      "n Portal\022\030Delete admin portal link\032)Revo" +
-      "kes and deletes an Admin portal link.J\020\n" +
-      "\003200\022\t\n\007Success\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
-      "\0023*1/api/v1/organizations/{id}/portal_li" +
-      "nks/{link_id}\022\314\007\n\016GetPortalLinks\022/.scale" +
-      "kit.v1.organizations.GetPortalLinkReques" +
-      "t\0321.scalekit.v1.organizations.GetPortalL" +
-      "inksResponse\"\325\006\222A\215\006\n\014Admin Portal\022\017Get p" +
-      "ortal link\032_Returns the Admin portal lin" +
-      "k if it exists. Use Generate Portal link" +
-      " to create and fetch a linkJG\n\003200\022@\n\007Su" +
-      "ccess\0225\n3\0321.scalekit.v1.organizations.Ge" +
-      "tPortalLinksResponsej\301\004\n\rx-codeSamples\022\257" +
-      "\0042\254\004\n|*z\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004lang" +
-      "\022\014\032\njavascript\nJ\n\006source\022@\032>const links " +
-      "= sc.organization.getPortalLinks(organiz" +
-      "ation_id);\nv*t\n\025\n\005label\022\014\032\nPython SDK\n\020\n" +
-      "\004lang\022\010\032\006python\nI\n\006source\022?\032=links = sc." +
-      "organization.get_portal_links(\n  organiz" +
-      "ation_id\n)\nx*v\n\021\n\005label\022\010\032\006Go SDK\n\014\n\004lan" +
-      "g\022\004\032\002go\nS\n\006source\022I\032Glinks, err := sc.Or" +
-      "ganization.GetPortalLinks(\n  ctx,\n  orga" +
-      "nizationId\n)\n\271\001*\266\001\n\023\n\005label\022\n\032\010Java SDK\n" +
-      "\016\n\004lang\022\006\032\004java\n\216\001\n\006source\022\203\001\032\200\001Link por" +
-      "talLink = client\n  .organizations()\n  .g" +
-      "eneratePortalLink(organizationId, Arrays" +
-      ".asList(Feature.sso, Feature.dir_sync));" +
-      "\202\265\030\002\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002)\022\'/api/v1/org" +
-      "anizations/{id}/portal_links\022\245\023\n\032UpdateO" +
-      "rganizationSettings\022<.scalekit.v1.organi" +
-      "zations.UpdateOrganizationSettingsReques" +
-      "t\0322.scalekit.v1.organizations.GetOrganiz" +
-      "ationResponse\"\224\022\222A\325\021\n\rOrganizations\022\034Tog" +
-      "gle organization settings\032\323\001Updates conf" +
-      "iguration settings for an organization. " +
-      "Supports modifying SSO configuration, di" +
-      "rectory synchronization settings, and se" +
-      "ssion parameters. Requires organization " +
-      "ID and the specific settings to update.J" +
-      "\343\001\n\003200\022\333\001\n\240\001Returns the complete organi" +
-      "zation object with updated settings appl" +
-      "ied. Contains all organization details i" +
-      "ncluding ID, display name, and the modif" +
-      "ied settings.\0226\n4\0322.scalekit.v1.organiza" +
-      "tions.GetOrganizationResponseJp\n\003400\022i\ng" +
-      "Invalid request - occurs when the settin" +
-      "gs payload contains invalid values or un" +
-      "supported configurationJM\n\003404\022F\nDOrgani" +
-      "zation not found - the specified organiz" +
-      "ation ID doesn\'t existj\250\014\n\rx-codeSamples" +
-      "\022\226\0142\223\014\n\253\002*\250\002\n\026\n\005label\022\r\032\013Node.js SDK\n\024\n\004" +
-      "lang\022\014\032\njavascript\n\367\001\n\006source\022\354\001\032\351\001const" +
-      " settings = {\n  features: [\n    {\n      " +
-      "name: \'sso\',\n      enabled: true,\n    }," +
-      "\n    {\n      name: \'dir_sync\',\n      ena" +
-      "bled: true,\n    },\n  ],\n};\n\nawait sc.org" +
-      "anization.updateOrganizationSettings(\'<o" +
-      "rganization_id>\', settings);\n\325\002*\322\002\n\025\n\005la" +
-      "bel\022\014\032\nPython SDK\n\020\n\004lang\022\010\032\006python\n\246\002\n\006" +
-      "source\022\233\002\032\230\002settings = [\n        {\n     " +
-      "       \"name\": \"sso\",\n            \"enabl" +
-      "ed\": true\n        },\n        {\n         " +
-      "   \"name\": \"dir_sync\",\n            \"enab" +
-      "led\": true\n        }\n    ]\n\nsc.organizat" +
-      "ion.update_organization_settings(\n  orga" +
-      "nization_id=\'<organization_id>\', setting" +
-      "s=settings\n)\n\277\002*\274\002\n\021\n\005label\022\010\032\006Go SDK\n\014\n" +
-      "\004lang\022\004\032\002go\n\230\002\n\006source\022\215\002\032\212\002settings := " +
-      "OrganizationSettings{\n\t\tFeatures: []Feat" +
-      "ure{\n\t\t\t{\n\t\t\t\tName:    \"sso\",\n\t\t\t\tEnable" +
-      "d: true,\n\t\t\t},\n\t\t\t{\n\t\t\t\tName:    \"dir_sy" +
-      "nc\",\n\t\t\t\tEnabled: true,\n\t\t\t},\n\t\t},\n\t}\n\no" +
-      "rganization,err := sc.Organization().Upd" +
-      "ateOrganizationSettings(ctx, organizatio" +
-      "nId, settings)\n\310\004*\305\004\n\023\n\005label\022\n\032\010Java SD" +
-      "K\n\016\n\004lang\022\006\032\004java\n\235\004\n\006source\022\222\004\032\217\004Organi" +
-      "zationSettingsFeature featureSSO = Organ" +
-      "izationSettingsFeature.newBuilder()\n    " +
-      "            .setName(\"sso\")\n            " +
-      "    .setEnabled(true)\n                .b" +
-      "uild();\n\nOrganizationSettingsFeature fea" +
-      "tureDirectorySync = OrganizationSettings" +
-      "Feature.newBuilder()\n                .se" +
-      "tName(\"dir_sync\")\n                .setEn" +
-      "abled(true)\n                .build();\n\nu" +
-      "pdatedOrganization = scalekitClient.orga" +
-      "nizations()\n                .updateOrgan" +
-      "izationSettings(organization.getId(), Li" +
-      "st.of(featureSSO, featureDirectorySync))" +
-      ";\202\265\030\002\030T\202\323\344\223\002/2#/api/v1/organizations/{id" +
-      "}/settings:\010settings\022\332\005\n!CreateOrganizat" +
-      "ionSessionSettings\022C.scalekit.v1.organiz" +
-      "ations.CreateOrganizationSessionSettings" +
-      "Request\032D.scalekit.v1.organizations.Crea" +
-      "teOrganizationSessionSettingsResponse\"\251\004" +
-      "\222A\335\003\n\rOrganizations\022$Create organization" +
-      " session settings\032\371\001Defines session time" +
-      "out policies for an organization, includ" +
-      "ing absolute and idle timeout durations." +
-      " This endpoint is used to configure sess" +
-      "ion lifetimes and enhance security by au" +
-      "tomatically logging out users after a sp" +
-      "ecified period of inactivity.J\251\001\n\003201\022\241\001" +
-      "\nUSession settings created successfully." +
-      " Returns the newly configured session po" +
-      "licies.\022H\nF\032D.scalekit.v1.organizations." +
-      "CreateOrganizationSessionSettingsRespons" +
-      "e\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002-\"+/api/v1/or" +
-      "ganizations/{id}/session-settings\022\265\004\n\036Ge" +
-      "tOrganizationSessionSettings\022@.scalekit." +
-      "v1.organizations.GetOrganizationSessionS" +
-      "ettingsRequest\032A.scalekit.v1.organizatio" +
-      "ns.GetOrganizationSessionSettingsRespons" +
-      "e\"\215\003\222A\301\002\n\rOrganizations\022!Get organizatio" +
-      "n session settings\032\204\001Retrieves the curre" +
-      "ntly configured session timeout policies" +
-      " for a specific organization, including " +
-      "absolute and idle timeout values.J\205\001\n\00320" +
-      "0\022~\n5Successfully retrieved organization" +
-      " session settings.\022E\nC\032A.scalekit.v1.org" +
+      "pages of results.Js\n\003200\022l\n0Successfully" +
+      " retrieved the list of organizations\0228\n6" +
+      "\0324.scalekit.v1.organizations.ListOrganiz" +
+      "ationsResponseJ\033\n\003400\022\024\n\022Invalid page to" +
+      "kenj\300\005\n\rx-codeSamples\022\256\0052\253\005\n\227\001*\224\001\n\026\n\005lab" +
+      "el\022\r\032\013Node.js SDK\n\024\n\004lang\022\014\032\njavascript\n" +
+      "d\n\006source\022Z\032Xconst organizations = await" +
+      " scalekit.organization.listOrganization(" +
+      "{\n  pageSize: 10,\n});\n\300\001*\275\001\n\025\n\005label\022\014\032\n" +
+      "Python SDK\n\020\n\004lang\022\010\032\006python\n\221\001\n\006source\022" +
+      "\206\001\032\203\001options = ListOrganizationOptions()" +
+      "\noptions.page_size = 10\n\norganizations =" +
+      " sc.organization.list_organizations(\n  o" +
+      "ptions=options\n)\n\257\001*\254\001\n\021\n\005label\022\010\032\006Go SD" +
+      "K\n\014\n\004lang\022\004\032\002go\n\210\001\n\006source\022~\032|organizati" +
+      "ons, err := sc.Organization.ListOrganiza" +
+      "tions(\n  ctx,\n  &scalekit.ListOrganizati" +
+      "onOptions{\n    PageSize: 10,\n  }\n)\n\231\001*\226\001" +
+      "\n\023\n\005label\022\n\032\010Java SDK\n\016\n\004lang\022\006\032\004java\no\n" +
+      "\006source\022e\032cListOrganizationsResponse org" +
+      "anizations = scalekitClient.organization" +
+      "s().listOrganizations(10, \"\");\202\265\030\002\030T\202\323\344\223" +
+      "\002\027\022\025/api/v1/organizations\022\361\004\n\022SearchOrga" +
+      "nization\0225.scalekit.v1.organizations.Sea" +
+      "rchOrganizationsRequest\0326.scalekit.v1.or" +
+      "ganizations.SearchOrganizationsResponse\"" +
+      "\353\003\222A\256\003\n\rOrganizations\022\024Search organizati" +
+      "ons\032\324\001Searches for organizations in your" +
+      " environment using a query string. The q" +
+      "uery matches against organization name, " +
+      "ID, or external ID. Returns multiple res" +
+      "ults when more than one organization mat" +
+      "ches the criteria.J\257\001\n\003200\022\247\001\niReturns a" +
+      " list of matching organizations and a pa" +
+      "ge token for pagination if there are add" +
+      "itional results.\022:\n8\0326.scalekit.v1.organ" +
+      "izations.SearchOrganizationsResponse\202\265\030\002" +
+      "\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\036\022\034/api/v1/organiz" +
+      "ations:search\022\317\002\n\022DeleteOrganization\0224.s" +
+      "calekit.v1.organizations.DeleteOrganizat" +
+      "ionRequest\032\026.google.protobuf.Empty\"\352\001\222A\276" +
+      "\001\n\rOrganizations\022\026Delete an organization" +
+      "\032PRemove an existing organization from t" +
+      "he environment using its unique identifi" +
+      "erJC\n\003200\022<\n:Organization successfully d" +
+      "eleted and no longer accessible\202\265\030\002\030T\202\323\344" +
+      "\223\002\034*\032/api/v1/organizations/{id}\022\317\004\n\022Gene" +
+      "ratePortalLink\0224.scalekit.v1.organizatio" +
+      "ns.GeneratePortalLinkRequest\0325.scalekit." +
+      "v1.organizations.GeneratePortalLinkRespo" +
+      "nse\"\313\003\222A\222\003\n\rOrganizations\022\032Generate admi" +
+      "n portal link\032\302\001Creates a time-limited A" +
+      "dmin Portal URL for IT administrators to" +
+      " configure and manage Single Sign-On (SS" +
+      "O) connections within their organization" +
+      ". Generated links expire after 7 days (1" +
+      "68 hours).J\237\001\n\003200\022\227\001\nZAdmin Portal link" +
+      " generated successfully. Returns the por" +
+      "tal URL and expiration timestamp.\0229\n7\0325." +
+      "scalekit.v1.organizations.GeneratePortal" +
+      "LinkResponse\202\265\030\002\030T\202\323\344\223\002)\032\'/api/v1/organi" +
+      "zations/{id}/portal_links\022\240\002\n\020DeletePort" +
+      "alLink\0222.scalekit.v1.organizations.Delet" +
+      "ePortalLinkRequest\032\026.google.protobuf.Emp" +
+      "ty\"\277\001\222Ax\n\014Admin Portal\022\022Delete portal li" +
+      "nk\032)Revokes and deletes an Admin portal " +
+      "link.J)\n\003200\022\"\n Portal link deleted succ" +
+      "essfully\202\265\030\002\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002)*\'/ap" +
+      "i/v1/organizations/{id}/portal_links\022\237\002\n" +
+      "\024DeletePortalLinkByID\0226.scalekit.v1.orga" +
+      "nizations.DeletePortalLinkByIdRequest\032\026." +
+      "google.protobuf.Empty\"\266\001\222Ae\n\014Admin Porta" +
+      "l\022\030Delete admin portal link\032)Revokes and" +
+      " deletes an Admin portal link.J\020\n\003200\022\t\n" +
+      "\007Success\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0023*1/ap" +
+      "i/v1/organizations/{id}/portal_links/{li" +
+      "nk_id}\022\210\003\n\016GetPortalLinks\022/.scalekit.v1." +
+      "organizations.GetPortalLinkRequest\0321.sca" +
+      "lekit.v1.organizations.GetPortalLinksRes" +
+      "ponse\"\221\002\222A\311\001\n\014Admin Portal\022\017Get portal l" +
+      "ink\032_Returns the Admin portal link if it" +
+      " exists. Use Generate Portal link to cre" +
+      "ate and fetch a linkJG\n\003200\022@\n\007Success\0225" +
+      "\n3\0321.scalekit.v1.organizations.GetPortal" +
+      "LinksResponse\202\265\030\002\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002)" +
+      "\022\'/api/v1/organizations/{id}/portal_link" +
+      "s\022\372\006\n\032UpdateOrganizationSettings\022<.scale" +
+      "kit.v1.organizations.UpdateOrganizationS" +
+      "ettingsRequest\0322.scalekit.v1.organizatio" +
+      "ns.GetOrganizationResponse\"\351\005\222A\252\005\n\rOrgan" +
+      "izations\022\034Toggle organization settings\032\323" +
+      "\001Updates configuration settings for an o" +
+      "rganization. Supports modifying SSO conf" +
+      "iguration, directory synchronization set" +
+      "tings, and session parameters. Requires " +
+      "organization ID and the specific setting" +
+      "s to update.J\343\001\n\003200\022\333\001\n\240\001Returns the co" +
+      "mplete organization object with updated " +
+      "settings applied. Contains all organizat" +
+      "ion details including ID, display name, " +
+      "and the modified settings.\0226\n4\0322.scaleki" +
+      "t.v1.organizations.GetOrganizationRespon" +
+      "seJp\n\003400\022i\ngInvalid request - occurs wh" +
+      "en the settings payload contains invalid" +
+      " values or unsupported configurationJM\n\003" +
+      "404\022F\nDOrganization not found - the spec" +
+      "ified organization ID doesn\'t exist\202\265\030\002\030" +
+      "T\202\323\344\223\002/2#/api/v1/organizations/{id}/sett" +
+      "ings:\010settings\022\332\005\n!CreateOrganizationSes" +
+      "sionSettings\022C.scalekit.v1.organizations" +
+      ".CreateOrganizationSessionSettingsReques" +
+      "t\032D.scalekit.v1.organizations.CreateOrga" +
+      "nizationSessionSettingsResponse\"\251\004\222A\335\003\n\r" +
+      "Organizations\022$Create organization sessi" +
+      "on settings\032\371\001Defines session timeout po" +
+      "licies for an organization, including ab" +
+      "solute and idle timeout durations. This " +
+      "endpoint is used to configure session li" +
+      "fetimes and enhance security by automati" +
+      "cally logging out users after a specifie" +
+      "d period of inactivity.J\251\001\n\003201\022\241\001\nUSess" +
+      "ion settings created successfully. Retur" +
+      "ns the newly configured session policies" +
+      ".\022H\nF\032D.scalekit.v1.organizations.Create" +
+      "OrganizationSessionSettingsResponse\202\265\030\002\030" +
+      "T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002-\"+/api/v1/organiza" +
+      "tions/{id}/session-settings\022\265\004\n\036GetOrgan" +
+      "izationSessionSettings\022@.scalekit.v1.org" +
       "anizations.GetOrganizationSessionSetting" +
-      "sResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002-\022+/a" +
-      "pi/v1/organizations/{id}/session-setting" +
-      "s\022\216\005\n!UpdateOrganizationSessionSettings\022" +
-      "C.scalekit.v1.organizations.UpdateOrgani" +
-      "zationSessionSettingsRequest\032D.scalekit." +
-      "v1.organizations.UpdateOrganizationSessi" +
-      "onSettingsResponse\"\335\003\222A\377\002\n\rOrganizations" +
-      "\022$Update organization session settings\032\243" +
-      "\001Modifies the session timeout policies f" +
-      "or an organization. Use this to adjust t" +
-      "he absolute and idle session timeout dur" +
-      "ations to enforce different security lev" +
-      "els.J\241\001\n\003200\022\231\001\nMSession settings update" +
-      "d successfully. Returns the modified ses" +
-      "sion policies.\022H\nF\032D.scalekit.v1.organiz" +
-      "ations.UpdateOrganizationSessionSettings" +
-      "Response\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002?2+/ap" +
-      "i/v1/organizations/{id}/session-settings" +
-      ":\020session_settings\022\314\003\n!DeleteOrganizatio" +
-      "nSessionSettings\022C.scalekit.v1.organizat" +
-      "ions.DeleteOrganizationSessionSettingsRe" +
-      "quest\032\026.google.protobuf.Empty\"\311\002\222A\375\001\n\rOr" +
-      "ganizations\022$Delete organization session" +
-      " settings\032\207\001Resets an organization\'s ses" +
-      "sion timeout policies to the default set" +
-      "tings, removing any custom absolute or i" +
-      "dle timeout configurations.J<\n\003200\0225\n3Or" +
-      "ganization session settings deleted succ" +
-      "essfully.\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002-*+/a" +
-      "pi/v1/organizations/{id}/session-setting" +
-      "s\022\344\003\n\034UpsertUserManagementSettings\022>.sca" +
-      "lekit.v1.organizations.UpsertUserManagem" +
-      "entSettingsRequest\032?.scalekit.v1.organiz" +
-      "ations.UpsertUserManagementSettingsRespo" +
-      "nse\"\302\002\222A\337\001\n\rOrganizations\022 Upsert organi" +
-      "zation user setting\0323Upsert user managem" +
-      "ent settings for an organizationJw\n\003200\022" +
-      "p\n)Returns the updated organization sett" +
-      "ing.\022C\nA\032?.scalekit.v1.organizations.Ups" +
-      "ertUserManagementSettingsResponse\202\265\030\002\030t\372" +
-      "\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002D2?/api/v1/organizati" +
-      "ons/{organization_id}/settings/usermanag" +
-      "ement:\001*\022\237\004\n$GetOrganizationUserManageme" +
-      "ntSetting\022G.scalekit.v1.organizations.Ge" +
-      "tOrganizationUserManagementSettingsReque" +
-      "st\032H.scalekit.v1.organizations.GetOrgani" +
-      "zationUserManagementSettingsResponse\"\343\002\222" +
-      "A\203\002\n\rOrganizations\022(Get organization use" +
-      "r management setting\032CRetrieves the user" +
-      " management settings for a specific orga" +
-      "nization.J\202\001\n\003200\022{\n+Returns the request" +
-      "ed organization setting.\022L\nJ\032H.scalekit." +
+      "sRequest\032A.scalekit.v1.organizations.Get" +
+      "OrganizationSessionSettingsResponse\"\215\003\222A" +
+      "\301\002\n\rOrganizations\022!Get organization sess" +
+      "ion settings\032\204\001Retrieves the currently c" +
+      "onfigured session timeout policies for a" +
+      " specific organization, including absolu" +
+      "te and idle timeout values.J\205\001\n\003200\022~\n5S" +
+      "uccessfully retrieved organization sessi" +
+      "on settings.\022E\nC\032A.scalekit.v1.organizat" +
+      "ions.GetOrganizationSessionSettingsRespo" +
+      "nse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002-\022+/api/v1/" +
+      "organizations/{id}/session-settings\022\216\005\n!" +
+      "UpdateOrganizationSessionSettings\022C.scal" +
+      "ekit.v1.organizations.UpdateOrganization" +
+      "SessionSettingsRequest\032D.scalekit.v1.org" +
+      "anizations.UpdateOrganizationSessionSett" +
+      "ingsResponse\"\335\003\222A\377\002\n\rOrganizations\022$Upda" +
+      "te organization session settings\032\243\001Modif" +
+      "ies the session timeout policies for an " +
+      "organization. Use this to adjust the abs" +
+      "olute and idle session timeout durations" +
+      " to enforce different security levels.J\241" +
+      "\001\n\003200\022\231\001\nMSession settings updated succ" +
+      "essfully. Returns the modified session p" +
+      "olicies.\022H\nF\032D.scalekit.v1.organizations" +
+      ".UpdateOrganizationSessionSettingsRespon" +
+      "se\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002?2+/api/v1/o" +
+      "rganizations/{id}/session-settings:\020sess" +
+      "ion_settings\022\314\003\n!DeleteOrganizationSessi" +
+      "onSettings\022C.scalekit.v1.organizations.D" +
+      "eleteOrganizationSessionSettingsRequest\032" +
+      "\026.google.protobuf.Empty\"\311\002\222A\375\001\n\rOrganiza" +
+      "tions\022$Delete organization session setti" +
+      "ngs\032\207\001Resets an organization\'s session t" +
+      "imeout policies to the default settings," +
+      " removing any custom absolute or idle ti" +
+      "meout configurations.J<\n\003200\0225\n3Organiza" +
+      "tion session settings deleted successful" +
+      "ly.\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002-*+/api/v1/" +
+      "organizations/{id}/session-settings\022\325\003\n\034" +
+      "UpsertUserManagementSettings\022>.scalekit." +
+      "v1.organizations.UpsertUserManagementSet" +
+      "tingsRequest\032?.scalekit.v1.organizations" +
+      ".UpsertUserManagementSettingsResponse\"\263\002" +
+      "\222A\337\001\n\rOrganizations\022 Upsert organization" +
+      " user setting\0323Upsert user management se" +
+      "ttings for an organizationJw\n\003200\022p\n)Ret" +
+      "urns the updated organization setting.\022C" +
+      "\nA\032?.scalekit.v1.organizations.UpsertUse" +
+      "rManagementSettingsResponse\202\265\030\002\030t\202\323\344\223\002D2" +
+      "?/api/v1/organizations/{organization_id}" +
+      "/settings/usermanagement:\001*\022\237\004\n$GetOrgan" +
+      "izationUserManagementSetting\022G.scalekit." +
       "v1.organizations.GetOrganizationUserMana" +
-      "gementSettingsResponse\202\265\030\002\030t\372\322\344\223\002\t\022\007PREV" +
-      "IEW\202\323\344\223\002A\022?/api/v1/organizations/{organi" +
-      "zation_id}/settings/usermanagement\032X\222AU\n" +
-      "\rOrganizations\022D{{import \"proto/scalekit" +
-      "/v1/organizations/organization_details.m" +
-      "d\"}}B\306\023\n+com.scalekit.grpc.scalekit.v1.o" +
-      "rganizationsB\022OrganizationsProtoP\001Z7gith" +
-      "ub.com/scalekit-inc/scalekit/pkg/grpc/or" +
-      "ganizations\242\002\003SVO\252\002\031Scalekit.V1.Organiza" +
-      "tions\312\002\031Scalekit\\V1\\Organizations\342\002%Scal" +
-      "ekit\\V1\\Organizations\\GPBMetadata\352\002\033Scal" +
-      "ekit::V1::Organizations\222A\302\021\022\350\014\n\rScalekit" +
-      " APIs\022\331\013# Introduction\n\nThe Scalekit API" +
-      " is a comprehensive RESTful API that ena" +
-      "bles you to manage organizations, users,",
-      " authentication settings, and identity p" +
-      "rovider integrations. All requests must " +
-      "use HTTPS and require proper authenticat" +
-      "ion.\n\n### Base URL\n\nAll API requests use" +
-      " the following base URLs:\n\n```\nhttps://{" +
-      "environment}.scalekit.dev (Development)\n" +
-      "https://{environment}.scalekit.com (Prod" +
-      "uction)\nhttps://auth.example.com (Custom" +
-      " domain)\n```\n\nScalekit operates two sepa" +
-      "rate environments: Development and Produ" +
-      "ction. Resources cannot be moved between" +
-      " environments.\n\n# Authentication\n\nThe Sc" +
-      "alekit API uses OAuth 2.0 Client Credent" +
-      "ials for authentication.\n\nGetting an acc" +
-      "ess token\n\n1. Get your credentials from " +
-      "the [Scalekit Dashboard](https://app.sca" +
-      "lekit.com): `SCALEKIT_ENVIRONMENT_URL`, " +
-      "`SCALEKIT_CLIENT_ID`, `SCALEKIT_CLIENT_S" +
-      "ECRET`\n\n2. Request an access token:\n\n```" +
-      "shell\ncurl https://{SCALEKIT_ENVIRONMENT" +
-      "_URL}/oauth/token \\\n  -X POST \\\n  -H \'Co" +
-      "ntent-Type: application/x-www-form-urlen" +
-      "coded\' \\\n  -d \'client_id={client_id}\' \\\n" +
-      "  -d \'client_secret={client_secret}\' \\\n " +
-      " -d \'grant_type=client_credentials\'\n```\n" +
-      "\nUse the access token in API requests:\n\n" +
-      "```shell\ncurl https://{SCALEKIT_ENVIRONM" +
-      "ENT_URL}/api/v1/organizations \\\n  -H \'Co" +
-      "ntent-Type: application/json\' \\\n  -H \'Au" +
-      "thorization: Bearer {access_token}\'\n```\n" +
-      "\nThe response includes an access token:\n" +
-      "\n```json\n{\n\t\"access_token\": \"eyJhbGciOiJ" +
-      "SUzI1NiIsImInR5cCI6IkpXVCJ9...\",\n\t\"token" +
-      "_type\": \"Bearer\",\n\t\"expires_in\": 86399,\n" +
-      "\t\"scope\": \"openid\"\n}\n```\n\":\n\014Scalekit In" +
-      "c\022\024https://scalekit.com\032\024support@scaleki" +
-      "t.com*8\n\nApache 2.0\022*http://www.apache.o" +
-      "rg/licenses/LICENSE-2.02\0051.0.0\032\031$SCALEKI" +
-      "T_ENVIRONMENT_URL*\001\0022\020application/json:\020" +
-      "application/jsonj\017\n\rOrganizationsj\324\003\n\013Pe" +
-      "rmissions\022\304\003Permission management for de" +
-      "fining and controlling access to system " +
-      "resources. Create, retrieve, update, and" +
-      " delete granular permissions that repres" +
-      "ent specific actions users can perform. " +
-      "Permissions are the building blocks of r" +
-      "ole-based access control (RBAC) and can " +
-      "be assigned to roles to grant users the " +
-      "ability to perform specific operations. " +
-      "Use this service to define custom permis" +
-      "sions for your application\'s unique acce" +
-      "ss control requirements.r+\n\rScalekit Doc" +
-      "s\022\032https://docs.scalekit.com/b\006proto3"
+      "gementSettingsRequest\032H.scalekit.v1.orga" +
+      "nizations.GetOrganizationUserManagementS" +
+      "ettingsResponse\"\343\002\222A\203\002\n\rOrganizations\022(G" +
+      "et organization user management setting\032" +
+      "CRetrieves the user management settings " +
+      "for a specific organization.J\202\001\n\003200\022{\n+" +
+      "Returns the requested organization setti" +
+      "ng.\022L\nJ\032H.scalekit.v1.organizations.GetO" +
+      "rganizationUserManagementSettingsRespons" +
+      "e\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002A\022?/api/v1/or" +
+      "ganizations/{organization_id}/settings/u" +
+      "sermanagement\032X\222AU\n\rOrganizations\022D{{imp" +
+      "ort \"proto/scalekit/v1/organizations/org" +
+      "anization_details.md\"}}B\360(\n+com.scalekit" +
+      ".grpc.scalekit.v1.organizationsB\022Organiz" +
+      "ationsProtoP\001Z7github.com/scalekit-inc/s" +
+      "calekit/pkg/grpc/organizations\242\002\003SVO\252\002\031S" +
+      "calekit.V1.Organizations\312\002\031Scalekit\\V1\\O" +
+      "rganizations\342\002%Scalekit\\V1\\Organizations" +
+      "\\GPBMetadata\352\002\033Scalekit::V1::Organizatio" +
+      "ns\222A\354&\022\222\"\n\rScalekit APIs\022\203!# Introductio" +
+      "n\n\nThe Scalekit API is a RESTful API tha" +
+      "t enables you to manage organizations, u" +
+      "sers, and authentication settings. All r" +
+      "equests must use HTTPS.\nAll API requests" +
+      " use the following base URLs:\n\n```\nhttps" +
+      "://{environment}.scalekit.dev (Developme" +
+      "nt)\nhttps://{environment}.scalekit.com (" +
+      "Production)\nhttps://auth.example.com (Cu" +
+      "stom domain)\n```\n\nScalekit operates two " +
+      "separate environments: Development and P" +
+      "roduction. Resources cannot be moved bet" +
+      "ween environments.\n\n# Authentication\n\nTh" +
+      "e Scalekit API uses OAuth 2.0 Client Cre" +
+      "dentials for authentication.\n\nCopy your " +
+      "API credentials from the Scalekit dashbo" +
+      "ard\'s API Config section and set them as" +
+      " environment variables.\n\n```sh\nSCALEKIT_" +
+      "ENVIRONMENT_URL=\'<YOUR_ENVIRONMENT_URL>\'" +
+      "\nSCALEKIT_CLIENT_ID=\'<ENVIRONMENT_CLIENT" +
+      "_ID>\'\nSCALEKIT_CLIENT_SECRET=\'<ENVIRONME" +
+      "NT_CLIENT_SECRET>\'\n```\n\nGetting an acces" +
+      "s token\n\n1. Get your credentials from th" +
+      "e [Scalekit Dashboard](https://app.scale" +
+      "kit.com)\n2. Request an access token:\n\n``" +
+      "`sh\ncurl https://{SCALEKIT_ENVIRONMENT_U" +
+      "RL}/oauth/token \\\n  -X POST \\\n  -H \'Cont" +
+      "ent-Type: application/x-www-form-urlenco" +
+      "ded\' \\\n  -d \'client_id={client_id}\' \\\n  " +
+      "-d \'client_secret={client_secret}\' \\\n  -" +
+      "d \'grant_type=client_credentials\'\n```\n\n3" +
+      ". Use the access token in API requests:\n" +
+      "\n```sh\ncurl https://{SCALEKIT_ENVIRONMEN" +
+      "T_URL}/api/v1/organizations \\\n  -H \'Cont" +
+      "ent-Type: application/json\' \\\n  -H \'Auth" +
+      "orization: Bearer {access_token}\'\n```\n\nT" +
+      "he response includes an access token:\n\n`" +
+      "``json\n{\n\t\"access_token\": \"eyJhbGciOiJSU" +
+      "zI1NiIsImtpZCI6InNua181Ok4OTEyMjU2NiIsIn" +
+      "R5cCI6IkpXVCJ9...\",\n\t\"token_type\": \"Bear" +
+      "er\",\n\t\"expires_in\": 86399,\n\t\"scope\": \"op" +
+      "enid\"\n}\n```\n\n# SDKs\n\nScalekit provides o" +
+      "fficial SDKs for multiple programming la" +
+      "nguages. Check the changelog at GitHub r" +
+      "epositories for the latest updates.\n\n###" +
+      " Node.js\n\n```sh\nnpm install @scalekit-sd" +
+      "k/node\n```\n\nCreate a new Scalekit client" +
+      " instance after initializing the environ" +
+      "ment variables\n\n```js\nimport { Scalekit " +
+      "} from \"@scalekit-sdk/node\";\n\nexport let" +
+      " scalekit = new Scalekit(\n\tprocess.env.S" +
+      "CALEKIT_ENVIRONMENT_URL,\n\tprocess.env.SC" +
+      "ALEKIT_CLIENT_ID,\n\tprocess.env.SCALEKIT_" +
+      "CLIENT_SECRET\n);\n```\n\n[See the Node SDK " +
+      "changelog](https://github.com/scalekit-i" +
+      "nc/scalekit-sdk-node/releases)\n\n### Pyth" +
+      "on\n\n```sh\npip install scalekit-sdk-pytho" +
+      "n\n```\n\nCreate a new Scalekit client inst" +
+      "ance after initializing the environment " +
+      "variables.\n\n```py\nfrom scalekit import S" +
+      "calekitClient\nimport os\n\nscalekit_client" +
+      " = ScalekitClient(\n    os.environ.get(\'S" +
+      "CALEKIT_ENVIRONMENT_URL\'),\n    os.enviro" +
+      "n.get(\'SCALEKIT_CLIENT_ID\'),\n    os.envi" +
+      "ron.get(\'SCALEKIT_CLIENT_SECRET\')\n)\n```\n" +
+      "\n[See the Python SDK changelog](https://" +
+      "github.com/scalekit-inc/scalekit-sdk-pyt" +
+      "hon/releases)\n\n### Go\n\n```sh\ngo get -u g" +
+      "ithub.com/scalekit-inc/scalekit-sdk-go\n`" +
+      "``\n\nCreate a new Scalekit client instanc" +
+      "e after initializing the environment var" +
+      "iables.\n\n```go\npackage main\n\nimport (\n  " +
+      "  \"os\"\n    \"github.com/scalekit-inc/scal" +
+      "ekit-sdk-go\"\n)\n\nscalekitClient := scalek" +
+      "it.NewScalekitClient(\n    os.Getenv(\"SCA" +
+      "LEKIT_ENVIRONMENT_URL\"),\n    os.Getenv(\"" +
+      "SCALEKIT_CLIENT_ID\"),\n    os.Getenv(\"SCA" +
+      "LEKIT_CLIENT_SECRET\"),\n)\n```\n\n[See the G" +
+      "o SDK changelog](https://github.com/scal" +
+      "ekit-inc/scalekit-sdk-go/releases)\n\n### " +
+      "Java\n\n```gradle\n/* Gradle users - add th" +
+      "e following to your dependencies in buil" +
+      "d file */\nimplementation \"com.scalekit:s" +
+      "calekit-sdk-java:2.0.6\"\n```\n\n```xml\n<!--" +
+      " Maven users - add the following to your" +
+      " `pom.xml` -->\n<dependency>\n    <groupId" +
+      ">com.scalekit</groupId>\n    <artifactId>" +
+      "scalekit-sdk-java</artifactId>\n    <vers" +
+      "ion>2.0.6</version>\n</dependency>\n```\n\n[" +
+      "See the Java SDK changelog](https://gith" +
+      "ub.com/scalekit-inc/scalekit-sdk-java/re" +
+      "leases)\n\n# Error handling\n\nThe API uses " +
+      "standard HTTP status codes:\n\n| Code     " +
+      "   | Description          |\n| ----------" +
+      "- | -------------------- |\n| 200/201    " +
+      " | Success              |\n| 400         " +
+      "| Invalid request      |\n| 401         |" +
+      " Authentication error |\n| 404         | " +
+      "Resource not found   |\n| 429         | R" +
+      "ate limit exceeded  |\n| 500/501/504 | Se" +
+      "rver error         |\n\nError responses in" +
+      "clude detailed information:\n\n```json\n{\n\t" +
+      "\"code\": 16,\n\t\"message\": \"Token empty\",\n\t" +
+      "\"details\": [\n\t\t{\n\t\t\t\"@type\": \"type.googl" +
+      "eapis.com/scalekit.v1.errdetails.ErrorIn" +
+      "fo\",\n\t\t\t\"error_code\": \"UNAUTHENTICATED\"\n" +
+      "\t\t}\n\t]\n}\n```\n\n\":\n\014Scalekit Inc\022\024https://" +
+      "scalekit.com\032\024support@scalekit.com*8\n\nAp" +
+      "ache 2.0\022*http://www.apache.org/licenses" +
+      "/LICENSE-2.02\0051.0.0\032\031$SCALEKIT_ENVIRONME" +
+      "NT_URL*\001\0022\020application/json:\020application" +
+      "/jsonj\017\n\rOrganizationsj\324\003\n\013Permissions\022\304" +
+      "\003Permission management for defining and " +
+      "controlling access to system resources. " +
+      "Create, retrieve, update, and delete gra" +
+      "nular permissions that represent specifi" +
+      "c actions users can perform. Permissions" +
+      " are the building blocks of role-based a" +
+      "ccess control (RBAC) and can be assigned" +
+      " to roles to grant users the ability to " +
+      "perform specific operations. Use this se" +
+      "rvice to define custom permissions for y" +
+      "our application\'s unique access control " +
+      "requirements.r+\n\rScalekit Docs\022\032https://" +
+      "docs.scalekit.com/b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

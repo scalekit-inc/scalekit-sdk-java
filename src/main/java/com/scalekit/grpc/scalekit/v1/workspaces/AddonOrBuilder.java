@@ -33,18 +33,6 @@ public interface AddonOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>string description = 3 [json_name = "description"];</code>
-   * @return The description.
-   */
-  java.lang.String getDescription();
-  /**
-   * <code>string description = 3 [json_name = "description"];</code>
-   * @return The bytes for description.
-   */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
-
-  /**
    * <code>repeated string features = 4 [json_name = "features"];</code>
    * @return A list containing the features.
    */

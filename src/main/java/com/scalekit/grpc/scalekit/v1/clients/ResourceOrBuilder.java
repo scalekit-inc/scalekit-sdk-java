@@ -222,4 +222,16 @@ public interface ResourceOrBuilder extends
    * @return The disallowConnectionUpdate.
    */
   boolean getDisallowConnectionUpdate();
+
+  /**
+   * <code>bool intersect_scopes_user_permission = 19 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The intersectScopesUserPermission.
+   */
+  boolean getIntersectScopesUserPermission();
+
+  /**
+   * <code>bool enable_cimd = 20 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enableCimd.
+   */
+  boolean getEnableCimd();
 }

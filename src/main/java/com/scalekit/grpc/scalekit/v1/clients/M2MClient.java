@@ -30,6 +30,7 @@ private static final long serialVersionUID = 0L;
     resourceId_ = "";
     redirectUris_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+    metadataUri_ = "";
   }
 
   @java.lang.Override
@@ -515,6 +516,56 @@ private static final long serialVersionUID = 0L;
     return isDcr_;
   }
 
+  public static final int IS_CIMD_FIELD_NUMBER = 16;
+  private boolean isCimd_ = false;
+  /**
+   * <code>bool is_cimd = 16 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isCimd.
+   */
+  @java.lang.Override
+  public boolean getIsCimd() {
+    return isCimd_;
+  }
+
+  public static final int METADATA_URI_FIELD_NUMBER = 17;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metadataUri_ = "";
+  /**
+   * <code>string metadata_uri = 17 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The metadataUri.
+   */
+  @java.lang.Override
+  public java.lang.String getMetadataUri() {
+    java.lang.Object ref = metadataUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      metadataUri_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string metadata_uri = 17 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for metadataUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMetadataUriBytes() {
+    java.lang.Object ref = metadataUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      metadataUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -570,6 +621,12 @@ private static final long serialVersionUID = 0L;
     }
     if (isDcr_ != false) {
       output.writeBool(15, isDcr_);
+    }
+    if (isCimd_ != false) {
+      output.writeBool(16, isCimd_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, metadataUri_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -643,6 +700,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(15, isDcr_);
     }
+    if (isCimd_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(16, isCimd_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, metadataUri_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -692,6 +756,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getRedirectUrisList())) return false;
     if (getIsDcr()
         != other.getIsDcr()) return false;
+    if (getIsCimd()
+        != other.getIsCimd()) return false;
+    if (!getMetadataUri()
+        .equals(other.getMetadataUri())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -747,6 +815,11 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IS_DCR_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsDcr());
+    hash = (37 * hash) + IS_CIMD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsCimd());
+    hash = (37 * hash) + METADATA_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getMetadataUri().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -924,6 +997,8 @@ private static final long serialVersionUID = 0L;
       redirectUris_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
       isDcr_ = false;
+      isCimd_ = false;
+      metadataUri_ = "";
       return this;
     }
 
@@ -1024,6 +1099,12 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.isDcr_ = isDcr_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.isCimd_ = isCimd_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.metadataUri_ = metadataUri_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1191,6 +1272,14 @@ private static final long serialVersionUID = 0L;
       if (other.getIsDcr() != false) {
         setIsDcr(other.getIsDcr());
       }
+      if (other.getIsCimd() != false) {
+        setIsCimd(other.getIsCimd());
+      }
+      if (!other.getMetadataUri().isEmpty()) {
+        metadataUri_ = other.metadataUri_;
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1310,6 +1399,16 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00002000;
               break;
             } // case 120
+            case 128: {
+              isCimd_ = input.readBool();
+              bitField0_ |= 0x00004000;
+              break;
+            } // case 128
+            case 138: {
+              metadataUri_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00008000;
+              break;
+            } // case 138
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2802,6 +2901,110 @@ private static final long serialVersionUID = 0L;
     public Builder clearIsDcr() {
       bitField0_ = (bitField0_ & ~0x00002000);
       isDcr_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean isCimd_ ;
+    /**
+     * <code>bool is_cimd = 16 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The isCimd.
+     */
+    @java.lang.Override
+    public boolean getIsCimd() {
+      return isCimd_;
+    }
+    /**
+     * <code>bool is_cimd = 16 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The isCimd to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsCimd(boolean value) {
+
+      isCimd_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_cimd = 16 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsCimd() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      isCimd_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object metadataUri_ = "";
+    /**
+     * <code>string metadata_uri = 17 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The metadataUri.
+     */
+    public java.lang.String getMetadataUri() {
+      java.lang.Object ref = metadataUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metadataUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string metadata_uri = 17 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for metadataUri.
+     */
+    public com.google.protobuf.ByteString
+        getMetadataUriBytes() {
+      java.lang.Object ref = metadataUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        metadataUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string metadata_uri = 17 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The metadataUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetadataUri(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      metadataUri_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string metadata_uri = 17 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMetadataUri() {
+      metadataUri_ = getDefaultInstance().getMetadataUri();
+      bitField0_ = (bitField0_ & ~0x00008000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string metadata_uri = 17 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for metadataUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetadataUriBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      metadataUri_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }

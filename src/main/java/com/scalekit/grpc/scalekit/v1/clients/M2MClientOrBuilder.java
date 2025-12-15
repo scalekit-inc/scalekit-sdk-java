@@ -232,4 +232,22 @@ public interface M2MClientOrBuilder extends
    * @return The isDcr.
    */
   boolean getIsDcr();
+
+  /**
+   * <code>bool is_cimd = 16 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isCimd.
+   */
+  boolean getIsCimd();
+
+  /**
+   * <code>string metadata_uri = 17 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The metadataUri.
+   */
+  java.lang.String getMetadataUri();
+  /**
+   * <code>string metadata_uri = 17 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for metadataUri.
+   */
+  com.google.protobuf.ByteString
+      getMetadataUriBytes();
 }

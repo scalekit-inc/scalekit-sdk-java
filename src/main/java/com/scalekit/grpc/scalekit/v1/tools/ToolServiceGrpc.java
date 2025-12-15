@@ -323,6 +323,9 @@ public final class ToolServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Execute Tool
+     * </pre>
      */
     default void executeTool(com.scalekit.grpc.scalekit.v1.tools.ExecuteToolRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.ExecuteToolResponse> responseObserver) {
@@ -406,6 +409,9 @@ public final class ToolServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Execute Tool
+     * </pre>
      */
     public void executeTool(com.scalekit.grpc.scalekit.v1.tools.ExecuteToolRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.ExecuteToolResponse> responseObserver) {
@@ -473,6 +479,9 @@ public final class ToolServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Execute Tool
+     * </pre>
      */
     public com.scalekit.grpc.scalekit.v1.tools.ExecuteToolResponse executeTool(com.scalekit.grpc.scalekit.v1.tools.ExecuteToolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -545,6 +554,9 @@ public final class ToolServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Execute Tool
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.tools.ExecuteToolResponse> executeTool(
         com.scalekit.grpc.scalekit.v1.tools.ExecuteToolRequest request) {

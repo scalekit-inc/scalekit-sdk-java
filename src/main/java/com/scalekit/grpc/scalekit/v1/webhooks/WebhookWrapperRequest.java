@@ -43,7 +43,7 @@ private static final long serialVersionUID = 0L;
   public static final int REQUEST_BODY_FIELD_NUMBER = 1;
   private com.google.protobuf.Struct requestBody_;
   /**
-   * <code>.google.protobuf.Struct request_body = 1 [json_name = "requestBody"];</code>
+   * <code>optional .google.protobuf.Struct request_body = 1 [json_name = "requestBody", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the requestBody field is set.
    */
   @java.lang.Override
@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.protobuf.Struct request_body = 1 [json_name = "requestBody"];</code>
+   * <code>optional .google.protobuf.Struct request_body = 1 [json_name = "requestBody", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The requestBody.
    */
   @java.lang.Override
@@ -59,7 +59,7 @@ private static final long serialVersionUID = 0L;
     return requestBody_ == null ? com.google.protobuf.Struct.getDefaultInstance() : requestBody_;
   }
   /**
-   * <code>.google.protobuf.Struct request_body = 1 [json_name = "requestBody"];</code>
+   * <code>optional .google.protobuf.Struct request_body = 1 [json_name = "requestBody", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getRequestBodyOrBuilder() {
@@ -417,14 +417,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> requestBodyBuilder_;
     /**
-     * <code>.google.protobuf.Struct request_body = 1 [json_name = "requestBody"];</code>
+     * <code>optional .google.protobuf.Struct request_body = 1 [json_name = "requestBody", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the requestBody field is set.
      */
     public boolean hasRequestBody() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.google.protobuf.Struct request_body = 1 [json_name = "requestBody"];</code>
+     * <code>optional .google.protobuf.Struct request_body = 1 [json_name = "requestBody", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The requestBody.
      */
     public com.google.protobuf.Struct getRequestBody() {
@@ -435,7 +435,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Struct request_body = 1 [json_name = "requestBody"];</code>
+     * <code>optional .google.protobuf.Struct request_body = 1 [json_name = "requestBody", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setRequestBody(com.google.protobuf.Struct value) {
       if (requestBodyBuilder_ == null) {
@@ -451,7 +451,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Struct request_body = 1 [json_name = "requestBody"];</code>
+     * <code>optional .google.protobuf.Struct request_body = 1 [json_name = "requestBody", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setRequestBody(
         com.google.protobuf.Struct.Builder builderForValue) {
@@ -465,7 +465,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Struct request_body = 1 [json_name = "requestBody"];</code>
+     * <code>optional .google.protobuf.Struct request_body = 1 [json_name = "requestBody", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeRequestBody(com.google.protobuf.Struct value) {
       if (requestBodyBuilder_ == null) {
@@ -486,7 +486,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Struct request_body = 1 [json_name = "requestBody"];</code>
+     * <code>optional .google.protobuf.Struct request_body = 1 [json_name = "requestBody", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearRequestBody() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -499,7 +499,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Struct request_body = 1 [json_name = "requestBody"];</code>
+     * <code>optional .google.protobuf.Struct request_body = 1 [json_name = "requestBody", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Struct.Builder getRequestBodyBuilder() {
       bitField0_ |= 0x00000001;
@@ -507,7 +507,7 @@ private static final long serialVersionUID = 0L;
       return getRequestBodyFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Struct request_body = 1 [json_name = "requestBody"];</code>
+     * <code>optional .google.protobuf.Struct request_body = 1 [json_name = "requestBody", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.StructOrBuilder getRequestBodyOrBuilder() {
       if (requestBodyBuilder_ != null) {
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Struct request_body = 1 [json_name = "requestBody"];</code>
+     * <code>optional .google.protobuf.Struct request_body = 1 [json_name = "requestBody", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 

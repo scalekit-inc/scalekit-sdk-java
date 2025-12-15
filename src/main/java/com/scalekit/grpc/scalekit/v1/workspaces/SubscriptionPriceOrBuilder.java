@@ -21,10 +21,10 @@ public interface SubscriptionPriceOrBuilder extends
       getIdBytes();
 
   /**
-   * <code>int64 amount = 2 [json_name = "amount"];</code>
+   * <code>double amount = 2 [json_name = "amount"];</code>
    * @return The amount.
    */
-  long getAmount();
+  double getAmount();
 
   /**
    * <pre>

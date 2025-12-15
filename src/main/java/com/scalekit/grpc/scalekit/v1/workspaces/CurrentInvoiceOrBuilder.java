@@ -78,4 +78,58 @@ public interface CurrentInvoiceOrBuilder extends
    * <code>.google.protobuf.Timestamp issued_date = 6 [json_name = "issuedDate"];</code>
    */
   com.google.protobuf.TimestampOrBuilder getIssuedDateOrBuilder();
+
+  /**
+   * <pre>
+   * Start of the current billing period
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp billing_start_date = 7 [json_name = "billingStartDate"];</code>
+   * @return Whether the billingStartDate field is set.
+   */
+  boolean hasBillingStartDate();
+  /**
+   * <pre>
+   * Start of the current billing period
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp billing_start_date = 7 [json_name = "billingStartDate"];</code>
+   * @return The billingStartDate.
+   */
+  com.google.protobuf.Timestamp getBillingStartDate();
+  /**
+   * <pre>
+   * Start of the current billing period
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp billing_start_date = 7 [json_name = "billingStartDate"];</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getBillingStartDateOrBuilder();
+
+  /**
+   * <pre>
+   * End of the current billing period
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp billing_end_date = 8 [json_name = "billingEndDate"];</code>
+   * @return Whether the billingEndDate field is set.
+   */
+  boolean hasBillingEndDate();
+  /**
+   * <pre>
+   * End of the current billing period
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp billing_end_date = 8 [json_name = "billingEndDate"];</code>
+   * @return The billingEndDate.
+   */
+  com.google.protobuf.Timestamp getBillingEndDate();
+  /**
+   * <pre>
+   * End of the current billing period
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp billing_end_date = 8 [json_name = "billingEndDate"];</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getBillingEndDateOrBuilder();
 }

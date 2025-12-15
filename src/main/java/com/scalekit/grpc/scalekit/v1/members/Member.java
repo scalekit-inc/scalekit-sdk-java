@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     externalId_ = "";
     workspaceIds_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+    activeWorkspaceExternalId_ = "";
   }
 
   @java.lang.Override
@@ -565,6 +566,53 @@ java.lang.String defaultValue) {
     return workspaceIds_.getByteString(index);
   }
 
+  public static final int ACTIVE_WORKSPACE_EXTERNAL_ID_FIELD_NUMBER = 14;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object activeWorkspaceExternalId_ = "";
+  /**
+   * <code>optional string active_workspace_external_id = 14 [json_name = "activeWorkspaceExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the activeWorkspaceExternalId field is set.
+   */
+  @java.lang.Override
+  public boolean hasActiveWorkspaceExternalId() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   * <code>optional string active_workspace_external_id = 14 [json_name = "activeWorkspaceExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The activeWorkspaceExternalId.
+   */
+  @java.lang.Override
+  public java.lang.String getActiveWorkspaceExternalId() {
+    java.lang.Object ref = activeWorkspaceExternalId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      activeWorkspaceExternalId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string active_workspace_external_id = 14 [json_name = "activeWorkspaceExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for activeWorkspaceExternalId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getActiveWorkspaceExternalIdBytes() {
+    java.lang.Object ref = activeWorkspaceExternalId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      activeWorkspaceExternalId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -620,6 +668,9 @@ java.lang.String defaultValue) {
     }
     for (int i = 0; i < workspaceIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, workspaceIds_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, activeWorkspaceExternalId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -686,6 +737,9 @@ java.lang.String defaultValue) {
       size += dataSize;
       size += 1 * getWorkspaceIdsList().size();
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, activeWorkspaceExternalId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -741,6 +795,11 @@ java.lang.String defaultValue) {
         .equals(other.getExternalId())) return false;
     if (!getWorkspaceIdsList()
         .equals(other.getWorkspaceIdsList())) return false;
+    if (hasActiveWorkspaceExternalId() != other.hasActiveWorkspaceExternalId()) return false;
+    if (hasActiveWorkspaceExternalId()) {
+      if (!getActiveWorkspaceExternalId()
+          .equals(other.getActiveWorkspaceExternalId())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -793,6 +852,10 @@ java.lang.String defaultValue) {
     if (getWorkspaceIdsCount() > 0) {
       hash = (37 * hash) + WORKSPACE_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getWorkspaceIdsList().hashCode();
+    }
+    if (hasActiveWorkspaceExternalId()) {
+      hash = (37 * hash) + ACTIVE_WORKSPACE_EXTERNAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getActiveWorkspaceExternalId().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -988,6 +1051,7 @@ java.lang.String defaultValue) {
       externalId_ = "";
       workspaceIds_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+      activeWorkspaceExternalId_ = "";
       return this;
     }
 
@@ -1083,6 +1147,10 @@ java.lang.String defaultValue) {
       if (((from_bitField0_ & 0x00001000) != 0)) {
         workspaceIds_.makeImmutable();
         result.workspaceIds_ = workspaceIds_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.activeWorkspaceExternalId_ = activeWorkspaceExternalId_;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1212,6 +1280,11 @@ java.lang.String defaultValue) {
         }
         onChanged();
       }
+      if (other.hasActiveWorkspaceExternalId()) {
+        activeWorkspaceExternalId_ = other.activeWorkspaceExternalId_;
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1322,6 +1395,11 @@ java.lang.String defaultValue) {
               workspaceIds_.add(s);
               break;
             } // case 106
+            case 114: {
+              activeWorkspaceExternalId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00002000;
+              break;
+            } // case 114
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2675,6 +2753,85 @@ java.lang.String defaultValue) {
       ensureWorkspaceIdsIsMutable();
       workspaceIds_.add(value);
       bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object activeWorkspaceExternalId_ = "";
+    /**
+     * <code>optional string active_workspace_external_id = 14 [json_name = "activeWorkspaceExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the activeWorkspaceExternalId field is set.
+     */
+    public boolean hasActiveWorkspaceExternalId() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     * <code>optional string active_workspace_external_id = 14 [json_name = "activeWorkspaceExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The activeWorkspaceExternalId.
+     */
+    public java.lang.String getActiveWorkspaceExternalId() {
+      java.lang.Object ref = activeWorkspaceExternalId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        activeWorkspaceExternalId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string active_workspace_external_id = 14 [json_name = "activeWorkspaceExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for activeWorkspaceExternalId.
+     */
+    public com.google.protobuf.ByteString
+        getActiveWorkspaceExternalIdBytes() {
+      java.lang.Object ref = activeWorkspaceExternalId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        activeWorkspaceExternalId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string active_workspace_external_id = 14 [json_name = "activeWorkspaceExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The activeWorkspaceExternalId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActiveWorkspaceExternalId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      activeWorkspaceExternalId_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string active_workspace_external_id = 14 [json_name = "activeWorkspaceExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearActiveWorkspaceExternalId() {
+      activeWorkspaceExternalId_ = getDefaultInstance().getActiveWorkspaceExternalId();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string active_workspace_external_id = 14 [json_name = "activeWorkspaceExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for activeWorkspaceExternalId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActiveWorkspaceExternalIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      activeWorkspaceExternalId_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

@@ -9,17 +9,17 @@ public interface GetConnectedAccountByIdentifierResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount"];</code>
+   * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the connectedAccount field is set.
    */
   boolean hasConnectedAccount();
   /**
-   * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount"];</code>
+   * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connectedAccount.
    */
   com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccount getConnectedAccount();
   /**
-   * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount"];</code>
+   * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountOrBuilder getConnectedAccountOrBuilder();
 }

@@ -157,14 +157,14 @@ java.lang.String defaultValue);
   /**
    * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
-   *     See scalekit/v1/commons/commons.proto;l=195
+   *     See scalekit/v1/commons/commons.proto;l=197
    * @return The firstName.
    */
   @java.lang.Deprecated java.lang.String getFirstName();
   /**
    * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
-   *     See scalekit/v1/commons/commons.proto;l=195
+   *     See scalekit/v1/commons/commons.proto;l=197
    * @return The bytes for firstName.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -173,14 +173,14 @@ java.lang.String defaultValue);
   /**
    * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
-   *     See scalekit/v1/commons/commons.proto;l=204
+   *     See scalekit/v1/commons/commons.proto;l=206
    * @return The lastName.
    */
   @java.lang.Deprecated java.lang.String getLastName();
   /**
    * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
-   *     See scalekit/v1/commons/commons.proto;l=204
+   *     See scalekit/v1/commons/commons.proto;l=206
    * @return The bytes for lastName.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -252,4 +252,28 @@ java.lang.String defaultValue);
    */
   com.google.protobuf.ByteString
       getGenderBytes();
+
+  /**
+   * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity> 
+      getExternalIdentitiesList();
+  /**
+   * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity getExternalIdentities(int index);
+  /**
+   * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  int getExternalIdentitiesCount();
+  /**
+   * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<? extends com.scalekit.grpc.scalekit.v1.commons.ExternalIdentityOrBuilder> 
+      getExternalIdentitiesOrBuilderList();
+  /**
+   * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.commons.ExternalIdentityOrBuilder getExternalIdentitiesOrBuilder(
+      int index);
 }

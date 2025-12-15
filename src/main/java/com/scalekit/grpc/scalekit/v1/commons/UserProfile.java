@@ -30,6 +30,7 @@ private static final long serialVersionUID = 0L;
     groups_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     gender_ = "";
+    externalIdentities_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -475,7 +476,7 @@ java.lang.String defaultValue) {
   /**
    * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
-   *     See scalekit/v1/commons/commons.proto;l=195
+   *     See scalekit/v1/commons/commons.proto;l=197
    * @return The firstName.
    */
   @java.lang.Override
@@ -494,7 +495,7 @@ java.lang.String defaultValue) {
   /**
    * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
-   *     See scalekit/v1/commons/commons.proto;l=195
+   *     See scalekit/v1/commons/commons.proto;l=197
    * @return The bytes for firstName.
    */
   @java.lang.Override
@@ -518,7 +519,7 @@ java.lang.String defaultValue) {
   /**
    * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
-   *     See scalekit/v1/commons/commons.proto;l=204
+   *     See scalekit/v1/commons/commons.proto;l=206
    * @return The lastName.
    */
   @java.lang.Override
@@ -537,7 +538,7 @@ java.lang.String defaultValue) {
   /**
    * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
-   *     See scalekit/v1/commons/commons.proto;l=204
+   *     See scalekit/v1/commons/commons.proto;l=206
    * @return The bytes for lastName.
    */
   @java.lang.Override
@@ -720,6 +721,47 @@ java.lang.String defaultValue) {
     }
   }
 
+  public static final int EXTERNAL_IDENTITIES_FIELD_NUMBER = 10;
+  @SuppressWarnings("serial")
+  private java.util.List<com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity> externalIdentities_;
+  /**
+   * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity> getExternalIdentitiesList() {
+    return externalIdentities_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.scalekit.grpc.scalekit.v1.commons.ExternalIdentityOrBuilder> 
+      getExternalIdentitiesOrBuilderList() {
+    return externalIdentities_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public int getExternalIdentitiesCount() {
+    return externalIdentities_.size();
+  }
+  /**
+   * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity getExternalIdentities(int index) {
+    return externalIdentities_.get(index);
+  }
+  /**
+   * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.commons.ExternalIdentityOrBuilder getExternalIdentitiesOrBuilder(
+      int index) {
+    return externalIdentities_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -767,6 +809,9 @@ java.lang.String defaultValue) {
         internalGetCustomAttributes(),
         CustomAttributesDefaultEntryHolder.defaultEntry,
         9);
+    for (int i = 0; i < externalIdentities_.size(); i++) {
+      output.writeMessage(10, externalIdentities_.get(i));
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preferredUsername_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, preferredUsername_);
     }
@@ -838,6 +883,10 @@ java.lang.String defaultValue) {
           .build();
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, customAttributes__);
+    }
+    for (int i = 0; i < externalIdentities_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, externalIdentities_.get(i));
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preferredUsername_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, preferredUsername_);
@@ -913,6 +962,8 @@ java.lang.String defaultValue) {
         .equals(other.getGroupsList())) return false;
     if (!getGender()
         .equals(other.getGender())) return false;
+    if (!getExternalIdentitiesList()
+        .equals(other.getExternalIdentitiesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -964,6 +1015,10 @@ java.lang.String defaultValue) {
     }
     hash = (37 * hash) + GENDER_FIELD_NUMBER;
     hash = (53 * hash) + getGender().hashCode();
+    if (getExternalIdentitiesCount() > 0) {
+      hash = (37 * hash) + EXTERNAL_IDENTITIES_FIELD_NUMBER;
+      hash = (53 * hash) + getExternalIdentitiesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1138,6 +1193,13 @@ java.lang.String defaultValue) {
       groups_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
       gender_ = "";
+      if (externalIdentitiesBuilder_ == null) {
+        externalIdentities_ = java.util.Collections.emptyList();
+      } else {
+        externalIdentities_ = null;
+        externalIdentitiesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00010000);
       return this;
     }
 
@@ -1164,9 +1226,22 @@ java.lang.String defaultValue) {
     @java.lang.Override
     public com.scalekit.grpc.scalekit.v1.commons.UserProfile buildPartial() {
       com.scalekit.grpc.scalekit.v1.commons.UserProfile result = new com.scalekit.grpc.scalekit.v1.commons.UserProfile(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.commons.UserProfile result) {
+      if (externalIdentitiesBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)) {
+          externalIdentities_ = java.util.Collections.unmodifiableList(externalIdentities_);
+          bitField0_ = (bitField0_ & ~0x00010000);
+        }
+        result.externalIdentities_ = externalIdentities_;
+      } else {
+        result.externalIdentities_ = externalIdentitiesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.commons.UserProfile result) {
@@ -1345,6 +1420,32 @@ java.lang.String defaultValue) {
         bitField0_ |= 0x00008000;
         onChanged();
       }
+      if (externalIdentitiesBuilder_ == null) {
+        if (!other.externalIdentities_.isEmpty()) {
+          if (externalIdentities_.isEmpty()) {
+            externalIdentities_ = other.externalIdentities_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+          } else {
+            ensureExternalIdentitiesIsMutable();
+            externalIdentities_.addAll(other.externalIdentities_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.externalIdentities_.isEmpty()) {
+          if (externalIdentitiesBuilder_.isEmpty()) {
+            externalIdentitiesBuilder_.dispose();
+            externalIdentitiesBuilder_ = null;
+            externalIdentities_ = other.externalIdentities_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+            externalIdentitiesBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getExternalIdentitiesFieldBuilder() : null;
+          } else {
+            externalIdentitiesBuilder_.addAllMessages(other.externalIdentities_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1424,6 +1525,19 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000100;
               break;
             } // case 74
+            case 82: {
+              com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity m =
+                  input.readMessage(
+                      com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity.parser(),
+                      extensionRegistry);
+              if (externalIdentitiesBuilder_ == null) {
+                ensureExternalIdentitiesIsMutable();
+                externalIdentities_.add(m);
+              } else {
+                externalIdentitiesBuilder_.addMessage(m);
+              }
+              break;
+            } // case 82
             case 98: {
               preferredUsername_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000800;
@@ -2199,7 +2313,7 @@ java.lang.String defaultValue) {
     /**
      * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
-     *     See scalekit/v1/commons/commons.proto;l=195
+     *     See scalekit/v1/commons/commons.proto;l=197
      * @return The firstName.
      */
     @java.lang.Deprecated public java.lang.String getFirstName() {
@@ -2217,7 +2331,7 @@ java.lang.String defaultValue) {
     /**
      * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
-     *     See scalekit/v1/commons/commons.proto;l=195
+     *     See scalekit/v1/commons/commons.proto;l=197
      * @return The bytes for firstName.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2236,7 +2350,7 @@ java.lang.String defaultValue) {
     /**
      * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
-     *     See scalekit/v1/commons/commons.proto;l=195
+     *     See scalekit/v1/commons/commons.proto;l=197
      * @param value The firstName to set.
      * @return This builder for chaining.
      */
@@ -2251,7 +2365,7 @@ java.lang.String defaultValue) {
     /**
      * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
-     *     See scalekit/v1/commons/commons.proto;l=195
+     *     See scalekit/v1/commons/commons.proto;l=197
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearFirstName() {
@@ -2263,7 +2377,7 @@ java.lang.String defaultValue) {
     /**
      * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.commons.UserProfile.first_name is deprecated.
-     *     See scalekit/v1/commons/commons.proto;l=195
+     *     See scalekit/v1/commons/commons.proto;l=197
      * @param value The bytes for firstName to set.
      * @return This builder for chaining.
      */
@@ -2281,7 +2395,7 @@ java.lang.String defaultValue) {
     /**
      * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
-     *     See scalekit/v1/commons/commons.proto;l=204
+     *     See scalekit/v1/commons/commons.proto;l=206
      * @return The lastName.
      */
     @java.lang.Deprecated public java.lang.String getLastName() {
@@ -2299,7 +2413,7 @@ java.lang.String defaultValue) {
     /**
      * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
-     *     See scalekit/v1/commons/commons.proto;l=204
+     *     See scalekit/v1/commons/commons.proto;l=206
      * @return The bytes for lastName.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2318,7 +2432,7 @@ java.lang.String defaultValue) {
     /**
      * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
-     *     See scalekit/v1/commons/commons.proto;l=204
+     *     See scalekit/v1/commons/commons.proto;l=206
      * @param value The lastName to set.
      * @return This builder for chaining.
      */
@@ -2333,7 +2447,7 @@ java.lang.String defaultValue) {
     /**
      * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
-     *     See scalekit/v1/commons/commons.proto;l=204
+     *     See scalekit/v1/commons/commons.proto;l=206
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearLastName() {
@@ -2345,7 +2459,7 @@ java.lang.String defaultValue) {
     /**
      * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.commons.UserProfile.last_name is deprecated.
-     *     See scalekit/v1/commons/commons.proto;l=204
+     *     See scalekit/v1/commons/commons.proto;l=206
      * @param value The bytes for lastName to set.
      * @return This builder for chaining.
      */
@@ -2716,6 +2830,246 @@ java.lang.String defaultValue) {
       bitField0_ |= 0x00008000;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity> externalIdentities_ =
+      java.util.Collections.emptyList();
+    private void ensureExternalIdentitiesIsMutable() {
+      if (!((bitField0_ & 0x00010000) != 0)) {
+        externalIdentities_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity>(externalIdentities_);
+        bitField0_ |= 0x00010000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity, com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity.Builder, com.scalekit.grpc.scalekit.v1.commons.ExternalIdentityOrBuilder> externalIdentitiesBuilder_;
+
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity> getExternalIdentitiesList() {
+      if (externalIdentitiesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(externalIdentities_);
+      } else {
+        return externalIdentitiesBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public int getExternalIdentitiesCount() {
+      if (externalIdentitiesBuilder_ == null) {
+        return externalIdentities_.size();
+      } else {
+        return externalIdentitiesBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity getExternalIdentities(int index) {
+      if (externalIdentitiesBuilder_ == null) {
+        return externalIdentities_.get(index);
+      } else {
+        return externalIdentitiesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setExternalIdentities(
+        int index, com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity value) {
+      if (externalIdentitiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExternalIdentitiesIsMutable();
+        externalIdentities_.set(index, value);
+        onChanged();
+      } else {
+        externalIdentitiesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setExternalIdentities(
+        int index, com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity.Builder builderForValue) {
+      if (externalIdentitiesBuilder_ == null) {
+        ensureExternalIdentitiesIsMutable();
+        externalIdentities_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        externalIdentitiesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addExternalIdentities(com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity value) {
+      if (externalIdentitiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExternalIdentitiesIsMutable();
+        externalIdentities_.add(value);
+        onChanged();
+      } else {
+        externalIdentitiesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addExternalIdentities(
+        int index, com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity value) {
+      if (externalIdentitiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExternalIdentitiesIsMutable();
+        externalIdentities_.add(index, value);
+        onChanged();
+      } else {
+        externalIdentitiesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addExternalIdentities(
+        com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity.Builder builderForValue) {
+      if (externalIdentitiesBuilder_ == null) {
+        ensureExternalIdentitiesIsMutable();
+        externalIdentities_.add(builderForValue.build());
+        onChanged();
+      } else {
+        externalIdentitiesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addExternalIdentities(
+        int index, com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity.Builder builderForValue) {
+      if (externalIdentitiesBuilder_ == null) {
+        ensureExternalIdentitiesIsMutable();
+        externalIdentities_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        externalIdentitiesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addAllExternalIdentities(
+        java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity> values) {
+      if (externalIdentitiesBuilder_ == null) {
+        ensureExternalIdentitiesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, externalIdentities_);
+        onChanged();
+      } else {
+        externalIdentitiesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearExternalIdentities() {
+      if (externalIdentitiesBuilder_ == null) {
+        externalIdentities_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00010000);
+        onChanged();
+      } else {
+        externalIdentitiesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder removeExternalIdentities(int index) {
+      if (externalIdentitiesBuilder_ == null) {
+        ensureExternalIdentitiesIsMutable();
+        externalIdentities_.remove(index);
+        onChanged();
+      } else {
+        externalIdentitiesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity.Builder getExternalIdentitiesBuilder(
+        int index) {
+      return getExternalIdentitiesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.commons.ExternalIdentityOrBuilder getExternalIdentitiesOrBuilder(
+        int index) {
+      if (externalIdentitiesBuilder_ == null) {
+        return externalIdentities_.get(index);  } else {
+        return externalIdentitiesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<? extends com.scalekit.grpc.scalekit.v1.commons.ExternalIdentityOrBuilder> 
+         getExternalIdentitiesOrBuilderList() {
+      if (externalIdentitiesBuilder_ != null) {
+        return externalIdentitiesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(externalIdentities_);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity.Builder addExternalIdentitiesBuilder() {
+      return getExternalIdentitiesFieldBuilder().addBuilder(
+          com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity.Builder addExternalIdentitiesBuilder(
+        int index) {
+      return getExternalIdentitiesFieldBuilder().addBuilder(
+          index, com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .scalekit.v1.commons.ExternalIdentity external_identities = 10 [json_name = "externalIdentities", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity.Builder> 
+         getExternalIdentitiesBuilderList() {
+      return getExternalIdentitiesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity, com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity.Builder, com.scalekit.grpc.scalekit.v1.commons.ExternalIdentityOrBuilder> 
+        getExternalIdentitiesFieldBuilder() {
+      if (externalIdentitiesBuilder_ == null) {
+        externalIdentitiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity, com.scalekit.grpc.scalekit.v1.commons.ExternalIdentity.Builder, com.scalekit.grpc.scalekit.v1.commons.ExternalIdentityOrBuilder>(
+                externalIdentities_,
+                ((bitField0_ & 0x00010000) != 0),
+                getParentForChildren(),
+                isClean());
+        externalIdentities_ = null;
+      }
+      return externalIdentitiesBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

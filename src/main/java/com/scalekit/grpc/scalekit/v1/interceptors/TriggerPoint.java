@@ -33,6 +33,10 @@ public enum TriggerPoint
    * <code>PRE_M2M_TOKEN_CREATION = 5;</code>
    */
   PRE_M2M_TOKEN_CREATION(5),
+  /**
+   * <code>ACCESS_TOKEN_CREATION = 6;</code>
+   */
+  ACCESS_TOKEN_CREATION(6),
   UNRECOGNIZED(-1),
   ;
 
@@ -60,6 +64,10 @@ public enum TriggerPoint
    * <code>PRE_M2M_TOKEN_CREATION = 5;</code>
    */
   public static final int PRE_M2M_TOKEN_CREATION_VALUE = 5;
+  /**
+   * <code>ACCESS_TOKEN_CREATION = 6;</code>
+   */
+  public static final int ACCESS_TOKEN_CREATION_VALUE = 6;
 
 
   public final int getNumber() {
@@ -92,6 +100,7 @@ public enum TriggerPoint
       case 3: return PRE_SESSION_CREATION;
       case 4: return PRE_USER_INVITATION;
       case 5: return PRE_M2M_TOKEN_CREATION;
+      case 6: return ACCESS_TOKEN_CREATION;
       default: return null;
     }
   }

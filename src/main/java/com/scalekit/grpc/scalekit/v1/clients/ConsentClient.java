@@ -20,6 +20,9 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     privacyUri_ = "";
     tosUri_ = "";
+    clientId_ = "";
+    metadataUri_ = "";
+    logoUri_ = "";
   }
 
   @java.lang.Override
@@ -85,7 +88,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object privacyUri_ = "";
   /**
-   * <code>string privacy_uri = 2 [json_name = "privacyUri", (.buf.validate.field) = { ... }</code>
+   * <code>string privacy_uri = 2 [json_name = "privacyUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The privacyUri.
    */
   @java.lang.Override
@@ -102,7 +105,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string privacy_uri = 2 [json_name = "privacyUri", (.buf.validate.field) = { ... }</code>
+   * <code>string privacy_uri = 2 [json_name = "privacyUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for privacyUri.
    */
   @java.lang.Override
@@ -124,7 +127,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object tosUri_ = "";
   /**
-   * <code>string tos_uri = 3 [json_name = "tosUri", (.buf.validate.field) = { ... }</code>
+   * <code>string tos_uri = 3 [json_name = "tosUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The tosUri.
    */
   @java.lang.Override
@@ -141,7 +144,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string tos_uri = 3 [json_name = "tosUri", (.buf.validate.field) = { ... }</code>
+   * <code>string tos_uri = 3 [json_name = "tosUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for tosUri.
    */
   @java.lang.Override
@@ -153,6 +156,123 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       tosUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CLIENT_ID_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientId_ = "";
+  /**
+   * <code>string client_id = 4 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The clientId.
+   */
+  @java.lang.Override
+  public java.lang.String getClientId() {
+    java.lang.Object ref = clientId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      clientId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string client_id = 4 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for clientId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getClientIdBytes() {
+    java.lang.Object ref = clientId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      clientId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int METADATA_URI_FIELD_NUMBER = 5;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metadataUri_ = "";
+  /**
+   * <code>string metadata_uri = 5 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The metadataUri.
+   */
+  @java.lang.Override
+  public java.lang.String getMetadataUri() {
+    java.lang.Object ref = metadataUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      metadataUri_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string metadata_uri = 5 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for metadataUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMetadataUriBytes() {
+    java.lang.Object ref = metadataUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      metadataUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LOGO_URI_FIELD_NUMBER = 6;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object logoUri_ = "";
+  /**
+   * <code>string logo_uri = 6 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The logoUri.
+   */
+  @java.lang.Override
+  public java.lang.String getLogoUri() {
+    java.lang.Object ref = logoUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      logoUri_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string logo_uri = 6 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for logoUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLogoUriBytes() {
+    java.lang.Object ref = logoUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      logoUri_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -182,6 +302,15 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tosUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tosUri_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, clientId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, metadataUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logoUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, logoUri_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -199,6 +328,15 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tosUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tosUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, clientId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, metadataUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logoUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, logoUri_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -221,6 +359,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPrivacyUri())) return false;
     if (!getTosUri()
         .equals(other.getTosUri())) return false;
+    if (!getClientId()
+        .equals(other.getClientId())) return false;
+    if (!getMetadataUri()
+        .equals(other.getMetadataUri())) return false;
+    if (!getLogoUri()
+        .equals(other.getLogoUri())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -238,6 +382,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPrivacyUri().hashCode();
     hash = (37 * hash) + TOS_URI_FIELD_NUMBER;
     hash = (53 * hash) + getTosUri().hashCode();
+    hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getClientId().hashCode();
+    hash = (37 * hash) + METADATA_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getMetadataUri().hashCode();
+    hash = (37 * hash) + LOGO_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getLogoUri().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -372,6 +522,9 @@ private static final long serialVersionUID = 0L;
       name_ = "";
       privacyUri_ = "";
       tosUri_ = "";
+      clientId_ = "";
+      metadataUri_ = "";
+      logoUri_ = "";
       return this;
     }
 
@@ -413,6 +566,15 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.tosUri_ = tosUri_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.clientId_ = clientId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.metadataUri_ = metadataUri_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.logoUri_ = logoUri_;
       }
     }
 
@@ -475,6 +637,21 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.getClientId().isEmpty()) {
+        clientId_ = other.clientId_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getMetadataUri().isEmpty()) {
+        metadataUri_ = other.metadataUri_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (!other.getLogoUri().isEmpty()) {
+        logoUri_ = other.logoUri_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -516,6 +693,21 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000004;
               break;
             } // case 26
+            case 34: {
+              clientId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
+            case 42: {
+              metadataUri_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 42
+            case 50: {
+              logoUri_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 50
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -607,7 +799,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object privacyUri_ = "";
     /**
-     * <code>string privacy_uri = 2 [json_name = "privacyUri", (.buf.validate.field) = { ... }</code>
+     * <code>string privacy_uri = 2 [json_name = "privacyUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The privacyUri.
      */
     public java.lang.String getPrivacyUri() {
@@ -623,7 +815,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string privacy_uri = 2 [json_name = "privacyUri", (.buf.validate.field) = { ... }</code>
+     * <code>string privacy_uri = 2 [json_name = "privacyUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for privacyUri.
      */
     public com.google.protobuf.ByteString
@@ -640,7 +832,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string privacy_uri = 2 [json_name = "privacyUri", (.buf.validate.field) = { ... }</code>
+     * <code>string privacy_uri = 2 [json_name = "privacyUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The privacyUri to set.
      * @return This builder for chaining.
      */
@@ -653,7 +845,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string privacy_uri = 2 [json_name = "privacyUri", (.buf.validate.field) = { ... }</code>
+     * <code>string privacy_uri = 2 [json_name = "privacyUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearPrivacyUri() {
@@ -663,7 +855,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string privacy_uri = 2 [json_name = "privacyUri", (.buf.validate.field) = { ... }</code>
+     * <code>string privacy_uri = 2 [json_name = "privacyUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for privacyUri to set.
      * @return This builder for chaining.
      */
@@ -679,7 +871,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object tosUri_ = "";
     /**
-     * <code>string tos_uri = 3 [json_name = "tosUri", (.buf.validate.field) = { ... }</code>
+     * <code>string tos_uri = 3 [json_name = "tosUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The tosUri.
      */
     public java.lang.String getTosUri() {
@@ -695,7 +887,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string tos_uri = 3 [json_name = "tosUri", (.buf.validate.field) = { ... }</code>
+     * <code>string tos_uri = 3 [json_name = "tosUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for tosUri.
      */
     public com.google.protobuf.ByteString
@@ -712,7 +904,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string tos_uri = 3 [json_name = "tosUri", (.buf.validate.field) = { ... }</code>
+     * <code>string tos_uri = 3 [json_name = "tosUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The tosUri to set.
      * @return This builder for chaining.
      */
@@ -725,7 +917,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string tos_uri = 3 [json_name = "tosUri", (.buf.validate.field) = { ... }</code>
+     * <code>string tos_uri = 3 [json_name = "tosUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearTosUri() {
@@ -735,7 +927,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string tos_uri = 3 [json_name = "tosUri", (.buf.validate.field) = { ... }</code>
+     * <code>string tos_uri = 3 [json_name = "tosUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for tosUri to set.
      * @return This builder for chaining.
      */
@@ -745,6 +937,222 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       tosUri_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object clientId_ = "";
+    /**
+     * <code>string client_id = 4 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The clientId.
+     */
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string client_id = 4 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for clientId.
+     */
+    public com.google.protobuf.ByteString
+        getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string client_id = 4 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The clientId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      clientId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string client_id = 4 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearClientId() {
+      clientId_ = getDefaultInstance().getClientId();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string client_id = 4 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for clientId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      clientId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object metadataUri_ = "";
+    /**
+     * <code>string metadata_uri = 5 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The metadataUri.
+     */
+    public java.lang.String getMetadataUri() {
+      java.lang.Object ref = metadataUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metadataUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string metadata_uri = 5 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for metadataUri.
+     */
+    public com.google.protobuf.ByteString
+        getMetadataUriBytes() {
+      java.lang.Object ref = metadataUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        metadataUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string metadata_uri = 5 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The metadataUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetadataUri(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      metadataUri_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string metadata_uri = 5 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMetadataUri() {
+      metadataUri_ = getDefaultInstance().getMetadataUri();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string metadata_uri = 5 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for metadataUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetadataUriBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      metadataUri_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object logoUri_ = "";
+    /**
+     * <code>string logo_uri = 6 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The logoUri.
+     */
+    public java.lang.String getLogoUri() {
+      java.lang.Object ref = logoUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        logoUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string logo_uri = 6 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for logoUri.
+     */
+    public com.google.protobuf.ByteString
+        getLogoUriBytes() {
+      java.lang.Object ref = logoUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        logoUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string logo_uri = 6 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The logoUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLogoUri(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      logoUri_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string logo_uri = 6 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLogoUri() {
+      logoUri_ = getDefaultInstance().getLogoUri();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string logo_uri = 6 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for logoUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLogoUriBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      logoUri_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

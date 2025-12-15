@@ -7,4 +7,10 @@ package com.scalekit.grpc.scalekit.v1.workspaces;
 public interface GetBillingInfoRequestOrBuilder extends
     // @@protoc_insertion_point(interface_extends:scalekit.v1.workspaces.GetBillingInfoRequest)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   * <code>bool only_addons = 1 [json_name = "onlyAddons"];</code>
+   * @return The onlyAddons.
+   */
+  boolean getOnlyAddons();
 }

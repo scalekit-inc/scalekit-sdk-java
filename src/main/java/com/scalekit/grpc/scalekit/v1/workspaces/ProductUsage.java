@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
     description_ = "";
     tiers_ = java.util.Collections.emptyList();
     currency_ = "";
+    aggregationMethod_ = "";
   }
 
   @java.lang.Override
@@ -202,22 +203,33 @@ private static final long serialVersionUID = 0L;
     return tiers_.get(index);
   }
 
-  public static final int TOTAL_PRODUCT_AMOUNT_FIELD_NUMBER = 5;
-  private double totalProductAmount_ = 0D;
+  public static final int TOTAL_AMOUNT_FIELD_NUMBER = 5;
+  private double totalAmount_ = 0D;
   /**
-   * <code>double total_product_amount = 5 [json_name = "totalProductAmount"];</code>
-   * @return The totalProductAmount.
+   * <code>double total_amount = 5 [json_name = "totalAmount"];</code>
+   * @return The totalAmount.
    */
   @java.lang.Override
-  public double getTotalProductAmount() {
-    return totalProductAmount_;
+  public double getTotalAmount() {
+    return totalAmount_;
   }
 
-  public static final int CURRENCY_FIELD_NUMBER = 6;
+  public static final int TOTAL_COUNT_FIELD_NUMBER = 6;
+  private double totalCount_ = 0D;
+  /**
+   * <code>double total_count = 6 [json_name = "totalCount"];</code>
+   * @return The totalCount.
+   */
+  @java.lang.Override
+  public double getTotalCount() {
+    return totalCount_;
+  }
+
+  public static final int CURRENCY_FIELD_NUMBER = 7;
   @SuppressWarnings("serial")
   private volatile java.lang.Object currency_ = "";
   /**
-   * <code>string currency = 6 [json_name = "currency"];</code>
+   * <code>string currency = 7 [json_name = "currency"];</code>
    * @return The currency.
    */
   @java.lang.Override
@@ -234,7 +246,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string currency = 6 [json_name = "currency"];</code>
+   * <code>string currency = 7 [json_name = "currency"];</code>
    * @return The bytes for currency.
    */
   @java.lang.Override
@@ -246,6 +258,53 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       currency_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AGGREGATION_METHOD_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object aggregationMethod_ = "";
+  /**
+   * <pre>
+   * Aggregation method used for the underlying usage metric (e.g. sum, max)
+   * </pre>
+   *
+   * <code>string aggregation_method = 8 [json_name = "aggregationMethod"];</code>
+   * @return The aggregationMethod.
+   */
+  @java.lang.Override
+  public java.lang.String getAggregationMethod() {
+    java.lang.Object ref = aggregationMethod_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      aggregationMethod_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Aggregation method used for the underlying usage metric (e.g. sum, max)
+   * </pre>
+   *
+   * <code>string aggregation_method = 8 [json_name = "aggregationMethod"];</code>
+   * @return The bytes for aggregationMethod.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAggregationMethodBytes() {
+    java.lang.Object ref = aggregationMethod_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      aggregationMethod_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -278,11 +337,17 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < tiers_.size(); i++) {
       output.writeMessage(4, tiers_.get(i));
     }
-    if (java.lang.Double.doubleToRawLongBits(totalProductAmount_) != 0) {
-      output.writeDouble(5, totalProductAmount_);
+    if (java.lang.Double.doubleToRawLongBits(totalAmount_) != 0) {
+      output.writeDouble(5, totalAmount_);
+    }
+    if (java.lang.Double.doubleToRawLongBits(totalCount_) != 0) {
+      output.writeDouble(6, totalCount_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currency_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, currency_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, currency_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aggregationMethod_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, aggregationMethod_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -306,12 +371,19 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, tiers_.get(i));
     }
-    if (java.lang.Double.doubleToRawLongBits(totalProductAmount_) != 0) {
+    if (java.lang.Double.doubleToRawLongBits(totalAmount_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(5, totalProductAmount_);
+        .computeDoubleSize(5, totalAmount_);
+    }
+    if (java.lang.Double.doubleToRawLongBits(totalCount_) != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(6, totalCount_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currency_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, currency_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, currency_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aggregationMethod_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, aggregationMethod_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -336,11 +408,16 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDescription())) return false;
     if (!getTiersList()
         .equals(other.getTiersList())) return false;
-    if (java.lang.Double.doubleToLongBits(getTotalProductAmount())
+    if (java.lang.Double.doubleToLongBits(getTotalAmount())
         != java.lang.Double.doubleToLongBits(
-            other.getTotalProductAmount())) return false;
+            other.getTotalAmount())) return false;
+    if (java.lang.Double.doubleToLongBits(getTotalCount())
+        != java.lang.Double.doubleToLongBits(
+            other.getTotalCount())) return false;
     if (!getCurrency()
         .equals(other.getCurrency())) return false;
+    if (!getAggregationMethod()
+        .equals(other.getAggregationMethod())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -362,11 +439,16 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TIERS_FIELD_NUMBER;
       hash = (53 * hash) + getTiersList().hashCode();
     }
-    hash = (37 * hash) + TOTAL_PRODUCT_AMOUNT_FIELD_NUMBER;
+    hash = (37 * hash) + TOTAL_AMOUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getTotalProductAmount()));
+        java.lang.Double.doubleToLongBits(getTotalAmount()));
+    hash = (37 * hash) + TOTAL_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getTotalCount()));
     hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
     hash = (53 * hash) + getCurrency().hashCode();
+    hash = (37 * hash) + AGGREGATION_METHOD_FIELD_NUMBER;
+    hash = (53 * hash) + getAggregationMethod().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -508,8 +590,10 @@ private static final long serialVersionUID = 0L;
         tiersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
-      totalProductAmount_ = 0D;
+      totalAmount_ = 0D;
+      totalCount_ = 0D;
       currency_ = "";
+      aggregationMethod_ = "";
       return this;
     }
 
@@ -566,10 +650,16 @@ private static final long serialVersionUID = 0L;
         result.description_ = description_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.totalProductAmount_ = totalProductAmount_;
+        result.totalAmount_ = totalAmount_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.totalCount_ = totalCount_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.currency_ = currency_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.aggregationMethod_ = aggregationMethod_;
       }
     }
 
@@ -658,12 +748,20 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      if (other.getTotalProductAmount() != 0D) {
-        setTotalProductAmount(other.getTotalProductAmount());
+      if (other.getTotalAmount() != 0D) {
+        setTotalAmount(other.getTotalAmount());
+      }
+      if (other.getTotalCount() != 0D) {
+        setTotalCount(other.getTotalCount());
       }
       if (!other.getCurrency().isEmpty()) {
         currency_ = other.currency_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (!other.getAggregationMethod().isEmpty()) {
+        aggregationMethod_ = other.aggregationMethod_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -721,15 +819,25 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 34
             case 41: {
-              totalProductAmount_ = input.readDouble();
+              totalAmount_ = input.readDouble();
               bitField0_ |= 0x00000010;
               break;
             } // case 41
-            case 50: {
-              currency_ = input.readStringRequireUtf8();
+            case 49: {
+              totalCount_ = input.readDouble();
               bitField0_ |= 0x00000020;
               break;
-            } // case 50
+            } // case 49
+            case 58: {
+              currency_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 58
+            case 66: {
+              aggregationMethod_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 66
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1203,41 +1311,73 @@ private static final long serialVersionUID = 0L;
       return tiersBuilder_;
     }
 
-    private double totalProductAmount_ ;
+    private double totalAmount_ ;
     /**
-     * <code>double total_product_amount = 5 [json_name = "totalProductAmount"];</code>
-     * @return The totalProductAmount.
+     * <code>double total_amount = 5 [json_name = "totalAmount"];</code>
+     * @return The totalAmount.
      */
     @java.lang.Override
-    public double getTotalProductAmount() {
-      return totalProductAmount_;
+    public double getTotalAmount() {
+      return totalAmount_;
     }
     /**
-     * <code>double total_product_amount = 5 [json_name = "totalProductAmount"];</code>
-     * @param value The totalProductAmount to set.
+     * <code>double total_amount = 5 [json_name = "totalAmount"];</code>
+     * @param value The totalAmount to set.
      * @return This builder for chaining.
      */
-    public Builder setTotalProductAmount(double value) {
+    public Builder setTotalAmount(double value) {
 
-      totalProductAmount_ = value;
+      totalAmount_ = value;
       bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>double total_product_amount = 5 [json_name = "totalProductAmount"];</code>
+     * <code>double total_amount = 5 [json_name = "totalAmount"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearTotalProductAmount() {
+    public Builder clearTotalAmount() {
       bitField0_ = (bitField0_ & ~0x00000010);
-      totalProductAmount_ = 0D;
+      totalAmount_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private double totalCount_ ;
+    /**
+     * <code>double total_count = 6 [json_name = "totalCount"];</code>
+     * @return The totalCount.
+     */
+    @java.lang.Override
+    public double getTotalCount() {
+      return totalCount_;
+    }
+    /**
+     * <code>double total_count = 6 [json_name = "totalCount"];</code>
+     * @param value The totalCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalCount(double value) {
+
+      totalCount_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>double total_count = 6 [json_name = "totalCount"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalCount() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      totalCount_ = 0D;
       onChanged();
       return this;
     }
 
     private java.lang.Object currency_ = "";
     /**
-     * <code>string currency = 6 [json_name = "currency"];</code>
+     * <code>string currency = 7 [json_name = "currency"];</code>
      * @return The currency.
      */
     public java.lang.String getCurrency() {
@@ -1253,7 +1393,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string currency = 6 [json_name = "currency"];</code>
+     * <code>string currency = 7 [json_name = "currency"];</code>
      * @return The bytes for currency.
      */
     public com.google.protobuf.ByteString
@@ -1270,7 +1410,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string currency = 6 [json_name = "currency"];</code>
+     * <code>string currency = 7 [json_name = "currency"];</code>
      * @param value The currency to set.
      * @return This builder for chaining.
      */
@@ -1278,22 +1418,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       currency_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
     /**
-     * <code>string currency = 6 [json_name = "currency"];</code>
+     * <code>string currency = 7 [json_name = "currency"];</code>
      * @return This builder for chaining.
      */
     public Builder clearCurrency() {
       currency_ = getDefaultInstance().getCurrency();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
     /**
-     * <code>string currency = 6 [json_name = "currency"];</code>
+     * <code>string currency = 7 [json_name = "currency"];</code>
      * @param value The bytes for currency to set.
      * @return This builder for chaining.
      */
@@ -1302,7 +1442,99 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       currency_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object aggregationMethod_ = "";
+    /**
+     * <pre>
+     * Aggregation method used for the underlying usage metric (e.g. sum, max)
+     * </pre>
+     *
+     * <code>string aggregation_method = 8 [json_name = "aggregationMethod"];</code>
+     * @return The aggregationMethod.
+     */
+    public java.lang.String getAggregationMethod() {
+      java.lang.Object ref = aggregationMethod_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        aggregationMethod_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Aggregation method used for the underlying usage metric (e.g. sum, max)
+     * </pre>
+     *
+     * <code>string aggregation_method = 8 [json_name = "aggregationMethod"];</code>
+     * @return The bytes for aggregationMethod.
+     */
+    public com.google.protobuf.ByteString
+        getAggregationMethodBytes() {
+      java.lang.Object ref = aggregationMethod_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        aggregationMethod_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Aggregation method used for the underlying usage metric (e.g. sum, max)
+     * </pre>
+     *
+     * <code>string aggregation_method = 8 [json_name = "aggregationMethod"];</code>
+     * @param value The aggregationMethod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAggregationMethod(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      aggregationMethod_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Aggregation method used for the underlying usage metric (e.g. sum, max)
+     * </pre>
+     *
+     * <code>string aggregation_method = 8 [json_name = "aggregationMethod"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAggregationMethod() {
+      aggregationMethod_ = getDefaultInstance().getAggregationMethod();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Aggregation method used for the underlying usage metric (e.g. sum, max)
+     * </pre>
+     *
+     * <code>string aggregation_method = 8 [json_name = "aggregationMethod"];</code>
+     * @param value The bytes for aggregationMethod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAggregationMethodBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      aggregationMethod_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

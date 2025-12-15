@@ -5,35 +5,67 @@
 package com.scalekit.grpc.scalekit.v1.connected_accounts;
 
 /**
+ * <pre>
+ * Type of authentication mechanism used for the connected account
+ * </pre>
+ *
  * Protobuf enum {@code scalekit.v1.connected_accounts.ConnectorType}
  */
 public enum ConnectorType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   * <pre>
+   * Default/unknown type
+   * </pre>
+   *
    * <code>CONNECTION_TYPE_UNSPECIFIED = 0;</code>
    */
   CONNECTION_TYPE_UNSPECIFIED(0),
   /**
+   * <pre>
+   * OAuth 2.0 authorization with access and refresh tokens
+   * </pre>
+   *
    * <code>OAUTH = 1;</code>
    */
   OAUTH(1),
   /**
+   * <pre>
+   * Static API key authentication
+   * </pre>
+   *
    * <code>API_KEY = 2;</code>
    */
   API_KEY(2),
   /**
+   * <pre>
+   * HTTP Basic Authentication (username/password)
+   * </pre>
+   *
    * <code>BASIC_AUTH = 3;</code>
    */
   BASIC_AUTH(3),
   /**
+   * <pre>
+   * Bearer token authentication
+   * </pre>
+   *
    * <code>BEARER_TOKEN = 4;</code>
    */
   BEARER_TOKEN(4),
   /**
+   * <pre>
+   * Custom authentication mechanism
+   * </pre>
+   *
    * <code>CUSTOM = 5;</code>
    */
   CUSTOM(5),
   /**
+   * <pre>
+   * Basic authentication (alias)
+   * </pre>
+   *
    * <code>BASIC = 6;</code>
    */
   BASIC(6),
@@ -41,30 +73,58 @@ public enum ConnectorType
   ;
 
   /**
+   * <pre>
+   * Default/unknown type
+   * </pre>
+   *
    * <code>CONNECTION_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int CONNECTION_TYPE_UNSPECIFIED_VALUE = 0;
   /**
+   * <pre>
+   * OAuth 2.0 authorization with access and refresh tokens
+   * </pre>
+   *
    * <code>OAUTH = 1;</code>
    */
   public static final int OAUTH_VALUE = 1;
   /**
+   * <pre>
+   * Static API key authentication
+   * </pre>
+   *
    * <code>API_KEY = 2;</code>
    */
   public static final int API_KEY_VALUE = 2;
   /**
+   * <pre>
+   * HTTP Basic Authentication (username/password)
+   * </pre>
+   *
    * <code>BASIC_AUTH = 3;</code>
    */
   public static final int BASIC_AUTH_VALUE = 3;
   /**
+   * <pre>
+   * Bearer token authentication
+   * </pre>
+   *
    * <code>BEARER_TOKEN = 4;</code>
    */
   public static final int BEARER_TOKEN_VALUE = 4;
   /**
+   * <pre>
+   * Custom authentication mechanism
+   * </pre>
+   *
    * <code>CUSTOM = 5;</code>
    */
   public static final int CUSTOM_VALUE = 5;
   /**
+   * <pre>
+   * Basic authentication (alias)
+   * </pre>
+   *
    * <code>BASIC = 6;</code>
    */
   public static final int BASIC_VALUE = 6;

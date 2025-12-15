@@ -55,17 +55,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AMOUNT_FIELD_NUMBER = 2;
-  private long amount_ = 0L;
+  private double amount_ = 0D;
   /**
    * <pre>
    * Amount per unit in this tier
    * </pre>
    *
-   * <code>int64 amount = 2 [json_name = "amount"];</code>
+   * <code>double amount = 2 [json_name = "amount"];</code>
    * @return The amount.
    */
   @java.lang.Override
-  public long getAmount() {
+  public double getAmount() {
     return amount_;
   }
 
@@ -86,8 +86,8 @@ private static final long serialVersionUID = 0L;
     if (upTo_ != 0L) {
       output.writeInt64(1, upTo_);
     }
-    if (amount_ != 0L) {
-      output.writeInt64(2, amount_);
+    if (java.lang.Double.doubleToRawLongBits(amount_) != 0) {
+      output.writeDouble(2, amount_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -102,9 +102,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, upTo_);
     }
-    if (amount_ != 0L) {
+    if (java.lang.Double.doubleToRawLongBits(amount_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, amount_);
+        .computeDoubleSize(2, amount_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -123,8 +123,9 @@ private static final long serialVersionUID = 0L;
 
     if (getUpTo()
         != other.getUpTo()) return false;
-    if (getAmount()
-        != other.getAmount()) return false;
+    if (java.lang.Double.doubleToLongBits(getAmount())
+        != java.lang.Double.doubleToLongBits(
+            other.getAmount())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -141,7 +142,7 @@ private static final long serialVersionUID = 0L;
         getUpTo());
     hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getAmount());
+        java.lang.Double.doubleToLongBits(getAmount()));
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -274,7 +275,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       upTo_ = 0L;
-      amount_ = 0L;
+      amount_ = 0D;
       return this;
     }
 
@@ -363,7 +364,7 @@ private static final long serialVersionUID = 0L;
       if (other.getUpTo() != 0L) {
         setUpTo(other.getUpTo());
       }
-      if (other.getAmount() != 0L) {
+      if (other.getAmount() != 0D) {
         setAmount(other.getAmount());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -397,11 +398,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 8
-            case 16: {
-              amount_ = input.readInt64();
+            case 17: {
+              amount_ = input.readDouble();
               bitField0_ |= 0x00000002;
               break;
-            } // case 16
+            } // case 17
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -463,17 +464,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long amount_ ;
+    private double amount_ ;
     /**
      * <pre>
      * Amount per unit in this tier
      * </pre>
      *
-     * <code>int64 amount = 2 [json_name = "amount"];</code>
+     * <code>double amount = 2 [json_name = "amount"];</code>
      * @return The amount.
      */
     @java.lang.Override
-    public long getAmount() {
+    public double getAmount() {
       return amount_;
     }
     /**
@@ -481,11 +482,11 @@ private static final long serialVersionUID = 0L;
      * Amount per unit in this tier
      * </pre>
      *
-     * <code>int64 amount = 2 [json_name = "amount"];</code>
+     * <code>double amount = 2 [json_name = "amount"];</code>
      * @param value The amount to set.
      * @return This builder for chaining.
      */
-    public Builder setAmount(long value) {
+    public Builder setAmount(double value) {
 
       amount_ = value;
       bitField0_ |= 0x00000002;
@@ -497,12 +498,12 @@ private static final long serialVersionUID = 0L;
      * Amount per unit in this tier
      * </pre>
      *
-     * <code>int64 amount = 2 [json_name = "amount"];</code>
+     * <code>double amount = 2 [json_name = "amount"];</code>
      * @return This builder for chaining.
      */
     public Builder clearAmount() {
       bitField0_ = (bitField0_ & ~0x00000002);
-      amount_ = 0L;
+      amount_ = 0D;
       onChanged();
       return this;
     }

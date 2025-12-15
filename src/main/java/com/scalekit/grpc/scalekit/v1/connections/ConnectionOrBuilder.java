@@ -324,20 +324,5 @@ java.lang.String defaultValue);
   com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder getDomainsOrBuilder(
       int index);
 
-  /**
-   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the syncUserProfileOnSignin field is set.
-   */
-  boolean hasSyncUserProfileOnSignin();
-  /**
-   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The syncUserProfileOnSignin.
-   */
-  com.google.protobuf.BoolValue getSyncUserProfileOnSignin();
-  /**
-   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnSigninOrBuilder();
-
   com.scalekit.grpc.scalekit.v1.connections.Connection.SettingsCase getSettingsCase();
 }

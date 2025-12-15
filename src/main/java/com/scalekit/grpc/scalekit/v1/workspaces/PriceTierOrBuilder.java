@@ -23,8 +23,8 @@ public interface PriceTierOrBuilder extends
    * Amount per unit in this tier
    * </pre>
    *
-   * <code>int64 amount = 2 [json_name = "amount"];</code>
+   * <code>double amount = 2 [json_name = "amount"];</code>
    * @return The amount.
    */
-  long getAmount();
+  double getAmount();
 }

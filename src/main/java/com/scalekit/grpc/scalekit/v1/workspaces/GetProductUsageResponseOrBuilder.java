@@ -33,6 +33,10 @@ public interface GetProductUsageResponseOrBuilder extends
       int index);
 
   /**
+   * <pre>
+   * Total monetary amount for the preview billing period (in major currency units, e.g. dollars)
+   * </pre>
+   *
    * <code>double total_amount = 2 [json_name = "totalAmount"];</code>
    * @return The totalAmount.
    */

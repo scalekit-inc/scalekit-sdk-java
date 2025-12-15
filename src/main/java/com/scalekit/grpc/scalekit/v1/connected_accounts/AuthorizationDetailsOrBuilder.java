@@ -9,31 +9,55 @@ public interface AuthorizationDetailsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * OAuth 2.0 credentials
+   * </pre>
+   *
    * <code>.scalekit.v1.connected_accounts.OauthToken oauth_token = 1 [json_name = "oauthToken"];</code>
    * @return Whether the oauthToken field is set.
    */
   boolean hasOauthToken();
   /**
+   * <pre>
+   * OAuth 2.0 credentials
+   * </pre>
+   *
    * <code>.scalekit.v1.connected_accounts.OauthToken oauth_token = 1 [json_name = "oauthToken"];</code>
    * @return The oauthToken.
    */
   com.scalekit.grpc.scalekit.v1.connected_accounts.OauthToken getOauthToken();
   /**
+   * <pre>
+   * OAuth 2.0 credentials
+   * </pre>
+   *
    * <code>.scalekit.v1.connected_accounts.OauthToken oauth_token = 1 [json_name = "oauthToken"];</code>
    */
   com.scalekit.grpc.scalekit.v1.connected_accounts.OauthTokenOrBuilder getOauthTokenOrBuilder();
 
   /**
+   * <pre>
+   * Static authentication credentials
+   * </pre>
+   *
    * <code>.scalekit.v1.connected_accounts.StaticAuth static_auth = 2 [json_name = "staticAuth"];</code>
    * @return Whether the staticAuth field is set.
    */
   boolean hasStaticAuth();
   /**
+   * <pre>
+   * Static authentication credentials
+   * </pre>
+   *
    * <code>.scalekit.v1.connected_accounts.StaticAuth static_auth = 2 [json_name = "staticAuth"];</code>
    * @return The staticAuth.
    */
   com.scalekit.grpc.scalekit.v1.connected_accounts.StaticAuth getStaticAuth();
   /**
+   * <pre>
+   * Static authentication credentials
+   * </pre>
+   *
    * <code>.scalekit.v1.connected_accounts.StaticAuth static_auth = 2 [json_name = "staticAuth"];</code>
    */
   com.scalekit.grpc.scalekit.v1.connected_accounts.StaticAuthOrBuilder getStaticAuthOrBuilder();

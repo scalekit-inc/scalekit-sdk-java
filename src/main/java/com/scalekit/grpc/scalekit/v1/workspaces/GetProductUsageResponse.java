@@ -85,6 +85,10 @@ private static final long serialVersionUID = 0L;
   public static final int TOTAL_AMOUNT_FIELD_NUMBER = 2;
   private double totalAmount_ = 0D;
   /**
+   * <pre>
+   * Total monetary amount for the preview billing period (in major currency units, e.g. dollars)
+   * </pre>
+   *
    * <code>double total_amount = 2 [json_name = "totalAmount"];</code>
    * @return The totalAmount.
    */
@@ -797,6 +801,10 @@ private static final long serialVersionUID = 0L;
 
     private double totalAmount_ ;
     /**
+     * <pre>
+     * Total monetary amount for the preview billing period (in major currency units, e.g. dollars)
+     * </pre>
+     *
      * <code>double total_amount = 2 [json_name = "totalAmount"];</code>
      * @return The totalAmount.
      */
@@ -805,6 +813,10 @@ private static final long serialVersionUID = 0L;
       return totalAmount_;
     }
     /**
+     * <pre>
+     * Total monetary amount for the preview billing period (in major currency units, e.g. dollars)
+     * </pre>
+     *
      * <code>double total_amount = 2 [json_name = "totalAmount"];</code>
      * @param value The totalAmount to set.
      * @return This builder for chaining.
@@ -817,6 +829,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Total monetary amount for the preview billing period (in major currency units, e.g. dollars)
+     * </pre>
+     *
      * <code>double total_amount = 2 [json_name = "totalAmount"];</code>
      * @return This builder for chaining.
      */
