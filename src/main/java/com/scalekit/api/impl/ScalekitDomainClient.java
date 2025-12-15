@@ -144,11 +144,9 @@ public class ScalekitDomainClient implements DomainClient {
     @Override
     public List<Domain> listDomainsByOrganizationId(String organizationId, DomainType domainType) {
         return RetryExecuter.executeWithRetry(() -> {
-            System.out.println("gRPC Path: /" + DomainServiceGrpc.SERVICE_NAME + "/ListDomains");
             ListDomainRequest request = ListDomainRequest.newBuilder()
                     .setOrganizationId(organizationId)
                     .setDomainType(domainType)
-                    .setPageSize(Int32Value.of(100))
                     .build();
             ListDomainResponse response = this.domainStub
                     .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
