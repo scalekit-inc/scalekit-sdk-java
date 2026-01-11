@@ -37,6 +37,8 @@ public class ScalekitClient {
 
     private final SessionClient sessionClient;
 
+    private final WebAuthnClient webAuthnClient;
+
     public ScalekitClient(String siteName, String clientId, String clientSecret) {
 
         Environment.configure(siteName,clientId,clientSecret);
@@ -62,6 +64,7 @@ public class ScalekitClient {
             roleClient = new ScalekitRoleClient(channel, credentials);
             permissionClient = new ScalekitPermissionClient(channel, credentials);
             sessionClient = new ScalekitSessionClient(channel, credentials);
+            webAuthnClient = new ScalekitWebAuthnClient(channel, credentials);
             webhook = new ScalekitWebhook();
 
         } catch (MalformedURLException e) {
@@ -114,5 +117,9 @@ public class ScalekitClient {
 
     public SessionClient sessions() {
         return this.sessionClient;
+    }
+
+    public WebAuthnClient webAuthn() {
+        return this.webAuthnClient;
     }
 }
