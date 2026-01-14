@@ -9,115 +9,115 @@ public interface ConnectedAccountForListOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string identifier = 1 [json_name = "identifier"];</code>
+   * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The identifier.
    */
   java.lang.String getIdentifier();
   /**
-   * <code>string identifier = 1 [json_name = "identifier"];</code>
+   * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for identifier.
    */
   com.google.protobuf.ByteString
       getIdentifierBytes();
 
   /**
-   * <code>string provider = 2 [json_name = "provider"];</code>
+   * <code>string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The provider.
    */
   java.lang.String getProvider();
   /**
-   * <code>string provider = 2 [json_name = "provider"];</code>
+   * <code>string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for provider.
    */
   com.google.protobuf.ByteString
       getProviderBytes();
 
   /**
-   * <code>.scalekit.v1.connected_accounts.ConnectorStatus status = 3 [json_name = "status"];</code>
+   * <code>.scalekit.v1.connected_accounts.ConnectorStatus status = 3 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
-   * <code>.scalekit.v1.connected_accounts.ConnectorStatus status = 3 [json_name = "status"];</code>
+   * <code>.scalekit.v1.connected_accounts.ConnectorStatus status = 3 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The status.
    */
   com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectorStatus getStatus();
 
   /**
-   * <code>.scalekit.v1.connected_accounts.ConnectorType authorization_type = 4 [json_name = "authorizationType"];</code>
+   * <code>.scalekit.v1.connected_accounts.ConnectorType authorization_type = 4 [json_name = "authorizationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enum numeric value on the wire for authorizationType.
    */
   int getAuthorizationTypeValue();
   /**
-   * <code>.scalekit.v1.connected_accounts.ConnectorType authorization_type = 4 [json_name = "authorizationType"];</code>
+   * <code>.scalekit.v1.connected_accounts.ConnectorType authorization_type = 4 [json_name = "authorizationType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The authorizationType.
    */
   com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectorType getAuthorizationType();
 
   /**
-   * <code>.google.protobuf.Timestamp token_expires_at = 6 [json_name = "tokenExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp token_expires_at = 6 [json_name = "tokenExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the tokenExpiresAt field is set.
    */
   boolean hasTokenExpiresAt();
   /**
-   * <code>.google.protobuf.Timestamp token_expires_at = 6 [json_name = "tokenExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp token_expires_at = 6 [json_name = "tokenExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The tokenExpiresAt.
    */
   com.google.protobuf.Timestamp getTokenExpiresAt();
   /**
-   * <code>.google.protobuf.Timestamp token_expires_at = 6 [json_name = "tokenExpiresAt"];</code>
+   * <code>.google.protobuf.Timestamp token_expires_at = 6 [json_name = "tokenExpiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getTokenExpiresAtOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 7 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 7 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the updatedAt field is set.
    */
   boolean hasUpdatedAt();
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 7 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 7 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The updatedAt.
    */
   com.google.protobuf.Timestamp getUpdatedAt();
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 7 [json_name = "updatedAt"];</code>
+   * <code>.google.protobuf.Timestamp updated_at = 7 [json_name = "updatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder();
 
   /**
-   * <code>string connector = 8 [json_name = "connector"];</code>
+   * <code>string connector = 8 [json_name = "connector", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connector.
    */
   java.lang.String getConnector();
   /**
-   * <code>string connector = 8 [json_name = "connector"];</code>
+   * <code>string connector = 8 [json_name = "connector", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for connector.
    */
   com.google.protobuf.ByteString
       getConnectorBytes();
 
   /**
-   * <code>.google.protobuf.Timestamp last_used_at = 9 [json_name = "lastUsedAt"];</code>
+   * <code>.google.protobuf.Timestamp last_used_at = 9 [json_name = "lastUsedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the lastUsedAt field is set.
    */
   boolean hasLastUsedAt();
   /**
-   * <code>.google.protobuf.Timestamp last_used_at = 9 [json_name = "lastUsedAt"];</code>
+   * <code>.google.protobuf.Timestamp last_used_at = 9 [json_name = "lastUsedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The lastUsedAt.
    */
   com.google.protobuf.Timestamp getLastUsedAt();
   /**
-   * <code>.google.protobuf.Timestamp last_used_at = 9 [json_name = "lastUsedAt"];</code>
+   * <code>.google.protobuf.Timestamp last_used_at = 9 [json_name = "lastUsedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getLastUsedAtOrBuilder();
 
   /**
-   * <code>string id = 10 [json_name = "id"];</code>
+   * <code>string id = 10 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The id.
    */
   java.lang.String getId();
   /**
-   * <code>string id = 10 [json_name = "id"];</code>
+   * <code>string id = 10 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString

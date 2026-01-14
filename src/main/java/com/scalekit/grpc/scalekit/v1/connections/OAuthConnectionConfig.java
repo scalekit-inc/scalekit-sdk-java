@@ -379,6 +379,32 @@ private static final long serialVersionUID = 0L;
     return customScopeName_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : customScopeName_;
   }
 
+  public static final int SYNC_USER_PROFILE_ON_LOGIN_FIELD_NUMBER = 18;
+  private com.google.protobuf.BoolValue syncUserProfileOnLogin_;
+  /**
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_login = 18 [json_name = "syncUserProfileOnLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the syncUserProfileOnLogin field is set.
+   */
+  @java.lang.Override
+  public boolean hasSyncUserProfileOnLogin() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_login = 18 [json_name = "syncUserProfileOnLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The syncUserProfileOnLogin.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getSyncUserProfileOnLogin() {
+    return syncUserProfileOnLogin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnLogin_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue sync_user_profile_on_login = 18 [json_name = "syncUserProfileOnLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnLoginOrBuilder() {
+    return syncUserProfileOnLogin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnLogin_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -428,6 +454,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(17, getCustomScopeName());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(18, getSyncUserProfileOnLogin());
     }
     getUnknownFields().writeTo(output);
   }
@@ -488,6 +517,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(17, getCustomScopeName());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(18, getSyncUserProfileOnLogin());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -558,6 +591,11 @@ private static final long serialVersionUID = 0L;
       if (!getCustomScopeName()
           .equals(other.getCustomScopeName())) return false;
     }
+    if (hasSyncUserProfileOnLogin() != other.hasSyncUserProfileOnLogin()) return false;
+    if (hasSyncUserProfileOnLogin()) {
+      if (!getSyncUserProfileOnLogin()
+          .equals(other.getSyncUserProfileOnLogin())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -614,6 +652,10 @@ private static final long serialVersionUID = 0L;
     if (hasCustomScopeName()) {
       hash = (37 * hash) + CUSTOM_SCOPE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getCustomScopeName().hashCode();
+    }
+    if (hasSyncUserProfileOnLogin()) {
+      hash = (37 * hash) + SYNC_USER_PROFILE_ON_LOGIN_FIELD_NUMBER;
+      hash = (53 * hash) + getSyncUserProfileOnLogin().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -755,6 +797,7 @@ private static final long serialVersionUID = 0L;
         getUsePlatformCredsFieldBuilder();
         getAccessTypeFieldBuilder();
         getCustomScopeNameFieldBuilder();
+        getSyncUserProfileOnLoginFieldBuilder();
       }
     }
     @java.lang.Override
@@ -813,6 +856,11 @@ private static final long serialVersionUID = 0L;
       if (customScopeNameBuilder_ != null) {
         customScopeNameBuilder_.dispose();
         customScopeNameBuilder_ = null;
+      }
+      syncUserProfileOnLogin_ = null;
+      if (syncUserProfileOnLoginBuilder_ != null) {
+        syncUserProfileOnLoginBuilder_.dispose();
+        syncUserProfileOnLoginBuilder_ = null;
       }
       return this;
     }
@@ -915,6 +963,12 @@ private static final long serialVersionUID = 0L;
             : customScopeNameBuilder_.build();
         to_bitField0_ |= 0x00000200;
       }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.syncUserProfileOnLogin_ = syncUserProfileOnLoginBuilder_ == null
+            ? syncUserProfileOnLogin_
+            : syncUserProfileOnLoginBuilder_.build();
+        to_bitField0_ |= 0x00000400;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1006,6 +1060,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCustomScopeName()) {
         mergeCustomScopeName(other.getCustomScopeName());
+      }
+      if (other.hasSyncUserProfileOnLogin()) {
+        mergeSyncUserProfileOnLogin(other.getSyncUserProfileOnLogin());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1114,6 +1171,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000800;
               break;
             } // case 138
+            case 146: {
+              input.readMessage(
+                  getSyncUserProfileOnLoginFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00001000;
+              break;
+            } // case 146
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2522,6 +2586,127 @@ private static final long serialVersionUID = 0L;
         customScopeName_ = null;
       }
       return customScopeNameBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue syncUserProfileOnLogin_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> syncUserProfileOnLoginBuilder_;
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_login = 18 [json_name = "syncUserProfileOnLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the syncUserProfileOnLogin field is set.
+     */
+    public boolean hasSyncUserProfileOnLogin() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_login = 18 [json_name = "syncUserProfileOnLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The syncUserProfileOnLogin.
+     */
+    public com.google.protobuf.BoolValue getSyncUserProfileOnLogin() {
+      if (syncUserProfileOnLoginBuilder_ == null) {
+        return syncUserProfileOnLogin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnLogin_;
+      } else {
+        return syncUserProfileOnLoginBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_login = 18 [json_name = "syncUserProfileOnLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setSyncUserProfileOnLogin(com.google.protobuf.BoolValue value) {
+      if (syncUserProfileOnLoginBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        syncUserProfileOnLogin_ = value;
+      } else {
+        syncUserProfileOnLoginBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_login = 18 [json_name = "syncUserProfileOnLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setSyncUserProfileOnLogin(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (syncUserProfileOnLoginBuilder_ == null) {
+        syncUserProfileOnLogin_ = builderForValue.build();
+      } else {
+        syncUserProfileOnLoginBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_login = 18 [json_name = "syncUserProfileOnLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeSyncUserProfileOnLogin(com.google.protobuf.BoolValue value) {
+      if (syncUserProfileOnLoginBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0) &&
+          syncUserProfileOnLogin_ != null &&
+          syncUserProfileOnLogin_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getSyncUserProfileOnLoginBuilder().mergeFrom(value);
+        } else {
+          syncUserProfileOnLogin_ = value;
+        }
+      } else {
+        syncUserProfileOnLoginBuilder_.mergeFrom(value);
+      }
+      if (syncUserProfileOnLogin_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_login = 18 [json_name = "syncUserProfileOnLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearSyncUserProfileOnLogin() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      syncUserProfileOnLogin_ = null;
+      if (syncUserProfileOnLoginBuilder_ != null) {
+        syncUserProfileOnLoginBuilder_.dispose();
+        syncUserProfileOnLoginBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_login = 18 [json_name = "syncUserProfileOnLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getSyncUserProfileOnLoginBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getSyncUserProfileOnLoginFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_login = 18 [json_name = "syncUserProfileOnLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnLoginOrBuilder() {
+      if (syncUserProfileOnLoginBuilder_ != null) {
+        return syncUserProfileOnLoginBuilder_.getMessageOrBuilder();
+      } else {
+        return syncUserProfileOnLogin_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnLogin_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue sync_user_profile_on_login = 18 [json_name = "syncUserProfileOnLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getSyncUserProfileOnLoginFieldBuilder() {
+      if (syncUserProfileOnLoginBuilder_ == null) {
+        syncUserProfileOnLoginBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getSyncUserProfileOnLogin(),
+                getParentForChildren(),
+                isClean());
+        syncUserProfileOnLogin_ = null;
+      }
+      return syncUserProfileOnLoginBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

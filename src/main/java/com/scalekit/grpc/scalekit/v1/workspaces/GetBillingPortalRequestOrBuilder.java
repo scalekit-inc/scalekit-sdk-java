@@ -19,4 +19,21 @@ public interface GetBillingPortalRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getIdBytes();
+
+  /**
+   * <code>optional string flow_type = 2 [json_name = "flowType"];</code>
+   * @return Whether the flowType field is set.
+   */
+  boolean hasFlowType();
+  /**
+   * <code>optional string flow_type = 2 [json_name = "flowType"];</code>
+   * @return The flowType.
+   */
+  java.lang.String getFlowType();
+  /**
+   * <code>optional string flow_type = 2 [json_name = "flowType"];</code>
+   * @return The bytes for flowType.
+   */
+  com.google.protobuf.ByteString
+      getFlowTypeBytes();
 }

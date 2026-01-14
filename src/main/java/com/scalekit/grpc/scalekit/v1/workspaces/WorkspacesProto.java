@@ -176,6 +176,11 @@ public final class WorkspacesProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_workspaces_PaymentMethod_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_workspaces_PaymentMethod_PaymentInfoEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_workspaces_PaymentMethod_PaymentInfoEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_workspaces_BillingContactInfo_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -240,6 +245,26 @@ public final class WorkspacesProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_workspaces_CatalogPrice_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_workspaces_AddSubscriptionRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_workspaces_AddSubscriptionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_workspaces_AddSubscriptionResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_workspaces_AddSubscriptionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_workspaces_CreateCheckoutSessionRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_workspaces_CreateCheckoutSessionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_workspaces_CreateCheckoutSessionResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_workspaces_CreateCheckoutSessionResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -252,262 +277,319 @@ public final class WorkspacesProto {
       "\n\'scalekit/v1/workspaces/workspaces.prot" +
       "o\022\026scalekit.v1.workspaces\032\033buf/validate/" +
       "validate.proto\032\034google/api/annotations.p" +
-      "roto\032\037google/api/field_behavior.proto\032\031g" +
-      "oogle/protobuf/any.proto\032\036google/protobu" +
-      "f/duration.proto\032\033google/protobuf/empty." +
-      "proto\032\037google/protobuf/timestamp.proto\032!" +
-      "scalekit/v1/commons/commons.proto\032!scale" +
-      "kit/v1/options/options.proto\"\246\001\n\025Workspa" +
-      "ceExtendedInfo\022\'\n\017payment_overdue\030\001 \001(\010R" +
-      "\016paymentOverdue\0224\n\026payment_method_presen" +
-      "t\030\002 \001(\010R\024paymentMethodPresent\022.\n\023free_qu" +
-      "ota_exceeded\030\003 \001(\010R\021freeQuotaExceeded\"\322\003" +
-      "\n\tWorkspace\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003envR" +
-      "\002id\022;\n\013create_time\030\002 \001(\0132\032.google.protob" +
-      "uf.TimestampR\ncreateTime\022;\n\013update_time\030" +
-      "\003 \001(\0132\032.google.protobuf.TimestampR\nupdat" +
-      "eTime\022-\n\014display_name\030\004 \001(\tB\n\272H\007r\005\020\001\030\310\001R" +
-      "\013displayName\022@\n\013region_code\030\006 \001(\0162\037.scal" +
-      "ekit.v1.commons.RegionCodeR\nregionCode\022R" +
-      "\n\rextended_info\030\007 \001(\0132-.scalekit.v1.work" +
-      "spaces.WorkspaceExtendedInfoR\014extendedIn" +
-      "fo\022.\n\023billing_customer_id\030\010 \001(\tR\021billing" +
-      "CustomerId\0226\n\027billing_subscription_id\030\t " +
-      "\001(\tR\025billingSubscriptionId\"\240\001\n\017CreateWor" +
-      "kspace\022V\n\005email\030\001 \001(\tB@\272H=\272\001:\n\013valid_ema" +
-      "il\022\033email must be a valid email\032\016this.is" +
-      "Email()R\005email\022)\n\007company\030\002 \001(\tB\n\272H\007r\005\020\001" +
-      "\030\200\002H\000R\007company\210\001\001B\n\n\010_company\"@\n\017UpdateW" +
-      "orkspace\022-\n\014display_name\030\001 \001(\tB\n\272H\007r\005\020\001\030" +
-      "\200\002R\013displayName\"\262\001\n\020OnboardWorkspace\022@\n\026" +
-      "workspace_display_name\030\001 \001(\tB\n\272H\007r\005\020\001\030\200\002" +
-      "R\024workspaceDisplayName\0222\n\017user_given_nam" +
-      "e\030\002 \001(\tB\n\272H\007r\005\020\001\030\200\002R\ruserGivenName\022(\n\020us" +
-      "er_family_name\030\003 \001(\tR\016userFamilyName\"g\n\026" +
-      "CreateWorkspaceRequest\022M\n\tworkspace\030\001 \001(" +
-      "\0132\'.scalekit.v1.workspaces.CreateWorkspa" +
-      "ceB\006\272H\003\310\001\001R\tworkspace\"n\n\027CreateWorkspace" +
-      "Response\022?\n\tworkspace\030\001 \001(\0132!.scalekit.v" +
-      "1.workspaces.WorkspaceR\tworkspace\022\022\n\004lin" +
-      "k\030\002 \001(\tR\004link\"\207\001\n\026UpdateWorkspaceRequest" +
-      "\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003wksR\002id\022M\n\twork" +
-      "space\030\002 \001(\0132\'.scalekit.v1.workspaces.Upd" +
-      "ateWorkspaceB\006\272H\003\310\001\001R\tworkspace\"i\n\027Onboa" +
-      "rdWorkspaceRequest\022N\n\tworkspace\030\002 \001(\0132(." +
-      "scalekit.v1.workspaces.OnboardWorkspaceB" +
-      "\006\272H\003\310\001\001R\tworkspace\"n\n\035UpdateCurrentWorks" +
-      "paceRequest\022M\n\tworkspace\030\001 \001(\0132\'.scaleki" +
-      "t.v1.workspaces.UpdateWorkspaceB\006\272H\003\310\001\001R" +
-      "\tworkspace\"Z\n\027UpdateWorkspaceResponse\022?\n" +
-      "\tworkspace\030\001 \001(\0132!.scalekit.v1.workspace" +
-      "s.WorkspaceR\tworkspace\"5\n\023GetWorkspaceRe" +
-      "quest\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003wksR\002id\"\034\n" +
-      "\032GetCurrentWorkspaceRequest\"W\n\024GetWorksp" +
-      "aceResponse\022?\n\tworkspace\030\001 \001(\0132!.scaleki" +
-      "t.v1.workspaces.WorkspaceR\tworkspace\"9\n\027" +
-      "GetBillingPortalRequest\022\036\n\002id\030\001 \001(\tB\016\272H\013" +
-      "r\t\020\001\030 :\003wksR\002id\"<\n\030GetBillingPortalRespo" +
-      "nse\022\020\n\003url\030\001 \001(\tR\003url\022\016\n\002id\030\002 \001(\tR\002id\"A\n" +
-      "\037GetWorkspacePricingTableRequest\022\036\n\002id\030\001" +
-      " \001(\tB\016\272H\013r\t\020\001\030 :\003wksR\002id\"\202\002\n GetWorkspac" +
-      "ePricingTableResponse\022\016\n\002id\030\001 \001(\tR\002id\022(\n" +
-      "\020pricing_table_id\030\002 \001(\tR\016pricingTableId\022" +
-      "+\n\021publishable_token\030\003 \001(\tR\020publishableT" +
-      "oken\022C\n\036customer_session_client_secret\030\004" +
-      " \001(\tR\033customerSessionClientSecret\0222\n\006exp" +
-      "iry\030\005 \001(\0132\032.google.protobuf.TimestampR\006e" +
-      "xpiry\"B\n GetWorkspaceSubscriptionsReques" +
-      "t\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003wksR\002id\"\217\001\n!Ge" +
-      "tWorkspaceSubscriptionsResponse\022\036\n\002id\030\001 " +
-      "\001(\tB\016\272H\013r\t\020\001\030 :\003wksR\002id\022J\n\rsubscriptions" +
-      "\030\002 \003(\0132$.scalekit.v1.workspaces.Subscrip" +
-      "tionR\rsubscriptions\"6\n\014Subscription\022\016\n\002i" +
-      "d\030\002 \001(\tR\002id\022\026\n\006status\030\007 \001(\tR\006status\"\027\n\025G" +
-      "etBillingInfoRequest\"`\n\026GetBillingInfoRe" +
-      "sponse\022F\n\014billing_info\030\001 \001(\0132#.scalekit." +
-      "v1.workspaces.BillingInfoR\013billingInfo\"\371" +
-      "\003\n\013BillingInfo\022\033\n\tplan_name\030\001 \001(\tR\010planN" +
-      "ame\022Q\n\rsubscriptions\030\002 \003(\0132+.scalekit.v1" +
-      ".workspaces.BillingSubscriptionR\rsubscri" +
-      "ptions\022O\n\017current_invoice\030\003 \001(\0132&.scalek" +
-      "it.v1.workspaces.CurrentInvoiceR\016current" +
-      "Invoice\022L\n\016payment_method\030\004 \001(\0132%.scalek" +
-      "it.v1.workspaces.PaymentMethodR\rpaymentM" +
-      "ethod\022\\\n\024billing_contact_info\030\005 \001(\0132*.sc" +
-      "alekit.v1.workspaces.BillingContactInfoR" +
-      "\022billingContactInfo\0225\n\006addons\030\006 \003(\0132\035.sc" +
-      "alekit.v1.workspaces.AddonR\006addons\022F\n\014la" +
-      "st_invoice\030\007 \001(\0132#.scalekit.v1.workspace" +
-      "s.LastInvoiceR\013lastInvoice\"\326\002\n\023BillingSu" +
-      "bscription\022\016\n\002id\030\001 \001(\tR\002id\022I\n\006status\030\003 \001" +
-      "(\01621.scalekit.v1.workspaces.BillingSubsc" +
-      "riptionStatusR\006status\0229\n\nstart_date\030\004 \001(" +
-      "\0132\032.google.protobuf.TimestampR\tstartDate" +
-      "\0225\n\010end_date\030\005 \001(\0132\032.google.protobuf.Tim" +
-      "estampR\007endDate\022\026\n\006amount\030\006 \001(\001R\006amount\022" +
-      "\032\n\010currency\030\007 \001(\tR\010currency\022>\n\005items\030\010 \003" +
-      "(\0132(.scalekit.v1.workspaces.Subscription" +
-      "ItemR\005items\"\341\001\n\020SubscriptionItem\022\016\n\002id\030\001" +
-      " \001(\tR\002id\022\031\n\010price_id\030\002 \001(\tR\007priceId\022\032\n\010q" +
-      "uantity\030\003 \001(\003R\010quantity\022E\n\007product\030\004 \001(\013" +
-      "2+.scalekit.v1.workspaces.SubscriptionPr" +
-      "oductR\007product\022?\n\005price\030\005 \001(\0132).scalekit" +
-      ".v1.workspaces.SubscriptionPriceR\005price\"" +
-      "s\n\023SubscriptionProduct\022\016\n\002id\030\001 \001(\tR\002id\022\022" +
-      "\n\004name\030\002 \001(\tR\004name\022 \n\013description\030\003 \001(\tR" +
-      "\013description\022\026\n\006active\030\004 \001(\010R\006active\"\272\002\n" +
-      "\021SubscriptionPrice\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006am" +
-      "ount\030\002 \001(\003R\006amount\022\022\n\004type\030\003 \001(\tR\004type\022\032" +
-      "\n\010interval\030\004 \001(\tR\010interval\022%\n\016billing_sc" +
-      "heme\030\005 \001(\tR\rbillingScheme\022\035\n\nusage_type\030" +
-      "\006 \001(\tR\tusageType\0227\n\005tiers\030\007 \003(\0132!.scalek" +
-      "it.v1.workspaces.PriceTierR\005tiers\022\037\n\013tot" +
-      "al_usage\030\010 \001(\003R\ntotalUsage\022-\n\022aggregatio" +
-      "n_method\030\t \001(\tR\021aggregationMethod\"8\n\tPri" +
-      "ceTier\022\023\n\005up_to\030\001 \001(\003R\004upTo\022\026\n\006amount\030\002 " +
-      "\001(\003R\006amount\"\207\002\n\016CurrentInvoice\022\016\n\002id\030\001 \001" +
-      "(\tR\002id\022\026\n\006amount\030\002 \001(\001R\006amount\022\032\n\010curren" +
-      "cy\030\003 \001(\tR\010currency\022=\n\006status\030\004 \001(\0162%.sca" +
-      "lekit.v1.workspaces.InvoiceStatusR\006statu" +
-      "s\0225\n\010due_date\030\005 \001(\0132\032.google.protobuf.Ti" +
-      "mestampR\007dueDate\022;\n\013issued_date\030\006 \001(\0132\032." +
-      "google.protobuf.TimestampR\nissuedDate\"\204\002" +
-      "\n\013LastInvoice\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006amount\030" +
-      "\002 \001(\001R\006amount\022\032\n\010currency\030\003 \001(\tR\010currenc" +
-      "y\022=\n\006status\030\004 \001(\0162%.scalekit.v1.workspac" +
-      "es.InvoiceStatusR\006status\0225\n\010due_date\030\005 \001" +
-      "(\0132\032.google.protobuf.TimestampR\007dueDate\022" +
-      ";\n\013issued_date\030\006 \001(\0132\032.google.protobuf.T" +
-      "imestampR\nissuedDate\"\347\001\n\rPaymentMethod\022\016" +
-      "\n\002id\030\001 \001(\tR\002id\0227\n\004type\030\002 \001(\0162#.scalekit." +
-      "v1.workspaces.PaymentTypeR\004type\022%\n\016accou" +
-      "nt_number\030\003 \001(\tR\raccountNumber\022!\n\014accoun" +
-      "t_type\030\004 \001(\tR\013accountType\022C\n\006status\030\005 \001(" +
-      "\0162+.scalekit.v1.workspaces.PaymentMethod" +
-      "StatusR\006status\"\317\001\n\022BillingContactInfo\022\022\n" +
-      "\004name\030\001 \001(\tR\004name\022\024\n\005email\030\002 \001(\tR\005email\022" +
-      "\024\n\005line1\030\003 \001(\tR\005line1\022\024\n\005line2\030\004 \001(\tR\005li" +
-      "ne2\022\022\n\004city\030\005 \001(\tR\004city\022\024\n\005state\030\006 \001(\tR\005" +
-      "state\022\037\n\013postal_code\030\007 \001(\tR\npostalCode\022\030" +
-      "\n\007country\030\010 \001(\tR\007country\"\265\001\n\005Addon\022\016\n\002id" +
-      "\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013descri" +
-      "ption\030\003 \001(\tR\013description\022\032\n\010features\030\004 \003" +
-      "(\tR\010features\022\030\n\007enabled\030\005 \001(\010R\007enabled\022\024" +
-      "\n\005price\030\006 \001(\001R\005price\022\032\n\010currency\030\007 \001(\tR\010" +
-      "currency\"\030\n\026GetProductUsageRequest\"\232\001\n\027G" +
-      "etProductUsageResponse\022@\n\010products\030\001 \003(\013" +
-      "2$.scalekit.v1.workspaces.ProductUsageR\010" +
-      "products\022!\n\014total_amount\030\002 \001(\001R\013totalAmo" +
-      "unt\022\032\n\010currency\030\003 \001(\tR\010currency\"\371\001\n\014Prod" +
-      "uctUsage\022\035\n\nproduct_id\030\001 \001(\tR\tproductId\022" +
-      "!\n\014product_name\030\002 \001(\tR\013productName\022 \n\013de" +
-      "scription\030\003 \001(\tR\013description\0227\n\005tiers\030\004 " +
-      "\003(\0132!.scalekit.v1.workspaces.UsageTierR\005" +
-      "tiers\0220\n\024total_product_amount\030\005 \001(\001R\022tot" +
-      "alProductAmount\022\032\n\010currency\030\006 \001(\tR\010curre" +
-      "ncy\"\364\001\n\tUsageTier\022\033\n\ttier_name\030\001 \001(\tR\010ti" +
-      "erName\022#\n\rcurrent_count\030\002 \001(\003R\014currentCo" +
-      "unt\0222\n\025total_available_count\030\003 \001(\003R\023tota" +
-      "lAvailableCount\0223\n\026price_for_current_tie" +
-      "r\030\004 \001(\001R\023priceForCurrentTier\022\032\n\010currency" +
-      "\030\005 \001(\tR\010currency\022 \n\014is_free_tier\030\006 \001(\010R\n" +
-      "isFreeTier\"\032\n\030GetProductCatalogRequest\"]" +
-      "\n\031GetProductCatalogResponse\022@\n\007catalog\030\001" +
-      " \001(\0132&.scalekit.v1.workspaces.ProductCat" +
-      "alogR\007catalog\"X\n\016ProductCatalog\022F\n\010produ" +
-      "cts\030\001 \003(\0132*.scalekit.v1.workspaces.Produ" +
-      "ctCatalogItemR\010products\"\267\001\n\022ProductCatal" +
-      "ogItem\022@\n\007product\030\001 \001(\0132&.scalekit.v1.wo" +
-      "rkspaces.CatalogProductR\007product\022<\n\006pric" +
-      "es\030\002 \003(\0132$.scalekit.v1.workspaces.Catalo" +
-      "gPriceR\006prices\022!\n\014billing_type\030\003 \001(\tR\013bi" +
-      "llingType\"\302\002\n\016CatalogProduct\022\016\n\002id\030\001 \001(\t" +
-      "R\002id\022\022\n\004name\030\002 \001(\tR\004name\022 \n\013description\030" +
-      "\003 \001(\tR\013description\022\026\n\006active\030\004 \001(\010R\006acti" +
-      "ve\022k\n\010metadata\030\005 \003(\01324.scalekit.v1.works" +
-      "paces.CatalogProduct.MetadataEntryB\031\272H\026\232" +
-      "\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metadata\022(\n\020defau" +
-      "lt_price_id\030\006 \001(\tR\016defaultPriceId\032;\n\rMet" +
-      "adataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 " +
-      "\001(\tR\005value:\0028\001\"\201\002\n\014CatalogPrice\022\016\n\002id\030\001 " +
-      "\001(\tR\002id\022\026\n\006amount\030\002 \001(\003R\006amount\022\032\n\010curre" +
-      "ncy\030\003 \001(\tR\010currency\022\022\n\004type\030\004 \001(\tR\004type\022" +
-      "\032\n\010interval\030\005 \001(\tR\010interval\022%\n\016billing_s" +
-      "cheme\030\006 \001(\tR\rbillingScheme\022\035\n\nusage_type" +
-      "\030\007 \001(\tR\tusageType\0227\n\005tiers\030\010 \003(\0132!.scale" +
-      "kit.v1.workspaces.PriceTierR\005tiers*\257\001\n\031B" +
-      "illingSubscriptionStatus\022+\n\'BILLING_SUBS" +
-      "CRIPTION_STATUS_UNSPECIFIED\020\000\022\037\n\033BILLING" +
-      "_SUBSCRIPTION_ACTIVE\020\001\022!\n\035BILLING_SUBSCR" +
-      "IPTION_CANCELED\020\002\022!\n\035BILLING_SUBSCRIPTIO" +
-      "N_PAST_DUE\020\003*y\n\rInvoiceStatus\022\036\n\032INVOICE" +
-      "_STATUS_UNSPECIFIED\020\000\022\020\n\014INVOICE_PAID\020\001\022" +
-      "\017\n\013INVOICE_DUE\020\002\022\023\n\017INVOICE_OVERDUE\020\003\022\020\n" +
-      "\014INVOICE_VOID\020\004*T\n\013PaymentType\022\034\n\030PAYMEN" +
-      "T_TYPE_UNSPECIFIED\020\000\022\010\n\004CARD\020\001\022\020\n\014BANK_A" +
-      "CCOUNT\020\002\022\013\n\007OFFLINE\020\003*\216\001\n\023PaymentMethodS" +
-      "tatus\022%\n!PAYMENT_METHOD_STATUS_UNSPECIFI" +
-      "ED\020\000\022\031\n\025PAYMENT_METHOD_ACTIVE\020\001\022\032\n\026PAYME" +
-      "NT_METHOD_EXPIRED\020\002\022\031\n\025PAYMENT_METHOD_FA" +
-      "ILED\020\0032\240\020\n\020WorkspaceService\022\233\001\n\017CreateWo" +
-      "rkspace\022..scalekit.v1.workspaces.CreateW" +
-      "orkspaceRequest\032/.scalekit.v1.workspaces" +
-      ".CreateWorkspaceResponse\"\'\202\265\030\002\030\001\202\323\344\223\002\033\"\016" +
-      "/api/v1/signup:\tworkspace\022\220\001\n\014GetWorkspa" +
-      "ce\022+.scalekit.v1.workspaces.GetWorkspace" +
-      "Request\032,.scalekit.v1.workspaces.GetWork" +
-      "spaceResponse\"%\202\265\030\002\030@\202\323\344\223\002\031\022\027/api/v1/wor" +
-      "kspaces/{id}\022\236\001\n\023GetCurrentWorkspace\0222.s" +
-      "calekit.v1.workspaces.GetCurrentWorkspac" +
-      "eRequest\032,.scalekit.v1.workspaces.GetWor" +
-      "kspaceResponse\"%\202\265\030\002\030T\202\323\344\223\002\031\022\027/api/v1/wo" +
-      "rkspaces:this\022\244\001\n\017UpdateWorkspace\022..scal" +
-      "ekit.v1.workspaces.UpdateWorkspaceReques" +
-      "t\032/.scalekit.v1.workspaces.UpdateWorkspa" +
-      "ceResponse\"0\202\265\030\002\030@\202\323\344\223\002$2\027/api/v1/worksp" +
-      "aces/{id}:\tworkspace\022\220\001\n\020OnboardWorkspac" +
-      "e\022/.scalekit.v1.workspaces.OnboardWorksp" +
-      "aceRequest\032\026.google.protobuf.Empty\"3\202\265\030\002" +
-      "\030@\202\323\344\223\002\'2\032/api/v1/workspaces:onboard:\two" +
-      "rkspace\022\262\001\n\026UpdateCurrentWorkspace\0225.sca" +
-      "lekit.v1.workspaces.UpdateCurrentWorkspa" +
-      "ceRequest\032/.scalekit.v1.workspaces.Updat" +
-      "eWorkspaceResponse\"0\202\265\030\002\030P\202\323\344\223\002$2\027/api/v" +
-      "1/workspaces:this:\tworkspace\022\315\001\n\031GetWork" +
-      "spaceSubscriptions\0228.scalekit.v1.workspa" +
-      "ces.GetWorkspaceSubscriptionsRequest\0329.s" +
-      "calekit.v1.workspaces.GetWorkspaceSubscr" +
-      "iptionsResponse\";\202\265\030\002\030P\202\323\344\223\002/\022-/api/v1/w" +
-      "orkspaces/{id}/billing/subscriptions\022\312\001\n" +
-      "\030GetWorkspacePricingTable\0227.scalekit.v1." +
-      "workspaces.GetWorkspacePricingTableReque" +
-      "st\0328.scalekit.v1.workspaces.GetWorkspace" +
-      "PricingTableResponse\";\202\265\030\002\030P\202\323\344\223\002/\022-/api" +
-      "/v1/workspaces/{id}/billing/pricing-tabl" +
-      "e\022\264\001\n\020GetBillingPortal\022/.scalekit.v1.wor" +
-      "kspaces.GetBillingPortalRequest\0320.scalek" +
-      "it.v1.workspaces.GetBillingPortalRespons" +
-      "e\"=\202\265\030\002\030P\202\323\344\223\0021\022//api/v1/workspaces/{id}" +
-      "/billing/customer-portal\022\243\001\n\016GetBillingI" +
-      "nfo\022-.scalekit.v1.workspaces.GetBillingI" +
-      "nfoRequest\032..scalekit.v1.workspaces.GetB" +
-      "illingInfoResponse\"2\202\265\030\002\030T\202\323\344\223\002&\022$/api/v" +
-      "1/workspaces:this/billing:info\022\247\001\n\017GetPr" +
-      "oductUsage\022..scalekit.v1.workspaces.GetP" +
-      "roductUsageRequest\032/.scalekit.v1.workspa" +
-      "ces.GetProductUsageResponse\"3\202\265\030\002\030T\202\323\344\223\002" +
-      "\'\022%/api/v1/workspaces:this/billing:usage" +
-      "\022\246\001\n\021GetProductCatalog\0220.scalekit.v1.wor" +
-      "kspaces.GetProductCatalogRequest\0321.scale" +
-      "kit.v1.workspaces.GetProductCatalogRespo" +
-      "nse\",\202\265\030\002\030T\202\323\344\223\002 \022\036/api/v1/billing/produ" +
-      "ctcatalogB\353\001\n(com.scalekit.grpc.scalekit" +
-      ".v1.workspacesB\017WorkspacesProtoP\001Z4githu" +
-      "b.com/scalekit-inc/scalekit/pkg/grpc/wor" +
-      "kspaces\242\002\003SVW\252\002\026Scalekit.V1.Workspaces\312\002" +
-      "\026Scalekit\\V1\\Workspaces\342\002\"Scalekit\\V1\\Wo" +
-      "rkspaces\\GPBMetadata\352\002\030Scalekit::V1::Wor" +
-      "kspacesb\006proto3"
+      "roto\032\037google/api/field_behavior.proto\032\033g" +
+      "oogle/api/visibility.proto\032\031google/proto" +
+      "buf/any.proto\032\036google/protobuf/duration." +
+      "proto\032\033google/protobuf/empty.proto\032\037goog" +
+      "le/protobuf/timestamp.proto\032.protoc-gen-" +
+      "openapiv2/options/annotations.proto\032!sca" +
+      "lekit/v1/commons/commons.proto\032!scalekit" +
+      "/v1/options/options.proto\"\246\001\n\025WorkspaceE" +
+      "xtendedInfo\022\'\n\017payment_overdue\030\001 \001(\010R\016pa" +
+      "ymentOverdue\0224\n\026payment_method_present\030\002" +
+      " \001(\010R\024paymentMethodPresent\022.\n\023free_quota" +
+      "_exceeded\030\003 \001(\010R\021freeQuotaExceeded\"\261\004\n\tW" +
+      "orkspace\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003envR\002id" +
+      "\022;\n\013create_time\030\002 \001(\0132\032.google.protobuf." +
+      "TimestampR\ncreateTime\022;\n\013update_time\030\003 \001" +
+      "(\0132\032.google.protobuf.TimestampR\nupdateTi" +
+      "me\022-\n\014display_name\030\004 \001(\tB\n\272H\007r\005\020\001\030\310\001R\013di" +
+      "splayName\022@\n\013region_code\030\006 \001(\0162\037.scaleki" +
+      "t.v1.commons.RegionCodeR\nregionCode\022R\n\re" +
+      "xtended_info\030\007 \001(\0132-.scalekit.v1.workspa" +
+      "ces.WorkspaceExtendedInfoR\014extendedInfo\022" +
+      ".\n\023billing_customer_id\030\010 \001(\tR\021billingCus" +
+      "tomerId\0226\n\027billing_subscription_id\030\t \001(\t" +
+      "R\025billingSubscriptionId\022]\n\013auth_domain\030\n" +
+      " \001(\tB<\222A62 Auth Domain of current worksp" +
+      "aceJ\022\"auth.example.com\"\340A\003R\nauthDomain\"\240" +
+      "\001\n\017CreateWorkspace\022V\n\005email\030\001 \001(\tB@\272H=\272\001" +
+      ":\n\013valid_email\022\033email must be a valid em" +
+      "ail\032\016this.isEmail()R\005email\022)\n\007company\030\002 " +
+      "\001(\tB\n\272H\007r\005\020\001\030\200\002H\000R\007company\210\001\001B\n\n\010_compan" +
+      "y\"@\n\017UpdateWorkspace\022-\n\014display_name\030\001 \001" +
+      "(\tB\n\272H\007r\005\020\001\030\200\002R\013displayName\"\262\001\n\020OnboardW" +
+      "orkspace\022@\n\026workspace_display_name\030\001 \001(\t" +
+      "B\n\272H\007r\005\020\001\030\200\002R\024workspaceDisplayName\0222\n\017us" +
+      "er_given_name\030\002 \001(\tB\n\272H\007r\005\020\001\030\200\002R\ruserGiv" +
+      "enName\022(\n\020user_family_name\030\003 \001(\tR\016userFa" +
+      "milyName\"g\n\026CreateWorkspaceRequest\022M\n\two" +
+      "rkspace\030\001 \001(\0132\'.scalekit.v1.workspaces.C" +
+      "reateWorkspaceB\006\272H\003\310\001\001R\tworkspace\"n\n\027Cre" +
+      "ateWorkspaceResponse\022?\n\tworkspace\030\001 \001(\0132" +
+      "!.scalekit.v1.workspaces.WorkspaceR\twork" +
+      "space\022\022\n\004link\030\002 \001(\tR\004link\"\207\001\n\026UpdateWork" +
+      "spaceRequest\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003wks" +
+      "R\002id\022M\n\tworkspace\030\002 \001(\0132\'.scalekit.v1.wo" +
+      "rkspaces.UpdateWorkspaceB\006\272H\003\310\001\001R\tworksp" +
+      "ace\"i\n\027OnboardWorkspaceRequest\022N\n\tworksp" +
+      "ace\030\002 \001(\0132(.scalekit.v1.workspaces.Onboa" +
+      "rdWorkspaceB\006\272H\003\310\001\001R\tworkspace\"n\n\035Update" +
+      "CurrentWorkspaceRequest\022M\n\tworkspace\030\001 \001" +
+      "(\0132\'.scalekit.v1.workspaces.UpdateWorksp" +
+      "aceB\006\272H\003\310\001\001R\tworkspace\"Z\n\027UpdateWorkspac" +
+      "eResponse\022?\n\tworkspace\030\001 \001(\0132!.scalekit." +
+      "v1.workspaces.WorkspaceR\tworkspace\"5\n\023Ge" +
+      "tWorkspaceRequest\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 " +
+      ":\003wksR\002id\"\034\n\032GetCurrentWorkspaceRequest\"" +
+      "W\n\024GetWorkspaceResponse\022?\n\tworkspace\030\001 \001" +
+      "(\0132!.scalekit.v1.workspaces.WorkspaceR\tw" +
+      "orkspace\"d\n\027GetBillingPortalRequest\022\031\n\002i" +
+      "d\030\001 \001(\tB\t\272H\006r\004\020\000\030 R\002id\022 \n\tflow_type\030\002 \001(" +
+      "\tH\000R\010flowType\210\001\001B\014\n\n_flow_type\"<\n\030GetBil" +
+      "lingPortalResponse\022\020\n\003url\030\001 \001(\tR\003url\022\016\n\002" +
+      "id\030\002 \001(\tR\002id\"A\n\037GetWorkspacePricingTable" +
+      "Request\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003wksR\002id\"" +
+      "\202\002\n GetWorkspacePricingTableResponse\022\016\n\002" +
+      "id\030\001 \001(\tR\002id\022(\n\020pricing_table_id\030\002 \001(\tR\016" +
+      "pricingTableId\022+\n\021publishable_token\030\003 \001(" +
+      "\tR\020publishableToken\022C\n\036customer_session_" +
+      "client_secret\030\004 \001(\tR\033customerSessionClie" +
+      "ntSecret\0222\n\006expiry\030\005 \001(\0132\032.google.protob" +
+      "uf.TimestampR\006expiry\"B\n GetWorkspaceSubs" +
+      "criptionsRequest\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :" +
+      "\003wksR\002id\"\217\001\n!GetWorkspaceSubscriptionsRe" +
+      "sponse\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003wksR\002id\022J" +
+      "\n\rsubscriptions\030\002 \003(\0132$.scalekit.v1.work" +
+      "spaces.SubscriptionR\rsubscriptions\"6\n\014Su" +
+      "bscription\022\016\n\002id\030\002 \001(\tR\002id\022\026\n\006status\030\007 \001" +
+      "(\tR\006status\"8\n\025GetBillingInfoRequest\022\037\n\013o" +
+      "nly_addons\030\001 \001(\010R\nonlyAddons\"`\n\026GetBilli" +
+      "ngInfoResponse\022F\n\014billing_info\030\001 \001(\0132#.s" +
+      "calekit.v1.workspaces.BillingInfoR\013billi" +
+      "ngInfo\"\336\003\n\013BillingInfo\022\033\n\tplan_name\030\001 \001(" +
+      "\tR\010planName\022O\n\017current_invoice\030\003 \001(\0132&.s" +
+      "calekit.v1.workspaces.CurrentInvoiceR\016cu" +
+      "rrentInvoice\022L\n\016payment_method\030\004 \001(\0132%.s" +
+      "calekit.v1.workspaces.PaymentMethodR\rpay" +
+      "mentMethod\022\\\n\024billing_contact_info\030\005 \001(\013" +
+      "2*.scalekit.v1.workspaces.BillingContact" +
+      "InfoR\022billingContactInfo\0225\n\006addons\030\006 \003(\013" +
+      "2\035.scalekit.v1.workspaces.AddonR\006addons\022" +
+      "F\n\014last_invoice\030\007 \001(\0132#.scalekit.v1.work" +
+      "spaces.LastInvoiceR\013lastInvoice\0220\n\021publi" +
+      "shable_token\030\010 \001(\tB\003\340A\003R\020publishableToke" +
+      "nJ\004\010\002\020\003\"\326\002\n\023BillingSubscription\022\016\n\002id\030\001 " +
+      "\001(\tR\002id\022I\n\006status\030\003 \001(\01621.scalekit.v1.wo" +
+      "rkspaces.BillingSubscriptionStatusR\006stat" +
+      "us\0229\n\nstart_date\030\004 \001(\0132\032.google.protobuf" +
+      ".TimestampR\tstartDate\0225\n\010end_date\030\005 \001(\0132" +
+      "\032.google.protobuf.TimestampR\007endDate\022\026\n\006" +
+      "amount\030\006 \001(\001R\006amount\022\032\n\010currency\030\007 \001(\tR\010" +
+      "currency\022>\n\005items\030\010 \003(\0132(.scalekit.v1.wo" +
+      "rkspaces.SubscriptionItemR\005items\"\341\001\n\020Sub" +
+      "scriptionItem\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010price_i" +
+      "d\030\002 \001(\tR\007priceId\022\032\n\010quantity\030\003 \001(\003R\010quan" +
+      "tity\022E\n\007product\030\004 \001(\0132+.scalekit.v1.work" +
+      "spaces.SubscriptionProductR\007product\022?\n\005p" +
+      "rice\030\005 \001(\0132).scalekit.v1.workspaces.Subs" +
+      "criptionPriceR\005price\"s\n\023SubscriptionProd" +
+      "uct\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022" +
+      " \n\013description\030\003 \001(\tR\013description\022\026\n\006act" +
+      "ive\030\004 \001(\010R\006active\"\272\002\n\021SubscriptionPrice\022" +
+      "\016\n\002id\030\001 \001(\tR\002id\022\026\n\006amount\030\002 \001(\001R\006amount\022" +
+      "\022\n\004type\030\003 \001(\tR\004type\022\032\n\010interval\030\004 \001(\tR\010i" +
+      "nterval\022%\n\016billing_scheme\030\005 \001(\tR\rbilling" +
+      "Scheme\022\035\n\nusage_type\030\006 \001(\tR\tusageType\0227\n" +
+      "\005tiers\030\007 \003(\0132!.scalekit.v1.workspaces.Pr" +
+      "iceTierR\005tiers\022\037\n\013total_usage\030\010 \001(\003R\ntot" +
+      "alUsage\022-\n\022aggregation_method\030\t \001(\tR\021agg" +
+      "regationMethod\"8\n\tPriceTier\022\023\n\005up_to\030\001 \001" +
+      "(\003R\004upTo\022\026\n\006amount\030\002 \001(\001R\006amount\"\227\003\n\016Cur" +
+      "rentInvoice\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006amount\030\002 " +
+      "\001(\001R\006amount\022\032\n\010currency\030\003 \001(\tR\010currency\022" +
+      "=\n\006status\030\004 \001(\0162%.scalekit.v1.workspaces" +
+      ".InvoiceStatusR\006status\0225\n\010due_date\030\005 \001(\013" +
+      "2\032.google.protobuf.TimestampR\007dueDate\022;\n" +
+      "\013issued_date\030\006 \001(\0132\032.google.protobuf.Tim" +
+      "estampR\nissuedDate\022H\n\022billing_start_date" +
+      "\030\007 \001(\0132\032.google.protobuf.TimestampR\020bill" +
+      "ingStartDate\022D\n\020billing_end_date\030\010 \001(\0132\032" +
+      ".google.protobuf.TimestampR\016billingEndDa" +
+      "te\"\204\002\n\013LastInvoice\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006am" +
+      "ount\030\002 \001(\001R\006amount\022\032\n\010currency\030\003 \001(\tR\010cu" +
+      "rrency\022=\n\006status\030\004 \001(\0162%.scalekit.v1.wor" +
+      "kspaces.InvoiceStatusR\006status\0225\n\010due_dat" +
+      "e\030\005 \001(\0132\032.google.protobuf.TimestampR\007due" +
+      "Date\022;\n\013issued_date\030\006 \001(\0132\032.google.proto" +
+      "buf.TimestampR\nissuedDate\"\346\003\n\rPaymentMet" +
+      "hod\022\016\n\002id\030\001 \001(\tR\002id\0227\n\004type\030\002 \001(\0162#.scal" +
+      "ekit.v1.workspaces.PaymentTypeR\004type\022%\n\016" +
+      "account_number\030\003 \001(\tR\raccountNumber\022!\n\014a" +
+      "ccount_type\030\004 \001(\tR\013accountType\022C\n\006status" +
+      "\030\005 \001(\0162+.scalekit.v1.workspaces.PaymentM" +
+      "ethodStatusR\006status\022!\n\014account_name\030\006 \001(" +
+      "\tR\013accountName\022\231\001\n\014payment_info\030\007 \003(\01326." +
+      "scalekit.v1.workspaces.PaymentMethod.Pay" +
+      "mentInfoEntryB>\272H;\232\0018\020\005\",r*R\005brandR\005last" +
+      "4R\texp_monthR\010exp_yearR\005email*\006r\004\020\001\030@R\013p" +
+      "aymentInfo\032>\n\020PaymentInfoEntry\022\020\n\003key\030\001 " +
+      "\001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\317\001\n\022B" +
+      "illingContactInfo\022\022\n\004name\030\001 \001(\tR\004name\022\024\n" +
+      "\005email\030\002 \001(\tR\005email\022\024\n\005line1\030\003 \001(\tR\005line" +
+      "1\022\024\n\005line2\030\004 \001(\tR\005line2\022\022\n\004city\030\005 \001(\tR\004c" +
+      "ity\022\024\n\005state\030\006 \001(\tR\005state\022\037\n\013postal_code" +
+      "\030\007 \001(\tR\npostalCode\022\030\n\007country\030\010 \001(\tR\007cou" +
+      "ntry\"\231\001\n\005Addon\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002" +
+      " \001(\tR\004name\022\032\n\010features\030\004 \003(\tR\010features\022\030" +
+      "\n\007enabled\030\005 \001(\010R\007enabled\022\024\n\005price\030\006 \001(\001R" +
+      "\005price\022\032\n\010currency\030\007 \001(\tR\010currencyJ\004\010\003\020\004" +
+      "\"\030\n\026GetProductUsageRequest\"\232\001\n\027GetProduc" +
+      "tUsageResponse\022@\n\010products\030\001 \003(\0132$.scale" +
+      "kit.v1.workspaces.ProductUsageR\010products" +
+      "\022!\n\014total_amount\030\002 \001(\001R\013totalAmount\022\032\n\010c" +
+      "urrency\030\003 \001(\tR\010currency\"\272\002\n\014ProductUsage" +
+      "\022\035\n\nproduct_id\030\001 \001(\tR\tproductId\022!\n\014produ" +
+      "ct_name\030\002 \001(\tR\013productName\022 \n\013descriptio" +
+      "n\030\003 \001(\tR\013description\0227\n\005tiers\030\004 \003(\0132!.sc" +
+      "alekit.v1.workspaces.UsageTierR\005tiers\022!\n" +
+      "\014total_amount\030\005 \001(\001R\013totalAmount\022\037\n\013tota" +
+      "l_count\030\006 \001(\001R\ntotalCount\022\032\n\010currency\030\007 " +
+      "\001(\tR\010currency\022-\n\022aggregation_method\030\010 \001(" +
+      "\tR\021aggregationMethod\"\364\001\n\tUsageTier\022\033\n\tti" +
+      "er_name\030\001 \001(\tR\010tierName\022#\n\rcurrent_count" +
+      "\030\002 \001(\003R\014currentCount\0222\n\025total_available_" +
+      "count\030\003 \001(\003R\023totalAvailableCount\0223\n\026pric" +
+      "e_for_current_tier\030\004 \001(\001R\023priceForCurren" +
+      "tTier\022\032\n\010currency\030\005 \001(\tR\010currency\022 \n\014is_" +
+      "free_tier\030\006 \001(\010R\nisFreeTier\"\032\n\030GetProduc" +
+      "tCatalogRequest\"]\n\031GetProductCatalogResp" +
+      "onse\022@\n\007catalog\030\001 \001(\0132&.scalekit.v1.work" +
+      "spaces.ProductCatalogR\007catalog\"X\n\016Produc" +
+      "tCatalog\022F\n\010products\030\001 \003(\0132*.scalekit.v1" +
+      ".workspaces.ProductCatalogItemR\010products" +
+      "\"\267\001\n\022ProductCatalogItem\022@\n\007product\030\001 \001(\013" +
+      "2&.scalekit.v1.workspaces.CatalogProduct" +
+      "R\007product\022<\n\006prices\030\002 \003(\0132$.scalekit.v1." +
+      "workspaces.CatalogPriceR\006prices\022!\n\014billi" +
+      "ng_type\030\003 \001(\tR\013billingType\"\302\002\n\016CatalogPr" +
+      "oduct\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004nam" +
+      "e\022 \n\013description\030\003 \001(\tR\013description\022\026\n\006a" +
+      "ctive\030\004 \001(\010R\006active\022k\n\010metadata\030\005 \003(\01324." +
+      "scalekit.v1.workspaces.CatalogProduct.Me" +
+      "tadataEntryB\031\272H\026\232\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010" +
+      "metadata\022(\n\020default_price_id\030\006 \001(\tR\016defa" +
+      "ultPriceId\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\t" +
+      "R\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\201\002\n\014Cata" +
+      "logPrice\022\016\n\002id\030\001 \001(\tR\002id\022\026\n\006amount\030\002 \001(\001" +
+      "R\006amount\022\032\n\010currency\030\003 \001(\tR\010currency\022\022\n\004" +
+      "type\030\004 \001(\tR\004type\022\032\n\010interval\030\005 \001(\tR\010inte" +
+      "rval\022%\n\016billing_scheme\030\006 \001(\tR\rbillingSch" +
+      "eme\022\035\n\nusage_type\030\007 \001(\tR\tusageType\0227\n\005ti" +
+      "ers\030\010 \003(\0132!.scalekit.v1.workspaces.Price" +
+      "TierR\005tiers\"\333\001\n\026AddSubscriptionRequest\022!" +
+      "\n\014product_name\030\001 \001(\tR\013productName\022\035\n\npro" +
+      "duct_id\030\002 \001(\tR\tproductId:\177\272H|\032z\n\022product" +
+      "_name_or_id\0222either product_id or produc" +
+      "t_name must be provided\0320this.product_id" +
+      " != \'\' || this.product_name != \'\'\"}\n\027Add" +
+      "SubscriptionResponse\022\'\n\017subscription_id\030" +
+      "\001 \001(\tR\016subscriptionId\022\035\n\nproduct_id\030\002 \001(" +
+      "\tR\tproductId\022\032\n\010quantity\030\003 \001(\003R\010quantity" +
+      "\"\345\002\n\034CreateCheckoutSessionRequest\022?\n\004mod" +
+      "e\030\001 \001(\0162+.scalekit.v1.workspaces.Checkou" +
+      "tSessionModeR\004mode\022\"\n\nreturn_url\030\002 \001(\tH\000" +
+      "R\treturnUrl\210\001\001\022$\n\013success_url\030\003 \001(\tH\001R\ns" +
+      "uccessUrl\210\001\001\0227\n\007ui_mode\030\004 \001(\0162\036.scalekit" +
+      ".v1.workspaces.UiModeR\006uiMode\022b\n\026redirec" +
+      "t_on_completion\030\005 \001(\0162,.scalekit.v1.work" +
+      "spaces.RedirectOnCompletionR\024redirectOnC" +
+      "ompletionB\r\n\013_return_urlB\016\n\014_success_url" +
+      "\"s\n\035CreateCheckoutSessionResponse\022\016\n\002id\030" +
+      "\001 \001(\tR\002id\022#\n\rclient_secret\030\002 \001(\tR\014client" +
+      "Secret\022\025\n\003url\030\003 \001(\tH\000R\003url\210\001\001B\006\n\004_url*\257\001" +
+      "\n\031BillingSubscriptionStatus\022+\n\'BILLING_S" +
+      "UBSCRIPTION_STATUS_UNSPECIFIED\020\000\022\037\n\033BILL" +
+      "ING_SUBSCRIPTION_ACTIVE\020\001\022!\n\035BILLING_SUB" +
+      "SCRIPTION_CANCELED\020\002\022!\n\035BILLING_SUBSCRIP" +
+      "TION_PAST_DUE\020\003*y\n\rInvoiceStatus\022\036\n\032INVO" +
+      "ICE_STATUS_UNSPECIFIED\020\000\022\020\n\014INVOICE_PAID" +
+      "\020\001\022\017\n\013INVOICE_DUE\020\002\022\023\n\017INVOICE_OVERDUE\020\003" +
+      "\022\020\n\014INVOICE_VOID\020\004*j\n\013PaymentType\022\034\n\030PAY" +
+      "MENT_TYPE_UNSPECIFIED\020\000\022\010\n\004CARD\020\001\022\020\n\014BAN" +
+      "K_ACCOUNT\020\002\022\013\n\007OFFLINE\020\003\022\010\n\004LINK\020\004\022\n\n\006PA" +
+      "YPAL\020\005*\216\001\n\023PaymentMethodStatus\022%\n!PAYMEN" +
+      "T_METHOD_STATUS_UNSPECIFIED\020\000\022\031\n\025PAYMENT" +
+      "_METHOD_ACTIVE\020\001\022\032\n\026PAYMENT_METHOD_EXPIR" +
+      "ED\020\002\022\031\n\025PAYMENT_METHOD_FAILED\020\003*f\n\024Redir" +
+      "ectOnCompletion\022&\n\"REDIRECT_ON_COMPLETIO" +
+      "N_UNSPECIFIED\020\000\022\t\n\005never\020\001\022\n\n\006always\020\002\022\017" +
+      "\n\013if_required\020\003*G\n\006UiMode\022\027\n\023UI_MODE_UNS" +
+      "PECIFIED\020\000\022\014\n\010embedded\020\001\022\n\n\006hosted\020\002\022\n\n\006" +
+      "custom\020\003*f\n\023CheckoutSessionMode\022%\n!CHECK" +
+      "OUT_SESSION_MODE_UNSPECIFIED\020\000\022\t\n\005setup\020" +
+      "\001\022\020\n\014subscription\020\002\022\013\n\007payment\020\0032\206\024\n\020Wor" +
+      "kspaceService\022\233\001\n\017CreateWorkspace\022..scal" +
+      "ekit.v1.workspaces.CreateWorkspaceReques" +
+      "t\032/.scalekit.v1.workspaces.CreateWorkspa" +
+      "ceResponse\"\'\202\265\030\002\030\001\202\323\344\223\002\033\"\016/api/v1/signup" +
+      ":\tworkspace\022\220\001\n\014GetWorkspace\022+.scalekit." +
+      "v1.workspaces.GetWorkspaceRequest\032,.scal" +
+      "ekit.v1.workspaces.GetWorkspaceResponse\"" +
+      "%\202\265\030\002\030@\202\323\344\223\002\031\022\027/api/v1/workspaces/{id}\022\236" +
+      "\001\n\023GetCurrentWorkspace\0222.scalekit.v1.wor" +
+      "kspaces.GetCurrentWorkspaceRequest\032,.sca" +
+      "lekit.v1.workspaces.GetWorkspaceResponse" +
+      "\"%\202\265\030\002\030T\202\323\344\223\002\031\022\027/api/v1/workspaces:this\022" +
+      "\244\001\n\017UpdateWorkspace\022..scalekit.v1.worksp" +
+      "aces.UpdateWorkspaceRequest\032/.scalekit.v" +
+      "1.workspaces.UpdateWorkspaceResponse\"0\202\265" +
+      "\030\002\030@\202\323\344\223\002$2\027/api/v1/workspaces/{id}:\twor" +
+      "kspace\022\220\001\n\020OnboardWorkspace\022/.scalekit.v" +
+      "1.workspaces.OnboardWorkspaceRequest\032\026.g" +
+      "oogle.protobuf.Empty\"3\202\265\030\002\030@\202\323\344\223\002\'2\032/api" +
+      "/v1/workspaces:onboard:\tworkspace\022\262\001\n\026Up" +
+      "dateCurrentWorkspace\0225.scalekit.v1.works" +
+      "paces.UpdateCurrentWorkspaceRequest\032/.sc" +
+      "alekit.v1.workspaces.UpdateWorkspaceResp" +
+      "onse\"0\202\265\030\002\030P\202\323\344\223\002$2\027/api/v1/workspaces:t" +
+      "his:\tworkspace\022\315\001\n\031GetWorkspaceSubscript" +
+      "ions\0228.scalekit.v1.workspaces.GetWorkspa" +
+      "ceSubscriptionsRequest\0329.scalekit.v1.wor" +
+      "kspaces.GetWorkspaceSubscriptionsRespons" +
+      "e\";\202\265\030\002\030P\202\323\344\223\002/\022-/api/v1/workspaces/{id}" +
+      "/billing/subscriptions\022\312\001\n\030GetWorkspaceP" +
+      "ricingTable\0227.scalekit.v1.workspaces.Get" +
+      "WorkspacePricingTableRequest\0328.scalekit." +
+      "v1.workspaces.GetWorkspacePricingTableRe" +
+      "sponse\";\202\265\030\002\030P\202\323\344\223\002/\022-/api/v1/workspaces" +
+      "/{id}/billing/pricing-table\022\303\001\n\020GetBilli" +
+      "ngPortal\022/.scalekit.v1.workspaces.GetBil" +
+      "lingPortalRequest\0320.scalekit.v1.workspac" +
+      "es.GetBillingPortalResponse\"L\202\265\030\002\030P\372\322\344\223\002" +
+      "\t\022\007PREVIEW\202\323\344\223\0021\022//api/v1/workspaces:thi" +
+      "s/billing/customer-portal\022\262\001\n\016GetBilling" +
+      "Info\022-.scalekit.v1.workspaces.GetBilling" +
+      "InfoRequest\032..scalekit.v1.workspaces.Get" +
+      "BillingInfoResponse\"A\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVI" +
+      "EW\202\323\344\223\002&\022$/api/v1/workspaces:this/billin" +
+      "g:info\022\276\001\n\017GetProductUsage\022..scalekit.v1" +
+      ".workspaces.GetProductUsageRequest\032/.sca" +
+      "lekit.v1.workspaces.GetProductUsageRespo" +
+      "nse\"J\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002/\022-/api/v" +
+      "1/workspaces:this/billing:product-usage\022" +
+      "\265\001\n\021GetProductCatalog\0220.scalekit.v1.work" +
+      "spaces.GetProductCatalogRequest\0321.scalek" +
+      "it.v1.workspaces.GetProductCatalogRespon" +
+      "se\";\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002 \022\036/api/v1" +
+      "/billing/productcatalog\022\305\001\n\017AddSubscript" +
+      "ion\022..scalekit.v1.workspaces.AddSubscrip" +
+      "tionRequest\032/.scalekit.v1.workspaces.Add" +
+      "SubscriptionResponse\"Q\202\265\030\002\030T\372\322\344\223\002\t\022\007PREV" +
+      "IEW\202\323\344\223\0026\"1/api/v1/workspaces:this/billi" +
+      "ng/subscriptions:add:\001*\022\327\001\n\025CreateChecko" +
+      "utSession\0224.scalekit.v1.workspaces.Creat" +
+      "eCheckoutSessionRequest\0325.scalekit.v1.wo" +
+      "rkspaces.CreateCheckoutSessionResponse\"Q" +
+      "\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0026\"1/api/v1/wor" +
+      "kspaces:this/billing/checkout_sessions:\001" +
+      "*B\353\001\n(com.scalekit.grpc.scalekit.v1.work" +
+      "spacesB\017WorkspacesProtoP\001Z4github.com/sc" +
+      "alekit-inc/scalekit/pkg/grpc/workspaces\242" +
+      "\002\003SVW\252\002\026Scalekit.V1.Workspaces\312\002\026Scaleki" +
+      "t\\V1\\Workspaces\342\002\"Scalekit\\V1\\Workspaces" +
+      "\\GPBMetadata\352\002\030Scalekit::V1::Workspacesb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -515,10 +597,12 @@ public final class WorkspacesProto {
           com.scalekit.grpc.buf.validate.ValidateProto.getDescriptor(),
           com.scalekit.grpc.google.api.AnnotationsProto.getDescriptor(),
           com.scalekit.grpc.google.api.FieldBehaviorProto.getDescriptor(),
+          com.scalekit.grpc.google.api.VisibilityProto.getDescriptor(),
           com.google.protobuf.AnyProto.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor(),
           com.scalekit.grpc.scalekit.v1.commons.CommonsProto.getDescriptor(),
           com.scalekit.grpc.scalekit.v1.options.OptionsProto.getDescriptor(),
         });
@@ -533,7 +617,7 @@ public final class WorkspacesProto {
     internal_static_scalekit_v1_workspaces_Workspace_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_workspaces_Workspace_descriptor,
-        new java.lang.String[] { "Id", "CreateTime", "UpdateTime", "DisplayName", "RegionCode", "ExtendedInfo", "BillingCustomerId", "BillingSubscriptionId", });
+        new java.lang.String[] { "Id", "CreateTime", "UpdateTime", "DisplayName", "RegionCode", "ExtendedInfo", "BillingCustomerId", "BillingSubscriptionId", "AuthDomain", });
     internal_static_scalekit_v1_workspaces_CreateWorkspace_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_scalekit_v1_workspaces_CreateWorkspace_fieldAccessorTable = new
@@ -611,7 +695,7 @@ public final class WorkspacesProto {
     internal_static_scalekit_v1_workspaces_GetBillingPortalRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_workspaces_GetBillingPortalRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "FlowType", });
     internal_static_scalekit_v1_workspaces_GetBillingPortalResponse_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_scalekit_v1_workspaces_GetBillingPortalResponse_fieldAccessorTable = new
@@ -653,7 +737,7 @@ public final class WorkspacesProto {
     internal_static_scalekit_v1_workspaces_GetBillingInfoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_workspaces_GetBillingInfoRequest_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "OnlyAddons", });
     internal_static_scalekit_v1_workspaces_GetBillingInfoResponse_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_scalekit_v1_workspaces_GetBillingInfoResponse_fieldAccessorTable = new
@@ -665,7 +749,7 @@ public final class WorkspacesProto {
     internal_static_scalekit_v1_workspaces_BillingInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_workspaces_BillingInfo_descriptor,
-        new java.lang.String[] { "PlanName", "Subscriptions", "CurrentInvoice", "PaymentMethod", "BillingContactInfo", "Addons", "LastInvoice", });
+        new java.lang.String[] { "PlanName", "CurrentInvoice", "PaymentMethod", "BillingContactInfo", "Addons", "LastInvoice", "PublishableToken", });
     internal_static_scalekit_v1_workspaces_BillingSubscription_descriptor =
       getDescriptor().getMessageTypes().get(24);
     internal_static_scalekit_v1_workspaces_BillingSubscription_fieldAccessorTable = new
@@ -701,7 +785,7 @@ public final class WorkspacesProto {
     internal_static_scalekit_v1_workspaces_CurrentInvoice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_workspaces_CurrentInvoice_descriptor,
-        new java.lang.String[] { "Id", "Amount", "Currency", "Status", "DueDate", "IssuedDate", });
+        new java.lang.String[] { "Id", "Amount", "Currency", "Status", "DueDate", "IssuedDate", "BillingStartDate", "BillingEndDate", });
     internal_static_scalekit_v1_workspaces_LastInvoice_descriptor =
       getDescriptor().getMessageTypes().get(30);
     internal_static_scalekit_v1_workspaces_LastInvoice_fieldAccessorTable = new
@@ -713,7 +797,13 @@ public final class WorkspacesProto {
     internal_static_scalekit_v1_workspaces_PaymentMethod_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_workspaces_PaymentMethod_descriptor,
-        new java.lang.String[] { "Id", "Type", "AccountNumber", "AccountType", "Status", });
+        new java.lang.String[] { "Id", "Type", "AccountNumber", "AccountType", "Status", "AccountName", "PaymentInfo", });
+    internal_static_scalekit_v1_workspaces_PaymentMethod_PaymentInfoEntry_descriptor =
+      internal_static_scalekit_v1_workspaces_PaymentMethod_descriptor.getNestedTypes().get(0);
+    internal_static_scalekit_v1_workspaces_PaymentMethod_PaymentInfoEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_workspaces_PaymentMethod_PaymentInfoEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_scalekit_v1_workspaces_BillingContactInfo_descriptor =
       getDescriptor().getMessageTypes().get(32);
     internal_static_scalekit_v1_workspaces_BillingContactInfo_fieldAccessorTable = new
@@ -725,7 +815,7 @@ public final class WorkspacesProto {
     internal_static_scalekit_v1_workspaces_Addon_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_workspaces_Addon_descriptor,
-        new java.lang.String[] { "Id", "Name", "Description", "Features", "Enabled", "Price", "Currency", });
+        new java.lang.String[] { "Id", "Name", "Features", "Enabled", "Price", "Currency", });
     internal_static_scalekit_v1_workspaces_GetProductUsageRequest_descriptor =
       getDescriptor().getMessageTypes().get(34);
     internal_static_scalekit_v1_workspaces_GetProductUsageRequest_fieldAccessorTable = new
@@ -743,7 +833,7 @@ public final class WorkspacesProto {
     internal_static_scalekit_v1_workspaces_ProductUsage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_workspaces_ProductUsage_descriptor,
-        new java.lang.String[] { "ProductId", "ProductName", "Description", "Tiers", "TotalProductAmount", "Currency", });
+        new java.lang.String[] { "ProductId", "ProductName", "Description", "Tiers", "TotalAmount", "TotalCount", "Currency", "AggregationMethod", });
     internal_static_scalekit_v1_workspaces_UsageTier_descriptor =
       getDescriptor().getMessageTypes().get(37);
     internal_static_scalekit_v1_workspaces_UsageTier_fieldAccessorTable = new
@@ -792,20 +882,50 @@ public final class WorkspacesProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_workspaces_CatalogPrice_descriptor,
         new java.lang.String[] { "Id", "Amount", "Currency", "Type", "Interval", "BillingScheme", "UsageType", "Tiers", });
+    internal_static_scalekit_v1_workspaces_AddSubscriptionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(44);
+    internal_static_scalekit_v1_workspaces_AddSubscriptionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_workspaces_AddSubscriptionRequest_descriptor,
+        new java.lang.String[] { "ProductName", "ProductId", });
+    internal_static_scalekit_v1_workspaces_AddSubscriptionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(45);
+    internal_static_scalekit_v1_workspaces_AddSubscriptionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_workspaces_AddSubscriptionResponse_descriptor,
+        new java.lang.String[] { "SubscriptionId", "ProductId", "Quantity", });
+    internal_static_scalekit_v1_workspaces_CreateCheckoutSessionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(46);
+    internal_static_scalekit_v1_workspaces_CreateCheckoutSessionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_workspaces_CreateCheckoutSessionRequest_descriptor,
+        new java.lang.String[] { "Mode", "ReturnUrl", "SuccessUrl", "UiMode", "RedirectOnCompletion", });
+    internal_static_scalekit_v1_workspaces_CreateCheckoutSessionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(47);
+    internal_static_scalekit_v1_workspaces_CreateCheckoutSessionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_workspaces_CreateCheckoutSessionResponse_descriptor,
+        new java.lang.String[] { "Id", "ClientSecret", "Url", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);
+    registry.add(com.scalekit.grpc.buf.validate.ValidateProto.message);
+    registry.add(com.scalekit.grpc.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
+    registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.scalekit.grpc.buf.validate.ValidateProto.getDescriptor();
     com.scalekit.grpc.google.api.AnnotationsProto.getDescriptor();
     com.scalekit.grpc.google.api.FieldBehaviorProto.getDescriptor();
+    com.scalekit.grpc.google.api.VisibilityProto.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor();
     com.scalekit.grpc.scalekit.v1.commons.CommonsProto.getDescriptor();
     com.scalekit.grpc.scalekit.v1.options.OptionsProto.getDescriptor();
   }

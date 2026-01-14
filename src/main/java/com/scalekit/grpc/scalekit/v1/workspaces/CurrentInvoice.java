@@ -202,6 +202,82 @@ private static final long serialVersionUID = 0L;
     return issuedDate_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : issuedDate_;
   }
 
+  public static final int BILLING_START_DATE_FIELD_NUMBER = 7;
+  private com.google.protobuf.Timestamp billingStartDate_;
+  /**
+   * <pre>
+   * Start of the current billing period
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp billing_start_date = 7 [json_name = "billingStartDate"];</code>
+   * @return Whether the billingStartDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasBillingStartDate() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <pre>
+   * Start of the current billing period
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp billing_start_date = 7 [json_name = "billingStartDate"];</code>
+   * @return The billingStartDate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getBillingStartDate() {
+    return billingStartDate_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : billingStartDate_;
+  }
+  /**
+   * <pre>
+   * Start of the current billing period
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp billing_start_date = 7 [json_name = "billingStartDate"];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getBillingStartDateOrBuilder() {
+    return billingStartDate_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : billingStartDate_;
+  }
+
+  public static final int BILLING_END_DATE_FIELD_NUMBER = 8;
+  private com.google.protobuf.Timestamp billingEndDate_;
+  /**
+   * <pre>
+   * End of the current billing period
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp billing_end_date = 8 [json_name = "billingEndDate"];</code>
+   * @return Whether the billingEndDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasBillingEndDate() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <pre>
+   * End of the current billing period
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp billing_end_date = 8 [json_name = "billingEndDate"];</code>
+   * @return The billingEndDate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getBillingEndDate() {
+    return billingEndDate_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : billingEndDate_;
+  }
+  /**
+   * <pre>
+   * End of the current billing period
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp billing_end_date = 8 [json_name = "billingEndDate"];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getBillingEndDateOrBuilder() {
+    return billingEndDate_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : billingEndDate_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -234,6 +310,12 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(6, getIssuedDate());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(7, getBillingStartDate());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(8, getBillingEndDate());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -264,6 +346,14 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getIssuedDate());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getBillingStartDate());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getBillingEndDate());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -298,6 +388,16 @@ private static final long serialVersionUID = 0L;
       if (!getIssuedDate()
           .equals(other.getIssuedDate())) return false;
     }
+    if (hasBillingStartDate() != other.hasBillingStartDate()) return false;
+    if (hasBillingStartDate()) {
+      if (!getBillingStartDate()
+          .equals(other.getBillingStartDate())) return false;
+    }
+    if (hasBillingEndDate() != other.hasBillingEndDate()) return false;
+    if (hasBillingEndDate()) {
+      if (!getBillingEndDate()
+          .equals(other.getBillingEndDate())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -325,6 +425,14 @@ private static final long serialVersionUID = 0L;
     if (hasIssuedDate()) {
       hash = (37 * hash) + ISSUED_DATE_FIELD_NUMBER;
       hash = (53 * hash) + getIssuedDate().hashCode();
+    }
+    if (hasBillingStartDate()) {
+      hash = (37 * hash) + BILLING_START_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getBillingStartDate().hashCode();
+    }
+    if (hasBillingEndDate()) {
+      hash = (37 * hash) + BILLING_END_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getBillingEndDate().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -458,6 +566,8 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getDueDateFieldBuilder();
         getIssuedDateFieldBuilder();
+        getBillingStartDateFieldBuilder();
+        getBillingEndDateFieldBuilder();
       }
     }
     @java.lang.Override
@@ -477,6 +587,16 @@ private static final long serialVersionUID = 0L;
       if (issuedDateBuilder_ != null) {
         issuedDateBuilder_.dispose();
         issuedDateBuilder_ = null;
+      }
+      billingStartDate_ = null;
+      if (billingStartDateBuilder_ != null) {
+        billingStartDateBuilder_.dispose();
+        billingStartDateBuilder_ = null;
+      }
+      billingEndDate_ = null;
+      if (billingEndDateBuilder_ != null) {
+        billingEndDateBuilder_.dispose();
+        billingEndDateBuilder_ = null;
       }
       return this;
     }
@@ -535,6 +655,18 @@ private static final long serialVersionUID = 0L;
             ? issuedDate_
             : issuedDateBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.billingStartDate_ = billingStartDateBuilder_ == null
+            ? billingStartDate_
+            : billingStartDateBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.billingEndDate_ = billingEndDateBuilder_ == null
+            ? billingEndDate_
+            : billingEndDateBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -605,6 +737,12 @@ private static final long serialVersionUID = 0L;
       if (other.hasIssuedDate()) {
         mergeIssuedDate(other.getIssuedDate());
       }
+      if (other.hasBillingStartDate()) {
+        mergeBillingStartDate(other.getBillingStartDate());
+      }
+      if (other.hasBillingEndDate()) {
+        mergeBillingEndDate(other.getBillingEndDate());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -665,6 +803,20 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000020;
               break;
             } // case 50
+            case 58: {
+              input.readMessage(
+                  getBillingStartDateFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 58
+            case 66: {
+              input.readMessage(
+                  getBillingEndDateFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 66
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1151,6 +1303,320 @@ private static final long serialVersionUID = 0L;
         issuedDate_ = null;
       }
       return issuedDateBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp billingStartDate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> billingStartDateBuilder_;
+    /**
+     * <pre>
+     * Start of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_start_date = 7 [json_name = "billingStartDate"];</code>
+     * @return Whether the billingStartDate field is set.
+     */
+    public boolean hasBillingStartDate() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <pre>
+     * Start of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_start_date = 7 [json_name = "billingStartDate"];</code>
+     * @return The billingStartDate.
+     */
+    public com.google.protobuf.Timestamp getBillingStartDate() {
+      if (billingStartDateBuilder_ == null) {
+        return billingStartDate_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : billingStartDate_;
+      } else {
+        return billingStartDateBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Start of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_start_date = 7 [json_name = "billingStartDate"];</code>
+     */
+    public Builder setBillingStartDate(com.google.protobuf.Timestamp value) {
+      if (billingStartDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        billingStartDate_ = value;
+      } else {
+        billingStartDateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Start of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_start_date = 7 [json_name = "billingStartDate"];</code>
+     */
+    public Builder setBillingStartDate(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (billingStartDateBuilder_ == null) {
+        billingStartDate_ = builderForValue.build();
+      } else {
+        billingStartDateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Start of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_start_date = 7 [json_name = "billingStartDate"];</code>
+     */
+    public Builder mergeBillingStartDate(com.google.protobuf.Timestamp value) {
+      if (billingStartDateBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0) &&
+          billingStartDate_ != null &&
+          billingStartDate_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getBillingStartDateBuilder().mergeFrom(value);
+        } else {
+          billingStartDate_ = value;
+        }
+      } else {
+        billingStartDateBuilder_.mergeFrom(value);
+      }
+      if (billingStartDate_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Start of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_start_date = 7 [json_name = "billingStartDate"];</code>
+     */
+    public Builder clearBillingStartDate() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      billingStartDate_ = null;
+      if (billingStartDateBuilder_ != null) {
+        billingStartDateBuilder_.dispose();
+        billingStartDateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Start of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_start_date = 7 [json_name = "billingStartDate"];</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getBillingStartDateBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getBillingStartDateFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Start of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_start_date = 7 [json_name = "billingStartDate"];</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getBillingStartDateOrBuilder() {
+      if (billingStartDateBuilder_ != null) {
+        return billingStartDateBuilder_.getMessageOrBuilder();
+      } else {
+        return billingStartDate_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : billingStartDate_;
+      }
+    }
+    /**
+     * <pre>
+     * Start of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_start_date = 7 [json_name = "billingStartDate"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getBillingStartDateFieldBuilder() {
+      if (billingStartDateBuilder_ == null) {
+        billingStartDateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getBillingStartDate(),
+                getParentForChildren(),
+                isClean());
+        billingStartDate_ = null;
+      }
+      return billingStartDateBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp billingEndDate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> billingEndDateBuilder_;
+    /**
+     * <pre>
+     * End of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_end_date = 8 [json_name = "billingEndDate"];</code>
+     * @return Whether the billingEndDate field is set.
+     */
+    public boolean hasBillingEndDate() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <pre>
+     * End of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_end_date = 8 [json_name = "billingEndDate"];</code>
+     * @return The billingEndDate.
+     */
+    public com.google.protobuf.Timestamp getBillingEndDate() {
+      if (billingEndDateBuilder_ == null) {
+        return billingEndDate_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : billingEndDate_;
+      } else {
+        return billingEndDateBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * End of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_end_date = 8 [json_name = "billingEndDate"];</code>
+     */
+    public Builder setBillingEndDate(com.google.protobuf.Timestamp value) {
+      if (billingEndDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        billingEndDate_ = value;
+      } else {
+        billingEndDateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * End of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_end_date = 8 [json_name = "billingEndDate"];</code>
+     */
+    public Builder setBillingEndDate(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (billingEndDateBuilder_ == null) {
+        billingEndDate_ = builderForValue.build();
+      } else {
+        billingEndDateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * End of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_end_date = 8 [json_name = "billingEndDate"];</code>
+     */
+    public Builder mergeBillingEndDate(com.google.protobuf.Timestamp value) {
+      if (billingEndDateBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0) &&
+          billingEndDate_ != null &&
+          billingEndDate_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getBillingEndDateBuilder().mergeFrom(value);
+        } else {
+          billingEndDate_ = value;
+        }
+      } else {
+        billingEndDateBuilder_.mergeFrom(value);
+      }
+      if (billingEndDate_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * End of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_end_date = 8 [json_name = "billingEndDate"];</code>
+     */
+    public Builder clearBillingEndDate() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      billingEndDate_ = null;
+      if (billingEndDateBuilder_ != null) {
+        billingEndDateBuilder_.dispose();
+        billingEndDateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * End of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_end_date = 8 [json_name = "billingEndDate"];</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getBillingEndDateBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getBillingEndDateFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * End of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_end_date = 8 [json_name = "billingEndDate"];</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getBillingEndDateOrBuilder() {
+      if (billingEndDateBuilder_ != null) {
+        return billingEndDateBuilder_.getMessageOrBuilder();
+      } else {
+        return billingEndDate_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : billingEndDate_;
+      }
+    }
+    /**
+     * <pre>
+     * End of the current billing period
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp billing_end_date = 8 [json_name = "billingEndDate"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getBillingEndDateFieldBuilder() {
+      if (billingEndDateBuilder_ == null) {
+        billingEndDateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getBillingEndDate(),
+                getParentForChildren(),
+                isClean());
+        billingEndDate_ = null;
+      }
+      return billingEndDateBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

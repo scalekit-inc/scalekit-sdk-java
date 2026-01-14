@@ -9,25 +9,25 @@ public interface ListConnectedAccountsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList> 
       getConnectedAccountsList();
   /**
-   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForList getConnectedAccounts(int index);
   /**
-   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   int getConnectedAccountsCount();
   /**
-   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<? extends com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForListOrBuilder> 
       getConnectedAccountsOrBuilderList();
   /**
-   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts"];</code>
+   * <code>repeated .scalekit.v1.connected_accounts.ConnectedAccountForList connected_accounts = 1 [json_name = "connectedAccounts", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountForListOrBuilder getConnectedAccountsOrBuilder(
       int index);

@@ -77,29 +77,29 @@ public final class AuthServiceGrpc {
     return getDiscoveryAuthMethodMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessRequest,
-      com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse> getVerifyPasswordLessOtpMethod;
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpRequest,
+      com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse> getVerifyPasswordLessOtpMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "VerifyPasswordLessOtp",
-      requestType = com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse.class,
+      requestType = com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessRequest,
-      com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse> getVerifyPasswordLessOtpMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessRequest, com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse> getVerifyPasswordLessOtpMethod;
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpRequest,
+      com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse> getVerifyPasswordLessOtpMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpRequest, com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse> getVerifyPasswordLessOtpMethod;
     if ((getVerifyPasswordLessOtpMethod = AuthServiceGrpc.getVerifyPasswordLessOtpMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getVerifyPasswordLessOtpMethod = AuthServiceGrpc.getVerifyPasswordLessOtpMethod) == null) {
           AuthServiceGrpc.getVerifyPasswordLessOtpMethod = getVerifyPasswordLessOtpMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessRequest, com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpRequest, com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VerifyPasswordLessOtp"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessRequest.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse.getDefaultInstance()))
               .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("VerifyPasswordLessOtp"))
               .build();
         }
@@ -451,8 +451,8 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    default void verifyPasswordLessOtp(com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse> responseObserver) {
+    default void verifyPasswordLessOtp(com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVerifyPasswordLessOtpMethod(), responseObserver);
     }
 
@@ -565,8 +565,8 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    public void verifyPasswordLessOtp(com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse> responseObserver) {
+    public void verifyPasswordLessOtp(com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getVerifyPasswordLessOtpMethod(), getCallOptions()), request, responseObserver);
     }
@@ -676,7 +676,7 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    public com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse verifyPasswordLessOtp(com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessRequest request) {
+    public com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse verifyPasswordLessOtp(com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getVerifyPasswordLessOtpMethod(), getCallOptions(), request);
     }
@@ -779,8 +779,8 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse> verifyPasswordLessOtp(
-        com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse> verifyPasswordLessOtp(
+        com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getVerifyPasswordLessOtpMethod(), getCallOptions()), request);
     }
@@ -897,8 +897,8 @@ public final class AuthServiceGrpc {
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.DiscoveryAuthMethodResponse>) responseObserver);
           break;
         case METHODID_VERIFY_PASSWORD_LESS_OTP:
-          serviceImpl.verifyPasswordLessOtp((com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse>) responseObserver);
+          serviceImpl.verifyPasswordLessOtp((com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse>) responseObserver);
           break;
         case METHODID_RESEND_PASSWORDLESS:
           serviceImpl.resendPasswordless((com.google.protobuf.Empty) request,
@@ -972,8 +972,8 @@ public final class AuthServiceGrpc {
           getVerifyPasswordLessOtpMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessRequest,
-              com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse>(
+              com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpRequest,
+              com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse>(
                 service, METHODID_VERIFY_PASSWORD_LESS_OTP)))
         .addMethod(
           getResendPasswordlessMethod(),

@@ -108,6 +108,37 @@ public final class WebhookServiceGrpc {
     return getSendTestEventMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.webhooks.WebhookEvent,
+      com.scalekit.grpc.scalekit.v1.webhooks.Empty> getSendWebhookEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SendWebhookEvent",
+      requestType = com.scalekit.grpc.scalekit.v1.webhooks.WebhookEvent.class,
+      responseType = com.scalekit.grpc.scalekit.v1.webhooks.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.webhooks.WebhookEvent,
+      com.scalekit.grpc.scalekit.v1.webhooks.Empty> getSendWebhookEventMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.webhooks.WebhookEvent, com.scalekit.grpc.scalekit.v1.webhooks.Empty> getSendWebhookEventMethod;
+    if ((getSendWebhookEventMethod = WebhookServiceGrpc.getSendWebhookEventMethod) == null) {
+      synchronized (WebhookServiceGrpc.class) {
+        if ((getSendWebhookEventMethod = WebhookServiceGrpc.getSendWebhookEventMethod) == null) {
+          WebhookServiceGrpc.getSendWebhookEventMethod = getSendWebhookEventMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.webhooks.WebhookEvent, com.scalekit.grpc.scalekit.v1.webhooks.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SendWebhookEvent"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.webhooks.WebhookEvent.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.webhooks.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new WebhookServiceMethodDescriptorSupplier("SendWebhookEvent"))
+              .build();
+        }
+      }
+    }
+    return getSendWebhookEventMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -176,6 +207,13 @@ public final class WebhookServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.webhooks.SendTestEventResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSendTestEventMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void sendWebhookEvent(com.scalekit.grpc.scalekit.v1.webhooks.WebhookEvent request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.webhooks.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSendWebhookEventMethod(), responseObserver);
+    }
   }
 
   /**
@@ -228,6 +266,14 @@ public final class WebhookServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSendTestEventMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void sendWebhookEvent(com.scalekit.grpc.scalekit.v1.webhooks.WebhookEvent request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.webhooks.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSendWebhookEventMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -265,6 +311,13 @@ public final class WebhookServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.webhooks.SendTestEventResponse sendTestEvent(com.scalekit.grpc.scalekit.v1.webhooks.SendTestEventRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSendTestEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.webhooks.Empty sendWebhookEvent(com.scalekit.grpc.scalekit.v1.webhooks.WebhookEvent request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSendWebhookEventMethod(), getCallOptions(), request);
     }
   }
 
@@ -307,11 +360,20 @@ public final class WebhookServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSendTestEventMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.webhooks.Empty> sendWebhookEvent(
+        com.scalekit.grpc.scalekit.v1.webhooks.WebhookEvent request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSendWebhookEventMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_PORTAL_URL = 0;
   private static final int METHODID_WEBHOOK_WRAPPER = 1;
   private static final int METHODID_SEND_TEST_EVENT = 2;
+  private static final int METHODID_SEND_WEBHOOK_EVENT = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -341,6 +403,10 @@ public final class WebhookServiceGrpc {
         case METHODID_SEND_TEST_EVENT:
           serviceImpl.sendTestEvent((com.scalekit.grpc.scalekit.v1.webhooks.SendTestEventRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.webhooks.SendTestEventResponse>) responseObserver);
+          break;
+        case METHODID_SEND_WEBHOOK_EVENT:
+          serviceImpl.sendWebhookEvent((com.scalekit.grpc.scalekit.v1.webhooks.WebhookEvent) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.webhooks.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -381,6 +447,13 @@ public final class WebhookServiceGrpc {
               com.scalekit.grpc.scalekit.v1.webhooks.SendTestEventRequest,
               com.scalekit.grpc.scalekit.v1.webhooks.SendTestEventResponse>(
                 service, METHODID_SEND_TEST_EVENT)))
+        .addMethod(
+          getSendWebhookEventMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.webhooks.WebhookEvent,
+              com.scalekit.grpc.scalekit.v1.webhooks.Empty>(
+                service, METHODID_SEND_WEBHOOK_EVENT)))
         .build();
   }
 
@@ -432,6 +505,7 @@ public final class WebhookServiceGrpc {
               .addMethod(getGetPortalURLMethod())
               .addMethod(getWebhookWrapperMethod())
               .addMethod(getSendTestEventMethod())
+              .addMethod(getSendWebhookEventMethod())
               .build();
         }
       }

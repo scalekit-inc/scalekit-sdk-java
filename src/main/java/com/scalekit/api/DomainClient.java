@@ -36,6 +36,8 @@ public interface DomainClient {
 
     List<Domain> listDomainsByOrganizationId(String organizationId);
 
+    List<Domain> listDomainsByOrganizationId(String organizationId, DomainType domainType);
+
     /**
      * deleteDomain deletes a domain by its ID
      * @param organizationId: The organization ID

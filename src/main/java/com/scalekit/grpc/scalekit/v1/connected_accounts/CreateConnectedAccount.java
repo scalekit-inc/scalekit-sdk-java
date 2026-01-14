@@ -5,6 +5,10 @@
 package com.scalekit.grpc.scalekit.v1.connected_accounts;
 
 /**
+ * <pre>
+ * Payload for creating a new connected account - only authorization details required
+ * </pre>
+ *
  * Protobuf type {@code scalekit.v1.connected_accounts.CreateConnectedAccount}
  */
 public final class CreateConnectedAccount extends
@@ -271,6 +275,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Payload for creating a new connected account - only authorization details required
+   * </pre>
+   *
    * Protobuf type {@code scalekit.v1.connected_accounts.CreateConnectedAccount}
    */
   public static final class Builder extends

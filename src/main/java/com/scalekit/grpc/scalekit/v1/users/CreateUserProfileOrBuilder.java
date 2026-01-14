@@ -210,14 +210,14 @@ java.lang.String defaultValue);
   /**
    * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.users.CreateUserProfile.first_name is deprecated.
-   *     See scalekit/v1/users/users.proto;l=1620
+   *     See scalekit/v1/users/users.proto;l=1157
    * @return The firstName.
    */
   @java.lang.Deprecated java.lang.String getFirstName();
   /**
    * <code>string first_name = 21 [json_name = "firstName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.users.CreateUserProfile.first_name is deprecated.
-   *     See scalekit/v1/users/users.proto;l=1620
+   *     See scalekit/v1/users/users.proto;l=1157
    * @return The bytes for firstName.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -226,14 +226,14 @@ java.lang.String defaultValue);
   /**
    * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.users.CreateUserProfile.last_name is deprecated.
-   *     See scalekit/v1/users/users.proto;l=1630
+   *     See scalekit/v1/users/users.proto;l=1167
    * @return The lastName.
    */
   @java.lang.Deprecated java.lang.String getLastName();
   /**
    * <code>string last_name = 22 [json_name = "lastName", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.users.CreateUserProfile.last_name is deprecated.
-   *     See scalekit/v1/users/users.proto;l=1630
+   *     See scalekit/v1/users/users.proto;l=1167
    * @return The bytes for lastName.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

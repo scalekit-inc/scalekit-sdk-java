@@ -387,6 +387,68 @@ public final class WorkspaceServiceGrpc {
     return getGetProductCatalogMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionRequest,
+      com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionResponse> getAddSubscriptionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddSubscription",
+      requestType = com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionRequest,
+      com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionResponse> getAddSubscriptionMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionRequest, com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionResponse> getAddSubscriptionMethod;
+    if ((getAddSubscriptionMethod = WorkspaceServiceGrpc.getAddSubscriptionMethod) == null) {
+      synchronized (WorkspaceServiceGrpc.class) {
+        if ((getAddSubscriptionMethod = WorkspaceServiceGrpc.getAddSubscriptionMethod) == null) {
+          WorkspaceServiceGrpc.getAddSubscriptionMethod = getAddSubscriptionMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionRequest, com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddSubscription"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new WorkspaceServiceMethodDescriptorSupplier("AddSubscription"))
+              .build();
+        }
+      }
+    }
+    return getAddSubscriptionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionRequest,
+      com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionResponse> getCreateCheckoutSessionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCheckoutSession",
+      requestType = com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionRequest,
+      com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionResponse> getCreateCheckoutSessionMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionRequest, com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionResponse> getCreateCheckoutSessionMethod;
+    if ((getCreateCheckoutSessionMethod = WorkspaceServiceGrpc.getCreateCheckoutSessionMethod) == null) {
+      synchronized (WorkspaceServiceGrpc.class) {
+        if ((getCreateCheckoutSessionMethod = WorkspaceServiceGrpc.getCreateCheckoutSessionMethod) == null) {
+          WorkspaceServiceGrpc.getCreateCheckoutSessionMethod = getCreateCheckoutSessionMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionRequest, com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCheckoutSession"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new WorkspaceServiceMethodDescriptorSupplier("CreateCheckoutSession"))
+              .build();
+        }
+      }
+    }
+    return getCreateCheckoutSessionMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -506,6 +568,23 @@ public final class WorkspaceServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Retrieves current product usage and tiered pricing for the current preview billing period.
+     * Primary action: Provide dynamic, in-period usage metrics and per-product pricing breakdown for charge preview.
+     * Use cases: Show customers an estimate of charges before final invoicing; display usage details per product/feature.
+     * Request: GetProductUsageRequest (workspace context/session); supports filtering by product/feature where applicable.
+     * Response: GetProductUsageResponse:
+     *   - line_items: per-product entries with usage counts (units), measurement granularity (e.g., requests, seats, GB), and aggregation window.
+     *   - pricing_tiers: tiered structure for each line item (thresholds, unit_price per tier, effective applied tier), and computed effective_price.
+     *   - totals: preview period monetary amounts (subtotal, taxes, discounts/credits, total) in minor units with currency.
+     *   - notes: indicators for metered vs seat-based products, and whether usage is still accumulating.
+     * Behavior and differences vs GetProductCatalog:
+     *   - Invoice preview vs final: values are estimates until the billing period closes; final invoice may differ due to late-reported usage or adjustments.
+     *   - Dynamic vs static: GetProductUsage reflects actual/accumulating usage and applied tiers for the current period; GetProductCatalog exposes static product/pricing definitions without usage.
+     *   - Use pricing_tiers and effective_price to explain how the preview total was derived per product (including cross-tier allocations).
+     *   - Late or batched usage may update line_items before finalization; clients should refresh periodically for up-to-date previews.
+     * Returns payment methods, plan, last invoice, current invoice period, etc.
+     * </pre>
      */
     default void getProductUsage(com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageResponse> responseObserver) {
@@ -517,6 +596,66 @@ public final class WorkspaceServiceGrpc {
     default void getProductCatalog(com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetProductCatalogMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void addSubscription(com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAddSubscriptionMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Creates a checkout session for the current workspace's billing operations.
+     * Primary action: Establish a client-facing checkout experience to start, update, or complete billing
+     *                 actions such as subscriptions, plan changes, trials, add-ons, and one-time payments.
+     * Use cases:
+     *   - Initiate payment collection when upgrading/downgrading plans or adding paid features.
+     *   - Set up a new subscription or resume an incomplete payment.
+     *   - Collect payment method for future charges (setup mode) prior to enabling paid features.
+     *   - Start a one-time payment flow for metered usage or add-on purchases.
+     * Request (CreateCheckoutSessionRequest):
+     *   - mode: Required. One of {SUBSCRIPTION | PAYMENT | SETUP}. Determines the billing flow:
+     *       * SUBSCRIPTION: Creates/updates a workspace subscription; may require payment method.
+     *       * PAYMENT: Creates a one-time payment intent for immediate charge.
+     *       * SETUP: Collects a payment method for future use without immediate charge.
+     *   - items: Optional. Line items or price identifiers; required when mode=SUBSCRIPTION or PAYMENT.
+     *            Each item must include a valid price_id and quantity &gt; 0. Prices must be active.
+     *   - return_url: Optional. URL to redirect the client after successful completion or cancellation.
+     *                 Must be HTTPS and belong to an allowed domain; max length constraints apply.
+     *   - success_url: Optional. Explicit success redirect for hosted checkout; must be HTTPS and allowed.
+     *   - ui_mode: Optional. One of {EMBEDDED | HOSTED | CUSTOM}. Controls client integration modality.
+     *   - metadata: Optional. Key-value pairs (string) for audit/correlation; keys/values length limited.
+     *   - customer_id / workspace_id: Optional. If omitted, inferred from the authenticated workspace session.
+     * Validation rules:
+     *   - Authentication: Requires WORKSPACE_SESSION_CLIENT. Caller must be authorized for billing actions.
+     *   - For SUBSCRIPTION/PAYMENT: items must be present and valid; unsupported/archived prices are rejected.
+     *   - URLs (return_url/success_url) must match allowed origins; invalid URLs are rejected.
+     *   - Only one active session per workspace per identical parameter set is allowed (idempotency).
+     * Response (CreateCheckoutSessionResponse):
+     *   - session_id: Identifier of the created checkout session; use to query status or resume flow.
+     *   - client_secret: Secret for client-side SDKs (e.g., embedded UI). Treat as sensitive; never log.
+     *   - url: Hosted checkout URL when ui_mode=HOSTED or CUSTOM; omitted for EMBEDDED flows.
+     *   - mode: Echoes the requested mode for clarity.
+     *   - expires_at: UTC timestamp when the session becomes invalid (e.g., 24 hours from creation).
+     *   - status: Initial session status (e.g., CREATED). May be polled for updates via billing status RPCs.
+     * Behavior notes:
+     *   - Idempotency: Repeated calls with identical parameters within the expiration window return
+     *                  the existing session (same session_id). Parameter differences create new sessions.
+     *   - Security: client_secret is required for embedded checkout initialization; do not expose publicly.
+     *   - URL population: url is provided only for HOSTED/CUSTOM UI modes; EMBEDDED flows rely on client_secret.
+     *   - Expiration: Sessions expire after a fixed window; clients must complete the flow before expires_at.
+     *   - Retries: Safe to retry on transient errors; if parameters match, the same session is returned.
+     * Side effects:
+     *   - Creates a Stripe Checkout/Payment/Setup Session depending on mode and items.
+     *   - May create or update customer records, subscriptions, payment intents, and attach payment methods.
+     *   - Hosted session URLs are short-lived and will be invalid after expiration.
+     * </pre>
+     */
+    default void createCheckoutSession(com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateCheckoutSessionMethod(), responseObserver);
     }
   }
 
@@ -628,6 +767,23 @@ public final class WorkspaceServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Retrieves current product usage and tiered pricing for the current preview billing period.
+     * Primary action: Provide dynamic, in-period usage metrics and per-product pricing breakdown for charge preview.
+     * Use cases: Show customers an estimate of charges before final invoicing; display usage details per product/feature.
+     * Request: GetProductUsageRequest (workspace context/session); supports filtering by product/feature where applicable.
+     * Response: GetProductUsageResponse:
+     *   - line_items: per-product entries with usage counts (units), measurement granularity (e.g., requests, seats, GB), and aggregation window.
+     *   - pricing_tiers: tiered structure for each line item (thresholds, unit_price per tier, effective applied tier), and computed effective_price.
+     *   - totals: preview period monetary amounts (subtotal, taxes, discounts/credits, total) in minor units with currency.
+     *   - notes: indicators for metered vs seat-based products, and whether usage is still accumulating.
+     * Behavior and differences vs GetProductCatalog:
+     *   - Invoice preview vs final: values are estimates until the billing period closes; final invoice may differ due to late-reported usage or adjustments.
+     *   - Dynamic vs static: GetProductUsage reflects actual/accumulating usage and applied tiers for the current period; GetProductCatalog exposes static product/pricing definitions without usage.
+     *   - Use pricing_tiers and effective_price to explain how the preview total was derived per product (including cross-tier allocations).
+     *   - Late or batched usage may update line_items before finalization; clients should refresh periodically for up-to-date previews.
+     * Returns payment methods, plan, last invoice, current invoice period, etc.
+     * </pre>
      */
     public void getProductUsage(com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageResponse> responseObserver) {
@@ -641,6 +797,68 @@ public final class WorkspaceServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetProductCatalogMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void addSubscription(com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAddSubscriptionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Creates a checkout session for the current workspace's billing operations.
+     * Primary action: Establish a client-facing checkout experience to start, update, or complete billing
+     *                 actions such as subscriptions, plan changes, trials, add-ons, and one-time payments.
+     * Use cases:
+     *   - Initiate payment collection when upgrading/downgrading plans or adding paid features.
+     *   - Set up a new subscription or resume an incomplete payment.
+     *   - Collect payment method for future charges (setup mode) prior to enabling paid features.
+     *   - Start a one-time payment flow for metered usage or add-on purchases.
+     * Request (CreateCheckoutSessionRequest):
+     *   - mode: Required. One of {SUBSCRIPTION | PAYMENT | SETUP}. Determines the billing flow:
+     *       * SUBSCRIPTION: Creates/updates a workspace subscription; may require payment method.
+     *       * PAYMENT: Creates a one-time payment intent for immediate charge.
+     *       * SETUP: Collects a payment method for future use without immediate charge.
+     *   - items: Optional. Line items or price identifiers; required when mode=SUBSCRIPTION or PAYMENT.
+     *            Each item must include a valid price_id and quantity &gt; 0. Prices must be active.
+     *   - return_url: Optional. URL to redirect the client after successful completion or cancellation.
+     *                 Must be HTTPS and belong to an allowed domain; max length constraints apply.
+     *   - success_url: Optional. Explicit success redirect for hosted checkout; must be HTTPS and allowed.
+     *   - ui_mode: Optional. One of {EMBEDDED | HOSTED | CUSTOM}. Controls client integration modality.
+     *   - metadata: Optional. Key-value pairs (string) for audit/correlation; keys/values length limited.
+     *   - customer_id / workspace_id: Optional. If omitted, inferred from the authenticated workspace session.
+     * Validation rules:
+     *   - Authentication: Requires WORKSPACE_SESSION_CLIENT. Caller must be authorized for billing actions.
+     *   - For SUBSCRIPTION/PAYMENT: items must be present and valid; unsupported/archived prices are rejected.
+     *   - URLs (return_url/success_url) must match allowed origins; invalid URLs are rejected.
+     *   - Only one active session per workspace per identical parameter set is allowed (idempotency).
+     * Response (CreateCheckoutSessionResponse):
+     *   - session_id: Identifier of the created checkout session; use to query status or resume flow.
+     *   - client_secret: Secret for client-side SDKs (e.g., embedded UI). Treat as sensitive; never log.
+     *   - url: Hosted checkout URL when ui_mode=HOSTED or CUSTOM; omitted for EMBEDDED flows.
+     *   - mode: Echoes the requested mode for clarity.
+     *   - expires_at: UTC timestamp when the session becomes invalid (e.g., 24 hours from creation).
+     *   - status: Initial session status (e.g., CREATED). May be polled for updates via billing status RPCs.
+     * Behavior notes:
+     *   - Idempotency: Repeated calls with identical parameters within the expiration window return
+     *                  the existing session (same session_id). Parameter differences create new sessions.
+     *   - Security: client_secret is required for embedded checkout initialization; do not expose publicly.
+     *   - URL population: url is provided only for HOSTED/CUSTOM UI modes; EMBEDDED flows rely on client_secret.
+     *   - Expiration: Sessions expire after a fixed window; clients must complete the flow before expires_at.
+     *   - Retries: Safe to retry on transient errors; if parameters match, the same session is returned.
+     * Side effects:
+     *   - Creates a Stripe Checkout/Payment/Setup Session depending on mode and items.
+     *   - May create or update customer records, subscriptions, payment intents, and attach payment methods.
+     *   - Hosted session URLs are short-lived and will be invalid after expiration.
+     * </pre>
+     */
+    public void createCheckoutSession(com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateCheckoutSessionMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -731,6 +949,23 @@ public final class WorkspaceServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Retrieves current product usage and tiered pricing for the current preview billing period.
+     * Primary action: Provide dynamic, in-period usage metrics and per-product pricing breakdown for charge preview.
+     * Use cases: Show customers an estimate of charges before final invoicing; display usage details per product/feature.
+     * Request: GetProductUsageRequest (workspace context/session); supports filtering by product/feature where applicable.
+     * Response: GetProductUsageResponse:
+     *   - line_items: per-product entries with usage counts (units), measurement granularity (e.g., requests, seats, GB), and aggregation window.
+     *   - pricing_tiers: tiered structure for each line item (thresholds, unit_price per tier, effective applied tier), and computed effective_price.
+     *   - totals: preview period monetary amounts (subtotal, taxes, discounts/credits, total) in minor units with currency.
+     *   - notes: indicators for metered vs seat-based products, and whether usage is still accumulating.
+     * Behavior and differences vs GetProductCatalog:
+     *   - Invoice preview vs final: values are estimates until the billing period closes; final invoice may differ due to late-reported usage or adjustments.
+     *   - Dynamic vs static: GetProductUsage reflects actual/accumulating usage and applied tiers for the current period; GetProductCatalog exposes static product/pricing definitions without usage.
+     *   - Use pricing_tiers and effective_price to explain how the preview total was derived per product (including cross-tier allocations).
+     *   - Late or batched usage may update line_items before finalization; clients should refresh periodically for up-to-date previews.
+     * Returns payment methods, plan, last invoice, current invoice period, etc.
+     * </pre>
      */
     public com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageResponse getProductUsage(com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -742,6 +977,66 @@ public final class WorkspaceServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogResponse getProductCatalog(com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetProductCatalogMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionResponse addSubscription(com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Creates a checkout session for the current workspace's billing operations.
+     * Primary action: Establish a client-facing checkout experience to start, update, or complete billing
+     *                 actions such as subscriptions, plan changes, trials, add-ons, and one-time payments.
+     * Use cases:
+     *   - Initiate payment collection when upgrading/downgrading plans or adding paid features.
+     *   - Set up a new subscription or resume an incomplete payment.
+     *   - Collect payment method for future charges (setup mode) prior to enabling paid features.
+     *   - Start a one-time payment flow for metered usage or add-on purchases.
+     * Request (CreateCheckoutSessionRequest):
+     *   - mode: Required. One of {SUBSCRIPTION | PAYMENT | SETUP}. Determines the billing flow:
+     *       * SUBSCRIPTION: Creates/updates a workspace subscription; may require payment method.
+     *       * PAYMENT: Creates a one-time payment intent for immediate charge.
+     *       * SETUP: Collects a payment method for future use without immediate charge.
+     *   - items: Optional. Line items or price identifiers; required when mode=SUBSCRIPTION or PAYMENT.
+     *            Each item must include a valid price_id and quantity &gt; 0. Prices must be active.
+     *   - return_url: Optional. URL to redirect the client after successful completion or cancellation.
+     *                 Must be HTTPS and belong to an allowed domain; max length constraints apply.
+     *   - success_url: Optional. Explicit success redirect for hosted checkout; must be HTTPS and allowed.
+     *   - ui_mode: Optional. One of {EMBEDDED | HOSTED | CUSTOM}. Controls client integration modality.
+     *   - metadata: Optional. Key-value pairs (string) for audit/correlation; keys/values length limited.
+     *   - customer_id / workspace_id: Optional. If omitted, inferred from the authenticated workspace session.
+     * Validation rules:
+     *   - Authentication: Requires WORKSPACE_SESSION_CLIENT. Caller must be authorized for billing actions.
+     *   - For SUBSCRIPTION/PAYMENT: items must be present and valid; unsupported/archived prices are rejected.
+     *   - URLs (return_url/success_url) must match allowed origins; invalid URLs are rejected.
+     *   - Only one active session per workspace per identical parameter set is allowed (idempotency).
+     * Response (CreateCheckoutSessionResponse):
+     *   - session_id: Identifier of the created checkout session; use to query status or resume flow.
+     *   - client_secret: Secret for client-side SDKs (e.g., embedded UI). Treat as sensitive; never log.
+     *   - url: Hosted checkout URL when ui_mode=HOSTED or CUSTOM; omitted for EMBEDDED flows.
+     *   - mode: Echoes the requested mode for clarity.
+     *   - expires_at: UTC timestamp when the session becomes invalid (e.g., 24 hours from creation).
+     *   - status: Initial session status (e.g., CREATED). May be polled for updates via billing status RPCs.
+     * Behavior notes:
+     *   - Idempotency: Repeated calls with identical parameters within the expiration window return
+     *                  the existing session (same session_id). Parameter differences create new sessions.
+     *   - Security: client_secret is required for embedded checkout initialization; do not expose publicly.
+     *   - URL population: url is provided only for HOSTED/CUSTOM UI modes; EMBEDDED flows rely on client_secret.
+     *   - Expiration: Sessions expire after a fixed window; clients must complete the flow before expires_at.
+     *   - Retries: Safe to retry on transient errors; if parameters match, the same session is returned.
+     * Side effects:
+     *   - Creates a Stripe Checkout/Payment/Setup Session depending on mode and items.
+     *   - May create or update customer records, subscriptions, payment intents, and attach payment methods.
+     *   - Hosted session URLs are short-lived and will be invalid after expiration.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionResponse createCheckoutSession(com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCheckoutSessionMethod(), getCallOptions(), request);
     }
   }
 
@@ -842,6 +1137,23 @@ public final class WorkspaceServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Retrieves current product usage and tiered pricing for the current preview billing period.
+     * Primary action: Provide dynamic, in-period usage metrics and per-product pricing breakdown for charge preview.
+     * Use cases: Show customers an estimate of charges before final invoicing; display usage details per product/feature.
+     * Request: GetProductUsageRequest (workspace context/session); supports filtering by product/feature where applicable.
+     * Response: GetProductUsageResponse:
+     *   - line_items: per-product entries with usage counts (units), measurement granularity (e.g., requests, seats, GB), and aggregation window.
+     *   - pricing_tiers: tiered structure for each line item (thresholds, unit_price per tier, effective applied tier), and computed effective_price.
+     *   - totals: preview period monetary amounts (subtotal, taxes, discounts/credits, total) in minor units with currency.
+     *   - notes: indicators for metered vs seat-based products, and whether usage is still accumulating.
+     * Behavior and differences vs GetProductCatalog:
+     *   - Invoice preview vs final: values are estimates until the billing period closes; final invoice may differ due to late-reported usage or adjustments.
+     *   - Dynamic vs static: GetProductUsage reflects actual/accumulating usage and applied tiers for the current period; GetProductCatalog exposes static product/pricing definitions without usage.
+     *   - Use pricing_tiers and effective_price to explain how the preview total was derived per product (including cross-tier allocations).
+     *   - Late or batched usage may update line_items before finalization; clients should refresh periodically for up-to-date previews.
+     * Returns payment methods, plan, last invoice, current invoice period, etc.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageResponse> getProductUsage(
         com.scalekit.grpc.scalekit.v1.workspaces.GetProductUsageRequest request) {
@@ -855,6 +1167,68 @@ public final class WorkspaceServiceGrpc {
         com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetProductCatalogMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionResponse> addSubscription(
+        com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAddSubscriptionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Creates a checkout session for the current workspace's billing operations.
+     * Primary action: Establish a client-facing checkout experience to start, update, or complete billing
+     *                 actions such as subscriptions, plan changes, trials, add-ons, and one-time payments.
+     * Use cases:
+     *   - Initiate payment collection when upgrading/downgrading plans or adding paid features.
+     *   - Set up a new subscription or resume an incomplete payment.
+     *   - Collect payment method for future charges (setup mode) prior to enabling paid features.
+     *   - Start a one-time payment flow for metered usage or add-on purchases.
+     * Request (CreateCheckoutSessionRequest):
+     *   - mode: Required. One of {SUBSCRIPTION | PAYMENT | SETUP}. Determines the billing flow:
+     *       * SUBSCRIPTION: Creates/updates a workspace subscription; may require payment method.
+     *       * PAYMENT: Creates a one-time payment intent for immediate charge.
+     *       * SETUP: Collects a payment method for future use without immediate charge.
+     *   - items: Optional. Line items or price identifiers; required when mode=SUBSCRIPTION or PAYMENT.
+     *            Each item must include a valid price_id and quantity &gt; 0. Prices must be active.
+     *   - return_url: Optional. URL to redirect the client after successful completion or cancellation.
+     *                 Must be HTTPS and belong to an allowed domain; max length constraints apply.
+     *   - success_url: Optional. Explicit success redirect for hosted checkout; must be HTTPS and allowed.
+     *   - ui_mode: Optional. One of {EMBEDDED | HOSTED | CUSTOM}. Controls client integration modality.
+     *   - metadata: Optional. Key-value pairs (string) for audit/correlation; keys/values length limited.
+     *   - customer_id / workspace_id: Optional. If omitted, inferred from the authenticated workspace session.
+     * Validation rules:
+     *   - Authentication: Requires WORKSPACE_SESSION_CLIENT. Caller must be authorized for billing actions.
+     *   - For SUBSCRIPTION/PAYMENT: items must be present and valid; unsupported/archived prices are rejected.
+     *   - URLs (return_url/success_url) must match allowed origins; invalid URLs are rejected.
+     *   - Only one active session per workspace per identical parameter set is allowed (idempotency).
+     * Response (CreateCheckoutSessionResponse):
+     *   - session_id: Identifier of the created checkout session; use to query status or resume flow.
+     *   - client_secret: Secret for client-side SDKs (e.g., embedded UI). Treat as sensitive; never log.
+     *   - url: Hosted checkout URL when ui_mode=HOSTED or CUSTOM; omitted for EMBEDDED flows.
+     *   - mode: Echoes the requested mode for clarity.
+     *   - expires_at: UTC timestamp when the session becomes invalid (e.g., 24 hours from creation).
+     *   - status: Initial session status (e.g., CREATED). May be polled for updates via billing status RPCs.
+     * Behavior notes:
+     *   - Idempotency: Repeated calls with identical parameters within the expiration window return
+     *                  the existing session (same session_id). Parameter differences create new sessions.
+     *   - Security: client_secret is required for embedded checkout initialization; do not expose publicly.
+     *   - URL population: url is provided only for HOSTED/CUSTOM UI modes; EMBEDDED flows rely on client_secret.
+     *   - Expiration: Sessions expire after a fixed window; clients must complete the flow before expires_at.
+     *   - Retries: Safe to retry on transient errors; if parameters match, the same session is returned.
+     * Side effects:
+     *   - Creates a Stripe Checkout/Payment/Setup Session depending on mode and items.
+     *   - May create or update customer records, subscriptions, payment intents, and attach payment methods.
+     *   - Hosted session URLs are short-lived and will be invalid after expiration.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionResponse> createCheckoutSession(
+        com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateCheckoutSessionMethod(), getCallOptions()), request);
     }
   }
 
@@ -870,6 +1244,8 @@ public final class WorkspaceServiceGrpc {
   private static final int METHODID_GET_BILLING_INFO = 9;
   private static final int METHODID_GET_PRODUCT_USAGE = 10;
   private static final int METHODID_GET_PRODUCT_CATALOG = 11;
+  private static final int METHODID_ADD_SUBSCRIPTION = 12;
+  private static final int METHODID_CREATE_CHECKOUT_SESSION = 13;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -935,6 +1311,14 @@ public final class WorkspaceServiceGrpc {
         case METHODID_GET_PRODUCT_CATALOG:
           serviceImpl.getProductCatalog((com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogResponse>) responseObserver);
+          break;
+        case METHODID_ADD_SUBSCRIPTION:
+          serviceImpl.addSubscription((com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_CHECKOUT_SESSION:
+          serviceImpl.createCheckoutSession((com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1038,6 +1422,20 @@ public final class WorkspaceServiceGrpc {
               com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogRequest,
               com.scalekit.grpc.scalekit.v1.workspaces.GetProductCatalogResponse>(
                 service, METHODID_GET_PRODUCT_CATALOG)))
+        .addMethod(
+          getAddSubscriptionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionRequest,
+              com.scalekit.grpc.scalekit.v1.workspaces.AddSubscriptionResponse>(
+                service, METHODID_ADD_SUBSCRIPTION)))
+        .addMethod(
+          getCreateCheckoutSessionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionRequest,
+              com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionResponse>(
+                service, METHODID_CREATE_CHECKOUT_SESSION)))
         .build();
   }
 
@@ -1098,6 +1496,8 @@ public final class WorkspaceServiceGrpc {
               .addMethod(getGetBillingInfoMethod())
               .addMethod(getGetProductUsageMethod())
               .addMethod(getGetProductCatalogMethod())
+              .addMethod(getAddSubscriptionMethod())
+              .addMethod(getCreateCheckoutSessionMethod())
               .build();
         }
       }

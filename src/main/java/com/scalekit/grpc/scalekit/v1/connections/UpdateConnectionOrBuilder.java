@@ -224,20 +224,5 @@ java.lang.String defaultValue);
   com.google.protobuf.ByteString
       getProviderKeyBytes();
 
-  /**
-   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 25 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the syncUserProfileOnSignin field is set.
-   */
-  boolean hasSyncUserProfileOnSignin();
-  /**
-   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 25 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The syncUserProfileOnSignin.
-   */
-  com.google.protobuf.BoolValue getSyncUserProfileOnSignin();
-  /**
-   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 25 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnSigninOrBuilder();
-
   com.scalekit.grpc.scalekit.v1.connections.UpdateConnection.SettingsCase getSettingsCase();
 }

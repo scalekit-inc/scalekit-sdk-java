@@ -21,10 +21,10 @@ public interface CatalogPriceOrBuilder extends
       getIdBytes();
 
   /**
-   * <code>int64 amount = 2 [json_name = "amount"];</code>
+   * <code>double amount = 2 [json_name = "amount"];</code>
    * @return The amount.
    */
-  long getAmount();
+  double getAmount();
 
   /**
    * <code>string currency = 3 [json_name = "currency"];</code>

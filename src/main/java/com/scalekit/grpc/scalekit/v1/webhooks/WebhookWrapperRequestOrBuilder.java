@@ -9,17 +9,17 @@ public interface WebhookWrapperRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.protobuf.Struct request_body = 1 [json_name = "requestBody"];</code>
+   * <code>optional .google.protobuf.Struct request_body = 1 [json_name = "requestBody", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the requestBody field is set.
    */
   boolean hasRequestBody();
   /**
-   * <code>.google.protobuf.Struct request_body = 1 [json_name = "requestBody"];</code>
+   * <code>optional .google.protobuf.Struct request_body = 1 [json_name = "requestBody", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The requestBody.
    */
   com.google.protobuf.Struct getRequestBody();
   /**
-   * <code>.google.protobuf.Struct request_body = 1 [json_name = "requestBody"];</code>
+   * <code>optional .google.protobuf.Struct request_body = 1 [json_name = "requestBody", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.StructOrBuilder getRequestBodyOrBuilder();
 }

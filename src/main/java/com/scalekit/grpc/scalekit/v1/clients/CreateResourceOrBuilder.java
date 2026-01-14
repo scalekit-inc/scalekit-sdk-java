@@ -110,80 +110,37 @@ public interface CreateResourceOrBuilder extends
       getResourceIdBytes();
 
   /**
-   * <pre>
-   *
-   *string tos_uri = 10 [
-   *(buf.validate.field).string = {max_len: 512},
-   *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-   *description: "Terms of Service URI for the resource"
-   *example: "&#92;"https://example.com/tos&#92;""
-   *}
-   *];
-   *
-   *string policy_uri = 11 [
-   *(buf.validate.field).string = {max_len: 512},
-   *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-   *description: "Policy URI for the resource"
-   *example: "&#92;"https://example.com/policy&#92;""
-   *}
-   *];
-   * </pre>
-   *
    * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return A list containing the scopes.
    */
   java.util.List<java.lang.String>
       getScopesList();
   /**
-   * <pre>
-   *
-   *string tos_uri = 10 [
-   *(buf.validate.field).string = {max_len: 512},
-   *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-   *description: "Terms of Service URI for the resource"
-   *example: "&#92;"https://example.com/tos&#92;""
-   *}
-   *];
-   *
-   *string policy_uri = 11 [
-   *(buf.validate.field).string = {max_len: 512},
-   *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-   *description: "Policy URI for the resource"
-   *example: "&#92;"https://example.com/policy&#92;""
-   *}
-   *];
-   * </pre>
-   *
    * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The count of scopes.
    */
   int getScopesCount();
   /**
-   * <pre>
-   *
-   *string tos_uri = 10 [
-   *(buf.validate.field).string = {max_len: 512},
-   *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-   *description: "Terms of Service URI for the resource"
-   *example: "&#92;"https://example.com/tos&#92;""
-   *}
-   *];
-   *
-   *string policy_uri = 11 [
-   *(buf.validate.field).string = {max_len: 512},
-   *(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {
-   *description: "Policy URI for the resource"
-   *example: "&#92;"https://example.com/policy&#92;""
-   *}
-   *];
-   * </pre>
-   *
    * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The scopes at the given index.
    */
   java.lang.String getScopes(int index);
   /**
+   * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the scopes at the given index.
+   */
+  com.google.protobuf.ByteString
+      getScopesBytes(int index);
+
+  /**
+   * <code>bool intersect_scopes_user_permission = 12 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The intersectScopesUserPermission.
+   */
+  boolean getIntersectScopesUserPermission();
+
+  /**
    * <pre>
    *
    *string tos_uri = 10 [
@@ -203,10 +160,8 @@ public interface CreateResourceOrBuilder extends
    *];
    * </pre>
    *
-   * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the scopes at the given index.
+   * <code>bool enable_cimd = 13 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enableCimd.
    */
-  com.google.protobuf.ByteString
-      getScopesBytes(int index);
+  boolean getEnableCimd();
 }

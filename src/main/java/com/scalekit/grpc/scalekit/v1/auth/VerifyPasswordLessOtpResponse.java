@@ -5,38 +5,38 @@
 package com.scalekit.grpc.scalekit.v1.auth;
 
 /**
- * Protobuf type {@code scalekit.v1.auth.VerifyPasswordLessResponse}
+ * Protobuf type {@code scalekit.v1.auth.VerifyPasswordLessOtpResponse}
  */
-public final class VerifyPasswordLessResponse extends
+public final class VerifyPasswordLessOtpResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:scalekit.v1.auth.VerifyPasswordLessResponse)
-    VerifyPasswordLessResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:scalekit.v1.auth.VerifyPasswordLessOtpResponse)
+    VerifyPasswordLessOtpResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use VerifyPasswordLessResponse.newBuilder() to construct.
-  private VerifyPasswordLessResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use VerifyPasswordLessOtpResponse.newBuilder() to construct.
+  private VerifyPasswordLessOtpResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private VerifyPasswordLessResponse() {
+  private VerifyPasswordLessOtpResponse() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new VerifyPasswordLessResponse();
+    return new VerifyPasswordLessOtpResponse();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.auth.AuthProto.internal_static_scalekit_v1_auth_VerifyPasswordLessResponse_descriptor;
+    return com.scalekit.grpc.scalekit.v1.auth.AuthProto.internal_static_scalekit_v1_auth_VerifyPasswordLessOtpResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.scalekit.grpc.scalekit.v1.auth.AuthProto.internal_static_scalekit_v1_auth_VerifyPasswordLessResponse_fieldAccessorTable
+    return com.scalekit.grpc.scalekit.v1.auth.AuthProto.internal_static_scalekit_v1_auth_VerifyPasswordLessOtpResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse.class, com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse.Builder.class);
+            com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse.class, com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse.Builder.class);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -72,10 +72,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse)) {
+    if (!(obj instanceof com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse)) {
       return super.equals(obj);
     }
-    com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse other = (com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse) obj;
+    com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse other = (com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse) obj;
 
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -93,44 +93,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse parseFrom(byte[] data)
+  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse parseFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -138,26 +138,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse parseDelimitedFrom(
+  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -170,7 +170,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse prototype) {
+  public static Builder newBuilder(com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -186,26 +186,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code scalekit.v1.auth.VerifyPasswordLessResponse}
+   * Protobuf type {@code scalekit.v1.auth.VerifyPasswordLessOtpResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:scalekit.v1.auth.VerifyPasswordLessResponse)
-      com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:scalekit.v1.auth.VerifyPasswordLessOtpResponse)
+      com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.scalekit.grpc.scalekit.v1.auth.AuthProto.internal_static_scalekit_v1_auth_VerifyPasswordLessResponse_descriptor;
+      return com.scalekit.grpc.scalekit.v1.auth.AuthProto.internal_static_scalekit_v1_auth_VerifyPasswordLessOtpResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.scalekit.grpc.scalekit.v1.auth.AuthProto.internal_static_scalekit_v1_auth_VerifyPasswordLessResponse_fieldAccessorTable
+      return com.scalekit.grpc.scalekit.v1.auth.AuthProto.internal_static_scalekit_v1_auth_VerifyPasswordLessOtpResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse.class, com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse.Builder.class);
+              com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse.class, com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse.Builder.class);
     }
 
-    // Construct using com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse.newBuilder()
+    // Construct using com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse.newBuilder()
     private Builder() {
 
     }
@@ -224,17 +224,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.scalekit.grpc.scalekit.v1.auth.AuthProto.internal_static_scalekit_v1_auth_VerifyPasswordLessResponse_descriptor;
+      return com.scalekit.grpc.scalekit.v1.auth.AuthProto.internal_static_scalekit_v1_auth_VerifyPasswordLessOtpResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse getDefaultInstanceForType() {
-      return com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse.getDefaultInstance();
+    public com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse getDefaultInstanceForType() {
+      return com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse build() {
-      com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse result = buildPartial();
+    public com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse build() {
+      com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -242,8 +242,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse buildPartial() {
-      com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse result = new com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse(this);
+    public com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse buildPartial() {
+      com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse result = new com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse(this);
       onBuilt();
       return result;
     }
@@ -282,16 +282,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse) {
-        return mergeFrom((com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse)other);
+      if (other instanceof com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse) {
+        return mergeFrom((com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse other) {
-      if (other == com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse other) {
+      if (other == com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse.getDefaultInstance()) return this;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -346,23 +346,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:scalekit.v1.auth.VerifyPasswordLessResponse)
+    // @@protoc_insertion_point(builder_scope:scalekit.v1.auth.VerifyPasswordLessOtpResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:scalekit.v1.auth.VerifyPasswordLessResponse)
-  private static final com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:scalekit.v1.auth.VerifyPasswordLessOtpResponse)
+  private static final com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse();
+    DEFAULT_INSTANCE = new com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse();
   }
 
-  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse getDefaultInstance() {
+  public static com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<VerifyPasswordLessResponse>
-      PARSER = new com.google.protobuf.AbstractParser<VerifyPasswordLessResponse>() {
+  private static final com.google.protobuf.Parser<VerifyPasswordLessOtpResponse>
+      PARSER = new com.google.protobuf.AbstractParser<VerifyPasswordLessOtpResponse>() {
     @java.lang.Override
-    public VerifyPasswordLessResponse parsePartialFrom(
+    public VerifyPasswordLessOtpResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -381,17 +381,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<VerifyPasswordLessResponse> parser() {
+  public static com.google.protobuf.Parser<VerifyPasswordLessOtpResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<VerifyPasswordLessResponse> getParserForType() {
+  public com.google.protobuf.Parser<VerifyPasswordLessOtpResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessResponse getDefaultInstanceForType() {
+  public com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

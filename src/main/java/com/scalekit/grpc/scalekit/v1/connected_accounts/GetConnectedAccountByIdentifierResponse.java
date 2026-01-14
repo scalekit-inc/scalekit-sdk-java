@@ -43,7 +43,7 @@ private static final long serialVersionUID = 0L;
   public static final int CONNECTED_ACCOUNT_FIELD_NUMBER = 1;
   private com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccount connectedAccount_;
   /**
-   * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount"];</code>
+   * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the connectedAccount field is set.
    */
   @java.lang.Override
@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount"];</code>
+   * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connectedAccount.
    */
   @java.lang.Override
@@ -59,7 +59,7 @@ private static final long serialVersionUID = 0L;
     return connectedAccount_ == null ? com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccount.getDefaultInstance() : connectedAccount_;
   }
   /**
-   * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount"];</code>
+   * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountOrBuilder getConnectedAccountOrBuilder() {
@@ -417,14 +417,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccount, com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccount.Builder, com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountOrBuilder> connectedAccountBuilder_;
     /**
-     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount"];</code>
+     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the connectedAccount field is set.
      */
     public boolean hasConnectedAccount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount"];</code>
+     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The connectedAccount.
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccount getConnectedAccount() {
@@ -435,7 +435,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount"];</code>
+     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccount value) {
       if (connectedAccountBuilder_ == null) {
@@ -451,7 +451,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount"];</code>
+     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setConnectedAccount(
         com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccount.Builder builderForValue) {
@@ -465,7 +465,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount"];</code>
+     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccount value) {
       if (connectedAccountBuilder_ == null) {
@@ -486,7 +486,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount"];</code>
+     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearConnectedAccount() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -499,7 +499,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount"];</code>
+     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccount.Builder getConnectedAccountBuilder() {
       bitField0_ |= 0x00000001;
@@ -507,7 +507,7 @@ private static final long serialVersionUID = 0L;
       return getConnectedAccountFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount"];</code>
+     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountOrBuilder getConnectedAccountOrBuilder() {
       if (connectedAccountBuilder_ != null) {
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount"];</code>
+     * <code>.scalekit.v1.connected_accounts.ConnectedAccount connected_account = 1 [json_name = "connectedAccount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccount, com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccount.Builder, com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountOrBuilder> 

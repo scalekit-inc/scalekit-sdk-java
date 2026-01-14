@@ -21,26 +21,62 @@ public interface ConsentClientOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>string privacy_uri = 2 [json_name = "privacyUri", (.buf.validate.field) = { ... }</code>
+   * <code>string privacy_uri = 2 [json_name = "privacyUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The privacyUri.
    */
   java.lang.String getPrivacyUri();
   /**
-   * <code>string privacy_uri = 2 [json_name = "privacyUri", (.buf.validate.field) = { ... }</code>
+   * <code>string privacy_uri = 2 [json_name = "privacyUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for privacyUri.
    */
   com.google.protobuf.ByteString
       getPrivacyUriBytes();
 
   /**
-   * <code>string tos_uri = 3 [json_name = "tosUri", (.buf.validate.field) = { ... }</code>
+   * <code>string tos_uri = 3 [json_name = "tosUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The tosUri.
    */
   java.lang.String getTosUri();
   /**
-   * <code>string tos_uri = 3 [json_name = "tosUri", (.buf.validate.field) = { ... }</code>
+   * <code>string tos_uri = 3 [json_name = "tosUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for tosUri.
    */
   com.google.protobuf.ByteString
       getTosUriBytes();
+
+  /**
+   * <code>string client_id = 4 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The clientId.
+   */
+  java.lang.String getClientId();
+  /**
+   * <code>string client_id = 4 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for clientId.
+   */
+  com.google.protobuf.ByteString
+      getClientIdBytes();
+
+  /**
+   * <code>string metadata_uri = 5 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The metadataUri.
+   */
+  java.lang.String getMetadataUri();
+  /**
+   * <code>string metadata_uri = 5 [json_name = "metadataUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for metadataUri.
+   */
+  com.google.protobuf.ByteString
+      getMetadataUriBytes();
+
+  /**
+   * <code>string logo_uri = 6 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The logoUri.
+   */
+  java.lang.String getLogoUri();
+  /**
+   * <code>string logo_uri = 6 [json_name = "logoUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for logoUri.
+   */
+  com.google.protobuf.ByteString
+      getLogoUriBytes();
 }

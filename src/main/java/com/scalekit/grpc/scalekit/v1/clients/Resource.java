@@ -569,6 +569,28 @@ private static final long serialVersionUID = 0L;
     return disallowConnectionUpdate_;
   }
 
+  public static final int INTERSECT_SCOPES_USER_PERMISSION_FIELD_NUMBER = 19;
+  private boolean intersectScopesUserPermission_ = false;
+  /**
+   * <code>bool intersect_scopes_user_permission = 19 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The intersectScopesUserPermission.
+   */
+  @java.lang.Override
+  public boolean getIntersectScopesUserPermission() {
+    return intersectScopesUserPermission_;
+  }
+
+  public static final int ENABLE_CIMD_FIELD_NUMBER = 20;
+  private boolean enableCimd_ = false;
+  /**
+   * <code>bool enable_cimd = 20 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enableCimd.
+   */
+  @java.lang.Override
+  public boolean getEnableCimd() {
+    return enableCimd_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -636,6 +658,12 @@ private static final long serialVersionUID = 0L;
     }
     if (disallowConnectionUpdate_ != false) {
       output.writeBool(18, disallowConnectionUpdate_);
+    }
+    if (intersectScopesUserPermission_ != false) {
+      output.writeBool(19, intersectScopesUserPermission_);
+    }
+    if (enableCimd_ != false) {
+      output.writeBool(20, enableCimd_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -710,6 +738,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(18, disallowConnectionUpdate_);
     }
+    if (intersectScopesUserPermission_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(19, intersectScopesUserPermission_);
+    }
+    if (enableCimd_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(20, enableCimd_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -772,6 +808,10 @@ private static final long serialVersionUID = 0L;
     }
     if (getDisallowConnectionUpdate()
         != other.getDisallowConnectionUpdate()) return false;
+    if (getIntersectScopesUserPermission()
+        != other.getIntersectScopesUserPermission()) return false;
+    if (getEnableCimd()
+        != other.getEnableCimd()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -833,6 +873,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + DISALLOW_CONNECTION_UPDATE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getDisallowConnectionUpdate());
+    hash = (37 * hash) + INTERSECT_SCOPES_USER_PERMISSION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIntersectScopesUserPermission());
+    hash = (37 * hash) + ENABLE_CIMD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEnableCimd());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1014,6 +1060,8 @@ private static final long serialVersionUID = 0L;
         connectionDetailsBuilder_ = null;
       }
       disallowConnectionUpdate_ = false;
+      intersectScopesUserPermission_ = false;
+      enableCimd_ = false;
       return this;
     }
 
@@ -1123,6 +1171,12 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.disallowConnectionUpdate_ = disallowConnectionUpdate_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.intersectScopesUserPermission_ = intersectScopesUserPermission_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.enableCimd_ = enableCimd_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1264,6 +1318,12 @@ private static final long serialVersionUID = 0L;
       if (other.getDisallowConnectionUpdate() != false) {
         setDisallowConnectionUpdate(other.getDisallowConnectionUpdate());
       }
+      if (other.getIntersectScopesUserPermission() != false) {
+        setIntersectScopesUserPermission(other.getIntersectScopesUserPermission());
+      }
+      if (other.getEnableCimd() != false) {
+        setEnableCimd(other.getEnableCimd());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1396,6 +1456,16 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00020000;
               break;
             } // case 144
+            case 152: {
+              intersectScopesUserPermission_ = input.readBool();
+              bitField0_ |= 0x00040000;
+              break;
+            } // case 152
+            case 160: {
+              enableCimd_ = input.readBool();
+              bitField0_ |= 0x00080000;
+              break;
+            } // case 160
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2890,6 +2960,70 @@ private static final long serialVersionUID = 0L;
     public Builder clearDisallowConnectionUpdate() {
       bitField0_ = (bitField0_ & ~0x00020000);
       disallowConnectionUpdate_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean intersectScopesUserPermission_ ;
+    /**
+     * <code>bool intersect_scopes_user_permission = 19 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The intersectScopesUserPermission.
+     */
+    @java.lang.Override
+    public boolean getIntersectScopesUserPermission() {
+      return intersectScopesUserPermission_;
+    }
+    /**
+     * <code>bool intersect_scopes_user_permission = 19 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The intersectScopesUserPermission to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntersectScopesUserPermission(boolean value) {
+
+      intersectScopesUserPermission_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool intersect_scopes_user_permission = 19 [json_name = "intersectScopesUserPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIntersectScopesUserPermission() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      intersectScopesUserPermission_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableCimd_ ;
+    /**
+     * <code>bool enable_cimd = 20 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enableCimd.
+     */
+    @java.lang.Override
+    public boolean getEnableCimd() {
+      return enableCimd_;
+    }
+    /**
+     * <code>bool enable_cimd = 20 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enableCimd to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableCimd(boolean value) {
+
+      enableCimd_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool enable_cimd = 20 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableCimd() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      enableCimd_ = false;
       onChanged();
       return this;
     }

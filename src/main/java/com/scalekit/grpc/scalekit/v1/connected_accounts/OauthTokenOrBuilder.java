@@ -9,48 +9,48 @@ public interface OauthTokenOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string access_token = 1 [json_name = "accessToken"];</code>
+   * <code>string access_token = 1 [json_name = "accessToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The accessToken.
    */
   java.lang.String getAccessToken();
   /**
-   * <code>string access_token = 1 [json_name = "accessToken"];</code>
+   * <code>string access_token = 1 [json_name = "accessToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for accessToken.
    */
   com.google.protobuf.ByteString
       getAccessTokenBytes();
 
   /**
-   * <code>string refresh_token = 2 [json_name = "refreshToken"];</code>
+   * <code>string refresh_token = 2 [json_name = "refreshToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The refreshToken.
    */
   java.lang.String getRefreshToken();
   /**
-   * <code>string refresh_token = 2 [json_name = "refreshToken"];</code>
+   * <code>string refresh_token = 2 [json_name = "refreshToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for refreshToken.
    */
   com.google.protobuf.ByteString
       getRefreshTokenBytes();
 
   /**
-   * <code>repeated string scopes = 3 [json_name = "scopes"];</code>
+   * <code>repeated string scopes = 3 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return A list containing the scopes.
    */
   java.util.List<java.lang.String>
       getScopesList();
   /**
-   * <code>repeated string scopes = 3 [json_name = "scopes"];</code>
+   * <code>repeated string scopes = 3 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The count of scopes.
    */
   int getScopesCount();
   /**
-   * <code>repeated string scopes = 3 [json_name = "scopes"];</code>
+   * <code>repeated string scopes = 3 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The scopes at the given index.
    */
   java.lang.String getScopes(int index);
   /**
-   * <code>repeated string scopes = 3 [json_name = "scopes"];</code>
+   * <code>repeated string scopes = 3 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the scopes at the given index.
    */
@@ -58,12 +58,12 @@ public interface OauthTokenOrBuilder extends
       getScopesBytes(int index);
 
   /**
-   * <code>string domain = 4 [json_name = "domain"];</code>
+   * <code>string domain = 4 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The domain.
    */
   java.lang.String getDomain();
   /**
-   * <code>string domain = 4 [json_name = "domain"];</code>
+   * <code>string domain = 4 [json_name = "domain", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for domain.
    */
   com.google.protobuf.ByteString

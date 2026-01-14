@@ -18,8 +18,8 @@ private static final long serialVersionUID = 0L;
   }
   private BillingInfo() {
     planName_ = "";
-    subscriptions_ = java.util.Collections.emptyList();
     addons_ = java.util.Collections.emptyList();
+    publishableToken_ = "";
   }
 
   @java.lang.Override
@@ -80,47 +80,6 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int SUBSCRIPTIONS_FIELD_NUMBER = 2;
-  @SuppressWarnings("serial")
-  private java.util.List<com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription> subscriptions_;
-  /**
-   * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-   */
-  @java.lang.Override
-  public java.util.List<com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription> getSubscriptionsList() {
-    return subscriptions_;
-  }
-  /**
-   * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-   */
-  @java.lang.Override
-  public java.util.List<? extends com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscriptionOrBuilder> 
-      getSubscriptionsOrBuilderList() {
-    return subscriptions_;
-  }
-  /**
-   * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-   */
-  @java.lang.Override
-  public int getSubscriptionsCount() {
-    return subscriptions_.size();
-  }
-  /**
-   * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-   */
-  @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription getSubscriptions(int index) {
-    return subscriptions_.get(index);
-  }
-  /**
-   * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-   */
-  @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscriptionOrBuilder getSubscriptionsOrBuilder(
-      int index) {
-    return subscriptions_.get(index);
   }
 
   public static final int CURRENT_INVOICE_FIELD_NUMBER = 3;
@@ -268,6 +227,53 @@ private static final long serialVersionUID = 0L;
     return lastInvoice_ == null ? com.scalekit.grpc.scalekit.v1.workspaces.LastInvoice.getDefaultInstance() : lastInvoice_;
   }
 
+  public static final int PUBLISHABLE_TOKEN_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object publishableToken_ = "";
+  /**
+   * <pre>
+   * System-generated Stripe publishable key for client-side use (not a secret); read-only.
+   * </pre>
+   *
+   * <code>string publishable_token = 8 [json_name = "publishableToken", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The publishableToken.
+   */
+  @java.lang.Override
+  public java.lang.String getPublishableToken() {
+    java.lang.Object ref = publishableToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      publishableToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * System-generated Stripe publishable key for client-side use (not a secret); read-only.
+   * </pre>
+   *
+   * <code>string publishable_token = 8 [json_name = "publishableToken", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for publishableToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPublishableTokenBytes() {
+    java.lang.Object ref = publishableToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      publishableToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -285,9 +291,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(planName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, planName_);
     }
-    for (int i = 0; i < subscriptions_.size(); i++) {
-      output.writeMessage(2, subscriptions_.get(i));
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getCurrentInvoice());
     }
@@ -303,6 +306,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(7, getLastInvoice());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publishableToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, publishableToken_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -314,10 +320,6 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(planName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, planName_);
-    }
-    for (int i = 0; i < subscriptions_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, subscriptions_.get(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -339,6 +341,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getLastInvoice());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publishableToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, publishableToken_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -356,8 +361,6 @@ private static final long serialVersionUID = 0L;
 
     if (!getPlanName()
         .equals(other.getPlanName())) return false;
-    if (!getSubscriptionsList()
-        .equals(other.getSubscriptionsList())) return false;
     if (hasCurrentInvoice() != other.hasCurrentInvoice()) return false;
     if (hasCurrentInvoice()) {
       if (!getCurrentInvoice()
@@ -380,6 +383,8 @@ private static final long serialVersionUID = 0L;
       if (!getLastInvoice()
           .equals(other.getLastInvoice())) return false;
     }
+    if (!getPublishableToken()
+        .equals(other.getPublishableToken())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -393,10 +398,6 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PLAN_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getPlanName().hashCode();
-    if (getSubscriptionsCount() > 0) {
-      hash = (37 * hash) + SUBSCRIPTIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getSubscriptionsList().hashCode();
-    }
     if (hasCurrentInvoice()) {
       hash = (37 * hash) + CURRENT_INVOICE_FIELD_NUMBER;
       hash = (53 * hash) + getCurrentInvoice().hashCode();
@@ -417,6 +418,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + LAST_INVOICE_FIELD_NUMBER;
       hash = (53 * hash) + getLastInvoice().hashCode();
     }
+    hash = (37 * hash) + PUBLISHABLE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getPublishableToken().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -547,7 +550,6 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getSubscriptionsFieldBuilder();
         getCurrentInvoiceFieldBuilder();
         getPaymentMethodFieldBuilder();
         getBillingContactInfoFieldBuilder();
@@ -560,13 +562,6 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       planName_ = "";
-      if (subscriptionsBuilder_ == null) {
-        subscriptions_ = java.util.Collections.emptyList();
-      } else {
-        subscriptions_ = null;
-        subscriptionsBuilder_.clear();
-      }
-      bitField0_ = (bitField0_ & ~0x00000002);
       currentInvoice_ = null;
       if (currentInvoiceBuilder_ != null) {
         currentInvoiceBuilder_.dispose();
@@ -588,12 +583,13 @@ private static final long serialVersionUID = 0L;
         addons_ = null;
         addonsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       lastInvoice_ = null;
       if (lastInvoiceBuilder_ != null) {
         lastInvoiceBuilder_.dispose();
         lastInvoiceBuilder_ = null;
       }
+      publishableToken_ = "";
       return this;
     }
 
@@ -627,19 +623,10 @@ private static final long serialVersionUID = 0L;
     }
 
     private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.workspaces.BillingInfo result) {
-      if (subscriptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          subscriptions_ = java.util.Collections.unmodifiableList(subscriptions_);
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.subscriptions_ = subscriptions_;
-      } else {
-        result.subscriptions_ = subscriptionsBuilder_.build();
-      }
       if (addonsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           addons_ = java.util.Collections.unmodifiableList(addons_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.addons_ = addons_;
       } else {
@@ -653,29 +640,32 @@ private static final long serialVersionUID = 0L;
         result.planName_ = planName_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.currentInvoice_ = currentInvoiceBuilder_ == null
             ? currentInvoice_
             : currentInvoiceBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.paymentMethod_ = paymentMethodBuilder_ == null
             ? paymentMethod_
             : paymentMethodBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.billingContactInfo_ = billingContactInfoBuilder_ == null
             ? billingContactInfo_
             : billingContactInfoBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.lastInvoice_ = lastInvoiceBuilder_ == null
             ? lastInvoice_
             : lastInvoiceBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.publishableToken_ = publishableToken_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -729,32 +719,6 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (subscriptionsBuilder_ == null) {
-        if (!other.subscriptions_.isEmpty()) {
-          if (subscriptions_.isEmpty()) {
-            subscriptions_ = other.subscriptions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureSubscriptionsIsMutable();
-            subscriptions_.addAll(other.subscriptions_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.subscriptions_.isEmpty()) {
-          if (subscriptionsBuilder_.isEmpty()) {
-            subscriptionsBuilder_.dispose();
-            subscriptionsBuilder_ = null;
-            subscriptions_ = other.subscriptions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-            subscriptionsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getSubscriptionsFieldBuilder() : null;
-          } else {
-            subscriptionsBuilder_.addAllMessages(other.subscriptions_);
-          }
-        }
-      }
       if (other.hasCurrentInvoice()) {
         mergeCurrentInvoice(other.getCurrentInvoice());
       }
@@ -768,7 +732,7 @@ private static final long serialVersionUID = 0L;
         if (!other.addons_.isEmpty()) {
           if (addons_.isEmpty()) {
             addons_ = other.addons_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureAddonsIsMutable();
             addons_.addAll(other.addons_);
@@ -781,7 +745,7 @@ private static final long serialVersionUID = 0L;
             addonsBuilder_.dispose();
             addonsBuilder_ = null;
             addons_ = other.addons_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000010);
             addonsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getAddonsFieldBuilder() : null;
@@ -792,6 +756,11 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasLastInvoice()) {
         mergeLastInvoice(other.getLastInvoice());
+      }
+      if (!other.getPublishableToken().isEmpty()) {
+        publishableToken_ = other.publishableToken_;
+        bitField0_ |= 0x00000040;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -824,38 +793,25 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
-            case 18: {
-              com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription m =
-                  input.readMessage(
-                      com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription.parser(),
-                      extensionRegistry);
-              if (subscriptionsBuilder_ == null) {
-                ensureSubscriptionsIsMutable();
-                subscriptions_.add(m);
-              } else {
-                subscriptionsBuilder_.addMessage(m);
-              }
-              break;
-            } // case 18
             case 26: {
               input.readMessage(
                   getCurrentInvoiceFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000002;
               break;
             } // case 26
             case 34: {
               input.readMessage(
                   getPaymentMethodFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000004;
               break;
             } // case 34
             case 42: {
               input.readMessage(
                   getBillingContactInfoFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000008;
               break;
             } // case 42
             case 50: {
@@ -875,9 +831,14 @@ private static final long serialVersionUID = 0L;
               input.readMessage(
                   getLastInvoiceFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000020;
               break;
             } // case 58
+            case 66: {
+              publishableToken_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 66
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -967,246 +928,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription> subscriptions_ =
-      java.util.Collections.emptyList();
-    private void ensureSubscriptionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
-        subscriptions_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription>(subscriptions_);
-        bitField0_ |= 0x00000002;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription, com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription.Builder, com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscriptionOrBuilder> subscriptionsBuilder_;
-
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public java.util.List<com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription> getSubscriptionsList() {
-      if (subscriptionsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(subscriptions_);
-      } else {
-        return subscriptionsBuilder_.getMessageList();
-      }
-    }
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public int getSubscriptionsCount() {
-      if (subscriptionsBuilder_ == null) {
-        return subscriptions_.size();
-      } else {
-        return subscriptionsBuilder_.getCount();
-      }
-    }
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription getSubscriptions(int index) {
-      if (subscriptionsBuilder_ == null) {
-        return subscriptions_.get(index);
-      } else {
-        return subscriptionsBuilder_.getMessage(index);
-      }
-    }
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public Builder setSubscriptions(
-        int index, com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription value) {
-      if (subscriptionsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureSubscriptionsIsMutable();
-        subscriptions_.set(index, value);
-        onChanged();
-      } else {
-        subscriptionsBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public Builder setSubscriptions(
-        int index, com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription.Builder builderForValue) {
-      if (subscriptionsBuilder_ == null) {
-        ensureSubscriptionsIsMutable();
-        subscriptions_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        subscriptionsBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public Builder addSubscriptions(com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription value) {
-      if (subscriptionsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureSubscriptionsIsMutable();
-        subscriptions_.add(value);
-        onChanged();
-      } else {
-        subscriptionsBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public Builder addSubscriptions(
-        int index, com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription value) {
-      if (subscriptionsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureSubscriptionsIsMutable();
-        subscriptions_.add(index, value);
-        onChanged();
-      } else {
-        subscriptionsBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public Builder addSubscriptions(
-        com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription.Builder builderForValue) {
-      if (subscriptionsBuilder_ == null) {
-        ensureSubscriptionsIsMutable();
-        subscriptions_.add(builderForValue.build());
-        onChanged();
-      } else {
-        subscriptionsBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public Builder addSubscriptions(
-        int index, com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription.Builder builderForValue) {
-      if (subscriptionsBuilder_ == null) {
-        ensureSubscriptionsIsMutable();
-        subscriptions_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        subscriptionsBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public Builder addAllSubscriptions(
-        java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription> values) {
-      if (subscriptionsBuilder_ == null) {
-        ensureSubscriptionsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, subscriptions_);
-        onChanged();
-      } else {
-        subscriptionsBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public Builder clearSubscriptions() {
-      if (subscriptionsBuilder_ == null) {
-        subscriptions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-      } else {
-        subscriptionsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public Builder removeSubscriptions(int index) {
-      if (subscriptionsBuilder_ == null) {
-        ensureSubscriptionsIsMutable();
-        subscriptions_.remove(index);
-        onChanged();
-      } else {
-        subscriptionsBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription.Builder getSubscriptionsBuilder(
-        int index) {
-      return getSubscriptionsFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscriptionOrBuilder getSubscriptionsOrBuilder(
-        int index) {
-      if (subscriptionsBuilder_ == null) {
-        return subscriptions_.get(index);  } else {
-        return subscriptionsBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public java.util.List<? extends com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscriptionOrBuilder> 
-         getSubscriptionsOrBuilderList() {
-      if (subscriptionsBuilder_ != null) {
-        return subscriptionsBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(subscriptions_);
-      }
-    }
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription.Builder addSubscriptionsBuilder() {
-      return getSubscriptionsFieldBuilder().addBuilder(
-          com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription.Builder addSubscriptionsBuilder(
-        int index) {
-      return getSubscriptionsFieldBuilder().addBuilder(
-          index, com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .scalekit.v1.workspaces.BillingSubscription subscriptions = 2 [json_name = "subscriptions"];</code>
-     */
-    public java.util.List<com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription.Builder> 
-         getSubscriptionsBuilderList() {
-      return getSubscriptionsFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription, com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription.Builder, com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscriptionOrBuilder> 
-        getSubscriptionsFieldBuilder() {
-      if (subscriptionsBuilder_ == null) {
-        subscriptionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription, com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscription.Builder, com.scalekit.grpc.scalekit.v1.workspaces.BillingSubscriptionOrBuilder>(
-                subscriptions_,
-                ((bitField0_ & 0x00000002) != 0),
-                getParentForChildren(),
-                isClean());
-        subscriptions_ = null;
-      }
-      return subscriptionsBuilder_;
-    }
-
     private com.scalekit.grpc.scalekit.v1.workspaces.CurrentInvoice currentInvoice_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.workspaces.CurrentInvoice, com.scalekit.grpc.scalekit.v1.workspaces.CurrentInvoice.Builder, com.scalekit.grpc.scalekit.v1.workspaces.CurrentInvoiceOrBuilder> currentInvoiceBuilder_;
@@ -1215,7 +936,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the currentInvoice field is set.
      */
     public boolean hasCurrentInvoice() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>.scalekit.v1.workspaces.CurrentInvoice current_invoice = 3 [json_name = "currentInvoice"];</code>
@@ -1240,7 +961,7 @@ private static final long serialVersionUID = 0L;
       } else {
         currentInvoiceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1254,7 +975,7 @@ private static final long serialVersionUID = 0L;
       } else {
         currentInvoiceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1263,7 +984,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeCurrentInvoice(com.scalekit.grpc.scalekit.v1.workspaces.CurrentInvoice value) {
       if (currentInvoiceBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0) &&
+        if (((bitField0_ & 0x00000002) != 0) &&
           currentInvoice_ != null &&
           currentInvoice_ != com.scalekit.grpc.scalekit.v1.workspaces.CurrentInvoice.getDefaultInstance()) {
           getCurrentInvoiceBuilder().mergeFrom(value);
@@ -1274,7 +995,7 @@ private static final long serialVersionUID = 0L;
         currentInvoiceBuilder_.mergeFrom(value);
       }
       if (currentInvoice_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -1283,7 +1004,7 @@ private static final long serialVersionUID = 0L;
      * <code>.scalekit.v1.workspaces.CurrentInvoice current_invoice = 3 [json_name = "currentInvoice"];</code>
      */
     public Builder clearCurrentInvoice() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       currentInvoice_ = null;
       if (currentInvoiceBuilder_ != null) {
         currentInvoiceBuilder_.dispose();
@@ -1296,7 +1017,7 @@ private static final long serialVersionUID = 0L;
      * <code>.scalekit.v1.workspaces.CurrentInvoice current_invoice = 3 [json_name = "currentInvoice"];</code>
      */
     public com.scalekit.grpc.scalekit.v1.workspaces.CurrentInvoice.Builder getCurrentInvoiceBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCurrentInvoiceFieldBuilder().getBuilder();
     }
@@ -1336,7 +1057,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the paymentMethod field is set.
      */
     public boolean hasPaymentMethod() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>.scalekit.v1.workspaces.PaymentMethod payment_method = 4 [json_name = "paymentMethod"];</code>
@@ -1361,7 +1082,7 @@ private static final long serialVersionUID = 0L;
       } else {
         paymentMethodBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1375,7 +1096,7 @@ private static final long serialVersionUID = 0L;
       } else {
         paymentMethodBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1384,7 +1105,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergePaymentMethod(com.scalekit.grpc.scalekit.v1.workspaces.PaymentMethod value) {
       if (paymentMethodBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0) &&
+        if (((bitField0_ & 0x00000004) != 0) &&
           paymentMethod_ != null &&
           paymentMethod_ != com.scalekit.grpc.scalekit.v1.workspaces.PaymentMethod.getDefaultInstance()) {
           getPaymentMethodBuilder().mergeFrom(value);
@@ -1395,7 +1116,7 @@ private static final long serialVersionUID = 0L;
         paymentMethodBuilder_.mergeFrom(value);
       }
       if (paymentMethod_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -1404,7 +1125,7 @@ private static final long serialVersionUID = 0L;
      * <code>.scalekit.v1.workspaces.PaymentMethod payment_method = 4 [json_name = "paymentMethod"];</code>
      */
     public Builder clearPaymentMethod() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       paymentMethod_ = null;
       if (paymentMethodBuilder_ != null) {
         paymentMethodBuilder_.dispose();
@@ -1417,7 +1138,7 @@ private static final long serialVersionUID = 0L;
      * <code>.scalekit.v1.workspaces.PaymentMethod payment_method = 4 [json_name = "paymentMethod"];</code>
      */
     public com.scalekit.grpc.scalekit.v1.workspaces.PaymentMethod.Builder getPaymentMethodBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPaymentMethodFieldBuilder().getBuilder();
     }
@@ -1457,7 +1178,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the billingContactInfo field is set.
      */
     public boolean hasBillingContactInfo() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>.scalekit.v1.workspaces.BillingContactInfo billing_contact_info = 5 [json_name = "billingContactInfo"];</code>
@@ -1482,7 +1203,7 @@ private static final long serialVersionUID = 0L;
       } else {
         billingContactInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1496,7 +1217,7 @@ private static final long serialVersionUID = 0L;
       } else {
         billingContactInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1505,7 +1226,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBillingContactInfo(com.scalekit.grpc.scalekit.v1.workspaces.BillingContactInfo value) {
       if (billingContactInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0) &&
+        if (((bitField0_ & 0x00000008) != 0) &&
           billingContactInfo_ != null &&
           billingContactInfo_ != com.scalekit.grpc.scalekit.v1.workspaces.BillingContactInfo.getDefaultInstance()) {
           getBillingContactInfoBuilder().mergeFrom(value);
@@ -1516,7 +1237,7 @@ private static final long serialVersionUID = 0L;
         billingContactInfoBuilder_.mergeFrom(value);
       }
       if (billingContactInfo_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1525,7 +1246,7 @@ private static final long serialVersionUID = 0L;
      * <code>.scalekit.v1.workspaces.BillingContactInfo billing_contact_info = 5 [json_name = "billingContactInfo"];</code>
      */
     public Builder clearBillingContactInfo() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       billingContactInfo_ = null;
       if (billingContactInfoBuilder_ != null) {
         billingContactInfoBuilder_.dispose();
@@ -1538,7 +1259,7 @@ private static final long serialVersionUID = 0L;
      * <code>.scalekit.v1.workspaces.BillingContactInfo billing_contact_info = 5 [json_name = "billingContactInfo"];</code>
      */
     public com.scalekit.grpc.scalekit.v1.workspaces.BillingContactInfo.Builder getBillingContactInfoBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getBillingContactInfoFieldBuilder().getBuilder();
     }
@@ -1573,9 +1294,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.scalekit.grpc.scalekit.v1.workspaces.Addon> addons_ =
       java.util.Collections.emptyList();
     private void ensureAddonsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         addons_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.workspaces.Addon>(addons_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
        }
     }
 
@@ -1725,7 +1446,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearAddons() {
       if (addonsBuilder_ == null) {
         addons_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         addonsBuilder_.clear();
@@ -1802,7 +1523,7 @@ private static final long serialVersionUID = 0L;
         addonsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.scalekit.grpc.scalekit.v1.workspaces.Addon, com.scalekit.grpc.scalekit.v1.workspaces.Addon.Builder, com.scalekit.grpc.scalekit.v1.workspaces.AddonOrBuilder>(
                 addons_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         addons_ = null;
@@ -1818,7 +1539,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the lastInvoice field is set.
      */
     public boolean hasLastInvoice() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <code>.scalekit.v1.workspaces.LastInvoice last_invoice = 7 [json_name = "lastInvoice"];</code>
@@ -1843,7 +1564,7 @@ private static final long serialVersionUID = 0L;
       } else {
         lastInvoiceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1857,7 +1578,7 @@ private static final long serialVersionUID = 0L;
       } else {
         lastInvoiceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1866,7 +1587,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeLastInvoice(com.scalekit.grpc.scalekit.v1.workspaces.LastInvoice value) {
       if (lastInvoiceBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0) &&
+        if (((bitField0_ & 0x00000020) != 0) &&
           lastInvoice_ != null &&
           lastInvoice_ != com.scalekit.grpc.scalekit.v1.workspaces.LastInvoice.getDefaultInstance()) {
           getLastInvoiceBuilder().mergeFrom(value);
@@ -1877,7 +1598,7 @@ private static final long serialVersionUID = 0L;
         lastInvoiceBuilder_.mergeFrom(value);
       }
       if (lastInvoice_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1886,7 +1607,7 @@ private static final long serialVersionUID = 0L;
      * <code>.scalekit.v1.workspaces.LastInvoice last_invoice = 7 [json_name = "lastInvoice"];</code>
      */
     public Builder clearLastInvoice() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       lastInvoice_ = null;
       if (lastInvoiceBuilder_ != null) {
         lastInvoiceBuilder_.dispose();
@@ -1899,7 +1620,7 @@ private static final long serialVersionUID = 0L;
      * <code>.scalekit.v1.workspaces.LastInvoice last_invoice = 7 [json_name = "lastInvoice"];</code>
      */
     public com.scalekit.grpc.scalekit.v1.workspaces.LastInvoice.Builder getLastInvoiceBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getLastInvoiceFieldBuilder().getBuilder();
     }
@@ -1929,6 +1650,98 @@ private static final long serialVersionUID = 0L;
         lastInvoice_ = null;
       }
       return lastInvoiceBuilder_;
+    }
+
+    private java.lang.Object publishableToken_ = "";
+    /**
+     * <pre>
+     * System-generated Stripe publishable key for client-side use (not a secret); read-only.
+     * </pre>
+     *
+     * <code>string publishable_token = 8 [json_name = "publishableToken", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The publishableToken.
+     */
+    public java.lang.String getPublishableToken() {
+      java.lang.Object ref = publishableToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        publishableToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * System-generated Stripe publishable key for client-side use (not a secret); read-only.
+     * </pre>
+     *
+     * <code>string publishable_token = 8 [json_name = "publishableToken", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for publishableToken.
+     */
+    public com.google.protobuf.ByteString
+        getPublishableTokenBytes() {
+      java.lang.Object ref = publishableToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        publishableToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * System-generated Stripe publishable key for client-side use (not a secret); read-only.
+     * </pre>
+     *
+     * <code>string publishable_token = 8 [json_name = "publishableToken", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The publishableToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublishableToken(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      publishableToken_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * System-generated Stripe publishable key for client-side use (not a secret); read-only.
+     * </pre>
+     *
+     * <code>string publishable_token = 8 [json_name = "publishableToken", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPublishableToken() {
+      publishableToken_ = getDefaultInstance().getPublishableToken();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * System-generated Stripe publishable key for client-side use (not a secret); read-only.
+     * </pre>
+     *
+     * <code>string publishable_token = 8 [json_name = "publishableToken", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for publishableToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublishableTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      publishableToken_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

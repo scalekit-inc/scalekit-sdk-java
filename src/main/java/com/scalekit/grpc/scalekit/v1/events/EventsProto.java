@@ -221,7 +221,7 @@ public final class EventsProto {
       "ECTED_ACCOUNT\020\t\022\010\n\004ROLE\020\n\022\016\n\nPERMISSION\020" +
       "\013*M\n\rEventCategory\022\034\n\030EVENT_SOURCE_UNSPE" +
       "CIFIED\020\000\022\010\n\004CORE\020\001\022\007\n\003SSO\020\002\022\013\n\007DIRSYNC\020\003" +
-      "*\323\005\n\nObjectType\022\033\n\027OBJECT_TYPE_UNSPECIFI" +
+      "*\351\005\n\nObjectType\022\033\n\027OBJECT_TYPE_UNSPECIFI" +
       "ED\020\000\022\r\n\tWorkspace\020\001\022\017\n\013Environment\020\002\022\020\n\014" +
       "Organization\020\003\022\016\n\nConnection\020\004\022\010\n\004User\020\005" +
       "\022\010\n\004Role\020\006\022\024\n\020CustomAttributes\020\007\022\r\n\tDire" +
@@ -239,20 +239,21 @@ public final class EventsProto {
       "eDetails\020\"\022\013\n\007Actions\020#\022\024\n\020InterceptorEv" +
       "ent\020$\022\016\n\nPermission\020%\022\026\n\022OrgMembershipEv" +
       "ent\020&\022\022\n\016UserLoginEvent\020\'\022\023\n\017UserLogoutE" +
-      "vent\020(2\302\002\n\rEventsService\022\201\001\n\nListEvents\022" +
-      "%.scalekit.v1.events.ListEventsRequest\032&" +
-      ".scalekit.v1.events.ListEventsResponse\"$" +
-      "\202\265\030\002\030t\202\323\344\223\002\030\"\016/api/v1/events:\006filter\022\254\001\n" +
-      "\017SendCustomEvent\022*.scalekit.v1.events.Se" +
-      "ndCustomEventRequest\032+.scalekit.v1.event" +
-      "s.SendCustomEventResponse\"@\202\265\030\002\030p\202\323\344\223\0024\"" +
-      "+/api/v1/events/frontend_events/{event_t" +
-      "ype}:\005eventB\317\001\n$com.scalekit.grpc.scalek" +
-      "it.v1.eventsB\013EventsProtoP\001Z0github.com/" +
-      "scalekit-inc/scalekit/pkg/grpc/events\242\002\003" +
-      "SVE\252\002\022Scalekit.V1.Events\312\002\022Scalekit\\V1\\E" +
-      "vents\342\002\036Scalekit\\V1\\Events\\GPBMetadata\352\002" +
-      "\024Scalekit::V1::Eventsb\006proto3"
+      "vent\020(\022\024\n\020ConnectedAccount\020)2\302\002\n\rEventsS" +
+      "ervice\022\201\001\n\nListEvents\022%.scalekit.v1.even" +
+      "ts.ListEventsRequest\032&.scalekit.v1.event" +
+      "s.ListEventsResponse\"$\202\265\030\002\030t\202\323\344\223\002\030\"\016/api" +
+      "/v1/events:\006filter\022\254\001\n\017SendCustomEvent\022*" +
+      ".scalekit.v1.events.SendCustomEventReque" +
+      "st\032+.scalekit.v1.events.SendCustomEventR" +
+      "esponse\"@\202\265\030\002\030p\202\323\344\223\0024\"+/api/v1/events/fr" +
+      "ontend_events/{event_type}:\005eventB\317\001\n$co" +
+      "m.scalekit.grpc.scalekit.v1.eventsB\013Even" +
+      "tsProtoP\001Z0github.com/scalekit-inc/scale" +
+      "kit/pkg/grpc/events\242\002\003SVE\252\002\022Scalekit.V1." +
+      "Events\312\002\022Scalekit\\V1\\Events\342\002\036Scalekit\\V" +
+      "1\\Events\\GPBMetadata\352\002\024Scalekit::V1::Eve" +
+      "ntsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

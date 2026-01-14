@@ -281,6 +281,9 @@ public final class ConnectedAccountServiceGrpc {
   public interface AsyncService {
 
     /**
+     * <pre>
+     * List Connected Accounts
+     * </pre>
      */
     default void listConnectedAccounts(com.scalekit.grpc.scalekit.v1.connected_accounts.ListConnectedAccountsRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.ListConnectedAccountsResponse> responseObserver) {
@@ -288,6 +291,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Search Connected Accounts
+     * </pre>
      */
     default void searchConnectedAccounts(com.scalekit.grpc.scalekit.v1.connected_accounts.SearchConnectedAccountsRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.SearchConnectedAccountsResponse> responseObserver) {
@@ -295,6 +301,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create Connected Account
+     * </pre>
      */
     default void createConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.CreateConnectedAccountRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.CreateConnectedAccountResponse> responseObserver) {
@@ -302,6 +311,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update Connected Account
+     * </pre>
      */
     default void updateConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.UpdateConnectedAccountRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.UpdateConnectedAccountResponse> responseObserver) {
@@ -309,6 +321,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete Connected Account
+     * </pre>
      */
     default void deleteConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.DeleteConnectedAccountRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.DeleteConnectedAccountResponse> responseObserver) {
@@ -316,6 +331,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Generate Magic Link for Account Connection
+     * </pre>
      */
     default void getMagicLinkForConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountResponse> responseObserver) {
@@ -324,7 +342,7 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
-     * this will return the auth details for a connected account by its identifier
+     * Get Connected Account Authentication Details
      * </pre>
      */
     default void getConnectedAccountAuth(com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest request,
@@ -361,6 +379,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Connected Accounts
+     * </pre>
      */
     public void listConnectedAccounts(com.scalekit.grpc.scalekit.v1.connected_accounts.ListConnectedAccountsRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.ListConnectedAccountsResponse> responseObserver) {
@@ -369,6 +390,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Search Connected Accounts
+     * </pre>
      */
     public void searchConnectedAccounts(com.scalekit.grpc.scalekit.v1.connected_accounts.SearchConnectedAccountsRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.SearchConnectedAccountsResponse> responseObserver) {
@@ -377,6 +401,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create Connected Account
+     * </pre>
      */
     public void createConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.CreateConnectedAccountRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.CreateConnectedAccountResponse> responseObserver) {
@@ -385,6 +412,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update Connected Account
+     * </pre>
      */
     public void updateConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.UpdateConnectedAccountRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.UpdateConnectedAccountResponse> responseObserver) {
@@ -393,6 +423,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete Connected Account
+     * </pre>
      */
     public void deleteConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.DeleteConnectedAccountRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.DeleteConnectedAccountResponse> responseObserver) {
@@ -401,6 +434,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Generate Magic Link for Account Connection
+     * </pre>
      */
     public void getMagicLinkForConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountResponse> responseObserver) {
@@ -410,7 +446,7 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
-     * this will return the auth details for a connected account by its identifier
+     * Get Connected Account Authentication Details
      * </pre>
      */
     public void getConnectedAccountAuth(com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest request,
@@ -437,6 +473,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Connected Accounts
+     * </pre>
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.ListConnectedAccountsResponse listConnectedAccounts(com.scalekit.grpc.scalekit.v1.connected_accounts.ListConnectedAccountsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -444,6 +483,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Search Connected Accounts
+     * </pre>
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.SearchConnectedAccountsResponse searchConnectedAccounts(com.scalekit.grpc.scalekit.v1.connected_accounts.SearchConnectedAccountsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -451,6 +493,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create Connected Account
+     * </pre>
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.CreateConnectedAccountResponse createConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.CreateConnectedAccountRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -458,6 +503,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update Connected Account
+     * </pre>
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.UpdateConnectedAccountResponse updateConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.UpdateConnectedAccountRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -465,6 +513,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete Connected Account
+     * </pre>
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.DeleteConnectedAccountResponse deleteConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.DeleteConnectedAccountRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -472,6 +523,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Generate Magic Link for Account Connection
+     * </pre>
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountResponse getMagicLinkForConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -480,7 +534,7 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
-     * this will return the auth details for a connected account by its identifier
+     * Get Connected Account Authentication Details
      * </pre>
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse getConnectedAccountAuth(com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest request) {
@@ -506,6 +560,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * List Connected Accounts
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.ListConnectedAccountsResponse> listConnectedAccounts(
         com.scalekit.grpc.scalekit.v1.connected_accounts.ListConnectedAccountsRequest request) {
@@ -514,6 +571,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Search Connected Accounts
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.SearchConnectedAccountsResponse> searchConnectedAccounts(
         com.scalekit.grpc.scalekit.v1.connected_accounts.SearchConnectedAccountsRequest request) {
@@ -522,6 +582,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Create Connected Account
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.CreateConnectedAccountResponse> createConnectedAccount(
         com.scalekit.grpc.scalekit.v1.connected_accounts.CreateConnectedAccountRequest request) {
@@ -530,6 +593,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Update Connected Account
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.UpdateConnectedAccountResponse> updateConnectedAccount(
         com.scalekit.grpc.scalekit.v1.connected_accounts.UpdateConnectedAccountRequest request) {
@@ -538,6 +604,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delete Connected Account
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.DeleteConnectedAccountResponse> deleteConnectedAccount(
         com.scalekit.grpc.scalekit.v1.connected_accounts.DeleteConnectedAccountRequest request) {
@@ -546,6 +615,9 @@ public final class ConnectedAccountServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Generate Magic Link for Account Connection
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountResponse> getMagicLinkForConnectedAccount(
         com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRequest request) {
@@ -555,7 +627,7 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
-     * this will return the auth details for a connected account by its identifier
+     * Get Connected Account Authentication Details
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse> getConnectedAccountAuth(

@@ -199,4 +199,21 @@ java.lang.String defaultValue);
    * <code>optional .google.protobuf.Timestamp expires_at = 13 [json_name = "expiresAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder();
+
+  /**
+   * <code>optional string provisioning_method = 14 [json_name = "provisioningMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the provisioningMethod field is set.
+   */
+  boolean hasProvisioningMethod();
+  /**
+   * <code>optional string provisioning_method = 14 [json_name = "provisioningMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The provisioningMethod.
+   */
+  java.lang.String getProvisioningMethod();
+  /**
+   * <code>optional string provisioning_method = 14 [json_name = "provisioningMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for provisioningMethod.
+   */
+  com.google.protobuf.ByteString
+      getProvisioningMethodBytes();
 }

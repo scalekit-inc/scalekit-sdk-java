@@ -151,272 +151,274 @@ public final class InterceptorsProto {
       "-openapiv2/options/annotations.proto\032!sc" +
       "alekit/v1/commons/commons.proto\032\'scaleki" +
       "t/v1/errdetails/errdetails.proto\032!scalek" +
-      "it/v1/options/options.proto\"\235\t\n\021CreateIn" +
+      "it/v1/options/options.proto\"\304\t\n\021CreateIn" +
       "terceptor\022-\n\014display_name\030\001 \001(\tB\n\272H\007r\005\020\001" +
       "\030\377\001R\013displayName\022*\n\013description\030\002 \001(\tB\010\272" +
       "H\005r\003\030\200\010R\013description\022X\n\rtrigger_point\030\003 " +
       "\001(\0162&.scalekit.v1.interceptors.TriggerPo" +
-      "intB\013\272H\010\202\001\005\020\001\"\001\000R\014triggerPoint\022\204\001\n\020inter" +
+      "intB\013\272H\010\202\001\005\020\001\"\001\000R\014triggerPoint\022\253\001\n\020inter" +
       "ceptor_type\030\004 \001(\0162).scalekit.v1.intercep" +
-      "tors.InterceptorTypeB)\222A\0332\023Type of inter" +
-      "ceptorJ\004AUTH\272H\010\202\001\005\020\001\"\001\000H\000R\017interceptorTy" +
-      "pe\210\001\001\022\210\001\n\007api_url\030\005 \001(\tBj\222A]2>HTTPS api " +
-      "URL that will receive the custom interce" +
-      "ptor requestJ\033\"https://b2b.com/pre-login" +
-      "\"\272H\007r\005\020\001\030\360.H\001R\006apiUrl\210\001\001\022e\n\006config\030\006 \001(\013" +
-      "2 .scalekit.v1.interceptors.ConfigB&\222A#2" +
-      "!Configuration for the interceptorH\002R\006co" +
-      "nfig\210\001\001\022^\n\ntimeout_ms\030\007 \001(\004B:\222A,2\034Interc" +
-      "eptor timeout duration:\00510000J\00510000\272H\0102" +
-      "\006\030\260\352\001(dH\003R\ttimeoutMs\210\001\001\022\263\001\n\016failure_poli" +
-      "cy\030\010 \001(\0162\'.scalekit.v1.interceptors.Fail" +
-      "urePolicyB^\222AP2CHow to handle failures w" +
-      "hen the interceptor endpoint is unreacha" +
-      "bleJ\tFAIL_OPEN\272H\010\202\001\005\020\001\"\001\000H\004R\rfailurePoli" +
-      "cy\210\001\001\022c\n\020request_template\030\t \001(\tB3\222A02.Js" +
-      "onnet template for transforming request " +
-      "dataH\005R\017requestTemplate\210\001\001\022f\n\021response_t" +
-      "emplate\030\n \001(\tB4\222A12/Jsonnet template for" +
-      " transforming response dataH\006R\020responseT" +
-      "emplate\210\001\001B\023\n\021_interceptor_typeB\n\n\010_api_" +
-      "urlB\t\n\007_configB\r\n\013_timeout_msB\021\n\017_failur" +
-      "e_policyB\023\n\021_request_templateB\024\n\022_respon" +
-      "se_template\"\266\r\n\013Interceptor\022V\n\002id\030\001 \001(\tB" +
-      "F\222A@2%Unique identifier for the intercep" +
-      "torJ\027\"icp_11897349538316810\"\340A\003R\002id\022-\n\014d" +
-      "isplay_name\030\002 \001(\tB\n\272H\007r\005\020\001\030\377\001R\013displayNa" +
-      "me\022*\n\013description\030\003 \001(\tB\010\272H\005r\003\030\200\010R\013descr" +
-      "iption\022X\n\rtrigger_point\030\004 \001(\0162&.scalekit" +
-      ".v1.interceptors.TriggerPointB\013\272H\010\202\001\005\020\001\"" +
-      "\001\000R\014triggerPoint\022\177\n\020interceptor_type\030\005 \001" +
-      "(\0162).scalekit.v1.interceptors.Intercepto" +
-      "rTypeB)\222A\0332\023Type of interceptorJ\004AUTH\272H\010" +
-      "\202\001\005\020\001\"\001\000R\017interceptorType\022\203\001\n\007api_url\030\006 " +
-      "\001(\tBj\222A]2>HTTPS api URL that will receiv" +
-      "e the custom interceptor requestJ\033\"https" +
-      "://b2b.com/pre-login\"\272H\007r\005\020\001\030\360.R\006apiUrl\022" +
-      "e\n\006config\030\007 \001(\0132 .scalekit.v1.intercepto" +
-      "rs.ConfigB&\222A#2!Configuration for the in" +
-      "terceptorH\000R\006config\210\001\001\022Y\n\ntimeout_ms\030\010 \001" +
-      "(\004B:\222A,2\034Interceptor timeout duration:\0051" +
-      "0000J\00510000\272H\0102\006\030\260\352\001(dR\ttimeoutMs\022\256\001\n\016fa" +
-      "ilure_policy\030\t \001(\0162\'.scalekit.v1.interce" +
-      "ptors.FailurePolicyB^\222AP2CHow to handle " +
-      "failures when the interceptor endpoint i" +
-      "s unreachableJ\tFAIL_OPEN\272H\010\202\001\005\020\001\"\001\000R\rfai" +
-      "lurePolicy\022c\n\020request_template\030\n \001(\tB3\222A" +
-      "02.Jsonnet template for transforming req" +
-      "uest dataH\001R\017requestTemplate\210\001\001\022f\n\021respo" +
-      "nse_template\030\013 \001(\tB4\222A12/Jsonnet templat" +
-      "e for transforming response dataH\002R\020resp" +
-      "onseTemplate\210\001\001\022 \n\tsecret_id\030\014 \001(\tB\003\340A\003R" +
-      "\010secretId\022(\n\rsecret_suffix\030\r \001(\tB\003\340A\003R\014s" +
-      "ecretSuffix\022X\n\007enabled\030\016 \001(\010B>\222A;23Wheth" +
-      "er this custom interceptor is currently " +
-      "activeJ\004trueR\007enabled\022m\n\ncreated_at\030\017 \001(" +
-      "\0132\032.google.protobuf.TimestampB2\222A,2*Time" +
-      "stamp when the interceptor was created\340A" +
-      "\003R\tcreatedAt\022r\n\nupdated_at\030\020 \001(\0132\032.googl" +
-      "e.protobuf.TimestampB7\222A12/Timestamp whe" +
-      "n the interceptor was last updated\340A\003R\tu" +
-      "pdatedAt\022\177\n\020last_executed_at\030\021 \001(\0132\032.goo" +
-      "gle.protobuf.TimestampB4\222A.2,Timestamp w" +
-      "hen the interceptor was last used\340A\003H\003R\016" +
-      "lastExecutedAt\210\001\001B\t\n\007_configB\023\n\021_request" +
-      "_templateB\024\n\022_response_templateB\023\n\021_last" +
-      "_executed_at\"Y\n\006Config\022O\n\013auth_config\030\001 " +
-      "\001(\0132..scalekit.v1.interceptors.Authentic" +
-      "ationConfigR\nauthConfig\"\207\002\n\024Authenticati" +
-      "onConfig\022?\n\007api_key\030\001 \001(\0132$.scalekit.v1." +
-      "interceptors.ApiKeyAuthH\000R\006apiKey\022>\n\006oau" +
-      "th2\030\002 \001(\0132$.scalekit.v1.interceptors.Oau" +
-      "th2AuthH\000R\006oauth2\022_\n\020auth_config_type\030\003 " +
-      "\001(\0162(.scalekit.v1.interceptors.AuthConfi" +
-      "gTypeB\013\272H\010\202\001\005\020\001\"\001\000R\016authConfigTypeB\r\n\013au" +
-      "th_config\"\276\001\n\nApiKeyAuth\022J\n\007api_key\030\001 \001(" +
-      "\tB1\222A$2\rAPI key valueJ\023\"my-secret-api-ke" +
-      "y\"\272H\007r\005\020\001\030\200\020R\006apiKey\022d\n\013header_name\030\002 \001(" +
-      "\tBC\222A62\'HTTP header name to send the API" +
-      " key inJ\013\"x-api-key\"\272H\007r\005\020\001\030\377\001R\nheaderNa" +
-      "me\"\337\002\n\nOauth2Auth\022e\n\ttoken_url\030\001 \001(\tBH\222A" +
-      ";2\020OAuth2 token URLJ\'\"https://auth.examp" +
-      "le.com/oauth2/token\"\272H\007r\005\020\001\030\200\020R\010tokenUrl" +
-      "\022L\n\tclient_id\030\002 \001(\tB/\222A\"2\020OAuth2 client " +
-      "IDJ\016\"my-client-id\"\272H\007r\005\020\001\030\377\001R\010clientId\022\\" +
-      "\n\rclient_secret\030\003 \001(\tB7\222A*2\024OAuth2 clien" +
-      "t secretJ\022\"my-client-secret\"\272H\007r\005\020\001\030\200\020R\014" +
-      "clientSecret\022>\n\005scope\030\004 \001(\tB(\222A\0352\rOAuth2" +
-      " scopesJ\014\"read write\"\272H\005r\003\030\200\010R\005scope\"q\n\030" +
-      "CreateInterceptorRequest\022U\n\013interceptor\030" +
-      "\001 \001(\0132+.scalekit.v1.interceptors.CreateI" +
-      "nterceptorB\006\272H\003\310\001\001R\013interceptor\"d\n\031Creat" +
-      "eInterceptorResponse\022G\n\013interceptor\030\001 \001(" +
+      "tors.InterceptorTypeBP\222AB2:Type of inter" +
+      "ceptor. AUTH for authentication intercep" +
+      "tors.J\004AUTH\272H\010\202\001\005\020\001\"\001\000H\000R\017interceptorTyp" +
+      "e\210\001\001\022\210\001\n\007api_url\030\005 \001(\tBj\222A]2>HTTPS api U" +
+      "RL that will receive the custom intercep" +
+      "tor requestJ\033\"https://b2b.com/pre-login\"" +
+      "\272H\007r\005\020\001\030\360.H\001R\006apiUrl\210\001\001\022e\n\006config\030\006 \001(\0132" +
+      " .scalekit.v1.interceptors.ConfigB&\222A#2!" +
+      "Configuration for the interceptorH\002R\006con" +
+      "fig\210\001\001\022^\n\ntimeout_ms\030\007 \001(\004B:\222A,2\034Interce" +
+      "ptor timeout duration:\00510000J\00510000\272H\0102\006" +
+      "\030\260\352\001(dH\003R\ttimeoutMs\210\001\001\022\263\001\n\016failure_polic" +
+      "y\030\010 \001(\0162\'.scalekit.v1.interceptors.Failu" +
+      "rePolicyB^\222AP2CHow to handle failures wh" +
+      "en the interceptor endpoint is unreachab" +
+      "leJ\tFAIL_OPEN\272H\010\202\001\005\020\001\"\001\000H\004R\rfailurePolic" +
+      "y\210\001\001\022c\n\020request_template\030\t \001(\tB3\222A02.Jso" +
+      "nnet template for transforming request d" +
+      "ataH\005R\017requestTemplate\210\001\001\022f\n\021response_te" +
+      "mplate\030\n \001(\tB4\222A12/Jsonnet template for " +
+      "transforming response dataH\006R\020responseTe" +
+      "mplate\210\001\001B\023\n\021_interceptor_typeB\n\n\010_api_u" +
+      "rlB\t\n\007_configB\r\n\013_timeout_msB\021\n\017_failure" +
+      "_policyB\023\n\021_request_templateB\024\n\022_respons" +
+      "e_template\"\266\r\n\013Interceptor\022V\n\002id\030\001 \001(\tBF" +
+      "\222A@2%Unique identifier for the intercept" +
+      "orJ\027\"icp_11897349538316810\"\340A\003R\002id\022-\n\014di" +
+      "splay_name\030\002 \001(\tB\n\272H\007r\005\020\001\030\377\001R\013displayNam" +
+      "e\022*\n\013description\030\003 \001(\tB\010\272H\005r\003\030\200\010R\013descri" +
+      "ption\022X\n\rtrigger_point\030\004 \001(\0162&.scalekit." +
+      "v1.interceptors.TriggerPointB\013\272H\010\202\001\005\020\001\"\001" +
+      "\000R\014triggerPoint\022\177\n\020interceptor_type\030\005 \001(" +
+      "\0162).scalekit.v1.interceptors.Interceptor" +
+      "TypeB)\222A\0332\023Type of interceptorJ\004AUTH\272H\010\202" +
+      "\001\005\020\001\"\001\000R\017interceptorType\022\203\001\n\007api_url\030\006 \001" +
+      "(\tBj\222A]2>HTTPS api URL that will receive" +
+      " the custom interceptor requestJ\033\"https:" +
+      "//b2b.com/pre-login\"\272H\007r\005\020\001\030\360.R\006apiUrl\022e" +
+      "\n\006config\030\007 \001(\0132 .scalekit.v1.interceptor" +
+      "s.ConfigB&\222A#2!Configuration for the int" +
+      "erceptorH\000R\006config\210\001\001\022Y\n\ntimeout_ms\030\010 \001(" +
+      "\004B:\222A,2\034Interceptor timeout duration:\00510" +
+      "000J\00510000\272H\0102\006\030\260\352\001(dR\ttimeoutMs\022\256\001\n\016fai" +
+      "lure_policy\030\t \001(\0162\'.scalekit.v1.intercep" +
+      "tors.FailurePolicyB^\222AP2CHow to handle f" +
+      "ailures when the interceptor endpoint is" +
+      " unreachableJ\tFAIL_OPEN\272H\010\202\001\005\020\001\"\001\000R\rfail" +
+      "urePolicy\022c\n\020request_template\030\n \001(\tB3\222A0" +
+      "2.Jsonnet template for transforming requ" +
+      "est dataH\001R\017requestTemplate\210\001\001\022f\n\021respon" +
+      "se_template\030\013 \001(\tB4\222A12/Jsonnet template" +
+      " for transforming response dataH\002R\020respo" +
+      "nseTemplate\210\001\001\022 \n\tsecret_id\030\014 \001(\tB\003\340A\003R\010" +
+      "secretId\022(\n\rsecret_suffix\030\r \001(\tB\003\340A\003R\014se" +
+      "cretSuffix\022X\n\007enabled\030\016 \001(\010B>\222A;23Whethe" +
+      "r this custom interceptor is currently a" +
+      "ctiveJ\004trueR\007enabled\022m\n\ncreated_at\030\017 \001(\013" +
+      "2\032.google.protobuf.TimestampB2\222A,2*Times" +
+      "tamp when the interceptor was created\340A\003" +
+      "R\tcreatedAt\022r\n\nupdated_at\030\020 \001(\0132\032.google" +
+      ".protobuf.TimestampB7\222A12/Timestamp when" +
+      " the interceptor was last updated\340A\003R\tup" +
+      "datedAt\022\177\n\020last_executed_at\030\021 \001(\0132\032.goog" +
+      "le.protobuf.TimestampB4\222A.2,Timestamp wh" +
+      "en the interceptor was last used\340A\003H\003R\016l" +
+      "astExecutedAt\210\001\001B\t\n\007_configB\023\n\021_request_" +
+      "templateB\024\n\022_response_templateB\023\n\021_last_" +
+      "executed_at\"Y\n\006Config\022O\n\013auth_config\030\001 \001" +
+      "(\0132..scalekit.v1.interceptors.Authentica" +
+      "tionConfigR\nauthConfig\"\207\002\n\024Authenticatio" +
+      "nConfig\022?\n\007api_key\030\001 \001(\0132$.scalekit.v1.i" +
+      "nterceptors.ApiKeyAuthH\000R\006apiKey\022>\n\006oaut" +
+      "h2\030\002 \001(\0132$.scalekit.v1.interceptors.Oaut" +
+      "h2AuthH\000R\006oauth2\022_\n\020auth_config_type\030\003 \001" +
+      "(\0162(.scalekit.v1.interceptors.AuthConfig" +
+      "TypeB\013\272H\010\202\001\005\020\001\"\001\000R\016authConfigTypeB\r\n\013aut" +
+      "h_config\"\276\001\n\nApiKeyAuth\022J\n\007api_key\030\001 \001(\t" +
+      "B1\222A$2\rAPI key valueJ\023\"my-secret-api-key" +
+      "\"\272H\007r\005\020\001\030\200\020R\006apiKey\022d\n\013header_name\030\002 \001(\t" +
+      "BC\222A62\'HTTP header name to send the API " +
+      "key inJ\013\"x-api-key\"\272H\007r\005\020\001\030\377\001R\nheaderNam" +
+      "e\"\337\002\n\nOauth2Auth\022e\n\ttoken_url\030\001 \001(\tBH\222A;" +
+      "2\020OAuth2 token URLJ\'\"https://auth.exampl" +
+      "e.com/oauth2/token\"\272H\007r\005\020\001\030\200\020R\010tokenUrl\022" +
+      "L\n\tclient_id\030\002 \001(\tB/\222A\"2\020OAuth2 client I" +
+      "DJ\016\"my-client-id\"\272H\007r\005\020\001\030\377\001R\010clientId\022\\\n" +
+      "\rclient_secret\030\003 \001(\tB7\222A*2\024OAuth2 client" +
+      " secretJ\022\"my-client-secret\"\272H\007r\005\020\001\030\200\020R\014c" +
+      "lientSecret\022>\n\005scope\030\004 \001(\tB(\222A\0352\rOAuth2 " +
+      "scopesJ\014\"read write\"\272H\005r\003\030\200\010R\005scope\"q\n\030C" +
+      "reateInterceptorRequest\022U\n\013interceptor\030\001" +
+      " \001(\0132+.scalekit.v1.interceptors.CreateIn" +
+      "terceptorB\006\272H\003\310\001\001R\013interceptor\"d\n\031Create" +
+      "InterceptorResponse\022G\n\013interceptor\030\001 \001(\013" +
+      "2%.scalekit.v1.interceptors.InterceptorR" +
+      "\013interceptor\"d\n\025GetInterceptorRequest\022K\n" +
+      "\002id\030\001 \001(\tB;\222A)2\016Interceptor IDJ\027\"icp_917" +
+      "35381321449672\"\272H\014r\n\020\001\030 :\004icp_R\002id\"a\n\026Ge" +
+      "tInterceptorResponse\022G\n\013interceptor\030\001 \001(" +
       "\0132%.scalekit.v1.interceptors.Interceptor" +
-      "R\013interceptor\"d\n\025GetInterceptorRequest\022K" +
-      "\n\002id\030\001 \001(\tB;\222A)2\016Interceptor IDJ\027\"icp_91" +
-      "735381321449672\"\272H\014r\n\020\001\030 :\004icp_R\002id\"a\n\026G" +
-      "etInterceptorResponse\022G\n\013interceptor\030\001 \001" +
-      "(\0132%.scalekit.v1.interceptors.Intercepto" +
-      "rR\013interceptor\";\n\030EnableInterceptorReque" +
-      "st\022\037\n\002id\030\001 \001(\tB\017\272H\014r\n\020\001\030 :\004icp_R\002id\"<\n\031D" +
-      "isableInterceptorRequest\022\037\n\002id\030\001 \001(\tB\017\272H" +
-      "\014r\n\020\001\030 :\004icp_R\002id\"\241\003\n\027ListInterceptorsRe" +
-      "quest\022y\n\rtrigger_point\030\001 \001(\0162&.scalekit." +
-      "v1.interceptors.TriggerPointB\'\222A\0312\027Filte" +
-      "r by trigger point\272H\010\202\001\005\020\001\"\001\000H\000R\014trigger" +
-      "Point\210\001\001\022D\n\007enabled\030\002 \001(\010B%\222A\"2 Only ret" +
-      "urn enabled interceptorsH\001R\007enabled\210\001\001\022Y" +
-      "\n\tpage_size\030\003 \001(\rB<\222A22,Number of result" +
-      "s to return per page (1-100)J\00220\272H\004*\002\030dR" +
-      "\010pageSize\022=\n\npage_token\030\004 \001(\tB\031\222A\0262\024Toke" +
-      "n for paginationH\002R\tpageToken\210\001\001B\020\n\016_tri" +
-      "gger_pointB\n\n\010_enabledB\r\n\013_page_token\"\361\003" +
-      "\n\030ListInterceptorsResponse\022I\n\014intercepto" +
-      "rs\030\001 \003(\0132%.scalekit.v1.interceptors.Inte" +
-      "rceptorR\014interceptors\022\201\001\n\017next_page_toke" +
-      "n\030\002 \001(\tBY\222AV2PToken for retrieving the n" +
-      "ext page of results. Empty if there are " +
-      "no more pages.J\002\"\"R\rnextPageToken\022\177\n\ntot" +
-      "al_size\030\003 \001(\rB`\222A]2UTotal number of inte" +
-      "rceptors matching the request criteria, " +
-      "regardless of pagination.J\0041042R\ttotalSi" +
-      "ze\022\204\001\n\017prev_page_token\030\004 \001(\tB\\\222AY2SToken" +
-      " for retrieving the previous page of res" +
-      "ults. Empty if this is the first page.J\002" +
-      "\"\"R\rprevPageToken\"\222\001\n\030UpdateInterceptorR" +
-      "equest\022\037\n\002id\030\001 \001(\tB\017\272H\014r\n\020\001\030 :\004icp_R\002id\022" +
-      "U\n\013interceptor\030\002 \001(\0132+.scalekit.v1.inter" +
-      "ceptors.UpdateInterceptorB\006\272H\003\310\001\001R\013inter" +
-      "ceptor\"\352\013\n\021UpdateInterceptor\022|\n\014display_" +
-      "name\030\001 \001(\tBT\222AI2+Descriptive name for th" +
-      "e custom interceptorJ\032\"Validate User Com" +
-      "pliance\"\272H\005r\003\030\377\001H\000R\013displayName\210\001\001\022\244\001\n\013d" +
-      "escription\030\002 \001(\tB}\222Ar22Detailed descript" +
-      "ion of what this interceptor doesJ<\"Chec" +
-      "ks user compliance with security policie" +
-      "s before login\"\272H\005r\003\030\200\010H\001R\013description\210\001" +
-      "\001\022\231\001\n\rtrigger_point\030\003 \001(\0162&.scalekit.v1." +
-      "interceptors.TriggerPointBG\222A927The trig" +
-      "ger point where this interceptor should " +
-      "execute\272H\010\202\001\005\020\001\"\001\000H\002R\014triggerPoint\210\001\001\022\230\001" +
-      "\n\007api_url\030\004 \001(\tBz\222Ao2>HTTPS api URL that" +
-      " will receive the custom interceptor req" +
-      "uestJ-\"https://b2b.com/auth-interceptors" +
-      "/pre-login\"\272H\005r\003\030\360.H\003R\006apiUrl\210\001\001\022e\n\006conf" +
-      "ig\030\005 \001(\0132 .scalekit.v1.interceptors.Conf" +
-      "igB&\222A#2!Configuration for the intercept" +
-      "orH\004R\006config\210\001\001\022g\n\ntimeout_ms\030\006 \001(\004BC\222A5" +
-      "2,Interceptor timeout duration in millis" +
-      "econdsJ\00510000\272H\0102\006\030\260\352\001(dH\005R\ttimeoutMs\210\001\001" +
-      "\022\263\001\n\016failure_policy\030\007 \001(\0162\'.scalekit.v1." +
-      "interceptors.FailurePolicyB^\222AP2CHow to " +
-      "handle failures when the interceptor end" +
-      "point is unreachableJ\tFAIL_OPEN\272H\010\202\001\005\020\001\"" +
-      "\001\000H\006R\rfailurePolicy\210\001\001\022\252\001\n\020request_templ" +
-      "ate\030\010 \001(\tBz\222Aw26Jsonnet request template" +
-      " for transforming request dataJ=\"local u" +
-      "ser = ctx.user; { user: user, timestamp:" +
-      " std.now() }\"H\007R\017requestTemplate\210\001\001\022\256\001\n\021" +
-      "response_template\030\t \001(\tB|\222Ay28Jsonnet re" +
-      "sponse template for transforming respons" +
-      "e dataJ=\"local user = ctx.user; { user: " +
-      "user, timestamp: std.now() }\"H\010R\020respons" +
-      "eTemplate\210\001\001B\017\n\r_display_nameB\016\n\014_descri" +
-      "ptionB\020\n\016_trigger_pointB\n\n\010_api_urlB\t\n\007_" +
-      "configB\r\n\013_timeout_msB\021\n\017_failure_policy" +
-      "B\023\n\021_request_templateB\024\n\022_response_templ" +
-      "ate\"d\n\031UpdateInterceptorResponse\022G\n\013inte" +
-      "rceptor\030\001 \001(\0132%.scalekit.v1.interceptors" +
-      ".InterceptorR\013interceptor\"Q\n\030DeleteInter" +
-      "ceptorRequest\0225\n\002id\030\001 \001(\tB%\222A\0302\026Intercep" +
-      "tor identifier\272H\007r\005\020\001\030\377\001R\002id\"x\n\020Intercep" +
-      "torError\022,\n\004code\030\001 \001(\tB\030\222A\0142\nError code\272" +
+      "R\013interceptor\";\n\030EnableInterceptorReques" +
+      "t\022\037\n\002id\030\001 \001(\tB\017\272H\014r\n\020\001\030 :\004icp_R\002id\"<\n\031Di" +
+      "sableInterceptorRequest\022\037\n\002id\030\001 \001(\tB\017\272H\014" +
+      "r\n\020\001\030 :\004icp_R\002id\"\241\003\n\027ListInterceptorsReq" +
+      "uest\022y\n\rtrigger_point\030\001 \001(\0162&.scalekit.v" +
+      "1.interceptors.TriggerPointB\'\222A\0312\027Filter" +
+      " by trigger point\272H\010\202\001\005\020\001\"\001\000H\000R\014triggerP" +
+      "oint\210\001\001\022D\n\007enabled\030\002 \001(\010B%\222A\"2 Only retu" +
+      "rn enabled interceptorsH\001R\007enabled\210\001\001\022Y\n" +
+      "\tpage_size\030\003 \001(\rB<\222A22,Number of results" +
+      " to return per page (1-100)J\00220\272H\004*\002\030dR\010" +
+      "pageSize\022=\n\npage_token\030\004 \001(\tB\031\222A\0262\024Token" +
+      " for paginationH\002R\tpageToken\210\001\001B\020\n\016_trig" +
+      "ger_pointB\n\n\010_enabledB\r\n\013_page_token\"\361\003\n" +
+      "\030ListInterceptorsResponse\022I\n\014interceptor" +
+      "s\030\001 \003(\0132%.scalekit.v1.interceptors.Inter" +
+      "ceptorR\014interceptors\022\201\001\n\017next_page_token" +
+      "\030\002 \001(\tBY\222AV2PToken for retrieving the ne" +
+      "xt page of results. Empty if there are n" +
+      "o more pages.J\002\"\"R\rnextPageToken\022\177\n\ntota" +
+      "l_size\030\003 \001(\rB`\222A]2UTotal number of inter" +
+      "ceptors matching the request criteria, r" +
+      "egardless of pagination.J\0041042R\ttotalSiz" +
+      "e\022\204\001\n\017prev_page_token\030\004 \001(\tB\\\222AY2SToken " +
+      "for retrieving the previous page of resu" +
+      "lts. Empty if this is the first page.J\002\"" +
+      "\"R\rprevPageToken\"\222\001\n\030UpdateInterceptorRe" +
+      "quest\022\037\n\002id\030\001 \001(\tB\017\272H\014r\n\020\001\030 :\004icp_R\002id\022U" +
+      "\n\013interceptor\030\002 \001(\0132+.scalekit.v1.interc" +
+      "eptors.UpdateInterceptorB\006\272H\003\310\001\001R\013interc" +
+      "eptor\"\352\013\n\021UpdateInterceptor\022|\n\014display_n" +
+      "ame\030\001 \001(\tBT\222AI2+Descriptive name for the" +
+      " custom interceptorJ\032\"Validate User Comp" +
+      "liance\"\272H\005r\003\030\377\001H\000R\013displayName\210\001\001\022\244\001\n\013de" +
+      "scription\030\002 \001(\tB}\222Ar22Detailed descripti" +
+      "on of what this interceptor doesJ<\"Check" +
+      "s user compliance with security policies" +
+      " before login\"\272H\005r\003\030\200\010H\001R\013description\210\001\001" +
+      "\022\231\001\n\rtrigger_point\030\003 \001(\0162&.scalekit.v1.i" +
+      "nterceptors.TriggerPointBG\222A927The trigg" +
+      "er point where this interceptor should e" +
+      "xecute\272H\010\202\001\005\020\001\"\001\000H\002R\014triggerPoint\210\001\001\022\230\001\n" +
+      "\007api_url\030\004 \001(\tBz\222Ao2>HTTPS api URL that " +
+      "will receive the custom interceptor requ" +
+      "estJ-\"https://b2b.com/auth-interceptors/" +
+      "pre-login\"\272H\005r\003\030\360.H\003R\006apiUrl\210\001\001\022e\n\006confi" +
+      "g\030\005 \001(\0132 .scalekit.v1.interceptors.Confi" +
+      "gB&\222A#2!Configuration for the intercepto" +
+      "rH\004R\006config\210\001\001\022g\n\ntimeout_ms\030\006 \001(\004BC\222A52" +
+      ",Interceptor timeout duration in millise" +
+      "condsJ\00510000\272H\0102\006\030\260\352\001(dH\005R\ttimeoutMs\210\001\001\022" +
+      "\263\001\n\016failure_policy\030\007 \001(\0162\'.scalekit.v1.i" +
+      "nterceptors.FailurePolicyB^\222AP2CHow to h" +
+      "andle failures when the interceptor endp" +
+      "oint is unreachableJ\tFAIL_OPEN\272H\010\202\001\005\020\001\"\001" +
+      "\000H\006R\rfailurePolicy\210\001\001\022\252\001\n\020request_templa" +
+      "te\030\010 \001(\tBz\222Aw26Jsonnet request template " +
+      "for transforming request dataJ=\"local us" +
+      "er = ctx.user; { user: user, timestamp: " +
+      "std.now() }\"H\007R\017requestTemplate\210\001\001\022\256\001\n\021r" +
+      "esponse_template\030\t \001(\tB|\222Ay28Jsonnet res" +
+      "ponse template for transforming response" +
+      " dataJ=\"local user = ctx.user; { user: u" +
+      "ser, timestamp: std.now() }\"H\010R\020response" +
+      "Template\210\001\001B\017\n\r_display_nameB\016\n\014_descrip" +
+      "tionB\020\n\016_trigger_pointB\n\n\010_api_urlB\t\n\007_c" +
+      "onfigB\r\n\013_timeout_msB\021\n\017_failure_policyB" +
+      "\023\n\021_request_templateB\024\n\022_response_templa" +
+      "te\"d\n\031UpdateInterceptorResponse\022G\n\013inter" +
+      "ceptor\030\001 \001(\0132%.scalekit.v1.interceptors." +
+      "InterceptorR\013interceptor\"Q\n\030DeleteInterc" +
+      "eptorRequest\0225\n\002id\030\001 \001(\tB%\222A\0302\026Intercept" +
+      "or identifier\272H\007r\005\020\001\030\377\001R\002id\"x\n\020Intercept" +
+      "orError\022,\n\004code\030\001 \001(\tB\030\222A\0142\nError code\272H" +
+      "\006r\004\020\001\0302R\004code\0226\n\007message\030\002 \001(\tB\034\222A\0172\rErr" +
+      "or message\272H\007r\005\020\001\030\364\003R\007message\"\330\002\n\026TestIn" +
+      "terceptorRequest\022:\n\002id\030\001 \001(\tB*\222A\0302\026Inter" +
+      "ceptor identifier\272H\014r\n\020\001\030 :\004icp_R\002id\022\201\002\n" +
+      "\004data\030\002 \001(\0132\027.google.protobuf.StructB\323\001\222" +
+      "A\311\0012bTest data payload for the intercept" +
+      "or. Should contain user, organization, a" +
+      "nd context information.Jc{\"user\": {\"emai" +
+      "l\": \"test@example.com\", \"first_name\": \"J" +
+      "ohn\"}, \"organization\": {\"name\": \"Test Or" +
+      "g\"}}\272H\003\310\001\001R\004data\"\244\002\n\027TestInterceptorResp" +
+      "onse\022J\n\024interceptor_response\030\001 \001(\0132\027.goo" +
+      "gle.protobuf.StructR\023interceptorResponse" +
+      "\022[\n\020validation_error\030\002 \001(\0132+.scalekit.v1" +
+      ".errdetails.ValidationErrorInfoH\000R\017valid" +
+      "ationError\210\001\001\022A\n\005error\030\003 \001(\0132&.scalekit." +
+      "v1.interceptors.ErrorMessageH\001R\005error\210\001\001" +
+      "B\023\n\021_validation_errorB\010\n\006_error\"\306\001\n\014Erro" +
+      "rMessage\022,\n\004code\030\001 \001(\tB\030\222A\0142\nError code\272" +
       "H\006r\004\020\001\0302R\004code\0226\n\007message\030\002 \001(\tB\034\222A\0172\rEr" +
-      "ror message\272H\007r\005\020\001\030\364\003R\007message\"\330\002\n\026TestI" +
-      "nterceptorRequest\022:\n\002id\030\001 \001(\tB*\222A\0302\026Inte" +
-      "rceptor identifier\272H\014r\n\020\001\030 :\004icp_R\002id\022\201\002" +
-      "\n\004data\030\002 \001(\0132\027.google.protobuf.StructB\323\001" +
-      "\222A\311\0012bTest data payload for the intercep" +
-      "tor. Should contain user, organization, " +
-      "and context information.Jc{\"user\": {\"ema" +
-      "il\": \"test@example.com\", \"first_name\": \"" +
-      "John\"}, \"organization\": {\"name\": \"Test O" +
-      "rg\"}}\272H\003\310\001\001R\004data\"\244\002\n\027TestInterceptorRes" +
-      "ponse\022J\n\024interceptor_response\030\001 \001(\0132\027.go" +
-      "ogle.protobuf.StructR\023interceptorRespons" +
-      "e\022[\n\020validation_error\030\002 \001(\0132+.scalekit.v" +
-      "1.errdetails.ValidationErrorInfoH\000R\017vali" +
-      "dationError\210\001\001\022A\n\005error\030\003 \001(\0132&.scalekit" +
-      ".v1.interceptors.ErrorMessageH\001R\005error\210\001" +
-      "\001B\023\n\021_validation_errorB\010\n\006_error\"\306\001\n\014Err" +
-      "orMessage\022,\n\004code\030\001 \001(\tB\030\222A\0142\nError code" +
-      "\272H\006r\004\020\001\0302R\004code\0226\n\007message\030\002 \001(\tB\034\222A\0172\rE" +
-      "rror message\272H\007r\005\020\001\030\364\003R\007message\022P\n\007detai" +
-      "ls\030\003 \001(\0132\027.google.protobuf.StructB\035\222A\0322\030" +
-      "Additional error detailsR\007details\"\235\002\n\023In" +
-      "terceptorResponse\022\202\001\n\010decision\030\001 \001(\0162-.s" +
-      "calekit.v1.interceptors.InterceptorDecis" +
-      "ionB7\222A&2$The decision made by the inter" +
-      "ceptor\272H\013\202\001\005\020\001\"\001\000\310\001\001R\010decision\022w\n\005error\030" +
-      "\002 \001(\0132*.scalekit.v1.interceptors.Interce" +
-      "ptorErrorB0\222A-2+Error information if the" +
-      " interceptor failedH\000R\005error\210\001\001B\010\n\006_erro" +
-      "r*\252\001\n\014TriggerPoint\022\035\n\031TRIGGER_POINT_UNSP" +
-      "ECIFIED\020\000\022\034\n\030POST_USER_AUTHENTICATION\020\001\022" +
-      "\016\n\nPRE_SIGNUP\020\002\022\030\n\024PRE_SESSION_CREATION\020" +
-      "\003\022\027\n\023PRE_USER_INVITATION\020\004\022\032\n\026PRE_M2M_TO" +
-      "KEN_CREATION\020\005*=\n\017InterceptorType\022 \n\034INT" +
-      "ERCEPTOR_TYPE_UNSPECIFIED\020\000\022\010\n\004AUTH\020\001*O\n" +
-      "\rFailurePolicy\022\036\n\032FAILURE_POLICY_UNSPECI" +
-      "FIED\020\000\022\r\n\tFAIL_OPEN\020\001\022\017\n\013FAIL_CLOSED\020\002*P" +
-      "\n\023InterceptorDecision\022$\n INTERCEPTOR_DEC" +
-      "ISION_UNSPECIFIED\020\000\022\t\n\005ALLOW\020\001\022\010\n\004DENY\020\002" +
-      "*K\n\016AuthConfigType\022 \n\034AUTH_CONFIG_TYPE_U" +
-      "NSPECIFIED\020\000\022\013\n\007API_KEY\020\001\022\n\n\006OAUTH2\020\0022\317\013" +
-      "\n\022InterceptorService\022\274\001\n\021CreateIntercept" +
-      "or\0222.scalekit.v1.interceptors.CreateInte" +
-      "rceptorRequest\0323.scalekit.v1.interceptor" +
-      "s.CreateInterceptorResponse\">\202\265\030\002\030T\372\322\344\223\002" +
-      "\t\022\007PREVIEW\202\323\344\223\002#\"\024/api/v1/interceptors:\013" +
-      "interceptor\022\253\001\n\016GetInterceptor\022/.scaleki" +
-      "t.v1.interceptors.GetInterceptorRequest\032" +
-      "0.scalekit.v1.interceptors.GetIntercepto" +
-      "rResponse\"6\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\033\022\031" +
-      "/api/v1/interceptors/{id}\022\254\001\n\020ListInterc" +
-      "eptors\0221.scalekit.v1.interceptors.ListIn" +
-      "terceptorsRequest\0322.scalekit.v1.intercep" +
-      "tors.ListInterceptorsResponse\"1\202\265\030\002\030T\372\322\344" +
-      "\223\002\t\022\007PREVIEW\202\323\344\223\002\026\022\024/api/v1/interceptors" +
-      "\022\301\001\n\021UpdateInterceptor\0222.scalekit.v1.int" +
-      "erceptors.UpdateInterceptorRequest\0323.sca" +
-      "lekit.v1.interceptors.UpdateInterceptorR" +
-      "esponse\"C\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002(2\031/a" +
-      "pi/v1/interceptors/{id}:\013interceptor\022\227\001\n" +
-      "\021DeleteInterceptor\0222.scalekit.v1.interce" +
-      "ptors.DeleteInterceptorRequest\032\026.google." +
-      "protobuf.Empty\"6\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
-      "\223\002\033*\031/api/v1/interceptors/{id}\022\236\001\n\021Enabl" +
-      "eInterceptor\0222.scalekit.v1.interceptors." +
-      "EnableInterceptorRequest\032\026.google.protob" +
-      "uf.Empty\"=\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\"2 /" +
-      "api/v1/interceptors/{id}:enable\022\241\001\n\022Disa" +
-      "bleInterceptor\0223.scalekit.v1.interceptor" +
-      "s.DisableInterceptorRequest\032\026.google.pro" +
-      "tobuf.Empty\">\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002#" +
-      "2!/api/v1/interceptors/{id}:disable\022\371\001\n\017" +
-      "TestInterceptor\0220.scalekit.v1.intercepto" +
-      "rs.TestInterceptorRequest\0321.scalekit.v1." +
-      "interceptors.TestInterceptorResponse\"\200\001\222" +
-      "A<\022\023Test an Interceptor\032%Test an interce" +
-      "ptor with sample data.\202\265\030\002\030T\372\322\344\223\002\t\022\007PREV" +
-      "IEW\202\323\344\223\002&\"\036/api/v1/interceptors/{id}/tes" +
-      "t:\004dataB\371\001\n*com.scalekit.grpc.scalekit.v" +
-      "1.interceptorsB\021InterceptorsProtoP\001Z6git" +
-      "hub.com/scalekit-inc/scalekit/pkg/grpc/i" +
-      "nterceptors\242\002\003SVI\252\002\030Scalekit.V1.Intercep" +
-      "tors\312\002\030Scalekit\\V1\\Interceptors\342\002$Scalek" +
-      "it\\V1\\Interceptors\\GPBMetadata\352\002\032Scaleki" +
-      "t::V1::Interceptorsb\006proto3"
+      "ror message\272H\007r\005\020\001\030\364\003R\007message\022P\n\007detail" +
+      "s\030\003 \001(\0132\027.google.protobuf.StructB\035\222A\0322\030A" +
+      "dditional error detailsR\007details\"\235\002\n\023Int" +
+      "erceptorResponse\022\202\001\n\010decision\030\001 \001(\0162-.sc" +
+      "alekit.v1.interceptors.InterceptorDecisi" +
+      "onB7\222A&2$The decision made by the interc" +
+      "eptor\272H\013\202\001\005\020\001\"\001\000\310\001\001R\010decision\022w\n\005error\030\002" +
+      " \001(\0132*.scalekit.v1.interceptors.Intercep" +
+      "torErrorB0\222A-2+Error information if the " +
+      "interceptor failedH\000R\005error\210\001\001B\010\n\006_error" +
+      "*\305\001\n\014TriggerPoint\022\035\n\031TRIGGER_POINT_UNSPE" +
+      "CIFIED\020\000\022\034\n\030POST_USER_AUTHENTICATION\020\001\022\016" +
+      "\n\nPRE_SIGNUP\020\002\022\030\n\024PRE_SESSION_CREATION\020\003" +
+      "\022\027\n\023PRE_USER_INVITATION\020\004\022\032\n\026PRE_M2M_TOK" +
+      "EN_CREATION\020\005\022\031\n\025ACCESS_TOKEN_CREATION\020\006" +
+      "*=\n\017InterceptorType\022 \n\034INTERCEPTOR_TYPE_" +
+      "UNSPECIFIED\020\000\022\010\n\004AUTH\020\001*O\n\rFailurePolicy" +
+      "\022\036\n\032FAILURE_POLICY_UNSPECIFIED\020\000\022\r\n\tFAIL" +
+      "_OPEN\020\001\022\017\n\013FAIL_CLOSED\020\002*P\n\023InterceptorD" +
+      "ecision\022$\n INTERCEPTOR_DECISION_UNSPECIF" +
+      "IED\020\000\022\t\n\005ALLOW\020\001\022\010\n\004DENY\020\002*K\n\016AuthConfig" +
+      "Type\022 \n\034AUTH_CONFIG_TYPE_UNSPECIFIED\020\000\022\013" +
+      "\n\007API_KEY\020\001\022\n\n\006OAUTH2\020\0022\317\013\n\022InterceptorS" +
+      "ervice\022\274\001\n\021CreateInterceptor\0222.scalekit." +
+      "v1.interceptors.CreateInterceptorRequest" +
+      "\0323.scalekit.v1.interceptors.CreateInterc" +
+      "eptorResponse\">\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
+      "\002#\"\024/api/v1/interceptors:\013interceptor\022\253\001" +
+      "\n\016GetInterceptor\022/.scalekit.v1.intercept" +
+      "ors.GetInterceptorRequest\0320.scalekit.v1." +
+      "interceptors.GetInterceptorResponse\"6\202\265\030" +
+      "\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\033\022\031/api/v1/interc" +
+      "eptors/{id}\022\254\001\n\020ListInterceptors\0221.scale" +
+      "kit.v1.interceptors.ListInterceptorsRequ" +
+      "est\0322.scalekit.v1.interceptors.ListInter" +
+      "ceptorsResponse\"1\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323" +
+      "\344\223\002\026\022\024/api/v1/interceptors\022\301\001\n\021UpdateInt" +
+      "erceptor\0222.scalekit.v1.interceptors.Upda" +
+      "teInterceptorRequest\0323.scalekit.v1.inter" +
+      "ceptors.UpdateInterceptorResponse\"C\202\265\030\002\030" +
+      "T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002(2\031/api/v1/intercep" +
+      "tors/{id}:\013interceptor\022\227\001\n\021DeleteInterce" +
+      "ptor\0222.scalekit.v1.interceptors.DeleteIn" +
+      "terceptorRequest\032\026.google.protobuf.Empty" +
+      "\"6\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\033*\031/api/v1/i" +
+      "nterceptors/{id}\022\236\001\n\021EnableInterceptor\0222" +
+      ".scalekit.v1.interceptors.EnableIntercep" +
+      "torRequest\032\026.google.protobuf.Empty\"=\202\265\030\002" +
+      "\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\"2 /api/v1/interce" +
+      "ptors/{id}:enable\022\241\001\n\022DisableInterceptor" +
+      "\0223.scalekit.v1.interceptors.DisableInter" +
+      "ceptorRequest\032\026.google.protobuf.Empty\">\202" +
+      "\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002#2!/api/v1/inte" +
+      "rceptors/{id}:disable\022\371\001\n\017TestIntercepto" +
+      "r\0220.scalekit.v1.interceptors.TestInterce" +
+      "ptorRequest\0321.scalekit.v1.interceptors.T" +
+      "estInterceptorResponse\"\200\001\222A<\022\023Test an In" +
+      "terceptor\032%Test an interceptor with samp" +
+      "le data.\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002&\"\036/ap" +
+      "i/v1/interceptors/{id}/test:\004dataB\371\001\n*co" +
+      "m.scalekit.grpc.scalekit.v1.interceptors" +
+      "B\021InterceptorsProtoP\001Z6github.com/scalek" +
+      "it-inc/scalekit/pkg/grpc/interceptors\242\002\003" +
+      "SVI\252\002\030Scalekit.V1.Interceptors\312\002\030Scaleki" +
+      "t\\V1\\Interceptors\342\002$Scalekit\\V1\\Intercep" +
+      "tors\\GPBMetadata\352\002\032Scalekit::V1::Interce" +
+      "ptorsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

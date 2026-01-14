@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
     accountNumber_ = "";
     accountType_ = "";
     status_ = 0;
+    accountName_ = "";
   }
 
   @java.lang.Override
@@ -36,6 +37,18 @@ private static final long serialVersionUID = 0L;
     return com.scalekit.grpc.scalekit.v1.workspaces.WorkspacesProto.internal_static_scalekit_v1_workspaces_PaymentMethod_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 7:
+        return internalGetPaymentInfo();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -229,6 +242,148 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.scalekit.grpc.scalekit.v1.workspaces.PaymentMethodStatus.UNRECOGNIZED : result;
   }
 
+  public static final int ACCOUNT_NAME_FIELD_NUMBER = 6;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object accountName_ = "";
+  /**
+   * <pre>
+   * Human-friendly account name like "Visa •••• 1234" or "Checking •••• 6789"
+   * </pre>
+   *
+   * <code>string account_name = 6 [json_name = "accountName"];</code>
+   * @return The accountName.
+   */
+  @java.lang.Override
+  public java.lang.String getAccountName() {
+    java.lang.Object ref = accountName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      accountName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Human-friendly account name like "Visa •••• 1234" or "Checking •••• 6789"
+   * </pre>
+   *
+   * <code>string account_name = 6 [json_name = "accountName"];</code>
+   * @return The bytes for accountName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAccountNameBytes() {
+    java.lang.Object ref = accountName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      accountName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PAYMENT_INFO_FIELD_NUMBER = 7;
+  private static final class PaymentInfoDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                com.scalekit.grpc.scalekit.v1.workspaces.WorkspacesProto.internal_static_scalekit_v1_workspaces_PaymentMethod_PaymentInfoEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> paymentInfo_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetPaymentInfo() {
+    if (paymentInfo_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          PaymentInfoDefaultEntryHolder.defaultEntry);
+    }
+    return paymentInfo_;
+  }
+  public int getPaymentInfoCount() {
+    return internalGetPaymentInfo().getMap().size();
+  }
+  /**
+   * <pre>
+   * Additional info for display (brand, last4, exp, email, etc.)
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; payment_info = 7 [json_name = "paymentInfo", (.buf.validate.field) = { ... }</code>
+   */
+  @java.lang.Override
+  public boolean containsPaymentInfo(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    return internalGetPaymentInfo().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getPaymentInfoMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getPaymentInfo() {
+    return getPaymentInfoMap();
+  }
+  /**
+   * <pre>
+   * Additional info for display (brand, last4, exp, email, etc.)
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; payment_info = 7 [json_name = "paymentInfo", (.buf.validate.field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getPaymentInfoMap() {
+    return internalGetPaymentInfo().getMap();
+  }
+  /**
+   * <pre>
+   * Additional info for display (brand, last4, exp, email, etc.)
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; payment_info = 7 [json_name = "paymentInfo", (.buf.validate.field) = { ... }</code>
+   */
+  @java.lang.Override
+  public /* nullable */
+java.lang.String getPaymentInfoOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetPaymentInfo().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   * Additional info for display (brand, last4, exp, email, etc.)
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; payment_info = 7 [json_name = "paymentInfo", (.buf.validate.field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.lang.String getPaymentInfoOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetPaymentInfo().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -258,6 +413,15 @@ private static final long serialVersionUID = 0L;
     if (status_ != com.scalekit.grpc.scalekit.v1.workspaces.PaymentMethodStatus.PAYMENT_METHOD_STATUS_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, status_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, accountName_);
+    }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetPaymentInfo(),
+        PaymentInfoDefaultEntryHolder.defaultEntry,
+        7);
     getUnknownFields().writeTo(output);
   }
 
@@ -284,6 +448,19 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(5, status_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accountName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, accountName_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetPaymentInfo().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      paymentInfo__ = PaymentInfoDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, paymentInfo__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -307,6 +484,10 @@ private static final long serialVersionUID = 0L;
     if (!getAccountType()
         .equals(other.getAccountType())) return false;
     if (status_ != other.status_) return false;
+    if (!getAccountName()
+        .equals(other.getAccountName())) return false;
+    if (!internalGetPaymentInfo().equals(
+        other.internalGetPaymentInfo())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -328,6 +509,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getAccountType().hashCode();
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + status_;
+    hash = (37 * hash) + ACCOUNT_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getAccountName().hashCode();
+    if (!internalGetPaymentInfo().getMap().isEmpty()) {
+      hash = (37 * hash) + PAYMENT_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetPaymentInfo().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -437,6 +624,28 @@ private static final long serialVersionUID = 0L;
       return com.scalekit.grpc.scalekit.v1.workspaces.WorkspacesProto.internal_static_scalekit_v1_workspaces_PaymentMethod_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 7:
+          return internalGetPaymentInfo();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 7:
+          return internalGetMutablePaymentInfo();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -464,6 +673,8 @@ private static final long serialVersionUID = 0L;
       accountNumber_ = "";
       accountType_ = "";
       status_ = 0;
+      accountName_ = "";
+      internalGetMutablePaymentInfo().clear();
       return this;
     }
 
@@ -511,6 +722,13 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.status_ = status_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.accountName_ = accountName_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.paymentInfo_ = internalGetPaymentInfo();
+        result.paymentInfo_.makeImmutable();
       }
     }
 
@@ -579,6 +797,14 @@ private static final long serialVersionUID = 0L;
       if (other.status_ != 0) {
         setStatusValue(other.getStatusValue());
       }
+      if (!other.getAccountName().isEmpty()) {
+        accountName_ = other.accountName_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      internalGetMutablePaymentInfo().mergeFrom(
+          other.internalGetPaymentInfo());
+      bitField0_ |= 0x00000040;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -630,6 +856,20 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 40
+            case 50: {
+              accountName_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 50
+            case 58: {
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              paymentInfo__ = input.readMessage(
+                  PaymentInfoDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              internalGetMutablePaymentInfo().getMutableMap().put(
+                  paymentInfo__.getKey(), paymentInfo__.getValue());
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 58
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1046,6 +1286,253 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000010);
       status_ = 0;
       onChanged();
+      return this;
+    }
+
+    private java.lang.Object accountName_ = "";
+    /**
+     * <pre>
+     * Human-friendly account name like "Visa •••• 1234" or "Checking •••• 6789"
+     * </pre>
+     *
+     * <code>string account_name = 6 [json_name = "accountName"];</code>
+     * @return The accountName.
+     */
+    public java.lang.String getAccountName() {
+      java.lang.Object ref = accountName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        accountName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Human-friendly account name like "Visa •••• 1234" or "Checking •••• 6789"
+     * </pre>
+     *
+     * <code>string account_name = 6 [json_name = "accountName"];</code>
+     * @return The bytes for accountName.
+     */
+    public com.google.protobuf.ByteString
+        getAccountNameBytes() {
+      java.lang.Object ref = accountName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        accountName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Human-friendly account name like "Visa •••• 1234" or "Checking •••• 6789"
+     * </pre>
+     *
+     * <code>string account_name = 6 [json_name = "accountName"];</code>
+     * @param value The accountName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAccountName(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      accountName_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Human-friendly account name like "Visa •••• 1234" or "Checking •••• 6789"
+     * </pre>
+     *
+     * <code>string account_name = 6 [json_name = "accountName"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAccountName() {
+      accountName_ = getDefaultInstance().getAccountName();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Human-friendly account name like "Visa •••• 1234" or "Checking •••• 6789"
+     * </pre>
+     *
+     * <code>string account_name = 6 [json_name = "accountName"];</code>
+     * @param value The bytes for accountName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAccountNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      accountName_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> paymentInfo_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetPaymentInfo() {
+      if (paymentInfo_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            PaymentInfoDefaultEntryHolder.defaultEntry);
+      }
+      return paymentInfo_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutablePaymentInfo() {
+      if (paymentInfo_ == null) {
+        paymentInfo_ = com.google.protobuf.MapField.newMapField(
+            PaymentInfoDefaultEntryHolder.defaultEntry);
+      }
+      if (!paymentInfo_.isMutable()) {
+        paymentInfo_ = paymentInfo_.copy();
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return paymentInfo_;
+    }
+    public int getPaymentInfoCount() {
+      return internalGetPaymentInfo().getMap().size();
+    }
+    /**
+     * <pre>
+     * Additional info for display (brand, last4, exp, email, etc.)
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; payment_info = 7 [json_name = "paymentInfo", (.buf.validate.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public boolean containsPaymentInfo(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetPaymentInfo().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getPaymentInfoMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getPaymentInfo() {
+      return getPaymentInfoMap();
+    }
+    /**
+     * <pre>
+     * Additional info for display (brand, last4, exp, email, etc.)
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; payment_info = 7 [json_name = "paymentInfo", (.buf.validate.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getPaymentInfoMap() {
+      return internalGetPaymentInfo().getMap();
+    }
+    /**
+     * <pre>
+     * Additional info for display (brand, last4, exp, email, etc.)
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; payment_info = 7 [json_name = "paymentInfo", (.buf.validate.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+java.lang.String getPaymentInfoOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetPaymentInfo().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Additional info for display (brand, last4, exp, email, etc.)
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; payment_info = 7 [json_name = "paymentInfo", (.buf.validate.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public java.lang.String getPaymentInfoOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetPaymentInfo().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    public Builder clearPaymentInfo() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      internalGetMutablePaymentInfo().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <pre>
+     * Additional info for display (brand, last4, exp, email, etc.)
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; payment_info = 7 [json_name = "paymentInfo", (.buf.validate.field) = { ... }</code>
+     */
+    public Builder removePaymentInfo(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      internalGetMutablePaymentInfo().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+        getMutablePaymentInfo() {
+      bitField0_ |= 0x00000040;
+      return internalGetMutablePaymentInfo().getMutableMap();
+    }
+    /**
+     * <pre>
+     * Additional info for display (brand, last4, exp, email, etc.)
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; payment_info = 7 [json_name = "paymentInfo", (.buf.validate.field) = { ... }</code>
+     */
+    public Builder putPaymentInfo(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) { throw new NullPointerException("map value"); }
+      internalGetMutablePaymentInfo().getMutableMap()
+          .put(key, value);
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+    /**
+     * <pre>
+     * Additional info for display (brand, last4, exp, email, etc.)
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; payment_info = 7 [json_name = "paymentInfo", (.buf.validate.field) = { ... }</code>
+     */
+    public Builder putAllPaymentInfo(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutablePaymentInfo().getMutableMap()
+          .putAll(values);
+      bitField0_ |= 0x00000040;
       return this;
     }
     @java.lang.Override

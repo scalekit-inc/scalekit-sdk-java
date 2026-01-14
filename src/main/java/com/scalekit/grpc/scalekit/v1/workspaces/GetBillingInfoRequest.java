@@ -43,6 +43,17 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest.class, com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest.Builder.class);
   }
 
+  public static final int ONLY_ADDONS_FIELD_NUMBER = 1;
+  private boolean onlyAddons_ = false;
+  /**
+   * <code>bool only_addons = 1 [json_name = "onlyAddons"];</code>
+   * @return The onlyAddons.
+   */
+  @java.lang.Override
+  public boolean getOnlyAddons() {
+    return onlyAddons_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -57,6 +68,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (onlyAddons_ != false) {
+      output.writeBool(1, onlyAddons_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -66,6 +80,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (onlyAddons_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(1, onlyAddons_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -81,6 +99,8 @@ private static final long serialVersionUID = 0L;
     }
     com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest other = (com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest) obj;
 
+    if (getOnlyAddons()
+        != other.getOnlyAddons()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -92,6 +112,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + ONLY_ADDONS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getOnlyAddons());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -226,6 +249,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      onlyAddons_ = false;
       return this;
     }
 
@@ -252,8 +277,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest buildPartial() {
       com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest result = new com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest(this);
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.onlyAddons_ = onlyAddons_;
+      }
     }
 
     @java.lang.Override
@@ -300,6 +333,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest other) {
       if (other == com.scalekit.grpc.scalekit.v1.workspaces.GetBillingInfoRequest.getDefaultInstance()) return this;
+      if (other.getOnlyAddons() != false) {
+        setOnlyAddons(other.getOnlyAddons());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -326,6 +362,11 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
+            case 8: {
+              onlyAddons_ = input.readBool();
+              bitField0_ |= 0x00000001;
+              break;
+            } // case 8
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -339,6 +380,39 @@ private static final long serialVersionUID = 0L;
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+    private int bitField0_;
+
+    private boolean onlyAddons_ ;
+    /**
+     * <code>bool only_addons = 1 [json_name = "onlyAddons"];</code>
+     * @return The onlyAddons.
+     */
+    @java.lang.Override
+    public boolean getOnlyAddons() {
+      return onlyAddons_;
+    }
+    /**
+     * <code>bool only_addons = 1 [json_name = "onlyAddons"];</code>
+     * @param value The onlyAddons to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOnlyAddons(boolean value) {
+
+      onlyAddons_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool only_addons = 1 [json_name = "onlyAddons"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOnlyAddons() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onlyAddons_ = false;
+      onChanged();
       return this;
     }
     @java.lang.Override

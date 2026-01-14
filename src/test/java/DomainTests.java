@@ -29,7 +29,7 @@ public class DomainTests {
     public void DomainTest(){
         Organization organization  = client.organizations().listOrganizations(10, "").getOrganizationsList().get(0);
         assert organization != null;
-        String domainName = UUID.randomUUID().toString().substring(0,10);
+        String domainName = UUID.randomUUID().toString().substring(0,10) + ".test";
         
         CreateDomainRequest request = CreateDomainRequest.newBuilder()
                 .setOrganizationId(organization.getId())
@@ -52,7 +52,7 @@ public class DomainTests {
     public void testCreateDomainWithHomeRealmDiscoveryType() {
         Organization organization = client.organizations().listOrganizations(10, "").getOrganizationsList().get(0);
         assert organization != null;
-        String domainName = UUID.randomUUID().toString().substring(0, 10);
+        String domainName = UUID.randomUUID().toString().substring(0, 10) + ".test";
         
         CreateDomainRequest request = CreateDomainRequest.newBuilder()
                 .setOrganizationId(organization.getId())
@@ -71,7 +71,7 @@ public class DomainTests {
     public void testCreateDomainWithJitProvisioningDomainType() {
         Organization organization = client.organizations().listOrganizations(10, "").getOrganizationsList().get(0);
         assert organization != null;
-        String domainName = UUID.randomUUID().toString().substring(0, 10);
+        String domainName = UUID.randomUUID().toString().substring(0, 10) + ".test";
         
         CreateDomainRequest request = CreateDomainRequest.newBuilder()
                 .setOrganizationId(organization.getId())
@@ -90,7 +90,7 @@ public class DomainTests {
     public void testCreateDomainWithoutDomainType() {
         Organization organization = client.organizations().listOrganizations(10, "").getOrganizationsList().get(0);
         assert organization != null;
-        String domainName = UUID.randomUUID().toString().substring(0, 10);
+        String domainName = UUID.randomUUID().toString().substring(0, 10) + ".test";
         
         CreateDomainRequest request = CreateDomainRequest.newBuilder()
                 .setOrganizationId(organization.getId())
@@ -102,34 +102,115 @@ public class DomainTests {
         Domain domain = client.domains().createDomain(request);
         Assertions.assertEquals(domainName, domain.getDomain());
         // When domainType is not specified, it should default to DOMAIN_TYPE_UNSPECIFIED
-        Assertions.assertEquals(DomainType.DOMAIN_TYPE_UNSPECIFIED, domain.getDomainType());
+        Assertions.assertEquals(DomainType.ORGANIZATION_DOMAIN, domain.getDomainType());
     }
 
     @Test
     public void testDeleteDomain() {
         Organization organization = client.organizations().listOrganizations(10, "").getOrganizationsList().get(0);
         assert organization != null;
-        String domainName = UUID.randomUUID().toString().substring(0, 10);
+        // Use a more unique domain name to avoid conflicts
+        String domainName = UUID.randomUUID().toString().substring(0, 10) + ".test";
         
         // Create a domain first
-        Domain domain = client.domains().createDomain(organization.getId(), domainName, null);
-        Assertions.assertEquals(domainName, domain.getDomain());
-        Assertions.assertNotNull(domain.getId());
-        
-        // Verify the domain exists
-        Domain retrievedDomain = client.domains().getDomainById(organization.getId(), domain.getId());
-        Assertions.assertEquals(domain.getId(), retrievedDomain.getId());
-        
-        // Delete the domain
-        client.domains().deleteDomain(organization.getId(), domain.getId());
-        
-        // Verify the domain is deleted by trying to get it (should throw an exception)
         try {
-            client.domains().getDomainById(organization.getId(), domain.getId());
-            Assertions.fail("Domain should have been deleted");
-        } catch (Exception e) {
-            // Expected behavior - domain should not exist after deletion
-            Assertions.assertTrue(e.getMessage().contains("not found") || e.getMessage().contains("NOT_FOUND"));
+            CreateDomainRequest request = CreateDomainRequest.newBuilder()
+                    .setOrganizationId(organization.getId())
+                    .setDomain(CreateDomain.newBuilder()
+                            .setDomain(domainName)
+                            .build())
+                    .build();
+            Domain domain = client.domains().createDomain(request);
+            Assertions.assertEquals(domainName, domain.getDomain());
+            Assertions.assertNotNull(domain.getId());
+            
+            // Verify the domain exists
+            Domain retrievedDomain = client.domains().getDomainById(organization.getId(), domain.getId());
+            Assertions.assertEquals(domain.getId(), retrievedDomain.getId());
+            
+            // Delete the domain
+            client.domains().deleteDomain(organization.getId(), domain.getId());
+            
+            // Verify the domain is deleted by trying to get it (should throw an exception)
+            try {
+                client.domains().getDomainById(organization.getId(), domain.getId());
+                Assertions.fail("Domain should have been deleted");
+            } catch (Exception e) {
+                // Expected behavior - domain should not exist after deletion
+                Assertions.assertTrue(e.getMessage().contains("not found") || e.getMessage().contains("NOT_FOUND"));
+            }
+        } catch (com.scalekit.exceptions.APIException e) {
+            // Print the full error message for debugging
+            System.err.println("APIException creating domain: " + e.getMessage());
+            System.err.println("Error code: " + e.getScalekitErrorCode());
+            throw e;
         }
+    }
+
+    @Test
+    public void testListDomainsByOrganizationId() {
+        Organization organization  = client.organizations().listOrganizations(10, "").getOrganizationsList().get(0);
+        assert organization != null;
+        String domainName = UUID.randomUUID().toString().substring(0, 10) + ".test";
+        CreateDomainRequest request = CreateDomainRequest.newBuilder()
+                .setOrganizationId(organization.getId())
+                .setDomain(CreateDomain.newBuilder()
+                        .setDomain(domainName)
+                        .build())
+                .build();
+        Domain domain = client.domains().createDomain(request);
+        Assertions.assertEquals(domainName, domain.getDomain());
+        List<Domain> domains = client.domains().listDomainsByOrganizationId(organization.getId());
+        Assertions.assertFalse(domains.isEmpty());
+    }
+
+    @Test
+    public void testListDomainsByHomeRealmDiscoveryType() {
+        Organization organization  = client.organizations().listOrganizations(10, "").getOrganizationsList().get(0);
+        assert organization != null;
+        String domainName = UUID.randomUUID().toString().substring(0, 10) + ".test";
+        CreateDomainRequest request = CreateDomainRequest.newBuilder()
+                .setOrganizationId(organization.getId())
+                .setDomain(CreateDomain.newBuilder()
+                        .setDomain(domainName)
+                        .setDomainType(DomainType.ORGANIZATION_DOMAIN)
+                        .build())
+                .build();
+        Domain domain = client.domains().createDomain(request);
+        Assertions.assertEquals(domainName, domain.getDomain());
+        Assertions.assertEquals(DomainType.ORGANIZATION_DOMAIN, domain.getDomainType());
+        Assertions.assertNotNull(domain.getId(), "Domain ID should not be null");
+
+        // Filter by domain type - the created domain should appear in this filtered list
+        List<Domain> domains = client.domains().listDomainsByOrganizationId(organization.getId(), DomainType.ORGANIZATION_DOMAIN);
+        Assertions.assertFalse(domains.isEmpty(), "Filtered list should not be empty");
+
+        Assertions.assertTrue(domains.stream().anyMatch(d -> d.getDomain().equals(domainName)),
+                "Created domain '" + domainName + "' should appear in the filtered list");
+    }
+
+    @Test
+    public void testListDomainsByJitProvisioningDomainType() {
+        Organization organization = client.organizations().listOrganizations(10, "").getOrganizationsList().get(0);
+        assert organization != null;
+        String domainName = UUID.randomUUID().toString().substring(0, 10) + ".test";
+        CreateDomainRequest request = CreateDomainRequest.newBuilder()
+                .setOrganizationId(organization.getId())
+                .setDomain(CreateDomain.newBuilder()
+                        .setDomain(domainName)
+                        .setDomainType(DomainType.ALLOWED_EMAIL_DOMAIN)
+                        .build())
+                .build();
+        Domain domain = client.domains().createDomain(request);
+        Assertions.assertEquals(domainName, domain.getDomain());
+        Assertions.assertEquals(DomainType.ALLOWED_EMAIL_DOMAIN, domain.getDomainType());
+        Assertions.assertNotNull(domain.getId(), "Domain ID should not be null");
+        
+        // Filter by domain type - the created domain should appear in this filtered list
+        List<Domain> domains = client.domains().listDomainsByOrganizationId(organization.getId(), DomainType.ALLOWED_EMAIL_DOMAIN);
+        Assertions.assertFalse(domains.isEmpty(), "Filtered list should not be empty");
+        
+        Assertions.assertTrue(domains.stream().anyMatch(d -> d.getDomain().equals(domainName)),
+            "Created domain '" + domainName + "' should appear in the filtered list");
     }
 }

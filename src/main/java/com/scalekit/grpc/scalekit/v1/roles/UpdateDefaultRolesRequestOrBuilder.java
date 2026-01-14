@@ -11,14 +11,14 @@ public interface UpdateDefaultRolesRequestOrBuilder extends
   /**
    * <code>.scalekit.v1.roles.UpdateDefaultRole default_creator = 2 [json_name = "defaultCreator", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.roles.UpdateDefaultRolesRequest.default_creator is deprecated.
-   *     See scalekit/v1/roles/roles.proto;l=1359
+   *     See scalekit/v1/roles/roles.proto;l=1194
    * @return Whether the defaultCreator field is set.
    */
   @java.lang.Deprecated boolean hasDefaultCreator();
   /**
    * <code>.scalekit.v1.roles.UpdateDefaultRole default_creator = 2 [json_name = "defaultCreator", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.roles.UpdateDefaultRolesRequest.default_creator is deprecated.
-   *     See scalekit/v1/roles/roles.proto;l=1359
+   *     See scalekit/v1/roles/roles.proto;l=1194
    * @return The defaultCreator.
    */
   @java.lang.Deprecated com.scalekit.grpc.scalekit.v1.roles.UpdateDefaultRole getDefaultCreator();
@@ -30,14 +30,14 @@ public interface UpdateDefaultRolesRequestOrBuilder extends
   /**
    * <code>.scalekit.v1.roles.UpdateDefaultRole default_member = 3 [json_name = "defaultMember", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.roles.UpdateDefaultRolesRequest.default_member is deprecated.
-   *     See scalekit/v1/roles/roles.proto;l=1366
+   *     See scalekit/v1/roles/roles.proto;l=1201
    * @return Whether the defaultMember field is set.
    */
   @java.lang.Deprecated boolean hasDefaultMember();
   /**
    * <code>.scalekit.v1.roles.UpdateDefaultRole default_member = 3 [json_name = "defaultMember", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.roles.UpdateDefaultRolesRequest.default_member is deprecated.
-   *     See scalekit/v1/roles/roles.proto;l=1366
+   *     See scalekit/v1/roles/roles.proto;l=1201
    * @return The defaultMember.
    */
   @java.lang.Deprecated com.scalekit.grpc.scalekit.v1.roles.UpdateDefaultRole getDefaultMember();

@@ -173,6 +173,10 @@ public enum ObjectType
    * <code>UserLogoutEvent = 40;</code>
    */
   UserLogoutEvent(40),
+  /**
+   * <code>ConnectedAccount = 41;</code>
+   */
+  ConnectedAccount(41),
   UNRECOGNIZED(-1),
   ;
 
@@ -340,6 +344,10 @@ public enum ObjectType
    * <code>UserLogoutEvent = 40;</code>
    */
   public static final int UserLogoutEvent_VALUE = 40;
+  /**
+   * <code>ConnectedAccount = 41;</code>
+   */
+  public static final int ConnectedAccount_VALUE = 41;
 
 
   public final int getNumber() {
@@ -407,6 +415,7 @@ public enum ObjectType
       case 38: return OrgMembershipEvent;
       case 39: return UserLoginEvent;
       case 40: return UserLogoutEvent;
+      case 41: return ConnectedAccount;
       default: return null;
     }
   }

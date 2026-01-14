@@ -815,32 +815,6 @@ java.lang.String defaultValue) {
     return domains_.get(index);
   }
 
-  public static final int SYNC_USER_PROFILE_ON_SIGNIN_FIELD_NUMBER = 28;
-  private com.google.protobuf.BoolValue syncUserProfileOnSignin_;
-  /**
-   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the syncUserProfileOnSignin field is set.
-   */
-  @java.lang.Override
-  public boolean hasSyncUserProfileOnSignin() {
-    return ((bitField0_ & 0x00000010) != 0);
-  }
-  /**
-   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The syncUserProfileOnSignin.
-   */
-  @java.lang.Override
-  public com.google.protobuf.BoolValue getSyncUserProfileOnSignin() {
-    return syncUserProfileOnSignin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnSignin_;
-  }
-  /**
-   * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnSigninOrBuilder() {
-    return syncUserProfileOnSignin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnSignin_;
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -923,9 +897,6 @@ java.lang.String defaultValue) {
     }
     if (settingsCase_ == 27) {
       output.writeMessage(27, (com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration) settings_);
-    }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeMessage(28, getSyncUserProfileOnSignin());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1024,10 +995,6 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(27, (com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration) settings_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(28, getSyncUserProfileOnSignin());
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1083,11 +1050,6 @@ java.lang.String defaultValue) {
         .equals(other.getProviderKey())) return false;
     if (!getDomainsList()
         .equals(other.getDomainsList())) return false;
-    if (hasSyncUserProfileOnSignin() != other.hasSyncUserProfileOnSignin()) return false;
-    if (hasSyncUserProfileOnSignin()) {
-      if (!getSyncUserProfileOnSignin()
-          .equals(other.getSyncUserProfileOnSignin())) return false;
-    }
     if (!getSettingsCase().equals(other.getSettingsCase())) return false;
     switch (settingsCase_) {
       case 18:
@@ -1173,10 +1135,6 @@ java.lang.String defaultValue) {
     if (getDomainsCount() > 0) {
       hash = (37 * hash) + DOMAINS_FIELD_NUMBER;
       hash = (53 * hash) + getDomainsList().hashCode();
-    }
-    if (hasSyncUserProfileOnSignin()) {
-      hash = (37 * hash) + SYNC_USER_PROFILE_ON_SIGNIN_FIELD_NUMBER;
-      hash = (53 * hash) + getSyncUserProfileOnSignin().hashCode();
     }
     switch (settingsCase_) {
       case 18:
@@ -1361,7 +1319,6 @@ java.lang.String defaultValue) {
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getDomainsFieldBuilder();
-        getSyncUserProfileOnSigninFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1416,11 +1373,6 @@ java.lang.String defaultValue) {
         domainsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00200000);
-      syncUserProfileOnSignin_ = null;
-      if (syncUserProfileOnSigninBuilder_ != null) {
-        syncUserProfileOnSigninBuilder_.dispose();
-        syncUserProfileOnSigninBuilder_ = null;
-      }
       settingsCase_ = 0;
       settings_ = null;
       return this;
@@ -1524,12 +1476,6 @@ java.lang.String defaultValue) {
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
         result.providerKey_ = providerKey_;
-      }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.syncUserProfileOnSignin_ = syncUserProfileOnSigninBuilder_ == null
-            ? syncUserProfileOnSignin_
-            : syncUserProfileOnSigninBuilder_.build();
-        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1689,9 +1635,6 @@ java.lang.String defaultValue) {
             domainsBuilder_.addAllMessages(other.domains_);
           }
         }
-      }
-      if (other.hasSyncUserProfileOnSignin()) {
-        mergeSyncUserProfileOnSignin(other.getSyncUserProfileOnSignin());
       }
       switch (other.getSettingsCase()) {
         case OIDC_CONFIG: {
@@ -1886,13 +1829,6 @@ java.lang.String defaultValue) {
               settingsCase_ = 27;
               break;
             } // case 218
-            case 226: {
-              input.readMessage(
-                  getSyncUserProfileOnSigninFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              bitField0_ |= 0x00400000;
-              break;
-            } // case 226
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -4106,127 +4042,6 @@ java.lang.String defaultValue) {
         domains_ = null;
       }
       return domainsBuilder_;
-    }
-
-    private com.google.protobuf.BoolValue syncUserProfileOnSignin_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> syncUserProfileOnSigninBuilder_;
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the syncUserProfileOnSignin field is set.
-     */
-    public boolean hasSyncUserProfileOnSignin() {
-      return ((bitField0_ & 0x00400000) != 0);
-    }
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The syncUserProfileOnSignin.
-     */
-    public com.google.protobuf.BoolValue getSyncUserProfileOnSignin() {
-      if (syncUserProfileOnSigninBuilder_ == null) {
-        return syncUserProfileOnSignin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnSignin_;
-      } else {
-        return syncUserProfileOnSigninBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setSyncUserProfileOnSignin(com.google.protobuf.BoolValue value) {
-      if (syncUserProfileOnSigninBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        syncUserProfileOnSignin_ = value;
-      } else {
-        syncUserProfileOnSigninBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00400000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setSyncUserProfileOnSignin(
-        com.google.protobuf.BoolValue.Builder builderForValue) {
-      if (syncUserProfileOnSigninBuilder_ == null) {
-        syncUserProfileOnSignin_ = builderForValue.build();
-      } else {
-        syncUserProfileOnSigninBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00400000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder mergeSyncUserProfileOnSignin(com.google.protobuf.BoolValue value) {
-      if (syncUserProfileOnSigninBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0) &&
-          syncUserProfileOnSignin_ != null &&
-          syncUserProfileOnSignin_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
-          getSyncUserProfileOnSigninBuilder().mergeFrom(value);
-        } else {
-          syncUserProfileOnSignin_ = value;
-        }
-      } else {
-        syncUserProfileOnSigninBuilder_.mergeFrom(value);
-      }
-      if (syncUserProfileOnSignin_ != null) {
-        bitField0_ |= 0x00400000;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder clearSyncUserProfileOnSignin() {
-      bitField0_ = (bitField0_ & ~0x00400000);
-      syncUserProfileOnSignin_ = null;
-      if (syncUserProfileOnSigninBuilder_ != null) {
-        syncUserProfileOnSigninBuilder_.dispose();
-        syncUserProfileOnSigninBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public com.google.protobuf.BoolValue.Builder getSyncUserProfileOnSigninBuilder() {
-      bitField0_ |= 0x00400000;
-      onChanged();
-      return getSyncUserProfileOnSigninFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnSigninOrBuilder() {
-      if (syncUserProfileOnSigninBuilder_ != null) {
-        return syncUserProfileOnSigninBuilder_.getMessageOrBuilder();
-      } else {
-        return syncUserProfileOnSignin_ == null ?
-            com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnSignin_;
-      }
-    }
-    /**
-     * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 28 [json_name = "syncUserProfileOnSignin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
-        getSyncUserProfileOnSigninFieldBuilder() {
-      if (syncUserProfileOnSigninBuilder_ == null) {
-        syncUserProfileOnSigninBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
-                getSyncUserProfileOnSignin(),
-                getParentForChildren(),
-                isClean());
-        syncUserProfileOnSignin_ = null;
-      }
-      return syncUserProfileOnSigninBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
