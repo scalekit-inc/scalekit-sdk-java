@@ -1,5 +1,3 @@
-# Reference
-
 ## ScalekitClient
 
 <details><summary><code>new <a href="/src/main/java/com/scalekit/ScalekitClient.java">ScalekitClient</a>(siteName, clientId, clientSecret) -> ScalekitClient</code></summary>
