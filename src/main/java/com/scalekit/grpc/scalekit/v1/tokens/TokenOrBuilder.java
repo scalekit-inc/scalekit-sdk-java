@@ -33,112 +33,183 @@ public interface TokenOrBuilder extends
       getOrganizationIdBytes();
 
   /**
-   * <code>optional string user_id = 3 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string organization_external_id = 3 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The organizationExternalId.
+   */
+  java.lang.String getOrganizationExternalId();
+  /**
+   * <code>string organization_external_id = 3 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for organizationExternalId.
+   */
+  com.google.protobuf.ByteString
+      getOrganizationExternalIdBytes();
+
+  /**
+   * <code>optional string user_id = 4 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the userId field is set.
    */
   boolean hasUserId();
   /**
-   * <code>optional string user_id = 3 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string user_id = 4 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The userId.
    */
   java.lang.String getUserId();
   /**
-   * <code>optional string user_id = 3 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string user_id = 4 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for userId.
    */
   com.google.protobuf.ByteString
       getUserIdBytes();
 
   /**
-   * <code>map&lt;string, string&gt; metadata = 4 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string user_external_id = 5 [json_name = "userExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the userExternalId field is set.
    */
-  int getMetadataCount();
+  boolean hasUserExternalId();
   /**
-   * <code>map&lt;string, string&gt; metadata = 4 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string user_external_id = 5 [json_name = "userExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The userExternalId.
    */
-  boolean containsMetadata(
+  java.lang.String getUserExternalId();
+  /**
+   * <code>optional string user_external_id = 5 [json_name = "userExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for userExternalId.
+   */
+  com.google.protobuf.ByteString
+      getUserExternalIdBytes();
+
+  /**
+   * <code>map&lt;string, string&gt; custom_claims = 6 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  int getCustomClaimsCount();
+  /**
+   * <code>map&lt;string, string&gt; custom_claims = 6 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  boolean containsCustomClaims(
       java.lang.String key);
   /**
-   * Use {@link #getMetadataMap()} instead.
+   * Use {@link #getCustomClaimsMap()} instead.
    */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String>
-  getMetadata();
+  getCustomClaims();
   /**
-   * <code>map&lt;string, string&gt; metadata = 4 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_claims = 6 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
-  getMetadataMap();
+  getCustomClaimsMap();
   /**
-   * <code>map&lt;string, string&gt; metadata = 4 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_claims = 6 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   /* nullable */
-java.lang.String getMetadataOrDefault(
+java.lang.String getCustomClaimsOrDefault(
       java.lang.String key,
       /* nullable */
 java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; metadata = 4 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_claims = 6 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  java.lang.String getMetadataOrThrow(
+  java.lang.String getCustomClaimsOrThrow(
       java.lang.String key);
 
   /**
-   * <code>optional .google.protobuf.Timestamp expiry = 5 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional .google.protobuf.Timestamp expiry = 7 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the expiry field is set.
    */
   boolean hasExpiry();
   /**
-   * <code>optional .google.protobuf.Timestamp expiry = 5 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional .google.protobuf.Timestamp expiry = 7 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The expiry.
    */
   com.google.protobuf.Timestamp getExpiry();
   /**
-   * <code>optional .google.protobuf.Timestamp expiry = 5 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional .google.protobuf.Timestamp expiry = 7 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getExpiryOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the createdAt field is set.
    */
   boolean hasCreatedAt();
   /**
-   * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The createdAt.
    */
   com.google.protobuf.Timestamp getCreatedAt();
   /**
-   * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
 
   /**
-   * <code>optional string description = 7 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string description = 9 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the description field is set.
    */
   boolean hasDescription();
   /**
-   * <code>optional string description = 7 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string description = 9 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The description.
    */
   java.lang.String getDescription();
   /**
-   * <code>optional string description = 7 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string description = 9 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
 
   /**
-   * <code>string token_suffix = 8 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string token_suffix = 10 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The tokenSuffix.
    */
   java.lang.String getTokenSuffix();
   /**
-   * <code>string token_suffix = 8 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string token_suffix = 10 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for tokenSuffix.
    */
   com.google.protobuf.ByteString
       getTokenSuffixBytes();
+
+  /**
+   * <code>optional string email = 11 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the email field is set.
+   */
+  boolean hasEmail();
+  /**
+   * <code>optional string email = 11 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The email.
+   */
+  java.lang.String getEmail();
+  /**
+   * <code>optional string email = 11 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for email.
+   */
+  com.google.protobuf.ByteString
+      getEmailBytes();
+
+  /**
+   * <code>repeated string roles = 12 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the roles.
+   */
+  java.util.List<java.lang.String>
+      getRolesList();
+  /**
+   * <code>repeated string roles = 12 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of roles.
+   */
+  int getRolesCount();
+  /**
+   * <code>repeated string roles = 12 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The roles at the given index.
+   */
+  java.lang.String getRoles(int index);
+  /**
+   * <code>repeated string roles = 12 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the roles at the given index.
+   */
+  com.google.protobuf.ByteString
+      getRolesBytes(int index);
 }
