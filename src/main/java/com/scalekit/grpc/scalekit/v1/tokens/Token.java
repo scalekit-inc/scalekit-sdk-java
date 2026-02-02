@@ -19,9 +19,14 @@ private static final long serialVersionUID = 0L;
   private Token() {
     tokenId_ = "";
     organizationId_ = "";
+    organizationExternalId_ = "";
     userId_ = "";
+    userExternalId_ = "";
     description_ = "";
     tokenSuffix_ = "";
+    email_ = "";
+    roles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -41,8 +46,8 @@ private static final long serialVersionUID = 0L;
   protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
       int number) {
     switch (number) {
-      case 4:
-        return internalGetMetadata();
+      case 6:
+        return internalGetCustomClaims();
       default:
         throw new RuntimeException(
             "Invalid map field number: " + number);
@@ -135,11 +140,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int USER_ID_FIELD_NUMBER = 3;
+  public static final int ORGANIZATION_EXTERNAL_ID_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object organizationExternalId_ = "";
+  /**
+   * <code>string organization_external_id = 3 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The organizationExternalId.
+   */
+  @java.lang.Override
+  public java.lang.String getOrganizationExternalId() {
+    java.lang.Object ref = organizationExternalId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      organizationExternalId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string organization_external_id = 3 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for organizationExternalId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOrganizationExternalIdBytes() {
+    java.lang.Object ref = organizationExternalId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      organizationExternalId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int USER_ID_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
   private volatile java.lang.Object userId_ = "";
   /**
-   * <code>optional string user_id = 3 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string user_id = 4 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the userId field is set.
    */
   @java.lang.Override
@@ -147,7 +191,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional string user_id = 3 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string user_id = 4 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The userId.
    */
   @java.lang.Override
@@ -164,7 +208,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string user_id = 3 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string user_id = 4 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for userId.
    */
   @java.lang.Override
@@ -182,13 +226,60 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int METADATA_FIELD_NUMBER = 4;
-  private static final class MetadataDefaultEntryHolder {
+  public static final int USER_EXTERNAL_ID_FIELD_NUMBER = 5;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userExternalId_ = "";
+  /**
+   * <code>optional string user_external_id = 5 [json_name = "userExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the userExternalId field is set.
+   */
+  @java.lang.Override
+  public boolean hasUserExternalId() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional string user_external_id = 5 [json_name = "userExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The userExternalId.
+   */
+  @java.lang.Override
+  public java.lang.String getUserExternalId() {
+    java.lang.Object ref = userExternalId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userExternalId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string user_external_id = 5 [json_name = "userExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for userExternalId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUserExternalIdBytes() {
+    java.lang.Object ref = userExternalId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      userExternalId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CUSTOM_CLAIMS_FIELD_NUMBER = 6;
+  private static final class CustomClaimsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         java.lang.String, java.lang.String> defaultEntry =
             com.google.protobuf.MapEntry
             .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.scalekit.grpc.scalekit.v1.tokens.TokensProto.internal_static_scalekit_v1_tokens_Token_MetadataEntry_descriptor, 
+                com.scalekit.grpc.scalekit.v1.tokens.TokensProto.internal_static_scalekit_v1_tokens_Token_CustomClaimsEntry_descriptor, 
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
                 com.google.protobuf.WireFormat.FieldType.STRING,
@@ -196,83 +287,83 @@ private static final long serialVersionUID = 0L;
   }
   @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> metadata_;
+      java.lang.String, java.lang.String> customClaims_;
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetMetadata() {
-    if (metadata_ == null) {
+  internalGetCustomClaims() {
+    if (customClaims_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
-          MetadataDefaultEntryHolder.defaultEntry);
+          CustomClaimsDefaultEntryHolder.defaultEntry);
     }
-    return metadata_;
+    return customClaims_;
   }
-  public int getMetadataCount() {
-    return internalGetMetadata().getMap().size();
+  public int getCustomClaimsCount() {
+    return internalGetCustomClaims().getMap().size();
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 4 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_claims = 6 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public boolean containsMetadata(
+  public boolean containsCustomClaims(
       java.lang.String key) {
     if (key == null) { throw new NullPointerException("map key"); }
-    return internalGetMetadata().getMap().containsKey(key);
+    return internalGetCustomClaims().getMap().containsKey(key);
   }
   /**
-   * Use {@link #getMetadataMap()} instead.
+   * Use {@link #getCustomClaimsMap()} instead.
    */
   @java.lang.Override
   @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
-    return getMetadataMap();
+  public java.util.Map<java.lang.String, java.lang.String> getCustomClaims() {
+    return getCustomClaimsMap();
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 4 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_claims = 6 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
-    return internalGetMetadata().getMap();
+  public java.util.Map<java.lang.String, java.lang.String> getCustomClaimsMap() {
+    return internalGetCustomClaims().getMap();
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 4 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_claims = 6 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public /* nullable */
-java.lang.String getMetadataOrDefault(
+java.lang.String getCustomClaimsOrDefault(
       java.lang.String key,
       /* nullable */
 java.lang.String defaultValue) {
     if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetMetadata().getMap();
+        internalGetCustomClaims().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, string&gt; metadata = 4 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_claims = 6 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadataOrThrow(
+  public java.lang.String getCustomClaimsOrThrow(
       java.lang.String key) {
     if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetMetadata().getMap();
+        internalGetCustomClaims().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
   }
 
-  public static final int EXPIRY_FIELD_NUMBER = 5;
+  public static final int EXPIRY_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp expiry_;
   /**
-   * <code>optional .google.protobuf.Timestamp expiry = 5 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional .google.protobuf.Timestamp expiry = 7 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the expiry field is set.
    */
   @java.lang.Override
   public boolean hasExpiry() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>optional .google.protobuf.Timestamp expiry = 5 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional .google.protobuf.Timestamp expiry = 7 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The expiry.
    */
   @java.lang.Override
@@ -280,25 +371,25 @@ java.lang.String defaultValue) {
     return expiry_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiry_;
   }
   /**
-   * <code>optional .google.protobuf.Timestamp expiry = 5 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional .google.protobuf.Timestamp expiry = 7 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpiryOrBuilder() {
     return expiry_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiry_;
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 6;
+  public static final int CREATED_AT_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp createdAt_;
   /**
-   * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the createdAt field is set.
    */
   @java.lang.Override
   public boolean hasCreatedAt() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -306,26 +397,26 @@ java.lang.String defaultValue) {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 7;
+  public static final int DESCRIPTION_FIELD_NUMBER = 9;
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
   /**
-   * <code>optional string description = 7 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string description = 9 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the description field is set.
    */
   @java.lang.Override
   public boolean hasDescription() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
-   * <code>optional string description = 7 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string description = 9 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The description.
    */
   @java.lang.Override
@@ -342,7 +433,7 @@ java.lang.String defaultValue) {
     }
   }
   /**
-   * <code>optional string description = 7 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string description = 9 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for description.
    */
   @java.lang.Override
@@ -360,11 +451,11 @@ java.lang.String defaultValue) {
     }
   }
 
-  public static final int TOKEN_SUFFIX_FIELD_NUMBER = 8;
+  public static final int TOKEN_SUFFIX_FIELD_NUMBER = 10;
   @SuppressWarnings("serial")
   private volatile java.lang.Object tokenSuffix_ = "";
   /**
-   * <code>string token_suffix = 8 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string token_suffix = 10 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The tokenSuffix.
    */
   @java.lang.Override
@@ -381,7 +472,7 @@ java.lang.String defaultValue) {
     }
   }
   /**
-   * <code>string token_suffix = 8 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string token_suffix = 10 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for tokenSuffix.
    */
   @java.lang.Override
@@ -397,6 +488,90 @@ java.lang.String defaultValue) {
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int EMAIL_FIELD_NUMBER = 11;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object email_ = "";
+  /**
+   * <code>optional string email = 11 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the email field is set.
+   */
+  @java.lang.Override
+  public boolean hasEmail() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   * <code>optional string email = 11 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The email.
+   */
+  @java.lang.Override
+  public java.lang.String getEmail() {
+    java.lang.Object ref = email_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      email_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string email = 11 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for email.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEmailBytes() {
+    java.lang.Object ref = email_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      email_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ROLES_FIELD_NUMBER = 12;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList roles_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string roles = 12 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the roles.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getRolesList() {
+    return roles_;
+  }
+  /**
+   * <code>repeated string roles = 12 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of roles.
+   */
+  public int getRolesCount() {
+    return roles_.size();
+  }
+  /**
+   * <code>repeated string roles = 12 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The roles at the given index.
+   */
+  public java.lang.String getRoles(int index) {
+    return roles_.get(index);
+  }
+  /**
+   * <code>repeated string roles = 12 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the roles at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getRolesBytes(int index) {
+    return roles_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -419,26 +594,38 @@ java.lang.String defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, organizationId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationExternalId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, organizationExternalId_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userId_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, userExternalId_);
     }
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
-        internalGetMetadata(),
-        MetadataDefaultEntryHolder.defaultEntry,
-        4);
-    if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(5, getExpiry());
-    }
+        internalGetCustomClaims(),
+        CustomClaimsDefaultEntryHolder.defaultEntry,
+        6);
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeMessage(6, getCreatedAt());
+      output.writeMessage(7, getExpiry());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, description_);
+      output.writeMessage(8, getCreatedAt());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, description_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tokenSuffix_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tokenSuffix_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, tokenSuffix_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, email_);
+    }
+    for (int i = 0; i < roles_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, roles_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -455,32 +642,49 @@ java.lang.String defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, organizationId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationExternalId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, organizationExternalId_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userId_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, userExternalId_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetMetadata().getMap().entrySet()) {
+         : internalGetCustomClaims().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+      customClaims__ = CustomClaimsDefaultEntryHolder.defaultEntry.newBuilderForType()
           .setKey(entry.getKey())
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, metadata__);
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getExpiry());
+          .computeMessageSize(6, customClaims__);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getCreatedAt());
+        .computeMessageSize(7, getExpiry());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, description_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getCreatedAt());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, description_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tokenSuffix_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, tokenSuffix_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, tokenSuffix_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, email_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < roles_.size(); i++) {
+        dataSize += computeStringSizeNoTag(roles_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getRolesList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -501,13 +705,20 @@ java.lang.String defaultValue) {
         .equals(other.getTokenId())) return false;
     if (!getOrganizationId()
         .equals(other.getOrganizationId())) return false;
+    if (!getOrganizationExternalId()
+        .equals(other.getOrganizationExternalId())) return false;
     if (hasUserId() != other.hasUserId()) return false;
     if (hasUserId()) {
       if (!getUserId()
           .equals(other.getUserId())) return false;
     }
-    if (!internalGetMetadata().equals(
-        other.internalGetMetadata())) return false;
+    if (hasUserExternalId() != other.hasUserExternalId()) return false;
+    if (hasUserExternalId()) {
+      if (!getUserExternalId()
+          .equals(other.getUserExternalId())) return false;
+    }
+    if (!internalGetCustomClaims().equals(
+        other.internalGetCustomClaims())) return false;
     if (hasExpiry() != other.hasExpiry()) return false;
     if (hasExpiry()) {
       if (!getExpiry()
@@ -525,6 +736,13 @@ java.lang.String defaultValue) {
     }
     if (!getTokenSuffix()
         .equals(other.getTokenSuffix())) return false;
+    if (hasEmail() != other.hasEmail()) return false;
+    if (hasEmail()) {
+      if (!getEmail()
+          .equals(other.getEmail())) return false;
+    }
+    if (!getRolesList()
+        .equals(other.getRolesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -540,13 +758,19 @@ java.lang.String defaultValue) {
     hash = (53 * hash) + getTokenId().hashCode();
     hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getOrganizationId().hashCode();
+    hash = (37 * hash) + ORGANIZATION_EXTERNAL_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getOrganizationExternalId().hashCode();
     if (hasUserId()) {
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserId().hashCode();
     }
-    if (!internalGetMetadata().getMap().isEmpty()) {
-      hash = (37 * hash) + METADATA_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetMetadata().hashCode();
+    if (hasUserExternalId()) {
+      hash = (37 * hash) + USER_EXTERNAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserExternalId().hashCode();
+    }
+    if (!internalGetCustomClaims().getMap().isEmpty()) {
+      hash = (37 * hash) + CUSTOM_CLAIMS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetCustomClaims().hashCode();
     }
     if (hasExpiry()) {
       hash = (37 * hash) + EXPIRY_FIELD_NUMBER;
@@ -562,6 +786,14 @@ java.lang.String defaultValue) {
     }
     hash = (37 * hash) + TOKEN_SUFFIX_FIELD_NUMBER;
     hash = (53 * hash) + getTokenSuffix().hashCode();
+    if (hasEmail()) {
+      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getEmail().hashCode();
+    }
+    if (getRolesCount() > 0) {
+      hash = (37 * hash) + ROLES_FIELD_NUMBER;
+      hash = (53 * hash) + getRolesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -675,8 +907,8 @@ java.lang.String defaultValue) {
     protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
         int number) {
       switch (number) {
-        case 4:
-          return internalGetMetadata();
+        case 6:
+          return internalGetCustomClaims();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -686,8 +918,8 @@ java.lang.String defaultValue) {
     protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
         int number) {
       switch (number) {
-        case 4:
-          return internalGetMutableMetadata();
+        case 6:
+          return internalGetMutableCustomClaims();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -724,8 +956,10 @@ java.lang.String defaultValue) {
       bitField0_ = 0;
       tokenId_ = "";
       organizationId_ = "";
+      organizationExternalId_ = "";
       userId_ = "";
-      internalGetMutableMetadata().clear();
+      userExternalId_ = "";
+      internalGetMutableCustomClaims().clear();
       expiry_ = null;
       if (expiryBuilder_ != null) {
         expiryBuilder_.dispose();
@@ -738,6 +972,9 @@ java.lang.String defaultValue) {
       }
       description_ = "";
       tokenSuffix_ = "";
+      email_ = "";
+      roles_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -777,33 +1014,48 @@ java.lang.String defaultValue) {
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.organizationId_ = organizationId_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.organizationExternalId_ = organizationExternalId_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.userId_ = userId_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.metadata_ = internalGetMetadata();
-        result.metadata_.makeImmutable();
-      }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.expiry_ = expiryBuilder_ == null
-            ? expiry_
-            : expiryBuilder_.build();
+        result.userExternalId_ = userExternalId_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.customClaims_ = internalGetCustomClaims();
+        result.customClaims_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.expiry_ = expiryBuilder_ == null
+            ? expiry_
+            : expiryBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.createdAt_ = createdAtBuilder_ == null
             ? createdAt_
             : createdAtBuilder_.build();
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.description_ = description_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.tokenSuffix_ = tokenSuffix_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.email_ = email_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        roles_.makeImmutable();
+        result.roles_ = roles_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -862,14 +1114,24 @@ java.lang.String defaultValue) {
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (other.hasUserId()) {
-        userId_ = other.userId_;
+      if (!other.getOrganizationExternalId().isEmpty()) {
+        organizationExternalId_ = other.organizationExternalId_;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      internalGetMutableMetadata().mergeFrom(
-          other.internalGetMetadata());
-      bitField0_ |= 0x00000008;
+      if (other.hasUserId()) {
+        userId_ = other.userId_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (other.hasUserExternalId()) {
+        userExternalId_ = other.userExternalId_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      internalGetMutableCustomClaims().mergeFrom(
+          other.internalGetCustomClaims());
+      bitField0_ |= 0x00000020;
       if (other.hasExpiry()) {
         mergeExpiry(other.getExpiry());
       }
@@ -878,12 +1140,27 @@ java.lang.String defaultValue) {
       }
       if (other.hasDescription()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getTokenSuffix().isEmpty()) {
         tokenSuffix_ = other.tokenSuffix_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (other.hasEmail()) {
+        email_ = other.email_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (!other.roles_.isEmpty()) {
+        if (roles_.isEmpty()) {
+          roles_ = other.roles_;
+          bitField0_ |= 0x00000800;
+        } else {
+          ensureRolesIsMutable();
+          roles_.addAll(other.roles_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -923,43 +1200,64 @@ java.lang.String defaultValue) {
               break;
             } // case 18
             case 26: {
-              userId_ = input.readStringRequireUtf8();
+              organizationExternalId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              metadata__ = input.readMessage(
-                  MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              internalGetMutableMetadata().getMutableMap().put(
-                  metadata__.getKey(), metadata__.getValue());
+              userId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               break;
             } // case 34
             case 42: {
-              input.readMessage(
-                  getExpiryFieldBuilder().getBuilder(),
-                  extensionRegistry);
+              userExternalId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
               break;
             } // case 42
             case 50: {
-              input.readMessage(
-                  getCreatedAtFieldBuilder().getBuilder(),
-                  extensionRegistry);
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              customClaims__ = input.readMessage(
+                  CustomClaimsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              internalGetMutableCustomClaims().getMutableMap().put(
+                  customClaims__.getKey(), customClaims__.getValue());
               bitField0_ |= 0x00000020;
               break;
             } // case 50
             case 58: {
-              description_ = input.readStringRequireUtf8();
+              input.readMessage(
+                  getExpiryFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00000040;
               break;
             } // case 58
             case 66: {
-              tokenSuffix_ = input.readStringRequireUtf8();
+              input.readMessage(
+                  getCreatedAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00000080;
               break;
             } // case 66
+            case 74: {
+              description_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 74
+            case 82: {
+              tokenSuffix_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 82
+            case 90: {
+              email_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000400;
+              break;
+            } // case 90
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureRolesIsMutable();
+              roles_.add(s);
+              break;
+            } // case 98
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1121,16 +1419,88 @@ java.lang.String defaultValue) {
       return this;
     }
 
+    private java.lang.Object organizationExternalId_ = "";
+    /**
+     * <code>string organization_external_id = 3 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The organizationExternalId.
+     */
+    public java.lang.String getOrganizationExternalId() {
+      java.lang.Object ref = organizationExternalId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationExternalId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string organization_external_id = 3 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for organizationExternalId.
+     */
+    public com.google.protobuf.ByteString
+        getOrganizationExternalIdBytes() {
+      java.lang.Object ref = organizationExternalId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationExternalId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string organization_external_id = 3 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The organizationExternalId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationExternalId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      organizationExternalId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string organization_external_id = 3 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOrganizationExternalId() {
+      organizationExternalId_ = getDefaultInstance().getOrganizationExternalId();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string organization_external_id = 3 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for organizationExternalId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationExternalIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      organizationExternalId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object userId_ = "";
     /**
-     * <code>optional string user_id = 3 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string user_id = 4 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the userId field is set.
      */
     public boolean hasUserId() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>optional string user_id = 3 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string user_id = 4 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The userId.
      */
     public java.lang.String getUserId() {
@@ -1146,7 +1516,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string user_id = 3 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string user_id = 4 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for userId.
      */
     public com.google.protobuf.ByteString
@@ -1163,7 +1533,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string user_id = 3 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string user_id = 4 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The userId to set.
      * @return This builder for chaining.
      */
@@ -1171,22 +1541,22 @@ java.lang.String defaultValue) {
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       userId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string user_id = 3 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string user_id = 4 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearUserId() {
       userId_ = getDefaultInstance().getUserId();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string user_id = 3 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string user_id = 4 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for userId to set.
      * @return This builder for chaining.
      */
@@ -1195,102 +1565,181 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       userId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object userExternalId_ = "";
+    /**
+     * <code>optional string user_external_id = 5 [json_name = "userExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the userExternalId field is set.
+     */
+    public boolean hasUserExternalId() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>optional string user_external_id = 5 [json_name = "userExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The userExternalId.
+     */
+    public java.lang.String getUserExternalId() {
+      java.lang.Object ref = userExternalId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userExternalId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string user_external_id = 5 [json_name = "userExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for userExternalId.
+     */
+    public com.google.protobuf.ByteString
+        getUserExternalIdBytes() {
+      java.lang.Object ref = userExternalId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userExternalId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string user_external_id = 5 [json_name = "userExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The userExternalId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserExternalId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      userExternalId_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string user_external_id = 5 [json_name = "userExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserExternalId() {
+      userExternalId_ = getDefaultInstance().getUserExternalId();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string user_external_id = 5 [json_name = "userExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for userExternalId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserExternalIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      userExternalId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> metadata_;
+        java.lang.String, java.lang.String> customClaims_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetMetadata() {
-      if (metadata_ == null) {
+        internalGetCustomClaims() {
+      if (customClaims_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            MetadataDefaultEntryHolder.defaultEntry);
+            CustomClaimsDefaultEntryHolder.defaultEntry);
       }
-      return metadata_;
+      return customClaims_;
     }
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetMutableMetadata() {
-      if (metadata_ == null) {
-        metadata_ = com.google.protobuf.MapField.newMapField(
-            MetadataDefaultEntryHolder.defaultEntry);
+        internalGetMutableCustomClaims() {
+      if (customClaims_ == null) {
+        customClaims_ = com.google.protobuf.MapField.newMapField(
+            CustomClaimsDefaultEntryHolder.defaultEntry);
       }
-      if (!metadata_.isMutable()) {
-        metadata_ = metadata_.copy();
+      if (!customClaims_.isMutable()) {
+        customClaims_ = customClaims_.copy();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
-      return metadata_;
+      return customClaims_;
     }
-    public int getMetadataCount() {
-      return internalGetMetadata().getMap().size();
+    public int getCustomClaimsCount() {
+      return internalGetCustomClaims().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 4 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; custom_claims = 6 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
-    public boolean containsMetadata(
+    public boolean containsCustomClaims(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
-      return internalGetMetadata().getMap().containsKey(key);
+      return internalGetCustomClaims().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getMetadataMap()} instead.
+     * Use {@link #getCustomClaimsMap()} instead.
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
-      return getMetadataMap();
+    public java.util.Map<java.lang.String, java.lang.String> getCustomClaims() {
+      return getCustomClaimsMap();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 4 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; custom_claims = 6 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
-    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
-      return internalGetMetadata().getMap();
+    public java.util.Map<java.lang.String, java.lang.String> getCustomClaimsMap() {
+      return internalGetCustomClaims().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 4 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; custom_claims = 6 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
     public /* nullable */
-java.lang.String getMetadataOrDefault(
+java.lang.String getCustomClaimsOrDefault(
         java.lang.String key,
         /* nullable */
 java.lang.String defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetMetadata().getMap();
+          internalGetCustomClaims().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 4 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; custom_claims = 6 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
-    public java.lang.String getMetadataOrThrow(
+    public java.lang.String getCustomClaimsOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetMetadata().getMap();
+          internalGetCustomClaims().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
     }
-    public Builder clearMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      internalGetMutableMetadata().getMutableMap()
+    public Builder clearCustomClaims() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      internalGetMutableCustomClaims().getMutableMap()
           .clear();
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 4 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; custom_claims = 6 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder removeMetadata(
+    public Builder removeCustomClaims(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
-      internalGetMutableMetadata().getMutableMap()
+      internalGetMutableCustomClaims().getMutableMap()
           .remove(key);
       return this;
     }
@@ -1299,31 +1748,31 @@ java.lang.String defaultValue) {
      */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
-        getMutableMetadata() {
-      bitField0_ |= 0x00000008;
-      return internalGetMutableMetadata().getMutableMap();
+        getMutableCustomClaims() {
+      bitField0_ |= 0x00000020;
+      return internalGetMutableCustomClaims().getMutableMap();
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 4 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; custom_claims = 6 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder putMetadata(
+    public Builder putCustomClaims(
         java.lang.String key,
         java.lang.String value) {
       if (key == null) { throw new NullPointerException("map key"); }
       if (value == null) { throw new NullPointerException("map value"); }
-      internalGetMutableMetadata().getMutableMap()
+      internalGetMutableCustomClaims().getMutableMap()
           .put(key, value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; metadata = 4 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; custom_claims = 6 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder putAllMetadata(
+    public Builder putAllCustomClaims(
         java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableMetadata().getMutableMap()
+      internalGetMutableCustomClaims().getMutableMap()
           .putAll(values);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -1331,14 +1780,14 @@ java.lang.String defaultValue) {
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expiryBuilder_;
     /**
-     * <code>optional .google.protobuf.Timestamp expiry = 5 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp expiry = 7 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the expiry field is set.
      */
     public boolean hasExpiry() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>optional .google.protobuf.Timestamp expiry = 5 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp expiry = 7 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The expiry.
      */
     public com.google.protobuf.Timestamp getExpiry() {
@@ -1349,7 +1798,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional .google.protobuf.Timestamp expiry = 5 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp expiry = 7 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setExpiry(com.google.protobuf.Timestamp value) {
       if (expiryBuilder_ == null) {
@@ -1360,12 +1809,12 @@ java.lang.String defaultValue) {
       } else {
         expiryBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp expiry = 5 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp expiry = 7 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setExpiry(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1374,16 +1823,16 @@ java.lang.String defaultValue) {
       } else {
         expiryBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp expiry = 5 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp expiry = 7 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeExpiry(com.google.protobuf.Timestamp value) {
       if (expiryBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0) &&
+        if (((bitField0_ & 0x00000040) != 0) &&
           expiry_ != null &&
           expiry_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getExpiryBuilder().mergeFrom(value);
@@ -1394,16 +1843,16 @@ java.lang.String defaultValue) {
         expiryBuilder_.mergeFrom(value);
       }
       if (expiry_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp expiry = 5 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp expiry = 7 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearExpiry() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       expiry_ = null;
       if (expiryBuilder_ != null) {
         expiryBuilder_.dispose();
@@ -1413,15 +1862,15 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>optional .google.protobuf.Timestamp expiry = 5 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp expiry = 7 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getExpiryBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getExpiryFieldBuilder().getBuilder();
     }
     /**
-     * <code>optional .google.protobuf.Timestamp expiry = 5 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp expiry = 7 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getExpiryOrBuilder() {
       if (expiryBuilder_ != null) {
@@ -1432,7 +1881,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional .google.protobuf.Timestamp expiry = 5 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional .google.protobuf.Timestamp expiry = 7 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1452,14 +1901,14 @@ java.lang.String defaultValue) {
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the createdAt field is set.
      */
     public boolean hasCreatedAt() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The createdAt.
      */
     public com.google.protobuf.Timestamp getCreatedAt() {
@@ -1470,7 +1919,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
       if (createdAtBuilder_ == null) {
@@ -1481,12 +1930,12 @@ java.lang.String defaultValue) {
       } else {
         createdAtBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setCreatedAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1495,16 +1944,16 @@ java.lang.String defaultValue) {
       } else {
         createdAtBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
       if (createdAtBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0) &&
+        if (((bitField0_ & 0x00000080) != 0) &&
           createdAt_ != null &&
           createdAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreatedAtBuilder().mergeFrom(value);
@@ -1515,16 +1964,16 @@ java.lang.String defaultValue) {
         createdAtBuilder_.mergeFrom(value);
       }
       if (createdAt_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearCreatedAt() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       createdAt_ = null;
       if (createdAtBuilder_ != null) {
         createdAtBuilder_.dispose();
@@ -1534,15 +1983,15 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getCreatedAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
       if (createdAtBuilder_ != null) {
@@ -1553,7 +2002,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.Timestamp created_at = 8 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1571,14 +2020,14 @@ java.lang.String defaultValue) {
 
     private java.lang.Object description_ = "";
     /**
-     * <code>optional string description = 7 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string description = 9 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>optional string description = 7 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string description = 9 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -1594,7 +2043,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string description = 7 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string description = 9 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -1611,7 +2060,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string description = 7 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string description = 9 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The description to set.
      * @return This builder for chaining.
      */
@@ -1619,22 +2068,22 @@ java.lang.String defaultValue) {
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       description_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string description = 7 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string description = 9 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string description = 7 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>optional string description = 9 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
@@ -1643,14 +2092,14 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
 
     private java.lang.Object tokenSuffix_ = "";
     /**
-     * <code>string token_suffix = 8 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string token_suffix = 10 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The tokenSuffix.
      */
     public java.lang.String getTokenSuffix() {
@@ -1666,7 +2115,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>string token_suffix = 8 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string token_suffix = 10 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for tokenSuffix.
      */
     public com.google.protobuf.ByteString
@@ -1683,7 +2132,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>string token_suffix = 8 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string token_suffix = 10 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The tokenSuffix to set.
      * @return This builder for chaining.
      */
@@ -1691,22 +2140,22 @@ java.lang.String defaultValue) {
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       tokenSuffix_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
-     * <code>string token_suffix = 8 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string token_suffix = 10 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearTokenSuffix() {
       tokenSuffix_ = getDefaultInstance().getTokenSuffix();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
     /**
-     * <code>string token_suffix = 8 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string token_suffix = 10 [json_name = "tokenSuffix", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for tokenSuffix to set.
      * @return This builder for chaining.
      */
@@ -1715,7 +2164,197 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       tokenSuffix_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object email_ = "";
+    /**
+     * <code>optional string email = 11 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the email field is set.
+     */
+    public boolean hasEmail() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     * <code>optional string email = 11 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The email.
+     */
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        email_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string email = 11 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for email.
+     */
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string email = 11 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The email to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmail(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      email_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string email = 11 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEmail() {
+      email_ = getDefaultInstance().getEmail();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string email = 11 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for email to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmailBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      email_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList roles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureRolesIsMutable() {
+      if (!roles_.isModifiable()) {
+        roles_ = new com.google.protobuf.LazyStringArrayList(roles_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+    /**
+     * <code>repeated string roles = 12 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the roles.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getRolesList() {
+      roles_.makeImmutable();
+      return roles_;
+    }
+    /**
+     * <code>repeated string roles = 12 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of roles.
+     */
+    public int getRolesCount() {
+      return roles_.size();
+    }
+    /**
+     * <code>repeated string roles = 12 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The roles at the given index.
+     */
+    public java.lang.String getRoles(int index) {
+      return roles_.get(index);
+    }
+    /**
+     * <code>repeated string roles = 12 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the roles at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getRolesBytes(int index) {
+      return roles_.getByteString(index);
+    }
+    /**
+     * <code>repeated string roles = 12 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The roles to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoles(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureRolesIsMutable();
+      roles_.set(index, value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string roles = 12 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The roles to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRoles(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureRolesIsMutable();
+      roles_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string roles = 12 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The roles to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRoles(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureRolesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, roles_);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string roles = 12 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRoles() {
+      roles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000800);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string roles = 12 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the roles to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRolesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureRolesIsMutable();
+      roles_.add(value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
