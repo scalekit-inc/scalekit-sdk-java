@@ -4,7 +4,7 @@ import io.grpc.Metadata;
 import static io.grpc.Metadata.ASCII_STRING_MARSHALLER;
 public class Constants {
 
-    public static String version = "2.0.9";
+    public static String version = "2.0.10";
     public static String SCALEKIT_REQUEST_TIMEOUT = "SCALEKIT_REQUEST_TIMEOUT";
     public static final String BEARER_TYPE = "Bearer";
 
