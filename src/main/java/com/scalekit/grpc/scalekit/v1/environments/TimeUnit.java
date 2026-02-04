@@ -5,37 +5,45 @@
 package com.scalekit.grpc.scalekit.v1.environments;
 
 /**
- * Protobuf enum {@code scalekit.v1.environments.OrgUserRelationshipType}
+ * Protobuf enum {@code scalekit.v1.environments.TimeUnit}
  */
-public enum OrgUserRelationshipType
+public enum TimeUnit
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>OrgUserRelationshipType_UNSPECIFIED = 0;</code>
+   * <code>SESSION_TIME_UNIT_UNSPECIFIED = 0;</code>
    */
-  OrgUserRelationshipType_UNSPECIFIED(0),
+  SESSION_TIME_UNIT_UNSPECIFIED(0),
   /**
-   * <code>SINGLE_ORGANIZATION = 1;</code>
+   * <code>MINUTES = 1;</code>
    */
-  SINGLE_ORGANIZATION(1),
+  MINUTES(1),
   /**
-   * <code>MULTIPLE_ORGANIZATIONS = 2;</code>
+   * <code>HOURS = 2;</code>
    */
-  MULTIPLE_ORGANIZATIONS(2),
+  HOURS(2),
+  /**
+   * <code>DAYS = 3;</code>
+   */
+  DAYS(3),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>OrgUserRelationshipType_UNSPECIFIED = 0;</code>
+   * <code>SESSION_TIME_UNIT_UNSPECIFIED = 0;</code>
    */
-  public static final int OrgUserRelationshipType_UNSPECIFIED_VALUE = 0;
+  public static final int SESSION_TIME_UNIT_UNSPECIFIED_VALUE = 0;
   /**
-   * <code>SINGLE_ORGANIZATION = 1;</code>
+   * <code>MINUTES = 1;</code>
    */
-  public static final int SINGLE_ORGANIZATION_VALUE = 1;
+  public static final int MINUTES_VALUE = 1;
   /**
-   * <code>MULTIPLE_ORGANIZATIONS = 2;</code>
+   * <code>HOURS = 2;</code>
    */
-  public static final int MULTIPLE_ORGANIZATIONS_VALUE = 2;
+  public static final int HOURS_VALUE = 2;
+  /**
+   * <code>DAYS = 3;</code>
+   */
+  public static final int DAYS_VALUE = 3;
 
 
   public final int getNumber() {
@@ -52,7 +60,7 @@ public enum OrgUserRelationshipType
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static OrgUserRelationshipType valueOf(int value) {
+  public static TimeUnit valueOf(int value) {
     return forNumber(value);
   }
 
@@ -60,24 +68,25 @@ public enum OrgUserRelationshipType
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static OrgUserRelationshipType forNumber(int value) {
+  public static TimeUnit forNumber(int value) {
     switch (value) {
-      case 0: return OrgUserRelationshipType_UNSPECIFIED;
-      case 1: return SINGLE_ORGANIZATION;
-      case 2: return MULTIPLE_ORGANIZATIONS;
+      case 0: return SESSION_TIME_UNIT_UNSPECIFIED;
+      case 1: return MINUTES;
+      case 2: return HOURS;
+      case 3: return DAYS;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<OrgUserRelationshipType>
+  public static com.google.protobuf.Internal.EnumLiteMap<TimeUnit>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      OrgUserRelationshipType> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<OrgUserRelationshipType>() {
-          public OrgUserRelationshipType findValueByNumber(int number) {
-            return OrgUserRelationshipType.forNumber(number);
+      TimeUnit> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TimeUnit>() {
+          public TimeUnit findValueByNumber(int number) {
+            return TimeUnit.forNumber(number);
           }
         };
 
@@ -95,12 +104,12 @@ public enum OrgUserRelationshipType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.environments.EnvironmentsProto.getDescriptor().getEnumTypes().get(3);
+    return com.scalekit.grpc.scalekit.v1.environments.EnvironmentsProto.getDescriptor().getEnumTypes().get(2);
   }
 
-  private static final OrgUserRelationshipType[] VALUES = values();
+  private static final TimeUnit[] VALUES = values();
 
-  public static OrgUserRelationshipType valueOf(
+  public static TimeUnit valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -114,10 +123,10 @@ public enum OrgUserRelationshipType
 
   private final int value;
 
-  private OrgUserRelationshipType(int value) {
+  private TimeUnit(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:scalekit.v1.environments.OrgUserRelationshipType)
+  // @@protoc_insertion_point(enum_scope:scalekit.v1.environments.TimeUnit)
 }
 

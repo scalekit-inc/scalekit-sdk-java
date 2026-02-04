@@ -104,4 +104,28 @@ public interface ListAuthLogRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getResourceIdBytes();
+
+  /**
+   * <code>string connected_account_identifier = 8 [json_name = "connectedAccountIdentifier"];</code>
+   * @return The connectedAccountIdentifier.
+   */
+  java.lang.String getConnectedAccountIdentifier();
+  /**
+   * <code>string connected_account_identifier = 8 [json_name = "connectedAccountIdentifier"];</code>
+   * @return The bytes for connectedAccountIdentifier.
+   */
+  com.google.protobuf.ByteString
+      getConnectedAccountIdentifierBytes();
+
+  /**
+   * <code>string client_id = 9 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The clientId.
+   */
+  java.lang.String getClientId();
+  /**
+   * <code>string client_id = 9 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for clientId.
+   */
+  com.google.protobuf.ByteString
+      getClientIdBytes();
 }

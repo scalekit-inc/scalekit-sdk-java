@@ -182,7 +182,7 @@ public final class ProvidersProto {
       "viders/{identifier}\022\232\001\n\rListProviders\022+." +
       "scalekit.v1.providers.ListProvidersReque" +
       "st\032,.scalekit.v1.providers.ListProviders" +
-      "Response\".\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\023\022\021/" +
+      "Response\".\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\023\022\021/" +
       "api/v1/providersB\344\001\n\'com.scalekit.grpc.s" +
       "calekit.v1.providersB\016ProvidersProtoP\001Z3" +
       "github.com/scalekit-inc/scalekit/pkg/grp" +

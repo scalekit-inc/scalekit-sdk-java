@@ -134,4 +134,37 @@ public interface SessionSettingsOrBuilder extends
    * <code>.google.protobuf.StringValue cookie_custom_domain = 9 [json_name = "cookieCustomDomain"];</code>
    */
   com.google.protobuf.StringValueOrBuilder getCookieCustomDomainOrBuilder();
+
+  /**
+   * <code>.scalekit.v1.environments.TimeUnit access_token_expiry_unit = 10 [json_name = "accessTokenExpiryUnit"];</code>
+   * @return The enum numeric value on the wire for accessTokenExpiryUnit.
+   */
+  int getAccessTokenExpiryUnitValue();
+  /**
+   * <code>.scalekit.v1.environments.TimeUnit access_token_expiry_unit = 10 [json_name = "accessTokenExpiryUnit"];</code>
+   * @return The accessTokenExpiryUnit.
+   */
+  com.scalekit.grpc.scalekit.v1.environments.TimeUnit getAccessTokenExpiryUnit();
+
+  /**
+   * <code>.scalekit.v1.environments.TimeUnit absolute_session_timeout_unit = 11 [json_name = "absoluteSessionTimeoutUnit"];</code>
+   * @return The enum numeric value on the wire for absoluteSessionTimeoutUnit.
+   */
+  int getAbsoluteSessionTimeoutUnitValue();
+  /**
+   * <code>.scalekit.v1.environments.TimeUnit absolute_session_timeout_unit = 11 [json_name = "absoluteSessionTimeoutUnit"];</code>
+   * @return The absoluteSessionTimeoutUnit.
+   */
+  com.scalekit.grpc.scalekit.v1.environments.TimeUnit getAbsoluteSessionTimeoutUnit();
+
+  /**
+   * <code>.scalekit.v1.environments.TimeUnit idle_session_timeout_unit = 12 [json_name = "idleSessionTimeoutUnit"];</code>
+   * @return The enum numeric value on the wire for idleSessionTimeoutUnit.
+   */
+  int getIdleSessionTimeoutUnitValue();
+  /**
+   * <code>.scalekit.v1.environments.TimeUnit idle_session_timeout_unit = 12 [json_name = "idleSessionTimeoutUnit"];</code>
+   * @return The idleSessionTimeoutUnit.
+   */
+  com.scalekit.grpc.scalekit.v1.environments.TimeUnit getIdleSessionTimeoutUnit();
 }
