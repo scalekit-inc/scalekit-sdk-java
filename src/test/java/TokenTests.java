@@ -85,7 +85,7 @@ public class TokenTests {
 
     @Test
     void testCreateTokenWithUserId() {
-        // Create a test user
+        // Create a test user without sending invitation email so membership is active
         String userEmail = "tokentest" + System.currentTimeMillis() + "@example.com";
         CreateUser user = CreateUser.newBuilder()
                 .setEmail(userEmail)
@@ -94,10 +94,22 @@ public class TokenTests {
         CreateUserAndMembershipRequest createRequest = CreateUserAndMembershipRequest.newBuilder()
                 .setOrganizationId(testOrgId)
                 .setUser(user)
+                .setSendInvitationEmail(false)
                 .build();
 
         CreateUserAndMembershipResponse createdUser = client.users().createUserAndMembership(testOrgId, createRequest);
         String userId = createdUser.getUser().getId();
+
+        // Explicitly add user membership to ensure it is active
+        CreateMembership membership = CreateMembership.newBuilder().build();
+        CreateMembershipRequest membershipRequest = CreateMembershipRequest.newBuilder()
+                .setOrganizationId(testOrgId)
+                .setId(userId)
+                .setMembership(membership)
+                .setSendInvitationEmail(false)
+                .build();
+
+        client.users().createMembership(testOrgId, userId, membershipRequest);
 
         // Create a user-scoped token
         CreateTokenResponse response = client.tokens().create(
