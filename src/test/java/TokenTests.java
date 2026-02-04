@@ -195,13 +195,18 @@ public class TokenTests {
         // Invalidate the token
         client.tokens().invalidate(tokenId);
 
-        // Verify token no longer appears in the list
-        ListTokensResponse listResponse = client.tokens().list(testOrgId, 30, null);
-        List<String> tokenIds = listResponse.getTokensList().stream()
-                .map(Token::getTokenId)
-                .collect(Collectors.toList());
+        // Verify token no longer appears across all pages
+        List<String> allTokenIds = new java.util.ArrayList<>();
+        String pageToken = null;
+        do {
+            ListTokensResponse listResponse = client.tokens().list(testOrgId, 30, pageToken);
+            listResponse.getTokensList().stream()
+                    .map(Token::getTokenId)
+                    .forEach(allTokenIds::add);
+            pageToken = listResponse.getNextPageToken();
+        } while (pageToken != null && !pageToken.isEmpty());
 
-        assertFalse(tokenIds.contains(tokenId));
+        assertFalse(allTokenIds.contains(tokenId));
     }
 
     @Test
