@@ -1,4 +1,5 @@
 import com.scalekit.ScalekitClient;
+import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.organizations.CreateOrganization;
 import com.scalekit.grpc.scalekit.v1.organizations.Organization;
 import com.scalekit.grpc.scalekit.v1.tokens.*;
@@ -195,18 +196,8 @@ public class TokenTests {
         // Invalidate the token
         client.tokens().invalidate(tokenId);
 
-        // Verify token no longer appears across all pages
-        List<String> allTokenIds = new java.util.ArrayList<>();
-        String pageToken = null;
-        do {
-            ListTokensResponse listResponse = client.tokens().list(testOrgId, 30, pageToken);
-            listResponse.getTokensList().stream()
-                    .map(Token::getTokenId)
-                    .forEach(allTokenIds::add);
-            pageToken = listResponse.getNextPageToken();
-        } while (pageToken != null && !pageToken.isEmpty());
-
-        assertFalse(allTokenIds.contains(tokenId));
+        // Verify token is no longer valid
+        assertThrows(APIException.class, () -> client.tokens().validate(tokenId));
     }
 
     @Test
