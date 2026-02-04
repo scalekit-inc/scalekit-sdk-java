@@ -176,14 +176,14 @@ public final class WebhooksProto {
       " for webhook configurationJZ\n\003200\022S\n!Por" +
       "tal URL retrieved successfully\022.\n,\032*.sca" +
       "lekit.v1.webhooks.GetPortalURLResponse\202\265" +
-      "\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\035\022\033/api/v1/webho" +
+      "\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\035\022\033/api/v1/webho" +
       "oks/portal-url\022\302\003\n\016WebhookWrapper\022+.scal" +
       "ekit.v1.webhooks.WebhookWrapperRequest\032\027" +
       ".google.protobuf.Struct\"\351\002\222A\237\001\022\017Webhook " +
       "wrapper\032FWrapper endpoint for webhook re" +
       "quests supporting multiple HTTP methodsJ" +
       "D\n\003200\022=\n\036Request processed successfully" +
-      "\022\033\n\031\032\027.google.protobuf.Struct\202\265\030\002\030P\372\322\344\223\002" +
+      "\022\033\n\031\032\027.google.protobuf.Struct\202\265\030\002\030@\372\322\344\223\002" +
       "\t\022\007PREVIEW\202\323\344\223\002\252\001\022\026/api/v1/webhooks/wb/*" +
       "*Z&\"\026/api/v1/webhooks/wb/**:\014request_bod" +
       "yZ&\032\026/api/v1/webhooks/wb/**:\014request_bod" +
@@ -195,7 +195,7 @@ public final class WebhooksProto {
       " event\0320Sends a test webhook event of th" +
       "e specified typeJV\n\003200\022O\n\034Test event se" +
       "nt successfully\022/\n-\032+.scalekit.v1.webhoo" +
-      "ks.SendTestEventResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PR" +
+      "ks.SendTestEventResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PR" +
       "EVIEW\202\323\344\223\002*\"(/api/v1/webhooks/test-event" +
       "/{event_type}\022\361\001\n\020SendWebhookEvent\022\".sca" +
       "lekit.v1.webhooks.WebhookEvent\032\033.scaleki" +

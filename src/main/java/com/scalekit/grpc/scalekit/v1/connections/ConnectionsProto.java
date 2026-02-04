@@ -1231,7 +1231,7 @@ public final class ConnectionsProto {
       "h a new connection for the specified env" +
       "ironmentJ_\n\003201\022X\n\037Connection created su" +
       "ccessfully\0225\n3\0321.scalekit.v1.connections" +
-      ".CreateConnectionResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007P" +
+      ".CreateConnectionResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007P" +
       "REVIEW\202\323\344\223\002!\"\023/api/v1/connections:\nconne" +
       "ction\022\240\003\n\020CreateConnection\0220.scalekit.v1" +
       ".connections.CreateConnectionRequest\0321.s" +
@@ -1241,7 +1241,7 @@ public final class ConnectionsProto {
       "tion for the specified organizationJ_\n\0032" +
       "01\022X\n\037Connection created successfully\0225\n" +
       "3\0321.scalekit.v1.connections.CreateConnec" +
-      "tionResponse\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002A\"" +
+      "tionResponse\202\265\030\002\030d\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002A\"" +
       "3/api/v1/organizations/{organization_id}" +
       "/connections:\nconnection\022\272\004\n\031AssignDomai" +
       "nsToConnection\0229.scalekit.v1.connections" +
@@ -1255,7 +1255,7 @@ public final class ConnectionsProto {
       "n on the specified domainsJf\n\003200\022_\n\035Dom" +
       "ains assigned successfully\022>\n<\032:.scaleki" +
       "t.v1.connections.AssignDomainsToConnecti" +
-      "onResponse\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002P\032K/" +
+      "onResponse\202\265\030\002\030d\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002P\032K/" +
       "api/v1/organizations/{organization_id}/c" +
       "onnections/{connection_id}/domains:\001*\022\262\003" +
       "\n\030GetEnvironmentConnection\0228.scalekit.v1" +
@@ -1267,7 +1267,7 @@ public final class ConnectionsProto {
       "sing its unique identifierJf\n\003200\022_\n)Suc" +
       "cessfully retrieved connection details\0222" +
       "\n0\032..scalekit.v1.connections.GetConnecti" +
-      "onResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\022#/" +
+      "onResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\022#/" +
       "api/v1/connections/{connection_id}\022\274\004\n\rG" +
       "etConnection\022-.scalekit.v1.connections.G" +
       "etConnectionRequest\032..scalekit.v1.connec" +
@@ -1281,7 +1281,7 @@ public final class ConnectionsProto {
       "us.J\205\001\n\003200\022~\nHSuccessfully retrieved co" +
       "nnection details for the specified organ" +
       "ization\0222\n0\032..scalekit.v1.connections.Ge" +
-      "tConnectionResponse\202\265\030\002\030t\202\323\344\223\002:\0228/api/v1" +
+      "tConnectionResponse\202\265\030\002\030d\202\323\344\223\002:\0228/api/v1" +
       "/organizations/{organization_id}/connect" +
       "ions/{id}\022\322\002\n\017ListConnections\022/.scalekit" +
       ".v1.connections.ListConnectionsRequest\0320" +
@@ -1291,7 +1291,7 @@ public final class ConnectionsProto {
       "in the environmentJa\n\003200\022Z\n\"Successfull" +
       "y retrieved connections\0224\n2\0320.scalekit.v" +
       "1.connections.ListConnectionsResponse\202\265\030" +
-      "\002\030t\202\323\344\223\002\025\022\023/api/v1/connections\022\265\003\n\033ListO" +
+      "\002\030d\202\323\344\223\002\025\022\023/api/v1/connections\022\265\003\n\033ListO" +
       "rganizationConnections\022;.scalekit.v1.con" +
       "nections.ListOrganizationConnectionsRequ" +
       "est\032<.scalekit.v1.connections.ListOrgani" +
@@ -1301,7 +1301,7 @@ public final class ConnectionsProto {
       "e organizationsJm\n\003200\022f\n\"Successfully r" +
       "etrieved connections\022@\n>\032<.scalekit.v1.c" +
       "onnections.ListOrganizationConnectionsRe" +
-      "sponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\022#/api/" +
+      "sponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\022#/api/" +
       "v1/organizations/-/connections\022\315\003\n\035Searc" +
       "hOrganizationConnections\022=.scalekit.v1.c" +
       "onnections.SearchOrganizationConnections" +
@@ -1312,7 +1312,7 @@ public final class ConnectionsProto {
       "ded and return list of connectionsJk\n\00320" +
       "0\022d\n\036Successfully found connections\022B\n@\032" +
       ">.scalekit.v1.connections.SearchOrganiza" +
-      "tionConnectionsResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PRE" +
+      "tionConnectionsResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PRE" +
       "VIEW\202\323\344\223\002,\022*/api/v1/organizations/-/conn" +
       "ections:search\022\361\002\n\033UpdateEnvironmentConn" +
       "ection\022;.scalekit.v1.connections.UpdateE" +
@@ -1321,7 +1321,7 @@ public final class ConnectionsProto {
       "\001\222A\221\001\n\013Connections\022\023Update a connection\032" +
       "\027Update a SSO ConnectionJT\n\003200\022M\n\024Updat" +
       "ed Successfully\0225\n3\0321.scalekit.v1.connec" +
-      "tions.UpdateConnectionResponse\202\265\030\002\030T\372\322\344\223" +
+      "tions.UpdateConnectionResponse\202\265\030\002\030D\372\322\344\223" +
       "\002\t\022\007PREVIEW\202\323\344\223\00212#/api/v1/connections/{" +
       "connection_id}:\nconnection\022\201\003\n\020UpdateCon" +
       "nection\0220.scalekit.v1.connections.Update" +
@@ -1331,21 +1331,21 @@ public final class ConnectionsProto {
       "zation\032\027Update a SSO ConnectionJT\n\003200\022M" +
       "\n\024Updated Successfully\0225\n3\0321.scalekit.v1" +
       ".connections.UpdateConnectionResponse\202\265\030" +
-      "\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002F28/api/v1/organi" +
+      "\002\030d\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002F28/api/v1/organi" +
       "zations/{organization_id}/connections/{i" +
       "d}:\nconnection\022\222\002\n\033DeleteEnvironmentConn" +
       "ection\022;.scalekit.v1.connections.DeleteE" +
       "nvironmentConnectionRequest\032\026.google.pro" +
       "tobuf.Empty\"\235\001\222AZ\n\013Connections\022\023Delete a" +
       " connection\032\027Delete a SSO ConnectionJ\035\n\003" +
-      "200\022\026\n\024Deleted Successfully\202\265\030\002\030T\372\322\344\223\002\t\022" +
+      "200\022\026\n\024Deleted Successfully\202\265\030\002\030D\372\322\344\223\002\t\022" +
       "\007PREVIEW\202\323\344\223\002%*#/api/v1/connections/{con" +
       "nection_id}\022\242\002\n\020DeleteConnection\0220.scale" +
       "kit.v1.connections.DeleteConnectionReque" +
       "st\032\026.google.protobuf.Empty\"\303\001\222Ak\n\013Connec" +
       "tions\022$Delete a connection for organizat" +
       "ion\032\027Delete a SSO ConnectionJ\035\n\003200\022\026\n\024D" +
-      "eleted Successfully\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW" +
+      "eleted Successfully\202\265\030\002\030d\372\322\344\223\002\t\022\007PREVIEW" +
       "\202\323\344\223\002:*8/api/v1/organizations/{organizat" +
       "ion_id}/connections/{id}\022\337\002\n\033EnableEnvir" +
       "onmentConnection\022;.scalekit.v1.connectio" +
@@ -1354,7 +1354,7 @@ public final class ConnectionsProto {
       "Response\"\317\001\222A\204\001\n\013Connections\022\023Enable a c" +
       "onnection\032\027Enable a SSO ConnectionJG\n\00320" +
       "0\022@\n\007Success\0225\n3\0321.scalekit.v1.connectio" +
-      "ns.ToggleConnectionResponse\202\265\030\002\030T\372\322\344\223\002\t\022" +
+      "ns.ToggleConnectionResponse\202\265\030\002\030D\372\322\344\223\002\t\022" +
       "\007PREVIEW\202\323\344\223\002,2*/api/v1/connections/{con" +
       "nection_id}:enable\022\312\004\n\020EnableConnection\022" +
       "0.scalekit.v1.connections.ToggleConnecti" +
@@ -1369,7 +1369,7 @@ public final class ConnectionsProto {
       "ying other configuration settingsJ_\n\003200" +
       "\022X\n\037Connection enabled successfully\0225\n3\032" +
       "1.scalekit.v1.connections.ToggleConnecti" +
-      "onResponse\202\265\030\002\030t\202\323\344\223\002A2?/api/v1/organiza" +
+      "onResponse\202\265\030\002\030d\202\323\344\223\002A2?/api/v1/organiza" +
       "tions/{organization_id}/connections/{id}" +
       ":enable\022\343\002\n\034DisableEnvironmentConnection" +
       "\022;.scalekit.v1.connections.ToggleEnviron" +
@@ -1378,7 +1378,7 @@ public final class ConnectionsProto {
       "\013Connections\022\024Disable a connection\032\030Disa" +
       "ble a SSO ConnectionJG\n\003200\022@\n\007Success\0225" +
       "\n3\0321.scalekit.v1.connections.ToggleConne" +
-      "ctionResponse\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002-" +
+      "ctionResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002-" +
       "2+/api/v1/connections/{connection_id}:di" +
       "sable\022\324\004\n\021DisableConnection\0220.scalekit.v" +
       "1.connections.ToggleConnectionRequest\0321." +
@@ -1393,7 +1393,7 @@ public final class ConnectionsProto {
       "other configuration settingsJ`\n\003200\022Y\n C" +
       "onnection disabled successfully\0225\n3\0321.sc" +
       "alekit.v1.connections.ToggleConnectionRe" +
-      "sponse\202\265\030\002\030t\202\323\344\223\002B2@/api/v1/organization" +
+      "sponse\202\265\030\002\030d\202\323\344\223\002B2@/api/v1/organization" +
       "s/{organization_id}/connections/{id}:dis" +
       "able\022\200\003\n\027GetConnectionTestResult\0227.scale" +
       "kit.v1.connections.GetConnectionTestResu" +
@@ -1402,7 +1402,7 @@ public final class ConnectionsProto {
       "ections\022\026Test connection result\032\026Connect" +
       "ion test resultJN\n\003200\022G\n\007Success\022<\n:\0328." +
       "scalekit.v1.connections.GetConnectionTes" +
-      "tResultResponse\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
+      "tResultResponse\202\265\030\002\030d\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
       "\002E\022C/api/v1/connections/{connection_id}/" +
       "test-requests/{test_request_id}\022\366\002\n\022List" +
       "AppConnections\0222.scalekit.v1.connections" +
@@ -1413,7 +1413,7 @@ public final class ConnectionsProto {
       "n the environmentJa\n\003200\022Z\n\"Successfully" +
       " retrieved connections\0224\n2\0320.scalekit.v1" +
       ".connections.ListConnectionsResponse\202\265\030\002" +
-      "\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\022\027/api/v1/connect" +
+      "\030d\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\022\027/api/v1/connect" +
       "ions/app\032\232\001\222A\226\001\n\013Connections\022\206\001Manage en" +
       "terprise connections for your Scalekit e" +
       "nvironment. This service provides endpoi" +
