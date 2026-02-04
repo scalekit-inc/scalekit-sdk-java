@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -85,8 +86,8 @@ public class TokenTests {
 
     @Test
     void testCreateTokenWithUserId() {
-        // Create a test user without sending invitation email so membership is active
-        String userEmail = "tokentest" + System.currentTimeMillis() + "@example.com";
+        // Create a test user with a unique email; sendInvitationEmail=false ensures active membership
+        String userEmail = "tokentest" + UUID.randomUUID().toString().substring(0, 8) + "@example.com";
         CreateUser user = CreateUser.newBuilder()
                 .setEmail(userEmail)
                 .build();
@@ -99,17 +100,6 @@ public class TokenTests {
 
         CreateUserAndMembershipResponse createdUser = client.users().createUserAndMembership(testOrgId, createRequest);
         String userId = createdUser.getUser().getId();
-
-        // Explicitly add user membership to ensure it is active
-        CreateMembership membership = CreateMembership.newBuilder().build();
-        CreateMembershipRequest membershipRequest = CreateMembershipRequest.newBuilder()
-                .setOrganizationId(testOrgId)
-                .setId(userId)
-                .setMembership(membership)
-                .setSendInvitationEmail(false)
-                .build();
-
-        client.users().createMembership(testOrgId, userId, membershipRequest);
 
         // Create a user-scoped token
         CreateTokenResponse response = client.tokens().create(
