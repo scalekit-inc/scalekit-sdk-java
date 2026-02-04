@@ -530,7 +530,7 @@ public final class ConnectedAccountsProto {
       "onnectorType\022\037\n\033CONNECTION_TYPE_UNSPECIF" +
       "IED\020\000\022\t\n\005OAUTH\020\001\022\013\n\007API_KEY\020\002\022\016\n\nBASIC_A",
       "UTH\020\003\022\020\n\014BEARER_TOKEN\020\004\022\n\n\006CUSTOM\020\005\022\t\n\005B" +
-      "ASIC\020\0062\3242\n\027ConnectedAccountService\022\336\006\n\025L" +
+      "ASIC\020\0062\2724\n\027ConnectedAccountService\022\336\006\n\025L" +
       "istConnectedAccounts\022<.scalekit.v1.conne" +
       "cted_accounts.ListConnectedAccountsReque" +
       "st\032=.scalekit.v1.connected_accounts.List" +
@@ -551,7 +551,7 @@ public final class ConnectedAccountsProto {
       "equest - occurs when query parameters ar" +
       "e malformed or validation failsJB\n\003401\022;" +
       "\n9Authentication required - missing or i" +
-      "nvalid access token\202\265\030\002\030t\202\323\344\223\002\034\022\032/api/v1" +
+      "nvalid access token\202\265\030\002\030D\202\323\344\223\002\034\022\032/api/v1" +
       "/connected_accounts\022\340\006\n\027SearchConnectedA" +
       "ccounts\022>.scalekit.v1.connected_accounts" +
       ".SearchConnectedAccountsRequest\032?.scalek" +
@@ -573,7 +573,7 @@ public final class ConnectedAccountsProto {
       "o short (minimum 3 characters) or valida" +
       "tion failedJB\n\003401\022;\n9Authentication req" +
       "uired - missing or invalid access token\202" +
-      "\265\030\002\030t\202\323\344\223\002#\022!/api/v1/connected_accounts:" +
+      "\265\030\002\030D\202\323\344\223\002#\022!/api/v1/connected_accounts:" +
       "search\022\376\007\n\026CreateConnectedAccount\022=.scal" +
       "ekit.v1.connected_accounts.CreateConnect" +
       "edAccountRequest\032>.scalekit.v1.connected" +
@@ -598,7 +598,7 @@ public final class ConnectedAccountsProto {
       "dJB\n\003401\022;\n9Authentication required - mi" +
       "ssing or invalid access tokenJM\n\003409\022F\nD" +
       "Conflict - connected account with the sa" +
-      "me identifier already exists\202\265\030\002\030t\202\323\344\223\002\037" +
+      "me identifier already exists\202\265\030\002\030D\202\323\344\223\002\037" +
       "\"\032/api/v1/connected_accounts:\001*\022\357\007\n\026Upda" +
       "teConnectedAccount\022=.scalekit.v1.connect" +
       "ed_accounts.UpdateConnectedAccountReques" +
@@ -624,7 +624,7 @@ public final class ConnectedAccountsProto {
       "equired - missing or invalid access toke" +
       "nJK\n\003404\022D\nBConnected account not found " +
       "- the specified account does not exist\202\265" +
-      "\030\002\030t\202\323\344\223\002\037\032\032/api/v1/connected_accounts:\001" +
+      "\030\002\030D\202\323\344\223\002\037\032\032/api/v1/connected_accounts:\001" +
       "*\022\306\006\n\026DeleteConnectedAccount\022=.scalekit." +
       "v1.connected_accounts.DeleteConnectedAcc" +
       "ountRequest\032>.scalekit.v1.connected_acco" +
@@ -644,7 +644,7 @@ public final class ConnectedAccountsProto {
       " failedJB\n\003401\022;\n9Authentication require" +
       "d - missing or invalid access tokenJK\n\0034" +
       "04\022D\nBConnected account not found - the " +
-      "specified account does not exist\202\265\030\002\030t\202\323" +
+      "specified account does not exist\202\265\030\002\030D\202\323" +
       "\344\223\002&\"!/api/v1/connected_accounts:delete:" +
       "\001*\022\377\006\n\037GetMagicLinkForConnectedAccount\022F" +
       ".scalekit.v1.connected_accounts.GetMagic" +
@@ -667,7 +667,7 @@ public final class ConnectedAccountsProto {
       "request - missing required parameters or" +
       " invalid connectorJB\n\003401\022;\n9Authenticat" +
       "ion required - missing or invalid access" +
-      " token\202\265\030\002\030t\202\323\344\223\002*\"%/api/v1/connected_ac" +
+      " token\202\265\030\002\030D\202\323\344\223\002*\"%/api/v1/connected_ac" +
       "counts/magic_link:\001*\022\266\007\n\027GetConnectedAcc" +
       "ountAuth\022F.scalekit.v1.connected_account" +
       "s.GetConnectedAccountByIdentifierRequest" +
@@ -691,21 +691,27 @@ public final class ConnectedAccountsProto {
       "ion required - missing or invalid access" +
       " tokenJP\n\003404\022I\nGConnected account not f" +
       "ound - no account matches the specified " +
-      "criteria\202\265\030\002\030t\202\323\344\223\002!\022\037/api/v1/connected_" +
-      "accounts/authB\204\004\n0com.scalekit.grpc.scal" +
-      "ekit.v1.connected_accountsB\026ConnectedAcc" +
-      "ountsProtoP\001Z<github.com/scalekit-inc/sc" +
-      "alekit/pkg/grpc/connected_accounts\242\002\003SVC" +
-      "\252\002\035Scalekit.V1.ConnectedAccounts\312\002\035Scale" +
-      "kit\\V1\\ConnectedAccounts\342\002)Scalekit\\V1\\C" +
-      "onnectedAccounts\\GPBMetadata\352\002\037Scalekit:" +
-      ":V1::ConnectedAccounts\222A\342\001j\337\001\n\022Connected" +
-      " Accounts\022\310\001Manage connected accounts fo" +
-      "r third-party integrations and OAuth con" +
-      "nections. Connected accounts represent a" +
-      "uthenticated access to external services" +
-      " like Google, Notion, Slack, and other a" +
-      "pplications.b\006proto3"
+      "criteria\202\265\030\002\030D\202\323\344\223\002!\022\037/api/v1/connected_" +
+      "accounts/auth\032\343\001\222A\337\001\n\022Connected Accounts" +
+      "\022\310\001Manage connected accounts for third-p" +
+      "arty integrations and OAuth connections." +
+      " Connected accounts represent authentica" +
+      "ted access to external services like Goo" +
+      "gle, Notion, Slack, and other applicatio" +
+      "ns.B\204\004\n0com.scalekit.grpc.scalekit.v1.co" +
+      "nnected_accountsB\026ConnectedAccountsProto" +
+      "P\001Z<github.com/scalekit-inc/scalekit/pkg" +
+      "/grpc/connected_accounts\242\002\003SVC\252\002\035Scaleki" +
+      "t.V1.ConnectedAccounts\312\002\035Scalekit\\V1\\Con" +
+      "nectedAccounts\342\002)Scalekit\\V1\\ConnectedAc" +
+      "counts\\GPBMetadata\352\002\037Scalekit::V1::Conne" +
+      "ctedAccounts\222A\342\001j\337\001\n\022Connected Accounts\022" +
+      "\310\001Manage connected accounts for third-pa" +
+      "rty integrations and OAuth connections. " +
+      "Connected accounts represent authenticat" +
+      "ed access to external services like Goog" +
+      "le, Notion, Slack, and other application" +
+      "s.b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -853,6 +859,7 @@ public final class ConnectedAccountsProto {
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Schema);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Swagger);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Tag);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

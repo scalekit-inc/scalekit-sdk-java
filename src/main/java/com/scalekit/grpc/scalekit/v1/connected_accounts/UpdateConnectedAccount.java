@@ -5,6 +5,9 @@
 package com.scalekit.grpc.scalekit.v1.connected_accounts;
 
 /**
+ * <pre>
+ * Payload for updating an existing connected account - all fields optional
+ * </pre>
  *
  * Protobuf type {@code scalekit.v1.connected_accounts.UpdateConnectedAccount}
  */

@@ -9,25 +9,17 @@ public interface MigrateStripeCustomersRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated int64 workspace_ids = 1 [json_name = "workspaceIds"];</code>
-   * @return A list containing the workspaceIds.
+   * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
+   * @return Whether the migrateStripeCustomers field is set.
    */
-  java.util.List<java.lang.Long> getWorkspaceIdsList();
+  boolean hasMigrateStripeCustomers();
   /**
-   * <code>repeated int64 workspace_ids = 1 [json_name = "workspaceIds"];</code>
-   * @return The count of workspaceIds.
+   * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
+   * @return The migrateStripeCustomers.
    */
-  int getWorkspaceIdsCount();
+  com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers getMigrateStripeCustomers();
   /**
-   * <code>repeated int64 workspace_ids = 1 [json_name = "workspaceIds"];</code>
-   * @param index The index of the element to return.
-   * @return The workspaceIds at the given index.
+   * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
    */
-  long getWorkspaceIds(int index);
-
-  /**
-   * <code>int32 batch_size = 2 [json_name = "batchSize", (.buf.validate.field) = { ... }</code>
-   * @return The batchSize.
-   */
-  int getBatchSize();
+  com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersOrBuilder getMigrateStripeCustomersOrBuilder();
 }

@@ -9,36 +9,53 @@ public interface MigrateStripeCustomersResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 success_workspaces = 1 [json_name = "successWorkspaces"];</code>
-   * @return The successWorkspaces.
+   * <code>int32 success_count = 1 [json_name = "successCount"];</code>
+   * @return The successCount.
    */
-  int getSuccessWorkspaces();
+  int getSuccessCount();
 
   /**
-   * <code>int32 failed_workspaces = 2 [json_name = "failedWorkspaces"];</code>
-   * @return The failedWorkspaces.
+   * <code>int32 failed_count = 2 [json_name = "failedCount"];</code>
+   * @return The failedCount.
    */
-  int getFailedWorkspaces();
+  int getFailedCount();
 
   /**
-   * <code>repeated string error_messages = 3 [json_name = "errorMessages"];</code>
+   * <code>repeated int64 failed_workspace_ids = 3 [json_name = "failedWorkspaceIds"];</code>
+   * @return A list containing the failedWorkspaceIds.
+   */
+  java.util.List<java.lang.Long> getFailedWorkspaceIdsList();
+  /**
+   * <code>repeated int64 failed_workspace_ids = 3 [json_name = "failedWorkspaceIds"];</code>
+   * @return The count of failedWorkspaceIds.
+   */
+  int getFailedWorkspaceIdsCount();
+  /**
+   * <code>repeated int64 failed_workspace_ids = 3 [json_name = "failedWorkspaceIds"];</code>
+   * @param index The index of the element to return.
+   * @return The failedWorkspaceIds at the given index.
+   */
+  long getFailedWorkspaceIds(int index);
+
+  /**
+   * <code>repeated string error_messages = 4 [json_name = "errorMessages"];</code>
    * @return A list containing the errorMessages.
    */
   java.util.List<java.lang.String>
       getErrorMessagesList();
   /**
-   * <code>repeated string error_messages = 3 [json_name = "errorMessages"];</code>
+   * <code>repeated string error_messages = 4 [json_name = "errorMessages"];</code>
    * @return The count of errorMessages.
    */
   int getErrorMessagesCount();
   /**
-   * <code>repeated string error_messages = 3 [json_name = "errorMessages"];</code>
+   * <code>repeated string error_messages = 4 [json_name = "errorMessages"];</code>
    * @param index The index of the element to return.
    * @return The errorMessages at the given index.
    */
   java.lang.String getErrorMessages(int index);
   /**
-   * <code>repeated string error_messages = 3 [json_name = "errorMessages"];</code>
+   * <code>repeated string error_messages = 4 [json_name = "errorMessages"];</code>
    * @param index The index of the value to return.
    * @return The bytes of the errorMessages at the given index.
    */
