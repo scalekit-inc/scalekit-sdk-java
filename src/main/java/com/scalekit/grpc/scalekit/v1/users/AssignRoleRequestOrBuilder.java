@@ -11,14 +11,14 @@ public interface AssignRoleRequestOrBuilder extends
   /**
    * <code>string id = 1 [json_name = "id", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.users.AssignRoleRequest.id is deprecated.
-   *     See scalekit/v1/users/users.proto;l=1436
+   *     See scalekit/v1/users/users.proto;l=1459
    * @return The id.
    */
   @java.lang.Deprecated java.lang.String getId();
   /**
    * <code>string id = 1 [json_name = "id", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.users.AssignRoleRequest.id is deprecated.
-   *     See scalekit/v1/users/users.proto;l=1436
+   *     See scalekit/v1/users/users.proto;l=1459
    * @return The bytes for id.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

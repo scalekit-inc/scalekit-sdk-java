@@ -530,7 +530,7 @@ public final class WorkspacesProto {
       "\001\n\023GetCurrentWorkspace\0222.scalekit.v1.wor" +
       "kspaces.GetCurrentWorkspaceRequest\032,.sca" +
       "lekit.v1.workspaces.GetWorkspaceResponse" +
-      "\"%\202\265\030\002\030T\202\323\344\223\002\031\022\027/api/v1/workspaces:this\022" +
+      "\"%\202\265\030\002\030D\202\323\344\223\002\031\022\027/api/v1/workspaces:this\022" +
       "\244\001\n\017UpdateWorkspace\022..scalekit.v1.worksp" +
       "aces.UpdateWorkspaceRequest\032/.scalekit.v" +
       "1.workspaces.UpdateWorkspaceResponse\"0\202\265" +
@@ -542,46 +542,46 @@ public final class WorkspacesProto {
       "dateCurrentWorkspace\0225.scalekit.v1.works" +
       "paces.UpdateCurrentWorkspaceRequest\032/.sc" +
       "alekit.v1.workspaces.UpdateWorkspaceResp" +
-      "onse\"0\202\265\030\002\030P\202\323\344\223\002$2\027/api/v1/workspaces:t" +
+      "onse\"0\202\265\030\002\030@\202\323\344\223\002$2\027/api/v1/workspaces:t" +
       "his:\tworkspace\022\315\001\n\031GetWorkspaceSubscript" +
       "ions\0228.scalekit.v1.workspaces.GetWorkspa" +
       "ceSubscriptionsRequest\0329.scalekit.v1.wor" +
       "kspaces.GetWorkspaceSubscriptionsRespons" +
-      "e\";\202\265\030\002\030P\202\323\344\223\002/\022-/api/v1/workspaces/{id}" +
+      "e\";\202\265\030\002\030@\202\323\344\223\002/\022-/api/v1/workspaces/{id}" +
       "/billing/subscriptions\022\312\001\n\030GetWorkspaceP" +
       "ricingTable\0227.scalekit.v1.workspaces.Get" +
       "WorkspacePricingTableRequest\0328.scalekit." +
       "v1.workspaces.GetWorkspacePricingTableRe" +
-      "sponse\";\202\265\030\002\030P\202\323\344\223\002/\022-/api/v1/workspaces" +
+      "sponse\";\202\265\030\002\030@\202\323\344\223\002/\022-/api/v1/workspaces" +
       "/{id}/billing/pricing-table\022\303\001\n\020GetBilli" +
       "ngPortal\022/.scalekit.v1.workspaces.GetBil" +
       "lingPortalRequest\0320.scalekit.v1.workspac" +
-      "es.GetBillingPortalResponse\"L\202\265\030\002\030P\372\322\344\223\002" +
+      "es.GetBillingPortalResponse\"L\202\265\030\002\030@\372\322\344\223\002" +
       "\t\022\007PREVIEW\202\323\344\223\0021\022//api/v1/workspaces:thi" +
       "s/billing/customer-portal\022\262\001\n\016GetBilling" +
       "Info\022-.scalekit.v1.workspaces.GetBilling" +
       "InfoRequest\032..scalekit.v1.workspaces.Get" +
-      "BillingInfoResponse\"A\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVI" +
+      "BillingInfoResponse\"A\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVI" +
       "EW\202\323\344\223\002&\022$/api/v1/workspaces:this/billin" +
       "g:info\022\276\001\n\017GetProductUsage\022..scalekit.v1" +
       ".workspaces.GetProductUsageRequest\032/.sca" +
       "lekit.v1.workspaces.GetProductUsageRespo" +
-      "nse\"J\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002/\022-/api/v" +
+      "nse\"J\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002/\022-/api/v" +
       "1/workspaces:this/billing:product-usage\022" +
       "\265\001\n\021GetProductCatalog\0220.scalekit.v1.work" +
       "spaces.GetProductCatalogRequest\0321.scalek" +
       "it.v1.workspaces.GetProductCatalogRespon" +
-      "se\";\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002 \022\036/api/v1" +
+      "se\";\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002 \022\036/api/v1" +
       "/billing/productcatalog\022\305\001\n\017AddSubscript" +
       "ion\022..scalekit.v1.workspaces.AddSubscrip" +
       "tionRequest\032/.scalekit.v1.workspaces.Add" +
-      "SubscriptionResponse\"Q\202\265\030\002\030T\372\322\344\223\002\t\022\007PREV" +
+      "SubscriptionResponse\"Q\202\265\030\002\030D\372\322\344\223\002\t\022\007PREV" +
       "IEW\202\323\344\223\0026\"1/api/v1/workspaces:this/billi" +
       "ng/subscriptions:add:\001*\022\327\001\n\025CreateChecko" +
       "utSession\0224.scalekit.v1.workspaces.Creat" +
       "eCheckoutSessionRequest\0325.scalekit.v1.wo" +
       "rkspaces.CreateCheckoutSessionResponse\"Q" +
-      "\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0026\"1/api/v1/wor" +
+      "\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0026\"1/api/v1/wor" +
       "kspaces:this/billing/checkout_sessions:\001" +
       "*B\353\001\n(com.scalekit.grpc.scalekit.v1.work" +
       "spacesB\017WorkspacesProtoP\001Z4github.com/sc" +

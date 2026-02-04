@@ -728,6 +728,37 @@ public final class ClientServiceGrpc {
     return getListResourceClientsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest,
+      com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse> getListResourceUserConsentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListResourceUserConsents",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest,
+      com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse> getListResourceUserConsentsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest, com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse> getListResourceUserConsentsMethod;
+    if ((getListResourceUserConsentsMethod = ClientServiceGrpc.getListResourceUserConsentsMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getListResourceUserConsentsMethod = ClientServiceGrpc.getListResourceUserConsentsMethod) == null) {
+          ClientServiceGrpc.getListResourceUserConsentsMethod = getListResourceUserConsentsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest, com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListResourceUserConsents"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("ListResourceUserConsents"))
+              .build();
+        }
+      }
+    }
+    return getListResourceUserConsentsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientRequest,
       com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse> getDeleteResourceClientMethod;
 
@@ -1218,6 +1249,13 @@ public final class ClientServiceGrpc {
 
     /**
      */
+    default void listResourceUserConsents(com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListResourceUserConsentsMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void deleteResourceClient(com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteResourceClientMethod(), responseObserver);
@@ -1496,6 +1534,14 @@ public final class ClientServiceGrpc {
 
     /**
      */
+    public void listResourceUserConsents(com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListResourceUserConsentsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void deleteResourceClient(com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -1745,6 +1791,13 @@ public final class ClientServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse listResourceClients(com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListResourceClientsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse listResourceUserConsents(com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListResourceUserConsentsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2016,6 +2069,14 @@ public final class ClientServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse> listResourceUserConsents(
+        com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListResourceUserConsentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse> deleteResourceClient(
         com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2113,15 +2174,16 @@ public final class ClientServiceGrpc {
   private static final int METHODID_UPDATE_RESOURCE_CLIENT = 20;
   private static final int METHODID_GET_RESOURCE_CLIENT = 21;
   private static final int METHODID_LIST_RESOURCE_CLIENTS = 22;
-  private static final int METHODID_DELETE_RESOURCE_CLIENT = 23;
-  private static final int METHODID_REGISTER_CLIENT = 24;
-  private static final int METHODID_CREATE_SCOPE = 25;
-  private static final int METHODID_LIST_SCOPES = 26;
-  private static final int METHODID_UPDATE_SCOPE = 27;
-  private static final int METHODID_DELETE_SCOPE = 28;
-  private static final int METHODID_GET_CONSENT_DETAILS = 29;
-  private static final int METHODID_REVOKE_USER_CONSENT = 30;
-  private static final int METHODID_ENSURE_RESOURCE_CONNECTION = 31;
+  private static final int METHODID_LIST_RESOURCE_USER_CONSENTS = 23;
+  private static final int METHODID_DELETE_RESOURCE_CLIENT = 24;
+  private static final int METHODID_REGISTER_CLIENT = 25;
+  private static final int METHODID_CREATE_SCOPE = 26;
+  private static final int METHODID_LIST_SCOPES = 27;
+  private static final int METHODID_UPDATE_SCOPE = 28;
+  private static final int METHODID_DELETE_SCOPE = 29;
+  private static final int METHODID_GET_CONSENT_DETAILS = 30;
+  private static final int METHODID_REVOKE_USER_CONSENT = 31;
+  private static final int METHODID_ENSURE_RESOURCE_CONNECTION = 32;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2231,6 +2293,10 @@ public final class ClientServiceGrpc {
         case METHODID_LIST_RESOURCE_CLIENTS:
           serviceImpl.listResourceClients((com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse>) responseObserver);
+          break;
+        case METHODID_LIST_RESOURCE_USER_CONSENTS:
+          serviceImpl.listResourceUserConsents((com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse>) responseObserver);
           break;
         case METHODID_DELETE_RESOURCE_CLIENT:
           serviceImpl.deleteResourceClient((com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientRequest) request,
@@ -2448,6 +2514,13 @@ public final class ClientServiceGrpc {
               com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse>(
                 service, METHODID_LIST_RESOURCE_CLIENTS)))
         .addMethod(
+          getListResourceUserConsentsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest,
+              com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse>(
+                service, METHODID_LIST_RESOURCE_USER_CONSENTS)))
+        .addMethod(
           getDeleteResourceClientMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -2581,6 +2654,7 @@ public final class ClientServiceGrpc {
               .addMethod(getUpdateResourceClientMethod())
               .addMethod(getGetResourceClientMethod())
               .addMethod(getListResourceClientsMethod())
+              .addMethod(getListResourceUserConsentsMethod())
               .addMethod(getDeleteResourceClientMethod())
               .addMethod(getRegisterClientMethod())
               .addMethod(getCreateScopeMethod())
