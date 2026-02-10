@@ -5,6 +5,7 @@ import com.scalekit.api.TokenClient;
 import com.scalekit.grpc.scalekit.v1.tokens.*;
 import com.scalekit.internal.RetryExecuter;
 import com.scalekit.internal.ScalekitCredentials;
+import com.google.protobuf.Timestamp;
 import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
 
@@ -39,7 +40,10 @@ public class ScalekitTokenClient implements TokenClient {
      */
     @Override
     public CreateTokenResponse create(String organizationId) {
-        return create(organizationId, null, null, null);
+        if (organizationId == null || organizationId.isEmpty()) {
+            throw new IllegalArgumentException("organizationId is required");
+        }
+        return create(organizationId, null, null, null, null);
     }
 
     /**
@@ -48,11 +52,12 @@ public class ScalekitTokenClient implements TokenClient {
      * @param organizationId The organization ID to scope the token to
      * @param userId         Optional user ID to scope the token to a specific user
      * @param customClaims   Optional custom claims key-value pairs
+     * @param expiry         Optional expiry timestamp
      * @param description    Optional human-readable description
      * @return CreateTokenResponse containing the opaque token, token_id, and token_info
      */
     @Override
-    public CreateTokenResponse create(String organizationId, String userId, Map<String, String> customClaims, String description) {
+    public CreateTokenResponse create(String organizationId, String userId, Map<String, String> customClaims, Timestamp expiry, String description) {
         return RetryExecuter.executeWithRetry(() -> {
             CreateToken.Builder tokenBuilder = CreateToken.newBuilder()
                     .setOrganizationId(organizationId);
@@ -62,6 +67,9 @@ public class ScalekitTokenClient implements TokenClient {
             }
             if (customClaims != null && !customClaims.isEmpty()) {
                 tokenBuilder.putAllCustomClaims(customClaims);
+            }
+            if (expiry != null) {
+                tokenBuilder.setExpiry(expiry);
             }
             if (description != null && !description.isEmpty()) {
                 tokenBuilder.setDescription(description);
@@ -85,6 +93,9 @@ public class ScalekitTokenClient implements TokenClient {
      */
     @Override
     public ValidateTokenResponse validate(String token) {
+        if (token == null || token.isEmpty()) {
+            throw new IllegalArgumentException("token is required");
+        }
         return RetryExecuter.executeWithRetry(() -> {
             ValidateTokenRequest request = ValidateTokenRequest.newBuilder()
                     .setToken(token)
@@ -104,6 +115,9 @@ public class ScalekitTokenClient implements TokenClient {
      */
     @Override
     public void invalidate(String token) {
+        if (token == null || token.isEmpty()) {
+            throw new IllegalArgumentException("token is required");
+        }
         RetryExecuter.executeWithRetry(() -> {
             InvalidateTokenRequest request = InvalidateTokenRequest.newBuilder()
                     .setToken(token)
@@ -126,6 +140,9 @@ public class ScalekitTokenClient implements TokenClient {
      */
     @Override
     public ListTokensResponse list(String organizationId, int pageSize, String pageToken) {
+        if (organizationId == null || organizationId.isEmpty()) {
+            throw new IllegalArgumentException("organizationId is required");
+        }
         return list(organizationId, null, pageSize, pageToken);
     }
 
