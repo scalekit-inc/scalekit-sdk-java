@@ -1,6 +1,7 @@
 package com.scalekit.api;
 
 import com.scalekit.grpc.scalekit.v1.tokens.*;
+import com.google.protobuf.Timestamp;
 
 import java.util.Map;
 
@@ -27,10 +28,11 @@ public interface TokenClient {
      * @param organizationId The organization ID to scope the token to
      * @param userId Optional user ID to scope the token to a specific user
      * @param customClaims Optional custom claims key-value pairs
+     * @param expiry Optional expiry timestamp
      * @param description Optional human-readable description
      * @return CreateTokenResponse containing the opaque token, token_id, and token_info
      */
-    CreateTokenResponse create(String organizationId, String userId, Map<String, String> customClaims, String description);
+    CreateTokenResponse create(String organizationId, String userId, Map<String, String> customClaims, Timestamp expiry, String description);
 
     /**
      * Validates an API token and returns associated context.

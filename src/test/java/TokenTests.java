@@ -72,7 +72,7 @@ public class TokenTests {
         customClaims.put("scope", "read");
 
         CreateTokenResponse response = client.tokens().create(
-                testOrgId, null, customClaims, "SDK Test Token"
+                testOrgId, null, customClaims, null, "SDK Test Token"
         );
 
         assertNotNull(response);
@@ -104,7 +104,7 @@ public class TokenTests {
 
         // Create a user-scoped token
         CreateTokenResponse response = client.tokens().create(
-                testOrgId, userId, null, "User scoped token"
+                testOrgId, userId, null, null, "User scoped token"
         );
 
         assertNotNull(response);
@@ -175,11 +175,24 @@ public class TokenTests {
             tokenIds[i] = response.getTokenId();
         }
 
-        // List with small page size
-        ListTokensResponse listResponse = client.tokens().list(testOrgId, 2, null);
+        // List with page size 1
+        ListTokensResponse page1 = client.tokens().list(testOrgId, 1, null);
 
-        assertNotNull(listResponse);
-        assertTrue(listResponse.getTokensCount() <= 2);
+        assertNotNull(page1);
+        assertEquals(1, page1.getTokensCount());
+        assertFalse(page1.getNextPageToken().isEmpty());
+
+        // Get next page
+        ListTokensResponse page2 = client.tokens().list(testOrgId, 1, page1.getNextPageToken());
+
+        assertNotNull(page2);
+        assertEquals(1, page2.getTokensCount());
+
+        // Ensure different tokens on different pages
+        assertNotEquals(
+                page1.getTokens(0).getTokenId(),
+                page2.getTokens(0).getTokenId()
+        );
 
         // Cleanup
         for (String tokenId : tokenIds) {
