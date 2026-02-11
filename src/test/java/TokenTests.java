@@ -1,5 +1,6 @@
 import com.scalekit.ScalekitClient;
 import com.scalekit.exceptions.APIException;
+import com.scalekit.exceptions.TokenInvalidException;
 import com.scalekit.grpc.scalekit.v1.organizations.CreateOrganization;
 import com.scalekit.grpc.scalekit.v1.organizations.Organization;
 import com.scalekit.grpc.scalekit.v1.tokens.*;
@@ -210,7 +211,7 @@ public class TokenTests {
         client.tokens().invalidate(tokenId);
 
         // Verify token is no longer valid
-        assertThrows(APIException.class, () -> client.tokens().validate(tokenId));
+        assertThrows(TokenInvalidException.class, () -> client.tokens().validate(tokenId));
     }
 
     @Test
