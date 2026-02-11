@@ -21,10 +21,12 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ResourceInfo() {
-    resourceType_ = "";
     resourceName_ = "";
     owner_ = "";
     description_ = "";
+    requiredPermissions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    user_ = "";
   }
 
   @java.lang.Override
@@ -45,45 +47,6 @@ private static final long serialVersionUID = 0L;
     return com.scalekit.grpc.scalekit.v1.errdetails.ErrdetailsProto.internal_static_scalekit_v1_errdetails_ResourceInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.scalekit.grpc.scalekit.v1.errdetails.ResourceInfo.class, com.scalekit.grpc.scalekit.v1.errdetails.ResourceInfo.Builder.class);
-  }
-
-  public static final int RESOURCE_TYPE_FIELD_NUMBER = 1;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object resourceType_ = "";
-  /**
-   * <code>string resource_type = 1 [json_name = "resourceType"];</code>
-   * @return The resourceType.
-   */
-  @java.lang.Override
-  public java.lang.String getResourceType() {
-    java.lang.Object ref = resourceType_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      resourceType_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string resource_type = 1 [json_name = "resourceType"];</code>
-   * @return The bytes for resourceType.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getResourceTypeBytes() {
-    java.lang.Object ref = resourceType_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      resourceType_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   public static final int RESOURCE_NAME_FIELD_NUMBER = 2;
@@ -215,6 +178,98 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int REQUIRED_PERMISSIONS_FIELD_NUMBER = 5;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList requiredPermissions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <pre>
+   * The required permissions needed to access the resource.
+   * </pre>
+   *
+   * <code>repeated string required_permissions = 5 [json_name = "requiredPermissions"];</code>
+   * @return A list containing the requiredPermissions.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getRequiredPermissionsList() {
+    return requiredPermissions_;
+  }
+  /**
+   * <pre>
+   * The required permissions needed to access the resource.
+   * </pre>
+   *
+   * <code>repeated string required_permissions = 5 [json_name = "requiredPermissions"];</code>
+   * @return The count of requiredPermissions.
+   */
+  public int getRequiredPermissionsCount() {
+    return requiredPermissions_.size();
+  }
+  /**
+   * <pre>
+   * The required permissions needed to access the resource.
+   * </pre>
+   *
+   * <code>repeated string required_permissions = 5 [json_name = "requiredPermissions"];</code>
+   * @param index The index of the element to return.
+   * @return The requiredPermissions at the given index.
+   */
+  public java.lang.String getRequiredPermissions(int index) {
+    return requiredPermissions_.get(index);
+  }
+  /**
+   * <pre>
+   * The required permissions needed to access the resource.
+   * </pre>
+   *
+   * <code>repeated string required_permissions = 5 [json_name = "requiredPermissions"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the requiredPermissions at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getRequiredPermissionsBytes(int index) {
+    return requiredPermissions_.getByteString(index);
+  }
+
+  public static final int USER_FIELD_NUMBER = 6;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object user_ = "";
+  /**
+   * <code>string user = 6 [json_name = "user"];</code>
+   * @return The user.
+   */
+  @java.lang.Override
+  public java.lang.String getUser() {
+    java.lang.Object ref = user_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      user_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string user = 6 [json_name = "user"];</code>
+   * @return The bytes for user.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUserBytes() {
+    java.lang.Object ref = user_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      user_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -229,9 +284,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceType_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceType_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceName_);
     }
@@ -240,6 +292,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
+    }
+    for (int i = 0; i < requiredPermissions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, requiredPermissions_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, user_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -250,9 +308,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceType_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceType_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceName_);
     }
@@ -261,6 +316,17 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < requiredPermissions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(requiredPermissions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getRequiredPermissionsList().size();
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(user_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, user_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -277,14 +343,16 @@ private static final long serialVersionUID = 0L;
     }
     com.scalekit.grpc.scalekit.v1.errdetails.ResourceInfo other = (com.scalekit.grpc.scalekit.v1.errdetails.ResourceInfo) obj;
 
-    if (!getResourceType()
-        .equals(other.getResourceType())) return false;
     if (!getResourceName()
         .equals(other.getResourceName())) return false;
     if (!getOwner()
         .equals(other.getOwner())) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
+    if (!getRequiredPermissionsList()
+        .equals(other.getRequiredPermissionsList())) return false;
+    if (!getUser()
+        .equals(other.getUser())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -296,14 +364,18 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getResourceType().hashCode();
     hash = (37 * hash) + RESOURCE_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getResourceName().hashCode();
     hash = (37 * hash) + OWNER_FIELD_NUMBER;
     hash = (53 * hash) + getOwner().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    if (getRequiredPermissionsCount() > 0) {
+      hash = (37 * hash) + REQUIRED_PERMISSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getRequiredPermissionsList().hashCode();
+    }
+    hash = (37 * hash) + USER_FIELD_NUMBER;
+    hash = (53 * hash) + getUser().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -439,10 +511,12 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      resourceType_ = "";
       resourceName_ = "";
       owner_ = "";
       description_ = "";
+      requiredPermissions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      user_ = "";
       return this;
     }
 
@@ -477,16 +551,20 @@ private static final long serialVersionUID = 0L;
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.errdetails.ResourceInfo result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.resourceType_ = resourceType_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.resourceName_ = resourceName_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.owner_ = owner_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        requiredPermissions_.makeImmutable();
+        result.requiredPermissions_ = requiredPermissions_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.user_ = user_;
       }
     }
 
@@ -534,24 +612,34 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.errdetails.ResourceInfo other) {
       if (other == com.scalekit.grpc.scalekit.v1.errdetails.ResourceInfo.getDefaultInstance()) return this;
-      if (!other.getResourceType().isEmpty()) {
-        resourceType_ = other.resourceType_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
       if (!other.getResourceName().isEmpty()) {
         resourceName_ = other.resourceName_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getOwner().isEmpty()) {
         owner_ = other.owner_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.requiredPermissions_.isEmpty()) {
+        if (requiredPermissions_.isEmpty()) {
+          requiredPermissions_ = other.requiredPermissions_;
+          bitField0_ |= 0x00000008;
+        } else {
+          ensureRequiredPermissionsIsMutable();
+          requiredPermissions_.addAll(other.requiredPermissions_);
+        }
+        onChanged();
+      }
+      if (!other.getUser().isEmpty()) {
+        user_ = other.user_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -580,26 +668,32 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              resourceType_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 10
             case 18: {
               resourceName_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000001;
               break;
             } // case 18
             case 26: {
               owner_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000002;
               break;
             } // case 26
             case 34: {
               description_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000004;
               break;
             } // case 34
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureRequiredPermissionsIsMutable();
+              requiredPermissions_.add(s);
+              break;
+            } // case 42
+            case 50: {
+              user_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 50
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -616,78 +710,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     private int bitField0_;
-
-    private java.lang.Object resourceType_ = "";
-    /**
-     * <code>string resource_type = 1 [json_name = "resourceType"];</code>
-     * @return The resourceType.
-     */
-    public java.lang.String getResourceType() {
-      java.lang.Object ref = resourceType_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        resourceType_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string resource_type = 1 [json_name = "resourceType"];</code>
-     * @return The bytes for resourceType.
-     */
-    public com.google.protobuf.ByteString
-        getResourceTypeBytes() {
-      java.lang.Object ref = resourceType_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        resourceType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string resource_type = 1 [json_name = "resourceType"];</code>
-     * @param value The resourceType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setResourceType(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      resourceType_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string resource_type = 1 [json_name = "resourceType"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearResourceType() {
-      resourceType_ = getDefaultInstance().getResourceType();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string resource_type = 1 [json_name = "resourceType"];</code>
-     * @param value The bytes for resourceType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setResourceTypeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      resourceType_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
 
     private java.lang.Object resourceName_ = "";
     /**
@@ -732,7 +754,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       resourceName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -742,7 +764,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearResourceName() {
       resourceName_ = getDefaultInstance().getResourceName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -756,7 +778,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       resourceName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -804,7 +826,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       owner_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -814,7 +836,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearOwner() {
       owner_ = getDefaultInstance().getOwner();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -828,7 +850,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       owner_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -894,7 +916,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       description_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -910,7 +932,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -930,7 +952,226 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       description_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList requiredPermissions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureRequiredPermissionsIsMutable() {
+      if (!requiredPermissions_.isModifiable()) {
+        requiredPermissions_ = new com.google.protobuf.LazyStringArrayList(requiredPermissions_);
+      }
       bitField0_ |= 0x00000008;
+    }
+    /**
+     * <pre>
+     * The required permissions needed to access the resource.
+     * </pre>
+     *
+     * <code>repeated string required_permissions = 5 [json_name = "requiredPermissions"];</code>
+     * @return A list containing the requiredPermissions.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getRequiredPermissionsList() {
+      requiredPermissions_.makeImmutable();
+      return requiredPermissions_;
+    }
+    /**
+     * <pre>
+     * The required permissions needed to access the resource.
+     * </pre>
+     *
+     * <code>repeated string required_permissions = 5 [json_name = "requiredPermissions"];</code>
+     * @return The count of requiredPermissions.
+     */
+    public int getRequiredPermissionsCount() {
+      return requiredPermissions_.size();
+    }
+    /**
+     * <pre>
+     * The required permissions needed to access the resource.
+     * </pre>
+     *
+     * <code>repeated string required_permissions = 5 [json_name = "requiredPermissions"];</code>
+     * @param index The index of the element to return.
+     * @return The requiredPermissions at the given index.
+     */
+    public java.lang.String getRequiredPermissions(int index) {
+      return requiredPermissions_.get(index);
+    }
+    /**
+     * <pre>
+     * The required permissions needed to access the resource.
+     * </pre>
+     *
+     * <code>repeated string required_permissions = 5 [json_name = "requiredPermissions"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the requiredPermissions at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getRequiredPermissionsBytes(int index) {
+      return requiredPermissions_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * The required permissions needed to access the resource.
+     * </pre>
+     *
+     * <code>repeated string required_permissions = 5 [json_name = "requiredPermissions"];</code>
+     * @param index The index to set the value at.
+     * @param value The requiredPermissions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequiredPermissions(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureRequiredPermissionsIsMutable();
+      requiredPermissions_.set(index, value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The required permissions needed to access the resource.
+     * </pre>
+     *
+     * <code>repeated string required_permissions = 5 [json_name = "requiredPermissions"];</code>
+     * @param value The requiredPermissions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRequiredPermissions(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureRequiredPermissionsIsMutable();
+      requiredPermissions_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The required permissions needed to access the resource.
+     * </pre>
+     *
+     * <code>repeated string required_permissions = 5 [json_name = "requiredPermissions"];</code>
+     * @param values The requiredPermissions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRequiredPermissions(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureRequiredPermissionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, requiredPermissions_);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The required permissions needed to access the resource.
+     * </pre>
+     *
+     * <code>repeated string required_permissions = 5 [json_name = "requiredPermissions"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRequiredPermissions() {
+      requiredPermissions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The required permissions needed to access the resource.
+     * </pre>
+     *
+     * <code>repeated string required_permissions = 5 [json_name = "requiredPermissions"];</code>
+     * @param value The bytes of the requiredPermissions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRequiredPermissionsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureRequiredPermissionsIsMutable();
+      requiredPermissions_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object user_ = "";
+    /**
+     * <code>string user = 6 [json_name = "user"];</code>
+     * @return The user.
+     */
+    public java.lang.String getUser() {
+      java.lang.Object ref = user_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        user_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string user = 6 [json_name = "user"];</code>
+     * @return The bytes for user.
+     */
+    public com.google.protobuf.ByteString
+        getUserBytes() {
+      java.lang.Object ref = user_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        user_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string user = 6 [json_name = "user"];</code>
+     * @param value The user to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUser(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      user_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string user = 6 [json_name = "user"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUser() {
+      user_ = getDefaultInstance().getUser();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string user = 6 [json_name = "user"];</code>
+     * @param value The bytes for user to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      user_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

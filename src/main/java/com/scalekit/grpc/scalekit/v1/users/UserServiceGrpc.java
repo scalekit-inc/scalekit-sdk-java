@@ -46,6 +46,37 @@ public final class UserServiceGrpc {
     return getGetUserMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest,
+      com.scalekit.grpc.scalekit.v1.users.GetUserResponse> getGetCurrentUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCurrentUser",
+      requestType = com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.users.GetUserResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest,
+      com.scalekit.grpc.scalekit.v1.users.GetUserResponse> getGetCurrentUserMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest, com.scalekit.grpc.scalekit.v1.users.GetUserResponse> getGetCurrentUserMethod;
+    if ((getGetCurrentUserMethod = UserServiceGrpc.getGetCurrentUserMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getGetCurrentUserMethod = UserServiceGrpc.getGetCurrentUserMethod) == null) {
+          UserServiceGrpc.getGetCurrentUserMethod = getGetCurrentUserMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest, com.scalekit.grpc.scalekit.v1.users.GetUserResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCurrentUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.users.GetUserResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("GetCurrentUser"))
+              .build();
+        }
+      }
+    }
+    return getGetCurrentUserMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.ListUsersRequest,
       com.scalekit.grpc.scalekit.v1.users.ListUsersResponse> getListUsersMethod;
 
@@ -571,6 +602,13 @@ public final class UserServiceGrpc {
 
     /**
      */
+    default void getCurrentUser(com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetUserResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCurrentUserMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void listUsers(com.scalekit.grpc.scalekit.v1.users.ListUsersRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.ListUsersResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListUsersMethod(), responseObserver);
@@ -723,6 +761,14 @@ public final class UserServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetUserResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getCurrentUser(com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetUserResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCurrentUserMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -886,6 +932,13 @@ public final class UserServiceGrpc {
 
     /**
      */
+    public com.scalekit.grpc.scalekit.v1.users.GetUserResponse getCurrentUser(com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCurrentUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.scalekit.grpc.scalekit.v1.users.ListUsersResponse listUsers(com.scalekit.grpc.scalekit.v1.users.ListUsersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListUsersMethod(), getCallOptions(), request);
@@ -1031,6 +1084,14 @@ public final class UserServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.users.GetUserResponse> getCurrentUser(
+        com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCurrentUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.users.ListUsersResponse> listUsers(
         com.scalekit.grpc.scalekit.v1.users.ListUsersRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -1163,21 +1224,22 @@ public final class UserServiceGrpc {
   }
 
   private static final int METHODID_GET_USER = 0;
-  private static final int METHODID_LIST_USERS = 1;
-  private static final int METHODID_SEARCH_USERS = 2;
-  private static final int METHODID_SEARCH_ORGANIZATION_USERS = 3;
-  private static final int METHODID_UPDATE_USER = 4;
-  private static final int METHODID_DELETE_USER = 5;
-  private static final int METHODID_CREATE_MEMBERSHIP = 6;
-  private static final int METHODID_DELETE_MEMBERSHIP = 7;
-  private static final int METHODID_UPDATE_MEMBERSHIP = 8;
-  private static final int METHODID_CREATE_USER_AND_MEMBERSHIP = 9;
-  private static final int METHODID_LIST_ORGANIZATION_USERS = 10;
-  private static final int METHODID_RESEND_INVITE = 11;
-  private static final int METHODID_LIST_USER_ROLES = 12;
-  private static final int METHODID_ASSIGN_USER_ROLES = 13;
-  private static final int METHODID_REMOVE_USER_ROLE = 14;
-  private static final int METHODID_LIST_USER_PERMISSIONS = 15;
+  private static final int METHODID_GET_CURRENT_USER = 1;
+  private static final int METHODID_LIST_USERS = 2;
+  private static final int METHODID_SEARCH_USERS = 3;
+  private static final int METHODID_SEARCH_ORGANIZATION_USERS = 4;
+  private static final int METHODID_UPDATE_USER = 5;
+  private static final int METHODID_DELETE_USER = 6;
+  private static final int METHODID_CREATE_MEMBERSHIP = 7;
+  private static final int METHODID_DELETE_MEMBERSHIP = 8;
+  private static final int METHODID_UPDATE_MEMBERSHIP = 9;
+  private static final int METHODID_CREATE_USER_AND_MEMBERSHIP = 10;
+  private static final int METHODID_LIST_ORGANIZATION_USERS = 11;
+  private static final int METHODID_RESEND_INVITE = 12;
+  private static final int METHODID_LIST_USER_ROLES = 13;
+  private static final int METHODID_ASSIGN_USER_ROLES = 14;
+  private static final int METHODID_REMOVE_USER_ROLE = 15;
+  private static final int METHODID_LIST_USER_PERMISSIONS = 16;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1198,6 +1260,10 @@ public final class UserServiceGrpc {
       switch (methodId) {
         case METHODID_GET_USER:
           serviceImpl.getUser((com.scalekit.grpc.scalekit.v1.users.GetUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetUserResponse>) responseObserver);
+          break;
+        case METHODID_GET_CURRENT_USER:
+          serviceImpl.getCurrentUser((com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetUserResponse>) responseObserver);
           break;
         case METHODID_LIST_USERS:
@@ -1285,6 +1351,13 @@ public final class UserServiceGrpc {
               com.scalekit.grpc.scalekit.v1.users.GetUserRequest,
               com.scalekit.grpc.scalekit.v1.users.GetUserResponse>(
                 service, METHODID_GET_USER)))
+        .addMethod(
+          getGetCurrentUserMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest,
+              com.scalekit.grpc.scalekit.v1.users.GetUserResponse>(
+                service, METHODID_GET_CURRENT_USER)))
         .addMethod(
           getListUsersMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1439,6 +1512,7 @@ public final class UserServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new UserServiceFileDescriptorSupplier())
               .addMethod(getGetUserMethod())
+              .addMethod(getGetCurrentUserMethod())
               .addMethod(getListUsersMethod())
               .addMethod(getSearchUsersMethod())
               .addMethod(getSearchOrganizationUsersMethod())

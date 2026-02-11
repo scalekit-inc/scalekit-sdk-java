@@ -4,8 +4,8 @@
 // Protobuf Java Version: 3.25.3
 package com.scalekit.grpc.scalekit.v1.tokens;
 
-public interface RegenerateTokenRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:scalekit.v1.tokens.RegenerateTokenRequest)
+public interface FetchTokenRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:scalekit.v1.tokens.FetchTokenRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**

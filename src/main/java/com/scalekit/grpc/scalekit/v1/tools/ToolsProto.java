@@ -269,7 +269,7 @@ public final class ToolsProto {
       "ls.ScopedToolR\005tools\"z\n\020ScopedToolFilter" +
       "\022\034\n\tproviders\030\001 \003(\tR\tproviders\022\035\n\ntool_n" +
       "ames\030\002 \003(\tR\ttoolNames\022)\n\020connection_name" +
-      "s\030\003 \003(\tR\017connectionNames2\310\024\n\013ToolService" +
+      "s\030\003 \003(\tR\017connectionNames2\341\024\n\013ToolService" +
       "\022\362\001\n\nCreateTool\022$.scalekit.v1.tools.Crea" +
       "teToolRequest\032%.scalekit.v1.tools.Create" +
       "ToolResponse\"\226\001\222Ac\n\005Tools\022\021Create a new " +
@@ -281,7 +281,7 @@ public final class ToolsProto {
       "tToolsResponse\"\241\001\222At\n\005Tools\022\nList tools\032" +
       "_Fetch tools by provider, identifier, an" +
       "d connector. If `summary=true`, returns " +
-      "only tool names.\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
+      "only tool names.\202\265\030\002\030d\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
       "\223\002\017\022\r/api/v1/tools\022\233\001\n\017ListScopedTools\022)" +
       ".scalekit.v1.tools.ListScopedToolsReques" +
       "t\032*.scalekit.v1.tools.ListScopedToolsRes" +
@@ -334,13 +334,14 @@ public final class ToolsProto {
       " does not existJ}\n\003500\022v\ntTool execution" +
       " failed - occurs when the external servi" +
       "ce returns an error or the tool encounte" +
-      "rs a runtime exception\202\265\030\002\030t\202\323\344\223\002\031\"\024/api" +
-      "/v1/execute_tool:\001*B\310\001\n#com.scalekit.grp" +
-      "c.scalekit.v1.toolsB\nToolsProtoP\001Z/githu" +
-      "b.com/scalekit-inc/scalekit/pkg/grpc/too" +
-      "ls\242\002\003SVT\252\002\021Scalekit.V1.Tools\312\002\021Scalekit\\" +
-      "V1\\Tools\342\002\035Scalekit\\V1\\Tools\\GPBMetadata" +
-      "\352\002\023Scalekit::V1::Toolsb\006proto3"
+      "rs a runtime exception\202\265\030\002\030d\202\323\344\223\002\031\"\024/api" +
+      "/v1/execute_tool:\001*\032\027\222A\024\n\022Connected Acco" +
+      "untsB\310\001\n#com.scalekit.grpc.scalekit.v1.t" +
+      "oolsB\nToolsProtoP\001Z/github.com/scalekit-" +
+      "inc/scalekit/pkg/grpc/tools\242\002\003SVT\252\002\021Scal" +
+      "ekit.V1.Tools\312\002\021Scalekit\\V1\\Tools\342\002\035Scal" +
+      "ekit\\V1\\Tools\\GPBMetadata\352\002\023Scalekit::V1" +
+      "::Toolsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -466,6 +467,7 @@ public final class ToolsProto {
     registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Tag);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

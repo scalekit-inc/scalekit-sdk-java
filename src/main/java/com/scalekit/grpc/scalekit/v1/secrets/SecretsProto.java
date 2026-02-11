@@ -134,23 +134,23 @@ public final class SecretsProto {
       "INTERCEPTOR\020\001\022\r\n\tDIRECTORY\020\0022\233\006\n\rSecretS" +
       "ervice\022\231\001\n\014CreateSecret\022(.scalekit.v1.se" +
       "crets.CreateSecretRequest\032).scalekit.v1." +
-      "secrets.CreateSecretResponse\"4\202\265\030\002\030T\372\322\344\223" +
+      "secrets.CreateSecretResponse\"4\202\265\030\002\030D\372\322\344\223" +
       "\002\t\022\007PREVIEW\202\323\344\223\002\031\"\017/api/v1/secrets:\006secr" +
       "et\022\235\001\n\014RotateSecret\022(.scalekit.v1.secret" +
       "s.RotateSecretRequest\032).scalekit.v1.secr" +
-      "ets.RotateSecretResponse\"8\202\265\030\002\030T\372\322\344\223\002\t\022\007" +
+      "ets.RotateSecretResponse\"8\202\265\030\002\030D\372\322\344\223\002\t\022\007" +
       "PREVIEW\202\323\344\223\002\035\"\033/api/v1/secrets/{id}:rota" +
       "te\022\215\001\n\tGetSecret\022%.scalekit.v1.secrets.G" +
       "etSecretRequest\032&.scalekit.v1.secrets.Ge" +
-      "tSecretResponse\"1\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323" +
+      "tSecretResponse\"1\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323" +
       "\344\223\002\026\022\024/api/v1/secrets/{id}\022\267\001\n\013ListSecre" +
       "ts\022\'.scalekit.v1.secrets.ListSecretsRequ" +
       "est\032(.scalekit.v1.secrets.ListSecretsRes" +
       "ponse\"U\222A&\022\014List secrets\032\026List available" +
-      " secrets\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\021\022\017/ap" +
+      " secrets\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\021\022\017/ap" +
       "i/v1/secrets\022\203\001\n\014DeleteSecret\022(.scalekit" +
       ".v1.secrets.DeleteSecretRequest\032\026.google" +
-      ".protobuf.Empty\"1\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323" +
+      ".protobuf.Empty\"1\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323" +
       "\344\223\002\026*\024/api/v1/secrets/{id}B\326\001\n%com.scale" +
       "kit.grpc.scalekit.v1.secretsB\014SecretsPro" +
       "toP\001Z1github.com/scalekit-inc/scalekit/p" +

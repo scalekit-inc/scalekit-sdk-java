@@ -138,24 +138,24 @@ public final class TotpProto {
       "\n\013TOTPService\022\253\001\n\014RegisterTOTP\022..scaleki" +
       "t.v1.auth.totp.TOTPRegistrationRequest\032/" +
       ".scalekit.v1.auth.totp.TOTPRegistrationR" +
-      "esponse\":\202\265\030\002\030t\202\323\344\223\002.\"\031/api/v1/totp/regi" +
+      "esponse\":\202\265\030\002\030D\202\323\344\223\002.\"\031/api/v1/totp/regi" +
       "stration:\021totp_registration\022\261\001\n\nEnableTO" +
       "TP\0224.scalekit.v1.auth.totp.EnableRegistr" +
       "ationTOTPRequest\0325.scalekit.v1.auth.totp" +
-      ".EnableRegistrationTOTPResponse\"6\202\265\030\002\030t\202" +
+      ".EnableRegistrationTOTPResponse\"6\202\265\030\002\030D\202" +
       "\323\344\223\002*\"%/api/v1/totp/{registration_id}/en" +
       "able:\001*\022\236\001\n\016VerifyUserCode\022,.scalekit.v1" +
       ".auth.totp.VerifyUserCodeRequest\032).scale" +
       "kit.v1.auth.totp.VerifyCodeResponse\"3\202\265\030" +
-      "\002\030t\202\323\344\223\002\'\"\"/api/v1/user/{user_id}/totp:v" +
+      "\002\030D\202\323\344\223\002\'\"\"/api/v1/user/{user_id}/totp:v" +
       "erify:\001*\022\261\001\n\026VerifyRegistrationCode\0224.sc" +
       "alekit.v1.auth.totp.VerifyRegistrationCo" +
       "deRequest\032).scalekit.v1.auth.totp.Verify" +
-      "CodeResponse\"6\202\265\030\002\030t\202\323\344\223\002*\"%/api/v1/totp" +
+      "CodeResponse\"6\202\265\030\002\030D\202\323\344\223\002*\"%/api/v1/totp" +
       "/{registration_id}/verify:\001*\022\225\001\n\013Disable" +
       "TOTP\0225.scalekit.v1.auth.totp.DisableRegi" +
       "strationTOTPRequest\032\026.google.protobuf.Em" +
-      "pty\"7\202\265\030\002\030t\202\323\344\223\002+\"&/api/v1/totp/{registr" +
+      "pty\"7\202\265\030\002\030D\202\323\344\223\002+\"&/api/v1/totp/{registr" +
       "ation_id}/disable:\001*B\341\001\n\'com.scalekit.gr" +
       "pc.scalekit.v1.auth.totpB\tTotpProtoP\001Z3g" +
       "ithub.com/scalekit-inc/scalekit/pkg/grpc" +

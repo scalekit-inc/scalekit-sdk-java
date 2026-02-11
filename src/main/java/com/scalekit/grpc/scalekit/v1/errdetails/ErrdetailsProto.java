@@ -105,11 +105,12 @@ public final class ErrdetailsProto {
       "on\030\002 \001(\tR\013description\022\036\n\nconstraint\030\003 \001(" +
       "\tR\nconstraint\"O\n\013RequestInfo\022\035\n\nrequest_" +
       "id\030\001 \001(\tR\trequestId\022!\n\014serving_data\030\002 \001(" +
-      "\tR\013servingData\"\220\001\n\014ResourceInfo\022#\n\rresou" +
-      "rce_type\030\001 \001(\tR\014resourceType\022#\n\rresource" +
-      "_name\030\002 \001(\tR\014resourceName\022\024\n\005owner\030\003 \001(\t" +
-      "R\005owner\022 \n\013description\030\004 \001(\tR\013descriptio" +
-      "n\"\203\001\n\010HelpInfo\022;\n\005links\030\001 \003(\0132%.scalekit" +
+      "\tR\013servingData\"\270\001\n\014ResourceInfo\022#\n\rresou" +
+      "rce_name\030\002 \001(\tR\014resourceName\022\024\n\005owner\030\003 " +
+      "\001(\tR\005owner\022 \n\013description\030\004 \001(\tR\013descrip" +
+      "tion\0221\n\024required_permissions\030\005 \003(\tR\023requ" +
+      "iredPermissions\022\022\n\004user\030\006 \001(\tR\004userJ\004\010\001\020" +
+      "\002\"\203\001\n\010HelpInfo\022;\n\005links\030\001 \003(\0132%.scalekit" +
       ".v1.errdetails.HelpInfo.LinkR\005links\032:\n\004L" +
       "ink\022 \n\013description\030\001 \001(\tR\013description\022\020\n" +
       "\003url\030\002 \001(\tR\003url\"H\n\024LocalizedMessageInfo\022" +
@@ -165,7 +166,7 @@ public final class ErrdetailsProto {
     internal_static_scalekit_v1_errdetails_ResourceInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_errdetails_ResourceInfo_descriptor,
-        new java.lang.String[] { "ResourceType", "ResourceName", "Owner", "Description", });
+        new java.lang.String[] { "ResourceName", "Owner", "Description", "RequiredPermissions", "User", });
     internal_static_scalekit_v1_errdetails_HelpInfo_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_scalekit_v1_errdetails_HelpInfo_fieldAccessorTable = new
