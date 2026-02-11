@@ -2,6 +2,8 @@ package com.scalekit.api.impl;
 
 import com.scalekit.Environment;
 import com.scalekit.api.TokenClient;
+import com.scalekit.exceptions.APIException;
+import com.scalekit.exceptions.TokenInvalidException;
 import com.scalekit.grpc.scalekit.v1.tokens.*;
 import com.scalekit.internal.RetryExecuter;
 import com.scalekit.internal.ScalekitCredentials;
@@ -96,15 +98,19 @@ public class ScalekitTokenClient implements TokenClient {
         if (token == null || token.isEmpty()) {
             throw new IllegalArgumentException("token is required");
         }
-        return RetryExecuter.executeWithRetry(() -> {
-            ValidateTokenRequest request = ValidateTokenRequest.newBuilder()
-                    .setToken(token)
-                    .build();
+        try {
+            return RetryExecuter.executeWithRetry(() -> {
+                ValidateTokenRequest request = ValidateTokenRequest.newBuilder()
+                        .setToken(token)
+                        .build();
 
-            return this.tokenStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
-                    .validateToken(request);
-        }, this.credentials);
+                return this.tokenStub
+                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .validateToken(request);
+            }, this.credentials);
+        } catch (APIException e) {
+            throw new TokenInvalidException(e.getMessage());
+        }
     }
 
     /**
