@@ -2,7 +2,7 @@
 
 ## ScalekitClient
 
-<details><summary><code>new <a href="/src/main/java/com/scalekit/ScalekitClient.java">ScalekitClient</a>(siteName, clientId, clientSecret) -> ScalekitClient</code></summary>
+<details><summary><code>new <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">ScalekitClient</a>(siteName, clientId, clientSecret) -> ScalekitClient</code></summary>
 <dl>
 <dd>
 
@@ -78,7 +78,7 @@ ScalekitClient client = new ScalekitClient(
 </dl>
 </details>
 
-<details><summary><code>client.<a href="/src/main/java/com/scalekit/ScalekitClient.java">organizations</a>() -> OrganizationClient</code></summary>
+<details><summary><code>client.<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">organizations</a>() -> OrganizationClient</code></summary>
 <dl>
 <dd>
 
@@ -90,7 +90,7 @@ ScalekitClient client = new ScalekitClient(
 <dl>
 <dd>
 
-Returns an <a href="/src/main/java/com/scalekit/api/OrganizationClient.java">OrganizationClient</a> for managing organizations (tenants).
+Returns an <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/OrganizationClient.java">OrganizationClient</a> for managing organizations (tenants).
 </dd>
 </dl>
 </dd>
@@ -132,7 +132,7 @@ This method takes no parameters.
 </dl>
 </details>
 
-<details><summary><code>client.<a href="/src/main/java/com/scalekit/ScalekitClient.java">connections</a>() -> ConnectionClient</code></summary>
+<details><summary><code>client.<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">connections</a>() -> ConnectionClient</code></summary>
 <dl>
 <dd>
 
@@ -144,7 +144,7 @@ This method takes no parameters.
 <dl>
 <dd>
 
-Returns a <a href="/src/main/java/com/scalekit/api/ConnectionClient.java">ConnectionClient</a> for managing SSO connections.
+Returns a <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ConnectionClient.java">ConnectionClient</a> for managing SSO connections.
 </dd>
 </dl>
 </dd>
@@ -186,7 +186,7 @@ This method takes no parameters.
 </dl>
 </details>
 
-<details><summary><code>client.<a href="/src/main/java/com/scalekit/ScalekitClient.java">users</a>() -> UserClient</code></summary>
+<details><summary><code>client.<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">users</a>() -> UserClient</code></summary>
 <dl>
 <dd>
 
@@ -198,7 +198,7 @@ This method takes no parameters.
 <dl>
 <dd>
 
-Returns a <a href="/src/main/java/com/scalekit/api/UserClient.java">UserClient</a> for managing users and org memberships.
+Returns a <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/UserClient.java">UserClient</a> for managing users and org memberships.
 </dd>
 </dl>
 </dd>
@@ -240,7 +240,7 @@ This method takes no parameters.
 </dl>
 </details>
 
-<details><summary><code>client.<a href="/src/main/java/com/scalekit/ScalekitClient.java">domains</a>() -> DomainClient</code></summary>
+<details><summary><code>client.<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">domains</a>() -> DomainClient</code></summary>
 <dl>
 <dd>
 
@@ -252,7 +252,7 @@ This method takes no parameters.
 <dl>
 <dd>
 
-Returns a <a href="/src/main/java/com/scalekit/api/DomainClient.java">DomainClient</a> for managing organization domains.
+Returns a <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DomainClient.java">DomainClient</a> for managing organization domains.
 </dd>
 </dl>
 </dd>
@@ -294,7 +294,7 @@ This method takes no parameters.
 </dl>
 </details>
 
-<details><summary><code>client.<a href="/src/main/java/com/scalekit/ScalekitClient.java">directories</a>() -> DirectoryClient</code></summary>
+<details><summary><code>client.<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">directories</a>() -> DirectoryClient</code></summary>
 <dl>
 <dd>
 
@@ -306,7 +306,7 @@ This method takes no parameters.
 <dl>
 <dd>
 
-Returns a <a href="/src/main/java/com/scalekit/api/DirectoryClient.java">DirectoryClient</a> for managing directories and directory resources (users/groups).
+Returns a <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DirectoryClient.java">DirectoryClient</a> for managing directories and directory resources (users/groups).
 </dd>
 </dl>
 </dd>
@@ -348,7 +348,7 @@ This method takes no parameters.
 </dl>
 </details>
 
-<details><summary><code>client.<a href="/src/main/java/com/scalekit/ScalekitClient.java">sessions</a>() -> SessionClient</code></summary>
+<details><summary><code>client.<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">sessions</a>() -> SessionClient</code></summary>
 <dl>
 <dd>
 
@@ -360,7 +360,7 @@ This method takes no parameters.
 <dl>
 <dd>
 
-Returns a <a href="/src/main/java/com/scalekit/api/SessionClient.java">SessionClient</a> for session retrieval and revocation.
+Returns a <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/SessionClient.java">SessionClient</a> for session retrieval and revocation.
 </dd>
 </dl>
 </dd>
@@ -402,7 +402,7 @@ This method takes no parameters.
 </dl>
 </details>
 
-<details><summary><code>client.<a href="/src/main/java/com/scalekit/ScalekitClient.java">roles</a>() -> RoleClient</code></summary>
+<details><summary><code>client.<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">roles</a>() -> RoleClient</code></summary>
 <dl>
 <dd>
 
@@ -414,7 +414,7 @@ This method takes no parameters.
 <dl>
 <dd>
 
-Returns a <a href="/src/main/java/com/scalekit/api/RoleClient.java">RoleClient</a> for environment and organization role management.
+Returns a <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/RoleClient.java">RoleClient</a> for environment and organization role management.
 </dd>
 </dl>
 </dd>
@@ -456,7 +456,7 @@ This method takes no parameters.
 </dl>
 </details>
 
-<details><summary><code>client.<a href="/src/main/java/com/scalekit/ScalekitClient.java">permissions</a>() -> PermissionClient</code></summary>
+<details><summary><code>client.<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">permissions</a>() -> PermissionClient</code></summary>
 <dl>
 <dd>
 
@@ -468,7 +468,7 @@ This method takes no parameters.
 <dl>
 <dd>
 
-Returns a <a href="/src/main/java/com/scalekit/api/PermissionClient.java">PermissionClient</a> for permission management and role-permission relationships.
+Returns a <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/PermissionClient.java">PermissionClient</a> for permission management and role-permission relationships.
 </dd>
 </dl>
 </dd>
@@ -510,7 +510,7 @@ This method takes no parameters.
 </dl>
 </details>
 
-<details><summary><code>client.<a href="/src/main/java/com/scalekit/ScalekitClient.java">passwordless</a>() -> PasswordlessClient</code></summary>
+<details><summary><code>client.<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">passwordless</a>() -> PasswordlessClient</code></summary>
 <dl>
 <dd>
 
@@ -522,7 +522,7 @@ This method takes no parameters.
 <dl>
 <dd>
 
-Returns a <a href="/src/main/java/com/scalekit/api/PasswordlessClient.java">PasswordlessClient</a> for passwordless auth flows (magic links / OTP).
+Returns a <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/PasswordlessClient.java">PasswordlessClient</a> for passwordless auth flows (magic links / OTP).
 </dd>
 </dl>
 </dd>
@@ -564,7 +564,7 @@ This method takes no parameters.
 </dl>
 </details>
 
-<details><summary><code>client.<a href="/src/main/java/com/scalekit/ScalekitClient.java">webAuthn</a>() -> WebAuthnClient</code></summary>
+<details><summary><code>client.<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">webAuthn</a>() -> WebAuthnClient</code></summary>
 <dl>
 <dd>
 
@@ -576,7 +576,7 @@ This method takes no parameters.
 <dl>
 <dd>
 
-Returns a <a href="/src/main/java/com/scalekit/api/WebAuthnClient.java">WebAuthnClient</a> for WebAuthn credential management.
+Returns a <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/WebAuthnClient.java">WebAuthnClient</a> for WebAuthn credential management.
 </dd>
 </dl>
 </dd>
@@ -618,7 +618,7 @@ This method takes no parameters.
 </dl>
 </details>
 
-<details><summary><code>client.<a href="/src/main/java/com/scalekit/ScalekitClient.java">authentication</a>() -> AuthClient</code></summary>
+<details><summary><code>client.<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">authentication</a>() -> AuthClient</code></summary>
 <dl>
 <dd>
 
@@ -630,7 +630,7 @@ This method takes no parameters.
 <dl>
 <dd>
 
-Returns an <a href="/src/main/java/com/scalekit/api/AuthClient.java">AuthClient</a> for OAuth flows, token validation, and token exchange.
+Returns an <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/AuthClient.java">AuthClient</a> for OAuth flows, token validation, and token exchange.
 </dd>
 </dl>
 </dd>
@@ -672,7 +672,7 @@ This method takes no parameters.
 </dl>
 </details>
 
-<details><summary><code>client.<a href="/src/main/java/com/scalekit/ScalekitClient.java">webhook</a>() -> Webhook</code></summary>
+<details><summary><code>client.<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">webhook</a>() -> Webhook</code></summary>
 <dl>
 <dd>
 
@@ -684,7 +684,7 @@ This method takes no parameters.
 <dl>
 <dd>
 
-Returns a <a href="/src/main/java/com/scalekit/webhooks/Webhook.java">Webhook</a> verifier for validating Scalekit webhook payload signatures.
+Returns a <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/webhooks/Webhook.java">Webhook</a> verifier for validating Scalekit webhook payload signatures.
 </dd>
 </dl>
 </dd>
@@ -732,7 +732,7 @@ This method takes no parameters.
 </dl>
 </details>
 
-<details><summary><code>client.webhook().<a href="/src/main/java/com/scalekit/webhooks/Webhook.java">verifyWebhookPayload</a>(secret, headers, payload) -> boolean</code></summary>
+<details><summary><code>client.webhook().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/webhooks/Webhook.java">verifyWebhookPayload</a>(secret, headers, payload) -> boolean</code></summary>
 <dl>
 <dd>
 
@@ -813,7 +813,7 @@ boolean isValid = client.webhook().verifyWebhookPayload("whsec_...", headers, pa
 </dl>
 </details>
 
-<details><summary><code>new <a href="/src/main/java/com/scalekit/webhooks/ScalekitInterceptor.java">ScalekitInterceptor</a>().verifyInterceptorPayload(secret, headers, payload) -> boolean</code></summary>
+<details><summary><code>new <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/webhooks/ScalekitInterceptor.java">ScalekitInterceptor</a>().verifyInterceptorPayload(secret, headers, payload) -> boolean</code></summary>
 <dl>
 <dd>
 
@@ -899,7 +899,7 @@ boolean isValid = interceptor.verifyInterceptorPayload("insec_...", headers, pay
 
 ## Organizations
 
-<details><summary><code>client.organizations().<a href="/src/main/java/com/scalekit/api/OrganizationClient.java">create</a>(organization) -> Organization</code></summary>
+<details><summary><code>client.organizations().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/OrganizationClient.java">create</a>(organization) -> Organization</code></summary>
 <dl>
 <dd>
 
@@ -960,7 +960,7 @@ Organization org = client.organizations().create(req);
 </dl>
 </details>
 
-<details><summary><code>client.organizations().<a href="/src/main/java/com/scalekit/api/OrganizationClient.java">getById</a>(id) -> Organization</code></summary>
+<details><summary><code>client.organizations().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/OrganizationClient.java">getById</a>(id) -> Organization</code></summary>
 <dl>
 <dd>
 
@@ -1014,7 +1014,7 @@ client.organizations().getById("org_123");
 </dl>
 </details>
 
-<details><summary><code>client.organizations().<a href="/src/main/java/com/scalekit/api/OrganizationClient.java">getByExternalId</a>(externalId) -> Organization</code></summary>
+<details><summary><code>client.organizations().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/OrganizationClient.java">getByExternalId</a>(externalId) -> Organization</code></summary>
 <dl>
 <dd>
 
@@ -1068,7 +1068,7 @@ client.organizations().getByExternalId("customer_123");
 </dl>
 </details>
 
-<details><summary><code>client.organizations().<a href="/src/main/java/com/scalekit/api/OrganizationClient.java">updateById</a>(id, organization) -> Organization</code></summary>
+<details><summary><code>client.organizations().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/OrganizationClient.java">updateById</a>(id, organization) -> Organization</code></summary>
 <dl>
 <dd>
 
@@ -1136,7 +1136,7 @@ client.organizations().updateById("org_123", req);
 </dl>
 </details>
 
-<details><summary><code>client.organizations().<a href="/src/main/java/com/scalekit/api/OrganizationClient.java">updateByExternalId</a>(externalId, organization) -> Organization</code></summary>
+<details><summary><code>client.organizations().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/OrganizationClient.java">updateByExternalId</a>(externalId, organization) -> Organization</code></summary>
 <dl>
 <dd>
 
@@ -1204,7 +1204,7 @@ client.organizations().updateByExternalId("customer_123", req);
 </dl>
 </details>
 
-<details><summary><code>client.organizations().<a href="/src/main/java/com/scalekit/api/OrganizationClient.java">deleteById</a>(id) -> void</code></summary>
+<details><summary><code>client.organizations().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/OrganizationClient.java">deleteById</a>(id) -> void</code></summary>
 <dl>
 <dd>
 
@@ -1258,7 +1258,7 @@ client.organizations().deleteById("org_123");
 </dl>
 </details>
 
-<details><summary><code>client.organizations().<a href="/src/main/java/com/scalekit/api/OrganizationClient.java">deleteByExternalId</a>(externalId) -> void</code></summary>
+<details><summary><code>client.organizations().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/OrganizationClient.java">deleteByExternalId</a>(externalId) -> void</code></summary>
 <dl>
 <dd>
 
@@ -1312,7 +1312,7 @@ client.organizations().deleteByExternalId("customer_123");
 </dl>
 </details>
 
-<details><summary><code>client.organizations().<a href="/src/main/java/com/scalekit/api/OrganizationClient.java">listOrganizations</a>(pageSize, pageToken) -> ListOrganizationsResponse</code></summary>
+<details><summary><code>client.organizations().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/OrganizationClient.java">listOrganizations</a>(pageSize, pageToken) -> ListOrganizationsResponse</code></summary>
 <dl>
 <dd>
 
@@ -1374,7 +1374,7 @@ client.organizations().listOrganizations(20, "");
 </dl>
 </details>
 
-<details><summary><code>client.organizations().<a href="/src/main/java/com/scalekit/api/OrganizationClient.java">generatePortalLink</a>(organizationId) -> Link</code></summary>
+<details><summary><code>client.organizations().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/OrganizationClient.java">generatePortalLink</a>(organizationId) -> Link</code></summary>
 <dl>
 <dd>
 
@@ -1428,7 +1428,7 @@ client.organizations().generatePortalLink("org_123");
 </dl>
 </details>
 
-<details><summary><code>client.organizations().<a href="/src/main/java/com/scalekit/api/OrganizationClient.java">generatePortalLink</a>(organizationId, features) -> Link</code></summary>
+<details><summary><code>client.organizations().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/OrganizationClient.java">generatePortalLink</a>(organizationId, features) -> Link</code></summary>
 <dl>
 <dd>
 
@@ -1496,7 +1496,7 @@ client.organizations().generatePortalLink(
 </dl>
 </details>
 
-<details><summary><code>client.organizations().<a href="/src/main/java/com/scalekit/api/OrganizationClient.java">updateOrganizationSettings</a>(organizationId, settings) -> Organization</code></summary>
+<details><summary><code>client.organizations().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/OrganizationClient.java">updateOrganizationSettings</a>(organizationId, settings) -> Organization</code></summary>
 <dl>
 <dd>
 
@@ -1564,7 +1564,7 @@ client.organizations().updateOrganizationSettings(
 </dl>
 </details>
 
-<details><summary><code>client.organizations().<a href="/src/main/java/com/scalekit/api/OrganizationClient.java">upsertUserManagementSettings</a>(organizationId, settings) -> OrganizationUserManagementSettings</code></summary>
+<details><summary><code>client.organizations().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/OrganizationClient.java">upsertUserManagementSettings</a>(organizationId, settings) -> OrganizationUserManagementSettings</code></summary>
 <dl>
 <dd>
 
@@ -1633,7 +1633,7 @@ client.organizations().upsertUserManagementSettings("org_123", settings);
 
 ## Connections
 
-<details><summary><code>client.connections().<a href="/src/main/java/com/scalekit/api/ConnectionClient.java">getConnectionById</a>(connectionId, organizationId) -> Connection</code></summary>
+<details><summary><code>client.connections().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ConnectionClient.java">getConnectionById</a>(connectionId, organizationId) -> Connection</code></summary>
 <dl>
 <dd>
 
@@ -1695,7 +1695,7 @@ client.connections().getConnectionById("conn_123", "org_123");
 </dl>
 </details>
 
-<details><summary><code>client.connections().<a href="/src/main/java/com/scalekit/api/ConnectionClient.java">listConnectionsByDomain</a>(domain) -> ListConnectionsResponse</code></summary>
+<details><summary><code>client.connections().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ConnectionClient.java">listConnectionsByDomain</a>(domain) -> ListConnectionsResponse</code></summary>
 <dl>
 <dd>
 
@@ -1749,7 +1749,7 @@ client.connections().listConnectionsByDomain("acme.com");
 </dl>
 </details>
 
-<details><summary><code>client.connections().<a href="/src/main/java/com/scalekit/api/ConnectionClient.java">listConnectionsByOrganization</a>(organizationId) -> ListConnectionsResponse</code></summary>
+<details><summary><code>client.connections().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ConnectionClient.java">listConnectionsByOrganization</a>(organizationId) -> ListConnectionsResponse</code></summary>
 <dl>
 <dd>
 
@@ -1803,7 +1803,7 @@ client.connections().listConnectionsByOrganization("org_123");
 </dl>
 </details>
 
-<details><summary><code>client.connections().<a href="/src/main/java/com/scalekit/api/ConnectionClient.java">enableConnection</a>(connectionId, organizationId) -> ToggleConnectionResponse</code></summary>
+<details><summary><code>client.connections().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ConnectionClient.java">enableConnection</a>(connectionId, organizationId) -> ToggleConnectionResponse</code></summary>
 <dl>
 <dd>
 
@@ -1865,7 +1865,7 @@ client.connections().enableConnection("conn_123", "org_123");
 </dl>
 </details>
 
-<details><summary><code>client.connections().<a href="/src/main/java/com/scalekit/api/ConnectionClient.java">disableConnection</a>(connectionId, organizationId) -> ToggleConnectionResponse</code></summary>
+<details><summary><code>client.connections().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ConnectionClient.java">disableConnection</a>(connectionId, organizationId) -> ToggleConnectionResponse</code></summary>
 <dl>
 <dd>
 
@@ -1927,7 +1927,7 @@ client.connections().disableConnection("conn_123", "org_123");
 </dl>
 </details>
 
-<details><summary><code>client.connections().<a href="/src/main/java/com/scalekit/api/ConnectionClient.java">createConnection</a>(organizationId, connection) -> Connection</code></summary>
+<details><summary><code>client.connections().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ConnectionClient.java">createConnection</a>(organizationId, connection) -> Connection</code></summary>
 <dl>
 <dd>
 
@@ -1995,7 +1995,7 @@ client.connections().createConnection("org_123", req);
 </dl>
 </details>
 
-<details><summary><code>client.connections().<a href="/src/main/java/com/scalekit/api/ConnectionClient.java">deleteConnection</a>(connectionId, organizationId) -> void</code></summary>
+<details><summary><code>client.connections().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ConnectionClient.java">deleteConnection</a>(connectionId, organizationId) -> void</code></summary>
 <dl>
 <dd>
 
@@ -2059,7 +2059,7 @@ client.connections().deleteConnection("conn_123", "org_123");
 
 ## Users
 
-<details><summary><code>client.users().<a href="/src/main/java/com/scalekit/api/UserClient.java">createUserAndMembership</a>(organizationId, request) -> CreateUserAndMembershipResponse</code></summary>
+<details><summary><code>client.users().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/UserClient.java">createUserAndMembership</a>(organizationId, request) -> CreateUserAndMembershipResponse</code></summary>
 <dl>
 <dd>
 
@@ -2127,7 +2127,7 @@ client.users().createUserAndMembership("org_123", req);
 </dl>
 </details>
 
-<details><summary><code>client.users().<a href="/src/main/java/com/scalekit/api/UserClient.java">getUser</a>(userId) -> GetUserResponse</code></summary>
+<details><summary><code>client.users().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/UserClient.java">getUser</a>(userId) -> GetUserResponse</code></summary>
 <dl>
 <dd>
 
@@ -2181,7 +2181,7 @@ client.users().getUser("user_123");
 </dl>
 </details>
 
-<details><summary><code>client.users().<a href="/src/main/java/com/scalekit/api/UserClient.java">listUsers</a>(request) -> ListUsersResponse</code></summary>
+<details><summary><code>client.users().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/UserClient.java">listUsers</a>(request) -> ListUsersResponse</code></summary>
 <dl>
 <dd>
 
@@ -2241,7 +2241,7 @@ client.users().listUsers(req);
 </dl>
 </details>
 
-<details><summary><code>client.users().<a href="/src/main/java/com/scalekit/api/UserClient.java">updateUser</a>(userId, request) -> UpdateUserResponse</code></summary>
+<details><summary><code>client.users().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/UserClient.java">updateUser</a>(userId, request) -> UpdateUserResponse</code></summary>
 <dl>
 <dd>
 
@@ -2309,7 +2309,7 @@ client.users().updateUser("user_123", req);
 </dl>
 </details>
 
-<details><summary><code>client.users().<a href="/src/main/java/com/scalekit/api/UserClient.java">deleteUser</a>(userId) -> void</code></summary>
+<details><summary><code>client.users().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/UserClient.java">deleteUser</a>(userId) -> void</code></summary>
 <dl>
 <dd>
 
@@ -2363,7 +2363,7 @@ client.users().deleteUser("user_123");
 </dl>
 </details>
 
-<details><summary><code>client.users().<a href="/src/main/java/com/scalekit/api/UserClient.java">createMembership</a>(organizationId, userId, request) -> CreateMembershipResponse</code></summary>
+<details><summary><code>client.users().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/UserClient.java">createMembership</a>(organizationId, userId, request) -> CreateMembershipResponse</code></summary>
 <dl>
 <dd>
 
@@ -2437,7 +2437,7 @@ client.users().createMembership("org_123", "user_123", req);
 </dl>
 </details>
 
-<details><summary><code>client.users().<a href="/src/main/java/com/scalekit/api/UserClient.java">deleteMembership</a>(organizationId, userId) -> void</code></summary>
+<details><summary><code>client.users().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/UserClient.java">deleteMembership</a>(organizationId, userId) -> void</code></summary>
 <dl>
 <dd>
 
@@ -2499,7 +2499,7 @@ client.users().deleteMembership("org_123", "user_123");
 </dl>
 </details>
 
-<details><summary><code>client.users().<a href="/src/main/java/com/scalekit/api/UserClient.java">updateMembership</a>(organizationId, userId, request) -> UpdateMembershipResponse</code></summary>
+<details><summary><code>client.users().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/UserClient.java">updateMembership</a>(organizationId, userId, request) -> UpdateMembershipResponse</code></summary>
 <dl>
 <dd>
 
@@ -2573,7 +2573,7 @@ client.users().updateMembership("org_123", "user_123", req);
 </dl>
 </details>
 
-<details><summary><code>client.users().<a href="/src/main/java/com/scalekit/api/UserClient.java">listOrganizationUsers</a>(organizationId, request) -> ListOrganizationUsersResponse</code></summary>
+<details><summary><code>client.users().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/UserClient.java">listOrganizationUsers</a>(organizationId, request) -> ListOrganizationUsersResponse</code></summary>
 <dl>
 <dd>
 
@@ -2641,7 +2641,7 @@ client.users().listOrganizationUsers("org_123", req);
 </dl>
 </details>
 
-<details><summary><code>client.users().<a href="/src/main/java/com/scalekit/api/UserClient.java">resendInvite</a>(organizationId, userId) -> ResendInviteResponse</code></summary>
+<details><summary><code>client.users().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/UserClient.java">resendInvite</a>(organizationId, userId) -> ResendInviteResponse</code></summary>
 <dl>
 <dd>
 
@@ -2705,7 +2705,7 @@ client.users().resendInvite("org_123", "user_123");
 
 ## Domains
 
-<details><summary><code>client.domains().<a href="/src/main/java/com/scalekit/api/DomainClient.java">createDomain</a>(organizationId, domainName) -> Domain</code></summary>
+<details><summary><code>client.domains().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DomainClient.java">createDomain</a>(organizationId, domainName) -> Domain</code></summary>
 <dl>
 <dd>
 
@@ -2767,7 +2767,7 @@ client.domains().createDomain("org_123", "acme.com");
 </dl>
 </details>
 
-<details><summary><code>client.domains().<a href="/src/main/java/com/scalekit/api/DomainClient.java">createDomain</a>(organizationId, domainName, domainType) -> Domain</code></summary>
+<details><summary><code>client.domains().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DomainClient.java">createDomain</a>(organizationId, domainName, domainType) -> Domain</code></summary>
 <dl>
 <dd>
 
@@ -2839,7 +2839,7 @@ client.domains().createDomain("org_123", "acme.com", DomainType.DOMAIN_TYPE_PRIM
 </dl>
 </details>
 
-<details><summary><code>client.domains().<a href="/src/main/java/com/scalekit/api/DomainClient.java">createDomain</a>(request) -> Domain</code></summary>
+<details><summary><code>client.domains().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DomainClient.java">createDomain</a>(request) -> Domain</code></summary>
 <dl>
 <dd>
 
@@ -2900,7 +2900,7 @@ client.domains().createDomain(req);
 </dl>
 </details>
 
-<details><summary><code>client.domains().<a href="/src/main/java/com/scalekit/api/DomainClient.java">getDomainById</a>(organizationId, domainId) -> Domain</code></summary>
+<details><summary><code>client.domains().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DomainClient.java">getDomainById</a>(organizationId, domainId) -> Domain</code></summary>
 <dl>
 <dd>
 
@@ -2962,7 +2962,7 @@ client.domains().getDomainById("org_123", "dom_123");
 </dl>
 </details>
 
-<details><summary><code>client.domains().<a href="/src/main/java/com/scalekit/api/DomainClient.java">listDomainsByOrganizationId</a>(organizationId) -> List&lt;Domain&gt;</code></summary>
+<details><summary><code>client.domains().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DomainClient.java">listDomainsByOrganizationId</a>(organizationId) -> List&lt;Domain&gt;</code></summary>
 <dl>
 <dd>
 
@@ -3016,7 +3016,7 @@ client.domains().listDomainsByOrganizationId("org_123");
 </dl>
 </details>
 
-<details><summary><code>client.domains().<a href="/src/main/java/com/scalekit/api/DomainClient.java">listDomainsByOrganizationId</a>(organizationId, domainType) -> List&lt;Domain&gt;</code></summary>
+<details><summary><code>client.domains().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DomainClient.java">listDomainsByOrganizationId</a>(organizationId, domainType) -> List&lt;Domain&gt;</code></summary>
 <dl>
 <dd>
 
@@ -3080,7 +3080,7 @@ client.domains().listDomainsByOrganizationId("org_123", DomainType.DOMAIN_TYPE_P
 </dl>
 </details>
 
-<details><summary><code>client.domains().<a href="/src/main/java/com/scalekit/api/DomainClient.java">deleteDomain</a>(organizationId, domainId) -> void</code></summary>
+<details><summary><code>client.domains().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DomainClient.java">deleteDomain</a>(organizationId, domainId) -> void</code></summary>
 <dl>
 <dd>
 
@@ -3144,7 +3144,7 @@ client.domains().deleteDomain("org_123", "dom_123");
 
 ## Directories
 
-<details><summary><code>client.directories().<a href="/src/main/java/com/scalekit/api/DirectoryClient.java">getDirectory</a>(directoryId, organizationId) -> Directory</code></summary>
+<details><summary><code>client.directories().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DirectoryClient.java">getDirectory</a>(directoryId, organizationId) -> Directory</code></summary>
 <dl>
 <dd>
 
@@ -3206,7 +3206,7 @@ client.directories().getDirectory("dir_123", "org_123");
 </dl>
 </details>
 
-<details><summary><code>client.directories().<a href="/src/main/java/com/scalekit/api/DirectoryClient.java">listDirectories</a>(organizationId) -> ListDirectoriesResponse</code></summary>
+<details><summary><code>client.directories().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DirectoryClient.java">listDirectories</a>(organizationId) -> ListDirectoriesResponse</code></summary>
 <dl>
 <dd>
 
@@ -3260,7 +3260,7 @@ client.directories().listDirectories("org_123");
 </dl>
 </details>
 
-<details><summary><code>client.directories().<a href="/src/main/java/com/scalekit/api/DirectoryClient.java">listDirectoryUsers</a>(directoryId, organizationId, options) -> ListDirectoryUserResponse</code></summary>
+<details><summary><code>client.directories().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DirectoryClient.java">listDirectoryUsers</a>(directoryId, organizationId, options) -> ListDirectoryUserResponse</code></summary>
 <dl>
 <dd>
 
@@ -3342,7 +3342,7 @@ ListDirectoryUserResponse res = client.directories().listDirectoryUsers("dir_123
 </dl>
 </details>
 
-<details><summary><code>client.directories().<a href="/src/main/java/com/scalekit/api/DirectoryClient.java">listDirectoryGroups</a>(directoryId, organizationId, options) -> ListDirectoryGroupResponse</code></summary>
+<details><summary><code>client.directories().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DirectoryClient.java">listDirectoryGroups</a>(directoryId, organizationId, options) -> ListDirectoryGroupResponse</code></summary>
 <dl>
 <dd>
 
@@ -3424,7 +3424,7 @@ ListDirectoryGroupResponse res = client.directories().listDirectoryGroups("dir_1
 </dl>
 </details>
 
-<details><summary><code>client.directories().<a href="/src/main/java/com/scalekit/api/DirectoryClient.java">enableDirectory</a>(directoryId, organizationId) -> ToggleDirectoryResponse</code></summary>
+<details><summary><code>client.directories().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DirectoryClient.java">enableDirectory</a>(directoryId, organizationId) -> ToggleDirectoryResponse</code></summary>
 <dl>
 <dd>
 
@@ -3486,7 +3486,7 @@ client.directories().enableDirectory("dir_123", "org_123");
 </dl>
 </details>
 
-<details><summary><code>client.directories().<a href="/src/main/java/com/scalekit/api/DirectoryClient.java">disableDirectory</a>(directoryId, organizationId) -> ToggleDirectoryResponse</code></summary>
+<details><summary><code>client.directories().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DirectoryClient.java">disableDirectory</a>(directoryId, organizationId) -> ToggleDirectoryResponse</code></summary>
 <dl>
 <dd>
 
@@ -3548,7 +3548,7 @@ client.directories().disableDirectory("dir_123", "org_123");
 </dl>
 </details>
 
-<details><summary><code>client.directories().<a href="/src/main/java/com/scalekit/api/DirectoryClient.java">getPrimaryDirectoryByOrganizationId</a>(organizationId) -> Directory</code></summary>
+<details><summary><code>client.directories().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DirectoryClient.java">getPrimaryDirectoryByOrganizationId</a>(organizationId) -> Directory</code></summary>
 <dl>
 <dd>
 
@@ -3602,7 +3602,7 @@ client.directories().getPrimaryDirectoryByOrganizationId("org_123");
 </dl>
 </details>
 
-<details><summary><code>client.directories().<a href="/src/main/java/com/scalekit/api/DirectoryClient.java">createDirectory</a>(organizationId, directory) -> Directory</code></summary>
+<details><summary><code>client.directories().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DirectoryClient.java">createDirectory</a>(organizationId, directory) -> Directory</code></summary>
 <dl>
 <dd>
 
@@ -3670,7 +3670,7 @@ client.directories().createDirectory("org_123", req);
 </dl>
 </details>
 
-<details><summary><code>client.directories().<a href="/src/main/java/com/scalekit/api/DirectoryClient.java">deleteDirectory</a>(directoryId, organizationId) -> void</code></summary>
+<details><summary><code>client.directories().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/DirectoryClient.java">deleteDirectory</a>(directoryId, organizationId) -> void</code></summary>
 <dl>
 <dd>
 
@@ -3734,7 +3734,7 @@ client.directories().deleteDirectory("dir_123", "org_123");
 
 ## Sessions
 
-<details><summary><code>client.sessions().<a href="/src/main/java/com/scalekit/api/SessionClient.java">getSession</a>(sessionId) -> SessionDetails</code></summary>
+<details><summary><code>client.sessions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/SessionClient.java">getSession</a>(sessionId) -> SessionDetails</code></summary>
 <dl>
 <dd>
 
@@ -3788,7 +3788,7 @@ client.sessions().getSession("sess_123");
 </dl>
 </details>
 
-<details><summary><code>client.sessions().<a href="/src/main/java/com/scalekit/api/SessionClient.java">getUserSessions</a>(userId, pageSize, pageToken, filter) -> UserSessionDetails</code></summary>
+<details><summary><code>client.sessions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/SessionClient.java">getUserSessions</a>(userId, pageSize, pageToken, filter) -> UserSessionDetails</code></summary>
 <dl>
 <dd>
 
@@ -3870,7 +3870,7 @@ client.sessions().getUserSessions("user_123", 20, "", filter);
 </dl>
 </details>
 
-<details><summary><code>client.sessions().<a href="/src/main/java/com/scalekit/api/SessionClient.java">revokeSession</a>(sessionId) -> RevokeSessionResponse</code></summary>
+<details><summary><code>client.sessions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/SessionClient.java">revokeSession</a>(sessionId) -> RevokeSessionResponse</code></summary>
 <dl>
 <dd>
 
@@ -3924,7 +3924,7 @@ client.sessions().revokeSession("sess_123");
 </dl>
 </details>
 
-<details><summary><code>client.sessions().<a href="/src/main/java/com/scalekit/api/SessionClient.java">revokeAllUserSessions</a>(userId) -> RevokeAllUserSessionsResponse</code></summary>
+<details><summary><code>client.sessions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/SessionClient.java">revokeAllUserSessions</a>(userId) -> RevokeAllUserSessionsResponse</code></summary>
 <dl>
 <dd>
 
@@ -3980,7 +3980,7 @@ client.sessions().revokeAllUserSessions("user_123");
 
 ## Roles
 
-<details><summary><code>client.roles().<a href="/src/main/java/com/scalekit/api/RoleClient.java">createRole</a>(request) -> CreateRoleResponse</code></summary>
+<details><summary><code>client.roles().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/RoleClient.java">createRole</a>(request) -> CreateRoleResponse</code></summary>
 <dl>
 <dd>
 
@@ -4037,7 +4037,7 @@ client.roles().createRole(req);
 </dl>
 </details>
 
-<details><summary><code>client.roles().<a href="/src/main/java/com/scalekit/api/RoleClient.java">getRole</a>(roleName) -> GetRoleResponse</code></summary>
+<details><summary><code>client.roles().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/RoleClient.java">getRole</a>(roleName) -> GetRoleResponse</code></summary>
 <dl>
 <dd>
 
@@ -4091,7 +4091,7 @@ client.roles().getRole("admin");
 </dl>
 </details>
 
-<details><summary><code>client.roles().<a href="/src/main/java/com/scalekit/api/RoleClient.java">listRoles</a>() -> ListRolesResponse</code></summary>
+<details><summary><code>client.roles().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/RoleClient.java">listRoles</a>() -> ListRolesResponse</code></summary>
 <dl>
 <dd>
 
@@ -4145,7 +4145,7 @@ This method takes no parameters.
 </dl>
 </details>
 
-<details><summary><code>client.roles().<a href="/src/main/java/com/scalekit/api/RoleClient.java">updateRole</a>(roleName, request) -> UpdateRoleResponse</code></summary>
+<details><summary><code>client.roles().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/RoleClient.java">updateRole</a>(roleName, request) -> UpdateRoleResponse</code></summary>
 <dl>
 <dd>
 
@@ -4210,7 +4210,7 @@ client.roles().updateRole("admin", req);
 </dl>
 </details>
 
-<details><summary><code>client.roles().<a href="/src/main/java/com/scalekit/api/RoleClient.java">deleteRole</a>(roleName) -> void</code></summary>
+<details><summary><code>client.roles().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/RoleClient.java">deleteRole</a>(roleName) -> void</code></summary>
 <dl>
 <dd>
 
@@ -4264,7 +4264,7 @@ client.roles().deleteRole("admin");
 </dl>
 </details>
 
-<details><summary><code>client.roles().<a href="/src/main/java/com/scalekit/api/RoleClient.java">deleteRole</a>(roleName, reassignRoleName) -> void</code></summary>
+<details><summary><code>client.roles().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/RoleClient.java">deleteRole</a>(roleName, reassignRoleName) -> void</code></summary>
 <dl>
 <dd>
 
@@ -4326,7 +4326,7 @@ client.roles().deleteRole("old_role", "new_role");
 </dl>
 </details>
 
-<details><summary><code>client.roles().<a href="/src/main/java/com/scalekit/api/RoleClient.java">getRoleUsersCount</a>(roleName) -> GetRoleUsersCountResponse</code></summary>
+<details><summary><code>client.roles().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/RoleClient.java">getRoleUsersCount</a>(roleName) -> GetRoleUsersCountResponse</code></summary>
 <dl>
 <dd>
 
@@ -4380,7 +4380,7 @@ client.roles().getRoleUsersCount("admin");
 </dl>
 </details>
 
-<details><summary><code>client.roles().<a href="/src/main/java/com/scalekit/api/RoleClient.java">createOrganizationRole</a>(orgId, request) -> CreateOrganizationRoleResponse</code></summary>
+<details><summary><code>client.roles().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/RoleClient.java">createOrganizationRole</a>(orgId, request) -> CreateOrganizationRoleResponse</code></summary>
 <dl>
 <dd>
 
@@ -4445,7 +4445,7 @@ client.roles().createOrganizationRole("org_123", req);
 </dl>
 </details>
 
-<details><summary><code>client.roles().<a href="/src/main/java/com/scalekit/api/RoleClient.java">getOrganizationRole</a>(orgId, roleName) -> GetOrganizationRoleResponse</code></summary>
+<details><summary><code>client.roles().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/RoleClient.java">getOrganizationRole</a>(orgId, roleName) -> GetOrganizationRoleResponse</code></summary>
 <dl>
 <dd>
 
@@ -4507,7 +4507,7 @@ client.roles().getOrganizationRole("org_123", "org_admin");
 </dl>
 </details>
 
-<details><summary><code>client.roles().<a href="/src/main/java/com/scalekit/api/RoleClient.java">listOrganizationRoles</a>(orgId) -> ListOrganizationRolesResponse</code></summary>
+<details><summary><code>client.roles().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/RoleClient.java">listOrganizationRoles</a>(orgId) -> ListOrganizationRolesResponse</code></summary>
 <dl>
 <dd>
 
@@ -4561,7 +4561,7 @@ client.roles().listOrganizationRoles("org_123");
 </dl>
 </details>
 
-<details><summary><code>client.roles().<a href="/src/main/java/com/scalekit/api/RoleClient.java">updateOrganizationRole</a>(orgId, roleName, request) -> UpdateOrganizationRoleResponse</code></summary>
+<details><summary><code>client.roles().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/RoleClient.java">updateOrganizationRole</a>(orgId, roleName, request) -> UpdateOrganizationRoleResponse</code></summary>
 <dl>
 <dd>
 
@@ -4634,7 +4634,7 @@ client.roles().updateOrganizationRole("org_123", "org_admin", req);
 </dl>
 </details>
 
-<details><summary><code>client.roles().<a href="/src/main/java/com/scalekit/api/RoleClient.java">deleteOrganizationRole</a>(orgId, roleName) -> void</code></summary>
+<details><summary><code>client.roles().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/RoleClient.java">deleteOrganizationRole</a>(orgId, roleName) -> void</code></summary>
 <dl>
 <dd>
 
@@ -4696,7 +4696,7 @@ client.roles().deleteOrganizationRole("org_123", "org_admin");
 </dl>
 </details>
 
-<details><summary><code>client.roles().<a href="/src/main/java/com/scalekit/api/RoleClient.java">deleteOrganizationRole</a>(orgId, roleName, reassignRoleName) -> void</code></summary>
+<details><summary><code>client.roles().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/RoleClient.java">deleteOrganizationRole</a>(orgId, roleName, reassignRoleName) -> void</code></summary>
 <dl>
 <dd>
 
@@ -4766,7 +4766,7 @@ client.roles().deleteOrganizationRole("org_123", "old_role", "new_role");
 </dl>
 </details>
 
-<details><summary><code>client.roles().<a href="/src/main/java/com/scalekit/api/RoleClient.java">updateDefaultOrganizationRoles</a>(orgId, request) -> UpdateDefaultOrganizationRolesResponse</code></summary>
+<details><summary><code>client.roles().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/RoleClient.java">updateDefaultOrganizationRoles</a>(orgId, request) -> UpdateDefaultOrganizationRolesResponse</code></summary>
 <dl>
 <dd>
 
@@ -4831,7 +4831,7 @@ client.roles().updateDefaultOrganizationRoles("org_123", req);
 </dl>
 </details>
 
-<details><summary><code>client.roles().<a href="/src/main/java/com/scalekit/api/RoleClient.java">deleteRoleBase</a>(roleName) -> void</code></summary>
+<details><summary><code>client.roles().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/RoleClient.java">deleteRoleBase</a>(roleName) -> void</code></summary>
 <dl>
 <dd>
 
@@ -4887,7 +4887,7 @@ client.roles().deleteRoleBase("admin");
 
 ## Permissions
 
-<details><summary><code>client.permissions().<a href="/src/main/java/com/scalekit/api/PermissionClient.java">createPermission</a>(request) -> CreatePermissionResponse</code></summary>
+<details><summary><code>client.permissions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/PermissionClient.java">createPermission</a>(request) -> CreatePermissionResponse</code></summary>
 <dl>
 <dd>
 
@@ -4944,7 +4944,7 @@ client.permissions().createPermission(req);
 </dl>
 </details>
 
-<details><summary><code>client.permissions().<a href="/src/main/java/com/scalekit/api/PermissionClient.java">getPermission</a>(permissionName) -> GetPermissionResponse</code></summary>
+<details><summary><code>client.permissions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/PermissionClient.java">getPermission</a>(permissionName) -> GetPermissionResponse</code></summary>
 <dl>
 <dd>
 
@@ -4998,7 +4998,7 @@ client.permissions().getPermission("read:documents");
 </dl>
 </details>
 
-<details><summary><code>client.permissions().<a href="/src/main/java/com/scalekit/api/PermissionClient.java">listPermissions</a>() -> ListPermissionsResponse</code></summary>
+<details><summary><code>client.permissions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/PermissionClient.java">listPermissions</a>() -> ListPermissionsResponse</code></summary>
 <dl>
 <dd>
 
@@ -5052,7 +5052,7 @@ This method takes no parameters.
 </dl>
 </details>
 
-<details><summary><code>client.permissions().<a href="/src/main/java/com/scalekit/api/PermissionClient.java">listPermissions</a>(pageToken) -> ListPermissionsResponse</code></summary>
+<details><summary><code>client.permissions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/PermissionClient.java">listPermissions</a>(pageToken) -> ListPermissionsResponse</code></summary>
 <dl>
 <dd>
 
@@ -5106,7 +5106,7 @@ client.permissions().listPermissions("next_page_token");
 </dl>
 </details>
 
-<details><summary><code>client.permissions().<a href="/src/main/java/com/scalekit/api/PermissionClient.java">updatePermission</a>(permissionName, request) -> UpdatePermissionResponse</code></summary>
+<details><summary><code>client.permissions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/PermissionClient.java">updatePermission</a>(permissionName, request) -> UpdatePermissionResponse</code></summary>
 <dl>
 <dd>
 
@@ -5171,7 +5171,7 @@ client.permissions().updatePermission("read:documents", req);
 </dl>
 </details>
 
-<details><summary><code>client.permissions().<a href="/src/main/java/com/scalekit/api/PermissionClient.java">deletePermission</a>(permissionName) -> void</code></summary>
+<details><summary><code>client.permissions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/PermissionClient.java">deletePermission</a>(permissionName) -> void</code></summary>
 <dl>
 <dd>
 
@@ -5225,7 +5225,7 @@ client.permissions().deletePermission("read:documents");
 </dl>
 </details>
 
-<details><summary><code>client.permissions().<a href="/src/main/java/com/scalekit/api/PermissionClient.java">listRolePermissions</a>(roleName) -> ListRolePermissionsResponse</code></summary>
+<details><summary><code>client.permissions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/PermissionClient.java">listRolePermissions</a>(roleName) -> ListRolePermissionsResponse</code></summary>
 <dl>
 <dd>
 
@@ -5279,7 +5279,7 @@ client.permissions().listRolePermissions("admin");
 </dl>
 </details>
 
-<details><summary><code>client.permissions().<a href="/src/main/java/com/scalekit/api/PermissionClient.java">addPermissionsToRole</a>(roleName, request) -> AddPermissionsToRoleResponse</code></summary>
+<details><summary><code>client.permissions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/PermissionClient.java">addPermissionsToRole</a>(roleName, request) -> AddPermissionsToRoleResponse</code></summary>
 <dl>
 <dd>
 
@@ -5344,7 +5344,7 @@ client.permissions().addPermissionsToRole("admin", req);
 </dl>
 </details>
 
-<details><summary><code>client.permissions().<a href="/src/main/java/com/scalekit/api/PermissionClient.java">removePermissionFromRole</a>(roleName, permissionName) -> void</code></summary>
+<details><summary><code>client.permissions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/PermissionClient.java">removePermissionFromRole</a>(roleName, permissionName) -> void</code></summary>
 <dl>
 <dd>
 
@@ -5406,7 +5406,7 @@ client.permissions().removePermissionFromRole("admin", "read:documents");
 </dl>
 </details>
 
-<details><summary><code>client.permissions().<a href="/src/main/java/com/scalekit/api/PermissionClient.java">listEffectiveRolePermissions</a>(roleName) -> ListEffectiveRolePermissionsResponse</code></summary>
+<details><summary><code>client.permissions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/PermissionClient.java">listEffectiveRolePermissions</a>(roleName) -> ListEffectiveRolePermissionsResponse</code></summary>
 <dl>
 <dd>
 
@@ -5462,7 +5462,7 @@ client.permissions().listEffectiveRolePermissions("admin");
 
 ## Passwordless
 
-<details><summary><code>client.passwordless().<a href="/src/main/java/com/scalekit/api/PasswordlessClient.java">sendPasswordlessEmail</a>(email, options) -> SendPasswordlessResponse</code></summary>
+<details><summary><code>client.passwordless().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/PasswordlessClient.java">sendPasswordlessEmail</a>(email, options) -> SendPasswordlessResponse</code></summary>
 <dl>
 <dd>
 
@@ -5534,7 +5534,7 @@ client.passwordless().sendPasswordlessEmail("user@acme.com", options);
 </dl>
 </details>
 
-<details><summary><code>client.passwordless().<a href="/src/main/java/com/scalekit/api/PasswordlessClient.java">sendPasswordlessEmail</a>(email) -> SendPasswordlessResponse</code></summary>
+<details><summary><code>client.passwordless().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/PasswordlessClient.java">sendPasswordlessEmail</a>(email) -> SendPasswordlessResponse</code></summary>
 <dl>
 <dd>
 
@@ -5588,7 +5588,7 @@ client.passwordless().sendPasswordlessEmail("user@acme.com");
 </dl>
 </details>
 
-<details><summary><code>client.passwordless().<a href="/src/main/java/com/scalekit/api/PasswordlessClient.java">verifyPasswordlessEmail</a>(credential, authRequestId) -> VerifyPasswordLessResponse</code></summary>
+<details><summary><code>client.passwordless().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/PasswordlessClient.java">verifyPasswordlessEmail</a>(credential, authRequestId) -> VerifyPasswordLessResponse</code></summary>
 <dl>
 <dd>
 
@@ -5658,7 +5658,7 @@ client.passwordless().verifyPasswordlessEmail(credential, "authreq_123");
 </dl>
 </details>
 
-<details><summary><code>client.passwordless().<a href="/src/main/java/com/scalekit/api/PasswordlessClient.java">verifyPasswordlessEmail</a>(credential) -> VerifyPasswordLessResponse</code></summary>
+<details><summary><code>client.passwordless().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/PasswordlessClient.java">verifyPasswordlessEmail</a>(credential) -> VerifyPasswordLessResponse</code></summary>
 <dl>
 <dd>
 
@@ -5720,7 +5720,7 @@ client.passwordless().verifyPasswordlessEmail(credential);
 </dl>
 </details>
 
-<details><summary><code>client.passwordless().<a href="/src/main/java/com/scalekit/api/PasswordlessClient.java">resendPasswordlessEmail</a>(authRequestId) -> SendPasswordlessResponse</code></summary>
+<details><summary><code>client.passwordless().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/PasswordlessClient.java">resendPasswordlessEmail</a>(authRequestId) -> SendPasswordlessResponse</code></summary>
 <dl>
 <dd>
 
@@ -5776,7 +5776,7 @@ client.passwordless().resendPasswordlessEmail("authreq_123");
 
 ## WebAuthn
 
-<details><summary><code>client.webAuthn().<a href="/src/main/java/com/scalekit/api/WebAuthnClient.java">listCredentials</a>(userId) -> ListCredentialsResponse</code></summary>
+<details><summary><code>client.webAuthn().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/WebAuthnClient.java">listCredentials</a>(userId) -> ListCredentialsResponse</code></summary>
 <dl>
 <dd>
 
@@ -5830,7 +5830,7 @@ client.webAuthn().listCredentials("user_123");
 </dl>
 </details>
 
-<details><summary><code>client.webAuthn().<a href="/src/main/java/com/scalekit/api/WebAuthnClient.java">updateCredential</a>(credentialId, displayName) -> UpdateCredentialResponse</code></summary>
+<details><summary><code>client.webAuthn().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/WebAuthnClient.java">updateCredential</a>(credentialId, displayName) -> UpdateCredentialResponse</code></summary>
 <dl>
 <dd>
 
@@ -5892,7 +5892,7 @@ client.webAuthn().updateCredential("cred_123", "My laptop key");
 </dl>
 </details>
 
-<details><summary><code>client.webAuthn().<a href="/src/main/java/com/scalekit/api/WebAuthnClient.java">deleteCredential</a>(credentialId) -> DeleteCredentialResponse</code></summary>
+<details><summary><code>client.webAuthn().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/WebAuthnClient.java">deleteCredential</a>(credentialId) -> DeleteCredentialResponse</code></summary>
 <dl>
 <dd>
 
@@ -5948,7 +5948,7 @@ client.webAuthn().deleteCredential("cred_123");
 
 ## Auth
 
-<details><summary><code>client.authentication().<a href="/src/main/java/com/scalekit/api/AuthClient.java">getAuthorizationUrl</a>(redirectUri, options) -> URL</code></summary>
+<details><summary><code>client.authentication().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/AuthClient.java">getAuthorizationUrl</a>(redirectUri, options) -> URL</code></summary>
 <dl>
 <dd>
 
@@ -6033,7 +6033,7 @@ URL authUrl = client.authentication().getAuthorizationUrl(
 </dl>
 </details>
 
-<details><summary><code>client.authentication().<a href="/src/main/java/com/scalekit/api/AuthClient.java">authenticateWithCode</a>(code, redirectUri, options) -> AuthenticationResponse</code></summary>
+<details><summary><code>client.authentication().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/AuthClient.java">authenticateWithCode</a>(code, redirectUri, options) -> AuthenticationResponse</code></summary>
 <dl>
 <dd>
 
@@ -6113,7 +6113,7 @@ String accessToken = result.getAccessToken();
 </dl>
 </details>
 
-<details><summary><code>client.authentication().<a href="/src/main/java/com/scalekit/api/AuthClient.java">getIdpInitiatedLoginClaims</a>(idpInitiatedLoginToken) -> IdpInitiatedLoginClaims</code></summary>
+<details><summary><code>client.authentication().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/AuthClient.java">getIdpInitiatedLoginClaims</a>(idpInitiatedLoginToken) -> IdpInitiatedLoginClaims</code></summary>
 <dl>
 <dd>
 
@@ -6169,7 +6169,7 @@ IdpInitiatedLoginClaims claims = client.authentication().getIdpInitiatedLoginCla
 </dl>
 </details>
 
-<details><summary><code>client.authentication().<a href="/src/main/java/com/scalekit/api/AuthClient.java">refreshAccessToken</a>(refreshToken) -> AuthenticationResponse</code></summary>
+<details><summary><code>client.authentication().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/AuthClient.java">refreshAccessToken</a>(refreshToken) -> AuthenticationResponse</code></summary>
 <dl>
 <dd>
 
@@ -6223,7 +6223,7 @@ client.authentication().refreshAccessToken("<refresh_token>");
 </dl>
 </details>
 
-<details><summary><code>client.authentication().<a href="/src/main/java/com/scalekit/api/AuthClient.java">validateAccessToken</a>(jwt) -> boolean</code></summary>
+<details><summary><code>client.authentication().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/AuthClient.java">validateAccessToken</a>(jwt) -> boolean</code></summary>
 <dl>
 <dd>
 
@@ -6277,7 +6277,7 @@ boolean ok = client.authentication().validateAccessToken("<access_token_jwt>");
 </dl>
 </details>
 
-<details><summary><code>client.authentication().<a href="/src/main/java/com/scalekit/api/AuthClient.java">validateAccessTokenAndGetClaims</a>(jwt) -> Map&lt;String, Object&gt;</code></summary>
+<details><summary><code>client.authentication().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/AuthClient.java">validateAccessTokenAndGetClaims</a>(jwt) -> Map&lt;String, Object&gt;</code></summary>
 <dl>
 <dd>
 
@@ -6333,7 +6333,7 @@ Map<String, Object> claims = client.authentication().validateAccessTokenAndGetCl
 </dl>
 </details>
 
-<details><summary><code>client.authentication().<a href="/src/main/java/com/scalekit/api/AuthClient.java">getClientAccessToken</a>() -> String</code></summary>
+<details><summary><code>client.authentication().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/AuthClient.java">getClientAccessToken</a>() -> String</code></summary>
 <dl>
 <dd>
 
