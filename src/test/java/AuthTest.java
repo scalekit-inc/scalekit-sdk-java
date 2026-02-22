@@ -1,11 +1,13 @@
 import com.scalekit.ScalekitClient;
+import com.scalekit.exceptions.APIException;
 import com.scalekit.internal.ScalekitCredentials;
+import com.scalekit.internal.http.AccessTokenClaims;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import static java.lang.Thread.sleep;
 import static org.junit.jupiter.api.Assertions.*;
@@ -77,4 +79,62 @@ public class AuthTest {
         assertEquals(token3, token4);
     }
 
+    @Test
+    public void TestValidateAccessTokenAndGetClaims() throws Exception {
+        String token = client.authentication().getClientAccessToken();
+        Map<String, Object> claims = client.authentication().validateAccessTokenAndGetClaims(token);
+
+        assertNotNull(claims);
+        assertTrue(claims.containsKey("sub"));
+        assertTrue(claims.containsKey("iss"));
+        assertTrue(claims.containsKey("iat"));
+        assertTrue(claims.containsKey("exp"));
+
+        AccessTokenClaims typed = client.authentication().getTokenClaims(token, AccessTokenClaims.class);
+        assertEquals(claims.get("sub"), typed.getSub());
+        assertEquals(claims.get("iss"), typed.getIss());
+        assertEquals(claims.get("sub"), typed.getClaims().get("sub"));
+        assertEquals(claims.get("iss"), typed.getClaims().get("iss"));
+    }
+
+    @Test
+    public void TestGetTokenClaims() throws Exception {
+        String token = client.authentication().getClientAccessToken();
+        AccessTokenClaims result = client.authentication().getTokenClaims(token, AccessTokenClaims.class);
+
+        assertNotNull(result.getSub());
+        assertNotNull(result.getIss());
+        assertTrue(result.getExp() > 0);
+        assertTrue(result.getIat() > 0);
+
+        Map<String, Object> claims = result.getClaims();
+        assertNotNull(claims);
+        assertTrue(claims.containsKey("sub"));
+        assertTrue(claims.containsKey("iss"));
+        assertTrue(claims.containsKey("iat"));
+        assertTrue(claims.containsKey("exp"));
+        assertEquals(result.getSub(), claims.get("sub"));
+        assertEquals(result.getIss(), claims.get("iss"));
+    }
+
+    @Test
+    public void TestGetTokenClaims_NullJwt_ThrowsAPIException() {
+        assertThrows(APIException.class, () ->
+            client.authentication().getTokenClaims(null, AccessTokenClaims.class));
+    }
+
+    @Test
+    public void TestGetTokenClaims_EmptyJwt_ThrowsAPIException() {
+        assertThrows(APIException.class, () ->
+            client.authentication().getTokenClaims("", AccessTokenClaims.class));
+    }
+
+    @Test
+    public void TestGetTokenClaims_InvalidSignature_ThrowsAPIException() {
+        String validToken = client.authentication().getClientAccessToken();
+        String[] parts = validToken.split("\\.");
+        String tamperedToken = parts[0] + "." + parts[1] + ".invalidsignature";
+        assertThrows(APIException.class, () ->
+            client.authentication().getTokenClaims(tamperedToken, AccessTokenClaims.class));
+    }
 }

@@ -4,6 +4,7 @@ import com.scalekit.exceptions.APIException;
 import com.scalekit.internal.http.AuthenticationOptions;
 import com.scalekit.internal.http.AuthenticationResponse;
 import com.scalekit.internal.http.AuthorizationUrlOptions;
+import com.scalekit.internal.http.ClaimSet;
 import com.scalekit.internal.http.IdpInitiatedLoginClaims;
 
 import java.net.URL;
@@ -23,4 +24,6 @@ public interface AuthClient {
      AuthenticationResponse refreshAccessToken(String refreshToken) throws APIException;
 
      Map<String, Object> validateAccessTokenAndGetClaims(String jwt) throws APIException;
+
+     <T extends ClaimSet> T getTokenClaims(String jwt, Class<T> clazz) throws APIException;
 }
