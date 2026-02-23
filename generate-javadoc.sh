@@ -5,8 +5,6 @@
 #   --open     Open docs in browser after generation (default in interactive mode)
 #   --no-open  Skip opening the browser (default in non-interactive/CI mode)
 
-set -e  # Exit on error
-
 OPEN_BROWSER=""
 for arg in "$@"; do
   case "$arg" in

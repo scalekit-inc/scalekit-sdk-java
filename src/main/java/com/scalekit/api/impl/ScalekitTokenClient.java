@@ -9,6 +9,7 @@ import com.scalekit.internal.RetryExecuter;
 import com.scalekit.internal.ScalekitCredentials;
 import com.google.protobuf.Timestamp;
 import io.grpc.ManagedChannel;
+import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 
 import java.util.Map;
@@ -60,6 +61,9 @@ public class ScalekitTokenClient implements TokenClient {
      */
     @Override
     public CreateTokenResponse create(String organizationId, String userId, Map<String, String> customClaims, Timestamp expiry, String description) {
+        if (organizationId == null || organizationId.isEmpty()) {
+            throw new IllegalArgumentException("organizationId is required");
+        }
         return RetryExecuter.executeWithRetry(() -> {
             CreateToken.Builder tokenBuilder = CreateToken.newBuilder()
                     .setOrganizationId(organizationId);
@@ -109,7 +113,14 @@ public class ScalekitTokenClient implements TokenClient {
                         .validateToken(request);
             }, this.credentials);
         } catch (APIException e) {
-            throw new TokenInvalidException(e.getMessage());
+            int code = e.getGrpcsStatusCode();
+            if (code == Status.Code.UNAUTHENTICATED.value()
+                    || code == Status.Code.NOT_FOUND.value()
+                    || code == Status.Code.INVALID_ARGUMENT.value()
+                    || code == Status.Code.PERMISSION_DENIED.value()) {
+                throw new TokenInvalidException(e);
+            }
+            throw e;
         }
     }
 
@@ -163,6 +174,9 @@ public class ScalekitTokenClient implements TokenClient {
      */
     @Override
     public ListTokensResponse list(String organizationId, String userId, int pageSize, String pageToken) {
+        if (organizationId == null || organizationId.isEmpty()) {
+            throw new IllegalArgumentException("organizationId is required");
+        }
         String finalPageToken = pageToken;
         int finalPageSize = pageSize;
         if (Objects.isNull(finalPageToken)) {

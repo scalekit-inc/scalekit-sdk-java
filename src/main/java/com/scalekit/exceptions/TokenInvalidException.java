@@ -15,4 +15,9 @@ public class TokenInvalidException extends APIException {
     public TokenInvalidException(String message) {
         super(message);
     }
+
+    public TokenInvalidException(APIException cause) {
+        super(cause.getMessage());
+        initCause(cause);
+    }
 }
