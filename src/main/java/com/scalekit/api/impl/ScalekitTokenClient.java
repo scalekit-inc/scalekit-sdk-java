@@ -113,7 +113,7 @@ public class ScalekitTokenClient implements TokenClient {
                         .validateToken(request);
             }, this.credentials);
         } catch (APIException e) {
-            int code = e.getGrpcsStatusCode();
+            int code = e.getGrpcStatusCode();
             if (code == Status.Code.UNAUTHENTICATED.value()
                     || code == Status.Code.NOT_FOUND.value()
                     || code == Status.Code.INVALID_ARGUMENT.value()

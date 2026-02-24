@@ -10,19 +10,19 @@ import lombok.Getter;
 public class APIException extends RuntimeException{
 
     @Getter
-    final String scalekitErrorCode;
-    final String message;
+    private final String scalekitErrorCode;
+    private final String message;
 
     @Getter
-    final int grpcsStatusCode;
+    private final int grpcStatusCode;
 
     private final  ErrorInfo errorInfo;
 
-    public APIException(String errorCode, String message, int grpcsStatusCode, ErrorInfo errorInfo) {
+    public APIException(String errorCode, String message, int grpcStatusCode, ErrorInfo errorInfo) {
         super(message);
         this.scalekitErrorCode = errorCode;
         this.message = message;
-        this.grpcsStatusCode = grpcsStatusCode;
+        this.grpcStatusCode = grpcStatusCode;
         this.errorInfo = errorInfo;
     }
 
@@ -30,14 +30,14 @@ public class APIException extends RuntimeException{
         super(message);
         this.message = message;
 
-        this.grpcsStatusCode = 0;
+        this.grpcStatusCode = 0;
         this.scalekitErrorCode = null;
         this.errorInfo = null;
     }
 
     public APIException(StatusRuntimeException exception){
         super(exception);
-        this.grpcsStatusCode = exception.getStatus().getCode().value();
+        this.grpcStatusCode = exception.getStatus().getCode().value();
         this.message = exception.getMessage();
         this.errorInfo = getErrorInfo(exception);
         if (errorInfo != null){
@@ -53,20 +53,19 @@ public class APIException extends RuntimeException{
     }
 
     private ErrorInfo getErrorInfo(StatusRuntimeException exception) {
-        ErrorInfo errorInfo = null;
-
         Status status = StatusProto.fromThrowable(exception);
+        if (status == null) {
+            return null;
+        }
         try {
             for (Any any : status.getDetailsList()) {
                 if (any.is(ErrorInfo.class)) {
-                    errorInfo = any.unpack(ErrorInfo.class);
+                    return any.unpack(ErrorInfo.class);
                 }
             }
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to unpack error details from gRPC response", e);
         }
-        catch (Exception e){
-            throw new RuntimeException("Error when parsing the error response. Probably not Scalekit's error response.", e);
-        }
-
-       return errorInfo;
+        return null;
     }
 }
