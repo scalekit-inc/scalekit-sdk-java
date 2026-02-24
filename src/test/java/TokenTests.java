@@ -104,17 +104,22 @@ public class TokenTests {
         String userId = createdUser.getUser().getId();
 
         // Create a user-scoped token
-        CreateTokenResponse response = client.tokens().create(
-                testOrgId, userId, null, null, "User scoped token"
-        );
+        String tokenId = null;
+        try {
+            CreateTokenResponse response = client.tokens().create(
+                    testOrgId, userId, null, null, "User scoped token"
+            );
+            tokenId = response.getTokenId();
 
-        assertNotNull(response);
-        assertNotNull(response.getToken());
-        assertTrue(response.getTokenId().startsWith("apit_"));
-
-        // Cleanup
-        client.tokens().invalidate(response.getTokenId());
-        client.users().deleteUser(userId);
+            assertNotNull(response);
+            assertNotNull(response.getToken());
+            assertTrue(response.getTokenId().startsWith("apit_"));
+        } finally {
+            if (tokenId != null) {
+                client.tokens().invalidate(tokenId);
+            }
+            client.users().deleteUser(userId);
+        }
     }
 
     @Test

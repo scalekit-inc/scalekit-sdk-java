@@ -7,7 +7,11 @@ import io.grpc.StatusRuntimeException;
 import io.grpc.protobuf.StatusProto;
 import lombok.Getter;
 
+import java.util.logging.Logger;
+
 public class APIException extends RuntimeException{
+
+    private static final Logger log = Logger.getLogger(APIException.class.getName());
 
     @Getter
     private final String scalekitErrorCode;
@@ -64,7 +68,8 @@ public class APIException extends RuntimeException{
                 }
             }
         } catch (Exception e) {
-            throw new RuntimeException("Failed to unpack error details from gRPC response", e);
+            log.warning("Failed to unpack error details from gRPC response: " + e.getMessage());
+            return null;
         }
         return null;
     }
