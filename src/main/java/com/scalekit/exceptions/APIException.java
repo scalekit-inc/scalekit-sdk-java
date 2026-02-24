@@ -13,7 +13,6 @@ public class APIException extends RuntimeException{
     final String scalekitErrorCode;
     final String message;
 
-    @Getter
     final int grpcsStatusCode;
 
     private final  ErrorInfo errorInfo;
@@ -46,6 +45,10 @@ public class APIException extends RuntimeException{
         else {
             this.scalekitErrorCode = "UNKNOWN_EXCEPTION";
         }
+    }
+
+    public int getGrpcsStatusCode() {
+        return grpcsStatusCode;
     }
 
     public  String getMessage() {
