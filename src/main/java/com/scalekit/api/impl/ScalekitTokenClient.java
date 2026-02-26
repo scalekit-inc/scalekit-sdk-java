@@ -64,31 +64,29 @@ public class ScalekitTokenClient implements TokenClient {
         if (organizationId == null || organizationId.isEmpty()) {
             throw new IllegalArgumentException("organizationId is required");
         }
-        return RetryExecuter.executeWithRetry(() -> {
-            CreateToken.Builder tokenBuilder = CreateToken.newBuilder()
-                    .setOrganizationId(organizationId);
+        CreateToken.Builder tokenBuilder = CreateToken.newBuilder()
+                .setOrganizationId(organizationId);
 
-            if (userId != null && !userId.isEmpty()) {
-                tokenBuilder.setUserId(userId);
-            }
-            if (customClaims != null && !customClaims.isEmpty()) {
-                tokenBuilder.putAllCustomClaims(customClaims);
-            }
-            if (expiry != null) {
-                tokenBuilder.setExpiry(expiry);
-            }
-            if (description != null && !description.isEmpty()) {
-                tokenBuilder.setDescription(description);
-            }
+        if (userId != null && !userId.isEmpty()) {
+            tokenBuilder.setUserId(userId);
+        }
+        if (customClaims != null && !customClaims.isEmpty()) {
+            tokenBuilder.putAllCustomClaims(customClaims);
+        }
+        if (expiry != null) {
+            tokenBuilder.setExpiry(expiry);
+        }
+        if (description != null && !description.isEmpty()) {
+            tokenBuilder.setDescription(description);
+        }
 
-            CreateTokenRequest request = CreateTokenRequest.newBuilder()
-                    .setToken(tokenBuilder.build())
-                    .build();
+        CreateTokenRequest request = CreateTokenRequest.newBuilder()
+                .setToken(tokenBuilder.build())
+                .build();
 
-            return this.tokenStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
-                    .createToken(request);
-        }, this.credentials);
+        return this.tokenStub
+                .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                .createToken(request);
     }
 
     /**
@@ -140,9 +138,16 @@ public class ScalekitTokenClient implements TokenClient {
                     .setToken(token)
                     .build();
 
-            this.tokenStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
-                    .invalidateToken(request);
+            try {
+                this.tokenStub
+                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .invalidateToken(request);
+            } catch (StatusRuntimeException e) {
+                if (e.getStatus().getCode() == Status.NOT_FOUND.getCode()) {
+                    return null;
+                }
+                throw e;
+            }
             return null;
         }, this.credentials);
     }
