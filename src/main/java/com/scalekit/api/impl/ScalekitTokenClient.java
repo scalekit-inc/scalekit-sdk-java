@@ -190,6 +190,9 @@ public class ScalekitTokenClient implements TokenClient {
         if (finalPageSize <= 0) {
             finalPageSize = 10;
         }
+        if (finalPageSize > 30) {
+            finalPageSize = 30;
+        }
         final String effectivePageToken = finalPageToken;
         final int effectivePageSize = finalPageSize;
         final String effectiveUserId = userId;

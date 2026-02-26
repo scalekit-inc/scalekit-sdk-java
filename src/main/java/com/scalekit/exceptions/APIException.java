@@ -42,7 +42,7 @@ public class APIException extends RuntimeException{
     public APIException(String message, Throwable cause) {
         super(message, cause);
         this.message = message;
-        this.grpcsStatusCode = 0;
+        this.grpcStatusCode = 0;
         this.scalekitErrorCode = null;
         this.errorInfo = null;
     }
