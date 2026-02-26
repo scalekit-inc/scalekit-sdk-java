@@ -39,6 +39,14 @@ public class APIException extends RuntimeException{
         this.errorInfo = null;
     }
 
+    public APIException(String message, Throwable cause) {
+        super(message, cause);
+        this.message = message;
+        this.grpcsStatusCode = 0;
+        this.scalekitErrorCode = null;
+        this.errorInfo = null;
+    }
+
     public APIException(StatusRuntimeException exception){
         super(exception);
         this.grpcStatusCode = exception.getStatus().getCode().value();

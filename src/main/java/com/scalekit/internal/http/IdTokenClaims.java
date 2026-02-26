@@ -1,13 +1,15 @@
 package com.scalekit.internal.http;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import java.util.List;
+import java.util.Map;
 
 @Getter
 @Setter
-public class IdTokenClaims {
+public class IdTokenClaims implements ClaimSet {
     @JsonProperty("sub")
     private String id;
 
@@ -50,6 +52,9 @@ public class IdTokenClaims {
 
     private List<Identity> identities;
     private String metadata;
+
+    @JsonIgnore
+    private Map<String, Object> claims;
 
     @Getter
     @Setter
