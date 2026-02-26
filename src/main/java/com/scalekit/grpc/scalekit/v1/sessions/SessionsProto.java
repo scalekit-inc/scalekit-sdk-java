@@ -414,7 +414,7 @@ public final class SessionsProto {
       " absolute expiration, and actual expirat" +
       "ion if applicable).JY\n\003200\022R\n&Successful" +
       "ly retrieved session details\022(\n&\032$.scale" +
-      "kit.v1.sessions.SessionDetails\202\265\030\002\030T\202\323\344\223" +
+      "kit.v1.sessions.SessionDetails\202\265\030\002\030D\202\323\344\223" +
       "\002\037\022\035/api/v1/sessions/{session_id}\022\242\006\n\rRe" +
       "vokeSession\022*.scalekit.v1.sessions.Revok" +
       "eSessionRequest\032+.scalekit.v1.sessions.R" +
@@ -434,7 +434,7 @@ public final class SessionsProto {
       "vocation timestamp.J\177\n\003200\022x\nESuccessful" +
       "ly revoked the session. Returns the revo" +
       "ked session details\022/\n-\032+.scalekit.v1.se" +
-      "ssions.RevokeSessionResponse\202\265\030\002\030T\202\323\344\223\002&" +
+      "ssions.RevokeSessionResponse\202\265\030\002\030D\202\323\344\223\002&" +
       "\"$/api/v1/sessions/{session_id}/revoke\022\260" +
       "\007\n\017GetUserSessions\022/.scalekit.v1.session" +
       "s.UserSessionDetailsRequest\032(.scalekit.v" +
@@ -458,7 +458,7 @@ public final class SessionsProto {
       "\\Successfully retrieved user sessions. R" +
       "eturns a list of sessions with paginatio" +
       "n information\022,\n*\032(.scalekit.v1.sessions" +
-      ".UserSessionDetails\202\265\030\002\030T\202\323\344\223\002\"\022 /api/v1" +
+      ".UserSessionDetails\202\265\030\002\030D\202\323\344\223\002\"\022 /api/v1" +
       "/users/{user_id}/sessions\022\276\007\n\025RevokeAllU" +
       "serSessions\0222.scalekit.v1.sessions.Revok" +
       "eAllUserSessionsRequest\0323.scalekit.v1.se" +
@@ -482,7 +482,7 @@ public final class SessionsProto {
       "oked all user sessions. Returns the list" +
       " of revoked sessions and total count\0227\n5" +
       "\0323.scalekit.v1.sessions.RevokeAllUserSes" +
-      "sionsResponse\202\265\030\002\030T\202\323\344\223\002)\"\'/api/v1/users" +
+      "sionsResponse\202\265\030\002\030D\202\323\344\223\002)\"\'/api/v1/users" +
       "/{user_id}/sessions/revoke\032\276\003\222A\272\003\n\010Sessi",
       "ons\022\255\003Comprehensive session management f" +
       "or user authentication and authorization" +

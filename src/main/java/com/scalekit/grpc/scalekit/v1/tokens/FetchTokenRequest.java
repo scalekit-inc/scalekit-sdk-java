@@ -6,21 +6,21 @@ package com.scalekit.grpc.scalekit.v1.tokens;
 
 /**
  * <pre>
- * Request message for RegenerateToken RPC
+ * Request message for FetchToken RPC
  * </pre>
  *
- * Protobuf type {@code scalekit.v1.tokens.RegenerateTokenRequest}
+ * Protobuf type {@code scalekit.v1.tokens.FetchTokenRequest}
  */
-public final class RegenerateTokenRequest extends
+public final class FetchTokenRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:scalekit.v1.tokens.RegenerateTokenRequest)
-    RegenerateTokenRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:scalekit.v1.tokens.FetchTokenRequest)
+    FetchTokenRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use RegenerateTokenRequest.newBuilder() to construct.
-  private RegenerateTokenRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use FetchTokenRequest.newBuilder() to construct.
+  private FetchTokenRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private RegenerateTokenRequest() {
+  private FetchTokenRequest() {
     tokenId_ = "";
   }
 
@@ -28,20 +28,20 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new RegenerateTokenRequest();
+    return new FetchTokenRequest();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.tokens.TokensProto.internal_static_scalekit_v1_tokens_RegenerateTokenRequest_descriptor;
+    return com.scalekit.grpc.scalekit.v1.tokens.TokensProto.internal_static_scalekit_v1_tokens_FetchTokenRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.scalekit.grpc.scalekit.v1.tokens.TokensProto.internal_static_scalekit_v1_tokens_RegenerateTokenRequest_fieldAccessorTable
+    return com.scalekit.grpc.scalekit.v1.tokens.TokensProto.internal_static_scalekit_v1_tokens_FetchTokenRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest.class, com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest.Builder.class);
+            com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest.class, com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest.Builder.class);
   }
 
   public static final int TOKEN_ID_FIELD_NUMBER = 1;
@@ -122,10 +122,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest)) {
+    if (!(obj instanceof com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest)) {
       return super.equals(obj);
     }
-    com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest other = (com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest) obj;
+    com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest other = (com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest) obj;
 
     if (!getTokenId()
         .equals(other.getTokenId())) return false;
@@ -147,44 +147,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest parseFrom(byte[] data)
+  public static com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest parseFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -192,26 +192,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest parseDelimitedFrom(
+  public static com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -224,7 +224,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest prototype) {
+  public static Builder newBuilder(com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -241,29 +241,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request message for RegenerateToken RPC
+   * Request message for FetchToken RPC
    * </pre>
    *
-   * Protobuf type {@code scalekit.v1.tokens.RegenerateTokenRequest}
+   * Protobuf type {@code scalekit.v1.tokens.FetchTokenRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:scalekit.v1.tokens.RegenerateTokenRequest)
-      com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:scalekit.v1.tokens.FetchTokenRequest)
+      com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.scalekit.grpc.scalekit.v1.tokens.TokensProto.internal_static_scalekit_v1_tokens_RegenerateTokenRequest_descriptor;
+      return com.scalekit.grpc.scalekit.v1.tokens.TokensProto.internal_static_scalekit_v1_tokens_FetchTokenRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.scalekit.grpc.scalekit.v1.tokens.TokensProto.internal_static_scalekit_v1_tokens_RegenerateTokenRequest_fieldAccessorTable
+      return com.scalekit.grpc.scalekit.v1.tokens.TokensProto.internal_static_scalekit_v1_tokens_FetchTokenRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest.class, com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest.Builder.class);
+              com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest.class, com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest.Builder.class);
     }
 
-    // Construct using com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest.newBuilder()
+    // Construct using com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest.newBuilder()
     private Builder() {
 
     }
@@ -284,17 +284,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.scalekit.grpc.scalekit.v1.tokens.TokensProto.internal_static_scalekit_v1_tokens_RegenerateTokenRequest_descriptor;
+      return com.scalekit.grpc.scalekit.v1.tokens.TokensProto.internal_static_scalekit_v1_tokens_FetchTokenRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest getDefaultInstanceForType() {
-      return com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest.getDefaultInstance();
+    public com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest getDefaultInstanceForType() {
+      return com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest build() {
-      com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest result = buildPartial();
+    public com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest build() {
+      com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -302,14 +302,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest buildPartial() {
-      com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest result = new com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest(this);
+    public com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest buildPartial() {
+      com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest result = new com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest result) {
+    private void buildPartial0(com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.tokenId_ = tokenId_;
@@ -350,16 +350,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest) {
-        return mergeFrom((com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest)other);
+      if (other instanceof com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest) {
+        return mergeFrom((com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest other) {
-      if (other == com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest other) {
+      if (other == com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest.getDefaultInstance()) return this;
       if (!other.getTokenId().isEmpty()) {
         tokenId_ = other.tokenId_;
         bitField0_ |= 0x00000001;
@@ -497,23 +497,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:scalekit.v1.tokens.RegenerateTokenRequest)
+    // @@protoc_insertion_point(builder_scope:scalekit.v1.tokens.FetchTokenRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:scalekit.v1.tokens.RegenerateTokenRequest)
-  private static final com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:scalekit.v1.tokens.FetchTokenRequest)
+  private static final com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest();
+    DEFAULT_INSTANCE = new com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest();
   }
 
-  public static com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest getDefaultInstance() {
+  public static com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RegenerateTokenRequest>
-      PARSER = new com.google.protobuf.AbstractParser<RegenerateTokenRequest>() {
+  private static final com.google.protobuf.Parser<FetchTokenRequest>
+      PARSER = new com.google.protobuf.AbstractParser<FetchTokenRequest>() {
     @java.lang.Override
-    public RegenerateTokenRequest parsePartialFrom(
+    public FetchTokenRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -532,17 +532,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<RegenerateTokenRequest> parser() {
+  public static com.google.protobuf.Parser<FetchTokenRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<RegenerateTokenRequest> getParserForType() {
+  public com.google.protobuf.Parser<FetchTokenRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest getDefaultInstanceForType() {
+  public com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

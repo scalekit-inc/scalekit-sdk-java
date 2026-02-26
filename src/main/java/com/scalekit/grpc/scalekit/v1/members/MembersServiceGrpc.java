@@ -5,7 +5,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  * <pre>
  * For the first closed beta build, we are not exposing the ability to create members. So, most of the APIs will have
- * WORKSPACE auth scope. when we release the members UI, we need to update those APIs to WORKSPACE_SESSION scope.
+ * WORKSPACE auth scope. when we release the members UI, we need to update those APIs to WORKSPACE scope.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -283,7 +283,7 @@ public final class MembersServiceGrpc {
   /**
    * <pre>
    * For the first closed beta build, we are not exposing the ability to create members. So, most of the APIs will have
-   * WORKSPACE auth scope. when we release the members UI, we need to update those APIs to WORKSPACE_SESSION scope.
+   * WORKSPACE auth scope. when we release the members UI, we need to update those APIs to WORKSPACE scope.
    * </pre>
    */
   public interface AsyncService {
@@ -342,7 +342,7 @@ public final class MembersServiceGrpc {
    * Base class for the server implementation of the service MembersService.
    * <pre>
    * For the first closed beta build, we are not exposing the ability to create members. So, most of the APIs will have
-   * WORKSPACE auth scope. when we release the members UI, we need to update those APIs to WORKSPACE_SESSION scope.
+   * WORKSPACE auth scope. when we release the members UI, we need to update those APIs to WORKSPACE scope.
    * </pre>
    */
   public static abstract class MembersServiceImplBase
@@ -357,7 +357,7 @@ public final class MembersServiceGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service MembersService.
    * <pre>
    * For the first closed beta build, we are not exposing the ability to create members. So, most of the APIs will have
-   * WORKSPACE auth scope. when we release the members UI, we need to update those APIs to WORKSPACE_SESSION scope.
+   * WORKSPACE auth scope. when we release the members UI, we need to update those APIs to WORKSPACE scope.
    * </pre>
    */
   public static final class MembersServiceStub
@@ -434,7 +434,7 @@ public final class MembersServiceGrpc {
    * A stub to allow clients to do synchronous rpc calls to service MembersService.
    * <pre>
    * For the first closed beta build, we are not exposing the ability to create members. So, most of the APIs will have
-   * WORKSPACE auth scope. when we release the members UI, we need to update those APIs to WORKSPACE_SESSION scope.
+   * WORKSPACE auth scope. when we release the members UI, we need to update those APIs to WORKSPACE scope.
    * </pre>
    */
   public static final class MembersServiceBlockingStub
@@ -504,7 +504,7 @@ public final class MembersServiceGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service MembersService.
    * <pre>
    * For the first closed beta build, we are not exposing the ability to create members. So, most of the APIs will have
-   * WORKSPACE auth scope. when we release the members UI, we need to update those APIs to WORKSPACE_SESSION scope.
+   * WORKSPACE auth scope. when we release the members UI, we need to update those APIs to WORKSPACE scope.
    * </pre>
    */
   public static final class MembersServiceFutureStub

@@ -7,22 +7,26 @@ import io.grpc.StatusRuntimeException;
 import io.grpc.protobuf.StatusProto;
 import lombok.Getter;
 
+import java.util.logging.Logger;
+
 public class APIException extends RuntimeException{
 
-    @Getter
-    final String scalekitErrorCode;
-    final String message;
+    private static final Logger log = Logger.getLogger(APIException.class.getName());
 
     @Getter
-    final int grpcsStatusCode;
+    private final String scalekitErrorCode;
+    private final String message;
+
+    @Getter
+    private final int grpcStatusCode;
 
     private final  ErrorInfo errorInfo;
 
-    public APIException(String errorCode, String message, int grpcsStatusCode, ErrorInfo errorInfo) {
+    public APIException(String errorCode, String message, int grpcStatusCode, ErrorInfo errorInfo) {
         super(message);
         this.scalekitErrorCode = errorCode;
         this.message = message;
-        this.grpcsStatusCode = grpcsStatusCode;
+        this.grpcStatusCode = grpcStatusCode;
         this.errorInfo = errorInfo;
     }
 
@@ -30,7 +34,7 @@ public class APIException extends RuntimeException{
         super(message);
         this.message = message;
 
-        this.grpcsStatusCode = 0;
+        this.grpcStatusCode = 0;
         this.scalekitErrorCode = null;
         this.errorInfo = null;
     }
@@ -38,14 +42,14 @@ public class APIException extends RuntimeException{
     public APIException(String message, Throwable cause) {
         super(message, cause);
         this.message = message;
-        this.grpcsStatusCode = 0;
+        this.grpcStatusCode = 0;
         this.scalekitErrorCode = null;
         this.errorInfo = null;
     }
 
     public APIException(StatusRuntimeException exception){
         super(exception);
-        this.grpcsStatusCode = exception.getStatus().getCode().value();
+        this.grpcStatusCode = exception.getStatus().getCode().value();
         this.message = exception.getMessage();
         this.errorInfo = getErrorInfo(exception);
         if (errorInfo != null){
@@ -61,20 +65,20 @@ public class APIException extends RuntimeException{
     }
 
     private ErrorInfo getErrorInfo(StatusRuntimeException exception) {
-        ErrorInfo errorInfo = null;
-
         Status status = StatusProto.fromThrowable(exception);
+        if (status == null) {
+            return null;
+        }
         try {
             for (Any any : status.getDetailsList()) {
                 if (any.is(ErrorInfo.class)) {
-                    errorInfo = any.unpack(ErrorInfo.class);
+                    return any.unpack(ErrorInfo.class);
                 }
             }
+        } catch (Exception e) {
+            log.warning("Failed to unpack error details from gRPC response: " + e.getMessage());
+            return null;
         }
-        catch (Exception e){
-            throw new RuntimeException("Error when parsing the error response. Probably not Scalekit's error response.", e);
-        }
-
-       return errorInfo;
+        return null;
     }
 }

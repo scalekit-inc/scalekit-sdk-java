@@ -17,7 +17,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private MigrateStripeCustomersRequest() {
-    workspaceIds_ = emptyLongList();
   }
 
   @java.lang.Override
@@ -40,45 +39,31 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersRequest.class, com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersRequest.Builder.class);
   }
 
-  public static final int WORKSPACE_IDS_FIELD_NUMBER = 1;
-  @SuppressWarnings("serial")
-  private com.google.protobuf.Internal.LongList workspaceIds_ =
-      emptyLongList();
+  private int bitField0_;
+  public static final int MIGRATE_STRIPE_CUSTOMERS_FIELD_NUMBER = 1;
+  private com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers migrateStripeCustomers_;
   /**
-   * <code>repeated int64 workspace_ids = 1 [json_name = "workspaceIds"];</code>
-   * @return A list containing the workspaceIds.
+   * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
+   * @return Whether the migrateStripeCustomers field is set.
    */
   @java.lang.Override
-  public java.util.List<java.lang.Long>
-      getWorkspaceIdsList() {
-    return workspaceIds_;
+  public boolean hasMigrateStripeCustomers() {
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>repeated int64 workspace_ids = 1 [json_name = "workspaceIds"];</code>
-   * @return The count of workspaceIds.
-   */
-  public int getWorkspaceIdsCount() {
-    return workspaceIds_.size();
-  }
-  /**
-   * <code>repeated int64 workspace_ids = 1 [json_name = "workspaceIds"];</code>
-   * @param index The index of the element to return.
-   * @return The workspaceIds at the given index.
-   */
-  public long getWorkspaceIds(int index) {
-    return workspaceIds_.getLong(index);
-  }
-  private int workspaceIdsMemoizedSerializedSize = -1;
-
-  public static final int BATCH_SIZE_FIELD_NUMBER = 2;
-  private int batchSize_ = 0;
-  /**
-   * <code>int32 batch_size = 2 [json_name = "batchSize", (.buf.validate.field) = { ... }</code>
-   * @return The batchSize.
+   * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
+   * @return The migrateStripeCustomers.
    */
   @java.lang.Override
-  public int getBatchSize() {
-    return batchSize_;
+  public com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers getMigrateStripeCustomers() {
+    return migrateStripeCustomers_ == null ? com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers.getDefaultInstance() : migrateStripeCustomers_;
+  }
+  /**
+   * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersOrBuilder getMigrateStripeCustomersOrBuilder() {
+    return migrateStripeCustomers_ == null ? com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers.getDefaultInstance() : migrateStripeCustomers_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -95,16 +80,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    getSerializedSize();
-    if (getWorkspaceIdsList().size() > 0) {
-      output.writeUInt32NoTag(10);
-      output.writeUInt32NoTag(workspaceIdsMemoizedSerializedSize);
-    }
-    for (int i = 0; i < workspaceIds_.size(); i++) {
-      output.writeInt64NoTag(workspaceIds_.getLong(i));
-    }
-    if (batchSize_ != 0) {
-      output.writeInt32(2, batchSize_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(1, getMigrateStripeCustomers());
     }
     getUnknownFields().writeTo(output);
   }
@@ -115,23 +92,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    {
-      int dataSize = 0;
-      for (int i = 0; i < workspaceIds_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeInt64SizeNoTag(workspaceIds_.getLong(i));
-      }
-      size += dataSize;
-      if (!getWorkspaceIdsList().isEmpty()) {
-        size += 1;
-        size += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(dataSize);
-      }
-      workspaceIdsMemoizedSerializedSize = dataSize;
-    }
-    if (batchSize_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, batchSize_);
+        .computeMessageSize(1, getMigrateStripeCustomers());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -148,10 +111,11 @@ private static final long serialVersionUID = 0L;
     }
     com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersRequest other = (com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersRequest) obj;
 
-    if (!getWorkspaceIdsList()
-        .equals(other.getWorkspaceIdsList())) return false;
-    if (getBatchSize()
-        != other.getBatchSize()) return false;
+    if (hasMigrateStripeCustomers() != other.hasMigrateStripeCustomers()) return false;
+    if (hasMigrateStripeCustomers()) {
+      if (!getMigrateStripeCustomers()
+          .equals(other.getMigrateStripeCustomers())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -163,12 +127,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getWorkspaceIdsCount() > 0) {
-      hash = (37 * hash) + WORKSPACE_IDS_FIELD_NUMBER;
-      hash = (53 * hash) + getWorkspaceIdsList().hashCode();
+    if (hasMigrateStripeCustomers()) {
+      hash = (37 * hash) + MIGRATE_STRIPE_CUSTOMERS_FIELD_NUMBER;
+      hash = (53 * hash) + getMigrateStripeCustomers().hashCode();
     }
-    hash = (37 * hash) + BATCH_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getBatchSize();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -288,20 +250,29 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersRequest.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getMigrateStripeCustomersFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      workspaceIds_ = emptyLongList();
-      batchSize_ = 0;
+      migrateStripeCustomers_ = null;
+      if (migrateStripeCustomersBuilder_ != null) {
+        migrateStripeCustomersBuilder_.dispose();
+        migrateStripeCustomersBuilder_ = null;
+      }
       return this;
     }
 
@@ -335,13 +306,14 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersRequest result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        workspaceIds_.makeImmutable();
-        result.workspaceIds_ = workspaceIds_;
+        result.migrateStripeCustomers_ = migrateStripeCustomersBuilder_ == null
+            ? migrateStripeCustomers_
+            : migrateStripeCustomersBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.batchSize_ = batchSize_;
-      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -388,19 +360,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersRequest other) {
       if (other == com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersRequest.getDefaultInstance()) return this;
-      if (!other.workspaceIds_.isEmpty()) {
-        if (workspaceIds_.isEmpty()) {
-          workspaceIds_ = other.workspaceIds_;
-          workspaceIds_.makeImmutable();
-          bitField0_ |= 0x00000001;
-        } else {
-          ensureWorkspaceIdsIsMutable();
-          workspaceIds_.addAll(other.workspaceIds_);
-        }
-        onChanged();
-      }
-      if (other.getBatchSize() != 0) {
-        setBatchSize(other.getBatchSize());
+      if (other.hasMigrateStripeCustomers()) {
+        mergeMigrateStripeCustomers(other.getMigrateStripeCustomers());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -428,27 +389,13 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-              long v = input.readInt64();
-              ensureWorkspaceIdsIsMutable();
-              workspaceIds_.addLong(v);
-              break;
-            } // case 8
             case 10: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              ensureWorkspaceIdsIsMutable();
-              while (input.getBytesUntilLimit() > 0) {
-                workspaceIds_.addLong(input.readInt64());
-              }
-              input.popLimit(limit);
+              input.readMessage(
+                  getMigrateStripeCustomersFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
-            case 16: {
-              batchSize_ = input.readInt32();
-              bitField0_ |= 0x00000002;
-              break;
-            } // case 16
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -466,120 +413,125 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private com.google.protobuf.Internal.LongList workspaceIds_ = emptyLongList();
-    private void ensureWorkspaceIdsIsMutable() {
-      if (!workspaceIds_.isModifiable()) {
-        workspaceIds_ = makeMutableCopy(workspaceIds_);
+    private com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers migrateStripeCustomers_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers, com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers.Builder, com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersOrBuilder> migrateStripeCustomersBuilder_;
+    /**
+     * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
+     * @return Whether the migrateStripeCustomers field is set.
+     */
+    public boolean hasMigrateStripeCustomers() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
+     * @return The migrateStripeCustomers.
+     */
+    public com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers getMigrateStripeCustomers() {
+      if (migrateStripeCustomersBuilder_ == null) {
+        return migrateStripeCustomers_ == null ? com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers.getDefaultInstance() : migrateStripeCustomers_;
+      } else {
+        return migrateStripeCustomersBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
+     */
+    public Builder setMigrateStripeCustomers(com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers value) {
+      if (migrateStripeCustomersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        migrateStripeCustomers_ = value;
+      } else {
+        migrateStripeCustomersBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
     }
     /**
-     * <code>repeated int64 workspace_ids = 1 [json_name = "workspaceIds"];</code>
-     * @return A list containing the workspaceIds.
+     * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
      */
-    public java.util.List<java.lang.Long>
-        getWorkspaceIdsList() {
-      workspaceIds_.makeImmutable();
-      return workspaceIds_;
-    }
-    /**
-     * <code>repeated int64 workspace_ids = 1 [json_name = "workspaceIds"];</code>
-     * @return The count of workspaceIds.
-     */
-    public int getWorkspaceIdsCount() {
-      return workspaceIds_.size();
-    }
-    /**
-     * <code>repeated int64 workspace_ids = 1 [json_name = "workspaceIds"];</code>
-     * @param index The index of the element to return.
-     * @return The workspaceIds at the given index.
-     */
-    public long getWorkspaceIds(int index) {
-      return workspaceIds_.getLong(index);
-    }
-    /**
-     * <code>repeated int64 workspace_ids = 1 [json_name = "workspaceIds"];</code>
-     * @param index The index to set the value at.
-     * @param value The workspaceIds to set.
-     * @return This builder for chaining.
-     */
-    public Builder setWorkspaceIds(
-        int index, long value) {
-
-      ensureWorkspaceIdsIsMutable();
-      workspaceIds_.setLong(index, value);
+    public Builder setMigrateStripeCustomers(
+        com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers.Builder builderForValue) {
+      if (migrateStripeCustomersBuilder_ == null) {
+        migrateStripeCustomers_ = builderForValue.build();
+      } else {
+        migrateStripeCustomersBuilder_.setMessage(builderForValue.build());
+      }
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated int64 workspace_ids = 1 [json_name = "workspaceIds"];</code>
-     * @param value The workspaceIds to add.
-     * @return This builder for chaining.
+     * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
      */
-    public Builder addWorkspaceIds(long value) {
-
-      ensureWorkspaceIdsIsMutable();
-      workspaceIds_.addLong(value);
-      bitField0_ |= 0x00000001;
-      onChanged();
+    public Builder mergeMigrateStripeCustomers(com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers value) {
+      if (migrateStripeCustomersBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0) &&
+          migrateStripeCustomers_ != null &&
+          migrateStripeCustomers_ != com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers.getDefaultInstance()) {
+          getMigrateStripeCustomersBuilder().mergeFrom(value);
+        } else {
+          migrateStripeCustomers_ = value;
+        }
+      } else {
+        migrateStripeCustomersBuilder_.mergeFrom(value);
+      }
+      if (migrateStripeCustomers_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       return this;
     }
     /**
-     * <code>repeated int64 workspace_ids = 1 [json_name = "workspaceIds"];</code>
-     * @param values The workspaceIds to add.
-     * @return This builder for chaining.
+     * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
      */
-    public Builder addAllWorkspaceIds(
-        java.lang.Iterable<? extends java.lang.Long> values) {
-      ensureWorkspaceIdsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, workspaceIds_);
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated int64 workspace_ids = 1 [json_name = "workspaceIds"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearWorkspaceIds() {
-      workspaceIds_ = emptyLongList();
+    public Builder clearMigrateStripeCustomers() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-
-    private int batchSize_ ;
-    /**
-     * <code>int32 batch_size = 2 [json_name = "batchSize", (.buf.validate.field) = { ... }</code>
-     * @return The batchSize.
-     */
-    @java.lang.Override
-    public int getBatchSize() {
-      return batchSize_;
-    }
-    /**
-     * <code>int32 batch_size = 2 [json_name = "batchSize", (.buf.validate.field) = { ... }</code>
-     * @param value The batchSize to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBatchSize(int value) {
-
-      batchSize_ = value;
-      bitField0_ |= 0x00000002;
+      migrateStripeCustomers_ = null;
+      if (migrateStripeCustomersBuilder_ != null) {
+        migrateStripeCustomersBuilder_.dispose();
+        migrateStripeCustomersBuilder_ = null;
+      }
       onChanged();
       return this;
     }
     /**
-     * <code>int32 batch_size = 2 [json_name = "batchSize", (.buf.validate.field) = { ... }</code>
-     * @return This builder for chaining.
+     * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
      */
-    public Builder clearBatchSize() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      batchSize_ = 0;
+    public com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers.Builder getMigrateStripeCustomersBuilder() {
+      bitField0_ |= 0x00000001;
       onChanged();
-      return this;
+      return getMigrateStripeCustomersFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersOrBuilder getMigrateStripeCustomersOrBuilder() {
+      if (migrateStripeCustomersBuilder_ != null) {
+        return migrateStripeCustomersBuilder_.getMessageOrBuilder();
+      } else {
+        return migrateStripeCustomers_ == null ?
+            com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers.getDefaultInstance() : migrateStripeCustomers_;
+      }
+    }
+    /**
+     * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers, com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers.Builder, com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersOrBuilder> 
+        getMigrateStripeCustomersFieldBuilder() {
+      if (migrateStripeCustomersBuilder_ == null) {
+        migrateStripeCustomersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers, com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers.Builder, com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersOrBuilder>(
+                getMigrateStripeCustomers(),
+                getParentForChildren(),
+                isClean());
+        migrateStripeCustomers_ = null;
+      }
+      return migrateStripeCustomersBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
