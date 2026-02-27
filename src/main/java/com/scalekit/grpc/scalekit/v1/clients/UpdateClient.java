@@ -27,6 +27,12 @@ private static final long serialVersionUID = 0L;
     initiateLoginUri_ = "";
     postLoginUris_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+    name_ = "";
+    scopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    customClaims_ = java.util.Collections.emptyList();
+    grantTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -292,6 +298,223 @@ private static final long serialVersionUID = 0L;
     return postLoginUris_.getByteString(index);
   }
 
+  public static final int NAME_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
+  /**
+   * <code>string name = 8 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string name = 8 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ACCESS_TOKEN_EXPIRY_FIELD_NUMBER = 9;
+  private long accessTokenExpiry_ = 0L;
+  /**
+   * <code>int64 access_token_expiry = 9 [json_name = "accessTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The accessTokenExpiry.
+   */
+  @java.lang.Override
+  public long getAccessTokenExpiry() {
+    return accessTokenExpiry_;
+  }
+
+  public static final int SCOPES_FIELD_NUMBER = 11;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList scopes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the scopes.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getScopesList() {
+    return scopes_;
+  }
+  /**
+   * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of scopes.
+   */
+  public int getScopesCount() {
+    return scopes_.size();
+  }
+  /**
+   * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The scopes at the given index.
+   */
+  public java.lang.String getScopes(int index) {
+    return scopes_.get(index);
+  }
+  /**
+   * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the scopes at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getScopesBytes(int index) {
+    return scopes_.getByteString(index);
+  }
+
+  public static final int CUSTOM_CLAIMS_FIELD_NUMBER = 12;
+  @SuppressWarnings("serial")
+  private java.util.List<com.scalekit.grpc.scalekit.v1.clients.CustomClaim> customClaims_;
+  /**
+   * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.scalekit.grpc.scalekit.v1.clients.CustomClaim> getCustomClaimsList() {
+    return customClaims_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.scalekit.grpc.scalekit.v1.clients.CustomClaimOrBuilder> 
+      getCustomClaimsOrBuilderList() {
+    return customClaims_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public int getCustomClaimsCount() {
+    return customClaims_.size();
+  }
+  /**
+   * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.CustomClaim getCustomClaims(int index) {
+    return customClaims_.get(index);
+  }
+  /**
+   * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.CustomClaimOrBuilder getCustomClaimsOrBuilder(
+      int index) {
+    return customClaims_.get(index);
+  }
+
+  public static final int DISALLOW_SCALEKIT_API_ACCESS_FIELD_NUMBER = 13;
+  private com.google.protobuf.BoolValue disallowScalekitApiAccess_;
+  /**
+   * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the disallowScalekitApiAccess field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisallowScalekitApiAccess() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The disallowScalekitApiAccess.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getDisallowScalekitApiAccess() {
+    return disallowScalekitApiAccess_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : disallowScalekitApiAccess_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getDisallowScalekitApiAccessOrBuilder() {
+    return disallowScalekitApiAccess_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : disallowScalekitApiAccess_;
+  }
+
+  public static final int GRANT_TYPES_FIELD_NUMBER = 14;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList grantTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the grantTypes.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getGrantTypesList() {
+    return grantTypes_;
+  }
+  /**
+   * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of grantTypes.
+   */
+  public int getGrantTypesCount() {
+    return grantTypes_.size();
+  }
+  /**
+   * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The grantTypes at the given index.
+   */
+  public java.lang.String getGrantTypes(int index) {
+    return grantTypes_.get(index);
+  }
+  /**
+   * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the grantTypes at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getGrantTypesBytes(int index) {
+    return grantTypes_.getByteString(index);
+  }
+
+  public static final int ENFORCE_PKCE_FIELD_NUMBER = 15;
+  private com.google.protobuf.BoolValue enforcePkce_;
+  /**
+   * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the enforcePkce field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnforcePkce() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enforcePkce.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getEnforcePkce() {
+    return enforcePkce_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enforcePkce_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getEnforcePkceOrBuilder() {
+    return enforcePkce_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enforcePkce_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -323,6 +546,27 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < postLoginUris_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, postLoginUris_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, name_);
+    }
+    if (accessTokenExpiry_ != 0L) {
+      output.writeInt64(9, accessTokenExpiry_);
+    }
+    for (int i = 0; i < scopes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, scopes_.getRaw(i));
+    }
+    for (int i = 0; i < customClaims_.size(); i++) {
+      output.writeMessage(12, customClaims_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(13, getDisallowScalekitApiAccess());
+    }
+    for (int i = 0; i < grantTypes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, grantTypes_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(15, getEnforcePkce());
     }
     getUnknownFields().writeTo(output);
   }
@@ -371,6 +615,41 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getPostLoginUrisList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, name_);
+    }
+    if (accessTokenExpiry_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(9, accessTokenExpiry_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < scopes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(scopes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getScopesList().size();
+    }
+    for (int i = 0; i < customClaims_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, customClaims_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, getDisallowScalekitApiAccess());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < grantTypes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(grantTypes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getGrantTypesList().size();
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, getEnforcePkce());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -404,6 +683,26 @@ private static final long serialVersionUID = 0L;
     }
     if (!getPostLoginUrisList()
         .equals(other.getPostLoginUrisList())) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (getAccessTokenExpiry()
+        != other.getAccessTokenExpiry()) return false;
+    if (!getScopesList()
+        .equals(other.getScopesList())) return false;
+    if (!getCustomClaimsList()
+        .equals(other.getCustomClaimsList())) return false;
+    if (hasDisallowScalekitApiAccess() != other.hasDisallowScalekitApiAccess()) return false;
+    if (hasDisallowScalekitApiAccess()) {
+      if (!getDisallowScalekitApiAccess()
+          .equals(other.getDisallowScalekitApiAccess())) return false;
+    }
+    if (!getGrantTypesList()
+        .equals(other.getGrantTypesList())) return false;
+    if (hasEnforcePkce() != other.hasEnforcePkce()) return false;
+    if (hasEnforcePkce()) {
+      if (!getEnforcePkce()
+          .equals(other.getEnforcePkce())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -438,6 +737,31 @@ private static final long serialVersionUID = 0L;
     if (getPostLoginUrisCount() > 0) {
       hash = (37 * hash) + POST_LOGIN_URIS_FIELD_NUMBER;
       hash = (53 * hash) + getPostLoginUrisList().hashCode();
+    }
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + ACCESS_TOKEN_EXPIRY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getAccessTokenExpiry());
+    if (getScopesCount() > 0) {
+      hash = (37 * hash) + SCOPES_FIELD_NUMBER;
+      hash = (53 * hash) + getScopesList().hashCode();
+    }
+    if (getCustomClaimsCount() > 0) {
+      hash = (37 * hash) + CUSTOM_CLAIMS_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomClaimsList().hashCode();
+    }
+    if (hasDisallowScalekitApiAccess()) {
+      hash = (37 * hash) + DISALLOW_SCALEKIT_API_ACCESS_FIELD_NUMBER;
+      hash = (53 * hash) + getDisallowScalekitApiAccess().hashCode();
+    }
+    if (getGrantTypesCount() > 0) {
+      hash = (37 * hash) + GRANT_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + getGrantTypesList().hashCode();
+    }
+    if (hasEnforcePkce()) {
+      hash = (37 * hash) + ENFORCE_PKCE_FIELD_NUMBER;
+      hash = (53 * hash) + getEnforcePkce().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -558,13 +882,21 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.scalekit.grpc.scalekit.v1.clients.UpdateClient.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getCustomClaimsFieldBuilder();
+        getDisallowScalekitApiAccessFieldBuilder();
+        getEnforcePkceFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -580,6 +912,29 @@ private static final long serialVersionUID = 0L;
       initiateLoginUri_ = "";
       postLoginUris_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+      name_ = "";
+      accessTokenExpiry_ = 0L;
+      scopes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      if (customClaimsBuilder_ == null) {
+        customClaims_ = java.util.Collections.emptyList();
+      } else {
+        customClaims_ = null;
+        customClaimsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000200);
+      disallowScalekitApiAccess_ = null;
+      if (disallowScalekitApiAccessBuilder_ != null) {
+        disallowScalekitApiAccessBuilder_.dispose();
+        disallowScalekitApiAccessBuilder_ = null;
+      }
+      grantTypes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      enforcePkce_ = null;
+      if (enforcePkceBuilder_ != null) {
+        enforcePkceBuilder_.dispose();
+        enforcePkceBuilder_ = null;
+      }
       return this;
     }
 
@@ -606,9 +961,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.scalekit.grpc.scalekit.v1.clients.UpdateClient buildPartial() {
       com.scalekit.grpc.scalekit.v1.clients.UpdateClient result = new com.scalekit.grpc.scalekit.v1.clients.UpdateClient(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.clients.UpdateClient result) {
+      if (customClaimsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)) {
+          customClaims_ = java.util.Collections.unmodifiableList(customClaims_);
+          bitField0_ = (bitField0_ & ~0x00000200);
+        }
+        result.customClaims_ = customClaims_;
+      } else {
+        result.customClaims_ = customClaimsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.clients.UpdateClient result) {
@@ -637,6 +1005,32 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         postLoginUris_.makeImmutable();
         result.postLoginUris_ = postLoginUris_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.accessTokenExpiry_ = accessTokenExpiry_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        scopes_.makeImmutable();
+        result.scopes_ = scopes_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.disallowScalekitApiAccess_ = disallowScalekitApiAccessBuilder_ == null
+            ? disallowScalekitApiAccess_
+            : disallowScalekitApiAccessBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        grantTypes_.makeImmutable();
+        result.grantTypes_ = grantTypes_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.enforcePkce_ = enforcePkceBuilder_ == null
+            ? enforcePkce_
+            : enforcePkceBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -735,6 +1129,66 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (other.getAccessTokenExpiry() != 0L) {
+        setAccessTokenExpiry(other.getAccessTokenExpiry());
+      }
+      if (!other.scopes_.isEmpty()) {
+        if (scopes_.isEmpty()) {
+          scopes_ = other.scopes_;
+          bitField0_ |= 0x00000100;
+        } else {
+          ensureScopesIsMutable();
+          scopes_.addAll(other.scopes_);
+        }
+        onChanged();
+      }
+      if (customClaimsBuilder_ == null) {
+        if (!other.customClaims_.isEmpty()) {
+          if (customClaims_.isEmpty()) {
+            customClaims_ = other.customClaims_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+          } else {
+            ensureCustomClaimsIsMutable();
+            customClaims_.addAll(other.customClaims_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.customClaims_.isEmpty()) {
+          if (customClaimsBuilder_.isEmpty()) {
+            customClaimsBuilder_.dispose();
+            customClaimsBuilder_ = null;
+            customClaims_ = other.customClaims_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+            customClaimsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getCustomClaimsFieldBuilder() : null;
+          } else {
+            customClaimsBuilder_.addAllMessages(other.customClaims_);
+          }
+        }
+      }
+      if (other.hasDisallowScalekitApiAccess()) {
+        mergeDisallowScalekitApiAccess(other.getDisallowScalekitApiAccess());
+      }
+      if (!other.grantTypes_.isEmpty()) {
+        if (grantTypes_.isEmpty()) {
+          grantTypes_ = other.grantTypes_;
+          bitField0_ |= 0x00000800;
+        } else {
+          ensureGrantTypesIsMutable();
+          grantTypes_.addAll(other.grantTypes_);
+        }
+        onChanged();
+      }
+      if (other.hasEnforcePkce()) {
+        mergeEnforcePkce(other.getEnforcePkce());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -795,6 +1249,55 @@ private static final long serialVersionUID = 0L;
               postLoginUris_.add(s);
               break;
             } // case 58
+            case 66: {
+              name_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 66
+            case 72: {
+              accessTokenExpiry_ = input.readInt64();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 72
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureScopesIsMutable();
+              scopes_.add(s);
+              break;
+            } // case 90
+            case 98: {
+              com.scalekit.grpc.scalekit.v1.clients.CustomClaim m =
+                  input.readMessage(
+                      com.scalekit.grpc.scalekit.v1.clients.CustomClaim.parser(),
+                      extensionRegistry);
+              if (customClaimsBuilder_ == null) {
+                ensureCustomClaimsIsMutable();
+                customClaims_.add(m);
+              } else {
+                customClaimsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 98
+            case 106: {
+              input.readMessage(
+                  getDisallowScalekitApiAccessFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000400;
+              break;
+            } // case 106
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureGrantTypesIsMutable();
+              grantTypes_.add(s);
+              break;
+            } // case 114
+            case 122: {
+              input.readMessage(
+                  getEnforcePkceFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00001000;
+              break;
+            } // case 122
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1412,6 +1915,814 @@ private static final long serialVersionUID = 0L;
       bitField0_ |= 0x00000020;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     * <code>string name = 8 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string name = 8 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string name = 8 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      name_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string name = 8 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string name = 8 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      name_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private long accessTokenExpiry_ ;
+    /**
+     * <code>int64 access_token_expiry = 9 [json_name = "accessTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The accessTokenExpiry.
+     */
+    @java.lang.Override
+    public long getAccessTokenExpiry() {
+      return accessTokenExpiry_;
+    }
+    /**
+     * <code>int64 access_token_expiry = 9 [json_name = "accessTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The accessTokenExpiry to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAccessTokenExpiry(long value) {
+
+      accessTokenExpiry_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 access_token_expiry = 9 [json_name = "accessTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAccessTokenExpiry() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      accessTokenExpiry_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList scopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureScopesIsMutable() {
+      if (!scopes_.isModifiable()) {
+        scopes_ = new com.google.protobuf.LazyStringArrayList(scopes_);
+      }
+      bitField0_ |= 0x00000100;
+    }
+    /**
+     * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the scopes.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getScopesList() {
+      scopes_.makeImmutable();
+      return scopes_;
+    }
+    /**
+     * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of scopes.
+     */
+    public int getScopesCount() {
+      return scopes_.size();
+    }
+    /**
+     * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The scopes at the given index.
+     */
+    public java.lang.String getScopes(int index) {
+      return scopes_.get(index);
+    }
+    /**
+     * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the scopes at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getScopesBytes(int index) {
+      return scopes_.getByteString(index);
+    }
+    /**
+     * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The scopes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScopes(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureScopesIsMutable();
+      scopes_.set(index, value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The scopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addScopes(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureScopesIsMutable();
+      scopes_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The scopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllScopes(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureScopesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, scopes_);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearScopes() {
+      scopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000100);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the scopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addScopesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureScopesIsMutable();
+      scopes_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.scalekit.grpc.scalekit.v1.clients.CustomClaim> customClaims_ =
+      java.util.Collections.emptyList();
+    private void ensureCustomClaimsIsMutable() {
+      if (!((bitField0_ & 0x00000200) != 0)) {
+        customClaims_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.clients.CustomClaim>(customClaims_);
+        bitField0_ |= 0x00000200;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.CustomClaim, com.scalekit.grpc.scalekit.v1.clients.CustomClaim.Builder, com.scalekit.grpc.scalekit.v1.clients.CustomClaimOrBuilder> customClaimsBuilder_;
+
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.clients.CustomClaim> getCustomClaimsList() {
+      if (customClaimsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(customClaims_);
+      } else {
+        return customClaimsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public int getCustomClaimsCount() {
+      if (customClaimsBuilder_ == null) {
+        return customClaims_.size();
+      } else {
+        return customClaimsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.CustomClaim getCustomClaims(int index) {
+      if (customClaimsBuilder_ == null) {
+        return customClaims_.get(index);
+      } else {
+        return customClaimsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setCustomClaims(
+        int index, com.scalekit.grpc.scalekit.v1.clients.CustomClaim value) {
+      if (customClaimsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomClaimsIsMutable();
+        customClaims_.set(index, value);
+        onChanged();
+      } else {
+        customClaimsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setCustomClaims(
+        int index, com.scalekit.grpc.scalekit.v1.clients.CustomClaim.Builder builderForValue) {
+      if (customClaimsBuilder_ == null) {
+        ensureCustomClaimsIsMutable();
+        customClaims_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        customClaimsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addCustomClaims(com.scalekit.grpc.scalekit.v1.clients.CustomClaim value) {
+      if (customClaimsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomClaimsIsMutable();
+        customClaims_.add(value);
+        onChanged();
+      } else {
+        customClaimsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addCustomClaims(
+        int index, com.scalekit.grpc.scalekit.v1.clients.CustomClaim value) {
+      if (customClaimsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomClaimsIsMutable();
+        customClaims_.add(index, value);
+        onChanged();
+      } else {
+        customClaimsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addCustomClaims(
+        com.scalekit.grpc.scalekit.v1.clients.CustomClaim.Builder builderForValue) {
+      if (customClaimsBuilder_ == null) {
+        ensureCustomClaimsIsMutable();
+        customClaims_.add(builderForValue.build());
+        onChanged();
+      } else {
+        customClaimsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addCustomClaims(
+        int index, com.scalekit.grpc.scalekit.v1.clients.CustomClaim.Builder builderForValue) {
+      if (customClaimsBuilder_ == null) {
+        ensureCustomClaimsIsMutable();
+        customClaims_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        customClaimsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addAllCustomClaims(
+        java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.clients.CustomClaim> values) {
+      if (customClaimsBuilder_ == null) {
+        ensureCustomClaimsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, customClaims_);
+        onChanged();
+      } else {
+        customClaimsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearCustomClaims() {
+      if (customClaimsBuilder_ == null) {
+        customClaims_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+      } else {
+        customClaimsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder removeCustomClaims(int index) {
+      if (customClaimsBuilder_ == null) {
+        ensureCustomClaimsIsMutable();
+        customClaims_.remove(index);
+        onChanged();
+      } else {
+        customClaimsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.CustomClaim.Builder getCustomClaimsBuilder(
+        int index) {
+      return getCustomClaimsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.CustomClaimOrBuilder getCustomClaimsOrBuilder(
+        int index) {
+      if (customClaimsBuilder_ == null) {
+        return customClaims_.get(index);  } else {
+        return customClaimsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<? extends com.scalekit.grpc.scalekit.v1.clients.CustomClaimOrBuilder> 
+         getCustomClaimsOrBuilderList() {
+      if (customClaimsBuilder_ != null) {
+        return customClaimsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(customClaims_);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.CustomClaim.Builder addCustomClaimsBuilder() {
+      return getCustomClaimsFieldBuilder().addBuilder(
+          com.scalekit.grpc.scalekit.v1.clients.CustomClaim.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.CustomClaim.Builder addCustomClaimsBuilder(
+        int index) {
+      return getCustomClaimsFieldBuilder().addBuilder(
+          index, com.scalekit.grpc.scalekit.v1.clients.CustomClaim.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.clients.CustomClaim.Builder> 
+         getCustomClaimsBuilderList() {
+      return getCustomClaimsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.CustomClaim, com.scalekit.grpc.scalekit.v1.clients.CustomClaim.Builder, com.scalekit.grpc.scalekit.v1.clients.CustomClaimOrBuilder> 
+        getCustomClaimsFieldBuilder() {
+      if (customClaimsBuilder_ == null) {
+        customClaimsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.clients.CustomClaim, com.scalekit.grpc.scalekit.v1.clients.CustomClaim.Builder, com.scalekit.grpc.scalekit.v1.clients.CustomClaimOrBuilder>(
+                customClaims_,
+                ((bitField0_ & 0x00000200) != 0),
+                getParentForChildren(),
+                isClean());
+        customClaims_ = null;
+      }
+      return customClaimsBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue disallowScalekitApiAccess_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> disallowScalekitApiAccessBuilder_;
+    /**
+     * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the disallowScalekitApiAccess field is set.
+     */
+    public boolean hasDisallowScalekitApiAccess() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The disallowScalekitApiAccess.
+     */
+    public com.google.protobuf.BoolValue getDisallowScalekitApiAccess() {
+      if (disallowScalekitApiAccessBuilder_ == null) {
+        return disallowScalekitApiAccess_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : disallowScalekitApiAccess_;
+      } else {
+        return disallowScalekitApiAccessBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setDisallowScalekitApiAccess(com.google.protobuf.BoolValue value) {
+      if (disallowScalekitApiAccessBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        disallowScalekitApiAccess_ = value;
+      } else {
+        disallowScalekitApiAccessBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setDisallowScalekitApiAccess(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (disallowScalekitApiAccessBuilder_ == null) {
+        disallowScalekitApiAccess_ = builderForValue.build();
+      } else {
+        disallowScalekitApiAccessBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeDisallowScalekitApiAccess(com.google.protobuf.BoolValue value) {
+      if (disallowScalekitApiAccessBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0) &&
+          disallowScalekitApiAccess_ != null &&
+          disallowScalekitApiAccess_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getDisallowScalekitApiAccessBuilder().mergeFrom(value);
+        } else {
+          disallowScalekitApiAccess_ = value;
+        }
+      } else {
+        disallowScalekitApiAccessBuilder_.mergeFrom(value);
+      }
+      if (disallowScalekitApiAccess_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearDisallowScalekitApiAccess() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      disallowScalekitApiAccess_ = null;
+      if (disallowScalekitApiAccessBuilder_ != null) {
+        disallowScalekitApiAccessBuilder_.dispose();
+        disallowScalekitApiAccessBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getDisallowScalekitApiAccessBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getDisallowScalekitApiAccessFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getDisallowScalekitApiAccessOrBuilder() {
+      if (disallowScalekitApiAccessBuilder_ != null) {
+        return disallowScalekitApiAccessBuilder_.getMessageOrBuilder();
+      } else {
+        return disallowScalekitApiAccess_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : disallowScalekitApiAccess_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getDisallowScalekitApiAccessFieldBuilder() {
+      if (disallowScalekitApiAccessBuilder_ == null) {
+        disallowScalekitApiAccessBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getDisallowScalekitApiAccess(),
+                getParentForChildren(),
+                isClean());
+        disallowScalekitApiAccess_ = null;
+      }
+      return disallowScalekitApiAccessBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList grantTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureGrantTypesIsMutable() {
+      if (!grantTypes_.isModifiable()) {
+        grantTypes_ = new com.google.protobuf.LazyStringArrayList(grantTypes_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+    /**
+     * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the grantTypes.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getGrantTypesList() {
+      grantTypes_.makeImmutable();
+      return grantTypes_;
+    }
+    /**
+     * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of grantTypes.
+     */
+    public int getGrantTypesCount() {
+      return grantTypes_.size();
+    }
+    /**
+     * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The grantTypes at the given index.
+     */
+    public java.lang.String getGrantTypes(int index) {
+      return grantTypes_.get(index);
+    }
+    /**
+     * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the grantTypes at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getGrantTypesBytes(int index) {
+      return grantTypes_.getByteString(index);
+    }
+    /**
+     * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The grantTypes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGrantTypes(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureGrantTypesIsMutable();
+      grantTypes_.set(index, value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The grantTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addGrantTypes(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureGrantTypesIsMutable();
+      grantTypes_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The grantTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllGrantTypes(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureGrantTypesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, grantTypes_);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearGrantTypes() {
+      grantTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000800);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the grantTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addGrantTypesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureGrantTypesIsMutable();
+      grantTypes_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.BoolValue enforcePkce_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> enforcePkceBuilder_;
+    /**
+     * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the enforcePkce field is set.
+     */
+    public boolean hasEnforcePkce() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enforcePkce.
+     */
+    public com.google.protobuf.BoolValue getEnforcePkce() {
+      if (enforcePkceBuilder_ == null) {
+        return enforcePkce_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enforcePkce_;
+      } else {
+        return enforcePkceBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setEnforcePkce(com.google.protobuf.BoolValue value) {
+      if (enforcePkceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        enforcePkce_ = value;
+      } else {
+        enforcePkceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setEnforcePkce(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (enforcePkceBuilder_ == null) {
+        enforcePkce_ = builderForValue.build();
+      } else {
+        enforcePkceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeEnforcePkce(com.google.protobuf.BoolValue value) {
+      if (enforcePkceBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0) &&
+          enforcePkce_ != null &&
+          enforcePkce_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getEnforcePkceBuilder().mergeFrom(value);
+        } else {
+          enforcePkce_ = value;
+        }
+      } else {
+        enforcePkceBuilder_.mergeFrom(value);
+      }
+      if (enforcePkce_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearEnforcePkce() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      enforcePkce_ = null;
+      if (enforcePkceBuilder_ != null) {
+        enforcePkceBuilder_.dispose();
+        enforcePkceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getEnforcePkceBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getEnforcePkceFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getEnforcePkceOrBuilder() {
+      if (enforcePkceBuilder_ != null) {
+        return enforcePkceBuilder_.getMessageOrBuilder();
+      } else {
+        return enforcePkce_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : enforcePkce_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getEnforcePkceFieldBuilder() {
+      if (enforcePkceBuilder_ == null) {
+        enforcePkceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getEnforcePkce(),
+                getParentForChildren(),
+                isClean());
+        enforcePkce_ = null;
+      }
+      return enforcePkceBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

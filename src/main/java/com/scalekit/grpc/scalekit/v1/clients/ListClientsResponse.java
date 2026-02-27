@@ -18,6 +18,8 @@ private static final long serialVersionUID = 0L;
   }
   private ListClientsResponse() {
     clients_ = java.util.Collections.emptyList();
+    nextPageToken_ = "";
+    prevPageToken_ = "";
   }
 
   @java.lang.Override
@@ -116,6 +118,84 @@ private static final long serialVersionUID = 0L;
     return clients_.get(index);
   }
 
+  public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
+  /**
+   * <code>string next_page_token = 3 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The nextPageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getNextPageToken() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nextPageToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string next_page_token = 3 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for nextPageToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNextPageTokenBytes() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nextPageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PREV_PAGE_TOKEN_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object prevPageToken_ = "";
+  /**
+   * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The prevPageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getPrevPageToken() {
+    java.lang.Object ref = prevPageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      prevPageToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for prevPageToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPrevPageTokenBytes() {
+    java.lang.Object ref = prevPageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      prevPageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -136,6 +216,12 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < clients_.size(); i++) {
       output.writeMessage(2, clients_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nextPageToken_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prevPageToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, prevPageToken_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -152,6 +238,12 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < clients_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, clients_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nextPageToken_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prevPageToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, prevPageToken_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -172,6 +264,10 @@ private static final long serialVersionUID = 0L;
         != other.getTotalSize()) return false;
     if (!getClientsList()
         .equals(other.getClientsList())) return false;
+    if (!getNextPageToken()
+        .equals(other.getNextPageToken())) return false;
+    if (!getPrevPageToken()
+        .equals(other.getPrevPageToken())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -189,6 +285,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CLIENTS_FIELD_NUMBER;
       hash = (53 * hash) + getClientsList().hashCode();
     }
+    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getNextPageToken().hashCode();
+    hash = (37 * hash) + PREV_PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getPrevPageToken().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -328,6 +428,8 @@ private static final long serialVersionUID = 0L;
         clientsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      nextPageToken_ = "";
+      prevPageToken_ = "";
       return this;
     }
 
@@ -376,6 +478,12 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.totalSize_ = totalSize_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.prevPageToken_ = prevPageToken_;
       }
     }
 
@@ -452,6 +560,16 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (!other.getNextPageToken().isEmpty()) {
+        nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getPrevPageToken().isEmpty()) {
+        prevPageToken_ = other.prevPageToken_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -496,6 +614,16 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 18
+            case 26: {
+              nextPageToken_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 26
+            case 34: {
+              prevPageToken_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -867,6 +995,150 @@ private static final long serialVersionUID = 0L;
         clients_ = null;
       }
       return clientsBuilder_;
+    }
+
+    private java.lang.Object nextPageToken_ = "";
+    /**
+     * <code>string next_page_token = 3 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The nextPageToken.
+     */
+    public java.lang.String getNextPageToken() {
+      java.lang.Object ref = nextPageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextPageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string next_page_token = 3 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for nextPageToken.
+     */
+    public com.google.protobuf.ByteString
+        getNextPageTokenBytes() {
+      java.lang.Object ref = nextPageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nextPageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string next_page_token = 3 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageToken(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string next_page_token = 3 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNextPageToken() {
+      nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string next_page_token = 3 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object prevPageToken_ = "";
+    /**
+     * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The prevPageToken.
+     */
+    public java.lang.String getPrevPageToken() {
+      java.lang.Object ref = prevPageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        prevPageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for prevPageToken.
+     */
+    public com.google.protobuf.ByteString
+        getPrevPageTokenBytes() {
+      java.lang.Object ref = prevPageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        prevPageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The prevPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrevPageToken(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      prevPageToken_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPrevPageToken() {
+      prevPageToken_ = getDefaultInstance().getPrevPageToken();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for prevPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrevPageTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      prevPageToken_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

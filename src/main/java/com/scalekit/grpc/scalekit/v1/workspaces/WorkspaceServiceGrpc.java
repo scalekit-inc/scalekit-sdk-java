@@ -449,6 +449,37 @@ public final class WorkspaceServiceGrpc {
     return getCreateCheckoutSessionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextRequest,
+      com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextResponse> getUpdateWorkspaceContextMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateWorkspaceContext",
+      requestType = com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextRequest,
+      com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextResponse> getUpdateWorkspaceContextMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextRequest, com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextResponse> getUpdateWorkspaceContextMethod;
+    if ((getUpdateWorkspaceContextMethod = WorkspaceServiceGrpc.getUpdateWorkspaceContextMethod) == null) {
+      synchronized (WorkspaceServiceGrpc.class) {
+        if ((getUpdateWorkspaceContextMethod = WorkspaceServiceGrpc.getUpdateWorkspaceContextMethod) == null) {
+          WorkspaceServiceGrpc.getUpdateWorkspaceContextMethod = getUpdateWorkspaceContextMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextRequest, com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateWorkspaceContext"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new WorkspaceServiceMethodDescriptorSupplier("UpdateWorkspaceContext"))
+              .build();
+        }
+      }
+    }
+    return getUpdateWorkspaceContextMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -629,7 +660,7 @@ public final class WorkspaceServiceGrpc {
      *   - metadata: Optional. Key-value pairs (string) for audit/correlation; keys/values length limited.
      *   - customer_id / workspace_id: Optional. If omitted, inferred from the authenticated workspace session.
      * Validation rules:
-     *   - Authentication: Requires WORKSPACE_SESSION_CLIENT. Caller must be authorized for billing actions.
+     *   - Authentication: Requires WORKSPACE_CLIENT. Caller must be authorized for billing actions.
      *   - For SUBSCRIPTION/PAYMENT: items must be present and valid; unsupported/archived prices are rejected.
      *   - URLs (return_url/success_url) must match allowed origins; invalid URLs are rejected.
      *   - Only one active session per workspace per identical parameter set is allowed (idempotency).
@@ -656,6 +687,13 @@ public final class WorkspaceServiceGrpc {
     default void createCheckoutSession(com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateCheckoutSessionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateWorkspaceContext(com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateWorkspaceContextMethod(), responseObserver);
     }
   }
 
@@ -831,7 +869,7 @@ public final class WorkspaceServiceGrpc {
      *   - metadata: Optional. Key-value pairs (string) for audit/correlation; keys/values length limited.
      *   - customer_id / workspace_id: Optional. If omitted, inferred from the authenticated workspace session.
      * Validation rules:
-     *   - Authentication: Requires WORKSPACE_SESSION_CLIENT. Caller must be authorized for billing actions.
+     *   - Authentication: Requires WORKSPACE_CLIENT. Caller must be authorized for billing actions.
      *   - For SUBSCRIPTION/PAYMENT: items must be present and valid; unsupported/archived prices are rejected.
      *   - URLs (return_url/success_url) must match allowed origins; invalid URLs are rejected.
      *   - Only one active session per workspace per identical parameter set is allowed (idempotency).
@@ -859,6 +897,14 @@ public final class WorkspaceServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateCheckoutSessionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateWorkspaceContext(com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateWorkspaceContextMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -1010,7 +1056,7 @@ public final class WorkspaceServiceGrpc {
      *   - metadata: Optional. Key-value pairs (string) for audit/correlation; keys/values length limited.
      *   - customer_id / workspace_id: Optional. If omitted, inferred from the authenticated workspace session.
      * Validation rules:
-     *   - Authentication: Requires WORKSPACE_SESSION_CLIENT. Caller must be authorized for billing actions.
+     *   - Authentication: Requires WORKSPACE_CLIENT. Caller must be authorized for billing actions.
      *   - For SUBSCRIPTION/PAYMENT: items must be present and valid; unsupported/archived prices are rejected.
      *   - URLs (return_url/success_url) must match allowed origins; invalid URLs are rejected.
      *   - Only one active session per workspace per identical parameter set is allowed (idempotency).
@@ -1037,6 +1083,13 @@ public final class WorkspaceServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionResponse createCheckoutSession(com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCheckoutSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextResponse updateWorkspaceContext(com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateWorkspaceContextMethod(), getCallOptions(), request);
     }
   }
 
@@ -1201,7 +1254,7 @@ public final class WorkspaceServiceGrpc {
      *   - metadata: Optional. Key-value pairs (string) for audit/correlation; keys/values length limited.
      *   - customer_id / workspace_id: Optional. If omitted, inferred from the authenticated workspace session.
      * Validation rules:
-     *   - Authentication: Requires WORKSPACE_SESSION_CLIENT. Caller must be authorized for billing actions.
+     *   - Authentication: Requires WORKSPACE_CLIENT. Caller must be authorized for billing actions.
      *   - For SUBSCRIPTION/PAYMENT: items must be present and valid; unsupported/archived prices are rejected.
      *   - URLs (return_url/success_url) must match allowed origins; invalid URLs are rejected.
      *   - Only one active session per workspace per identical parameter set is allowed (idempotency).
@@ -1230,6 +1283,14 @@ public final class WorkspaceServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateCheckoutSessionMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextResponse> updateWorkspaceContext(
+        com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateWorkspaceContextMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_WORKSPACE = 0;
@@ -1246,6 +1307,7 @@ public final class WorkspaceServiceGrpc {
   private static final int METHODID_GET_PRODUCT_CATALOG = 11;
   private static final int METHODID_ADD_SUBSCRIPTION = 12;
   private static final int METHODID_CREATE_CHECKOUT_SESSION = 13;
+  private static final int METHODID_UPDATE_WORKSPACE_CONTEXT = 14;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1319,6 +1381,10 @@ public final class WorkspaceServiceGrpc {
         case METHODID_CREATE_CHECKOUT_SESSION:
           serviceImpl.createCheckoutSession((com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_WORKSPACE_CONTEXT:
+          serviceImpl.updateWorkspaceContext((com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1436,6 +1502,13 @@ public final class WorkspaceServiceGrpc {
               com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionRequest,
               com.scalekit.grpc.scalekit.v1.workspaces.CreateCheckoutSessionResponse>(
                 service, METHODID_CREATE_CHECKOUT_SESSION)))
+        .addMethod(
+          getUpdateWorkspaceContextMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextRequest,
+              com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextResponse>(
+                service, METHODID_UPDATE_WORKSPACE_CONTEXT)))
         .build();
   }
 
@@ -1498,6 +1571,7 @@ public final class WorkspaceServiceGrpc {
               .addMethod(getGetProductCatalogMethod())
               .addMethod(getAddSubscriptionMethod())
               .addMethod(getCreateCheckoutSessionMethod())
+              .addMethod(getUpdateWorkspaceContextMethod())
               .build();
         }
       }

@@ -123,4 +123,16 @@ public interface WorkspaceOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAuthDomainBytes();
+
+  /**
+   * <code>string deployment = 11 [json_name = "deployment", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The deployment.
+   */
+  java.lang.String getDeployment();
+  /**
+   * <code>string deployment = 11 [json_name = "deployment", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for deployment.
+   */
+  com.google.protobuf.ByteString
+      getDeploymentBytes();
 }

@@ -179,4 +179,21 @@ public interface UserOrBuilder extends
    * <code>.google.protobuf.Struct custom_attributes = 14 [json_name = "customAttributes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.StructOrBuilder getCustomAttributesOrBuilder();
+
+  /**
+   * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the organizationExternalId field is set.
+   */
+  boolean hasOrganizationExternalId();
+  /**
+   * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The organizationExternalId.
+   */
+  java.lang.String getOrganizationExternalId();
+  /**
+   * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for organizationExternalId.
+   */
+  com.google.protobuf.ByteString
+      getOrganizationExternalIdBytes();
 }

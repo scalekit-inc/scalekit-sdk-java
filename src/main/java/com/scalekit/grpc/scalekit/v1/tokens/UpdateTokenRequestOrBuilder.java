@@ -21,51 +21,51 @@ public interface UpdateTokenRequestOrBuilder extends
       getTokenBytes();
 
   /**
-   * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_claims = 3 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  int getMetadataCount();
+  int getCustomClaimsCount();
   /**
-   * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_claims = 3 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  boolean containsMetadata(
+  boolean containsCustomClaims(
       java.lang.String key);
   /**
-   * Use {@link #getMetadataMap()} instead.
+   * Use {@link #getCustomClaimsMap()} instead.
    */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String>
-  getMetadata();
+  getCustomClaims();
   /**
-   * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_claims = 3 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
-  getMetadataMap();
+  getCustomClaimsMap();
   /**
-   * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_claims = 3 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   /* nullable */
-java.lang.String getMetadataOrDefault(
+java.lang.String getCustomClaimsOrDefault(
       java.lang.String key,
       /* nullable */
 java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; custom_claims = 3 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  java.lang.String getMetadataOrThrow(
+  java.lang.String getCustomClaimsOrThrow(
       java.lang.String key);
 
   /**
-   * <code>optional string description = 3 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string description = 2 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the description field is set.
    */
   boolean hasDescription();
   /**
-   * <code>optional string description = 3 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string description = 2 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The description.
    */
   java.lang.String getDescription();
   /**
-   * <code>optional string description = 3 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>optional string description = 2 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString

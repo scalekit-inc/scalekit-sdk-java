@@ -35,4 +35,15 @@ public interface ListPermissionsRequestOrBuilder extends
    * @return The pageSize.
    */
   int getPageSize();
+
+  /**
+   * <code>.scalekit.v1.roles.PermissionType type = 3 [json_name = "type", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   * <code>.scalekit.v1.roles.PermissionType type = 3 [json_name = "type", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The type.
+   */
+  com.scalekit.grpc.scalekit.v1.roles.PermissionType getType();
 }

@@ -216,6 +216,17 @@ private static final long serialVersionUID = 0L;
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
+  public static final int IS_SCALEKIT_PERMISSION_FIELD_NUMBER = 6;
+  private boolean isScalekitPermission_ = false;
+  /**
+   * <code>bool is_scalekit_permission = 6 [json_name = "isScalekitPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isScalekitPermission.
+   */
+  @java.lang.Override
+  public boolean getIsScalekitPermission() {
+    return isScalekitPermission_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -245,6 +256,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(5, getUpdateTime());
     }
+    if (isScalekitPermission_ != false) {
+      output.writeBool(6, isScalekitPermission_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -270,6 +284,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getUpdateTime());
+    }
+    if (isScalekitPermission_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, isScalekitPermission_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -302,6 +320,8 @@ private static final long serialVersionUID = 0L;
       if (!getUpdateTime()
           .equals(other.getUpdateTime())) return false;
     }
+    if (getIsScalekitPermission()
+        != other.getIsScalekitPermission()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -327,6 +347,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
+    hash = (37 * hash) + IS_SCALEKIT_PERMISSION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsScalekitPermission());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -482,6 +505,7 @@ private static final long serialVersionUID = 0L;
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
+      isScalekitPermission_ = false;
       return this;
     }
 
@@ -536,6 +560,9 @@ private static final long serialVersionUID = 0L;
             ? updateTime_
             : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.isScalekitPermission_ = isScalekitPermission_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -605,6 +632,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
+      if (other.getIsScalekitPermission() != false) {
+        setIsScalekitPermission(other.getIsScalekitPermission());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -660,6 +690,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 42
+            case 48: {
+              isScalekitPermission_ = input.readBool();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 48
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1133,6 +1168,38 @@ private static final long serialVersionUID = 0L;
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private boolean isScalekitPermission_ ;
+    /**
+     * <code>bool is_scalekit_permission = 6 [json_name = "isScalekitPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The isScalekitPermission.
+     */
+    @java.lang.Override
+    public boolean getIsScalekitPermission() {
+      return isScalekitPermission_;
+    }
+    /**
+     * <code>bool is_scalekit_permission = 6 [json_name = "isScalekitPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The isScalekitPermission to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsScalekitPermission(boolean value) {
+
+      isScalekitPermission_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_scalekit_permission = 6 [json_name = "isScalekitPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsScalekitPermission() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      isScalekitPermission_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

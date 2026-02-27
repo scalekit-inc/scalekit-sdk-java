@@ -29,6 +29,7 @@ private static final long serialVersionUID = 0L;
     locale_ = "";
     groups_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+    organizationExternalId_ = "";
   }
 
   @java.lang.Override
@@ -527,6 +528,53 @@ private static final long serialVersionUID = 0L;
     return customAttributes_ == null ? com.google.protobuf.Struct.getDefaultInstance() : customAttributes_;
   }
 
+  public static final int ORGANIZATION_EXTERNAL_ID_FIELD_NUMBER = 15;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object organizationExternalId_ = "";
+  /**
+   * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the organizationExternalId field is set.
+   */
+  @java.lang.Override
+  public boolean hasOrganizationExternalId() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The organizationExternalId.
+   */
+  @java.lang.Override
+  public java.lang.String getOrganizationExternalId() {
+    java.lang.Object ref = organizationExternalId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      organizationExternalId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for organizationExternalId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOrganizationExternalIdBytes() {
+    java.lang.Object ref = organizationExternalId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      organizationExternalId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -582,6 +630,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(14, getCustomAttributes());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, organizationExternalId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -642,6 +693,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, getCustomAttributes());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, organizationExternalId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -688,6 +742,11 @@ private static final long serialVersionUID = 0L;
       if (!getCustomAttributes()
           .equals(other.getCustomAttributes())) return false;
     }
+    if (hasOrganizationExternalId() != other.hasOrganizationExternalId()) return false;
+    if (hasOrganizationExternalId()) {
+      if (!getOrganizationExternalId()
+          .equals(other.getOrganizationExternalId())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -732,6 +791,10 @@ private static final long serialVersionUID = 0L;
     if (hasCustomAttributes()) {
       hash = (37 * hash) + CUSTOM_ATTRIBUTES_FIELD_NUMBER;
       hash = (53 * hash) + getCustomAttributes().hashCode();
+    }
+    if (hasOrganizationExternalId()) {
+      hash = (37 * hash) + ORGANIZATION_EXTERNAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationExternalId().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -889,6 +952,7 @@ private static final long serialVersionUID = 0L;
         customAttributesBuilder_.dispose();
         customAttributesBuilder_ = null;
       }
+      organizationExternalId_ = "";
       return this;
     }
 
@@ -968,6 +1032,10 @@ private static final long serialVersionUID = 0L;
             ? customAttributes_
             : customAttributesBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.organizationExternalId_ = organizationExternalId_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1085,6 +1153,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasCustomAttributes()) {
         mergeCustomAttributes(other.getCustomAttributes());
       }
+      if (other.hasOrganizationExternalId()) {
+        organizationExternalId_ = other.organizationExternalId_;
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1184,6 +1257,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00002000;
               break;
             } // case 114
+            case 122: {
+              organizationExternalId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00004000;
+              break;
+            } // case 122
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2215,6 +2293,85 @@ private static final long serialVersionUID = 0L;
         customAttributes_ = null;
       }
       return customAttributesBuilder_;
+    }
+
+    private java.lang.Object organizationExternalId_ = "";
+    /**
+     * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the organizationExternalId field is set.
+     */
+    public boolean hasOrganizationExternalId() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The organizationExternalId.
+     */
+    public java.lang.String getOrganizationExternalId() {
+      java.lang.Object ref = organizationExternalId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationExternalId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for organizationExternalId.
+     */
+    public com.google.protobuf.ByteString
+        getOrganizationExternalIdBytes() {
+      java.lang.Object ref = organizationExternalId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationExternalId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The organizationExternalId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationExternalId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      organizationExternalId_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOrganizationExternalId() {
+      organizationExternalId_ = getDefaultInstance().getOrganizationExternalId();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for organizationExternalId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationExternalIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      organizationExternalId_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
