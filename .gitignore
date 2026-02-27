@@ -44,3 +44,4 @@ build/
 /.idea/
 /.history
 .tools/*
+dependency-reduced-pom.xml

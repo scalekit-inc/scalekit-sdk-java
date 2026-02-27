@@ -31,12 +31,19 @@ jobs:
         with:
           distribution: temurin
           java-version: "17"
-          cache: maven
 
       - name: Set up Go (for buf install in make setup)
         uses: actions/setup-go@v6
         with:
           go-version: "1.23.x"
+
+      - name: Cache repo-local Maven dependencies
+        uses: actions/cache@v4
+        with:
+          path: .tools/m2
+          key: ${{ runner.os }}-repo-local-m2-${{ hashFiles('pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-repo-local-m2-
 
       - name: Setup build tools
         run: make setup

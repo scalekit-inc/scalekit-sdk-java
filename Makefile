@@ -1,5 +1,5 @@
 # Usage:
-#   make setup     # Create/update .venv and install dependencies
+#   make setup     # Install tooling and prefetch Maven dependencies locally
 #   make generate  # Regenerate SDK code from proto sources
 #   make lint      # Run static checks
 #   make test      # Run unit tests
@@ -9,6 +9,9 @@ SHELL := /bin/bash
 MVN := mvn
 GO := go
 TOOLS_BIN := $(CURDIR)/.tools/bin
+MAVEN_REPO_LOCAL := $(CURDIR)/.tools/m2
+MVN_FLAGS := -B -ntp -Dmaven.repo.local="$(MAVEN_REPO_LOCAL)"
+MVN_CMD := $(MVN) $(MVN_FLAGS)
 BUF := PATH="$(TOOLS_BIN):$$PATH" buf
 
 BUF_VERSION := v1.50.1
@@ -24,13 +27,15 @@ JAVA_PKG := src/main/java/com/scalekit/grpc
 .PHONY: setup tools-check generate lint test verify-generate
 
 setup:
-	@mkdir -p "$(TOOLS_BIN)"
+	@mkdir -p "$(TOOLS_BIN)" "$(MAVEN_REPO_LOCAL)"
 	@command -v "$(MVN)" >/dev/null 2>&1 || (echo "missing maven. install Maven and retry." && exit 1)
 	@if [ ! -x "$(TOOLS_BIN)/buf" ]; then \
 		echo "installing buf $(BUF_VERSION) into $(TOOLS_BIN)"; \
 		command -v "$(GO)" >/dev/null 2>&1 || (echo "missing go (required to install buf). install Go or preinstall buf." && exit 1); \
 		GOBIN="$(TOOLS_BIN)" $(GO) install github.com/bufbuild/buf/cmd/buf@$(BUF_VERSION); \
 	fi
+	@echo "prefetching Maven dependencies into $(MAVEN_REPO_LOCAL)"
+	$(MVN_CMD) -DskipTests dependency:go-offline
 	@echo "setup complete"
 
 tools-check:
@@ -50,7 +55,7 @@ lint:
 	@echo "No dedicated lint/static plugin configured in pom.xml; skipping lint."
 
 test:
-	$(MVN) -B -ntp test
+	$(MVN_CMD) test
 
 verify-generate: generate
 	git diff --exit-code
