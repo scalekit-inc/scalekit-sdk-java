@@ -43,26 +43,31 @@ public final class OptionsProto {
     java.lang.String[] descriptorData = {
       "\n!scalekit/v1/options/options.proto\022\023sca" +
       "lekit.v1.options\032 google/protobuf/descri" +
-      "ptor.proto\"\206\001\n\nAuthOption\022X\n\023authenticat" +
+      "ptor.proto\"\275\001\n\nAuthOption\022X\n\023authenticat" +
       "ion_type\030\003 \001(\0162\'.scalekit.v1.options.Aut" +
-      "henticationTypeR\022authenticationType\022\036\n\np" +
-      "ermission\030\001 \001(\tR\npermission*\264\002\n\022Authenti" +
-      "cationType\022\013\n\007BLOCKED\020\000\022\010\n\004NONE\020\001\022\r\n\tWOR" +
-      "KSPACE\020@\022\023\n\017CUSTOMER_PORTAL\020 \022\013\n\007SESSION" +
-      "\020\020\022\025\n\021WORKSPACE_SESSION\020P\022%\n!WORKSPACE_S" +
-      "ESSION_CUSTOMER_PORTAL\020p\022,\n(WORKSPACE_SE" +
-      "SSION_CUSTOMER_PORTAL_CLIENT\020t\022\010\n\004USER\020\010" +
-      "\022\n\n\006CLIENT\020\004\022\022\n\016SESSION_CLIENT\020\024\022\034\n\030WORK" +
-      "SPACE_SESSION_CLIENT\020T\022\"\n\036CUSTOMER_PORTA" +
-      "L_SESSION_CLIENT\0204:b\n\013auth_option\022\036.goog" +
-      "le.protobuf.MethodOptions\030\320\206\003 \001(\0132\037.scal" +
-      "ekit.v1.options.AuthOptionR\nauthOptionB\331" +
-      "\001\n%com.scalekit.grpc.scalekit.v1.options" +
-      "B\014OptionsProtoP\001Z4github.com/scalekit-in" +
-      "c/scalekit/pkg/grpc/authoption\242\002\003SVO\252\002\023S" +
-      "calekit.V1.Options\312\002\023Scalekit\\V1\\Options" +
-      "\342\002\037Scalekit\\V1\\Options\\GPBMetadata\352\002\025Sca" +
-      "lekit::V1::Optionsb\006proto3"
+      "henticationTypeR\022authenticationType\022 \n\013p" +
+      "ermissions\030\001 \003(\tR\013permissions\0223\n\006policy\030" +
+      "\002 \001(\0162\033.scalekit.v1.options.PolicyR\006poli" +
+      "cy**\n\006Policy\022\010\n\004DENY\020\000\022\013\n\007PARTIAL\020\001\022\t\n\005A" +
+      "LLOW\020\002*\217\003\n\022AuthenticationType\022\013\n\007BLOCKED" +
+      "\020\000\022\010\n\004NONE\020\001\022\r\n\tWORKSPACE\020@\022\023\n\017CUSTOMER_" +
+      "PORTAL\020 \022\013\n\007SESSION\020\020\022\025\n\021WORKSPACE_SESSI" +
+      "ON\020P\022\024\n\020WORKSPACE_CLIENT\020D\022%\n!WORKSPACE_" +
+      "SESSION_CUSTOMER_PORTAL\020p\022,\n(WORKSPACE_S" +
+      "ESSION_CUSTOMER_PORTAL_CLIENT\020t\022$\n WORKS" +
+      "PACE_CUSTOMER_PORTAL_CLIENT\020d\022\035\n\031WORKSPA" +
+      "CE_CUSTOMER_PORTAL\020`\022\010\n\004USER\020\010\022\n\n\006CLIENT" +
+      "\020\004\022\022\n\016SESSION_CLIENT\020\024\022\034\n\030WORKSPACE_SESS" +
+      "ION_CLIENT\020T\022\"\n\036CUSTOMER_PORTAL_SESSION_" +
+      "CLIENT\0204:b\n\013auth_option\022\036.google.protobu" +
+      "f.MethodOptions\030\320\206\003 \001(\0132\037.scalekit.v1.op" +
+      "tions.AuthOptionR\nauthOptionB\331\001\n%com.sca" +
+      "lekit.grpc.scalekit.v1.optionsB\014OptionsP" +
+      "rotoP\001Z4github.com/scalekit-inc/scalekit" +
+      "/pkg/grpc/authoption\242\002\003SVO\252\002\023Scalekit.V1" +
+      ".Options\312\002\023Scalekit\\V1\\Options\342\002\037Scaleki" +
+      "t\\V1\\Options\\GPBMetadata\352\002\025Scalekit::V1:" +
+      ":Optionsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -74,7 +79,7 @@ public final class OptionsProto {
     internal_static_scalekit_v1_options_AuthOption_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_options_AuthOption_descriptor,
-        new java.lang.String[] { "AuthenticationType", "Permission", });
+        new java.lang.String[] { "AuthenticationType", "Permissions", "Policy", });
     authOption.internalInit(descriptor.getExtensions().get(0));
     com.google.protobuf.DescriptorProtos.getDescriptor();
   }

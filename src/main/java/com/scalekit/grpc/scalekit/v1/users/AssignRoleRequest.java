@@ -47,7 +47,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>string id = 1 [json_name = "id", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.users.AssignRoleRequest.id is deprecated.
-   *     See scalekit/v1/users/users.proto;l=1436
+   *     See scalekit/v1/users/users.proto;l=1511
    * @return The id.
    */
   @java.lang.Override
@@ -66,7 +66,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>string id = 1 [json_name = "id", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.users.AssignRoleRequest.id is deprecated.
-   *     See scalekit/v1/users/users.proto;l=1436
+   *     See scalekit/v1/users/users.proto;l=1511
    * @return The bytes for id.
    */
   @java.lang.Override
@@ -477,7 +477,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string id = 1 [json_name = "id", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.users.AssignRoleRequest.id is deprecated.
-     *     See scalekit/v1/users/users.proto;l=1436
+     *     See scalekit/v1/users/users.proto;l=1511
      * @return The id.
      */
     @java.lang.Deprecated public java.lang.String getId() {
@@ -495,7 +495,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string id = 1 [json_name = "id", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.users.AssignRoleRequest.id is deprecated.
-     *     See scalekit/v1/users/users.proto;l=1436
+     *     See scalekit/v1/users/users.proto;l=1511
      * @return The bytes for id.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -514,7 +514,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string id = 1 [json_name = "id", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.users.AssignRoleRequest.id is deprecated.
-     *     See scalekit/v1/users/users.proto;l=1436
+     *     See scalekit/v1/users/users.proto;l=1511
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -529,7 +529,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string id = 1 [json_name = "id", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.users.AssignRoleRequest.id is deprecated.
-     *     See scalekit/v1/users/users.proto;l=1436
+     *     See scalekit/v1/users/users.proto;l=1511
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearId() {
@@ -541,7 +541,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string id = 1 [json_name = "id", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.users.AssignRoleRequest.id is deprecated.
-     *     See scalekit/v1/users/users.proto;l=1436
+     *     See scalekit/v1/users/users.proto;l=1511
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */

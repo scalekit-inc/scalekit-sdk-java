@@ -26,10 +26,10 @@ public final class TokensProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_tokens_CreateToken_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_tokens_CreateToken_MetadataEntry_descriptor;
+    internal_static_scalekit_v1_tokens_CreateToken_CustomClaimsEntry_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_tokens_CreateToken_MetadataEntry_fieldAccessorTable;
+      internal_static_scalekit_v1_tokens_CreateToken_CustomClaimsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_tokens_CreateTokenResponse_descriptor;
   static final 
@@ -66,10 +66,10 @@ public final class TokensProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_tokens_UpdateTokenRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_tokens_UpdateTokenRequest_MetadataEntry_descriptor;
+    internal_static_scalekit_v1_tokens_UpdateTokenRequest_CustomClaimsEntry_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_tokens_UpdateTokenRequest_MetadataEntry_fieldAccessorTable;
+      internal_static_scalekit_v1_tokens_UpdateTokenRequest_CustomClaimsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_tokens_UpdateTokenResponse_descriptor;
   static final 
@@ -81,10 +81,10 @@ public final class TokensProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_tokens_Token_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_tokens_Token_MetadataEntry_descriptor;
+    internal_static_scalekit_v1_tokens_Token_CustomClaimsEntry_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_tokens_Token_MetadataEntry_fieldAccessorTable;
+      internal_static_scalekit_v1_tokens_Token_CustomClaimsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_tokens_UserProfile_descriptor;
   static final 
@@ -96,15 +96,15 @@ public final class TokensProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_tokens_UserProfile_AttributesEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_tokens_RegenerateTokenRequest_descriptor;
+    internal_static_scalekit_v1_tokens_FetchTokenRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_tokens_RegenerateTokenRequest_fieldAccessorTable;
+      internal_static_scalekit_v1_tokens_FetchTokenRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_tokens_RegenerateTokenResponse_descriptor;
+    internal_static_scalekit_v1_tokens_FetchTokenResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_tokens_RegenerateTokenResponse_fieldAccessorTable;
+      internal_static_scalekit_v1_tokens_FetchTokenResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -117,219 +117,233 @@ public final class TokensProto {
       "\n\037scalekit/v1/tokens/tokens.proto\022\022scale" +
       "kit.v1.tokens\032\033buf/validate/validate.pro" +
       "to\032\034google/api/annotations.proto\032\037google" +
-      "/api/field_behavior.proto\032\033google/protob" +
-      "uf/empty.proto\032\037google/protobuf/timestam" +
-      "p.proto\032.protoc-gen-openapiv2/options/an" +
-      "notations.proto\032!scalekit/v1/options/opt" +
-      "ions.proto\"|\n\022CreateTokenRequest\022f\n\005toke" +
-      "n\030\001 \001(\0132\037.scalekit.v1.tokens.CreateToken" +
-      "B/\222A)2\'Container for token creation para" +
-      "meters\340A\002R\005token\"\314\006\n\013CreateToken\022g\n\017orga" +
-      "nization_id\030\001 \001(\tB>\222A82\037Organization ID " +
-      "for token scopeJ\025\"org_123456789012345\"\340A" +
-      "\002R\016organizationId\022\210\001\n\007user_id\030\002 \001(\tBo\222Al" +
-      "2SUser ID (optional). If set, token is u" +
-      "ser-scoped. User must belong to organiza" +
-      "tion.J\025\"usr_987654321098765\"R\006userId\022\375\001\n" +
-      "\010metadata\030\003 \003(\0132-.scalekit.v1.tokens.Cre" +
-      "ateToken.MetadataEntryB\261\001\222A\224\0012sCustom me" +
-      "tadata key-value pairs. Keys must be 1-3" +
-      "0 characters, values must be 1-256 chara" +
-      "cters, maximum 20 entries.J\035{\"env\":\"prod" +
-      "\",\"scope\":\"read\"}\272H\026\232\001\023\020\024\"\006r\004\020\001\030\036*\007r\005\020\001\030" +
-      "\200\002R\010metadata\022\227\001\n\006expiry\030\004 \001(\0132\032.google.p" +
+      "/api/field_behavior.proto\032\033google/api/vi" +
+      "sibility.proto\032\033google/protobuf/empty.pr" +
+      "oto\032\037google/protobuf/timestamp.proto\032.pr" +
+      "otoc-gen-openapiv2/options/annotations.p" +
+      "roto\032!scalekit/v1/options/options.proto\"" +
+      "|\n\022CreateTokenRequest\022f\n\005token\030\001 \001(\0132\037.s" +
+      "calekit.v1.tokens.CreateTokenB/\222A)2\'Cont" +
+      "ainer for token creation parameters\340A\002R\005" +
+      "token\"\333\006\n\013CreateToken\022g\n\017organization_id" +
+      "\030\001 \001(\tB>\222A82\037Organization ID for token s" +
+      "copeJ\025\"org_123456789012345\"\340A\002R\016organiza" +
+      "tionId\022\210\001\n\007user_id\030\002 \001(\tBo\222Al2SUser ID (" +
+      "optional). If set, token is user-scoped." +
+      " User must belong to organization.J\025\"usr" +
+      "_987654321098765\"R\006userId\022\210\002\n\rcustom_cla" +
+      "ims\030\003 \003(\01321.scalekit.v1.tokens.CreateTok" +
+      "en.CustomClaimsEntryB\257\001\222A\222\0012qCustom clai" +
+      "ms key-value pairs. Keys must be 1-30 ch" +
+      "aracters, values must be 1-256 character" +
+      "s, maximum 20 entries.J\035{\"env\":\"prod\",\"s" +
+      "cope\":\"read\"}\272H\026\232\001\023\020\024\"\006r\004\020\001\030\036*\007r\005\020\001\030\200\002R\014" +
+      "customClaims\022\227\001\n\006expiry\030\004 \001(\0132\032.google.p" +
       "rotobuf.TimestampBc\222A`2:Optional expiry " +
       "timestamp; if absent token does not expi" +
       "reJ\026\"2025-12-01T00:00:00Z\"\242\002\tdate-timeR\006" +
       "expiry\022r\n\013description\030\005 \001(\tBP\222AE2,Option" +
       "al human-readable label (\342\211\244255 chars)J\025" +
       "\"CI Deployment Token\"\272H\005r\003\030\377\001R\013descripti" +
-      "on\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n" +
-      "\005value\030\002 \001(\tR\005value:\0028\001\"\353\002\n\023CreateTokenR" +
-      "esponse\022p\n\005token\030\001 \001(\tBZ\222AT27Opaque toke" +
-      "n string (Base62 encoded). Return to cli" +
-      "ent.J\031\"opaqueTokenValueExample\"\340A\002R\005toke" +
-      "n\022\204\001\n\010token_id\030\002 \001(\tBi\222Ac2IInternal toke" +
-      "n identifier (format: apit_xxxxx). Do NO" +
-      "T share with client.J\026\"apit_123456789012" +
-      "345\"\340A\002R\007tokenId\022[\n\ntoken_info\030\003 \001(\0132\031.s" +
-      "calekit.v1.tokens.TokenB!\222A\0362\034Echoed tok" +
-      "en metadata recordR\ttokenInfo\"|\n\024Validat" +
-      "eTokenRequest\022d\n\005token\030\001 \001(\tBN\222AH2.Opaqu" +
-      "e token string OR token_id (\"apit_xxxxx\"" +
-      ")J\026\"apit_123123123123121\"\340A\002R\005token\"v\n\025V" +
-      "alidateTokenResponse\022]\n\ntoken_info\030\001 \001(\013" +
-      "2\031.scalekit.v1.tokens.TokenB#\222A 2\036Resolv" +
-      "ed token metadata recordR\ttokenInfo\"t\n\026I" +
-      "nvalidateTokenRequest\022Z\n\005token\030\001 \001(\tBD\222A" +
-      ">2$Token string or token_id; idempotentJ" +
-      "\026\"apit_123456789012345\"\340A\002R\005token\"\216\003\n\021Li" +
-      "stTokensRequest\022[\n\017organization_id\030\001 \001(\t" +
-      "B2\222A,2\023Organization filterJ\025\"org_1234567" +
-      "89012345\"\340A\002R\016organizationId\022N\n\007user_id\030" +
-      "\002 \001(\tB0\222A-2\024Optional user filterJ\025\"usr_9" +
-      "87654321098765\"H\000R\006userId\210\001\001\022Z\n\tpage_siz" +
-      "e\030\003 \001(\005B=\222A12\036Page size (default 10, max" +
-      " 30):\00210J\00210Y\000\000\000\000\000\000>@\272H\006\032\004\030\036(\000R\010pageSize" +
-      "\022d\n\npage_token\030\004 \001(\tBE\222AB2/Opaque pagina" +
-      "tion cursor (empty for first page)J\017\"cur" +
-      "sor_abc123\"R\tpageTokenB\n\n\010_user_id\"\377\002\n\022L" +
-      "istTokensResponse\022V\n\006tokens\030\001 \003(\0132\031.scal" +
-      "ekit.v1.tokens.TokenB#\222A 2\036List of token" +
-      " metadata recordsR\006tokens\022E\n\013total_count" +
-      "\030\002 \001(\005B$\222A!2\033Total matching tokens count" +
-      "J\00242R\ntotalCount\022a\n\017next_page_token\030\003 \001(" +
-      "\tB9\222A62#Cursor for next page (empty if e" +
-      "nd)J\017\"cursor_def456\"R\rnextPageToken\022g\n\017p" +
-      "rev_page_token\030\004 \001(\tB?\222A<2)Cursor for pr" +
-      "evious page (empty if start)J\017\"cursor_de" +
-      "f456\"R\rprevPageToken\"\261\004\n\022UpdateTokenRequ" +
-      "est\022d\n\005token\030\001 \001(\tBN\222AH2.Opaque token st" +
-      "ring OR token_id (\"apit_xxxxx\")J\026\"apit_1" +
-      "23456789012345\"\340A\002R\005token\022\356\001\n\010metadata\030\002" +
-      " \003(\01324.scalekit.v1.tokens.UpdateTokenReq" +
-      "uest.MetadataEntryB\233\001\222A\1772mFull metadata " +
-      "replacement. Keys must be 1-30 character" +
-      "s, values must be 1-256 characters, maxi" +
-      "mum 20 entries.J\016{\"env\":\"prod\"}\272H\026\232\001\023\020\024\"" +
-      "\006r\004\020\001\030\036*\007r\005\020\001\030\200\002R\010metadata\022w\n\013descriptio" +
-      "n\030\003 \001(\tBP\222AE2/Optional description repla" +
-      "cement (empty clears)J\022\"Updated CI token" +
-      "\"\272H\005r\003\030\377\001H\000R\013description\210\001\001\032;\n\rMetadataE" +
-      "ntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005v" +
-      "alue:\0028\001B\016\n\014_description\"s\n\023UpdateTokenR" +
-      "esponse\022\\\n\ntoken_info\030\001 \001(\0132\031.scalekit.v" +
-      "1.tokens.TokenB\"\222A\0372\035Updated token metad" +
-      "ata recordR\ttokenInfo\"\324\006\n\005Token\022H\n\010token" +
-      "_id\030\001 \001(\tB-\222A*2\020Token identifierJ\026\"apit_" +
-      "123456789012345\"R\007tokenId\022X\n\017organizatio" +
-      "n_id\030\002 \001(\tB/\222A,2\023Owning organizationJ\025\"o" +
-      "rg_123456789012345\"R\016organizationId\022O\n\007u" +
-      "ser_id\030\003 \001(\tB1\222A.2\025User scope (optional)" +
-      "J\025\"usr_987654321098765\"H\000R\006userId\210\001\001\022k\n\010" +
-      "metadata\030\004 \003(\0132\'.scalekit.v1.tokens.Toke" +
-      "n.MetadataEntryB&\222A#2\017Custom metadataJ\020{" +
-      "\"scope\":\"read\"}R\010metadata\022o\n\006expiry\030\005 \001(" +
-      "\0132\032.google.protobuf.TimestampB6\222A32\rExpi" +
-      "ry if setJ\026\"2025-12-01T00:00:00Z\"\242\002\tdate" +
-      "-timeH\001R\006expiry\210\001\001\022^\n\ncreated_at\030\006 \001(\0132\032" +
-      ".google.protobuf.TimestampB#\222A 2\022Creatio" +
-      "n timestamp\242\002\tdate-timeR\tcreatedAt\022U\n\013de" +
-      "scription\030\007 \001(\tB.\222A+2\016Optional labelJ\031\"P" +
-      "roduction deploy token\"H\002R\013description\210\001" +
-      "\001\022]\n\014token_suffix\030\010 \001(\tB:\222A72-Last 4 cha" +
-      "racters of token for identificationJ\006\"xY" +
-      "9Z\"R\013tokenSuffix\032;\n\rMetadataEntry\022\020\n\003key" +
-      "\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\n\n" +
-      "\010_user_idB\t\n\007_expiryB\016\n\014_description\"\215\003\n" +
-      "\013UserProfile\022D\n\007user_id\030\001 \001(\tB+\222A(2\017User" +
-      " identifierJ\025\"usr_987654321098765\"R\006user" +
-      "Id\022A\n\005email\030\002 \001(\tB+\222A(2\022User email addre" +
-      "ssJ\022\"user@example.com\"R\005email\0221\n\004name\030\003 " +
-      "\001(\tB\035\222A\0322\014Display nameJ\n\"Jane Doe\"R\004name" +
-      "\022\202\001\n\nattributes\030\004 \003(\0132/.scalekit.v1.toke" +
-      "ns.UserProfile.AttributesEntryB1\222A.2\032Add" +
-      "itional user attributesJ\020{\"role\":\"admin\"" +
-      "}R\nattributes\032=\n\017AttributesEntry\022\020\n\003key\030" +
-      "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\322\001\n" +
-      "\026RegenerateTokenRequest\022\267\001\n\010token_id\030\001 \001" +
-      "(\tB\233\001\222A\224\0012zToken identifier (\"apit_xxxxx" +
-      "\") used to retrieve opaque token string." +
-      " Only token_id is accepted, not opaque t" +
-      "oken strings.J\026\"apit_123456789012345\"\340A\002" +
-      "R\007tokenId\"\212\003\n\027RegenerateTokenResponse\022d\n" +
-      "\005token\030\001 \001(\tBN\222AH2+Opaque token string (" +
-      "Base62 Branca encoded)J\031\"opaqueTokenValu" +
-      "eExample\"\340A\002R\005token\022\224\001\n\014retrieved_at\030\002 \001" +
-      "(\0132\032.google.protobuf.TimestampBU\222AO2)Ser" +
-      "ver timestamp when token was retrievedJ\026" +
-      "\"2025-11-28T12:00:00Z\"\242\002\tdate-time\340A\002R\013r" +
-      "etrievedAt\022r\n\ntoken_info\030\003 \001(\0132\031.scaleki" +
-      "t.v1.tokens.TokenB8\222A220Token metadata r" +
-      "ecord for display/audit purposes\340A\002R\ttok" +
-      "enInfo2\373\027\n\017ApiTokenService\022\360\003\n\013CreateTok" +
-      "en\022&.scalekit.v1.tokens.CreateTokenReque" +
-      "st\032\'.scalekit.v1.tokens.CreateTokenRespo" +
-      "nse\"\217\003\222A\350\002\n\006Tokens\022\023Create an API token\032" +
-      "\313\001Generates a new API token for an organ" +
-      "ization (optionally user-scoped). Return" +
-      "s the opaque token string, internal toke" +
-      "n identifier, and metadata details. Use " +
-      "to provision programmatic access credent" +
-      "ials.J{\n\003201\022t\nEToken created successful" +
-      "ly; includes opaque token string and met" +
-      "adata\022+\n)\032\'.scalekit.v1.tokens.CreateTok" +
-      "enResponse\202\265\030\002\030T\202\323\344\223\002\027\"\016/api/v1/tokens:\005" +
-      "token\022\304\004\n\rValidateToken\022(.scalekit.v1.to" +
-      "kens.ValidateTokenRequest\032).scalekit.v1." +
-      "tokens.ValidateTokenResponse\"\335\003\222A\261\003\n\006Tok" +
-      "ens\022\025Validate an API token\032\354\001Validates a" +
-      " provided opaque token string or token_i" +
-      "d. Resolves associated organization/user" +
-      " context and metadata. Expired tokens re" +
-      "turn HTTP 404 Not Found to signal regene" +
-      "ration; other invalid states map to appr" +
-      "opriate HTTP error codes.Jr\n\003200\022k\n:Toke" +
-      "n is valid; returns resolved token detai" +
-      "ls and context\022-\n+\032).scalekit.v1.tokens." +
-      "ValidateTokenResponseJ-\n\003404\022&\n$Not Foun" +
-      "d - invalid or expired token\202\265\030\002\030T\202\323\344\223\002\034" +
-      "\"\027/api/v1/tokens:validate:\001*\022\255\003\n\017Invalid" +
-      "ateToken\022*.scalekit.v1.tokens.Invalidate" +
-      "TokenRequest\032\026.google.protobuf.Empty\"\325\002\222" +
-      "A\247\002\n\006Tokens\022\027Invalidate an API token\032\224\001M" +
-      "arks a token as invalidated (soft delete" +
-      "). Idempotent: returns success even if p" +
-      "reviously invalidated. Used to revoke pr" +
-      "ogrammatic access promptly.JY\n\003200\022R\n4To" +
-      "ken invalidated or already invalidated; " +
-      "empty body\022\032\n\030\032\026.google.protobuf.EmptyJ\022" +
-      "\n\003404\022\013\n\tNot Found\202\265\030\002\030T\202\323\344\223\002\036\"\031/api/v1/" +
-      "tokens:invalidate:\001*\022\261\003\n\nListTokens\022%.sc" +
-      "alekit.v1.tokens.ListTokensRequest\032&.sca" +
-      "lekit.v1.tokens.ListTokensResponse\"\323\002\222A\263" +
-      "\002\n\006Tokens\022\017List API tokens\032\242\001Retrieves a" +
-      "ctive tokens for an organization (option" +
-      "ally filtered by user) with pagination. " +
-      "Token secret values are never returned\342\200" +
-      "\224only metadata and identifiers.Js\n\003200\022l" +
-      "\n>Page of token metadata returned with p" +
-      "agination cursor details\022*\n(\032&.scalekit." +
-      "v1.tokens.ListTokensResponse\202\265\030\002\030T\202\323\344\223\002\020" +
-      "\022\016/api/v1/tokens\022\356\003\n\013UpdateToken\022&.scale" +
-      "kit.v1.tokens.UpdateTokenRequest\032\'.scale" +
-      "kit.v1.tokens.UpdateTokenResponse\"\215\003\222A\343\002" +
-      "\n\006Tokens\022\031Update API token metadata\032\304\001Up" +
-      "dates mutable fields (metadata, descript" +
-      "ion) of an active token. Accepts token o" +
-      "r token_id in request body. Immutable fi" +
-      "elds include token secret, token_id, exp" +
-      "iry, organization_id, and user_id.Jw\n\00320" +
-      "0\022p\nAToken metadata updated successfully" +
-      "; returns updated token record\022+\n)\032\'.sca" +
-      "lekit.v1.tokens.UpdateTokenResponse\202\265\030\002\030" +
-      "T\202\323\344\223\002\032\"\025/api/v1/tokens:update:\001*\022\214\004\n\017Re" +
-      "generateToken\022*.scalekit.v1.tokens.Regen" +
-      "erateTokenRequest\032+.scalekit.v1.tokens.R" +
-      "egenerateTokenResponse\"\237\003\222A\353\002\n\006Tokens\022\034R" +
-      "etrieve opaque token string\032\267\001Returns th" +
-      "e opaque token string for an active toke" +
-      "n record identified by token_id. Token M" +
-      "UST be active (not expired or invalidate" +
-      "d). Useful for redisplaying credentials " +
-      "to operators.JV\n\003200\022O\n\034Token retrieved " +
-      "successfully\022/\n-\032+.scalekit.v1.tokens.Re" +
-      "generateTokenResponseJ1\n\003404\022*\n(Token no" +
-      "t found, expired, or invalidated\202\265\030\002\030T\202\323" +
-      "\344\223\002$\"\037/api/v1/tokens:regenerate_token:\001*" +
-      "\032J\222AG\n\006Tokens\022=API token management for " +
-      "organizations and user-scoped accessB\317\001\n" +
-      "$com.scalekit.grpc.scalekit.v1.tokensB\013T" +
-      "okensProtoP\001Z0github.com/scalekit-inc/sc" +
-      "alekit/pkg/grpc/tokens\242\002\003SVT\252\002\022Scalekit." +
-      "V1.Tokens\312\002\022Scalekit\\V1\\Tokens\342\002\036Scaleki" +
-      "t\\V1\\Tokens\\GPBMetadata\352\002\024Scalekit::V1::" +
-      "Tokensb\006proto3"
+      "on\032?\n\021CustomClaimsEntry\022\020\n\003key\030\001 \001(\tR\003ke" +
+      "y\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\360\002\n\023CreateTo" +
+      "kenResponse\022p\n\005token\030\001 \001(\tBZ\222AT27Opaque " +
+      "token string (Base62 encoded). Return to" +
+      " client.J\031\"opaqueTokenValueExample\"\340A\002R\005" +
+      "token\022\204\001\n\010token_id\030\002 \001(\tBi\222Ac2IInternal " +
+      "token identifier (format: apit_xxxxx). D" +
+      "o NOT share with client.J\026\"apit_12345678" +
+      "9012345\"\340A\002R\007tokenId\022`\n\ntoken_info\030\003 \001(\013" +
+      "2\031.scalekit.v1.tokens.TokenB&\222A#2!Echoed" +
+      " token custom claims recordR\ttokenInfo\"|" +
+      "\n\024ValidateTokenRequest\022d\n\005token\030\001 \001(\tBN\222" +
+      "AH2.Opaque token string OR token_id (\"ap" +
+      "it_xxxxx\")J\026\"apit_123123123123121\"\340A\002R\005t" +
+      "oken\"{\n\025ValidateTokenResponse\022b\n\ntoken_i" +
+      "nfo\030\001 \001(\0132\031.scalekit.v1.tokens.TokenB(\222A" +
+      "%2#Resolved token custom claims recordR\t" +
+      "tokenInfo\"t\n\026InvalidateTokenRequest\022Z\n\005t" +
+      "oken\030\001 \001(\tBD\222A>2$Token string or token_i" +
+      "d; idempotentJ\026\"apit_123456789012345\"\340A\002" +
+      "R\005token\"\233\003\n\021ListTokensRequest\022h\n\017organiz" +
+      "ation_id\030\001 \001(\tB?\222A,2\023Organization filter" +
+      "J\025\"org_123456789012345\"\340A\002\272H\nr\010\030 :\004org_R" +
+      "\016organizationId\022N\n\007user_id\030\002 \001(\tB0\222A-2\024O" +
+      "ptional user filterJ\025\"usr_98765432109876" +
+      "5\"H\000R\006userId\210\001\001\022Z\n\tpage_size\030\003 \001(\005B=\222A12" +
+      "\036Page size (default 10, max 30):\00210J\00210Y" +
+      "\000\000\000\000\000\000>@\272H\006\032\004\030\036(\000R\010pageSize\022d\n\npage_toke" +
+      "n\030\004 \001(\tBE\222AB2/Opaque pagination cursor (" +
+      "empty for first page)J\017\"cursor_abc123\"R\t" +
+      "pageTokenB\n\n\010_user_id\"\204\003\n\022ListTokensResp" +
+      "onse\022[\n\006tokens\030\001 \003(\0132\031.scalekit.v1.token" +
+      "s.TokenB(\222A%2#List of token custom claim" +
+      "s recordsR\006tokens\022E\n\013total_count\030\002 \001(\005B$" +
+      "\222A!2\033Total matching tokens countJ\00242R\nto" +
+      "talCount\022a\n\017next_page_token\030\003 \001(\tB9\222A62#" +
+      "Cursor for next page (empty if end)J\017\"cu" +
+      "rsor_def456\"R\rnextPageToken\022g\n\017prev_page" +
+      "_token\030\004 \001(\tB?\222A<2)Cursor for previous p" +
+      "age (empty if start)J\017\"cursor_def456\"R\rp" +
+      "revPageToken\"\274\005\n\022UpdateTokenRequest\022d\n\005t" +
+      "oken\030\001 \001(\tBN\222AH2.Opaque token string OR " +
+      "token_id (\"apit_xxxxx\")J\026\"apit_123456789" +
+      "012345\"\340A\002R\005token\022\365\002\n\rcustom_claims\030\003 \003(" +
+      "\01328.scalekit.v1.tokens.UpdateTokenReques" +
+      "t.CustomClaimsEntryB\225\002\222A\370\0012\345\001custom_clai" +
+      "ms. Keys must be 1\342\200\22330 characters and v" +
+      "alues must be 1\342\200\223256 characters, with a" +
+      " maximum of 20 entries in total. The upd" +
+      "ate is merged into the existing custom c" +
+      "laims; to remove a claim, set its value " +
+      "to an empty stringJ\016{\"env\":\"prod\"}\272H\026\232\001\023" +
+      "\020\024\"\006r\004\020\001\030\036*\007r\005\020\001\030\200\002R\014customClaims\022w\n\013des" +
+      "cription\030\002 \001(\tBP\222AE2/Optional descriptio" +
+      "n replacement (empty clears)J\022\"Updated C" +
+      "I token\"\272H\005r\003\030\377\001H\000R\013description\210\001\001\032?\n\021Cu" +
+      "stomClaimsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005val" +
+      "ue\030\002 \001(\tR\005value:\0028\001B\016\n\014_description\"x\n\023U" +
+      "pdateTokenResponse\022a\n\ntoken_info\030\001 \001(\0132\031" +
+      ".scalekit.v1.tokens.TokenB\'\222A$2\"Updated " +
+      "token custom claims recordR\ttokenInfo\"\222\n" +
+      "\n\005Token\022H\n\010token_id\030\001 \001(\tB-\222A*2\020Token id" +
+      "entifierJ\026\"apit_123456789012345\"R\007tokenI" +
+      "d\022X\n\017organization_id\030\002 \001(\tB/\222A,2\023Owning " +
+      "organizationJ\025\"org_123456789012345\"R\016org" +
+      "anizationId\022o\n\030organization_external_id\030" +
+      "\003 \001(\tB5\222A22!Organization external ID (if" +
+      " set)J\r\"org-ext-001\"R\026organizationExtern" +
+      "alId\022O\n\007user_id\030\004 \001(\tB1\222A.2\025User scope (" +
+      "optional)J\025\"usr_987654321098765\"H\000R\006user" +
+      "Id\210\001\001\022]\n\020user_external_id\030\005 \001(\tB.\222A+2\031Us" +
+      "er external ID (if set)J\016\"user-ext-001\"H" +
+      "\001R\016userExternalId\210\001\001\022v\n\rcustom_claims\030\006 " +
+      "\003(\0132+.scalekit.v1.tokens.Token.CustomCla" +
+      "imsEntryB$\222A!2\rCustom claimsJ\020{\"scope\":\"" +
+      "read\"}R\014customClaims\022o\n\006expiry\030\007 \001(\0132\032.g" +
+      "oogle.protobuf.TimestampB6\222A32\rExpiry if" +
+      " setJ\026\"2025-12-01T00:00:00Z\"\242\002\tdate-time" +
+      "H\002R\006expiry\210\001\001\022^\n\ncreated_at\030\010 \001(\0132\032.goog" +
+      "le.protobuf.TimestampB#\222A 2\022Creation tim" +
+      "estamp\242\002\tdate-timeR\tcreatedAt\022U\n\013descrip" +
+      "tion\030\t \001(\tB.\222A+2\016Optional labelJ\031\"Produc" +
+      "tion deploy token\"H\003R\013description\210\001\001\022]\n\014" +
+      "token_suffix\030\n \001(\tB:\222A72-Last 4 characte" +
+      "rs of token for identificationJ\006\"xY9Z\"R\013" +
+      "tokenSuffix\022n\n\005email\030\013 \001(\tBS\222AP2:Email o" +
+      "f the user associated with the token, if" +
+      " applicableJ\022\"user@example.com\"H\004R\005email" +
+      "\210\001\001\022N\n\005roles\030\014 \003(\tB8\222A52\037Roles associate" +
+      "d with the tokenJ\022[\"admin\",\"reader\"]R\005ro" +
+      "les\032?\n\021CustomClaimsEntry\022\020\n\003key\030\001 \001(\tR\003k" +
+      "ey\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\n\n\010_user_id" +
+      "B\023\n\021_user_external_idB\t\n\007_expiryB\016\n\014_des" +
+      "criptionB\010\n\006_email\"\215\003\n\013UserProfile\022D\n\007us" +
+      "er_id\030\001 \001(\tB+\222A(2\017User identifierJ\025\"usr_" +
+      "987654321098765\"R\006userId\022A\n\005email\030\002 \001(\tB" +
+      "+\222A(2\022User email addressJ\022\"user@example." +
+      "com\"R\005email\0221\n\004name\030\003 \001(\tB\035\222A\0322\014Display " +
+      "nameJ\n\"Jane Doe\"R\004name\022\202\001\n\nattributes\030\004 " +
+      "\003(\0132/.scalekit.v1.tokens.UserProfile.Att" +
+      "ributesEntryB1\222A.2\032Additional user attri" +
+      "butesJ\020{\"role\":\"admin\"}R\nattributes\032=\n\017A" +
+      "ttributesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005valu" +
+      "e\030\002 \001(\tR\005value:\0028\001\"\315\001\n\021FetchTokenRequest" +
+      "\022\267\001\n\010token_id\030\001 \001(\tB\233\001\222A\224\0012zToken identi" +
+      "fier (\"apit_xxxxx\") used to retrieve opa" +
+      "que token string. Only token_id is accep" +
+      "ted, not opaque token strings.J\026\"apit_12" +
+      "3456789012345\"\340A\002R\007tokenId\"\203\003\n\022FetchToke" +
+      "nResponse\022d\n\005token\030\001 \001(\tBN\222AH2+Opaque to" +
+      "ken string (Base62 Branca encoded)J\031\"opa" +
+      "queTokenValueExample\"\340A\002R\005token\022\222\001\n\014retr" +
+      "ieved_at\030\002 \001(\0132\032.google.protobuf.Timesta" +
+      "mpBS\222AM2\'Server timestamp when token was" +
+      " fetchedJ\026\"2025-11-28T12:00:00Z\"\242\002\tdate-" +
+      "time\340A\002R\013retrievedAt\022r\n\ntoken_info\030\003 \001(\013" +
+      "2\031.scalekit.v1.tokens.TokenB8\222A220Token " +
+      "metadata record for display/audit purpos" +
+      "es\340A\002R\ttokenInfo2\270\027\n\017ApiTokenService\022\324\004\n" +
+      "\013CreateToken\022&.scalekit.v1.tokens.Create" +
+      "TokenRequest\032\'.scalekit.v1.tokens.Create" +
+      "TokenResponse\"\363\003\222A\314\003\n\006Tokens\022\023Create an " +
+      "API Token\032\253\002Generates a new API token fo" +
+      "r an organization, with an option to sco" +
+      "pe it to a specific user. The plain-text" +
+      " token value is returned only at creatio" +
+      "n time, together with its token identifi" +
+      "er and any custom claims. Use this opera" +
+      "tion to provision programmatic access cr" +
+      "edentials for automated clientsJ\177\n\003201\022x" +
+      "\nIToken created successfully; includes p" +
+      "lain token string and custom claims\022+\n)\032" +
+      "\'.scalekit.v1.tokens.CreateTokenResponse" +
+      "\202\265\030\002\030D\202\323\344\223\002\027\"\016/api/v1/tokens:\005token\022\353\003\n\r" +
+      "ValidateToken\022(.scalekit.v1.tokens.Valid" +
+      "ateTokenRequest\032).scalekit.v1.tokens.Val" +
+      "idateTokenResponse\"\204\003\222A\330\002\n\006Tokens\022\025Valid" +
+      "ate an API token\032\223\001Validates a provided " +
+      "plain-text opaque token or token identif" +
+      "ier, and returns the resolved organizati" +
+      "on or user context along with related me" +
+      "tadataJr\n\003200\022k\n:Token is valid; returns" +
+      " resolved token details and context\022-\n+\032" +
+      ").scalekit.v1.tokens.ValidateTokenRespon" +
+      "seJ-\n\003404\022&\n$Not Found - invalid or expi" +
+      "red token\202\265\030\002\030D\202\323\344\223\002\034\"\027/api/v1/tokens:va" +
+      "lidate:\001*\022\306\003\n\017InvalidateToken\022*.scalekit" +
+      ".v1.tokens.InvalidateTokenRequest\032\026.goog" +
+      "le.protobuf.Empty\"\356\002\222A\300\002\n\006Tokens\022\027Invali" +
+      "date an API Token\032\255\001Marks a token as inv" +
+      "alid, in an idempotent way: the operatio" +
+      "n succeeds even if the token was already" +
+      " invalidated. Use this to promptly revok" +
+      "e programmatic access credentialsJY\n\003200" +
+      "\022R\n4Token invalidated or already invalid" +
+      "ated; empty body\022\032\n\030\032\026.google.protobuf.E" +
+      "mptyJ\022\n\003404\022\013\n\tNot Found\202\265\030\002\030D\202\323\344\223\002\036\"\031/a" +
+      "pi/v1/tokens:invalidate:\001*\022\367\002\n\nListToken" +
+      "s\022%.scalekit.v1.tokens.ListTokensRequest" +
+      "\032&.scalekit.v1.tokens.ListTokensResponse" +
+      "\"\231\002\222A\371\001\n\006Tokens\022\017List API tokens\032kRetrie" +
+      "ves all active tokens for an organizatio" +
+      "n, with optional filtering by user and s" +
+      "upport for paginationJq\n\003200\022j\n<Page of " +
+      "token claims returned with pagination cu" +
+      "rsor details\022*\n(\032&.scalekit.v1.tokens.Li" +
+      "stTokensResponse\202\265\030\002\030D\202\323\344\223\002\020\022\016/api/v1/to" +
+      "kens\022\336\003\n\013UpdateToken\022&.scalekit.v1.token" +
+      "s.UpdateTokenRequest\032\'.scalekit.v1.token" +
+      "s.UpdateTokenResponse\"\375\002\222A\323\002\n\006Tokens\022\023Up" +
+      "date an API token\032\246\001Updates the mutable " +
+      "fields of an active token, such as custo" +
+      "m_claims and description. The request bo" +
+      "dy can include either the plain-text tok" +
+      "en or its token identifierJw\n\003200\022p\nATok" +
+      "en metadata updated successfully; return" +
+      "s updated token record\022+\n)\032\'.scalekit.v1" +
+      ".tokens.UpdateTokenResponseJ\022\n\003404\022\013\n\tNo" +
+      "t Found\202\265\030\002\030D\202\323\344\223\002\032\"\025/api/v1/tokens:upda" +
+      "te:\001*\022\357\003\n\nFetchToken\022%.scalekit.v1.token" +
+      "s.FetchTokenRequest\032&.scalekit.v1.tokens" +
+      ".FetchTokenResponse\"\221\003\222A\337\002\n\006Tokens\022\030Fetc" +
+      "h plain token string\032\266\001Returns the plain" +
+      " token string for an active token record" +
+      " identified by token_id. Token MUST be a" +
+      "ctive (not expired or invalidated). Usef" +
+      "ul for redisplaying credentials to opera" +
+      "tors.JO\n\003200\022H\n\032Token fetched successful" +
+      "ly\022*\n(\032&.scalekit.v1.tokens.FetchTokenRe" +
+      "sponseJ1\n\003404\022*\n(Token not found, expire" +
+      "d, or invalidated\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\"\024" +
+      "/api/v1/tokens:fetch:\001*\032J\222AG\n\006Tokens\022=AP" +
+      "I token management for organizations and" +
+      " user-scoped accessB\317\001\n$com.scalekit.grp" +
+      "c.scalekit.v1.tokensB\013TokensProtoP\001Z0git" +
+      "hub.com/scalekit-inc/scalekit/pkg/grpc/t" +
+      "okens\242\002\003SVT\252\002\022Scalekit.V1.Tokens\312\002\022Scale" +
+      "kit\\V1\\Tokens\342\002\036Scalekit\\V1\\Tokens\\GPBMe" +
+      "tadata\352\002\024Scalekit::V1::Tokensb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -337,6 +351,7 @@ public final class TokensProto {
           com.scalekit.grpc.buf.validate.ValidateProto.getDescriptor(),
           com.scalekit.grpc.google.api.AnnotationsProto.getDescriptor(),
           com.scalekit.grpc.google.api.FieldBehaviorProto.getDescriptor(),
+          com.scalekit.grpc.google.api.VisibilityProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor(),
@@ -353,12 +368,12 @@ public final class TokensProto {
     internal_static_scalekit_v1_tokens_CreateToken_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_tokens_CreateToken_descriptor,
-        new java.lang.String[] { "OrganizationId", "UserId", "Metadata", "Expiry", "Description", });
-    internal_static_scalekit_v1_tokens_CreateToken_MetadataEntry_descriptor =
+        new java.lang.String[] { "OrganizationId", "UserId", "CustomClaims", "Expiry", "Description", });
+    internal_static_scalekit_v1_tokens_CreateToken_CustomClaimsEntry_descriptor =
       internal_static_scalekit_v1_tokens_CreateToken_descriptor.getNestedTypes().get(0);
-    internal_static_scalekit_v1_tokens_CreateToken_MetadataEntry_fieldAccessorTable = new
+    internal_static_scalekit_v1_tokens_CreateToken_CustomClaimsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_tokens_CreateToken_MetadataEntry_descriptor,
+        internal_static_scalekit_v1_tokens_CreateToken_CustomClaimsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_scalekit_v1_tokens_CreateTokenResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
@@ -401,12 +416,12 @@ public final class TokensProto {
     internal_static_scalekit_v1_tokens_UpdateTokenRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_tokens_UpdateTokenRequest_descriptor,
-        new java.lang.String[] { "Token", "Metadata", "Description", });
-    internal_static_scalekit_v1_tokens_UpdateTokenRequest_MetadataEntry_descriptor =
+        new java.lang.String[] { "Token", "CustomClaims", "Description", });
+    internal_static_scalekit_v1_tokens_UpdateTokenRequest_CustomClaimsEntry_descriptor =
       internal_static_scalekit_v1_tokens_UpdateTokenRequest_descriptor.getNestedTypes().get(0);
-    internal_static_scalekit_v1_tokens_UpdateTokenRequest_MetadataEntry_fieldAccessorTable = new
+    internal_static_scalekit_v1_tokens_UpdateTokenRequest_CustomClaimsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_tokens_UpdateTokenRequest_MetadataEntry_descriptor,
+        internal_static_scalekit_v1_tokens_UpdateTokenRequest_CustomClaimsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_scalekit_v1_tokens_UpdateTokenResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
@@ -419,12 +434,12 @@ public final class TokensProto {
     internal_static_scalekit_v1_tokens_Token_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_tokens_Token_descriptor,
-        new java.lang.String[] { "TokenId", "OrganizationId", "UserId", "Metadata", "Expiry", "CreatedAt", "Description", "TokenSuffix", });
-    internal_static_scalekit_v1_tokens_Token_MetadataEntry_descriptor =
+        new java.lang.String[] { "TokenId", "OrganizationId", "OrganizationExternalId", "UserId", "UserExternalId", "CustomClaims", "Expiry", "CreatedAt", "Description", "TokenSuffix", "Email", "Roles", });
+    internal_static_scalekit_v1_tokens_Token_CustomClaimsEntry_descriptor =
       internal_static_scalekit_v1_tokens_Token_descriptor.getNestedTypes().get(0);
-    internal_static_scalekit_v1_tokens_Token_MetadataEntry_fieldAccessorTable = new
+    internal_static_scalekit_v1_tokens_Token_CustomClaimsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_tokens_Token_MetadataEntry_descriptor,
+        internal_static_scalekit_v1_tokens_Token_CustomClaimsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_scalekit_v1_tokens_UserProfile_descriptor =
       getDescriptor().getMessageTypes().get(11);
@@ -438,23 +453,24 @@ public final class TokensProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_tokens_UserProfile_AttributesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_scalekit_v1_tokens_RegenerateTokenRequest_descriptor =
+    internal_static_scalekit_v1_tokens_FetchTokenRequest_descriptor =
       getDescriptor().getMessageTypes().get(12);
-    internal_static_scalekit_v1_tokens_RegenerateTokenRequest_fieldAccessorTable = new
+    internal_static_scalekit_v1_tokens_FetchTokenRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_tokens_RegenerateTokenRequest_descriptor,
+        internal_static_scalekit_v1_tokens_FetchTokenRequest_descriptor,
         new java.lang.String[] { "TokenId", });
-    internal_static_scalekit_v1_tokens_RegenerateTokenResponse_descriptor =
+    internal_static_scalekit_v1_tokens_FetchTokenResponse_descriptor =
       getDescriptor().getMessageTypes().get(13);
-    internal_static_scalekit_v1_tokens_RegenerateTokenResponse_fieldAccessorTable = new
+    internal_static_scalekit_v1_tokens_FetchTokenResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_tokens_RegenerateTokenResponse_descriptor,
+        internal_static_scalekit_v1_tokens_FetchTokenResponse_descriptor,
         new java.lang.String[] { "Token", "RetrievedAt", "TokenInfo", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);
     registry.add(com.scalekit.grpc.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
+    registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Tag);
@@ -464,6 +480,7 @@ public final class TokensProto {
     com.scalekit.grpc.buf.validate.ValidateProto.getDescriptor();
     com.scalekit.grpc.google.api.AnnotationsProto.getDescriptor();
     com.scalekit.grpc.google.api.FieldBehaviorProto.getDescriptor();
+    com.scalekit.grpc.google.api.VisibilityProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor();

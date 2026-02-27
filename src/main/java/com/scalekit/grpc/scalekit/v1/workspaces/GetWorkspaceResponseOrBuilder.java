@@ -22,4 +22,19 @@ public interface GetWorkspaceResponseOrBuilder extends
    * <code>.scalekit.v1.workspaces.Workspace workspace = 1 [json_name = "workspace"];</code>
    */
   com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceOrBuilder getWorkspaceOrBuilder();
+
+  /**
+   * <code>.google.protobuf.Struct context = 2 [json_name = "context", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the context field is set.
+   */
+  boolean hasContext();
+  /**
+   * <code>.google.protobuf.Struct context = 2 [json_name = "context", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The context.
+   */
+  com.google.protobuf.Struct getContext();
+  /**
+   * <code>.google.protobuf.Struct context = 2 [json_name = "context", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.protobuf.StructOrBuilder getContextOrBuilder();
 }

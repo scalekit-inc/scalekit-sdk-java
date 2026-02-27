@@ -43,4 +43,15 @@ public interface OnboardWorkspaceOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUserFamilyNameBytes();
+
+  /**
+   * <code>.scalekit.v1.commons.AuthenticationMode authentication_mode = 4 [json_name = "authenticationMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for authenticationMode.
+   */
+  int getAuthenticationModeValue();
+  /**
+   * <code>.scalekit.v1.commons.AuthenticationMode authentication_mode = 4 [json_name = "authenticationMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The authenticationMode.
+   */
+  com.scalekit.grpc.scalekit.v1.commons.AuthenticationMode getAuthenticationMode();
 }

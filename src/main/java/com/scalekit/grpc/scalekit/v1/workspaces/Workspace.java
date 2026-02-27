@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     billingCustomerId_ = "";
     billingSubscriptionId_ = "";
     authDomain_ = "";
+    deployment_ = "";
   }
 
   @java.lang.Override
@@ -337,6 +338,45 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DEPLOYMENT_FIELD_NUMBER = 11;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deployment_ = "";
+  /**
+   * <code>string deployment = 11 [json_name = "deployment", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The deployment.
+   */
+  @java.lang.Override
+  public java.lang.String getDeployment() {
+    java.lang.Object ref = deployment_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      deployment_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string deployment = 11 [json_name = "deployment", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for deployment.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDeploymentBytes() {
+    java.lang.Object ref = deployment_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      deployment_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -378,6 +418,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authDomain_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, authDomain_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployment_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, deployment_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -417,6 +460,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authDomain_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, authDomain_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployment_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, deployment_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -459,6 +505,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getBillingSubscriptionId())) return false;
     if (!getAuthDomain()
         .equals(other.getAuthDomain())) return false;
+    if (!getDeployment()
+        .equals(other.getDeployment())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -494,6 +542,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getBillingSubscriptionId().hashCode();
     hash = (37 * hash) + AUTH_DOMAIN_FIELD_NUMBER;
     hash = (53 * hash) + getAuthDomain().hashCode();
+    hash = (37 * hash) + DEPLOYMENT_FIELD_NUMBER;
+    hash = (53 * hash) + getDeployment().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -654,6 +704,7 @@ private static final long serialVersionUID = 0L;
       billingCustomerId_ = "";
       billingSubscriptionId_ = "";
       authDomain_ = "";
+      deployment_ = "";
       return this;
     }
 
@@ -723,6 +774,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.authDomain_ = authDomain_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.deployment_ = deployment_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -808,6 +862,11 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (!other.getDeployment().isEmpty()) {
+        deployment_ = other.deployment_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -885,6 +944,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000100;
               break;
             } // case 82
+            case 90: {
+              deployment_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 90
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1674,6 +1738,78 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       authDomain_ = value;
       bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object deployment_ = "";
+    /**
+     * <code>string deployment = 11 [json_name = "deployment", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The deployment.
+     */
+    public java.lang.String getDeployment() {
+      java.lang.Object ref = deployment_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deployment_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string deployment = 11 [json_name = "deployment", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for deployment.
+     */
+    public com.google.protobuf.ByteString
+        getDeploymentBytes() {
+      java.lang.Object ref = deployment_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deployment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string deployment = 11 [json_name = "deployment", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The deployment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeployment(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      deployment_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string deployment = 11 [json_name = "deployment", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeployment() {
+      deployment_ = getDefaultInstance().getDeployment();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string deployment = 11 [json_name = "deployment", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for deployment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeploymentBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      deployment_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

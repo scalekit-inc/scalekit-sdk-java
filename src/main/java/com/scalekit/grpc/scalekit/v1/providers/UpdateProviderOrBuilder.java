@@ -104,4 +104,31 @@ public interface UpdateProviderOrBuilder extends
    * <code>.google.protobuf.BoolValue coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.BoolValueOrBuilder getComingSoonOrBuilder();
+
+  /**
+   * <code>string proxy_url = 10 [json_name = "proxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The proxyUrl.
+   */
+  java.lang.String getProxyUrl();
+  /**
+   * <code>string proxy_url = 10 [json_name = "proxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for proxyUrl.
+   */
+  com.google.protobuf.ByteString
+      getProxyUrlBytes();
+
+  /**
+   * <code>.google.protobuf.BoolValue proxy_enabled = 11 [json_name = "proxyEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the proxyEnabled field is set.
+   */
+  boolean hasProxyEnabled();
+  /**
+   * <code>.google.protobuf.BoolValue proxy_enabled = 11 [json_name = "proxyEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The proxyEnabled.
+   */
+  com.google.protobuf.BoolValue getProxyEnabled();
+  /**
+   * <code>.google.protobuf.BoolValue proxy_enabled = 11 [json_name = "proxyEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getProxyEnabledOrBuilder();
 }
