@@ -7,14 +7,12 @@
 SHELL := /bin/bash
 
 MVN := mvn
-GO := go
 TOOLS_BIN := $(CURDIR)/.tools/bin
 MAVEN_REPO_LOCAL := $(CURDIR)/.tools/m2
 MVN_FLAGS := -B -ntp -Dmaven.repo.local="$(MAVEN_REPO_LOCAL)"
 MVN_CMD := $(MVN) $(MVN_FLAGS)
 BUF := PATH="$(TOOLS_BIN):$$PATH" buf
 
-BUF_VERSION := v1.50.1
 PROTO_REPO_URL := https://github.com/scalekit-inc/scalekit.git
 PROTO_REF := v0.1.103
 PROTO_SUBDIR := proto
@@ -29,18 +27,13 @@ JAVA_PKG := src/main/java/com/scalekit/grpc
 setup:
 	@mkdir -p "$(TOOLS_BIN)" "$(MAVEN_REPO_LOCAL)"
 	@command -v "$(MVN)" >/dev/null 2>&1 || (echo "missing maven. install Maven and retry." && exit 1)
-	@if [ ! -x "$(TOOLS_BIN)/buf" ]; then \
-		echo "installing buf $(BUF_VERSION) into $(TOOLS_BIN)"; \
-		command -v "$(GO)" >/dev/null 2>&1 || (echo "missing go (required to install buf). install Go or preinstall buf." && exit 1); \
-		GOBIN="$(TOOLS_BIN)" $(GO) install github.com/bufbuild/buf/cmd/buf@$(BUF_VERSION); \
-	fi
 	@echo "prefetching Maven dependencies into $(MAVEN_REPO_LOCAL)"
 	$(MVN_CMD) -DskipTests dependency:go-offline
 	@echo "setup complete"
 
 tools-check:
 	@command -v "$(MVN)" >/dev/null 2>&1 || (echo "missing maven. run 'make setup'" && exit 1)
-	@command -v "$(TOOLS_BIN)/buf" >/dev/null 2>&1 || (echo "missing buf. run 'make setup'" && exit 1)
+	@PATH="$(TOOLS_BIN):$$PATH" command -v buf >/dev/null 2>&1 || (echo "missing buf. install buf (https://buf.build/docs/installation/) and rerun 'make generate'" && exit 1)
 
 generate: tools-check
 	@echo "cleaning generated paths"
