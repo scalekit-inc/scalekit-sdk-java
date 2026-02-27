@@ -81,4 +81,13 @@ jobs:
         run: make lint
 
       - name: Run tests
+        env:
+          SCALEKIT_ENVIRONMENT_URL: ${{ secrets.SCALEKIT_ENVIRONMENT_URL }}
+          SCALEKIT_CLIENT_ID: ${{ secrets.SCALEKIT_CLIENT_ID }}
+          SCALEKIT_CLIENT_SECRET: ${{ secrets.SCALEKIT_CLIENT_SECRET }}
+          TEST_CONNECTION: ${{ secrets.TEST_CONNECTION }}
+          TEST_DIRECTORY: ${{ secrets.TEST_DIRECTORY }}
+          TEST_ORGANIZATION: ${{ secrets.TEST_ORGANIZATION }}
+          TEST_DOMAIN: ${{ secrets.TEST_DOMAIN }}
+
         run: make test
