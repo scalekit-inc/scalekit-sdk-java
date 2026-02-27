@@ -43,3 +43,4 @@ build/
 .DS_Store
 /.idea/
 /.history
+.tools/*

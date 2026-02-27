@@ -1,0 +1,56 @@
+# Usage:
+#   make setup     # Create/update .venv and install dependencies
+#   make generate  # Regenerate SDK code from proto sources
+#   make lint      # Run static checks
+#   make test      # Run unit tests
+
+SHELL := /bin/bash
+
+MVN := mvn
+GO := go
+TOOLS_BIN := $(CURDIR)/.tools/bin
+BUF := PATH="$(TOOLS_BIN):$$PATH" buf
+
+BUF_VERSION := v1.50.1
+PROTO_REPO_URL := https://github.com/scalekit-inc/scalekit.git
+PROTO_REF := v0.1.103
+PROTO_SUBDIR := proto
+PROTO_REMOTE_INPUT := $(PROTO_REPO_URL)\#ref=$(PROTO_REF),subdir=$(PROTO_SUBDIR)
+BUF_GENERATE_FLAGS := --include-imports
+
+PROTO_OUT := .artifacts
+JAVA_PKG := src/main/java/com/scalekit/grpc
+
+.PHONY: setup tools-check generate lint test verify-generate
+
+setup:
+	@mkdir -p "$(TOOLS_BIN)"
+	@command -v "$(MVN)" >/dev/null 2>&1 || (echo "missing maven. install Maven and retry." && exit 1)
+	@if [ ! -x "$(TOOLS_BIN)/buf" ]; then \
+		echo "installing buf $(BUF_VERSION) into $(TOOLS_BIN)"; \
+		command -v "$(GO)" >/dev/null 2>&1 || (echo "missing go (required to install buf). install Go or preinstall buf." && exit 1); \
+		GOBIN="$(TOOLS_BIN)" $(GO) install github.com/bufbuild/buf/cmd/buf@$(BUF_VERSION); \
+	fi
+	@echo "setup complete"
+
+tools-check:
+	@command -v "$(MVN)" >/dev/null 2>&1 || (echo "missing maven. run 'make setup'" && exit 1)
+	@command -v "$(TOOLS_BIN)/buf" >/dev/null 2>&1 || (echo "missing buf. run 'make setup'" && exit 1)
+
+generate: tools-check
+	@echo "cleaning generated paths"
+	rm -rf "$(PROTO_OUT)" "$(JAVA_PKG)"
+	@echo "generating grpc/protobuf code from $(PROTO_REMOTE_INPUT)"
+	$(BUF) generate "$(PROTO_REMOTE_INPUT)" --template buf.gen.yaml $(BUF_GENERATE_FLAGS)
+	@echo "copying generated java code to $(JAVA_PKG)"
+	mkdir -p "$(JAVA_PKG)"
+	cp -r "$(PROTO_OUT)"/com/scalekit/grpc/* "$(JAVA_PKG)"
+
+lint:
+	@echo "No dedicated lint/static plugin configured in pom.xml; skipping lint."
+
+test:
+	$(MVN) -B -ntp test
+
+verify-generate: generate
+	git diff --exit-code
