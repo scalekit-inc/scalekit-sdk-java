@@ -24,19 +24,14 @@ import org.jose4j.jwt.consumer.InvalidJwtException;
 import org.jose4j.jwt.consumer.JwtConsumer;
 import org.jose4j.jwt.consumer.JwtConsumerBuilder;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.*;
 
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.StringJoiner;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.Map;
 
 import static com.scalekit.internal.Constants.*;
 
@@ -150,7 +145,35 @@ public class ScalekitAuthClient implements AuthClient {
      */
     public boolean validateAccessToken(String jwt) throws APIException {
         try {
-            validateAndDecodeClaims(jwt);
+            // TODO Optimization - Cache the keys
+            String keysJson = fetchJsonWebKeys();
+
+            JsonWebKeySet jsonWebKeySet = new JsonWebKeySet(keysJson);
+
+            JsonWebSignature jws = new JsonWebSignature();
+            jws.setCompactSerialization(jwt);
+
+            VerificationJwkSelector jwkSelector = new VerificationJwkSelector();
+            JsonWebKey jwk = jwkSelector.select(jws, jsonWebKeySet.getJsonWebKeys());
+            jws.setKey(jwk.getKey());
+
+            //  verify the signature
+            boolean isSignatureValid = jws.verifySignature();
+            if (!isSignatureValid) {
+                return false;
+            }
+
+            //  verify the expiry
+            JwtConsumer jwtConsumer = new JwtConsumerBuilder()
+                .setRequireExpirationTime()
+                .setAllowedClockSkewInSeconds(30)
+                .setSkipSignatureVerification() // Already verified above
+                .setSkipDefaultAudienceValidation()
+                .build();
+
+            // This will throw an exception if the token is expired
+            jwtConsumer.processToClaims(jwt);
+
             return true;
         } catch (Exception e) {
             throw new APIException("Failed to validate token: " + e.getMessage());
@@ -164,26 +187,37 @@ public class ScalekitAuthClient implements AuthClient {
      */
     public Map<String, Object> validateAccessTokenAndGetClaims(String jwt) throws APIException {
         try {
-            JwtClaims jwtClaims = validateAndDecodeClaims(jwt);
-            return objectMapper.readValue(jwtClaims.toJson(), new TypeReference<Map<String, Object>>() {});
-        } catch (Exception e) {
-            throw new APIException("Failed to validate token and get claims: " + e.getMessage());
-        }
-    }
+            // TODO Optimization - Cache the keys
+            String keysJson = fetchJsonWebKeys();
 
-    /**
-     * getTokenClaims validates a token and returns typed claims with the raw claims map populated
-     * @param jwt: The JWT token
-     * @param clazz: The class to deserialize claims into
-     * @return T: The typed claims object with raw claims map
-     */
-    public <T extends ClaimSet> T getTokenClaims(String jwt, Class<T> clazz) throws APIException {
-        try {
-            JwtClaims jwtClaims = validateAndDecodeClaims(jwt);
-            Map<String, Object> rawClaims = objectMapper.readValue(jwtClaims.toJson(), new TypeReference<Map<String, Object>>() {});
-            T result = objectMapper.convertValue(rawClaims, clazz);
-            result.setClaims(rawClaims);
-            return result;
+            JsonWebKeySet jsonWebKeySet = new JsonWebKeySet(keysJson);
+
+            JsonWebSignature jws = new JsonWebSignature();
+            jws.setCompactSerialization(jwt);
+
+            VerificationJwkSelector jwkSelector = new VerificationJwkSelector();
+            JsonWebKey jwk = jwkSelector.select(jws, jsonWebKeySet.getJsonWebKeys());
+            jws.setKey(jwk.getKey());
+
+            //  verify the signature
+            boolean isSignatureValid = jws.verifySignature();
+            if (!isSignatureValid) {
+                throw new APIException("Invalid token signature");
+            }
+
+            //  verify the expiry and get claims
+            JwtConsumer jwtConsumer = new JwtConsumerBuilder()
+                .setRequireExpirationTime()
+                .setAllowedClockSkewInSeconds(30)
+                .setSkipSignatureVerification() // Already verified above
+                .setSkipDefaultAudienceValidation()
+                .build();
+
+            // This will throw an exception if the token is expired
+            JwtClaims jwtClaims = jwtConsumer.processToClaims(jwt);
+
+            // Convert JWT claims to Map
+            return objectMapper.readValue(jwtClaims.toJson(), new com.fasterxml.jackson.core.type.TypeReference<Map<String, Object>>() {});
         } catch (Exception e) {
             throw new APIException("Failed to validate token and get claims: " + e.getMessage());
         }
@@ -236,9 +270,8 @@ public class ScalekitAuthClient implements AuthClient {
                     .build();
 
             JwtClaims jwtClaims = jwtConsumer.processToClaims(response.getIdToken());
-            Map<String, Object> rawClaims = objectMapper.readValue(jwtClaims.toJson(), new TypeReference<Map<String, Object>>() {});
-            idTokenClaims = objectMapper.convertValue(rawClaims, IdTokenClaims.class);
-            idTokenClaims.setClaims(rawClaims);
+
+            idTokenClaims = objectMapper.readValue(jwtClaims.toJson(), IdTokenClaims.class);
         } catch (IOException | InterruptedException | URISyntaxException | InvalidJwtException e) {
             throw new APIException("Failed to authenticate with code: " + e.getMessage());
         }
@@ -289,12 +322,20 @@ public class ScalekitAuthClient implements AuthClient {
      */
     public IdpInitiatedLoginClaims getIdpInitiatedLoginClaims(String idpInitiatedLoginToken) throws APIException {
         try {
-            JwtClaims jwtClaims = validateAndDecodeClaims(idpInitiatedLoginToken);
-            Map<String, Object> rawClaims = objectMapper.readValue(jwtClaims.toJson(), new TypeReference<Map<String, Object>>() {});
-            IdpInitiatedLoginClaims loginClaims = objectMapper.convertValue(rawClaims, IdpInitiatedLoginClaims.class);
-            loginClaims.setClaims(rawClaims);
-            return loginClaims;
-        } catch (Exception e) {
+            boolean isTokenValid = validateAccessToken(idpInitiatedLoginToken);
+            if (!isTokenValid) {
+                throw new APIException("Invalid idpInitiatedLoginToken");
+            }
+            JwtConsumer jwtConsumer = new JwtConsumerBuilder()
+                    .setSkipSignatureVerification()
+                    .setSkipDefaultAudienceValidation()
+                    .build();
+            JwtClaims jwtClaims = jwtConsumer.processToClaims(idpInitiatedLoginToken);
+
+            return objectMapper.readValue(
+                    jwtClaims.toJson(),
+                    IdpInitiatedLoginClaims.class);
+        } catch (IOException | InvalidJwtException e) {
             throw new APIException("Failed to verify and consume idpInitiatedLoginToken, error: " + e.getMessage());
         }
     }
@@ -350,37 +391,5 @@ public class ScalekitAuthClient implements AuthClient {
         } catch (MalformedURLException | UnsupportedEncodingException e) {
             throw new APIException("Invalid URL: " + e.getMessage());
         }
-    }
-
-    private JwtClaims validateAndDecodeClaims(String jwt) throws Exception {
-        if (jwt == null || jwt.isEmpty()) {
-            throw new APIException("jwt must not be null or empty");
-        }
-
-        String keysJson = fetchJsonWebKeys();
-        JsonWebKeySet jsonWebKeySet = new JsonWebKeySet(keysJson);
-
-        JsonWebSignature jws = new JsonWebSignature();
-        jws.setCompactSerialization(jwt);
-
-        VerificationJwkSelector jwkSelector = new VerificationJwkSelector();
-        JsonWebKey jwk = jwkSelector.select(jws, jsonWebKeySet.getJsonWebKeys());
-        if (jwk == null) {
-            throw new APIException("No matching signing key found for this token — the signing key may have been rotated");
-        }
-        jws.setKey(jwk.getKey());
-
-        if (!jws.verifySignature()) {
-            throw new APIException("Invalid token signature");
-        }
-
-        JwtConsumer jwtConsumer = new JwtConsumerBuilder()
-            .setRequireExpirationTime()
-            .setAllowedClockSkewInSeconds(30)
-            .setSkipSignatureVerification()
-            .setSkipDefaultAudienceValidation()
-            .build();
-
-        return jwtConsumer.processToClaims(jwt);
     }
 }

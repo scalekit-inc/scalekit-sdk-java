@@ -27,7 +27,7 @@ public interface GeneratePortalLinkRequestOrBuilder extends
    *
    * <code>optional bool sso = 2 [json_name = "sso", deprecated = true, (.google.api.field_visibility) = { ... }</code>
    * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.sso is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=877
+   *     See scalekit/v1/organizations/organizations.proto;l=883
    * @return Whether the sso field is set.
    */
   @java.lang.Deprecated boolean hasSso();
@@ -38,7 +38,7 @@ public interface GeneratePortalLinkRequestOrBuilder extends
    *
    * <code>optional bool sso = 2 [json_name = "sso", deprecated = true, (.google.api.field_visibility) = { ... }</code>
    * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.sso is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=877
+   *     See scalekit/v1/organizations/organizations.proto;l=883
    * @return The sso.
    */
   @java.lang.Deprecated boolean getSso();
@@ -50,7 +50,7 @@ public interface GeneratePortalLinkRequestOrBuilder extends
    *
    * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true, (.google.api.field_visibility) = { ... }</code>
    * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.directory_sync is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=883
+   *     See scalekit/v1/organizations/organizations.proto;l=889
    * @return Whether the directorySync field is set.
    */
   @java.lang.Deprecated boolean hasDirectorySync();
@@ -61,7 +61,7 @@ public interface GeneratePortalLinkRequestOrBuilder extends
    *
    * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true, (.google.api.field_visibility) = { ... }</code>
    * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.directory_sync is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=883
+   *     See scalekit/v1/organizations/organizations.proto;l=889
    * @return The directorySync.
    */
   @java.lang.Deprecated boolean getDirectorySync();

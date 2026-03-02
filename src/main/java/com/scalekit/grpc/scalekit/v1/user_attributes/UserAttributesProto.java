@@ -125,12 +125,12 @@ public final class UserAttributesProto {
       "7.scalekit.v1.user_attributes.CreateUser" +
       "AttributeRequest\0328.scalekit.v1.user_attr" +
       "ibutes.CreateUserAttributeResponse\"l\202\265\030\002" +
-      "\030d\202\323\344\223\002`\"\033/api/v1/sso-user-attributes:\016u" +
+      "\030t\202\323\344\223\002`\"\033/api/v1/sso-user-attributes:\016u" +
       "ser_attributeZ1\"\037/api/v1/user-profile-at" +
       "tributes:\016user_attribute\022\266\001\n\025ListSsoUser" +
       "Attributes\022\026.google.protobuf.Empty\0327.sca" +
       "lekit.v1.user_attributes.ListUserAttribu" +
-      "tesResponse\"L\202\265\030\002\030d\202\323\344\223\002@\022\033/api/v1/sso-u" +
+      "tesResponse\"L\202\265\030\002\030t\202\323\344\223\002@\022\033/api/v1/sso-u" +
       "ser-attributesZ!\022\037/api/v1/user-profile-a" +
       "ttributes\022\205\002\n\026UpdateSsoUserAttribute\0227.s" +
       "calekit.v1.user_attributes.UpdateUserAtt" +
@@ -152,7 +152,7 @@ public final class UserAttributesProto {
       "bute\022\237\001\n\033ListDirectoryUserAttributes\022\026.g" +
       "oogle.protobuf.Empty\0327.scalekit.v1.user_" +
       "attributes.ListUserAttributesResponse\"/\202" +
-      "\265\030\002\030d\202\323\344\223\002#\022!/api/v1/directory-user-attr" +
+      "\265\030\002\030t\202\323\344\223\002#\022!/api/v1/directory-user-attr" +
       "ibutes\022\330\001\n\034UpdateDirectoryUserAttribute\022" +
       "7.scalekit.v1.user_attributes.UpdateUser" +
       "AttributeRequest\0328.scalekit.v1.user_attr" +

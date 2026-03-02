@@ -107,4 +107,22 @@ public interface CreateProviderOrBuilder extends
    * @return The comingSoon.
    */
   boolean getComingSoon();
+
+  /**
+   * <code>string proxy_url = 10 [json_name = "proxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The proxyUrl.
+   */
+  java.lang.String getProxyUrl();
+  /**
+   * <code>string proxy_url = 10 [json_name = "proxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for proxyUrl.
+   */
+  com.google.protobuf.ByteString
+      getProxyUrlBytes();
+
+  /**
+   * <code>bool proxy_enabled = 11 [json_name = "proxyEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The proxyEnabled.
+   */
+  boolean getProxyEnabled();
 }

@@ -77,6 +77,68 @@ public final class MigrationServiceGrpc {
     return getMigrateStripeCustomersMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrateWorkspaceFGARequest,
+      com.google.protobuf.Empty> getMigrateWorkspaceFGAMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MigrateWorkspaceFGA",
+      requestType = com.scalekit.grpc.scalekit.v1.migrations.MigrateWorkspaceFGARequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrateWorkspaceFGARequest,
+      com.google.protobuf.Empty> getMigrateWorkspaceFGAMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrateWorkspaceFGARequest, com.google.protobuf.Empty> getMigrateWorkspaceFGAMethod;
+    if ((getMigrateWorkspaceFGAMethod = MigrationServiceGrpc.getMigrateWorkspaceFGAMethod) == null) {
+      synchronized (MigrationServiceGrpc.class) {
+        if ((getMigrateWorkspaceFGAMethod = MigrationServiceGrpc.getMigrateWorkspaceFGAMethod) == null) {
+          MigrationServiceGrpc.getMigrateWorkspaceFGAMethod = getMigrateWorkspaceFGAMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.migrations.MigrateWorkspaceFGARequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MigrateWorkspaceFGA"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.migrations.MigrateWorkspaceFGARequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new MigrationServiceMethodDescriptorSupplier("MigrateWorkspaceFGA"))
+              .build();
+        }
+      }
+    }
+    return getMigrateWorkspaceFGAMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsRequest,
+      com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsResponse> getMigrateRolePermissionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MigrateRolePermissions",
+      requestType = com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsRequest,
+      com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsResponse> getMigrateRolePermissionsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsRequest, com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsResponse> getMigrateRolePermissionsMethod;
+    if ((getMigrateRolePermissionsMethod = MigrationServiceGrpc.getMigrateRolePermissionsMethod) == null) {
+      synchronized (MigrationServiceGrpc.class) {
+        if ((getMigrateRolePermissionsMethod = MigrationServiceGrpc.getMigrateRolePermissionsMethod) == null) {
+          MigrationServiceGrpc.getMigrateRolePermissionsMethod = getMigrateRolePermissionsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsRequest, com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MigrateRolePermissions"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MigrationServiceMethodDescriptorSupplier("MigrateRolePermissions"))
+              .build();
+        }
+      }
+    }
+    return getMigrateRolePermissionsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -138,6 +200,20 @@ public final class MigrationServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMigrateStripeCustomersMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void migrateWorkspaceFGA(com.scalekit.grpc.scalekit.v1.migrations.MigrateWorkspaceFGARequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMigrateWorkspaceFGAMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void migrateRolePermissions(com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMigrateRolePermissionsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -182,6 +258,22 @@ public final class MigrationServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMigrateStripeCustomersMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void migrateWorkspaceFGA(com.scalekit.grpc.scalekit.v1.migrations.MigrateWorkspaceFGARequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMigrateWorkspaceFGAMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void migrateRolePermissions(com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMigrateRolePermissionsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -212,6 +304,20 @@ public final class MigrationServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersResponse migrateStripeCustomers(com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMigrateStripeCustomersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.google.protobuf.Empty migrateWorkspaceFGA(com.scalekit.grpc.scalekit.v1.migrations.MigrateWorkspaceFGARequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMigrateWorkspaceFGAMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsResponse migrateRolePermissions(com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMigrateRolePermissionsMethod(), getCallOptions(), request);
     }
   }
 
@@ -246,10 +352,28 @@ public final class MigrationServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMigrateStripeCustomersMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> migrateWorkspaceFGA(
+        com.scalekit.grpc.scalekit.v1.migrations.MigrateWorkspaceFGARequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMigrateWorkspaceFGAMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsResponse> migrateRolePermissions(
+        com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMigrateRolePermissionsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_MIGRATE_FSADATA = 0;
   private static final int METHODID_MIGRATE_STRIPE_CUSTOMERS = 1;
+  private static final int METHODID_MIGRATE_WORKSPACE_FGA = 2;
+  private static final int METHODID_MIGRATE_ROLE_PERMISSIONS = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -275,6 +399,14 @@ public final class MigrationServiceGrpc {
         case METHODID_MIGRATE_STRIPE_CUSTOMERS:
           serviceImpl.migrateStripeCustomers((com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersResponse>) responseObserver);
+          break;
+        case METHODID_MIGRATE_WORKSPACE_FGA:
+          serviceImpl.migrateWorkspaceFGA((com.scalekit.grpc.scalekit.v1.migrations.MigrateWorkspaceFGARequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_MIGRATE_ROLE_PERMISSIONS:
+          serviceImpl.migrateRolePermissions((com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -308,6 +440,20 @@ public final class MigrationServiceGrpc {
               com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersRequest,
               com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersResponse>(
                 service, METHODID_MIGRATE_STRIPE_CUSTOMERS)))
+        .addMethod(
+          getMigrateWorkspaceFGAMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.migrations.MigrateWorkspaceFGARequest,
+              com.google.protobuf.Empty>(
+                service, METHODID_MIGRATE_WORKSPACE_FGA)))
+        .addMethod(
+          getMigrateRolePermissionsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsRequest,
+              com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsResponse>(
+                service, METHODID_MIGRATE_ROLE_PERMISSIONS)))
         .build();
   }
 
@@ -358,6 +504,8 @@ public final class MigrationServiceGrpc {
               .setSchemaDescriptor(new MigrationServiceFileDescriptorSupplier())
               .addMethod(getMigrateFSADataMethod())
               .addMethod(getMigrateStripeCustomersMethod())
+              .addMethod(getMigrateWorkspaceFGAMethod())
+              .addMethod(getMigrateRolePermissionsMethod())
               .build();
         }
       }

@@ -332,10 +332,10 @@ public final class DomainsProto {
       "\022\014\n\010VERIFIED\020\002\022\n\n\006FAILED\020\003\022\021\n\rAUTO_VERIF" +
       "IED\020\004*\\\n\nDomainType\022\033\n\027DOMAIN_TYPE_UNSPE" +
       "CIFIED\020\000\022\030\n\024ALLOWED_EMAIL_DOMAIN\020\001\022\027\n\023OR" +
-      "GANIZATION_DOMAIN\020\0022\312)\n\rDomainService\022\374\007" +
+      "GANIZATION_DOMAIN\020\0022\261*\n\rDomainService\022\221\010" +
       "\n\014CreateDomain\022(.scalekit.v1.domains.Cre" +
       "ateDomainRequest\032).scalekit.v1.domains.C" +
-      "reateDomainResponse\"\226\007\222A\315\006\n\007Domains\022\rCre" +
+      "reateDomainResponse\"\253\007\222A\315\006\n\007Domains\022\rCre" +
       "ate Domain\032\265\004Creates and associates a do" +
       "main with an organization.\n\nUse one of t" +
       "he following domain types:\n- ALLOWED_EMA" +
@@ -356,122 +356,124 @@ public final class DomainsProto {
       "oInvalid request \342\200\224 common causes inval" +
       "id domain format, public or disposable d" +
       "omain, or domain already exists.\022%\n#\032!#/" +
-      "definitions/errdetailsErrorInfo\202\265\030\002\030d\202\323\344" +
-      "\223\0029\"//api/v1/organizations/{organization" +
-      "_id}/domains:\006domain\022\331\005\n\014UpdateDomain\022(." +
-      "scalekit.v1.domains.UpdateDomainRequest\032" +
-      ").scalekit.v1.domains.UpdateDomainRespon" +
-      "se\"\363\004\222A\226\004\n\007Domains\022\rUpdate Domain\032\241\003Upda" +
-      "tes an existing domain\'s configuration w" +
-      "ithin an organization. Currently support" +
-      "s updating domain metadata and configura" +
-      "tion settings.\n\nUse this endpoint to mod" +
-      "ify domain properties after initial crea" +
-      "tion. Note that the domain name itself c" +
-      "annot be changed once created.\n\nThe doma" +
-      "in must belong to the specified organiza" +
-      "tion and you must provide either the org" +
-      "anization ID or external ID along with t" +
-      "he domain ID.JX\n\003200\022Q\n Successfully upd" +
-      "ated the domain.\022-\n+\032).scalekit.v1.domai" +
-      "ns.UpdateDomainResponse\202\265\030\002\030d\372\322\344\223\002\t\022\007PRE" +
-      "VIEW\202\323\344\223\002>24/api/v1/organizations/{organ" +
-      "ization_id}/domains/{id}:\006domain\022\352\006\n\014Ver" +
-      "ifyDomain\022(.scalekit.v1.domains.VerifyDo" +
-      "mainRequest\032\032.google.protobuf.BoolValue\"" +
-      "\223\006\222A\267\005\n\007Domains\022\rVerify Domain\032\236\004Initiat" +
-      "es domain ownership verification by chec" +
-      "king the DNS TXT record that should be a" +
-      "dded to the domain\'s DNS configuration.\n" +
-      "\nUse this endpoint to manually trigger v" +
-      "erification for domains that are in PEND" +
-      "ING status. The system will check for th" +
-      "e required TXT record and update the ver" +
-      "ification status accordingly.\n\nFor autom" +
-      "atically verified domains, this endpoint" +
-      " will return true immediately. For domai" +
-      "ns requiring manual verification, ensure" +
-      " the TXT record has been properly config" +
-      "ured in your DNS settings before calling" +
-      " this endpoint.J|\n\003200\022u\nSDomain verific" +
-      "ation result. Returns true if verificati" +
-      "on succeeds, false otherwise.\022\036\n\034\032\032.goog" +
-      "le.protobuf.BoolValue\202\265\030\002\030d\372\322\344\223\002\t\022\007PREVI" +
-      "EW\202\323\344\223\002=2;/api/v1/organizations/{organiz" +
-      "ation_id}/domains/{id}:verify\022\206\003\n\tGetDom" +
-      "ain\022%.scalekit.v1.domains.GetDomainReque" +
-      "st\032&.scalekit.v1.domains.GetDomainRespon" +
-      "se\"\251\002\222A\343\001\n\007Domains\022\nGet Domain\032kRetrieve" +
-      "s complete details for a domain includin" +
-      "g domain type, timestamps, and configura" +
-      "tion information.\n\nJ_\n\003200\022X\n*Successful" +
-      "ly retrieved the domain details.\022*\n(\032&.s" +
-      "calekit.v1.domains.GetDomainResponse\202\265\030\002" +
-      "\030d\202\323\344\223\0026\0224/api/v1/organizations/{organiz" +
-      "ation_id}/domains/{id}\022\317\003\n\014DeleteDomain\022" +
-      "(.scalekit.v1.domains.DeleteDomainReques" +
-      "t\032\026.google.protobuf.Empty\"\374\002\222A\266\002\n\007Domain" +
-      "s\022\rDelete Domain\032\364\001Permanently removes a" +
-      " domain record from an organization.\n\n- " +
-      "Deleting an ORGANIZATION_DOMAIN disables" +
-      " SSO routing/enforcement for that domain" +
-      ".\n- Deleting an ALLOWED_EMAIL_DOMAIN sto" +
-      "ps organization suggestions for users wi" +
-      "th that email domain.\n\nJ%\n\003200\022\036\n\034Domain" +
-      " successfully deleted.\202\265\030\002\030d\202\323\344\223\0026*4/api" +
-      "/v1/organizations/{organization_id}/doma" +
-      "ins/{id}\022\207\005\n\013ListDomains\022&.scalekit.v1.d" +
-      "omains.ListDomainRequest\032\'.scalekit.v1.d" +
-      "omains.ListDomainResponse\"\246\004\222A\345\003\n\007Domain" +
-      "s\022\014List Domains\032\350\002Retrieves a paginated " +
-      "list of all domains configured for the s" +
-      "pecified organization.\n\nDomain types:\n- " +
-      "ALLOWED_EMAIL_DOMAIN: Trusted domains us" +
-      "ed to suggest the organization in the or" +
-      "ganization switcher during sign-in/sign-" +
-      "up (auth-method agnostic).\n- ORGANIZATIO" +
-      "N_DOMAIN: SSO discovery domains used to " +
-      "route users to the correct SSO provider " +
-      "and enforce SSO.\n\nJa\n\003200\022Z\n+Successfull" +
-      "y retrieved the list of domains.\022+\n)\032\'.s" +
-      "calekit.v1.domains.ListDomainResponse\202\265\030" +
-      "\002\030d\202\323\344\223\0021\022//api/v1/organizations/{organi" +
-      "zation_id}/domains\022\220\005\n\025ListAuthorizedDom" +
-      "ains\0220.scalekit.v1.domains.ListAuthorize" +
-      "dDomainRequest\0321.scalekit.v1.domains.Lis" +
-      "tAuthorizedDomainResponse\"\221\004\222A\330\003\n\007Domain" +
-      "s\022\027List Authorized Domains\032\273\002Retrieves a" +
-      " list of domains that are authorized for" +
-      " use with the specified origin URL.\n\nUse" +
-      " this endpoint to validate whether a par" +
-      "ticular domain is allowed for authentica" +
-      "tion or other domain-restricted operatio" +
-      "ns.\n\nThis is commonly used by frontend a" +
-      "pplications to verify domain allowlists " +
-      "and CORS configurations.Jv\n\003200\022o\n6Succe" +
-      "ssfully retrieved the list of authorized" +
-      " domains.\0225\n3\0321.scalekit.v1.domains.List" +
-      "AuthorizedDomainResponse\202\265\030\002\030\001\372\322\344\223\002\t\022\007PR" +
-      "EVIEW\202\323\344\223\002\032\022\030/api/v1/domains/{origin}\032\370\003" +
-      "\222A\364\003\n\007Domains\022\350\003Manage organization-leve" +
-      "l domains. Scalekit supports two domain " +
-      "types:\n\n- ORGANIZATION_DOMAIN: Used for " +
-      "SSO domain discovery. When a user signs " +
-      "in with a matching email domain, Scaleki" +
-      "t routes them to the organization\342\200\231s SS" +
-      "O provider and enforces SSO.\n- ALLOWED_E" +
-      "MAIL_DOMAIN: Used to mark trusted email " +
-      "domains for an organization. When a user" +
-      " signs in or signs up with a matching do" +
-      "main, Scalekit suggests the organization" +
-      " in the organization switcher (authentic" +
-      "ation-method agnostic).\nB\326\001\n%com.scaleki" +
-      "t.grpc.scalekit.v1.domainsB\014DomainsProto" +
-      "P\001Z1github.com/scalekit-inc/scalekit/pkg" +
-      "/grpc/domains\242\002\003SVD\252\002\023Scalekit.V1.Domain" +
-      "s\312\002\023Scalekit\\V1\\Domains\342\002\037Scalekit\\V1\\Do" +
-      "mains\\GPBMetadata\352\002\025Scalekit::V1::Domain" +
-      "sb\006proto3"
+      "definitions/errdetailsErrorInfo\202\265\030\027\n\023org" +
+      "anizations_write\030t\202\323\344\223\0029\"//api/v1/organi" +
+      "zations/{organization_id}/domains:\006domai" +
+      "n\022\356\005\n\014UpdateDomain\022(.scalekit.v1.domains" +
+      ".UpdateDomainRequest\032).scalekit.v1.domai" +
+      "ns.UpdateDomainResponse\"\210\005\222A\226\004\n\007Domains\022" +
+      "\rUpdate Domain\032\241\003Updates an existing dom" +
+      "ain\'s configuration within an organizati" +
+      "on. Currently supports updating domain m" +
+      "etadata and configuration settings.\n\nUse" +
+      " this endpoint to modify domain properti" +
+      "es after initial creation. Note that the" +
+      " domain name itself cannot be changed on" +
+      "ce created.\n\nThe domain must belong to t" +
+      "he specified organization and you must p" +
+      "rovide either the organization ID or ext" +
+      "ernal ID along with the domain ID.JX\n\00320" +
+      "0\022Q\n Successfully updated the domain.\022-\n" +
+      "+\032).scalekit.v1.domains.UpdateDomainResp" +
+      "onse\202\265\030\027\n\023organizations_write\030t\372\322\344\223\002\t\022\007P" +
+      "REVIEW\202\323\344\223\002>24/api/v1/organizations/{org" +
+      "anization_id}/domains/{id}:\006domain\022\352\006\n\014V" +
+      "erifyDomain\022(.scalekit.v1.domains.Verify" +
+      "DomainRequest\032\032.google.protobuf.BoolValu" +
+      "e\"\223\006\222A\267\005\n\007Domains\022\rVerify Domain\032\236\004Initi" +
+      "ates domain ownership verification by ch" +
+      "ecking the DNS TXT record that should be" +
+      " added to the domain\'s DNS configuration" +
+      ".\n\nUse this endpoint to manually trigger" +
+      " verification for domains that are in PE" +
+      "NDING status. The system will check for " +
+      "the required TXT record and update the v" +
+      "erification status accordingly.\n\nFor aut" +
+      "omatically verified domains, this endpoi" +
+      "nt will return true immediately. For dom" +
+      "ains requiring manual verification, ensu" +
+      "re the TXT record has been properly conf" +
+      "igured in your DNS settings before calli" +
+      "ng this endpoint.J|\n\003200\022u\nSDomain verif" +
+      "ication result. Returns true if verifica" +
+      "tion succeeds, false otherwise.\022\036\n\034\032\032.go" +
+      "ogle.protobuf.BoolValue\202\265\030\002\030d\372\322\344\223\002\t\022\007PRE" +
+      "VIEW\202\323\344\223\002=2;/api/v1/organizations/{organ" +
+      "ization_id}/domains/{id}:verify\022\232\003\n\tGetD" +
+      "omain\022%.scalekit.v1.domains.GetDomainReq" +
+      "uest\032&.scalekit.v1.domains.GetDomainResp" +
+      "onse\"\275\002\222A\343\001\n\007Domains\022\nGet Domain\032kRetrie" +
+      "ves complete details for a domain includ" +
+      "ing domain type, timestamps, and configu" +
+      "ration information.\n\nJ_\n\003200\022X\n*Successf" +
+      "ully retrieved the domain details.\022*\n(\032&" +
+      ".scalekit.v1.domains.GetDomainResponse\202\265" +
+      "\030\026\n\022organizations_read\030t\202\323\344\223\0026\0224/api/v1/" +
+      "organizations/{organization_id}/domains/" +
+      "{id}\022\344\003\n\014DeleteDomain\022(.scalekit.v1.doma" +
+      "ins.DeleteDomainRequest\032\026.google.protobu" +
+      "f.Empty\"\221\003\222A\266\002\n\007Domains\022\rDelete Domain\032\364" +
+      "\001Permanently removes a domain record fro" +
+      "m an organization.\n\n- Deleting an ORGANI" +
+      "ZATION_DOMAIN disables SSO routing/enfor" +
+      "cement for that domain.\n- Deleting an AL" +
+      "LOWED_EMAIL_DOMAIN stops organization su" +
+      "ggestions for users with that email doma" +
+      "in.\n\nJ%\n\003200\022\036\n\034Domain successfully dele" +
+      "ted.\202\265\030\027\n\023organizations_write\030t\202\323\344\223\0026*4/" +
+      "api/v1/organizations/{organization_id}/d" +
+      "omains/{id}\022\233\005\n\013ListDomains\022&.scalekit.v" +
+      "1.domains.ListDomainRequest\032\'.scalekit.v" +
+      "1.domains.ListDomainResponse\"\272\004\222A\345\003\n\007Dom" +
+      "ains\022\014List Domains\032\350\002Retrieves a paginat" +
+      "ed list of all domains configured for th" +
+      "e specified organization.\n\nDomain types:" +
+      "\n- ALLOWED_EMAIL_DOMAIN: Trusted domains" +
+      " used to suggest the organization in the" +
+      " organization switcher during sign-in/si" +
+      "gn-up (auth-method agnostic).\n- ORGANIZA" +
+      "TION_DOMAIN: SSO discovery domains used " +
+      "to route users to the correct SSO provid" +
+      "er and enforce SSO.\n\nJa\n\003200\022Z\n+Successf" +
+      "ully retrieved the list of domains.\022+\n)\032" +
+      "\'.scalekit.v1.domains.ListDomainResponse" +
+      "\202\265\030\026\n\022organizations_read\030t\202\323\344\223\0021\022//api/v" +
+      "1/organizations/{organization_id}/domain" +
+      "s\022\220\005\n\025ListAuthorizedDomains\0220.scalekit.v" +
+      "1.domains.ListAuthorizedDomainRequest\0321." +
+      "scalekit.v1.domains.ListAuthorizedDomain" +
+      "Response\"\221\004\222A\330\003\n\007Domains\022\027List Authorize" +
+      "d Domains\032\273\002Retrieves a list of domains " +
+      "that are authorized for use with the spe" +
+      "cified origin URL.\n\nUse this endpoint to" +
+      " validate whether a particular domain is" +
+      " allowed for authentication or other dom" +
+      "ain-restricted operations.\n\nThis is comm" +
+      "only used by frontend applications to ve" +
+      "rify domain allowlists and CORS configur" +
+      "ations.Jv\n\003200\022o\n6Successfully retrieved" +
+      " the list of authorized domains.\0225\n3\0321.s" +
+      "calekit.v1.domains.ListAuthorizedDomainR" +
+      "esponse\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\032\022\030/api" +
+      "/v1/domains/{origin}\032\370\003\222A\364\003\n\007Domains\022\350\003M" +
+      "anage organization-level domains. Scalek" +
+      "it supports two domain types:\n\n- ORGANIZ" +
+      "ATION_DOMAIN: Used for SSO domain discov" +
+      "ery. When a user signs in with a matchin" +
+      "g email domain, Scalekit routes them to " +
+      "the organization\342\200\231s SSO provider and en" +
+      "forces SSO.\n- ALLOWED_EMAIL_DOMAIN: Used" +
+      " to mark trusted email domains for an or" +
+      "ganization. When a user signs in or sign" +
+      "s up with a matching domain, Scalekit su" +
+      "ggests the organization in the organizat" +
+      "ion switcher (authentication-method agno" +
+      "stic).\nB\326\001\n%com.scalekit.grpc.scalekit.v" +
+      "1.domainsB\014DomainsProtoP\001Z1github.com/sc" +
+      "alekit-inc/scalekit/pkg/grpc/domains\242\002\003S" +
+      "VD\252\002\023Scalekit.V1.Domains\312\002\023Scalekit\\V1\\D" +
+      "omains\342\002\037Scalekit\\V1\\Domains\\GPBMetadata" +
+      "\352\002\025Scalekit::V1::Domainsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

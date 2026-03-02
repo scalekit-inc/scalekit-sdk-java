@@ -23,21 +23,21 @@ public interface DeleteRoleRequestOrBuilder extends
   /**
    * <code>optional string reassign_role_id = 3 [json_name = "reassignRoleId", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.roles.DeleteRoleRequest.reassign_role_id is deprecated.
-   *     See scalekit/v1/roles/roles.proto;l=929
+   *     See scalekit/v1/roles/roles.proto;l=935
    * @return Whether the reassignRoleId field is set.
    */
   @java.lang.Deprecated boolean hasReassignRoleId();
   /**
    * <code>optional string reassign_role_id = 3 [json_name = "reassignRoleId", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.roles.DeleteRoleRequest.reassign_role_id is deprecated.
-   *     See scalekit/v1/roles/roles.proto;l=929
+   *     See scalekit/v1/roles/roles.proto;l=935
    * @return The reassignRoleId.
    */
   @java.lang.Deprecated java.lang.String getReassignRoleId();
   /**
    * <code>optional string reassign_role_id = 3 [json_name = "reassignRoleId", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.roles.DeleteRoleRequest.reassign_role_id is deprecated.
-   *     See scalekit/v1/roles/roles.proto;l=929
+   *     See scalekit/v1/roles/roles.proto;l=935
    * @return The bytes for reassignRoleId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

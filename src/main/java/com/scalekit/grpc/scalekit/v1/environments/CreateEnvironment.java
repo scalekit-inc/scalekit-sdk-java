@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     displayName_ = "";
     regionCode_ = 0;
     type_ = 0;
+    authenticationMode_ = 0;
   }
 
   @java.lang.Override
@@ -132,6 +133,31 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.scalekit.grpc.scalekit.v1.commons.EnvironmentType.UNRECOGNIZED : result;
   }
 
+  public static final int AUTHENTICATION_MODE_FIELD_NUMBER = 8;
+  private int authenticationMode_ = 0;
+  /**
+   * <code>optional .scalekit.v1.commons.AuthenticationMode authentication_mode = 8 [json_name = "authenticationMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the authenticationMode field is set.
+   */
+  @java.lang.Override public boolean hasAuthenticationMode() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>optional .scalekit.v1.commons.AuthenticationMode authentication_mode = 8 [json_name = "authenticationMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for authenticationMode.
+   */
+  @java.lang.Override public int getAuthenticationModeValue() {
+    return authenticationMode_;
+  }
+  /**
+   * <code>optional .scalekit.v1.commons.AuthenticationMode authentication_mode = 8 [json_name = "authenticationMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The authenticationMode.
+   */
+  @java.lang.Override public com.scalekit.grpc.scalekit.v1.commons.AuthenticationMode getAuthenticationMode() {
+    com.scalekit.grpc.scalekit.v1.commons.AuthenticationMode result = com.scalekit.grpc.scalekit.v1.commons.AuthenticationMode.forNumber(authenticationMode_);
+    return result == null ? com.scalekit.grpc.scalekit.v1.commons.AuthenticationMode.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -155,6 +181,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeEnum(7, type_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeEnum(8, authenticationMode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -174,6 +203,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(7, type_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(8, authenticationMode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -200,6 +233,10 @@ private static final long serialVersionUID = 0L;
     if (hasType()) {
       if (type_ != other.type_) return false;
     }
+    if (hasAuthenticationMode() != other.hasAuthenticationMode()) return false;
+    if (hasAuthenticationMode()) {
+      if (authenticationMode_ != other.authenticationMode_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -220,6 +257,10 @@ private static final long serialVersionUID = 0L;
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
+    }
+    if (hasAuthenticationMode()) {
+      hash = (37 * hash) + AUTHENTICATION_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + authenticationMode_;
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -355,6 +396,7 @@ private static final long serialVersionUID = 0L;
       displayName_ = "";
       regionCode_ = 0;
       type_ = 0;
+      authenticationMode_ = 0;
       return this;
     }
 
@@ -399,6 +441,10 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.type_ = type_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.authenticationMode_ = authenticationMode_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -458,6 +504,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasType()) {
         setType(other.getType());
       }
+      if (other.hasAuthenticationMode()) {
+        setAuthenticationMode(other.getAuthenticationMode());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -499,6 +548,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000004;
               break;
             } // case 56
+            case 64: {
+              authenticationMode_ = input.readEnum();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 64
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -704,6 +758,66 @@ private static final long serialVersionUID = 0L;
     public Builder clearType() {
       bitField0_ = (bitField0_ & ~0x00000004);
       type_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int authenticationMode_ = 0;
+    /**
+     * <code>optional .scalekit.v1.commons.AuthenticationMode authentication_mode = 8 [json_name = "authenticationMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the authenticationMode field is set.
+     */
+    @java.lang.Override public boolean hasAuthenticationMode() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional .scalekit.v1.commons.AuthenticationMode authentication_mode = 8 [json_name = "authenticationMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enum numeric value on the wire for authenticationMode.
+     */
+    @java.lang.Override public int getAuthenticationModeValue() {
+      return authenticationMode_;
+    }
+    /**
+     * <code>optional .scalekit.v1.commons.AuthenticationMode authentication_mode = 8 [json_name = "authenticationMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enum numeric value on the wire for authenticationMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthenticationModeValue(int value) {
+      authenticationMode_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.commons.AuthenticationMode authentication_mode = 8 [json_name = "authenticationMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The authenticationMode.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.commons.AuthenticationMode getAuthenticationMode() {
+      com.scalekit.grpc.scalekit.v1.commons.AuthenticationMode result = com.scalekit.grpc.scalekit.v1.commons.AuthenticationMode.forNumber(authenticationMode_);
+      return result == null ? com.scalekit.grpc.scalekit.v1.commons.AuthenticationMode.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .scalekit.v1.commons.AuthenticationMode authentication_mode = 8 [json_name = "authenticationMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The authenticationMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthenticationMode(com.scalekit.grpc.scalekit.v1.commons.AuthenticationMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      authenticationMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.commons.AuthenticationMode authentication_mode = 8 [json_name = "authenticationMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAuthenticationMode() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      authenticationMode_ = 0;
       onChanged();
       return this;
     }

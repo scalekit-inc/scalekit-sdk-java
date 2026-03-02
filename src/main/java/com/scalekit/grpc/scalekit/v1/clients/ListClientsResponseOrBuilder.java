@@ -61,4 +61,28 @@ public interface ListClientsResponseOrBuilder extends
    */
   com.scalekit.grpc.scalekit.v1.clients.ClientOrBuilder getClientsOrBuilder(
       int index);
+
+  /**
+   * <code>string next_page_token = 3 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The nextPageToken.
+   */
+  java.lang.String getNextPageToken();
+  /**
+   * <code>string next_page_token = 3 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for nextPageToken.
+   */
+  com.google.protobuf.ByteString
+      getNextPageTokenBytes();
+
+  /**
+   * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The prevPageToken.
+   */
+  java.lang.String getPrevPageToken();
+  /**
+   * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for prevPageToken.
+   */
+  com.google.protobuf.ByteString
+      getPrevPageTokenBytes();
 }

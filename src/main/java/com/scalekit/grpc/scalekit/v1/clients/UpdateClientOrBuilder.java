@@ -141,4 +141,126 @@ public interface UpdateClientOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPostLoginUrisBytes(int index);
+
+  /**
+   * <code>string name = 8 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <code>string name = 8 [json_name = "name", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <code>int64 access_token_expiry = 9 [json_name = "accessTokenExpiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The accessTokenExpiry.
+   */
+  long getAccessTokenExpiry();
+
+  /**
+   * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the scopes.
+   */
+  java.util.List<java.lang.String>
+      getScopesList();
+  /**
+   * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of scopes.
+   */
+  int getScopesCount();
+  /**
+   * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The scopes at the given index.
+   */
+  java.lang.String getScopes(int index);
+  /**
+   * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the scopes at the given index.
+   */
+  com.google.protobuf.ByteString
+      getScopesBytes(int index);
+
+  /**
+   * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<com.scalekit.grpc.scalekit.v1.clients.CustomClaim> 
+      getCustomClaimsList();
+  /**
+   * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.clients.CustomClaim getCustomClaims(int index);
+  /**
+   * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  int getCustomClaimsCount();
+  /**
+   * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<? extends com.scalekit.grpc.scalekit.v1.clients.CustomClaimOrBuilder> 
+      getCustomClaimsOrBuilderList();
+  /**
+   * <code>repeated .scalekit.v1.clients.CustomClaim custom_claims = 12 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.clients.CustomClaimOrBuilder getCustomClaimsOrBuilder(
+      int index);
+
+  /**
+   * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the disallowScalekitApiAccess field is set.
+   */
+  boolean hasDisallowScalekitApiAccess();
+  /**
+   * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The disallowScalekitApiAccess.
+   */
+  com.google.protobuf.BoolValue getDisallowScalekitApiAccess();
+  /**
+   * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getDisallowScalekitApiAccessOrBuilder();
+
+  /**
+   * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the grantTypes.
+   */
+  java.util.List<java.lang.String>
+      getGrantTypesList();
+  /**
+   * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of grantTypes.
+   */
+  int getGrantTypesCount();
+  /**
+   * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The grantTypes at the given index.
+   */
+  java.lang.String getGrantTypes(int index);
+  /**
+   * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the grantTypes at the given index.
+   */
+  com.google.protobuf.ByteString
+      getGrantTypesBytes(int index);
+
+  /**
+   * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the enforcePkce field is set.
+   */
+  boolean hasEnforcePkce();
+  /**
+   * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enforcePkce.
+   */
+  com.google.protobuf.BoolValue getEnforcePkce();
+  /**
+   * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getEnforcePkceOrBuilder();
 }

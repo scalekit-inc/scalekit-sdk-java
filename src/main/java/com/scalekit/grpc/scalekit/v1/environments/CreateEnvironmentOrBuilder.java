@@ -51,4 +51,20 @@ public interface CreateEnvironmentOrBuilder extends
    * @return The type.
    */
   com.scalekit.grpc.scalekit.v1.commons.EnvironmentType getType();
+
+  /**
+   * <code>optional .scalekit.v1.commons.AuthenticationMode authentication_mode = 8 [json_name = "authenticationMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the authenticationMode field is set.
+   */
+  boolean hasAuthenticationMode();
+  /**
+   * <code>optional .scalekit.v1.commons.AuthenticationMode authentication_mode = 8 [json_name = "authenticationMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for authenticationMode.
+   */
+  int getAuthenticationModeValue();
+  /**
+   * <code>optional .scalekit.v1.commons.AuthenticationMode authentication_mode = 8 [json_name = "authenticationMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The authenticationMode.
+   */
+  com.scalekit.grpc.scalekit.v1.commons.AuthenticationMode getAuthenticationMode();
 }

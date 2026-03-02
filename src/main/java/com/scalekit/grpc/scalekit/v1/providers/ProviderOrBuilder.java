@@ -119,4 +119,22 @@ public interface ProviderOrBuilder extends
    * @return The comingSoon.
    */
   boolean getComingSoon();
+
+  /**
+   * <code>string proxy_url = 10 [json_name = "proxyUrl"];</code>
+   * @return The proxyUrl.
+   */
+  java.lang.String getProxyUrl();
+  /**
+   * <code>string proxy_url = 10 [json_name = "proxyUrl"];</code>
+   * @return The bytes for proxyUrl.
+   */
+  com.google.protobuf.ByteString
+      getProxyUrlBytes();
+
+  /**
+   * <code>bool proxy_enabled = 11 [json_name = "proxyEnabled"];</code>
+   * @return The proxyEnabled.
+   */
+  boolean getProxyEnabled();
 }

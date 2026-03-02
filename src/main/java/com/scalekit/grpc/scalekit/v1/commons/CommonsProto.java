@@ -339,13 +339,15 @@ public final class CommonsProto {
       "NTITY\020\006\022\r\n\tJUMPCLOUD\020\007\022\n\n\006CUSTOM\020\010\022\n\n\006GI" +
       "THUB\020\t\022\n\n\006GITLAB\020\n\022\014\n\010LINKEDIN\020\013\022\016\n\nSALE" +
       "SFORCE\020\014\022\r\n\tMICROSOFT\020\r\022\021\n\rIDP_SIMULATOR" +
-      "\020\016\022\014\n\010SCALEKIT\020\017\022\010\n\004ADFS\020\020B\326\001\n%com.scale" +
-      "kit.grpc.scalekit.v1.commonsB\014CommonsPro" +
-      "toP\001Z1github.com/scalekit-inc/scalekit/p" +
-      "kg/grpc/commons\242\002\003SVC\252\002\023Scalekit.V1.Comm" +
-      "ons\312\002\023Scalekit\\V1\\Commons\342\002\037Scalekit\\V1\\" +
-      "Commons\\GPBMetadata\352\002\025Scalekit::V1::Comm" +
-      "onsb\006proto3"
+      "\020\016\022\014\n\010SCALEKIT\020\017\022\010\n\004ADFS\020\020*`\n\022Authentica" +
+      "tionMode\022#\n\037AUTHENTICATION_MODE_UNSPECIF" +
+      "IED\020\000\022\020\n\014MODULAR_AUTH\020\001\022\023\n\017FULL_STACK_AU" +
+      "TH\020\002B\326\001\n%com.scalekit.grpc.scalekit.v1.c" +
+      "ommonsB\014CommonsProtoP\001Z1github.com/scale" +
+      "kit-inc/scalekit/pkg/grpc/commons\242\002\003SVC\252" +
+      "\002\023Scalekit.V1.Commons\312\002\023Scalekit\\V1\\Comm" +
+      "ons\342\002\037Scalekit\\V1\\Commons\\GPBMetadata\352\002\025" +
+      "Scalekit::V1::Commonsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

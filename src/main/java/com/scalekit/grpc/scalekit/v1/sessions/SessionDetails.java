@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.LazyStringArrayList.emptyList();
     organizationId_ = "";
     status_ = "";
+    authenticatedClients_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -447,6 +448,47 @@ private static final long serialVersionUID = 0L;
     return lastActiveAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastActiveAt_;
   }
 
+  public static final int AUTHENTICATED_CLIENTS_FIELD_NUMBER = 14;
+  @SuppressWarnings("serial")
+  private java.util.List<com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients> authenticatedClients_;
+  /**
+   * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients> getAuthenticatedClientsList() {
+    return authenticatedClients_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClientsOrBuilder> 
+      getAuthenticatedClientsOrBuilderList() {
+    return authenticatedClients_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public int getAuthenticatedClientsCount() {
+    return authenticatedClients_.size();
+  }
+  /**
+   * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients getAuthenticatedClients(int index) {
+    return authenticatedClients_.get(index);
+  }
+  /**
+   * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClientsOrBuilder getAuthenticatedClientsOrBuilder(
+      int index) {
+    return authenticatedClients_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -499,6 +541,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(13, getLastActiveAt());
+    }
+    for (int i = 0; i < authenticatedClients_.size(); i++) {
+      output.writeMessage(14, authenticatedClients_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -560,6 +605,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getLastActiveAt());
+    }
+    for (int i = 0; i < authenticatedClients_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, authenticatedClients_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -626,6 +675,8 @@ private static final long serialVersionUID = 0L;
       if (!getLastActiveAt()
           .equals(other.getLastActiveAt())) return false;
     }
+    if (!getAuthenticatedClientsList()
+        .equals(other.getAuthenticatedClientsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -680,6 +731,10 @@ private static final long serialVersionUID = 0L;
     if (hasLastActiveAt()) {
       hash = (37 * hash) + LAST_ACTIVE_AT_FIELD_NUMBER;
       hash = (53 * hash) + getLastActiveAt().hashCode();
+    }
+    if (getAuthenticatedClientsCount() > 0) {
+      hash = (37 * hash) + AUTHENTICATED_CLIENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getAuthenticatedClientsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -819,6 +874,7 @@ private static final long serialVersionUID = 0L;
         getLogoutAtFieldBuilder();
         getDeviceFieldBuilder();
         getLastActiveAtFieldBuilder();
+        getAuthenticatedClientsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -871,6 +927,13 @@ private static final long serialVersionUID = 0L;
         lastActiveAtBuilder_.dispose();
         lastActiveAtBuilder_ = null;
       }
+      if (authenticatedClientsBuilder_ == null) {
+        authenticatedClients_ = java.util.Collections.emptyList();
+      } else {
+        authenticatedClients_ = null;
+        authenticatedClientsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
 
@@ -897,9 +960,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.scalekit.grpc.scalekit.v1.sessions.SessionDetails buildPartial() {
       com.scalekit.grpc.scalekit.v1.sessions.SessionDetails result = new com.scalekit.grpc.scalekit.v1.sessions.SessionDetails(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.sessions.SessionDetails result) {
+      if (authenticatedClientsBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)) {
+          authenticatedClients_ = java.util.Collections.unmodifiableList(authenticatedClients_);
+          bitField0_ = (bitField0_ & ~0x00002000);
+        }
+        result.authenticatedClients_ = authenticatedClients_;
+      } else {
+        result.authenticatedClients_ = authenticatedClientsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.sessions.SessionDetails result) {
@@ -1070,6 +1146,32 @@ private static final long serialVersionUID = 0L;
       if (other.hasLastActiveAt()) {
         mergeLastActiveAt(other.getLastActiveAt());
       }
+      if (authenticatedClientsBuilder_ == null) {
+        if (!other.authenticatedClients_.isEmpty()) {
+          if (authenticatedClients_.isEmpty()) {
+            authenticatedClients_ = other.authenticatedClients_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+          } else {
+            ensureAuthenticatedClientsIsMutable();
+            authenticatedClients_.addAll(other.authenticatedClients_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.authenticatedClients_.isEmpty()) {
+          if (authenticatedClientsBuilder_.isEmpty()) {
+            authenticatedClientsBuilder_.dispose();
+            authenticatedClientsBuilder_ = null;
+            authenticatedClients_ = other.authenticatedClients_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+            authenticatedClientsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getAuthenticatedClientsFieldBuilder() : null;
+          } else {
+            authenticatedClientsBuilder_.addAllMessages(other.authenticatedClients_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1178,6 +1280,19 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00001000;
               break;
             } // case 106
+            case 114: {
+              com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients m =
+                  input.readMessage(
+                      com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients.parser(),
+                      extensionRegistry);
+              if (authenticatedClientsBuilder_ == null) {
+                ensureAuthenticatedClientsIsMutable();
+                authenticatedClients_.add(m);
+              } else {
+                authenticatedClientsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 114
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2560,6 +2675,246 @@ private static final long serialVersionUID = 0L;
         lastActiveAt_ = null;
       }
       return lastActiveAtBuilder_;
+    }
+
+    private java.util.List<com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients> authenticatedClients_ =
+      java.util.Collections.emptyList();
+    private void ensureAuthenticatedClientsIsMutable() {
+      if (!((bitField0_ & 0x00002000) != 0)) {
+        authenticatedClients_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients>(authenticatedClients_);
+        bitField0_ |= 0x00002000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients, com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients.Builder, com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClientsOrBuilder> authenticatedClientsBuilder_;
+
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients> getAuthenticatedClientsList() {
+      if (authenticatedClientsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(authenticatedClients_);
+      } else {
+        return authenticatedClientsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public int getAuthenticatedClientsCount() {
+      if (authenticatedClientsBuilder_ == null) {
+        return authenticatedClients_.size();
+      } else {
+        return authenticatedClientsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients getAuthenticatedClients(int index) {
+      if (authenticatedClientsBuilder_ == null) {
+        return authenticatedClients_.get(index);
+      } else {
+        return authenticatedClientsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setAuthenticatedClients(
+        int index, com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients value) {
+      if (authenticatedClientsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAuthenticatedClientsIsMutable();
+        authenticatedClients_.set(index, value);
+        onChanged();
+      } else {
+        authenticatedClientsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setAuthenticatedClients(
+        int index, com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients.Builder builderForValue) {
+      if (authenticatedClientsBuilder_ == null) {
+        ensureAuthenticatedClientsIsMutable();
+        authenticatedClients_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        authenticatedClientsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addAuthenticatedClients(com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients value) {
+      if (authenticatedClientsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAuthenticatedClientsIsMutable();
+        authenticatedClients_.add(value);
+        onChanged();
+      } else {
+        authenticatedClientsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addAuthenticatedClients(
+        int index, com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients value) {
+      if (authenticatedClientsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAuthenticatedClientsIsMutable();
+        authenticatedClients_.add(index, value);
+        onChanged();
+      } else {
+        authenticatedClientsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addAuthenticatedClients(
+        com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients.Builder builderForValue) {
+      if (authenticatedClientsBuilder_ == null) {
+        ensureAuthenticatedClientsIsMutable();
+        authenticatedClients_.add(builderForValue.build());
+        onChanged();
+      } else {
+        authenticatedClientsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addAuthenticatedClients(
+        int index, com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients.Builder builderForValue) {
+      if (authenticatedClientsBuilder_ == null) {
+        ensureAuthenticatedClientsIsMutable();
+        authenticatedClients_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        authenticatedClientsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addAllAuthenticatedClients(
+        java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients> values) {
+      if (authenticatedClientsBuilder_ == null) {
+        ensureAuthenticatedClientsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, authenticatedClients_);
+        onChanged();
+      } else {
+        authenticatedClientsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearAuthenticatedClients() {
+      if (authenticatedClientsBuilder_ == null) {
+        authenticatedClients_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00002000);
+        onChanged();
+      } else {
+        authenticatedClientsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder removeAuthenticatedClients(int index) {
+      if (authenticatedClientsBuilder_ == null) {
+        ensureAuthenticatedClientsIsMutable();
+        authenticatedClients_.remove(index);
+        onChanged();
+      } else {
+        authenticatedClientsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients.Builder getAuthenticatedClientsBuilder(
+        int index) {
+      return getAuthenticatedClientsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClientsOrBuilder getAuthenticatedClientsOrBuilder(
+        int index) {
+      if (authenticatedClientsBuilder_ == null) {
+        return authenticatedClients_.get(index);  } else {
+        return authenticatedClientsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<? extends com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClientsOrBuilder> 
+         getAuthenticatedClientsOrBuilderList() {
+      if (authenticatedClientsBuilder_ != null) {
+        return authenticatedClientsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(authenticatedClients_);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients.Builder addAuthenticatedClientsBuilder() {
+      return getAuthenticatedClientsFieldBuilder().addBuilder(
+          com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients.Builder addAuthenticatedClientsBuilder(
+        int index) {
+      return getAuthenticatedClientsFieldBuilder().addBuilder(
+          index, com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients.Builder> 
+         getAuthenticatedClientsBuilderList() {
+      return getAuthenticatedClientsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients, com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients.Builder, com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClientsOrBuilder> 
+        getAuthenticatedClientsFieldBuilder() {
+      if (authenticatedClientsBuilder_ == null) {
+        authenticatedClientsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients, com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients.Builder, com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClientsOrBuilder>(
+                authenticatedClients_,
+                ((bitField0_ & 0x00002000) != 0),
+                getParentForChildren(),
+                isClean());
+        authenticatedClients_ = null;
+      }
+      return authenticatedClientsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -106,6 +106,44 @@ private static final long serialVersionUID = 0L;
     return customizationSettings_ == null ? com.google.protobuf.Struct.getDefaultInstance() : customizationSettings_;
   }
 
+  public static final int SETTINGS_FIELD_NUMBER = 3;
+  private com.scalekit.grpc.scalekit.v1.environments.PortalSettings settings_;
+  /**
+   * <pre>
+   * settings contains feature flags derived from the workspace's billing subscription
+   * </pre>
+   *
+   * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the settings field is set.
+   */
+  @java.lang.Override
+  public boolean hasSettings() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <pre>
+   * settings contains feature flags derived from the workspace's billing subscription
+   * </pre>
+   *
+   * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The settings.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.environments.PortalSettings getSettings() {
+    return settings_ == null ? com.scalekit.grpc.scalekit.v1.environments.PortalSettings.getDefaultInstance() : settings_;
+  }
+  /**
+   * <pre>
+   * settings contains feature flags derived from the workspace's billing subscription
+   * </pre>
+   *
+   * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.environments.PortalSettingsOrBuilder getSettingsOrBuilder() {
+    return settings_ == null ? com.scalekit.grpc.scalekit.v1.environments.PortalSettings.getDefaultInstance() : settings_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -126,6 +164,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getCustomizationSettings());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(3, getSettings());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -141,6 +182,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getCustomizationSettings());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getSettings());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -164,6 +209,11 @@ private static final long serialVersionUID = 0L;
       if (!getCustomizationSettings()
           .equals(other.getCustomizationSettings())) return false;
     }
+    if (hasSettings() != other.hasSettings()) return false;
+    if (hasSettings()) {
+      if (!getSettings()
+          .equals(other.getSettings())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -180,6 +230,10 @@ private static final long serialVersionUID = 0L;
     if (hasCustomizationSettings()) {
       hash = (37 * hash) + CUSTOMIZATION_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getCustomizationSettings().hashCode();
+    }
+    if (hasSettings()) {
+      hash = (37 * hash) + SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getSettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -312,6 +366,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getCustomizationSettingsFieldBuilder();
+        getSettingsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -323,6 +378,11 @@ private static final long serialVersionUID = 0L;
       if (customizationSettingsBuilder_ != null) {
         customizationSettingsBuilder_.dispose();
         customizationSettingsBuilder_ = null;
+      }
+      settings_ = null;
+      if (settingsBuilder_ != null) {
+        settingsBuilder_.dispose();
+        settingsBuilder_ = null;
       }
       return this;
     }
@@ -366,6 +426,12 @@ private static final long serialVersionUID = 0L;
             ? customizationSettings_
             : customizationSettingsBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.settings_ = settingsBuilder_ == null
+            ? settings_
+            : settingsBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -422,6 +488,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasCustomizationSettings()) {
         mergeCustomizationSettings(other.getCustomizationSettings());
       }
+      if (other.hasSettings()) {
+        mergeSettings(other.getSettings());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -460,6 +529,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 18
+            case 26: {
+              input.readMessage(
+                  getSettingsFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -668,6 +744,163 @@ private static final long serialVersionUID = 0L;
         customizationSettings_ = null;
       }
       return customizationSettingsBuilder_;
+    }
+
+    private com.scalekit.grpc.scalekit.v1.environments.PortalSettings settings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.environments.PortalSettings, com.scalekit.grpc.scalekit.v1.environments.PortalSettings.Builder, com.scalekit.grpc.scalekit.v1.environments.PortalSettingsOrBuilder> settingsBuilder_;
+    /**
+     * <pre>
+     * settings contains feature flags derived from the workspace's billing subscription
+     * </pre>
+     *
+     * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the settings field is set.
+     */
+    public boolean hasSettings() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     * settings contains feature flags derived from the workspace's billing subscription
+     * </pre>
+     *
+     * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The settings.
+     */
+    public com.scalekit.grpc.scalekit.v1.environments.PortalSettings getSettings() {
+      if (settingsBuilder_ == null) {
+        return settings_ == null ? com.scalekit.grpc.scalekit.v1.environments.PortalSettings.getDefaultInstance() : settings_;
+      } else {
+        return settingsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * settings contains feature flags derived from the workspace's billing subscription
+     * </pre>
+     *
+     * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setSettings(com.scalekit.grpc.scalekit.v1.environments.PortalSettings value) {
+      if (settingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        settings_ = value;
+      } else {
+        settingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * settings contains feature flags derived from the workspace's billing subscription
+     * </pre>
+     *
+     * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setSettings(
+        com.scalekit.grpc.scalekit.v1.environments.PortalSettings.Builder builderForValue) {
+      if (settingsBuilder_ == null) {
+        settings_ = builderForValue.build();
+      } else {
+        settingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * settings contains feature flags derived from the workspace's billing subscription
+     * </pre>
+     *
+     * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder mergeSettings(com.scalekit.grpc.scalekit.v1.environments.PortalSettings value) {
+      if (settingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0) &&
+          settings_ != null &&
+          settings_ != com.scalekit.grpc.scalekit.v1.environments.PortalSettings.getDefaultInstance()) {
+          getSettingsBuilder().mergeFrom(value);
+        } else {
+          settings_ = value;
+        }
+      } else {
+        settingsBuilder_.mergeFrom(value);
+      }
+      if (settings_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * settings contains feature flags derived from the workspace's billing subscription
+     * </pre>
+     *
+     * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearSettings() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      settings_ = null;
+      if (settingsBuilder_ != null) {
+        settingsBuilder_.dispose();
+        settingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * settings contains feature flags derived from the workspace's billing subscription
+     * </pre>
+     *
+     * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.environments.PortalSettings.Builder getSettingsBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * settings contains feature flags derived from the workspace's billing subscription
+     * </pre>
+     *
+     * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.environments.PortalSettingsOrBuilder getSettingsOrBuilder() {
+      if (settingsBuilder_ != null) {
+        return settingsBuilder_.getMessageOrBuilder();
+      } else {
+        return settings_ == null ?
+            com.scalekit.grpc.scalekit.v1.environments.PortalSettings.getDefaultInstance() : settings_;
+      }
+    }
+    /**
+     * <pre>
+     * settings contains feature flags derived from the workspace's billing subscription
+     * </pre>
+     *
+     * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.environments.PortalSettings, com.scalekit.grpc.scalekit.v1.environments.PortalSettings.Builder, com.scalekit.grpc.scalekit.v1.environments.PortalSettingsOrBuilder> 
+        getSettingsFieldBuilder() {
+      if (settingsBuilder_ == null) {
+        settingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.environments.PortalSettings, com.scalekit.grpc.scalekit.v1.environments.PortalSettings.Builder, com.scalekit.grpc.scalekit.v1.environments.PortalSettingsOrBuilder>(
+                getSettings(),
+                getParentForChildren(),
+                isClean());
+        settings_ = null;
+      }
+      return settingsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

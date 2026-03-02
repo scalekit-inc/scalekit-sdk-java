@@ -47,34 +47,65 @@ public final class UserServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest,
-      com.scalekit.grpc.scalekit.v1.users.GetUserResponse> getGetCurrentUserMethod;
+      com.scalekit.grpc.scalekit.v1.users.GetCurrentUserResponse> getGetCurrentUserMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetCurrentUser",
       requestType = com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.users.GetUserResponse.class,
+      responseType = com.scalekit.grpc.scalekit.v1.users.GetCurrentUserResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest,
-      com.scalekit.grpc.scalekit.v1.users.GetUserResponse> getGetCurrentUserMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest, com.scalekit.grpc.scalekit.v1.users.GetUserResponse> getGetCurrentUserMethod;
+      com.scalekit.grpc.scalekit.v1.users.GetCurrentUserResponse> getGetCurrentUserMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest, com.scalekit.grpc.scalekit.v1.users.GetCurrentUserResponse> getGetCurrentUserMethod;
     if ((getGetCurrentUserMethod = UserServiceGrpc.getGetCurrentUserMethod) == null) {
       synchronized (UserServiceGrpc.class) {
         if ((getGetCurrentUserMethod = UserServiceGrpc.getGetCurrentUserMethod) == null) {
           UserServiceGrpc.getGetCurrentUserMethod = getGetCurrentUserMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest, com.scalekit.grpc.scalekit.v1.users.GetUserResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest, com.scalekit.grpc.scalekit.v1.users.GetCurrentUserResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCurrentUser"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.users.GetUserResponse.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.users.GetCurrentUserResponse.getDefaultInstance()))
               .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("GetCurrentUser"))
               .build();
         }
       }
     }
     return getGetCurrentUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+      com.scalekit.grpc.scalekit.v1.users.GetSupportHashResponse> getGetSupportHashMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSupportHash",
+      requestType = com.google.protobuf.Empty.class,
+      responseType = com.scalekit.grpc.scalekit.v1.users.GetSupportHashResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+      com.scalekit.grpc.scalekit.v1.users.GetSupportHashResponse> getGetSupportHashMethod() {
+    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.scalekit.grpc.scalekit.v1.users.GetSupportHashResponse> getGetSupportHashMethod;
+    if ((getGetSupportHashMethod = UserServiceGrpc.getGetSupportHashMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getGetSupportHashMethod = UserServiceGrpc.getGetSupportHashMethod) == null) {
+          UserServiceGrpc.getGetSupportHashMethod = getGetSupportHashMethod =
+              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.scalekit.grpc.scalekit.v1.users.GetSupportHashResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSupportHash"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.users.GetSupportHashResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("GetSupportHash"))
+              .build();
+        }
+      }
+    }
+    return getGetSupportHashMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.users.ListUsersRequest,
@@ -603,8 +634,15 @@ public final class UserServiceGrpc {
     /**
      */
     default void getCurrentUser(com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetUserResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetCurrentUserResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCurrentUserMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getSupportHash(com.google.protobuf.Empty request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetSupportHashResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSupportHashMethod(), responseObserver);
     }
 
     /**
@@ -766,9 +804,17 @@ public final class UserServiceGrpc {
     /**
      */
     public void getCurrentUser(com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetUserResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetCurrentUserResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCurrentUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getSupportHash(com.google.protobuf.Empty request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetSupportHashResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSupportHashMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -932,9 +978,16 @@ public final class UserServiceGrpc {
 
     /**
      */
-    public com.scalekit.grpc.scalekit.v1.users.GetUserResponse getCurrentUser(com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest request) {
+    public com.scalekit.grpc.scalekit.v1.users.GetCurrentUserResponse getCurrentUser(com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCurrentUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.users.GetSupportHashResponse getSupportHash(com.google.protobuf.Empty request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSupportHashMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1084,10 +1137,18 @@ public final class UserServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.users.GetUserResponse> getCurrentUser(
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.users.GetCurrentUserResponse> getCurrentUser(
         com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetCurrentUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.users.GetSupportHashResponse> getSupportHash(
+        com.google.protobuf.Empty request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSupportHashMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1225,21 +1286,22 @@ public final class UserServiceGrpc {
 
   private static final int METHODID_GET_USER = 0;
   private static final int METHODID_GET_CURRENT_USER = 1;
-  private static final int METHODID_LIST_USERS = 2;
-  private static final int METHODID_SEARCH_USERS = 3;
-  private static final int METHODID_SEARCH_ORGANIZATION_USERS = 4;
-  private static final int METHODID_UPDATE_USER = 5;
-  private static final int METHODID_DELETE_USER = 6;
-  private static final int METHODID_CREATE_MEMBERSHIP = 7;
-  private static final int METHODID_DELETE_MEMBERSHIP = 8;
-  private static final int METHODID_UPDATE_MEMBERSHIP = 9;
-  private static final int METHODID_CREATE_USER_AND_MEMBERSHIP = 10;
-  private static final int METHODID_LIST_ORGANIZATION_USERS = 11;
-  private static final int METHODID_RESEND_INVITE = 12;
-  private static final int METHODID_LIST_USER_ROLES = 13;
-  private static final int METHODID_ASSIGN_USER_ROLES = 14;
-  private static final int METHODID_REMOVE_USER_ROLE = 15;
-  private static final int METHODID_LIST_USER_PERMISSIONS = 16;
+  private static final int METHODID_GET_SUPPORT_HASH = 2;
+  private static final int METHODID_LIST_USERS = 3;
+  private static final int METHODID_SEARCH_USERS = 4;
+  private static final int METHODID_SEARCH_ORGANIZATION_USERS = 5;
+  private static final int METHODID_UPDATE_USER = 6;
+  private static final int METHODID_DELETE_USER = 7;
+  private static final int METHODID_CREATE_MEMBERSHIP = 8;
+  private static final int METHODID_DELETE_MEMBERSHIP = 9;
+  private static final int METHODID_UPDATE_MEMBERSHIP = 10;
+  private static final int METHODID_CREATE_USER_AND_MEMBERSHIP = 11;
+  private static final int METHODID_LIST_ORGANIZATION_USERS = 12;
+  private static final int METHODID_RESEND_INVITE = 13;
+  private static final int METHODID_LIST_USER_ROLES = 14;
+  private static final int METHODID_ASSIGN_USER_ROLES = 15;
+  private static final int METHODID_REMOVE_USER_ROLE = 16;
+  private static final int METHODID_LIST_USER_PERMISSIONS = 17;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1264,7 +1326,11 @@ public final class UserServiceGrpc {
           break;
         case METHODID_GET_CURRENT_USER:
           serviceImpl.getCurrentUser((com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetUserResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetCurrentUserResponse>) responseObserver);
+          break;
+        case METHODID_GET_SUPPORT_HASH:
+          serviceImpl.getSupportHash((com.google.protobuf.Empty) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.users.GetSupportHashResponse>) responseObserver);
           break;
         case METHODID_LIST_USERS:
           serviceImpl.listUsers((com.scalekit.grpc.scalekit.v1.users.ListUsersRequest) request,
@@ -1356,8 +1422,15 @@ public final class UserServiceGrpc {
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               com.scalekit.grpc.scalekit.v1.users.GetCurrentUserRequest,
-              com.scalekit.grpc.scalekit.v1.users.GetUserResponse>(
+              com.scalekit.grpc.scalekit.v1.users.GetCurrentUserResponse>(
                 service, METHODID_GET_CURRENT_USER)))
+        .addMethod(
+          getGetSupportHashMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.google.protobuf.Empty,
+              com.scalekit.grpc.scalekit.v1.users.GetSupportHashResponse>(
+                service, METHODID_GET_SUPPORT_HASH)))
         .addMethod(
           getListUsersMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1513,6 +1586,7 @@ public final class UserServiceGrpc {
               .setSchemaDescriptor(new UserServiceFileDescriptorSupplier())
               .addMethod(getGetUserMethod())
               .addMethod(getGetCurrentUserMethod())
+              .addMethod(getGetSupportHashMethod())
               .addMethod(getListUsersMethod())
               .addMethod(getSearchUsersMethod())
               .addMethod(getSearchOrganizationUsersMethod())

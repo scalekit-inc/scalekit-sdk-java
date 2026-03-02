@@ -1,173 +1,239 @@
-import com.scalekit.ScalekitClient;
+import com.scalekit.Environment;
+import com.scalekit.api.AuthClient;
 import com.scalekit.api.PasswordlessClient;
+import com.scalekit.api.impl.ScalekitPasswordlessClient;
+import com.scalekit.grpc.scalekit.v1.auth.passwordless.PasswordlessServiceGrpc;
+import com.scalekit.grpc.scalekit.v1.auth.passwordless.PasswordlessType;
+import com.scalekit.grpc.scalekit.v1.auth.passwordless.ResendPasswordlessRequest;
+import com.scalekit.grpc.scalekit.v1.auth.passwordless.SendPasswordlessRequest;
 import com.scalekit.grpc.scalekit.v1.auth.passwordless.SendPasswordlessResponse;
 import com.scalekit.grpc.scalekit.v1.auth.passwordless.TemplateType;
+import com.scalekit.grpc.scalekit.v1.auth.passwordless.VerifyPasswordLessRequest;
+import com.scalekit.grpc.scalekit.v1.auth.passwordless.VerifyPasswordLessResponse;
+import com.scalekit.internal.ScalekitCredentials;
 import com.scalekit.internal.http.SendPasswordlessOptions;
 import com.scalekit.internal.http.VerifyPasswordlessOptions;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
+import io.grpc.stub.StreamObserver;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
 public class PasswordlessTests {
 
-    private static ScalekitClient client;
     private static PasswordlessClient passwordlessClient;
+    private static FakePasswordlessService fakeService;
+    private static Server server;
+    private static ManagedChannel channel;
 
     @BeforeAll
-    static void init() {
-        // Init client
-        String environmentUrl = System.getenv("SCALEKIT_ENVIRONMENT_URL");
-        String clientId = System.getenv("SCALEKIT_CLIENT_ID");
-        String apiSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
+    static void init() throws IOException {
+        Environment.configure("https://test.scalekit.local", "test-client-id", "test-client-secret");
 
-        client = new ScalekitClient(environmentUrl, clientId, apiSecret);
-        passwordlessClient = client.passwordless();
+        fakeService = new FakePasswordlessService();
+        server = ServerBuilder.forPort(0)
+                .addService(fakeService)
+                .build()
+                .start();
+
+        channel = ManagedChannelBuilder.forAddress("localhost", server.getPort())
+                .usePlaintext()
+                .build();
+
+        AuthClient authClient = Mockito.mock(AuthClient.class);
+        when(authClient.getClientAccessToken()).thenReturn("test-access-token");
+
+        ScalekitCredentials credentials = new ScalekitCredentials(authClient);
+        passwordlessClient = new ScalekitPasswordlessClient(channel, credentials);
+    }
+
+    @AfterAll
+    static void cleanup() throws InterruptedException {
+        if (channel != null) {
+            channel.shutdownNow();
+            channel.awaitTermination(5, java.util.concurrent.TimeUnit.SECONDS);
+        }
+        if (server != null) {
+            server.shutdownNow();
+            server.awaitTermination();
+        }
     }
 
     @Test
     public void testSendPasswordlessEmailWithDefaultOptions() {
-        // Test sending passwordless email with default options
         String testEmail = "test@example.com";
-        
-   
+
         SendPasswordlessOptions options = new SendPasswordlessOptions();
         options.setMagiclinkAuthUri("https://example.com/auth/callback");
-        
+
         SendPasswordlessResponse response = passwordlessClient.sendPasswordlessEmail(testEmail, options);
-        
+
         assertNotNull(response);
         assertNotNull(response.getAuthRequestId());
         assertTrue(response.getExpiresAt() > 0);
         assertTrue(response.getExpiresIn() > 0);
         assertNotNull(response.getPasswordlessType());
+
+        assertNotNull(fakeService.lastSendRequest);
+        assertEquals(testEmail, fakeService.lastSendRequest.getEmail());
+        assertEquals("https://example.com/auth/callback", fakeService.lastSendRequest.getMagiclinkAuthUri());
     }
 
     @Test
     public void testSendPasswordlessEmailWithCustomOptions() {
-        // Test sending passwordless email with custom options
         String testEmail = "test@example.com";
-        
+
         SendPasswordlessOptions options = new SendPasswordlessOptions();
         options.setTemplate(TemplateType.SIGNIN);
         options.setState("test-state");
         options.setMagiclinkAuthUri("https://example.com/auth");
-        options.setExpiresIn(7200); // 2 hours
+        options.setExpiresIn(7200);
         options.setTemplateVariables(new HashMap<>());
-        
+
         SendPasswordlessResponse response = passwordlessClient.sendPasswordlessEmail(testEmail, options);
-        
+
         assertNotNull(response);
         assertNotNull(response.getAuthRequestId());
         assertTrue(response.getExpiresAt() > 0);
         assertTrue(response.getExpiresIn() > 0);
         assertNotNull(response.getPasswordlessType());
+
+        assertNotNull(fakeService.lastSendRequest);
+        assertEquals(TemplateType.SIGNIN, fakeService.lastSendRequest.getTemplate());
+        assertEquals("test-state", fakeService.lastSendRequest.getState());
+        assertEquals("https://example.com/auth", fakeService.lastSendRequest.getMagiclinkAuthUri());
+        assertEquals(7200, fakeService.lastSendRequest.getExpiresIn());
     }
 
     @Test
     public void testSendPasswordlessEmailWithTemplateVariables() {
-        // Test sending passwordless email with template variables
         String testEmail = "test@example.com";
-        
+
         Map<String, String> templateVariables = new HashMap<>();
         templateVariables.put("company_name", "Test Company");
         templateVariables.put("app_name", "Test App");
-        
+
         SendPasswordlessOptions options = new SendPasswordlessOptions();
         options.setTemplate(TemplateType.SIGNUP);
         options.setTemplateVariables(templateVariables);
-        options.setMagiclinkAuthUri("https://example.com/auth/callback"); // Required for this tenant
-        
+        options.setMagiclinkAuthUri("https://example.com/auth/callback");
+
         SendPasswordlessResponse response = passwordlessClient.sendPasswordlessEmail(testEmail, options);
-        
+
         assertNotNull(response);
         assertNotNull(response.getAuthRequestId());
         assertTrue(response.getExpiresAt() > 0);
         assertTrue(response.getExpiresIn() > 0);
         assertNotNull(response.getPasswordlessType());
+
+        assertNotNull(fakeService.lastSendRequest);
+        assertEquals(TemplateType.SIGNUP, fakeService.lastSendRequest.getTemplate());
+        assertEquals("Test Company", fakeService.lastSendRequest.getTemplateVariablesMap().get("company_name"));
+        assertEquals("Test App", fakeService.lastSendRequest.getTemplateVariablesMap().get("app_name"));
     }
 
     @Test
     public void testSendPasswordlessEmailWithInvalidEmail() {
-        // Test sending passwordless email with invalid email
-        assertThrows(IllegalArgumentException.class, () -> {
-            passwordlessClient.sendPasswordlessEmail(null);
-        });
-        
-        assertThrows(IllegalArgumentException.class, () -> {
-            passwordlessClient.sendPasswordlessEmail("");
-        });
-        
-        assertThrows(IllegalArgumentException.class, () -> {
-            passwordlessClient.sendPasswordlessEmail("   ");
-        });
+        assertThrows(IllegalArgumentException.class, () -> passwordlessClient.sendPasswordlessEmail(null));
+        assertThrows(IllegalArgumentException.class, () -> passwordlessClient.sendPasswordlessEmail(""));
+        assertThrows(IllegalArgumentException.class, () -> passwordlessClient.sendPasswordlessEmail("   "));
     }
 
     @Test
     public void testResendPasswordlessEmail() {
-        // First send a passwordless email to get an auth request ID
         String testEmail = "test@example.com";
-        
-        // Add required magiclinkAuthUri for this tenant configuration
+
         SendPasswordlessOptions options = new SendPasswordlessOptions();
         options.setMagiclinkAuthUri("https://example.com/auth/callback");
-        
+
         SendPasswordlessResponse originalResponse = passwordlessClient.sendPasswordlessEmail(testEmail, options);
-        
+
         assertNotNull(originalResponse);
         assertNotNull(originalResponse.getAuthRequestId());
-        
-        // Now resend the passwordless email
+
         SendPasswordlessResponse resendResponse = passwordlessClient.resendPasswordlessEmail(originalResponse.getAuthRequestId());
-        
+
         assertNotNull(resendResponse);
         assertNotNull(resendResponse.getAuthRequestId());
         assertTrue(resendResponse.getExpiresAt() > 0);
         assertTrue(resendResponse.getExpiresIn() > 0);
         assertNotNull(resendResponse.getPasswordlessType());
-        
-        // The new auth request ID should be the same as the original (current backend behavior)
         assertEquals(originalResponse.getAuthRequestId(), resendResponse.getAuthRequestId());
+
+        assertNotNull(fakeService.lastResendRequest);
+        assertEquals(originalResponse.getAuthRequestId(), fakeService.lastResendRequest.getAuthRequestId());
     }
 
     @Test
     public void testResendPasswordlessEmailWithInvalidAuthRequestId() {
-        // Test resending passwordless email with invalid auth request ID
-        assertThrows(IllegalArgumentException.class, () -> {
-            passwordlessClient.resendPasswordlessEmail(null);
-        });
-        
-        assertThrows(IllegalArgumentException.class, () -> {
-            passwordlessClient.resendPasswordlessEmail("");
-        });
-        
-        assertThrows(IllegalArgumentException.class, () -> {
-            passwordlessClient.resendPasswordlessEmail("   ");
-        });
+        assertThrows(IllegalArgumentException.class, () -> passwordlessClient.resendPasswordlessEmail(null));
+        assertThrows(IllegalArgumentException.class, () -> passwordlessClient.resendPasswordlessEmail(""));
+        assertThrows(IllegalArgumentException.class, () -> passwordlessClient.resendPasswordlessEmail("   "));
     }
 
     @Test
     public void testVerifyPasswordlessEmailWithInvalidCredential() {
-        // Test verifying with null credential
-        assertThrows(IllegalArgumentException.class, () -> {
-            passwordlessClient.verifyPasswordlessEmail(null);
-        });
-        
-        // Test verifying with empty credential
+        assertThrows(IllegalArgumentException.class, () -> passwordlessClient.verifyPasswordlessEmail(null));
+
         VerifyPasswordlessOptions emptyOptions = new VerifyPasswordlessOptions();
-        assertThrows(IllegalArgumentException.class, () -> {
-            passwordlessClient.verifyPasswordlessEmail(emptyOptions);
-        });
-        
-        // Test verifying with both code and linkToken null
+        assertThrows(IllegalArgumentException.class, () -> passwordlessClient.verifyPasswordlessEmail(emptyOptions));
+
         VerifyPasswordlessOptions nullOptions = new VerifyPasswordlessOptions();
         nullOptions.setCode(null);
         nullOptions.setLinkToken(null);
-        assertThrows(IllegalArgumentException.class, () -> {
-            passwordlessClient.verifyPasswordlessEmail(nullOptions);
-        });
+        assertThrows(IllegalArgumentException.class, () -> passwordlessClient.verifyPasswordlessEmail(nullOptions));
     }
-} 
+
+    private static class FakePasswordlessService extends PasswordlessServiceGrpc.PasswordlessServiceImplBase {
+        private volatile SendPasswordlessRequest lastSendRequest;
+        private volatile ResendPasswordlessRequest lastResendRequest;
+
+        @Override
+        public void sendPasswordlessEmail(SendPasswordlessRequest request, StreamObserver<SendPasswordlessResponse> responseObserver) {
+            lastSendRequest = request;
+            SendPasswordlessResponse response = SendPasswordlessResponse.newBuilder()
+                    .setAuthRequestId("test-auth-request-id")
+                    .setExpiresAt((System.currentTimeMillis() / 1000L) + 3600)
+                    .setExpiresIn(request.getExpiresIn() > 0 ? request.getExpiresIn() : 3600)
+                    .setPasswordlessType(PasswordlessType.LINK)
+                    .build();
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+        }
+
+        @Override
+        public void resendPasswordlessEmail(ResendPasswordlessRequest request, StreamObserver<SendPasswordlessResponse> responseObserver) {
+            lastResendRequest = request;
+            SendPasswordlessResponse response = SendPasswordlessResponse.newBuilder()
+                    .setAuthRequestId(request.getAuthRequestId())
+                    .setExpiresAt((System.currentTimeMillis() / 1000L) + 3600)
+                    .setExpiresIn(3600)
+                    .setPasswordlessType(PasswordlessType.LINK)
+                    .build();
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+        }
+
+        @Override
+        public void verifyPasswordlessEmail(VerifyPasswordLessRequest request, StreamObserver<VerifyPasswordLessResponse> responseObserver) {
+            VerifyPasswordLessResponse response = VerifyPasswordLessResponse.newBuilder()
+                    .setEmail("test@example.com")
+                    .setPasswordlessType(PasswordlessType.LINK)
+                    .build();
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+        }
+    }
+
+}

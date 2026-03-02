@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   }
   private ListPermissionsRequest() {
     pageToken_ = "";
+    type_ = 0;
   }
 
   @java.lang.Override
@@ -107,6 +108,24 @@ private static final long serialVersionUID = 0L;
     return pageSize_;
   }
 
+  public static final int TYPE_FIELD_NUMBER = 3;
+  private int type_ = 0;
+  /**
+   * <code>.scalekit.v1.roles.PermissionType type = 3 [json_name = "type", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for type.
+   */
+  @java.lang.Override public int getTypeValue() {
+    return type_;
+  }
+  /**
+   * <code>.scalekit.v1.roles.PermissionType type = 3 [json_name = "type", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The type.
+   */
+  @java.lang.Override public com.scalekit.grpc.scalekit.v1.roles.PermissionType getType() {
+    com.scalekit.grpc.scalekit.v1.roles.PermissionType result = com.scalekit.grpc.scalekit.v1.roles.PermissionType.forNumber(type_);
+    return result == null ? com.scalekit.grpc.scalekit.v1.roles.PermissionType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -127,6 +146,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeUInt32(2, pageSize_);
     }
+    if (type_ != com.scalekit.grpc.scalekit.v1.roles.PermissionType.ALL.getNumber()) {
+      output.writeEnum(3, type_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -142,6 +164,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(2, pageSize_);
+    }
+    if (type_ != com.scalekit.grpc.scalekit.v1.roles.PermissionType.ALL.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(3, type_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -168,6 +194,7 @@ private static final long serialVersionUID = 0L;
       if (getPageSize()
           != other.getPageSize()) return false;
     }
+    if (type_ != other.type_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -187,6 +214,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
       hash = (53 * hash) + getPageSize();
     }
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + type_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -320,6 +349,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       pageToken_ = "";
       pageSize_ = 0;
+      type_ = 0;
       return this;
     }
 
@@ -361,6 +391,9 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.pageSize_ = pageSize_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.type_ = type_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -417,6 +450,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasPageSize()) {
         setPageSize(other.getPageSize());
       }
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -453,6 +489,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 16
+            case 24: {
+              type_ = input.readEnum();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 24
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -585,6 +626,59 @@ private static final long serialVersionUID = 0L;
     public Builder clearPageSize() {
       bitField0_ = (bitField0_ & ~0x00000002);
       pageSize_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int type_ = 0;
+    /**
+     * <code>.scalekit.v1.roles.PermissionType type = 3 [json_name = "type", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>.scalekit.v1.roles.PermissionType type = 3 [json_name = "type", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+      type_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.roles.PermissionType type = 3 [json_name = "type", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.roles.PermissionType getType() {
+      com.scalekit.grpc.scalekit.v1.roles.PermissionType result = com.scalekit.grpc.scalekit.v1.roles.PermissionType.forNumber(type_);
+      return result == null ? com.scalekit.grpc.scalekit.v1.roles.PermissionType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.scalekit.v1.roles.PermissionType type = 3 [json_name = "type", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(com.scalekit.grpc.scalekit.v1.roles.PermissionType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.roles.PermissionType type = 3 [json_name = "type", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      type_ = 0;
       onChanged();
       return this;
     }

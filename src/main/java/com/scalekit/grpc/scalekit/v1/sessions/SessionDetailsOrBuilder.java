@@ -200,4 +200,28 @@ public interface SessionDetailsOrBuilder extends
    * <code>.google.protobuf.Timestamp last_active_at = 13 [json_name = "lastActiveAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getLastActiveAtOrBuilder();
+
+  /**
+   * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients> 
+      getAuthenticatedClientsList();
+  /**
+   * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClients getAuthenticatedClients(int index);
+  /**
+   * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  int getAuthenticatedClientsCount();
+  /**
+   * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<? extends com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClientsOrBuilder> 
+      getAuthenticatedClientsOrBuilderList();
+  /**
+   * <code>repeated .scalekit.v1.sessions.AuthenticatedClients authenticated_clients = 14 [json_name = "authenticatedClients", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.sessions.AuthenticatedClientsOrBuilder getAuthenticatedClientsOrBuilder(
+      int index);
 }
