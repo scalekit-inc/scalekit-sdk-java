@@ -35,8 +35,6 @@ public interface RoleClient {
 
     UpdateDefaultOrganizationRolesResponse updateDefaultOrganizationRoles(String orgId, UpdateDefaultOrganizationRolesRequest request);
     
-    /** @deprecated Use {@link #deleteOrganizationRoleBase(String, String)} instead */
-    @Deprecated
     void deleteRoleBase(String roleName);
 
     void deleteOrganizationRoleBase(String orgId, String roleName);
