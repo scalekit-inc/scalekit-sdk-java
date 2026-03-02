@@ -175,7 +175,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     }
 
     /**
-        * distOrganizations retrieves a list of organizations
+        * listOrganizations retrieves a list of organizations
         * The response will have page token to retrieve the next page with the same size
         * <p>
         * @param pageSize: The number of organizations to retrieve default page size is 10
@@ -208,7 +208,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     /**
         * generatePortalLink generates a portal link for an organization
         * @param organizationId: The organization ID
-        * @return Link: The portal link generate
+        * @return Link: The generated portal link URL for the organization
      */
     @Override
     public Link generatePortalLink(String organizationId) {
