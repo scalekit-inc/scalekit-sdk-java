@@ -58,19 +58,22 @@ public class ScalekitAuthClient implements AuthClient {
     }
 
 
-    public String getClientAccessToken(){
-        Environment environment = Environment.defaultConfig();
-        // params
+    public String generateClientToken(String clientId, String clientSecret) {
         Map<String, String> parameters = new HashMap<>();
         parameters.put(GRANT_TYPE, CLIENT_CREDENTIALS);
-        parameters.put(CLIENT_ID,environment.clientId);
-        parameters.put(CLIENT_SECRET,environment.clientSecret);
+        parameters.put(CLIENT_ID, clientId);
+        parameters.put(CLIENT_SECRET, clientSecret);
 
         try {
             return authenticate(parameters).getAccessToken();
-        }catch (InterruptedException | IOException | URISyntaxException e){
+        } catch (InterruptedException | IOException | URISyntaxException e) {
             throw new APIException(e.getMessage() + " Failed to Create Client Please check environment URL and credentials");
         }
+    }
+
+    public String getClientAccessToken() {
+        Environment environment = Environment.defaultConfig();
+        return generateClientToken(environment.clientId, environment.clientSecret);
     }
 
 
