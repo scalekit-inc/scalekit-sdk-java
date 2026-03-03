@@ -58,32 +58,44 @@ public class ScalekitPermissionClient implements PermissionClient {
     }
 
     /**
-     * Lists all permissions
+     * Lists permissions with optional pagination
+     * @param pageToken: The page token for pagination (pass null to start from the beginning)
+     * @param pageSize: The number of permissions per page (pass null to use the server default)
      * @return ListPermissionsResponse: The response containing the list of permissions
      */
     @Override
-    public ListPermissionsResponse listPermissions() {
+    public ListPermissionsResponse listPermissions(String pageToken, Integer pageSize) {
         return RetryExecuter.executeWithRetry(() -> {
+            ListPermissionsRequest.Builder builder = ListPermissionsRequest.newBuilder();
+            if (pageToken != null) builder.setPageToken(pageToken);
+            if (pageSize != null) builder.setPageSize(pageSize);
             return rolesService
                     .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
-                    .listPermissions(ListPermissionsRequest.newBuilder().build());
+                    .listPermissions(builder.build());
         }, this.credentials);
     }
 
     /**
-     * Lists all permissions with pagination
+     * Lists all permissions
+     * @return ListPermissionsResponse: The response containing the list of permissions
+     * @deprecated Use {@link #listPermissions(String, Integer)} instead
+     */
+    @Deprecated
+    @Override
+    public ListPermissionsResponse listPermissions() {
+        return listPermissions(null, null);
+    }
+
+    /**
+     * Lists all permissions with pagination by page token
      * @param pageToken: The page token for pagination
      * @return ListPermissionsResponse: The response containing the list of permissions
+     * @deprecated Use {@link #listPermissions(String, Integer)} instead
      */
+    @Deprecated
     @Override
     public ListPermissionsResponse listPermissions(String pageToken) {
-        return RetryExecuter.executeWithRetry(() -> {
-            return rolesService
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
-                    .listPermissions(ListPermissionsRequest.newBuilder()
-                            .setPageToken(pageToken)
-                            .build());
-        }, this.credentials);
+        return listPermissions(pageToken, null);
     }
 
     /**
