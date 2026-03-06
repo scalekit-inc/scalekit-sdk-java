@@ -68,7 +68,10 @@ public class ScalekitPermissionClient implements PermissionClient {
         return RetryExecuter.executeWithRetry(() -> {
             ListPermissionsRequest.Builder builder = ListPermissionsRequest.newBuilder();
             if (pageToken != null) builder.setPageToken(pageToken);
-            if (pageSize != null) builder.setPageSize(pageSize);
+            if (pageSize != null) {
+                if (pageSize <= 0) throw new IllegalArgumentException("pageSize must be greater than 0");
+                builder.setPageSize(pageSize);
+            }
             return rolesService
                     .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .listPermissions(builder.build());

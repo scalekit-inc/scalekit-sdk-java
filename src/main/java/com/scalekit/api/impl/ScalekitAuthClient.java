@@ -59,6 +59,12 @@ public class ScalekitAuthClient implements AuthClient {
 
 
     public String generateClientToken(String clientId, String clientSecret) {
+        if (clientId == null || clientId.isBlank()) {
+            throw new IllegalArgumentException("clientId must not be null or blank");
+        }
+        if (clientSecret == null || clientSecret.isBlank()) {
+            throw new IllegalArgumentException("clientSecret must not be null or blank");
+        }
         Map<String, String> parameters = new HashMap<>();
         parameters.put(GRANT_TYPE, CLIENT_CREDENTIALS);
         parameters.put(CLIENT_ID, clientId);

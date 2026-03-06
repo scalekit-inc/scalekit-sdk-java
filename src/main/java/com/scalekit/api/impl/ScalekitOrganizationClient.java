@@ -220,7 +220,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
      * generatePortalLink generates a portal link for an organization
      * @param organizationId: The organization ID
      * @param features: The features for which the portal link is generated
-     * @return Link: The portal link generate
+     * @return Link: The generated portal link URL for the organization
      */
     @Override
     public Link generatePortalLink(String organizationId, List<Feature> features) {
