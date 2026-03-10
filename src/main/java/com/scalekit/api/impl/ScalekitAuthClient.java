@@ -74,9 +74,9 @@ public class ScalekitAuthClient implements AuthClient {
             return authenticate(parameters).getAccessToken();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            throw new APIException("Failed to generate client token: thread was interrupted");
+            throw new APIException("Failed to generate client token: thread was interrupted", e);
         } catch (IOException | URISyntaxException e) {
-            throw new APIException("Failed to generate client token: " + e.getMessage());
+            throw new APIException("Failed to generate client token: " + e.getMessage(), e);
         }
     }
 
