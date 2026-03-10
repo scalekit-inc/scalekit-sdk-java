@@ -301,7 +301,9 @@ public class ScalekitAuthClient implements AuthClient {
 
         String form = requestData.entrySet()
                 .stream()
-                .map(entry -> entry.getKey() + "=" + entry.getValue())
+                .map(entry -> URLEncoder.encode(entry.getKey(), StandardCharsets.UTF_8)
+                        + "=" +
+                        URLEncoder.encode(entry.getValue(), StandardCharsets.UTF_8))
                 .collect(Collectors.joining("&"));
 
         HttpPost httpPost = new HttpPost(URI.create(url));

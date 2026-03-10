@@ -79,9 +79,9 @@ public class ScalekitPermissionClient implements PermissionClient {
     }
 
     /**
-     * Lists all permissions
-     * @return ListPermissionsResponse: The response containing the list of permissions
-     * @deprecated Use {@link #listPermissions(String, Integer)} instead
+     * Lists permissions using server-default pagination. May return only one page.
+     * @return ListPermissionsResponse: The response containing a paginated list of permissions
+     * @deprecated Use {@link #listPermissions(String, Integer)} instead for explicit pagination control
      */
     @Deprecated
     @Override
@@ -90,10 +90,10 @@ public class ScalekitPermissionClient implements PermissionClient {
     }
 
     /**
-     * Lists all permissions with pagination by page token
+     * Lists permissions starting from the given page token, using server-default page size. May return only one page.
      * @param pageToken: The page token for pagination
-     * @return ListPermissionsResponse: The response containing the list of permissions
-     * @deprecated Use {@link #listPermissions(String, Integer)} instead
+     * @return ListPermissionsResponse: The response containing a paginated list of permissions
+     * @deprecated Use {@link #listPermissions(String, Integer)} instead for explicit pagination control
      */
     @Deprecated
     @Override
