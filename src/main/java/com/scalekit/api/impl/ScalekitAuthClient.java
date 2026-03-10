@@ -59,10 +59,10 @@ public class ScalekitAuthClient implements AuthClient {
 
 
     public String generateClientToken(String clientId, String clientSecret) {
-        if (clientId == null || clientId.isBlank()) {
+        if (clientId == null || clientId.trim().isEmpty()) {
             throw new IllegalArgumentException("clientId must not be null or blank");
         }
-        if (clientSecret == null || clientSecret.isBlank()) {
+        if (clientSecret == null || clientSecret.trim().isEmpty()) {
             throw new IllegalArgumentException("clientSecret must not be null or blank");
         }
         Map<String, String> parameters = new HashMap<>();
@@ -74,9 +74,9 @@ public class ScalekitAuthClient implements AuthClient {
             return authenticate(parameters).getAccessToken();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            throw new APIException(e.getMessage() + " Failed to Create Client Please check environment URL and credentials");
+            throw new APIException("Failed to generate client token: thread was interrupted");
         } catch (IOException | URISyntaxException e) {
-            throw new APIException(e.getMessage() + " Failed to Create Client Please check environment URL and credentials");
+            throw new APIException("Failed to generate client token: " + e.getMessage());
         }
     }
 
