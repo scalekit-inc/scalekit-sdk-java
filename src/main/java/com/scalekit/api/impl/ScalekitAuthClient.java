@@ -72,7 +72,10 @@ public class ScalekitAuthClient implements AuthClient {
 
         try {
             return authenticate(parameters).getAccessToken();
-        } catch (InterruptedException | IOException | URISyntaxException e) {
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new APIException(e.getMessage() + " Failed to Create Client Please check environment URL and credentials");
+        } catch (IOException | URISyntaxException e) {
             throw new APIException(e.getMessage() + " Failed to Create Client Please check environment URL and credentials");
         }
     }
@@ -301,9 +304,9 @@ public class ScalekitAuthClient implements AuthClient {
 
         String form = requestData.entrySet()
                 .stream()
-                .map(entry -> URLEncoder.encode(entry.getKey(), StandardCharsets.UTF_8)
+                .map(entry -> URLEncoder.encode(entry.getKey(), StandardCharsets.UTF_8.name())
                         + "=" +
-                        URLEncoder.encode(entry.getValue(), StandardCharsets.UTF_8))
+                        URLEncoder.encode(entry.getValue(), StandardCharsets.UTF_8.name()))
                 .collect(Collectors.joining("&"));
 
         HttpPost httpPost = new HttpPost(URI.create(url));
