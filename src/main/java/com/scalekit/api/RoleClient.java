@@ -30,7 +30,9 @@ public interface RoleClient {
     void deleteOrganizationRole(String orgId, String roleName);
     
     void deleteOrganizationRole(String orgId, String roleName, String reassignRoleName);
-    
+
+    GetOrganizationRoleUsersCountResponse getOrganizationRoleUsersCount(String orgId, String roleName);
+
     UpdateDefaultOrganizationRolesResponse updateDefaultOrganizationRoles(String orgId, UpdateDefaultOrganizationRolesRequest request);
     
     void deleteRoleBase(String roleName);

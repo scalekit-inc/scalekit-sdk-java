@@ -250,6 +250,24 @@ public class ScalekitRoleClient implements RoleClient {
     }
 
     /**
+     * Gets the count of users associated with an organization role
+     * @param orgId: The organization ID
+     * @param roleName: The name of the role
+     * @return GetOrganizationRoleUsersCountResponse: The response containing the user count
+     */
+    @Override
+    public GetOrganizationRoleUsersCountResponse getOrganizationRoleUsersCount(String orgId, String roleName) {
+        return RetryExecuter.executeWithRetry(() -> {
+            return rolesService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .getOrganizationRoleUsersCount(GetOrganizationRoleUsersCountRequest.newBuilder()
+                            .setOrgId(orgId)
+                            .setRoleName(roleName)
+                            .build());
+        }, this.credentials);
+    }
+
+    /**
      * Updates the default roles for an organization
      * @param orgId: The organization ID
      * @param request: The update default organization roles request
