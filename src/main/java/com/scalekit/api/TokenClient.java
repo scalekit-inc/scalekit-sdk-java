@@ -70,4 +70,16 @@ public interface TokenClient {
      * @return ListTokensResponse containing tokens, total_count, and pagination cursors
      */
     ListTokensResponse list(String organizationId, String userId, int pageSize, String pageToken);
+
+    /**
+     * Updates the custom claims and/or description of an existing API token.
+     *
+     * Custom claims are merged into the existing set. To remove a claim, set its value to an empty string.
+     *
+     * @param token The opaque token string or token_id (apit_xxxxx)
+     * @param customClaims Claims to merge; set value to "" to remove a claim
+     * @param description Replacement description; null leaves unchanged, empty string clears it
+     * @return UpdateTokenResponse containing updated token_info
+     */
+    UpdateTokenResponse update(String token, Map<String, String> customClaims, String description);
 }
