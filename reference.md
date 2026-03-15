@@ -6031,6 +6031,73 @@ URL authUrl = client.authentication().getAuthorizationUrl(
 </dl>
 </details>
 
+<details><summary><code>client.authentication().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/AuthClient.java">getLogoutUrl</a>(options) -> URL</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Utility method to generate the OAuth 2.0 logout URL to initiate the logout flow.
+
+This method doesn't make any network calls but instead generates a fully formed logout URL that you can redirect your users to for logging out.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.internal.http.LogoutUrlOptions;
+import java.net.URL;
+
+LogoutUrlOptions options = new LogoutUrlOptions();
+options.setIdTokenHint(user.getIdToken());
+options.setPostLogoutRedirectUri("https://yourapp.com");
+options.setState("random-state-value");
+
+URL logoutUrl = client.authentication().getLogoutUrl(options);
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**options:** `LogoutUrlOptions` - Configuration for the logout request
+- `idTokenHint: String` - ID token hint to identify the user to logout
+- `postLogoutRedirectUri: String` - URL to redirect the user to after logout (optional)
+- `state: String` - Opaque value to maintain state between request and callback (optional)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.authentication().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/AuthClient.java">authenticateWithCode</a>(code, redirectUri, options) -> AuthenticationResponse</code></summary>
 <dl>
 <dd>
