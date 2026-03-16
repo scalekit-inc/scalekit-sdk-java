@@ -30,9 +30,12 @@ public class ScalekitM2MClient implements M2MClient {
         if (organizationId == null || organizationId.isEmpty()) {
             throw new IllegalArgumentException("organizationId is required");
         }
+        if (client == null) {
+            throw new IllegalArgumentException("client is required");
+        }
         CreateOrganizationClientRequest request = CreateOrganizationClientRequest.newBuilder()
                 .setOrganizationId(organizationId)
-                .setClient(client != null ? client : OrganizationClient.getDefaultInstance())
+                .setClient(client)
                 .build();
         return RetryExecuter.executeWithRetry(() ->
                 this.clientStub
@@ -68,10 +71,13 @@ public class ScalekitM2MClient implements M2MClient {
         if (clientId == null || clientId.isEmpty()) {
             throw new IllegalArgumentException("clientId is required");
         }
+        if (client == null) {
+            throw new IllegalArgumentException("client is required");
+        }
         UpdateOrganizationClientRequest request = UpdateOrganizationClientRequest.newBuilder()
                 .setOrganizationId(organizationId)
                 .setClientId(clientId)
-                .setClient(client != null ? client : OrganizationClient.getDefaultInstance())
+                .setClient(client)
                 .build();
         return RetryExecuter.executeWithRetry(() ->
                 this.clientStub
@@ -143,9 +149,16 @@ public class ScalekitM2MClient implements M2MClient {
                 .setSecretId(secretId)
                 .build();
         RetryExecuter.executeWithRetry(() -> {
-            this.clientStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
-                    .deleteOrganizationClientSecret(request);
+            try {
+                this.clientStub
+                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .deleteOrganizationClientSecret(request);
+            } catch (io.grpc.StatusRuntimeException e) {
+                if (e.getStatus().getCode() == io.grpc.Status.NOT_FOUND.getCode()) {
+                    return null;
+                }
+                throw e;
+            }
             return null;
         }, this.credentials);
     }

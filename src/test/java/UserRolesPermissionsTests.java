@@ -16,14 +16,14 @@ public class UserRolesPermissionsTests {
 
     @BeforeAll
     static void init() {
-        String environmentUrl = System.getenv("SCALEKIT_ENV_URL");
+        String environmentUrl = System.getenv("SCALEKIT_ENVIRONMENT_URL");
         String clientId = System.getenv("SCALEKIT_CLIENT_ID");
         String clientSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
         testOrganizationId = System.getenv("TEST_ORGANIZATION_ID");
         testUserId = System.getenv("TEST_USER_ID");
 
         if (environmentUrl == null || environmentUrl.isEmpty()) {
-            throw new IllegalStateException("SCALEKIT_ENV_URL environment variable is required");
+            throw new IllegalStateException("SCALEKIT_ENVIRONMENT_URL environment variable is required");
         }
         if (clientId == null || clientId.isEmpty()) {
             throw new IllegalStateException("SCALEKIT_CLIENT_ID environment variable is required");
