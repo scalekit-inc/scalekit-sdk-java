@@ -34,6 +34,10 @@ public interface RoleClient {
     GetOrganizationRoleUsersCountResponse getOrganizationRoleUsersCount(String orgId, String roleName);
 
     UpdateDefaultOrganizationRolesResponse updateDefaultOrganizationRoles(String orgId, UpdateDefaultOrganizationRolesRequest request);
-    
+
+    UpdateDefaultRolesResponse updateDefaultRoles(UpdateDefaultRolesRequest request);
+
+    ListDependentRolesResponse listDependentRoles(String roleName);
+
     void deleteRoleBase(String roleName);
 }
