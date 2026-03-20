@@ -34,7 +34,11 @@ public interface RoleClient {
     GetOrganizationRoleUsersCountResponse getOrganizationRoleUsersCount(String orgId, String roleName);
 
     UpdateDefaultOrganizationRolesResponse updateDefaultOrganizationRoles(String orgId, UpdateDefaultOrganizationRolesRequest request);
-    
+
+    UpdateDefaultRolesResponse updateDefaultRoles(UpdateDefaultRolesRequest request);
+
+    ListDependentRolesResponse listDependentRoles(String roleName);
+
     /** @deprecated Use {@link #deleteOrganizationRoleBase(String, String)} instead */
     @Deprecated
     void deleteRoleBase(String roleName);

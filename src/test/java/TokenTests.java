@@ -217,6 +217,16 @@ public class TokenTests {
             assertNotNull(updateResponse);
             assertNotNull(updateResponse.getTokenInfo());
             assertEquals("Updated description", updateResponse.getTokenInfo().getDescription());
+
+            // Verify clearing the description (empty string) is honoured by the server
+            UpdateTokenResponse clearResponse = client.tokens().update(tokenId, null, "");
+            assertNotNull(clearResponse);
+            assertNotNull(clearResponse.getTokenInfo());
+            assertTrue(
+                clearResponse.getTokenInfo().getDescription() == null ||
+                clearResponse.getTokenInfo().getDescription().isEmpty(),
+                "Description should be cleared after updating with empty string"
+            );
         } finally {
             client.tokens().invalidate(tokenId);
         }

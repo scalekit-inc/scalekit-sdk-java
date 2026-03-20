@@ -285,6 +285,42 @@ public class ScalekitRoleClient implements RoleClient {
     }
 
     /**
+     * Updates the default roles for the environment
+     * @param request: The update default roles request
+     * @return UpdateDefaultRolesResponse: The response containing the updated default roles
+     */
+    @Override
+    public UpdateDefaultRolesResponse updateDefaultRoles(UpdateDefaultRolesRequest request) {
+        if (request == null) {
+            throw new IllegalArgumentException("request is required");
+        }
+        return RetryExecuter.executeWithRetry(() -> {
+            return rolesService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .updateDefaultRoles(request);
+        }, this.credentials);
+    }
+
+    /**
+     * Lists dependent roles for a given role
+     * @param roleName: The name of the role whose dependents to list
+     * @return ListDependentRolesResponse: The response containing the list of dependent roles
+     */
+    @Override
+    public ListDependentRolesResponse listDependentRoles(String roleName) {
+        if (roleName == null || roleName.trim().isEmpty()) {
+            throw new IllegalArgumentException("roleName is required");
+        }
+        return RetryExecuter.executeWithRetry(() -> {
+            return rolesService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .listDependentRoles(ListDependentRolesRequest.newBuilder()
+                            .setRoleName(roleName)
+                            .build());
+        }, this.credentials);
+    }
+
+    /**
      * Deletes the base relationship for a role
      * @param roleName: The name of the role
      * @deprecated Use {@link #deleteOrganizationRoleBase(String, String)} instead
