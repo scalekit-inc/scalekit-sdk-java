@@ -22,4 +22,8 @@ public interface UserClient {
     ListOrganizationUsersResponse listOrganizationUsers(String organizationId, ListOrganizationUsersRequest request);
 
     ResendInviteResponse resendInvite(String organizationId, String userId);
+
+    ListUserRolesResponse listUserRoles(String organizationId, String userId);
+
+    ListUserPermissionsResponse listUserPermissions(String organizationId, String userId);
 } 

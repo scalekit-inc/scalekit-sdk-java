@@ -3,6 +3,7 @@ import com.scalekit.grpc.scalekit.v1.clients.*;
 import com.scalekit.grpc.scalekit.v1.organizations.CreateOrganization;
 import com.scalekit.grpc.scalekit.v1.organizations.Organization;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -19,11 +20,10 @@ public class M2MClientTests {
         String clientId = System.getenv("SCALEKIT_CLIENT_ID");
         String apiSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
 
-        if (environmentUrl == null || clientId == null || apiSecret == null) {
-            throw new IllegalStateException(
-                "SCALEKIT_ENVIRONMENT_URL, SCALEKIT_CLIENT_ID, SCALEKIT_CLIENT_SECRET are required"
-            );
-        }
+        Assumptions.assumeTrue(
+            environmentUrl != null && clientId != null && apiSecret != null,
+            "Skipping integration tests: SCALEKIT_ENVIRONMENT_URL, SCALEKIT_CLIENT_ID, SCALEKIT_CLIENT_SECRET are required"
+        );
 
         client = new ScalekitClient(environmentUrl, clientId, apiSecret);
 
