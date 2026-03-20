@@ -213,6 +213,13 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.42</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
             <plugin>
@@ -270,20 +277,6 @@
                         </configuration>
                     </execution>
                 </executions>
-              </plugin>
-
-              <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                  <annotationProcessorPaths>
-                    <path>
-                      <groupId>org.projectlombok</groupId>
-                      <artifactId>lombok</artifactId>
-                      <version>1.18.42</version>
-                    </path>
-                  </annotationProcessorPaths>
-                </configuration>
               </plugin>
 
         </plugins>
