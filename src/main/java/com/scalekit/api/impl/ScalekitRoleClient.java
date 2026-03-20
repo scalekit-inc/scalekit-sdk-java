@@ -291,6 +291,9 @@ public class ScalekitRoleClient implements RoleClient {
      */
     @Override
     public UpdateDefaultRolesResponse updateDefaultRoles(UpdateDefaultRolesRequest request) {
+        if (request == null) {
+            throw new IllegalArgumentException("request is required");
+        }
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
                     .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)

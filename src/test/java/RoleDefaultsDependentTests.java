@@ -57,6 +57,7 @@ public class RoleDefaultsDependentTests {
         assertNotNull(roles, "Dependent roles list should not be null");
         for (Role role : roles) {
             assertNotNull(role.getId(), "Each dependent role should have an ID");
+            assertFalse(role.getId().trim().isEmpty(), "Each dependent role ID should not be blank");
         }
     }
 
