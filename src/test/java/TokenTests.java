@@ -207,6 +207,76 @@ public class TokenTests {
     }
 
     @Test
+    void testUpdateTokenDescription() {
+        CreateTokenResponse createResponse = client.tokens().create(testOrgId);
+        String tokenId = createResponse.getTokenId();
+
+        try {
+            UpdateTokenResponse updateResponse = client.tokens().update(tokenId, null, "Updated description");
+
+            assertNotNull(updateResponse);
+            assertNotNull(updateResponse.getTokenInfo());
+            assertEquals("Updated description", updateResponse.getTokenInfo().getDescription());
+        } finally {
+            client.tokens().invalidate(tokenId);
+        }
+    }
+
+    @Test
+    void testUpdateTokenMergeCustomClaims() {
+        Map<String, String> initialClaims = new HashMap<>();
+        initialClaims.put("env", "staging");
+        initialClaims.put("scope", "read");
+
+        CreateTokenResponse createResponse = client.tokens().create(
+                testOrgId, null, initialClaims, null, "Token for claims update"
+        );
+        String tokenId = createResponse.getTokenId();
+
+        try {
+            Map<String, String> updatedClaims = new HashMap<>();
+            updatedClaims.put("env", "production");
+            updatedClaims.put("team", "infra");
+
+            UpdateTokenResponse updateResponse = client.tokens().update(tokenId, updatedClaims, null);
+
+            assertNotNull(updateResponse);
+            assertNotNull(updateResponse.getTokenInfo());
+            assertEquals("production", updateResponse.getTokenInfo().getCustomClaimsMap().get("env"));
+            assertEquals("infra", updateResponse.getTokenInfo().getCustomClaimsMap().get("team"));
+            assertEquals("read", updateResponse.getTokenInfo().getCustomClaimsMap().get("scope"));
+        } finally {
+            client.tokens().invalidate(tokenId);
+        }
+    }
+
+    @Test
+    void testUpdateTokenRemoveClaim() {
+        Map<String, String> initialClaims = new HashMap<>();
+        initialClaims.put("env", "staging");
+        initialClaims.put("scope", "read");
+
+        CreateTokenResponse createResponse = client.tokens().create(
+                testOrgId, null, initialClaims, null, "Token for claim removal"
+        );
+        String tokenId = createResponse.getTokenId();
+
+        try {
+            Map<String, String> removeClaim = new HashMap<>();
+            removeClaim.put("scope", "");
+
+            UpdateTokenResponse updateResponse = client.tokens().update(tokenId, removeClaim, null);
+
+            assertNotNull(updateResponse);
+            assertNotNull(updateResponse.getTokenInfo());
+            assertFalse(updateResponse.getTokenInfo().getCustomClaimsMap().containsKey("scope"));
+            assertEquals("staging", updateResponse.getTokenInfo().getCustomClaimsMap().get("env"));
+        } finally {
+            client.tokens().invalidate(tokenId);
+        }
+    }
+
+    @Test
     void testInvalidateToken() {
         // Create a token
         CreateTokenResponse createResponse = client.tokens().create(testOrgId);

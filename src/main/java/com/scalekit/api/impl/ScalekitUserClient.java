@@ -198,4 +198,54 @@ public class ScalekitUserClient implements UserClient {
                     .resendInvite(request);
         }, this.credentials);
     }
+
+    /**
+     * Lists roles assigned to a user in the specified organization
+     * @param organizationId: The organization ID
+     * @param userId: The ID of the user whose roles to list
+     * @return ListUserRolesResponse: The response containing the list of roles assigned to the user
+     */
+    @Override
+    public ListUserRolesResponse listUserRoles(String organizationId, String userId) {
+        if (organizationId == null || organizationId.isEmpty()) {
+            throw new IllegalArgumentException("organizationId is required");
+        }
+        if (userId == null || userId.isEmpty()) {
+            throw new IllegalArgumentException("userId is required");
+        }
+        return RetryExecuter.executeWithRetry(() -> {
+            ListUserRolesRequest request = ListUserRolesRequest.newBuilder()
+                    .setOrganizationId(organizationId)
+                    .setUserId(userId)
+                    .build();
+            return userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .listUserRoles(request);
+        }, this.credentials);
+    }
+
+    /**
+     * Lists permissions assigned to a user in the specified organization
+     * @param organizationId: The organization ID
+     * @param userId: The ID of the user whose permissions to list
+     * @return ListUserPermissionsResponse: The response containing the list of permissions assigned to the user
+     */
+    @Override
+    public ListUserPermissionsResponse listUserPermissions(String organizationId, String userId) {
+        if (organizationId == null || organizationId.isEmpty()) {
+            throw new IllegalArgumentException("organizationId is required");
+        }
+        if (userId == null || userId.isEmpty()) {
+            throw new IllegalArgumentException("userId is required");
+        }
+        return RetryExecuter.executeWithRetry(() -> {
+            ListUserPermissionsRequest request = ListUserPermissionsRequest.newBuilder()
+                    .setOrganizationId(organizationId)
+                    .setUserId(userId)
+                    .build();
+            return userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .listUserPermissions(request);
+        }, this.credentials);
+    }
 } 

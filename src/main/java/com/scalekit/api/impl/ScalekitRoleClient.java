@@ -287,8 +287,10 @@ public class ScalekitRoleClient implements RoleClient {
     /**
      * Deletes the base relationship for an environment-level role
      * @param roleName: The name of the role
+     * @deprecated Use {@link #deleteOrganizationRoleBase(String, String)} instead
      */
     @Override
+    @Deprecated
     public void deleteRoleBase(String roleName) {
         RetryExecuter.executeWithRetry(() -> {
             rolesService

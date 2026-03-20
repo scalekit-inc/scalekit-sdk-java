@@ -153,6 +153,36 @@ public class ScalekitTokenClient implements TokenClient {
     }
 
     /**
+     * Updates the custom claims and/or description of an existing API token.
+     *
+     * @param token        The opaque token string or token_id (apit_xxxxx)
+     * @param customClaims Claims to merge; set value to "" to remove a claim
+     * @param description  Replacement description; null leaves unchanged, empty string clears it
+     * @return UpdateTokenResponse containing updated token_info
+     */
+    @Override
+    public UpdateTokenResponse update(String token, Map<String, String> customClaims, String description) {
+        if (token == null || token.isEmpty()) {
+            throw new IllegalArgumentException("token is required");
+        }
+        UpdateTokenRequest.Builder requestBuilder = UpdateTokenRequest.newBuilder()
+                .setToken(token);
+
+        if (customClaims != null && !customClaims.isEmpty()) {
+            requestBuilder.putAllCustomClaims(customClaims);
+        }
+        if (description != null) {
+            requestBuilder.setDescription(description);
+        }
+
+        return RetryExecuter.executeWithRetry(() ->
+                this.tokenStub
+                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .updateToken(requestBuilder.build()),
+                this.credentials);
+    }
+
+    /**
      * Lists API tokens for an organization with pagination.
      *
      * @param organizationId The organization ID to list tokens for
