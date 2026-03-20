@@ -1,6 +1,7 @@
 import com.scalekit.ScalekitClient;
 import com.scalekit.grpc.scalekit.v1.commons.Role;
 import com.scalekit.grpc.scalekit.v1.users.*;
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -22,21 +23,14 @@ public class UserRolesPermissionsTests {
         testOrganizationId = System.getenv("TEST_ORGANIZATION_ID");
         testUserId = System.getenv("TEST_USER_ID");
 
-        if (environmentUrl == null || environmentUrl.isEmpty()) {
-            throw new IllegalStateException("SCALEKIT_ENVIRONMENT_URL environment variable is required");
-        }
-        if (clientId == null || clientId.isEmpty()) {
-            throw new IllegalStateException("SCALEKIT_CLIENT_ID environment variable is required");
-        }
-        if (clientSecret == null || clientSecret.isEmpty()) {
-            throw new IllegalStateException("SCALEKIT_CLIENT_SECRET environment variable is required");
-        }
-        if (testOrganizationId == null || testOrganizationId.isEmpty()) {
-            throw new IllegalStateException("TEST_ORGANIZATION_ID environment variable is required");
-        }
-        if (testUserId == null || testUserId.isEmpty()) {
-            throw new IllegalStateException("TEST_USER_ID environment variable is required");
-        }
+        Assumptions.assumeTrue(
+            environmentUrl != null && !environmentUrl.trim().isEmpty() &&
+            clientId != null && !clientId.trim().isEmpty() &&
+            clientSecret != null && !clientSecret.trim().isEmpty() &&
+            testOrganizationId != null && !testOrganizationId.trim().isEmpty() &&
+            testUserId != null && !testUserId.trim().isEmpty(),
+            "Skipping integration tests: SCALEKIT_ENVIRONMENT_URL, SCALEKIT_CLIENT_ID, SCALEKIT_CLIENT_SECRET, TEST_ORGANIZATION_ID, TEST_USER_ID are required"
+        );
 
         client = new ScalekitClient(environmentUrl, clientId, clientSecret);
     }
@@ -51,6 +45,7 @@ public class UserRolesPermissionsTests {
         // Response is valid even if empty; verify the list itself is accessible
         for (Role role : roles) {
             assertNotNull(role.getId(), "Each role should have an ID");
+            assertFalse(role.getId().trim().isEmpty(), "Each role ID should not be blank");
         }
     }
 
@@ -64,6 +59,7 @@ public class UserRolesPermissionsTests {
         // Response is valid even if empty; verify the list itself is accessible
         for (com.scalekit.grpc.scalekit.v1.users.Permission permission : permissions) {
             assertNotNull(permission.getId(), "Each permission should have an ID");
+            assertFalse(permission.getId().trim().isEmpty(), "Each permission ID should not be blank");
         }
     }
 }
