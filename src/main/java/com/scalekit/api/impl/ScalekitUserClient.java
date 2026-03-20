@@ -207,10 +207,10 @@ public class ScalekitUserClient implements UserClient {
      */
     @Override
     public ListUserRolesResponse listUserRoles(String organizationId, String userId) {
-        if (organizationId == null || organizationId.isEmpty()) {
+        if (organizationId == null || organizationId.trim().isEmpty()) {
             throw new IllegalArgumentException("organizationId is required");
         }
-        if (userId == null || userId.isEmpty()) {
+        if (userId == null || userId.trim().isEmpty()) {
             throw new IllegalArgumentException("userId is required");
         }
         return RetryExecuter.executeWithRetry(() -> {
@@ -232,10 +232,10 @@ public class ScalekitUserClient implements UserClient {
      */
     @Override
     public ListUserPermissionsResponse listUserPermissions(String organizationId, String userId) {
-        if (organizationId == null || organizationId.isEmpty()) {
+        if (organizationId == null || organizationId.trim().isEmpty()) {
             throw new IllegalArgumentException("organizationId is required");
         }
-        if (userId == null || userId.isEmpty()) {
+        if (userId == null || userId.trim().isEmpty()) {
             throw new IllegalArgumentException("userId is required");
         }
         return RetryExecuter.executeWithRetry(() -> {

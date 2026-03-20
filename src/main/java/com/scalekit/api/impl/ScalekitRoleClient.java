@@ -308,7 +308,7 @@ public class ScalekitRoleClient implements RoleClient {
      */
     @Override
     public ListDependentRolesResponse listDependentRoles(String roleName) {
-        if (roleName == null || roleName.isEmpty()) {
+        if (roleName == null || roleName.trim().isEmpty()) {
             throw new IllegalArgumentException("roleName is required");
         }
         return RetryExecuter.executeWithRetry(() -> {

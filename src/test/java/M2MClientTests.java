@@ -21,7 +21,9 @@ public class M2MClientTests {
         String apiSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
 
         Assumptions.assumeTrue(
-            environmentUrl != null && clientId != null && apiSecret != null,
+            environmentUrl != null && !environmentUrl.trim().isEmpty() &&
+            clientId != null && !clientId.trim().isEmpty() &&
+            apiSecret != null && !apiSecret.trim().isEmpty(),
             "Skipping integration tests: SCALEKIT_ENVIRONMENT_URL, SCALEKIT_CLIENT_ID, SCALEKIT_CLIENT_SECRET are required"
         );
 
@@ -39,7 +41,8 @@ public class M2MClientTests {
         if (testOrgId != null && client != null) {
             try {
                 client.organizations().deleteById(testOrgId);
-            } catch (Exception ignored) {
+            } catch (Exception e) {
+                System.err.println("Failed to delete test org " + testOrgId + ": " + e.getMessage());
             }
         }
     }
@@ -65,8 +68,15 @@ public class M2MClientTests {
 
     @Test
     void testCreateOrganizationClientRequiresOrgId() {
+        OrganizationClient stub = OrganizationClient.newBuilder().setName("stub").build();
         assertThrows(IllegalArgumentException.class, () ->
-                client.m2m().createOrganizationClient("", null));
+                client.m2m().createOrganizationClient("", stub));
+    }
+
+    @Test
+    void testCreateOrganizationClientRequiresClient() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.m2m().createOrganizationClient(testOrgId, null));
     }
 
     @Test
