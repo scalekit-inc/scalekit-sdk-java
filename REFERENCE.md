@@ -6084,7 +6084,7 @@ URL logoutUrl = client.authentication().getLogoutUrl(options);
 <dd>
 
 **options:** `LogoutUrlOptions` - Configuration for the logout request
-- `idTokenHint: String` - ID token hint to identify the user to logout
+- `idTokenHint: String` - ID token hint to identify the user to log out
 - `postLogoutRedirectUri: String` - URL to redirect the user to after logout (optional)
 - `state: String` - Opaque value to maintain state between request and callback (optional)
 
