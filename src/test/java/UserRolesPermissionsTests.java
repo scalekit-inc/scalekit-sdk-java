@@ -59,6 +59,7 @@ public class UserRolesPermissionsTests {
         // Response is valid even if empty; verify the list itself is accessible
         for (com.scalekit.grpc.scalekit.v1.users.Permission permission : permissions) {
             assertNotNull(permission.getId(), "Each permission should have an ID");
+            assertFalse(permission.getId().trim().isEmpty(), "Each permission ID should not be blank");
         }
     }
 }
