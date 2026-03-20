@@ -669,6 +669,45 @@ public class RoleTests {
         }
     }
 
+    @Test
+    public void testGetOrganizationRoleUsersCount() {
+        // Create a test organization
+        Organization testOrganization = client.organizations().create(
+                CreateOrganization.newBuilder()
+                        .setDisplayName("Test Organization for Role Users Count")
+                        .setExternalId(UUID.randomUUID().toString().substring(0, 10))
+                        .build()
+        );
+
+        try {
+            // Create an organization role
+            String orgRoleName = "test_org_count_role_" + System.currentTimeMillis();
+            CreateOrganizationRole createOrgRole = CreateOrganizationRole.newBuilder()
+                    .setName(orgRoleName)
+                    .setDisplayName("Count Test Organization Role")
+                    .setDescription("Organization role for testing user count")
+                    .build();
+
+            CreateOrganizationRoleRequest createRequest = CreateOrganizationRoleRequest.newBuilder()
+                    .setOrgId(testOrganization.getId())
+                    .setRole(createOrgRole)
+                    .build();
+
+            client.roles().createOrganizationRole(testOrganization.getId(), createRequest);
+
+            // Get user count for the organization role
+            GetOrganizationRoleUsersCountResponse countResponse = client.roles()
+                    .getOrganizationRoleUsersCount(testOrganization.getId(), orgRoleName);
+            assertNotNull(countResponse);
+            assertTrue(countResponse.getCount() >= 0);
+
+            // Cleanup
+            client.roles().deleteOrganizationRole(testOrganization.getId(), orgRoleName);
+        } finally {
+            client.organizations().deleteById(testOrganization.getId());
+        }
+    }
+
     // Error handling tests
 
     @Test
