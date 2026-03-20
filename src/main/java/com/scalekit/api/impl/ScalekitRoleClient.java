@@ -321,15 +321,35 @@ public class ScalekitRoleClient implements RoleClient {
     }
 
     /**
-     * Deletes the base relationship for an organization role
+     * Deletes the base relationship for a role
      * @param roleName: The name of the role
+     * @deprecated Use {@link #deleteOrganizationRoleBase(String, String)} instead
      */
     @Override
+    @Deprecated
     public void deleteRoleBase(String roleName) {
         RetryExecuter.executeWithRetry(() -> {
             rolesService
                     .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .deleteRoleBase(DeleteRoleBaseRequest.newBuilder()
+                            .setRoleName(roleName)
+                            .build());
+            return null;
+        }, this.credentials);
+    }
+
+    /**
+     * Deletes the base relationship for an organization role
+     * @param orgId: The organization ID
+     * @param roleName: The name of the role
+     */
+    @Override
+    public void deleteOrganizationRoleBase(String orgId, String roleName) {
+        RetryExecuter.executeWithRetry(() -> {
+            rolesService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .deleteOrganizationRoleBase(DeleteOrganizationRoleBaseRequest.newBuilder()
+                            .setOrgId(orgId)
                             .setRoleName(roleName)
                             .build());
             return null;

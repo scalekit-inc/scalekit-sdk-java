@@ -168,7 +168,7 @@ public class ScalekitM2MClient implements M2MClient {
         if (organizationId == null || organizationId.isEmpty()) {
             throw new IllegalArgumentException("organizationId is required");
         }
-        int effectivePageSize = pageSize > 0 ? Math.min(pageSize, 100) : 10;
+        int effectivePageSize = pageSize > 0 ? Math.min(Math.max(pageSize, 10), 100) : 10;
         String effectivePageToken = pageToken != null ? pageToken : "";
 
         ListOrganizationClientsRequest request = ListOrganizationClientsRequest.newBuilder()

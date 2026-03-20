@@ -39,5 +39,9 @@ public interface RoleClient {
 
     ListDependentRolesResponse listDependentRoles(String roleName);
 
+    /** @deprecated Use {@link #deleteOrganizationRoleBase(String, String)} instead */
+    @Deprecated
     void deleteRoleBase(String roleName);
+
+    void deleteOrganizationRoleBase(String orgId, String roleName);
 }
