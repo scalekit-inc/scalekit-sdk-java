@@ -304,9 +304,15 @@ public class ScalekitAuthClient implements AuthClient {
 
         String form = requestData.entrySet()
                 .stream()
-                .map(entry -> URLEncoder.encode(entry.getKey(), StandardCharsets.UTF_8.name())
-                        + "=" +
-                        URLEncoder.encode(entry.getValue(), StandardCharsets.UTF_8.name()))
+                .map(entry -> {
+                    try {
+                        return URLEncoder.encode(entry.getKey(), StandardCharsets.UTF_8.name())
+                                + "="
+                                + URLEncoder.encode(entry.getValue(), StandardCharsets.UTF_8.name());
+                    } catch (UnsupportedEncodingException e) {
+                        throw new RuntimeException(e); // UTF-8 is always supported
+                    }
+                })
                 .collect(Collectors.joining("&"));
 
         HttpPost httpPost = new HttpPost(URI.create(url));
