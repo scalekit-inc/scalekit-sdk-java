@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD024 -->
 ## ScalekitClient
 
 <details><summary><code>new <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">ScalekitClient</a>(siteName, clientId, clientSecret) -> ScalekitClient</code></summary>
@@ -6451,3 +6452,5 @@ This method takes no parameters.
 </dd>
 </dl>
 </details>
+
+<\!-- markdownlint-enable MD024 -->
