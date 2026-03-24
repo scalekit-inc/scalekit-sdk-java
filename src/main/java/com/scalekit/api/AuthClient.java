@@ -14,6 +14,8 @@ public interface AuthClient {
 
      boolean validateAccessToken(String jwt);
 
+     String generateClientToken(String clientId, String clientSecret);
+
      String getClientAccessToken();
 
      AuthenticationResponse authenticateWithCode(String code, String redirectUri, AuthenticationOptions options);

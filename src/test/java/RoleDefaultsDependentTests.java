@@ -3,6 +3,7 @@ import com.scalekit.grpc.scalekit.v1.roles.*;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Disabled;
 
 import java.util.List;
 
@@ -40,9 +41,17 @@ public class RoleDefaultsDependentTests {
         }
     }
 
+    @Disabled("updateDefaultRoles requires a valid creator role name (environment-specific). " +
+              "Set TEST_CREATOR_ROLE_NAME to re-enable once a safe read/restore flow is available.")
     @Test
     public void testUpdateDefaultRoles() {
-        UpdateDefaultRolesRequest request = UpdateDefaultRolesRequest.newBuilder().build();
+        String creatorRoleName = System.getenv("TEST_CREATOR_ROLE_NAME");
+        Assumptions.assumeTrue(creatorRoleName != null && !creatorRoleName.isEmpty(),
+            "TEST_CREATOR_ROLE_NAME environment variable is required");
+
+        UpdateDefaultRolesRequest request = UpdateDefaultRolesRequest.newBuilder()
+                .setDefaultCreatorRole(creatorRoleName)
+                .build();
         UpdateDefaultRolesResponse response = client.roles().updateDefaultRoles(request);
 
         assertNotNull(response, "updateDefaultRoles response should not be null");

@@ -31,6 +31,29 @@ public class AuthTest {
     }
 
     @Test
+    public void TestGenerateClientToken() throws Exception {
+        String clientId = System.getenv("SCALEKIT_CLIENT_ID");
+        String clientSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
+        String token = client.authentication().generateClientToken(clientId, clientSecret);
+        assertNotNull(token);
+        assertFalse(token.isEmpty());
+        assertTrue(client.authentication().validateAccessToken(token));
+    }
+
+    @Test
+    public void TestGetClientAccessTokenDelegates() throws Exception {
+        // Both methods should return valid tokens using the same credentials
+        String tokenViaConvenience = client.authentication().getClientAccessToken();
+        String clientId = System.getenv("SCALEKIT_CLIENT_ID");
+        String clientSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
+        String tokenViaExplicit = client.authentication().generateClientToken(clientId, clientSecret);
+        assertNotNull(tokenViaConvenience);
+        assertNotNull(tokenViaExplicit);
+        assertTrue(client.authentication().validateAccessToken(tokenViaConvenience));
+        assertTrue(client.authentication().validateAccessToken(tokenViaExplicit));
+    }
+
+    @Test
     public void TestCredentials() throws Exception {
 
         ScalekitCredentials credentials = new ScalekitCredentials(client.authentication());

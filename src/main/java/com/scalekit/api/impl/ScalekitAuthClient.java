@@ -58,19 +58,31 @@ public class ScalekitAuthClient implements AuthClient {
     }
 
 
-    public String getClientAccessToken(){
-        Environment environment = Environment.defaultConfig();
-        // params
+    public String generateClientToken(String clientId, String clientSecret) {
+        if (clientId == null || clientId.trim().isEmpty()) {
+            throw new IllegalArgumentException("clientId must not be null or blank");
+        }
+        if (clientSecret == null || clientSecret.trim().isEmpty()) {
+            throw new IllegalArgumentException("clientSecret must not be null or blank");
+        }
         Map<String, String> parameters = new HashMap<>();
         parameters.put(GRANT_TYPE, CLIENT_CREDENTIALS);
-        parameters.put(CLIENT_ID,environment.clientId);
-        parameters.put(CLIENT_SECRET,environment.clientSecret);
+        parameters.put(CLIENT_ID, clientId);
+        parameters.put(CLIENT_SECRET, clientSecret);
 
         try {
             return authenticate(parameters).getAccessToken();
-        }catch (InterruptedException | IOException | URISyntaxException e){
-            throw new APIException(e.getMessage() + " Failed to Create Client Please check environment URL and credentials");
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new APIException("Failed to generate client token: thread was interrupted", e);
+        } catch (IOException | URISyntaxException e) {
+            throw new APIException("Failed to generate client token: " + e.getMessage(), e);
         }
+    }
+
+    public String getClientAccessToken() {
+        Environment environment = Environment.defaultConfig();
+        return generateClientToken(environment.clientId, environment.clientSecret);
     }
 
 
@@ -292,7 +304,15 @@ public class ScalekitAuthClient implements AuthClient {
 
         String form = requestData.entrySet()
                 .stream()
-                .map(entry -> entry.getKey() + "=" + entry.getValue())
+                .map(entry -> {
+                    try {
+                        return URLEncoder.encode(entry.getKey(), StandardCharsets.UTF_8.name())
+                                + "="
+                                + URLEncoder.encode(entry.getValue(), StandardCharsets.UTF_8.name());
+                    } catch (UnsupportedEncodingException e) {
+                        throw new RuntimeException(e); // UTF-8 is always supported
+                    }
+                })
                 .collect(Collectors.joining("&"));
 
         HttpPost httpPost = new HttpPost(URI.create(url));

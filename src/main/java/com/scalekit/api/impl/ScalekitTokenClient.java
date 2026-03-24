@@ -156,7 +156,7 @@ public class ScalekitTokenClient implements TokenClient {
      * Updates the custom claims and/or description of an existing API token.
      *
      * @param token        The opaque token string or token_id (apit_xxxxx)
-     * @param customClaims Claims to merge; set value to "" to remove a claim
+     * @param customClaims Claims to merge into existing claims; null leaves claims unchanged
      * @param description  Replacement description; null leaves unchanged, empty string clears it
      * @return UpdateTokenResponse containing updated token_info
      */
