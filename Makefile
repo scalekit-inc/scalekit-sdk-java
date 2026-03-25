@@ -52,3 +52,4 @@ test:
 
 verify-generate: generate
 	git diff --exit-code
+
