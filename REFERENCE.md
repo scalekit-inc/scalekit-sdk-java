@@ -33,7 +33,7 @@ The Java SDK exposes the clients and methods in the sections above through `Scal
 <dl>
 <dd>
 
-Creates a new Scalekit client instance configured for your environment, and provides access to all API clients (organizations, users, connections, directories, API tokens, M2M clients, etc).
+Creates a new Scalekit client instance configured for your environment, and provides access to all API clients (organizations, users, connections, directories, API tokens, M2M clients, etc.).
 </dd>
 </dl>
 </dd>
