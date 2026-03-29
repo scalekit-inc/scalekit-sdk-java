@@ -1,4 +1,24 @@
-<!-- markdownlint-disable MD024 -->
+<!-- markdownlint-disable MD024 MD001 -->
+
+## Table of Contents
+
+- [ScalekitClient](#scalekitclient)
+- [Organizations](#organizations)
+- [Connections](#connections)
+- [Users](#users)
+- [Domains](#domains)
+- [Directories](#directories)
+- [Sessions](#sessions)
+- [Roles](#roles)
+- [Permissions](#permissions)
+- [Passwordless](#passwordless)
+- [WebAuthn](#webauthn)
+- [Auth](#auth)
+- [Tokens](#tokens)
+- [M2M](#m2m)
+
+The Java SDK exposes the clients and methods in the sections above through `ScalekitClient`. Connected Accounts, Tools, and Actions are not part of the Java public API in this release.
+
 ## ScalekitClient
 
 <details><summary><code>new <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">ScalekitClient</a>(siteName, clientId, clientSecret) -> ScalekitClient</code></summary>
@@ -13,7 +33,7 @@
 <dl>
 <dd>
 
-Creates a new Scalekit client instance configured for your environment, and provides access to all API clients (organizations, users, connections, directories, etc).
+Creates a new Scalekit client instance configured for your environment, and provides access to all API clients (organizations, users, connections, directories, API tokens, M2M clients, etc.).
 </dd>
 </dl>
 </dd>
@@ -885,6 +905,114 @@ boolean isValid = interceptor.verifyInterceptorPayload("insec_...", headers, pay
 <dd>
 
 **payload:** `byte[]` - The raw interceptor request body bytes
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">tokens</a>() -> TokenClient</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Returns a <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/TokenClient.java">TokenClient</a> for managing API tokens (programmatic access credentials).
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.tokens().create("org_123");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+This method takes no parameters.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">m2m</a>() -> M2MClient</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Returns a <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/M2MClient.java">M2MClient</a> for managing machine-to-machine API clients.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.m2m().listOrganizationClients("org_123", 20, "");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+This method takes no parameters.
 
 </dd>
 </dl>
@@ -6453,4 +6581,962 @@ This method takes no parameters.
 </dl>
 </details>
 
-<\!-- markdownlint-enable MD024 -->
+## Tokens
+
+<details><summary><code>client.tokens().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/TokenClient.java">create</a>(organizationId) -> CreateTokenResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Creates a new API token for an organization with default settings.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.tokens().create("org_123");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**organizationId:** `String` - The organization ID to scope the token to
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.tokens().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/TokenClient.java">create</a>(organizationId, userId, customClaims, expiry, description) -> CreateTokenResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Creates a new API token for an organization with custom options.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+import com.google.protobuf.Timestamp;
+
+Map<String, String> claims = new HashMap<>();
+claims.put("environment", "production");
+
+Timestamp expiry = Timestamp.newBuilder()
+  .setSeconds(System.currentTimeMillis() / 1000 + 86400)
+  .build();
+
+client.tokens().create("org_123", "user_123", claims, expiry, "Production access token");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**organizationId:** `String` - The organization ID to scope the token to
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**userId:** `String` - Optional user ID to scope the token to a specific user
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**customClaims:** `Map<String, String>` - Optional custom claims key-value pairs
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**expiry:** `Timestamp` - Optional expiry timestamp
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**description:** `String` - Optional human-readable description
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.tokens().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/TokenClient.java">validate</a>(token) -> ValidateTokenResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Validates an API token and returns associated context.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.tokens().validate("apit_xxxxx");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**token:** `String` - The opaque token string or token ID (format: `apit_xxxxx`)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.tokens().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/TokenClient.java">invalidate</a>(token) -> void</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Invalidates (soft deletes) an API token. This operation is idempotent - it succeeds even if the token was already invalidated.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.tokens().invalidate("apit_xxxxx");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**token:** `String` - The opaque token string or token ID (format: `apit_xxxxx`)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.tokens().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/TokenClient.java">update</a>(token, customClaims, description) -> UpdateTokenResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Updates custom claims and/or description of an existing API token. Custom claims are merged into the existing set. To remove a claim, set its value to an empty string.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+Map<String, String> newClaims = new HashMap<>();
+newClaims.put("environment", "staging");
+newClaims.put("old_claim", "");  // Remove this claim
+
+client.tokens().update("apit_xxxxx", newClaims, "Updated description");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**token:** `String` - The opaque token string or token ID (format: `apit_xxxxx`)
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**customClaims:** `Map<String, String>` - Claims to merge; set value to `""` to remove a claim
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**description:** `String` - Replacement description; `null` leaves unchanged, empty string clears it
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.tokens().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/TokenClient.java">list</a>(organizationId, pageSize, pageToken) -> ListTokensResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists API tokens for an organization with pagination.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.tokens().list("org_123", 20, "");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**organizationId:** `String` - The organization ID to list tokens for
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**pageSize:** `int` - Page size (default 10, max 30)
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**pageToken:** `String` - Pagination cursor for next page (empty string for first page)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.tokens().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/TokenClient.java">list</a>(organizationId, userId, pageSize, pageToken) -> ListTokensResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists API tokens for an organization and user with pagination.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.tokens().list("org_123", "user_123", 20, "");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**organizationId:** `String` - The organization ID to list tokens for
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**userId:** `String` - The user ID to filter tokens for
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**pageSize:** `int` - Page size (default 10, max 30)
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**pageToken:** `String` - Pagination cursor for next page (empty string for first page)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+## M2M
+
+<details><summary><code>client.m2m().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/M2MClient.java">createOrganizationClient</a>(organizationId, client) -> CreateOrganizationClientResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Creates a new M2M (machine-to-machine) API client for an organization. The plain secret is returned only at creation time and cannot be retrieved again.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.grpc.scalekit.v1.clients.OrganizationClient;
+
+OrganizationClient orgClient = OrganizationClient.newBuilder()
+  .setName("Production Service Account")
+  .build();
+
+client.m2m().createOrganizationClient("org_123", orgClient);
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**organizationId:** `String` - The organization ID to create the client for
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**client:** `OrganizationClient` - Organization client proto with desired properties (name, scopes, audience, customClaims)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.m2m().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/M2MClient.java">getOrganizationClient</a>(organizationId, clientId) -> GetOrganizationClientResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieves details of a specific M2M client.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.m2m().getOrganizationClient("org_123", "skc_xxxxx");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**organizationId:** `String` - The organization ID
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**clientId:** `String` - The client ID (format: `skc_xxxxx`)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.m2m().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/M2MClient.java">updateOrganizationClient</a>(organizationId, clientId, client) -> UpdateOrganizationClientResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Updates the configuration of an existing M2M client.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.grpc.scalekit.v1.clients.OrganizationClient;
+
+OrganizationClient updates = OrganizationClient.newBuilder()
+  .setName("Updated Service Account Name")
+  .build();
+
+client.m2m().updateOrganizationClient("org_123", "skc_xxxxx", updates);
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**organizationId:** `String` - The organization ID
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**clientId:** `String` - The client ID to update
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**client:** `OrganizationClient` - Organization client proto with fields to update
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.m2m().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/M2MClient.java">deleteOrganizationClient</a>(organizationId, clientId) -> void</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Permanently deletes an M2M client from an organization. This operation cannot be undone and all associated secrets are invalidated.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.m2m().deleteOrganizationClient("org_123", "skc_xxxxx");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**organizationId:** `String` - The organization ID
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**clientId:** `String` - The client ID to delete
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.m2m().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/M2MClient.java">createOrganizationClientSecret</a>(organizationId, clientId) -> CreateOrganizationClientSecretResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Creates a new secret for an M2M client. The plain secret value is returned only at creation time and cannot be retrieved again.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.m2m().createOrganizationClientSecret("org_123", "skc_xxxxx");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**organizationId:** `String` - The organization ID
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**clientId:** `String` - The client ID to add a secret to
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.m2m().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/M2MClient.java">deleteOrganizationClientSecret</a>(organizationId, clientId, secretId) -> void</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Permanently deletes a secret from an M2M client.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.m2m().deleteOrganizationClientSecret("org_123", "skc_xxxxx", "sks_xxxxx");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**organizationId:** `String` - The organization ID
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**clientId:** `String` - The client ID
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**secretId:** `String` - The secret ID to delete
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.m2m().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/M2MClient.java">listOrganizationClients</a>(organizationId, pageSize, pageToken) -> ListOrganizationClientsResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists all M2M clients for an organization with pagination.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.m2m().listOrganizationClients("org_123", 20, "");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**organizationId:** `String` - The organization ID
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**pageSize:** `int` - Page size (between 10 and 100; 0 uses server default)
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**pageToken:** `String` - Pagination cursor for next page (null or empty string for first page)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<!-- markdownlint-enable MD024 -->
