@@ -7098,11 +7098,11 @@ Creates a new M2M (machine-to-machine) API client for an organization. The plain
 ```java
 import com.scalekit.grpc.scalekit.v1.clients.OrganizationClient;
 
-OrganizationClient client = OrganizationClient.newBuilder()
+OrganizationClient orgClient = OrganizationClient.newBuilder()
   .setName("Production Service Account")
   .build();
 
-client.m2m().createOrganizationClient("org_123", client);
+client.m2m().createOrganizationClient("org_123", orgClient);
 ```
 </dd>
 </dl>
