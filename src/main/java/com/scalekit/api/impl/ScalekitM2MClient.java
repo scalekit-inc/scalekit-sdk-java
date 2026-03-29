@@ -114,7 +114,7 @@ public class ScalekitM2MClient implements M2MClient {
     }
 
     @Override
-    public CreateOrganizationClientSecretResponse createOrganizationClientSecret(String organizationId, String clientId) {
+    public CreateOrganizationClientSecretResponse addOrganizationClientSecret(String organizationId, String clientId) {
         if (organizationId == null || organizationId.isEmpty()) {
             throw new IllegalArgumentException("organizationId is required");
         }
@@ -133,7 +133,7 @@ public class ScalekitM2MClient implements M2MClient {
     }
 
     @Override
-    public void deleteOrganizationClientSecret(String organizationId, String clientId, String secretId) {
+    public void removeOrganizationClientSecret(String organizationId, String clientId, String secretId) {
         if (organizationId == null || organizationId.isEmpty()) {
             throw new IllegalArgumentException("organizationId is required");
         }

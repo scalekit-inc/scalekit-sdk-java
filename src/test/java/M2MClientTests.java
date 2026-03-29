@@ -135,7 +135,7 @@ public class M2MClientTests {
     }
 
     @Test
-    void testCreateOrganizationClientSecret() {
+    void testAddOrganizationClientSecret() {
         OrganizationClient clientProto = OrganizationClient.newBuilder()
                 .setName("Secret Test Client")
                 .build();
@@ -146,21 +146,21 @@ public class M2MClientTests {
 
         try {
             CreateOrganizationClientSecretResponse secretResp =
-                    client.m2m().createOrganizationClientSecret(testOrgId, clientId);
+                    client.m2m().addOrganizationClientSecret(testOrgId, clientId);
 
             assertNotNull(secretResp);
             assertFalse(secretResp.getSecret().getId().isEmpty());
             assertFalse(secretResp.getPlainSecret().isEmpty());
 
             // Cleanup secret
-            client.m2m().deleteOrganizationClientSecret(testOrgId, clientId, secretResp.getSecret().getId());
+            client.m2m().removeOrganizationClientSecret(testOrgId, clientId, secretResp.getSecret().getId());
         } finally {
             client.m2m().deleteOrganizationClient(testOrgId, clientId);
         }
     }
 
     @Test
-    void testDeleteOrganizationClientSecret() {
+    void testRemoveOrganizationClientSecret() {
         OrganizationClient clientProto = OrganizationClient.newBuilder()
                 .setName("Delete Secret Client")
                 .build();
@@ -171,21 +171,21 @@ public class M2MClientTests {
 
         try {
             CreateOrganizationClientSecretResponse secretResp =
-                    client.m2m().createOrganizationClientSecret(testOrgId, clientId);
+                    client.m2m().addOrganizationClientSecret(testOrgId, clientId);
             String secretId = secretResp.getSecret().getId();
 
             // Should not throw
             assertDoesNotThrow(() ->
-                    client.m2m().deleteOrganizationClientSecret(testOrgId, clientId, secretId));
+                    client.m2m().removeOrganizationClientSecret(testOrgId, clientId, secretId));
         } finally {
             client.m2m().deleteOrganizationClient(testOrgId, clientId);
         }
     }
 
     @Test
-    void testDeleteOrganizationClientSecretRequiresSecretId() {
+    void testRemoveOrganizationClientSecretRequiresSecretId() {
         assertThrows(IllegalArgumentException.class, () ->
-                client.m2m().deleteOrganizationClientSecret(testOrgId, "skc_dummy", ""));
+                client.m2m().removeOrganizationClientSecret(testOrgId, "skc_dummy", ""));
     }
 
     @Test

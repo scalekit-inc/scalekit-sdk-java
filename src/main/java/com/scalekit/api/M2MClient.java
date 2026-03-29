@@ -53,7 +53,7 @@ public interface M2MClient {
     void deleteOrganizationClient(String organizationId, String clientId);
 
     /**
-     * Creates a new secret for an M2M client.
+     * Adds a new secret to an M2M client.
      *
      * The plain secret value is returned only at creation time and cannot be retrieved again.
      *
@@ -61,16 +61,16 @@ public interface M2MClient {
      * @param clientId       The client ID to add a secret to
      * @return CreateOrganizationClientSecretResponse with secretId and plain secret
      */
-    CreateOrganizationClientSecretResponse createOrganizationClientSecret(String organizationId, String clientId);
+    CreateOrganizationClientSecretResponse addOrganizationClientSecret(String organizationId, String clientId);
 
     /**
-     * Permanently deletes a secret from an M2M client.
+     * Permanently removes a secret from an M2M client.
      *
      * @param organizationId The organization ID
      * @param clientId       The client ID
-     * @param secretId       The secret ID to delete
+     * @param secretId       The secret ID to remove
      */
-    void deleteOrganizationClientSecret(String organizationId, String clientId, String secretId);
+    void removeOrganizationClientSecret(String organizationId, String clientId, String secretId);
 
     /**
      * Lists all M2M clients for an organization with pagination.
