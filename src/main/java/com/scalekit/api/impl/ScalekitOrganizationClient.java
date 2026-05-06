@@ -282,5 +282,45 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         }, this.credentials);
     }
 
+    /**
+     * getOrganizationSessionPolicy retrieves the session policy for an organization.
+     * @param organizationId Organization identifier
+     * @return OrganizationSessionPolicySettings with current policy
+     */
+    @Override
+    public OrganizationSessionPolicySettings getOrganizationSessionPolicy(String organizationId) {
+        return RetryExecuter.executeWithRetry(() -> {
+            GetOrganizationSessionPolicyResponse response = this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .getOrganizationSessionPolicy(
+                            GetOrganizationSessionPolicyRequest.newBuilder()
+                                    .setOrganizationId(organizationId)
+                                    .build()
+                    );
+            return response.getPolicy();
+        }, this.credentials);
+    }
+
+    /**
+     * updateOrganizationSessionPolicy sets a custom session policy for an organization or reverts to application defaults.
+     * @param organizationId Organization identifier
+     * @param policy The policy to apply (use SessionPolicySource.APPLICATION to revert to defaults)
+     * @return Updated OrganizationSessionPolicySettings
+     */
+    @Override
+    public OrganizationSessionPolicySettings updateOrganizationSessionPolicy(String organizationId, OrganizationSessionPolicySettings policy) {
+        return RetryExecuter.executeWithRetry(() -> {
+            UpdateOrganizationSessionPolicyResponse response = this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .updateOrganizationSessionPolicy(
+                            UpdateOrganizationSessionPolicyRequest.newBuilder()
+                                    .setOrganizationId(organizationId)
+                                    .setPolicy(policy)
+                                    .build()
+                    );
+            return response.getPolicy();
+        }, this.credentials);
+    }
+
 
 }
