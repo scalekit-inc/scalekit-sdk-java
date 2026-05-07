@@ -234,7 +234,7 @@ public class TokenTests {
     }
 
     @Test
-    void testUpdateTokenMergeCustomClaims() {
+    void testUpdateTokenReplaceCustomClaims() {
         Map<String, String> initialClaims = new HashMap<>();
         initialClaims.put("env", "staging");
         initialClaims.put("scope", "read");
@@ -253,9 +253,11 @@ public class TokenTests {
 
             assertNotNull(updateResponse);
             assertNotNull(updateResponse.getTokenInfo());
+            // Server replaces custom claims — only the new claims should be present
             assertEquals("production", updateResponse.getTokenInfo().getCustomClaimsMap().get("env"));
             assertEquals("infra", updateResponse.getTokenInfo().getCustomClaimsMap().get("team"));
-            assertEquals("read", updateResponse.getTokenInfo().getCustomClaimsMap().get("scope"));
+            assertNull(updateResponse.getTokenInfo().getCustomClaimsMap().get("scope"),
+                    "scope claim should be absent after replace");
         } finally {
             client.tokens().invalidate(tokenId);
         }
