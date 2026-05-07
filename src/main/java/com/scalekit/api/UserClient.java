@@ -21,6 +21,10 @@ public interface UserClient {
 
     ListOrganizationUsersResponse listOrganizationUsers(String organizationId, ListOrganizationUsersRequest request);
 
+    SearchUsersResponse searchUsers(SearchUsersRequest request);
+
+    SearchOrganizationUsersResponse searchOrganizationUsers(String organizationId, SearchOrganizationUsersRequest request);
+
     ResendInviteResponse resendInvite(String organizationId, String userId);
 
     ListUserRolesResponse listUserRoles(String organizationId, String userId);
