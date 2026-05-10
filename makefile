@@ -1,5 +1,6 @@
 PROTO_OUT := .artifacts
 JAVA_PKG := src/main/java/com/scalekit/grpc
+PROTO_REF := v0.1.120.2
 LOCAL_PROTO_DIR ?= ../scalekit/proto
 
 all: run
@@ -18,7 +19,7 @@ generate_grpc:
 	rm -rf $(JAVA_PKG)
 
 	@echo "Generating gRPC code"
-	buf generate --include-imports --verbose
+	buf generate buf.build/scalekit/scalekit:$(PROTO_REF) --include-imports --verbose
 
 	@echo "Copying generated code to $(JAVA_PKG)"
 	mkdir -p $(JAVA_PKG)
