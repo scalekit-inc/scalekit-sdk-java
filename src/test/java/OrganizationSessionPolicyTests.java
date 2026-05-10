@@ -2,7 +2,7 @@
 import com.google.protobuf.BoolValue;
 import com.google.protobuf.Int32Value;
 import com.scalekit.ScalekitClient;
-import com.scalekit.grpc.scalekit.v1.commons.Commons;
+import com.scalekit.grpc.scalekit.v1.commons.TimeUnit;
 import com.scalekit.grpc.scalekit.v1.organizations.*;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;
@@ -54,10 +54,10 @@ public class OrganizationSessionPolicyTests {
             OrganizationSessionPolicySettings policyInput = OrganizationSessionPolicySettings.newBuilder()
                     .setPolicySource(SessionPolicyType.CUSTOM)
                     .setAbsoluteSessionTimeout(Int32Value.newBuilder().setValue(360).build())
-                    .setAbsoluteSessionTimeoutUnit(Commons.TimeUnit.MINUTES)
+                    .setAbsoluteSessionTimeoutUnit(TimeUnit.MINUTES)
                     .setIdleSessionTimeoutEnabled(BoolValue.newBuilder().setValue(true).build())
                     .setIdleSessionTimeout(Int32Value.newBuilder().setValue(60).build())
-                    .setIdleSessionTimeoutUnit(Commons.TimeUnit.MINUTES)
+                    .setIdleSessionTimeoutUnit(TimeUnit.MINUTES)
                     .build();
 
             OrganizationSessionPolicySettings updated =
@@ -86,7 +86,7 @@ public class OrganizationSessionPolicyTests {
             OrganizationSessionPolicySettings customPolicy = OrganizationSessionPolicySettings.newBuilder()
                     .setPolicySource(SessionPolicyType.CUSTOM)
                     .setAbsoluteSessionTimeout(Int32Value.newBuilder().setValue(120).build())
-                    .setAbsoluteSessionTimeoutUnit(Commons.TimeUnit.MINUTES)
+                    .setAbsoluteSessionTimeoutUnit(TimeUnit.MINUTES)
                     .build();
             client.organizations().updateOrganizationSessionPolicy(org.getId(), customPolicy);
 
@@ -110,7 +110,7 @@ public class OrganizationSessionPolicyTests {
             OrganizationSessionPolicySettings policyInput = OrganizationSessionPolicySettings.newBuilder()
                     .setPolicySource(SessionPolicyType.CUSTOM)
                     .setAbsoluteSessionTimeout(Int32Value.newBuilder().setValue(480).build())
-                    .setAbsoluteSessionTimeoutUnit(Commons.TimeUnit.MINUTES)
+                    .setAbsoluteSessionTimeoutUnit(TimeUnit.MINUTES)
                     .setIdleSessionTimeoutEnabled(BoolValue.newBuilder().setValue(false).build())
                     .build();
 
