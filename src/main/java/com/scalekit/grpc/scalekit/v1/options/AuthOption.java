@@ -18,9 +18,7 @@ private static final long serialVersionUID = 0L;
   }
   private AuthOption() {
     authenticationType_ = 0;
-    permissions_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-    policy_ = 0;
+    permission_ = "";
   }
 
   @java.lang.Override
@@ -61,59 +59,43 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.scalekit.grpc.scalekit.v1.options.AuthenticationType.UNRECOGNIZED : result;
   }
 
-  public static final int PERMISSIONS_FIELD_NUMBER = 1;
+  public static final int PERMISSION_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList permissions_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private volatile java.lang.Object permission_ = "";
   /**
-   * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
-   * @return A list containing the permissions.
+   * <code>string permission = 1 [json_name = "permission"];</code>
+   * @return The permission.
    */
-  public com.google.protobuf.ProtocolStringList
-      getPermissionsList() {
-    return permissions_;
+  @java.lang.Override
+  public java.lang.String getPermission() {
+    java.lang.Object ref = permission_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      permission_ = s;
+      return s;
+    }
   }
   /**
-   * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
-   * @return The count of permissions.
+   * <code>string permission = 1 [json_name = "permission"];</code>
+   * @return The bytes for permission.
    */
-  public int getPermissionsCount() {
-    return permissions_.size();
-  }
-  /**
-   * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
-   * @param index The index of the element to return.
-   * @return The permissions at the given index.
-   */
-  public java.lang.String getPermissions(int index) {
-    return permissions_.get(index);
-  }
-  /**
-   * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the permissions at the given index.
-   */
+  @java.lang.Override
   public com.google.protobuf.ByteString
-      getPermissionsBytes(int index) {
-    return permissions_.getByteString(index);
-  }
-
-  public static final int POLICY_FIELD_NUMBER = 2;
-  private int policy_ = 0;
-  /**
-   * <code>.scalekit.v1.options.Policy policy = 2 [json_name = "policy"];</code>
-   * @return The enum numeric value on the wire for policy.
-   */
-  @java.lang.Override public int getPolicyValue() {
-    return policy_;
-  }
-  /**
-   * <code>.scalekit.v1.options.Policy policy = 2 [json_name = "policy"];</code>
-   * @return The policy.
-   */
-  @java.lang.Override public com.scalekit.grpc.scalekit.v1.options.Policy getPolicy() {
-    com.scalekit.grpc.scalekit.v1.options.Policy result = com.scalekit.grpc.scalekit.v1.options.Policy.forNumber(policy_);
-    return result == null ? com.scalekit.grpc.scalekit.v1.options.Policy.UNRECOGNIZED : result;
+      getPermissionBytes() {
+    java.lang.Object ref = permission_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      permission_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -130,11 +112,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < permissions_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, permissions_.getRaw(i));
-    }
-    if (policy_ != com.scalekit.grpc.scalekit.v1.options.Policy.DENY.getNumber()) {
-      output.writeEnum(2, policy_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(permission_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, permission_);
     }
     if (authenticationType_ != com.scalekit.grpc.scalekit.v1.options.AuthenticationType.BLOCKED.getNumber()) {
       output.writeEnum(3, authenticationType_);
@@ -148,17 +127,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    {
-      int dataSize = 0;
-      for (int i = 0; i < permissions_.size(); i++) {
-        dataSize += computeStringSizeNoTag(permissions_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getPermissionsList().size();
-    }
-    if (policy_ != com.scalekit.grpc.scalekit.v1.options.Policy.DENY.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, policy_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(permission_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, permission_);
     }
     if (authenticationType_ != com.scalekit.grpc.scalekit.v1.options.AuthenticationType.BLOCKED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
@@ -180,9 +150,8 @@ private static final long serialVersionUID = 0L;
     com.scalekit.grpc.scalekit.v1.options.AuthOption other = (com.scalekit.grpc.scalekit.v1.options.AuthOption) obj;
 
     if (authenticationType_ != other.authenticationType_) return false;
-    if (!getPermissionsList()
-        .equals(other.getPermissionsList())) return false;
-    if (policy_ != other.policy_) return false;
+    if (!getPermission()
+        .equals(other.getPermission())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -196,12 +165,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + AUTHENTICATION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + authenticationType_;
-    if (getPermissionsCount() > 0) {
-      hash = (37 * hash) + PERMISSIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getPermissionsList().hashCode();
-    }
-    hash = (37 * hash) + POLICY_FIELD_NUMBER;
-    hash = (53 * hash) + policy_;
+    hash = (37 * hash) + PERMISSION_FIELD_NUMBER;
+    hash = (53 * hash) + getPermission().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -334,9 +299,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       authenticationType_ = 0;
-      permissions_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
-      policy_ = 0;
+      permission_ = "";
       return this;
     }
 
@@ -374,11 +337,7 @@ private static final long serialVersionUID = 0L;
         result.authenticationType_ = authenticationType_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        permissions_.makeImmutable();
-        result.permissions_ = permissions_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.policy_ = policy_;
+        result.permission_ = permission_;
       }
     }
 
@@ -429,18 +388,10 @@ private static final long serialVersionUID = 0L;
       if (other.authenticationType_ != 0) {
         setAuthenticationTypeValue(other.getAuthenticationTypeValue());
       }
-      if (!other.permissions_.isEmpty()) {
-        if (permissions_.isEmpty()) {
-          permissions_ = other.permissions_;
-          bitField0_ |= 0x00000002;
-        } else {
-          ensurePermissionsIsMutable();
-          permissions_.addAll(other.permissions_);
-        }
+      if (!other.getPermission().isEmpty()) {
+        permission_ = other.permission_;
+        bitField0_ |= 0x00000002;
         onChanged();
-      }
-      if (other.policy_ != 0) {
-        setPolicyValue(other.getPolicyValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -469,16 +420,10 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-              ensurePermissionsIsMutable();
-              permissions_.add(s);
+              permission_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
               break;
             } // case 10
-            case 16: {
-              policy_ = input.readEnum();
-              bitField0_ |= 0x00000004;
-              break;
-            } // case 16
             case 24: {
               authenticationType_ = input.readEnum();
               bitField0_ |= 0x00000001;
@@ -554,166 +499,74 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList permissions_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-    private void ensurePermissionsIsMutable() {
-      if (!permissions_.isModifiable()) {
-        permissions_ = new com.google.protobuf.LazyStringArrayList(permissions_);
+    private java.lang.Object permission_ = "";
+    /**
+     * <code>string permission = 1 [json_name = "permission"];</code>
+     * @return The permission.
+     */
+    public java.lang.String getPermission() {
+      java.lang.Object ref = permission_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        permission_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
       }
-      bitField0_ |= 0x00000002;
     }
     /**
-     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
-     * @return A list containing the permissions.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getPermissionsList() {
-      permissions_.makeImmutable();
-      return permissions_;
-    }
-    /**
-     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
-     * @return The count of permissions.
-     */
-    public int getPermissionsCount() {
-      return permissions_.size();
-    }
-    /**
-     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
-     * @param index The index of the element to return.
-     * @return The permissions at the given index.
-     */
-    public java.lang.String getPermissions(int index) {
-      return permissions_.get(index);
-    }
-    /**
-     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the permissions at the given index.
+     * <code>string permission = 1 [json_name = "permission"];</code>
+     * @return The bytes for permission.
      */
     public com.google.protobuf.ByteString
-        getPermissionsBytes(int index) {
-      return permissions_.getByteString(index);
+        getPermissionBytes() {
+      java.lang.Object ref = permission_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        permission_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
     /**
-     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
-     * @param index The index to set the value at.
-     * @param value The permissions to set.
+     * <code>string permission = 1 [json_name = "permission"];</code>
+     * @param value The permission to set.
      * @return This builder for chaining.
      */
-    public Builder setPermissions(
-        int index, java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      ensurePermissionsIsMutable();
-      permissions_.set(index, value);
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
-     * @param value The permissions to add.
-     * @return This builder for chaining.
-     */
-    public Builder addPermissions(
+    public Builder setPermission(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      ensurePermissionsIsMutable();
-      permissions_.add(value);
+      permission_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
-     * @param values The permissions to add.
+     * <code>string permission = 1 [json_name = "permission"];</code>
      * @return This builder for chaining.
      */
-    public Builder addAllPermissions(
-        java.lang.Iterable<java.lang.String> values) {
-      ensurePermissionsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, permissions_);
-      bitField0_ |= 0x00000002;
+    public Builder clearPermission() {
+      permission_ = getDefaultInstance().getPermission();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
+     * <code>string permission = 1 [json_name = "permission"];</code>
+     * @param value The bytes for permission to set.
      * @return This builder for chaining.
      */
-    public Builder clearPermissions() {
-      permissions_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
-     * @param value The bytes of the permissions to add.
-     * @return This builder for chaining.
-     */
-    public Builder addPermissionsBytes(
+    public Builder setPermissionBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      ensurePermissionsIsMutable();
-      permissions_.add(value);
+      permission_ = value;
       bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-
-    private int policy_ = 0;
-    /**
-     * <code>.scalekit.v1.options.Policy policy = 2 [json_name = "policy"];</code>
-     * @return The enum numeric value on the wire for policy.
-     */
-    @java.lang.Override public int getPolicyValue() {
-      return policy_;
-    }
-    /**
-     * <code>.scalekit.v1.options.Policy policy = 2 [json_name = "policy"];</code>
-     * @param value The enum numeric value on the wire for policy to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPolicyValue(int value) {
-      policy_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.options.Policy policy = 2 [json_name = "policy"];</code>
-     * @return The policy.
-     */
-    @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.options.Policy getPolicy() {
-      com.scalekit.grpc.scalekit.v1.options.Policy result = com.scalekit.grpc.scalekit.v1.options.Policy.forNumber(policy_);
-      return result == null ? com.scalekit.grpc.scalekit.v1.options.Policy.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.scalekit.v1.options.Policy policy = 2 [json_name = "policy"];</code>
-     * @param value The policy to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPolicy(com.scalekit.grpc.scalekit.v1.options.Policy value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000004;
-      policy_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.options.Policy policy = 2 [json_name = "policy"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      policy_ = 0;
       onChanged();
       return this;
     }

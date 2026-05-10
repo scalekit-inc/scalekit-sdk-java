@@ -635,37 +635,6 @@ public final class EnvironmentServiceGrpc {
     return getGetFeaturesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      com.scalekit.grpc.scalekit.v1.environments.GetHostScopedPublicFeatureFlagsResponse> getGetHostScopedPublicFeatureFlagsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetHostScopedPublicFeatureFlags",
-      requestType = com.google.protobuf.Empty.class,
-      responseType = com.scalekit.grpc.scalekit.v1.environments.GetHostScopedPublicFeatureFlagsResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      com.scalekit.grpc.scalekit.v1.environments.GetHostScopedPublicFeatureFlagsResponse> getGetHostScopedPublicFeatureFlagsMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.scalekit.grpc.scalekit.v1.environments.GetHostScopedPublicFeatureFlagsResponse> getGetHostScopedPublicFeatureFlagsMethod;
-    if ((getGetHostScopedPublicFeatureFlagsMethod = EnvironmentServiceGrpc.getGetHostScopedPublicFeatureFlagsMethod) == null) {
-      synchronized (EnvironmentServiceGrpc.class) {
-        if ((getGetHostScopedPublicFeatureFlagsMethod = EnvironmentServiceGrpc.getGetHostScopedPublicFeatureFlagsMethod) == null) {
-          EnvironmentServiceGrpc.getGetHostScopedPublicFeatureFlagsMethod = getGetHostScopedPublicFeatureFlagsMethod =
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.scalekit.grpc.scalekit.v1.environments.GetHostScopedPublicFeatureFlagsResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetHostScopedPublicFeatureFlags"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.environments.GetHostScopedPublicFeatureFlagsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new EnvironmentServiceMethodDescriptorSupplier("GetHostScopedPublicFeatureFlags"))
-              .build();
-        }
-      }
-    }
-    return getGetHostScopedPublicFeatureFlagsMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.CreateEnvironmentSessionSettingsRequest,
       com.scalekit.grpc.scalekit.v1.environments.CreateEnvironmentSessionSettingsResponse> getCreateEnvironmentSessionSettingsMethod;
 
@@ -852,99 +821,6 @@ public final class EnvironmentServiceGrpc {
     return getUpdateEnvironmentUserManagementMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigRequest,
-      com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigResponse> getCreateAgentActionsConfigMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateAgentActionsConfig",
-      requestType = com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigRequest,
-      com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigResponse> getCreateAgentActionsConfigMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigRequest, com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigResponse> getCreateAgentActionsConfigMethod;
-    if ((getCreateAgentActionsConfigMethod = EnvironmentServiceGrpc.getCreateAgentActionsConfigMethod) == null) {
-      synchronized (EnvironmentServiceGrpc.class) {
-        if ((getCreateAgentActionsConfigMethod = EnvironmentServiceGrpc.getCreateAgentActionsConfigMethod) == null) {
-          EnvironmentServiceGrpc.getCreateAgentActionsConfigMethod = getCreateAgentActionsConfigMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigRequest, com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateAgentActionsConfig"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new EnvironmentServiceMethodDescriptorSupplier("CreateAgentActionsConfig"))
-              .build();
-        }
-      }
-    }
-    return getCreateAgentActionsConfigMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigRequest,
-      com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigResponse> getGetAgentActionsConfigMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetAgentActionsConfig",
-      requestType = com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigRequest,
-      com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigResponse> getGetAgentActionsConfigMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigRequest, com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigResponse> getGetAgentActionsConfigMethod;
-    if ((getGetAgentActionsConfigMethod = EnvironmentServiceGrpc.getGetAgentActionsConfigMethod) == null) {
-      synchronized (EnvironmentServiceGrpc.class) {
-        if ((getGetAgentActionsConfigMethod = EnvironmentServiceGrpc.getGetAgentActionsConfigMethod) == null) {
-          EnvironmentServiceGrpc.getGetAgentActionsConfigMethod = getGetAgentActionsConfigMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigRequest, com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAgentActionsConfig"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new EnvironmentServiceMethodDescriptorSupplier("GetAgentActionsConfig"))
-              .build();
-        }
-      }
-    }
-    return getGetAgentActionsConfigMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigRequest,
-      com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigResponse> getUpdateAgentActionsConfigMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateAgentActionsConfig",
-      requestType = com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigRequest,
-      com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigResponse> getUpdateAgentActionsConfigMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigRequest, com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigResponse> getUpdateAgentActionsConfigMethod;
-    if ((getUpdateAgentActionsConfigMethod = EnvironmentServiceGrpc.getUpdateAgentActionsConfigMethod) == null) {
-      synchronized (EnvironmentServiceGrpc.class) {
-        if ((getUpdateAgentActionsConfigMethod = EnvironmentServiceGrpc.getUpdateAgentActionsConfigMethod) == null) {
-          EnvironmentServiceGrpc.getUpdateAgentActionsConfigMethod = getUpdateAgentActionsConfigMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigRequest, com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAgentActionsConfig"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new EnvironmentServiceMethodDescriptorSupplier("UpdateAgentActionsConfig"))
-              .build();
-        }
-      }
-    }
-    return getUpdateAgentActionsConfigMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.GetContextRequest,
       com.scalekit.grpc.scalekit.v1.environments.GetContextResponse> getGetContextMethod;
 
@@ -1067,37 +943,6 @@ public final class EnvironmentServiceGrpc {
       }
     }
     return getGetScalekitResourcesMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapRequest,
-      com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapResponse> getPortalBootstrapMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PortalBootstrap",
-      requestType = com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapRequest,
-      com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapResponse> getPortalBootstrapMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapRequest, com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapResponse> getPortalBootstrapMethod;
-    if ((getPortalBootstrapMethod = EnvironmentServiceGrpc.getPortalBootstrapMethod) == null) {
-      synchronized (EnvironmentServiceGrpc.class) {
-        if ((getPortalBootstrapMethod = EnvironmentServiceGrpc.getPortalBootstrapMethod) == null) {
-          EnvironmentServiceGrpc.getPortalBootstrapMethod = getPortalBootstrapMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapRequest, com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PortalBootstrap"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new EnvironmentServiceMethodDescriptorSupplier("PortalBootstrap"))
-              .build();
-        }
-      }
-    }
-    return getPortalBootstrapMethod;
   }
 
   /**
@@ -1289,18 +1134,6 @@ public final class EnvironmentServiceGrpc {
     }
 
     /**
-     * <pre>
-     * Returns allowlisted public feature flags for the environment implied by the request
-     * host (typically HTTP Host). No environment id in path, query, or headers; unauthenticated.
-     * 404 when the host does not resolve to an environment.
-     * </pre>
-     */
-    default void getHostScopedPublicFeatureFlags(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.GetHostScopedPublicFeatureFlagsResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetHostScopedPublicFeatureFlagsMethod(), responseObserver);
-    }
-
-    /**
      */
     default void createEnvironmentSessionSettings(com.scalekit.grpc.scalekit.v1.environments.CreateEnvironmentSessionSettingsRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.CreateEnvironmentSessionSettingsResponse> responseObserver) {
@@ -1344,27 +1177,6 @@ public final class EnvironmentServiceGrpc {
 
     /**
      */
-    default void createAgentActionsConfig(com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateAgentActionsConfigMethod(), responseObserver);
-    }
-
-    /**
-     */
-    default void getAgentActionsConfig(com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAgentActionsConfigMethod(), responseObserver);
-    }
-
-    /**
-     */
-    default void updateAgentActionsConfig(com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateAgentActionsConfigMethod(), responseObserver);
-    }
-
-    /**
-     */
     default void getContext(com.scalekit.grpc.scalekit.v1.environments.GetContextRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.GetContextResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetContextMethod(), responseObserver);
@@ -1389,13 +1201,6 @@ public final class EnvironmentServiceGrpc {
     default void getScalekitResources(com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetScalekitResourcesMethod(), responseObserver);
-    }
-
-    /**
-     */
-    default void portalBootstrap(com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPortalBootstrapMethod(), responseObserver);
     }
   }
 
@@ -1587,19 +1392,6 @@ public final class EnvironmentServiceGrpc {
     }
 
     /**
-     * <pre>
-     * Returns allowlisted public feature flags for the environment implied by the request
-     * host (typically HTTP Host). No environment id in path, query, or headers; unauthenticated.
-     * 404 when the host does not resolve to an environment.
-     * </pre>
-     */
-    public void getHostScopedPublicFeatureFlags(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.GetHostScopedPublicFeatureFlagsResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetHostScopedPublicFeatureFlagsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
      */
     public void createEnvironmentSessionSettings(com.scalekit.grpc.scalekit.v1.environments.CreateEnvironmentSessionSettingsRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.CreateEnvironmentSessionSettingsResponse> responseObserver) {
@@ -1649,30 +1441,6 @@ public final class EnvironmentServiceGrpc {
 
     /**
      */
-    public void createAgentActionsConfig(com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateAgentActionsConfigMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void getAgentActionsConfig(com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetAgentActionsConfigMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void updateAgentActionsConfig(com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateAgentActionsConfigMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
     public void getContext(com.scalekit.grpc.scalekit.v1.environments.GetContextRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.GetContextResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -1701,14 +1469,6 @@ public final class EnvironmentServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetScalekitResourcesMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void portalBootstrap(com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPortalBootstrapMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -1869,18 +1629,6 @@ public final class EnvironmentServiceGrpc {
     }
 
     /**
-     * <pre>
-     * Returns allowlisted public feature flags for the environment implied by the request
-     * host (typically HTTP Host). No environment id in path, query, or headers; unauthenticated.
-     * 404 when the host does not resolve to an environment.
-     * </pre>
-     */
-    public com.scalekit.grpc.scalekit.v1.environments.GetHostScopedPublicFeatureFlagsResponse getHostScopedPublicFeatureFlags(com.google.protobuf.Empty request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetHostScopedPublicFeatureFlagsMethod(), getCallOptions(), request);
-    }
-
-    /**
      */
     public com.scalekit.grpc.scalekit.v1.environments.CreateEnvironmentSessionSettingsResponse createEnvironmentSessionSettings(com.scalekit.grpc.scalekit.v1.environments.CreateEnvironmentSessionSettingsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1924,27 +1672,6 @@ public final class EnvironmentServiceGrpc {
 
     /**
      */
-    public com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigResponse createAgentActionsConfig(com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateAgentActionsConfigMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigResponse getAgentActionsConfig(com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetAgentActionsConfigMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigResponse updateAgentActionsConfig(com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateAgentActionsConfigMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
     public com.scalekit.grpc.scalekit.v1.environments.GetContextResponse getContext(com.scalekit.grpc.scalekit.v1.environments.GetContextRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetContextMethod(), getCallOptions(), request);
@@ -1969,13 +1696,6 @@ public final class EnvironmentServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceResponse getScalekitResources(com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetScalekitResourcesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapResponse portalBootstrap(com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPortalBootstrapMethod(), getCallOptions(), request);
     }
   }
 
@@ -2156,19 +1876,6 @@ public final class EnvironmentServiceGrpc {
     }
 
     /**
-     * <pre>
-     * Returns allowlisted public feature flags for the environment implied by the request
-     * host (typically HTTP Host). No environment id in path, query, or headers; unauthenticated.
-     * 404 when the host does not resolve to an environment.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.environments.GetHostScopedPublicFeatureFlagsResponse> getHostScopedPublicFeatureFlags(
-        com.google.protobuf.Empty request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetHostScopedPublicFeatureFlagsMethod(), getCallOptions()), request);
-    }
-
-    /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.environments.CreateEnvironmentSessionSettingsResponse> createEnvironmentSessionSettings(
         com.scalekit.grpc.scalekit.v1.environments.CreateEnvironmentSessionSettingsRequest request) {
@@ -2218,30 +1925,6 @@ public final class EnvironmentServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigResponse> createAgentActionsConfig(
-        com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateAgentActionsConfigMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigResponse> getAgentActionsConfig(
-        com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetAgentActionsConfigMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigResponse> updateAgentActionsConfig(
-        com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateAgentActionsConfigMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.environments.GetContextResponse> getContext(
         com.scalekit.grpc.scalekit.v1.environments.GetContextRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2271,14 +1954,6 @@ public final class EnvironmentServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetScalekitResourcesMethod(), getCallOptions()), request);
     }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapResponse> portalBootstrap(
-        com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPortalBootstrapMethod(), getCallOptions()), request);
-    }
   }
 
   private static final int METHODID_CREATE_ENVIRONMENT = 0;
@@ -2301,21 +1976,16 @@ public final class EnvironmentServiceGrpc {
   private static final int METHODID_ENABLE_FEATURE = 17;
   private static final int METHODID_DISABLE_FEATURE = 18;
   private static final int METHODID_GET_FEATURES = 19;
-  private static final int METHODID_GET_HOST_SCOPED_PUBLIC_FEATURE_FLAGS = 20;
-  private static final int METHODID_CREATE_ENVIRONMENT_SESSION_SETTINGS = 21;
-  private static final int METHODID_CREATE_ENVIRONMENT_USER_MANAGEMENT = 22;
-  private static final int METHODID_GET_ENVIRONMENT_SESSION_SETTINGS = 23;
-  private static final int METHODID_GET_ENVIRONMENT_USER_MANAGEMENT = 24;
-  private static final int METHODID_UPDATE_ENVIRONMENT_SESSION_SETTINGS = 25;
-  private static final int METHODID_UPDATE_ENVIRONMENT_USER_MANAGEMENT = 26;
-  private static final int METHODID_CREATE_AGENT_ACTIONS_CONFIG = 27;
-  private static final int METHODID_GET_AGENT_ACTIONS_CONFIG = 28;
-  private static final int METHODID_UPDATE_AGENT_ACTIONS_CONFIG = 29;
-  private static final int METHODID_GET_CONTEXT = 30;
-  private static final int METHODID_UPDATE_CONTEXT = 31;
-  private static final int METHODID_GET_CURRENT_SESSION = 32;
-  private static final int METHODID_GET_SCALEKIT_RESOURCES = 33;
-  private static final int METHODID_PORTAL_BOOTSTRAP = 34;
+  private static final int METHODID_CREATE_ENVIRONMENT_SESSION_SETTINGS = 20;
+  private static final int METHODID_CREATE_ENVIRONMENT_USER_MANAGEMENT = 21;
+  private static final int METHODID_GET_ENVIRONMENT_SESSION_SETTINGS = 22;
+  private static final int METHODID_GET_ENVIRONMENT_USER_MANAGEMENT = 23;
+  private static final int METHODID_UPDATE_ENVIRONMENT_SESSION_SETTINGS = 24;
+  private static final int METHODID_UPDATE_ENVIRONMENT_USER_MANAGEMENT = 25;
+  private static final int METHODID_GET_CONTEXT = 26;
+  private static final int METHODID_UPDATE_CONTEXT = 27;
+  private static final int METHODID_GET_CURRENT_SESSION = 28;
+  private static final int METHODID_GET_SCALEKIT_RESOURCES = 29;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2414,10 +2084,6 @@ public final class EnvironmentServiceGrpc {
           serviceImpl.getFeatures((com.scalekit.grpc.scalekit.v1.environments.GetFeaturesRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.GetFeaturesResponse>) responseObserver);
           break;
-        case METHODID_GET_HOST_SCOPED_PUBLIC_FEATURE_FLAGS:
-          serviceImpl.getHostScopedPublicFeatureFlags((com.google.protobuf.Empty) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.GetHostScopedPublicFeatureFlagsResponse>) responseObserver);
-          break;
         case METHODID_CREATE_ENVIRONMENT_SESSION_SETTINGS:
           serviceImpl.createEnvironmentSessionSettings((com.scalekit.grpc.scalekit.v1.environments.CreateEnvironmentSessionSettingsRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.CreateEnvironmentSessionSettingsResponse>) responseObserver);
@@ -2442,18 +2108,6 @@ public final class EnvironmentServiceGrpc {
           serviceImpl.updateEnvironmentUserManagement((com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentUserManagementRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentUserManagementResponse>) responseObserver);
           break;
-        case METHODID_CREATE_AGENT_ACTIONS_CONFIG:
-          serviceImpl.createAgentActionsConfig((com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigResponse>) responseObserver);
-          break;
-        case METHODID_GET_AGENT_ACTIONS_CONFIG:
-          serviceImpl.getAgentActionsConfig((com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigResponse>) responseObserver);
-          break;
-        case METHODID_UPDATE_AGENT_ACTIONS_CONFIG:
-          serviceImpl.updateAgentActionsConfig((com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigResponse>) responseObserver);
-          break;
         case METHODID_GET_CONTEXT:
           serviceImpl.getContext((com.scalekit.grpc.scalekit.v1.environments.GetContextRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.GetContextResponse>) responseObserver);
@@ -2469,10 +2123,6 @@ public final class EnvironmentServiceGrpc {
         case METHODID_GET_SCALEKIT_RESOURCES:
           serviceImpl.getScalekitResources((com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceResponse>) responseObserver);
-          break;
-        case METHODID_PORTAL_BOOTSTRAP:
-          serviceImpl.portalBootstrap((com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2633,13 +2283,6 @@ public final class EnvironmentServiceGrpc {
               com.scalekit.grpc.scalekit.v1.environments.GetFeaturesResponse>(
                 service, METHODID_GET_FEATURES)))
         .addMethod(
-          getGetHostScopedPublicFeatureFlagsMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.google.protobuf.Empty,
-              com.scalekit.grpc.scalekit.v1.environments.GetHostScopedPublicFeatureFlagsResponse>(
-                service, METHODID_GET_HOST_SCOPED_PUBLIC_FEATURE_FLAGS)))
-        .addMethod(
           getCreateEnvironmentSessionSettingsMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -2682,27 +2325,6 @@ public final class EnvironmentServiceGrpc {
               com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentUserManagementResponse>(
                 service, METHODID_UPDATE_ENVIRONMENT_USER_MANAGEMENT)))
         .addMethod(
-          getCreateAgentActionsConfigMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigRequest,
-              com.scalekit.grpc.scalekit.v1.environments.CreateAgentActionsConfigResponse>(
-                service, METHODID_CREATE_AGENT_ACTIONS_CONFIG)))
-        .addMethod(
-          getGetAgentActionsConfigMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigRequest,
-              com.scalekit.grpc.scalekit.v1.environments.GetAgentActionsConfigResponse>(
-                service, METHODID_GET_AGENT_ACTIONS_CONFIG)))
-        .addMethod(
-          getUpdateAgentActionsConfigMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigRequest,
-              com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigResponse>(
-                service, METHODID_UPDATE_AGENT_ACTIONS_CONFIG)))
-        .addMethod(
           getGetContextMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -2730,13 +2352,6 @@ public final class EnvironmentServiceGrpc {
               com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceRequest,
               com.scalekit.grpc.scalekit.v1.environments.ScalekitResourceResponse>(
                 service, METHODID_GET_SCALEKIT_RESOURCES)))
-        .addMethod(
-          getPortalBootstrapMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapRequest,
-              com.scalekit.grpc.scalekit.v1.environments.PortalBootstrapResponse>(
-                service, METHODID_PORTAL_BOOTSTRAP)))
         .build();
   }
 
@@ -2805,21 +2420,16 @@ public final class EnvironmentServiceGrpc {
               .addMethod(getEnableFeatureMethod())
               .addMethod(getDisableFeatureMethod())
               .addMethod(getGetFeaturesMethod())
-              .addMethod(getGetHostScopedPublicFeatureFlagsMethod())
               .addMethod(getCreateEnvironmentSessionSettingsMethod())
               .addMethod(getCreateEnvironmentUserManagementMethod())
               .addMethod(getGetEnvironmentSessionSettingsMethod())
               .addMethod(getGetEnvironmentUserManagementMethod())
               .addMethod(getUpdateEnvironmentSessionSettingsMethod())
               .addMethod(getUpdateEnvironmentUserManagementMethod())
-              .addMethod(getCreateAgentActionsConfigMethod())
-              .addMethod(getGetAgentActionsConfigMethod())
-              .addMethod(getUpdateAgentActionsConfigMethod())
               .addMethod(getGetContextMethod())
               .addMethod(getUpdateContextMethod())
               .addMethod(getGetCurrentSessionMethod())
               .addMethod(getGetScalekitResourcesMethod())
-              .addMethod(getPortalBootstrapMethod())
               .build();
         }
       }

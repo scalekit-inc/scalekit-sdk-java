@@ -186,32 +186,6 @@ private static final long serialVersionUID = 0L;
     return application_ == null ? com.scalekit.grpc.scalekit.v1.clients.Application.getDefaultInstance() : application_;
   }
 
-  public static final int ORGANIZATION_FIELD_NUMBER = 6;
-  private com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization organization_;
-  /**
-   * <code>.scalekit.v1.clients.ConsentOrganization organization = 6 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the organization field is set.
-   */
-  @java.lang.Override
-  public boolean hasOrganization() {
-    return ((bitField0_ & 0x00000010) != 0);
-  }
-  /**
-   * <code>.scalekit.v1.clients.ConsentOrganization organization = 6 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The organization.
-   */
-  @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization getOrganization() {
-    return organization_ == null ? com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization.getDefaultInstance() : organization_;
-  }
-  /**
-   * <code>.scalekit.v1.clients.ConsentOrganization organization = 6 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.clients.ConsentOrganizationOrBuilder getOrganizationOrBuilder() {
-    return organization_ == null ? com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization.getDefaultInstance() : organization_;
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -241,9 +215,6 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(5, getApplication());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeMessage(6, getOrganization());
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -272,10 +243,6 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getApplication());
-    }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getOrganization());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -314,11 +281,6 @@ private static final long serialVersionUID = 0L;
       if (!getApplication()
           .equals(other.getApplication())) return false;
     }
-    if (hasOrganization() != other.hasOrganization()) return false;
-    if (hasOrganization()) {
-      if (!getOrganization()
-          .equals(other.getOrganization())) return false;
-    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -349,10 +311,6 @@ private static final long serialVersionUID = 0L;
     if (hasApplication()) {
       hash = (37 * hash) + APPLICATION_FIELD_NUMBER;
       hash = (53 * hash) + getApplication().hashCode();
-    }
-    if (hasOrganization()) {
-      hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganization().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -489,7 +447,6 @@ private static final long serialVersionUID = 0L;
         getClientFieldBuilder();
         getScopesFieldBuilder();
         getApplicationFieldBuilder();
-        getOrganizationFieldBuilder();
       }
     }
     @java.lang.Override
@@ -522,11 +479,6 @@ private static final long serialVersionUID = 0L;
       if (applicationBuilder_ != null) {
         applicationBuilder_.dispose();
         applicationBuilder_ = null;
-      }
-      organization_ = null;
-      if (organizationBuilder_ != null) {
-        organizationBuilder_.dispose();
-        organizationBuilder_ = null;
       }
       return this;
     }
@@ -598,12 +550,6 @@ private static final long serialVersionUID = 0L;
             ? application_
             : applicationBuilder_.build();
         to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.organization_ = organizationBuilder_ == null
-            ? organization_
-            : organizationBuilder_.build();
-        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -690,9 +636,6 @@ private static final long serialVersionUID = 0L;
       if (other.hasApplication()) {
         mergeApplication(other.getApplication());
       }
-      if (other.hasOrganization()) {
-        mergeOrganization(other.getOrganization());
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -760,13 +703,6 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 42
-            case 50: {
-              input.readMessage(
-                  getOrganizationFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              bitField0_ |= 0x00000020;
-              break;
-            } // case 50
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1506,127 +1442,6 @@ private static final long serialVersionUID = 0L;
         application_ = null;
       }
       return applicationBuilder_;
-    }
-
-    private com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization organization_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization, com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization.Builder, com.scalekit.grpc.scalekit.v1.clients.ConsentOrganizationOrBuilder> organizationBuilder_;
-    /**
-     * <code>.scalekit.v1.clients.ConsentOrganization organization = 6 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the organization field is set.
-     */
-    public boolean hasOrganization() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <code>.scalekit.v1.clients.ConsentOrganization organization = 6 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The organization.
-     */
-    public com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization getOrganization() {
-      if (organizationBuilder_ == null) {
-        return organization_ == null ? com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization.getDefaultInstance() : organization_;
-      } else {
-        return organizationBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.scalekit.v1.clients.ConsentOrganization organization = 6 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setOrganization(com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization value) {
-      if (organizationBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        organization_ = value;
-      } else {
-        organizationBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.clients.ConsentOrganization organization = 6 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setOrganization(
-        com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization.Builder builderForValue) {
-      if (organizationBuilder_ == null) {
-        organization_ = builderForValue.build();
-      } else {
-        organizationBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.clients.ConsentOrganization organization = 6 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder mergeOrganization(com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization value) {
-      if (organizationBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0) &&
-          organization_ != null &&
-          organization_ != com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization.getDefaultInstance()) {
-          getOrganizationBuilder().mergeFrom(value);
-        } else {
-          organization_ = value;
-        }
-      } else {
-        organizationBuilder_.mergeFrom(value);
-      }
-      if (organization_ != null) {
-        bitField0_ |= 0x00000020;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.clients.ConsentOrganization organization = 6 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder clearOrganization() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      organization_ = null;
-      if (organizationBuilder_ != null) {
-        organizationBuilder_.dispose();
-        organizationBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.scalekit.v1.clients.ConsentOrganization organization = 6 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization.Builder getOrganizationBuilder() {
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return getOrganizationFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.scalekit.v1.clients.ConsentOrganization organization = 6 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public com.scalekit.grpc.scalekit.v1.clients.ConsentOrganizationOrBuilder getOrganizationOrBuilder() {
-      if (organizationBuilder_ != null) {
-        return organizationBuilder_.getMessageOrBuilder();
-      } else {
-        return organization_ == null ?
-            com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization.getDefaultInstance() : organization_;
-      }
-    }
-    /**
-     * <code>.scalekit.v1.clients.ConsentOrganization organization = 6 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization, com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization.Builder, com.scalekit.grpc.scalekit.v1.clients.ConsentOrganizationOrBuilder> 
-        getOrganizationFieldBuilder() {
-      if (organizationBuilder_ == null) {
-        organizationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization, com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization.Builder, com.scalekit.grpc.scalekit.v1.clients.ConsentOrganizationOrBuilder>(
-                getOrganization(),
-                getParentForChildren(),
-                isClean());
-        organization_ = null;
-      }
-      return organizationBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

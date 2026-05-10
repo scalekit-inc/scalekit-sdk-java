@@ -22,8 +22,6 @@ private static final long serialVersionUID = 0L;
     connector_ = "";
     identifier_ = "";
     id_ = "";
-    state_ = "";
-    userVerifyUrl_ = "";
   }
 
   @java.lang.Override
@@ -282,100 +280,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int STATE_FIELD_NUMBER = 7;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object state_ = "";
-  /**
-   * <code>optional string state = 7 [json_name = "state", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the state field is set.
-   */
-  @java.lang.Override
-  public boolean hasState() {
-    return ((bitField0_ & 0x00000020) != 0);
-  }
-  /**
-   * <code>optional string state = 7 [json_name = "state", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The state.
-   */
-  @java.lang.Override
-  public java.lang.String getState() {
-    java.lang.Object ref = state_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      state_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>optional string state = 7 [json_name = "state", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for state.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getStateBytes() {
-    java.lang.Object ref = state_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      state_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int USER_VERIFY_URL_FIELD_NUMBER = 8;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object userVerifyUrl_ = "";
-  /**
-   * <code>optional string user_verify_url = 8 [json_name = "userVerifyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the userVerifyUrl field is set.
-   */
-  @java.lang.Override
-  public boolean hasUserVerifyUrl() {
-    return ((bitField0_ & 0x00000040) != 0);
-  }
-  /**
-   * <code>optional string user_verify_url = 8 [json_name = "userVerifyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The userVerifyUrl.
-   */
-  @java.lang.Override
-  public java.lang.String getUserVerifyUrl() {
-    java.lang.Object ref = userVerifyUrl_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      userVerifyUrl_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>optional string user_verify_url = 8 [json_name = "userVerifyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for userVerifyUrl.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getUserVerifyUrlBytes() {
-    java.lang.Object ref = userVerifyUrl_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      userVerifyUrl_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -405,12 +309,6 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, id_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, state_);
-    }
-    if (((bitField0_ & 0x00000040) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, userVerifyUrl_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -434,12 +332,6 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, id_);
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, state_);
-    }
-    if (((bitField0_ & 0x00000040) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, userVerifyUrl_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -481,16 +373,6 @@ private static final long serialVersionUID = 0L;
       if (!getId()
           .equals(other.getId())) return false;
     }
-    if (hasState() != other.hasState()) return false;
-    if (hasState()) {
-      if (!getState()
-          .equals(other.getState())) return false;
-    }
-    if (hasUserVerifyUrl() != other.hasUserVerifyUrl()) return false;
-    if (hasUserVerifyUrl()) {
-      if (!getUserVerifyUrl()
-          .equals(other.getUserVerifyUrl())) return false;
-    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -521,14 +403,6 @@ private static final long serialVersionUID = 0L;
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
-    }
-    if (hasState()) {
-      hash = (37 * hash) + STATE_FIELD_NUMBER;
-      hash = (53 * hash) + getState().hashCode();
-    }
-    if (hasUserVerifyUrl()) {
-      hash = (37 * hash) + USER_VERIFY_URL_FIELD_NUMBER;
-      hash = (53 * hash) + getUserVerifyUrl().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -666,8 +540,6 @@ private static final long serialVersionUID = 0L;
       connector_ = "";
       identifier_ = "";
       id_ = "";
-      state_ = "";
-      userVerifyUrl_ = "";
       return this;
     }
 
@@ -721,14 +593,6 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.id_ = id_;
         to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.state_ = state_;
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.userVerifyUrl_ = userVerifyUrl_;
-        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -802,16 +666,6 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000010;
         onChanged();
       }
-      if (other.hasState()) {
-        state_ = other.state_;
-        bitField0_ |= 0x00000020;
-        onChanged();
-      }
-      if (other.hasUserVerifyUrl()) {
-        userVerifyUrl_ = other.userVerifyUrl_;
-        bitField0_ |= 0x00000040;
-        onChanged();
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -863,16 +717,6 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 42
-            case 58: {
-              state_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
-              break;
-            } // case 58
-            case 66: {
-              userVerifyUrl_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
-              break;
-            } // case 66
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1281,164 +1125,6 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       id_ = value;
       bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object state_ = "";
-    /**
-     * <code>optional string state = 7 [json_name = "state", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the state field is set.
-     */
-    public boolean hasState() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <code>optional string state = 7 [json_name = "state", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The state.
-     */
-    public java.lang.String getState() {
-      java.lang.Object ref = state_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        state_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>optional string state = 7 [json_name = "state", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for state.
-     */
-    public com.google.protobuf.ByteString
-        getStateBytes() {
-      java.lang.Object ref = state_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        state_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>optional string state = 7 [json_name = "state", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The state to set.
-     * @return This builder for chaining.
-     */
-    public Builder setState(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      state_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string state = 7 [json_name = "state", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearState() {
-      state_ = getDefaultInstance().getState();
-      bitField0_ = (bitField0_ & ~0x00000020);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string state = 7 [json_name = "state", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for state to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStateBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      state_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object userVerifyUrl_ = "";
-    /**
-     * <code>optional string user_verify_url = 8 [json_name = "userVerifyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the userVerifyUrl field is set.
-     */
-    public boolean hasUserVerifyUrl() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-    /**
-     * <code>optional string user_verify_url = 8 [json_name = "userVerifyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The userVerifyUrl.
-     */
-    public java.lang.String getUserVerifyUrl() {
-      java.lang.Object ref = userVerifyUrl_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        userVerifyUrl_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>optional string user_verify_url = 8 [json_name = "userVerifyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for userVerifyUrl.
-     */
-    public com.google.protobuf.ByteString
-        getUserVerifyUrlBytes() {
-      java.lang.Object ref = userVerifyUrl_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userVerifyUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>optional string user_verify_url = 8 [json_name = "userVerifyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The userVerifyUrl to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUserVerifyUrl(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      userVerifyUrl_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string user_verify_url = 8 [json_name = "userVerifyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearUserVerifyUrl() {
-      userVerifyUrl_ = getDefaultInstance().getUserVerifyUrl();
-      bitField0_ = (bitField0_ & ~0x00000040);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string user_verify_url = 8 [json_name = "userVerifyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for userVerifyUrl to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUserVerifyUrlBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      userVerifyUrl_ = value;
-      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

@@ -17,7 +17,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private MigrateStripeCustomersResponse() {
-    failedWorkspaceIds_ = emptyLongList();
     errorMessages_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
   }
@@ -42,64 +41,34 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersResponse.class, com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersResponse.Builder.class);
   }
 
-  public static final int SUCCESS_COUNT_FIELD_NUMBER = 1;
-  private int successCount_ = 0;
+  public static final int SUCCESS_WORKSPACES_FIELD_NUMBER = 1;
+  private int successWorkspaces_ = 0;
   /**
-   * <code>int32 success_count = 1 [json_name = "successCount"];</code>
-   * @return The successCount.
+   * <code>int32 success_workspaces = 1 [json_name = "successWorkspaces"];</code>
+   * @return The successWorkspaces.
    */
   @java.lang.Override
-  public int getSuccessCount() {
-    return successCount_;
+  public int getSuccessWorkspaces() {
+    return successWorkspaces_;
   }
 
-  public static final int FAILED_COUNT_FIELD_NUMBER = 2;
-  private int failedCount_ = 0;
+  public static final int FAILED_WORKSPACES_FIELD_NUMBER = 2;
+  private int failedWorkspaces_ = 0;
   /**
-   * <code>int32 failed_count = 2 [json_name = "failedCount"];</code>
-   * @return The failedCount.
+   * <code>int32 failed_workspaces = 2 [json_name = "failedWorkspaces"];</code>
+   * @return The failedWorkspaces.
    */
   @java.lang.Override
-  public int getFailedCount() {
-    return failedCount_;
+  public int getFailedWorkspaces() {
+    return failedWorkspaces_;
   }
 
-  public static final int FAILED_WORKSPACE_IDS_FIELD_NUMBER = 3;
-  @SuppressWarnings("serial")
-  private com.google.protobuf.Internal.LongList failedWorkspaceIds_ =
-      emptyLongList();
-  /**
-   * <code>repeated int64 failed_workspace_ids = 3 [json_name = "failedWorkspaceIds"];</code>
-   * @return A list containing the failedWorkspaceIds.
-   */
-  @java.lang.Override
-  public java.util.List<java.lang.Long>
-      getFailedWorkspaceIdsList() {
-    return failedWorkspaceIds_;
-  }
-  /**
-   * <code>repeated int64 failed_workspace_ids = 3 [json_name = "failedWorkspaceIds"];</code>
-   * @return The count of failedWorkspaceIds.
-   */
-  public int getFailedWorkspaceIdsCount() {
-    return failedWorkspaceIds_.size();
-  }
-  /**
-   * <code>repeated int64 failed_workspace_ids = 3 [json_name = "failedWorkspaceIds"];</code>
-   * @param index The index of the element to return.
-   * @return The failedWorkspaceIds at the given index.
-   */
-  public long getFailedWorkspaceIds(int index) {
-    return failedWorkspaceIds_.getLong(index);
-  }
-  private int failedWorkspaceIdsMemoizedSerializedSize = -1;
-
-  public static final int ERROR_MESSAGES_FIELD_NUMBER = 4;
+  public static final int ERROR_MESSAGES_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList errorMessages_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
   /**
-   * <code>repeated string error_messages = 4 [json_name = "errorMessages"];</code>
+   * <code>repeated string error_messages = 3 [json_name = "errorMessages"];</code>
    * @return A list containing the errorMessages.
    */
   public com.google.protobuf.ProtocolStringList
@@ -107,14 +76,14 @@ private static final long serialVersionUID = 0L;
     return errorMessages_;
   }
   /**
-   * <code>repeated string error_messages = 4 [json_name = "errorMessages"];</code>
+   * <code>repeated string error_messages = 3 [json_name = "errorMessages"];</code>
    * @return The count of errorMessages.
    */
   public int getErrorMessagesCount() {
     return errorMessages_.size();
   }
   /**
-   * <code>repeated string error_messages = 4 [json_name = "errorMessages"];</code>
+   * <code>repeated string error_messages = 3 [json_name = "errorMessages"];</code>
    * @param index The index of the element to return.
    * @return The errorMessages at the given index.
    */
@@ -122,7 +91,7 @@ private static final long serialVersionUID = 0L;
     return errorMessages_.get(index);
   }
   /**
-   * <code>repeated string error_messages = 4 [json_name = "errorMessages"];</code>
+   * <code>repeated string error_messages = 3 [json_name = "errorMessages"];</code>
    * @param index The index of the value to return.
    * @return The bytes of the errorMessages at the given index.
    */
@@ -145,22 +114,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    getSerializedSize();
-    if (successCount_ != 0) {
-      output.writeInt32(1, successCount_);
+    if (successWorkspaces_ != 0) {
+      output.writeInt32(1, successWorkspaces_);
     }
-    if (failedCount_ != 0) {
-      output.writeInt32(2, failedCount_);
-    }
-    if (getFailedWorkspaceIdsList().size() > 0) {
-      output.writeUInt32NoTag(26);
-      output.writeUInt32NoTag(failedWorkspaceIdsMemoizedSerializedSize);
-    }
-    for (int i = 0; i < failedWorkspaceIds_.size(); i++) {
-      output.writeInt64NoTag(failedWorkspaceIds_.getLong(i));
+    if (failedWorkspaces_ != 0) {
+      output.writeInt32(2, failedWorkspaces_);
     }
     for (int i = 0; i < errorMessages_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, errorMessages_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, errorMessages_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -171,27 +132,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (successCount_ != 0) {
+    if (successWorkspaces_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, successCount_);
+        .computeInt32Size(1, successWorkspaces_);
     }
-    if (failedCount_ != 0) {
+    if (failedWorkspaces_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, failedCount_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < failedWorkspaceIds_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeInt64SizeNoTag(failedWorkspaceIds_.getLong(i));
-      }
-      size += dataSize;
-      if (!getFailedWorkspaceIdsList().isEmpty()) {
-        size += 1;
-        size += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(dataSize);
-      }
-      failedWorkspaceIdsMemoizedSerializedSize = dataSize;
+        .computeInt32Size(2, failedWorkspaces_);
     }
     {
       int dataSize = 0;
@@ -216,12 +163,10 @@ private static final long serialVersionUID = 0L;
     }
     com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersResponse other = (com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersResponse) obj;
 
-    if (getSuccessCount()
-        != other.getSuccessCount()) return false;
-    if (getFailedCount()
-        != other.getFailedCount()) return false;
-    if (!getFailedWorkspaceIdsList()
-        .equals(other.getFailedWorkspaceIdsList())) return false;
+    if (getSuccessWorkspaces()
+        != other.getSuccessWorkspaces()) return false;
+    if (getFailedWorkspaces()
+        != other.getFailedWorkspaces()) return false;
     if (!getErrorMessagesList()
         .equals(other.getErrorMessagesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -235,14 +180,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SUCCESS_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getSuccessCount();
-    hash = (37 * hash) + FAILED_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getFailedCount();
-    if (getFailedWorkspaceIdsCount() > 0) {
-      hash = (37 * hash) + FAILED_WORKSPACE_IDS_FIELD_NUMBER;
-      hash = (53 * hash) + getFailedWorkspaceIdsList().hashCode();
-    }
+    hash = (37 * hash) + SUCCESS_WORKSPACES_FIELD_NUMBER;
+    hash = (53 * hash) + getSuccessWorkspaces();
+    hash = (37 * hash) + FAILED_WORKSPACES_FIELD_NUMBER;
+    hash = (53 * hash) + getFailedWorkspaces();
     if (getErrorMessagesCount() > 0) {
       hash = (37 * hash) + ERROR_MESSAGES_FIELD_NUMBER;
       hash = (53 * hash) + getErrorMessagesList().hashCode();
@@ -378,9 +319,8 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      successCount_ = 0;
-      failedCount_ = 0;
-      failedWorkspaceIds_ = emptyLongList();
+      successWorkspaces_ = 0;
+      failedWorkspaces_ = 0;
       errorMessages_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
@@ -417,16 +357,12 @@ private static final long serialVersionUID = 0L;
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersResponse result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.successCount_ = successCount_;
+        result.successWorkspaces_ = successWorkspaces_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.failedCount_ = failedCount_;
+        result.failedWorkspaces_ = failedWorkspaces_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        failedWorkspaceIds_.makeImmutable();
-        result.failedWorkspaceIds_ = failedWorkspaceIds_;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
         errorMessages_.makeImmutable();
         result.errorMessages_ = errorMessages_;
       }
@@ -476,27 +412,16 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersResponse other) {
       if (other == com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersResponse.getDefaultInstance()) return this;
-      if (other.getSuccessCount() != 0) {
-        setSuccessCount(other.getSuccessCount());
+      if (other.getSuccessWorkspaces() != 0) {
+        setSuccessWorkspaces(other.getSuccessWorkspaces());
       }
-      if (other.getFailedCount() != 0) {
-        setFailedCount(other.getFailedCount());
-      }
-      if (!other.failedWorkspaceIds_.isEmpty()) {
-        if (failedWorkspaceIds_.isEmpty()) {
-          failedWorkspaceIds_ = other.failedWorkspaceIds_;
-          failedWorkspaceIds_.makeImmutable();
-          bitField0_ |= 0x00000004;
-        } else {
-          ensureFailedWorkspaceIdsIsMutable();
-          failedWorkspaceIds_.addAll(other.failedWorkspaceIds_);
-        }
-        onChanged();
+      if (other.getFailedWorkspaces() != 0) {
+        setFailedWorkspaces(other.getFailedWorkspaces());
       }
       if (!other.errorMessages_.isEmpty()) {
         if (errorMessages_.isEmpty()) {
           errorMessages_ = other.errorMessages_;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000004;
         } else {
           ensureErrorMessagesIsMutable();
           errorMessages_.addAll(other.errorMessages_);
@@ -530,37 +455,21 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 8: {
-              successCount_ = input.readInt32();
+              successWorkspaces_ = input.readInt32();
               bitField0_ |= 0x00000001;
               break;
             } // case 8
             case 16: {
-              failedCount_ = input.readInt32();
+              failedWorkspaces_ = input.readInt32();
               bitField0_ |= 0x00000002;
               break;
             } // case 16
-            case 24: {
-              long v = input.readInt64();
-              ensureFailedWorkspaceIdsIsMutable();
-              failedWorkspaceIds_.addLong(v);
-              break;
-            } // case 24
             case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              ensureFailedWorkspaceIdsIsMutable();
-              while (input.getBytesUntilLimit() > 0) {
-                failedWorkspaceIds_.addLong(input.readInt64());
-              }
-              input.popLimit(limit);
-              break;
-            } // case 26
-            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
               ensureErrorMessagesIsMutable();
               errorMessages_.add(s);
               break;
-            } // case 34
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -578,150 +487,66 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int successCount_ ;
+    private int successWorkspaces_ ;
     /**
-     * <code>int32 success_count = 1 [json_name = "successCount"];</code>
-     * @return The successCount.
+     * <code>int32 success_workspaces = 1 [json_name = "successWorkspaces"];</code>
+     * @return The successWorkspaces.
      */
     @java.lang.Override
-    public int getSuccessCount() {
-      return successCount_;
+    public int getSuccessWorkspaces() {
+      return successWorkspaces_;
     }
     /**
-     * <code>int32 success_count = 1 [json_name = "successCount"];</code>
-     * @param value The successCount to set.
+     * <code>int32 success_workspaces = 1 [json_name = "successWorkspaces"];</code>
+     * @param value The successWorkspaces to set.
      * @return This builder for chaining.
      */
-    public Builder setSuccessCount(int value) {
+    public Builder setSuccessWorkspaces(int value) {
 
-      successCount_ = value;
+      successWorkspaces_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 success_count = 1 [json_name = "successCount"];</code>
+     * <code>int32 success_workspaces = 1 [json_name = "successWorkspaces"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearSuccessCount() {
+    public Builder clearSuccessWorkspaces() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      successCount_ = 0;
+      successWorkspaces_ = 0;
       onChanged();
       return this;
     }
 
-    private int failedCount_ ;
+    private int failedWorkspaces_ ;
     /**
-     * <code>int32 failed_count = 2 [json_name = "failedCount"];</code>
-     * @return The failedCount.
+     * <code>int32 failed_workspaces = 2 [json_name = "failedWorkspaces"];</code>
+     * @return The failedWorkspaces.
      */
     @java.lang.Override
-    public int getFailedCount() {
-      return failedCount_;
+    public int getFailedWorkspaces() {
+      return failedWorkspaces_;
     }
     /**
-     * <code>int32 failed_count = 2 [json_name = "failedCount"];</code>
-     * @param value The failedCount to set.
+     * <code>int32 failed_workspaces = 2 [json_name = "failedWorkspaces"];</code>
+     * @param value The failedWorkspaces to set.
      * @return This builder for chaining.
      */
-    public Builder setFailedCount(int value) {
+    public Builder setFailedWorkspaces(int value) {
 
-      failedCount_ = value;
+      failedWorkspaces_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 failed_count = 2 [json_name = "failedCount"];</code>
+     * <code>int32 failed_workspaces = 2 [json_name = "failedWorkspaces"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearFailedCount() {
+    public Builder clearFailedWorkspaces() {
       bitField0_ = (bitField0_ & ~0x00000002);
-      failedCount_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.Internal.LongList failedWorkspaceIds_ = emptyLongList();
-    private void ensureFailedWorkspaceIdsIsMutable() {
-      if (!failedWorkspaceIds_.isModifiable()) {
-        failedWorkspaceIds_ = makeMutableCopy(failedWorkspaceIds_);
-      }
-      bitField0_ |= 0x00000004;
-    }
-    /**
-     * <code>repeated int64 failed_workspace_ids = 3 [json_name = "failedWorkspaceIds"];</code>
-     * @return A list containing the failedWorkspaceIds.
-     */
-    public java.util.List<java.lang.Long>
-        getFailedWorkspaceIdsList() {
-      failedWorkspaceIds_.makeImmutable();
-      return failedWorkspaceIds_;
-    }
-    /**
-     * <code>repeated int64 failed_workspace_ids = 3 [json_name = "failedWorkspaceIds"];</code>
-     * @return The count of failedWorkspaceIds.
-     */
-    public int getFailedWorkspaceIdsCount() {
-      return failedWorkspaceIds_.size();
-    }
-    /**
-     * <code>repeated int64 failed_workspace_ids = 3 [json_name = "failedWorkspaceIds"];</code>
-     * @param index The index of the element to return.
-     * @return The failedWorkspaceIds at the given index.
-     */
-    public long getFailedWorkspaceIds(int index) {
-      return failedWorkspaceIds_.getLong(index);
-    }
-    /**
-     * <code>repeated int64 failed_workspace_ids = 3 [json_name = "failedWorkspaceIds"];</code>
-     * @param index The index to set the value at.
-     * @param value The failedWorkspaceIds to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFailedWorkspaceIds(
-        int index, long value) {
-
-      ensureFailedWorkspaceIdsIsMutable();
-      failedWorkspaceIds_.setLong(index, value);
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated int64 failed_workspace_ids = 3 [json_name = "failedWorkspaceIds"];</code>
-     * @param value The failedWorkspaceIds to add.
-     * @return This builder for chaining.
-     */
-    public Builder addFailedWorkspaceIds(long value) {
-
-      ensureFailedWorkspaceIdsIsMutable();
-      failedWorkspaceIds_.addLong(value);
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated int64 failed_workspace_ids = 3 [json_name = "failedWorkspaceIds"];</code>
-     * @param values The failedWorkspaceIds to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllFailedWorkspaceIds(
-        java.lang.Iterable<? extends java.lang.Long> values) {
-      ensureFailedWorkspaceIdsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, failedWorkspaceIds_);
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated int64 failed_workspace_ids = 3 [json_name = "failedWorkspaceIds"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearFailedWorkspaceIds() {
-      failedWorkspaceIds_ = emptyLongList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      failedWorkspaces_ = 0;
       onChanged();
       return this;
     }
@@ -732,10 +557,10 @@ private static final long serialVersionUID = 0L;
       if (!errorMessages_.isModifiable()) {
         errorMessages_ = new com.google.protobuf.LazyStringArrayList(errorMessages_);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
     }
     /**
-     * <code>repeated string error_messages = 4 [json_name = "errorMessages"];</code>
+     * <code>repeated string error_messages = 3 [json_name = "errorMessages"];</code>
      * @return A list containing the errorMessages.
      */
     public com.google.protobuf.ProtocolStringList
@@ -744,14 +569,14 @@ private static final long serialVersionUID = 0L;
       return errorMessages_;
     }
     /**
-     * <code>repeated string error_messages = 4 [json_name = "errorMessages"];</code>
+     * <code>repeated string error_messages = 3 [json_name = "errorMessages"];</code>
      * @return The count of errorMessages.
      */
     public int getErrorMessagesCount() {
       return errorMessages_.size();
     }
     /**
-     * <code>repeated string error_messages = 4 [json_name = "errorMessages"];</code>
+     * <code>repeated string error_messages = 3 [json_name = "errorMessages"];</code>
      * @param index The index of the element to return.
      * @return The errorMessages at the given index.
      */
@@ -759,7 +584,7 @@ private static final long serialVersionUID = 0L;
       return errorMessages_.get(index);
     }
     /**
-     * <code>repeated string error_messages = 4 [json_name = "errorMessages"];</code>
+     * <code>repeated string error_messages = 3 [json_name = "errorMessages"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the errorMessages at the given index.
      */
@@ -768,7 +593,7 @@ private static final long serialVersionUID = 0L;
       return errorMessages_.getByteString(index);
     }
     /**
-     * <code>repeated string error_messages = 4 [json_name = "errorMessages"];</code>
+     * <code>repeated string error_messages = 3 [json_name = "errorMessages"];</code>
      * @param index The index to set the value at.
      * @param value The errorMessages to set.
      * @return This builder for chaining.
@@ -778,12 +603,12 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureErrorMessagesIsMutable();
       errorMessages_.set(index, value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string error_messages = 4 [json_name = "errorMessages"];</code>
+     * <code>repeated string error_messages = 3 [json_name = "errorMessages"];</code>
      * @param value The errorMessages to add.
      * @return This builder for chaining.
      */
@@ -792,12 +617,12 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureErrorMessagesIsMutable();
       errorMessages_.add(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string error_messages = 4 [json_name = "errorMessages"];</code>
+     * <code>repeated string error_messages = 3 [json_name = "errorMessages"];</code>
      * @param values The errorMessages to add.
      * @return This builder for chaining.
      */
@@ -806,23 +631,23 @@ private static final long serialVersionUID = 0L;
       ensureErrorMessagesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, errorMessages_);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string error_messages = 4 [json_name = "errorMessages"];</code>
+     * <code>repeated string error_messages = 3 [json_name = "errorMessages"];</code>
      * @return This builder for chaining.
      */
     public Builder clearErrorMessages() {
       errorMessages_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);;
+      bitField0_ = (bitField0_ & ~0x00000004);;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string error_messages = 4 [json_name = "errorMessages"];</code>
+     * <code>repeated string error_messages = 3 [json_name = "errorMessages"];</code>
      * @param value The bytes of the errorMessages to add.
      * @return This builder for chaining.
      */
@@ -832,7 +657,7 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensureErrorMessagesIsMutable();
       errorMessages_.add(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

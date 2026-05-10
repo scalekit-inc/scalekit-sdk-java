@@ -19,16 +19,4 @@ public interface ListAuthorizedDomainRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getOriginBytes();
-
-  /**
-   * <code>string link_id = 2 [json_name = "linkId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The linkId.
-   */
-  java.lang.String getLinkId();
-  /**
-   * <code>string link_id = 2 [json_name = "linkId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for linkId.
-   */
-  com.google.protobuf.ByteString
-      getLinkIdBytes();
 }

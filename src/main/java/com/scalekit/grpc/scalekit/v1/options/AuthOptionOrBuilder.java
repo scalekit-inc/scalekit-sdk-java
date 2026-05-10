@@ -20,38 +20,14 @@ public interface AuthOptionOrBuilder extends
   com.scalekit.grpc.scalekit.v1.options.AuthenticationType getAuthenticationType();
 
   /**
-   * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
-   * @return A list containing the permissions.
+   * <code>string permission = 1 [json_name = "permission"];</code>
+   * @return The permission.
    */
-  java.util.List<java.lang.String>
-      getPermissionsList();
+  java.lang.String getPermission();
   /**
-   * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
-   * @return The count of permissions.
-   */
-  int getPermissionsCount();
-  /**
-   * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
-   * @param index The index of the element to return.
-   * @return The permissions at the given index.
-   */
-  java.lang.String getPermissions(int index);
-  /**
-   * <code>repeated string permissions = 1 [json_name = "permissions"];</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the permissions at the given index.
+   * <code>string permission = 1 [json_name = "permission"];</code>
+   * @return The bytes for permission.
    */
   com.google.protobuf.ByteString
-      getPermissionsBytes(int index);
-
-  /**
-   * <code>.scalekit.v1.options.Policy policy = 2 [json_name = "policy"];</code>
-   * @return The enum numeric value on the wire for policy.
-   */
-  int getPolicyValue();
-  /**
-   * <code>.scalekit.v1.options.Policy policy = 2 [json_name = "policy"];</code>
-   * @return The policy.
-   */
-  com.scalekit.grpc.scalekit.v1.options.Policy getPolicy();
+      getPermissionBytes();
 }

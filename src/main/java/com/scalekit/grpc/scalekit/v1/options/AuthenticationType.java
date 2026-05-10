@@ -11,7 +11,7 @@ public enum AuthenticationType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
    * <pre>
-   * API is Blocked to access
+   * API is blocked / private  and default
    * </pre>
    *
    * <code>BLOCKED = 0;</code>
@@ -27,7 +27,7 @@ public enum AuthenticationType
   NONE(1),
   /**
    * <pre>
-   * Workspace auth option is for Scalekit Dashboard
+   * workspace_id is in claims
    * </pre>
    *
    * <code>WORKSPACE = 64;</code>
@@ -35,7 +35,7 @@ public enum AuthenticationType
   WORKSPACE(64),
   /**
    * <pre>
-   * Customer portal is for customer admin portal access
+   * claims has organisation ID
    * </pre>
    *
    * <code>CUSTOMER_PORTAL = 32;</code>
@@ -43,24 +43,20 @@ public enum AuthenticationType
   CUSTOMER_PORTAL(32),
   /**
    * <pre>
-   * (UI audience in claims) this is for API that need to work on env.scalekit.com scoped access alone.
+   * claims has UI in audience
    * </pre>
    *
    * <code>SESSION = 16;</code>
    */
   SESSION(16),
   /**
-   * <code>WORKSPACE_SESSION = 80;</code>
-   */
-  WORKSPACE_SESSION(80),
-  /**
    * <pre>
    * workspace_id is in claims and UI in audience
    * </pre>
    *
-   * <code>WORKSPACE_CLIENT = 68;</code>
+   * <code>WORKSPACE_SESSION = 80;</code>
    */
-  WORKSPACE_CLIENT(68),
+  WORKSPACE_SESSION(80),
   /**
    * <code>WORKSPACE_SESSION_CUSTOMER_PORTAL = 112;</code>
    */
@@ -74,18 +70,6 @@ public enum AuthenticationType
    */
   WORKSPACE_SESSION_CUSTOMER_PORTAL_CLIENT(116),
   /**
-   * <code>WORKSPACE_CUSTOMER_PORTAL_CLIENT = 100;</code>
-   */
-  WORKSPACE_CUSTOMER_PORTAL_CLIENT(100),
-  /**
-   * <pre>
-   * workspace_id,organization_id is in claims and client Id is in subject
-   * </pre>
-   *
-   * <code>WORKSPACE_CUSTOMER_PORTAL = 96;</code>
-   */
-  WORKSPACE_CUSTOMER_PORTAL(96),
-  /**
    * <pre>
    * user_id is in claims
    * </pre>
@@ -95,7 +79,7 @@ public enum AuthenticationType
   USER(8),
   /**
    * <pre>
-   * client is environment primary client ID
+   * client Id is in subject
    * </pre>
    *
    * <code>CLIENT = 4;</code>
@@ -125,64 +109,12 @@ public enum AuthenticationType
    * <code>CUSTOMER_PORTAL_SESSION_CLIENT = 52;</code>
    */
   CUSTOMER_PORTAL_SESSION_CLIENT(52),
-  /**
-   * <code>SESSION_USER = 24;</code>
-   */
-  SESSION_USER(24),
-  /**
-   * <code>ACTIONS_PORTAL = 128;</code>
-   */
-  ACTIONS_PORTAL(128),
-  /**
-   * <pre>
-   * workspace_id,organization_id is in claims and UI in audience
-   * </pre>
-   *
-   * <code>WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL = 240;</code>
-   */
-  WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL(240),
-  /**
-   * <pre>
-   * workspace_id,organization_id is in claims, UI in audience and client Id is in subject
-   * </pre>
-   *
-   * <code>WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL_CLIENT = 244;</code>
-   */
-  WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL_CLIENT(244),
-  /**
-   * <pre>
-   * workspace_id is in claims and UI in audience
-   * </pre>
-   *
-   * <code>WORKSPACE_ACTIONS_PORTAL = 192;</code>
-   */
-  WORKSPACE_ACTIONS_PORTAL(192),
-  /**
-   * <pre>
-   * workspace_id is in claims, UI in audience and client Id is in subject
-   * </pre>
-   *
-   * <code>WORKSPACE_ACTIONS_PORTAL_CLIENT = 196;</code>
-   */
-  WORKSPACE_ACTIONS_PORTAL_CLIENT(196),
-  /**
-   * <code>WORKSPACE_ACTIONS_PORTAL_CUSTOMER_PORTAL_CLIENT = 228;</code>
-   */
-  WORKSPACE_ACTIONS_PORTAL_CUSTOMER_PORTAL_CLIENT(228),
-  /**
-   * <pre>
-   * workspace_id,organization_id is in claims and UI in audience
-   * </pre>
-   *
-   * <code>WORKSPACE_CUSTOMER_PORTAL_ACTIONS_PORTAL = 224;</code>
-   */
-  WORKSPACE_CUSTOMER_PORTAL_ACTIONS_PORTAL(224),
   UNRECOGNIZED(-1),
   ;
 
   /**
    * <pre>
-   * API is Blocked to access
+   * API is blocked / private  and default
    * </pre>
    *
    * <code>BLOCKED = 0;</code>
@@ -198,7 +130,7 @@ public enum AuthenticationType
   public static final int NONE_VALUE = 1;
   /**
    * <pre>
-   * Workspace auth option is for Scalekit Dashboard
+   * workspace_id is in claims
    * </pre>
    *
    * <code>WORKSPACE = 64;</code>
@@ -206,7 +138,7 @@ public enum AuthenticationType
   public static final int WORKSPACE_VALUE = 64;
   /**
    * <pre>
-   * Customer portal is for customer admin portal access
+   * claims has organisation ID
    * </pre>
    *
    * <code>CUSTOMER_PORTAL = 32;</code>
@@ -214,24 +146,20 @@ public enum AuthenticationType
   public static final int CUSTOMER_PORTAL_VALUE = 32;
   /**
    * <pre>
-   * (UI audience in claims) this is for API that need to work on env.scalekit.com scoped access alone.
+   * claims has UI in audience
    * </pre>
    *
    * <code>SESSION = 16;</code>
    */
   public static final int SESSION_VALUE = 16;
   /**
-   * <code>WORKSPACE_SESSION = 80;</code>
-   */
-  public static final int WORKSPACE_SESSION_VALUE = 80;
-  /**
    * <pre>
    * workspace_id is in claims and UI in audience
    * </pre>
    *
-   * <code>WORKSPACE_CLIENT = 68;</code>
+   * <code>WORKSPACE_SESSION = 80;</code>
    */
-  public static final int WORKSPACE_CLIENT_VALUE = 68;
+  public static final int WORKSPACE_SESSION_VALUE = 80;
   /**
    * <code>WORKSPACE_SESSION_CUSTOMER_PORTAL = 112;</code>
    */
@@ -245,18 +173,6 @@ public enum AuthenticationType
    */
   public static final int WORKSPACE_SESSION_CUSTOMER_PORTAL_CLIENT_VALUE = 116;
   /**
-   * <code>WORKSPACE_CUSTOMER_PORTAL_CLIENT = 100;</code>
-   */
-  public static final int WORKSPACE_CUSTOMER_PORTAL_CLIENT_VALUE = 100;
-  /**
-   * <pre>
-   * workspace_id,organization_id is in claims and client Id is in subject
-   * </pre>
-   *
-   * <code>WORKSPACE_CUSTOMER_PORTAL = 96;</code>
-   */
-  public static final int WORKSPACE_CUSTOMER_PORTAL_VALUE = 96;
-  /**
    * <pre>
    * user_id is in claims
    * </pre>
@@ -266,7 +182,7 @@ public enum AuthenticationType
   public static final int USER_VALUE = 8;
   /**
    * <pre>
-   * client is environment primary client ID
+   * client Id is in subject
    * </pre>
    *
    * <code>CLIENT = 4;</code>
@@ -296,58 +212,6 @@ public enum AuthenticationType
    * <code>CUSTOMER_PORTAL_SESSION_CLIENT = 52;</code>
    */
   public static final int CUSTOMER_PORTAL_SESSION_CLIENT_VALUE = 52;
-  /**
-   * <code>SESSION_USER = 24;</code>
-   */
-  public static final int SESSION_USER_VALUE = 24;
-  /**
-   * <code>ACTIONS_PORTAL = 128;</code>
-   */
-  public static final int ACTIONS_PORTAL_VALUE = 128;
-  /**
-   * <pre>
-   * workspace_id,organization_id is in claims and UI in audience
-   * </pre>
-   *
-   * <code>WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL = 240;</code>
-   */
-  public static final int WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL_VALUE = 240;
-  /**
-   * <pre>
-   * workspace_id,organization_id is in claims, UI in audience and client Id is in subject
-   * </pre>
-   *
-   * <code>WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL_CLIENT = 244;</code>
-   */
-  public static final int WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL_CLIENT_VALUE = 244;
-  /**
-   * <pre>
-   * workspace_id is in claims and UI in audience
-   * </pre>
-   *
-   * <code>WORKSPACE_ACTIONS_PORTAL = 192;</code>
-   */
-  public static final int WORKSPACE_ACTIONS_PORTAL_VALUE = 192;
-  /**
-   * <pre>
-   * workspace_id is in claims, UI in audience and client Id is in subject
-   * </pre>
-   *
-   * <code>WORKSPACE_ACTIONS_PORTAL_CLIENT = 196;</code>
-   */
-  public static final int WORKSPACE_ACTIONS_PORTAL_CLIENT_VALUE = 196;
-  /**
-   * <code>WORKSPACE_ACTIONS_PORTAL_CUSTOMER_PORTAL_CLIENT = 228;</code>
-   */
-  public static final int WORKSPACE_ACTIONS_PORTAL_CUSTOMER_PORTAL_CLIENT_VALUE = 228;
-  /**
-   * <pre>
-   * workspace_id,organization_id is in claims and UI in audience
-   * </pre>
-   *
-   * <code>WORKSPACE_CUSTOMER_PORTAL_ACTIONS_PORTAL = 224;</code>
-   */
-  public static final int WORKSPACE_CUSTOMER_PORTAL_ACTIONS_PORTAL_VALUE = 224;
 
 
   public final int getNumber() {
@@ -380,24 +244,13 @@ public enum AuthenticationType
       case 32: return CUSTOMER_PORTAL;
       case 16: return SESSION;
       case 80: return WORKSPACE_SESSION;
-      case 68: return WORKSPACE_CLIENT;
       case 112: return WORKSPACE_SESSION_CUSTOMER_PORTAL;
       case 116: return WORKSPACE_SESSION_CUSTOMER_PORTAL_CLIENT;
-      case 100: return WORKSPACE_CUSTOMER_PORTAL_CLIENT;
-      case 96: return WORKSPACE_CUSTOMER_PORTAL;
       case 8: return USER;
       case 4: return CLIENT;
       case 20: return SESSION_CLIENT;
       case 84: return WORKSPACE_SESSION_CLIENT;
       case 52: return CUSTOMER_PORTAL_SESSION_CLIENT;
-      case 24: return SESSION_USER;
-      case 128: return ACTIONS_PORTAL;
-      case 240: return WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL;
-      case 244: return WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL_CLIENT;
-      case 192: return WORKSPACE_ACTIONS_PORTAL;
-      case 196: return WORKSPACE_ACTIONS_PORTAL_CLIENT;
-      case 228: return WORKSPACE_ACTIONS_PORTAL_CUSTOMER_PORTAL_CLIENT;
-      case 224: return WORKSPACE_CUSTOMER_PORTAL_ACTIONS_PORTAL;
       default: return null;
     }
   }
@@ -428,7 +281,7 @@ public enum AuthenticationType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.options.OptionsProto.getDescriptor().getEnumTypes().get(1);
+    return com.scalekit.grpc.scalekit.v1.options.OptionsProto.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final AuthenticationType[] VALUES = values();

@@ -49,37 +49,6 @@ public final class ProviderServiceGrpc {
     return getCreateProviderMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.CreateCustomProviderRequest,
-      com.scalekit.grpc.scalekit.v1.providers.CreateProviderResponse> getCreateCustomProviderMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateCustomProvider",
-      requestType = com.scalekit.grpc.scalekit.v1.providers.CreateCustomProviderRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.providers.CreateProviderResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.CreateCustomProviderRequest,
-      com.scalekit.grpc.scalekit.v1.providers.CreateProviderResponse> getCreateCustomProviderMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.CreateCustomProviderRequest, com.scalekit.grpc.scalekit.v1.providers.CreateProviderResponse> getCreateCustomProviderMethod;
-    if ((getCreateCustomProviderMethod = ProviderServiceGrpc.getCreateCustomProviderMethod) == null) {
-      synchronized (ProviderServiceGrpc.class) {
-        if ((getCreateCustomProviderMethod = ProviderServiceGrpc.getCreateCustomProviderMethod) == null) {
-          ProviderServiceGrpc.getCreateCustomProviderMethod = getCreateCustomProviderMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.providers.CreateCustomProviderRequest, com.scalekit.grpc.scalekit.v1.providers.CreateProviderResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCustomProvider"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.providers.CreateCustomProviderRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.providers.CreateProviderResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new ProviderServiceMethodDescriptorSupplier("CreateCustomProvider"))
-              .build();
-        }
-      }
-    }
-    return getCreateCustomProviderMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.UpdateProviderRequest,
       com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse> getUpdateProviderMethod;
 
@@ -111,37 +80,6 @@ public final class ProviderServiceGrpc {
     return getUpdateProviderMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.UpdateCustomProviderRequest,
-      com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse> getUpdateCustomProviderMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateCustomProvider",
-      requestType = com.scalekit.grpc.scalekit.v1.providers.UpdateCustomProviderRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.UpdateCustomProviderRequest,
-      com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse> getUpdateCustomProviderMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.UpdateCustomProviderRequest, com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse> getUpdateCustomProviderMethod;
-    if ((getUpdateCustomProviderMethod = ProviderServiceGrpc.getUpdateCustomProviderMethod) == null) {
-      synchronized (ProviderServiceGrpc.class) {
-        if ((getUpdateCustomProviderMethod = ProviderServiceGrpc.getUpdateCustomProviderMethod) == null) {
-          ProviderServiceGrpc.getUpdateCustomProviderMethod = getUpdateCustomProviderMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.providers.UpdateCustomProviderRequest, com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateCustomProvider"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.providers.UpdateCustomProviderRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new ProviderServiceMethodDescriptorSupplier("UpdateCustomProvider"))
-              .build();
-        }
-      }
-    }
-    return getUpdateCustomProviderMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest,
       com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse> getDeleteProviderMethod;
 
@@ -171,37 +109,6 @@ public final class ProviderServiceGrpc {
       }
     }
     return getDeleteProviderMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest,
-      com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse> getDeleteCustomProviderMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteCustomProvider",
-      requestType = com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest,
-      com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse> getDeleteCustomProviderMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest, com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse> getDeleteCustomProviderMethod;
-    if ((getDeleteCustomProviderMethod = ProviderServiceGrpc.getDeleteCustomProviderMethod) == null) {
-      synchronized (ProviderServiceGrpc.class) {
-        if ((getDeleteCustomProviderMethod = ProviderServiceGrpc.getDeleteCustomProviderMethod) == null) {
-          ProviderServiceGrpc.getDeleteCustomProviderMethod = getDeleteCustomProviderMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest, com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteCustomProvider"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new ProviderServiceMethodDescriptorSupplier("DeleteCustomProvider"))
-              .build();
-        }
-      }
-    }
-    return getDeleteCustomProviderMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.ListProvidersRequest,
@@ -295,13 +202,6 @@ public final class ProviderServiceGrpc {
 
     /**
      */
-    default void createCustomProvider(com.scalekit.grpc.scalekit.v1.providers.CreateCustomProviderRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.CreateProviderResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateCustomProviderMethod(), responseObserver);
-    }
-
-    /**
-     */
     default void updateProvider(com.scalekit.grpc.scalekit.v1.providers.UpdateProviderRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateProviderMethod(), responseObserver);
@@ -309,23 +209,9 @@ public final class ProviderServiceGrpc {
 
     /**
      */
-    default void updateCustomProvider(com.scalekit.grpc.scalekit.v1.providers.UpdateCustomProviderRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCustomProviderMethod(), responseObserver);
-    }
-
-    /**
-     */
     default void deleteProvider(com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteProviderMethod(), responseObserver);
-    }
-
-    /**
-     */
-    default void deleteCustomProvider(com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteCustomProviderMethod(), responseObserver);
     }
 
     /**
@@ -379,14 +265,6 @@ public final class ProviderServiceGrpc {
 
     /**
      */
-    public void createCustomProvider(com.scalekit.grpc.scalekit.v1.providers.CreateCustomProviderRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.CreateProviderResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateCustomProviderMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
     public void updateProvider(com.scalekit.grpc.scalekit.v1.providers.UpdateProviderRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -395,26 +273,10 @@ public final class ProviderServiceGrpc {
 
     /**
      */
-    public void updateCustomProvider(com.scalekit.grpc.scalekit.v1.providers.UpdateCustomProviderRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateCustomProviderMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
     public void deleteProvider(com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteProviderMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void deleteCustomProvider(com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteCustomProviderMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -454,13 +316,6 @@ public final class ProviderServiceGrpc {
 
     /**
      */
-    public com.scalekit.grpc.scalekit.v1.providers.CreateProviderResponse createCustomProvider(com.scalekit.grpc.scalekit.v1.providers.CreateCustomProviderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateCustomProviderMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
     public com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse updateProvider(com.scalekit.grpc.scalekit.v1.providers.UpdateProviderRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateProviderMethod(), getCallOptions(), request);
@@ -468,23 +323,9 @@ public final class ProviderServiceGrpc {
 
     /**
      */
-    public com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse updateCustomProvider(com.scalekit.grpc.scalekit.v1.providers.UpdateCustomProviderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateCustomProviderMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
     public com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse deleteProvider(com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteProviderMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse deleteCustomProvider(com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteCustomProviderMethod(), getCallOptions(), request);
     }
 
     /**
@@ -524,26 +365,10 @@ public final class ProviderServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.providers.CreateProviderResponse> createCustomProvider(
-        com.scalekit.grpc.scalekit.v1.providers.CreateCustomProviderRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateCustomProviderMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse> updateProvider(
         com.scalekit.grpc.scalekit.v1.providers.UpdateProviderRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateProviderMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse> updateCustomProvider(
-        com.scalekit.grpc.scalekit.v1.providers.UpdateCustomProviderRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateCustomProviderMethod(), getCallOptions()), request);
     }
 
     /**
@@ -556,14 +381,6 @@ public final class ProviderServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse> deleteCustomProvider(
-        com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteCustomProviderMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse> listProviders(
         com.scalekit.grpc.scalekit.v1.providers.ListProvidersRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -572,12 +389,9 @@ public final class ProviderServiceGrpc {
   }
 
   private static final int METHODID_CREATE_PROVIDER = 0;
-  private static final int METHODID_CREATE_CUSTOM_PROVIDER = 1;
-  private static final int METHODID_UPDATE_PROVIDER = 2;
-  private static final int METHODID_UPDATE_CUSTOM_PROVIDER = 3;
-  private static final int METHODID_DELETE_PROVIDER = 4;
-  private static final int METHODID_DELETE_CUSTOM_PROVIDER = 5;
-  private static final int METHODID_LIST_PROVIDERS = 6;
+  private static final int METHODID_UPDATE_PROVIDER = 1;
+  private static final int METHODID_DELETE_PROVIDER = 2;
+  private static final int METHODID_LIST_PROVIDERS = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -600,24 +414,12 @@ public final class ProviderServiceGrpc {
           serviceImpl.createProvider((com.scalekit.grpc.scalekit.v1.providers.CreateProviderRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.CreateProviderResponse>) responseObserver);
           break;
-        case METHODID_CREATE_CUSTOM_PROVIDER:
-          serviceImpl.createCustomProvider((com.scalekit.grpc.scalekit.v1.providers.CreateCustomProviderRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.CreateProviderResponse>) responseObserver);
-          break;
         case METHODID_UPDATE_PROVIDER:
           serviceImpl.updateProvider((com.scalekit.grpc.scalekit.v1.providers.UpdateProviderRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse>) responseObserver);
           break;
-        case METHODID_UPDATE_CUSTOM_PROVIDER:
-          serviceImpl.updateCustomProvider((com.scalekit.grpc.scalekit.v1.providers.UpdateCustomProviderRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse>) responseObserver);
-          break;
         case METHODID_DELETE_PROVIDER:
           serviceImpl.deleteProvider((com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse>) responseObserver);
-          break;
-        case METHODID_DELETE_CUSTOM_PROVIDER:
-          serviceImpl.deleteCustomProvider((com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse>) responseObserver);
           break;
         case METHODID_LIST_PROVIDERS:
@@ -650,13 +452,6 @@ public final class ProviderServiceGrpc {
               com.scalekit.grpc.scalekit.v1.providers.CreateProviderResponse>(
                 service, METHODID_CREATE_PROVIDER)))
         .addMethod(
-          getCreateCustomProviderMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.providers.CreateCustomProviderRequest,
-              com.scalekit.grpc.scalekit.v1.providers.CreateProviderResponse>(
-                service, METHODID_CREATE_CUSTOM_PROVIDER)))
-        .addMethod(
           getUpdateProviderMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -664,26 +459,12 @@ public final class ProviderServiceGrpc {
               com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse>(
                 service, METHODID_UPDATE_PROVIDER)))
         .addMethod(
-          getUpdateCustomProviderMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.providers.UpdateCustomProviderRequest,
-              com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse>(
-                service, METHODID_UPDATE_CUSTOM_PROVIDER)))
-        .addMethod(
           getDeleteProviderMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest,
               com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse>(
                 service, METHODID_DELETE_PROVIDER)))
-        .addMethod(
-          getDeleteCustomProviderMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest,
-              com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse>(
-                service, METHODID_DELETE_CUSTOM_PROVIDER)))
         .addMethod(
           getListProvidersMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -740,11 +521,8 @@ public final class ProviderServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new ProviderServiceFileDescriptorSupplier())
               .addMethod(getCreateProviderMethod())
-              .addMethod(getCreateCustomProviderMethod())
               .addMethod(getUpdateProviderMethod())
-              .addMethod(getUpdateCustomProviderMethod())
               .addMethod(getDeleteProviderMethod())
-              .addMethod(getDeleteCustomProviderMethod())
               .addMethod(getListProvidersMethod())
               .build();
         }

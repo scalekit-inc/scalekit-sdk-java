@@ -5,13 +5,6 @@
 package com.scalekit.grpc.scalekit.v1.errdetails;
 
 /**
- * <pre>
- * HelpInfo provides documentation links attached to an error response.
- * When present in ErrorInfo, clients should surface these links to help
- * developers resolve the error. For example, a missing required field error
- * may include a link to the relevant guide.
- * </pre>
- *
  * Protobuf type {@code scalekit.v1.errdetails.HelpInfo}
  */
 public final class HelpInfo extends
@@ -52,19 +45,11 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * Human-readable label for the link (e.g. "User verification flow").
-     * </pre>
-     *
      * <code>string description = 1 [json_name = "description"];</code>
      * @return The description.
      */
     java.lang.String getDescription();
     /**
-     * <pre>
-     * Human-readable label for the link (e.g. "User verification flow").
-     * </pre>
-     *
      * <code>string description = 1 [json_name = "description"];</code>
      * @return The bytes for description.
      */
@@ -72,19 +57,11 @@ private static final long serialVersionUID = 0L;
         getDescriptionBytes();
 
     /**
-     * <pre>
-     * Absolute URL to the documentation page (e.g. "https://docs.scalekit.com/...").
-     * </pre>
-     *
      * <code>string url = 2 [json_name = "url"];</code>
      * @return The url.
      */
     java.lang.String getUrl();
     /**
-     * <pre>
-     * Absolute URL to the documentation page (e.g. "https://docs.scalekit.com/...").
-     * </pre>
-     *
      * <code>string url = 2 [json_name = "url"];</code>
      * @return The bytes for url.
      */
@@ -92,10 +69,6 @@ private static final long serialVersionUID = 0L;
         getUrlBytes();
   }
   /**
-   * <pre>
-   * A documentation or reference link.
-   * </pre>
-   *
    * Protobuf type {@code scalekit.v1.errdetails.HelpInfo.Link}
    */
   public static final class Link extends
@@ -136,10 +109,6 @@ private static final long serialVersionUID = 0L;
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
     /**
-     * <pre>
-     * Human-readable label for the link (e.g. "User verification flow").
-     * </pre>
-     *
      * <code>string description = 1 [json_name = "description"];</code>
      * @return The description.
      */
@@ -157,10 +126,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Human-readable label for the link (e.g. "User verification flow").
-     * </pre>
-     *
      * <code>string description = 1 [json_name = "description"];</code>
      * @return The bytes for description.
      */
@@ -183,10 +148,6 @@ private static final long serialVersionUID = 0L;
     @SuppressWarnings("serial")
     private volatile java.lang.Object url_ = "";
     /**
-     * <pre>
-     * Absolute URL to the documentation page (e.g. "https://docs.scalekit.com/...").
-     * </pre>
-     *
      * <code>string url = 2 [json_name = "url"];</code>
      * @return The url.
      */
@@ -204,10 +165,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Absolute URL to the documentation page (e.g. "https://docs.scalekit.com/...").
-     * </pre>
-     *
      * <code>string url = 2 [json_name = "url"];</code>
      * @return The bytes for url.
      */
@@ -393,10 +350,6 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
-     * <pre>
-     * A documentation or reference link.
-     * </pre>
-     *
      * Protobuf type {@code scalekit.v1.errdetails.HelpInfo.Link}
      */
     public static final class Builder extends
@@ -582,10 +535,6 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object description_ = "";
       /**
-       * <pre>
-       * Human-readable label for the link (e.g. "User verification flow").
-       * </pre>
-       *
        * <code>string description = 1 [json_name = "description"];</code>
        * @return The description.
        */
@@ -602,10 +551,6 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
-       * <pre>
-       * Human-readable label for the link (e.g. "User verification flow").
-       * </pre>
-       *
        * <code>string description = 1 [json_name = "description"];</code>
        * @return The bytes for description.
        */
@@ -623,10 +568,6 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
-       * <pre>
-       * Human-readable label for the link (e.g. "User verification flow").
-       * </pre>
-       *
        * <code>string description = 1 [json_name = "description"];</code>
        * @param value The description to set.
        * @return This builder for chaining.
@@ -640,10 +581,6 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
-       * <pre>
-       * Human-readable label for the link (e.g. "User verification flow").
-       * </pre>
-       *
        * <code>string description = 1 [json_name = "description"];</code>
        * @return This builder for chaining.
        */
@@ -654,10 +591,6 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
-       * <pre>
-       * Human-readable label for the link (e.g. "User verification flow").
-       * </pre>
-       *
        * <code>string description = 1 [json_name = "description"];</code>
        * @param value The bytes for description to set.
        * @return This builder for chaining.
@@ -674,10 +607,6 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object url_ = "";
       /**
-       * <pre>
-       * Absolute URL to the documentation page (e.g. "https://docs.scalekit.com/...").
-       * </pre>
-       *
        * <code>string url = 2 [json_name = "url"];</code>
        * @return The url.
        */
@@ -694,10 +623,6 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
-       * <pre>
-       * Absolute URL to the documentation page (e.g. "https://docs.scalekit.com/...").
-       * </pre>
-       *
        * <code>string url = 2 [json_name = "url"];</code>
        * @return The bytes for url.
        */
@@ -715,10 +640,6 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
-       * <pre>
-       * Absolute URL to the documentation page (e.g. "https://docs.scalekit.com/...").
-       * </pre>
-       *
        * <code>string url = 2 [json_name = "url"];</code>
        * @param value The url to set.
        * @return This builder for chaining.
@@ -732,10 +653,6 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
-       * <pre>
-       * Absolute URL to the documentation page (e.g. "https://docs.scalekit.com/...").
-       * </pre>
-       *
        * <code>string url = 2 [json_name = "url"];</code>
        * @return This builder for chaining.
        */
@@ -746,10 +663,6 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
-       * <pre>
-       * Absolute URL to the documentation page (e.g. "https://docs.scalekit.com/...").
-       * </pre>
-       *
        * <code>string url = 2 [json_name = "url"];</code>
        * @param value The bytes for url to set.
        * @return This builder for chaining.
@@ -831,10 +744,6 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private java.util.List<com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.Link> links_;
   /**
-   * <pre>
-   * One or more links relevant to resolving the error.
-   * </pre>
-   *
    * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
    */
   @java.lang.Override
@@ -842,10 +751,6 @@ private static final long serialVersionUID = 0L;
     return links_;
   }
   /**
-   * <pre>
-   * One or more links relevant to resolving the error.
-   * </pre>
-   *
    * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
    */
   @java.lang.Override
@@ -854,10 +759,6 @@ private static final long serialVersionUID = 0L;
     return links_;
   }
   /**
-   * <pre>
-   * One or more links relevant to resolving the error.
-   * </pre>
-   *
    * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
    */
   @java.lang.Override
@@ -865,10 +766,6 @@ private static final long serialVersionUID = 0L;
     return links_.size();
   }
   /**
-   * <pre>
-   * One or more links relevant to resolving the error.
-   * </pre>
-   *
    * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
    */
   @java.lang.Override
@@ -876,10 +773,6 @@ private static final long serialVersionUID = 0L;
     return links_.get(index);
   }
   /**
-   * <pre>
-   * One or more links relevant to resolving the error.
-   * </pre>
-   *
    * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
    */
   @java.lang.Override
@@ -1048,13 +941,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * HelpInfo provides documentation links attached to an error response.
-   * When present in ErrorInfo, clients should surface these links to help
-   * developers resolve the error. For example, a missing required field error
-   * may include a link to the relevant guide.
-   * </pre>
-   *
    * Protobuf type {@code scalekit.v1.errdetails.HelpInfo}
    */
   public static final class Builder extends
@@ -1282,10 +1168,6 @@ private static final long serialVersionUID = 0L;
         com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.Link, com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.Link.Builder, com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.LinkOrBuilder> linksBuilder_;
 
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.Link> getLinksList() {
@@ -1296,10 +1178,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public int getLinksCount() {
@@ -1310,10 +1188,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.Link getLinks(int index) {
@@ -1324,10 +1198,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public Builder setLinks(
@@ -1345,10 +1215,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public Builder setLinks(
@@ -1363,10 +1229,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public Builder addLinks(com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.Link value) {
@@ -1383,10 +1245,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public Builder addLinks(
@@ -1404,10 +1262,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public Builder addLinks(
@@ -1422,10 +1276,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public Builder addLinks(
@@ -1440,10 +1290,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public Builder addAllLinks(
@@ -1459,10 +1305,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public Builder clearLinks() {
@@ -1476,10 +1318,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public Builder removeLinks(int index) {
@@ -1493,10 +1331,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.Link.Builder getLinksBuilder(
@@ -1504,10 +1338,6 @@ private static final long serialVersionUID = 0L;
       return getLinksFieldBuilder().getBuilder(index);
     }
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.LinkOrBuilder getLinksOrBuilder(
@@ -1518,10 +1348,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public java.util.List<? extends com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.LinkOrBuilder> 
@@ -1533,10 +1359,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.Link.Builder addLinksBuilder() {
@@ -1544,10 +1366,6 @@ private static final long serialVersionUID = 0L;
           com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.Link.getDefaultInstance());
     }
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.Link.Builder addLinksBuilder(
@@ -1556,10 +1374,6 @@ private static final long serialVersionUID = 0L;
           index, com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.Link.getDefaultInstance());
     }
     /**
-     * <pre>
-     * One or more links relevant to resolving the error.
-     * </pre>
-     *
      * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.Link.Builder> 

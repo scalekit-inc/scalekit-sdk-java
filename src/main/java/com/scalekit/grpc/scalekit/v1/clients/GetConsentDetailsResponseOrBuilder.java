@@ -91,19 +91,4 @@ public interface GetConsentDetailsResponseOrBuilder extends
    * <code>.scalekit.v1.clients.Application application = 5 [json_name = "application", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.clients.ApplicationOrBuilder getApplicationOrBuilder();
-
-  /**
-   * <code>.scalekit.v1.clients.ConsentOrganization organization = 6 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the organization field is set.
-   */
-  boolean hasOrganization();
-  /**
-   * <code>.scalekit.v1.clients.ConsentOrganization organization = 6 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The organization.
-   */
-  com.scalekit.grpc.scalekit.v1.clients.ConsentOrganization getOrganization();
-  /**
-   * <code>.scalekit.v1.clients.ConsentOrganization organization = 6 [json_name = "organization", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  com.scalekit.grpc.scalekit.v1.clients.ConsentOrganizationOrBuilder getOrganizationOrBuilder();
 }

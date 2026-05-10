@@ -201,68 +201,6 @@ public final class ConnectedAccountServiceGrpc {
     return getGetMagicLinkForConnectedAccountMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountRequest,
-      com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountResponse> getGetConnectedAccountMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetConnectedAccount",
-      requestType = com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountRequest,
-      com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountResponse> getGetConnectedAccountMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountResponse> getGetConnectedAccountMethod;
-    if ((getGetConnectedAccountMethod = ConnectedAccountServiceGrpc.getGetConnectedAccountMethod) == null) {
-      synchronized (ConnectedAccountServiceGrpc.class) {
-        if ((getGetConnectedAccountMethod = ConnectedAccountServiceGrpc.getGetConnectedAccountMethod) == null) {
-          ConnectedAccountServiceGrpc.getGetConnectedAccountMethod = getGetConnectedAccountMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetConnectedAccount"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new ConnectedAccountServiceMethodDescriptorSupplier("GetConnectedAccount"))
-              .build();
-        }
-      }
-    }
-    return getGetConnectedAccountMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountRequest,
-      com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse> getDisconnectConnectedAccountMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DisconnectConnectedAccount",
-      requestType = com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountRequest,
-      com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse> getDisconnectConnectedAccountMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse> getDisconnectConnectedAccountMethod;
-    if ((getDisconnectConnectedAccountMethod = ConnectedAccountServiceGrpc.getDisconnectConnectedAccountMethod) == null) {
-      synchronized (ConnectedAccountServiceGrpc.class) {
-        if ((getDisconnectConnectedAccountMethod = ConnectedAccountServiceGrpc.getDisconnectConnectedAccountMethod) == null) {
-          ConnectedAccountServiceGrpc.getDisconnectConnectedAccountMethod = getDisconnectConnectedAccountMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DisconnectConnectedAccount"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new ConnectedAccountServiceMethodDescriptorSupplier("DisconnectConnectedAccount"))
-              .build();
-        }
-      }
-    }
-    return getDisconnectConnectedAccountMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest,
       com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse> getGetConnectedAccountAuthMethod;
 
@@ -292,68 +230,6 @@ public final class ConnectedAccountServiceGrpc {
       }
     }
     return getGetConnectedAccountAuthMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest,
-      com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse> getGetConnectedAccountDetailsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetConnectedAccountDetails",
-      requestType = com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest,
-      com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse> getGetConnectedAccountDetailsMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse> getGetConnectedAccountDetailsMethod;
-    if ((getGetConnectedAccountDetailsMethod = ConnectedAccountServiceGrpc.getGetConnectedAccountDetailsMethod) == null) {
-      synchronized (ConnectedAccountServiceGrpc.class) {
-        if ((getGetConnectedAccountDetailsMethod = ConnectedAccountServiceGrpc.getGetConnectedAccountDetailsMethod) == null) {
-          ConnectedAccountServiceGrpc.getGetConnectedAccountDetailsMethod = getGetConnectedAccountDetailsMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetConnectedAccountDetails"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new ConnectedAccountServiceMethodDescriptorSupplier("GetConnectedAccountDetails"))
-              .build();
-        }
-      }
-    }
-    return getGetConnectedAccountDetailsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserRequest,
-      com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserResponse> getVerifyConnectedAccountUserMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "VerifyConnectedAccountUser",
-      requestType = com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserRequest,
-      com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserResponse> getVerifyConnectedAccountUserMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserResponse> getVerifyConnectedAccountUserMethod;
-    if ((getVerifyConnectedAccountUserMethod = ConnectedAccountServiceGrpc.getVerifyConnectedAccountUserMethod) == null) {
-      synchronized (ConnectedAccountServiceGrpc.class) {
-        if ((getVerifyConnectedAccountUserMethod = ConnectedAccountServiceGrpc.getVerifyConnectedAccountUserMethod) == null) {
-          ConnectedAccountServiceGrpc.getVerifyConnectedAccountUserMethod = getVerifyConnectedAccountUserMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VerifyConnectedAccountUser"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new ConnectedAccountServiceMethodDescriptorSupplier("VerifyConnectedAccountUser"))
-              .build();
-        }
-      }
-    }
-    return getVerifyConnectedAccountUserMethod;
   }
 
   /**
@@ -466,52 +342,12 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
-     * Get Connected Account by ID
-     * </pre>
-     */
-    default void getConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetConnectedAccountMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Disconnect a Connected Account
-     * </pre>
-     */
-    default void disconnectConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDisconnectConnectedAccountMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
      * Get Connected Account Authentication Details
      * </pre>
      */
     default void getConnectedAccountAuth(com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetConnectedAccountAuthMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Get Connected Account Details (without auth credentials)
-     * </pre>
-     */
-    default void getConnectedAccountDetails(com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetConnectedAccountDetailsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Verify connected account user after OAuth callback
-     * </pre>
-     */
-    default void verifyConnectedAccountUser(com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVerifyConnectedAccountUserMethod(), responseObserver);
     }
   }
 
@@ -610,28 +446,6 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
-     * Get Connected Account by ID
-     * </pre>
-     */
-    public void getConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetConnectedAccountMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Disconnect a Connected Account
-     * </pre>
-     */
-    public void disconnectConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDisconnectConnectedAccountMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
      * Get Connected Account Authentication Details
      * </pre>
      */
@@ -639,28 +453,6 @@ public final class ConnectedAccountServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetConnectedAccountAuthMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Get Connected Account Details (without auth credentials)
-     * </pre>
-     */
-    public void getConnectedAccountDetails(com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetConnectedAccountDetailsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Verify connected account user after OAuth callback
-     * </pre>
-     */
-    public void verifyConnectedAccountUser(com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getVerifyConnectedAccountUserMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -742,52 +534,12 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
-     * Get Connected Account by ID
-     * </pre>
-     */
-    public com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountResponse getConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetConnectedAccountMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Disconnect a Connected Account
-     * </pre>
-     */
-    public com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse disconnectConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDisconnectConnectedAccountMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
      * Get Connected Account Authentication Details
      * </pre>
      */
     public com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse getConnectedAccountAuth(com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetConnectedAccountAuthMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Get Connected Account Details (without auth credentials)
-     * </pre>
-     */
-    public com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse getConnectedAccountDetails(com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetConnectedAccountDetailsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Verify connected account user after OAuth callback
-     * </pre>
-     */
-    public com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserResponse verifyConnectedAccountUser(com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getVerifyConnectedAccountUserMethod(), getCallOptions(), request);
     }
   }
 
@@ -875,28 +627,6 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
-     * Get Connected Account by ID
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountResponse> getConnectedAccount(
-        com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetConnectedAccountMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Disconnect a Connected Account
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse> disconnectConnectedAccount(
-        com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDisconnectConnectedAccountMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
      * Get Connected Account Authentication Details
      * </pre>
      */
@@ -904,28 +634,6 @@ public final class ConnectedAccountServiceGrpc {
         com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetConnectedAccountAuthMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Get Connected Account Details (without auth credentials)
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse> getConnectedAccountDetails(
-        com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetConnectedAccountDetailsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Verify connected account user after OAuth callback
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserResponse> verifyConnectedAccountUser(
-        com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getVerifyConnectedAccountUserMethod(), getCallOptions()), request);
     }
   }
 
@@ -935,11 +643,7 @@ public final class ConnectedAccountServiceGrpc {
   private static final int METHODID_UPDATE_CONNECTED_ACCOUNT = 3;
   private static final int METHODID_DELETE_CONNECTED_ACCOUNT = 4;
   private static final int METHODID_GET_MAGIC_LINK_FOR_CONNECTED_ACCOUNT = 5;
-  private static final int METHODID_GET_CONNECTED_ACCOUNT = 6;
-  private static final int METHODID_DISCONNECT_CONNECTED_ACCOUNT = 7;
-  private static final int METHODID_GET_CONNECTED_ACCOUNT_AUTH = 8;
-  private static final int METHODID_GET_CONNECTED_ACCOUNT_DETAILS = 9;
-  private static final int METHODID_VERIFY_CONNECTED_ACCOUNT_USER = 10;
+  private static final int METHODID_GET_CONNECTED_ACCOUNT_AUTH = 6;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -982,25 +686,9 @@ public final class ConnectedAccountServiceGrpc {
           serviceImpl.getMagicLinkForConnectedAccount((com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountResponse>) responseObserver);
           break;
-        case METHODID_GET_CONNECTED_ACCOUNT:
-          serviceImpl.getConnectedAccount((com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountResponse>) responseObserver);
-          break;
-        case METHODID_DISCONNECT_CONNECTED_ACCOUNT:
-          serviceImpl.disconnectConnectedAccount((com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse>) responseObserver);
-          break;
         case METHODID_GET_CONNECTED_ACCOUNT_AUTH:
           serviceImpl.getConnectedAccountAuth((com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse>) responseObserver);
-          break;
-        case METHODID_GET_CONNECTED_ACCOUNT_DETAILS:
-          serviceImpl.getConnectedAccountDetails((com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse>) responseObserver);
-          break;
-        case METHODID_VERIFY_CONNECTED_ACCOUNT_USER:
-          serviceImpl.verifyConnectedAccountUser((com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1063,40 +751,12 @@ public final class ConnectedAccountServiceGrpc {
               com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountResponse>(
                 service, METHODID_GET_MAGIC_LINK_FOR_CONNECTED_ACCOUNT)))
         .addMethod(
-          getGetConnectedAccountMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountRequest,
-              com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountResponse>(
-                service, METHODID_GET_CONNECTED_ACCOUNT)))
-        .addMethod(
-          getDisconnectConnectedAccountMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountRequest,
-              com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse>(
-                service, METHODID_DISCONNECT_CONNECTED_ACCOUNT)))
-        .addMethod(
           getGetConnectedAccountAuthMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest,
               com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse>(
                 service, METHODID_GET_CONNECTED_ACCOUNT_AUTH)))
-        .addMethod(
-          getGetConnectedAccountDetailsMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest,
-              com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse>(
-                service, METHODID_GET_CONNECTED_ACCOUNT_DETAILS)))
-        .addMethod(
-          getVerifyConnectedAccountUserMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserRequest,
-              com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserResponse>(
-                service, METHODID_VERIFY_CONNECTED_ACCOUNT_USER)))
         .build();
   }
 
@@ -1151,11 +811,7 @@ public final class ConnectedAccountServiceGrpc {
               .addMethod(getUpdateConnectedAccountMethod())
               .addMethod(getDeleteConnectedAccountMethod())
               .addMethod(getGetMagicLinkForConnectedAccountMethod())
-              .addMethod(getGetConnectedAccountMethod())
-              .addMethod(getDisconnectConnectedAccountMethod())
               .addMethod(getGetConnectedAccountAuthMethod())
-              .addMethod(getGetConnectedAccountDetailsMethod())
-              .addMethod(getVerifyConnectedAccountUserMethod())
               .build();
         }
       }

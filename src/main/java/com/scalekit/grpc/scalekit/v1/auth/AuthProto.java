@@ -51,11 +51,6 @@ public final class AuthProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_auth_GetAuthCustomizationsRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_auth_PortalSettings_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_auth_PortalSettings_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_auth_GetAuthCustomizationsResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -192,205 +187,172 @@ public final class AuthProto {
       "ntB\010\272H\005\202\001\002\020\001R\006intent\"\\\n\033DiscoveryAuthMet" +
       "hodResponse\022=\n\013auth_method\030\001 \001(\0132\034.scale" +
       "kit.v1.auth.AuthMethodR\nauthMethod\"\036\n\034Ge" +
-      "tAuthCustomizationsRequest\"\217\003\n\016PortalSet" +
-      "tings\022\230\001\n\017custom_branding\030\001 \001(\010Bo\222Al2dIn" +
-      "dicates whether custom portal branding i" +
-      "s enabled for this workspace based on bi" +
-      "lling subscriptionJ\004trueR\016customBranding" +
-      "\022\305\001\n\027new_self_serve_sso_scim\030\002 \001(\010B\211\001\222A\205" +
-      "\0012|Indicates whether the new self-serve " +
-      "SSO/SCIM flow should be shown in the hos" +
-      "ted pages (rollout-driven, not billing-d" +
-      "erived)J\005falseH\000R\023newSelfServeSsoScim\210\001\001" +
-      "B\032\n\030_new_self_serve_sso_scim\"\262\001\n\035GetAuth" +
-      "CustomizationsResponse\022N\n\026customization_" +
-      "settings\030\002 \001(\0132\027.google.protobuf.StructR" +
-      "\025customizationSettings\022A\n\010settings\030\003 \001(\013" +
-      "2 .scalekit.v1.auth.PortalSettingsB\003\340A\003R" +
-      "\010settings\"N\n\027GetAuthFeaturesResponse\0223\n\010" +
-      "features\030\001 \001(\0132\027.google.protobuf.StructR" +
-      "\010features\"U\n\034VerifyPasswordLessOtpReques" +
-      "t\0225\n\007otp_req\030\002 \001(\0132\034.scalekit.v1.auth.OT" +
-      "PRequestR\006otpReq\"\037\n\035VerifyPasswordLessOt" +
-      "pResponse\"i\n\nOTPRequest\022[\n\016code_challeng" +
-      "e\030\001 \001(\tB4\222A(2\034OTP sent to the user\'s ema" +
-      "ilJ\010\"123456\"\272H\006r\004\020\005\030\006R\rcodeChallenge\"\324\001\n" +
-      "\035ListUserOrganizationsResponse\022D\n\rorgani" +
-      "zations\030\001 \003(\0132\036.scalekit.v1.auth.Organiz" +
-      "ationR\rorganizations\0221\n\004user\030\002 \001(\0132\035.sca" +
-      "lekit.v1.auth.UserDetailsR\004user\022:\n\006inten" +
-      "t\030\003 \001(\0162\030.scalekit.v1.auth.IntentB\010\272H\005\202\001" +
-      "\002\020\001R\006intent\"\213\004\n\014Organization\022\016\n\002id\030\001 \001(\t" +
-      "R\002id\022\022\n\004name\030\002 \001(\tR\004name\022+\n\021membership_s" +
-      "tatus\030\003 \001(\tR\020membershipStatus\022=\n\030invitat" +
-      "ion_inviter_email\030\004 \001(\tH\000R\026invitationInv" +
-      "iterEmail\210\001\001\022U\n\026invitation_accepted_at\030\005" +
-      " \001(\0132\032.google.protobuf.TimestampH\001R\024invi" +
-      "tationAcceptedAt\210\001\001\022S\n\025invitation_create" +
-      "d_at\030\006 \001(\0132\032.google.protobuf.TimestampH\002" +
-      "R\023invitationCreatedAt\210\001\001\022S\n\025invitation_e" +
-      "xpires_at\030\007 \001(\0132\032.google.protobuf.Timest" +
-      "ampH\003R\023invitationExpiresAt\210\001\001B\033\n\031_invita" +
-      "tion_inviter_emailB\031\n\027_invitation_accept" +
-      "ed_atB\030\n\026_invitation_created_atB\030\n\026_invi" +
-      "tation_expires_at\"_\n\013UserDetails\022\024\n\005emai" +
-      "l\030\001 \001(\tR\005email\022\035\n\nfirst_name\030\002 \001(\tR\tfirs" +
-      "tName\022\033\n\tlast_name\030\003 \001(\tR\010lastName\"\304\001\n\031S" +
-      "ignupOrganizationRequest\022+\n\021organization" +
-      "_name\030\001 \001(\tR\020organizationName\022\035\n\nfirst_n" +
-      "ame\030\002 \001(\tR\tfirstName\022\033\n\tlast_name\030\003 \001(\tR" +
-      "\010lastName\022\033\n\tfull_name\030\004 \001(\tR\010fullName\022!" +
-      "\n\014phone_number\030\005 \001(\tR\013phoneNumber\"r\n\032Sig" +
-      "nupOrganizationResponse\022\'\n\017organization_" +
-      "id\030\001 \001(\tR\016organizationId\022+\n\021organization" +
-      "_name\030\002 \001(\tR\020organizationName\"\326\002\n\035Update" +
-      "LoginUserDetailsRequest\022v\n\rconnection_id" +
-      "\030\001 \001(\tBQ\222AE2+Connection ID. Unique ID fo" +
-      "r the connectionJ\026\"conn_121312434123312\"" +
-      "\272H\006r\004\020\001\030 R\014connectionId\022\220\001\n\020login_reques" +
-      "t_id\030\002 \001(\tBf\222A]2BLogin Request ID that w" +
-      "as shared as part of authorization initi" +
-      "ateJ\027\"lri_73415099636808061\"\272H\003\310\001\001R\016logi" +
-      "nRequestId\022*\n\004user\030\003 \001(\0132\026.scalekit.v1.a" +
-      "uth.UserR\004user\"\225\020\n\004User\022\203\001\n\003sub\030\001 \001(\tBq\222" +
-      "Ag2WSubject identifier for the user (typ" +
-      "ically a unique user ID from the identit" +
-      "y provider)J\014\"1234567890\"\272H\004r\002\020\001R\003sub\022R\n" +
-      "\005email\030\002 \001(\tB<\222A22\034User\'s primary email " +
-      "addressJ\022\"user@example.com\"\272H\004r\002\020\001R\005emai" +
-      "l\022=\n\ngiven_name\030\003 \001(\tB\036\222A\0332\021User\'s first" +
-      " nameJ\006\"John\"R\tgivenName\022=\n\013family_name\030" +
-      "\004 \001(\tB\034\222A\0312\020User\'s last nameJ\005\"Doe\"R\nfam" +
-      "ilyName\022\210\001\n\016email_verified\030\005 \001(\010Ba\222A^2VI" +
-      "ndicates whether the user\'s email addres" +
-      "s has been verified by the identity prov" +
-      "ider.J\004trueR\remailVerified\022c\n\014phone_numb" +
-      "er\030\006 \001(\tB@\222A=2,User\'s primary phone numb" +
-      "er in E.164 format.J\r\"+1234567890\"R\013phon" +
-      "eNumber\022\225\001\n\025phone_number_verified\030\007 \001(\010B" +
-      "a\222A^2UIndicates whether the user\'s phone" +
-      " number has been verified by the identit" +
-      "y provider.J\005falseR\023phoneNumberVerified\022" +
-      "B\n\004name\030\010 \001(\tB.\222A+2\035Full display name of" +
-      " the userJ\n\"John Doe\"R\004name\022b\n\022preferred" +
-      "_username\030\t \001(\tB3\222A02#User\'s preferred u" +
-      "sername or handleJ\t\"johndoe\"R\021preferredU" +
-      "sername\022b\n\007picture\030\n \001(\tBH\222AE2!URL to th" +
-      "e user\'s profile pictureJ \"https://examp" +
-      "le.com/avatar.jpg\"R\007picture\022X\n\006gender\030\013 " +
-      "\001(\tB@\222A=23User\'s gender as reported by t" +
-      "he identity provider.J\006\"male\"R\006gender\022e\n" +
-      "\006locale\030\014 \001(\tBM\222AJ2?User\'s locale or lan" +
-      "guage preference (IETF BCP 47 language t" +
-      "ag)J\007\"en-US\"R\006locale\022f\n\006groups\030\r \003(\tBN\222A" +
-      "K2/List of group names or IDs the user b" +
-      "elongs to.J\030[\"admins\", \"developers\"]R\006gr" +
-      "oups\022\362\001\n\021custom_attributes\030\016 \001(\0132\027.googl" +
-      "e.protobuf.StructB\253\001\222A\247\0012mCustom attribu" +
-      "tes for the user, represented as a key-v" +
-      "alue map. Used for additional identity p" +
-      "rovider claims.J6{\"department\": \"Enginee" +
-      "ring\", \"employee_id\": \"E12345\"}R\020customA" +
-      "ttributes\022\261\001\n\030organization_external_id\030\017" +
-      " \001(\tBr\222Ao2EIdentifier for the user\342\200\231s o" +
-      "rganization within the identity provider" +
-      "J&\"132d085d-d89d-4a2e-95bb-49bde680d14f\"" +
-      "H\000R\026organizationExternalId\210\001\001\022S\n\005roles\030\020" +
-      " \003(\tB=\222A:2#List of roles assigned to the" +
-      " user.J\023[\"admin\", \"editor\"]R\005roles\022\275\001\n\032o" +
-      "rganization_external_name\030\021 \001(\tBz\222Ao2`Na" +
-      "me of the organization the user is authe" +
-      "nticating into. Used to display on the c" +
-      "onsent screen.J\013\"Acme Corp\"\272H\005r\003\030\310\001H\001R\030o" +
-      "rganizationExternalName\210\001\001B\033\n\031_organizat" +
-      "ion_external_idB\035\n\033_organization_externa" +
-      "l_name\"\261\002\n\024GetAuthStateResponse\022:\n\nauth_" +
-      "state\030\001 \001(\0162\033.scalekit.v1.auth.AuthState" +
-      "R\tauthState\0221\n\004user\030\002 \001(\0132\035.scalekit.v1." +
-      "auth.UserDetailsR\004user\022\251\001\n\nlogin_hint\030\003 " +
-      "\001(\tB\211\001\222A\205\0012oLogin hint from the original" +
-      " authorize request. Typically an email a" +
-      "ddress used to pre-fill the login UI inp" +
-      "ut.J\022\"user@example.com\"R\tloginHint\"\214\001\n\023G" +
-      "etAuthErrorRequest\022u\n\010error_id\030\001 \001(\tBZ\222A" +
-      "H2.Unique identifier for the authenticat" +
-      "ion errorJ\026\"err_1234567890abcdef\"\272H\014r\n\020\001" +
-      "\030@:\004err_R\007errorId\"Y\n\024GetAuthErrorRespons" +
-      "e\022\024\n\005error\030\001 \001(\tR\005error\022+\n\021error_descrip" +
-      "tion\030\002 \001(\tR\020errorDescription*:\n\006Intent\022\026" +
-      "\n\022INTENT_UNSPECIFIED\020\000\022\013\n\007sign_in\020\001\022\013\n\007s" +
-      "ign_up\020\002*\264\004\n\tAuthState\022\032\n\026AUTH_STATE_UNS" +
-      "PECIFIED\020\000\022\036\n\032AUTHENTICATION_IN_PROGRESS" +
-      "\020\001\022\031\n\025ORGANIZATION_SWITCHER\020\002\022\031\n\025ORGANIZ" +
-      "ATION_SELECTED\020\003\022\027\n\023ORGANIZATION_SIGNUP\020" +
-      "\004\022 \n\034ORGANIZATION_SWITCHER_SIGNUP\020\005\022\034\n\030O" +
-      "TP_VERIFICATION_PENDING\020\006\022\023\n\017MAGIC_LINK_" +
-      "SENT\020\007\022&\n\"LINK_SENT_OTP_VERIFICATION_PEN" +
-      "DING\020\010\022\020\n\014OTP_VERIFIED\020\t\022\021\n\rLINK_VERIFIE" +
-      "D\020\n\022\025\n\021SSO_AUTHENTICATED\020\013\022\024\n\020ORG_USER_C" +
-      "REATED\020\014\022\034\n\030AUTHENTICATION_COMPLETED\020\r\022\031" +
-      "\n\025AUTHENTICATION_FAILED\020\016\022\025\n\021WEBAUTHN_VE" +
-      "RIFIED\020\017\022 \n\034VERIFICATION_MAGIC_LINK_SENT" +
-      "\020\020\022$\n VERIFICATION_MAGIC_LINK_OTP_SENT\020\021" +
-      "\022\031\n\025VERIFICATION_OTP_SENT\020\022\022\032\n\026VERIFICAT" +
-      "ION_COMPLETED\020\0232\247\020\n\013AuthService\022\230\001\n\017List" +
-      "AuthMethods\022(.scalekit.v1.auth.ListAuthM" +
-      "ethodsRequest\032).scalekit.v1.auth.ListAut" +
-      "hMethodsResponse\"0\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202" +
-      "\323\344\223\002\025\022\023/api/v1/authmethods\022\272\001\n\023Discovery" +
-      "AuthMethod\022,.scalekit.v1.auth.DiscoveryA" +
-      "uthMethodRequest\032-.scalekit.v1.auth.Disc" +
-      "overyAuthMethodResponse\"F\202\265\030\002\030\001\372\322\344\223\002\t\022\007P" +
-      "REVIEW\202\323\344\223\002+\"\026/api/v1/auth:discovery:\021di" +
-      "scovery_request\022\300\001\n\025VerifyPasswordLessOt" +
-      "p\022..scalekit.v1.auth.VerifyPasswordLessO" +
-      "tpRequest\032/.scalekit.v1.auth.VerifyPassw" +
-      "ordLessOtpResponse\"F\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIE" +
-      "W\202\323\344\223\002+\" /api/v1/auth/passwordless:verif" +
-      "y:\007otp_req\022\203\001\n\022ResendPasswordless\022\026.goog" +
-      "le.protobuf.Empty\032\026.google.protobuf.Empt" +
-      "y\"=\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\"\" /api/v1/" +
-      "auth/passwordless:resend\022\231\001\n\025ListUserOrg" +
-      "anizations\022\026.google.protobuf.Empty\032/.sca" +
-      "lekit.v1.auth.ListUserOrganizationsRespo" +
-      "nse\"7\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\034\022\032/api/v" +
-      "1/auth:organizations\022\244\001\n\022SignupOrganizat" +
-      "ion\022+.scalekit.v1.auth.SignupOrganizatio" +
-      "nRequest\032,.scalekit.v1.auth.SignupOrgani" +
-      "zationResponse\"3\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
-      "\223\002\030\"\023/api/v1/auth:signup:\001*\022\177\n\014GetAuthSt" +
-      "ate\022\026.google.protobuf.Empty\032&.scalekit.v" +
-      "1.auth.GetAuthStateResponse\"/\202\265\030\002\030\001\372\322\344\223\002" +
-      "\t\022\007PREVIEW\202\323\344\223\002\024\022\022/api/v1/auth/state\022\266\001\n" +
-      "\014GetAuthError\022%.scalekit.v1.auth.GetAuth" +
-      "ErrorRequest\032&.scalekit.v1.auth.GetAuthE" +
-      "rrorResponse\"W\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002" +
-      "<\022\031/api/v1/errors/{error_id}Z\037\022\035/api/v1/" +
-      "auth/error/{error_id}\022j\n\006Logout\022\026.google" +
-      ".protobuf.Empty\032\026.google.protobuf.Empty\"" +
-      "0\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\025\"\023/api/v1/au" +
-      "th/logout\022\262\001\n\025GetAuthCustomizations\022..sc" +
-      "alekit.v1.auth.GetAuthCustomizationsRequ" +
-      "est\032/.scalekit.v1.auth.GetAuthCustomizat" +
-      "ionsResponse\"8\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002" +
-      "\035\022\033/api/v1/auth:customizations\022\210\001\n\017GetAu" +
-      "thFeatures\022\026.google.protobuf.Empty\032).sca" +
-      "lekit.v1.auth.GetAuthFeaturesResponse\"2\202" +
-      "\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\027\022\025/api/v1/auth" +
-      ":features\022\315\002\n\026UpdateLoginUserDetails\022/.s" +
-      "calekit.v1.auth.UpdateLoginUserDetailsRe" +
-      "quest\032\026.google.protobuf.Empty\"\351\001\222Az\n\013Con" +
-      "nections\022%Update User Details for login " +
-      "request\032%Update User Details for login r" +
-      "equestJ\035\n\003200\022\026\n\024Deleted Successfully\202\265\030" +
-      "\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002Q\"I/api/v1/connec" +
-      "tions/{connection_id}/auth-requests/{log" +
-      "in_request_id}/user:\004userB\301\001\n\"com.scalek" +
-      "it.grpc.scalekit.v1.authB\tAuthProtoP\001Z.g" +
-      "ithub.com/scalekit-inc/scalekit/pkg/grpc" +
-      "/auth\242\002\003SVA\252\002\020Scalekit.V1.Auth\312\002\020Scaleki" +
-      "t\\V1\\Auth\342\002\034Scalekit\\V1\\Auth\\GPBMetadata" +
-      "\352\002\022Scalekit::V1::Authb\006proto3"
+      "tAuthCustomizationsRequest\"o\n\035GetAuthCus" +
+      "tomizationsResponse\022N\n\026customization_set" +
+      "tings\030\002 \001(\0132\027.google.protobuf.StructR\025cu" +
+      "stomizationSettings\"N\n\027GetAuthFeaturesRe" +
+      "sponse\0223\n\010features\030\001 \001(\0132\027.google.protob" +
+      "uf.StructR\010features\"U\n\034VerifyPasswordLes" +
+      "sOtpRequest\0225\n\007otp_req\030\002 \001(\0132\034.scalekit." +
+      "v1.auth.OTPRequestR\006otpReq\"\037\n\035VerifyPass" +
+      "wordLessOtpResponse\"i\n\nOTPRequest\022[\n\016cod" +
+      "e_challenge\030\001 \001(\tB4\222A(2\034OTP sent to the " +
+      "user\'s emailJ\010\"123456\"\272H\006r\004\020\005\030\006R\rcodeCha" +
+      "llenge\"\324\001\n\035ListUserOrganizationsResponse" +
+      "\022D\n\rorganizations\030\001 \003(\0132\036.scalekit.v1.au" +
+      "th.OrganizationR\rorganizations\0221\n\004user\030\002" +
+      " \001(\0132\035.scalekit.v1.auth.UserDetailsR\004use" +
+      "r\022:\n\006intent\030\003 \001(\0162\030.scalekit.v1.auth.Int" +
+      "entB\010\272H\005\202\001\002\020\001R\006intent\"\213\004\n\014Organization\022\016" +
+      "\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022+\n\021me" +
+      "mbership_status\030\003 \001(\tR\020membershipStatus\022" +
+      "=\n\030invitation_inviter_email\030\004 \001(\tH\000R\026inv" +
+      "itationInviterEmail\210\001\001\022U\n\026invitation_acc" +
+      "epted_at\030\005 \001(\0132\032.google.protobuf.Timesta" +
+      "mpH\001R\024invitationAcceptedAt\210\001\001\022S\n\025invitat" +
+      "ion_created_at\030\006 \001(\0132\032.google.protobuf.T" +
+      "imestampH\002R\023invitationCreatedAt\210\001\001\022S\n\025in" +
+      "vitation_expires_at\030\007 \001(\0132\032.google.proto" +
+      "buf.TimestampH\003R\023invitationExpiresAt\210\001\001B" +
+      "\033\n\031_invitation_inviter_emailB\031\n\027_invitat" +
+      "ion_accepted_atB\030\n\026_invitation_created_a" +
+      "tB\030\n\026_invitation_expires_at\"_\n\013UserDetai" +
+      "ls\022\024\n\005email\030\001 \001(\tR\005email\022\035\n\nfirst_name\030\002" +
+      " \001(\tR\tfirstName\022\033\n\tlast_name\030\003 \001(\tR\010last" +
+      "Name\"\304\001\n\031SignupOrganizationRequest\022+\n\021or" +
+      "ganization_name\030\001 \001(\tR\020organizationName\022" +
+      "\035\n\nfirst_name\030\002 \001(\tR\tfirstName\022\033\n\tlast_n" +
+      "ame\030\003 \001(\tR\010lastName\022\033\n\tfull_name\030\004 \001(\tR\010" +
+      "fullName\022!\n\014phone_number\030\005 \001(\tR\013phoneNum" +
+      "ber\"r\n\032SignupOrganizationResponse\022\'\n\017org" +
+      "anization_id\030\001 \001(\tR\016organizationId\022+\n\021or" +
+      "ganization_name\030\002 \001(\tR\020organizationName\"" +
+      "\326\002\n\035UpdateLoginUserDetailsRequest\022v\n\rcon" +
+      "nection_id\030\001 \001(\tBQ\222AE2+Connection ID. Un" +
+      "ique ID for the connectionJ\026\"conn_121312" +
+      "434123312\"\272H\006r\004\020\001\030 R\014connectionId\022\220\001\n\020lo" +
+      "gin_request_id\030\002 \001(\tBf\222A]2BLogin Request" +
+      " ID that was shared as part of authoriza" +
+      "tion initiateJ\027\"lri_73415099636808061\"\272H" +
+      "\003\310\001\001R\016loginRequestId\022*\n\004user\030\003 \001(\0132\026.sca" +
+      "lekit.v1.auth.UserR\004user\"\220\014\n\004User\022\203\001\n\003su" +
+      "b\030\001 \001(\tBq\222Ag2WSubject identifier for the" +
+      " user (typically a unique user ID from t" +
+      "he identity provider)J\014\"1234567890\"\272H\004r\002" +
+      "\020\001R\003sub\022R\n\005email\030\002 \001(\tB<\222A22\034User\'s prim" +
+      "ary email addressJ\022\"user@example.com\"\272H\004" +
+      "r\002\020\001R\005email\022=\n\ngiven_name\030\003 \001(\tB\036\222A\0332\021Us" +
+      "er\'s first nameJ\006\"John\"R\tgivenName\022=\n\013fa" +
+      "mily_name\030\004 \001(\tB\034\222A\0312\020User\'s last nameJ\005" +
+      "\"Doe\"R\nfamilyName\022\210\001\n\016email_verified\030\005 \001" +
+      "(\010Ba\222A^2VIndicates whether the user\'s em" +
+      "ail address has been verified by the ide" +
+      "ntity provider.J\004trueR\remailVerified\022c\n\014" +
+      "phone_number\030\006 \001(\tB@\222A=2,User\'s primary " +
+      "phone number in E.164 format.J\r\"+1234567" +
+      "890\"R\013phoneNumber\022\225\001\n\025phone_number_verif" +
+      "ied\030\007 \001(\010Ba\222A^2UIndicates whether the us" +
+      "er\'s phone number has been verified by t" +
+      "he identity provider.J\005falseR\023phoneNumbe" +
+      "rVerified\022B\n\004name\030\010 \001(\tB.\222A+2\035Full displ" +
+      "ay name of the userJ\n\"John Doe\"R\004name\022b\n" +
+      "\022preferred_username\030\t \001(\tB3\222A02#User\'s p" +
+      "referred username or handleJ\t\"johndoe\"R\021" +
+      "preferredUsername\022b\n\007picture\030\n \001(\tBH\222AE2" +
+      "!URL to the user\'s profile pictureJ \"htt" +
+      "ps://example.com/avatar.jpg\"R\007picture\022X\n" +
+      "\006gender\030\013 \001(\tB@\222A=23User\'s gender as rep" +
+      "orted by the identity provider.J\006\"male\"R" +
+      "\006gender\022e\n\006locale\030\014 \001(\tBM\222AJ2?User\'s loc" +
+      "ale or language preference (IETF BCP 47 " +
+      "language tag)J\007\"en-US\"R\006locale\022f\n\006groups" +
+      "\030\r \003(\tBN\222AK2/List of group names or IDs " +
+      "the user belongs to.J\030[\"admins\", \"develo" +
+      "pers\"]R\006groups\022\362\001\n\021custom_attributes\030\016 \001" +
+      "(\0132\027.google.protobuf.StructB\253\001\222A\247\0012mCust" +
+      "om attributes for the user, represented " +
+      "as a key-value map. Used for additional " +
+      "identity provider claims.J6{\"department\"" +
+      ": \"Engineering\", \"employee_id\": \"E12345\"" +
+      "}R\020customAttributes\"R\n\024GetAuthStateRespo" +
+      "nse\022:\n\nauth_state\030\001 \001(\0162\033.scalekit.v1.au" +
+      "th.AuthStateR\tauthState\"\214\001\n\023GetAuthError" +
+      "Request\022u\n\010error_id\030\001 \001(\tBZ\222AH2.Unique i" +
+      "dentifier for the authentication errorJ\026" +
+      "\"err_1234567890abcdef\"\272H\014r\n\020\001\030@:\004err_R\007e" +
+      "rrorId\"Y\n\024GetAuthErrorResponse\022\024\n\005error\030" +
+      "\001 \001(\tR\005error\022+\n\021error_description\030\002 \001(\tR" +
+      "\020errorDescription*:\n\006Intent\022\026\n\022INTENT_UN" +
+      "SPECIFIED\020\000\022\013\n\007sign_in\020\001\022\013\n\007sign_up\020\002*\265\003" +
+      "\n\tAuthState\022\032\n\026AUTH_STATE_UNSPECIFIED\020\000\022" +
+      "\036\n\032AUTHENTICATION_IN_PROGRESS\020\001\022\031\n\025ORGAN" +
+      "IZATION_SWITCHER\020\002\022\031\n\025ORGANIZATION_SELEC" +
+      "TED\020\003\022\027\n\023ORGANIZATION_SIGNUP\020\004\022 \n\034ORGANI" +
+      "ZATION_SWITCHER_SIGNUP\020\005\022\034\n\030OTP_VERIFICA" +
+      "TION_PENDING\020\006\022\023\n\017MAGIC_LINK_SENT\020\007\022&\n\"L" +
+      "INK_SENT_OTP_VERIFICATION_PENDING\020\010\022\020\n\014O" +
+      "TP_VERIFIED\020\t\022\021\n\rLINK_VERIFIED\020\n\022\025\n\021SSO_" +
+      "AUTHENTICATED\020\013\022\024\n\020ORG_USER_CREATED\020\014\022\034\n" +
+      "\030AUTHENTICATION_COMPLETED\020\r\022\031\n\025AUTHENTIC" +
+      "ATION_FAILED\020\016\022\025\n\021WEBAUTHN_VERIFIED\020\0172\247\020" +
+      "\n\013AuthService\022\230\001\n\017ListAuthMethods\022(.scal" +
+      "ekit.v1.auth.ListAuthMethodsRequest\032).sc" +
+      "alekit.v1.auth.ListAuthMethodsResponse\"0" +
+      "\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\025\022\023/api/v1/aut" +
+      "hmethods\022\272\001\n\023DiscoveryAuthMethod\022,.scale" +
+      "kit.v1.auth.DiscoveryAuthMethodRequest\032-" +
+      ".scalekit.v1.auth.DiscoveryAuthMethodRes" +
+      "ponse\"F\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002+\"\026/api" +
+      "/v1/auth:discovery:\021discovery_request\022\300\001" +
+      "\n\025VerifyPasswordLessOtp\022..scalekit.v1.au" +
+      "th.VerifyPasswordLessOtpRequest\032/.scalek" +
+      "it.v1.auth.VerifyPasswordLessOtpResponse" +
+      "\"F\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002+\" /api/v1/a" +
+      "uth/passwordless:verify:\007otp_req\022\203\001\n\022Res" +
+      "endPasswordless\022\026.google.protobuf.Empty\032" +
+      "\026.google.protobuf.Empty\"=\202\265\030\002\030\001\372\322\344\223\002\t\022\007P" +
+      "REVIEW\202\323\344\223\002\"\" /api/v1/auth/passwordless:" +
+      "resend\022\231\001\n\025ListUserOrganizations\022\026.googl" +
+      "e.protobuf.Empty\032/.scalekit.v1.auth.List" +
+      "UserOrganizationsResponse\"7\202\265\030\002\030\001\372\322\344\223\002\t\022" +
+      "\007PREVIEW\202\323\344\223\002\034\022\032/api/v1/auth:organizatio" +
+      "ns\022\244\001\n\022SignupOrganization\022+.scalekit.v1." +
+      "auth.SignupOrganizationRequest\032,.scaleki" +
+      "t.v1.auth.SignupOrganizationResponse\"3\202\265" +
+      "\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\030\"\023/api/v1/auth:" +
+      "signup:\001*\022\177\n\014GetAuthState\022\026.google.proto" +
+      "buf.Empty\032&.scalekit.v1.auth.GetAuthStat" +
+      "eResponse\"/\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\024\022\022" +
+      "/api/v1/auth/state\022\266\001\n\014GetAuthError\022%.sc" +
+      "alekit.v1.auth.GetAuthErrorRequest\032&.sca" +
+      "lekit.v1.auth.GetAuthErrorResponse\"W\202\265\030\002" +
+      "\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002<\022\031/api/v1/errors/" +
+      "{error_id}Z\037\022\035/api/v1/auth/error/{error_" +
+      "id}\022j\n\006Logout\022\026.google.protobuf.Empty\032\026." +
+      "google.protobuf.Empty\"0\202\265\030\002\030\001\372\322\344\223\002\t\022\007PRE" +
+      "VIEW\202\323\344\223\002\025\"\023/api/v1/auth/logout\022\262\001\n\025GetA" +
+      "uthCustomizations\022..scalekit.v1.auth.Get" +
+      "AuthCustomizationsRequest\032/.scalekit.v1." +
+      "auth.GetAuthCustomizationsResponse\"8\202\265\030\002" +
+      "\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\035\022\033/api/v1/auth:cu" +
+      "stomizations\022\210\001\n\017GetAuthFeatures\022\026.googl" +
+      "e.protobuf.Empty\032).scalekit.v1.auth.GetA" +
+      "uthFeaturesResponse\"2\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVI" +
+      "EW\202\323\344\223\002\027\022\025/api/v1/auth:features\022\315\002\n\026Upda" +
+      "teLoginUserDetails\022/.scalekit.v1.auth.Up" +
+      "dateLoginUserDetailsRequest\032\026.google.pro" +
+      "tobuf.Empty\"\351\001\222Az\n\013Connections\022%Update U" +
+      "ser Details for login request\032%Update Us" +
+      "er Details for login requestJ\035\n\003200\022\026\n\024D" +
+      "eleted Successfully\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW" +
+      "\202\323\344\223\002Q\"I/api/v1/connections/{connection_" +
+      "id}/auth-requests/{login_request_id}/use" +
+      "r:\004userB\301\001\n\"com.scalekit.grpc.scalekit.v" +
+      "1.authB\tAuthProtoP\001Z.github.com/scalekit" +
+      "-inc/scalekit/pkg/grpc/auth\242\002\003SVA\252\002\020Scal" +
+      "ekit.V1.Auth\312\002\020Scalekit\\V1\\Auth\342\002\034Scalek" +
+      "it\\V1\\Auth\\GPBMetadata\352\002\022Scalekit::V1::A" +
+      "uthb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -449,98 +411,92 @@ public final class AuthProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_GetAuthCustomizationsRequest_descriptor,
         new java.lang.String[] { });
-    internal_static_scalekit_v1_auth_PortalSettings_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_scalekit_v1_auth_PortalSettings_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_auth_PortalSettings_descriptor,
-        new java.lang.String[] { "CustomBranding", "NewSelfServeSsoScim", });
     internal_static_scalekit_v1_auth_GetAuthCustomizationsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_scalekit_v1_auth_GetAuthCustomizationsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_GetAuthCustomizationsResponse_descriptor,
-        new java.lang.String[] { "CustomizationSettings", "Settings", });
+        new java.lang.String[] { "CustomizationSettings", });
     internal_static_scalekit_v1_auth_GetAuthFeaturesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_scalekit_v1_auth_GetAuthFeaturesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_GetAuthFeaturesResponse_descriptor,
         new java.lang.String[] { "Features", });
     internal_static_scalekit_v1_auth_VerifyPasswordLessOtpRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_scalekit_v1_auth_VerifyPasswordLessOtpRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_VerifyPasswordLessOtpRequest_descriptor,
         new java.lang.String[] { "OtpReq", });
     internal_static_scalekit_v1_auth_VerifyPasswordLessOtpResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_scalekit_v1_auth_VerifyPasswordLessOtpResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_VerifyPasswordLessOtpResponse_descriptor,
         new java.lang.String[] { });
     internal_static_scalekit_v1_auth_OTPRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_scalekit_v1_auth_OTPRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_OTPRequest_descriptor,
         new java.lang.String[] { "CodeChallenge", });
     internal_static_scalekit_v1_auth_ListUserOrganizationsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_scalekit_v1_auth_ListUserOrganizationsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_ListUserOrganizationsResponse_descriptor,
         new java.lang.String[] { "Organizations", "User", "Intent", });
     internal_static_scalekit_v1_auth_Organization_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_scalekit_v1_auth_Organization_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_Organization_descriptor,
         new java.lang.String[] { "Id", "Name", "MembershipStatus", "InvitationInviterEmail", "InvitationAcceptedAt", "InvitationCreatedAt", "InvitationExpiresAt", });
     internal_static_scalekit_v1_auth_UserDetails_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_scalekit_v1_auth_UserDetails_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_UserDetails_descriptor,
         new java.lang.String[] { "Email", "FirstName", "LastName", });
     internal_static_scalekit_v1_auth_SignupOrganizationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_scalekit_v1_auth_SignupOrganizationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_SignupOrganizationRequest_descriptor,
         new java.lang.String[] { "OrganizationName", "FirstName", "LastName", "FullName", "PhoneNumber", });
     internal_static_scalekit_v1_auth_SignupOrganizationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_scalekit_v1_auth_SignupOrganizationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_SignupOrganizationResponse_descriptor,
         new java.lang.String[] { "OrganizationId", "OrganizationName", });
     internal_static_scalekit_v1_auth_UpdateLoginUserDetailsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_scalekit_v1_auth_UpdateLoginUserDetailsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_UpdateLoginUserDetailsRequest_descriptor,
         new java.lang.String[] { "ConnectionId", "LoginRequestId", "User", });
     internal_static_scalekit_v1_auth_User_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_scalekit_v1_auth_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_User_descriptor,
-        new java.lang.String[] { "Sub", "Email", "GivenName", "FamilyName", "EmailVerified", "PhoneNumber", "PhoneNumberVerified", "Name", "PreferredUsername", "Picture", "Gender", "Locale", "Groups", "CustomAttributes", "OrganizationExternalId", "Roles", "OrganizationExternalName", });
+        new java.lang.String[] { "Sub", "Email", "GivenName", "FamilyName", "EmailVerified", "PhoneNumber", "PhoneNumberVerified", "Name", "PreferredUsername", "Picture", "Gender", "Locale", "Groups", "CustomAttributes", });
     internal_static_scalekit_v1_auth_GetAuthStateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_scalekit_v1_auth_GetAuthStateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_GetAuthStateResponse_descriptor,
-        new java.lang.String[] { "AuthState", "User", "LoginHint", });
+        new java.lang.String[] { "AuthState", });
     internal_static_scalekit_v1_auth_GetAuthErrorRequest_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_scalekit_v1_auth_GetAuthErrorRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_GetAuthErrorRequest_descriptor,
         new java.lang.String[] { "ErrorId", });
     internal_static_scalekit_v1_auth_GetAuthErrorResponse_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_scalekit_v1_auth_GetAuthErrorResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_GetAuthErrorResponse_descriptor,
@@ -548,7 +504,6 @@ public final class AuthProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);
-    registry.add(com.scalekit.grpc.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
     registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);

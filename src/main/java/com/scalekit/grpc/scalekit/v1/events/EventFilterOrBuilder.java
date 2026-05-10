@@ -133,107 +133,73 @@ public interface EventFilterOrBuilder extends
       getInterceptorStatusBytes();
 
   /**
+   * <pre>
+   * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
+   *  keys: {
+   *    string: {
+   *      min_len: 3
+   *      max_len: 25
+   *    }
+   *  }
+   *  values: {
+   *    string: {
+   *      min_len: 1
+   *      max_len: 2000
+   *    }
+   *  }
+   * }];
+   *  optional MetadataFilter metadata_filter = 6;
+   * </pre>
+   *
    * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
    * @return Whether the interceptorDecision field is set.
    */
   boolean hasInterceptorDecision();
   /**
+   * <pre>
+   * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
+   *  keys: {
+   *    string: {
+   *      min_len: 3
+   *      max_len: 25
+   *    }
+   *  }
+   *  values: {
+   *    string: {
+   *      min_len: 1
+   *      max_len: 2000
+   *    }
+   *  }
+   * }];
+   *  optional MetadataFilter metadata_filter = 6;
+   * </pre>
+   *
    * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
    * @return The interceptorDecision.
    */
   java.lang.String getInterceptorDecision();
   /**
+   * <pre>
+   * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
+   *  keys: {
+   *    string: {
+   *      min_len: 3
+   *      max_len: 25
+   *    }
+   *  }
+   *  values: {
+   *    string: {
+   *      min_len: 1
+   *      max_len: 2000
+   *    }
+   *  }
+   * }];
+   *  optional MetadataFilter metadata_filter = 6;
+   * </pre>
+   *
    * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
    * @return The bytes for interceptorDecision.
    */
   com.google.protobuf.ByteString
       getInterceptorDecisionBytes();
-
-  /**
-   * <code>optional string connection_id = 10 [json_name = "connectionId"];</code>
-   * @return Whether the connectionId field is set.
-   */
-  boolean hasConnectionId();
-  /**
-   * <code>optional string connection_id = 10 [json_name = "connectionId"];</code>
-   * @return The connectionId.
-   */
-  java.lang.String getConnectionId();
-  /**
-   * <code>optional string connection_id = 10 [json_name = "connectionId"];</code>
-   * @return The bytes for connectionId.
-   */
-  com.google.protobuf.ByteString
-      getConnectionIdBytes();
-
-  /**
-   * <pre>
-   * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
-   *  keys: {
-   *    string: {
-   *      min_len: 3
-   *      max_len: 25
-   *    }
-   *  }
-   *  values: {
-   *    string: {
-   *      min_len: 1
-   *      max_len: 2000
-   *    }
-   *  }
-   * }];
-   *  optional MetadataFilter metadata_filter = 6;
-   * </pre>
-   *
-   * <code>optional string connected_account_id = 11 [json_name = "connectedAccountId"];</code>
-   * @return Whether the connectedAccountId field is set.
-   */
-  boolean hasConnectedAccountId();
-  /**
-   * <pre>
-   * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
-   *  keys: {
-   *    string: {
-   *      min_len: 3
-   *      max_len: 25
-   *    }
-   *  }
-   *  values: {
-   *    string: {
-   *      min_len: 1
-   *      max_len: 2000
-   *    }
-   *  }
-   * }];
-   *  optional MetadataFilter metadata_filter = 6;
-   * </pre>
-   *
-   * <code>optional string connected_account_id = 11 [json_name = "connectedAccountId"];</code>
-   * @return The connectedAccountId.
-   */
-  java.lang.String getConnectedAccountId();
-  /**
-   * <pre>
-   * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
-   *  keys: {
-   *    string: {
-   *      min_len: 3
-   *      max_len: 25
-   *    }
-   *  }
-   *  values: {
-   *    string: {
-   *      min_len: 1
-   *      max_len: 2000
-   *    }
-   *  }
-   * }];
-   *  optional MetadataFilter metadata_filter = 6;
-   * </pre>
-   *
-   * <code>optional string connected_account_id = 11 [json_name = "connectedAccountId"];</code>
-   * @return The bytes for connectedAccountId.
-   */
-  com.google.protobuf.ByteString
-      getConnectedAccountIdBytes();
 }

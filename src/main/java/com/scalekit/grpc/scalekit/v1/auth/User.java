@@ -29,10 +29,6 @@ private static final long serialVersionUID = 0L;
     locale_ = "";
     groups_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-    organizationExternalId_ = "";
-    roles_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-    organizationExternalName_ = "";
   }
 
   @java.lang.Override
@@ -531,137 +527,6 @@ private static final long serialVersionUID = 0L;
     return customAttributes_ == null ? com.google.protobuf.Struct.getDefaultInstance() : customAttributes_;
   }
 
-  public static final int ORGANIZATION_EXTERNAL_ID_FIELD_NUMBER = 15;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object organizationExternalId_ = "";
-  /**
-   * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the organizationExternalId field is set.
-   */
-  @java.lang.Override
-  public boolean hasOrganizationExternalId() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The organizationExternalId.
-   */
-  @java.lang.Override
-  public java.lang.String getOrganizationExternalId() {
-    java.lang.Object ref = organizationExternalId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      organizationExternalId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for organizationExternalId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getOrganizationExternalIdBytes() {
-    java.lang.Object ref = organizationExternalId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      organizationExternalId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int ROLES_FIELD_NUMBER = 16;
-  @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList roles_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
-  /**
-   * <code>repeated string roles = 16 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return A list containing the roles.
-   */
-  public com.google.protobuf.ProtocolStringList
-      getRolesList() {
-    return roles_;
-  }
-  /**
-   * <code>repeated string roles = 16 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The count of roles.
-   */
-  public int getRolesCount() {
-    return roles_.size();
-  }
-  /**
-   * <code>repeated string roles = 16 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @param index The index of the element to return.
-   * @return The roles at the given index.
-   */
-  public java.lang.String getRoles(int index) {
-    return roles_.get(index);
-  }
-  /**
-   * <code>repeated string roles = 16 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the roles at the given index.
-   */
-  public com.google.protobuf.ByteString
-      getRolesBytes(int index) {
-    return roles_.getByteString(index);
-  }
-
-  public static final int ORGANIZATION_EXTERNAL_NAME_FIELD_NUMBER = 17;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object organizationExternalName_ = "";
-  /**
-   * <code>optional string organization_external_name = 17 [json_name = "organizationExternalName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the organizationExternalName field is set.
-   */
-  @java.lang.Override
-  public boolean hasOrganizationExternalName() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <code>optional string organization_external_name = 17 [json_name = "organizationExternalName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The organizationExternalName.
-   */
-  @java.lang.Override
-  public java.lang.String getOrganizationExternalName() {
-    java.lang.Object ref = organizationExternalName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      organizationExternalName_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>optional string organization_external_name = 17 [json_name = "organizationExternalName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for organizationExternalName.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getOrganizationExternalNameBytes() {
-    java.lang.Object ref = organizationExternalName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      organizationExternalName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -717,15 +582,6 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(14, getCustomAttributes());
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, organizationExternalId_);
-    }
-    for (int i = 0; i < roles_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, roles_.getRaw(i));
-    }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, organizationExternalName_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -786,20 +642,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, getCustomAttributes());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, organizationExternalId_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < roles_.size(); i++) {
-        dataSize += computeStringSizeNoTag(roles_.getRaw(i));
-      }
-      size += dataSize;
-      size += 2 * getRolesList().size();
-    }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, organizationExternalName_);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -846,18 +688,6 @@ private static final long serialVersionUID = 0L;
       if (!getCustomAttributes()
           .equals(other.getCustomAttributes())) return false;
     }
-    if (hasOrganizationExternalId() != other.hasOrganizationExternalId()) return false;
-    if (hasOrganizationExternalId()) {
-      if (!getOrganizationExternalId()
-          .equals(other.getOrganizationExternalId())) return false;
-    }
-    if (!getRolesList()
-        .equals(other.getRolesList())) return false;
-    if (hasOrganizationExternalName() != other.hasOrganizationExternalName()) return false;
-    if (hasOrganizationExternalName()) {
-      if (!getOrganizationExternalName()
-          .equals(other.getOrganizationExternalName())) return false;
-    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -902,18 +732,6 @@ private static final long serialVersionUID = 0L;
     if (hasCustomAttributes()) {
       hash = (37 * hash) + CUSTOM_ATTRIBUTES_FIELD_NUMBER;
       hash = (53 * hash) + getCustomAttributes().hashCode();
-    }
-    if (hasOrganizationExternalId()) {
-      hash = (37 * hash) + ORGANIZATION_EXTERNAL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationExternalId().hashCode();
-    }
-    if (getRolesCount() > 0) {
-      hash = (37 * hash) + ROLES_FIELD_NUMBER;
-      hash = (53 * hash) + getRolesList().hashCode();
-    }
-    if (hasOrganizationExternalName()) {
-      hash = (37 * hash) + ORGANIZATION_EXTERNAL_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getOrganizationExternalName().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1071,10 +889,6 @@ private static final long serialVersionUID = 0L;
         customAttributesBuilder_.dispose();
         customAttributesBuilder_ = null;
       }
-      organizationExternalId_ = "";
-      roles_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
-      organizationExternalName_ = "";
       return this;
     }
 
@@ -1154,18 +968,6 @@ private static final long serialVersionUID = 0L;
             ? customAttributes_
             : customAttributesBuilder_.build();
         to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.organizationExternalId_ = organizationExternalId_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        roles_.makeImmutable();
-        result.roles_ = roles_;
-      }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.organizationExternalName_ = organizationExternalName_;
-        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1283,26 +1085,6 @@ private static final long serialVersionUID = 0L;
       if (other.hasCustomAttributes()) {
         mergeCustomAttributes(other.getCustomAttributes());
       }
-      if (other.hasOrganizationExternalId()) {
-        organizationExternalId_ = other.organizationExternalId_;
-        bitField0_ |= 0x00004000;
-        onChanged();
-      }
-      if (!other.roles_.isEmpty()) {
-        if (roles_.isEmpty()) {
-          roles_ = other.roles_;
-          bitField0_ |= 0x00008000;
-        } else {
-          ensureRolesIsMutable();
-          roles_.addAll(other.roles_);
-        }
-        onChanged();
-      }
-      if (other.hasOrganizationExternalName()) {
-        organizationExternalName_ = other.organizationExternalName_;
-        bitField0_ |= 0x00010000;
-        onChanged();
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1402,22 +1184,6 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00002000;
               break;
             } // case 114
-            case 122: {
-              organizationExternalId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00004000;
-              break;
-            } // case 122
-            case 130: {
-              java.lang.String s = input.readStringRequireUtf8();
-              ensureRolesIsMutable();
-              roles_.add(s);
-              break;
-            } // case 130
-            case 138: {
-              organizationExternalName_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00010000;
-              break;
-            } // case 138
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2449,275 +2215,6 @@ private static final long serialVersionUID = 0L;
         customAttributes_ = null;
       }
       return customAttributesBuilder_;
-    }
-
-    private java.lang.Object organizationExternalId_ = "";
-    /**
-     * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the organizationExternalId field is set.
-     */
-    public boolean hasOrganizationExternalId() {
-      return ((bitField0_ & 0x00004000) != 0);
-    }
-    /**
-     * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The organizationExternalId.
-     */
-    public java.lang.String getOrganizationExternalId() {
-      java.lang.Object ref = organizationExternalId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        organizationExternalId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for organizationExternalId.
-     */
-    public com.google.protobuf.ByteString
-        getOrganizationExternalIdBytes() {
-      java.lang.Object ref = organizationExternalId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        organizationExternalId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The organizationExternalId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOrganizationExternalId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      organizationExternalId_ = value;
-      bitField0_ |= 0x00004000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearOrganizationExternalId() {
-      organizationExternalId_ = getDefaultInstance().getOrganizationExternalId();
-      bitField0_ = (bitField0_ & ~0x00004000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for organizationExternalId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOrganizationExternalIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      organizationExternalId_ = value;
-      bitField0_ |= 0x00004000;
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.LazyStringArrayList roles_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-    private void ensureRolesIsMutable() {
-      if (!roles_.isModifiable()) {
-        roles_ = new com.google.protobuf.LazyStringArrayList(roles_);
-      }
-      bitField0_ |= 0x00008000;
-    }
-    /**
-     * <code>repeated string roles = 16 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return A list containing the roles.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getRolesList() {
-      roles_.makeImmutable();
-      return roles_;
-    }
-    /**
-     * <code>repeated string roles = 16 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The count of roles.
-     */
-    public int getRolesCount() {
-      return roles_.size();
-    }
-    /**
-     * <code>repeated string roles = 16 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param index The index of the element to return.
-     * @return The roles at the given index.
-     */
-    public java.lang.String getRoles(int index) {
-      return roles_.get(index);
-    }
-    /**
-     * <code>repeated string roles = 16 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the roles at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getRolesBytes(int index) {
-      return roles_.getByteString(index);
-    }
-    /**
-     * <code>repeated string roles = 16 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param index The index to set the value at.
-     * @param value The roles to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRoles(
-        int index, java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      ensureRolesIsMutable();
-      roles_.set(index, value);
-      bitField0_ |= 0x00008000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string roles = 16 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The roles to add.
-     * @return This builder for chaining.
-     */
-    public Builder addRoles(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      ensureRolesIsMutable();
-      roles_.add(value);
-      bitField0_ |= 0x00008000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string roles = 16 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param values The roles to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllRoles(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureRolesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, roles_);
-      bitField0_ |= 0x00008000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string roles = 16 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearRoles() {
-      roles_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00008000);;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string roles = 16 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes of the roles to add.
-     * @return This builder for chaining.
-     */
-    public Builder addRolesBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      ensureRolesIsMutable();
-      roles_.add(value);
-      bitField0_ |= 0x00008000;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object organizationExternalName_ = "";
-    /**
-     * <code>optional string organization_external_name = 17 [json_name = "organizationExternalName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the organizationExternalName field is set.
-     */
-    public boolean hasOrganizationExternalName() {
-      return ((bitField0_ & 0x00010000) != 0);
-    }
-    /**
-     * <code>optional string organization_external_name = 17 [json_name = "organizationExternalName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The organizationExternalName.
-     */
-    public java.lang.String getOrganizationExternalName() {
-      java.lang.Object ref = organizationExternalName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        organizationExternalName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>optional string organization_external_name = 17 [json_name = "organizationExternalName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for organizationExternalName.
-     */
-    public com.google.protobuf.ByteString
-        getOrganizationExternalNameBytes() {
-      java.lang.Object ref = organizationExternalName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        organizationExternalName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>optional string organization_external_name = 17 [json_name = "organizationExternalName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The organizationExternalName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOrganizationExternalName(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      organizationExternalName_ = value;
-      bitField0_ |= 0x00010000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string organization_external_name = 17 [json_name = "organizationExternalName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearOrganizationExternalName() {
-      organizationExternalName_ = getDefaultInstance().getOrganizationExternalName();
-      bitField0_ = (bitField0_ & ~0x00010000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string organization_external_name = 17 [json_name = "organizationExternalName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for organizationExternalName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOrganizationExternalNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      organizationExternalName_ = value;
-      bitField0_ |= 0x00010000;
-      onChanged();
-      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

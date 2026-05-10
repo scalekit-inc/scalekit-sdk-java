@@ -9,44 +9,24 @@ public interface HelpInfoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   * One or more links relevant to resolving the error.
-   * </pre>
-   *
    * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
    */
   java.util.List<com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.Link> 
       getLinksList();
   /**
-   * <pre>
-   * One or more links relevant to resolving the error.
-   * </pre>
-   *
    * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
    */
   com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.Link getLinks(int index);
   /**
-   * <pre>
-   * One or more links relevant to resolving the error.
-   * </pre>
-   *
    * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
    */
   int getLinksCount();
   /**
-   * <pre>
-   * One or more links relevant to resolving the error.
-   * </pre>
-   *
    * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
    */
   java.util.List<? extends com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.LinkOrBuilder> 
       getLinksOrBuilderList();
   /**
-   * <pre>
-   * One or more links relevant to resolving the error.
-   * </pre>
-   *
    * <code>repeated .scalekit.v1.errdetails.HelpInfo.Link links = 1 [json_name = "links"];</code>
    */
   com.scalekit.grpc.scalekit.v1.errdetails.HelpInfo.LinkOrBuilder getLinksOrBuilder(

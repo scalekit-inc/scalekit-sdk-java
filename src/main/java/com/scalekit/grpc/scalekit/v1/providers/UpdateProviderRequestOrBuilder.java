@@ -9,12 +9,12 @@ public interface UpdateProviderRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
    * @return The identifier.
    */
   java.lang.String getIdentifier();
   /**
-   * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
    * @return The bytes for identifier.
    */
   com.google.protobuf.ByteString

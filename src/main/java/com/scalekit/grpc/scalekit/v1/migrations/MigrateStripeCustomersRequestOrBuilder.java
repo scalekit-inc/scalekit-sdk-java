@@ -9,17 +9,25 @@ public interface MigrateStripeCustomersRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
-   * @return Whether the migrateStripeCustomers field is set.
+   * <code>repeated int64 workspace_ids = 1 [json_name = "workspaceIds"];</code>
+   * @return A list containing the workspaceIds.
    */
-  boolean hasMigrateStripeCustomers();
+  java.util.List<java.lang.Long> getWorkspaceIdsList();
   /**
-   * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
-   * @return The migrateStripeCustomers.
+   * <code>repeated int64 workspace_ids = 1 [json_name = "workspaceIds"];</code>
+   * @return The count of workspaceIds.
    */
-  com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomers getMigrateStripeCustomers();
+  int getWorkspaceIdsCount();
   /**
-   * <code>.scalekit.v1.migrations.MigrateStripeCustomers migrate_stripe_customers = 1 [json_name = "migrateStripeCustomers", (.buf.validate.field) = { ... }</code>
+   * <code>repeated int64 workspace_ids = 1 [json_name = "workspaceIds"];</code>
+   * @param index The index of the element to return.
+   * @return The workspaceIds at the given index.
    */
-  com.scalekit.grpc.scalekit.v1.migrations.MigrateStripeCustomersOrBuilder getMigrateStripeCustomersOrBuilder();
+  long getWorkspaceIds(int index);
+
+  /**
+   * <code>int32 batch_size = 2 [json_name = "batchSize", (.buf.validate.field) = { ... }</code>
+   * @return The batchSize.
+   */
+  int getBatchSize();
 }

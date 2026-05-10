@@ -39,28 +39,12 @@ public enum ConnectorStatus
   EXPIRED(2),
   /**
    * <pre>
-   * Account awaiting user authorization (re-auth initiated)
+   * Account awaiting user authorization
    * </pre>
    *
    * <code>PENDING_AUTH = 3;</code>
    */
   PENDING_AUTH(3),
-  /**
-   * <pre>
-   * OAuth complete; awaiting user identity verification before activation
-   * </pre>
-   *
-   * <code>PENDING_VERIFICATION = 4;</code>
-   */
-  PENDING_VERIFICATION(4),
-  /**
-   * <pre>
-   * Account has been manually disconnected
-   * </pre>
-   *
-   * <code>DISCONNECTED = 5;</code>
-   */
-  DISCONNECTED(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -90,28 +74,12 @@ public enum ConnectorStatus
   public static final int EXPIRED_VALUE = 2;
   /**
    * <pre>
-   * Account awaiting user authorization (re-auth initiated)
+   * Account awaiting user authorization
    * </pre>
    *
    * <code>PENDING_AUTH = 3;</code>
    */
   public static final int PENDING_AUTH_VALUE = 3;
-  /**
-   * <pre>
-   * OAuth complete; awaiting user identity verification before activation
-   * </pre>
-   *
-   * <code>PENDING_VERIFICATION = 4;</code>
-   */
-  public static final int PENDING_VERIFICATION_VALUE = 4;
-  /**
-   * <pre>
-   * Account has been manually disconnected
-   * </pre>
-   *
-   * <code>DISCONNECTED = 5;</code>
-   */
-  public static final int DISCONNECTED_VALUE = 5;
 
 
   public final int getNumber() {
@@ -142,8 +110,6 @@ public enum ConnectorStatus
       case 1: return ACTIVE;
       case 2: return EXPIRED;
       case 3: return PENDING_AUTH;
-      case 4: return PENDING_VERIFICATION;
-      case 5: return DISCONNECTED;
       default: return null;
     }
   }

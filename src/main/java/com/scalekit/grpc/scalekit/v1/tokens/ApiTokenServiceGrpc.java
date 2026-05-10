@@ -174,35 +174,35 @@ public final class ApiTokenServiceGrpc {
     return getUpdateTokenMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest,
-      com.scalekit.grpc.scalekit.v1.tokens.FetchTokenResponse> getFetchTokenMethod;
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest,
+      com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenResponse> getRegenerateTokenMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "FetchToken",
-      requestType = com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.tokens.FetchTokenResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "RegenerateToken",
+      requestType = com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest,
-      com.scalekit.grpc.scalekit.v1.tokens.FetchTokenResponse> getFetchTokenMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest, com.scalekit.grpc.scalekit.v1.tokens.FetchTokenResponse> getFetchTokenMethod;
-    if ((getFetchTokenMethod = ApiTokenServiceGrpc.getFetchTokenMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest,
+      com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenResponse> getRegenerateTokenMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest, com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenResponse> getRegenerateTokenMethod;
+    if ((getRegenerateTokenMethod = ApiTokenServiceGrpc.getRegenerateTokenMethod) == null) {
       synchronized (ApiTokenServiceGrpc.class) {
-        if ((getFetchTokenMethod = ApiTokenServiceGrpc.getFetchTokenMethod) == null) {
-          ApiTokenServiceGrpc.getFetchTokenMethod = getFetchTokenMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest, com.scalekit.grpc.scalekit.v1.tokens.FetchTokenResponse>newBuilder()
+        if ((getRegenerateTokenMethod = ApiTokenServiceGrpc.getRegenerateTokenMethod) == null) {
+          ApiTokenServiceGrpc.getRegenerateTokenMethod = getRegenerateTokenMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest, com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FetchToken"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RegenerateToken"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.tokens.FetchTokenResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new ApiTokenServiceMethodDescriptorSupplier("FetchToken"))
+                  com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ApiTokenServiceMethodDescriptorSupplier("RegenerateToken"))
               .build();
         }
       }
     }
-    return getFetchTokenMethod;
+    return getRegenerateTokenMethod;
   }
 
   /**
@@ -260,7 +260,7 @@ public final class ApiTokenServiceGrpc {
     /**
      * <pre>
      * CreateToken generates a new API token for an organization or user.
-     * Returns an opaque token string and token claims.
+     * Returns an opaque token string and token metadata.
      * </pre>
      */
     default void createToken(com.scalekit.grpc.scalekit.v1.tokens.CreateTokenRequest request,
@@ -300,7 +300,7 @@ public final class ApiTokenServiceGrpc {
 
     /**
      * <pre>
-     * UpdateToken updates the custom claims and description of an existing token
+     * UpdateToken updates the metadata and/or description of an existing token.
      * </pre>
      */
     default void updateToken(com.scalekit.grpc.scalekit.v1.tokens.UpdateTokenRequest request,
@@ -310,12 +310,13 @@ public final class ApiTokenServiceGrpc {
 
     /**
      * <pre>
-     * We dont wan to expose token fetch . So making the authentication empty. This would block the request.
+     * RegenerateToken converts a stored token_id back into the opaque token string.
+     * Returns NOT_FOUND when the token is expired, invalidated, or missing.
      * </pre>
      */
-    default void fetchToken(com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tokens.FetchTokenResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFetchTokenMethod(), responseObserver);
+    default void regenerateToken(com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRegenerateTokenMethod(), responseObserver);
     }
   }
 
@@ -357,7 +358,7 @@ public final class ApiTokenServiceGrpc {
     /**
      * <pre>
      * CreateToken generates a new API token for an organization or user.
-     * Returns an opaque token string and token claims.
+     * Returns an opaque token string and token metadata.
      * </pre>
      */
     public void createToken(com.scalekit.grpc.scalekit.v1.tokens.CreateTokenRequest request,
@@ -401,7 +402,7 @@ public final class ApiTokenServiceGrpc {
 
     /**
      * <pre>
-     * UpdateToken updates the custom claims and description of an existing token
+     * UpdateToken updates the metadata and/or description of an existing token.
      * </pre>
      */
     public void updateToken(com.scalekit.grpc.scalekit.v1.tokens.UpdateTokenRequest request,
@@ -412,13 +413,14 @@ public final class ApiTokenServiceGrpc {
 
     /**
      * <pre>
-     * We dont wan to expose token fetch . So making the authentication empty. This would block the request.
+     * RegenerateToken converts a stored token_id back into the opaque token string.
+     * Returns NOT_FOUND when the token is expired, invalidated, or missing.
      * </pre>
      */
-    public void fetchToken(com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tokens.FetchTokenResponse> responseObserver) {
+    public void regenerateToken(com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getFetchTokenMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getRegenerateTokenMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -445,7 +447,7 @@ public final class ApiTokenServiceGrpc {
     /**
      * <pre>
      * CreateToken generates a new API token for an organization or user.
-     * Returns an opaque token string and token claims.
+     * Returns an opaque token string and token metadata.
      * </pre>
      */
     public com.scalekit.grpc.scalekit.v1.tokens.CreateTokenResponse createToken(com.scalekit.grpc.scalekit.v1.tokens.CreateTokenRequest request) {
@@ -485,7 +487,7 @@ public final class ApiTokenServiceGrpc {
 
     /**
      * <pre>
-     * UpdateToken updates the custom claims and description of an existing token
+     * UpdateToken updates the metadata and/or description of an existing token.
      * </pre>
      */
     public com.scalekit.grpc.scalekit.v1.tokens.UpdateTokenResponse updateToken(com.scalekit.grpc.scalekit.v1.tokens.UpdateTokenRequest request) {
@@ -495,12 +497,13 @@ public final class ApiTokenServiceGrpc {
 
     /**
      * <pre>
-     * We dont wan to expose token fetch . So making the authentication empty. This would block the request.
+     * RegenerateToken converts a stored token_id back into the opaque token string.
+     * Returns NOT_FOUND when the token is expired, invalidated, or missing.
      * </pre>
      */
-    public com.scalekit.grpc.scalekit.v1.tokens.FetchTokenResponse fetchToken(com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest request) {
+    public com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenResponse regenerateToken(com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getFetchTokenMethod(), getCallOptions(), request);
+          getChannel(), getRegenerateTokenMethod(), getCallOptions(), request);
     }
   }
 
@@ -527,7 +530,7 @@ public final class ApiTokenServiceGrpc {
     /**
      * <pre>
      * CreateToken generates a new API token for an organization or user.
-     * Returns an opaque token string and token claims.
+     * Returns an opaque token string and token metadata.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.tokens.CreateTokenResponse> createToken(
@@ -571,7 +574,7 @@ public final class ApiTokenServiceGrpc {
 
     /**
      * <pre>
-     * UpdateToken updates the custom claims and description of an existing token
+     * UpdateToken updates the metadata and/or description of an existing token.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.tokens.UpdateTokenResponse> updateToken(
@@ -582,13 +585,14 @@ public final class ApiTokenServiceGrpc {
 
     /**
      * <pre>
-     * We dont wan to expose token fetch . So making the authentication empty. This would block the request.
+     * RegenerateToken converts a stored token_id back into the opaque token string.
+     * Returns NOT_FOUND when the token is expired, invalidated, or missing.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.tokens.FetchTokenResponse> fetchToken(
-        com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenResponse> regenerateToken(
+        com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getFetchTokenMethod(), getCallOptions()), request);
+          getChannel().newCall(getRegenerateTokenMethod(), getCallOptions()), request);
     }
   }
 
@@ -597,7 +601,7 @@ public final class ApiTokenServiceGrpc {
   private static final int METHODID_INVALIDATE_TOKEN = 2;
   private static final int METHODID_LIST_TOKENS = 3;
   private static final int METHODID_UPDATE_TOKEN = 4;
-  private static final int METHODID_FETCH_TOKEN = 5;
+  private static final int METHODID_REGENERATE_TOKEN = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -636,9 +640,9 @@ public final class ApiTokenServiceGrpc {
           serviceImpl.updateToken((com.scalekit.grpc.scalekit.v1.tokens.UpdateTokenRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tokens.UpdateTokenResponse>) responseObserver);
           break;
-        case METHODID_FETCH_TOKEN:
-          serviceImpl.fetchToken((com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tokens.FetchTokenResponse>) responseObserver);
+        case METHODID_REGENERATE_TOKEN:
+          serviceImpl.regenerateToken((com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -694,12 +698,12 @@ public final class ApiTokenServiceGrpc {
               com.scalekit.grpc.scalekit.v1.tokens.UpdateTokenResponse>(
                 service, METHODID_UPDATE_TOKEN)))
         .addMethod(
-          getFetchTokenMethod(),
+          getRegenerateTokenMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.tokens.FetchTokenRequest,
-              com.scalekit.grpc.scalekit.v1.tokens.FetchTokenResponse>(
-                service, METHODID_FETCH_TOKEN)))
+              com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenRequest,
+              com.scalekit.grpc.scalekit.v1.tokens.RegenerateTokenResponse>(
+                service, METHODID_REGENERATE_TOKEN)))
         .build();
   }
 
@@ -753,7 +757,7 @@ public final class ApiTokenServiceGrpc {
               .addMethod(getInvalidateTokenMethod())
               .addMethod(getListTokensMethod())
               .addMethod(getUpdateTokenMethod())
-              .addMethod(getFetchTokenMethod())
+              .addMethod(getRegenerateTokenMethod())
               .build();
         }
       }

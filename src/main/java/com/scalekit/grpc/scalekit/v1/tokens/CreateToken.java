@@ -40,7 +40,7 @@ private static final long serialVersionUID = 0L;
       int number) {
     switch (number) {
       case 3:
-        return internalGetCustomClaims();
+        return internalGetMetadata();
       default:
         throw new RuntimeException(
             "Invalid map field number: " + number);
@@ -133,13 +133,13 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CUSTOM_CLAIMS_FIELD_NUMBER = 3;
-  private static final class CustomClaimsDefaultEntryHolder {
+  public static final int METADATA_FIELD_NUMBER = 3;
+  private static final class MetadataDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         java.lang.String, java.lang.String> defaultEntry =
             com.google.protobuf.MapEntry
             .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.scalekit.grpc.scalekit.v1.tokens.TokensProto.internal_static_scalekit_v1_tokens_CreateToken_CustomClaimsEntry_descriptor, 
+                com.scalekit.grpc.scalekit.v1.tokens.TokensProto.internal_static_scalekit_v1_tokens_CreateToken_MetadataEntry_descriptor, 
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
                 com.google.protobuf.WireFormat.FieldType.STRING,
@@ -147,65 +147,65 @@ private static final long serialVersionUID = 0L;
   }
   @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> customClaims_;
+      java.lang.String, java.lang.String> metadata_;
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetCustomClaims() {
-    if (customClaims_ == null) {
+  internalGetMetadata() {
+    if (metadata_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
-          CustomClaimsDefaultEntryHolder.defaultEntry);
+          MetadataDefaultEntryHolder.defaultEntry);
     }
-    return customClaims_;
+    return metadata_;
   }
-  public int getCustomClaimsCount() {
-    return internalGetCustomClaims().getMap().size();
+  public int getMetadataCount() {
+    return internalGetMetadata().getMap().size();
   }
   /**
-   * <code>map&lt;string, string&gt; custom_claims = 3 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public boolean containsCustomClaims(
+  public boolean containsMetadata(
       java.lang.String key) {
     if (key == null) { throw new NullPointerException("map key"); }
-    return internalGetCustomClaims().getMap().containsKey(key);
+    return internalGetMetadata().getMap().containsKey(key);
   }
   /**
-   * Use {@link #getCustomClaimsMap()} instead.
+   * Use {@link #getMetadataMap()} instead.
    */
   @java.lang.Override
   @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.String> getCustomClaims() {
-    return getCustomClaimsMap();
+  public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+    return getMetadataMap();
   }
   /**
-   * <code>map&lt;string, string&gt; custom_claims = 3 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public java.util.Map<java.lang.String, java.lang.String> getCustomClaimsMap() {
-    return internalGetCustomClaims().getMap();
+  public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+    return internalGetMetadata().getMap();
   }
   /**
-   * <code>map&lt;string, string&gt; custom_claims = 3 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public /* nullable */
-java.lang.String getCustomClaimsOrDefault(
+java.lang.String getMetadataOrDefault(
       java.lang.String key,
       /* nullable */
 java.lang.String defaultValue) {
     if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetCustomClaims().getMap();
+        internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, string&gt; custom_claims = 3 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public java.lang.String getCustomClaimsOrThrow(
+  public java.lang.String getMetadataOrThrow(
       java.lang.String key) {
     if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetCustomClaims().getMap();
+        internalGetMetadata().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -300,8 +300,8 @@ java.lang.String defaultValue) {
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
-        internalGetCustomClaims(),
-        CustomClaimsDefaultEntryHolder.defaultEntry,
+        internalGetMetadata(),
+        MetadataDefaultEntryHolder.defaultEntry,
         3);
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(4, getExpiry());
@@ -325,14 +325,14 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetCustomClaims().getMap().entrySet()) {
+         : internalGetMetadata().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      customClaims__ = CustomClaimsDefaultEntryHolder.defaultEntry.newBuilderForType()
+      metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
           .setKey(entry.getKey())
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, customClaims__);
+          .computeMessageSize(3, metadata__);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -360,8 +360,8 @@ java.lang.String defaultValue) {
         .equals(other.getOrganizationId())) return false;
     if (!getUserId()
         .equals(other.getUserId())) return false;
-    if (!internalGetCustomClaims().equals(
-        other.internalGetCustomClaims())) return false;
+    if (!internalGetMetadata().equals(
+        other.internalGetMetadata())) return false;
     if (hasExpiry() != other.hasExpiry()) return false;
     if (hasExpiry()) {
       if (!getExpiry()
@@ -384,9 +384,9 @@ java.lang.String defaultValue) {
     hash = (53 * hash) + getOrganizationId().hashCode();
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserId().hashCode();
-    if (!internalGetCustomClaims().getMap().isEmpty()) {
-      hash = (37 * hash) + CUSTOM_CLAIMS_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetCustomClaims().hashCode();
+    if (!internalGetMetadata().getMap().isEmpty()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetMetadata().hashCode();
     }
     if (hasExpiry()) {
       hash = (37 * hash) + EXPIRY_FIELD_NUMBER;
@@ -508,7 +508,7 @@ java.lang.String defaultValue) {
         int number) {
       switch (number) {
         case 3:
-          return internalGetCustomClaims();
+          return internalGetMetadata();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -519,7 +519,7 @@ java.lang.String defaultValue) {
         int number) {
       switch (number) {
         case 3:
-          return internalGetMutableCustomClaims();
+          return internalGetMutableMetadata();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -555,7 +555,7 @@ java.lang.String defaultValue) {
       bitField0_ = 0;
       organizationId_ = "";
       userId_ = "";
-      internalGetMutableCustomClaims().clear();
+      internalGetMutableMetadata().clear();
       expiry_ = null;
       if (expiryBuilder_ != null) {
         expiryBuilder_.dispose();
@@ -602,8 +602,8 @@ java.lang.String defaultValue) {
         result.userId_ = userId_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.customClaims_ = internalGetCustomClaims();
-        result.customClaims_.makeImmutable();
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000008) != 0)) {
@@ -672,8 +672,8 @@ java.lang.String defaultValue) {
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      internalGetMutableCustomClaims().mergeFrom(
-          other.internalGetCustomClaims());
+      internalGetMutableMetadata().mergeFrom(
+          other.internalGetMetadata());
       bitField0_ |= 0x00000004;
       if (other.hasExpiry()) {
         mergeExpiry(other.getExpiry());
@@ -721,10 +721,10 @@ java.lang.String defaultValue) {
             } // case 18
             case 26: {
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              customClaims__ = input.readMessage(
-                  CustomClaimsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              internalGetMutableCustomClaims().getMutableMap().put(
-                  customClaims__.getKey(), customClaims__.getValue());
+              metadata__ = input.readMessage(
+                  MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              internalGetMutableMetadata().getMutableMap().put(
+                  metadata__.getKey(), metadata__.getValue());
               bitField0_ |= 0x00000004;
               break;
             } // case 26
@@ -902,96 +902,96 @@ java.lang.String defaultValue) {
     }
 
     private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> customClaims_;
+        java.lang.String, java.lang.String> metadata_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetCustomClaims() {
-      if (customClaims_ == null) {
+        internalGetMetadata() {
+      if (metadata_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            CustomClaimsDefaultEntryHolder.defaultEntry);
+            MetadataDefaultEntryHolder.defaultEntry);
       }
-      return customClaims_;
+      return metadata_;
     }
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetMutableCustomClaims() {
-      if (customClaims_ == null) {
-        customClaims_ = com.google.protobuf.MapField.newMapField(
-            CustomClaimsDefaultEntryHolder.defaultEntry);
+        internalGetMutableMetadata() {
+      if (metadata_ == null) {
+        metadata_ = com.google.protobuf.MapField.newMapField(
+            MetadataDefaultEntryHolder.defaultEntry);
       }
-      if (!customClaims_.isMutable()) {
-        customClaims_ = customClaims_.copy();
+      if (!metadata_.isMutable()) {
+        metadata_ = metadata_.copy();
       }
       bitField0_ |= 0x00000004;
       onChanged();
-      return customClaims_;
+      return metadata_;
     }
-    public int getCustomClaimsCount() {
-      return internalGetCustomClaims().getMap().size();
+    public int getMetadataCount() {
+      return internalGetMetadata().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; custom_claims = 3 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
-    public boolean containsCustomClaims(
+    public boolean containsMetadata(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
-      return internalGetCustomClaims().getMap().containsKey(key);
+      return internalGetMetadata().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getCustomClaimsMap()} instead.
+     * Use {@link #getMetadataMap()} instead.
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getCustomClaims() {
-      return getCustomClaimsMap();
+    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+      return getMetadataMap();
     }
     /**
-     * <code>map&lt;string, string&gt; custom_claims = 3 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
-    public java.util.Map<java.lang.String, java.lang.String> getCustomClaimsMap() {
-      return internalGetCustomClaims().getMap();
+    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+      return internalGetMetadata().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; custom_claims = 3 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
     public /* nullable */
-java.lang.String getCustomClaimsOrDefault(
+java.lang.String getMetadataOrDefault(
         java.lang.String key,
         /* nullable */
 java.lang.String defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetCustomClaims().getMap();
+          internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; custom_claims = 3 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     @java.lang.Override
-    public java.lang.String getCustomClaimsOrThrow(
+    public java.lang.String getMetadataOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetCustomClaims().getMap();
+          internalGetMetadata().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
     }
-    public Builder clearCustomClaims() {
+    public Builder clearMetadata() {
       bitField0_ = (bitField0_ & ~0x00000004);
-      internalGetMutableCustomClaims().getMutableMap()
+      internalGetMutableMetadata().getMutableMap()
           .clear();
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; custom_claims = 3 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder removeCustomClaims(
+    public Builder removeMetadata(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
-      internalGetMutableCustomClaims().getMutableMap()
+      internalGetMutableMetadata().getMutableMap()
           .remove(key);
       return this;
     }
@@ -1000,29 +1000,29 @@ java.lang.String defaultValue) {
      */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
-        getMutableCustomClaims() {
+        getMutableMetadata() {
       bitField0_ |= 0x00000004;
-      return internalGetMutableCustomClaims().getMutableMap();
+      return internalGetMutableMetadata().getMutableMap();
     }
     /**
-     * <code>map&lt;string, string&gt; custom_claims = 3 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder putCustomClaims(
+    public Builder putMetadata(
         java.lang.String key,
         java.lang.String value) {
       if (key == null) { throw new NullPointerException("map key"); }
       if (value == null) { throw new NullPointerException("map value"); }
-      internalGetMutableCustomClaims().getMutableMap()
+      internalGetMutableMetadata().getMutableMap()
           .put(key, value);
       bitField0_ |= 0x00000004;
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; custom_claims = 3 [json_name = "customClaims", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>map&lt;string, string&gt; metadata = 3 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder putAllCustomClaims(
+    public Builder putAllMetadata(
         java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableCustomClaims().getMutableMap()
+      internalGetMutableMetadata().getMutableMap()
           .putAll(values);
       bitField0_ |= 0x00000004;
       return this;

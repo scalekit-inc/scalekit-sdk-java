@@ -92,38 +92,4 @@ public interface GetMagicLinkForConnectedAccountRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getIdBytes();
-
-  /**
-   * <code>optional string state = 7 [json_name = "state", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the state field is set.
-   */
-  boolean hasState();
-  /**
-   * <code>optional string state = 7 [json_name = "state", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The state.
-   */
-  java.lang.String getState();
-  /**
-   * <code>optional string state = 7 [json_name = "state", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for state.
-   */
-  com.google.protobuf.ByteString
-      getStateBytes();
-
-  /**
-   * <code>optional string user_verify_url = 8 [json_name = "userVerifyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the userVerifyUrl field is set.
-   */
-  boolean hasUserVerifyUrl();
-  /**
-   * <code>optional string user_verify_url = 8 [json_name = "userVerifyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The userVerifyUrl.
-   */
-  java.lang.String getUserVerifyUrl();
-  /**
-   * <code>optional string user_verify_url = 8 [json_name = "userVerifyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for userVerifyUrl.
-   */
-  com.google.protobuf.ByteString
-      getUserVerifyUrlBytes();
 }

@@ -119,21 +119,4 @@ public interface ExecuteToolRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUserIdBytes();
-
-  /**
-   * <code>optional string agent_run_id = 8 [json_name = "agentRunId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the agentRunId field is set.
-   */
-  boolean hasAgentRunId();
-  /**
-   * <code>optional string agent_run_id = 8 [json_name = "agentRunId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The agentRunId.
-   */
-  java.lang.String getAgentRunId();
-  /**
-   * <code>optional string agent_run_id = 8 [json_name = "agentRunId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for agentRunId.
-   */
-  com.google.protobuf.ByteString
-      getAgentRunIdBytes();
 }
