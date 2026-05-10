@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     categories_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     iconSrc_ = "";
+    proxyUrl_ = "";
   }
 
   @java.lang.Override
@@ -331,6 +332,78 @@ private static final long serialVersionUID = 0L;
     return comingSoon_;
   }
 
+  public static final int PROXY_URL_FIELD_NUMBER = 10;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object proxyUrl_ = "";
+  /**
+   * <code>string proxy_url = 10 [json_name = "proxyUrl"];</code>
+   * @return The proxyUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getProxyUrl() {
+    java.lang.Object ref = proxyUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      proxyUrl_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string proxy_url = 10 [json_name = "proxyUrl"];</code>
+   * @return The bytes for proxyUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProxyUrlBytes() {
+    java.lang.Object ref = proxyUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      proxyUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PROXY_ENABLED_FIELD_NUMBER = 11;
+  private boolean proxyEnabled_ = false;
+  /**
+   * <code>bool proxy_enabled = 11 [json_name = "proxyEnabled"];</code>
+   * @return The proxyEnabled.
+   */
+  @java.lang.Override
+  public boolean getProxyEnabled() {
+    return proxyEnabled_;
+  }
+
+  public static final int IS_CUSTOM_FIELD_NUMBER = 12;
+  private boolean isCustom_ = false;
+  /**
+   * <code>bool is_custom = 12 [json_name = "isCustom", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isCustom.
+   */
+  @java.lang.Override
+  public boolean getIsCustom() {
+    return isCustom_;
+  }
+
+  public static final int IS_CUSTOM_MCP_FIELD_NUMBER = 13;
+  private boolean isCustomMcp_ = false;
+  /**
+   * <code>bool is_custom_mcp = 13 [json_name = "isCustomMcp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isCustomMcp.
+   */
+  @java.lang.Override
+  public boolean getIsCustomMcp() {
+    return isCustomMcp_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -371,6 +444,18 @@ private static final long serialVersionUID = 0L;
     }
     if (comingSoon_ != false) {
       output.writeBool(9, comingSoon_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUrl_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, proxyUrl_);
+    }
+    if (proxyEnabled_ != false) {
+      output.writeBool(11, proxyEnabled_);
+    }
+    if (isCustom_ != false) {
+      output.writeBool(12, isCustom_);
+    }
+    if (isCustomMcp_ != false) {
+      output.writeBool(13, isCustomMcp_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -416,6 +501,21 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(9, comingSoon_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUrl_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, proxyUrl_);
+    }
+    if (proxyEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(11, proxyEnabled_);
+    }
+    if (isCustom_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(12, isCustom_);
+    }
+    if (isCustomMcp_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(13, isCustomMcp_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -452,6 +552,14 @@ private static final long serialVersionUID = 0L;
         != other.getDisplayPriority()) return false;
     if (getComingSoon()
         != other.getComingSoon()) return false;
+    if (!getProxyUrl()
+        .equals(other.getProxyUrl())) return false;
+    if (getProxyEnabled()
+        != other.getProxyEnabled()) return false;
+    if (getIsCustom()
+        != other.getIsCustom()) return false;
+    if (getIsCustomMcp()
+        != other.getIsCustomMcp()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -486,6 +594,17 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + COMING_SOON_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getComingSoon());
+    hash = (37 * hash) + PROXY_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getProxyUrl().hashCode();
+    hash = (37 * hash) + PROXY_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getProxyEnabled());
+    hash = (37 * hash) + IS_CUSTOM_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsCustom());
+    hash = (37 * hash) + IS_CUSTOM_MCP_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsCustomMcp());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -641,6 +760,10 @@ private static final long serialVersionUID = 0L;
       iconSrc_ = "";
       displayPriority_ = 0;
       comingSoon_ = false;
+      proxyUrl_ = "";
+      proxyEnabled_ = false;
+      isCustom_ = false;
+      isCustomMcp_ = false;
       return this;
     }
 
@@ -705,6 +828,18 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.comingSoon_ = comingSoon_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.proxyUrl_ = proxyUrl_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.proxyEnabled_ = proxyEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.isCustom_ = isCustom_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.isCustomMcp_ = isCustomMcp_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -797,6 +932,20 @@ private static final long serialVersionUID = 0L;
       if (other.getComingSoon() != false) {
         setComingSoon(other.getComingSoon());
       }
+      if (!other.getProxyUrl().isEmpty()) {
+        proxyUrl_ = other.proxyUrl_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (other.getProxyEnabled() != false) {
+        setProxyEnabled(other.getProxyEnabled());
+      }
+      if (other.getIsCustom() != false) {
+        setIsCustom(other.getIsCustom());
+      }
+      if (other.getIsCustomMcp() != false) {
+        setIsCustomMcp(other.getIsCustomMcp());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -871,6 +1020,26 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000100;
               break;
             } // case 72
+            case 82: {
+              proxyUrl_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 82
+            case 88: {
+              proxyEnabled_ = input.readBool();
+              bitField0_ |= 0x00000400;
+              break;
+            } // case 88
+            case 96: {
+              isCustom_ = input.readBool();
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 96
+            case 104: {
+              isCustomMcp_ = input.readBool();
+              bitField0_ |= 0x00001000;
+              break;
+            } // case 104
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1540,6 +1709,174 @@ private static final long serialVersionUID = 0L;
     public Builder clearComingSoon() {
       bitField0_ = (bitField0_ & ~0x00000100);
       comingSoon_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object proxyUrl_ = "";
+    /**
+     * <code>string proxy_url = 10 [json_name = "proxyUrl"];</code>
+     * @return The proxyUrl.
+     */
+    public java.lang.String getProxyUrl() {
+      java.lang.Object ref = proxyUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        proxyUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string proxy_url = 10 [json_name = "proxyUrl"];</code>
+     * @return The bytes for proxyUrl.
+     */
+    public com.google.protobuf.ByteString
+        getProxyUrlBytes() {
+      java.lang.Object ref = proxyUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        proxyUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string proxy_url = 10 [json_name = "proxyUrl"];</code>
+     * @param value The proxyUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProxyUrl(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      proxyUrl_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string proxy_url = 10 [json_name = "proxyUrl"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProxyUrl() {
+      proxyUrl_ = getDefaultInstance().getProxyUrl();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string proxy_url = 10 [json_name = "proxyUrl"];</code>
+     * @param value The bytes for proxyUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProxyUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      proxyUrl_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private boolean proxyEnabled_ ;
+    /**
+     * <code>bool proxy_enabled = 11 [json_name = "proxyEnabled"];</code>
+     * @return The proxyEnabled.
+     */
+    @java.lang.Override
+    public boolean getProxyEnabled() {
+      return proxyEnabled_;
+    }
+    /**
+     * <code>bool proxy_enabled = 11 [json_name = "proxyEnabled"];</code>
+     * @param value The proxyEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProxyEnabled(boolean value) {
+
+      proxyEnabled_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool proxy_enabled = 11 [json_name = "proxyEnabled"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProxyEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      proxyEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean isCustom_ ;
+    /**
+     * <code>bool is_custom = 12 [json_name = "isCustom", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The isCustom.
+     */
+    @java.lang.Override
+    public boolean getIsCustom() {
+      return isCustom_;
+    }
+    /**
+     * <code>bool is_custom = 12 [json_name = "isCustom", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The isCustom to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsCustom(boolean value) {
+
+      isCustom_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_custom = 12 [json_name = "isCustom", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsCustom() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      isCustom_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean isCustomMcp_ ;
+    /**
+     * <code>bool is_custom_mcp = 13 [json_name = "isCustomMcp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The isCustomMcp.
+     */
+    @java.lang.Override
+    public boolean getIsCustomMcp() {
+      return isCustomMcp_;
+    }
+    /**
+     * <code>bool is_custom_mcp = 13 [json_name = "isCustomMcp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The isCustomMcp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsCustomMcp(boolean value) {
+
+      isCustomMcp_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_custom_mcp = 13 [json_name = "isCustomMcp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsCustomMcp() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      isCustomMcp_ = false;
       onChanged();
       return this;
     }

@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
     categories_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     iconSrc_ = "";
+    proxyUrl_ = "";
   }
 
   @java.lang.Override
@@ -262,6 +263,71 @@ private static final long serialVersionUID = 0L;
     return comingSoon_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : comingSoon_;
   }
 
+  public static final int PROXY_URL_FIELD_NUMBER = 10;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object proxyUrl_ = "";
+  /**
+   * <code>string proxy_url = 10 [json_name = "proxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The proxyUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getProxyUrl() {
+    java.lang.Object ref = proxyUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      proxyUrl_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string proxy_url = 10 [json_name = "proxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for proxyUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProxyUrlBytes() {
+    java.lang.Object ref = proxyUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      proxyUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PROXY_ENABLED_FIELD_NUMBER = 11;
+  private com.google.protobuf.BoolValue proxyEnabled_;
+  /**
+   * <code>.google.protobuf.BoolValue proxy_enabled = 11 [json_name = "proxyEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the proxyEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasProxyEnabled() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue proxy_enabled = 11 [json_name = "proxyEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The proxyEnabled.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getProxyEnabled() {
+    return proxyEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : proxyEnabled_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue proxy_enabled = 11 [json_name = "proxyEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getProxyEnabledOrBuilder() {
+    return proxyEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : proxyEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -296,6 +362,12 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(9, getComingSoon());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUrl_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, proxyUrl_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(11, getProxyEnabled());
     }
     getUnknownFields().writeTo(output);
   }
@@ -335,6 +407,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getComingSoon());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUrl_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, proxyUrl_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getProxyEnabled());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -370,6 +449,13 @@ private static final long serialVersionUID = 0L;
       if (!getComingSoon()
           .equals(other.getComingSoon())) return false;
     }
+    if (!getProxyUrl()
+        .equals(other.getProxyUrl())) return false;
+    if (hasProxyEnabled() != other.hasProxyEnabled()) return false;
+    if (hasProxyEnabled()) {
+      if (!getProxyEnabled()
+          .equals(other.getProxyEnabled())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -400,6 +486,12 @@ private static final long serialVersionUID = 0L;
     if (hasComingSoon()) {
       hash = (37 * hash) + COMING_SOON_FIELD_NUMBER;
       hash = (53 * hash) + getComingSoon().hashCode();
+    }
+    hash = (37 * hash) + PROXY_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getProxyUrl().hashCode();
+    if (hasProxyEnabled()) {
+      hash = (37 * hash) + PROXY_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + getProxyEnabled().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -533,6 +625,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getAuthPatternsFieldBuilder();
         getComingSoonFieldBuilder();
+        getProxyEnabledFieldBuilder();
       }
     }
     @java.lang.Override
@@ -554,6 +647,12 @@ private static final long serialVersionUID = 0L;
       if (comingSoonBuilder_ != null) {
         comingSoonBuilder_.dispose();
         comingSoonBuilder_ = null;
+      }
+      proxyUrl_ = "";
+      proxyEnabled_ = null;
+      if (proxyEnabledBuilder_ != null) {
+        proxyEnabledBuilder_.dispose();
+        proxyEnabledBuilder_ = null;
       }
       return this;
     }
@@ -616,6 +715,15 @@ private static final long serialVersionUID = 0L;
             ? comingSoon_
             : comingSoonBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.proxyUrl_ = proxyUrl_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.proxyEnabled_ = proxyEnabledBuilder_ == null
+            ? proxyEnabled_
+            : proxyEnabledBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -698,6 +806,14 @@ private static final long serialVersionUID = 0L;
       if (other.hasComingSoon()) {
         mergeComingSoon(other.getComingSoon());
       }
+      if (!other.getProxyUrl().isEmpty()) {
+        proxyUrl_ = other.proxyUrl_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (other.hasProxyEnabled()) {
+        mergeProxyEnabled(other.getProxyEnabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -764,6 +880,18 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000040;
               break;
             } // case 74
+            case 82: {
+              proxyUrl_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 82
+            case 90: {
+              input.readMessage(
+                  getProxyEnabledFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 90
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1380,6 +1508,199 @@ private static final long serialVersionUID = 0L;
         comingSoon_ = null;
       }
       return comingSoonBuilder_;
+    }
+
+    private java.lang.Object proxyUrl_ = "";
+    /**
+     * <code>string proxy_url = 10 [json_name = "proxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The proxyUrl.
+     */
+    public java.lang.String getProxyUrl() {
+      java.lang.Object ref = proxyUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        proxyUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string proxy_url = 10 [json_name = "proxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for proxyUrl.
+     */
+    public com.google.protobuf.ByteString
+        getProxyUrlBytes() {
+      java.lang.Object ref = proxyUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        proxyUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string proxy_url = 10 [json_name = "proxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The proxyUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProxyUrl(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      proxyUrl_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string proxy_url = 10 [json_name = "proxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProxyUrl() {
+      proxyUrl_ = getDefaultInstance().getProxyUrl();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string proxy_url = 10 [json_name = "proxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for proxyUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProxyUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      proxyUrl_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.BoolValue proxyEnabled_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> proxyEnabledBuilder_;
+    /**
+     * <code>.google.protobuf.BoolValue proxy_enabled = 11 [json_name = "proxyEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the proxyEnabled field is set.
+     */
+    public boolean hasProxyEnabled() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <code>.google.protobuf.BoolValue proxy_enabled = 11 [json_name = "proxyEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The proxyEnabled.
+     */
+    public com.google.protobuf.BoolValue getProxyEnabled() {
+      if (proxyEnabledBuilder_ == null) {
+        return proxyEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : proxyEnabled_;
+      } else {
+        return proxyEnabledBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue proxy_enabled = 11 [json_name = "proxyEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setProxyEnabled(com.google.protobuf.BoolValue value) {
+      if (proxyEnabledBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        proxyEnabled_ = value;
+      } else {
+        proxyEnabledBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue proxy_enabled = 11 [json_name = "proxyEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setProxyEnabled(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (proxyEnabledBuilder_ == null) {
+        proxyEnabled_ = builderForValue.build();
+      } else {
+        proxyEnabledBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue proxy_enabled = 11 [json_name = "proxyEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeProxyEnabled(com.google.protobuf.BoolValue value) {
+      if (proxyEnabledBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0) &&
+          proxyEnabled_ != null &&
+          proxyEnabled_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getProxyEnabledBuilder().mergeFrom(value);
+        } else {
+          proxyEnabled_ = value;
+        }
+      } else {
+        proxyEnabledBuilder_.mergeFrom(value);
+      }
+      if (proxyEnabled_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue proxy_enabled = 11 [json_name = "proxyEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearProxyEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      proxyEnabled_ = null;
+      if (proxyEnabledBuilder_ != null) {
+        proxyEnabledBuilder_.dispose();
+        proxyEnabledBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue proxy_enabled = 11 [json_name = "proxyEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getProxyEnabledBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getProxyEnabledFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue proxy_enabled = 11 [json_name = "proxyEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getProxyEnabledOrBuilder() {
+      if (proxyEnabledBuilder_ != null) {
+        return proxyEnabledBuilder_.getMessageOrBuilder();
+      } else {
+        return proxyEnabled_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : proxyEnabled_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue proxy_enabled = 11 [json_name = "proxyEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getProxyEnabledFieldBuilder() {
+      if (proxyEnabledBuilder_ == null) {
+        proxyEnabledBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getProxyEnabled(),
+                getParentForChildren(),
+                isClean());
+        proxyEnabled_ = null;
+      }
+      return proxyEnabledBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

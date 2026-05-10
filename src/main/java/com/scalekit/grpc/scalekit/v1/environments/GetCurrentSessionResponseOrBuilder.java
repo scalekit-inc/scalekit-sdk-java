@@ -83,4 +83,21 @@ public interface GetCurrentSessionResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getEmailBytes();
+
+  /**
+   * <code>optional string connected_account_id = 6 [json_name = "connectedAccountId"];</code>
+   * @return Whether the connectedAccountId field is set.
+   */
+  boolean hasConnectedAccountId();
+  /**
+   * <code>optional string connected_account_id = 6 [json_name = "connectedAccountId"];</code>
+   * @return The connectedAccountId.
+   */
+  java.lang.String getConnectedAccountId();
+  /**
+   * <code>optional string connected_account_id = 6 [json_name = "connectedAccountId"];</code>
+   * @return The bytes for connectedAccountId.
+   */
+  com.google.protobuf.ByteString
+      getConnectedAccountIdBytes();
 }

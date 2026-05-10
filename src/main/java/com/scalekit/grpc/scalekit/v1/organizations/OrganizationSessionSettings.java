@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private OrganizationSessionSettings() {
+    policySource_ = "";
   }
 
   @java.lang.Override
@@ -66,32 +67,6 @@ private static final long serialVersionUID = 0L;
     return absoluteSessionTimeout_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : absoluteSessionTimeout_;
   }
 
-  public static final int SESSION_MANAGEMENT_ENABLED_FIELD_NUMBER = 2;
-  private com.google.protobuf.BoolValue sessionManagementEnabled_;
-  /**
-   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the sessionManagementEnabled field is set.
-   */
-  @java.lang.Override
-  public boolean hasSessionManagementEnabled() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The sessionManagementEnabled.
-   */
-  @java.lang.Override
-  public com.google.protobuf.BoolValue getSessionManagementEnabled() {
-    return sessionManagementEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : sessionManagementEnabled_;
-  }
-  /**
-   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.BoolValueOrBuilder getSessionManagementEnabledOrBuilder() {
-    return sessionManagementEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : sessionManagementEnabled_;
-  }
-
   public static final int IDLE_SESSION_TIMEOUT_FIELD_NUMBER = 3;
   private com.google.protobuf.Int32Value idleSessionTimeout_;
   /**
@@ -100,7 +75,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasIdleSessionTimeout() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -118,30 +93,92 @@ private static final long serialVersionUID = 0L;
     return idleSessionTimeout_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : idleSessionTimeout_;
   }
 
-  public static final int IDLE_SESSION_ENABLED_FIELD_NUMBER = 4;
-  private com.google.protobuf.BoolValue idleSessionEnabled_;
+  public static final int IDLE_SESSION_TIMEOUT_ENABLED_FIELD_NUMBER = 5;
+  private com.google.protobuf.BoolValue idleSessionTimeoutEnabled_;
   /**
-   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the idleSessionEnabled field is set.
+   * <pre>
+   * Whether idle session timeout is enabled for this organization.
+   * Effective idle timeout is enabled if either the environment or any organization with SESSION_POLICY_CUSTOM has it enabled.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue idle_session_timeout_enabled = 5 [json_name = "idleSessionTimeoutEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the idleSessionTimeoutEnabled field is set.
    */
   @java.lang.Override
-  public boolean hasIdleSessionEnabled() {
-    return ((bitField0_ & 0x00000008) != 0);
+  public boolean hasIdleSessionTimeoutEnabled() {
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The idleSessionEnabled.
+   * <pre>
+   * Whether idle session timeout is enabled for this organization.
+   * Effective idle timeout is enabled if either the environment or any organization with SESSION_POLICY_CUSTOM has it enabled.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue idle_session_timeout_enabled = 5 [json_name = "idleSessionTimeoutEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The idleSessionTimeoutEnabled.
    */
   @java.lang.Override
-  public com.google.protobuf.BoolValue getIdleSessionEnabled() {
-    return idleSessionEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : idleSessionEnabled_;
+  public com.google.protobuf.BoolValue getIdleSessionTimeoutEnabled() {
+    return idleSessionTimeoutEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : idleSessionTimeoutEnabled_;
   }
   /**
-   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <pre>
+   * Whether idle session timeout is enabled for this organization.
+   * Effective idle timeout is enabled if either the environment or any organization with SESSION_POLICY_CUSTOM has it enabled.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue idle_session_timeout_enabled = 5 [json_name = "idleSessionTimeoutEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public com.google.protobuf.BoolValueOrBuilder getIdleSessionEnabledOrBuilder() {
-    return idleSessionEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : idleSessionEnabled_;
+  public com.google.protobuf.BoolValueOrBuilder getIdleSessionTimeoutEnabledOrBuilder() {
+    return idleSessionTimeoutEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : idleSessionTimeoutEnabled_;
+  }
+
+  public static final int POLICY_SOURCE_FIELD_NUMBER = 6;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object policySource_ = "";
+  /**
+   * <pre>
+   * APPLICATION (default) = inherit application-level policy; CUSTOM = org-specific values are active.
+   * </pre>
+   *
+   * <code>string policy_source = 6 [json_name = "policySource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The policySource.
+   */
+  @java.lang.Override
+  public java.lang.String getPolicySource() {
+    java.lang.Object ref = policySource_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      policySource_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * APPLICATION (default) = inherit application-level policy; CUSTOM = org-specific values are active.
+   * </pre>
+   *
+   * <code>string policy_source = 6 [json_name = "policySource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for policySource.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPolicySourceBytes() {
+    java.lang.Object ref = policySource_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      policySource_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -162,13 +199,13 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(1, getAbsoluteSessionTimeout());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(2, getSessionManagementEnabled());
-    }
-    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(3, getIdleSessionTimeout());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeMessage(4, getIdleSessionEnabled());
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(5, getIdleSessionTimeoutEnabled());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policySource_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, policySource_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -185,15 +222,14 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getSessionManagementEnabled());
+        .computeMessageSize(3, getIdleSessionTimeout());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getIdleSessionTimeout());
+        .computeMessageSize(5, getIdleSessionTimeoutEnabled());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getIdleSessionEnabled());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policySource_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, policySource_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -215,21 +251,18 @@ private static final long serialVersionUID = 0L;
       if (!getAbsoluteSessionTimeout()
           .equals(other.getAbsoluteSessionTimeout())) return false;
     }
-    if (hasSessionManagementEnabled() != other.hasSessionManagementEnabled()) return false;
-    if (hasSessionManagementEnabled()) {
-      if (!getSessionManagementEnabled()
-          .equals(other.getSessionManagementEnabled())) return false;
-    }
     if (hasIdleSessionTimeout() != other.hasIdleSessionTimeout()) return false;
     if (hasIdleSessionTimeout()) {
       if (!getIdleSessionTimeout()
           .equals(other.getIdleSessionTimeout())) return false;
     }
-    if (hasIdleSessionEnabled() != other.hasIdleSessionEnabled()) return false;
-    if (hasIdleSessionEnabled()) {
-      if (!getIdleSessionEnabled()
-          .equals(other.getIdleSessionEnabled())) return false;
+    if (hasIdleSessionTimeoutEnabled() != other.hasIdleSessionTimeoutEnabled()) return false;
+    if (hasIdleSessionTimeoutEnabled()) {
+      if (!getIdleSessionTimeoutEnabled()
+          .equals(other.getIdleSessionTimeoutEnabled())) return false;
     }
+    if (!getPolicySource()
+        .equals(other.getPolicySource())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -245,18 +278,16 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ABSOLUTE_SESSION_TIMEOUT_FIELD_NUMBER;
       hash = (53 * hash) + getAbsoluteSessionTimeout().hashCode();
     }
-    if (hasSessionManagementEnabled()) {
-      hash = (37 * hash) + SESSION_MANAGEMENT_ENABLED_FIELD_NUMBER;
-      hash = (53 * hash) + getSessionManagementEnabled().hashCode();
-    }
     if (hasIdleSessionTimeout()) {
       hash = (37 * hash) + IDLE_SESSION_TIMEOUT_FIELD_NUMBER;
       hash = (53 * hash) + getIdleSessionTimeout().hashCode();
     }
-    if (hasIdleSessionEnabled()) {
-      hash = (37 * hash) + IDLE_SESSION_ENABLED_FIELD_NUMBER;
-      hash = (53 * hash) + getIdleSessionEnabled().hashCode();
+    if (hasIdleSessionTimeoutEnabled()) {
+      hash = (37 * hash) + IDLE_SESSION_TIMEOUT_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + getIdleSessionTimeoutEnabled().hashCode();
     }
+    hash = (37 * hash) + POLICY_SOURCE_FIELD_NUMBER;
+    hash = (53 * hash) + getPolicySource().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -388,9 +419,8 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getAbsoluteSessionTimeoutFieldBuilder();
-        getSessionManagementEnabledFieldBuilder();
         getIdleSessionTimeoutFieldBuilder();
-        getIdleSessionEnabledFieldBuilder();
+        getIdleSessionTimeoutEnabledFieldBuilder();
       }
     }
     @java.lang.Override
@@ -402,21 +432,17 @@ private static final long serialVersionUID = 0L;
         absoluteSessionTimeoutBuilder_.dispose();
         absoluteSessionTimeoutBuilder_ = null;
       }
-      sessionManagementEnabled_ = null;
-      if (sessionManagementEnabledBuilder_ != null) {
-        sessionManagementEnabledBuilder_.dispose();
-        sessionManagementEnabledBuilder_ = null;
-      }
       idleSessionTimeout_ = null;
       if (idleSessionTimeoutBuilder_ != null) {
         idleSessionTimeoutBuilder_.dispose();
         idleSessionTimeoutBuilder_ = null;
       }
-      idleSessionEnabled_ = null;
-      if (idleSessionEnabledBuilder_ != null) {
-        idleSessionEnabledBuilder_.dispose();
-        idleSessionEnabledBuilder_ = null;
+      idleSessionTimeoutEnabled_ = null;
+      if (idleSessionTimeoutEnabledBuilder_ != null) {
+        idleSessionTimeoutEnabledBuilder_.dispose();
+        idleSessionTimeoutEnabledBuilder_ = null;
       }
+      policySource_ = "";
       return this;
     }
 
@@ -458,22 +484,19 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.sessionManagementEnabled_ = sessionManagementEnabledBuilder_ == null
-            ? sessionManagementEnabled_
-            : sessionManagementEnabledBuilder_.build();
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.idleSessionTimeout_ = idleSessionTimeoutBuilder_ == null
             ? idleSessionTimeout_
             : idleSessionTimeoutBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.idleSessionTimeoutEnabled_ = idleSessionTimeoutEnabledBuilder_ == null
+            ? idleSessionTimeoutEnabled_
+            : idleSessionTimeoutEnabledBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.idleSessionEnabled_ = idleSessionEnabledBuilder_ == null
-            ? idleSessionEnabled_
-            : idleSessionEnabledBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        result.policySource_ = policySource_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -525,14 +548,16 @@ private static final long serialVersionUID = 0L;
       if (other.hasAbsoluteSessionTimeout()) {
         mergeAbsoluteSessionTimeout(other.getAbsoluteSessionTimeout());
       }
-      if (other.hasSessionManagementEnabled()) {
-        mergeSessionManagementEnabled(other.getSessionManagementEnabled());
-      }
       if (other.hasIdleSessionTimeout()) {
         mergeIdleSessionTimeout(other.getIdleSessionTimeout());
       }
-      if (other.hasIdleSessionEnabled()) {
-        mergeIdleSessionEnabled(other.getIdleSessionEnabled());
+      if (other.hasIdleSessionTimeoutEnabled()) {
+        mergeIdleSessionTimeoutEnabled(other.getIdleSessionTimeoutEnabled());
+      }
+      if (!other.getPolicySource().isEmpty()) {
+        policySource_ = other.policySource_;
+        bitField0_ |= 0x00000008;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -567,27 +592,25 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
-            case 18: {
-              input.readMessage(
-                  getSessionManagementEnabledFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              bitField0_ |= 0x00000002;
-              break;
-            } // case 18
             case 26: {
               input.readMessage(
                   getIdleSessionTimeoutFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000002;
               break;
             } // case 26
-            case 34: {
+            case 42: {
               input.readMessage(
-                  getIdleSessionEnabledFieldBuilder().getBuilder(),
+                  getIdleSessionTimeoutEnabledFieldBuilder().getBuilder(),
                   extensionRegistry);
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 42
+            case 50: {
+              policySource_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               break;
-            } // case 34
+            } // case 50
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -726,127 +749,6 @@ private static final long serialVersionUID = 0L;
       return absoluteSessionTimeoutBuilder_;
     }
 
-    private com.google.protobuf.BoolValue sessionManagementEnabled_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> sessionManagementEnabledBuilder_;
-    /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the sessionManagementEnabled field is set.
-     */
-    public boolean hasSessionManagementEnabled() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The sessionManagementEnabled.
-     */
-    public com.google.protobuf.BoolValue getSessionManagementEnabled() {
-      if (sessionManagementEnabledBuilder_ == null) {
-        return sessionManagementEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : sessionManagementEnabled_;
-      } else {
-        return sessionManagementEnabledBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setSessionManagementEnabled(com.google.protobuf.BoolValue value) {
-      if (sessionManagementEnabledBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        sessionManagementEnabled_ = value;
-      } else {
-        sessionManagementEnabledBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder setSessionManagementEnabled(
-        com.google.protobuf.BoolValue.Builder builderForValue) {
-      if (sessionManagementEnabledBuilder_ == null) {
-        sessionManagementEnabled_ = builderForValue.build();
-      } else {
-        sessionManagementEnabledBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder mergeSessionManagementEnabled(com.google.protobuf.BoolValue value) {
-      if (sessionManagementEnabledBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0) &&
-          sessionManagementEnabled_ != null &&
-          sessionManagementEnabled_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
-          getSessionManagementEnabledBuilder().mergeFrom(value);
-        } else {
-          sessionManagementEnabled_ = value;
-        }
-      } else {
-        sessionManagementEnabledBuilder_.mergeFrom(value);
-      }
-      if (sessionManagementEnabled_ != null) {
-        bitField0_ |= 0x00000002;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public Builder clearSessionManagementEnabled() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      sessionManagementEnabled_ = null;
-      if (sessionManagementEnabledBuilder_ != null) {
-        sessionManagementEnabledBuilder_.dispose();
-        sessionManagementEnabledBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public com.google.protobuf.BoolValue.Builder getSessionManagementEnabledBuilder() {
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return getSessionManagementEnabledFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    public com.google.protobuf.BoolValueOrBuilder getSessionManagementEnabledOrBuilder() {
-      if (sessionManagementEnabledBuilder_ != null) {
-        return sessionManagementEnabledBuilder_.getMessageOrBuilder();
-      } else {
-        return sessionManagementEnabled_ == null ?
-            com.google.protobuf.BoolValue.getDefaultInstance() : sessionManagementEnabled_;
-      }
-    }
-    /**
-     * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
-        getSessionManagementEnabledFieldBuilder() {
-      if (sessionManagementEnabledBuilder_ == null) {
-        sessionManagementEnabledBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
-                getSessionManagementEnabled(),
-                getParentForChildren(),
-                isClean());
-        sessionManagementEnabled_ = null;
-      }
-      return sessionManagementEnabledBuilder_;
-    }
-
     private com.google.protobuf.Int32Value idleSessionTimeout_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> idleSessionTimeoutBuilder_;
@@ -855,7 +757,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the idleSessionTimeout field is set.
      */
     public boolean hasIdleSessionTimeout() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -880,7 +782,7 @@ private static final long serialVersionUID = 0L;
       } else {
         idleSessionTimeoutBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -894,7 +796,7 @@ private static final long serialVersionUID = 0L;
       } else {
         idleSessionTimeoutBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -903,7 +805,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeIdleSessionTimeout(com.google.protobuf.Int32Value value) {
       if (idleSessionTimeoutBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0) &&
+        if (((bitField0_ & 0x00000002) != 0) &&
           idleSessionTimeout_ != null &&
           idleSessionTimeout_ != com.google.protobuf.Int32Value.getDefaultInstance()) {
           getIdleSessionTimeoutBuilder().mergeFrom(value);
@@ -914,7 +816,7 @@ private static final long serialVersionUID = 0L;
         idleSessionTimeoutBuilder_.mergeFrom(value);
       }
       if (idleSessionTimeout_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -923,7 +825,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearIdleSessionTimeout() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       idleSessionTimeout_ = null;
       if (idleSessionTimeoutBuilder_ != null) {
         idleSessionTimeoutBuilder_.dispose();
@@ -936,7 +838,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Int32Value.Builder getIdleSessionTimeoutBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getIdleSessionTimeoutFieldBuilder().getBuilder();
     }
@@ -968,125 +870,262 @@ private static final long serialVersionUID = 0L;
       return idleSessionTimeoutBuilder_;
     }
 
-    private com.google.protobuf.BoolValue idleSessionEnabled_;
+    private com.google.protobuf.BoolValue idleSessionTimeoutEnabled_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> idleSessionEnabledBuilder_;
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> idleSessionTimeoutEnabledBuilder_;
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the idleSessionEnabled field is set.
+     * <pre>
+     * Whether idle session timeout is enabled for this organization.
+     * Effective idle timeout is enabled if either the environment or any organization with SESSION_POLICY_CUSTOM has it enabled.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue idle_session_timeout_enabled = 5 [json_name = "idleSessionTimeoutEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the idleSessionTimeoutEnabled field is set.
      */
-    public boolean hasIdleSessionEnabled() {
-      return ((bitField0_ & 0x00000008) != 0);
+    public boolean hasIdleSessionTimeoutEnabled() {
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The idleSessionEnabled.
+     * <pre>
+     * Whether idle session timeout is enabled for this organization.
+     * Effective idle timeout is enabled if either the environment or any organization with SESSION_POLICY_CUSTOM has it enabled.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue idle_session_timeout_enabled = 5 [json_name = "idleSessionTimeoutEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The idleSessionTimeoutEnabled.
      */
-    public com.google.protobuf.BoolValue getIdleSessionEnabled() {
-      if (idleSessionEnabledBuilder_ == null) {
-        return idleSessionEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : idleSessionEnabled_;
+    public com.google.protobuf.BoolValue getIdleSessionTimeoutEnabled() {
+      if (idleSessionTimeoutEnabledBuilder_ == null) {
+        return idleSessionTimeoutEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : idleSessionTimeoutEnabled_;
       } else {
-        return idleSessionEnabledBuilder_.getMessage();
+        return idleSessionTimeoutEnabledBuilder_.getMessage();
       }
     }
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <pre>
+     * Whether idle session timeout is enabled for this organization.
+     * Effective idle timeout is enabled if either the environment or any organization with SESSION_POLICY_CUSTOM has it enabled.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue idle_session_timeout_enabled = 5 [json_name = "idleSessionTimeoutEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder setIdleSessionEnabled(com.google.protobuf.BoolValue value) {
-      if (idleSessionEnabledBuilder_ == null) {
+    public Builder setIdleSessionTimeoutEnabled(com.google.protobuf.BoolValue value) {
+      if (idleSessionTimeoutEnabledBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        idleSessionEnabled_ = value;
+        idleSessionTimeoutEnabled_ = value;
       } else {
-        idleSessionEnabledBuilder_.setMessage(value);
+        idleSessionTimeoutEnabledBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <pre>
+     * Whether idle session timeout is enabled for this organization.
+     * Effective idle timeout is enabled if either the environment or any organization with SESSION_POLICY_CUSTOM has it enabled.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue idle_session_timeout_enabled = 5 [json_name = "idleSessionTimeoutEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder setIdleSessionEnabled(
+    public Builder setIdleSessionTimeoutEnabled(
         com.google.protobuf.BoolValue.Builder builderForValue) {
-      if (idleSessionEnabledBuilder_ == null) {
-        idleSessionEnabled_ = builderForValue.build();
+      if (idleSessionTimeoutEnabledBuilder_ == null) {
+        idleSessionTimeoutEnabled_ = builderForValue.build();
       } else {
-        idleSessionEnabledBuilder_.setMessage(builderForValue.build());
+        idleSessionTimeoutEnabledBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <pre>
+     * Whether idle session timeout is enabled for this organization.
+     * Effective idle timeout is enabled if either the environment or any organization with SESSION_POLICY_CUSTOM has it enabled.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue idle_session_timeout_enabled = 5 [json_name = "idleSessionTimeoutEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder mergeIdleSessionEnabled(com.google.protobuf.BoolValue value) {
-      if (idleSessionEnabledBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0) &&
-          idleSessionEnabled_ != null &&
-          idleSessionEnabled_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
-          getIdleSessionEnabledBuilder().mergeFrom(value);
+    public Builder mergeIdleSessionTimeoutEnabled(com.google.protobuf.BoolValue value) {
+      if (idleSessionTimeoutEnabledBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0) &&
+          idleSessionTimeoutEnabled_ != null &&
+          idleSessionTimeoutEnabled_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getIdleSessionTimeoutEnabledBuilder().mergeFrom(value);
         } else {
-          idleSessionEnabled_ = value;
+          idleSessionTimeoutEnabled_ = value;
         }
       } else {
-        idleSessionEnabledBuilder_.mergeFrom(value);
+        idleSessionTimeoutEnabledBuilder_.mergeFrom(value);
       }
-      if (idleSessionEnabled_ != null) {
-        bitField0_ |= 0x00000008;
+      if (idleSessionTimeoutEnabled_ != null) {
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <pre>
+     * Whether idle session timeout is enabled for this organization.
+     * Effective idle timeout is enabled if either the environment or any organization with SESSION_POLICY_CUSTOM has it enabled.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue idle_session_timeout_enabled = 5 [json_name = "idleSessionTimeoutEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder clearIdleSessionEnabled() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      idleSessionEnabled_ = null;
-      if (idleSessionEnabledBuilder_ != null) {
-        idleSessionEnabledBuilder_.dispose();
-        idleSessionEnabledBuilder_ = null;
+    public Builder clearIdleSessionTimeoutEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      idleSessionTimeoutEnabled_ = null;
+      if (idleSessionTimeoutEnabledBuilder_ != null) {
+        idleSessionTimeoutEnabledBuilder_.dispose();
+        idleSessionTimeoutEnabledBuilder_ = null;
       }
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <pre>
+     * Whether idle session timeout is enabled for this organization.
+     * Effective idle timeout is enabled if either the environment or any organization with SESSION_POLICY_CUSTOM has it enabled.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue idle_session_timeout_enabled = 5 [json_name = "idleSessionTimeoutEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.google.protobuf.BoolValue.Builder getIdleSessionEnabledBuilder() {
-      bitField0_ |= 0x00000008;
+    public com.google.protobuf.BoolValue.Builder getIdleSessionTimeoutEnabledBuilder() {
+      bitField0_ |= 0x00000004;
       onChanged();
-      return getIdleSessionEnabledFieldBuilder().getBuilder();
+      return getIdleSessionTimeoutEnabledFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <pre>
+     * Whether idle session timeout is enabled for this organization.
+     * Effective idle timeout is enabled if either the environment or any organization with SESSION_POLICY_CUSTOM has it enabled.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue idle_session_timeout_enabled = 5 [json_name = "idleSessionTimeoutEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.google.protobuf.BoolValueOrBuilder getIdleSessionEnabledOrBuilder() {
-      if (idleSessionEnabledBuilder_ != null) {
-        return idleSessionEnabledBuilder_.getMessageOrBuilder();
+    public com.google.protobuf.BoolValueOrBuilder getIdleSessionTimeoutEnabledOrBuilder() {
+      if (idleSessionTimeoutEnabledBuilder_ != null) {
+        return idleSessionTimeoutEnabledBuilder_.getMessageOrBuilder();
       } else {
-        return idleSessionEnabled_ == null ?
-            com.google.protobuf.BoolValue.getDefaultInstance() : idleSessionEnabled_;
+        return idleSessionTimeoutEnabled_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : idleSessionTimeoutEnabled_;
       }
     }
     /**
-     * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <pre>
+     * Whether idle session timeout is enabled for this organization.
+     * Effective idle timeout is enabled if either the environment or any organization with SESSION_POLICY_CUSTOM has it enabled.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue idle_session_timeout_enabled = 5 [json_name = "idleSessionTimeoutEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
-        getIdleSessionEnabledFieldBuilder() {
-      if (idleSessionEnabledBuilder_ == null) {
-        idleSessionEnabledBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getIdleSessionTimeoutEnabledFieldBuilder() {
+      if (idleSessionTimeoutEnabledBuilder_ == null) {
+        idleSessionTimeoutEnabledBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
-                getIdleSessionEnabled(),
+                getIdleSessionTimeoutEnabled(),
                 getParentForChildren(),
                 isClean());
-        idleSessionEnabled_ = null;
+        idleSessionTimeoutEnabled_ = null;
       }
-      return idleSessionEnabledBuilder_;
+      return idleSessionTimeoutEnabledBuilder_;
+    }
+
+    private java.lang.Object policySource_ = "";
+    /**
+     * <pre>
+     * APPLICATION (default) = inherit application-level policy; CUSTOM = org-specific values are active.
+     * </pre>
+     *
+     * <code>string policy_source = 6 [json_name = "policySource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The policySource.
+     */
+    public java.lang.String getPolicySource() {
+      java.lang.Object ref = policySource_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        policySource_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * APPLICATION (default) = inherit application-level policy; CUSTOM = org-specific values are active.
+     * </pre>
+     *
+     * <code>string policy_source = 6 [json_name = "policySource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for policySource.
+     */
+    public com.google.protobuf.ByteString
+        getPolicySourceBytes() {
+      java.lang.Object ref = policySource_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        policySource_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * APPLICATION (default) = inherit application-level policy; CUSTOM = org-specific values are active.
+     * </pre>
+     *
+     * <code>string policy_source = 6 [json_name = "policySource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The policySource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicySource(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      policySource_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * APPLICATION (default) = inherit application-level policy; CUSTOM = org-specific values are active.
+     * </pre>
+     *
+     * <code>string policy_source = 6 [json_name = "policySource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPolicySource() {
+      policySource_ = getDefaultInstance().getPolicySource();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * APPLICATION (default) = inherit application-level policy; CUSTOM = org-specific values are active.
+     * </pre>
+     *
+     * <code>string policy_source = 6 [json_name = "policySource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for policySource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicySourceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      policySource_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

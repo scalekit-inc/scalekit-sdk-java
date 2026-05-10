@@ -24,6 +24,8 @@ private static final long serialVersionUID = 0L;
     displayName_ = "";
     inviterEmail_ = "";
     provisioningMethod_ = "";
+    permissions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -528,6 +530,43 @@ java.lang.String defaultValue) {
     }
   }
 
+  public static final int PERMISSIONS_FIELD_NUMBER = 15;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList permissions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string permissions = 15 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the permissions.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getPermissionsList() {
+    return permissions_;
+  }
+  /**
+   * <code>repeated string permissions = 15 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of permissions.
+   */
+  public int getPermissionsCount() {
+    return permissions_.size();
+  }
+  /**
+   * <code>repeated string permissions = 15 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The permissions at the given index.
+   */
+  public java.lang.String getPermissions(int index) {
+    return permissions_.get(index);
+  }
+  /**
+   * <code>repeated string permissions = 15 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the permissions at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getPermissionsBytes(int index) {
+    return permissions_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -580,6 +619,9 @@ java.lang.String defaultValue) {
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, provisioningMethod_);
+    }
+    for (int i = 0; i < permissions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, permissions_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -638,6 +680,14 @@ java.lang.String defaultValue) {
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, provisioningMethod_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < permissions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(permissions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getPermissionsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -701,6 +751,8 @@ java.lang.String defaultValue) {
       if (!getProvisioningMethod()
           .equals(other.getProvisioningMethod())) return false;
     }
+    if (!getPermissionsList()
+        .equals(other.getPermissionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -755,6 +807,10 @@ java.lang.String defaultValue) {
     if (hasProvisioningMethod()) {
       hash = (37 * hash) + PROVISIONING_METHOD_FIELD_NUMBER;
       hash = (53 * hash) + getProvisioningMethod().hashCode();
+    }
+    if (getPermissionsCount() > 0) {
+      hash = (37 * hash) + PERMISSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getPermissionsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -953,6 +1009,8 @@ java.lang.String defaultValue) {
         expiresAtBuilder_ = null;
       }
       provisioningMethod_ = "";
+      permissions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1049,6 +1107,10 @@ java.lang.String defaultValue) {
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.provisioningMethod_ = provisioningMethod_;
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        permissions_.makeImmutable();
+        result.permissions_ = permissions_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1166,6 +1228,16 @@ java.lang.String defaultValue) {
         bitField0_ |= 0x00000800;
         onChanged();
       }
+      if (!other.permissions_.isEmpty()) {
+        if (permissions_.isEmpty()) {
+          permissions_ = other.permissions_;
+          bitField0_ |= 0x00001000;
+        } else {
+          ensurePermissionsIsMutable();
+          permissions_.addAll(other.permissions_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1272,6 +1344,12 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000800;
               break;
             } // case 114
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensurePermissionsIsMutable();
+              permissions_.add(s);
+              break;
+            } // case 122
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2577,6 +2655,117 @@ java.lang.String defaultValue) {
       checkByteStringIsUtf8(value);
       provisioningMethod_ = value;
       bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList permissions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensurePermissionsIsMutable() {
+      if (!permissions_.isModifiable()) {
+        permissions_ = new com.google.protobuf.LazyStringArrayList(permissions_);
+      }
+      bitField0_ |= 0x00001000;
+    }
+    /**
+     * <code>repeated string permissions = 15 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the permissions.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getPermissionsList() {
+      permissions_.makeImmutable();
+      return permissions_;
+    }
+    /**
+     * <code>repeated string permissions = 15 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of permissions.
+     */
+    public int getPermissionsCount() {
+      return permissions_.size();
+    }
+    /**
+     * <code>repeated string permissions = 15 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The permissions at the given index.
+     */
+    public java.lang.String getPermissions(int index) {
+      return permissions_.get(index);
+    }
+    /**
+     * <code>repeated string permissions = 15 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the permissions at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getPermissionsBytes(int index) {
+      return permissions_.getByteString(index);
+    }
+    /**
+     * <code>repeated string permissions = 15 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The permissions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPermissions(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensurePermissionsIsMutable();
+      permissions_.set(index, value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string permissions = 15 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The permissions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPermissions(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensurePermissionsIsMutable();
+      permissions_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string permissions = 15 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The permissions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllPermissions(
+        java.lang.Iterable<java.lang.String> values) {
+      ensurePermissionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, permissions_);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string permissions = 15 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPermissions() {
+      permissions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00001000);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string permissions = 15 [json_name = "permissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the permissions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPermissionsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensurePermissionsIsMutable();
+      permissions_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

@@ -24,21 +24,6 @@ public interface OrganizationSessionSettingsOrBuilder extends
   com.google.protobuf.Int32ValueOrBuilder getAbsoluteSessionTimeoutOrBuilder();
 
   /**
-   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the sessionManagementEnabled field is set.
-   */
-  boolean hasSessionManagementEnabled();
-  /**
-   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The sessionManagementEnabled.
-   */
-  com.google.protobuf.BoolValue getSessionManagementEnabled();
-  /**
-   * <code>.google.protobuf.BoolValue session_management_enabled = 2 [json_name = "sessionManagementEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   */
-  com.google.protobuf.BoolValueOrBuilder getSessionManagementEnabledOrBuilder();
-
-  /**
    * <code>.google.protobuf.Int32Value idle_session_timeout = 3 [json_name = "idleSessionTimeout", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the idleSessionTimeout field is set.
    */
@@ -54,17 +39,52 @@ public interface OrganizationSessionSettingsOrBuilder extends
   com.google.protobuf.Int32ValueOrBuilder getIdleSessionTimeoutOrBuilder();
 
   /**
-   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the idleSessionEnabled field is set.
+   * <pre>
+   * Whether idle session timeout is enabled for this organization.
+   * Effective idle timeout is enabled if either the environment or any organization with SESSION_POLICY_CUSTOM has it enabled.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue idle_session_timeout_enabled = 5 [json_name = "idleSessionTimeoutEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the idleSessionTimeoutEnabled field is set.
    */
-  boolean hasIdleSessionEnabled();
+  boolean hasIdleSessionTimeoutEnabled();
   /**
-   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The idleSessionEnabled.
+   * <pre>
+   * Whether idle session timeout is enabled for this organization.
+   * Effective idle timeout is enabled if either the environment or any organization with SESSION_POLICY_CUSTOM has it enabled.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue idle_session_timeout_enabled = 5 [json_name = "idleSessionTimeoutEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The idleSessionTimeoutEnabled.
    */
-  com.google.protobuf.BoolValue getIdleSessionEnabled();
+  com.google.protobuf.BoolValue getIdleSessionTimeoutEnabled();
   /**
-   * <code>.google.protobuf.BoolValue idle_session_enabled = 4 [json_name = "idleSessionEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <pre>
+   * Whether idle session timeout is enabled for this organization.
+   * Effective idle timeout is enabled if either the environment or any organization with SESSION_POLICY_CUSTOM has it enabled.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue idle_session_timeout_enabled = 5 [json_name = "idleSessionTimeoutEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  com.google.protobuf.BoolValueOrBuilder getIdleSessionEnabledOrBuilder();
+  com.google.protobuf.BoolValueOrBuilder getIdleSessionTimeoutEnabledOrBuilder();
+
+  /**
+   * <pre>
+   * APPLICATION (default) = inherit application-level policy; CUSTOM = org-specific values are active.
+   * </pre>
+   *
+   * <code>string policy_source = 6 [json_name = "policySource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The policySource.
+   */
+  java.lang.String getPolicySource();
+  /**
+   * <pre>
+   * APPLICATION (default) = inherit application-level policy; CUSTOM = org-specific values are active.
+   * </pre>
+   *
+   * <code>string policy_source = 6 [json_name = "policySource", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for policySource.
+   */
+  com.google.protobuf.ByteString
+      getPolicySourceBytes();
 }

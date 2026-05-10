@@ -19,6 +19,9 @@ private static final long serialVersionUID = 0L;
   private SessionSettings() {
     cookiePersistenceType_ = 0;
     cookieSameSiteSetting_ = 0;
+    accessTokenExpiryUnit_ = 0;
+    absoluteSessionTimeoutUnit_ = 0;
+    idleSessionTimeoutUnit_ = 0;
   }
 
   @java.lang.Override
@@ -260,6 +263,60 @@ private static final long serialVersionUID = 0L;
     return cookieCustomDomain_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : cookieCustomDomain_;
   }
 
+  public static final int ACCESS_TOKEN_EXPIRY_UNIT_FIELD_NUMBER = 10;
+  private int accessTokenExpiryUnit_ = 0;
+  /**
+   * <code>.scalekit.v1.environments.TimeUnit access_token_expiry_unit = 10 [json_name = "accessTokenExpiryUnit"];</code>
+   * @return The enum numeric value on the wire for accessTokenExpiryUnit.
+   */
+  @java.lang.Override public int getAccessTokenExpiryUnitValue() {
+    return accessTokenExpiryUnit_;
+  }
+  /**
+   * <code>.scalekit.v1.environments.TimeUnit access_token_expiry_unit = 10 [json_name = "accessTokenExpiryUnit"];</code>
+   * @return The accessTokenExpiryUnit.
+   */
+  @java.lang.Override public com.scalekit.grpc.scalekit.v1.environments.TimeUnit getAccessTokenExpiryUnit() {
+    com.scalekit.grpc.scalekit.v1.environments.TimeUnit result = com.scalekit.grpc.scalekit.v1.environments.TimeUnit.forNumber(accessTokenExpiryUnit_);
+    return result == null ? com.scalekit.grpc.scalekit.v1.environments.TimeUnit.UNRECOGNIZED : result;
+  }
+
+  public static final int ABSOLUTE_SESSION_TIMEOUT_UNIT_FIELD_NUMBER = 11;
+  private int absoluteSessionTimeoutUnit_ = 0;
+  /**
+   * <code>.scalekit.v1.environments.TimeUnit absolute_session_timeout_unit = 11 [json_name = "absoluteSessionTimeoutUnit"];</code>
+   * @return The enum numeric value on the wire for absoluteSessionTimeoutUnit.
+   */
+  @java.lang.Override public int getAbsoluteSessionTimeoutUnitValue() {
+    return absoluteSessionTimeoutUnit_;
+  }
+  /**
+   * <code>.scalekit.v1.environments.TimeUnit absolute_session_timeout_unit = 11 [json_name = "absoluteSessionTimeoutUnit"];</code>
+   * @return The absoluteSessionTimeoutUnit.
+   */
+  @java.lang.Override public com.scalekit.grpc.scalekit.v1.environments.TimeUnit getAbsoluteSessionTimeoutUnit() {
+    com.scalekit.grpc.scalekit.v1.environments.TimeUnit result = com.scalekit.grpc.scalekit.v1.environments.TimeUnit.forNumber(absoluteSessionTimeoutUnit_);
+    return result == null ? com.scalekit.grpc.scalekit.v1.environments.TimeUnit.UNRECOGNIZED : result;
+  }
+
+  public static final int IDLE_SESSION_TIMEOUT_UNIT_FIELD_NUMBER = 12;
+  private int idleSessionTimeoutUnit_ = 0;
+  /**
+   * <code>.scalekit.v1.environments.TimeUnit idle_session_timeout_unit = 12 [json_name = "idleSessionTimeoutUnit"];</code>
+   * @return The enum numeric value on the wire for idleSessionTimeoutUnit.
+   */
+  @java.lang.Override public int getIdleSessionTimeoutUnitValue() {
+    return idleSessionTimeoutUnit_;
+  }
+  /**
+   * <code>.scalekit.v1.environments.TimeUnit idle_session_timeout_unit = 12 [json_name = "idleSessionTimeoutUnit"];</code>
+   * @return The idleSessionTimeoutUnit.
+   */
+  @java.lang.Override public com.scalekit.grpc.scalekit.v1.environments.TimeUnit getIdleSessionTimeoutUnit() {
+    com.scalekit.grpc.scalekit.v1.environments.TimeUnit result = com.scalekit.grpc.scalekit.v1.environments.TimeUnit.forNumber(idleSessionTimeoutUnit_);
+    return result == null ? com.scalekit.grpc.scalekit.v1.environments.TimeUnit.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -300,6 +357,15 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(9, getCookieCustomDomain());
+    }
+    if (accessTokenExpiryUnit_ != com.scalekit.grpc.scalekit.v1.environments.TimeUnit.SESSION_TIME_UNIT_UNSPECIFIED.getNumber()) {
+      output.writeEnum(10, accessTokenExpiryUnit_);
+    }
+    if (absoluteSessionTimeoutUnit_ != com.scalekit.grpc.scalekit.v1.environments.TimeUnit.SESSION_TIME_UNIT_UNSPECIFIED.getNumber()) {
+      output.writeEnum(11, absoluteSessionTimeoutUnit_);
+    }
+    if (idleSessionTimeoutUnit_ != com.scalekit.grpc.scalekit.v1.environments.TimeUnit.SESSION_TIME_UNIT_UNSPECIFIED.getNumber()) {
+      output.writeEnum(12, idleSessionTimeoutUnit_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -345,6 +411,18 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getCookieCustomDomain());
+    }
+    if (accessTokenExpiryUnit_ != com.scalekit.grpc.scalekit.v1.environments.TimeUnit.SESSION_TIME_UNIT_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(10, accessTokenExpiryUnit_);
+    }
+    if (absoluteSessionTimeoutUnit_ != com.scalekit.grpc.scalekit.v1.environments.TimeUnit.SESSION_TIME_UNIT_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(11, absoluteSessionTimeoutUnit_);
+    }
+    if (idleSessionTimeoutUnit_ != com.scalekit.grpc.scalekit.v1.environments.TimeUnit.SESSION_TIME_UNIT_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(12, idleSessionTimeoutUnit_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -398,6 +476,9 @@ private static final long serialVersionUID = 0L;
       if (!getCookieCustomDomain()
           .equals(other.getCookieCustomDomain())) return false;
     }
+    if (accessTokenExpiryUnit_ != other.accessTokenExpiryUnit_) return false;
+    if (absoluteSessionTimeoutUnit_ != other.absoluteSessionTimeoutUnit_) return false;
+    if (idleSessionTimeoutUnit_ != other.idleSessionTimeoutUnit_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -441,6 +522,12 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + COOKIE_CUSTOM_DOMAIN_FIELD_NUMBER;
       hash = (53 * hash) + getCookieCustomDomain().hashCode();
     }
+    hash = (37 * hash) + ACCESS_TOKEN_EXPIRY_UNIT_FIELD_NUMBER;
+    hash = (53 * hash) + accessTokenExpiryUnit_;
+    hash = (37 * hash) + ABSOLUTE_SESSION_TIMEOUT_UNIT_FIELD_NUMBER;
+    hash = (53 * hash) + absoluteSessionTimeoutUnit_;
+    hash = (37 * hash) + IDLE_SESSION_TIMEOUT_UNIT_FIELD_NUMBER;
+    hash = (53 * hash) + idleSessionTimeoutUnit_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -621,6 +708,9 @@ private static final long serialVersionUID = 0L;
         cookieCustomDomainBuilder_.dispose();
         cookieCustomDomainBuilder_ = null;
       }
+      accessTokenExpiryUnit_ = 0;
+      absoluteSessionTimeoutUnit_ = 0;
+      idleSessionTimeoutUnit_ = 0;
       return this;
     }
 
@@ -703,6 +793,15 @@ private static final long serialVersionUID = 0L;
             : cookieCustomDomainBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.accessTokenExpiryUnit_ = accessTokenExpiryUnit_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.absoluteSessionTimeoutUnit_ = absoluteSessionTimeoutUnit_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.idleSessionTimeoutUnit_ = idleSessionTimeoutUnit_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -776,6 +875,15 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCookieCustomDomain()) {
         mergeCookieCustomDomain(other.getCookieCustomDomain());
+      }
+      if (other.accessTokenExpiryUnit_ != 0) {
+        setAccessTokenExpiryUnitValue(other.getAccessTokenExpiryUnitValue());
+      }
+      if (other.absoluteSessionTimeoutUnit_ != 0) {
+        setAbsoluteSessionTimeoutUnitValue(other.getAbsoluteSessionTimeoutUnitValue());
+      }
+      if (other.idleSessionTimeoutUnit_ != 0) {
+        setIdleSessionTimeoutUnitValue(other.getIdleSessionTimeoutUnitValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -862,6 +970,21 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000100;
               break;
             } // case 74
+            case 80: {
+              accessTokenExpiryUnit_ = input.readEnum();
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 80
+            case 88: {
+              absoluteSessionTimeoutUnit_ = input.readEnum();
+              bitField0_ |= 0x00000400;
+              break;
+            } // case 88
+            case 96: {
+              idleSessionTimeoutUnit_ = input.readEnum();
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 96
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1830,6 +1953,165 @@ private static final long serialVersionUID = 0L;
         cookieCustomDomain_ = null;
       }
       return cookieCustomDomainBuilder_;
+    }
+
+    private int accessTokenExpiryUnit_ = 0;
+    /**
+     * <code>.scalekit.v1.environments.TimeUnit access_token_expiry_unit = 10 [json_name = "accessTokenExpiryUnit"];</code>
+     * @return The enum numeric value on the wire for accessTokenExpiryUnit.
+     */
+    @java.lang.Override public int getAccessTokenExpiryUnitValue() {
+      return accessTokenExpiryUnit_;
+    }
+    /**
+     * <code>.scalekit.v1.environments.TimeUnit access_token_expiry_unit = 10 [json_name = "accessTokenExpiryUnit"];</code>
+     * @param value The enum numeric value on the wire for accessTokenExpiryUnit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAccessTokenExpiryUnitValue(int value) {
+      accessTokenExpiryUnit_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.environments.TimeUnit access_token_expiry_unit = 10 [json_name = "accessTokenExpiryUnit"];</code>
+     * @return The accessTokenExpiryUnit.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.environments.TimeUnit getAccessTokenExpiryUnit() {
+      com.scalekit.grpc.scalekit.v1.environments.TimeUnit result = com.scalekit.grpc.scalekit.v1.environments.TimeUnit.forNumber(accessTokenExpiryUnit_);
+      return result == null ? com.scalekit.grpc.scalekit.v1.environments.TimeUnit.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.scalekit.v1.environments.TimeUnit access_token_expiry_unit = 10 [json_name = "accessTokenExpiryUnit"];</code>
+     * @param value The accessTokenExpiryUnit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAccessTokenExpiryUnit(com.scalekit.grpc.scalekit.v1.environments.TimeUnit value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      accessTokenExpiryUnit_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.environments.TimeUnit access_token_expiry_unit = 10 [json_name = "accessTokenExpiryUnit"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAccessTokenExpiryUnit() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      accessTokenExpiryUnit_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int absoluteSessionTimeoutUnit_ = 0;
+    /**
+     * <code>.scalekit.v1.environments.TimeUnit absolute_session_timeout_unit = 11 [json_name = "absoluteSessionTimeoutUnit"];</code>
+     * @return The enum numeric value on the wire for absoluteSessionTimeoutUnit.
+     */
+    @java.lang.Override public int getAbsoluteSessionTimeoutUnitValue() {
+      return absoluteSessionTimeoutUnit_;
+    }
+    /**
+     * <code>.scalekit.v1.environments.TimeUnit absolute_session_timeout_unit = 11 [json_name = "absoluteSessionTimeoutUnit"];</code>
+     * @param value The enum numeric value on the wire for absoluteSessionTimeoutUnit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAbsoluteSessionTimeoutUnitValue(int value) {
+      absoluteSessionTimeoutUnit_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.environments.TimeUnit absolute_session_timeout_unit = 11 [json_name = "absoluteSessionTimeoutUnit"];</code>
+     * @return The absoluteSessionTimeoutUnit.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.environments.TimeUnit getAbsoluteSessionTimeoutUnit() {
+      com.scalekit.grpc.scalekit.v1.environments.TimeUnit result = com.scalekit.grpc.scalekit.v1.environments.TimeUnit.forNumber(absoluteSessionTimeoutUnit_);
+      return result == null ? com.scalekit.grpc.scalekit.v1.environments.TimeUnit.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.scalekit.v1.environments.TimeUnit absolute_session_timeout_unit = 11 [json_name = "absoluteSessionTimeoutUnit"];</code>
+     * @param value The absoluteSessionTimeoutUnit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAbsoluteSessionTimeoutUnit(com.scalekit.grpc.scalekit.v1.environments.TimeUnit value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000400;
+      absoluteSessionTimeoutUnit_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.environments.TimeUnit absolute_session_timeout_unit = 11 [json_name = "absoluteSessionTimeoutUnit"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAbsoluteSessionTimeoutUnit() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      absoluteSessionTimeoutUnit_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int idleSessionTimeoutUnit_ = 0;
+    /**
+     * <code>.scalekit.v1.environments.TimeUnit idle_session_timeout_unit = 12 [json_name = "idleSessionTimeoutUnit"];</code>
+     * @return The enum numeric value on the wire for idleSessionTimeoutUnit.
+     */
+    @java.lang.Override public int getIdleSessionTimeoutUnitValue() {
+      return idleSessionTimeoutUnit_;
+    }
+    /**
+     * <code>.scalekit.v1.environments.TimeUnit idle_session_timeout_unit = 12 [json_name = "idleSessionTimeoutUnit"];</code>
+     * @param value The enum numeric value on the wire for idleSessionTimeoutUnit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdleSessionTimeoutUnitValue(int value) {
+      idleSessionTimeoutUnit_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.environments.TimeUnit idle_session_timeout_unit = 12 [json_name = "idleSessionTimeoutUnit"];</code>
+     * @return The idleSessionTimeoutUnit.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.environments.TimeUnit getIdleSessionTimeoutUnit() {
+      com.scalekit.grpc.scalekit.v1.environments.TimeUnit result = com.scalekit.grpc.scalekit.v1.environments.TimeUnit.forNumber(idleSessionTimeoutUnit_);
+      return result == null ? com.scalekit.grpc.scalekit.v1.environments.TimeUnit.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.scalekit.v1.environments.TimeUnit idle_session_timeout_unit = 12 [json_name = "idleSessionTimeoutUnit"];</code>
+     * @param value The idleSessionTimeoutUnit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdleSessionTimeoutUnit(com.scalekit.grpc.scalekit.v1.environments.TimeUnit value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000800;
+      idleSessionTimeoutUnit_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.environments.TimeUnit idle_session_timeout_unit = 12 [json_name = "idleSessionTimeoutUnit"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIdleSessionTimeoutUnit() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      idleSessionTimeoutUnit_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

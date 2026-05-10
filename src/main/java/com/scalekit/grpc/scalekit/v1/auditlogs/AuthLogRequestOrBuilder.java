@@ -190,4 +190,52 @@ public interface AuthLogRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getResourceTypeBytes();
+
+  /**
+   * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+   * @return The connectedAccountIdentifier.
+   */
+  java.lang.String getConnectedAccountIdentifier();
+  /**
+   * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+   * @return The bytes for connectedAccountIdentifier.
+   */
+  com.google.protobuf.ByteString
+      getConnectedAccountIdentifierBytes();
+
+  /**
+   * <code>string client_id = 16 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The clientId.
+   */
+  java.lang.String getClientId();
+  /**
+   * <code>string client_id = 16 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for clientId.
+   */
+  com.google.protobuf.ByteString
+      getClientIdBytes();
+
+  /**
+   * <code>string client_name = 17 [json_name = "clientName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The clientName.
+   */
+  java.lang.String getClientName();
+  /**
+   * <code>string client_name = 17 [json_name = "clientName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for clientName.
+   */
+  com.google.protobuf.ByteString
+      getClientNameBytes();
+
+  /**
+   * <code>string client_type = 18 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The clientType.
+   */
+  java.lang.String getClientType();
+  /**
+   * <code>string client_type = 18 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for clientType.
+   */
+  com.google.protobuf.ByteString
+      getClientTypeBytes();
 }

@@ -25,6 +25,8 @@ private static final long serialVersionUID = 0L;
     interceptorId_ = "";
     interceptorStatus_ = "";
     interceptorDecision_ = "";
+    connectionId_ = "";
+    connectedAccountId_ = "";
   }
 
   @java.lang.Override
@@ -331,6 +333,100 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object interceptorDecision_ = "";
   /**
+   * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+   * @return Whether the interceptorDecision field is set.
+   */
+  @java.lang.Override
+  public boolean hasInterceptorDecision() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+   * @return The interceptorDecision.
+   */
+  @java.lang.Override
+  public java.lang.String getInterceptorDecision() {
+    java.lang.Object ref = interceptorDecision_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      interceptorDecision_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+   * @return The bytes for interceptorDecision.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getInterceptorDecisionBytes() {
+    java.lang.Object ref = interceptorDecision_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      interceptorDecision_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CONNECTION_ID_FIELD_NUMBER = 10;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object connectionId_ = "";
+  /**
+   * <code>optional string connection_id = 10 [json_name = "connectionId"];</code>
+   * @return Whether the connectionId field is set.
+   */
+  @java.lang.Override
+  public boolean hasConnectionId() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   * <code>optional string connection_id = 10 [json_name = "connectionId"];</code>
+   * @return The connectionId.
+   */
+  @java.lang.Override
+  public java.lang.String getConnectionId() {
+    java.lang.Object ref = connectionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      connectionId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string connection_id = 10 [json_name = "connectionId"];</code>
+   * @return The bytes for connectionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getConnectionIdBytes() {
+    java.lang.Object ref = connectionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      connectionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CONNECTED_ACCOUNT_ID_FIELD_NUMBER = 11;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object connectedAccountId_ = "";
+  /**
    * <pre>
    * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
    *  keys: {
@@ -349,12 +445,12 @@ private static final long serialVersionUID = 0L;
    *  optional MetadataFilter metadata_filter = 6;
    * </pre>
    *
-   * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
-   * @return Whether the interceptorDecision field is set.
+   * <code>optional string connected_account_id = 11 [json_name = "connectedAccountId"];</code>
+   * @return Whether the connectedAccountId field is set.
    */
   @java.lang.Override
-  public boolean hasInterceptorDecision() {
-    return ((bitField0_ & 0x00000010) != 0);
+  public boolean hasConnectedAccountId() {
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    * <pre>
@@ -375,19 +471,19 @@ private static final long serialVersionUID = 0L;
    *  optional MetadataFilter metadata_filter = 6;
    * </pre>
    *
-   * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
-   * @return The interceptorDecision.
+   * <code>optional string connected_account_id = 11 [json_name = "connectedAccountId"];</code>
+   * @return The connectedAccountId.
    */
   @java.lang.Override
-  public java.lang.String getInterceptorDecision() {
-    java.lang.Object ref = interceptorDecision_;
+  public java.lang.String getConnectedAccountId() {
+    java.lang.Object ref = connectedAccountId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      interceptorDecision_ = s;
+      connectedAccountId_ = s;
       return s;
     }
   }
@@ -410,18 +506,18 @@ private static final long serialVersionUID = 0L;
    *  optional MetadataFilter metadata_filter = 6;
    * </pre>
    *
-   * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
-   * @return The bytes for interceptorDecision.
+   * <code>optional string connected_account_id = 11 [json_name = "connectedAccountId"];</code>
+   * @return The bytes for connectedAccountId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getInterceptorDecisionBytes() {
-    java.lang.Object ref = interceptorDecision_;
+      getConnectedAccountIdBytes() {
+    java.lang.Object ref = connectedAccountId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      interceptorDecision_ = b;
+      connectedAccountId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -469,6 +565,12 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, interceptorDecision_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, connectionId_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, connectedAccountId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -512,6 +614,12 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, interceptorDecision_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, connectionId_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, connectedAccountId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -560,6 +668,16 @@ private static final long serialVersionUID = 0L;
       if (!getInterceptorDecision()
           .equals(other.getInterceptorDecision())) return false;
     }
+    if (hasConnectionId() != other.hasConnectionId()) return false;
+    if (hasConnectionId()) {
+      if (!getConnectionId()
+          .equals(other.getConnectionId())) return false;
+    }
+    if (hasConnectedAccountId() != other.hasConnectedAccountId()) return false;
+    if (hasConnectedAccountId()) {
+      if (!getConnectedAccountId()
+          .equals(other.getConnectedAccountId())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -600,6 +718,14 @@ private static final long serialVersionUID = 0L;
     if (hasInterceptorDecision()) {
       hash = (37 * hash) + INTERCEPTOR_DECISION_FIELD_NUMBER;
       hash = (53 * hash) + getInterceptorDecision().hashCode();
+    }
+    if (hasConnectionId()) {
+      hash = (37 * hash) + CONNECTION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConnectionId().hashCode();
+    }
+    if (hasConnectedAccountId()) {
+      hash = (37 * hash) + CONNECTED_ACCOUNT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConnectedAccountId().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -757,6 +883,8 @@ private static final long serialVersionUID = 0L;
       interceptorId_ = "";
       interceptorStatus_ = "";
       interceptorDecision_ = "";
+      connectionId_ = "";
+      connectedAccountId_ = "";
       return this;
     }
 
@@ -827,6 +955,14 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.interceptorDecision_ = interceptorDecision_;
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.connectionId_ = connectionId_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.connectedAccountId_ = connectedAccountId_;
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -919,6 +1055,16 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (other.hasConnectionId()) {
+        connectionId_ = other.connectionId_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (other.hasConnectedAccountId()) {
+        connectedAccountId_ = other.connectedAccountId_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -995,6 +1141,16 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000100;
               break;
             } // case 74
+            case 82: {
+              connectionId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 82
+            case 90: {
+              connectedAccountId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000400;
+              break;
+            } // case 90
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1722,6 +1878,164 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object interceptorDecision_ = "";
     /**
+     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+     * @return Whether the interceptorDecision field is set.
+     */
+    public boolean hasInterceptorDecision() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+     * @return The interceptorDecision.
+     */
+    public java.lang.String getInterceptorDecision() {
+      java.lang.Object ref = interceptorDecision_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        interceptorDecision_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+     * @return The bytes for interceptorDecision.
+     */
+    public com.google.protobuf.ByteString
+        getInterceptorDecisionBytes() {
+      java.lang.Object ref = interceptorDecision_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        interceptorDecision_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+     * @param value The interceptorDecision to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInterceptorDecision(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      interceptorDecision_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInterceptorDecision() {
+      interceptorDecision_ = getDefaultInstance().getInterceptorDecision();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+     * @param value The bytes for interceptorDecision to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInterceptorDecisionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      interceptorDecision_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object connectionId_ = "";
+    /**
+     * <code>optional string connection_id = 10 [json_name = "connectionId"];</code>
+     * @return Whether the connectionId field is set.
+     */
+    public boolean hasConnectionId() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <code>optional string connection_id = 10 [json_name = "connectionId"];</code>
+     * @return The connectionId.
+     */
+    public java.lang.String getConnectionId() {
+      java.lang.Object ref = connectionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        connectionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string connection_id = 10 [json_name = "connectionId"];</code>
+     * @return The bytes for connectionId.
+     */
+    public com.google.protobuf.ByteString
+        getConnectionIdBytes() {
+      java.lang.Object ref = connectionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        connectionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string connection_id = 10 [json_name = "connectionId"];</code>
+     * @param value The connectionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectionId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      connectionId_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string connection_id = 10 [json_name = "connectionId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearConnectionId() {
+      connectionId_ = getDefaultInstance().getConnectionId();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string connection_id = 10 [json_name = "connectionId"];</code>
+     * @param value The bytes for connectionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectionIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      connectionId_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object connectedAccountId_ = "";
+    /**
      * <pre>
      * map&lt;string, string&gt; metadata = 7 [(buf.validate.field).map = {
      *  keys: {
@@ -1740,11 +2054,11 @@ private static final long serialVersionUID = 0L;
      *  optional MetadataFilter metadata_filter = 6;
      * </pre>
      *
-     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
-     * @return Whether the interceptorDecision field is set.
+     * <code>optional string connected_account_id = 11 [json_name = "connectedAccountId"];</code>
+     * @return Whether the connectedAccountId field is set.
      */
-    public boolean hasInterceptorDecision() {
-      return ((bitField0_ & 0x00000100) != 0);
+    public boolean hasConnectedAccountId() {
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      * <pre>
@@ -1765,16 +2079,16 @@ private static final long serialVersionUID = 0L;
      *  optional MetadataFilter metadata_filter = 6;
      * </pre>
      *
-     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
-     * @return The interceptorDecision.
+     * <code>optional string connected_account_id = 11 [json_name = "connectedAccountId"];</code>
+     * @return The connectedAccountId.
      */
-    public java.lang.String getInterceptorDecision() {
-      java.lang.Object ref = interceptorDecision_;
+    public java.lang.String getConnectedAccountId() {
+      java.lang.Object ref = connectedAccountId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        interceptorDecision_ = s;
+        connectedAccountId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1799,17 +2113,17 @@ private static final long serialVersionUID = 0L;
      *  optional MetadataFilter metadata_filter = 6;
      * </pre>
      *
-     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
-     * @return The bytes for interceptorDecision.
+     * <code>optional string connected_account_id = 11 [json_name = "connectedAccountId"];</code>
+     * @return The bytes for connectedAccountId.
      */
     public com.google.protobuf.ByteString
-        getInterceptorDecisionBytes() {
-      java.lang.Object ref = interceptorDecision_;
+        getConnectedAccountIdBytes() {
+      java.lang.Object ref = connectedAccountId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        interceptorDecision_ = b;
+        connectedAccountId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1834,15 +2148,15 @@ private static final long serialVersionUID = 0L;
      *  optional MetadataFilter metadata_filter = 6;
      * </pre>
      *
-     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
-     * @param value The interceptorDecision to set.
+     * <code>optional string connected_account_id = 11 [json_name = "connectedAccountId"];</code>
+     * @param value The connectedAccountId to set.
      * @return This builder for chaining.
      */
-    public Builder setInterceptorDecision(
+    public Builder setConnectedAccountId(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      interceptorDecision_ = value;
-      bitField0_ |= 0x00000100;
+      connectedAccountId_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -1865,12 +2179,12 @@ private static final long serialVersionUID = 0L;
      *  optional MetadataFilter metadata_filter = 6;
      * </pre>
      *
-     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
+     * <code>optional string connected_account_id = 11 [json_name = "connectedAccountId"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearInterceptorDecision() {
-      interceptorDecision_ = getDefaultInstance().getInterceptorDecision();
-      bitField0_ = (bitField0_ & ~0x00000100);
+    public Builder clearConnectedAccountId() {
+      connectedAccountId_ = getDefaultInstance().getConnectedAccountId();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -1893,16 +2207,16 @@ private static final long serialVersionUID = 0L;
      *  optional MetadataFilter metadata_filter = 6;
      * </pre>
      *
-     * <code>optional string interceptor_decision = 9 [json_name = "interceptorDecision"];</code>
-     * @param value The bytes for interceptorDecision to set.
+     * <code>optional string connected_account_id = 11 [json_name = "connectedAccountId"];</code>
+     * @param value The bytes for connectedAccountId to set.
      * @return This builder for chaining.
      */
-    public Builder setInterceptorDecisionBytes(
+    public Builder setConnectedAccountIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      interceptorDecision_ = value;
-      bitField0_ |= 0x00000100;
+      connectedAccountId_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

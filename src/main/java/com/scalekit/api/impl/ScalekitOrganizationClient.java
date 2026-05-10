@@ -310,14 +310,28 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     @Override
     public OrganizationSessionPolicySettings updateOrganizationSessionPolicy(String organizationId, OrganizationSessionPolicySettings policy) {
         return RetryExecuter.executeWithRetry(() -> {
+            UpdateOrganizationSessionPolicyRequest.Builder builder =
+                    UpdateOrganizationSessionPolicyRequest.newBuilder()
+                            .setOrganizationId(organizationId)
+                            .setPolicySource(policy.getPolicySource());
+            if (policy.hasAbsoluteSessionTimeout()) {
+                builder.setAbsoluteSessionTimeout(policy.getAbsoluteSessionTimeout());
+            }
+            if (policy.hasAbsoluteSessionTimeoutUnit()) {
+                builder.setAbsoluteSessionTimeoutUnit(policy.getAbsoluteSessionTimeoutUnit());
+            }
+            if (policy.hasIdleSessionTimeoutEnabled()) {
+                builder.setIdleSessionTimeoutEnabled(policy.getIdleSessionTimeoutEnabled());
+            }
+            if (policy.hasIdleSessionTimeout()) {
+                builder.setIdleSessionTimeout(policy.getIdleSessionTimeout());
+            }
+            if (policy.hasIdleSessionTimeoutUnit()) {
+                builder.setIdleSessionTimeoutUnit(policy.getIdleSessionTimeoutUnit());
+            }
             UpdateOrganizationSessionPolicyResponse response = this.organizationStub
                     .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
-                    .updateOrganizationSessionPolicy(
-                            UpdateOrganizationSessionPolicyRequest.newBuilder()
-                                    .setOrganizationId(organizationId)
-                                    .setPolicy(policy)
-                                    .build()
-                    );
+                    .updateOrganizationSessionPolicy(builder.build());
             return response.getPolicy();
         }, this.credentials);
     }

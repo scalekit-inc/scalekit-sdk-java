@@ -66,6 +66,32 @@ private static final long serialVersionUID = 0L;
     return workspace_ == null ? com.scalekit.grpc.scalekit.v1.workspaces.Workspace.getDefaultInstance() : workspace_;
   }
 
+  public static final int CONTEXT_FIELD_NUMBER = 2;
+  private com.google.protobuf.Struct context_;
+  /**
+   * <code>.google.protobuf.Struct context = 2 [json_name = "context", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the context field is set.
+   */
+  @java.lang.Override
+  public boolean hasContext() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>.google.protobuf.Struct context = 2 [json_name = "context", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The context.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getContext() {
+    return context_ == null ? com.google.protobuf.Struct.getDefaultInstance() : context_;
+  }
+  /**
+   * <code>.google.protobuf.Struct context = 2 [json_name = "context", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getContextOrBuilder() {
+    return context_ == null ? com.google.protobuf.Struct.getDefaultInstance() : context_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -83,6 +109,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getWorkspace());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(2, getContext());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -95,6 +124,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getWorkspace());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getContext());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -116,6 +149,11 @@ private static final long serialVersionUID = 0L;
       if (!getWorkspace()
           .equals(other.getWorkspace())) return false;
     }
+    if (hasContext() != other.hasContext()) return false;
+    if (hasContext()) {
+      if (!getContext()
+          .equals(other.getContext())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -130,6 +168,10 @@ private static final long serialVersionUID = 0L;
     if (hasWorkspace()) {
       hash = (37 * hash) + WORKSPACE_FIELD_NUMBER;
       hash = (53 * hash) + getWorkspace().hashCode();
+    }
+    if (hasContext()) {
+      hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getContext().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -262,6 +304,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getWorkspaceFieldBuilder();
+        getContextFieldBuilder();
       }
     }
     @java.lang.Override
@@ -272,6 +315,11 @@ private static final long serialVersionUID = 0L;
       if (workspaceBuilder_ != null) {
         workspaceBuilder_.dispose();
         workspaceBuilder_ = null;
+      }
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
+        contextBuilder_ = null;
       }
       return this;
     }
@@ -312,6 +360,12 @@ private static final long serialVersionUID = 0L;
             ? workspace_
             : workspaceBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.context_ = contextBuilder_ == null
+            ? context_
+            : contextBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -363,6 +417,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasWorkspace()) {
         mergeWorkspace(other.getWorkspace());
       }
+      if (other.hasContext()) {
+        mergeContext(other.getContext());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -396,6 +453,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
+            case 18: {
+              input.readMessage(
+                  getContextFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -532,6 +596,127 @@ private static final long serialVersionUID = 0L;
         workspace_ = null;
       }
       return workspaceBuilder_;
+    }
+
+    private com.google.protobuf.Struct context_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> contextBuilder_;
+    /**
+     * <code>.google.protobuf.Struct context = 2 [json_name = "context", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the context field is set.
+     */
+    public boolean hasContext() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Struct context = 2 [json_name = "context", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The context.
+     */
+    public com.google.protobuf.Struct getContext() {
+      if (contextBuilder_ == null) {
+        return context_ == null ? com.google.protobuf.Struct.getDefaultInstance() : context_;
+      } else {
+        return contextBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.Struct context = 2 [json_name = "context", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setContext(com.google.protobuf.Struct value) {
+      if (contextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        context_ = value;
+      } else {
+        contextBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct context = 2 [json_name = "context", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setContext(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (contextBuilder_ == null) {
+        context_ = builderForValue.build();
+      } else {
+        contextBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct context = 2 [json_name = "context", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder mergeContext(com.google.protobuf.Struct value) {
+      if (contextBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0) &&
+          context_ != null &&
+          context_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getContextBuilder().mergeFrom(value);
+        } else {
+          context_ = value;
+        }
+      } else {
+        contextBuilder_.mergeFrom(value);
+      }
+      if (context_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct context = 2 [json_name = "context", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearContext() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
+        contextBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct context = 2 [json_name = "context", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.protobuf.Struct.Builder getContextBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getContextFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Struct context = 2 [json_name = "context", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.protobuf.StructOrBuilder getContextOrBuilder() {
+      if (contextBuilder_ != null) {
+        return contextBuilder_.getMessageOrBuilder();
+      } else {
+        return context_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : context_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Struct context = 2 [json_name = "context", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getContextFieldBuilder() {
+      if (contextBuilder_ == null) {
+        contextBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getContext(),
+                getParentForChildren(),
+                isClean());
+        context_ = null;
+      }
+      return contextBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -179,4 +179,63 @@ public interface UserOrBuilder extends
    * <code>.google.protobuf.Struct custom_attributes = 14 [json_name = "customAttributes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.StructOrBuilder getCustomAttributesOrBuilder();
+
+  /**
+   * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the organizationExternalId field is set.
+   */
+  boolean hasOrganizationExternalId();
+  /**
+   * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The organizationExternalId.
+   */
+  java.lang.String getOrganizationExternalId();
+  /**
+   * <code>optional string organization_external_id = 15 [json_name = "organizationExternalId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for organizationExternalId.
+   */
+  com.google.protobuf.ByteString
+      getOrganizationExternalIdBytes();
+
+  /**
+   * <code>repeated string roles = 16 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the roles.
+   */
+  java.util.List<java.lang.String>
+      getRolesList();
+  /**
+   * <code>repeated string roles = 16 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of roles.
+   */
+  int getRolesCount();
+  /**
+   * <code>repeated string roles = 16 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The roles at the given index.
+   */
+  java.lang.String getRoles(int index);
+  /**
+   * <code>repeated string roles = 16 [json_name = "roles", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the roles at the given index.
+   */
+  com.google.protobuf.ByteString
+      getRolesBytes(int index);
+
+  /**
+   * <code>optional string organization_external_name = 17 [json_name = "organizationExternalName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the organizationExternalName field is set.
+   */
+  boolean hasOrganizationExternalName();
+  /**
+   * <code>optional string organization_external_name = 17 [json_name = "organizationExternalName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The organizationExternalName.
+   */
+  java.lang.String getOrganizationExternalName();
+  /**
+   * <code>optional string organization_external_name = 17 [json_name = "organizationExternalName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for organizationExternalName.
+   */
+  com.google.protobuf.ByteString
+      getOrganizationExternalNameBytes();
 }

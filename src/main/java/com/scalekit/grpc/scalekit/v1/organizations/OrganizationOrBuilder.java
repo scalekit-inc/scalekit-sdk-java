@@ -230,4 +230,21 @@ java.lang.String defaultValue);
    * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
    */
   com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettingsOrBuilder getSettingsOrBuilder();
+
+  /**
+   * <code>optional string slug = 9 [json_name = "slug", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the slug field is set.
+   */
+  boolean hasSlug();
+  /**
+   * <code>optional string slug = 9 [json_name = "slug", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The slug.
+   */
+  java.lang.String getSlug();
+  /**
+   * <code>optional string slug = 9 [json_name = "slug", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for slug.
+   */
+  com.google.protobuf.ByteString
+      getSlugBytes();
 }

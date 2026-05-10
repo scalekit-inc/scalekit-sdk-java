@@ -30,6 +30,10 @@ private static final long serialVersionUID = 0L;
     resourceId_ = "";
     resourceName_ = "";
     resourceType_ = "";
+    connectedAccountIdentifier_ = "";
+    clientId_ = "";
+    clientName_ = "";
+    clientType_ = "";
   }
 
   @java.lang.Override
@@ -588,6 +592,162 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CONNECTED_ACCOUNT_IDENTIFIER_FIELD_NUMBER = 15;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object connectedAccountIdentifier_ = "";
+  /**
+   * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+   * @return The connectedAccountIdentifier.
+   */
+  @java.lang.Override
+  public java.lang.String getConnectedAccountIdentifier() {
+    java.lang.Object ref = connectedAccountIdentifier_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      connectedAccountIdentifier_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+   * @return The bytes for connectedAccountIdentifier.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getConnectedAccountIdentifierBytes() {
+    java.lang.Object ref = connectedAccountIdentifier_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      connectedAccountIdentifier_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CLIENT_ID_FIELD_NUMBER = 16;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientId_ = "";
+  /**
+   * <code>string client_id = 16 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The clientId.
+   */
+  @java.lang.Override
+  public java.lang.String getClientId() {
+    java.lang.Object ref = clientId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      clientId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string client_id = 16 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for clientId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getClientIdBytes() {
+    java.lang.Object ref = clientId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      clientId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CLIENT_NAME_FIELD_NUMBER = 17;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientName_ = "";
+  /**
+   * <code>string client_name = 17 [json_name = "clientName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The clientName.
+   */
+  @java.lang.Override
+  public java.lang.String getClientName() {
+    java.lang.Object ref = clientName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      clientName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string client_name = 17 [json_name = "clientName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for clientName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getClientNameBytes() {
+    java.lang.Object ref = clientName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      clientName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CLIENT_TYPE_FIELD_NUMBER = 18;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientType_ = "";
+  /**
+   * <code>string client_type = 18 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The clientType.
+   */
+  @java.lang.Override
+  public java.lang.String getClientType() {
+    java.lang.Object ref = clientType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      clientType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string client_type = 18 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for clientType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getClientTypeBytes() {
+    java.lang.Object ref = clientType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      clientType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -644,6 +804,18 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, resourceType_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectedAccountIdentifier_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, connectedAccountIdentifier_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, clientId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, clientName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, clientType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -697,6 +869,18 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, resourceType_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectedAccountIdentifier_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, connectedAccountIdentifier_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, clientId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, clientName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, clientType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -743,6 +927,14 @@ private static final long serialVersionUID = 0L;
         .equals(other.getResourceName())) return false;
     if (!getResourceType()
         .equals(other.getResourceType())) return false;
+    if (!getConnectedAccountIdentifier()
+        .equals(other.getConnectedAccountIdentifier())) return false;
+    if (!getClientId()
+        .equals(other.getClientId())) return false;
+    if (!getClientName()
+        .equals(other.getClientName())) return false;
+    if (!getClientType()
+        .equals(other.getClientType())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -786,6 +978,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getResourceName().hashCode();
     hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getResourceType().hashCode();
+    hash = (37 * hash) + CONNECTED_ACCOUNT_IDENTIFIER_FIELD_NUMBER;
+    hash = (53 * hash) + getConnectedAccountIdentifier().hashCode();
+    hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getClientId().hashCode();
+    hash = (37 * hash) + CLIENT_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getClientName().hashCode();
+    hash = (37 * hash) + CLIENT_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getClientType().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -948,6 +1148,10 @@ private static final long serialVersionUID = 0L;
       resourceId_ = "";
       resourceName_ = "";
       resourceType_ = "";
+      connectedAccountIdentifier_ = "";
+      clientId_ = "";
+      clientName_ = "";
+      clientType_ = "";
       return this;
     }
 
@@ -1036,6 +1240,18 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.resourceType_ = resourceType_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.connectedAccountIdentifier_ = connectedAccountIdentifier_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.clientId_ = clientId_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.clientName_ = clientName_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.clientType_ = clientType_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1173,6 +1389,26 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00002000;
         onChanged();
       }
+      if (!other.getConnectedAccountIdentifier().isEmpty()) {
+        connectedAccountIdentifier_ = other.connectedAccountIdentifier_;
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      if (!other.getClientId().isEmpty()) {
+        clientId_ = other.clientId_;
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      if (!other.getClientName().isEmpty()) {
+        clientName_ = other.clientName_;
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      if (!other.getClientType().isEmpty()) {
+        clientType_ = other.clientType_;
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1279,6 +1515,26 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00002000;
               break;
             } // case 114
+            case 122: {
+              connectedAccountIdentifier_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00004000;
+              break;
+            } // case 122
+            case 130: {
+              clientId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00008000;
+              break;
+            } // case 130
+            case 138: {
+              clientName_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00010000;
+              break;
+            } // case 138
+            case 146: {
+              clientType_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00020000;
+              break;
+            } // case 146
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2517,6 +2773,294 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       resourceType_ = value;
       bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object connectedAccountIdentifier_ = "";
+    /**
+     * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+     * @return The connectedAccountIdentifier.
+     */
+    public java.lang.String getConnectedAccountIdentifier() {
+      java.lang.Object ref = connectedAccountIdentifier_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        connectedAccountIdentifier_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+     * @return The bytes for connectedAccountIdentifier.
+     */
+    public com.google.protobuf.ByteString
+        getConnectedAccountIdentifierBytes() {
+      java.lang.Object ref = connectedAccountIdentifier_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        connectedAccountIdentifier_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+     * @param value The connectedAccountIdentifier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectedAccountIdentifier(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      connectedAccountIdentifier_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearConnectedAccountIdentifier() {
+      connectedAccountIdentifier_ = getDefaultInstance().getConnectedAccountIdentifier();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+     * @param value The bytes for connectedAccountIdentifier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectedAccountIdentifierBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      connectedAccountIdentifier_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object clientId_ = "";
+    /**
+     * <code>string client_id = 16 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The clientId.
+     */
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string client_id = 16 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for clientId.
+     */
+    public com.google.protobuf.ByteString
+        getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string client_id = 16 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The clientId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      clientId_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string client_id = 16 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearClientId() {
+      clientId_ = getDefaultInstance().getClientId();
+      bitField0_ = (bitField0_ & ~0x00008000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string client_id = 16 [json_name = "clientId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for clientId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      clientId_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object clientName_ = "";
+    /**
+     * <code>string client_name = 17 [json_name = "clientName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The clientName.
+     */
+    public java.lang.String getClientName() {
+      java.lang.Object ref = clientName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string client_name = 17 [json_name = "clientName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for clientName.
+     */
+    public com.google.protobuf.ByteString
+        getClientNameBytes() {
+      java.lang.Object ref = clientName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string client_name = 17 [json_name = "clientName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The clientName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientName(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      clientName_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string client_name = 17 [json_name = "clientName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearClientName() {
+      clientName_ = getDefaultInstance().getClientName();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string client_name = 17 [json_name = "clientName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for clientName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      clientName_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object clientType_ = "";
+    /**
+     * <code>string client_type = 18 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The clientType.
+     */
+    public java.lang.String getClientType() {
+      java.lang.Object ref = clientType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string client_type = 18 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for clientType.
+     */
+    public com.google.protobuf.ByteString
+        getClientTypeBytes() {
+      java.lang.Object ref = clientType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string client_type = 18 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The clientType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientType(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      clientType_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string client_type = 18 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearClientType() {
+      clientType_ = getDefaultInstance().getClientType();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string client_type = 18 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for clientType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      clientType_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }

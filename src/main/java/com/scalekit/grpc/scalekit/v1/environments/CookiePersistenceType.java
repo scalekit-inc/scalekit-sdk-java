@@ -95,7 +95,7 @@ public enum CookiePersistenceType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.environments.EnvironmentsProto.getDescriptor().getEnumTypes().get(3);
+    return com.scalekit.grpc.scalekit.v1.environments.EnvironmentsProto.getDescriptor().getEnumTypes().get(4);
   }
 
   private static final CookiePersistenceType[] VALUES = values();

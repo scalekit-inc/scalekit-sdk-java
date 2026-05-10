@@ -9,18 +9,6 @@ public interface ResourceInfoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string resource_type = 1 [json_name = "resourceType"];</code>
-   * @return The resourceType.
-   */
-  java.lang.String getResourceType();
-  /**
-   * <code>string resource_type = 1 [json_name = "resourceType"];</code>
-   * @return The bytes for resourceType.
-   */
-  com.google.protobuf.ByteString
-      getResourceTypeBytes();
-
-  /**
    * <code>string resource_name = 2 [json_name = "resourceName"];</code>
    * @return The resourceName.
    */
@@ -67,4 +55,57 @@ public interface ResourceInfoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
+
+  /**
+   * <pre>
+   * The required permissions needed to access the resource.
+   * </pre>
+   *
+   * <code>repeated string required_permissions = 5 [json_name = "requiredPermissions"];</code>
+   * @return A list containing the requiredPermissions.
+   */
+  java.util.List<java.lang.String>
+      getRequiredPermissionsList();
+  /**
+   * <pre>
+   * The required permissions needed to access the resource.
+   * </pre>
+   *
+   * <code>repeated string required_permissions = 5 [json_name = "requiredPermissions"];</code>
+   * @return The count of requiredPermissions.
+   */
+  int getRequiredPermissionsCount();
+  /**
+   * <pre>
+   * The required permissions needed to access the resource.
+   * </pre>
+   *
+   * <code>repeated string required_permissions = 5 [json_name = "requiredPermissions"];</code>
+   * @param index The index of the element to return.
+   * @return The requiredPermissions at the given index.
+   */
+  java.lang.String getRequiredPermissions(int index);
+  /**
+   * <pre>
+   * The required permissions needed to access the resource.
+   * </pre>
+   *
+   * <code>repeated string required_permissions = 5 [json_name = "requiredPermissions"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the requiredPermissions at the given index.
+   */
+  com.google.protobuf.ByteString
+      getRequiredPermissionsBytes(int index);
+
+  /**
+   * <code>string user = 6 [json_name = "user"];</code>
+   * @return The user.
+   */
+  java.lang.String getUser();
+  /**
+   * <code>string user = 6 [json_name = "user"];</code>
+   * @return The bytes for user.
+   */
+  com.google.protobuf.ByteString
+      getUserBytes();
 }

@@ -210,6 +210,21 @@ public final class DirectoriesProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_directories_TriggerDirectorySyncRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_directories_GetDirectoryContextRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_directories_GetDirectoryContextRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_directories_GetDirectoryContextResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_directories_GetDirectoryContextResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_directories_UpdateDirectoryContextRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_directories_UpdateDirectoryContextRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -603,176 +618,214 @@ public final class DirectoriesProto {
       "dir_121312434123312\"\272H\006r\004\020\001\030 R\013directory" +
       "Id\022r\n\017organization_id\030\002 \001(\tBI\222A=2$Unique" +
       " identifier to an OrganizationJ\025\"org_121" +
-      "312434123312\"\272H\006r\004\020\001\030 R\016organizationId*M" +
-      "\n\rDirectoryType\022\036\n\032DIRECTORY_TYPE_UNSPEC" +
-      "IFIED\020\000\022\010\n\004SCIM\020\001\022\010\n\004LDAP\020\002\022\010\n\004POLL\020\003*\232\001" +
-      "\n\021DirectoryProvider\022\"\n\036DIRECTORY_PROVIDE" +
-      "R_UNSPECIFIED\020\000\022\010\n\004OKTA\020\001\022\n\n\006GOOGLE\020\002\022\020\n" +
-      "\014MICROSOFT_AD\020\003\022\t\n\005AUTH0\020\004\022\014\n\010ONELOGIN\020\005" +
-      "\022\r\n\tJUMPCLOUD\020\006\022\021\n\rPING_IDENTITY\020\007*^\n\017Di" +
-      "rectoryStatus\022 \n\034DIRECTORY_STATUS_UNSPEC" +
-      "IFIED\020\000\022\t\n\005DRAFT\020\001\022\017\n\013IN_PROGRESS\020\002\022\r\n\tC" +
-      "OMPLETED\020\003*(\n\014SecretStatus\022\n\n\006ACTIVE\020\000\022\014" +
-      "\n\010INACTIVE\020\0012\321/\n\020DirectoryService\022\321\001\n\017Cr" +
-      "eateDirectory\022/.scalekit.v1.directories." +
-      "CreateDirectoryRequest\0320.scalekit.v1.dir" +
-      "ectories.CreateDirectoryResponse\"[\202\265\030\002\030t" +
-      "\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002@\"3/api/v1/organizat" +
-      "ions/{organization_id}/directories:\tdire",
-      "ctory\022\236\002\n\017DeleteDirectory\022/.scalekit.v1." +
-      "directories.DeleteDirectoryRequest\032\026.goo" +
-      "gle.protobuf.Empty\"\301\001\222Ai\n\tDirectory\022\022Del" +
-      "ete a directory\032)Delete a Directory with" +
-      "in an organizationJ\035\n\003200\022\026\n\024Deleted Suc" +
-      "cessfully\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002:*8/a" +
-      "pi/v1/organizations/{organization_id}/di" +
-      "rectories/{id}\022\326\001\n\017UpdateDirectory\022/.sca" +
-      "lekit.v1.directories.UpdateDirectoryRequ" +
-      "est\0320.scalekit.v1.directories.UpdateDire" +
-      "ctoryResponse\"`\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
-      "\002E28/api/v1/organizations/{organization_" +
-      "id}/directories/{id}:\tdirectory\022\324\001\n\030Assi" +
-      "gnGroupsForDirectory\0228.scalekit.v1.direc" +
-      "tories.AssignGroupsForDirectoryRequest\032\026" +
-      ".google.protobuf.Empty\"f\202\265\030\002\030t\372\322\344\223\002\t\022\007PR" +
-      "EVIEW\202\323\344\223\002K\032F/api/v1/organizations/{orga" +
-      "nization_id}/directories/{id}/groups:ass" +
-      "ign:\001*\022\347\001\n\013AssignRoles\022+.scalekit.v1.dir" +
-      "ectories.AssignRolesRequest\032,.scalekit.v" +
-      "1.directories.AssignRolesResponse\"}\202\265\030\002\030" +
-      "t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002b\032N/api/v1/organiza" +
-      "tions/{organization_id}/directories/{id}" +
-      "/groups/-/roles:assign:\020role_assignments" +
-      "\022\354\001\n\020UpdateAttributes\0220.scalekit.v1.dire" +
-      "ctories.UpdateAttributesRequest\0321.scalek" +
-      "it.v1.directories.UpdateAttributesRespon" +
-      "se\"s\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002X\032C/api/v1" +
-      "/organizations/{organization_id}/directo" +
-      "ries/{id}/attributes:\021attribute_mapping\022" +
-      "\222\003\n\014GetDirectory\022,.scalekit.v1.directori" +
-      "es.GetDirectoryRequest\032-.scalekit.v1.dir" +
-      "ectories.GetDirectoryResponse\"\244\002\222A\332\001\n\tDi" +
-      "rectory\022\025Get directory details\032PRetrieve" +
-      "s detailed information about a specific " +
-      "directory within an organizationJd\n\003200\022" +
-      "]\n(Successfully retrieved directory deta" +
-      "ils\0221\n/\032-.scalekit.v1.directories.GetDir" +
-      "ectoryResponse\202\265\030\002\030t\202\323\344\223\002:\0228/api/v1/orga" +
-      "nizations/{organization_id}/directories/" +
-      "{id}\022\353\002\n\017ListDirectories\022/.scalekit.v1.d" +
-      "irectories.ListDirectoriesRequest\0320.scal" +
-      "ekit.v1.directories.ListDirectoriesRespo" +
-      "nse\"\364\001\222A\257\001\n\tDirectory\022\035List organization" +
-      " directoriesJ\202\001\n\003200\022{\nCSuccessfully ret" +
-      "rieved the list of directories for the o" +
-      "rganization\0224\n2\0320.scalekit.v1.directorie" +
-      "s.ListDirectoriesResponse\202\265\030\002\030t\202\323\344\223\0025\0223/" +
-      "api/v1/organizations/{organization_id}/d" +
-      "irectories\022\260\003\n\017EnableDirectory\022/.scaleki" +
-      "t.v1.directories.ToggleDirectoryRequest\032" +
-      "0.scalekit.v1.directories.ToggleDirector" +
-      "yResponse\"\271\002\222A\350\001\n\tDirectory\022\022Enable a di" +
-      "rectory\032\177Activates a directory within an" +
-      " organization, allowing it to synchroniz" +
-      "e users and groups with the connected Di" +
-      "rectory providerJF\n\003200\022?\n\007Success\0224\n2\0320" +
-      ".scalekit.v1.directories.ToggleDirectory" +
-      "Response\202\265\030\002\030t\202\323\344\223\002A2?/api/v1/organizati" +
-      "ons/{organization_id}/directories/{id}:e" +
-      "nable\022\373\003\n\020DisableDirectory\022/.scalekit.v1" +
-      ".directories.ToggleDirectoryRequest\0320.sc" +
-      "alekit.v1.directories.ToggleDirectoryRes" +
-      "ponse\"\203\003\222A\261\002\n\tDirectory\022\023Disable a direc" +
-      "tory\032\252\001Stops synchronization of users an" +
-      "d groups from a specified directory with" +
-      "in an organization. This operation preve" +
-      "nts further updates from the connected D" +
-      "irectory providerJb\n\003200\022[\n#Successfully" +
-      " disabled the directory\0224\n2\0320.scalekit.v" +
-      "1.directories.ToggleDirectoryResponse\202\265\030" +
-      "\002\030t\202\323\344\223\002B2@/api/v1/organizations/{organi" +
-      "zation_id}/directories/{id}:disable\022\273\004\n\022" +
-      "ListDirectoryUsers\0222.scalekit.v1.directo" +
-      "ries.ListDirectoryUsersRequest\0323.scaleki" +
-      "t.v1.directories.ListDirectoryUsersRespo" +
-      "nse\"\273\003\222A\341\002\n\tDirectory\022\024List directory us" +
-      "ers\032\262\001Retrieves a list of all users with" +
-      "in a specified directory for an organiza" +
-      "tion. This endpoint allows you to view u" +
-      "ser accounts associated with your connec" +
-      "ted Directory Providers.J\210\001\n\003200\022\200\001\nESuc" +
-      "cessfully retrieved the list of users fr" +
-      "om the specified directory\0227\n5\0323.scaleki" +
-      "t.v1.directories.ListDirectoryUsersRespo" +
-      "nse\202\265\030\002\030t\202\323\344\223\002J\022H/api/v1/organizations/{" +
-      "organization_id}/directories/{directory_" +
-      "id}/users\022\222\004\n\023ListDirectoryGroups\0223.scal" +
-      "ekit.v1.directories.ListDirectoryGroupsR" +
-      "equest\0324.scalekit.v1.directories.ListDir" +
-      "ectoryGroupsResponse\"\217\003\222A\264\002\n\tDirectory\022\025" +
-      "List directory groups\032\202\001Retrieves all gr" +
-      "oups from a specified directory. Use thi" +
-      "s endpoint to view group structures from" +
-      " your connected identity provider.J\212\001\n\0032" +
-      "00\022\202\001\nFSuccessfully retrieved the list o" +
-      "f groups from the specified directory\0228\n" +
-      "6\0324.scalekit.v1.directories.ListDirector" +
-      "yGroupsResponse\202\265\030\002\030t\202\323\344\223\002K\022I/api/v1/org" +
-      "anizations/{organization_id}/directories" +
-      "/{directory_id}/groups\022\301\004\n\032ListDirectory" +
-      "GroupsSummary\022:.scalekit.v1.directories." +
-      "ListDirectoryGroupsSummaryRequest\0324.scal" +
-      "ekit.v1.directories.ListDirectoryGroupsR" +
-      "esponse\"\260\003\222A\276\002\n\tDirectory\022\035List director" +
-      "y groups summary\032\204\001Retrieves all groups " +
-      "from a specified directory. This is not " +
-      "a paginated api. It gives a summary view" +
-      " with id and name of the group.J\212\001\n\003200\022" +
-      "\202\001\nFSuccessfully retrieved the list of g" +
-      "roups from the specified directory\0228\n6\0324" +
-      ".scalekit.v1.directories.ListDirectoryGr" +
-      "oupsResponse\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002S\022" +
-      "Q/api/v1/organizations/{organization_id}" +
-      "/directories/{directory_id}/groups/summa" +
-      "ry\022\353\002\n\025CreateDirectorySecret\0225.scalekit." +
-      "v1.directories.CreateDirectorySecretRequ" +
-      "est\0326.scalekit.v1.directories.CreateDire" +
-      "ctorySecretResponse\"\342\001\222Ax\n\tDirectory\022\035Cr" +
-      "eate secret for a directoryJL\n\003200\022E\n\007Su" +
-      "ccess\022:\n8\0326.scalekit.v1.directories.Crea" +
-      "teDirectorySecretResponse\202\265\030\002\030t\372\322\344\223\002\t\022\007P" +
-      "REVIEW\202\323\344\223\002L\"J/api/v1/organizations/{org" +
-      "anization_id}/directories/{directory_id}" +
-      "/secrets\022\213\003\n\031RegenerateDirectorySecret\0229" +
-      ".scalekit.v1.directories.RegenerateDirec" +
-      "torySecretRequest\032:.scalekit.v1.director" +
-      "ies.RegenerateDirectorySecretResponse\"\366\001" +
-      "\222A\200\001\n\tDirectory\022!Regenerate secret for a" +
-      " directoryJP\n\003200\022I\n\007Success\022>\n<\032:.scale" +
+      "312434123312\"\272H\006r\004\020\001\030 R\016organizationId\"\220" +
+      "\001\n\032GetDirectoryContextRequest\0225\n\014directo" +
+      "ry_id\030\001 \001(\tB\022\272H\017r\n\020\001\030 :\004dir_\310\001\001R\013directo" +
+      "ryId\022;\n\017organization_id\030\002 \001(\tB\022\272H\017r\n\020\001\030 " +
+      ":\004org_\310\001\001R\016organizationId\"P\n\033GetDirector" +
+      "yContextResponse\0221\n\007context\030\001 \001(\0132\027.goog" +
+      "le.protobuf.StructR\007context\"\306\001\n\035UpdateDi" +
+      "rectoryContextRequest\0225\n\014directory_id\030\001 " +
+      "\001(\tB\022\272H\017r\n\020\001\030 :\004dir_\310\001\001R\013directoryId\022;\n\017" +
+      "organization_id\030\002 \001(\tB\022\272H\017r\n\020\001\030 :\004org_\310\001" +
+      "\001R\016organizationId\0221\n\007context\030\003 \001(\0132\027.goo" +
+      "gle.protobuf.StructR\007context*M\n\rDirector" +
+      "yType\022\036\n\032DIRECTORY_TYPE_UNSPECIFIED\020\000\022\010\n" +
+      "\004SCIM\020\001\022\010\n\004LDAP\020\002\022\010\n\004POLL\020\003*\232\001\n\021Director" +
+      "yProvider\022\"\n\036DIRECTORY_PROVIDER_UNSPECIF" +
+      "IED\020\000\022\010\n\004OKTA\020\001\022\n\n\006GOOGLE\020\002\022\020\n\014MICROSOFT",
+      "_AD\020\003\022\t\n\005AUTH0\020\004\022\014\n\010ONELOGIN\020\005\022\r\n\tJUMPCL" +
+      "OUD\020\006\022\021\n\rPING_IDENTITY\020\007*^\n\017DirectorySta" +
+      "tus\022 \n\034DIRECTORY_STATUS_UNSPECIFIED\020\000\022\t\n" +
+      "\005DRAFT\020\001\022\017\n\013IN_PROGRESS\020\002\022\r\n\tCOMPLETED\020\003" +
+      "*(\n\014SecretStatus\022\n\n\006ACTIVE\020\000\022\014\n\010INACTIVE" +
+      "\020\0012\2518\n\020DirectoryService\022\344\001\n\017CreateDirect" +
+      "ory\022/.scalekit.v1.directories.CreateDire" +
+      "ctoryRequest\0320.scalekit.v1.directories.C" +
+      "reateDirectoryResponse\"n\202\265\030\025\n\021directorie" +
+      "s_write\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002@\"3/api/v1/" +
+      "organizations/{organization_id}/director" +
+      "ies:\tdirectory\022\236\002\n\017DeleteDirectory\022/.sca" +
+      "lekit.v1.directories.DeleteDirectoryRequ" +
+      "est\032\026.google.protobuf.Empty\"\301\001\222Ai\n\tDirec" +
+      "tory\022\022Delete a directory\032)Delete a Direc" +
+      "tory within an organizationJ\035\n\003200\022\026\n\024De" +
+      "leted Successfully\202\265\030\002\030d\372\322\344\223\002\t\022\007PREVIEW\202" +
+      "\323\344\223\002:*8/api/v1/organizations/{organizati" +
+      "on_id}/directories/{id}\022\351\001\n\017UpdateDirect" +
+      "ory\022/.scalekit.v1.directories.UpdateDire" +
+      "ctoryRequest\0320.scalekit.v1.directories.U" +
+      "pdateDirectoryResponse\"s\202\265\030\025\n\021directorie" +
+      "s_write\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002E28/api/v1/" +
+      "organizations/{organization_id}/director" +
+      "ies/{id}:\tdirectory\022\347\001\n\030AssignGroupsForD" +
+      "irectory\0228.scalekit.v1.directories.Assig" +
+      "nGroupsForDirectoryRequest\032\026.google.prot" +
+      "obuf.Empty\"y\202\265\030\025\n\021directories_write\030t\372\322\344" +
+      "\223\002\t\022\007PREVIEW\202\323\344\223\002K\032F/api/v1/organization" +
+      "s/{organization_id}/directories/{id}/gro" +
+      "ups:assign:\001*\022\373\001\n\013AssignRoles\022+.scalekit" +
+      ".v1.directories.AssignRolesRequest\032,.sca" +
+      "lekit.v1.directories.AssignRolesResponse" +
+      "\"\220\001\202\265\030\025\n\021directories_write\030t\372\322\344\223\002\t\022\007PREV" +
+      "IEW\202\323\344\223\002b\032N/api/v1/organizations/{organi" +
+      "zation_id}/directories/{id}/groups/-/rol" +
+      "es:assign:\020role_assignments\022\200\002\n\020UpdateAt" +
+      "tributes\0220.scalekit.v1.directories.Updat" +
+      "eAttributesRequest\0321.scalekit.v1.directo" +
+      "ries.UpdateAttributesResponse\"\206\001\202\265\030\025\n\021di" +
+      "rectories_write\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002X\032C" +
+      "/api/v1/organizations/{organization_id}/" +
+      "directories/{id}/attributes:\021attribute_m" +
+      "apping\022\244\003\n\014GetDirectory\022,.scalekit.v1.di" +
+      "rectories.GetDirectoryRequest\032-.scalekit" +
+      ".v1.directories.GetDirectoryResponse\"\266\002\222" +
+      "A\332\001\n\tDirectory\022\025Get directory details\032PR" +
+      "etrieves detailed information about a sp" +
+      "ecific directory within an organizationJ" +
+      "d\n\003200\022]\n(Successfully retrieved directo" +
+      "ry details\0221\n/\032-.scalekit.v1.directories" +
+      ".GetDirectoryResponse\202\265\030\024\n\020directories_r" +
+      "ead\030t\202\323\344\223\002:\0228/api/v1/organizations/{orga" +
+      "nization_id}/directories/{id}\022\375\002\n\017ListDi" +
+      "rectories\022/.scalekit.v1.directories.List" +
+      "DirectoriesRequest\0320.scalekit.v1.directo" +
+      "ries.ListDirectoriesResponse\"\206\002\222A\257\001\n\tDir" +
+      "ectory\022\035List organization directoriesJ\202\001" +
+      "\n\003200\022{\nCSuccessfully retrieved the list" +
+      " of directories for the organization\0224\n2" +
+      "\0320.scalekit.v1.directories.ListDirectori" +
+      "esResponse\202\265\030\024\n\020directories_read\030t\202\323\344\223\0025" +
+      "\0223/api/v1/organizations/{organization_id" +
+      "}/directories\022\303\003\n\017EnableDirectory\022/.scal" +
+      "ekit.v1.directories.ToggleDirectoryReque" +
+      "st\0320.scalekit.v1.directories.ToggleDirec" +
+      "toryResponse\"\314\002\222A\350\001\n\tDirectory\022\022Enable a" +
+      " directory\032\177Activates a directory within" +
+      " an organization, allowing it to synchro" +
+      "nize users and groups with the connected" +
+      " Directory providerJF\n\003200\022?\n\007Success\0224\n" +
+      "2\0320.scalekit.v1.directories.ToggleDirect" +
+      "oryResponse\202\265\030\025\n\021directories_write\030t\202\323\344\223" +
+      "\002A2?/api/v1/organizations/{organization_" +
+      "id}/directories/{id}:enable\022\216\004\n\020DisableD" +
+      "irectory\022/.scalekit.v1.directories.Toggl" +
+      "eDirectoryRequest\0320.scalekit.v1.director" +
+      "ies.ToggleDirectoryResponse\"\226\003\222A\261\002\n\tDire" +
+      "ctory\022\023Disable a directory\032\252\001Stops synch" +
+      "ronization of users and groups from a sp" +
+      "ecified directory within an organization" +
+      ". This operation prevents further update" +
+      "s from the connected Directory providerJ" +
+      "b\n\003200\022[\n#Successfully disabled the dire" +
+      "ctory\0224\n2\0320.scalekit.v1.directories.Togg" +
+      "leDirectoryResponse\202\265\030\025\n\021directories_wri" +
+      "te\030t\202\323\344\223\002B2@/api/v1/organizations/{organ" +
+      "ization_id}/directories/{id}:disable\022\315\004\n" +
+      "\022ListDirectoryUsers\0222.scalekit.v1.direct" +
+      "ories.ListDirectoryUsersRequest\0323.scalek" +
+      "it.v1.directories.ListDirectoryUsersResp" +
+      "onse\"\315\003\222A\341\002\n\tDirectory\022\024List directory u" +
+      "sers\032\262\001Retrieves a list of all users wit" +
+      "hin a specified directory for an organiz" +
+      "ation. This endpoint allows you to view " +
+      "user accounts associated with your conne" +
+      "cted Directory Providers.J\210\001\n\003200\022\200\001\nESu" +
+      "ccessfully retrieved the list of users f" +
+      "rom the specified directory\0227\n5\0323.scalek" +
+      "it.v1.directories.ListDirectoryUsersResp" +
+      "onse\202\265\030\024\n\020directories_read\030t\202\323\344\223\002J\022H/api" +
+      "/v1/organizations/{organization_id}/dire" +
+      "ctories/{directory_id}/users\022\244\004\n\023ListDir" +
+      "ectoryGroups\0223.scalekit.v1.directories.L" +
+      "istDirectoryGroupsRequest\0324.scalekit.v1." +
+      "directories.ListDirectoryGroupsResponse\"" +
+      "\241\003\222A\264\002\n\tDirectory\022\025List directory groups" +
+      "\032\202\001Retrieves all groups from a specified" +
+      " directory. Use this endpoint to view gr" +
+      "oup structures from your connected ident" +
+      "ity provider.J\212\001\n\003200\022\202\001\nFSuccessfully r" +
+      "etrieved the list of groups from the spe" +
+      "cified directory\0228\n6\0324.scalekit.v1.direc" +
+      "tories.ListDirectoryGroupsResponse\202\265\030\024\n\020" +
+      "directories_read\030t\202\323\344\223\002K\022I/api/v1/organi" +
+      "zations/{organization_id}/directories/{d" +
+      "irectory_id}/groups\022\323\004\n\032ListDirectoryGro" +
+      "upsSummary\022:.scalekit.v1.directories.Lis" +
+      "tDirectoryGroupsSummaryRequest\0324.scaleki" +
+      "t.v1.directories.ListDirectoryGroupsResp" +
+      "onse\"\302\003\222A\276\002\n\tDirectory\022\035List directory g" +
+      "roups summary\032\204\001Retrieves all groups fro" +
+      "m a specified directory. This is not a p" +
+      "aginated api. It gives a summary view wi" +
+      "th id and name of the group.J\212\001\n\003200\022\202\001\n" +
+      "FSuccessfully retrieved the list of grou" +
+      "ps from the specified directory\0228\n6\0324.sc" +
+      "alekit.v1.directories.ListDirectoryGroup" +
+      "sResponse\202\265\030\024\n\020directories_read\030t\372\322\344\223\002\t\022" +
+      "\007PREVIEW\202\323\344\223\002S\022Q/api/v1/organizations/{o" +
+      "rganization_id}/directories/{directory_i" +
+      "d}/groups/summary\022\376\002\n\025CreateDirectorySec" +
+      "ret\0225.scalekit.v1.directories.CreateDire" +
+      "ctorySecretRequest\0326.scalekit.v1.directo" +
+      "ries.CreateDirectorySecretResponse\"\365\001\222Ax" +
+      "\n\tDirectory\022\035Create secret for a directo" +
+      "ryJL\n\003200\022E\n\007Success\022:\n8\0326.scalekit.v1.d" +
+      "irectories.CreateDirectorySecretResponse" +
+      "\202\265\030\025\n\021directories_write\030t\372\322\344\223\002\t\022\007PREVIEW" +
+      "\202\323\344\223\002L\"J/api/v1/organizations/{organizat" +
+      "ion_id}/directories/{directory_id}/secre" +
+      "ts\022\236\003\n\031RegenerateDirectorySecret\0229.scale" +
       "kit.v1.directories.RegenerateDirectorySe" +
-      "cretResponse\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002W\"" +
-      "U/api/v1/organizations/{organization_id}" +
-      "/directories/{directory_id}/secrets:rege" +
-      "nerate\022\312\001\n\024TriggerDirectorySync\0224.scalek" +
-      "it.v1.directories.TriggerDirectorySyncRe" +
-      "quest\032\026.google.protobuf.Empty\"d\202\265\030\002\030t\372\322\344" +
-      "\223\002\t\022\007PREVIEW\202\323\344\223\002I\022G/api/v1/organization" +
-      "s/{organization_id}/directories/{directo" +
-      "ry_id}:sync\032\252\002\222A\246\002\n\tDirectory\022\230\002Director" +
-      "y management for viewing and controlling" +
-      " external identity provider connections " +
-      "in your Scalekit environment. This servi" +
-      "ce provides endpoints for retrieving dir" +
-      "ectory information, listing directories " +
-      "and their contents, and enabling or disa" +
-      "bling directory synchronization.B\362\001\n)com" +
-      ".scalekit.grpc.scalekit.v1.directoriesB\020" +
-      "DirectoriesProtoP\001Z5github.com/scalekit-" +
-      "inc/scalekit/pkg/grpc/directories\242\002\003SVD\252" +
-      "\002\027Scalekit.V1.Directories\312\002\027Scalekit\\V1\\" +
-      "Directories\342\002#Scalekit\\V1\\Directories\\GP" +
-      "BMetadata\352\002\031Scalekit::V1::Directoriesb\006p" +
-      "roto3"
+      "cretRequest\032:.scalekit.v1.directories.Re" +
+      "generateDirectorySecretResponse\"\211\002\222A\200\001\n\t" +
+      "Directory\022!Regenerate secret for a direc" +
+      "toryJP\n\003200\022I\n\007Success\022>\n<\032:.scalekit.v1" +
+      ".directories.RegenerateDirectorySecretRe" +
+      "sponse\202\265\030\025\n\021directories_write\030t\372\322\344\223\002\t\022\007P" +
+      "REVIEW\202\323\344\223\002W\"U/api/v1/organizations/{org" +
+      "anization_id}/directories/{directory_id}" +
+      "/secrets:regenerate\022\335\001\n\024TriggerDirectory" +
+      "Sync\0224.scalekit.v1.directories.TriggerDi" +
+      "rectorySyncRequest\032\026.google.protobuf.Emp" +
+      "ty\"w\202\265\030\025\n\021directories_write\030t\372\322\344\223\002\t\022\007PRE" +
+      "VIEW\202\323\344\223\002I\022G/api/v1/organizations/{organ" +
+      "ization_id}/directories/{directory_id}:s" +
+      "ync\022\226\003\n\023GetDirectoryContext\0223.scalekit.v" +
+      "1.directories.GetDirectoryContextRequest" +
+      "\0324.scalekit.v1.directories.GetDirectoryC" +
+      "ontextResponse\"\223\002\222A\247\001\n\tDirectory\022\025Get di" +
+      "rectory context\032;Retrieves the custom co" +
+      "ntext data for a specific directory.J\'\n\003" +
+      "200\022 \n\036Returns the directory context.J\035\n" +
+      "\003404\022\026\n\024Directory not found.\202\265\030\002\030p\372\322\344\223\002\t" +
+      "\022\007PREVIEW\202\323\344\223\002M\022K/api/v1/organizations/{" +
+      "organization_id}/directories/{directory_" +
+      "id}/contexts\022\242\003\n\026UpdateDirectoryContext\022" +
+      "6.scalekit.v1.directories.UpdateDirector" +
+      "yContextRequest\032\026.google.protobuf.Empty\"" +
+      "\267\002\222A\302\001\n\tDirectory\022\030Update directory cont" +
+      "ext\0329Updates the custom context data for" +
+      " a specific directory.J&\n\003200\022\037\n\035Context" +
+      " updated successfully.J\031\n\003400\022\022\n\020Invalid" +
+      " request.J\035\n\003404\022\026\n\024Directory not found." +
+      "\202\265\030\002\030p\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002V\032K/api/v1/org" +
+      "anizations/{organization_id}/directories" +
+      "/{directory_id}/contexts:\007context\032\252\002\222A\246\002" +
+      "\n\tDirectory\022\230\002Directory management for v" +
+      "iewing and controlling external identity" +
+      " provider connections in your Scalekit e" +
+      "nvironment. This service provides endpoi" +
+      "nts for retrieving directory information" +
+      ", listing directories and their contents" +
+      ", and enabling or disabling directory sy" +
+      "nchronization.B\362\001\n)com.scalekit.grpc.sca" +
+      "lekit.v1.directoriesB\020DirectoriesProtoP\001" +
+      "Z5github.com/scalekit-inc/scalekit/pkg/g" +
+      "rpc/directories\242\002\003SVD\252\002\027Scalekit.V1.Dire" +
+      "ctories\312\002\027Scalekit\\V1\\Directories\342\002#Scal" +
+      "ekit\\V1\\Directories\\GPBMetadata\352\002\031Scalek" +
+      "it::V1::Directoriesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1023,6 +1076,24 @@ public final class DirectoriesProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_directories_TriggerDirectorySyncRequest_descriptor,
         new java.lang.String[] { "DirectoryId", "OrganizationId", });
+    internal_static_scalekit_v1_directories_GetDirectoryContextRequest_descriptor =
+      getDescriptor().getMessageTypes().get(39);
+    internal_static_scalekit_v1_directories_GetDirectoryContextRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_directories_GetDirectoryContextRequest_descriptor,
+        new java.lang.String[] { "DirectoryId", "OrganizationId", });
+    internal_static_scalekit_v1_directories_GetDirectoryContextResponse_descriptor =
+      getDescriptor().getMessageTypes().get(40);
+    internal_static_scalekit_v1_directories_GetDirectoryContextResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_directories_GetDirectoryContextResponse_descriptor,
+        new java.lang.String[] { "Context", });
+    internal_static_scalekit_v1_directories_UpdateDirectoryContextRequest_descriptor =
+      getDescriptor().getMessageTypes().get(41);
+    internal_static_scalekit_v1_directories_UpdateDirectoryContextRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_directories_UpdateDirectoryContextRequest_descriptor,
+        new java.lang.String[] { "DirectoryId", "OrganizationId", "Context", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);
