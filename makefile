@@ -29,7 +29,7 @@ generate-local:
 	@echo "Generating gRPC code from local scalekit workspace..."
 	rm -rf $(PROTO_OUT)
 	rm -rf $(JAVA_PKG)
-	buf generate --verbose ../scalekit
+	buf generate --include-imports --verbose ../scalekit
 	mkdir -p $(JAVA_PKG)
 	cp -r $(PROTO_OUT)/com/scalekit/grpc/* $(JAVA_PKG)
 
