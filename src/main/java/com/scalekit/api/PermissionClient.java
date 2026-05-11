@@ -8,8 +8,14 @@ public interface PermissionClient {
     
     GetPermissionResponse getPermission(String permissionName);
     
+    ListPermissionsResponse listPermissions(String pageToken, Integer pageSize);
+
+    /** @deprecated Use {@link #listPermissions(String, Integer)} instead */
+    @Deprecated
     ListPermissionsResponse listPermissions();
-    
+
+    /** @deprecated Use {@link #listPermissions(String, Integer)} instead */
+    @Deprecated
     ListPermissionsResponse listPermissions(String pageToken);
     
     UpdatePermissionResponse updatePermission(String permissionName, UpdatePermissionRequest request);

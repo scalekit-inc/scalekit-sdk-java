@@ -73,6 +73,22 @@ public enum AuthState
    * <code>WEBAUTHN_VERIFIED = 15;</code>
    */
   WEBAUTHN_VERIFIED(15),
+  /**
+   * <code>VERIFICATION_MAGIC_LINK_SENT = 16;</code>
+   */
+  VERIFICATION_MAGIC_LINK_SENT(16),
+  /**
+   * <code>VERIFICATION_MAGIC_LINK_OTP_SENT = 17;</code>
+   */
+  VERIFICATION_MAGIC_LINK_OTP_SENT(17),
+  /**
+   * <code>VERIFICATION_OTP_SENT = 18;</code>
+   */
+  VERIFICATION_OTP_SENT(18),
+  /**
+   * <code>VERIFICATION_COMPLETED = 19;</code>
+   */
+  VERIFICATION_COMPLETED(19),
   UNRECOGNIZED(-1),
   ;
 
@@ -140,6 +156,22 @@ public enum AuthState
    * <code>WEBAUTHN_VERIFIED = 15;</code>
    */
   public static final int WEBAUTHN_VERIFIED_VALUE = 15;
+  /**
+   * <code>VERIFICATION_MAGIC_LINK_SENT = 16;</code>
+   */
+  public static final int VERIFICATION_MAGIC_LINK_SENT_VALUE = 16;
+  /**
+   * <code>VERIFICATION_MAGIC_LINK_OTP_SENT = 17;</code>
+   */
+  public static final int VERIFICATION_MAGIC_LINK_OTP_SENT_VALUE = 17;
+  /**
+   * <code>VERIFICATION_OTP_SENT = 18;</code>
+   */
+  public static final int VERIFICATION_OTP_SENT_VALUE = 18;
+  /**
+   * <code>VERIFICATION_COMPLETED = 19;</code>
+   */
+  public static final int VERIFICATION_COMPLETED_VALUE = 19;
 
 
   public final int getNumber() {
@@ -182,6 +214,10 @@ public enum AuthState
       case 13: return AUTHENTICATION_COMPLETED;
       case 14: return AUTHENTICATION_FAILED;
       case 15: return WEBAUTHN_VERIFIED;
+      case 16: return VERIFICATION_MAGIC_LINK_SENT;
+      case 17: return VERIFICATION_MAGIC_LINK_OTP_SENT;
+      case 18: return VERIFICATION_OTP_SENT;
+      case 19: return VERIFICATION_COMPLETED;
       default: return null;
     }
   }

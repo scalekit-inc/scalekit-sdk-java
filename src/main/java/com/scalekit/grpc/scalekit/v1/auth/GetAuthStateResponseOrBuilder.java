@@ -18,4 +18,19 @@ public interface GetAuthStateResponseOrBuilder extends
    * @return The authState.
    */
   com.scalekit.grpc.scalekit.v1.auth.AuthState getAuthState();
+
+  /**
+   * <code>.scalekit.v1.auth.UserDetails user = 2 [json_name = "user"];</code>
+   * @return Whether the user field is set.
+   */
+  boolean hasUser();
+  /**
+   * <code>.scalekit.v1.auth.UserDetails user = 2 [json_name = "user"];</code>
+   * @return The user.
+   */
+  com.scalekit.grpc.scalekit.v1.auth.UserDetails getUser();
+  /**
+   * <code>.scalekit.v1.auth.UserDetails user = 2 [json_name = "user"];</code>
+   */
+  com.scalekit.grpc.scalekit.v1.auth.UserDetailsOrBuilder getUserOrBuilder();
 }

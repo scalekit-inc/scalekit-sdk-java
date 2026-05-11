@@ -168,27 +168,27 @@ public final class MembersProto {
       "embersService\022\212\001\n\014CreateMember\022(.scaleki" +
       "t.v1.members.CreateMemberRequest\032).scale" +
       "kit.v1.members.CreateMemberResponse\"%\202\265\030" +
-      "\002\030T\202\323\344\223\002\031\"\017/api/v1/members:\006member\022\235\001\n\023U" +
+      "\002\030D\202\323\344\223\002\031\"\017/api/v1/members:\006member\022\235\001\n\023U" +
       "pdateCurrentMember\022/.scalekit.v1.members" +
       ".UpdateCurrentMemberRequest\032).scalekit.v" +
-      "1.members.UpdateMemberResponse\"*\202\265\030\002\030T\202\323" +
+      "1.members.UpdateMemberResponse\"*\202\265\030\002\030D\202\323" +
       "\344\223\002\0362\024/api/v1/members:this:\006member\022\217\001\n\014U" +
       "pdateMember\022(.scalekit.v1.members.Update" +
       "MemberRequest\032).scalekit.v1.members.Upda" +
-      "teMemberResponse\"*\202\265\030\002\030T\202\323\344\223\002\0362\024/api/v1/" +
+      "teMemberResponse\"*\202\265\030\002\030D\202\323\344\223\002\0362\024/api/v1/" +
       "members/{id}:\006member\022\214\001\n\020GetCurrentMembe" +
       "r\022,.scalekit.v1.members.GetCurrentMember" +
       "Request\032&.scalekit.v1.members.GetMemberR" +
-      "esponse\"\"\202\265\030\002\030T\202\323\344\223\002\026\022\024/api/v1/members:t" +
+      "esponse\"\"\202\265\030\002\030D\202\323\344\223\002\026\022\024/api/v1/members:t" +
       "his\022~\n\tGetMember\022%.scalekit.v1.members.G" +
       "etMemberRequest\032&.scalekit.v1.members.Ge" +
-      "tMemberResponse\"\"\202\265\030\002\030T\202\323\344\223\002\026\022\024/api/v1/m" +
+      "tMemberResponse\"\"\202\265\030\002\030D\202\323\344\223\002\026\022\024/api/v1/m" +
       "embers/{id}\022}\n\013ListMembers\022&.scalekit.v1" +
       ".members.ListMemberRequest\032\'.scalekit.v1" +
-      ".members.ListMemberResponse\"\035\202\265\030\002\030T\202\323\344\223\002" +
+      ".members.ListMemberResponse\"\035\202\265\030\002\030D\202\323\344\223\002" +
       "\021\022\017/api/v1/members\022t\n\014DeleteMember\022(.sca" +
       "lekit.v1.members.DeleteMemberRequest\032\026.g" +
-      "oogle.protobuf.Empty\"\"\202\265\030\002\030T\202\323\344\223\002\026*\024/api" +
+      "oogle.protobuf.Empty\"\"\202\265\030\002\030D\202\323\344\223\002\026*\024/api" +
       "/v1/members/{id}B\326\001\n%com.scalekit.grpc.s" +
       "calekit.v1.membersB\014MembersProtoP\001Z1gith" +
       "ub.com/scalekit-inc/scalekit/pkg/grpc/me" +

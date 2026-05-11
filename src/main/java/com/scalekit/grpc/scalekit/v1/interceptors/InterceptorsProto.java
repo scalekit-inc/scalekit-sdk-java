@@ -378,39 +378,39 @@ public final class InterceptorsProto {
       "ervice\022\274\001\n\021CreateInterceptor\0222.scalekit." +
       "v1.interceptors.CreateInterceptorRequest" +
       "\0323.scalekit.v1.interceptors.CreateInterc" +
-      "eptorResponse\">\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
+      "eptorResponse\">\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
       "\002#\"\024/api/v1/interceptors:\013interceptor\022\253\001" +
       "\n\016GetInterceptor\022/.scalekit.v1.intercept" +
       "ors.GetInterceptorRequest\0320.scalekit.v1." +
       "interceptors.GetInterceptorResponse\"6\202\265\030" +
-      "\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\033\022\031/api/v1/interc" +
+      "\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\033\022\031/api/v1/interc" +
       "eptors/{id}\022\254\001\n\020ListInterceptors\0221.scale" +
       "kit.v1.interceptors.ListInterceptorsRequ" +
       "est\0322.scalekit.v1.interceptors.ListInter" +
-      "ceptorsResponse\"1\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323" +
+      "ceptorsResponse\"1\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323" +
       "\344\223\002\026\022\024/api/v1/interceptors\022\301\001\n\021UpdateInt" +
       "erceptor\0222.scalekit.v1.interceptors.Upda" +
       "teInterceptorRequest\0323.scalekit.v1.inter" +
       "ceptors.UpdateInterceptorResponse\"C\202\265\030\002\030" +
-      "T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002(2\031/api/v1/intercep" +
+      "D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002(2\031/api/v1/intercep" +
       "tors/{id}:\013interceptor\022\227\001\n\021DeleteInterce" +
       "ptor\0222.scalekit.v1.interceptors.DeleteIn" +
       "terceptorRequest\032\026.google.protobuf.Empty" +
-      "\"6\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\033*\031/api/v1/i" +
+      "\"6\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\033*\031/api/v1/i" +
       "nterceptors/{id}\022\236\001\n\021EnableInterceptor\0222" +
       ".scalekit.v1.interceptors.EnableIntercep" +
       "torRequest\032\026.google.protobuf.Empty\"=\202\265\030\002" +
-      "\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\"2 /api/v1/interce" +
+      "\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\"2 /api/v1/interce" +
       "ptors/{id}:enable\022\241\001\n\022DisableInterceptor" +
       "\0223.scalekit.v1.interceptors.DisableInter" +
       "ceptorRequest\032\026.google.protobuf.Empty\">\202" +
-      "\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002#2!/api/v1/inte" +
+      "\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002#2!/api/v1/inte" +
       "rceptors/{id}:disable\022\371\001\n\017TestIntercepto" +
       "r\0220.scalekit.v1.interceptors.TestInterce" +
       "ptorRequest\0321.scalekit.v1.interceptors.T" +
       "estInterceptorResponse\"\200\001\222A<\022\023Test an In" +
       "terceptor\032%Test an interceptor with samp" +
-      "le data.\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002&\"\036/ap" +
+      "le data.\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002&\"\036/ap" +
       "i/v1/interceptors/{id}/test:\004dataB\371\001\n*co" +
       "m.scalekit.grpc.scalekit.v1.interceptors" +
       "B\021InterceptorsProtoP\001Z6github.com/scalek" +

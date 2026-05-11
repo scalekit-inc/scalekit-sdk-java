@@ -459,29 +459,29 @@ public final class McpProto {
       "g MCP with the given configuration.\032gCre" +
       "ates a new MCP for the configuration. If" +
       " same configuration exists, it will retu" +
-      "rn the existing MCP.\202\265\030\002\030t\202\323\344\223\002\022\"\013/api/v" +
+      "rn the existing MCP.\202\265\030\002\030d\202\323\344\223\002\022\"\013/api/v" +
       "1/mcp:\003mcp\022\276\001\n\006GetMcp\022\036.scalekit.v1.mcp." +
       "GetMcpRequest\032\037.scalekit.v1.mcp.GetMcpRe" +
       "sponse\"s\222AN\n\003mcp\022\032Get an existing MCP by" +
       " ID.\032+Returns the existing MCP with the " +
-      "given ID.\202\265\030\002\030t\202\323\344\223\002\026\022\024/api/v1/mcp/{mcp_" +
+      "given ID.\202\265\030\002\030d\202\323\344\223\002\026\022\024/api/v1/mcp/{mcp_" +
       "id}\022\371\001\n\007ListMcp\022\037.scalekit.v1.mcp.ListMc" +
       "pRequest\032 .scalekit.v1.mcp.ListMcpRespon" +
       "se\"\252\001\222A\215\001\n\003mcp\022 List MCPs with optional " +
       "filters.\032dReturns a list of existing MCP" +
       "s, optionally filtered by connected_acco" +
-      "unt_identifier and link_token.\202\265\030\002\030t\202\323\344\223" +
+      "unt_identifier and link_token.\202\265\030\002\030d\202\323\344\223" +
       "\002\r\022\013/api/v1/mcp\022\270\001\n\tDeleteMcp\022!.scalekit" +
       ".v1.mcp.DeleteMcpRequest\032\".scalekit.v1.m" +
       "cp.DeleteMcpResponse\"d\222A?\n\003mcp\022\024Delete a" +
       "n MCP by ID.\032\"Deletes the MCP with the g" +
-      "iven ID.\202\265\030\002\030t\202\323\344\223\002\026*\024/api/v1/mcp/{mcp_i" +
+      "iven ID.\202\265\030\002\030d\202\323\344\223\002\026*\024/api/v1/mcp/{mcp_i" +
       "d}\022\206\002\n\017CreateMcpConfig\022\'.scalekit.v1.mcp" +
       ".CreateMcpConfigRequest\032(.scalekit.v1.mc" +
       "p.CreateMcpConfigResponse\"\237\001\222As\n\013mcp-con" +
       "figs\022\036Create a new MCP configuration\032DCr" +
       "eates a new MCP configuration with a set" +
-      " of connections and tools.\202\265\030\002\030T\202\323\344\223\002\035\"\023" +
+      " of connections and tools.\202\265\030\002\030D\202\323\344\223\002\035\"\023" +
       "/api/v1/mcp/configs:\006config\022\261\002\n\017UpdateMc" +
       "pConfig\022\'.scalekit.v1.mcp.UpdateMcpConfi" +
       "gRequest\032(.scalekit.v1.mcp.UpdateMcpConf" +
@@ -489,28 +489,28 @@ public final class McpProto {
       "n existing MCP configuration\032aUpdates th" +
       "e name, description, and connection-to-t" +
       "ool mappings for an existing MCP configu" +
-      "ration.\202\265\030\002\030T\202\323\344\223\002$\032\037/api/v1/mcp/configs" +
+      "ration.\202\265\030\002\030D\202\323\344\223\002$\032\037/api/v1/mcp/configs" +
       "/{config_id}:\001*\022\236\002\n\016ListMcpConfigs\022&.sca" +
       "lekit.v1.mcp.ListMcpConfigsRequest\032\'.sca" +
       "lekit.v1.mcp.ListMcpConfigsResponse\"\272\001\222A" +
       "\225\001\n\013mcp-configs\022\027List MCP configurations" +
       "\032mLists MCP configurations for the curre" +
       "nt environment with optional filters for" +
-      " id, name prefix, and provider.\202\265\030\002\030T\202\323\344" +
+      " id, name prefix, and provider.\202\265\030\002\030D\202\323\344" +
       "\223\002\025\022\023/api/v1/mcp/configs\022\376\001\n\014GetMcpConfi" +
       "g\022$.scalekit.v1.mcp.GetMcpConfigRequest\032" +
       "%.scalekit.v1.mcp.GetMcpConfigResponse\"\240" +
       "\001\222Ap\n\013mcp-configs\022\032Fetch an MCP configur" +
       "ation\032EReturns a single MCP configuratio" +
       "n for the current environment by ID.\202\265\030\002" +
-      "\030T\202\323\344\223\002!\022\037/api/v1/mcp/configs/{config_id" +
+      "\030D\202\323\344\223\002!\022\037/api/v1/mcp/configs/{config_id" +
       "}\022\247\002\n\017DeleteMcpConfig\022\'.scalekit.v1.mcp." +
       "DeleteMcpConfigRequest\032(.scalekit.v1.mcp" +
       ".DeleteMcpConfigResponse\"\300\001\222A\217\001\n\013mcp-con" +
       "figs\022\033Delete an MCP configuration\032cDelet" +
       "es the MCP configuration and any associa" +
       "ted mappings and instances in the curren" +
-      "t environment.\202\265\030\002\030T\202\323\344\223\002!*\037/api/v1/mcp/" +
+      "t environment.\202\265\030\002\030D\202\323\344\223\002!*\037/api/v1/mcp/" +
       "configs/{config_id}\022\275\002\n\021EnsureMcpInstanc" +
       "e\022).scalekit.v1.mcp.EnsureMcpInstanceReq" +
       "uest\032*.scalekit.v1.mcp.EnsureMcpInstance" +
@@ -518,7 +518,7 @@ public final class McpProto {
       "reate an MCP instance\032vReturns an existi" +
       "ng MCP instance for the given configurat" +
       "ion, name, and user identifier or create" +
-      "s one if none exists.\202\265\030\002\030T\202\323\344\223\002\032\"\025/api/" +
+      "s one if none exists.\202\265\030\002\030D\202\323\344\223\002\032\"\025/api/" +
       "v1/mcp/instances:\001*\022\322\002\n\020ListMcpInstances" +
       "\022(.scalekit.v1.mcp.ListMcpInstancesReque" +
       "st\032).scalekit.v1.mcp.ListMcpInstancesRes" +
@@ -527,13 +527,13 @@ public final class McpProto {
       "rrent environment with optional filters " +
       "for instance id, name, configuration, an" +
       "d text search across name or user identi" +
-      "fier.\202\265\030\002\030T\202\323\344\223\002\027\022\025/api/v1/mcp/instances" +
+      "fier.\202\265\030\002\030D\202\323\344\223\002\027\022\025/api/v1/mcp/instances" +
       "\022\203\002\n\021DeleteMcpInstance\022).scalekit.v1.mcp" +
       ".DeleteMcpInstanceRequest\032*.scalekit.v1." +
       "mcp.DeleteMcpInstanceResponse\"\226\001\222Ab\n\rmcp" +
       "-instances\022\026Delete an MCP instance\0329Dele" +
       "tes a single MCP instance in the current" +
-      " environment.\202\265\030\002\030T\202\323\344\223\002%*#/api/v1/mcp/i" +
+      " environment.\202\265\030\002\030D\202\323\344\223\002%*#/api/v1/mcp/i" +
       "nstances/{instance_id}\022\311\002\n\021UpdateMcpInst" +
       "ance\022).scalekit.v1.mcp.UpdateMcpInstance" +
       "Request\032*.scalekit.v1.mcp.UpdateMcpInsta" +
@@ -541,14 +541,14 @@ public final class McpProto {
       "e an MCP instance\032{Updates attributes of" +
       " an MCP instance. Currently only the con" +
       "fig name can be changed, which rebuilds " +
-      "the instance mappings.\202\265\030\002\030T\202\323\344\223\002(2#/api" +
+      "the instance mappings.\202\265\030\002\030D\202\323\344\223\002(2#/api" +
       "/v1/mcp/instances/{instance_id}:\001*\022\200\002\n\016G" +
       "etMcpInstance\022&.scalekit.v1.mcp.GetMcpIn" +
       "stanceRequest\032\'.scalekit.v1.mcp.GetMcpIn" +
       "stanceResponse\"\234\001\222Ah\n\rmcp-instances\022\025Fet" +
       "ch an MCP instance\032@Returns a single MCP" +
       " instance for the current environment by" +
-      " ID.\202\265\030\002\030T\202\323\344\223\002%\022#/api/v1/mcp/instances/" +
+      " ID.\202\265\030\002\030D\202\323\344\223\002%\022#/api/v1/mcp/instances/" +
       "{instance_id}\022\370\002\n\027GetMcpInstanceAuthStat" +
       "e\022/.scalekit.v1.mcp.GetMcpInstanceAuthSt" +
       "ateRequest\0320.scalekit.v1.mcp.GetMcpInsta" +
@@ -557,7 +557,7 @@ public final class McpProto {
       "CP instance\032sReturns the connected accou" +
       "nt status and fresh authentication links" +
       " for each connection mapped to the MCP i" +
-      "nstance.\202\265\030\002\030T\202\323\344\223\0024\"2/api/v1/mcp/instan" +
+      "nstance.\202\265\030\002\030D\202\323\344\223\0024\"2/api/v1/mcp/instan" +
       "ces/{instance_id}:get_auth_stateB\272\001\n!com" +
       ".scalekit.grpc.scalekit.v1.mcpB\010McpProto" +
       "P\001Z-github.com/scalekit-inc/scalekit/pkg" +

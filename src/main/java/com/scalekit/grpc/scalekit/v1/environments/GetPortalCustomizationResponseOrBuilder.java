@@ -34,4 +34,31 @@ public interface GetPortalCustomizationResponseOrBuilder extends
    * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings"];</code>
    */
   com.google.protobuf.StructOrBuilder getCustomizationSettingsOrBuilder();
+
+  /**
+   * <pre>
+   * settings contains feature flags derived from the workspace's billing subscription
+   * </pre>
+   *
+   * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the settings field is set.
+   */
+  boolean hasSettings();
+  /**
+   * <pre>
+   * settings contains feature flags derived from the workspace's billing subscription
+   * </pre>
+   *
+   * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The settings.
+   */
+  com.scalekit.grpc.scalekit.v1.environments.PortalSettings getSettings();
+  /**
+   * <pre>
+   * settings contains feature flags derived from the workspace's billing subscription
+   * </pre>
+   *
+   * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.scalekit.grpc.scalekit.v1.environments.PortalSettingsOrBuilder getSettingsOrBuilder();
 }

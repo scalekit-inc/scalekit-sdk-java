@@ -19,22 +19,35 @@ public interface ListClientsRequestOrBuilder extends
   boolean getIncludePlainSecret();
 
   /**
-   * <pre>
-   * Filter clients by type. Defaults to WEB if not specified.
-   * </pre>
-   *
-   * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The clientType.
+   * <code>.scalekit.v1.clients.ListClientsRequest.Filter filter = 3 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the filter field is set.
    */
-  java.lang.String getClientType();
+  boolean hasFilter();
   /**
-   * <pre>
-   * Filter clients by type. Defaults to WEB if not specified.
-   * </pre>
-   *
-   * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for clientType.
+   * <code>.scalekit.v1.clients.ListClientsRequest.Filter filter = 3 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The filter.
+   */
+  com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter getFilter();
+  /**
+   * <code>.scalekit.v1.clients.ListClientsRequest.Filter filter = 3 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.FilterOrBuilder getFilterOrBuilder();
+
+  /**
+   * <code>string page_token = 4 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The pageToken.
+   */
+  java.lang.String getPageToken();
+  /**
+   * <code>string page_token = 4 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
-      getClientTypeBytes();
+      getPageTokenBytes();
+
+  /**
+   * <code>uint32 page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The pageSize.
+   */
+  int getPageSize();
 }

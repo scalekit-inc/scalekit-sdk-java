@@ -17,7 +17,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListClientsRequest() {
-    clientType_ = "";
+    pageToken_ = "";
   }
 
   @java.lang.Override
@@ -40,6 +40,625 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.class, com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Builder.class);
   }
 
+  public interface FilterOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:scalekit.v1.clients.ListClientsRequest.Filter)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated string client_type = 1 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the clientType.
+     */
+    java.util.List<java.lang.String>
+        getClientTypeList();
+    /**
+     * <code>repeated string client_type = 1 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of clientType.
+     */
+    int getClientTypeCount();
+    /**
+     * <code>repeated string client_type = 1 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The clientType at the given index.
+     */
+    java.lang.String getClientType(int index);
+    /**
+     * <code>repeated string client_type = 1 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the clientType at the given index.
+     */
+    com.google.protobuf.ByteString
+        getClientTypeBytes(int index);
+  }
+  /**
+   * Protobuf type {@code scalekit.v1.clients.ListClientsRequest.Filter}
+   */
+  public static final class Filter extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:scalekit.v1.clients.ListClientsRequest.Filter)
+      FilterOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Filter.newBuilder() to construct.
+    private Filter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Filter() {
+      clientType_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Filter();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.scalekit.grpc.scalekit.v1.clients.ClientsProto.internal_static_scalekit_v1_clients_ListClientsRequest_Filter_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.scalekit.grpc.scalekit.v1.clients.ClientsProto.internal_static_scalekit_v1_clients_ListClientsRequest_Filter_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter.class, com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter.Builder.class);
+    }
+
+    public static final int CLIENT_TYPE_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList clientType_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <code>repeated string client_type = 1 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the clientType.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getClientTypeList() {
+      return clientType_;
+    }
+    /**
+     * <code>repeated string client_type = 1 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of clientType.
+     */
+    public int getClientTypeCount() {
+      return clientType_.size();
+    }
+    /**
+     * <code>repeated string client_type = 1 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The clientType at the given index.
+     */
+    public java.lang.String getClientType(int index) {
+      return clientType_.get(index);
+    }
+    /**
+     * <code>repeated string client_type = 1 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the clientType at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getClientTypeBytes(int index) {
+      return clientType_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < clientType_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, clientType_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < clientType_.size(); i++) {
+          dataSize += computeStringSizeNoTag(clientType_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getClientTypeList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter)) {
+        return super.equals(obj);
+      }
+      com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter other = (com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter) obj;
+
+      if (!getClientTypeList()
+          .equals(other.getClientTypeList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getClientTypeCount() > 0) {
+        hash = (37 * hash) + CLIENT_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getClientTypeList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code scalekit.v1.clients.ListClientsRequest.Filter}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:scalekit.v1.clients.ListClientsRequest.Filter)
+        com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.FilterOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.scalekit.grpc.scalekit.v1.clients.ClientsProto.internal_static_scalekit_v1_clients_ListClientsRequest_Filter_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.scalekit.grpc.scalekit.v1.clients.ClientsProto.internal_static_scalekit_v1_clients_ListClientsRequest_Filter_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter.class, com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter.Builder.class);
+      }
+
+      // Construct using com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        clientType_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.scalekit.grpc.scalekit.v1.clients.ClientsProto.internal_static_scalekit_v1_clients_ListClientsRequest_Filter_descriptor;
+      }
+
+      @java.lang.Override
+      public com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter getDefaultInstanceForType() {
+        return com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter build() {
+        com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter buildPartial() {
+        com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter result = new com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          clientType_.makeImmutable();
+          result.clientType_ = clientType_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter) {
+          return mergeFrom((com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter other) {
+        if (other == com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter.getDefaultInstance()) return this;
+        if (!other.clientType_.isEmpty()) {
+          if (clientType_.isEmpty()) {
+            clientType_ = other.clientType_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureClientTypeIsMutable();
+            clientType_.addAll(other.clientType_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureClientTypeIsMutable();
+                clientType_.add(s);
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList clientType_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureClientTypeIsMutable() {
+        if (!clientType_.isModifiable()) {
+          clientType_ = new com.google.protobuf.LazyStringArrayList(clientType_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+      /**
+       * <code>repeated string client_type = 1 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+       * @return A list containing the clientType.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getClientTypeList() {
+        clientType_.makeImmutable();
+        return clientType_;
+      }
+      /**
+       * <code>repeated string client_type = 1 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+       * @return The count of clientType.
+       */
+      public int getClientTypeCount() {
+        return clientType_.size();
+      }
+      /**
+       * <code>repeated string client_type = 1 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+       * @param index The index of the element to return.
+       * @return The clientType at the given index.
+       */
+      public java.lang.String getClientType(int index) {
+        return clientType_.get(index);
+      }
+      /**
+       * <code>repeated string client_type = 1 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the clientType at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getClientTypeBytes(int index) {
+        return clientType_.getByteString(index);
+      }
+      /**
+       * <code>repeated string client_type = 1 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+       * @param index The index to set the value at.
+       * @param value The clientType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientType(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureClientTypeIsMutable();
+        clientType_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string client_type = 1 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+       * @param value The clientType to add.
+       * @return This builder for chaining.
+       */
+      public Builder addClientType(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureClientTypeIsMutable();
+        clientType_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string client_type = 1 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+       * @param values The clientType to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllClientType(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureClientTypeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, clientType_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string client_type = 1 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClientType() {
+        clientType_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string client_type = 1 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+       * @param value The bytes of the clientType to add.
+       * @return This builder for chaining.
+       */
+      public Builder addClientTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensureClientTypeIsMutable();
+        clientType_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:scalekit.v1.clients.ListClientsRequest.Filter)
+    }
+
+    // @@protoc_insertion_point(class_scope:scalekit.v1.clients.ListClientsRequest.Filter)
+    private static final com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter();
+    }
+
+    public static com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Filter>
+        PARSER = new com.google.protobuf.AbstractParser<Filter>() {
+      @java.lang.Override
+      public Filter parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<Filter> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Filter> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private int bitField0_;
   public static final int INCLUDE_PLAIN_SECRET_FIELD_NUMBER = 1;
   private boolean includePlainSecret_ = false;
   /**
@@ -55,51 +674,80 @@ private static final long serialVersionUID = 0L;
     return includePlainSecret_;
   }
 
-  public static final int CLIENT_TYPE_FIELD_NUMBER = 2;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object clientType_ = "";
+  public static final int FILTER_FIELD_NUMBER = 3;
+  private com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter filter_;
   /**
-   * <pre>
-   * Filter clients by type. Defaults to WEB if not specified.
-   * </pre>
-   *
-   * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The clientType.
+   * <code>.scalekit.v1.clients.ListClientsRequest.Filter filter = 3 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the filter field is set.
    */
   @java.lang.Override
-  public java.lang.String getClientType() {
-    java.lang.Object ref = clientType_;
+  public boolean hasFilter() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>.scalekit.v1.clients.ListClientsRequest.Filter filter = 3 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The filter.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter getFilter() {
+    return filter_ == null ? com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter.getDefaultInstance() : filter_;
+  }
+  /**
+   * <code>.scalekit.v1.clients.ListClientsRequest.Filter filter = 3 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.FilterOrBuilder getFilterOrBuilder() {
+    return filter_ == null ? com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter.getDefaultInstance() : filter_;
+  }
+
+  public static final int PAGE_TOKEN_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
+  /**
+   * <code>string page_token = 4 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The pageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getPageToken() {
+    java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      clientType_ = s;
+      pageToken_ = s;
       return s;
     }
   }
   /**
-   * <pre>
-   * Filter clients by type. Defaults to WEB if not specified.
-   * </pre>
-   *
-   * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for clientType.
+   * <code>string page_token = 4 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for pageToken.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getClientTypeBytes() {
-    java.lang.Object ref = clientType_;
+      getPageTokenBytes() {
+    java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      clientType_ = b;
+      pageToken_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int PAGE_SIZE_FIELD_NUMBER = 5;
+  private int pageSize_ = 0;
+  /**
+   * <code>uint32 page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The pageSize.
+   */
+  @java.lang.Override
+  public int getPageSize() {
+    return pageSize_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -119,8 +767,14 @@ private static final long serialVersionUID = 0L;
     if (includePlainSecret_ != false) {
       output.writeBool(1, includePlainSecret_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientType_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clientType_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getFilter());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pageToken_);
+    }
+    if (pageSize_ != 0) {
+      output.writeUInt32(5, pageSize_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -135,8 +789,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(1, includePlainSecret_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientType_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clientType_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getFilter());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pageToken_);
+    }
+    if (pageSize_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(5, pageSize_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -155,8 +817,15 @@ private static final long serialVersionUID = 0L;
 
     if (getIncludePlainSecret()
         != other.getIncludePlainSecret()) return false;
-    if (!getClientType()
-        .equals(other.getClientType())) return false;
+    if (hasFilter() != other.hasFilter()) return false;
+    if (hasFilter()) {
+      if (!getFilter()
+          .equals(other.getFilter())) return false;
+    }
+    if (!getPageToken()
+        .equals(other.getPageToken())) return false;
+    if (getPageSize()
+        != other.getPageSize()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -171,8 +840,14 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + INCLUDE_PLAIN_SECRET_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIncludePlainSecret());
-    hash = (37 * hash) + CLIENT_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getClientType().hashCode();
+    if (hasFilter()) {
+      hash = (37 * hash) + FILTER_FIELD_NUMBER;
+      hash = (53 * hash) + getFilter().hashCode();
+    }
+    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getPageSize();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -292,20 +967,32 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getFilterFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
       includePlainSecret_ = false;
-      clientType_ = "";
+      filter_ = null;
+      if (filterBuilder_ != null) {
+        filterBuilder_.dispose();
+        filterBuilder_ = null;
+      }
+      pageToken_ = "";
+      pageSize_ = 0;
       return this;
     }
 
@@ -342,9 +1029,20 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.includePlainSecret_ = includePlainSecret_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.clientType_ = clientType_;
+        result.filter_ = filterBuilder_ == null
+            ? filter_
+            : filterBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -394,10 +1092,16 @@ private static final long serialVersionUID = 0L;
       if (other.getIncludePlainSecret() != false) {
         setIncludePlainSecret(other.getIncludePlainSecret());
       }
-      if (!other.getClientType().isEmpty()) {
-        clientType_ = other.clientType_;
-        bitField0_ |= 0x00000002;
+      if (other.hasFilter()) {
+        mergeFilter(other.getFilter());
+      }
+      if (!other.getPageToken().isEmpty()) {
+        pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
+      }
+      if (other.getPageSize() != 0) {
+        setPageSize(other.getPageSize());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -430,11 +1134,23 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 8
-            case 18: {
-              clientType_ = input.readStringRequireUtf8();
+            case 26: {
+              input.readMessage(
+                  getFilterFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00000002;
               break;
-            } // case 18
+            } // case 26
+            case 34: {
+              pageToken_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 34
+            case 40: {
+              pageSize_ = input.readUInt32();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 40
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -496,94 +1212,227 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object clientType_ = "";
+    private com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter filter_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter, com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter.Builder, com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.FilterOrBuilder> filterBuilder_;
     /**
-     * <pre>
-     * Filter clients by type. Defaults to WEB if not specified.
-     * </pre>
-     *
-     * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The clientType.
+     * <code>.scalekit.v1.clients.ListClientsRequest.Filter filter = 3 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the filter field is set.
      */
-    public java.lang.String getClientType() {
-      java.lang.Object ref = clientType_;
+    public boolean hasFilter() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>.scalekit.v1.clients.ListClientsRequest.Filter filter = 3 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The filter.
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter getFilter() {
+      if (filterBuilder_ == null) {
+        return filter_ == null ? com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter.getDefaultInstance() : filter_;
+      } else {
+        return filterBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.clients.ListClientsRequest.Filter filter = 3 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setFilter(com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter value) {
+      if (filterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        filter_ = value;
+      } else {
+        filterBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.ListClientsRequest.Filter filter = 3 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setFilter(
+        com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter.Builder builderForValue) {
+      if (filterBuilder_ == null) {
+        filter_ = builderForValue.build();
+      } else {
+        filterBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.ListClientsRequest.Filter filter = 3 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeFilter(com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter value) {
+      if (filterBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0) &&
+          filter_ != null &&
+          filter_ != com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter.getDefaultInstance()) {
+          getFilterBuilder().mergeFrom(value);
+        } else {
+          filter_ = value;
+        }
+      } else {
+        filterBuilder_.mergeFrom(value);
+      }
+      if (filter_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.ListClientsRequest.Filter filter = 3 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearFilter() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      filter_ = null;
+      if (filterBuilder_ != null) {
+        filterBuilder_.dispose();
+        filterBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.ListClientsRequest.Filter filter = 3 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter.Builder getFilterBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getFilterFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.clients.ListClientsRequest.Filter filter = 3 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.FilterOrBuilder getFilterOrBuilder() {
+      if (filterBuilder_ != null) {
+        return filterBuilder_.getMessageOrBuilder();
+      } else {
+        return filter_ == null ?
+            com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter.getDefaultInstance() : filter_;
+      }
+    }
+    /**
+     * <code>.scalekit.v1.clients.ListClientsRequest.Filter filter = 3 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter, com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter.Builder, com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.FilterOrBuilder> 
+        getFilterFieldBuilder() {
+      if (filterBuilder_ == null) {
+        filterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter, com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.Filter.Builder, com.scalekit.grpc.scalekit.v1.clients.ListClientsRequest.FilterOrBuilder>(
+                getFilter(),
+                getParentForChildren(),
+                isClean());
+        filter_ = null;
+      }
+      return filterBuilder_;
+    }
+
+    private java.lang.Object pageToken_ = "";
+    /**
+     * <code>string page_token = 4 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The pageToken.
+     */
+    public java.lang.String getPageToken() {
+      java.lang.Object ref = pageToken_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        clientType_ = s;
+        pageToken_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <pre>
-     * Filter clients by type. Defaults to WEB if not specified.
-     * </pre>
-     *
-     * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for clientType.
+     * <code>string page_token = 4 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString
-        getClientTypeBytes() {
-      java.lang.Object ref = clientType_;
+        getPageTokenBytes() {
+      java.lang.Object ref = pageToken_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        clientType_ = b;
+        pageToken_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <pre>
-     * Filter clients by type. Defaults to WEB if not specified.
-     * </pre>
-     *
-     * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The clientType to set.
+     * <code>string page_token = 4 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The pageToken to set.
      * @return This builder for chaining.
      */
-    public Builder setClientType(
+    public Builder setPageToken(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      clientType_ = value;
-      bitField0_ |= 0x00000002;
+      pageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * Filter clients by type. Defaults to WEB if not specified.
-     * </pre>
-     *
-     * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>string page_token = 4 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearClientType() {
-      clientType_ = getDefaultInstance().getClientType();
-      bitField0_ = (bitField0_ & ~0x00000002);
+    public Builder clearPageToken() {
+      pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * Filter clients by type. Defaults to WEB if not specified.
-     * </pre>
-     *
-     * <code>string client_type = 2 [json_name = "clientType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for clientType to set.
+     * <code>string page_token = 4 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
      */
-    public Builder setClientTypeBytes(
+    public Builder setPageTokenBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      clientType_ = value;
-      bitField0_ |= 0x00000002;
+      pageToken_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private int pageSize_ ;
+    /**
+     * <code>uint32 page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The pageSize.
+     */
+    @java.lang.Override
+    public int getPageSize() {
+      return pageSize_;
+    }
+    /**
+     * <code>uint32 page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPageSize(int value) {
+
+      pageSize_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint32 page_size = 5 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPageSize() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      pageSize_ = 0;
       onChanged();
       return this;
     }

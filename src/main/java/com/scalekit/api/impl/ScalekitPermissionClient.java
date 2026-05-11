@@ -58,32 +58,47 @@ public class ScalekitPermissionClient implements PermissionClient {
     }
 
     /**
-     * Lists all permissions
+     * Lists permissions with optional pagination
+     * @param pageToken: The page token for pagination (pass null to start from the beginning)
+     * @param pageSize: The number of permissions per page (pass null to use the server default)
      * @return ListPermissionsResponse: The response containing the list of permissions
      */
     @Override
-    public ListPermissionsResponse listPermissions() {
+    public ListPermissionsResponse listPermissions(String pageToken, Integer pageSize) {
         return RetryExecuter.executeWithRetry(() -> {
+            ListPermissionsRequest.Builder builder = ListPermissionsRequest.newBuilder();
+            if (pageToken != null) builder.setPageToken(pageToken);
+            if (pageSize != null) {
+                if (pageSize <= 0) throw new IllegalArgumentException("pageSize must be greater than 0");
+                builder.setPageSize(pageSize);
+            }
             return rolesService
                     .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
-                    .listPermissions(ListPermissionsRequest.newBuilder().build());
+                    .listPermissions(builder.build());
         }, this.credentials);
     }
 
     /**
-     * Lists all permissions with pagination
-     * @param pageToken: The page token for pagination
-     * @return ListPermissionsResponse: The response containing the list of permissions
+     * Lists permissions using server-default pagination. May return only one page.
+     * @return ListPermissionsResponse: The response containing a paginated list of permissions
+     * @deprecated Use {@link #listPermissions(String, Integer)} instead for explicit pagination control
      */
+    @Deprecated
+    @Override
+    public ListPermissionsResponse listPermissions() {
+        return listPermissions(null, null);
+    }
+
+    /**
+     * Lists permissions starting from the given page token, using server-default page size. May return only one page.
+     * @param pageToken: The page token for pagination
+     * @return ListPermissionsResponse: The response containing a paginated list of permissions
+     * @deprecated Use {@link #listPermissions(String, Integer)} instead for explicit pagination control
+     */
+    @Deprecated
     @Override
     public ListPermissionsResponse listPermissions(String pageToken) {
-        return RetryExecuter.executeWithRetry(() -> {
-            return rolesService
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
-                    .listPermissions(ListPermissionsRequest.newBuilder()
-                            .setPageToken(pageToken)
-                            .build());
-        }, this.credentials);
+        return listPermissions(pageToken, null);
     }
 
     /**

@@ -40,6 +40,7 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse.class, com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse.Builder.class);
   }
 
+  private int bitField0_;
   public static final int AUTH_STATE_FIELD_NUMBER = 1;
   private int authState_ = 0;
   /**
@@ -56,6 +57,32 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override public com.scalekit.grpc.scalekit.v1.auth.AuthState getAuthState() {
     com.scalekit.grpc.scalekit.v1.auth.AuthState result = com.scalekit.grpc.scalekit.v1.auth.AuthState.forNumber(authState_);
     return result == null ? com.scalekit.grpc.scalekit.v1.auth.AuthState.UNRECOGNIZED : result;
+  }
+
+  public static final int USER_FIELD_NUMBER = 2;
+  private com.scalekit.grpc.scalekit.v1.auth.UserDetails user_;
+  /**
+   * <code>.scalekit.v1.auth.UserDetails user = 2 [json_name = "user"];</code>
+   * @return Whether the user field is set.
+   */
+  @java.lang.Override
+  public boolean hasUser() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>.scalekit.v1.auth.UserDetails user = 2 [json_name = "user"];</code>
+   * @return The user.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.auth.UserDetails getUser() {
+    return user_ == null ? com.scalekit.grpc.scalekit.v1.auth.UserDetails.getDefaultInstance() : user_;
+  }
+  /**
+   * <code>.scalekit.v1.auth.UserDetails user = 2 [json_name = "user"];</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.auth.UserDetailsOrBuilder getUserOrBuilder() {
+    return user_ == null ? com.scalekit.grpc.scalekit.v1.auth.UserDetails.getDefaultInstance() : user_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -75,6 +102,9 @@ private static final long serialVersionUID = 0L;
     if (authState_ != com.scalekit.grpc.scalekit.v1.auth.AuthState.AUTH_STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, authState_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(2, getUser());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -87,6 +117,10 @@ private static final long serialVersionUID = 0L;
     if (authState_ != com.scalekit.grpc.scalekit.v1.auth.AuthState.AUTH_STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, authState_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getUser());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -104,6 +138,11 @@ private static final long serialVersionUID = 0L;
     com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse other = (com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse) obj;
 
     if (authState_ != other.authState_) return false;
+    if (hasUser() != other.hasUser()) return false;
+    if (hasUser()) {
+      if (!getUser()
+          .equals(other.getUser())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -117,6 +156,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + AUTH_STATE_FIELD_NUMBER;
     hash = (53 * hash) + authState_;
+    if (hasUser()) {
+      hash = (37 * hash) + USER_FIELD_NUMBER;
+      hash = (53 * hash) + getUser().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -236,19 +279,30 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getUserFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
       authState_ = 0;
+      user_ = null;
+      if (userBuilder_ != null) {
+        userBuilder_.dispose();
+        userBuilder_ = null;
+      }
       return this;
     }
 
@@ -285,6 +339,14 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.authState_ = authState_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.user_ = userBuilder_ == null
+            ? user_
+            : userBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -334,6 +396,9 @@ private static final long serialVersionUID = 0L;
       if (other.authState_ != 0) {
         setAuthStateValue(other.getAuthStateValue());
       }
+      if (other.hasUser()) {
+        mergeUser(other.getUser());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -365,6 +430,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 8
+            case 18: {
+              input.readMessage(
+                  getUserFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -433,6 +505,127 @@ private static final long serialVersionUID = 0L;
       authState_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.scalekit.grpc.scalekit.v1.auth.UserDetails user_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.auth.UserDetails, com.scalekit.grpc.scalekit.v1.auth.UserDetails.Builder, com.scalekit.grpc.scalekit.v1.auth.UserDetailsOrBuilder> userBuilder_;
+    /**
+     * <code>.scalekit.v1.auth.UserDetails user = 2 [json_name = "user"];</code>
+     * @return Whether the user field is set.
+     */
+    public boolean hasUser() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>.scalekit.v1.auth.UserDetails user = 2 [json_name = "user"];</code>
+     * @return The user.
+     */
+    public com.scalekit.grpc.scalekit.v1.auth.UserDetails getUser() {
+      if (userBuilder_ == null) {
+        return user_ == null ? com.scalekit.grpc.scalekit.v1.auth.UserDetails.getDefaultInstance() : user_;
+      } else {
+        return userBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.auth.UserDetails user = 2 [json_name = "user"];</code>
+     */
+    public Builder setUser(com.scalekit.grpc.scalekit.v1.auth.UserDetails value) {
+      if (userBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        user_ = value;
+      } else {
+        userBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.auth.UserDetails user = 2 [json_name = "user"];</code>
+     */
+    public Builder setUser(
+        com.scalekit.grpc.scalekit.v1.auth.UserDetails.Builder builderForValue) {
+      if (userBuilder_ == null) {
+        user_ = builderForValue.build();
+      } else {
+        userBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.auth.UserDetails user = 2 [json_name = "user"];</code>
+     */
+    public Builder mergeUser(com.scalekit.grpc.scalekit.v1.auth.UserDetails value) {
+      if (userBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0) &&
+          user_ != null &&
+          user_ != com.scalekit.grpc.scalekit.v1.auth.UserDetails.getDefaultInstance()) {
+          getUserBuilder().mergeFrom(value);
+        } else {
+          user_ = value;
+        }
+      } else {
+        userBuilder_.mergeFrom(value);
+      }
+      if (user_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.auth.UserDetails user = 2 [json_name = "user"];</code>
+     */
+    public Builder clearUser() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      user_ = null;
+      if (userBuilder_ != null) {
+        userBuilder_.dispose();
+        userBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.auth.UserDetails user = 2 [json_name = "user"];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.auth.UserDetails.Builder getUserBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getUserFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.auth.UserDetails user = 2 [json_name = "user"];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.auth.UserDetailsOrBuilder getUserOrBuilder() {
+      if (userBuilder_ != null) {
+        return userBuilder_.getMessageOrBuilder();
+      } else {
+        return user_ == null ?
+            com.scalekit.grpc.scalekit.v1.auth.UserDetails.getDefaultInstance() : user_;
+      }
+    }
+    /**
+     * <code>.scalekit.v1.auth.UserDetails user = 2 [json_name = "user"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.auth.UserDetails, com.scalekit.grpc.scalekit.v1.auth.UserDetails.Builder, com.scalekit.grpc.scalekit.v1.auth.UserDetailsOrBuilder> 
+        getUserFieldBuilder() {
+      if (userBuilder_ == null) {
+        userBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.auth.UserDetails, com.scalekit.grpc.scalekit.v1.auth.UserDetails.Builder, com.scalekit.grpc.scalekit.v1.auth.UserDetailsOrBuilder>(
+                getUser(),
+                getParentForChildren(),
+                isClean());
+        user_ = null;
+      }
+      return userBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

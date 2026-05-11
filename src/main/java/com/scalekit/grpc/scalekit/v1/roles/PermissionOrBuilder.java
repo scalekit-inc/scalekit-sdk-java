@@ -73,4 +73,10 @@ public interface PermissionOrBuilder extends
    * <code>.google.protobuf.Timestamp update_time = 5 [json_name = "updateTime"];</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   * <code>bool is_scalekit_permission = 6 [json_name = "isScalekitPermission", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isScalekitPermission.
+   */
+  boolean getIsScalekitPermission();
 }

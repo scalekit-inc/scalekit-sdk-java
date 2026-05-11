@@ -89,6 +89,22 @@ public class PermissionTests {
     }
 
     @Test
+    public void testListPermissionsWithPageTokenAndPageSize() {
+        // Use the new canonical signature with both params
+        ListPermissionsResponse response = client.permissions().listPermissions(null, 10);
+        assertNotNull(response);
+        assertNotNull(response.getPermissionsList());
+        assertTrue(response.getPermissionsCount() >= 0);
+
+        // If there is a next page, verify pagination works with both params
+        if (!response.getNextPageToken().isEmpty()) {
+            ListPermissionsResponse nextPage = client.permissions().listPermissions(response.getNextPageToken(), 10);
+            assertNotNull(nextPage);
+            assertNotNull(nextPage.getPermissionsList());
+        }
+    }
+
+    @Test
     public void testUpdatePermission() {
         // Create a permission first
         String permissionName = "test_update_permission_" + System.currentTimeMillis();
