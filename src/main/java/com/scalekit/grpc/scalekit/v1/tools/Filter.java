@@ -22,6 +22,10 @@ private static final long serialVersionUID = 0L;
     toolName_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     query_ = "";
+    connector_ = "";
+    organizationId_ = "";
+    userId_ = "";
+    connectedAccountId_ = "";
   }
 
   @java.lang.Override
@@ -233,6 +237,212 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CONNECTOR_FIELD_NUMBER = 6;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object connector_ = "";
+  /**
+   * <pre>
+   * Fields 6-9 mirror GetConnectedAccountByIdentifierRequest, enabling ListTools to
+   * resolve a specific connected account and include its custom MCP tools alongside
+   * global tools. When connector or connected_account_id is set, a CA lookup is performed.
+   * </pre>
+   *
+   * <code>optional string connector = 6 [json_name = "connector", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the connector field is set.
+   */
+  @java.lang.Override
+  public boolean hasConnector() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <pre>
+   * Fields 6-9 mirror GetConnectedAccountByIdentifierRequest, enabling ListTools to
+   * resolve a specific connected account and include its custom MCP tools alongside
+   * global tools. When connector or connected_account_id is set, a CA lookup is performed.
+   * </pre>
+   *
+   * <code>optional string connector = 6 [json_name = "connector", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The connector.
+   */
+  @java.lang.Override
+  public java.lang.String getConnector() {
+    java.lang.Object ref = connector_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      connector_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Fields 6-9 mirror GetConnectedAccountByIdentifierRequest, enabling ListTools to
+   * resolve a specific connected account and include its custom MCP tools alongside
+   * global tools. When connector or connected_account_id is set, a CA lookup is performed.
+   * </pre>
+   *
+   * <code>optional string connector = 6 [json_name = "connector", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for connector.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getConnectorBytes() {
+    java.lang.Object ref = connector_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      connector_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ORGANIZATION_ID_FIELD_NUMBER = 7;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object organizationId_ = "";
+  /**
+   * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the organizationId field is set.
+   */
+  @java.lang.Override
+  public boolean hasOrganizationId() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The organizationId.
+   */
+  @java.lang.Override
+  public java.lang.String getOrganizationId() {
+    java.lang.Object ref = organizationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      organizationId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for organizationId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOrganizationIdBytes() {
+    java.lang.Object ref = organizationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      organizationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int USER_ID_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userId_ = "";
+  /**
+   * <code>optional string user_id = 8 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the userId field is set.
+   */
+  @java.lang.Override
+  public boolean hasUserId() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <code>optional string user_id = 8 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The userId.
+   */
+  @java.lang.Override
+  public java.lang.String getUserId() {
+    java.lang.Object ref = userId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string user_id = 8 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for userId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUserIdBytes() {
+    java.lang.Object ref = userId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      userId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CONNECTED_ACCOUNT_ID_FIELD_NUMBER = 9;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object connectedAccountId_ = "";
+  /**
+   * <code>optional string connected_account_id = 9 [json_name = "connectedAccountId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the connectedAccountId field is set.
+   */
+  @java.lang.Override
+  public boolean hasConnectedAccountId() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   * <code>optional string connected_account_id = 9 [json_name = "connectedAccountId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The connectedAccountId.
+   */
+  @java.lang.Override
+  public java.lang.String getConnectedAccountId() {
+    java.lang.Object ref = connectedAccountId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      connectedAccountId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string connected_account_id = 9 [json_name = "connectedAccountId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for connectedAccountId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getConnectedAccountIdBytes() {
+    java.lang.Object ref = connectedAccountId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      connectedAccountId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -261,6 +471,18 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, query_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, connector_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, organizationId_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, userId_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, connectedAccountId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -291,6 +513,18 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, query_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, connector_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, organizationId_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, userId_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, connectedAccountId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -323,6 +557,26 @@ private static final long serialVersionUID = 0L;
       if (!getQuery()
           .equals(other.getQuery())) return false;
     }
+    if (hasConnector() != other.hasConnector()) return false;
+    if (hasConnector()) {
+      if (!getConnector()
+          .equals(other.getConnector())) return false;
+    }
+    if (hasOrganizationId() != other.hasOrganizationId()) return false;
+    if (hasOrganizationId()) {
+      if (!getOrganizationId()
+          .equals(other.getOrganizationId())) return false;
+    }
+    if (hasUserId() != other.hasUserId()) return false;
+    if (hasUserId()) {
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
+    }
+    if (hasConnectedAccountId() != other.hasConnectedAccountId()) return false;
+    if (hasConnectedAccountId()) {
+      if (!getConnectedAccountId()
+          .equals(other.getConnectedAccountId())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -349,6 +603,22 @@ private static final long serialVersionUID = 0L;
     if (hasQuery()) {
       hash = (37 * hash) + QUERY_FIELD_NUMBER;
       hash = (53 * hash) + getQuery().hashCode();
+    }
+    if (hasConnector()) {
+      hash = (37 * hash) + CONNECTOR_FIELD_NUMBER;
+      hash = (53 * hash) + getConnector().hashCode();
+    }
+    if (hasOrganizationId()) {
+      hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationId().hashCode();
+    }
+    if (hasUserId()) {
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
+    }
+    if (hasConnectedAccountId()) {
+      hash = (37 * hash) + CONNECTED_ACCOUNT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConnectedAccountId().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -497,6 +767,10 @@ private static final long serialVersionUID = 0L;
       toolName_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
       query_ = "";
+      connector_ = "";
+      organizationId_ = "";
+      userId_ = "";
+      connectedAccountId_ = "";
       return this;
     }
 
@@ -550,6 +824,22 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.query_ = query_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.connector_ = connector_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.organizationId_ = organizationId_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.userId_ = userId_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.connectedAccountId_ = connectedAccountId_;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -626,6 +916,26 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.hasConnector()) {
+        connector_ = other.connector_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (other.hasOrganizationId()) {
+        organizationId_ = other.organizationId_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (other.hasUserId()) {
+        userId_ = other.userId_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (other.hasConnectedAccountId()) {
+        connectedAccountId_ = other.connectedAccountId_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -680,6 +990,26 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 42
+            case 50: {
+              connector_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 50
+            case 58: {
+              organizationId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 58
+            case 66: {
+              userId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 66
+            case 74: {
+              connectedAccountId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 74
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1148,6 +1478,358 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       query_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object connector_ = "";
+    /**
+     * <pre>
+     * Fields 6-9 mirror GetConnectedAccountByIdentifierRequest, enabling ListTools to
+     * resolve a specific connected account and include its custom MCP tools alongside
+     * global tools. When connector or connected_account_id is set, a CA lookup is performed.
+     * </pre>
+     *
+     * <code>optional string connector = 6 [json_name = "connector", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the connector field is set.
+     */
+    public boolean hasConnector() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <pre>
+     * Fields 6-9 mirror GetConnectedAccountByIdentifierRequest, enabling ListTools to
+     * resolve a specific connected account and include its custom MCP tools alongside
+     * global tools. When connector or connected_account_id is set, a CA lookup is performed.
+     * </pre>
+     *
+     * <code>optional string connector = 6 [json_name = "connector", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The connector.
+     */
+    public java.lang.String getConnector() {
+      java.lang.Object ref = connector_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        connector_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Fields 6-9 mirror GetConnectedAccountByIdentifierRequest, enabling ListTools to
+     * resolve a specific connected account and include its custom MCP tools alongside
+     * global tools. When connector or connected_account_id is set, a CA lookup is performed.
+     * </pre>
+     *
+     * <code>optional string connector = 6 [json_name = "connector", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for connector.
+     */
+    public com.google.protobuf.ByteString
+        getConnectorBytes() {
+      java.lang.Object ref = connector_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        connector_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Fields 6-9 mirror GetConnectedAccountByIdentifierRequest, enabling ListTools to
+     * resolve a specific connected account and include its custom MCP tools alongside
+     * global tools. When connector or connected_account_id is set, a CA lookup is performed.
+     * </pre>
+     *
+     * <code>optional string connector = 6 [json_name = "connector", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The connector to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnector(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      connector_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Fields 6-9 mirror GetConnectedAccountByIdentifierRequest, enabling ListTools to
+     * resolve a specific connected account and include its custom MCP tools alongside
+     * global tools. When connector or connected_account_id is set, a CA lookup is performed.
+     * </pre>
+     *
+     * <code>optional string connector = 6 [json_name = "connector", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearConnector() {
+      connector_ = getDefaultInstance().getConnector();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Fields 6-9 mirror GetConnectedAccountByIdentifierRequest, enabling ListTools to
+     * resolve a specific connected account and include its custom MCP tools alongside
+     * global tools. When connector or connected_account_id is set, a CA lookup is performed.
+     * </pre>
+     *
+     * <code>optional string connector = 6 [json_name = "connector", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for connector to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectorBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      connector_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object organizationId_ = "";
+    /**
+     * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the organizationId field is set.
+     */
+    public boolean hasOrganizationId() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The organizationId.
+     */
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for organizationId.
+     */
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The organizationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      organizationId_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOrganizationId() {
+      organizationId_ = getDefaultInstance().getOrganizationId();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for organizationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      organizationId_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object userId_ = "";
+    /**
+     * <code>optional string user_id = 8 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the userId field is set.
+     */
+    public boolean hasUserId() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <code>optional string user_id = 8 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The userId.
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string user_id = 8 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for userId.
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string user_id = 8 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      userId_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string user_id = 8 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserId() {
+      userId_ = getDefaultInstance().getUserId();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string user_id = 8 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      userId_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object connectedAccountId_ = "";
+    /**
+     * <code>optional string connected_account_id = 9 [json_name = "connectedAccountId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the connectedAccountId field is set.
+     */
+    public boolean hasConnectedAccountId() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <code>optional string connected_account_id = 9 [json_name = "connectedAccountId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The connectedAccountId.
+     */
+    public java.lang.String getConnectedAccountId() {
+      java.lang.Object ref = connectedAccountId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        connectedAccountId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string connected_account_id = 9 [json_name = "connectedAccountId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for connectedAccountId.
+     */
+    public com.google.protobuf.ByteString
+        getConnectedAccountIdBytes() {
+      java.lang.Object ref = connectedAccountId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        connectedAccountId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string connected_account_id = 9 [json_name = "connectedAccountId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The connectedAccountId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectedAccountId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      connectedAccountId_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string connected_account_id = 9 [json_name = "connectedAccountId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearConnectedAccountId() {
+      connectedAccountId_ = getDefaultInstance().getConnectedAccountId();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string connected_account_id = 9 [json_name = "connectedAccountId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for connectedAccountId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectedAccountIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      connectedAccountId_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

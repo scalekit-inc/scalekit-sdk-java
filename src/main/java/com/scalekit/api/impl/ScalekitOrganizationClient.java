@@ -282,5 +282,59 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         }, this.credentials);
     }
 
+    /**
+     * getOrganizationSessionPolicy retrieves the session policy for an organization.
+     * @param organizationId Organization identifier
+     * @return OrganizationSessionPolicySettings with current policy
+     */
+    @Override
+    public OrganizationSessionPolicySettings getOrganizationSessionPolicy(String organizationId) {
+        return RetryExecuter.executeWithRetry(() -> {
+            GetOrganizationSessionPolicyResponse response = this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .getOrganizationSessionPolicy(
+                            GetOrganizationSessionPolicyRequest.newBuilder()
+                                    .setOrganizationId(organizationId)
+                                    .build()
+                    );
+            return response.getPolicy();
+        }, this.credentials);
+    }
+
+    /**
+     * updateOrganizationSessionPolicy sets a custom session policy for an organization or reverts to application defaults.
+     * @param organizationId Organization identifier
+     * @param policy The policy to apply (use SessionPolicySource.APPLICATION to revert to defaults)
+     * @return Updated OrganizationSessionPolicySettings
+     */
+    @Override
+    public OrganizationSessionPolicySettings updateOrganizationSessionPolicy(String organizationId, OrganizationSessionPolicySettings policy) {
+        return RetryExecuter.executeWithRetry(() -> {
+            UpdateOrganizationSessionPolicyRequest.Builder builder =
+                    UpdateOrganizationSessionPolicyRequest.newBuilder()
+                            .setOrganizationId(organizationId)
+                            .setPolicySource(policy.getPolicySource());
+            if (policy.hasAbsoluteSessionTimeout()) {
+                builder.setAbsoluteSessionTimeout(policy.getAbsoluteSessionTimeout());
+            }
+            if (policy.hasAbsoluteSessionTimeoutUnit()) {
+                builder.setAbsoluteSessionTimeoutUnit(policy.getAbsoluteSessionTimeoutUnit());
+            }
+            if (policy.hasIdleSessionTimeoutEnabled()) {
+                builder.setIdleSessionTimeoutEnabled(policy.getIdleSessionTimeoutEnabled());
+            }
+            if (policy.hasIdleSessionTimeout()) {
+                builder.setIdleSessionTimeout(policy.getIdleSessionTimeout());
+            }
+            if (policy.hasIdleSessionTimeoutUnit()) {
+                builder.setIdleSessionTimeoutUnit(policy.getIdleSessionTimeoutUnit());
+            }
+            UpdateOrganizationSessionPolicyResponse response = this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .updateOrganizationSessionPolicy(builder.build());
+            return response.getPolicy();
+        }, this.credentials);
+    }
+
 
 }

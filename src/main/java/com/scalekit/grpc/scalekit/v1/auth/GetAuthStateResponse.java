@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   }
   private GetAuthStateResponse() {
     authState_ = 0;
+    loginHint_ = "";
   }
 
   @java.lang.Override
@@ -85,6 +86,53 @@ private static final long serialVersionUID = 0L;
     return user_ == null ? com.scalekit.grpc.scalekit.v1.auth.UserDetails.getDefaultInstance() : user_;
   }
 
+  public static final int LOGIN_HINT_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object loginHint_ = "";
+  /**
+   * <pre>
+   * Login hint from the original /authorize request, typically an email address used to pre-fill the login UI.
+   * </pre>
+   *
+   * <code>string login_hint = 3 [json_name = "loginHint", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The loginHint.
+   */
+  @java.lang.Override
+  public java.lang.String getLoginHint() {
+    java.lang.Object ref = loginHint_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      loginHint_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Login hint from the original /authorize request, typically an email address used to pre-fill the login UI.
+   * </pre>
+   *
+   * <code>string login_hint = 3 [json_name = "loginHint", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for loginHint.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLoginHintBytes() {
+    java.lang.Object ref = loginHint_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      loginHint_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -105,6 +153,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getUser());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(loginHint_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, loginHint_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -121,6 +172,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getUser());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(loginHint_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, loginHint_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -143,6 +197,8 @@ private static final long serialVersionUID = 0L;
       if (!getUser()
           .equals(other.getUser())) return false;
     }
+    if (!getLoginHint()
+        .equals(other.getLoginHint())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -160,6 +216,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_FIELD_NUMBER;
       hash = (53 * hash) + getUser().hashCode();
     }
+    hash = (37 * hash) + LOGIN_HINT_FIELD_NUMBER;
+    hash = (53 * hash) + getLoginHint().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -303,6 +361,7 @@ private static final long serialVersionUID = 0L;
         userBuilder_.dispose();
         userBuilder_ = null;
       }
+      loginHint_ = "";
       return this;
     }
 
@@ -345,6 +404,9 @@ private static final long serialVersionUID = 0L;
             ? user_
             : userBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.loginHint_ = loginHint_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -399,6 +461,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasUser()) {
         mergeUser(other.getUser());
       }
+      if (!other.getLoginHint().isEmpty()) {
+        loginHint_ = other.loginHint_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -437,6 +504,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 18
+            case 26: {
+              loginHint_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -626,6 +698,98 @@ private static final long serialVersionUID = 0L;
         user_ = null;
       }
       return userBuilder_;
+    }
+
+    private java.lang.Object loginHint_ = "";
+    /**
+     * <pre>
+     * Login hint from the original /authorize request, typically an email address used to pre-fill the login UI.
+     * </pre>
+     *
+     * <code>string login_hint = 3 [json_name = "loginHint", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The loginHint.
+     */
+    public java.lang.String getLoginHint() {
+      java.lang.Object ref = loginHint_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        loginHint_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Login hint from the original /authorize request, typically an email address used to pre-fill the login UI.
+     * </pre>
+     *
+     * <code>string login_hint = 3 [json_name = "loginHint", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for loginHint.
+     */
+    public com.google.protobuf.ByteString
+        getLoginHintBytes() {
+      java.lang.Object ref = loginHint_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        loginHint_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Login hint from the original /authorize request, typically an email address used to pre-fill the login UI.
+     * </pre>
+     *
+     * <code>string login_hint = 3 [json_name = "loginHint", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The loginHint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoginHint(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      loginHint_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Login hint from the original /authorize request, typically an email address used to pre-fill the login UI.
+     * </pre>
+     *
+     * <code>string login_hint = 3 [json_name = "loginHint", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLoginHint() {
+      loginHint_ = getDefaultInstance().getLoginHint();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Login hint from the original /authorize request, typically an email address used to pre-fill the login UI.
+     * </pre>
+     *
+     * <code>string login_hint = 3 [json_name = "loginHint", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for loginHint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoginHintBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      loginHint_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

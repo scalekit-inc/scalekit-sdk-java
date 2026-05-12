@@ -21,23 +21,23 @@ public interface GetPortalCustomizationResponseOrBuilder extends
       getEnvironmentIdBytes();
 
   /**
-   * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings"];</code>
+   * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings", (.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the customizationSettings field is set.
    */
   boolean hasCustomizationSettings();
   /**
-   * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings"];</code>
+   * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings", (.google.api.field_behavior) = OPTIONAL];</code>
    * @return The customizationSettings.
    */
   com.google.protobuf.Struct getCustomizationSettings();
   /**
-   * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings"];</code>
+   * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings", (.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.StructOrBuilder getCustomizationSettingsOrBuilder();
 
   /**
    * <pre>
-   * settings contains feature flags derived from the workspace's billing subscription
+   * settings contains feature flags derived from the workspace's billing subscription and feature rollout configuration
    * </pre>
    *
    * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -46,7 +46,7 @@ public interface GetPortalCustomizationResponseOrBuilder extends
   boolean hasSettings();
   /**
    * <pre>
-   * settings contains feature flags derived from the workspace's billing subscription
+   * settings contains feature flags derived from the workspace's billing subscription and feature rollout configuration
    * </pre>
    *
    * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -55,7 +55,7 @@ public interface GetPortalCustomizationResponseOrBuilder extends
   com.scalekit.grpc.scalekit.v1.environments.PortalSettings getSettings();
   /**
    * <pre>
-   * settings contains feature flags derived from the workspace's billing subscription
+   * settings contains feature flags derived from the workspace's billing subscription and feature rollout configuration
    * </pre>
    *
    * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>

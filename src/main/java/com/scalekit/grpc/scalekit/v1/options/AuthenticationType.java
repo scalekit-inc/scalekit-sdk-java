@@ -125,6 +125,58 @@ public enum AuthenticationType
    * <code>CUSTOMER_PORTAL_SESSION_CLIENT = 52;</code>
    */
   CUSTOMER_PORTAL_SESSION_CLIENT(52),
+  /**
+   * <code>SESSION_USER = 24;</code>
+   */
+  SESSION_USER(24),
+  /**
+   * <code>ACTIONS_PORTAL = 128;</code>
+   */
+  ACTIONS_PORTAL(128),
+  /**
+   * <pre>
+   * workspace_id,organization_id is in claims and UI in audience
+   * </pre>
+   *
+   * <code>WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL = 240;</code>
+   */
+  WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL(240),
+  /**
+   * <pre>
+   * workspace_id,organization_id is in claims, UI in audience and client Id is in subject
+   * </pre>
+   *
+   * <code>WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL_CLIENT = 244;</code>
+   */
+  WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL_CLIENT(244),
+  /**
+   * <pre>
+   * workspace_id is in claims and UI in audience
+   * </pre>
+   *
+   * <code>WORKSPACE_ACTIONS_PORTAL = 192;</code>
+   */
+  WORKSPACE_ACTIONS_PORTAL(192),
+  /**
+   * <pre>
+   * workspace_id is in claims, UI in audience and client Id is in subject
+   * </pre>
+   *
+   * <code>WORKSPACE_ACTIONS_PORTAL_CLIENT = 196;</code>
+   */
+  WORKSPACE_ACTIONS_PORTAL_CLIENT(196),
+  /**
+   * <code>WORKSPACE_ACTIONS_PORTAL_CUSTOMER_PORTAL_CLIENT = 228;</code>
+   */
+  WORKSPACE_ACTIONS_PORTAL_CUSTOMER_PORTAL_CLIENT(228),
+  /**
+   * <pre>
+   * workspace_id,organization_id is in claims and UI in audience
+   * </pre>
+   *
+   * <code>WORKSPACE_CUSTOMER_PORTAL_ACTIONS_PORTAL = 224;</code>
+   */
+  WORKSPACE_CUSTOMER_PORTAL_ACTIONS_PORTAL(224),
   UNRECOGNIZED(-1),
   ;
 
@@ -244,6 +296,58 @@ public enum AuthenticationType
    * <code>CUSTOMER_PORTAL_SESSION_CLIENT = 52;</code>
    */
   public static final int CUSTOMER_PORTAL_SESSION_CLIENT_VALUE = 52;
+  /**
+   * <code>SESSION_USER = 24;</code>
+   */
+  public static final int SESSION_USER_VALUE = 24;
+  /**
+   * <code>ACTIONS_PORTAL = 128;</code>
+   */
+  public static final int ACTIONS_PORTAL_VALUE = 128;
+  /**
+   * <pre>
+   * workspace_id,organization_id is in claims and UI in audience
+   * </pre>
+   *
+   * <code>WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL = 240;</code>
+   */
+  public static final int WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL_VALUE = 240;
+  /**
+   * <pre>
+   * workspace_id,organization_id is in claims, UI in audience and client Id is in subject
+   * </pre>
+   *
+   * <code>WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL_CLIENT = 244;</code>
+   */
+  public static final int WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL_CLIENT_VALUE = 244;
+  /**
+   * <pre>
+   * workspace_id is in claims and UI in audience
+   * </pre>
+   *
+   * <code>WORKSPACE_ACTIONS_PORTAL = 192;</code>
+   */
+  public static final int WORKSPACE_ACTIONS_PORTAL_VALUE = 192;
+  /**
+   * <pre>
+   * workspace_id is in claims, UI in audience and client Id is in subject
+   * </pre>
+   *
+   * <code>WORKSPACE_ACTIONS_PORTAL_CLIENT = 196;</code>
+   */
+  public static final int WORKSPACE_ACTIONS_PORTAL_CLIENT_VALUE = 196;
+  /**
+   * <code>WORKSPACE_ACTIONS_PORTAL_CUSTOMER_PORTAL_CLIENT = 228;</code>
+   */
+  public static final int WORKSPACE_ACTIONS_PORTAL_CUSTOMER_PORTAL_CLIENT_VALUE = 228;
+  /**
+   * <pre>
+   * workspace_id,organization_id is in claims and UI in audience
+   * </pre>
+   *
+   * <code>WORKSPACE_CUSTOMER_PORTAL_ACTIONS_PORTAL = 224;</code>
+   */
+  public static final int WORKSPACE_CUSTOMER_PORTAL_ACTIONS_PORTAL_VALUE = 224;
 
 
   public final int getNumber() {
@@ -286,6 +390,14 @@ public enum AuthenticationType
       case 20: return SESSION_CLIENT;
       case 84: return WORKSPACE_SESSION_CLIENT;
       case 52: return CUSTOMER_PORTAL_SESSION_CLIENT;
+      case 24: return SESSION_USER;
+      case 128: return ACTIONS_PORTAL;
+      case 240: return WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL;
+      case 244: return WORKSPACE_SESSION_CUSTOMER_PORTAL_ACTIONS_PORTAL_CLIENT;
+      case 192: return WORKSPACE_ACTIONS_PORTAL;
+      case 196: return WORKSPACE_ACTIONS_PORTAL_CLIENT;
+      case 228: return WORKSPACE_ACTIONS_PORTAL_CUSTOMER_PORTAL_CLIENT;
+      case 224: return WORKSPACE_CUSTOMER_PORTAL_ACTIONS_PORTAL;
       default: return null;
     }
   }

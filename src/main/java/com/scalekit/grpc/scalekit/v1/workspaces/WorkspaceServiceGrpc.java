@@ -480,6 +480,130 @@ public final class WorkspaceServiceGrpc {
     return getUpdateWorkspaceContextMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsRequest,
+      com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsResponse> getListWorkspaceDomainsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListWorkspaceDomains",
+      requestType = com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsRequest,
+      com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsResponse> getListWorkspaceDomainsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsRequest, com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsResponse> getListWorkspaceDomainsMethod;
+    if ((getListWorkspaceDomainsMethod = WorkspaceServiceGrpc.getListWorkspaceDomainsMethod) == null) {
+      synchronized (WorkspaceServiceGrpc.class) {
+        if ((getListWorkspaceDomainsMethod = WorkspaceServiceGrpc.getListWorkspaceDomainsMethod) == null) {
+          WorkspaceServiceGrpc.getListWorkspaceDomainsMethod = getListWorkspaceDomainsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsRequest, com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListWorkspaceDomains"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new WorkspaceServiceMethodDescriptorSupplier("ListWorkspaceDomains"))
+              .build();
+        }
+      }
+    }
+    return getListWorkspaceDomainsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainRequest,
+      com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainResponse> getCreateWorkspaceDomainMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateWorkspaceDomain",
+      requestType = com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainRequest,
+      com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainResponse> getCreateWorkspaceDomainMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainRequest, com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainResponse> getCreateWorkspaceDomainMethod;
+    if ((getCreateWorkspaceDomainMethod = WorkspaceServiceGrpc.getCreateWorkspaceDomainMethod) == null) {
+      synchronized (WorkspaceServiceGrpc.class) {
+        if ((getCreateWorkspaceDomainMethod = WorkspaceServiceGrpc.getCreateWorkspaceDomainMethod) == null) {
+          WorkspaceServiceGrpc.getCreateWorkspaceDomainMethod = getCreateWorkspaceDomainMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainRequest, com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateWorkspaceDomain"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new WorkspaceServiceMethodDescriptorSupplier("CreateWorkspaceDomain"))
+              .build();
+        }
+      }
+    }
+    return getCreateWorkspaceDomainMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.DeleteWorkspaceDomainRequest,
+      com.google.protobuf.Empty> getDeleteWorkspaceDomainMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteWorkspaceDomain",
+      requestType = com.scalekit.grpc.scalekit.v1.workspaces.DeleteWorkspaceDomainRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.DeleteWorkspaceDomainRequest,
+      com.google.protobuf.Empty> getDeleteWorkspaceDomainMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.DeleteWorkspaceDomainRequest, com.google.protobuf.Empty> getDeleteWorkspaceDomainMethod;
+    if ((getDeleteWorkspaceDomainMethod = WorkspaceServiceGrpc.getDeleteWorkspaceDomainMethod) == null) {
+      synchronized (WorkspaceServiceGrpc.class) {
+        if ((getDeleteWorkspaceDomainMethod = WorkspaceServiceGrpc.getDeleteWorkspaceDomainMethod) == null) {
+          WorkspaceServiceGrpc.getDeleteWorkspaceDomainMethod = getDeleteWorkspaceDomainMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.workspaces.DeleteWorkspaceDomainRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteWorkspaceDomain"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.DeleteWorkspaceDomainRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new WorkspaceServiceMethodDescriptorSupplier("DeleteWorkspaceDomain"))
+              .build();
+        }
+      }
+    }
+    return getDeleteWorkspaceDomainMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.ValidateWorkspaceDomainRequest,
+      com.google.protobuf.BoolValue> getValidateWorkspaceDomainMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ValidateWorkspaceDomain",
+      requestType = com.scalekit.grpc.scalekit.v1.workspaces.ValidateWorkspaceDomainRequest.class,
+      responseType = com.google.protobuf.BoolValue.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.ValidateWorkspaceDomainRequest,
+      com.google.protobuf.BoolValue> getValidateWorkspaceDomainMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.workspaces.ValidateWorkspaceDomainRequest, com.google.protobuf.BoolValue> getValidateWorkspaceDomainMethod;
+    if ((getValidateWorkspaceDomainMethod = WorkspaceServiceGrpc.getValidateWorkspaceDomainMethod) == null) {
+      synchronized (WorkspaceServiceGrpc.class) {
+        if ((getValidateWorkspaceDomainMethod = WorkspaceServiceGrpc.getValidateWorkspaceDomainMethod) == null) {
+          WorkspaceServiceGrpc.getValidateWorkspaceDomainMethod = getValidateWorkspaceDomainMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.workspaces.ValidateWorkspaceDomainRequest, com.google.protobuf.BoolValue>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ValidateWorkspaceDomain"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.workspaces.ValidateWorkspaceDomainRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.BoolValue.getDefaultInstance()))
+              .setSchemaDescriptor(new WorkspaceServiceMethodDescriptorSupplier("ValidateWorkspaceDomain"))
+              .build();
+        }
+      }
+    }
+    return getValidateWorkspaceDomainMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -695,6 +819,34 @@ public final class WorkspaceServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateWorkspaceContextMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void listWorkspaceDomains(com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListWorkspaceDomainsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void createWorkspaceDomain(com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateWorkspaceDomainMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteWorkspaceDomain(com.scalekit.grpc.scalekit.v1.workspaces.DeleteWorkspaceDomainRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteWorkspaceDomainMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void validateWorkspaceDomain(com.scalekit.grpc.scalekit.v1.workspaces.ValidateWorkspaceDomainRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.BoolValue> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getValidateWorkspaceDomainMethod(), responseObserver);
+    }
   }
 
   /**
@@ -906,6 +1058,38 @@ public final class WorkspaceServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateWorkspaceContextMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void listWorkspaceDomains(com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListWorkspaceDomainsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createWorkspaceDomain(com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateWorkspaceDomainMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteWorkspaceDomain(com.scalekit.grpc.scalekit.v1.workspaces.DeleteWorkspaceDomainRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteWorkspaceDomainMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void validateWorkspaceDomain(com.scalekit.grpc.scalekit.v1.workspaces.ValidateWorkspaceDomainRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.BoolValue> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getValidateWorkspaceDomainMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1090,6 +1274,34 @@ public final class WorkspaceServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextResponse updateWorkspaceContext(com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateWorkspaceContextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsResponse listWorkspaceDomains(com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWorkspaceDomainsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainResponse createWorkspaceDomain(com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateWorkspaceDomainMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.google.protobuf.Empty deleteWorkspaceDomain(com.scalekit.grpc.scalekit.v1.workspaces.DeleteWorkspaceDomainRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteWorkspaceDomainMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.google.protobuf.BoolValue validateWorkspaceDomain(com.scalekit.grpc.scalekit.v1.workspaces.ValidateWorkspaceDomainRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getValidateWorkspaceDomainMethod(), getCallOptions(), request);
     }
   }
 
@@ -1291,6 +1503,38 @@ public final class WorkspaceServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateWorkspaceContextMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsResponse> listWorkspaceDomains(
+        com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListWorkspaceDomainsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainResponse> createWorkspaceDomain(
+        com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateWorkspaceDomainMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteWorkspaceDomain(
+        com.scalekit.grpc.scalekit.v1.workspaces.DeleteWorkspaceDomainRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteWorkspaceDomainMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.BoolValue> validateWorkspaceDomain(
+        com.scalekit.grpc.scalekit.v1.workspaces.ValidateWorkspaceDomainRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getValidateWorkspaceDomainMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_WORKSPACE = 0;
@@ -1308,6 +1552,10 @@ public final class WorkspaceServiceGrpc {
   private static final int METHODID_ADD_SUBSCRIPTION = 12;
   private static final int METHODID_CREATE_CHECKOUT_SESSION = 13;
   private static final int METHODID_UPDATE_WORKSPACE_CONTEXT = 14;
+  private static final int METHODID_LIST_WORKSPACE_DOMAINS = 15;
+  private static final int METHODID_CREATE_WORKSPACE_DOMAIN = 16;
+  private static final int METHODID_DELETE_WORKSPACE_DOMAIN = 17;
+  private static final int METHODID_VALIDATE_WORKSPACE_DOMAIN = 18;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1385,6 +1633,22 @@ public final class WorkspaceServiceGrpc {
         case METHODID_UPDATE_WORKSPACE_CONTEXT:
           serviceImpl.updateWorkspaceContext((com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextResponse>) responseObserver);
+          break;
+        case METHODID_LIST_WORKSPACE_DOMAINS:
+          serviceImpl.listWorkspaceDomains((com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_WORKSPACE_DOMAIN:
+          serviceImpl.createWorkspaceDomain((com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_WORKSPACE_DOMAIN:
+          serviceImpl.deleteWorkspaceDomain((com.scalekit.grpc.scalekit.v1.workspaces.DeleteWorkspaceDomainRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_VALIDATE_WORKSPACE_DOMAIN:
+          serviceImpl.validateWorkspaceDomain((com.scalekit.grpc.scalekit.v1.workspaces.ValidateWorkspaceDomainRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.BoolValue>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1509,6 +1773,34 @@ public final class WorkspaceServiceGrpc {
               com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextRequest,
               com.scalekit.grpc.scalekit.v1.workspaces.UpdateWorkspaceContextResponse>(
                 service, METHODID_UPDATE_WORKSPACE_CONTEXT)))
+        .addMethod(
+          getListWorkspaceDomainsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsRequest,
+              com.scalekit.grpc.scalekit.v1.workspaces.ListWorkspaceDomainsResponse>(
+                service, METHODID_LIST_WORKSPACE_DOMAINS)))
+        .addMethod(
+          getCreateWorkspaceDomainMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainRequest,
+              com.scalekit.grpc.scalekit.v1.workspaces.CreateWorkspaceDomainResponse>(
+                service, METHODID_CREATE_WORKSPACE_DOMAIN)))
+        .addMethod(
+          getDeleteWorkspaceDomainMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.workspaces.DeleteWorkspaceDomainRequest,
+              com.google.protobuf.Empty>(
+                service, METHODID_DELETE_WORKSPACE_DOMAIN)))
+        .addMethod(
+          getValidateWorkspaceDomainMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.workspaces.ValidateWorkspaceDomainRequest,
+              com.google.protobuf.BoolValue>(
+                service, METHODID_VALIDATE_WORKSPACE_DOMAIN)))
         .build();
   }
 
@@ -1572,6 +1864,10 @@ public final class WorkspaceServiceGrpc {
               .addMethod(getAddSubscriptionMethod())
               .addMethod(getCreateCheckoutSessionMethod())
               .addMethod(getUpdateWorkspaceContextMethod())
+              .addMethod(getListWorkspaceDomainsMethod())
+              .addMethod(getCreateWorkspaceDomainMethod())
+              .addMethod(getDeleteWorkspaceDomainMethod())
+              .addMethod(getValidateWorkspaceDomainMethod())
               .build();
         }
       }

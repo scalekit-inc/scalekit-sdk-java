@@ -30,4 +30,8 @@ public interface OrganizationClient {
 
   OrganizationUserManagementSettings upsertUserManagementSettings(String organizationId, OrganizationUserManagementSettings settings);
 
+  OrganizationSessionPolicySettings getOrganizationSessionPolicy(String organizationId);
+
+  OrganizationSessionPolicySettings updateOrganizationSessionPolicy(String organizationId, OrganizationSessionPolicySettings policy);
+
 }

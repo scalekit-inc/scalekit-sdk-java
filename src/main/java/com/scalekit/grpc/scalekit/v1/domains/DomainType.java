@@ -95,7 +95,7 @@ public enum DomainType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.domains.DomainsProto.getDescriptor().getEnumTypes().get(1);
+    return com.scalekit.grpc.scalekit.v1.domains.DomainsProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final DomainType[] VALUES = values();

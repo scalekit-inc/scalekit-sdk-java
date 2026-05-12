@@ -49,7 +49,7 @@ public final class OptionsProto {
       "ermissions\030\001 \003(\tR\013permissions\0223\n\006policy\030" +
       "\002 \001(\0162\033.scalekit.v1.options.PolicyR\006poli" +
       "cy**\n\006Policy\022\010\n\004DENY\020\000\022\013\n\007PARTIAL\020\001\022\t\n\005A" +
-      "LLOW\020\002*\217\003\n\022AuthenticationType\022\013\n\007BLOCKED" +
+      "LLOW\020\002*\325\005\n\022AuthenticationType\022\013\n\007BLOCKED" +
       "\020\000\022\010\n\004NONE\020\001\022\r\n\tWORKSPACE\020@\022\023\n\017CUSTOMER_" +
       "PORTAL\020 \022\013\n\007SESSION\020\020\022\025\n\021WORKSPACE_SESSI" +
       "ON\020P\022\024\n\020WORKSPACE_CLIENT\020D\022%\n!WORKSPACE_" +
@@ -59,15 +59,23 @@ public final class OptionsProto {
       "CE_CUSTOMER_PORTAL\020`\022\010\n\004USER\020\010\022\n\n\006CLIENT" +
       "\020\004\022\022\n\016SESSION_CLIENT\020\024\022\034\n\030WORKSPACE_SESS" +
       "ION_CLIENT\020T\022\"\n\036CUSTOMER_PORTAL_SESSION_" +
-      "CLIENT\0204:b\n\013auth_option\022\036.google.protobu" +
-      "f.MethodOptions\030\320\206\003 \001(\0132\037.scalekit.v1.op" +
-      "tions.AuthOptionR\nauthOptionB\331\001\n%com.sca" +
-      "lekit.grpc.scalekit.v1.optionsB\014OptionsP" +
-      "rotoP\001Z4github.com/scalekit-inc/scalekit" +
-      "/pkg/grpc/authoption\242\002\003SVO\252\002\023Scalekit.V1" +
-      ".Options\312\002\023Scalekit\\V1\\Options\342\002\037Scaleki" +
-      "t\\V1\\Options\\GPBMetadata\352\002\025Scalekit::V1:" +
-      ":Optionsb\006proto3"
+      "CLIENT\0204\022\020\n\014SESSION_USER\020\030\022\023\n\016ACTIONS_PO" +
+      "RTAL\020\200\001\0225\n0WORKSPACE_SESSION_CUSTOMER_PO" +
+      "RTAL_ACTIONS_PORTAL\020\360\001\022<\n7WORKSPACE_SESS" +
+      "ION_CUSTOMER_PORTAL_ACTIONS_PORTAL_CLIEN" +
+      "T\020\364\001\022\035\n\030WORKSPACE_ACTIONS_PORTAL\020\300\001\022$\n\037W" +
+      "ORKSPACE_ACTIONS_PORTAL_CLIENT\020\304\001\0224\n/WOR" +
+      "KSPACE_ACTIONS_PORTAL_CUSTOMER_PORTAL_CL" +
+      "IENT\020\344\001\022-\n(WORKSPACE_CUSTOMER_PORTAL_ACT" +
+      "IONS_PORTAL\020\340\001:b\n\013auth_option\022\036.google.p" +
+      "rotobuf.MethodOptions\030\320\206\003 \001(\0132\037.scalekit" +
+      ".v1.options.AuthOptionR\nauthOptionB\331\001\n%c" +
+      "om.scalekit.grpc.scalekit.v1.optionsB\014Op" +
+      "tionsProtoP\001Z4github.com/scalekit-inc/sc" +
+      "alekit/pkg/grpc/authoption\242\002\003SVO\252\002\023Scale" +
+      "kit.V1.Options\312\002\023Scalekit\\V1\\Options\342\002\037S" +
+      "calekit\\V1\\Options\\GPBMetadata\352\002\025Scaleki" +
+      "t::V1::Optionsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

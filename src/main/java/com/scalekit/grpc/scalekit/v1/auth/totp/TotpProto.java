@@ -82,87 +82,89 @@ public final class TotpProto {
       "\n\033scalekit/v1/auth/totp.proto\022\025scalekit." +
       "v1.auth.totp\032\033buf/validate/validate.prot" +
       "o\032\034google/api/annotations.proto\032\037google/" +
-      "api/field_behavior.proto\032\033google/protobu" +
-      "f/empty.proto\032\034google/protobuf/struct.pr" +
-      "oto\032\037google/protobuf/timestamp.proto\032.pr" +
-      "otoc-gen-openapiv2/options/annotations.p" +
-      "roto\032!scalekit/v1/commons/commons.proto\032" +
-      "!scalekit/v1/options/options.proto\"t\n\027TO" +
-      "TPRegistrationRequest\022Y\n\021totp_registrati" +
-      "on\030\001 \001(\0132\'.scalekit.v1.auth.totp.TOTPReg" +
-      "istrationB\003\272H\000R\020totpRegistration\"u\n\030TOTP" +
-      "RegistrationResponse\022Y\n\021totp_registratio" +
-      "n\030\001 \001(\0132\'.scalekit.v1.auth.totp.TOTPRegi" +
-      "strationB\003\272H\000R\020totpRegistration\"\204\007\n\020TOTP" +
-      "Registration\022{\n\002id\030\001 \001(\tBk\222Ah2MUnique sc" +
-      "alekit-generated identifier that uniquel" +
-      "y references an organizationJ\027\"org_59615" +
-      "193906282635\"R\002id\022\214\001\n\013create_time\030\002 \001(\0132" +
-      "\032.google.protobuf.TimestampBO\222AI2+Timest" +
-      "amp when the organization was createdJ\032\"" +
-      "2025-02-15T06:23:44.560Z\"\340A\002R\ncreateTime" +
-      "\022\216\001\n\013update_time\030\003 \001(\0132\032.google.protobuf" +
-      ".TimestampBQ\222AN20Timestamp when the orga" +
-      "nization was last updatedJ\032\"2025-02-15T0" +
-      "6:23:44.560Z\"R\nupdateTime\022y\n\007user_id\030\004 \001" +
-      "(\tB^\222AL21The user ID associated with the" +
-      " TOTP registrationJ\027\"usr_596151939062826" +
-      "35\"\272H\014r\n\020\001\030 :\004usr_H\000R\006userId\022|\n\014account_" +
-      "name\030\005 \001(\tBW\222AJ26The account name associ" +
-      "ated with the TOTP registrationJ\020\"me@exa" +
-      "mple.com\"\272H\007r\005\020\001\030\343\002H\000R\013accountName\022\262\001\n\013q" +
-      "r_code_uri\030\006 \001(\tB\214\001\222A|2+The URI for the " +
-      "QR code used to set up TOTPJM\"otpauth://" +
-      "totp/Scalekit:usr_59615193906282635?secr" +
-      "et=ABC123&issuer=Scalekit\"\340A\003\272H\007r\005\020\001\030\200\010H" +
-      "\001R\tqrCodeUri\210\001\001B\025\n\023UserIdOrAccountNameB\016" +
-      "\n\014_qr_code_uri\"l\n\035EnableRegistrationTOTP" +
-      "Request\022/\n\017registration_id\030\001 \001(\tB\006\272H\003\310\001\001" +
-      "R\016registrationId\022\032\n\004code\030\002 \001(\tB\006\272H\003\310\001\001R\004" +
-      "code\"[\n\036EnableRegistrationTOTPResponse\022\026" +
-      "\n\002id\030\001 \001(\tB\006\272H\003\310\001\001R\002id\022!\n\014backup_codes\030\003" +
-      " \003(\tR\013backupCodes\"m\n\036DisableRegistration" +
-      "TOTPRequest\022/\n\017registration_id\030\001 \001(\tB\006\272H" +
-      "\003\310\001\001R\016registrationId\022\032\n\004code\030\002 \001(\tB\006\272H\003\310" +
-      "\001\001R\004code\"\207\001\n\025GenerateQRCodeRequest\022-\n\016en" +
-      "vironment_id\030\001 \001(\tB\006\272H\003\310\001\001R\renvironmentI" +
-      "d\022&\n\nidentifier\030\002 \001(\tB\006\272H\003\310\001\001R\nidentifie" +
-      "r\022\027\n\007is_user\030\003 \001(\010R\006isUser\"1\n\026GenerateQR" +
-      "CodeResponse\022\027\n\007qr_code\030\001 \001(\tR\006qrCode\"T\n" +
-      "\025VerifyUserCodeRequest\022\037\n\007user_id\030\001 \001(\tB" +
-      "\006\272H\003\310\001\001R\006userId\022\032\n\004code\030\002 \001(\tB\006\272H\003\310\001\001R\004c" +
-      "ode\"*\n\022VerifyCodeResponse\022\024\n\005valid\030\001 \001(\010" +
-      "R\005valid\"l\n\035VerifyRegistrationCodeRequest" +
+      "api/field_behavior.proto\032\033google/api/vis" +
+      "ibility.proto\032\033google/protobuf/empty.pro" +
+      "to\032\034google/protobuf/struct.proto\032\037google" +
+      "/protobuf/timestamp.proto\032.protoc-gen-op" +
+      "enapiv2/options/annotations.proto\032!scale" +
+      "kit/v1/commons/commons.proto\032!scalekit/v" +
+      "1/options/options.proto\"t\n\027TOTPRegistrat" +
+      "ionRequest\022Y\n\021totp_registration\030\001 \001(\0132\'." +
+      "scalekit.v1.auth.totp.TOTPRegistrationB\003" +
+      "\272H\000R\020totpRegistration\"u\n\030TOTPRegistratio" +
+      "nResponse\022Y\n\021totp_registration\030\001 \001(\0132\'.s" +
+      "calekit.v1.auth.totp.TOTPRegistrationB\003\272" +
+      "H\000R\020totpRegistration\"\204\007\n\020TOTPRegistratio" +
+      "n\022{\n\002id\030\001 \001(\tBk\222Ah2MUnique scalekit-gene" +
+      "rated identifier that uniquely reference" +
+      "s an organizationJ\027\"org_5961519390628263" +
+      "5\"R\002id\022\214\001\n\013create_time\030\002 \001(\0132\032.google.pr" +
+      "otobuf.TimestampBO\222AI2+Timestamp when th" +
+      "e organization was createdJ\032\"2025-02-15T" +
+      "06:23:44.560Z\"\340A\002R\ncreateTime\022\216\001\n\013update" +
+      "_time\030\003 \001(\0132\032.google.protobuf.TimestampB" +
+      "Q\222AN20Timestamp when the organization wa" +
+      "s last updatedJ\032\"2025-02-15T06:23:44.560" +
+      "Z\"R\nupdateTime\022y\n\007user_id\030\004 \001(\tB^\222AL21Th" +
+      "e user ID associated with the TOTP regis" +
+      "trationJ\027\"usr_59615193906282635\"\272H\014r\n\020\001\030" +
+      " :\004usr_H\000R\006userId\022|\n\014account_name\030\005 \001(\tB" +
+      "W\222AJ26The account name associated with t" +
+      "he TOTP registrationJ\020\"me@example.com\"\272H" +
+      "\007r\005\020\001\030\343\002H\000R\013accountName\022\262\001\n\013qr_code_uri\030" +
+      "\006 \001(\tB\214\001\222A|2+The URI for the QR code use" +
+      "d to set up TOTPJM\"otpauth://totp/Scalek" +
+      "it:usr_59615193906282635?secret=ABC123&i" +
+      "ssuer=Scalekit\"\340A\003\272H\007r\005\020\001\030\200\010H\001R\tqrCodeUr" +
+      "i\210\001\001B\025\n\023UserIdOrAccountNameB\016\n\014_qr_code_" +
+      "uri\"l\n\035EnableRegistrationTOTPRequest\022/\n\017" +
+      "registration_id\030\001 \001(\tB\006\272H\003\310\001\001R\016registrat" +
+      "ionId\022\032\n\004code\030\002 \001(\tB\006\272H\003\310\001\001R\004code\"[\n\036Ena" +
+      "bleRegistrationTOTPResponse\022\026\n\002id\030\001 \001(\tB" +
+      "\006\272H\003\310\001\001R\002id\022!\n\014backup_codes\030\003 \003(\tR\013backu" +
+      "pCodes\"m\n\036DisableRegistrationTOTPRequest" +
       "\022/\n\017registration_id\030\001 \001(\tB\006\272H\003\310\001\001R\016regis" +
-      "trationId\022\032\n\004code\030\002 \001(\tB\006\272H\003\310\001\001R\004code2\334\006" +
-      "\n\013TOTPService\022\253\001\n\014RegisterTOTP\022..scaleki" +
-      "t.v1.auth.totp.TOTPRegistrationRequest\032/" +
-      ".scalekit.v1.auth.totp.TOTPRegistrationR" +
-      "esponse\":\202\265\030\002\030D\202\323\344\223\002.\"\031/api/v1/totp/regi" +
-      "stration:\021totp_registration\022\261\001\n\nEnableTO" +
-      "TP\0224.scalekit.v1.auth.totp.EnableRegistr" +
-      "ationTOTPRequest\0325.scalekit.v1.auth.totp" +
-      ".EnableRegistrationTOTPResponse\"6\202\265\030\002\030D\202" +
-      "\323\344\223\002*\"%/api/v1/totp/{registration_id}/en" +
-      "able:\001*\022\236\001\n\016VerifyUserCode\022,.scalekit.v1" +
-      ".auth.totp.VerifyUserCodeRequest\032).scale" +
-      "kit.v1.auth.totp.VerifyCodeResponse\"3\202\265\030" +
-      "\002\030D\202\323\344\223\002\'\"\"/api/v1/user/{user_id}/totp:v" +
-      "erify:\001*\022\261\001\n\026VerifyRegistrationCode\0224.sc" +
-      "alekit.v1.auth.totp.VerifyRegistrationCo" +
-      "deRequest\032).scalekit.v1.auth.totp.Verify" +
-      "CodeResponse\"6\202\265\030\002\030D\202\323\344\223\002*\"%/api/v1/totp" +
-      "/{registration_id}/verify:\001*\022\225\001\n\013Disable" +
-      "TOTP\0225.scalekit.v1.auth.totp.DisableRegi" +
-      "strationTOTPRequest\032\026.google.protobuf.Em" +
-      "pty\"7\202\265\030\002\030D\202\323\344\223\002+\"&/api/v1/totp/{registr" +
-      "ation_id}/disable:\001*B\341\001\n\'com.scalekit.gr" +
-      "pc.scalekit.v1.auth.totpB\tTotpProtoP\001Z3g" +
-      "ithub.com/scalekit-inc/scalekit/pkg/grpc" +
-      "/auth/totp\242\002\004SVAT\252\002\025Scalekit.V1.Auth.Tot" +
-      "p\312\002\025Scalekit\\V1\\Auth\\Totp\342\002!Scalekit\\V1\\" +
-      "Auth\\Totp\\GPBMetadata\352\002\030Scalekit::V1::Au" +
-      "th::Totpb\006proto3"
+      "trationId\022\032\n\004code\030\002 \001(\tB\006\272H\003\310\001\001R\004code\"\207\001" +
+      "\n\025GenerateQRCodeRequest\022-\n\016environment_i" +
+      "d\030\001 \001(\tB\006\272H\003\310\001\001R\renvironmentId\022&\n\nidenti" +
+      "fier\030\002 \001(\tB\006\272H\003\310\001\001R\nidentifier\022\027\n\007is_use" +
+      "r\030\003 \001(\010R\006isUser\"1\n\026GenerateQRCodeRespons" +
+      "e\022\027\n\007qr_code\030\001 \001(\tR\006qrCode\"T\n\025VerifyUser" +
+      "CodeRequest\022\037\n\007user_id\030\001 \001(\tB\006\272H\003\310\001\001R\006us" +
+      "erId\022\032\n\004code\030\002 \001(\tB\006\272H\003\310\001\001R\004code\"*\n\022Veri" +
+      "fyCodeResponse\022\024\n\005valid\030\001 \001(\010R\005valid\"l\n\035" +
+      "VerifyRegistrationCodeRequest\022/\n\017registr" +
+      "ation_id\030\001 \001(\tB\006\272H\003\310\001\001R\016registrationId\022\032" +
+      "\n\004code\030\002 \001(\tB\006\272H\003\310\001\001R\004code2\247\007\n\013TOTPServi" +
+      "ce\022\272\001\n\014RegisterTOTP\022..scalekit.v1.auth.t" +
+      "otp.TOTPRegistrationRequest\032/.scalekit.v" +
+      "1.auth.totp.TOTPRegistrationResponse\"I\202\265" +
+      "\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002.\"\031/api/v1/totp/" +
+      "registration:\021totp_registration\022\300\001\n\nEnab" +
+      "leTOTP\0224.scalekit.v1.auth.totp.EnableReg" +
+      "istrationTOTPRequest\0325.scalekit.v1.auth." +
+      "totp.EnableRegistrationTOTPResponse\"E\202\265\030" +
+      "\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002*\"%/api/v1/totp/{" +
+      "registration_id}/enable:\001*\022\255\001\n\016VerifyUse" +
+      "rCode\022,.scalekit.v1.auth.totp.VerifyUser" +
+      "CodeRequest\032).scalekit.v1.auth.totp.Veri" +
+      "fyCodeResponse\"B\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
+      "\223\002\'\"\"/api/v1/user/{user_id}/totp:verify:" +
+      "\001*\022\300\001\n\026VerifyRegistrationCode\0224.scalekit" +
+      ".v1.auth.totp.VerifyRegistrationCodeRequ" +
+      "est\032).scalekit.v1.auth.totp.VerifyCodeRe" +
+      "sponse\"E\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002*\"%/ap" +
+      "i/v1/totp/{registration_id}/verify:\001*\022\244\001" +
+      "\n\013DisableTOTP\0225.scalekit.v1.auth.totp.Di" +
+      "sableRegistrationTOTPRequest\032\026.google.pr" +
+      "otobuf.Empty\"F\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002" +
+      "+\"&/api/v1/totp/{registration_id}/disabl" +
+      "e:\001*B\341\001\n\'com.scalekit.grpc.scalekit.v1.a" +
+      "uth.totpB\tTotpProtoP\001Z3github.com/scalek" +
+      "it-inc/scalekit/pkg/grpc/auth/totp\242\002\004SVA" +
+      "T\252\002\025Scalekit.V1.Auth.Totp\312\002\025Scalekit\\V1\\" +
+      "Auth\\Totp\342\002!Scalekit\\V1\\Auth\\Totp\\GPBMet" +
+      "adata\352\002\030Scalekit::V1::Auth::Totpb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -170,6 +172,7 @@ public final class TotpProto {
           com.scalekit.grpc.buf.validate.ValidateProto.getDescriptor(),
           com.scalekit.grpc.google.api.AnnotationsProto.getDescriptor(),
           com.scalekit.grpc.google.api.FieldBehaviorProto.getDescriptor(),
+          com.scalekit.grpc.google.api.VisibilityProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
@@ -248,6 +251,7 @@ public final class TotpProto {
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);
     registry.add(com.scalekit.grpc.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
+    registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
     com.google.protobuf.Descriptors.FileDescriptor
@@ -255,6 +259,7 @@ public final class TotpProto {
     com.scalekit.grpc.buf.validate.ValidateProto.getDescriptor();
     com.scalekit.grpc.google.api.AnnotationsProto.getDescriptor();
     com.scalekit.grpc.google.api.FieldBehaviorProto.getDescriptor();
+    com.scalekit.grpc.google.api.VisibilityProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

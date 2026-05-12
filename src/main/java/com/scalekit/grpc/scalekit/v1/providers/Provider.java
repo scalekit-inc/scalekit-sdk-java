@@ -382,6 +382,28 @@ private static final long serialVersionUID = 0L;
     return proxyEnabled_;
   }
 
+  public static final int IS_CUSTOM_FIELD_NUMBER = 12;
+  private boolean isCustom_ = false;
+  /**
+   * <code>bool is_custom = 12 [json_name = "isCustom", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isCustom.
+   */
+  @java.lang.Override
+  public boolean getIsCustom() {
+    return isCustom_;
+  }
+
+  public static final int IS_CUSTOM_MCP_FIELD_NUMBER = 13;
+  private boolean isCustomMcp_ = false;
+  /**
+   * <code>bool is_custom_mcp = 13 [json_name = "isCustomMcp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isCustomMcp.
+   */
+  @java.lang.Override
+  public boolean getIsCustomMcp() {
+    return isCustomMcp_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -428,6 +450,12 @@ private static final long serialVersionUID = 0L;
     }
     if (proxyEnabled_ != false) {
       output.writeBool(11, proxyEnabled_);
+    }
+    if (isCustom_ != false) {
+      output.writeBool(12, isCustom_);
+    }
+    if (isCustomMcp_ != false) {
+      output.writeBool(13, isCustomMcp_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -480,6 +508,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(11, proxyEnabled_);
     }
+    if (isCustom_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(12, isCustom_);
+    }
+    if (isCustomMcp_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(13, isCustomMcp_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -520,6 +556,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getProxyUrl())) return false;
     if (getProxyEnabled()
         != other.getProxyEnabled()) return false;
+    if (getIsCustom()
+        != other.getIsCustom()) return false;
+    if (getIsCustomMcp()
+        != other.getIsCustomMcp()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -559,6 +599,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + PROXY_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getProxyEnabled());
+    hash = (37 * hash) + IS_CUSTOM_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsCustom());
+    hash = (37 * hash) + IS_CUSTOM_MCP_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsCustomMcp());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -716,6 +762,8 @@ private static final long serialVersionUID = 0L;
       comingSoon_ = false;
       proxyUrl_ = "";
       proxyEnabled_ = false;
+      isCustom_ = false;
+      isCustomMcp_ = false;
       return this;
     }
 
@@ -786,6 +834,12 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.proxyEnabled_ = proxyEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.isCustom_ = isCustom_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.isCustomMcp_ = isCustomMcp_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -886,6 +940,12 @@ private static final long serialVersionUID = 0L;
       if (other.getProxyEnabled() != false) {
         setProxyEnabled(other.getProxyEnabled());
       }
+      if (other.getIsCustom() != false) {
+        setIsCustom(other.getIsCustom());
+      }
+      if (other.getIsCustomMcp() != false) {
+        setIsCustomMcp(other.getIsCustomMcp());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -970,6 +1030,16 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000400;
               break;
             } // case 88
+            case 96: {
+              isCustom_ = input.readBool();
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 96
+            case 104: {
+              isCustomMcp_ = input.readBool();
+              bitField0_ |= 0x00001000;
+              break;
+            } // case 104
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1743,6 +1813,70 @@ private static final long serialVersionUID = 0L;
     public Builder clearProxyEnabled() {
       bitField0_ = (bitField0_ & ~0x00000400);
       proxyEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean isCustom_ ;
+    /**
+     * <code>bool is_custom = 12 [json_name = "isCustom", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The isCustom.
+     */
+    @java.lang.Override
+    public boolean getIsCustom() {
+      return isCustom_;
+    }
+    /**
+     * <code>bool is_custom = 12 [json_name = "isCustom", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The isCustom to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsCustom(boolean value) {
+
+      isCustom_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_custom = 12 [json_name = "isCustom", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsCustom() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      isCustom_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean isCustomMcp_ ;
+    /**
+     * <code>bool is_custom_mcp = 13 [json_name = "isCustomMcp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The isCustomMcp.
+     */
+    @java.lang.Override
+    public boolean getIsCustomMcp() {
+      return isCustomMcp_;
+    }
+    /**
+     * <code>bool is_custom_mcp = 13 [json_name = "isCustomMcp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The isCustomMcp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsCustomMcp(boolean value) {
+
+      isCustomMcp_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_custom_mcp = 13 [json_name = "isCustomMcp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsCustomMcp() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      isCustomMcp_ = false;
       onChanged();
       return this;
     }

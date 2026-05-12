@@ -33,4 +33,24 @@ public interface GetAuthStateResponseOrBuilder extends
    * <code>.scalekit.v1.auth.UserDetails user = 2 [json_name = "user"];</code>
    */
   com.scalekit.grpc.scalekit.v1.auth.UserDetailsOrBuilder getUserOrBuilder();
+
+  /**
+   * <pre>
+   * Login hint from the original /authorize request, typically an email address used to pre-fill the login UI.
+   * </pre>
+   *
+   * <code>string login_hint = 3 [json_name = "loginHint", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The loginHint.
+   */
+  java.lang.String getLoginHint();
+  /**
+   * <pre>
+   * Login hint from the original /authorize request, typically an email address used to pre-fill the login UI.
+   * </pre>
+   *
+   * <code>string login_hint = 3 [json_name = "loginHint", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for loginHint.
+   */
+  com.google.protobuf.ByteString
+      getLoginHintBytes();
 }

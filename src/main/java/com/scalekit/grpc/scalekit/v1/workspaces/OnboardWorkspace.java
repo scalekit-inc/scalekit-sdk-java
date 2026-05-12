@@ -178,6 +178,17 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.scalekit.grpc.scalekit.v1.commons.AuthenticationMode.UNRECOGNIZED : result;
   }
 
+  public static final int ENABLE_ALLOWED_DOMAIN_JOIN_FIELD_NUMBER = 5;
+  private boolean enableAllowedDomainJoin_ = false;
+  /**
+   * <code>bool enable_allowed_domain_join = 5 [json_name = "enableAllowedDomainJoin"];</code>
+   * @return The enableAllowedDomainJoin.
+   */
+  @java.lang.Override
+  public boolean getEnableAllowedDomainJoin() {
+    return enableAllowedDomainJoin_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -204,6 +215,9 @@ private static final long serialVersionUID = 0L;
     if (authenticationMode_ != com.scalekit.grpc.scalekit.v1.commons.AuthenticationMode.AUTHENTICATION_MODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(4, authenticationMode_);
     }
+    if (enableAllowedDomainJoin_ != false) {
+      output.writeBool(5, enableAllowedDomainJoin_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -225,6 +239,10 @@ private static final long serialVersionUID = 0L;
     if (authenticationMode_ != com.scalekit.grpc.scalekit.v1.commons.AuthenticationMode.AUTHENTICATION_MODE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(4, authenticationMode_);
+    }
+    if (enableAllowedDomainJoin_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, enableAllowedDomainJoin_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -248,6 +266,8 @@ private static final long serialVersionUID = 0L;
     if (!getUserFamilyName()
         .equals(other.getUserFamilyName())) return false;
     if (authenticationMode_ != other.authenticationMode_) return false;
+    if (getEnableAllowedDomainJoin()
+        != other.getEnableAllowedDomainJoin()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -267,6 +287,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUserFamilyName().hashCode();
     hash = (37 * hash) + AUTHENTICATION_MODE_FIELD_NUMBER;
     hash = (53 * hash) + authenticationMode_;
+    hash = (37 * hash) + ENABLE_ALLOWED_DOMAIN_JOIN_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEnableAllowedDomainJoin());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -402,6 +425,7 @@ private static final long serialVersionUID = 0L;
       userGivenName_ = "";
       userFamilyName_ = "";
       authenticationMode_ = 0;
+      enableAllowedDomainJoin_ = false;
       return this;
     }
 
@@ -446,6 +470,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.authenticationMode_ = authenticationMode_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.enableAllowedDomainJoin_ = enableAllowedDomainJoin_;
       }
     }
 
@@ -511,6 +538,9 @@ private static final long serialVersionUID = 0L;
       if (other.authenticationMode_ != 0) {
         setAuthenticationModeValue(other.getAuthenticationModeValue());
       }
+      if (other.getEnableAllowedDomainJoin() != false) {
+        setEnableAllowedDomainJoin(other.getEnableAllowedDomainJoin());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -557,6 +587,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 32
+            case 40: {
+              enableAllowedDomainJoin_ = input.readBool();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 40
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -839,6 +874,38 @@ private static final long serialVersionUID = 0L;
     public Builder clearAuthenticationMode() {
       bitField0_ = (bitField0_ & ~0x00000008);
       authenticationMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableAllowedDomainJoin_ ;
+    /**
+     * <code>bool enable_allowed_domain_join = 5 [json_name = "enableAllowedDomainJoin"];</code>
+     * @return The enableAllowedDomainJoin.
+     */
+    @java.lang.Override
+    public boolean getEnableAllowedDomainJoin() {
+      return enableAllowedDomainJoin_;
+    }
+    /**
+     * <code>bool enable_allowed_domain_join = 5 [json_name = "enableAllowedDomainJoin"];</code>
+     * @param value The enableAllowedDomainJoin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableAllowedDomainJoin(boolean value) {
+
+      enableAllowedDomainJoin_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool enable_allowed_domain_join = 5 [json_name = "enableAllowedDomainJoin"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableAllowedDomainJoin() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      enableAllowedDomainJoin_ = false;
       onChanged();
       return this;
     }

@@ -137,4 +137,16 @@ public interface ProviderOrBuilder extends
    * @return The proxyEnabled.
    */
   boolean getProxyEnabled();
+
+  /**
+   * <code>bool is_custom = 12 [json_name = "isCustom", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isCustom.
+   */
+  boolean getIsCustom();
+
+  /**
+   * <code>bool is_custom_mcp = 13 [json_name = "isCustomMcp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isCustomMcp.
+   */
+  boolean getIsCustomMcp();
 }

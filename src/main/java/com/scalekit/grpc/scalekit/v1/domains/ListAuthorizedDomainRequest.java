@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   }
   private ListAuthorizedDomainRequest() {
     origin_ = "";
+    linkId_ = "";
   }
 
   @java.lang.Override
@@ -79,6 +80,45 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int LINK_ID_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object linkId_ = "";
+  /**
+   * <code>string link_id = 2 [json_name = "linkId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The linkId.
+   */
+  @java.lang.Override
+  public java.lang.String getLinkId() {
+    java.lang.Object ref = linkId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      linkId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string link_id = 2 [json_name = "linkId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for linkId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLinkIdBytes() {
+    java.lang.Object ref = linkId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      linkId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -96,6 +136,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(origin_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, origin_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(linkId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, linkId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -107,6 +150,9 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(origin_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, origin_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(linkId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, linkId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -125,6 +171,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getOrigin()
         .equals(other.getOrigin())) return false;
+    if (!getLinkId()
+        .equals(other.getLinkId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -138,6 +186,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ORIGIN_FIELD_NUMBER;
     hash = (53 * hash) + getOrigin().hashCode();
+    hash = (37 * hash) + LINK_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getLinkId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -270,6 +320,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       origin_ = "";
+      linkId_ = "";
       return this;
     }
 
@@ -305,6 +356,9 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.origin_ = origin_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.linkId_ = linkId_;
       }
     }
 
@@ -357,6 +411,11 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getLinkId().isEmpty()) {
+        linkId_ = other.linkId_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -388,6 +447,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
+            case 18: {
+              linkId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -473,6 +537,78 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       origin_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object linkId_ = "";
+    /**
+     * <code>string link_id = 2 [json_name = "linkId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The linkId.
+     */
+    public java.lang.String getLinkId() {
+      java.lang.Object ref = linkId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        linkId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string link_id = 2 [json_name = "linkId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for linkId.
+     */
+    public com.google.protobuf.ByteString
+        getLinkIdBytes() {
+      java.lang.Object ref = linkId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        linkId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string link_id = 2 [json_name = "linkId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The linkId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLinkId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      linkId_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string link_id = 2 [json_name = "linkId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLinkId() {
+      linkId_ = getDefaultInstance().getLinkId();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string link_id = 2 [json_name = "linkId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for linkId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLinkIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      linkId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

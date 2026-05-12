@@ -18,4 +18,29 @@ public interface PortalSettingsOrBuilder extends
    * @return The customBranding.
    */
   boolean getCustomBranding();
+
+  /**
+   * <pre>
+   * new_self_serve_sso_scim indicates whether the new self-serve SSO/SCIM flow
+   * should be shown in the hosted pages. This is rollout-driven (feature flag),
+   * enabled for development environments or new workspaces (workspace_created_at &gt;= cutoff),
+   * not billing-derived.
+   * </pre>
+   *
+   * <code>optional bool new_self_serve_sso_scim = 2 [json_name = "newSelfServeSsoScim", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the newSelfServeSsoScim field is set.
+   */
+  boolean hasNewSelfServeSsoScim();
+  /**
+   * <pre>
+   * new_self_serve_sso_scim indicates whether the new self-serve SSO/SCIM flow
+   * should be shown in the hosted pages. This is rollout-driven (feature flag),
+   * enabled for development environments or new workspaces (workspace_created_at &gt;= cutoff),
+   * not billing-derived.
+   * </pre>
+   *
+   * <code>optional bool new_self_serve_sso_scim = 2 [json_name = "newSelfServeSsoScim", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The newSelfServeSsoScim.
+   */
+  boolean getNewSelfServeSsoScim();
 }

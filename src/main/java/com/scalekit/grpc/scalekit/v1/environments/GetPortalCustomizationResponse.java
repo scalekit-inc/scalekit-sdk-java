@@ -83,7 +83,7 @@ private static final long serialVersionUID = 0L;
   public static final int CUSTOMIZATION_SETTINGS_FIELD_NUMBER = 2;
   private com.google.protobuf.Struct customizationSettings_;
   /**
-   * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings"];</code>
+   * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings", (.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the customizationSettings field is set.
    */
   @java.lang.Override
@@ -91,7 +91,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings"];</code>
+   * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings", (.google.api.field_behavior) = OPTIONAL];</code>
    * @return The customizationSettings.
    */
   @java.lang.Override
@@ -99,7 +99,7 @@ private static final long serialVersionUID = 0L;
     return customizationSettings_ == null ? com.google.protobuf.Struct.getDefaultInstance() : customizationSettings_;
   }
   /**
-   * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings"];</code>
+   * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings", (.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getCustomizationSettingsOrBuilder() {
@@ -110,7 +110,7 @@ private static final long serialVersionUID = 0L;
   private com.scalekit.grpc.scalekit.v1.environments.PortalSettings settings_;
   /**
    * <pre>
-   * settings contains feature flags derived from the workspace's billing subscription
+   * settings contains feature flags derived from the workspace's billing subscription and feature rollout configuration
    * </pre>
    *
    * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * settings contains feature flags derived from the workspace's billing subscription
+   * settings contains feature flags derived from the workspace's billing subscription and feature rollout configuration
    * </pre>
    *
    * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -134,7 +134,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * settings contains feature flags derived from the workspace's billing subscription
+   * settings contains feature flags derived from the workspace's billing subscription and feature rollout configuration
    * </pre>
    *
    * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -629,14 +629,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> customizationSettingsBuilder_;
     /**
-     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings"];</code>
+     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings", (.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the customizationSettings field is set.
      */
     public boolean hasCustomizationSettings() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings"];</code>
+     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings", (.google.api.field_behavior) = OPTIONAL];</code>
      * @return The customizationSettings.
      */
     public com.google.protobuf.Struct getCustomizationSettings() {
@@ -647,7 +647,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings"];</code>
+     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings", (.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setCustomizationSettings(com.google.protobuf.Struct value) {
       if (customizationSettingsBuilder_ == null) {
@@ -663,7 +663,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings"];</code>
+     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings", (.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setCustomizationSettings(
         com.google.protobuf.Struct.Builder builderForValue) {
@@ -677,7 +677,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings"];</code>
+     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings", (.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeCustomizationSettings(com.google.protobuf.Struct value) {
       if (customizationSettingsBuilder_ == null) {
@@ -698,7 +698,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings"];</code>
+     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings", (.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearCustomizationSettings() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -711,7 +711,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings"];</code>
+     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings", (.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.Struct.Builder getCustomizationSettingsBuilder() {
       bitField0_ |= 0x00000002;
@@ -719,7 +719,7 @@ private static final long serialVersionUID = 0L;
       return getCustomizationSettingsFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings"];</code>
+     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings", (.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.StructOrBuilder getCustomizationSettingsOrBuilder() {
       if (customizationSettingsBuilder_ != null) {
@@ -730,7 +730,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings"];</code>
+     * <code>.google.protobuf.Struct customization_settings = 2 [json_name = "customizationSettings", (.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
@@ -751,7 +751,7 @@ private static final long serialVersionUID = 0L;
         com.scalekit.grpc.scalekit.v1.environments.PortalSettings, com.scalekit.grpc.scalekit.v1.environments.PortalSettings.Builder, com.scalekit.grpc.scalekit.v1.environments.PortalSettingsOrBuilder> settingsBuilder_;
     /**
      * <pre>
-     * settings contains feature flags derived from the workspace's billing subscription
+     * settings contains feature flags derived from the workspace's billing subscription and feature rollout configuration
      * </pre>
      *
      * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -762,7 +762,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * settings contains feature flags derived from the workspace's billing subscription
+     * settings contains feature flags derived from the workspace's billing subscription and feature rollout configuration
      * </pre>
      *
      * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -777,7 +777,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * settings contains feature flags derived from the workspace's billing subscription
+     * settings contains feature flags derived from the workspace's billing subscription and feature rollout configuration
      * </pre>
      *
      * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -797,7 +797,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * settings contains feature flags derived from the workspace's billing subscription
+     * settings contains feature flags derived from the workspace's billing subscription and feature rollout configuration
      * </pre>
      *
      * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -815,7 +815,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * settings contains feature flags derived from the workspace's billing subscription
+     * settings contains feature flags derived from the workspace's billing subscription and feature rollout configuration
      * </pre>
      *
      * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -840,7 +840,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * settings contains feature flags derived from the workspace's billing subscription
+     * settings contains feature flags derived from the workspace's billing subscription and feature rollout configuration
      * </pre>
      *
      * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -857,7 +857,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * settings contains feature flags derived from the workspace's billing subscription
+     * settings contains feature flags derived from the workspace's billing subscription and feature rollout configuration
      * </pre>
      *
      * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -869,7 +869,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * settings contains feature flags derived from the workspace's billing subscription
+     * settings contains feature flags derived from the workspace's billing subscription and feature rollout configuration
      * </pre>
      *
      * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -884,7 +884,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * settings contains feature flags derived from the workspace's billing subscription
+     * settings contains feature flags derived from the workspace's billing subscription and feature rollout configuration
      * </pre>
      *
      * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>

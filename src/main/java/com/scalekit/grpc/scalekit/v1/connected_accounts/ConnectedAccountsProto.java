@@ -76,6 +76,16 @@ public final class ConnectedAccountsProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_connected_accounts_GetMagicLinkForConnectedAccountResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_connected_accounts_VerifyConnectedAccountUserRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_connected_accounts_VerifyConnectedAccountUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_connected_accounts_VerifyConnectedAccountUserResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_connected_accounts_VerifyConnectedAccountUserResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_connected_accounts_GetConnectedAccountByIdentifierRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -120,6 +130,26 @@ public final class ConnectedAccountsProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_connected_accounts_StaticAuth_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_connected_accounts_GetConnectedAccountRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_connected_accounts_GetConnectedAccountRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_connected_accounts_GetConnectedAccountResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_connected_accounts_GetConnectedAccountResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_connected_accounts_DisconnectConnectedAccountRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_connected_accounts_DisconnectConnectedAccountRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_connected_accounts_DisconnectConnectedAccountResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_connected_accounts_DisconnectConnectedAccountResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -137,7 +167,7 @@ public final class ConnectedAccountsProto {
       "lity.proto\032\034google/protobuf/struct.proto" +
       "\032\037google/protobuf/timestamp.proto\032.proto" +
       "c-gen-openapiv2/options/annotations.prot" +
-      "o\032!scalekit/v1/options/options.proto\"\225\014\n" +
+      "o\032!scalekit/v1/options/options.proto\"\251\014\n" +
       "\034ListConnectedAccountsRequest\022\261\001\n\017organi" +
       "zation_id\030\001 \001(\tB\202\001\222Av2]Filter by organiz" +
       "ation ID. Returns only connected account" +
@@ -146,572 +176,706 @@ public final class ConnectedAccountsProto {
       "tionId\210\001\001\022\221\001\n\007user_id\030\002 \001(\tBs\222Ag2MFilter" +
       " by user ID. Returns only connected acco" +
       "unts associated with this user.J\026\"user_1" +
-      "21312434123312\"\272H\006r\004\020\000\030 H\001R\006userId\210\001\001\022\333\001" +
-      "\n\tconnector\030\003 \001(\tB\267\001\222A\230\0012\213\001Filter by con" +
+      "21312434123312\"\272H\006r\004\020\000\030 H\001R\006userId\210\001\001\022\357\001" +
+      "\n\tconnector\030\003 \001(\tB\313\001\222A\251\0012\234\001Filter by con" +
       "nector type. Connector identifier such a" +
       "s \'notion\', \'slack\', \'google\', etc. Alph" +
-      "anumeric with hyphens and underscores al" +
-      "lowed.J\010\"notion\"\272H\030r\026\020\000\03022\020^[a-zA-Z0-9_-" +
-      "]*$H\002R\tconnector\210\001\001\022\333\001\n\nidentifier\030\004 \001(\t" +
-      "B\265\001\222A\250\0012\221\001Filter by account identifier. " +
-      "The unique identifier for the connected " +
-      "account within the third-party service (" +
-      "e.g., email address, workspace ID).J\022\"us" +
+      "anumeric with spaces, hyphens, underscor" +
+      "es, and colons allowed.J\010\"notion\"\272H\033r\031\020\000" +
+      "\030\220\0032\022^[a-zA-Z0-9_: -]*$H\002R\tconnector\210\001\001\022" +
+      "\333\001\n\nidentifier\030\004 \001(\tB\265\001\222A\250\0012\221\001Filter by " +
+      "account identifier. The unique identifie" +
+      "r for the connected account within the t" +
+      "hird-party service (e.g., email address," +
+      " workspace ID).J\022\"user@example.com\"\272H\006r\004" +
+      "\020\000\030dH\003R\nidentifier\210\001\001\022\235\001\n\010provider\030\005 \001(\t" +
+      "B\200\001\222At2hFilter by OAuth provider. The au" +
+      "thentication provider name such as \'goog" +
+      "le\', \'microsoft\', \'github\', etc.J\010\"googl" +
+      "e\"\272H\006r\004\020\000\0302R\010provider\022\233\001\n\tpage_size\030\006 \001(" +
+      "\rB~\222Ar2lMaximum number of connected acco" +
+      "unts to return per page. Must be between" +
+      " 0 and 100. Default is typically 10.J\00210" +
+      "\272H\006*\004\020d(\000R\010pageSize\022\313\001\n\npage_token\030\007 \001(\t" +
+      "B\253\001\222A\236\0012\203\001Pagination token from a previo" +
+      "us response. Use the next_page_token val" +
+      "ue from ListConnectedAccountsResponse to" +
+      " fetch the next page.J\026\"eyJvZmZzZXQiOjEw" +
+      "fQ==\"\272H\006r\004\020\000\030dR\tpageToken\022\247\001\n\005query\030\010 \001(" +
+      "\tB\220\001\222A\203\0012qText search query to filter co" +
+      "nnected accounts by name, identifier, or" +
+      " other searchable fields. Case-insensiti" +
+      "ve.J\016\"john@example\"\272H\006r\004\020\000\030dR\005queryB\022\n\020_" +
+      "organization_idB\n\n\010_user_idB\014\n\n_connecto" +
+      "rB\r\n\013_identifier\"\273\006\n\035ListConnectedAccoun" +
+      "tsResponse\022\334\001\n\022connected_accounts\030\001 \003(\0132" +
+      "7.scalekit.v1.connected_accounts.Connect" +
+      "edAccountForListBt\222Aq2oList of connected" +
+      " accounts matching the filter criteria. " +
+      "Excludes sensitive authorization details" +
+      " for security.R\021connectedAccounts\022\231\001\n\nto" +
+      "tal_size\030\002 \001(\rBz\222Aw2pTotal count of conn" +
+      "ected accounts matching the filter crite" +
+      "ria across all pages. Use for calculatin" +
+      "g pagination.J\003100R\ttotalSize\022\322\001\n\017next_p" +
+      "age_token\030\003 \001(\tB\251\001\222A\234\0012\201\001Pagination toke" +
+      "n for retrieving the next page. Empty if" +
+      " this is the last page. Pass this value " +
+      "to page_token in the next request.J\026\"eyJ" +
+      "vZmZzZXQiOjIwfQ==\"\272H\006r\004\020\000\030 R\rnextPageTok" +
+      "en\022\311\001\n\017prev_page_token\030\004 \001(\tB\240\001\222A\223\0012}Pag" +
+      "ination token for retrieving the previou" +
+      "s page. Empty if this is the first page." +
+      " Pass this value to page_token to go bac" +
+      "k.J\022\"eyJvZmZzZXQiOjB9\"\272H\006r\004\020\000\030 R\rprevPag" +
+      "eToken\"\340\006\n\036SearchConnectedAccountsReques" +
+      "t\022\271\001\n\005query\030\001 \001(\tB\242\001\222A\221\0012\206\001Search term t" +
+      "o match against connected account identi" +
+      "fiers, providers, or connectors. Must be" +
+      " at least 3 characters. Case insensitive" +
+      ".J\006google\272H\nr\005\020\003\030\310\001\310\001\001R\005query\022\205\001\n\tpage_s" +
+      "ize\030\002 \001(\rBh\222A^2XMaximum number of connec" +
+      "ted accounts to return per page. Value m" +
+      "ust be between 1 and 30.J\00230\272H\004*\002\030\036R\010pag" +
+      "eSize\022\245\001\n\npage_token\030\003 \001(\tB\205\001\222A\201\0012aToken" +
+      " from a previous response for pagination" +
+      ". Provide this to retrieve the next page" +
+      " of results.J\034eyJwYWdlIjoyLCJsaW1pdCI6Mz" +
+      "B9R\tpageToken\022i\n\rconnection_id\030\004 \001(\tBD\222A" +
+      "82*Connection ID to filter connected acc" +
+      "ountsJ\n\"conn_123\"\272H\006r\004\020\000\030 R\014connectionId" +
+      ":\346\001\222A\342\001\n\234\001*\031Search Connected Accounts2\177S" +
+      "earch for connected accounts in your env" +
+      "ironment using a text query that matches" +
+      " against identifiers, providers, or conn" +
+      "ectors2Aquery=google&page_size=30&page_t" +
+      "oken=eyJwYWdlIjoyLCJsaW1pdCI6MzB9\"\207\005\n\037Se" +
+      "archConnectedAccountsResponse\022\314\001\n\022connec" +
+      "ted_accounts\030\001 \003(\01327.scalekit.v1.connect" +
+      "ed_accounts.ConnectedAccountForListBd\222Aa" +
+      "2_List of connected accounts matching th" +
+      "e search query. Excludes sensitive autho" +
+      "rization details.R\021connectedAccounts\022l\n\n" +
+      "total_size\030\002 \001(\rBM\222AJ2CTotal count of ac" +
+      "counts matching the search query across " +
+      "all pages.J\003100R\ttotalSize\022\221\001\n\017next_page" +
+      "_token\030\003 \001(\tBi\222A]2CPagination token for " +
+      "the next page. Empty if this is the last" +
+      " page.J\026\"eyJvZmZzZXQiOjMwfQ==\"\272H\006r\004\020\000\030 R" +
+      "\rnextPageToken\022\222\001\n\017prev_page_token\030\004 \001(\t" +
+      "Bj\222A^2HPagination token for the previous" +
+      " page. Empty if this is the first page.J" +
+      "\022\"eyJvZmZzZXQiOjB9\"\272H\006r\004\020\000\030 R\rprevPageTo" +
+      "ken\"\250\007\n\035CreateConnectedAccountRequest\022t\n" +
+      "\017organization_id\030\001 \001(\tBF\222A:2!Organizatio" +
+      "n ID for the connectorJ\025\"org_12131243412" +
+      "3312\"\272H\006r\004\020\000\030 H\000R\016organizationId\210\001\001\022]\n\007u" +
+      "ser_id\030\002 \001(\tB?\222A32\031User ID for the conne" +
+      "ctorJ\026\"user_121312434123312\"\272H\006r\004\020\000\030 H\001R" +
+      "\006userId\210\001\001\022d\n\tconnector\030\003 \001(\tBA\222A 2\024Conn" +
+      "ector identifierJ\010\"notion\"\272H\033r\031\020\000\030\220\0032\022^[" +
+      "a-zA-Z0-9_: -]*$H\002R\tconnector\210\001\001\022\316\001\n\nide" +
+      "ntifier\030\004 \001(\tB\250\001\222A\233\0012\204\001The unique identi" +
+      "fier for the connected account within th" +
+      "e third-party service (e.g., email addre" +
+      "ss, user ID, workspace identifier).J\022\"us" +
       "er@example.com\"\272H\006r\004\020\000\030dH\003R\nidentifier\210\001" +
-      "\001\022\235\001\n\010provider\030\005 \001(\tB\200\001\222At2hFilter by OA" +
-      "uth provider. The authentication provide" +
-      "r name such as \'google\', \'microsoft\', \'g" +
-      "ithub\', etc.J\010\"google\"\272H\006r\004\020\000\0302R\010provide" +
-      "r\022\233\001\n\tpage_size\030\006 \001(\rB~\222Ar2lMaximum numb" +
-      "er of connected accounts to return per p" +
-      "age. Must be between 0 and 100. Default " +
-      "is typically 10.J\00210\272H\006*\004\020d(\000R\010pageSize\022" +
-      "\313\001\n\npage_token\030\007 \001(\tB\253\001\222A\236\0012\203\001Pagination" +
-      " token from a previous response. Use the" +
-      " next_page_token value from ListConnecte" +
-      "dAccountsResponse to fetch the next page" +
-      ".J\026\"eyJvZmZzZXQiOjEwfQ==\"\272H\006r\004\020\000\030dR\tpage" +
-      "Token\022\247\001\n\005query\030\010 \001(\tB\220\001\222A\203\0012qText searc" +
-      "h query to filter connected accounts by " +
-      "name, identifier, or other searchable fi" +
-      "elds. Case-insensitive.J\016\"john@example\"\272" +
-      "H\006r\004\020\000\030dR\005queryB\022\n\020_organization_idB\n\n\010_" +
-      "user_idB\014\n\n_connectorB\r\n\013_identifier\"\273\006\n" +
-      "\035ListConnectedAccountsResponse\022\334\001\n\022conne" +
-      "cted_accounts\030\001 \003(\01327.scalekit.v1.connec" +
-      "ted_accounts.ConnectedAccountForListBt\222A" +
-      "q2oList of connected accounts matching t" +
-      "he filter criteria. Excludes sensitive a" +
-      "uthorization details for security.R\021conn" +
-      "ectedAccounts\022\231\001\n\ntotal_size\030\002 \001(\rBz\222Aw2" +
-      "pTotal count of connected accounts match" +
-      "ing the filter criteria across all pages" +
-      ". Use for calculating pagination.J\003100R\t" +
-      "totalSize\022\322\001\n\017next_page_token\030\003 \001(\tB\251\001\222A" +
-      "\234\0012\201\001Pagination token for retrieving the" +
-      " next page. Empty if this is the last pa" +
-      "ge. Pass this value to page_token in the" +
-      " next request.J\026\"eyJvZmZzZXQiOjIwfQ==\"\272H" +
-      "\006r\004\020\000\030 R\rnextPageToken\022\311\001\n\017prev_page_tok" +
-      "en\030\004 \001(\tB\240\001\222A\223\0012}Pagination token for re" +
-      "trieving the previous page. Empty if thi" +
-      "s is the first page. Pass this value to " +
-      "page_token to go back.J\022\"eyJvZmZzZXQiOjB" +
-      "9\"\272H\006r\004\020\000\030 R\rprevPageToken\"\340\006\n\036SearchCon" +
-      "nectedAccountsRequest\022\271\001\n\005query\030\001 \001(\tB\242\001" +
-      "\222A\221\0012\206\001Search term to match against conn" +
-      "ected account identifiers, providers, or" +
-      " connectors. Must be at least 3 characte" +
-      "rs. Case insensitive.J\006google\272H\nr\005\020\003\030\310\001\310" +
-      "\001\001R\005query\022\205\001\n\tpage_size\030\002 \001(\rBh\222A^2XMaxi" +
-      "mum number of connected accounts to retu" +
-      "rn per page. Value must be between 1 and" +
-      " 30.J\00230\272H\004*\002\030\036R\010pageSize\022\245\001\n\npage_token" +
-      "\030\003 \001(\tB\205\001\222A\201\0012aToken from a previous res" +
-      "ponse for pagination. Provide this to re" +
-      "trieve the next page of results.J\034eyJwYW" +
-      "dlIjoyLCJsaW1pdCI6MzB9R\tpageToken\022i\n\rcon" +
-      "nection_id\030\004 \001(\tBD\222A82*Connection ID to " +
-      "filter connected accountsJ\n\"conn_123\"\272H\006" +
-      "r\004\020\000\030 R\014connectionId:\346\001\222A\342\001\n\234\001*\031Search C" +
-      "onnected Accounts2\177Search for connected " +
-      "accounts in your environment using a tex" +
-      "t query that matches against identifiers" +
-      ", providers, or connectors2Aquery=google" +
-      "&page_size=30&page_token=eyJwYWdlIjoyLCJ" +
-      "saW1pdCI6MzB9\"\207\005\n\037SearchConnectedAccount" +
-      "sResponse\022\314\001\n\022connected_accounts\030\001 \003(\01327" +
-      ".scalekit.v1.connected_accounts.Connecte" +
-      "dAccountForListBd\222Aa2_List of connected " +
-      "accounts matching the search query. Excl" +
-      "udes sensitive authorization details.R\021c" +
-      "onnectedAccounts\022l\n\ntotal_size\030\002 \001(\rBM\222A" +
-      "J2CTotal count of accounts matching the " +
-      "search query across all pages.J\003100R\ttot" +
-      "alSize\022\221\001\n\017next_page_token\030\003 \001(\tBi\222A]2CP" +
-      "agination token for the next page. Empty" +
-      " if this is the last page.J\026\"eyJvZmZzZXQ" +
-      "iOjMwfQ==\"\272H\006r\004\020\000\030 R\rnextPageToken\022\222\001\n\017p" +
-      "rev_page_token\030\004 \001(\tBj\222A^2HPagination to" +
-      "ken for the previous page. Empty if this" +
-      " is the first page.J\022\"eyJvZmZzZXQiOjB9\"\272" +
-      "H\006r\004\020\000\030 R\rprevPageToken\"\245\007\n\035CreateConnec" +
-      "tedAccountRequest\022t\n\017organization_id\030\001 \001" +
-      "(\tBF\222A:2!Organization ID for the connect" +
-      "orJ\025\"org_121312434123312\"\272H\006r\004\020\000\030 H\000R\016or" +
-      "ganizationId\210\001\001\022]\n\007user_id\030\002 \001(\tB?\222A32\031U" +
-      "ser ID for the connectorJ\026\"user_12131243" +
-      "4123312\"\272H\006r\004\020\000\030 H\001R\006userId\210\001\001\022a\n\tconnec" +
-      "tor\030\003 \001(\tB>\222A 2\024Connector identifierJ\010\"n" +
-      "otion\"\272H\030r\026\020\000\03022\020^[a-zA-Z0-9_-]*$H\002R\tcon" +
-      "nector\210\001\001\022\316\001\n\nidentifier\030\004 \001(\tB\250\001\222A\233\0012\204\001" +
-      "The unique identifier for the connected " +
-      "account within the third-party service (" +
-      "e.g., email address, user ID, workspace " +
-      "identifier).J\022\"user@example.com\"\272H\006r\004\020\000\030" +
-      "dH\003R\nidentifier\210\001\001\022\275\002\n\021connected_account" +
-      "\030\005 \001(\01326.scalekit.v1.connected_accounts." +
-      "CreateConnectedAccountB\327\001\222A\315\0012*Details o" +
-      "f the connected account to createJ\236\001{ \"a" +
-      "uthorization_type\": \"OAUTH2\", \"authoriza" +
-      "tion_details\": { \"oauth_token\": { \"acces" +
-      "s_token\": \"...\", \"refresh_token\": \"...\"," +
-      " \"scopes\": [\"read\", \"write\"] } } }\272H\003\310\001\001" +
-      "R\020connectedAccountB\022\n\020_organization_idB\n" +
-      "\n\010_user_idB\014\n\n_connectorB\r\n\013_identifier\"" +
-      "\215\002\n\036CreateConnectedAccountResponse\022\352\001\n\021c" +
-      "onnected_account\030\001 \001(\01320.scalekit.v1.con" +
-      "nected_accounts.ConnectedAccountB\212\001\222A\206\0012" +
-      "\203\001The newly created connected account wi" +
-      "th its unique identifier, status, and co" +
-      "mplete authorization details including a" +
-      "ccess tokens.R\020connectedAccount\"\203\010\n\035Upda" +
-      "teConnectedAccountRequest\022t\n\017organizatio" +
-      "n_id\030\001 \001(\tBF\222A:2!Organization ID for the" +
-      " connectorJ\025\"org_121312434123312\"\272H\006r\004\020\000" +
-      "\030 H\000R\016organizationId\210\001\001\022]\n\007user_id\030\002 \001(\t" +
-      "B?\222A32\031User ID for the connectorJ\026\"user_" +
-      "121312434123312\"\272H\006r\004\020\000\030 H\001R\006userId\210\001\001\022O" +
-      "\n\tconnector\030\003 \001(\tB,\222A 2\024Connector identi" +
-      "fierJ\010\"notion\"\272H\006r\004\020\000\0302H\002R\tconnector\210\001\001\022" +
-      "\316\001\n\nidentifier\030\004 \001(\tB\250\001\222A\233\0012\204\001The unique" +
-      " identifier for the connected account wi" +
-      "thin the third-party service (e.g., emai" +
-      "l address, user ID, workspace identifier" +
-      ").J\022\"user@example.com\"\272H\006r\004\020\000\030dH\003R\nident" +
-      "ifier\210\001\001\022g\n\002id\030\006 \001(\tBR\222AA25Unique identi" +
-      "fier for the connected account to update" +
-      "J\010\"ca_123\"\272H\013r\t\020\000\030 :\003ca_H\004R\002id\210\001\001\022\275\002\n\021co" +
-      "nnected_account\030\005 \001(\01326.scalekit.v1.conn" +
-      "ected_accounts.UpdateConnectedAccountB\327\001" +
-      "\222A\315\0012*Details of the connected account t" +
-      "o updateJ\236\001{ \"authorization_type\": \"OAUT" +
-      "H2\", \"authorization_details\": { \"oauth_t" +
-      "oken\": { \"access_token\": \"...\", \"refresh" +
-      "_token\": \"...\", \"scopes\": [\"read\", \"writ" +
-      "e\"] } } }\272H\003\310\001\001R\020connectedAccountB\022\n\020_or" +
-      "ganization_idB\n\n\010_user_idB\014\n\n_connectorB" +
-      "\r\n\013_identifierB\005\n\003_id\"\367\001\n\036UpdateConnecte" +
-      "dAccountResponse\022\324\001\n\021connected_account\030\001" +
-      " \001(\01320.scalekit.v1.connected_accounts.Co" +
-      "nnectedAccountBu\222Ar2pThe updated connect" +
-      "ed account with refreshed credentials, n" +
-      "ew token expiry, and modified configurat" +
-      "ion settings.R\020connectedAccount\"\325\005\n\035Dele" +
-      "teConnectedAccountRequest\022t\n\017organizatio" +
-      "n_id\030\001 \001(\tBF\222A:2!Organization ID for the" +
-      " connectorJ\025\"org_121312434123312\"\272H\006r\004\020\000" +
-      "\030 H\000R\016organizationId\210\001\001\022]\n\007user_id\030\002 \001(\t" +
-      "B?\222A32\031User ID for the connectorJ\026\"user_" +
-      "121312434123312\"\272H\006r\004\020\000\030 H\001R\006userId\210\001\001\022a" +
-      "\n\tconnector\030\003 \001(\tB>\222A 2\024Connector identi" +
-      "fierJ\010\"notion\"\272H\030r\026\020\000\03022\020^[a-zA-Z0-9_-]*" +
-      "$H\002R\tconnector\210\001\001\022\316\001\n\nidentifier\030\004 \001(\tB\250" +
-      "\001\222A\233\0012\204\001The unique identifier for the co" +
-      "nnected account within the third-party s" +
-      "ervice (e.g., email address, user ID, wo" +
-      "rkspace identifier).J\022\"user@example.com\"" +
-      "\272H\006r\004\020\000\030dH\003R\nidentifier\210\001\001\022g\n\002id\030\005 \001(\tBR" +
-      "\222AA25Unique identifier for the connected" +
-      " account to deleteJ\010\"ca_123\"\272H\013r\t\020\000\030 :\003c" +
-      "a_H\004R\002id\210\001\001B\022\n\020_organization_idB\n\n\010_user" +
-      "_idB\014\n\n_connectorB\r\n\013_identifierB\005\n\003_id\"" +
-      " \n\036DeleteConnectedAccountResponse\"\302\005\n&Ge" +
-      "tMagicLinkForConnectedAccountRequest\022t\n\017" +
-      "organization_id\030\001 \001(\tBF\222A:2!Organization" +
-      " ID for the connectorJ\025\"org_121312434123" +
-      "312\"\272H\006r\004\020\000\030 H\000R\016organizationId\210\001\001\022]\n\007us" +
-      "er_id\030\002 \001(\tB?\222A32\031User ID for the connec" +
-      "torJ\026\"user_121312434123312\"\272H\006r\004\020\000\030 H\001R\006" +
-      "userId\210\001\001\022O\n\tconnector\030\003 \001(\tB,\222A 2\024Conne" +
-      "ctor identifierJ\010\"notion\"\272H\006r\004\020\000\0302H\002R\tco" +
-      "nnector\210\001\001\022\316\001\n\nidentifier\030\004 \001(\tB\250\001\222A\233\0012\204" +
-      "\001The unique identifier for the connected" +
-      " account within the third-party service " +
-      "(e.g., email address, user ID, workspace" +
-      " identifier).J\022\"user@example.com\"\272H\006r\004\020\000" +
-      "\030dH\003R\nidentifier\210\001\001\022]\n\002id\030\005 \001(\tBH\222A72+Un" +
-      "ique identifier for the connected accoun" +
-      "tJ\010\"ca_123\"\272H\013r\t\020\000\030 :\003ca_H\004R\002id\210\001\001B\022\n\020_o" +
-      "rganization_idB\n\n\010_user_idB\014\n\n_connector" +
-      "B\r\n\013_identifierB\005\n\003_id\"\234\002\n\'GetMagicLinkF" +
-      "orConnectedAccountResponse\022r\n\004link\030\001 \001(\t" +
-      "B^\222A[2%Authentication link for the conne" +
-      "ctorJ2\"https://notion.com/oauth/authoriz" +
-      "e?client_id=...\"R\004link\022}\n\006expiry\030\002 \001(\0132\032" +
-      ".google.protobuf.TimestampBI\222AF2,Expiry " +
-      "timestamp for the authentication linkJ\026\"" +
-      "2024-03-20T15:04:05Z\"R\006expiry\"\302\005\n&GetCon" +
-      "nectedAccountByIdentifierRequest\022t\n\017orga" +
-      "nization_id\030\001 \001(\tBF\222A:2!Organization ID " +
-      "for the connectorJ\025\"org_121312434123312\"" +
-      "\272H\006r\004\020\000\030 H\000R\016organizationId\210\001\001\022]\n\007user_i" +
-      "d\030\002 \001(\tB?\222A32\031User ID for the connectorJ" +
-      "\026\"user_121312434123312\"\272H\006r\004\020\000\030 H\001R\006user" +
-      "Id\210\001\001\022O\n\tconnector\030\003 \001(\tB,\222A 2\024Connector" +
-      " identifierJ\010\"notion\"\272H\006r\004\020\000\0302H\002R\tconnec" +
-      "tor\210\001\001\022\316\001\n\nidentifier\030\004 \001(\tB\250\001\222A\233\0012\204\001The" +
-      " unique identifier for the connected acc" +
-      "ount within the third-party service (e.g" +
-      "., email address, user ID, workspace ide" +
-      "ntifier).J\022\"user@example.com\"\272H\006r\004\020\000\030dH\003" +
-      "R\nidentifier\210\001\001\022]\n\002id\030\005 \001(\tBH\222A72+Unique" +
-      " identifier for the connected accountJ\010\"" +
-      "ca_123\"\272H\013r\t\020\000\030 :\003ca_H\004R\002id\210\001\001B\022\n\020_organ" +
-      "ization_idB\n\n\010_user_idB\014\n\n_connectorB\r\n\013" +
-      "_identifierB\005\n\003_id\"\276\002\n\'GetConnectedAccou" +
-      "ntByIdentifierResponse\022\222\002\n\021connected_acc" +
-      "ount\030\001 \001(\01320.scalekit.v1.connected_accou" +
-      "nts.ConnectedAccountB\262\001\222A\256\0012\253\001The connec" +
-      "ted account with complete details includ" +
-      "ing sensitive authorization credentials " +
-      "(access tokens, refresh tokens, scopes)." +
-      " Handle with appropriate access controls" +
-      ".R\020connectedAccount\"\274\023\n\020ConnectedAccount" +
-      "\022\274\001\n\nidentifier\030\001 \001(\tB\233\001\222A\227\0012\200\001The uniqu" +
-      "e identifier for this account in the thi" +
-      "rd-party service. Typically an email add" +
-      "ress, user ID, or workspace identifier.J" +
-      "\022\"user@example.com\"R\nidentifier\022\252\001\n\010prov" +
-      "ider\030\002 \001(\tB\215\001\222A\211\0012}OAuth provider name (" +
-      "e.g., \'google\', \'microsoft\', \'github\'). " +
-      "Identifies which authentication service " +
-      "manages this connection.J\010\"google\"R\010prov" +
-      "ider\022\275\001\n\006status\030\003 \001(\0162/.scalekit.v1.conn" +
-      "ected_accounts.ConnectorStatusBt\222Aq2oCur" +
-      "rent status of the connected account. In" +
-      "dicates if the account is active, expire" +
-      "d, or pending authorization.R\006status\022\351\001\n" +
-      "\022authorization_type\030\004 \001(\0162-.scalekit.v1." +
-      "connected_accounts.ConnectorTypeB\212\001\222A\206\0012" +
-      "\203\001Type of authorization mechanism used. " +
-      "Specifies whether this connection uses O" +
-      "Auth, API keys, bearer tokens, or other " +
-      "auth methods.R\021authorizationType\022\201\002\n\025aut" +
-      "horization_details\030\005 \001(\01324.scalekit.v1.c" +
-      "onnected_accounts.AuthorizationDetailsB\225" +
-      "\001\222A\221\0012\216\001Sensitive authentication credent" +
-      "ials including access tokens, refresh to" +
-      "kens, and scopes. Contains either OAuth " +
-      "tokens or static auth details.R\024authoriz" +
-      "ationDetails\022\316\001\n\020token_expires_at\030\006 \001(\0132" +
-      "\032.google.protobuf.TimestampB\207\001\222A\203\0012iExpi" +
-      "ration timestamp for the access token. A" +
-      "fter this time, the token must be refres" +
-      "hed or re-authorized.J\026\"2024-12-31T23:59" +
-      ":59Z\"R\016tokenExpiresAt\022\311\001\n\nupdated_at\030\007 \001" +
-      "(\0132\032.google.protobuf.TimestampB\215\001\222A\211\0012oT" +
-      "imestamp when this connected account was" +
-      " last modified. Updated whenever credent" +
-      "ials or configuration changes.J\026\"2024-03" +
-      "-20T15:04:05Z\"R\tupdatedAt\022\256\001\n\tconnector\030" +
-      "\010 \001(\tB\217\001\222A\213\0012\177Connector identifier (e.g." +
-      ", \'notion\', \'slack\', \'salesforce\'). Indi" +
-      "cates which third-party application this" +
-      " account connects to.J\010\"notion\"R\tconnect" +
-      "or\022\315\001\n\014last_used_at\030\t \001(\0132\032.google.proto" +
-      "buf.TimestampB\216\001\222A\212\0012pTimestamp when thi" +
-      "s connected account was last used to mak" +
-      "e an API call. Useful for tracking activ" +
-      "e connections.J\026\"2024-03-20T14:30:00Z\"R\n" +
-      "lastUsedAt\022\230\001\n\002id\030\n \001(\tB\207\001\222Av2\\Unique Sc" +
-      "alekit-generated identifier for this con" +
-      "nected account. Always prefixed with \'ca" +
-      "_\'.J\026\"ca_24834495392086178\"\272H\013r\t\020\000\030 :\003ca" +
-      "_R\002id\022\306\001\n\rconnection_id\030\013 \001(\tB\240\001\222A\223\0012wRe" +
-      "ference to the parent connection configu" +
-      "ration. Links this account to a specific" +
-      " connector setup in your environment.J\030\"" +
-      "conn_24834495392086178\"\272H\006r\004\020\000\030 R\014connec" +
-      "tionId\022\211\002\n\napi_config\030\014 \001(\0132\027.google.pro" +
-      "tobuf.StructB\320\001\222A\314\0012xOptional JSON confi" +
-      "guration for connector-specific API sett" +
-      "ings such as rate limits, custom endpoin" +
-      "ts, or feature flags.JP{\"rate_limit\": 10" +
-      "00, \"timeout\": 30, \"base_url\": \"https://" +
-      "api.custom-domain.com\"}R\tapiConfig\"\212\006\n\026C" +
-      "reateConnectedAccount\022\236\003\n\025authorization_" +
-      "details\030\005 \001(\01324.scalekit.v1.connected_ac" +
-      "counts.AuthorizationDetailsB\262\002\222A\250\0022\267\001Req" +
-      "uired authentication credentials for the" +
-      " connected account. Must include either " +
-      "OAuth tokens (access_token, refresh_toke" +
-      "n, scopes) or static auth details (API k" +
-      "eys, bearer tokens).Jl{\"oauth_token\": {\"" +
-      "access_token\": \"ya29.a0...\", \"refresh_to" +
-      "ken\": \"1//0g...\", \"scopes\": [\"email\", \"p" +
-      "rofile\"]}}\272H\003\310\001\001R\024authorizationDetails\022\230" +
-      "\002\n\napi_config\030\013 \001(\0132\027.google.protobuf.St" +
-      "ructB\337\001\222A\333\0012\206\001Optional JSON configuratio" +
-      "n for connector-specific API settings su" +
-      "ch as rate limits, custom API endpoints," +
-      " timeouts, or feature flags.JP{\"rate_lim" +
-      "it\": 1000, \"timeout\": 30, \"base_url\": \"h" +
-      "ttps://api.custom-domain.com\"}R\tapiConfi" +
-      "gJ\004\010\001\020\002J\004\010\002\020\003J\004\010\003\020\004J\004\010\004\020\005J\004\010\006\020\007J\004\010\007\020\010J\004\010" +
-      "\010\020\tJ\004\010\t\020\nJ\004\010\n\020\013\"\274\005\n\026UpdateConnectedAccou" +
-      "nt\022\215\003\n\025authorization_details\030\005 \001(\01324.sca" +
-      "lekit.v1.connected_accounts.Authorizatio" +
-      "nDetailsB\241\002\222A\235\0022\231\001Updated authentication" +
-      " credentials. Provide new OAuth tokens (" +
-      "e.g., after refresh) or updated static a" +
-      "uth details. Only included fields will b" +
-      "e modified.J\177{\"oauth_token\": {\"access_to" +
-      "ken\": \"ya29.new_token...\", \"refresh_toke" +
-      "n\": \"1//0g...\", \"scopes\": [\"email\", \"pro" +
-      "file\", \"calendar\"]}}R\024authorizationDetai" +
-      "ls\022\341\001\n\napi_config\030\n \001(\0132\027.google.protobu" +
-      "f.StructB\250\001\222A\244\0012}Updated JSON configurat" +
-      "ion for API-specific settings. Merges wi" +
-      "th existing configuration - only provide" +
-      "d fields are modified.J#{\"rate_limit\": 2" +
-      "000, \"timeout\": 60}R\tapiConfigJ\004\010\001\020\002J\004\010\002" +
-      "\020\003J\004\010\003\020\004J\004\010\004\020\005J\004\010\006\020\007J\004\010\007\020\010J\004\010\010\020\tJ\004\010\t\020\n\"\340" +
-      "\010\n\027ConnectedAccountForList\022{\n\nidentifier" +
-      "\030\001 \001(\tB[\222AX2BThe unique identifier for t" +
-      "his account in the third-party service.J" +
-      "\022\"user@example.com\"R\nidentifier\022]\n\010provi" +
-      "der\030\002 \001(\tBA\222A>22OAuth provider name (e.g" +
-      "., \'google\', \'microsoft\').J\010\"google\"R\010pr" +
-      "ovider\022h\n\006status\030\003 \001(\0162/.scalekit.v1.con" +
-      "nected_accounts.ConnectorStatusB\037\222A\0342\032Cu" +
-      "rrent connection status.R\006status\022\200\001\n\022aut" +
-      "horization_type\030\004 \001(\0162-.scalekit.v1.conn" +
-      "ected_accounts.ConnectorTypeB\"\222A\0372\035Autho" +
-      "rization mechanism type.R\021authorizationT" +
-      "ype\022~\n\020token_expires_at\030\006 \001(\0132\032.google.p" +
-      "rotobuf.TimestampB8\222A52\033Token expiration" +
-      " timestamp.J\026\"2024-12-31T23:59:59Z\"R\016tok" +
-      "enExpiresAt\022t\n\nupdated_at\030\007 \001(\0132\032.google" +
-      ".protobuf.TimestampB9\222A62\034Last modificat" +
-      "ion timestamp.J\026\"2024-03-20T15:04:05Z\"R\t" +
-      "updatedAt\022B\n\tconnector\030\010 \001(\tB$\222A!2\025Conne" +
-      "ctor identifier.J\010\"notion\"R\tconnector\022p\n" +
-      "\014last_used_at\030\t \001(\0132\032.google.protobuf.Ti" +
-      "mestampB2\222A/2\025Last usage timestamp.J\026\"20" +
-      "24-03-20T14:30:00Z\"R\nlastUsedAt\022Q\n\002id\030\n " +
-      "\001(\tBA\222A>2$Unique connected account ident" +
-      "ifier.J\026\"ca_24834495392086178\"R\002id\022w\n\rco" +
-      "nnection_id\030\013 \001(\tBR\222AF2*Parent connectio" +
-      "n configuration reference.J\030\"conn_248344" +
-      "95392086178\"\272H\006r\004\020\000\030 R\014connectionIdJ\004\010\005\020" +
-      "\006\"\277\001\n\024AuthorizationDetails\022M\n\013oauth_toke" +
-      "n\030\001 \001(\0132*.scalekit.v1.connected_accounts" +
-      ".OauthTokenH\000R\noauthToken\022M\n\013static_auth" +
-      "\030\002 \001(\0132*.scalekit.v1.connected_accounts." +
-      "StaticAuthH\000R\nstaticAuthB\t\n\007details\"\334\005\n\n" +
-      "OauthToken\022\240\001\n\014access_token\030\001 \001(\tB}\222Az2b" +
-      "OAuth access token for API requests. Typ" +
-      "ically short-lived and must be refreshed" +
-      " after expiration.J\024\"ya29.a0AfH6SMBx...\"" +
-      "R\013accessToken\022\256\001\n\rrefresh_token\030\002 \001(\tB\210\001" +
-      "\222A\204\0012nOAuth refresh token for obtaining " +
-      "new access tokens. Long-lived and used t" +
-      "o maintain persistent authorization.J\022\"1" +
-      "//0gHJxZ-Lb2...\"R\014refreshToken\022\341\001\n\006scope" +
-      "s\030\003 \003(\tB\310\001\222A\304\0012\\List of granted OAuth sc" +
-      "opes defining the permissions and access" +
-      " levels for this connection.Jd[\"https://" +
-      "www.googleapis.com/auth/drive.readonly\"," +
-      " \"https://www.googleapis.com/auth/userin" +
-      "fo.email\"]R\006scopes\022\225\001\n\006domain\030\004 \001(\tB}\222Az" +
-      "2iAssociated domain for workspace or org" +
-      "anization-scoped OAuth connections (e.g." +
-      ", Google Workspace domain).J\r\"example.co" +
-      "m\"R\006domain\"\364\001\n\nStaticAuth\022\345\001\n\007details\030\001 " +
-      "\001(\0132\027.google.protobuf.StructB\261\001\222A\255\0012zFle" +
-      "xible JSON structure containing static c" +
-      "redentials. Format varies by connector t" +
-      "ype (API key, username/password, etc.).J" +
-      "/{\"api_key\": \"sk_live_...\", \"api_secret\"" +
-      ": \"...\"}R\007details*_\n\017ConnectorStatus\022!\n\035" +
-      "CONNECTION_STATUS_UNSPECIFIED\020\000\022\n\n\006ACTIV" +
-      "E\020\001\022\013\n\007EXPIRED\020\002\022\020\n\014PENDING_AUTH\020\003*\201\001\n\rC" +
-      "onnectorType\022\037\n\033CONNECTION_TYPE_UNSPECIF" +
-      "IED\020\000\022\t\n\005OAUTH\020\001\022\013\n\007API_KEY\020\002\022\016\n\nBASIC_A",
-      "UTH\020\003\022\020\n\014BEARER_TOKEN\020\004\022\n\n\006CUSTOM\020\005\022\t\n\005B" +
-      "ASIC\020\0062\2724\n\027ConnectedAccountService\022\336\006\n\025L" +
-      "istConnectedAccounts\022<.scalekit.v1.conne" +
-      "cted_accounts.ListConnectedAccountsReque" +
-      "st\032=.scalekit.v1.connected_accounts.List" +
-      "ConnectedAccountsResponse\"\307\005\222A\233\005\n\022Connec" +
-      "ted Accounts\022\027List connected accounts\032\232\002" +
-      "Retrieves a paginated list of connected " +
-      "accounts for third-party integrations. F" +
-      "ilter by organization, user, connector t" +
-      "ype, provider, or identifier. Returns OA" +
-      "uth tokens, API keys, and connection sta" +
-      "tus for each account. Use pagination tok" +
-      "ens to navigate through large result set" +
-      "s.J\257\001\n\003200\022\247\001\nbSuccessfully retrieved th" +
-      "e list of connected accounts with their " +
-      "authentication details and status\022A\n?\032=." +
-      "scalekit.v1.connected_accounts.ListConne" +
-      "ctedAccountsResponseJY\n\003400\022R\nPInvalid r" +
-      "equest - occurs when query parameters ar" +
-      "e malformed or validation failsJB\n\003401\022;" +
-      "\n9Authentication required - missing or i" +
-      "nvalid access token\202\265\030\002\030D\202\323\344\223\002\034\022\032/api/v1" +
-      "/connected_accounts\022\340\006\n\027SearchConnectedA" +
-      "ccounts\022>.scalekit.v1.connected_accounts" +
-      ".SearchConnectedAccountsRequest\032?.scalek" +
-      "it.v1.connected_accounts.SearchConnected" +
-      "AccountsResponse\"\303\005\222A\220\005\n\022Connected Accou" +
-      "nts\022\031Search connected accounts\032\231\002Search " +
-      "for connected accounts in your environme" +
-      "nt using a text query that matches again" +
-      "st identifiers, providers, or connectors" +
-      ". The search performs case-insensitive m" +
-      "atching across account details. Returns " +
-      "paginated results with account status an" +
-      "d authentication type information.J\231\001\n\0032" +
-      "00\022\221\001\nJSuccessfully retrieved matching c" +
-      "onnected accounts with pagination suppor" +
-      "t\022C\nA\032?.scalekit.v1.connected_accounts.S" +
-      "earchConnectedAccountsResponseJc\n\003400\022\\\n" +
-      "ZInvalid request - query parameter is to" +
-      "o short (minimum 3 characters) or valida" +
-      "tion failedJB\n\003401\022;\n9Authentication req" +
-      "uired - missing or invalid access token\202" +
-      "\265\030\002\030D\202\323\344\223\002#\022!/api/v1/connected_accounts:" +
-      "search\022\376\007\n\026CreateConnectedAccount\022=.scal" +
-      "ekit.v1.connected_accounts.CreateConnect" +
-      "edAccountRequest\032>.scalekit.v1.connected" +
-      "_accounts.CreateConnectedAccountResponse" +
-      "\"\344\006\222A\265\006\n\022Connected Accounts\022\032Create a co" +
-      "nnected account\032\337\002Creates a new connecte" +
-      "d account with OAuth tokens or API crede" +
-      "ntials for third-party service integrati" +
-      "on. Supply authorization details includi" +
-      "ng access tokens, refresh tokens, scopes" +
-      ", and optional API configuration. The ac" +
-      "count can be scoped to an organization o" +
-      "r user. Returns the created account with" +
-      " its unique identifier and authenticatio" +
-      "n status.J\244\001\n\003201\022\234\001\nVConnected account " +
-      "created successfully with authentication" +
-      " credentials stored securely\022B\n@\032>.scale" +
-      "kit.v1.connected_accounts.CreateConnecte" +
-      "dAccountResponseJg\n\003400\022`\n^Invalid reque" +
-      "st - missing required fields, invalid au" +
-      "thorization details, or validation faile" +
-      "dJB\n\003401\022;\n9Authentication required - mi" +
-      "ssing or invalid access tokenJM\n\003409\022F\nD" +
-      "Conflict - connected account with the sa" +
-      "me identifier already exists\202\265\030\002\030D\202\323\344\223\002\037" +
-      "\"\032/api/v1/connected_accounts:\001*\022\357\007\n\026Upda" +
-      "teConnectedAccount\022=.scalekit.v1.connect" +
-      "ed_accounts.UpdateConnectedAccountReques" +
-      "t\032>.scalekit.v1.connected_accounts.Updat" +
-      "eConnectedAccountResponse\"\325\006\222A\246\006\n\022Connec" +
-      "ted Accounts\022$Update connected account c" +
-      "redentials\032\322\002Updates authentication cred" +
-      "entials and configuration for an existin" +
-      "g connected account. Modify OAuth tokens" +
-      ", refresh tokens, access scopes, or API " +
-      "configuration settings. Specify the acco" +
-      "unt by ID, or by combination of organiza" +
-      "tion/user, connector, and identifier. Re" +
-      "turns the updated account with new token" +
-      " expiry and status information.J\232\001\n\003200\022" +
-      "\222\001\nLConnected account updated successful" +
-      "ly with new credentials or configuration" +
-      "\022B\n@\032>.scalekit.v1.connected_accounts.Up" +
-      "dateConnectedAccountResponseJg\n\003400\022`\n^I" +
-      "nvalid request - missing required fields" +
-      ", invalid authorization details, or vali" +
-      "dation failedJB\n\003401\022;\n9Authentication r" +
-      "equired - missing or invalid access toke" +
-      "nJK\n\003404\022D\nBConnected account not found " +
-      "- the specified account does not exist\202\265" +
-      "\030\002\030D\202\323\344\223\002\037\032\032/api/v1/connected_accounts:\001" +
-      "*\022\306\006\n\026DeleteConnectedAccount\022=.scalekit." +
-      "v1.connected_accounts.DeleteConnectedAcc" +
-      "ountRequest\032>.scalekit.v1.connected_acco" +
-      "unts.DeleteConnectedAccountResponse\"\254\005\222A" +
-      "\366\004\n\022Connected Accounts\022\032Delete a connect" +
-      "ed account\032\237\002Permanently removes a conne" +
-      "cted account and revokes all associated " +
-      "authentication credentials. Identify the" +
-      " account by ID, or by combination of org" +
-      "anization/user, connector, and identifie" +
-      "r. This action cannot be undone. All OAu" +
-      "th tokens and API keys for this account " +
-      "will be invalidated.JK\n\003200\022D\nBConnected" +
-      " account deleted successfully and all cr" +
-      "edentials revokedJD\n\003400\022=\n;Invalid requ" +
-      "est - malformed parameters or validation" +
-      " failedJB\n\003401\022;\n9Authentication require" +
-      "d - missing or invalid access tokenJK\n\0034" +
-      "04\022D\nBConnected account not found - the " +
-      "specified account does not exist\202\265\030\002\030D\202\323" +
-      "\344\223\002&\"!/api/v1/connected_accounts:delete:" +
-      "\001*\022\377\006\n\037GetMagicLinkForConnectedAccount\022F" +
-      ".scalekit.v1.connected_accounts.GetMagic" +
-      "LinkForConnectedAccountRequest\032G.scaleki" +
-      "t.v1.connected_accounts.GetMagicLinkForC" +
-      "onnectedAccountResponse\"\312\005\222A\220\005\n\022Connecte" +
-      "d Accounts\022\"Generate authentication magi" +
-      "c link\032\242\002Creates a time-limited magic li" +
-      "nk for connecting or re-authorizing a th" +
-      "ird-party account. The link directs user" +
-      "s to the OAuth authorization flow for th" +
-      "e specified connector. Returns the gener" +
-      "ated link URL and expiration timestamp. " +
-      "Links typically expire after a short dur" +
-      "ation for security.J\237\001\n\003200\022\227\001\nHMagic li" +
-      "nk generated successfully with authoriza" +
-      "tion URL and expiry time\022K\nI\032G.scalekit." +
-      "v1.connected_accounts.GetMagicLinkForCon" +
-      "nectedAccountResponseJK\n\003400\022D\nBInvalid " +
-      "request - missing required parameters or" +
-      " invalid connectorJB\n\003401\022;\n9Authenticat" +
+      "\001\022\275\002\n\021connected_account\030\005 \001(\01326.scalekit" +
+      ".v1.connected_accounts.CreateConnectedAc" +
+      "countB\327\001\222A\315\0012*Details of the connected a" +
+      "ccount to createJ\236\001{ \"authorization_type" +
+      "\": \"OAUTH2\", \"authorization_details\": { " +
+      "\"oauth_token\": { \"access_token\": \"...\", " +
+      "\"refresh_token\": \"...\", \"scopes\": [\"read" +
+      "\", \"write\"] } } }\272H\003\310\001\001R\020connectedAccoun" +
+      "tB\022\n\020_organization_idB\n\n\010_user_idB\014\n\n_co" +
+      "nnectorB\r\n\013_identifier\"\215\002\n\036CreateConnect" +
+      "edAccountResponse\022\352\001\n\021connected_account\030" +
+      "\001 \001(\01320.scalekit.v1.connected_accounts.C" +
+      "onnectedAccountB\212\001\222A\206\0012\203\001The newly creat" +
+      "ed connected account with its unique ide" +
+      "ntifier, status, and complete authorizat" +
+      "ion details including access tokens.R\020co" +
+      "nnectedAccount\"\204\010\n\035UpdateConnectedAccoun" +
+      "tRequest\022t\n\017organization_id\030\001 \001(\tBF\222A:2!" +
+      "Organization ID for the connectorJ\025\"org_" +
+      "121312434123312\"\272H\006r\004\020\000\030 H\000R\016organizatio" +
+      "nId\210\001\001\022]\n\007user_id\030\002 \001(\tB?\222A32\031User ID fo" +
+      "r the connectorJ\026\"user_121312434123312\"\272" +
+      "H\006r\004\020\000\030 H\001R\006userId\210\001\001\022P\n\tconnector\030\003 \001(\t" +
+      "B-\222A 2\024Connector identifierJ\010\"notion\"\272H\007" +
+      "r\005\020\000\030\220\003H\002R\tconnector\210\001\001\022\316\001\n\nidentifier\030\004" +
+      " \001(\tB\250\001\222A\233\0012\204\001The unique identifier for " +
+      "the connected account within the third-p" +
+      "arty service (e.g., email address, user " +
+      "ID, workspace identifier).J\022\"user@exampl" +
+      "e.com\"\272H\006r\004\020\000\030dH\003R\nidentifier\210\001\001\022g\n\002id\030\006" +
+      " \001(\tBR\222AA25Unique identifier for the con" +
+      "nected account to updateJ\010\"ca_123\"\272H\013r\t\020" +
+      "\000\030 :\003ca_H\004R\002id\210\001\001\022\275\002\n\021connected_account\030" +
+      "\005 \001(\01326.scalekit.v1.connected_accounts.U" +
+      "pdateConnectedAccountB\327\001\222A\315\0012*Details of" +
+      " the connected account to updateJ\236\001{ \"au" +
+      "thorization_type\": \"OAUTH2\", \"authorizat" +
+      "ion_details\": { \"oauth_token\": { \"access" +
+      "_token\": \"...\", \"refresh_token\": \"...\", " +
+      "\"scopes\": [\"read\", \"write\"] } } }\272H\003\310\001\001R" +
+      "\020connectedAccountB\022\n\020_organization_idB\n\n" +
+      "\010_user_idB\014\n\n_connectorB\r\n\013_identifierB\005" +
+      "\n\003_id\"\367\001\n\036UpdateConnectedAccountResponse" +
+      "\022\324\001\n\021connected_account\030\001 \001(\01320.scalekit." +
+      "v1.connected_accounts.ConnectedAccountBu" +
+      "\222Ar2pThe updated connected account with " +
+      "refreshed credentials, new token expiry," +
+      " and modified configuration settings.R\020c" +
+      "onnectedAccount\"\330\005\n\035DeleteConnectedAccou" +
+      "ntRequest\022t\n\017organization_id\030\001 \001(\tBF\222A:2" +
+      "!Organization ID for the connectorJ\025\"org" +
+      "_121312434123312\"\272H\006r\004\020\000\030 H\000R\016organizati" +
+      "onId\210\001\001\022]\n\007user_id\030\002 \001(\tB?\222A32\031User ID f" +
+      "or the connectorJ\026\"user_121312434123312\"" +
+      "\272H\006r\004\020\000\030 H\001R\006userId\210\001\001\022d\n\tconnector\030\003 \001(" +
+      "\tBA\222A 2\024Connector identifierJ\010\"notion\"\272H" +
+      "\033r\031\020\000\030\220\0032\022^[a-zA-Z0-9_: -]*$H\002R\tconnecto" +
+      "r\210\001\001\022\316\001\n\nidentifier\030\004 \001(\tB\250\001\222A\233\0012\204\001The u" +
+      "nique identifier for the connected accou" +
+      "nt within the third-party service (e.g.," +
+      " email address, user ID, workspace ident" +
+      "ifier).J\022\"user@example.com\"\272H\006r\004\020\000\030dH\003R\n" +
+      "identifier\210\001\001\022g\n\002id\030\005 \001(\tBR\222AA25Unique i" +
+      "dentifier for the connected account to d" +
+      "eleteJ\010\"ca_123\"\272H\013r\t\020\000\030 :\003ca_H\004R\002id\210\001\001B\022" +
+      "\n\020_organization_idB\n\n\010_user_idB\014\n\n_conne" +
+      "ctorB\r\n\013_identifierB\005\n\003_id\" \n\036DeleteConn" +
+      "ectedAccountResponse\"\323\010\n&GetMagicLinkFor" +
+      "ConnectedAccountRequest\022t\n\017organization_" +
+      "id\030\001 \001(\tBF\222A:2!Organization ID for the c" +
+      "onnectorJ\025\"org_121312434123312\"\272H\006r\004\020\000\030 " +
+      "H\000R\016organizationId\210\001\001\022]\n\007user_id\030\002 \001(\tB?" +
+      "\222A32\031User ID for the connectorJ\026\"user_12" +
+      "1312434123312\"\272H\006r\004\020\000\030 H\001R\006userId\210\001\001\022P\n\t" +
+      "connector\030\003 \001(\tB-\222A 2\024Connector identifi" +
+      "erJ\010\"notion\"\272H\007r\005\020\000\030\220\003H\002R\tconnector\210\001\001\022\316" +
+      "\001\n\nidentifier\030\004 \001(\tB\250\001\222A\233\0012\204\001The unique " +
+      "identifier for the connected account wit" +
+      "hin the third-party service (e.g., email" +
+      " address, user ID, workspace identifier)" +
+      ".J\022\"user@example.com\"\272H\006r\004\020\000\030dH\003R\nidenti" +
+      "fier\210\001\001\022]\n\002id\030\005 \001(\tBH\222A72+Unique identif" +
+      "ier for the connected accountJ\010\"ca_123\"\272" +
+      "H\013r\t\020\000\030 :\003ca_H\004R\002id\210\001\001\022\317\001\n\005state\030\007 \001(\tB\263" +
+      "\001\222A\245\0012wOptional opaque state value. Stat" +
+      "e added to the user verify redirect URL " +
+      "query params to validate the user verifi" +
+      "cationJ*\"QVNDSUFyY2hhYml0dGVyXzE2ODQ5NzI" +
+      "wNzI0NTY=\"\272H\007r\005\020\000\030\200\004H\005R\005state\210\001\001\022\235\001\n\017use" +
+      "r_verify_url\030\010 \001(\tBp\222AT2\"B2B app\'s user " +
+      "verify redirect URLJ.\"https://app.yourap" +
+      "p.com/user/verify/callback\"\272H\026r\024\020\000\030\200\0202\r^" +
+      "$|^https?://H\006R\ruserVerifyUrl\210\001\001B\022\n\020_org" +
+      "anization_idB\n\n\010_user_idB\014\n\n_connectorB\r" +
+      "\n\013_identifierB\005\n\003_idB\010\n\006_stateB\022\n\020_user_" +
+      "verify_url\"\234\002\n\'GetMagicLinkForConnectedA" +
+      "ccountResponse\022r\n\004link\030\001 \001(\tB^\222A[2%Authe" +
+      "ntication link for the connectorJ2\"https" +
+      "://notion.com/oauth/authorize?client_id=" +
+      "...\"R\004link\022}\n\006expiry\030\002 \001(\0132\032.google.prot" +
+      "obuf.TimestampBI\222AF2,Expiry timestamp fo" +
+      "r the authentication linkJ\026\"2024-03-20T1" +
+      "5:04:05Z\"R\006expiry\"\353\002\n!VerifyConnectedAcc" +
+      "ountUserRequest\022\310\001\n\017auth_request_id\030\001 \001(" +
+      "\tB\237\001\222A\216\0012`Auth request ID as base64url-e" +
+      "ncoded opaque token from the user verify" +
+      " redirect URL query paramsJ*\"QVNDSUFyY2h" +
+      "hYml0dGVyXzE2ODQ5NzIwNzI0NTY=\"\340A\002\272H\007r\005\020\001" +
+      "\030\350\007R\rauthRequestId\022{\n\nidentifier\030\002 \001(\tB[" +
+      "\222AK25Current logged in user\'s connected " +
+      "account identifierJ\022\"user@example.com\"\340A" +
+      "\002\272H\007r\005\020\001\030\310\001R\nidentifier\"\323\001\n\"VerifyConnec" +
+      "tedAccountUserResponse\022\254\001\n\035post_user_ver" +
+      "ify_redirect_url\030\001 \001(\tBj\222Ag29URL to redi" +
+      "rect the user to after successful verifi" +
+      "cationJ*\"https://env1.example.com/connec" +
+      "t/success\"R\031postUserVerifyRedirectUrl\"\303\005" +
+      "\n&GetConnectedAccountByIdentifierRequest" +
+      "\022t\n\017organization_id\030\001 \001(\tBF\222A:2!Organiza" +
+      "tion ID for the connectorJ\025\"org_12131243" +
+      "4123312\"\272H\006r\004\020\000\030 H\000R\016organizationId\210\001\001\022]" +
+      "\n\007user_id\030\002 \001(\tB?\222A32\031User ID for the co" +
+      "nnectorJ\026\"user_121312434123312\"\272H\006r\004\020\000\030 " +
+      "H\001R\006userId\210\001\001\022P\n\tconnector\030\003 \001(\tB-\222A 2\024C" +
+      "onnector identifierJ\010\"notion\"\272H\007r\005\020\000\030\220\003H" +
+      "\002R\tconnector\210\001\001\022\316\001\n\nidentifier\030\004 \001(\tB\250\001\222" +
+      "A\233\0012\204\001The unique identifier for the conn" +
+      "ected account within the third-party ser" +
+      "vice (e.g., email address, user ID, work" +
+      "space identifier).J\022\"user@example.com\"\272H" +
+      "\006r\004\020\000\030dH\003R\nidentifier\210\001\001\022]\n\002id\030\005 \001(\tBH\222A" +
+      "72+Unique identifier for the connected a" +
+      "ccountJ\010\"ca_123\"\272H\013r\t\020\000\030 :\003ca_H\004R\002id\210\001\001B" +
+      "\022\n\020_organization_idB\n\n\010_user_idB\014\n\n_conn" +
+      "ectorB\r\n\013_identifierB\005\n\003_id\"\276\002\n\'GetConne" +
+      "ctedAccountByIdentifierResponse\022\222\002\n\021conn" +
+      "ected_account\030\001 \001(\01320.scalekit.v1.connec" +
+      "ted_accounts.ConnectedAccountB\262\001\222A\256\0012\253\001T" +
+      "he connected account with complete detai" +
+      "ls including sensitive authorization cre" +
+      "dentials (access tokens, refresh tokens," +
+      " scopes). Handle with appropriate access" +
+      " controls.R\020connectedAccount\"\343\023\n\020Connect" +
+      "edAccount\022\274\001\n\nidentifier\030\001 \001(\tB\233\001\222A\227\0012\200\001" +
+      "The unique identifier for this account i" +
+      "n the third-party service. Typically an " +
+      "email address, user ID, or workspace ide" +
+      "ntifier.J\022\"user@example.com\"R\nidentifier" +
+      "\022\252\001\n\010provider\030\002 \001(\tB\215\001\222A\211\0012}OAuth provid" +
+      "er name (e.g., \'google\', \'microsoft\', \'g" +
+      "ithub\'). Identifies which authentication" +
+      " service manages this connection.J\010\"goog" +
+      "le\"R\010provider\022\344\001\n\006status\030\003 \001(\0162/.scaleki" +
+      "t.v1.connected_accounts.ConnectorStatusB" +
+      "\232\001\222A\226\0012\223\001Current status of the connected" +
+      " account. Indicates if the account is ac" +
+      "tive, expired, pending authorization, or" +
+      " pending user identity verification.R\006st" +
+      "atus\022\351\001\n\022authorization_type\030\004 \001(\0162-.scal" +
+      "ekit.v1.connected_accounts.ConnectorType" +
+      "B\212\001\222A\206\0012\203\001Type of authorization mechanis" +
+      "m used. Specifies whether this connectio" +
+      "n uses OAuth, API keys, bearer tokens, o" +
+      "r other auth methods.R\021authorizationType" +
+      "\022\201\002\n\025authorization_details\030\005 \001(\01324.scale" +
+      "kit.v1.connected_accounts.AuthorizationD" +
+      "etailsB\225\001\222A\221\0012\216\001Sensitive authentication" +
+      " credentials including access tokens, re" +
+      "fresh tokens, and scopes. Contains eithe" +
+      "r OAuth tokens or static auth details.R\024" +
+      "authorizationDetails\022\316\001\n\020token_expires_a" +
+      "t\030\006 \001(\0132\032.google.protobuf.TimestampB\207\001\222A" +
+      "\203\0012iExpiration timestamp for the access " +
+      "token. After this time, the token must b" +
+      "e refreshed or re-authorized.J\026\"2024-12-" +
+      "31T23:59:59Z\"R\016tokenExpiresAt\022\311\001\n\nupdate" +
+      "d_at\030\007 \001(\0132\032.google.protobuf.TimestampB\215" +
+      "\001\222A\211\0012oTimestamp when this connected acc" +
+      "ount was last modified. Updated whenever" +
+      " credentials or configuration changes.J\026" +
+      "\"2024-03-20T15:04:05Z\"R\tupdatedAt\022\256\001\n\tco" +
+      "nnector\030\010 \001(\tB\217\001\222A\213\0012\177Connector identifi" +
+      "er (e.g., \'notion\', \'slack\', \'salesforce" +
+      "\'). Indicates which third-party applicat" +
+      "ion this account connects to.J\010\"notion\"R" +
+      "\tconnector\022\315\001\n\014last_used_at\030\t \001(\0132\032.goog" +
+      "le.protobuf.TimestampB\216\001\222A\212\0012pTimestamp " +
+      "when this connected account was last use" +
+      "d to make an API call. Useful for tracki" +
+      "ng active connections.J\026\"2024-03-20T14:3" +
+      "0:00Z\"R\nlastUsedAt\022\230\001\n\002id\030\n \001(\tB\207\001\222Av2\\U" +
+      "nique Scalekit-generated identifier for " +
+      "this connected account. Always prefixed " +
+      "with \'ca_\'.J\026\"ca_24834495392086178\"\272H\013r\t" +
+      "\020\000\030 :\003ca_R\002id\022\306\001\n\rconnection_id\030\013 \001(\tB\240\001" +
+      "\222A\223\0012wReference to the parent connection" +
+      " configuration. Links this account to a " +
+      "specific connector setup in your environ" +
+      "ment.J\030\"conn_24834495392086178\"\272H\006r\004\020\000\030 " +
+      "R\014connectionId\022\211\002\n\napi_config\030\014 \001(\0132\027.go" +
+      "ogle.protobuf.StructB\320\001\222A\314\0012xOptional JS" +
+      "ON configuration for connector-specific " +
+      "API settings such as rate limits, custom" +
+      " endpoints, or feature flags.JP{\"rate_li" +
+      "mit\": 1000, \"timeout\": 30, \"base_url\": \"" +
+      "https://api.custom-domain.com\"}R\tapiConf" +
+      "ig\"\232\006\n\026CreateConnectedAccount\022\256\003\n\025author" +
+      "ization_details\030\005 \001(\01324.scalekit.v1.conn" +
+      "ected_accounts.AuthorizationDetailsB\302\002\222A" +
+      "\276\0022\315\001Optional authentication credentials" +
+      " for the connected account. Include OAut" +
+      "h tokens (access_token, refresh_token, s" +
+      "copes) or static auth details (API keys," +
+      " bearer tokens). Can be provided later v" +
+      "ia update.Jl{\"oauth_token\": {\"access_tok" +
+      "en\": \"ya29.a0...\", \"refresh_token\": \"1//" +
+      "0g...\", \"scopes\": [\"email\", \"profile\"]}}" +
+      "R\024authorizationDetails\022\230\002\n\napi_config\030\013 " +
+      "\001(\0132\027.google.protobuf.StructB\337\001\222A\333\0012\206\001Op" +
+      "tional JSON configuration for connector-" +
+      "specific API settings such as rate limit" +
+      "s, custom API endpoints, timeouts, or fe" +
+      "ature flags.JP{\"rate_limit\": 1000, \"time" +
+      "out\": 30, \"base_url\": \"https://api.custo" +
+      "m-domain.com\"}R\tapiConfigJ\004\010\001\020\002J\004\010\002\020\003J\004\010" +
+      "\003\020\004J\004\010\004\020\005J\004\010\006\020\007J\004\010\007\020\010J\004\010\010\020\tJ\004\010\t\020\nJ\004\010\n\020\013\"" +
+      "\274\005\n\026UpdateConnectedAccount\022\215\003\n\025authoriza" +
+      "tion_details\030\005 \001(\01324.scalekit.v1.connect" +
+      "ed_accounts.AuthorizationDetailsB\241\002\222A\235\0022" +
+      "\231\001Updated authentication credentials. Pr" +
+      "ovide new OAuth tokens (e.g., after refr" +
+      "esh) or updated static auth details. Onl" +
+      "y included fields will be modified.J\177{\"o" +
+      "auth_token\": {\"access_token\": \"ya29.new_" +
+      "token...\", \"refresh_token\": \"1//0g...\", " +
+      "\"scopes\": [\"email\", \"profile\", \"calendar" +
+      "\"]}}R\024authorizationDetails\022\341\001\n\napi_confi" +
+      "g\030\n \001(\0132\027.google.protobuf.StructB\250\001\222A\244\0012" +
+      "}Updated JSON configuration for API-spec" +
+      "ific settings. Merges with existing conf" +
+      "iguration - only provided fields are mod" +
+      "ified.J#{\"rate_limit\": 2000, \"timeout\": " +
+      "60}R\tapiConfigJ\004\010\001\020\002J\004\010\002\020\003J\004\010\003\020\004J\004\010\004\020\005J\004" +
+      "\010\006\020\007J\004\010\007\020\010J\004\010\010\020\tJ\004\010\t\020\n\"\340\010\n\027ConnectedAcco" +
+      "untForList\022{\n\nidentifier\030\001 \001(\tB[\222AX2BThe" +
+      " unique identifier for this account in t" +
+      "he third-party service.J\022\"user@example.c" +
+      "om\"R\nidentifier\022]\n\010provider\030\002 \001(\tBA\222A>22" +
+      "OAuth provider name (e.g., \'google\', \'mi" +
+      "crosoft\').J\010\"google\"R\010provider\022h\n\006status" +
+      "\030\003 \001(\0162/.scalekit.v1.connected_accounts." +
+      "ConnectorStatusB\037\222A\0342\032Current connection" +
+      " status.R\006status\022\200\001\n\022authorization_type\030" +
+      "\004 \001(\0162-.scalekit.v1.connected_accounts.C" +
+      "onnectorTypeB\"\222A\0372\035Authorization mechani" +
+      "sm type.R\021authorizationType\022~\n\020token_exp" +
+      "ires_at\030\006 \001(\0132\032.google.protobuf.Timestam" +
+      "pB8\222A52\033Token expiration timestamp.J\026\"20" +
+      "24-12-31T23:59:59Z\"R\016tokenExpiresAt\022t\n\nu" +
+      "pdated_at\030\007 \001(\0132\032.google.protobuf.Timest" +
+      "ampB9\222A62\034Last modification timestamp.J\026" +
+      "\"2024-03-20T15:04:05Z\"R\tupdatedAt\022B\n\tcon" +
+      "nector\030\010 \001(\tB$\222A!2\025Connector identifier." +
+      "J\010\"notion\"R\tconnector\022p\n\014last_used_at\030\t " +
+      "\001(\0132\032.google.protobuf.TimestampB2\222A/2\025La" +
+      "st usage timestamp.J\026\"2024-03-20T14:30:0" +
+      "0Z\"R\nlastUsedAt\022Q\n\002id\030\n \001(\tBA\222A>2$Unique" +
+      " connected account identifier.J\026\"ca_2483" +
+      "4495392086178\"R\002id\022w\n\rconnection_id\030\013 \001(" +
+      "\tBR\222AF2*Parent connection configuration " +
+      "reference.J\030\"conn_24834495392086178\"\272H\006r" +
+      "\004\020\000\030 R\014connectionIdJ\004\010\005\020\006\"\277\001\n\024Authorizat" +
+      "ionDetails\022M\n\013oauth_token\030\001 \001(\0132*.scalek" +
+      "it.v1.connected_accounts.OauthTokenH\000R\no" +
+      "authToken\022M\n\013static_auth\030\002 \001(\0132*.scaleki" +
+      "t.v1.connected_accounts.StaticAuthH\000R\nst" +
+      "aticAuthB\t\n\007details\"\334\005\n\nOauthToken\022\240\001\n\014a" +
+      "ccess_token\030\001 \001(\tB}\222Az2bOAuth access tok" +
+      "en for API requests. Typically short-liv",
+      "ed and must be refreshed after expiratio" +
+      "n.J\024\"ya29.a0AfH6SMBx...\"R\013accessToken\022\256\001" +
+      "\n\rrefresh_token\030\002 \001(\tB\210\001\222A\204\0012nOAuth refr" +
+      "esh token for obtaining new access token" +
+      "s. Long-lived and used to maintain persi" +
+      "stent authorization.J\022\"1//0gHJxZ-Lb2...\"" +
+      "R\014refreshToken\022\341\001\n\006scopes\030\003 \003(\tB\310\001\222A\304\0012\\" +
+      "List of granted OAuth scopes defining th" +
+      "e permissions and access levels for this" +
+      " connection.Jd[\"https://www.googleapis.c" +
+      "om/auth/drive.readonly\", \"https://www.go" +
+      "ogleapis.com/auth/userinfo.email\"]R\006scop" +
+      "es\022\225\001\n\006domain\030\004 \001(\tB}\222Az2iAssociated dom" +
+      "ain for workspace or organization-scoped" +
+      " OAuth connections (e.g., Google Workspa" +
+      "ce domain).J\r\"example.com\"R\006domain\"\364\001\n\nS" +
+      "taticAuth\022\345\001\n\007details\030\001 \001(\0132\027.google.pro" +
+      "tobuf.StructB\261\001\222A\255\0012zFlexible JSON struc" +
+      "ture containing static credentials. Form" +
+      "at varies by connector type (API key, us" +
+      "ername/password, etc.).J/{\"api_key\": \"sk" +
+      "_live_...\", \"api_secret\": \"...\"}R\007detail" +
+      "s\"\203\002\n\032GetConnectedAccountRequest\022\344\001\n\002id\030" +
+      "\001 \001(\tB\323\001\222A\306\0012\253\001Unique identifier for the" +
+      " connected account. Always prefixed with" +
+      " \'ca_\'. If omitted (via the /this path)," +
+      " the connected account is resolved from " +
+      "the current token context.J\026\"ca_24834495" +
+      "392086178\"\272H\006r\004\020\000\030 R\002id\"\305\001\n\033GetConnected" +
+      "AccountResponse\022\245\001\n\021connected_account\030\001 " +
+      "\001(\01320.scalekit.v1.connected_accounts.Con" +
+      "nectedAccountBF\222AC2AThe connected accoun" +
+      "t with its details and authentication st" +
+      "atus.R\020connectedAccount\"\262\001\n!DisconnectCo" +
+      "nnectedAccountRequest\022\214\001\n\002id\030\001 \001(\tB|\222Ap2" +
+      "VUnique identifier for the connected acc" +
+      "ount to disconnect. Always prefixed with" +
+      " \'ca_\'.J\026\"ca_24834495392086178\"\272H\006r\004\020\000\030 " +
+      "R\002id\"\306\001\n\"DisconnectConnectedAccountRespo" +
+      "nse\022\237\001\n\021connected_account\030\001 \001(\01320.scalek" +
+      "it.v1.connected_accounts.ConnectedAccoun" +
+      "tB@\222A=2;The connected account with its u" +
+      "pdated DISCONNECTED status.R\020connectedAc" +
+      "count*\213\001\n\017ConnectorStatus\022!\n\035CONNECTION_" +
+      "STATUS_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\013\n\007EXPI" +
+      "RED\020\002\022\020\n\014PENDING_AUTH\020\003\022\030\n\024PENDING_VERIF" +
+      "ICATION\020\004\022\020\n\014DISCONNECTED\020\005*\243\001\n\rConnecto" +
+      "rType\022\037\n\033CONNECTION_TYPE_UNSPECIFIED\020\000\022\t" +
+      "\n\005OAUTH\020\001\022\013\n\007API_KEY\020\002\022\016\n\nBASIC_AUTH\020\003\022\020" +
+      "\n\014BEARER_TOKEN\020\004\022\n\n\006CUSTOM\020\005\022\t\n\005BASIC\020\006\022" +
+      "\r\n\tOAUTH_M2M\020\007\022\021\n\rTRELLO_OAUTH1\020\0102\370N\n\027Co" +
+      "nnectedAccountService\022\336\006\n\025ListConnectedA" +
+      "ccounts\022<.scalekit.v1.connected_accounts" +
+      ".ListConnectedAccountsRequest\032=.scalekit" +
+      ".v1.connected_accounts.ListConnectedAcco" +
+      "untsResponse\"\307\005\222A\233\005\n\022Connected Accounts\022" +
+      "\027List connected accounts\032\232\002Retrieves a p" +
+      "aginated list of connected accounts for " +
+      "third-party integrations. Filter by orga" +
+      "nization, user, connector type, provider" +
+      ", or identifier. Returns OAuth tokens, A" +
+      "PI keys, and connection status for each " +
+      "account. Use pagination tokens to naviga" +
+      "te through large result sets.J\257\001\n\003200\022\247\001" +
+      "\nbSuccessfully retrieved the list of con" +
+      "nected accounts with their authenticatio" +
+      "n details and status\022A\n?\032=.scalekit.v1.c" +
+      "onnected_accounts.ListConnectedAccountsR" +
+      "esponseJY\n\003400\022R\nPInvalid request - occu" +
+      "rs when query parameters are malformed o" +
+      "r validation failsJB\n\003401\022;\n9Authenticat" +
       "ion required - missing or invalid access" +
-      " token\202\265\030\002\030D\202\323\344\223\002*\"%/api/v1/connected_ac" +
-      "counts/magic_link:\001*\022\266\007\n\027GetConnectedAcc" +
-      "ountAuth\022F.scalekit.v1.connected_account" +
-      "s.GetConnectedAccountByIdentifierRequest" +
-      "\032G.scalekit.v1.connected_accounts.GetCon" +
-      "nectedAccountByIdentifierResponse\"\211\006\222A\330\005" +
-      "\n\022Connected Accounts\022\035Get connected acco" +
-      "unt details\032\253\002Retrieves complete authent" +
-      "ication details for a connected account " +
-      "including OAuth tokens, refresh tokens, " +
-      "scopes, and API configuration. Query by " +
-      "account ID or by combination of organiza" +
-      "tion/user, connector, and identifier. Re" +
-      "turns sensitive credential information -" +
-      " use appropriate access controls.J\240\001\n\00320" +
-      "0\022\230\001\nISuccessfully retrieved connected a" +
-      "ccount with full authentication details\022" +
-      "K\nI\032G.scalekit.v1.connected_accounts.Get" +
-      "ConnectedAccountByIdentifierResponseJ<\n\003" +
-      "400\0225\n3Invalid request - missing require" +
-      "d query parametersJB\n\003401\022;\n9Authenticat" +
-      "ion required - missing or invalid access" +
-      " tokenJP\n\003404\022I\nGConnected account not f" +
-      "ound - no account matches the specified " +
-      "criteria\202\265\030\002\030D\202\323\344\223\002!\022\037/api/v1/connected_" +
-      "accounts/auth\032\343\001\222A\337\001\n\022Connected Accounts" +
-      "\022\310\001Manage connected accounts for third-p" +
-      "arty integrations and OAuth connections." +
-      " Connected accounts represent authentica" +
-      "ted access to external services like Goo" +
-      "gle, Notion, Slack, and other applicatio" +
-      "ns.B\204\004\n0com.scalekit.grpc.scalekit.v1.co" +
-      "nnected_accountsB\026ConnectedAccountsProto" +
-      "P\001Z<github.com/scalekit-inc/scalekit/pkg" +
-      "/grpc/connected_accounts\242\002\003SVC\252\002\035Scaleki" +
-      "t.V1.ConnectedAccounts\312\002\035Scalekit\\V1\\Con" +
-      "nectedAccounts\342\002)Scalekit\\V1\\ConnectedAc" +
-      "counts\\GPBMetadata\352\002\037Scalekit::V1::Conne" +
-      "ctedAccounts\222A\342\001j\337\001\n\022Connected Accounts\022" +
-      "\310\001Manage connected accounts for third-pa" +
-      "rty integrations and OAuth connections. " +
-      "Connected accounts represent authenticat" +
-      "ed access to external services like Goog" +
-      "le, Notion, Slack, and other application" +
-      "s.b\006proto3"
+      " token\202\265\030\002\030D\202\323\344\223\002\034\022\032/api/v1/connected_ac" +
+      "counts\022\340\006\n\027SearchConnectedAccounts\022>.sca" +
+      "lekit.v1.connected_accounts.SearchConnec" +
+      "tedAccountsRequest\032?.scalekit.v1.connect" +
+      "ed_accounts.SearchConnectedAccountsRespo" +
+      "nse\"\303\005\222A\220\005\n\022Connected Accounts\022\031Search c" +
+      "onnected accounts\032\231\002Search for connected" +
+      " accounts in your environment using a te" +
+      "xt query that matches against identifier" +
+      "s, providers, or connectors. The search " +
+      "performs case-insensitive matching acros" +
+      "s account details. Returns paginated res" +
+      "ults with account status and authenticat" +
+      "ion type information.J\231\001\n\003200\022\221\001\nJSucces" +
+      "sfully retrieved matching connected acco" +
+      "unts with pagination support\022C\nA\032?.scale" +
+      "kit.v1.connected_accounts.SearchConnecte" +
+      "dAccountsResponseJc\n\003400\022\\\nZInvalid requ" +
+      "est - query parameter is too short (mini" +
+      "mum 3 characters) or validation failedJB" +
+      "\n\003401\022;\n9Authentication required - missi" +
+      "ng or invalid access token\202\265\030\002\030D\202\323\344\223\002#\022!" +
+      "/api/v1/connected_accounts:search\022\376\007\n\026Cr" +
+      "eateConnectedAccount\022=.scalekit.v1.conne" +
+      "cted_accounts.CreateConnectedAccountRequ" +
+      "est\032>.scalekit.v1.connected_accounts.Cre" +
+      "ateConnectedAccountResponse\"\344\006\222A\265\006\n\022Conn" +
+      "ected Accounts\022\032Create a connected accou" +
+      "nt\032\337\002Creates a new connected account wit" +
+      "h OAuth tokens or API credentials for th" +
+      "ird-party service integration. Supply au" +
+      "thorization details including access tok" +
+      "ens, refresh tokens, scopes, and optiona" +
+      "l API configuration. The account can be " +
+      "scoped to an organization or user. Retur" +
+      "ns the created account with its unique i" +
+      "dentifier and authentication status.J\244\001\n" +
+      "\003201\022\234\001\nVConnected account created succe" +
+      "ssfully with authentication credentials " +
+      "stored securely\022B\n@\032>.scalekit.v1.connec" +
+      "ted_accounts.CreateConnectedAccountRespo" +
+      "nseJg\n\003400\022`\n^Invalid request - missing " +
+      "required fields, invalid authorization d" +
+      "etails, or validation failedJB\n\003401\022;\n9A" +
+      "uthentication required - missing or inva" +
+      "lid access tokenJM\n\003409\022F\nDConflict - co" +
+      "nnected account with the same identifier" +
+      " already exists\202\265\030\002\030D\202\323\344\223\002\037\"\032/api/v1/con" +
+      "nected_accounts:\001*\022\360\007\n\026UpdateConnectedAc" +
+      "count\022=.scalekit.v1.connected_accounts.U" +
+      "pdateConnectedAccountRequest\032>.scalekit." +
+      "v1.connected_accounts.UpdateConnectedAcc" +
+      "ountResponse\"\326\006\222A\246\006\n\022Connected Accounts\022" +
+      "$Update connected account credentials\032\322\002" +
+      "Updates authentication credentials and c" +
+      "onfiguration for an existing connected a" +
+      "ccount. Modify OAuth tokens, refresh tok" +
+      "ens, access scopes, or API configuration" +
+      " settings. Specify the account by ID, or" +
+      " by combination of organization/user, co" +
+      "nnector, and identifier. Returns the upd" +
+      "ated account with new token expiry and s" +
+      "tatus information.J\232\001\n\003200\022\222\001\nLConnected" +
+      " account updated successfully with new c" +
+      "redentials or configuration\022B\n@\032>.scalek" +
+      "it.v1.connected_accounts.UpdateConnected" +
+      "AccountResponseJg\n\003400\022`\n^Invalid reques" +
+      "t - missing required fields, invalid aut" +
+      "horization details, or validation failed" +
+      "JB\n\003401\022;\n9Authentication required - mis" +
+      "sing or invalid access tokenJK\n\003404\022D\nBC" +
+      "onnected account not found - the specifi" +
+      "ed account does not exist\202\265\030\003\030\304\001\202\323\344\223\002\037\032\032" +
+      "/api/v1/connected_accounts:\001*\022\306\006\n\026Delete" +
+      "ConnectedAccount\022=.scalekit.v1.connected" +
+      "_accounts.DeleteConnectedAccountRequest\032" +
+      ">.scalekit.v1.connected_accounts.DeleteC" +
+      "onnectedAccountResponse\"\254\005\222A\366\004\n\022Connecte" +
+      "d Accounts\022\032Delete a connected account\032\237" +
+      "\002Permanently removes a connected account" +
+      " and revokes all associated authenticati" +
+      "on credentials. Identify the account by " +
+      "ID, or by combination of organization/us" +
+      "er, connector, and identifier. This acti" +
+      "on cannot be undone. All OAuth tokens an" +
+      "d API keys for this account will be inva" +
+      "lidated.JK\n\003200\022D\nBConnected account del" +
+      "eted successfully and all credentials re" +
+      "vokedJD\n\003400\022=\n;Invalid request - malfor" +
+      "med parameters or validation failedJB\n\0034" +
+      "01\022;\n9Authentication required - missing " +
+      "or invalid access tokenJK\n\003404\022D\nBConnec" +
+      "ted account not found - the specified ac" +
+      "count does not exist\202\265\030\002\030D\202\323\344\223\002&\"!/api/v" +
+      "1/connected_accounts:delete:\001*\022\377\006\n\037GetMa" +
+      "gicLinkForConnectedAccount\022F.scalekit.v1" +
+      ".connected_accounts.GetMagicLinkForConne" +
+      "ctedAccountRequest\032G.scalekit.v1.connect" +
+      "ed_accounts.GetMagicLinkForConnectedAcco" +
+      "untResponse\"\312\005\222A\220\005\n\022Connected Accounts\022\"" +
+      "Generate authentication magic link\032\242\002Cre" +
+      "ates a time-limited magic link for conne" +
+      "cting or re-authorizing a third-party ac" +
+      "count. The link directs users to the OAu" +
+      "th authorization flow for the specified " +
+      "connector. Returns the generated link UR" +
+      "L and expiration timestamp. Links typica" +
+      "lly expire after a short duration for se" +
+      "curity.J\237\001\n\003200\022\227\001\nHMagic link generated" +
+      " successfully with authorization URL and" +
+      " expiry time\022K\nI\032G.scalekit.v1.connected" +
+      "_accounts.GetMagicLinkForConnectedAccoun" +
+      "tResponseJK\n\003400\022D\nBInvalid request - mi" +
+      "ssing required parameters or invalid con" +
+      "nectorJB\n\003401\022;\n9Authentication required" +
+      " - missing or invalid access token\202\265\030\002\030D" +
+      "\202\323\344\223\002*\"%/api/v1/connected_accounts/magic" +
+      "_link:\001*\022\366\005\n\023GetConnectedAccount\022:.scale" +
+      "kit.v1.connected_accounts.GetConnectedAc" +
+      "countRequest\032;.scalekit.v1.connected_acc" +
+      "ounts.GetConnectedAccountResponse\"\345\004\222A\220\004" +
+      "\n\022Connected Accounts\022\027Get a connected ac" +
+      "count\032\270\001Retrieves a connected account by" +
+      " its unique ID. Use the path \'/this\' (e." +
+      "g. /api/v1/connected_accounts/this) to r" +
+      "etrieve the connected account associated" +
+      " with the current token context.Jv\n\003200\022" +
+      "o\n,Successfully retrieved the connected " +
+      "account\022?\n=\032;.scalekit.v1.connected_acco" +
+      "unts.GetConnectedAccountResponseJD\n\003400\022" +
+      "=\n;Invalid request - missing or malforme" +
+      "d connected account IDJB\n\003401\022;\n9Authent" +
+      "ication required - missing or invalid ac" +
+      "cess tokenJ$\n\003404\022\035\n\033Connected account n" +
+      "ot found\202\265\030\003\030\304\001\202\323\344\223\002D\022\037/api/v1/connected" +
+      "_accounts/thisZ!\022\037/api/v1/connected_acco" +
+      "unts/{id}\022\206\006\n\032DisconnectConnectedAccount" +
+      "\022A.scalekit.v1.connected_accounts.Discon" +
+      "nectConnectedAccountRequest\032B.scalekit.v" +
+      "1.connected_accounts.DisconnectConnected" +
+      "AccountResponse\"\340\004\222A\362\003\n\022Connected Accoun" +
+      "ts\022\036Disconnect a connected account\032\210\001Dis" +
+      "connects a connected account by setting " +
+      "its status to DISCONNECTED. The account " +
+      "record is retained but is marked as no l" +
+      "onger active.J\200\001\n\003200\022y\n/Successfully di" +
+      "sconnected the connected account\022F\nD\032B.s" +
+      "calekit.v1.connected_accounts.Disconnect" +
+      "ConnectedAccountResponseJD\n\003400\022=\n;Inval" +
+      "id request - missing or malformed connec" +
+      "ted account IDJB\n\003401\022;\n9Authentication " +
+      "required - missing or invalid access tok" +
+      "enJ$\n\003404\022\035\n\033Connected account not found" +
+      "\202\265\030\003\030\304\001\202\323\344\223\002]\"*/api/v1/connected_account" +
+      "s/{id}:disconnect:\001*Z,\"\'/api/v1/connecte" +
+      "d_accounts/-:disconnect:\001*\022\266\007\n\027GetConnec" +
+      "tedAccountAuth\022F.scalekit.v1.connected_a" +
+      "ccounts.GetConnectedAccountByIdentifierR" +
+      "equest\032G.scalekit.v1.connected_accounts." +
+      "GetConnectedAccountByIdentifierResponse\"" +
+      "\211\006\222A\330\005\n\022Connected Accounts\022\035Get connecte" +
+      "d account details\032\253\002Retrieves complete a" +
+      "uthentication details for a connected ac" +
+      "count including OAuth tokens, refresh to" +
+      "kens, scopes, and API configuration. Que" +
+      "ry by account ID or by combination of or" +
+      "ganization/user, connector, and identifi" +
+      "er. Returns sensitive credential informa" +
+      "tion - use appropriate access controls.J" +
+      "\240\001\n\003200\022\230\001\nISuccessfully retrieved conne" +
+      "cted account with full authentication de" +
+      "tails\022K\nI\032G.scalekit.v1.connected_accoun" +
+      "ts.GetConnectedAccountByIdentifierRespon" +
+      "seJ<\n\003400\0225\n3Invalid request - missing r" +
+      "equired query parametersJB\n\003401\022;\n9Authe" +
+      "ntication required - missing or invalid " +
+      "access tokenJP\n\003404\022I\nGConnected account" +
+      " not found - no account matches the spec" +
+      "ified criteria\202\265\030\002\030D\202\323\344\223\002!\022\037/api/v1/conn" +
+      "ected_accounts/auth\022\372\006\n\032GetConnectedAcco" +
+      "untDetails\022F.scalekit.v1.connected_accou" +
+      "nts.GetConnectedAccountByIdentifierReque" +
+      "st\032G.scalekit.v1.connected_accounts.GetC" +
+      "onnectedAccountByIdentifierResponse\"\312\005\222A" +
+      "\226\005\n\022Connected Accounts\022\035Get connected ac" +
+      "count details\032\203\002Returns metadata for a c" +
+      "onnected account including status, conne" +
+      "ctor type, provider, and configuration w" +
+      "ithout exposing stored authorization cre" +
+      "dentials. Look up by account ID, or by a" +
+      " combination of organization (or user), " +
+      "connector, and external identifier.J\206\001\n\003" +
+      "200\022\177\n0Successfully retrieved connected " +
+      "account details\022K\nI\032G.scalekit.v1.connec" +
+      "ted_accounts.GetConnectedAccountByIdenti" +
+      "fierResponseJ<\n\003400\0225\n3Invalid request -" +
+      " missing required query parametersJB\n\00340" +
+      "1\022;\n9Authentication required - missing o" +
+      "r invalid access tokenJP\n\003404\022I\nGConnect" +
+      "ed account not found - no account matche" +
+      "s the specified criteria\202\265\030\002\030D\202\323\344\223\002$\022\"/a" +
+      "pi/v1/connected_accounts/details\022\273\007\n\032Ver" +
+      "ifyConnectedAccountUser\022A.scalekit.v1.co" +
+      "nnected_accounts.VerifyConnectedAccountU" +
+      "serRequest\032B.scalekit.v1.connected_accou" +
+      "nts.VerifyConnectedAccountUserResponse\"\225" +
+      "\006\222A\332\005\n\022Connected Accounts\022\035Verify connec" +
+      "ted account user\032\244\002Confirms the user ass" +
+      "ertion and activates the connected accou" +
+      "nt after the user completes third-party " +
+      "OAuth. Called by the B2B app server with" +
+      " auth_request_id and identifier. Validat" +
+      "es that the asserted identifier matches " +
+      "the one stored on the auth request and p" +
+      "romotes pending tokens to live.J\212\001\n\003200\022" +
+      "\202\001\n8Verification successful; connected a" +
+      "ccount is now ACTIVE\022F\nD\032B.scalekit.v1.c" +
+      "onnected_accounts.VerifyConnectedAccount" +
+      "UserResponseJ6\n\003400\022/\n-Invalid request -" +
+      " missing or malformed fieldsJ7\n\003401\0220\n.U" +
+      "nauthorized - invalid or missing access " +
+      "tokenJ(\n\003403\022!\n\037Forbidden - identifier m" +
+      "ismatchJV\n\003404\022O\nMNot found - no pending" +
+      " flow for the given auth_request_id or a" +
+      "lready consumed\202\265\030\002\030D\202\323\344\223\002+\"&/api/v1/con" +
+      "nected_accounts/user/verify:\001*\032\343\001\222A\337\001\n\022C" +
+      "onnected Accounts\022\310\001Manage connected acc" +
+      "ounts for third-party integrations and O" +
+      "Auth connections. Connected accounts rep" +
+      "resent authenticated access to external " +
+      "services like Google, Notion, Slack, and" +
+      " other applications.B\204\004\n0com.scalekit.gr" +
+      "pc.scalekit.v1.connected_accountsB\026Conne" +
+      "ctedAccountsProtoP\001Z<github.com/scalekit" +
+      "-inc/scalekit/pkg/grpc/connected_account" +
+      "s\242\002\003SVC\252\002\035Scalekit.V1.ConnectedAccounts\312" +
+      "\002\035Scalekit\\V1\\ConnectedAccounts\342\002)Scalek" +
+      "it\\V1\\ConnectedAccounts\\GPBMetadata\352\002\037Sc" +
+      "alekit::V1::ConnectedAccounts\222A\342\001j\337\001\n\022Co" +
+      "nnected Accounts\022\310\001Manage connected acco" +
+      "unts for third-party integrations and OA" +
+      "uth connections. Connected accounts repr" +
+      "esent authenticated access to external s" +
+      "ervices like Google, Notion, Slack, and " +
+      "other applications.b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -790,70 +954,107 @@ public final class ConnectedAccountsProto {
     internal_static_scalekit_v1_connected_accounts_GetMagicLinkForConnectedAccountRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_connected_accounts_GetMagicLinkForConnectedAccountRequest_descriptor,
-        new java.lang.String[] { "OrganizationId", "UserId", "Connector", "Identifier", "Id", });
+        new java.lang.String[] { "OrganizationId", "UserId", "Connector", "Identifier", "Id", "State", "UserVerifyUrl", });
     internal_static_scalekit_v1_connected_accounts_GetMagicLinkForConnectedAccountResponse_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_scalekit_v1_connected_accounts_GetMagicLinkForConnectedAccountResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_connected_accounts_GetMagicLinkForConnectedAccountResponse_descriptor,
         new java.lang.String[] { "Link", "Expiry", });
-    internal_static_scalekit_v1_connected_accounts_GetConnectedAccountByIdentifierRequest_descriptor =
+    internal_static_scalekit_v1_connected_accounts_VerifyConnectedAccountUserRequest_descriptor =
       getDescriptor().getMessageTypes().get(12);
+    internal_static_scalekit_v1_connected_accounts_VerifyConnectedAccountUserRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_connected_accounts_VerifyConnectedAccountUserRequest_descriptor,
+        new java.lang.String[] { "AuthRequestId", "Identifier", });
+    internal_static_scalekit_v1_connected_accounts_VerifyConnectedAccountUserResponse_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_scalekit_v1_connected_accounts_VerifyConnectedAccountUserResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_connected_accounts_VerifyConnectedAccountUserResponse_descriptor,
+        new java.lang.String[] { "PostUserVerifyRedirectUrl", });
+    internal_static_scalekit_v1_connected_accounts_GetConnectedAccountByIdentifierRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
     internal_static_scalekit_v1_connected_accounts_GetConnectedAccountByIdentifierRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_connected_accounts_GetConnectedAccountByIdentifierRequest_descriptor,
         new java.lang.String[] { "OrganizationId", "UserId", "Connector", "Identifier", "Id", });
     internal_static_scalekit_v1_connected_accounts_GetConnectedAccountByIdentifierResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_scalekit_v1_connected_accounts_GetConnectedAccountByIdentifierResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_connected_accounts_GetConnectedAccountByIdentifierResponse_descriptor,
         new java.lang.String[] { "ConnectedAccount", });
     internal_static_scalekit_v1_connected_accounts_ConnectedAccount_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_scalekit_v1_connected_accounts_ConnectedAccount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_connected_accounts_ConnectedAccount_descriptor,
         new java.lang.String[] { "Identifier", "Provider", "Status", "AuthorizationType", "AuthorizationDetails", "TokenExpiresAt", "UpdatedAt", "Connector", "LastUsedAt", "Id", "ConnectionId", "ApiConfig", });
     internal_static_scalekit_v1_connected_accounts_CreateConnectedAccount_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_scalekit_v1_connected_accounts_CreateConnectedAccount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_connected_accounts_CreateConnectedAccount_descriptor,
         new java.lang.String[] { "AuthorizationDetails", "ApiConfig", });
     internal_static_scalekit_v1_connected_accounts_UpdateConnectedAccount_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_scalekit_v1_connected_accounts_UpdateConnectedAccount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_connected_accounts_UpdateConnectedAccount_descriptor,
         new java.lang.String[] { "AuthorizationDetails", "ApiConfig", });
     internal_static_scalekit_v1_connected_accounts_ConnectedAccountForList_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_scalekit_v1_connected_accounts_ConnectedAccountForList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_connected_accounts_ConnectedAccountForList_descriptor,
         new java.lang.String[] { "Identifier", "Provider", "Status", "AuthorizationType", "TokenExpiresAt", "UpdatedAt", "Connector", "LastUsedAt", "Id", "ConnectionId", });
     internal_static_scalekit_v1_connected_accounts_AuthorizationDetails_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_scalekit_v1_connected_accounts_AuthorizationDetails_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_connected_accounts_AuthorizationDetails_descriptor,
         new java.lang.String[] { "OauthToken", "StaticAuth", "Details", });
     internal_static_scalekit_v1_connected_accounts_OauthToken_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_scalekit_v1_connected_accounts_OauthToken_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_connected_accounts_OauthToken_descriptor,
         new java.lang.String[] { "AccessToken", "RefreshToken", "Scopes", "Domain", });
     internal_static_scalekit_v1_connected_accounts_StaticAuth_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_scalekit_v1_connected_accounts_StaticAuth_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_connected_accounts_StaticAuth_descriptor,
         new java.lang.String[] { "Details", });
+    internal_static_scalekit_v1_connected_accounts_GetConnectedAccountRequest_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_scalekit_v1_connected_accounts_GetConnectedAccountRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_connected_accounts_GetConnectedAccountRequest_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_scalekit_v1_connected_accounts_GetConnectedAccountResponse_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_scalekit_v1_connected_accounts_GetConnectedAccountResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_connected_accounts_GetConnectedAccountResponse_descriptor,
+        new java.lang.String[] { "ConnectedAccount", });
+    internal_static_scalekit_v1_connected_accounts_DisconnectConnectedAccountRequest_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_scalekit_v1_connected_accounts_DisconnectConnectedAccountRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_connected_accounts_DisconnectConnectedAccountRequest_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_scalekit_v1_connected_accounts_DisconnectConnectedAccountResponse_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_scalekit_v1_connected_accounts_DisconnectConnectedAccountResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_connected_accounts_DisconnectConnectedAccountResponse_descriptor,
+        new java.lang.String[] { "ConnectedAccount", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);
+    registry.add(com.scalekit.grpc.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);

@@ -1,8 +1,9 @@
 # Usage:
-#   make setup     # Install tooling and prefetch Maven dependencies locally
-#   make generate  # Regenerate SDK code from proto sources
-#   make lint      # Run static checks
-#   make test      # Run unit tests
+#   make setup           # Install tooling and prefetch Maven dependencies locally
+#   make generate        # Regenerate SDK code from proto sources
+#   make generate-local  # Regenerate SDK code from local ../scalekit/proto
+#   make lint            # Run static checks
+#   make test            # Run unit tests
 
 SHELL := /bin/bash
 
@@ -14,15 +15,17 @@ MVN_CMD := $(MVN) $(MVN_FLAGS)
 BUF := PATH="$(TOOLS_BIN):$$PATH" buf
 
 PROTO_REPO_URL := https://github.com/scalekit-inc/scalekit.git
-PROTO_REF := v0.1.103
+PROTO_REF := v0.1.120.2
 PROTO_SUBDIR := proto
 PROTO_REMOTE_INPUT := $(PROTO_REPO_URL)\#ref=$(PROTO_REF),subdir=$(PROTO_SUBDIR)
 BUF_GENERATE_FLAGS := --include-imports
 
+PROTO_LOCAL_INPUT := ../scalekit
+
 PROTO_OUT := .artifacts
 JAVA_PKG := src/main/java/com/scalekit/grpc
 
-.PHONY: setup tools-check generate lint test verify-generate
+.PHONY: setup tools-check generate generate-local lint test verify-generate
 
 setup:
 	@mkdir -p "$(TOOLS_BIN)" "$(MAVEN_REPO_LOCAL)"
@@ -40,6 +43,15 @@ generate: tools-check
 	rm -rf "$(PROTO_OUT)" "$(JAVA_PKG)"
 	@echo "generating grpc/protobuf code from $(PROTO_REMOTE_INPUT)"
 	$(BUF) generate "$(PROTO_REMOTE_INPUT)" --template buf.gen.yaml $(BUF_GENERATE_FLAGS)
+	@echo "copying generated java code to $(JAVA_PKG)"
+	mkdir -p "$(JAVA_PKG)"
+	cp -r "$(PROTO_OUT)"/com/scalekit/grpc/* "$(JAVA_PKG)"
+
+generate-local: tools-check
+	@echo "cleaning generated paths"
+	rm -rf "$(PROTO_OUT)" "$(JAVA_PKG)"
+	@echo "generating grpc/protobuf code from $(PROTO_LOCAL_INPUT)"
+	$(BUF) generate "$(PROTO_LOCAL_INPUT)" --template buf.gen.yaml $(BUF_GENERATE_FLAGS)
 	@echo "copying generated java code to $(JAVA_PKG)"
 	mkdir -p "$(JAVA_PKG)"
 	cp -r "$(PROTO_OUT)"/com/scalekit/grpc/* "$(JAVA_PKG)"
