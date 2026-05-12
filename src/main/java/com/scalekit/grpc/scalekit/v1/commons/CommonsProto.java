@@ -342,14 +342,12 @@ public final class CommonsProto {
       "\020\016\022\014\n\010SCALEKIT\020\017\022\010\n\004ADFS\020\020*`\n\022Authentica" +
       "tionMode\022#\n\037AUTHENTICATION_MODE_UNSPECIF" +
       "IED\020\000\022\020\n\014MODULAR_AUTH\020\001\022\023\n\017FULL_STACK_AU" +
-      "TH\020\002*O\n\010TimeUnit\022!\n\035SESSION_TIME_UNIT_UN" +
-      "SPECIFIED\020\000\022\013\n\007MINUTES\020\001\022\t\n\005HOURS\020\002\022\010\n\004D" +
-      "AYS\020\003B\326\001\n%com.scalekit.grpc.scalekit.v1." +
-      "commonsB\014CommonsProtoP\001Z1github.com/scal" +
-      "ekit-inc/scalekit/pkg/grpc/commons\242\002\003SVC" +
-      "\252\002\023Scalekit.V1.Commons\312\002\023Scalekit\\V1\\Com" +
-      "mons\342\002\037Scalekit\\V1\\Commons\\GPBMetadata\352\002" +
-      "\025Scalekit::V1::Commonsb\006proto3"
+      "TH\020\002B\326\001\n%com.scalekit.grpc.scalekit.v1.c" +
+      "ommonsB\014CommonsProtoP\001Z1github.com/scale" +
+      "kit-inc/scalekit/pkg/grpc/commons\242\002\003SVC\252" +
+      "\002\023Scalekit.V1.Commons\312\002\023Scalekit\\V1\\Comm" +
+      "ons\342\002\037Scalekit\\V1\\Commons\\GPBMetadata\352\002\025" +
+      "Scalekit::V1::Commonsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

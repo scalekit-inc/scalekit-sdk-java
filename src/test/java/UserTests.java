@@ -1,6 +1,7 @@
 import com.scalekit.ScalekitClient;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.organizations.CreateOrganization;
+import com.scalekit.grpc.scalekit.v1.organizations.ListOrganizationsResponse;
 import com.scalekit.grpc.scalekit.v1.organizations.Organization;
 import com.scalekit.grpc.scalekit.v1.users.*;
 import org.junit.jupiter.api.BeforeAll;
@@ -18,10 +19,17 @@ public class UserTests {
     static void init() {
         // Init client
         String environmentUrl = System.getenv("SCALEKIT_ENVIRONMENT_URL");
-        String  clientId = System.getenv("SCALEKIT_CLIENT_ID");
+        String clientId = System.getenv("SCALEKIT_CLIENT_ID");
         String apiSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
         testOrg = System.getenv("TEST_ORGANIZATION");
         client = new ScalekitClient(environmentUrl, clientId, apiSecret);
+
+        if (testOrg == null || testOrg.isEmpty()) {
+            ListOrganizationsResponse orgs = client.organizations().listOrganizations(1, "");
+            if (orgs.getOrganizationsCount() > 0) {
+                testOrg = orgs.getOrganizations(0).getId();
+            }
+        }
     }
 
     @Test
@@ -178,6 +186,93 @@ public class UserTests {
         client.organizations().deleteById(testOrgUser.getId());
 
 
+    }
+
+    @Test
+    public void testSearchUsers() {
+        // First get a user to use their email for search
+        ListUsersRequest listRequest = ListUsersRequest.newBuilder()
+                .setPageSize(1)
+                .build();
+        ListUsersResponse usersList = client.users().listUsers(listRequest);
+        assertNotNull(usersList);
+        assertTrue(usersList.getUsersCount() > 0);
+
+        String emailQuery = usersList.getUsers(0).getEmail();
+
+        // Search with a query that should return results
+        SearchUsersRequest searchRequest = SearchUsersRequest.newBuilder()
+                .setQuery(emailQuery)
+                .setPageSize(10)
+                .build();
+
+        SearchUsersResponse searchResponse = client.users().searchUsers(searchRequest);
+        assertNotNull(searchResponse);
+        assertTrue(searchResponse.getUsersCount() > 0);
+        assertTrue(searchResponse.getTotalSize() > 0);
+
+        // Verify the matched user email contains the query
+        boolean found = searchResponse.getUsersList().stream()
+                .anyMatch(u -> u.getEmail().equals(emailQuery));
+        assertTrue(found);
+
+        // Search with a query that should return no results
+        SearchUsersRequest emptyRequest = SearchUsersRequest.newBuilder()
+                .setQuery("no_match_xyz_" + System.currentTimeMillis() + "@nowhere.invalid")
+                .setPageSize(10)
+                .build();
+
+        SearchUsersResponse emptyResponse = client.users().searchUsers(emptyRequest);
+        assertNotNull(emptyResponse);
+        assertEquals(0, emptyResponse.getUsersCount());
+    }
+
+    @Test
+    public void testSearchOrganizationUsers() {
+        // Create a user in testOrg to search for
+        String userEmail = "search.test" + System.currentTimeMillis() + "@example.com";
+        CreateUser user = CreateUser.newBuilder()
+                .setEmail(userEmail)
+                .build();
+
+        CreateUserAndMembershipRequest createRequest = CreateUserAndMembershipRequest.newBuilder()
+                .setOrganizationId(testOrg)
+                .setSendInvitationEmail(false)
+                .setUser(user)
+                .build();
+
+        CreateUserAndMembershipResponse createdUser = client.users().createUserAndMembership(testOrg, createRequest);
+        assertNotNull(createdUser);
+        String userId = createdUser.getUser().getId();
+
+        try {
+            // Search by email within the org
+            SearchOrganizationUsersRequest searchRequest = SearchOrganizationUsersRequest.newBuilder()
+                    .setQuery(userEmail)
+                    .setPageSize(10)
+                    .build();
+
+            SearchOrganizationUsersResponse searchResponse = client.users().searchOrganizationUsers(testOrg, searchRequest);
+            assertNotNull(searchResponse);
+            assertTrue(searchResponse.getUsersCount() > 0);
+            assertTrue(searchResponse.getTotalSize() > 0);
+
+            boolean found = searchResponse.getUsersList().stream()
+                    .anyMatch(u -> u.getId().equals(userId));
+            assertTrue(found);
+
+            // Search with a query that should return no results
+            SearchOrganizationUsersRequest emptyRequest = SearchOrganizationUsersRequest.newBuilder()
+                    .setQuery("no_match_xyz_" + System.currentTimeMillis() + "@nowhere.invalid")
+                    .setPageSize(10)
+                    .build();
+
+            SearchOrganizationUsersResponse emptyResponse = client.users().searchOrganizationUsers(testOrg, emptyRequest);
+            assertNotNull(emptyResponse);
+            assertEquals(0, emptyResponse.getUsersCount());
+        } finally {
+            client.users().deleteUser(userId);
+        }
     }
 
     @Test

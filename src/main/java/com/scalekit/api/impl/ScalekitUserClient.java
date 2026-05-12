@@ -181,6 +181,37 @@ public class ScalekitUserClient implements UserClient {
     }
 
     /**
+     * Searches users across the environment
+     * @param request: The search users request containing the query and pagination options
+     * @return SearchUsersResponse: The response containing matching users and pagination info
+     */
+    @Override
+    public SearchUsersResponse searchUsers(SearchUsersRequest request) {
+        return RetryExecuter.executeWithRetry(() -> {
+            return userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .searchUsers(request);
+        }, this.credentials);
+    }
+
+    /**
+     * Searches users within the specified organization
+     * @param organizationId: The organization ID
+     * @param request: The search organization users request containing the query and pagination options
+     * @return SearchOrganizationUsersResponse: The response containing matching users and pagination info
+     */
+    @Override
+    public SearchOrganizationUsersResponse searchOrganizationUsers(String organizationId, SearchOrganizationUsersRequest request) {
+        return RetryExecuter.executeWithRetry(() -> {
+            return userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .searchOrganizationUsers(request.toBuilder()
+                            .setOrganizationId(organizationId)
+                            .build());
+        }, this.credentials);
+    }
+
+    /**
      * Resends an invitation email to a user who has a pending invitation
      * @param organizationId: The organization ID containing the pending invitation
      * @param userId: The ID of the user who has a pending invitation
