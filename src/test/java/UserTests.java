@@ -3,12 +3,15 @@ import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.organizations.CreateOrganization;
 import com.scalekit.grpc.scalekit.v1.organizations.ListOrganizationsResponse;
 import com.scalekit.grpc.scalekit.v1.organizations.Organization;
+import com.scalekit.grpc.scalekit.v1.roles.ListRolesResponse;
 import com.scalekit.grpc.scalekit.v1.users.*;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Slf4j
 public class UserTests {
 
     private static ScalekitClient client;
@@ -307,5 +310,60 @@ public class UserTests {
 
         // Cleanup
         client.users().deleteUser(userId);
+    }
+
+    @Test
+    public void testAssignAndRemoveUserRole() {
+        // Fetch available environment-level roles to find one we can assign
+        ListRolesResponse rolesResponse = client.roles().listRoles();
+        assertNotNull(rolesResponse);
+        if (rolesResponse.getRolesCount() == 0) {
+            log.warn("No roles available to test assignUserRoles/removeUserRole");
+            return;
+        }
+
+        String roleName = rolesResponse.getRoles(0).getName();
+        String roleId = rolesResponse.getRoles(0).getId();
+
+        // Create a user in testOrg
+        String userEmail = "role.test" + System.currentTimeMillis() + "@example.com";
+        CreateUser user = CreateUser.newBuilder()
+                .setEmail(userEmail)
+                .build();
+
+        CreateUserAndMembershipRequest createRequest = CreateUserAndMembershipRequest.newBuilder()
+                .setOrganizationId(testOrg)
+                .setSendInvitationEmail(false)
+                .setUser(user)
+                .build();
+
+        CreateUserAndMembershipResponse createdUser = client.users().createUserAndMembership(testOrg, createRequest);
+        assertNotNull(createdUser);
+        String userId = createdUser.getUser().getId();
+
+        try {
+            // Assign the role to the user
+            AssignRoleRequest assignRoleRequest = AssignRoleRequest.newBuilder()
+                    .setId(roleId)
+                    .setRoleName(roleName)
+                    .build();
+
+            AssignUserRolesRequest assignRequest = AssignUserRolesRequest.newBuilder()
+                    .addRoles(assignRoleRequest)
+                    .build();
+
+            AssignUserRolesResponse assignResponse = client.users().assignUserRoles(testOrg, userId, assignRequest);
+            assertNotNull(assignResponse);
+
+            // Remove the role from the user
+            RemoveUserRoleRequest removeRequest = RemoveUserRoleRequest.newBuilder()
+                    .setRoleName(roleName)
+                    .build();
+
+            // removeUserRole returns void; just verify it does not throw
+            client.users().removeUserRole(testOrg, userId, removeRequest);
+        } finally {
+            client.users().deleteUser(userId);
+        }
     }
 } 

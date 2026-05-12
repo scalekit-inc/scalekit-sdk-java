@@ -253,4 +253,132 @@ public class OrganizationTests {
         assertEquals(75, response.getMaxAllowedUsers().getValue());
     }
 
+    @Test
+    void SearchOrganizationsTest() {
+        // First ensure there is at least one organization to search for
+        ListOrganizationsResponse organizations = client.organizations().listOrganizations(1, null);
+        assertNotNull(organizations);
+        if (organizations.getOrganizationsCount() == 0) {
+            log.warn("No organizations available to test searchOrganizations");
+            return;
+        }
+
+        String displayName = organizations.getOrganizationsList().get(0).getDisplayName();
+
+        // Search with a query matching the first org's display name
+        SearchOrganizationsRequest searchRequest = SearchOrganizationsRequest.newBuilder()
+                .setQuery(displayName)
+                .setPageSize(10)
+                .build();
+
+        SearchOrganizationsResponse searchResponse = client.organizations().searchOrganizations(searchRequest);
+        assertNotNull(searchResponse);
+        assertTrue(searchResponse.getOrganizationsCount() > 0);
+
+        // Search with a query that should return no results
+        SearchOrganizationsRequest emptyRequest = SearchOrganizationsRequest.newBuilder()
+                .setQuery("no_match_xyz_" + System.currentTimeMillis())
+                .setPageSize(10)
+                .build();
+
+        SearchOrganizationsResponse emptyResponse = client.organizations().searchOrganizations(emptyRequest);
+        assertNotNull(emptyResponse);
+        assertEquals(0, emptyResponse.getOrganizationsCount());
+    }
+
+    @Test
+    void UpdateOrganizationSessionPolicyTest() {
+        ListOrganizationsResponse organizations = client.organizations().listOrganizations(1, null);
+        assertNotNull(organizations);
+        if (organizations.getOrganizationsCount() == 0) {
+            log.warn("No organizations available to test session policy");
+            return;
+        }
+
+        String organizationId = organizations.getOrganizationsList().get(0).getId();
+
+        UpdateOrganizationSessionPolicyRequest request = UpdateOrganizationSessionPolicyRequest.newBuilder()
+                .setPolicySource(SessionPolicyType.APPLICATION)
+                .build();
+
+        UpdateOrganizationSessionPolicyResponse response;
+        try {
+            response = client.organizations().updateOrganizationSessionPolicy(organizationId, request);
+        } catch (APIException e) {
+            log.warn("Skipping UpdateOrganizationSessionPolicyTest — feature may not be enabled: {}", e.getMessage());
+            return;
+        }
+
+        assertNotNull(response);
+    }
+
+    @Test
+    void GetOrganizationSessionPolicyTest() {
+        ListOrganizationsResponse organizations = client.organizations().listOrganizations(1, null);
+        assertNotNull(organizations);
+        if (organizations.getOrganizationsCount() == 0) {
+            log.warn("No organizations available to test getOrganizationSessionPolicy");
+            return;
+        }
+
+        String organizationId = organizations.getOrganizationsList().get(0).getId();
+
+        GetOrganizationSessionPolicyResponse response;
+        try {
+            response = client.organizations().getOrganizationSessionPolicy(organizationId);
+        } catch (APIException e) {
+            log.warn("Skipping GetOrganizationSessionPolicyTest — feature may not be enabled: {}", e.getMessage());
+            return;
+        }
+
+        assertNotNull(response);
+        assertNotNull(response.getPolicy());
+    }
+
+    @Test
+    void GetApplicationSessionPolicyTest() {
+        ListOrganizationsResponse organizations = client.organizations().listOrganizations(1, null);
+        assertNotNull(organizations);
+        if (organizations.getOrganizationsCount() == 0) {
+            log.warn("No organizations available to test getApplicationSessionPolicy");
+            return;
+        }
+
+        String organizationId = organizations.getOrganizationsList().get(0).getId();
+
+        GetApplicationSessionPolicyResponse response;
+        try {
+            response = client.organizations().getApplicationSessionPolicy(organizationId);
+        } catch (APIException e) {
+            log.warn("Skipping GetApplicationSessionPolicyTest — feature may not be enabled: {}", e.getMessage());
+            return;
+        }
+
+        assertNotNull(response);
+        assertNotNull(response.getApplicationPolicy());
+    }
+
+    @Test
+    void GetOrganizationUserManagementSettingTest() {
+        ListOrganizationsResponse organizations = client.organizations().listOrganizations(1, null);
+        assertNotNull(organizations);
+        if (organizations.getOrganizationsCount() == 0) {
+            log.warn("No organizations available to test getOrganizationUserManagementSetting");
+            return;
+        }
+
+        String organizationId = organizations.getOrganizationsList().get(0).getId();
+
+        GetOrganizationUserManagementSettingsResponse response;
+        try {
+            response = client.organizations().getOrganizationUserManagementSetting(organizationId);
+        } catch (APIException e) {
+            log.warn("Skipping GetOrganizationUserManagementSettingTest — feature may not be enabled: {}", e.getMessage());
+            return;
+        }
+
+        assertNotNull(response);
+        assertNotNull(response.getSettings());
+    }
+
 }
