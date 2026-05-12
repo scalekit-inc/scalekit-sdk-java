@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     organizationId_ = "";
     subject_ = "";
     email_ = "";
+    connectedAccountId_ = "";
   }
 
   @java.lang.Override
@@ -228,6 +229,53 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CONNECTED_ACCOUNT_ID_FIELD_NUMBER = 6;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object connectedAccountId_ = "";
+  /**
+   * <code>optional string connected_account_id = 6 [json_name = "connectedAccountId"];</code>
+   * @return Whether the connectedAccountId field is set.
+   */
+  @java.lang.Override
+  public boolean hasConnectedAccountId() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <code>optional string connected_account_id = 6 [json_name = "connectedAccountId"];</code>
+   * @return The connectedAccountId.
+   */
+  @java.lang.Override
+  public java.lang.String getConnectedAccountId() {
+    java.lang.Object ref = connectedAccountId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      connectedAccountId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string connected_account_id = 6 [json_name = "connectedAccountId"];</code>
+   * @return The bytes for connectedAccountId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getConnectedAccountIdBytes() {
+    java.lang.Object ref = connectedAccountId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      connectedAccountId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -257,6 +305,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, email_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, connectedAccountId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -282,6 +333,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, email_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, connectedAccountId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -320,6 +374,11 @@ private static final long serialVersionUID = 0L;
       if (!getEmail()
           .equals(other.getEmail())) return false;
     }
+    if (hasConnectedAccountId() != other.hasConnectedAccountId()) return false;
+    if (hasConnectedAccountId()) {
+      if (!getConnectedAccountId()
+          .equals(other.getConnectedAccountId())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -348,6 +407,10 @@ private static final long serialVersionUID = 0L;
     if (hasEmail()) {
       hash = (37 * hash) + EMAIL_FIELD_NUMBER;
       hash = (53 * hash) + getEmail().hashCode();
+    }
+    if (hasConnectedAccountId()) {
+      hash = (37 * hash) + CONNECTED_ACCOUNT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConnectedAccountId().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -500,6 +563,7 @@ private static final long serialVersionUID = 0L;
       organizationId_ = "";
       subject_ = "";
       email_ = "";
+      connectedAccountId_ = "";
       return this;
     }
 
@@ -556,6 +620,10 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.email_ = email_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.connectedAccountId_ = connectedAccountId_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -625,6 +693,11 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.hasConnectedAccountId()) {
+        connectedAccountId_ = other.connectedAccountId_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -680,6 +753,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 42
+            case 50: {
+              connectedAccountId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 50
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1165,6 +1243,85 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       email_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object connectedAccountId_ = "";
+    /**
+     * <code>optional string connected_account_id = 6 [json_name = "connectedAccountId"];</code>
+     * @return Whether the connectedAccountId field is set.
+     */
+    public boolean hasConnectedAccountId() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <code>optional string connected_account_id = 6 [json_name = "connectedAccountId"];</code>
+     * @return The connectedAccountId.
+     */
+    public java.lang.String getConnectedAccountId() {
+      java.lang.Object ref = connectedAccountId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        connectedAccountId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string connected_account_id = 6 [json_name = "connectedAccountId"];</code>
+     * @return The bytes for connectedAccountId.
+     */
+    public com.google.protobuf.ByteString
+        getConnectedAccountIdBytes() {
+      java.lang.Object ref = connectedAccountId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        connectedAccountId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string connected_account_id = 6 [json_name = "connectedAccountId"];</code>
+     * @param value The connectedAccountId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectedAccountId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      connectedAccountId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string connected_account_id = 6 [json_name = "connectedAccountId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearConnectedAccountId() {
+      connectedAccountId_ = getDefaultInstance().getConnectedAccountId();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string connected_account_id = 6 [json_name = "connectedAccountId"];</code>
+     * @param value The bytes for connectedAccountId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectedAccountIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      connectedAccountId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

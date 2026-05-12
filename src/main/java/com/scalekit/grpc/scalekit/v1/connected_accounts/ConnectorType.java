@@ -69,6 +69,30 @@ public enum ConnectorType
    * <code>BASIC = 6;</code>
    */
   BASIC(6),
+  /**
+   * <pre>
+   * OAuth 2.0 client credentials (machine-to-machine)
+   * </pre>
+   *
+   * <code>OAUTH_M2M = 7;</code>
+   */
+  OAUTH_M2M(7),
+  /**
+   * <pre>
+   * Trello token-based OAuth1-style browser authorization
+   * </pre>
+   *
+   * <code>TRELLO_OAUTH1 = 8;</code>
+   */
+  TRELLO_OAUTH1(8),
+  /**
+   * <pre>
+   * Google Domain-Wide Delegation
+   * </pre>
+   *
+   * <code>GOOGLE_DWD = 9;</code>
+   */
+  GOOGLE_DWD(9),
   UNRECOGNIZED(-1),
   ;
 
@@ -128,6 +152,30 @@ public enum ConnectorType
    * <code>BASIC = 6;</code>
    */
   public static final int BASIC_VALUE = 6;
+  /**
+   * <pre>
+   * OAuth 2.0 client credentials (machine-to-machine)
+   * </pre>
+   *
+   * <code>OAUTH_M2M = 7;</code>
+   */
+  public static final int OAUTH_M2M_VALUE = 7;
+  /**
+   * <pre>
+   * Trello token-based OAuth1-style browser authorization
+   * </pre>
+   *
+   * <code>TRELLO_OAUTH1 = 8;</code>
+   */
+  public static final int TRELLO_OAUTH1_VALUE = 8;
+  /**
+   * <pre>
+   * Google Domain-Wide Delegation
+   * </pre>
+   *
+   * <code>GOOGLE_DWD = 9;</code>
+   */
+  public static final int GOOGLE_DWD_VALUE = 9;
 
 
   public final int getNumber() {
@@ -161,6 +209,9 @@ public enum ConnectorType
       case 4: return BEARER_TOKEN;
       case 5: return CUSTOM;
       case 6: return BASIC;
+      case 7: return OAUTH_M2M;
+      case 8: return TRELLO_OAUTH1;
+      case 9: return GOOGLE_DWD;
       default: return null;
     }
   }

@@ -51,6 +51,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     OAUTH_TOKEN(1),
     STATIC_AUTH(2),
+    GOOGLE_DWD(3),
     DETAILS_NOT_SET(0);
     private final int value;
     private DetailsCase(int value) {
@@ -70,6 +71,7 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 1: return OAUTH_TOKEN;
         case 2: return STATIC_AUTH;
+        case 3: return GOOGLE_DWD;
         case 0: return DETAILS_NOT_SET;
         default: return null;
       }
@@ -171,6 +173,49 @@ private static final long serialVersionUID = 0L;
     return com.scalekit.grpc.scalekit.v1.connected_accounts.StaticAuth.getDefaultInstance();
   }
 
+  public static final int GOOGLE_DWD_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * Google Domain-Wide Delegation credentials
+   * </pre>
+   *
+   * <code>.scalekit.v1.connected_accounts.GoogleDWDAuth google_dwd = 3 [json_name = "googleDwd"];</code>
+   * @return Whether the googleDwd field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleDwd() {
+    return detailsCase_ == 3;
+  }
+  /**
+   * <pre>
+   * Google Domain-Wide Delegation credentials
+   * </pre>
+   *
+   * <code>.scalekit.v1.connected_accounts.GoogleDWDAuth google_dwd = 3 [json_name = "googleDwd"];</code>
+   * @return The googleDwd.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth getGoogleDwd() {
+    if (detailsCase_ == 3) {
+       return (com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth) details_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Google Domain-Wide Delegation credentials
+   * </pre>
+   *
+   * <code>.scalekit.v1.connected_accounts.GoogleDWDAuth google_dwd = 3 [json_name = "googleDwd"];</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuthOrBuilder getGoogleDwdOrBuilder() {
+    if (detailsCase_ == 3) {
+       return (com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth) details_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -191,6 +236,9 @@ private static final long serialVersionUID = 0L;
     if (detailsCase_ == 2) {
       output.writeMessage(2, (com.scalekit.grpc.scalekit.v1.connected_accounts.StaticAuth) details_);
     }
+    if (detailsCase_ == 3) {
+      output.writeMessage(3, (com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth) details_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -207,6 +255,10 @@ private static final long serialVersionUID = 0L;
     if (detailsCase_ == 2) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, (com.scalekit.grpc.scalekit.v1.connected_accounts.StaticAuth) details_);
+    }
+    if (detailsCase_ == 3) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, (com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth) details_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -233,6 +285,10 @@ private static final long serialVersionUID = 0L;
         if (!getStaticAuth()
             .equals(other.getStaticAuth())) return false;
         break;
+      case 3:
+        if (!getGoogleDwd()
+            .equals(other.getGoogleDwd())) return false;
+        break;
       case 0:
       default:
     }
@@ -255,6 +311,10 @@ private static final long serialVersionUID = 0L;
       case 2:
         hash = (37 * hash) + STATIC_AUTH_FIELD_NUMBER;
         hash = (53 * hash) + getStaticAuth().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + GOOGLE_DWD_FIELD_NUMBER;
+        hash = (53 * hash) + getGoogleDwd().hashCode();
         break;
       case 0:
       default:
@@ -400,6 +460,9 @@ private static final long serialVersionUID = 0L;
       if (staticAuthBuilder_ != null) {
         staticAuthBuilder_.clear();
       }
+      if (googleDwdBuilder_ != null) {
+        googleDwdBuilder_.clear();
+      }
       detailsCase_ = 0;
       details_ = null;
       return this;
@@ -448,6 +511,10 @@ private static final long serialVersionUID = 0L;
       if (detailsCase_ == 2 &&
           staticAuthBuilder_ != null) {
         result.details_ = staticAuthBuilder_.build();
+      }
+      if (detailsCase_ == 3 &&
+          googleDwdBuilder_ != null) {
+        result.details_ = googleDwdBuilder_.build();
       }
     }
 
@@ -504,6 +571,10 @@ private static final long serialVersionUID = 0L;
           mergeStaticAuth(other.getStaticAuth());
           break;
         }
+        case GOOGLE_DWD: {
+          mergeGoogleDwd(other.getGoogleDwd());
+          break;
+        }
         case DETAILS_NOT_SET: {
           break;
         }
@@ -548,6 +619,13 @@ private static final long serialVersionUID = 0L;
               detailsCase_ = 2;
               break;
             } // case 18
+            case 26: {
+              input.readMessage(
+                  getGoogleDwdFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              detailsCase_ = 3;
+              break;
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -934,6 +1012,184 @@ private static final long serialVersionUID = 0L;
       detailsCase_ = 2;
       onChanged();
       return staticAuthBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth, com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth.Builder, com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuthOrBuilder> googleDwdBuilder_;
+    /**
+     * <pre>
+     * Google Domain-Wide Delegation credentials
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.GoogleDWDAuth google_dwd = 3 [json_name = "googleDwd"];</code>
+     * @return Whether the googleDwd field is set.
+     */
+    @java.lang.Override
+    public boolean hasGoogleDwd() {
+      return detailsCase_ == 3;
+    }
+    /**
+     * <pre>
+     * Google Domain-Wide Delegation credentials
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.GoogleDWDAuth google_dwd = 3 [json_name = "googleDwd"];</code>
+     * @return The googleDwd.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth getGoogleDwd() {
+      if (googleDwdBuilder_ == null) {
+        if (detailsCase_ == 3) {
+          return (com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth) details_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 3) {
+          return googleDwdBuilder_.getMessage();
+        }
+        return com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Google Domain-Wide Delegation credentials
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.GoogleDWDAuth google_dwd = 3 [json_name = "googleDwd"];</code>
+     */
+    public Builder setGoogleDwd(com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth value) {
+      if (googleDwdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        googleDwdBuilder_.setMessage(value);
+      }
+      detailsCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * Google Domain-Wide Delegation credentials
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.GoogleDWDAuth google_dwd = 3 [json_name = "googleDwd"];</code>
+     */
+    public Builder setGoogleDwd(
+        com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth.Builder builderForValue) {
+      if (googleDwdBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        googleDwdBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * Google Domain-Wide Delegation credentials
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.GoogleDWDAuth google_dwd = 3 [json_name = "googleDwd"];</code>
+     */
+    public Builder mergeGoogleDwd(com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth value) {
+      if (googleDwdBuilder_ == null) {
+        if (detailsCase_ == 3 &&
+            details_ != com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth.getDefaultInstance()) {
+          details_ = com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth.newBuilder((com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth) details_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 3) {
+          googleDwdBuilder_.mergeFrom(value);
+        } else {
+          googleDwdBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * Google Domain-Wide Delegation credentials
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.GoogleDWDAuth google_dwd = 3 [json_name = "googleDwd"];</code>
+     */
+    public Builder clearGoogleDwd() {
+      if (googleDwdBuilder_ == null) {
+        if (detailsCase_ == 3) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 3) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        googleDwdBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Google Domain-Wide Delegation credentials
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.GoogleDWDAuth google_dwd = 3 [json_name = "googleDwd"];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth.Builder getGoogleDwdBuilder() {
+      return getGoogleDwdFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Google Domain-Wide Delegation credentials
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.GoogleDWDAuth google_dwd = 3 [json_name = "googleDwd"];</code>
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuthOrBuilder getGoogleDwdOrBuilder() {
+      if ((detailsCase_ == 3) && (googleDwdBuilder_ != null)) {
+        return googleDwdBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 3) {
+          return (com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth) details_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Google Domain-Wide Delegation credentials
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.GoogleDWDAuth google_dwd = 3 [json_name = "googleDwd"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth, com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth.Builder, com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuthOrBuilder> 
+        getGoogleDwdFieldBuilder() {
+      if (googleDwdBuilder_ == null) {
+        if (!(detailsCase_ == 3)) {
+          details_ = com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth.getDefaultInstance();
+        }
+        googleDwdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth, com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth.Builder, com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuthOrBuilder>(
+                (com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 3;
+      onChanged();
+      return googleDwdBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

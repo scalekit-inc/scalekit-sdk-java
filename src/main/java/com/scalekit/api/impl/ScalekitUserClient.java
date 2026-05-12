@@ -279,4 +279,42 @@ public class ScalekitUserClient implements UserClient {
                     .listUserPermissions(request);
         }, this.credentials);
     }
-} 
+
+    /**
+     * Assigns roles to a user in the specified organization
+     * @param organizationId: The organization ID
+     * @param userId: The ID of the user to assign roles to
+     * @param request: The assign user roles request containing the roles to assign
+     * @return AssignUserRolesResponse: The response containing the assigned roles
+     */
+    @Override
+    public AssignUserRolesResponse assignUserRoles(String organizationId, String userId, AssignUserRolesRequest request) {
+        return RetryExecuter.executeWithRetry(() -> {
+            return userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .assignUserRoles(request.toBuilder()
+                            .setOrganizationId(organizationId)
+                            .setUserId(userId)
+                            .build());
+        }, this.credentials);
+    }
+
+    /**
+     * Removes a role from a user in the specified organization
+     * @param organizationId: The organization ID
+     * @param userId: The ID of the user to remove the role from
+     * @param request: The remove user role request containing the role to remove
+     */
+    @Override
+    public void removeUserRole(String organizationId, String userId, RemoveUserRoleRequest request) {
+        RetryExecuter.executeWithRetry(() -> {
+            userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .removeUserRole(request.toBuilder()
+                            .setOrganizationId(organizationId)
+                            .setUserId(userId)
+                            .build());
+            return null;
+        }, this.credentials);
+    }
+}

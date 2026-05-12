@@ -62,5 +62,32 @@ public interface AuthorizationDetailsOrBuilder extends
    */
   com.scalekit.grpc.scalekit.v1.connected_accounts.StaticAuthOrBuilder getStaticAuthOrBuilder();
 
+  /**
+   * <pre>
+   * Google Domain-Wide Delegation credentials
+   * </pre>
+   *
+   * <code>.scalekit.v1.connected_accounts.GoogleDWDAuth google_dwd = 3 [json_name = "googleDwd"];</code>
+   * @return Whether the googleDwd field is set.
+   */
+  boolean hasGoogleDwd();
+  /**
+   * <pre>
+   * Google Domain-Wide Delegation credentials
+   * </pre>
+   *
+   * <code>.scalekit.v1.connected_accounts.GoogleDWDAuth google_dwd = 3 [json_name = "googleDwd"];</code>
+   * @return The googleDwd.
+   */
+  com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth getGoogleDwd();
+  /**
+   * <pre>
+   * Google Domain-Wide Delegation credentials
+   * </pre>
+   *
+   * <code>.scalekit.v1.connected_accounts.GoogleDWDAuth google_dwd = 3 [json_name = "googleDwd"];</code>
+   */
+  com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuthOrBuilder getGoogleDwdOrBuilder();
+
   com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizationDetails.DetailsCase getDetailsCase();
 }

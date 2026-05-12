@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
   private UpdateOrganization() {
     displayName_ = "";
     externalId_ = "";
+    slug_ = "";
   }
 
   @java.lang.Override
@@ -231,6 +232,53 @@ java.lang.String defaultValue) {
     return map.get(key);
   }
 
+  public static final int SLUG_FIELD_NUMBER = 9;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object slug_ = "";
+  /**
+   * <code>optional string slug = 9 [json_name = "slug", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the slug field is set.
+   */
+  @java.lang.Override
+  public boolean hasSlug() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>optional string slug = 9 [json_name = "slug", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The slug.
+   */
+  @java.lang.Override
+  public java.lang.String getSlug() {
+    java.lang.Object ref = slug_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      slug_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string slug = 9 [json_name = "slug", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for slug.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSlugBytes() {
+    java.lang.Object ref = slug_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      slug_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -257,6 +305,9 @@ java.lang.String defaultValue) {
         internalGetMetadata(),
         MetadataDefaultEntryHolder.defaultEntry,
         7);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, slug_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -281,6 +332,9 @@ java.lang.String defaultValue) {
           .build();
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, metadata__);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, slug_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -309,6 +363,11 @@ java.lang.String defaultValue) {
     }
     if (!internalGetMetadata().equals(
         other.internalGetMetadata())) return false;
+    if (hasSlug() != other.hasSlug()) return false;
+    if (hasSlug()) {
+      if (!getSlug()
+          .equals(other.getSlug())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -331,6 +390,10 @@ java.lang.String defaultValue) {
     if (!internalGetMetadata().getMap().isEmpty()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetMetadata().hashCode();
+    }
+    if (hasSlug()) {
+      hash = (37 * hash) + SLUG_FIELD_NUMBER;
+      hash = (53 * hash) + getSlug().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -492,6 +555,7 @@ java.lang.String defaultValue) {
       displayName_ = "";
       externalId_ = "";
       internalGetMutableMetadata().clear();
+      slug_ = "";
       return this;
     }
 
@@ -537,6 +601,10 @@ java.lang.String defaultValue) {
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.slug_ = slug_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -598,6 +666,11 @@ java.lang.String defaultValue) {
       internalGetMutableMetadata().mergeFrom(
           other.internalGetMetadata());
       bitField0_ |= 0x00000004;
+      if (other.hasSlug()) {
+        slug_ = other.slug_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -643,6 +716,11 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000004;
               break;
             } // case 58
+            case 74: {
+              slug_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 74
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -942,6 +1020,85 @@ java.lang.String defaultValue) {
       internalGetMutableMetadata().getMutableMap()
           .putAll(values);
       bitField0_ |= 0x00000004;
+      return this;
+    }
+
+    private java.lang.Object slug_ = "";
+    /**
+     * <code>optional string slug = 9 [json_name = "slug", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the slug field is set.
+     */
+    public boolean hasSlug() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional string slug = 9 [json_name = "slug", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The slug.
+     */
+    public java.lang.String getSlug() {
+      java.lang.Object ref = slug_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        slug_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string slug = 9 [json_name = "slug", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for slug.
+     */
+    public com.google.protobuf.ByteString
+        getSlugBytes() {
+      java.lang.Object ref = slug_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        slug_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string slug = 9 [json_name = "slug", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The slug to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSlug(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      slug_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string slug = 9 [json_name = "slug", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSlug() {
+      slug_ = getDefaultInstance().getSlug();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string slug = 9 [json_name = "slug", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for slug to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSlugBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      slug_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     @java.lang.Override

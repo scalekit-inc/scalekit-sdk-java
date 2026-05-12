@@ -209,4 +209,79 @@ public interface OAuthConnectionConfigOrBuilder extends
    * <code>.google.protobuf.BoolValue sync_user_profile_on_login = 18 [json_name = "syncUserProfileOnLogin", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnLoginOrBuilder();
+
+  /**
+   * <code>.google.protobuf.StringValue token_access_type = 19 [json_name = "tokenAccessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the tokenAccessType field is set.
+   */
+  boolean hasTokenAccessType();
+  /**
+   * <code>.google.protobuf.StringValue token_access_type = 19 [json_name = "tokenAccessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The tokenAccessType.
+   */
+  com.google.protobuf.StringValue getTokenAccessType();
+  /**
+   * <code>.google.protobuf.StringValue token_access_type = 19 [json_name = "tokenAccessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.StringValueOrBuilder getTokenAccessTypeOrBuilder();
+
+  /**
+   * <code>.google.protobuf.StringValue tenant_id = 20 [json_name = "tenantId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the tenantId field is set.
+   */
+  boolean hasTenantId();
+  /**
+   * <code>.google.protobuf.StringValue tenant_id = 20 [json_name = "tenantId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The tenantId.
+   */
+  com.google.protobuf.StringValue getTenantId();
+  /**
+   * <code>.google.protobuf.StringValue tenant_id = 20 [json_name = "tenantId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.StringValueOrBuilder getTenantIdOrBuilder();
+
+  /**
+   * <code>.google.protobuf.BoolValue is_cimd = 21 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the isCimd field is set.
+   */
+  boolean hasIsCimd();
+  /**
+   * <code>.google.protobuf.BoolValue is_cimd = 21 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isCimd.
+   */
+  com.google.protobuf.BoolValue getIsCimd();
+  /**
+   * <code>.google.protobuf.BoolValue is_cimd = 21 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getIsCimdOrBuilder();
+
+  /**
+   * <code>.google.protobuf.StringValue app_name = 22 [json_name = "appName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the appName field is set.
+   */
+  boolean hasAppName();
+  /**
+   * <code>.google.protobuf.StringValue app_name = 22 [json_name = "appName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The appName.
+   */
+  com.google.protobuf.StringValue getAppName();
+  /**
+   * <code>.google.protobuf.StringValue app_name = 22 [json_name = "appName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.StringValueOrBuilder getAppNameOrBuilder();
+
+  /**
+   * <code>optional .scalekit.v1.connections.OptionalScopes optional_scopes = 23 [json_name = "optionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the optionalScopes field is set.
+   */
+  boolean hasOptionalScopes();
+  /**
+   * <code>optional .scalekit.v1.connections.OptionalScopes optional_scopes = 23 [json_name = "optionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The optionalScopes.
+   */
+  com.scalekit.grpc.scalekit.v1.connections.OptionalScopes getOptionalScopes();
+  /**
+   * <code>optional .scalekit.v1.connections.OptionalScopes optional_scopes = 23 [json_name = "optionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.connections.OptionalScopesOrBuilder getOptionalScopesOrBuilder();
 }

@@ -6,7 +6,7 @@ package com.scalekit.grpc.scalekit.v1.connected_accounts;
 
 /**
  * <pre>
- * Payload for creating a new connected account - only authorization details required
+ * Payload for creating a new connected account - authorization details are optional
  * </pre>
  *
  * Protobuf type {@code scalekit.v1.connected_accounts.CreateConnectedAccount}
@@ -276,7 +276,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Payload for creating a new connected account - only authorization details required
+   * Payload for creating a new connected account - authorization details are optional
    * </pre>
    *
    * Protobuf type {@code scalekit.v1.connected_accounts.CreateConnectedAccount}

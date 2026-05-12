@@ -7,6 +7,7 @@ package com.scalekit.grpc.scalekit.v1.auth;
 /**
  * <pre>
  * PortalSettings contains feature flags and settings derived from the workspace's billing subscription
+ * and feature rollout configuration.
  * </pre>
  *
  * Protobuf type {@code scalekit.v1.auth.PortalSettings}
@@ -43,6 +44,7 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.auth.PortalSettings.class, com.scalekit.grpc.scalekit.v1.auth.PortalSettings.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CUSTOM_BRANDING_FIELD_NUMBER = 1;
   private boolean customBranding_ = false;
   /**
@@ -57,6 +59,39 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean getCustomBranding() {
     return customBranding_;
+  }
+
+  public static final int NEW_SELF_SERVE_SSO_SCIM_FIELD_NUMBER = 2;
+  private boolean newSelfServeSsoScim_ = false;
+  /**
+   * <pre>
+   * new_self_serve_sso_scim indicates whether the new self-serve SSO/SCIM flow
+   * should be shown in the hosted pages. This is rollout-driven (feature flag),
+   * enabled for development environments or new workspaces (workspace_created_at &gt;= cutoff),
+   * not billing-derived.
+   * </pre>
+   *
+   * <code>optional bool new_self_serve_sso_scim = 2 [json_name = "newSelfServeSsoScim", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the newSelfServeSsoScim field is set.
+   */
+  @java.lang.Override
+  public boolean hasNewSelfServeSsoScim() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * new_self_serve_sso_scim indicates whether the new self-serve SSO/SCIM flow
+   * should be shown in the hosted pages. This is rollout-driven (feature flag),
+   * enabled for development environments or new workspaces (workspace_created_at &gt;= cutoff),
+   * not billing-derived.
+   * </pre>
+   *
+   * <code>optional bool new_self_serve_sso_scim = 2 [json_name = "newSelfServeSsoScim", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The newSelfServeSsoScim.
+   */
+  @java.lang.Override
+  public boolean getNewSelfServeSsoScim() {
+    return newSelfServeSsoScim_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -76,6 +111,9 @@ private static final long serialVersionUID = 0L;
     if (customBranding_ != false) {
       output.writeBool(1, customBranding_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(2, newSelfServeSsoScim_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -88,6 +126,10 @@ private static final long serialVersionUID = 0L;
     if (customBranding_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(1, customBranding_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(2, newSelfServeSsoScim_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -106,6 +148,11 @@ private static final long serialVersionUID = 0L;
 
     if (getCustomBranding()
         != other.getCustomBranding()) return false;
+    if (hasNewSelfServeSsoScim() != other.hasNewSelfServeSsoScim()) return false;
+    if (hasNewSelfServeSsoScim()) {
+      if (getNewSelfServeSsoScim()
+          != other.getNewSelfServeSsoScim()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -120,6 +167,11 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + CUSTOM_BRANDING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getCustomBranding());
+    if (hasNewSelfServeSsoScim()) {
+      hash = (37 * hash) + NEW_SELF_SERVE_SSO_SCIM_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getNewSelfServeSsoScim());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -220,6 +272,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * PortalSettings contains feature flags and settings derived from the workspace's billing subscription
+   * and feature rollout configuration.
    * </pre>
    *
    * Protobuf type {@code scalekit.v1.auth.PortalSettings}
@@ -256,6 +309,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       customBranding_ = false;
+      newSelfServeSsoScim_ = false;
       return this;
     }
 
@@ -292,6 +346,12 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.customBranding_ = customBranding_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.newSelfServeSsoScim_ = newSelfServeSsoScim_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -341,6 +401,9 @@ private static final long serialVersionUID = 0L;
       if (other.getCustomBranding() != false) {
         setCustomBranding(other.getCustomBranding());
       }
+      if (other.hasNewSelfServeSsoScim()) {
+        setNewSelfServeSsoScim(other.getNewSelfServeSsoScim());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -372,6 +435,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 8
+            case 16: {
+              newSelfServeSsoScim_ = input.readBool();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 16
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -432,6 +500,74 @@ private static final long serialVersionUID = 0L;
     public Builder clearCustomBranding() {
       bitField0_ = (bitField0_ & ~0x00000001);
       customBranding_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean newSelfServeSsoScim_ ;
+    /**
+     * <pre>
+     * new_self_serve_sso_scim indicates whether the new self-serve SSO/SCIM flow
+     * should be shown in the hosted pages. This is rollout-driven (feature flag),
+     * enabled for development environments or new workspaces (workspace_created_at &gt;= cutoff),
+     * not billing-derived.
+     * </pre>
+     *
+     * <code>optional bool new_self_serve_sso_scim = 2 [json_name = "newSelfServeSsoScim", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the newSelfServeSsoScim field is set.
+     */
+    @java.lang.Override
+    public boolean hasNewSelfServeSsoScim() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * new_self_serve_sso_scim indicates whether the new self-serve SSO/SCIM flow
+     * should be shown in the hosted pages. This is rollout-driven (feature flag),
+     * enabled for development environments or new workspaces (workspace_created_at &gt;= cutoff),
+     * not billing-derived.
+     * </pre>
+     *
+     * <code>optional bool new_self_serve_sso_scim = 2 [json_name = "newSelfServeSsoScim", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The newSelfServeSsoScim.
+     */
+    @java.lang.Override
+    public boolean getNewSelfServeSsoScim() {
+      return newSelfServeSsoScim_;
+    }
+    /**
+     * <pre>
+     * new_self_serve_sso_scim indicates whether the new self-serve SSO/SCIM flow
+     * should be shown in the hosted pages. This is rollout-driven (feature flag),
+     * enabled for development environments or new workspaces (workspace_created_at &gt;= cutoff),
+     * not billing-derived.
+     * </pre>
+     *
+     * <code>optional bool new_self_serve_sso_scim = 2 [json_name = "newSelfServeSsoScim", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The newSelfServeSsoScim to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNewSelfServeSsoScim(boolean value) {
+
+      newSelfServeSsoScim_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * new_self_serve_sso_scim indicates whether the new self-serve SSO/SCIM flow
+     * should be shown in the hosted pages. This is rollout-driven (feature flag),
+     * enabled for development environments or new workspaces (workspace_created_at &gt;= cutoff),
+     * not billing-derived.
+     * </pre>
+     *
+     * <code>optional bool new_self_serve_sso_scim = 2 [json_name = "newSelfServeSsoScim", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNewSelfServeSsoScim() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      newSelfServeSsoScim_ = false;
       onChanged();
       return this;
     }

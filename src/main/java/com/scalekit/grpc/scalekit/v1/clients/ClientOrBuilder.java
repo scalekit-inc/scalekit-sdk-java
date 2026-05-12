@@ -63,43 +63,6 @@ public interface ClientOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
   /**
-   * <code>repeated string redirect_uris = 5 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return A list containing the redirectUris.
-   */
-  java.util.List<java.lang.String>
-      getRedirectUrisList();
-  /**
-   * <code>repeated string redirect_uris = 5 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The count of redirectUris.
-   */
-  int getRedirectUrisCount();
-  /**
-   * <code>repeated string redirect_uris = 5 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @param index The index of the element to return.
-   * @return The redirectUris at the given index.
-   */
-  java.lang.String getRedirectUris(int index);
-  /**
-   * <code>repeated string redirect_uris = 5 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the redirectUris at the given index.
-   */
-  com.google.protobuf.ByteString
-      getRedirectUrisBytes(int index);
-
-  /**
-   * <code>string default_redirect_uri = 6 [json_name = "defaultRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The defaultRedirectUri.
-   */
-  java.lang.String getDefaultRedirectUri();
-  /**
-   * <code>string default_redirect_uri = 6 [json_name = "defaultRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for defaultRedirectUri.
-   */
-  com.google.protobuf.ByteString
-      getDefaultRedirectUriBytes();
-
-  /**
    * <code>repeated .scalekit.v1.clients.ClientSecret secrets = 7 [json_name = "secrets", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<com.scalekit.grpc.scalekit.v1.clients.ClientSecret> 

@@ -100,6 +100,16 @@ public final class ToolsProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_tools_ScopedToolFilter_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_tools_ListAvailableToolsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_tools_ListAvailableToolsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_tools_ListAvailableToolsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_tools_ListAvailableToolsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -155,7 +165,7 @@ public final class ToolsProto {
       "R\010pageSize\022p\n\npage_token\030\003 \001(\tBQ\222AN2.Tok" +
       "en from a previous response for paginati" +
       "on.J\034eyJwYWdlIjoyLCJsaW1pdCI6MzB9R\tpageT" +
-      "oken\"\363\003\n\006Filter\022t\n\007summary\030\001 \001(\0132\032.googl" +
+      "oken\"\205\n\n\006Filter\022t\n\007summary\030\001 \001(\0132\032.googl" +
       "e.protobuf.BoolValueB>\222A;23Return only t" +
       "ool names instead of full tool detailsJ\004" +
       "trueR\007summary\022I\n\010provider\030\002 \001(\tB-\222A#2\027Fi" +
@@ -167,181 +177,239 @@ public final class ToolsProto {
       "eJ\022\"gmail_send_email\"R\010toolName\022g\n\005query" +
       "\030\005 \001(\tBL\222A@2&Filter by connected account" +
       " identifierJ\026\"gmail get attachment\"\272H\006r\004" +
-      "\020\003\030dH\000R\005query\210\001\001B\010\n\006_query\"\233\004\n\021ListTools" +
-      "Response\022v\n\017next_page_token\030\001 \001(\tBN\222AK2)" +
-      "Token for fetching the next page of tool" +
-      "sJ\036\"eyJwYWdlIjozLCJsaW1pdCI6MzB9\"R\rnextP" +
-      "ageToken\022Q\n\ntotal_size\030\002 \001(\rB2\222A/2(Total" +
-      " number of tools matching the queryJ\003104" +
-      "R\ttotalSize\022z\n\017prev_page_token\030\003 \001(\tBR\222A" +
-      "O2-Token for fetching the previous page " +
-      "of toolsJ\036\"eyJwYWdlIjoxLCJsaW1pdCI6MzB9\"" +
-      "R\rprevPageToken\022^\n\ntool_names\030\004 \003(\tB?\222A<" +
-      "2$List of tool names (if summary=true)J\024" +
-      "[\"gmail_send_email\"]R\ttoolNames\022_\n\005tools" +
-      "\030\005 \003(\0132\027.scalekit.v1.tools.ToolB0\222A-2+Li" +
-      "st of tools (if summary=false or omitted" +
-      ")R\005tools\"\367\014\n\022ExecuteToolRequest\022Q\n\ttool_" +
-      "name\030\001 \001(\tB4\222A+2\033Name of the tool to exe" +
-      "cuteJ\014\"send_email\"\272H\003\310\001\001R\010toolName\022\231\002\n\ni" +
-      "dentifier\030\002 \001(\tB\363\001\222A\357\0012\330\001Optional. The u" +
-      "nique identifier for the connected accou" +
-      "nt within the third-party service (e.g.," +
-      " email address, user ID, workspace ident" +
-      "ifier). Use this in combination with con" +
-      "nector to identify the connected account" +
-      ".J\022\"user@example.com\"H\000R\nidentifier\210\001\001\022\374" +
-      "\001\n\006params\030\003 \001(\0132\027.google.protobuf.Struct" +
-      "B\312\001\222A\306\0012}JSON object containing the para" +
-      "meters required for tool execution. The " +
-      "structure depends on the specific tool b" +
-      "eing executed.JE{\"to\": \"user@example.com" +
-      "\", \"subject\": \"Hello\", \"body\": \"Hello Wo" +
-      "rld\"}R\006params\022\352\001\n\024connected_account_id\030\004" +
-      " \001(\tB\262\001\222A\247\0012\232\001Optional. The unique ID of" +
-      " the connected account. Use this to dire" +
-      "ctly identify the connected account inst" +
-      "ead of using identifier + connector comb" +
-      "ination.J\010\"ca_123\"\272H\004r\002\030dH\001R\022connectedAc" +
-      "countId\210\001\001\022\354\001\n\tconnector\030\005 \001(\tB\310\001\222A\275\0012\246\001" +
-      "Optional. The name of the connector/prov" +
-      "ider (e.g., \'Google Workspace\', \'Slack\'," +
-      " \'Notion\'). Use this in combination with" +
-      " identifier to identify the connected ac" +
-      "count.J\022\"Google Workspace\"\272H\004r\002\030dH\002R\tcon" +
-      "nector\210\001\001\022\356\001\n\017organization_id\030\006 \001(\tB\277\001\222A" +
-      "\264\0012\246\001Optional. The organization ID to sc" +
-      "ope the connected account lookup. Use th" +
-      "is to narrow down the search when the sa" +
-      "me identifier exists across multiple org" +
-      "anizations.J\t\"org_123\"\272H\004r\002\030dH\003R\016organiz" +
-      "ationId\210\001\001\022\317\001\n\007user_id\030\007 \001(\tB\260\001\222A\245\0012\226\001Op" +
-      "tional. The user ID to scope the connect" +
-      "ed account lookup. Use this to narrow do" +
-      "wn the search when the same identifier e" +
-      "xists across multiple users.J\n\"user_123\"" +
-      "\272H\004r\002\030dH\004R\006userId\210\001\001B\r\n\013_identifierB\027\n\025_" +
-      "connected_account_idB\014\n\n_connectorB\022\n\020_o" +
-      "rganization_idB\n\n\010_user_id\"\243\002\n\023ExecuteTo" +
-      "olResponse\022\254\001\n\004data\030\001 \001(\0132\027.google.proto" +
-      "buf.StructB\177\222A|23Free-flowing JSON param" +
-      "eters for the tool executionJE{\"to\": \"us" +
-      "er@example.com\", \"subject\": \"Hello\", \"bo" +
-      "dy\": \"Hello World\"}R\004data\022]\n\014execution_i" +
-      "d\030\002 \001(\tB:\222A72(Unique identifier for the " +
-      "tool executionJ\013\"123456789\"R\013executionId" +
-      "\"\255\002\n\025SetToolDefaultRequest\022a\n\004name\030\001 \001(\t" +
-      "BM\222A/2\031Fully qualified tool nameJ\022\"gmail" +
-      "_send_email\"\272H\030r\023\020\001\030d2\r^[a-z0-9_].*$\310\001\001R" +
-      "\004name\022W\n\016schema_version\030\002 \001(\tB0\222A!2\032Sche" +
-      "ma version of the toolJ\003\"1\"\272H\tr\004\020\001\030\n\310\001\001R" +
-      "\rschemaVersion\022X\n\014tool_version\030\003 \001(\tB5\222A" +
-      "&2\037Tool version to mark as defaultJ\003\"1\"\272" +
-      "H\tr\004\020\001\030\n\310\001\001R\013toolVersion\"j\n\026SetToolDefau" +
-      "ltResponse\022P\n\004tool\030\001 \001(\0132\027.scalekit.v1.t" +
-      "ools.ToolB#\222A 2\036The tool now marked as d" +
-      "efaultR\004tool\"^\n\021UpdateToolRequest\022I\n\004too" +
-      "l\030\001 \001(\0132\027.scalekit.v1.tools.ToolB\034\222A\0232\021U" +
-      "pdated tool data\272H\003\310\001\001R\004tool\"X\n\022UpdateTo" +
-      "olResponse\022B\n\004tool\030\001 \001(\0132\027.scalekit.v1.t" +
-      "ools.ToolB\025\222A\0222\020The updated toolR\004tool\"0" +
-      "\n\021DeleteToolRequest\022\033\n\002id\030\001 \001(\tB\013\272H\010r\006:\004" +
-      "tol_R\002id\"\221\003\n\026ListScopedToolsRequest\022z\n\ni" +
-      "dentifier\030\001 \001(\tBZ\222AM23Identifier of the " +
-      "connected account to filter toolsJ\026\"app_" +
-      "google_workspace\"\272H\007r\002\030d\310\001\001R\nidentifier\022" +
-      "l\n\006filter\030\002 \001(\0132#.scalekit.v1.tools.Scop" +
-      "edToolFilterB/\222A,2*Filter parameters for" +
-      " listing scoped toolsR\006filter\022\033\n\tpage_si" +
-      "ze\030\003 \001(\rR\010pageSize\022p\n\npage_token\030\004 \001(\tBQ" +
-      "\222AN2.Token from a previous response for " +
-      "pagination.J\034eyJwYWdlIjoyLCJsaW1pdCI6MzB" +
-      "9R\tpageToken\"\225\003\n\027ListScopedToolsResponse" +
-      "\022v\n\017next_page_token\030\001 \001(\tBN\222AK2)Token fo" +
-      "r fetching the next page of toolsJ\036\"eyJw" +
-      "YWdlIjozLCJsaW1pdCI6MzB9\"R\rnextPageToken" +
-      "\022Q\n\ntotal_size\030\002 \001(\rB2\222A/2(Total number " +
-      "of tools matching the queryJ\003104R\ttotalS" +
-      "ize\022z\n\017prev_page_token\030\003 \001(\tBR\222AO2-Token" +
-      " for fetching the previous page of tools" +
-      "J\036\"eyJwYWdlIjoxLCJsaW1pdCI6MzB9\"R\rprevPa" +
-      "geToken\0223\n\005tools\030\005 \003(\0132\035.scalekit.v1.too" +
-      "ls.ScopedToolR\005tools\"z\n\020ScopedToolFilter" +
-      "\022\034\n\tproviders\030\001 \003(\tR\tproviders\022\035\n\ntool_n" +
-      "ames\030\002 \003(\tR\ttoolNames\022)\n\020connection_name" +
-      "s\030\003 \003(\tR\017connectionNames2\341\024\n\013ToolService" +
-      "\022\362\001\n\nCreateTool\022$.scalekit.v1.tools.Crea" +
-      "teToolRequest\032%.scalekit.v1.tools.Create" +
-      "ToolResponse\"\226\001\222Ac\n\005Tools\022\021Create a new " +
-      "tool\032GRegister a new tool with its schem" +
-      "a, metadata, and other configuration.\202\265\030" +
-      "\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\025\"\r/api/v1/tools:" +
-      "\004tool\022\372\001\n\tListTools\022#.scalekit.v1.tools." +
-      "ListToolsRequest\032$.scalekit.v1.tools.Lis" +
-      "tToolsResponse\"\241\001\222At\n\005Tools\022\nList tools\032" +
-      "_Fetch tools by provider, identifier, an" +
-      "d connector. If `summary=true`, returns " +
-      "only tool names.\202\265\030\002\030d\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
-      "\223\002\017\022\r/api/v1/tools\022\233\001\n\017ListScopedTools\022)" +
-      ".scalekit.v1.tools.ListScopedToolsReques" +
-      "t\032*.scalekit.v1.tools.ListScopedToolsRes" +
-      "ponse\"1\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\026\022\024/api" +
-      "/v1/tools/scoped\022\254\002\n\016SetToolDefault\022(.sc" +
-      "alekit.v1.tools.SetToolDefaultRequest\032)." +
-      "scalekit.v1.tools.SetToolDefaultResponse" +
-      "\"\304\001\222A\207\001\n\005Tools\022#Marks a tool as the defa" +
-      "ult version\032YSet a specific tool (by nam" +
-      "e, schema version, tool version, and pro" +
-      "vider) as the default.\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREV" +
-      "IEW\202\323\344\223\002\036\"\031/api/v1/tools:set_default:\001*\022" +
-      "\330\001\n\nUpdateTool\022$.scalekit.v1.tools.Updat" +
-      "eToolRequest\032%.scalekit.v1.tools.UpdateT" +
-      "oolResponse\"}\222AJ\n\005Tools\022\rUpdate a tool\0322" +
-      "Update an existing tool by provider and " +
-      "tool name.\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\025\032\r/" +
-      "api/v1/tools:\004tool\022\331\001\n\nDeleteTool\022$.scal" +
-      "ekit.v1.tools.DeleteToolRequest\032\026.google" +
-      ".protobuf.Empty\"\214\001\222AZ\n\005Tools\022\rDelete a t" +
-      "ool\032BDelete a tool by name, schema versi" +
-      "on, tool version, and provider.\202\265\030\002\030\004\372\322\344" +
-      "\223\002\t\022\007PREVIEW\202\323\344\223\002\024*\022/api/v1/tools/{id}\022\302" +
-      "\t\n\013ExecuteTool\022%.scalekit.v1.tools.Execu" +
-      "teToolRequest\032&.scalekit.v1.tools.Execut" +
-      "eToolResponse\"\343\010\222A\272\010\n\022Connected Accounts" +
-      "\022(Execute a tool using a connected accou" +
-      "nt\032\317\003Executes a tool action using authen" +
-      "tication credentials from a connected ac" +
-      "count. Specify the tool by name and prov" +
-      "ide required parameters as JSON. The con" +
-      "nected account can be identified by ID, " +
-      "or by combination of organization/user, " +
-      "connector, and identifier. Returns the e" +
-      "xecution result data and a unique execut" +
-      "ion ID for tracking. Use this endpoint t" +
-      "o perform actions like sending emails, c" +
-      "reating calendar events, or managing res" +
-      "ources in external services.Jq\n\003200\022j\n<T" +
-      "ool executed successfully with result da" +
-      "ta and execution ID\022*\n(\032&.scalekit.v1.to" +
-      "ols.ExecuteToolResponseJz\n\003400\022s\nqInvali" +
-      "d request - occurs when tool name is mis" +
-      "sing, parameters are malformed, or tool " +
-      "definition validation failsJB\n\003401\022;\n9Au" +
-      "thentication required - missing or inval" +
-      "id access tokenJv\n\003404\022o\nmTool or connec" +
-      "ted account not found - occurs when the " +
-      "specified tool name or connected account" +
-      " does not existJ}\n\003500\022v\ntTool execution" +
-      " failed - occurs when the external servi" +
-      "ce returns an error or the tool encounte" +
-      "rs a runtime exception\202\265\030\002\030d\202\323\344\223\002\031\"\024/api" +
-      "/v1/execute_tool:\001*\032\027\222A\024\n\022Connected Acco" +
-      "untsB\310\001\n#com.scalekit.grpc.scalekit.v1.t" +
-      "oolsB\nToolsProtoP\001Z/github.com/scalekit-" +
-      "inc/scalekit/pkg/grpc/tools\242\002\003SVT\252\002\021Scal" +
-      "ekit.V1.Tools\312\002\021Scalekit\\V1\\Tools\342\002\035Scal" +
-      "ekit\\V1\\Tools\\GPBMetadata\352\002\023Scalekit::V1" +
-      "::Toolsb\006proto3"
+      "\020\003\030dH\000R\005query\210\001\001\022\337\001\n\tconnector\030\006 \001(\tB\273\001\222" +
+      "A\257\0012\240\001Connector name (e.g. \'My Gmail\'). " +
+      "When set together with identifier, resol" +
+      "ves to a specific connected account and " +
+      "includes its custom MCP tools in the res" +
+      "ponse.J\n\"My Gmail\"\272H\005r\003\030\220\003H\001R\tconnector\210" +
+      "\001\001\022\207\001\n\017organization_id\030\007 \001(\tBY\222AO26Organ" +
+      "ization ID to scope the connected accoun" +
+      "t lookup.J\025\"org_121312434123312\"\272H\004r\002\030 H" +
+      "\002R\016organizationId\210\001\001\022p\n\007user_id\030\010 \001(\tBR\222" +
+      "AH2.User ID to scope the connected accou" +
+      "nt lookup.J\026\"user_121312434123312\"\272H\004r\002\030" +
+      " H\003R\006userId\210\001\001\022\352\001\n\024connected_account_id\030" +
+      "\t \001(\tB\262\001\222A\242\0012\225\001Connected account ID. Alt" +
+      "ernative to identifier + connector for d" +
+      "irectly identifying the connected accoun" +
+      "t whose custom MCP tools should be inclu" +
+      "ded.J\010\"ca_123\"\272H\tr\007\030d:\003ca_H\004R\022connectedA" +
+      "ccountId\210\001\001B\010\n\006_queryB\014\n\n_connectorB\022\n\020_" +
+      "organization_idB\n\n\010_user_idB\027\n\025_connecte" +
+      "d_account_id\"\233\004\n\021ListToolsResponse\022v\n\017ne" +
+      "xt_page_token\030\001 \001(\tBN\222AK2)Token for fetc" +
+      "hing the next page of toolsJ\036\"eyJwYWdlIj" +
+      "ozLCJsaW1pdCI6MzB9\"R\rnextPageToken\022Q\n\nto" +
+      "tal_size\030\002 \001(\rB2\222A/2(Total number of too" +
+      "ls matching the queryJ\003104R\ttotalSize\022z\n" +
+      "\017prev_page_token\030\003 \001(\tBR\222AO2-Token for f" +
+      "etching the previous page of toolsJ\036\"eyJ" +
+      "wYWdlIjoxLCJsaW1pdCI6MzB9\"R\rprevPageToke" +
+      "n\022^\n\ntool_names\030\004 \003(\tB?\222A<2$List of tool" +
+      " names (if summary=true)J\024[\"gmail_send_e" +
+      "mail\"]R\ttoolNames\022_\n\005tools\030\005 \003(\0132\027.scale" +
+      "kit.v1.tools.ToolB0\222A-2+List of tools (i" +
+      "f summary=false or omitted)R\005tools\"\345\016\n\022E" +
+      "xecuteToolRequest\022Q\n\ttool_name\030\001 \001(\tB4\222A" +
+      "+2\033Name of the tool to executeJ\014\"send_em" +
+      "ail\"\272H\003\310\001\001R\010toolName\022\231\002\n\nidentifier\030\002 \001(" +
+      "\tB\363\001\222A\357\0012\330\001Optional. The unique identifi" +
+      "er for the connected account within the " +
+      "third-party service (e.g., email address" +
+      ", user ID, workspace identifier). Use th" +
+      "is in combination with connector to iden" +
+      "tify the connected account.J\022\"user@examp" +
+      "le.com\"H\000R\nidentifier\210\001\001\022\374\001\n\006params\030\003 \001(" +
+      "\0132\027.google.protobuf.StructB\312\001\222A\306\0012}JSON " +
+      "object containing the parameters require" +
+      "d for tool execution. The structure depe" +
+      "nds on the specific tool being executed." +
+      "JE{\"to\": \"user@example.com\", \"subject\": " +
+      "\"Hello\", \"body\": \"Hello World\"}R\006params\022" +
+      "\352\001\n\024connected_account_id\030\004 \001(\tB\262\001\222A\247\0012\232\001" +
+      "Optional. The unique ID of the connected" +
+      " account. Use this to directly identify " +
+      "the connected account instead of using i" +
+      "dentifier + connector combination.J\010\"ca_" +
+      "123\"\272H\004r\002\030dH\001R\022connectedAccountId\210\001\001\022\355\001\n" +
+      "\tconnector\030\005 \001(\tB\311\001\222A\275\0012\246\001Optional. The " +
+      "name of the connector/provider (e.g., \'G" +
+      "oogle Workspace\', \'Slack\', \'Notion\'). Us" +
+      "e this in combination with identifier to" +
+      " identify the connected account.J\022\"Googl" +
+      "e Workspace\"\272H\005r\003\030\220\003H\002R\tconnector\210\001\001\022\356\001\n" +
+      "\017organization_id\030\006 \001(\tB\277\001\222A\264\0012\246\001Optional" +
+      ". The organization ID to scope the conne" +
+      "cted account lookup. Use this to narrow " +
+      "down the search when the same identifier" +
+      " exists across multiple organizations.J\t" +
+      "\"org_123\"\272H\004r\002\030dH\003R\016organizationId\210\001\001\022\317\001" +
+      "\n\007user_id\030\007 \001(\tB\260\001\222A\245\0012\226\001Optional. The u" +
+      "ser ID to scope the connected account lo" +
+      "okup. Use this to narrow down the search" +
+      " when the same identifier exists across " +
+      "multiple users.J\n\"user_123\"\272H\004r\002\030dH\004R\006us" +
+      "erId\210\001\001\022\331\001\n\014agent_run_id\030\010 \001(\tB\261\001\222A\245\0012\224\001" +
+      "Optional. Customer-supplied identifier g" +
+      "rouping multiple tool calls into a singl" +
+      "e agent run. Useful for correlating logs" +
+      " across an agentic workflow.J\014\"run_abc12" +
+      "3\"\272H\005r\003\030\377\001H\005R\nagentRunId\210\001\001B\r\n\013_identifi" +
+      "erB\027\n\025_connected_account_idB\014\n\n_connecto" +
+      "rB\022\n\020_organization_idB\n\n\010_user_idB\017\n\r_ag" +
+      "ent_run_id\"\243\002\n\023ExecuteToolResponse\022\254\001\n\004d" +
+      "ata\030\001 \001(\0132\027.google.protobuf.StructB\177\222A|2" +
+      "3Free-flowing JSON parameters for the to" +
+      "ol executionJE{\"to\": \"user@example.com\"," +
+      " \"subject\": \"Hello\", \"body\": \"Hello Worl" +
+      "d\"}R\004data\022]\n\014execution_id\030\002 \001(\tB:\222A72(Un" +
+      "ique identifier for the tool executionJ\013" +
+      "\"123456789\"R\013executionId\"\255\002\n\025SetToolDefa" +
+      "ultRequest\022a\n\004name\030\001 \001(\tBM\222A/2\031Fully qua" +
+      "lified tool nameJ\022\"gmail_send_email\"\272H\030r" +
+      "\023\020\001\030d2\r^[a-z0-9_].*$\310\001\001R\004name\022W\n\016schema_" +
+      "version\030\002 \001(\tB0\222A!2\032Schema version of th" +
+      "e toolJ\003\"1\"\272H\tr\004\020\001\030\n\310\001\001R\rschemaVersion\022X" +
+      "\n\014tool_version\030\003 \001(\tB5\222A&2\037Tool version " +
+      "to mark as defaultJ\003\"1\"\272H\tr\004\020\001\030\n\310\001\001R\013too" +
+      "lVersion\"j\n\026SetToolDefaultResponse\022P\n\004to" +
+      "ol\030\001 \001(\0132\027.scalekit.v1.tools.ToolB#\222A 2\036" +
+      "The tool now marked as defaultR\004tool\"^\n\021" +
+      "UpdateToolRequest\022I\n\004tool\030\001 \001(\0132\027.scalek" +
+      "it.v1.tools.ToolB\034\222A\0232\021Updated tool data" +
+      "\272H\003\310\001\001R\004tool\"X\n\022UpdateToolResponse\022B\n\004to" +
+      "ol\030\001 \001(\0132\027.scalekit.v1.tools.ToolB\025\222A\0222\020" +
+      "The updated toolR\004tool\"0\n\021DeleteToolRequ" +
+      "est\022\033\n\002id\030\001 \001(\tB\013\272H\010r\006:\004tol_R\002id\"\227\003\n\026Lis" +
+      "tScopedToolsRequest\022z\n\nidentifier\030\001 \001(\tB" +
+      "Z\222AM23Identifier of the connected accoun" +
+      "t to filter toolsJ\026\"app_google_workspace" +
+      "\"\272H\007r\002\030d\310\001\001R\nidentifier\022r\n\006filter\030\002 \001(\0132" +
+      "#.scalekit.v1.tools.ScopedToolFilterB5\222A" +
+      ",2*Filter parameters for listing scoped " +
+      "tools\272H\003\310\001\001R\006filter\022\033\n\tpage_size\030\003 \001(\rR\010" +
+      "pageSize\022p\n\npage_token\030\004 \001(\tBQ\222AN2.Token" +
+      " from a previous response for pagination" +
+      ".J\034eyJwYWdlIjoyLCJsaW1pdCI6MzB9R\tpageTok" +
+      "en\"\225\003\n\027ListScopedToolsResponse\022v\n\017next_p" +
+      "age_token\030\001 \001(\tBN\222AK2)Token for fetching" +
+      " the next page of toolsJ\036\"eyJwYWdlIjozLC" +
+      "JsaW1pdCI6MzB9\"R\rnextPageToken\022Q\n\ntotal_" +
+      "size\030\002 \001(\rB2\222A/2(Total number of tools m" +
+      "atching the queryJ\003104R\ttotalSize\022z\n\017pre" +
+      "v_page_token\030\003 \001(\tBR\222AO2-Token for fetch" +
+      "ing the previous page of toolsJ\036\"eyJwYWd" +
+      "lIjoxLCJsaW1pdCI6MzB9\"R\rprevPageToken\0223\n" +
+      "\005tools\030\005 \003(\0132\035.scalekit.v1.tools.ScopedT" +
+      "oolR\005tools\"z\n\020ScopedToolFilter\022\034\n\tprovid" +
+      "ers\030\001 \003(\tR\tproviders\022\035\n\ntool_names\030\002 \003(\t" +
+      "R\ttoolNames\022)\n\020connection_names\030\003 \003(\tR\017c" +
+      "onnectionNames\"\263\002\n\031ListAvailableToolsReq" +
+      "uest\022\206\001\n\nidentifier\030\001 \001(\tBf\222AY2?Identifi" +
+      "er of the connected account to list avai" +
+      "lable tools forJ\026\"app_google_workspace\"\272" +
+      "H\007r\002\030d\310\001\001R\nidentifier\022\033\n\tpage_size\030\002 \001(\r" +
+      "R\010pageSize\022p\n\npage_token\030\003 \001(\tBQ\222AN2.Tok" +
+      "en from a previous response for paginati" +
+      "on.J\034eyJwYWdlIjoyLCJsaW1pdCI6MzB9R\tpageT" +
+      "oken\"\315\003\n\032ListAvailableToolsResponse\022v\n\017n" +
+      "ext_page_token\030\001 \001(\tBN\222AK2)Token for fet" +
+      "ching the next page of toolsJ\036\"eyJwYWdlI" +
+      "jozLCJsaW1pdCI6MzB9\"R\rnextPageToken\022[\n\nt" +
+      "otal_size\030\002 \001(\rB<\222A922Total number of av" +
+      "ailable tools matching the queryJ\003104R\tt" +
+      "otalSize\022z\n\017prev_page_token\030\003 \001(\tBR\222AO2-" +
+      "Token for fetching the previous page of " +
+      "toolsJ\036\"eyJwYWdlIjoxLCJsaW1pdCI6MzB9\"R\rp" +
+      "revPageToken\022^\n\005tools\030\004 \003(\0132\027.scalekit.v" +
+      "1.tools.ToolB/\222A,2*List of tools availab" +
+      "le for the identifierR\005tools2\350\030\n\013ToolSer" +
+      "vice\022\362\001\n\nCreateTool\022$.scalekit.v1.tools." +
+      "CreateToolRequest\032%.scalekit.v1.tools.Cr" +
+      "eateToolResponse\"\226\001\222Ac\n\005Tools\022\021Create a " +
+      "new tool\032GRegister a new tool with its s" +
+      "chema, metadata, and other configuration" +
+      ".\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\025\"\r/api/v1/to" +
+      "ols:\004tool\022\372\001\n\tListTools\022#.scalekit.v1.to" +
+      "ols.ListToolsRequest\032$.scalekit.v1.tools" +
+      ".ListToolsResponse\"\241\001\222At\n\005Tools\022\nList to" +
+      "ols\032_Fetch tools by provider, identifier" +
+      ", and connector. If `summary=true`, retu" +
+      "rns only tool names.\202\265\030\002\030d\372\322\344\223\002\t\022\007PREVIE" +
+      "W\202\323\344\223\002\017\022\r/api/v1/tools\022\233\001\n\017ListScopedToo" +
+      "ls\022).scalekit.v1.tools.ListScopedToolsRe" +
+      "quest\032*.scalekit.v1.tools.ListScopedTool" +
+      "sResponse\"1\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\026\022\024" +
+      "/api/v1/tools/scoped\022\204\004\n\022ListAvailableTo" +
+      "ols\022,.scalekit.v1.tools.ListAvailableToo" +
+      "lsRequest\032-.scalekit.v1.tools.ListAvaila" +
+      "bleToolsResponse\"\220\003\222A\330\002\n\005Tools\0221List all" +
+      " tools for a connected account identifie" +
+      "r\032QLists all tools for a given Connected" +
+      " Account Identifier. Identifier is requi" +
+      "red.J*\n\003200\022#\n!Paginated list of availab" +
+      "le toolsJ:\n\003400\0223\n1Invalid request - mis" +
+      "sing or malformed identifierJB\n\003401\022;\n9A" +
+      "uthentication required - missing or inva" +
+      "lid access tokenJ\035\n\003404\022\026\n\024Identifier no" +
+      "t found\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\022\027/api" +
+      "/v1/tools/available\022\254\002\n\016SetToolDefault\022(" +
+      ".scalekit.v1.tools.SetToolDefaultRequest" +
+      "\032).scalekit.v1.tools.SetToolDefaultRespo" +
+      "nse\"\304\001\222A\207\001\n\005Tools\022#Marks a tool as the d" +
+      "efault version\032YSet a specific tool (by " +
+      "name, schema version, tool version, and " +
+      "provider) as the default.\202\265\030\002\030\004\372\322\344\223\002\t\022\007P" +
+      "REVIEW\202\323\344\223\002\036\"\031/api/v1/tools:set_default:" +
+      "\001*\022\330\001\n\nUpdateTool\022$.scalekit.v1.tools.Up" +
+      "dateToolRequest\032%.scalekit.v1.tools.Upda" +
+      "teToolResponse\"}\222AJ\n\005Tools\022\rUpdate a too" +
+      "l\0322Update an existing tool by provider a" +
+      "nd tool name.\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\025" +
+      "\032\r/api/v1/tools:\004tool\022\331\001\n\nDeleteTool\022$.s" +
+      "calekit.v1.tools.DeleteToolRequest\032\026.goo" +
+      "gle.protobuf.Empty\"\214\001\222AZ\n\005Tools\022\rDelete " +
+      "a tool\032BDelete a tool by name, schema ve" +
+      "rsion, tool version, and provider.\202\265\030\002\030\004" +
+      "\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\024*\022/api/v1/tools/{id" +
+      "}\022\302\t\n\013ExecuteTool\022%.scalekit.v1.tools.Ex" +
+      "ecuteToolRequest\032&.scalekit.v1.tools.Exe" +
+      "cuteToolResponse\"\343\010\222A\272\010\n\022Connected Accou" +
+      "nts\022(Execute a tool using a connected ac" +
+      "count\032\317\003Executes a tool action using aut" +
+      "hentication credentials from a connected" +
+      " account. Specify the tool by name and p" +
+      "rovide required parameters as JSON. The " +
+      "connected account can be identified by I" +
+      "D, or by combination of organization/use" +
+      "r, connector, and identifier. Returns th" +
+      "e execution result data and a unique exe" +
+      "cution ID for tracking. Use this endpoin" +
+      "t to perform actions like sending emails" +
+      ", creating calendar events, or managing " +
+      "resources in external services.Jq\n\003200\022j" +
+      "\n<Tool executed successfully with result" +
+      " data and execution ID\022*\n(\032&.scalekit.v1" +
+      ".tools.ExecuteToolResponseJz\n\003400\022s\nqInv" +
+      "alid request - occurs when tool name is " +
+      "missing, parameters are malformed, or to" +
+      "ol definition validation failsJB\n\003401\022;\n" +
+      "9Authentication required - missing or in" +
+      "valid access tokenJv\n\003404\022o\nmTool or con" +
+      "nected account not found - occurs when t" +
+      "he specified tool name or connected acco" +
+      "unt does not existJ}\n\003500\022v\ntTool execut" +
+      "ion failed - occurs when the external se" +
+      "rvice returns an error or the tool encou" +
+      "nters a runtime exception\202\265\030\002\030d\202\323\344\223\002\031\"\024/" +
+      "api/v1/execute_tool:\001*\032\027\222A\024\n\022Connected A" +
+      "ccountsB\310\001\n#com.scalekit.grpc.scalekit.v" +
+      "1.toolsB\nToolsProtoP\001Z/github.com/scalek" +
+      "it-inc/scalekit/pkg/grpc/tools\242\002\003SVT\252\002\021S" +
+      "calekit.V1.Tools\312\002\021Scalekit\\V1\\Tools\342\002\035S" +
+      "calekit\\V1\\Tools\\GPBMetadata\352\002\023Scalekit:" +
+      ":V1::Toolsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -392,7 +460,7 @@ public final class ToolsProto {
     internal_static_scalekit_v1_tools_Filter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_tools_Filter_descriptor,
-        new java.lang.String[] { "Summary", "Provider", "Identifier", "ToolName", "Query", });
+        new java.lang.String[] { "Summary", "Provider", "Identifier", "ToolName", "Query", "Connector", "OrganizationId", "UserId", "ConnectedAccountId", });
     internal_static_scalekit_v1_tools_ListToolsResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_scalekit_v1_tools_ListToolsResponse_fieldAccessorTable = new
@@ -404,7 +472,7 @@ public final class ToolsProto {
     internal_static_scalekit_v1_tools_ExecuteToolRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_tools_ExecuteToolRequest_descriptor,
-        new java.lang.String[] { "ToolName", "Identifier", "Params", "ConnectedAccountId", "Connector", "OrganizationId", "UserId", });
+        new java.lang.String[] { "ToolName", "Identifier", "Params", "ConnectedAccountId", "Connector", "OrganizationId", "UserId", "AgentRunId", });
     internal_static_scalekit_v1_tools_ExecuteToolResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_scalekit_v1_tools_ExecuteToolResponse_fieldAccessorTable = new
@@ -459,6 +527,18 @@ public final class ToolsProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_tools_ScopedToolFilter_descriptor,
         new java.lang.String[] { "Providers", "ToolNames", "ConnectionNames", });
+    internal_static_scalekit_v1_tools_ListAvailableToolsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_scalekit_v1_tools_ListAvailableToolsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_tools_ListAvailableToolsRequest_descriptor,
+        new java.lang.String[] { "Identifier", "PageSize", "PageToken", });
+    internal_static_scalekit_v1_tools_ListAvailableToolsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_scalekit_v1_tools_ListAvailableToolsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_tools_ListAvailableToolsResponse_descriptor,
+        new java.lang.String[] { "NextPageToken", "TotalSize", "PrevPageToken", "Tools", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);

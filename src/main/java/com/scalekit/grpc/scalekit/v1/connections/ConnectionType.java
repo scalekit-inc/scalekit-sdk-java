@@ -49,6 +49,18 @@ public enum ConnectionType
    * <code>WEBAUTHN = 9;</code>
    */
   WEBAUTHN(9),
+  /**
+   * <code>OAUTH_M2M = 10;</code>
+   */
+  OAUTH_M2M(10),
+  /**
+   * <code>TRELLO_OAUTH1 = 11;</code>
+   */
+  TRELLO_OAUTH1(11),
+  /**
+   * <code>GOOGLE_DWD = 12;</code>
+   */
+  GOOGLE_DWD(12),
   UNRECOGNIZED(-1),
   ;
 
@@ -92,6 +104,18 @@ public enum ConnectionType
    * <code>WEBAUTHN = 9;</code>
    */
   public static final int WEBAUTHN_VALUE = 9;
+  /**
+   * <code>OAUTH_M2M = 10;</code>
+   */
+  public static final int OAUTH_M2M_VALUE = 10;
+  /**
+   * <code>TRELLO_OAUTH1 = 11;</code>
+   */
+  public static final int TRELLO_OAUTH1_VALUE = 11;
+  /**
+   * <code>GOOGLE_DWD = 12;</code>
+   */
+  public static final int GOOGLE_DWD_VALUE = 12;
 
 
   public final int getNumber() {
@@ -128,6 +152,9 @@ public enum ConnectionType
       case 7: return BEARER;
       case 8: return API_KEY;
       case 9: return WEBAUTHN;
+      case 10: return OAUTH_M2M;
+      case 11: return TRELLO_OAUTH1;
+      case 12: return GOOGLE_DWD;
       default: return null;
     }
   }

@@ -88,4 +88,90 @@ public interface FilterOrBuilder extends
    */
   com.google.protobuf.ByteString
       getQueryBytes();
+
+  /**
+   * <pre>
+   * Fields 6-9 mirror GetConnectedAccountByIdentifierRequest, enabling ListTools to
+   * resolve a specific connected account and include its custom MCP tools alongside
+   * global tools. When connector or connected_account_id is set, a CA lookup is performed.
+   * </pre>
+   *
+   * <code>optional string connector = 6 [json_name = "connector", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the connector field is set.
+   */
+  boolean hasConnector();
+  /**
+   * <pre>
+   * Fields 6-9 mirror GetConnectedAccountByIdentifierRequest, enabling ListTools to
+   * resolve a specific connected account and include its custom MCP tools alongside
+   * global tools. When connector or connected_account_id is set, a CA lookup is performed.
+   * </pre>
+   *
+   * <code>optional string connector = 6 [json_name = "connector", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The connector.
+   */
+  java.lang.String getConnector();
+  /**
+   * <pre>
+   * Fields 6-9 mirror GetConnectedAccountByIdentifierRequest, enabling ListTools to
+   * resolve a specific connected account and include its custom MCP tools alongside
+   * global tools. When connector or connected_account_id is set, a CA lookup is performed.
+   * </pre>
+   *
+   * <code>optional string connector = 6 [json_name = "connector", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for connector.
+   */
+  com.google.protobuf.ByteString
+      getConnectorBytes();
+
+  /**
+   * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the organizationId field is set.
+   */
+  boolean hasOrganizationId();
+  /**
+   * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The organizationId.
+   */
+  java.lang.String getOrganizationId();
+  /**
+   * <code>optional string organization_id = 7 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for organizationId.
+   */
+  com.google.protobuf.ByteString
+      getOrganizationIdBytes();
+
+  /**
+   * <code>optional string user_id = 8 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the userId field is set.
+   */
+  boolean hasUserId();
+  /**
+   * <code>optional string user_id = 8 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The userId.
+   */
+  java.lang.String getUserId();
+  /**
+   * <code>optional string user_id = 8 [json_name = "userId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
+
+  /**
+   * <code>optional string connected_account_id = 9 [json_name = "connectedAccountId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the connectedAccountId field is set.
+   */
+  boolean hasConnectedAccountId();
+  /**
+   * <code>optional string connected_account_id = 9 [json_name = "connectedAccountId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The connectedAccountId.
+   */
+  java.lang.String getConnectedAccountId();
+  /**
+   * <code>optional string connected_account_id = 9 [json_name = "connectedAccountId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for connectedAccountId.
+   */
+  com.google.protobuf.ByteString
+      getConnectedAccountIdBytes();
 }
