@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     txtRecordSecret_ = "";
     verificationStatus_ = 0;
     domainType_ = 0;
+    verificationMethod_ = 0;
   }
 
   @java.lang.Override
@@ -370,6 +371,24 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.scalekit.grpc.scalekit.v1.domains.DomainType.UNRECOGNIZED : result;
   }
 
+  public static final int VERIFICATION_METHOD_FIELD_NUMBER = 13;
+  private int verificationMethod_ = 0;
+  /**
+   * <code>.scalekit.v1.domains.VerificationMethod verification_method = 13 [json_name = "verificationMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for verificationMethod.
+   */
+  @java.lang.Override public int getVerificationMethodValue() {
+    return verificationMethod_;
+  }
+  /**
+   * <code>.scalekit.v1.domains.VerificationMethod verification_method = 13 [json_name = "verificationMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The verificationMethod.
+   */
+  @java.lang.Override public com.scalekit.grpc.scalekit.v1.domains.VerificationMethod getVerificationMethod() {
+    com.scalekit.grpc.scalekit.v1.domains.VerificationMethod result = com.scalekit.grpc.scalekit.v1.domains.VerificationMethod.forNumber(verificationMethod_);
+    return result == null ? com.scalekit.grpc.scalekit.v1.domains.VerificationMethod.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -414,6 +433,9 @@ private static final long serialVersionUID = 0L;
     if (domainType_ != com.scalekit.grpc.scalekit.v1.domains.DomainType.DOMAIN_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(12, domainType_);
     }
+    if (verificationMethod_ != com.scalekit.grpc.scalekit.v1.domains.VerificationMethod.VERIFICATION_METHOD_UNSPECIFIED.getNumber()) {
+      output.writeEnum(13, verificationMethod_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -457,6 +479,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(12, domainType_);
     }
+    if (verificationMethod_ != com.scalekit.grpc.scalekit.v1.domains.VerificationMethod.VERIFICATION_METHOD_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(13, verificationMethod_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -496,6 +522,7 @@ private static final long serialVersionUID = 0L;
           .equals(other.getUpdateTime())) return false;
     }
     if (domainType_ != other.domainType_) return false;
+    if (verificationMethod_ != other.verificationMethod_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -531,6 +558,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + DOMAIN_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + domainType_;
+    hash = (37 * hash) + VERIFICATION_METHOD_FIELD_NUMBER;
+    hash = (53 * hash) + verificationMethod_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -687,6 +716,7 @@ private static final long serialVersionUID = 0L;
         updateTimeBuilder_ = null;
       }
       domainType_ = 0;
+      verificationMethod_ = 0;
       return this;
     }
 
@@ -756,6 +786,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.domainType_ = domainType_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.verificationMethod_ = verificationMethod_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -846,6 +879,9 @@ private static final long serialVersionUID = 0L;
       if (other.domainType_ != 0) {
         setDomainTypeValue(other.getDomainTypeValue());
       }
+      if (other.verificationMethod_ != 0) {
+        setVerificationMethodValue(other.getVerificationMethodValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -926,6 +962,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000200;
               break;
             } // case 96
+            case 104: {
+              verificationMethod_ = input.readEnum();
+              bitField0_ |= 0x00000400;
+              break;
+            } // case 104
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1719,6 +1760,59 @@ private static final long serialVersionUID = 0L;
     public Builder clearDomainType() {
       bitField0_ = (bitField0_ & ~0x00000200);
       domainType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int verificationMethod_ = 0;
+    /**
+     * <code>.scalekit.v1.domains.VerificationMethod verification_method = 13 [json_name = "verificationMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enum numeric value on the wire for verificationMethod.
+     */
+    @java.lang.Override public int getVerificationMethodValue() {
+      return verificationMethod_;
+    }
+    /**
+     * <code>.scalekit.v1.domains.VerificationMethod verification_method = 13 [json_name = "verificationMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enum numeric value on the wire for verificationMethod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVerificationMethodValue(int value) {
+      verificationMethod_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.domains.VerificationMethod verification_method = 13 [json_name = "verificationMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The verificationMethod.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.domains.VerificationMethod getVerificationMethod() {
+      com.scalekit.grpc.scalekit.v1.domains.VerificationMethod result = com.scalekit.grpc.scalekit.v1.domains.VerificationMethod.forNumber(verificationMethod_);
+      return result == null ? com.scalekit.grpc.scalekit.v1.domains.VerificationMethod.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.scalekit.v1.domains.VerificationMethod verification_method = 13 [json_name = "verificationMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The verificationMethod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVerificationMethod(com.scalekit.grpc.scalekit.v1.domains.VerificationMethod value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000400;
+      verificationMethod_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.domains.VerificationMethod verification_method = 13 [json_name = "verificationMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVerificationMethod() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      verificationMethod_ = 0;
       onChanged();
       return this;
     }

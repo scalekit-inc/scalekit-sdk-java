@@ -131,4 +131,15 @@ public interface DomainOrBuilder extends
    * @return The domainType.
    */
   com.scalekit.grpc.scalekit.v1.domains.DomainType getDomainType();
+
+  /**
+   * <code>.scalekit.v1.domains.VerificationMethod verification_method = 13 [json_name = "verificationMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for verificationMethod.
+   */
+  int getVerificationMethodValue();
+  /**
+   * <code>.scalekit.v1.domains.VerificationMethod verification_method = 13 [json_name = "verificationMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The verificationMethod.
+   */
+  com.scalekit.grpc.scalekit.v1.domains.VerificationMethod getVerificationMethod();
 }

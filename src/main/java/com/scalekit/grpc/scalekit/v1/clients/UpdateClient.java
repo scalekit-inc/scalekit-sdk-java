@@ -17,9 +17,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UpdateClient() {
-    redirectUris_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-    defaultRedirectUri_ = "";
     backChannelLogoutUris_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     postLogoutRedirectUris_ =
@@ -56,90 +53,6 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
-  public static final int REDIRECT_URIS_FIELD_NUMBER = 2;
-  @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList redirectUris_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
-  /**
-   * <code>repeated string redirect_uris = 2 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return A list containing the redirectUris.
-   */
-  public com.google.protobuf.ProtocolStringList
-      getRedirectUrisList() {
-    return redirectUris_;
-  }
-  /**
-   * <code>repeated string redirect_uris = 2 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The count of redirectUris.
-   */
-  public int getRedirectUrisCount() {
-    return redirectUris_.size();
-  }
-  /**
-   * <code>repeated string redirect_uris = 2 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @param index The index of the element to return.
-   * @return The redirectUris at the given index.
-   */
-  public java.lang.String getRedirectUris(int index) {
-    return redirectUris_.get(index);
-  }
-  /**
-   * <code>repeated string redirect_uris = 2 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the redirectUris at the given index.
-   */
-  public com.google.protobuf.ByteString
-      getRedirectUrisBytes(int index) {
-    return redirectUris_.getByteString(index);
-  }
-
-  public static final int DEFAULT_REDIRECT_URI_FIELD_NUMBER = 3;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object defaultRedirectUri_ = "";
-  /**
-   * <code>optional string default_redirect_uri = 3 [json_name = "defaultRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return Whether the defaultRedirectUri field is set.
-   */
-  @java.lang.Override
-  public boolean hasDefaultRedirectUri() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <code>optional string default_redirect_uri = 3 [json_name = "defaultRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The defaultRedirectUri.
-   */
-  @java.lang.Override
-  public java.lang.String getDefaultRedirectUri() {
-    java.lang.Object ref = defaultRedirectUri_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      defaultRedirectUri_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>optional string default_redirect_uri = 3 [json_name = "defaultRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The bytes for defaultRedirectUri.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getDefaultRedirectUriBytes() {
-    java.lang.Object ref = defaultRedirectUri_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      defaultRedirectUri_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int BACK_CHANNEL_LOGOUT_URIS_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList backChannelLogoutUris_ =
@@ -223,7 +136,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasInitiateLoginUri() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <code>optional string initiate_login_uri = 6 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -434,7 +347,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasDisallowScalekitApiAccess() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -497,7 +410,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasEnforcePkce() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -529,19 +442,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < redirectUris_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, redirectUris_.getRaw(i));
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, defaultRedirectUri_);
-    }
     for (int i = 0; i < backChannelLogoutUris_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, backChannelLogoutUris_.getRaw(i));
     }
     for (int i = 0; i < postLogoutRedirectUris_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, postLogoutRedirectUris_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, initiateLoginUri_);
     }
     for (int i = 0; i < postLoginUris_.size(); i++) {
@@ -559,13 +466,13 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < customClaims_.size(); i++) {
       output.writeMessage(12, customClaims_.get(i));
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(13, getDisallowScalekitApiAccess());
     }
     for (int i = 0; i < grantTypes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, grantTypes_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(15, getEnforcePkce());
     }
     getUnknownFields().writeTo(output);
@@ -577,17 +484,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    {
-      int dataSize = 0;
-      for (int i = 0; i < redirectUris_.size(); i++) {
-        dataSize += computeStringSizeNoTag(redirectUris_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getRedirectUrisList().size();
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, defaultRedirectUri_);
-    }
     {
       int dataSize = 0;
       for (int i = 0; i < backChannelLogoutUris_.size(); i++) {
@@ -604,7 +500,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getPostLogoutRedirectUrisList().size();
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, initiateLoginUri_);
     }
     {
@@ -634,7 +530,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, customClaims_.get(i));
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getDisallowScalekitApiAccess());
     }
@@ -646,7 +542,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getGrantTypesList().size();
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, getEnforcePkce());
     }
@@ -665,13 +561,6 @@ private static final long serialVersionUID = 0L;
     }
     com.scalekit.grpc.scalekit.v1.clients.UpdateClient other = (com.scalekit.grpc.scalekit.v1.clients.UpdateClient) obj;
 
-    if (!getRedirectUrisList()
-        .equals(other.getRedirectUrisList())) return false;
-    if (hasDefaultRedirectUri() != other.hasDefaultRedirectUri()) return false;
-    if (hasDefaultRedirectUri()) {
-      if (!getDefaultRedirectUri()
-          .equals(other.getDefaultRedirectUri())) return false;
-    }
     if (!getBackChannelLogoutUrisList()
         .equals(other.getBackChannelLogoutUrisList())) return false;
     if (!getPostLogoutRedirectUrisList()
@@ -714,14 +603,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getRedirectUrisCount() > 0) {
-      hash = (37 * hash) + REDIRECT_URIS_FIELD_NUMBER;
-      hash = (53 * hash) + getRedirectUrisList().hashCode();
-    }
-    if (hasDefaultRedirectUri()) {
-      hash = (37 * hash) + DEFAULT_REDIRECT_URI_FIELD_NUMBER;
-      hash = (53 * hash) + getDefaultRedirectUri().hashCode();
-    }
     if (getBackChannelLogoutUrisCount() > 0) {
       hash = (37 * hash) + BACK_CHANNEL_LOGOUT_URIS_FIELD_NUMBER;
       hash = (53 * hash) + getBackChannelLogoutUrisList().hashCode();
@@ -902,9 +783,6 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      redirectUris_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
-      defaultRedirectUri_ = "";
       backChannelLogoutUris_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
       postLogoutRedirectUris_ =
@@ -922,7 +800,7 @@ private static final long serialVersionUID = 0L;
         customClaims_ = null;
         customClaimsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000080);
       disallowScalekitApiAccess_ = null;
       if (disallowScalekitApiAccessBuilder_ != null) {
         disallowScalekitApiAccessBuilder_.dispose();
@@ -969,9 +847,9 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.clients.UpdateClient result) {
       if (customClaimsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           customClaims_ = java.util.Collections.unmodifiableList(customClaims_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.customClaims_ = customClaims_;
       } else {
@@ -982,55 +860,47 @@ private static final long serialVersionUID = 0L;
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.clients.UpdateClient result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        redirectUris_.makeImmutable();
-        result.redirectUris_ = redirectUris_;
-      }
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.defaultRedirectUri_ = defaultRedirectUri_;
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
         backChannelLogoutUris_.makeImmutable();
         result.backChannelLogoutUris_ = backChannelLogoutUris_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         postLogoutRedirectUris_.makeImmutable();
         result.postLogoutRedirectUris_ = postLogoutRedirectUris_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.initiateLoginUri_ = initiateLoginUri_;
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         postLoginUris_.makeImmutable();
         result.postLoginUris_ = postLoginUris_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.accessTokenExpiry_ = accessTokenExpiry_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         scopes_.makeImmutable();
         result.scopes_ = scopes_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.disallowScalekitApiAccess_ = disallowScalekitApiAccessBuilder_ == null
             ? disallowScalekitApiAccess_
             : disallowScalekitApiAccessBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         grantTypes_.makeImmutable();
         result.grantTypes_ = grantTypes_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.enforcePkce_ = enforcePkceBuilder_ == null
             ? enforcePkce_
             : enforcePkceBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1079,25 +949,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.clients.UpdateClient other) {
       if (other == com.scalekit.grpc.scalekit.v1.clients.UpdateClient.getDefaultInstance()) return this;
-      if (!other.redirectUris_.isEmpty()) {
-        if (redirectUris_.isEmpty()) {
-          redirectUris_ = other.redirectUris_;
-          bitField0_ |= 0x00000001;
-        } else {
-          ensureRedirectUrisIsMutable();
-          redirectUris_.addAll(other.redirectUris_);
-        }
-        onChanged();
-      }
-      if (other.hasDefaultRedirectUri()) {
-        defaultRedirectUri_ = other.defaultRedirectUri_;
-        bitField0_ |= 0x00000002;
-        onChanged();
-      }
       if (!other.backChannelLogoutUris_.isEmpty()) {
         if (backChannelLogoutUris_.isEmpty()) {
           backChannelLogoutUris_ = other.backChannelLogoutUris_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
         } else {
           ensureBackChannelLogoutUrisIsMutable();
           backChannelLogoutUris_.addAll(other.backChannelLogoutUris_);
@@ -1107,7 +962,7 @@ private static final long serialVersionUID = 0L;
       if (!other.postLogoutRedirectUris_.isEmpty()) {
         if (postLogoutRedirectUris_.isEmpty()) {
           postLogoutRedirectUris_ = other.postLogoutRedirectUris_;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000002;
         } else {
           ensurePostLogoutRedirectUrisIsMutable();
           postLogoutRedirectUris_.addAll(other.postLogoutRedirectUris_);
@@ -1116,13 +971,13 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasInitiateLoginUri()) {
         initiateLoginUri_ = other.initiateLoginUri_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.postLoginUris_.isEmpty()) {
         if (postLoginUris_.isEmpty()) {
           postLoginUris_ = other.postLoginUris_;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000008;
         } else {
           ensurePostLoginUrisIsMutable();
           postLoginUris_.addAll(other.postLoginUris_);
@@ -1131,7 +986,7 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getAccessTokenExpiry() != 0L) {
@@ -1140,7 +995,7 @@ private static final long serialVersionUID = 0L;
       if (!other.scopes_.isEmpty()) {
         if (scopes_.isEmpty()) {
           scopes_ = other.scopes_;
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000040;
         } else {
           ensureScopesIsMutable();
           scopes_.addAll(other.scopes_);
@@ -1151,7 +1006,7 @@ private static final long serialVersionUID = 0L;
         if (!other.customClaims_.isEmpty()) {
           if (customClaims_.isEmpty()) {
             customClaims_ = other.customClaims_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureCustomClaimsIsMutable();
             customClaims_.addAll(other.customClaims_);
@@ -1164,7 +1019,7 @@ private static final long serialVersionUID = 0L;
             customClaimsBuilder_.dispose();
             customClaimsBuilder_ = null;
             customClaims_ = other.customClaims_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000080);
             customClaimsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getCustomClaimsFieldBuilder() : null;
@@ -1179,7 +1034,7 @@ private static final long serialVersionUID = 0L;
       if (!other.grantTypes_.isEmpty()) {
         if (grantTypes_.isEmpty()) {
           grantTypes_ = other.grantTypes_;
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00000200;
         } else {
           ensureGrantTypesIsMutable();
           grantTypes_.addAll(other.grantTypes_);
@@ -1215,17 +1070,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-              ensureRedirectUrisIsMutable();
-              redirectUris_.add(s);
-              break;
-            } // case 18
-            case 26: {
-              defaultRedirectUri_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              break;
-            } // case 26
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
               ensureBackChannelLogoutUrisIsMutable();
@@ -1240,7 +1084,7 @@ private static final long serialVersionUID = 0L;
             } // case 42
             case 50: {
               initiateLoginUri_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000004;
               break;
             } // case 50
             case 58: {
@@ -1251,12 +1095,12 @@ private static final long serialVersionUID = 0L;
             } // case 58
             case 66: {
               name_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000010;
               break;
             } // case 66
             case 72: {
               accessTokenExpiry_ = input.readInt64();
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000020;
               break;
             } // case 72
             case 90: {
@@ -1282,7 +1126,7 @@ private static final long serialVersionUID = 0L;
               input.readMessage(
                   getDisallowScalekitApiAccessFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000100;
               break;
             } // case 106
             case 114: {
@@ -1295,7 +1139,7 @@ private static final long serialVersionUID = 0L;
               input.readMessage(
                   getEnforcePkceFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00000400;
               break;
             } // case 122
             default: {
@@ -1315,203 +1159,13 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringArrayList redirectUris_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-    private void ensureRedirectUrisIsMutable() {
-      if (!redirectUris_.isModifiable()) {
-        redirectUris_ = new com.google.protobuf.LazyStringArrayList(redirectUris_);
-      }
-      bitField0_ |= 0x00000001;
-    }
-    /**
-     * <code>repeated string redirect_uris = 2 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return A list containing the redirectUris.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getRedirectUrisList() {
-      redirectUris_.makeImmutable();
-      return redirectUris_;
-    }
-    /**
-     * <code>repeated string redirect_uris = 2 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The count of redirectUris.
-     */
-    public int getRedirectUrisCount() {
-      return redirectUris_.size();
-    }
-    /**
-     * <code>repeated string redirect_uris = 2 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param index The index of the element to return.
-     * @return The redirectUris at the given index.
-     */
-    public java.lang.String getRedirectUris(int index) {
-      return redirectUris_.get(index);
-    }
-    /**
-     * <code>repeated string redirect_uris = 2 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the redirectUris at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getRedirectUrisBytes(int index) {
-      return redirectUris_.getByteString(index);
-    }
-    /**
-     * <code>repeated string redirect_uris = 2 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param index The index to set the value at.
-     * @param value The redirectUris to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRedirectUris(
-        int index, java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      ensureRedirectUrisIsMutable();
-      redirectUris_.set(index, value);
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string redirect_uris = 2 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The redirectUris to add.
-     * @return This builder for chaining.
-     */
-    public Builder addRedirectUris(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      ensureRedirectUrisIsMutable();
-      redirectUris_.add(value);
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string redirect_uris = 2 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param values The redirectUris to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllRedirectUris(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureRedirectUrisIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, redirectUris_);
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string redirect_uris = 2 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearRedirectUris() {
-      redirectUris_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string redirect_uris = 2 [json_name = "redirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes of the redirectUris to add.
-     * @return This builder for chaining.
-     */
-    public Builder addRedirectUrisBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      ensureRedirectUrisIsMutable();
-      redirectUris_.add(value);
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object defaultRedirectUri_ = "";
-    /**
-     * <code>optional string default_redirect_uri = 3 [json_name = "defaultRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return Whether the defaultRedirectUri field is set.
-     */
-    public boolean hasDefaultRedirectUri() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>optional string default_redirect_uri = 3 [json_name = "defaultRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The defaultRedirectUri.
-     */
-    public java.lang.String getDefaultRedirectUri() {
-      java.lang.Object ref = defaultRedirectUri_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        defaultRedirectUri_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>optional string default_redirect_uri = 3 [json_name = "defaultRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The bytes for defaultRedirectUri.
-     */
-    public com.google.protobuf.ByteString
-        getDefaultRedirectUriBytes() {
-      java.lang.Object ref = defaultRedirectUri_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        defaultRedirectUri_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>optional string default_redirect_uri = 3 [json_name = "defaultRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The defaultRedirectUri to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDefaultRedirectUri(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      defaultRedirectUri_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string default_redirect_uri = 3 [json_name = "defaultRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDefaultRedirectUri() {
-      defaultRedirectUri_ = getDefaultInstance().getDefaultRedirectUri();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional string default_redirect_uri = 3 [json_name = "defaultRedirectUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The bytes for defaultRedirectUri to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDefaultRedirectUriBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      defaultRedirectUri_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-
     private com.google.protobuf.LazyStringArrayList backChannelLogoutUris_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     private void ensureBackChannelLogoutUrisIsMutable() {
       if (!backChannelLogoutUris_.isModifiable()) {
         backChannelLogoutUris_ = new com.google.protobuf.LazyStringArrayList(backChannelLogoutUris_);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000001;
     }
     /**
      * <code>repeated string back_channel_logout_uris = 4 [json_name = "backChannelLogoutUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -1557,7 +1211,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureBackChannelLogoutUrisIsMutable();
       backChannelLogoutUris_.set(index, value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1571,7 +1225,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureBackChannelLogoutUrisIsMutable();
       backChannelLogoutUris_.add(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1585,7 +1239,7 @@ private static final long serialVersionUID = 0L;
       ensureBackChannelLogoutUrisIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, backChannelLogoutUris_);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1596,7 +1250,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearBackChannelLogoutUris() {
       backChannelLogoutUris_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);;
+      bitField0_ = (bitField0_ & ~0x00000001);;
       onChanged();
       return this;
     }
@@ -1611,7 +1265,7 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensureBackChannelLogoutUrisIsMutable();
       backChannelLogoutUris_.add(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1622,7 +1276,7 @@ private static final long serialVersionUID = 0L;
       if (!postLogoutRedirectUris_.isModifiable()) {
         postLogoutRedirectUris_ = new com.google.protobuf.LazyStringArrayList(postLogoutRedirectUris_);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000002;
     }
     /**
      * <code>repeated string post_logout_redirect_uris = 5 [json_name = "postLogoutRedirectUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -1668,7 +1322,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensurePostLogoutRedirectUrisIsMutable();
       postLogoutRedirectUris_.set(index, value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1682,7 +1336,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensurePostLogoutRedirectUrisIsMutable();
       postLogoutRedirectUris_.add(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1696,7 +1350,7 @@ private static final long serialVersionUID = 0L;
       ensurePostLogoutRedirectUrisIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, postLogoutRedirectUris_);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1707,7 +1361,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPostLogoutRedirectUris() {
       postLogoutRedirectUris_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);;
+      bitField0_ = (bitField0_ & ~0x00000002);;
       onChanged();
       return this;
     }
@@ -1722,7 +1376,7 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensurePostLogoutRedirectUrisIsMutable();
       postLogoutRedirectUris_.add(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1733,7 +1387,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the initiateLoginUri field is set.
      */
     public boolean hasInitiateLoginUri() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>optional string initiate_login_uri = 6 [json_name = "initiateLoginUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -1777,7 +1431,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       initiateLoginUri_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1787,7 +1441,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearInitiateLoginUri() {
       initiateLoginUri_ = getDefaultInstance().getInitiateLoginUri();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1801,7 +1455,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       initiateLoginUri_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1812,7 +1466,7 @@ private static final long serialVersionUID = 0L;
       if (!postLoginUris_.isModifiable()) {
         postLoginUris_ = new com.google.protobuf.LazyStringArrayList(postLoginUris_);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000008;
     }
     /**
      * <code>repeated string post_login_uris = 7 [json_name = "postLoginUris", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -1858,7 +1512,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensurePostLoginUrisIsMutable();
       postLoginUris_.set(index, value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1872,7 +1526,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensurePostLoginUrisIsMutable();
       postLoginUris_.add(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1886,7 +1540,7 @@ private static final long serialVersionUID = 0L;
       ensurePostLoginUrisIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, postLoginUris_);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1897,7 +1551,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPostLoginUris() {
       postLoginUris_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000020);;
+      bitField0_ = (bitField0_ & ~0x00000008);;
       onChanged();
       return this;
     }
@@ -1912,7 +1566,7 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensurePostLoginUrisIsMutable();
       postLoginUris_.add(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1960,7 +1614,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1970,7 +1624,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1984,7 +1638,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2006,7 +1660,7 @@ private static final long serialVersionUID = 0L;
     public Builder setAccessTokenExpiry(long value) {
 
       accessTokenExpiry_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2015,7 +1669,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearAccessTokenExpiry() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000020);
       accessTokenExpiry_ = 0L;
       onChanged();
       return this;
@@ -2027,7 +1681,7 @@ private static final long serialVersionUID = 0L;
       if (!scopes_.isModifiable()) {
         scopes_ = new com.google.protobuf.LazyStringArrayList(scopes_);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000040;
     }
     /**
      * <code>repeated string scopes = 11 [json_name = "scopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -2073,7 +1727,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureScopesIsMutable();
       scopes_.set(index, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2087,7 +1741,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureScopesIsMutable();
       scopes_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2101,7 +1755,7 @@ private static final long serialVersionUID = 0L;
       ensureScopesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, scopes_);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2112,7 +1766,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearScopes() {
       scopes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);;
+      bitField0_ = (bitField0_ & ~0x00000040);;
       onChanged();
       return this;
     }
@@ -2127,7 +1781,7 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensureScopesIsMutable();
       scopes_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2135,9 +1789,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.scalekit.grpc.scalekit.v1.clients.CustomClaim> customClaims_ =
       java.util.Collections.emptyList();
     private void ensureCustomClaimsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         customClaims_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.clients.CustomClaim>(customClaims_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000080;
        }
     }
 
@@ -2287,7 +1941,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearCustomClaims() {
       if (customClaimsBuilder_ == null) {
         customClaims_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         customClaimsBuilder_.clear();
@@ -2364,7 +2018,7 @@ private static final long serialVersionUID = 0L;
         customClaimsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.scalekit.grpc.scalekit.v1.clients.CustomClaim, com.scalekit.grpc.scalekit.v1.clients.CustomClaim.Builder, com.scalekit.grpc.scalekit.v1.clients.CustomClaimOrBuilder>(
                 customClaims_,
-                ((bitField0_ & 0x00000200) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         customClaims_ = null;
@@ -2380,7 +2034,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the disallowScalekitApiAccess field is set.
      */
     public boolean hasDisallowScalekitApiAccess() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -2405,7 +2059,7 @@ private static final long serialVersionUID = 0L;
       } else {
         disallowScalekitApiAccessBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2419,7 +2073,7 @@ private static final long serialVersionUID = 0L;
       } else {
         disallowScalekitApiAccessBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2428,7 +2082,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeDisallowScalekitApiAccess(com.google.protobuf.BoolValue value) {
       if (disallowScalekitApiAccessBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0) &&
+        if (((bitField0_ & 0x00000100) != 0) &&
           disallowScalekitApiAccess_ != null &&
           disallowScalekitApiAccess_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
           getDisallowScalekitApiAccessBuilder().mergeFrom(value);
@@ -2439,7 +2093,7 @@ private static final long serialVersionUID = 0L;
         disallowScalekitApiAccessBuilder_.mergeFrom(value);
       }
       if (disallowScalekitApiAccess_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2448,7 +2102,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearDisallowScalekitApiAccess() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000100);
       disallowScalekitApiAccess_ = null;
       if (disallowScalekitApiAccessBuilder_ != null) {
         disallowScalekitApiAccessBuilder_.dispose();
@@ -2461,7 +2115,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.BoolValue disallow_scalekit_api_access = 13 [json_name = "disallowScalekitApiAccess", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.BoolValue.Builder getDisallowScalekitApiAccessBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getDisallowScalekitApiAccessFieldBuilder().getBuilder();
     }
@@ -2499,7 +2153,7 @@ private static final long serialVersionUID = 0L;
       if (!grantTypes_.isModifiable()) {
         grantTypes_ = new com.google.protobuf.LazyStringArrayList(grantTypes_);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000200;
     }
     /**
      * <code>repeated string grant_types = 14 [json_name = "grantTypes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -2545,7 +2199,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureGrantTypesIsMutable();
       grantTypes_.set(index, value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2559,7 +2213,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureGrantTypesIsMutable();
       grantTypes_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2573,7 +2227,7 @@ private static final long serialVersionUID = 0L;
       ensureGrantTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, grantTypes_);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2584,7 +2238,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearGrantTypes() {
       grantTypes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000800);;
+      bitField0_ = (bitField0_ & ~0x00000200);;
       onChanged();
       return this;
     }
@@ -2599,7 +2253,7 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensureGrantTypesIsMutable();
       grantTypes_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2612,7 +2266,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the enforcePkce field is set.
      */
     public boolean hasEnforcePkce() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -2637,7 +2291,7 @@ private static final long serialVersionUID = 0L;
       } else {
         enforcePkceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2651,7 +2305,7 @@ private static final long serialVersionUID = 0L;
       } else {
         enforcePkceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2660,7 +2314,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeEnforcePkce(com.google.protobuf.BoolValue value) {
       if (enforcePkceBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0) &&
+        if (((bitField0_ & 0x00000400) != 0) &&
           enforcePkce_ != null &&
           enforcePkce_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
           getEnforcePkceBuilder().mergeFrom(value);
@@ -2671,7 +2325,7 @@ private static final long serialVersionUID = 0L;
         enforcePkceBuilder_.mergeFrom(value);
       }
       if (enforcePkce_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -2680,7 +2334,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearEnforcePkce() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000400);
       enforcePkce_ = null;
       if (enforcePkceBuilder_ != null) {
         enforcePkceBuilder_.dispose();
@@ -2693,7 +2347,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.BoolValue enforce_pkce = 15 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.BoolValue.Builder getEnforcePkceBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getEnforcePkceFieldBuilder().getBuilder();
     }

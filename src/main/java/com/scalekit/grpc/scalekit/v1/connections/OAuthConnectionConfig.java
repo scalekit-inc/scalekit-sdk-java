@@ -405,6 +405,136 @@ private static final long serialVersionUID = 0L;
     return syncUserProfileOnLogin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnLogin_;
   }
 
+  public static final int TOKEN_ACCESS_TYPE_FIELD_NUMBER = 19;
+  private com.google.protobuf.StringValue tokenAccessType_;
+  /**
+   * <code>.google.protobuf.StringValue token_access_type = 19 [json_name = "tokenAccessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the tokenAccessType field is set.
+   */
+  @java.lang.Override
+  public boolean hasTokenAccessType() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+  /**
+   * <code>.google.protobuf.StringValue token_access_type = 19 [json_name = "tokenAccessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The tokenAccessType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getTokenAccessType() {
+    return tokenAccessType_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : tokenAccessType_;
+  }
+  /**
+   * <code>.google.protobuf.StringValue token_access_type = 19 [json_name = "tokenAccessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getTokenAccessTypeOrBuilder() {
+    return tokenAccessType_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : tokenAccessType_;
+  }
+
+  public static final int TENANT_ID_FIELD_NUMBER = 20;
+  private com.google.protobuf.StringValue tenantId_;
+  /**
+   * <code>.google.protobuf.StringValue tenant_id = 20 [json_name = "tenantId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the tenantId field is set.
+   */
+  @java.lang.Override
+  public boolean hasTenantId() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   * <code>.google.protobuf.StringValue tenant_id = 20 [json_name = "tenantId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The tenantId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getTenantId() {
+    return tenantId_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : tenantId_;
+  }
+  /**
+   * <code>.google.protobuf.StringValue tenant_id = 20 [json_name = "tenantId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getTenantIdOrBuilder() {
+    return tenantId_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : tenantId_;
+  }
+
+  public static final int IS_CIMD_FIELD_NUMBER = 21;
+  private com.google.protobuf.BoolValue isCimd_;
+  /**
+   * <code>.google.protobuf.BoolValue is_cimd = 21 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the isCimd field is set.
+   */
+  @java.lang.Override
+  public boolean hasIsCimd() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue is_cimd = 21 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isCimd.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getIsCimd() {
+    return isCimd_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isCimd_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue is_cimd = 21 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getIsCimdOrBuilder() {
+    return isCimd_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isCimd_;
+  }
+
+  public static final int APP_NAME_FIELD_NUMBER = 22;
+  private com.google.protobuf.StringValue appName_;
+  /**
+   * <code>.google.protobuf.StringValue app_name = 22 [json_name = "appName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the appName field is set.
+   */
+  @java.lang.Override
+  public boolean hasAppName() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+  /**
+   * <code>.google.protobuf.StringValue app_name = 22 [json_name = "appName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The appName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getAppName() {
+    return appName_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : appName_;
+  }
+  /**
+   * <code>.google.protobuf.StringValue app_name = 22 [json_name = "appName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getAppNameOrBuilder() {
+    return appName_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : appName_;
+  }
+
+  public static final int OPTIONAL_SCOPES_FIELD_NUMBER = 23;
+  private com.scalekit.grpc.scalekit.v1.connections.OptionalScopes optionalScopes_;
+  /**
+   * <code>optional .scalekit.v1.connections.OptionalScopes optional_scopes = 23 [json_name = "optionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the optionalScopes field is set.
+   */
+  @java.lang.Override
+  public boolean hasOptionalScopes() {
+    return ((bitField0_ & 0x00008000) != 0);
+  }
+  /**
+   * <code>optional .scalekit.v1.connections.OptionalScopes optional_scopes = 23 [json_name = "optionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The optionalScopes.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.OptionalScopes getOptionalScopes() {
+    return optionalScopes_ == null ? com.scalekit.grpc.scalekit.v1.connections.OptionalScopes.getDefaultInstance() : optionalScopes_;
+  }
+  /**
+   * <code>optional .scalekit.v1.connections.OptionalScopes optional_scopes = 23 [json_name = "optionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.OptionalScopesOrBuilder getOptionalScopesOrBuilder() {
+    return optionalScopes_ == null ? com.scalekit.grpc.scalekit.v1.connections.OptionalScopes.getDefaultInstance() : optionalScopes_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -457,6 +587,21 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(18, getSyncUserProfileOnLogin());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(19, getTokenAccessType());
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(20, getTenantId());
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      output.writeMessage(21, getIsCimd());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(22, getAppName());
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      output.writeMessage(23, getOptionalScopes());
     }
     getUnknownFields().writeTo(output);
   }
@@ -521,6 +666,26 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(18, getSyncUserProfileOnLogin());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(19, getTokenAccessType());
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(20, getTenantId());
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(21, getIsCimd());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(22, getAppName());
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(23, getOptionalScopes());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -596,6 +761,31 @@ private static final long serialVersionUID = 0L;
       if (!getSyncUserProfileOnLogin()
           .equals(other.getSyncUserProfileOnLogin())) return false;
     }
+    if (hasTokenAccessType() != other.hasTokenAccessType()) return false;
+    if (hasTokenAccessType()) {
+      if (!getTokenAccessType()
+          .equals(other.getTokenAccessType())) return false;
+    }
+    if (hasTenantId() != other.hasTenantId()) return false;
+    if (hasTenantId()) {
+      if (!getTenantId()
+          .equals(other.getTenantId())) return false;
+    }
+    if (hasIsCimd() != other.hasIsCimd()) return false;
+    if (hasIsCimd()) {
+      if (!getIsCimd()
+          .equals(other.getIsCimd())) return false;
+    }
+    if (hasAppName() != other.hasAppName()) return false;
+    if (hasAppName()) {
+      if (!getAppName()
+          .equals(other.getAppName())) return false;
+    }
+    if (hasOptionalScopes() != other.hasOptionalScopes()) return false;
+    if (hasOptionalScopes()) {
+      if (!getOptionalScopes()
+          .equals(other.getOptionalScopes())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -656,6 +846,26 @@ private static final long serialVersionUID = 0L;
     if (hasSyncUserProfileOnLogin()) {
       hash = (37 * hash) + SYNC_USER_PROFILE_ON_LOGIN_FIELD_NUMBER;
       hash = (53 * hash) + getSyncUserProfileOnLogin().hashCode();
+    }
+    if (hasTokenAccessType()) {
+      hash = (37 * hash) + TOKEN_ACCESS_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getTokenAccessType().hashCode();
+    }
+    if (hasTenantId()) {
+      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTenantId().hashCode();
+    }
+    if (hasIsCimd()) {
+      hash = (37 * hash) + IS_CIMD_FIELD_NUMBER;
+      hash = (53 * hash) + getIsCimd().hashCode();
+    }
+    if (hasAppName()) {
+      hash = (37 * hash) + APP_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getAppName().hashCode();
+    }
+    if (hasOptionalScopes()) {
+      hash = (37 * hash) + OPTIONAL_SCOPES_FIELD_NUMBER;
+      hash = (53 * hash) + getOptionalScopes().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -798,6 +1008,11 @@ private static final long serialVersionUID = 0L;
         getAccessTypeFieldBuilder();
         getCustomScopeNameFieldBuilder();
         getSyncUserProfileOnLoginFieldBuilder();
+        getTokenAccessTypeFieldBuilder();
+        getTenantIdFieldBuilder();
+        getIsCimdFieldBuilder();
+        getAppNameFieldBuilder();
+        getOptionalScopesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -861,6 +1076,31 @@ private static final long serialVersionUID = 0L;
       if (syncUserProfileOnLoginBuilder_ != null) {
         syncUserProfileOnLoginBuilder_.dispose();
         syncUserProfileOnLoginBuilder_ = null;
+      }
+      tokenAccessType_ = null;
+      if (tokenAccessTypeBuilder_ != null) {
+        tokenAccessTypeBuilder_.dispose();
+        tokenAccessTypeBuilder_ = null;
+      }
+      tenantId_ = null;
+      if (tenantIdBuilder_ != null) {
+        tenantIdBuilder_.dispose();
+        tenantIdBuilder_ = null;
+      }
+      isCimd_ = null;
+      if (isCimdBuilder_ != null) {
+        isCimdBuilder_.dispose();
+        isCimdBuilder_ = null;
+      }
+      appName_ = null;
+      if (appNameBuilder_ != null) {
+        appNameBuilder_.dispose();
+        appNameBuilder_ = null;
+      }
+      optionalScopes_ = null;
+      if (optionalScopesBuilder_ != null) {
+        optionalScopesBuilder_.dispose();
+        optionalScopesBuilder_ = null;
       }
       return this;
     }
@@ -969,6 +1209,36 @@ private static final long serialVersionUID = 0L;
             : syncUserProfileOnLoginBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.tokenAccessType_ = tokenAccessTypeBuilder_ == null
+            ? tokenAccessType_
+            : tokenAccessTypeBuilder_.build();
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.tenantId_ = tenantIdBuilder_ == null
+            ? tenantId_
+            : tenantIdBuilder_.build();
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.isCimd_ = isCimdBuilder_ == null
+            ? isCimd_
+            : isCimdBuilder_.build();
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.appName_ = appNameBuilder_ == null
+            ? appName_
+            : appNameBuilder_.build();
+        to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.optionalScopes_ = optionalScopesBuilder_ == null
+            ? optionalScopes_
+            : optionalScopesBuilder_.build();
+        to_bitField0_ |= 0x00008000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1063,6 +1333,21 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasSyncUserProfileOnLogin()) {
         mergeSyncUserProfileOnLogin(other.getSyncUserProfileOnLogin());
+      }
+      if (other.hasTokenAccessType()) {
+        mergeTokenAccessType(other.getTokenAccessType());
+      }
+      if (other.hasTenantId()) {
+        mergeTenantId(other.getTenantId());
+      }
+      if (other.hasIsCimd()) {
+        mergeIsCimd(other.getIsCimd());
+      }
+      if (other.hasAppName()) {
+        mergeAppName(other.getAppName());
+      }
+      if (other.hasOptionalScopes()) {
+        mergeOptionalScopes(other.getOptionalScopes());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1178,6 +1463,41 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00001000;
               break;
             } // case 146
+            case 154: {
+              input.readMessage(
+                  getTokenAccessTypeFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00002000;
+              break;
+            } // case 154
+            case 162: {
+              input.readMessage(
+                  getTenantIdFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00004000;
+              break;
+            } // case 162
+            case 170: {
+              input.readMessage(
+                  getIsCimdFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00008000;
+              break;
+            } // case 170
+            case 178: {
+              input.readMessage(
+                  getAppNameFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00010000;
+              break;
+            } // case 178
+            case 186: {
+              input.readMessage(
+                  getOptionalScopesFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00020000;
+              break;
+            } // case 186
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2707,6 +3027,611 @@ private static final long serialVersionUID = 0L;
         syncUserProfileOnLogin_ = null;
       }
       return syncUserProfileOnLoginBuilder_;
+    }
+
+    private com.google.protobuf.StringValue tokenAccessType_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> tokenAccessTypeBuilder_;
+    /**
+     * <code>.google.protobuf.StringValue token_access_type = 19 [json_name = "tokenAccessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the tokenAccessType field is set.
+     */
+    public boolean hasTokenAccessType() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.StringValue token_access_type = 19 [json_name = "tokenAccessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The tokenAccessType.
+     */
+    public com.google.protobuf.StringValue getTokenAccessType() {
+      if (tokenAccessTypeBuilder_ == null) {
+        return tokenAccessType_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : tokenAccessType_;
+      } else {
+        return tokenAccessTypeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue token_access_type = 19 [json_name = "tokenAccessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setTokenAccessType(com.google.protobuf.StringValue value) {
+      if (tokenAccessTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tokenAccessType_ = value;
+      } else {
+        tokenAccessTypeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue token_access_type = 19 [json_name = "tokenAccessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setTokenAccessType(
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (tokenAccessTypeBuilder_ == null) {
+        tokenAccessType_ = builderForValue.build();
+      } else {
+        tokenAccessTypeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue token_access_type = 19 [json_name = "tokenAccessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeTokenAccessType(com.google.protobuf.StringValue value) {
+      if (tokenAccessTypeBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0) &&
+          tokenAccessType_ != null &&
+          tokenAccessType_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getTokenAccessTypeBuilder().mergeFrom(value);
+        } else {
+          tokenAccessType_ = value;
+        }
+      } else {
+        tokenAccessTypeBuilder_.mergeFrom(value);
+      }
+      if (tokenAccessType_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue token_access_type = 19 [json_name = "tokenAccessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearTokenAccessType() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      tokenAccessType_ = null;
+      if (tokenAccessTypeBuilder_ != null) {
+        tokenAccessTypeBuilder_.dispose();
+        tokenAccessTypeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue token_access_type = 19 [json_name = "tokenAccessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValue.Builder getTokenAccessTypeBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getTokenAccessTypeFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue token_access_type = 19 [json_name = "tokenAccessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getTokenAccessTypeOrBuilder() {
+      if (tokenAccessTypeBuilder_ != null) {
+        return tokenAccessTypeBuilder_.getMessageOrBuilder();
+      } else {
+        return tokenAccessType_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : tokenAccessType_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue token_access_type = 19 [json_name = "tokenAccessType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getTokenAccessTypeFieldBuilder() {
+      if (tokenAccessTypeBuilder_ == null) {
+        tokenAccessTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getTokenAccessType(),
+                getParentForChildren(),
+                isClean());
+        tokenAccessType_ = null;
+      }
+      return tokenAccessTypeBuilder_;
+    }
+
+    private com.google.protobuf.StringValue tenantId_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> tenantIdBuilder_;
+    /**
+     * <code>.google.protobuf.StringValue tenant_id = 20 [json_name = "tenantId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the tenantId field is set.
+     */
+    public boolean hasTenantId() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.StringValue tenant_id = 20 [json_name = "tenantId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The tenantId.
+     */
+    public com.google.protobuf.StringValue getTenantId() {
+      if (tenantIdBuilder_ == null) {
+        return tenantId_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : tenantId_;
+      } else {
+        return tenantIdBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue tenant_id = 20 [json_name = "tenantId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setTenantId(com.google.protobuf.StringValue value) {
+      if (tenantIdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tenantId_ = value;
+      } else {
+        tenantIdBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue tenant_id = 20 [json_name = "tenantId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setTenantId(
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (tenantIdBuilder_ == null) {
+        tenantId_ = builderForValue.build();
+      } else {
+        tenantIdBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue tenant_id = 20 [json_name = "tenantId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeTenantId(com.google.protobuf.StringValue value) {
+      if (tenantIdBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0) &&
+          tenantId_ != null &&
+          tenantId_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getTenantIdBuilder().mergeFrom(value);
+        } else {
+          tenantId_ = value;
+        }
+      } else {
+        tenantIdBuilder_.mergeFrom(value);
+      }
+      if (tenantId_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue tenant_id = 20 [json_name = "tenantId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearTenantId() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      tenantId_ = null;
+      if (tenantIdBuilder_ != null) {
+        tenantIdBuilder_.dispose();
+        tenantIdBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue tenant_id = 20 [json_name = "tenantId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValue.Builder getTenantIdBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getTenantIdFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue tenant_id = 20 [json_name = "tenantId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getTenantIdOrBuilder() {
+      if (tenantIdBuilder_ != null) {
+        return tenantIdBuilder_.getMessageOrBuilder();
+      } else {
+        return tenantId_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : tenantId_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue tenant_id = 20 [json_name = "tenantId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getTenantIdFieldBuilder() {
+      if (tenantIdBuilder_ == null) {
+        tenantIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getTenantId(),
+                getParentForChildren(),
+                isClean());
+        tenantId_ = null;
+      }
+      return tenantIdBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue isCimd_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> isCimdBuilder_;
+    /**
+     * <code>.google.protobuf.BoolValue is_cimd = 21 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the isCimd field is set.
+     */
+    public boolean hasIsCimd() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.BoolValue is_cimd = 21 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The isCimd.
+     */
+    public com.google.protobuf.BoolValue getIsCimd() {
+      if (isCimdBuilder_ == null) {
+        return isCimd_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isCimd_;
+      } else {
+        return isCimdBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue is_cimd = 21 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setIsCimd(com.google.protobuf.BoolValue value) {
+      if (isCimdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        isCimd_ = value;
+      } else {
+        isCimdBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue is_cimd = 21 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setIsCimd(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (isCimdBuilder_ == null) {
+        isCimd_ = builderForValue.build();
+      } else {
+        isCimdBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue is_cimd = 21 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeIsCimd(com.google.protobuf.BoolValue value) {
+      if (isCimdBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0) &&
+          isCimd_ != null &&
+          isCimd_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getIsCimdBuilder().mergeFrom(value);
+        } else {
+          isCimd_ = value;
+        }
+      } else {
+        isCimdBuilder_.mergeFrom(value);
+      }
+      if (isCimd_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue is_cimd = 21 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearIsCimd() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      isCimd_ = null;
+      if (isCimdBuilder_ != null) {
+        isCimdBuilder_.dispose();
+        isCimdBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue is_cimd = 21 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getIsCimdBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return getIsCimdFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue is_cimd = 21 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getIsCimdOrBuilder() {
+      if (isCimdBuilder_ != null) {
+        return isCimdBuilder_.getMessageOrBuilder();
+      } else {
+        return isCimd_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : isCimd_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue is_cimd = 21 [json_name = "isCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getIsCimdFieldBuilder() {
+      if (isCimdBuilder_ == null) {
+        isCimdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getIsCimd(),
+                getParentForChildren(),
+                isClean());
+        isCimd_ = null;
+      }
+      return isCimdBuilder_;
+    }
+
+    private com.google.protobuf.StringValue appName_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> appNameBuilder_;
+    /**
+     * <code>.google.protobuf.StringValue app_name = 22 [json_name = "appName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the appName field is set.
+     */
+    public boolean hasAppName() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.StringValue app_name = 22 [json_name = "appName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The appName.
+     */
+    public com.google.protobuf.StringValue getAppName() {
+      if (appNameBuilder_ == null) {
+        return appName_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : appName_;
+      } else {
+        return appNameBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue app_name = 22 [json_name = "appName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setAppName(com.google.protobuf.StringValue value) {
+      if (appNameBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        appName_ = value;
+      } else {
+        appNameBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue app_name = 22 [json_name = "appName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setAppName(
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (appNameBuilder_ == null) {
+        appName_ = builderForValue.build();
+      } else {
+        appNameBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue app_name = 22 [json_name = "appName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeAppName(com.google.protobuf.StringValue value) {
+      if (appNameBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0) &&
+          appName_ != null &&
+          appName_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getAppNameBuilder().mergeFrom(value);
+        } else {
+          appName_ = value;
+        }
+      } else {
+        appNameBuilder_.mergeFrom(value);
+      }
+      if (appName_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue app_name = 22 [json_name = "appName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearAppName() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      appName_ = null;
+      if (appNameBuilder_ != null) {
+        appNameBuilder_.dispose();
+        appNameBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue app_name = 22 [json_name = "appName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValue.Builder getAppNameBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return getAppNameFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue app_name = 22 [json_name = "appName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getAppNameOrBuilder() {
+      if (appNameBuilder_ != null) {
+        return appNameBuilder_.getMessageOrBuilder();
+      } else {
+        return appName_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : appName_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue app_name = 22 [json_name = "appName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getAppNameFieldBuilder() {
+      if (appNameBuilder_ == null) {
+        appNameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getAppName(),
+                getParentForChildren(),
+                isClean());
+        appName_ = null;
+      }
+      return appNameBuilder_;
+    }
+
+    private com.scalekit.grpc.scalekit.v1.connections.OptionalScopes optionalScopes_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.OptionalScopes, com.scalekit.grpc.scalekit.v1.connections.OptionalScopes.Builder, com.scalekit.grpc.scalekit.v1.connections.OptionalScopesOrBuilder> optionalScopesBuilder_;
+    /**
+     * <code>optional .scalekit.v1.connections.OptionalScopes optional_scopes = 23 [json_name = "optionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the optionalScopes field is set.
+     */
+    public boolean hasOptionalScopes() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.OptionalScopes optional_scopes = 23 [json_name = "optionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The optionalScopes.
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.OptionalScopes getOptionalScopes() {
+      if (optionalScopesBuilder_ == null) {
+        return optionalScopes_ == null ? com.scalekit.grpc.scalekit.v1.connections.OptionalScopes.getDefaultInstance() : optionalScopes_;
+      } else {
+        return optionalScopesBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.OptionalScopes optional_scopes = 23 [json_name = "optionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setOptionalScopes(com.scalekit.grpc.scalekit.v1.connections.OptionalScopes value) {
+      if (optionalScopesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        optionalScopes_ = value;
+      } else {
+        optionalScopesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.OptionalScopes optional_scopes = 23 [json_name = "optionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setOptionalScopes(
+        com.scalekit.grpc.scalekit.v1.connections.OptionalScopes.Builder builderForValue) {
+      if (optionalScopesBuilder_ == null) {
+        optionalScopes_ = builderForValue.build();
+      } else {
+        optionalScopesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.OptionalScopes optional_scopes = 23 [json_name = "optionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeOptionalScopes(com.scalekit.grpc.scalekit.v1.connections.OptionalScopes value) {
+      if (optionalScopesBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0) &&
+          optionalScopes_ != null &&
+          optionalScopes_ != com.scalekit.grpc.scalekit.v1.connections.OptionalScopes.getDefaultInstance()) {
+          getOptionalScopesBuilder().mergeFrom(value);
+        } else {
+          optionalScopes_ = value;
+        }
+      } else {
+        optionalScopesBuilder_.mergeFrom(value);
+      }
+      if (optionalScopes_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.OptionalScopes optional_scopes = 23 [json_name = "optionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearOptionalScopes() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      optionalScopes_ = null;
+      if (optionalScopesBuilder_ != null) {
+        optionalScopesBuilder_.dispose();
+        optionalScopesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.OptionalScopes optional_scopes = 23 [json_name = "optionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.OptionalScopes.Builder getOptionalScopesBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getOptionalScopesFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.OptionalScopes optional_scopes = 23 [json_name = "optionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.OptionalScopesOrBuilder getOptionalScopesOrBuilder() {
+      if (optionalScopesBuilder_ != null) {
+        return optionalScopesBuilder_.getMessageOrBuilder();
+      } else {
+        return optionalScopes_ == null ?
+            com.scalekit.grpc.scalekit.v1.connections.OptionalScopes.getDefaultInstance() : optionalScopes_;
+      }
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.OptionalScopes optional_scopes = 23 [json_name = "optionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.OptionalScopes, com.scalekit.grpc.scalekit.v1.connections.OptionalScopes.Builder, com.scalekit.grpc.scalekit.v1.connections.OptionalScopesOrBuilder> 
+        getOptionalScopesFieldBuilder() {
+      if (optionalScopesBuilder_ == null) {
+        optionalScopesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.connections.OptionalScopes, com.scalekit.grpc.scalekit.v1.connections.OptionalScopes.Builder, com.scalekit.grpc.scalekit.v1.connections.OptionalScopesOrBuilder>(
+                getOptionalScopes(),
+                getParentForChildren(),
+                isClean());
+        optionalScopes_ = null;
+      }
+      return optionalScopesBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

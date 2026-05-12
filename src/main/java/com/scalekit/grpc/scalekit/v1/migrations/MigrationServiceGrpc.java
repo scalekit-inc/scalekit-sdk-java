@@ -139,6 +139,37 @@ public final class MigrationServiceGrpc {
     return getMigrateRolePermissionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest,
+      com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse> getMigrateEnvKeysMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MigrateEnvKeys",
+      requestType = com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest,
+      com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse> getMigrateEnvKeysMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest, com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse> getMigrateEnvKeysMethod;
+    if ((getMigrateEnvKeysMethod = MigrationServiceGrpc.getMigrateEnvKeysMethod) == null) {
+      synchronized (MigrationServiceGrpc.class) {
+        if ((getMigrateEnvKeysMethod = MigrationServiceGrpc.getMigrateEnvKeysMethod) == null) {
+          MigrationServiceGrpc.getMigrateEnvKeysMethod = getMigrateEnvKeysMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest, com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MigrateEnvKeys"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MigrationServiceMethodDescriptorSupplier("MigrateEnvKeys"))
+              .build();
+        }
+      }
+    }
+    return getMigrateEnvKeysMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -214,6 +245,13 @@ public final class MigrationServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMigrateRolePermissionsMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void migrateEnvKeys(com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMigrateEnvKeysMethod(), responseObserver);
+    }
   }
 
   /**
@@ -274,6 +312,14 @@ public final class MigrationServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMigrateRolePermissionsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void migrateEnvKeys(com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMigrateEnvKeysMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -318,6 +364,13 @@ public final class MigrationServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsResponse migrateRolePermissions(com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMigrateRolePermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse migrateEnvKeys(com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMigrateEnvKeysMethod(), getCallOptions(), request);
     }
   }
 
@@ -368,12 +421,21 @@ public final class MigrationServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMigrateRolePermissionsMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse> migrateEnvKeys(
+        com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMigrateEnvKeysMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_MIGRATE_FSADATA = 0;
   private static final int METHODID_MIGRATE_STRIPE_CUSTOMERS = 1;
   private static final int METHODID_MIGRATE_WORKSPACE_FGA = 2;
   private static final int METHODID_MIGRATE_ROLE_PERMISSIONS = 3;
+  private static final int METHODID_MIGRATE_ENV_KEYS = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -407,6 +469,10 @@ public final class MigrationServiceGrpc {
         case METHODID_MIGRATE_ROLE_PERMISSIONS:
           serviceImpl.migrateRolePermissions((com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsResponse>) responseObserver);
+          break;
+        case METHODID_MIGRATE_ENV_KEYS:
+          serviceImpl.migrateEnvKeys((com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -454,6 +520,13 @@ public final class MigrationServiceGrpc {
               com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsRequest,
               com.scalekit.grpc.scalekit.v1.migrations.MigrateRolePermissionsResponse>(
                 service, METHODID_MIGRATE_ROLE_PERMISSIONS)))
+        .addMethod(
+          getMigrateEnvKeysMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest,
+              com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse>(
+                service, METHODID_MIGRATE_ENV_KEYS)))
         .build();
   }
 
@@ -506,6 +579,7 @@ public final class MigrationServiceGrpc {
               .addMethod(getMigrateStripeCustomersMethod())
               .addMethod(getMigrateWorkspaceFGAMethod())
               .addMethod(getMigrateRolePermissionsMethod())
+              .addMethod(getMigrateEnvKeysMethod())
               .build();
         }
       }
