@@ -282,5 +282,92 @@ public class ScalekitOrganizationClient implements OrganizationClient {
         }, this.credentials);
     }
 
+    /**
+     * getOrganizationUserManagementSetting retrieves user management settings for an organization.
+     * @param organizationId Organization identifier
+     * @return GetOrganizationUserManagementSettingsResponse containing the settings
+     */
+    @Override
+    public GetOrganizationUserManagementSettingsResponse getOrganizationUserManagementSetting(String organizationId) {
+        return RetryExecuter.executeWithRetry(() -> {
+            return this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .getOrganizationUserManagementSetting(
+                            GetOrganizationUserManagementSettingsRequest.newBuilder()
+                                    .setOrganizationId(organizationId)
+                                    .build()
+                    );
+        }, this.credentials);
+    }
+
+    /**
+     * searchOrganizations searches organizations using the provided request criteria.
+     * @param request SearchOrganizationsRequest containing query and pagination options
+     * @return SearchOrganizationsResponse containing matching organizations
+     */
+    @Override
+    public SearchOrganizationsResponse searchOrganizations(SearchOrganizationsRequest request) {
+        return RetryExecuter.executeWithRetry(() -> {
+            return this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .searchOrganization(request);
+        }, this.credentials);
+    }
+
+    /**
+     * updateOrganizationSessionPolicy updates the session policy for an organization.
+     * @param organizationId Organization identifier
+     * @param request UpdateOrganizationSessionPolicyRequest containing the policy details
+     * @return UpdateOrganizationSessionPolicyResponse with the updated policy
+     */
+    @Override
+    public UpdateOrganizationSessionPolicyResponse updateOrganizationSessionPolicy(String organizationId, UpdateOrganizationSessionPolicyRequest request) {
+        return RetryExecuter.executeWithRetry(() -> {
+            return this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .updateOrganizationSessionPolicy(
+                            request.toBuilder()
+                                    .setOrganizationId(organizationId)
+                                    .build()
+                    );
+        }, this.credentials);
+    }
+
+    /**
+     * getOrganizationSessionPolicy retrieves the session policy for an organization.
+     * @param organizationId Organization identifier
+     * @return GetOrganizationSessionPolicyResponse with the current policy
+     */
+    @Override
+    public GetOrganizationSessionPolicyResponse getOrganizationSessionPolicy(String organizationId) {
+        return RetryExecuter.executeWithRetry(() -> {
+            return this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .getOrganizationSessionPolicy(
+                            GetOrganizationSessionPolicyRequest.newBuilder()
+                                    .setOrganizationId(organizationId)
+                                    .build()
+                    );
+        }, this.credentials);
+    }
+
+    /**
+     * getApplicationSessionPolicy retrieves the application-level session policy for an organization.
+     * @param organizationId Organization identifier
+     * @return GetApplicationSessionPolicyResponse with the application session policy
+     */
+    @Override
+    public GetApplicationSessionPolicyResponse getApplicationSessionPolicy(String organizationId) {
+        return RetryExecuter.executeWithRetry(() -> {
+            return this.organizationStub
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .getApplicationSessionPolicy(
+                            GetApplicationSessionPolicyRequest.newBuilder()
+                                    .setOrganizationId(organizationId)
+                                    .build()
+                    );
+        }, this.credentials);
+    }
+
 
 }

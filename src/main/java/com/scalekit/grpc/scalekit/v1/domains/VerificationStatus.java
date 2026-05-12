@@ -113,7 +113,7 @@ public enum VerificationStatus
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.domains.DomainsProto.getDescriptor().getEnumTypes().get(0);
+    return com.scalekit.grpc.scalekit.v1.domains.DomainsProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final VerificationStatus[] VALUES = values();

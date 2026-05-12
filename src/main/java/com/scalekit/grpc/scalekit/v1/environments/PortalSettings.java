@@ -6,7 +6,9 @@ package com.scalekit.grpc.scalekit.v1.environments;
 
 /**
  * <pre>
- * PortalSettings contains feature flags and settings derived from the workspace's billing subscription
+ * PortalSettings contains settings and flags from two sources:
+ * - Workspace billing subscription (custom_branding): derived from the workspace's subscribed billing items
+ * - Feature rollout configuration (new_self_serve_sso_scim, enable_conn_delete): environment or workspace-age based feature flags
  * </pre>
  *
  * Protobuf type {@code scalekit.v1.environments.PortalSettings}
@@ -59,6 +61,41 @@ private static final long serialVersionUID = 0L;
     return customBranding_;
   }
 
+  public static final int NEW_SELF_SERVE_SSO_SCIM_FIELD_NUMBER = 2;
+  private boolean newSelfServeSsoScim_ = false;
+  /**
+   * <pre>
+   * new_self_serve_sso_scim indicates whether the new self-serve SSO/SCIM flow
+   * should be shown in the customer portal. This is rollout-driven (feature flag),
+   * enabled for development environments or new workspaces (workspace_created_at &gt;= cutoff),
+   * not billing-derived.
+   * </pre>
+   *
+   * <code>bool new_self_serve_sso_scim = 2 [json_name = "newSelfServeSsoScim", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The newSelfServeSsoScim.
+   */
+  @java.lang.Override
+  public boolean getNewSelfServeSsoScim() {
+    return newSelfServeSsoScim_;
+  }
+
+  public static final int ENABLE_CONN_DELETE_FIELD_NUMBER = 3;
+  private boolean enableConnDelete_ = false;
+  /**
+   * <pre>
+   * enable_conn_delete indicates whether connection deletion is enabled for this environment.
+   * This is rollout-driven via environment ID allowlist (feature flag),
+   * enabling per-environment granular control of the delete connection feature.
+   * </pre>
+   *
+   * <code>bool enable_conn_delete = 3 [json_name = "enableConnDelete", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enableConnDelete.
+   */
+  @java.lang.Override
+  public boolean getEnableConnDelete() {
+    return enableConnDelete_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -76,6 +113,12 @@ private static final long serialVersionUID = 0L;
     if (customBranding_ != false) {
       output.writeBool(1, customBranding_);
     }
+    if (newSelfServeSsoScim_ != false) {
+      output.writeBool(2, newSelfServeSsoScim_);
+    }
+    if (enableConnDelete_ != false) {
+      output.writeBool(3, enableConnDelete_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -88,6 +131,14 @@ private static final long serialVersionUID = 0L;
     if (customBranding_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(1, customBranding_);
+    }
+    if (newSelfServeSsoScim_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(2, newSelfServeSsoScim_);
+    }
+    if (enableConnDelete_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, enableConnDelete_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -106,6 +157,10 @@ private static final long serialVersionUID = 0L;
 
     if (getCustomBranding()
         != other.getCustomBranding()) return false;
+    if (getNewSelfServeSsoScim()
+        != other.getNewSelfServeSsoScim()) return false;
+    if (getEnableConnDelete()
+        != other.getEnableConnDelete()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -120,6 +175,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + CUSTOM_BRANDING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getCustomBranding());
+    hash = (37 * hash) + NEW_SELF_SERVE_SSO_SCIM_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getNewSelfServeSsoScim());
+    hash = (37 * hash) + ENABLE_CONN_DELETE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEnableConnDelete());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -219,7 +280,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * PortalSettings contains feature flags and settings derived from the workspace's billing subscription
+   * PortalSettings contains settings and flags from two sources:
+   * - Workspace billing subscription (custom_branding): derived from the workspace's subscribed billing items
+   * - Feature rollout configuration (new_self_serve_sso_scim, enable_conn_delete): environment or workspace-age based feature flags
    * </pre>
    *
    * Protobuf type {@code scalekit.v1.environments.PortalSettings}
@@ -256,6 +319,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       customBranding_ = false;
+      newSelfServeSsoScim_ = false;
+      enableConnDelete_ = false;
       return this;
     }
 
@@ -291,6 +356,12 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.customBranding_ = customBranding_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.newSelfServeSsoScim_ = newSelfServeSsoScim_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.enableConnDelete_ = enableConnDelete_;
       }
     }
 
@@ -341,6 +412,12 @@ private static final long serialVersionUID = 0L;
       if (other.getCustomBranding() != false) {
         setCustomBranding(other.getCustomBranding());
       }
+      if (other.getNewSelfServeSsoScim() != false) {
+        setNewSelfServeSsoScim(other.getNewSelfServeSsoScim());
+      }
+      if (other.getEnableConnDelete() != false) {
+        setEnableConnDelete(other.getEnableConnDelete());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -372,6 +449,16 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 8
+            case 16: {
+              newSelfServeSsoScim_ = input.readBool();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 16
+            case 24: {
+              enableConnDelete_ = input.readBool();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 24
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -432,6 +519,109 @@ private static final long serialVersionUID = 0L;
     public Builder clearCustomBranding() {
       bitField0_ = (bitField0_ & ~0x00000001);
       customBranding_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean newSelfServeSsoScim_ ;
+    /**
+     * <pre>
+     * new_self_serve_sso_scim indicates whether the new self-serve SSO/SCIM flow
+     * should be shown in the customer portal. This is rollout-driven (feature flag),
+     * enabled for development environments or new workspaces (workspace_created_at &gt;= cutoff),
+     * not billing-derived.
+     * </pre>
+     *
+     * <code>bool new_self_serve_sso_scim = 2 [json_name = "newSelfServeSsoScim", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The newSelfServeSsoScim.
+     */
+    @java.lang.Override
+    public boolean getNewSelfServeSsoScim() {
+      return newSelfServeSsoScim_;
+    }
+    /**
+     * <pre>
+     * new_self_serve_sso_scim indicates whether the new self-serve SSO/SCIM flow
+     * should be shown in the customer portal. This is rollout-driven (feature flag),
+     * enabled for development environments or new workspaces (workspace_created_at &gt;= cutoff),
+     * not billing-derived.
+     * </pre>
+     *
+     * <code>bool new_self_serve_sso_scim = 2 [json_name = "newSelfServeSsoScim", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The newSelfServeSsoScim to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNewSelfServeSsoScim(boolean value) {
+
+      newSelfServeSsoScim_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * new_self_serve_sso_scim indicates whether the new self-serve SSO/SCIM flow
+     * should be shown in the customer portal. This is rollout-driven (feature flag),
+     * enabled for development environments or new workspaces (workspace_created_at &gt;= cutoff),
+     * not billing-derived.
+     * </pre>
+     *
+     * <code>bool new_self_serve_sso_scim = 2 [json_name = "newSelfServeSsoScim", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNewSelfServeSsoScim() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      newSelfServeSsoScim_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableConnDelete_ ;
+    /**
+     * <pre>
+     * enable_conn_delete indicates whether connection deletion is enabled for this environment.
+     * This is rollout-driven via environment ID allowlist (feature flag),
+     * enabling per-environment granular control of the delete connection feature.
+     * </pre>
+     *
+     * <code>bool enable_conn_delete = 3 [json_name = "enableConnDelete", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enableConnDelete.
+     */
+    @java.lang.Override
+    public boolean getEnableConnDelete() {
+      return enableConnDelete_;
+    }
+    /**
+     * <pre>
+     * enable_conn_delete indicates whether connection deletion is enabled for this environment.
+     * This is rollout-driven via environment ID allowlist (feature flag),
+     * enabling per-environment granular control of the delete connection feature.
+     * </pre>
+     *
+     * <code>bool enable_conn_delete = 3 [json_name = "enableConnDelete", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enableConnDelete to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableConnDelete(boolean value) {
+
+      enableConnDelete_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * enable_conn_delete indicates whether connection deletion is enabled for this environment.
+     * This is rollout-driven via environment ID allowlist (feature flag),
+     * enabling per-environment granular control of the delete connection feature.
+     * </pre>
+     *
+     * <code>bool enable_conn_delete = 3 [json_name = "enableConnDelete", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableConnDelete() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      enableConnDelete_ = false;
       onChanged();
       return this;
     }

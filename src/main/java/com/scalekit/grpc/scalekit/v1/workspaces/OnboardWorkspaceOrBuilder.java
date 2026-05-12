@@ -54,4 +54,10 @@ public interface OnboardWorkspaceOrBuilder extends
    * @return The authenticationMode.
    */
   com.scalekit.grpc.scalekit.v1.commons.AuthenticationMode getAuthenticationMode();
+
+  /**
+   * <code>bool enable_allowed_domain_join = 5 [json_name = "enableAllowedDomainJoin"];</code>
+   * @return The enableAllowedDomainJoin.
+   */
+  boolean getEnableAllowedDomainJoin();
 }

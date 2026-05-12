@@ -30,4 +30,8 @@ public interface UserClient {
     ListUserRolesResponse listUserRoles(String organizationId, String userId);
 
     ListUserPermissionsResponse listUserPermissions(String organizationId, String userId);
-} 
+
+    AssignUserRolesResponse assignUserRoles(String organizationId, String userId, AssignUserRolesRequest request);
+
+    void removeUserRole(String organizationId, String userId, RemoveUserRoleRequest request);
+}

@@ -47,71 +47,73 @@ public final class AuditlogsProto {
       "\n%scalekit/v1/auditlogs/auditlogs.proto\022" +
       "\025scalekit.v1.auditlogs\032\033buf/validate/val" +
       "idate.proto\032\034google/api/annotations.prot" +
-      "o\032\037google/protobuf/timestamp.proto\032.prot" +
-      "oc-gen-openapiv2/options/annotations.pro" +
-      "to\032!scalekit/v1/options/options.proto\"\260\003" +
-      "\n\022ListAuthLogRequest\022\033\n\tpage_size\030\001 \001(\rR" +
-      "\010pageSize\022\035\n\npage_token\030\002 \001(\tR\tpageToken" +
-      "\022\024\n\005email\030\003 \001(\tR\005email\022\026\n\006status\030\004 \003(\tR\006" +
-      "status\0229\n\nstart_time\030\005 \001(\0132\032.google.prot" +
-      "obuf.TimestampR\tstartTime\0225\n\010end_time\030\006 " +
-      "\001(\0132\032.google.protobuf.TimestampR\007endTime" +
-      "\022\037\n\013resource_id\030\007 \001(\tR\nresourceId\022@\n\034con" +
-      "nected_account_identifier\030\010 \001(\tR\032connect" +
-      "edAccountIdentifier\022[\n\tclient_id\030\t \001(\tB>" +
-      "\222A;2\'Filter authentication logs by clien" +
-      "t IDJ\020\"skc_1234567890\"R\010clientId\"\317\001\n\023Lis" +
-      "tAuthLogResponse\022&\n\017next_page_token\030\001 \001(" +
-      "\tR\rnextPageToken\022&\n\017prev_page_token\030\002 \001(" +
-      "\tR\rprevPageToken\022\035\n\ntotal_size\030\003 \001(\rR\tto" +
-      "talSize\022I\n\014authRequests\030\004 \003(\0132%.scalekit" +
-      ".v1.auditlogs.AuthLogRequestR\014authReques" +
-      "ts\"\305\007\n\016AuthLogRequest\022\'\n\017organization_id" +
-      "\030\001 \001(\tR\016organizationId\022%\n\016environment_id" +
-      "\030\002 \001(\tR\renvironmentId\022#\n\rconnection_id\030\003" +
-      " \001(\tR\014connectionId\022&\n\017auth_request_id\030\004 " +
-      "\001(\tR\rauthRequestId\022\024\n\005email\030\005 \001(\tR\005email" +
-      "\022\'\n\017connection_type\030\006 \001(\tR\016connectionTyp" +
-      "e\022/\n\023connection_provider\030\007 \001(\tR\022connecti" +
-      "onProvider\022\026\n\006status\030\010 \001(\tR\006status\0228\n\tti" +
-      "mestamp\030\t \001(\0132\032.google.protobuf.Timestam" +
-      "pR\ttimestamp\022W\n\022connection_details\030\n \003(\013" +
-      "2(.scalekit.v1.auditlogs.ConnectionDetai" +
-      "lsR\021connectionDetails\022\032\n\010workflow\030\013 \001(\tR" +
-      "\010workflow\022\037\n\013resource_id\030\014 \001(\tR\nresource" +
-      "Id\022#\n\rresource_name\030\r \001(\tR\014resourceName\022" +
-      "#\n\rresource_type\030\016 \001(\tR\014resourceType\022@\n\034" +
-      "connected_account_identifier\030\017 \001(\tR\032conn" +
-      "ectedAccountIdentifier\022}\n\tclient_id\030\020 \001(" +
-      "\tB`\222A]2IUnique identifier of the client " +
-      "associated with this authentication even" +
-      "tJ\020\"skc_1234567890\"R\010clientId\022K\n\013client_" +
-      "name\030\021 \001(\tB*\222A\'2\032Display name of the cli" +
-      "entJ\t\"Default\"R\nclientName\022f\n\013client_typ" +
-      "e\030\022 \001(\tBE\222AB29Type of the client applica" +
-      "tion (e.g., WEB, NTV, SPA, M2M)J\005\"WEB\"R\n" +
-      "clientType\"\273\001\n\021ConnectionDetails\022#\n\rconn" +
-      "ection_id\030\001 \001(\tR\014connectionId\022\'\n\017organiz" +
-      "ation_id\030\002 \001(\tR\016organizationId\022\'\n\017connec" +
-      "tion_type\030\003 \001(\tR\016connectionType\022/\n\023conne" +
-      "ction_provider\030\004 \001(\tR\022connectionProvider" +
-      "2\262\001\n\020AuditLogsService\022\235\001\n\020ListAuthReques" +
-      "ts\022).scalekit.v1.auditlogs.ListAuthLogRe" +
-      "quest\032*.scalekit.v1.auditlogs.ListAuthLo" +
-      "gResponse\"2\202\265\030\002\030D\202\323\344\223\002&\022$/api/v1/logs/au" +
-      "thentication/requestsB\344\001\n\'com.scalekit.g" +
-      "rpc.scalekit.v1.auditlogsB\016AuditlogsProt" +
-      "oP\001Z3github.com/scalekit-inc/scalekit/pk" +
-      "g/grpc/auditlogs\242\002\003SVA\252\002\025Scalekit.V1.Aud" +
-      "itlogs\312\002\025Scalekit\\V1\\Auditlogs\342\002!Scaleki" +
-      "t\\V1\\Auditlogs\\GPBMetadata\352\002\027Scalekit::V" +
-      "1::Auditlogsb\006proto3"
+      "o\032\033google/api/visibility.proto\032\037google/p" +
+      "rotobuf/timestamp.proto\032.protoc-gen-open" +
+      "apiv2/options/annotations.proto\032!scaleki" +
+      "t/v1/options/options.proto\"\260\003\n\022ListAuthL" +
+      "ogRequest\022\033\n\tpage_size\030\001 \001(\rR\010pageSize\022\035" +
+      "\n\npage_token\030\002 \001(\tR\tpageToken\022\024\n\005email\030\003" +
+      " \001(\tR\005email\022\026\n\006status\030\004 \003(\tR\006status\0229\n\ns" +
+      "tart_time\030\005 \001(\0132\032.google.protobuf.Timest" +
+      "ampR\tstartTime\0225\n\010end_time\030\006 \001(\0132\032.googl" +
+      "e.protobuf.TimestampR\007endTime\022\037\n\013resourc" +
+      "e_id\030\007 \001(\tR\nresourceId\022@\n\034connected_acco" +
+      "unt_identifier\030\010 \001(\tR\032connectedAccountId" +
+      "entifier\022[\n\tclient_id\030\t \001(\tB>\222A;2\'Filter" +
+      " authentication logs by client IDJ\020\"skc_" +
+      "1234567890\"R\010clientId\"\317\001\n\023ListAuthLogRes" +
+      "ponse\022&\n\017next_page_token\030\001 \001(\tR\rnextPage" +
+      "Token\022&\n\017prev_page_token\030\002 \001(\tR\rprevPage" +
+      "Token\022\035\n\ntotal_size\030\003 \001(\rR\ttotalSize\022I\n\014" +
+      "authRequests\030\004 \003(\0132%.scalekit.v1.auditlo" +
+      "gs.AuthLogRequestR\014authRequests\"\305\007\n\016Auth" +
+      "LogRequest\022\'\n\017organization_id\030\001 \001(\tR\016org" +
+      "anizationId\022%\n\016environment_id\030\002 \001(\tR\renv" +
+      "ironmentId\022#\n\rconnection_id\030\003 \001(\tR\014conne" +
+      "ctionId\022&\n\017auth_request_id\030\004 \001(\tR\rauthRe" +
+      "questId\022\024\n\005email\030\005 \001(\tR\005email\022\'\n\017connect" +
+      "ion_type\030\006 \001(\tR\016connectionType\022/\n\023connec" +
+      "tion_provider\030\007 \001(\tR\022connectionProvider\022" +
+      "\026\n\006status\030\010 \001(\tR\006status\0228\n\ttimestamp\030\t \001" +
+      "(\0132\032.google.protobuf.TimestampR\ttimestam" +
+      "p\022W\n\022connection_details\030\n \003(\0132(.scalekit" +
+      ".v1.auditlogs.ConnectionDetailsR\021connect" +
+      "ionDetails\022\032\n\010workflow\030\013 \001(\tR\010workflow\022\037" +
+      "\n\013resource_id\030\014 \001(\tR\nresourceId\022#\n\rresou" +
+      "rce_name\030\r \001(\tR\014resourceName\022#\n\rresource" +
+      "_type\030\016 \001(\tR\014resourceType\022@\n\034connected_a" +
+      "ccount_identifier\030\017 \001(\tR\032connectedAccoun" +
+      "tIdentifier\022}\n\tclient_id\030\020 \001(\tB`\222A]2IUni" +
+      "que identifier of the client associated " +
+      "with this authentication eventJ\020\"skc_123" +
+      "4567890\"R\010clientId\022K\n\013client_name\030\021 \001(\tB" +
+      "*\222A\'2\032Display name of the clientJ\t\"Defau" +
+      "lt\"R\nclientName\022f\n\013client_type\030\022 \001(\tBE\222A" +
+      "B29Type of the client application (e.g.," +
+      " ENV, NTV, SPA, M2M)J\005\"ENV\"R\nclientType\"" +
+      "\273\001\n\021ConnectionDetails\022#\n\rconnection_id\030\001" +
+      " \001(\tR\014connectionId\022\'\n\017organization_id\030\002 " +
+      "\001(\tR\016organizationId\022\'\n\017connection_type\030\003" +
+      " \001(\tR\016connectionType\022/\n\023connection_provi" +
+      "der\030\004 \001(\tR\022connectionProvider2\301\001\n\020AuditL" +
+      "ogsService\022\254\001\n\020ListAuthRequests\022).scalek" +
+      "it.v1.auditlogs.ListAuthLogRequest\032*.sca" +
+      "lekit.v1.auditlogs.ListAuthLogResponse\"A" +
+      "\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002&\022$/api/v1/log" +
+      "s/authentication/requestsB\344\001\n\'com.scalek" +
+      "it.grpc.scalekit.v1.auditlogsB\016Auditlogs" +
+      "ProtoP\001Z3github.com/scalekit-inc/scaleki" +
+      "t/pkg/grpc/auditlogs\242\002\003SVA\252\002\025Scalekit.V1" +
+      ".Auditlogs\312\002\025Scalekit\\V1\\Auditlogs\342\002!Sca" +
+      "lekit\\V1\\Auditlogs\\GPBMetadata\352\002\027Scaleki" +
+      "t::V1::Auditlogsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.scalekit.grpc.buf.validate.ValidateProto.getDescriptor(),
           com.scalekit.grpc.google.api.AnnotationsProto.getDescriptor(),
+          com.scalekit.grpc.google.api.VisibilityProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor(),
           com.scalekit.grpc.scalekit.v1.options.OptionsProto.getDescriptor(),
@@ -143,12 +145,14 @@ public final class AuditlogsProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
+    registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.scalekit.grpc.buf.validate.ValidateProto.getDescriptor();
     com.scalekit.grpc.google.api.AnnotationsProto.getDescriptor();
+    com.scalekit.grpc.google.api.VisibilityProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor();
     com.scalekit.grpc.scalekit.v1.options.OptionsProto.getDescriptor();

@@ -137,4 +137,50 @@ public interface ProviderOrBuilder extends
    * @return The proxyEnabled.
    */
   boolean getProxyEnabled();
+
+  /**
+   * <code>bool is_custom = 12 [json_name = "isCustom", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isCustom.
+   */
+  boolean getIsCustom();
+
+  /**
+   * <code>bool is_custom_mcp = 13 [json_name = "isCustomMcp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isCustomMcp.
+   */
+  boolean getIsCustomMcp();
+
+  /**
+   * <code>map&lt;string, string&gt; metadata = 14 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  int getMetadataCount();
+  /**
+   * <code>map&lt;string, string&gt; metadata = 14 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  boolean containsMetadata(
+      java.lang.String key);
+  /**
+   * Use {@link #getMetadataMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getMetadata();
+  /**
+   * <code>map&lt;string, string&gt; metadata = 14 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getMetadataMap();
+  /**
+   * <code>map&lt;string, string&gt; metadata = 14 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  /* nullable */
+java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue);
+  /**
+   * <code>map&lt;string, string&gt; metadata = 14 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.lang.String getMetadataOrThrow(
+      java.lang.String key);
 }

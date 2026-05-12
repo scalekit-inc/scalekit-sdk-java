@@ -272,6 +272,21 @@ java.lang.String defaultValue);
   com.scalekit.grpc.scalekit.v1.connections.WebAuthConfigurationOrBuilder getWebauthnConfigOrBuilder();
 
   /**
+   * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 28 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the googleDwdConfig field is set.
+   */
+  boolean hasGoogleDwdConfig();
+  /**
+   * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 28 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The googleDwdConfig.
+   */
+  com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig getGoogleDwdConfig();
+  /**
+   * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 28 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfigOrBuilder getGoogleDwdConfigOrBuilder();
+
+  /**
    * <code>optional string key_id = 25 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the keyId field is set.
    */

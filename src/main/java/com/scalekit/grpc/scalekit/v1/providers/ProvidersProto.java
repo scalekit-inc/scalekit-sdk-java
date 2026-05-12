@@ -21,6 +21,11 @@ public final class ProvidersProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_providers_Provider_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_providers_Provider_MetadataEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_providers_Provider_MetadataEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_providers_CreateProvider_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -30,6 +35,21 @@ public final class ProvidersProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_providers_CreateProviderRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_providers_CreateCustomProvider_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_providers_CreateCustomProvider_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_providers_CreateCustomProvider_MetadataEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_providers_CreateCustomProvider_MetadataEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_providers_CreateCustomProviderRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_providers_CreateCustomProviderRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_providers_CreateProviderResponse_descriptor;
   static final 
@@ -46,6 +66,21 @@ public final class ProvidersProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_providers_UpdateProviderRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_providers_UpdateCustomProvider_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_providers_UpdateCustomProvider_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_providers_UpdateCustomProvider_MetadataEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_providers_UpdateCustomProvider_MetadataEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_providers_UpdateCustomProviderRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_providers_UpdateCustomProviderRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_providers_UpdateProviderResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -55,6 +90,11 @@ public final class ProvidersProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_providers_ListProvidersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_providers_ListProvidersRequest_Filter_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_providers_ListProvidersRequest_Filter_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_providers_ListProvidersResponse_descriptor;
   static final 
@@ -88,7 +128,7 @@ public final class ProvidersProto {
       ".proto\032\036google/protobuf/wrappers.proto\032." +
       "protoc-gen-openapiv2/options/annotations" +
       ".proto\032!scalekit/v1/options/options.prot" +
-      "o\"\211\003\n\010Provider\022\016\n\002id\030\001 \001(\tR\002id\022\036\n\nidenti" +
+      "o\"\262\007\n\010Provider\022\016\n\002id\030\001 \001(\tR\002id\022\036\n\nidenti" +
       "fier\030\002 \001(\tR\nidentifier\022!\n\014display_name\030\003" +
       " \001(\tR\013displayName\022 \n\013description\030\004 \001(\tR\013" +
       "description\022\036\n\ncategories\030\005 \003(\tR\ncategor" +
@@ -97,115 +137,278 @@ public final class ProvidersProto {
       "\030\007 \001(\tR\007iconSrc\022)\n\020display_priority\030\010 \001(" +
       "\005R\017displayPriority\022\037\n\013coming_soon\030\t \001(\010R" +
       "\ncomingSoon\022\033\n\tproxy_url\030\n \001(\tR\010proxyUrl" +
-      "\022#\n\rproxy_enabled\030\013 \001(\010R\014proxyEnabled\"\201\n" +
-      "\n\016CreateProvider\022\207\001\n\nidentifier\030\002 \001(\tBg\222" +
-      "AF20Unique identifier for the connected " +
-      "app providerJ\022\"google_workspace\"\272H\033r\026\020\001\030" +
-      "d2\020^[a-zA-Z0-9_-]*$\310\001\001R\nidentifier\022t\n\014di" +
-      "splay_name\030\003 \001(\tBQ\222AA2+Display name for " +
-      "the connected app providerJ\022\"Google Work" +
-      "space\"\272H\nr\005\020\001\030\310\001\310\001\001R\013displayName\022\222\001\n\013des" +
-      "cription\030\004 \001(\tBp\222Am2)Description of the " +
-      "connected app providerJ@\"Connect to Goog" +
-      "le Workspace for email and calendar inte" +
-      "gration\"R\013description\022i\n\ncategories\030\005 \003(" +
-      "\tBI\222AF2)Categories for the connected app" +
-      " providerJ\031[\"productivity\", \"email\"]R\nca" +
-      "tegories\022\202\001\n\rauth_patterns\030\006 \001(\0132\032.googl" +
-      "e.protobuf.ListValueBA\222A826Authenticatio" +
-      "n patterns for the connected app provide" +
-      "r\272H\003\310\001\001R\014authPatterns\022\202\001\n\010icon_src\030\007 \001(\t" +
-      "Bg\222Ad2/Image source URL for the connecte" +
-      "d app providerJ1\"https://example.com/ima" +
-      "ges/google_workspace.png\"R\007iconSrc\022)\n\020di" +
-      "splay_priority\030\010 \001(\005R\017displayPriority\022c\n" +
-      "\013coming_soon\030\t \001(\010BB\222A?26Indicates if th" +
-      "e connected app provider is coming soonJ" +
-      "\005falseR\ncomingSoon\022k\n\tproxy_url\030\n \001(\tBN\222" +
-      "AK2(Proxy URL for the connected app prov" +
-      "iderJ\037\"https://workspace.google.com/\"R\010p" +
-      "roxyUrl\022\341\001\n\rproxy_enabled\030\013 \001(\010B\273\001\222A\267\0012\256" +
-      "\001This flag indicates whether proxying is" +
-      " turned on for the connected app provide" +
-      "r. When enabled, requests are routed thr" +
-      "ough the provider proxy instead of being" +
-      " sent directly.J\004trueR\014proxyEnabledJ\004\010\001\020" +
-      "\002\"\226\001\n\025CreateProviderRequest\022}\n\010provider\030" +
-      "\001 \001(\0132%.scalekit.v1.providers.CreateProv" +
-      "iderB:\222A12/Details of the connected app " +
-      "provider to create\272H\003\310\001\001R\010provider\"U\n\026Cr" +
-      "eateProviderResponse\022;\n\010provider\030\001 \001(\0132\037" +
-      ".scalekit.v1.providers.ProviderR\010provide" +
-      "r\"\271\010\n\016UpdateProvider\022t\n\014display_name\030\003 \001" +
-      "(\tBQ\222AA2+Display name for the connected " +
-      "app providerJ\022\"Google Workspace\"\272H\nr\005\020\001\030" +
-      "\310\001\310\001\001R\013displayName\022\222\001\n\013description\030\004 \001(\t" +
-      "Bp\222Am2)Description of the connected app " +
-      "providerJ@\"Connect to Google Workspace f" +
-      "or email and calendar integration\"R\013desc" +
-      "ription\022i\n\ncategories\030\005 \003(\tBI\222AF2)Catego" +
-      "ries for the connected app providerJ\031[\"p" +
-      "roductivity\", \"email\"]R\ncategories\022|\n\rau" +
+      "\022#\n\rproxy_enabled\030\013 \001(\010R\014proxyEnabled\022o\n" +
+      "\tis_custom\030\014 \001(\010BR\222AO2FIndicates whether" +
+      " the provider is environment-scoped (cus" +
+      "tom provider)J\005falseR\010isCustom\022y\n\ris_cus" +
+      "tom_mcp\030\r \001(\010BU\222AR2IIndicates whether th" +
+      "is is an environment-scoped MCP-based cu" +
+      "stom providerJ\005falseR\013isCustomMcp\022\375\001\n\010me" +
+      "tadata\030\016 \003(\0132-.scalekit.v1.providers.Pro" +
+      "vider.MetadataEntryB\261\001\222A\255\0012}Custom key-v" +
+      "alue metadata stored for this provider. " +
+      "Returned for all providers; defaults to " +
+      "{} when no metadata has been set.J,{\"api" +
+      "_version\": \"v2\", \"region\": \"us-east-1\"}R" +
+      "\010metadata\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR" +
+      "\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\361\n\n\016Creat" +
+      "eProvider\022\367\001\n\nidentifier\030\002 \001(\tB\326\001\222A\264\0012\235\001" +
+      "Unique identifier for the connected app " +
+      "provider. Spaces are not allowed, and th" +
+      "e character : is reserved for internal s" +
+      "uffixing and cannot be used in input.J\022\"" +
+      "google_workspace\"\272H\033r\026\020\001\030d2\020^[a-zA-Z0-9_" +
+      "-]*$\310\001\001R\nidentifier\022t\n\014display_name\030\003 \001(" +
+      "\tBQ\222AA2+Display name for the connected a" +
+      "pp providerJ\022\"Google Workspace\"\272H\nr\005\020\001\030\310" +
+      "\001\310\001\001R\013displayName\022\222\001\n\013description\030\004 \001(\tB" +
+      "p\222Am2)Description of the connected app p" +
+      "roviderJ@\"Connect to Google Workspace fo" +
+      "r email and calendar integration\"R\013descr" +
+      "iption\022i\n\ncategories\030\005 \003(\tBI\222AF2)Categor" +
+      "ies for the connected app providerJ\031[\"pr" +
+      "oductivity\", \"email\"]R\ncategories\022\202\001\n\rau" +
       "th_patterns\030\006 \001(\0132\032.google.protobuf.List" +
-      "ValueB;\222A826Authentication patterns for " +
-      "the connected app providerR\014authPatterns" +
-      "\022\202\001\n\010icon_src\030\007 \001(\tBg\222Ad2/Image source U" +
-      "RL for the connected app providerJ1\"http" +
-      "s://example.com/images/google_workspace." +
-      "png\"R\007iconSrc\022)\n\020display_priority\030\010 \001(\005R" +
-      "\017displayPriority\022\177\n\013coming_soon\030\t \001(\0132\032." +
-      "google.protobuf.BoolValueBB\222A?26Indicate" +
-      "s if the connected app provider is comin" +
-      "g soonJ\005falseR\ncomingSoon\022k\n\tproxy_url\030\n" +
-      " \001(\tBN\222AK2(Proxy URL for the connected a" +
-      "pp providerJ\037\"https://workspace.google.c" +
-      "om/\"R\010proxyUrl\022\210\001\n\rproxy_enabled\030\013 \001(\0132\032" +
-      ".google.protobuf.BoolValueBG\222AD2<Indicat" +
-      "es if proxy is enabled for the connected" +
-      " app providerJ\004trueR\014proxyEnabledJ\004\010\001\020\002J" +
-      "\004\010\002\020\003\"\323\001\n\025UpdateProviderRequest\022;\n\nident" +
-      "ifier\030\001 \001(\tB\033\272H\030r\026\020\000\030d2\020^[a-zA-Z0-9_-]*$" +
-      "R\nidentifier\022}\n\010provider\030\002 \001(\0132%.scaleki" +
-      "t.v1.providers.UpdateProviderB:\222A12/Fiel" +
-      "ds to update for the connected app provi" +
-      "der\272H\003\310\001\001R\010provider\"U\n\026UpdateProviderRes" +
-      "ponse\022;\n\010provider\030\001 \001(\0132\037.scalekit.v1.pr" +
-      "oviders.ProviderR\010provider\"\217\001\n\024ListProvi" +
-      "dersRequest\022;\n\nidentifier\030\001 \001(\tB\033\272H\030r\026\020\000" +
-      "\030d2\020^[a-zA-Z0-9_-]*$R\nidentifier\022\033\n\tpage" +
-      "_size\030\002 \001(\rR\010pageSize\022\035\n\npage_token\030\003 \001(" +
-      "\tR\tpageToken\"\305\001\n\025ListProvidersResponse\022=" +
-      "\n\tproviders\030\001 \003(\0132\037.scalekit.v1.provider" +
-      "s.ProviderR\tproviders\022&\n\017next_page_token" +
-      "\030\002 \001(\tR\rnextPageToken\022\035\n\ntotal_size\030\003 \001(" +
-      "\rR\ttotalSize\022&\n\017prev_page_token\030\004 \001(\tR\rp" +
-      "revPageToken\"T\n\025DeleteProviderRequest\022;\n" +
-      "\nidentifier\030\001 \001(\tB\033\272H\030r\026\020\000\030d2\020^[a-zA-Z0-" +
-      "9_-]*$R\nidentifier\"\030\n\026DeleteProviderResp" +
-      "onse2\274\005\n\017ProviderService\022\247\001\n\016CreateProvi" +
-      "der\022,.scalekit.v1.providers.CreateProvid" +
-      "erRequest\032-.scalekit.v1.providers.Create" +
-      "ProviderResponse\"8\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202" +
-      "\323\344\223\002\035\"\021/api/v1/providers:\010provider\022\264\001\n\016U" +
-      "pdateProvider\022,.scalekit.v1.providers.Up" +
-      "dateProviderRequest\032-.scalekit.v1.provid" +
-      "ers.UpdateProviderResponse\"E\202\265\030\002\030\004\372\322\344\223\002\t" +
-      "\022\007PREVIEW\202\323\344\223\002*\032\036/api/v1/providers/{iden" +
-      "tifier}:\010provider\022\252\001\n\016DeleteProvider\022,.s" +
-      "calekit.v1.providers.DeleteProviderReque" +
-      "st\032-.scalekit.v1.providers.DeleteProvide" +
-      "rResponse\";\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002 *\036" +
-      "/api/v1/providers/{identifier}\022\232\001\n\rListP" +
-      "roviders\022+.scalekit.v1.providers.ListPro" +
-      "vidersRequest\032,.scalekit.v1.providers.Li" +
-      "stProvidersResponse\".\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVI" +
-      "EW\202\323\344\223\002\023\022\021/api/v1/providersB\344\001\n\'com.scal" +
-      "ekit.grpc.scalekit.v1.providersB\016Provide" +
-      "rsProtoP\001Z3github.com/scalekit-inc/scale" +
-      "kit/pkg/grpc/providers\242\002\003SVP\252\002\025Scalekit." +
-      "V1.Providers\312\002\025Scalekit\\V1\\Providers\342\002!S" +
-      "calekit\\V1\\Providers\\GPBMetadata\352\002\027Scale" +
-      "kit::V1::Providersb\006proto3"
+      "ValueBA\222A826Authentication patterns for " +
+      "the connected app provider\272H\003\310\001\001R\014authPa" +
+      "tterns\022\202\001\n\010icon_src\030\007 \001(\tBg\222Ad2/Image so" +
+      "urce URL for the connected app providerJ" +
+      "1\"https://example.com/images/google_work" +
+      "space.png\"R\007iconSrc\022)\n\020display_priority\030" +
+      "\010 \001(\005R\017displayPriority\022c\n\013coming_soon\030\t " +
+      "\001(\010BB\222A?26Indicates if the connected app" +
+      " provider is coming soonJ\005falseR\ncomingS" +
+      "oon\022k\n\tproxy_url\030\n \001(\tBN\222AK2(Proxy URL f" +
+      "or the connected app providerJ\037\"https://" +
+      "workspace.google.com/\"R\010proxyUrl\022\341\001\n\rpro" +
+      "xy_enabled\030\013 \001(\010B\273\001\222A\267\0012\256\001This flag indi" +
+      "cates whether proxying is turned on for " +
+      "the connected app provider. When enabled" +
+      ", requests are routed through the provid" +
+      "er proxy instead of being sent directly." +
+      "J\004trueR\014proxyEnabledJ\004\010\001\020\002\"\226\001\n\025CreatePro" +
+      "viderRequest\022}\n\010provider\030\001 \001(\0132%.scaleki" +
+      "t.v1.providers.CreateProviderB:\222A12/Deta" +
+      "ils of the connected app provider to cre" +
+      "ate\272H\003\310\001\001R\010provider\"\252\013\n\024CreateCustomProv" +
+      "ider\022\235\001\n\014display_name\030\001 \001(\tBz\222AA2+Displa" +
+      "y name for the connected app providerJ\022\"" +
+      "Google Workspace\"\272H3r.\020\001\030\310\0012\'^[a-zA-Z0-9" +
+      " ]*[a-zA-Z0-9][a-zA-Z0-9 ]*$\310\001\001R\013display" +
+      "Name\022\222\001\n\013description\030\002 \001(\tBp\222Am2)Descrip" +
+      "tion of the connected app providerJ@\"Con" +
+      "nect to Google Workspace for email and c" +
+      "alendar integration\"R\013description\022\202\001\n\rau" +
+      "th_patterns\030\004 \001(\0132\032.google.protobuf.List" +
+      "ValueBA\222A826Authentication patterns for " +
+      "the connected app provider\272H\003\310\001\001R\014authPa" +
+      "tterns\022\230\001\n\tproxy_url\030\007 \001(\tB{\222Ac2BProxy U" +
+      "RL for the connected app provider. Must " +
+      "start with https://J\035\"https://mcp.exampl" +
+      "e.com/mcp\"\272H\022r\020\020\001\030\200\0202\t^https://R\010proxyUr" +
+      "l\022\341\001\n\rproxy_enabled\030\010 \001(\010B\273\001\222A\267\0012\256\001This " +
+      "flag indicates whether proxying is turne" +
+      "d on for the connected app provider. Whe" +
+      "n enabled, requests are routed through t" +
+      "he provider proxy instead of being sent " +
+      "directly.J\004trueR\014proxyEnabled\022\317\001\n\010icon_s" +
+      "rc\030\t \001(\tB\263\001\222A\226\0012eURL for the provider ic" +
+      "on. Should be an SVG image sized 800x800" +
+      " pixels for best rendering experience.J-" +
+      "\"https://example.com/images/my-connector" +
+      ".svg\"\272H\026r\024\030\200\0202\017^(https://.*)?$R\007iconSrc\022" +
+      "\267\002\n\010metadata\030\n \003(\01329.scalekit.v1.provide" +
+      "rs.CreateCustomProvider.MetadataEntryB\337\001" +
+      "\222A\302\0012\221\001Custom key-value metadata for thi" +
+      "s provider. Keys must be 3-25 characters" +
+      ", values must be 1-256 characters, with " +
+      "a maximum of 20 key-value pairs.J,{\"api_" +
+      "version\": \"v2\", \"region\": \"us-east-1\"}\272H" +
+      "\026\232\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metadata\032;\n\rMet" +
+      "adataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 " +
+      "\001(\tR\005value:\0028\001J\004\010\003\020\004J\004\010\005\020\006J\004\010\006\020\007\"\255\002\n\033Cre" +
+      "ateCustomProviderRequest\022\215\002\n\010provider\030\001 " +
+      "\001(\0132+.scalekit.v1.providers.CreateCustom" +
+      "ProviderB\303\001\222A\271\0012\266\001Details of the custom " +
+      "connected app provider to create. Identi" +
+      "fier is derived by the system and the id" +
+      "entifier returned in the response must b" +
+      "e used for update and delete operations." +
+      "\272H\003\310\001\001R\010provider\"U\n\026CreateProviderRespon" +
+      "se\022;\n\010provider\030\001 \001(\0132\037.scalekit.v1.provi" +
+      "ders.ProviderR\010provider\"\271\010\n\016UpdateProvid" +
+      "er\022t\n\014display_name\030\003 \001(\tBQ\222AA2+Display n" +
+      "ame for the connected app providerJ\022\"Goo" +
+      "gle Workspace\"\272H\nr\005\020\001\030\310\001\310\001\001R\013displayName" +
+      "\022\222\001\n\013description\030\004 \001(\tBp\222Am2)Description" +
+      " of the connected app providerJ@\"Connect" +
+      " to Google Workspace for email and calen" +
+      "dar integration\"R\013description\022i\n\ncategor" +
+      "ies\030\005 \003(\tBI\222AF2)Categories for the conne" +
+      "cted app providerJ\031[\"productivity\", \"ema" +
+      "il\"]R\ncategories\022|\n\rauth_patterns\030\006 \001(\0132" +
+      "\032.google.protobuf.ListValueB;\222A826Authen" +
+      "tication patterns for the connected app " +
+      "providerR\014authPatterns\022\202\001\n\010icon_src\030\007 \001(" +
+      "\tBg\222Ad2/Image source URL for the connect" +
+      "ed app providerJ1\"https://example.com/im" +
+      "ages/google_workspace.png\"R\007iconSrc\022)\n\020d" +
+      "isplay_priority\030\010 \001(\005R\017displayPriority\022\177" +
+      "\n\013coming_soon\030\t \001(\0132\032.google.protobuf.Bo" +
+      "olValueBB\222A?26Indicates if the connected" +
+      " app provider is coming soonJ\005falseR\ncom" +
+      "ingSoon\022k\n\tproxy_url\030\n \001(\tBN\222AK2(Proxy U" +
+      "RL for the connected app providerJ\037\"http" +
+      "s://workspace.google.com/\"R\010proxyUrl\022\210\001\n" +
+      "\rproxy_enabled\030\013 \001(\0132\032.google.protobuf.B" +
+      "oolValueBG\222AD2<Indicates if proxy is ena" +
+      "bled for the connected app providerJ\004tru" +
+      "eR\014proxyEnabledJ\004\010\001\020\002J\004\010\002\020\003\"\216\002\n\025UpdatePr" +
+      "oviderRequest\022v\n\nidentifier\030\001 \001(\tBV\222AI23" +
+      "Identifier of the connected app provider" +
+      " to update.J\022\"google_workspace\"\272H\007r\005\020\000\030\377" +
+      "\001R\nidentifier\022}\n\010provider\030\002 \001(\0132%.scalek" +
+      "it.v1.providers.UpdateProviderB:\222A12/Fie" +
+      "lds to update for the connected app prov" +
+      "ider\272H\003\310\001\001R\010provider\"\252\013\n\024UpdateCustomPro" +
+      "vider\022\235\001\n\014display_name\030\001 \001(\tBz\222AA2+Displ" +
+      "ay name for the connected app providerJ\022" +
+      "\"Google Workspace\"\272H3r.\020\001\030\310\0012\'^[a-zA-Z0-" +
+      "9 ]*[a-zA-Z0-9][a-zA-Z0-9 ]*$\310\001\001R\013displa" +
+      "yName\022\222\001\n\013description\030\002 \001(\tBp\222Am2)Descri" +
+      "ption of the connected app providerJ@\"Co" +
+      "nnect to Google Workspace for email and " +
+      "calendar integration\"R\013description\022\202\001\n\ra" +
+      "uth_patterns\030\004 \001(\0132\032.google.protobuf.Lis" +
+      "tValueBA\222A826Authentication patterns for" +
+      " the connected app provider\272H\003\310\001\001R\014authP" +
+      "atterns\022\230\001\n\tproxy_url\030\007 \001(\tB{\222Ac2BProxy " +
+      "URL for the connected app provider. Must" +
+      " start with https://J\035\"https://mcp.examp" +
+      "le.com/mcp\"\272H\022r\020\020\001\030\200\0202\t^https://R\010proxyU" +
+      "rl\022\341\001\n\rproxy_enabled\030\010 \001(\010B\273\001\222A\267\0012\256\001This" +
+      " flag indicates whether proxying is turn" +
+      "ed on for the connected app provider. Wh" +
+      "en enabled, requests are routed through " +
+      "the provider proxy instead of being sent" +
+      " directly.J\004trueR\014proxyEnabled\022\317\001\n\010icon_" +
+      "src\030\t \001(\tB\263\001\222A\226\0012eURL for the provider i" +
+      "con. Should be an SVG image sized 800x80" +
+      "0 pixels for best rendering experience.J" +
+      "-\"https://example.com/images/my-connecto" +
+      "r.svg\"\272H\026r\024\030\200\0202\017^(https://.*)?$R\007iconSrc" +
+      "\022\267\002\n\010metadata\030\n \003(\01329.scalekit.v1.provid" +
+      "ers.UpdateCustomProvider.MetadataEntryB\337" +
+      "\001\222A\302\0012\221\001Custom key-value metadata for th" +
+      "is provider. Keys must be 3-25 character" +
+      "s, values must be 1-256 characters, with" +
+      " a maximum of 20 key-value pairs.J,{\"api" +
+      "_version\": \"v2\", \"region\": \"us-east-1\"}\272" +
+      "H\026\232\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metadata\032;\n\rMe" +
+      "tadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002" +
+      " \001(\tR\005value:\0028\001J\004\010\003\020\004J\004\010\005\020\006J\004\010\006\020\007\"\345\002\n\033Up" +
+      "dateCustomProviderRequest\022\202\001\n\nidentifier" +
+      "\030\001 \001(\tBb\222AU2:Identifier of the custom co" +
+      "nnected app provider to update.J\027\"GOOGLE" +
+      "WORKSPACE:12345\"\272H\007r\005\020\000\030\377\001R\nidentifier\022\300" +
+      "\001\n\010provider\030\002 \001(\0132+.scalekit.v1.provider" +
+      "s.UpdateCustomProviderBw\222An2lFields to u" +
+      "pdate for the custom connected app provi" +
+      "der. This aligns with the create custom " +
+      "provider payload.\272H\003\310\001\001R\010provider\"U\n\026Upd" +
+      "ateProviderResponse\022;\n\010provider\030\001 \001(\0132\037." +
+      "scalekit.v1.providers.ProviderR\010provider" +
+      "\"\364\005\n\024ListProvidersRequest\022=\n\nidentifier\030" +
+      "\001 \001(\tB\035\272H\032r\030\020\000\030\377\0012\021^[a-zA-Z0-9_:-]*$R\nid" +
+      "entifier\022\033\n\tpage_size\030\002 \001(\rR\010pageSize\022\035\n" +
+      "\npage_token\030\003 \001(\tR\tpageToken\022\313\002\n\006filter\030" +
+      "\004 \001(\01322.scalekit.v1.providers.ListProvid" +
+      "ersRequest.FilterB\376\001\222A\372\0012\367\001Filters provi" +
+      "ders by type. DEFAULT (or omitted) keeps" +
+      " existing behavior. CUSTOM returns only " +
+      "environment-scoped providers. ALL return" +
+      "s both default (null environment) and cu" +
+      "rrent-environment custom providers. Any " +
+      "unsupported type returns an error.R\006filt" +
+      "er\032\222\002\n\006Filter\022\207\002\n\rprovider_type\030\001 \001(\0162#." +
+      "scalekit.v1.providers.ProviderTypeB\274\001\222A\270" +
+      "\0012\262\001Provider type filter values: DEFAULT" +
+      " (0) returns default providers, CUSTOM (" +
+      "1) returns environment-scoped custom pro" +
+      "viders, and ALL (2) returns both default" +
+      " and custom providers.J\0011R\014providerType\"" +
+      "\305\001\n\025ListProvidersResponse\022=\n\tproviders\030\001" +
+      " \003(\0132\037.scalekit.v1.providers.ProviderR\tp" +
+      "roviders\022&\n\017next_page_token\030\002 \001(\tR\rnextP" +
+      "ageToken\022\035\n\ntotal_size\030\003 \001(\rR\ttotalSize\022" +
+      "&\n\017prev_page_token\030\004 \001(\tR\rprevPageToken\"" +
+      "C\n\025DeleteProviderRequest\022*\n\nidentifier\030\001" +
+      " \001(\tB\n\272H\007r\005\020\000\030\377\001R\nidentifier\"\030\n\026DeletePr" +
+      "oviderResponse*0\n\014ProviderType\022\013\n\007DEFAUL" +
+      "T\020\000\022\n\n\006CUSTOM\020\001\022\007\n\003ALL\020\0022\357\021\n\017ProviderSer" +
+      "vice\022\247\001\n\016CreateProvider\022,.scalekit.v1.pr" +
+      "oviders.CreateProviderRequest\032-.scalekit" +
+      ".v1.providers.CreateProviderResponse\"8\202\265" +
+      "\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\035\"\021/api/v1/provi" +
+      "ders:\010provider\022\314\004\n\024CreateCustomProvider\022" +
+      "2.scalekit.v1.providers.CreateCustomProv" +
+      "iderRequest\032-.scalekit.v1.providers.Crea" +
+      "teProviderResponse\"\320\003\222A\234\003\n\tProviders\022\030Cr" +
+      "eate a custom provider\032\272\001Creates an envi" +
+      "ronment-scoped custom provider with auth" +
+      "entication patterns and proxy configurat" +
+      "ion. Use Provider.identifier from the re" +
+      "sponse for subsequent update and delete " +
+      "operations.J`\n\003201\022Y\n$Custom provider cr" +
+      "eated successfully\0221\n/\032-.scalekit.v1.pro" +
+      "viders.CreateProviderResponseJ6\n\003400\022/\n-" +
+      "Bad Request - invalid custom provider pa" +
+      "yloadJ\036\n\003500\022\027\n\025Internal Server Error\202\265\030" +
+      "\002\030D\202\323\344\223\002$\"\030/api/v1/custom-providers:\010pro" +
+      "vider\022\264\001\n\016UpdateProvider\022,.scalekit.v1.p" +
+      "roviders.UpdateProviderRequest\032-.scaleki" +
+      "t.v1.providers.UpdateProviderResponse\"E\202" +
+      "\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002*\032\036/api/v1/prov" +
+      "iders/{identifier}:\010provider\022\227\004\n\024UpdateC" +
+      "ustomProvider\0222.scalekit.v1.providers.Up" +
+      "dateCustomProviderRequest\032-.scalekit.v1." +
+      "providers.UpdateProviderResponse\"\233\003\222A\332\002\n" +
+      "\tProviders\022\030Update a custom provider\032DUp" +
+      "dates an existing environment-scoped cus" +
+      "tom provider by identifierJ`\n\003200\022Y\n$Cus" +
+      "tom provider updated successfully\0221\n/\032-." +
+      "scalekit.v1.providers.UpdateProviderResp" +
+      "onseJ6\n\003400\022/\n-Bad Request - invalid cus" +
+      "tom provider payloadJ3\n\003404\022,\n*Not Found" +
+      " - custom provider does not existJ\036\n\003500" +
+      "\022\027\n\025Internal Server Error\202\265\030\002\030D\202\323\344\223\0021\032%/" +
+      "api/v1/custom-providers/{identifier}:\010pr" +
+      "ovider\022\252\001\n\016DeleteProvider\022,.scalekit.v1." +
+      "providers.DeleteProviderRequest\032-.scalek" +
+      "it.v1.providers.DeleteProviderResponse\";" +
+      "\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002 *\036/api/v1/pro" +
+      "viders/{identifier}\022\306\003\n\024DeleteCustomProv" +
+      "ider\022,.scalekit.v1.providers.DeleteProvi" +
+      "derRequest\032-.scalekit.v1.providers.Delet" +
+      "eProviderResponse\"\320\002\222A\231\002\n\tProviders\022\030Del" +
+      "ete a custom provider\032;Deletes an enviro" +
+      "nment-scoped custom provider by identifi" +
+      "erJ`\n\003200\022Y\n$Custom provider deleted suc" +
+      "cessfully\0221\n/\032-.scalekit.v1.providers.De" +
+      "leteProviderResponseJ3\n\003404\022,\n*Not Found" +
+      " - custom provider does not existJ\036\n\003500" +
+      "\022\027\n\025Internal Server Error\202\265\030\002\030D\202\323\344\223\002\'*%/" +
+      "api/v1/custom-providers/{identifier}\022\233\001\n" +
+      "\rListProviders\022+.scalekit.v1.providers.L" +
+      "istProvidersRequest\032,.scalekit.v1.provid" +
+      "ers.ListProvidersResponse\"/\202\265\030\003\030\304\001\372\322\344\223\002\t" +
+      "\022\007PREVIEW\202\323\344\223\002\023\022\021/api/v1/providersB\344\001\n\'c" +
+      "om.scalekit.grpc.scalekit.v1.providersB\016" +
+      "ProvidersProtoP\001Z3github.com/scalekit-in" +
+      "c/scalekit/pkg/grpc/providers\242\002\003SVP\252\002\025Sc" +
+      "alekit.V1.Providers\312\002\025Scalekit\\V1\\Provid" +
+      "ers\342\002!Scalekit\\V1\\Providers\\GPBMetadata\352" +
+      "\002\027Scalekit::V1::Providersb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -225,7 +428,13 @@ public final class ProvidersProto {
     internal_static_scalekit_v1_providers_Provider_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_providers_Provider_descriptor,
-        new java.lang.String[] { "Id", "Identifier", "DisplayName", "Description", "Categories", "AuthPatterns", "IconSrc", "DisplayPriority", "ComingSoon", "ProxyUrl", "ProxyEnabled", });
+        new java.lang.String[] { "Id", "Identifier", "DisplayName", "Description", "Categories", "AuthPatterns", "IconSrc", "DisplayPriority", "ComingSoon", "ProxyUrl", "ProxyEnabled", "IsCustom", "IsCustomMcp", "Metadata", });
+    internal_static_scalekit_v1_providers_Provider_MetadataEntry_descriptor =
+      internal_static_scalekit_v1_providers_Provider_descriptor.getNestedTypes().get(0);
+    internal_static_scalekit_v1_providers_Provider_MetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_providers_Provider_MetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_scalekit_v1_providers_CreateProvider_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_scalekit_v1_providers_CreateProvider_fieldAccessorTable = new
@@ -238,50 +447,92 @@ public final class ProvidersProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_providers_CreateProviderRequest_descriptor,
         new java.lang.String[] { "Provider", });
-    internal_static_scalekit_v1_providers_CreateProviderResponse_descriptor =
+    internal_static_scalekit_v1_providers_CreateCustomProvider_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_scalekit_v1_providers_CreateCustomProvider_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_providers_CreateCustomProvider_descriptor,
+        new java.lang.String[] { "DisplayName", "Description", "AuthPatterns", "ProxyUrl", "ProxyEnabled", "IconSrc", "Metadata", });
+    internal_static_scalekit_v1_providers_CreateCustomProvider_MetadataEntry_descriptor =
+      internal_static_scalekit_v1_providers_CreateCustomProvider_descriptor.getNestedTypes().get(0);
+    internal_static_scalekit_v1_providers_CreateCustomProvider_MetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_providers_CreateCustomProvider_MetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_scalekit_v1_providers_CreateCustomProviderRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_scalekit_v1_providers_CreateCustomProviderRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_providers_CreateCustomProviderRequest_descriptor,
+        new java.lang.String[] { "Provider", });
+    internal_static_scalekit_v1_providers_CreateProviderResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_scalekit_v1_providers_CreateProviderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_providers_CreateProviderResponse_descriptor,
         new java.lang.String[] { "Provider", });
     internal_static_scalekit_v1_providers_UpdateProvider_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_scalekit_v1_providers_UpdateProvider_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_providers_UpdateProvider_descriptor,
         new java.lang.String[] { "DisplayName", "Description", "Categories", "AuthPatterns", "IconSrc", "DisplayPriority", "ComingSoon", "ProxyUrl", "ProxyEnabled", });
     internal_static_scalekit_v1_providers_UpdateProviderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_scalekit_v1_providers_UpdateProviderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_providers_UpdateProviderRequest_descriptor,
         new java.lang.String[] { "Identifier", "Provider", });
+    internal_static_scalekit_v1_providers_UpdateCustomProvider_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_scalekit_v1_providers_UpdateCustomProvider_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_providers_UpdateCustomProvider_descriptor,
+        new java.lang.String[] { "DisplayName", "Description", "AuthPatterns", "ProxyUrl", "ProxyEnabled", "IconSrc", "Metadata", });
+    internal_static_scalekit_v1_providers_UpdateCustomProvider_MetadataEntry_descriptor =
+      internal_static_scalekit_v1_providers_UpdateCustomProvider_descriptor.getNestedTypes().get(0);
+    internal_static_scalekit_v1_providers_UpdateCustomProvider_MetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_providers_UpdateCustomProvider_MetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_scalekit_v1_providers_UpdateCustomProviderRequest_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_scalekit_v1_providers_UpdateCustomProviderRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_providers_UpdateCustomProviderRequest_descriptor,
+        new java.lang.String[] { "Identifier", "Provider", });
     internal_static_scalekit_v1_providers_UpdateProviderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_scalekit_v1_providers_UpdateProviderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_providers_UpdateProviderResponse_descriptor,
         new java.lang.String[] { "Provider", });
     internal_static_scalekit_v1_providers_ListProvidersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_scalekit_v1_providers_ListProvidersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_providers_ListProvidersRequest_descriptor,
-        new java.lang.String[] { "Identifier", "PageSize", "PageToken", });
+        new java.lang.String[] { "Identifier", "PageSize", "PageToken", "Filter", });
+    internal_static_scalekit_v1_providers_ListProvidersRequest_Filter_descriptor =
+      internal_static_scalekit_v1_providers_ListProvidersRequest_descriptor.getNestedTypes().get(0);
+    internal_static_scalekit_v1_providers_ListProvidersRequest_Filter_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_providers_ListProvidersRequest_Filter_descriptor,
+        new java.lang.String[] { "ProviderType", });
     internal_static_scalekit_v1_providers_ListProvidersResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_scalekit_v1_providers_ListProvidersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_providers_ListProvidersResponse_descriptor,
         new java.lang.String[] { "Providers", "NextPageToken", "TotalSize", "PrevPageToken", });
     internal_static_scalekit_v1_providers_DeleteProviderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_scalekit_v1_providers_DeleteProviderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_providers_DeleteProviderRequest_descriptor,
         new java.lang.String[] { "Identifier", });
     internal_static_scalekit_v1_providers_DeleteProviderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_scalekit_v1_providers_DeleteProviderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_providers_DeleteProviderResponse_descriptor,
@@ -292,6 +543,7 @@ public final class ProvidersProto {
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
     registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

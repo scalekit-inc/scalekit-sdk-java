@@ -573,6 +573,68 @@ public final class ConnectionServiceGrpc {
     return getListAppConnectionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextRequest,
+      com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextResponse> getGetConnectionContextMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetConnectionContext",
+      requestType = com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextRequest,
+      com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextResponse> getGetConnectionContextMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextRequest, com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextResponse> getGetConnectionContextMethod;
+    if ((getGetConnectionContextMethod = ConnectionServiceGrpc.getGetConnectionContextMethod) == null) {
+      synchronized (ConnectionServiceGrpc.class) {
+        if ((getGetConnectionContextMethod = ConnectionServiceGrpc.getGetConnectionContextMethod) == null) {
+          ConnectionServiceGrpc.getGetConnectionContextMethod = getGetConnectionContextMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextRequest, com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetConnectionContext"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectionServiceMethodDescriptorSupplier("GetConnectionContext"))
+              .build();
+        }
+      }
+    }
+    return getGetConnectionContextMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionContextRequest,
+      com.google.protobuf.Empty> getUpdateConnectionContextMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateConnectionContext",
+      requestType = com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionContextRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionContextRequest,
+      com.google.protobuf.Empty> getUpdateConnectionContextMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionContextRequest, com.google.protobuf.Empty> getUpdateConnectionContextMethod;
+    if ((getUpdateConnectionContextMethod = ConnectionServiceGrpc.getUpdateConnectionContextMethod) == null) {
+      synchronized (ConnectionServiceGrpc.class) {
+        if ((getUpdateConnectionContextMethod = ConnectionServiceGrpc.getUpdateConnectionContextMethod) == null) {
+          ConnectionServiceGrpc.getUpdateConnectionContextMethod = getUpdateConnectionContextMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionContextRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateConnectionContext"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionContextRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectionServiceMethodDescriptorSupplier("UpdateConnectionContext"))
+              .build();
+        }
+      }
+    }
+    return getUpdateConnectionContextMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -746,6 +808,20 @@ public final class ConnectionServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ListAppConnectionsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAppConnectionsMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void getConnectionContext(com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetConnectionContextMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateConnectionContext(com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionContextRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateConnectionContextMethod(), responseObserver);
+    }
   }
 
   /**
@@ -918,6 +994,22 @@ public final class ConnectionServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAppConnectionsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getConnectionContext(com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetConnectionContextMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateConnectionContext(com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionContextRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateConnectionContextMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1060,6 +1152,20 @@ public final class ConnectionServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.connections.ListAppConnectionsResponse listAppConnections(com.scalekit.grpc.scalekit.v1.connections.ListAppConnectionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListAppConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextResponse getConnectionContext(com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConnectionContextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.google.protobuf.Empty updateConnectionContext(com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionContextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateConnectionContextMethod(), getCallOptions(), request);
     }
   }
 
@@ -1222,6 +1328,22 @@ public final class ConnectionServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAppConnectionsMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextResponse> getConnectionContext(
+        com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetConnectionContextMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> updateConnectionContext(
+        com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionContextRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateConnectionContextMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ENVIRONMENT_CONNECTION = 0;
@@ -1242,6 +1364,8 @@ public final class ConnectionServiceGrpc {
   private static final int METHODID_DISABLE_CONNECTION = 15;
   private static final int METHODID_GET_CONNECTION_TEST_RESULT = 16;
   private static final int METHODID_LIST_APP_CONNECTIONS = 17;
+  private static final int METHODID_GET_CONNECTION_CONTEXT = 18;
+  private static final int METHODID_UPDATE_CONNECTION_CONTEXT = 19;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1331,6 +1455,14 @@ public final class ConnectionServiceGrpc {
         case METHODID_LIST_APP_CONNECTIONS:
           serviceImpl.listAppConnections((com.scalekit.grpc.scalekit.v1.connections.ListAppConnectionsRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.ListAppConnectionsResponse>) responseObserver);
+          break;
+        case METHODID_GET_CONNECTION_CONTEXT:
+          serviceImpl.getConnectionContext((com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_CONNECTION_CONTEXT:
+          serviceImpl.updateConnectionContext((com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionContextRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1476,6 +1608,20 @@ public final class ConnectionServiceGrpc {
               com.scalekit.grpc.scalekit.v1.connections.ListAppConnectionsRequest,
               com.scalekit.grpc.scalekit.v1.connections.ListAppConnectionsResponse>(
                 service, METHODID_LIST_APP_CONNECTIONS)))
+        .addMethod(
+          getGetConnectionContextMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextRequest,
+              com.scalekit.grpc.scalekit.v1.connections.GetConnectionContextResponse>(
+                service, METHODID_GET_CONNECTION_CONTEXT)))
+        .addMethod(
+          getUpdateConnectionContextMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionContextRequest,
+              com.google.protobuf.Empty>(
+                service, METHODID_UPDATE_CONNECTION_CONTEXT)))
         .build();
   }
 
@@ -1542,6 +1688,8 @@ public final class ConnectionServiceGrpc {
               .addMethod(getDisableConnectionMethod())
               .addMethod(getGetConnectionTestResultMethod())
               .addMethod(getListAppConnectionsMethod())
+              .addMethod(getGetConnectionContextMethod())
+              .addMethod(getUpdateConnectionContextMethod())
               .build();
         }
       }
