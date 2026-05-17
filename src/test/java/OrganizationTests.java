@@ -83,6 +83,72 @@ public class OrganizationTests {
     }
 
     @Test
+    void LogoUrlTest() {
+        String logoUrl = "https://cdn.example.com/acme-logo.png";
+
+        // create with logo_url
+        CreateOrganization createOrganization = CreateOrganization.newBuilder()
+                .setDisplayName("Logo URL Test Org")
+                .setExternalId(UUID.randomUUID().toString().substring(0, 10))
+                .setLogoUrl(logoUrl)
+                .build();
+
+        Organization created = client.organizations().create(createOrganization);
+        assertNotNull(created);
+        assertEquals(logoUrl, created.getLogoUrl());
+
+        // retrieve and verify logo_url persisted
+        Organization retrieved = client.organizations().getById(created.getId());
+        assertEquals(logoUrl, retrieved.getLogoUrl());
+
+        // update to change logo_url
+        String newLogoUrl = "https://cdn.example.com/acme-logo-v2.png";
+        Organization updated = client.organizations().updateById(
+                created.getId(),
+                UpdateOrganization.newBuilder().setLogoUrl(newLogoUrl).build()
+        );
+        assertEquals(newLogoUrl, updated.getLogoUrl());
+
+        // clear logo_url
+        Organization cleared = client.organizations().updateById(
+                created.getId(),
+                UpdateOrganization.newBuilder().setLogoUrl("").build()
+        );
+        assertEquals("", cleared.getLogoUrl());
+
+        client.organizations().deleteById(created.getId());
+    }
+
+    @Test
+    void LogoUrlPreservedAfterSettingsUpdateTest() {
+        String logoUrl = "https://cdn.example.com/acme-logo.png";
+
+        CreateOrganization createOrganization = CreateOrganization.newBuilder()
+                .setDisplayName("Logo URL Settings Test Org")
+                .build();
+
+        Organization organization = client.organizations().create(createOrganization);
+        assertNotNull(organization);
+
+        // stamp logo_url
+        Organization withLogo = client.organizations().updateById(
+                organization.getId(),
+                UpdateOrganization.newBuilder().setLogoUrl(logoUrl).build()
+        );
+        assertEquals(logoUrl, withLogo.getLogoUrl());
+
+        // update features — must not wipe logo_url
+        OrganizationSettingsFeature featureSSO = OrganizationSettingsFeature.newBuilder()
+                .setName("sso").setEnabled(true).build();
+        Organization afterSettings = client.organizations()
+                .updateOrganizationSettings(organization.getId(), Collections.singletonList(featureSSO));
+
+        assertEquals(logoUrl, afterSettings.getLogoUrl());
+
+        client.organizations().deleteById(organization.getId());
+    }
+
+    @Test
     void  ExceptionTest() {
         String organizationName = "";
         CreateOrganization createOrganization = CreateOrganization.newBuilder()
