@@ -25,6 +25,12 @@ public class RetryExecuter {
                 } catch (Exception ex) {
                     throw new APIException(ex.getMessage());
                 }
+            } else if (e.getStatus().getCode() == Status.Code.DEADLINE_EXCEEDED) {
+                try {
+                    return callable.call();
+                } catch (Exception ex) {
+                    throw new APIException(ex.getMessage());
+                }
             } else {
                 throw new APIException(e);
             }

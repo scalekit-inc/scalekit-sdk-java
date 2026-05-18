@@ -27,6 +27,7 @@ import org.jose4j.jwt.consumer.JwtConsumerBuilder;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.*;
+import java.util.concurrent.TimeUnit;
 
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -48,9 +49,14 @@ public class ScalekitAuthClient implements AuthClient {
                 .setConnectionRequestTimeout(5000)
                 .build();
 
-        // Create an HttpClient with the custom request configuration
-         this.httpClient = HttpClients.custom()
+        // Create an HttpClient with the custom request configuration.
+        // evictExpiredConnections + evictIdleConnections prevent stale pooled connections
+        // from being reused after the server has closed them (manifests as Connection reset
+        // on token refresh when the access token has been valid for a long time).
+        this.httpClient = HttpClients.custom()
                 .setDefaultRequestConfig(requestConfig)
+                .evictExpiredConnections()
+                .evictIdleConnections(30, TimeUnit.SECONDS)
                 .build();
 
         this.objectMapper = new ObjectMapper();
