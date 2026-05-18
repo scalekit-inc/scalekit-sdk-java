@@ -227,6 +227,33 @@ public class OrganizationTests {
     }
 
     @Test
+    void SlugTest() {
+        String slug = "test-slug-" + System.currentTimeMillis();
+
+        CreateOrganization createOrganization = CreateOrganization.newBuilder()
+                .setDisplayName("Slug Test Org")
+                .setExternalId(UUID.randomUUID().toString().substring(0, 10))
+                .setSlug(slug)
+                .build();
+
+        Organization createdOrganization = client.organizations().create(createOrganization);
+        assertNotNull(createdOrganization);
+        assertEquals(slug, createdOrganization.getSlug());
+
+        Organization retrieved = client.organizations().getById(createdOrganization.getId());
+        assertEquals(slug, retrieved.getSlug());
+
+        String updatedSlug = "upd-slug-" + System.currentTimeMillis();
+        Organization updated = client.organizations().updateById(
+                createdOrganization.getId(),
+                UpdateOrganization.newBuilder().setSlug(updatedSlug).build()
+        );
+        assertEquals(updatedSlug, updated.getSlug());
+
+        client.organizations().deleteById(createdOrganization.getId());
+    }
+
+    @Test
     void UpsertUserManagementSettingsTest() {
         ListOrganizationsResponse organizations = client.organizations().listOrganizations(10, null);
         assertNotNull(organizations);
