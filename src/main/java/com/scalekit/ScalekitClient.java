@@ -59,7 +59,7 @@ public class ScalekitClient {
                     .userAgent("scalekit-sdk-java/" + version)
                     .keepAliveTime(60, TimeUnit.SECONDS)
                     .keepAliveTimeout(10, TimeUnit.SECONDS)
-                    .keepAliveWithoutCalls(true)
+                    .keepAliveWithoutCalls(false)
                     .build();
 
             // Initialize all clients
