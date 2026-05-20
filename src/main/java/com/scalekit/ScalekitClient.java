@@ -12,6 +12,7 @@ import io.grpc.ManagedChannelBuilder;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import static com.scalekit.internal.Constants.*;
 
@@ -56,6 +57,9 @@ public class ScalekitClient {
             // Managed channel automatically handles channel closing
             ManagedChannel channel = ManagedChannelBuilder.forAddress(url.getAuthority(), 443)
                     .userAgent("scalekit-sdk-java/" + version)
+                    .keepAliveTime(60, TimeUnit.SECONDS)
+                    .keepAliveTimeout(10, TimeUnit.SECONDS)
+                    .keepAliveWithoutCalls(false)
                     .build();
 
             // Initialize all clients

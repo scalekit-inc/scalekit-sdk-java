@@ -14,6 +14,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.util.EntityUtils;
 import org.jose4j.jwk.JsonWebKey;
 import org.jose4j.jwk.JsonWebKeySet;
@@ -27,6 +28,7 @@ import org.jose4j.jwt.consumer.JwtConsumerBuilder;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.*;
+import java.util.concurrent.TimeUnit;
 
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -42,15 +44,21 @@ public class ScalekitAuthClient implements AuthClient {
 
     public ScalekitAuthClient() {
 
+        PoolingHttpClientConnectionManager connManager = new PoolingHttpClientConnectionManager();
+        connManager.setMaxTotal(20);
+        connManager.setDefaultMaxPerRoute(10);
+
         RequestConfig requestConfig = RequestConfig.custom()
                 .setConnectTimeout(5000)
                 .setSocketTimeout(10000)
                 .setConnectionRequestTimeout(5000)
                 .build();
 
-        // Create an HttpClient with the custom request configuration
-         this.httpClient = HttpClients.custom()
+        this.httpClient = HttpClients.custom()
+                .setConnectionManager(connManager)
                 .setDefaultRequestConfig(requestConfig)
+                .evictExpiredConnections()
+                .evictIdleConnections(30, TimeUnit.SECONDS)
                 .build();
 
         this.objectMapper = new ObjectMapper();
