@@ -45,6 +45,10 @@ public class OrganizationSlugLogoTests {
             assertNotNull(org);
             assertNotNull(org.getId());
             assertEquals(PUBLIC_LOGO_URL, org.getLogoUrl());
+
+            Organization fetched = client.organizations().getById(org.getId());
+            assertNotNull(fetched);
+            assertEquals(PUBLIC_LOGO_URL, fetched.getLogoUrl());
             log.info("Created org {} with logoUrl={}", org.getId(), org.getLogoUrl());
         } finally {
             client.organizations().deleteById(org.getId());
@@ -65,6 +69,10 @@ public class OrganizationSlugLogoTests {
             assertNotNull(org);
             assertNotNull(org.getId());
             assertEquals(slug, org.getSlug());
+
+            Organization fetched = client.organizations().getById(org.getId());
+            assertNotNull(fetched);
+            assertEquals(slug, fetched.getSlug());
             log.info("Created org {} with slug={}", org.getId(), org.getSlug());
         } finally {
             client.organizations().deleteById(org.getId());
@@ -85,6 +93,10 @@ public class OrganizationSlugLogoTests {
             assertNotNull(updated);
             assertEquals(org.getId(), updated.getId());
             assertEquals(PUBLIC_LOGO_URL, updated.getLogoUrl());
+
+            Organization fetched = client.organizations().getById(org.getId());
+            assertNotNull(fetched);
+            assertEquals(PUBLIC_LOGO_URL, fetched.getLogoUrl());
             log.info("Updated org {} logoUrl={}", updated.getId(), updated.getLogoUrl());
         } finally {
             client.organizations().deleteById(org.getId());
@@ -108,6 +120,11 @@ public class OrganizationSlugLogoTests {
             assertEquals(org.getId(), updated.getId());
             assertEquals(slug, updated.getSlug());
             assertEquals("auth.megasoft.com", updated.getMetadataMap().get("custom_domain"));
+
+            Organization fetched = client.organizations().getById(org.getId());
+            assertNotNull(fetched);
+            assertEquals(slug, fetched.getSlug());
+            assertEquals("auth.megasoft.com", fetched.getMetadataMap().get("custom_domain"));
             log.info("Updated org {} slug={} metadata={}", updated.getId(), updated.getSlug(), updated.getMetadataMap());
         } finally {
             client.organizations().deleteById(org.getId());
