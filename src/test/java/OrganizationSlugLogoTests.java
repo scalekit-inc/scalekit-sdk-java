@@ -30,10 +30,7 @@ public class OrganizationSlugLogoTests {
         return client.organizations().create(create);
     }
 
-    // A publicly accessible image URL used to test logo_url validation.
-    // The backend performs an SSRF-safe HTTP check against the URL, so it must
-    // be a real, resolvable HTTPS endpoint.
-    private static final String PUBLIC_LOGO_URL = "https://avatars.githubusercontent.com/u/101221678";
+    private static final String PUBLIC_LOGO_URL = "https://logo.debounce.com/microsoft.com";
 
     @Test
     void testCreateWithLogoUrl() {
