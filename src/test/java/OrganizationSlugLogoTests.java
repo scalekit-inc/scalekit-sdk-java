@@ -53,7 +53,7 @@ public class OrganizationSlugLogoTests {
 
     @Test
     void testCreateWithSlug() {
-        String slug = "app-acmecorp-" + UUID.randomUUID().toString().substring(0, 6);
+        String slug = "auth.megasoft.com";
         CreateOrganization create = CreateOrganization.newBuilder()
                 .setDisplayName("Slug Test Org")
                 .setExternalId(UUID.randomUUID().toString().substring(0, 10))
@@ -95,19 +95,19 @@ public class OrganizationSlugLogoTests {
     void testUpdateSlugAndMetadata() {
         Organization org = createTestOrg();
         try {
-            String slug = "app-acmecorp-" + UUID.randomUUID().toString().substring(0, 6);
+            String slug = "auth.megasoft.com";
             Organization updated = client.organizations().updateById(
                     org.getId(),
                     UpdateOrganization.newBuilder()
                             .setSlug(slug)
-                            .putMetadata("custom_domain", "app.acmecorp.com")
+                            .putMetadata("custom_domain", "auth.megasoft.com")
                             .build()
             );
 
             assertNotNull(updated);
             assertEquals(org.getId(), updated.getId());
             assertEquals(slug, updated.getSlug());
-            assertEquals("app.acmecorp.com", updated.getMetadataMap().get("custom_domain"));
+            assertEquals("auth.megasoft.com", updated.getMetadataMap().get("custom_domain"));
             log.info("Updated org {} slug={} metadata={}", updated.getId(), updated.getSlug(), updated.getMetadataMap());
         } finally {
             client.organizations().deleteById(org.getId());
