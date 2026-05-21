@@ -35,6 +35,18 @@ private static final long serialVersionUID = 0L;
     return com.scalekit.grpc.scalekit.v1.providers.ProvidersProto.internal_static_scalekit_v1_providers_UpdateCustomProvider_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 10:
+        return internalGetMetadata();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -237,6 +249,85 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int METADATA_FIELD_NUMBER = 10;
+  private static final class MetadataDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                com.scalekit.grpc.scalekit.v1.providers.ProvidersProto.internal_static_scalekit_v1_providers_UpdateCustomProvider_MetadataEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> metadata_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetMetadata() {
+    if (metadata_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          MetadataDefaultEntryHolder.defaultEntry);
+    }
+    return metadata_;
+  }
+  public int getMetadataCount() {
+    return internalGetMetadata().getMap().size();
+  }
+  /**
+   * <code>map&lt;string, string&gt; metadata = 10 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public boolean containsMetadata(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    return internalGetMetadata().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getMetadataMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+    return getMetadataMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; metadata = 10 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+    return internalGetMetadata().getMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; metadata = 10 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public /* nullable */
+java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetMetadata().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, string&gt; metadata = 10 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.lang.String getMetadataOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetMetadata().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -269,6 +360,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(iconSrc_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, iconSrc_);
     }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetMetadata(),
+        MetadataDefaultEntryHolder.defaultEntry,
+        10);
     getUnknownFields().writeTo(output);
   }
 
@@ -297,6 +394,16 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(iconSrc_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, iconSrc_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetMetadata().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, metadata__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -328,6 +435,8 @@ private static final long serialVersionUID = 0L;
         != other.getProxyEnabled()) return false;
     if (!getIconSrc()
         .equals(other.getIconSrc())) return false;
+    if (!internalGetMetadata().equals(
+        other.internalGetMetadata())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -354,6 +463,10 @@ private static final long serialVersionUID = 0L;
         getProxyEnabled());
     hash = (37 * hash) + ICON_SRC_FIELD_NUMBER;
     hash = (53 * hash) + getIconSrc().hashCode();
+    if (!internalGetMetadata().getMap().isEmpty()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetMetadata().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -463,6 +576,28 @@ private static final long serialVersionUID = 0L;
       return com.scalekit.grpc.scalekit.v1.providers.ProvidersProto.internal_static_scalekit_v1_providers_UpdateCustomProvider_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 10:
+          return internalGetMetadata();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 10:
+          return internalGetMutableMetadata();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -501,6 +636,7 @@ private static final long serialVersionUID = 0L;
       proxyUrl_ = "";
       proxyEnabled_ = false;
       iconSrc_ = "";
+      internalGetMutableMetadata().clear();
       return this;
     }
 
@@ -555,6 +691,10 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.iconSrc_ = iconSrc_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -629,6 +769,9 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      internalGetMutableMetadata().mergeFrom(
+          other.internalGetMetadata());
+      bitField0_ |= 0x00000040;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -687,6 +830,15 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000020;
               break;
             } // case 74
+            case 82: {
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              metadata__ = input.readMessage(
+                  MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              internalGetMutableMetadata().getMutableMap().put(
+                  metadata__.getKey(), metadata__.getValue());
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 82
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1142,6 +1294,133 @@ private static final long serialVersionUID = 0L;
       iconSrc_ = value;
       bitField0_ |= 0x00000020;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> metadata_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMetadata() {
+      if (metadata_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MetadataDefaultEntryHolder.defaultEntry);
+      }
+      return metadata_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableMetadata() {
+      if (metadata_ == null) {
+        metadata_ = com.google.protobuf.MapField.newMapField(
+            MetadataDefaultEntryHolder.defaultEntry);
+      }
+      if (!metadata_.isMutable()) {
+        metadata_ = metadata_.copy();
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return metadata_;
+    }
+    public int getMetadataCount() {
+      return internalGetMetadata().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 10 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    @java.lang.Override
+    public boolean containsMetadata(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetMetadata().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+      return getMetadataMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 10 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+      return internalGetMetadata().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 10 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 10 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    @java.lang.Override
+    public java.lang.String getMetadataOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      internalGetMutableMetadata().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 10 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder removeMetadata(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      internalGetMutableMetadata().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+        getMutableMetadata() {
+      bitField0_ |= 0x00000040;
+      return internalGetMutableMetadata().getMutableMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 10 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder putMetadata(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) { throw new NullPointerException("map value"); }
+      internalGetMutableMetadata().getMutableMap()
+          .put(key, value);
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 10 [json_name = "metadata", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder putAllMetadata(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableMetadata().getMutableMap()
+          .putAll(values);
+      bitField0_ |= 0x00000040;
       return this;
     }
     @java.lang.Override

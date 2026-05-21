@@ -50,6 +50,11 @@ public final class CommonsProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_commons_ExternalIdentity_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_commons_OrganizationCustomizations_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_commons_OrganizationCustomizations_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -326,7 +331,15 @@ public final class CommonsProto {
       " the last data synchronization for this " +
       "external identity from the provider. Aut" +
       "omatically updated by the system.\340A\003R\016la" +
-      "stSyncedTime*9\n\nRegionCode\022\033\n\027REGION_COD" +
+      "stSyncedTime\"\275\002\n\032OrganizationCustomizati" +
+      "ons\022A\n\032organization_logo_branding\030\001 \001(\010B" +
+      "\003\340A\003R\030organizationLogoBranding\022U\n\014displa" +
+      "y_name\030\002 \001(\tB2\222A/2 Display name of the o" +
+      "rganizationJ\013\"Acme Corp\"R\013displayName\022x\n" +
+      "\010logo_url\030\003 \001(\tBX\222AU2$HTTPS URL of the o" +
+      "rganization\'s logoJ\'\"https://cdn.example" +
+      ".com/acme-logo.png\"\242\002\003uriH\000R\007logoUrl\210\001\001B" +
+      "\013\n\t_logo_url*9\n\nRegionCode\022\033\n\027REGION_COD" +
       "E_UNSPECIFIED\020\000\022\006\n\002US\020\001\022\006\n\002EU\020\002*E\n\017Envir" +
       "onmentType\022 \n\034ENVIRONMENT_TYPE_UNSPECIFI" +
       "ED\020\000\022\007\n\003PRD\020\001\022\007\n\003DEV\020\002*w\n\020MembershipStat" +
@@ -406,6 +419,12 @@ public final class CommonsProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_commons_ExternalIdentity_descriptor,
         new java.lang.String[] { "ConnectionId", "ConnectionType", "ConnectionProvider", "ConnectionUserId", "IsSocial", "LastLoginTime", "CreatedTime", "LastSyncedTime", });
+    internal_static_scalekit_v1_commons_OrganizationCustomizations_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_scalekit_v1_commons_OrganizationCustomizations_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_commons_OrganizationCustomizations_descriptor,
+        new java.lang.String[] { "OrganizationLogoBranding", "DisplayName", "LogoUrl", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);

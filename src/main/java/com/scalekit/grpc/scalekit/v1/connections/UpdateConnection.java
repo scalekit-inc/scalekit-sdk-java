@@ -69,6 +69,7 @@ private static final long serialVersionUID = 0L;
     PASSWORDLESS_CONFIG(20),
     STATIC_CONFIG(23),
     WEBAUTHN_CONFIG(24),
+    GOOGLE_DWD_CONFIG(25),
     SETTINGS_NOT_SET(0);
     private final int value;
     private SettingsCase(int value) {
@@ -92,6 +93,7 @@ private static final long serialVersionUID = 0L;
         case 20: return PASSWORDLESS_CONFIG;
         case 23: return STATIC_CONFIG;
         case 24: return WEBAUTHN_CONFIG;
+        case 25: return GOOGLE_DWD_CONFIG;
         case 0: return SETTINGS_NOT_SET;
         default: return null;
       }
@@ -478,6 +480,37 @@ java.lang.String defaultValue) {
     return com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration.getDefaultInstance();
   }
 
+  public static final int GOOGLE_DWD_CONFIG_FIELD_NUMBER = 25;
+  /**
+   * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 25 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the googleDwdConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleDwdConfig() {
+    return settingsCase_ == 25;
+  }
+  /**
+   * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 25 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The googleDwdConfig.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig getGoogleDwdConfig() {
+    if (settingsCase_ == 25) {
+       return (com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.getDefaultInstance();
+  }
+  /**
+   * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 25 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfigOrBuilder getGoogleDwdConfigOrBuilder() {
+    if (settingsCase_ == 25) {
+       return (com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.getDefaultInstance();
+  }
+
   public static final int KEY_ID_FIELD_NUMBER = 22;
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyId_ = "";
@@ -623,6 +656,9 @@ java.lang.String defaultValue) {
     if (settingsCase_ == 24) {
       output.writeMessage(24, (com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration) settings_);
     }
+    if (settingsCase_ == 25) {
+      output.writeMessage(25, (com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -692,6 +728,10 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(24, (com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration) settings_);
     }
+    if (settingsCase_ == 25) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(25, (com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -755,6 +795,10 @@ java.lang.String defaultValue) {
         if (!getWebauthnConfig()
             .equals(other.getWebauthnConfig())) return false;
         break;
+      case 25:
+        if (!getGoogleDwdConfig()
+            .equals(other.getGoogleDwdConfig())) return false;
+        break;
       case 0:
       default:
     }
@@ -817,6 +861,10 @@ java.lang.String defaultValue) {
       case 24:
         hash = (37 * hash) + WEBAUTHN_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getWebauthnConfig().hashCode();
+        break;
+      case 25:
+        hash = (37 * hash) + GOOGLE_DWD_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getGoogleDwdConfig().hashCode();
         break;
       case 0:
       default:
@@ -1013,6 +1061,9 @@ java.lang.String defaultValue) {
       if (webauthnConfigBuilder_ != null) {
         webauthnConfigBuilder_.clear();
       }
+      if (googleDwdConfigBuilder_ != null) {
+        googleDwdConfigBuilder_.clear();
+      }
       keyId_ = "";
       providerKey_ = "";
       settingsCase_ = 0;
@@ -1077,11 +1128,11 @@ java.lang.String defaultValue) {
         result.attributeMapping_ = internalGetAttributeMapping();
         result.attributeMapping_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.keyId_ = keyId_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.providerKey_ = providerKey_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1113,6 +1164,10 @@ java.lang.String defaultValue) {
       if (settingsCase_ == 24 &&
           webauthnConfigBuilder_ != null) {
         result.settings_ = webauthnConfigBuilder_.build();
+      }
+      if (settingsCase_ == 25 &&
+          googleDwdConfigBuilder_ != null) {
+        result.settings_ = googleDwdConfigBuilder_.build();
       }
     }
 
@@ -1180,12 +1235,12 @@ java.lang.String defaultValue) {
       bitField0_ |= 0x00000020;
       if (other.hasKeyId()) {
         keyId_ = other.keyId_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (!other.getProviderKey().isEmpty()) {
         providerKey_ = other.providerKey_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       switch (other.getSettingsCase()) {
@@ -1211,6 +1266,10 @@ java.lang.String defaultValue) {
         }
         case WEBAUTHN_CONFIG: {
           mergeWebauthnConfig(other.getWebauthnConfig());
+          break;
+        }
+        case GOOGLE_DWD_CONFIG: {
+          mergeGoogleDwdConfig(other.getGoogleDwdConfig());
           break;
         }
         case SETTINGS_NOT_SET: {
@@ -1311,12 +1370,12 @@ java.lang.String defaultValue) {
             } // case 162
             case 170: {
               providerKey_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00004000;
               break;
             } // case 170
             case 178: {
               keyId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00002000;
               break;
             } // case 178
             case 186: {
@@ -1333,6 +1392,13 @@ java.lang.String defaultValue) {
               settingsCase_ = 24;
               break;
             } // case 194
+            case 202: {
+              input.readMessage(
+                  getGoogleDwdConfigFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              settingsCase_ = 25;
+              break;
+            } // case 202
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2745,13 +2811,155 @@ java.lang.String defaultValue) {
       return webauthnConfigBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig, com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfigOrBuilder> googleDwdConfigBuilder_;
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 25 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the googleDwdConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasGoogleDwdConfig() {
+      return settingsCase_ == 25;
+    }
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 25 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The googleDwdConfig.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig getGoogleDwdConfig() {
+      if (googleDwdConfigBuilder_ == null) {
+        if (settingsCase_ == 25) {
+          return (com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.getDefaultInstance();
+      } else {
+        if (settingsCase_ == 25) {
+          return googleDwdConfigBuilder_.getMessage();
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 25 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setGoogleDwdConfig(com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig value) {
+      if (googleDwdConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        settings_ = value;
+        onChanged();
+      } else {
+        googleDwdConfigBuilder_.setMessage(value);
+      }
+      settingsCase_ = 25;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 25 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setGoogleDwdConfig(
+        com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.Builder builderForValue) {
+      if (googleDwdConfigBuilder_ == null) {
+        settings_ = builderForValue.build();
+        onChanged();
+      } else {
+        googleDwdConfigBuilder_.setMessage(builderForValue.build());
+      }
+      settingsCase_ = 25;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 25 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeGoogleDwdConfig(com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig value) {
+      if (googleDwdConfigBuilder_ == null) {
+        if (settingsCase_ == 25 &&
+            settings_ != com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.getDefaultInstance()) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.newBuilder((com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          settings_ = value;
+        }
+        onChanged();
+      } else {
+        if (settingsCase_ == 25) {
+          googleDwdConfigBuilder_.mergeFrom(value);
+        } else {
+          googleDwdConfigBuilder_.setMessage(value);
+        }
+      }
+      settingsCase_ = 25;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 25 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearGoogleDwdConfig() {
+      if (googleDwdConfigBuilder_ == null) {
+        if (settingsCase_ == 25) {
+          settingsCase_ = 0;
+          settings_ = null;
+          onChanged();
+        }
+      } else {
+        if (settingsCase_ == 25) {
+          settingsCase_ = 0;
+          settings_ = null;
+        }
+        googleDwdConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 25 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.Builder getGoogleDwdConfigBuilder() {
+      return getGoogleDwdConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 25 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfigOrBuilder getGoogleDwdConfigOrBuilder() {
+      if ((settingsCase_ == 25) && (googleDwdConfigBuilder_ != null)) {
+        return googleDwdConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (settingsCase_ == 25) {
+          return (com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 25 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig, com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfigOrBuilder> 
+        getGoogleDwdConfigFieldBuilder() {
+      if (googleDwdConfigBuilder_ == null) {
+        if (!(settingsCase_ == 25)) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.getDefaultInstance();
+        }
+        googleDwdConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig, com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfigOrBuilder>(
+                (com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_,
+                getParentForChildren(),
+                isClean());
+        settings_ = null;
+      }
+      settingsCase_ = 25;
+      onChanged();
+      return googleDwdConfigBuilder_;
+    }
+
     private java.lang.Object keyId_ = "";
     /**
      * <code>optional string key_id = 22 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
      * @return Whether the keyId field is set.
      */
     public boolean hasKeyId() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      * <code>optional string key_id = 22 [json_name = "keyId", (.buf.validate.field) = { ... }</code>
@@ -2795,7 +3003,7 @@ java.lang.String defaultValue) {
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       keyId_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -2805,7 +3013,7 @@ java.lang.String defaultValue) {
      */
     public Builder clearKeyId() {
       keyId_ = getDefaultInstance().getKeyId();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -2819,7 +3027,7 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       keyId_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -2867,7 +3075,7 @@ java.lang.String defaultValue) {
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       providerKey_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -2877,7 +3085,7 @@ java.lang.String defaultValue) {
      */
     public Builder clearProviderKey() {
       providerKey_ = getDefaultInstance().getProviderKey();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -2891,7 +3099,7 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       providerKey_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

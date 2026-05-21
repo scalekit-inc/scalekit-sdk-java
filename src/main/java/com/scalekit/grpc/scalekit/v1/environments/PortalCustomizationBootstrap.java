@@ -121,6 +121,47 @@ private static final long serialVersionUID = 0L;
     return settings_ == null ? com.scalekit.grpc.scalekit.v1.environments.PortalSettings.getDefaultInstance() : settings_;
   }
 
+  public static final int ORGANIZATION_CUSTOMIZATIONS_FIELD_NUMBER = 3;
+  private com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations organizationCustomizations_;
+  /**
+   * <pre>
+   * Organization branding data set when the portal token is scoped to an organization
+   * and org logo branding is enabled for this environment.
+   * </pre>
+   *
+   * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 3 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the organizationCustomizations field is set.
+   */
+  @java.lang.Override
+  public boolean hasOrganizationCustomizations() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <pre>
+   * Organization branding data set when the portal token is scoped to an organization
+   * and org logo branding is enabled for this environment.
+   * </pre>
+   *
+   * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 3 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The organizationCustomizations.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations getOrganizationCustomizations() {
+    return organizationCustomizations_ == null ? com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations.getDefaultInstance() : organizationCustomizations_;
+  }
+  /**
+   * <pre>
+   * Organization branding data set when the portal token is scoped to an organization
+   * and org logo branding is enabled for this environment.
+   * </pre>
+   *
+   * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 3 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizationsOrBuilder getOrganizationCustomizationsOrBuilder() {
+    return organizationCustomizations_ == null ? com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations.getDefaultInstance() : organizationCustomizations_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -141,6 +182,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getSettings());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(3, getOrganizationCustomizations());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -157,6 +201,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getSettings());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getOrganizationCustomizations());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -183,6 +231,11 @@ private static final long serialVersionUID = 0L;
       if (!getSettings()
           .equals(other.getSettings())) return false;
     }
+    if (hasOrganizationCustomizations() != other.hasOrganizationCustomizations()) return false;
+    if (hasOrganizationCustomizations()) {
+      if (!getOrganizationCustomizations()
+          .equals(other.getOrganizationCustomizations())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -201,6 +254,10 @@ private static final long serialVersionUID = 0L;
     if (hasSettings()) {
       hash = (37 * hash) + SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getSettings().hashCode();
+    }
+    if (hasOrganizationCustomizations()) {
+      hash = (37 * hash) + ORGANIZATION_CUSTOMIZATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationCustomizations().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -339,6 +396,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getCustomizationSettingsFieldBuilder();
         getSettingsFieldBuilder();
+        getOrganizationCustomizationsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -354,6 +412,11 @@ private static final long serialVersionUID = 0L;
       if (settingsBuilder_ != null) {
         settingsBuilder_.dispose();
         settingsBuilder_ = null;
+      }
+      organizationCustomizations_ = null;
+      if (organizationCustomizationsBuilder_ != null) {
+        organizationCustomizationsBuilder_.dispose();
+        organizationCustomizationsBuilder_ = null;
       }
       return this;
     }
@@ -400,6 +463,12 @@ private static final long serialVersionUID = 0L;
             ? settings_
             : settingsBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.organizationCustomizations_ = organizationCustomizationsBuilder_ == null
+            ? organizationCustomizations_
+            : organizationCustomizationsBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -454,6 +523,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasSettings()) {
         mergeSettings(other.getSettings());
       }
+      if (other.hasOrganizationCustomizations()) {
+        mergeOrganizationCustomizations(other.getOrganizationCustomizations());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -494,6 +566,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 18
+            case 26: {
+              input.readMessage(
+                  getOrganizationCustomizationsFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -823,6 +902,172 @@ private static final long serialVersionUID = 0L;
         settings_ = null;
       }
       return settingsBuilder_;
+    }
+
+    private com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations organizationCustomizations_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations, com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations.Builder, com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizationsOrBuilder> organizationCustomizationsBuilder_;
+    /**
+     * <pre>
+     * Organization branding data set when the portal token is scoped to an organization
+     * and org logo branding is enabled for this environment.
+     * </pre>
+     *
+     * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 3 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the organizationCustomizations field is set.
+     */
+    public boolean hasOrganizationCustomizations() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     * Organization branding data set when the portal token is scoped to an organization
+     * and org logo branding is enabled for this environment.
+     * </pre>
+     *
+     * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 3 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The organizationCustomizations.
+     */
+    public com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations getOrganizationCustomizations() {
+      if (organizationCustomizationsBuilder_ == null) {
+        return organizationCustomizations_ == null ? com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations.getDefaultInstance() : organizationCustomizations_;
+      } else {
+        return organizationCustomizationsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Organization branding data set when the portal token is scoped to an organization
+     * and org logo branding is enabled for this environment.
+     * </pre>
+     *
+     * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 3 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setOrganizationCustomizations(com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations value) {
+      if (organizationCustomizationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        organizationCustomizations_ = value;
+      } else {
+        organizationCustomizationsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Organization branding data set when the portal token is scoped to an organization
+     * and org logo branding is enabled for this environment.
+     * </pre>
+     *
+     * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 3 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setOrganizationCustomizations(
+        com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations.Builder builderForValue) {
+      if (organizationCustomizationsBuilder_ == null) {
+        organizationCustomizations_ = builderForValue.build();
+      } else {
+        organizationCustomizationsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Organization branding data set when the portal token is scoped to an organization
+     * and org logo branding is enabled for this environment.
+     * </pre>
+     *
+     * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 3 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder mergeOrganizationCustomizations(com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations value) {
+      if (organizationCustomizationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0) &&
+          organizationCustomizations_ != null &&
+          organizationCustomizations_ != com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations.getDefaultInstance()) {
+          getOrganizationCustomizationsBuilder().mergeFrom(value);
+        } else {
+          organizationCustomizations_ = value;
+        }
+      } else {
+        organizationCustomizationsBuilder_.mergeFrom(value);
+      }
+      if (organizationCustomizations_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Organization branding data set when the portal token is scoped to an organization
+     * and org logo branding is enabled for this environment.
+     * </pre>
+     *
+     * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 3 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearOrganizationCustomizations() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      organizationCustomizations_ = null;
+      if (organizationCustomizationsBuilder_ != null) {
+        organizationCustomizationsBuilder_.dispose();
+        organizationCustomizationsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Organization branding data set when the portal token is scoped to an organization
+     * and org logo branding is enabled for this environment.
+     * </pre>
+     *
+     * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 3 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations.Builder getOrganizationCustomizationsBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getOrganizationCustomizationsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Organization branding data set when the portal token is scoped to an organization
+     * and org logo branding is enabled for this environment.
+     * </pre>
+     *
+     * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 3 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizationsOrBuilder getOrganizationCustomizationsOrBuilder() {
+      if (organizationCustomizationsBuilder_ != null) {
+        return organizationCustomizationsBuilder_.getMessageOrBuilder();
+      } else {
+        return organizationCustomizations_ == null ?
+            com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations.getDefaultInstance() : organizationCustomizations_;
+      }
+    }
+    /**
+     * <pre>
+     * Organization branding data set when the portal token is scoped to an organization
+     * and org logo branding is enabled for this environment.
+     * </pre>
+     *
+     * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 3 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations, com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations.Builder, com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizationsOrBuilder> 
+        getOrganizationCustomizationsFieldBuilder() {
+      if (organizationCustomizationsBuilder_ == null) {
+        organizationCustomizationsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations, com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations.Builder, com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizationsOrBuilder>(
+                getOrganizationCustomizations(),
+                getParentForChildren(),
+                isClean());
+        organizationCustomizations_ = null;
+      }
+      return organizationCustomizationsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -61,4 +61,34 @@ public interface PortalCustomizationBootstrapOrBuilder extends
    * <code>.scalekit.v1.environments.PortalSettings settings = 2 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.scalekit.grpc.scalekit.v1.environments.PortalSettingsOrBuilder getSettingsOrBuilder();
+
+  /**
+   * <pre>
+   * Organization branding data set when the portal token is scoped to an organization
+   * and org logo branding is enabled for this environment.
+   * </pre>
+   *
+   * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 3 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the organizationCustomizations field is set.
+   */
+  boolean hasOrganizationCustomizations();
+  /**
+   * <pre>
+   * Organization branding data set when the portal token is scoped to an organization
+   * and org logo branding is enabled for this environment.
+   * </pre>
+   *
+   * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 3 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The organizationCustomizations.
+   */
+  com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations getOrganizationCustomizations();
+  /**
+   * <pre>
+   * Organization branding data set when the portal token is scoped to an organization
+   * and org logo branding is enabled for this environment.
+   * </pre>
+   *
+   * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 3 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizationsOrBuilder getOrganizationCustomizationsOrBuilder();
 }

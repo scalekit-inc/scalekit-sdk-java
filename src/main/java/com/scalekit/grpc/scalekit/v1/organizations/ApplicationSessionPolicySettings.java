@@ -17,6 +17,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ApplicationSessionPolicySettings() {
+    absoluteSessionTimeoutUnit_ = 0;
+    idleSessionTimeoutUnit_ = 0;
   }
 
   @java.lang.Override
@@ -39,6 +41,7 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.organizations.ApplicationSessionPolicySettings.class, com.scalekit.grpc.scalekit.v1.organizations.ApplicationSessionPolicySettings.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ABSOLUTE_SESSION_TIMEOUT_FIELD_NUMBER = 1;
   private int absoluteSessionTimeout_ = 0;
   /**
@@ -83,6 +86,56 @@ private static final long serialVersionUID = 0L;
     return accessTokenExpiry_;
   }
 
+  public static final int ABSOLUTE_SESSION_TIMEOUT_UNIT_FIELD_NUMBER = 5;
+  private int absoluteSessionTimeoutUnit_ = 0;
+  /**
+   * <code>optional .scalekit.v1.commons.TimeUnit absolute_session_timeout_unit = 5 [json_name = "absoluteSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the absoluteSessionTimeoutUnit field is set.
+   */
+  @java.lang.Override public boolean hasAbsoluteSessionTimeoutUnit() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional .scalekit.v1.commons.TimeUnit absolute_session_timeout_unit = 5 [json_name = "absoluteSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for absoluteSessionTimeoutUnit.
+   */
+  @java.lang.Override public int getAbsoluteSessionTimeoutUnitValue() {
+    return absoluteSessionTimeoutUnit_;
+  }
+  /**
+   * <code>optional .scalekit.v1.commons.TimeUnit absolute_session_timeout_unit = 5 [json_name = "absoluteSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The absoluteSessionTimeoutUnit.
+   */
+  @java.lang.Override public com.scalekit.grpc.scalekit.v1.commons.TimeUnit getAbsoluteSessionTimeoutUnit() {
+    com.scalekit.grpc.scalekit.v1.commons.TimeUnit result = com.scalekit.grpc.scalekit.v1.commons.TimeUnit.forNumber(absoluteSessionTimeoutUnit_);
+    return result == null ? com.scalekit.grpc.scalekit.v1.commons.TimeUnit.UNRECOGNIZED : result;
+  }
+
+  public static final int IDLE_SESSION_TIMEOUT_UNIT_FIELD_NUMBER = 6;
+  private int idleSessionTimeoutUnit_ = 0;
+  /**
+   * <code>optional .scalekit.v1.commons.TimeUnit idle_session_timeout_unit = 6 [json_name = "idleSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the idleSessionTimeoutUnit field is set.
+   */
+  @java.lang.Override public boolean hasIdleSessionTimeoutUnit() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional .scalekit.v1.commons.TimeUnit idle_session_timeout_unit = 6 [json_name = "idleSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for idleSessionTimeoutUnit.
+   */
+  @java.lang.Override public int getIdleSessionTimeoutUnitValue() {
+    return idleSessionTimeoutUnit_;
+  }
+  /**
+   * <code>optional .scalekit.v1.commons.TimeUnit idle_session_timeout_unit = 6 [json_name = "idleSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The idleSessionTimeoutUnit.
+   */
+  @java.lang.Override public com.scalekit.grpc.scalekit.v1.commons.TimeUnit getIdleSessionTimeoutUnit() {
+    com.scalekit.grpc.scalekit.v1.commons.TimeUnit result = com.scalekit.grpc.scalekit.v1.commons.TimeUnit.forNumber(idleSessionTimeoutUnit_);
+    return result == null ? com.scalekit.grpc.scalekit.v1.commons.TimeUnit.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -109,6 +162,12 @@ private static final long serialVersionUID = 0L;
     if (accessTokenExpiry_ != 0) {
       output.writeInt32(4, accessTokenExpiry_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(5, absoluteSessionTimeoutUnit_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeEnum(6, idleSessionTimeoutUnit_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -134,6 +193,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, accessTokenExpiry_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(5, absoluteSessionTimeoutUnit_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(6, idleSessionTimeoutUnit_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -157,6 +224,14 @@ private static final long serialVersionUID = 0L;
         != other.getIdleSessionTimeout()) return false;
     if (getAccessTokenExpiry()
         != other.getAccessTokenExpiry()) return false;
+    if (hasAbsoluteSessionTimeoutUnit() != other.hasAbsoluteSessionTimeoutUnit()) return false;
+    if (hasAbsoluteSessionTimeoutUnit()) {
+      if (absoluteSessionTimeoutUnit_ != other.absoluteSessionTimeoutUnit_) return false;
+    }
+    if (hasIdleSessionTimeoutUnit() != other.hasIdleSessionTimeoutUnit()) return false;
+    if (hasIdleSessionTimeoutUnit()) {
+      if (idleSessionTimeoutUnit_ != other.idleSessionTimeoutUnit_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -177,6 +252,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getIdleSessionTimeout();
     hash = (37 * hash) + ACCESS_TOKEN_EXPIRY_FIELD_NUMBER;
     hash = (53 * hash) + getAccessTokenExpiry();
+    if (hasAbsoluteSessionTimeoutUnit()) {
+      hash = (37 * hash) + ABSOLUTE_SESSION_TIMEOUT_UNIT_FIELD_NUMBER;
+      hash = (53 * hash) + absoluteSessionTimeoutUnit_;
+    }
+    if (hasIdleSessionTimeoutUnit()) {
+      hash = (37 * hash) + IDLE_SESSION_TIMEOUT_UNIT_FIELD_NUMBER;
+      hash = (53 * hash) + idleSessionTimeoutUnit_;
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -312,6 +395,8 @@ private static final long serialVersionUID = 0L;
       idleSessionTimeoutEnabled_ = false;
       idleSessionTimeout_ = 0;
       accessTokenExpiry_ = 0;
+      absoluteSessionTimeoutUnit_ = 0;
+      idleSessionTimeoutUnit_ = 0;
       return this;
     }
 
@@ -357,6 +442,16 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.accessTokenExpiry_ = accessTokenExpiry_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.absoluteSessionTimeoutUnit_ = absoluteSessionTimeoutUnit_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.idleSessionTimeoutUnit_ = idleSessionTimeoutUnit_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -415,6 +510,12 @@ private static final long serialVersionUID = 0L;
       if (other.getAccessTokenExpiry() != 0) {
         setAccessTokenExpiry(other.getAccessTokenExpiry());
       }
+      if (other.hasAbsoluteSessionTimeoutUnit()) {
+        setAbsoluteSessionTimeoutUnit(other.getAbsoluteSessionTimeoutUnit());
+      }
+      if (other.hasIdleSessionTimeoutUnit()) {
+        setIdleSessionTimeoutUnit(other.getIdleSessionTimeoutUnit());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -461,6 +562,16 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 32
+            case 40: {
+              absoluteSessionTimeoutUnit_ = input.readEnum();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 40
+            case 48: {
+              idleSessionTimeoutUnit_ = input.readEnum();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 48
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -602,6 +713,126 @@ private static final long serialVersionUID = 0L;
     public Builder clearAccessTokenExpiry() {
       bitField0_ = (bitField0_ & ~0x00000008);
       accessTokenExpiry_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int absoluteSessionTimeoutUnit_ = 0;
+    /**
+     * <code>optional .scalekit.v1.commons.TimeUnit absolute_session_timeout_unit = 5 [json_name = "absoluteSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the absoluteSessionTimeoutUnit field is set.
+     */
+    @java.lang.Override public boolean hasAbsoluteSessionTimeoutUnit() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>optional .scalekit.v1.commons.TimeUnit absolute_session_timeout_unit = 5 [json_name = "absoluteSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enum numeric value on the wire for absoluteSessionTimeoutUnit.
+     */
+    @java.lang.Override public int getAbsoluteSessionTimeoutUnitValue() {
+      return absoluteSessionTimeoutUnit_;
+    }
+    /**
+     * <code>optional .scalekit.v1.commons.TimeUnit absolute_session_timeout_unit = 5 [json_name = "absoluteSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enum numeric value on the wire for absoluteSessionTimeoutUnit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAbsoluteSessionTimeoutUnitValue(int value) {
+      absoluteSessionTimeoutUnit_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.commons.TimeUnit absolute_session_timeout_unit = 5 [json_name = "absoluteSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The absoluteSessionTimeoutUnit.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.commons.TimeUnit getAbsoluteSessionTimeoutUnit() {
+      com.scalekit.grpc.scalekit.v1.commons.TimeUnit result = com.scalekit.grpc.scalekit.v1.commons.TimeUnit.forNumber(absoluteSessionTimeoutUnit_);
+      return result == null ? com.scalekit.grpc.scalekit.v1.commons.TimeUnit.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .scalekit.v1.commons.TimeUnit absolute_session_timeout_unit = 5 [json_name = "absoluteSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The absoluteSessionTimeoutUnit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAbsoluteSessionTimeoutUnit(com.scalekit.grpc.scalekit.v1.commons.TimeUnit value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      absoluteSessionTimeoutUnit_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.commons.TimeUnit absolute_session_timeout_unit = 5 [json_name = "absoluteSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAbsoluteSessionTimeoutUnit() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      absoluteSessionTimeoutUnit_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int idleSessionTimeoutUnit_ = 0;
+    /**
+     * <code>optional .scalekit.v1.commons.TimeUnit idle_session_timeout_unit = 6 [json_name = "idleSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the idleSessionTimeoutUnit field is set.
+     */
+    @java.lang.Override public boolean hasIdleSessionTimeoutUnit() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <code>optional .scalekit.v1.commons.TimeUnit idle_session_timeout_unit = 6 [json_name = "idleSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enum numeric value on the wire for idleSessionTimeoutUnit.
+     */
+    @java.lang.Override public int getIdleSessionTimeoutUnitValue() {
+      return idleSessionTimeoutUnit_;
+    }
+    /**
+     * <code>optional .scalekit.v1.commons.TimeUnit idle_session_timeout_unit = 6 [json_name = "idleSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enum numeric value on the wire for idleSessionTimeoutUnit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdleSessionTimeoutUnitValue(int value) {
+      idleSessionTimeoutUnit_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.commons.TimeUnit idle_session_timeout_unit = 6 [json_name = "idleSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The idleSessionTimeoutUnit.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.commons.TimeUnit getIdleSessionTimeoutUnit() {
+      com.scalekit.grpc.scalekit.v1.commons.TimeUnit result = com.scalekit.grpc.scalekit.v1.commons.TimeUnit.forNumber(idleSessionTimeoutUnit_);
+      return result == null ? com.scalekit.grpc.scalekit.v1.commons.TimeUnit.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .scalekit.v1.commons.TimeUnit idle_session_timeout_unit = 6 [json_name = "idleSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The idleSessionTimeoutUnit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdleSessionTimeoutUnit(com.scalekit.grpc.scalekit.v1.commons.TimeUnit value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      idleSessionTimeoutUnit_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.commons.TimeUnit idle_session_timeout_unit = 6 [json_name = "idleSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIdleSessionTimeoutUnit() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      idleSessionTimeoutUnit_ = 0;
       onChanged();
       return this;
     }

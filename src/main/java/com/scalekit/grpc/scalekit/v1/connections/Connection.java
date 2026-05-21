@@ -75,6 +75,7 @@ private static final long serialVersionUID = 0L;
     PASSWORDLESS_CONFIG(22),
     STATIC_CONFIG(26),
     WEBAUTHN_CONFIG(27),
+    GOOGLE_DWD_CONFIG(28),
     SETTINGS_NOT_SET(0);
     private final int value;
     private SettingsCase(int value) {
@@ -98,6 +99,7 @@ private static final long serialVersionUID = 0L;
         case 22: return PASSWORDLESS_CONFIG;
         case 26: return STATIC_CONFIG;
         case 27: return WEBAUTHN_CONFIG;
+        case 28: return GOOGLE_DWD_CONFIG;
         case 0: return SETTINGS_NOT_SET;
         default: return null;
       }
@@ -688,6 +690,37 @@ java.lang.String defaultValue) {
     return com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration.getDefaultInstance();
   }
 
+  public static final int GOOGLE_DWD_CONFIG_FIELD_NUMBER = 28;
+  /**
+   * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 28 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the googleDwdConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleDwdConfig() {
+    return settingsCase_ == 28;
+  }
+  /**
+   * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 28 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The googleDwdConfig.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig getGoogleDwdConfig() {
+    if (settingsCase_ == 28) {
+       return (com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.getDefaultInstance();
+  }
+  /**
+   * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 28 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfigOrBuilder getGoogleDwdConfigOrBuilder() {
+    if (settingsCase_ == 28) {
+       return (com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.getDefaultInstance();
+  }
+
   public static final int KEY_ID_FIELD_NUMBER = 25;
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyId_ = "";
@@ -898,6 +931,9 @@ java.lang.String defaultValue) {
     if (settingsCase_ == 27) {
       output.writeMessage(27, (com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration) settings_);
     }
+    if (settingsCase_ == 28) {
+      output.writeMessage(28, (com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -995,6 +1031,10 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(27, (com.scalekit.grpc.scalekit.v1.connections.WebAuthConfiguration) settings_);
     }
+    if (settingsCase_ == 28) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(28, (com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1075,6 +1115,10 @@ java.lang.String defaultValue) {
       case 27:
         if (!getWebauthnConfig()
             .equals(other.getWebauthnConfig())) return false;
+        break;
+      case 28:
+        if (!getGoogleDwdConfig()
+            .equals(other.getGoogleDwdConfig())) return false;
         break;
       case 0:
       default:
@@ -1160,6 +1204,10 @@ java.lang.String defaultValue) {
       case 27:
         hash = (37 * hash) + WEBAUTHN_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getWebauthnConfig().hashCode();
+        break;
+      case 28:
+        hash = (37 * hash) + GOOGLE_DWD_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getGoogleDwdConfig().hashCode();
         break;
       case 0:
       default:
@@ -1364,6 +1412,9 @@ java.lang.String defaultValue) {
       if (webauthnConfigBuilder_ != null) {
         webauthnConfigBuilder_.clear();
       }
+      if (googleDwdConfigBuilder_ != null) {
+        googleDwdConfigBuilder_.clear();
+      }
       keyId_ = "";
       providerKey_ = "";
       if (domainsBuilder_ == null) {
@@ -1372,7 +1423,7 @@ java.lang.String defaultValue) {
         domains_ = null;
         domainsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       settingsCase_ = 0;
       settings_ = null;
       return this;
@@ -1410,9 +1461,9 @@ java.lang.String defaultValue) {
 
     private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.connections.Connection result) {
       if (domainsBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)) {
+        if (((bitField0_ & 0x00400000) != 0)) {
           domains_ = java.util.Collections.unmodifiableList(domains_);
-          bitField0_ = (bitField0_ & ~0x00200000);
+          bitField0_ = (bitField0_ & ~0x00400000);
         }
         result.domains_ = domains_;
       } else {
@@ -1470,11 +1521,11 @@ java.lang.String defaultValue) {
             : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.keyId_ = keyId_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.providerKey_ = providerKey_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1506,6 +1557,10 @@ java.lang.String defaultValue) {
       if (settingsCase_ == 27 &&
           webauthnConfigBuilder_ != null) {
         result.settings_ = webauthnConfigBuilder_.build();
+      }
+      if (settingsCase_ == 28 &&
+          googleDwdConfigBuilder_ != null) {
+        result.settings_ = googleDwdConfigBuilder_.build();
       }
     }
 
@@ -1602,19 +1657,19 @@ java.lang.String defaultValue) {
       }
       if (other.hasKeyId()) {
         keyId_ = other.keyId_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (!other.getProviderKey().isEmpty()) {
         providerKey_ = other.providerKey_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (domainsBuilder_ == null) {
         if (!other.domains_.isEmpty()) {
           if (domains_.isEmpty()) {
             domains_ = other.domains_;
-            bitField0_ = (bitField0_ & ~0x00200000);
+            bitField0_ = (bitField0_ & ~0x00400000);
           } else {
             ensureDomainsIsMutable();
             domains_.addAll(other.domains_);
@@ -1627,7 +1682,7 @@ java.lang.String defaultValue) {
             domainsBuilder_.dispose();
             domainsBuilder_ = null;
             domains_ = other.domains_;
-            bitField0_ = (bitField0_ & ~0x00200000);
+            bitField0_ = (bitField0_ & ~0x00400000);
             domainsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getDomainsFieldBuilder() : null;
@@ -1659,6 +1714,10 @@ java.lang.String defaultValue) {
         }
         case WEBAUTHN_CONFIG: {
           mergeWebauthnConfig(other.getWebauthnConfig());
+          break;
+        }
+        case GOOGLE_DWD_CONFIG: {
+          mergeGoogleDwdConfig(other.getGoogleDwdConfig());
           break;
         }
         case SETTINGS_NOT_SET: {
@@ -1794,7 +1853,7 @@ java.lang.String defaultValue) {
             } // case 178
             case 186: {
               providerKey_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00100000;
+              bitField0_ |= 0x00200000;
               break;
             } // case 186
             case 194: {
@@ -1812,7 +1871,7 @@ java.lang.String defaultValue) {
             } // case 194
             case 202: {
               keyId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00080000;
+              bitField0_ |= 0x00100000;
               break;
             } // case 202
             case 210: {
@@ -1829,6 +1888,13 @@ java.lang.String defaultValue) {
               settingsCase_ = 27;
               break;
             } // case 218
+            case 226: {
+              input.readMessage(
+                  getGoogleDwdConfigFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              settingsCase_ = 28;
+              break;
+            } // case 226
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3653,13 +3719,155 @@ java.lang.String defaultValue) {
       return webauthnConfigBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig, com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfigOrBuilder> googleDwdConfigBuilder_;
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 28 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the googleDwdConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasGoogleDwdConfig() {
+      return settingsCase_ == 28;
+    }
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 28 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The googleDwdConfig.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig getGoogleDwdConfig() {
+      if (googleDwdConfigBuilder_ == null) {
+        if (settingsCase_ == 28) {
+          return (com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.getDefaultInstance();
+      } else {
+        if (settingsCase_ == 28) {
+          return googleDwdConfigBuilder_.getMessage();
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 28 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setGoogleDwdConfig(com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig value) {
+      if (googleDwdConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        settings_ = value;
+        onChanged();
+      } else {
+        googleDwdConfigBuilder_.setMessage(value);
+      }
+      settingsCase_ = 28;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 28 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setGoogleDwdConfig(
+        com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.Builder builderForValue) {
+      if (googleDwdConfigBuilder_ == null) {
+        settings_ = builderForValue.build();
+        onChanged();
+      } else {
+        googleDwdConfigBuilder_.setMessage(builderForValue.build());
+      }
+      settingsCase_ = 28;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 28 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeGoogleDwdConfig(com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig value) {
+      if (googleDwdConfigBuilder_ == null) {
+        if (settingsCase_ == 28 &&
+            settings_ != com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.getDefaultInstance()) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.newBuilder((com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          settings_ = value;
+        }
+        onChanged();
+      } else {
+        if (settingsCase_ == 28) {
+          googleDwdConfigBuilder_.mergeFrom(value);
+        } else {
+          googleDwdConfigBuilder_.setMessage(value);
+        }
+      }
+      settingsCase_ = 28;
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 28 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearGoogleDwdConfig() {
+      if (googleDwdConfigBuilder_ == null) {
+        if (settingsCase_ == 28) {
+          settingsCase_ = 0;
+          settings_ = null;
+          onChanged();
+        }
+      } else {
+        if (settingsCase_ == 28) {
+          settingsCase_ = 0;
+          settings_ = null;
+        }
+        googleDwdConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 28 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.Builder getGoogleDwdConfigBuilder() {
+      return getGoogleDwdConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 28 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfigOrBuilder getGoogleDwdConfigOrBuilder() {
+      if ((settingsCase_ == 28) && (googleDwdConfigBuilder_ != null)) {
+        return googleDwdConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (settingsCase_ == 28) {
+          return (com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connections.GoogleDWDConfig google_dwd_config = 28 [json_name = "googleDwdConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig, com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfigOrBuilder> 
+        getGoogleDwdConfigFieldBuilder() {
+      if (googleDwdConfigBuilder_ == null) {
+        if (!(settingsCase_ == 28)) {
+          settings_ = com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.getDefaultInstance();
+        }
+        googleDwdConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig, com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig.Builder, com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfigOrBuilder>(
+                (com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_,
+                getParentForChildren(),
+                isClean());
+        settings_ = null;
+      }
+      settingsCase_ = 28;
+      onChanged();
+      return googleDwdConfigBuilder_;
+    }
+
     private java.lang.Object keyId_ = "";
     /**
      * <code>optional string key_id = 25 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the keyId field is set.
      */
     public boolean hasKeyId() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      * <code>optional string key_id = 25 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -3703,7 +3911,7 @@ java.lang.String defaultValue) {
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       keyId_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -3713,7 +3921,7 @@ java.lang.String defaultValue) {
      */
     public Builder clearKeyId() {
       keyId_ = getDefaultInstance().getKeyId();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -3727,7 +3935,7 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       keyId_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -3775,7 +3983,7 @@ java.lang.String defaultValue) {
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       providerKey_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -3785,7 +3993,7 @@ java.lang.String defaultValue) {
      */
     public Builder clearProviderKey() {
       providerKey_ = getDefaultInstance().getProviderKey();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -3799,7 +4007,7 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       providerKey_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -3807,9 +4015,9 @@ java.lang.String defaultValue) {
     private java.util.List<com.scalekit.grpc.scalekit.v1.domains.Domain> domains_ =
       java.util.Collections.emptyList();
     private void ensureDomainsIsMutable() {
-      if (!((bitField0_ & 0x00200000) != 0)) {
+      if (!((bitField0_ & 0x00400000) != 0)) {
         domains_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.domains.Domain>(domains_);
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
        }
     }
 
@@ -3959,7 +4167,7 @@ java.lang.String defaultValue) {
     public Builder clearDomains() {
       if (domainsBuilder_ == null) {
         domains_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00400000);
         onChanged();
       } else {
         domainsBuilder_.clear();
@@ -4036,7 +4244,7 @@ java.lang.String defaultValue) {
         domainsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.scalekit.grpc.scalekit.v1.domains.Domain, com.scalekit.grpc.scalekit.v1.domains.Domain.Builder, com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder>(
                 domains_,
-                ((bitField0_ & 0x00200000) != 0),
+                ((bitField0_ & 0x00400000) != 0),
                 getParentForChildren(),
                 isClean());
         domains_ = null;
