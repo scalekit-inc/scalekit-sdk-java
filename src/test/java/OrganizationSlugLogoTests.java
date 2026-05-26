@@ -30,7 +30,7 @@ public class OrganizationSlugLogoTests {
         return client.organizations().create(create);
     }
 
-    private static final String PUBLIC_LOGO_URL = "https://logo.debounce.com/microsoft.com";
+    private static final String PUBLIC_LOGO_URL = "https://example.com/logo.png";
 
     @Test
     void testCreateWithLogoUrl() {
@@ -57,7 +57,7 @@ public class OrganizationSlugLogoTests {
 
     @Test
     void testCreateWithSlug() {
-        String slug = "auth.megasoft.com";
+        String slug = "acmecorp-" + UUID.randomUUID().toString().replace("-", "").substring(0, 12);
         CreateOrganization create = CreateOrganization.newBuilder()
                 .setDisplayName("Slug Test Org")
                 .setExternalId(UUID.randomUUID().toString().substring(0, 10))
@@ -107,24 +107,24 @@ public class OrganizationSlugLogoTests {
     void testUpdateSlugAndMetadata() {
         Organization org = createTestOrg();
         try {
-            String slug = "auth.megasoft.com";
+            String slug = "acmecorp-" + UUID.randomUUID().toString().replace("-", "").substring(0, 12);
             Organization updated = client.organizations().updateById(
                     org.getId(),
                     UpdateOrganization.newBuilder()
                             .setSlug(slug)
-                            .putMetadata("custom_domain", "auth.megasoft.com")
+                            .putMetadata("custom_domain", slug)
                             .build()
             );
 
             assertNotNull(updated);
             assertEquals(org.getId(), updated.getId());
             assertEquals(slug, updated.getSlug());
-            assertEquals("auth.megasoft.com", updated.getMetadataMap().get("custom_domain"));
+            assertEquals(slug, updated.getMetadataMap().get("custom_domain"));
 
             Organization fetched = client.organizations().getById(org.getId());
             assertNotNull(fetched);
             assertEquals(slug, fetched.getSlug());
-            assertEquals("auth.megasoft.com", fetched.getMetadataMap().get("custom_domain"));
+            assertEquals(slug, fetched.getMetadataMap().get("custom_domain"));
             log.info("Updated org {} slug={} metadata={}", updated.getId(), updated.getSlug(), updated.getMetadataMap());
         } finally {
             client.organizations().deleteById(org.getId());
