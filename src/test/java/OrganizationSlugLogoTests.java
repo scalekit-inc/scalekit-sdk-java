@@ -19,7 +19,23 @@ public class OrganizationSlugLogoTests {
         String environmentUrl = System.getenv("SCALEKIT_ENVIRONMENT_URL");
         String clientId = System.getenv("SCALEKIT_CLIENT_ID");
         String apiSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
+        if (environmentUrl == null || environmentUrl.isBlank()
+                || clientId == null || clientId.isBlank()
+                || apiSecret == null || apiSecret.isBlank()) {
+            throw new IllegalStateException(
+                    "Missing required env vars: SCALEKIT_ENVIRONMENT_URL, SCALEKIT_CLIENT_ID, SCALEKIT_CLIENT_SECRET");
+        }
         client = new ScalekitClient(environmentUrl, clientId, apiSecret);
+    }
+
+    private void deleteOrgIfPresent(Organization org) {
+        if (org != null && org.getId() != null && !org.getId().isBlank()) {
+            try {
+                client.organizations().deleteById(org.getId());
+            } catch (Exception e) {
+                log.warn("Failed to delete org {} during cleanup: {}", org.getId(), e.getMessage());
+            }
+        }
     }
 
     private Organization createTestOrg() {
@@ -51,7 +67,7 @@ public class OrganizationSlugLogoTests {
             assertEquals(PUBLIC_LOGO_URL, fetched.getLogoUrl());
             log.info("Created org {} with logoUrl={}", org.getId(), org.getLogoUrl());
         } finally {
-            client.organizations().deleteById(org.getId());
+            deleteOrgIfPresent(org);
         }
     }
 
@@ -75,7 +91,7 @@ public class OrganizationSlugLogoTests {
             assertEquals(slug, fetched.getSlug());
             log.info("Created org {} with slug={}", org.getId(), org.getSlug());
         } finally {
-            client.organizations().deleteById(org.getId());
+            deleteOrgIfPresent(org);
         }
     }
 
@@ -99,7 +115,7 @@ public class OrganizationSlugLogoTests {
             assertEquals(PUBLIC_LOGO_URL, fetched.getLogoUrl());
             log.info("Updated org {} logoUrl={}", updated.getId(), updated.getLogoUrl());
         } finally {
-            client.organizations().deleteById(org.getId());
+            deleteOrgIfPresent(org);
         }
     }
 
@@ -127,7 +143,7 @@ public class OrganizationSlugLogoTests {
             assertEquals(slug, fetched.getMetadataMap().get("custom_domain"));
             log.info("Updated org {} slug={} metadata={}", updated.getId(), updated.getSlug(), updated.getMetadataMap());
         } finally {
-            client.organizations().deleteById(org.getId());
+            deleteOrgIfPresent(org);
         }
     }
 }
