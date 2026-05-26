@@ -790,6 +790,37 @@ public final class EnvironmentServiceGrpc {
     return getGetEnvironmentUserManagementMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserRequest,
+      com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserResponse> getGetEnvironmentTestUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEnvironmentTestUser",
+      requestType = com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserRequest,
+      com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserResponse> getGetEnvironmentTestUserMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserRequest, com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserResponse> getGetEnvironmentTestUserMethod;
+    if ((getGetEnvironmentTestUserMethod = EnvironmentServiceGrpc.getGetEnvironmentTestUserMethod) == null) {
+      synchronized (EnvironmentServiceGrpc.class) {
+        if ((getGetEnvironmentTestUserMethod = EnvironmentServiceGrpc.getGetEnvironmentTestUserMethod) == null) {
+          EnvironmentServiceGrpc.getGetEnvironmentTestUserMethod = getGetEnvironmentTestUserMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserRequest, com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEnvironmentTestUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new EnvironmentServiceMethodDescriptorSupplier("GetEnvironmentTestUser"))
+              .build();
+        }
+      }
+    }
+    return getGetEnvironmentTestUserMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentSessionSettingsRequest,
       com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentSessionSettingsResponse> getUpdateEnvironmentSessionSettingsMethod;
 
@@ -943,6 +974,37 @@ public final class EnvironmentServiceGrpc {
       }
     }
     return getUpdateAgentActionsConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserRequest,
+      com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserResponse> getUpdateEnvironmentTestUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEnvironmentTestUser",
+      requestType = com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserRequest,
+      com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserResponse> getUpdateEnvironmentTestUserMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserRequest, com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserResponse> getUpdateEnvironmentTestUserMethod;
+    if ((getUpdateEnvironmentTestUserMethod = EnvironmentServiceGrpc.getUpdateEnvironmentTestUserMethod) == null) {
+      synchronized (EnvironmentServiceGrpc.class) {
+        if ((getUpdateEnvironmentTestUserMethod = EnvironmentServiceGrpc.getUpdateEnvironmentTestUserMethod) == null) {
+          EnvironmentServiceGrpc.getUpdateEnvironmentTestUserMethod = getUpdateEnvironmentTestUserMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserRequest, com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateEnvironmentTestUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new EnvironmentServiceMethodDescriptorSupplier("UpdateEnvironmentTestUser"))
+              .build();
+        }
+      }
+    }
+    return getUpdateEnvironmentTestUserMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.environments.GetContextRequest,
@@ -1330,6 +1392,13 @@ public final class EnvironmentServiceGrpc {
 
     /**
      */
+    default void getEnvironmentTestUser(com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEnvironmentTestUserMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void updateEnvironmentSessionSettings(com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentSessionSettingsRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentSessionSettingsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateEnvironmentSessionSettingsMethod(), responseObserver);
@@ -1361,6 +1430,13 @@ public final class EnvironmentServiceGrpc {
     default void updateAgentActionsConfig(com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateAgentActionsConfigMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateEnvironmentTestUser(com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateEnvironmentTestUserMethod(), responseObserver);
     }
 
     /**
@@ -1633,6 +1709,14 @@ public final class EnvironmentServiceGrpc {
 
     /**
      */
+    public void getEnvironmentTestUser(com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetEnvironmentTestUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void updateEnvironmentSessionSettings(com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentSessionSettingsRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentSessionSettingsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -1669,6 +1753,14 @@ public final class EnvironmentServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateAgentActionsConfigMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateEnvironmentTestUser(com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateEnvironmentTestUserMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1910,6 +2002,13 @@ public final class EnvironmentServiceGrpc {
 
     /**
      */
+    public com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserResponse getEnvironmentTestUser(com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEnvironmentTestUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentSessionSettingsResponse updateEnvironmentSessionSettings(com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentSessionSettingsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateEnvironmentSessionSettingsMethod(), getCallOptions(), request);
@@ -1941,6 +2040,13 @@ public final class EnvironmentServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigResponse updateAgentActionsConfig(com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateAgentActionsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserResponse updateEnvironmentTestUser(com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEnvironmentTestUserMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2202,6 +2308,14 @@ public final class EnvironmentServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserResponse> getEnvironmentTestUser(
+        com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetEnvironmentTestUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentSessionSettingsResponse> updateEnvironmentSessionSettings(
         com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentSessionSettingsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2238,6 +2352,14 @@ public final class EnvironmentServiceGrpc {
         com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateAgentActionsConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserResponse> updateEnvironmentTestUser(
+        com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateEnvironmentTestUserMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2306,16 +2428,18 @@ public final class EnvironmentServiceGrpc {
   private static final int METHODID_CREATE_ENVIRONMENT_USER_MANAGEMENT = 22;
   private static final int METHODID_GET_ENVIRONMENT_SESSION_SETTINGS = 23;
   private static final int METHODID_GET_ENVIRONMENT_USER_MANAGEMENT = 24;
-  private static final int METHODID_UPDATE_ENVIRONMENT_SESSION_SETTINGS = 25;
-  private static final int METHODID_UPDATE_ENVIRONMENT_USER_MANAGEMENT = 26;
-  private static final int METHODID_CREATE_AGENT_ACTIONS_CONFIG = 27;
-  private static final int METHODID_GET_AGENT_ACTIONS_CONFIG = 28;
-  private static final int METHODID_UPDATE_AGENT_ACTIONS_CONFIG = 29;
-  private static final int METHODID_GET_CONTEXT = 30;
-  private static final int METHODID_UPDATE_CONTEXT = 31;
-  private static final int METHODID_GET_CURRENT_SESSION = 32;
-  private static final int METHODID_GET_SCALEKIT_RESOURCES = 33;
-  private static final int METHODID_PORTAL_BOOTSTRAP = 34;
+  private static final int METHODID_GET_ENVIRONMENT_TEST_USER = 25;
+  private static final int METHODID_UPDATE_ENVIRONMENT_SESSION_SETTINGS = 26;
+  private static final int METHODID_UPDATE_ENVIRONMENT_USER_MANAGEMENT = 27;
+  private static final int METHODID_CREATE_AGENT_ACTIONS_CONFIG = 28;
+  private static final int METHODID_GET_AGENT_ACTIONS_CONFIG = 29;
+  private static final int METHODID_UPDATE_AGENT_ACTIONS_CONFIG = 30;
+  private static final int METHODID_UPDATE_ENVIRONMENT_TEST_USER = 31;
+  private static final int METHODID_GET_CONTEXT = 32;
+  private static final int METHODID_UPDATE_CONTEXT = 33;
+  private static final int METHODID_GET_CURRENT_SESSION = 34;
+  private static final int METHODID_GET_SCALEKIT_RESOURCES = 35;
+  private static final int METHODID_PORTAL_BOOTSTRAP = 36;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2434,6 +2558,10 @@ public final class EnvironmentServiceGrpc {
           serviceImpl.getEnvironmentUserManagement((com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentUserManagementRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentUserManagementResponse>) responseObserver);
           break;
+        case METHODID_GET_ENVIRONMENT_TEST_USER:
+          serviceImpl.getEnvironmentTestUser((com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserResponse>) responseObserver);
+          break;
         case METHODID_UPDATE_ENVIRONMENT_SESSION_SETTINGS:
           serviceImpl.updateEnvironmentSessionSettings((com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentSessionSettingsRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentSessionSettingsResponse>) responseObserver);
@@ -2453,6 +2581,10 @@ public final class EnvironmentServiceGrpc {
         case METHODID_UPDATE_AGENT_ACTIONS_CONFIG:
           serviceImpl.updateAgentActionsConfig((com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_ENVIRONMENT_TEST_USER:
+          serviceImpl.updateEnvironmentTestUser((com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserResponse>) responseObserver);
           break;
         case METHODID_GET_CONTEXT:
           serviceImpl.getContext((com.scalekit.grpc.scalekit.v1.environments.GetContextRequest) request,
@@ -2668,6 +2800,13 @@ public final class EnvironmentServiceGrpc {
               com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentUserManagementResponse>(
                 service, METHODID_GET_ENVIRONMENT_USER_MANAGEMENT)))
         .addMethod(
+          getGetEnvironmentTestUserMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserRequest,
+              com.scalekit.grpc.scalekit.v1.environments.GetEnvironmentTestUserResponse>(
+                service, METHODID_GET_ENVIRONMENT_TEST_USER)))
+        .addMethod(
           getUpdateEnvironmentSessionSettingsMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -2702,6 +2841,13 @@ public final class EnvironmentServiceGrpc {
               com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigRequest,
               com.scalekit.grpc.scalekit.v1.environments.UpdateAgentActionsConfigResponse>(
                 service, METHODID_UPDATE_AGENT_ACTIONS_CONFIG)))
+        .addMethod(
+          getUpdateEnvironmentTestUserMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserRequest,
+              com.scalekit.grpc.scalekit.v1.environments.UpdateEnvironmentTestUserResponse>(
+                service, METHODID_UPDATE_ENVIRONMENT_TEST_USER)))
         .addMethod(
           getGetContextMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2810,11 +2956,13 @@ public final class EnvironmentServiceGrpc {
               .addMethod(getCreateEnvironmentUserManagementMethod())
               .addMethod(getGetEnvironmentSessionSettingsMethod())
               .addMethod(getGetEnvironmentUserManagementMethod())
+              .addMethod(getGetEnvironmentTestUserMethod())
               .addMethod(getUpdateEnvironmentSessionSettingsMethod())
               .addMethod(getUpdateEnvironmentUserManagementMethod())
               .addMethod(getCreateAgentActionsConfigMethod())
               .addMethod(getGetAgentActionsConfigMethod())
               .addMethod(getUpdateAgentActionsConfigMethod())
+              .addMethod(getUpdateEnvironmentTestUserMethod())
               .addMethod(getGetContextMethod())
               .addMethod(getUpdateContextMethod())
               .addMethod(getGetCurrentSessionMethod())

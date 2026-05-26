@@ -61,4 +61,31 @@ public interface GetPortalCustomizationResponseOrBuilder extends
    * <code>.scalekit.v1.environments.PortalSettings settings = 3 [json_name = "settings", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.scalekit.grpc.scalekit.v1.environments.PortalSettingsOrBuilder getSettingsOrBuilder();
+
+  /**
+   * <pre>
+   * organization_customizations is set when the request is scoped to a specific organization (portal token).
+   * </pre>
+   *
+   * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 4 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the organizationCustomizations field is set.
+   */
+  boolean hasOrganizationCustomizations();
+  /**
+   * <pre>
+   * organization_customizations is set when the request is scoped to a specific organization (portal token).
+   * </pre>
+   *
+   * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 4 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The organizationCustomizations.
+   */
+  com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizations getOrganizationCustomizations();
+  /**
+   * <pre>
+   * organization_customizations is set when the request is scoped to a specific organization (portal token).
+   * </pre>
+   *
+   * <code>optional .scalekit.v1.commons.OrganizationCustomizations organization_customizations = 4 [json_name = "organizationCustomizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.scalekit.grpc.scalekit.v1.commons.OrganizationCustomizationsOrBuilder getOrganizationCustomizationsOrBuilder();
 }

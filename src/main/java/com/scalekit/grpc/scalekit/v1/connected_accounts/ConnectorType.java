@@ -85,6 +85,14 @@ public enum ConnectorType
    * <code>TRELLO_OAUTH1 = 8;</code>
    */
   TRELLO_OAUTH1(8),
+  /**
+   * <pre>
+   * Google Domain-Wide Delegation
+   * </pre>
+   *
+   * <code>GOOGLE_DWD = 9;</code>
+   */
+  GOOGLE_DWD(9),
   UNRECOGNIZED(-1),
   ;
 
@@ -160,6 +168,14 @@ public enum ConnectorType
    * <code>TRELLO_OAUTH1 = 8;</code>
    */
   public static final int TRELLO_OAUTH1_VALUE = 8;
+  /**
+   * <pre>
+   * Google Domain-Wide Delegation
+   * </pre>
+   *
+   * <code>GOOGLE_DWD = 9;</code>
+   */
+  public static final int GOOGLE_DWD_VALUE = 9;
 
 
   public final int getNumber() {
@@ -195,6 +211,7 @@ public enum ConnectorType
       case 6: return BASIC;
       case 7: return OAUTH_M2M;
       case 8: return TRELLO_OAUTH1;
+      case 9: return GOOGLE_DWD;
       default: return null;
     }
   }

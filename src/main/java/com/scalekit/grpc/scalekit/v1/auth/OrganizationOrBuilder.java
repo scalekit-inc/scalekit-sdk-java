@@ -105,4 +105,21 @@ public interface OrganizationOrBuilder extends
    * <code>optional .google.protobuf.Timestamp invitation_expires_at = 7 [json_name = "invitationExpiresAt"];</code>
    */
   com.google.protobuf.TimestampOrBuilder getInvitationExpiresAtOrBuilder();
+
+  /**
+   * <code>optional string logo_url = 8 [json_name = "logoUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the logoUrl field is set.
+   */
+  boolean hasLogoUrl();
+  /**
+   * <code>optional string logo_url = 8 [json_name = "logoUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The logoUrl.
+   */
+  java.lang.String getLogoUrl();
+  /**
+   * <code>optional string logo_url = 8 [json_name = "logoUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for logoUrl.
+   */
+  com.google.protobuf.ByteString
+      getLogoUrlBytes();
 }

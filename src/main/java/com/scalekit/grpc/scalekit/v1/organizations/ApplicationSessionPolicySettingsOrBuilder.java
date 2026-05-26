@@ -31,4 +31,36 @@ public interface ApplicationSessionPolicySettingsOrBuilder extends
    * @return The accessTokenExpiry.
    */
   int getAccessTokenExpiry();
+
+  /**
+   * <code>optional .scalekit.v1.commons.TimeUnit absolute_session_timeout_unit = 5 [json_name = "absoluteSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the absoluteSessionTimeoutUnit field is set.
+   */
+  boolean hasAbsoluteSessionTimeoutUnit();
+  /**
+   * <code>optional .scalekit.v1.commons.TimeUnit absolute_session_timeout_unit = 5 [json_name = "absoluteSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for absoluteSessionTimeoutUnit.
+   */
+  int getAbsoluteSessionTimeoutUnitValue();
+  /**
+   * <code>optional .scalekit.v1.commons.TimeUnit absolute_session_timeout_unit = 5 [json_name = "absoluteSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The absoluteSessionTimeoutUnit.
+   */
+  com.scalekit.grpc.scalekit.v1.commons.TimeUnit getAbsoluteSessionTimeoutUnit();
+
+  /**
+   * <code>optional .scalekit.v1.commons.TimeUnit idle_session_timeout_unit = 6 [json_name = "idleSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the idleSessionTimeoutUnit field is set.
+   */
+  boolean hasIdleSessionTimeoutUnit();
+  /**
+   * <code>optional .scalekit.v1.commons.TimeUnit idle_session_timeout_unit = 6 [json_name = "idleSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for idleSessionTimeoutUnit.
+   */
+  int getIdleSessionTimeoutUnitValue();
+  /**
+   * <code>optional .scalekit.v1.commons.TimeUnit idle_session_timeout_unit = 6 [json_name = "idleSessionTimeoutUnit", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The idleSessionTimeoutUnit.
+   */
+  com.scalekit.grpc.scalekit.v1.commons.TimeUnit getIdleSessionTimeoutUnit();
 }

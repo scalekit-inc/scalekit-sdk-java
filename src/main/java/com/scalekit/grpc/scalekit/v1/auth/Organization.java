@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     membershipStatus_ = "";
     invitationInviterEmail_ = "";
+    logoUrl_ = "";
   }
 
   @java.lang.Override
@@ -286,6 +287,53 @@ private static final long serialVersionUID = 0L;
     return invitationExpiresAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : invitationExpiresAt_;
   }
 
+  public static final int LOGO_URL_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object logoUrl_ = "";
+  /**
+   * <code>optional string logo_url = 8 [json_name = "logoUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the logoUrl field is set.
+   */
+  @java.lang.Override
+  public boolean hasLogoUrl() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <code>optional string logo_url = 8 [json_name = "logoUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The logoUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getLogoUrl() {
+    java.lang.Object ref = logoUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      logoUrl_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string logo_url = 8 [json_name = "logoUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for logoUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLogoUrlBytes() {
+    java.lang.Object ref = logoUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      logoUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -321,6 +369,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(7, getInvitationExpiresAt());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, logoUrl_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -353,6 +404,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getInvitationExpiresAt());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, logoUrl_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -395,6 +449,11 @@ private static final long serialVersionUID = 0L;
       if (!getInvitationExpiresAt()
           .equals(other.getInvitationExpiresAt())) return false;
     }
+    if (hasLogoUrl() != other.hasLogoUrl()) return false;
+    if (hasLogoUrl()) {
+      if (!getLogoUrl()
+          .equals(other.getLogoUrl())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -427,6 +486,10 @@ private static final long serialVersionUID = 0L;
     if (hasInvitationExpiresAt()) {
       hash = (37 * hash) + INVITATION_EXPIRES_AT_FIELD_NUMBER;
       hash = (53 * hash) + getInvitationExpiresAt().hashCode();
+    }
+    if (hasLogoUrl()) {
+      hash = (37 * hash) + LOGO_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getLogoUrl().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -586,6 +649,7 @@ private static final long serialVersionUID = 0L;
         invitationExpiresAtBuilder_.dispose();
         invitationExpiresAtBuilder_ = null;
       }
+      logoUrl_ = "";
       return this;
     }
 
@@ -650,6 +714,10 @@ private static final long serialVersionUID = 0L;
             ? invitationExpiresAt_
             : invitationExpiresAtBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.logoUrl_ = logoUrl_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -727,6 +795,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasInvitationExpiresAt()) {
         mergeInvitationExpiresAt(other.getInvitationExpiresAt());
       }
+      if (other.hasLogoUrl()) {
+        logoUrl_ = other.logoUrl_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -794,6 +867,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000040;
               break;
             } // case 58
+            case 66: {
+              logoUrl_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 66
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1467,6 +1545,85 @@ private static final long serialVersionUID = 0L;
         invitationExpiresAt_ = null;
       }
       return invitationExpiresAtBuilder_;
+    }
+
+    private java.lang.Object logoUrl_ = "";
+    /**
+     * <code>optional string logo_url = 8 [json_name = "logoUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the logoUrl field is set.
+     */
+    public boolean hasLogoUrl() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <code>optional string logo_url = 8 [json_name = "logoUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The logoUrl.
+     */
+    public java.lang.String getLogoUrl() {
+      java.lang.Object ref = logoUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        logoUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string logo_url = 8 [json_name = "logoUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for logoUrl.
+     */
+    public com.google.protobuf.ByteString
+        getLogoUrlBytes() {
+      java.lang.Object ref = logoUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        logoUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string logo_url = 8 [json_name = "logoUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The logoUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLogoUrl(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      logoUrl_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string logo_url = 8 [json_name = "logoUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLogoUrl() {
+      logoUrl_ = getDefaultInstance().getLogoUrl();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string logo_url = 8 [json_name = "logoUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for logoUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLogoUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      logoUrl_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
