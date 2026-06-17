@@ -276,6 +276,112 @@ public class UserTests {
     }
 
     @Test
+    public void testUserExternalIdOperations() {
+        // Create a user with an external ID
+        String externalId = "ext-" + System.currentTimeMillis();
+        String userEmail = "ext.id.test" + System.currentTimeMillis() + "@example.com";
+        CreateUser user = CreateUser.newBuilder()
+                .setEmail(userEmail)
+                .setExternalId(externalId)
+                .build();
+
+        CreateUserAndMembershipRequest createRequest = CreateUserAndMembershipRequest.newBuilder()
+                .setOrganizationId(testOrg)
+                .setSendInvitationEmail(false)
+                .setUser(user)
+                .build();
+
+        CreateUserAndMembershipResponse createdUser = client.users().createUserAndMembership(testOrg, createRequest);
+        assertNotNull(createdUser);
+        assertEquals(userEmail, createdUser.getUser().getEmail());
+        assertEquals(externalId, createdUser.getUser().getExternalId());
+        String userId = createdUser.getUser().getId();
+
+        try {
+            // Test getUserByExternalId
+            GetUserResponse fetchedUser = client.users().getUserByExternalId(externalId);
+            assertNotNull(fetchedUser);
+            assertEquals(userId, fetchedUser.getUser().getId());
+            assertEquals(externalId, fetchedUser.getUser().getExternalId());
+
+            // Test updateUserByExternalId
+            UpdateUserProfile updatedProfile = UpdateUserProfile.newBuilder()
+                    .setFirstName("ExternalId")
+                    .setLastName("Test")
+                    .build();
+            UpdateUser updateUser = UpdateUser.newBuilder()
+                    .setUserProfile(updatedProfile)
+                    .build();
+            UpdateUserRequest updateRequest = UpdateUserRequest.newBuilder()
+                    .setUser(updateUser)
+                    .build();
+            UpdateUserResponse updatedUser = client.users().updateUserByExternalId(externalId, updateRequest);
+            assertNotNull(updatedUser);
+            assertEquals("ExternalId", updatedUser.getUser().getUserProfile().getFirstName());
+            assertEquals("Test", updatedUser.getUser().getUserProfile().getLastName());
+        } finally {
+            // Test deleteUserByExternalId (cleanup)
+            client.users().deleteUserByExternalId(externalId);
+        }
+    }
+
+    @Test
+    public void testMembershipExternalIdOperations() {
+        // Create a user with an external ID
+        String externalId = "ext-mem-" + System.currentTimeMillis();
+        String userEmail = "ext.mem.test" + System.currentTimeMillis() + "@example.com";
+        CreateUser user = CreateUser.newBuilder()
+                .setEmail(userEmail)
+                .setExternalId(externalId)
+                .build();
+
+        CreateUserAndMembershipRequest createRequest = CreateUserAndMembershipRequest.newBuilder()
+                .setOrganizationId(testOrg)
+                .setSendInvitationEmail(false)
+                .setUser(user)
+                .build();
+
+        CreateUserAndMembershipResponse createdUser = client.users().createUserAndMembership(testOrg, createRequest);
+        assertNotNull(createdUser);
+        String userId = createdUser.getUser().getId();
+
+        // Create a second organization to test cross-org membership operations
+        Organization secondOrg = client.organizations().create(
+                CreateOrganization.newBuilder()
+                        .setDisplayName("External ID Membership Test Org")
+                        .build()
+        );
+
+        try {
+            // Test createMembershipByExternalId
+            CreateMembership membership = CreateMembership.newBuilder().build();
+            CreateMembershipRequest membershipRequest = CreateMembershipRequest.newBuilder()
+                    .setMembership(membership)
+                    .build();
+            CreateMembershipResponse membershipResponse = client.users().createMembershipByExternalId(
+                    secondOrg.getId(), externalId, membershipRequest);
+            assertNotNull(membershipResponse);
+            assertNotNull(membershipResponse.getUser());
+
+            // Test updateMembershipByExternalId
+            UpdateMembership updateMembership = UpdateMembership.newBuilder().build();
+            UpdateMembershipRequest updateMembershipRequest = UpdateMembershipRequest.newBuilder()
+                    .setMembership(updateMembership)
+                    .build();
+            UpdateMembershipResponse updateMembershipResponse = client.users().updateMembershipByExternalId(
+                    secondOrg.getId(), externalId, updateMembershipRequest);
+            assertNotNull(updateMembershipResponse);
+
+            // Test deleteMembershipByExternalId
+            client.users().deleteMembershipByExternalId(secondOrg.getId(), externalId);
+        } finally {
+            // Cleanup
+            client.users().deleteUser(userId);
+            client.organizations().deleteById(secondOrg.getId());
+        }
+    }
+
+    @Test
     public void testResendInvite() {
         // Create a user with invitation email
         String userEmail = "resend.invite.test" + System.currentTimeMillis() + "@example.com";

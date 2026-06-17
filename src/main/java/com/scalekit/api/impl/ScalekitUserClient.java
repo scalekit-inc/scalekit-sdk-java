@@ -279,4 +279,112 @@ public class ScalekitUserClient implements UserClient {
                     .listUserPermissions(request);
         }, this.credentials);
     }
-} 
+
+    /**
+     * Retrieves a user by their external ID
+     * @param externalId: The external ID of the user to retrieve
+     * @return GetUserResponse: The response containing the user details
+     */
+    @Override
+    public GetUserResponse getUserByExternalId(String externalId) {
+        return RetryExecuter.executeWithRetry(() -> {
+            GetUserRequest request = GetUserRequest.newBuilder()
+                    .setExternalId(externalId)
+                    .build();
+            return userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .getUser(request);
+        }, this.credentials);
+    }
+
+    /**
+     * Updates a user identified by their external ID
+     * @param externalId: The external ID of the user to update
+     * @param request: The update user request containing the changes
+     * @return UpdateUserResponse: The response containing the updated user
+     */
+    @Override
+    public UpdateUserResponse updateUserByExternalId(String externalId, UpdateUserRequest request) {
+        return RetryExecuter.executeWithRetry(() -> {
+            return userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .updateUser(request.toBuilder()
+                            .setExternalId(externalId)
+                            .build());
+        }, this.credentials);
+    }
+
+    /**
+     * Deletes a user identified by their external ID
+     * @param externalId: The external ID of the user to delete
+     */
+    @Override
+    public void deleteUserByExternalId(String externalId) {
+        RetryExecuter.executeWithRetry(() -> {
+            DeleteUserRequest request = DeleteUserRequest.newBuilder()
+                    .setExternalId(externalId)
+                    .build();
+            userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .deleteUser(request);
+            return null;
+        }, this.credentials);
+    }
+
+    /**
+     * Creates a membership for a user identified by their external ID in the specified organization
+     * @param organizationId: The organization ID
+     * @param externalId: The external ID of the user to create membership for
+     * @param request: The create membership request containing membership details
+     * @return CreateMembershipResponse: The response containing the created membership
+     */
+    @Override
+    public CreateMembershipResponse createMembershipByExternalId(String organizationId, String externalId, CreateMembershipRequest request) {
+        return RetryExecuter.executeWithRetry(() -> {
+            return userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .createMembership(request.toBuilder()
+                            .setOrganizationId(organizationId)
+                            .setExternalId(externalId)
+                            .build());
+        }, this.credentials);
+    }
+
+    /**
+     * Deletes a membership for a user identified by their external ID from the specified organization
+     * @param organizationId: The organization ID
+     * @param externalId: The external ID of the user whose membership to delete
+     */
+    @Override
+    public void deleteMembershipByExternalId(String organizationId, String externalId) {
+        RetryExecuter.executeWithRetry(() -> {
+            DeleteMembershipRequest request = DeleteMembershipRequest.newBuilder()
+                    .setOrganizationId(organizationId)
+                    .setExternalId(externalId)
+                    .build();
+            userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .deleteMembership(request);
+            return null;
+        }, this.credentials);
+    }
+
+    /**
+     * Updates a membership for a user identified by their external ID in the specified organization
+     * @param organizationId: The organization ID
+     * @param externalId: The external ID of the user whose membership to update
+     * @param request: The update membership request containing the changes
+     * @return UpdateMembershipResponse: The response containing the updated membership
+     */
+    @Override
+    public UpdateMembershipResponse updateMembershipByExternalId(String organizationId, String externalId, UpdateMembershipRequest request) {
+        return RetryExecuter.executeWithRetry(() -> {
+            return userService
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .updateMembership(request.toBuilder()
+                            .setOrganizationId(organizationId)
+                            .setExternalId(externalId)
+                            .build());
+        }, this.credentials);
+    }
+}

@@ -30,4 +30,16 @@ public interface UserClient {
     ListUserRolesResponse listUserRoles(String organizationId, String userId);
 
     ListUserPermissionsResponse listUserPermissions(String organizationId, String userId);
-} 
+
+    GetUserResponse getUserByExternalId(String externalId);
+
+    UpdateUserResponse updateUserByExternalId(String externalId, UpdateUserRequest request);
+
+    void deleteUserByExternalId(String externalId);
+
+    CreateMembershipResponse createMembershipByExternalId(String organizationId, String externalId, CreateMembershipRequest request);
+
+    void deleteMembershipByExternalId(String organizationId, String externalId);
+
+    UpdateMembershipResponse updateMembershipByExternalId(String organizationId, String externalId, UpdateMembershipRequest request);
+}
