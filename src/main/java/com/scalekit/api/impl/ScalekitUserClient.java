@@ -280,6 +280,20 @@ public class ScalekitUserClient implements UserClient {
         }, this.credentials);
     }
 
+    private static String requireNonBlank(String value, String field) {
+        if (value == null || value.trim().isEmpty()) {
+            throw new IllegalArgumentException(field + " is required");
+        }
+        return value;
+    }
+
+    private static <T> T requireNonNull(T value, String field) {
+        if (value == null) {
+            throw new IllegalArgumentException(field + " is required");
+        }
+        return value;
+    }
+
     /**
      * Retrieves a user by their external ID
      * @param externalId: The external ID of the user to retrieve
@@ -287,6 +301,7 @@ public class ScalekitUserClient implements UserClient {
      */
     @Override
     public GetUserResponse getUserByExternalId(String externalId) {
+        requireNonBlank(externalId, "externalId");
         return RetryExecuter.executeWithRetry(() -> {
             GetUserRequest request = GetUserRequest.newBuilder()
                     .setExternalId(externalId)
@@ -305,6 +320,8 @@ public class ScalekitUserClient implements UserClient {
      */
     @Override
     public UpdateUserResponse updateUserByExternalId(String externalId, UpdateUserRequest request) {
+        requireNonBlank(externalId, "externalId");
+        requireNonNull(request, "request");
         return RetryExecuter.executeWithRetry(() -> {
             return userService
                     .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
@@ -320,6 +337,7 @@ public class ScalekitUserClient implements UserClient {
      */
     @Override
     public void deleteUserByExternalId(String externalId) {
+        requireNonBlank(externalId, "externalId");
         RetryExecuter.executeWithRetry(() -> {
             DeleteUserRequest request = DeleteUserRequest.newBuilder()
                     .setExternalId(externalId)
@@ -340,6 +358,9 @@ public class ScalekitUserClient implements UserClient {
      */
     @Override
     public CreateMembershipResponse createMembershipByExternalId(String organizationId, String externalId, CreateMembershipRequest request) {
+        requireNonBlank(organizationId, "organizationId");
+        requireNonBlank(externalId, "externalId");
+        requireNonNull(request, "request");
         return RetryExecuter.executeWithRetry(() -> {
             return userService
                     .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
@@ -357,6 +378,8 @@ public class ScalekitUserClient implements UserClient {
      */
     @Override
     public void deleteMembershipByExternalId(String organizationId, String externalId) {
+        requireNonBlank(organizationId, "organizationId");
+        requireNonBlank(externalId, "externalId");
         RetryExecuter.executeWithRetry(() -> {
             DeleteMembershipRequest request = DeleteMembershipRequest.newBuilder()
                     .setOrganizationId(organizationId)
@@ -378,6 +401,9 @@ public class ScalekitUserClient implements UserClient {
      */
     @Override
     public UpdateMembershipResponse updateMembershipByExternalId(String organizationId, String externalId, UpdateMembershipRequest request) {
+        requireNonBlank(organizationId, "organizationId");
+        requireNonBlank(externalId, "externalId");
+        requireNonNull(request, "request");
         return RetryExecuter.executeWithRetry(() -> {
             return userService
                     .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)

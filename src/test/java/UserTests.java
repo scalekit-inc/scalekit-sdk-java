@@ -7,6 +7,8 @@ import com.scalekit.grpc.scalekit.v1.users.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.UUID;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class UserTests {
@@ -278,8 +280,8 @@ public class UserTests {
     @Test
     public void testUserExternalIdOperations() {
         // Create a user with an external ID
-        String externalId = "ext-" + System.currentTimeMillis();
-        String userEmail = "ext.id.test" + System.currentTimeMillis() + "@example.com";
+        String externalId = "ext-" + UUID.randomUUID().toString();
+        String userEmail = "ext.id.test+" + UUID.randomUUID().toString() + "@example.com";
         CreateUser user = CreateUser.newBuilder()
                 .setEmail(userEmail)
                 .setExternalId(externalId)
@@ -292,12 +294,13 @@ public class UserTests {
                 .build();
 
         CreateUserAndMembershipResponse createdUser = client.users().createUserAndMembership(testOrg, createRequest);
-        assertNotNull(createdUser);
-        assertEquals(userEmail, createdUser.getUser().getEmail());
-        assertEquals(externalId, createdUser.getUser().getExternalId());
         String userId = createdUser.getUser().getId();
 
         try {
+            assertNotNull(createdUser);
+            assertEquals(userEmail, createdUser.getUser().getEmail());
+            assertEquals(externalId, createdUser.getUser().getExternalId());
+
             // Test getUserByExternalId
             GetUserResponse fetchedUser = client.users().getUserByExternalId(externalId);
             assertNotNull(fetchedUser);
@@ -328,8 +331,8 @@ public class UserTests {
     @Test
     public void testMembershipExternalIdOperations() {
         // Create a user with an external ID
-        String externalId = "ext-mem-" + System.currentTimeMillis();
-        String userEmail = "ext.mem.test" + System.currentTimeMillis() + "@example.com";
+        String externalId = "ext-mem-" + UUID.randomUUID().toString();
+        String userEmail = "ext.mem.test+" + UUID.randomUUID().toString() + "@example.com";
         CreateUser user = CreateUser.newBuilder()
                 .setEmail(userEmail)
                 .setExternalId(externalId)
@@ -342,7 +345,6 @@ public class UserTests {
                 .build();
 
         CreateUserAndMembershipResponse createdUser = client.users().createUserAndMembership(testOrg, createRequest);
-        assertNotNull(createdUser);
         String userId = createdUser.getUser().getId();
 
         // Create a second organization to test cross-org membership operations
@@ -353,6 +355,8 @@ public class UserTests {
         );
 
         try {
+            assertNotNull(createdUser);
+
             // Test createMembershipByExternalId
             CreateMembership membership = CreateMembership.newBuilder().build();
             CreateMembershipRequest membershipRequest = CreateMembershipRequest.newBuilder()
