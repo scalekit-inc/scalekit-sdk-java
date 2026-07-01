@@ -332,7 +332,7 @@ public class UserTests {
         OrganizationMembership initialMembership = createdU.getMemberships(0);
         assertEquals(testOrg, initialMembership.getOrganizationId());
         assertTrue(initialMembership.hasJoinTime());
-        assertNotEquals(MembershipStatus.MEMBERSHIP_STATUS_UNSPECIFIED, initialMembership.getMembershipStatus());
+        assertNotEquals(MembershipStatus.Membership_Status_UNSPECIFIED, initialMembership.getMembershipStatus());
 
         try {
             // getUserByExternalId — must resolve to the exact same user with all fields intact
@@ -482,7 +482,7 @@ public class UserTests {
             assertNotNull(secondOrgMembership);
             assertEquals(secondOrg.getId(), secondOrgMembership.getOrganizationId());
             assertTrue(secondOrgMembership.hasJoinTime());
-            assertNotEquals(MembershipStatus.MEMBERSHIP_STATUS_UNSPECIFIED, secondOrgMembership.getMembershipStatus());
+            assertNotEquals(MembershipStatus.Membership_Status_UNSPECIFIED, secondOrgMembership.getMembershipStatus());
 
             // updateMembershipByExternalId — Bob gets promoted to senior developer in secondOrg
             UpdateMembership updateMembershipPayload = UpdateMembership.newBuilder()
