@@ -491,6 +491,7 @@ public class UserTests {
                     secondOrg.getId(), externalId,
                     UpdateMembershipRequest.newBuilder().setMembership(updateMembershipPayload).build());
 
+            // immediate response from the update — scoped to secondOrg, identity fields intact
             assertTrue(updateMembershipResp.hasUser());
             User updatedMemberU = updateMembershipResp.getUser();
             assertEquals(userId,    updatedMemberU.getId());
@@ -501,13 +502,22 @@ public class UserTests {
             assertTrue(updatedMemberU.hasUserProfile());
             assertEquals("Bob",  updatedMemberU.getUserProfile().getGivenName());
             assertEquals("Chen", updatedMemberU.getUserProfile().getFamilyName());
-            assertTrue(updatedMemberU.getMembershipsCount() >= 1);
-            OrganizationMembership updatedSecondOrgMembership = updatedMemberU.getMembershipsList().stream()
+
+            // independent lookup — proves Bob still belongs to BOTH orgs after the membership update
+            User freshUser = client.users().getUserByExternalId(externalId).getUser();
+            assertEquals(2, freshUser.getMembershipsCount());
+            OrganizationMembership updatedSecondOrgMembership = freshUser.getMembershipsList().stream()
                     .filter(m -> m.getOrganizationId().equals(secondOrg.getId()))
                     .findFirst()
                     .orElse(null);
             assertNotNull(updatedSecondOrgMembership);
             assertEquals(secondOrg.getId(), updatedSecondOrgMembership.getOrganizationId());
+            assertNotEquals(MembershipStatus.Membership_Status_UNSPECIFIED, updatedSecondOrgMembership.getMembershipStatus());
+            OrganizationMembership testOrgMembership = freshUser.getMembershipsList().stream()
+                    .filter(m -> m.getOrganizationId().equals(testOrg))
+                    .findFirst()
+                    .orElse(null);
+            assertNotNull(testOrgMembership);
 
             // deleteMembershipByExternalId — Bob leaves secondOrg; a second delete must fail
             client.users().deleteMembershipByExternalId(secondOrg.getId(), externalId);
