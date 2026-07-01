@@ -1,11 +1,15 @@
 import com.scalekit.ScalekitClient;
 import com.scalekit.exceptions.APIException;
+import com.scalekit.grpc.scalekit.v1.commons.MembershipStatus;
+import com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership;
 import com.scalekit.grpc.scalekit.v1.organizations.CreateOrganization;
 import com.scalekit.grpc.scalekit.v1.organizations.ListOrganizationsResponse;
 import com.scalekit.grpc.scalekit.v1.organizations.Organization;
 import com.scalekit.grpc.scalekit.v1.users.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -273,6 +277,336 @@ public class UserTests {
         } finally {
             client.users().deleteUser(userId);
         }
+    }
+
+    @Test
+    public void testUserExternalIdOperations() {
+        // Scenario: Alice Johnson onboards via an external IdP. She has a full profile and user-level metadata.
+        String externalId = "usr_alice_" + UUID.randomUUID();
+        String userEmail = "alice.johnson+" + UUID.randomUUID() + "@example.com";
+
+        CreateUserProfile createProfile = CreateUserProfile.newBuilder()
+                .setGivenName("Alice")
+                .setFamilyName("Johnson")
+                .setName("Alice Johnson")
+                .setLocale("en-US")
+                .setPhoneNumber("+14155550100")
+                .build();
+
+        CreateUser createUser = CreateUser.newBuilder()
+                .setEmail(userEmail)
+                .setExternalId(externalId)
+                .setUserProfile(createProfile)
+                .putMetadata("source", "external-idp")
+                .putMetadata("plan", "enterprise")
+                .build();
+
+        CreateUserAndMembershipResponse created = client.users().createUserAndMembership(testOrg,
+                CreateUserAndMembershipRequest.newBuilder()
+                        .setOrganizationId(testOrg)
+                        .setSendInvitationEmail(false)
+                        .setUser(createUser)
+                        .build());
+
+        assertTrue(created.hasUser());
+        User createdU = created.getUser();
+        String userId = createdU.getId();
+
+        // creation response — full field-by-field check
+        assertFalse(userId.isEmpty());
+        String environmentId = createdU.getEnvironmentId();
+        assertFalse(environmentId.isEmpty());
+        assertEquals(userEmail, createdU.getEmail());
+        assertTrue(createdU.hasExternalId());
+        assertEquals(externalId, createdU.getExternalId());
+        assertTrue(createdU.hasCreateTime());
+        assertTrue(createdU.getCreateTime().getSeconds() > 0);
+        long createTimeSeconds = createdU.getCreateTime().getSeconds();
+        assertTrue(createdU.hasUpdateTime());
+        assertTrue(createdU.getUpdateTime().getSeconds() > 0);
+        assertTrue(createdU.getUpdateTime().getSeconds() >= createdU.getCreateTime().getSeconds());
+        assertTrue(createdU.hasUserProfile());
+        assertEquals("Alice",         createdU.getUserProfile().getGivenName());
+        assertEquals("Johnson",       createdU.getUserProfile().getFamilyName());
+        assertEquals("Alice Johnson", createdU.getUserProfile().getName());
+        assertEquals("en-US",         createdU.getUserProfile().getLocale());
+        assertEquals("+14155550100",  createdU.getUserProfile().getPhoneNumber());
+        assertEquals("external-idp",  createdU.getMetadataOrThrow("source"));
+        assertEquals("enterprise",    createdU.getMetadataOrThrow("plan"));
+        assertEquals(1, createdU.getMembershipsCount());
+        OrganizationMembership initialMembership = createdU.getMemberships(0);
+        assertEquals(testOrg, initialMembership.getOrganizationId());
+        assertEquals(MembershipStatus.ACTIVE, initialMembership.getMembershipStatus());
+
+        try {
+            // getUserByExternalId — must resolve to the exact same user with all fields stable
+            GetUserResponse fetched = client.users().getUserByExternalId(externalId);
+            assertTrue(fetched.hasUser());
+            User fetchedU = fetched.getUser();
+            assertEquals(userId,        fetchedU.getId());
+            assertEquals(environmentId, fetchedU.getEnvironmentId());
+            assertEquals(userEmail,     fetchedU.getEmail());
+            assertTrue(fetchedU.hasExternalId());
+            assertEquals(externalId,    fetchedU.getExternalId());
+            assertTrue(fetchedU.hasCreateTime());
+            assertEquals(createTimeSeconds, fetchedU.getCreateTime().getSeconds());
+            assertTrue(fetchedU.hasUpdateTime());
+            assertTrue(fetchedU.getUpdateTime().getSeconds() > 0);
+            assertTrue(fetchedU.hasUserProfile());
+            assertEquals("Alice",         fetchedU.getUserProfile().getGivenName());
+            assertEquals("Johnson",       fetchedU.getUserProfile().getFamilyName());
+            assertEquals("Alice Johnson", fetchedU.getUserProfile().getName());
+            assertEquals("en-US",         fetchedU.getUserProfile().getLocale());
+            assertEquals("+14155550100",  fetchedU.getUserProfile().getPhoneNumber());
+            assertEquals("external-idp",  fetchedU.getMetadataOrThrow("source"));
+            assertEquals("enterprise",    fetchedU.getMetadataOrThrow("plan"));
+            assertEquals(1, fetchedU.getMembershipsCount());
+            assertEquals(testOrg, fetchedU.getMemberships(0).getOrganizationId());
+            assertEquals(MembershipStatus.ACTIVE, fetchedU.getMemberships(0).getMembershipStatus());
+
+            // updateUserByExternalId — Alice marries, changes surname, moves to UK, upgrades plan
+            UpdateUserProfile updatedProfile = UpdateUserProfile.newBuilder()
+                    .setGivenName("Alice")
+                    .setFamilyName("Smith")
+                    .setName("Alice Smith")
+                    .setLocale("en-GB")
+                    .setPhoneNumber("+442071234567")
+                    .build();
+            UpdateUserResponse updated = client.users().updateUserByExternalId(externalId,
+                    UpdateUserRequest.newBuilder()
+                            .setUser(UpdateUser.newBuilder()
+                                    .setUserProfile(updatedProfile)
+                                    .putMetadata("plan", "enterprise-plus")
+                                    .build())
+                            .build());
+
+            assertTrue(updated.hasUser());
+            User updatedU = updated.getUser();
+            assertEquals(userId,        updatedU.getId());
+            assertEquals(environmentId, updatedU.getEnvironmentId());
+            assertEquals(userEmail,     updatedU.getEmail());
+            assertTrue(updatedU.hasExternalId());
+            assertEquals(externalId,    updatedU.getExternalId());
+            assertTrue(updatedU.hasCreateTime());
+            assertEquals(createTimeSeconds, updatedU.getCreateTime().getSeconds());
+            assertTrue(updatedU.hasUpdateTime());
+            assertTrue(updatedU.getUpdateTime().getSeconds() >= updatedU.getCreateTime().getSeconds());
+            assertTrue(updatedU.hasUserProfile());
+            assertEquals("Alice",           updatedU.getUserProfile().getGivenName());
+            assertEquals("Smith",           updatedU.getUserProfile().getFamilyName());
+            assertEquals("Alice Smith",     updatedU.getUserProfile().getName());
+            assertEquals("en-GB",           updatedU.getUserProfile().getLocale());
+            assertEquals("+442071234567",   updatedU.getUserProfile().getPhoneNumber());
+            assertEquals("enterprise-plus", updatedU.getMetadataOrThrow("plan"));
+
+            // confirm the update was persisted — a fresh GET must reflect the new values
+            User verifiedU = client.users().getUserByExternalId(externalId).getUser();
+            assertEquals(userId,            verifiedU.getId());
+            assertEquals("Smith",           verifiedU.getUserProfile().getFamilyName());
+            assertEquals("Alice Smith",     verifiedU.getUserProfile().getName());
+            assertEquals("en-GB",           verifiedU.getUserProfile().getLocale());
+            assertEquals("enterprise-plus", verifiedU.getMetadataOrThrow("plan"));
+
+            // deleteUserByExternalId — user must no longer be retrievable afterwards
+            client.users().deleteUserByExternalId(externalId);
+            assertThrows(APIException.class, () -> client.users().getUserByExternalId(externalId));
+        } finally {
+            try { client.users().deleteUser(userId); } catch (Exception ignored) {}
+        }
+    }
+
+    @Test
+    public void testMembershipExternalIdOperations() {
+        // Scenario: Bob Chen is a developer who first joins testOrg, then is added to a second org.
+        String externalId = "usr_bob_" + UUID.randomUUID();
+        String userEmail = "bob.chen+" + UUID.randomUUID() + "@example.com";
+
+        CreateUserProfile createProfile = CreateUserProfile.newBuilder()
+                .setGivenName("Bob")
+                .setFamilyName("Chen")
+                .setName("Bob Chen")
+                .setLocale("en-US")
+                .setPhoneNumber("+16505550200")
+                .build();
+
+        CreateUser createUser = CreateUser.newBuilder()
+                .setEmail(userEmail)
+                .setExternalId(externalId)
+                .setUserProfile(createProfile)
+                .putMetadata("department", "engineering")
+                .build();
+
+        CreateUserAndMembershipResponse created = client.users().createUserAndMembership(testOrg,
+                CreateUserAndMembershipRequest.newBuilder()
+                        .setOrganizationId(testOrg)
+                        .setSendInvitationEmail(false)
+                        .setUser(createUser)
+                        .build());
+
+        assertTrue(created.hasUser());
+        User createdU = created.getUser();
+        String userId = createdU.getId();
+        assertFalse(userId.isEmpty());
+        String environmentId = createdU.getEnvironmentId();
+        assertFalse(environmentId.isEmpty());
+        assertEquals(userEmail, createdU.getEmail());
+        assertTrue(createdU.hasExternalId());
+        assertEquals(externalId, createdU.getExternalId());
+        assertTrue(createdU.hasCreateTime());
+        assertTrue(createdU.getCreateTime().getSeconds() > 0);
+        long createTimeSeconds = createdU.getCreateTime().getSeconds();
+        assertTrue(createdU.hasUpdateTime());
+        assertTrue(createdU.getUpdateTime().getSeconds() > 0);
+        assertTrue(createdU.hasUserProfile());
+        assertEquals("Bob",          createdU.getUserProfile().getGivenName());
+        assertEquals("Chen",         createdU.getUserProfile().getFamilyName());
+        assertEquals("Bob Chen",     createdU.getUserProfile().getName());
+        assertEquals("en-US",        createdU.getUserProfile().getLocale());
+        assertEquals("+16505550200", createdU.getUserProfile().getPhoneNumber());
+        assertEquals("engineering",  createdU.getMetadataOrThrow("department"));
+        assertEquals(1, createdU.getMembershipsCount());
+        assertEquals(testOrg, createdU.getMemberships(0).getOrganizationId());
+        assertEquals(MembershipStatus.ACTIVE, createdU.getMemberships(0).getMembershipStatus());
+
+        Organization secondOrg = client.organizations().create(
+                CreateOrganization.newBuilder()
+                        .setDisplayName("Bob Chen Second Org")
+                        .build()
+        );
+
+        try {
+            // createMembershipByExternalId — Bob joins secondOrg; response must show both memberships
+            CreateMembership membershipPayload = CreateMembership.newBuilder()
+                    .putMetadata("invited_by", "admin@example.com")
+                    .putMetadata("access_level", "developer")
+                    .build();
+            CreateMembershipResponse membershipResp = client.users().createMembershipByExternalId(
+                    secondOrg.getId(), externalId,
+                    CreateMembershipRequest.newBuilder().setMembership(membershipPayload).build());
+
+            assertTrue(membershipResp.hasUser());
+            User memberU = membershipResp.getUser();
+            assertEquals(userId,        memberU.getId());
+            assertEquals(environmentId, memberU.getEnvironmentId());
+            assertEquals(userEmail,     memberU.getEmail());
+            assertTrue(memberU.hasExternalId());
+            assertEquals(externalId,    memberU.getExternalId());
+            assertTrue(memberU.hasUserProfile());
+            assertEquals("Bob",      memberU.getUserProfile().getGivenName());
+            assertEquals("Chen",     memberU.getUserProfile().getFamilyName());
+            assertEquals("Bob Chen", memberU.getUserProfile().getName());
+            assertEquals(2, memberU.getMembershipsCount());
+            OrganizationMembership secondOrgMembership = memberU.getMembershipsList().stream()
+                    .filter(m -> m.getOrganizationId().equals(secondOrg.getId()))
+                    .findFirst()
+                    .orElse(null);
+            assertNotNull(secondOrgMembership);
+            assertEquals(secondOrg.getId(), secondOrgMembership.getOrganizationId());
+            // createMembershipByExternalId has no sendInvitationEmail=false option,
+            // so the server always creates cross-org memberships as PENDING_INVITE
+            assertEquals(MembershipStatus.PENDING_INVITE, secondOrgMembership.getMembershipStatus());
+
+            // updateMembershipByExternalId — Bob gets promoted to senior developer in secondOrg
+            UpdateMembershipResponse updateMembershipResp = client.users().updateMembershipByExternalId(
+                    secondOrg.getId(), externalId,
+                    UpdateMembershipRequest.newBuilder()
+                            .setMembership(UpdateMembership.newBuilder()
+                                    .putMetadata("access_level", "senior-developer")
+                                    .putMetadata("invited_by", "admin@example.com")
+                                    .build())
+                            .build());
+
+            // immediate response — scoped to secondOrg; verify identity fields are intact
+            assertTrue(updateMembershipResp.hasUser());
+            User updatedMemberU = updateMembershipResp.getUser();
+            assertEquals(userId,        updatedMemberU.getId());
+            assertEquals(environmentId, updatedMemberU.getEnvironmentId());
+            assertEquals(userEmail,     updatedMemberU.getEmail());
+            assertTrue(updatedMemberU.hasExternalId());
+            assertEquals(externalId,    updatedMemberU.getExternalId());
+            assertTrue(updatedMemberU.hasUserProfile());
+            assertEquals("Bob",  updatedMemberU.getUserProfile().getGivenName());
+            assertEquals("Chen", updatedMemberU.getUserProfile().getFamilyName());
+
+            // independent lookup — Bob must still belong to BOTH orgs with ACTIVE status in each
+            User freshUser = client.users().getUserByExternalId(externalId).getUser();
+            assertEquals(userId,        freshUser.getId());
+            assertEquals(environmentId, freshUser.getEnvironmentId());
+            assertEquals(2, freshUser.getMembershipsCount());
+            OrganizationMembership freshSecondOrg = freshUser.getMembershipsList().stream()
+                    .filter(m -> m.getOrganizationId().equals(secondOrg.getId()))
+                    .findFirst().orElse(null);
+            assertNotNull(freshSecondOrg);
+            assertEquals(secondOrg.getId(), freshSecondOrg.getOrganizationId());
+            assertEquals(MembershipStatus.PENDING_INVITE, freshSecondOrg.getMembershipStatus());
+            OrganizationMembership freshTestOrg = freshUser.getMembershipsList().stream()
+                    .filter(m -> m.getOrganizationId().equals(testOrg))
+                    .findFirst().orElse(null);
+            assertNotNull(freshTestOrg);
+            assertEquals(testOrg, freshTestOrg.getOrganizationId());
+            assertEquals(MembershipStatus.ACTIVE, freshTestOrg.getMembershipStatus());
+
+            // deleteMembershipByExternalId — Bob leaves secondOrg
+            client.users().deleteMembershipByExternalId(secondOrg.getId(), externalId);
+            // re-delete must fail — membership is gone
+            assertThrows(APIException.class,
+                    () -> client.users().deleteMembershipByExternalId(secondOrg.getId(), externalId));
+            // fresh lookup must show Bob belongs to exactly testOrg only
+            User afterDeleteUser = client.users().getUserByExternalId(externalId).getUser();
+            assertEquals(1, afterDeleteUser.getMembershipsCount());
+            assertEquals(testOrg, afterDeleteUser.getMemberships(0).getOrganizationId());
+            assertEquals(MembershipStatus.ACTIVE, afterDeleteUser.getMemberships(0).getMembershipStatus());
+        } finally {
+            try { client.users().deleteUser(userId); } catch (Exception ignored) {}
+            try { client.organizations().deleteById(secondOrg.getId()); } catch (Exception ignored) {}
+        }
+    }
+
+    @Test
+    public void testExternalIdInputValidation() {
+        UpdateUserRequest dummyUpdateUser = UpdateUserRequest.newBuilder()
+                .setUser(UpdateUser.newBuilder().build())
+                .build();
+        CreateMembershipRequest dummyCreateMembership = CreateMembershipRequest.newBuilder()
+                .setMembership(CreateMembership.newBuilder().build())
+                .build();
+        UpdateMembershipRequest dummyUpdateMembership = UpdateMembershipRequest.newBuilder()
+                .setMembership(UpdateMembership.newBuilder().build())
+                .build();
+
+        // getUserByExternalId
+        assertThrows(IllegalArgumentException.class, () -> client.users().getUserByExternalId(null));
+        assertThrows(IllegalArgumentException.class, () -> client.users().getUserByExternalId(""));
+        assertThrows(IllegalArgumentException.class, () -> client.users().getUserByExternalId("  "));
+
+        // updateUserByExternalId
+        assertThrows(IllegalArgumentException.class, () -> client.users().updateUserByExternalId(null, dummyUpdateUser));
+        assertThrows(IllegalArgumentException.class, () -> client.users().updateUserByExternalId("", dummyUpdateUser));
+        assertThrows(IllegalArgumentException.class, () -> client.users().updateUserByExternalId("ext-id", null));
+
+        // deleteUserByExternalId
+        assertThrows(IllegalArgumentException.class, () -> client.users().deleteUserByExternalId(null));
+        assertThrows(IllegalArgumentException.class, () -> client.users().deleteUserByExternalId(""));
+
+        // createMembershipByExternalId
+        assertThrows(IllegalArgumentException.class, () -> client.users().createMembershipByExternalId(null, "ext-id", dummyCreateMembership));
+        assertThrows(IllegalArgumentException.class, () -> client.users().createMembershipByExternalId("", "ext-id", dummyCreateMembership));
+        assertThrows(IllegalArgumentException.class, () -> client.users().createMembershipByExternalId("org-id", null, dummyCreateMembership));
+        assertThrows(IllegalArgumentException.class, () -> client.users().createMembershipByExternalId("org-id", "", dummyCreateMembership));
+        assertThrows(IllegalArgumentException.class, () -> client.users().createMembershipByExternalId("org-id", "ext-id", null));
+
+        // deleteMembershipByExternalId
+        assertThrows(IllegalArgumentException.class, () -> client.users().deleteMembershipByExternalId(null, "ext-id"));
+        assertThrows(IllegalArgumentException.class, () -> client.users().deleteMembershipByExternalId("", "ext-id"));
+        assertThrows(IllegalArgumentException.class, () -> client.users().deleteMembershipByExternalId("org-id", null));
+        assertThrows(IllegalArgumentException.class, () -> client.users().deleteMembershipByExternalId("org-id", ""));
+
+        // updateMembershipByExternalId
+        assertThrows(IllegalArgumentException.class, () -> client.users().updateMembershipByExternalId(null, "ext-id", dummyUpdateMembership));
+        assertThrows(IllegalArgumentException.class, () -> client.users().updateMembershipByExternalId("", "ext-id", dummyUpdateMembership));
+        assertThrows(IllegalArgumentException.class, () -> client.users().updateMembershipByExternalId("org-id", null, dummyUpdateMembership));
+        assertThrows(IllegalArgumentException.class, () -> client.users().updateMembershipByExternalId("org-id", "", dummyUpdateMembership));
+        assertThrows(IllegalArgumentException.class, () -> client.users().updateMembershipByExternalId("org-id", "ext-id", null));
     }
 
     @Test
