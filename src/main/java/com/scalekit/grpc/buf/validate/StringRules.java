@@ -6,19 +6,20 @@ package com.scalekit.grpc.buf.validate;
 
 /**
  * <pre>
- * StringRules describes the constraints applied to `string` values These
+ * StringRules describes the rules applied to `string` values These
  * rules may also be applied to the `google.protobuf.StringValue` Well-Known-Type.
  * </pre>
  *
  * Protobuf type {@code buf.validate.StringRules}
  */
 public final class StringRules extends
-    com.google.protobuf.GeneratedMessageV3 implements
+    com.google.protobuf.GeneratedMessageV3.ExtendableMessage<
+      StringRules> implements
     // @@protoc_insertion_point(message_implements:buf.validate.StringRules)
     StringRulesOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use StringRules.newBuilder() to construct.
-  private StringRules(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private StringRules(com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<com.scalekit.grpc.buf.validate.StringRules, ?> builder) {
     super(builder);
   }
   private StringRules() {
@@ -31,6 +32,8 @@ private static final long serialVersionUID = 0L;
     in_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     notIn_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    example_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
@@ -78,6 +81,9 @@ private static final long serialVersionUID = 0L;
     IPV4_PREFIX(30),
     IPV6_PREFIX(31),
     HOST_AND_PORT(32),
+    ULID(35),
+    PROTOBUF_FQN(37),
+    PROTOBUF_DOT_FQN(38),
     WELL_KNOWN_REGEX(24),
     WELLKNOWN_NOT_SET(0);
     private final int value;
@@ -113,6 +119,9 @@ private static final long serialVersionUID = 0L;
         case 30: return IPV4_PREFIX;
         case 31: return IPV6_PREFIX;
         case 32: return HOST_AND_PORT;
+        case 35: return ULID;
+        case 37: return PROTOBUF_FQN;
+        case 38: return PROTOBUF_DOT_FQN;
         case 24: return WELL_KNOWN_REGEX;
         case 0: return WELLKNOWN_NOT_SET;
         default: return null;
@@ -145,7 +154,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the const field is set.
    */
   @java.lang.Override
@@ -165,7 +174,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
    * @return The const.
    */
   @java.lang.Override
@@ -177,7 +186,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      const_ = s;
+      if (bs.isValidUtf8()) {
+        const_ = s;
+      }
       return s;
     }
   }
@@ -194,7 +205,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
    * @return The bytes for const.
    */
   @java.lang.Override
@@ -229,7 +240,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 len = 19 [json_name = "len", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 len = 19 [json_name = "len", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the len field is set.
    */
   @java.lang.Override
@@ -251,7 +262,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 len = 19 [json_name = "len", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 len = 19 [json_name = "len", (.buf.validate.predefined) = { ... }</code>
    * @return The len.
    */
   @java.lang.Override
@@ -276,7 +287,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 min_len = 2 [json_name = "minLen", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 min_len = 2 [json_name = "minLen", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the minLen field is set.
    */
   @java.lang.Override
@@ -298,7 +309,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 min_len = 2 [json_name = "minLen", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 min_len = 2 [json_name = "minLen", (.buf.validate.predefined) = { ... }</code>
    * @return The minLen.
    */
   @java.lang.Override
@@ -323,7 +334,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 max_len = 3 [json_name = "maxLen", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 max_len = 3 [json_name = "maxLen", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the maxLen field is set.
    */
   @java.lang.Override
@@ -345,7 +356,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 max_len = 3 [json_name = "maxLen", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 max_len = 3 [json_name = "maxLen", (.buf.validate.predefined) = { ... }</code>
    * @return The maxLen.
    */
   @java.lang.Override
@@ -369,7 +380,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 len_bytes = 20 [json_name = "lenBytes", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 len_bytes = 20 [json_name = "lenBytes", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the lenBytes field is set.
    */
   @java.lang.Override
@@ -390,7 +401,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 len_bytes = 20 [json_name = "lenBytes", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 len_bytes = 20 [json_name = "lenBytes", (.buf.validate.predefined) = { ... }</code>
    * @return The lenBytes.
    */
   @java.lang.Override
@@ -415,7 +426,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 min_bytes = 4 [json_name = "minBytes", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 min_bytes = 4 [json_name = "minBytes", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the minBytes field is set.
    */
   @java.lang.Override
@@ -437,7 +448,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 min_bytes = 4 [json_name = "minBytes", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 min_bytes = 4 [json_name = "minBytes", (.buf.validate.predefined) = { ... }</code>
    * @return The minBytes.
    */
   @java.lang.Override
@@ -450,7 +461,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `max_bytes` specifies that the field value must have no more than the
-   *specified number of bytes. If the field value contains more bytes, an
+   * specified number of bytes. If the field value contains more bytes, an
    * error message will be generated.
    *
    * ```proto
@@ -461,7 +472,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 max_bytes = 5 [json_name = "maxBytes", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 max_bytes = 5 [json_name = "maxBytes", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the maxBytes field is set.
    */
   @java.lang.Override
@@ -471,7 +482,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `max_bytes` specifies that the field value must have no more than the
-   *specified number of bytes. If the field value contains more bytes, an
+   * specified number of bytes. If the field value contains more bytes, an
    * error message will be generated.
    *
    * ```proto
@@ -482,7 +493,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 max_bytes = 5 [json_name = "maxBytes", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 max_bytes = 5 [json_name = "maxBytes", (.buf.validate.predefined) = { ... }</code>
    * @return The maxBytes.
    */
   @java.lang.Override
@@ -508,7 +519,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the pattern field is set.
    */
   @java.lang.Override
@@ -530,7 +541,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.predefined) = { ... }</code>
    * @return The pattern.
    */
   @java.lang.Override
@@ -542,7 +553,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      pattern_ = s;
+      if (bs.isValidUtf8()) {
+        pattern_ = s;
+      }
       return s;
     }
   }
@@ -561,7 +574,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.predefined) = { ... }</code>
    * @return The bytes for pattern.
    */
   @java.lang.Override
@@ -585,7 +598,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `prefix` specifies that the field value must have the
-   *specified substring at the beginning of the string. If the field value
+   * specified substring at the beginning of the string. If the field value
    * doesn't start with the specified prefix, an error message will be
    * generated.
    *
@@ -597,7 +610,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the prefix field is set.
    */
   @java.lang.Override
@@ -607,7 +620,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `prefix` specifies that the field value must have the
-   *specified substring at the beginning of the string. If the field value
+   * specified substring at the beginning of the string. If the field value
    * doesn't start with the specified prefix, an error message will be
    * generated.
    *
@@ -619,7 +632,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.predefined) = { ... }</code>
    * @return The prefix.
    */
   @java.lang.Override
@@ -631,14 +644,16 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      prefix_ = s;
+      if (bs.isValidUtf8()) {
+        prefix_ = s;
+      }
       return s;
     }
   }
   /**
    * <pre>
    * `prefix` specifies that the field value must have the
-   *specified substring at the beginning of the string. If the field value
+   * specified substring at the beginning of the string. If the field value
    * doesn't start with the specified prefix, an error message will be
    * generated.
    *
@@ -650,7 +665,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.predefined) = { ... }</code>
    * @return The bytes for prefix.
    */
   @java.lang.Override
@@ -674,7 +689,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `suffix` specifies that the field value must have the
-   *specified substring at the end of the string. If the field value doesn't
+   * specified substring at the end of the string. If the field value doesn't
    * end with the specified suffix, an error message will be generated.
    *
    * ```proto
@@ -685,7 +700,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the suffix field is set.
    */
   @java.lang.Override
@@ -695,7 +710,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `suffix` specifies that the field value must have the
-   *specified substring at the end of the string. If the field value doesn't
+   * specified substring at the end of the string. If the field value doesn't
    * end with the specified suffix, an error message will be generated.
    *
    * ```proto
@@ -706,7 +721,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.predefined) = { ... }</code>
    * @return The suffix.
    */
   @java.lang.Override
@@ -718,14 +733,16 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      suffix_ = s;
+      if (bs.isValidUtf8()) {
+        suffix_ = s;
+      }
       return s;
     }
   }
   /**
    * <pre>
    * `suffix` specifies that the field value must have the
-   *specified substring at the end of the string. If the field value doesn't
+   * specified substring at the end of the string. If the field value doesn't
    * end with the specified suffix, an error message will be generated.
    *
    * ```proto
@@ -736,7 +753,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.predefined) = { ... }</code>
    * @return The bytes for suffix.
    */
   @java.lang.Override
@@ -760,7 +777,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `contains` specifies that the field value must have the
-   *specified substring anywhere in the string. If the field value doesn't
+   * specified substring anywhere in the string. If the field value doesn't
    * contain the specified substring, an error message will be generated.
    *
    * ```proto
@@ -771,7 +788,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the contains field is set.
    */
   @java.lang.Override
@@ -781,7 +798,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `contains` specifies that the field value must have the
-   *specified substring anywhere in the string. If the field value doesn't
+   * specified substring anywhere in the string. If the field value doesn't
    * contain the specified substring, an error message will be generated.
    *
    * ```proto
@@ -792,7 +809,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.predefined) = { ... }</code>
    * @return The contains.
    */
   @java.lang.Override
@@ -804,14 +821,16 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      contains_ = s;
+      if (bs.isValidUtf8()) {
+        contains_ = s;
+      }
       return s;
     }
   }
   /**
    * <pre>
    * `contains` specifies that the field value must have the
-   *specified substring anywhere in the string. If the field value doesn't
+   * specified substring anywhere in the string. If the field value doesn't
    * contain the specified substring, an error message will be generated.
    *
    * ```proto
@@ -822,7 +841,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.predefined) = { ... }</code>
    * @return The bytes for contains.
    */
   @java.lang.Override
@@ -846,7 +865,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `not_contains` specifies that the field value must not have the
-   *specified substring anywhere in the string. If the field value contains
+   * specified substring anywhere in the string. If the field value contains
    * the specified substring, an error message will be generated.
    *
    * ```proto
@@ -857,7 +876,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the notContains field is set.
    */
   @java.lang.Override
@@ -867,7 +886,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `not_contains` specifies that the field value must not have the
-   *specified substring anywhere in the string. If the field value contains
+   * specified substring anywhere in the string. If the field value contains
    * the specified substring, an error message will be generated.
    *
    * ```proto
@@ -878,7 +897,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.predefined) = { ... }</code>
    * @return The notContains.
    */
   @java.lang.Override
@@ -890,14 +909,16 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      notContains_ = s;
+      if (bs.isValidUtf8()) {
+        notContains_ = s;
+      }
       return s;
     }
   }
   /**
    * <pre>
    * `not_contains` specifies that the field value must not have the
-   *specified substring anywhere in the string. If the field value contains
+   * specified substring anywhere in the string. If the field value contains
    * the specified substring, an error message will be generated.
    *
    * ```proto
@@ -908,7 +929,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.predefined) = { ... }</code>
    * @return The bytes for notContains.
    */
   @java.lang.Override
@@ -938,13 +959,13 @@ private static final long serialVersionUID = 0L;
    *
    * ```proto
    * message MyString {
-   *   // value must be in list ["apple", "banana"]
-   *   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+   *   // must be in list ["apple", "banana"]
+   *   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated string in = 10 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
+   * <code>repeated string in = 10 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
    * @return A list containing the in.
    */
   public com.google.protobuf.ProtocolStringList
@@ -959,13 +980,13 @@ private static final long serialVersionUID = 0L;
    *
    * ```proto
    * message MyString {
-   *   // value must be in list ["apple", "banana"]
-   *   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+   *   // must be in list ["apple", "banana"]
+   *   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated string in = 10 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
+   * <code>repeated string in = 10 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
    * @return The count of in.
    */
   public int getInCount() {
@@ -979,13 +1000,13 @@ private static final long serialVersionUID = 0L;
    *
    * ```proto
    * message MyString {
-   *   // value must be in list ["apple", "banana"]
-   *   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+   *   // must be in list ["apple", "banana"]
+   *   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated string in = 10 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
+   * <code>repeated string in = 10 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
    * @param index The index of the element to return.
    * @return The in at the given index.
    */
@@ -1000,13 +1021,13 @@ private static final long serialVersionUID = 0L;
    *
    * ```proto
    * message MyString {
-   *   // value must be in list ["apple", "banana"]
-   *   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+   *   // must be in list ["apple", "banana"]
+   *   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated string in = 10 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
+   * <code>repeated string in = 10 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the in at the given index.
    */
@@ -1027,12 +1048,12 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyString {
    *   // value must not be in list ["orange", "grape"]
-   *   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+   *   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
+   * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
    * @return A list containing the notIn.
    */
   public com.google.protobuf.ProtocolStringList
@@ -1047,12 +1068,12 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyString {
    *   // value must not be in list ["orange", "grape"]
-   *   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+   *   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
+   * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
    * @return The count of notIn.
    */
   public int getNotInCount() {
@@ -1066,12 +1087,12 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyString {
    *   // value must not be in list ["orange", "grape"]
-   *   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+   *   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
+   * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
    * @param index The index of the element to return.
    * @return The notIn at the given index.
    */
@@ -1086,12 +1107,12 @@ private static final long serialVersionUID = 0L;
    * ```proto
    * message MyString {
    *   // value must not be in list ["orange", "grape"]
-   *   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+   *   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
+   * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the notIn at the given index.
    */
@@ -1103,19 +1124,25 @@ private static final long serialVersionUID = 0L;
   public static final int EMAIL_FIELD_NUMBER = 12;
   /**
    * <pre>
-   * `email` specifies that the field value must be a valid email address
-   * (addr-spec only) as defined by [RFC 5322](https://tools.ietf.org/html/rfc5322#section-3.4.1).
+   * `email` specifies that the field value must be a valid email address, for
+   * example "foo&#64;example.com".
+   *
+   * Conforms to the definition for a valid email address from the [HTML standard](https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address).
+   * Note that this standard willfully deviates from [RFC 5322](https://datatracker.ietf.org/doc/html/rfc5322),
+   * which allows many unexpected forms of email addresses and will easily match
+   * a typographical error.
+   *
    * If the field value isn't a valid email address, an error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid email address
+   *   // must be a valid email address
    *   string value = 1 [(buf.validate.field).string.email = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool email = 12 [json_name = "email", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool email = 12 [json_name = "email", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the email field is set.
    */
   @java.lang.Override
@@ -1124,19 +1151,25 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `email` specifies that the field value must be a valid email address
-   * (addr-spec only) as defined by [RFC 5322](https://tools.ietf.org/html/rfc5322#section-3.4.1).
+   * `email` specifies that the field value must be a valid email address, for
+   * example "foo&#64;example.com".
+   *
+   * Conforms to the definition for a valid email address from the [HTML standard](https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address).
+   * Note that this standard willfully deviates from [RFC 5322](https://datatracker.ietf.org/doc/html/rfc5322),
+   * which allows many unexpected forms of email addresses and will easily match
+   * a typographical error.
+   *
    * If the field value isn't a valid email address, an error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid email address
+   *   // must be a valid email address
    *   string value = 1 [(buf.validate.field).string.email = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool email = 12 [json_name = "email", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool email = 12 [json_name = "email", (.buf.validate.predefined) = { ... }</code>
    * @return The email.
    */
   @java.lang.Override
@@ -1150,20 +1183,28 @@ private static final long serialVersionUID = 0L;
   public static final int HOSTNAME_FIELD_NUMBER = 13;
   /**
    * <pre>
-   * `hostname` specifies that the field value must be a valid
-   * hostname as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5). This constraint doesn't support
-   * internationalized domain names (IDNs). If the field value isn't a
-   * valid hostname, an error message will be generated.
+   * `hostname` specifies that the field value must be a valid hostname, for
+   * example "foo.example.com".
+   *
+   * A valid hostname follows the rules below:
+   * - The name consists of one or more labels, separated by a dot (".").
+   * - Each label can be 1 to 63 alphanumeric characters.
+   * - A label can contain hyphens ("-"), but must not start or end with a hyphen.
+   * - The right-most label must not be digits only.
+   * - The name can have a trailing dot—for example, "foo.example.com.".
+   * - The name can be 253 characters at most, excluding the optional trailing dot.
+   *
+   * If the field value isn't a valid hostname, an error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid hostname
+   *   // must be a valid hostname
    *   string value = 1 [(buf.validate.field).string.hostname = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool hostname = 13 [json_name = "hostname", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool hostname = 13 [json_name = "hostname", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the hostname field is set.
    */
   @java.lang.Override
@@ -1172,20 +1213,28 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `hostname` specifies that the field value must be a valid
-   * hostname as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5). This constraint doesn't support
-   * internationalized domain names (IDNs). If the field value isn't a
-   * valid hostname, an error message will be generated.
+   * `hostname` specifies that the field value must be a valid hostname, for
+   * example "foo.example.com".
+   *
+   * A valid hostname follows the rules below:
+   * - The name consists of one or more labels, separated by a dot (".").
+   * - Each label can be 1 to 63 alphanumeric characters.
+   * - A label can contain hyphens ("-"), but must not start or end with a hyphen.
+   * - The right-most label must not be digits only.
+   * - The name can have a trailing dot—for example, "foo.example.com.".
+   * - The name can be 253 characters at most, excluding the optional trailing dot.
+   *
+   * If the field value isn't a valid hostname, an error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid hostname
+   *   // must be a valid hostname
    *   string value = 1 [(buf.validate.field).string.hostname = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool hostname = 13 [json_name = "hostname", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool hostname = 13 [json_name = "hostname", (.buf.validate.predefined) = { ... }</code>
    * @return The hostname.
    */
   @java.lang.Override
@@ -1199,20 +1248,27 @@ private static final long serialVersionUID = 0L;
   public static final int IP_FIELD_NUMBER = 14;
   /**
    * <pre>
-   * `ip` specifies that the field value must be a valid IP
-   * (v4 or v6) address, without surrounding square brackets for IPv6 addresses.
+   * `ip` specifies that the field value must be a valid IP (v4 or v6) address.
+   *
+   * IPv4 addresses are expected in the dotted decimal format—for example, "192.168.5.21".
+   * IPv6 addresses are expected in their text representation—for example, "::1",
+   * or "2001:0DB8:ABCD:0012::0".
+   *
+   * Both formats are well-defined in the internet standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986).
+   * Zone identifiers for IPv6 addresses (for example, "fe80::a%en1") are supported.
+   *
    * If the field value isn't a valid IP address, an error message will be
    * generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IP address
+   *   // must be a valid IP address
    *   string value = 1 [(buf.validate.field).string.ip = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ip = 14 [json_name = "ip", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ip = 14 [json_name = "ip", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the ip field is set.
    */
   @java.lang.Override
@@ -1221,20 +1277,27 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `ip` specifies that the field value must be a valid IP
-   * (v4 or v6) address, without surrounding square brackets for IPv6 addresses.
+   * `ip` specifies that the field value must be a valid IP (v4 or v6) address.
+   *
+   * IPv4 addresses are expected in the dotted decimal format—for example, "192.168.5.21".
+   * IPv6 addresses are expected in their text representation—for example, "::1",
+   * or "2001:0DB8:ABCD:0012::0".
+   *
+   * Both formats are well-defined in the internet standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986).
+   * Zone identifiers for IPv6 addresses (for example, "fe80::a%en1") are supported.
+   *
    * If the field value isn't a valid IP address, an error message will be
    * generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IP address
+   *   // must be a valid IP address
    *   string value = 1 [(buf.validate.field).string.ip = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ip = 14 [json_name = "ip", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ip = 14 [json_name = "ip", (.buf.validate.predefined) = { ... }</code>
    * @return The ip.
    */
   @java.lang.Override
@@ -1248,19 +1311,19 @@ private static final long serialVersionUID = 0L;
   public static final int IPV4_FIELD_NUMBER = 15;
   /**
    * <pre>
-   * `ipv4` specifies that the field value must be a valid IPv4
-   * address. If the field value isn't a valid IPv4 address, an error message
-   * will be generated.
+   * `ipv4` specifies that the field value must be a valid IPv4 address—for
+   * example "192.168.5.21". If the field value isn't a valid IPv4 address, an
+   * error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IPv4 address
+   *   // must be a valid IPv4 address
    *   string value = 1 [(buf.validate.field).string.ipv4 = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ipv4 = 15 [json_name = "ipv4", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ipv4 = 15 [json_name = "ipv4", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the ipv4 field is set.
    */
   @java.lang.Override
@@ -1269,19 +1332,19 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `ipv4` specifies that the field value must be a valid IPv4
-   * address. If the field value isn't a valid IPv4 address, an error message
-   * will be generated.
+   * `ipv4` specifies that the field value must be a valid IPv4 address—for
+   * example "192.168.5.21". If the field value isn't a valid IPv4 address, an
+   * error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IPv4 address
+   *   // must be a valid IPv4 address
    *   string value = 1 [(buf.validate.field).string.ipv4 = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ipv4 = 15 [json_name = "ipv4", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ipv4 = 15 [json_name = "ipv4", (.buf.validate.predefined) = { ... }</code>
    * @return The ipv4.
    */
   @java.lang.Override
@@ -1295,19 +1358,19 @@ private static final long serialVersionUID = 0L;
   public static final int IPV6_FIELD_NUMBER = 16;
   /**
    * <pre>
-   * `ipv6` specifies that the field value must be a valid
-   * IPv6 address, without surrounding square brackets. If the field value is
-   * not a valid IPv6 address, an error message will be generated.
+   * `ipv6` specifies that the field value must be a valid IPv6 address—for
+   * example "::1", or "d7a:115c:a1e0:ab12:4843:cd96:626b:430b". If the field
+   * value is not a valid IPv6 address, an error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IPv6 address
+   *   // must be a valid IPv6 address
    *   string value = 1 [(buf.validate.field).string.ipv6 = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ipv6 = 16 [json_name = "ipv6", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ipv6 = 16 [json_name = "ipv6", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the ipv6 field is set.
    */
   @java.lang.Override
@@ -1316,19 +1379,19 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `ipv6` specifies that the field value must be a valid
-   * IPv6 address, without surrounding square brackets. If the field value is
-   * not a valid IPv6 address, an error message will be generated.
+   * `ipv6` specifies that the field value must be a valid IPv6 address—for
+   * example "::1", or "d7a:115c:a1e0:ab12:4843:cd96:626b:430b". If the field
+   * value is not a valid IPv6 address, an error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IPv6 address
+   *   // must be a valid IPv6 address
    *   string value = 1 [(buf.validate.field).string.ipv6 = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ipv6 = 16 [json_name = "ipv6", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ipv6 = 16 [json_name = "ipv6", (.buf.validate.predefined) = { ... }</code>
    * @return The ipv6.
    */
   @java.lang.Override
@@ -1342,19 +1405,23 @@ private static final long serialVersionUID = 0L;
   public static final int URI_FIELD_NUMBER = 17;
   /**
    * <pre>
-   * `uri` specifies that the field value must be a valid,
-   * absolute URI as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3). If the field value isn't a valid,
-   * absolute URI, an error message will be generated.
+   * `uri` specifies that the field value must be a valid URI, for example
+   * "https://example.com/foo/bar?baz=quux#frag".
+   *
+   * URI is defined in the internet standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986).
+   * Zone Identifiers in IPv6 address literals are supported ([RFC 6874](https://datatracker.ietf.org/doc/html/rfc6874)).
+   *
+   * If the field value isn't a valid URI, an error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid URI
+   *   // must be a valid URI
    *   string value = 1 [(buf.validate.field).string.uri = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool uri = 17 [json_name = "uri", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool uri = 17 [json_name = "uri", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the uri field is set.
    */
   @java.lang.Override
@@ -1363,19 +1430,23 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `uri` specifies that the field value must be a valid,
-   * absolute URI as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3). If the field value isn't a valid,
-   * absolute URI, an error message will be generated.
+   * `uri` specifies that the field value must be a valid URI, for example
+   * "https://example.com/foo/bar?baz=quux#frag".
+   *
+   * URI is defined in the internet standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986).
+   * Zone Identifiers in IPv6 address literals are supported ([RFC 6874](https://datatracker.ietf.org/doc/html/rfc6874)).
+   *
+   * If the field value isn't a valid URI, an error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid URI
+   *   // must be a valid URI
    *   string value = 1 [(buf.validate.field).string.uri = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool uri = 17 [json_name = "uri", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool uri = 17 [json_name = "uri", (.buf.validate.predefined) = { ... }</code>
    * @return The uri.
    */
   @java.lang.Override
@@ -1389,19 +1460,26 @@ private static final long serialVersionUID = 0L;
   public static final int URI_REF_FIELD_NUMBER = 18;
   /**
    * <pre>
-   * `uri_ref` specifies that the field value must be a valid URI
-   * as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3) and may be either relative or absolute. If the
-   * field value isn't a valid URI, an error message will be generated.
+   * `uri_ref` specifies that the field value must be a valid URI Reference—either
+   * a URI such as "https://example.com/foo/bar?baz=quux#frag", or a Relative
+   * Reference such as "./foo/bar?query".
+   *
+   * URI, URI Reference, and Relative Reference are defined in the internet
+   * standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). Zone
+   * Identifiers in IPv6 address literals are supported ([RFC 6874](https://datatracker.ietf.org/doc/html/rfc6874)).
+   *
+   * If the field value isn't a valid URI Reference, an error message will be
+   * generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid URI
+   *   // must be a valid URI Reference
    *   string value = 1 [(buf.validate.field).string.uri_ref = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool uri_ref = 18 [json_name = "uriRef", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool uri_ref = 18 [json_name = "uriRef", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the uriRef field is set.
    */
   @java.lang.Override
@@ -1410,19 +1488,26 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `uri_ref` specifies that the field value must be a valid URI
-   * as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3) and may be either relative or absolute. If the
-   * field value isn't a valid URI, an error message will be generated.
+   * `uri_ref` specifies that the field value must be a valid URI Reference—either
+   * a URI such as "https://example.com/foo/bar?baz=quux#frag", or a Relative
+   * Reference such as "./foo/bar?query".
+   *
+   * URI, URI Reference, and Relative Reference are defined in the internet
+   * standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). Zone
+   * Identifiers in IPv6 address literals are supported ([RFC 6874](https://datatracker.ietf.org/doc/html/rfc6874)).
+   *
+   * If the field value isn't a valid URI Reference, an error message will be
+   * generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid URI
+   *   // must be a valid URI Reference
    *   string value = 1 [(buf.validate.field).string.uri_ref = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool uri_ref = 18 [json_name = "uriRef", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool uri_ref = 18 [json_name = "uriRef", (.buf.validate.predefined) = { ... }</code>
    * @return The uriRef.
    */
   @java.lang.Override
@@ -1437,20 +1522,19 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `address` specifies that the field value must be either a valid hostname
-   * as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5)
-   * (which doesn't support internationalized domain names or IDNs) or a valid
-   * IP (v4 or v6). If the field value isn't a valid hostname or IP, an error
-   * message will be generated.
+   * (for example, "example.com"), or a valid IP (v4 or v6) address (for example,
+   * "192.168.0.1", or "::1"). If the field value isn't a valid hostname or IP,
+   * an error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid hostname, or ip address
+   *   // must be a valid hostname, or ip address
    *   string value = 1 [(buf.validate.field).string.address = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool address = 21 [json_name = "address", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool address = 21 [json_name = "address", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the address field is set.
    */
   @java.lang.Override
@@ -1460,20 +1544,19 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `address` specifies that the field value must be either a valid hostname
-   * as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5)
-   * (which doesn't support internationalized domain names or IDNs) or a valid
-   * IP (v4 or v6). If the field value isn't a valid hostname or IP, an error
-   * message will be generated.
+   * (for example, "example.com"), or a valid IP (v4 or v6) address (for example,
+   * "192.168.0.1", or "::1"). If the field value isn't a valid hostname or IP,
+   * an error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid hostname, or ip address
+   *   // must be a valid hostname, or ip address
    *   string value = 1 [(buf.validate.field).string.address = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool address = 21 [json_name = "address", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool address = 21 [json_name = "address", (.buf.validate.predefined) = { ... }</code>
    * @return The address.
    */
   @java.lang.Override
@@ -1488,18 +1571,18 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `uuid` specifies that the field value must be a valid UUID as defined by
-   * [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2). If the
+   * [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2). If the
    * field value isn't a valid UUID, an error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid UUID
+   *   // must be a valid UUID
    *   string value = 1 [(buf.validate.field).string.uuid = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool uuid = 22 [json_name = "uuid", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool uuid = 22 [json_name = "uuid", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the uuid field is set.
    */
   @java.lang.Override
@@ -1509,18 +1592,18 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `uuid` specifies that the field value must be a valid UUID as defined by
-   * [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2). If the
+   * [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2). If the
    * field value isn't a valid UUID, an error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid UUID
+   *   // must be a valid UUID
    *   string value = 1 [(buf.validate.field).string.uuid = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool uuid = 22 [json_name = "uuid", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool uuid = 22 [json_name = "uuid", (.buf.validate.predefined) = { ... }</code>
    * @return The uuid.
    */
   @java.lang.Override
@@ -1535,19 +1618,19 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `tuuid` (trimmed UUID) specifies that the field value must be a valid UUID as
-   * defined by [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2) with all dashes
+   * defined by [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2) with all dashes
    * omitted. If the field value isn't a valid UUID without dashes, an error message
    * will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid trimmed UUID
+   *   // must be a valid trimmed UUID
    *   string value = 1 [(buf.validate.field).string.tuuid = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool tuuid = 33 [json_name = "tuuid", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool tuuid = 33 [json_name = "tuuid", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the tuuid field is set.
    */
   @java.lang.Override
@@ -1557,19 +1640,19 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `tuuid` (trimmed UUID) specifies that the field value must be a valid UUID as
-   * defined by [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2) with all dashes
+   * defined by [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2) with all dashes
    * omitted. If the field value isn't a valid UUID without dashes, an error message
    * will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid trimmed UUID
+   *   // must be a valid trimmed UUID
    *   string value = 1 [(buf.validate.field).string.tuuid = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool tuuid = 33 [json_name = "tuuid", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool tuuid = 33 [json_name = "tuuid", (.buf.validate.predefined) = { ... }</code>
    * @return The tuuid.
    */
   @java.lang.Override
@@ -1583,20 +1666,20 @@ private static final long serialVersionUID = 0L;
   public static final int IP_WITH_PREFIXLEN_FIELD_NUMBER = 26;
   /**
    * <pre>
-   * `ip_with_prefixlen` specifies that the field value must be a valid IP (v4 or v6)
-   * address with prefix length. If the field value isn't a valid IP with prefix
-   * length, an error message will be generated.
-   *
+   * `ip_with_prefixlen` specifies that the field value must be a valid IP
+   * (v4 or v6) address with prefix length—for example, "192.168.5.21/16" or
+   * "2001:0DB8:ABCD:0012::F1/64". If the field value isn't a valid IP with
+   * prefix length, an error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IP with prefix length
+   *   // must be a valid IP with prefix length
    *    string value = 1 [(buf.validate.field).string.ip_with_prefixlen = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ip_with_prefixlen = 26 [json_name = "ipWithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ip_with_prefixlen = 26 [json_name = "ipWithPrefixlen", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the ipWithPrefixlen field is set.
    */
   @java.lang.Override
@@ -1605,20 +1688,20 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `ip_with_prefixlen` specifies that the field value must be a valid IP (v4 or v6)
-   * address with prefix length. If the field value isn't a valid IP with prefix
-   * length, an error message will be generated.
-   *
+   * `ip_with_prefixlen` specifies that the field value must be a valid IP
+   * (v4 or v6) address with prefix length—for example, "192.168.5.21/16" or
+   * "2001:0DB8:ABCD:0012::F1/64". If the field value isn't a valid IP with
+   * prefix length, an error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IP with prefix length
+   *   // must be a valid IP with prefix length
    *    string value = 1 [(buf.validate.field).string.ip_with_prefixlen = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ip_with_prefixlen = 26 [json_name = "ipWithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ip_with_prefixlen = 26 [json_name = "ipWithPrefixlen", (.buf.validate.predefined) = { ... }</code>
    * @return The ipWithPrefixlen.
    */
   @java.lang.Override
@@ -1633,19 +1716,19 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `ipv4_with_prefixlen` specifies that the field value must be a valid
-   * IPv4 address with prefix.
-   * If the field value isn't a valid IPv4 address with prefix length,
-   * an error message will be generated.
+   * IPv4 address with prefix length—for example, "192.168.5.21/16". If the
+   * field value isn't a valid IPv4 address with prefix length, an error
+   * message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IPv4 address with prefix length
+   *   // must be a valid IPv4 address with prefix length
    *    string value = 1 [(buf.validate.field).string.ipv4_with_prefixlen = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ipv4_with_prefixlen = 27 [json_name = "ipv4WithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ipv4_with_prefixlen = 27 [json_name = "ipv4WithPrefixlen", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the ipv4WithPrefixlen field is set.
    */
   @java.lang.Override
@@ -1655,19 +1738,19 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `ipv4_with_prefixlen` specifies that the field value must be a valid
-   * IPv4 address with prefix.
-   * If the field value isn't a valid IPv4 address with prefix length,
-   * an error message will be generated.
+   * IPv4 address with prefix length—for example, "192.168.5.21/16". If the
+   * field value isn't a valid IPv4 address with prefix length, an error
+   * message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IPv4 address with prefix length
+   *   // must be a valid IPv4 address with prefix length
    *    string value = 1 [(buf.validate.field).string.ipv4_with_prefixlen = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ipv4_with_prefixlen = 27 [json_name = "ipv4WithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ipv4_with_prefixlen = 27 [json_name = "ipv4WithPrefixlen", (.buf.validate.predefined) = { ... }</code>
    * @return The ipv4WithPrefixlen.
    */
   @java.lang.Override
@@ -1682,19 +1765,19 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `ipv6_with_prefixlen` specifies that the field value must be a valid
-   * IPv6 address with prefix length.
+   * IPv6 address with prefix length—for example, "2001:0DB8:ABCD:0012::F1/64".
    * If the field value is not a valid IPv6 address with prefix length,
    * an error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IPv6 address prefix length
+   *   // must be a valid IPv6 address prefix length
    *    string value = 1 [(buf.validate.field).string.ipv6_with_prefixlen = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ipv6_with_prefixlen = 28 [json_name = "ipv6WithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ipv6_with_prefixlen = 28 [json_name = "ipv6WithPrefixlen", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the ipv6WithPrefixlen field is set.
    */
   @java.lang.Override
@@ -1704,19 +1787,19 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `ipv6_with_prefixlen` specifies that the field value must be a valid
-   * IPv6 address with prefix length.
+   * IPv6 address with prefix length—for example, "2001:0DB8:ABCD:0012::F1/64".
    * If the field value is not a valid IPv6 address with prefix length,
    * an error message will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IPv6 address prefix length
+   *   // must be a valid IPv6 address prefix length
    *    string value = 1 [(buf.validate.field).string.ipv6_with_prefixlen = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ipv6_with_prefixlen = 28 [json_name = "ipv6WithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ipv6_with_prefixlen = 28 [json_name = "ipv6WithPrefixlen", (.buf.validate.predefined) = { ... }</code>
    * @return The ipv6WithPrefixlen.
    */
   @java.lang.Override
@@ -1730,20 +1813,25 @@ private static final long serialVersionUID = 0L;
   public static final int IP_PREFIX_FIELD_NUMBER = 29;
   /**
    * <pre>
-   * `ip_prefix` specifies that the field value must be a valid IP (v4 or v6) prefix.
+   * `ip_prefix` specifies that the field value must be a valid IP (v4 or v6)
+   * prefix—for example, "192.168.0.0/16" or "2001:0DB8:ABCD:0012::0/64".
+   *
+   * The prefix must have all zeros for the unmasked bits. For example,
+   * "2001:0DB8:ABCD:0012::0/64" designates the left-most 64 bits for the
+   * prefix, and the remaining 64 bits must be zero.
+   *
    * If the field value isn't a valid IP prefix, an error message will be
-   * generated. The prefix must have all zeros for the masked bits of the prefix (e.g.,
-   * `127.0.0.0/16`, not `127.0.0.1/16`).
+   * generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IP prefix
+   *   // must be a valid IP prefix
    *    string value = 1 [(buf.validate.field).string.ip_prefix = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ip_prefix = 29 [json_name = "ipPrefix", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ip_prefix = 29 [json_name = "ipPrefix", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the ipPrefix field is set.
    */
   @java.lang.Override
@@ -1752,20 +1840,25 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `ip_prefix` specifies that the field value must be a valid IP (v4 or v6) prefix.
+   * `ip_prefix` specifies that the field value must be a valid IP (v4 or v6)
+   * prefix—for example, "192.168.0.0/16" or "2001:0DB8:ABCD:0012::0/64".
+   *
+   * The prefix must have all zeros for the unmasked bits. For example,
+   * "2001:0DB8:ABCD:0012::0/64" designates the left-most 64 bits for the
+   * prefix, and the remaining 64 bits must be zero.
+   *
    * If the field value isn't a valid IP prefix, an error message will be
-   * generated. The prefix must have all zeros for the masked bits of the prefix (e.g.,
-   * `127.0.0.0/16`, not `127.0.0.1/16`).
+   * generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IP prefix
+   *   // must be a valid IP prefix
    *    string value = 1 [(buf.validate.field).string.ip_prefix = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ip_prefix = 29 [json_name = "ipPrefix", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ip_prefix = 29 [json_name = "ipPrefix", (.buf.validate.predefined) = { ... }</code>
    * @return The ipPrefix.
    */
   @java.lang.Override
@@ -1780,19 +1873,24 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `ipv4_prefix` specifies that the field value must be a valid IPv4
-   * prefix. If the field value isn't a valid IPv4 prefix, an error message
-   * will be generated. The prefix must have all zeros for the masked bits of
-   * the prefix (e.g., `127.0.0.0/16`, not `127.0.0.1/16`).
+   * prefix, for example "192.168.0.0/16".
+   *
+   * The prefix must have all zeros for the unmasked bits. For example,
+   * "192.168.0.0/16" designates the left-most 16 bits for the prefix,
+   * and the remaining 16 bits must be zero.
+   *
+   * If the field value isn't a valid IPv4 prefix, an error message
+   * will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IPv4 prefix
+   *   // must be a valid IPv4 prefix
    *    string value = 1 [(buf.validate.field).string.ipv4_prefix = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ipv4_prefix = 30 [json_name = "ipv4Prefix", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ipv4_prefix = 30 [json_name = "ipv4Prefix", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the ipv4Prefix field is set.
    */
   @java.lang.Override
@@ -1802,19 +1900,24 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `ipv4_prefix` specifies that the field value must be a valid IPv4
-   * prefix. If the field value isn't a valid IPv4 prefix, an error message
-   * will be generated. The prefix must have all zeros for the masked bits of
-   * the prefix (e.g., `127.0.0.0/16`, not `127.0.0.1/16`).
+   * prefix, for example "192.168.0.0/16".
+   *
+   * The prefix must have all zeros for the unmasked bits. For example,
+   * "192.168.0.0/16" designates the left-most 16 bits for the prefix,
+   * and the remaining 16 bits must be zero.
+   *
+   * If the field value isn't a valid IPv4 prefix, an error message
+   * will be generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IPv4 prefix
+   *   // must be a valid IPv4 prefix
    *    string value = 1 [(buf.validate.field).string.ipv4_prefix = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ipv4_prefix = 30 [json_name = "ipv4Prefix", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ipv4_prefix = 30 [json_name = "ipv4Prefix", (.buf.validate.predefined) = { ... }</code>
    * @return The ipv4Prefix.
    */
   @java.lang.Override
@@ -1828,20 +1931,25 @@ private static final long serialVersionUID = 0L;
   public static final int IPV6_PREFIX_FIELD_NUMBER = 31;
   /**
    * <pre>
-   * `ipv6_prefix` specifies that the field value must be a valid IPv6 prefix.
+   * `ipv6_prefix` specifies that the field value must be a valid IPv6 prefix—for
+   * example, "2001:0DB8:ABCD:0012::0/64".
+   *
+   * The prefix must have all zeros for the unmasked bits. For example,
+   * "2001:0DB8:ABCD:0012::0/64" designates the left-most 64 bits for the
+   * prefix, and the remaining 64 bits must be zero.
+   *
    * If the field value is not a valid IPv6 prefix, an error message will be
-   * generated. The prefix must have all zeros for the masked bits of the prefix
-   * (e.g., `2001:db8::/48`, not `2001:db8::1/48`).
+   * generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IPv6 prefix
+   *   // must be a valid IPv6 prefix
    *    string value = 1 [(buf.validate.field).string.ipv6_prefix = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ipv6_prefix = 31 [json_name = "ipv6Prefix", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ipv6_prefix = 31 [json_name = "ipv6Prefix", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the ipv6Prefix field is set.
    */
   @java.lang.Override
@@ -1850,20 +1958,25 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `ipv6_prefix` specifies that the field value must be a valid IPv6 prefix.
+   * `ipv6_prefix` specifies that the field value must be a valid IPv6 prefix—for
+   * example, "2001:0DB8:ABCD:0012::0/64".
+   *
+   * The prefix must have all zeros for the unmasked bits. For example,
+   * "2001:0DB8:ABCD:0012::0/64" designates the left-most 64 bits for the
+   * prefix, and the remaining 64 bits must be zero.
+   *
    * If the field value is not a valid IPv6 prefix, an error message will be
-   * generated. The prefix must have all zeros for the masked bits of the prefix
-   * (e.g., `2001:db8::/48`, not `2001:db8::1/48`).
+   * generated.
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid IPv6 prefix
+   *   // must be a valid IPv6 prefix
    *    string value = 1 [(buf.validate.field).string.ipv6_prefix = true];
    * }
    * ```
    * </pre>
    *
-   * <code>bool ipv6_prefix = 31 [json_name = "ipv6Prefix", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool ipv6_prefix = 31 [json_name = "ipv6Prefix", (.buf.validate.predefined) = { ... }</code>
    * @return The ipv6Prefix.
    */
   @java.lang.Override
@@ -1877,13 +1990,19 @@ private static final long serialVersionUID = 0L;
   public static final int HOST_AND_PORT_FIELD_NUMBER = 32;
   /**
    * <pre>
-   * `host_and_port` specifies the field value must be a valid host and port
-   * pair. The host must be a valid hostname or IP address while the port
-   * must be in the range of 0-65535, inclusive. IPv6 addresses must be delimited
-   * with square brackets (e.g., `[::1]:1234`).
+   * `host_and_port` specifies that the field value must be a valid host/port
+   * pair—for example, "example.com:8080".
+   *
+   * The host can be one of:
+   * - An IPv4 address in dotted decimal format—for example, "192.168.5.21".
+   * - An IPv6 address enclosed in square brackets—for example, "[2001:0DB8:ABCD:0012::F1]".
+   * - A hostname—for example, "example.com".
+   *
+   * The port is separated by a colon. It must be non-empty, with a decimal number
+   * in the range of 0-65535, inclusive.
    * </pre>
    *
-   * <code>bool host_and_port = 32 [json_name = "hostAndPort", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool host_and_port = 32 [json_name = "hostAndPort", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the hostAndPort field is set.
    */
   @java.lang.Override
@@ -1892,18 +2011,221 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `host_and_port` specifies the field value must be a valid host and port
-   * pair. The host must be a valid hostname or IP address while the port
-   * must be in the range of 0-65535, inclusive. IPv6 addresses must be delimited
-   * with square brackets (e.g., `[::1]:1234`).
+   * `host_and_port` specifies that the field value must be a valid host/port
+   * pair—for example, "example.com:8080".
+   *
+   * The host can be one of:
+   * - An IPv4 address in dotted decimal format—for example, "192.168.5.21".
+   * - An IPv6 address enclosed in square brackets—for example, "[2001:0DB8:ABCD:0012::F1]".
+   * - A hostname—for example, "example.com".
+   *
+   * The port is separated by a colon. It must be non-empty, with a decimal number
+   * in the range of 0-65535, inclusive.
    * </pre>
    *
-   * <code>bool host_and_port = 32 [json_name = "hostAndPort", (.buf.validate.priv.field) = { ... }</code>
+   * <code>bool host_and_port = 32 [json_name = "hostAndPort", (.buf.validate.predefined) = { ... }</code>
    * @return The hostAndPort.
    */
   @java.lang.Override
   public boolean getHostAndPort() {
     if (wellKnownCase_ == 32) {
+      return (java.lang.Boolean) wellKnown_;
+    }
+    return false;
+  }
+
+  public static final int ULID_FIELD_NUMBER = 35;
+  /**
+   * <pre>
+   * `ulid` specifies that the field value must be a valid ULID (Universally Unique
+   * Lexicographically Sortable Identifier) as defined by the [ULID specification](https://github.com/ulid/spec).
+   * If the field value isn't a valid ULID, an error message will be generated.
+   *
+   * ```proto
+   * message MyString {
+   *   // must be a valid ULID
+   *   string value = 1 [(buf.validate.field).string.ulid = true];
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>bool ulid = 35 [json_name = "ulid", (.buf.validate.predefined) = { ... }</code>
+   * @return Whether the ulid field is set.
+   */
+  @java.lang.Override
+  public boolean hasUlid() {
+    return wellKnownCase_ == 35;
+  }
+  /**
+   * <pre>
+   * `ulid` specifies that the field value must be a valid ULID (Universally Unique
+   * Lexicographically Sortable Identifier) as defined by the [ULID specification](https://github.com/ulid/spec).
+   * If the field value isn't a valid ULID, an error message will be generated.
+   *
+   * ```proto
+   * message MyString {
+   *   // must be a valid ULID
+   *   string value = 1 [(buf.validate.field).string.ulid = true];
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>bool ulid = 35 [json_name = "ulid", (.buf.validate.predefined) = { ... }</code>
+   * @return The ulid.
+   */
+  @java.lang.Override
+  public boolean getUlid() {
+    if (wellKnownCase_ == 35) {
+      return (java.lang.Boolean) wellKnown_;
+    }
+    return false;
+  }
+
+  public static final int PROTOBUF_FQN_FIELD_NUMBER = 37;
+  /**
+   * <pre>
+   * `protobuf_fqn` specifies that the field value must be a valid fully-qualified
+   * Protobuf name as defined by the [Protobuf Language Specification](https://protobuf.com/docs/language-spec).
+   *
+   * A fully-qualified Protobuf name is a dot-separated list of Protobuf identifiers,
+   * where each identifier starts with a letter or underscore and is followed by zero or
+   * more letters, underscores, or digits.
+   *
+   * Examples: "buf.validate", "google.protobuf.Timestamp", "my_package.MyMessage".
+   *
+   * Note: historically, fully-qualified Protobuf names were represented with a leading
+   * dot (for example, ".buf.validate.StringRules"). Modern Protobuf does not use the
+   * leading dot, and most fully-qualified names are represented without it. Use
+   * `protobuf_dot_fqn` if a leading dot is required.
+   *
+   * If the field value isn't a valid fully-qualified Protobuf name, an error message
+   * will be generated.
+   *
+   * ```proto
+   * message MyString {
+   *   // value must be a valid fully-qualified Protobuf name
+   *   string value = 1 [(buf.validate.field).string.protobuf_fqn = true];
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>bool protobuf_fqn = 37 [json_name = "protobufFqn", (.buf.validate.predefined) = { ... }</code>
+   * @return Whether the protobufFqn field is set.
+   */
+  @java.lang.Override
+  public boolean hasProtobufFqn() {
+    return wellKnownCase_ == 37;
+  }
+  /**
+   * <pre>
+   * `protobuf_fqn` specifies that the field value must be a valid fully-qualified
+   * Protobuf name as defined by the [Protobuf Language Specification](https://protobuf.com/docs/language-spec).
+   *
+   * A fully-qualified Protobuf name is a dot-separated list of Protobuf identifiers,
+   * where each identifier starts with a letter or underscore and is followed by zero or
+   * more letters, underscores, or digits.
+   *
+   * Examples: "buf.validate", "google.protobuf.Timestamp", "my_package.MyMessage".
+   *
+   * Note: historically, fully-qualified Protobuf names were represented with a leading
+   * dot (for example, ".buf.validate.StringRules"). Modern Protobuf does not use the
+   * leading dot, and most fully-qualified names are represented without it. Use
+   * `protobuf_dot_fqn` if a leading dot is required.
+   *
+   * If the field value isn't a valid fully-qualified Protobuf name, an error message
+   * will be generated.
+   *
+   * ```proto
+   * message MyString {
+   *   // value must be a valid fully-qualified Protobuf name
+   *   string value = 1 [(buf.validate.field).string.protobuf_fqn = true];
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>bool protobuf_fqn = 37 [json_name = "protobufFqn", (.buf.validate.predefined) = { ... }</code>
+   * @return The protobufFqn.
+   */
+  @java.lang.Override
+  public boolean getProtobufFqn() {
+    if (wellKnownCase_ == 37) {
+      return (java.lang.Boolean) wellKnown_;
+    }
+    return false;
+  }
+
+  public static final int PROTOBUF_DOT_FQN_FIELD_NUMBER = 38;
+  /**
+   * <pre>
+   * `protobuf_dot_fqn` specifies that the field value must be a valid fully-qualified
+   * Protobuf name with a leading dot, as defined by the
+   * [Protobuf Language Specification](https://protobuf.com/docs/language-spec).
+   *
+   * A fully-qualified Protobuf name with a leading dot is a dot followed by a
+   * dot-separated list of Protobuf identifiers, where each identifier starts with a
+   * letter or underscore and is followed by zero or more letters, underscores, or
+   * digits.
+   *
+   * Examples: ".buf.validate", ".google.protobuf.Timestamp", ".my_package.MyMessage".
+   *
+   * Note: this is the historical representation of fully-qualified Protobuf names,
+   * where a leading dot denotes an absolute reference. Modern Protobuf does not use
+   * the leading dot, and most fully-qualified names are represented without it. Most
+   * users will want to use `protobuf_fqn` instead.
+   *
+   * If the field value isn't a valid fully-qualified Protobuf name with a leading dot,
+   * an error message will be generated.
+   *
+   * ```proto
+   * message MyString {
+   *   // value must be a valid fully-qualified Protobuf name with a leading dot
+   *   string value = 1 [(buf.validate.field).string.protobuf_dot_fqn = true];
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>bool protobuf_dot_fqn = 38 [json_name = "protobufDotFqn", (.buf.validate.predefined) = { ... }</code>
+   * @return Whether the protobufDotFqn field is set.
+   */
+  @java.lang.Override
+  public boolean hasProtobufDotFqn() {
+    return wellKnownCase_ == 38;
+  }
+  /**
+   * <pre>
+   * `protobuf_dot_fqn` specifies that the field value must be a valid fully-qualified
+   * Protobuf name with a leading dot, as defined by the
+   * [Protobuf Language Specification](https://protobuf.com/docs/language-spec).
+   *
+   * A fully-qualified Protobuf name with a leading dot is a dot followed by a
+   * dot-separated list of Protobuf identifiers, where each identifier starts with a
+   * letter or underscore and is followed by zero or more letters, underscores, or
+   * digits.
+   *
+   * Examples: ".buf.validate", ".google.protobuf.Timestamp", ".my_package.MyMessage".
+   *
+   * Note: this is the historical representation of fully-qualified Protobuf names,
+   * where a leading dot denotes an absolute reference. Modern Protobuf does not use
+   * the leading dot, and most fully-qualified names are represented without it. Most
+   * users will want to use `protobuf_fqn` instead.
+   *
+   * If the field value isn't a valid fully-qualified Protobuf name with a leading dot,
+   * an error message will be generated.
+   *
+   * ```proto
+   * message MyString {
+   *   // value must be a valid fully-qualified Protobuf name with a leading dot
+   *   string value = 1 [(buf.validate.field).string.protobuf_dot_fqn = true];
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>bool protobuf_dot_fqn = 38 [json_name = "protobufDotFqn", (.buf.validate.predefined) = { ... }</code>
+   * @return The protobufDotFqn.
+   */
+  @java.lang.Override
+  public boolean getProtobufDotFqn() {
+    if (wellKnownCase_ == 38) {
       return (java.lang.Boolean) wellKnown_;
     }
     return false;
@@ -1918,7 +2240,7 @@ private static final long serialVersionUID = 0L;
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid HTTP header value
+   *   // must be a valid HTTP header value
    *   string value = 1 [(buf.validate.field).string.well_known_regex = KNOWN_REGEX_HTTP_HEADER_VALUE];
    * }
    * ```
@@ -1930,11 +2252,11 @@ private static final long serialVersionUID = 0L;
    * | Name                          | Number | Description                               |
    * |-------------------------------|--------|-------------------------------------------|
    * | KNOWN_REGEX_UNSPECIFIED       | 0      |                                           |
-   * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2)  |
-   * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2.4) |
+   * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2)  |
+   * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.4) |
    * </pre>
    *
-   * <code>.buf.validate.KnownRegex well_known_regex = 24 [json_name = "wellKnownRegex", (.buf.validate.priv.field) = { ... }</code>
+   * <code>.buf.validate.KnownRegex well_known_regex = 24 [json_name = "wellKnownRegex", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the wellKnownRegex field is set.
    */
   public boolean hasWellKnownRegex() {
@@ -1948,7 +2270,7 @@ private static final long serialVersionUID = 0L;
    *
    * ```proto
    * message MyString {
-   *   // value must be a valid HTTP header value
+   *   // must be a valid HTTP header value
    *   string value = 1 [(buf.validate.field).string.well_known_regex = KNOWN_REGEX_HTTP_HEADER_VALUE];
    * }
    * ```
@@ -1960,51 +2282,18 @@ private static final long serialVersionUID = 0L;
    * | Name                          | Number | Description                               |
    * |-------------------------------|--------|-------------------------------------------|
    * | KNOWN_REGEX_UNSPECIFIED       | 0      |                                           |
-   * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2)  |
-   * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2.4) |
+   * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2)  |
+   * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.4) |
    * </pre>
    *
-   * <code>.buf.validate.KnownRegex well_known_regex = 24 [json_name = "wellKnownRegex", (.buf.validate.priv.field) = { ... }</code>
-   * @return The enum numeric value on the wire for wellKnownRegex.
-   */
-  public int getWellKnownRegexValue() {
-    if (wellKnownCase_ == 24) {
-      return (java.lang.Integer) wellKnown_;
-    }
-    return 0;
-  }
-  /**
-   * <pre>
-   * `well_known_regex` specifies a common well-known pattern
-   * defined as a regex. If the field value doesn't match the well-known
-   * regex, an error message will be generated.
-   *
-   * ```proto
-   * message MyString {
-   *   // value must be a valid HTTP header value
-   *   string value = 1 [(buf.validate.field).string.well_known_regex = KNOWN_REGEX_HTTP_HEADER_VALUE];
-   * }
-   * ```
-   *
-   * #### KnownRegex
-   *
-   * `well_known_regex` contains some well-known patterns.
-   *
-   * | Name                          | Number | Description                               |
-   * |-------------------------------|--------|-------------------------------------------|
-   * | KNOWN_REGEX_UNSPECIFIED       | 0      |                                           |
-   * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2)  |
-   * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2.4) |
-   * </pre>
-   *
-   * <code>.buf.validate.KnownRegex well_known_regex = 24 [json_name = "wellKnownRegex", (.buf.validate.priv.field) = { ... }</code>
+   * <code>.buf.validate.KnownRegex well_known_regex = 24 [json_name = "wellKnownRegex", (.buf.validate.predefined) = { ... }</code>
    * @return The wellKnownRegex.
    */
   public com.scalekit.grpc.buf.validate.KnownRegex getWellKnownRegex() {
     if (wellKnownCase_ == 24) {
       com.scalekit.grpc.buf.validate.KnownRegex result = com.scalekit.grpc.buf.validate.KnownRegex.forNumber(
           (java.lang.Integer) wellKnown_);
-      return result == null ? com.scalekit.grpc.buf.validate.KnownRegex.UNRECOGNIZED : result;
+      return result == null ? com.scalekit.grpc.buf.validate.KnownRegex.KNOWN_REGEX_UNSPECIFIED : result;
     }
     return com.scalekit.grpc.buf.validate.KnownRegex.KNOWN_REGEX_UNSPECIFIED;
   }
@@ -2015,7 +2304,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * This applies to regexes `HTTP_HEADER_NAME` and `HTTP_HEADER_VALUE` to
    * enable strict header validation. By default, this is true, and HTTP header
-   * validations are [RFC-compliant](https://tools.ietf.org/html/rfc7230#section-3). Setting to false will enable looser
+   * validations are [RFC-compliant](https://datatracker.ietf.org/doc/html/rfc7230#section-3). Setting to false will enable looser
    * validations that only disallow `&#92;r&#92;n&#92;0` characters, which can be used to
    * bypass header matching rules.
    *
@@ -2038,7 +2327,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * This applies to regexes `HTTP_HEADER_NAME` and `HTTP_HEADER_VALUE` to
    * enable strict header validation. By default, this is true, and HTTP header
-   * validations are [RFC-compliant](https://tools.ietf.org/html/rfc7230#section-3). Setting to false will enable looser
+   * validations are [RFC-compliant](https://datatracker.ietf.org/doc/html/rfc7230#section-3). Setting to false will enable looser
    * validations that only disallow `&#92;r&#92;n&#92;0` characters, which can be used to
    * bypass header matching rules.
    *
@@ -2058,6 +2347,103 @@ private static final long serialVersionUID = 0L;
     return strict_;
   }
 
+  public static final int EXAMPLE_FIELD_NUMBER = 34;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList example_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <pre>
+   * `example` specifies values that the field may have. These values SHOULD
+   * conform to other rules. `example` values will not impact validation
+   * but may be used as helpful guidance on how to populate the given field.
+   *
+   * ```proto
+   * message MyString {
+   *   string value = 1 [
+   *     (buf.validate.field).string.example = "hello",
+   *     (buf.validate.field).string.example = "world"
+   *   ];
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>repeated string example = 34 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
+   * @return A list containing the example.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getExampleList() {
+    return example_;
+  }
+  /**
+   * <pre>
+   * `example` specifies values that the field may have. These values SHOULD
+   * conform to other rules. `example` values will not impact validation
+   * but may be used as helpful guidance on how to populate the given field.
+   *
+   * ```proto
+   * message MyString {
+   *   string value = 1 [
+   *     (buf.validate.field).string.example = "hello",
+   *     (buf.validate.field).string.example = "world"
+   *   ];
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>repeated string example = 34 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
+   * @return The count of example.
+   */
+  public int getExampleCount() {
+    return example_.size();
+  }
+  /**
+   * <pre>
+   * `example` specifies values that the field may have. These values SHOULD
+   * conform to other rules. `example` values will not impact validation
+   * but may be used as helpful guidance on how to populate the given field.
+   *
+   * ```proto
+   * message MyString {
+   *   string value = 1 [
+   *     (buf.validate.field).string.example = "hello",
+   *     (buf.validate.field).string.example = "world"
+   *   ];
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>repeated string example = 34 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The example at the given index.
+   */
+  public java.lang.String getExample(int index) {
+    return example_.get(index);
+  }
+  /**
+   * <pre>
+   * `example` specifies values that the field may have. These values SHOULD
+   * conform to other rules. `example` values will not impact validation
+   * but may be used as helpful guidance on how to populate the given field.
+   *
+   * ```proto
+   * message MyString {
+   *   string value = 1 [
+   *     (buf.validate.field).string.example = "hello",
+   *     (buf.validate.field).string.example = "world"
+   *   ];
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>repeated string example = 34 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the example at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getExampleBytes(int index) {
+    return example_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -2065,6 +2451,10 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
+    if (!extensionsAreInitialized()) {
+      memoizedIsInitialized = 0;
+      return false;
+    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -2072,6 +2462,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    com.google.protobuf.GeneratedMessageV3
+      .ExtendableMessage<com.scalekit.grpc.buf.validate.StringRules>.ExtensionWriter
+        extensionWriter = newExtensionWriter();
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, const_);
     }
@@ -2188,6 +2581,22 @@ private static final long serialVersionUID = 0L;
       output.writeBool(
           33, (boolean)((java.lang.Boolean) wellKnown_));
     }
+    for (int i = 0; i < example_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 34, example_.getRaw(i));
+    }
+    if (wellKnownCase_ == 35) {
+      output.writeBool(
+          35, (boolean)((java.lang.Boolean) wellKnown_));
+    }
+    if (wellKnownCase_ == 37) {
+      output.writeBool(
+          37, (boolean)((java.lang.Boolean) wellKnown_));
+    }
+    if (wellKnownCase_ == 38) {
+      output.writeBool(
+          38, (boolean)((java.lang.Boolean) wellKnown_));
+    }
+    extensionWriter.writeUntil(536870912, output);
     getUnknownFields().writeTo(output);
   }
 
@@ -2348,6 +2757,30 @@ private static final long serialVersionUID = 0L;
         .computeBoolSize(
             33, (boolean)((java.lang.Boolean) wellKnown_));
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < example_.size(); i++) {
+        dataSize += computeStringSizeNoTag(example_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getExampleList().size();
+    }
+    if (wellKnownCase_ == 35) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            35, (boolean)((java.lang.Boolean) wellKnown_));
+    }
+    if (wellKnownCase_ == 37) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            37, (boolean)((java.lang.Boolean) wellKnown_));
+    }
+    if (wellKnownCase_ == 38) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            38, (boolean)((java.lang.Boolean) wellKnown_));
+    }
+    size += extensionsSerializedSize();
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2432,6 +2865,8 @@ private static final long serialVersionUID = 0L;
       if (getStrict()
           != other.getStrict()) return false;
     }
+    if (!getExampleList()
+        .equals(other.getExampleList())) return false;
     if (!getWellKnownCase().equals(other.getWellKnownCase())) return false;
     switch (wellKnownCase_) {
       case 12:
@@ -2502,14 +2937,28 @@ private static final long serialVersionUID = 0L;
         if (getHostAndPort()
             != other.getHostAndPort()) return false;
         break;
+      case 35:
+        if (getUlid()
+            != other.getUlid()) return false;
+        break;
+      case 37:
+        if (getProtobufFqn()
+            != other.getProtobufFqn()) return false;
+        break;
+      case 38:
+        if (getProtobufDotFqn()
+            != other.getProtobufDotFqn()) return false;
+        break;
       case 24:
-        if (getWellKnownRegexValue()
-            != other.getWellKnownRegexValue()) return false;
+        if (!getWellKnownRegex()
+            .equals(other.getWellKnownRegex())) return false;
         break;
       case 0:
       default:
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    if (!getExtensionFields().equals(other.getExtensionFields()))
+      return false;
     return true;
   }
 
@@ -2586,6 +3035,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + STRICT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getStrict());
+    }
+    if (getExampleCount() > 0) {
+      hash = (37 * hash) + EXAMPLE_FIELD_NUMBER;
+      hash = (53 * hash) + getExampleList().hashCode();
     }
     switch (wellKnownCase_) {
       case 12:
@@ -2673,13 +3126,29 @@ private static final long serialVersionUID = 0L;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getHostAndPort());
         break;
+      case 35:
+        hash = (37 * hash) + ULID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getUlid());
+        break;
+      case 37:
+        hash = (37 * hash) + PROTOBUF_FQN_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getProtobufFqn());
+        break;
+      case 38:
+        hash = (37 * hash) + PROTOBUF_DOT_FQN_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getProtobufDotFqn());
+        break;
       case 24:
         hash = (37 * hash) + WELL_KNOWN_REGEX_FIELD_NUMBER;
-        hash = (53 * hash) + getWellKnownRegexValue();
+        hash = (53 * hash) + getWellKnownRegex().getNumber();
         break;
       case 0:
       default:
     }
+    hash = hashFields(hash, getExtensionFields());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2779,14 +3248,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * StringRules describes the constraints applied to `string` values These
+   * StringRules describes the rules applied to `string` values These
    * rules may also be applied to the `google.protobuf.StringValue` Well-Known-Type.
    * </pre>
    *
    * Protobuf type {@code buf.validate.StringRules}
    */
   public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<
+        com.scalekit.grpc.buf.validate.StringRules, Builder> implements
       // @@protoc_insertion_point(builder_implements:buf.validate.StringRules)
       com.scalekit.grpc.buf.validate.StringRulesOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -2834,6 +3304,8 @@ private static final long serialVersionUID = 0L;
       notIn_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
       strict_ = false;
+      example_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       wellKnownCase_ = 0;
       wellKnown_ = null;
       return this;
@@ -2934,9 +3406,13 @@ private static final long serialVersionUID = 0L;
     private void buildPartial1(com.scalekit.grpc.buf.validate.StringRules result) {
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
-      if (((from_bitField1_ & 0x00000001) != 0)) {
+      if (((from_bitField1_ & 0x00000008) != 0)) {
         result.strict_ = strict_;
         to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField1_ & 0x00000010) != 0)) {
+        example_.makeImmutable();
+        result.example_ = example_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2977,6 +3453,33 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return super.addRepeatedField(field, value);
+    }
+    @java.lang.Override
+    public <Type> Builder setExtension(
+        com.google.protobuf.GeneratedMessage.GeneratedExtension<
+            com.scalekit.grpc.buf.validate.StringRules, Type> extension,
+        Type value) {
+      return super.setExtension(extension, value);
+    }
+    @java.lang.Override
+    public <Type> Builder setExtension(
+        com.google.protobuf.GeneratedMessage.GeneratedExtension<
+            com.scalekit.grpc.buf.validate.StringRules, java.util.List<Type>> extension,
+        int index, Type value) {
+      return super.setExtension(extension, index, value);
+    }
+    @java.lang.Override
+    public <Type> Builder addExtension(
+        com.google.protobuf.GeneratedMessage.GeneratedExtension<
+            com.scalekit.grpc.buf.validate.StringRules, java.util.List<Type>> extension,
+        Type value) {
+      return super.addExtension(extension, value);
+    }
+    @java.lang.Override
+    public <T> Builder clearExtension(
+        com.google.protobuf.GeneratedMessage.GeneratedExtension<
+            com.scalekit.grpc.buf.validate.StringRules, T> extension) {
+      return super.clearExtension(extension);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3061,6 +3564,16 @@ private static final long serialVersionUID = 0L;
       if (other.hasStrict()) {
         setStrict(other.getStrict());
       }
+      if (!other.example_.isEmpty()) {
+        if (example_.isEmpty()) {
+          example_ = other.example_;
+          bitField1_ |= 0x00000010;
+        } else {
+          ensureExampleIsMutable();
+          example_.addAll(other.example_);
+        }
+        onChanged();
+      }
       switch (other.getWellKnownCase()) {
         case EMAIL: {
           setEmail(other.getEmail());
@@ -3130,14 +3643,27 @@ private static final long serialVersionUID = 0L;
           setHostAndPort(other.getHostAndPort());
           break;
         }
+        case ULID: {
+          setUlid(other.getUlid());
+          break;
+        }
+        case PROTOBUF_FQN: {
+          setProtobufFqn(other.getProtobufFqn());
+          break;
+        }
+        case PROTOBUF_DOT_FQN: {
+          setProtobufDotFqn(other.getProtobufDotFqn());
+          break;
+        }
         case WELL_KNOWN_REGEX: {
-          setWellKnownRegexValue(other.getWellKnownRegexValue());
+          setWellKnownRegex(other.getWellKnownRegex());
           break;
         }
         case WELLKNOWN_NOT_SET: {
           break;
         }
       }
+      this.mergeExtensionFields(other);
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3145,6 +3671,9 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
+      if (!extensionsAreInitialized()) {
+        return false;
+      }
       return true;
     }
 
@@ -3165,7 +3694,7 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              const_ = input.readStringRequireUtf8();
+              const_ = input.readBytes();
               bitField0_ |= 0x00000001;
               break;
             } // case 10
@@ -3190,35 +3719,35 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 40
             case 50: {
-              pattern_ = input.readStringRequireUtf8();
+              pattern_ = input.readBytes();
               bitField0_ |= 0x00000080;
               break;
             } // case 50
             case 58: {
-              prefix_ = input.readStringRequireUtf8();
+              prefix_ = input.readBytes();
               bitField0_ |= 0x00000100;
               break;
             } // case 58
             case 66: {
-              suffix_ = input.readStringRequireUtf8();
+              suffix_ = input.readBytes();
               bitField0_ |= 0x00000200;
               break;
             } // case 66
             case 74: {
-              contains_ = input.readStringRequireUtf8();
+              contains_ = input.readBytes();
               bitField0_ |= 0x00000400;
               break;
             } // case 74
             case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.google.protobuf.ByteString bs = input.readBytes();
               ensureInIsMutable();
-              in_.add(s);
+              in_.add(bs);
               break;
             } // case 82
             case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.google.protobuf.ByteString bs = input.readBytes();
               ensureNotInIsMutable();
-              notIn_.add(s);
+              notIn_.add(bs);
               break;
             } // case 90
             case 96: {
@@ -3277,19 +3806,25 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 176
             case 186: {
-              notContains_ = input.readStringRequireUtf8();
+              notContains_ = input.readBytes();
               bitField0_ |= 0x00000800;
               break;
             } // case 186
             case 192: {
               int rawValue = input.readEnum();
-              wellKnownCase_ = 24;
-              wellKnown_ = rawValue;
+              com.scalekit.grpc.buf.validate.KnownRegex value =
+                  com.scalekit.grpc.buf.validate.KnownRegex.forNumber(rawValue);
+              if (value == null) {
+                mergeUnknownVarintField(24, rawValue);
+              } else {
+                wellKnownCase_ = 24;
+                wellKnown_ = rawValue;
+              }
               break;
             } // case 192
             case 200: {
               strict_ = input.readBool();
-              bitField1_ |= 0x00000001;
+              bitField1_ |= 0x00000008;
               break;
             } // case 200
             case 208: {
@@ -3332,6 +3867,27 @@ private static final long serialVersionUID = 0L;
               wellKnownCase_ = 33;
               break;
             } // case 264
+            case 274: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              ensureExampleIsMutable();
+              example_.add(bs);
+              break;
+            } // case 274
+            case 280: {
+              wellKnown_ = input.readBool();
+              wellKnownCase_ = 35;
+              break;
+            } // case 280
+            case 296: {
+              wellKnown_ = input.readBool();
+              wellKnownCase_ = 37;
+              break;
+            } // case 296
+            case 304: {
+              wellKnown_ = input.readBool();
+              wellKnownCase_ = 38;
+              break;
+            } // case 304
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3379,7 +3935,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the const field is set.
      */
     public boolean hasConst() {
@@ -3398,7 +3954,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
      * @return The const.
      */
     public java.lang.String getConst() {
@@ -3407,7 +3963,9 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        const_ = s;
+        if (bs.isValidUtf8()) {
+          const_ = s;
+        }
         return s;
       } else {
         return (java.lang.String) ref;
@@ -3426,7 +3984,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
      * @return The bytes for const.
      */
     public com.google.protobuf.ByteString
@@ -3455,7 +4013,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
      * @param value The const to set.
      * @return This builder for chaining.
      */
@@ -3480,7 +4038,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearConst() {
@@ -3502,14 +4060,13 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
      * @param value The bytes for const to set.
      * @return This builder for chaining.
      */
     public Builder setConstBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
       const_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
@@ -3532,7 +4089,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 len = 19 [json_name = "len", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 len = 19 [json_name = "len", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the len field is set.
      */
     @java.lang.Override
@@ -3554,7 +4111,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 len = 19 [json_name = "len", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 len = 19 [json_name = "len", (.buf.validate.predefined) = { ... }</code>
      * @return The len.
      */
     @java.lang.Override
@@ -3576,7 +4133,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 len = 19 [json_name = "len", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 len = 19 [json_name = "len", (.buf.validate.predefined) = { ... }</code>
      * @param value The len to set.
      * @return This builder for chaining.
      */
@@ -3602,7 +4159,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 len = 19 [json_name = "len", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 len = 19 [json_name = "len", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearLen() {
@@ -3628,7 +4185,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 min_len = 2 [json_name = "minLen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 min_len = 2 [json_name = "minLen", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the minLen field is set.
      */
     @java.lang.Override
@@ -3650,7 +4207,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 min_len = 2 [json_name = "minLen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 min_len = 2 [json_name = "minLen", (.buf.validate.predefined) = { ... }</code>
      * @return The minLen.
      */
     @java.lang.Override
@@ -3672,7 +4229,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 min_len = 2 [json_name = "minLen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 min_len = 2 [json_name = "minLen", (.buf.validate.predefined) = { ... }</code>
      * @param value The minLen to set.
      * @return This builder for chaining.
      */
@@ -3698,7 +4255,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 min_len = 2 [json_name = "minLen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 min_len = 2 [json_name = "minLen", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearMinLen() {
@@ -3724,7 +4281,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 max_len = 3 [json_name = "maxLen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 max_len = 3 [json_name = "maxLen", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the maxLen field is set.
      */
     @java.lang.Override
@@ -3746,7 +4303,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 max_len = 3 [json_name = "maxLen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 max_len = 3 [json_name = "maxLen", (.buf.validate.predefined) = { ... }</code>
      * @return The maxLen.
      */
     @java.lang.Override
@@ -3768,7 +4325,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 max_len = 3 [json_name = "maxLen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 max_len = 3 [json_name = "maxLen", (.buf.validate.predefined) = { ... }</code>
      * @param value The maxLen to set.
      * @return This builder for chaining.
      */
@@ -3794,7 +4351,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 max_len = 3 [json_name = "maxLen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 max_len = 3 [json_name = "maxLen", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxLen() {
@@ -3819,7 +4376,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 len_bytes = 20 [json_name = "lenBytes", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 len_bytes = 20 [json_name = "lenBytes", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the lenBytes field is set.
      */
     @java.lang.Override
@@ -3840,7 +4397,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 len_bytes = 20 [json_name = "lenBytes", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 len_bytes = 20 [json_name = "lenBytes", (.buf.validate.predefined) = { ... }</code>
      * @return The lenBytes.
      */
     @java.lang.Override
@@ -3861,7 +4418,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 len_bytes = 20 [json_name = "lenBytes", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 len_bytes = 20 [json_name = "lenBytes", (.buf.validate.predefined) = { ... }</code>
      * @param value The lenBytes to set.
      * @return This builder for chaining.
      */
@@ -3886,7 +4443,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 len_bytes = 20 [json_name = "lenBytes", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 len_bytes = 20 [json_name = "lenBytes", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearLenBytes() {
@@ -3912,7 +4469,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 min_bytes = 4 [json_name = "minBytes", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 min_bytes = 4 [json_name = "minBytes", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the minBytes field is set.
      */
     @java.lang.Override
@@ -3934,7 +4491,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 min_bytes = 4 [json_name = "minBytes", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 min_bytes = 4 [json_name = "minBytes", (.buf.validate.predefined) = { ... }</code>
      * @return The minBytes.
      */
     @java.lang.Override
@@ -3956,7 +4513,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 min_bytes = 4 [json_name = "minBytes", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 min_bytes = 4 [json_name = "minBytes", (.buf.validate.predefined) = { ... }</code>
      * @param value The minBytes to set.
      * @return This builder for chaining.
      */
@@ -3982,7 +4539,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 min_bytes = 4 [json_name = "minBytes", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 min_bytes = 4 [json_name = "minBytes", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearMinBytes() {
@@ -3996,7 +4553,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `max_bytes` specifies that the field value must have no more than the
-     *specified number of bytes. If the field value contains more bytes, an
+     * specified number of bytes. If the field value contains more bytes, an
      * error message will be generated.
      *
      * ```proto
@@ -4007,7 +4564,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 max_bytes = 5 [json_name = "maxBytes", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 max_bytes = 5 [json_name = "maxBytes", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the maxBytes field is set.
      */
     @java.lang.Override
@@ -4017,7 +4574,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `max_bytes` specifies that the field value must have no more than the
-     *specified number of bytes. If the field value contains more bytes, an
+     * specified number of bytes. If the field value contains more bytes, an
      * error message will be generated.
      *
      * ```proto
@@ -4028,7 +4585,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 max_bytes = 5 [json_name = "maxBytes", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 max_bytes = 5 [json_name = "maxBytes", (.buf.validate.predefined) = { ... }</code>
      * @return The maxBytes.
      */
     @java.lang.Override
@@ -4038,7 +4595,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `max_bytes` specifies that the field value must have no more than the
-     *specified number of bytes. If the field value contains more bytes, an
+     * specified number of bytes. If the field value contains more bytes, an
      * error message will be generated.
      *
      * ```proto
@@ -4049,7 +4606,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 max_bytes = 5 [json_name = "maxBytes", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 max_bytes = 5 [json_name = "maxBytes", (.buf.validate.predefined) = { ... }</code>
      * @param value The maxBytes to set.
      * @return This builder for chaining.
      */
@@ -4063,7 +4620,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `max_bytes` specifies that the field value must have no more than the
-     *specified number of bytes. If the field value contains more bytes, an
+     * specified number of bytes. If the field value contains more bytes, an
      * error message will be generated.
      *
      * ```proto
@@ -4074,7 +4631,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 max_bytes = 5 [json_name = "maxBytes", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 max_bytes = 5 [json_name = "maxBytes", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxBytes() {
@@ -4100,7 +4657,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the pattern field is set.
      */
     public boolean hasPattern() {
@@ -4121,7 +4678,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.predefined) = { ... }</code>
      * @return The pattern.
      */
     public java.lang.String getPattern() {
@@ -4130,7 +4687,9 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        pattern_ = s;
+        if (bs.isValidUtf8()) {
+          pattern_ = s;
+        }
         return s;
       } else {
         return (java.lang.String) ref;
@@ -4151,7 +4710,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.predefined) = { ... }</code>
      * @return The bytes for pattern.
      */
     public com.google.protobuf.ByteString
@@ -4182,7 +4741,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.predefined) = { ... }</code>
      * @param value The pattern to set.
      * @return This builder for chaining.
      */
@@ -4209,7 +4768,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearPattern() {
@@ -4233,14 +4792,13 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string pattern = 6 [json_name = "pattern", (.buf.validate.predefined) = { ... }</code>
      * @param value The bytes for pattern to set.
      * @return This builder for chaining.
      */
     public Builder setPatternBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
       pattern_ = value;
       bitField0_ |= 0x00000080;
       onChanged();
@@ -4251,7 +4809,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `prefix` specifies that the field value must have the
-     *specified substring at the beginning of the string. If the field value
+     * specified substring at the beginning of the string. If the field value
      * doesn't start with the specified prefix, an error message will be
      * generated.
      *
@@ -4263,7 +4821,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the prefix field is set.
      */
     public boolean hasPrefix() {
@@ -4272,7 +4830,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `prefix` specifies that the field value must have the
-     *specified substring at the beginning of the string. If the field value
+     * specified substring at the beginning of the string. If the field value
      * doesn't start with the specified prefix, an error message will be
      * generated.
      *
@@ -4284,7 +4842,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.predefined) = { ... }</code>
      * @return The prefix.
      */
     public java.lang.String getPrefix() {
@@ -4293,7 +4851,9 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        prefix_ = s;
+        if (bs.isValidUtf8()) {
+          prefix_ = s;
+        }
         return s;
       } else {
         return (java.lang.String) ref;
@@ -4302,7 +4862,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `prefix` specifies that the field value must have the
-     *specified substring at the beginning of the string. If the field value
+     * specified substring at the beginning of the string. If the field value
      * doesn't start with the specified prefix, an error message will be
      * generated.
      *
@@ -4314,7 +4874,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.predefined) = { ... }</code>
      * @return The bytes for prefix.
      */
     public com.google.protobuf.ByteString
@@ -4333,7 +4893,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `prefix` specifies that the field value must have the
-     *specified substring at the beginning of the string. If the field value
+     * specified substring at the beginning of the string. If the field value
      * doesn't start with the specified prefix, an error message will be
      * generated.
      *
@@ -4345,7 +4905,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.predefined) = { ... }</code>
      * @param value The prefix to set.
      * @return This builder for chaining.
      */
@@ -4360,7 +4920,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `prefix` specifies that the field value must have the
-     *specified substring at the beginning of the string. If the field value
+     * specified substring at the beginning of the string. If the field value
      * doesn't start with the specified prefix, an error message will be
      * generated.
      *
@@ -4372,7 +4932,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearPrefix() {
@@ -4384,7 +4944,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `prefix` specifies that the field value must have the
-     *specified substring at the beginning of the string. If the field value
+     * specified substring at the beginning of the string. If the field value
      * doesn't start with the specified prefix, an error message will be
      * generated.
      *
@@ -4396,14 +4956,13 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string prefix = 7 [json_name = "prefix", (.buf.validate.predefined) = { ... }</code>
      * @param value The bytes for prefix to set.
      * @return This builder for chaining.
      */
     public Builder setPrefixBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
       prefix_ = value;
       bitField0_ |= 0x00000100;
       onChanged();
@@ -4414,7 +4973,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `suffix` specifies that the field value must have the
-     *specified substring at the end of the string. If the field value doesn't
+     * specified substring at the end of the string. If the field value doesn't
      * end with the specified suffix, an error message will be generated.
      *
      * ```proto
@@ -4425,7 +4984,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the suffix field is set.
      */
     public boolean hasSuffix() {
@@ -4434,7 +4993,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `suffix` specifies that the field value must have the
-     *specified substring at the end of the string. If the field value doesn't
+     * specified substring at the end of the string. If the field value doesn't
      * end with the specified suffix, an error message will be generated.
      *
      * ```proto
@@ -4445,7 +5004,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.predefined) = { ... }</code>
      * @return The suffix.
      */
     public java.lang.String getSuffix() {
@@ -4454,7 +5013,9 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        suffix_ = s;
+        if (bs.isValidUtf8()) {
+          suffix_ = s;
+        }
         return s;
       } else {
         return (java.lang.String) ref;
@@ -4463,7 +5024,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `suffix` specifies that the field value must have the
-     *specified substring at the end of the string. If the field value doesn't
+     * specified substring at the end of the string. If the field value doesn't
      * end with the specified suffix, an error message will be generated.
      *
      * ```proto
@@ -4474,7 +5035,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.predefined) = { ... }</code>
      * @return The bytes for suffix.
      */
     public com.google.protobuf.ByteString
@@ -4493,7 +5054,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `suffix` specifies that the field value must have the
-     *specified substring at the end of the string. If the field value doesn't
+     * specified substring at the end of the string. If the field value doesn't
      * end with the specified suffix, an error message will be generated.
      *
      * ```proto
@@ -4504,7 +5065,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.predefined) = { ... }</code>
      * @param value The suffix to set.
      * @return This builder for chaining.
      */
@@ -4519,7 +5080,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `suffix` specifies that the field value must have the
-     *specified substring at the end of the string. If the field value doesn't
+     * specified substring at the end of the string. If the field value doesn't
      * end with the specified suffix, an error message will be generated.
      *
      * ```proto
@@ -4530,7 +5091,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearSuffix() {
@@ -4542,7 +5103,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `suffix` specifies that the field value must have the
-     *specified substring at the end of the string. If the field value doesn't
+     * specified substring at the end of the string. If the field value doesn't
      * end with the specified suffix, an error message will be generated.
      *
      * ```proto
@@ -4553,14 +5114,13 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string suffix = 8 [json_name = "suffix", (.buf.validate.predefined) = { ... }</code>
      * @param value The bytes for suffix to set.
      * @return This builder for chaining.
      */
     public Builder setSuffixBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
       suffix_ = value;
       bitField0_ |= 0x00000200;
       onChanged();
@@ -4571,7 +5131,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `contains` specifies that the field value must have the
-     *specified substring anywhere in the string. If the field value doesn't
+     * specified substring anywhere in the string. If the field value doesn't
      * contain the specified substring, an error message will be generated.
      *
      * ```proto
@@ -4582,7 +5142,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the contains field is set.
      */
     public boolean hasContains() {
@@ -4591,7 +5151,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `contains` specifies that the field value must have the
-     *specified substring anywhere in the string. If the field value doesn't
+     * specified substring anywhere in the string. If the field value doesn't
      * contain the specified substring, an error message will be generated.
      *
      * ```proto
@@ -4602,7 +5162,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.predefined) = { ... }</code>
      * @return The contains.
      */
     public java.lang.String getContains() {
@@ -4611,7 +5171,9 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        contains_ = s;
+        if (bs.isValidUtf8()) {
+          contains_ = s;
+        }
         return s;
       } else {
         return (java.lang.String) ref;
@@ -4620,7 +5182,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `contains` specifies that the field value must have the
-     *specified substring anywhere in the string. If the field value doesn't
+     * specified substring anywhere in the string. If the field value doesn't
      * contain the specified substring, an error message will be generated.
      *
      * ```proto
@@ -4631,7 +5193,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.predefined) = { ... }</code>
      * @return The bytes for contains.
      */
     public com.google.protobuf.ByteString
@@ -4650,7 +5212,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `contains` specifies that the field value must have the
-     *specified substring anywhere in the string. If the field value doesn't
+     * specified substring anywhere in the string. If the field value doesn't
      * contain the specified substring, an error message will be generated.
      *
      * ```proto
@@ -4661,7 +5223,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.predefined) = { ... }</code>
      * @param value The contains to set.
      * @return This builder for chaining.
      */
@@ -4676,7 +5238,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `contains` specifies that the field value must have the
-     *specified substring anywhere in the string. If the field value doesn't
+     * specified substring anywhere in the string. If the field value doesn't
      * contain the specified substring, an error message will be generated.
      *
      * ```proto
@@ -4687,7 +5249,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearContains() {
@@ -4699,7 +5261,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `contains` specifies that the field value must have the
-     *specified substring anywhere in the string. If the field value doesn't
+     * specified substring anywhere in the string. If the field value doesn't
      * contain the specified substring, an error message will be generated.
      *
      * ```proto
@@ -4710,14 +5272,13 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string contains = 9 [json_name = "contains", (.buf.validate.predefined) = { ... }</code>
      * @param value The bytes for contains to set.
      * @return This builder for chaining.
      */
     public Builder setContainsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
       contains_ = value;
       bitField0_ |= 0x00000400;
       onChanged();
@@ -4728,7 +5289,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `not_contains` specifies that the field value must not have the
-     *specified substring anywhere in the string. If the field value contains
+     * specified substring anywhere in the string. If the field value contains
      * the specified substring, an error message will be generated.
      *
      * ```proto
@@ -4739,7 +5300,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the notContains field is set.
      */
     public boolean hasNotContains() {
@@ -4748,7 +5309,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `not_contains` specifies that the field value must not have the
-     *specified substring anywhere in the string. If the field value contains
+     * specified substring anywhere in the string. If the field value contains
      * the specified substring, an error message will be generated.
      *
      * ```proto
@@ -4759,7 +5320,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.predefined) = { ... }</code>
      * @return The notContains.
      */
     public java.lang.String getNotContains() {
@@ -4768,7 +5329,9 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        notContains_ = s;
+        if (bs.isValidUtf8()) {
+          notContains_ = s;
+        }
         return s;
       } else {
         return (java.lang.String) ref;
@@ -4777,7 +5340,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `not_contains` specifies that the field value must not have the
-     *specified substring anywhere in the string. If the field value contains
+     * specified substring anywhere in the string. If the field value contains
      * the specified substring, an error message will be generated.
      *
      * ```proto
@@ -4788,7 +5351,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.predefined) = { ... }</code>
      * @return The bytes for notContains.
      */
     public com.google.protobuf.ByteString
@@ -4807,7 +5370,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `not_contains` specifies that the field value must not have the
-     *specified substring anywhere in the string. If the field value contains
+     * specified substring anywhere in the string. If the field value contains
      * the specified substring, an error message will be generated.
      *
      * ```proto
@@ -4818,7 +5381,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.predefined) = { ... }</code>
      * @param value The notContains to set.
      * @return This builder for chaining.
      */
@@ -4833,7 +5396,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `not_contains` specifies that the field value must not have the
-     *specified substring anywhere in the string. If the field value contains
+     * specified substring anywhere in the string. If the field value contains
      * the specified substring, an error message will be generated.
      *
      * ```proto
@@ -4844,7 +5407,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearNotContains() {
@@ -4856,7 +5419,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `not_contains` specifies that the field value must not have the
-     *specified substring anywhere in the string. If the field value contains
+     * specified substring anywhere in the string. If the field value contains
      * the specified substring, an error message will be generated.
      *
      * ```proto
@@ -4867,14 +5430,13 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional string not_contains = 23 [json_name = "notContains", (.buf.validate.predefined) = { ... }</code>
      * @param value The bytes for notContains to set.
      * @return This builder for chaining.
      */
     public Builder setNotContainsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
       notContains_ = value;
       bitField0_ |= 0x00000800;
       onChanged();
@@ -4897,13 +5459,13 @@ private static final long serialVersionUID = 0L;
      *
      * ```proto
      * message MyString {
-     *   // value must be in list ["apple", "banana"]
-     *   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+     *   // must be in list ["apple", "banana"]
+     *   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
      * @return A list containing the in.
      */
     public com.google.protobuf.ProtocolStringList
@@ -4919,13 +5481,13 @@ private static final long serialVersionUID = 0L;
      *
      * ```proto
      * message MyString {
-     *   // value must be in list ["apple", "banana"]
-     *   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+     *   // must be in list ["apple", "banana"]
+     *   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
      * @return The count of in.
      */
     public int getInCount() {
@@ -4939,13 +5501,13 @@ private static final long serialVersionUID = 0L;
      *
      * ```proto
      * message MyString {
-     *   // value must be in list ["apple", "banana"]
-     *   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+     *   // must be in list ["apple", "banana"]
+     *   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
      * @param index The index of the element to return.
      * @return The in at the given index.
      */
@@ -4960,13 +5522,13 @@ private static final long serialVersionUID = 0L;
      *
      * ```proto
      * message MyString {
-     *   // value must be in list ["apple", "banana"]
-     *   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+     *   // must be in list ["apple", "banana"]
+     *   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the in at the given index.
      */
@@ -4982,13 +5544,13 @@ private static final long serialVersionUID = 0L;
      *
      * ```proto
      * message MyString {
-     *   // value must be in list ["apple", "banana"]
-     *   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+     *   // must be in list ["apple", "banana"]
+     *   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
      * @param index The index to set the value at.
      * @param value The in to set.
      * @return This builder for chaining.
@@ -5010,13 +5572,13 @@ private static final long serialVersionUID = 0L;
      *
      * ```proto
      * message MyString {
-     *   // value must be in list ["apple", "banana"]
-     *   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+     *   // must be in list ["apple", "banana"]
+     *   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
      * @param value The in to add.
      * @return This builder for chaining.
      */
@@ -5037,13 +5599,13 @@ private static final long serialVersionUID = 0L;
      *
      * ```proto
      * message MyString {
-     *   // value must be in list ["apple", "banana"]
-     *   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+     *   // must be in list ["apple", "banana"]
+     *   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
      * @param values The in to add.
      * @return This builder for chaining.
      */
@@ -5064,13 +5626,13 @@ private static final long serialVersionUID = 0L;
      *
      * ```proto
      * message MyString {
-     *   // value must be in list ["apple", "banana"]
-     *   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+     *   // must be in list ["apple", "banana"]
+     *   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearIn() {
@@ -5088,20 +5650,19 @@ private static final long serialVersionUID = 0L;
      *
      * ```proto
      * message MyString {
-     *   // value must be in list ["apple", "banana"]
-     *   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+     *   // must be in list ["apple", "banana"]
+     *   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string in = 10 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
      * @param value The bytes of the in to add.
      * @return This builder for chaining.
      */
     public Builder addInBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
       ensureInIsMutable();
       in_.add(value);
       bitField0_ |= 0x00001000;
@@ -5125,12 +5686,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyString {
      *   // value must not be in list ["orange", "grape"]
-     *   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+     *   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
      * @return A list containing the notIn.
      */
     public com.google.protobuf.ProtocolStringList
@@ -5146,12 +5707,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyString {
      *   // value must not be in list ["orange", "grape"]
-     *   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+     *   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
      * @return The count of notIn.
      */
     public int getNotInCount() {
@@ -5165,12 +5726,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyString {
      *   // value must not be in list ["orange", "grape"]
-     *   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+     *   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
      * @param index The index of the element to return.
      * @return The notIn at the given index.
      */
@@ -5185,12 +5746,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyString {
      *   // value must not be in list ["orange", "grape"]
-     *   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+     *   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the notIn at the given index.
      */
@@ -5206,12 +5767,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyString {
      *   // value must not be in list ["orange", "grape"]
-     *   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+     *   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
      * @param index The index to set the value at.
      * @param value The notIn to set.
      * @return This builder for chaining.
@@ -5233,12 +5794,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyString {
      *   // value must not be in list ["orange", "grape"]
-     *   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+     *   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
      * @param value The notIn to add.
      * @return This builder for chaining.
      */
@@ -5259,12 +5820,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyString {
      *   // value must not be in list ["orange", "grape"]
-     *   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+     *   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
      * @param values The notIn to add.
      * @return This builder for chaining.
      */
@@ -5285,12 +5846,12 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyString {
      *   // value must not be in list ["orange", "grape"]
-     *   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+     *   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearNotIn() {
@@ -5308,19 +5869,18 @@ private static final long serialVersionUID = 0L;
      * ```proto
      * message MyString {
      *   // value must not be in list ["orange", "grape"]
-     *   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+     *   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
      * }
      * ```
      * </pre>
      *
-     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
+     * <code>repeated string not_in = 11 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
      * @param value The bytes of the notIn to add.
      * @return This builder for chaining.
      */
     public Builder addNotInBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
       ensureNotInIsMutable();
       notIn_.add(value);
       bitField0_ |= 0x00002000;
@@ -5330,19 +5890,25 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * `email` specifies that the field value must be a valid email address
-     * (addr-spec only) as defined by [RFC 5322](https://tools.ietf.org/html/rfc5322#section-3.4.1).
+     * `email` specifies that the field value must be a valid email address, for
+     * example "foo&#64;example.com".
+     *
+     * Conforms to the definition for a valid email address from the [HTML standard](https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address).
+     * Note that this standard willfully deviates from [RFC 5322](https://datatracker.ietf.org/doc/html/rfc5322),
+     * which allows many unexpected forms of email addresses and will easily match
+     * a typographical error.
+     *
      * If the field value isn't a valid email address, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid email address
+     *   // must be a valid email address
      *   string value = 1 [(buf.validate.field).string.email = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool email = 12 [json_name = "email", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool email = 12 [json_name = "email", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the email field is set.
      */
     public boolean hasEmail() {
@@ -5350,19 +5916,25 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `email` specifies that the field value must be a valid email address
-     * (addr-spec only) as defined by [RFC 5322](https://tools.ietf.org/html/rfc5322#section-3.4.1).
+     * `email` specifies that the field value must be a valid email address, for
+     * example "foo&#64;example.com".
+     *
+     * Conforms to the definition for a valid email address from the [HTML standard](https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address).
+     * Note that this standard willfully deviates from [RFC 5322](https://datatracker.ietf.org/doc/html/rfc5322),
+     * which allows many unexpected forms of email addresses and will easily match
+     * a typographical error.
+     *
      * If the field value isn't a valid email address, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid email address
+     *   // must be a valid email address
      *   string value = 1 [(buf.validate.field).string.email = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool email = 12 [json_name = "email", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool email = 12 [json_name = "email", (.buf.validate.predefined) = { ... }</code>
      * @return The email.
      */
     public boolean getEmail() {
@@ -5373,19 +5945,25 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `email` specifies that the field value must be a valid email address
-     * (addr-spec only) as defined by [RFC 5322](https://tools.ietf.org/html/rfc5322#section-3.4.1).
+     * `email` specifies that the field value must be a valid email address, for
+     * example "foo&#64;example.com".
+     *
+     * Conforms to the definition for a valid email address from the [HTML standard](https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address).
+     * Note that this standard willfully deviates from [RFC 5322](https://datatracker.ietf.org/doc/html/rfc5322),
+     * which allows many unexpected forms of email addresses and will easily match
+     * a typographical error.
+     *
      * If the field value isn't a valid email address, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid email address
+     *   // must be a valid email address
      *   string value = 1 [(buf.validate.field).string.email = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool email = 12 [json_name = "email", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool email = 12 [json_name = "email", (.buf.validate.predefined) = { ... }</code>
      * @param value The email to set.
      * @return This builder for chaining.
      */
@@ -5398,19 +5976,25 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `email` specifies that the field value must be a valid email address
-     * (addr-spec only) as defined by [RFC 5322](https://tools.ietf.org/html/rfc5322#section-3.4.1).
+     * `email` specifies that the field value must be a valid email address, for
+     * example "foo&#64;example.com".
+     *
+     * Conforms to the definition for a valid email address from the [HTML standard](https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address).
+     * Note that this standard willfully deviates from [RFC 5322](https://datatracker.ietf.org/doc/html/rfc5322),
+     * which allows many unexpected forms of email addresses and will easily match
+     * a typographical error.
+     *
      * If the field value isn't a valid email address, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid email address
+     *   // must be a valid email address
      *   string value = 1 [(buf.validate.field).string.email = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool email = 12 [json_name = "email", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool email = 12 [json_name = "email", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
@@ -5424,20 +6008,28 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * `hostname` specifies that the field value must be a valid
-     * hostname as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5). This constraint doesn't support
-     * internationalized domain names (IDNs). If the field value isn't a
-     * valid hostname, an error message will be generated.
+     * `hostname` specifies that the field value must be a valid hostname, for
+     * example "foo.example.com".
+     *
+     * A valid hostname follows the rules below:
+     * - The name consists of one or more labels, separated by a dot (".").
+     * - Each label can be 1 to 63 alphanumeric characters.
+     * - A label can contain hyphens ("-"), but must not start or end with a hyphen.
+     * - The right-most label must not be digits only.
+     * - The name can have a trailing dot—for example, "foo.example.com.".
+     * - The name can be 253 characters at most, excluding the optional trailing dot.
+     *
+     * If the field value isn't a valid hostname, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid hostname
+     *   // must be a valid hostname
      *   string value = 1 [(buf.validate.field).string.hostname = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool hostname = 13 [json_name = "hostname", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool hostname = 13 [json_name = "hostname", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the hostname field is set.
      */
     public boolean hasHostname() {
@@ -5445,20 +6037,28 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `hostname` specifies that the field value must be a valid
-     * hostname as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5). This constraint doesn't support
-     * internationalized domain names (IDNs). If the field value isn't a
-     * valid hostname, an error message will be generated.
+     * `hostname` specifies that the field value must be a valid hostname, for
+     * example "foo.example.com".
+     *
+     * A valid hostname follows the rules below:
+     * - The name consists of one or more labels, separated by a dot (".").
+     * - Each label can be 1 to 63 alphanumeric characters.
+     * - A label can contain hyphens ("-"), but must not start or end with a hyphen.
+     * - The right-most label must not be digits only.
+     * - The name can have a trailing dot—for example, "foo.example.com.".
+     * - The name can be 253 characters at most, excluding the optional trailing dot.
+     *
+     * If the field value isn't a valid hostname, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid hostname
+     *   // must be a valid hostname
      *   string value = 1 [(buf.validate.field).string.hostname = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool hostname = 13 [json_name = "hostname", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool hostname = 13 [json_name = "hostname", (.buf.validate.predefined) = { ... }</code>
      * @return The hostname.
      */
     public boolean getHostname() {
@@ -5469,20 +6069,28 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `hostname` specifies that the field value must be a valid
-     * hostname as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5). This constraint doesn't support
-     * internationalized domain names (IDNs). If the field value isn't a
-     * valid hostname, an error message will be generated.
+     * `hostname` specifies that the field value must be a valid hostname, for
+     * example "foo.example.com".
+     *
+     * A valid hostname follows the rules below:
+     * - The name consists of one or more labels, separated by a dot (".").
+     * - Each label can be 1 to 63 alphanumeric characters.
+     * - A label can contain hyphens ("-"), but must not start or end with a hyphen.
+     * - The right-most label must not be digits only.
+     * - The name can have a trailing dot—for example, "foo.example.com.".
+     * - The name can be 253 characters at most, excluding the optional trailing dot.
+     *
+     * If the field value isn't a valid hostname, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid hostname
+     *   // must be a valid hostname
      *   string value = 1 [(buf.validate.field).string.hostname = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool hostname = 13 [json_name = "hostname", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool hostname = 13 [json_name = "hostname", (.buf.validate.predefined) = { ... }</code>
      * @param value The hostname to set.
      * @return This builder for chaining.
      */
@@ -5495,20 +6103,28 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `hostname` specifies that the field value must be a valid
-     * hostname as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5). This constraint doesn't support
-     * internationalized domain names (IDNs). If the field value isn't a
-     * valid hostname, an error message will be generated.
+     * `hostname` specifies that the field value must be a valid hostname, for
+     * example "foo.example.com".
+     *
+     * A valid hostname follows the rules below:
+     * - The name consists of one or more labels, separated by a dot (".").
+     * - Each label can be 1 to 63 alphanumeric characters.
+     * - A label can contain hyphens ("-"), but must not start or end with a hyphen.
+     * - The right-most label must not be digits only.
+     * - The name can have a trailing dot—for example, "foo.example.com.".
+     * - The name can be 253 characters at most, excluding the optional trailing dot.
+     *
+     * If the field value isn't a valid hostname, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid hostname
+     *   // must be a valid hostname
      *   string value = 1 [(buf.validate.field).string.hostname = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool hostname = 13 [json_name = "hostname", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool hostname = 13 [json_name = "hostname", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearHostname() {
@@ -5522,20 +6138,27 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * `ip` specifies that the field value must be a valid IP
-     * (v4 or v6) address, without surrounding square brackets for IPv6 addresses.
+     * `ip` specifies that the field value must be a valid IP (v4 or v6) address.
+     *
+     * IPv4 addresses are expected in the dotted decimal format—for example, "192.168.5.21".
+     * IPv6 addresses are expected in their text representation—for example, "::1",
+     * or "2001:0DB8:ABCD:0012::0".
+     *
+     * Both formats are well-defined in the internet standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986).
+     * Zone identifiers for IPv6 addresses (for example, "fe80::a%en1") are supported.
+     *
      * If the field value isn't a valid IP address, an error message will be
      * generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IP address
+     *   // must be a valid IP address
      *   string value = 1 [(buf.validate.field).string.ip = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ip = 14 [json_name = "ip", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ip = 14 [json_name = "ip", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the ip field is set.
      */
     public boolean hasIp() {
@@ -5543,20 +6166,27 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ip` specifies that the field value must be a valid IP
-     * (v4 or v6) address, without surrounding square brackets for IPv6 addresses.
+     * `ip` specifies that the field value must be a valid IP (v4 or v6) address.
+     *
+     * IPv4 addresses are expected in the dotted decimal format—for example, "192.168.5.21".
+     * IPv6 addresses are expected in their text representation—for example, "::1",
+     * or "2001:0DB8:ABCD:0012::0".
+     *
+     * Both formats are well-defined in the internet standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986).
+     * Zone identifiers for IPv6 addresses (for example, "fe80::a%en1") are supported.
+     *
      * If the field value isn't a valid IP address, an error message will be
      * generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IP address
+     *   // must be a valid IP address
      *   string value = 1 [(buf.validate.field).string.ip = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ip = 14 [json_name = "ip", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ip = 14 [json_name = "ip", (.buf.validate.predefined) = { ... }</code>
      * @return The ip.
      */
     public boolean getIp() {
@@ -5567,20 +6197,27 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ip` specifies that the field value must be a valid IP
-     * (v4 or v6) address, without surrounding square brackets for IPv6 addresses.
+     * `ip` specifies that the field value must be a valid IP (v4 or v6) address.
+     *
+     * IPv4 addresses are expected in the dotted decimal format—for example, "192.168.5.21".
+     * IPv6 addresses are expected in their text representation—for example, "::1",
+     * or "2001:0DB8:ABCD:0012::0".
+     *
+     * Both formats are well-defined in the internet standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986).
+     * Zone identifiers for IPv6 addresses (for example, "fe80::a%en1") are supported.
+     *
      * If the field value isn't a valid IP address, an error message will be
      * generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IP address
+     *   // must be a valid IP address
      *   string value = 1 [(buf.validate.field).string.ip = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ip = 14 [json_name = "ip", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ip = 14 [json_name = "ip", (.buf.validate.predefined) = { ... }</code>
      * @param value The ip to set.
      * @return This builder for chaining.
      */
@@ -5593,20 +6230,27 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ip` specifies that the field value must be a valid IP
-     * (v4 or v6) address, without surrounding square brackets for IPv6 addresses.
+     * `ip` specifies that the field value must be a valid IP (v4 or v6) address.
+     *
+     * IPv4 addresses are expected in the dotted decimal format—for example, "192.168.5.21".
+     * IPv6 addresses are expected in their text representation—for example, "::1",
+     * or "2001:0DB8:ABCD:0012::0".
+     *
+     * Both formats are well-defined in the internet standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986).
+     * Zone identifiers for IPv6 addresses (for example, "fe80::a%en1") are supported.
+     *
      * If the field value isn't a valid IP address, an error message will be
      * generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IP address
+     *   // must be a valid IP address
      *   string value = 1 [(buf.validate.field).string.ip = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ip = 14 [json_name = "ip", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ip = 14 [json_name = "ip", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearIp() {
@@ -5620,19 +6264,19 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * `ipv4` specifies that the field value must be a valid IPv4
-     * address. If the field value isn't a valid IPv4 address, an error message
-     * will be generated.
+     * `ipv4` specifies that the field value must be a valid IPv4 address—for
+     * example "192.168.5.21". If the field value isn't a valid IPv4 address, an
+     * error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv4 address
+     *   // must be a valid IPv4 address
      *   string value = 1 [(buf.validate.field).string.ipv4 = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv4 = 15 [json_name = "ipv4", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv4 = 15 [json_name = "ipv4", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the ipv4 field is set.
      */
     public boolean hasIpv4() {
@@ -5640,19 +6284,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ipv4` specifies that the field value must be a valid IPv4
-     * address. If the field value isn't a valid IPv4 address, an error message
-     * will be generated.
+     * `ipv4` specifies that the field value must be a valid IPv4 address—for
+     * example "192.168.5.21". If the field value isn't a valid IPv4 address, an
+     * error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv4 address
+     *   // must be a valid IPv4 address
      *   string value = 1 [(buf.validate.field).string.ipv4 = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv4 = 15 [json_name = "ipv4", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv4 = 15 [json_name = "ipv4", (.buf.validate.predefined) = { ... }</code>
      * @return The ipv4.
      */
     public boolean getIpv4() {
@@ -5663,19 +6307,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ipv4` specifies that the field value must be a valid IPv4
-     * address. If the field value isn't a valid IPv4 address, an error message
-     * will be generated.
+     * `ipv4` specifies that the field value must be a valid IPv4 address—for
+     * example "192.168.5.21". If the field value isn't a valid IPv4 address, an
+     * error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv4 address
+     *   // must be a valid IPv4 address
      *   string value = 1 [(buf.validate.field).string.ipv4 = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv4 = 15 [json_name = "ipv4", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv4 = 15 [json_name = "ipv4", (.buf.validate.predefined) = { ... }</code>
      * @param value The ipv4 to set.
      * @return This builder for chaining.
      */
@@ -5688,19 +6332,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ipv4` specifies that the field value must be a valid IPv4
-     * address. If the field value isn't a valid IPv4 address, an error message
-     * will be generated.
+     * `ipv4` specifies that the field value must be a valid IPv4 address—for
+     * example "192.168.5.21". If the field value isn't a valid IPv4 address, an
+     * error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv4 address
+     *   // must be a valid IPv4 address
      *   string value = 1 [(buf.validate.field).string.ipv4 = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv4 = 15 [json_name = "ipv4", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv4 = 15 [json_name = "ipv4", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearIpv4() {
@@ -5714,19 +6358,19 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * `ipv6` specifies that the field value must be a valid
-     * IPv6 address, without surrounding square brackets. If the field value is
-     * not a valid IPv6 address, an error message will be generated.
+     * `ipv6` specifies that the field value must be a valid IPv6 address—for
+     * example "::1", or "d7a:115c:a1e0:ab12:4843:cd96:626b:430b". If the field
+     * value is not a valid IPv6 address, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv6 address
+     *   // must be a valid IPv6 address
      *   string value = 1 [(buf.validate.field).string.ipv6 = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv6 = 16 [json_name = "ipv6", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv6 = 16 [json_name = "ipv6", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the ipv6 field is set.
      */
     public boolean hasIpv6() {
@@ -5734,19 +6378,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ipv6` specifies that the field value must be a valid
-     * IPv6 address, without surrounding square brackets. If the field value is
-     * not a valid IPv6 address, an error message will be generated.
+     * `ipv6` specifies that the field value must be a valid IPv6 address—for
+     * example "::1", or "d7a:115c:a1e0:ab12:4843:cd96:626b:430b". If the field
+     * value is not a valid IPv6 address, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv6 address
+     *   // must be a valid IPv6 address
      *   string value = 1 [(buf.validate.field).string.ipv6 = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv6 = 16 [json_name = "ipv6", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv6 = 16 [json_name = "ipv6", (.buf.validate.predefined) = { ... }</code>
      * @return The ipv6.
      */
     public boolean getIpv6() {
@@ -5757,19 +6401,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ipv6` specifies that the field value must be a valid
-     * IPv6 address, without surrounding square brackets. If the field value is
-     * not a valid IPv6 address, an error message will be generated.
+     * `ipv6` specifies that the field value must be a valid IPv6 address—for
+     * example "::1", or "d7a:115c:a1e0:ab12:4843:cd96:626b:430b". If the field
+     * value is not a valid IPv6 address, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv6 address
+     *   // must be a valid IPv6 address
      *   string value = 1 [(buf.validate.field).string.ipv6 = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv6 = 16 [json_name = "ipv6", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv6 = 16 [json_name = "ipv6", (.buf.validate.predefined) = { ... }</code>
      * @param value The ipv6 to set.
      * @return This builder for chaining.
      */
@@ -5782,19 +6426,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ipv6` specifies that the field value must be a valid
-     * IPv6 address, without surrounding square brackets. If the field value is
-     * not a valid IPv6 address, an error message will be generated.
+     * `ipv6` specifies that the field value must be a valid IPv6 address—for
+     * example "::1", or "d7a:115c:a1e0:ab12:4843:cd96:626b:430b". If the field
+     * value is not a valid IPv6 address, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv6 address
+     *   // must be a valid IPv6 address
      *   string value = 1 [(buf.validate.field).string.ipv6 = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv6 = 16 [json_name = "ipv6", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv6 = 16 [json_name = "ipv6", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearIpv6() {
@@ -5808,19 +6452,23 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * `uri` specifies that the field value must be a valid,
-     * absolute URI as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3). If the field value isn't a valid,
-     * absolute URI, an error message will be generated.
+     * `uri` specifies that the field value must be a valid URI, for example
+     * "https://example.com/foo/bar?baz=quux#frag".
+     *
+     * URI is defined in the internet standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986).
+     * Zone Identifiers in IPv6 address literals are supported ([RFC 6874](https://datatracker.ietf.org/doc/html/rfc6874)).
+     *
+     * If the field value isn't a valid URI, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid URI
+     *   // must be a valid URI
      *   string value = 1 [(buf.validate.field).string.uri = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool uri = 17 [json_name = "uri", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool uri = 17 [json_name = "uri", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the uri field is set.
      */
     public boolean hasUri() {
@@ -5828,19 +6476,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `uri` specifies that the field value must be a valid,
-     * absolute URI as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3). If the field value isn't a valid,
-     * absolute URI, an error message will be generated.
+     * `uri` specifies that the field value must be a valid URI, for example
+     * "https://example.com/foo/bar?baz=quux#frag".
+     *
+     * URI is defined in the internet standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986).
+     * Zone Identifiers in IPv6 address literals are supported ([RFC 6874](https://datatracker.ietf.org/doc/html/rfc6874)).
+     *
+     * If the field value isn't a valid URI, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid URI
+     *   // must be a valid URI
      *   string value = 1 [(buf.validate.field).string.uri = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool uri = 17 [json_name = "uri", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool uri = 17 [json_name = "uri", (.buf.validate.predefined) = { ... }</code>
      * @return The uri.
      */
     public boolean getUri() {
@@ -5851,19 +6503,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `uri` specifies that the field value must be a valid,
-     * absolute URI as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3). If the field value isn't a valid,
-     * absolute URI, an error message will be generated.
+     * `uri` specifies that the field value must be a valid URI, for example
+     * "https://example.com/foo/bar?baz=quux#frag".
+     *
+     * URI is defined in the internet standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986).
+     * Zone Identifiers in IPv6 address literals are supported ([RFC 6874](https://datatracker.ietf.org/doc/html/rfc6874)).
+     *
+     * If the field value isn't a valid URI, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid URI
+     *   // must be a valid URI
      *   string value = 1 [(buf.validate.field).string.uri = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool uri = 17 [json_name = "uri", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool uri = 17 [json_name = "uri", (.buf.validate.predefined) = { ... }</code>
      * @param value The uri to set.
      * @return This builder for chaining.
      */
@@ -5876,19 +6532,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `uri` specifies that the field value must be a valid,
-     * absolute URI as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3). If the field value isn't a valid,
-     * absolute URI, an error message will be generated.
+     * `uri` specifies that the field value must be a valid URI, for example
+     * "https://example.com/foo/bar?baz=quux#frag".
+     *
+     * URI is defined in the internet standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986).
+     * Zone Identifiers in IPv6 address literals are supported ([RFC 6874](https://datatracker.ietf.org/doc/html/rfc6874)).
+     *
+     * If the field value isn't a valid URI, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid URI
+     *   // must be a valid URI
      *   string value = 1 [(buf.validate.field).string.uri = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool uri = 17 [json_name = "uri", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool uri = 17 [json_name = "uri", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearUri() {
@@ -5902,19 +6562,26 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * `uri_ref` specifies that the field value must be a valid URI
-     * as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3) and may be either relative or absolute. If the
-     * field value isn't a valid URI, an error message will be generated.
+     * `uri_ref` specifies that the field value must be a valid URI Reference—either
+     * a URI such as "https://example.com/foo/bar?baz=quux#frag", or a Relative
+     * Reference such as "./foo/bar?query".
+     *
+     * URI, URI Reference, and Relative Reference are defined in the internet
+     * standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). Zone
+     * Identifiers in IPv6 address literals are supported ([RFC 6874](https://datatracker.ietf.org/doc/html/rfc6874)).
+     *
+     * If the field value isn't a valid URI Reference, an error message will be
+     * generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid URI
+     *   // must be a valid URI Reference
      *   string value = 1 [(buf.validate.field).string.uri_ref = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool uri_ref = 18 [json_name = "uriRef", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool uri_ref = 18 [json_name = "uriRef", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the uriRef field is set.
      */
     public boolean hasUriRef() {
@@ -5922,19 +6589,26 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `uri_ref` specifies that the field value must be a valid URI
-     * as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3) and may be either relative or absolute. If the
-     * field value isn't a valid URI, an error message will be generated.
+     * `uri_ref` specifies that the field value must be a valid URI Reference—either
+     * a URI such as "https://example.com/foo/bar?baz=quux#frag", or a Relative
+     * Reference such as "./foo/bar?query".
+     *
+     * URI, URI Reference, and Relative Reference are defined in the internet
+     * standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). Zone
+     * Identifiers in IPv6 address literals are supported ([RFC 6874](https://datatracker.ietf.org/doc/html/rfc6874)).
+     *
+     * If the field value isn't a valid URI Reference, an error message will be
+     * generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid URI
+     *   // must be a valid URI Reference
      *   string value = 1 [(buf.validate.field).string.uri_ref = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool uri_ref = 18 [json_name = "uriRef", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool uri_ref = 18 [json_name = "uriRef", (.buf.validate.predefined) = { ... }</code>
      * @return The uriRef.
      */
     public boolean getUriRef() {
@@ -5945,19 +6619,26 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `uri_ref` specifies that the field value must be a valid URI
-     * as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3) and may be either relative or absolute. If the
-     * field value isn't a valid URI, an error message will be generated.
+     * `uri_ref` specifies that the field value must be a valid URI Reference—either
+     * a URI such as "https://example.com/foo/bar?baz=quux#frag", or a Relative
+     * Reference such as "./foo/bar?query".
+     *
+     * URI, URI Reference, and Relative Reference are defined in the internet
+     * standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). Zone
+     * Identifiers in IPv6 address literals are supported ([RFC 6874](https://datatracker.ietf.org/doc/html/rfc6874)).
+     *
+     * If the field value isn't a valid URI Reference, an error message will be
+     * generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid URI
+     *   // must be a valid URI Reference
      *   string value = 1 [(buf.validate.field).string.uri_ref = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool uri_ref = 18 [json_name = "uriRef", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool uri_ref = 18 [json_name = "uriRef", (.buf.validate.predefined) = { ... }</code>
      * @param value The uriRef to set.
      * @return This builder for chaining.
      */
@@ -5970,19 +6651,26 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `uri_ref` specifies that the field value must be a valid URI
-     * as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3) and may be either relative or absolute. If the
-     * field value isn't a valid URI, an error message will be generated.
+     * `uri_ref` specifies that the field value must be a valid URI Reference—either
+     * a URI such as "https://example.com/foo/bar?baz=quux#frag", or a Relative
+     * Reference such as "./foo/bar?query".
+     *
+     * URI, URI Reference, and Relative Reference are defined in the internet
+     * standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). Zone
+     * Identifiers in IPv6 address literals are supported ([RFC 6874](https://datatracker.ietf.org/doc/html/rfc6874)).
+     *
+     * If the field value isn't a valid URI Reference, an error message will be
+     * generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid URI
+     *   // must be a valid URI Reference
      *   string value = 1 [(buf.validate.field).string.uri_ref = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool uri_ref = 18 [json_name = "uriRef", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool uri_ref = 18 [json_name = "uriRef", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearUriRef() {
@@ -5997,20 +6685,19 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `address` specifies that the field value must be either a valid hostname
-     * as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5)
-     * (which doesn't support internationalized domain names or IDNs) or a valid
-     * IP (v4 or v6). If the field value isn't a valid hostname or IP, an error
-     * message will be generated.
+     * (for example, "example.com"), or a valid IP (v4 or v6) address (for example,
+     * "192.168.0.1", or "::1"). If the field value isn't a valid hostname or IP,
+     * an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid hostname, or ip address
+     *   // must be a valid hostname, or ip address
      *   string value = 1 [(buf.validate.field).string.address = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool address = 21 [json_name = "address", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool address = 21 [json_name = "address", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the address field is set.
      */
     public boolean hasAddress() {
@@ -6019,20 +6706,19 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `address` specifies that the field value must be either a valid hostname
-     * as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5)
-     * (which doesn't support internationalized domain names or IDNs) or a valid
-     * IP (v4 or v6). If the field value isn't a valid hostname or IP, an error
-     * message will be generated.
+     * (for example, "example.com"), or a valid IP (v4 or v6) address (for example,
+     * "192.168.0.1", or "::1"). If the field value isn't a valid hostname or IP,
+     * an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid hostname, or ip address
+     *   // must be a valid hostname, or ip address
      *   string value = 1 [(buf.validate.field).string.address = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool address = 21 [json_name = "address", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool address = 21 [json_name = "address", (.buf.validate.predefined) = { ... }</code>
      * @return The address.
      */
     public boolean getAddress() {
@@ -6044,20 +6730,19 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `address` specifies that the field value must be either a valid hostname
-     * as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5)
-     * (which doesn't support internationalized domain names or IDNs) or a valid
-     * IP (v4 or v6). If the field value isn't a valid hostname or IP, an error
-     * message will be generated.
+     * (for example, "example.com"), or a valid IP (v4 or v6) address (for example,
+     * "192.168.0.1", or "::1"). If the field value isn't a valid hostname or IP,
+     * an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid hostname, or ip address
+     *   // must be a valid hostname, or ip address
      *   string value = 1 [(buf.validate.field).string.address = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool address = 21 [json_name = "address", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool address = 21 [json_name = "address", (.buf.validate.predefined) = { ... }</code>
      * @param value The address to set.
      * @return This builder for chaining.
      */
@@ -6071,20 +6756,19 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `address` specifies that the field value must be either a valid hostname
-     * as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5)
-     * (which doesn't support internationalized domain names or IDNs) or a valid
-     * IP (v4 or v6). If the field value isn't a valid hostname or IP, an error
-     * message will be generated.
+     * (for example, "example.com"), or a valid IP (v4 or v6) address (for example,
+     * "192.168.0.1", or "::1"). If the field value isn't a valid hostname or IP,
+     * an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid hostname, or ip address
+     *   // must be a valid hostname, or ip address
      *   string value = 1 [(buf.validate.field).string.address = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool address = 21 [json_name = "address", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool address = 21 [json_name = "address", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearAddress() {
@@ -6099,18 +6783,18 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `uuid` specifies that the field value must be a valid UUID as defined by
-     * [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2). If the
+     * [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2). If the
      * field value isn't a valid UUID, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid UUID
+     *   // must be a valid UUID
      *   string value = 1 [(buf.validate.field).string.uuid = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool uuid = 22 [json_name = "uuid", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool uuid = 22 [json_name = "uuid", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the uuid field is set.
      */
     public boolean hasUuid() {
@@ -6119,18 +6803,18 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `uuid` specifies that the field value must be a valid UUID as defined by
-     * [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2). If the
+     * [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2). If the
      * field value isn't a valid UUID, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid UUID
+     *   // must be a valid UUID
      *   string value = 1 [(buf.validate.field).string.uuid = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool uuid = 22 [json_name = "uuid", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool uuid = 22 [json_name = "uuid", (.buf.validate.predefined) = { ... }</code>
      * @return The uuid.
      */
     public boolean getUuid() {
@@ -6142,18 +6826,18 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `uuid` specifies that the field value must be a valid UUID as defined by
-     * [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2). If the
+     * [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2). If the
      * field value isn't a valid UUID, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid UUID
+     *   // must be a valid UUID
      *   string value = 1 [(buf.validate.field).string.uuid = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool uuid = 22 [json_name = "uuid", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool uuid = 22 [json_name = "uuid", (.buf.validate.predefined) = { ... }</code>
      * @param value The uuid to set.
      * @return This builder for chaining.
      */
@@ -6167,18 +6851,18 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `uuid` specifies that the field value must be a valid UUID as defined by
-     * [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2). If the
+     * [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2). If the
      * field value isn't a valid UUID, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid UUID
+     *   // must be a valid UUID
      *   string value = 1 [(buf.validate.field).string.uuid = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool uuid = 22 [json_name = "uuid", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool uuid = 22 [json_name = "uuid", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearUuid() {
@@ -6193,19 +6877,19 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `tuuid` (trimmed UUID) specifies that the field value must be a valid UUID as
-     * defined by [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2) with all dashes
+     * defined by [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2) with all dashes
      * omitted. If the field value isn't a valid UUID without dashes, an error message
      * will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid trimmed UUID
+     *   // must be a valid trimmed UUID
      *   string value = 1 [(buf.validate.field).string.tuuid = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool tuuid = 33 [json_name = "tuuid", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool tuuid = 33 [json_name = "tuuid", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the tuuid field is set.
      */
     public boolean hasTuuid() {
@@ -6214,19 +6898,19 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `tuuid` (trimmed UUID) specifies that the field value must be a valid UUID as
-     * defined by [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2) with all dashes
+     * defined by [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2) with all dashes
      * omitted. If the field value isn't a valid UUID without dashes, an error message
      * will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid trimmed UUID
+     *   // must be a valid trimmed UUID
      *   string value = 1 [(buf.validate.field).string.tuuid = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool tuuid = 33 [json_name = "tuuid", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool tuuid = 33 [json_name = "tuuid", (.buf.validate.predefined) = { ... }</code>
      * @return The tuuid.
      */
     public boolean getTuuid() {
@@ -6238,19 +6922,19 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `tuuid` (trimmed UUID) specifies that the field value must be a valid UUID as
-     * defined by [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2) with all dashes
+     * defined by [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2) with all dashes
      * omitted. If the field value isn't a valid UUID without dashes, an error message
      * will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid trimmed UUID
+     *   // must be a valid trimmed UUID
      *   string value = 1 [(buf.validate.field).string.tuuid = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool tuuid = 33 [json_name = "tuuid", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool tuuid = 33 [json_name = "tuuid", (.buf.validate.predefined) = { ... }</code>
      * @param value The tuuid to set.
      * @return This builder for chaining.
      */
@@ -6264,19 +6948,19 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `tuuid` (trimmed UUID) specifies that the field value must be a valid UUID as
-     * defined by [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2) with all dashes
+     * defined by [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2) with all dashes
      * omitted. If the field value isn't a valid UUID without dashes, an error message
      * will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid trimmed UUID
+     *   // must be a valid trimmed UUID
      *   string value = 1 [(buf.validate.field).string.tuuid = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool tuuid = 33 [json_name = "tuuid", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool tuuid = 33 [json_name = "tuuid", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearTuuid() {
@@ -6290,20 +6974,20 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * `ip_with_prefixlen` specifies that the field value must be a valid IP (v4 or v6)
-     * address with prefix length. If the field value isn't a valid IP with prefix
-     * length, an error message will be generated.
-     *
+     * `ip_with_prefixlen` specifies that the field value must be a valid IP
+     * (v4 or v6) address with prefix length—for example, "192.168.5.21/16" or
+     * "2001:0DB8:ABCD:0012::F1/64". If the field value isn't a valid IP with
+     * prefix length, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IP with prefix length
+     *   // must be a valid IP with prefix length
      *    string value = 1 [(buf.validate.field).string.ip_with_prefixlen = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ip_with_prefixlen = 26 [json_name = "ipWithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ip_with_prefixlen = 26 [json_name = "ipWithPrefixlen", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the ipWithPrefixlen field is set.
      */
     public boolean hasIpWithPrefixlen() {
@@ -6311,20 +6995,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ip_with_prefixlen` specifies that the field value must be a valid IP (v4 or v6)
-     * address with prefix length. If the field value isn't a valid IP with prefix
-     * length, an error message will be generated.
-     *
+     * `ip_with_prefixlen` specifies that the field value must be a valid IP
+     * (v4 or v6) address with prefix length—for example, "192.168.5.21/16" or
+     * "2001:0DB8:ABCD:0012::F1/64". If the field value isn't a valid IP with
+     * prefix length, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IP with prefix length
+     *   // must be a valid IP with prefix length
      *    string value = 1 [(buf.validate.field).string.ip_with_prefixlen = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ip_with_prefixlen = 26 [json_name = "ipWithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ip_with_prefixlen = 26 [json_name = "ipWithPrefixlen", (.buf.validate.predefined) = { ... }</code>
      * @return The ipWithPrefixlen.
      */
     public boolean getIpWithPrefixlen() {
@@ -6335,20 +7019,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ip_with_prefixlen` specifies that the field value must be a valid IP (v4 or v6)
-     * address with prefix length. If the field value isn't a valid IP with prefix
-     * length, an error message will be generated.
-     *
+     * `ip_with_prefixlen` specifies that the field value must be a valid IP
+     * (v4 or v6) address with prefix length—for example, "192.168.5.21/16" or
+     * "2001:0DB8:ABCD:0012::F1/64". If the field value isn't a valid IP with
+     * prefix length, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IP with prefix length
+     *   // must be a valid IP with prefix length
      *    string value = 1 [(buf.validate.field).string.ip_with_prefixlen = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ip_with_prefixlen = 26 [json_name = "ipWithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ip_with_prefixlen = 26 [json_name = "ipWithPrefixlen", (.buf.validate.predefined) = { ... }</code>
      * @param value The ipWithPrefixlen to set.
      * @return This builder for chaining.
      */
@@ -6361,20 +7045,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ip_with_prefixlen` specifies that the field value must be a valid IP (v4 or v6)
-     * address with prefix length. If the field value isn't a valid IP with prefix
-     * length, an error message will be generated.
-     *
+     * `ip_with_prefixlen` specifies that the field value must be a valid IP
+     * (v4 or v6) address with prefix length—for example, "192.168.5.21/16" or
+     * "2001:0DB8:ABCD:0012::F1/64". If the field value isn't a valid IP with
+     * prefix length, an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IP with prefix length
+     *   // must be a valid IP with prefix length
      *    string value = 1 [(buf.validate.field).string.ip_with_prefixlen = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ip_with_prefixlen = 26 [json_name = "ipWithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ip_with_prefixlen = 26 [json_name = "ipWithPrefixlen", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearIpWithPrefixlen() {
@@ -6389,19 +7073,19 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `ipv4_with_prefixlen` specifies that the field value must be a valid
-     * IPv4 address with prefix.
-     * If the field value isn't a valid IPv4 address with prefix length,
-     * an error message will be generated.
+     * IPv4 address with prefix length—for example, "192.168.5.21/16". If the
+     * field value isn't a valid IPv4 address with prefix length, an error
+     * message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv4 address with prefix length
+     *   // must be a valid IPv4 address with prefix length
      *    string value = 1 [(buf.validate.field).string.ipv4_with_prefixlen = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv4_with_prefixlen = 27 [json_name = "ipv4WithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv4_with_prefixlen = 27 [json_name = "ipv4WithPrefixlen", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the ipv4WithPrefixlen field is set.
      */
     public boolean hasIpv4WithPrefixlen() {
@@ -6410,19 +7094,19 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `ipv4_with_prefixlen` specifies that the field value must be a valid
-     * IPv4 address with prefix.
-     * If the field value isn't a valid IPv4 address with prefix length,
-     * an error message will be generated.
+     * IPv4 address with prefix length—for example, "192.168.5.21/16". If the
+     * field value isn't a valid IPv4 address with prefix length, an error
+     * message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv4 address with prefix length
+     *   // must be a valid IPv4 address with prefix length
      *    string value = 1 [(buf.validate.field).string.ipv4_with_prefixlen = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv4_with_prefixlen = 27 [json_name = "ipv4WithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv4_with_prefixlen = 27 [json_name = "ipv4WithPrefixlen", (.buf.validate.predefined) = { ... }</code>
      * @return The ipv4WithPrefixlen.
      */
     public boolean getIpv4WithPrefixlen() {
@@ -6434,19 +7118,19 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `ipv4_with_prefixlen` specifies that the field value must be a valid
-     * IPv4 address with prefix.
-     * If the field value isn't a valid IPv4 address with prefix length,
-     * an error message will be generated.
+     * IPv4 address with prefix length—for example, "192.168.5.21/16". If the
+     * field value isn't a valid IPv4 address with prefix length, an error
+     * message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv4 address with prefix length
+     *   // must be a valid IPv4 address with prefix length
      *    string value = 1 [(buf.validate.field).string.ipv4_with_prefixlen = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv4_with_prefixlen = 27 [json_name = "ipv4WithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv4_with_prefixlen = 27 [json_name = "ipv4WithPrefixlen", (.buf.validate.predefined) = { ... }</code>
      * @param value The ipv4WithPrefixlen to set.
      * @return This builder for chaining.
      */
@@ -6460,19 +7144,19 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `ipv4_with_prefixlen` specifies that the field value must be a valid
-     * IPv4 address with prefix.
-     * If the field value isn't a valid IPv4 address with prefix length,
-     * an error message will be generated.
+     * IPv4 address with prefix length—for example, "192.168.5.21/16". If the
+     * field value isn't a valid IPv4 address with prefix length, an error
+     * message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv4 address with prefix length
+     *   // must be a valid IPv4 address with prefix length
      *    string value = 1 [(buf.validate.field).string.ipv4_with_prefixlen = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv4_with_prefixlen = 27 [json_name = "ipv4WithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv4_with_prefixlen = 27 [json_name = "ipv4WithPrefixlen", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearIpv4WithPrefixlen() {
@@ -6487,19 +7171,19 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `ipv6_with_prefixlen` specifies that the field value must be a valid
-     * IPv6 address with prefix length.
+     * IPv6 address with prefix length—for example, "2001:0DB8:ABCD:0012::F1/64".
      * If the field value is not a valid IPv6 address with prefix length,
      * an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv6 address prefix length
+     *   // must be a valid IPv6 address prefix length
      *    string value = 1 [(buf.validate.field).string.ipv6_with_prefixlen = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv6_with_prefixlen = 28 [json_name = "ipv6WithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv6_with_prefixlen = 28 [json_name = "ipv6WithPrefixlen", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the ipv6WithPrefixlen field is set.
      */
     public boolean hasIpv6WithPrefixlen() {
@@ -6508,19 +7192,19 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `ipv6_with_prefixlen` specifies that the field value must be a valid
-     * IPv6 address with prefix length.
+     * IPv6 address with prefix length—for example, "2001:0DB8:ABCD:0012::F1/64".
      * If the field value is not a valid IPv6 address with prefix length,
      * an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv6 address prefix length
+     *   // must be a valid IPv6 address prefix length
      *    string value = 1 [(buf.validate.field).string.ipv6_with_prefixlen = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv6_with_prefixlen = 28 [json_name = "ipv6WithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv6_with_prefixlen = 28 [json_name = "ipv6WithPrefixlen", (.buf.validate.predefined) = { ... }</code>
      * @return The ipv6WithPrefixlen.
      */
     public boolean getIpv6WithPrefixlen() {
@@ -6532,19 +7216,19 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `ipv6_with_prefixlen` specifies that the field value must be a valid
-     * IPv6 address with prefix length.
+     * IPv6 address with prefix length—for example, "2001:0DB8:ABCD:0012::F1/64".
      * If the field value is not a valid IPv6 address with prefix length,
      * an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv6 address prefix length
+     *   // must be a valid IPv6 address prefix length
      *    string value = 1 [(buf.validate.field).string.ipv6_with_prefixlen = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv6_with_prefixlen = 28 [json_name = "ipv6WithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv6_with_prefixlen = 28 [json_name = "ipv6WithPrefixlen", (.buf.validate.predefined) = { ... }</code>
      * @param value The ipv6WithPrefixlen to set.
      * @return This builder for chaining.
      */
@@ -6558,19 +7242,19 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `ipv6_with_prefixlen` specifies that the field value must be a valid
-     * IPv6 address with prefix length.
+     * IPv6 address with prefix length—for example, "2001:0DB8:ABCD:0012::F1/64".
      * If the field value is not a valid IPv6 address with prefix length,
      * an error message will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv6 address prefix length
+     *   // must be a valid IPv6 address prefix length
      *    string value = 1 [(buf.validate.field).string.ipv6_with_prefixlen = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv6_with_prefixlen = 28 [json_name = "ipv6WithPrefixlen", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv6_with_prefixlen = 28 [json_name = "ipv6WithPrefixlen", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearIpv6WithPrefixlen() {
@@ -6584,20 +7268,25 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * `ip_prefix` specifies that the field value must be a valid IP (v4 or v6) prefix.
+     * `ip_prefix` specifies that the field value must be a valid IP (v4 or v6)
+     * prefix—for example, "192.168.0.0/16" or "2001:0DB8:ABCD:0012::0/64".
+     *
+     * The prefix must have all zeros for the unmasked bits. For example,
+     * "2001:0DB8:ABCD:0012::0/64" designates the left-most 64 bits for the
+     * prefix, and the remaining 64 bits must be zero.
+     *
      * If the field value isn't a valid IP prefix, an error message will be
-     * generated. The prefix must have all zeros for the masked bits of the prefix (e.g.,
-     * `127.0.0.0/16`, not `127.0.0.1/16`).
+     * generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IP prefix
+     *   // must be a valid IP prefix
      *    string value = 1 [(buf.validate.field).string.ip_prefix = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ip_prefix = 29 [json_name = "ipPrefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ip_prefix = 29 [json_name = "ipPrefix", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the ipPrefix field is set.
      */
     public boolean hasIpPrefix() {
@@ -6605,20 +7294,25 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ip_prefix` specifies that the field value must be a valid IP (v4 or v6) prefix.
+     * `ip_prefix` specifies that the field value must be a valid IP (v4 or v6)
+     * prefix—for example, "192.168.0.0/16" or "2001:0DB8:ABCD:0012::0/64".
+     *
+     * The prefix must have all zeros for the unmasked bits. For example,
+     * "2001:0DB8:ABCD:0012::0/64" designates the left-most 64 bits for the
+     * prefix, and the remaining 64 bits must be zero.
+     *
      * If the field value isn't a valid IP prefix, an error message will be
-     * generated. The prefix must have all zeros for the masked bits of the prefix (e.g.,
-     * `127.0.0.0/16`, not `127.0.0.1/16`).
+     * generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IP prefix
+     *   // must be a valid IP prefix
      *    string value = 1 [(buf.validate.field).string.ip_prefix = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ip_prefix = 29 [json_name = "ipPrefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ip_prefix = 29 [json_name = "ipPrefix", (.buf.validate.predefined) = { ... }</code>
      * @return The ipPrefix.
      */
     public boolean getIpPrefix() {
@@ -6629,20 +7323,25 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ip_prefix` specifies that the field value must be a valid IP (v4 or v6) prefix.
+     * `ip_prefix` specifies that the field value must be a valid IP (v4 or v6)
+     * prefix—for example, "192.168.0.0/16" or "2001:0DB8:ABCD:0012::0/64".
+     *
+     * The prefix must have all zeros for the unmasked bits. For example,
+     * "2001:0DB8:ABCD:0012::0/64" designates the left-most 64 bits for the
+     * prefix, and the remaining 64 bits must be zero.
+     *
      * If the field value isn't a valid IP prefix, an error message will be
-     * generated. The prefix must have all zeros for the masked bits of the prefix (e.g.,
-     * `127.0.0.0/16`, not `127.0.0.1/16`).
+     * generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IP prefix
+     *   // must be a valid IP prefix
      *    string value = 1 [(buf.validate.field).string.ip_prefix = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ip_prefix = 29 [json_name = "ipPrefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ip_prefix = 29 [json_name = "ipPrefix", (.buf.validate.predefined) = { ... }</code>
      * @param value The ipPrefix to set.
      * @return This builder for chaining.
      */
@@ -6655,20 +7354,25 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ip_prefix` specifies that the field value must be a valid IP (v4 or v6) prefix.
+     * `ip_prefix` specifies that the field value must be a valid IP (v4 or v6)
+     * prefix—for example, "192.168.0.0/16" or "2001:0DB8:ABCD:0012::0/64".
+     *
+     * The prefix must have all zeros for the unmasked bits. For example,
+     * "2001:0DB8:ABCD:0012::0/64" designates the left-most 64 bits for the
+     * prefix, and the remaining 64 bits must be zero.
+     *
      * If the field value isn't a valid IP prefix, an error message will be
-     * generated. The prefix must have all zeros for the masked bits of the prefix (e.g.,
-     * `127.0.0.0/16`, not `127.0.0.1/16`).
+     * generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IP prefix
+     *   // must be a valid IP prefix
      *    string value = 1 [(buf.validate.field).string.ip_prefix = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ip_prefix = 29 [json_name = "ipPrefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ip_prefix = 29 [json_name = "ipPrefix", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearIpPrefix() {
@@ -6683,19 +7387,24 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `ipv4_prefix` specifies that the field value must be a valid IPv4
-     * prefix. If the field value isn't a valid IPv4 prefix, an error message
-     * will be generated. The prefix must have all zeros for the masked bits of
-     * the prefix (e.g., `127.0.0.0/16`, not `127.0.0.1/16`).
+     * prefix, for example "192.168.0.0/16".
+     *
+     * The prefix must have all zeros for the unmasked bits. For example,
+     * "192.168.0.0/16" designates the left-most 16 bits for the prefix,
+     * and the remaining 16 bits must be zero.
+     *
+     * If the field value isn't a valid IPv4 prefix, an error message
+     * will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv4 prefix
+     *   // must be a valid IPv4 prefix
      *    string value = 1 [(buf.validate.field).string.ipv4_prefix = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv4_prefix = 30 [json_name = "ipv4Prefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv4_prefix = 30 [json_name = "ipv4Prefix", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the ipv4Prefix field is set.
      */
     public boolean hasIpv4Prefix() {
@@ -6704,19 +7413,24 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `ipv4_prefix` specifies that the field value must be a valid IPv4
-     * prefix. If the field value isn't a valid IPv4 prefix, an error message
-     * will be generated. The prefix must have all zeros for the masked bits of
-     * the prefix (e.g., `127.0.0.0/16`, not `127.0.0.1/16`).
+     * prefix, for example "192.168.0.0/16".
+     *
+     * The prefix must have all zeros for the unmasked bits. For example,
+     * "192.168.0.0/16" designates the left-most 16 bits for the prefix,
+     * and the remaining 16 bits must be zero.
+     *
+     * If the field value isn't a valid IPv4 prefix, an error message
+     * will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv4 prefix
+     *   // must be a valid IPv4 prefix
      *    string value = 1 [(buf.validate.field).string.ipv4_prefix = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv4_prefix = 30 [json_name = "ipv4Prefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv4_prefix = 30 [json_name = "ipv4Prefix", (.buf.validate.predefined) = { ... }</code>
      * @return The ipv4Prefix.
      */
     public boolean getIpv4Prefix() {
@@ -6728,19 +7442,24 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `ipv4_prefix` specifies that the field value must be a valid IPv4
-     * prefix. If the field value isn't a valid IPv4 prefix, an error message
-     * will be generated. The prefix must have all zeros for the masked bits of
-     * the prefix (e.g., `127.0.0.0/16`, not `127.0.0.1/16`).
+     * prefix, for example "192.168.0.0/16".
+     *
+     * The prefix must have all zeros for the unmasked bits. For example,
+     * "192.168.0.0/16" designates the left-most 16 bits for the prefix,
+     * and the remaining 16 bits must be zero.
+     *
+     * If the field value isn't a valid IPv4 prefix, an error message
+     * will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv4 prefix
+     *   // must be a valid IPv4 prefix
      *    string value = 1 [(buf.validate.field).string.ipv4_prefix = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv4_prefix = 30 [json_name = "ipv4Prefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv4_prefix = 30 [json_name = "ipv4Prefix", (.buf.validate.predefined) = { ... }</code>
      * @param value The ipv4Prefix to set.
      * @return This builder for chaining.
      */
@@ -6754,19 +7473,24 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `ipv4_prefix` specifies that the field value must be a valid IPv4
-     * prefix. If the field value isn't a valid IPv4 prefix, an error message
-     * will be generated. The prefix must have all zeros for the masked bits of
-     * the prefix (e.g., `127.0.0.0/16`, not `127.0.0.1/16`).
+     * prefix, for example "192.168.0.0/16".
+     *
+     * The prefix must have all zeros for the unmasked bits. For example,
+     * "192.168.0.0/16" designates the left-most 16 bits for the prefix,
+     * and the remaining 16 bits must be zero.
+     *
+     * If the field value isn't a valid IPv4 prefix, an error message
+     * will be generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv4 prefix
+     *   // must be a valid IPv4 prefix
      *    string value = 1 [(buf.validate.field).string.ipv4_prefix = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv4_prefix = 30 [json_name = "ipv4Prefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv4_prefix = 30 [json_name = "ipv4Prefix", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearIpv4Prefix() {
@@ -6780,20 +7504,25 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * `ipv6_prefix` specifies that the field value must be a valid IPv6 prefix.
+     * `ipv6_prefix` specifies that the field value must be a valid IPv6 prefix—for
+     * example, "2001:0DB8:ABCD:0012::0/64".
+     *
+     * The prefix must have all zeros for the unmasked bits. For example,
+     * "2001:0DB8:ABCD:0012::0/64" designates the left-most 64 bits for the
+     * prefix, and the remaining 64 bits must be zero.
+     *
      * If the field value is not a valid IPv6 prefix, an error message will be
-     * generated. The prefix must have all zeros for the masked bits of the prefix
-     * (e.g., `2001:db8::/48`, not `2001:db8::1/48`).
+     * generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv6 prefix
+     *   // must be a valid IPv6 prefix
      *    string value = 1 [(buf.validate.field).string.ipv6_prefix = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv6_prefix = 31 [json_name = "ipv6Prefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv6_prefix = 31 [json_name = "ipv6Prefix", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the ipv6Prefix field is set.
      */
     public boolean hasIpv6Prefix() {
@@ -6801,20 +7530,25 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ipv6_prefix` specifies that the field value must be a valid IPv6 prefix.
+     * `ipv6_prefix` specifies that the field value must be a valid IPv6 prefix—for
+     * example, "2001:0DB8:ABCD:0012::0/64".
+     *
+     * The prefix must have all zeros for the unmasked bits. For example,
+     * "2001:0DB8:ABCD:0012::0/64" designates the left-most 64 bits for the
+     * prefix, and the remaining 64 bits must be zero.
+     *
      * If the field value is not a valid IPv6 prefix, an error message will be
-     * generated. The prefix must have all zeros for the masked bits of the prefix
-     * (e.g., `2001:db8::/48`, not `2001:db8::1/48`).
+     * generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv6 prefix
+     *   // must be a valid IPv6 prefix
      *    string value = 1 [(buf.validate.field).string.ipv6_prefix = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv6_prefix = 31 [json_name = "ipv6Prefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv6_prefix = 31 [json_name = "ipv6Prefix", (.buf.validate.predefined) = { ... }</code>
      * @return The ipv6Prefix.
      */
     public boolean getIpv6Prefix() {
@@ -6825,20 +7559,25 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ipv6_prefix` specifies that the field value must be a valid IPv6 prefix.
+     * `ipv6_prefix` specifies that the field value must be a valid IPv6 prefix—for
+     * example, "2001:0DB8:ABCD:0012::0/64".
+     *
+     * The prefix must have all zeros for the unmasked bits. For example,
+     * "2001:0DB8:ABCD:0012::0/64" designates the left-most 64 bits for the
+     * prefix, and the remaining 64 bits must be zero.
+     *
      * If the field value is not a valid IPv6 prefix, an error message will be
-     * generated. The prefix must have all zeros for the masked bits of the prefix
-     * (e.g., `2001:db8::/48`, not `2001:db8::1/48`).
+     * generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv6 prefix
+     *   // must be a valid IPv6 prefix
      *    string value = 1 [(buf.validate.field).string.ipv6_prefix = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv6_prefix = 31 [json_name = "ipv6Prefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv6_prefix = 31 [json_name = "ipv6Prefix", (.buf.validate.predefined) = { ... }</code>
      * @param value The ipv6Prefix to set.
      * @return This builder for chaining.
      */
@@ -6851,20 +7590,25 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `ipv6_prefix` specifies that the field value must be a valid IPv6 prefix.
+     * `ipv6_prefix` specifies that the field value must be a valid IPv6 prefix—for
+     * example, "2001:0DB8:ABCD:0012::0/64".
+     *
+     * The prefix must have all zeros for the unmasked bits. For example,
+     * "2001:0DB8:ABCD:0012::0/64" designates the left-most 64 bits for the
+     * prefix, and the remaining 64 bits must be zero.
+     *
      * If the field value is not a valid IPv6 prefix, an error message will be
-     * generated. The prefix must have all zeros for the masked bits of the prefix
-     * (e.g., `2001:db8::/48`, not `2001:db8::1/48`).
+     * generated.
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid IPv6 prefix
+     *   // must be a valid IPv6 prefix
      *    string value = 1 [(buf.validate.field).string.ipv6_prefix = true];
      * }
      * ```
      * </pre>
      *
-     * <code>bool ipv6_prefix = 31 [json_name = "ipv6Prefix", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool ipv6_prefix = 31 [json_name = "ipv6Prefix", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearIpv6Prefix() {
@@ -6878,13 +7622,19 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * `host_and_port` specifies the field value must be a valid host and port
-     * pair. The host must be a valid hostname or IP address while the port
-     * must be in the range of 0-65535, inclusive. IPv6 addresses must be delimited
-     * with square brackets (e.g., `[::1]:1234`).
+     * `host_and_port` specifies that the field value must be a valid host/port
+     * pair—for example, "example.com:8080".
+     *
+     * The host can be one of:
+     * - An IPv4 address in dotted decimal format—for example, "192.168.5.21".
+     * - An IPv6 address enclosed in square brackets—for example, "[2001:0DB8:ABCD:0012::F1]".
+     * - A hostname—for example, "example.com".
+     *
+     * The port is separated by a colon. It must be non-empty, with a decimal number
+     * in the range of 0-65535, inclusive.
      * </pre>
      *
-     * <code>bool host_and_port = 32 [json_name = "hostAndPort", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool host_and_port = 32 [json_name = "hostAndPort", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the hostAndPort field is set.
      */
     public boolean hasHostAndPort() {
@@ -6892,13 +7642,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `host_and_port` specifies the field value must be a valid host and port
-     * pair. The host must be a valid hostname or IP address while the port
-     * must be in the range of 0-65535, inclusive. IPv6 addresses must be delimited
-     * with square brackets (e.g., `[::1]:1234`).
+     * `host_and_port` specifies that the field value must be a valid host/port
+     * pair—for example, "example.com:8080".
+     *
+     * The host can be one of:
+     * - An IPv4 address in dotted decimal format—for example, "192.168.5.21".
+     * - An IPv6 address enclosed in square brackets—for example, "[2001:0DB8:ABCD:0012::F1]".
+     * - A hostname—for example, "example.com".
+     *
+     * The port is separated by a colon. It must be non-empty, with a decimal number
+     * in the range of 0-65535, inclusive.
      * </pre>
      *
-     * <code>bool host_and_port = 32 [json_name = "hostAndPort", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool host_and_port = 32 [json_name = "hostAndPort", (.buf.validate.predefined) = { ... }</code>
      * @return The hostAndPort.
      */
     public boolean getHostAndPort() {
@@ -6909,13 +7665,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `host_and_port` specifies the field value must be a valid host and port
-     * pair. The host must be a valid hostname or IP address while the port
-     * must be in the range of 0-65535, inclusive. IPv6 addresses must be delimited
-     * with square brackets (e.g., `[::1]:1234`).
+     * `host_and_port` specifies that the field value must be a valid host/port
+     * pair—for example, "example.com:8080".
+     *
+     * The host can be one of:
+     * - An IPv4 address in dotted decimal format—for example, "192.168.5.21".
+     * - An IPv6 address enclosed in square brackets—for example, "[2001:0DB8:ABCD:0012::F1]".
+     * - A hostname—for example, "example.com".
+     *
+     * The port is separated by a colon. It must be non-empty, with a decimal number
+     * in the range of 0-65535, inclusive.
      * </pre>
      *
-     * <code>bool host_and_port = 32 [json_name = "hostAndPort", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool host_and_port = 32 [json_name = "hostAndPort", (.buf.validate.predefined) = { ... }</code>
      * @param value The hostAndPort to set.
      * @return This builder for chaining.
      */
@@ -6928,17 +7690,417 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `host_and_port` specifies the field value must be a valid host and port
-     * pair. The host must be a valid hostname or IP address while the port
-     * must be in the range of 0-65535, inclusive. IPv6 addresses must be delimited
-     * with square brackets (e.g., `[::1]:1234`).
+     * `host_and_port` specifies that the field value must be a valid host/port
+     * pair—for example, "example.com:8080".
+     *
+     * The host can be one of:
+     * - An IPv4 address in dotted decimal format—for example, "192.168.5.21".
+     * - An IPv6 address enclosed in square brackets—for example, "[2001:0DB8:ABCD:0012::F1]".
+     * - A hostname—for example, "example.com".
+     *
+     * The port is separated by a colon. It must be non-empty, with a decimal number
+     * in the range of 0-65535, inclusive.
      * </pre>
      *
-     * <code>bool host_and_port = 32 [json_name = "hostAndPort", (.buf.validate.priv.field) = { ... }</code>
+     * <code>bool host_and_port = 32 [json_name = "hostAndPort", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearHostAndPort() {
       if (wellKnownCase_ == 32) {
+        wellKnownCase_ = 0;
+        wellKnown_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * `ulid` specifies that the field value must be a valid ULID (Universally Unique
+     * Lexicographically Sortable Identifier) as defined by the [ULID specification](https://github.com/ulid/spec).
+     * If the field value isn't a valid ULID, an error message will be generated.
+     *
+     * ```proto
+     * message MyString {
+     *   // must be a valid ULID
+     *   string value = 1 [(buf.validate.field).string.ulid = true];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>bool ulid = 35 [json_name = "ulid", (.buf.validate.predefined) = { ... }</code>
+     * @return Whether the ulid field is set.
+     */
+    public boolean hasUlid() {
+      return wellKnownCase_ == 35;
+    }
+    /**
+     * <pre>
+     * `ulid` specifies that the field value must be a valid ULID (Universally Unique
+     * Lexicographically Sortable Identifier) as defined by the [ULID specification](https://github.com/ulid/spec).
+     * If the field value isn't a valid ULID, an error message will be generated.
+     *
+     * ```proto
+     * message MyString {
+     *   // must be a valid ULID
+     *   string value = 1 [(buf.validate.field).string.ulid = true];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>bool ulid = 35 [json_name = "ulid", (.buf.validate.predefined) = { ... }</code>
+     * @return The ulid.
+     */
+    public boolean getUlid() {
+      if (wellKnownCase_ == 35) {
+        return (java.lang.Boolean) wellKnown_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * `ulid` specifies that the field value must be a valid ULID (Universally Unique
+     * Lexicographically Sortable Identifier) as defined by the [ULID specification](https://github.com/ulid/spec).
+     * If the field value isn't a valid ULID, an error message will be generated.
+     *
+     * ```proto
+     * message MyString {
+     *   // must be a valid ULID
+     *   string value = 1 [(buf.validate.field).string.ulid = true];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>bool ulid = 35 [json_name = "ulid", (.buf.validate.predefined) = { ... }</code>
+     * @param value The ulid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUlid(boolean value) {
+
+      wellKnownCase_ = 35;
+      wellKnown_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * `ulid` specifies that the field value must be a valid ULID (Universally Unique
+     * Lexicographically Sortable Identifier) as defined by the [ULID specification](https://github.com/ulid/spec).
+     * If the field value isn't a valid ULID, an error message will be generated.
+     *
+     * ```proto
+     * message MyString {
+     *   // must be a valid ULID
+     *   string value = 1 [(buf.validate.field).string.ulid = true];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>bool ulid = 35 [json_name = "ulid", (.buf.validate.predefined) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUlid() {
+      if (wellKnownCase_ == 35) {
+        wellKnownCase_ = 0;
+        wellKnown_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * `protobuf_fqn` specifies that the field value must be a valid fully-qualified
+     * Protobuf name as defined by the [Protobuf Language Specification](https://protobuf.com/docs/language-spec).
+     *
+     * A fully-qualified Protobuf name is a dot-separated list of Protobuf identifiers,
+     * where each identifier starts with a letter or underscore and is followed by zero or
+     * more letters, underscores, or digits.
+     *
+     * Examples: "buf.validate", "google.protobuf.Timestamp", "my_package.MyMessage".
+     *
+     * Note: historically, fully-qualified Protobuf names were represented with a leading
+     * dot (for example, ".buf.validate.StringRules"). Modern Protobuf does not use the
+     * leading dot, and most fully-qualified names are represented without it. Use
+     * `protobuf_dot_fqn` if a leading dot is required.
+     *
+     * If the field value isn't a valid fully-qualified Protobuf name, an error message
+     * will be generated.
+     *
+     * ```proto
+     * message MyString {
+     *   // value must be a valid fully-qualified Protobuf name
+     *   string value = 1 [(buf.validate.field).string.protobuf_fqn = true];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>bool protobuf_fqn = 37 [json_name = "protobufFqn", (.buf.validate.predefined) = { ... }</code>
+     * @return Whether the protobufFqn field is set.
+     */
+    public boolean hasProtobufFqn() {
+      return wellKnownCase_ == 37;
+    }
+    /**
+     * <pre>
+     * `protobuf_fqn` specifies that the field value must be a valid fully-qualified
+     * Protobuf name as defined by the [Protobuf Language Specification](https://protobuf.com/docs/language-spec).
+     *
+     * A fully-qualified Protobuf name is a dot-separated list of Protobuf identifiers,
+     * where each identifier starts with a letter or underscore and is followed by zero or
+     * more letters, underscores, or digits.
+     *
+     * Examples: "buf.validate", "google.protobuf.Timestamp", "my_package.MyMessage".
+     *
+     * Note: historically, fully-qualified Protobuf names were represented with a leading
+     * dot (for example, ".buf.validate.StringRules"). Modern Protobuf does not use the
+     * leading dot, and most fully-qualified names are represented without it. Use
+     * `protobuf_dot_fqn` if a leading dot is required.
+     *
+     * If the field value isn't a valid fully-qualified Protobuf name, an error message
+     * will be generated.
+     *
+     * ```proto
+     * message MyString {
+     *   // value must be a valid fully-qualified Protobuf name
+     *   string value = 1 [(buf.validate.field).string.protobuf_fqn = true];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>bool protobuf_fqn = 37 [json_name = "protobufFqn", (.buf.validate.predefined) = { ... }</code>
+     * @return The protobufFqn.
+     */
+    public boolean getProtobufFqn() {
+      if (wellKnownCase_ == 37) {
+        return (java.lang.Boolean) wellKnown_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * `protobuf_fqn` specifies that the field value must be a valid fully-qualified
+     * Protobuf name as defined by the [Protobuf Language Specification](https://protobuf.com/docs/language-spec).
+     *
+     * A fully-qualified Protobuf name is a dot-separated list of Protobuf identifiers,
+     * where each identifier starts with a letter or underscore and is followed by zero or
+     * more letters, underscores, or digits.
+     *
+     * Examples: "buf.validate", "google.protobuf.Timestamp", "my_package.MyMessage".
+     *
+     * Note: historically, fully-qualified Protobuf names were represented with a leading
+     * dot (for example, ".buf.validate.StringRules"). Modern Protobuf does not use the
+     * leading dot, and most fully-qualified names are represented without it. Use
+     * `protobuf_dot_fqn` if a leading dot is required.
+     *
+     * If the field value isn't a valid fully-qualified Protobuf name, an error message
+     * will be generated.
+     *
+     * ```proto
+     * message MyString {
+     *   // value must be a valid fully-qualified Protobuf name
+     *   string value = 1 [(buf.validate.field).string.protobuf_fqn = true];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>bool protobuf_fqn = 37 [json_name = "protobufFqn", (.buf.validate.predefined) = { ... }</code>
+     * @param value The protobufFqn to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtobufFqn(boolean value) {
+
+      wellKnownCase_ = 37;
+      wellKnown_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * `protobuf_fqn` specifies that the field value must be a valid fully-qualified
+     * Protobuf name as defined by the [Protobuf Language Specification](https://protobuf.com/docs/language-spec).
+     *
+     * A fully-qualified Protobuf name is a dot-separated list of Protobuf identifiers,
+     * where each identifier starts with a letter or underscore and is followed by zero or
+     * more letters, underscores, or digits.
+     *
+     * Examples: "buf.validate", "google.protobuf.Timestamp", "my_package.MyMessage".
+     *
+     * Note: historically, fully-qualified Protobuf names were represented with a leading
+     * dot (for example, ".buf.validate.StringRules"). Modern Protobuf does not use the
+     * leading dot, and most fully-qualified names are represented without it. Use
+     * `protobuf_dot_fqn` if a leading dot is required.
+     *
+     * If the field value isn't a valid fully-qualified Protobuf name, an error message
+     * will be generated.
+     *
+     * ```proto
+     * message MyString {
+     *   // value must be a valid fully-qualified Protobuf name
+     *   string value = 1 [(buf.validate.field).string.protobuf_fqn = true];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>bool protobuf_fqn = 37 [json_name = "protobufFqn", (.buf.validate.predefined) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProtobufFqn() {
+      if (wellKnownCase_ == 37) {
+        wellKnownCase_ = 0;
+        wellKnown_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * `protobuf_dot_fqn` specifies that the field value must be a valid fully-qualified
+     * Protobuf name with a leading dot, as defined by the
+     * [Protobuf Language Specification](https://protobuf.com/docs/language-spec).
+     *
+     * A fully-qualified Protobuf name with a leading dot is a dot followed by a
+     * dot-separated list of Protobuf identifiers, where each identifier starts with a
+     * letter or underscore and is followed by zero or more letters, underscores, or
+     * digits.
+     *
+     * Examples: ".buf.validate", ".google.protobuf.Timestamp", ".my_package.MyMessage".
+     *
+     * Note: this is the historical representation of fully-qualified Protobuf names,
+     * where a leading dot denotes an absolute reference. Modern Protobuf does not use
+     * the leading dot, and most fully-qualified names are represented without it. Most
+     * users will want to use `protobuf_fqn` instead.
+     *
+     * If the field value isn't a valid fully-qualified Protobuf name with a leading dot,
+     * an error message will be generated.
+     *
+     * ```proto
+     * message MyString {
+     *   // value must be a valid fully-qualified Protobuf name with a leading dot
+     *   string value = 1 [(buf.validate.field).string.protobuf_dot_fqn = true];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>bool protobuf_dot_fqn = 38 [json_name = "protobufDotFqn", (.buf.validate.predefined) = { ... }</code>
+     * @return Whether the protobufDotFqn field is set.
+     */
+    public boolean hasProtobufDotFqn() {
+      return wellKnownCase_ == 38;
+    }
+    /**
+     * <pre>
+     * `protobuf_dot_fqn` specifies that the field value must be a valid fully-qualified
+     * Protobuf name with a leading dot, as defined by the
+     * [Protobuf Language Specification](https://protobuf.com/docs/language-spec).
+     *
+     * A fully-qualified Protobuf name with a leading dot is a dot followed by a
+     * dot-separated list of Protobuf identifiers, where each identifier starts with a
+     * letter or underscore and is followed by zero or more letters, underscores, or
+     * digits.
+     *
+     * Examples: ".buf.validate", ".google.protobuf.Timestamp", ".my_package.MyMessage".
+     *
+     * Note: this is the historical representation of fully-qualified Protobuf names,
+     * where a leading dot denotes an absolute reference. Modern Protobuf does not use
+     * the leading dot, and most fully-qualified names are represented without it. Most
+     * users will want to use `protobuf_fqn` instead.
+     *
+     * If the field value isn't a valid fully-qualified Protobuf name with a leading dot,
+     * an error message will be generated.
+     *
+     * ```proto
+     * message MyString {
+     *   // value must be a valid fully-qualified Protobuf name with a leading dot
+     *   string value = 1 [(buf.validate.field).string.protobuf_dot_fqn = true];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>bool protobuf_dot_fqn = 38 [json_name = "protobufDotFqn", (.buf.validate.predefined) = { ... }</code>
+     * @return The protobufDotFqn.
+     */
+    public boolean getProtobufDotFqn() {
+      if (wellKnownCase_ == 38) {
+        return (java.lang.Boolean) wellKnown_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * `protobuf_dot_fqn` specifies that the field value must be a valid fully-qualified
+     * Protobuf name with a leading dot, as defined by the
+     * [Protobuf Language Specification](https://protobuf.com/docs/language-spec).
+     *
+     * A fully-qualified Protobuf name with a leading dot is a dot followed by a
+     * dot-separated list of Protobuf identifiers, where each identifier starts with a
+     * letter or underscore and is followed by zero or more letters, underscores, or
+     * digits.
+     *
+     * Examples: ".buf.validate", ".google.protobuf.Timestamp", ".my_package.MyMessage".
+     *
+     * Note: this is the historical representation of fully-qualified Protobuf names,
+     * where a leading dot denotes an absolute reference. Modern Protobuf does not use
+     * the leading dot, and most fully-qualified names are represented without it. Most
+     * users will want to use `protobuf_fqn` instead.
+     *
+     * If the field value isn't a valid fully-qualified Protobuf name with a leading dot,
+     * an error message will be generated.
+     *
+     * ```proto
+     * message MyString {
+     *   // value must be a valid fully-qualified Protobuf name with a leading dot
+     *   string value = 1 [(buf.validate.field).string.protobuf_dot_fqn = true];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>bool protobuf_dot_fqn = 38 [json_name = "protobufDotFqn", (.buf.validate.predefined) = { ... }</code>
+     * @param value The protobufDotFqn to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtobufDotFqn(boolean value) {
+
+      wellKnownCase_ = 38;
+      wellKnown_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * `protobuf_dot_fqn` specifies that the field value must be a valid fully-qualified
+     * Protobuf name with a leading dot, as defined by the
+     * [Protobuf Language Specification](https://protobuf.com/docs/language-spec).
+     *
+     * A fully-qualified Protobuf name with a leading dot is a dot followed by a
+     * dot-separated list of Protobuf identifiers, where each identifier starts with a
+     * letter or underscore and is followed by zero or more letters, underscores, or
+     * digits.
+     *
+     * Examples: ".buf.validate", ".google.protobuf.Timestamp", ".my_package.MyMessage".
+     *
+     * Note: this is the historical representation of fully-qualified Protobuf names,
+     * where a leading dot denotes an absolute reference. Modern Protobuf does not use
+     * the leading dot, and most fully-qualified names are represented without it. Most
+     * users will want to use `protobuf_fqn` instead.
+     *
+     * If the field value isn't a valid fully-qualified Protobuf name with a leading dot,
+     * an error message will be generated.
+     *
+     * ```proto
+     * message MyString {
+     *   // value must be a valid fully-qualified Protobuf name with a leading dot
+     *   string value = 1 [(buf.validate.field).string.protobuf_dot_fqn = true];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>bool protobuf_dot_fqn = 38 [json_name = "protobufDotFqn", (.buf.validate.predefined) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProtobufDotFqn() {
+      if (wellKnownCase_ == 38) {
         wellKnownCase_ = 0;
         wellKnown_ = null;
         onChanged();
@@ -6954,7 +8116,7 @@ private static final long serialVersionUID = 0L;
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid HTTP header value
+     *   // must be a valid HTTP header value
      *   string value = 1 [(buf.validate.field).string.well_known_regex = KNOWN_REGEX_HTTP_HEADER_VALUE];
      * }
      * ```
@@ -6966,11 +8128,11 @@ private static final long serialVersionUID = 0L;
      * | Name                          | Number | Description                               |
      * |-------------------------------|--------|-------------------------------------------|
      * | KNOWN_REGEX_UNSPECIFIED       | 0      |                                           |
-     * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2)  |
-     * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2.4) |
+     * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2)  |
+     * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.4) |
      * </pre>
      *
-     * <code>.buf.validate.KnownRegex well_known_regex = 24 [json_name = "wellKnownRegex", (.buf.validate.priv.field) = { ... }</code>
+     * <code>.buf.validate.KnownRegex well_known_regex = 24 [json_name = "wellKnownRegex", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the wellKnownRegex field is set.
      */
     @java.lang.Override
@@ -6985,7 +8147,7 @@ private static final long serialVersionUID = 0L;
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid HTTP header value
+     *   // must be a valid HTTP header value
      *   string value = 1 [(buf.validate.field).string.well_known_regex = KNOWN_REGEX_HTTP_HEADER_VALUE];
      * }
      * ```
@@ -6997,79 +8159,11 @@ private static final long serialVersionUID = 0L;
      * | Name                          | Number | Description                               |
      * |-------------------------------|--------|-------------------------------------------|
      * | KNOWN_REGEX_UNSPECIFIED       | 0      |                                           |
-     * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2)  |
-     * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2.4) |
+     * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2)  |
+     * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.4) |
      * </pre>
      *
-     * <code>.buf.validate.KnownRegex well_known_regex = 24 [json_name = "wellKnownRegex", (.buf.validate.priv.field) = { ... }</code>
-     * @return The enum numeric value on the wire for wellKnownRegex.
-     */
-    @java.lang.Override
-    public int getWellKnownRegexValue() {
-      if (wellKnownCase_ == 24) {
-        return ((java.lang.Integer) wellKnown_).intValue();
-      }
-      return 0;
-    }
-    /**
-     * <pre>
-     * `well_known_regex` specifies a common well-known pattern
-     * defined as a regex. If the field value doesn't match the well-known
-     * regex, an error message will be generated.
-     *
-     * ```proto
-     * message MyString {
-     *   // value must be a valid HTTP header value
-     *   string value = 1 [(buf.validate.field).string.well_known_regex = KNOWN_REGEX_HTTP_HEADER_VALUE];
-     * }
-     * ```
-     *
-     * #### KnownRegex
-     *
-     * `well_known_regex` contains some well-known patterns.
-     *
-     * | Name                          | Number | Description                               |
-     * |-------------------------------|--------|-------------------------------------------|
-     * | KNOWN_REGEX_UNSPECIFIED       | 0      |                                           |
-     * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2)  |
-     * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2.4) |
-     * </pre>
-     *
-     * <code>.buf.validate.KnownRegex well_known_regex = 24 [json_name = "wellKnownRegex", (.buf.validate.priv.field) = { ... }</code>
-     * @param value The enum numeric value on the wire for wellKnownRegex to set.
-     * @return This builder for chaining.
-     */
-    public Builder setWellKnownRegexValue(int value) {
-      wellKnownCase_ = 24;
-      wellKnown_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * `well_known_regex` specifies a common well-known pattern
-     * defined as a regex. If the field value doesn't match the well-known
-     * regex, an error message will be generated.
-     *
-     * ```proto
-     * message MyString {
-     *   // value must be a valid HTTP header value
-     *   string value = 1 [(buf.validate.field).string.well_known_regex = KNOWN_REGEX_HTTP_HEADER_VALUE];
-     * }
-     * ```
-     *
-     * #### KnownRegex
-     *
-     * `well_known_regex` contains some well-known patterns.
-     *
-     * | Name                          | Number | Description                               |
-     * |-------------------------------|--------|-------------------------------------------|
-     * | KNOWN_REGEX_UNSPECIFIED       | 0      |                                           |
-     * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2)  |
-     * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2.4) |
-     * </pre>
-     *
-     * <code>.buf.validate.KnownRegex well_known_regex = 24 [json_name = "wellKnownRegex", (.buf.validate.priv.field) = { ... }</code>
+     * <code>.buf.validate.KnownRegex well_known_regex = 24 [json_name = "wellKnownRegex", (.buf.validate.predefined) = { ... }</code>
      * @return The wellKnownRegex.
      */
     @java.lang.Override
@@ -7077,7 +8171,7 @@ private static final long serialVersionUID = 0L;
       if (wellKnownCase_ == 24) {
         com.scalekit.grpc.buf.validate.KnownRegex result = com.scalekit.grpc.buf.validate.KnownRegex.forNumber(
             (java.lang.Integer) wellKnown_);
-        return result == null ? com.scalekit.grpc.buf.validate.KnownRegex.UNRECOGNIZED : result;
+        return result == null ? com.scalekit.grpc.buf.validate.KnownRegex.KNOWN_REGEX_UNSPECIFIED : result;
       }
       return com.scalekit.grpc.buf.validate.KnownRegex.KNOWN_REGEX_UNSPECIFIED;
     }
@@ -7089,7 +8183,7 @@ private static final long serialVersionUID = 0L;
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid HTTP header value
+     *   // must be a valid HTTP header value
      *   string value = 1 [(buf.validate.field).string.well_known_regex = KNOWN_REGEX_HTTP_HEADER_VALUE];
      * }
      * ```
@@ -7101,11 +8195,11 @@ private static final long serialVersionUID = 0L;
      * | Name                          | Number | Description                               |
      * |-------------------------------|--------|-------------------------------------------|
      * | KNOWN_REGEX_UNSPECIFIED       | 0      |                                           |
-     * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2)  |
-     * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2.4) |
+     * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2)  |
+     * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.4) |
      * </pre>
      *
-     * <code>.buf.validate.KnownRegex well_known_regex = 24 [json_name = "wellKnownRegex", (.buf.validate.priv.field) = { ... }</code>
+     * <code>.buf.validate.KnownRegex well_known_regex = 24 [json_name = "wellKnownRegex", (.buf.validate.predefined) = { ... }</code>
      * @param value The wellKnownRegex to set.
      * @return This builder for chaining.
      */
@@ -7126,7 +8220,7 @@ private static final long serialVersionUID = 0L;
      *
      * ```proto
      * message MyString {
-     *   // value must be a valid HTTP header value
+     *   // must be a valid HTTP header value
      *   string value = 1 [(buf.validate.field).string.well_known_regex = KNOWN_REGEX_HTTP_HEADER_VALUE];
      * }
      * ```
@@ -7138,11 +8232,11 @@ private static final long serialVersionUID = 0L;
      * | Name                          | Number | Description                               |
      * |-------------------------------|--------|-------------------------------------------|
      * | KNOWN_REGEX_UNSPECIFIED       | 0      |                                           |
-     * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2)  |
-     * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2.4) |
+     * | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2)  |
+     * | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.4) |
      * </pre>
      *
-     * <code>.buf.validate.KnownRegex well_known_regex = 24 [json_name = "wellKnownRegex", (.buf.validate.priv.field) = { ... }</code>
+     * <code>.buf.validate.KnownRegex well_known_regex = 24 [json_name = "wellKnownRegex", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearWellKnownRegex() {
@@ -7159,7 +8253,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * This applies to regexes `HTTP_HEADER_NAME` and `HTTP_HEADER_VALUE` to
      * enable strict header validation. By default, this is true, and HTTP header
-     * validations are [RFC-compliant](https://tools.ietf.org/html/rfc7230#section-3). Setting to false will enable looser
+     * validations are [RFC-compliant](https://datatracker.ietf.org/doc/html/rfc7230#section-3). Setting to false will enable looser
      * validations that only disallow `&#92;r&#92;n&#92;0` characters, which can be used to
      * bypass header matching rules.
      *
@@ -7176,13 +8270,13 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean hasStrict() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
     /**
      * <pre>
      * This applies to regexes `HTTP_HEADER_NAME` and `HTTP_HEADER_VALUE` to
      * enable strict header validation. By default, this is true, and HTTP header
-     * validations are [RFC-compliant](https://tools.ietf.org/html/rfc7230#section-3). Setting to false will enable looser
+     * validations are [RFC-compliant](https://datatracker.ietf.org/doc/html/rfc7230#section-3). Setting to false will enable looser
      * validations that only disallow `&#92;r&#92;n&#92;0` characters, which can be used to
      * bypass header matching rules.
      *
@@ -7205,7 +8299,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * This applies to regexes `HTTP_HEADER_NAME` and `HTTP_HEADER_VALUE` to
      * enable strict header validation. By default, this is true, and HTTP header
-     * validations are [RFC-compliant](https://tools.ietf.org/html/rfc7230#section-3). Setting to false will enable looser
+     * validations are [RFC-compliant](https://datatracker.ietf.org/doc/html/rfc7230#section-3). Setting to false will enable looser
      * validations that only disallow `&#92;r&#92;n&#92;0` characters, which can be used to
      * bypass header matching rules.
      *
@@ -7224,7 +8318,7 @@ private static final long serialVersionUID = 0L;
     public Builder setStrict(boolean value) {
 
       strict_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -7232,7 +8326,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * This applies to regexes `HTTP_HEADER_NAME` and `HTTP_HEADER_VALUE` to
      * enable strict header validation. By default, this is true, and HTTP header
-     * validations are [RFC-compliant](https://tools.ietf.org/html/rfc7230#section-3). Setting to false will enable looser
+     * validations are [RFC-compliant](https://datatracker.ietf.org/doc/html/rfc7230#section-3). Setting to false will enable looser
      * validations that only disallow `&#92;r&#92;n&#92;0` characters, which can be used to
      * bypass header matching rules.
      *
@@ -7248,8 +8342,253 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearStrict() {
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000008);
       strict_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList example_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureExampleIsMutable() {
+      if (!example_.isModifiable()) {
+        example_ = new com.google.protobuf.LazyStringArrayList(example_);
+      }
+      bitField1_ |= 0x00000010;
+    }
+    /**
+     * <pre>
+     * `example` specifies values that the field may have. These values SHOULD
+     * conform to other rules. `example` values will not impact validation
+     * but may be used as helpful guidance on how to populate the given field.
+     *
+     * ```proto
+     * message MyString {
+     *   string value = 1 [
+     *     (buf.validate.field).string.example = "hello",
+     *     (buf.validate.field).string.example = "world"
+     *   ];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated string example = 34 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
+     * @return A list containing the example.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getExampleList() {
+      example_.makeImmutable();
+      return example_;
+    }
+    /**
+     * <pre>
+     * `example` specifies values that the field may have. These values SHOULD
+     * conform to other rules. `example` values will not impact validation
+     * but may be used as helpful guidance on how to populate the given field.
+     *
+     * ```proto
+     * message MyString {
+     *   string value = 1 [
+     *     (buf.validate.field).string.example = "hello",
+     *     (buf.validate.field).string.example = "world"
+     *   ];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated string example = 34 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
+     * @return The count of example.
+     */
+    public int getExampleCount() {
+      return example_.size();
+    }
+    /**
+     * <pre>
+     * `example` specifies values that the field may have. These values SHOULD
+     * conform to other rules. `example` values will not impact validation
+     * but may be used as helpful guidance on how to populate the given field.
+     *
+     * ```proto
+     * message MyString {
+     *   string value = 1 [
+     *     (buf.validate.field).string.example = "hello",
+     *     (buf.validate.field).string.example = "world"
+     *   ];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated string example = 34 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The example at the given index.
+     */
+    public java.lang.String getExample(int index) {
+      return example_.get(index);
+    }
+    /**
+     * <pre>
+     * `example` specifies values that the field may have. These values SHOULD
+     * conform to other rules. `example` values will not impact validation
+     * but may be used as helpful guidance on how to populate the given field.
+     *
+     * ```proto
+     * message MyString {
+     *   string value = 1 [
+     *     (buf.validate.field).string.example = "hello",
+     *     (buf.validate.field).string.example = "world"
+     *   ];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated string example = 34 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the example at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getExampleBytes(int index) {
+      return example_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * `example` specifies values that the field may have. These values SHOULD
+     * conform to other rules. `example` values will not impact validation
+     * but may be used as helpful guidance on how to populate the given field.
+     *
+     * ```proto
+     * message MyString {
+     *   string value = 1 [
+     *     (buf.validate.field).string.example = "hello",
+     *     (buf.validate.field).string.example = "world"
+     *   ];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated string example = 34 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The example to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExample(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureExampleIsMutable();
+      example_.set(index, value);
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * `example` specifies values that the field may have. These values SHOULD
+     * conform to other rules. `example` values will not impact validation
+     * but may be used as helpful guidance on how to populate the given field.
+     *
+     * ```proto
+     * message MyString {
+     *   string value = 1 [
+     *     (buf.validate.field).string.example = "hello",
+     *     (buf.validate.field).string.example = "world"
+     *   ];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated string example = 34 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
+     * @param value The example to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExample(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureExampleIsMutable();
+      example_.add(value);
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * `example` specifies values that the field may have. These values SHOULD
+     * conform to other rules. `example` values will not impact validation
+     * but may be used as helpful guidance on how to populate the given field.
+     *
+     * ```proto
+     * message MyString {
+     *   string value = 1 [
+     *     (buf.validate.field).string.example = "hello",
+     *     (buf.validate.field).string.example = "world"
+     *   ];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated string example = 34 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
+     * @param values The example to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllExample(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureExampleIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, example_);
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * `example` specifies values that the field may have. These values SHOULD
+     * conform to other rules. `example` values will not impact validation
+     * but may be used as helpful guidance on how to populate the given field.
+     *
+     * ```proto
+     * message MyString {
+     *   string value = 1 [
+     *     (buf.validate.field).string.example = "hello",
+     *     (buf.validate.field).string.example = "world"
+     *   ];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated string example = 34 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearExample() {
+      example_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField1_ = (bitField1_ & ~0x00000010);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * `example` specifies values that the field may have. These values SHOULD
+     * conform to other rules. `example` values will not impact validation
+     * but may be used as helpful guidance on how to populate the given field.
+     *
+     * ```proto
+     * message MyString {
+     *   string value = 1 [
+     *     (buf.validate.field).string.example = "hello",
+     *     (buf.validate.field).string.example = "world"
+     *   ];
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated string example = 34 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
+     * @param value The bytes of the example to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExampleBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureExampleIsMutable();
+      example_.add(value);
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -7279,7 +8618,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<StringRules>
+  @java.lang.Deprecated public static final com.google.protobuf.Parser<StringRules>
       PARSER = new com.google.protobuf.AbstractParser<StringRules>() {
     @java.lang.Override
     public StringRules parsePartialFrom(

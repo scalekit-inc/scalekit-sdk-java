@@ -46,6 +46,37 @@ public final class AgentkitAnalyticsServiceGrpc {
     return getGetOverviewStatsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.agentkit_logs.GetOverviewStatsRequest,
+      com.scalekit.grpc.scalekit.v1.agentkit_logs.OverviewStats> getGetCurrentOverviewStatsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCurrentOverviewStats",
+      requestType = com.scalekit.grpc.scalekit.v1.agentkit_logs.GetOverviewStatsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.agentkit_logs.OverviewStats.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.agentkit_logs.GetOverviewStatsRequest,
+      com.scalekit.grpc.scalekit.v1.agentkit_logs.OverviewStats> getGetCurrentOverviewStatsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.agentkit_logs.GetOverviewStatsRequest, com.scalekit.grpc.scalekit.v1.agentkit_logs.OverviewStats> getGetCurrentOverviewStatsMethod;
+    if ((getGetCurrentOverviewStatsMethod = AgentkitAnalyticsServiceGrpc.getGetCurrentOverviewStatsMethod) == null) {
+      synchronized (AgentkitAnalyticsServiceGrpc.class) {
+        if ((getGetCurrentOverviewStatsMethod = AgentkitAnalyticsServiceGrpc.getGetCurrentOverviewStatsMethod) == null) {
+          AgentkitAnalyticsServiceGrpc.getGetCurrentOverviewStatsMethod = getGetCurrentOverviewStatsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.agentkit_logs.GetOverviewStatsRequest, com.scalekit.grpc.scalekit.v1.agentkit_logs.OverviewStats>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCurrentOverviewStats"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.agentkit_logs.GetOverviewStatsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.agentkit_logs.OverviewStats.getDefaultInstance()))
+              .setSchemaDescriptor(new AgentkitAnalyticsServiceMethodDescriptorSupplier("GetCurrentOverviewStats"))
+              .build();
+        }
+      }
+    }
+    return getGetCurrentOverviewStatsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -100,6 +131,20 @@ public final class AgentkitAnalyticsServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.agentkit_logs.OverviewStats> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetOverviewStatsMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     * GetCurrentOverviewStats is the SESSION_USER-authed counterpart of
+     * GetOverviewStats — same request shape, scoped to the calling end-user.
+     * The server derives identifier from the session token; the request body
+     * carries no identifier field, so a /ui caller cannot peek at another
+     * user's stats. Mounted under /ui/agent-activity.
+     * </pre>
+     */
+    default void getCurrentOverviewStats(com.scalekit.grpc.scalekit.v1.agentkit_logs.GetOverviewStatsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.agentkit_logs.OverviewStats> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCurrentOverviewStatsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -136,6 +181,21 @@ public final class AgentkitAnalyticsServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetOverviewStatsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * GetCurrentOverviewStats is the SESSION_USER-authed counterpart of
+     * GetOverviewStats — same request shape, scoped to the calling end-user.
+     * The server derives identifier from the session token; the request body
+     * carries no identifier field, so a /ui caller cannot peek at another
+     * user's stats. Mounted under /ui/agent-activity.
+     * </pre>
+     */
+    public void getCurrentOverviewStats(com.scalekit.grpc.scalekit.v1.agentkit_logs.GetOverviewStatsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.agentkit_logs.OverviewStats> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCurrentOverviewStatsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -159,6 +219,20 @@ public final class AgentkitAnalyticsServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.agentkit_logs.OverviewStats getOverviewStats(com.scalekit.grpc.scalekit.v1.agentkit_logs.GetOverviewStatsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetOverviewStatsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * GetCurrentOverviewStats is the SESSION_USER-authed counterpart of
+     * GetOverviewStats — same request shape, scoped to the calling end-user.
+     * The server derives identifier from the session token; the request body
+     * carries no identifier field, so a /ui caller cannot peek at another
+     * user's stats. Mounted under /ui/agent-activity.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.agentkit_logs.OverviewStats getCurrentOverviewStats(com.scalekit.grpc.scalekit.v1.agentkit_logs.GetOverviewStatsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCurrentOverviewStatsMethod(), getCallOptions(), request);
     }
   }
 
@@ -185,9 +259,25 @@ public final class AgentkitAnalyticsServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetOverviewStatsMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * GetCurrentOverviewStats is the SESSION_USER-authed counterpart of
+     * GetOverviewStats — same request shape, scoped to the calling end-user.
+     * The server derives identifier from the session token; the request body
+     * carries no identifier field, so a /ui caller cannot peek at another
+     * user's stats. Mounted under /ui/agent-activity.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.agentkit_logs.OverviewStats> getCurrentOverviewStats(
+        com.scalekit.grpc.scalekit.v1.agentkit_logs.GetOverviewStatsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCurrentOverviewStatsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_OVERVIEW_STATS = 0;
+  private static final int METHODID_GET_CURRENT_OVERVIEW_STATS = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -208,6 +298,10 @@ public final class AgentkitAnalyticsServiceGrpc {
       switch (methodId) {
         case METHODID_GET_OVERVIEW_STATS:
           serviceImpl.getOverviewStats((com.scalekit.grpc.scalekit.v1.agentkit_logs.GetOverviewStatsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.agentkit_logs.OverviewStats>) responseObserver);
+          break;
+        case METHODID_GET_CURRENT_OVERVIEW_STATS:
+          serviceImpl.getCurrentOverviewStats((com.scalekit.grpc.scalekit.v1.agentkit_logs.GetOverviewStatsRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.agentkit_logs.OverviewStats>) responseObserver);
           break;
         default:
@@ -235,6 +329,13 @@ public final class AgentkitAnalyticsServiceGrpc {
               com.scalekit.grpc.scalekit.v1.agentkit_logs.GetOverviewStatsRequest,
               com.scalekit.grpc.scalekit.v1.agentkit_logs.OverviewStats>(
                 service, METHODID_GET_OVERVIEW_STATS)))
+        .addMethod(
+          getGetCurrentOverviewStatsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.agentkit_logs.GetOverviewStatsRequest,
+              com.scalekit.grpc.scalekit.v1.agentkit_logs.OverviewStats>(
+                service, METHODID_GET_CURRENT_OVERVIEW_STATS)))
         .build();
   }
 
@@ -284,6 +385,7 @@ public final class AgentkitAnalyticsServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new AgentkitAnalyticsServiceFileDescriptorSupplier())
               .addMethod(getGetOverviewStatsMethod())
+              .addMethod(getGetCurrentOverviewStatsMethod())
               .build();
         }
       }

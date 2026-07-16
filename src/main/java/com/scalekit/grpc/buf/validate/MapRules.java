@@ -6,18 +6,19 @@ package com.scalekit.grpc.buf.validate;
 
 /**
  * <pre>
- * MapRules describe the constraints applied to `map` values.
+ * MapRules describe the rules applied to `map` values.
  * </pre>
  *
  * Protobuf type {@code buf.validate.MapRules}
  */
 public final class MapRules extends
-    com.google.protobuf.GeneratedMessageV3 implements
+    com.google.protobuf.GeneratedMessageV3.ExtendableMessage<
+      MapRules> implements
     // @@protoc_insertion_point(message_implements:buf.validate.MapRules)
     MapRulesOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use MapRules.newBuilder() to construct.
-  private MapRules(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private MapRules(com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<com.scalekit.grpc.buf.validate.MapRules, ?> builder) {
     super(builder);
   }
   private MapRules() {
@@ -48,7 +49,7 @@ private static final long serialVersionUID = 0L;
   private long minPairs_ = 0L;
   /**
    * <pre>
-   *Specifies the minimum number of key-value pairs allowed. If the field has
+   * Specifies the minimum number of key-value pairs allowed. If the field has
    * fewer key-value pairs than specified, an error message is generated.
    *
    * ```proto
@@ -59,7 +60,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 min_pairs = 1 [json_name = "minPairs", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 min_pairs = 1 [json_name = "minPairs", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the minPairs field is set.
    */
   @java.lang.Override
@@ -68,7 +69,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *Specifies the minimum number of key-value pairs allowed. If the field has
+   * Specifies the minimum number of key-value pairs allowed. If the field has
    * fewer key-value pairs than specified, an error message is generated.
    *
    * ```proto
@@ -79,7 +80,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 min_pairs = 1 [json_name = "minPairs", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 min_pairs = 1 [json_name = "minPairs", (.buf.validate.predefined) = { ... }</code>
    * @return The minPairs.
    */
   @java.lang.Override
@@ -91,7 +92,7 @@ private static final long serialVersionUID = 0L;
   private long maxPairs_ = 0L;
   /**
    * <pre>
-   *Specifies the maximum number of key-value pairs allowed. If the field has
+   * Specifies the maximum number of key-value pairs allowed. If the field has
    * more key-value pairs than specified, an error message is generated.
    *
    * ```proto
@@ -102,7 +103,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 max_pairs = 2 [json_name = "maxPairs", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 max_pairs = 2 [json_name = "maxPairs", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the maxPairs field is set.
    */
   @java.lang.Override
@@ -111,7 +112,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *Specifies the maximum number of key-value pairs allowed. If the field has
+   * Specifies the maximum number of key-value pairs allowed. If the field has
    * more key-value pairs than specified, an error message is generated.
    *
    * ```proto
@@ -122,7 +123,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 max_pairs = 2 [json_name = "maxPairs", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 max_pairs = 2 [json_name = "maxPairs", (.buf.validate.predefined) = { ... }</code>
    * @return The maxPairs.
    */
   @java.lang.Override
@@ -131,14 +132,14 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int KEYS_FIELD_NUMBER = 4;
-  private com.scalekit.grpc.buf.validate.FieldConstraints keys_;
+  private com.scalekit.grpc.buf.validate.FieldRules keys_;
   /**
    * <pre>
-   *Specifies the constraints to be applied to each key in the field.
+   * Specifies the rules to be applied to each key in the field.
    *
    * ```proto
    * message MyMap {
-   *   // The keys in the field `value` must follow the specified constraints.
+   *   // The keys in the field `value` must follow the specified rules.
    *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.keys = {
    *     string: {
    *       min_len: 3
@@ -147,9 +148,11 @@ private static final long serialVersionUID = 0L;
    *   }];
    * }
    * ```
+   *
+   * Note that the `required` rule does not apply. Map keys cannot be unset.
    * </pre>
    *
-   * <code>optional .buf.validate.FieldConstraints keys = 4 [json_name = "keys"];</code>
+   * <code>optional .buf.validate.FieldRules keys = 4 [json_name = "keys"];</code>
    * @return Whether the keys field is set.
    */
   @java.lang.Override
@@ -158,11 +161,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *Specifies the constraints to be applied to each key in the field.
+   * Specifies the rules to be applied to each key in the field.
    *
    * ```proto
    * message MyMap {
-   *   // The keys in the field `value` must follow the specified constraints.
+   *   // The keys in the field `value` must follow the specified rules.
    *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.keys = {
    *     string: {
    *       min_len: 3
@@ -171,22 +174,24 @@ private static final long serialVersionUID = 0L;
    *   }];
    * }
    * ```
+   *
+   * Note that the `required` rule does not apply. Map keys cannot be unset.
    * </pre>
    *
-   * <code>optional .buf.validate.FieldConstraints keys = 4 [json_name = "keys"];</code>
+   * <code>optional .buf.validate.FieldRules keys = 4 [json_name = "keys"];</code>
    * @return The keys.
    */
   @java.lang.Override
-  public com.scalekit.grpc.buf.validate.FieldConstraints getKeys() {
-    return keys_ == null ? com.scalekit.grpc.buf.validate.FieldConstraints.getDefaultInstance() : keys_;
+  public com.scalekit.grpc.buf.validate.FieldRules getKeys() {
+    return keys_ == null ? com.scalekit.grpc.buf.validate.FieldRules.getDefaultInstance() : keys_;
   }
   /**
    * <pre>
-   *Specifies the constraints to be applied to each key in the field.
+   * Specifies the rules to be applied to each key in the field.
    *
    * ```proto
    * message MyMap {
-   *   // The keys in the field `value` must follow the specified constraints.
+   *   // The keys in the field `value` must follow the specified rules.
    *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.keys = {
    *     string: {
    *       min_len: 3
@@ -195,26 +200,28 @@ private static final long serialVersionUID = 0L;
    *   }];
    * }
    * ```
+   *
+   * Note that the `required` rule does not apply. Map keys cannot be unset.
    * </pre>
    *
-   * <code>optional .buf.validate.FieldConstraints keys = 4 [json_name = "keys"];</code>
+   * <code>optional .buf.validate.FieldRules keys = 4 [json_name = "keys"];</code>
    */
   @java.lang.Override
-  public com.scalekit.grpc.buf.validate.FieldConstraintsOrBuilder getKeysOrBuilder() {
-    return keys_ == null ? com.scalekit.grpc.buf.validate.FieldConstraints.getDefaultInstance() : keys_;
+  public com.scalekit.grpc.buf.validate.FieldRulesOrBuilder getKeysOrBuilder() {
+    return keys_ == null ? com.scalekit.grpc.buf.validate.FieldRules.getDefaultInstance() : keys_;
   }
 
   public static final int VALUES_FIELD_NUMBER = 5;
-  private com.scalekit.grpc.buf.validate.FieldConstraints values_;
+  private com.scalekit.grpc.buf.validate.FieldRules values_;
   /**
    * <pre>
-   *Specifies the constraints to be applied to the value of each key in the
+   * Specifies the rules to be applied to the value of each key in the
    * field. Message values will still have their validations evaluated unless
-   *skip is specified here.
+   * `ignore` is specified.
    *
    * ```proto
    * message MyMap {
-   *   // The values in the field `value` must follow the specified constraints.
+   *   // The values in the field `value` must follow the specified rules.
    *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.values = {
    *     string: {
    *       min_len: 5
@@ -223,9 +230,10 @@ private static final long serialVersionUID = 0L;
    *   }];
    * }
    * ```
+   * Note that the `required` rule does not apply. Map values cannot be unset.
    * </pre>
    *
-   * <code>optional .buf.validate.FieldConstraints values = 5 [json_name = "values"];</code>
+   * <code>optional .buf.validate.FieldRules values = 5 [json_name = "values"];</code>
    * @return Whether the values field is set.
    */
   @java.lang.Override
@@ -234,13 +242,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *Specifies the constraints to be applied to the value of each key in the
+   * Specifies the rules to be applied to the value of each key in the
    * field. Message values will still have their validations evaluated unless
-   *skip is specified here.
+   * `ignore` is specified.
    *
    * ```proto
    * message MyMap {
-   *   // The values in the field `value` must follow the specified constraints.
+   *   // The values in the field `value` must follow the specified rules.
    *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.values = {
    *     string: {
    *       min_len: 5
@@ -249,24 +257,25 @@ private static final long serialVersionUID = 0L;
    *   }];
    * }
    * ```
+   * Note that the `required` rule does not apply. Map values cannot be unset.
    * </pre>
    *
-   * <code>optional .buf.validate.FieldConstraints values = 5 [json_name = "values"];</code>
+   * <code>optional .buf.validate.FieldRules values = 5 [json_name = "values"];</code>
    * @return The values.
    */
   @java.lang.Override
-  public com.scalekit.grpc.buf.validate.FieldConstraints getValues() {
-    return values_ == null ? com.scalekit.grpc.buf.validate.FieldConstraints.getDefaultInstance() : values_;
+  public com.scalekit.grpc.buf.validate.FieldRules getValues() {
+    return values_ == null ? com.scalekit.grpc.buf.validate.FieldRules.getDefaultInstance() : values_;
   }
   /**
    * <pre>
-   *Specifies the constraints to be applied to the value of each key in the
+   * Specifies the rules to be applied to the value of each key in the
    * field. Message values will still have their validations evaluated unless
-   *skip is specified here.
+   * `ignore` is specified.
    *
    * ```proto
    * message MyMap {
-   *   // The values in the field `value` must follow the specified constraints.
+   *   // The values in the field `value` must follow the specified rules.
    *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.values = {
    *     string: {
    *       min_len: 5
@@ -275,13 +284,14 @@ private static final long serialVersionUID = 0L;
    *   }];
    * }
    * ```
+   * Note that the `required` rule does not apply. Map values cannot be unset.
    * </pre>
    *
-   * <code>optional .buf.validate.FieldConstraints values = 5 [json_name = "values"];</code>
+   * <code>optional .buf.validate.FieldRules values = 5 [json_name = "values"];</code>
    */
   @java.lang.Override
-  public com.scalekit.grpc.buf.validate.FieldConstraintsOrBuilder getValuesOrBuilder() {
-    return values_ == null ? com.scalekit.grpc.buf.validate.FieldConstraints.getDefaultInstance() : values_;
+  public com.scalekit.grpc.buf.validate.FieldRulesOrBuilder getValuesOrBuilder() {
+    return values_ == null ? com.scalekit.grpc.buf.validate.FieldRules.getDefaultInstance() : values_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -291,6 +301,22 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
+    if (hasKeys()) {
+      if (!getKeys().isInitialized()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+    }
+    if (hasValues()) {
+      if (!getValues().isInitialized()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+    }
+    if (!extensionsAreInitialized()) {
+      memoizedIsInitialized = 0;
+      return false;
+    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -298,6 +324,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    com.google.protobuf.GeneratedMessageV3
+      .ExtendableMessage<com.scalekit.grpc.buf.validate.MapRules>.ExtensionWriter
+        extensionWriter = newExtensionWriter();
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeUInt64(1, minPairs_);
     }
@@ -310,6 +339,7 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(5, getValues());
     }
+    extensionWriter.writeUntil(536870912, output);
     getUnknownFields().writeTo(output);
   }
 
@@ -335,6 +365,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getValues());
     }
+    size += extensionsSerializedSize();
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -371,6 +402,8 @@ private static final long serialVersionUID = 0L;
           .equals(other.getValues())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    if (!getExtensionFields().equals(other.getExtensionFields()))
+      return false;
     return true;
   }
 
@@ -399,6 +432,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + VALUES_FIELD_NUMBER;
       hash = (53 * hash) + getValues().hashCode();
     }
+    hash = hashFields(hash, getExtensionFields());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -498,13 +532,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * MapRules describe the constraints applied to `map` values.
+   * MapRules describe the rules applied to `map` values.
    * </pre>
    *
    * Protobuf type {@code buf.validate.MapRules}
    */
   public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<
+        com.scalekit.grpc.buf.validate.MapRules, Builder> implements
       // @@protoc_insertion_point(builder_implements:buf.validate.MapRules)
       com.scalekit.grpc.buf.validate.MapRulesOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -643,6 +678,33 @@ private static final long serialVersionUID = 0L;
       return super.addRepeatedField(field, value);
     }
     @java.lang.Override
+    public <Type> Builder setExtension(
+        com.google.protobuf.GeneratedMessage.GeneratedExtension<
+            com.scalekit.grpc.buf.validate.MapRules, Type> extension,
+        Type value) {
+      return super.setExtension(extension, value);
+    }
+    @java.lang.Override
+    public <Type> Builder setExtension(
+        com.google.protobuf.GeneratedMessage.GeneratedExtension<
+            com.scalekit.grpc.buf.validate.MapRules, java.util.List<Type>> extension,
+        int index, Type value) {
+      return super.setExtension(extension, index, value);
+    }
+    @java.lang.Override
+    public <Type> Builder addExtension(
+        com.google.protobuf.GeneratedMessage.GeneratedExtension<
+            com.scalekit.grpc.buf.validate.MapRules, java.util.List<Type>> extension,
+        Type value) {
+      return super.addExtension(extension, value);
+    }
+    @java.lang.Override
+    public <T> Builder clearExtension(
+        com.google.protobuf.GeneratedMessage.GeneratedExtension<
+            com.scalekit.grpc.buf.validate.MapRules, T> extension) {
+      return super.clearExtension(extension);
+    }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.scalekit.grpc.buf.validate.MapRules) {
         return mergeFrom((com.scalekit.grpc.buf.validate.MapRules)other);
@@ -666,6 +728,7 @@ private static final long serialVersionUID = 0L;
       if (other.hasValues()) {
         mergeValues(other.getValues());
       }
+      this.mergeExtensionFields(other);
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -673,6 +736,19 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
+      if (hasKeys()) {
+        if (!getKeys().isInitialized()) {
+          return false;
+        }
+      }
+      if (hasValues()) {
+        if (!getValues().isInitialized()) {
+          return false;
+        }
+      }
+      if (!extensionsAreInitialized()) {
+        return false;
+      }
       return true;
     }
 
@@ -736,7 +812,7 @@ private static final long serialVersionUID = 0L;
     private long minPairs_ ;
     /**
      * <pre>
-     *Specifies the minimum number of key-value pairs allowed. If the field has
+     * Specifies the minimum number of key-value pairs allowed. If the field has
      * fewer key-value pairs than specified, an error message is generated.
      *
      * ```proto
@@ -747,7 +823,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 min_pairs = 1 [json_name = "minPairs", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 min_pairs = 1 [json_name = "minPairs", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the minPairs field is set.
      */
     @java.lang.Override
@@ -756,7 +832,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Specifies the minimum number of key-value pairs allowed. If the field has
+     * Specifies the minimum number of key-value pairs allowed. If the field has
      * fewer key-value pairs than specified, an error message is generated.
      *
      * ```proto
@@ -767,7 +843,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 min_pairs = 1 [json_name = "minPairs", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 min_pairs = 1 [json_name = "minPairs", (.buf.validate.predefined) = { ... }</code>
      * @return The minPairs.
      */
     @java.lang.Override
@@ -776,7 +852,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Specifies the minimum number of key-value pairs allowed. If the field has
+     * Specifies the minimum number of key-value pairs allowed. If the field has
      * fewer key-value pairs than specified, an error message is generated.
      *
      * ```proto
@@ -787,7 +863,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 min_pairs = 1 [json_name = "minPairs", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 min_pairs = 1 [json_name = "minPairs", (.buf.validate.predefined) = { ... }</code>
      * @param value The minPairs to set.
      * @return This builder for chaining.
      */
@@ -800,7 +876,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Specifies the minimum number of key-value pairs allowed. If the field has
+     * Specifies the minimum number of key-value pairs allowed. If the field has
      * fewer key-value pairs than specified, an error message is generated.
      *
      * ```proto
@@ -811,7 +887,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 min_pairs = 1 [json_name = "minPairs", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 min_pairs = 1 [json_name = "minPairs", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearMinPairs() {
@@ -824,7 +900,7 @@ private static final long serialVersionUID = 0L;
     private long maxPairs_ ;
     /**
      * <pre>
-     *Specifies the maximum number of key-value pairs allowed. If the field has
+     * Specifies the maximum number of key-value pairs allowed. If the field has
      * more key-value pairs than specified, an error message is generated.
      *
      * ```proto
@@ -835,7 +911,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 max_pairs = 2 [json_name = "maxPairs", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 max_pairs = 2 [json_name = "maxPairs", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the maxPairs field is set.
      */
     @java.lang.Override
@@ -844,7 +920,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Specifies the maximum number of key-value pairs allowed. If the field has
+     * Specifies the maximum number of key-value pairs allowed. If the field has
      * more key-value pairs than specified, an error message is generated.
      *
      * ```proto
@@ -855,7 +931,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 max_pairs = 2 [json_name = "maxPairs", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 max_pairs = 2 [json_name = "maxPairs", (.buf.validate.predefined) = { ... }</code>
      * @return The maxPairs.
      */
     @java.lang.Override
@@ -864,7 +940,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Specifies the maximum number of key-value pairs allowed. If the field has
+     * Specifies the maximum number of key-value pairs allowed. If the field has
      * more key-value pairs than specified, an error message is generated.
      *
      * ```proto
@@ -875,7 +951,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 max_pairs = 2 [json_name = "maxPairs", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 max_pairs = 2 [json_name = "maxPairs", (.buf.validate.predefined) = { ... }</code>
      * @param value The maxPairs to set.
      * @return This builder for chaining.
      */
@@ -888,7 +964,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Specifies the maximum number of key-value pairs allowed. If the field has
+     * Specifies the maximum number of key-value pairs allowed. If the field has
      * more key-value pairs than specified, an error message is generated.
      *
      * ```proto
@@ -899,7 +975,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 max_pairs = 2 [json_name = "maxPairs", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 max_pairs = 2 [json_name = "maxPairs", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxPairs() {
@@ -909,16 +985,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.scalekit.grpc.buf.validate.FieldConstraints keys_;
+    private com.scalekit.grpc.buf.validate.FieldRules keys_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.buf.validate.FieldConstraints, com.scalekit.grpc.buf.validate.FieldConstraints.Builder, com.scalekit.grpc.buf.validate.FieldConstraintsOrBuilder> keysBuilder_;
+        com.scalekit.grpc.buf.validate.FieldRules, com.scalekit.grpc.buf.validate.FieldRules.Builder, com.scalekit.grpc.buf.validate.FieldRulesOrBuilder> keysBuilder_;
     /**
      * <pre>
-     *Specifies the constraints to be applied to each key in the field.
+     * Specifies the rules to be applied to each key in the field.
      *
      * ```proto
      * message MyMap {
-     *   // The keys in the field `value` must follow the specified constraints.
+     *   // The keys in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.keys = {
      *     string: {
      *       min_len: 3
@@ -927,9 +1003,11 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Map keys cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints keys = 4 [json_name = "keys"];</code>
+     * <code>optional .buf.validate.FieldRules keys = 4 [json_name = "keys"];</code>
      * @return Whether the keys field is set.
      */
     public boolean hasKeys() {
@@ -937,11 +1015,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Specifies the constraints to be applied to each key in the field.
+     * Specifies the rules to be applied to each key in the field.
      *
      * ```proto
      * message MyMap {
-     *   // The keys in the field `value` must follow the specified constraints.
+     *   // The keys in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.keys = {
      *     string: {
      *       min_len: 3
@@ -950,25 +1028,27 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Map keys cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints keys = 4 [json_name = "keys"];</code>
+     * <code>optional .buf.validate.FieldRules keys = 4 [json_name = "keys"];</code>
      * @return The keys.
      */
-    public com.scalekit.grpc.buf.validate.FieldConstraints getKeys() {
+    public com.scalekit.grpc.buf.validate.FieldRules getKeys() {
       if (keysBuilder_ == null) {
-        return keys_ == null ? com.scalekit.grpc.buf.validate.FieldConstraints.getDefaultInstance() : keys_;
+        return keys_ == null ? com.scalekit.grpc.buf.validate.FieldRules.getDefaultInstance() : keys_;
       } else {
         return keysBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     *Specifies the constraints to be applied to each key in the field.
+     * Specifies the rules to be applied to each key in the field.
      *
      * ```proto
      * message MyMap {
-     *   // The keys in the field `value` must follow the specified constraints.
+     *   // The keys in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.keys = {
      *     string: {
      *       min_len: 3
@@ -977,11 +1057,13 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Map keys cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints keys = 4 [json_name = "keys"];</code>
+     * <code>optional .buf.validate.FieldRules keys = 4 [json_name = "keys"];</code>
      */
-    public Builder setKeys(com.scalekit.grpc.buf.validate.FieldConstraints value) {
+    public Builder setKeys(com.scalekit.grpc.buf.validate.FieldRules value) {
       if (keysBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -996,11 +1078,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Specifies the constraints to be applied to each key in the field.
+     * Specifies the rules to be applied to each key in the field.
      *
      * ```proto
      * message MyMap {
-     *   // The keys in the field `value` must follow the specified constraints.
+     *   // The keys in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.keys = {
      *     string: {
      *       min_len: 3
@@ -1009,12 +1091,14 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Map keys cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints keys = 4 [json_name = "keys"];</code>
+     * <code>optional .buf.validate.FieldRules keys = 4 [json_name = "keys"];</code>
      */
     public Builder setKeys(
-        com.scalekit.grpc.buf.validate.FieldConstraints.Builder builderForValue) {
+        com.scalekit.grpc.buf.validate.FieldRules.Builder builderForValue) {
       if (keysBuilder_ == null) {
         keys_ = builderForValue.build();
       } else {
@@ -1026,11 +1110,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Specifies the constraints to be applied to each key in the field.
+     * Specifies the rules to be applied to each key in the field.
      *
      * ```proto
      * message MyMap {
-     *   // The keys in the field `value` must follow the specified constraints.
+     *   // The keys in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.keys = {
      *     string: {
      *       min_len: 3
@@ -1039,15 +1123,17 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Map keys cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints keys = 4 [json_name = "keys"];</code>
+     * <code>optional .buf.validate.FieldRules keys = 4 [json_name = "keys"];</code>
      */
-    public Builder mergeKeys(com.scalekit.grpc.buf.validate.FieldConstraints value) {
+    public Builder mergeKeys(com.scalekit.grpc.buf.validate.FieldRules value) {
       if (keysBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0) &&
           keys_ != null &&
-          keys_ != com.scalekit.grpc.buf.validate.FieldConstraints.getDefaultInstance()) {
+          keys_ != com.scalekit.grpc.buf.validate.FieldRules.getDefaultInstance()) {
           getKeysBuilder().mergeFrom(value);
         } else {
           keys_ = value;
@@ -1063,11 +1149,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Specifies the constraints to be applied to each key in the field.
+     * Specifies the rules to be applied to each key in the field.
      *
      * ```proto
      * message MyMap {
-     *   // The keys in the field `value` must follow the specified constraints.
+     *   // The keys in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.keys = {
      *     string: {
      *       min_len: 3
@@ -1076,9 +1162,11 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Map keys cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints keys = 4 [json_name = "keys"];</code>
+     * <code>optional .buf.validate.FieldRules keys = 4 [json_name = "keys"];</code>
      */
     public Builder clearKeys() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1092,11 +1180,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Specifies the constraints to be applied to each key in the field.
+     * Specifies the rules to be applied to each key in the field.
      *
      * ```proto
      * message MyMap {
-     *   // The keys in the field `value` must follow the specified constraints.
+     *   // The keys in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.keys = {
      *     string: {
      *       min_len: 3
@@ -1105,22 +1193,24 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Map keys cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints keys = 4 [json_name = "keys"];</code>
+     * <code>optional .buf.validate.FieldRules keys = 4 [json_name = "keys"];</code>
      */
-    public com.scalekit.grpc.buf.validate.FieldConstraints.Builder getKeysBuilder() {
+    public com.scalekit.grpc.buf.validate.FieldRules.Builder getKeysBuilder() {
       bitField0_ |= 0x00000004;
       onChanged();
       return getKeysFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     *Specifies the constraints to be applied to each key in the field.
+     * Specifies the rules to be applied to each key in the field.
      *
      * ```proto
      * message MyMap {
-     *   // The keys in the field `value` must follow the specified constraints.
+     *   // The keys in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.keys = {
      *     string: {
      *       min_len: 3
@@ -1129,25 +1219,27 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Map keys cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints keys = 4 [json_name = "keys"];</code>
+     * <code>optional .buf.validate.FieldRules keys = 4 [json_name = "keys"];</code>
      */
-    public com.scalekit.grpc.buf.validate.FieldConstraintsOrBuilder getKeysOrBuilder() {
+    public com.scalekit.grpc.buf.validate.FieldRulesOrBuilder getKeysOrBuilder() {
       if (keysBuilder_ != null) {
         return keysBuilder_.getMessageOrBuilder();
       } else {
         return keys_ == null ?
-            com.scalekit.grpc.buf.validate.FieldConstraints.getDefaultInstance() : keys_;
+            com.scalekit.grpc.buf.validate.FieldRules.getDefaultInstance() : keys_;
       }
     }
     /**
      * <pre>
-     *Specifies the constraints to be applied to each key in the field.
+     * Specifies the rules to be applied to each key in the field.
      *
      * ```proto
      * message MyMap {
-     *   // The keys in the field `value` must follow the specified constraints.
+     *   // The keys in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.keys = {
      *     string: {
      *       min_len: 3
@@ -1156,16 +1248,18 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Map keys cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints keys = 4 [json_name = "keys"];</code>
+     * <code>optional .buf.validate.FieldRules keys = 4 [json_name = "keys"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.buf.validate.FieldConstraints, com.scalekit.grpc.buf.validate.FieldConstraints.Builder, com.scalekit.grpc.buf.validate.FieldConstraintsOrBuilder> 
+        com.scalekit.grpc.buf.validate.FieldRules, com.scalekit.grpc.buf.validate.FieldRules.Builder, com.scalekit.grpc.buf.validate.FieldRulesOrBuilder> 
         getKeysFieldBuilder() {
       if (keysBuilder_ == null) {
         keysBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.scalekit.grpc.buf.validate.FieldConstraints, com.scalekit.grpc.buf.validate.FieldConstraints.Builder, com.scalekit.grpc.buf.validate.FieldConstraintsOrBuilder>(
+            com.scalekit.grpc.buf.validate.FieldRules, com.scalekit.grpc.buf.validate.FieldRules.Builder, com.scalekit.grpc.buf.validate.FieldRulesOrBuilder>(
                 getKeys(),
                 getParentForChildren(),
                 isClean());
@@ -1174,18 +1268,18 @@ private static final long serialVersionUID = 0L;
       return keysBuilder_;
     }
 
-    private com.scalekit.grpc.buf.validate.FieldConstraints values_;
+    private com.scalekit.grpc.buf.validate.FieldRules values_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.buf.validate.FieldConstraints, com.scalekit.grpc.buf.validate.FieldConstraints.Builder, com.scalekit.grpc.buf.validate.FieldConstraintsOrBuilder> valuesBuilder_;
+        com.scalekit.grpc.buf.validate.FieldRules, com.scalekit.grpc.buf.validate.FieldRules.Builder, com.scalekit.grpc.buf.validate.FieldRulesOrBuilder> valuesBuilder_;
     /**
      * <pre>
-     *Specifies the constraints to be applied to the value of each key in the
+     * Specifies the rules to be applied to the value of each key in the
      * field. Message values will still have their validations evaluated unless
-     *skip is specified here.
+     * `ignore` is specified.
      *
      * ```proto
      * message MyMap {
-     *   // The values in the field `value` must follow the specified constraints.
+     *   // The values in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.values = {
      *     string: {
      *       min_len: 5
@@ -1194,9 +1288,10 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     * Note that the `required` rule does not apply. Map values cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints values = 5 [json_name = "values"];</code>
+     * <code>optional .buf.validate.FieldRules values = 5 [json_name = "values"];</code>
      * @return Whether the values field is set.
      */
     public boolean hasValues() {
@@ -1204,13 +1299,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Specifies the constraints to be applied to the value of each key in the
+     * Specifies the rules to be applied to the value of each key in the
      * field. Message values will still have their validations evaluated unless
-     *skip is specified here.
+     * `ignore` is specified.
      *
      * ```proto
      * message MyMap {
-     *   // The values in the field `value` must follow the specified constraints.
+     *   // The values in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.values = {
      *     string: {
      *       min_len: 5
@@ -1219,27 +1314,28 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     * Note that the `required` rule does not apply. Map values cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints values = 5 [json_name = "values"];</code>
+     * <code>optional .buf.validate.FieldRules values = 5 [json_name = "values"];</code>
      * @return The values.
      */
-    public com.scalekit.grpc.buf.validate.FieldConstraints getValues() {
+    public com.scalekit.grpc.buf.validate.FieldRules getValues() {
       if (valuesBuilder_ == null) {
-        return values_ == null ? com.scalekit.grpc.buf.validate.FieldConstraints.getDefaultInstance() : values_;
+        return values_ == null ? com.scalekit.grpc.buf.validate.FieldRules.getDefaultInstance() : values_;
       } else {
         return valuesBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     *Specifies the constraints to be applied to the value of each key in the
+     * Specifies the rules to be applied to the value of each key in the
      * field. Message values will still have their validations evaluated unless
-     *skip is specified here.
+     * `ignore` is specified.
      *
      * ```proto
      * message MyMap {
-     *   // The values in the field `value` must follow the specified constraints.
+     *   // The values in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.values = {
      *     string: {
      *       min_len: 5
@@ -1248,11 +1344,12 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     * Note that the `required` rule does not apply. Map values cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints values = 5 [json_name = "values"];</code>
+     * <code>optional .buf.validate.FieldRules values = 5 [json_name = "values"];</code>
      */
-    public Builder setValues(com.scalekit.grpc.buf.validate.FieldConstraints value) {
+    public Builder setValues(com.scalekit.grpc.buf.validate.FieldRules value) {
       if (valuesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1267,13 +1364,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Specifies the constraints to be applied to the value of each key in the
+     * Specifies the rules to be applied to the value of each key in the
      * field. Message values will still have their validations evaluated unless
-     *skip is specified here.
+     * `ignore` is specified.
      *
      * ```proto
      * message MyMap {
-     *   // The values in the field `value` must follow the specified constraints.
+     *   // The values in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.values = {
      *     string: {
      *       min_len: 5
@@ -1282,12 +1379,13 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     * Note that the `required` rule does not apply. Map values cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints values = 5 [json_name = "values"];</code>
+     * <code>optional .buf.validate.FieldRules values = 5 [json_name = "values"];</code>
      */
     public Builder setValues(
-        com.scalekit.grpc.buf.validate.FieldConstraints.Builder builderForValue) {
+        com.scalekit.grpc.buf.validate.FieldRules.Builder builderForValue) {
       if (valuesBuilder_ == null) {
         values_ = builderForValue.build();
       } else {
@@ -1299,13 +1397,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Specifies the constraints to be applied to the value of each key in the
+     * Specifies the rules to be applied to the value of each key in the
      * field. Message values will still have their validations evaluated unless
-     *skip is specified here.
+     * `ignore` is specified.
      *
      * ```proto
      * message MyMap {
-     *   // The values in the field `value` must follow the specified constraints.
+     *   // The values in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.values = {
      *     string: {
      *       min_len: 5
@@ -1314,15 +1412,16 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     * Note that the `required` rule does not apply. Map values cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints values = 5 [json_name = "values"];</code>
+     * <code>optional .buf.validate.FieldRules values = 5 [json_name = "values"];</code>
      */
-    public Builder mergeValues(com.scalekit.grpc.buf.validate.FieldConstraints value) {
+    public Builder mergeValues(com.scalekit.grpc.buf.validate.FieldRules value) {
       if (valuesBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0) &&
           values_ != null &&
-          values_ != com.scalekit.grpc.buf.validate.FieldConstraints.getDefaultInstance()) {
+          values_ != com.scalekit.grpc.buf.validate.FieldRules.getDefaultInstance()) {
           getValuesBuilder().mergeFrom(value);
         } else {
           values_ = value;
@@ -1338,13 +1437,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Specifies the constraints to be applied to the value of each key in the
+     * Specifies the rules to be applied to the value of each key in the
      * field. Message values will still have their validations evaluated unless
-     *skip is specified here.
+     * `ignore` is specified.
      *
      * ```proto
      * message MyMap {
-     *   // The values in the field `value` must follow the specified constraints.
+     *   // The values in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.values = {
      *     string: {
      *       min_len: 5
@@ -1353,9 +1452,10 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     * Note that the `required` rule does not apply. Map values cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints values = 5 [json_name = "values"];</code>
+     * <code>optional .buf.validate.FieldRules values = 5 [json_name = "values"];</code>
      */
     public Builder clearValues() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1369,13 +1469,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *Specifies the constraints to be applied to the value of each key in the
+     * Specifies the rules to be applied to the value of each key in the
      * field. Message values will still have their validations evaluated unless
-     *skip is specified here.
+     * `ignore` is specified.
      *
      * ```proto
      * message MyMap {
-     *   // The values in the field `value` must follow the specified constraints.
+     *   // The values in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.values = {
      *     string: {
      *       min_len: 5
@@ -1384,24 +1484,25 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     * Note that the `required` rule does not apply. Map values cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints values = 5 [json_name = "values"];</code>
+     * <code>optional .buf.validate.FieldRules values = 5 [json_name = "values"];</code>
      */
-    public com.scalekit.grpc.buf.validate.FieldConstraints.Builder getValuesBuilder() {
+    public com.scalekit.grpc.buf.validate.FieldRules.Builder getValuesBuilder() {
       bitField0_ |= 0x00000008;
       onChanged();
       return getValuesFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     *Specifies the constraints to be applied to the value of each key in the
+     * Specifies the rules to be applied to the value of each key in the
      * field. Message values will still have their validations evaluated unless
-     *skip is specified here.
+     * `ignore` is specified.
      *
      * ```proto
      * message MyMap {
-     *   // The values in the field `value` must follow the specified constraints.
+     *   // The values in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.values = {
      *     string: {
      *       min_len: 5
@@ -1410,27 +1511,28 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     * Note that the `required` rule does not apply. Map values cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints values = 5 [json_name = "values"];</code>
+     * <code>optional .buf.validate.FieldRules values = 5 [json_name = "values"];</code>
      */
-    public com.scalekit.grpc.buf.validate.FieldConstraintsOrBuilder getValuesOrBuilder() {
+    public com.scalekit.grpc.buf.validate.FieldRulesOrBuilder getValuesOrBuilder() {
       if (valuesBuilder_ != null) {
         return valuesBuilder_.getMessageOrBuilder();
       } else {
         return values_ == null ?
-            com.scalekit.grpc.buf.validate.FieldConstraints.getDefaultInstance() : values_;
+            com.scalekit.grpc.buf.validate.FieldRules.getDefaultInstance() : values_;
       }
     }
     /**
      * <pre>
-     *Specifies the constraints to be applied to the value of each key in the
+     * Specifies the rules to be applied to the value of each key in the
      * field. Message values will still have their validations evaluated unless
-     *skip is specified here.
+     * `ignore` is specified.
      *
      * ```proto
      * message MyMap {
-     *   // The values in the field `value` must follow the specified constraints.
+     *   // The values in the field `value` must follow the specified rules.
      *   map&lt;string, string&gt; value = 1 [(buf.validate.field).map.values = {
      *     string: {
      *       min_len: 5
@@ -1439,16 +1541,17 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     * Note that the `required` rule does not apply. Map values cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints values = 5 [json_name = "values"];</code>
+     * <code>optional .buf.validate.FieldRules values = 5 [json_name = "values"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.buf.validate.FieldConstraints, com.scalekit.grpc.buf.validate.FieldConstraints.Builder, com.scalekit.grpc.buf.validate.FieldConstraintsOrBuilder> 
+        com.scalekit.grpc.buf.validate.FieldRules, com.scalekit.grpc.buf.validate.FieldRules.Builder, com.scalekit.grpc.buf.validate.FieldRulesOrBuilder> 
         getValuesFieldBuilder() {
       if (valuesBuilder_ == null) {
         valuesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.scalekit.grpc.buf.validate.FieldConstraints, com.scalekit.grpc.buf.validate.FieldConstraints.Builder, com.scalekit.grpc.buf.validate.FieldConstraintsOrBuilder>(
+            com.scalekit.grpc.buf.validate.FieldRules, com.scalekit.grpc.buf.validate.FieldRules.Builder, com.scalekit.grpc.buf.validate.FieldRulesOrBuilder>(
                 getValues(),
                 getParentForChildren(),
                 isClean());
@@ -1482,7 +1585,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<MapRules>
+  @java.lang.Deprecated public static final com.google.protobuf.Parser<MapRules>
       PARSER = new com.google.protobuf.AbstractParser<MapRules>() {
     @java.lang.Override
     public MapRules parsePartialFrom(

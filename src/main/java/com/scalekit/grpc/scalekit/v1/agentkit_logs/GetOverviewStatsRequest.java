@@ -24,6 +24,8 @@ private static final long serialVersionUID = 0L;
     errorCode_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     connectionName_ = "";
+    source_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -257,6 +259,43 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SOURCE_FIELD_NUMBER = 7;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList source_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string source = 7 [json_name = "source", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the source.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getSourceList() {
+    return source_;
+  }
+  /**
+   * <code>repeated string source = 7 [json_name = "source", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of source.
+   */
+  public int getSourceCount() {
+    return source_.size();
+  }
+  /**
+   * <code>repeated string source = 7 [json_name = "source", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The source at the given index.
+   */
+  public java.lang.String getSource(int index) {
+    return source_.get(index);
+  }
+  /**
+   * <code>repeated string source = 7 [json_name = "source", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the source at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getSourceBytes(int index) {
+    return source_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -288,6 +327,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, connectionName_);
+    }
+    for (int i = 0; i < source_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, source_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -333,6 +375,14 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, connectionName_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < source_.size(); i++) {
+        dataSize += computeStringSizeNoTag(source_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getSourceList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -369,6 +419,8 @@ private static final long serialVersionUID = 0L;
       if (!getConnectionName()
           .equals(other.getConnectionName())) return false;
     }
+    if (!getSourceList()
+        .equals(other.getSourceList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -403,6 +455,10 @@ private static final long serialVersionUID = 0L;
     if (hasConnectionName()) {
       hash = (37 * hash) + CONNECTION_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getConnectionName().hashCode();
+    }
+    if (getSourceCount() > 0) {
+      hash = (37 * hash) + SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -559,6 +615,8 @@ private static final long serialVersionUID = 0L;
       errorCode_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
       connectionName_ = "";
+      source_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -620,6 +678,10 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.connectionName_ = connectionName_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        source_.makeImmutable();
+        result.source_ = source_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -709,6 +771,16 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (!other.source_.isEmpty()) {
+        if (source_.isEmpty()) {
+          source_ = other.source_;
+          bitField0_ |= 0x00000040;
+        } else {
+          ensureSourceIsMutable();
+          source_.addAll(other.source_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -772,6 +844,12 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000020;
               break;
             } // case 50
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureSourceIsMutable();
+              source_.add(s);
+              break;
+            } // case 58
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1439,6 +1517,117 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       connectionName_ = value;
       bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList source_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureSourceIsMutable() {
+      if (!source_.isModifiable()) {
+        source_ = new com.google.protobuf.LazyStringArrayList(source_);
+      }
+      bitField0_ |= 0x00000040;
+    }
+    /**
+     * <code>repeated string source = 7 [json_name = "source", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the source.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getSourceList() {
+      source_.makeImmutable();
+      return source_;
+    }
+    /**
+     * <code>repeated string source = 7 [json_name = "source", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of source.
+     */
+    public int getSourceCount() {
+      return source_.size();
+    }
+    /**
+     * <code>repeated string source = 7 [json_name = "source", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The source at the given index.
+     */
+    public java.lang.String getSource(int index) {
+      return source_.get(index);
+    }
+    /**
+     * <code>repeated string source = 7 [json_name = "source", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the source at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getSourceBytes(int index) {
+      return source_.getByteString(index);
+    }
+    /**
+     * <code>repeated string source = 7 [json_name = "source", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The source to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSource(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureSourceIsMutable();
+      source_.set(index, value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string source = 7 [json_name = "source", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The source to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSource(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureSourceIsMutable();
+      source_.add(value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string source = 7 [json_name = "source", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The source to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSource(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureSourceIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, source_);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string source = 7 [json_name = "source", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSource() {
+      source_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000040);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string source = 7 [json_name = "source", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the source to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSourceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureSourceIsMutable();
+      source_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

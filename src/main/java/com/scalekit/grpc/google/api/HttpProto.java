@@ -53,12 +53,11 @@ public final class HttpProto {
       "bindings\030\013 \003(\0132\024.google.api.HttpRuleR\022ad" +
       "ditionalBindingsB\t\n\007pattern\";\n\021CustomHtt" +
       "pPattern\022\022\n\004kind\030\001 \001(\tR\004kind\022\022\n\004path\030\002 \001" +
-      "(\tR\004pathB\270\001\n\034com.scalekit.grpc.google.ap" +
+      "(\tR\004pathB\265\001\n\034com.scalekit.grpc.google.ap" +
       "iB\tHttpProtoP\001ZAgoogle.golang.org/genpro" +
       "to/googleapis/api/annotations;annotation" +
-      "s\370\001\001\242\002\003GAX\252\002\nGoogle.Api\312\002\nGoogle\\Api\342\002\026G" +
-      "oogle\\Api\\GPBMetadata\352\002\013Google::Apib\006pro" +
-      "to3"
+      "s\242\002\003GAX\252\002\nGoogle.Api\312\002\nGoogle\\Api\342\002\026Goog" +
+      "le\\Api\\GPBMetadata\352\002\013Google::Apib\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

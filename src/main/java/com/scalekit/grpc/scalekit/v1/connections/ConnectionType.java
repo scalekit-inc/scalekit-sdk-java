@@ -61,6 +61,18 @@ public enum ConnectionType
    * <code>GOOGLE_DWD = 12;</code>
    */
   GOOGLE_DWD(12),
+  /**
+   * <code>TRUSTED_IDP = 13;</code>
+   */
+  TRUSTED_IDP(13),
+  /**
+   * <code>SMART_FHIR = 14;</code>
+   */
+  SMART_FHIR(14),
+  /**
+   * <code>NO_AUTH = 15;</code>
+   */
+  NO_AUTH(15),
   UNRECOGNIZED(-1),
   ;
 
@@ -116,6 +128,18 @@ public enum ConnectionType
    * <code>GOOGLE_DWD = 12;</code>
    */
   public static final int GOOGLE_DWD_VALUE = 12;
+  /**
+   * <code>TRUSTED_IDP = 13;</code>
+   */
+  public static final int TRUSTED_IDP_VALUE = 13;
+  /**
+   * <code>SMART_FHIR = 14;</code>
+   */
+  public static final int SMART_FHIR_VALUE = 14;
+  /**
+   * <code>NO_AUTH = 15;</code>
+   */
+  public static final int NO_AUTH_VALUE = 15;
 
 
   public final int getNumber() {
@@ -155,6 +179,9 @@ public enum ConnectionType
       case 10: return OAUTH_M2M;
       case 11: return TRELLO_OAUTH1;
       case 12: return GOOGLE_DWD;
+      case 13: return TRUSTED_IDP;
+      case 14: return SMART_FHIR;
+      case 15: return NO_AUTH;
       default: return null;
     }
   }

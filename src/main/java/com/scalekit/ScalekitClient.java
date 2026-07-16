@@ -44,6 +44,8 @@ public class ScalekitClient {
 
     private final M2MClient m2mClient;
 
+    private final EventsClient eventsClient;
+
     public ScalekitClient(String siteName, String clientId, String clientSecret) {
 
         Environment.configure(siteName,clientId,clientSecret);
@@ -75,6 +77,7 @@ public class ScalekitClient {
             webAuthnClient = new ScalekitWebAuthnClient(channel, credentials);
             tokenClient = new ScalekitTokenClient(channel, credentials);
             m2mClient = new ScalekitM2MClient(channel, credentials);
+            eventsClient = new ScalekitEventsClient(channel, credentials);
             webhook = new ScalekitWebhook();
 
         } catch (MalformedURLException e) {
@@ -139,5 +142,9 @@ public class ScalekitClient {
 
     public M2MClient m2m() {
         return this.m2mClient;
+    }
+
+    public EventsClient events() {
+        return this.eventsClient;
     }
 }

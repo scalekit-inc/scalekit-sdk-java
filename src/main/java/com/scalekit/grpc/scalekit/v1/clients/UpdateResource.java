@@ -490,6 +490,32 @@ private static final long serialVersionUID = 0L;
     return enableCimd_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enableCimd_;
   }
 
+  public static final int XAA_ENABLED_FIELD_NUMBER = 16;
+  private com.google.protobuf.BoolValue xaaEnabled_;
+  /**
+   * <code>.google.protobuf.BoolValue xaa_enabled = 16 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the xaaEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasXaaEnabled() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue xaa_enabled = 16 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The xaaEnabled.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getXaaEnabled() {
+    return xaaEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : xaaEnabled_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue xaa_enabled = 16 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getXaaEnabledOrBuilder() {
+    return xaaEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : xaaEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -542,6 +568,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(15, getEnableCimd());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(16, getXaaEnabled());
     }
     getUnknownFields().writeTo(output);
   }
@@ -602,6 +631,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, getEnableCimd());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, getXaaEnabled());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -649,6 +682,11 @@ private static final long serialVersionUID = 0L;
     if (hasEnableCimd()) {
       if (!getEnableCimd()
           .equals(other.getEnableCimd())) return false;
+    }
+    if (hasXaaEnabled() != other.hasXaaEnabled()) return false;
+    if (hasXaaEnabled()) {
+      if (!getXaaEnabled()
+          .equals(other.getXaaEnabled())) return false;
     }
     if (!getSettingsCase().equals(other.getSettingsCase())) return false;
     switch (settingsCase_) {
@@ -703,6 +741,10 @@ private static final long serialVersionUID = 0L;
     if (hasEnableCimd()) {
       hash = (37 * hash) + ENABLE_CIMD_FIELD_NUMBER;
       hash = (53 * hash) + getEnableCimd().hashCode();
+    }
+    if (hasXaaEnabled()) {
+      hash = (37 * hash) + XAA_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + getXaaEnabled().hashCode();
     }
     switch (settingsCase_) {
       case 13:
@@ -845,6 +887,7 @@ private static final long serialVersionUID = 0L;
         getDisableDynamicClientRegistrationFieldBuilder();
         getIntersectScopesUserPermissionFieldBuilder();
         getEnableCimdFieldBuilder();
+        getXaaEnabledFieldBuilder();
       }
     }
     @java.lang.Override
@@ -878,6 +921,11 @@ private static final long serialVersionUID = 0L;
       if (enableCimdBuilder_ != null) {
         enableCimdBuilder_.dispose();
         enableCimdBuilder_ = null;
+      }
+      xaaEnabled_ = null;
+      if (xaaEnabledBuilder_ != null) {
+        xaaEnabledBuilder_.dispose();
+        xaaEnabledBuilder_ = null;
       }
       settingsCase_ = 0;
       settings_ = null;
@@ -961,6 +1009,12 @@ private static final long serialVersionUID = 0L;
             ? enableCimd_
             : enableCimdBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.xaaEnabled_ = xaaEnabledBuilder_ == null
+            ? xaaEnabled_
+            : xaaEnabledBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1073,6 +1127,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasEnableCimd()) {
         mergeEnableCimd(other.getEnableCimd());
       }
+      if (other.hasXaaEnabled()) {
+        mergeXaaEnabled(other.getXaaEnabled());
+      }
       switch (other.getSettingsCase()) {
         case CUSTOM_CONNECTION_SETTINGS: {
           mergeCustomConnectionSettings(other.getCustomConnectionSettings());
@@ -1182,6 +1239,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00001000;
               break;
             } // case 122
+            case 130: {
+              input.readMessage(
+                  getXaaEnabledFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00002000;
+              break;
+            } // case 130
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2324,6 +2388,127 @@ private static final long serialVersionUID = 0L;
         enableCimd_ = null;
       }
       return enableCimdBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue xaaEnabled_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> xaaEnabledBuilder_;
+    /**
+     * <code>.google.protobuf.BoolValue xaa_enabled = 16 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the xaaEnabled field is set.
+     */
+    public boolean hasXaaEnabled() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.BoolValue xaa_enabled = 16 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The xaaEnabled.
+     */
+    public com.google.protobuf.BoolValue getXaaEnabled() {
+      if (xaaEnabledBuilder_ == null) {
+        return xaaEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : xaaEnabled_;
+      } else {
+        return xaaEnabledBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue xaa_enabled = 16 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setXaaEnabled(com.google.protobuf.BoolValue value) {
+      if (xaaEnabledBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        xaaEnabled_ = value;
+      } else {
+        xaaEnabledBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue xaa_enabled = 16 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setXaaEnabled(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (xaaEnabledBuilder_ == null) {
+        xaaEnabled_ = builderForValue.build();
+      } else {
+        xaaEnabledBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue xaa_enabled = 16 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeXaaEnabled(com.google.protobuf.BoolValue value) {
+      if (xaaEnabledBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0) &&
+          xaaEnabled_ != null &&
+          xaaEnabled_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getXaaEnabledBuilder().mergeFrom(value);
+        } else {
+          xaaEnabled_ = value;
+        }
+      } else {
+        xaaEnabledBuilder_.mergeFrom(value);
+      }
+      if (xaaEnabled_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue xaa_enabled = 16 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearXaaEnabled() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      xaaEnabled_ = null;
+      if (xaaEnabledBuilder_ != null) {
+        xaaEnabledBuilder_.dispose();
+        xaaEnabledBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue xaa_enabled = 16 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getXaaEnabledBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getXaaEnabledFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue xaa_enabled = 16 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getXaaEnabledOrBuilder() {
+      if (xaaEnabledBuilder_ != null) {
+        return xaaEnabledBuilder_.getMessageOrBuilder();
+      } else {
+        return xaaEnabled_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : xaaEnabled_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue xaa_enabled = 16 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getXaaEnabledFieldBuilder() {
+      if (xaaEnabledBuilder_ == null) {
+        xaaEnabledBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getXaaEnabled(),
+                getParentForChildren(),
+                isClean());
+        xaaEnabled_ = null;
+      }
+      return xaaEnabledBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

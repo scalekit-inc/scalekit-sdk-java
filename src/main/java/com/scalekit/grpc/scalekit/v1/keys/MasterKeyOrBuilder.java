@@ -9,110 +9,98 @@ public interface MasterKeyOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string id = 1 [json_name = "id"];</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The id.
    */
   java.lang.String getId();
   /**
-   * <code>string id = 1 [json_name = "id"];</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
 
   /**
-   * <pre>
-   * GCP, AWS, AZURE, LOCAL
-   * </pre>
-   *
-   * <code>string provider = 2 [json_name = "provider"];</code>
+   * <code>string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The provider.
    */
   java.lang.String getProvider();
   /**
-   * <pre>
-   * GCP, AWS, AZURE, LOCAL
-   * </pre>
-   *
-   * <code>string provider = 2 [json_name = "provider"];</code>
+   * <code>string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for provider.
    */
   com.google.protobuf.ByteString
       getProviderBytes();
 
   /**
-   * <pre>
-   * KMS key URI
-   * </pre>
-   *
-   * <code>string key_ref = 3 [json_name = "keyRef"];</code>
+   * <code>string key_ref = 3 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The keyRef.
    */
   java.lang.String getKeyRef();
   /**
-   * <pre>
-   * KMS key URI
-   * </pre>
-   *
-   * <code>string key_ref = 3 [json_name = "keyRef"];</code>
+   * <code>string key_ref = 3 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for keyRef.
    */
   com.google.protobuf.ByteString
       getKeyRefBytes();
 
   /**
-   * <code>int32 version = 4 [json_name = "version"];</code>
+   * <code>int32 version = 4 [json_name = "version", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The version.
    */
   int getVersion();
 
   /**
-   * <pre>
-   * CREATED, ACTIVE, DEPRECATED, DISABLED
-   * </pre>
-   *
-   * <code>string status = 5 [json_name = "status"];</code>
+   * <code>string algorithm = 5 [json_name = "algorithm", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The algorithm.
+   */
+  java.lang.String getAlgorithm();
+  /**
+   * <code>string algorithm = 5 [json_name = "algorithm", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for algorithm.
+   */
+  com.google.protobuf.ByteString
+      getAlgorithmBytes();
+
+  /**
+   * <code>string status = 6 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The status.
    */
   java.lang.String getStatus();
   /**
-   * <pre>
-   * CREATED, ACTIVE, DEPRECATED, DISABLED
-   * </pre>
-   *
-   * <code>string status = 5 [json_name = "status"];</code>
+   * <code>string status = 6 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for status.
    */
   com.google.protobuf.ByteString
       getStatusBytes();
 
   /**
-   * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the createdAt field is set.
    */
   boolean hasCreatedAt();
   /**
-   * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The createdAt.
    */
   com.google.protobuf.Timestamp getCreatedAt();
   /**
-   * <code>.google.protobuf.Timestamp created_at = 6 [json_name = "createdAt"];</code>
+   * <code>.google.protobuf.Timestamp created_at = 7 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp rotated_at = 7 [json_name = "rotatedAt"];</code>
+   * <code>.google.protobuf.Timestamp rotated_at = 8 [json_name = "rotatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the rotatedAt field is set.
    */
   boolean hasRotatedAt();
   /**
-   * <code>.google.protobuf.Timestamp rotated_at = 7 [json_name = "rotatedAt"];</code>
+   * <code>.google.protobuf.Timestamp rotated_at = 8 [json_name = "rotatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The rotatedAt.
    */
   com.google.protobuf.Timestamp getRotatedAt();
   /**
-   * <code>.google.protobuf.Timestamp rotated_at = 7 [json_name = "rotatedAt"];</code>
+   * <code>.google.protobuf.Timestamp rotated_at = 8 [json_name = "rotatedAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getRotatedAtOrBuilder();
 }

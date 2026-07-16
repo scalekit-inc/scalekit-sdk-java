@@ -56,7 +56,7 @@ public final class AgentkitAnalyticsProto {
       "avior.proto\032\033google/api/visibility.proto" +
       "\032\037google/protobuf/timestamp.proto\032.proto" +
       "c-gen-openapiv2/options/annotations.prot" +
-      "o\032!scalekit/v1/options/options.proto\"\276\004\n" +
+      "o\032!scalekit/v1/options/options.proto\"\247\005\n" +
       "\027GetOverviewStatsRequest\022>\n\nstart_time\030\001" +
       " \001(\0132\032.google.protobuf.TimestampB\003\340A\002R\ts" +
       "tartTime\022:\n\010end_time\030\002 \001(\0132\032.google.prot" +
@@ -70,56 +70,65 @@ public final class AgentkitAnalyticsProto {
       "\001\n\017connection_name\030\006 \001(\tBj\222A_2OFilter by" +
       " connection name (partial, case-insensit" +
       "ive match). e.g. \'gmail-prod\'.J\014\"gmail-p" +
-      "rod\"\272H\005r\003\030\377\001H\000R\016connectionName\210\001\001B\022\n\020_co" +
-      "nnection_name\"\245\003\n\rOverviewStats\022\024\n\005total" +
-      "\030\001 \001(\003R\005total\022\030\n\007success\030\002 \001(\003R\007success\022" +
-      "\026\n\006errors\030\003 \001(\003R\006errors\022\'\n\017provider_erro" +
-      "rs\030\004 \001(\003R\016providerErrors\022\'\n\017platform_err" +
-      "ors\030\005 \001(\003R\016platformErrors\022Q\n\017top_error_c" +
-      "odes\030\006 \003(\0132).scalekit.v1.agentkit_logs.E" +
-      "rrorCodeCountR\rtopErrorCodes\022Y\n\023connecto" +
-      "r_breakdown\030\007 \003(\0132(.scalekit.v1.agentkit" +
-      "_logs.ConnectorStatR\022connectorBreakdown\022" +
-      "L\n\013time_series\030\010 \003(\0132+.scalekit.v1.agent" +
-      "kit_logs.TimeSeriesBucketR\ntimeSeries\"E\n" +
-      "\016ErrorCodeCount\022\035\n\nerror_code\030\001 \001(\tR\terr" +
-      "orCode\022\024\n\005count\030\002 \001(\003R\005count\"\305\001\n\rConnect" +
-      "orStat\022\032\n\010provider\030\001 \001(\tR\010provider\022\024\n\005to" +
-      "tal\030\002 \001(\003R\005total\022\030\n\007success\030\003 \001(\003R\007succe" +
-      "ss\022\026\n\006errors\030\004 \001(\003R\006errors\022\'\n\017provider_e" +
-      "rrors\030\005 \001(\003R\016providerErrors\022\'\n\017platform_" +
-      "errors\030\006 \001(\003R\016platformErrors\"\310\003\n\020TimeSer" +
-      "iesBucket\0222\n\006bucket\030\001 \001(\0132\032.google.proto" +
-      "buf.TimestampR\006bucket\022\024\n\005total\030\002 \001(\003R\005to" +
-      "tal\022\030\n\007success\030\003 \001(\003R\007success\022\026\n\006errors\030" +
-      "\004 \001(\003R\006errors\022\345\001\n\027bucket_duration_second" +
-      "s\030\005 \001(\003B\254\001\222A\250\0012\245\001Width of this bucket in" +
-      " seconds. The server picks granularity a" +
-      "daptively (5m, 15m, 30m, 1h, 2h, 6h, 12h" +
-      ", 1d, 3d, or 7d) so that any window retu" +
-      "rns at most 30 points.R\025bucketDurationSe" +
-      "conds\022\'\n\017provider_errors\030\006 \001(\003R\016provider" +
-      "Errors\022\'\n\017platform_errors\030\007 \001(\003R\016platfor" +
-      "mErrors2\367\003\n\030AgentkitAnalyticsService\022\301\003\n" +
-      "\020GetOverviewStats\0222.scalekit.v1.agentkit" +
-      "_logs.GetOverviewStatsRequest\032(.scalekit" +
-      ".v1.agentkit_logs.OverviewStats\"\316\002\222A\212\002\n\022" +
-      "AgentKit Analytics\022!Get tool call overvi" +
-      "ew statistics\032~Returns aggregated tool c" +
-      "all metrics for the environment over the" +
-      " specified time window. Used to power th" +
-      "e Overview dashboard.J3\n\003200\022,\n*Overview" +
-      " statistics retrieved successfullyJ\034\n\00340" +
-      "0\022\025\n\023Invalid time window\202\265\030\002\030T\372\322\344\223\002\t\022\007PR" +
-      "EVIEW\202\323\344\223\002%\022#/api/v1/agentkit/analytics/" +
-      "overview\032\027\222A\024\n\022AgentKit AnalyticsB\200\002\n+co" +
-      "m.scalekit.grpc.scalekit.v1.agentkit_log" +
-      "sB\026AgentkitAnalyticsProtoP\001Z7github.com/" +
-      "scalekit-inc/scalekit/pkg/grpc/agentkit_" +
-      "logs\242\002\003SVA\252\002\030Scalekit.V1.AgentkitLogs\312\002\030" +
-      "Scalekit\\V1\\AgentkitLogs\342\002$Scalekit\\V1\\A" +
-      "gentkitLogs\\GPBMetadata\352\002\032Scalekit::V1::" +
-      "AgentkitLogsb\006proto3"
+      "rod\"\272H\005r\003\030\377\001H\000R\016connectionName\210\001\001\022g\n\006sou" +
+      "rce\030\007 \003(\tBO\222AL2JFilter by tool_call_logs" +
+      ".source. Allowed values: API, MCP, PROXY" +
+      ", GATEWAY.R\006sourceB\022\n\020_connection_name\"\245" +
+      "\003\n\rOverviewStats\022\024\n\005total\030\001 \001(\003R\005total\022\030" +
+      "\n\007success\030\002 \001(\003R\007success\022\026\n\006errors\030\003 \001(\003" +
+      "R\006errors\022\'\n\017provider_errors\030\004 \001(\003R\016provi" +
+      "derErrors\022\'\n\017platform_errors\030\005 \001(\003R\016plat" +
+      "formErrors\022Q\n\017top_error_codes\030\006 \003(\0132).sc" +
+      "alekit.v1.agentkit_logs.ErrorCodeCountR\r" +
+      "topErrorCodes\022Y\n\023connector_breakdown\030\007 \003" +
+      "(\0132(.scalekit.v1.agentkit_logs.Connector" +
+      "StatR\022connectorBreakdown\022L\n\013time_series\030" +
+      "\010 \003(\0132+.scalekit.v1.agentkit_logs.TimeSe" +
+      "riesBucketR\ntimeSeries\"E\n\016ErrorCodeCount" +
+      "\022\035\n\nerror_code\030\001 \001(\tR\terrorCode\022\024\n\005count" +
+      "\030\002 \001(\003R\005count\"\305\001\n\rConnectorStat\022\032\n\010provi" +
+      "der\030\001 \001(\tR\010provider\022\024\n\005total\030\002 \001(\003R\005tota" +
+      "l\022\030\n\007success\030\003 \001(\003R\007success\022\026\n\006errors\030\004 " +
+      "\001(\003R\006errors\022\'\n\017provider_errors\030\005 \001(\003R\016pr" +
+      "oviderErrors\022\'\n\017platform_errors\030\006 \001(\003R\016p" +
+      "latformErrors\"\310\003\n\020TimeSeriesBucket\0222\n\006bu" +
+      "cket\030\001 \001(\0132\032.google.protobuf.TimestampR\006" +
+      "bucket\022\024\n\005total\030\002 \001(\003R\005total\022\030\n\007success\030" +
+      "\003 \001(\003R\007success\022\026\n\006errors\030\004 \001(\003R\006errors\022\345" +
+      "\001\n\027bucket_duration_seconds\030\005 \001(\003B\254\001\222A\250\0012" +
+      "\245\001Width of this bucket in seconds. The s" +
+      "erver picks granularity adaptively (5m, " +
+      "15m, 30m, 1h, 2h, 6h, 12h, 1d, 3d, or 7d" +
+      ") so that any window returns at most 30 " +
+      "points.R\025bucketDurationSeconds\022\'\n\017provid" +
+      "er_errors\030\006 \001(\003R\016providerErrors\022\'\n\017platf" +
+      "orm_errors\030\007 \001(\003R\016platformErrors2\212\006\n\030Age" +
+      "ntkitAnalyticsService\022\301\003\n\020GetOverviewSta" +
+      "ts\0222.scalekit.v1.agentkit_logs.GetOvervi" +
+      "ewStatsRequest\032(.scalekit.v1.agentkit_lo" +
+      "gs.OverviewStats\"\316\002\222A\212\002\n\022AgentKit Analyt" +
+      "ics\022!Get tool call overview statistics\032~" +
+      "Returns aggregated tool call metrics for" +
+      " the environment over the specified time" +
+      " window. Used to power the Overview dash" +
+      "board.J3\n\003200\022,\n*Overview statistics ret" +
+      "rieved successfullyJ\034\n\003400\022\025\n\023Invalid ti" +
+      "me window\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\022#/a" +
+      "pi/v1/agentkit/analytics/overview\022\220\002\n\027Ge" +
+      "tCurrentOverviewStats\0222.scalekit.v1.agen" +
+      "tkit_logs.GetOverviewStatsRequest\032(.scal" +
+      "ekit.v1.agentkit_logs.OverviewStats\"\226\001\222A" +
+      "N\n\022AgentKit Analytics\0228Get the calling e" +
+      "nd-user\'s tool call overview statistics\202" +
+      "\265\030\002\030\030\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002*\022(/api/v1/agen" +
+      "tkit/analytics/overview:this\032\027\222A\024\n\022Agent" +
+      "Kit AnalyticsB\200\002\n+com.scalekit.grpc.scal" +
+      "ekit.v1.agentkit_logsB\026AgentkitAnalytics" +
+      "ProtoP\001Z7github.com/scalekit-inc/scaleki" +
+      "t/pkg/grpc/agentkit_logs\242\002\003SVA\252\002\030Scaleki" +
+      "t.V1.AgentkitLogs\312\002\030Scalekit\\V1\\Agentkit" +
+      "Logs\342\002$Scalekit\\V1\\AgentkitLogs\\GPBMetad" +
+      "ata\352\002\032Scalekit::V1::AgentkitLogsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -137,7 +146,7 @@ public final class AgentkitAnalyticsProto {
     internal_static_scalekit_v1_agentkit_logs_GetOverviewStatsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_agentkit_logs_GetOverviewStatsRequest_descriptor,
-        new java.lang.String[] { "StartTime", "EndTime", "Provider", "Status", "ErrorCode", "ConnectionName", });
+        new java.lang.String[] { "StartTime", "EndTime", "Provider", "Status", "ErrorCode", "ConnectionName", "Source", });
     internal_static_scalekit_v1_agentkit_logs_OverviewStats_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_scalekit_v1_agentkit_logs_OverviewStats_fieldAccessorTable = new

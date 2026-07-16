@@ -9,86 +9,50 @@ public interface CreateDEKRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   * Optional: key type. If BYOK or SCALEKIT_MANAGED_KEY, provider and key_ref are required.
-   * </pre>
-   *
-   * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType"];</code>
+   * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the keyType field is set.
    */
   boolean hasKeyType();
   /**
-   * <pre>
-   * Optional: key type. If BYOK or SCALEKIT_MANAGED_KEY, provider and key_ref are required.
-   * </pre>
-   *
-   * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType"];</code>
+   * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enum numeric value on the wire for keyType.
    */
   int getKeyTypeValue();
   /**
-   * <pre>
-   * Optional: key type. If BYOK or SCALEKIT_MANAGED_KEY, provider and key_ref are required.
-   * </pre>
-   *
-   * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType"];</code>
+   * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The keyType.
    */
   com.scalekit.grpc.scalekit.v1.keys.DEKKeyType getKeyType();
 
   /**
-   * <pre>
-   * KMS provider (GCP, AWS, AZURE, LOCAL). Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-   * </pre>
-   *
-   * <code>optional string provider = 2 [json_name = "provider"];</code>
+   * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the provider field is set.
    */
   boolean hasProvider();
   /**
-   * <pre>
-   * KMS provider (GCP, AWS, AZURE, LOCAL). Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-   * </pre>
-   *
-   * <code>optional string provider = 2 [json_name = "provider"];</code>
+   * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The provider.
    */
   java.lang.String getProvider();
   /**
-   * <pre>
-   * KMS provider (GCP, AWS, AZURE, LOCAL). Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-   * </pre>
-   *
-   * <code>optional string provider = 2 [json_name = "provider"];</code>
+   * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for provider.
    */
   com.google.protobuf.ByteString
       getProviderBytes();
 
   /**
-   * <pre>
-   * KMS key URI or identifier. Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-   * </pre>
-   *
-   * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+   * <code>optional string key_ref = 3 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the keyRef field is set.
    */
   boolean hasKeyRef();
   /**
-   * <pre>
-   * KMS key URI or identifier. Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-   * </pre>
-   *
-   * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+   * <code>optional string key_ref = 3 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The keyRef.
    */
   java.lang.String getKeyRef();
   /**
-   * <pre>
-   * KMS key URI or identifier. Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-   * </pre>
-   *
-   * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+   * <code>optional string key_ref = 3 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for keyRef.
    */
   com.google.protobuf.ByteString

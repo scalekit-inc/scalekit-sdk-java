@@ -5,10 +5,6 @@
 package com.scalekit.grpc.scalekit.v1.keys;
 
 /**
- * <pre>
- * DestroyDEKRequest requests permanent deletion of a DEK version
- * </pre>
- *
  * Protobuf type {@code scalekit.v1.keys.DestroyDEKRequest}
  */
 public final class DestroyDEKRequest extends
@@ -46,11 +42,7 @@ private static final long serialVersionUID = 0L;
   public static final int DEK_VERSION_FIELD_NUMBER = 1;
   private int dekVersion_ = 0;
   /**
-   * <pre>
-   * DEK version to destroy
-   * </pre>
-   *
-   * <code>int32 dek_version = 1 [json_name = "dekVersion", (.buf.validate.field) = { ... }</code>
+   * <code>int32 dek_version = 1 [json_name = "dekVersion", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The dekVersion.
    */
   @java.lang.Override
@@ -216,10 +208,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * DestroyDEKRequest requests permanent deletion of a DEK version
-   * </pre>
-   *
    * Protobuf type {@code scalekit.v1.keys.DestroyDEKRequest}
    */
   public static final class Builder extends
@@ -389,11 +377,7 @@ private static final long serialVersionUID = 0L;
 
     private int dekVersion_ ;
     /**
-     * <pre>
-     * DEK version to destroy
-     * </pre>
-     *
-     * <code>int32 dek_version = 1 [json_name = "dekVersion", (.buf.validate.field) = { ... }</code>
+     * <code>int32 dek_version = 1 [json_name = "dekVersion", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The dekVersion.
      */
     @java.lang.Override
@@ -401,11 +385,7 @@ private static final long serialVersionUID = 0L;
       return dekVersion_;
     }
     /**
-     * <pre>
-     * DEK version to destroy
-     * </pre>
-     *
-     * <code>int32 dek_version = 1 [json_name = "dekVersion", (.buf.validate.field) = { ... }</code>
+     * <code>int32 dek_version = 1 [json_name = "dekVersion", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The dekVersion to set.
      * @return This builder for chaining.
      */
@@ -417,11 +397,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * DEK version to destroy
-     * </pre>
-     *
-     * <code>int32 dek_version = 1 [json_name = "dekVersion", (.buf.validate.field) = { ... }</code>
+     * <code>int32 dek_version = 1 [json_name = "dekVersion", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDekVersion() {

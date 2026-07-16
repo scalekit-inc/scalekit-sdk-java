@@ -52,6 +52,7 @@ private static final long serialVersionUID = 0L;
     OAUTH_TOKEN(1),
     STATIC_AUTH(2),
     GOOGLE_DWD(3),
+    TRUSTED_IDP(4),
     DETAILS_NOT_SET(0);
     private final int value;
     private DetailsCase(int value) {
@@ -72,6 +73,7 @@ private static final long serialVersionUID = 0L;
         case 1: return OAUTH_TOKEN;
         case 2: return STATIC_AUTH;
         case 3: return GOOGLE_DWD;
+        case 4: return TRUSTED_IDP;
         case 0: return DETAILS_NOT_SET;
         default: return null;
       }
@@ -216,6 +218,49 @@ private static final long serialVersionUID = 0L;
     return com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth.getDefaultInstance();
   }
 
+  public static final int TRUSTED_IDP_FIELD_NUMBER = 4;
+  /**
+   * <pre>
+   * Trusted IDP federated credentials (e.g. AWS STS temporary credentials)
+   * </pre>
+   *
+   * <code>.scalekit.v1.connected_accounts.TrustedIDPAuth trusted_idp = 4 [json_name = "trustedIdp"];</code>
+   * @return Whether the trustedIdp field is set.
+   */
+  @java.lang.Override
+  public boolean hasTrustedIdp() {
+    return detailsCase_ == 4;
+  }
+  /**
+   * <pre>
+   * Trusted IDP federated credentials (e.g. AWS STS temporary credentials)
+   * </pre>
+   *
+   * <code>.scalekit.v1.connected_accounts.TrustedIDPAuth trusted_idp = 4 [json_name = "trustedIdp"];</code>
+   * @return The trustedIdp.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth getTrustedIdp() {
+    if (detailsCase_ == 4) {
+       return (com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth) details_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Trusted IDP federated credentials (e.g. AWS STS temporary credentials)
+   * </pre>
+   *
+   * <code>.scalekit.v1.connected_accounts.TrustedIDPAuth trusted_idp = 4 [json_name = "trustedIdp"];</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuthOrBuilder getTrustedIdpOrBuilder() {
+    if (detailsCase_ == 4) {
+       return (com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth) details_;
+    }
+    return com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -239,6 +284,9 @@ private static final long serialVersionUID = 0L;
     if (detailsCase_ == 3) {
       output.writeMessage(3, (com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth) details_);
     }
+    if (detailsCase_ == 4) {
+      output.writeMessage(4, (com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth) details_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -259,6 +307,10 @@ private static final long serialVersionUID = 0L;
     if (detailsCase_ == 3) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, (com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuth) details_);
+    }
+    if (detailsCase_ == 4) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, (com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth) details_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -289,6 +341,10 @@ private static final long serialVersionUID = 0L;
         if (!getGoogleDwd()
             .equals(other.getGoogleDwd())) return false;
         break;
+      case 4:
+        if (!getTrustedIdp()
+            .equals(other.getTrustedIdp())) return false;
+        break;
       case 0:
       default:
     }
@@ -315,6 +371,10 @@ private static final long serialVersionUID = 0L;
       case 3:
         hash = (37 * hash) + GOOGLE_DWD_FIELD_NUMBER;
         hash = (53 * hash) + getGoogleDwd().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + TRUSTED_IDP_FIELD_NUMBER;
+        hash = (53 * hash) + getTrustedIdp().hashCode();
         break;
       case 0:
       default:
@@ -463,6 +523,9 @@ private static final long serialVersionUID = 0L;
       if (googleDwdBuilder_ != null) {
         googleDwdBuilder_.clear();
       }
+      if (trustedIdpBuilder_ != null) {
+        trustedIdpBuilder_.clear();
+      }
       detailsCase_ = 0;
       details_ = null;
       return this;
@@ -515,6 +578,10 @@ private static final long serialVersionUID = 0L;
       if (detailsCase_ == 3 &&
           googleDwdBuilder_ != null) {
         result.details_ = googleDwdBuilder_.build();
+      }
+      if (detailsCase_ == 4 &&
+          trustedIdpBuilder_ != null) {
+        result.details_ = trustedIdpBuilder_.build();
       }
     }
 
@@ -575,6 +642,10 @@ private static final long serialVersionUID = 0L;
           mergeGoogleDwd(other.getGoogleDwd());
           break;
         }
+        case TRUSTED_IDP: {
+          mergeTrustedIdp(other.getTrustedIdp());
+          break;
+        }
         case DETAILS_NOT_SET: {
           break;
         }
@@ -626,6 +697,13 @@ private static final long serialVersionUID = 0L;
               detailsCase_ = 3;
               break;
             } // case 26
+            case 34: {
+              input.readMessage(
+                  getTrustedIdpFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              detailsCase_ = 4;
+              break;
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1190,6 +1268,184 @@ private static final long serialVersionUID = 0L;
       detailsCase_ = 3;
       onChanged();
       return googleDwdBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth, com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth.Builder, com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuthOrBuilder> trustedIdpBuilder_;
+    /**
+     * <pre>
+     * Trusted IDP federated credentials (e.g. AWS STS temporary credentials)
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.TrustedIDPAuth trusted_idp = 4 [json_name = "trustedIdp"];</code>
+     * @return Whether the trustedIdp field is set.
+     */
+    @java.lang.Override
+    public boolean hasTrustedIdp() {
+      return detailsCase_ == 4;
+    }
+    /**
+     * <pre>
+     * Trusted IDP federated credentials (e.g. AWS STS temporary credentials)
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.TrustedIDPAuth trusted_idp = 4 [json_name = "trustedIdp"];</code>
+     * @return The trustedIdp.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth getTrustedIdp() {
+      if (trustedIdpBuilder_ == null) {
+        if (detailsCase_ == 4) {
+          return (com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth) details_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 4) {
+          return trustedIdpBuilder_.getMessage();
+        }
+        return com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Trusted IDP federated credentials (e.g. AWS STS temporary credentials)
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.TrustedIDPAuth trusted_idp = 4 [json_name = "trustedIdp"];</code>
+     */
+    public Builder setTrustedIdp(com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth value) {
+      if (trustedIdpBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        trustedIdpBuilder_.setMessage(value);
+      }
+      detailsCase_ = 4;
+      return this;
+    }
+    /**
+     * <pre>
+     * Trusted IDP federated credentials (e.g. AWS STS temporary credentials)
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.TrustedIDPAuth trusted_idp = 4 [json_name = "trustedIdp"];</code>
+     */
+    public Builder setTrustedIdp(
+        com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth.Builder builderForValue) {
+      if (trustedIdpBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        trustedIdpBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 4;
+      return this;
+    }
+    /**
+     * <pre>
+     * Trusted IDP federated credentials (e.g. AWS STS temporary credentials)
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.TrustedIDPAuth trusted_idp = 4 [json_name = "trustedIdp"];</code>
+     */
+    public Builder mergeTrustedIdp(com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth value) {
+      if (trustedIdpBuilder_ == null) {
+        if (detailsCase_ == 4 &&
+            details_ != com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth.getDefaultInstance()) {
+          details_ = com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth.newBuilder((com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth) details_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 4) {
+          trustedIdpBuilder_.mergeFrom(value);
+        } else {
+          trustedIdpBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 4;
+      return this;
+    }
+    /**
+     * <pre>
+     * Trusted IDP federated credentials (e.g. AWS STS temporary credentials)
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.TrustedIDPAuth trusted_idp = 4 [json_name = "trustedIdp"];</code>
+     */
+    public Builder clearTrustedIdp() {
+      if (trustedIdpBuilder_ == null) {
+        if (detailsCase_ == 4) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 4) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        trustedIdpBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Trusted IDP federated credentials (e.g. AWS STS temporary credentials)
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.TrustedIDPAuth trusted_idp = 4 [json_name = "trustedIdp"];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth.Builder getTrustedIdpBuilder() {
+      return getTrustedIdpFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Trusted IDP federated credentials (e.g. AWS STS temporary credentials)
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.TrustedIDPAuth trusted_idp = 4 [json_name = "trustedIdp"];</code>
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuthOrBuilder getTrustedIdpOrBuilder() {
+      if ((detailsCase_ == 4) && (trustedIdpBuilder_ != null)) {
+        return trustedIdpBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 4) {
+          return (com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth) details_;
+        }
+        return com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Trusted IDP federated credentials (e.g. AWS STS temporary credentials)
+     * </pre>
+     *
+     * <code>.scalekit.v1.connected_accounts.TrustedIDPAuth trusted_idp = 4 [json_name = "trustedIdp"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth, com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth.Builder, com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuthOrBuilder> 
+        getTrustedIdpFieldBuilder() {
+      if (trustedIdpBuilder_ == null) {
+        if (!(detailsCase_ == 4)) {
+          details_ = com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth.getDefaultInstance();
+        }
+        trustedIdpBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth, com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth.Builder, com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuthOrBuilder>(
+                (com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 4;
+      onChanged();
+      return trustedIdpBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -235,6 +235,37 @@ public final class ProviderServiceGrpc {
     return getListProvidersMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.ListMyProvidersRequest,
+      com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse> getListMyProvidersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMyProviders",
+      requestType = com.scalekit.grpc.scalekit.v1.providers.ListMyProvidersRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.ListMyProvidersRequest,
+      com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse> getListMyProvidersMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.ListMyProvidersRequest, com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse> getListMyProvidersMethod;
+    if ((getListMyProvidersMethod = ProviderServiceGrpc.getListMyProvidersMethod) == null) {
+      synchronized (ProviderServiceGrpc.class) {
+        if ((getListMyProvidersMethod = ProviderServiceGrpc.getListMyProvidersMethod) == null) {
+          ProviderServiceGrpc.getListMyProvidersMethod = getListMyProvidersMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.providers.ListMyProvidersRequest, com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMyProviders"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.providers.ListMyProvidersRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ProviderServiceMethodDescriptorSupplier("ListMyProviders"))
+              .build();
+        }
+      }
+    }
+    return getListMyProvidersMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -334,6 +365,24 @@ public final class ProviderServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListProvidersMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed counterpart to ListProviders, for the
+     * /ui end-user surface. Reuses the same per-env scoping as
+     * ListProviders(filter.provider_type=ALL): built-in catalog + this
+     * env's custom providers; cross-env / cross-workspace catalog
+     * entries are never returned (env_id resolves from the session, not
+     * a client header — see service/providers.go).
+     * Excludes coming_soon entries so the end-user catalog stays
+     * actionable. Same response shape as ListProviders, so the
+     * frontend's providerMap consumer doesn't need to branch.
+     * </pre>
+     */
+    default void listMyProviders(com.scalekit.grpc.scalekit.v1.providers.ListMyProvidersRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMyProvidersMethod(), responseObserver);
+    }
   }
 
   /**
@@ -424,6 +473,25 @@ public final class ProviderServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListProvidersMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed counterpart to ListProviders, for the
+     * /ui end-user surface. Reuses the same per-env scoping as
+     * ListProviders(filter.provider_type=ALL): built-in catalog + this
+     * env's custom providers; cross-env / cross-workspace catalog
+     * entries are never returned (env_id resolves from the session, not
+     * a client header — see service/providers.go).
+     * Excludes coming_soon entries so the end-user catalog stays
+     * actionable. Same response shape as ListProviders, so the
+     * frontend's providerMap consumer doesn't need to branch.
+     * </pre>
+     */
+    public void listMyProviders(com.scalekit.grpc.scalekit.v1.providers.ListMyProvidersRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMyProvidersMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -492,6 +560,24 @@ public final class ProviderServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse listProviders(com.scalekit.grpc.scalekit.v1.providers.ListProvidersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListProvidersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed counterpart to ListProviders, for the
+     * /ui end-user surface. Reuses the same per-env scoping as
+     * ListProviders(filter.provider_type=ALL): built-in catalog + this
+     * env's custom providers; cross-env / cross-workspace catalog
+     * entries are never returned (env_id resolves from the session, not
+     * a client header — see service/providers.go).
+     * Excludes coming_soon entries so the end-user catalog stays
+     * actionable. Same response shape as ListProviders, so the
+     * frontend's providerMap consumer doesn't need to branch.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse listMyProviders(com.scalekit.grpc.scalekit.v1.providers.ListMyProvidersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMyProvidersMethod(), getCallOptions(), request);
     }
   }
 
@@ -569,6 +655,25 @@ public final class ProviderServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListProvidersMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed counterpart to ListProviders, for the
+     * /ui end-user surface. Reuses the same per-env scoping as
+     * ListProviders(filter.provider_type=ALL): built-in catalog + this
+     * env's custom providers; cross-env / cross-workspace catalog
+     * entries are never returned (env_id resolves from the session, not
+     * a client header — see service/providers.go).
+     * Excludes coming_soon entries so the end-user catalog stays
+     * actionable. Same response shape as ListProviders, so the
+     * frontend's providerMap consumer doesn't need to branch.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse> listMyProviders(
+        com.scalekit.grpc.scalekit.v1.providers.ListMyProvidersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMyProvidersMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_PROVIDER = 0;
@@ -578,6 +683,7 @@ public final class ProviderServiceGrpc {
   private static final int METHODID_DELETE_PROVIDER = 4;
   private static final int METHODID_DELETE_CUSTOM_PROVIDER = 5;
   private static final int METHODID_LIST_PROVIDERS = 6;
+  private static final int METHODID_LIST_MY_PROVIDERS = 7;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -622,6 +728,10 @@ public final class ProviderServiceGrpc {
           break;
         case METHODID_LIST_PROVIDERS:
           serviceImpl.listProviders((com.scalekit.grpc.scalekit.v1.providers.ListProvidersRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MY_PROVIDERS:
+          serviceImpl.listMyProviders((com.scalekit.grpc.scalekit.v1.providers.ListMyProvidersRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse>) responseObserver);
           break;
         default:
@@ -691,6 +801,13 @@ public final class ProviderServiceGrpc {
               com.scalekit.grpc.scalekit.v1.providers.ListProvidersRequest,
               com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse>(
                 service, METHODID_LIST_PROVIDERS)))
+        .addMethod(
+          getListMyProvidersMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.providers.ListMyProvidersRequest,
+              com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse>(
+                service, METHODID_LIST_MY_PROVIDERS)))
         .build();
   }
 
@@ -746,6 +863,7 @@ public final class ProviderServiceGrpc {
               .addMethod(getDeleteProviderMethod())
               .addMethod(getDeleteCustomProviderMethod())
               .addMethod(getListProvidersMethod())
+              .addMethod(getListMyProvidersMethod())
               .build();
         }
       }

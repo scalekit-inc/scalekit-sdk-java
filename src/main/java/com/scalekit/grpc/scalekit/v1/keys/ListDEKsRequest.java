@@ -5,10 +5,6 @@
 package com.scalekit.grpc.scalekit.v1.keys;
 
 /**
- * <pre>
- * ListDEKsRequest requests listing of DEKs with pagination.
- * </pre>
- *
  * Protobuf type {@code scalekit.v1.keys.ListDEKsRequest}
  */
 public final class ListDEKsRequest extends
@@ -50,11 +46,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
   /**
-   * <pre>
-   * Optional: filter by status (ACTIVE, DEPRECATED)
-   * </pre>
-   *
-   * <code>optional string status = 1 [json_name = "status"];</code>
+   * <code>optional string status = 1 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the status field is set.
    */
   @java.lang.Override
@@ -62,11 +54,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <pre>
-   * Optional: filter by status (ACTIVE, DEPRECATED)
-   * </pre>
-   *
-   * <code>optional string status = 1 [json_name = "status"];</code>
+   * <code>optional string status = 1 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The status.
    */
   @java.lang.Override
@@ -83,11 +71,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * Optional: filter by status (ACTIVE, DEPRECATED)
-   * </pre>
-   *
-   * <code>optional string status = 1 [json_name = "status"];</code>
+   * <code>optional string status = 1 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for status.
    */
   @java.lang.Override
@@ -108,11 +92,7 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
   /**
-   * <pre>
-   * Page size. Defaults to 10, max 100.
-   * </pre>
-   *
-   * <code>uint32 page_size = 2 [json_name = "pageSize"];</code>
+   * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageSize.
    */
   @java.lang.Override
@@ -124,11 +104,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
   /**
-   * <pre>
-   * Page token from a previous ListDEKsResponse.next_page_token. Omit for first page.
-   * </pre>
-   *
-   * <code>string page_token = 3 [json_name = "pageToken"];</code>
+   * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageToken.
    */
   @java.lang.Override
@@ -145,11 +121,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * Page token from a previous ListDEKsResponse.next_page_token. Omit for first page.
-   * </pre>
-   *
-   * <code>string page_token = 3 [json_name = "pageToken"];</code>
+   * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for pageToken.
    */
   @java.lang.Override
@@ -350,10 +322,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * ListDEKsRequest requests listing of DEKs with pagination.
-   * </pre>
-   *
    * Protobuf type {@code scalekit.v1.keys.ListDEKsRequest}
    */
   public static final class Builder extends
@@ -554,22 +522,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object status_ = "";
     /**
-     * <pre>
-     * Optional: filter by status (ACTIVE, DEPRECATED)
-     * </pre>
-     *
-     * <code>optional string status = 1 [json_name = "status"];</code>
+     * <code>optional string status = 1 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <pre>
-     * Optional: filter by status (ACTIVE, DEPRECATED)
-     * </pre>
-     *
-     * <code>optional string status = 1 [json_name = "status"];</code>
+     * <code>optional string status = 1 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The status.
      */
     public java.lang.String getStatus() {
@@ -585,11 +545,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Optional: filter by status (ACTIVE, DEPRECATED)
-     * </pre>
-     *
-     * <code>optional string status = 1 [json_name = "status"];</code>
+     * <code>optional string status = 1 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for status.
      */
     public com.google.protobuf.ByteString
@@ -606,11 +562,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Optional: filter by status (ACTIVE, DEPRECATED)
-     * </pre>
-     *
-     * <code>optional string status = 1 [json_name = "status"];</code>
+     * <code>optional string status = 1 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The status to set.
      * @return This builder for chaining.
      */
@@ -623,11 +575,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Optional: filter by status (ACTIVE, DEPRECATED)
-     * </pre>
-     *
-     * <code>optional string status = 1 [json_name = "status"];</code>
+     * <code>optional string status = 1 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
@@ -637,11 +585,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Optional: filter by status (ACTIVE, DEPRECATED)
-     * </pre>
-     *
-     * <code>optional string status = 1 [json_name = "status"];</code>
+     * <code>optional string status = 1 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
@@ -657,11 +601,7 @@ private static final long serialVersionUID = 0L;
 
     private int pageSize_ ;
     /**
-     * <pre>
-     * Page size. Defaults to 10, max 100.
-     * </pre>
-     *
-     * <code>uint32 page_size = 2 [json_name = "pageSize"];</code>
+     * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The pageSize.
      */
     @java.lang.Override
@@ -669,11 +609,7 @@ private static final long serialVersionUID = 0L;
       return pageSize_;
     }
     /**
-     * <pre>
-     * Page size. Defaults to 10, max 100.
-     * </pre>
-     *
-     * <code>uint32 page_size = 2 [json_name = "pageSize"];</code>
+     * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The pageSize to set.
      * @return This builder for chaining.
      */
@@ -685,11 +621,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Page size. Defaults to 10, max 100.
-     * </pre>
-     *
-     * <code>uint32 page_size = 2 [json_name = "pageSize"];</code>
+     * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
@@ -701,11 +633,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object pageToken_ = "";
     /**
-     * <pre>
-     * Page token from a previous ListDEKsResponse.next_page_token. Omit for first page.
-     * </pre>
-     *
-     * <code>string page_token = 3 [json_name = "pageToken"];</code>
+     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The pageToken.
      */
     public java.lang.String getPageToken() {
@@ -721,11 +649,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Page token from a previous ListDEKsResponse.next_page_token. Omit for first page.
-     * </pre>
-     *
-     * <code>string page_token = 3 [json_name = "pageToken"];</code>
+     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString
@@ -742,11 +666,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Page token from a previous ListDEKsResponse.next_page_token. Omit for first page.
-     * </pre>
-     *
-     * <code>string page_token = 3 [json_name = "pageToken"];</code>
+     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The pageToken to set.
      * @return This builder for chaining.
      */
@@ -759,11 +679,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Page token from a previous ListDEKsResponse.next_page_token. Omit for first page.
-     * </pre>
-     *
-     * <code>string page_token = 3 [json_name = "pageToken"];</code>
+     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
@@ -773,11 +689,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Page token from a previous ListDEKsResponse.next_page_token. Omit for first page.
-     * </pre>
-     *
-     * <code>string page_token = 3 [json_name = "pageToken"];</code>
+     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
      */

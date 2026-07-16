@@ -41,6 +41,16 @@ public final class EventsProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_events_ListEventsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_events_ListEventsPaginatedRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_events_ListEventsPaginatedRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_events_ListEventsPaginatedResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_events_ListEventsPaginatedResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_events_IEvent_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -133,130 +143,181 @@ public final class EventsProto {
       "\0132!.scalekit.v1.events.ScalekitEventR\006ev" +
       "ents\022&\n\017next_page_token\030\002 \001(\tR\rnextPageT" +
       "oken\022&\n\017prev_page_token\030\003 \001(\tR\rprevPageT" +
-      "oken\022\035\n\ntotal_size\030\004 \001(\rR\ttotalSize\"\306\005\n\006" +
-      "IEvent\022!\n\014spec_version\030\001 \001(\tR\013specVersio" +
-      "n\022\031\n\002id\030\002 \001(\tB\t\272H\006r\004\020\001\030 R\002id\022\022\n\004type\030\003 \001" +
-      "(\tR\004type\022;\n\013occurred_at\030\004 \001(\0132\032.google.p" +
-      "rotobuf.TimestampR\noccurredAt\022/\n\005actor\030\005" +
-      " \001(\0132\031.scalekit.v1.events.ActorR\005actor\022\033" +
-      "\n\ttenant_id\030\006 \001(\tR\010tenantId\0222\n\006target\030\007 " +
-      "\001(\0132\032.scalekit.v1.events.TargetR\006target\022" +
-      "\026\n\006source\030\010 \001(\tR\006source\022+\n\004data\030\t \001(\0132\027." +
-      "google.protobuf.StructR\004data\0222\n\010old_data" +
-      "\030\n \001(\0132\027.google.protobuf.StructR\007oldData" +
-      "\022Z\n\007context\030\013 \003(\0132\'.scalekit.v1.events.I" +
-      "Event.ContextEntryB\027\272H\024\232\001\021\"\006r\004\020\003\030\031*\007r\005\020\001" +
-      "\030\320\017R\007context\022]\n\010metadata\030\014 \003(\0132(.scaleki" +
-      "t.v1.events.IEvent.MetadataEntryB\027\272H\024\232\001\021" +
-      "\"\006r\004\020\003\030\031*\007r\005\020\001\030\320\017R\010metadata\032:\n\014ContextEn" +
-      "try\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005va" +
-      "lue:\0028\001\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003k" +
-      "ey\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\373\005\n\005Event\022!" +
-      "\n\014spec_version\030\001 \001(\tR\013specVersion\022\031\n\002id\030" +
-      "\002 \001(\tB\t\272H\006r\004\020\001\030 R\002id\022\022\n\004type\030\003 \001(\tR\004type" +
-      "\022;\n\013occurred_at\030\004 \001(\0132\032.google.protobuf." +
-      "TimestampR\noccurredAt\022/\n\005actor\030\005 \001(\0132\031.s" +
-      "calekit.v1.events.ActorR\005actor\022\033\n\ttenant" +
-      "_id\030\006 \001(\tR\010tenantId\0222\n\006target\030\007 \001(\0132\032.sc" +
-      "alekit.v1.events.TargetR\006target\022\026\n\006sourc" +
-      "e\030\010 \001(\tR\006source\022+\n\004data\030\t \001(\0132\027.google.p" +
-      "rotobuf.StructR\004data\0222\n\010old_data\030\n \001(\0132\027" +
-      ".google.protobuf.StructR\007oldData\022Y\n\007cont" +
-      "ext\030\013 \003(\0132&.scalekit.v1.events.Event.Con" +
-      "textEntryB\027\272H\024\232\001\021\"\006r\004\020\003\030\031*\007r\005\020\001\030\320\017R\007cont" +
-      "ext\022\\\n\010metadata\030\014 \003(\0132\'.scalekit.v1.even" +
-      "ts.Event.MetadataEntryB\027\272H\024\232\001\021\"\006r\004\020\003\030\031*\007" +
-      "r\005\020\001\030\320\017R\010metadata\0226\n\006object\030\r \001(\0162\036.scal" +
-      "ekit.v1.events.ObjectTypeR\006object\032:\n\014Con" +
-      "textEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001" +
-      "(\tR\005value:\0028\001\032;\n\rMetadataEntry\022\020\n\003key\030\001 " +
-      "\001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"K\n\005Ac" +
-      "tor\022\016\n\002id\030\001 \001(\tR\002id\0222\n\004type\030\002 \001(\0162\036.scal" +
-      "ekit.v1.events.EventActorR\004type\"M\n\006Targe" +
-      "t\022\016\n\002id\030\001 \001(\tR\002id\0223\n\004type\030\002 \001(\0162\037.scalek" +
-      "it.v1.events.EventTargetR\004type\"\361\003\n\014IEven" +
-      "tFilter\022\037\n\013event_types\030\001 \003(\tR\neventTypes" +
-      "\0229\n\nstart_time\030\002 \001(\0132\032.google.protobuf.T" +
-      "imestampR\tstartTime\0225\n\010end_time\030\003 \001(\0132\032." +
-      "google.protobuf.TimestampR\007endTime\022\033\n\tte" +
-      "nant_id\030\004 \001(\tR\010tenantId\0222\n\006target\030\005 \001(\0132" +
-      "\032.scalekit.v1.events.TargetR\006target\0222\n\006s" +
-      "ource\030\006 \001(\0162\032.scalekit.v1.events.SourceR" +
-      "\006source\022c\n\010metadata\030\007 \003(\0132..scalekit.v1." +
-      "events.IEventFilter.MetadataEntryB\027\272H\024\232\001" +
-      "\021\"\006r\004\020\003\030\031*\007r\005\020\001\030\320\017R\010metadata\022\'\n\017internal" +
-      "_events\030\010 \003(\tR\016internalEvents\032;\n\rMetadat" +
-      "aEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR" +
-      "\005value:\0028\001\"\214\005\n\013EventFilter\022\037\n\013event_type" +
-      "s\030\001 \003(\tR\neventTypes\0229\n\nstart_time\030\002 \001(\0132" +
-      "\032.google.protobuf.TimestampR\tstartTime\0225" +
-      "\n\010end_time\030\003 \001(\0132\032.google.protobuf.Times" +
-      "tampR\007endTime\022\'\n\017organization_id\030\004 \001(\tR\016" +
-      "organizationId\0222\n\006source\030\005 \001(\0162\032.scaleki" +
-      "t.v1.events.SourceR\006source\022&\n\017auth_reque" +
-      "st_id\030\006 \001(\tR\rauthRequestId\022*\n\016intercepto" +
-      "r_id\030\007 \001(\tH\000R\rinterceptorId\210\001\001\0222\n\022interc" +
-      "eptor_status\030\010 \001(\tH\001R\021interceptorStatus\210" +
-      "\001\001\0226\n\024interceptor_decision\030\t \001(\tH\002R\023inte" +
-      "rceptorDecision\210\001\001\022(\n\rconnection_id\030\n \001(" +
-      "\tH\003R\014connectionId\210\001\001\0225\n\024connected_accoun" +
-      "t_id\030\013 \001(\tH\004R\022connectedAccountId\210\001\001B\021\n\017_" +
-      "interceptor_idB\025\n\023_interceptor_statusB\027\n" +
-      "\025_interceptor_decisionB\020\n\016_connection_id" +
-      "B\027\n\025_connected_account_id\"\232\003\n\rScalekitEv" +
-      "ent\022!\n\014spec_version\030\001 \001(\tR\013specVersion\022\036" +
-      "\n\002id\030\002 \001(\tB\016\272H\013r\t\020\001\030 :\003evtR\002id\022\022\n\004type\030\003" +
-      " \001(\tR\004type\022;\n\013occurred_at\030\004 \001(\0132\032.google" +
-      ".protobuf.TimestampR\noccurredAt\022%\n\016envir" +
-      "onment_id\030\006 \001(\tR\renvironmentId\022,\n\017organi" +
-      "zation_id\030\007 \001(\tH\000R\016organizationId\210\001\001\0226\n\006" +
-      "object\030\010 \001(\0162\036.scalekit.v1.events.Object" +
-      "TypeR\006object\022+\n\004data\030\t \001(\0132\027.google.prot" +
-      "obuf.StructR\004data\022!\n\014display_name\030\n \001(\tR" +
-      "\013displayNameB\022\n\020_organization_idJ\004\010\005\020\006*D" +
-      "\n\nEventActor\022\025\n\021ACTOR_UNSPECIFIED\020\000\022\t\n\005H" +
-      "UMAN\020\001\022\013\n\007MACHINE\020\002\022\007\n\003API\020\003*<\n\006Source\022\026" +
-      "\n\022SOURCE_UNSPECIFIED\020\000\022\014\n\010SCALEKIT\020\001\022\014\n\010" +
-      "DIR_SYNC\020\002*\320\001\n\013EventTarget\022\034\n\030EVENT_TARG" +
-      "ET_UNSPECIFIED\020\000\022\r\n\tWORKSPACE\020\001\022\017\n\013ENVIR" +
-      "ONMENT\020\002\022\020\n\014ORGANIZATION\020\003\022\010\n\004USER\020\004\022\013\n\007" +
-      "SESSION\020\005\022\014\n\010TEMPLATE\020\006\022\020\n\014EMAIL_SERVER\020" +
-      "\007\022\t\n\005EMAIL\020\010\022\025\n\021CONNECTED_ACCOUNT\020\t\022\010\n\004R" +
-      "OLE\020\n\022\016\n\nPERMISSION\020\013*M\n\rEventCategory\022\034" +
-      "\n\030EVENT_SOURCE_UNSPECIFIED\020\000\022\010\n\004CORE\020\001\022\007" +
-      "\n\003SSO\020\002\022\013\n\007DIRSYNC\020\003*\351\005\n\nObjectType\022\033\n\027O" +
-      "BJECT_TYPE_UNSPECIFIED\020\000\022\r\n\tWorkspace\020\001\022" +
-      "\017\n\013Environment\020\002\022\020\n\014Organization\020\003\022\016\n\nCo" +
-      "nnection\020\004\022\010\n\004User\020\005\022\010\n\004Role\020\006\022\024\n\020Custom" +
-      "Attributes\020\007\022\r\n\tDirectory\020\010\022\021\n\rDirectory" +
-      "User\020\t\022\022\n\016DirectoryGroup\020\n\022\013\n\007Session\020\013\022" +
-      "\014\n\010Template\020\014\022\007\n\003Job\020\r\022\n\n\006Domain\020\016\022\017\n\013Em" +
-      "ailServer\020\017\022\t\n\005Email\020\020\022\017\n\013AuthRequest\020\021\022" +
-      "\017\n\013SAMLRequest\020\022\022\020\n\014SAMLResponse\020\023\022\017\n\013To" +
-      "kenClaims\020\024\022\021\n\rOIDCReqParams\020\025\022\022\n\016OIDCRe" +
-      "spClaims\020\026\022\014\n\010SSOError\020\027\022\020\n\014GenericError" +
-      "\020\030\022\021\n\rRefreshTokens\020\031\022\025\n\021EndSessionReque" +
-      "st\020\032\022\025\n\021LogoutTokenClaims\020\033\022\021\n\rOAuthResp" +
-      "onse\020\034\022\010\n\004JSON\020\035\022\014\n\010SKErrors\020\036\022\021\n\rOrgMem" +
-      "bership\020\037\022\017\n\013UserProfile\020 \022\027\n\023IDPInitiat" +
-      "edPayload\020!\022\021\n\rDeviceDetails\020\"\022\013\n\007Action" +
-      "s\020#\022\024\n\020InterceptorEvent\020$\022\016\n\nPermission\020" +
-      "%\022\026\n\022OrgMembershipEvent\020&\022\022\n\016UserLoginEv" +
-      "ent\020\'\022\023\n\017UserLogoutEvent\020(\022\024\n\020ConnectedA" +
-      "ccount\020)2\302\002\n\rEventsService\022\201\001\n\nListEvent" +
-      "s\022%.scalekit.v1.events.ListEventsRequest" +
-      "\032&.scalekit.v1.events.ListEventsResponse" +
-      "\"$\202\265\030\002\030d\202\323\344\223\002\030\"\016/api/v1/events:\006filter\022\254" +
-      "\001\n\017SendCustomEvent\022*.scalekit.v1.events." +
-      "SendCustomEventRequest\032+.scalekit.v1.eve" +
-      "nts.SendCustomEventResponse\"@\202\265\030\002\030`\202\323\344\223\002" +
-      "4\"+/api/v1/events/frontend_events/{event" +
-      "_type}:\005eventB\317\001\n$com.scalekit.grpc.scal" +
-      "ekit.v1.eventsB\013EventsProtoP\001Z0github.co" +
-      "m/scalekit-inc/scalekit/pkg/grpc/events\242" +
-      "\002\003SVE\252\002\022Scalekit.V1.Events\312\002\022Scalekit\\V1" +
-      "\\Events\342\002\036Scalekit\\V1\\Events\\GPBMetadata" +
-      "\352\002\024Scalekit::V1::Eventsb\006proto3"
+      "oken\022\035\n\ntotal_size\030\004 \001(\rR\ttotalSize\"\221\001\n\032" +
+      "ListEventsPaginatedRequest\0227\n\006filter\030\001 \001" +
+      "(\0132\037.scalekit.v1.events.EventFilterR\006fil" +
+      "ter\022\033\n\tpage_size\030\002 \001(\rR\010pageSize\022\035\n\npage" +
+      "_token\030\003 \001(\tR\tpageToken\"\202\005\n\033ListEventsPa" +
+      "ginatedResponse\022\255\001\n\006events\030\001 \003(\0132!.scale" +
+      "kit.v1.events.ScalekitEventBr\222Ao2mEvents" +
+      " matching the filter, ordered most-recen" +
+      "t first. Empty when the filter matches n" +
+      "o events in the window.R\006events\022\323\001\n\017next" +
+      "_page_token\030\002 \001(\tB\252\001\222A\246\0012\215\001Opaque cursor" +
+      " for the next page. Empty when the curre" +
+      "nt page is the last. Pass back as the pa" +
+      "ge_token query parameter to fetch the ne" +
+      "xt page.J\024\">:WyJldnRfMTAwNCJd\"R\rnextPage" +
+      "Token\022\334\001\n\017prev_page_token\030\003 \001(\tB\263\001\222A\257\0012\226" +
+      "\001Opaque cursor for the previous page. Em" +
+      "pty when the current page is the first. " +
+      "Pass back as the page_token query parame" +
+      "ter to fetch the previous page.J\024\"<:WyJl" +
+      "dnRfMTAwM110\"R\rprevPageToken\"\306\005\n\006IEvent\022" +
+      "!\n\014spec_version\030\001 \001(\tR\013specVersion\022\031\n\002id" +
+      "\030\002 \001(\tB\t\272H\006r\004\020\001\030 R\002id\022\022\n\004type\030\003 \001(\tR\004typ" +
+      "e\022;\n\013occurred_at\030\004 \001(\0132\032.google.protobuf" +
+      ".TimestampR\noccurredAt\022/\n\005actor\030\005 \001(\0132\031." +
+      "scalekit.v1.events.ActorR\005actor\022\033\n\ttenan" +
+      "t_id\030\006 \001(\tR\010tenantId\0222\n\006target\030\007 \001(\0132\032.s" +
+      "calekit.v1.events.TargetR\006target\022\026\n\006sour" +
+      "ce\030\010 \001(\tR\006source\022+\n\004data\030\t \001(\0132\027.google." +
+      "protobuf.StructR\004data\0222\n\010old_data\030\n \001(\0132" +
+      "\027.google.protobuf.StructR\007oldData\022Z\n\007con" +
+      "text\030\013 \003(\0132\'.scalekit.v1.events.IEvent.C" +
+      "ontextEntryB\027\272H\024\232\001\021\"\006r\004\020\003\030\031*\007r\005\020\001\030\320\017R\007co" +
+      "ntext\022]\n\010metadata\030\014 \003(\0132(.scalekit.v1.ev" +
+      "ents.IEvent.MetadataEntryB\027\272H\024\232\001\021\"\006r\004\020\003\030" +
+      "\031*\007r\005\020\001\030\320\017R\010metadata\032:\n\014ContextEntry\022\020\n\003" +
+      "key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001" +
+      "\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005v" +
+      "alue\030\002 \001(\tR\005value:\0028\001\"\373\005\n\005Event\022!\n\014spec_" +
+      "version\030\001 \001(\tR\013specVersion\022\031\n\002id\030\002 \001(\tB\t" +
+      "\272H\006r\004\020\001\030 R\002id\022\022\n\004type\030\003 \001(\tR\004type\022;\n\013occ" +
+      "urred_at\030\004 \001(\0132\032.google.protobuf.Timesta" +
+      "mpR\noccurredAt\022/\n\005actor\030\005 \001(\0132\031.scalekit" +
+      ".v1.events.ActorR\005actor\022\033\n\ttenant_id\030\006 \001" +
+      "(\tR\010tenantId\0222\n\006target\030\007 \001(\0132\032.scalekit." +
+      "v1.events.TargetR\006target\022\026\n\006source\030\010 \001(\t" +
+      "R\006source\022+\n\004data\030\t \001(\0132\027.google.protobuf" +
+      ".StructR\004data\0222\n\010old_data\030\n \001(\0132\027.google" +
+      ".protobuf.StructR\007oldData\022Y\n\007context\030\013 \003" +
+      "(\0132&.scalekit.v1.events.Event.ContextEnt" +
+      "ryB\027\272H\024\232\001\021\"\006r\004\020\003\030\031*\007r\005\020\001\030\320\017R\007context\022\\\n\010" +
+      "metadata\030\014 \003(\0132\'.scalekit.v1.events.Even" +
+      "t.MetadataEntryB\027\272H\024\232\001\021\"\006r\004\020\003\030\031*\007r\005\020\001\030\320\017" +
+      "R\010metadata\0226\n\006object\030\r \001(\0162\036.scalekit.v1" +
+      ".events.ObjectTypeR\006object\032:\n\014ContextEnt" +
+      "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val" +
+      "ue:\0028\001\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003ke" +
+      "y\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"K\n\005Actor\022\016\n\002" +
+      "id\030\001 \001(\tR\002id\0222\n\004type\030\002 \001(\0162\036.scalekit.v1" +
+      ".events.EventActorR\004type\"M\n\006Target\022\016\n\002id" +
+      "\030\001 \001(\tR\002id\0223\n\004type\030\002 \001(\0162\037.scalekit.v1.e" +
+      "vents.EventTargetR\004type\"\361\003\n\014IEventFilter" +
+      "\022\037\n\013event_types\030\001 \003(\tR\neventTypes\0229\n\nsta" +
+      "rt_time\030\002 \001(\0132\032.google.protobuf.Timestam" +
+      "pR\tstartTime\0225\n\010end_time\030\003 \001(\0132\032.google." +
+      "protobuf.TimestampR\007endTime\022\033\n\ttenant_id" +
+      "\030\004 \001(\tR\010tenantId\0222\n\006target\030\005 \001(\0132\032.scale" +
+      "kit.v1.events.TargetR\006target\0222\n\006source\030\006" +
+      " \001(\0162\032.scalekit.v1.events.SourceR\006source" +
+      "\022c\n\010metadata\030\007 \003(\0132..scalekit.v1.events." +
+      "IEventFilter.MetadataEntryB\027\272H\024\232\001\021\"\006r\004\020\003" +
+      "\030\031*\007r\005\020\001\030\320\017R\010metadata\022\'\n\017internal_events" +
+      "\030\010 \003(\tR\016internalEvents\032;\n\rMetadataEntry\022" +
+      "\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:" +
+      "\0028\001\"\214\005\n\013EventFilter\022\037\n\013event_types\030\001 \003(\t" +
+      "R\neventTypes\0229\n\nstart_time\030\002 \001(\0132\032.googl" +
+      "e.protobuf.TimestampR\tstartTime\0225\n\010end_t" +
+      "ime\030\003 \001(\0132\032.google.protobuf.TimestampR\007e" +
+      "ndTime\022\'\n\017organization_id\030\004 \001(\tR\016organiz" +
+      "ationId\0222\n\006source\030\005 \001(\0162\032.scalekit.v1.ev" +
+      "ents.SourceR\006source\022&\n\017auth_request_id\030\006" +
+      " \001(\tR\rauthRequestId\022*\n\016interceptor_id\030\007 " +
+      "\001(\tH\000R\rinterceptorId\210\001\001\0222\n\022interceptor_s" +
+      "tatus\030\010 \001(\tH\001R\021interceptorStatus\210\001\001\0226\n\024i" +
+      "nterceptor_decision\030\t \001(\tH\002R\023interceptor" +
+      "Decision\210\001\001\022(\n\rconnection_id\030\n \001(\tH\003R\014co" +
+      "nnectionId\210\001\001\0225\n\024connected_account_id\030\013 " +
+      "\001(\tH\004R\022connectedAccountId\210\001\001B\021\n\017_interce" +
+      "ptor_idB\025\n\023_interceptor_statusB\027\n\025_inter" +
+      "ceptor_decisionB\020\n\016_connection_idB\027\n\025_co" +
+      "nnected_account_id\"\232\003\n\rScalekitEvent\022!\n\014" +
+      "spec_version\030\001 \001(\tR\013specVersion\022\036\n\002id\030\002 " +
+      "\001(\tB\016\272H\013r\t\020\001\030 :\003evtR\002id\022\022\n\004type\030\003 \001(\tR\004t" +
+      "ype\022;\n\013occurred_at\030\004 \001(\0132\032.google.protob" +
+      "uf.TimestampR\noccurredAt\022%\n\016environment_" +
+      "id\030\006 \001(\tR\renvironmentId\022,\n\017organization_" +
+      "id\030\007 \001(\tH\000R\016organizationId\210\001\001\0226\n\006object\030" +
+      "\010 \001(\0162\036.scalekit.v1.events.ObjectTypeR\006o" +
+      "bject\022+\n\004data\030\t \001(\0132\027.google.protobuf.St" +
+      "ructR\004data\022!\n\014display_name\030\n \001(\tR\013displa" +
+      "yNameB\022\n\020_organization_idJ\004\010\005\020\006*D\n\nEvent" +
+      "Actor\022\025\n\021ACTOR_UNSPECIFIED\020\000\022\t\n\005HUMAN\020\001\022" +
+      "\013\n\007MACHINE\020\002\022\007\n\003API\020\003*<\n\006Source\022\026\n\022SOURC" +
+      "E_UNSPECIFIED\020\000\022\014\n\010SCALEKIT\020\001\022\014\n\010DIR_SYN" +
+      "C\020\002*\320\001\n\013EventTarget\022\034\n\030EVENT_TARGET_UNSP" +
+      "ECIFIED\020\000\022\r\n\tWORKSPACE\020\001\022\017\n\013ENVIRONMENT\020" +
+      "\002\022\020\n\014ORGANIZATION\020\003\022\010\n\004USER\020\004\022\013\n\007SESSION" +
+      "\020\005\022\014\n\010TEMPLATE\020\006\022\020\n\014EMAIL_SERVER\020\007\022\t\n\005EM" +
+      "AIL\020\010\022\025\n\021CONNECTED_ACCOUNT\020\t\022\010\n\004ROLE\020\n\022\016" +
+      "\n\nPERMISSION\020\013*M\n\rEventCategory\022\034\n\030EVENT" +
+      "_SOURCE_UNSPECIFIED\020\000\022\010\n\004CORE\020\001\022\007\n\003SSO\020\002" +
+      "\022\013\n\007DIRSYNC\020\003*\351\005\n\nObjectType\022\033\n\027OBJECT_T" +
+      "YPE_UNSPECIFIED\020\000\022\r\n\tWorkspace\020\001\022\017\n\013Envi" +
+      "ronment\020\002\022\020\n\014Organization\020\003\022\016\n\nConnectio" +
+      "n\020\004\022\010\n\004User\020\005\022\010\n\004Role\020\006\022\024\n\020CustomAttribu" +
+      "tes\020\007\022\r\n\tDirectory\020\010\022\021\n\rDirectoryUser\020\t\022" +
+      "\022\n\016DirectoryGroup\020\n\022\013\n\007Session\020\013\022\014\n\010Temp" +
+      "late\020\014\022\007\n\003Job\020\r\022\n\n\006Domain\020\016\022\017\n\013EmailServ" +
+      "er\020\017\022\t\n\005Email\020\020\022\017\n\013AuthRequest\020\021\022\017\n\013SAML" +
+      "Request\020\022\022\020\n\014SAMLResponse\020\023\022\017\n\013TokenClai" +
+      "ms\020\024\022\021\n\rOIDCReqParams\020\025\022\022\n\016OIDCRespClaim" +
+      "s\020\026\022\014\n\010SSOError\020\027\022\020\n\014GenericError\020\030\022\021\n\rR" +
+      "efreshTokens\020\031\022\025\n\021EndSessionRequest\020\032\022\025\n" +
+      "\021LogoutTokenClaims\020\033\022\021\n\rOAuthResponse\020\034\022" +
+      "\010\n\004JSON\020\035\022\014\n\010SKErrors\020\036\022\021\n\rOrgMembership" +
+      "\020\037\022\017\n\013UserProfile\020 \022\027\n\023IDPInitiatedPaylo" +
+      "ad\020!\022\021\n\rDeviceDetails\020\"\022\013\n\007Actions\020#\022\024\n\020" +
+      "InterceptorEvent\020$\022\016\n\nPermission\020%\022\026\n\022Or" +
+      "gMembershipEvent\020&\022\022\n\016UserLoginEvent\020\'\022\023" +
+      "\n\017UserLogoutEvent\020(\022\024\n\020ConnectedAccount\020" +
+      ")2\215\014\n\rEventsService\022\201\001\n\nListEvents\022%.sca" +
+      "lekit.v1.events.ListEventsRequest\032&.scal" +
+      "ekit.v1.events.ListEventsResponse\"$\202\265\030\002\030" +
+      "d\202\323\344\223\002\030\"\016/api/v1/events:\006filter\022\310\t\n\023List" +
+      "EventsPaginated\022..scalekit.v1.events.Lis" +
+      "tEventsPaginatedRequest\032/.scalekit.v1.ev" +
+      "ents.ListEventsPaginatedResponse\"\317\010\222A\235\010\n" +
+      "\006Events\022\037List events without total count" +
+      "\032\332\005Returns a paginated list of events fo" +
+      "r the current environment, ordered most-" +
+      "recent first. The response carries curso" +
+      "r tokens for forward and backward pagina" +
+      "tion but omits the total event count, wh" +
+      "ich lets the server skip a COUNT(*) quer" +
+      "y against the events table. Use this ope" +
+      "ration when rendering an event log that " +
+      "does not display a total \342\200\224 for example" +
+      " a paginated table that only needs next/" +
+      "previous controls. The filter accepts ev" +
+      "ent types, time window, organization, so" +
+      "urce, and optional identifiers (auth_req" +
+      "uest_id, interceptor_id, connection_id, " +
+      "connected_account_id). Page size default" +
+      "s to 10 and is clamped to 100. To page f" +
+      "orward, pass the returned next_page_toke" +
+      "n as the page_token query parameter on t" +
+      "he next call.J\215\001\n\003200\022\205\001\nNEvents page re" +
+      "turned successfully; includes the events" +
+      " array and cursor tokens\0223\n1\032/.scalekit." +
+      "v1.events.ListEventsPaginatedResponseJS\n" +
+      "\003400\022L\nJInvalid request - page_token is " +
+      "malformed, or start_time is after end_ti" +
+      "meJ0\n\003401\022)\n\'Missing or invalid Authoriz" +
+      "ation header\202\265\030\002\030\004\202\323\344\223\002\"\"\030/api/v1/events" +
+      "/paginated:\006filter\022\254\001\n\017SendCustomEvent\022*" +
+      ".scalekit.v1.events.SendCustomEventReque" +
+      "st\032+.scalekit.v1.events.SendCustomEventR" +
+      "esponse\"@\202\265\030\002\030`\202\323\344\223\0024\"+/api/v1/events/fr" +
+      "ontend_events/{event_type}:\005eventB\317\001\n$co" +
+      "m.scalekit.grpc.scalekit.v1.eventsB\013Even" +
+      "tsProtoP\001Z0github.com/scalekit-inc/scale" +
+      "kit/pkg/grpc/events\242\002\003SVE\252\002\022Scalekit.V1." +
+      "Events\312\002\022Scalekit\\V1\\Events\342\002\036Scalekit\\V" +
+      "1\\Events\\GPBMetadata\352\002\024Scalekit::V1::Eve" +
+      "ntsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -302,8 +363,20 @@ public final class EventsProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_events_ListEventsResponse_descriptor,
         new java.lang.String[] { "Events", "NextPageToken", "PrevPageToken", "TotalSize", });
-    internal_static_scalekit_v1_events_IEvent_descriptor =
+    internal_static_scalekit_v1_events_ListEventsPaginatedRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_scalekit_v1_events_ListEventsPaginatedRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_events_ListEventsPaginatedRequest_descriptor,
+        new java.lang.String[] { "Filter", "PageSize", "PageToken", });
+    internal_static_scalekit_v1_events_ListEventsPaginatedResponse_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_scalekit_v1_events_ListEventsPaginatedResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_events_ListEventsPaginatedResponse_descriptor,
+        new java.lang.String[] { "Events", "NextPageToken", "PrevPageToken", });
+    internal_static_scalekit_v1_events_IEvent_descriptor =
+      getDescriptor().getMessageTypes().get(7);
     internal_static_scalekit_v1_events_IEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_events_IEvent_descriptor,
@@ -321,7 +394,7 @@ public final class EventsProto {
         internal_static_scalekit_v1_events_IEvent_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_scalekit_v1_events_Event_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_scalekit_v1_events_Event_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_events_Event_descriptor,
@@ -339,19 +412,19 @@ public final class EventsProto {
         internal_static_scalekit_v1_events_Event_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_scalekit_v1_events_Actor_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_scalekit_v1_events_Actor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_events_Actor_descriptor,
         new java.lang.String[] { "Id", "Type", });
     internal_static_scalekit_v1_events_Target_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_scalekit_v1_events_Target_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_events_Target_descriptor,
         new java.lang.String[] { "Id", "Type", });
     internal_static_scalekit_v1_events_IEventFilter_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_scalekit_v1_events_IEventFilter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_events_IEventFilter_descriptor,
@@ -363,13 +436,13 @@ public final class EventsProto {
         internal_static_scalekit_v1_events_IEventFilter_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_scalekit_v1_events_EventFilter_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_scalekit_v1_events_EventFilter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_events_EventFilter_descriptor,
         new java.lang.String[] { "EventTypes", "StartTime", "EndTime", "OrganizationId", "Source", "AuthRequestId", "InterceptorId", "InterceptorStatus", "InterceptorDecision", "ConnectionId", "ConnectedAccountId", });
     internal_static_scalekit_v1_events_ScalekitEvent_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_scalekit_v1_events_ScalekitEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_events_ScalekitEvent_descriptor,
@@ -378,6 +451,8 @@ public final class EventsProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

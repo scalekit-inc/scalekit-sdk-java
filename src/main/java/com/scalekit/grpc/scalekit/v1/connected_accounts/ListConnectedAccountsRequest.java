@@ -24,6 +24,8 @@ private static final long serialVersionUID = 0L;
     provider_ = "";
     pageToken_ = "";
     query_ = "";
+    connectionNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -363,6 +365,43 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CONNECTION_NAMES_FIELD_NUMBER = 9;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList connectionNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string connection_names = 9 [json_name = "connectionNames", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the connectionNames.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getConnectionNamesList() {
+    return connectionNames_;
+  }
+  /**
+   * <code>repeated string connection_names = 9 [json_name = "connectionNames", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of connectionNames.
+   */
+  public int getConnectionNamesCount() {
+    return connectionNames_.size();
+  }
+  /**
+   * <code>repeated string connection_names = 9 [json_name = "connectionNames", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The connectionNames at the given index.
+   */
+  public java.lang.String getConnectionNames(int index) {
+    return connectionNames_.get(index);
+  }
+  /**
+   * <code>repeated string connection_names = 9 [json_name = "connectionNames", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the connectionNames at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getConnectionNamesBytes(int index) {
+    return connectionNames_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -401,6 +440,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, query_);
     }
+    for (int i = 0; i < connectionNames_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, connectionNames_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -434,6 +476,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, query_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < connectionNames_.size(); i++) {
+        dataSize += computeStringSizeNoTag(connectionNames_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getConnectionNamesList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -478,6 +528,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPageToken())) return false;
     if (!getQuery()
         .equals(other.getQuery())) return false;
+    if (!getConnectionNamesList()
+        .equals(other.getConnectionNamesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -513,6 +565,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + QUERY_FIELD_NUMBER;
     hash = (53 * hash) + getQuery().hashCode();
+    if (getConnectionNamesCount() > 0) {
+      hash = (37 * hash) + CONNECTION_NAMES_FIELD_NUMBER;
+      hash = (53 * hash) + getConnectionNamesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -652,6 +708,8 @@ private static final long serialVersionUID = 0L;
       pageSize_ = 0;
       pageToken_ = "";
       query_ = "";
+      connectionNames_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -713,6 +771,10 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.query_ = query_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        connectionNames_.makeImmutable();
+        result.connectionNames_ = connectionNames_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -799,6 +861,16 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (!other.connectionNames_.isEmpty()) {
+        if (connectionNames_.isEmpty()) {
+          connectionNames_ = other.connectionNames_;
+          bitField0_ |= 0x00000100;
+        } else {
+          ensureConnectionNamesIsMutable();
+          connectionNames_.addAll(other.connectionNames_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -865,6 +937,12 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000080;
               break;
             } // case 66
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureConnectionNamesIsMutable();
+              connectionNames_.add(s);
+              break;
+            } // case 74
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1442,6 +1520,117 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       query_ = value;
       bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList connectionNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureConnectionNamesIsMutable() {
+      if (!connectionNames_.isModifiable()) {
+        connectionNames_ = new com.google.protobuf.LazyStringArrayList(connectionNames_);
+      }
+      bitField0_ |= 0x00000100;
+    }
+    /**
+     * <code>repeated string connection_names = 9 [json_name = "connectionNames", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the connectionNames.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getConnectionNamesList() {
+      connectionNames_.makeImmutable();
+      return connectionNames_;
+    }
+    /**
+     * <code>repeated string connection_names = 9 [json_name = "connectionNames", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of connectionNames.
+     */
+    public int getConnectionNamesCount() {
+      return connectionNames_.size();
+    }
+    /**
+     * <code>repeated string connection_names = 9 [json_name = "connectionNames", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The connectionNames at the given index.
+     */
+    public java.lang.String getConnectionNames(int index) {
+      return connectionNames_.get(index);
+    }
+    /**
+     * <code>repeated string connection_names = 9 [json_name = "connectionNames", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the connectionNames at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getConnectionNamesBytes(int index) {
+      return connectionNames_.getByteString(index);
+    }
+    /**
+     * <code>repeated string connection_names = 9 [json_name = "connectionNames", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The connectionNames to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectionNames(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureConnectionNamesIsMutable();
+      connectionNames_.set(index, value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string connection_names = 9 [json_name = "connectionNames", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The connectionNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addConnectionNames(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureConnectionNamesIsMutable();
+      connectionNames_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string connection_names = 9 [json_name = "connectionNames", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The connectionNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllConnectionNames(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureConnectionNamesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, connectionNames_);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string connection_names = 9 [json_name = "connectionNames", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearConnectionNames() {
+      connectionNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000100);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string connection_names = 9 [json_name = "connectionNames", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the connectionNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addConnectionNamesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureConnectionNamesIsMutable();
+      connectionNames_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

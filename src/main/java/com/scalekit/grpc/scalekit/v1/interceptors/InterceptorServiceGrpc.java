@@ -263,6 +263,223 @@ public final class InterceptorServiceGrpc {
     return getTestInterceptorMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateRequest,
+      com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateResponse> getUpsertTokenTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpsertTokenTemplate",
+      requestType = com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateRequest,
+      com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateResponse> getUpsertTokenTemplateMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateRequest, com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateResponse> getUpsertTokenTemplateMethod;
+    if ((getUpsertTokenTemplateMethod = InterceptorServiceGrpc.getUpsertTokenTemplateMethod) == null) {
+      synchronized (InterceptorServiceGrpc.class) {
+        if ((getUpsertTokenTemplateMethod = InterceptorServiceGrpc.getUpsertTokenTemplateMethod) == null) {
+          InterceptorServiceGrpc.getUpsertTokenTemplateMethod = getUpsertTokenTemplateMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateRequest, com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpsertTokenTemplate"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new InterceptorServiceMethodDescriptorSupplier("UpsertTokenTemplate"))
+              .build();
+        }
+      }
+    }
+    return getUpsertTokenTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateRequest,
+      com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateResponse> getGetTokenTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTokenTemplate",
+      requestType = com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateRequest,
+      com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateResponse> getGetTokenTemplateMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateRequest, com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateResponse> getGetTokenTemplateMethod;
+    if ((getGetTokenTemplateMethod = InterceptorServiceGrpc.getGetTokenTemplateMethod) == null) {
+      synchronized (InterceptorServiceGrpc.class) {
+        if ((getGetTokenTemplateMethod = InterceptorServiceGrpc.getGetTokenTemplateMethod) == null) {
+          InterceptorServiceGrpc.getGetTokenTemplateMethod = getGetTokenTemplateMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateRequest, com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTokenTemplate"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new InterceptorServiceMethodDescriptorSupplier("GetTokenTemplate"))
+              .build();
+        }
+      }
+    }
+    return getGetTokenTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.DeleteTokenTemplateRequest,
+      com.google.protobuf.Empty> getDeleteTokenTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTokenTemplate",
+      requestType = com.scalekit.grpc.scalekit.v1.interceptors.DeleteTokenTemplateRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.DeleteTokenTemplateRequest,
+      com.google.protobuf.Empty> getDeleteTokenTemplateMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.DeleteTokenTemplateRequest, com.google.protobuf.Empty> getDeleteTokenTemplateMethod;
+    if ((getDeleteTokenTemplateMethod = InterceptorServiceGrpc.getDeleteTokenTemplateMethod) == null) {
+      synchronized (InterceptorServiceGrpc.class) {
+        if ((getDeleteTokenTemplateMethod = InterceptorServiceGrpc.getDeleteTokenTemplateMethod) == null) {
+          InterceptorServiceGrpc.getDeleteTokenTemplateMethod = getDeleteTokenTemplateMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.interceptors.DeleteTokenTemplateRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteTokenTemplate"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.interceptors.DeleteTokenTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new InterceptorServiceMethodDescriptorSupplier("DeleteTokenTemplate"))
+              .build();
+        }
+      }
+    }
+    return getDeleteTokenTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.EnableTokenTemplateRequest,
+      com.google.protobuf.Empty> getEnableTokenTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EnableTokenTemplate",
+      requestType = com.scalekit.grpc.scalekit.v1.interceptors.EnableTokenTemplateRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.EnableTokenTemplateRequest,
+      com.google.protobuf.Empty> getEnableTokenTemplateMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.EnableTokenTemplateRequest, com.google.protobuf.Empty> getEnableTokenTemplateMethod;
+    if ((getEnableTokenTemplateMethod = InterceptorServiceGrpc.getEnableTokenTemplateMethod) == null) {
+      synchronized (InterceptorServiceGrpc.class) {
+        if ((getEnableTokenTemplateMethod = InterceptorServiceGrpc.getEnableTokenTemplateMethod) == null) {
+          InterceptorServiceGrpc.getEnableTokenTemplateMethod = getEnableTokenTemplateMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.interceptors.EnableTokenTemplateRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EnableTokenTemplate"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.interceptors.EnableTokenTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new InterceptorServiceMethodDescriptorSupplier("EnableTokenTemplate"))
+              .build();
+        }
+      }
+    }
+    return getEnableTokenTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.DisableTokenTemplateRequest,
+      com.google.protobuf.Empty> getDisableTokenTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DisableTokenTemplate",
+      requestType = com.scalekit.grpc.scalekit.v1.interceptors.DisableTokenTemplateRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.DisableTokenTemplateRequest,
+      com.google.protobuf.Empty> getDisableTokenTemplateMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.DisableTokenTemplateRequest, com.google.protobuf.Empty> getDisableTokenTemplateMethod;
+    if ((getDisableTokenTemplateMethod = InterceptorServiceGrpc.getDisableTokenTemplateMethod) == null) {
+      synchronized (InterceptorServiceGrpc.class) {
+        if ((getDisableTokenTemplateMethod = InterceptorServiceGrpc.getDisableTokenTemplateMethod) == null) {
+          InterceptorServiceGrpc.getDisableTokenTemplateMethod = getDisableTokenTemplateMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.interceptors.DisableTokenTemplateRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DisableTokenTemplate"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.interceptors.DisableTokenTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new InterceptorServiceMethodDescriptorSupplier("DisableTokenTemplate"))
+              .build();
+        }
+      }
+    }
+    return getDisableTokenTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateRequest,
+      com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateResponse> getPreviewTokenTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PreviewTokenTemplate",
+      requestType = com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateRequest,
+      com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateResponse> getPreviewTokenTemplateMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateRequest, com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateResponse> getPreviewTokenTemplateMethod;
+    if ((getPreviewTokenTemplateMethod = InterceptorServiceGrpc.getPreviewTokenTemplateMethod) == null) {
+      synchronized (InterceptorServiceGrpc.class) {
+        if ((getPreviewTokenTemplateMethod = InterceptorServiceGrpc.getPreviewTokenTemplateMethod) == null) {
+          InterceptorServiceGrpc.getPreviewTokenTemplateMethod = getPreviewTokenTemplateMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateRequest, com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PreviewTokenTemplate"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new InterceptorServiceMethodDescriptorSupplier("PreviewTokenTemplate"))
+              .build();
+        }
+      }
+    }
+    return getPreviewTokenTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextRequest,
+      com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextResponse> getGetTokenTemplateContextMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTokenTemplateContext",
+      requestType = com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextRequest,
+      com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextResponse> getGetTokenTemplateContextMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextRequest, com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextResponse> getGetTokenTemplateContextMethod;
+    if ((getGetTokenTemplateContextMethod = InterceptorServiceGrpc.getGetTokenTemplateContextMethod) == null) {
+      synchronized (InterceptorServiceGrpc.class) {
+        if ((getGetTokenTemplateContextMethod = InterceptorServiceGrpc.getGetTokenTemplateContextMethod) == null) {
+          InterceptorServiceGrpc.getGetTokenTemplateContextMethod = getGetTokenTemplateContextMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextRequest, com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTokenTemplateContext"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new InterceptorServiceMethodDescriptorSupplier("GetTokenTemplateContext"))
+              .build();
+        }
+      }
+    }
+    return getGetTokenTemplateContextMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -366,6 +583,55 @@ public final class InterceptorServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.interceptors.TestInterceptorResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTestInterceptorMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void upsertTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpsertTokenTemplateMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTokenTemplateMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.DeleteTokenTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTokenTemplateMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void enableTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.EnableTokenTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEnableTokenTemplateMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void disableTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.DisableTokenTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDisableTokenTemplateMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void previewTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPreviewTokenTemplateMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getTokenTemplateContext(com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTokenTemplateContextMethod(), responseObserver);
+    }
   }
 
   /**
@@ -458,6 +724,62 @@ public final class InterceptorServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTestInterceptorMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void upsertTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpsertTokenTemplateMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetTokenTemplateMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.DeleteTokenTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteTokenTemplateMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void enableTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.EnableTokenTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEnableTokenTemplateMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void disableTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.DisableTokenTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDisableTokenTemplateMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void previewTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPreviewTokenTemplateMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getTokenTemplateContext(com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetTokenTemplateContextMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -530,6 +852,55 @@ public final class InterceptorServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.interceptors.TestInterceptorResponse testInterceptor(com.scalekit.grpc.scalekit.v1.interceptors.TestInterceptorRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestInterceptorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateResponse upsertTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpsertTokenTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateResponse getTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTokenTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.google.protobuf.Empty deleteTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.DeleteTokenTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTokenTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.google.protobuf.Empty enableTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.EnableTokenTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEnableTokenTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.google.protobuf.Empty disableTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.DisableTokenTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDisableTokenTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateResponse previewTokenTemplate(com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPreviewTokenTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextResponse getTokenTemplateContext(com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTokenTemplateContextMethod(), getCallOptions(), request);
     }
   }
 
@@ -612,6 +983,62 @@ public final class InterceptorServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestInterceptorMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateResponse> upsertTokenTemplate(
+        com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpsertTokenTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateResponse> getTokenTemplate(
+        com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetTokenTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteTokenTemplate(
+        com.scalekit.grpc.scalekit.v1.interceptors.DeleteTokenTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTokenTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> enableTokenTemplate(
+        com.scalekit.grpc.scalekit.v1.interceptors.EnableTokenTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEnableTokenTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> disableTokenTemplate(
+        com.scalekit.grpc.scalekit.v1.interceptors.DisableTokenTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDisableTokenTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateResponse> previewTokenTemplate(
+        com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPreviewTokenTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextResponse> getTokenTemplateContext(
+        com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetTokenTemplateContextMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_INTERCEPTOR = 0;
@@ -622,6 +1049,13 @@ public final class InterceptorServiceGrpc {
   private static final int METHODID_ENABLE_INTERCEPTOR = 5;
   private static final int METHODID_DISABLE_INTERCEPTOR = 6;
   private static final int METHODID_TEST_INTERCEPTOR = 7;
+  private static final int METHODID_UPSERT_TOKEN_TEMPLATE = 8;
+  private static final int METHODID_GET_TOKEN_TEMPLATE = 9;
+  private static final int METHODID_DELETE_TOKEN_TEMPLATE = 10;
+  private static final int METHODID_ENABLE_TOKEN_TEMPLATE = 11;
+  private static final int METHODID_DISABLE_TOKEN_TEMPLATE = 12;
+  private static final int METHODID_PREVIEW_TOKEN_TEMPLATE = 13;
+  private static final int METHODID_GET_TOKEN_TEMPLATE_CONTEXT = 14;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -671,6 +1105,34 @@ public final class InterceptorServiceGrpc {
         case METHODID_TEST_INTERCEPTOR:
           serviceImpl.testInterceptor((com.scalekit.grpc.scalekit.v1.interceptors.TestInterceptorRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.interceptors.TestInterceptorResponse>) responseObserver);
+          break;
+        case METHODID_UPSERT_TOKEN_TEMPLATE:
+          serviceImpl.upsertTokenTemplate((com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateResponse>) responseObserver);
+          break;
+        case METHODID_GET_TOKEN_TEMPLATE:
+          serviceImpl.getTokenTemplate((com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_TOKEN_TEMPLATE:
+          serviceImpl.deleteTokenTemplate((com.scalekit.grpc.scalekit.v1.interceptors.DeleteTokenTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_ENABLE_TOKEN_TEMPLATE:
+          serviceImpl.enableTokenTemplate((com.scalekit.grpc.scalekit.v1.interceptors.EnableTokenTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_DISABLE_TOKEN_TEMPLATE:
+          serviceImpl.disableTokenTemplate((com.scalekit.grpc.scalekit.v1.interceptors.DisableTokenTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_PREVIEW_TOKEN_TEMPLATE:
+          serviceImpl.previewTokenTemplate((com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateResponse>) responseObserver);
+          break;
+        case METHODID_GET_TOKEN_TEMPLATE_CONTEXT:
+          serviceImpl.getTokenTemplateContext((com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -746,6 +1208,55 @@ public final class InterceptorServiceGrpc {
               com.scalekit.grpc.scalekit.v1.interceptors.TestInterceptorRequest,
               com.scalekit.grpc.scalekit.v1.interceptors.TestInterceptorResponse>(
                 service, METHODID_TEST_INTERCEPTOR)))
+        .addMethod(
+          getUpsertTokenTemplateMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateRequest,
+              com.scalekit.grpc.scalekit.v1.interceptors.UpsertTokenTemplateResponse>(
+                service, METHODID_UPSERT_TOKEN_TEMPLATE)))
+        .addMethod(
+          getGetTokenTemplateMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateRequest,
+              com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateResponse>(
+                service, METHODID_GET_TOKEN_TEMPLATE)))
+        .addMethod(
+          getDeleteTokenTemplateMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.interceptors.DeleteTokenTemplateRequest,
+              com.google.protobuf.Empty>(
+                service, METHODID_DELETE_TOKEN_TEMPLATE)))
+        .addMethod(
+          getEnableTokenTemplateMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.interceptors.EnableTokenTemplateRequest,
+              com.google.protobuf.Empty>(
+                service, METHODID_ENABLE_TOKEN_TEMPLATE)))
+        .addMethod(
+          getDisableTokenTemplateMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.interceptors.DisableTokenTemplateRequest,
+              com.google.protobuf.Empty>(
+                service, METHODID_DISABLE_TOKEN_TEMPLATE)))
+        .addMethod(
+          getPreviewTokenTemplateMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateRequest,
+              com.scalekit.grpc.scalekit.v1.interceptors.PreviewTokenTemplateResponse>(
+                service, METHODID_PREVIEW_TOKEN_TEMPLATE)))
+        .addMethod(
+          getGetTokenTemplateContextMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextRequest,
+              com.scalekit.grpc.scalekit.v1.interceptors.GetTokenTemplateContextResponse>(
+                service, METHODID_GET_TOKEN_TEMPLATE_CONTEXT)))
         .build();
   }
 
@@ -802,6 +1313,13 @@ public final class InterceptorServiceGrpc {
               .addMethod(getEnableInterceptorMethod())
               .addMethod(getDisableInterceptorMethod())
               .addMethod(getTestInterceptorMethod())
+              .addMethod(getUpsertTokenTemplateMethod())
+              .addMethod(getGetTokenTemplateMethod())
+              .addMethod(getDeleteTokenTemplateMethod())
+              .addMethod(getEnableTokenTemplateMethod())
+              .addMethod(getDisableTokenTemplateMethod())
+              .addMethod(getPreviewTokenTemplateMethod())
+              .addMethod(getGetTokenTemplateContextMethod())
               .build();
         }
       }

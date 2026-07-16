@@ -16,6 +16,16 @@ public final class KeysProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_keys_EnvironmentKey_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_keys_EnvironmentKey_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_keys_MasterKey_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_keys_MasterKey_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_keys_CreateDEKRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -26,15 +36,30 @@ public final class KeysProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_keys_CreateDEKResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_keys_RotateDEKRequest_descriptor;
+    internal_static_scalekit_v1_keys_ActivateDEKRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_keys_RotateDEKRequest_fieldAccessorTable;
+      internal_static_scalekit_v1_keys_ActivateDEKRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_keys_RotateDEKResponse_descriptor;
+    internal_static_scalekit_v1_keys_ActivateDEKResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_keys_RotateDEKResponse_fieldAccessorTable;
+      internal_static_scalekit_v1_keys_ActivateDEKResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_keys_ReencryptDataRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_keys_ReencryptDataRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_keys_SkippedTableSummary_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_keys_SkippedTableSummary_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_keys_ReencryptDataResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_keys_ReencryptDataResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_keys_ListDEKsRequest_descriptor;
   static final 
@@ -46,30 +71,50 @@ public final class KeysProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_keys_ListDEKsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_keys_DeleteDEKRequest_descriptor;
+    internal_static_scalekit_v1_keys_GetDEKRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_keys_DeleteDEKRequest_fieldAccessorTable;
+      internal_static_scalekit_v1_keys_GetDEKRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_keys_RotateMasterKeyRequest_descriptor;
+    internal_static_scalekit_v1_keys_GetDEKResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_keys_RotateMasterKeyRequest_fieldAccessorTable;
+      internal_static_scalekit_v1_keys_GetDEKResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_keys_RotateMasterKeyResponse_descriptor;
+    internal_static_scalekit_v1_keys_PatchDEKRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_keys_RotateMasterKeyResponse_fieldAccessorTable;
+      internal_static_scalekit_v1_keys_PatchDEKRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_keys_EnvironmentKey_descriptor;
+    internal_static_scalekit_v1_keys_PatchDEKResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_keys_EnvironmentKey_fieldAccessorTable;
+      internal_static_scalekit_v1_keys_PatchDEKResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_keys_MasterKey_descriptor;
+    internal_static_scalekit_v1_keys_DestroyDEKRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_keys_MasterKey_fieldAccessorTable;
+      internal_static_scalekit_v1_keys_DestroyDEKRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_keys_GetBYOKSetupInfoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_keys_GetBYOKSetupInfoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_keys_GetBYOKSetupInfoResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_keys_GetBYOKSetupInfoResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_keys_VerifyBYOKKeyRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_keys_VerifyBYOKKeyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_keys_VerifyBYOKKeyResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_keys_VerifyBYOKKeyResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_keys_CreateMasterKeyRequest_descriptor;
   static final 
@@ -81,30 +126,45 @@ public final class KeysProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_keys_CreateMasterKeyResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_keys_SetActiveDEKRequest_descriptor;
+    internal_static_scalekit_v1_keys_ActivateMasterKeyRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_keys_SetActiveDEKRequest_fieldAccessorTable;
+      internal_static_scalekit_v1_keys_ActivateMasterKeyRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_keys_SetActiveDEKResponse_descriptor;
+    internal_static_scalekit_v1_keys_ActivateMasterKeyResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_keys_SetActiveDEKResponse_fieldAccessorTable;
+      internal_static_scalekit_v1_keys_ActivateMasterKeyResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_keys_SetActiveMasterKeyRequest_descriptor;
+    internal_static_scalekit_v1_keys_RewrapDEKsRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_keys_SetActiveMasterKeyRequest_fieldAccessorTable;
+      internal_static_scalekit_v1_keys_RewrapDEKsRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_keys_SetActiveMasterKeyResponse_descriptor;
+    internal_static_scalekit_v1_keys_RewrapDEKsResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_keys_SetActiveMasterKeyResponse_fieldAccessorTable;
+      internal_static_scalekit_v1_keys_RewrapDEKsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_keys_DestroyDEKRequest_descriptor;
+    internal_static_scalekit_v1_keys_ListMasterKeysRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_keys_DestroyDEKRequest_fieldAccessorTable;
+      internal_static_scalekit_v1_keys_ListMasterKeysRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_keys_ListMasterKeysResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_keys_ListMasterKeysResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_keys_GetMasterKeyRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_keys_GetMasterKeyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_keys_GetMasterKeyResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_keys_GetMasterKeyResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_keys_DestroyMasterKeyRequest_descriptor;
   static final 
@@ -126,158 +186,485 @@ public final class KeysProto {
       "ty.proto\032\033google/protobuf/empty.proto\032\037g" +
       "oogle/protobuf/timestamp.proto\032.protoc-g" +
       "en-openapiv2/options/annotations.proto\032!" +
-      "scalekit/v1/options/options.proto\"\265\001\n\020Cr" +
-      "eateDEKRequest\022<\n\010key_type\030\001 \001(\0162\034.scale" +
-      "kit.v1.keys.DEKKeyTypeH\000R\007keyType\210\001\001\022\037\n\010" +
-      "provider\030\002 \001(\tH\001R\010provider\210\001\001\022\034\n\007key_ref" +
-      "\030\003 \001(\tH\002R\006keyRef\210\001\001B\013\n\t_key_typeB\013\n\t_pro" +
-      "viderB\n\n\010_key_ref\"G\n\021CreateDEKResponse\0222" +
-      "\n\003dek\030\001 \001(\0132 .scalekit.v1.keys.Environme" +
-      "ntKeyR\003dek\"\022\n\020RotateDEKRequest\"G\n\021Rotate" +
-      "DEKResponse\0222\n\003dek\030\001 \001(\0132 .scalekit.v1.k" +
-      "eys.EnvironmentKeyR\003dek\"u\n\017ListDEKsReque" +
-      "st\022\033\n\006status\030\001 \001(\tH\000R\006status\210\001\001\022\033\n\tpage_" +
-      "size\030\002 \001(\rR\010pageSize\022\035\n\npage_token\030\003 \001(\t" +
-      "R\tpageTokenB\t\n\007_status\"\217\001\n\020ListDEKsRespo" +
-      "nse\0224\n\004deks\030\001 \003(\0132 .scalekit.v1.keys.Env" +
-      "ironmentKeyR\004deks\022&\n\017next_page_token\030\002 \001" +
-      "(\tR\rnextPageToken\022\035\n\ntotal_size\030\003 \001(\rR\tt" +
-      "otalSize\"<\n\020DeleteDEKRequest\022(\n\013dek_vers" +
-      "ion\030\001 \001(\005B\007\272H\004\032\002 \000R\ndekVersion\"\030\n\026Rotate" +
-      "MasterKeyRequest\"\\\n\027RotateMasterKeyRespo" +
-      "nse\022A\n\016new_master_key\030\001 \001(\0132\033.scalekit.v" +
-      "1.keys.MasterKeyR\014newMasterKey\"\273\002\n\016Envir" +
-      "onmentKey\022\016\n\002id\030\001 \001(\tR\002id\022%\n\016environment" +
-      "_id\030\002 \001(\tR\renvironmentId\022\037\n\013dek_version\030" +
-      "\003 \001(\005R\ndekVersion\022%\n\016master_version\030\004 \001(" +
-      "\005R\rmasterVersion\022\034\n\talgorithm\030\005 \001(\tR\talg" +
-      "orithm\022\026\n\006status\030\006 \001(\tR\006status\0229\n\ncreate" +
-      "d_at\030\007 \001(\0132\032.google.protobuf.TimestampR\t" +
-      "createdAt\0229\n\nrotated_at\030\010 \001(\0132\032.google.p" +
-      "rotobuf.TimestampR\trotatedAt\"\370\001\n\tMasterK" +
-      "ey\022\016\n\002id\030\001 \001(\tR\002id\022\032\n\010provider\030\002 \001(\tR\010pr" +
-      "ovider\022\027\n\007key_ref\030\003 \001(\tR\006keyRef\022\030\n\007versi" +
-      "on\030\004 \001(\005R\007version\022\026\n\006status\030\005 \001(\tR\006statu" +
-      "s\0229\n\ncreated_at\030\006 \001(\0132\032.google.protobuf." +
-      "TimestampR\tcreatedAt\0229\n\nrotated_at\030\007 \001(\013" +
-      "2\032.google.protobuf.TimestampR\trotatedAt\"" +
-      "\240\001\n\026CreateMasterKeyRequest\0229\n\010provider\030\001" +
-      " \001(\tB\035\272H\032r\030R\003GCPR\003AWSR\005AZURER\005LOCALR\010pro" +
-      "vider\022 \n\007key_ref\030\002 \001(\tB\007\272H\004r\002\020\001R\006keyRef\022" +
-      "\035\n\007version\030\003 \001(\005H\000R\007version\210\001\001B\n\n\010_versi" +
-      "on\"U\n\027CreateMasterKeyResponse\022:\n\nmaster_" +
-      "key\030\001 \001(\0132\033.scalekit.v1.keys.MasterKeyR\t" +
-      "masterKey\"?\n\023SetActiveDEKRequest\022(\n\013dek_" +
-      "version\030\001 \001(\005B\007\272H\004\032\002 \000R\ndekVersion\"J\n\024Se" +
-      "tActiveDEKResponse\0222\n\003dek\030\001 \001(\0132 .scalek" +
-      "it.v1.keys.EnvironmentKeyR\003dek\">\n\031SetAct" +
-      "iveMasterKeyRequest\022!\n\007version\030\001 \001(\005B\007\272H" +
-      "\004\032\002 \000R\007version\"X\n\032SetActiveMasterKeyResp" +
-      "onse\022:\n\nmaster_key\030\001 \001(\0132\033.scalekit.v1.k" +
-      "eys.MasterKeyR\tmasterKey\"=\n\021DestroyDEKRe" +
-      "quest\022(\n\013dek_version\030\001 \001(\005B\007\272H\004\032\002 \000R\ndek" +
-      "Version\"<\n\027DestroyMasterKeyRequest\022!\n\007ve" +
-      "rsion\030\001 \001(\005B\007\272H\004\032\002 \000R\007version*c\n\nDEKKeyT" +
-      "ype\022\034\n\030DEK_KEY_TYPE_UNSPECIFIED\020\000\022\023\n\017ENV" +
-      "IRONMENT_KEY\020\001\022\010\n\004BYOK\020\002\022\030\n\024SCALEKIT_MAN" +
-      "AGED_KEY\020\0032\321\034\n\024KeyManagementService\022\355\002\n\t" +
-      "CreateDEK\022\".scalekit.v1.keys.CreateDEKRe" +
-      "quest\032#.scalekit.v1.keys.CreateDEKRespon" +
-      "se\"\226\002\222A\360\001\n\016Key Management\022\020Create a new " +
-      "DEK\032\313\001Creates a new Data Encryption Key " +
-      "(DEK) for the current environment. If a " +
-      "DEK already exists, this creates a new v" +
-      "ersion. The DEK is automatically wrapped" +
-      " with the current master key and stored " +
-      "securely.\202\265\030\002\030D\202\323\344\223\002\026\"\021/api/v1/keys/deks" +
-      ":\001*\022\302\002\n\tRotateDEK\022\".scalekit.v1.keys.Rot" +
-      "ateDEKRequest\032#.scalekit.v1.keys.RotateD" +
-      "EKResponse\"\353\001\222A\276\001\n\016Key Management\022\nRotat" +
-      "e DEK\032\237\001Creates a new DEK version for th" +
-      "e environment. Re-encrypts existing data" +
-      " (oidc_client_secrets, connection client" +
-      "_secrets) and deprecates previous DEK ve" +
-      "rsions.\202\265\030\002\030D\202\323\344\223\002\035\"\030/api/v1/keys/deks:r" +
-      "otate:\001*\022\322\002\n\010ListDEKs\022!.scalekit.v1.keys" +
-      ".ListDEKsRequest\032\".scalekit.v1.keys.List" +
-      "DEKsResponse\"\376\001\222A\333\001\n\016Key Management\022\tLis" +
-      "t DEKs\032\275\001Lists Data Encryption Keys (DEK" +
-      "s) for the current environment with pagi" +
-      "nation. Supports optional status filter " +
-      "(ACTIVE, DEPRECATED). Use page_token fro" +
-      "m the response to fetch the next page.\202\265" +
-      "\030\002\030D\202\323\344\223\002\023\022\021/api/v1/keys/deks\022\236\002\n\tDelete" +
-      "DEK\022\".scalekit.v1.keys.DeleteDEKRequest\032" +
-      "\026.google.protobuf.Empty\"\324\001\222A\243\001\n\016Key Mana" +
-      "gement\022\nDelete DEK\032\204\001Deprecates a specif" +
-      "ic DEK version. Deprecated DEKs can stil" +
-      "l decrypt existing data but cannot be us" +
-      "ed for new encryption operations.\202\265\030\002\030D\202" +
-      "\323\344\223\002!*\037/api/v1/keys/deks/{dek_version}\022\344" +
-      "\002\n\017RotateMasterKey\022(.scalekit.v1.keys.Ro" +
-      "tateMasterKeyRequest\032).scalekit.v1.keys." +
-      "RotateMasterKeyResponse\"\373\001\222A\275\001\n\016Key Mana" +
-      "gement\022\021Rotate Master Key\032\227\001Creates a ne" +
-      "w master key version, promotes it to pri" +
-      "mary, and rewraps all DEKs with the new " +
-      "master key. This operation supports zero" +
-      "-downtime rotation.\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW" +
-      "\202\323\344\223\002\037\"\032/api/v1/keys/master:rotate:\001*\022\237\003" +
-      "\n\017CreateMasterKey\022(.scalekit.v1.keys.Cre" +
-      "ateMasterKeyRequest\032).scalekit.v1.keys.C" +
-      "reateMasterKeyResponse\"\266\002\222A\377\001\n\016Key Manag" +
-      "ement\022\021Create Master Key\032\331\001Creates a new" +
-      " master key version with the specified p" +
-      "rovider and key reference. The new key i" +
-      "s created in CREATED status and is not u" +
-      "sed for encryption until it is explicitl" +
-      "y promoted to ACTIVE via SetActiveMaster" +
-      "Key.\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\030\"\023/api/v1" +
-      "/keys/master:\001*\022\327\002\n\014SetActiveDEK\022%.scale" +
-      "kit.v1.keys.SetActiveDEKRequest\032&.scalek" +
-      "it.v1.keys.SetActiveDEKResponse\"\367\001\222A\271\001\n\016" +
-      "Key Management\022\016Set Active DEK\032\226\001Sets a " +
-      "specific DEK version as active for the e" +
-      "nvironment and deprecates other versions" +
-      ". This allows switching back to an older" +
-      " DEK version if needed.\202\265\030\002\030D\202\323\344\223\002.\")/ap" +
-      "i/v1/keys/deks/{dek_version}:setactive:\001" +
-      "*\022\200\003\n\022SetActiveMasterKey\022+.scalekit.v1.k" +
-      "eys.SetActiveMasterKeyRequest\032,.scalekit" +
-      ".v1.keys.SetActiveMasterKeyResponse\"\216\002\222A" +
-      "\303\001\n\016Key Management\022\025Set Active Master Ke" +
-      "y\032\231\001Sets a specific master key version a" +
-      "s active and deprecates other versions. " +
-      "This promotes the specified version to p" +
-      "rimary for new encryption operations.\202\265\030" +
-      "\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002,\"\'/api/v1/keys/m" +
-      "aster/{version}:setactive:\001*\022\330\002\n\nDestroy" +
-      "DEK\022#.scalekit.v1.keys.DestroyDEKRequest" +
-      "\032\026.google.protobuf.Empty\"\214\002\222A\323\001\n\016Key Man" +
-      "agement\022\013Destroy DEK\032\263\001Permanently delet" +
-      "es a DEK version from the database. WARN" +
-      "ING: This operation is irreversible. Any" +
-      " data encrypted with this DEK will becom" +
-      "e unrecoverable. Use with extreme cautio" +
-      "n.\202\265\030\002\030D\202\323\344\223\002)*\'/api/v1/keys/deks/{dek_v" +
-      "ersion}:destroy\022\204\003\n\020DestroyMasterKey\022).s" +
-      "calekit.v1.keys.DestroyMasterKeyRequest\032" +
-      "\026.google.protobuf.Empty\"\254\002\222A\346\001\n\016Key Mana" +
-      "gement\022\022Destroy Master Key\032\277\001Permanently" +
-      " deletes a master key version from the d" +
-      "atabase. WARNING: This operation is irre" +
-      "versible. Any DEKs wrapped with this mas" +
-      "ter key will become unrecoverable. Use w" +
-      "ith extreme caution.\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIE" +
-      "W\202\323\344\223\002\'*%/api/v1/keys/master/{version}:d" +
-      "estroy\032F\222AC\n\016Key Management\0221Encryption " +
-      "key management for envelope encryptionB\301" +
-      "\001\n\"com.scalekit.grpc.scalekit.v1.keysB\tK" +
-      "eysProtoP\001Z.github.com/scalekit-inc/scal" +
-      "ekit/pkg/grpc/keys\242\002\003SVK\252\002\020Scalekit.V1.K" +
-      "eys\312\002\020Scalekit\\V1\\Keys\342\002\034Scalekit\\V1\\Key" +
-      "s\\GPBMetadata\352\002\022Scalekit::V1::Keysb\006prot" +
-      "o3"
+      "scalekit/v1/options/options.proto\"\254\017\n\016En" +
+      "vironmentKey\022h\n\002id\030\001 \001(\tBX\222AU2:Unique Sc" +
+      "alekit-generated identifier for this DEK" +
+      " version.J\027\"key_59615193906282635\"R\002id\022e" +
+      "\n\016environment_id\030\002 \001(\tB>\222A;2 Environment" +
+      " this DEK belongs to.J\027\"env_596151939062" +
+      "82635\"R\renvironmentId\022^\n\013dek_version\030\003 \001" +
+      "(\005B=\222A:25Monotonically increasing versio" +
+      "n number for this DEK.J\0012R\ndekVersion\022X\n" +
+      "\016master_version\030\004 \001(\005B1\222A.2)Master key v" +
+      "ersion used to wrap this DEK.J\0011R\rmaster" +
+      "Version\022s\n\010key_type\030\005 \001(\tBX\222AU2@Encrypti" +
+      "on mode: ENVIRONMENT_KEY, BYOK, or SCALE" +
+      "KIT_MANAGED_KEY.J\021\"ENVIRONMENT_KEY\"R\007key" +
+      "Type\022X\n\talgorithm\030\006 \001(\tB:\222A72&Encryption" +
+      " algorithm used by this DEK.J\r\"AES-256-G" +
+      "CM\"R\talgorithm\022`\n\006status\030\007 \001(\tBH\222AE29Cur" +
+      "rent lifecycle status: CREATED, ACTIVE, " +
+      "or DEPRECATED.J\010\"ACTIVE\"R\006status\022\210\001\n\ncre" +
+      "ated_at\030\010 \001(\0132\032.google.protobuf.Timestam" +
+      "pBM\222AJ2,Timestamp when this DEK version " +
+      "was created.J\032\"2025-02-15T06:23:44.560Z\"" +
+      "R\tcreatedAt\022\376\001\n\nrotated_at\030\t \001(\0132\032.googl" +
+      "e.protobuf.TimestampB\302\001\222A\276\0012\237\001Timestamp " +
+      "when ReencryptData last completed for th" +
+      "is DEK. Set when all data has been migra" +
+      "ted away from this version. Must be set " +
+      "before DestroyDEK is allowed.J\032\"2025-03-" +
+      "01T10:00:00.000Z\"R\trotatedAt\022\231\002\n\014activat" +
+      "ed_at\030\n \001(\0132\032.google.protobuf.TimestampB" +
+      "\331\001\222A\325\0012\266\001Timestamp when this DEK was act" +
+      "ivated. ReencryptData is blocked until a" +
+      "ctivated_at + cache TTL has elapsed, ens" +
+      "uring all servers have adopted the new k" +
+      "ey before re-encryption begins.J\032\"2025-0" +
+      "3-01T09:55:00.000Z\"R\013activatedAt\022\216\001\n\010pro" +
+      "vider\030\013 \001(\tBm\222Aj2aKMS provider for BYOK " +
+      "or SCALEKIT_MANAGED_KEY types (GCP, AWS," +
+      " AZURE). Empty for ENVIRONMENT_KEY.J\005\"GC" +
+      "P\"H\000R\010provider\210\001\001\022\276\001\n\007key_ref\030\014 \001(\tB\237\001\222A" +
+      "\233\0012NKMS key URI for BYOK or SCALEKIT_MAN" +
+      "AGED_KEY types. Empty for ENVIRONMENT_KE" +
+      "Y.JI\"projects/my-project/locations/globa" +
+      "l/keyRings/my-ring/cryptoKeys/my-key\"H\001R" +
+      "\006keyRef\210\001\001\022\312\001\n\013kms_version\030\r \001(\005B\250\001\222A\244\0012" +
+      "\236\001KMS provider key version number at the" +
+      " time this DEK was created or last patch" +
+      "ed. For GCP this is the CryptoKeyVersion" +
+      " number. Zero for ENVIRONMENT_KEY types." +
+      "J\0013R\nkmsVersionB\013\n\t_providerB\n\n\010_key_ref" +
+      "\"\276\007\n\tMasterKey\022o\n\002id\030\001 \001(\tB_\222A\\2AUnique " +
+      "Scalekit-generated identifier for this m" +
+      "aster key version.J\027\"key_596151939062826" +
+      "35\"R\002id\022P\n\010provider\030\002 \001(\tB4\222A12(KMS prov" +
+      "ider: GCP, AWS, AZURE, or LOCAL.J\005\"GCP\"R" +
+      "\010provider\022\227\001\n\007key_ref\030\003 \001(\tB~\222A{2.KMS ke" +
+      "y URI or identifier for this master key." +
+      "JI\"projects/my-project/locations/global/" +
+      "keyRings/my-ring/cryptoKeys/my-key\"R\006key" +
+      "Ref\022^\n\007version\030\004 \001(\005BD\222AA2<Monotonically" +
+      " increasing version number for this mast" +
+      "er key.J\0011R\007version\022k\n\talgorithm\030\005 \001(\tBM" +
+      "\222AJ2)Encryption algorithm for this maste" +
+      "r key.J\035\"GOOGLE_SYMMETRIC_ENCRYPTION\"R\ta" +
+      "lgorithm\022`\n\006status\030\006 \001(\tBH\222AE29Current l" +
+      "ifecycle status: CREATED, ACTIVE, or DEP" +
+      "RECATED.J\010\"ACTIVE\"R\006status\022\217\001\n\ncreated_a" +
+      "t\030\007 \001(\0132\032.google.protobuf.TimestampBT\222AQ" +
+      "23Timestamp when this master key version" +
+      " was created.J\032\"2025-02-15T06:23:44.560Z" +
+      "\"R\tcreatedAt\022\222\001\n\nrotated_at\030\010 \001(\0132\032.goog" +
+      "le.protobuf.TimestampBW\222AT26Timestamp wh" +
+      "en this master key version was deprecate" +
+      "d.J\032\"2025-03-01T10:00:00.000Z\"R\trotatedA" +
+      "t\"\321\004\n\020CreateDEKRequest\022\312\001\n\010key_type\030\001 \001(" +
+      "\0162\034.scalekit.v1.keys.DEKKeyTypeB\213\001\222A\207\0012r" +
+      "Encryption mode. Defaults to ENVIRONMENT" +
+      "_KEY. Use BYOK or SCALEKIT_MANAGED_KEY w" +
+      "hen providing an external KMS key.J\021\"ENV" +
+      "IRONMENT_KEY\"H\000R\007keyType\210\001\001\022\204\001\n\010provider" +
+      "\030\002 \001(\tBc\222A`2WKMS provider (GCP, AWS, AZU" +
+      "RE). Required when key_type is BYOK or S" +
+      "CALEKIT_MANAGED_KEY.J\005\"GCP\"H\001R\010provider\210" +
+      "\001\001\022\302\001\n\007key_ref\030\003 \001(\tB\243\001\222A\237\0012RKMS key URI" +
+      " or identifier. Required when key_type i" +
+      "s BYOK or SCALEKIT_MANAGED_KEY.JI\"projec" +
+      "ts/my-project/locations/global/keyRings/" +
+      "my-ring/cryptoKeys/my-key\"H\002R\006keyRef\210\001\001B" +
+      "\013\n\t_key_typeB\013\n\t_providerB\n\n\010_key_ref\"u\n" +
+      "\021CreateDEKResponse\022`\n\003dek\030\001 \001(\0132 .scalek" +
+      "it.v1.keys.EnvironmentKeyB,\222A)2\'The newl" +
+      "y created DEK in CREATED state.R\003dek\"x\n\022" +
+      "ActivateDEKRequest\022b\n\013dek_version\030\001 \001(\005B" +
+      "A\222A722DEK version to activate. Must be i" +
+      "n CREATED state.J\0012\272H\004\032\002 \000R\ndekVersion\"w" +
+      "\n\023ActivateDEKResponse\022`\n\003dek\030\001 \001(\0132 .sca" +
+      "lekit.v1.keys.EnvironmentKeyB,\222A)2\'The a" +
+      "ctivated DEK, now in ACTIVE state.R\003dek\"" +
+      "\026\n\024ReencryptDataRequest\"\321\001\n\023SkippedTable" +
+      "Summary\022^\n\005table\030\001 \001(\tBH\222AE24Name of the" +
+      " table that contained unrecoverable rows" +
+      ".J\r\"connections\"R\005table\022Z\n\005count\030\002 \001(\005BD" +
+      "\222AA2<Number of rows in this table that c" +
+      "ould not be re-encrypted.J\0012R\005count\"\333\003\n\025" +
+      "ReencryptDataResponse\022\317\001\n\023records_reencr" +
+      "ypted\030\001 \001(\005B\235\001\222A\231\0012\222\001Number of data reco" +
+      "rds that were re-encrypted under the act" +
+      "ive DEK. Returns 0 if re-encryption was " +
+      "already complete for this version (idemp" +
+      "otent).J\00242R\022recordsReencrypted\022\357\001\n\022unre" +
+      "coverable_rows\030\002 \003(\0132%.scalekit.v1.keys." +
+      "SkippedTableSummaryB\230\001\222A\224\0012\221\001Per-table c" +
+      "ounts of rows that could not be re-encry" +
+      "pted due to a corrupted or missing key r" +
+      "ecord. Empty when all rows were successf" +
+      "ully migrated.R\021unrecoverableRows\"\204\003\n\017Li" +
+      "stDEKsRequest\022z\n\006status\030\001 \001(\tB]\222AZ2NFilt" +
+      "er by status: CREATED, ACTIVE, or DEPREC" +
+      "ATED. Omit to return all versions.J\010\"ACT" +
+      "IVE\"H\000R\006status\210\001\001\022i\n\tpage_size\030\002 \001(\rBL\222A" +
+      "I2CMaximum number of DEKs to return per " +
+      "page. Defaults to 10, max 100.J\00210R\010page" +
+      "Size\022\177\n\npage_token\030\003 \001(\tB`\222A]2KPaginatio" +
+      "n token from a previous ListDEKsResponse" +
+      ". Omit for the first page.J\016\"<page_token" +
+      ">\"R\tpageTokenB\t\n\007_status\"\321\002\n\020ListDEKsRes" +
+      "ponse\022e\n\004deks\030\001 \003(\0132 .scalekit.v1.keys.E" +
+      "nvironmentKeyB/\222A,2*List of DEK versions" +
+      " for this environment.R\004deks\022r\n\017next_pag" +
+      "e_token\030\002 \001(\tBJ\222AG20Token for the next p" +
+      "age. Empty if no more pages.J\023\"<next_pag" +
+      "e_token>\"R\rnextPageToken\022b\n\ntotal_size\030\003" +
+      " \001(\rBC\222A@2;Total number of DEKs matching" +
+      " the request across all pages.J\0013R\ttotal" +
+      "Size\"`\n\rGetDEKRequest\022O\n\013dek_version\030\001 \001" +
+      "(\005B.\222A$2\037DEK version number to retrieve." +
+      "J\0012\272H\004\032\002 \000R\ndekVersion\"e\n\016GetDEKResponse" +
+      "\022S\n\003dek\030\001 \001(\0132 .scalekit.v1.keys.Environ" +
+      "mentKeyB\037\222A\0342\032The requested DEK version." +
+      "R\003dek\"\240\005\n\017PatchDEKRequest\022`\n\013dek_version" +
+      "\030\001 \001(\005B?\222A520DEK version to update. Must" +
+      " be in CREATED state.J\0012\272H\004\032\002 \000R\ndekVers" +
+      "ion\022\250\001\n\010key_type\030\002 \001(\0162\034.scalekit.v1.key" +
+      "s.DEKKeyTypeBj\222Ag2]Updated encryption mo" +
+      "de. Use BYOK or SCALEKIT_MANAGED_KEY whe" +
+      "n providing an external KMS key.J\006\"BYOK\"" +
+      "H\000R\007keyType\210\001\001\022\214\001\n\010provider\030\003 \001(\tBk\222Ah2_" +
+      "Updated KMS provider (GCP, AWS, AZURE). " +
+      "Required when key_type is BYOK or SCALEK" +
+      "IT_MANAGED_KEY.J\005\"GCP\"H\001R\010provider\210\001\001\022\312\001" +
+      "\n\007key_ref\030\004 \001(\tB\253\001\222A\247\0012ZUpdated KMS key " +
+      "URI or identifier. Required when key_typ" +
+      "e is BYOK or SCALEKIT_MANAGED_KEY.JI\"pro" +
+      "jects/my-project/locations/global/keyRin" +
+      "gs/my-ring/cryptoKeys/my-key\"H\002R\006keyRef\210" +
+      "\001\001B\013\n\t_key_typeB\013\n\t_providerB\n\n\010_key_ref" +
+      "\"e\n\020PatchDEKResponse\022Q\n\003dek\030\001 \001(\0132 .scal" +
+      "ekit.v1.keys.EnvironmentKeyB\035\222A\0322\030The up" +
+      "dated DEK version.R\003dek\"\265\001\n\021DestroyDEKRe" +
+      "quest\022\237\001\n\013dek_version\030\001 \001(\005B~\222At2oDEK ve" +
+      "rsion to permanently delete. Must be DEP" +
+      "RECATED and rotated_at must be set (Reen" +
+      "cryptData must have run).J\0011\272H\004\032\002 \000R\ndek" +
+      "Version\"\031\n\027GetBYOKSetupInfoRequest\"\222\002\n\030G" +
+      "etBYOKSetupInfoResponse\022\365\001\n\023gcp_service_" +
+      "account\030\001 \001(\tB\304\001\222A\300\0012\216\001GCP service accou" +
+      "nt email that must be granted roles/clou" +
+      "dkms.cryptoKeyEncrypterDecrypter and rol" +
+      "es/cloudkms.viewer on the customer\'s KMS" +
+      " key.J-\"byok-kms@my-project.iam.gservice" +
+      "account.com\"R\021gcpServiceAccount\"\332\002\n\024Veri" +
+      "fyBYOKKeyRequest\022b\n\010provider\030\001 \001(\tBF\222A*2" +
+      "!KMS provider: GCP, AWS, or AZURE.J\005\"GCP" +
+      "\"\340A\002\272H\023r\021R\003GCPR\003AWSR\005AZURER\010provider\022\335\001\n" +
+      "\007key_ref\030\002 \001(\tB\303\001\222A\265\0012hKMS key URI to ve" +
+      "rify. For GCP: projects/{project}/locati" +
+      "ons/{location}/keyRings/{ring}/cryptoKey" +
+      "s/{key}JI\"projects/my-project/locations/" +
+      "global/keyRings/my-ring/cryptoKeys/my-ke" +
+      "y\"\340A\002\272H\004r\002\020\001R\006keyRef\"\301\002\n\025VerifyBYOKKeyRe" +
+      "sponse\022\216\001\n\naccessible\030\001 \001(\010Bn\222Ak2cTrue w" +
+      "hen Scalekit\'s service account successfu" +
+      "lly encrypted a test payload using the s" +
+      "pecified key.J\004trueR\naccessible\022\226\001\n\007key_" +
+      "ref\030\002 \001(\tB}\222Az2-The resolved key referen" +
+      "ce that was verified.JI\"projects/my-proj" +
+      "ect/locations/global/keyRings/my-ring/cr" +
+      "yptoKeys/my-key\"R\006keyRef\"\311\003\n\026CreateMaste" +
+      "rKeyRequest\022p\n\010provider\030\001 \001(\tBT\222A12(KMS " +
+      "provider: GCP, AWS, AZURE, or LOCAL.J\005\"G" +
+      "CP\"\340A\002\272H\032r\030R\003GCPR\003AWSR\005AZURER\005LOCALR\010pro" +
+      "vider\022\241\001\n\007key_ref\030\002 \001(\tB\207\001\222Az2-KMS key U" +
+      "RI or identifier for the master key.JI\"p" +
+      "rojects/my-project/locations/global/keyR" +
+      "ings/my-ring/cryptoKeys/my-key\"\340A\002\272H\004r\002\020" +
+      "\001R\006keyRef\022\214\001\n\007version\030\003 \001(\005Bm\222Aj2eOption" +
+      "al: specify a custom version number. Aut" +
+      "o-incremented from the current maximum i" +
+      "f not provided.J\0012H\000R\007version\210\001\001B\n\n\010_ver" +
+      "sion\"\212\001\n\027CreateMasterKeyResponse\022o\n\nmast" +
+      "er_key\030\001 \001(\0132\033.scalekit.v1.keys.MasterKe" +
+      "yB3\222A02.The newly created master key in " +
+      "CREATED state.R\tmasterKey\"~\n\030ActivateMas" +
+      "terKeyRequest\022b\n\007version\030\001 \001(\005BH\222A>29Mas" +
+      "ter key version to activate. Must be in " +
+      "CREATED state.J\0012\272H\004\032\002 \000R\007version\"\214\001\n\031Ac" +
+      "tivateMasterKeyResponse\022o\n\nmaster_key\030\001 " +
+      "\001(\0132\033.scalekit.v1.keys.MasterKeyB3\222A02.T" +
+      "he activated master key, now in ACTIVE s" +
+      "tate.R\tmasterKey\"\023\n\021RewrapDEKsRequest\"{\n" +
+      "\022RewrapDEKsResponse\022e\n\016deks_rewrapped\030\001 " +
+      "\001(\005B>\222A;26Number of DEKs re-wrapped unde" +
+      "r the active master key.J\0015R\rdeksRewrapp" +
+      "ed\"\230\003\n\025ListMasterKeysRequest\022z\n\006status\030\001" +
+      " \001(\tB]\222AZ2NFilter by status: CREATED, AC" +
+      "TIVE, or DEPRECATED. Omit to return all " +
+      "versions.J\010\"ACTIVE\"H\000R\006status\210\001\001\022p\n\tpage" +
+      "_size\030\002 \001(\rBS\222AP2JMaximum number of mast" +
+      "er keys to return per page. Defaults to " +
+      "10, max 100.J\00210R\010pageSize\022\205\001\n\npage_toke" +
+      "n\030\003 \001(\tBf\222Ac2QPagination token from a pr" +
+      "evious ListMasterKeysResponse. Omit for " +
+      "the first page.J\016\"<page_token>\"R\tpageTok" +
+      "enB\t\n\007_status\"\330\002\n\026ListMasterKeysResponse" +
+      "\022_\n\013master_keys\030\001 \003(\0132\033.scalekit.v1.keys" +
+      ".MasterKeyB!\222A\0362\034List of master key vers" +
+      "ions.R\nmasterKeys\022r\n\017next_page_token\030\002 \001" +
+      "(\tBJ\222AG20Token for the next page. Empty " +
+      "if no more pages.J\023\"<next_page_token>\"R\r" +
+      "nextPageToken\022i\n\ntotal_size\030\003 \001(\rBJ\222AG2B" +
+      "Total number of master keys matching the" +
+      " request across all pages.J\0012R\ttotalSize" +
+      "\"f\n\023GetMasterKeyRequest\022O\n\007version\030\001 \001(\005" +
+      "B5\222A+2&Master key version number to retr" +
+      "ieve.J\0011\272H\004\032\002 \000R\007version\"z\n\024GetMasterKey" +
+      "Response\022b\n\nmaster_key\030\001 \001(\0132\033.scalekit." +
+      "v1.keys.MasterKeyB&\222A#2!The requested ma" +
+      "ster key version.R\tmasterKey\"\246\001\n\027Destroy" +
+      "MasterKeyRequest\022\212\001\n\007version\030\001 \001(\005Bp\222Af2" +
+      "aMaster key version to permanently delet" +
+      "e. Must be DEPRECATED with no DEKs still" +
+      " wrapped under it.J\0011\272H\004\032\002 \000R\007version*c\n" +
+      "\nDEKKeyType\022\034\n\030DEK_KEY_TYPE_UNSPECIFIED\020" +
+      "\000\022\023\n\017ENVIRONMENT_KEY\020\001\022\010\n\004BYOK\020\002\022\030\n\024SCAL" +
+      "EKIT_MANAGED_KEY\020\0032\317G\n\024KeyManagementServ" +
+      "ice\022\362\004\n\tCreateDEK\022\".scalekit.v1.keys.Cre" +
+      "ateDEKRequest\032#.scalekit.v1.keys.CreateD" +
+      "EKResponse\"\233\004\222A\346\003\n\016Key Management\022\014Creat" +
+      "e a DEK\032\333\001Creates a new Data Encryption " +
+      "Key (DEK) in CREATED state. The DEK is n" +
+      "ot active and will not be used for encry" +
+      "ption until ActivateDEK is called. For B" +
+      "YOK or SCALEKIT_MANAGED_KEY, provide key" +
+      "_type, provider, and key_ref.Jy\n\003200\022r\nG" +
+      "DEK created in CREATED state. Call Activ" +
+      "ateDEK to promote it to ACTIVE.\022\'\n%\032#.sc" +
+      "alekit.v1.keys.CreateDEKResponseJm\n\003400\022" +
+      "f\ndInvalid request \342\200\224 provider and key_" +
+      "ref are required when key_type is BYOK o" +
+      "r SCALEKIT_MANAGED_KEY.\202\265\030\002\030D\372\322\344\223\002\t\022\007PRE" +
+      "VIEW\202\323\344\223\002\026\"\021/api/v1/keys/deks:\001*\022\370\004\n\013Act" +
+      "ivateDEK\022$.scalekit.v1.keys.ActivateDEKR" +
+      "equest\032%.scalekit.v1.keys.ActivateDEKRes" +
+      "ponse\"\233\004\222A\317\003\n\016Key Management\022\016Activate a" +
+      " DEK\032\326\001Promotes a CREATED DEK version to" +
+      " ACTIVE and deprecates all other DEK ver" +
+      "sions. Only CREATED DEKs can be activate" +
+      "d. After activation, call ReencryptData " +
+      "to re-encrypt existing application secre" +
+      "ts under the new key.J\213\001\n\003200\022\203\001\nVDEK ac" +
+      "tivated. The specified version is now AC" +
+      "TIVE; all other versions are DEPRECATED." +
+      "\022)\n\'\032%.scalekit.v1.keys.ActivateDEKRespo" +
+      "nseJ%\n\003400\022\036\n\034DEK is not in CREATED stat" +
+      "e.J\037\n\003404\022\030\n\026DEK version not found.\202\265\030\002\030" +
+      "D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002-\"(/api/v1/keys/dek" +
+      "s/{dek_version}:activate:\001*\022\316\005\n\rReencryp" +
+      "tData\022&.scalekit.v1.keys.ReencryptDataRe" +
+      "quest\032\'.scalekit.v1.keys.ReencryptDataRe" +
+      "sponse\"\353\004\222A\254\004\n\016Key Management\022\017Re-encryp" +
+      "t data\032\276\002Re-encrypts all application sec" +
+      "rets (connection client secrets, OIDC cl" +
+      "ient secrets, API tokens, connected acco" +
+      "unts, interceptor secrets, and signing k" +
+      "eys) under the currently active DEK. Run" +
+      " this after ActivateDEK to complete key " +
+      "migration. This operation is required be" +
+      "fore a deprecated DEK version can be des" +
+      "troyed.Jy\n\003200\022r\nCRe-encryption complete" +
+      ". Returns the number of records re-encry" +
+      "pted.\022+\n)\032\'.scalekit.v1.keys.ReencryptDa" +
+      "taResponseJ,\n\003400\022%\n#DEK version is not " +
+      "in ACTIVE state.J\037\n\003404\022\030\n\026DEK version n" +
+      "ot found.\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002 \"\033/a" +
+      "pi/v1/keys/deks:reencrypt:\001*\022\313\003\n\010ListDEK" +
+      "s\022!.scalekit.v1.keys.ListDEKsRequest\032\".s" +
+      "calekit.v1.keys.ListDEKsResponse\"\367\002\222A\305\002\n" +
+      "\016Key Management\022\tList DEKs\032\325\001Lists Data " +
+      "Encryption Key (DEK) versions for the cu" +
+      "rrent environment with pagination. Suppo" +
+      "rts optional status filter (CREATED, ACT" +
+      "IVE, DEPRECATED). Use next_page_token fr" +
+      "om the response to fetch subsequent page" +
+      "s.JP\n\003200\022I\n\037Paginated list of DEK versi" +
+      "ons.\022&\n$\032\".scalekit.v1.keys.ListDEKsResp" +
+      "onse\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\023\022\021/api/v1" +
+      "/keys/deks\022\316\003\n\006GetDEK\022\037.scalekit.v1.keys" +
+      ".GetDEKRequest\032 .scalekit.v1.keys.GetDEK" +
+      "Response\"\200\003\222A\300\002\n\016Key Management\022\tGet a D" +
+      "EK\032\274\001Returns a single Data Encryption Ke" +
+      "y (DEK) version by its version number. U" +
+      "se this to check the current status of a" +
+      " specific DEK version before activating," +
+      " re-encrypting, or destroying it.JC\n\003200" +
+      "\022<\n\024DEK version details.\022$\n\"\032 .scalekit." +
+      "v1.keys.GetDEKResponseJ\037\n\003404\022\030\n\026DEK ver" +
+      "sion not found.\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
+      "\002!\022\037/api/v1/keys/deks/{dek_version}\022\317\004\n\010" +
+      "PatchDEK\022!.scalekit.v1.keys.PatchDEKRequ" +
+      "est\032\".scalekit.v1.keys.PatchDEKResponse\"" +
+      "\373\003\222A\270\003\n\016Key Management\022\014Update a DEK\032\355\001U" +
+      "pdates the key_type, provider, and key_r" +
+      "ef of a DEK version. Only allowed on DEK" +
+      "s in CREATED state \342\200\224 use this to corre" +
+      "ct a misconfigured provider or key refer" +
+      "ence before activation. Once a DEK is ac" +
+      "tivated it can no longer be patched.JJ\n\003" +
+      "200\022C\n\031DEK updated successfully.\022&\n$\032\".s" +
+      "calekit.v1.keys.PatchDEKResponseJ;\n\003400\022" +
+      "4\n2DEK is not in CREATED state and canno" +
+      "t be patched.J\037\n\003404\022\030\n\026DEK version not " +
+      "found.\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002$2\037/api/" +
+      "v1/keys/deks/{dek_version}:\001*\022\270\004\n\nDestro" +
+      "yDEK\022#.scalekit.v1.keys.DestroyDEKReques" +
+      "t\032\026.google.protobuf.Empty\"\354\003\222A\254\003\n\016Key Ma" +
+      "nagement\022\rDestroy a DEK\032\346\001Permanently de" +
+      "letes a DEK version from the database. O" +
+      "nly allowed on DEPRECATED DEKs where Ree" +
+      "ncryptData has been run (rotated_at is s" +
+      "et), ensuring no data remains encrypted " +
+      "under this key. WARNING: This operation " +
+      "is irreversible.J!\n\003200\022\032\n\030DEK permanent" +
+      "ly deleted.J^\n\003400\022W\nUDEK cannot be dest" +
+      "royed: it is not DEPRECATED, or Reencryp" +
+      "tData has not been run yet.J\037\n\003404\022\030\n\026DE" +
+      "K version not found.\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIE" +
+      "W\202\323\344\223\002!*\037/api/v1/keys/deks/{dek_version}" +
+      "\022\335\003\n\020GetBYOKSetupInfo\022).scalekit.v1.keys" +
+      ".GetBYOKSetupInfoRequest\032*.scalekit.v1.k" +
+      "eys.GetBYOKSetupInfoResponse\"\361\002\222A\264\002\n\016Key" +
+      " Management\022\023Get BYOK setup info\032\272\001Retur" +
+      "ns the Scalekit GCP service account emai" +
+      "l that customers must grant roles/cloudk" +
+      "ms.cryptoKeyEncrypterDecrypter and roles" +
+      "/cloudkms.viewer on their KMS key before" +
+      " creating a BYOK DEK.JP\n\003200\022I\n\027BYOK set" +
+      "up information.\022.\n,\032*.scalekit.v1.keys.G" +
+      "etBYOKSetupInfoResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PRE" +
+      "VIEW\202\323\344\223\002\036\022\034/api/v1/keys/byok/setup-info" +
+      "\022\363\006\n\rVerifyBYOKKey\022&.scalekit.v1.keys.Ve" +
+      "rifyBYOKKeyRequest\032\'.scalekit.v1.keys.Ve" +
+      "rifyBYOKKeyResponse\"\220\006\222A\324\005\n\016Key Manageme" +
+      "nt\022\026Verify BYOK key access\032\221\002Verifies th" +
+      "at Scalekit\'s BYOK service account has t" +
+      "he necessary IAM permissions to encrypt " +
+      "data using the specified GCP KMS key. Pe" +
+      "rforms a test encryption with a harmless" +
+      " payload. Use this before calling Create" +
+      "DEK to validate your IAM configuration a" +
+      "nd catch errors early.Ju\n\003200\022n\n?Key is " +
+      "accessible and IAM permissions are corre" +
+      "ctly configured.\022+\n)\032\'.scalekit.v1.keys." +
+      "VerifyBYOKKeyResponseJ<\n\003400\0225\n3Invalid " +
+      "request \342\200\224 provider or key_ref is missi" +
+      "ng.J\202\001\n\003403\022{\nyIAM permission denied \342\200\224" +
+      " Scalekit service account lacks roles/cl" +
+      "oudkms.cryptoKeyEncrypterDecrypter on th" +
+      "e specified key.J\\\n\003404\022U\nSKMS key not f" +
+      "ound \342\200\224 the key_ref does not exist or t" +
+      "he key version is not enabled.\202\265\030\002\030D\372\322\344\223" +
+      "\002\t\022\007PREVIEW\202\323\344\223\002\035\"\030/api/v1/keys/byok/ver" +
+      "ify:\001*\022\252\004\n\017CreateMasterKey\022(.scalekit.v1" +
+      ".keys.CreateMasterKeyRequest\032).scalekit." +
+      "v1.keys.CreateMasterKeyResponse\"\301\003\222A\212\003\n\016" +
+      "Key Management\022\023Create a master key\032\253\001Cr" +
+      "eates a new master key version in CREATE" +
+      "D state. The master key is not used for " +
+      "encryption until ActivateMasterKey is ca" +
+      "lled. Restricted to the Scalekit platfor" +
+      "m client.J\215\001\n\003200\022\205\001\nTMaster key created" +
+      " in CREATED state. Call ActivateMasterKe" +
+      "y to promote it to ACTIVE.\022-\n+\032).scaleki" +
+      "t.v1.keys.CreateMasterKeyResponseJ%\n\003400",
+      "\022\036\n\034Invalid provider or key_ref.\202\265\030\002\030\004\372\322" +
+      "\344\223\002\t\022\007PREVIEW\202\323\344\223\002\030\"\023/api/v1/keys/master" +
+      ":\001*\022\254\005\n\021ActivateMasterKey\022*.scalekit.v1." +
+      "keys.ActivateMasterKeyRequest\032+.scalekit" +
+      ".v1.keys.ActivateMasterKeyResponse\"\275\004\222A\363" +
+      "\003\n\016Key Management\022\025Activate a master key" +
+      "\032\330\001Promotes a CREATED master key version" +
+      " to ACTIVE and deprecates all other mast" +
+      "er key versions. Only CREATED master key" +
+      "s can be activated. After activation, ca" +
+      "ll RewrapDEKs to re-wrap all DEKs under " +
+      "the new master key.J\230\001\n\003200\022\220\001\n]Master k" +
+      "ey activated. The specified version is n" +
+      "ow ACTIVE; all other versions are DEPREC" +
+      "ATED.\022/\n-\032+.scalekit.v1.keys.ActivateMas" +
+      "terKeyResponseJ,\n\003400\022%\n#Master key is n" +
+      "ot in CREATED state.J&\n\003404\022\037\n\035Master ke" +
+      "y version not found.\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIE" +
+      "W\202\323\344\223\002+\"&/api/v1/keys/master/{version}:a" +
+      "ctivate:\001*\022\204\004\n\nRewrapDEKs\022#.scalekit.v1." +
+      "keys.RewrapDEKsRequest\032$.scalekit.v1.key" +
+      "s.RewrapDEKsResponse\"\252\003\222A\354\002\n\016Key Managem" +
+      "ent\022\013Rewrap DEKs\032\267\001Re-wraps all DEKs und" +
+      "er the currently active master key. Run " +
+      "this after ActivateMasterKey to complete" +
+      " master key rotation. Required before th" +
+      "e old master key version can be destroye" +
+      "d.Jm\n\003200\022f\n:DEK rewrap complete. Return" +
+      "s the number of DEKs rewrapped.\022(\n&\032$.sc" +
+      "alekit.v1.keys.RewrapDEKsResponseJ$\n\003400" +
+      "\022\035\n\033No ACTIVE master key found.\202\265\030\002\030\004\372\322\344" +
+      "\223\002\t\022\007PREVIEW\202\323\344\223\002\037\"\032/api/v1/keys/master:" +
+      "rewrap:\001*\022\310\003\n\016ListMasterKeys\022\'.scalekit." +
+      "v1.keys.ListMasterKeysRequest\032(.scalekit" +
+      ".v1.keys.ListMasterKeysResponse\"\342\002\222A\256\002\n\016" +
+      "Key Management\022\020List master keys\032\252\001Lists" +
+      " master key versions with pagination. Su" +
+      "pports optional status filter (CREATED, " +
+      "ACTIVE, DEPRECATED). Use next_page_token" +
+      " from the response to fetch subsequent p" +
+      "ages.J]\n\003200\022V\n&Paginated list of master" +
+      " key versions.\022,\n*\032(.scalekit.v1.keys.Li" +
+      "stMasterKeysResponse\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIE" +
+      "W\202\323\344\223\002\025\022\023/api/v1/keys/master\022\363\003\n\014GetMast" +
+      "erKey\022%.scalekit.v1.keys.GetMasterKeyReq" +
+      "uest\032&.scalekit.v1.keys.GetMasterKeyResp" +
+      "onse\"\223\003\222A\325\002\n\016Key Management\022\020Get a maste" +
+      "r key\032\266\001Returns a single master key vers" +
+      "ion by its version number. Use this to c" +
+      "heck the current status of a specific ma" +
+      "ster key version before activating, rewr" +
+      "apping DEKs, or destroying it.JP\n\003200\022I\n" +
+      "\033Master key version details.\022*\n(\032&.scale" +
+      "kit.v1.keys.GetMasterKeyResponseJ&\n\003404\022" +
+      "\037\n\035Master key version not found.\202\265\030\002\030\004\372\322" +
+      "\344\223\002\t\022\007PREVIEW\202\323\344\223\002\037\022\035/api/v1/keys/master" +
+      "/{version}\022\345\004\n\020DestroyMasterKey\022).scalek" +
+      "it.v1.keys.DestroyMasterKeyRequest\032\026.goo" +
+      "gle.protobuf.Empty\"\215\004\222A\317\003\n\016Key Managemen" +
+      "t\022\024Destroy a master key\032\341\001Permanently de" +
+      "letes a master key version. Only allowed" +
+      " on DEPRECATED master keys with no DEKs " +
+      "still wrapped under them. Call RewrapDEK" +
+      "s first to migrate all DEKs to the new m" +
+      "aster key. WARNING: This operation is ir" +
+      "reversible.J(\n\003200\022!\n\037Master key permane" +
+      "ntly deleted.Jq\n\003400\022j\nhMaster key canno" +
+      "t be destroyed: it is ACTIVE, or DEKs ar" +
+      "e still wrapped under it. Call RewrapDEK" +
+      "s first.J&\n\003404\022\037\n\035Master key version no" +
+      "t found.\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\037*\035/ap" +
+      "i/v1/keys/master/{version}\032\347\002\222A\343\002\n\016Key M" +
+      "anagement\022\320\002Encryption key management us" +
+      "ing envelope encryption. Every phase of " +
+      "the key lifecycle \342\200\224 creation, activati" +
+      "on, re-encryption, and destruction \342\200\224 i" +
+      "s an explicit, user-triggered action. Su" +
+      "pports ENVIRONMENT_KEY (Scalekit-managed" +
+      " envelope encryption), SCALEKIT_MANAGED_" +
+      "KEY (Scalekit-managed KMS key), and BYOK" +
+      " (Bring Your Own Key) modes.B\301\001\n\"com.sca" +
+      "lekit.grpc.scalekit.v1.keysB\tKeysProtoP\001" +
+      "Z.github.com/scalekit-inc/scalekit/pkg/g" +
+      "rpc/keys\242\002\003SVK\252\002\020Scalekit.V1.Keys\312\002\020Scal" +
+      "ekit\\V1\\Keys\342\002\034Scalekit\\V1\\Keys\\GPBMetad" +
+      "ata\352\002\022Scalekit::V1::Keysb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -291,116 +678,188 @@ public final class KeysProto {
           com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor(),
           com.scalekit.grpc.scalekit.v1.options.OptionsProto.getDescriptor(),
         });
-    internal_static_scalekit_v1_keys_CreateDEKRequest_descriptor =
+    internal_static_scalekit_v1_keys_EnvironmentKey_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_scalekit_v1_keys_EnvironmentKey_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_EnvironmentKey_descriptor,
+        new java.lang.String[] { "Id", "EnvironmentId", "DekVersion", "MasterVersion", "KeyType", "Algorithm", "Status", "CreatedAt", "RotatedAt", "ActivatedAt", "Provider", "KeyRef", "KmsVersion", });
+    internal_static_scalekit_v1_keys_MasterKey_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_scalekit_v1_keys_MasterKey_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_MasterKey_descriptor,
+        new java.lang.String[] { "Id", "Provider", "KeyRef", "Version", "Algorithm", "Status", "CreatedAt", "RotatedAt", });
+    internal_static_scalekit_v1_keys_CreateDEKRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_scalekit_v1_keys_CreateDEKRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_keys_CreateDEKRequest_descriptor,
         new java.lang.String[] { "KeyType", "Provider", "KeyRef", });
     internal_static_scalekit_v1_keys_CreateDEKResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_scalekit_v1_keys_CreateDEKResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_keys_CreateDEKResponse_descriptor,
         new java.lang.String[] { "Dek", });
-    internal_static_scalekit_v1_keys_RotateDEKRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_scalekit_v1_keys_RotateDEKRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_keys_RotateDEKRequest_descriptor,
-        new java.lang.String[] { });
-    internal_static_scalekit_v1_keys_RotateDEKResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_scalekit_v1_keys_RotateDEKResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_keys_RotateDEKResponse_descriptor,
-        new java.lang.String[] { "Dek", });
-    internal_static_scalekit_v1_keys_ListDEKsRequest_descriptor =
+    internal_static_scalekit_v1_keys_ActivateDEKRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_scalekit_v1_keys_ActivateDEKRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_ActivateDEKRequest_descriptor,
+        new java.lang.String[] { "DekVersion", });
+    internal_static_scalekit_v1_keys_ActivateDEKResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_scalekit_v1_keys_ActivateDEKResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_ActivateDEKResponse_descriptor,
+        new java.lang.String[] { "Dek", });
+    internal_static_scalekit_v1_keys_ReencryptDataRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_scalekit_v1_keys_ReencryptDataRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_ReencryptDataRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_scalekit_v1_keys_SkippedTableSummary_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_scalekit_v1_keys_SkippedTableSummary_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_SkippedTableSummary_descriptor,
+        new java.lang.String[] { "Table", "Count", });
+    internal_static_scalekit_v1_keys_ReencryptDataResponse_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_scalekit_v1_keys_ReencryptDataResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_ReencryptDataResponse_descriptor,
+        new java.lang.String[] { "RecordsReencrypted", "UnrecoverableRows", });
+    internal_static_scalekit_v1_keys_ListDEKsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(9);
     internal_static_scalekit_v1_keys_ListDEKsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_keys_ListDEKsRequest_descriptor,
         new java.lang.String[] { "Status", "PageSize", "PageToken", });
     internal_static_scalekit_v1_keys_ListDEKsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_scalekit_v1_keys_ListDEKsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_keys_ListDEKsResponse_descriptor,
         new java.lang.String[] { "Deks", "NextPageToken", "TotalSize", });
-    internal_static_scalekit_v1_keys_DeleteDEKRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_scalekit_v1_keys_DeleteDEKRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_keys_DeleteDEKRequest_descriptor,
-        new java.lang.String[] { "DekVersion", });
-    internal_static_scalekit_v1_keys_RotateMasterKeyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_scalekit_v1_keys_RotateMasterKeyRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_keys_RotateMasterKeyRequest_descriptor,
-        new java.lang.String[] { });
-    internal_static_scalekit_v1_keys_RotateMasterKeyResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_scalekit_v1_keys_RotateMasterKeyResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_keys_RotateMasterKeyResponse_descriptor,
-        new java.lang.String[] { "NewMasterKey", });
-    internal_static_scalekit_v1_keys_EnvironmentKey_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_scalekit_v1_keys_EnvironmentKey_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_keys_EnvironmentKey_descriptor,
-        new java.lang.String[] { "Id", "EnvironmentId", "DekVersion", "MasterVersion", "Algorithm", "Status", "CreatedAt", "RotatedAt", });
-    internal_static_scalekit_v1_keys_MasterKey_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_scalekit_v1_keys_MasterKey_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_keys_MasterKey_descriptor,
-        new java.lang.String[] { "Id", "Provider", "KeyRef", "Version", "Status", "CreatedAt", "RotatedAt", });
-    internal_static_scalekit_v1_keys_CreateMasterKeyRequest_descriptor =
+    internal_static_scalekit_v1_keys_GetDEKRequest_descriptor =
       getDescriptor().getMessageTypes().get(11);
+    internal_static_scalekit_v1_keys_GetDEKRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_GetDEKRequest_descriptor,
+        new java.lang.String[] { "DekVersion", });
+    internal_static_scalekit_v1_keys_GetDEKResponse_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_scalekit_v1_keys_GetDEKResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_GetDEKResponse_descriptor,
+        new java.lang.String[] { "Dek", });
+    internal_static_scalekit_v1_keys_PatchDEKRequest_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_scalekit_v1_keys_PatchDEKRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_PatchDEKRequest_descriptor,
+        new java.lang.String[] { "DekVersion", "KeyType", "Provider", "KeyRef", });
+    internal_static_scalekit_v1_keys_PatchDEKResponse_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_scalekit_v1_keys_PatchDEKResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_PatchDEKResponse_descriptor,
+        new java.lang.String[] { "Dek", });
+    internal_static_scalekit_v1_keys_DestroyDEKRequest_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_scalekit_v1_keys_DestroyDEKRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_DestroyDEKRequest_descriptor,
+        new java.lang.String[] { "DekVersion", });
+    internal_static_scalekit_v1_keys_GetBYOKSetupInfoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_scalekit_v1_keys_GetBYOKSetupInfoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_GetBYOKSetupInfoRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_scalekit_v1_keys_GetBYOKSetupInfoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_scalekit_v1_keys_GetBYOKSetupInfoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_GetBYOKSetupInfoResponse_descriptor,
+        new java.lang.String[] { "GcpServiceAccount", });
+    internal_static_scalekit_v1_keys_VerifyBYOKKeyRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_scalekit_v1_keys_VerifyBYOKKeyRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_VerifyBYOKKeyRequest_descriptor,
+        new java.lang.String[] { "Provider", "KeyRef", });
+    internal_static_scalekit_v1_keys_VerifyBYOKKeyResponse_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_scalekit_v1_keys_VerifyBYOKKeyResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_VerifyBYOKKeyResponse_descriptor,
+        new java.lang.String[] { "Accessible", "KeyRef", });
+    internal_static_scalekit_v1_keys_CreateMasterKeyRequest_descriptor =
+      getDescriptor().getMessageTypes().get(20);
     internal_static_scalekit_v1_keys_CreateMasterKeyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_keys_CreateMasterKeyRequest_descriptor,
         new java.lang.String[] { "Provider", "KeyRef", "Version", });
     internal_static_scalekit_v1_keys_CreateMasterKeyResponse_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_scalekit_v1_keys_CreateMasterKeyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_keys_CreateMasterKeyResponse_descriptor,
         new java.lang.String[] { "MasterKey", });
-    internal_static_scalekit_v1_keys_SetActiveDEKRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
-    internal_static_scalekit_v1_keys_SetActiveDEKRequest_fieldAccessorTable = new
+    internal_static_scalekit_v1_keys_ActivateMasterKeyRequest_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_scalekit_v1_keys_ActivateMasterKeyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_keys_SetActiveDEKRequest_descriptor,
-        new java.lang.String[] { "DekVersion", });
-    internal_static_scalekit_v1_keys_SetActiveDEKResponse_descriptor =
-      getDescriptor().getMessageTypes().get(14);
-    internal_static_scalekit_v1_keys_SetActiveDEKResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_keys_SetActiveDEKResponse_descriptor,
-        new java.lang.String[] { "Dek", });
-    internal_static_scalekit_v1_keys_SetActiveMasterKeyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(15);
-    internal_static_scalekit_v1_keys_SetActiveMasterKeyRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_keys_SetActiveMasterKeyRequest_descriptor,
+        internal_static_scalekit_v1_keys_ActivateMasterKeyRequest_descriptor,
         new java.lang.String[] { "Version", });
-    internal_static_scalekit_v1_keys_SetActiveMasterKeyResponse_descriptor =
-      getDescriptor().getMessageTypes().get(16);
-    internal_static_scalekit_v1_keys_SetActiveMasterKeyResponse_fieldAccessorTable = new
+    internal_static_scalekit_v1_keys_ActivateMasterKeyResponse_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_scalekit_v1_keys_ActivateMasterKeyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_keys_SetActiveMasterKeyResponse_descriptor,
+        internal_static_scalekit_v1_keys_ActivateMasterKeyResponse_descriptor,
         new java.lang.String[] { "MasterKey", });
-    internal_static_scalekit_v1_keys_DestroyDEKRequest_descriptor =
-      getDescriptor().getMessageTypes().get(17);
-    internal_static_scalekit_v1_keys_DestroyDEKRequest_fieldAccessorTable = new
+    internal_static_scalekit_v1_keys_RewrapDEKsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_scalekit_v1_keys_RewrapDEKsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_keys_DestroyDEKRequest_descriptor,
-        new java.lang.String[] { "DekVersion", });
+        internal_static_scalekit_v1_keys_RewrapDEKsRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_scalekit_v1_keys_RewrapDEKsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_scalekit_v1_keys_RewrapDEKsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_RewrapDEKsResponse_descriptor,
+        new java.lang.String[] { "DeksRewrapped", });
+    internal_static_scalekit_v1_keys_ListMasterKeysRequest_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_scalekit_v1_keys_ListMasterKeysRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_ListMasterKeysRequest_descriptor,
+        new java.lang.String[] { "Status", "PageSize", "PageToken", });
+    internal_static_scalekit_v1_keys_ListMasterKeysResponse_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_scalekit_v1_keys_ListMasterKeysResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_ListMasterKeysResponse_descriptor,
+        new java.lang.String[] { "MasterKeys", "NextPageToken", "TotalSize", });
+    internal_static_scalekit_v1_keys_GetMasterKeyRequest_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_scalekit_v1_keys_GetMasterKeyRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_GetMasterKeyRequest_descriptor,
+        new java.lang.String[] { "Version", });
+    internal_static_scalekit_v1_keys_GetMasterKeyResponse_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_scalekit_v1_keys_GetMasterKeyResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_keys_GetMasterKeyResponse_descriptor,
+        new java.lang.String[] { "MasterKey", });
     internal_static_scalekit_v1_keys_DestroyMasterKeyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_scalekit_v1_keys_DestroyMasterKeyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_keys_DestroyMasterKeyRequest_descriptor,
@@ -408,8 +867,10 @@ public final class KeysProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);
+    registry.add(com.scalekit.grpc.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
     registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Tag);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);

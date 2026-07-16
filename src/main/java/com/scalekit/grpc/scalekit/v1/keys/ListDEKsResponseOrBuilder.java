@@ -9,55 +9,43 @@ public interface ListDEKsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey> 
       getDeksList();
   /**
-   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey getDeks(int index);
   /**
-   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   int getDeksCount();
   /**
-   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<? extends com.scalekit.grpc.scalekit.v1.keys.EnvironmentKeyOrBuilder> 
       getDeksOrBuilderList();
   /**
-   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.keys.EnvironmentKeyOrBuilder getDeksOrBuilder(
       int index);
 
   /**
-   * <pre>
-   * Token for the next page. Empty if no more pages.
-   * </pre>
-   *
-   * <code>string next_page_token = 2 [json_name = "nextPageToken"];</code>
+   * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
-   * <pre>
-   * Token for the next page. Empty if no more pages.
-   * </pre>
-   *
-   * <code>string next_page_token = 2 [json_name = "nextPageToken"];</code>
+   * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString
       getNextPageTokenBytes();
 
   /**
-   * <pre>
-   * Total number of DEKs matching the request (across all pages).
-   * </pre>
-   *
-   * <code>uint32 total_size = 3 [json_name = "totalSize"];</code>
+   * <code>uint32 total_size = 3 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The totalSize.
    */
   int getTotalSize();

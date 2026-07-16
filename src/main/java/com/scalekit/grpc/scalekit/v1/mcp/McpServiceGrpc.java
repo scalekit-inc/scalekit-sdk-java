@@ -480,6 +480,68 @@ public final class McpServiceGrpc {
     return getGetMcpInstanceAuthStateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenRequest,
+      com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenResponse> getCreateMcpSessionTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateMcpSessionToken",
+      requestType = com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenRequest,
+      com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenResponse> getCreateMcpSessionTokenMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenRequest, com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenResponse> getCreateMcpSessionTokenMethod;
+    if ((getCreateMcpSessionTokenMethod = McpServiceGrpc.getCreateMcpSessionTokenMethod) == null) {
+      synchronized (McpServiceGrpc.class) {
+        if ((getCreateMcpSessionTokenMethod = McpServiceGrpc.getCreateMcpSessionTokenMethod) == null) {
+          McpServiceGrpc.getCreateMcpSessionTokenMethod = getCreateMcpSessionTokenMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenRequest, com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateMcpSessionToken"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new McpServiceMethodDescriptorSupplier("CreateMcpSessionToken"))
+              .build();
+        }
+      }
+    }
+    return getCreateMcpSessionTokenMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsRequest,
+      com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsResponse> getListMcpConnectedAccountsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMcpConnectedAccounts",
+      requestType = com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsRequest,
+      com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsResponse> getListMcpConnectedAccountsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsRequest, com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsResponse> getListMcpConnectedAccountsMethod;
+    if ((getListMcpConnectedAccountsMethod = McpServiceGrpc.getListMcpConnectedAccountsMethod) == null) {
+      synchronized (McpServiceGrpc.class) {
+        if ((getListMcpConnectedAccountsMethod = McpServiceGrpc.getListMcpConnectedAccountsMethod) == null) {
+          McpServiceGrpc.getListMcpConnectedAccountsMethod = getListMcpConnectedAccountsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsRequest, com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMcpConnectedAccounts"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new McpServiceMethodDescriptorSupplier("ListMcpConnectedAccounts"))
+              .build();
+        }
+      }
+    }
+    return getListMcpConnectedAccountsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -632,6 +694,20 @@ public final class McpServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.mcp.GetMcpInstanceAuthStateResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMcpInstanceAuthStateMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void createMcpSessionToken(com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateMcpSessionTokenMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listMcpConnectedAccounts(com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMcpConnectedAccountsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -780,6 +856,22 @@ public final class McpServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetMcpInstanceAuthStateMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void createMcpSessionToken(com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateMcpSessionTokenMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listMcpConnectedAccounts(com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMcpConnectedAccountsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -901,6 +993,20 @@ public final class McpServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.mcp.GetMcpInstanceAuthStateResponse getMcpInstanceAuthState(com.scalekit.grpc.scalekit.v1.mcp.GetMcpInstanceAuthStateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetMcpInstanceAuthStateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenResponse createMcpSessionToken(com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMcpSessionTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsResponse listMcpConnectedAccounts(com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMcpConnectedAccountsMethod(), getCallOptions(), request);
     }
   }
 
@@ -1039,6 +1145,22 @@ public final class McpServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetMcpInstanceAuthStateMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenResponse> createMcpSessionToken(
+        com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateMcpSessionTokenMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsResponse> listMcpConnectedAccounts(
+        com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMcpConnectedAccountsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_MCP = 0;
@@ -1056,6 +1178,8 @@ public final class McpServiceGrpc {
   private static final int METHODID_UPDATE_MCP_INSTANCE = 12;
   private static final int METHODID_GET_MCP_INSTANCE = 13;
   private static final int METHODID_GET_MCP_INSTANCE_AUTH_STATE = 14;
+  private static final int METHODID_CREATE_MCP_SESSION_TOKEN = 15;
+  private static final int METHODID_LIST_MCP_CONNECTED_ACCOUNTS = 16;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1133,6 +1257,14 @@ public final class McpServiceGrpc {
         case METHODID_GET_MCP_INSTANCE_AUTH_STATE:
           serviceImpl.getMcpInstanceAuthState((com.scalekit.grpc.scalekit.v1.mcp.GetMcpInstanceAuthStateRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.mcp.GetMcpInstanceAuthStateResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_MCP_SESSION_TOKEN:
+          serviceImpl.createMcpSessionToken((com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MCP_CONNECTED_ACCOUNTS:
+          serviceImpl.listMcpConnectedAccounts((com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1257,6 +1389,20 @@ public final class McpServiceGrpc {
               com.scalekit.grpc.scalekit.v1.mcp.GetMcpInstanceAuthStateRequest,
               com.scalekit.grpc.scalekit.v1.mcp.GetMcpInstanceAuthStateResponse>(
                 service, METHODID_GET_MCP_INSTANCE_AUTH_STATE)))
+        .addMethod(
+          getCreateMcpSessionTokenMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenRequest,
+              com.scalekit.grpc.scalekit.v1.mcp.CreateMcpSessionTokenResponse>(
+                service, METHODID_CREATE_MCP_SESSION_TOKEN)))
+        .addMethod(
+          getListMcpConnectedAccountsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsRequest,
+              com.scalekit.grpc.scalekit.v1.mcp.ListMcpConnectedAccountsResponse>(
+                service, METHODID_LIST_MCP_CONNECTED_ACCOUNTS)))
         .build();
   }
 
@@ -1320,6 +1466,8 @@ public final class McpServiceGrpc {
               .addMethod(getUpdateMcpInstanceMethod())
               .addMethod(getGetMcpInstanceMethod())
               .addMethod(getGetMcpInstanceAuthStateMethod())
+              .addMethod(getCreateMcpSessionTokenMethod())
+              .addMethod(getListMcpConnectedAccountsMethod())
               .build();
         }
       }

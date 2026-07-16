@@ -234,4 +234,10 @@ public interface ResourceOrBuilder extends
    * @return The enableCimd.
    */
   boolean getEnableCimd();
+
+  /**
+   * <code>bool xaa_enabled = 21 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The xaaEnabled.
+   */
+  boolean getXaaEnabled();
 }

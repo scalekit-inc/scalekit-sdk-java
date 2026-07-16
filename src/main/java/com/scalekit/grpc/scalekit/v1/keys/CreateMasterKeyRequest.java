@@ -5,10 +5,6 @@
 package com.scalekit.grpc.scalekit.v1.keys;
 
 /**
- * <pre>
- * CreateMasterKeyRequest requests creation of a new master key
- * </pre>
- *
  * Protobuf type {@code scalekit.v1.keys.CreateMasterKeyRequest}
  */
 public final class CreateMasterKeyRequest extends
@@ -50,11 +46,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object provider_ = "";
   /**
-   * <pre>
-   * KMS provider (GCP, AWS, AZURE, LOCAL)
-   * </pre>
-   *
-   * <code>string provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+   * <code>string provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The provider.
    */
   @java.lang.Override
@@ -71,11 +63,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * KMS provider (GCP, AWS, AZURE, LOCAL)
-   * </pre>
-   *
-   * <code>string provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+   * <code>string provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for provider.
    */
   @java.lang.Override
@@ -97,11 +85,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyRef_ = "";
   /**
-   * <pre>
-   * Key reference (KMS key URI for cloud providers, identifier for LOCAL)
-   * </pre>
-   *
-   * <code>string key_ref = 2 [json_name = "keyRef", (.buf.validate.field) = { ... }</code>
+   * <code>string key_ref = 2 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The keyRef.
    */
   @java.lang.Override
@@ -118,11 +102,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * Key reference (KMS key URI for cloud providers, identifier for LOCAL)
-   * </pre>
-   *
-   * <code>string key_ref = 2 [json_name = "keyRef", (.buf.validate.field) = { ... }</code>
+   * <code>string key_ref = 2 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for keyRef.
    */
   @java.lang.Override
@@ -143,11 +123,7 @@ private static final long serialVersionUID = 0L;
   public static final int VERSION_FIELD_NUMBER = 3;
   private int version_ = 0;
   /**
-   * <pre>
-   * Optional: specify a custom version number (auto-incremented if not provided)
-   * </pre>
-   *
-   * <code>optional int32 version = 3 [json_name = "version"];</code>
+   * <code>optional int32 version = 3 [json_name = "version", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the version field is set.
    */
   @java.lang.Override
@@ -155,11 +131,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <pre>
-   * Optional: specify a custom version number (auto-incremented if not provided)
-   * </pre>
-   *
-   * <code>optional int32 version = 3 [json_name = "version"];</code>
+   * <code>optional int32 version = 3 [json_name = "version", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The version.
    */
   @java.lang.Override
@@ -350,10 +322,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * CreateMasterKeyRequest requests creation of a new master key
-   * </pre>
-   *
    * Protobuf type {@code scalekit.v1.keys.CreateMasterKeyRequest}
    */
   public static final class Builder extends
@@ -554,11 +522,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object provider_ = "";
     /**
-     * <pre>
-     * KMS provider (GCP, AWS, AZURE, LOCAL)
-     * </pre>
-     *
-     * <code>string provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+     * <code>string provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The provider.
      */
     public java.lang.String getProvider() {
@@ -574,11 +538,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * KMS provider (GCP, AWS, AZURE, LOCAL)
-     * </pre>
-     *
-     * <code>string provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+     * <code>string provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for provider.
      */
     public com.google.protobuf.ByteString
@@ -595,11 +555,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * KMS provider (GCP, AWS, AZURE, LOCAL)
-     * </pre>
-     *
-     * <code>string provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+     * <code>string provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The provider to set.
      * @return This builder for chaining.
      */
@@ -612,11 +568,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * KMS provider (GCP, AWS, AZURE, LOCAL)
-     * </pre>
-     *
-     * <code>string provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+     * <code>string provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearProvider() {
@@ -626,11 +578,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * KMS provider (GCP, AWS, AZURE, LOCAL)
-     * </pre>
-     *
-     * <code>string provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+     * <code>string provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for provider to set.
      * @return This builder for chaining.
      */
@@ -646,11 +594,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object keyRef_ = "";
     /**
-     * <pre>
-     * Key reference (KMS key URI for cloud providers, identifier for LOCAL)
-     * </pre>
-     *
-     * <code>string key_ref = 2 [json_name = "keyRef", (.buf.validate.field) = { ... }</code>
+     * <code>string key_ref = 2 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The keyRef.
      */
     public java.lang.String getKeyRef() {
@@ -666,11 +610,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Key reference (KMS key URI for cloud providers, identifier for LOCAL)
-     * </pre>
-     *
-     * <code>string key_ref = 2 [json_name = "keyRef", (.buf.validate.field) = { ... }</code>
+     * <code>string key_ref = 2 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for keyRef.
      */
     public com.google.protobuf.ByteString
@@ -687,11 +627,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Key reference (KMS key URI for cloud providers, identifier for LOCAL)
-     * </pre>
-     *
-     * <code>string key_ref = 2 [json_name = "keyRef", (.buf.validate.field) = { ... }</code>
+     * <code>string key_ref = 2 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The keyRef to set.
      * @return This builder for chaining.
      */
@@ -704,11 +640,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Key reference (KMS key URI for cloud providers, identifier for LOCAL)
-     * </pre>
-     *
-     * <code>string key_ref = 2 [json_name = "keyRef", (.buf.validate.field) = { ... }</code>
+     * <code>string key_ref = 2 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearKeyRef() {
@@ -718,11 +650,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Key reference (KMS key URI for cloud providers, identifier for LOCAL)
-     * </pre>
-     *
-     * <code>string key_ref = 2 [json_name = "keyRef", (.buf.validate.field) = { ... }</code>
+     * <code>string key_ref = 2 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for keyRef to set.
      * @return This builder for chaining.
      */
@@ -738,11 +666,7 @@ private static final long serialVersionUID = 0L;
 
     private int version_ ;
     /**
-     * <pre>
-     * Optional: specify a custom version number (auto-incremented if not provided)
-     * </pre>
-     *
-     * <code>optional int32 version = 3 [json_name = "version"];</code>
+     * <code>optional int32 version = 3 [json_name = "version", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the version field is set.
      */
     @java.lang.Override
@@ -750,11 +674,7 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <pre>
-     * Optional: specify a custom version number (auto-incremented if not provided)
-     * </pre>
-     *
-     * <code>optional int32 version = 3 [json_name = "version"];</code>
+     * <code>optional int32 version = 3 [json_name = "version", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The version.
      */
     @java.lang.Override
@@ -762,11 +682,7 @@ private static final long serialVersionUID = 0L;
       return version_;
     }
     /**
-     * <pre>
-     * Optional: specify a custom version number (auto-incremented if not provided)
-     * </pre>
-     *
-     * <code>optional int32 version = 3 [json_name = "version"];</code>
+     * <code>optional int32 version = 3 [json_name = "version", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The version to set.
      * @return This builder for chaining.
      */
@@ -778,11 +694,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Optional: specify a custom version number (auto-incremented if not provided)
-     * </pre>
-     *
-     * <code>optional int32 version = 3 [json_name = "version"];</code>
+     * <code>optional int32 version = 3 [json_name = "version", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearVersion() {

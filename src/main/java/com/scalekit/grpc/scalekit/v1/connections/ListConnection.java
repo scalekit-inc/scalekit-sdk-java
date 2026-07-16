@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     organizationName_ = "";
     providerKey_ = "";
     keyId_ = "";
+    mcpServerUrl_ = "";
   }
 
   @java.lang.Override
@@ -413,6 +414,45 @@ private static final long serialVersionUID = 0L;
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
 
+  public static final int MCP_SERVER_URL_FIELD_NUMBER = 13;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mcpServerUrl_ = "";
+  /**
+   * <code>string mcp_server_url = 13 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The mcpServerUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getMcpServerUrl() {
+    java.lang.Object ref = mcpServerUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      mcpServerUrl_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string mcp_server_url = 13 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for mcpServerUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMcpServerUrlBytes() {
+    java.lang.Object ref = mcpServerUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      mcpServerUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -462,6 +502,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(12, getCreatedAt());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mcpServerUrl_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, mcpServerUrl_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -518,6 +561,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, getCreatedAt());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mcpServerUrl_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, mcpServerUrl_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -557,6 +603,8 @@ private static final long serialVersionUID = 0L;
       if (!getCreatedAt()
           .equals(other.getCreatedAt())) return false;
     }
+    if (!getMcpServerUrl()
+        .equals(other.getMcpServerUrl())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -597,6 +645,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getCreatedAt().hashCode();
     }
+    hash = (37 * hash) + MCP_SERVER_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getMcpServerUrl().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -751,6 +801,7 @@ private static final long serialVersionUID = 0L;
         createdAtBuilder_.dispose();
         createdAtBuilder_ = null;
       }
+      mcpServerUrl_ = "";
       return this;
     }
 
@@ -824,6 +875,9 @@ private static final long serialVersionUID = 0L;
             ? createdAt_
             : createdAtBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.mcpServerUrl_ = mcpServerUrl_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -927,6 +981,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasCreatedAt()) {
         mergeCreatedAt(other.getCreatedAt());
       }
+      if (!other.getMcpServerUrl().isEmpty()) {
+        mcpServerUrl_ = other.mcpServerUrl_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1016,6 +1075,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000800;
               break;
             } // case 98
+            case 106: {
+              mcpServerUrl_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00001000;
+              break;
+            } // case 106
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1886,6 +1950,78 @@ private static final long serialVersionUID = 0L;
         createdAt_ = null;
       }
       return createdAtBuilder_;
+    }
+
+    private java.lang.Object mcpServerUrl_ = "";
+    /**
+     * <code>string mcp_server_url = 13 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The mcpServerUrl.
+     */
+    public java.lang.String getMcpServerUrl() {
+      java.lang.Object ref = mcpServerUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mcpServerUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string mcp_server_url = 13 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for mcpServerUrl.
+     */
+    public com.google.protobuf.ByteString
+        getMcpServerUrlBytes() {
+      java.lang.Object ref = mcpServerUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mcpServerUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string mcp_server_url = 13 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The mcpServerUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMcpServerUrl(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      mcpServerUrl_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string mcp_server_url = 13 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMcpServerUrl() {
+      mcpServerUrl_ = getDefaultInstance().getMcpServerUrl();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string mcp_server_url = 13 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for mcpServerUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMcpServerUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      mcpServerUrl_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

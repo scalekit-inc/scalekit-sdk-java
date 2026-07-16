@@ -9,17 +9,17 @@ public interface CreateMasterKeyResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey"];</code>
+   * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the masterKey field is set.
    */
   boolean hasMasterKey();
   /**
-   * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey"];</code>
+   * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The masterKey.
    */
   com.scalekit.grpc.scalekit.v1.keys.MasterKey getMasterKey();
   /**
-   * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey"];</code>
+   * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.keys.MasterKeyOrBuilder getMasterKeyOrBuilder();
 }

@@ -5,10 +5,6 @@
 package com.scalekit.grpc.scalekit.v1.keys;
 
 /**
- * <pre>
- * CreateDEKRequest requests creation of a new DEK
- * </pre>
- *
  * Protobuf type {@code scalekit.v1.keys.CreateDEKRequest}
  */
 public final class CreateDEKRequest extends
@@ -50,33 +46,21 @@ private static final long serialVersionUID = 0L;
   public static final int KEY_TYPE_FIELD_NUMBER = 1;
   private int keyType_ = 0;
   /**
-   * <pre>
-   * Optional: key type. If BYOK or SCALEKIT_MANAGED_KEY, provider and key_ref are required.
-   * </pre>
-   *
-   * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType"];</code>
+   * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the keyType field is set.
    */
   @java.lang.Override public boolean hasKeyType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <pre>
-   * Optional: key type. If BYOK or SCALEKIT_MANAGED_KEY, provider and key_ref are required.
-   * </pre>
-   *
-   * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType"];</code>
+   * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The enum numeric value on the wire for keyType.
    */
   @java.lang.Override public int getKeyTypeValue() {
     return keyType_;
   }
   /**
-   * <pre>
-   * Optional: key type. If BYOK or SCALEKIT_MANAGED_KEY, provider and key_ref are required.
-   * </pre>
-   *
-   * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType"];</code>
+   * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The keyType.
    */
   @java.lang.Override public com.scalekit.grpc.scalekit.v1.keys.DEKKeyType getKeyType() {
@@ -88,11 +72,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object provider_ = "";
   /**
-   * <pre>
-   * KMS provider (GCP, AWS, AZURE, LOCAL). Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-   * </pre>
-   *
-   * <code>optional string provider = 2 [json_name = "provider"];</code>
+   * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the provider field is set.
    */
   @java.lang.Override
@@ -100,11 +80,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <pre>
-   * KMS provider (GCP, AWS, AZURE, LOCAL). Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-   * </pre>
-   *
-   * <code>optional string provider = 2 [json_name = "provider"];</code>
+   * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The provider.
    */
   @java.lang.Override
@@ -121,11 +97,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * KMS provider (GCP, AWS, AZURE, LOCAL). Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-   * </pre>
-   *
-   * <code>optional string provider = 2 [json_name = "provider"];</code>
+   * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for provider.
    */
   @java.lang.Override
@@ -147,11 +119,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyRef_ = "";
   /**
-   * <pre>
-   * KMS key URI or identifier. Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-   * </pre>
-   *
-   * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+   * <code>optional string key_ref = 3 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the keyRef field is set.
    */
   @java.lang.Override
@@ -159,11 +127,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <pre>
-   * KMS key URI or identifier. Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-   * </pre>
-   *
-   * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+   * <code>optional string key_ref = 3 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The keyRef.
    */
   @java.lang.Override
@@ -180,11 +144,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * KMS key URI or identifier. Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-   * </pre>
-   *
-   * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+   * <code>optional string key_ref = 3 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for keyRef.
    */
   @java.lang.Override
@@ -394,10 +354,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * CreateDEKRequest requests creation of a new DEK
-   * </pre>
-   *
    * Protobuf type {@code scalekit.v1.keys.CreateDEKRequest}
    */
   public static final class Builder extends
@@ -600,33 +556,21 @@ private static final long serialVersionUID = 0L;
 
     private int keyType_ = 0;
     /**
-     * <pre>
-     * Optional: key type. If BYOK or SCALEKIT_MANAGED_KEY, provider and key_ref are required.
-     * </pre>
-     *
-     * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType"];</code>
+     * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the keyType field is set.
      */
     @java.lang.Override public boolean hasKeyType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <pre>
-     * Optional: key type. If BYOK or SCALEKIT_MANAGED_KEY, provider and key_ref are required.
-     * </pre>
-     *
-     * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType"];</code>
+     * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The enum numeric value on the wire for keyType.
      */
     @java.lang.Override public int getKeyTypeValue() {
       return keyType_;
     }
     /**
-     * <pre>
-     * Optional: key type. If BYOK or SCALEKIT_MANAGED_KEY, provider and key_ref are required.
-     * </pre>
-     *
-     * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType"];</code>
+     * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The enum numeric value on the wire for keyType to set.
      * @return This builder for chaining.
      */
@@ -637,11 +581,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Optional: key type. If BYOK or SCALEKIT_MANAGED_KEY, provider and key_ref are required.
-     * </pre>
-     *
-     * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType"];</code>
+     * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The keyType.
      */
     @java.lang.Override
@@ -650,11 +590,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.scalekit.grpc.scalekit.v1.keys.DEKKeyType.UNRECOGNIZED : result;
     }
     /**
-     * <pre>
-     * Optional: key type. If BYOK or SCALEKIT_MANAGED_KEY, provider and key_ref are required.
-     * </pre>
-     *
-     * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType"];</code>
+     * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The keyType to set.
      * @return This builder for chaining.
      */
@@ -668,11 +604,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Optional: key type. If BYOK or SCALEKIT_MANAGED_KEY, provider and key_ref are required.
-     * </pre>
-     *
-     * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType"];</code>
+     * <code>optional .scalekit.v1.keys.DEKKeyType key_type = 1 [json_name = "keyType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearKeyType() {
@@ -684,22 +616,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object provider_ = "";
     /**
-     * <pre>
-     * KMS provider (GCP, AWS, AZURE, LOCAL). Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-     * </pre>
-     *
-     * <code>optional string provider = 2 [json_name = "provider"];</code>
+     * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the provider field is set.
      */
     public boolean hasProvider() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <pre>
-     * KMS provider (GCP, AWS, AZURE, LOCAL). Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-     * </pre>
-     *
-     * <code>optional string provider = 2 [json_name = "provider"];</code>
+     * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The provider.
      */
     public java.lang.String getProvider() {
@@ -715,11 +639,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * KMS provider (GCP, AWS, AZURE, LOCAL). Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-     * </pre>
-     *
-     * <code>optional string provider = 2 [json_name = "provider"];</code>
+     * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for provider.
      */
     public com.google.protobuf.ByteString
@@ -736,11 +656,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * KMS provider (GCP, AWS, AZURE, LOCAL). Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-     * </pre>
-     *
-     * <code>optional string provider = 2 [json_name = "provider"];</code>
+     * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The provider to set.
      * @return This builder for chaining.
      */
@@ -753,11 +669,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * KMS provider (GCP, AWS, AZURE, LOCAL). Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-     * </pre>
-     *
-     * <code>optional string provider = 2 [json_name = "provider"];</code>
+     * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearProvider() {
@@ -767,11 +679,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * KMS provider (GCP, AWS, AZURE, LOCAL). Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-     * </pre>
-     *
-     * <code>optional string provider = 2 [json_name = "provider"];</code>
+     * <code>optional string provider = 2 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for provider to set.
      * @return This builder for chaining.
      */
@@ -787,22 +695,14 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object keyRef_ = "";
     /**
-     * <pre>
-     * KMS key URI or identifier. Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-     * </pre>
-     *
-     * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+     * <code>optional string key_ref = 3 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the keyRef field is set.
      */
     public boolean hasKeyRef() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <pre>
-     * KMS key URI or identifier. Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-     * </pre>
-     *
-     * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+     * <code>optional string key_ref = 3 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The keyRef.
      */
     public java.lang.String getKeyRef() {
@@ -818,11 +718,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * KMS key URI or identifier. Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-     * </pre>
-     *
-     * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+     * <code>optional string key_ref = 3 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for keyRef.
      */
     public com.google.protobuf.ByteString
@@ -839,11 +735,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * KMS key URI or identifier. Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-     * </pre>
-     *
-     * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+     * <code>optional string key_ref = 3 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The keyRef to set.
      * @return This builder for chaining.
      */
@@ -856,11 +748,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * KMS key URI or identifier. Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-     * </pre>
-     *
-     * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+     * <code>optional string key_ref = 3 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearKeyRef() {
@@ -870,11 +758,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * KMS key URI or identifier. Required when key_type is BYOK or SCALEKIT_MANAGED_KEY.
-     * </pre>
-     *
-     * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+     * <code>optional string key_ref = 3 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for keyRef to set.
      * @return This builder for chaining.
      */

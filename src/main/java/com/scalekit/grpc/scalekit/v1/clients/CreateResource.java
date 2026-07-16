@@ -384,6 +384,17 @@ private static final long serialVersionUID = 0L;
   public static final int ENABLE_CIMD_FIELD_NUMBER = 13;
   private boolean enableCimd_ = false;
   /**
+   * <code>bool enable_cimd = 13 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enableCimd.
+   */
+  @java.lang.Override
+  public boolean getEnableCimd() {
+    return enableCimd_;
+  }
+
+  public static final int XAA_ENABLED_FIELD_NUMBER = 14;
+  private boolean xaaEnabled_ = false;
+  /**
    * <pre>
    *
    *string tos_uri = 10 [
@@ -403,12 +414,12 @@ private static final long serialVersionUID = 0L;
    *];
    * </pre>
    *
-   * <code>bool enable_cimd = 13 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The enableCimd.
+   * <code>bool xaa_enabled = 14 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The xaaEnabled.
    */
   @java.lang.Override
-  public boolean getEnableCimd() {
-    return enableCimd_;
+  public boolean getXaaEnabled() {
+    return xaaEnabled_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -463,6 +474,9 @@ private static final long serialVersionUID = 0L;
     }
     if (enableCimd_ != false) {
       output.writeBool(13, enableCimd_);
+    }
+    if (xaaEnabled_ != false) {
+      output.writeBool(14, xaaEnabled_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -523,6 +537,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(13, enableCimd_);
     }
+    if (xaaEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(14, xaaEnabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -563,6 +581,8 @@ private static final long serialVersionUID = 0L;
         != other.getIntersectScopesUserPermission()) return false;
     if (getEnableCimd()
         != other.getEnableCimd()) return false;
+    if (getXaaEnabled()
+        != other.getXaaEnabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -607,6 +627,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ENABLE_CIMD_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getEnableCimd());
+    hash = (37 * hash) + XAA_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getXaaEnabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -752,6 +775,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.LazyStringArrayList.emptyList();
       intersectScopesUserPermission_ = false;
       enableCimd_ = false;
+      xaaEnabled_ = false;
       return this;
     }
 
@@ -824,6 +848,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.enableCimd_ = enableCimd_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.xaaEnabled_ = xaaEnabled_;
       }
     }
 
@@ -929,6 +956,9 @@ private static final long serialVersionUID = 0L;
       if (other.getEnableCimd() != false) {
         setEnableCimd(other.getEnableCimd());
       }
+      if (other.getXaaEnabled() != false) {
+        setXaaEnabled(other.getXaaEnabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1021,6 +1051,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00001000;
               break;
             } // case 104
+            case 112: {
+              xaaEnabled_ = input.readBool();
+              bitField0_ |= 0x00002000;
+              break;
+            } // case 112
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1764,6 +1799,38 @@ private static final long serialVersionUID = 0L;
 
     private boolean enableCimd_ ;
     /**
+     * <code>bool enable_cimd = 13 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enableCimd.
+     */
+    @java.lang.Override
+    public boolean getEnableCimd() {
+      return enableCimd_;
+    }
+    /**
+     * <code>bool enable_cimd = 13 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enableCimd to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableCimd(boolean value) {
+
+      enableCimd_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool enable_cimd = 13 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableCimd() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      enableCimd_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean xaaEnabled_ ;
+    /**
      * <pre>
      *
      *string tos_uri = 10 [
@@ -1783,12 +1850,12 @@ private static final long serialVersionUID = 0L;
      *];
      * </pre>
      *
-     * <code>bool enable_cimd = 13 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The enableCimd.
+     * <code>bool xaa_enabled = 14 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The xaaEnabled.
      */
     @java.lang.Override
-    public boolean getEnableCimd() {
-      return enableCimd_;
+    public boolean getXaaEnabled() {
+      return xaaEnabled_;
     }
     /**
      * <pre>
@@ -1810,14 +1877,14 @@ private static final long serialVersionUID = 0L;
      *];
      * </pre>
      *
-     * <code>bool enable_cimd = 13 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The enableCimd to set.
+     * <code>bool xaa_enabled = 14 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The xaaEnabled to set.
      * @return This builder for chaining.
      */
-    public Builder setEnableCimd(boolean value) {
+    public Builder setXaaEnabled(boolean value) {
 
-      enableCimd_ = value;
-      bitField0_ |= 0x00001000;
+      xaaEnabled_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -1841,12 +1908,12 @@ private static final long serialVersionUID = 0L;
      *];
      * </pre>
      *
-     * <code>bool enable_cimd = 13 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>bool xaa_enabled = 14 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearEnableCimd() {
-      bitField0_ = (bitField0_ & ~0x00001000);
-      enableCimd_ = false;
+    public Builder clearXaaEnabled() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      xaaEnabled_ = false;
       onChanged();
       return this;
     }

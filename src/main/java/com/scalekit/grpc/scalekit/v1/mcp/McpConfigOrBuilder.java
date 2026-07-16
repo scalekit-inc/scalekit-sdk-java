@@ -67,4 +67,16 @@ public interface McpConfigOrBuilder extends
    */
   com.scalekit.grpc.scalekit.v1.mcp.McpConfigConnectionToolMappingOrBuilder getConnectionToolMappingsOrBuilder(
       int index);
+
+  /**
+   * <code>string mcp_server_url = 5 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The mcpServerUrl.
+   */
+  java.lang.String getMcpServerUrl();
+  /**
+   * <code>string mcp_server_url = 5 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for mcpServerUrl.
+   */
+  com.google.protobuf.ByteString
+      getMcpServerUrlBytes();
 }

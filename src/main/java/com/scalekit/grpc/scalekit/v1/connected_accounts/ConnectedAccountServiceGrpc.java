@@ -263,6 +263,37 @@ public final class ConnectedAccountServiceGrpc {
     return getDisconnectConnectedAccountMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlRequest,
+      com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse> getGetRedirectUrlMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRedirectUrl",
+      requestType = com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlRequest,
+      com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse> getGetRedirectUrlMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse> getGetRedirectUrlMethod;
+    if ((getGetRedirectUrlMethod = ConnectedAccountServiceGrpc.getGetRedirectUrlMethod) == null) {
+      synchronized (ConnectedAccountServiceGrpc.class) {
+        if ((getGetRedirectUrlMethod = ConnectedAccountServiceGrpc.getGetRedirectUrlMethod) == null) {
+          ConnectedAccountServiceGrpc.getGetRedirectUrlMethod = getGetRedirectUrlMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetRedirectUrl"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectedAccountServiceMethodDescriptorSupplier("GetRedirectUrl"))
+              .build();
+        }
+      }
+    }
+    return getGetRedirectUrlMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest,
       com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse> getGetConnectedAccountAuthMethod;
 
@@ -354,6 +385,99 @@ public final class ConnectedAccountServiceGrpc {
       }
     }
     return getVerifyConnectedAccountUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsRequest,
+      com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsResponse> getListMyAppConnectionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMyAppConnections",
+      requestType = com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsRequest,
+      com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsResponse> getListMyAppConnectionsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsResponse> getListMyAppConnectionsMethod;
+    if ((getListMyAppConnectionsMethod = ConnectedAccountServiceGrpc.getListMyAppConnectionsMethod) == null) {
+      synchronized (ConnectedAccountServiceGrpc.class) {
+        if ((getListMyAppConnectionsMethod = ConnectedAccountServiceGrpc.getListMyAppConnectionsMethod) == null) {
+          ConnectedAccountServiceGrpc.getListMyAppConnectionsMethod = getListMyAppConnectionsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMyAppConnections"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectedAccountServiceMethodDescriptorSupplier("ListMyAppConnections"))
+              .build();
+        }
+      }
+    }
+    return getListMyAppConnectionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectMyConnectedAccountRequest,
+      com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse> getDisconnectMyConnectedAccountMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DisconnectMyConnectedAccount",
+      requestType = com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectMyConnectedAccountRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectMyConnectedAccountRequest,
+      com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse> getDisconnectMyConnectedAccountMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectMyConnectedAccountRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse> getDisconnectMyConnectedAccountMethod;
+    if ((getDisconnectMyConnectedAccountMethod = ConnectedAccountServiceGrpc.getDisconnectMyConnectedAccountMethod) == null) {
+      synchronized (ConnectedAccountServiceGrpc.class) {
+        if ((getDisconnectMyConnectedAccountMethod = ConnectedAccountServiceGrpc.getDisconnectMyConnectedAccountMethod) == null) {
+          ConnectedAccountServiceGrpc.getDisconnectMyConnectedAccountMethod = getDisconnectMyConnectedAccountMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectMyConnectedAccountRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DisconnectMyConnectedAccount"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectMyConnectedAccountRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectedAccountServiceMethodDescriptorSupplier("DisconnectMyConnectedAccount"))
+              .build();
+        }
+      }
+    }
+    return getDisconnectMyConnectedAccountMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkRequest,
+      com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkResponse> getGetMyConnectionMagicLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMyConnectionMagicLink",
+      requestType = com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkRequest,
+      com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkResponse> getGetMyConnectionMagicLinkMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkResponse> getGetMyConnectionMagicLinkMethod;
+    if ((getGetMyConnectionMagicLinkMethod = ConnectedAccountServiceGrpc.getGetMyConnectionMagicLinkMethod) == null) {
+      synchronized (ConnectedAccountServiceGrpc.class) {
+        if ((getGetMyConnectionMagicLinkMethod = ConnectedAccountServiceGrpc.getGetMyConnectionMagicLinkMethod) == null) {
+          ConnectedAccountServiceGrpc.getGetMyConnectionMagicLinkMethod = getGetMyConnectionMagicLinkMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMyConnectionMagicLink"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectedAccountServiceMethodDescriptorSupplier("GetMyConnectionMagicLink"))
+              .build();
+        }
+      }
+    }
+    return getGetMyConnectionMagicLinkMethod;
   }
 
   /**
@@ -486,6 +610,16 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
+     * Get Redirect URL for Connected Account Portal
+     * </pre>
+     */
+    default void getRedirectUrl(com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRedirectUrlMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get Connected Account Authentication Details
      * </pre>
      */
@@ -512,6 +646,47 @@ public final class ConnectedAccountServiceGrpc {
     default void verifyConnectedAccountUser(com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVerifyConnectedAccountUserMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed: end-user lists every app connection
+     * configured in the env joined with their own per-connection status
+     * (CONNECTED / NOT_CONNECTED / EXPIRED / PENDING_AUTH / ...). Mirrors
+     * the shape of Gateway's list_connections meta-tool so /ui and the
+     * agent surface stay consistent. Server forces identifier from the
+     * session.
+     * </pre>
+     */
+    default void listMyAppConnections(com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMyAppConnectionsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed: end-user disconnects one of their
+     * own connected accounts. Ownership is enforced server-side: the
+     * target CA's identifier must equal the session identifier, else
+     * Forbidden.
+     * </pre>
+     */
+    default void disconnectMyConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectMyConnectedAccountRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDisconnectMyConnectedAccountMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed: end-user gets a one-time magic link
+     * to connect (or reconnect) a specific app connection by name. The
+     * caller's identifier is resolved from the session — the request body
+     * carries no identifier field so a /ui caller cannot impersonate.
+     * </pre>
+     */
+    default void getMyConnectionMagicLink(com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMyConnectionMagicLinkMethod(), responseObserver);
     }
   }
 
@@ -632,6 +807,17 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
+     * Get Redirect URL for Connected Account Portal
+     * </pre>
+     */
+    public void getRedirectUrl(com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRedirectUrlMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get Connected Account Authentication Details
      * </pre>
      */
@@ -661,6 +847,50 @@ public final class ConnectedAccountServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getVerifyConnectedAccountUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed: end-user lists every app connection
+     * configured in the env joined with their own per-connection status
+     * (CONNECTED / NOT_CONNECTED / EXPIRED / PENDING_AUTH / ...). Mirrors
+     * the shape of Gateway's list_connections meta-tool so /ui and the
+     * agent surface stay consistent. Server forces identifier from the
+     * session.
+     * </pre>
+     */
+    public void listMyAppConnections(com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMyAppConnectionsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed: end-user disconnects one of their
+     * own connected accounts. Ownership is enforced server-side: the
+     * target CA's identifier must equal the session identifier, else
+     * Forbidden.
+     * </pre>
+     */
+    public void disconnectMyConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectMyConnectedAccountRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDisconnectMyConnectedAccountMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed: end-user gets a one-time magic link
+     * to connect (or reconnect) a specific app connection by name. The
+     * caller's identifier is resolved from the session — the request body
+     * carries no identifier field so a /ui caller cannot impersonate.
+     * </pre>
+     */
+    public void getMyConnectionMagicLink(com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMyConnectionMagicLinkMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -762,6 +992,16 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
+     * Get Redirect URL for Connected Account Portal
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse getRedirectUrl(com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRedirectUrlMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Get Connected Account Authentication Details
      * </pre>
      */
@@ -788,6 +1028,47 @@ public final class ConnectedAccountServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserResponse verifyConnectedAccountUser(com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getVerifyConnectedAccountUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed: end-user lists every app connection
+     * configured in the env joined with their own per-connection status
+     * (CONNECTED / NOT_CONNECTED / EXPIRED / PENDING_AUTH / ...). Mirrors
+     * the shape of Gateway's list_connections meta-tool so /ui and the
+     * agent surface stay consistent. Server forces identifier from the
+     * session.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsResponse listMyAppConnections(com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMyAppConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed: end-user disconnects one of their
+     * own connected accounts. Ownership is enforced server-side: the
+     * target CA's identifier must equal the session identifier, else
+     * Forbidden.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse disconnectMyConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectMyConnectedAccountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDisconnectMyConnectedAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed: end-user gets a one-time magic link
+     * to connect (or reconnect) a specific app connection by name. The
+     * caller's identifier is resolved from the session — the request body
+     * carries no identifier field so a /ui caller cannot impersonate.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkResponse getMyConnectionMagicLink(com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMyConnectionMagicLinkMethod(), getCallOptions(), request);
     }
   }
 
@@ -897,6 +1178,17 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
+     * Get Redirect URL for Connected Account Portal
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse> getRedirectUrl(
+        com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRedirectUrlMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Get Connected Account Authentication Details
      * </pre>
      */
@@ -927,6 +1219,50 @@ public final class ConnectedAccountServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getVerifyConnectedAccountUserMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed: end-user lists every app connection
+     * configured in the env joined with their own per-connection status
+     * (CONNECTED / NOT_CONNECTED / EXPIRED / PENDING_AUTH / ...). Mirrors
+     * the shape of Gateway's list_connections meta-tool so /ui and the
+     * agent surface stay consistent. Server forces identifier from the
+     * session.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsResponse> listMyAppConnections(
+        com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMyAppConnectionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed: end-user disconnects one of their
+     * own connected accounts. Ownership is enforced server-side: the
+     * target CA's identifier must equal the session identifier, else
+     * Forbidden.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse> disconnectMyConnectedAccount(
+        com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectMyConnectedAccountRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDisconnectMyConnectedAccountMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed: end-user gets a one-time magic link
+     * to connect (or reconnect) a specific app connection by name. The
+     * caller's identifier is resolved from the session — the request body
+     * carries no identifier field so a /ui caller cannot impersonate.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkResponse> getMyConnectionMagicLink(
+        com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMyConnectionMagicLinkMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CONNECTED_ACCOUNTS = 0;
@@ -937,9 +1273,13 @@ public final class ConnectedAccountServiceGrpc {
   private static final int METHODID_GET_MAGIC_LINK_FOR_CONNECTED_ACCOUNT = 5;
   private static final int METHODID_GET_CONNECTED_ACCOUNT = 6;
   private static final int METHODID_DISCONNECT_CONNECTED_ACCOUNT = 7;
-  private static final int METHODID_GET_CONNECTED_ACCOUNT_AUTH = 8;
-  private static final int METHODID_GET_CONNECTED_ACCOUNT_DETAILS = 9;
-  private static final int METHODID_VERIFY_CONNECTED_ACCOUNT_USER = 10;
+  private static final int METHODID_GET_REDIRECT_URL = 8;
+  private static final int METHODID_GET_CONNECTED_ACCOUNT_AUTH = 9;
+  private static final int METHODID_GET_CONNECTED_ACCOUNT_DETAILS = 10;
+  private static final int METHODID_VERIFY_CONNECTED_ACCOUNT_USER = 11;
+  private static final int METHODID_LIST_MY_APP_CONNECTIONS = 12;
+  private static final int METHODID_DISCONNECT_MY_CONNECTED_ACCOUNT = 13;
+  private static final int METHODID_GET_MY_CONNECTION_MAGIC_LINK = 14;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -990,6 +1330,10 @@ public final class ConnectedAccountServiceGrpc {
           serviceImpl.disconnectConnectedAccount((com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse>) responseObserver);
           break;
+        case METHODID_GET_REDIRECT_URL:
+          serviceImpl.getRedirectUrl((com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse>) responseObserver);
+          break;
         case METHODID_GET_CONNECTED_ACCOUNT_AUTH:
           serviceImpl.getConnectedAccountAuth((com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierResponse>) responseObserver);
@@ -1001,6 +1345,18 @@ public final class ConnectedAccountServiceGrpc {
         case METHODID_VERIFY_CONNECTED_ACCOUNT_USER:
           serviceImpl.verifyConnectedAccountUser((com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MY_APP_CONNECTIONS:
+          serviceImpl.listMyAppConnections((com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsResponse>) responseObserver);
+          break;
+        case METHODID_DISCONNECT_MY_CONNECTED_ACCOUNT:
+          serviceImpl.disconnectMyConnectedAccount((com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectMyConnectedAccountRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse>) responseObserver);
+          break;
+        case METHODID_GET_MY_CONNECTION_MAGIC_LINK:
+          serviceImpl.getMyConnectionMagicLink((com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1077,6 +1433,13 @@ public final class ConnectedAccountServiceGrpc {
               com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse>(
                 service, METHODID_DISCONNECT_CONNECTED_ACCOUNT)))
         .addMethod(
+          getGetRedirectUrlMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlRequest,
+              com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse>(
+                service, METHODID_GET_REDIRECT_URL)))
+        .addMethod(
           getGetConnectedAccountAuthMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -1097,6 +1460,27 @@ public final class ConnectedAccountServiceGrpc {
               com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserRequest,
               com.scalekit.grpc.scalekit.v1.connected_accounts.VerifyConnectedAccountUserResponse>(
                 service, METHODID_VERIFY_CONNECTED_ACCOUNT_USER)))
+        .addMethod(
+          getListMyAppConnectionsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsRequest,
+              com.scalekit.grpc.scalekit.v1.connected_accounts.ListMyAppConnectionsResponse>(
+                service, METHODID_LIST_MY_APP_CONNECTIONS)))
+        .addMethod(
+          getDisconnectMyConnectedAccountMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectMyConnectedAccountRequest,
+              com.scalekit.grpc.scalekit.v1.connected_accounts.DisconnectConnectedAccountResponse>(
+                service, METHODID_DISCONNECT_MY_CONNECTED_ACCOUNT)))
+        .addMethod(
+          getGetMyConnectionMagicLinkMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkRequest,
+              com.scalekit.grpc.scalekit.v1.connected_accounts.GetMyConnectionMagicLinkResponse>(
+                service, METHODID_GET_MY_CONNECTION_MAGIC_LINK)))
         .build();
   }
 
@@ -1153,9 +1537,13 @@ public final class ConnectedAccountServiceGrpc {
               .addMethod(getGetMagicLinkForConnectedAccountMethod())
               .addMethod(getGetConnectedAccountMethod())
               .addMethod(getDisconnectConnectedAccountMethod())
+              .addMethod(getGetRedirectUrlMethod())
               .addMethod(getGetConnectedAccountAuthMethod())
               .addMethod(getGetConnectedAccountDetailsMethod())
               .addMethod(getVerifyConnectedAccountUserMethod())
+              .addMethod(getListMyAppConnectionsMethod())
+              .addMethod(getDisconnectMyConnectedAccountMethod())
+              .addMethod(getGetMyConnectionMagicLinkMethod())
               .build();
         }
       }

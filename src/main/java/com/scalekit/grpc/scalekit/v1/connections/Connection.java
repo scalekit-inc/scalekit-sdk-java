@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     keyId_ = "";
     providerKey_ = "";
     domains_ = java.util.Collections.emptyList();
+    mcpServerUrl_ = "";
   }
 
   @java.lang.Override
@@ -848,6 +849,53 @@ java.lang.String defaultValue) {
     return domains_.get(index);
   }
 
+  public static final int MCP_SERVER_URL_FIELD_NUMBER = 29;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mcpServerUrl_ = "";
+  /**
+   * <code>optional string mcp_server_url = 29 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the mcpServerUrl field is set.
+   */
+  @java.lang.Override
+  public boolean hasMcpServerUrl() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <code>optional string mcp_server_url = 29 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The mcpServerUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getMcpServerUrl() {
+    java.lang.Object ref = mcpServerUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      mcpServerUrl_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string mcp_server_url = 29 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for mcpServerUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMcpServerUrlBytes() {
+    java.lang.Object ref = mcpServerUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      mcpServerUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -933,6 +981,9 @@ java.lang.String defaultValue) {
     }
     if (settingsCase_ == 28) {
       output.writeMessage(28, (com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 29, mcpServerUrl_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1035,6 +1086,9 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(28, (com.scalekit.grpc.scalekit.v1.connections.GoogleDWDConfig) settings_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, mcpServerUrl_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1090,6 +1144,11 @@ java.lang.String defaultValue) {
         .equals(other.getProviderKey())) return false;
     if (!getDomainsList()
         .equals(other.getDomainsList())) return false;
+    if (hasMcpServerUrl() != other.hasMcpServerUrl()) return false;
+    if (hasMcpServerUrl()) {
+      if (!getMcpServerUrl()
+          .equals(other.getMcpServerUrl())) return false;
+    }
     if (!getSettingsCase().equals(other.getSettingsCase())) return false;
     switch (settingsCase_) {
       case 18:
@@ -1179,6 +1238,10 @@ java.lang.String defaultValue) {
     if (getDomainsCount() > 0) {
       hash = (37 * hash) + DOMAINS_FIELD_NUMBER;
       hash = (53 * hash) + getDomainsList().hashCode();
+    }
+    if (hasMcpServerUrl()) {
+      hash = (37 * hash) + MCP_SERVER_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getMcpServerUrl().hashCode();
     }
     switch (settingsCase_) {
       case 18:
@@ -1424,6 +1487,7 @@ java.lang.String defaultValue) {
         domainsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00400000);
+      mcpServerUrl_ = "";
       settingsCase_ = 0;
       settings_ = null;
       return this;
@@ -1527,6 +1591,10 @@ java.lang.String defaultValue) {
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
         result.providerKey_ = providerKey_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.mcpServerUrl_ = mcpServerUrl_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1690,6 +1758,11 @@ java.lang.String defaultValue) {
             domainsBuilder_.addAllMessages(other.domains_);
           }
         }
+      }
+      if (other.hasMcpServerUrl()) {
+        mcpServerUrl_ = other.mcpServerUrl_;
+        bitField0_ |= 0x00800000;
+        onChanged();
       }
       switch (other.getSettingsCase()) {
         case OIDC_CONFIG: {
@@ -1895,6 +1968,11 @@ java.lang.String defaultValue) {
               settingsCase_ = 28;
               break;
             } // case 226
+            case 234: {
+              mcpServerUrl_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00800000;
+              break;
+            } // case 234
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -4250,6 +4328,85 @@ java.lang.String defaultValue) {
         domains_ = null;
       }
       return domainsBuilder_;
+    }
+
+    private java.lang.Object mcpServerUrl_ = "";
+    /**
+     * <code>optional string mcp_server_url = 29 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the mcpServerUrl field is set.
+     */
+    public boolean hasMcpServerUrl() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+    /**
+     * <code>optional string mcp_server_url = 29 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The mcpServerUrl.
+     */
+    public java.lang.String getMcpServerUrl() {
+      java.lang.Object ref = mcpServerUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mcpServerUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string mcp_server_url = 29 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for mcpServerUrl.
+     */
+    public com.google.protobuf.ByteString
+        getMcpServerUrlBytes() {
+      java.lang.Object ref = mcpServerUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mcpServerUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string mcp_server_url = 29 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The mcpServerUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMcpServerUrl(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      mcpServerUrl_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string mcp_server_url = 29 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMcpServerUrl() {
+      mcpServerUrl_ = getDefaultInstance().getMcpServerUrl();
+      bitField0_ = (bitField0_ & ~0x00800000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string mcp_server_url = 29 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for mcpServerUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMcpServerUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      mcpServerUrl_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -9,60 +9,36 @@ public interface CreateMasterKeyRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   * KMS provider (GCP, AWS, AZURE, LOCAL)
-   * </pre>
-   *
-   * <code>string provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+   * <code>string provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The provider.
    */
   java.lang.String getProvider();
   /**
-   * <pre>
-   * KMS provider (GCP, AWS, AZURE, LOCAL)
-   * </pre>
-   *
-   * <code>string provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }</code>
+   * <code>string provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for provider.
    */
   com.google.protobuf.ByteString
       getProviderBytes();
 
   /**
-   * <pre>
-   * Key reference (KMS key URI for cloud providers, identifier for LOCAL)
-   * </pre>
-   *
-   * <code>string key_ref = 2 [json_name = "keyRef", (.buf.validate.field) = { ... }</code>
+   * <code>string key_ref = 2 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The keyRef.
    */
   java.lang.String getKeyRef();
   /**
-   * <pre>
-   * Key reference (KMS key URI for cloud providers, identifier for LOCAL)
-   * </pre>
-   *
-   * <code>string key_ref = 2 [json_name = "keyRef", (.buf.validate.field) = { ... }</code>
+   * <code>string key_ref = 2 [json_name = "keyRef", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for keyRef.
    */
   com.google.protobuf.ByteString
       getKeyRefBytes();
 
   /**
-   * <pre>
-   * Optional: specify a custom version number (auto-incremented if not provided)
-   * </pre>
-   *
-   * <code>optional int32 version = 3 [json_name = "version"];</code>
+   * <code>optional int32 version = 3 [json_name = "version", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the version field is set.
    */
   boolean hasVersion();
   /**
-   * <pre>
-   * Optional: specify a custom version number (auto-incremented if not provided)
-   * </pre>
-   *
-   * <code>optional int32 version = 3 [json_name = "version"];</code>
+   * <code>optional int32 version = 3 [json_name = "version", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The version.
    */
   int getVersion();
