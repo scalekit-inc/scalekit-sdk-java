@@ -5,10 +5,6 @@
 package com.scalekit.grpc.scalekit.v1.keys;
 
 /**
- * <pre>
- * DestroyMasterKeyRequest requests permanent deletion of a master key version
- * </pre>
- *
  * Protobuf type {@code scalekit.v1.keys.DestroyMasterKeyRequest}
  */
 public final class DestroyMasterKeyRequest extends
@@ -46,11 +42,7 @@ private static final long serialVersionUID = 0L;
   public static final int VERSION_FIELD_NUMBER = 1;
   private int version_ = 0;
   /**
-   * <pre>
-   * Master key version to destroy
-   * </pre>
-   *
-   * <code>int32 version = 1 [json_name = "version", (.buf.validate.field) = { ... }</code>
+   * <code>int32 version = 1 [json_name = "version", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The version.
    */
   @java.lang.Override
@@ -216,10 +208,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * DestroyMasterKeyRequest requests permanent deletion of a master key version
-   * </pre>
-   *
    * Protobuf type {@code scalekit.v1.keys.DestroyMasterKeyRequest}
    */
   public static final class Builder extends
@@ -389,11 +377,7 @@ private static final long serialVersionUID = 0L;
 
     private int version_ ;
     /**
-     * <pre>
-     * Master key version to destroy
-     * </pre>
-     *
-     * <code>int32 version = 1 [json_name = "version", (.buf.validate.field) = { ... }</code>
+     * <code>int32 version = 1 [json_name = "version", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The version.
      */
     @java.lang.Override
@@ -401,11 +385,7 @@ private static final long serialVersionUID = 0L;
       return version_;
     }
     /**
-     * <pre>
-     * Master key version to destroy
-     * </pre>
-     *
-     * <code>int32 version = 1 [json_name = "version", (.buf.validate.field) = { ... }</code>
+     * <code>int32 version = 1 [json_name = "version", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The version to set.
      * @return This builder for chaining.
      */
@@ -417,11 +397,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Master key version to destroy
-     * </pre>
-     *
-     * <code>int32 version = 1 [json_name = "version", (.buf.validate.field) = { ... }</code>
+     * <code>int32 version = 1 [json_name = "version", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearVersion() {

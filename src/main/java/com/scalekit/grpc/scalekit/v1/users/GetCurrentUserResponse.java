@@ -106,6 +106,25 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int GATEWAY_ENABLED_FIELD_NUMBER = 3;
+  private boolean gatewayEnabled_ = false;
+  /**
+   * <pre>
+   * Phase 2: true when gateway_configurations.enabled is true for the
+   * env the calling end-user is in. Drives /ui surfaces (the Agents
+   * nav section, end-user activity, etc.) that should only render when
+   * Gateway is actually configured for this env — independent of any
+   * workspace-level feature flag.
+   * </pre>
+   *
+   * <code>bool gateway_enabled = 3 [json_name = "gatewayEnabled"];</code>
+   * @return The gatewayEnabled.
+   */
+  @java.lang.Override
+  public boolean getGatewayEnabled() {
+    return gatewayEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -126,6 +145,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currentSessionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, currentSessionId_);
     }
+    if (gatewayEnabled_ != false) {
+      output.writeBool(3, gatewayEnabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -141,6 +163,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currentSessionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, currentSessionId_);
+    }
+    if (gatewayEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, gatewayEnabled_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -164,6 +190,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCurrentSessionId()
         .equals(other.getCurrentSessionId())) return false;
+    if (getGatewayEnabled()
+        != other.getGatewayEnabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -181,6 +209,9 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + CURRENT_SESSION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getCurrentSessionId().hashCode();
+    hash = (37 * hash) + GATEWAY_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getGatewayEnabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -324,6 +355,7 @@ private static final long serialVersionUID = 0L;
         userBuilder_ = null;
       }
       currentSessionId_ = "";
+      gatewayEnabled_ = false;
       return this;
     }
 
@@ -366,6 +398,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.currentSessionId_ = currentSessionId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.gatewayEnabled_ = gatewayEnabled_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -422,6 +457,9 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.getGatewayEnabled() != false) {
+        setGatewayEnabled(other.getGatewayEnabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -460,6 +498,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 18
+            case 24: {
+              gatewayEnabled_ = input.readBool();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 24
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -666,6 +709,62 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       currentSessionId_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private boolean gatewayEnabled_ ;
+    /**
+     * <pre>
+     * Phase 2: true when gateway_configurations.enabled is true for the
+     * env the calling end-user is in. Drives /ui surfaces (the Agents
+     * nav section, end-user activity, etc.) that should only render when
+     * Gateway is actually configured for this env — independent of any
+     * workspace-level feature flag.
+     * </pre>
+     *
+     * <code>bool gateway_enabled = 3 [json_name = "gatewayEnabled"];</code>
+     * @return The gatewayEnabled.
+     */
+    @java.lang.Override
+    public boolean getGatewayEnabled() {
+      return gatewayEnabled_;
+    }
+    /**
+     * <pre>
+     * Phase 2: true when gateway_configurations.enabled is true for the
+     * env the calling end-user is in. Drives /ui surfaces (the Agents
+     * nav section, end-user activity, etc.) that should only render when
+     * Gateway is actually configured for this env — independent of any
+     * workspace-level feature flag.
+     * </pre>
+     *
+     * <code>bool gateway_enabled = 3 [json_name = "gatewayEnabled"];</code>
+     * @param value The gatewayEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGatewayEnabled(boolean value) {
+
+      gatewayEnabled_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Phase 2: true when gateway_configurations.enabled is true for the
+     * env the calling end-user is in. Drives /ui surfaces (the Agents
+     * nav section, end-user activity, etc.) that should only render when
+     * Gateway is actually configured for this env — independent of any
+     * workspace-level feature flag.
+     * </pre>
+     *
+     * <code>bool gateway_enabled = 3 [json_name = "gatewayEnabled"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearGatewayEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      gatewayEnabled_ = false;
       onChanged();
       return this;
     }

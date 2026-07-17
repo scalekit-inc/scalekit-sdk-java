@@ -91,73 +91,73 @@ public final class SecretsProto {
       "v1/commons/commons.proto\032!scalekit/v1/op" +
       "tions/options.proto\"X\n\023CreateSecretReque" +
       "st\022A\n\006secret\030\001 \001(\0132!.scalekit.v1.secrets" +
-      ".CreateSecretB\006\272H\003\310\001\001R\006secret\"\254\001\n\014Create" +
-      "Secret\022M\n\013secret_type\030\001 \001(\0162\037.scalekit.v" +
-      "1.secrets.SecretTypeB\013\272H\010\202\001\005\020\001\"\001\000R\nsecre" +
-      "tType\022M\n\013tenant_type\030\002 \001(\0162\037.scalekit.v1" +
-      ".secrets.TenantTypeB\013\272H\010\202\001\005\020\001\"\001\000R\ntenant" +
-      "Type\"e\n\024CreateSecretResponse\022M\n\006secret\030\001" +
-      " \001(\0132\033.scalekit.v1.secrets.SecretB\030\222A\0252\023" +
-      "The new HMAC secretR\006secret\"`\n\023RotateSec" +
-      "retRequest\022I\n\002id\030\001 \001(\tB9\222A$2\tSecret IDJ\027" +
-      "\"sec_91735381321449672\"\272H\017r\n\020\001\030 :\004sec_\310\001" +
-      "\001R\002id\"K\n\024RotateSecretResponse\0223\n\006secret\030" +
-      "\001 \001(\0132\033.scalekit.v1.secrets.SecretR\006secr" +
-      "et\"\227\001\n\020GetSecretRequest\022I\n\002id\030\001 \001(\tB9\222A$" +
-      "2\tSecret IDJ\027\"sec_91735381321449672\"\272H\017r" +
-      "\n\020\001\030 :\004sec_\310\001\001R\002id\0228\n\030include_plaintext_" +
-      "secret\030\002 \001(\010R\026includePlaintextSecret\"H\n\021" +
-      "GetSecretResponse\0223\n\006secret\030\001 \001(\0132\033.scal" +
-      "ekit.v1.secrets.SecretR\006secret\"`\n\022ListSe" +
-      "cretsRequest\022J\n\013secret_type\030\001 \001(\0162\037.scal" +
-      "ekit.v1.secrets.SecretTypeB\010\272H\005\202\001\002\020\001R\nse" +
-      "cretType\"`\n\023DeleteSecretRequest\022I\n\002id\030\001 " +
-      "\001(\tB9\222A$2\tSecret IDJ\027\"sec_91735381321449" +
-      "672\"\272H\017r\n\020\001\030 :\004sec_\310\001\001R\002id\"J\n\023ListSecret" +
-      "sResponse\0223\n\006secret\030\001 \003(\0132\033.scalekit.v1." +
-      "secrets.SecretR\006secret\"\342\003\n\006Secret\022\023\n\002id\030" +
-      "\001 \001(\tB\003\340A\003R\002id\022E\n\013tenant_type\030\003 \001(\0162\037.sc" +
-      "alekit.v1.secrets.TenantTypeB\003\340A\003R\ntenan" +
-      "tType\022E\n\013secret_type\030\002 \001(\0162\037.scalekit.v1" +
-      ".secrets.SecretTypeB\003\340A\003R\nsecretType\022(\n\r" +
-      "secret_suffix\030\004 \001(\tB\003\340A\003R\014secretSuffix\0223" +
-      "\n\020plaintext_secret\030\005 \001(\tB\003\340A\003H\000R\017plainte" +
-      "xtSecret\210\001\001\022>\n\ncreated_at\030\006 \001(\0132\032.google" +
-      ".protobuf.TimestampB\003\340A\003R\tcreatedAt\022A\n\014l" +
-      "ast_used_at\030\007 \001(\0132\032.google.protobuf.Time" +
-      "stampB\003\340A\003R\nlastUsedAt\022>\n\nexpires_at\030\010 \001" +
-      "(\0132\032.google.protobuf.TimestampB\003\340A\003R\texp" +
-      "iresAtB\023\n\021_plaintext_secret*T\n\nSecretTyp" +
-      "e\022\033\n\027SECRET_TYPE_UNSPECIFIED\020\000\022\024\n\020INTERC" +
-      "EPTOR_HMAC\020\001\022\023\n\017DIRECTORY_TOKEN\020\002*I\n\nTen" +
-      "antType\022\033\n\027TENANT_TYPE_UNSPECIFIED\020\000\022\017\n\013" +
-      "INTERCEPTOR\020\001\022\r\n\tDIRECTORY\020\0022\233\006\n\rSecretS" +
-      "ervice\022\231\001\n\014CreateSecret\022(.scalekit.v1.se" +
-      "crets.CreateSecretRequest\032).scalekit.v1." +
-      "secrets.CreateSecretResponse\"4\202\265\030\002\030D\372\322\344\223" +
-      "\002\t\022\007PREVIEW\202\323\344\223\002\031\"\017/api/v1/secrets:\006secr" +
-      "et\022\235\001\n\014RotateSecret\022(.scalekit.v1.secret" +
-      "s.RotateSecretRequest\032).scalekit.v1.secr" +
-      "ets.RotateSecretResponse\"8\202\265\030\002\030D\372\322\344\223\002\t\022\007" +
-      "PREVIEW\202\323\344\223\002\035\"\033/api/v1/secrets/{id}:rota" +
-      "te\022\215\001\n\tGetSecret\022%.scalekit.v1.secrets.G" +
-      "etSecretRequest\032&.scalekit.v1.secrets.Ge" +
-      "tSecretResponse\"1\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323" +
-      "\344\223\002\026\022\024/api/v1/secrets/{id}\022\267\001\n\013ListSecre" +
-      "ts\022\'.scalekit.v1.secrets.ListSecretsRequ" +
-      "est\032(.scalekit.v1.secrets.ListSecretsRes" +
-      "ponse\"U\222A&\022\014List secrets\032\026List available" +
-      " secrets\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\021\022\017/ap" +
-      "i/v1/secrets\022\203\001\n\014DeleteSecret\022(.scalekit" +
-      ".v1.secrets.DeleteSecretRequest\032\026.google" +
-      ".protobuf.Empty\"1\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323" +
-      "\344\223\002\026*\024/api/v1/secrets/{id}B\326\001\n%com.scale" +
-      "kit.grpc.scalekit.v1.secretsB\014SecretsPro" +
-      "toP\001Z1github.com/scalekit-inc/scalekit/p" +
-      "kg/grpc/secrets\242\002\003SVS\252\002\023Scalekit.V1.Secr" +
-      "ets\312\002\023Scalekit\\V1\\Secrets\342\002\037Scalekit\\V1\\" +
-      "Secrets\\GPBMetadata\352\002\025Scalekit::V1::Secr" +
-      "etsb\006proto3"
+      ".CreateSecretB\006\272H\003\310\001\001R\006secret\"\252\001\n\014Create" +
+      "Secret\022L\n\013secret_type\030\001 \001(\0162\037.scalekit.v" +
+      "1.secrets.SecretTypeB\n\272H\007\202\001\004\020\001 \000R\nsecret" +
+      "Type\022L\n\013tenant_type\030\002 \001(\0162\037.scalekit.v1." +
+      "secrets.TenantTypeB\n\272H\007\202\001\004\020\001 \000R\ntenantTy" +
+      "pe\"e\n\024CreateSecretResponse\022M\n\006secret\030\001 \001" +
+      "(\0132\033.scalekit.v1.secrets.SecretB\030\222A\0252\023Th" +
+      "e new HMAC secretR\006secret\"`\n\023RotateSecre" +
+      "tRequest\022I\n\002id\030\001 \001(\tB9\222A$2\tSecret IDJ\027\"s" +
+      "ec_91735381321449672\"\272H\017r\n\020\001\030 :\004sec_\310\001\001R" +
+      "\002id\"K\n\024RotateSecretResponse\0223\n\006secret\030\001 " +
+      "\001(\0132\033.scalekit.v1.secrets.SecretR\006secret" +
+      "\"\227\001\n\020GetSecretRequest\022I\n\002id\030\001 \001(\tB9\222A$2\t" +
+      "Secret IDJ\027\"sec_91735381321449672\"\272H\017r\n\020" +
+      "\001\030 :\004sec_\310\001\001R\002id\0228\n\030include_plaintext_se" +
+      "cret\030\002 \001(\010R\026includePlaintextSecret\"H\n\021Ge" +
+      "tSecretResponse\0223\n\006secret\030\001 \001(\0132\033.scalek" +
+      "it.v1.secrets.SecretR\006secret\"`\n\022ListSecr" +
+      "etsRequest\022J\n\013secret_type\030\001 \001(\0162\037.scalek" +
+      "it.v1.secrets.SecretTypeB\010\272H\005\202\001\002\020\001R\nsecr" +
+      "etType\"`\n\023DeleteSecretRequest\022I\n\002id\030\001 \001(" +
+      "\tB9\222A$2\tSecret IDJ\027\"sec_9173538132144967" +
+      "2\"\272H\017r\n\020\001\030 :\004sec_\310\001\001R\002id\"J\n\023ListSecretsR" +
+      "esponse\0223\n\006secret\030\001 \003(\0132\033.scalekit.v1.se" +
+      "crets.SecretR\006secret\"\342\003\n\006Secret\022\023\n\002id\030\001 " +
+      "\001(\tB\003\340A\003R\002id\022E\n\013tenant_type\030\003 \001(\0162\037.scal" +
+      "ekit.v1.secrets.TenantTypeB\003\340A\003R\ntenantT" +
+      "ype\022E\n\013secret_type\030\002 \001(\0162\037.scalekit.v1.s" +
+      "ecrets.SecretTypeB\003\340A\003R\nsecretType\022(\n\rse" +
+      "cret_suffix\030\004 \001(\tB\003\340A\003R\014secretSuffix\0223\n\020" +
+      "plaintext_secret\030\005 \001(\tB\003\340A\003H\000R\017plaintext" +
+      "Secret\210\001\001\022>\n\ncreated_at\030\006 \001(\0132\032.google.p" +
+      "rotobuf.TimestampB\003\340A\003R\tcreatedAt\022A\n\014las" +
+      "t_used_at\030\007 \001(\0132\032.google.protobuf.Timest" +
+      "ampB\003\340A\003R\nlastUsedAt\022>\n\nexpires_at\030\010 \001(\013" +
+      "2\032.google.protobuf.TimestampB\003\340A\003R\texpir" +
+      "esAtB\023\n\021_plaintext_secret*T\n\nSecretType\022" +
+      "\033\n\027SECRET_TYPE_UNSPECIFIED\020\000\022\024\n\020INTERCEP" +
+      "TOR_HMAC\020\001\022\023\n\017DIRECTORY_TOKEN\020\002*I\n\nTenan" +
+      "tType\022\033\n\027TENANT_TYPE_UNSPECIFIED\020\000\022\017\n\013IN" +
+      "TERCEPTOR\020\001\022\r\n\tDIRECTORY\020\0022\233\006\n\rSecretSer" +
+      "vice\022\231\001\n\014CreateSecret\022(.scalekit.v1.secr" +
+      "ets.CreateSecretRequest\032).scalekit.v1.se" +
+      "crets.CreateSecretResponse\"4\202\265\030\002\030D\372\322\344\223\002\t" +
+      "\022\007PREVIEW\202\323\344\223\002\031\"\017/api/v1/secrets:\006secret" +
+      "\022\235\001\n\014RotateSecret\022(.scalekit.v1.secrets." +
+      "RotateSecretRequest\032).scalekit.v1.secret" +
+      "s.RotateSecretResponse\"8\202\265\030\002\030D\372\322\344\223\002\t\022\007PR" +
+      "EVIEW\202\323\344\223\002\035\"\033/api/v1/secrets/{id}:rotate" +
+      "\022\215\001\n\tGetSecret\022%.scalekit.v1.secrets.Get" +
+      "SecretRequest\032&.scalekit.v1.secrets.GetS" +
+      "ecretResponse\"1\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
+      "\002\026\022\024/api/v1/secrets/{id}\022\267\001\n\013ListSecrets" +
+      "\022\'.scalekit.v1.secrets.ListSecretsReques" +
+      "t\032(.scalekit.v1.secrets.ListSecretsRespo" +
+      "nse\"U\222A&\022\014List secrets\032\026List available s" +
+      "ecrets\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\021\022\017/api/" +
+      "v1/secrets\022\203\001\n\014DeleteSecret\022(.scalekit.v" +
+      "1.secrets.DeleteSecretRequest\032\026.google.p" +
+      "rotobuf.Empty\"1\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
+      "\002\026*\024/api/v1/secrets/{id}B\326\001\n%com.scaleki" +
+      "t.grpc.scalekit.v1.secretsB\014SecretsProto" +
+      "P\001Z1github.com/scalekit-inc/scalekit/pkg" +
+      "/grpc/secrets\242\002\003SVS\252\002\023Scalekit.V1.Secret" +
+      "s\312\002\023Scalekit\\V1\\Secrets\342\002\037Scalekit\\V1\\Se" +
+      "crets\\GPBMetadata\352\002\025Scalekit::V1::Secret" +
+      "sb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

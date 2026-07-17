@@ -32,4 +32,129 @@ public interface MigrateEnvKeysRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getEnvironmentIdsBytes(int index);
+
+  /**
+   * <pre>
+   * Optional key type to create. Defaults to ENVIRONMENT_KEY when unset.
+   * Pass "SCALEKIT_MANAGED_KEY" or "BYOK" to create a KMS-backed key.
+   * </pre>
+   *
+   * <code>optional string key_type = 2 [json_name = "keyType"];</code>
+   * @return Whether the keyType field is set.
+   */
+  boolean hasKeyType();
+  /**
+   * <pre>
+   * Optional key type to create. Defaults to ENVIRONMENT_KEY when unset.
+   * Pass "SCALEKIT_MANAGED_KEY" or "BYOK" to create a KMS-backed key.
+   * </pre>
+   *
+   * <code>optional string key_type = 2 [json_name = "keyType"];</code>
+   * @return The keyType.
+   */
+  java.lang.String getKeyType();
+  /**
+   * <pre>
+   * Optional key type to create. Defaults to ENVIRONMENT_KEY when unset.
+   * Pass "SCALEKIT_MANAGED_KEY" or "BYOK" to create a KMS-backed key.
+   * </pre>
+   *
+   * <code>optional string key_type = 2 [json_name = "keyType"];</code>
+   * @return The bytes for keyType.
+   */
+  com.google.protobuf.ByteString
+      getKeyTypeBytes();
+
+  /**
+   * <pre>
+   * KMS key reference (e.g. "projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;" for GCP).
+   * Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+   * </pre>
+   *
+   * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+   * @return Whether the keyRef field is set.
+   */
+  boolean hasKeyRef();
+  /**
+   * <pre>
+   * KMS key reference (e.g. "projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;" for GCP).
+   * Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+   * </pre>
+   *
+   * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+   * @return The keyRef.
+   */
+  java.lang.String getKeyRef();
+  /**
+   * <pre>
+   * KMS key reference (e.g. "projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;" for GCP).
+   * Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+   * </pre>
+   *
+   * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+   * @return The bytes for keyRef.
+   */
+  com.google.protobuf.ByteString
+      getKeyRefBytes();
+
+  /**
+   * <pre>
+   * KMS provider for the key. Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+   * Valid values: "GCP", "AWS", "AZURE", "HASHICORP". Must match the provider of the master key
+   * that will wrap the DEK for this environment.
+   * </pre>
+   *
+   * <code>optional string provider = 4 [json_name = "provider"];</code>
+   * @return Whether the provider field is set.
+   */
+  boolean hasProvider();
+  /**
+   * <pre>
+   * KMS provider for the key. Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+   * Valid values: "GCP", "AWS", "AZURE", "HASHICORP". Must match the provider of the master key
+   * that will wrap the DEK for this environment.
+   * </pre>
+   *
+   * <code>optional string provider = 4 [json_name = "provider"];</code>
+   * @return The provider.
+   */
+  java.lang.String getProvider();
+  /**
+   * <pre>
+   * KMS provider for the key. Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+   * Valid values: "GCP", "AWS", "AZURE", "HASHICORP". Must match the provider of the master key
+   * that will wrap the DEK for this environment.
+   * </pre>
+   *
+   * <code>optional string provider = 4 [json_name = "provider"];</code>
+   * @return The bytes for provider.
+   */
+  com.google.protobuf.ByteString
+      getProviderBytes();
+
+  /**
+   * <pre>
+   * When true, re-encrypt environments that already have an active DEK. Use to recover
+   * from partial migrations or to migrate after rotation. When false (default), environments
+   * with an existing active DEK are skipped — only environments without an active DEK are
+   * bootstrapped (CreateDEK + ActivateDEK + initial re-encryption).
+   * </pre>
+   *
+   * <code>bool force_reencrypt = 5 [json_name = "forceReencrypt"];</code>
+   * @return The forceReencrypt.
+   */
+  boolean getForceReencrypt();
+
+  /**
+   * <pre>
+   * When true, the migration runs in the background and the call returns immediately with
+   * accepted=true. Requires exactly one environment_id — requests with multiple environments
+   * are rejected with INVALID_ARGUMENT. Progress and completion are reported via server logs
+   * and re-encryption events (reencryption.triggered / reencryption.succeeded / reencryption.failed).
+   * </pre>
+   *
+   * <code>bool async = 6 [json_name = "async"];</code>
+   * @return The async.
+   */
+  boolean getAsync();
 }

@@ -284,4 +284,19 @@ public interface OAuthConnectionConfigOrBuilder extends
    * <code>optional .scalekit.v1.connections.OptionalScopes optional_scopes = 23 [json_name = "optionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.connections.OptionalScopesOrBuilder getOptionalScopesOrBuilder();
+
+  /**
+   * <code>optional .scalekit.v1.connections.OauthExtensions extensions = 24 [json_name = "extensions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the extensions field is set.
+   */
+  boolean hasExtensions();
+  /**
+   * <code>optional .scalekit.v1.connections.OauthExtensions extensions = 24 [json_name = "extensions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The extensions.
+   */
+  com.scalekit.grpc.scalekit.v1.connections.OauthExtensions getExtensions();
+  /**
+   * <code>optional .scalekit.v1.connections.OauthExtensions extensions = 24 [json_name = "extensions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.connections.OauthExtensionsOrBuilder getExtensionsOrBuilder();
 }

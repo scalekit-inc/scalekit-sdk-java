@@ -19,6 +19,9 @@ private static final long serialVersionUID = 0L;
   private MigrateEnvKeysRequest() {
     environmentIds_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+    keyType_ = "";
+    keyRef_ = "";
+    provider_ = "";
   }
 
   @java.lang.Override
@@ -41,6 +44,7 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest.class, com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ENVIRONMENT_IDS_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList environmentIds_ =
@@ -78,6 +82,231 @@ private static final long serialVersionUID = 0L;
     return environmentIds_.getByteString(index);
   }
 
+  public static final int KEY_TYPE_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyType_ = "";
+  /**
+   * <pre>
+   * Optional key type to create. Defaults to ENVIRONMENT_KEY when unset.
+   * Pass "SCALEKIT_MANAGED_KEY" or "BYOK" to create a KMS-backed key.
+   * </pre>
+   *
+   * <code>optional string key_type = 2 [json_name = "keyType"];</code>
+   * @return Whether the keyType field is set.
+   */
+  @java.lang.Override
+  public boolean hasKeyType() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * Optional key type to create. Defaults to ENVIRONMENT_KEY when unset.
+   * Pass "SCALEKIT_MANAGED_KEY" or "BYOK" to create a KMS-backed key.
+   * </pre>
+   *
+   * <code>optional string key_type = 2 [json_name = "keyType"];</code>
+   * @return The keyType.
+   */
+  @java.lang.Override
+  public java.lang.String getKeyType() {
+    java.lang.Object ref = keyType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      keyType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional key type to create. Defaults to ENVIRONMENT_KEY when unset.
+   * Pass "SCALEKIT_MANAGED_KEY" or "BYOK" to create a KMS-backed key.
+   * </pre>
+   *
+   * <code>optional string key_type = 2 [json_name = "keyType"];</code>
+   * @return The bytes for keyType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getKeyTypeBytes() {
+    java.lang.Object ref = keyType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      keyType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int KEY_REF_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyRef_ = "";
+  /**
+   * <pre>
+   * KMS key reference (e.g. "projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;" for GCP).
+   * Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+   * </pre>
+   *
+   * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+   * @return Whether the keyRef field is set.
+   */
+  @java.lang.Override
+  public boolean hasKeyRef() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <pre>
+   * KMS key reference (e.g. "projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;" for GCP).
+   * Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+   * </pre>
+   *
+   * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+   * @return The keyRef.
+   */
+  @java.lang.Override
+  public java.lang.String getKeyRef() {
+    java.lang.Object ref = keyRef_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      keyRef_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * KMS key reference (e.g. "projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;" for GCP).
+   * Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+   * </pre>
+   *
+   * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+   * @return The bytes for keyRef.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getKeyRefBytes() {
+    java.lang.Object ref = keyRef_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      keyRef_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PROVIDER_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object provider_ = "";
+  /**
+   * <pre>
+   * KMS provider for the key. Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+   * Valid values: "GCP", "AWS", "AZURE", "HASHICORP". Must match the provider of the master key
+   * that will wrap the DEK for this environment.
+   * </pre>
+   *
+   * <code>optional string provider = 4 [json_name = "provider"];</code>
+   * @return Whether the provider field is set.
+   */
+  @java.lang.Override
+  public boolean hasProvider() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <pre>
+   * KMS provider for the key. Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+   * Valid values: "GCP", "AWS", "AZURE", "HASHICORP". Must match the provider of the master key
+   * that will wrap the DEK for this environment.
+   * </pre>
+   *
+   * <code>optional string provider = 4 [json_name = "provider"];</code>
+   * @return The provider.
+   */
+  @java.lang.Override
+  public java.lang.String getProvider() {
+    java.lang.Object ref = provider_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      provider_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * KMS provider for the key. Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+   * Valid values: "GCP", "AWS", "AZURE", "HASHICORP". Must match the provider of the master key
+   * that will wrap the DEK for this environment.
+   * </pre>
+   *
+   * <code>optional string provider = 4 [json_name = "provider"];</code>
+   * @return The bytes for provider.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProviderBytes() {
+    java.lang.Object ref = provider_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      provider_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FORCE_REENCRYPT_FIELD_NUMBER = 5;
+  private boolean forceReencrypt_ = false;
+  /**
+   * <pre>
+   * When true, re-encrypt environments that already have an active DEK. Use to recover
+   * from partial migrations or to migrate after rotation. When false (default), environments
+   * with an existing active DEK are skipped — only environments without an active DEK are
+   * bootstrapped (CreateDEK + ActivateDEK + initial re-encryption).
+   * </pre>
+   *
+   * <code>bool force_reencrypt = 5 [json_name = "forceReencrypt"];</code>
+   * @return The forceReencrypt.
+   */
+  @java.lang.Override
+  public boolean getForceReencrypt() {
+    return forceReencrypt_;
+  }
+
+  public static final int ASYNC_FIELD_NUMBER = 6;
+  private boolean async_ = false;
+  /**
+   * <pre>
+   * When true, the migration runs in the background and the call returns immediately with
+   * accepted=true. Requires exactly one environment_id — requests with multiple environments
+   * are rejected with INVALID_ARGUMENT. Progress and completion are reported via server logs
+   * and re-encryption events (reencryption.triggered / reencryption.succeeded / reencryption.failed).
+   * </pre>
+   *
+   * <code>bool async = 6 [json_name = "async"];</code>
+   * @return The async.
+   */
+  @java.lang.Override
+  public boolean getAsync() {
+    return async_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -94,6 +323,21 @@ private static final long serialVersionUID = 0L;
                       throws java.io.IOException {
     for (int i = 0; i < environmentIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, environmentIds_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyType_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, keyRef_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, provider_);
+    }
+    if (forceReencrypt_ != false) {
+      output.writeBool(5, forceReencrypt_);
+    }
+    if (async_ != false) {
+      output.writeBool(6, async_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -112,6 +356,23 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getEnvironmentIdsList().size();
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyType_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, keyRef_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, provider_);
+    }
+    if (forceReencrypt_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, forceReencrypt_);
+    }
+    if (async_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, async_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -129,6 +390,25 @@ private static final long serialVersionUID = 0L;
 
     if (!getEnvironmentIdsList()
         .equals(other.getEnvironmentIdsList())) return false;
+    if (hasKeyType() != other.hasKeyType()) return false;
+    if (hasKeyType()) {
+      if (!getKeyType()
+          .equals(other.getKeyType())) return false;
+    }
+    if (hasKeyRef() != other.hasKeyRef()) return false;
+    if (hasKeyRef()) {
+      if (!getKeyRef()
+          .equals(other.getKeyRef())) return false;
+    }
+    if (hasProvider() != other.hasProvider()) return false;
+    if (hasProvider()) {
+      if (!getProvider()
+          .equals(other.getProvider())) return false;
+    }
+    if (getForceReencrypt()
+        != other.getForceReencrypt()) return false;
+    if (getAsync()
+        != other.getAsync()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -144,6 +424,24 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ENVIRONMENT_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getEnvironmentIdsList().hashCode();
     }
+    if (hasKeyType()) {
+      hash = (37 * hash) + KEY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyType().hashCode();
+    }
+    if (hasKeyRef()) {
+      hash = (37 * hash) + KEY_REF_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyRef().hashCode();
+    }
+    if (hasProvider()) {
+      hash = (37 * hash) + PROVIDER_FIELD_NUMBER;
+      hash = (53 * hash) + getProvider().hashCode();
+    }
+    hash = (37 * hash) + FORCE_REENCRYPT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getForceReencrypt());
+    hash = (37 * hash) + ASYNC_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getAsync());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -277,6 +575,11 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       environmentIds_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+      keyType_ = "";
+      keyRef_ = "";
+      provider_ = "";
+      forceReencrypt_ = false;
+      async_ = false;
       return this;
     }
 
@@ -314,6 +617,26 @@ private static final long serialVersionUID = 0L;
         environmentIds_.makeImmutable();
         result.environmentIds_ = environmentIds_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.keyType_ = keyType_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.keyRef_ = keyRef_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.provider_ = provider_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.forceReencrypt_ = forceReencrypt_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.async_ = async_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -370,6 +693,27 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (other.hasKeyType()) {
+        keyType_ = other.keyType_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasKeyRef()) {
+        keyRef_ = other.keyRef_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (other.hasProvider()) {
+        provider_ = other.provider_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (other.getForceReencrypt() != false) {
+        setForceReencrypt(other.getForceReencrypt());
+      }
+      if (other.getAsync() != false) {
+        setAsync(other.getAsync());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -402,6 +746,31 @@ private static final long serialVersionUID = 0L;
               environmentIds_.add(s);
               break;
             } // case 10
+            case 18: {
+              keyType_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
+            case 26: {
+              keyRef_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 26
+            case 34: {
+              provider_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
+            case 40: {
+              forceReencrypt_ = input.readBool();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 40
+            case 48: {
+              async_ = input.readBool();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 48
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -526,6 +895,445 @@ private static final long serialVersionUID = 0L;
       ensureEnvironmentIdsIsMutable();
       environmentIds_.add(value);
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object keyType_ = "";
+    /**
+     * <pre>
+     * Optional key type to create. Defaults to ENVIRONMENT_KEY when unset.
+     * Pass "SCALEKIT_MANAGED_KEY" or "BYOK" to create a KMS-backed key.
+     * </pre>
+     *
+     * <code>optional string key_type = 2 [json_name = "keyType"];</code>
+     * @return Whether the keyType field is set.
+     */
+    public boolean hasKeyType() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * Optional key type to create. Defaults to ENVIRONMENT_KEY when unset.
+     * Pass "SCALEKIT_MANAGED_KEY" or "BYOK" to create a KMS-backed key.
+     * </pre>
+     *
+     * <code>optional string key_type = 2 [json_name = "keyType"];</code>
+     * @return The keyType.
+     */
+    public java.lang.String getKeyType() {
+      java.lang.Object ref = keyType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        keyType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional key type to create. Defaults to ENVIRONMENT_KEY when unset.
+     * Pass "SCALEKIT_MANAGED_KEY" or "BYOK" to create a KMS-backed key.
+     * </pre>
+     *
+     * <code>optional string key_type = 2 [json_name = "keyType"];</code>
+     * @return The bytes for keyType.
+     */
+    public com.google.protobuf.ByteString
+        getKeyTypeBytes() {
+      java.lang.Object ref = keyType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        keyType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional key type to create. Defaults to ENVIRONMENT_KEY when unset.
+     * Pass "SCALEKIT_MANAGED_KEY" or "BYOK" to create a KMS-backed key.
+     * </pre>
+     *
+     * <code>optional string key_type = 2 [json_name = "keyType"];</code>
+     * @param value The keyType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyType(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      keyType_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional key type to create. Defaults to ENVIRONMENT_KEY when unset.
+     * Pass "SCALEKIT_MANAGED_KEY" or "BYOK" to create a KMS-backed key.
+     * </pre>
+     *
+     * <code>optional string key_type = 2 [json_name = "keyType"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearKeyType() {
+      keyType_ = getDefaultInstance().getKeyType();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional key type to create. Defaults to ENVIRONMENT_KEY when unset.
+     * Pass "SCALEKIT_MANAGED_KEY" or "BYOK" to create a KMS-backed key.
+     * </pre>
+     *
+     * <code>optional string key_type = 2 [json_name = "keyType"];</code>
+     * @param value The bytes for keyType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      keyType_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object keyRef_ = "";
+    /**
+     * <pre>
+     * KMS key reference (e.g. "projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;" for GCP).
+     * Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+     * </pre>
+     *
+     * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+     * @return Whether the keyRef field is set.
+     */
+    public boolean hasKeyRef() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     * KMS key reference (e.g. "projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;" for GCP).
+     * Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+     * </pre>
+     *
+     * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+     * @return The keyRef.
+     */
+    public java.lang.String getKeyRef() {
+      java.lang.Object ref = keyRef_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        keyRef_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * KMS key reference (e.g. "projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;" for GCP).
+     * Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+     * </pre>
+     *
+     * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+     * @return The bytes for keyRef.
+     */
+    public com.google.protobuf.ByteString
+        getKeyRefBytes() {
+      java.lang.Object ref = keyRef_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        keyRef_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * KMS key reference (e.g. "projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;" for GCP).
+     * Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+     * </pre>
+     *
+     * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+     * @param value The keyRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyRef(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      keyRef_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * KMS key reference (e.g. "projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;" for GCP).
+     * Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+     * </pre>
+     *
+     * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearKeyRef() {
+      keyRef_ = getDefaultInstance().getKeyRef();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * KMS key reference (e.g. "projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;" for GCP).
+     * Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+     * </pre>
+     *
+     * <code>optional string key_ref = 3 [json_name = "keyRef"];</code>
+     * @param value The bytes for keyRef to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyRefBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      keyRef_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object provider_ = "";
+    /**
+     * <pre>
+     * KMS provider for the key. Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+     * Valid values: "GCP", "AWS", "AZURE", "HASHICORP". Must match the provider of the master key
+     * that will wrap the DEK for this environment.
+     * </pre>
+     *
+     * <code>optional string provider = 4 [json_name = "provider"];</code>
+     * @return Whether the provider field is set.
+     */
+    public boolean hasProvider() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <pre>
+     * KMS provider for the key. Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+     * Valid values: "GCP", "AWS", "AZURE", "HASHICORP". Must match the provider of the master key
+     * that will wrap the DEK for this environment.
+     * </pre>
+     *
+     * <code>optional string provider = 4 [json_name = "provider"];</code>
+     * @return The provider.
+     */
+    public java.lang.String getProvider() {
+      java.lang.Object ref = provider_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        provider_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * KMS provider for the key. Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+     * Valid values: "GCP", "AWS", "AZURE", "HASHICORP". Must match the provider of the master key
+     * that will wrap the DEK for this environment.
+     * </pre>
+     *
+     * <code>optional string provider = 4 [json_name = "provider"];</code>
+     * @return The bytes for provider.
+     */
+    public com.google.protobuf.ByteString
+        getProviderBytes() {
+      java.lang.Object ref = provider_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        provider_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * KMS provider for the key. Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+     * Valid values: "GCP", "AWS", "AZURE", "HASHICORP". Must match the provider of the master key
+     * that will wrap the DEK for this environment.
+     * </pre>
+     *
+     * <code>optional string provider = 4 [json_name = "provider"];</code>
+     * @param value The provider to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProvider(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      provider_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * KMS provider for the key. Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+     * Valid values: "GCP", "AWS", "AZURE", "HASHICORP". Must match the provider of the master key
+     * that will wrap the DEK for this environment.
+     * </pre>
+     *
+     * <code>optional string provider = 4 [json_name = "provider"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProvider() {
+      provider_ = getDefaultInstance().getProvider();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * KMS provider for the key. Required when key_type is "SCALEKIT_MANAGED_KEY" or "BYOK".
+     * Valid values: "GCP", "AWS", "AZURE", "HASHICORP". Must match the provider of the master key
+     * that will wrap the DEK for this environment.
+     * </pre>
+     *
+     * <code>optional string provider = 4 [json_name = "provider"];</code>
+     * @param value The bytes for provider to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProviderBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      provider_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private boolean forceReencrypt_ ;
+    /**
+     * <pre>
+     * When true, re-encrypt environments that already have an active DEK. Use to recover
+     * from partial migrations or to migrate after rotation. When false (default), environments
+     * with an existing active DEK are skipped — only environments without an active DEK are
+     * bootstrapped (CreateDEK + ActivateDEK + initial re-encryption).
+     * </pre>
+     *
+     * <code>bool force_reencrypt = 5 [json_name = "forceReencrypt"];</code>
+     * @return The forceReencrypt.
+     */
+    @java.lang.Override
+    public boolean getForceReencrypt() {
+      return forceReencrypt_;
+    }
+    /**
+     * <pre>
+     * When true, re-encrypt environments that already have an active DEK. Use to recover
+     * from partial migrations or to migrate after rotation. When false (default), environments
+     * with an existing active DEK are skipped — only environments without an active DEK are
+     * bootstrapped (CreateDEK + ActivateDEK + initial re-encryption).
+     * </pre>
+     *
+     * <code>bool force_reencrypt = 5 [json_name = "forceReencrypt"];</code>
+     * @param value The forceReencrypt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForceReencrypt(boolean value) {
+
+      forceReencrypt_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * When true, re-encrypt environments that already have an active DEK. Use to recover
+     * from partial migrations or to migrate after rotation. When false (default), environments
+     * with an existing active DEK are skipped — only environments without an active DEK are
+     * bootstrapped (CreateDEK + ActivateDEK + initial re-encryption).
+     * </pre>
+     *
+     * <code>bool force_reencrypt = 5 [json_name = "forceReencrypt"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearForceReencrypt() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      forceReencrypt_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean async_ ;
+    /**
+     * <pre>
+     * When true, the migration runs in the background and the call returns immediately with
+     * accepted=true. Requires exactly one environment_id — requests with multiple environments
+     * are rejected with INVALID_ARGUMENT. Progress and completion are reported via server logs
+     * and re-encryption events (reencryption.triggered / reencryption.succeeded / reencryption.failed).
+     * </pre>
+     *
+     * <code>bool async = 6 [json_name = "async"];</code>
+     * @return The async.
+     */
+    @java.lang.Override
+    public boolean getAsync() {
+      return async_;
+    }
+    /**
+     * <pre>
+     * When true, the migration runs in the background and the call returns immediately with
+     * accepted=true. Requires exactly one environment_id — requests with multiple environments
+     * are rejected with INVALID_ARGUMENT. Progress and completion are reported via server logs
+     * and re-encryption events (reencryption.triggered / reencryption.succeeded / reencryption.failed).
+     * </pre>
+     *
+     * <code>bool async = 6 [json_name = "async"];</code>
+     * @param value The async to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAsync(boolean value) {
+
+      async_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * When true, the migration runs in the background and the call returns immediately with
+     * accepted=true. Requires exactly one environment_id — requests with multiple environments
+     * are rejected with INVALID_ARGUMENT. Progress and completion are reported via server logs
+     * and re-encryption events (reencryption.triggered / reencryption.succeeded / reencryption.failed).
+     * </pre>
+     *
+     * <code>bool async = 6 [json_name = "async"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAsync() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      async_ = false;
       onChanged();
       return this;
     }

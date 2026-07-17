@@ -101,6 +101,11 @@ public final class ProvidersProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_providers_ListProvidersResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_providers_ListMyProvidersRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_providers_ListMyProvidersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_providers_DeleteProviderRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -342,73 +347,97 @@ public final class ProvidersProto {
       "roviders\022&\n\017next_page_token\030\002 \001(\tR\rnextP" +
       "ageToken\022\035\n\ntotal_size\030\003 \001(\rR\ttotalSize\022" +
       "&\n\017prev_page_token\030\004 \001(\tR\rprevPageToken\"" +
-      "C\n\025DeleteProviderRequest\022*\n\nidentifier\030\001" +
-      " \001(\tB\n\272H\007r\005\020\000\030\377\001R\nidentifier\"\030\n\026DeletePr" +
-      "oviderResponse*0\n\014ProviderType\022\013\n\007DEFAUL" +
-      "T\020\000\022\n\n\006CUSTOM\020\001\022\007\n\003ALL\020\0022\357\021\n\017ProviderSer" +
-      "vice\022\247\001\n\016CreateProvider\022,.scalekit.v1.pr" +
-      "oviders.CreateProviderRequest\032-.scalekit" +
-      ".v1.providers.CreateProviderResponse\"8\202\265" +
-      "\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\035\"\021/api/v1/provi" +
-      "ders:\010provider\022\314\004\n\024CreateCustomProvider\022" +
-      "2.scalekit.v1.providers.CreateCustomProv" +
-      "iderRequest\032-.scalekit.v1.providers.Crea" +
-      "teProviderResponse\"\320\003\222A\234\003\n\tProviders\022\030Cr" +
-      "eate a custom provider\032\272\001Creates an envi" +
-      "ronment-scoped custom provider with auth" +
-      "entication patterns and proxy configurat" +
-      "ion. Use Provider.identifier from the re" +
-      "sponse for subsequent update and delete " +
-      "operations.J`\n\003201\022Y\n$Custom provider cr" +
-      "eated successfully\0221\n/\032-.scalekit.v1.pro" +
-      "viders.CreateProviderResponseJ6\n\003400\022/\n-" +
-      "Bad Request - invalid custom provider pa" +
-      "yloadJ\036\n\003500\022\027\n\025Internal Server Error\202\265\030" +
-      "\002\030D\202\323\344\223\002$\"\030/api/v1/custom-providers:\010pro" +
-      "vider\022\264\001\n\016UpdateProvider\022,.scalekit.v1.p" +
-      "roviders.UpdateProviderRequest\032-.scaleki" +
-      "t.v1.providers.UpdateProviderResponse\"E\202" +
-      "\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002*\032\036/api/v1/prov" +
-      "iders/{identifier}:\010provider\022\227\004\n\024UpdateC" +
-      "ustomProvider\0222.scalekit.v1.providers.Up" +
-      "dateCustomProviderRequest\032-.scalekit.v1." +
-      "providers.UpdateProviderResponse\"\233\003\222A\332\002\n" +
-      "\tProviders\022\030Update a custom provider\032DUp" +
-      "dates an existing environment-scoped cus" +
-      "tom provider by identifierJ`\n\003200\022Y\n$Cus" +
-      "tom provider updated successfully\0221\n/\032-." +
-      "scalekit.v1.providers.UpdateProviderResp" +
-      "onseJ6\n\003400\022/\n-Bad Request - invalid cus" +
-      "tom provider payloadJ3\n\003404\022,\n*Not Found" +
-      " - custom provider does not existJ\036\n\003500" +
-      "\022\027\n\025Internal Server Error\202\265\030\002\030D\202\323\344\223\0021\032%/" +
-      "api/v1/custom-providers/{identifier}:\010pr" +
-      "ovider\022\252\001\n\016DeleteProvider\022,.scalekit.v1." +
-      "providers.DeleteProviderRequest\032-.scalek" +
-      "it.v1.providers.DeleteProviderResponse\";" +
-      "\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002 *\036/api/v1/pro" +
-      "viders/{identifier}\022\306\003\n\024DeleteCustomProv" +
-      "ider\022,.scalekit.v1.providers.DeleteProvi" +
-      "derRequest\032-.scalekit.v1.providers.Delet" +
-      "eProviderResponse\"\320\002\222A\231\002\n\tProviders\022\030Del" +
-      "ete a custom provider\032;Deletes an enviro" +
-      "nment-scoped custom provider by identifi" +
-      "erJ`\n\003200\022Y\n$Custom provider deleted suc" +
-      "cessfully\0221\n/\032-.scalekit.v1.providers.De" +
-      "leteProviderResponseJ3\n\003404\022,\n*Not Found" +
-      " - custom provider does not existJ\036\n\003500" +
-      "\022\027\n\025Internal Server Error\202\265\030\002\030D\202\323\344\223\002\'*%/" +
-      "api/v1/custom-providers/{identifier}\022\233\001\n" +
-      "\rListProviders\022+.scalekit.v1.providers.L" +
-      "istProvidersRequest\032,.scalekit.v1.provid" +
-      "ers.ListProvidersResponse\"/\202\265\030\003\030\304\001\372\322\344\223\002\t" +
-      "\022\007PREVIEW\202\323\344\223\002\023\022\021/api/v1/providersB\344\001\n\'c" +
-      "om.scalekit.grpc.scalekit.v1.providersB\016" +
-      "ProvidersProtoP\001Z3github.com/scalekit-in" +
-      "c/scalekit/pkg/grpc/providers\242\002\003SVP\252\002\025Sc" +
-      "alekit.V1.Providers\312\002\025Scalekit\\V1\\Provid" +
-      "ers\342\002!Scalekit\\V1\\Providers\\GPBMetadata\352" +
-      "\002\027Scalekit::V1::Providersb\006proto3"
+      "T\n\026ListMyProvidersRequest\022\033\n\tpage_size\030\001" +
+      " \001(\rR\010pageSize\022\035\n\npage_token\030\002 \001(\tR\tpage" +
+      "Token\"C\n\025DeleteProviderRequest\022*\n\nidenti" +
+      "fier\030\001 \001(\tB\n\272H\007r\005\020\000\030\377\001R\nidentifier\"\030\n\026De" +
+      "leteProviderResponse*0\n\014ProviderType\022\013\n\007" +
+      "DEFAULT\020\000\022\n\n\006CUSTOM\020\001\022\007\n\003ALL\020\0022\375\026\n\017Provi" +
+      "derService\022\247\001\n\016CreateProvider\022,.scalekit" +
+      ".v1.providers.CreateProviderRequest\032-.sc" +
+      "alekit.v1.providers.CreateProviderRespon" +
+      "se\"8\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\035\"\021/api/v1" +
+      "/providers:\010provider\022\325\005\n\024CreateCustomPro" +
+      "vider\0222.scalekit.v1.providers.CreateCust" +
+      "omProviderRequest\032-.scalekit.v1.provider" +
+      "s.CreateProviderResponse\"\331\004\222A\245\004\n\nConnect" +
+      "ors\022\030Create a custom provider\032\337\001Creates " +
+      "an environment-scoped custom provider (c" +
+      "onnector) with authentication patterns a" +
+      "nd optional proxy configuration. The ret" +
+      "urned identifier must be used for all su" +
+      "bsequent update and delete operations on" +
+      " this provider.J\243\001\n\003201\022\233\001\nfReturns the " +
+      "newly created custom provider, including" +
+      " its system-generated identifier and con" +
+      "figuration\0221\n/\032-.scalekit.v1.providers.C" +
+      "reateProviderResponseJu\n\003400\022n\nlInvalid " +
+      "request - the provider payload failed va" +
+      "lidation (e.g. missing required fields o" +
+      "r invalid proxy URL)\202\265\030\002\030D\202\323\344\223\002$\"\030/api/v" +
+      "1/custom-providers:\010provider\022\264\001\n\016UpdateP" +
+      "rovider\022,.scalekit.v1.providers.UpdatePr" +
+      "oviderRequest\032-.scalekit.v1.providers.Up" +
+      "dateProviderResponse\"E\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREV" +
+      "IEW\202\323\344\223\002*\032\036/api/v1/providers/{identifier" +
+      "}:\010provider\022\374\004\n\024UpdateCustomProvider\0222.s" +
+      "calekit.v1.providers.UpdateCustomProvide" +
+      "rRequest\032-.scalekit.v1.providers.UpdateP" +
+      "roviderResponse\"\200\004\222A\277\003\n\nConnectors\022\030Upda" +
+      "te a custom provider\032\213\001Updates an existi" +
+      "ng environment-scoped custom provider (c" +
+      "onnector) by its identifier. Only the fi" +
+      "elds provided in the request are modifie" +
+      "d.J~\n\003200\022w\nBReturns the updated custom " +
+      "provider with its current configuration\022" +
+      "1\n/\032-.scalekit.v1.providers.UpdateProvid" +
+      "erResponseJ?\n\003400\0228\n6Invalid request - t" +
+      "he update payload failed validationJH\n\0034" +
+      "04\022A\n?Not Found - no custom provider exi" +
+      "sts with the given identifier\202\265\030\002\030D\202\323\344\223\002" +
+      "1\032%/api/v1/custom-providers/{identifier}" +
+      ":\010provider\022\252\001\n\016DeleteProvider\022,.scalekit" +
+      ".v1.providers.DeleteProviderRequest\032-.sc" +
+      "alekit.v1.providers.DeleteProviderRespon" +
+      "se\";\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002 *\036/api/v1" +
+      "/providers/{identifier}\022\302\004\n\024DeleteCustom" +
+      "Provider\022,.scalekit.v1.providers.DeleteP" +
+      "roviderRequest\032-.scalekit.v1.providers.D" +
+      "eleteProviderResponse\"\314\003\222A\225\003\n\nConnectors" +
+      "\022\030Delete a custom provider\032\242\001Deletes an " +
+      "environment-scoped custom provider (conn" +
+      "ector) by its identifier. This operation" +
+      " is permanent and removes the provider d" +
+      "efinition from the environment.J~\n\003200\022w" +
+      "\nBThe custom provider was successfully d" +
+      "eleted (no content returned)\0221\n/\032-.scale" +
+      "kit.v1.providers.DeleteProviderResponseJ" +
+      "H\n\003404\022A\n?Not Found - no custom provider" +
+      " exists with the given identifier\202\265\030\002\030D\202" +
+      "\323\344\223\002\'*%/api/v1/custom-providers/{identif" +
+      "ier}\022\233\001\n\rListProviders\022+.scalekit.v1.pro" +
+      "viders.ListProvidersRequest\032,.scalekit.v" +
+      "1.providers.ListProvidersResponse\"/\202\265\030\003\030" +
+      "\304\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\023\022\021/api/v1/provide" +
+      "rs\022\241\001\n\017ListMyProviders\022-.scalekit.v1.pro" +
+      "viders.ListMyProvidersRequest\032,.scalekit" +
+      ".v1.providers.ListProvidersResponse\"1\202\265\030" +
+      "\002\030\030\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\026\022\024/api/v1/my-pro" +
+      "viders\032~\222A{\n\nConnectors\022mManage connecto" +
+      "rs (also called providers) that your age" +
+      "nts can use to authenticate with third-p" +
+      "arty services.B\270\003\n\'com.scalekit.grpc.sca" +
+      "lekit.v1.providersB\016ProvidersProtoP\001Z3gi" +
+      "thub.com/scalekit-inc/scalekit/pkg/grpc/" +
+      "providers\242\002\003SVP\252\002\025Scalekit.V1.Providers\312" +
+      "\002\025Scalekit\\V1\\Providers\342\002!Scalekit\\V1\\Pr" +
+      "oviders\\GPBMetadata\352\002\027Scalekit::V1::Prov" +
+      "iders\222A\320\001j\315\001\n\nConnectors\022\276\001Manage connec" +
+      "tors (also called providers) that your a" +
+      "gents can use to authenticate with third" +
+      "-party services. This includes both buil" +
+      "t-in connectors and environment-scoped c" +
+      "ustom connectors.b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -525,14 +554,20 @@ public final class ProvidersProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_providers_ListProvidersResponse_descriptor,
         new java.lang.String[] { "Providers", "NextPageToken", "TotalSize", "PrevPageToken", });
-    internal_static_scalekit_v1_providers_DeleteProviderRequest_descriptor =
+    internal_static_scalekit_v1_providers_ListMyProvidersRequest_descriptor =
       getDescriptor().getMessageTypes().get(13);
+    internal_static_scalekit_v1_providers_ListMyProvidersRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_providers_ListMyProvidersRequest_descriptor,
+        new java.lang.String[] { "PageSize", "PageToken", });
+    internal_static_scalekit_v1_providers_DeleteProviderRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
     internal_static_scalekit_v1_providers_DeleteProviderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_providers_DeleteProviderRequest_descriptor,
         new java.lang.String[] { "Identifier", });
     internal_static_scalekit_v1_providers_DeleteProviderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_scalekit_v1_providers_DeleteProviderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_providers_DeleteProviderResponse_descriptor,
@@ -544,6 +579,8 @@ public final class ProvidersProto {
     registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Swagger);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Tag);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

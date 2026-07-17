@@ -35,6 +35,7 @@ private static final long serialVersionUID = 0L;
     errorCode_ = "";
     errorMessage_ = "";
     workspaceId_ = "";
+    agentId_ = "";
   }
 
   @java.lang.Override
@@ -821,6 +822,74 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int AGENT_ID_FIELD_NUMBER = 21;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object agentId_ = "";
+  /**
+   * <pre>
+   * OAuth client_id of the agent that invoked the tool. Populated only
+   * for Gateway-sourced rows (handleExecuteTool stamps it from
+   * claims.ClientId on the access token). Lets admins + end-users
+   * attribute a tool call to a specific DCR-registered agent.
+   * </pre>
+   *
+   * <code>optional string agent_id = 21 [json_name = "agentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the agentId field is set.
+   */
+  @java.lang.Override
+  public boolean hasAgentId() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <pre>
+   * OAuth client_id of the agent that invoked the tool. Populated only
+   * for Gateway-sourced rows (handleExecuteTool stamps it from
+   * claims.ClientId on the access token). Lets admins + end-users
+   * attribute a tool call to a specific DCR-registered agent.
+   * </pre>
+   *
+   * <code>optional string agent_id = 21 [json_name = "agentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The agentId.
+   */
+  @java.lang.Override
+  public java.lang.String getAgentId() {
+    java.lang.Object ref = agentId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      agentId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * OAuth client_id of the agent that invoked the tool. Populated only
+   * for Gateway-sourced rows (handleExecuteTool stamps it from
+   * claims.ClientId on the access token). Lets admins + end-users
+   * attribute a tool call to a specific DCR-registered agent.
+   * </pre>
+   *
+   * <code>optional string agent_id = 21 [json_name = "agentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for agentId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAgentIdBytes() {
+    java.lang.Object ref = agentId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      agentId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -895,6 +964,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, workspaceId_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, agentId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -966,6 +1038,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, workspaceId_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, agentId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1033,6 +1108,11 @@ private static final long serialVersionUID = 0L;
       if (!getWorkspaceId()
           .equals(other.getWorkspaceId())) return false;
     }
+    if (hasAgentId() != other.hasAgentId()) return false;
+    if (hasAgentId()) {
+      if (!getAgentId()
+          .equals(other.getAgentId())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1092,6 +1172,10 @@ private static final long serialVersionUID = 0L;
     if (hasWorkspaceId()) {
       hash = (37 * hash) + WORKSPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getWorkspaceId().hashCode();
+    }
+    if (hasAgentId()) {
+      hash = (37 * hash) + AGENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAgentId().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1254,6 +1338,7 @@ private static final long serialVersionUID = 0L;
         startedAtBuilder_ = null;
       }
       workspaceId_ = "";
+      agentId_ = "";
       return this;
     }
 
@@ -1353,6 +1438,10 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00080000) != 0)) {
         result.workspaceId_ = workspaceId_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.agentId_ = agentId_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1497,6 +1586,11 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00080000;
         onChanged();
       }
+      if (other.hasAgentId()) {
+        agentId_ = other.agentId_;
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1625,6 +1719,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00080000;
               break;
             } // case 162
+            case 170: {
+              agentId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00100000;
+              break;
+            } // case 170
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3108,6 +3207,127 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       workspaceId_ = value;
       bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object agentId_ = "";
+    /**
+     * <pre>
+     * OAuth client_id of the agent that invoked the tool. Populated only
+     * for Gateway-sourced rows (handleExecuteTool stamps it from
+     * claims.ClientId on the access token). Lets admins + end-users
+     * attribute a tool call to a specific DCR-registered agent.
+     * </pre>
+     *
+     * <code>optional string agent_id = 21 [json_name = "agentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the agentId field is set.
+     */
+    public boolean hasAgentId() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+    /**
+     * <pre>
+     * OAuth client_id of the agent that invoked the tool. Populated only
+     * for Gateway-sourced rows (handleExecuteTool stamps it from
+     * claims.ClientId on the access token). Lets admins + end-users
+     * attribute a tool call to a specific DCR-registered agent.
+     * </pre>
+     *
+     * <code>optional string agent_id = 21 [json_name = "agentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The agentId.
+     */
+    public java.lang.String getAgentId() {
+      java.lang.Object ref = agentId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        agentId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * OAuth client_id of the agent that invoked the tool. Populated only
+     * for Gateway-sourced rows (handleExecuteTool stamps it from
+     * claims.ClientId on the access token). Lets admins + end-users
+     * attribute a tool call to a specific DCR-registered agent.
+     * </pre>
+     *
+     * <code>optional string agent_id = 21 [json_name = "agentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for agentId.
+     */
+    public com.google.protobuf.ByteString
+        getAgentIdBytes() {
+      java.lang.Object ref = agentId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        agentId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * OAuth client_id of the agent that invoked the tool. Populated only
+     * for Gateway-sourced rows (handleExecuteTool stamps it from
+     * claims.ClientId on the access token). Lets admins + end-users
+     * attribute a tool call to a specific DCR-registered agent.
+     * </pre>
+     *
+     * <code>optional string agent_id = 21 [json_name = "agentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The agentId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAgentId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      agentId_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * OAuth client_id of the agent that invoked the tool. Populated only
+     * for Gateway-sourced rows (handleExecuteTool stamps it from
+     * claims.ClientId on the access token). Lets admins + end-users
+     * attribute a tool call to a specific DCR-registered agent.
+     * </pre>
+     *
+     * <code>optional string agent_id = 21 [json_name = "agentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAgentId() {
+      agentId_ = getDefaultInstance().getAgentId();
+      bitField0_ = (bitField0_ & ~0x00100000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * OAuth client_id of the agent that invoked the tool. Populated only
+     * for Gateway-sourced rows (handleExecuteTool stamps it from
+     * claims.ClientId on the access token). Lets admins + end-users
+     * attribute a tool call to a specific DCR-registered agent.
+     * </pre>
+     *
+     * <code>optional string agent_id = 21 [json_name = "agentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for agentId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAgentIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      agentId_ = value;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }

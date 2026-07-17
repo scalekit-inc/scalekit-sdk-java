@@ -591,6 +591,17 @@ private static final long serialVersionUID = 0L;
     return enableCimd_;
   }
 
+  public static final int XAA_ENABLED_FIELD_NUMBER = 21;
+  private boolean xaaEnabled_ = false;
+  /**
+   * <code>bool xaa_enabled = 21 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The xaaEnabled.
+   */
+  @java.lang.Override
+  public boolean getXaaEnabled() {
+    return xaaEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -664,6 +675,9 @@ private static final long serialVersionUID = 0L;
     }
     if (enableCimd_ != false) {
       output.writeBool(20, enableCimd_);
+    }
+    if (xaaEnabled_ != false) {
+      output.writeBool(21, xaaEnabled_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -746,6 +760,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(20, enableCimd_);
     }
+    if (xaaEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(21, xaaEnabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -812,6 +830,8 @@ private static final long serialVersionUID = 0L;
         != other.getIntersectScopesUserPermission()) return false;
     if (getEnableCimd()
         != other.getEnableCimd()) return false;
+    if (getXaaEnabled()
+        != other.getXaaEnabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -879,6 +899,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ENABLE_CIMD_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getEnableCimd());
+    hash = (37 * hash) + XAA_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getXaaEnabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1062,6 +1085,7 @@ private static final long serialVersionUID = 0L;
       disallowConnectionUpdate_ = false;
       intersectScopesUserPermission_ = false;
       enableCimd_ = false;
+      xaaEnabled_ = false;
       return this;
     }
 
@@ -1177,6 +1201,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
         result.enableCimd_ = enableCimd_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.xaaEnabled_ = xaaEnabled_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1324,6 +1351,9 @@ private static final long serialVersionUID = 0L;
       if (other.getEnableCimd() != false) {
         setEnableCimd(other.getEnableCimd());
       }
+      if (other.getXaaEnabled() != false) {
+        setXaaEnabled(other.getXaaEnabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1466,6 +1496,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00080000;
               break;
             } // case 160
+            case 168: {
+              xaaEnabled_ = input.readBool();
+              bitField0_ |= 0x00100000;
+              break;
+            } // case 168
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3024,6 +3059,38 @@ private static final long serialVersionUID = 0L;
     public Builder clearEnableCimd() {
       bitField0_ = (bitField0_ & ~0x00080000);
       enableCimd_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean xaaEnabled_ ;
+    /**
+     * <code>bool xaa_enabled = 21 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The xaaEnabled.
+     */
+    @java.lang.Override
+    public boolean getXaaEnabled() {
+      return xaaEnabled_;
+    }
+    /**
+     * <code>bool xaa_enabled = 21 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The xaaEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setXaaEnabled(boolean value) {
+
+      xaaEnabled_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool xaa_enabled = 21 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearXaaEnabled() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      xaaEnabled_ = false;
       onChanged();
       return this;
     }

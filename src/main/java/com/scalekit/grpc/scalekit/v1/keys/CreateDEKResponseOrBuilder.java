@@ -9,17 +9,17 @@ public interface CreateDEKResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek"];</code>
+   * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the dek field is set.
    */
   boolean hasDek();
   /**
-   * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek"];</code>
+   * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The dek.
    */
   com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey getDek();
   /**
-   * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek"];</code>
+   * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.keys.EnvironmentKeyOrBuilder getDekOrBuilder();
 }

@@ -151,12 +151,12 @@ public final class VisibilityProto {
       "i.VisibilityRuleR\020methodVisibility:e\n\016ap" +
       "i_visibility\022\037.google.protobuf.ServiceOp" +
       "tions\030\257\312\274\" \001(\0132\032.google.api.VisibilityRu" +
-      "leR\rapiVisibilityB\274\001\n\034com.scalekit.grpc." +
+      "leR\rapiVisibilityB\271\001\n\034com.scalekit.grpc." +
       "google.apiB\017VisibilityProtoP\001Z?google.go" +
       "lang.org/genproto/googleapis/api/visibil" +
-      "ity;visibility\370\001\001\242\002\003GAX\252\002\nGoogle.Api\312\002\nG" +
-      "oogle\\Api\342\002\026Google\\Api\\GPBMetadata\352\002\013Goo" +
-      "gle::Apib\006proto3"
+      "ity;visibility\242\002\003GAX\252\002\nGoogle.Api\312\002\nGoog" +
+      "le\\Api\342\002\026Google\\Api\\GPBMetadata\352\002\013Google" +
+      "::Apib\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

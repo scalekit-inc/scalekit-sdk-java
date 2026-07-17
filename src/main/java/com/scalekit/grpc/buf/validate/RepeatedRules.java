@@ -6,18 +6,19 @@ package com.scalekit.grpc.buf.validate;
 
 /**
  * <pre>
- * RepeatedRules describe the constraints applied to `repeated` values.
+ * RepeatedRules describe the rules applied to `repeated` values.
  * </pre>
  *
  * Protobuf type {@code buf.validate.RepeatedRules}
  */
 public final class RepeatedRules extends
-    com.google.protobuf.GeneratedMessageV3 implements
+    com.google.protobuf.GeneratedMessageV3.ExtendableMessage<
+      RepeatedRules> implements
     // @@protoc_insertion_point(message_implements:buf.validate.RepeatedRules)
     RepeatedRulesOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use RepeatedRules.newBuilder() to construct.
-  private RepeatedRules(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private RepeatedRules(com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<com.scalekit.grpc.buf.validate.RepeatedRules, ?> builder) {
     super(builder);
   }
   private RepeatedRules() {
@@ -61,7 +62,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 min_items = 1 [json_name = "minItems", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 min_items = 1 [json_name = "minItems", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the minItems field is set.
    */
   @java.lang.Override
@@ -83,7 +84,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 min_items = 1 [json_name = "minItems", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 min_items = 1 [json_name = "minItems", (.buf.validate.predefined) = { ... }</code>
    * @return The minItems.
    */
   @java.lang.Override
@@ -108,7 +109,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 max_items = 2 [json_name = "maxItems", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 max_items = 2 [json_name = "maxItems", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the maxItems field is set.
    */
   @java.lang.Override
@@ -130,7 +131,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional uint64 max_items = 2 [json_name = "maxItems", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional uint64 max_items = 2 [json_name = "maxItems", (.buf.validate.predefined) = { ... }</code>
    * @return The maxItems.
    */
   @java.lang.Override
@@ -143,7 +144,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `unique` indicates that all elements in this field must
-   * be unique. This constraint is strictly applicable to scalar and enum
+   * be unique. This rule is strictly applicable to scalar and enum
    * types, with message types not being supported.
    *
    * ```proto
@@ -154,7 +155,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional bool unique = 3 [json_name = "unique", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional bool unique = 3 [json_name = "unique", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the unique field is set.
    */
   @java.lang.Override
@@ -164,7 +165,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * `unique` indicates that all elements in this field must
-   * be unique. This constraint is strictly applicable to scalar and enum
+   * be unique. This rule is strictly applicable to scalar and enum
    * types, with message types not being supported.
    *
    * ```proto
@@ -175,7 +176,7 @@ private static final long serialVersionUID = 0L;
    * ```
    * </pre>
    *
-   * <code>optional bool unique = 3 [json_name = "unique", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional bool unique = 3 [json_name = "unique", (.buf.validate.predefined) = { ... }</code>
    * @return The unique.
    */
   @java.lang.Override
@@ -184,16 +185,16 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ITEMS_FIELD_NUMBER = 4;
-  private com.scalekit.grpc.buf.validate.FieldConstraints items_;
+  private com.scalekit.grpc.buf.validate.FieldRules items_;
   /**
    * <pre>
-   * `items` details the constraints to be applied to each item
+   * `items` details the rules to be applied to each item
    * in the field. Even for repeated message fields, validation is executed
-   * against each item unless skip is explicitly specified.
+   * against each item unless `ignore` is specified.
    *
    * ```proto
    * message MyRepeated {
-   *   // The items in the field `value` must follow the specified constraints.
+   *   // The items in the field `value` must follow the specified rules.
    *   repeated string value = 1 [(buf.validate.field).repeated.items = {
    *     string: {
    *       min_len: 3
@@ -202,9 +203,12 @@ private static final long serialVersionUID = 0L;
    *   }];
    * }
    * ```
+   *
+   * Note that the `required` rule does not apply. Repeated items
+   * cannot be unset.
    * </pre>
    *
-   * <code>optional .buf.validate.FieldConstraints items = 4 [json_name = "items"];</code>
+   * <code>optional .buf.validate.FieldRules items = 4 [json_name = "items"];</code>
    * @return Whether the items field is set.
    */
   @java.lang.Override
@@ -213,13 +217,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `items` details the constraints to be applied to each item
+   * `items` details the rules to be applied to each item
    * in the field. Even for repeated message fields, validation is executed
-   * against each item unless skip is explicitly specified.
+   * against each item unless `ignore` is specified.
    *
    * ```proto
    * message MyRepeated {
-   *   // The items in the field `value` must follow the specified constraints.
+   *   // The items in the field `value` must follow the specified rules.
    *   repeated string value = 1 [(buf.validate.field).repeated.items = {
    *     string: {
    *       min_len: 3
@@ -228,24 +232,27 @@ private static final long serialVersionUID = 0L;
    *   }];
    * }
    * ```
+   *
+   * Note that the `required` rule does not apply. Repeated items
+   * cannot be unset.
    * </pre>
    *
-   * <code>optional .buf.validate.FieldConstraints items = 4 [json_name = "items"];</code>
+   * <code>optional .buf.validate.FieldRules items = 4 [json_name = "items"];</code>
    * @return The items.
    */
   @java.lang.Override
-  public com.scalekit.grpc.buf.validate.FieldConstraints getItems() {
-    return items_ == null ? com.scalekit.grpc.buf.validate.FieldConstraints.getDefaultInstance() : items_;
+  public com.scalekit.grpc.buf.validate.FieldRules getItems() {
+    return items_ == null ? com.scalekit.grpc.buf.validate.FieldRules.getDefaultInstance() : items_;
   }
   /**
    * <pre>
-   * `items` details the constraints to be applied to each item
+   * `items` details the rules to be applied to each item
    * in the field. Even for repeated message fields, validation is executed
-   * against each item unless skip is explicitly specified.
+   * against each item unless `ignore` is specified.
    *
    * ```proto
    * message MyRepeated {
-   *   // The items in the field `value` must follow the specified constraints.
+   *   // The items in the field `value` must follow the specified rules.
    *   repeated string value = 1 [(buf.validate.field).repeated.items = {
    *     string: {
    *       min_len: 3
@@ -254,13 +261,16 @@ private static final long serialVersionUID = 0L;
    *   }];
    * }
    * ```
+   *
+   * Note that the `required` rule does not apply. Repeated items
+   * cannot be unset.
    * </pre>
    *
-   * <code>optional .buf.validate.FieldConstraints items = 4 [json_name = "items"];</code>
+   * <code>optional .buf.validate.FieldRules items = 4 [json_name = "items"];</code>
    */
   @java.lang.Override
-  public com.scalekit.grpc.buf.validate.FieldConstraintsOrBuilder getItemsOrBuilder() {
-    return items_ == null ? com.scalekit.grpc.buf.validate.FieldConstraints.getDefaultInstance() : items_;
+  public com.scalekit.grpc.buf.validate.FieldRulesOrBuilder getItemsOrBuilder() {
+    return items_ == null ? com.scalekit.grpc.buf.validate.FieldRules.getDefaultInstance() : items_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -270,6 +280,16 @@ private static final long serialVersionUID = 0L;
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
+    if (hasItems()) {
+      if (!getItems().isInitialized()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+    }
+    if (!extensionsAreInitialized()) {
+      memoizedIsInitialized = 0;
+      return false;
+    }
     memoizedIsInitialized = 1;
     return true;
   }
@@ -277,6 +297,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    com.google.protobuf.GeneratedMessageV3
+      .ExtendableMessage<com.scalekit.grpc.buf.validate.RepeatedRules>.ExtensionWriter
+        extensionWriter = newExtensionWriter();
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeUInt64(1, minItems_);
     }
@@ -289,6 +312,7 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(4, getItems());
     }
+    extensionWriter.writeUntil(536870912, output);
     getUnknownFields().writeTo(output);
   }
 
@@ -314,6 +338,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getItems());
     }
+    size += extensionsSerializedSize();
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -350,6 +375,8 @@ private static final long serialVersionUID = 0L;
           .equals(other.getItems())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+    if (!getExtensionFields().equals(other.getExtensionFields()))
+      return false;
     return true;
   }
 
@@ -379,6 +406,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ITEMS_FIELD_NUMBER;
       hash = (53 * hash) + getItems().hashCode();
     }
+    hash = hashFields(hash, getExtensionFields());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -478,13 +506,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * RepeatedRules describe the constraints applied to `repeated` values.
+   * RepeatedRules describe the rules applied to `repeated` values.
    * </pre>
    *
    * Protobuf type {@code buf.validate.RepeatedRules}
    */
   public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      com.google.protobuf.GeneratedMessageV3.ExtendableBuilder<
+        com.scalekit.grpc.buf.validate.RepeatedRules, Builder> implements
       // @@protoc_insertion_point(builder_implements:buf.validate.RepeatedRules)
       com.scalekit.grpc.buf.validate.RepeatedRulesOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -616,6 +645,33 @@ private static final long serialVersionUID = 0L;
       return super.addRepeatedField(field, value);
     }
     @java.lang.Override
+    public <Type> Builder setExtension(
+        com.google.protobuf.GeneratedMessage.GeneratedExtension<
+            com.scalekit.grpc.buf.validate.RepeatedRules, Type> extension,
+        Type value) {
+      return super.setExtension(extension, value);
+    }
+    @java.lang.Override
+    public <Type> Builder setExtension(
+        com.google.protobuf.GeneratedMessage.GeneratedExtension<
+            com.scalekit.grpc.buf.validate.RepeatedRules, java.util.List<Type>> extension,
+        int index, Type value) {
+      return super.setExtension(extension, index, value);
+    }
+    @java.lang.Override
+    public <Type> Builder addExtension(
+        com.google.protobuf.GeneratedMessage.GeneratedExtension<
+            com.scalekit.grpc.buf.validate.RepeatedRules, java.util.List<Type>> extension,
+        Type value) {
+      return super.addExtension(extension, value);
+    }
+    @java.lang.Override
+    public <T> Builder clearExtension(
+        com.google.protobuf.GeneratedMessage.GeneratedExtension<
+            com.scalekit.grpc.buf.validate.RepeatedRules, T> extension) {
+      return super.clearExtension(extension);
+    }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.scalekit.grpc.buf.validate.RepeatedRules) {
         return mergeFrom((com.scalekit.grpc.buf.validate.RepeatedRules)other);
@@ -639,6 +695,7 @@ private static final long serialVersionUID = 0L;
       if (other.hasItems()) {
         mergeItems(other.getItems());
       }
+      this.mergeExtensionFields(other);
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -646,6 +703,14 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public final boolean isInitialized() {
+      if (hasItems()) {
+        if (!getItems().isInitialized()) {
+          return false;
+        }
+      }
+      if (!extensionsAreInitialized()) {
+        return false;
+      }
       return true;
     }
 
@@ -720,7 +785,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 min_items = 1 [json_name = "minItems", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 min_items = 1 [json_name = "minItems", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the minItems field is set.
      */
     @java.lang.Override
@@ -742,7 +807,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 min_items = 1 [json_name = "minItems", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 min_items = 1 [json_name = "minItems", (.buf.validate.predefined) = { ... }</code>
      * @return The minItems.
      */
     @java.lang.Override
@@ -764,7 +829,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 min_items = 1 [json_name = "minItems", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 min_items = 1 [json_name = "minItems", (.buf.validate.predefined) = { ... }</code>
      * @param value The minItems to set.
      * @return This builder for chaining.
      */
@@ -790,7 +855,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 min_items = 1 [json_name = "minItems", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 min_items = 1 [json_name = "minItems", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearMinItems() {
@@ -816,7 +881,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 max_items = 2 [json_name = "maxItems", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 max_items = 2 [json_name = "maxItems", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the maxItems field is set.
      */
     @java.lang.Override
@@ -838,7 +903,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 max_items = 2 [json_name = "maxItems", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 max_items = 2 [json_name = "maxItems", (.buf.validate.predefined) = { ... }</code>
      * @return The maxItems.
      */
     @java.lang.Override
@@ -860,7 +925,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 max_items = 2 [json_name = "maxItems", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 max_items = 2 [json_name = "maxItems", (.buf.validate.predefined) = { ... }</code>
      * @param value The maxItems to set.
      * @return This builder for chaining.
      */
@@ -886,7 +951,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional uint64 max_items = 2 [json_name = "maxItems", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional uint64 max_items = 2 [json_name = "maxItems", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxItems() {
@@ -900,7 +965,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `unique` indicates that all elements in this field must
-     * be unique. This constraint is strictly applicable to scalar and enum
+     * be unique. This rule is strictly applicable to scalar and enum
      * types, with message types not being supported.
      *
      * ```proto
@@ -911,7 +976,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional bool unique = 3 [json_name = "unique", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional bool unique = 3 [json_name = "unique", (.buf.validate.predefined) = { ... }</code>
      * @return Whether the unique field is set.
      */
     @java.lang.Override
@@ -921,7 +986,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `unique` indicates that all elements in this field must
-     * be unique. This constraint is strictly applicable to scalar and enum
+     * be unique. This rule is strictly applicable to scalar and enum
      * types, with message types not being supported.
      *
      * ```proto
@@ -932,7 +997,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional bool unique = 3 [json_name = "unique", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional bool unique = 3 [json_name = "unique", (.buf.validate.predefined) = { ... }</code>
      * @return The unique.
      */
     @java.lang.Override
@@ -942,7 +1007,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `unique` indicates that all elements in this field must
-     * be unique. This constraint is strictly applicable to scalar and enum
+     * be unique. This rule is strictly applicable to scalar and enum
      * types, with message types not being supported.
      *
      * ```proto
@@ -953,7 +1018,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional bool unique = 3 [json_name = "unique", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional bool unique = 3 [json_name = "unique", (.buf.validate.predefined) = { ... }</code>
      * @param value The unique to set.
      * @return This builder for chaining.
      */
@@ -967,7 +1032,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * `unique` indicates that all elements in this field must
-     * be unique. This constraint is strictly applicable to scalar and enum
+     * be unique. This rule is strictly applicable to scalar and enum
      * types, with message types not being supported.
      *
      * ```proto
@@ -978,7 +1043,7 @@ private static final long serialVersionUID = 0L;
      * ```
      * </pre>
      *
-     * <code>optional bool unique = 3 [json_name = "unique", (.buf.validate.priv.field) = { ... }</code>
+     * <code>optional bool unique = 3 [json_name = "unique", (.buf.validate.predefined) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearUnique() {
@@ -988,18 +1053,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.scalekit.grpc.buf.validate.FieldConstraints items_;
+    private com.scalekit.grpc.buf.validate.FieldRules items_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.buf.validate.FieldConstraints, com.scalekit.grpc.buf.validate.FieldConstraints.Builder, com.scalekit.grpc.buf.validate.FieldConstraintsOrBuilder> itemsBuilder_;
+        com.scalekit.grpc.buf.validate.FieldRules, com.scalekit.grpc.buf.validate.FieldRules.Builder, com.scalekit.grpc.buf.validate.FieldRulesOrBuilder> itemsBuilder_;
     /**
      * <pre>
-     * `items` details the constraints to be applied to each item
+     * `items` details the rules to be applied to each item
      * in the field. Even for repeated message fields, validation is executed
-     * against each item unless skip is explicitly specified.
+     * against each item unless `ignore` is specified.
      *
      * ```proto
      * message MyRepeated {
-     *   // The items in the field `value` must follow the specified constraints.
+     *   // The items in the field `value` must follow the specified rules.
      *   repeated string value = 1 [(buf.validate.field).repeated.items = {
      *     string: {
      *       min_len: 3
@@ -1008,9 +1073,12 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Repeated items
+     * cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints items = 4 [json_name = "items"];</code>
+     * <code>optional .buf.validate.FieldRules items = 4 [json_name = "items"];</code>
      * @return Whether the items field is set.
      */
     public boolean hasItems() {
@@ -1018,13 +1086,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `items` details the constraints to be applied to each item
+     * `items` details the rules to be applied to each item
      * in the field. Even for repeated message fields, validation is executed
-     * against each item unless skip is explicitly specified.
+     * against each item unless `ignore` is specified.
      *
      * ```proto
      * message MyRepeated {
-     *   // The items in the field `value` must follow the specified constraints.
+     *   // The items in the field `value` must follow the specified rules.
      *   repeated string value = 1 [(buf.validate.field).repeated.items = {
      *     string: {
      *       min_len: 3
@@ -1033,27 +1101,30 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Repeated items
+     * cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints items = 4 [json_name = "items"];</code>
+     * <code>optional .buf.validate.FieldRules items = 4 [json_name = "items"];</code>
      * @return The items.
      */
-    public com.scalekit.grpc.buf.validate.FieldConstraints getItems() {
+    public com.scalekit.grpc.buf.validate.FieldRules getItems() {
       if (itemsBuilder_ == null) {
-        return items_ == null ? com.scalekit.grpc.buf.validate.FieldConstraints.getDefaultInstance() : items_;
+        return items_ == null ? com.scalekit.grpc.buf.validate.FieldRules.getDefaultInstance() : items_;
       } else {
         return itemsBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * `items` details the constraints to be applied to each item
+     * `items` details the rules to be applied to each item
      * in the field. Even for repeated message fields, validation is executed
-     * against each item unless skip is explicitly specified.
+     * against each item unless `ignore` is specified.
      *
      * ```proto
      * message MyRepeated {
-     *   // The items in the field `value` must follow the specified constraints.
+     *   // The items in the field `value` must follow the specified rules.
      *   repeated string value = 1 [(buf.validate.field).repeated.items = {
      *     string: {
      *       min_len: 3
@@ -1062,11 +1133,14 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Repeated items
+     * cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints items = 4 [json_name = "items"];</code>
+     * <code>optional .buf.validate.FieldRules items = 4 [json_name = "items"];</code>
      */
-    public Builder setItems(com.scalekit.grpc.buf.validate.FieldConstraints value) {
+    public Builder setItems(com.scalekit.grpc.buf.validate.FieldRules value) {
       if (itemsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1081,13 +1155,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `items` details the constraints to be applied to each item
+     * `items` details the rules to be applied to each item
      * in the field. Even for repeated message fields, validation is executed
-     * against each item unless skip is explicitly specified.
+     * against each item unless `ignore` is specified.
      *
      * ```proto
      * message MyRepeated {
-     *   // The items in the field `value` must follow the specified constraints.
+     *   // The items in the field `value` must follow the specified rules.
      *   repeated string value = 1 [(buf.validate.field).repeated.items = {
      *     string: {
      *       min_len: 3
@@ -1096,12 +1170,15 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Repeated items
+     * cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints items = 4 [json_name = "items"];</code>
+     * <code>optional .buf.validate.FieldRules items = 4 [json_name = "items"];</code>
      */
     public Builder setItems(
-        com.scalekit.grpc.buf.validate.FieldConstraints.Builder builderForValue) {
+        com.scalekit.grpc.buf.validate.FieldRules.Builder builderForValue) {
       if (itemsBuilder_ == null) {
         items_ = builderForValue.build();
       } else {
@@ -1113,13 +1190,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `items` details the constraints to be applied to each item
+     * `items` details the rules to be applied to each item
      * in the field. Even for repeated message fields, validation is executed
-     * against each item unless skip is explicitly specified.
+     * against each item unless `ignore` is specified.
      *
      * ```proto
      * message MyRepeated {
-     *   // The items in the field `value` must follow the specified constraints.
+     *   // The items in the field `value` must follow the specified rules.
      *   repeated string value = 1 [(buf.validate.field).repeated.items = {
      *     string: {
      *       min_len: 3
@@ -1128,15 +1205,18 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Repeated items
+     * cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints items = 4 [json_name = "items"];</code>
+     * <code>optional .buf.validate.FieldRules items = 4 [json_name = "items"];</code>
      */
-    public Builder mergeItems(com.scalekit.grpc.buf.validate.FieldConstraints value) {
+    public Builder mergeItems(com.scalekit.grpc.buf.validate.FieldRules value) {
       if (itemsBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0) &&
           items_ != null &&
-          items_ != com.scalekit.grpc.buf.validate.FieldConstraints.getDefaultInstance()) {
+          items_ != com.scalekit.grpc.buf.validate.FieldRules.getDefaultInstance()) {
           getItemsBuilder().mergeFrom(value);
         } else {
           items_ = value;
@@ -1152,13 +1232,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `items` details the constraints to be applied to each item
+     * `items` details the rules to be applied to each item
      * in the field. Even for repeated message fields, validation is executed
-     * against each item unless skip is explicitly specified.
+     * against each item unless `ignore` is specified.
      *
      * ```proto
      * message MyRepeated {
-     *   // The items in the field `value` must follow the specified constraints.
+     *   // The items in the field `value` must follow the specified rules.
      *   repeated string value = 1 [(buf.validate.field).repeated.items = {
      *     string: {
      *       min_len: 3
@@ -1167,9 +1247,12 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Repeated items
+     * cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints items = 4 [json_name = "items"];</code>
+     * <code>optional .buf.validate.FieldRules items = 4 [json_name = "items"];</code>
      */
     public Builder clearItems() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1183,13 +1266,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `items` details the constraints to be applied to each item
+     * `items` details the rules to be applied to each item
      * in the field. Even for repeated message fields, validation is executed
-     * against each item unless skip is explicitly specified.
+     * against each item unless `ignore` is specified.
      *
      * ```proto
      * message MyRepeated {
-     *   // The items in the field `value` must follow the specified constraints.
+     *   // The items in the field `value` must follow the specified rules.
      *   repeated string value = 1 [(buf.validate.field).repeated.items = {
      *     string: {
      *       min_len: 3
@@ -1198,24 +1281,27 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Repeated items
+     * cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints items = 4 [json_name = "items"];</code>
+     * <code>optional .buf.validate.FieldRules items = 4 [json_name = "items"];</code>
      */
-    public com.scalekit.grpc.buf.validate.FieldConstraints.Builder getItemsBuilder() {
+    public com.scalekit.grpc.buf.validate.FieldRules.Builder getItemsBuilder() {
       bitField0_ |= 0x00000008;
       onChanged();
       return getItemsFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     * `items` details the constraints to be applied to each item
+     * `items` details the rules to be applied to each item
      * in the field. Even for repeated message fields, validation is executed
-     * against each item unless skip is explicitly specified.
+     * against each item unless `ignore` is specified.
      *
      * ```proto
      * message MyRepeated {
-     *   // The items in the field `value` must follow the specified constraints.
+     *   // The items in the field `value` must follow the specified rules.
      *   repeated string value = 1 [(buf.validate.field).repeated.items = {
      *     string: {
      *       min_len: 3
@@ -1224,27 +1310,30 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Repeated items
+     * cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints items = 4 [json_name = "items"];</code>
+     * <code>optional .buf.validate.FieldRules items = 4 [json_name = "items"];</code>
      */
-    public com.scalekit.grpc.buf.validate.FieldConstraintsOrBuilder getItemsOrBuilder() {
+    public com.scalekit.grpc.buf.validate.FieldRulesOrBuilder getItemsOrBuilder() {
       if (itemsBuilder_ != null) {
         return itemsBuilder_.getMessageOrBuilder();
       } else {
         return items_ == null ?
-            com.scalekit.grpc.buf.validate.FieldConstraints.getDefaultInstance() : items_;
+            com.scalekit.grpc.buf.validate.FieldRules.getDefaultInstance() : items_;
       }
     }
     /**
      * <pre>
-     * `items` details the constraints to be applied to each item
+     * `items` details the rules to be applied to each item
      * in the field. Even for repeated message fields, validation is executed
-     * against each item unless skip is explicitly specified.
+     * against each item unless `ignore` is specified.
      *
      * ```proto
      * message MyRepeated {
-     *   // The items in the field `value` must follow the specified constraints.
+     *   // The items in the field `value` must follow the specified rules.
      *   repeated string value = 1 [(buf.validate.field).repeated.items = {
      *     string: {
      *       min_len: 3
@@ -1253,16 +1342,19 @@ private static final long serialVersionUID = 0L;
      *   }];
      * }
      * ```
+     *
+     * Note that the `required` rule does not apply. Repeated items
+     * cannot be unset.
      * </pre>
      *
-     * <code>optional .buf.validate.FieldConstraints items = 4 [json_name = "items"];</code>
+     * <code>optional .buf.validate.FieldRules items = 4 [json_name = "items"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.scalekit.grpc.buf.validate.FieldConstraints, com.scalekit.grpc.buf.validate.FieldConstraints.Builder, com.scalekit.grpc.buf.validate.FieldConstraintsOrBuilder> 
+        com.scalekit.grpc.buf.validate.FieldRules, com.scalekit.grpc.buf.validate.FieldRules.Builder, com.scalekit.grpc.buf.validate.FieldRulesOrBuilder> 
         getItemsFieldBuilder() {
       if (itemsBuilder_ == null) {
         itemsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.scalekit.grpc.buf.validate.FieldConstraints, com.scalekit.grpc.buf.validate.FieldConstraints.Builder, com.scalekit.grpc.buf.validate.FieldConstraintsOrBuilder>(
+            com.scalekit.grpc.buf.validate.FieldRules, com.scalekit.grpc.buf.validate.FieldRules.Builder, com.scalekit.grpc.buf.validate.FieldRulesOrBuilder>(
                 getItems(),
                 getParentForChildren(),
                 isClean());
@@ -1296,7 +1388,7 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RepeatedRules>
+  @java.lang.Deprecated public static final com.google.protobuf.Parser<RepeatedRules>
       PARSER = new com.google.protobuf.AbstractParser<RepeatedRules>() {
     @java.lang.Override
     public RepeatedRules parsePartialFrom(

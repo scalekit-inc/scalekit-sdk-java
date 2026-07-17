@@ -5,10 +5,6 @@
 package com.scalekit.grpc.scalekit.v1.keys;
 
 /**
- * <pre>
- * CreateDEKResponse returns the created DEK information
- * </pre>
- *
  * Protobuf type {@code scalekit.v1.keys.CreateDEKResponse}
  */
 public final class CreateDEKResponse extends
@@ -47,7 +43,7 @@ private static final long serialVersionUID = 0L;
   public static final int DEK_FIELD_NUMBER = 1;
   private com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey dek_;
   /**
-   * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek"];</code>
+   * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the dek field is set.
    */
   @java.lang.Override
@@ -55,7 +51,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek"];</code>
+   * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The dek.
    */
   @java.lang.Override
@@ -63,7 +59,7 @@ private static final long serialVersionUID = 0L;
     return dek_ == null ? com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey.getDefaultInstance() : dek_;
   }
   /**
-   * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek"];</code>
+   * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.keys.EnvironmentKeyOrBuilder getDekOrBuilder() {
@@ -233,10 +229,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * CreateDEKResponse returns the created DEK information
-   * </pre>
-   *
    * Protobuf type {@code scalekit.v1.keys.CreateDEKResponse}
    */
   public static final class Builder extends
@@ -425,14 +417,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey, com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey.Builder, com.scalekit.grpc.scalekit.v1.keys.EnvironmentKeyOrBuilder> dekBuilder_;
     /**
-     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek"];</code>
+     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the dek field is set.
      */
     public boolean hasDek() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek"];</code>
+     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The dek.
      */
     public com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey getDek() {
@@ -443,7 +435,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek"];</code>
+     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setDek(com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey value) {
       if (dekBuilder_ == null) {
@@ -459,7 +451,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek"];</code>
+     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setDek(
         com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey.Builder builderForValue) {
@@ -473,7 +465,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek"];</code>
+     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeDek(com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey value) {
       if (dekBuilder_ == null) {
@@ -494,7 +486,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek"];</code>
+     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearDek() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -507,7 +499,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek"];</code>
+     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey.Builder getDekBuilder() {
       bitField0_ |= 0x00000001;
@@ -515,7 +507,7 @@ private static final long serialVersionUID = 0L;
       return getDekFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek"];</code>
+     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.keys.EnvironmentKeyOrBuilder getDekOrBuilder() {
       if (dekBuilder_ != null) {
@@ -526,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek"];</code>
+     * <code>.scalekit.v1.keys.EnvironmentKey dek = 1 [json_name = "dek", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey, com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey.Builder, com.scalekit.grpc.scalekit.v1.keys.EnvironmentKeyOrBuilder> 

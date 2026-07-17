@@ -259,4 +259,42 @@ public interface ToolCallLogOrBuilder extends
    */
   com.google.protobuf.ByteString
       getWorkspaceIdBytes();
+
+  /**
+   * <pre>
+   * OAuth client_id of the agent that invoked the tool. Populated only
+   * for Gateway-sourced rows (handleExecuteTool stamps it from
+   * claims.ClientId on the access token). Lets admins + end-users
+   * attribute a tool call to a specific DCR-registered agent.
+   * </pre>
+   *
+   * <code>optional string agent_id = 21 [json_name = "agentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the agentId field is set.
+   */
+  boolean hasAgentId();
+  /**
+   * <pre>
+   * OAuth client_id of the agent that invoked the tool. Populated only
+   * for Gateway-sourced rows (handleExecuteTool stamps it from
+   * claims.ClientId on the access token). Lets admins + end-users
+   * attribute a tool call to a specific DCR-registered agent.
+   * </pre>
+   *
+   * <code>optional string agent_id = 21 [json_name = "agentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The agentId.
+   */
+  java.lang.String getAgentId();
+  /**
+   * <pre>
+   * OAuth client_id of the agent that invoked the tool. Populated only
+   * for Gateway-sourced rows (handleExecuteTool stamps it from
+   * claims.ClientId on the access token). Lets admins + end-users
+   * attribute a tool call to a specific DCR-registered agent.
+   * </pre>
+   *
+   * <code>optional string agent_id = 21 [json_name = "agentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for agentId.
+   */
+  com.google.protobuf.ByteString
+      getAgentIdBytes();
 }

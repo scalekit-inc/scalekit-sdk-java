@@ -9,59 +9,35 @@ public interface ListDEKsRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   * Optional: filter by status (ACTIVE, DEPRECATED)
-   * </pre>
-   *
-   * <code>optional string status = 1 [json_name = "status"];</code>
+   * <code>optional string status = 1 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
-   * <pre>
-   * Optional: filter by status (ACTIVE, DEPRECATED)
-   * </pre>
-   *
-   * <code>optional string status = 1 [json_name = "status"];</code>
+   * <code>optional string status = 1 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The status.
    */
   java.lang.String getStatus();
   /**
-   * <pre>
-   * Optional: filter by status (ACTIVE, DEPRECATED)
-   * </pre>
-   *
-   * <code>optional string status = 1 [json_name = "status"];</code>
+   * <code>optional string status = 1 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for status.
    */
   com.google.protobuf.ByteString
       getStatusBytes();
 
   /**
-   * <pre>
-   * Page size. Defaults to 10, max 100.
-   * </pre>
-   *
-   * <code>uint32 page_size = 2 [json_name = "pageSize"];</code>
+   * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageSize.
    */
   int getPageSize();
 
   /**
-   * <pre>
-   * Page token from a previous ListDEKsResponse.next_page_token. Omit for first page.
-   * </pre>
-   *
-   * <code>string page_token = 3 [json_name = "pageToken"];</code>
+   * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
-   * <pre>
-   * Page token from a previous ListDEKsResponse.next_page_token. Omit for first page.
-   * </pre>
-   *
-   * <code>string page_token = 3 [json_name = "pageToken"];</code>
+   * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString

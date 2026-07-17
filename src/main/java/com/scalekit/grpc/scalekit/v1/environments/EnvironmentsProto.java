@@ -547,7 +547,7 @@ public final class EnvironmentsProto {
       "EnableFSAFeatureRequest\022\027\n\002id\030\001 \001(\tB\007\272H\004" +
       "r\002\030 R\002id\":\n\030DisableFSAFeatureRequest\022\036\n\002" +
       "id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003envR\002id\"7\n\022GetFeatu" +
-      "resRequest\022!\n\002id\030\001 \001(\tB\021\272H\016r\t\020\001\030 :\003env\320\001" +
+      "resRequest\022!\n\002id\030\001 \001(\tB\021\272H\016r\t\020\001\030 :\003env\330\001" +
       "\001R\002id\"_\n\023GetFeaturesResponse\022H\n\010features" +
       "\030\001 \003(\0132,.scalekit.v1.environments.Enviro" +
       "nmentFeatureR\010features\"`\n\024EnableFeatureR" +

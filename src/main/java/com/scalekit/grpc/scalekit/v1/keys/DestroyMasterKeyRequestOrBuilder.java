@@ -9,11 +9,7 @@ public interface DestroyMasterKeyRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   * Master key version to destroy
-   * </pre>
-   *
-   * <code>int32 version = 1 [json_name = "version", (.buf.validate.field) = { ... }</code>
+   * <code>int32 version = 1 [json_name = "version", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The version.
    */
   int getVersion();

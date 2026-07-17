@@ -790,6 +790,68 @@ public final class ClientServiceGrpc {
     return getListResourceClientsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsRequest,
+      com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsResponse> getListCurrentAgentConsentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCurrentAgentConsents",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsRequest,
+      com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsResponse> getListCurrentAgentConsentsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsRequest, com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsResponse> getListCurrentAgentConsentsMethod;
+    if ((getListCurrentAgentConsentsMethod = ClientServiceGrpc.getListCurrentAgentConsentsMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getListCurrentAgentConsentsMethod = ClientServiceGrpc.getListCurrentAgentConsentsMethod) == null) {
+          ClientServiceGrpc.getListCurrentAgentConsentsMethod = getListCurrentAgentConsentsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsRequest, com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCurrentAgentConsents"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("ListCurrentAgentConsents"))
+              .build();
+        }
+      }
+    }
+    return getListCurrentAgentConsentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentRequest,
+      com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentResponse> getRevokeCurrentAgentConsentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RevokeCurrentAgentConsent",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentRequest,
+      com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentResponse> getRevokeCurrentAgentConsentMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentRequest, com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentResponse> getRevokeCurrentAgentConsentMethod;
+    if ((getRevokeCurrentAgentConsentMethod = ClientServiceGrpc.getRevokeCurrentAgentConsentMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getRevokeCurrentAgentConsentMethod = ClientServiceGrpc.getRevokeCurrentAgentConsentMethod) == null) {
+          ClientServiceGrpc.getRevokeCurrentAgentConsentMethod = getRevokeCurrentAgentConsentMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentRequest, com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RevokeCurrentAgentConsent"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("RevokeCurrentAgentConsent"))
+              .build();
+        }
+      }
+    }
+    return getRevokeCurrentAgentConsentMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest,
       com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse> getListResourceUserConsentsMethod;
 
@@ -1324,6 +1386,38 @@ public final class ClientServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed counterpart for the /ui end-user
+     * surface. Resolves the Gateway resource from the env's
+     * gateway_configurations.application_id automatically; external_user_id
+     * is forced from the session, so the caller cannot list another user's
+     * consents. Shape mirrors ListResourceUserConsentsResponse so the
+     * frontend's consent-list consumer doesn't need to branch on mode.
+     * </pre>
+     */
+    default void listCurrentAgentConsents(com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCurrentAgentConsentsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER revoke. The caller can only revoke a
+     * consent row whose external_user_id matches the calling user's
+     * session (server-side ownership check). Revocation atomically
+     * deletes the consent row AND marks every ACTIVE refresh token
+     * minted for (env, client_id, external_user_id) as REVOKED so the
+     * agent cannot mint new access tokens. Access tokens already in
+     * the wild continue to work until their bounded JWT TTL — that
+     * window is configurable per MCP server via access_token_expiry.
+     * </pre>
+     */
+    default void revokeCurrentAgentConsent(com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRevokeCurrentAgentConsentMethod(), responseObserver);
+    }
+
+    /**
      */
     default void listResourceUserConsents(com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse> responseObserver) {
@@ -1625,6 +1719,40 @@ public final class ClientServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed counterpart for the /ui end-user
+     * surface. Resolves the Gateway resource from the env's
+     * gateway_configurations.application_id automatically; external_user_id
+     * is forced from the session, so the caller cannot list another user's
+     * consents. Shape mirrors ListResourceUserConsentsResponse so the
+     * frontend's consent-list consumer doesn't need to branch on mode.
+     * </pre>
+     */
+    public void listCurrentAgentConsents(com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListCurrentAgentConsentsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER revoke. The caller can only revoke a
+     * consent row whose external_user_id matches the calling user's
+     * session (server-side ownership check). Revocation atomically
+     * deletes the consent row AND marks every ACTIVE refresh token
+     * minted for (env, client_id, external_user_id) as REVOKED so the
+     * agent cannot mint new access tokens. Access tokens already in
+     * the wild continue to work until their bounded JWT TTL — that
+     * window is configurable per MCP server via access_token_expiry.
+     * </pre>
+     */
+    public void revokeCurrentAgentConsent(com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRevokeCurrentAgentConsentMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      */
     public void listResourceUserConsents(com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse> responseObserver) {
@@ -1897,6 +2025,38 @@ public final class ClientServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse listResourceClients(com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListResourceClientsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed counterpart for the /ui end-user
+     * surface. Resolves the Gateway resource from the env's
+     * gateway_configurations.application_id automatically; external_user_id
+     * is forced from the session, so the caller cannot list another user's
+     * consents. Shape mirrors ListResourceUserConsentsResponse so the
+     * frontend's consent-list consumer doesn't need to branch on mode.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsResponse listCurrentAgentConsents(com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCurrentAgentConsentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER revoke. The caller can only revoke a
+     * consent row whose external_user_id matches the calling user's
+     * session (server-side ownership check). Revocation atomically
+     * deletes the consent row AND marks every ACTIVE refresh token
+     * minted for (env, client_id, external_user_id) as REVOKED so the
+     * agent cannot mint new access tokens. Access tokens already in
+     * the wild continue to work until their bounded JWT TTL — that
+     * window is configurable per MCP server via access_token_expiry.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentResponse revokeCurrentAgentConsent(com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRevokeCurrentAgentConsentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2190,6 +2350,40 @@ public final class ClientServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Phase 2 — SESSION_USER-authed counterpart for the /ui end-user
+     * surface. Resolves the Gateway resource from the env's
+     * gateway_configurations.application_id automatically; external_user_id
+     * is forced from the session, so the caller cannot list another user's
+     * consents. Shape mirrors ListResourceUserConsentsResponse so the
+     * frontend's consent-list consumer doesn't need to branch on mode.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsResponse> listCurrentAgentConsents(
+        com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListCurrentAgentConsentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Phase 2 — SESSION_USER revoke. The caller can only revoke a
+     * consent row whose external_user_id matches the calling user's
+     * session (server-side ownership check). Revocation atomically
+     * deletes the consent row AND marks every ACTIVE refresh token
+     * minted for (env, client_id, external_user_id) as REVOKED so the
+     * agent cannot mint new access tokens. Access tokens already in
+     * the wild continue to work until their bounded JWT TTL — that
+     * window is configurable per MCP server via access_token_expiry.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentResponse> revokeCurrentAgentConsent(
+        com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRevokeCurrentAgentConsentMethod(), getCallOptions()), request);
+    }
+
+    /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse> listResourceUserConsents(
         com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest request) {
@@ -2298,16 +2492,18 @@ public final class ClientServiceGrpc {
   private static final int METHODID_UPDATE_RESOURCE_CLIENT = 22;
   private static final int METHODID_GET_RESOURCE_CLIENT = 23;
   private static final int METHODID_LIST_RESOURCE_CLIENTS = 24;
-  private static final int METHODID_LIST_RESOURCE_USER_CONSENTS = 25;
-  private static final int METHODID_DELETE_RESOURCE_CLIENT = 26;
-  private static final int METHODID_REGISTER_CLIENT = 27;
-  private static final int METHODID_CREATE_SCOPE = 28;
-  private static final int METHODID_LIST_SCOPES = 29;
-  private static final int METHODID_UPDATE_SCOPE = 30;
-  private static final int METHODID_DELETE_SCOPE = 31;
-  private static final int METHODID_GET_CONSENT_DETAILS = 32;
-  private static final int METHODID_REVOKE_USER_CONSENT = 33;
-  private static final int METHODID_ENSURE_RESOURCE_CONNECTION = 34;
+  private static final int METHODID_LIST_CURRENT_AGENT_CONSENTS = 25;
+  private static final int METHODID_REVOKE_CURRENT_AGENT_CONSENT = 26;
+  private static final int METHODID_LIST_RESOURCE_USER_CONSENTS = 27;
+  private static final int METHODID_DELETE_RESOURCE_CLIENT = 28;
+  private static final int METHODID_REGISTER_CLIENT = 29;
+  private static final int METHODID_CREATE_SCOPE = 30;
+  private static final int METHODID_LIST_SCOPES = 31;
+  private static final int METHODID_UPDATE_SCOPE = 32;
+  private static final int METHODID_DELETE_SCOPE = 33;
+  private static final int METHODID_GET_CONSENT_DETAILS = 34;
+  private static final int METHODID_REVOKE_USER_CONSENT = 35;
+  private static final int METHODID_ENSURE_RESOURCE_CONNECTION = 36;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2425,6 +2621,14 @@ public final class ClientServiceGrpc {
         case METHODID_LIST_RESOURCE_CLIENTS:
           serviceImpl.listResourceClients((com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse>) responseObserver);
+          break;
+        case METHODID_LIST_CURRENT_AGENT_CONSENTS:
+          serviceImpl.listCurrentAgentConsents((com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsResponse>) responseObserver);
+          break;
+        case METHODID_REVOKE_CURRENT_AGENT_CONSENT:
+          serviceImpl.revokeCurrentAgentConsent((com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentResponse>) responseObserver);
           break;
         case METHODID_LIST_RESOURCE_USER_CONSENTS:
           serviceImpl.listResourceUserConsents((com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest) request,
@@ -2660,6 +2864,20 @@ public final class ClientServiceGrpc {
               com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse>(
                 service, METHODID_LIST_RESOURCE_CLIENTS)))
         .addMethod(
+          getListCurrentAgentConsentsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsRequest,
+              com.scalekit.grpc.scalekit.v1.clients.ListCurrentAgentConsentsResponse>(
+                service, METHODID_LIST_CURRENT_AGENT_CONSENTS)))
+        .addMethod(
+          getRevokeCurrentAgentConsentMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentRequest,
+              com.scalekit.grpc.scalekit.v1.clients.RevokeCurrentAgentConsentResponse>(
+                service, METHODID_REVOKE_CURRENT_AGENT_CONSENT)))
+        .addMethod(
           getListResourceUserConsentsMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -2802,6 +3020,8 @@ public final class ClientServiceGrpc {
               .addMethod(getUpdateResourceClientMethod())
               .addMethod(getGetResourceClientMethod())
               .addMethod(getListResourceClientsMethod())
+              .addMethod(getListCurrentAgentConsentsMethod())
+              .addMethod(getRevokeCurrentAgentConsentMethod())
               .addMethod(getListResourceUserConsentsMethod())
               .addMethod(getDeleteResourceClientMethod())
               .addMethod(getRegisterClientMethod())

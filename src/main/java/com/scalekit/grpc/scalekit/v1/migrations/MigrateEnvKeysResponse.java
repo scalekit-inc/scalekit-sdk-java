@@ -17,6 +17,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private MigrateEnvKeysResponse() {
+    failedEnvironmentIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    unrecoverableRows_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -50,6 +53,155 @@ private static final long serialVersionUID = 0L;
     return environmentsProcessed_;
   }
 
+  public static final int FAILED_ENVIRONMENT_IDS_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList failedEnvironmentIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <pre>
+   * Environment IDs that failed during processing. The migration continues past failures
+   * and short-circuits if more than five environments fail. Successful environments are
+   * counted in environments_processed.
+   * </pre>
+   *
+   * <code>repeated string failed_environment_ids = 2 [json_name = "failedEnvironmentIds"];</code>
+   * @return A list containing the failedEnvironmentIds.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getFailedEnvironmentIdsList() {
+    return failedEnvironmentIds_;
+  }
+  /**
+   * <pre>
+   * Environment IDs that failed during processing. The migration continues past failures
+   * and short-circuits if more than five environments fail. Successful environments are
+   * counted in environments_processed.
+   * </pre>
+   *
+   * <code>repeated string failed_environment_ids = 2 [json_name = "failedEnvironmentIds"];</code>
+   * @return The count of failedEnvironmentIds.
+   */
+  public int getFailedEnvironmentIdsCount() {
+    return failedEnvironmentIds_.size();
+  }
+  /**
+   * <pre>
+   * Environment IDs that failed during processing. The migration continues past failures
+   * and short-circuits if more than five environments fail. Successful environments are
+   * counted in environments_processed.
+   * </pre>
+   *
+   * <code>repeated string failed_environment_ids = 2 [json_name = "failedEnvironmentIds"];</code>
+   * @param index The index of the element to return.
+   * @return The failedEnvironmentIds at the given index.
+   */
+  public java.lang.String getFailedEnvironmentIds(int index) {
+    return failedEnvironmentIds_.get(index);
+  }
+  /**
+   * <pre>
+   * Environment IDs that failed during processing. The migration continues past failures
+   * and short-circuits if more than five environments fail. Successful environments are
+   * counted in environments_processed.
+   * </pre>
+   *
+   * <code>repeated string failed_environment_ids = 2 [json_name = "failedEnvironmentIds"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the failedEnvironmentIds at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getFailedEnvironmentIdsBytes(int index) {
+    return failedEnvironmentIds_.getByteString(index);
+  }
+
+  public static final int UNRECOVERABLE_ROWS_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private java.util.List<com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips> unrecoverableRows_;
+  /**
+   * <pre>
+   * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+   * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+   * complete for those environments; DestroyDEK is safe to call.
+   * </pre>
+   *
+   * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips> getUnrecoverableRowsList() {
+    return unrecoverableRows_;
+  }
+  /**
+   * <pre>
+   * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+   * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+   * complete for those environments; DestroyDEK is safe to call.
+   * </pre>
+   *
+   * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkipsOrBuilder> 
+      getUnrecoverableRowsOrBuilderList() {
+    return unrecoverableRows_;
+  }
+  /**
+   * <pre>
+   * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+   * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+   * complete for those environments; DestroyDEK is safe to call.
+   * </pre>
+   *
+   * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+   */
+  @java.lang.Override
+  public int getUnrecoverableRowsCount() {
+    return unrecoverableRows_.size();
+  }
+  /**
+   * <pre>
+   * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+   * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+   * complete for those environments; DestroyDEK is safe to call.
+   * </pre>
+   *
+   * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips getUnrecoverableRows(int index) {
+    return unrecoverableRows_.get(index);
+  }
+  /**
+   * <pre>
+   * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+   * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+   * complete for those environments; DestroyDEK is safe to call.
+   * </pre>
+   *
+   * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkipsOrBuilder getUnrecoverableRowsOrBuilder(
+      int index) {
+    return unrecoverableRows_.get(index);
+  }
+
+  public static final int ACCEPTED_FIELD_NUMBER = 4;
+  private boolean accepted_ = false;
+  /**
+   * <pre>
+   * True when async was requested and the migration was accepted for background processing.
+   * The other fields are zero/empty in that case — outcome is reported via server logs and
+   * re-encryption events, not in this response.
+   * </pre>
+   *
+   * <code>bool accepted = 4 [json_name = "accepted"];</code>
+   * @return The accepted.
+   */
+  @java.lang.Override
+  public boolean getAccepted() {
+    return accepted_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -67,6 +219,15 @@ private static final long serialVersionUID = 0L;
     if (environmentsProcessed_ != 0) {
       output.writeInt32(1, environmentsProcessed_);
     }
+    for (int i = 0; i < failedEnvironmentIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, failedEnvironmentIds_.getRaw(i));
+    }
+    for (int i = 0; i < unrecoverableRows_.size(); i++) {
+      output.writeMessage(3, unrecoverableRows_.get(i));
+    }
+    if (accepted_ != false) {
+      output.writeBool(4, accepted_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -79,6 +240,22 @@ private static final long serialVersionUID = 0L;
     if (environmentsProcessed_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, environmentsProcessed_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < failedEnvironmentIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(failedEnvironmentIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getFailedEnvironmentIdsList().size();
+    }
+    for (int i = 0; i < unrecoverableRows_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, unrecoverableRows_.get(i));
+    }
+    if (accepted_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, accepted_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -97,6 +274,12 @@ private static final long serialVersionUID = 0L;
 
     if (getEnvironmentsProcessed()
         != other.getEnvironmentsProcessed()) return false;
+    if (!getFailedEnvironmentIdsList()
+        .equals(other.getFailedEnvironmentIdsList())) return false;
+    if (!getUnrecoverableRowsList()
+        .equals(other.getUnrecoverableRowsList())) return false;
+    if (getAccepted()
+        != other.getAccepted()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -110,6 +293,17 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ENVIRONMENTS_PROCESSED_FIELD_NUMBER;
     hash = (53 * hash) + getEnvironmentsProcessed();
+    if (getFailedEnvironmentIdsCount() > 0) {
+      hash = (37 * hash) + FAILED_ENVIRONMENT_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getFailedEnvironmentIdsList().hashCode();
+    }
+    if (getUnrecoverableRowsCount() > 0) {
+      hash = (37 * hash) + UNRECOVERABLE_ROWS_FIELD_NUMBER;
+      hash = (53 * hash) + getUnrecoverableRowsList().hashCode();
+    }
+    hash = (37 * hash) + ACCEPTED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getAccepted());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -242,6 +436,16 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       environmentsProcessed_ = 0;
+      failedEnvironmentIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      if (unrecoverableRowsBuilder_ == null) {
+        unrecoverableRows_ = java.util.Collections.emptyList();
+      } else {
+        unrecoverableRows_ = null;
+        unrecoverableRowsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
+      accepted_ = false;
       return this;
     }
 
@@ -268,15 +472,35 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse buildPartial() {
       com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse result = new com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse result) {
+      if (unrecoverableRowsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          unrecoverableRows_ = java.util.Collections.unmodifiableList(unrecoverableRows_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.unrecoverableRows_ = unrecoverableRows_;
+      } else {
+        result.unrecoverableRows_ = unrecoverableRowsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.environmentsProcessed_ = environmentsProcessed_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        failedEnvironmentIds_.makeImmutable();
+        result.failedEnvironmentIds_ = failedEnvironmentIds_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.accepted_ = accepted_;
       }
     }
 
@@ -327,6 +551,45 @@ private static final long serialVersionUID = 0L;
       if (other.getEnvironmentsProcessed() != 0) {
         setEnvironmentsProcessed(other.getEnvironmentsProcessed());
       }
+      if (!other.failedEnvironmentIds_.isEmpty()) {
+        if (failedEnvironmentIds_.isEmpty()) {
+          failedEnvironmentIds_ = other.failedEnvironmentIds_;
+          bitField0_ |= 0x00000002;
+        } else {
+          ensureFailedEnvironmentIdsIsMutable();
+          failedEnvironmentIds_.addAll(other.failedEnvironmentIds_);
+        }
+        onChanged();
+      }
+      if (unrecoverableRowsBuilder_ == null) {
+        if (!other.unrecoverableRows_.isEmpty()) {
+          if (unrecoverableRows_.isEmpty()) {
+            unrecoverableRows_ = other.unrecoverableRows_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureUnrecoverableRowsIsMutable();
+            unrecoverableRows_.addAll(other.unrecoverableRows_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.unrecoverableRows_.isEmpty()) {
+          if (unrecoverableRowsBuilder_.isEmpty()) {
+            unrecoverableRowsBuilder_.dispose();
+            unrecoverableRowsBuilder_ = null;
+            unrecoverableRows_ = other.unrecoverableRows_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            unrecoverableRowsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getUnrecoverableRowsFieldBuilder() : null;
+          } else {
+            unrecoverableRowsBuilder_.addAllMessages(other.unrecoverableRows_);
+          }
+        }
+      }
+      if (other.getAccepted() != false) {
+        setAccepted(other.getAccepted());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -358,6 +621,30 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 8
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureFailedEnvironmentIdsIsMutable();
+              failedEnvironmentIds_.add(s);
+              break;
+            } // case 18
+            case 26: {
+              com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips m =
+                  input.readMessage(
+                      com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips.parser(),
+                      extensionRegistry);
+              if (unrecoverableRowsBuilder_ == null) {
+                ensureUnrecoverableRowsIsMutable();
+                unrecoverableRows_.add(m);
+              } else {
+                unrecoverableRowsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 26
+            case 32: {
+              accepted_ = input.readBool();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 32
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -403,6 +690,569 @@ private static final long serialVersionUID = 0L;
     public Builder clearEnvironmentsProcessed() {
       bitField0_ = (bitField0_ & ~0x00000001);
       environmentsProcessed_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList failedEnvironmentIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureFailedEnvironmentIdsIsMutable() {
+      if (!failedEnvironmentIds_.isModifiable()) {
+        failedEnvironmentIds_ = new com.google.protobuf.LazyStringArrayList(failedEnvironmentIds_);
+      }
+      bitField0_ |= 0x00000002;
+    }
+    /**
+     * <pre>
+     * Environment IDs that failed during processing. The migration continues past failures
+     * and short-circuits if more than five environments fail. Successful environments are
+     * counted in environments_processed.
+     * </pre>
+     *
+     * <code>repeated string failed_environment_ids = 2 [json_name = "failedEnvironmentIds"];</code>
+     * @return A list containing the failedEnvironmentIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getFailedEnvironmentIdsList() {
+      failedEnvironmentIds_.makeImmutable();
+      return failedEnvironmentIds_;
+    }
+    /**
+     * <pre>
+     * Environment IDs that failed during processing. The migration continues past failures
+     * and short-circuits if more than five environments fail. Successful environments are
+     * counted in environments_processed.
+     * </pre>
+     *
+     * <code>repeated string failed_environment_ids = 2 [json_name = "failedEnvironmentIds"];</code>
+     * @return The count of failedEnvironmentIds.
+     */
+    public int getFailedEnvironmentIdsCount() {
+      return failedEnvironmentIds_.size();
+    }
+    /**
+     * <pre>
+     * Environment IDs that failed during processing. The migration continues past failures
+     * and short-circuits if more than five environments fail. Successful environments are
+     * counted in environments_processed.
+     * </pre>
+     *
+     * <code>repeated string failed_environment_ids = 2 [json_name = "failedEnvironmentIds"];</code>
+     * @param index The index of the element to return.
+     * @return The failedEnvironmentIds at the given index.
+     */
+    public java.lang.String getFailedEnvironmentIds(int index) {
+      return failedEnvironmentIds_.get(index);
+    }
+    /**
+     * <pre>
+     * Environment IDs that failed during processing. The migration continues past failures
+     * and short-circuits if more than five environments fail. Successful environments are
+     * counted in environments_processed.
+     * </pre>
+     *
+     * <code>repeated string failed_environment_ids = 2 [json_name = "failedEnvironmentIds"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the failedEnvironmentIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getFailedEnvironmentIdsBytes(int index) {
+      return failedEnvironmentIds_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * Environment IDs that failed during processing. The migration continues past failures
+     * and short-circuits if more than five environments fail. Successful environments are
+     * counted in environments_processed.
+     * </pre>
+     *
+     * <code>repeated string failed_environment_ids = 2 [json_name = "failedEnvironmentIds"];</code>
+     * @param index The index to set the value at.
+     * @param value The failedEnvironmentIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFailedEnvironmentIds(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureFailedEnvironmentIdsIsMutable();
+      failedEnvironmentIds_.set(index, value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Environment IDs that failed during processing. The migration continues past failures
+     * and short-circuits if more than five environments fail. Successful environments are
+     * counted in environments_processed.
+     * </pre>
+     *
+     * <code>repeated string failed_environment_ids = 2 [json_name = "failedEnvironmentIds"];</code>
+     * @param value The failedEnvironmentIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addFailedEnvironmentIds(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureFailedEnvironmentIdsIsMutable();
+      failedEnvironmentIds_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Environment IDs that failed during processing. The migration continues past failures
+     * and short-circuits if more than five environments fail. Successful environments are
+     * counted in environments_processed.
+     * </pre>
+     *
+     * <code>repeated string failed_environment_ids = 2 [json_name = "failedEnvironmentIds"];</code>
+     * @param values The failedEnvironmentIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllFailedEnvironmentIds(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureFailedEnvironmentIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, failedEnvironmentIds_);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Environment IDs that failed during processing. The migration continues past failures
+     * and short-circuits if more than five environments fail. Successful environments are
+     * counted in environments_processed.
+     * </pre>
+     *
+     * <code>repeated string failed_environment_ids = 2 [json_name = "failedEnvironmentIds"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFailedEnvironmentIds() {
+      failedEnvironmentIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Environment IDs that failed during processing. The migration continues past failures
+     * and short-circuits if more than five environments fail. Successful environments are
+     * counted in environments_processed.
+     * </pre>
+     *
+     * <code>repeated string failed_environment_ids = 2 [json_name = "failedEnvironmentIds"];</code>
+     * @param value The bytes of the failedEnvironmentIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addFailedEnvironmentIdsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureFailedEnvironmentIdsIsMutable();
+      failedEnvironmentIds_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips> unrecoverableRows_ =
+      java.util.Collections.emptyList();
+    private void ensureUnrecoverableRowsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        unrecoverableRows_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips>(unrecoverableRows_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips, com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips.Builder, com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkipsOrBuilder> unrecoverableRowsBuilder_;
+
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips> getUnrecoverableRowsList() {
+      if (unrecoverableRowsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(unrecoverableRows_);
+      } else {
+        return unrecoverableRowsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public int getUnrecoverableRowsCount() {
+      if (unrecoverableRowsBuilder_ == null) {
+        return unrecoverableRows_.size();
+      } else {
+        return unrecoverableRowsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips getUnrecoverableRows(int index) {
+      if (unrecoverableRowsBuilder_ == null) {
+        return unrecoverableRows_.get(index);
+      } else {
+        return unrecoverableRowsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public Builder setUnrecoverableRows(
+        int index, com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips value) {
+      if (unrecoverableRowsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUnrecoverableRowsIsMutable();
+        unrecoverableRows_.set(index, value);
+        onChanged();
+      } else {
+        unrecoverableRowsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public Builder setUnrecoverableRows(
+        int index, com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips.Builder builderForValue) {
+      if (unrecoverableRowsBuilder_ == null) {
+        ensureUnrecoverableRowsIsMutable();
+        unrecoverableRows_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        unrecoverableRowsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public Builder addUnrecoverableRows(com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips value) {
+      if (unrecoverableRowsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUnrecoverableRowsIsMutable();
+        unrecoverableRows_.add(value);
+        onChanged();
+      } else {
+        unrecoverableRowsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public Builder addUnrecoverableRows(
+        int index, com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips value) {
+      if (unrecoverableRowsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUnrecoverableRowsIsMutable();
+        unrecoverableRows_.add(index, value);
+        onChanged();
+      } else {
+        unrecoverableRowsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public Builder addUnrecoverableRows(
+        com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips.Builder builderForValue) {
+      if (unrecoverableRowsBuilder_ == null) {
+        ensureUnrecoverableRowsIsMutable();
+        unrecoverableRows_.add(builderForValue.build());
+        onChanged();
+      } else {
+        unrecoverableRowsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public Builder addUnrecoverableRows(
+        int index, com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips.Builder builderForValue) {
+      if (unrecoverableRowsBuilder_ == null) {
+        ensureUnrecoverableRowsIsMutable();
+        unrecoverableRows_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        unrecoverableRowsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public Builder addAllUnrecoverableRows(
+        java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips> values) {
+      if (unrecoverableRowsBuilder_ == null) {
+        ensureUnrecoverableRowsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, unrecoverableRows_);
+        onChanged();
+      } else {
+        unrecoverableRowsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public Builder clearUnrecoverableRows() {
+      if (unrecoverableRowsBuilder_ == null) {
+        unrecoverableRows_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        unrecoverableRowsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public Builder removeUnrecoverableRows(int index) {
+      if (unrecoverableRowsBuilder_ == null) {
+        ensureUnrecoverableRowsIsMutable();
+        unrecoverableRows_.remove(index);
+        onChanged();
+      } else {
+        unrecoverableRowsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips.Builder getUnrecoverableRowsBuilder(
+        int index) {
+      return getUnrecoverableRowsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkipsOrBuilder getUnrecoverableRowsOrBuilder(
+        int index) {
+      if (unrecoverableRowsBuilder_ == null) {
+        return unrecoverableRows_.get(index);  } else {
+        return unrecoverableRowsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public java.util.List<? extends com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkipsOrBuilder> 
+         getUnrecoverableRowsOrBuilderList() {
+      if (unrecoverableRowsBuilder_ != null) {
+        return unrecoverableRowsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(unrecoverableRows_);
+      }
+    }
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips.Builder addUnrecoverableRowsBuilder() {
+      return getUnrecoverableRowsFieldBuilder().addBuilder(
+          com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips.Builder addUnrecoverableRowsBuilder(
+        int index) {
+      return getUnrecoverableRowsFieldBuilder().addBuilder(
+          index, com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+     * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+     * complete for those environments; DestroyDEK is safe to call.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips.Builder> 
+         getUnrecoverableRowsBuilderList() {
+      return getUnrecoverableRowsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips, com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips.Builder, com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkipsOrBuilder> 
+        getUnrecoverableRowsFieldBuilder() {
+      if (unrecoverableRowsBuilder_ == null) {
+        unrecoverableRowsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips, com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips.Builder, com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkipsOrBuilder>(
+                unrecoverableRows_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        unrecoverableRows_ = null;
+      }
+      return unrecoverableRowsBuilder_;
+    }
+
+    private boolean accepted_ ;
+    /**
+     * <pre>
+     * True when async was requested and the migration was accepted for background processing.
+     * The other fields are zero/empty in that case — outcome is reported via server logs and
+     * re-encryption events, not in this response.
+     * </pre>
+     *
+     * <code>bool accepted = 4 [json_name = "accepted"];</code>
+     * @return The accepted.
+     */
+    @java.lang.Override
+    public boolean getAccepted() {
+      return accepted_;
+    }
+    /**
+     * <pre>
+     * True when async was requested and the migration was accepted for background processing.
+     * The other fields are zero/empty in that case — outcome is reported via server logs and
+     * re-encryption events, not in this response.
+     * </pre>
+     *
+     * <code>bool accepted = 4 [json_name = "accepted"];</code>
+     * @param value The accepted to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAccepted(boolean value) {
+
+      accepted_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * True when async was requested and the migration was accepted for background processing.
+     * The other fields are zero/empty in that case — outcome is reported via server logs and
+     * re-encryption events, not in this response.
+     * </pre>
+     *
+     * <code>bool accepted = 4 [json_name = "accepted"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAccepted() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      accepted_ = false;
       onChanged();
       return this;
     }

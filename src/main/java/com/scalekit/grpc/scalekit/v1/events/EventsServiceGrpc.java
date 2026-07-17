@@ -46,6 +46,37 @@ public final class EventsServiceGrpc {
     return getListEventsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedRequest,
+      com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedResponse> getListEventsPaginatedMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListEventsPaginated",
+      requestType = com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedRequest,
+      com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedResponse> getListEventsPaginatedMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedRequest, com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedResponse> getListEventsPaginatedMethod;
+    if ((getListEventsPaginatedMethod = EventsServiceGrpc.getListEventsPaginatedMethod) == null) {
+      synchronized (EventsServiceGrpc.class) {
+        if ((getListEventsPaginatedMethod = EventsServiceGrpc.getListEventsPaginatedMethod) == null) {
+          EventsServiceGrpc.getListEventsPaginatedMethod = getListEventsPaginatedMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedRequest, com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListEventsPaginated"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new EventsServiceMethodDescriptorSupplier("ListEventsPaginated"))
+              .build();
+        }
+      }
+    }
+    return getListEventsPaginatedMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.events.SendCustomEventRequest,
       com.scalekit.grpc.scalekit.v1.events.SendCustomEventResponse> getSendCustomEventMethod;
 
@@ -134,6 +165,13 @@ public final class EventsServiceGrpc {
 
     /**
      */
+    default void listEventsPaginated(com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListEventsPaginatedMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void sendCustomEvent(com.scalekit.grpc.scalekit.v1.events.SendCustomEventRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.events.SendCustomEventResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSendCustomEventMethod(), responseObserver);
@@ -177,6 +215,14 @@ public final class EventsServiceGrpc {
 
     /**
      */
+    public void listEventsPaginated(com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListEventsPaginatedMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void sendCustomEvent(com.scalekit.grpc.scalekit.v1.events.SendCustomEventRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.events.SendCustomEventResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -205,6 +251,13 @@ public final class EventsServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.events.ListEventsResponse listEvents(com.scalekit.grpc.scalekit.v1.events.ListEventsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedResponse listEventsPaginated(com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEventsPaginatedMethod(), getCallOptions(), request);
     }
 
     /**
@@ -241,6 +294,14 @@ public final class EventsServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedResponse> listEventsPaginated(
+        com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListEventsPaginatedMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.events.SendCustomEventResponse> sendCustomEvent(
         com.scalekit.grpc.scalekit.v1.events.SendCustomEventRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -249,7 +310,8 @@ public final class EventsServiceGrpc {
   }
 
   private static final int METHODID_LIST_EVENTS = 0;
-  private static final int METHODID_SEND_CUSTOM_EVENT = 1;
+  private static final int METHODID_LIST_EVENTS_PAGINATED = 1;
+  private static final int METHODID_SEND_CUSTOM_EVENT = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -271,6 +333,10 @@ public final class EventsServiceGrpc {
         case METHODID_LIST_EVENTS:
           serviceImpl.listEvents((com.scalekit.grpc.scalekit.v1.events.ListEventsRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.events.ListEventsResponse>) responseObserver);
+          break;
+        case METHODID_LIST_EVENTS_PAGINATED:
+          serviceImpl.listEventsPaginated((com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedResponse>) responseObserver);
           break;
         case METHODID_SEND_CUSTOM_EVENT:
           serviceImpl.sendCustomEvent((com.scalekit.grpc.scalekit.v1.events.SendCustomEventRequest) request,
@@ -301,6 +367,13 @@ public final class EventsServiceGrpc {
               com.scalekit.grpc.scalekit.v1.events.ListEventsRequest,
               com.scalekit.grpc.scalekit.v1.events.ListEventsResponse>(
                 service, METHODID_LIST_EVENTS)))
+        .addMethod(
+          getListEventsPaginatedMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedRequest,
+              com.scalekit.grpc.scalekit.v1.events.ListEventsPaginatedResponse>(
+                service, METHODID_LIST_EVENTS_PAGINATED)))
         .addMethod(
           getSendCustomEventMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -357,6 +430,7 @@ public final class EventsServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new EventsServiceFileDescriptorSupplier())
               .addMethod(getListEventsMethod())
+              .addMethod(getListEventsPaginatedMethod())
               .addMethod(getSendCustomEventMethod())
               .build();
         }

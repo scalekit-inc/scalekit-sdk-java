@@ -55,7 +55,7 @@ This is the official Java SDK for [Scalekit](https://scalekit.com) — the auth 
 **Gradle:**
 
 ```gradle
-implementation "com.scalekit:scalekit-sdk-java:2.0.10"
+implementation "com.scalekit:scalekit-sdk-java:2.2.0"
 ```
 
 **Maven:**
@@ -64,7 +64,7 @@ implementation "com.scalekit:scalekit-sdk-java:2.0.10"
 <dependency>
     <groupId>com.scalekit</groupId>
     <artifactId>scalekit-sdk-java</artifactId>
-    <version>2.0.10</version>
+    <version>2.2.0</version>
 </dependency>
 ```
 

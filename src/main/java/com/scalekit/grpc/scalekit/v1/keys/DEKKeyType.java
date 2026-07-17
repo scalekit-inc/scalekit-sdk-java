@@ -6,7 +6,7 @@ package com.scalekit.grpc.scalekit.v1.keys;
 
 /**
  * <pre>
- * DEKKeyType represents the type of Data Encryption Key
+ * DEKKeyType represents the encryption mode for a Data Encryption Key.
  * </pre>
  *
  * Protobuf enum {@code scalekit.v1.keys.DEKKeyType}
@@ -14,20 +14,20 @@ package com.scalekit.grpc.scalekit.v1.keys;
 public enum DEKKeyType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <pre>
-   * Default: ENVIRONMENT_KEY (envelope encryption)
-   * </pre>
-   *
    * <code>DEK_KEY_TYPE_UNSPECIFIED = 0;</code>
    */
   DEK_KEY_TYPE_UNSPECIFIED(0),
   /**
+   * <pre>
+   * Default: Scalekit-managed envelope encryption
+   * </pre>
+   *
    * <code>ENVIRONMENT_KEY = 1;</code>
    */
   ENVIRONMENT_KEY(1),
   /**
    * <pre>
-   * Bring Your Own Key - key_ref points to customer KMS
+   * Bring Your Own Key — key_ref points to a customer-managed KMS key
    * </pre>
    *
    * <code>BYOK = 2;</code>
@@ -35,7 +35,7 @@ public enum DEKKeyType
   BYOK(2),
   /**
    * <pre>
-   * Scalekit-managed KMS key
+   * Scalekit-managed KMS key (external KMS, Scalekit-owned)
    * </pre>
    *
    * <code>SCALEKIT_MANAGED_KEY = 3;</code>
@@ -45,20 +45,20 @@ public enum DEKKeyType
   ;
 
   /**
-   * <pre>
-   * Default: ENVIRONMENT_KEY (envelope encryption)
-   * </pre>
-   *
    * <code>DEK_KEY_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int DEK_KEY_TYPE_UNSPECIFIED_VALUE = 0;
   /**
+   * <pre>
+   * Default: Scalekit-managed envelope encryption
+   * </pre>
+   *
    * <code>ENVIRONMENT_KEY = 1;</code>
    */
   public static final int ENVIRONMENT_KEY_VALUE = 1;
   /**
    * <pre>
-   * Bring Your Own Key - key_ref points to customer KMS
+   * Bring Your Own Key — key_ref points to a customer-managed KMS key
    * </pre>
    *
    * <code>BYOK = 2;</code>
@@ -66,7 +66,7 @@ public enum DEKKeyType
   public static final int BYOK_VALUE = 2;
   /**
    * <pre>
-   * Scalekit-managed KMS key
+   * Scalekit-managed KMS key (external KMS, Scalekit-owned)
    * </pre>
    *
    * <code>SCALEKIT_MANAGED_KEY = 3;</code>

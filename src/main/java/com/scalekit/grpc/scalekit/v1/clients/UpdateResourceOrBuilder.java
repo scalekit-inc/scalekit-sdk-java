@@ -177,5 +177,20 @@ public interface UpdateResourceOrBuilder extends
    */
   com.google.protobuf.BoolValueOrBuilder getEnableCimdOrBuilder();
 
+  /**
+   * <code>.google.protobuf.BoolValue xaa_enabled = 16 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the xaaEnabled field is set.
+   */
+  boolean hasXaaEnabled();
+  /**
+   * <code>.google.protobuf.BoolValue xaa_enabled = 16 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The xaaEnabled.
+   */
+  com.google.protobuf.BoolValue getXaaEnabled();
+  /**
+   * <code>.google.protobuf.BoolValue xaa_enabled = 16 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getXaaEnabledOrBuilder();
+
   com.scalekit.grpc.scalekit.v1.clients.UpdateResource.SettingsCase getSettingsCase();
 }

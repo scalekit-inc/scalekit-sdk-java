@@ -5,10 +5,6 @@
 package com.scalekit.grpc.scalekit.v1.keys;
 
 /**
- * <pre>
- * ListDEKsResponse returns a page of DEKs and pagination token.
- * </pre>
- *
  * Protobuf type {@code scalekit.v1.keys.ListDEKsResponse}
  */
 public final class ListDEKsResponse extends
@@ -49,14 +45,14 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private java.util.List<com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey> deks_;
   /**
-   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey> getDeksList() {
     return deks_;
   }
   /**
-   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.scalekit.grpc.scalekit.v1.keys.EnvironmentKeyOrBuilder> 
@@ -64,21 +60,21 @@ private static final long serialVersionUID = 0L;
     return deks_;
   }
   /**
-   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public int getDeksCount() {
     return deks_.size();
   }
   /**
-   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey getDeks(int index) {
     return deks_.get(index);
   }
   /**
-   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+   * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.keys.EnvironmentKeyOrBuilder getDeksOrBuilder(
@@ -90,11 +86,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
   /**
-   * <pre>
-   * Token for the next page. Empty if no more pages.
-   * </pre>
-   *
-   * <code>string next_page_token = 2 [json_name = "nextPageToken"];</code>
+   * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The nextPageToken.
    */
   @java.lang.Override
@@ -111,11 +103,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * Token for the next page. Empty if no more pages.
-   * </pre>
-   *
-   * <code>string next_page_token = 2 [json_name = "nextPageToken"];</code>
+   * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for nextPageToken.
    */
   @java.lang.Override
@@ -136,11 +124,7 @@ private static final long serialVersionUID = 0L;
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
   /**
-   * <pre>
-   * Total number of DEKs matching the request (across all pages).
-   * </pre>
-   *
-   * <code>uint32 total_size = 3 [json_name = "totalSize"];</code>
+   * <code>uint32 total_size = 3 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The totalSize.
    */
   @java.lang.Override
@@ -329,10 +313,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * ListDEKsResponse returns a page of DEKs and pagination token.
-   * </pre>
-   *
    * Protobuf type {@code scalekit.v1.keys.ListDEKsResponse}
    */
   public static final class Builder extends
@@ -586,7 +566,7 @@ private static final long serialVersionUID = 0L;
         com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey, com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey.Builder, com.scalekit.grpc.scalekit.v1.keys.EnvironmentKeyOrBuilder> deksBuilder_;
 
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey> getDeksList() {
       if (deksBuilder_ == null) {
@@ -596,7 +576,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public int getDeksCount() {
       if (deksBuilder_ == null) {
@@ -606,7 +586,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey getDeks(int index) {
       if (deksBuilder_ == null) {
@@ -616,7 +596,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setDeks(
         int index, com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey value) {
@@ -633,7 +613,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setDeks(
         int index, com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey.Builder builderForValue) {
@@ -647,7 +627,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addDeks(com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey value) {
       if (deksBuilder_ == null) {
@@ -663,7 +643,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addDeks(
         int index, com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey value) {
@@ -680,7 +660,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addDeks(
         com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey.Builder builderForValue) {
@@ -694,7 +674,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addDeks(
         int index, com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey.Builder builderForValue) {
@@ -708,7 +688,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addAllDeks(
         java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey> values) {
@@ -723,7 +703,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearDeks() {
       if (deksBuilder_ == null) {
@@ -736,7 +716,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder removeDeks(int index) {
       if (deksBuilder_ == null) {
@@ -749,14 +729,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey.Builder getDeksBuilder(
         int index) {
       return getDeksFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.keys.EnvironmentKeyOrBuilder getDeksOrBuilder(
         int index) {
@@ -766,7 +746,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<? extends com.scalekit.grpc.scalekit.v1.keys.EnvironmentKeyOrBuilder> 
          getDeksOrBuilderList() {
@@ -777,14 +757,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey.Builder addDeksBuilder() {
       return getDeksFieldBuilder().addBuilder(
           com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey.Builder addDeksBuilder(
         int index) {
@@ -792,7 +772,7 @@ private static final long serialVersionUID = 0L;
           index, com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks"];</code>
+     * <code>repeated .scalekit.v1.keys.EnvironmentKey deks = 1 [json_name = "deks", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.keys.EnvironmentKey.Builder> 
          getDeksBuilderList() {
@@ -815,11 +795,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nextPageToken_ = "";
     /**
-     * <pre>
-     * Token for the next page. Empty if no more pages.
-     * </pre>
-     *
-     * <code>string next_page_token = 2 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
@@ -835,11 +811,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Token for the next page. Empty if no more pages.
-     * </pre>
-     *
-     * <code>string next_page_token = 2 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString
@@ -856,11 +828,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Token for the next page. Empty if no more pages.
-     * </pre>
-     *
-     * <code>string next_page_token = 2 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The nextPageToken to set.
      * @return This builder for chaining.
      */
@@ -873,11 +841,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Token for the next page. Empty if no more pages.
-     * </pre>
-     *
-     * <code>string next_page_token = 2 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
@@ -887,11 +851,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Token for the next page. Empty if no more pages.
-     * </pre>
-     *
-     * <code>string next_page_token = 2 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for nextPageToken to set.
      * @return This builder for chaining.
      */
@@ -907,11 +867,7 @@ private static final long serialVersionUID = 0L;
 
     private int totalSize_ ;
     /**
-     * <pre>
-     * Total number of DEKs matching the request (across all pages).
-     * </pre>
-     *
-     * <code>uint32 total_size = 3 [json_name = "totalSize"];</code>
+     * <code>uint32 total_size = 3 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The totalSize.
      */
     @java.lang.Override
@@ -919,11 +875,7 @@ private static final long serialVersionUID = 0L;
       return totalSize_;
     }
     /**
-     * <pre>
-     * Total number of DEKs matching the request (across all pages).
-     * </pre>
-     *
-     * <code>uint32 total_size = 3 [json_name = "totalSize"];</code>
+     * <code>uint32 total_size = 3 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The totalSize to set.
      * @return This builder for chaining.
      */
@@ -935,11 +887,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Total number of DEKs matching the request (across all pages).
-     * </pre>
-     *
-     * <code>uint32 total_size = 3 [json_name = "totalSize"];</code>
+     * <code>uint32 total_size = 3 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearTotalSize() {

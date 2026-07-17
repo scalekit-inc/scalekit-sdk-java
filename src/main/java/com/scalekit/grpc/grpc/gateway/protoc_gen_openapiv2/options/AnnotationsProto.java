@@ -11,6 +11,7 @@ public final class AnnotationsProto {
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Swagger);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Schema);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Enum);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Tag);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
   }
@@ -74,6 +75,24 @@ public final class AnnotationsProto {
           .newFileScopedGeneratedExtension(
         com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.Schema.class,
         com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.Schema.getDefaultInstance());
+  public static final int OPENAPIV2_ENUM_FIELD_NUMBER = 1042;
+  /**
+   * <pre>
+   * ID assigned by protobuf-global-extension-registry&#64;google.com for gRPC-Gateway project.
+   *
+   * All IDs are the same, as assigned. It is okay that they are the same, as they extend
+   * different descriptor messages.
+   * </pre>
+   *
+   * <code>extend .google.protobuf.EnumOptions { ... }</code>
+   */
+  public static final
+    com.google.protobuf.GeneratedMessage.GeneratedExtension<
+      com.google.protobuf.DescriptorProtos.EnumOptions,
+      com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.EnumSchema> openapiv2Enum = com.google.protobuf.GeneratedMessage
+          .newFileScopedGeneratedExtension(
+        com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.EnumSchema.class,
+        com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.EnumSchema.getDefaultInstance());
   public static final int OPENAPIV2_TAG_FIELD_NUMBER = 1042;
   /**
    * <pre>
@@ -133,22 +152,25 @@ public final class AnnotationsProto {
       "openapiv2_schema\022\037.google.protobuf.Messa" +
       "geOptions\030\222\010 \001(\01321.grpc.gateway.protoc_g" +
       "en_openapiv2.options.SchemaR\017openapiv2Sc" +
-      "hema:u\n\ropenapiv2_tag\022\037.google.protobuf." +
-      "ServiceOptions\030\222\010 \001(\0132..grpc.gateway.pro" +
-      "toc_gen_openapiv2.options.TagR\014openapiv2" +
-      "Tag:~\n\017openapiv2_field\022\035.google.protobuf" +
-      ".FieldOptions\030\222\010 \001(\01325.grpc.gateway.prot" +
-      "oc_gen_openapiv2.options.JSONSchemaR\016ope" +
-      "napiv2FieldB\327\002\n;com.scalekit.grpc.grpc.g" +
-      "ateway.protoc_gen_openapiv2.optionsB\020Ann" +
-      "otationsProtoP\001ZFgithub.com/grpc-ecosyst" +
-      "em/grpc-gateway/v2/protoc-gen-openapiv2/" +
-      "options\242\002\004GGPO\252\002\'Grpc.Gateway.ProtocGenO" +
-      "penapiv2.Options\312\002\'Grpc\\Gateway\\ProtocGe" +
-      "nOpenapiv2\\Options\342\0023Grpc\\Gateway\\Protoc" +
-      "GenOpenapiv2\\Options\\GPBMetadata\352\002*Grpc:" +
-      ":Gateway::ProtocGenOpenapiv2::Optionsb\006p" +
-      "roto3"
+      "hema:{\n\016openapiv2_enum\022\034.google.protobuf" +
+      ".EnumOptions\030\222\010 \001(\01325.grpc.gateway.proto" +
+      "c_gen_openapiv2.options.EnumSchemaR\ropen" +
+      "apiv2Enum:u\n\ropenapiv2_tag\022\037.google.prot" +
+      "obuf.ServiceOptions\030\222\010 \001(\0132..grpc.gatewa" +
+      "y.protoc_gen_openapiv2.options.TagR\014open" +
+      "apiv2Tag:~\n\017openapiv2_field\022\035.google.pro" +
+      "tobuf.FieldOptions\030\222\010 \001(\01325.grpc.gateway" +
+      ".protoc_gen_openapiv2.options.JSONSchema" +
+      "R\016openapiv2FieldB\327\002\n;com.scalekit.grpc.g" +
+      "rpc.gateway.protoc_gen_openapiv2.options" +
+      "B\020AnnotationsProtoP\001ZFgithub.com/grpc-ec" +
+      "osystem/grpc-gateway/v2/protoc-gen-opena" +
+      "piv2/options\242\002\004GGPO\252\002\'Grpc.Gateway.Proto" +
+      "cGenOpenapiv2.Options\312\002\'Grpc\\Gateway\\Pro" +
+      "tocGenOpenapiv2\\Options\342\0023Grpc\\Gateway\\P" +
+      "rotocGenOpenapiv2\\Options\\GPBMetadata\352\002*" +
+      "Grpc::Gateway::ProtocGenOpenapiv2::Optio" +
+      "nsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -159,8 +181,9 @@ public final class AnnotationsProto {
     openapiv2Swagger.internalInit(descriptor.getExtensions().get(0));
     openapiv2Operation.internalInit(descriptor.getExtensions().get(1));
     openapiv2Schema.internalInit(descriptor.getExtensions().get(2));
-    openapiv2Tag.internalInit(descriptor.getExtensions().get(3));
-    openapiv2Field.internalInit(descriptor.getExtensions().get(4));
+    openapiv2Enum.internalInit(descriptor.getExtensions().get(3));
+    openapiv2Tag.internalInit(descriptor.getExtensions().get(4));
+    openapiv2Field.internalInit(descriptor.getExtensions().get(5));
     com.google.protobuf.DescriptorProtos.getDescriptor();
     com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.Openapiv2Proto.getDescriptor();
   }

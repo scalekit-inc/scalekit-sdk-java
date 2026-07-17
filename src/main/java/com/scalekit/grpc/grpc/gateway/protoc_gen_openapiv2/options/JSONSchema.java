@@ -286,6 +286,17 @@ private static final long serialVersionUID = 0L;
      */
     com.google.protobuf.ByteString
         getPathParamNameBytes();
+
+    /**
+     * <pre>
+     * Declares this field to be deprecated. Allows for the generated OpenAPI
+     * parameter to be marked as deprecated without affecting the proto field.
+     * </pre>
+     *
+     * <code>bool deprecated = 49 [json_name = "deprecated"];</code>
+     * @return The deprecated.
+     */
+    boolean getDeprecated();
   }
   /**
    * <pre>
@@ -381,6 +392,22 @@ private static final long serialVersionUID = 0L;
       }
     }
 
+    public static final int DEPRECATED_FIELD_NUMBER = 49;
+    private boolean deprecated_ = false;
+    /**
+     * <pre>
+     * Declares this field to be deprecated. Allows for the generated OpenAPI
+     * parameter to be marked as deprecated without affecting the proto field.
+     * </pre>
+     *
+     * <code>bool deprecated = 49 [json_name = "deprecated"];</code>
+     * @return The deprecated.
+     */
+    @java.lang.Override
+    public boolean getDeprecated() {
+      return deprecated_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -398,6 +425,9 @@ private static final long serialVersionUID = 0L;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pathParamName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 47, pathParamName_);
       }
+      if (deprecated_ != false) {
+        output.writeBool(49, deprecated_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -409,6 +439,10 @@ private static final long serialVersionUID = 0L;
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pathParamName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(47, pathParamName_);
+      }
+      if (deprecated_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(49, deprecated_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -427,6 +461,8 @@ private static final long serialVersionUID = 0L;
 
       if (!getPathParamName()
           .equals(other.getPathParamName())) return false;
+      if (getDeprecated()
+          != other.getDeprecated()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -440,6 +476,9 @@ private static final long serialVersionUID = 0L;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PATH_PARAM_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getPathParamName().hashCode();
+      hash = (37 * hash) + DEPRECATED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getDeprecated());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -577,6 +616,7 @@ private static final long serialVersionUID = 0L;
         super.clear();
         bitField0_ = 0;
         pathParamName_ = "";
+        deprecated_ = false;
         return this;
       }
 
@@ -612,6 +652,9 @@ private static final long serialVersionUID = 0L;
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.pathParamName_ = pathParamName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.deprecated_ = deprecated_;
         }
       }
 
@@ -664,6 +707,9 @@ private static final long serialVersionUID = 0L;
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (other.getDeprecated() != false) {
+          setDeprecated(other.getDeprecated());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -695,6 +741,11 @@ private static final long serialVersionUID = 0L;
                 bitField0_ |= 0x00000001;
                 break;
               } // case 378
+              case 392: {
+                deprecated_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 392
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -815,6 +866,53 @@ private static final long serialVersionUID = 0L;
         checkByteStringIsUtf8(value);
         pathParamName_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private boolean deprecated_ ;
+      /**
+       * <pre>
+       * Declares this field to be deprecated. Allows for the generated OpenAPI
+       * parameter to be marked as deprecated without affecting the proto field.
+       * </pre>
+       *
+       * <code>bool deprecated = 49 [json_name = "deprecated"];</code>
+       * @return The deprecated.
+       */
+      @java.lang.Override
+      public boolean getDeprecated() {
+        return deprecated_;
+      }
+      /**
+       * <pre>
+       * Declares this field to be deprecated. Allows for the generated OpenAPI
+       * parameter to be marked as deprecated without affecting the proto field.
+       * </pre>
+       *
+       * <code>bool deprecated = 49 [json_name = "deprecated"];</code>
+       * @param value The deprecated to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDeprecated(boolean value) {
+
+        deprecated_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Declares this field to be deprecated. Allows for the generated OpenAPI
+       * parameter to be marked as deprecated without affecting the proto field.
+       * </pre>
+       *
+       * <code>bool deprecated = 49 [json_name = "deprecated"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDeprecated() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        deprecated_ = false;
         onChanged();
         return this;
       }

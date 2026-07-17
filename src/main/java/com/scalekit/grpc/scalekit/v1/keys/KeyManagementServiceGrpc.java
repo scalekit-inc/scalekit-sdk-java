@@ -3,10 +3,6 @@ package com.scalekit.grpc.scalekit.v1.keys;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
- * <pre>
- * KeyManagementService provides operations for managing encryption keys
- * including Data Encryption Keys (DEKs) and master key rotation.
- * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.67.1)",
@@ -50,35 +46,66 @@ public final class KeyManagementServiceGrpc {
     return getCreateDEKMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.RotateDEKRequest,
-      com.scalekit.grpc.scalekit.v1.keys.RotateDEKResponse> getRotateDEKMethod;
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.ActivateDEKRequest,
+      com.scalekit.grpc.scalekit.v1.keys.ActivateDEKResponse> getActivateDEKMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "RotateDEK",
-      requestType = com.scalekit.grpc.scalekit.v1.keys.RotateDEKRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.keys.RotateDEKResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "ActivateDEK",
+      requestType = com.scalekit.grpc.scalekit.v1.keys.ActivateDEKRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.keys.ActivateDEKResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.RotateDEKRequest,
-      com.scalekit.grpc.scalekit.v1.keys.RotateDEKResponse> getRotateDEKMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.RotateDEKRequest, com.scalekit.grpc.scalekit.v1.keys.RotateDEKResponse> getRotateDEKMethod;
-    if ((getRotateDEKMethod = KeyManagementServiceGrpc.getRotateDEKMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.ActivateDEKRequest,
+      com.scalekit.grpc.scalekit.v1.keys.ActivateDEKResponse> getActivateDEKMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.ActivateDEKRequest, com.scalekit.grpc.scalekit.v1.keys.ActivateDEKResponse> getActivateDEKMethod;
+    if ((getActivateDEKMethod = KeyManagementServiceGrpc.getActivateDEKMethod) == null) {
       synchronized (KeyManagementServiceGrpc.class) {
-        if ((getRotateDEKMethod = KeyManagementServiceGrpc.getRotateDEKMethod) == null) {
-          KeyManagementServiceGrpc.getRotateDEKMethod = getRotateDEKMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.keys.RotateDEKRequest, com.scalekit.grpc.scalekit.v1.keys.RotateDEKResponse>newBuilder()
+        if ((getActivateDEKMethod = KeyManagementServiceGrpc.getActivateDEKMethod) == null) {
+          KeyManagementServiceGrpc.getActivateDEKMethod = getActivateDEKMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.keys.ActivateDEKRequest, com.scalekit.grpc.scalekit.v1.keys.ActivateDEKResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RotateDEK"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ActivateDEK"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.keys.RotateDEKRequest.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.keys.ActivateDEKRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.keys.RotateDEKResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("RotateDEK"))
+                  com.scalekit.grpc.scalekit.v1.keys.ActivateDEKResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("ActivateDEK"))
               .build();
         }
       }
     }
-    return getRotateDEKMethod;
+    return getActivateDEKMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.ReencryptDataRequest,
+      com.scalekit.grpc.scalekit.v1.keys.ReencryptDataResponse> getReencryptDataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReencryptData",
+      requestType = com.scalekit.grpc.scalekit.v1.keys.ReencryptDataRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.keys.ReencryptDataResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.ReencryptDataRequest,
+      com.scalekit.grpc.scalekit.v1.keys.ReencryptDataResponse> getReencryptDataMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.ReencryptDataRequest, com.scalekit.grpc.scalekit.v1.keys.ReencryptDataResponse> getReencryptDataMethod;
+    if ((getReencryptDataMethod = KeyManagementServiceGrpc.getReencryptDataMethod) == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getReencryptDataMethod = KeyManagementServiceGrpc.getReencryptDataMethod) == null) {
+          KeyManagementServiceGrpc.getReencryptDataMethod = getReencryptDataMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.keys.ReencryptDataRequest, com.scalekit.grpc.scalekit.v1.keys.ReencryptDataResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReencryptData"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.keys.ReencryptDataRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.keys.ReencryptDataResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("ReencryptData"))
+              .build();
+        }
+      }
+    }
+    return getReencryptDataMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.ListDEKsRequest,
@@ -112,66 +139,159 @@ public final class KeyManagementServiceGrpc {
     return getListDEKsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.DeleteDEKRequest,
-      com.google.protobuf.Empty> getDeleteDEKMethod;
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.GetDEKRequest,
+      com.scalekit.grpc.scalekit.v1.keys.GetDEKResponse> getGetDEKMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteDEK",
-      requestType = com.scalekit.grpc.scalekit.v1.keys.DeleteDEKRequest.class,
-      responseType = com.google.protobuf.Empty.class,
+      fullMethodName = SERVICE_NAME + '/' + "GetDEK",
+      requestType = com.scalekit.grpc.scalekit.v1.keys.GetDEKRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.keys.GetDEKResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.DeleteDEKRequest,
-      com.google.protobuf.Empty> getDeleteDEKMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.DeleteDEKRequest, com.google.protobuf.Empty> getDeleteDEKMethod;
-    if ((getDeleteDEKMethod = KeyManagementServiceGrpc.getDeleteDEKMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.GetDEKRequest,
+      com.scalekit.grpc.scalekit.v1.keys.GetDEKResponse> getGetDEKMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.GetDEKRequest, com.scalekit.grpc.scalekit.v1.keys.GetDEKResponse> getGetDEKMethod;
+    if ((getGetDEKMethod = KeyManagementServiceGrpc.getGetDEKMethod) == null) {
       synchronized (KeyManagementServiceGrpc.class) {
-        if ((getDeleteDEKMethod = KeyManagementServiceGrpc.getDeleteDEKMethod) == null) {
-          KeyManagementServiceGrpc.getDeleteDEKMethod = getDeleteDEKMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.keys.DeleteDEKRequest, com.google.protobuf.Empty>newBuilder()
+        if ((getGetDEKMethod = KeyManagementServiceGrpc.getGetDEKMethod) == null) {
+          KeyManagementServiceGrpc.getGetDEKMethod = getGetDEKMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.keys.GetDEKRequest, com.scalekit.grpc.scalekit.v1.keys.GetDEKResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteDEK"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDEK"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.keys.DeleteDEKRequest.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.keys.GetDEKRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("DeleteDEK"))
+                  com.scalekit.grpc.scalekit.v1.keys.GetDEKResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("GetDEK"))
               .build();
         }
       }
     }
-    return getDeleteDEKMethod;
+    return getGetDEKMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyRequest,
-      com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyResponse> getRotateMasterKeyMethod;
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.PatchDEKRequest,
+      com.scalekit.grpc.scalekit.v1.keys.PatchDEKResponse> getPatchDEKMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "RotateMasterKey",
-      requestType = com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "PatchDEK",
+      requestType = com.scalekit.grpc.scalekit.v1.keys.PatchDEKRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.keys.PatchDEKResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyRequest,
-      com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyResponse> getRotateMasterKeyMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyRequest, com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyResponse> getRotateMasterKeyMethod;
-    if ((getRotateMasterKeyMethod = KeyManagementServiceGrpc.getRotateMasterKeyMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.PatchDEKRequest,
+      com.scalekit.grpc.scalekit.v1.keys.PatchDEKResponse> getPatchDEKMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.PatchDEKRequest, com.scalekit.grpc.scalekit.v1.keys.PatchDEKResponse> getPatchDEKMethod;
+    if ((getPatchDEKMethod = KeyManagementServiceGrpc.getPatchDEKMethod) == null) {
       synchronized (KeyManagementServiceGrpc.class) {
-        if ((getRotateMasterKeyMethod = KeyManagementServiceGrpc.getRotateMasterKeyMethod) == null) {
-          KeyManagementServiceGrpc.getRotateMasterKeyMethod = getRotateMasterKeyMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyRequest, com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyResponse>newBuilder()
+        if ((getPatchDEKMethod = KeyManagementServiceGrpc.getPatchDEKMethod) == null) {
+          KeyManagementServiceGrpc.getPatchDEKMethod = getPatchDEKMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.keys.PatchDEKRequest, com.scalekit.grpc.scalekit.v1.keys.PatchDEKResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RotateMasterKey"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchDEK"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyRequest.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.keys.PatchDEKRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("RotateMasterKey"))
+                  com.scalekit.grpc.scalekit.v1.keys.PatchDEKResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("PatchDEK"))
               .build();
         }
       }
     }
-    return getRotateMasterKeyMethod;
+    return getPatchDEKMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest,
+      com.google.protobuf.Empty> getDestroyDEKMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DestroyDEK",
+      requestType = com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest,
+      com.google.protobuf.Empty> getDestroyDEKMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest, com.google.protobuf.Empty> getDestroyDEKMethod;
+    if ((getDestroyDEKMethod = KeyManagementServiceGrpc.getDestroyDEKMethod) == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getDestroyDEKMethod = KeyManagementServiceGrpc.getDestroyDEKMethod) == null) {
+          KeyManagementServiceGrpc.getDestroyDEKMethod = getDestroyDEKMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DestroyDEK"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("DestroyDEK"))
+              .build();
+        }
+      }
+    }
+    return getDestroyDEKMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoRequest,
+      com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoResponse> getGetBYOKSetupInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBYOKSetupInfo",
+      requestType = com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoRequest,
+      com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoResponse> getGetBYOKSetupInfoMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoRequest, com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoResponse> getGetBYOKSetupInfoMethod;
+    if ((getGetBYOKSetupInfoMethod = KeyManagementServiceGrpc.getGetBYOKSetupInfoMethod) == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getGetBYOKSetupInfoMethod = KeyManagementServiceGrpc.getGetBYOKSetupInfoMethod) == null) {
+          KeyManagementServiceGrpc.getGetBYOKSetupInfoMethod = getGetBYOKSetupInfoMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoRequest, com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBYOKSetupInfo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("GetBYOKSetupInfo"))
+              .build();
+        }
+      }
+    }
+    return getGetBYOKSetupInfoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyRequest,
+      com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyResponse> getVerifyBYOKKeyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "VerifyBYOKKey",
+      requestType = com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyRequest,
+      com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyResponse> getVerifyBYOKKeyMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyRequest, com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyResponse> getVerifyBYOKKeyMethod;
+    if ((getVerifyBYOKKeyMethod = KeyManagementServiceGrpc.getVerifyBYOKKeyMethod) == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getVerifyBYOKKeyMethod = KeyManagementServiceGrpc.getVerifyBYOKKeyMethod) == null) {
+          KeyManagementServiceGrpc.getVerifyBYOKKeyMethod = getVerifyBYOKKeyMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyRequest, com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VerifyBYOKKey"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("VerifyBYOKKey"))
+              .build();
+        }
+      }
+    }
+    return getVerifyBYOKKeyMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyRequest,
@@ -205,97 +325,128 @@ public final class KeyManagementServiceGrpc {
     return getCreateMasterKeyMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKRequest,
-      com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKResponse> getSetActiveDEKMethod;
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyRequest,
+      com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyResponse> getActivateMasterKeyMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "SetActiveDEK",
-      requestType = com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "ActivateMasterKey",
+      requestType = com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKRequest,
-      com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKResponse> getSetActiveDEKMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKRequest, com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKResponse> getSetActiveDEKMethod;
-    if ((getSetActiveDEKMethod = KeyManagementServiceGrpc.getSetActiveDEKMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyRequest,
+      com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyResponse> getActivateMasterKeyMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyRequest, com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyResponse> getActivateMasterKeyMethod;
+    if ((getActivateMasterKeyMethod = KeyManagementServiceGrpc.getActivateMasterKeyMethod) == null) {
       synchronized (KeyManagementServiceGrpc.class) {
-        if ((getSetActiveDEKMethod = KeyManagementServiceGrpc.getSetActiveDEKMethod) == null) {
-          KeyManagementServiceGrpc.getSetActiveDEKMethod = getSetActiveDEKMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKRequest, com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKResponse>newBuilder()
+        if ((getActivateMasterKeyMethod = KeyManagementServiceGrpc.getActivateMasterKeyMethod) == null) {
+          KeyManagementServiceGrpc.getActivateMasterKeyMethod = getActivateMasterKeyMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyRequest, com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetActiveDEK"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ActivateMasterKey"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKRequest.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("SetActiveDEK"))
+                  com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("ActivateMasterKey"))
               .build();
         }
       }
     }
-    return getSetActiveDEKMethod;
+    return getActivateMasterKeyMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyRequest,
-      com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyResponse> getSetActiveMasterKeyMethod;
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsRequest,
+      com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsResponse> getRewrapDEKsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "SetActiveMasterKey",
-      requestType = com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "RewrapDEKs",
+      requestType = com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyRequest,
-      com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyResponse> getSetActiveMasterKeyMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyRequest, com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyResponse> getSetActiveMasterKeyMethod;
-    if ((getSetActiveMasterKeyMethod = KeyManagementServiceGrpc.getSetActiveMasterKeyMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsRequest,
+      com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsResponse> getRewrapDEKsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsRequest, com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsResponse> getRewrapDEKsMethod;
+    if ((getRewrapDEKsMethod = KeyManagementServiceGrpc.getRewrapDEKsMethod) == null) {
       synchronized (KeyManagementServiceGrpc.class) {
-        if ((getSetActiveMasterKeyMethod = KeyManagementServiceGrpc.getSetActiveMasterKeyMethod) == null) {
-          KeyManagementServiceGrpc.getSetActiveMasterKeyMethod = getSetActiveMasterKeyMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyRequest, com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyResponse>newBuilder()
+        if ((getRewrapDEKsMethod = KeyManagementServiceGrpc.getRewrapDEKsMethod) == null) {
+          KeyManagementServiceGrpc.getRewrapDEKsMethod = getRewrapDEKsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsRequest, com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetActiveMasterKey"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RewrapDEKs"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyRequest.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("SetActiveMasterKey"))
+                  com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("RewrapDEKs"))
               .build();
         }
       }
     }
-    return getSetActiveMasterKeyMethod;
+    return getRewrapDEKsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest,
-      com.google.protobuf.Empty> getDestroyDEKMethod;
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysRequest,
+      com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysResponse> getListMasterKeysMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DestroyDEK",
-      requestType = com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest.class,
-      responseType = com.google.protobuf.Empty.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListMasterKeys",
+      requestType = com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest,
-      com.google.protobuf.Empty> getDestroyDEKMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest, com.google.protobuf.Empty> getDestroyDEKMethod;
-    if ((getDestroyDEKMethod = KeyManagementServiceGrpc.getDestroyDEKMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysRequest,
+      com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysResponse> getListMasterKeysMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysRequest, com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysResponse> getListMasterKeysMethod;
+    if ((getListMasterKeysMethod = KeyManagementServiceGrpc.getListMasterKeysMethod) == null) {
       synchronized (KeyManagementServiceGrpc.class) {
-        if ((getDestroyDEKMethod = KeyManagementServiceGrpc.getDestroyDEKMethod) == null) {
-          KeyManagementServiceGrpc.getDestroyDEKMethod = getDestroyDEKMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest, com.google.protobuf.Empty>newBuilder()
+        if ((getListMasterKeysMethod = KeyManagementServiceGrpc.getListMasterKeysMethod) == null) {
+          KeyManagementServiceGrpc.getListMasterKeysMethod = getListMasterKeysMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysRequest, com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DestroyDEK"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMasterKeys"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("DestroyDEK"))
+                  com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("ListMasterKeys"))
               .build();
         }
       }
     }
-    return getDestroyDEKMethod;
+    return getListMasterKeysMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyRequest,
+      com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyResponse> getGetMasterKeyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMasterKey",
+      requestType = com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyRequest,
+      com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyResponse> getGetMasterKeyMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyRequest, com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyResponse> getGetMasterKeyMethod;
+    if ((getGetMasterKeyMethod = KeyManagementServiceGrpc.getGetMasterKeyMethod) == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getGetMasterKeyMethod = KeyManagementServiceGrpc.getGetMasterKeyMethod) == null) {
+          KeyManagementServiceGrpc.getGetMasterKeyMethod = getGetMasterKeyMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyRequest, com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMasterKey"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new KeyManagementServiceMethodDescriptorSupplier("GetMasterKey"))
+              .build();
+        }
+      }
+    }
+    return getGetMasterKeyMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.keys.DestroyMasterKeyRequest,
@@ -374,17 +525,13 @@ public final class KeyManagementServiceGrpc {
   }
 
   /**
-   * <pre>
-   * KeyManagementService provides operations for managing encryption keys
-   * including Data Encryption Keys (DEKs) and master key rotation.
-   * </pre>
    */
   public interface AsyncService {
 
     /**
      * <pre>
-     * CreateDEK creates a new Data Encryption Key (DEK) for an environment.
-     * If a DEK already exists, this will create a new version.
+     * CreateDEK creates a new DEK version in CREATED state.
+     * The DEK is not used for encryption until ActivateDEK is called.
      * </pre>
      */
     default void createDEK(com.scalekit.grpc.scalekit.v1.keys.CreateDEKRequest request,
@@ -394,18 +541,31 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * RotateDEK creates a new DEK version for an environment.
-     * Re-encrypts existing data (oidc_client_secrets, connection client_secrets) and deprecates old DEK versions.
+     * ActivateDEK promotes a CREATED DEK to ACTIVE and deprecates all other versions.
+     * Only DEKs in CREATED state can be activated.
+     * After activation, call ReencryptData to migrate existing encrypted data.
      * </pre>
      */
-    default void rotateDEK(com.scalekit.grpc.scalekit.v1.keys.RotateDEKRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.RotateDEKResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRotateDEKMethod(), responseObserver);
+    default void activateDEK(com.scalekit.grpc.scalekit.v1.keys.ActivateDEKRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.ActivateDEKResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getActivateDEKMethod(), responseObserver);
     }
 
     /**
      * <pre>
-     * ListDEKs lists DEKs for an environment with pagination.
+     * ReencryptData re-encrypts all application secrets under the currently active DEK.
+     * Run this after ActivateDEK to complete data migration.
+     * Required before DestroyDEK is allowed on the old version.
+     * </pre>
+     */
+    default void reencryptData(com.scalekit.grpc.scalekit.v1.keys.ReencryptDataRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.ReencryptDataResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReencryptDataMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * ListDEKs lists DEK versions for an environment with pagination and optional status filter.
      * </pre>
      */
     default void listDEKs(com.scalekit.grpc.scalekit.v1.keys.ListDEKsRequest request,
@@ -415,60 +575,30 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * DeleteDEK deprecates or permanently deletes a DEK version.
-     * Deprecated DEKs can still be used for decryption but not for encryption.
+     * GetDEK returns a single DEK version by its version number.
      * </pre>
      */
-    default void deleteDEK(com.scalekit.grpc.scalekit.v1.keys.DeleteDEKRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteDEKMethod(), responseObserver);
+    default void getDEK(com.scalekit.grpc.scalekit.v1.keys.GetDEKRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.GetDEKResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDEKMethod(), responseObserver);
     }
 
     /**
      * <pre>
-     * RotateMasterKey rotates the master key and rewraps all DEKs.
-     * This operation is idempotent and supports zero-downtime rotation.
+     * PatchDEK updates the key_type, provider, and key_ref of a DEK version.
+     * Only allowed on DEKs in CREATED state. Use this to correct a misconfigured key before activation.
      * </pre>
      */
-    default void rotateMasterKey(com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRotateMasterKeyMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * CreateMasterKey creates a new master key version (in a non-active state).
-     * </pre>
-     */
-    default void createMasterKey(com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateMasterKeyMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * SetActiveDEK sets a specific DEK version as active for an environment.
-     * </pre>
-     */
-    default void setActiveDEK(com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetActiveDEKMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * SetActiveMasterKey sets a specific master key version as active.
-     * </pre>
-     */
-    default void setActiveMasterKey(com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetActiveMasterKeyMethod(), responseObserver);
+    default void patchDEK(com.scalekit.grpc.scalekit.v1.keys.PatchDEKRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.PatchDEKResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchDEKMethod(), responseObserver);
     }
 
     /**
      * <pre>
      * DestroyDEK permanently deletes a DEK version.
-     * WARNING: This operation is irreversible and will make data encrypted with this DEK unrecoverable.
+     * Only allowed on DEPRECATED DEKs where ReencryptData has already run (rotated_at is set).
+     * This operation is irreversible.
      * </pre>
      */
     default void destroyDEK(com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest request,
@@ -478,8 +608,87 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
+     * GetBYOKSetupInfo returns the Scalekit service account that customers must
+     * grant KMS access to when configuring a BYOK key.
+     * </pre>
+     */
+    default void getBYOKSetupInfo(com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBYOKSetupInfoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * VerifyBYOKKey checks whether Scalekit's BYOK service account can encrypt using
+     * the customer-supplied GCP KMS key. Call this before CreateDEK to catch IAM
+     * misconfiguration early (fail-fast).
+     * </pre>
+     */
+    default void verifyBYOKKey(com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVerifyBYOKKeyMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * CreateMasterKey creates a new master key version in CREATED state.
+     * The master key is not used for encryption until ActivateMasterKey is called.
+     * </pre>
+     */
+    default void createMasterKey(com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateMasterKeyMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * ActivateMasterKey promotes a CREATED master key to ACTIVE and deprecates all other versions.
+     * Only master keys in CREATED state can be activated.
+     * After activation, call RewrapDEKs to re-wrap all DEKs under the new master key.
+     * </pre>
+     */
+    default void activateMasterKey(com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getActivateMasterKeyMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * RewrapDEKs re-wraps all DEKs under the currently active master key.
+     * Run this after ActivateMasterKey to complete master key rotation.
+     * Required before DestroyMasterKey is allowed on the old version.
+     * </pre>
+     */
+    default void rewrapDEKs(com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRewrapDEKsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * ListMasterKeys lists master key versions with pagination and optional status filter.
+     * </pre>
+     */
+    default void listMasterKeys(com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMasterKeysMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * GetMasterKey returns a single master key version by its version number.
+     * </pre>
+     */
+    default void getMasterKey(com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMasterKeyMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * DestroyMasterKey permanently deletes a master key version.
-     * WARNING: This operation is irreversible and will make DEKs wrapped with this master key unrecoverable.
+     * Only allowed on DEPRECATED master keys with no DEKs still wrapped under them.
+     * Run RewrapDEKs before calling this. This operation is irreversible.
      * </pre>
      */
     default void destroyMasterKey(com.scalekit.grpc.scalekit.v1.keys.DestroyMasterKeyRequest request,
@@ -490,10 +699,6 @@ public final class KeyManagementServiceGrpc {
 
   /**
    * Base class for the server implementation of the service KeyManagementService.
-   * <pre>
-   * KeyManagementService provides operations for managing encryption keys
-   * including Data Encryption Keys (DEKs) and master key rotation.
-   * </pre>
    */
   public static abstract class KeyManagementServiceImplBase
       implements io.grpc.BindableService, AsyncService {
@@ -505,10 +710,6 @@ public final class KeyManagementServiceGrpc {
 
   /**
    * A stub to allow clients to do asynchronous rpc calls to service KeyManagementService.
-   * <pre>
-   * KeyManagementService provides operations for managing encryption keys
-   * including Data Encryption Keys (DEKs) and master key rotation.
-   * </pre>
    */
   public static final class KeyManagementServiceStub
       extends io.grpc.stub.AbstractAsyncStub<KeyManagementServiceStub> {
@@ -525,8 +726,8 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * CreateDEK creates a new Data Encryption Key (DEK) for an environment.
-     * If a DEK already exists, this will create a new version.
+     * CreateDEK creates a new DEK version in CREATED state.
+     * The DEK is not used for encryption until ActivateDEK is called.
      * </pre>
      */
     public void createDEK(com.scalekit.grpc.scalekit.v1.keys.CreateDEKRequest request,
@@ -537,19 +738,33 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * RotateDEK creates a new DEK version for an environment.
-     * Re-encrypts existing data (oidc_client_secrets, connection client_secrets) and deprecates old DEK versions.
+     * ActivateDEK promotes a CREATED DEK to ACTIVE and deprecates all other versions.
+     * Only DEKs in CREATED state can be activated.
+     * After activation, call ReencryptData to migrate existing encrypted data.
      * </pre>
      */
-    public void rotateDEK(com.scalekit.grpc.scalekit.v1.keys.RotateDEKRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.RotateDEKResponse> responseObserver) {
+    public void activateDEK(com.scalekit.grpc.scalekit.v1.keys.ActivateDEKRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.ActivateDEKResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getRotateDEKMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getActivateDEKMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      * <pre>
-     * ListDEKs lists DEKs for an environment with pagination.
+     * ReencryptData re-encrypts all application secrets under the currently active DEK.
+     * Run this after ActivateDEK to complete data migration.
+     * Required before DestroyDEK is allowed on the old version.
+     * </pre>
+     */
+    public void reencryptData(com.scalekit.grpc.scalekit.v1.keys.ReencryptDataRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.ReencryptDataResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getReencryptDataMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * ListDEKs lists DEK versions for an environment with pagination and optional status filter.
      * </pre>
      */
     public void listDEKs(com.scalekit.grpc.scalekit.v1.keys.ListDEKsRequest request,
@@ -560,65 +775,32 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * DeleteDEK deprecates or permanently deletes a DEK version.
-     * Deprecated DEKs can still be used for decryption but not for encryption.
+     * GetDEK returns a single DEK version by its version number.
      * </pre>
      */
-    public void deleteDEK(com.scalekit.grpc.scalekit.v1.keys.DeleteDEKRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+    public void getDEK(com.scalekit.grpc.scalekit.v1.keys.GetDEKRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.GetDEKResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteDEKMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetDEKMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      * <pre>
-     * RotateMasterKey rotates the master key and rewraps all DEKs.
-     * This operation is idempotent and supports zero-downtime rotation.
+     * PatchDEK updates the key_type, provider, and key_ref of a DEK version.
+     * Only allowed on DEKs in CREATED state. Use this to correct a misconfigured key before activation.
      * </pre>
      */
-    public void rotateMasterKey(com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyResponse> responseObserver) {
+    public void patchDEK(com.scalekit.grpc.scalekit.v1.keys.PatchDEKRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.PatchDEKResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getRotateMasterKeyMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * CreateMasterKey creates a new master key version (in a non-active state).
-     * </pre>
-     */
-    public void createMasterKey(com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateMasterKeyMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * SetActiveDEK sets a specific DEK version as active for an environment.
-     * </pre>
-     */
-    public void setActiveDEK(com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getSetActiveDEKMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * SetActiveMasterKey sets a specific master key version as active.
-     * </pre>
-     */
-    public void setActiveMasterKey(com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getSetActiveMasterKeyMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getPatchDEKMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      * <pre>
      * DestroyDEK permanently deletes a DEK version.
-     * WARNING: This operation is irreversible and will make data encrypted with this DEK unrecoverable.
+     * Only allowed on DEPRECATED DEKs where ReencryptData has already run (rotated_at is set).
+     * This operation is irreversible.
      * </pre>
      */
     public void destroyDEK(com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest request,
@@ -629,8 +811,94 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
+     * GetBYOKSetupInfo returns the Scalekit service account that customers must
+     * grant KMS access to when configuring a BYOK key.
+     * </pre>
+     */
+    public void getBYOKSetupInfo(com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBYOKSetupInfoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * VerifyBYOKKey checks whether Scalekit's BYOK service account can encrypt using
+     * the customer-supplied GCP KMS key. Call this before CreateDEK to catch IAM
+     * misconfiguration early (fail-fast).
+     * </pre>
+     */
+    public void verifyBYOKKey(com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getVerifyBYOKKeyMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * CreateMasterKey creates a new master key version in CREATED state.
+     * The master key is not used for encryption until ActivateMasterKey is called.
+     * </pre>
+     */
+    public void createMasterKey(com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateMasterKeyMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * ActivateMasterKey promotes a CREATED master key to ACTIVE and deprecates all other versions.
+     * Only master keys in CREATED state can be activated.
+     * After activation, call RewrapDEKs to re-wrap all DEKs under the new master key.
+     * </pre>
+     */
+    public void activateMasterKey(com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getActivateMasterKeyMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * RewrapDEKs re-wraps all DEKs under the currently active master key.
+     * Run this after ActivateMasterKey to complete master key rotation.
+     * Required before DestroyMasterKey is allowed on the old version.
+     * </pre>
+     */
+    public void rewrapDEKs(com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRewrapDEKsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * ListMasterKeys lists master key versions with pagination and optional status filter.
+     * </pre>
+     */
+    public void listMasterKeys(com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMasterKeysMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * GetMasterKey returns a single master key version by its version number.
+     * </pre>
+     */
+    public void getMasterKey(com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMasterKeyMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * DestroyMasterKey permanently deletes a master key version.
-     * WARNING: This operation is irreversible and will make DEKs wrapped with this master key unrecoverable.
+     * Only allowed on DEPRECATED master keys with no DEKs still wrapped under them.
+     * Run RewrapDEKs before calling this. This operation is irreversible.
      * </pre>
      */
     public void destroyMasterKey(com.scalekit.grpc.scalekit.v1.keys.DestroyMasterKeyRequest request,
@@ -642,10 +910,6 @@ public final class KeyManagementServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service KeyManagementService.
-   * <pre>
-   * KeyManagementService provides operations for managing encryption keys
-   * including Data Encryption Keys (DEKs) and master key rotation.
-   * </pre>
    */
   public static final class KeyManagementServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<KeyManagementServiceBlockingStub> {
@@ -662,8 +926,8 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * CreateDEK creates a new Data Encryption Key (DEK) for an environment.
-     * If a DEK already exists, this will create a new version.
+     * CreateDEK creates a new DEK version in CREATED state.
+     * The DEK is not used for encryption until ActivateDEK is called.
      * </pre>
      */
     public com.scalekit.grpc.scalekit.v1.keys.CreateDEKResponse createDEK(com.scalekit.grpc.scalekit.v1.keys.CreateDEKRequest request) {
@@ -673,18 +937,31 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * RotateDEK creates a new DEK version for an environment.
-     * Re-encrypts existing data (oidc_client_secrets, connection client_secrets) and deprecates old DEK versions.
+     * ActivateDEK promotes a CREATED DEK to ACTIVE and deprecates all other versions.
+     * Only DEKs in CREATED state can be activated.
+     * After activation, call ReencryptData to migrate existing encrypted data.
      * </pre>
      */
-    public com.scalekit.grpc.scalekit.v1.keys.RotateDEKResponse rotateDEK(com.scalekit.grpc.scalekit.v1.keys.RotateDEKRequest request) {
+    public com.scalekit.grpc.scalekit.v1.keys.ActivateDEKResponse activateDEK(com.scalekit.grpc.scalekit.v1.keys.ActivateDEKRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getRotateDEKMethod(), getCallOptions(), request);
+          getChannel(), getActivateDEKMethod(), getCallOptions(), request);
     }
 
     /**
      * <pre>
-     * ListDEKs lists DEKs for an environment with pagination.
+     * ReencryptData re-encrypts all application secrets under the currently active DEK.
+     * Run this after ActivateDEK to complete data migration.
+     * Required before DestroyDEK is allowed on the old version.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.keys.ReencryptDataResponse reencryptData(com.scalekit.grpc.scalekit.v1.keys.ReencryptDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReencryptDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * ListDEKs lists DEK versions for an environment with pagination and optional status filter.
      * </pre>
      */
     public com.scalekit.grpc.scalekit.v1.keys.ListDEKsResponse listDEKs(com.scalekit.grpc.scalekit.v1.keys.ListDEKsRequest request) {
@@ -694,60 +971,30 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * DeleteDEK deprecates or permanently deletes a DEK version.
-     * Deprecated DEKs can still be used for decryption but not for encryption.
+     * GetDEK returns a single DEK version by its version number.
      * </pre>
      */
-    public com.google.protobuf.Empty deleteDEK(com.scalekit.grpc.scalekit.v1.keys.DeleteDEKRequest request) {
+    public com.scalekit.grpc.scalekit.v1.keys.GetDEKResponse getDEK(com.scalekit.grpc.scalekit.v1.keys.GetDEKRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteDEKMethod(), getCallOptions(), request);
+          getChannel(), getGetDEKMethod(), getCallOptions(), request);
     }
 
     /**
      * <pre>
-     * RotateMasterKey rotates the master key and rewraps all DEKs.
-     * This operation is idempotent and supports zero-downtime rotation.
+     * PatchDEK updates the key_type, provider, and key_ref of a DEK version.
+     * Only allowed on DEKs in CREATED state. Use this to correct a misconfigured key before activation.
      * </pre>
      */
-    public com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyResponse rotateMasterKey(com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyRequest request) {
+    public com.scalekit.grpc.scalekit.v1.keys.PatchDEKResponse patchDEK(com.scalekit.grpc.scalekit.v1.keys.PatchDEKRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getRotateMasterKeyMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * CreateMasterKey creates a new master key version (in a non-active state).
-     * </pre>
-     */
-    public com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyResponse createMasterKey(com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateMasterKeyMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * SetActiveDEK sets a specific DEK version as active for an environment.
-     * </pre>
-     */
-    public com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKResponse setActiveDEK(com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSetActiveDEKMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * SetActiveMasterKey sets a specific master key version as active.
-     * </pre>
-     */
-    public com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyResponse setActiveMasterKey(com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSetActiveMasterKeyMethod(), getCallOptions(), request);
+          getChannel(), getPatchDEKMethod(), getCallOptions(), request);
     }
 
     /**
      * <pre>
      * DestroyDEK permanently deletes a DEK version.
-     * WARNING: This operation is irreversible and will make data encrypted with this DEK unrecoverable.
+     * Only allowed on DEPRECATED DEKs where ReencryptData has already run (rotated_at is set).
+     * This operation is irreversible.
      * </pre>
      */
     public com.google.protobuf.Empty destroyDEK(com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest request) {
@@ -757,8 +1004,87 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
+     * GetBYOKSetupInfo returns the Scalekit service account that customers must
+     * grant KMS access to when configuring a BYOK key.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoResponse getBYOKSetupInfo(com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBYOKSetupInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * VerifyBYOKKey checks whether Scalekit's BYOK service account can encrypt using
+     * the customer-supplied GCP KMS key. Call this before CreateDEK to catch IAM
+     * misconfiguration early (fail-fast).
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyResponse verifyBYOKKey(com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVerifyBYOKKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * CreateMasterKey creates a new master key version in CREATED state.
+     * The master key is not used for encryption until ActivateMasterKey is called.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyResponse createMasterKey(com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMasterKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * ActivateMasterKey promotes a CREATED master key to ACTIVE and deprecates all other versions.
+     * Only master keys in CREATED state can be activated.
+     * After activation, call RewrapDEKs to re-wrap all DEKs under the new master key.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyResponse activateMasterKey(com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getActivateMasterKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * RewrapDEKs re-wraps all DEKs under the currently active master key.
+     * Run this after ActivateMasterKey to complete master key rotation.
+     * Required before DestroyMasterKey is allowed on the old version.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsResponse rewrapDEKs(com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRewrapDEKsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * ListMasterKeys lists master key versions with pagination and optional status filter.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysResponse listMasterKeys(com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMasterKeysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * GetMasterKey returns a single master key version by its version number.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyResponse getMasterKey(com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMasterKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * DestroyMasterKey permanently deletes a master key version.
-     * WARNING: This operation is irreversible and will make DEKs wrapped with this master key unrecoverable.
+     * Only allowed on DEPRECATED master keys with no DEKs still wrapped under them.
+     * Run RewrapDEKs before calling this. This operation is irreversible.
      * </pre>
      */
     public com.google.protobuf.Empty destroyMasterKey(com.scalekit.grpc.scalekit.v1.keys.DestroyMasterKeyRequest request) {
@@ -769,10 +1095,6 @@ public final class KeyManagementServiceGrpc {
 
   /**
    * A stub to allow clients to do ListenableFuture-style rpc calls to service KeyManagementService.
-   * <pre>
-   * KeyManagementService provides operations for managing encryption keys
-   * including Data Encryption Keys (DEKs) and master key rotation.
-   * </pre>
    */
   public static final class KeyManagementServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<KeyManagementServiceFutureStub> {
@@ -789,8 +1111,8 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * CreateDEK creates a new Data Encryption Key (DEK) for an environment.
-     * If a DEK already exists, this will create a new version.
+     * CreateDEK creates a new DEK version in CREATED state.
+     * The DEK is not used for encryption until ActivateDEK is called.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.CreateDEKResponse> createDEK(
@@ -801,19 +1123,33 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * RotateDEK creates a new DEK version for an environment.
-     * Re-encrypts existing data (oidc_client_secrets, connection client_secrets) and deprecates old DEK versions.
+     * ActivateDEK promotes a CREATED DEK to ACTIVE and deprecates all other versions.
+     * Only DEKs in CREATED state can be activated.
+     * After activation, call ReencryptData to migrate existing encrypted data.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.RotateDEKResponse> rotateDEK(
-        com.scalekit.grpc.scalekit.v1.keys.RotateDEKRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.ActivateDEKResponse> activateDEK(
+        com.scalekit.grpc.scalekit.v1.keys.ActivateDEKRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getRotateDEKMethod(), getCallOptions()), request);
+          getChannel().newCall(getActivateDEKMethod(), getCallOptions()), request);
     }
 
     /**
      * <pre>
-     * ListDEKs lists DEKs for an environment with pagination.
+     * ReencryptData re-encrypts all application secrets under the currently active DEK.
+     * Run this after ActivateDEK to complete data migration.
+     * Required before DestroyDEK is allowed on the old version.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.ReencryptDataResponse> reencryptData(
+        com.scalekit.grpc.scalekit.v1.keys.ReencryptDataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getReencryptDataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * ListDEKs lists DEK versions for an environment with pagination and optional status filter.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.ListDEKsResponse> listDEKs(
@@ -824,65 +1160,32 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
-     * DeleteDEK deprecates or permanently deletes a DEK version.
-     * Deprecated DEKs can still be used for decryption but not for encryption.
+     * GetDEK returns a single DEK version by its version number.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteDEK(
-        com.scalekit.grpc.scalekit.v1.keys.DeleteDEKRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.GetDEKResponse> getDEK(
+        com.scalekit.grpc.scalekit.v1.keys.GetDEKRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteDEKMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetDEKMethod(), getCallOptions()), request);
     }
 
     /**
      * <pre>
-     * RotateMasterKey rotates the master key and rewraps all DEKs.
-     * This operation is idempotent and supports zero-downtime rotation.
+     * PatchDEK updates the key_type, provider, and key_ref of a DEK version.
+     * Only allowed on DEKs in CREATED state. Use this to correct a misconfigured key before activation.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyResponse> rotateMasterKey(
-        com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.PatchDEKResponse> patchDEK(
+        com.scalekit.grpc.scalekit.v1.keys.PatchDEKRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getRotateMasterKeyMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * CreateMasterKey creates a new master key version (in a non-active state).
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyResponse> createMasterKey(
-        com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateMasterKeyMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * SetActiveDEK sets a specific DEK version as active for an environment.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKResponse> setActiveDEK(
-        com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getSetActiveDEKMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * SetActiveMasterKey sets a specific master key version as active.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyResponse> setActiveMasterKey(
-        com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getSetActiveMasterKeyMethod(), getCallOptions()), request);
+          getChannel().newCall(getPatchDEKMethod(), getCallOptions()), request);
     }
 
     /**
      * <pre>
      * DestroyDEK permanently deletes a DEK version.
-     * WARNING: This operation is irreversible and will make data encrypted with this DEK unrecoverable.
+     * Only allowed on DEPRECATED DEKs where ReencryptData has already run (rotated_at is set).
+     * This operation is irreversible.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> destroyDEK(
@@ -893,8 +1196,94 @@ public final class KeyManagementServiceGrpc {
 
     /**
      * <pre>
+     * GetBYOKSetupInfo returns the Scalekit service account that customers must
+     * grant KMS access to when configuring a BYOK key.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoResponse> getBYOKSetupInfo(
+        com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBYOKSetupInfoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * VerifyBYOKKey checks whether Scalekit's BYOK service account can encrypt using
+     * the customer-supplied GCP KMS key. Call this before CreateDEK to catch IAM
+     * misconfiguration early (fail-fast).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyResponse> verifyBYOKKey(
+        com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getVerifyBYOKKeyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * CreateMasterKey creates a new master key version in CREATED state.
+     * The master key is not used for encryption until ActivateMasterKey is called.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyResponse> createMasterKey(
+        com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateMasterKeyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * ActivateMasterKey promotes a CREATED master key to ACTIVE and deprecates all other versions.
+     * Only master keys in CREATED state can be activated.
+     * After activation, call RewrapDEKs to re-wrap all DEKs under the new master key.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyResponse> activateMasterKey(
+        com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getActivateMasterKeyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * RewrapDEKs re-wraps all DEKs under the currently active master key.
+     * Run this after ActivateMasterKey to complete master key rotation.
+     * Required before DestroyMasterKey is allowed on the old version.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsResponse> rewrapDEKs(
+        com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRewrapDEKsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * ListMasterKeys lists master key versions with pagination and optional status filter.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysResponse> listMasterKeys(
+        com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMasterKeysMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * GetMasterKey returns a single master key version by its version number.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyResponse> getMasterKey(
+        com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMasterKeyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * DestroyMasterKey permanently deletes a master key version.
-     * WARNING: This operation is irreversible and will make DEKs wrapped with this master key unrecoverable.
+     * Only allowed on DEPRECATED master keys with no DEKs still wrapped under them.
+     * Run RewrapDEKs before calling this. This operation is irreversible.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> destroyMasterKey(
@@ -905,15 +1294,20 @@ public final class KeyManagementServiceGrpc {
   }
 
   private static final int METHODID_CREATE_DEK = 0;
-  private static final int METHODID_ROTATE_DEK = 1;
-  private static final int METHODID_LIST_DEKS = 2;
-  private static final int METHODID_DELETE_DEK = 3;
-  private static final int METHODID_ROTATE_MASTER_KEY = 4;
-  private static final int METHODID_CREATE_MASTER_KEY = 5;
-  private static final int METHODID_SET_ACTIVE_DEK = 6;
-  private static final int METHODID_SET_ACTIVE_MASTER_KEY = 7;
-  private static final int METHODID_DESTROY_DEK = 8;
-  private static final int METHODID_DESTROY_MASTER_KEY = 9;
+  private static final int METHODID_ACTIVATE_DEK = 1;
+  private static final int METHODID_REENCRYPT_DATA = 2;
+  private static final int METHODID_LIST_DEKS = 3;
+  private static final int METHODID_GET_DEK = 4;
+  private static final int METHODID_PATCH_DEK = 5;
+  private static final int METHODID_DESTROY_DEK = 6;
+  private static final int METHODID_GET_BYOKSETUP_INFO = 7;
+  private static final int METHODID_VERIFY_BYOKKEY = 8;
+  private static final int METHODID_CREATE_MASTER_KEY = 9;
+  private static final int METHODID_ACTIVATE_MASTER_KEY = 10;
+  private static final int METHODID_REWRAP_DEKS = 11;
+  private static final int METHODID_LIST_MASTER_KEYS = 12;
+  private static final int METHODID_GET_MASTER_KEY = 13;
+  private static final int METHODID_DESTROY_MASTER_KEY = 14;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -936,37 +1330,57 @@ public final class KeyManagementServiceGrpc {
           serviceImpl.createDEK((com.scalekit.grpc.scalekit.v1.keys.CreateDEKRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.CreateDEKResponse>) responseObserver);
           break;
-        case METHODID_ROTATE_DEK:
-          serviceImpl.rotateDEK((com.scalekit.grpc.scalekit.v1.keys.RotateDEKRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.RotateDEKResponse>) responseObserver);
+        case METHODID_ACTIVATE_DEK:
+          serviceImpl.activateDEK((com.scalekit.grpc.scalekit.v1.keys.ActivateDEKRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.ActivateDEKResponse>) responseObserver);
+          break;
+        case METHODID_REENCRYPT_DATA:
+          serviceImpl.reencryptData((com.scalekit.grpc.scalekit.v1.keys.ReencryptDataRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.ReencryptDataResponse>) responseObserver);
           break;
         case METHODID_LIST_DEKS:
           serviceImpl.listDEKs((com.scalekit.grpc.scalekit.v1.keys.ListDEKsRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.ListDEKsResponse>) responseObserver);
           break;
-        case METHODID_DELETE_DEK:
-          serviceImpl.deleteDEK((com.scalekit.grpc.scalekit.v1.keys.DeleteDEKRequest) request,
+        case METHODID_GET_DEK:
+          serviceImpl.getDEK((com.scalekit.grpc.scalekit.v1.keys.GetDEKRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.GetDEKResponse>) responseObserver);
+          break;
+        case METHODID_PATCH_DEK:
+          serviceImpl.patchDEK((com.scalekit.grpc.scalekit.v1.keys.PatchDEKRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.PatchDEKResponse>) responseObserver);
+          break;
+        case METHODID_DESTROY_DEK:
+          serviceImpl.destroyDEK((com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
-        case METHODID_ROTATE_MASTER_KEY:
-          serviceImpl.rotateMasterKey((com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyResponse>) responseObserver);
+        case METHODID_GET_BYOKSETUP_INFO:
+          serviceImpl.getBYOKSetupInfo((com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoResponse>) responseObserver);
+          break;
+        case METHODID_VERIFY_BYOKKEY:
+          serviceImpl.verifyBYOKKey((com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyResponse>) responseObserver);
           break;
         case METHODID_CREATE_MASTER_KEY:
           serviceImpl.createMasterKey((com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyResponse>) responseObserver);
           break;
-        case METHODID_SET_ACTIVE_DEK:
-          serviceImpl.setActiveDEK((com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKResponse>) responseObserver);
+        case METHODID_ACTIVATE_MASTER_KEY:
+          serviceImpl.activateMasterKey((com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyResponse>) responseObserver);
           break;
-        case METHODID_SET_ACTIVE_MASTER_KEY:
-          serviceImpl.setActiveMasterKey((com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyResponse>) responseObserver);
+        case METHODID_REWRAP_DEKS:
+          serviceImpl.rewrapDEKs((com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsResponse>) responseObserver);
           break;
-        case METHODID_DESTROY_DEK:
-          serviceImpl.destroyDEK((com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+        case METHODID_LIST_MASTER_KEYS:
+          serviceImpl.listMasterKeys((com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysResponse>) responseObserver);
+          break;
+        case METHODID_GET_MASTER_KEY:
+          serviceImpl.getMasterKey((com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyResponse>) responseObserver);
           break;
         case METHODID_DESTROY_MASTER_KEY:
           serviceImpl.destroyMasterKey((com.scalekit.grpc.scalekit.v1.keys.DestroyMasterKeyRequest) request,
@@ -998,12 +1412,19 @@ public final class KeyManagementServiceGrpc {
               com.scalekit.grpc.scalekit.v1.keys.CreateDEKResponse>(
                 service, METHODID_CREATE_DEK)))
         .addMethod(
-          getRotateDEKMethod(),
+          getActivateDEKMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.keys.RotateDEKRequest,
-              com.scalekit.grpc.scalekit.v1.keys.RotateDEKResponse>(
-                service, METHODID_ROTATE_DEK)))
+              com.scalekit.grpc.scalekit.v1.keys.ActivateDEKRequest,
+              com.scalekit.grpc.scalekit.v1.keys.ActivateDEKResponse>(
+                service, METHODID_ACTIVATE_DEK)))
+        .addMethod(
+          getReencryptDataMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.keys.ReencryptDataRequest,
+              com.scalekit.grpc.scalekit.v1.keys.ReencryptDataResponse>(
+                service, METHODID_REENCRYPT_DATA)))
         .addMethod(
           getListDEKsMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1012,19 +1433,40 @@ public final class KeyManagementServiceGrpc {
               com.scalekit.grpc.scalekit.v1.keys.ListDEKsResponse>(
                 service, METHODID_LIST_DEKS)))
         .addMethod(
-          getDeleteDEKMethod(),
+          getGetDEKMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.keys.DeleteDEKRequest,
-              com.google.protobuf.Empty>(
-                service, METHODID_DELETE_DEK)))
+              com.scalekit.grpc.scalekit.v1.keys.GetDEKRequest,
+              com.scalekit.grpc.scalekit.v1.keys.GetDEKResponse>(
+                service, METHODID_GET_DEK)))
         .addMethod(
-          getRotateMasterKeyMethod(),
+          getPatchDEKMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyRequest,
-              com.scalekit.grpc.scalekit.v1.keys.RotateMasterKeyResponse>(
-                service, METHODID_ROTATE_MASTER_KEY)))
+              com.scalekit.grpc.scalekit.v1.keys.PatchDEKRequest,
+              com.scalekit.grpc.scalekit.v1.keys.PatchDEKResponse>(
+                service, METHODID_PATCH_DEK)))
+        .addMethod(
+          getDestroyDEKMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest,
+              com.google.protobuf.Empty>(
+                service, METHODID_DESTROY_DEK)))
+        .addMethod(
+          getGetBYOKSetupInfoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoRequest,
+              com.scalekit.grpc.scalekit.v1.keys.GetBYOKSetupInfoResponse>(
+                service, METHODID_GET_BYOKSETUP_INFO)))
+        .addMethod(
+          getVerifyBYOKKeyMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyRequest,
+              com.scalekit.grpc.scalekit.v1.keys.VerifyBYOKKeyResponse>(
+                service, METHODID_VERIFY_BYOKKEY)))
         .addMethod(
           getCreateMasterKeyMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1033,26 +1475,33 @@ public final class KeyManagementServiceGrpc {
               com.scalekit.grpc.scalekit.v1.keys.CreateMasterKeyResponse>(
                 service, METHODID_CREATE_MASTER_KEY)))
         .addMethod(
-          getSetActiveDEKMethod(),
+          getActivateMasterKeyMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKRequest,
-              com.scalekit.grpc.scalekit.v1.keys.SetActiveDEKResponse>(
-                service, METHODID_SET_ACTIVE_DEK)))
+              com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyRequest,
+              com.scalekit.grpc.scalekit.v1.keys.ActivateMasterKeyResponse>(
+                service, METHODID_ACTIVATE_MASTER_KEY)))
         .addMethod(
-          getSetActiveMasterKeyMethod(),
+          getRewrapDEKsMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyRequest,
-              com.scalekit.grpc.scalekit.v1.keys.SetActiveMasterKeyResponse>(
-                service, METHODID_SET_ACTIVE_MASTER_KEY)))
+              com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsRequest,
+              com.scalekit.grpc.scalekit.v1.keys.RewrapDEKsResponse>(
+                service, METHODID_REWRAP_DEKS)))
         .addMethod(
-          getDestroyDEKMethod(),
+          getListMasterKeysMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.keys.DestroyDEKRequest,
-              com.google.protobuf.Empty>(
-                service, METHODID_DESTROY_DEK)))
+              com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysRequest,
+              com.scalekit.grpc.scalekit.v1.keys.ListMasterKeysResponse>(
+                service, METHODID_LIST_MASTER_KEYS)))
+        .addMethod(
+          getGetMasterKeyMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyRequest,
+              com.scalekit.grpc.scalekit.v1.keys.GetMasterKeyResponse>(
+                service, METHODID_GET_MASTER_KEY)))
         .addMethod(
           getDestroyMasterKeyMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1109,14 +1558,19 @@ public final class KeyManagementServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new KeyManagementServiceFileDescriptorSupplier())
               .addMethod(getCreateDEKMethod())
-              .addMethod(getRotateDEKMethod())
+              .addMethod(getActivateDEKMethod())
+              .addMethod(getReencryptDataMethod())
               .addMethod(getListDEKsMethod())
-              .addMethod(getDeleteDEKMethod())
-              .addMethod(getRotateMasterKeyMethod())
-              .addMethod(getCreateMasterKeyMethod())
-              .addMethod(getSetActiveDEKMethod())
-              .addMethod(getSetActiveMasterKeyMethod())
+              .addMethod(getGetDEKMethod())
+              .addMethod(getPatchDEKMethod())
               .addMethod(getDestroyDEKMethod())
+              .addMethod(getGetBYOKSetupInfoMethod())
+              .addMethod(getVerifyBYOKKeyMethod())
+              .addMethod(getCreateMasterKeyMethod())
+              .addMethod(getActivateMasterKeyMethod())
+              .addMethod(getRewrapDEKsMethod())
+              .addMethod(getListMasterKeysMethod())
+              .addMethod(getGetMasterKeyMethod())
               .addMethod(getDestroyMasterKeyMethod())
               .build();
         }

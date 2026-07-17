@@ -158,4 +158,16 @@ public interface ListConnectionOrBuilder extends
    * <code>.google.protobuf.Timestamp created_at = 12 [json_name = "createdAt", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
+
+  /**
+   * <code>string mcp_server_url = 13 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The mcpServerUrl.
+   */
+  java.lang.String getMcpServerUrl();
+  /**
+   * <code>string mcp_server_url = 13 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for mcpServerUrl.
+   */
+  com.google.protobuf.ByteString
+      getMcpServerUrlBytes();
 }

@@ -117,4 +117,29 @@ public interface ListConnectedAccountsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getQueryBytes();
+
+  /**
+   * <code>repeated string connection_names = 9 [json_name = "connectionNames", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the connectionNames.
+   */
+  java.util.List<java.lang.String>
+      getConnectionNamesList();
+  /**
+   * <code>repeated string connection_names = 9 [json_name = "connectionNames", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of connectionNames.
+   */
+  int getConnectionNamesCount();
+  /**
+   * <code>repeated string connection_names = 9 [json_name = "connectionNames", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The connectionNames at the given index.
+   */
+  java.lang.String getConnectionNames(int index);
+  /**
+   * <code>repeated string connection_names = 9 [json_name = "connectionNames", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the connectionNames at the given index.
+   */
+  com.google.protobuf.ByteString
+      getConnectionNamesBytes(int index);
 }

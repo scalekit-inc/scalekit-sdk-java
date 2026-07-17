@@ -21,6 +21,16 @@ public final class MigrationsProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_migrations_MigrateEnvKeysRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_migrations_SkippedTableSummary_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_migrations_SkippedTableSummary_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_migrations_EnvironmentReencryptSkips_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_migrations_EnvironmentReencryptSkips_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_migrations_MigrateEnvKeysResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -90,6 +100,16 @@ public final class MigrationsProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_migrations_MigrateRolePermissionsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_migrations_MigrateEnvironmentPermissionsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_migrations_MigrateEnvironmentPermissionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_migrations_MigrateEnvironmentPermissionsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_migrations_MigrateEnvironmentPermissionsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -102,117 +122,166 @@ public final class MigrationsProto {
       "\n\'scalekit/v1/migrations/migrations.prot" +
       "o\022\026scalekit.v1.migrations\032\033buf/validate/" +
       "validate.proto\032\034google/api/annotations.p" +
-      "roto\032\033google/api/visibility.proto\032\033googl" +
-      "e/protobuf/empty.proto\032.protoc-gen-opena" +
-      "piv2/options/annotations.proto\032!scalekit" +
-      "/v1/commons/commons.proto\032!scalekit/v1/o" +
-      "ptions/options.proto\"@\n\025MigrateEnvKeysRe" +
-      "quest\022\'\n\017environment_ids\030\001 \003(\tR\016environm" +
-      "entIds\"O\n\026MigrateEnvKeysResponse\0225\n\026envi" +
-      "ronments_processed\030\001 \001(\005R\025environmentsPr" +
-      "ocessed\"~\n\030MigrationServiceResponse\0221\n\024s" +
-      "uccess_environments\030\001 \001(\005R\023successEnviro" +
-      "nments\022/\n\023failed_environments\030\002 \001(\005R\022fai" +
-      "ledEnvironments\"f\n\024MigrationSAMLRequest\022" +
-      "\'\n\017environment_ids\030\001 \003(\003R\016environmentIds" +
-      "\022%\n\nbatch_size\030\002 \001(\005B\006\272H\003\310\001\001R\tbatchSize\"" +
-      "\255\001\n\021MigrateFSARequest\022\'\n\017environment_ids" +
-      "\030\001 \003(\003R\016environmentIds\022H\n\tdata_type\030\002 \001(" +
-      "\0162#.scalekit.v1.migrations.FSADataTypeB\006" +
-      "\272H\003\310\001\001R\010dataType\022%\n\nbatch_size\030\003 \001(\005B\006\272H" +
-      "\003\310\001\001R\tbatchSize\"z\n\024MigrationFSAResponse\022" +
-      "1\n\024success_environments\030\001 \001(\005R\023successEn" +
-      "vironments\022/\n\023failed_environments\030\002 \001(\005R" +
-      "\022failedEnvironments\"\221\001\n\035MigrateStripeCus" +
-      "tomersRequest\022p\n\030migrate_stripe_customer" +
-      "s\030\001 \001(\0132..scalekit.v1.migrations.Migrate" +
-      "StripeCustomersB\006\272H\003\310\001\001R\026migrateStripeCu" +
-      "stomers\"\255\001\n\026MigrateStripeCustomers\022#\n\rwo" +
-      "rkspace_ids\030\001 \003(\003R\014workspaceIds\022\033\n\tplan_" +
-      "name\030\002 \001(\tR\010planName\022\035\n\nbatch_size\030\003 \001(\005" +
-      "R\tbatchSize\0222\n\025include_test_accounts\030\004 \001" +
-      "(\010R\023includeTestAccounts\"\301\001\n\036MigrateStrip" +
-      "eCustomersResponse\022#\n\rsuccess_count\030\001 \001(" +
-      "\005R\014successCount\022!\n\014failed_count\030\002 \001(\005R\013f" +
-      "ailedCount\0220\n\024failed_workspace_ids\030\003 \003(\003" +
-      "R\022failedWorkspaceIds\022%\n\016error_messages\030\004" +
-      " \003(\tR\rerrorMessages\"{\n\025MigrationSAMLResp" +
+      "roto\032\037google/api/field_behavior.proto\032\033g" +
+      "oogle/api/visibility.proto\032\033google/proto" +
+      "buf/empty.proto\032.protoc-gen-openapiv2/op" +
+      "tions/annotations.proto\032!scalekit/v1/com" +
+      "mons/commons.proto\032!scalekit/v1/options/" +
+      "options.proto\"\204\002\n\025MigrateEnvKeysRequest\022" +
+      "\'\n\017environment_ids\030\001 \003(\tR\016environmentIds" +
+      "\022\036\n\010key_type\030\002 \001(\tH\000R\007keyType\210\001\001\022\034\n\007key_" +
+      "ref\030\003 \001(\tH\001R\006keyRef\210\001\001\022\037\n\010provider\030\004 \001(\t" +
+      "H\002R\010provider\210\001\001\022\'\n\017force_reencrypt\030\005 \001(\010" +
+      "R\016forceReencrypt\022\024\n\005async\030\006 \001(\010R\005asyncB\013" +
+      "\n\t_key_typeB\n\n\010_key_refB\013\n\t_provider\"A\n\023" +
+      "SkippedTableSummary\022\024\n\005table\030\001 \001(\tR\005tabl" +
+      "e\022\024\n\005count\030\002 \001(\005R\005count\"\207\001\n\031EnvironmentR" +
+      "eencryptSkips\022%\n\016environment_id\030\001 \001(\tR\re" +
+      "nvironmentId\022C\n\006tables\030\002 \003(\0132+.scalekit." +
+      "v1.migrations.SkippedTableSummaryR\006table" +
+      "s\"\203\002\n\026MigrateEnvKeysResponse\0225\n\026environm" +
+      "ents_processed\030\001 \001(\005R\025environmentsProces" +
+      "sed\0224\n\026failed_environment_ids\030\002 \003(\tR\024fai" +
+      "ledEnvironmentIds\022`\n\022unrecoverable_rows\030" +
+      "\003 \003(\01321.scalekit.v1.migrations.Environme" +
+      "ntReencryptSkipsR\021unrecoverableRows\022\032\n\010a" +
+      "ccepted\030\004 \001(\010R\010accepted\"~\n\030MigrationServ" +
+      "iceResponse\0221\n\024success_environments\030\001 \001(" +
+      "\005R\023successEnvironments\022/\n\023failed_environ" +
+      "ments\030\002 \001(\005R\022failedEnvironments\"f\n\024Migra" +
+      "tionSAMLRequest\022\'\n\017environment_ids\030\001 \003(\003" +
+      "R\016environmentIds\022%\n\nbatch_size\030\002 \001(\005B\006\272H" +
+      "\003\310\001\001R\tbatchSize\"\255\001\n\021MigrateFSARequest\022\'\n" +
+      "\017environment_ids\030\001 \003(\003R\016environmentIds\022H" +
+      "\n\tdata_type\030\002 \001(\0162#.scalekit.v1.migratio" +
+      "ns.FSADataTypeB\006\272H\003\310\001\001R\010dataType\022%\n\nbatc" +
+      "h_size\030\003 \001(\005B\006\272H\003\310\001\001R\tbatchSize\"z\n\024Migra" +
+      "tionFSAResponse\0221\n\024success_environments\030" +
+      "\001 \001(\005R\023successEnvironments\022/\n\023failed_env" +
+      "ironments\030\002 \001(\005R\022failedEnvironments\"\221\001\n\035" +
+      "MigrateStripeCustomersRequest\022p\n\030migrate" +
+      "_stripe_customers\030\001 \001(\0132..scalekit.v1.mi" +
+      "grations.MigrateStripeCustomersB\006\272H\003\310\001\001R" +
+      "\026migrateStripeCustomers\"\255\001\n\026MigrateStrip" +
+      "eCustomers\022#\n\rworkspace_ids\030\001 \003(\003R\014works" +
+      "paceIds\022\033\n\tplan_name\030\002 \001(\tR\010planName\022\035\n\n" +
+      "batch_size\030\003 \001(\005R\tbatchSize\0222\n\025include_t" +
+      "est_accounts\030\004 \001(\010R\023includeTestAccounts\"" +
+      "\301\001\n\036MigrateStripeCustomersResponse\022#\n\rsu" +
+      "ccess_count\030\001 \001(\005R\014successCount\022!\n\014faile" +
+      "d_count\030\002 \001(\005R\013failedCount\0220\n\024failed_wor" +
+      "kspace_ids\030\003 \003(\003R\022failedWorkspaceIds\022%\n\016" +
+      "error_messages\030\004 \003(\tR\rerrorMessages\"{\n\025M" +
+      "igrationSAMLResponse\0221\n\024success_environm" +
+      "ents\030\001 \001(\005R\023successEnvironments\022/\n\023faile" +
+      "d_environments\030\002 \001(\005R\022failedEnvironments" +
+      "\"\226\002\n\032MigrateWorkspaceFGARequest\022#\n\rworks" +
+      "pace_ids\030\001 \003(\003R\014workspaceIds\022\024\n\005async\030\002 " +
+      "\001(\010R\005async\022)\n\020organization_ids\030\003 \003(\003R\017or" +
+      "ganizationIds\022#\n\rdirectory_ids\030\004 \003(\003R\014di" +
+      "rectoryIds\022%\n\016connection_ids\030\005 \003(\003R\rconn" +
+      "ectionIds\022\035\n\nclient_ids\030\006 \003(\003R\tclientIds" +
+      "\022\'\n\017environment_ids\030\007 \003(\003R\016environmentId" +
+      "s\"2\n\016PermissionList\022 \n\013permissions\030\001 \003(\t" +
+      "R\013permissions\"\273\002\n\035MigrateRolePermissions" +
+      "Request\022}\n\020role_permissions\030\001 \003(\0132J.scal" +
+      "ekit.v1.migrations.MigrateRolePermission" +
+      "sRequest.RolePermissionsEntryB\006\272H\003\310\001\001R\017r" +
+      "olePermissions\022/\n\017environment_ids\030\002 \003(\003B" +
+      "\006\272H\003\310\001\001R\016environmentIds\032j\n\024RolePermissio" +
+      "nsEntry\022\020\n\003key\030\001 \001(\tR\003key\022<\n\005value\030\002 \001(\013" +
+      "2&.scalekit.v1.migrations.PermissionList" +
+      "R\005value:\0028\001\"\312\002\n\036MigrateRolePermissionsRe" +
+      "sponse\0221\n\024success_environments\030\001 \001(\005R\023su" +
+      "ccessEnvironments\022/\n\023failed_environments" +
+      "\030\002 \001(\005R\022failedEnvironments\022%\n\016error_mess" +
+      "ages\030\003 \003(\tR\rerrorMessages\022#\n\rroles_creat" +
+      "ed\030\004 \001(\005R\014rolesCreated\022/\n\023permissions_cr" +
+      "eated\030\005 \001(\005R\022permissionsCreated\022G\n role_" +
+      "permission_mappings_created\030\006 \001(\005R\035roleP" +
+      "ermissionMappingsCreated\"\207\001\n$MigrateEnvi" +
+      "ronmentPermissionsRequest\0222\n\017environment" +
+      "_ids\030\001 \003(\003B\t\340A\002\272H\003\310\001\001R\016environmentIds\022+\n" +
+      "\013permissions\030\002 \003(\tB\t\340A\002\272H\003\310\001\001R\013permissio" +
+      "ns\"\343\001\n%MigrateEnvironmentPermissionsResp" +
       "onse\0221\n\024success_environments\030\001 \001(\005R\023succ" +
       "essEnvironments\022/\n\023failed_environments\030\002" +
-      " \001(\005R\022failedEnvironments\"\226\002\n\032MigrateWork" +
-      "spaceFGARequest\022#\n\rworkspace_ids\030\001 \003(\003R\014" +
-      "workspaceIds\022\024\n\005async\030\002 \001(\010R\005async\022)\n\020or" +
-      "ganization_ids\030\003 \003(\003R\017organizationIds\022#\n" +
-      "\rdirectory_ids\030\004 \003(\003R\014directoryIds\022%\n\016co" +
-      "nnection_ids\030\005 \003(\003R\rconnectionIds\022\035\n\ncli" +
-      "ent_ids\030\006 \003(\003R\tclientIds\022\'\n\017environment_" +
-      "ids\030\007 \003(\003R\016environmentIds\"2\n\016PermissionL" +
-      "ist\022 \n\013permissions\030\001 \003(\tR\013permissions\"\273\002" +
-      "\n\035MigrateRolePermissionsRequest\022}\n\020role_" +
-      "permissions\030\001 \003(\0132J.scalekit.v1.migratio" +
-      "ns.MigrateRolePermissionsRequest.RolePer" +
-      "missionsEntryB\006\272H\003\310\001\001R\017rolePermissions\022/" +
-      "\n\017environment_ids\030\002 \003(\003B\006\272H\003\310\001\001R\016environ" +
-      "mentIds\032j\n\024RolePermissionsEntry\022\020\n\003key\030\001" +
-      " \001(\tR\003key\022<\n\005value\030\002 \001(\0132&.scalekit.v1.m" +
-      "igrations.PermissionListR\005value:\0028\001\"\312\002\n\036" +
-      "MigrateRolePermissionsResponse\0221\n\024succes" +
-      "s_environments\030\001 \001(\005R\023successEnvironment" +
-      "s\022/\n\023failed_environments\030\002 \001(\005R\022failedEn" +
-      "vironments\022%\n\016error_messages\030\003 \003(\tR\rerro" +
-      "rMessages\022#\n\rroles_created\030\004 \001(\005R\014rolesC" +
-      "reated\022/\n\023permissions_created\030\005 \001(\005R\022per" +
-      "missionsCreated\022G\n role_permission_mappi" +
-      "ngs_created\030\006 \001(\005R\035rolePermissionMapping" +
-      "sCreated*\210\001\n\013FSADataType\022\035\n\031FSA_DATA_TYP" +
-      "E_UNSPECIFIED\020\000\022\034\n\030FSA_DATA_TYPE_CONNECT" +
-      "ION\020\001\022\031\n\025FSA_DATA_TYPE_SESSION\020\002\022!\n\035FSA_" +
-      "DATA_TYPE_USER_MANAGEMENT\020\0032\217\n\n\020Migratio" +
-      "nService\022\234\001\n\016MigrateFSAData\022).scalekit.v" +
-      "1.migrations.MigrateFSARequest\032,.scaleki" +
-      "t.v1.migrations.MigrationFSAResponse\"1\202\265" +
-      "\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\026\"\024/migrations/f" +
-      "sa-data\022\334\001\n\026MigrateStripeCustomers\0225.sca" +
-      "lekit.v1.migrations.MigrateStripeCustome" +
-      "rsRequest\0326.scalekit.v1.migrations.Migra" +
-      "teStripeCustomersResponse\"S\202\265\030\002\030\001\372\322\344\223\002\t\022" +
-      "\007PREVIEW\202\323\344\223\0028\"\034/migrations/stripe-custo" +
-      "mers:\030migrate_stripe_customers\022\234\001\n\023Migra" +
-      "teWorkspaceFGA\0222.scalekit.v1.migrations." +
-      "MigrateWorkspaceFGARequest\032\026.google.prot" +
-      "obuf.Empty\"9\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\036\"" +
-      "\031/migrations/workspace-fga:\001*\022\305\001\n\026Migrat" +
-      "eRolePermissions\0225.scalekit.v1.migration" +
-      "s.MigrateRolePermissionsRequest\0326.scalek" +
-      "it.v1.migrations.MigrateRolePermissionsR" +
-      "esponse\"<\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002!\"\034/m" +
-      "igrations/role-permissions:\001*\022\225\004\n\016Migrat" +
-      "eEnvKeys\022-.scalekit.v1.migrations.Migrat" +
-      "eEnvKeysRequest\032..scalekit.v1.migrations" +
-      ".MigrateEnvKeysResponse\"\243\003\222A\353\002\n\016Key Mana" +
-      "gement\022&Ensure DEKs for specified enviro" +
-      "nments\032\260\002Ensures each listed environment" +
-      " has at least one active DEK. Only calla" +
-      "ble from the Scalekit platform environme" +
-      "nt. Provide environment_ids (e.g. env_12" +
-      "3) in the request. Creates a DEK only fo" +
-      "r environments that do not have one (ide" +
-      "mpotent per environment). Use to backfil" +
-      "l DEKs for specific environments.\202\265\030\002\030\001\372" +
-      "\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\"\024/migrations/env-ke" +
-      "ys:\001*B\353\001\n(com.scalekit.grpc.scalekit.v1." +
-      "migrationsB\017MigrationsProtoP\001Z4github.co" +
-      "m/scalekit-inc/scalekit/pkg/grpc/migrati" +
-      "ons\242\002\003SVM\252\002\026Scalekit.V1.Migrations\312\002\026Sca" +
-      "lekit\\V1\\Migrations\342\002\"Scalekit\\V1\\Migrat" +
-      "ions\\GPBMetadata\352\002\030Scalekit::V1::Migrati" +
-      "onsb\006proto3"
+      " \001(\005R\022failedEnvironments\022%\n\016error_messag" +
+      "es\030\003 \003(\tR\rerrorMessages\022/\n\023permissions_c" +
+      "reated\030\004 \001(\005R\022permissionsCreated*\210\001\n\013FSA" +
+      "DataType\022\035\n\031FSA_DATA_TYPE_UNSPECIFIED\020\000\022" +
+      "\034\n\030FSA_DATA_TYPE_CONNECTION\020\001\022\031\n\025FSA_DAT" +
+      "A_TYPE_SESSION\020\002\022!\n\035FSA_DATA_TYPE_USER_M" +
+      "ANAGEMENT\020\0032\270\021\n\020MigrationService\022\234\001\n\016Mig" +
+      "rateFSAData\022).scalekit.v1.migrations.Mig" +
+      "rateFSARequest\032,.scalekit.v1.migrations." +
+      "MigrationFSAResponse\"1\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREV" +
+      "IEW\202\323\344\223\002\026\"\024/migrations/fsa-data\022\334\001\n\026Migr" +
+      "ateStripeCustomers\0225.scalekit.v1.migrati" +
+      "ons.MigrateStripeCustomersRequest\0326.scal" +
+      "ekit.v1.migrations.MigrateStripeCustomer" +
+      "sResponse\"S\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0028\"\034" +
+      "/migrations/stripe-customers:\030migrate_st" +
+      "ripe_customers\022\234\001\n\023MigrateWorkspaceFGA\0222" +
+      ".scalekit.v1.migrations.MigrateWorkspace" +
+      "FGARequest\032\026.google.protobuf.Empty\"9\202\265\030\002" +
+      "\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\036\"\031/migrations/wor" +
+      "kspace-fga:\001*\022\305\001\n\026MigrateRolePermissions" +
+      "\0225.scalekit.v1.migrations.MigrateRolePer" +
+      "missionsRequest\0326.scalekit.v1.migrations" +
+      ".MigrateRolePermissionsResponse\"<\202\265\030\002\030\001\372" +
+      "\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002!\"\034/migrations/role-p" +
+      "ermissions:\001*\022\246\007\n\035MigrateEnvironmentPerm" +
+      "issions\022<.scalekit.v1.migrations.Migrate" +
+      "EnvironmentPermissionsRequest\032=.scalekit" +
+      ".v1.migrations.MigrateEnvironmentPermiss" +
+      "ionsResponse\"\207\006\222A\300\005\n\nMigrations\022\"Create " +
+      "permissions in environments\032\330\002Creates pl" +
+      "atform-defined permissions in each liste" +
+      "d environment without attaching them to " +
+      "any role or writing to FGA. Validates al" +
+      "l permission names against the platform " +
+      "permission registry before writing. Idem" +
+      "potent \342\200\224 existing permissions are skip" +
+      "ped. A failure in one environment does n" +
+      "ot abort others; results are reported pe" +
+      "r environment.J\263\001\n\003200\022\253\001\nfMigration com" +
+      "pleted; includes per-environment success" +
+      " and failure counts and total permission" +
+      "s created\022A\n?\032=.scalekit.v1.migrations.M" +
+      "igrateEnvironmentPermissionsResponseJ}\n\003" +
+      "400\022v\ntInvalid request \342\200\224 environment_i" +
+      "ds or permissions is empty, or a permiss" +
+      "ion name is not a valid platform permiss" +
+      "ion\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002(\"#/migrati" +
+      "ons/environment-permissions:\001*\022\225\004\n\016Migra" +
+      "teEnvKeys\022-.scalekit.v1.migrations.Migra" +
+      "teEnvKeysRequest\032..scalekit.v1.migration" +
+      "s.MigrateEnvKeysResponse\"\243\003\222A\353\002\n\016Key Man" +
+      "agement\022&Ensure DEKs for specified envir" +
+      "onments\032\260\002Ensures each listed environmen" +
+      "t has at least one active DEK. Only call" +
+      "able from the Scalekit platform environm" +
+      "ent. Provide environment_ids (e.g. env_1" +
+      "23) in the request. Creates a DEK only f" +
+      "or environments that do not have one (id" +
+      "empotent per environment). Use to backfi" +
+      "ll DEKs for specific environments.\202\265\030\002\030@" +
+      "\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\"\024/migrations/env-k" +
+      "eys:\001*B\353\001\n(com.scalekit.grpc.scalekit.v1" +
+      ".migrationsB\017MigrationsProtoP\001Z4github.c" +
+      "om/scalekit-inc/scalekit/pkg/grpc/migrat" +
+      "ions\242\002\003SVM\252\002\026Scalekit.V1.Migrations\312\002\026Sc" +
+      "alekit\\V1\\Migrations\342\002\"Scalekit\\V1\\Migra" +
+      "tions\\GPBMetadata\352\002\030Scalekit::V1::Migrat" +
+      "ionsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.scalekit.grpc.buf.validate.ValidateProto.getDescriptor(),
           com.scalekit.grpc.google.api.AnnotationsProto.getDescriptor(),
+          com.scalekit.grpc.google.api.FieldBehaviorProto.getDescriptor(),
           com.scalekit.grpc.google.api.VisibilityProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor(),
@@ -224,75 +293,87 @@ public final class MigrationsProto {
     internal_static_scalekit_v1_migrations_MigrateEnvKeysRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_MigrateEnvKeysRequest_descriptor,
-        new java.lang.String[] { "EnvironmentIds", });
-    internal_static_scalekit_v1_migrations_MigrateEnvKeysResponse_descriptor =
+        new java.lang.String[] { "EnvironmentIds", "KeyType", "KeyRef", "Provider", "ForceReencrypt", "Async", });
+    internal_static_scalekit_v1_migrations_SkippedTableSummary_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_scalekit_v1_migrations_SkippedTableSummary_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_migrations_SkippedTableSummary_descriptor,
+        new java.lang.String[] { "Table", "Count", });
+    internal_static_scalekit_v1_migrations_EnvironmentReencryptSkips_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_scalekit_v1_migrations_EnvironmentReencryptSkips_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_migrations_EnvironmentReencryptSkips_descriptor,
+        new java.lang.String[] { "EnvironmentId", "Tables", });
+    internal_static_scalekit_v1_migrations_MigrateEnvKeysResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_scalekit_v1_migrations_MigrateEnvKeysResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_MigrateEnvKeysResponse_descriptor,
-        new java.lang.String[] { "EnvironmentsProcessed", });
+        new java.lang.String[] { "EnvironmentsProcessed", "FailedEnvironmentIds", "UnrecoverableRows", "Accepted", });
     internal_static_scalekit_v1_migrations_MigrationServiceResponse_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_scalekit_v1_migrations_MigrationServiceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_MigrationServiceResponse_descriptor,
         new java.lang.String[] { "SuccessEnvironments", "FailedEnvironments", });
     internal_static_scalekit_v1_migrations_MigrationSAMLRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_scalekit_v1_migrations_MigrationSAMLRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_MigrationSAMLRequest_descriptor,
         new java.lang.String[] { "EnvironmentIds", "BatchSize", });
     internal_static_scalekit_v1_migrations_MigrateFSARequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_scalekit_v1_migrations_MigrateFSARequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_MigrateFSARequest_descriptor,
         new java.lang.String[] { "EnvironmentIds", "DataType", "BatchSize", });
     internal_static_scalekit_v1_migrations_MigrationFSAResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_scalekit_v1_migrations_MigrationFSAResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_MigrationFSAResponse_descriptor,
         new java.lang.String[] { "SuccessEnvironments", "FailedEnvironments", });
     internal_static_scalekit_v1_migrations_MigrateStripeCustomersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_scalekit_v1_migrations_MigrateStripeCustomersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_MigrateStripeCustomersRequest_descriptor,
         new java.lang.String[] { "MigrateStripeCustomers", });
     internal_static_scalekit_v1_migrations_MigrateStripeCustomers_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_scalekit_v1_migrations_MigrateStripeCustomers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_MigrateStripeCustomers_descriptor,
         new java.lang.String[] { "WorkspaceIds", "PlanName", "BatchSize", "IncludeTestAccounts", });
     internal_static_scalekit_v1_migrations_MigrateStripeCustomersResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_scalekit_v1_migrations_MigrateStripeCustomersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_MigrateStripeCustomersResponse_descriptor,
         new java.lang.String[] { "SuccessCount", "FailedCount", "FailedWorkspaceIds", "ErrorMessages", });
     internal_static_scalekit_v1_migrations_MigrationSAMLResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_scalekit_v1_migrations_MigrationSAMLResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_MigrationSAMLResponse_descriptor,
         new java.lang.String[] { "SuccessEnvironments", "FailedEnvironments", });
     internal_static_scalekit_v1_migrations_MigrateWorkspaceFGARequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_scalekit_v1_migrations_MigrateWorkspaceFGARequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_MigrateWorkspaceFGARequest_descriptor,
         new java.lang.String[] { "WorkspaceIds", "Async", "OrganizationIds", "DirectoryIds", "ConnectionIds", "ClientIds", "EnvironmentIds", });
     internal_static_scalekit_v1_migrations_PermissionList_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_scalekit_v1_migrations_PermissionList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_PermissionList_descriptor,
         new java.lang.String[] { "Permissions", });
     internal_static_scalekit_v1_migrations_MigrateRolePermissionsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_scalekit_v1_migrations_MigrateRolePermissionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_MigrateRolePermissionsRequest_descriptor,
@@ -304,14 +385,27 @@ public final class MigrationsProto {
         internal_static_scalekit_v1_migrations_MigrateRolePermissionsRequest_RolePermissionsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_scalekit_v1_migrations_MigrateRolePermissionsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_scalekit_v1_migrations_MigrateRolePermissionsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_migrations_MigrateRolePermissionsResponse_descriptor,
         new java.lang.String[] { "SuccessEnvironments", "FailedEnvironments", "ErrorMessages", "RolesCreated", "PermissionsCreated", "RolePermissionMappingsCreated", });
+    internal_static_scalekit_v1_migrations_MigrateEnvironmentPermissionsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_scalekit_v1_migrations_MigrateEnvironmentPermissionsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_migrations_MigrateEnvironmentPermissionsRequest_descriptor,
+        new java.lang.String[] { "EnvironmentIds", "Permissions", });
+    internal_static_scalekit_v1_migrations_MigrateEnvironmentPermissionsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_scalekit_v1_migrations_MigrateEnvironmentPermissionsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_migrations_MigrateEnvironmentPermissionsResponse_descriptor,
+        new java.lang.String[] { "SuccessEnvironments", "FailedEnvironments", "ErrorMessages", "PermissionsCreated", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);
+    registry.add(com.scalekit.grpc.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
     registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
@@ -320,6 +414,7 @@ public final class MigrationsProto {
         .internalUpdateFileDescriptor(descriptor, registry);
     com.scalekit.grpc.buf.validate.ValidateProto.getDescriptor();
     com.scalekit.grpc.google.api.AnnotationsProto.getDescriptor();
+    com.scalekit.grpc.google.api.FieldBehaviorProto.getDescriptor();
     com.scalekit.grpc.google.api.VisibilityProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor();

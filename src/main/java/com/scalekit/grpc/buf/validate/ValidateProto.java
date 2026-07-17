@@ -11,6 +11,7 @@ public final class ValidateProto {
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.message);
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.oneof);
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);
+    registry.add(com.scalekit.grpc.buf.validate.ValidateProto.predefined);
   }
 
   public static void registerAllExtensions(
@@ -30,10 +31,10 @@ public final class ValidateProto {
   public static final
     com.google.protobuf.GeneratedMessage.GeneratedExtension<
       com.google.protobuf.DescriptorProtos.MessageOptions,
-      com.scalekit.grpc.buf.validate.MessageConstraints> message = com.google.protobuf.GeneratedMessage
+      com.scalekit.grpc.buf.validate.MessageRules> message = com.google.protobuf.GeneratedMessage
           .newFileScopedGeneratedExtension(
-        com.scalekit.grpc.buf.validate.MessageConstraints.class,
-        com.scalekit.grpc.buf.validate.MessageConstraints.getDefaultInstance());
+        com.scalekit.grpc.buf.validate.MessageRules.class,
+        com.scalekit.grpc.buf.validate.MessageRules.getDefaultInstance());
   public static final int ONEOF_FIELD_NUMBER = 1159;
   /**
    * <pre>
@@ -46,10 +47,10 @@ public final class ValidateProto {
   public static final
     com.google.protobuf.GeneratedMessage.GeneratedExtension<
       com.google.protobuf.DescriptorProtos.OneofOptions,
-      com.scalekit.grpc.buf.validate.OneofConstraints> oneof = com.google.protobuf.GeneratedMessage
+      com.scalekit.grpc.buf.validate.OneofRules> oneof = com.google.protobuf.GeneratedMessage
           .newFileScopedGeneratedExtension(
-        com.scalekit.grpc.buf.validate.OneofConstraints.class,
-        com.scalekit.grpc.buf.validate.OneofConstraints.getDefaultInstance());
+        com.scalekit.grpc.buf.validate.OneofRules.class,
+        com.scalekit.grpc.buf.validate.OneofRules.getDefaultInstance());
   public static final int FIELD_FIELD_NUMBER = 1159;
   /**
    * <pre>
@@ -62,25 +63,70 @@ public final class ValidateProto {
   public static final
     com.google.protobuf.GeneratedMessage.GeneratedExtension<
       com.google.protobuf.DescriptorProtos.FieldOptions,
-      com.scalekit.grpc.buf.validate.FieldConstraints> field = com.google.protobuf.GeneratedMessage
+      com.scalekit.grpc.buf.validate.FieldRules> field = com.google.protobuf.GeneratedMessage
           .newFileScopedGeneratedExtension(
-        com.scalekit.grpc.buf.validate.FieldConstraints.class,
-        com.scalekit.grpc.buf.validate.FieldConstraints.getDefaultInstance());
+        com.scalekit.grpc.buf.validate.FieldRules.class,
+        com.scalekit.grpc.buf.validate.FieldRules.getDefaultInstance());
+  public static final int PREDEFINED_FIELD_NUMBER = 1160;
+  /**
+   * <pre>
+   * Specifies predefined rules. When extending a standard rule message,
+   * this adds additional CEL expressions that apply when the extension is used.
+   *
+   * ```proto
+   * extend buf.validate.Int32Rules {
+   *   bool is_zero [(buf.validate.predefined).cel = {
+   *     id: "int32.is_zero",
+   *     message: "must be zero",
+   *     expression: "!rule || this == 0",
+   *   }];
+   * }
+   *
+   * message Foo {
+   *   int32 reserved = 1 [(buf.validate.field).int32.(is_zero) = true];
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>extend .google.protobuf.FieldOptions { ... }</code>
+   */
+  public static final
+    com.google.protobuf.GeneratedMessage.GeneratedExtension<
+      com.google.protobuf.DescriptorProtos.FieldOptions,
+      com.scalekit.grpc.buf.validate.PredefinedRules> predefined = com.google.protobuf.GeneratedMessage
+          .newFileScopedGeneratedExtension(
+        com.scalekit.grpc.buf.validate.PredefinedRules.class,
+        com.scalekit.grpc.buf.validate.PredefinedRules.getDefaultInstance());
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_buf_validate_MessageConstraints_descriptor;
+    internal_static_buf_validate_Rule_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_buf_validate_MessageConstraints_fieldAccessorTable;
+      internal_static_buf_validate_Rule_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_buf_validate_OneofConstraints_descriptor;
+    internal_static_buf_validate_MessageRules_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_buf_validate_OneofConstraints_fieldAccessorTable;
+      internal_static_buf_validate_MessageRules_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_buf_validate_FieldConstraints_descriptor;
+    internal_static_buf_validate_MessageOneofRule_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_buf_validate_FieldConstraints_fieldAccessorTable;
+      internal_static_buf_validate_MessageOneofRule_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_buf_validate_OneofRules_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_buf_validate_OneofRules_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_buf_validate_FieldRules_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_buf_validate_FieldRules_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_buf_validate_PredefinedRules_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_buf_validate_PredefinedRules_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_buf_validate_FloatRules_descriptor;
   static final 
@@ -182,10 +228,35 @@ public final class ValidateProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_buf_validate_DurationRules_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_buf_validate_FieldMaskRules_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_buf_validate_FieldMaskRules_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_buf_validate_TimestampRules_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_buf_validate_TimestampRules_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_buf_validate_Violations_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_buf_validate_Violations_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_buf_validate_Violation_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_buf_validate_Violation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_buf_validate_FieldPath_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_buf_validate_FieldPath_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_buf_validate_FieldPathElement_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_buf_validate_FieldPathElement_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -196,1471 +267,1605 @@ public final class ValidateProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\033buf/validate/validate.proto\022\014buf.valid" +
-      "ate\032\035buf/validate/expression.proto\032\037buf/" +
-      "validate/priv/private.proto\032 google/prot" +
-      "obuf/descriptor.proto\032\036google/protobuf/d" +
-      "uration.proto\032\037google/protobuf/timestamp" +
-      ".proto\"n\n\022MessageConstraints\022\037\n\010disabled" +
-      "\030\001 \001(\010H\000R\010disabled\210\001\001\022*\n\003cel\030\003 \003(\0132\030.buf" +
-      ".validate.ConstraintR\003celB\013\n\t_disabled\"@" +
-      "\n\020OneofConstraints\022\037\n\010required\030\001 \001(\010H\000R\010" +
-      "required\210\001\001B\013\n\t_required\"\253\n\n\020FieldConstr" +
-      "aints\022*\n\003cel\030\027 \003(\0132\030.buf.validate.Constr" +
-      "aintR\003cel\022\032\n\010required\030\031 \001(\010R\010required\022,\n" +
-      "\006ignore\030\033 \001(\0162\024.buf.validate.IgnoreR\006ign" +
-      "ore\0220\n\005float\030\001 \001(\0132\030.buf.validate.FloatR" +
-      "ulesH\000R\005float\0223\n\006double\030\002 \001(\0132\031.buf.vali" +
-      "date.DoubleRulesH\000R\006double\0220\n\005int32\030\003 \001(" +
-      "\0132\030.buf.validate.Int32RulesH\000R\005int32\0220\n\005" +
-      "int64\030\004 \001(\0132\030.buf.validate.Int64RulesH\000R" +
-      "\005int64\0223\n\006uint32\030\005 \001(\0132\031.buf.validate.UI" +
-      "nt32RulesH\000R\006uint32\0223\n\006uint64\030\006 \001(\0132\031.bu" +
-      "f.validate.UInt64RulesH\000R\006uint64\0223\n\006sint" +
-      "32\030\007 \001(\0132\031.buf.validate.SInt32RulesH\000R\006s" +
-      "int32\0223\n\006sint64\030\010 \001(\0132\031.buf.validate.SIn" +
-      "t64RulesH\000R\006sint64\0226\n\007fixed32\030\t \001(\0132\032.bu" +
-      "f.validate.Fixed32RulesH\000R\007fixed32\0226\n\007fi" +
-      "xed64\030\n \001(\0132\032.buf.validate.Fixed64RulesH" +
-      "\000R\007fixed64\0229\n\010sfixed32\030\013 \001(\0132\033.buf.valid" +
-      "ate.SFixed32RulesH\000R\010sfixed32\0229\n\010sfixed6" +
-      "4\030\014 \001(\0132\033.buf.validate.SFixed64RulesH\000R\010" +
-      "sfixed64\022-\n\004bool\030\r \001(\0132\027.buf.validate.Bo" +
-      "olRulesH\000R\004bool\0223\n\006string\030\016 \001(\0132\031.buf.va" +
-      "lidate.StringRulesH\000R\006string\0220\n\005bytes\030\017 " +
-      "\001(\0132\030.buf.validate.BytesRulesH\000R\005bytes\022-" +
-      "\n\004enum\030\020 \001(\0132\027.buf.validate.EnumRulesH\000R" +
-      "\004enum\0229\n\010repeated\030\022 \001(\0132\033.buf.validate.R" +
-      "epeatedRulesH\000R\010repeated\022*\n\003map\030\023 \001(\0132\026." +
-      "buf.validate.MapRulesH\000R\003map\022*\n\003any\030\024 \001(" +
-      "\0132\026.buf.validate.AnyRulesH\000R\003any\0229\n\010dura" +
-      "tion\030\025 \001(\0132\033.buf.validate.DurationRulesH" +
-      "\000R\010duration\022<\n\ttimestamp\030\026 \001(\0132\034.buf.val" +
-      "idate.TimestampRulesH\000R\ttimestamp\022\034\n\007ski" +
-      "pped\030\030 \001(\010B\002\030\001R\007skipped\022%\n\014ignore_empty\030" +
-      "\032 \001(\010B\002\030\001R\013ignoreEmptyB\006\n\004type\"\242\027\n\nFloat" +
-      "Rules\022u\n\005const\030\001 \001(\002BZ\302HW\nU\n\013float.const" +
-      "\032Fthis != rules.const ? \'value must equa" +
-      "l %s\'.format([rules.const]) : \'\'H\002R\005cons" +
-      "t\210\001\001\022\243\001\n\002lt\030\002 \001(\002B\220\001\302H\214\001\n\211\001\n\010float.lt\032}!" +
-      "has(rules.gte) && !has(rules.gt) && (thi" +
-      "s.isNan() || this >= rules.lt)? \'value m" +
-      "ust be less than %s\'.format([rules.lt]) " +
-      ": \'\'H\000R\002lt\022\264\001\n\003lte\030\003 \001(\002B\237\001\302H\233\001\n\230\001\n\tfloa" +
-      "t.lte\032\212\001!has(rules.gte) && !has(rules.gt" +
-      ") && (this.isNan() || this > rules.lte)?" +
-      " \'value must be less than or equal to %s" +
-      "\'.format([rules.lte]) : \'\'H\000R\003lte\022\363\007\n\002gt" +
-      "\030\004 \001(\002B\340\007\302H\334\007\n\215\001\n\010float.gt\032\200\001!has(rules." +
-      "lt) && !has(rules.lte) && (this.isNan() " +
-      "|| this <= rules.gt)? \'value must be gre" +
-      "ater than %s\'.format([rules.gt]) : \'\'\n\303\001" +
-      "\n\013float.gt_lt\032\263\001has(rules.lt) && rules.l" +
-      "t >= rules.gt && (this.isNan() || this >" +
-      "= rules.lt || this <= rules.gt)? \'value " +
-      "must be greater than %s and less than %s" +
-      "\'.format([rules.gt, rules.lt]) : \'\'\n\315\001\n\025" +
-      "float.gt_lt_exclusive\032\263\001has(rules.lt) &&" +
-      " rules.lt < rules.gt && (this.isNan() ||" +
-      " (rules.lt <= this && this <= rules.gt))" +
-      "? \'value must be greater than %s or less" +
-      " than %s\'.format([rules.gt, rules.lt]) :" +
-      " \'\'\n\323\001\n\014float.gt_lte\032\302\001has(rules.lte) &&" +
-      " rules.lte >= rules.gt && (this.isNan() " +
-      "|| this > rules.lte || this <= rules.gt)" +
-      "? \'value must be greater than %s and les" +
-      "s than or equal to %s\'.format([rules.gt," +
-      " rules.lte]) : \'\'\n\335\001\n\026float.gt_lte_exclu" +
-      "sive\032\302\001has(rules.lte) && rules.lte < rul" +
-      "es.gt && (this.isNan() || (rules.lte < t" +
-      "his && this <= rules.gt))? \'value must b" +
-      "e greater than %s or less than or equal " +
-      "to %s\'.format([rules.gt, rules.lte]) : \'" +
-      "\'H\001R\002gt\022\277\010\n\003gte\030\005 \001(\002B\252\010\302H\246\010\n\233\001\n\tfloat.g" +
-      "te\032\215\001!has(rules.lt) && !has(rules.lte) &" +
-      "& (this.isNan() || this < rules.gte)? \'v" +
-      "alue must be greater than or equal to %s" +
-      "\'.format([rules.gte]) : \'\'\n\322\001\n\014float.gte" +
-      "_lt\032\301\001has(rules.lt) && rules.lt >= rules" +
-      ".gte && (this.isNan() || this >= rules.l" +
-      "t || this < rules.gte)? \'value must be g" +
-      "reater than or equal to %s and less than" +
-      " %s\'.format([rules.gte, rules.lt]) : \'\'\n" +
-      "\334\001\n\026float.gte_lt_exclusive\032\301\001has(rules.l" +
-      "t) && rules.lt < rules.gte && (this.isNa" +
-      "n() || (rules.lt <= this && this < rules" +
-      ".gte))? \'value must be greater than or e" +
-      "qual to %s or less than %s\'.format([rule" +
-      "s.gte, rules.lt]) : \'\'\n\342\001\n\rfloat.gte_lte" +
-      "\032\320\001has(rules.lte) && rules.lte >= rules." +
-      "gte && (this.isNan() || this > rules.lte" +
-      " || this < rules.gte)? \'value must be gr" +
-      "eater than or equal to %s and less than " +
-      "or equal to %s\'.format([rules.gte, rules" +
-      ".lte]) : \'\'\n\354\001\n\027float.gte_lte_exclusive\032" +
-      "\320\001has(rules.lte) && rules.lte < rules.gt" +
-      "e && (this.isNan() || (rules.lte < this " +
-      "&& this < rules.gte))? \'value must be gr" +
-      "eater than or equal to %s or less than o" +
-      "r equal to %s\'.format([rules.gte, rules." +
-      "lte]) : \'\'H\001R\003gte\022y\n\002in\030\006 \003(\002Bi\302Hf\nd\n\010fl" +
-      "oat.in\032X!(this in dyn(rules)[\'in\']) ? \'v" +
-      "alue must be in list %s\'.format([dyn(rul" +
-      "es)[\'in\']]) : \'\'R\002in\022}\n\006not_in\030\007 \003(\002Bf\302H" +
-      "c\na\n\014float.not_in\032Qthis in rules.not_in " +
-      "? \'value must not be in list %s\'.format(" +
-      "[rules.not_in]) : \'\'R\005notIn\022g\n\006finite\030\010 " +
-      "\001(\010BO\302HL\nJ\n\014float.finite\032:this.isNan() |" +
-      "| this.isInf() ? \'value must be finite\' " +
-      ": \'\'R\006finiteB\013\n\tless_thanB\016\n\014greater_tha" +
-      "nB\010\n\006_const\"\263\027\n\013DoubleRules\022v\n\005const\030\001 \001" +
-      "(\001B[\302HX\nV\n\014double.const\032Fthis != rules.c" +
-      "onst ? \'value must equal %s\'.format([rul" +
-      "es.const]) : \'\'H\002R\005const\210\001\001\022\244\001\n\002lt\030\002 \001(\001" +
-      "B\221\001\302H\215\001\n\212\001\n\tdouble.lt\032}!has(rules.gte) &" +
-      "& !has(rules.gt) && (this.isNan() || thi" +
-      "s >= rules.lt)? \'value must be less than" +
-      " %s\'.format([rules.lt]) : \'\'H\000R\002lt\022\265\001\n\003l" +
-      "te\030\003 \001(\001B\240\001\302H\234\001\n\231\001\n\ndouble.lte\032\212\001!has(ru" +
-      "les.gte) && !has(rules.gt) && (this.isNa" +
-      "n() || this > rules.lte)? \'value must be" +
-      " less than or equal to %s\'.format([rules" +
-      ".lte]) : \'\'H\000R\003lte\022\370\007\n\002gt\030\004 \001(\001B\345\007\302H\341\007\n\216" +
-      "\001\n\tdouble.gt\032\200\001!has(rules.lt) && !has(ru" +
-      "les.lte) && (this.isNan() || this <= rul" +
-      "es.gt)? \'value must be greater than %s\'." +
-      "format([rules.gt]) : \'\'\n\304\001\n\014double.gt_lt" +
-      "\032\263\001has(rules.lt) && rules.lt >= rules.gt" +
-      " && (this.isNan() || this >= rules.lt ||" +
-      " this <= rules.gt)? \'value must be great" +
-      "er than %s and less than %s\'.format([rul" +
-      "es.gt, rules.lt]) : \'\'\n\316\001\n\026double.gt_lt_" +
-      "exclusive\032\263\001has(rules.lt) && rules.lt < " +
-      "rules.gt && (this.isNan() || (rules.lt <" +
-      "= this && this <= rules.gt))? \'value mus" +
-      "t be greater than %s or less than %s\'.fo" +
-      "rmat([rules.gt, rules.lt]) : \'\'\n\324\001\n\rdoub" +
-      "le.gt_lte\032\302\001has(rules.lte) && rules.lte " +
-      ">= rules.gt && (this.isNan() || this > r" +
-      "ules.lte || this <= rules.gt)? \'value mu" +
-      "st be greater than %s and less than or e" +
-      "qual to %s\'.format([rules.gt, rules.lte]" +
-      ") : \'\'\n\336\001\n\027double.gt_lte_exclusive\032\302\001has" +
-      "(rules.lte) && rules.lte < rules.gt && (" +
-      "this.isNan() || (rules.lte < this && thi" +
-      "s <= rules.gt))? \'value must be greater " +
-      "than %s or less than or equal to %s\'.for" +
-      "mat([rules.gt, rules.lte]) : \'\'H\001R\002gt\022\304\010" +
-      "\n\003gte\030\005 \001(\001B\257\010\302H\253\010\n\234\001\n\ndouble.gte\032\215\001!has" +
-      "(rules.lt) && !has(rules.lte) && (this.i" +
-      "sNan() || this < rules.gte)? \'value must" +
-      " be greater than or equal to %s\'.format(" +
-      "[rules.gte]) : \'\'\n\323\001\n\rdouble.gte_lt\032\301\001ha" +
-      "s(rules.lt) && rules.lt >= rules.gte && " +
-      "(this.isNan() || this >= rules.lt || thi" +
-      "s < rules.gte)? \'value must be greater t" +
-      "han or equal to %s and less than %s\'.for" +
-      "mat([rules.gte, rules.lt]) : \'\'\n\335\001\n\027doub" +
-      "le.gte_lt_exclusive\032\301\001has(rules.lt) && r" +
-      "ules.lt < rules.gte && (this.isNan() || " +
-      "(rules.lt <= this && this < rules.gte))?" +
-      " \'value must be greater than or equal to" +
-      " %s or less than %s\'.format([rules.gte, " +
-      "rules.lt]) : \'\'\n\343\001\n\016double.gte_lte\032\320\001has" +
-      "(rules.lte) && rules.lte >= rules.gte &&" +
-      " (this.isNan() || this > rules.lte || th" +
-      "is < rules.gte)? \'value must be greater " +
-      "than or equal to %s and less than or equ" +
-      "al to %s\'.format([rules.gte, rules.lte])" +
-      " : \'\'\n\355\001\n\030double.gte_lte_exclusive\032\320\001has" +
-      "(rules.lte) && rules.lte < rules.gte && " +
-      "(this.isNan() || (rules.lte < this && th" +
-      "is < rules.gte))? \'value must be greater" +
-      " than or equal to %s or less than or equ" +
-      "al to %s\'.format([rules.gte, rules.lte])" +
-      " : \'\'H\001R\003gte\022z\n\002in\030\006 \003(\001Bj\302Hg\ne\n\tdouble." +
-      "in\032X!(this in dyn(rules)[\'in\']) ? \'value" +
-      " must be in list %s\'.format([dyn(rules)[" +
-      "\'in\']]) : \'\'R\002in\022~\n\006not_in\030\007 \003(\001Bg\302Hd\nb\n" +
-      "\rdouble.not_in\032Qthis in rules.not_in ? \'" +
-      "value must not be in list %s\'.format([ru" +
-      "les.not_in]) : \'\'R\005notIn\022h\n\006finite\030\010 \001(\010" +
-      "BP\302HM\nK\n\rdouble.finite\032:this.isNan() || " +
-      "this.isInf() ? \'value must be finite\' : " +
-      "\'\'R\006finiteB\013\n\tless_thanB\016\n\014greater_thanB" +
-      "\010\n\006_const\"\342\024\n\nInt32Rules\022u\n\005const\030\001 \001(\005B" +
-      "Z\302HW\nU\n\013int32.const\032Fthis != rules.const" +
-      " ? \'value must equal %s\'.format([rules.c" +
-      "onst]) : \'\'H\002R\005const\210\001\001\022\216\001\n\002lt\030\002 \001(\005B|\302H" +
-      "y\nw\n\010int32.lt\032k!has(rules.gte) && !has(r" +
-      "ules.gt) && this >= rules.lt? \'value mus" +
-      "t be less than %s\'.format([rules.lt]) : " +
-      "\'\'H\000R\002lt\022\241\001\n\003lte\030\003 \001(\005B\214\001\302H\210\001\n\205\001\n\tint32." +
-      "lte\032x!has(rules.gte) && !has(rules.gt) &" +
-      "& this > rules.lte? \'value must be less " +
-      "than or equal to %s\'.format([rules.lte])" +
-      " : \'\'H\000R\003lte\022\233\007\n\002gt\030\004 \001(\005B\210\007\302H\204\007\nz\n\010int3" +
-      "2.gt\032n!has(rules.lt) && !has(rules.lte) " +
-      "&& this <= rules.gt? \'value must be grea" +
-      "ter than %s\'.format([rules.gt]) : \'\'\n\263\001\n" +
-      "\013int32.gt_lt\032\243\001has(rules.lt) && rules.lt" +
-      " >= rules.gt && (this >= rules.lt || thi" +
-      "s <= rules.gt)? \'value must be greater t" +
-      "han %s and less than %s\'.format([rules.g" +
-      "t, rules.lt]) : \'\'\n\273\001\n\025int32.gt_lt_exclu" +
-      "sive\032\241\001has(rules.lt) && rules.lt < rules" +
-      ".gt && (rules.lt <= this && this <= rule" +
-      "s.gt)? \'value must be greater than %s or" +
+      "ate\032 google/protobuf/descriptor.proto\032\036g" +
+      "oogle/protobuf/duration.proto\032 google/pr" +
+      "otobuf/field_mask.proto\032\037google/protobuf" +
+      "/timestamp.proto\"P\n\004Rule\022\016\n\002id\030\001 \001(\tR\002id" +
+      "\022\030\n\007message\030\002 \001(\tR\007message\022\036\n\nexpression" +
+      "\030\003 \001(\tR\nexpression\"\241\001\n\014MessageRules\022%\n\016c" +
+      "el_expression\030\005 \003(\tR\rcelExpression\022$\n\003ce" +
+      "l\030\003 \003(\0132\022.buf.validate.RuleR\003cel\0224\n\005oneo" +
+      "f\030\004 \003(\0132\036.buf.validate.MessageOneofRuleR" +
+      "\005oneofJ\004\010\001\020\002R\010disabled\"F\n\020MessageOneofRu" +
+      "le\022\026\n\006fields\030\001 \003(\tR\006fields\022\032\n\010required\030\002" +
+      " \001(\010R\010required\"(\n\nOneofRules\022\032\n\010required" +
+      "\030\001 \001(\010R\010required\"\343\n\n\nFieldRules\022%\n\016cel_e" +
+      "xpression\030\035 \003(\tR\rcelExpression\022$\n\003cel\030\027 " +
+      "\003(\0132\022.buf.validate.RuleR\003cel\022\032\n\010required" +
+      "\030\031 \001(\010R\010required\022,\n\006ignore\030\033 \001(\0162\024.buf.v" +
+      "alidate.IgnoreR\006ignore\0220\n\005float\030\001 \001(\0132\030." +
+      "buf.validate.FloatRulesH\000R\005float\0223\n\006doub" +
+      "le\030\002 \001(\0132\031.buf.validate.DoubleRulesH\000R\006d" +
+      "ouble\0220\n\005int32\030\003 \001(\0132\030.buf.validate.Int3" +
+      "2RulesH\000R\005int32\0220\n\005int64\030\004 \001(\0132\030.buf.val" +
+      "idate.Int64RulesH\000R\005int64\0223\n\006uint32\030\005 \001(" +
+      "\0132\031.buf.validate.UInt32RulesH\000R\006uint32\0223" +
+      "\n\006uint64\030\006 \001(\0132\031.buf.validate.UInt64Rule" +
+      "sH\000R\006uint64\0223\n\006sint32\030\007 \001(\0132\031.buf.valida" +
+      "te.SInt32RulesH\000R\006sint32\0223\n\006sint64\030\010 \001(\013" +
+      "2\031.buf.validate.SInt64RulesH\000R\006sint64\0226\n" +
+      "\007fixed32\030\t \001(\0132\032.buf.validate.Fixed32Rul" +
+      "esH\000R\007fixed32\0226\n\007fixed64\030\n \001(\0132\032.buf.val" +
+      "idate.Fixed64RulesH\000R\007fixed64\0229\n\010sfixed3" +
+      "2\030\013 \001(\0132\033.buf.validate.SFixed32RulesH\000R\010" +
+      "sfixed32\0229\n\010sfixed64\030\014 \001(\0132\033.buf.validat" +
+      "e.SFixed64RulesH\000R\010sfixed64\022-\n\004bool\030\r \001(" +
+      "\0132\027.buf.validate.BoolRulesH\000R\004bool\0223\n\006st" +
+      "ring\030\016 \001(\0132\031.buf.validate.StringRulesH\000R" +
+      "\006string\0220\n\005bytes\030\017 \001(\0132\030.buf.validate.By" +
+      "tesRulesH\000R\005bytes\022-\n\004enum\030\020 \001(\0132\027.buf.va" +
+      "lidate.EnumRulesH\000R\004enum\0229\n\010repeated\030\022 \001" +
+      "(\0132\033.buf.validate.RepeatedRulesH\000R\010repea" +
+      "ted\022*\n\003map\030\023 \001(\0132\026.buf.validate.MapRules" +
+      "H\000R\003map\022*\n\003any\030\024 \001(\0132\026.buf.validate.AnyR" +
+      "ulesH\000R\003any\0229\n\010duration\030\025 \001(\0132\033.buf.vali" +
+      "date.DurationRulesH\000R\010duration\022=\n\nfield_" +
+      "mask\030\034 \001(\0132\034.buf.validate.FieldMaskRules" +
+      "H\000R\tfieldMask\022<\n\ttimestamp\030\026 \001(\0132\034.buf.v" +
+      "alidate.TimestampRulesH\000R\ttimestampB\006\n\004t" +
+      "ypeJ\004\010\030\020\031J\004\010\032\020\033R\007skippedR\014ignore_empty\"Z" +
+      "\n\017PredefinedRules\022$\n\003cel\030\001 \003(\0132\022.buf.val" +
+      "idate.RuleR\003celJ\004\010\030\020\031J\004\010\032\020\033R\007skippedR\014ig" +
+      "nore_empty\"\256\027\n\nFloatRules\022\204\001\n\005const\030\001 \001(" +
+      "\002Bn\302Hk\ni\n\013float.const\032Zthis != getField(" +
+      "rules, \'const\') ? \'must equal %s\'.format" +
+      "([getField(rules, \'const\')]) : \'\'R\005const" +
+      "\022\235\001\n\002lt\030\002 \001(\002B\212\001\302H\206\001\n\203\001\n\010float.lt\032w!has(" +
+      "rules.gte) && !has(rules.gt) && (this.is" +
+      "Nan() || this >= rules.lt)? \'must be les" +
+      "s than %s\'.format([rules.lt]) : \'\'H\000R\002lt" +
+      "\022\256\001\n\003lte\030\003 \001(\002B\231\001\302H\225\001\n\222\001\n\tfloat.lte\032\204\001!h" +
+      "as(rules.gte) && !has(rules.gt) && (this" +
+      ".isNan() || this > rules.lte)? \'must be " +
+      "less than or equal to %s\'.format([rules." +
+      "lte]) : \'\'H\000R\003lte\022\324\007\n\002gt\030\004 \001(\002B\301\007\302H\275\007\n\206\001" +
+      "\n\010float.gt\032z!has(rules.lt) && !has(rules" +
+      ".lte) && (this.isNan() || this <= rules." +
+      "gt)? \'must be greater than %s\'.format([r" +
+      "ules.gt]) : \'\'\n\275\001\n\013float.gt_lt\032\255\001has(rul" +
+      "es.lt) && rules.lt >= rules.gt && (this." +
+      "isNan() || this >= rules.lt || this <= r" +
+      "ules.gt)? \'must be greater than %s and l" +
+      "ess than %s\'.format([rules.gt, rules.lt]" +
+      ") : \'\'\n\307\001\n\025float.gt_lt_exclusive\032\255\001has(r" +
+      "ules.lt) && rules.lt < rules.gt && (this" +
+      ".isNan() || (rules.lt <= this && this <=" +
+      " rules.gt))? \'must be greater than %s or" +
       " less than %s\'.format([rules.gt, rules.l" +
-      "t]) : \'\'\n\303\001\n\014int32.gt_lte\032\262\001has(rules.lt" +
-      "e) && rules.lte >= rules.gt && (this > r" +
-      "ules.lte || this <= rules.gt)? \'value mu" +
-      "st be greater than %s and less than or e" +
-      "qual to %s\'.format([rules.gt, rules.lte]" +
-      ") : \'\'\n\313\001\n\026int32.gt_lte_exclusive\032\260\001has(" +
-      "rules.lte) && rules.lte < rules.gt && (r" +
-      "ules.lte < this && this <= rules.gt)? \'v" +
-      "alue must be greater than %s or less tha" +
-      "n or equal to %s\'.format([rules.gt, rule" +
-      "s.lte]) : \'\'H\001R\002gt\022\350\007\n\003gte\030\005 \001(\005B\323\007\302H\317\007\n" +
-      "\210\001\n\tint32.gte\032{!has(rules.lt) && !has(ru" +
-      "les.lte) && this < rules.gte? \'value mus" +
-      "t be greater than or equal to %s\'.format" +
-      "([rules.gte]) : \'\'\n\302\001\n\014int32.gte_lt\032\261\001ha" +
-      "s(rules.lt) && rules.lt >= rules.gte && " +
-      "(this >= rules.lt || this < rules.gte)? " +
-      "\'value must be greater than or equal to " +
-      "%s and less than %s\'.format([rules.gte, " +
-      "rules.lt]) : \'\'\n\312\001\n\026int32.gte_lt_exclusi" +
-      "ve\032\257\001has(rules.lt) && rules.lt < rules.g" +
-      "te && (rules.lt <= this && this < rules." +
-      "gte)? \'value must be greater than or equ" +
-      "al to %s or less than %s\'.format([rules." +
-      "gte, rules.lt]) : \'\'\n\322\001\n\rint32.gte_lte\032\300" +
-      "\001has(rules.lte) && rules.lte >= rules.gt" +
-      "e && (this > rules.lte || this < rules.g" +
-      "te)? \'value must be greater than or equa" +
-      "l to %s and less than or equal to %s\'.fo" +
-      "rmat([rules.gte, rules.lte]) : \'\'\n\332\001\n\027in" +
-      "t32.gte_lte_exclusive\032\276\001has(rules.lte) &" +
-      "& rules.lte < rules.gte && (rules.lte < " +
-      "this && this < rules.gte)? \'value must b" +
-      "e greater than or equal to %s or less th" +
-      "an or equal to %s\'.format([rules.gte, ru" +
-      "les.lte]) : \'\'H\001R\003gte\022y\n\002in\030\006 \003(\005Bi\302Hf\nd" +
-      "\n\010int32.in\032X!(this in dyn(rules)[\'in\']) " +
-      "? \'value must be in list %s\'.format([dyn" +
-      "(rules)[\'in\']]) : \'\'R\002in\022}\n\006not_in\030\007 \003(\005" +
-      "Bf\302Hc\na\n\014int32.not_in\032Qthis in rules.not" +
-      "_in ? \'value must not be in list %s\'.for" +
-      "mat([rules.not_in]) : \'\'R\005notInB\013\n\tless_" +
-      "thanB\016\n\014greater_thanB\010\n\006_const\"\342\024\n\nInt64" +
-      "Rules\022u\n\005const\030\001 \001(\003BZ\302HW\nU\n\013int64.const" +
-      "\032Fthis != rules.const ? \'value must equa" +
-      "l %s\'.format([rules.const]) : \'\'H\002R\005cons" +
-      "t\210\001\001\022\216\001\n\002lt\030\002 \001(\003B|\302Hy\nw\n\010int64.lt\032k!has" +
-      "(rules.gte) && !has(rules.gt) && this >=" +
-      " rules.lt? \'value must be less than %s\'." +
-      "format([rules.lt]) : \'\'H\000R\002lt\022\241\001\n\003lte\030\003 " +
-      "\001(\003B\214\001\302H\210\001\n\205\001\n\tint64.lte\032x!has(rules.gte" +
-      ") && !has(rules.gt) && this > rules.lte?" +
-      " \'value must be less than or equal to %s" +
-      "\'.format([rules.lte]) : \'\'H\000R\003lte\022\233\007\n\002gt" +
-      "\030\004 \001(\003B\210\007\302H\204\007\nz\n\010int64.gt\032n!has(rules.lt" +
-      ") && !has(rules.lte) && this <= rules.gt" +
-      "? \'value must be greater than %s\'.format" +
-      "([rules.gt]) : \'\'\n\263\001\n\013int64.gt_lt\032\243\001has(" +
-      "rules.lt) && rules.lt >= rules.gt && (th" +
-      "is >= rules.lt || this <= rules.gt)? \'va" +
-      "lue must be greater than %s and less tha" +
-      "n %s\'.format([rules.gt, rules.lt]) : \'\'\n" +
-      "\273\001\n\025int64.gt_lt_exclusive\032\241\001has(rules.lt" +
-      ") && rules.lt < rules.gt && (rules.lt <=" +
-      " this && this <= rules.gt)? \'value must " +
-      "be greater than %s or less than %s\'.form" +
-      "at([rules.gt, rules.lt]) : \'\'\n\303\001\n\014int64." +
-      "gt_lte\032\262\001has(rules.lte) && rules.lte >= " +
-      "rules.gt && (this > rules.lte || this <=" +
-      " rules.gt)? \'value must be greater than " +
-      "%s and less than or equal to %s\'.format(" +
-      "[rules.gt, rules.lte]) : \'\'\n\313\001\n\026int64.gt" +
-      "_lte_exclusive\032\260\001has(rules.lte) && rules" +
-      ".lte < rules.gt && (rules.lte < this && " +
-      "this <= rules.gt)? \'value must be greate" +
-      "r than %s or less than or equal to %s\'.f" +
-      "ormat([rules.gt, rules.lte]) : \'\'H\001R\002gt\022" +
-      "\350\007\n\003gte\030\005 \001(\003B\323\007\302H\317\007\n\210\001\n\tint64.gte\032{!has" +
-      "(rules.lt) && !has(rules.lte) && this < " +
-      "rules.gte? \'value must be greater than o" +
-      "r equal to %s\'.format([rules.gte]) : \'\'\n" +
-      "\302\001\n\014int64.gte_lt\032\261\001has(rules.lt) && rule" +
-      "s.lt >= rules.gte && (this >= rules.lt |" +
-      "| this < rules.gte)? \'value must be grea" +
-      "ter than or equal to %s and less than %s" +
-      "\'.format([rules.gte, rules.lt]) : \'\'\n\312\001\n" +
-      "\026int64.gte_lt_exclusive\032\257\001has(rules.lt) " +
-      "&& rules.lt < rules.gte && (rules.lt <= " +
-      "this && this < rules.gte)? \'value must b" +
-      "e greater than or equal to %s or less th" +
-      "an %s\'.format([rules.gte, rules.lt]) : \'" +
-      "\'\n\322\001\n\rint64.gte_lte\032\300\001has(rules.lte) && " +
-      "rules.lte >= rules.gte && (this > rules." +
-      "lte || this < rules.gte)? \'value must be" +
-      " greater than or equal to %s and less th" +
-      "an or equal to %s\'.format([rules.gte, ru" +
-      "les.lte]) : \'\'\n\332\001\n\027int64.gte_lte_exclusi" +
-      "ve\032\276\001has(rules.lte) && rules.lte < rules" +
-      ".gte && (rules.lte < this && this < rule" +
-      "s.gte)? \'value must be greater than or e" +
-      "qual to %s or less than or equal to %s\'." +
-      "format([rules.gte, rules.lte]) : \'\'H\001R\003g" +
-      "te\022y\n\002in\030\006 \003(\003Bi\302Hf\nd\n\010int64.in\032X!(this " +
-      "in dyn(rules)[\'in\']) ? \'value must be in" +
-      " list %s\'.format([dyn(rules)[\'in\']]) : \'" +
-      "\'R\002in\022}\n\006not_in\030\007 \003(\003Bf\302Hc\na\n\014int64.not_" +
-      "in\032Qthis in rules.not_in ? \'value must n" +
-      "ot be in list %s\'.format([rules.not_in])" +
-      " : \'\'R\005notInB\013\n\tless_thanB\016\n\014greater_tha" +
-      "nB\010\n\006_const\"\362\024\n\013UInt32Rules\022v\n\005const\030\001 \001" +
-      "(\rB[\302HX\nV\n\014uint32.const\032Fthis != rules.c" +
-      "onst ? \'value must equal %s\'.format([rul" +
-      "es.const]) : \'\'H\002R\005const\210\001\001\022\217\001\n\002lt\030\002 \001(\r" +
-      "B}\302Hz\nx\n\tuint32.lt\032k!has(rules.gte) && !" +
-      "has(rules.gt) && this >= rules.lt? \'valu" +
-      "e must be less than %s\'.format([rules.lt" +
-      "]) : \'\'H\000R\002lt\022\242\001\n\003lte\030\003 \001(\rB\215\001\302H\211\001\n\206\001\n\nu" +
-      "int32.lte\032x!has(rules.gte) && !has(rules" +
-      ".gt) && this > rules.lte? \'value must be" +
-      " less than or equal to %s\'.format([rules" +
-      ".lte]) : \'\'H\000R\003lte\022\240\007\n\002gt\030\004 \001(\rB\215\007\302H\211\007\n{" +
-      "\n\tuint32.gt\032n!has(rules.lt) && !has(rule" +
-      "s.lte) && this <= rules.gt? \'value must " +
-      "be greater than %s\'.format([rules.gt]) :" +
-      " \'\'\n\264\001\n\014uint32.gt_lt\032\243\001has(rules.lt) && " +
-      "rules.lt >= rules.gt && (this >= rules.l" +
-      "t || this <= rules.gt)? \'value must be g" +
-      "reater than %s and less than %s\'.format(" +
-      "[rules.gt, rules.lt]) : \'\'\n\274\001\n\026uint32.gt" +
-      "_lt_exclusive\032\241\001has(rules.lt) && rules.l" +
-      "t < rules.gt && (rules.lt <= this && thi" +
-      "s <= rules.gt)? \'value must be greater t" +
-      "han %s or less than %s\'.format([rules.gt" +
-      ", rules.lt]) : \'\'\n\304\001\n\ruint32.gt_lte\032\262\001ha" +
-      "s(rules.lte) && rules.lte >= rules.gt &&" +
-      " (this > rules.lte || this <= rules.gt)?" +
-      " \'value must be greater than %s and less" +
+      "t]) : \'\'\n\315\001\n\014float.gt_lte\032\274\001has(rules.lt" +
+      "e) && rules.lte >= rules.gt && (this.isN" +
+      "an() || this > rules.lte || this <= rule" +
+      "s.gt)? \'must be greater than %s and less" +
       " than or equal to %s\'.format([rules.gt, " +
-      "rules.lte]) : \'\'\n\314\001\n\027uint32.gt_lte_exclu" +
-      "sive\032\260\001has(rules.lte) && rules.lte < rul" +
-      "es.gt && (rules.lte < this && this <= ru" +
-      "les.gt)? \'value must be greater than %s " +
-      "or less than or equal to %s\'.format([rul" +
-      "es.gt, rules.lte]) : \'\'H\001R\002gt\022\355\007\n\003gte\030\005 " +
-      "\001(\rB\330\007\302H\324\007\n\211\001\n\nuint32.gte\032{!has(rules.lt" +
-      ") && !has(rules.lte) && this < rules.gte" +
-      "? \'value must be greater than or equal t" +
-      "o %s\'.format([rules.gte]) : \'\'\n\303\001\n\ruint3" +
-      "2.gte_lt\032\261\001has(rules.lt) && rules.lt >= " +
-      "rules.gte && (this >= rules.lt || this <" +
-      " rules.gte)? \'value must be greater than" +
-      " or equal to %s and less than %s\'.format" +
-      "([rules.gte, rules.lt]) : \'\'\n\313\001\n\027uint32." +
-      "gte_lt_exclusive\032\257\001has(rules.lt) && rule" +
-      "s.lt < rules.gte && (rules.lt <= this &&" +
-      " this < rules.gte)? \'value must be great" +
-      "er than or equal to %s or less than %s\'." +
-      "format([rules.gte, rules.lt]) : \'\'\n\323\001\n\016u" +
-      "int32.gte_lte\032\300\001has(rules.lte) && rules." +
-      "lte >= rules.gte && (this > rules.lte ||" +
-      " this < rules.gte)? \'value must be great" +
-      "er than or equal to %s and less than or " +
-      "equal to %s\'.format([rules.gte, rules.lt" +
-      "e]) : \'\'\n\333\001\n\030uint32.gte_lte_exclusive\032\276\001" +
-      "has(rules.lte) && rules.lte < rules.gte " +
-      "&& (rules.lte < this && this < rules.gte" +
-      ")? \'value must be greater than or equal " +
-      "to %s or less than or equal to %s\'.forma" +
-      "t([rules.gte, rules.lte]) : \'\'H\001R\003gte\022z\n" +
-      "\002in\030\006 \003(\rBj\302Hg\ne\n\tuint32.in\032X!(this in d" +
-      "yn(rules)[\'in\']) ? \'value must be in lis" +
-      "t %s\'.format([dyn(rules)[\'in\']]) : \'\'R\002i" +
-      "n\022~\n\006not_in\030\007 \003(\rBg\302Hd\nb\n\ruint32.not_in\032" +
-      "Qthis in rules.not_in ? \'value must not " +
-      "be in list %s\'.format([rules.not_in]) : " +
-      "\'\'R\005notInB\013\n\tless_thanB\016\n\014greater_thanB\010" +
-      "\n\006_const\"\362\024\n\013UInt64Rules\022v\n\005const\030\001 \001(\004B" +
-      "[\302HX\nV\n\014uint64.const\032Fthis != rules.cons" +
-      "t ? \'value must equal %s\'.format([rules." +
-      "const]) : \'\'H\002R\005const\210\001\001\022\217\001\n\002lt\030\002 \001(\004B}\302" +
-      "Hz\nx\n\tuint64.lt\032k!has(rules.gte) && !has" +
-      "(rules.gt) && this >= rules.lt? \'value m" +
-      "ust be less than %s\'.format([rules.lt]) " +
-      ": \'\'H\000R\002lt\022\242\001\n\003lte\030\003 \001(\004B\215\001\302H\211\001\n\206\001\n\nuint",
-      "64.lte\032x!has(rules.gte) && !has(rules.gt" +
-      ") && this > rules.lte? \'value must be le" +
-      "ss than or equal to %s\'.format([rules.lt" +
-      "e]) : \'\'H\000R\003lte\022\240\007\n\002gt\030\004 \001(\004B\215\007\302H\211\007\n{\n\tu" +
-      "int64.gt\032n!has(rules.lt) && !has(rules.l" +
-      "te) && this <= rules.gt? \'value must be " +
-      "greater than %s\'.format([rules.gt]) : \'\'" +
-      "\n\264\001\n\014uint64.gt_lt\032\243\001has(rules.lt) && rul" +
-      "es.lt >= rules.gt && (this >= rules.lt |" +
-      "| this <= rules.gt)? \'value must be grea" +
-      "ter than %s and less than %s\'.format([ru" +
-      "les.gt, rules.lt]) : \'\'\n\274\001\n\026uint64.gt_lt" +
-      "_exclusive\032\241\001has(rules.lt) && rules.lt <" +
-      " rules.gt && (rules.lt <= this && this <" +
-      "= rules.gt)? \'value must be greater than" +
-      " %s or less than %s\'.format([rules.gt, r" +
-      "ules.lt]) : \'\'\n\304\001\n\ruint64.gt_lte\032\262\001has(r" +
-      "ules.lte) && rules.lte >= rules.gt && (t" +
-      "his > rules.lte || this <= rules.gt)? \'v" +
-      "alue must be greater than %s and less th" +
-      "an or equal to %s\'.format([rules.gt, rul" +
-      "es.lte]) : \'\'\n\314\001\n\027uint64.gt_lte_exclusiv" +
-      "e\032\260\001has(rules.lte) && rules.lte < rules." +
-      "gt && (rules.lte < this && this <= rules" +
-      ".gt)? \'value must be greater than %s or " +
-      "less than or equal to %s\'.format([rules." +
-      "gt, rules.lte]) : \'\'H\001R\002gt\022\355\007\n\003gte\030\005 \001(\004" +
-      "B\330\007\302H\324\007\n\211\001\n\nuint64.gte\032{!has(rules.lt) &" +
-      "& !has(rules.lte) && this < rules.gte? \'" +
-      "value must be greater than or equal to %" +
-      "s\'.format([rules.gte]) : \'\'\n\303\001\n\ruint64.g" +
-      "te_lt\032\261\001has(rules.lt) && rules.lt >= rul" +
-      "es.gte && (this >= rules.lt || this < ru" +
-      "les.gte)? \'value must be greater than or" +
-      " equal to %s and less than %s\'.format([r" +
-      "ules.gte, rules.lt]) : \'\'\n\313\001\n\027uint64.gte" +
-      "_lt_exclusive\032\257\001has(rules.lt) && rules.l" +
-      "t < rules.gte && (rules.lt <= this && th" +
-      "is < rules.gte)? \'value must be greater " +
-      "than or equal to %s or less than %s\'.for" +
-      "mat([rules.gte, rules.lt]) : \'\'\n\323\001\n\016uint" +
-      "64.gte_lte\032\300\001has(rules.lte) && rules.lte" +
-      " >= rules.gte && (this > rules.lte || th" +
-      "is < rules.gte)? \'value must be greater " +
-      "than or equal to %s and less than or equ" +
-      "al to %s\'.format([rules.gte, rules.lte])" +
-      " : \'\'\n\333\001\n\030uint64.gte_lte_exclusive\032\276\001has" +
-      "(rules.lte) && rules.lte < rules.gte && " +
-      "(rules.lte < this && this < rules.gte)? " +
-      "\'value must be greater than or equal to " +
-      "%s or less than or equal to %s\'.format([" +
-      "rules.gte, rules.lte]) : \'\'H\001R\003gte\022z\n\002in" +
-      "\030\006 \003(\004Bj\302Hg\ne\n\tuint64.in\032X!(this in dyn(" +
-      "rules)[\'in\']) ? \'value must be in list %" +
-      "s\'.format([dyn(rules)[\'in\']]) : \'\'R\002in\022~" +
-      "\n\006not_in\030\007 \003(\004Bg\302Hd\nb\n\ruint64.not_in\032Qth" +
-      "is in rules.not_in ? \'value must not be " +
-      "in list %s\'.format([rules.not_in]) : \'\'R" +
-      "\005notInB\013\n\tless_thanB\016\n\014greater_thanB\010\n\006_" +
-      "const\"\362\024\n\013SInt32Rules\022v\n\005const\030\001 \001(\021B[\302H" +
-      "X\nV\n\014sint32.const\032Fthis != rules.const ?" +
-      " \'value must equal %s\'.format([rules.con" +
-      "st]) : \'\'H\002R\005const\210\001\001\022\217\001\n\002lt\030\002 \001(\021B}\302Hz\n" +
-      "x\n\tsint32.lt\032k!has(rules.gte) && !has(ru" +
-      "les.gt) && this >= rules.lt? \'value must" +
-      " be less than %s\'.format([rules.lt]) : \'" +
-      "\'H\000R\002lt\022\242\001\n\003lte\030\003 \001(\021B\215\001\302H\211\001\n\206\001\n\nsint32." +
-      "lte\032x!has(rules.gte) && !has(rules.gt) &" +
-      "& this > rules.lte? \'value must be less " +
-      "than or equal to %s\'.format([rules.lte])" +
-      " : \'\'H\000R\003lte\022\240\007\n\002gt\030\004 \001(\021B\215\007\302H\211\007\n{\n\tsint" +
-      "32.gt\032n!has(rules.lt) && !has(rules.lte)" +
-      " && this <= rules.gt? \'value must be gre" +
-      "ater than %s\'.format([rules.gt]) : \'\'\n\264\001" +
-      "\n\014sint32.gt_lt\032\243\001has(rules.lt) && rules." +
-      "lt >= rules.gt && (this >= rules.lt || t" +
-      "his <= rules.gt)? \'value must be greater" +
-      " than %s and less than %s\'.format([rules" +
-      ".gt, rules.lt]) : \'\'\n\274\001\n\026sint32.gt_lt_ex" +
-      "clusive\032\241\001has(rules.lt) && rules.lt < ru" +
-      "les.gt && (rules.lt <= this && this <= r" +
-      "ules.gt)? \'value must be greater than %s" +
-      " or less than %s\'.format([rules.gt, rule" +
-      "s.lt]) : \'\'\n\304\001\n\rsint32.gt_lte\032\262\001has(rule" +
-      "s.lte) && rules.lte >= rules.gt && (this" +
-      " > rules.lte || this <= rules.gt)? \'valu" +
-      "e must be greater than %s and less than " +
-      "or equal to %s\'.format([rules.gt, rules." +
-      "lte]) : \'\'\n\314\001\n\027sint32.gt_lte_exclusive\032\260" +
-      "\001has(rules.lte) && rules.lte < rules.gt " +
-      "&& (rules.lte < this && this <= rules.gt" +
-      ")? \'value must be greater than %s or les" +
-      "s than or equal to %s\'.format([rules.gt," +
-      " rules.lte]) : \'\'H\001R\002gt\022\355\007\n\003gte\030\005 \001(\021B\330\007" +
-      "\302H\324\007\n\211\001\n\nsint32.gte\032{!has(rules.lt) && !" +
-      "has(rules.lte) && this < rules.gte? \'val" +
-      "ue must be greater than or equal to %s\'." +
-      "format([rules.gte]) : \'\'\n\303\001\n\rsint32.gte_" +
-      "lt\032\261\001has(rules.lt) && rules.lt >= rules." +
-      "gte && (this >= rules.lt || this < rules" +
-      ".gte)? \'value must be greater than or eq" +
-      "ual to %s and less than %s\'.format([rule" +
-      "s.gte, rules.lt]) : \'\'\n\313\001\n\027sint32.gte_lt" +
-      "_exclusive\032\257\001has(rules.lt) && rules.lt <" +
-      " rules.gte && (rules.lt <= this && this " +
-      "< rules.gte)? \'value must be greater tha" +
-      "n or equal to %s or less than %s\'.format" +
-      "([rules.gte, rules.lt]) : \'\'\n\323\001\n\016sint32." +
-      "gte_lte\032\300\001has(rules.lte) && rules.lte >=" +
-      " rules.gte && (this > rules.lte || this " +
-      "< rules.gte)? \'value must be greater tha" +
-      "n or equal to %s and less than or equal " +
-      "to %s\'.format([rules.gte, rules.lte]) : " +
-      "\'\'\n\333\001\n\030sint32.gte_lte_exclusive\032\276\001has(ru" +
-      "les.lte) && rules.lte < rules.gte && (ru" +
-      "les.lte < this && this < rules.gte)? \'va" +
-      "lue must be greater than or equal to %s " +
-      "or less than or equal to %s\'.format([rul" +
-      "es.gte, rules.lte]) : \'\'H\001R\003gte\022z\n\002in\030\006 " +
-      "\003(\021Bj\302Hg\ne\n\tsint32.in\032X!(this in dyn(rul" +
-      "es)[\'in\']) ? \'value must be in list %s\'." +
-      "format([dyn(rules)[\'in\']]) : \'\'R\002in\022~\n\006n" +
-      "ot_in\030\007 \003(\021Bg\302Hd\nb\n\rsint32.not_in\032Qthis " +
-      "in rules.not_in ? \'value must not be in " +
-      "list %s\'.format([rules.not_in]) : \'\'R\005no" +
-      "tInB\013\n\tless_thanB\016\n\014greater_thanB\010\n\006_con" +
-      "st\"\362\024\n\013SInt64Rules\022v\n\005const\030\001 \001(\022B[\302HX\nV" +
-      "\n\014sint64.const\032Fthis != rules.const ? \'v" +
-      "alue must equal %s\'.format([rules.const]" +
-      ") : \'\'H\002R\005const\210\001\001\022\217\001\n\002lt\030\002 \001(\022B}\302Hz\nx\n\t" +
-      "sint64.lt\032k!has(rules.gte) && !has(rules" +
-      ".gt) && this >= rules.lt? \'value must be" +
-      " less than %s\'.format([rules.lt]) : \'\'H\000" +
-      "R\002lt\022\242\001\n\003lte\030\003 \001(\022B\215\001\302H\211\001\n\206\001\n\nsint64.lte" +
-      "\032x!has(rules.gte) && !has(rules.gt) && t" +
-      "his > rules.lte? \'value must be less tha" +
-      "n or equal to %s\'.format([rules.lte]) : " +
-      "\'\'H\000R\003lte\022\240\007\n\002gt\030\004 \001(\022B\215\007\302H\211\007\n{\n\tsint64." +
-      "gt\032n!has(rules.lt) && !has(rules.lte) &&" +
-      " this <= rules.gt? \'value must be greate" +
-      "r than %s\'.format([rules.gt]) : \'\'\n\264\001\n\014s" +
-      "int64.gt_lt\032\243\001has(rules.lt) && rules.lt " +
-      ">= rules.gt && (this >= rules.lt || this" +
-      " <= rules.gt)? \'value must be greater th" +
-      "an %s and less than %s\'.format([rules.gt" +
-      ", rules.lt]) : \'\'\n\274\001\n\026sint64.gt_lt_exclu" +
-      "sive\032\241\001has(rules.lt) && rules.lt < rules" +
-      ".gt && (rules.lt <= this && this <= rule" +
-      "s.gt)? \'value must be greater than %s or" +
-      " less than %s\'.format([rules.gt, rules.l" +
-      "t]) : \'\'\n\304\001\n\rsint64.gt_lte\032\262\001has(rules.l" +
-      "te) && rules.lte >= rules.gt && (this > " +
-      "rules.lte || this <= rules.gt)? \'value m" +
-      "ust be greater than %s and less than or " +
-      "equal to %s\'.format([rules.gt, rules.lte" +
-      "]) : \'\'\n\314\001\n\027sint64.gt_lte_exclusive\032\260\001ha" +
-      "s(rules.lte) && rules.lte < rules.gt && " +
-      "(rules.lte < this && this <= rules.gt)? " +
-      "\'value must be greater than %s or less t" +
-      "han or equal to %s\'.format([rules.gt, ru" +
-      "les.lte]) : \'\'H\001R\002gt\022\355\007\n\003gte\030\005 \001(\022B\330\007\302H\324" +
-      "\007\n\211\001\n\nsint64.gte\032{!has(rules.lt) && !has" +
-      "(rules.lte) && this < rules.gte? \'value " +
-      "must be greater than or equal to %s\'.for" +
-      "mat([rules.gte]) : \'\'\n\303\001\n\rsint64.gte_lt\032" +
-      "\261\001has(rules.lt) && rules.lt >= rules.gte" +
-      " && (this >= rules.lt || this < rules.gt" +
-      "e)? \'value must be greater than or equal" +
-      " to %s and less than %s\'.format([rules.g" +
-      "te, rules.lt]) : \'\'\n\313\001\n\027sint64.gte_lt_ex" +
-      "clusive\032\257\001has(rules.lt) && rules.lt < ru" +
-      "les.gte && (rules.lt <= this && this < r" +
-      "ules.gte)? \'value must be greater than o" +
-      "r equal to %s or less than %s\'.format([r" +
-      "ules.gte, rules.lt]) : \'\'\n\323\001\n\016sint64.gte" +
-      "_lte\032\300\001has(rules.lte) && rules.lte >= ru" +
-      "les.gte && (this > rules.lte || this < r" +
-      "ules.gte)? \'value must be greater than o" +
-      "r equal to %s and less than or equal to " +
-      "%s\'.format([rules.gte, rules.lte]) : \'\'\n" +
-      "\333\001\n\030sint64.gte_lte_exclusive\032\276\001has(rules" +
-      ".lte) && rules.lte < rules.gte && (rules" +
-      ".lte < this && this < rules.gte)? \'value" +
-      " must be greater than or equal to %s or " +
-      "less than or equal to %s\'.format([rules." +
-      "gte, rules.lte]) : \'\'H\001R\003gte\022z\n\002in\030\006 \003(\022" +
-      "Bj\302Hg\ne\n\tsint64.in\032X!(this in dyn(rules)" +
-      "[\'in\']) ? \'value must be in list %s\'.for" +
-      "mat([dyn(rules)[\'in\']]) : \'\'R\002in\022~\n\006not_" +
-      "in\030\007 \003(\022Bg\302Hd\nb\n\rsint64.not_in\032Qthis in " +
-      "rules.not_in ? \'value must not be in lis" +
-      "t %s\'.format([rules.not_in]) : \'\'R\005notIn" +
-      "B\013\n\tless_thanB\016\n\014greater_thanB\010\n\006_const\"" +
-      "\202\025\n\014Fixed32Rules\022w\n\005const\030\001 \001(\007B\\\302HY\nW\n\r" +
-      "fixed32.const\032Fthis != rules.const ? \'va" +
-      "lue must equal %s\'.format([rules.const])" +
-      " : \'\'H\002R\005const\210\001\001\022\220\001\n\002lt\030\002 \001(\007B~\302H{\ny\n\nf" +
-      "ixed32.lt\032k!has(rules.gte) && !has(rules" +
-      ".gt) && this >= rules.lt? \'value must be" +
-      " less than %s\'.format([rules.lt]) : \'\'H\000" +
-      "R\002lt\022\243\001\n\003lte\030\003 \001(\007B\216\001\302H\212\001\n\207\001\n\013fixed32.lt" +
-      "e\032x!has(rules.gte) && !has(rules.gt) && " +
-      "this > rules.lte? \'value must be less th" +
-      "an or equal to %s\'.format([rules.lte]) :" +
-      " \'\'H\000R\003lte\022\245\007\n\002gt\030\004 \001(\007B\222\007\302H\216\007\n|\n\nfixed3" +
-      "2.gt\032n!has(rules.lt) && !has(rules.lte) " +
-      "&& this <= rules.gt? \'value must be grea" +
-      "ter than %s\'.format([rules.gt]) : \'\'\n\265\001\n" +
-      "\rfixed32.gt_lt\032\243\001has(rules.lt) && rules." +
-      "lt >= rules.gt && (this >= rules.lt || t" +
-      "his <= rules.gt)? \'value must be greater" +
-      " than %s and less than %s\'.format([rules" +
-      ".gt, rules.lt]) : \'\'\n\275\001\n\027fixed32.gt_lt_e" +
-      "xclusive\032\241\001has(rules.lt) && rules.lt < r" +
-      "ules.gt && (rules.lt <= this && this <= " +
-      "rules.gt)? \'value must be greater than %" +
-      "s or less than %s\'.format([rules.gt, rul" +
-      "es.lt]) : \'\'\n\305\001\n\016fixed32.gt_lte\032\262\001has(ru" +
-      "les.lte) && rules.lte >= rules.gt && (th" +
-      "is > rules.lte || this <= rules.gt)? \'va" +
-      "lue must be greater than %s and less tha" +
-      "n or equal to %s\'.format([rules.gt, rule" +
-      "s.lte]) : \'\'\n\315\001\n\030fixed32.gt_lte_exclusiv" +
-      "e\032\260\001has(rules.lte) && rules.lte < rules." +
-      "gt && (rules.lte < this && this <= rules" +
-      ".gt)? \'value must be greater than %s or " +
-      "less than or equal to %s\'.format([rules." +
-      "gt, rules.lte]) : \'\'H\001R\002gt\022\362\007\n\003gte\030\005 \001(\007" +
-      "B\335\007\302H\331\007\n\212\001\n\013fixed32.gte\032{!has(rules.lt) " +
-      "&& !has(rules.lte) && this < rules.gte? " +
-      "\'value must be greater than or equal to " +
-      "%s\'.format([rules.gte]) : \'\'\n\304\001\n\016fixed32" +
-      ".gte_lt\032\261\001has(rules.lt) && rules.lt >= r" +
-      "ules.gte && (this >= rules.lt || this < " +
-      "rules.gte)? \'value must be greater than " +
-      "or equal to %s and less than %s\'.format(" +
-      "[rules.gte, rules.lt]) : \'\'\n\314\001\n\030fixed32." +
-      "gte_lt_exclusive\032\257\001has(rules.lt) && rule" +
-      "s.lt < rules.gte && (rules.lt <= this &&" +
-      " this < rules.gte)? \'value must be great" +
-      "er than or equal to %s or less than %s\'." +
-      "format([rules.gte, rules.lt]) : \'\'\n\324\001\n\017f" +
-      "ixed32.gte_lte\032\300\001has(rules.lte) && rules" +
-      ".lte >= rules.gte && (this > rules.lte |" +
-      "| this < rules.gte)? \'value must be grea" +
-      "ter than or equal to %s and less than or" +
-      " equal to %s\'.format([rules.gte, rules.l" +
-      "te]) : \'\'\n\334\001\n\031fixed32.gte_lte_exclusive\032" +
-      "\276\001has(rules.lte) && rules.lte < rules.gt" +
-      "e && (rules.lte < this && this < rules.g" +
-      "te)? \'value must be greater than or equa" +
-      "l to %s or less than or equal to %s\'.for" +
-      "mat([rules.gte, rules.lte]) : \'\'H\001R\003gte\022" +
-      "{\n\002in\030\006 \003(\007Bk\302Hh\nf\n\nfixed32.in\032X!(this i" +
-      "n dyn(rules)[\'in\']) ? \'value must be in " +
-      "list %s\'.format([dyn(rules)[\'in\']]) : \'\'" +
-      "R\002in\022\177\n\006not_in\030\007 \003(\007Bh\302He\nc\n\016fixed32.not" +
-      "_in\032Qthis in rules.not_in ? \'value must " +
-      "not be in list %s\'.format([rules.not_in]" +
-      ") : \'\'R\005notInB\013\n\tless_thanB\016\n\014greater_th" +
-      "anB\010\n\006_const\"\202\025\n\014Fixed64Rules\022w\n\005const\030\001" +
-      " \001(\006B\\\302HY\nW\n\rfixed64.const\032Fthis != rule" +
-      "s.const ? \'value must equal %s\'.format([" +
-      "rules.const]) : \'\'H\002R\005const\210\001\001\022\220\001\n\002lt\030\002 " +
-      "\001(\006B~\302H{\ny\n\nfixed64.lt\032k!has(rules.gte) " +
-      "&& !has(rules.gt) && this >= rules.lt? \'" +
-      "value must be less than %s\'.format([rule" +
-      "s.lt]) : \'\'H\000R\002lt\022\243\001\n\003lte\030\003 \001(\006B\216\001\302H\212\001\n\207" +
-      "\001\n\013fixed64.lte\032x!has(rules.gte) && !has(" +
-      "rules.gt) && this > rules.lte? \'value mu" +
-      "st be less than or equal to %s\'.format([" +
-      "rules.lte]) : \'\'H\000R\003lte\022\245\007\n\002gt\030\004 \001(\006B\222\007\302" +
-      "H\216\007\n|\n\nfixed64.gt\032n!has(rules.lt) && !ha" +
-      "s(rules.lte) && this <= rules.gt? \'value" +
-      " must be greater than %s\'.format([rules." +
-      "gt]) : \'\'\n\265\001\n\rfixed64.gt_lt\032\243\001has(rules." +
-      "lt) && rules.lt >= rules.gt && (this >= " +
-      "rules.lt || this <= rules.gt)? \'value mu" +
-      "st be greater than %s and less than %s\'." +
-      "format([rules.gt, rules.lt]) : \'\'\n\275\001\n\027fi" +
-      "xed64.gt_lt_exclusive\032\241\001has(rules.lt) &&" +
-      " rules.lt < rules.gt && (rules.lt <= thi" +
-      "s && this <= rules.gt)? \'value must be g" +
-      "reater than %s or less than %s\'.format([" +
-      "rules.gt, rules.lt]) : \'\'\n\305\001\n\016fixed64.gt" +
-      "_lte\032\262\001has(rules.lte) && rules.lte >= ru" +
-      "les.gt && (this > rules.lte || this <= r" +
-      "ules.gt)? \'value must be greater than %s" +
-      " and less than or equal to %s\'.format([r" +
-      "ules.gt, rules.lte]) : \'\'\n\315\001\n\030fixed64.gt" +
-      "_lte_exclusive\032\260\001has(rules.lte) && rules" +
-      ".lte < rules.gt && (rules.lte < this && " +
-      "this <= rules.gt)? \'value must be greate" +
-      "r than %s or less than or equal to %s\'.f" +
-      "ormat([rules.gt, rules.lte]) : \'\'H\001R\002gt\022" +
-      "\362\007\n\003gte\030\005 \001(\006B\335\007\302H\331\007\n\212\001\n\013fixed64.gte\032{!h" +
-      "as(rules.lt) && !has(rules.lte) && this " +
-      "< rules.gte? \'value must be greater than" +
-      " or equal to %s\'.format([rules.gte]) : \'" +
-      "\'\n\304\001\n\016fixed64.gte_lt\032\261\001has(rules.lt) && " +
-      "rules.lt >= rules.gte && (this >= rules." +
-      "lt || this < rules.gte)? \'value must be " +
-      "greater than or equal to %s and less tha" +
-      "n %s\'.format([rules.gte, rules.lt]) : \'\'" +
-      "\n\314\001\n\030fixed64.gte_lt_exclusive\032\257\001has(rule" +
-      "s.lt) && rules.lt < rules.gte && (rules." +
-      "lt <= this && this < rules.gte)? \'value " +
-      "must be greater than or equal to %s or l" +
-      "ess than %s\'.format([rules.gte, rules.lt" +
-      "]) : \'\'\n\324\001\n\017fixed64.gte_lte\032\300\001has(rules." +
-      "lte) && rules.lte >= rules.gte && (this " +
-      "> rules.lte || this < rules.gte)? \'value" +
-      " must be greater than or equal to %s and" +
-      " less than or equal to %s\'.format([rules" +
-      ".gte, rules.lte]) : \'\'\n\334\001\n\031fixed64.gte_l" +
-      "te_exclusive\032\276\001has(rules.lte) && rules.l" +
-      "te < rules.gte && (rules.lte < this && t" +
-      "his < rules.gte)? \'value must be greater" +
-      " than or equal to %s or less than or equ" +
-      "al to %s\'.format([rules.gte, rules.lte])" +
-      " : \'\'H\001R\003gte\022{\n\002in\030\006 \003(\006Bk\302Hh\nf\n\nfixed64" +
-      ".in\032X!(this in dyn(rules)[\'in\']) ? \'valu" +
-      "e must be in list %s\'.format([dyn(rules)" +
-      "[\'in\']]) : \'\'R\002in\022\177\n\006not_in\030\007 \003(\006Bh\302He\nc" +
-      "\n\016fixed64.not_in\032Qthis in rules.not_in ?" +
-      " \'value must not be in list %s\'.format([" +
-      "rules.not_in]) : \'\'R\005notInB\013\n\tless_thanB" +
-      "\016\n\014greater_thanB\010\n\006_const\"\223\025\n\rSFixed32Ru" +
-      "les\022x\n\005const\030\001 \001(\017B]\302HZ\nX\n\016sfixed32.cons" +
-      "t\032Fthis != rules.const ? \'value must equ" +
-      "al %s\'.format([rules.const]) : \'\'H\002R\005con" +
-      "st\210\001\001\022\221\001\n\002lt\030\002 \001(\017B\177\302H|\nz\n\013sfixed32.lt\032k" +
-      "!has(rules.gte) && !has(rules.gt) && thi" +
-      "s >= rules.lt? \'value must be less than " +
-      "%s\'.format([rules.lt]) : \'\'H\000R\002lt\022\244\001\n\003lt" +
-      "e\030\003 \001(\017B\217\001\302H\213\001\n\210\001\n\014sfixed32.lte\032x!has(ru" +
-      "les.gte) && !has(rules.gt) && this > rul" +
-      "es.lte? \'value must be less than or equa" +
-      "l to %s\'.format([rules.lte]) : \'\'H\000R\003lte" +
-      "\022\252\007\n\002gt\030\004 \001(\017B\227\007\302H\223\007\n}\n\013sfixed32.gt\032n!ha" +
-      "s(rules.lt) && !has(rules.lte) && this <" +
-      "= rules.gt? \'value must be greater than " +
-      "%s\'.format([rules.gt]) : \'\'\n\266\001\n\016sfixed32" +
-      ".gt_lt\032\243\001has(rules.lt) && rules.lt >= ru" +
-      "les.gt && (this >= rules.lt || this <= r" +
-      "ules.gt)? \'value must be greater than %s" +
-      " and less than %s\'.format([rules.gt, rul" +
-      "es.lt]) : \'\'\n\276\001\n\030sfixed32.gt_lt_exclusiv" +
-      "e\032\241\001has(rules.lt) && rules.lt < rules.gt" +
-      " && (rules.lt <= this && this <= rules.g" +
-      "t)? \'value must be greater than %s or le" +
+      "rules.lte]) : \'\'\n\327\001\n\026float.gt_lte_exclus" +
+      "ive\032\274\001has(rules.lte) && rules.lte < rule" +
+      "s.gt && (this.isNan() || (rules.lte < th" +
+      "is && this <= rules.gt))? \'must be great" +
+      "er than %s or less than or equal to %s\'." +
+      "format([rules.gt, rules.lte]) : \'\'H\001R\002gt" +
+      "\022\241\010\n\003gte\030\005 \001(\002B\214\010\302H\210\010\n\225\001\n\tfloat.gte\032\207\001!h" +
+      "as(rules.lt) && !has(rules.lte) && (this" +
+      ".isNan() || this < rules.gte)? \'must be " +
+      "greater than or equal to %s\'.format([rul" +
+      "es.gte]) : \'\'\n\314\001\n\014float.gte_lt\032\273\001has(rul" +
+      "es.lt) && rules.lt >= rules.gte && (this" +
+      ".isNan() || this >= rules.lt || this < r" +
+      "ules.gte)? \'must be greater than or equa" +
+      "l to %s and less than %s\'.format([rules." +
+      "gte, rules.lt]) : \'\'\n\326\001\n\026float.gte_lt_ex" +
+      "clusive\032\273\001has(rules.lt) && rules.lt < ru" +
+      "les.gte && (this.isNan() || (rules.lt <=" +
+      " this && this < rules.gte))? \'must be gr" +
+      "eater than or equal to %s or less than %" +
+      "s\'.format([rules.gte, rules.lt]) : \'\'\n\334\001" +
+      "\n\rfloat.gte_lte\032\312\001has(rules.lte) && rule" +
+      "s.lte >= rules.gte && (this.isNan() || t" +
+      "his > rules.lte || this < rules.gte)? \'m" +
+      "ust be greater than or equal to %s and l" +
+      "ess than or equal to %s\'.format([rules.g" +
+      "te, rules.lte]) : \'\'\n\346\001\n\027float.gte_lte_e" +
+      "xclusive\032\312\001has(rules.lte) && rules.lte <" +
+      " rules.gte && (this.isNan() || (rules.lt" +
+      "e < this && this < rules.gte))? \'must be" +
+      " greater than or equal to %s or less tha" +
+      "n or equal to %s\'.format([rules.gte, rul" +
+      "es.lte]) : \'\'H\001R\003gte\022}\n\002in\030\006 \003(\002Bm\302Hj\nh\n" +
+      "\010float.in\032\\!(this in getField(rules, \'in" +
+      "\')) ? \'must be in list %s\'.format([getFi" +
+      "eld(rules, \'in\')]) : \'\'R\002in\022w\n\006not_in\030\007 " +
+      "\003(\002B`\302H]\n[\n\014float.not_in\032Kthis in rules." +
+      "not_in ? \'must not be in list %s\'.format" +
+      "([rules.not_in]) : \'\'R\005notIn\022w\n\006finite\030\010" +
+      " \001(\010B_\302H\\\nZ\n\014float.finite\032Jrules.finite " +
+      "? (this.isNan() || this.isInf() ? \'must " +
+      "be finite\' : \'\') : \'\'R\006finite\0224\n\007example" +
+      "\030\t \003(\002B\032\302H\027\n\025\n\rfloat.example\032\004trueR\007exam" +
+      "ple*\t\010\350\007\020\200\200\200\200\002B\013\n\tless_thanB\016\n\014greater_t" +
+      "han\"\300\027\n\013DoubleRules\022\205\001\n\005const\030\001 \001(\001Bo\302Hl" +
+      "\nj\n\014double.const\032Zthis != getField(rules" +
+      ", \'const\') ? \'must equal %s\'.format([get" +
+      "Field(rules, \'const\')]) : \'\'R\005const\022\236\001\n\002" +
+      "lt\030\002 \001(\001B\213\001\302H\207\001\n\204\001\n\tdouble.lt\032w!has(rule" +
+      "s.gte) && !has(rules.gt) && (this.isNan(" +
+      ") || this >= rules.lt)? \'must be less th" +
+      "an %s\'.format([rules.lt]) : \'\'H\000R\002lt\022\257\001\n" +
+      "\003lte\030\003 \001(\001B\232\001\302H\226\001\n\223\001\n\ndouble.lte\032\204\001!has(" +
+      "rules.gte) && !has(rules.gt) && (this.is" +
+      "Nan() || this > rules.lte)? \'must be les" +
+      "s than or equal to %s\'.format([rules.lte" +
+      "]) : \'\'H\000R\003lte\022\331\007\n\002gt\030\004 \001(\001B\306\007\302H\302\007\n\207\001\n\td" +
+      "ouble.gt\032z!has(rules.lt) && !has(rules.l" +
+      "te) && (this.isNan() || this <= rules.gt" +
+      ")? \'must be greater than %s\'.format([rul" +
+      "es.gt]) : \'\'\n\276\001\n\014double.gt_lt\032\255\001has(rule" +
+      "s.lt) && rules.lt >= rules.gt && (this.i" +
+      "sNan() || this >= rules.lt || this <= ru" +
+      "les.gt)? \'must be greater than %s and le" +
       "ss than %s\'.format([rules.gt, rules.lt])" +
-      " : \'\'\n\306\001\n\017sfixed32.gt_lte\032\262\001has(rules.lt" +
-      "e) && rules.lte >= rules.gt && (this > r" +
-      "ules.lte || this <= rules.gt)? \'value mu" +
-      "st be greater than %s and less than or e" +
-      "qual to %s\'.format([rules.gt, rules.lte]" +
-      ") : \'\'\n\316\001\n\031sfixed32.gt_lte_exclusive\032\260\001h" +
-      "as(rules.lte) && rules.lte < rules.gt &&" +
-      " (rules.lte < this && this <= rules.gt)?" +
-      " \'value must be greater than %s or less " +
-      "than or equal to %s\'.format([rules.gt, r" +
-      "ules.lte]) : \'\'H\001R\002gt\022\367\007\n\003gte\030\005 \001(\017B\342\007\302H" +
-      "\336\007\n\213\001\n\014sfixed32.gte\032{!has(rules.lt) && !" +
-      "has(rules.lte) && this < rules.gte? \'val" +
-      "ue must be greater than or equal to %s\'." +
-      "format([rules.gte]) : \'\'\n\305\001\n\017sfixed32.gt" +
-      "e_lt\032\261\001has(rules.lt) && rules.lt >= rule" +
-      "s.gte && (this >= rules.lt || this < rul" +
-      "es.gte)? \'value must be greater than or " +
-      "equal to %s and less than %s\'.format([ru" +
-      "les.gte, rules.lt]) : \'\'\n\315\001\n\031sfixed32.gt" +
-      "e_lt_exclusive\032\257\001has(rules.lt) && rules." +
-      "lt < rules.gte && (rules.lt <= this && t" +
-      "his < rules.gte)? \'value must be greater" +
-      " than or equal to %s or less than %s\'.fo" +
-      "rmat([rules.gte, rules.lt]) : \'\'\n\325\001\n\020sfi" +
-      "xed32.gte_lte\032\300\001has(rules.lte) && rules." +
-      "lte >= rules.gte && (this > rules.lte ||" +
-      " this < rules.gte)? \'value must be great" +
-      "er than or equal to %s and less than or " +
-      "equal to %s\'.format([rules.gte, rules.lt" +
-      "e]) : \'\'\n\335\001\n\032sfixed32.gte_lte_exclusive\032" +
-      "\276\001has(rules.lte) && rules.lte < rules.gt" +
-      "e && (rules.lte < this && this < rules.g" +
-      "te)? \'value must be greater than or equa" +
-      "l to %s or less than or equal to %s\'.for" +
-      "mat([rules.gte, rules.lte]) : \'\'H\001R\003gte\022" +
-      "|\n\002in\030\006 \003(\017Bl\302Hi\ng\n\013sfixed32.in\032X!(this " +
-      "in dyn(rules)[\'in\']) ? \'value must be in" +
-      " list %s\'.format([dyn(rules)[\'in\']]) : \'" +
-      "\'R\002in\022\200\001\n\006not_in\030\007 \003(\017Bi\302Hf\nd\n\017sfixed32." +
-      "not_in\032Qthis in rules.not_in ? \'value mu" +
-      "st not be in list %s\'.format([rules.not_" +
-      "in]) : \'\'R\005notInB\013\n\tless_thanB\016\n\014greater" +
-      "_thanB\010\n\006_const\"\223\025\n\rSFixed64Rules\022x\n\005con" +
-      "st\030\001 \001(\020B]\302HZ\nX\n\016sfixed64.const\032Fthis !=" +
-      " rules.const ? \'value must equal %s\'.for" +
-      "mat([rules.const]) : \'\'H\002R\005const\210\001\001\022\221\001\n\002" +
-      "lt\030\002 \001(\020B\177\302H|\nz\n\013sfixed64.lt\032k!has(rules",
-      ".gte) && !has(rules.gt) && this >= rules" +
-      ".lt? \'value must be less than %s\'.format" +
-      "([rules.lt]) : \'\'H\000R\002lt\022\244\001\n\003lte\030\003 \001(\020B\217\001" +
-      "\302H\213\001\n\210\001\n\014sfixed64.lte\032x!has(rules.gte) &" +
-      "& !has(rules.gt) && this > rules.lte? \'v" +
-      "alue must be less than or equal to %s\'.f" +
-      "ormat([rules.lte]) : \'\'H\000R\003lte\022\252\007\n\002gt\030\004 " +
-      "\001(\020B\227\007\302H\223\007\n}\n\013sfixed64.gt\032n!has(rules.lt" +
-      ") && !has(rules.lte) && this <= rules.gt" +
-      "? \'value must be greater than %s\'.format" +
-      "([rules.gt]) : \'\'\n\266\001\n\016sfixed64.gt_lt\032\243\001h" +
-      "as(rules.lt) && rules.lt >= rules.gt && " +
-      "(this >= rules.lt || this <= rules.gt)? " +
-      "\'value must be greater than %s and less " +
-      "than %s\'.format([rules.gt, rules.lt]) : " +
-      "\'\'\n\276\001\n\030sfixed64.gt_lt_exclusive\032\241\001has(ru" +
-      "les.lt) && rules.lt < rules.gt && (rules" +
-      ".lt <= this && this <= rules.gt)? \'value" +
-      " must be greater than %s or less than %s" +
-      "\'.format([rules.gt, rules.lt]) : \'\'\n\306\001\n\017" +
-      "sfixed64.gt_lte\032\262\001has(rules.lte) && rule" +
-      "s.lte >= rules.gt && (this > rules.lte |" +
-      "| this <= rules.gt)? \'value must be grea" +
-      "ter than %s and less than or equal to %s" +
-      "\'.format([rules.gt, rules.lte]) : \'\'\n\316\001\n" +
-      "\031sfixed64.gt_lte_exclusive\032\260\001has(rules.l" +
-      "te) && rules.lte < rules.gt && (rules.lt" +
-      "e < this && this <= rules.gt)? \'value mu" +
-      "st be greater than %s or less than or eq" +
-      "ual to %s\'.format([rules.gt, rules.lte])" +
-      " : \'\'H\001R\002gt\022\367\007\n\003gte\030\005 \001(\020B\342\007\302H\336\007\n\213\001\n\014sfi" +
-      "xed64.gte\032{!has(rules.lt) && !has(rules." +
-      "lte) && this < rules.gte? \'value must be" +
-      " greater than or equal to %s\'.format([ru" +
-      "les.gte]) : \'\'\n\305\001\n\017sfixed64.gte_lt\032\261\001has" +
-      "(rules.lt) && rules.lt >= rules.gte && (" +
-      "this >= rules.lt || this < rules.gte)? \'" +
-      "value must be greater than or equal to %" +
-      "s and less than %s\'.format([rules.gte, r" +
-      "ules.lt]) : \'\'\n\315\001\n\031sfixed64.gte_lt_exclu" +
-      "sive\032\257\001has(rules.lt) && rules.lt < rules" +
-      ".gte && (rules.lt <= this && this < rule" +
-      "s.gte)? \'value must be greater than or e" +
-      "qual to %s or less than %s\'.format([rule" +
-      "s.gte, rules.lt]) : \'\'\n\325\001\n\020sfixed64.gte_" +
-      "lte\032\300\001has(rules.lte) && rules.lte >= rul" +
-      "es.gte && (this > rules.lte || this < ru" +
-      "les.gte)? \'value must be greater than or" +
-      " equal to %s and less than or equal to %" +
-      "s\'.format([rules.gte, rules.lte]) : \'\'\n\335" +
-      "\001\n\032sfixed64.gte_lte_exclusive\032\276\001has(rule" +
-      "s.lte) && rules.lte < rules.gte && (rule" +
-      "s.lte < this && this < rules.gte)? \'valu" +
-      "e must be greater than or equal to %s or" +
-      " less than or equal to %s\'.format([rules" +
-      ".gte, rules.lte]) : \'\'H\001R\003gte\022|\n\002in\030\006 \003(" +
-      "\020Bl\302Hi\ng\n\013sfixed64.in\032X!(this in dyn(rul" +
-      "es)[\'in\']) ? \'value must be in list %s\'." +
-      "format([dyn(rules)[\'in\']]) : \'\'R\002in\022\200\001\n\006" +
-      "not_in\030\007 \003(\020Bi\302Hf\nd\n\017sfixed64.not_in\032Qth" +
-      "is in rules.not_in ? \'value must not be " +
-      "in list %s\'.format([rules.not_in]) : \'\'R" +
-      "\005notInB\013\n\tless_thanB\016\n\014greater_thanB\010\n\006_" +
-      "const\"\213\001\n\tBoolRules\022t\n\005const\030\001 \001(\010BY\302HV\n" +
-      "T\n\nbool.const\032Fthis != rules.const ? \'va" +
-      "lue must equal %s\'.format([rules.const])" +
-      " : \'\'H\000R\005const\210\001\001B\010\n\006_const\"\2565\n\013StringRu" +
-      "les\022x\n\005const\030\001 \001(\tB]\302HZ\nX\n\014string.const\032" +
-      "Hthis != rules.const ? \'value must equal" +
-      " `%s`\'.format([rules.const]) : \'\'H\001R\005con" +
-      "st\210\001\001\022\210\001\n\003len\030\023 \001(\004Bq\302Hn\nl\n\nstring.len\032^" +
-      "uint(this.size()) != rules.len ? \'value " +
-      "length must be %s characters\'.format([ru" +
-      "les.len]) : \'\'H\002R\003len\210\001\001\022\246\001\n\007min_len\030\002 \001" +
-      "(\004B\207\001\302H\203\001\n\200\001\n\016string.min_len\032nuint(this." +
-      "size()) < rules.min_len ? \'value length " +
-      "must be at least %s characters\'.format([" +
-      "rules.min_len]) : \'\'H\003R\006minLen\210\001\001\022\244\001\n\007ma" +
-      "x_len\030\003 \001(\004B\205\001\302H\201\001\n\177\n\016string.max_len\032mui" +
-      "nt(this.size()) > rules.max_len ? \'value" +
-      " length must be at most %s characters\'.f" +
-      "ormat([rules.max_len]) : \'\'H\004R\006maxLen\210\001\001" +
-      "\022\252\001\n\tlen_bytes\030\024 \001(\004B\207\001\302H\203\001\n\200\001\n\020string.l" +
-      "en_bytes\032luint(bytes(this).size()) != ru" +
-      "les.len_bytes ? \'value length must be %s" +
-      " bytes\'.format([rules.len_bytes]) : \'\'H\005" +
-      "R\010lenBytes\210\001\001\022\262\001\n\tmin_bytes\030\004 \001(\004B\217\001\302H\213\001" +
-      "\n\210\001\n\020string.min_bytes\032tuint(bytes(this)." +
-      "size()) < rules.min_bytes ? \'value lengt" +
-      "h must be at least %s bytes\'.format([rul" +
-      "es.min_bytes]) : \'\'H\006R\010minBytes\210\001\001\022\261\001\n\tm" +
-      "ax_bytes\030\005 \001(\004B\216\001\302H\212\001\n\207\001\n\020string.max_byt" +
-      "es\032suint(bytes(this).size()) > rules.max" +
-      "_bytes ? \'value length must be at most %" +
-      "s bytes\'.format([rules.max_bytes]) : \'\'H" +
-      "\007R\010maxBytes\210\001\001\022\233\001\n\007pattern\030\006 \001(\tB|\302Hy\nw\n" +
-      "\016string.pattern\032e!this.matches(rules.pat" +
-      "tern) ? \'value does not match regex patt" +
-      "ern `%s`\'.format([rules.pattern]) : \'\'H\010" +
-      "R\007pattern\210\001\001\022\221\001\n\006prefix\030\007 \001(\tBt\302Hq\no\n\rst" +
-      "ring.prefix\032^!this.startsWith(rules.pref" +
-      "ix) ? \'value does not have prefix `%s`\'." +
-      "format([rules.prefix]) : \'\'H\tR\006prefix\210\001\001" +
-      "\022\217\001\n\006suffix\030\010 \001(\tBr\302Ho\nm\n\rstring.suffix\032" +
-      "\\!this.endsWith(rules.suffix) ? \'value d" +
-      "oes not have suffix `%s`\'.format([rules." +
-      "suffix]) : \'\'H\nR\006suffix\210\001\001\022\237\001\n\010contains\030" +
-      "\t \001(\tB~\302H{\ny\n\017string.contains\032f!this.con" +
-      "tains(rules.contains) ? \'value does not " +
-      "contain substring `%s`\'.format([rules.co" +
-      "ntains]) : \'\'H\013R\010contains\210\001\001\022\252\001\n\014not_con" +
-      "tains\030\027 \001(\tB\201\001\302H~\n|\n\023string.not_contains" +
-      "\032ethis.contains(rules.not_contains) ? \'v" +
-      "alue contains substring `%s`\'.format([ru" +
-      "les.not_contains]) : \'\'H\014R\013notContains\210\001" +
-      "\001\022z\n\002in\030\n \003(\tBj\302Hg\ne\n\tstring.in\032X!(this " +
-      "in dyn(rules)[\'in\']) ? \'value must be in" +
-      " list %s\'.format([dyn(rules)[\'in\']]) : \'" +
-      "\'R\002in\022~\n\006not_in\030\013 \003(\tBg\302Hd\nb\n\rstring.not" +
-      "_in\032Qthis in rules.not_in ? \'value must " +
-      "not be in list %s\'.format([rules.not_in]" +
-      ") : \'\'R\005notIn\022\306\001\n\005email\030\014 \001(\010B\255\001\302H\251\001\nQ\n\014" +
-      "string.email\022#value must be a valid emai" +
-      "l address\032\034this == \'\' || this.isEmail()\n" +
-      "T\n\022string.email_empty\0222value is empty, w" +
-      "hich is not a valid email address\032\nthis " +
-      "!= \'\'H\000R\005email\022\313\001\n\010hostname\030\r \001(\010B\254\001\302H\250\001" +
-      "\nR\n\017string.hostname\022\036value must be a val" +
-      "id hostname\032\037this == \'\' || this.isHostna" +
-      "me()\nR\n\025string.hostname_empty\022-value is " +
-      "empty, which is not a valid hostname\032\nth" +
-      "is != \'\'H\000R\010hostname\022\261\001\n\002ip\030\016 \001(\010B\236\001\302H\232\001" +
-      "\nH\n\tstring.ip\022 value must be a valid IP " +
-      "address\032\031this == \'\' || this.isIp()\nN\n\017st" +
-      "ring.ip_empty\022/value is empty, which is " +
-      "not a valid IP address\032\nthis != \'\'H\000R\002ip" +
-      "\022\276\001\n\004ipv4\030\017 \001(\010B\247\001\302H\243\001\nM\n\013string.ipv4\022\"v" +
-      "alue must be a valid IPv4 address\032\032this " +
-      "== \'\' || this.isIp(4)\nR\n\021string.ipv4_emp" +
-      "ty\0221value is empty, which is not a valid" +
-      " IPv4 address\032\nthis != \'\'H\000R\004ipv4\022\276\001\n\004ip" +
-      "v6\030\020 \001(\010B\247\001\302H\243\001\nM\n\013string.ipv6\022\"value mu" +
-      "st be a valid IPv6 address\032\032this == \'\' |" +
-      "| this.isIp(6)\nR\n\021string.ipv6_empty\0221val" +
-      "ue is empty, which is not a valid IPv6 a" +
-      "ddress\032\nthis != \'\'H\000R\004ipv6\022\250\001\n\003uri\030\021 \001(\010" +
-      "B\223\001\302H\217\001\nC\n\nstring.uri\022\031value must be a v" +
-      "alid URI\032\032this == \'\' || this.isUri()\nH\n\020" +
-      "string.uri_empty\022(value is empty, which " +
-      "is not a valid URI\032\nthis != \'\'H\000R\003uri\022\\\n" +
-      "\007uri_ref\030\022 \001(\010BA\302H>\n<\n\016string.uri_ref\022\031v" +
-      "alue must be a valid URI\032\017this.isUriRef(" +
-      ")H\000R\006uriRef\022\364\001\n\007address\030\025 \001(\010B\327\001\302H\323\001\no\n\016" +
-      "string.address\022-value must be a valid ho" +
-      "stname, or ip address\032.this == \'\' || thi" +
-      "s.isHostname() || this.isIp()\n`\n\024string." +
-      "address_empty\022<value is empty, which is " +
-      "not a valid hostname, or ip address\032\nthi" +
-      "s != \'\'H\000R\007address\022\200\002\n\004uuid\030\026 \001(\010B\351\001\302H\345\001" +
-      "\n\226\001\n\013string.uuid\022\032value must be a valid " +
-      "UUID\032kthis == \'\' || this.matches(\'^[0-9a" +
-      "-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-" +
-      "[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$\')\nJ\n\021str" +
-      "ing.uuid_empty\022)value is empty, which is" +
-      " not a valid UUID\032\nthis != \'\'H\000R\004uuid\022\327\001" +
-      "\n\005tuuid\030! \001(\010B\276\001\302H\272\001\nc\n\014string.tuuid\022\"va" +
-      "lue must be a valid trimmed UUID\032/this =" +
-      "= \'\' || this.matches(\'^[0-9a-fA-F]{32}$\'" +
-      ")\nS\n\022string.tuuid_empty\0221value is empty," +
-      " which is not a valid trimmed UUID\032\nthis" +
-      " != \'\'H\000R\005tuuid\022\357\001\n\021ip_with_prefixlen\030\032 " +
-      "\001(\010B\300\001\302H\274\001\n\\\n\030string.ip_with_prefixlen\022\037" +
-      "value must be a valid IP prefix\032\037this ==" +
-      " \'\' || this.isIpPrefix()\n\\\n\036string.ip_wi" +
-      "th_prefixlen_empty\022.value is empty, whic" +
-      "h is not a valid IP prefix\032\nthis != \'\'H\000" +
-      "R\017ipWithPrefixlen\022\244\002\n\023ipv4_with_prefixle" +
-      "n\030\033 \001(\010B\361\001\302H\355\001\nu\n\032string.ipv4_with_prefi" +
-      "xlen\0225value must be a valid IPv4 address" +
-      " with prefix length\032 this == \'\' || this." +
-      "isIpPrefix(4)\nt\n string.ipv4_with_prefix" +
-      "len_empty\022Dvalue is empty, which is not " +
-      "a valid IPv4 address with prefix length\032" +
-      "\nthis != \'\'H\000R\021ipv4WithPrefixlen\022\244\002\n\023ipv" +
-      "6_with_prefixlen\030\034 \001(\010B\361\001\302H\355\001\nu\n\032string." +
-      "ipv6_with_prefixlen\0225value must be a val" +
-      "id IPv6 address with prefix length\032 this" +
-      " == \'\' || this.isIpPrefix(6)\nt\n string.i" +
-      "pv6_with_prefixlen_empty\022Dvalue is empty" +
-      ", which is not a valid IPv6 address with" +
-      " prefix length\032\nthis != \'\'H\000R\021ipv6WithPr" +
-      "efixlen\022\324\001\n\tip_prefix\030\035 \001(\010B\264\001\302H\260\001\nX\n\020st" +
-      "ring.ip_prefix\022\037value must be a valid IP" +
-      " prefix\032#this == \'\' || this.isIpPrefix(t" +
-      "rue)\nT\n\026string.ip_prefix_empty\022.value is" +
-      " empty, which is not a valid IP prefix\032\n" +
-      "this != \'\'H\000R\010ipPrefix\022\343\001\n\013ipv4_prefix\030\036" +
-      " \001(\010B\277\001\302H\273\001\n_\n\022string.ipv4_prefix\022!value" +
-      " must be a valid IPv4 prefix\032&this == \'\'" +
-      " || this.isIpPrefix(4, true)\nX\n\030string.i" +
-      "pv4_prefix_empty\0220value is empty, which " +
-      "is not a valid IPv4 prefix\032\nthis != \'\'H\000" +
-      "R\nipv4Prefix\022\343\001\n\013ipv6_prefix\030\037 \001(\010B\277\001\302H\273" +
-      "\001\n_\n\022string.ipv6_prefix\022!value must be a" +
-      " valid IPv6 prefix\032&this == \'\' || this.i" +
-      "sIpPrefix(6, true)\nX\n\030string.ipv6_prefix" +
-      "_empty\0220value is empty, which is not a v" +
-      "alid IPv6 prefix\032\nthis != \'\'H\000R\nipv6Pref" +
-      "ix\022\222\002\n\rhost_and_port\030  \001(\010B\353\001\302H\347\001\n\201\001\n\024st" +
-      "ring.host_and_port\022Avalue must be a vali" +
-      "d host (hostname or IP address) and port" +
-      " pair\032&this == \'\' || this.isHostAndPort(" +
-      "true)\na\n\032string.host_and_port_empty\0227val" +
-      "ue is empty, which is not a valid host a" +
-      "nd port pair\032\nthis != \'\'H\000R\013hostAndPort\022" +
-      "\270\005\n\020well_known_regex\030\030 \001(\0162\030.buf.validat" +
-      "e.KnownRegexB\361\004\302H\355\004\n\360\001\n#string.well_know" +
-      "n_regex.header_name\022&value must be a val" +
-      "id HTTP header name\032\240\001rules.well_known_r" +
-      "egex != 1 || this == \'\' || this.matches(" +
-      "!has(rules.strict) || rules.strict ?\'^:?" +
-      "[0-9a-zA-Z!#$%&\\\'*+-.^_|~\\x60]+$\' :\'^[^\\" +
-      "u0000\\u000A\\u000D]+$\')\n\215\001\n)string.well_k" +
-      "nown_regex.header_name_empty\0225value is e" +
-      "mpty, which is not a valid HTTP header n" +
-      "ame\032)rules.well_known_regex != 1 || this" +
-      " != \'\'\n\347\001\n$string.well_known_regex.heade" +
-      "r_value\022\'value must be a valid HTTP head" +
-      "er value\032\225\001rules.well_known_regex != 2 |" +
-      "| this.matches(!has(rules.strict) || rul" +
-      "es.strict ?\'^[^\\u0000-\\u0008\\u000A-\\u001" +
-      "F\\u007F]*$\' :\'^[^\\u0000\\u000A\\u000D]*$\')" +
-      "H\000R\016wellKnownRegex\022\033\n\006strict\030\031 \001(\010H\rR\006st" +
-      "rict\210\001\001B\014\n\nwell_knownB\010\n\006_constB\006\n\004_lenB" +
-      "\n\n\010_min_lenB\n\n\010_max_lenB\014\n\n_len_bytesB\014\n" +
-      "\n_min_bytesB\014\n\n_max_bytesB\n\n\010_patternB\t\n" +
-      "\007_prefixB\t\n\007_suffixB\013\n\t_containsB\017\n\r_not" +
-      "_containsB\t\n\007_strict\"\216\021\n\nBytesRules\022r\n\005c" +
-      "onst\030\001 \001(\014BW\302HT\nR\n\013bytes.const\032Cthis != " +
-      "rules.const ? \'value must be %x\'.format(" +
-      "[rules.const]) : \'\'H\001R\005const\210\001\001\022\202\001\n\003len\030" +
-      "\r \001(\004Bk\302Hh\nf\n\tbytes.len\032Yuint(this.size(" +
-      ")) != rules.len ? \'value length must be " +
-      "%s bytes\'.format([rules.len]) : \'\'H\002R\003le" +
-      "n\210\001\001\022\235\001\n\007min_len\030\002 \001(\004B\177\302H|\nz\n\rbytes.min" +
-      "_len\032iuint(this.size()) < rules.min_len " +
-      "? \'value length must be at least %s byte" +
-      "s\'.format([rules.min_len]) : \'\'H\003R\006minLe" +
-      "n\210\001\001\022\225\001\n\007max_len\030\003 \001(\004Bw\302Ht\nr\n\rbytes.max" +
-      "_len\032auint(this.size()) > rules.max_len " +
-      "? \'value must be at most %s bytes\'.forma" +
-      "t([rules.max_len]) : \'\'H\004R\006maxLen\210\001\001\022\236\001\n" +
-      "\007pattern\030\004 \001(\tB\177\302H|\nz\n\rbytes.pattern\032i!s" +
-      "tring(this).matches(rules.pattern) ? \'va" +
-      "lue must match regex pattern `%s`\'.forma" +
-      "t([rules.pattern]) : \'\'H\005R\007pattern\210\001\001\022\216\001" +
-      "\n\006prefix\030\005 \001(\014Bq\302Hn\nl\n\014bytes.prefix\032\\!th" +
-      "is.startsWith(rules.prefix) ? \'value doe" +
-      "s not have prefix %x\'.format([rules.pref" +
-      "ix]) : \'\'H\006R\006prefix\210\001\001\022\214\001\n\006suffix\030\006 \001(\014B" +
-      "o\302Hl\nj\n\014bytes.suffix\032Z!this.endsWith(rul" +
-      "es.suffix) ? \'value does not have suffix" +
-      " %x\'.format([rules.suffix]) : \'\'H\007R\006suff" +
-      "ix\210\001\001\022\222\001\n\010contains\030\007 \001(\014Bq\302Hn\nl\n\016bytes.c" +
-      "ontains\032Z!this.contains(rules.contains) " +
-      "? \'value does not contain %x\'.format([ru" +
-      "les.contains]) : \'\'H\010R\010contains\210\001\001\022\233\001\n\002i" +
-      "n\030\010 \003(\014B\212\001\302H\206\001\n\203\001\n\010bytes.in\032wdyn(rules)[" +
-      "\'in\'].size() > 0 && !(this in dyn(rules)" +
-      "[\'in\']) ? \'value must be in list %s\'.for" +
-      "mat([dyn(rules)[\'in\']]) : \'\'R\002in\022}\n\006not_" +
-      "in\030\t \003(\014Bf\302Hc\na\n\014bytes.not_in\032Qthis in r" +
-      "ules.not_in ? \'value must not be in list" +
-      " %s\'.format([rules.not_in]) : \'\'R\005notIn\022" +
-      "\325\001\n\002ip\030\n \001(\010B\302\001\302H\276\001\ng\n\010bytes.ip\022 value m" +
-      "ust be a valid IP address\0329this.size() =" +
-      "= 0 || this.size() == 4 || this.size() =" +
-      "= 16\nS\n\016bytes.ip_empty\022/value is empty, " +
-      "which is not a valid IP address\032\020this.si" +
-      "ze() != 0H\000R\002ip\022\314\001\n\004ipv4\030\013 \001(\010B\265\001\302H\261\001\nV\n" +
-      "\nbytes.ipv4\022\"value must be a valid IPv4 " +
-      "address\032$this.size() == 0 || this.size()" +
-      " == 4\nW\n\020bytes.ipv4_empty\0221value is empt" +
-      "y, which is not a valid IPv4 address\032\020th" +
-      "is.size() != 0H\000R\004ipv4\022\315\001\n\004ipv6\030\014 \001(\010B\266\001" +
-      "\302H\262\001\nW\n\nbytes.ipv6\022\"value must be a vali" +
-      "d IPv6 address\032%this.size() == 0 || this" +
-      ".size() == 16\nW\n\020bytes.ipv6_empty\0221value" +
-      " is empty, which is not a valid IPv6 add" +
-      "ress\032\020this.size() != 0H\000R\004ipv6B\014\n\nwell_k" +
-      "nownB\010\n\006_constB\006\n\004_lenB\n\n\010_min_lenB\n\n\010_m" +
-      "ax_lenB\n\n\010_patternB\t\n\007_prefixB\t\n\007_suffix" +
-      "B\013\n\t_contains\"\274\003\n\tEnumRules\022t\n\005const\030\001 \001" +
-      "(\005BY\302HV\nT\n\nenum.const\032Fthis != rules.con" +
-      "st ? \'value must equal %s\'.format([rules" +
-      ".const]) : \'\'H\000R\005const\210\001\001\022&\n\014defined_onl" +
-      "y\030\002 \001(\010H\001R\013definedOnly\210\001\001\022x\n\002in\030\003 \003(\005Bh\302" +
-      "He\nc\n\007enum.in\032X!(this in dyn(rules)[\'in\'" +
-      "]) ? \'value must be in list %s\'.format([" +
-      "dyn(rules)[\'in\']]) : \'\'R\002in\022|\n\006not_in\030\004 " +
-      "\003(\005Be\302Hb\n`\n\013enum.not_in\032Qthis in rules.n" +
-      "ot_in ? \'value must not be in list %s\'.f" +
-      "ormat([rules.not_in]) : \'\'R\005notInB\010\n\006_co" +
-      "nstB\017\n\r_defined_only\"\315\004\n\rRepeatedRules\022\255" +
-      "\001\n\tmin_items\030\001 \001(\004B\212\001\302H\206\001\n\203\001\n\022repeated.m" +
-      "in_items\032muint(this.size()) < rules.min_" +
-      "items ? \'value must contain at least %d " +
-      "item(s)\'.format([rules.min_items]) : \'\'H" +
-      "\000R\010minItems\210\001\001\022\261\001\n\tmax_items\030\002 \001(\004B\216\001\302H\212" +
-      "\001\n\207\001\n\022repeated.max_items\032quint(this.size" +
-      "()) > rules.max_items ? \'value must cont" +
-      "ain no more than %s item(s)\'.format([rul" +
-      "es.max_items]) : \'\'H\001R\010maxItems\210\001\001\022l\n\006un" +
-      "ique\030\003 \001(\010BO\302HL\nJ\n\017repeated.unique\022(repe" +
-      "ated value must contain unique items\032\rth" +
-      "is.unique()H\002R\006unique\210\001\001\0229\n\005items\030\004 \001(\0132" +
-      "\036.buf.validate.FieldConstraintsH\003R\005items" +
-      "\210\001\001B\014\n\n_min_itemsB\014\n\n_max_itemsB\t\n\007_uniq" +
-      "ueB\010\n\006_items\"\361\003\n\010MapRules\022\236\001\n\tmin_pairs\030" +
-      "\001 \001(\004B|\302Hy\nw\n\rmap.min_pairs\032fuint(this.s" +
-      "ize()) < rules.min_pairs ? \'map must be " +
-      "at least %d entries\'.format([rules.min_p" +
-      "airs]) : \'\'H\000R\010minPairs\210\001\001\022\235\001\n\tmax_pairs" +
-      "\030\002 \001(\004B{\302Hx\nv\n\rmap.max_pairs\032euint(this." +
-      "size()) > rules.max_pairs ? \'map must be" +
-      " at most %d entries\'.format([rules.max_p" +
-      "airs]) : \'\'H\001R\010maxPairs\210\001\001\0227\n\004keys\030\004 \001(\013" +
-      "2\036.buf.validate.FieldConstraintsH\002R\004keys" +
-      "\210\001\001\022;\n\006values\030\005 \001(\0132\036.buf.validate.Field" +
-      "ConstraintsH\003R\006values\210\001\001B\014\n\n_min_pairsB\014" +
-      "\n\n_max_pairsB\007\n\005_keysB\t\n\007_values\"1\n\010AnyR" +
-      "ules\022\016\n\002in\030\002 \003(\tR\002in\022\025\n\006not_in\030\003 \003(\tR\005no" +
-      "tIn\"\322\026\n\rDurationRules\022\223\001\n\005const\030\002 \001(\0132\031." +
-      "google.protobuf.DurationB]\302HZ\nX\n\016duratio" +
-      "n.const\032Fthis != rules.const ? \'value mu" +
-      "st equal %s\'.format([rules.const]) : \'\'H" +
-      "\002R\005const\210\001\001\022\254\001\n\002lt\030\003 \001(\0132\031.google.protob" +
-      "uf.DurationB\177\302H|\nz\n\013duration.lt\032k!has(ru" +
-      "les.gte) && !has(rules.gt) && this >= ru" +
-      "les.lt? \'value must be less than %s\'.for" +
-      "mat([rules.lt]) : \'\'H\000R\002lt\022\277\001\n\003lte\030\004 \001(\013" +
-      "2\031.google.protobuf.DurationB\217\001\302H\213\001\n\210\001\n\014d" +
-      "uration.lte\032x!has(rules.gte) && !has(rul" +
-      "es.gt) && this > rules.lte? \'value must " +
-      "be less than or equal to %s\'.format([rul" +
-      "es.lte]) : \'\'H\000R\003lte\022\305\007\n\002gt\030\005 \001(\0132\031.goog" +
-      "le.protobuf.DurationB\227\007\302H\223\007\n}\n\013duration." +
-      "gt\032n!has(rules.lt) && !has(rules.lte) &&" +
-      " this <= rules.gt? \'value must be greate" +
-      "r than %s\'.format([rules.gt]) : \'\'\n\266\001\n\016d" +
-      "uration.gt_lt\032\243\001has(rules.lt) && rules.l" +
-      "t >= rules.gt && (this >= rules.lt || th" +
-      "is <= rules.gt)? \'value must be greater " +
-      "than %s and less than %s\'.format([rules." +
-      "gt, rules.lt]) : \'\'\n\276\001\n\030duration.gt_lt_e" +
-      "xclusive\032\241\001has(rules.lt) && rules.lt < r" +
-      "ules.gt && (rules.lt <= this && this <= " +
-      "rules.gt)? \'value must be greater than %" +
-      "s or less than %s\'.format([rules.gt, rul" +
-      "es.lt]) : \'\'\n\306\001\n\017duration.gt_lte\032\262\001has(r" +
-      "ules.lte) && rules.lte >= rules.gt && (t" +
-      "his > rules.lte || this <= rules.gt)? \'v" +
-      "alue must be greater than %s and less th" +
-      "an or equal to %s\'.format([rules.gt, rul" +
-      "es.lte]) : \'\'\n\316\001\n\031duration.gt_lte_exclus" +
-      "ive\032\260\001has(rules.lte) && rules.lte < rule" +
-      "s.gt && (rules.lte < this && this <= rul" +
-      "es.gt)? \'value must be greater than %s o" +
-      "r less than or equal to %s\'.format([rule" +
-      "s.gt, rules.lte]) : \'\'H\001R\002gt\022\222\010\n\003gte\030\006 \001" +
-      "(\0132\031.google.protobuf.DurationB\342\007\302H\336\007\n\213\001\n" +
-      "\014duration.gte\032{!has(rules.lt) && !has(ru" +
-      "les.lte) && this < rules.gte? \'value mus" +
-      "t be greater than or equal to %s\'.format" +
-      "([rules.gte]) : \'\'\n\305\001\n\017duration.gte_lt\032\261" +
-      "\001has(rules.lt) && rules.lt >= rules.gte " +
-      "&& (this >= rules.lt || this < rules.gte" +
-      ")? \'value must be greater than or equal " +
-      "to %s and less than %s\'.format([rules.gt" +
-      "e, rules.lt]) : \'\'\n\315\001\n\031duration.gte_lt_e" +
-      "xclusive\032\257\001has(rules.lt) && rules.lt < r" +
-      "ules.gte && (rules.lt <= this && this < " +
-      "rules.gte)? \'value must be greater than " +
-      "or equal to %s or less than %s\'.format([" +
-      "rules.gte, rules.lt]) : \'\'\n\325\001\n\020duration." +
-      "gte_lte\032\300\001has(rules.lte) && rules.lte >=" +
-      " rules.gte && (this > rules.lte || this " +
-      "< rules.gte)? \'value must be greater tha" +
-      "n or equal to %s and less than or equal " +
-      "to %s\'.format([rules.gte, rules.lte]) : " +
-      "\'\'\n\335\001\n\032duration.gte_lte_exclusive\032\276\001has(" +
-      "rules.lte) && rules.lte < rules.gte && (" +
-      "rules.lte < this && this < rules.gte)? \'" +
-      "value must be greater than or equal to %" +
-      "s or less than or equal to %s\'.format([r" +
-      "ules.gte, rules.lte]) : \'\'H\001R\003gte\022\227\001\n\002in" +
-      "\030\007 \003(\0132\031.google.protobuf.DurationBl\302Hi\ng" +
-      "\n\013duration.in\032X!(this in dyn(rules)[\'in\'" +
-      "]) ? \'value must be in list %s\'.format([" +
-      "dyn(rules)[\'in\']]) : \'\'R\002in\022\233\001\n\006not_in\030\010",
-      " \003(\0132\031.google.protobuf.DurationBi\302Hf\nd\n\017" +
-      "duration.not_in\032Qthis in rules.not_in ? " +
-      "\'value must not be in list %s\'.format([r" +
-      "ules.not_in]) : \'\'R\005notInB\013\n\tless_thanB\016" +
-      "\n\014greater_thanB\010\n\006_const\"\312\027\n\016TimestampRu" +
-      "les\022\225\001\n\005const\030\002 \001(\0132\032.google.protobuf.Ti" +
-      "mestampB^\302H[\nY\n\017timestamp.const\032Fthis !=" +
-      " rules.const ? \'value must equal %s\'.for" +
-      "mat([rules.const]) : \'\'H\002R\005const\210\001\001\022\257\001\n\002" +
-      "lt\030\003 \001(\0132\032.google.protobuf.TimestampB\200\001\302" +
-      "H}\n{\n\014timestamp.lt\032k!has(rules.gte) && !" +
-      "has(rules.gt) && this >= rules.lt? \'valu" +
-      "e must be less than %s\'.format([rules.lt" +
-      "]) : \'\'H\000R\002lt\022\301\001\n\003lte\030\004 \001(\0132\032.google.pro" +
-      "tobuf.TimestampB\220\001\302H\214\001\n\211\001\n\rtimestamp.lte" +
-      "\032x!has(rules.gte) && !has(rules.gt) && t" +
-      "his > rules.lte? \'value must be less tha" +
-      "n or equal to %s\'.format([rules.lte]) : " +
-      "\'\'H\000R\003lte\022a\n\006lt_now\030\007 \001(\010BH\302HE\nC\n\020timest" +
-      "amp.lt_now\032/this > now ? \'value must be " +
-      "less than now\' : \'\'H\000R\005ltNow\022\313\007\n\002gt\030\005 \001(" +
-      "\0132\032.google.protobuf.TimestampB\234\007\302H\230\007\n~\n\014" +
-      "timestamp.gt\032n!has(rules.lt) && !has(rul" +
-      "es.lte) && this <= rules.gt? \'value must" +
-      " be greater than %s\'.format([rules.gt]) " +
-      ": \'\'\n\267\001\n\017timestamp.gt_lt\032\243\001has(rules.lt)" +
-      " && rules.lt >= rules.gt && (this >= rul" +
-      "es.lt || this <= rules.gt)? \'value must " +
-      "be greater than %s and less than %s\'.for" +
-      "mat([rules.gt, rules.lt]) : \'\'\n\277\001\n\031times" +
-      "tamp.gt_lt_exclusive\032\241\001has(rules.lt) && " +
-      "rules.lt < rules.gt && (rules.lt <= this" +
-      " && this <= rules.gt)? \'value must be gr" +
-      "eater than %s or less than %s\'.format([r" +
-      "ules.gt, rules.lt]) : \'\'\n\307\001\n\020timestamp.g" +
-      "t_lte\032\262\001has(rules.lte) && rules.lte >= r" +
-      "ules.gt && (this > rules.lte || this <= " +
-      "rules.gt)? \'value must be greater than %" +
-      "s and less than or equal to %s\'.format([" +
-      "rules.gt, rules.lte]) : \'\'\n\317\001\n\032timestamp" +
-      ".gt_lte_exclusive\032\260\001has(rules.lte) && ru" +
-      "les.lte < rules.gt && (rules.lte < this " +
-      "&& this <= rules.gt)? \'value must be gre" +
+      " : \'\'\n\310\001\n\026double.gt_lt_exclusive\032\255\001has(r" +
+      "ules.lt) && rules.lt < rules.gt && (this" +
+      ".isNan() || (rules.lt <= this && this <=" +
+      " rules.gt))? \'must be greater than %s or" +
+      " less than %s\'.format([rules.gt, rules.l" +
+      "t]) : \'\'\n\316\001\n\rdouble.gt_lte\032\274\001has(rules.l" +
+      "te) && rules.lte >= rules.gt && (this.is" +
+      "Nan() || this > rules.lte || this <= rul" +
+      "es.gt)? \'must be greater than %s and les" +
+      "s than or equal to %s\'.format([rules.gt," +
+      " rules.lte]) : \'\'\n\330\001\n\027double.gt_lte_excl" +
+      "usive\032\274\001has(rules.lte) && rules.lte < ru" +
+      "les.gt && (this.isNan() || (rules.lte < " +
+      "this && this <= rules.gt))? \'must be gre" +
       "ater than %s or less than or equal to %s" +
       "\'.format([rules.gt, rules.lte]) : \'\'H\001R\002" +
-      "gt\022\230\010\n\003gte\030\006 \001(\0132\032.google.protobuf.Times" +
-      "tampB\347\007\302H\343\007\n\214\001\n\rtimestamp.gte\032{!has(rule" +
-      "s.lt) && !has(rules.lte) && this < rules" +
-      ".gte? \'value must be greater than or equ" +
-      "al to %s\'.format([rules.gte]) : \'\'\n\306\001\n\020t" +
-      "imestamp.gte_lt\032\261\001has(rules.lt) && rules" +
-      ".lt >= rules.gte && (this >= rules.lt ||" +
-      " this < rules.gte)? \'value must be great" +
-      "er than or equal to %s and less than %s\'" +
-      ".format([rules.gte, rules.lt]) : \'\'\n\316\001\n\032" +
-      "timestamp.gte_lt_exclusive\032\257\001has(rules.l" +
-      "t) && rules.lt < rules.gte && (rules.lt " +
-      "<= this && this < rules.gte)? \'value mus" +
-      "t be greater than or equal to %s or less" +
-      " than %s\'.format([rules.gte, rules.lt]) " +
-      ": \'\'\n\326\001\n\021timestamp.gte_lte\032\300\001has(rules.l" +
-      "te) && rules.lte >= rules.gte && (this >" +
-      " rules.lte || this < rules.gte)? \'value " +
-      "must be greater than or equal to %s and " +
-      "less than or equal to %s\'.format([rules." +
-      "gte, rules.lte]) : \'\'\n\336\001\n\033timestamp.gte_" +
-      "lte_exclusive\032\276\001has(rules.lte) && rules." +
-      "lte < rules.gte && (rules.lte < this && " +
-      "this < rules.gte)? \'value must be greate" +
+      "gt\022\246\010\n\003gte\030\005 \001(\001B\221\010\302H\215\010\n\226\001\n\ndouble.gte\032\207" +
+      "\001!has(rules.lt) && !has(rules.lte) && (t" +
+      "his.isNan() || this < rules.gte)? \'must " +
+      "be greater than or equal to %s\'.format([" +
+      "rules.gte]) : \'\'\n\315\001\n\rdouble.gte_lt\032\273\001has" +
+      "(rules.lt) && rules.lt >= rules.gte && (" +
+      "this.isNan() || this >= rules.lt || this" +
+      " < rules.gte)? \'must be greater than or " +
+      "equal to %s and less than %s\'.format([ru" +
+      "les.gte, rules.lt]) : \'\'\n\327\001\n\027double.gte_" +
+      "lt_exclusive\032\273\001has(rules.lt) && rules.lt" +
+      " < rules.gte && (this.isNan() || (rules." +
+      "lt <= this && this < rules.gte))? \'must " +
+      "be greater than or equal to %s or less t" +
+      "han %s\'.format([rules.gte, rules.lt]) : " +
+      "\'\'\n\335\001\n\016double.gte_lte\032\312\001has(rules.lte) &" +
+      "& rules.lte >= rules.gte && (this.isNan(" +
+      ") || this > rules.lte || this < rules.gt" +
+      "e)? \'must be greater than or equal to %s" +
+      " and less than or equal to %s\'.format([r" +
+      "ules.gte, rules.lte]) : \'\'\n\347\001\n\030double.gt" +
+      "e_lte_exclusive\032\312\001has(rules.lte) && rule" +
+      "s.lte < rules.gte && (this.isNan() || (r" +
+      "ules.lte < this && this < rules.gte))? \'" +
+      "must be greater than or equal to %s or l" +
+      "ess than or equal to %s\'.format([rules.g" +
+      "te, rules.lte]) : \'\'H\001R\003gte\022~\n\002in\030\006 \003(\001B" +
+      "n\302Hk\ni\n\tdouble.in\032\\!(this in getField(ru" +
+      "les, \'in\')) ? \'must be in list %s\'.forma" +
+      "t([getField(rules, \'in\')]) : \'\'R\002in\022x\n\006n" +
+      "ot_in\030\007 \003(\001Ba\302H^\n\\\n\rdouble.not_in\032Kthis " +
+      "in rules.not_in ? \'must not be in list %" +
+      "s\'.format([rules.not_in]) : \'\'R\005notIn\022x\n" +
+      "\006finite\030\010 \001(\010B`\302H]\n[\n\rdouble.finite\032Jrul" +
+      "es.finite ? (this.isNan() || this.isInf(" +
+      ") ? \'must be finite\' : \'\') : \'\'R\006finite\022" +
+      "5\n\007example\030\t \003(\001B\033\302H\030\n\026\n\016double.example\032" +
+      "\004trueR\007example*\t\010\350\007\020\200\200\200\200\002B\013\n\tless_thanB\016" +
+      "\n\014greater_than\"\336\024\n\nInt32Rules\022\204\001\n\005const\030" +
+      "\001 \001(\005Bn\302Hk\ni\n\013int32.const\032Zthis != getFi" +
+      "eld(rules, \'const\') ? \'must equal %s\'.fo" +
+      "rmat([getField(rules, \'const\')]) : \'\'R\005c" +
+      "onst\022\210\001\n\002lt\030\002 \001(\005Bv\302Hs\nq\n\010int32.lt\032e!has" +
+      "(rules.gte) && !has(rules.gt) && this >=" +
+      " rules.lt? \'must be less than %s\'.format" +
+      "([rules.lt]) : \'\'H\000R\002lt\022\232\001\n\003lte\030\003 \001(\005B\205\001" +
+      "\302H\201\001\n\177\n\tint32.lte\032r!has(rules.gte) && !h" +
+      "as(rules.gt) && this > rules.lte? \'must " +
+      "be less than or equal to %s\'.format([rul" +
+      "es.lte]) : \'\'H\000R\003lte\022\375\006\n\002gt\030\004 \001(\005B\352\006\302H\346\006" +
+      "\nt\n\010int32.gt\032h!has(rules.lt) && !has(rul" +
+      "es.lte) && this <= rules.gt? \'must be gr" +
+      "eater than %s\'.format([rules.gt]) : \'\'\n\255" +
+      "\001\n\013int32.gt_lt\032\235\001has(rules.lt) && rules." +
+      "lt >= rules.gt && (this >= rules.lt || t" +
+      "his <= rules.gt)? \'must be greater than " +
+      "%s and less than %s\'.format([rules.gt, r" +
+      "ules.lt]) : \'\'\n\265\001\n\025int32.gt_lt_exclusive" +
+      "\032\233\001has(rules.lt) && rules.lt < rules.gt " +
+      "&& (rules.lt <= this && this <= rules.gt" +
+      ")? \'must be greater than %s or less than" +
+      " %s\'.format([rules.gt, rules.lt]) : \'\'\n\275" +
+      "\001\n\014int32.gt_lte\032\254\001has(rules.lte) && rule" +
+      "s.lte >= rules.gt && (this > rules.lte |" +
+      "| this <= rules.gt)? \'must be greater th" +
+      "an %s and less than or equal to %s\'.form" +
+      "at([rules.gt, rules.lte]) : \'\'\n\305\001\n\026int32" +
+      ".gt_lte_exclusive\032\252\001has(rules.lte) && ru" +
+      "les.lte < rules.gt && (rules.lte < this " +
+      "&& this <= rules.gt)? \'must be greater t" +
+      "han %s or less than or equal to %s\'.form" +
+      "at([rules.gt, rules.lte]) : \'\'H\001R\002gt\022\312\007\n" +
+      "\003gte\030\005 \001(\005B\265\007\302H\261\007\n\202\001\n\tint32.gte\032u!has(ru" +
+      "les.lt) && !has(rules.lte) && this < rul" +
+      "es.gte? \'must be greater than or equal t" +
+      "o %s\'.format([rules.gte]) : \'\'\n\274\001\n\014int32" +
+      ".gte_lt\032\253\001has(rules.lt) && rules.lt >= r" +
+      "ules.gte && (this >= rules.lt || this < " +
+      "rules.gte)? \'must be greater than or equ" +
+      "al to %s and less than %s\'.format([rules" +
+      ".gte, rules.lt]) : \'\'\n\304\001\n\026int32.gte_lt_e" +
+      "xclusive\032\251\001has(rules.lt) && rules.lt < r" +
+      "ules.gte && (rules.lt <= this && this < " +
+      "rules.gte)? \'must be greater than or equ" +
+      "al to %s or less than %s\'.format([rules." +
+      "gte, rules.lt]) : \'\'\n\314\001\n\rint32.gte_lte\032\272" +
+      "\001has(rules.lte) && rules.lte >= rules.gt" +
+      "e && (this > rules.lte || this < rules.g" +
+      "te)? \'must be greater than or equal to %" +
+      "s and less than or equal to %s\'.format([" +
+      "rules.gte, rules.lte]) : \'\'\n\324\001\n\027int32.gt" +
+      "e_lte_exclusive\032\270\001has(rules.lte) && rule" +
+      "s.lte < rules.gte && (rules.lte < this &" +
+      "& this < rules.gte)? \'must be greater th" +
+      "an or equal to %s or less than or equal " +
+      "to %s\'.format([rules.gte, rules.lte]) : " +
+      "\'\'H\001R\003gte\022}\n\002in\030\006 \003(\005Bm\302Hj\nh\n\010int32.in\032\\" +
+      "!(this in getField(rules, \'in\')) ? \'must" +
+      " be in list %s\'.format([getField(rules, " +
+      "\'in\')]) : \'\'R\002in\022w\n\006not_in\030\007 \003(\005B`\302H]\n[\n" +
+      "\014int32.not_in\032Kthis in rules.not_in ? \'m" +
+      "ust not be in list %s\'.format([rules.not" +
+      "_in]) : \'\'R\005notIn\0224\n\007example\030\010 \003(\005B\032\302H\027\n" +
+      "\025\n\rint32.example\032\004trueR\007example*\t\010\350\007\020\200\200\200" +
+      "\200\002B\013\n\tless_thanB\016\n\014greater_than\"\336\024\n\nInt6" +
+      "4Rules\022\204\001\n\005const\030\001 \001(\003Bn\302Hk\ni\n\013int64.con" +
+      "st\032Zthis != getField(rules, \'const\') ? \'" +
+      "must equal %s\'.format([getField(rules, \'" +
+      "const\')]) : \'\'R\005const\022\210\001\n\002lt\030\002 \001(\003Bv\302Hs\n" +
+      "q\n\010int64.lt\032e!has(rules.gte) && !has(rul" +
+      "es.gt) && this >= rules.lt? \'must be les" +
+      "s than %s\'.format([rules.lt]) : \'\'H\000R\002lt" +
+      "\022\232\001\n\003lte\030\003 \001(\003B\205\001\302H\201\001\n\177\n\tint64.lte\032r!has" +
+      "(rules.gte) && !has(rules.gt) && this > " +
+      "rules.lte? \'must be less than or equal t" +
+      "o %s\'.format([rules.lte]) : \'\'H\000R\003lte\022\375\006" +
+      "\n\002gt\030\004 \001(\003B\352\006\302H\346\006\nt\n\010int64.gt\032h!has(rule" +
+      "s.lt) && !has(rules.lte) && this <= rule" +
+      "s.gt? \'must be greater than %s\'.format([" +
+      "rules.gt]) : \'\'\n\255\001\n\013int64.gt_lt\032\235\001has(ru" +
+      "les.lt) && rules.lt >= rules.gt && (this" +
+      " >= rules.lt || this <= rules.gt)? \'must" +
+      " be greater than %s and less than %s\'.fo" +
+      "rmat([rules.gt, rules.lt]) : \'\'\n\265\001\n\025int6" +
+      "4.gt_lt_exclusive\032\233\001has(rules.lt) && rul" +
+      "es.lt < rules.gt && (rules.lt <= this &&" +
+      " this <= rules.gt)? \'must be greater tha" +
+      "n %s or less than %s\'.format([rules.gt, " +
+      "rules.lt]) : \'\'\n\275\001\n\014int64.gt_lte\032\254\001has(r" +
+      "ules.lte) && rules.lte >= rules.gt && (t" +
+      "his > rules.lte || this <= rules.gt)? \'m" +
+      "ust be greater than %s and less than or " +
+      "equal to %s\'.format([rules.gt, rules.lte" +
+      "]) : \'\'\n\305\001\n\026int64.gt_lte_exclusive\032\252\001has" +
+      "(rules.lte) && rules.lte < rules.gt && (" +
+      "rules.lte < this && this <= rules.gt)? \'" +
+      "must be greater than %s or less than or " +
+      "equal to %s\'.format([rules.gt, rules.lte" +
+      "]) : \'\'H\001R\002gt\022\312\007\n\003gte\030\005 \001(\003B\265\007\302H\261\007\n\202\001\n\ti" +
+      "nt64.gte\032u!has(rules.lt) && !has(rules.l" +
+      "te) && this < rules.gte? \'must be greate" +
+      "r than or equal to %s\'.format([rules.gte" +
+      "]) : \'\'\n\274\001\n\014int64.gte_lt\032\253\001has(rules.lt)" +
+      " && rules.lt >= rules.gte && (this >= ru" +
+      "les.lt || this < rules.gte)? \'must be gr" +
+      "eater than or equal to %s and less than " +
+      "%s\'.format([rules.gte, rules.lt]) : \'\'\n\304" +
+      "\001\n\026int64.gte_lt_exclusive\032\251\001has(rules.lt" +
+      ") && rules.lt < rules.gte && (rules.lt <" +
+      "= this && this < rules.gte)? \'must be gr" +
+      "eater than or equal to %s or less than %" +
+      "s\'.format([rules.gte, rules.lt]) : \'\'\n\314\001" +
+      "\n\rint64.gte_lte\032\272\001has(rules.lte) && rule" +
+      "s.lte >= rules.gte && (this > rules.lte " +
+      "|| this < rules.gte)? \'must be greater t" +
+      "han or equal to %s and less than or equa" +
+      "l to %s\'.format([rules.gte, rules.lte]) " +
+      ": \'\'\n\324\001\n\027int64.gte_lte_exclusive\032\270\001has(r" +
+      "ules.lte) && rules.lte < rules.gte && (r" +
+      "ules.lte < this && this < rules.gte)? \'m" +
+      "ust be greater than or equal to %s or le" +
+      "ss than or equal to %s\'.format([rules.gt" +
+      "e, rules.lte]) : \'\'H\001R\003gte\022}\n\002in\030\006 \003(\003Bm" +
+      "\302Hj\nh\n\010int64.in\032\\!(this in getField(rule" +
+      "s, \'in\')) ? \'must be in list %s\'.format(" +
+      "[getField(rules, \'in\')]) : \'\'R\002in\022w\n\006not" +
+      "_in\030\007 \003(\003B`\302H]\n[\n\014int64.not_in\032Kthis in " +
+      "rules.not_in ? \'must not be in list %s\'." +
+      "format([rules.not_in]) : \'\'R\005notIn\0224\n\007ex" +
+      "ample\030\t \003(\003B\032\302H\027\n\025\n\rint64.example\032\004trueR" +
+      "\007example*\t\010\350\007\020\200\200\200\200\002B\013\n\tless_thanB\016\n\014grea" +
+      "ter_than\"\360\024\n\013UInt32Rules\022\205\001\n\005const\030\001 \001(\r" +
+      "Bo\302Hl\nj\n\014uint32.const\032Zthis != getField(" +
+      "rules, \'const\') ? \'must equal %s\'.format" +
+      "([getField(rules, \'const\')]) : \'\'R\005const" +
+      "\022\211\001\n\002lt\030\002 \001(\rBw\302Ht\nr\n\tuint32.lt\032e!has(ru" +
+      "les.gte) && !has(rules.gt) && this >= ru" +
+      "les.lt? \'must be less than %s\'.format([r" +
+      "ules.lt]) : \'\'H\000R\002lt\022\234\001\n\003lte\030\003 \001(\rB\207\001\302H\203" +
+      "\001\n\200\001\n\nuint32.lte\032r!has(rules.gte) && !ha" +
+      "s(rules.gt) && this > rules.lte? \'must b" +
+      "e less than or equal to %s\'.format([rule" +
+      "s.lte]) : \'\'H\000R\003lte\022\202\007\n\002gt\030\004 \001(\rB\357\006\302H\353\006\n" +
+      "u\n\tuint32.gt\032h!has(rules.lt) && !has(rul" +
+      "es.lte) && this <= rules.gt? \'must be gr" +
+      "eater than %s\'.format([rules.gt]) : \'\'\n\256" +
+      "\001\n\014uint32.gt_lt\032\235\001has(rules.lt) && rules" +
+      ".lt >= rules.gt && (this >= rules.lt || " +
+      "this <= rules.gt)? \'must be greater than" +
+      " %s and less than %s\'.format([rules.gt, " +
+      "rules.lt]) : \'\'\n\266\001\n\026uint32.gt_lt_exclusi" +
+      "ve\032\233\001has(rules.lt) && rules.lt < rules.g" +
+      "t && (rules.lt <= this && this <= rules." +
+      "gt)? \'must be greater than %s or less th" +
+      "an %s\'.format([rules.gt, rules.lt]) : \'\'" +
+      "\n\276\001\n\ruint32.gt_lte\032\254\001has(rules.lte) && r" +
+      "ules.lte >= rules.gt && (this > rules.lt" +
+      "e || this <= rules.gt)? \'must be greater" +
+      " than %s and less than or equal to %s\'.f" +
+      "ormat([rules.gt, rules.lte]) : \'\'\n\306\001\n\027ui" +
+      "nt32.gt_lte_exclusive\032\252\001has(rules.lte) &" +
+      "& rules.lte < rules.gt && (rules.lte < t" +
+      "his && this <= rules.gt)? \'must be great" +
+      "er than %s or less than or equal to %s\'." +
+      "format([rules.gt, rules.lte]) : \'\'H\001R\002gt" +
+      "\022\317\007\n\003gte\030\005 \001(\rB\272\007\302H\266\007\n\203\001\n\nuint32.gte\032u!h" +
+      "as(rules.lt) && !has(rules.lte) && this " +
+      "< rules.gte? \'must be greater than or eq" +
+      "ual to %s\'.format([rules.gte]) : \'\'\n\275\001\n\r" +
+      "uint32.gte_lt\032\253\001has(rules.lt) && rules.l" +
+      "t >= rules.gte && (this >= rules.lt || t" +
+      "his < rules.gte)? \'must be greater than " +
+      "or equal to %s and less than %s\'.format(" +
+      "[rules.gte, rules.lt]) : \'\'\n\305\001\n\027uint32.g" +
+      "te_lt_exclusive\032\251\001has(rules.lt) && rules" +
+      ".lt < rules.gte && (rules.lt <= this && " +
+      "this < rules.gte)? \'must be greater than" +
+      " or equal to %s or less than %s\'.format(" +
+      "[rules.gte, rules.lt]) : \'\'\n\315\001\n\016uint32.g" +
+      "te_lte\032\272\001has(rules.lte) && rules.lte >= " +
+      "rules.gte && (this > rules.lte || this <" +
+      " rules.gte)? \'must be greater than or eq" +
+      "ual to %s and less than or equal to %s\'." +
+      "format([rules.gte, rules.lte]) : \'\'\n\325\001\n\030" +
+      "uint32.gte_lte_exclusive\032\270\001has(rules.lte" +
+      ") && rules.lte < rules.gte && (rules.lte" +
+      " < this && this < rules.gte)? \'must be g" +
+      "reater than or equal to %s or less than " +
+      "or equal to %s\'.format([rules.gte, rules" +
+      ".lte]) : \'\'H\001R\003gte\022~\n\002in\030\006 \003(\rBn\302Hk\ni\n\tu" +
+      "int32.in\032\\!(this in getField(rules, \'in\'" +
+      ")) ? \'must be in list %s\'.format([getFie" +
+      "ld(rules, \'in\')]) : \'\'R\002in\022x\n\006not_in\030\007 \003" +
+      "(\rBa\302H^\n\\\n\ruint32.not_in\032Kthis in rules." +
+      "not_in ? \'must not be in list %s\'.format" +
+      "([rules.not_in]) : \'\'R\005notIn\0225\n\007example\030" +
+      "\010 \003(\rB\033\302H\030\n\026\n\016uint32.example\032\004trueR\007exam" +
+      "ple*\t\010\350\007\020\200\200\200\200\002B\013\n\tless_thanB\016\n\014greater_t",
+      "han\"\360\024\n\013UInt64Rules\022\205\001\n\005const\030\001 \001(\004Bo\302Hl" +
+      "\nj\n\014uint64.const\032Zthis != getField(rules" +
+      ", \'const\') ? \'must equal %s\'.format([get" +
+      "Field(rules, \'const\')]) : \'\'R\005const\022\211\001\n\002" +
+      "lt\030\002 \001(\004Bw\302Ht\nr\n\tuint64.lt\032e!has(rules.g" +
+      "te) && !has(rules.gt) && this >= rules.l" +
+      "t? \'must be less than %s\'.format([rules." +
+      "lt]) : \'\'H\000R\002lt\022\234\001\n\003lte\030\003 \001(\004B\207\001\302H\203\001\n\200\001\n" +
+      "\nuint64.lte\032r!has(rules.gte) && !has(rul" +
+      "es.gt) && this > rules.lte? \'must be les" +
+      "s than or equal to %s\'.format([rules.lte" +
+      "]) : \'\'H\000R\003lte\022\202\007\n\002gt\030\004 \001(\004B\357\006\302H\353\006\nu\n\tui" +
+      "nt64.gt\032h!has(rules.lt) && !has(rules.lt" +
+      "e) && this <= rules.gt? \'must be greater" +
+      " than %s\'.format([rules.gt]) : \'\'\n\256\001\n\014ui" +
+      "nt64.gt_lt\032\235\001has(rules.lt) && rules.lt >" +
+      "= rules.gt && (this >= rules.lt || this " +
+      "<= rules.gt)? \'must be greater than %s a" +
+      "nd less than %s\'.format([rules.gt, rules" +
+      ".lt]) : \'\'\n\266\001\n\026uint64.gt_lt_exclusive\032\233\001" +
+      "has(rules.lt) && rules.lt < rules.gt && " +
+      "(rules.lt <= this && this <= rules.gt)? " +
+      "\'must be greater than %s or less than %s" +
+      "\'.format([rules.gt, rules.lt]) : \'\'\n\276\001\n\r" +
+      "uint64.gt_lte\032\254\001has(rules.lte) && rules." +
+      "lte >= rules.gt && (this > rules.lte || " +
+      "this <= rules.gt)? \'must be greater than" +
+      " %s and less than or equal to %s\'.format" +
+      "([rules.gt, rules.lte]) : \'\'\n\306\001\n\027uint64." +
+      "gt_lte_exclusive\032\252\001has(rules.lte) && rul" +
+      "es.lte < rules.gt && (rules.lte < this &" +
+      "& this <= rules.gt)? \'must be greater th" +
+      "an %s or less than or equal to %s\'.forma" +
+      "t([rules.gt, rules.lte]) : \'\'H\001R\002gt\022\317\007\n\003" +
+      "gte\030\005 \001(\004B\272\007\302H\266\007\n\203\001\n\nuint64.gte\032u!has(ru" +
+      "les.lt) && !has(rules.lte) && this < rul" +
+      "es.gte? \'must be greater than or equal t" +
+      "o %s\'.format([rules.gte]) : \'\'\n\275\001\n\ruint6" +
+      "4.gte_lt\032\253\001has(rules.lt) && rules.lt >= " +
+      "rules.gte && (this >= rules.lt || this <" +
+      " rules.gte)? \'must be greater than or eq" +
+      "ual to %s and less than %s\'.format([rule" +
+      "s.gte, rules.lt]) : \'\'\n\305\001\n\027uint64.gte_lt" +
+      "_exclusive\032\251\001has(rules.lt) && rules.lt <" +
+      " rules.gte && (rules.lt <= this && this " +
+      "< rules.gte)? \'must be greater than or e" +
+      "qual to %s or less than %s\'.format([rule" +
+      "s.gte, rules.lt]) : \'\'\n\315\001\n\016uint64.gte_lt" +
+      "e\032\272\001has(rules.lte) && rules.lte >= rules" +
+      ".gte && (this > rules.lte || this < rule" +
+      "s.gte)? \'must be greater than or equal t" +
+      "o %s and less than or equal to %s\'.forma" +
+      "t([rules.gte, rules.lte]) : \'\'\n\325\001\n\030uint6" +
+      "4.gte_lte_exclusive\032\270\001has(rules.lte) && " +
+      "rules.lte < rules.gte && (rules.lte < th" +
+      "is && this < rules.gte)? \'must be greate" +
       "r than or equal to %s or less than or eq" +
       "ual to %s\'.format([rules.gte, rules.lte]" +
-      ") : \'\'H\001R\003gte\022d\n\006gt_now\030\010 \001(\010BK\302HH\nF\n\020ti" +
-      "mestamp.gt_now\0322this < now ? \'value must" +
-      " be greater than now\' : \'\'H\001R\005gtNow\022\305\001\n\006" +
-      "within\030\t \001(\0132\031.google.protobuf.DurationB" +
-      "\214\001\302H\210\001\n\205\001\n\020timestamp.within\032qthis < now-" +
-      "rules.within || this > now+rules.within " +
-      "? \'value must be within %s of now\'.forma" +
-      "t([rules.within]) : \'\'H\003R\006within\210\001\001B\013\n\tl" +
-      "ess_thanB\016\n\014greater_thanB\010\n\006_constB\t\n\007_w" +
-      "ithin*\235\001\n\006Ignore\022\026\n\022IGNORE_UNSPECIFIED\020\000" +
-      "\022\031\n\025IGNORE_IF_UNPOPULATED\020\001\022\033\n\027IGNORE_IF" +
-      "_DEFAULT_VALUE\020\002\022\021\n\rIGNORE_ALWAYS\020\003\022\024\n\014I" +
-      "GNORE_EMPTY\020\001\032\002\010\001\022\026\n\016IGNORE_DEFAULT\020\002\032\002\010" +
-      "\001\032\002\020\001*n\n\nKnownRegex\022\033\n\027KNOWN_REGEX_UNSPE" +
-      "CIFIED\020\000\022 \n\034KNOWN_REGEX_HTTP_HEADER_NAME" +
-      "\020\001\022!\n\035KNOWN_REGEX_HTTP_HEADER_VALUE\020\002:_\n" +
-      "\007message\022\037.google.protobuf.MessageOption" +
-      "s\030\207\t \001(\0132 .buf.validate.MessageConstrain" +
-      "tsR\007message\210\001\001:W\n\005oneof\022\035.google.protobu" +
-      "f.OneofOptions\030\207\t \001(\0132\036.buf.validate.One" +
-      "ofConstraintsR\005oneof\210\001\001:W\n\005field\022\035.googl" +
-      "e.protobuf.FieldOptions\030\207\t \001(\0132\036.buf.val" +
-      "idate.FieldConstraintsR\005field\210\001\001B\311\001\n\036com" +
-      ".scalekit.grpc.buf.validateB\rValidatePro" +
-      "toP\001ZGbuf.build/gen/go/bufbuild/protoval" +
-      "idate/protocolbuffers/go/buf/validate\242\002\003" +
-      "BVX\252\002\014Buf.Validate\312\002\014Buf\\Validate\342\002\030Buf\\" +
-      "Validate\\GPBMetadata\352\002\rBuf::Validateb\006pr" +
-      "oto3"
+      ") : \'\'H\001R\003gte\022~\n\002in\030\006 \003(\004Bn\302Hk\ni\n\tuint64" +
+      ".in\032\\!(this in getField(rules, \'in\')) ? " +
+      "\'must be in list %s\'.format([getField(ru" +
+      "les, \'in\')]) : \'\'R\002in\022x\n\006not_in\030\007 \003(\004Ba\302" +
+      "H^\n\\\n\ruint64.not_in\032Kthis in rules.not_i" +
+      "n ? \'must not be in list %s\'.format([rul" +
+      "es.not_in]) : \'\'R\005notIn\0225\n\007example\030\010 \003(\004" +
+      "B\033\302H\030\n\026\n\016uint64.example\032\004trueR\007example*\t" +
+      "\010\350\007\020\200\200\200\200\002B\013\n\tless_thanB\016\n\014greater_than\"\360" +
+      "\024\n\013SInt32Rules\022\205\001\n\005const\030\001 \001(\021Bo\302Hl\nj\n\014s" +
+      "int32.const\032Zthis != getField(rules, \'co" +
+      "nst\') ? \'must equal %s\'.format([getField" +
+      "(rules, \'const\')]) : \'\'R\005const\022\211\001\n\002lt\030\002 " +
+      "\001(\021Bw\302Ht\nr\n\tsint32.lt\032e!has(rules.gte) &" +
+      "& !has(rules.gt) && this >= rules.lt? \'m" +
+      "ust be less than %s\'.format([rules.lt]) " +
+      ": \'\'H\000R\002lt\022\234\001\n\003lte\030\003 \001(\021B\207\001\302H\203\001\n\200\001\n\nsint" +
+      "32.lte\032r!has(rules.gte) && !has(rules.gt" +
+      ") && this > rules.lte? \'must be less tha" +
+      "n or equal to %s\'.format([rules.lte]) : " +
+      "\'\'H\000R\003lte\022\202\007\n\002gt\030\004 \001(\021B\357\006\302H\353\006\nu\n\tsint32." +
+      "gt\032h!has(rules.lt) && !has(rules.lte) &&" +
+      " this <= rules.gt? \'must be greater than" +
+      " %s\'.format([rules.gt]) : \'\'\n\256\001\n\014sint32." +
+      "gt_lt\032\235\001has(rules.lt) && rules.lt >= rul" +
+      "es.gt && (this >= rules.lt || this <= ru" +
+      "les.gt)? \'must be greater than %s and le" +
+      "ss than %s\'.format([rules.gt, rules.lt])" +
+      " : \'\'\n\266\001\n\026sint32.gt_lt_exclusive\032\233\001has(r" +
+      "ules.lt) && rules.lt < rules.gt && (rule" +
+      "s.lt <= this && this <= rules.gt)? \'must" +
+      " be greater than %s or less than %s\'.for" +
+      "mat([rules.gt, rules.lt]) : \'\'\n\276\001\n\rsint3" +
+      "2.gt_lte\032\254\001has(rules.lte) && rules.lte >" +
+      "= rules.gt && (this > rules.lte || this " +
+      "<= rules.gt)? \'must be greater than %s a" +
+      "nd less than or equal to %s\'.format([rul" +
+      "es.gt, rules.lte]) : \'\'\n\306\001\n\027sint32.gt_lt" +
+      "e_exclusive\032\252\001has(rules.lte) && rules.lt" +
+      "e < rules.gt && (rules.lte < this && thi" +
+      "s <= rules.gt)? \'must be greater than %s" +
+      " or less than or equal to %s\'.format([ru" +
+      "les.gt, rules.lte]) : \'\'H\001R\002gt\022\317\007\n\003gte\030\005" +
+      " \001(\021B\272\007\302H\266\007\n\203\001\n\nsint32.gte\032u!has(rules.l" +
+      "t) && !has(rules.lte) && this < rules.gt" +
+      "e? \'must be greater than or equal to %s\'" +
+      ".format([rules.gte]) : \'\'\n\275\001\n\rsint32.gte" +
+      "_lt\032\253\001has(rules.lt) && rules.lt >= rules" +
+      ".gte && (this >= rules.lt || this < rule" +
+      "s.gte)? \'must be greater than or equal t" +
+      "o %s and less than %s\'.format([rules.gte" +
+      ", rules.lt]) : \'\'\n\305\001\n\027sint32.gte_lt_excl" +
+      "usive\032\251\001has(rules.lt) && rules.lt < rule" +
+      "s.gte && (rules.lt <= this && this < rul" +
+      "es.gte)? \'must be greater than or equal " +
+      "to %s or less than %s\'.format([rules.gte" +
+      ", rules.lt]) : \'\'\n\315\001\n\016sint32.gte_lte\032\272\001h" +
+      "as(rules.lte) && rules.lte >= rules.gte " +
+      "&& (this > rules.lte || this < rules.gte" +
+      ")? \'must be greater than or equal to %s " +
+      "and less than or equal to %s\'.format([ru" +
+      "les.gte, rules.lte]) : \'\'\n\325\001\n\030sint32.gte" +
+      "_lte_exclusive\032\270\001has(rules.lte) && rules" +
+      ".lte < rules.gte && (rules.lte < this &&" +
+      " this < rules.gte)? \'must be greater tha" +
+      "n or equal to %s or less than or equal t" +
+      "o %s\'.format([rules.gte, rules.lte]) : \'" +
+      "\'H\001R\003gte\022~\n\002in\030\006 \003(\021Bn\302Hk\ni\n\tsint32.in\032\\" +
+      "!(this in getField(rules, \'in\')) ? \'must" +
+      " be in list %s\'.format([getField(rules, " +
+      "\'in\')]) : \'\'R\002in\022x\n\006not_in\030\007 \003(\021Ba\302H^\n\\\n" +
+      "\rsint32.not_in\032Kthis in rules.not_in ? \'" +
+      "must not be in list %s\'.format([rules.no" +
+      "t_in]) : \'\'R\005notIn\0225\n\007example\030\010 \003(\021B\033\302H\030" +
+      "\n\026\n\016sint32.example\032\004trueR\007example*\t\010\350\007\020\200" +
+      "\200\200\200\002B\013\n\tless_thanB\016\n\014greater_than\"\360\024\n\013SI" +
+      "nt64Rules\022\205\001\n\005const\030\001 \001(\022Bo\302Hl\nj\n\014sint64" +
+      ".const\032Zthis != getField(rules, \'const\')" +
+      " ? \'must equal %s\'.format([getField(rule" +
+      "s, \'const\')]) : \'\'R\005const\022\211\001\n\002lt\030\002 \001(\022Bw" +
+      "\302Ht\nr\n\tsint64.lt\032e!has(rules.gte) && !ha" +
+      "s(rules.gt) && this >= rules.lt? \'must b" +
+      "e less than %s\'.format([rules.lt]) : \'\'H" +
+      "\000R\002lt\022\234\001\n\003lte\030\003 \001(\022B\207\001\302H\203\001\n\200\001\n\nsint64.lt" +
+      "e\032r!has(rules.gte) && !has(rules.gt) && " +
+      "this > rules.lte? \'must be less than or " +
+      "equal to %s\'.format([rules.lte]) : \'\'H\000R" +
+      "\003lte\022\202\007\n\002gt\030\004 \001(\022B\357\006\302H\353\006\nu\n\tsint64.gt\032h!" +
+      "has(rules.lt) && !has(rules.lte) && this" +
+      " <= rules.gt? \'must be greater than %s\'." +
+      "format([rules.gt]) : \'\'\n\256\001\n\014sint64.gt_lt" +
+      "\032\235\001has(rules.lt) && rules.lt >= rules.gt" +
+      " && (this >= rules.lt || this <= rules.g" +
+      "t)? \'must be greater than %s and less th" +
+      "an %s\'.format([rules.gt, rules.lt]) : \'\'" +
+      "\n\266\001\n\026sint64.gt_lt_exclusive\032\233\001has(rules." +
+      "lt) && rules.lt < rules.gt && (rules.lt " +
+      "<= this && this <= rules.gt)? \'must be g" +
+      "reater than %s or less than %s\'.format([" +
+      "rules.gt, rules.lt]) : \'\'\n\276\001\n\rsint64.gt_" +
+      "lte\032\254\001has(rules.lte) && rules.lte >= rul" +
+      "es.gt && (this > rules.lte || this <= ru" +
+      "les.gt)? \'must be greater than %s and le" +
+      "ss than or equal to %s\'.format([rules.gt" +
+      ", rules.lte]) : \'\'\n\306\001\n\027sint64.gt_lte_exc" +
+      "lusive\032\252\001has(rules.lte) && rules.lte < r" +
+      "ules.gt && (rules.lte < this && this <= " +
+      "rules.gt)? \'must be greater than %s or l" +
+      "ess than or equal to %s\'.format([rules.g" +
+      "t, rules.lte]) : \'\'H\001R\002gt\022\317\007\n\003gte\030\005 \001(\022B" +
+      "\272\007\302H\266\007\n\203\001\n\nsint64.gte\032u!has(rules.lt) &&" +
+      " !has(rules.lte) && this < rules.gte? \'m" +
+      "ust be greater than or equal to %s\'.form" +
+      "at([rules.gte]) : \'\'\n\275\001\n\rsint64.gte_lt\032\253" +
+      "\001has(rules.lt) && rules.lt >= rules.gte " +
+      "&& (this >= rules.lt || this < rules.gte" +
+      ")? \'must be greater than or equal to %s " +
+      "and less than %s\'.format([rules.gte, rul" +
+      "es.lt]) : \'\'\n\305\001\n\027sint64.gte_lt_exclusive" +
+      "\032\251\001has(rules.lt) && rules.lt < rules.gte" +
+      " && (rules.lt <= this && this < rules.gt" +
+      "e)? \'must be greater than or equal to %s" +
+      " or less than %s\'.format([rules.gte, rul" +
+      "es.lt]) : \'\'\n\315\001\n\016sint64.gte_lte\032\272\001has(ru" +
+      "les.lte) && rules.lte >= rules.gte && (t" +
+      "his > rules.lte || this < rules.gte)? \'m" +
+      "ust be greater than or equal to %s and l" +
+      "ess than or equal to %s\'.format([rules.g" +
+      "te, rules.lte]) : \'\'\n\325\001\n\030sint64.gte_lte_" +
+      "exclusive\032\270\001has(rules.lte) && rules.lte " +
+      "< rules.gte && (rules.lte < this && this" +
+      " < rules.gte)? \'must be greater than or " +
+      "equal to %s or less than or equal to %s\'" +
+      ".format([rules.gte, rules.lte]) : \'\'H\001R\003" +
+      "gte\022~\n\002in\030\006 \003(\022Bn\302Hk\ni\n\tsint64.in\032\\!(thi" +
+      "s in getField(rules, \'in\')) ? \'must be i" +
+      "n list %s\'.format([getField(rules, \'in\')" +
+      "]) : \'\'R\002in\022x\n\006not_in\030\007 \003(\022Ba\302H^\n\\\n\rsint" +
+      "64.not_in\032Kthis in rules.not_in ? \'must " +
+      "not be in list %s\'.format([rules.not_in]" +
+      ") : \'\'R\005notIn\0225\n\007example\030\010 \003(\022B\033\302H\030\n\026\n\016s" +
+      "int64.example\032\004trueR\007example*\t\010\350\007\020\200\200\200\200\002B" +
+      "\013\n\tless_thanB\016\n\014greater_than\"\201\025\n\014Fixed32" +
+      "Rules\022\206\001\n\005const\030\001 \001(\007Bp\302Hm\nk\n\rfixed32.co" +
+      "nst\032Zthis != getField(rules, \'const\') ? " +
+      "\'must equal %s\'.format([getField(rules, " +
+      "\'const\')]) : \'\'R\005const\022\212\001\n\002lt\030\002 \001(\007Bx\302Hu" +
+      "\ns\n\nfixed32.lt\032e!has(rules.gte) && !has(" +
+      "rules.gt) && this >= rules.lt? \'must be " +
+      "less than %s\'.format([rules.lt]) : \'\'H\000R" +
+      "\002lt\022\235\001\n\003lte\030\003 \001(\007B\210\001\302H\204\001\n\201\001\n\013fixed32.lte" +
+      "\032r!has(rules.gte) && !has(rules.gt) && t" +
+      "his > rules.lte? \'must be less than or e" +
+      "qual to %s\'.format([rules.lte]) : \'\'H\000R\003" +
+      "lte\022\207\007\n\002gt\030\004 \001(\007B\364\006\302H\360\006\nv\n\nfixed32.gt\032h!" +
+      "has(rules.lt) && !has(rules.lte) && this" +
+      " <= rules.gt? \'must be greater than %s\'." +
+      "format([rules.gt]) : \'\'\n\257\001\n\rfixed32.gt_l" +
+      "t\032\235\001has(rules.lt) && rules.lt >= rules.g" +
+      "t && (this >= rules.lt || this <= rules." +
+      "gt)? \'must be greater than %s and less t" +
+      "han %s\'.format([rules.gt, rules.lt]) : \'" +
+      "\'\n\267\001\n\027fixed32.gt_lt_exclusive\032\233\001has(rule" +
+      "s.lt) && rules.lt < rules.gt && (rules.l" +
+      "t <= this && this <= rules.gt)? \'must be" +
+      " greater than %s or less than %s\'.format" +
+      "([rules.gt, rules.lt]) : \'\'\n\277\001\n\016fixed32." +
+      "gt_lte\032\254\001has(rules.lte) && rules.lte >= " +
+      "rules.gt && (this > rules.lte || this <=" +
+      " rules.gt)? \'must be greater than %s and" +
+      " less than or equal to %s\'.format([rules" +
+      ".gt, rules.lte]) : \'\'\n\307\001\n\030fixed32.gt_lte" +
+      "_exclusive\032\252\001has(rules.lte) && rules.lte" +
+      " < rules.gt && (rules.lte < this && this" +
+      " <= rules.gt)? \'must be greater than %s " +
+      "or less than or equal to %s\'.format([rul" +
+      "es.gt, rules.lte]) : \'\'H\001R\002gt\022\324\007\n\003gte\030\005 " +
+      "\001(\007B\277\007\302H\273\007\n\204\001\n\013fixed32.gte\032u!has(rules.l" +
+      "t) && !has(rules.lte) && this < rules.gt" +
+      "e? \'must be greater than or equal to %s\'" +
+      ".format([rules.gte]) : \'\'\n\276\001\n\016fixed32.gt" +
+      "e_lt\032\253\001has(rules.lt) && rules.lt >= rule" +
+      "s.gte && (this >= rules.lt || this < rul" +
+      "es.gte)? \'must be greater than or equal " +
+      "to %s and less than %s\'.format([rules.gt" +
+      "e, rules.lt]) : \'\'\n\306\001\n\030fixed32.gte_lt_ex" +
+      "clusive\032\251\001has(rules.lt) && rules.lt < ru" +
+      "les.gte && (rules.lt <= this && this < r" +
+      "ules.gte)? \'must be greater than or equa" +
+      "l to %s or less than %s\'.format([rules.g" +
+      "te, rules.lt]) : \'\'\n\316\001\n\017fixed32.gte_lte\032" +
+      "\272\001has(rules.lte) && rules.lte >= rules.g" +
+      "te && (this > rules.lte || this < rules." +
+      "gte)? \'must be greater than or equal to " +
+      "%s and less than or equal to %s\'.format(" +
+      "[rules.gte, rules.lte]) : \'\'\n\326\001\n\031fixed32" +
+      ".gte_lte_exclusive\032\270\001has(rules.lte) && r" +
+      "ules.lte < rules.gte && (rules.lte < thi" +
+      "s && this < rules.gte)? \'must be greater" +
+      " than or equal to %s or less than or equ" +
+      "al to %s\'.format([rules.gte, rules.lte])" +
+      " : \'\'H\001R\003gte\022\177\n\002in\030\006 \003(\007Bo\302Hl\nj\n\nfixed32" +
+      ".in\032\\!(this in getField(rules, \'in\')) ? " +
+      "\'must be in list %s\'.format([getField(ru" +
+      "les, \'in\')]) : \'\'R\002in\022y\n\006not_in\030\007 \003(\007Bb\302" +
+      "H_\n]\n\016fixed32.not_in\032Kthis in rules.not_" +
+      "in ? \'must not be in list %s\'.format([ru" +
+      "les.not_in]) : \'\'R\005notIn\0226\n\007example\030\010 \003(" +
+      "\007B\034\302H\031\n\027\n\017fixed32.example\032\004trueR\007example" +
+      "*\t\010\350\007\020\200\200\200\200\002B\013\n\tless_thanB\016\n\014greater_than" +
+      "\"\201\025\n\014Fixed64Rules\022\206\001\n\005const\030\001 \001(\006Bp\302Hm\nk" +
+      "\n\rfixed64.const\032Zthis != getField(rules," +
+      " \'const\') ? \'must equal %s\'.format([getF" +
+      "ield(rules, \'const\')]) : \'\'R\005const\022\212\001\n\002l" +
+      "t\030\002 \001(\006Bx\302Hu\ns\n\nfixed64.lt\032e!has(rules.g" +
+      "te) && !has(rules.gt) && this >= rules.l" +
+      "t? \'must be less than %s\'.format([rules." +
+      "lt]) : \'\'H\000R\002lt\022\235\001\n\003lte\030\003 \001(\006B\210\001\302H\204\001\n\201\001\n" +
+      "\013fixed64.lte\032r!has(rules.gte) && !has(ru" +
+      "les.gt) && this > rules.lte? \'must be le" +
+      "ss than or equal to %s\'.format([rules.lt" +
+      "e]) : \'\'H\000R\003lte\022\207\007\n\002gt\030\004 \001(\006B\364\006\302H\360\006\nv\n\nf" +
+      "ixed64.gt\032h!has(rules.lt) && !has(rules." +
+      "lte) && this <= rules.gt? \'must be great" +
+      "er than %s\'.format([rules.gt]) : \'\'\n\257\001\n\r" +
+      "fixed64.gt_lt\032\235\001has(rules.lt) && rules.l" +
+      "t >= rules.gt && (this >= rules.lt || th" +
+      "is <= rules.gt)? \'must be greater than %" +
+      "s and less than %s\'.format([rules.gt, ru" +
+      "les.lt]) : \'\'\n\267\001\n\027fixed64.gt_lt_exclusiv" +
+      "e\032\233\001has(rules.lt) && rules.lt < rules.gt" +
+      " && (rules.lt <= this && this <= rules.g" +
+      "t)? \'must be greater than %s or less tha" +
+      "n %s\'.format([rules.gt, rules.lt]) : \'\'\n" +
+      "\277\001\n\016fixed64.gt_lte\032\254\001has(rules.lte) && r" +
+      "ules.lte >= rules.gt && (this > rules.lt" +
+      "e || this <= rules.gt)? \'must be greater" +
+      " than %s and less than or equal to %s\'.f" +
+      "ormat([rules.gt, rules.lte]) : \'\'\n\307\001\n\030fi" +
+      "xed64.gt_lte_exclusive\032\252\001has(rules.lte) " +
+      "&& rules.lte < rules.gt && (rules.lte < " +
+      "this && this <= rules.gt)? \'must be grea" +
+      "ter than %s or less than or equal to %s\'" +
+      ".format([rules.gt, rules.lte]) : \'\'H\001R\002g" +
+      "t\022\324\007\n\003gte\030\005 \001(\006B\277\007\302H\273\007\n\204\001\n\013fixed64.gte\032u" +
+      "!has(rules.lt) && !has(rules.lte) && thi" +
+      "s < rules.gte? \'must be greater than or " +
+      "equal to %s\'.format([rules.gte]) : \'\'\n\276\001" +
+      "\n\016fixed64.gte_lt\032\253\001has(rules.lt) && rule" +
+      "s.lt >= rules.gte && (this >= rules.lt |" +
+      "| this < rules.gte)? \'must be greater th" +
+      "an or equal to %s and less than %s\'.form" +
+      "at([rules.gte, rules.lt]) : \'\'\n\306\001\n\030fixed" +
+      "64.gte_lt_exclusive\032\251\001has(rules.lt) && r" +
+      "ules.lt < rules.gte && (rules.lt <= this" +
+      " && this < rules.gte)? \'must be greater " +
+      "than or equal to %s or less than %s\'.for" +
+      "mat([rules.gte, rules.lt]) : \'\'\n\316\001\n\017fixe" +
+      "d64.gte_lte\032\272\001has(rules.lte) && rules.lt" +
+      "e >= rules.gte && (this > rules.lte || t" +
+      "his < rules.gte)? \'must be greater than " +
+      "or equal to %s and less than or equal to" +
+      " %s\'.format([rules.gte, rules.lte]) : \'\'" +
+      "\n\326\001\n\031fixed64.gte_lte_exclusive\032\270\001has(rul" +
+      "es.lte) && rules.lte < rules.gte && (rul" +
+      "es.lte < this && this < rules.gte)? \'mus" +
+      "t be greater than or equal to %s or less" +
+      " than or equal to %s\'.format([rules.gte," +
+      " rules.lte]) : \'\'H\001R\003gte\022\177\n\002in\030\006 \003(\006Bo\302H" +
+      "l\nj\n\nfixed64.in\032\\!(this in getField(rule" +
+      "s, \'in\')) ? \'must be in list %s\'.format(" +
+      "[getField(rules, \'in\')]) : \'\'R\002in\022y\n\006not" +
+      "_in\030\007 \003(\006Bb\302H_\n]\n\016fixed64.not_in\032Kthis i" +
+      "n rules.not_in ? \'must not be in list %s" +
+      "\'.format([rules.not_in]) : \'\'R\005notIn\0226\n\007" +
+      "example\030\010 \003(\006B\034\302H\031\n\027\n\017fixed64.example\032\004t" +
+      "rueR\007example*\t\010\350\007\020\200\200\200\200\002B\013\n\tless_thanB\016\n\014" +
+      "greater_than\"\223\025\n\rSFixed32Rules\022\207\001\n\005const" +
+      "\030\001 \001(\017Bq\302Hn\nl\n\016sfixed32.const\032Zthis != g" +
+      "etField(rules, \'const\') ? \'must equal %s" +
+      "\'.format([getField(rules, \'const\')]) : \'" +
+      "\'R\005const\022\213\001\n\002lt\030\002 \001(\017By\302Hv\nt\n\013sfixed32.l" +
+      "t\032e!has(rules.gte) && !has(rules.gt) && " +
+      "this >= rules.lt? \'must be less than %s\'" +
+      ".format([rules.lt]) : \'\'H\000R\002lt\022\236\001\n\003lte\030\003" +
+      " \001(\017B\211\001\302H\205\001\n\202\001\n\014sfixed32.lte\032r!has(rules" +
+      ".gte) && !has(rules.gt) && this > rules." +
+      "lte? \'must be less than or equal to %s\'." +
+      "format([rules.lte]) : \'\'H\000R\003lte\022\214\007\n\002gt\030\004" +
+      " \001(\017B\371\006\302H\365\006\nw\n\013sfixed32.gt\032h!has(rules.l" +
+      "t) && !has(rules.lte) && this <= rules.g" +
+      "t? \'must be greater than %s\'.format([rul" +
+      "es.gt]) : \'\'\n\260\001\n\016sfixed32.gt_lt\032\235\001has(ru" +
+      "les.lt) && rules.lt >= rules.gt && (this" +
+      " >= rules.lt || this <= rules.gt)? \'must" +
+      " be greater than %s and less than %s\'.fo" +
+      "rmat([rules.gt, rules.lt]) : \'\'\n\270\001\n\030sfix" +
+      "ed32.gt_lt_exclusive\032\233\001has(rules.lt) && " +
+      "rules.lt < rules.gt && (rules.lt <= this" +
+      " && this <= rules.gt)? \'must be greater " +
+      "than %s or less than %s\'.format([rules.g" +
+      "t, rules.lt]) : \'\'\n\300\001\n\017sfixed32.gt_lte\032\254" +
+      "\001has(rules.lte) && rules.lte >= rules.gt" +
+      " && (this > rules.lte || this <= rules.g" +
+      "t)? \'must be greater than %s and less th" +
+      "an or equal to %s\'.format([rules.gt, rul" +
+      "es.lte]) : \'\'\n\310\001\n\031sfixed32.gt_lte_exclus" +
+      "ive\032\252\001has(rules.lte) && rules.lte < rule" +
+      "s.gt && (rules.lte < this && this <= rul" +
+      "es.gt)? \'must be greater than %s or less" +
+      " than or equal to %s\'.format([rules.gt, " +
+      "rules.lte]) : \'\'H\001R\002gt\022\331\007\n\003gte\030\005 \001(\017B\304\007\302" +
+      "H\300\007\n\205\001\n\014sfixed32.gte\032u!has(rules.lt) && " +
+      "!has(rules.lte) && this < rules.gte? \'mu" +
+      "st be greater than or equal to %s\'.forma" +
+      "t([rules.gte]) : \'\'\n\277\001\n\017sfixed32.gte_lt\032" +
+      "\253\001has(rules.lt) && rules.lt >= rules.gte" +
+      " && (this >= rules.lt || this < rules.gt" +
+      "e)? \'must be greater than or equal to %s" +
+      " and less than %s\'.format([rules.gte, ru" +
+      "les.lt]) : \'\'\n\307\001\n\031sfixed32.gte_lt_exclus" +
+      "ive\032\251\001has(rules.lt) && rules.lt < rules." +
+      "gte && (rules.lt <= this && this < rules" +
+      ".gte)? \'must be greater than or equal to" +
+      " %s or less than %s\'.format([rules.gte, " +
+      "rules.lt]) : \'\'\n\317\001\n\020sfixed32.gte_lte\032\272\001h" +
+      "as(rules.lte) && rules.lte >= rules.gte " +
+      "&& (this > rules.lte || this < rules.gte" +
+      ")? \'must be greater than or equal to %s " +
+      "and less than or equal to %s\'.format([ru" +
+      "les.gte, rules.lte]) : \'\'\n\327\001\n\032sfixed32.g" +
+      "te_lte_exclusive\032\270\001has(rules.lte) && rul" +
+      "es.lte < rules.gte && (rules.lte < this " +
+      "&& this < rules.gte)? \'must be greater t" +
+      "han or equal to %s or less than or equal" +
+      " to %s\'.format([rules.gte, rules.lte]) :" +
+      " \'\'H\001R\003gte\022\200\001\n\002in\030\006 \003(\017Bp\302Hm\nk\n\013sfixed32" +
+      ".in\032\\!(this in getField(rules, \'in\')) ? " +
+      "\'must be in list %s\'.format([getField(ru" +
+      "les, \'in\')]) : \'\'R\002in\022z\n\006not_in\030\007 \003(\017Bc\302" +
+      "H`\n^\n\017sfixed32.not_in\032Kthis in rules.not" +
+      "_in ? \'must not be in list %s\'.format([r",
+      "ules.not_in]) : \'\'R\005notIn\0227\n\007example\030\010 \003" +
+      "(\017B\035\302H\032\n\030\n\020sfixed32.example\032\004trueR\007examp" +
+      "le*\t\010\350\007\020\200\200\200\200\002B\013\n\tless_thanB\016\n\014greater_th" +
+      "an\"\223\025\n\rSFixed64Rules\022\207\001\n\005const\030\001 \001(\020Bq\302H" +
+      "n\nl\n\016sfixed64.const\032Zthis != getField(ru" +
+      "les, \'const\') ? \'must equal %s\'.format([" +
+      "getField(rules, \'const\')]) : \'\'R\005const\022\213" +
+      "\001\n\002lt\030\002 \001(\020By\302Hv\nt\n\013sfixed64.lt\032e!has(ru" +
+      "les.gte) && !has(rules.gt) && this >= ru" +
+      "les.lt? \'must be less than %s\'.format([r" +
+      "ules.lt]) : \'\'H\000R\002lt\022\236\001\n\003lte\030\003 \001(\020B\211\001\302H\205" +
+      "\001\n\202\001\n\014sfixed64.lte\032r!has(rules.gte) && !" +
+      "has(rules.gt) && this > rules.lte? \'must" +
+      " be less than or equal to %s\'.format([ru" +
+      "les.lte]) : \'\'H\000R\003lte\022\214\007\n\002gt\030\004 \001(\020B\371\006\302H\365" +
+      "\006\nw\n\013sfixed64.gt\032h!has(rules.lt) && !has" +
+      "(rules.lte) && this <= rules.gt? \'must b" +
+      "e greater than %s\'.format([rules.gt]) : " +
+      "\'\'\n\260\001\n\016sfixed64.gt_lt\032\235\001has(rules.lt) &&" +
+      " rules.lt >= rules.gt && (this >= rules." +
+      "lt || this <= rules.gt)? \'must be greate" +
+      "r than %s and less than %s\'.format([rule" +
+      "s.gt, rules.lt]) : \'\'\n\270\001\n\030sfixed64.gt_lt" +
+      "_exclusive\032\233\001has(rules.lt) && rules.lt <" +
+      " rules.gt && (rules.lt <= this && this <" +
+      "= rules.gt)? \'must be greater than %s or" +
+      " less than %s\'.format([rules.gt, rules.l" +
+      "t]) : \'\'\n\300\001\n\017sfixed64.gt_lte\032\254\001has(rules" +
+      ".lte) && rules.lte >= rules.gt && (this " +
+      "> rules.lte || this <= rules.gt)? \'must " +
+      "be greater than %s and less than or equa" +
+      "l to %s\'.format([rules.gt, rules.lte]) :" +
+      " \'\'\n\310\001\n\031sfixed64.gt_lte_exclusive\032\252\001has(" +
+      "rules.lte) && rules.lte < rules.gt && (r" +
+      "ules.lte < this && this <= rules.gt)? \'m" +
+      "ust be greater than %s or less than or e" +
+      "qual to %s\'.format([rules.gt, rules.lte]" +
+      ") : \'\'H\001R\002gt\022\331\007\n\003gte\030\005 \001(\020B\304\007\302H\300\007\n\205\001\n\014sf" +
+      "ixed64.gte\032u!has(rules.lt) && !has(rules" +
+      ".lte) && this < rules.gte? \'must be grea" +
+      "ter than or equal to %s\'.format([rules.g" +
+      "te]) : \'\'\n\277\001\n\017sfixed64.gte_lt\032\253\001has(rule" +
+      "s.lt) && rules.lt >= rules.gte && (this " +
+      ">= rules.lt || this < rules.gte)? \'must " +
+      "be greater than or equal to %s and less " +
+      "than %s\'.format([rules.gte, rules.lt]) :" +
+      " \'\'\n\307\001\n\031sfixed64.gte_lt_exclusive\032\251\001has(" +
+      "rules.lt) && rules.lt < rules.gte && (ru" +
+      "les.lt <= this && this < rules.gte)? \'mu" +
+      "st be greater than or equal to %s or les" +
+      "s than %s\'.format([rules.gte, rules.lt])" +
+      " : \'\'\n\317\001\n\020sfixed64.gte_lte\032\272\001has(rules.l" +
+      "te) && rules.lte >= rules.gte && (this >" +
+      " rules.lte || this < rules.gte)? \'must b" +
+      "e greater than or equal to %s and less t" +
+      "han or equal to %s\'.format([rules.gte, r" +
+      "ules.lte]) : \'\'\n\327\001\n\032sfixed64.gte_lte_exc" +
+      "lusive\032\270\001has(rules.lte) && rules.lte < r" +
+      "ules.gte && (rules.lte < this && this < " +
+      "rules.gte)? \'must be greater than or equ" +
+      "al to %s or less than or equal to %s\'.fo" +
+      "rmat([rules.gte, rules.lte]) : \'\'H\001R\003gte" +
+      "\022\200\001\n\002in\030\006 \003(\020Bp\302Hm\nk\n\013sfixed64.in\032\\!(thi" +
+      "s in getField(rules, \'in\')) ? \'must be i" +
+      "n list %s\'.format([getField(rules, \'in\')" +
+      "]) : \'\'R\002in\022z\n\006not_in\030\007 \003(\020Bc\302H`\n^\n\017sfix" +
+      "ed64.not_in\032Kthis in rules.not_in ? \'mus" +
+      "t not be in list %s\'.format([rules.not_i" +
+      "n]) : \'\'R\005notIn\0227\n\007example\030\010 \003(\020B\035\302H\032\n\030\n" +
+      "\020sfixed64.example\032\004trueR\007example*\t\010\350\007\020\200\200" +
+      "\200\200\002B\013\n\tless_thanB\016\n\014greater_than\"\321\001\n\tBoo" +
+      "lRules\022\203\001\n\005const\030\001 \001(\010Bm\302Hj\nh\n\nbool.cons" +
+      "t\032Zthis != getField(rules, \'const\') ? \'m" +
+      "ust equal %s\'.format([getField(rules, \'c" +
+      "onst\')]) : \'\'R\005const\0223\n\007example\030\002 \003(\010B\031\302" +
+      "H\026\n\024\n\014bool.example\032\004trueR\007example*\t\010\350\007\020\200" +
+      "\200\200\200\002\"\317?\n\013StringRules\022\207\001\n\005const\030\001 \001(\tBq\302H" +
+      "n\nl\n\014string.const\032\\this != getField(rule" +
+      "s, \'const\') ? \'must equal `%s`\'.format([" +
+      "getField(rules, \'const\')]) : \'\'R\005const\022v" +
+      "\n\003len\030\023 \001(\004Bd\302Ha\n_\n\nstring.len\032Quint(thi" +
+      "s.size()) != rules.len ? \'must be %s cha" +
+      "racters\'.format([rules.len]) : \'\'R\003len\022\221" +
+      "\001\n\007min_len\030\002 \001(\004Bx\302Hu\ns\n\016string.min_len\032" +
+      "auint(this.size()) < rules.min_len ? \'mu" +
+      "st be at least %s characters\'.format([ru" +
+      "les.min_len]) : \'\'R\006minLen\022\220\001\n\007max_len\030\003" +
+      " \001(\004Bw\302Ht\nr\n\016string.max_len\032`uint(this.s" +
+      "ize()) > rules.max_len ? \'must be at mos" +
+      "t %s characters\'.format([rules.max_len])" +
+      " : \'\'R\006maxLen\022\225\001\n\tlen_bytes\030\024 \001(\004Bx\302Hu\ns" +
+      "\n\020string.len_bytes\032_uint(bytes(this).siz" +
+      "e()) != rules.len_bytes ? \'must be %s by" +
+      "tes\'.format([rules.len_bytes]) : \'\'R\010len" +
+      "Bytes\022\236\001\n\tmin_bytes\030\004 \001(\004B\200\001\302H}\n{\n\020strin" +
+      "g.min_bytes\032guint(bytes(this).size()) < " +
+      "rules.min_bytes ? \'must be at least %s b" +
+      "ytes\'.format([rules.min_bytes]) : \'\'R\010mi" +
+      "nBytes\022\234\001\n\tmax_bytes\030\005 \001(\004B\177\302H|\nz\n\020strin" +
+      "g.max_bytes\032fuint(bytes(this).size()) > " +
+      "rules.max_bytes ? \'must be at most %s by" +
+      "tes\'.format([rules.max_bytes]) : \'\'R\010max" +
+      "Bytes\022\220\001\n\007pattern\030\006 \001(\tBv\302Hs\nq\n\016string.p" +
+      "attern\032_!this.matches(rules.pattern) ? \'" +
+      "does not match regex pattern `%s`\'.forma" +
+      "t([rules.pattern]) : \'\'R\007pattern\022\206\001\n\006pre" +
+      "fix\030\007 \001(\tBn\302Hk\ni\n\rstring.prefix\032X!this.s" +
+      "tartsWith(rules.prefix) ? \'does not have" +
+      " prefix `%s`\'.format([rules.prefix]) : \'" +
+      "\'R\006prefix\022\204\001\n\006suffix\030\010 \001(\tBl\302Hi\ng\n\rstrin" +
+      "g.suffix\032V!this.endsWith(rules.suffix) ?" +
+      " \'does not have suffix `%s`\'.format([rul" +
+      "es.suffix]) : \'\'R\006suffix\022\224\001\n\010contains\030\t " +
+      "\001(\tBx\302Hu\ns\n\017string.contains\032`!this.conta" +
+      "ins(rules.contains) ? \'does not contain " +
+      "substring `%s`\'.format([rules.contains])" +
+      " : \'\'R\010contains\022\236\001\n\014not_contains\030\027 \001(\tB{" +
+      "\302Hx\nv\n\023string.not_contains\032_this.contain" +
+      "s(rules.not_contains) ? \'contains substr" +
+      "ing `%s`\'.format([rules.not_contains]) :" +
+      " \'\'R\013notContains\022~\n\002in\030\n \003(\tBn\302Hk\ni\n\tstr" +
+      "ing.in\032\\!(this in getField(rules, \'in\'))" +
+      " ? \'must be in list %s\'.format([getField" +
+      "(rules, \'in\')]) : \'\'R\002in\022x\n\006not_in\030\013 \003(\t" +
+      "Ba\302H^\n\\\n\rstring.not_in\032Kthis in rules.no" +
+      "t_in ? \'must not be in list %s\'.format([" +
+      "rules.not_in]) : \'\'R\005notIn\022\340\001\n\005email\030\014 \001" +
+      "(\010B\307\001\302H\303\001\n[\n\014string.email\022\035must be a val" +
+      "id email address\032,!rules.email || this =" +
+      "= \'\' || this.isEmail()\nd\n\022string.email_e" +
+      "mpty\0222value is empty, which is not a val" +
+      "id email address\032\032!rules.email || this !" +
+      "= \'\'H\000R\005email\022\353\001\n\010hostname\030\r \001(\010B\314\001\302H\310\001\n" +
+      "_\n\017string.hostname\022\030must be a valid host" +
+      "name\0322!rules.hostname || this == \'\' || t" +
+      "his.isHostname()\ne\n\025string.hostname_empt" +
+      "y\022-value is empty, which is not a valid " +
+      "hostname\032\035!rules.hostname || this != \'\'H" +
+      "\000R\010hostname\022\305\001\n\002ip\030\016 \001(\010B\262\001\302H\256\001\nO\n\tstrin" +
+      "g.ip\022\032must be a valid IP address\032&!rules" +
+      ".ip || this == \'\' || this.isIp()\n[\n\017stri" +
+      "ng.ip_empty\022/value is empty, which is no" +
+      "t a valid IP address\032\027!rules.ip || this " +
+      "!= \'\'H\000R\002ip\022\326\001\n\004ipv4\030\017 \001(\010B\277\001\302H\273\001\nV\n\013str" +
+      "ing.ipv4\022\034must be a valid IPv4 address\032)" +
+      "!rules.ipv4 || this == \'\' || this.isIp(4" +
+      ")\na\n\021string.ipv4_empty\0221value is empty, " +
+      "which is not a valid IPv4 address\032\031!rule" +
+      "s.ipv4 || this != \'\'H\000R\004ipv4\022\326\001\n\004ipv6\030\020 " +
+      "\001(\010B\277\001\302H\273\001\nV\n\013string.ipv6\022\034must be a val" +
+      "id IPv6 address\032)!rules.ipv6 || this == " +
+      "\'\' || this.isIp(6)\na\n\021string.ipv6_empty\022" +
+      "1value is empty, which is not a valid IP" +
+      "v6 address\032\031!rules.ipv6 || this != \'\'H\000R" +
+      "\004ipv6\022\276\001\n\003uri\030\021 \001(\010B\251\001\302H\245\001\nK\n\nstring.uri" +
+      "\022\023must be a valid URI\032(!rules.uri || thi" +
+      "s == \'\' || this.isUri()\nV\n\020string.uri_em" +
+      "pty\022(value is empty, which is not a vali" +
+      "d URI\032\030!rules.uri || this != \'\'H\000R\003uri\022r" +
+      "\n\007uri_ref\030\022 \001(\010BW\302HT\nR\n\016string.uri_ref\022\035" +
+      "must be a valid URI Reference\032!!rules.ur" +
+      "i_ref || this.isUriRef()H\000R\006uriRef\022\222\002\n\007a" +
+      "ddress\030\025 \001(\010B\365\001\302H\361\001\n{\n\016string.address\022\'m" +
+      "ust be a valid hostname, or ip address\032@" +
+      "!rules.address || this == \'\' || this.isH" +
+      "ostname() || this.isIp()\nr\n\024string.addre" +
+      "ss_empty\022<value is empty, which is not a" +
+      " valid hostname, or ip address\032\034!rules.a" +
+      "ddress || this != \'\'H\000R\007address\022\230\002\n\004uuid" +
+      "\030\026 \001(\010B\201\002\302H\375\001\n\237\001\n\013string.uuid\022\024must be a" +
+      " valid UUID\032z!rules.uuid || this == \'\' |" +
+      "| this.matches(\'^[0-9a-fA-F]{8}-[0-9a-fA" +
+      "-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-" +
+      "9a-fA-F]{12}$\')\nY\n\021string.uuid_empty\022)va" +
+      "lue is empty, which is not a valid UUID\032" +
+      "\031!rules.uuid || this != \'\'H\000R\004uuid\022\361\001\n\005t" +
+      "uuid\030! \001(\010B\330\001\302H\324\001\nm\n\014string.tuuid\022\034must " +
+      "be a valid trimmed UUID\032?!rules.tuuid ||" +
+      " this == \'\' || this.matches(\'^[0-9a-fA-F" +
+      "]{32}$\')\nc\n\022string.tuuid_empty\0221value is" +
+      " empty, which is not a valid trimmed UUI" +
+      "D\032\032!rules.tuuid || this != \'\'H\000R\005tuuid\022\241" +
+      "\002\n\021ip_with_prefixlen\030\032 \001(\010B\362\001\302H\356\001\nr\n\030str" +
+      "ing.ip_with_prefixlen\022\031must be a valid I" +
+      "P prefix\032;!rules.ip_with_prefixlen || th" +
+      "is == \'\' || this.isIpPrefix()\nx\n\036string." +
+      "ip_with_prefixlen_empty\022.value is empty," +
+      " which is not a valid IP prefix\032&!rules." +
+      "ip_with_prefixlen || this != \'\'H\000R\017ipWit" +
+      "hPrefixlen\022\334\002\n\023ipv4_with_prefixlen\030\033 \001(\010" +
+      "B\251\002\302H\245\002\n\215\001\n\032string.ipv4_with_prefixlen\022/" +
+      "must be a valid IPv4 address with prefix" +
+      " length\032>!rules.ipv4_with_prefixlen || t" +
+      "his == \'\' || this.isIpPrefix(4)\n\222\001\n stri" +
+      "ng.ipv4_with_prefixlen_empty\022Dvalue is e" +
+      "mpty, which is not a valid IPv4 address " +
+      "with prefix length\032(!rules.ipv4_with_pre" +
+      "fixlen || this != \'\'H\000R\021ipv4WithPrefixle" +
+      "n\022\334\002\n\023ipv6_with_prefixlen\030\034 \001(\010B\251\002\302H\245\002\n\215" +
+      "\001\n\032string.ipv6_with_prefixlen\022/must be a" +
+      " valid IPv6 address with prefix length\032>" +
+      "!rules.ipv6_with_prefixlen || this == \'\'" +
+      " || this.isIpPrefix(6)\n\222\001\n string.ipv6_w" +
+      "ith_prefixlen_empty\022Dvalue is empty, whi" +
+      "ch is not a valid IPv6 address with pref" +
+      "ix length\032(!rules.ipv6_with_prefixlen ||" +
+      " this != \'\'H\000R\021ipv6WithPrefixlen\022\366\001\n\tip_" +
+      "prefix\030\035 \001(\010B\326\001\302H\322\001\nf\n\020string.ip_prefix\022" +
+      "\031must be a valid IP prefix\0327!rules.ip_pr" +
+      "efix || this == \'\' || this.isIpPrefix(tr" +
+      "ue)\nh\n\026string.ip_prefix_empty\022.value is " +
+      "empty, which is not a valid IP prefix\032\036!" +
+      "rules.ip_prefix || this != \'\'H\000R\010ipPrefi" +
+      "x\022\211\002\n\013ipv4_prefix\030\036 \001(\010B\345\001\302H\341\001\no\n\022string" +
+      ".ipv4_prefix\022\033must be a valid IPv4 prefi" +
+      "x\032<!rules.ipv4_prefix || this == \'\' || t" +
+      "his.isIpPrefix(4, true)\nn\n\030string.ipv4_p" +
+      "refix_empty\0220value is empty, which is no" +
+      "t a valid IPv4 prefix\032 !rules.ipv4_prefi" +
+      "x || this != \'\'H\000R\nipv4Prefix\022\211\002\n\013ipv6_p" +
+      "refix\030\037 \001(\010B\345\001\302H\341\001\no\n\022string.ipv6_prefix" +
+      "\022\033must be a valid IPv6 prefix\032<!rules.ip" +
+      "v6_prefix || this == \'\' || this.isIpPref" +
+      "ix(6, true)\nn\n\030string.ipv6_prefix_empty\022" +
+      "0value is empty, which is not a valid IP" +
+      "v6 prefix\032 !rules.ipv6_prefix || this !=" +
+      " \'\'H\000R\nipv6Prefix\022\274\002\n\rhost_and_port\030  \001(" +
+      "\010B\225\002\302H\221\002\n\223\001\n\024string.host_and_port\022;must " +
+      "be a valid host (hostname or IP address)" +
+      " and port pair\032>!rules.host_and_port || " +
+      "this == \'\' || this.isHostAndPort(true)\ny" +
+      "\n\032string.host_and_port_empty\0227value is e" +
+      "mpty, which is not a valid host and port" +
+      " pair\032\"!rules.host_and_port || this != \'" +
+      "\'H\000R\013hostAndPort\022\364\001\n\004ulid\030# \001(\010B\335\001\302H\331\001\n|" +
+      "\n\013string.ulid\022\024must be a valid ULID\032W!ru" +
+      "les.ulid || this == \'\' || this.matches(\'" +
+      "^[0-7][0-9A-HJKMNP-TV-Za-hjkmnp-tv-z]{25" +
+      "}$\')\nY\n\021string.ulid_empty\022)value is empt" +
+      "y, which is not a valid ULID\032\031!rules.uli" +
+      "d || this != \'\'H\000R\004ulid\022\341\002\n\014protobuf_fqn" +
+      "\030% \001(\010B\273\002\302H\267\002\n\257\001\n\023string.protobuf_fqn\022-m" +
+      "ust be a valid fully-qualified Protobuf " +
+      "name\032i!rules.protobuf_fqn || this == \'\' " +
+      "|| this.matches(\'^[A-Za-z_][A-Za-z_0-9]*" +
+      "(\\\\.[A-Za-z_][A-Za-z_0-9]*)*$\')\n\202\001\n\031stri" +
+      "ng.protobuf_fqn_empty\022Bvalue is empty, w" +
+      "hich is not a valid fully-qualified Prot" +
+      "obuf name\032!!rules.protobuf_fqn || this !" +
+      "= \'\'H\000R\013protobufFqn\022\241\003\n\020protobuf_dot_fqn" +
+      "\030& \001(\010B\364\002\302H\360\002\n\315\001\n\027string.protobuf_dot_fq" +
+      "n\022@must be a valid fully-qualified Proto" +
+      "buf name with a leading dot\032p!rules.prot" +
+      "obuf_dot_fqn || this == \'\' || this.match" +
+      "es(\'^\\\\.[A-Za-z_][A-Za-z_0-9]*(\\\\.[A-Za-" +
+      "z_][A-Za-z_0-9]*)*$\')\n\235\001\n\035string.protobu" +
+      "f_dot_fqn_empty\022Uvalue is empty, which i" +
+      "s not a valid fully-qualified Protobuf n" +
+      "ame with a leading dot\032%!rules.protobuf_" +
+      "dot_fqn || this != \'\'H\000R\016protobufDotFqn\022" +
+      "\254\005\n\020well_known_regex\030\030 \001(\0162\030.buf.validat" +
+      "e.KnownRegexB\345\004\302H\341\004\n\352\001\n#string.well_know" +
+      "n_regex.header_name\022 must be a valid HTT" +
+      "P header name\032\240\001rules.well_known_regex !" +
+      "= 1 || this == \'\' || this.matches(!has(r" +
+      "ules.strict) || rules.strict ?\'^:?[0-9a-" +
+      "zA-Z!#$%&\\\'*+-.^_|~\\x60]+$\' :\'^[^\\u0000\\" +
+      "u000A\\u000D]+$\')\n\215\001\n)string.well_known_r" +
+      "egex.header_name_empty\0225value is empty, " +
+      "which is not a valid HTTP header name\032)r" +
+      "ules.well_known_regex != 1 || this != \'\'" +
+      "\n\341\001\n$string.well_known_regex.header_valu" +
+      "e\022!must be a valid HTTP header value\032\225\001r" +
+      "ules.well_known_regex != 2 || this.match" +
+      "es(!has(rules.strict) || rules.strict ?\'" +
+      "^[^\\u0000-\\u0008\\u000A-\\u001F\\u007F]*$\' " +
+      ":\'^[^\\u0000\\u000A\\u000D]*$\')H\000R\016wellKnow" +
+      "nRegex\022\026\n\006strict\030\031 \001(\010R\006strict\0225\n\007exampl" +
+      "e\030\" \003(\tB\033\302H\030\n\026\n\016string.example\032\004trueR\007ex" +
+      "ample*\t\010\350\007\020\200\200\200\200\002B\014\n\nwell_known\"\312\022\n\nBytes" +
+      "Rules\022\201\001\n\005const\030\001 \001(\014Bk\302Hh\nf\n\013bytes.cons" +
+      "t\032Wthis != getField(rules, \'const\') ? \'m" +
+      "ust be %x\'.format([getField(rules, \'cons" +
+      "t\')]) : \'\'R\005const\022p\n\003len\030\r \001(\004B^\302H[\nY\n\tb" +
+      "ytes.len\032Luint(this.size()) != rules.len" +
+      " ? \'must be %s bytes\'.format([rules.len]" +
+      ") : \'\'R\003len\022\213\001\n\007min_len\030\002 \001(\004Br\302Ho\nm\n\rby" +
+      "tes.min_len\032\\uint(this.size()) < rules.m" +
+      "in_len ? \'must be at least %s bytes\'.for" +
+      "mat([rules.min_len]) : \'\'R\006minLen\022\212\001\n\007ma" +
+      "x_len\030\003 \001(\004Bq\302Hn\nl\n\rbytes.max_len\032[uint(" +
+      "this.size()) > rules.max_len ? \'must be " +
+      "at most %s bytes\'.format([rules.max_len]" +
+      ") : \'\'R\006maxLen\022\223\001\n\007pattern\030\004 \001(\tBy\302Hv\nt\n" +
+      "\rbytes.pattern\032c!string(this).matches(ru" +
+      "les.pattern) ? \'must match regex pattern" +
+      " `%s`\'.format([rules.pattern]) : \'\'R\007pat" +
+      "tern\022\203\001\n\006prefix\030\005 \001(\014Bk\302Hh\nf\n\014bytes.pref" +
+      "ix\032V!this.startsWith(rules.prefix) ? \'do" +
+      "es not have prefix %x\'.format([rules.pre" +
+      "fix]) : \'\'R\006prefix\022\201\001\n\006suffix\030\006 \001(\014Bi\302Hf" +
+      "\nd\n\014bytes.suffix\032T!this.endsWith(rules.s" +
+      "uffix) ? \'does not have suffix %x\'.forma" +
+      "t([rules.suffix]) : \'\'R\006suffix\022\207\001\n\010conta" +
+      "ins\030\007 \001(\014Bk\302Hh\nf\n\016bytes.contains\032T!this." +
+      "contains(rules.contains) ? \'does not con" +
+      "tain %x\'.format([rules.contains]) : \'\'R\010" +
+      "contains\022\245\001\n\002in\030\010 \003(\014B\224\001\302H\220\001\n\215\001\n\010bytes.i" +
+      "n\032\200\001getField(rules, \'in\').size() > 0 && " +
+      "!(this in getField(rules, \'in\')) ? \'must" +
+      " be in list %s\'.format([getField(rules, " +
+      "\'in\')]) : \'\'R\002in\022w\n\006not_in\030\t \003(\014B`\302H]\n[\n" +
+      "\014bytes.not_in\032Kthis in rules.not_in ? \'m" +
+      "ust not be in list %s\'.format([rules.not" +
+      "_in]) : \'\'R\005notIn\022\351\001\n\002ip\030\n \001(\010B\326\001\302H\322\001\nn\n" +
+      "\010bytes.ip\022\032must be a valid IP address\032F!" +
+      "rules.ip || this.size() == 0 || this.siz" +
+      "e() == 4 || this.size() == 16\n`\n\016bytes.i" +
+      "p_empty\022/value is empty, which is not a " +
+      "valid IP address\032\035!rules.ip || this.size" +
+      "() != 0H\000R\002ip\022\344\001\n\004ipv4\030\013 \001(\010B\315\001\302H\311\001\n_\n\nb" +
+      "ytes.ipv4\022\034must be a valid IPv4 address\032" +
+      "3!rules.ipv4 || this.size() == 0 || this" +
+      ".size() == 4\nf\n\020bytes.ipv4_empty\0221value " +
+      "is empty, which is not a valid IPv4 addr" +
+      "ess\032\037!rules.ipv4 || this.size() != 0H\000R\004" +
+      "ipv4\022\345\001\n\004ipv6\030\014 \001(\010B\316\001\302H\312\001\n`\n\nbytes.ipv6" +
+      "\022\034must be a valid IPv6 address\0324!rules.i" +
+      "pv6 || this.size() == 0 || this.size() =" +
+      "= 16\nf\n\020bytes.ipv6_empty\0221value is empty" +
+      ", which is not a valid IPv6 address\032\037!ru" +
+      "les.ipv6 || this.size() != 0H\000R\004ipv6\022\325\001\n" +
+      "\004uuid\030\017 \001(\010B\276\001\302H\272\001\nX\n\nbytes.uuid\022\024must b" +
+      "e a valid UUID\0324!rules.uuid || this.size" +
+      "() == 0 || this.size() == 16\n^\n\020bytes.uu" +
+      "id_empty\022)value is empty, which is not a" +
+      " valid UUID\032\037!rules.uuid || this.size() " +
+      "!= 0H\000R\004uuid\0224\n\007example\030\016 \003(\014B\032\302H\027\n\025\n\rby" +
+      "tes.example\032\004trueR\007example*\t\010\350\007\020\200\200\200\200\002B\014\n" +
+      "\nwell_known\"\352\003\n\tEnumRules\022\203\001\n\005const\030\001 \001(" +
+      "\005Bm\302Hj\nh\n\nenum.const\032Zthis != getField(r" +
+      "ules, \'const\') ? \'must equal %s\'.format(" +
+      "[getField(rules, \'const\')]) : \'\'R\005const\022" +
+      "!\n\014defined_only\030\002 \001(\010R\013definedOnly\022|\n\002in" +
+      "\030\003 \003(\005Bl\302Hi\ng\n\007enum.in\032\\!(this in getFie" +
+      "ld(rules, \'in\')) ? \'must be in list %s\'." +
+      "format([getField(rules, \'in\')]) : \'\'R\002in" +
+      "\022v\n\006not_in\030\004 \003(\005B_\302H\\\nZ\n\013enum.not_in\032Kth" +
+      "is in rules.not_in ? \'must not be in lis" +
+      "t %s\'.format([rules.not_in]) : \'\'R\005notIn" +
+      "\0223\n\007example\030\005 \003(\005B\031\302H\026\n\024\n\014enum.example\032\004" +
+      "trueR\007example*\t\010\350\007\020\200\200\200\200\002\"\220\004\n\rRepeatedRul" +
+      "es\022\240\001\n\tmin_items\030\001 \001(\004B\202\001\302H\177\n}\n\022repeated" +
+      ".min_items\032guint(this.size()) < rules.mi" +
+      "n_items ? \'must contain at least %d item" +
+      "(s)\'.format([rules.min_items]) : \'\'R\010min" +
+      "Items\022\246\001\n\tmax_items\030\002 \001(\004B\210\001\302H\204\001\n\201\001\n\022rep" +
+      "eated.max_items\032kuint(this.size()) > rul" +
+      "es.max_items ? \'must contain no more tha" +
+      "n %s item(s)\'.format([rules.max_items]) " +
+      ": \'\'R\010maxItems\022x\n\006unique\030\003 \001(\010B`\302H]\n[\n\017r" +
+      "epeated.unique\022(repeated value must cont" +
+      "ain unique items\032\036!rules.unique || this." +
+      "unique()R\006unique\022.\n\005items\030\004 \001(\0132\030.buf.va" +
+      "lidate.FieldRulesR\005items*\t\010\350\007\020\200\200\200\200\002\"\254\003\n\010" +
+      "MapRules\022\231\001\n\tmin_pairs\030\001 \001(\004B|\302Hy\nw\n\rmap" +
+      ".min_pairs\032fuint(this.size()) < rules.mi" +
+      "n_pairs ? \'map must be at least %d entri" +
+      "es\'.format([rules.min_pairs]) : \'\'R\010minP" +
+      "airs\022\230\001\n\tmax_pairs\030\002 \001(\004B{\302Hx\nv\n\rmap.max" +
+      "_pairs\032euint(this.size()) > rules.max_pa" +
+      "irs ? \'map must be at most %d entries\'.f" +
+      "ormat([rules.max_pairs]) : \'\'R\010maxPairs\022" +
+      ",\n\004keys\030\004 \001(\0132\030.buf.validate.FieldRulesR" +
+      "\004keys\0220\n\006values\030\005 \001(\0132\030.buf.validate.Fie" +
+      "ldRulesR\006values*\t\010\350\007\020\200\200\200\200\002\"1\n\010AnyRules\022\016" +
+      "\n\002in\030\002 \003(\tR\002in\022\025\n\006not_in\030\003 \003(\tR\005notIn\"\354\026" +
+      "\n\rDurationRules\022\242\001\n\005const\030\002 \001(\0132\031.google" +
+      ".protobuf.DurationBq\302Hn\nl\n\016duration.cons" +
+      "t\032Zthis != getField(rules, \'const\') ? \'m" +
+      "ust equal %s\'.format([getField(rules, \'c" +
+      "onst\')]) : \'\'R\005const\022\246\001\n\002lt\030\003 \001(\0132\031.goog" +
+      "le.protobuf.DurationBy\302Hv\nt\n\013duration.lt" +
+      "\032e!has(rules.gte) && !has(rules.gt) && t" +
+      "his >= rules.lt? \'must be less than %s\'." +
+      "format([rules.lt]) : \'\'H\000R\002lt\022\271\001\n\003lte\030\004 " +
+      "\001(\0132\031.google.protobuf.DurationB\211\001\302H\205\001\n\202\001" +
+      "\n\014duration.lte\032r!has(rules.gte) && !has(" +
+      "rules.gt) && this > rules.lte? \'must be " +
+      "less than or equal to %s\'.format([rules." +
+      "lte]) : \'\'H\000R\003lte\022\247\007\n\002gt\030\005 \001(\0132\031.google." +
+      "protobuf.DurationB\371\006\302H\365\006\nw\n\013duration.gt\032" +
+      "h!has(rules.lt) && !has(rules.lte) && th" +
+      "is <= rules.gt? \'must be greater than %s" +
+      "\'.format([rules.gt]) : \'\'\n\260\001\n\016duration.g" +
+      "t_lt\032\235\001has(rules.lt) && rules.lt >= rule" +
+      "s.gt && (this >= rules.lt || this <= rul" +
+      "es.gt)? \'must be greater than %s and les" +
+      "s than %s\'.format([rules.gt, rules.lt]) " +
+      ": \'\'\n\270\001\n\030duration.gt_lt_exclusive\032\233\001has(",
+      "rules.lt) && rules.lt < rules.gt && (rul" +
+      "es.lt <= this && this <= rules.gt)? \'mus" +
+      "t be greater than %s or less than %s\'.fo" +
+      "rmat([rules.gt, rules.lt]) : \'\'\n\300\001\n\017dura" +
+      "tion.gt_lte\032\254\001has(rules.lte) && rules.lt" +
+      "e >= rules.gt && (this > rules.lte || th" +
+      "is <= rules.gt)? \'must be greater than %" +
+      "s and less than or equal to %s\'.format([" +
+      "rules.gt, rules.lte]) : \'\'\n\310\001\n\031duration." +
+      "gt_lte_exclusive\032\252\001has(rules.lte) && rul" +
+      "es.lte < rules.gt && (rules.lte < this &" +
+      "& this <= rules.gt)? \'must be greater th" +
+      "an %s or less than or equal to %s\'.forma" +
+      "t([rules.gt, rules.lte]) : \'\'H\001R\002gt\022\364\007\n\003" +
+      "gte\030\006 \001(\0132\031.google.protobuf.DurationB\304\007\302" +
+      "H\300\007\n\205\001\n\014duration.gte\032u!has(rules.lt) && " +
+      "!has(rules.lte) && this < rules.gte? \'mu" +
+      "st be greater than or equal to %s\'.forma" +
+      "t([rules.gte]) : \'\'\n\277\001\n\017duration.gte_lt\032" +
+      "\253\001has(rules.lt) && rules.lt >= rules.gte" +
+      " && (this >= rules.lt || this < rules.gt" +
+      "e)? \'must be greater than or equal to %s" +
+      " and less than %s\'.format([rules.gte, ru" +
+      "les.lt]) : \'\'\n\307\001\n\031duration.gte_lt_exclus" +
+      "ive\032\251\001has(rules.lt) && rules.lt < rules." +
+      "gte && (rules.lt <= this && this < rules" +
+      ".gte)? \'must be greater than or equal to" +
+      " %s or less than %s\'.format([rules.gte, " +
+      "rules.lt]) : \'\'\n\317\001\n\020duration.gte_lte\032\272\001h" +
+      "as(rules.lte) && rules.lte >= rules.gte " +
+      "&& (this > rules.lte || this < rules.gte" +
+      ")? \'must be greater than or equal to %s " +
+      "and less than or equal to %s\'.format([ru" +
+      "les.gte, rules.lte]) : \'\'\n\327\001\n\032duration.g" +
+      "te_lte_exclusive\032\270\001has(rules.lte) && rul" +
+      "es.lte < rules.gte && (rules.lte < this " +
+      "&& this < rules.gte)? \'must be greater t" +
+      "han or equal to %s or less than or equal" +
+      " to %s\'.format([rules.gte, rules.lte]) :" +
+      " \'\'H\001R\003gte\022\233\001\n\002in\030\007 \003(\0132\031.google.protobu" +
+      "f.DurationBp\302Hm\nk\n\013duration.in\032\\!(this i" +
+      "n getField(rules, \'in\')) ? \'must be in l" +
+      "ist %s\'.format([getField(rules, \'in\')]) " +
+      ": \'\'R\002in\022\225\001\n\006not_in\030\010 \003(\0132\031.google.proto" +
+      "buf.DurationBc\302H`\n^\n\017duration.not_in\032Kth" +
+      "is in rules.not_in ? \'must not be in lis" +
+      "t %s\'.format([rules.not_in]) : \'\'R\005notIn" +
+      "\022R\n\007example\030\t \003(\0132\031.google.protobuf.Dura" +
+      "tionB\035\302H\032\n\030\n\020duration.example\032\004trueR\007exa" +
+      "mple*\t\010\350\007\020\200\200\200\200\002B\013\n\tless_thanB\016\n\014greater_" +
+      "than\"\206\006\n\016FieldMaskRules\022\300\001\n\005const\030\001 \001(\0132" +
+      "\032.google.protobuf.FieldMaskB\215\001\302H\211\001\n\206\001\n\020f" +
+      "ield_mask.const\032rthis.paths != getField(" +
+      "rules, \'const\').paths ? \'must equal path" +
+      "s %s\'.format([getField(rules, \'const\').p" +
+      "aths]) : \'\'R\005const\022\327\001\n\002in\030\002 \003(\tB\306\001\302H\302\001\n\277" +
+      "\001\n\rfield_mask.in\032\255\001!this.paths.all(p, p " +
+      "in getField(rules, \'in\') || getField(rul" +
+      "es, \'in\').exists(f, p.startsWith(f+\'.\'))" +
+      ") ? \'must only contain paths in %s\'.form" +
+      "at([getField(rules, \'in\')]) : \'\'R\002in\022\364\001\n" +
+      "\006not_in\030\003 \003(\tB\334\001\302H\330\001\n\325\001\n\021field_mask.not_" +
+      "in\032\277\001!this.paths.all(p, !(p in getField(" +
+      "rules, \'not_in\') || getField(rules, \'not" +
+      "_in\').exists(f, p.startsWith(f+\'.\')))) ?" +
+      " \'must not contain any paths in %s\'.form" +
+      "at([getField(rules, \'not_in\')]) : \'\'R\005no" +
+      "tIn\022U\n\007example\030\004 \003(\0132\032.google.protobuf.F" +
+      "ieldMaskB\037\302H\034\n\032\n\022field_mask.example\032\004tru" +
+      "eR\007example*\t\010\350\007\020\200\200\200\200\002\"\350\027\n\016TimestampRules" +
+      "\022\244\001\n\005const\030\002 \001(\0132\032.google.protobuf.Times" +
+      "tampBr\302Ho\nm\n\017timestamp.const\032Zthis != ge" +
+      "tField(rules, \'const\') ? \'must equal %s\'" +
+      ".format([getField(rules, \'const\')]) : \'\'" +
+      "R\005const\022\250\001\n\002lt\030\003 \001(\0132\032.google.protobuf.T" +
+      "imestampBz\302Hw\nu\n\014timestamp.lt\032e!has(rule" +
+      "s.gte) && !has(rules.gt) && this >= rule" +
+      "s.lt? \'must be less than %s\'.format([rul" +
+      "es.lt]) : \'\'H\000R\002lt\022\273\001\n\003lte\030\004 \001(\0132\032.googl" +
+      "e.protobuf.TimestampB\212\001\302H\206\001\n\203\001\n\rtimestam" +
+      "p.lte\032r!has(rules.gte) && !has(rules.gt)" +
+      " && this > rules.lte? \'must be less than" +
+      " or equal to %s\'.format([rules.lte]) : \'" +
+      "\'H\000R\003lte\022m\n\006lt_now\030\007 \001(\010BT\302HQ\nO\n\020timesta" +
+      "mp.lt_now\032;(rules.lt_now && this > now) " +
+      "? \'must be less than now\' : \'\'H\000R\005ltNow\022" +
+      "\255\007\n\002gt\030\005 \001(\0132\032.google.protobuf.Timestamp" +
+      "B\376\006\302H\372\006\nx\n\014timestamp.gt\032h!has(rules.lt) " +
+      "&& !has(rules.lte) && this <= rules.gt? " +
+      "\'must be greater than %s\'.format([rules." +
+      "gt]) : \'\'\n\261\001\n\017timestamp.gt_lt\032\235\001has(rule" +
+      "s.lt) && rules.lt >= rules.gt && (this >" +
+      "= rules.lt || this <= rules.gt)? \'must b" +
+      "e greater than %s and less than %s\'.form" +
+      "at([rules.gt, rules.lt]) : \'\'\n\271\001\n\031timest" +
+      "amp.gt_lt_exclusive\032\233\001has(rules.lt) && r" +
+      "ules.lt < rules.gt && (rules.lt <= this " +
+      "&& this <= rules.gt)? \'must be greater t" +
+      "han %s or less than %s\'.format([rules.gt" +
+      ", rules.lt]) : \'\'\n\301\001\n\020timestamp.gt_lte\032\254" +
+      "\001has(rules.lte) && rules.lte >= rules.gt" +
+      " && (this > rules.lte || this <= rules.g" +
+      "t)? \'must be greater than %s and less th" +
+      "an or equal to %s\'.format([rules.gt, rul" +
+      "es.lte]) : \'\'\n\311\001\n\032timestamp.gt_lte_exclu" +
+      "sive\032\252\001has(rules.lte) && rules.lte < rul" +
+      "es.gt && (rules.lte < this && this <= ru" +
+      "les.gt)? \'must be greater than %s or les" +
+      "s than or equal to %s\'.format([rules.gt," +
+      " rules.lte]) : \'\'H\001R\002gt\022\372\007\n\003gte\030\006 \001(\0132\032." +
+      "google.protobuf.TimestampB\311\007\302H\305\007\n\206\001\n\rtim" +
+      "estamp.gte\032u!has(rules.lt) && !has(rules" +
+      ".lte) && this < rules.gte? \'must be grea" +
+      "ter than or equal to %s\'.format([rules.g" +
+      "te]) : \'\'\n\300\001\n\020timestamp.gte_lt\032\253\001has(rul" +
+      "es.lt) && rules.lt >= rules.gte && (this" +
+      " >= rules.lt || this < rules.gte)? \'must" +
+      " be greater than or equal to %s and less" +
+      " than %s\'.format([rules.gte, rules.lt]) " +
+      ": \'\'\n\310\001\n\032timestamp.gte_lt_exclusive\032\251\001ha" +
+      "s(rules.lt) && rules.lt < rules.gte && (" +
+      "rules.lt <= this && this < rules.gte)? \'" +
+      "must be greater than or equal to %s or l" +
+      "ess than %s\'.format([rules.gte, rules.lt" +
+      "]) : \'\'\n\320\001\n\021timestamp.gte_lte\032\272\001has(rule" +
+      "s.lte) && rules.lte >= rules.gte && (thi" +
+      "s > rules.lte || this < rules.gte)? \'mus" +
+      "t be greater than or equal to %s and les" +
+      "s than or equal to %s\'.format([rules.gte" +
+      ", rules.lte]) : \'\'\n\330\001\n\033timestamp.gte_lte" +
+      "_exclusive\032\270\001has(rules.lte) && rules.lte" +
+      " < rules.gte && (rules.lte < this && thi" +
+      "s < rules.gte)? \'must be greater than or" +
+      " equal to %s or less than or equal to %s" +
+      "\'.format([rules.gte, rules.lte]) : \'\'H\001R" +
+      "\003gte\022p\n\006gt_now\030\010 \001(\010BW\302HT\nR\n\020timestamp.g" +
+      "t_now\032>(rules.gt_now && this < now) ? \'m" +
+      "ust be greater than now\' : \'\'H\001R\005gtNow\022\271" +
+      "\001\n\006within\030\t \001(\0132\031.google.protobuf.Durati" +
+      "onB\205\001\302H\201\001\n\177\n\020timestamp.within\032kthis < no" +
+      "w-rules.within || this > now+rules.withi" +
+      "n ? \'must be within %s of now\'.format([r" +
+      "ules.within]) : \'\'R\006within\022T\n\007example\030\n " +
+      "\003(\0132\032.google.protobuf.TimestampB\036\302H\033\n\031\n\021" +
+      "timestamp.example\032\004trueR\007example*\t\010\350\007\020\200\200" +
+      "\200\200\002B\013\n\tless_thanB\016\n\014greater_than\"E\n\nViol" +
+      "ations\0227\n\nviolations\030\001 \003(\0132\027.buf.validat" +
+      "e.ViolationR\nviolations\"\305\001\n\tViolation\022-\n" +
+      "\005field\030\005 \001(\0132\027.buf.validate.FieldPathR\005f" +
+      "ield\022+\n\004rule\030\006 \001(\0132\027.buf.validate.FieldP" +
+      "athR\004rule\022\027\n\007rule_id\030\002 \001(\tR\006ruleId\022\030\n\007me" +
+      "ssage\030\003 \001(\tR\007message\022\027\n\007for_key\030\004 \001(\010R\006f" +
+      "orKeyJ\004\010\001\020\002R\nfield_path\"G\n\tFieldPath\022:\n\010" +
+      "elements\030\001 \003(\0132\036.buf.validate.FieldPathE" +
+      "lementR\010elements\"\314\003\n\020FieldPathElement\022!\n" +
+      "\014field_number\030\001 \001(\005R\013fieldNumber\022\035\n\nfiel" +
+      "d_name\030\002 \001(\tR\tfieldName\022I\n\nfield_type\030\003 " +
+      "\001(\0162*.google.protobuf.FieldDescriptorPro" +
+      "to.TypeR\tfieldType\022E\n\010key_type\030\004 \001(\0162*.g" +
+      "oogle.protobuf.FieldDescriptorProto.Type" +
+      "R\007keyType\022I\n\nvalue_type\030\005 \001(\0162*.google.p" +
+      "rotobuf.FieldDescriptorProto.TypeR\tvalue" +
+      "Type\022\026\n\005index\030\006 \001(\004H\000R\005index\022\033\n\010bool_key" +
+      "\030\007 \001(\010H\000R\007boolKey\022\031\n\007int_key\030\010 \001(\003H\000R\006in" +
+      "tKey\022\033\n\010uint_key\030\t \001(\004H\000R\007uintKey\022\037\n\nstr" +
+      "ing_key\030\n \001(\tH\000R\tstringKeyB\013\n\tsubscript*" +
+      "\241\001\n\006Ignore\022\026\n\022IGNORE_UNSPECIFIED\020\000\022\030\n\024IG" +
+      "NORE_IF_ZERO_VALUE\020\001\022\021\n\rIGNORE_ALWAYS\020\003\"" +
+      "\004\010\002\020\002*\014IGNORE_EMPTY*\016IGNORE_DEFAULT*\027IGN" +
+      "ORE_IF_DEFAULT_VALUE*\025IGNORE_IF_UNPOPULA" +
+      "TED*n\n\nKnownRegex\022\033\n\027KNOWN_REGEX_UNSPECI" +
+      "FIED\020\000\022 \n\034KNOWN_REGEX_HTTP_HEADER_NAME\020\001" +
+      "\022!\n\035KNOWN_REGEX_HTTP_HEADER_VALUE\020\002:V\n\007m" +
+      "essage\022\037.google.protobuf.MessageOptions\030" +
+      "\207\t \001(\0132\032.buf.validate.MessageRulesR\007mess" +
+      "age:N\n\005oneof\022\035.google.protobuf.OneofOpti" +
+      "ons\030\207\t \001(\0132\030.buf.validate.OneofRulesR\005on" +
+      "eof:N\n\005field\022\035.google.protobuf.FieldOpti" +
+      "ons\030\207\t \001(\0132\030.buf.validate.FieldRulesR\005fi" +
+      "eld:]\n\npredefined\022\035.google.protobuf.Fiel" +
+      "dOptions\030\210\t \001(\0132\035.buf.validate.Predefine" +
+      "dRulesR\npredefinedB\311\001\n\036com.scalekit.grpc" +
+      ".buf.validateB\rValidateProtoP\001ZGbuf.buil" +
+      "d/gen/go/bufbuild/protovalidate/protocol" +
+      "buffers/go/buf/validate\242\002\003BVX\252\002\014Buf.Vali" +
+      "date\312\002\014Buf\\Validate\342\002\030Buf\\Validate\\GPBMe" +
+      "tadata\352\002\rBuf::Validate"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.scalekit.grpc.buf.validate.ExpressionProto.getDescriptor(),
-          com.scalekit.grpc.buf.validate.priv.PrivateProto.getDescriptor(),
           com.google.protobuf.DescriptorProtos.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
+          com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         });
-    internal_static_buf_validate_MessageConstraints_descriptor =
+    internal_static_buf_validate_Rule_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_buf_validate_MessageConstraints_fieldAccessorTable = new
+    internal_static_buf_validate_Rule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_buf_validate_MessageConstraints_descriptor,
-        new java.lang.String[] { "Disabled", "Cel", });
-    internal_static_buf_validate_OneofConstraints_descriptor =
+        internal_static_buf_validate_Rule_descriptor,
+        new java.lang.String[] { "Id", "Message", "Expression", });
+    internal_static_buf_validate_MessageRules_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_buf_validate_OneofConstraints_fieldAccessorTable = new
+    internal_static_buf_validate_MessageRules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_buf_validate_OneofConstraints_descriptor,
-        new java.lang.String[] { "Required", });
-    internal_static_buf_validate_FieldConstraints_descriptor =
+        internal_static_buf_validate_MessageRules_descriptor,
+        new java.lang.String[] { "CelExpression", "Cel", "Oneof", });
+    internal_static_buf_validate_MessageOneofRule_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_buf_validate_FieldConstraints_fieldAccessorTable = new
+    internal_static_buf_validate_MessageOneofRule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_buf_validate_FieldConstraints_descriptor,
-        new java.lang.String[] { "Cel", "Required", "Ignore", "Float", "Double", "Int32", "Int64", "Uint32", "Uint64", "Sint32", "Sint64", "Fixed32", "Fixed64", "Sfixed32", "Sfixed64", "Bool", "String", "Bytes", "Enum", "Repeated", "Map", "Any", "Duration", "Timestamp", "Skipped", "IgnoreEmpty", "Type", });
-    internal_static_buf_validate_FloatRules_descriptor =
+        internal_static_buf_validate_MessageOneofRule_descriptor,
+        new java.lang.String[] { "Fields", "Required", });
+    internal_static_buf_validate_OneofRules_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_buf_validate_OneofRules_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_buf_validate_OneofRules_descriptor,
+        new java.lang.String[] { "Required", });
+    internal_static_buf_validate_FieldRules_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_buf_validate_FieldRules_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_buf_validate_FieldRules_descriptor,
+        new java.lang.String[] { "CelExpression", "Cel", "Required", "Ignore", "Float", "Double", "Int32", "Int64", "Uint32", "Uint64", "Sint32", "Sint64", "Fixed32", "Fixed64", "Sfixed32", "Sfixed64", "Bool", "String", "Bytes", "Enum", "Repeated", "Map", "Any", "Duration", "FieldMask", "Timestamp", "Type", });
+    internal_static_buf_validate_PredefinedRules_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_buf_validate_PredefinedRules_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_buf_validate_PredefinedRules_descriptor,
+        new java.lang.String[] { "Cel", });
+    internal_static_buf_validate_FloatRules_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_buf_validate_FloatRules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_FloatRules_descriptor,
-        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Finite", "LessThan", "GreaterThan", });
+        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Finite", "Example", "LessThan", "GreaterThan", });
     internal_static_buf_validate_DoubleRules_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_buf_validate_DoubleRules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_DoubleRules_descriptor,
-        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Finite", "LessThan", "GreaterThan", });
+        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Finite", "Example", "LessThan", "GreaterThan", });
     internal_static_buf_validate_Int32Rules_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_buf_validate_Int32Rules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_Int32Rules_descriptor,
-        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "LessThan", "GreaterThan", });
+        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example", "LessThan", "GreaterThan", });
     internal_static_buf_validate_Int64Rules_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_buf_validate_Int64Rules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_Int64Rules_descriptor,
-        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "LessThan", "GreaterThan", });
+        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example", "LessThan", "GreaterThan", });
     internal_static_buf_validate_UInt32Rules_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_buf_validate_UInt32Rules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_UInt32Rules_descriptor,
-        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "LessThan", "GreaterThan", });
+        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example", "LessThan", "GreaterThan", });
     internal_static_buf_validate_UInt64Rules_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_buf_validate_UInt64Rules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_UInt64Rules_descriptor,
-        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "LessThan", "GreaterThan", });
+        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example", "LessThan", "GreaterThan", });
     internal_static_buf_validate_SInt32Rules_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_buf_validate_SInt32Rules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_SInt32Rules_descriptor,
-        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "LessThan", "GreaterThan", });
+        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example", "LessThan", "GreaterThan", });
     internal_static_buf_validate_SInt64Rules_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_buf_validate_SInt64Rules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_SInt64Rules_descriptor,
-        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "LessThan", "GreaterThan", });
+        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example", "LessThan", "GreaterThan", });
     internal_static_buf_validate_Fixed32Rules_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_buf_validate_Fixed32Rules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_Fixed32Rules_descriptor,
-        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "LessThan", "GreaterThan", });
+        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example", "LessThan", "GreaterThan", });
     internal_static_buf_validate_Fixed64Rules_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_buf_validate_Fixed64Rules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_Fixed64Rules_descriptor,
-        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "LessThan", "GreaterThan", });
+        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example", "LessThan", "GreaterThan", });
     internal_static_buf_validate_SFixed32Rules_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_buf_validate_SFixed32Rules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_SFixed32Rules_descriptor,
-        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "LessThan", "GreaterThan", });
+        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example", "LessThan", "GreaterThan", });
     internal_static_buf_validate_SFixed64Rules_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_buf_validate_SFixed64Rules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_SFixed64Rules_descriptor,
-        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "LessThan", "GreaterThan", });
+        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example", "LessThan", "GreaterThan", });
     internal_static_buf_validate_BoolRules_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_buf_validate_BoolRules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_BoolRules_descriptor,
-        new java.lang.String[] { "Const", });
+        new java.lang.String[] { "Const", "Example", });
     internal_static_buf_validate_StringRules_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_buf_validate_StringRules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_StringRules_descriptor,
-        new java.lang.String[] { "Const", "Len", "MinLen", "MaxLen", "LenBytes", "MinBytes", "MaxBytes", "Pattern", "Prefix", "Suffix", "Contains", "NotContains", "In", "NotIn", "Email", "Hostname", "Ip", "Ipv4", "Ipv6", "Uri", "UriRef", "Address", "Uuid", "Tuuid", "IpWithPrefixlen", "Ipv4WithPrefixlen", "Ipv6WithPrefixlen", "IpPrefix", "Ipv4Prefix", "Ipv6Prefix", "HostAndPort", "WellKnownRegex", "Strict", "WellKnown", });
+        new java.lang.String[] { "Const", "Len", "MinLen", "MaxLen", "LenBytes", "MinBytes", "MaxBytes", "Pattern", "Prefix", "Suffix", "Contains", "NotContains", "In", "NotIn", "Email", "Hostname", "Ip", "Ipv4", "Ipv6", "Uri", "UriRef", "Address", "Uuid", "Tuuid", "IpWithPrefixlen", "Ipv4WithPrefixlen", "Ipv6WithPrefixlen", "IpPrefix", "Ipv4Prefix", "Ipv6Prefix", "HostAndPort", "Ulid", "ProtobufFqn", "ProtobufDotFqn", "WellKnownRegex", "Strict", "Example", "WellKnown", });
     internal_static_buf_validate_BytesRules_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_buf_validate_BytesRules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_BytesRules_descriptor,
-        new java.lang.String[] { "Const", "Len", "MinLen", "MaxLen", "Pattern", "Prefix", "Suffix", "Contains", "In", "NotIn", "Ip", "Ipv4", "Ipv6", "WellKnown", });
+        new java.lang.String[] { "Const", "Len", "MinLen", "MaxLen", "Pattern", "Prefix", "Suffix", "Contains", "In", "NotIn", "Ip", "Ipv4", "Ipv6", "Uuid", "Example", "WellKnown", });
     internal_static_buf_validate_EnumRules_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_buf_validate_EnumRules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_EnumRules_descriptor,
-        new java.lang.String[] { "Const", "DefinedOnly", "In", "NotIn", });
+        new java.lang.String[] { "Const", "DefinedOnly", "In", "NotIn", "Example", });
     internal_static_buf_validate_RepeatedRules_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_buf_validate_RepeatedRules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_RepeatedRules_descriptor,
         new java.lang.String[] { "MinItems", "MaxItems", "Unique", "Items", });
     internal_static_buf_validate_MapRules_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_buf_validate_MapRules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_MapRules_descriptor,
         new java.lang.String[] { "MinPairs", "MaxPairs", "Keys", "Values", });
     internal_static_buf_validate_AnyRules_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_buf_validate_AnyRules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_AnyRules_descriptor,
         new java.lang.String[] { "In", "NotIn", });
     internal_static_buf_validate_DurationRules_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_buf_validate_DurationRules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_DurationRules_descriptor,
-        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "LessThan", "GreaterThan", });
+        new java.lang.String[] { "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example", "LessThan", "GreaterThan", });
+    internal_static_buf_validate_FieldMaskRules_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_buf_validate_FieldMaskRules_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_buf_validate_FieldMaskRules_descriptor,
+        new java.lang.String[] { "Const", "In", "NotIn", "Example", });
     internal_static_buf_validate_TimestampRules_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_buf_validate_TimestampRules_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_buf_validate_TimestampRules_descriptor,
-        new java.lang.String[] { "Const", "Lt", "Lte", "LtNow", "Gt", "Gte", "GtNow", "Within", "LessThan", "GreaterThan", });
+        new java.lang.String[] { "Const", "Lt", "Lte", "LtNow", "Gt", "Gte", "GtNow", "Within", "Example", "LessThan", "GreaterThan", });
+    internal_static_buf_validate_Violations_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_buf_validate_Violations_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_buf_validate_Violations_descriptor,
+        new java.lang.String[] { "Violations", });
+    internal_static_buf_validate_Violation_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_buf_validate_Violation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_buf_validate_Violation_descriptor,
+        new java.lang.String[] { "Field", "Rule", "RuleId", "Message", "ForKey", });
+    internal_static_buf_validate_FieldPath_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_buf_validate_FieldPath_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_buf_validate_FieldPath_descriptor,
+        new java.lang.String[] { "Elements", });
+    internal_static_buf_validate_FieldPathElement_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_buf_validate_FieldPathElement_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_buf_validate_FieldPathElement_descriptor,
+        new java.lang.String[] { "FieldNumber", "FieldName", "FieldType", "KeyType", "ValueType", "Index", "BoolKey", "IntKey", "UintKey", "StringKey", "Subscript", });
     message.internalInit(descriptor.getExtensions().get(0));
     oneof.internalInit(descriptor.getExtensions().get(1));
     field.internalInit(descriptor.getExtensions().get(2));
+    predefined.internalInit(descriptor.getExtensions().get(3));
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.scalekit.grpc.buf.validate.priv.PrivateProto.field);
+    registry.add(com.scalekit.grpc.buf.validate.ValidateProto.predefined);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.scalekit.grpc.buf.validate.ExpressionProto.getDescriptor();
-    com.scalekit.grpc.buf.validate.priv.PrivateProto.getDescriptor();
     com.google.protobuf.DescriptorProtos.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

@@ -6,7 +6,8 @@ package com.scalekit.grpc.buf.validate;
 
 public interface SFixed64RulesOrBuilder extends
     // @@protoc_insertion_point(interface_extends:buf.validate.SFixed64Rules)
-    com.google.protobuf.MessageOrBuilder {
+    com.google.protobuf.GeneratedMessageV3.
+        ExtendableMessageOrBuilder<SFixed64Rules> {
 
   /**
    * <pre>
@@ -21,7 +22,7 @@ public interface SFixed64RulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>optional sfixed64 const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional sfixed64 const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the const field is set.
    */
   boolean hasConst();
@@ -38,7 +39,7 @@ public interface SFixed64RulesOrBuilder extends
    * ```
    * </pre>
    *
-   * <code>optional sfixed64 const = 1 [json_name = "const", (.buf.validate.priv.field) = { ... }</code>
+   * <code>optional sfixed64 const = 1 [json_name = "const", (.buf.validate.predefined) = { ... }</code>
    * @return The const.
    */
   long getConst();
@@ -51,13 +52,13 @@ public interface SFixed64RulesOrBuilder extends
    *
    * ```proto
    * message MySFixed64 {
-   *   // value must be less than 10
+   *   // must be less than 10
    *   sfixed64 value = 1 [(buf.validate.field).sfixed64.lt = 10];
    * }
    * ```
    * </pre>
    *
-   * <code>sfixed64 lt = 2 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
+   * <code>sfixed64 lt = 2 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the lt field is set.
    */
   boolean hasLt();
@@ -69,13 +70,13 @@ public interface SFixed64RulesOrBuilder extends
    *
    * ```proto
    * message MySFixed64 {
-   *   // value must be less than 10
+   *   // must be less than 10
    *   sfixed64 value = 1 [(buf.validate.field).sfixed64.lt = 10];
    * }
    * ```
    * </pre>
    *
-   * <code>sfixed64 lt = 2 [json_name = "lt", (.buf.validate.priv.field) = { ... }</code>
+   * <code>sfixed64 lt = 2 [json_name = "lt", (.buf.validate.predefined) = { ... }</code>
    * @return The lt.
    */
   long getLt();
@@ -88,13 +89,13 @@ public interface SFixed64RulesOrBuilder extends
    *
    * ```proto
    * message MySFixed64 {
-   *   // value must be less than or equal to 10
+   *   // must be less than or equal to 10
    *   sfixed64 value = 1 [(buf.validate.field).sfixed64.lte = 10];
    * }
    * ```
    * </pre>
    *
-   * <code>sfixed64 lte = 3 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
+   * <code>sfixed64 lte = 3 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the lte field is set.
    */
   boolean hasLte();
@@ -106,13 +107,13 @@ public interface SFixed64RulesOrBuilder extends
    *
    * ```proto
    * message MySFixed64 {
-   *   // value must be less than or equal to 10
+   *   // must be less than or equal to 10
    *   sfixed64 value = 1 [(buf.validate.field).sfixed64.lte = 10];
    * }
    * ```
    * </pre>
    *
-   * <code>sfixed64 lte = 3 [json_name = "lte", (.buf.validate.priv.field) = { ... }</code>
+   * <code>sfixed64 lte = 3 [json_name = "lte", (.buf.validate.predefined) = { ... }</code>
    * @return The lte.
    */
   long getLte();
@@ -127,19 +128,19 @@ public interface SFixed64RulesOrBuilder extends
    *
    * ```proto
    * message MySFixed64 {
-   *   // value must be greater than 5 [sfixed64.gt]
+   *   // must be greater than 5 [sfixed64.gt]
    *   sfixed64 value = 1 [(buf.validate.field).sfixed64.gt = 5];
    *
-   *   // value must be greater than 5 and less than 10 [sfixed64.gt_lt]
+   *   // must be greater than 5 and less than 10 [sfixed64.gt_lt]
    *   sfixed64 other_value = 2 [(buf.validate.field).sfixed64 = { gt: 5, lt: 10 }];
    *
-   *   // value must be greater than 10 or less than 5 [sfixed64.gt_lt_exclusive]
+   *   // must be greater than 10 or less than 5 [sfixed64.gt_lt_exclusive]
    *   sfixed64 another_value = 3 [(buf.validate.field).sfixed64 = { gt: 10, lt: 5 }];
    * }
    * ```
    * </pre>
    *
-   * <code>sfixed64 gt = 4 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
+   * <code>sfixed64 gt = 4 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the gt field is set.
    */
   boolean hasGt();
@@ -153,19 +154,19 @@ public interface SFixed64RulesOrBuilder extends
    *
    * ```proto
    * message MySFixed64 {
-   *   // value must be greater than 5 [sfixed64.gt]
+   *   // must be greater than 5 [sfixed64.gt]
    *   sfixed64 value = 1 [(buf.validate.field).sfixed64.gt = 5];
    *
-   *   // value must be greater than 5 and less than 10 [sfixed64.gt_lt]
+   *   // must be greater than 5 and less than 10 [sfixed64.gt_lt]
    *   sfixed64 other_value = 2 [(buf.validate.field).sfixed64 = { gt: 5, lt: 10 }];
    *
-   *   // value must be greater than 10 or less than 5 [sfixed64.gt_lt_exclusive]
+   *   // must be greater than 10 or less than 5 [sfixed64.gt_lt_exclusive]
    *   sfixed64 another_value = 3 [(buf.validate.field).sfixed64 = { gt: 10, lt: 5 }];
    * }
    * ```
    * </pre>
    *
-   * <code>sfixed64 gt = 4 [json_name = "gt", (.buf.validate.priv.field) = { ... }</code>
+   * <code>sfixed64 gt = 4 [json_name = "gt", (.buf.validate.predefined) = { ... }</code>
    * @return The gt.
    */
   long getGt();
@@ -180,19 +181,19 @@ public interface SFixed64RulesOrBuilder extends
    *
    * ```proto
    * message MySFixed64 {
-   *   // value must be greater than or equal to 5 [sfixed64.gte]
+   *   // must be greater than or equal to 5 [sfixed64.gte]
    *   sfixed64 value = 1 [(buf.validate.field).sfixed64.gte = 5];
    *
-   *   // value must be greater than or equal to 5 and less than 10 [sfixed64.gte_lt]
+   *   // must be greater than or equal to 5 and less than 10 [sfixed64.gte_lt]
    *   sfixed64 other_value = 2 [(buf.validate.field).sfixed64 = { gte: 5, lt: 10 }];
    *
-   *   // value must be greater than or equal to 10 or less than 5 [sfixed64.gte_lt_exclusive]
+   *   // must be greater than or equal to 10 or less than 5 [sfixed64.gte_lt_exclusive]
    *   sfixed64 another_value = 3 [(buf.validate.field).sfixed64 = { gte: 10, lt: 5 }];
    * }
    * ```
    * </pre>
    *
-   * <code>sfixed64 gte = 5 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
+   * <code>sfixed64 gte = 5 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
    * @return Whether the gte field is set.
    */
   boolean hasGte();
@@ -206,19 +207,19 @@ public interface SFixed64RulesOrBuilder extends
    *
    * ```proto
    * message MySFixed64 {
-   *   // value must be greater than or equal to 5 [sfixed64.gte]
+   *   // must be greater than or equal to 5 [sfixed64.gte]
    *   sfixed64 value = 1 [(buf.validate.field).sfixed64.gte = 5];
    *
-   *   // value must be greater than or equal to 5 and less than 10 [sfixed64.gte_lt]
+   *   // must be greater than or equal to 5 and less than 10 [sfixed64.gte_lt]
    *   sfixed64 other_value = 2 [(buf.validate.field).sfixed64 = { gte: 5, lt: 10 }];
    *
-   *   // value must be greater than or equal to 10 or less than 5 [sfixed64.gte_lt_exclusive]
+   *   // must be greater than or equal to 10 or less than 5 [sfixed64.gte_lt_exclusive]
    *   sfixed64 another_value = 3 [(buf.validate.field).sfixed64 = { gte: 10, lt: 5 }];
    * }
    * ```
    * </pre>
    *
-   * <code>sfixed64 gte = 5 [json_name = "gte", (.buf.validate.priv.field) = { ... }</code>
+   * <code>sfixed64 gte = 5 [json_name = "gte", (.buf.validate.predefined) = { ... }</code>
    * @return The gte.
    */
   long getGte();
@@ -231,13 +232,13 @@ public interface SFixed64RulesOrBuilder extends
    *
    * ```proto
    * message MySFixed64 {
-   *   // value must be in list [1, 2, 3]
-   *   repeated sfixed64 value = 1 (buf.validate.field).sfixed64 = { in: [1, 2, 3] };
+   *   // must be in list [1, 2, 3]
+   *   sfixed64 value = 1 [(buf.validate.field).sfixed64 = { in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated sfixed64 in = 6 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
+   * <code>repeated sfixed64 in = 6 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
    * @return A list containing the in.
    */
   java.util.List<java.lang.Long> getInList();
@@ -249,13 +250,13 @@ public interface SFixed64RulesOrBuilder extends
    *
    * ```proto
    * message MySFixed64 {
-   *   // value must be in list [1, 2, 3]
-   *   repeated sfixed64 value = 1 (buf.validate.field).sfixed64 = { in: [1, 2, 3] };
+   *   // must be in list [1, 2, 3]
+   *   sfixed64 value = 1 [(buf.validate.field).sfixed64 = { in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated sfixed64 in = 6 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
+   * <code>repeated sfixed64 in = 6 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
    * @return The count of in.
    */
   int getInCount();
@@ -267,13 +268,13 @@ public interface SFixed64RulesOrBuilder extends
    *
    * ```proto
    * message MySFixed64 {
-   *   // value must be in list [1, 2, 3]
-   *   repeated sfixed64 value = 1 (buf.validate.field).sfixed64 = { in: [1, 2, 3] };
+   *   // must be in list [1, 2, 3]
+   *   sfixed64 value = 1 [(buf.validate.field).sfixed64 = { in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated sfixed64 in = 6 [json_name = "in", (.buf.validate.priv.field) = { ... }</code>
+   * <code>repeated sfixed64 in = 6 [json_name = "in", (.buf.validate.predefined) = { ... }</code>
    * @param index The index of the element to return.
    * @return The in at the given index.
    */
@@ -288,12 +289,12 @@ public interface SFixed64RulesOrBuilder extends
    * ```proto
    * message MySFixed64 {
    *   // value must not be in list [1, 2, 3]
-   *   repeated sfixed64 value = 1 (buf.validate.field).sfixed64 = { not_in: [1, 2, 3] };
+   *   sfixed64 value = 1 [(buf.validate.field).sfixed64 = { not_in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated sfixed64 not_in = 7 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
+   * <code>repeated sfixed64 not_in = 7 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
    * @return A list containing the notIn.
    */
   java.util.List<java.lang.Long> getNotInList();
@@ -306,12 +307,12 @@ public interface SFixed64RulesOrBuilder extends
    * ```proto
    * message MySFixed64 {
    *   // value must not be in list [1, 2, 3]
-   *   repeated sfixed64 value = 1 (buf.validate.field).sfixed64 = { not_in: [1, 2, 3] };
+   *   sfixed64 value = 1 [(buf.validate.field).sfixed64 = { not_in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated sfixed64 not_in = 7 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
+   * <code>repeated sfixed64 not_in = 7 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
    * @return The count of notIn.
    */
   int getNotInCount();
@@ -324,16 +325,78 @@ public interface SFixed64RulesOrBuilder extends
    * ```proto
    * message MySFixed64 {
    *   // value must not be in list [1, 2, 3]
-   *   repeated sfixed64 value = 1 (buf.validate.field).sfixed64 = { not_in: [1, 2, 3] };
+   *   sfixed64 value = 1 [(buf.validate.field).sfixed64 = { not_in: [1, 2, 3] }];
    * }
    * ```
    * </pre>
    *
-   * <code>repeated sfixed64 not_in = 7 [json_name = "notIn", (.buf.validate.priv.field) = { ... }</code>
+   * <code>repeated sfixed64 not_in = 7 [json_name = "notIn", (.buf.validate.predefined) = { ... }</code>
    * @param index The index of the element to return.
    * @return The notIn at the given index.
    */
   long getNotIn(int index);
+
+  /**
+   * <pre>
+   * `example` specifies values that the field may have. These values SHOULD
+   * conform to other rules. `example` values will not impact validation
+   * but may be used as helpful guidance on how to populate the given field.
+   *
+   * ```proto
+   * message MySFixed64 {
+   *   sfixed64 value = 1 [
+   *     (buf.validate.field).sfixed64.example = 1,
+   *     (buf.validate.field).sfixed64.example = 2
+   *   ];
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>repeated sfixed64 example = 8 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
+   * @return A list containing the example.
+   */
+  java.util.List<java.lang.Long> getExampleList();
+  /**
+   * <pre>
+   * `example` specifies values that the field may have. These values SHOULD
+   * conform to other rules. `example` values will not impact validation
+   * but may be used as helpful guidance on how to populate the given field.
+   *
+   * ```proto
+   * message MySFixed64 {
+   *   sfixed64 value = 1 [
+   *     (buf.validate.field).sfixed64.example = 1,
+   *     (buf.validate.field).sfixed64.example = 2
+   *   ];
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>repeated sfixed64 example = 8 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
+   * @return The count of example.
+   */
+  int getExampleCount();
+  /**
+   * <pre>
+   * `example` specifies values that the field may have. These values SHOULD
+   * conform to other rules. `example` values will not impact validation
+   * but may be used as helpful guidance on how to populate the given field.
+   *
+   * ```proto
+   * message MySFixed64 {
+   *   sfixed64 value = 1 [
+   *     (buf.validate.field).sfixed64.example = 1,
+   *     (buf.validate.field).sfixed64.example = 2
+   *   ];
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>repeated sfixed64 example = 8 [json_name = "example", (.buf.validate.predefined) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The example at the given index.
+   */
+  long getExample(int index);
 
   com.scalekit.grpc.buf.validate.SFixed64Rules.LessThanCase getLessThanCase();
 

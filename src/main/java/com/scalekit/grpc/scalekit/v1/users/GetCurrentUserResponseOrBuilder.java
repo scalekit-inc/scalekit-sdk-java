@@ -34,4 +34,18 @@ public interface GetCurrentUserResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCurrentSessionIdBytes();
+
+  /**
+   * <pre>
+   * Phase 2: true when gateway_configurations.enabled is true for the
+   * env the calling end-user is in. Drives /ui surfaces (the Agents
+   * nav section, end-user activity, etc.) that should only render when
+   * Gateway is actually configured for this env — independent of any
+   * workspace-level feature flag.
+   * </pre>
+   *
+   * <code>bool gateway_enabled = 3 [json_name = "gatewayEnabled"];</code>
+   * @return The gatewayEnabled.
+   */
+  boolean getGatewayEnabled();
 }

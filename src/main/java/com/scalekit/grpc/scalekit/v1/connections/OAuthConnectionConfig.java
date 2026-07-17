@@ -535,6 +535,32 @@ private static final long serialVersionUID = 0L;
     return optionalScopes_ == null ? com.scalekit.grpc.scalekit.v1.connections.OptionalScopes.getDefaultInstance() : optionalScopes_;
   }
 
+  public static final int EXTENSIONS_FIELD_NUMBER = 24;
+  private com.scalekit.grpc.scalekit.v1.connections.OauthExtensions extensions_;
+  /**
+   * <code>optional .scalekit.v1.connections.OauthExtensions extensions = 24 [json_name = "extensions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the extensions field is set.
+   */
+  @java.lang.Override
+  public boolean hasExtensions() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
+  /**
+   * <code>optional .scalekit.v1.connections.OauthExtensions extensions = 24 [json_name = "extensions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The extensions.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.OauthExtensions getExtensions() {
+    return extensions_ == null ? com.scalekit.grpc.scalekit.v1.connections.OauthExtensions.getDefaultInstance() : extensions_;
+  }
+  /**
+   * <code>optional .scalekit.v1.connections.OauthExtensions extensions = 24 [json_name = "extensions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connections.OauthExtensionsOrBuilder getExtensionsOrBuilder() {
+    return extensions_ == null ? com.scalekit.grpc.scalekit.v1.connections.OauthExtensions.getDefaultInstance() : extensions_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -602,6 +628,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(23, getOptionalScopes());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      output.writeMessage(24, getExtensions());
     }
     getUnknownFields().writeTo(output);
   }
@@ -686,6 +715,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(23, getOptionalScopes());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(24, getExtensions());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -786,6 +819,11 @@ private static final long serialVersionUID = 0L;
       if (!getOptionalScopes()
           .equals(other.getOptionalScopes())) return false;
     }
+    if (hasExtensions() != other.hasExtensions()) return false;
+    if (hasExtensions()) {
+      if (!getExtensions()
+          .equals(other.getExtensions())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -866,6 +904,10 @@ private static final long serialVersionUID = 0L;
     if (hasOptionalScopes()) {
       hash = (37 * hash) + OPTIONAL_SCOPES_FIELD_NUMBER;
       hash = (53 * hash) + getOptionalScopes().hashCode();
+    }
+    if (hasExtensions()) {
+      hash = (37 * hash) + EXTENSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getExtensions().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1013,6 +1055,7 @@ private static final long serialVersionUID = 0L;
         getIsCimdFieldBuilder();
         getAppNameFieldBuilder();
         getOptionalScopesFieldBuilder();
+        getExtensionsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1101,6 +1144,11 @@ private static final long serialVersionUID = 0L;
       if (optionalScopesBuilder_ != null) {
         optionalScopesBuilder_.dispose();
         optionalScopesBuilder_ = null;
+      }
+      extensions_ = null;
+      if (extensionsBuilder_ != null) {
+        extensionsBuilder_.dispose();
+        extensionsBuilder_ = null;
       }
       return this;
     }
@@ -1239,6 +1287,12 @@ private static final long serialVersionUID = 0L;
             : optionalScopesBuilder_.build();
         to_bitField0_ |= 0x00008000;
       }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.extensions_ = extensionsBuilder_ == null
+            ? extensions_
+            : extensionsBuilder_.build();
+        to_bitField0_ |= 0x00010000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1348,6 +1402,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasOptionalScopes()) {
         mergeOptionalScopes(other.getOptionalScopes());
+      }
+      if (other.hasExtensions()) {
+        mergeExtensions(other.getExtensions());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1498,6 +1555,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00020000;
               break;
             } // case 186
+            case 194: {
+              input.readMessage(
+                  getExtensionsFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00040000;
+              break;
+            } // case 194
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3632,6 +3696,127 @@ private static final long serialVersionUID = 0L;
         optionalScopes_ = null;
       }
       return optionalScopesBuilder_;
+    }
+
+    private com.scalekit.grpc.scalekit.v1.connections.OauthExtensions extensions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.OauthExtensions, com.scalekit.grpc.scalekit.v1.connections.OauthExtensions.Builder, com.scalekit.grpc.scalekit.v1.connections.OauthExtensionsOrBuilder> extensionsBuilder_;
+    /**
+     * <code>optional .scalekit.v1.connections.OauthExtensions extensions = 24 [json_name = "extensions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the extensions field is set.
+     */
+    public boolean hasExtensions() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.OauthExtensions extensions = 24 [json_name = "extensions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The extensions.
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.OauthExtensions getExtensions() {
+      if (extensionsBuilder_ == null) {
+        return extensions_ == null ? com.scalekit.grpc.scalekit.v1.connections.OauthExtensions.getDefaultInstance() : extensions_;
+      } else {
+        return extensionsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.OauthExtensions extensions = 24 [json_name = "extensions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setExtensions(com.scalekit.grpc.scalekit.v1.connections.OauthExtensions value) {
+      if (extensionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        extensions_ = value;
+      } else {
+        extensionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.OauthExtensions extensions = 24 [json_name = "extensions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setExtensions(
+        com.scalekit.grpc.scalekit.v1.connections.OauthExtensions.Builder builderForValue) {
+      if (extensionsBuilder_ == null) {
+        extensions_ = builderForValue.build();
+      } else {
+        extensionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.OauthExtensions extensions = 24 [json_name = "extensions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeExtensions(com.scalekit.grpc.scalekit.v1.connections.OauthExtensions value) {
+      if (extensionsBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0) &&
+          extensions_ != null &&
+          extensions_ != com.scalekit.grpc.scalekit.v1.connections.OauthExtensions.getDefaultInstance()) {
+          getExtensionsBuilder().mergeFrom(value);
+        } else {
+          extensions_ = value;
+        }
+      } else {
+        extensionsBuilder_.mergeFrom(value);
+      }
+      if (extensions_ != null) {
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.OauthExtensions extensions = 24 [json_name = "extensions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearExtensions() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      extensions_ = null;
+      if (extensionsBuilder_ != null) {
+        extensionsBuilder_.dispose();
+        extensionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.OauthExtensions extensions = 24 [json_name = "extensions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.OauthExtensions.Builder getExtensionsBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return getExtensionsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.OauthExtensions extensions = 24 [json_name = "extensions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connections.OauthExtensionsOrBuilder getExtensionsOrBuilder() {
+      if (extensionsBuilder_ != null) {
+        return extensionsBuilder_.getMessageOrBuilder();
+      } else {
+        return extensions_ == null ?
+            com.scalekit.grpc.scalekit.v1.connections.OauthExtensions.getDefaultInstance() : extensions_;
+      }
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.OauthExtensions extensions = 24 [json_name = "extensions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connections.OauthExtensions, com.scalekit.grpc.scalekit.v1.connections.OauthExtensions.Builder, com.scalekit.grpc.scalekit.v1.connections.OauthExtensionsOrBuilder> 
+        getExtensionsFieldBuilder() {
+      if (extensionsBuilder_ == null) {
+        extensionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.connections.OauthExtensions, com.scalekit.grpc.scalekit.v1.connections.OauthExtensions.Builder, com.scalekit.grpc.scalekit.v1.connections.OauthExtensionsOrBuilder>(
+                getExtensions(),
+                getParentForChildren(),
+                isClean());
+        extensions_ = null;
+      }
+      return extensionsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

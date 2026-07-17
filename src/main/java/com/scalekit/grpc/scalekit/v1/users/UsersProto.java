@@ -360,877 +360,886 @@ public final class UsersProto {
       "\"}\272H\026\232\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metadata\032;\n" +
       "\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005valu" +
       "e\030\002 \001(\tR\005value:\0028\001B\016\n\014_external_idJ\004\010\001\020\006" +
-      "J\004\010\007\020\010J\004\010\n\020\013\"\253\004\n\021UpdateUserRequest\022\214\001\n\002i" +
+      "J\004\010\007\020\010J\004\010\n\020\013\"\255\004\n\021UpdateUserRequest\022\214\001\n\002i" +
       "d\030\001 \001(\tBz\222Ah2NSystem-generated user ID. " +
       "Must start with \'usr_\' and be 19-25 char" +
       "acters long.J\026\"usr_1234abcd5678efgh\"\272H\014r" +
-      "\n\020\023\030\031:\004usr_H\000R\002id\022\232\001\n\013external_id\030\002 \001(\tB" +
-      "w\222At2cYour application\'s unique identifi" +
-      "er for this organization, used to link S" +
-      "calekit with your system.J\r\"ext_7890xyz\"" +
-      "H\000R\nexternalId\022\333\001\n\004user\030\003 \001(\0132\035.scalekit" +
-      ".v1.users.UpdateUserB\247\001\222A\235\0012qUser fields" +
-      " to update. Only specified fields will b" +
-      "e modified. Required fields must be prov" +
-      "ided if being changed.J({\"firstName\": \"J" +
-      "ohn\", \"lastName\": \"Doe\"}\272H\003\310\001\001R\004userB\014\n\n" +
-      "identities\"A\n\022UpdateUserResponse\022+\n\004user" +
-      "\030\001 \001(\0132\027.scalekit.v1.users.UserR\004user\"\223\002" +
-      "\n\016GetUserRequest\022V\n\002id\030\001 \001(\tBD\222A22\030Syste" +
-      "m-generated user IDJ\026\"usr_1234abcd5678ef" +
-      "gh\"\272H\014r\n\020\001\030 :\004usr_H\000R\002id\022\232\001\n\013external_id" +
-      "\030\002 \001(\tBw\222At2cYour application\'s unique i" +
-      "dentifier for this organization, used to" +
-      " link Scalekit with your system.J\r\"ext_7" +
-      "890xyz\"H\000R\nexternalIdB\014\n\nidentities\">\n\017G" +
-      "etUserResponse\022+\n\004user\030\001 \001(\0132\027.scalekit." +
-      "v1.users.UserR\004user\"\330\001\n\026GetCurrentUserRe" +
-      "sponse\022+\n\004user\030\001 \001(\0132\027.scalekit.v1.users" +
-      ".UserR\004user\022\220\001\n\022current_session_id\030\002 \001(\t" +
-      "Bb\222A_2EThe ID of the current session ass" +
-      "ociated with the authenticated user.J\026\"s" +
-      "es_1234567890123456\"R\020currentSessionId\"\027" +
-      "\n\025GetCurrentUserRequest\"\364\004\n\034ListOrganiza" +
-      "tionUsersRequest\022\311\001\n\017organization_id\030\001 \001" +
-      "(\tB\237\001\222A\214\0012rUnique identifier of the orga" +
-      "nization for which to list users. Must s" +
-      "tart with \'org_\' and be 1-32 characters " +
-      "long.J\026\"org_1234abcd5678efgh\"\272H\014r\n\020\001\030 :\004" +
-      "org_R\016organizationId\022\251\001\n\tpage_size\030\002 \001(\r" +
-      "B\213\001\222A\1772yMaximum number of users to retur" +
-      "n in a single response. Valid range: 1-1" +
-      "00. Server may return fewer users than s" +
-      "pecified.J\00250\272H\006*\004\030d(\000R\010pageSize\022\333\001\n\npag" +
-      "e_token\030\003 \001(\tB\273\001\222A\267\0012\200\001Pagination token " +
-      "from a previous ListUserResponse. Used t" +
-      "o retrieve the next page of results. Lea" +
-      "ve empty for the first request.J2\"eyJwYW" +
-      "dlIjogMiwgImxhc3RfaWQiOiAidXNyXzEyMzQ1In" +
-      "0=\"R\tpageToken\"\244\005\n\035ListOrganizationUsers" +
-      "Response\022\272\001\n\017next_page_token\030\001 \001(\tB\221\001\222A\215" +
-      "\0012WOpaque token for retrieving the next " +
-      "page of results. Empty if there are no m" +
-      "ore pages.J2\"eyJwYWdlIjogMiwgImxhc3RfaWQ" +
-      "iOiAidXNyXzEyMzQ1In0=\"R\rnextPageToken\022x\n" +
-      "\ntotal_size\030\002 \001(\rBY\222AV2NTotal number of " +
-      "users matching the request criteria, reg" +
-      "ardless of pagination.J\0041042R\ttotalSize\022" +
-      "\222\001\n\005users\030\003 \003(\0132\027.scalekit.v1.users.User" +
-      "Bc\222A`2^List of user objects for the curr" +
-      "ent page. May contain fewer entries than" +
-      " requested page_size.R\005users\022\266\001\n\017prev_pa" +
-      "ge_token\030\004 \001(\tB\215\001\222A\211\0012SOpaque token for " +
-      "retrieving the previous page of results." +
-      " Empty for the first page.J2\"eyJwYWdlIjo" +
-      "gMCwgImZpcnN0X2lkIjogInVzcl85ODc2NSJ9\"R\r" +
-      "prevPageToken\"\375\004\n\027DeleteMembershipReques" +
-      "t\022\247\001\n\017organization_id\030\001 \001(\tB~\222Al2RUnique" +
-      " organization identifier. Must start wit" +
-      "h \'org_\' and be 1-32 characters longJ\026\"o" +
-      "rg_1234abcd5678efgh\"\272H\014r\n\020\001\030 :\004org_R\016org" +
-      "anizationId\022\201\001\n\002id\030\002 \001(\tBo\222A]2CSystem-ge" +
-      "nerated user ID. Must start with \'usr_\' " +
-      "(19-25 characters)J\026\"usr_1234abcd5678efg" +
-      "h\"\272H\014r\n\020\023\030\031:\004usr_H\000R\002id\022\211\001\n\013external_id\030" +
-      "\003 \001(\tBf\222Ac2RExternal system identifier f" +
-      "rom connected directories. Must match ex" +
-      "isting recordsJ\r\"ext_7890xyz\"H\000R\nexterna" +
-      "lId\022\215\001\n\007cascade\030\005 \001(\010Bn\222A\\2SIf true, if " +
-      "user has no memberships left the user is" +
-      " also deleted. defaults to trueJ\005false\372\322" +
-      "\344\223\002\t\022\007PREVIEWH\001R\007cascade\210\001\001B\014\n\nidentitie" +
-      "sB\n\n\010_cascade\"\275\006\n\027CreateMembershipReques" +
-      "t\022\267\001\n\017organization_id\030\001 \001(\tB\215\001\222A{2aUniqu" +
-      "e identifier of the target organization." +
-      " Must start with \'org_\' and be 1-32 char" +
-      "acters long.J\026\"org_1234abcd5678efgh\"\272H\014r" +
-      "\n\020\001\030 :\004org_R\016organizationId\022\242\001\n\nmembersh" +
-      "ip\030\002 \001(\0132#.scalekit.v1.users.CreateMembe" +
-      "rshipB]\222AQ2?Membership details to create" +
-      ". Required fields must be provided.\312>\r\372\002" +
-      "\nmembership\340A\002\272H\003\310\001\001R\nmembership\022\201\001\n\002id\030" +
-      "\003 \001(\tBo\222A]2CSystem-generated user ID. Mu" +
-      "st start with \'usr_\' (19-25 characters)J" +
-      "\026\"usr_1234abcd5678efgh\"\272H\014r\n\020\023\030\031:\004usr_H\000" +
-      "R\002id\022\216\001\n\013external_id\030\004 \001(\tBk\222Ah2WExterna" +
-      "l system identifier from connected direc" +
-      "tories. Must be unique across the system" +
-      "J\r\"ext_7890xyz\"H\000R\nexternalId\022\205\001\n\025send_i" +
-      "nvitation_email\030\005 \001(\010BL\222AI2AIf true, sen" +
-      "ds an activation email to the user. Defa" +
-      "ults to true.J\004trueH\001R\023sendInvitationEma" +
-      "il\210\001\001B\014\n\nidentitiesB\030\n\026_send_invitation_" +
-      "email\"G\n\030CreateMembershipResponse\022+\n\004use" +
-      "r\030\001 \001(\0132\027.scalekit.v1.users.UserR\004user\"\232" +
-      "\002\n\020ListUsersRequest\022t\n\tpage_size\030\001 \001(\rBW" +
-      "\222AT2NMaximum number of organizations to " +
-      "return per page. Must be between 10 and " +
-      "100J\00230R\010pageSize\022\217\001\n\npage_token\030\002 \001(\tBp" +
-      "\222Am2[Pagination token from the previous " +
-      "response. Use to retrieve the next page " +
-      "of organizationsJ\016\"<page_token>\"R\tpageTo" +
-      "ken\"\300\004\n\021ListUsersResponse\022B\n\005users\030\001 \003(\013" +
-      "2\027.scalekit.v1.users.UserB\023\222A\0202\016List of " +
-      "users.R\005users\022\263\001\n\017next_page_token\030\002 \001(\tB" +
-      "\212\001\222A\206\0012PToken for retrieving the next pa" +
-      "ge of results. Empty if there are no mor" +
-      "e pages.J2\"eyJwYWdlIjogMiwgImxhc3RfaWQiO" +
-      "iAidXNyXzEyMzQ1In0=\"R\rnextPageToken\022x\n\nt" +
-      "otal_size\030\003 \001(\rBY\222AV2NTotal number of us" +
-      "ers matching the request criteria, regar" +
-      "dless of pagination.J\0041042R\ttotalSize\022\266\001" +
-      "\n\017prev_page_token\030\004 \001(\tB\215\001\222A\211\0012SToken fo" +
-      "r retrieving the previous page of result" +
-      "s. Empty if this is the first page.J2\"ey" +
-      "JwYWdlIjogMCwgImZpcnN0X2lkIjogInVzcl85OD" +
-      "c2NSJ9\"R\rprevPageToken\"\373\003\n\022SearchUsersRe" +
-      "quest\022\257\001\n\005query\030\001 \001(\tB\230\001\222A\210\0012oSearch ter" +
-      "m to match against user email, IDs, or e" +
-      "xternal IDs. Must be at least 3 characte" +
-      "rs. Case insensitive.J\020john@example.comx" +
-      "d\200\001\003\272H\tr\004\020\003\030d\310\001\001R\005query\022\212\001\n\tpage_size\030\002 " +
-      "\001(\rBm\222Ac2KMaximum number of users to ret" +
-      "urn per page. Value must be between 1 an" +
-      "d 30.J\00230Y\000\000\000\000\000\000>@i\000\000\000\000\000\000\360?\272H\004*\002\030\036R\010page" +
-      "Size\022\245\001\n\npage_token\030\003 \001(\tB\205\001\222A\201\0012aToken " +
-      "from a previous response for pagination." +
-      " Provide this to retrieve the next page " +
-      "of results.J\034eyJwYWdlIjoyLCJsaW1pdCI6MzB" +
-      "9R\tpageToken\"\313\004\n\023SearchUsersResponse\022\263\001\n" +
-      "\017next_page_token\030\001 \001(\tB\212\001\222A\206\0012PToken for" +
-      " retrieving the next page of results. Em" +
-      "pty if there are no more pages.J2\"eyJwYW" +
-      "dlIjogMiwgImxhc3RfaWQiOiAidXNyXzEyMzQ1In" +
-      "0=\"R\rnextPageToken\022x\n\ntotal_size\030\002 \001(\rBY" +
-      "\222AV2NTotal number of users matching the " +
-      "request criteria, regardless of paginati" +
-      "on.J\0041042R\ttotalSize\022K\n\005users\030\003 \003(\0132\027.sc" +
-      "alekit.v1.users.UserB\034\222A\0312\027List of match" +
-      "ing users.R\005users\022\266\001\n\017prev_page_token\030\004 " +
-      "\001(\tB\215\001\222A\211\0012SToken for retrieving the pre" +
-      "vious page of results. Empty if this is " +
-      "the first page.J2\"eyJwYWdlIjogMCwgImZpcn" +
-      "N0X2lkIjogInVzcl85ODc2NSJ9\"R\rprevPageTok" +
-      "en\"\261\002\n\021DeleteUserRequest\022\201\001\n\002id\030\001 \001(\tBo\222" +
-      "A]2CSystem-generated user ID. Must start" +
-      " with \'usr_\' (19-25 characters)J\026\"usr_12" +
-      "34abcd5678efgh\"\272H\014r\n\020\023\030\031:\004usr_H\000R\002id\022\211\001\n" +
-      "\013external_id\030\002 \001(\tBf\222Ac2RExternal system" +
-      " identifier from connected directories. " +
-      "Must match existing recordsJ\r\"ext_7890xy" +
-      "z\"H\000R\nexternalIdB\014\n\nidentities\"\232\005\n\027Updat" +
-      "eMembershipRequest\022\313\001\n\017organization_id\030\001" +
-      " \001(\tB\241\001\222A\216\0012tUnique identifier of the or" +
-      "ganization containing the membership. Mu" +
-      "st start with \'org_\' and be 1-32 charact" +
-      "ers long.J\026\"org_1234abcd5678efgh\"\272H\014r\n\020\001" +
-      "\030 :\004org_R\016organizationId\022\214\001\n\002id\030\002 \001(\tBz\222" +
-      "Ah2NSystem-generated user ID. Must start" +
-      " with \'usr_\' and be 19-25 characters lon" +
-      "g.J\026\"usr_1234abcd5678efgh\"\272H\014r\n\020\023\030\031:\004usr" +
-      "_H\000R\002id\022j\n\013external_id\030\003 \001(\tBG\222AD23Your " +
-      "application\'s unique identifier for this" +
-      " user.J\r\"ext_7890xyz\"H\000R\nexternalId\022\247\001\n\n" +
-      "membership\030\005 \001(\0132#.scalekit.v1.users.Upd" +
-      "ateMembershipBb\222AY2DMembership fields to" +
-      " update. Only specified fields will be m" +
-      "odified.J\021{\"role\": \"admin\"}\272H\003\310\001\001R\nmembe" +
-      "rshipB\014\n\nidentities\"\373\003\n\020UpdateMembership" +
-      "\022}\n\005roles\030\004 \003(\0132\031.scalekit.v1.commons.Ro" +
-      "leBL\222AI22Role to assign to the user with" +
-      "in the organizationJ\023[{\"name\": \"admin\"}]" +
-      "R\005roles\022\214\002\n\010metadata\030\007 \003(\01321.scalekit.v1" +
-      ".users.UpdateMembership.MetadataEntryB\274\001" +
-      "\222A\237\0012dCustom key-value pairs for storing" +
-      " additional user context. Keys (3-25 cha" +
-      "rs), values (1-256 chars).J7{\"department" +
-      "\": \"engineering\", \"location\": \"nyc-offic" +
-      "e\"}\272H\026\232\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metadata\032;" +
-      "\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005val" +
-      "ue\030\002 \001(\tR\005value:\0028\001J\004\010\001\020\002J\004\010\002\020\003J\004\010\003\020\004J\004\010" +
-      "\005\020\006J\004\010\006\020\007\"\264\005\n\020CreateMembership\022}\n\005roles\030" +
-      "\004 \003(\0132\031.scalekit.v1.commons.RoleBL\222AI22R" +
-      "ole to assign to the user within the org" +
-      "anizationJ\023[{\"name\": \"admin\"}]R\005roles\022\214\002" +
-      "\n\010metadata\030\007 \003(\01321.scalekit.v1.users.Cre" +
-      "ateMembership.MetadataEntryB\274\001\222A\237\0012dCust" +
-      "om key-value pairs for storing additiona" +
-      "l user context. Keys (3-25 chars), value" +
-      "s (1-256 chars).J7{\"department\": \"engine" +
-      "ering\", \"location\": \"nyc-office\"}\272H\026\232\001\023\020" +
-      "\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metadata\022\244\001\n\rinviter" +
-      "_email\030\010 \001(\tBz\222Ak2QEmail address of the " +
-      "user who invited this member. Must be a " +
-      "valid email address.J\026\"john.doe@example." +
-      "com\"\272H\tr\007\020\005\030\376\001`\001H\000R\014inviterEmail\210\001\001\032;\n\rM" +
-      "etadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030" +
-      "\002 \001(\tR\005value:\0028\001B\020\n\016_inviter_emailJ\004\010\001\020\002" +
-      "J\004\010\002\020\003J\004\010\003\020\004J\004\010\005\020\006J\004\010\006\020\007\"G\n\030UpdateMember" +
-      "shipResponse\022+\n\004user\030\001 \001(\0132\027.scalekit.v1" +
-      ".users.UserR\004user\"\317\005\n\036SearchOrganization" +
-      "UsersRequest\022\305\001\n\017organization_id\030\001 \001(\tB\233" +
-      "\001\222A\205\0012kUnique identifier of the organiza" +
-      "tion to search within. Must start with \'" +
-      "org_\' and be 1-32 characters long.J\026\"org" +
-      "_1234abcd5678efgh\"\272H\017r\n\020\001\030 :\004org_\310\001\001R\016or" +
-      "ganizationId\022\257\001\n\005query\030\002 \001(\tB\230\001\222A\210\0012oSea" +
-      "rch term to match against user email, ID" +
-      "s, or external IDs. Must be at least 3 c" +
-      "haracters. Case insensitive.J\020john@examp" +
-      "le.comxd\200\001\003\272H\tr\004\020\003\030d\310\001\001R\005query\022\212\001\n\tpage_" +
-      "size\030\003 \001(\rBm\222Ac2KMaximum number of users" +
-      " to return per page. Value must be betwe" +
-      "en 1 and 30.J\00230Y\000\000\000\000\000\000>@i\000\000\000\000\000\000\360?\272H\004*\002\030" +
-      "\036R\010pageSize\022\245\001\n\npage_token\030\004 \001(\tB\205\001\222A\201\0012" +
-      "aToken from a previous response for pagi" +
-      "nation. Provide this to retrieve the nex" +
-      "t page of results.J\034eyJwYWdlIjoyLCJsaW1p" +
-      "dCI6MzB9R\tpageToken\"\327\004\n\037SearchOrganizati" +
-      "onUsersResponse\022\263\001\n\017next_page_token\030\001 \001(" +
-      "\tB\212\001\222A\206\0012PToken for retrieving the next " +
-      "page of results. Empty if there are no m" +
-      "ore pages.J2\"eyJwYWdlIjogMiwgImxhc3RfaWQ" +
-      "iOiAidXNyXzEyMzQ1In0=\"R\rnextPageToken\022x\n" +
-      "\ntotal_size\030\002 \001(\rBY\222AV2NTotal number of " +
-      "users matching the request criteria, reg" +
-      "ardless of pagination.J\0041042R\ttotalSize\022" +
-      "K\n\005users\030\003 \003(\0132\027.scalekit.v1.users.UserB" +
-      "\034\222A\0312\027List of matching users.R\005users\022\266\001\n" +
-      "\017prev_page_token\030\004 \001(\tB\215\001\222A\211\0012SToken for" +
-      " retrieving the previous page of results" +
-      ". Empty if this is the first page.J2\"eyJ" +
-      "wYWdlIjogMCwgImZpcnN0X2lkIjogInVzcl85ODc" +
-      "2NSJ9\"R\rprevPageToken\"\205\010\n\nCreateUser\022\230\001\n" +
-      "\005email\030\005 \001(\tB\201\001\222Aw2aPrimary email addres" +
-      "s for the user. Must be unique across th" +
-      "e environment and valid per RFC 5322.J\022\"" +
-      "user@example.com\"\272H\004r\002`\001R\005email\022\242\001\n\013exte" +
-      "rnal_id\030\006 \001(\tB|\222Ay2cYour application\'s u" +
-      "nique identifier for this organization, " +
-      "used to link Scalekit with your system.J" +
-      "\022\"ext_12345a67b89c\"H\000R\nexternalId\210\001\001\022\237\001\n" +
-      "\nmembership\030\007 \001(\0132#.scalekit.v1.users.Cr" +
-      "eateMembershipBZ\222AW2UList of organizatio" +
-      "n memberships. Automatically populated b" +
-      "ased on group assignments.R\nmembership\022\240" +
-      "\001\n\014user_profile\030\010 \001(\0132$.scalekit.v1.user" +
-      "s.CreateUserProfileBW\222AT2RUser\'s persona" +
-      "l information including name, address, a" +
-      "nd other profile attributes.R\013userProfil" +
-      "e\022\206\002\n\010metadata\030\t \003(\0132+.scalekit.v1.users" +
-      ".CreateUser.MetadataEntryB\274\001\222A\237\0012dCustom" +
-      " key-value pairs for storing additional " +
-      "user context. Keys (3-25 chars), values " +
-      "(1-256 chars).J7{\"department\": \"engineer" +
-      "ing\", \"location\": \"nyc-office\"}\272H\026\232\001\023\020\024\"" +
-      "\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metadata\032;\n\rMetadataEn" +
-      "try\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005va" +
-      "lue:\0028\001B\016\n\014_external_idJ\004\010\001\020\002J\004\010\002\020\003J\004\010\003\020" +
-      "\004J\004\010\004\020\005J\004\010\n\020\013\"\276\020\n\021CreateUserProfile\022^\n\ng" +
-      "iven_name\030\002 \001(\tB?\222A42*User\'s given name." +
-      " Maximum 255 characters.J\006\"John\"\272H\005r\003\030\377\001" +
-      "R\tgivenName\022`\n\013family_name\030\003 \001(\tB?\222A42+U" +
-      "ser\'s family name. Maximum 255 character" +
-      "s.J\005\"Doe\"\272H\005r\003\030\377\001R\nfamilyName\022v\n\004name\030\004 " +
-      "\001(\tBb\222A_2IFull name in display format. T" +
-      "ypically combines first_name and last_na" +
-      "me.J\022\"John Michael Doe\"R\004name\022y\n\006locale\030" +
-      "\005 \001(\tBa\222A^2SUser\'s localization preferen" +
-      "ce in BCP-47 format. Defaults to organiz" +
-      "ation settings.J\007\"en-US\"R\006locale\022\212\001\n\014pho" +
-      "ne_number\030\007 \001(\tBg\222Ad2RPhone number in E." +
-      "164 international format. Required for S" +
-      "MS-based authentication.J\016\"+14155552671\"" +
-      "R\013phoneNumber\022\213\002\n\010metadata\030\010 \003(\01322.scale" +
-      "kit.v1.users.CreateUserProfile.MetadataE" +
-      "ntryB\272\001\222A\235\0012^System-managed key-value pa" +
-      "irs for internal tracking. Keys (3-25 ch" +
-      "ars), values (1-256 chars).J;{\"account_s" +
+      "\n\020\023\030\031:\004usr_H\000R\002id\022\234\001\n\013external_id\030\002 \001(\tB" +
+      "y\222Al2[Your application\'s unique identifi" +
+      "er for this user, used to link Scalekit " +
+      "with your system.J\r\"ext_7890xyz\"\272H\007r\005\020\001\030" +
+      "\376\003H\000R\nexternalId\022\333\001\n\004user\030\003 \001(\0132\035.scalek" +
+      "it.v1.users.UpdateUserB\247\001\222A\235\0012qUser fiel" +
+      "ds to update. Only specified fields will" +
+      " be modified. Required fields must be pr" +
+      "ovided if being changed.J({\"firstName\": " +
+      "\"John\", \"lastName\": \"Doe\"}\272H\003\310\001\001R\004userB\014" +
+      "\n\nidentities\"A\n\022UpdateUserResponse\022+\n\004us" +
+      "er\030\001 \001(\0132\027.scalekit.v1.users.UserR\004user\"" +
+      "\225\002\n\016GetUserRequest\022V\n\002id\030\001 \001(\tBD\222A22\030Sys" +
+      "tem-generated user IDJ\026\"usr_1234abcd5678" +
+      "efgh\"\272H\014r\n\020\001\030 :\004usr_H\000R\002id\022\234\001\n\013external_" +
+      "id\030\002 \001(\tBy\222Al2[Your application\'s unique" +
+      " identifier for this user, used to link " +
+      "Scalekit with your system.J\r\"ext_7890xyz" +
+      "\"\272H\007r\005\020\001\030\376\003H\000R\nexternalIdB\014\n\nidentities\"" +
+      ">\n\017GetUserResponse\022+\n\004user\030\001 \001(\0132\027.scale" +
+      "kit.v1.users.UserR\004user\"\201\002\n\026GetCurrentUs" +
+      "erResponse\022+\n\004user\030\001 \001(\0132\027.scalekit.v1.u" +
+      "sers.UserR\004user\022\220\001\n\022current_session_id\030\002" +
+      " \001(\tBb\222A_2EThe ID of the current session" +
+      " associated with the authenticated user." +
+      "J\026\"ses_1234567890123456\"R\020currentSession" +
+      "Id\022\'\n\017gateway_enabled\030\003 \001(\010R\016gatewayEnab" +
+      "led\"\027\n\025GetCurrentUserRequest\"\364\004\n\034ListOrg" +
+      "anizationUsersRequest\022\311\001\n\017organization_i" +
+      "d\030\001 \001(\tB\237\001\222A\214\0012rUnique identifier of the" +
+      " organization for which to list users. M" +
+      "ust start with \'org_\' and be 1-32 charac" +
+      "ters long.J\026\"org_1234abcd5678efgh\"\272H\014r\n\020" +
+      "\001\030 :\004org_R\016organizationId\022\251\001\n\tpage_size\030" +
+      "\002 \001(\rB\213\001\222A\1772yMaximum number of users to " +
+      "return in a single response. Valid range" +
+      ": 1-100. Server may return fewer users t" +
+      "han specified.J\00250\272H\006*\004\030d(\000R\010pageSize\022\333\001" +
+      "\n\npage_token\030\003 \001(\tB\273\001\222A\267\0012\200\001Pagination t" +
+      "oken from a previous ListUserResponse. U" +
+      "sed to retrieve the next page of results" +
+      ". Leave empty for the first request.J2\"e" +
+      "yJwYWdlIjogMiwgImxhc3RfaWQiOiAidXNyXzEyM" +
+      "zQ1In0=\"R\tpageToken\"\244\005\n\035ListOrganization" +
+      "UsersResponse\022\272\001\n\017next_page_token\030\001 \001(\tB" +
+      "\221\001\222A\215\0012WOpaque token for retrieving the " +
+      "next page of results. Empty if there are" +
+      " no more pages.J2\"eyJwYWdlIjogMiwgImxhc3" +
+      "RfaWQiOiAidXNyXzEyMzQ1In0=\"R\rnextPageTok" +
+      "en\022x\n\ntotal_size\030\002 \001(\rBY\222AV2NTotal numbe" +
+      "r of users matching the request criteria" +
+      ", regardless of pagination.J\0041042R\ttotal" +
+      "Size\022\222\001\n\005users\030\003 \003(\0132\027.scalekit.v1.users" +
+      ".UserBc\222A`2^List of user objects for the" +
+      " current page. May contain fewer entries" +
+      " than requested page_size.R\005users\022\266\001\n\017pr" +
+      "ev_page_token\030\004 \001(\tB\215\001\222A\211\0012SOpaque token" +
+      " for retrieving the previous page of res" +
+      "ults. Empty for the first page.J2\"eyJwYW" +
+      "dlIjogMCwgImZpcnN0X2lkIjogInVzcl85ODc2NS" +
+      "J9\"R\rprevPageToken\"\207\005\n\027DeleteMembershipR" +
+      "equest\022\247\001\n\017organization_id\030\001 \001(\tB~\222Al2RU" +
+      "nique organization identifier. Must star" +
+      "t with \'org_\' and be 1-32 characters lon" +
+      "gJ\026\"org_1234abcd5678efgh\"\272H\014r\n\020\001\030 :\004org_" +
+      "R\016organizationId\022\201\001\n\002id\030\002 \001(\tBo\222A]2CSyst" +
+      "em-generated user ID. Must start with \'u" +
+      "sr_\' (19-25 characters)J\026\"usr_1234abcd56" +
+      "78efgh\"\272H\014r\n\020\023\030\031:\004usr_H\000R\002id\022\223\001\n\013externa" +
+      "l_id\030\003 \001(\tBp\222Ac2RExternal system identif" +
+      "ier from connected directories. Must mat" +
+      "ch existing recordsJ\r\"ext_7890xyz\"\272H\007r\005\020" +
+      "\001\030\376\003H\000R\nexternalId\022\215\001\n\007cascade\030\005 \001(\010Bn\222A" +
+      "\\2SIf true, if user has no memberships l" +
+      "eft the user is also deleted. defaults t" +
+      "o trueJ\005false\372\322\344\223\002\t\022\007PREVIEWH\001R\007cascade\210" +
+      "\001\001B\014\n\nidentitiesB\n\n\010_cascade\"\307\006\n\027CreateM" +
+      "embershipRequest\022\267\001\n\017organization_id\030\001 \001" +
+      "(\tB\215\001\222A{2aUnique identifier of the targe" +
+      "t organization. Must start with \'org_\' a" +
+      "nd be 1-32 characters long.J\026\"org_1234ab" +
+      "cd5678efgh\"\272H\014r\n\020\001\030 :\004org_R\016organization" +
+      "Id\022\242\001\n\nmembership\030\002 \001(\0132#.scalekit.v1.us" +
+      "ers.CreateMembershipB]\222AQ2?Membership de" +
+      "tails to create. Required fields must be" +
+      " provided.\312>\r\372\002\nmembership\340A\002\272H\003\310\001\001R\nmem" +
+      "bership\022\201\001\n\002id\030\003 \001(\tBo\222A]2CSystem-genera" +
+      "ted user ID. Must start with \'usr_\' (19-" +
+      "25 characters)J\026\"usr_1234abcd5678efgh\"\272H" +
+      "\014r\n\020\023\030\031:\004usr_H\000R\002id\022\230\001\n\013external_id\030\004 \001(" +
+      "\tBu\222Ah2WExternal system identifier from " +
+      "connected directories. Must be unique ac" +
+      "ross the systemJ\r\"ext_7890xyz\"\272H\007r\005\020\001\030\376\003" +
+      "H\000R\nexternalId\022\205\001\n\025send_invitation_email" +
+      "\030\005 \001(\010BL\222AI2AIf true, sends an activatio" +
+      "n email to the user. Defaults to true.J\004" +
+      "trueH\001R\023sendInvitationEmail\210\001\001B\014\n\nidenti" +
+      "tiesB\030\n\026_send_invitation_email\"G\n\030Create" +
+      "MembershipResponse\022+\n\004user\030\001 \001(\0132\027.scale" +
+      "kit.v1.users.UserR\004user\"\232\002\n\020ListUsersReq" +
+      "uest\022t\n\tpage_size\030\001 \001(\rBW\222AT2NMaximum nu" +
+      "mber of organizations to return per page" +
+      ". Must be between 10 and 100J\00230R\010pageSi" +
+      "ze\022\217\001\n\npage_token\030\002 \001(\tBp\222Am2[Pagination" +
+      " token from the previous response. Use t" +
+      "o retrieve the next page of organization" +
+      "sJ\016\"<page_token>\"R\tpageToken\"\300\004\n\021ListUse" +
+      "rsResponse\022B\n\005users\030\001 \003(\0132\027.scalekit.v1." +
+      "users.UserB\023\222A\0202\016List of users.R\005users\022\263" +
+      "\001\n\017next_page_token\030\002 \001(\tB\212\001\222A\206\0012PToken f" +
+      "or retrieving the next page of results. " +
+      "Empty if there are no more pages.J2\"eyJw" +
+      "YWdlIjogMiwgImxhc3RfaWQiOiAidXNyXzEyMzQ1" +
+      "In0=\"R\rnextPageToken\022x\n\ntotal_size\030\003 \001(\r" +
+      "BY\222AV2NTotal number of users matching th" +
+      "e request criteria, regardless of pagina" +
+      "tion.J\0041042R\ttotalSize\022\266\001\n\017prev_page_tok" +
+      "en\030\004 \001(\tB\215\001\222A\211\0012SToken for retrieving th" +
+      "e previous page of results. Empty if thi" +
+      "s is the first page.J2\"eyJwYWdlIjogMCwgI" +
+      "mZpcnN0X2lkIjogInVzcl85ODc2NSJ9\"R\rprevPa" +
+      "geToken\"\373\003\n\022SearchUsersRequest\022\257\001\n\005query" +
+      "\030\001 \001(\tB\230\001\222A\210\0012oSearch term to match agai" +
+      "nst user email, IDs, or external IDs. Mu" +
+      "st be at least 3 characters. Case insens" +
+      "itive.J\020john@example.comxd\200\001\003\272H\tr\004\020\003\030d\310\001" +
+      "\001R\005query\022\212\001\n\tpage_size\030\002 \001(\rBm\222Ac2KMaxim" +
+      "um number of users to return per page. V" +
+      "alue must be between 1 and 30.J\00230Y\000\000\000\000\000" +
+      "\000>@i\000\000\000\000\000\000\360?\272H\004*\002\030\036R\010pageSize\022\245\001\n\npage_t" +
+      "oken\030\003 \001(\tB\205\001\222A\201\0012aToken from a previous" +
+      " response for pagination. Provide this t" +
+      "o retrieve the next page of results.J\034ey" +
+      "JwYWdlIjoyLCJsaW1pdCI6MzB9R\tpageToken\"\313\004" +
+      "\n\023SearchUsersResponse\022\263\001\n\017next_page_toke" +
+      "n\030\001 \001(\tB\212\001\222A\206\0012PToken for retrieving the" +
+      " next page of results. Empty if there ar" +
+      "e no more pages.J2\"eyJwYWdlIjogMiwgImxhc" +
+      "3RfaWQiOiAidXNyXzEyMzQ1In0=\"R\rnextPageTo" +
+      "ken\022x\n\ntotal_size\030\002 \001(\rBY\222AV2NTotal numb" +
+      "er of users matching the request criteri" +
+      "a, regardless of pagination.J\0041042R\ttota" +
+      "lSize\022K\n\005users\030\003 \003(\0132\027.scalekit.v1.users" +
+      ".UserB\034\222A\0312\027List of matching users.R\005use" +
+      "rs\022\266\001\n\017prev_page_token\030\004 \001(\tB\215\001\222A\211\0012STok" +
+      "en for retrieving the previous page of r" +
+      "esults. Empty if this is the first page." +
+      "J2\"eyJwYWdlIjogMCwgImZpcnN0X2lkIjogInVzc" +
+      "l85ODc2NSJ9\"R\rprevPageToken\"\273\002\n\021DeleteUs" +
+      "erRequest\022\201\001\n\002id\030\001 \001(\tBo\222A]2CSystem-gene" +
+      "rated user ID. Must start with \'usr_\' (1" +
+      "9-25 characters)J\026\"usr_1234abcd5678efgh\"" +
+      "\272H\014r\n\020\023\030\031:\004usr_H\000R\002id\022\223\001\n\013external_id\030\002 " +
+      "\001(\tBp\222Ac2RExternal system identifier fro" +
+      "m connected directories. Must match exis" +
+      "ting recordsJ\r\"ext_7890xyz\"\272H\007r\005\020\001\030\376\003H\000R" +
+      "\nexternalIdB\014\n\nidentities\"\244\005\n\027UpdateMemb" +
+      "ershipRequest\022\313\001\n\017organization_id\030\001 \001(\tB" +
+      "\241\001\222A\216\0012tUnique identifier of the organiz" +
+      "ation containing the membership. Must st" +
+      "art with \'org_\' and be 1-32 characters l" +
+      "ong.J\026\"org_1234abcd5678efgh\"\272H\014r\n\020\001\030 :\004o" +
+      "rg_R\016organizationId\022\214\001\n\002id\030\002 \001(\tBz\222Ah2NS" +
+      "ystem-generated user ID. Must start with" +
+      " \'usr_\' and be 19-25 characters long.J\026\"" +
+      "usr_1234abcd5678efgh\"\272H\014r\n\020\023\030\031:\004usr_H\000R\002" +
+      "id\022t\n\013external_id\030\003 \001(\tBQ\222AD23Your appli" +
+      "cation\'s unique identifier for this user" +
+      ".J\r\"ext_7890xyz\"\272H\007r\005\020\001\030\376\003H\000R\nexternalId" +
+      "\022\247\001\n\nmembership\030\005 \001(\0132#.scalekit.v1.user" +
+      "s.UpdateMembershipBb\222AY2DMembership fiel" +
+      "ds to update. Only specified fields will" +
+      " be modified.J\021{\"role\": \"admin\"}\272H\003\310\001\001R\n" +
+      "membershipB\014\n\nidentities\"\373\003\n\020UpdateMembe" +
+      "rship\022}\n\005roles\030\004 \003(\0132\031.scalekit.v1.commo" +
+      "ns.RoleBL\222AI22Role to assign to the user" +
+      " within the organizationJ\023[{\"name\": \"adm" +
+      "in\"}]R\005roles\022\214\002\n\010metadata\030\007 \003(\01321.scalek" +
+      "it.v1.users.UpdateMembership.MetadataEnt" +
+      "ryB\274\001\222A\237\0012dCustom key-value pairs for st" +
+      "oring additional user context. Keys (3-2" +
+      "5 chars), values (1-256 chars).J7{\"depar" +
+      "tment\": \"engineering\", \"location\": \"nyc-" +
+      "office\"}\272H\026\232\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metad" +
+      "ata\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024" +
+      "\n\005value\030\002 \001(\tR\005value:\0028\001J\004\010\001\020\002J\004\010\002\020\003J\004\010\003" +
+      "\020\004J\004\010\005\020\006J\004\010\006\020\007\"\264\005\n\020CreateMembership\022}\n\005r" +
+      "oles\030\004 \003(\0132\031.scalekit.v1.commons.RoleBL\222" +
+      "AI22Role to assign to the user within th" +
+      "e organizationJ\023[{\"name\": \"admin\"}]R\005rol" +
+      "es\022\214\002\n\010metadata\030\007 \003(\01321.scalekit.v1.user" +
+      "s.CreateMembership.MetadataEntryB\274\001\222A\237\0012" +
+      "dCustom key-value pairs for storing addi" +
+      "tional user context. Keys (3-25 chars), " +
+      "values (1-256 chars).J7{\"department\": \"e" +
+      "ngineering\", \"location\": \"nyc-office\"}\272H" +
+      "\026\232\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metadata\022\244\001\n\rin" +
+      "viter_email\030\010 \001(\tBz\222Ak2QEmail address of" +
+      " the user who invited this member. Must " +
+      "be a valid email address.J\026\"john.doe@exa" +
+      "mple.com\"\272H\tr\007\020\005\030\376\001`\001H\000R\014inviterEmail\210\001\001" +
+      "\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005v" +
+      "alue\030\002 \001(\tR\005value:\0028\001B\020\n\016_inviter_emailJ" +
+      "\004\010\001\020\002J\004\010\002\020\003J\004\010\003\020\004J\004\010\005\020\006J\004\010\006\020\007\"G\n\030UpdateM" +
+      "embershipResponse\022+\n\004user\030\001 \001(\0132\027.scalek" +
+      "it.v1.users.UserR\004user\"\317\005\n\036SearchOrganiz" +
+      "ationUsersRequest\022\305\001\n\017organization_id\030\001 " +
+      "\001(\tB\233\001\222A\205\0012kUnique identifier of the org" +
+      "anization to search within. Must start w" +
+      "ith \'org_\' and be 1-32 characters long.J" +
+      "\026\"org_1234abcd5678efgh\"\272H\017r\n\020\001\030 :\004org_\310\001" +
+      "\001R\016organizationId\022\257\001\n\005query\030\002 \001(\tB\230\001\222A\210\001" +
+      "2oSearch term to match against user emai" +
+      "l, IDs, or external IDs. Must be at leas" +
+      "t 3 characters. Case insensitive.J\020john@" +
+      "example.comxd\200\001\003\272H\tr\004\020\003\030d\310\001\001R\005query\022\212\001\n\t" +
+      "page_size\030\003 \001(\rBm\222Ac2KMaximum number of " +
+      "users to return per page. Value must be " +
+      "between 1 and 30.J\00230Y\000\000\000\000\000\000>@i\000\000\000\000\000\000\360?\272" +
+      "H\004*\002\030\036R\010pageSize\022\245\001\n\npage_token\030\004 \001(\tB\205\001" +
+      "\222A\201\0012aToken from a previous response for" +
+      " pagination. Provide this to retrieve th" +
+      "e next page of results.J\034eyJwYWdlIjoyLCJ" +
+      "saW1pdCI6MzB9R\tpageToken\"\327\004\n\037SearchOrgan" +
+      "izationUsersResponse\022\263\001\n\017next_page_token" +
+      "\030\001 \001(\tB\212\001\222A\206\0012PToken for retrieving the " +
+      "next page of results. Empty if there are" +
+      " no more pages.J2\"eyJwYWdlIjogMiwgImxhc3" +
+      "RfaWQiOiAidXNyXzEyMzQ1In0=\"R\rnextPageTok" +
+      "en\022x\n\ntotal_size\030\002 \001(\rBY\222AV2NTotal numbe" +
+      "r of users matching the request criteria" +
+      ", regardless of pagination.J\0041042R\ttotal" +
+      "Size\022K\n\005users\030\003 \003(\0132\027.scalekit.v1.users." +
+      "UserB\034\222A\0312\027List of matching users.R\005user" +
+      "s\022\266\001\n\017prev_page_token\030\004 \001(\tB\215\001\222A\211\0012SToke" +
+      "n for retrieving the previous page of re" +
+      "sults. Empty if this is the first page.J" +
+      "2\"eyJwYWdlIjogMCwgImZpcnN0X2lkIjogInVzcl" +
+      "85ODc2NSJ9\"R\rprevPageToken\"\205\010\n\nCreateUse" +
+      "r\022\230\001\n\005email\030\005 \001(\tB\201\001\222Aw2aPrimary email a" +
+      "ddress for the user. Must be unique acro" +
+      "ss the environment and valid per RFC 532" +
+      "2.J\022\"user@example.com\"\272H\004r\002`\001R\005email\022\242\001\n" +
+      "\013external_id\030\006 \001(\tB|\222Ay2cYour applicatio" +
+      "n\'s unique identifier for this organizat" +
+      "ion, used to link Scalekit with your sys" +
+      "tem.J\022\"ext_12345a67b89c\"H\000R\nexternalId\210\001" +
+      "\001\022\237\001\n\nmembership\030\007 \001(\0132#.scalekit.v1.use" +
+      "rs.CreateMembershipBZ\222AW2UList of organi" +
+      "zation memberships. Automatically popula" +
+      "ted based on group assignments.R\nmembers" +
+      "hip\022\240\001\n\014user_profile\030\010 \001(\0132$.scalekit.v1" +
+      ".users.CreateUserProfileBW\222AT2RUser\'s pe" +
+      "rsonal information including name, addre" +
+      "ss, and other profile attributes.R\013userP" +
+      "rofile\022\206\002\n\010metadata\030\t \003(\0132+.scalekit.v1." +
+      "users.CreateUser.MetadataEntryB\274\001\222A\237\0012dC" +
+      "ustom key-value pairs for storing additi" +
+      "onal user context. Keys (3-25 chars), va" +
+      "lues (1-256 chars).J7{\"department\": \"eng" +
+      "ineering\", \"location\": \"nyc-office\"}\272H\026\232" +
+      "\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metadata\032;\n\rMetad" +
+      "ataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(" +
+      "\tR\005value:\0028\001B\016\n\014_external_idJ\004\010\001\020\002J\004\010\002\020\003" +
+      "J\004\010\003\020\004J\004\010\004\020\005J\004\010\n\020\013\"\276\020\n\021CreateUserProfile" +
+      "\022^\n\ngiven_name\030\002 \001(\tB?\222A42*User\'s given " +
+      "name. Maximum 255 characters.J\006\"John\"\272H\005" +
+      "r\003\030\377\001R\tgivenName\022`\n\013family_name\030\003 \001(\tB?\222" +
+      "A42+User\'s family name. Maximum 255 char" +
+      "acters.J\005\"Doe\"\272H\005r\003\030\377\001R\nfamilyName\022v\n\004na" +
+      "me\030\004 \001(\tBb\222A_2IFull name in display form" +
+      "at. Typically combines first_name and la" +
+      "st_name.J\022\"John Michael Doe\"R\004name\022y\n\006lo" +
+      "cale\030\005 \001(\tBa\222A^2SUser\'s localization pre" +
+      "ference in BCP-47 format. Defaults to or" +
+      "ganization settings.J\007\"en-US\"R\006locale\022\212\001" +
+      "\n\014phone_number\030\007 \001(\tBg\222Ad2RPhone number " +
+      "in E.164 international format. Required " +
+      "for SMS-based authentication.J\016\"+1415555" +
+      "2671\"R\013phoneNumber\022\213\002\n\010metadata\030\010 \003(\01322." +
+      "scalekit.v1.users.CreateUserProfile.Meta" +
+      "dataEntryB\272\001\222A\235\0012^System-managed key-val" +
+      "ue pairs for internal tracking. Keys (3-" +
+      "25 chars), values (1-256 chars).J;{\"acco" +
+      "unt_status\": \"active\", \"signup_source\": " +
+      "\"mobile_app\"}\272H\026\232\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010" +
+      "metadata\022\242\002\n\021custom_attributes\030\t \003(\0132:.s" +
+      "calekit.v1.users.CreateUserProfile.Custo" +
+      "mAttributesEntryB\270\001\222A\233\0012ZCustom attribut" +
+      "es for extended user profile data. Keys " +
+      "(3-25 chars), values (1-256 chars).J={\"d" +
+      "epartment\": \"engineering\", \"security_cle" +
+      "arance\": \"level2\"}\272H\026\232\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001" +
+      "\030\200\002R\020customAttributes\022\177\n\022preferred_usern" +
+      "ame\030\n \001(\tBP\222AE2/User\'s preferred usernam" +
+      "e for display purposes.J\022\"John Michael D" +
+      "oe\"\272H\005r\003\030\200\004R\021preferredUsername\022z\n\007pictur" +
+      "e\030\013 \001(\tB[\222AP2,URL to the user\'s profile " +
+      "picture or avatar.J \"https://example.com" +
+      "/avatar.jpg\"\272H\005r\003\030\200\020H\000R\007picture\210\001\001\022A\n\006ge" +
+      "nder\030\014 \001(\tB$\222A!2\027User\'s gender identity." +
+      "J\006\"male\"H\001R\006gender\210\001\001\022\241\001\n\006groups\030\r \003(\tB\210" +
+      "\001\222Ap2QList of group names the user belon" +
+      "gs to. Each group name must be 1-250 cha" +
+      "ractersJ\033[\"engineering\", \"managers\"]\272H\022\222" +
+      "\001\017\010\000\0202\030\001\"\007r\005\020\001\030\372\001R\006groups\022\224\001\n\nfirst_name" +
+      "\030\025 \001(\tBu\030\001\222AY2O[DEPRECATED] Use given_na" +
+      "me instead. User\'s given name. Maximum 2" +
+      "00 characters.J\006\"John\"\272H\005r\003\030\310\001\372\322\344\223\002\t\022\007PR" +
+      "EVIEWR\tfirstName\022\223\001\n\tlast_name\030\026 \001(\tBv\030\001" +
+      "\222AZ2Q[DEPRECATED] Use family_name instea" +
+      "d. User\'s family name. Maximum 200 chara" +
+      "cters.J\005\"Doe\"\272H\005r\003\030\310\001\372\322\344\223\002\t\022\007PREVIEWR\010la" +
+      "stName\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003ke" +
+      "y\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032C\n\025CustomAtt",
+      "ributesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030" +
+      "\002 \001(\tR\005value:\0028\001B\n\n\010_pictureB\t\n\007_genderJ" +
+      "\004\010\001\020\002J\004\010\006\020\007\"\345(\n\021UpdateUserProfile\022\345\001\n\ngi" +
+      "ven_name\030\002 \001(\tB\300\001\222A\264\0012\251\001Updates the user" +
+      "\'s given name (first name). Use this fie" +
+      "ld to modify how the user\'s first name a" +
+      "ppears in the system and user interfaces" +
+      ". Maximum 255 characters allowed.J\006\"John" +
+      "\"\272H\005r\003\030\377\001H\000R\tgivenName\210\001\001\022\344\001\n\013family_nam" +
+      "e\030\003 \001(\tB\275\001\222A\261\0012\247\001Updates the user\'s fami" +
+      "ly name (last name or surname). Use this" +
+      " field to modify how the user\'s last nam" +
+      "e appears throughout the system. Maximum" +
+      " 255 characters allowed.J\005\"Doe\"\272H\005r\003\030\377\001H" +
+      "\001R\nfamilyName\210\001\001\022\256\002\n\004name\030\004 \001(\tB\224\002\222A\220\0022\201" +
+      "\002Updates the user\'s complete display nam" +
+      "e. Use this field when you want to set t" +
+      "he full name as a single string rather t" +
+      "han using separate given and family name" +
+      "s. This name appears in user interfaces," +
+      " reports, and anywhere a formatted displ" +
+      "ay name is needed.J\n\"John Doe\"H\002R\004name\210\001" +
+      "\001\022\227\003\n\006locale\030\005 \001(\tB\371\002\222A\365\0022\351\002Updates the " +
+      "user\'s preferred language and region set" +
+      "tings using BCP-47 format codes. Use thi" +
+      "s field to customize the user\'s experien" +
+      "ce with localized content, date formats," +
+      " number formatting, and UI language. Whe" +
+      "n not specified, the user inherits the o" +
+      "rganization\'s default locale settings. C" +
+      "ommon values include `en-US`, `en-GB`, `" +
+      "fr-FR`, `de-DE`, and `es-ES`.J\007\"en-US\"H\003" +
+      "R\006locale\210\001\001\022\261\003\n\014phone_number\030\007 \001(\tB\210\003\222A\204" +
+      "\0032\361\002Updates the user\'s phone number in E" +
+      ".164 international format. Use this fiel" +
+      "d to enable SMS-based authentication met" +
+      "hods, two-factor authentication, or phon" +
+      "e-based account recovery. The phone numb" +
+      "er must include the country code and be " +
+      "formatted according to E.164 standards (" +
+      "e.g., `+1` for US numbers). This field i" +
+      "s required when enabling SMS authenticat" +
+      "ion features.J\016\"+14155552671\"H\004R\013phoneNu" +
+      "mber\210\001\001\022\321\004\n\010metadata\030\010 \003(\01322.scalekit.v1" +
+      ".users.UpdateUserProfile.MetadataEntryB\200" +
+      "\004\222A\343\0032\243\003Updates system-managed key-value" +
+      " pairs for internal tracking and operati" +
+      "onal data. Use this field to store syste" +
+      "m-generated metadata like account status" +
+      ", signup source, last activity tracking," +
+      " or integration-specific identifiers. Th" +
+      "ese fields are typically managed by auto" +
+      "mated processes rather than direct user " +
+      "input. Keys must be 3-25 characters, val" +
+      "ues must be 1-256 characters, with a max" +
+      "imum of 20 key-value pairs.J;{\"account_s" +
       "tatus\": \"active\", \"signup_source\": \"mobi" +
       "le_app\"}\272H\026\232\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metad" +
-      "ata\022\242\002\n\021custom_attributes\030\t \003(\0132:.scalek" +
-      "it.v1.users.CreateUserProfile.CustomAttr" +
-      "ibutesEntryB\270\001\222A\233\0012ZCustom attributes fo" +
-      "r extended user profile data. Keys (3-25" +
-      " chars), values (1-256 chars).J={\"depart" +
-      "ment\": \"engineering\", \"security_clearanc" +
-      "e\": \"level2\"}\272H\026\232\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\020" +
-      "customAttributes\022\177\n\022preferred_username\030\n" +
-      " \001(\tBP\222AE2/User\'s preferred username for" +
-      " display purposes.J\022\"John Michael Doe\"\272H" +
-      "\005r\003\030\200\004R\021preferredUsername\022z\n\007picture\030\013 \001" +
-      "(\tB[\222AP2,URL to the user\'s profile pictu" +
-      "re or avatar.J \"https://example.com/avat" +
-      "ar.jpg\"\272H\005r\003\030\200\020H\000R\007picture\210\001\001\022A\n\006gender\030" +
-      "\014 \001(\tB$\222A!2\027User\'s gender identity.J\006\"ma" +
-      "le\"H\001R\006gender\210\001\001\022\241\001\n\006groups\030\r \003(\tB\210\001\222Ap2" +
-      "QList of group names the user belongs to" +
-      ". Each group name must be 1-250 characte" +
-      "rsJ\033[\"engineering\", \"managers\"]\272H\022\222\001\017\010\000\020" +
-      "2\030\001\"\007r\005\020\001\030\372\001R\006groups\022\224\001\n\nfirst_name\030\025 \001(" +
-      "\tBu\030\001\222AY2O[DEPRECATED] Use given_name in" +
-      "stead. User\'s given name. Maximum 200 ch" +
-      "aracters.J\006\"John\"\272H\005r\003\030\310\001\372\322\344\223\002\t\022\007PREVIEW" +
-      "R\tfirstName\022\223\001\n\tlast_name\030\026 \001(\tBv\030\001\222AZ2Q" +
-      "[DEPRECATED] Use family_name instead. Us" +
-      "er\'s family name. Maximum 200 characters" +
-      ".J\005\"Doe\"\272H\005r\003\030\310\001\372\322\344\223\002\t\022\007PREVIEWR\010lastNam" +
-      "e\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005" +
-      "value\030\002 \001(\tR\005value:\0028\001\032C\n\025CustomAttribut" +
-      "esEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t" +
-      "R\005value:\0028\001B\n\n\010_pictureB\t\n\007_genderJ\004\010\001\020\002",
-      "J\004\010\006\020\007\"\345(\n\021UpdateUserProfile\022\345\001\n\ngiven_n" +
-      "ame\030\002 \001(\tB\300\001\222A\264\0012\251\001Updates the user\'s gi" +
-      "ven name (first name). Use this field to" +
-      " modify how the user\'s first name appear" +
-      "s in the system and user interfaces. Max" +
-      "imum 255 characters allowed.J\006\"John\"\272H\005r" +
-      "\003\030\377\001H\000R\tgivenName\210\001\001\022\344\001\n\013family_name\030\003 \001" +
-      "(\tB\275\001\222A\261\0012\247\001Updates the user\'s family na" +
-      "me (last name or surname). Use this fiel" +
-      "d to modify how the user\'s last name app" +
-      "ears throughout the system. Maximum 255 " +
-      "characters allowed.J\005\"Doe\"\272H\005r\003\030\377\001H\001R\nfa" +
-      "milyName\210\001\001\022\256\002\n\004name\030\004 \001(\tB\224\002\222A\220\0022\201\002Upda" +
-      "tes the user\'s complete display name. Us" +
-      "e this field when you want to set the fu" +
-      "ll name as a single string rather than u" +
-      "sing separate given and family names. Th" +
-      "is name appears in user interfaces, repo" +
-      "rts, and anywhere a formatted display na" +
-      "me is needed.J\n\"John Doe\"H\002R\004name\210\001\001\022\227\003\n" +
-      "\006locale\030\005 \001(\tB\371\002\222A\365\0022\351\002Updates the user\'" +
-      "s preferred language and region settings" +
-      " using BCP-47 format codes. Use this fie" +
-      "ld to customize the user\'s experience wi" +
-      "th localized content, date formats, numb" +
-      "er formatting, and UI language. When not" +
-      " specified, the user inherits the organi" +
-      "zation\'s default locale settings. Common" +
-      " values include `en-US`, `en-GB`, `fr-FR" +
-      "`, `de-DE`, and `es-ES`.J\007\"en-US\"H\003R\006loc" +
-      "ale\210\001\001\022\261\003\n\014phone_number\030\007 \001(\tB\210\003\222A\204\0032\361\002U" +
-      "pdates the user\'s phone number in E.164 " +
-      "international format. Use this field to " +
-      "enable SMS-based authentication methods," +
-      " two-factor authentication, or phone-bas" +
-      "ed account recovery. The phone number mu" +
-      "st include the country code and be forma" +
-      "tted according to E.164 standards (e.g.," +
-      " `+1` for US numbers). This field is req" +
-      "uired when enabling SMS authentication f" +
-      "eatures.J\016\"+14155552671\"H\004R\013phoneNumber\210" +
-      "\001\001\022\321\004\n\010metadata\030\010 \003(\01322.scalekit.v1.user" +
-      "s.UpdateUserProfile.MetadataEntryB\200\004\222A\343\003" +
-      "2\243\003Updates system-managed key-value pair" +
-      "s for internal tracking and operational " +
-      "data. Use this field to store system-gen" +
-      "erated metadata like account status, sig" +
-      "nup source, last activity tracking, or i" +
-      "ntegration-specific identifiers. These f" +
-      "ields are typically managed by automated" +
-      " processes rather than direct user input" +
-      ". Keys must be 3-25 characters, values m" +
-      "ust be 1-256 characters, with a maximum " +
-      "of 20 key-value pairs.J;{\"account_status" +
-      "\": \"active\", \"signup_source\": \"mobile_ap" +
-      "p\"}\272H\026\232\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metadata\022\307" +
-      "\005\n\021custom_attributes\030\t \003(\0132:.scalekit.v1" +
-      ".users.UpdateUserProfile.CustomAttribute" +
-      "sEntryB\335\004\222A\300\0042\376\003Updates custom attribute" +
-      "s for extended user profile data and app" +
-      "lication-specific information. Use this " +
-      "field to store business-specific user da" +
-      "ta like department, job title, security " +
-      "clearances, project assignments, or any " +
-      "other organizational attributes your app" +
-      "lication requires. Unlike system metadat" +
-      "a, these attributes are typically manage" +
-      "d by administrators or applications and " +
-      "are visible to end users. Keys must be 3" +
-      "-25 characters, values must be 1-256 cha" +
-      "racters, with a maximum of 20 key-value " +
-      "pairs.J={\"department\": \"engineering\", \"s" +
-      "ecurity_clearance\": \"level2\"}\272H\026\232\001\023\020\024\"\006r" +
-      "\004\020\003\030\031*\007r\005\020\001\030\200\002R\020customAttributes\022\212\001\n\nfir" +
-      "st_name\030\025 \001(\tBf\030\001\222AY2O[DEPRECATED] Use g" +
-      "iven_name instead. User\'s given name. Ma" +
-      "ximum 200 characters.J\006\"John\"\272H\005r\003\030\310\001H\005R" +
-      "\tfirstName\210\001\001\022\211\001\n\tlast_name\030\026 \001(\tBg\030\001\222AZ" +
-      "2Q[DEPRECATED] Use family_name instead. " +
-      "User\'s family name. Maximum 200 characte" +
-      "rs.J\005\"Doe\"\272H\005r\003\030\310\001H\006R\010lastName\210\001\001\022\227\003\n\022pr" +
-      "eferred_username\030\n \001(\tB\342\002\222A\326\0022\277\002Updates " +
-      "the user\'s preferred username for displa" +
-      "y and identification purposes. Use this " +
-      "field to set a custom username that the " +
-      "user prefers to be known by, which may d" +
-      "iffer from their email or formal name. T" +
-      "his username appears in user interfaces," +
-      " mentions, and informal communications. " +
-      "Maximum 512 characters allowed.J\022\"John M" +
-      "ichael Doe\"\272H\005r\003\030\200\004H\007R\021preferredUsername" +
-      "\210\001\001\022\262\003\n\007picture\030\013 \001(\tB\222\003\222A\206\0032\341\002Updates t" +
-      "he URL to the user\'s profile picture or " +
-      "avatar image. Use this field to set or c" +
-      "hange the user\'s profile photo that appe" +
-      "ars in user interfaces, directory listin" +
-      "gs, and collaborative features. The URL " +
-      "should point to a publicly accessible im" +
-      "age file. Supported formats typically in" +
-      "clude JPEG, PNG, and GIF. Maximum URL le" +
-      "ngth is 2048 characters.J \"https://examp" +
-      "le.com/avatar.jpg\"\272H\005r\003\030\200\020H\010R\007picture\210\001\001" +
-      "\022\376\002\n\006gender\030\014 \001(\tB\340\002\222A\334\0022\321\002Updates the u" +
-      "ser\'s gender identity information. Use t" +
-      "his field to store the user\'s gender ide" +
-      "ntity for personalization, compliance, o" +
-      "r reporting purposes. This field support" +
-      "s any string value to accommodate divers" +
-      "e gender identities and should be handle" +
-      "d with appropriate privacy consideration" +
-      "s according to your organization\'s polic" +
-      "ies.J\006\"male\"H\tR\006gender\210\001\001\022\335\003\n\006groups\030\r \003" +
-      "(\tB\304\003\222A\253\0032\213\003Updates the list of group na" +
-      "mes the user belongs to within the organ" +
-      "ization. Use this field to manage the us" +
-      "er\'s group memberships for role-based ac" +
-      "cess control, team assignments, or organ" +
-      "izational structure. Groups are typicall" +
-      "y used for permission management and col" +
-      "laborative access. Each group name must " +
-      "be unique within the list, 1-250 charact" +
-      "ers long, with a maximum of 50 groups pe" +
-      "r user.J\033[\"engineering\", \"managers\"]\272H\022\222" +
-      "\001\017\010\000\0202\030\001\"\007r\005\020\001\030\372\001R\006groups\032;\n\rMetadataEnt" +
-      "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val" +
-      "ue:\0028\001\032C\n\025CustomAttributesEntry\022\020\n\003key\030\001" +
-      " \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\r\n\013_" +
-      "given_nameB\016\n\014_family_nameB\007\n\005_nameB\t\n\007_" +
-      "localeB\017\n\r_phone_numberB\r\n\013_first_nameB\014" +
-      "\n\n_last_nameB\025\n\023_preferred_usernameB\n\n\010_" +
-      "pictureB\t\n\007_genderJ\004\010\001\020\002J\004\010\006\020\007\"\371\007\n\006Invit" +
-      "e\022l\n\017organization_id\030\001 \001(\tBC\222A@2-The org" +
-      "anization to which the invite belongs.J\017" +
-      "\"org_987654321\"R\016organizationId\022\177\n\007user_" +
-      "id\030\002 \001(\tBf\222Ac2SUser ID to whom the invit" +
-      "e is sent. May be empty if the user has " +
-      "not signed up yet.J\014\"usr_123456\"R\006userId" +
-      "\022\177\n\rinviter_email\030\003 \001(\tBU\222AR2;Identifier" +
-      " of the user or system that initiated th" +
-      "e invite.J\023\"admin@example.com\"H\000R\014invite" +
-      "rEmail\210\001\001\022x\n\006status\030\004 \001(\tB`\222A]2ICurrent " +
-      "status of the invite (e.g., pending, acc" +
-      "epted, expired, revoked).J\020\"pending_invi" +
-      "te\"R\006status\022\211\001\n\ncreated_at\030\005 \001(\0132\032.googl" +
-      "e.protobuf.TimestampBN\222AK21Timestamp whe" +
-      "n the invite was originally created.J\026\"2" +
-      "025-07-10T08:00:00Z\"R\tcreatedAt\022}\n\nexpir" +
-      "es_at\030\006 \001(\0132\032.google.protobuf.TimestampB" +
-      "B\222A?2%The time at which the invite expir" +
-      "es.J\026\"2025-12-31T23:59:59Z\"R\texpiresAt\022\217" +
-      "\001\n\tresent_at\030\007 \001(\0132\032.google.protobuf.Tim" +
-      "estampBV\222AS29Timestamp when the invite w" +
-      "as last resent, if applicable.J\026\"2025-07" +
-      "-15T09:30:00Z\"R\010resentAt\022V\n\014resent_count" +
-      "\030\010 \001(\005B3\222A02+Number of times the invite " +
-      "has been resent.J\0012R\013resentCountB\020\n\016_inv" +
-      "iter_email\"\243\003\n\023ResendInviteRequest\022\323\001\n\017o" +
-      "rganization_id\030\001 \001(\tB\251\001\222A\226\0012|Unique iden" +
-      "tifier of the organization containing th" +
-      "e pending invitation. Must start with \'o" +
-      "rg_\' and be 1-32 characters long.J\026\"org_" +
-      "1234abcd5678efgh\"\272H\014r\n\020\001\030 :\004org_R\016organi" +
-      "zationId\022\265\001\n\002id\030\002 \001(\tB\244\001\222A\221\0012wSystem-gen" +
-      "erated user ID of the user who has a pen" +
-      "ding invitation. Must start with \'usr_\' " +
-      "and be 19-25 characters long.J\026\"usr_1234" +
-      "abcd5678efgh\"\272H\014r\n\020\023\030\031:\004usr_R\002id\"\341\002\n\024Res" +
-      "endInviteResponse\022\310\002\n\006invite\030\001 \001(\0132\031.sca" +
-      "lekit.v1.users.InviteB\224\002\222A\220\0022\201\001Updated i" +
-      "nvitation object containing the resent i" +
-      "nvitation details, including new expirat" +
-      "ion time and incremented resend counter." +
-      "J\211\001{\"organization_id\": \"org_123\", \"user_" +
-      "id\": \"usr_456\", \"status\": \"pending_invit" +
-      "e\", \"expires_at\": \"2025-12-31T23:59:59Z\"" +
-      ", \"resent_count\": 2}R\006invite\"\360\001\n\024ListUse" +
-      "rRolesRequest\022w\n\017organization_id\030\001 \001(\tBN" +
-      "\222A@2&Unique identifier for the organizat" +
-      "ionJ\026\"org_1234abcd5678efgh\"\272H\010r\006:\004org_R\016" +
-      "organizationId\022_\n\007user_id\030\002 \001(\tBF\222A82\036Un" +
-      "ique identifier for the userJ\026\"usr_1234a" +
-      "bcd5678efgh\"\272H\010r\006:\004usr_R\006userId\"q\n\025ListU" +
-      "serRolesResponse\022X\n\005roles\030\001 \003(\0132\031.scalek" +
-      "it.v1.commons.RoleB\'\222A$2\"List of roles a" +
-      "ssigned to the userR\005roles\"\336\002\n\026AssignUse" +
-      "rRolesRequest\022w\n\017organization_id\030\001 \001(\tBN" +
-      "\222A@2&Unique identifier for the organizat" +
-      "ionJ\026\"org_1234abcd5678efgh\"\272H\010r\006:\004org_R\016" +
-      "organizationId\022_\n\007user_id\030\002 \001(\tBF\222A82\036Un" +
-      "ique identifier for the userJ\026\"usr_1234a" +
-      "bcd5678efgh\"\272H\010r\006:\004usr_R\006userId\022j\n\005roles" +
-      "\030\003 \003(\0132$.scalekit.v1.users.AssignRoleReq" +
-      "uestB.\222A%2#List of roles to assign to th" +
-      "e user\272H\003\310\001\001R\005roles\"\262\001\n\021AssignRoleReques" +
-      "t\022N\n\002id\030\001 \001(\tB>\030\001\222A92\036Unique identifier " +
-      "for the roleJ\027\"role_1234abcd5678efgh\"R\002i" +
-      "d\022M\n\trole_name\030\002 \001(\tB0\222A$2\030Unique name f" +
-      "or the roleJ\010\"viewer\"\272H\006r\004\020\000\030dR\010roleName" +
-      "\"\201\001\n\027AssignUserRolesResponse\022f\n\005roles\030\001 " +
-      "\003(\0132\031.scalekit.v1.commons.RoleB5\222A220Lis" +
-      "t of all roles currently assigned to the" +
-      " userR\005roles\"\326\002\n\025RemoveUserRoleRequest\022w" +
-      "\n\017organization_id\030\001 \001(\tBN\222A@2&Unique ide" +
-      "ntifier for the organizationJ\026\"org_1234a" +
-      "bcd5678efgh\"\272H\010r\006:\004org_R\016organizationId\022" +
-      "_\n\007user_id\030\002 \001(\tBF\222A82\036Unique identifier" +
-      " for the userJ\026\"usr_1234abcd5678efgh\"\272H\010" +
-      "r\006:\004usr_R\006userId\022c\n\trole_name\030\003 \001(\tBF\222AC" +
-      "2(Unique identifier for the role to remo" +
-      "veJ\027\"role_1234abcd5678efgh\"R\010roleName\"\366\001" +
-      "\n\032ListUserPermissionsRequest\022w\n\017organiza" +
-      "tion_id\030\001 \001(\tBN\222A@2&Unique identifier fo" +
-      "r the organizationJ\026\"org_1234abcd5678efg" +
-      "h\"\272H\010r\006:\004org_R\016organizationId\022_\n\007user_id" +
-      "\030\002 \001(\tBF\222A82\036Unique identifier for the u" +
-      "serJ\026\"usr_1234abcd5678efgh\"\272H\010r\006:\004usr_R\006" +
-      "userId\"\227\003\n\nPermission\022U\n\002id\030\001 \001(\tBE\222A?2$" +
-      "Unique identifier for the permissionJ\027\"p" +
-      "erm_1234abcd5678efgh\"\340A\003R\002id\022R\n\004name\030\002 \001" +
-      "(\tB>\222A;2)Unique name identifier for the " +
-      "permissionJ\016\"users:create\"R\004name\022u\n\013desc" +
-      "ription\030\003 \001(\tBS\222AP2)Description of what " +
-      "the permission allowsJ#\"Allows creating " +
-      "new user accounts\"R\013description\022g\n\004tags\030" +
-      "\004 \003(\tBS\222AA2!Tags for categorizing permis" +
-      "sionsJ\034[\"user-management\", \"admin\"]\372\322\344\223\002" +
-      "\t\022\007PREVIEWR\004tags\";\n\026GetSupportHashRespon" +
-      "se\022!\n\014support_hash\030\001 \001(\tR\013supportHash\"\217\001" +
-      "\n\033ListUserPermissionsResponse\022p\n\013permiss" +
-      "ions\030\001 \003(\0132\035.scalekit.v1.users.Permissio" +
-      "nB/\222A,2*List of permissions the user has" +
-      " access toR\013permissions2\236b\n\013UserService\022" +
-      "\270\003\n\007GetUser\022!.scalekit.v1.users.GetUserR" +
-      "equest\032\".scalekit.v1.users.GetUserRespon" +
-      "se\"\345\002\222A\301\002\n\005Users\022\010Get user\032\216\001Retrieves a" +
-      "ll details for a user by system-generate" +
-      "d user ID or external ID. The response i" +
-      "ncludes organization memberships and use" +
-      "r metadata.J\234\001\n\003200\022\224\001\njUser details ret" +
-      "rieved successfully. Returns full user o" +
-      "bject with system-generated fields and t" +
-      "imestamps.\022&\n$\032\".scalekit.v1.users.GetUs" +
-      "erResponse\202\265\030\002\030T\202\323\344\223\002\024\022\022/api/v1/users/{i" +
-      "d}\022\325\003\n\016GetCurrentUser\022(.scalekit.v1.user" +
-      "s.GetCurrentUserRequest\032).scalekit.v1.us" +
-      "ers.GetCurrentUserResponse\"\355\002\222A\246\002\n\005Users" +
-      "\022\026Get authenticated user\032\236\001Retrieves det" +
-      "ails for the currently authenticated use" +
-      "r. Returns the same user object as GetUs" +
-      "er but uses the authenticated user\'s ID " +
-      "from the session context.Jd\n\003200\022]\n,Curr" +
-      "ent user details retrieved successfully." +
-      "\022-\n+\032).scalekit.v1.users.GetCurrentUserR" +
-      "esponse\202\265\030\002\030\030\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002(\022\022/api" +
-      "/v1/users:thisZ\022\022\020/api/v1/users/me\022\360\002\n\016G" +
-      "etSupportHash\022\026.google.protobuf.Empty\032)." +
-      "scalekit.v1.users.GetSupportHashResponse" +
-      "\"\232\002\222A\337\001\n\005Users\022\020Get support hash\032fRetrie" +
-      "ves the support email hash for the curre" +
-      "nt logged in user, used for the Scalekit" +
-      " support system.J\\\n\003200\022U\n$Support hash " +
-      "retrieved successfully.\022-\n+\032).scalekit.v" +
-      "1.users.GetSupportHashResponse\202\265\030\002\030P\372\322\344\223" +
-      "\002\t\022\007PREVIEW\202\323\344\223\002\034\022\032/api/v1/users/support" +
-      "-hash\022\240\004\n\tListUsers\022#.scalekit.v1.users." +
-      "ListUsersRequest\032$.scalekit.v1.users.Lis" +
-      "tUsersResponse\"\307\003\222A\250\003\n\005Users\022\035List all u" +
-      "sers in environment\032\274\002Retrieves a pagina" +
-      "ted list of all users across your entire" +
-      " environment. Use this endpoint to view " +
-      "all users regardless of their organizati" +
-      "on memberships. This is useful for admin" +
-      "istrative purposes, user audits, or when" +
-      " you need to see all users in your Scale" +
-      "kit environment. Supports pagination for" +
-      " large user bases.JA\n\003200\022:\n\016List of use" +
-      "rs.\022(\n&\032$.scalekit.v1.users.ListUsersRes" +
-      "ponse\202\265\030\002\030D\202\323\344\223\002\017\022\r/api/v1/users\022\270\005\n\013Sea" +
-      "rchUsers\022%.scalekit.v1.users.SearchUsers" +
-      "Request\032&.scalekit.v1.users.SearchUsersR" +
-      "esponse\"\331\004\222A\263\004\n\005Users\022\014Search users\032\257\002Se" +
-      "arches for users across the entire envir" +
-      "onment by email address, user ID, or ext" +
-      "ernal ID. The query must be at least 3 c" +
-      "haracters and is case-insensitive. Retur" +
-      "ns a paginated list of matching users wi" +
-      "th up to 30 results per page. Use the ne" +
-      "xt_page_token from the response to retri" +
-      "eve subsequent pages.J\214\001\n\003200\022\204\001\nVMatchi" +
-      "ng users returned; includes pagination c" +
-      "ursors for navigating large result sets." +
-      "\022*\n(\032&.scalekit.v1.users.SearchUsersResp" +
-      "onseJ[\n\003400\022T\nRBad Request - query must " +
-      "be at least 3 characters and no more tha" +
-      "n 100 characters.\202\265\030\002\030D\202\323\344\223\002\026\022\024/api/v1/u" +
-      "sers:search\022\320\007\n\027SearchOrganizationUsers\022" +
-      "1.scalekit.v1.users.SearchOrganizationUs" +
-      "ersRequest\0322.scalekit.v1.users.SearchOrg" +
-      "anizationUsersResponse\"\315\006\222A\207\006\n\005Users\022\031Se" +
-      "arch organization users\032\343\002Searches for u" +
-      "sers within a specific organization by e" +
+      "ata\022\307\005\n\021custom_attributes\030\t \003(\0132:.scalek" +
+      "it.v1.users.UpdateUserProfile.CustomAttr" +
+      "ibutesEntryB\335\004\222A\300\0042\376\003Updates custom attr" +
+      "ibutes for extended user profile data an" +
+      "d application-specific information. Use " +
+      "this field to store business-specific us" +
+      "er data like department, job title, secu" +
+      "rity clearances, project assignments, or" +
+      " any other organizational attributes you" +
+      "r application requires. Unlike system me" +
+      "tadata, these attributes are typically m" +
+      "anaged by administrators or applications" +
+      " and are visible to end users. Keys must" +
+      " be 3-25 characters, values must be 1-25" +
+      "6 characters, with a maximum of 20 key-v" +
+      "alue pairs.J={\"department\": \"engineering" +
+      "\", \"security_clearance\": \"level2\"}\272H\026\232\001\023" +
+      "\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\020customAttributes\022\212\001" +
+      "\n\nfirst_name\030\025 \001(\tBf\030\001\222AY2O[DEPRECATED] " +
+      "Use given_name instead. User\'s given nam" +
+      "e. Maximum 200 characters.J\006\"John\"\272H\005r\003\030" +
+      "\310\001H\005R\tfirstName\210\001\001\022\211\001\n\tlast_name\030\026 \001(\tBg" +
+      "\030\001\222AZ2Q[DEPRECATED] Use family_name inst" +
+      "ead. User\'s family name. Maximum 200 cha" +
+      "racters.J\005\"Doe\"\272H\005r\003\030\310\001H\006R\010lastName\210\001\001\022\227" +
+      "\003\n\022preferred_username\030\n \001(\tB\342\002\222A\326\0022\277\002Upd" +
+      "ates the user\'s preferred username for d" +
+      "isplay and identification purposes. Use " +
+      "this field to set a custom username that" +
+      " the user prefers to be known by, which " +
+      "may differ from their email or formal na" +
+      "me. This username appears in user interf" +
+      "aces, mentions, and informal communicati" +
+      "ons. Maximum 512 characters allowed.J\022\"J" +
+      "ohn Michael Doe\"\272H\005r\003\030\200\004H\007R\021preferredUse" +
+      "rname\210\001\001\022\262\003\n\007picture\030\013 \001(\tB\222\003\222A\206\0032\341\002Upda" +
+      "tes the URL to the user\'s profile pictur" +
+      "e or avatar image. Use this field to set" +
+      " or change the user\'s profile photo that" +
+      " appears in user interfaces, directory l" +
+      "istings, and collaborative features. The" +
+      " URL should point to a publicly accessib" +
+      "le image file. Supported formats typical" +
+      "ly include JPEG, PNG, and GIF. Maximum U" +
+      "RL length is 2048 characters.J \"https://" +
+      "example.com/avatar.jpg\"\272H\005r\003\030\200\020H\010R\007pictu" +
+      "re\210\001\001\022\376\002\n\006gender\030\014 \001(\tB\340\002\222A\334\0022\321\002Updates " +
+      "the user\'s gender identity information. " +
+      "Use this field to store the user\'s gende" +
+      "r identity for personalization, complian" +
+      "ce, or reporting purposes. This field su" +
+      "pports any string value to accommodate d" +
+      "iverse gender identities and should be h" +
+      "andled with appropriate privacy consider" +
+      "ations according to your organization\'s " +
+      "policies.J\006\"male\"H\tR\006gender\210\001\001\022\335\003\n\006group" +
+      "s\030\r \003(\tB\304\003\222A\253\0032\213\003Updates the list of gro" +
+      "up names the user belongs to within the " +
+      "organization. Use this field to manage t" +
+      "he user\'s group memberships for role-bas" +
+      "ed access control, team assignments, or " +
+      "organizational structure. Groups are typ" +
+      "ically used for permission management an" +
+      "d collaborative access. Each group name " +
+      "must be unique within the list, 1-250 ch" +
+      "aracters long, with a maximum of 50 grou" +
+      "ps per user.J\033[\"engineering\", \"managers\"" +
+      "]\272H\022\222\001\017\010\000\0202\030\001\"\007r\005\020\001\030\372\001R\006groups\032;\n\rMetada" +
+      "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t" +
+      "R\005value:\0028\001\032C\n\025CustomAttributesEntry\022\020\n\003" +
+      "key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001" +
+      "B\r\n\013_given_nameB\016\n\014_family_nameB\007\n\005_name" +
+      "B\t\n\007_localeB\017\n\r_phone_numberB\r\n\013_first_n" +
+      "ameB\014\n\n_last_nameB\025\n\023_preferred_username" +
+      "B\n\n\010_pictureB\t\n\007_genderJ\004\010\001\020\002J\004\010\006\020\007\"\371\007\n\006" +
+      "Invite\022l\n\017organization_id\030\001 \001(\tBC\222A@2-Th" +
+      "e organization to which the invite belon" +
+      "gs.J\017\"org_987654321\"R\016organizationId\022\177\n\007" +
+      "user_id\030\002 \001(\tBf\222Ac2SUser ID to whom the " +
+      "invite is sent. May be empty if the user" +
+      " has not signed up yet.J\014\"usr_123456\"R\006u" +
+      "serId\022\177\n\rinviter_email\030\003 \001(\tBU\222AR2;Ident" +
+      "ifier of the user or system that initiat" +
+      "ed the invite.J\023\"admin@example.com\"H\000R\014i" +
+      "nviterEmail\210\001\001\022x\n\006status\030\004 \001(\tB`\222A]2ICur" +
+      "rent status of the invite (e.g., pending" +
+      ", accepted, expired, revoked).J\020\"pending" +
+      "_invite\"R\006status\022\211\001\n\ncreated_at\030\005 \001(\0132\032." +
+      "google.protobuf.TimestampBN\222AK21Timestam" +
+      "p when the invite was originally created" +
+      ".J\026\"2025-07-10T08:00:00Z\"R\tcreatedAt\022}\n\n" +
+      "expires_at\030\006 \001(\0132\032.google.protobuf.Times" +
+      "tampBB\222A?2%The time at which the invite " +
+      "expires.J\026\"2025-12-31T23:59:59Z\"R\texpire" +
+      "sAt\022\217\001\n\tresent_at\030\007 \001(\0132\032.google.protobu" +
+      "f.TimestampBV\222AS29Timestamp when the inv" +
+      "ite was last resent, if applicable.J\026\"20" +
+      "25-07-15T09:30:00Z\"R\010resentAt\022V\n\014resent_" +
+      "count\030\010 \001(\005B3\222A02+Number of times the in" +
+      "vite has been resent.J\0012R\013resentCountB\020\n" +
+      "\016_inviter_email\"\243\003\n\023ResendInviteRequest\022" +
+      "\323\001\n\017organization_id\030\001 \001(\tB\251\001\222A\226\0012|Unique" +
+      " identifier of the organization containi" +
+      "ng the pending invitation. Must start wi" +
+      "th \'org_\' and be 1-32 characters long.J\026" +
+      "\"org_1234abcd5678efgh\"\272H\014r\n\020\001\030 :\004org_R\016o" +
+      "rganizationId\022\265\001\n\002id\030\002 \001(\tB\244\001\222A\221\0012wSyste" +
+      "m-generated user ID of the user who has " +
+      "a pending invitation. Must start with \'u" +
+      "sr_\' and be 19-25 characters long.J\026\"usr" +
+      "_1234abcd5678efgh\"\272H\014r\n\020\023\030\031:\004usr_R\002id\"\341\002" +
+      "\n\024ResendInviteResponse\022\310\002\n\006invite\030\001 \001(\0132" +
+      "\031.scalekit.v1.users.InviteB\224\002\222A\220\0022\201\001Upda" +
+      "ted invitation object containing the res" +
+      "ent invitation details, including new ex" +
+      "piration time and incremented resend cou" +
+      "nter.J\211\001{\"organization_id\": \"org_123\", \"" +
+      "user_id\": \"usr_456\", \"status\": \"pending_" +
+      "invite\", \"expires_at\": \"2025-12-31T23:59" +
+      ":59Z\", \"resent_count\": 2}R\006invite\"\360\001\n\024Li" +
+      "stUserRolesRequest\022w\n\017organization_id\030\001 " +
+      "\001(\tBN\222A@2&Unique identifier for the orga" +
+      "nizationJ\026\"org_1234abcd5678efgh\"\272H\010r\006:\004o" +
+      "rg_R\016organizationId\022_\n\007user_id\030\002 \001(\tBF\222A" +
+      "82\036Unique identifier for the userJ\026\"usr_" +
+      "1234abcd5678efgh\"\272H\010r\006:\004usr_R\006userId\"q\n\025" +
+      "ListUserRolesResponse\022X\n\005roles\030\001 \003(\0132\031.s" +
+      "calekit.v1.commons.RoleB\'\222A$2\"List of ro" +
+      "les assigned to the userR\005roles\"\336\002\n\026Assi" +
+      "gnUserRolesRequest\022w\n\017organization_id\030\001 " +
+      "\001(\tBN\222A@2&Unique identifier for the orga" +
+      "nizationJ\026\"org_1234abcd5678efgh\"\272H\010r\006:\004o" +
+      "rg_R\016organizationId\022_\n\007user_id\030\002 \001(\tBF\222A" +
+      "82\036Unique identifier for the userJ\026\"usr_" +
+      "1234abcd5678efgh\"\272H\010r\006:\004usr_R\006userId\022j\n\005" +
+      "roles\030\003 \003(\0132$.scalekit.v1.users.AssignRo" +
+      "leRequestB.\222A%2#List of roles to assign " +
+      "to the user\272H\003\310\001\001R\005roles\"\262\001\n\021AssignRoleR" +
+      "equest\022N\n\002id\030\001 \001(\tB>\030\001\222A92\036Unique identi" +
+      "fier for the roleJ\027\"role_1234abcd5678efg" +
+      "h\"R\002id\022M\n\trole_name\030\002 \001(\tB0\222A$2\030Unique n" +
+      "ame for the roleJ\010\"viewer\"\272H\006r\004\020\000\030dR\010rol" +
+      "eName\"\201\001\n\027AssignUserRolesResponse\022f\n\005rol" +
+      "es\030\001 \003(\0132\031.scalekit.v1.commons.RoleB5\222A2" +
+      "20List of all roles currently assigned t" +
+      "o the userR\005roles\"\326\002\n\025RemoveUserRoleRequ" +
+      "est\022w\n\017organization_id\030\001 \001(\tBN\222A@2&Uniqu" +
+      "e identifier for the organizationJ\026\"org_" +
+      "1234abcd5678efgh\"\272H\010r\006:\004org_R\016organizati" +
+      "onId\022_\n\007user_id\030\002 \001(\tBF\222A82\036Unique ident" +
+      "ifier for the userJ\026\"usr_1234abcd5678efg" +
+      "h\"\272H\010r\006:\004usr_R\006userId\022c\n\trole_name\030\003 \001(\t" +
+      "BF\222AC2(Unique identifier for the role to" +
+      " removeJ\027\"role_1234abcd5678efgh\"R\010roleNa" +
+      "me\"\366\001\n\032ListUserPermissionsRequest\022w\n\017org" +
+      "anization_id\030\001 \001(\tBN\222A@2&Unique identifi" +
+      "er for the organizationJ\026\"org_1234abcd56" +
+      "78efgh\"\272H\010r\006:\004org_R\016organizationId\022_\n\007us" +
+      "er_id\030\002 \001(\tBF\222A82\036Unique identifier for " +
+      "the userJ\026\"usr_1234abcd5678efgh\"\272H\010r\006:\004u" +
+      "sr_R\006userId\"\227\003\n\nPermission\022U\n\002id\030\001 \001(\tBE" +
+      "\222A?2$Unique identifier for the permissio" +
+      "nJ\027\"perm_1234abcd5678efgh\"\340A\003R\002id\022R\n\004nam" +
+      "e\030\002 \001(\tB>\222A;2)Unique name identifier for" +
+      " the permissionJ\016\"users:create\"R\004name\022u\n" +
+      "\013description\030\003 \001(\tBS\222AP2)Description of " +
+      "what the permission allowsJ#\"Allows crea" +
+      "ting new user accounts\"R\013description\022g\n\004" +
+      "tags\030\004 \003(\tBS\222AA2!Tags for categorizing p" +
+      "ermissionsJ\034[\"user-management\", \"admin\"]" +
+      "\372\322\344\223\002\t\022\007PREVIEWR\004tags\";\n\026GetSupportHashR" +
+      "esponse\022!\n\014support_hash\030\001 \001(\tR\013supportHa" +
+      "sh\"\217\001\n\033ListUserPermissionsResponse\022p\n\013pe" +
+      "rmissions\030\001 \003(\0132\035.scalekit.v1.users.Perm" +
+      "issionB/\222A,2*List of permissions the use" +
+      "r has access toR\013permissions2\260d\n\013UserSer" +
+      "vice\022\320\003\n\007GetUser\022!.scalekit.v1.users.Get" +
+      "UserRequest\032\".scalekit.v1.users.GetUserR" +
+      "esponse\"\375\002\222A\261\002\n\005Users\022\010Get user\032\177Retriev" +
+      "es all details for a user by system-gene" +
+      "rated user ID. The response includes org" +
+      "anization memberships and user metadata." +
+      "J\234\001\n\003200\022\224\001\njUser details retrieved succ" +
+      "essfully. Returns full user object with " +
+      "system-generated fields and timestamps.\022" +
+      "&\n$\032\".scalekit.v1.users.GetUserResponse\202" +
+      "\265\030\002\030T\202\323\344\223\002<\022\022/api/v1/users/{id}Z&\022$/api/" +
+      "v1/users:external/{external_id}\022\325\003\n\016GetC" +
+      "urrentUser\022(.scalekit.v1.users.GetCurren" +
+      "tUserRequest\032).scalekit.v1.users.GetCurr" +
+      "entUserResponse\"\355\002\222A\246\002\n\005Users\022\026Get authe" +
+      "nticated user\032\236\001Retrieves details for th" +
+      "e currently authenticated user. Returns " +
+      "the same user object as GetUser but uses" +
+      " the authenticated user\'s ID from the se" +
+      "ssion context.Jd\n\003200\022]\n,Current user de" +
+      "tails retrieved successfully.\022-\n+\032).scal" +
+      "ekit.v1.users.GetCurrentUserResponse\202\265\030\002" +
+      "\030\030\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002(\022\022/api/v1/users:t" +
+      "hisZ\022\022\020/api/v1/users/me\022\360\002\n\016GetSupportHa" +
+      "sh\022\026.google.protobuf.Empty\032).scalekit.v1" +
+      ".users.GetSupportHashResponse\"\232\002\222A\337\001\n\005Us" +
+      "ers\022\020Get support hash\032fRetrieves the sup" +
+      "port email hash for the current logged i" +
+      "n user, used for the Scalekit support sy" +
+      "stem.J\\\n\003200\022U\n$Support hash retrieved s" +
+      "uccessfully.\022-\n+\032).scalekit.v1.users.Get" +
+      "SupportHashResponse\202\265\030\002\030P\372\322\344\223\002\t\022\007PREVIEW" +
+      "\202\323\344\223\002\034\022\032/api/v1/users/support-hash\022\240\004\n\tL" +
+      "istUsers\022#.scalekit.v1.users.ListUsersRe" +
+      "quest\032$.scalekit.v1.users.ListUsersRespo" +
+      "nse\"\307\003\222A\250\003\n\005Users\022\035List all users in env" +
+      "ironment\032\274\002Retrieves a paginated list of" +
+      " all users across your entire environmen" +
+      "t. Use this endpoint to view all users r" +
+      "egardless of their organization membersh" +
+      "ips. This is useful for administrative p" +
+      "urposes, user audits, or when you need t" +
+      "o see all users in your Scalekit environ" +
+      "ment. Supports pagination for large user" +
+      " bases.JA\n\003200\022:\n\016List of users.\022(\n&\032$.s" +
+      "calekit.v1.users.ListUsersResponse\202\265\030\002\030D" +
+      "\202\323\344\223\002\017\022\r/api/v1/users\022\270\005\n\013SearchUsers\022%." +
+      "scalekit.v1.users.SearchUsersRequest\032&.s" +
+      "calekit.v1.users.SearchUsersResponse\"\331\004\222" +
+      "A\263\004\n\005Users\022\014Search users\032\257\002Searches for " +
+      "users across the entire environment by e" +
       "mail address, user ID, or external ID. T" +
       "he query must be at least 3 characters a" +
-      "nd is case-insensitive. Scopes results s" +
-      "trictly to the given organization. Retur" +
-      "ns a paginated list of matching users wi" +
-      "th up to 30 results per page. Use the ne" +
-      "xt_page_token from the response to retri" +
-      "eve subsequent pages.J\260\001\n\003200\022\250\001\nnMatchi" +
-      "ng users within the organization returne" +
-      "d; includes pagination cursors for navig" +
-      "ating large result sets.\0226\n4\0322.scalekit." +
-      "v1.users.SearchOrganizationUsersResponse" +
-      "J\233\001\n\003400\022\223\001\n\220\001Bad Request - query must b" +
-      "e at least 3 characters and no more than" +
-      " 100 characters, and organization_id mus" +
-      "t be a valid org_ prefixed identifier.J," +
-      "\n\003404\022%\n#Not Found - organization not fo" +
-      "und.\202\265\030\002\030D\202\323\344\223\0026\0224/api/v1/organizations/" +
-      "{organization_id}/users:search\022\226\005\n\nUpdat" +
-      "eUser\022$.scalekit.v1.users.UpdateUserRequ" +
-      "est\032%.scalekit.v1.users.UpdateUserRespon" +
-      "se\"\272\004\222A\220\004\n\005Users\022\027Update user informatio" +
-      "n\032\341\002Modifies user account information in" +
-      "cluding profile details, metadata, and e" +
-      "xternal ID. Use this endpoint to update " +
-      "a user\'s personal information, contact d" +
-      "etails, or custom metadata. You can upda" +
-      "te the user\'s profile, phone number, and" +
-      " metadata fields. Note that fields like " +
-      "user ID, email address, environment ID, " +
-      "and creation time cannot be modified.J\211\001" +
-      "\n\003200\022\201\001\nTUser updated successfully. Ret" +
-      "urns the modified user object with updat" +
-      "ed timestamps.\022)\n\'\032%.scalekit.v1.users.U" +
-      "pdateUserResponse\202\265\030\002\030T\202\323\344\223\002\0322\022/api/v1/u" +
-      "sers/{id}:\004user\022\375\003\n\nDeleteUser\022$.scaleki" +
-      "t.v1.users.DeleteUserRequest\032\026.google.pr" +
-      "otobuf.Empty\"\260\003\222A\214\003\n\005Users\022\027Delete user " +
-      "permanently\032\260\002Permanently removes a user" +
-      " from your environment and deletes all a" +
-      "ssociated data. Use this endpoint when y" +
-      "ou need to completely remove a user acco" +
-      "unt. This action deletes the user\'s prof" +
-      "ile, memberships, and all related data a" +
-      "cross all organizations. This operation " +
-      "cannot be undone, so use with caution.J7" +
-      "\n\003200\0220\n.User successfully deleted. No c" +
-      "ontent returned\202\265\030\002\030D\202\323\344\223\002\024*\022/api/v1/use" +
-      "rs/{id}\022\304\005\n\020CreateMembership\022*.scalekit." +
-      "v1.users.CreateMembershipRequest\032+.scale" +
-      "kit.v1.users.CreateMembershipResponse\"\326\004" +
-      "\222A\336\003\n\005Users\022!Add existing user to organi" +
-      "zation\032\225\002Adds an existing user to an org" +
-      "anization and assigns them specific role" +
-      "s and permissions. Use this endpoint whe" +
-      "n you want to grant an existing user acc" +
-      "ess to a particular organization. You ca" +
-      "n specify roles, metadata, and other mem" +
-      "bership details during the invitation pr" +
-      "ocess.J\231\001\n\003201\022\221\001\n^User successfully add" +
-      "ed to the organization. Returns details " +
-      "of the updated membership details\022/\n-\032+." +
-      "scalekit.v1.users.CreateMembershipRespon" +
-      "se\202\265\030\036\n\032organizations_users_invite\030T\202\323\344\223" +
-      "\002L\">/api/v1/memberships/organizations/{o" +
-      "rganization_id}/users/{id}:\nmembership\022\231" +
-      "\004\n\020DeleteMembership\022*.scalekit.v1.users." +
-      "DeleteMembershipRequest\032\026.google.protobu" +
-      "f.Empty\"\300\003\222A\324\002\n\005Users\022\'Delete organizati" +
-      "on membership for user\032\334\001Removes a user " +
-      "from an organization by user ID or exter" +
-      "nal ID. If the user has no memberships l" +
-      "eft and cascade is true, the user is als" +
-      "o deleted. This action is irreversible a" +
-      "nd may also remove related group members" +
-      "hips.JC\n\003200\022<\n:User successfully marked" +
-      " for deletion. No content returned\202\265\030\036\n\032" +
-      "organizations_users_remove\030T\202\323\344\223\002@*>/api" +
-      "/v1/memberships/organizations/{organizat" +
-      "ion_id}/users/{id}\022\236\004\n\020UpdateMembership\022" +
-      "*.scalekit.v1.users.UpdateMembershipRequ" +
-      "est\032+.scalekit.v1.users.UpdateMembership" +
-      "Response\"\260\003\222A\263\002\n\005Users\022\'Update organizat" +
-      "ion membership for user\032\203\001Updates a user" +
-      "\'s membership details within an organiza" +
-      "tion by user ID or external ID. You can " +
-      "update roles and membership metadata.J{\n" +
-      "\003200\022t\nAMembership updated successfully." +
-      " Returns the updated user object.\022/\n-\032+." +
-      "scalekit.v1.users.UpdateMembershipRespon" +
-      "se\202\265\030#\n\037organizations_users_role_update\030" +
-      "T\202\323\344\223\002L2>/api/v1/memberships/organizatio" +
-      "ns/{organization_id}/users/{id}:\nmembers" +
-      "hip\022\310\006\n\027CreateUserAndMembership\0221.scalek" +
-      "it.v1.users.CreateUserAndMembershipReque" +
-      "st\0322.scalekit.v1.users.CreateUserAndMemb" +
-      "ershipResponse\"\305\005\222A\344\004\n\005Users\022\037Create new" +
-      " user in organization\032\203\003Creates a new us" +
-      "er account and immediately adds them to ",
-      "the specified organization. Use this end" +
-      "point when you want to create a user and" +
-      " grant them access to an organization in" +
-      " a single operation. You can provide use" +
-      "r profile information, assign roles, and" +
-      " configure membership metadata. The user" +
-      " receives an activation email unless thi" +
-      "s feature is disabled in the organizatio" +
-      "n settings.J\263\001\n\003201\022\253\001\nqUser created suc" +
-      "cessfully. Returns the created user obje" +
-      "ct, including system-generated identifie" +
-      "rs and timestamps\0226\n4\0322.scalekit.v1.user" +
-      "s.CreateUserAndMembershipResponse\202\265\030\036\n\032o" +
-      "rganizations_users_invite\030T\202\323\344\223\0025\"-/api/" +
-      "v1/organizations/{organization_id}/users" +
-      ":\004user\022\375\004\n\025ListOrganizationUsers\022/.scale" +
-      "kit.v1.users.ListOrganizationUsersReques" +
-      "t\0320.scalekit.v1.users.ListOrganizationUs" +
-      "ersResponse\"\200\004\222A\247\003\n\005Users\022\027List organiza" +
-      "tion users\032\207\002Retrieves a paginated list " +
-      "of all users who are members of the spec" +
-      "ified organization. Use this endpoint to" +
-      " view all users with access to a particu" +
-      "lar organization, including their roles," +
-      " metadata, and membership details. Suppo" +
-      "rts pagination for large user lists.J{\n\003" +
-      "200\022t\n<Successfully retrieved the list o" +
-      "f users in the organization\0224\n2\0320.scalek" +
-      "it.v1.users.ListOrganizationUsersRespons" +
-      "e\202\265\030\034\n\030organizations_users_read\030T\202\323\344\223\002/\022" +
-      "-/api/v1/organizations/{organization_id}" +
-      "/users\022\256\020\n\014ResendInvite\022&.scalekit.v1.us" +
-      "ers.ResendInviteRequest\032\'.scalekit.v1.us" +
-      "ers.ResendInviteResponse\"\314\017\222A\332\016\n\005Users\022\034" +
-      "Resend user invitation email\032\341\004Resends a" +
-      "n invitation email to a user who has a p" +
-      "ending or expired invitation in the spec" +
-      "ified organization. If the invitation ha" +
-      "s expired, a new invitation will be auto" +
-      "matically created and sent. If the invit" +
-      "ation is still valid, a reminder email w" +
-      "ill be sent instead. Use this endpoint w" +
-      "hen a user hasn\'t responded to their ini" +
-      "tial invitation and you need to send the" +
-      "m a reminder or when the original invita" +
-      "tion has expired. The invitation email i" +
-      "ncludes a secure magic link that allows " +
-      "the user to complete their account setup" +
-      " and join the organization. Each resend " +
-      "operation increments the resent counter." +
-      "J\247\002\n\003200\022\237\002\n\357\001Successfully resent the in" +
-      "vitation email. Returns the updated invi" +
-      "tation object with organization ID, user" +
-      " ID, membership status, timestamps, and " +
-      "resent count. If expired, a new invitati" +
-      "on is created; otherwise, the existing o" +
-      "ne is resent.\022+\n)\032\'.scalekit.v1.users.Re" +
-      "sendInviteResponseJ\217\002\n\003400\022\207\002\n\335\001Invalid " +
-      "request \342\200\224 common causes include user I" +
-      "D or organization ID is invalid, full-st" +
-      "ack authentication is disabled, user pro" +
-      "file is missing, invite already accepted" +
-      ", or missing expiry time in user managem" +
-      "ent settings.\022%\n#\032!#/definitions/errdeta" +
-      "ilsErrorInfoJ\235\002\n\003404\022\225\002\n\353\001Resource not f" +
-      "ound \342\200\224 the specified user, organizatio" +
-      "n, membership, or invitation could not b" +
-      "e found in the specified environment. Ve" +
-      "rify that all IDs are correct and that t" +
-      "he resources exist before attempting to " +
-      "resend an invitation.\022%\n#\032!#/definitions" +
-      "/errdetailsErrorInfoJ\362\002\n\003500\022\352\002\n\300\002Intern" +
-      "al server error \342\200\224 an unexpected error " +
-      "occurred while processing the invitation" +
-      " resend request. This may be due to data" +
-      "base connectivity issues, problems gener" +
-      "ating the secure magic link, email deliv" +
-      "ery service failures, or transaction err" +
-      "ors during invitation processing. Contac" +
-      "t support if the problem persists.\022%\n#\032!" +
-      "#/definitions/errdetailsErrorInfo\202\265\030\036\n\032o" +
-      "rganizations_users_invite\030T\202\323\344\223\002F2A/api/" +
-      "v1/invites/organizations/{organization_i" +
-      "d}/users/{id}/resend:\001*\022\337\003\n\rListUserRole" +
-      "s\022\'.scalekit.v1.users.ListUserRolesReque" +
-      "st\032(.scalekit.v1.users.ListUserRolesResp" +
-      "onse\"\372\002\222A\253\002\n\005Users\022\017List user roles\032\232\001Re" +
-      "trieves all roles assigned to a user wit" +
-      "hin a specific organization. This includ" +
-      "es both direct role assignments and inhe" +
-      "rited roles from role hierarchy.Jt\n\003200\022" +
-      "m\n=Successfully retrieved the list of ro" +
-      "les assigned to the user\022,\n*\032(.scalekit." +
-      "v1.users.ListUserRolesResponse\202\265\030\002\030D\202\323\344\223" +
-      "\002?\022=/api/v1/organizations/{organization_" +
-      "id}/users/{user_id}/roles\022\203\004\n\017AssignUser" +
-      "Roles\022).scalekit.v1.users.AssignUserRole" +
-      "sRequest\032*.scalekit.v1.users.AssignUserR" +
-      "olesResponse\"\230\003\222A\222\002\n\005Users\022\024Assign roles" +
-      " to user\032\220\001Assigns one or more roles to " +
-      "a user within a specific organization. T" +
-      "his operation adds to existing role assi" +
-      "gnments rather than replacing them.J`\n\0032" +
-      "00\022Y\n\'Successfully assigned roles to the" +
-      " user\022.\n,\032*.scalekit.v1.users.AssignUser" +
-      "RolesResponse\202\265\030#\n\037organizations_users_r" +
-      "ole_update\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002F\"=/api/" +
-      "v1/organizations/{organization_id}/users" +
-      "/{user_id}/roles:\005roles\022\311\003\n\016RemoveUserRo" +
-      "le\022(.scalekit.v1.users.RemoveUserRoleReq" +
-      "uest\032\026.google.protobuf.Empty\"\364\002\222A\351\001\n\005Use" +
-      "rs\022\025Remove role from user\032\232\001Removes a sp" +
-      "ecific role assignment from a user withi" +
-      "n an organization. This only removes dir" +
-      "ect role assignments, not inherited role" +
-      "s from role hierarchy.J,\n\003200\022%\n#Role su" +
-      "ccessfully removed from user\202\265\030#\n\037organi" +
-      "zations_users_role_update\030T\372\322\344\223\002\t\022\007PREVI" +
-      "EW\202\323\344\223\002K*I/api/v1/organizations/{organiz" +
-      "ation_id}/users/{user_id}/roles/{role_na" +
-      "me}\022\233\004\n\023ListUserPermissions\022-.scalekit.v" +
-      "1.users.ListUserPermissionsRequest\032..sca" +
-      "lekit.v1.users.ListUserPermissionsRespon" +
-      "se\"\244\003\222A\317\002\n\005Users\022\025List user permissions\032" +
-      "\264\001Retrieves all permissions a user has a" +
-      "ccess to within a specific organization." +
-      " This includes permissions from direct r" +
-      "ole assignments and inherited permission" +
-      "s from role hierarchy.Jx\n\003200\022q\n;Success" +
-      "fully retrieved the list of permissions " +
-      "for the user\0222\n0\032..scalekit.v1.users.Lis" +
-      "tUserPermissionsResponse\202\265\030\002\030D\202\323\344\223\002E\022C/a" +
-      "pi/v1/organizations/{organization_id}/us" +
-      "ers/{user_id}/permissions\032\354\003\222A\350\003\n\005Users\022" +
-      "\336\003Comprehensive user management operatio" +
-      "ns including user lifecycle, organizatio" +
-      "n memberships, and invitation workflows." +
-      " This service provides endpoints for cre" +
-      "ating, retrieving, updating, and deletin" +
-      "g user accounts across your Scalekit env" +
-      "ironment. It supports both individual us" +
-      "er operations and bulk operations for us" +
-      "er administration, including user search" +
-      ", pagination, and metadata management. T" +
-      "he service also handles user invitations" +
-      " and organization membership management." +
-      "B\310\001\n#com.scalekit.grpc.scalekit.v1.users" +
-      "B\nUsersProtoP\001Z/github.com/scalekit-inc/" +
-      "scalekit/pkg/grpc/users\242\002\003SVU\252\002\021Scalekit" +
-      ".V1.Users\312\002\021Scalekit\\V1\\Users\342\002\035Scalekit" +
-      "\\V1\\Users\\GPBMetadata\352\002\023Scalekit::V1::Us" +
-      "ersb\006proto3"
+      "nd is case-insensitive. Returns a pagina" +
+      "ted list of matching users with up to 30" +
+      " results per page. Use the next_page_tok" +
+      "en from the response to retrieve subsequ" +
+      "ent pages.J\214\001\n\003200\022\204\001\nVMatching users re" +
+      "turned; includes pagination cursors for " +
+      "navigating large result sets.\022*\n(\032&.scal" +
+      "ekit.v1.users.SearchUsersResponseJ[\n\003400" +
+      "\022T\nRBad Request - query must be at least" +
+      " 3 characters and no more than 100 chara" +
+      "cters.\202\265\030\002\030D\202\323\344\223\002\026\022\024/api/v1/users:search" +
+      "\022\320\007\n\027SearchOrganizationUsers\0221.scalekit." +
+      "v1.users.SearchOrganizationUsersRequest\032" +
+      "2.scalekit.v1.users.SearchOrganizationUs" +
+      "ersResponse\"\315\006\222A\207\006\n\005Users\022\031Search organi" +
+      "zation users\032\343\002Searches for users within" +
+      " a specific organization by email addres" +
+      "s, user ID, or external ID. The query mu" +
+      "st be at least 3 characters and is case-" +
+      "insensitive. Scopes results strictly to " +
+      "the given organization. Returns a pagina" +
+      "ted list of matching users with up to 30" +
+      " results per page. Use the next_page_tok" +
+      "en from the response to retrieve subsequ" +
+      "ent pages.J\260\001\n\003200\022\250\001\nnMatching users wi" +
+      "thin the organization returned; includes" +
+      " pagination cursors for navigating large" +
+      " result sets.\0226\n4\0322.scalekit.v1.users.Se" +
+      "archOrganizationUsersResponseJ\233\001\n\003400\022\223\001" +
+      "\n\220\001Bad Request - query must be at least " +
+      "3 characters and no more than 100 charac" +
+      "ters, and organization_id must be a vali" +
+      "d org_ prefixed identifier.J,\n\003404\022%\n#No" +
+      "t Found - organization not found.\202\265\030\002\030D\202" +
+      "\323\344\223\0026\0224/api/v1/organizations/{organizati" +
+      "on_id}/users:search\022\304\005\n\nUpdateUser\022$.sca" +
+      "lekit.v1.users.UpdateUserRequest\032%.scale" +
+      "kit.v1.users.UpdateUserResponse\"\350\004\222A\220\004\n\005" +
+      "Users\022\027Update user information\032\341\002Modifie" +
+      "s user account information including pro" +
+      "file details, metadata, and external ID." +
+      " Use this endpoint to update a user\'s pe" +
+      "rsonal information, contact details, or " +
+      "custom metadata. You can update the user" +
+      "\'s profile, phone number, and metadata f" +
+      "ields. Note that fields like user ID, em" +
+      "ail address, environment ID, and creatio" +
+      "n time cannot be modified.J\211\001\n\003200\022\201\001\nTU" +
+      "ser updated successfully. Returns the mo" +
+      "dified user object with updated timestam" +
+      "ps.\022)\n\'\032%.scalekit.v1.users.UpdateUserRe" +
+      "sponse\202\265\030\002\030T\202\323\344\223\002H2\022/api/v1/users/{id}:\004" +
+      "userZ,2$/api/v1/users:external/{external" +
+      "_id}:\004user\022\245\004\n\nDeleteUser\022$.scalekit.v1." +
+      "users.DeleteUserRequest\032\026.google.protobu" +
+      "f.Empty\"\330\003\222A\214\003\n\005Users\022\027Delete user perma" +
+      "nently\032\260\002Permanently removes a user from" +
+      " your environment and deletes all associ" +
+      "ated data. Use this endpoint when you ne" +
+      "ed to completely remove a user account. " +
+      "This action deletes the user\'s profile, " +
+      "memberships, and all related data across" +
+      " all organizations. This operation canno" +
+      "t be undone, so use with caution.J7\n\003200" +
+      "\0220\n.User successfully deleted. No conten" +
+      "t returned\202\265\030\002\030D\202\323\344\223\002<*\022/api/v1/users/{i" +
+      "d}Z&*$/api/v1/users:external/{external_i" +
+      "d}\022\245\006\n\020CreateMembership\022*.scalekit.v1.us" +
+      "ers.CreateMembershipRequest\032+.scalekit.v" +
+      "1.users.CreateMembershipResponse\"\267\005\222A\336\003\n" +
+      "\005Users\022!Add existing user to organizatio" +
+      "n\032\225\002Adds an existing user to an organiza" +
+      "tion and assigns them specific roles and" +
+      " permissions. Use this endpoint when you" +
+      " want to grant an existing user access t" +
+      "o a particular organization. You can spe" +
+      "cify roles, metadata, and other membersh" +
+      "ip details during the invitation process" +
+      ".J\231\001\n\003201\022\221\001\n^User successfully added to" +
+      " the organization. Returns details of th" +
+      "e updated membership details\022/\n-\032+.scale" +
+      "kit.v1.users.CreateMembershipResponse\202\265\030" +
+      "\036\n\032organizations_users_invite\030T\202\323\344\223\002\254\001\">" +
+      "/api/v1/memberships/organizations/{organ" +
+      "ization_id}/users/{id}:\nmembershipZ^\"P/a" +
+      "pi/v1/memberships/organizations/{organiz" +
+      "ation_id}/users:external/{external_id}:\n" +
+      "membership\022\213\004\n\020DeleteMembership\022*.scalek" +
+      "it.v1.users.DeleteMembershipRequest\032\026.go" +
+      "ogle.protobuf.Empty\"\262\003\222A\361\001\n\005Users\022\'Delet" +
+      "e organization membership for user\032zRemo" +
+      "ves a user from an organization by user " +
+      "ID. This action is irreversible and may " +
+      "also remove related group memberships.JC" +
+      "\n\003200\022<\n:User successfully marked for de" +
+      "letion. No content returned\202\265\030\036\n\032organiz" +
+      "ations_users_remove\030T\202\323\344\223\002\224\001*>/api/v1/me" +
+      "mberships/organizations/{organization_id" +
+      "}/users/{id}ZR*P/api/v1/memberships/orga" +
+      "nizations/{organization_id}/users:extern" +
+      "al/{external_id}\022\357\004\n\020UpdateMembership\022*." +
+      "scalekit.v1.users.UpdateMembershipReques" +
+      "t\032+.scalekit.v1.users.UpdateMembershipRe" +
+      "sponse\"\201\004\222A\243\002\n\005Users\022\'Update organizatio" +
+      "n membership for user\032tUpdates a user\'s " +
+      "membership details within an organizatio" +
+      "n by user ID. You can update roles and m" +
+      "embership metadata.J{\n\003200\022t\nAMembership" +
+      " updated successfully. Returns the updat" +
+      "ed user object.\022/\n-\032+.scalekit.v1.users." +
+      "UpdateMembershipResponse\202\265\030#\n\037organizati" +
+      "ons_users_role_update\030T\202\323\344\223\002\254\0012>/api/v1/" +
+      "memberships/organizations/{organization_",
+      "id}/users/{id}:\nmembershipZ^2P/api/v1/me" +
+      "mberships/organizations/{organization_id" +
+      "}/users:external/{external_id}:\nmembersh" +
+      "ip\022\310\006\n\027CreateUserAndMembership\0221.scaleki" +
+      "t.v1.users.CreateUserAndMembershipReques" +
+      "t\0322.scalekit.v1.users.CreateUserAndMembe" +
+      "rshipResponse\"\305\005\222A\344\004\n\005Users\022\037Create new " +
+      "user in organization\032\203\003Creates a new use" +
+      "r account and immediately adds them to t" +
+      "he specified organization. Use this endp" +
+      "oint when you want to create a user and " +
+      "grant them access to an organization in " +
+      "a single operation. You can provide user" +
+      " profile information, assign roles, and " +
+      "configure membership metadata. The user " +
+      "receives an activation email unless this" +
+      " feature is disabled in the organization" +
+      " settings.J\263\001\n\003201\022\253\001\nqUser created succ" +
+      "essfully. Returns the created user objec" +
+      "t, including system-generated identifier" +
+      "s and timestamps\0226\n4\0322.scalekit.v1.users" +
+      ".CreateUserAndMembershipResponse\202\265\030\036\n\032or" +
+      "ganizations_users_invite\030T\202\323\344\223\0025\"-/api/v" +
+      "1/organizations/{organization_id}/users:" +
+      "\004user\022\375\004\n\025ListOrganizationUsers\022/.scalek" +
+      "it.v1.users.ListOrganizationUsersRequest" +
+      "\0320.scalekit.v1.users.ListOrganizationUse" +
+      "rsResponse\"\200\004\222A\247\003\n\005Users\022\027List organizat" +
+      "ion users\032\207\002Retrieves a paginated list o" +
+      "f all users who are members of the speci" +
+      "fied organization. Use this endpoint to " +
+      "view all users with access to a particul" +
+      "ar organization, including their roles, " +
+      "metadata, and membership details. Suppor" +
+      "ts pagination for large user lists.J{\n\0032" +
+      "00\022t\n<Successfully retrieved the list of" +
+      " users in the organization\0224\n2\0320.scaleki" +
+      "t.v1.users.ListOrganizationUsersResponse" +
+      "\202\265\030\034\n\030organizations_users_read\030T\202\323\344\223\002/\022-" +
+      "/api/v1/organizations/{organization_id}/" +
+      "users\022\256\020\n\014ResendInvite\022&.scalekit.v1.use" +
+      "rs.ResendInviteRequest\032\'.scalekit.v1.use" +
+      "rs.ResendInviteResponse\"\314\017\222A\332\016\n\005Users\022\034R" +
+      "esend user invitation email\032\341\004Resends an" +
+      " invitation email to a user who has a pe" +
+      "nding or expired invitation in the speci" +
+      "fied organization. If the invitation has" +
+      " expired, a new invitation will be autom" +
+      "atically created and sent. If the invita" +
+      "tion is still valid, a reminder email wi" +
+      "ll be sent instead. Use this endpoint wh" +
+      "en a user hasn\'t responded to their init" +
+      "ial invitation and you need to send them" +
+      " a reminder or when the original invitat" +
+      "ion has expired. The invitation email in" +
+      "cludes a secure magic link that allows t" +
+      "he user to complete their account setup " +
+      "and join the organization. Each resend o" +
+      "peration increments the resent counter.J" +
+      "\247\002\n\003200\022\237\002\n\357\001Successfully resent the inv" +
+      "itation email. Returns the updated invit" +
+      "ation object with organization ID, user " +
+      "ID, membership status, timestamps, and r" +
+      "esent count. If expired, a new invitatio" +
+      "n is created; otherwise, the existing on" +
+      "e is resent.\022+\n)\032\'.scalekit.v1.users.Res" +
+      "endInviteResponseJ\217\002\n\003400\022\207\002\n\335\001Invalid r" +
+      "equest \342\200\224 common causes include user ID" +
+      " or organization ID is invalid, full-sta" +
+      "ck authentication is disabled, user prof" +
+      "ile is missing, invite already accepted," +
+      " or missing expiry time in user manageme" +
+      "nt settings.\022%\n#\032!#/definitions/errdetai" +
+      "lsErrorInfoJ\235\002\n\003404\022\225\002\n\353\001Resource not fo" +
+      "und \342\200\224 the specified user, organization" +
+      ", membership, or invitation could not be" +
+      " found in the specified environment. Ver" +
+      "ify that all IDs are correct and that th" +
+      "e resources exist before attempting to r" +
+      "esend an invitation.\022%\n#\032!#/definitions/" +
+      "errdetailsErrorInfoJ\362\002\n\003500\022\352\002\n\300\002Interna" +
+      "l server error \342\200\224 an unexpected error o" +
+      "ccurred while processing the invitation " +
+      "resend request. This may be due to datab" +
+      "ase connectivity issues, problems genera" +
+      "ting the secure magic link, email delive" +
+      "ry service failures, or transaction erro" +
+      "rs during invitation processing. Contact" +
+      " support if the problem persists.\022%\n#\032!#" +
+      "/definitions/errdetailsErrorInfo\202\265\030\036\n\032or" +
+      "ganizations_users_invite\030T\202\323\344\223\002F2A/api/v" +
+      "1/invites/organizations/{organization_id" +
+      "}/users/{id}/resend:\001*\022\337\003\n\rListUserRoles" +
+      "\022\'.scalekit.v1.users.ListUserRolesReques" +
+      "t\032(.scalekit.v1.users.ListUserRolesRespo" +
+      "nse\"\372\002\222A\253\002\n\005Users\022\017List user roles\032\232\001Ret" +
+      "rieves all roles assigned to a user with" +
+      "in a specific organization. This include" +
+      "s both direct role assignments and inher" +
+      "ited roles from role hierarchy.Jt\n\003200\022m" +
+      "\n=Successfully retrieved the list of rol" +
+      "es assigned to the user\022,\n*\032(.scalekit.v" +
+      "1.users.ListUserRolesResponse\202\265\030\002\030D\202\323\344\223\002" +
+      "?\022=/api/v1/organizations/{organization_i" +
+      "d}/users/{user_id}/roles\022\203\004\n\017AssignUserR" +
+      "oles\022).scalekit.v1.users.AssignUserRoles" +
+      "Request\032*.scalekit.v1.users.AssignUserRo" +
+      "lesResponse\"\230\003\222A\222\002\n\005Users\022\024Assign roles " +
+      "to user\032\220\001Assigns one or more roles to a" +
+      " user within a specific organization. Th" +
+      "is operation adds to existing role assig" +
+      "nments rather than replacing them.J`\n\00320" +
+      "0\022Y\n\'Successfully assigned roles to the " +
+      "user\022.\n,\032*.scalekit.v1.users.AssignUserR" +
+      "olesResponse\202\265\030#\n\037organizations_users_ro" +
+      "le_update\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002F\"=/api/v" +
+      "1/organizations/{organization_id}/users/" +
+      "{user_id}/roles:\005roles\022\311\003\n\016RemoveUserRol" +
+      "e\022(.scalekit.v1.users.RemoveUserRoleRequ" +
+      "est\032\026.google.protobuf.Empty\"\364\002\222A\351\001\n\005User" +
+      "s\022\025Remove role from user\032\232\001Removes a spe" +
+      "cific role assignment from a user within" +
+      " an organization. This only removes dire" +
+      "ct role assignments, not inherited roles" +
+      " from role hierarchy.J,\n\003200\022%\n#Role suc" +
+      "cessfully removed from user\202\265\030#\n\037organiz" +
+      "ations_users_role_update\030T\372\322\344\223\002\t\022\007PREVIE" +
+      "W\202\323\344\223\002K*I/api/v1/organizations/{organiza" +
+      "tion_id}/users/{user_id}/roles/{role_nam" +
+      "e}\022\233\004\n\023ListUserPermissions\022-.scalekit.v1" +
+      ".users.ListUserPermissionsRequest\032..scal" +
+      "ekit.v1.users.ListUserPermissionsRespons" +
+      "e\"\244\003\222A\317\002\n\005Users\022\025List user permissions\032\264" +
+      "\001Retrieves all permissions a user has ac" +
+      "cess to within a specific organization. " +
+      "This includes permissions from direct ro" +
+      "le assignments and inherited permissions" +
+      " from role hierarchy.Jx\n\003200\022q\n;Successf" +
+      "ully retrieved the list of permissions f" +
+      "or the user\0222\n0\032..scalekit.v1.users.List" +
+      "UserPermissionsResponse\202\265\030\002\030D\202\323\344\223\002E\022C/ap" +
+      "i/v1/organizations/{organization_id}/use" +
+      "rs/{user_id}/permissions\032\354\003\222A\350\003\n\005Users\022\336" +
+      "\003Comprehensive user management operation" +
+      "s including user lifecycle, organization" +
+      " memberships, and invitation workflows. " +
+      "This service provides endpoints for crea" +
+      "ting, retrieving, updating, and deleting" +
+      " user accounts across your Scalekit envi" +
+      "ronment. It supports both individual use" +
+      "r operations and bulk operations for use" +
+      "r administration, including user search," +
+      " pagination, and metadata management. Th" +
+      "e service also handles user invitations " +
+      "and organization membership management.B" +
+      "\310\001\n#com.scalekit.grpc.scalekit.v1.usersB" +
+      "\nUsersProtoP\001Z/github.com/scalekit-inc/s" +
+      "calekit/pkg/grpc/users\242\002\003SVU\252\002\021Scalekit." +
+      "V1.Users\312\002\021Scalekit\\V1\\Users\342\002\035Scalekit\\" +
+      "V1\\Users\\GPBMetadata\352\002\023Scalekit::V1::Use" +
+      "rsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1311,7 +1320,7 @@ public final class UsersProto {
     internal_static_scalekit_v1_users_GetCurrentUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_users_GetCurrentUserResponse_descriptor,
-        new java.lang.String[] { "User", "CurrentSessionId", });
+        new java.lang.String[] { "User", "CurrentSessionId", "GatewayEnabled", });
     internal_static_scalekit_v1_users_GetCurrentUserRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_scalekit_v1_users_GetCurrentUserRequest_fieldAccessorTable = new

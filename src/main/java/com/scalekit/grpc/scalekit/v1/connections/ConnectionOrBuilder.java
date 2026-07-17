@@ -339,5 +339,22 @@ java.lang.String defaultValue);
   com.scalekit.grpc.scalekit.v1.domains.DomainOrBuilder getDomainsOrBuilder(
       int index);
 
+  /**
+   * <code>optional string mcp_server_url = 29 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the mcpServerUrl field is set.
+   */
+  boolean hasMcpServerUrl();
+  /**
+   * <code>optional string mcp_server_url = 29 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The mcpServerUrl.
+   */
+  java.lang.String getMcpServerUrl();
+  /**
+   * <code>optional string mcp_server_url = 29 [json_name = "mcpServerUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for mcpServerUrl.
+   */
+  com.google.protobuf.ByteString
+      getMcpServerUrlBytes();
+
   com.scalekit.grpc.scalekit.v1.connections.Connection.SettingsCase getSettingsCase();
 }

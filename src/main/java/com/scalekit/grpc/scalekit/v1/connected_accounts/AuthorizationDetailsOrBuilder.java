@@ -89,5 +89,32 @@ public interface AuthorizationDetailsOrBuilder extends
    */
   com.scalekit.grpc.scalekit.v1.connected_accounts.GoogleDWDAuthOrBuilder getGoogleDwdOrBuilder();
 
+  /**
+   * <pre>
+   * Trusted IDP federated credentials (e.g. AWS STS temporary credentials)
+   * </pre>
+   *
+   * <code>.scalekit.v1.connected_accounts.TrustedIDPAuth trusted_idp = 4 [json_name = "trustedIdp"];</code>
+   * @return Whether the trustedIdp field is set.
+   */
+  boolean hasTrustedIdp();
+  /**
+   * <pre>
+   * Trusted IDP federated credentials (e.g. AWS STS temporary credentials)
+   * </pre>
+   *
+   * <code>.scalekit.v1.connected_accounts.TrustedIDPAuth trusted_idp = 4 [json_name = "trustedIdp"];</code>
+   * @return The trustedIdp.
+   */
+  com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuth getTrustedIdp();
+  /**
+   * <pre>
+   * Trusted IDP federated credentials (e.g. AWS STS temporary credentials)
+   * </pre>
+   *
+   * <code>.scalekit.v1.connected_accounts.TrustedIDPAuth trusted_idp = 4 [json_name = "trustedIdp"];</code>
+   */
+  com.scalekit.grpc.scalekit.v1.connected_accounts.TrustedIDPAuthOrBuilder getTrustedIdpOrBuilder();
+
   com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizationDetails.DetailsCase getDetailsCase();
 }

@@ -329,7 +329,7 @@ public final class ToolsProto {
       "oolsJ\036\"eyJwYWdlIjoxLCJsaW1pdCI6MzB9\"R\rpr" +
       "evPageToken\022^\n\005tools\030\004 \003(\0132\027.scalekit.v1" +
       ".tools.ToolB/\222A,2*List of tools availabl" +
-      "e for the identifierR\005tools2\350\030\n\013ToolServ" +
+      "e for the identifierR\005tools2\311\030\n\013ToolServ" +
       "ice\022\362\001\n\nCreateTool\022$.scalekit.v1.tools.C" +
       "reateToolRequest\032%.scalekit.v1.tools.Cre" +
       "ateToolResponse\"\226\001\222Ac\n\005Tools\022\021Create a n" +
@@ -378,43 +378,48 @@ public final class ToolsProto {
       " tool\032BDelete a tool by name, schema ver" +
       "sion, tool version, and provider.\202\265\030\002\030\004\372" +
       "\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\024*\022/api/v1/tools/{id}" +
-      "\022\302\t\n\013ExecuteTool\022%.scalekit.v1.tools.Exe" +
+      "\022\274\t\n\013ExecuteTool\022%.scalekit.v1.tools.Exe" +
       "cuteToolRequest\032&.scalekit.v1.tools.Exec" +
-      "uteToolResponse\"\343\010\222A\272\010\n\022Connected Accoun" +
-      "ts\022(Execute a tool using a connected acc" +
-      "ount\032\317\003Executes a tool action using auth" +
-      "entication credentials from a connected " +
-      "account. Specify the tool by name and pr" +
-      "ovide required parameters as JSON. The c" +
-      "onnected account can be identified by ID" +
-      ", or by combination of organization/user" +
-      ", connector, and identifier. Returns the" +
-      " execution result data and a unique exec" +
-      "ution ID for tracking. Use this endpoint" +
-      " to perform actions like sending emails," +
-      " creating calendar events, or managing r" +
-      "esources in external services.Jq\n\003200\022j\n" +
-      "<Tool executed successfully with result " +
-      "data and execution ID\022*\n(\032&.scalekit.v1." +
-      "tools.ExecuteToolResponseJz\n\003400\022s\nqInva" +
-      "lid request - occurs when tool name is m" +
-      "issing, parameters are malformed, or too" +
-      "l definition validation failsJB\n\003401\022;\n9" +
-      "Authentication required - missing or inv" +
-      "alid access tokenJv\n\003404\022o\nmTool or conn" +
-      "ected account not found - occurs when th" +
-      "e specified tool name or connected accou" +
-      "nt does not existJ}\n\003500\022v\ntTool executi" +
-      "on failed - occurs when the external ser" +
-      "vice returns an error or the tool encoun" +
-      "ters a runtime exception\202\265\030\002\030d\202\323\344\223\002\031\"\024/a" +
-      "pi/v1/execute_tool:\001*\032\027\222A\024\n\022Connected Ac" +
-      "countsB\310\001\n#com.scalekit.grpc.scalekit.v1" +
-      ".toolsB\nToolsProtoP\001Z/github.com/scaleki" +
-      "t-inc/scalekit/pkg/grpc/tools\242\002\003SVT\252\002\021Sc" +
-      "alekit.V1.Tools\312\002\021Scalekit\\V1\\Tools\342\002\035Sc" +
-      "alekit\\V1\\Tools\\GPBMetadata\352\002\023Scalekit::" +
-      "V1::Toolsb\006proto3"
+      "uteToolResponse\"\335\010\222A\264\010\n\014Tool Calling\022(Ex" +
+      "ecute a tool using a connected account\032\317" +
+      "\003Executes a tool action using authentica" +
+      "tion credentials from a connected accoun" +
+      "t. Specify the tool by name and provide " +
+      "required parameters as JSON. The connect" +
+      "ed account can be identified by ID, or b" +
+      "y combination of organization/user, conn" +
+      "ector, and identifier. Returns the execu" +
+      "tion result data and a unique execution " +
+      "ID for tracking. Use this endpoint to pe" +
+      "rform actions like sending emails, creat" +
+      "ing calendar events, or managing resourc" +
+      "es in external services.Jq\n\003200\022j\n<Tool " +
+      "executed successfully with result data a" +
+      "nd execution ID\022*\n(\032&.scalekit.v1.tools." +
+      "ExecuteToolResponseJz\n\003400\022s\nqInvalid re" +
+      "quest - occurs when tool name is missing" +
+      ", parameters are malformed, or tool defi" +
+      "nition validation failsJB\n\003401\022;\n9Authen" +
+      "tication required - missing or invalid a" +
+      "ccess tokenJv\n\003404\022o\nmTool or connected " +
+      "account not found - occurs when the spec" +
+      "ified tool name or connected account doe" +
+      "s not existJ}\n\003500\022v\ntTool execution fai" +
+      "led - occurs when the external service r" +
+      "eturns an error or the tool encounters a" +
+      " runtime exception\202\265\030\002\030d\202\323\344\223\002\031\"\024/api/v1/" +
+      "execute_tool:\001*B\241\003\n#com.scalekit.grpc.sc" +
+      "alekit.v1.toolsB\nToolsProtoP\001Z/github.co" +
+      "m/scalekit-inc/scalekit/pkg/grpc/tools\242\002" +
+      "\003SVT\252\002\021Scalekit.V1.Tools\312\002\021Scalekit\\V1\\T" +
+      "ools\342\002\035Scalekit\\V1\\Tools\\GPBMetadata\352\002\023S" +
+      "calekit::V1::Tools\222A\325\001j\322\001\n\014Tool Calling\022" +
+      "\301\001Execute tools on behalf of a connected" +
+      " account. This is the primary public sur" +
+      "face for running actions like sending em" +
+      "ails, creating calendar events, or manag" +
+      "ing resources in external services.b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -552,7 +557,7 @@ public final class ToolsProto {
     registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
-    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Tag);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Swagger);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

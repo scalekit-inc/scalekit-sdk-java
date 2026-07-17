@@ -141,6 +141,12 @@ public interface CreateResourceOrBuilder extends
   boolean getIntersectScopesUserPermission();
 
   /**
+   * <code>bool enable_cimd = 13 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enableCimd.
+   */
+  boolean getEnableCimd();
+
+  /**
    * <pre>
    *
    *string tos_uri = 10 [
@@ -160,8 +166,8 @@ public interface CreateResourceOrBuilder extends
    *];
    * </pre>
    *
-   * <code>bool enable_cimd = 13 [json_name = "enableCimd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The enableCimd.
+   * <code>bool xaa_enabled = 14 [json_name = "xaaEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The xaaEnabled.
    */
-  boolean getEnableCimd();
+  boolean getXaaEnabled();
 }

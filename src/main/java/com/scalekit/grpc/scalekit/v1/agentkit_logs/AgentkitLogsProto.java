@@ -16,6 +16,11 @@ public final class AgentkitLogsProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_agentkit_logs_ListCurrentToolCallLogsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_agentkit_logs_ListCurrentToolCallLogsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_agentkit_logs_ListToolCallLogsRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -51,102 +56,127 @@ public final class AgentkitLogsProto {
       ".proto\032\033google/api/visibility.proto\032\037goo" +
       "gle/protobuf/timestamp.proto\032.protoc-gen" +
       "-openapiv2/options/annotations.proto\032!sc" +
-      "alekit/v1/options/options.proto\"\306\t\n\027List" +
-      "ToolCallLogsRequest\0229\n\nstart_time\030\001 \001(\0132" +
-      "\032.google.protobuf.TimestampR\tstartTime\0225" +
-      "\n\010end_time\030\002 \001(\0132\032.google.protobuf.Times" +
-      "tampR\007endTime\022g\n\006status\030\003 \003(\tBO\222AL2JFilt" +
-      "er by status. Allowed values: success, p" +
-      "rovider_error, platform_error.R\006status\022O" +
-      "\n\010provider\030\004 \003(\tB3\222A02.Filter by connect" +
-      "or provider slug, e.g. gmail.R\010provider\022" +
-      "Z\n\rconnection_id\030\005 \001(\tB0\222A-2\030Filter by c" +
-      "onnection ID.J\021\"conn_1234567890\"H\000R\014conn" +
-      "ectionId\210\001\001\022l\n\024connected_account_id\030\006 \001(" +
-      "\tB5\222A22\037Filter by connected account ID.J" +
-      "\017\"ca_1234567890\"H\001R\022connectedAccountId\210\001" +
-      "\001\022{\n\nidentifier\030\007 \001(\tBV\222AK2IFilter by co" +
-      "nnected account identifier (customer-def" +
-      "ined end-user label).\272H\005r\003\030\377\001H\002R\nidentif" +
-      "ier\210\001\001\022\206\001\n\014agent_run_id\030\010 \001(\tB_\222AT2DFilt" +
-      "er by agent run ID to see all tool calls" +
-      " for a single agent run.J\014\"run_abc123\"\272H" +
-      "\005r\003\030\377\001H\003R\nagentRunId\210\001\001\022\\\n\tpage_size\030\t \001" +
-      "(\rB?\222A<2:Maximum number of records to re" +
-      "turn (1\342\200\223100, default 20).R\010pageSize\022i\n" +
-      "\npage_token\030\n \001(\tBJ\222AG2EOpaque paginatio" +
-      "n token returned by a previous ListToolC" +
-      "allLogs call.R\tpageToken\022\206\001\n\017connection_" +
-      "name\030\013 \001(\tBX\222AM2=Filter by connection na" +
-      "me (partial match). e.g. \'gmail-prod\'.J\014" +
-      "\"gmail-prod\"\272H\005r\003\030\377\001H\004R\016connectionName\210\001" +
-      "\001B\020\n\016_connection_idB\027\n\025_connected_accoun" +
-      "t_idB\r\n\013_identifierB\017\n\r_agent_run_idB\022\n\020" +
-      "_connection_name\"\264\002\n\030ListToolCallLogsRes" +
-      "ponse\022L\n\016tool_call_logs\030\001 \003(\0132&.scalekit" +
-      ".v1.agentkit_logs.ToolCallLogR\014toolCallL" +
-      "ogs\022&\n\017next_page_token\030\002 \001(\tR\rnextPageTo" +
-      "ken\022\035\n\ntotal_size\030\003 \001(\003R\ttotalSize\022\202\001\n\017p" +
-      "rev_page_token\030\004 \001(\tBZ\222AW2UPagination to" +
-      "ken to fetch the previous page of result" +
-      "s. Empty when on the first page.R\rprevPa" +
-      "geToken\"z\n\025GetToolCallLogRequest\022a\n\014exec" +
-      "ution_id\030\001 \001(\tB>\222A/2\036Execution ID of the" +
-      " tool call.J\r\"exec_abc123\"\340A\002\272H\006r\004\020\001\030@R\013" +
-      "executionId\"\370\007\n\013ToolCallLog\022F\n\002id\030\001 \001(\tB" +
-      "6\222A32\037Unique tool call log record ID.J\020\"" +
-      "tcl_1234567890\"R\002id\022%\n\016environment_id\030\002 " +
-      "\001(\tR\renvironmentId\022O\n\014execution_id\030\003 \001(\t" +
-      "B,\222A)2\'Unique execution ID for this tool" +
-      " call.R\013executionId\022%\n\014agent_run_id\030\004 \001(" +
-      "\tH\000R\nagentRunId\210\001\001\022\033\n\ttool_name\030\005 \001(\tR\010t" +
-      "oolName\022\032\n\010provider\030\006 \001(\tR\010provider\0220\n\024c" +
-      "onnected_account_id\030\007 \001(\tR\022connectedAcco" +
-      "untId\022#\n\rconnection_id\030\010 \001(\tR\014connection" +
-      "Id\022\'\n\017connection_name\030\t \001(\tR\016connectionN" +
-      "ame\022\036\n\nidentifier\030\n \001(\tR\nidentifier\022\027\n\007u" +
-      "ser_id\030\013 \001(\tR\006userId\022,\n\017organization_id\030" +
-      "\014 \001(\tH\001R\016organizationId\210\001\001\022;\n\006source\030\r \001" +
-      "(\tB#\222A 2\036Invocation source: API or MCP.R" +
-      "\006source\022Q\n\006status\030\016 \001(\tB9\222A624Outcome: s" +
-      "uccess, provider_error, or platform_erro" +
-      "r.R\006status\022\035\n\nerror_tier\030\017 \001(\tR\terrorTie" +
-      "r\022\035\n\nerror_code\030\020 \001(\tR\terrorCode\022#\n\rerro" +
-      "r_message\030\021 \001(\tR\014errorMessage\022\037\n\013duratio" +
-      "n_ms\030\022 \001(\003R\ndurationMs\0229\n\nstarted_at\030\023 \001" +
-      "(\0132\032.google.protobuf.TimestampR\tstartedA" +
-      "t\022]\n\014workspace_id\030\024 \001(\tB5\222A22\036Workspace " +
-      "this log belongs to.J\020\"wks_1234567890\"H\002" +
-      "R\013workspaceId\210\001\001B\017\n\r_agent_run_idB\022\n\020_or" +
-      "ganization_idB\017\n\r_workspace_id2\327\006\n\023Agent" +
-      "kitLogsService\022\272\003\n\020ListToolCallLogs\0222.sc" +
-      "alekit.v1.agentkit_logs.ListToolCallLogs" +
-      "Request\0323.scalekit.v1.agentkit_logs.List" +
-      "ToolCallLogsResponse\"\274\002\222A\374\001\n\rAgentKit Lo" +
-      "gs\022\023List tool call logs\032\200\001Returns pagina" +
-      "ted tool call execution records for the " +
-      "environment. Filter by time range, statu" +
-      "s, provider, or connected account.J.\n\00320" +
-      "0\022\'\n%Tool call logs retrieved successful" +
-      "lyJ#\n\003400\022\034\n\032Invalid request parameters\202" +
-      "\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002!\022\037/api/v1/agen" +
-      "tkit/tool_call_logs\022\356\002\n\016GetToolCallLog\0220" +
-      ".scalekit.v1.agentkit_logs.GetToolCallLo" +
-      "gRequest\032&.scalekit.v1.agentkit_logs.Too" +
-      "lCallLog\"\201\002\222A\262\001\n\rAgentKit Logs\022\023Get a to" +
-      "ol call log\032<Returns a single tool call " +
-      "execution record by execution ID.J-\n\003200" +
-      "\022&\n$Tool call log retrieved successfully" +
-      "J\037\n\003404\022\030\n\026Execution ID not found\202\265\030\002\030T\372" +
-      "\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0020\022./api/v1/agentkit/t" +
-      "ool_call_logs/{execution_id}\032\022\222A\017\n\rAgent" +
-      "Kit LogsB\373\001\n+com.scalekit.grpc.scalekit." +
-      "v1.agentkit_logsB\021AgentkitLogsProtoP\001Z7g" +
-      "ithub.com/scalekit-inc/scalekit/pkg/grpc" +
-      "/agentkit_logs\242\002\003SVA\252\002\030Scalekit.V1.Agent" +
-      "kitLogs\312\002\030Scalekit\\V1\\AgentkitLogs\342\002$Sca" +
-      "lekit\\V1\\AgentkitLogs\\GPBMetadata\352\002\032Scal" +
-      "ekit::V1::AgentkitLogsb\006proto3"
+      "alekit/v1/options/options.proto\"\240\004\n\036List" +
+      "CurrentToolCallLogsRequest\0229\n\nstart_time" +
+      "\030\001 \001(\0132\032.google.protobuf.TimestampR\tstar" +
+      "tTime\0225\n\010end_time\030\002 \001(\0132\032.google.protobu" +
+      "f.TimestampR\007endTime\022\026\n\006status\030\003 \003(\tR\006st" +
+      "atus\022\032\n\010provider\030\004 \003(\tR\010provider\022(\n\rconn" +
+      "ection_id\030\005 \001(\tH\000R\014connectionId\210\001\001\0225\n\024co" +
+      "nnected_account_id\030\006 \001(\tH\001R\022connectedAcc" +
+      "ountId\210\001\001\022%\n\014agent_run_id\030\010 \001(\tH\002R\nagent" +
+      "RunId\210\001\001\022\033\n\tpage_size\030\t \001(\rR\010pageSize\022\035\n" +
+      "\npage_token\030\n \001(\tR\tpageToken\022,\n\017connecti" +
+      "on_name\030\013 \001(\tH\003R\016connectionName\210\001\001\022\026\n\006so" +
+      "urce\030\014 \003(\tR\006sourceB\020\n\016_connection_idB\027\n\025" +
+      "_connected_account_idB\017\n\r_agent_run_idB\022" +
+      "\n\020_connection_name\"\257\n\n\027ListToolCallLogsR" +
+      "equest\0229\n\nstart_time\030\001 \001(\0132\032.google.prot" +
+      "obuf.TimestampR\tstartTime\0225\n\010end_time\030\002 " +
+      "\001(\0132\032.google.protobuf.TimestampR\007endTime" +
+      "\022g\n\006status\030\003 \003(\tBO\222AL2JFilter by status." +
+      " Allowed values: success, provider_error" +
+      ", platform_error.R\006status\022O\n\010provider\030\004 " +
+      "\003(\tB3\222A02.Filter by connector provider s" +
+      "lug, e.g. gmail.R\010provider\022Z\n\rconnection" +
+      "_id\030\005 \001(\tB0\222A-2\030Filter by connection ID." +
+      "J\021\"conn_1234567890\"H\000R\014connectionId\210\001\001\022l" +
+      "\n\024connected_account_id\030\006 \001(\tB5\222A22\037Filte" +
+      "r by connected account ID.J\017\"ca_12345678" +
+      "90\"H\001R\022connectedAccountId\210\001\001\022{\n\nidentifi" +
+      "er\030\007 \001(\tBV\222AK2IFilter by connected accou" +
+      "nt identifier (customer-defined end-user" +
+      " label).\272H\005r\003\030\377\001H\002R\nidentifier\210\001\001\022\206\001\n\014ag" +
+      "ent_run_id\030\010 \001(\tB_\222AT2DFilter by agent r" +
+      "un ID to see all tool calls for a single" +
+      " agent run.J\014\"run_abc123\"\272H\005r\003\030\377\001H\003R\nage" +
+      "ntRunId\210\001\001\022\\\n\tpage_size\030\t \001(\rB?\222A<2:Maxi" +
+      "mum number of records to return (1\342\200\223100" +
+      ", default 20).R\010pageSize\022i\n\npage_token\030\n" +
+      " \001(\tBJ\222AG2EOpaque pagination token retur" +
+      "ned by a previous ListToolCallLogs call." +
+      "R\tpageToken\022\206\001\n\017connection_name\030\013 \001(\tBX\222" +
+      "AM2=Filter by connection name (partial m" +
+      "atch). e.g. \'gmail-prod\'.J\014\"gmail-prod\"\272" +
+      "H\005r\003\030\377\001H\004R\016connectionName\210\001\001\022g\n\006source\030\014" +
+      " \003(\tBO\222AL2JFilter by tool_call_logs.sour" +
+      "ce. Allowed values: API, MCP, PROXY, GAT" +
+      "EWAY.R\006sourceB\020\n\016_connection_idB\027\n\025_conn" +
+      "ected_account_idB\r\n\013_identifierB\017\n\r_agen" +
+      "t_run_idB\022\n\020_connection_name\"\264\002\n\030ListToo" +
+      "lCallLogsResponse\022L\n\016tool_call_logs\030\001 \003(" +
+      "\0132&.scalekit.v1.agentkit_logs.ToolCallLo" +
+      "gR\014toolCallLogs\022&\n\017next_page_token\030\002 \001(\t" +
+      "R\rnextPageToken\022\035\n\ntotal_size\030\003 \001(\003R\ttot" +
+      "alSize\022\202\001\n\017prev_page_token\030\004 \001(\tBZ\222AW2UP" +
+      "agination token to fetch the previous pa" +
+      "ge of results. Empty when on the first p" +
+      "age.R\rprevPageToken\"z\n\025GetToolCallLogReq" +
+      "uest\022a\n\014execution_id\030\001 \001(\tB>\222A/2\036Executi" +
+      "on ID of the tool call.J\r\"exec_abc123\"\340A" +
+      "\002\272H\006r\004\020\001\030@R\013executionId\"\372\010\n\013ToolCallLog\022" +
+      "F\n\002id\030\001 \001(\tB6\222A32\037Unique tool call log r" +
+      "ecord ID.J\020\"tcl_1234567890\"R\002id\022%\n\016envir" +
+      "onment_id\030\002 \001(\tR\renvironmentId\022O\n\014execut" +
+      "ion_id\030\003 \001(\tB,\222A)2\'Unique execution ID f" +
+      "or this tool call.R\013executionId\022%\n\014agent" +
+      "_run_id\030\004 \001(\tH\000R\nagentRunId\210\001\001\022\033\n\ttool_n" +
+      "ame\030\005 \001(\tR\010toolName\022\032\n\010provider\030\006 \001(\tR\010p" +
+      "rovider\0220\n\024connected_account_id\030\007 \001(\tR\022c" +
+      "onnectedAccountId\022#\n\rconnection_id\030\010 \001(\t" +
+      "R\014connectionId\022\'\n\017connection_name\030\t \001(\tR" +
+      "\016connectionName\022\036\n\nidentifier\030\n \001(\tR\nide" +
+      "ntifier\022\027\n\007user_id\030\013 \001(\tR\006userId\022,\n\017orga" +
+      "nization_id\030\014 \001(\tH\001R\016organizationId\210\001\001\022;" +
+      "\n\006source\030\r \001(\tB#\222A 2\036Invocation source: " +
+      "API or MCP.R\006source\022Q\n\006status\030\016 \001(\tB9\222A6" +
+      "24Outcome: success, provider_error, or p" +
+      "latform_error.R\006status\022\035\n\nerror_tier\030\017 \001" +
+      "(\tR\terrorTier\022\035\n\nerror_code\030\020 \001(\tR\terror" +
+      "Code\022#\n\rerror_message\030\021 \001(\tR\014errorMessag" +
+      "e\022\037\n\013duration_ms\030\022 \001(\003R\ndurationMs\0229\n\nst" +
+      "arted_at\030\023 \001(\0132\032.google.protobuf.Timesta" +
+      "mpR\tstartedAt\022]\n\014workspace_id\030\024 \001(\tB5\222A2" +
+      "2\036Workspace this log belongs to.J\020\"wks_1" +
+      "234567890\"H\002R\013workspaceId\210\001\001\022s\n\010agent_id" +
+      "\030\025 \001(\tBS\222AP24Calling agent\'s OAuth clien" +
+      "t_id (Gateway rows only).J\030\"m2m_12753423" +
+      "8978308531\"H\003R\007agentId\210\001\001B\017\n\r_agent_run_" +
+      "idB\022\n\020_organization_idB\017\n\r_workspace_idB" +
+      "\013\n\t_agent_id2\246\010\n\023AgentkitLogsService\022\272\003\n" +
+      "\020ListToolCallLogs\0222.scalekit.v1.agentkit" +
+      "_logs.ListToolCallLogsRequest\0323.scalekit" +
+      ".v1.agentkit_logs.ListToolCallLogsRespon" +
+      "se\"\274\002\222A\374\001\n\rAgentKit Logs\022\023List tool call" +
+      " logs\032\200\001Returns paginated tool call exec" +
+      "ution records for the environment. Filte" +
+      "r by time range, status, provider, or co" +
+      "nnected account.J.\n\003200\022\'\n%Tool call log" +
+      "s retrieved successfullyJ#\n\003400\022\034\n\032Inval" +
+      "id request parameters\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVI" +
+      "EW\202\323\344\223\002!\022\037/api/v1/agentkit/tool_call_log" +
+      "s\022\356\002\n\016GetToolCallLog\0220.scalekit.v1.agent" +
+      "kit_logs.GetToolCallLogRequest\032&.scaleki" +
+      "t.v1.agentkit_logs.ToolCallLog\"\201\002\222A\262\001\n\rA" +
+      "gentKit Logs\022\023Get a tool call log\032<Retur" +
+      "ns a single tool call execution record b" +
+      "y execution ID.J-\n\003200\022&\n$Tool call log " +
+      "retrieved successfullyJ\037\n\003404\022\030\n\026Executi" +
+      "on ID not found\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
+      "\0020\022./api/v1/agentkit/tool_call_logs/{exe" +
+      "cution_id}\022\314\001\n\027ListCurrentToolCallLogs\0229" +
+      ".scalekit.v1.agentkit_logs.ListCurrentTo" +
+      "olCallLogsRequest\0323.scalekit.v1.agentkit" +
+      "_logs.ListToolCallLogsResponse\"A\202\265\030\002\030\030\372\322" +
+      "\344\223\002\t\022\007PREVIEW\202\323\344\223\002&\022$/api/v1/agentkit/to" +
+      "ol_call_logs:this\032\022\222A\017\n\rAgentKit LogsB\373\001" +
+      "\n+com.scalekit.grpc.scalekit.v1.agentkit" +
+      "_logsB\021AgentkitLogsProtoP\001Z7github.com/s" +
+      "calekit-inc/scalekit/pkg/grpc/agentkit_l" +
+      "ogs\242\002\003SVA\252\002\030Scalekit.V1.AgentkitLogs\312\002\030S" +
+      "calekit\\V1\\AgentkitLogs\342\002$Scalekit\\V1\\Ag" +
+      "entkitLogs\\GPBMetadata\352\002\032Scalekit::V1::A" +
+      "gentkitLogsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -159,30 +189,36 @@ public final class AgentkitLogsProto {
           com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor(),
           com.scalekit.grpc.scalekit.v1.options.OptionsProto.getDescriptor(),
         });
-    internal_static_scalekit_v1_agentkit_logs_ListToolCallLogsRequest_descriptor =
+    internal_static_scalekit_v1_agentkit_logs_ListCurrentToolCallLogsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_scalekit_v1_agentkit_logs_ListCurrentToolCallLogsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_agentkit_logs_ListCurrentToolCallLogsRequest_descriptor,
+        new java.lang.String[] { "StartTime", "EndTime", "Status", "Provider", "ConnectionId", "ConnectedAccountId", "AgentRunId", "PageSize", "PageToken", "ConnectionName", "Source", });
+    internal_static_scalekit_v1_agentkit_logs_ListToolCallLogsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_scalekit_v1_agentkit_logs_ListToolCallLogsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_agentkit_logs_ListToolCallLogsRequest_descriptor,
-        new java.lang.String[] { "StartTime", "EndTime", "Status", "Provider", "ConnectionId", "ConnectedAccountId", "Identifier", "AgentRunId", "PageSize", "PageToken", "ConnectionName", });
+        new java.lang.String[] { "StartTime", "EndTime", "Status", "Provider", "ConnectionId", "ConnectedAccountId", "Identifier", "AgentRunId", "PageSize", "PageToken", "ConnectionName", "Source", });
     internal_static_scalekit_v1_agentkit_logs_ListToolCallLogsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_scalekit_v1_agentkit_logs_ListToolCallLogsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_agentkit_logs_ListToolCallLogsResponse_descriptor,
         new java.lang.String[] { "ToolCallLogs", "NextPageToken", "TotalSize", "PrevPageToken", });
     internal_static_scalekit_v1_agentkit_logs_GetToolCallLogRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_scalekit_v1_agentkit_logs_GetToolCallLogRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_agentkit_logs_GetToolCallLogRequest_descriptor,
         new java.lang.String[] { "ExecutionId", });
     internal_static_scalekit_v1_agentkit_logs_ToolCallLog_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_scalekit_v1_agentkit_logs_ToolCallLog_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_agentkit_logs_ToolCallLog_descriptor,
-        new java.lang.String[] { "Id", "EnvironmentId", "ExecutionId", "AgentRunId", "ToolName", "Provider", "ConnectedAccountId", "ConnectionId", "ConnectionName", "Identifier", "UserId", "OrganizationId", "Source", "Status", "ErrorTier", "ErrorCode", "ErrorMessage", "DurationMs", "StartedAt", "WorkspaceId", });
+        new java.lang.String[] { "Id", "EnvironmentId", "ExecutionId", "AgentRunId", "ToolName", "Provider", "ConnectedAccountId", "ConnectionId", "ConnectionName", "Identifier", "UserId", "OrganizationId", "Source", "Status", "ErrorTier", "ErrorCode", "ErrorMessage", "DurationMs", "StartedAt", "WorkspaceId", "AgentId", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);

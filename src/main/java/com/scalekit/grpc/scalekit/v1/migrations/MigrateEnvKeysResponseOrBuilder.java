@@ -13,4 +13,119 @@ public interface MigrateEnvKeysResponseOrBuilder extends
    * @return The environmentsProcessed.
    */
   int getEnvironmentsProcessed();
+
+  /**
+   * <pre>
+   * Environment IDs that failed during processing. The migration continues past failures
+   * and short-circuits if more than five environments fail. Successful environments are
+   * counted in environments_processed.
+   * </pre>
+   *
+   * <code>repeated string failed_environment_ids = 2 [json_name = "failedEnvironmentIds"];</code>
+   * @return A list containing the failedEnvironmentIds.
+   */
+  java.util.List<java.lang.String>
+      getFailedEnvironmentIdsList();
+  /**
+   * <pre>
+   * Environment IDs that failed during processing. The migration continues past failures
+   * and short-circuits if more than five environments fail. Successful environments are
+   * counted in environments_processed.
+   * </pre>
+   *
+   * <code>repeated string failed_environment_ids = 2 [json_name = "failedEnvironmentIds"];</code>
+   * @return The count of failedEnvironmentIds.
+   */
+  int getFailedEnvironmentIdsCount();
+  /**
+   * <pre>
+   * Environment IDs that failed during processing. The migration continues past failures
+   * and short-circuits if more than five environments fail. Successful environments are
+   * counted in environments_processed.
+   * </pre>
+   *
+   * <code>repeated string failed_environment_ids = 2 [json_name = "failedEnvironmentIds"];</code>
+   * @param index The index of the element to return.
+   * @return The failedEnvironmentIds at the given index.
+   */
+  java.lang.String getFailedEnvironmentIds(int index);
+  /**
+   * <pre>
+   * Environment IDs that failed during processing. The migration continues past failures
+   * and short-circuits if more than five environments fail. Successful environments are
+   * counted in environments_processed.
+   * </pre>
+   *
+   * <code>repeated string failed_environment_ids = 2 [json_name = "failedEnvironmentIds"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the failedEnvironmentIds at the given index.
+   */
+  com.google.protobuf.ByteString
+      getFailedEnvironmentIdsBytes(int index);
+
+  /**
+   * <pre>
+   * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+   * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+   * complete for those environments; DestroyDEK is safe to call.
+   * </pre>
+   *
+   * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+   */
+  java.util.List<com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips> 
+      getUnrecoverableRowsList();
+  /**
+   * <pre>
+   * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+   * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+   * complete for those environments; DestroyDEK is safe to call.
+   * </pre>
+   *
+   * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+   */
+  com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkips getUnrecoverableRows(int index);
+  /**
+   * <pre>
+   * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+   * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+   * complete for those environments; DestroyDEK is safe to call.
+   * </pre>
+   *
+   * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+   */
+  int getUnrecoverableRowsCount();
+  /**
+   * <pre>
+   * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+   * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+   * complete for those environments; DestroyDEK is safe to call.
+   * </pre>
+   *
+   * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+   */
+  java.util.List<? extends com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkipsOrBuilder> 
+      getUnrecoverableRowsOrBuilderList();
+  /**
+   * <pre>
+   * Per-environment unrecoverable rows. Non-empty when one or more environments had rows
+   * that could not be re-encrypted due to a corrupted key record. Re-encryption is otherwise
+   * complete for those environments; DestroyDEK is safe to call.
+   * </pre>
+   *
+   * <code>repeated .scalekit.v1.migrations.EnvironmentReencryptSkips unrecoverable_rows = 3 [json_name = "unrecoverableRows"];</code>
+   */
+  com.scalekit.grpc.scalekit.v1.migrations.EnvironmentReencryptSkipsOrBuilder getUnrecoverableRowsOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * True when async was requested and the migration was accepted for background processing.
+   * The other fields are zero/empty in that case — outcome is reported via server logs and
+   * re-encryption events, not in this response.
+   * </pre>
+   *
+   * <code>bool accepted = 4 [json_name = "accepted"];</code>
+   * @return The accepted.
+   */
+  boolean getAccepted();
 }

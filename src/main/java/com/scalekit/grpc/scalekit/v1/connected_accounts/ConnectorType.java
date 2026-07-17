@@ -93,6 +93,30 @@ public enum ConnectorType
    * <code>GOOGLE_DWD = 9;</code>
    */
   GOOGLE_DWD(9),
+  /**
+   * <pre>
+   * Trusted Identity Provider federation (e.g. AWS STS AssumeRoleWithWebIdentity)
+   * </pre>
+   *
+   * <code>TRUSTED_IDP = 10;</code>
+   */
+  TRUSTED_IDP(10),
+  /**
+   * <pre>
+   * SMART on FHIR (SMART App Launch) — OAuth 2.0 authorization for FHIR servers
+   * </pre>
+   *
+   * <code>SMART_FHIR = 11;</code>
+   */
+  SMART_FHIR(11),
+  /**
+   * <pre>
+   * No authentication — connector requires no credentials (e.g. public docs MCP servers)
+   * </pre>
+   *
+   * <code>NO_AUTH = 12;</code>
+   */
+  NO_AUTH(12),
   UNRECOGNIZED(-1),
   ;
 
@@ -176,6 +200,30 @@ public enum ConnectorType
    * <code>GOOGLE_DWD = 9;</code>
    */
   public static final int GOOGLE_DWD_VALUE = 9;
+  /**
+   * <pre>
+   * Trusted Identity Provider federation (e.g. AWS STS AssumeRoleWithWebIdentity)
+   * </pre>
+   *
+   * <code>TRUSTED_IDP = 10;</code>
+   */
+  public static final int TRUSTED_IDP_VALUE = 10;
+  /**
+   * <pre>
+   * SMART on FHIR (SMART App Launch) — OAuth 2.0 authorization for FHIR servers
+   * </pre>
+   *
+   * <code>SMART_FHIR = 11;</code>
+   */
+  public static final int SMART_FHIR_VALUE = 11;
+  /**
+   * <pre>
+   * No authentication — connector requires no credentials (e.g. public docs MCP servers)
+   * </pre>
+   *
+   * <code>NO_AUTH = 12;</code>
+   */
+  public static final int NO_AUTH_VALUE = 12;
 
 
   public final int getNumber() {
@@ -212,6 +260,9 @@ public enum ConnectorType
       case 7: return OAUTH_M2M;
       case 8: return TRELLO_OAUTH1;
       case 9: return GOOGLE_DWD;
+      case 10: return TRUSTED_IDP;
+      case 11: return SMART_FHIR;
+      case 12: return NO_AUTH;
       default: return null;
     }
   }

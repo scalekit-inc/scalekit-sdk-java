@@ -190,4 +190,29 @@ public interface ListToolCallLogsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getConnectionNameBytes();
+
+  /**
+   * <code>repeated string source = 12 [json_name = "source", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the source.
+   */
+  java.util.List<java.lang.String>
+      getSourceList();
+  /**
+   * <code>repeated string source = 12 [json_name = "source", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of source.
+   */
+  int getSourceCount();
+  /**
+   * <code>repeated string source = 12 [json_name = "source", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The source at the given index.
+   */
+  java.lang.String getSource(int index);
+  /**
+   * <code>repeated string source = 12 [json_name = "source", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the source at the given index.
+   */
+  com.google.protobuf.ByteString
+      getSourceBytes(int index);
 }

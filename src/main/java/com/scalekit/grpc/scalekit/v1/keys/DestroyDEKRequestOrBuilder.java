@@ -9,11 +9,7 @@ public interface DestroyDEKRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   * DEK version to destroy
-   * </pre>
-   *
-   * <code>int32 dek_version = 1 [json_name = "dekVersion", (.buf.validate.field) = { ... }</code>
+   * <code>int32 dek_version = 1 [json_name = "dekVersion", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The dekVersion.
    */
   int getDekVersion();

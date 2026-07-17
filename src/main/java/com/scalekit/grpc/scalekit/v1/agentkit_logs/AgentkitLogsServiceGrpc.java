@@ -77,6 +77,37 @@ public final class AgentkitLogsServiceGrpc {
     return getGetToolCallLogMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.agentkit_logs.ListCurrentToolCallLogsRequest,
+      com.scalekit.grpc.scalekit.v1.agentkit_logs.ListToolCallLogsResponse> getListCurrentToolCallLogsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCurrentToolCallLogs",
+      requestType = com.scalekit.grpc.scalekit.v1.agentkit_logs.ListCurrentToolCallLogsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.agentkit_logs.ListToolCallLogsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.agentkit_logs.ListCurrentToolCallLogsRequest,
+      com.scalekit.grpc.scalekit.v1.agentkit_logs.ListToolCallLogsResponse> getListCurrentToolCallLogsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.agentkit_logs.ListCurrentToolCallLogsRequest, com.scalekit.grpc.scalekit.v1.agentkit_logs.ListToolCallLogsResponse> getListCurrentToolCallLogsMethod;
+    if ((getListCurrentToolCallLogsMethod = AgentkitLogsServiceGrpc.getListCurrentToolCallLogsMethod) == null) {
+      synchronized (AgentkitLogsServiceGrpc.class) {
+        if ((getListCurrentToolCallLogsMethod = AgentkitLogsServiceGrpc.getListCurrentToolCallLogsMethod) == null) {
+          AgentkitLogsServiceGrpc.getListCurrentToolCallLogsMethod = getListCurrentToolCallLogsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.agentkit_logs.ListCurrentToolCallLogsRequest, com.scalekit.grpc.scalekit.v1.agentkit_logs.ListToolCallLogsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCurrentToolCallLogs"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.agentkit_logs.ListCurrentToolCallLogsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.agentkit_logs.ListToolCallLogsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AgentkitLogsServiceMethodDescriptorSupplier("ListCurrentToolCallLogs"))
+              .build();
+        }
+      }
+    }
+    return getListCurrentToolCallLogsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -138,6 +169,18 @@ public final class AgentkitLogsServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.agentkit_logs.ToolCallLog> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetToolCallLogMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     * ListCurrentToolCallLogs is the SESSION_USER-authed counterpart of
+     * ListToolCallLogs — same shape, server forces identifier to the
+     * calling end-user. Mounted under /ui/agent-activity.
+     * </pre>
+     */
+    default void listCurrentToolCallLogs(com.scalekit.grpc.scalekit.v1.agentkit_logs.ListCurrentToolCallLogsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.agentkit_logs.ListToolCallLogsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCurrentToolCallLogsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -182,6 +225,19 @@ public final class AgentkitLogsServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetToolCallLogMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * ListCurrentToolCallLogs is the SESSION_USER-authed counterpart of
+     * ListToolCallLogs — same shape, server forces identifier to the
+     * calling end-user. Mounted under /ui/agent-activity.
+     * </pre>
+     */
+    public void listCurrentToolCallLogs(com.scalekit.grpc.scalekit.v1.agentkit_logs.ListCurrentToolCallLogsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.agentkit_logs.ListToolCallLogsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListCurrentToolCallLogsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -212,6 +268,18 @@ public final class AgentkitLogsServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.agentkit_logs.ToolCallLog getToolCallLog(com.scalekit.grpc.scalekit.v1.agentkit_logs.GetToolCallLogRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetToolCallLogMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * ListCurrentToolCallLogs is the SESSION_USER-authed counterpart of
+     * ListToolCallLogs — same shape, server forces identifier to the
+     * calling end-user. Mounted under /ui/agent-activity.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.agentkit_logs.ListToolCallLogsResponse listCurrentToolCallLogs(com.scalekit.grpc.scalekit.v1.agentkit_logs.ListCurrentToolCallLogsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCurrentToolCallLogsMethod(), getCallOptions(), request);
     }
   }
 
@@ -246,10 +314,24 @@ public final class AgentkitLogsServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetToolCallLogMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * ListCurrentToolCallLogs is the SESSION_USER-authed counterpart of
+     * ListToolCallLogs — same shape, server forces identifier to the
+     * calling end-user. Mounted under /ui/agent-activity.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.agentkit_logs.ListToolCallLogsResponse> listCurrentToolCallLogs(
+        com.scalekit.grpc.scalekit.v1.agentkit_logs.ListCurrentToolCallLogsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListCurrentToolCallLogsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_TOOL_CALL_LOGS = 0;
   private static final int METHODID_GET_TOOL_CALL_LOG = 1;
+  private static final int METHODID_LIST_CURRENT_TOOL_CALL_LOGS = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -275,6 +357,10 @@ public final class AgentkitLogsServiceGrpc {
         case METHODID_GET_TOOL_CALL_LOG:
           serviceImpl.getToolCallLog((com.scalekit.grpc.scalekit.v1.agentkit_logs.GetToolCallLogRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.agentkit_logs.ToolCallLog>) responseObserver);
+          break;
+        case METHODID_LIST_CURRENT_TOOL_CALL_LOGS:
+          serviceImpl.listCurrentToolCallLogs((com.scalekit.grpc.scalekit.v1.agentkit_logs.ListCurrentToolCallLogsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.agentkit_logs.ListToolCallLogsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -308,6 +394,13 @@ public final class AgentkitLogsServiceGrpc {
               com.scalekit.grpc.scalekit.v1.agentkit_logs.GetToolCallLogRequest,
               com.scalekit.grpc.scalekit.v1.agentkit_logs.ToolCallLog>(
                 service, METHODID_GET_TOOL_CALL_LOG)))
+        .addMethod(
+          getListCurrentToolCallLogsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.agentkit_logs.ListCurrentToolCallLogsRequest,
+              com.scalekit.grpc.scalekit.v1.agentkit_logs.ListToolCallLogsResponse>(
+                service, METHODID_LIST_CURRENT_TOOL_CALL_LOGS)))
         .build();
   }
 
@@ -358,6 +451,7 @@ public final class AgentkitLogsServiceGrpc {
               .setSchemaDescriptor(new AgentkitLogsServiceFileDescriptorSupplier())
               .addMethod(getListToolCallLogsMethod())
               .addMethod(getGetToolCallLogMethod())
+              .addMethod(getListCurrentToolCallLogsMethod())
               .build();
         }
       }

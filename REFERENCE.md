@@ -16,6 +16,7 @@
 - [Auth](#auth)
 - [Tokens](#tokens)
 - [M2M](#m2m)
+- [Events](#events)
 
 The Java SDK exposes the clients and methods in the sections above through `ScalekitClient`. Connected Accounts, Tools, and Actions are not part of the Java public API in this release.
 
@@ -7528,6 +7529,146 @@ client.m2m().listOrganizationClients("org_123", 20, "");
 <dd>
 
 **pageToken:** `String` - Pagination cursor for next page (null or empty string for first page)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+## Events
+
+<details><summary><code>client.events().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/EventsClient.java">listEventsPaginated</a>(pageSize, pageToken) -> ListEventsPaginatedResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists environment events with cursor-based pagination, most-recent first.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+ListEventsPaginatedResponse response = client.events().listEventsPaginated(10, "");
+response.getEventsList().forEach(event -> System.out.println(event.getId()));
+String next = response.getNextPageToken();
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**pageSize:** `int` - Number of events per page (defaults to 10 when <= 0)
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**pageToken:** `String` - Pagination cursor (null or empty string for the first page)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.events().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/EventsClient.java">listEventsPaginated</a>(filter, pageSize, pageToken) -> ListEventsPaginatedResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists environment events matching an `EventFilter` (event types, organization, time range, and more), with cursor-based pagination.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+EventFilter filter = EventFilter.newBuilder()
+  .setOrganizationId("org_123")
+  .build();
+
+ListEventsPaginatedResponse response = client.events().listEventsPaginated(filter, 10, "");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**filter:** `EventFilter` - Filter criteria (event types, organization ID, time range, source, connection/connected-account IDs)
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**pageSize:** `int` - Number of events per page (defaults to 10 when <= 0)
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**pageToken:** `String` - Pagination cursor (null or empty string for the first page)
 
 </dd>
 </dl>

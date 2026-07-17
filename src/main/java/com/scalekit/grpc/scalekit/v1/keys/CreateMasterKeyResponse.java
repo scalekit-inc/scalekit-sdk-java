@@ -5,10 +5,6 @@
 package com.scalekit.grpc.scalekit.v1.keys;
 
 /**
- * <pre>
- * CreateMasterKeyResponse returns the created master key information
- * </pre>
- *
  * Protobuf type {@code scalekit.v1.keys.CreateMasterKeyResponse}
  */
 public final class CreateMasterKeyResponse extends
@@ -47,7 +43,7 @@ private static final long serialVersionUID = 0L;
   public static final int MASTER_KEY_FIELD_NUMBER = 1;
   private com.scalekit.grpc.scalekit.v1.keys.MasterKey masterKey_;
   /**
-   * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey"];</code>
+   * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the masterKey field is set.
    */
   @java.lang.Override
@@ -55,7 +51,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey"];</code>
+   * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The masterKey.
    */
   @java.lang.Override
@@ -63,7 +59,7 @@ private static final long serialVersionUID = 0L;
     return masterKey_ == null ? com.scalekit.grpc.scalekit.v1.keys.MasterKey.getDefaultInstance() : masterKey_;
   }
   /**
-   * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey"];</code>
+   * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.keys.MasterKeyOrBuilder getMasterKeyOrBuilder() {
@@ -233,10 +229,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * CreateMasterKeyResponse returns the created master key information
-   * </pre>
-   *
    * Protobuf type {@code scalekit.v1.keys.CreateMasterKeyResponse}
    */
   public static final class Builder extends
@@ -425,14 +417,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.keys.MasterKey, com.scalekit.grpc.scalekit.v1.keys.MasterKey.Builder, com.scalekit.grpc.scalekit.v1.keys.MasterKeyOrBuilder> masterKeyBuilder_;
     /**
-     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey"];</code>
+     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the masterKey field is set.
      */
     public boolean hasMasterKey() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey"];</code>
+     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The masterKey.
      */
     public com.scalekit.grpc.scalekit.v1.keys.MasterKey getMasterKey() {
@@ -443,7 +435,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey"];</code>
+     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setMasterKey(com.scalekit.grpc.scalekit.v1.keys.MasterKey value) {
       if (masterKeyBuilder_ == null) {
@@ -459,7 +451,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey"];</code>
+     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setMasterKey(
         com.scalekit.grpc.scalekit.v1.keys.MasterKey.Builder builderForValue) {
@@ -473,7 +465,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey"];</code>
+     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeMasterKey(com.scalekit.grpc.scalekit.v1.keys.MasterKey value) {
       if (masterKeyBuilder_ == null) {
@@ -494,7 +486,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey"];</code>
+     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearMasterKey() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -507,7 +499,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey"];</code>
+     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.keys.MasterKey.Builder getMasterKeyBuilder() {
       bitField0_ |= 0x00000001;
@@ -515,7 +507,7 @@ private static final long serialVersionUID = 0L;
       return getMasterKeyFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey"];</code>
+     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.keys.MasterKeyOrBuilder getMasterKeyOrBuilder() {
       if (masterKeyBuilder_ != null) {
@@ -526,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey"];</code>
+     * <code>.scalekit.v1.keys.MasterKey master_key = 1 [json_name = "masterKey", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.keys.MasterKey, com.scalekit.grpc.scalekit.v1.keys.MasterKey.Builder, com.scalekit.grpc.scalekit.v1.keys.MasterKeyOrBuilder> 
