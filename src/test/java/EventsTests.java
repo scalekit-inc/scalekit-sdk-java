@@ -34,4 +34,39 @@ public class EventsTests {
         assertDoesNotThrow(response::getPrevPageToken);
     }
 
+    @Test
+    void ListEventsTest() {
+        ListEventsResponse response = client.events().listEvents(10, "");
+
+        assertNotNull(response);
+        assertNotNull(response.getEventsList());
+        assertDoesNotThrow(response::getTotalSize);
+    }
+
+    @Test
+    void ListEventsWithFiltersTest() {
+        EventFilter filter = EventFilter.newBuilder()
+                .setOrganizationId("org_does_not_exist")
+                .setSource(Source.SCALEKIT)
+                .build();
+
+        ListEventsResponse response = client.events().listEvents(filter, 5, "");
+
+        assertNotNull(response);
+        // A nonexistent organization_id filters out all events, but the call still succeeds.
+        assertEquals(0, response.getEventsList().size());
+    }
+
+    @Test
+    void ListEventsAuthRequestIdFilterNoMatchTest() {
+        EventFilter filter = EventFilter.newBuilder()
+                .setAuthRequestId("areq_does_not_exist")
+                .build();
+
+        ListEventsResponse response = client.events().listEvents(filter, 10, "");
+
+        assertNotNull(response);
+        assertEquals(0, response.getEventsList().size());
+    }
+
 }
