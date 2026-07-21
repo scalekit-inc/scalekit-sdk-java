@@ -17,6 +17,7 @@
 - [Tokens](#tokens)
 - [M2M](#m2m)
 - [Events](#events)
+- [Audit Logs](#audit-logs)
 
 The Java SDK exposes the clients and methods in the sections above through `ScalekitClient`. Connected Accounts, Tools, and Actions are not part of the Java public API in this release.
 
@@ -7669,6 +7670,207 @@ ListEventsPaginatedResponse response = client.events().listEventsPaginated(filte
 <dd>
 
 **pageToken:** `String` - Pagination cursor (null or empty string for the first page)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.events().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/EventsClient.java">listEvents</a>(pageSize, pageToken) -> ListEventsResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists environment events matching an empty filter, most-recent first, including a total count of matching events.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+ListEventsResponse response = client.events().listEvents(10, "");
+System.out.println("Total events: " + response.getTotalSize());
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**pageSize:** `int` - Number of events per page (defaults to 10 when <= 0)
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**pageToken:** `String` - Pagination cursor (null or empty string for the first page)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.events().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/EventsClient.java">listEvents</a>(filter, pageSize, pageToken) -> ListEventsResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists environment events matching an `EventFilter`, most-recent first, including a total count of matching events. Set `EventFilter.setAuthRequestId(...)` to see every event a specific authentication request produced — correlate it with the `authRequestId` returned by `client.auditLogs().listAuthRequests`.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+EventFilter filter = EventFilter.newBuilder()
+  .setAuthRequestId("areq_123456")
+  .build();
+
+ListEventsResponse response = client.events().listEvents(filter, 10, "");
+System.out.println("Total events: " + response.getTotalSize());
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**filter:** `EventFilter` - Filter criteria (event types, organization ID, time range, source, auth_request_id, interceptor/connection/connected-account IDs)
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**pageSize:** `int` - Number of events per page (defaults to 10 when <= 0)
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**pageToken:** `String` - Pagination cursor (null or empty string for the first page)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+## Audit Logs
+
+<details><summary><code>client.auditLogs().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/AuditLogsClient.java">listAuthRequests</a>(request) -> ListAuthLogResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists authentication request logs for the current environment, ordered most-recent first. Each entry's `authRequestId` can be passed to `client.events().listEvents`'s `EventFilter.setAuthRequestId` to see every event a specific login produced.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+ListAuthLogRequest request = ListAuthLogRequest.newBuilder()
+  .setEmail("jane.doe@example.com")
+  .setPageSize(10)
+  .build();
+
+ListAuthLogResponse response = client.auditLogs().listAuthRequests(request);
+response.getAuthRequestsList().forEach(entry ->
+  System.out.println(entry.getAuthRequestId() + " - " + entry.getStatus()));
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `ListAuthLogRequest` - Filter and pagination options (pageSize, pageToken, email, status, startTime, endTime, resourceId, connectedAccountIdentifier, clientId)
 
 </dd>
 </dl>
