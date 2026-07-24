@@ -164,6 +164,17 @@ public class ScalekitAuthClient implements AuthClient {
      * @return boolean: True if the token is valid
      */
     public boolean validateAccessToken(String jwt) throws APIException {
+        return validateAccessToken(jwt, null);
+    }
+
+    /**
+     * validateAccessToken validates an access token, optionally enforcing the
+     * expected issuer and audience.
+     * @param jwt: The JWT token
+     * @param options: Optional issuer/audience validation options (may be null)
+     * @return boolean: True if the token is valid
+     */
+    public boolean validateAccessToken(String jwt, TokenValidationOptions options) throws APIException {
         try {
             // TODO Optimization - Cache the keys
             String keysJson = fetchJsonWebKeys();
@@ -183,15 +194,25 @@ public class ScalekitAuthClient implements AuthClient {
                 return false;
             }
 
-            //  verify the expiry
-            JwtConsumer jwtConsumer = new JwtConsumerBuilder()
+            //  verify the expiry (and optionally issuer/audience)
+            JwtConsumerBuilder jwtConsumerBuilder = new JwtConsumerBuilder()
                 .setRequireExpirationTime()
                 .setAllowedClockSkewInSeconds(30)
-                .setSkipSignatureVerification() // Already verified above
-                .setSkipDefaultAudienceValidation()
-                .build();
+                .setSkipSignatureVerification(); // Already verified above
 
-            // This will throw an exception if the token is expired
+            if (options != null && options.getIssuer() != null && !options.getIssuer().isEmpty()) {
+                jwtConsumerBuilder.setExpectedIssuer(options.getIssuer());
+            }
+
+            if (options != null && options.getAudience() != null && !options.getAudience().isEmpty()) {
+                jwtConsumerBuilder.setExpectedAudience(options.getAudience().toArray(new String[0]));
+            } else {
+                jwtConsumerBuilder.setSkipDefaultAudienceValidation();
+            }
+
+            JwtConsumer jwtConsumer = jwtConsumerBuilder.build();
+
+            // This will throw an exception if the token is expired or fails issuer/audience checks
             jwtConsumer.processToClaims(jwt);
 
             return true;

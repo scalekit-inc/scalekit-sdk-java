@@ -46,6 +46,8 @@ public class ScalekitClient {
 
     private final EventsClient eventsClient;
 
+    private final LoginClient loginClient;
+
     public ScalekitClient(String siteName, String clientId, String clientSecret) {
 
         Environment.configure(siteName,clientId,clientSecret);
@@ -78,6 +80,7 @@ public class ScalekitClient {
             tokenClient = new ScalekitTokenClient(channel, credentials);
             m2mClient = new ScalekitM2MClient(channel, credentials);
             eventsClient = new ScalekitEventsClient(channel, credentials);
+            loginClient = new ScalekitLoginClient(channel, credentials);
             webhook = new ScalekitWebhook();
 
         } catch (MalformedURLException e) {
@@ -146,5 +149,9 @@ public class ScalekitClient {
 
     public EventsClient events() {
         return this.eventsClient;
+    }
+
+    public LoginClient login() {
+        return this.loginClient;
     }
 }

@@ -17,6 +17,7 @@
 - [Tokens](#tokens)
 - [M2M](#m2m)
 - [Events](#events)
+- [Login](#login)
 
 The Java SDK exposes the clients and methods in the sections above through `ScalekitClient`. Connected Accounts, Tools, and Actions are not part of the Java public API in this release.
 
@@ -6472,6 +6473,76 @@ boolean ok = client.authentication().validateAccessToken("<access_token_jwt>");
 </dl>
 </details>
 
+<details><summary><code>client.authentication().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/AuthClient.java">validateAccessToken</a>(jwt, options) -> boolean</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Validates an access token's signature and expiry, and additionally enforces the expected issuer (exact match) and/or audience (token must contain at least one of the expected values) when provided via `TokenValidationOptions`.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.internal.http.TokenValidationOptions;
+import java.util.Arrays;
+
+TokenValidationOptions options = TokenValidationOptions.builder()
+  .issuer("https://your-env.scalekit.dev")
+  .audience(Arrays.asList("your-audience"))
+  .build();
+
+boolean ok = client.authentication().validateAccessToken("<access_token_jwt>", options);
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**jwt:** `String` - The access token JWT
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**options:** `TokenValidationOptions` - Optional issuer and audience validation options (pass `null` to validate signature and expiry only)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.authentication().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/AuthClient.java">validateAccessTokenAndGetClaims</a>(jwt) -> Map&lt;String, Object&gt;</code></summary>
 <dl>
 <dd>
@@ -7669,6 +7740,84 @@ ListEventsPaginatedResponse response = client.events().listEventsPaginated(filte
 <dd>
 
 **pageToken:** `String` - Pagination cursor (null or empty string for the first page)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+## Login
+
+<details><summary><code>client.login().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/LoginClient.java">updateLoginUserDetails</a>(connectionId, loginRequestId, user) -> String</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Updates the user details for an in-progress login request (e.g. after collecting additional profile information or marking the login as failed via `User.newBuilder().setLoginFailed(true)`), and returns the resulting auth request ID.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.grpc.scalekit.v1.auth.User;
+
+User user = User.newBuilder()
+  .setEmail("user@example.com")
+  .build();
+
+String authRequestId = client.login().updateLoginUserDetails("conn_123", "lri_123", user);
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**connectionId:** `String` - The connection ID the login request belongs to
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**loginRequestId:** `String` - The login request ID being updated
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**user:** `User` - The user details to apply to the login request
 
 </dd>
 </dl>

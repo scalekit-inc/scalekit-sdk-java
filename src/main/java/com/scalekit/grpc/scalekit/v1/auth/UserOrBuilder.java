@@ -238,4 +238,10 @@ public interface UserOrBuilder extends
    */
   com.google.protobuf.ByteString
       getOrganizationExternalNameBytes();
+
+  /**
+   * <code>bool login_failed = 18 [json_name = "loginFailed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The loginFailed.
+   */
+  boolean getLoginFailed();
 }

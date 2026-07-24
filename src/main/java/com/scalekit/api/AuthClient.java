@@ -5,6 +5,7 @@ import com.scalekit.internal.http.AuthenticationOptions;
 import com.scalekit.internal.http.AuthenticationResponse;
 import com.scalekit.internal.http.AuthorizationUrlOptions;
 import com.scalekit.internal.http.IdpInitiatedLoginClaims;
+import com.scalekit.internal.http.TokenValidationOptions;
 
 import java.net.URL;
 import java.util.Map;
@@ -13,6 +14,8 @@ public interface AuthClient {
      URL getAuthorizationUrl(String redirectUri, AuthorizationUrlOptions options);
 
      boolean validateAccessToken(String jwt);
+
+     boolean validateAccessToken(String jwt, TokenValidationOptions options);
 
      String generateClientToken(String clientId, String clientSecret);
 

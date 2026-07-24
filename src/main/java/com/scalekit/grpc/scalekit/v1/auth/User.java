@@ -662,6 +662,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int LOGIN_FAILED_FIELD_NUMBER = 18;
+  private boolean loginFailed_ = false;
+  /**
+   * <code>bool login_failed = 18 [json_name = "loginFailed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The loginFailed.
+   */
+  @java.lang.Override
+  public boolean getLoginFailed() {
+    return loginFailed_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -726,6 +737,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, organizationExternalName_);
+    }
+    if (loginFailed_ != false) {
+      output.writeBool(18, loginFailed_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -800,6 +814,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, organizationExternalName_);
     }
+    if (loginFailed_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(18, loginFailed_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -858,6 +876,8 @@ private static final long serialVersionUID = 0L;
       if (!getOrganizationExternalName()
           .equals(other.getOrganizationExternalName())) return false;
     }
+    if (getLoginFailed()
+        != other.getLoginFailed()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -915,6 +935,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ORGANIZATION_EXTERNAL_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getOrganizationExternalName().hashCode();
     }
+    hash = (37 * hash) + LOGIN_FAILED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getLoginFailed());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1075,6 +1098,7 @@ private static final long serialVersionUID = 0L;
       roles_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
       organizationExternalName_ = "";
+      loginFailed_ = false;
       return this;
     }
 
@@ -1166,6 +1190,9 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.organizationExternalName_ = organizationExternalName_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.loginFailed_ = loginFailed_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1303,6 +1330,9 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00010000;
         onChanged();
       }
+      if (other.getLoginFailed() != false) {
+        setLoginFailed(other.getLoginFailed());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1418,6 +1448,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00010000;
               break;
             } // case 138
+            case 144: {
+              loginFailed_ = input.readBool();
+              bitField0_ |= 0x00020000;
+              break;
+            } // case 144
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2716,6 +2751,38 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       organizationExternalName_ = value;
       bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    private boolean loginFailed_ ;
+    /**
+     * <code>bool login_failed = 18 [json_name = "loginFailed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The loginFailed.
+     */
+    @java.lang.Override
+    public boolean getLoginFailed() {
+      return loginFailed_;
+    }
+    /**
+     * <code>bool login_failed = 18 [json_name = "loginFailed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The loginFailed to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoginFailed(boolean value) {
+
+      loginFailed_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool login_failed = 18 [json_name = "loginFailed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLoginFailed() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      loginFailed_ = false;
       onChanged();
       return this;
     }

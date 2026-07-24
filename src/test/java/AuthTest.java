@@ -1,10 +1,13 @@
 import com.scalekit.ScalekitClient;
 import com.scalekit.internal.ScalekitCredentials;
+import com.scalekit.internal.http.TokenValidationOptions;
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static java.lang.Thread.sleep;
@@ -28,6 +31,32 @@ public class AuthTest {
     public void TestValidateAccessToken() throws Exception {
         String token = client.authentication().getClientAccessToken();
         assertTrue(client.authentication().validateAccessToken(token));
+    }
+
+    @Test
+    public void TestValidateAccessTokenWithOptions() throws Exception {
+        String accessToken = System.getenv("SCALEKIT_TEST_ACCESS_TOKEN");
+        String issuer = System.getenv("SCALEKIT_TEST_ISSUER");
+        String audience = System.getenv("SCALEKIT_TEST_AUDIENCE");
+        Assumptions.assumeTrue(accessToken != null && !accessToken.isEmpty()
+                && issuer != null && !issuer.isEmpty()
+                && audience != null && !audience.isEmpty());
+
+        TokenValidationOptions options = TokenValidationOptions.builder()
+                .issuer(issuer)
+                .audience(Collections.singletonList(audience))
+                .build();
+
+        // Correct issuer/audience -> valid.
+        assertTrue(client.authentication().validateAccessToken(accessToken, options));
+
+        // Wrong issuer -> validation fails (APIException wrapping the jose4j mismatch).
+        TokenValidationOptions wrongIssuer = TokenValidationOptions.builder()
+                .issuer("https://wrong-issuer.example.com")
+                .audience(Collections.singletonList(audience))
+                .build();
+        assertThrows(Exception.class,
+                () -> client.authentication().validateAccessToken(accessToken, wrongIssuer));
     }
 
     @Test

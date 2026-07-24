@@ -42,4 +42,21 @@ public interface ListAppConnectionsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getProviderBytes();
+
+  /**
+   * <code>optional string query = 4 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the query field is set.
+   */
+  boolean hasQuery();
+  /**
+   * <code>optional string query = 4 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The query.
+   */
+  java.lang.String getQuery();
+  /**
+   * <code>optional string query = 4 [json_name = "query", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for query.
+   */
+  com.google.protobuf.ByteString
+      getQueryBytes();
 }
