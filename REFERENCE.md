@@ -7782,11 +7782,20 @@ Updates the user details for an in-progress login request (e.g. after collecting
 ```java
 import com.scalekit.grpc.scalekit.v1.auth.User;
 
+// Success path: both sub and email are required unless login_failed is true.
 User user = User.newBuilder()
+  .setSub("usr_01H...")
   .setEmail("user@example.com")
   .build();
 
 String authRequestId = client.login().updateLoginUserDetails("conn_123", "lri_123", user);
+
+// Failure path: mark the login as failed instead of providing sub/email.
+User failedUser = User.newBuilder()
+  .setLoginFailed(true)
+  .build();
+
+String failedAuthRequestId = client.login().updateLoginUserDetails("conn_123", "lri_123", failedUser);
 ```
 </dd>
 </dl>

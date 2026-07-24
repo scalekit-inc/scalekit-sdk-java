@@ -72,7 +72,12 @@ public class LoginTests {
         Assumptions.assumeTrue(connectionId != null && !connectionId.isEmpty()
                 && loginRequestId != null && !loginRequestId.isEmpty());
 
-        User user = User.newBuilder().build();
+        // The server-side validation rule requires either login_failed=true or both
+        // sub and email to be non-empty, so set them for the success path.
+        User user = User.newBuilder()
+                .setSub("usr_test_sub")
+                .setEmail("test.user@example.com")
+                .build();
         String authRequestId = client.login().updateLoginUserDetails(connectionId, loginRequestId, user);
         assertNotNull(authRequestId);
         assertFalse(authRequestId.isEmpty());
