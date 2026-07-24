@@ -1314,7 +1314,7 @@ public final class ConnectionsProto {
       "_user_infoB\010\n\006_errorB\024\n\022_error_descripti" +
       "onB\020\n\016_error_details\"\032\n\030PasswordConnecti" +
       "onConfig\"9\n\005Flags\022\031\n\010is_login\030\001 \001(\010R\007isL" +
-      "ogin\022\025\n\006is_app\030\002 \001(\010R\005isApp\"\252\003\n\031ListAppC" +
+      "ogin\022\025\n\006is_app\030\002 \001(\010R\005isApp\"\321\004\n\031ListAppC" +
       "onnectionsRequest\022\200\001\n\tpage_size\030\001 \001(\rBc\222" +
       "AY2SMaximum number of organizations to r" +
       "eturn per page. Value must be between 1 " +
@@ -1325,302 +1325,306 @@ public final class ConnectionsProto {
       "wYWdlIjoyLCJsaW1pdCI6MzB9R\tpageToken\022U\n\010" +
       "provider\030\003 \001(\tB4\222A(2\036Filter connections " +
       "by providerJ\006\"OKTA\"\272H\006r\004\020\001\0302H\000R\010provider" +
-      "\210\001\001B\013\n\t_provider\"\352\003\n\032ListAppConnectionsR" +
-      "esponse\022\201\001\n\013connections\030\001 \003(\0132\'.scalekit" +
-      ".v1.connections.ListConnectionB6\222A321Lis" +
-      "t of connections matching the request cr" +
-      "iteriaR\013connections\022o\n\017next_page_token\030\002" +
-      " \001(\tBG\222AD2\"Token for the next page of re" +
-      "sultsJ\036\"eyJwYWdlIjoyLCJsaW1pdCI6MzB9\"R\rn" +
-      "extPageToken\022s\n\017prev_page_token\030\003 \001(\tBK\222" +
-      "AH2&Token for the previous page of resul" +
-      "tsJ\036\"eyJwYWdlIjoyLCJsaW1pdCI6MzB9\"R\rprev" +
-      "PageToken\022b\n\ntotal_size\030\004 \001(\rBC\222A@29Tota" +
-      "l number of connections matching the req" +
-      "uest criteriaJ\003100R\ttotalSize\"\213\001\n\033GetCon" +
-      "nectionContextRequest\0228\n\rconnection_id\030\001" +
-      " \001(\tB\023\272H\020r\013\020\001\030 :\005conn_\310\001\001R\014connectionId\022" +
-      "2\n\017organization_id\030\002 \001(\tB\t\272H\006r\004\020\000\030 R\016org" +
-      "anizationId\"Q\n\034GetConnectionContextRespo" +
-      "nse\0221\n\007context\030\001 \001(\0132\027.google.protobuf.S" +
-      "tructR\007context\"\301\001\n\036UpdateConnectionConte" +
-      "xtRequest\0228\n\rconnection_id\030\001 \001(\tB\023\272H\020r\013\020" +
-      "\001\030 :\005conn_\310\001\001R\014connectionId\0222\n\017organizat" +
-      "ion_id\030\002 \001(\tB\t\272H\006r\004\020\000\030 R\016organizationId\022" +
-      "1\n\007context\030\003 \001(\0132\027.google.protobuf.Struc" +
-      "tR\007context*W\n\021CodeChallengeType\022#\n\037CODE_" +
-      "CHALLENGE_TYPE_UNSPECIFIED\020\000\022\013\n\007NUMERIC\020" +
-      "\001\022\020\n\014ALPHANUMERIC\020\002*R\n\021ConfigurationType" +
-      "\022\"\n\036CONFIGURATION_TYPE_UNSPECIFIED\020\000\022\r\n\t" +
-      "DISCOVERY\020\001\022\n\n\006MANUAL\020\002*a\n\014NameIdFormat\022" +
-      "\026\n\022NAME_ID_FORMAT_NIL\020\000\022\017\n\013UNSPECIFIED\020\001" +
-      "\022\t\n\005EMAIL\020\002\022\r\n\tTRANSIENT\020\003\022\016\n\nPERSISTENT" +
-      "\020\004*U\n\020PasswordlessType\022 \n\034PasswordlessTy" +
-      "pe_UNSPECIFIED\020\000\022\010\n\004LINK\020\001\022\007\n\003OTP\020\002\022\014\n\010L" +
-      "INK_OTP\020\003*9\n\020TestResultStatus\022\013\n\007PENDING" +
-      "\020\000\022\013\n\007SUCCESS\020\001\022\013\n\007FAILURE\020\002*\330\001\n\022SAMLSig" +
-      "ningOptions\022$\n SAML_SIGNING_OPTIONS_UNSP" +
-      "ECIFIED\020\000\022\016\n\nNO_SIGNING\020\001\022\036\n\032SAML_ONLY_R" +
-      "ESPONSE_SIGNING\020\002\022\037\n\033SAML_ONLY_ASSERTION" +
-      "_SIGNING\020\003\022#\n\037SAML_RESPONSE_ASSERTION_SI" +
-      "GNING\020\004\022&\n\"SAML_RESPONSE_OR_ASSERTION_SI" +
-      "GNING\020\005*S\n\016RequestBinding\022\037\n\033REQUEST_BIN" +
-      "DING_UNSPECIFIED\020\000\022\r\n\tHTTP_POST\020\001\022\021\n\rHTT" +
-      "P_REDIRECT\020\002*P\n\rTokenAuthType\022\037\n\033TOKEN_A" +
-      "UTH_TYPE_UNSPECIFIED\020\000\022\016\n\nURL_PARAMS\020\001\022\016" +
-      "\n\nBASIC_AUTH\020\002*c\n\tOIDCScope\022\032\n\026OIDC_SCOP" +
-      "E_UNSPECIFIED\020\000\022\n\n\006openid\020\001\022\013\n\007profile\020\002" +
-      "\022\t\n\005email\020\003\022\013\n\007address\020\004\022\t\n\005phone\020\005*\356\001\n\016" +
-      "ConnectionType\022\013\n\007INVALID\020\000\022\010\n\004OIDC\020\001\022\010\n" +
-      "\004SAML\020\002\022\014\n\010PASSWORD\020\003\022\t\n\005OAUTH\020\004\022\020\n\014PASS" +
-      "WORDLESS\020\005\022\t\n\005BASIC\020\006\022\n\n\006BEARER\020\007\022\013\n\007API" +
-      "_KEY\020\010\022\014\n\010WEBAUTHN\020\t\022\r\n\tOAUTH_M2M\020\n\022\021\n\rT" +
-      "RELLO_OAUTH1\020\013\022\016\n\nGOOGLE_DWD\020\014\022\017\n\013TRUSTE" +
-      "D_IDP\020\r\022\016\n\nSMART_FHIR\020\016\022\013\n\007NO_AUTH\020\017*`\n\020" +
-      "ConnectionStatus\022!\n\035CONNECTION_STATUS_UN" +
-      "SPECIFIED\020\000\022\t\n\005DRAFT\020\001\022\017\n\013IN_PROGRESS\020\002\022" +
-      "\r\n\tCOMPLETED\020\003*\230\002\n\022ConnectionProvider\022#\n" +
-      "\037CONNECTION_PROVIDER_UNSPECIFIED\020\000\022\010\n\004OK" +
-      "TA\020\001\022\n\n\006GOOGLE\020\002\022\020\n\014MICROSOFT_AD\020\003\022\t\n\005AU" +
-      "TH0\020\004\022\014\n\010ONELOGIN\020\005\022\021\n\rPING_IDENTITY\020\006\022\r" +
-      "\n\tJUMPCLOUD\020\007\022\n\n\006CUSTOM\020\010\022\n\n\006GITHUB\020\t\022\n\n" +
-      "\006GITLAB\020\n\022\014\n\010LINKEDIN\020\013\022\016\n\nSALESFORCE\020\014\022" +
-      "\r\n\tMICROSOFT\020\r\022\021\n\rIDP_SIMULATOR\020\016\022\014\n\010SCA" +
-      "LEKIT\020\017\022\010\n\004ADFS\020\0202\222G\n\021ConnectionService\022" +
-      "\221\003\n\033CreateEnvironmentConnection\022;.scalek" +
-      "it.v1.connections.CreateEnvironmentConne" +
-      "ctionRequest\0321.scalekit.v1.connections.C" +
-      "reateConnectionResponse\"\201\002\222A\301\001\n\013Connecti" +
-      "ons\022\027Create a new connection\0328Establish " +
-      "a new connection for the specified envir" +
-      "onmentJ_\n\003201\022X\n\037Connection created succ" +
-      "essfully\0225\n3\0321.scalekit.v1.connections.C" +
-      "reateConnectionResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PRE" +
-      "VIEW\202\323\344\223\002!\"\023/api/v1/connections:\nconnect" +
-      "ion\022\263\003\n\020CreateConnection\0220.scalekit.v1.c" +
-      "onnections.CreateConnectionRequest\0321.sca" +
-      "lekit.v1.connections.CreateConnectionRes" +
-      "ponse\"\271\002\222A\306\001\n\013Connections\022\027Create a new " +
-      "connection\032=Establish a new SSO connecti" +
-      "on for the specified organizationJ_\n\003201" +
-      "\022X\n\037Connection created successfully\0225\n3\032" +
-      "1.scalekit.v1.connections.CreateConnecti" +
-      "onResponse\202\265\030\025\n\021connections_write\030t\372\322\344\223\002" +
-      "\t\022\007PREVIEW\202\323\344\223\002A\"3/api/v1/organizations/" +
-      "{organization_id}/connections:\nconnectio" +
-      "n\022\315\004\n\031AssignDomainsToConnection\0229.scalek" +
-      "it.v1.connections.AssignDomainsToConnect" +
-      "ionRequest\032:.scalekit.v1.connections.Ass" +
-      "ignDomainsToConnectionResponse\"\270\003\222A\266\002\n\013C" +
-      "onnections\022\036Assign domains to a connecti" +
-      "on\032\236\001Assigns one or more domains to a sp" +
-      "ecific connection within an organization" +
-      ". This allows the connection to be used " +
-      "for authentication on the specified doma" +
-      "insJf\n\003200\022_\n\035Domains assigned successfu" +
-      "lly\022>\n<\032:.scalekit.v1.connections.Assign" +
-      "DomainsToConnectionResponse\202\265\030\025\n\021connect" +
-      "ions_write\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002P\032K/api/" +
-      "v1/organizations/{organization_id}/conne" +
-      "ctions/{connection_id}/domains:\001*\022\263\003\n\030Ge" +
-      "tEnvironmentConnection\0228.scalekit.v1.con" +
-      "nections.GetEnvironmentConnectionRequest" +
-      "\032..scalekit.v1.connections.GetConnection" +
-      "Response\"\254\002\222A\347\001\n\013Connections\022\033Retrieve c" +
-      "onnection details\032SObtain detailed infor" +
-      "mation about a specific connection using" +
-      " its unique identifierJf\n\003200\022_\n)Success" +
-      "fully retrieved connection details\0222\n0\032." +
-      ".scalekit.v1.connections.GetConnectionRe" +
-      "sponse\202\265\030\003\030\304\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\022#/api" +
-      "/v1/connections/{connection_id}\022\317\004\n\rGetC" +
-      "onnection\022-.scalekit.v1.connections.GetC" +
-      "onnectionRequest\032..scalekit.v1.connectio" +
-      "ns.GetConnectionResponse\"\336\003\222A\201\003\n\013Connect" +
-      "ions\022\026Get connection details\032\321\001Retrieves" +
-      " the complete configuration and status d" +
-      "etails for a specific connection by its " +
-      "ID within an organization. Returns all c" +
-      "onnection properties including provider " +
-      "settings, protocols, and current status." +
-      "J\205\001\n\003200\022~\nHSuccessfully retrieved conne" +
-      "ction details for the specified organiza" +
-      "tion\0222\n0\032..scalekit.v1.connections.GetCo" +
-      "nnectionResponse\202\265\030\025\n\020connections_read\030\364" +
-      "\001\202\323\344\223\002:\0228/api/v1/organizations/{organiza" +
-      "tion_id}/connections/{id}\022\344\002\n\017ListConnec" +
-      "tions\022/.scalekit.v1.connections.ListConn" +
-      "ectionsRequest\0320.scalekit.v1.connections" +
-      ".ListConnectionsResponse\"\355\001\222A\266\001\n\013Connect" +
-      "ions\022\020List connections\0322Retrieves a list" +
-      " of connections in the environmentJa\n\00320" +
-      "0\022Z\n\"Successfully retrieved connections\022" +
-      "4\n2\0320.scalekit.v1.connections.ListConnec" +
-      "tionsResponse\202\265\030\024\n\020connections_read\030t\202\323\344" +
-      "\223\002\025\022\023/api/v1/connections\022\265\003\n\033ListOrganiz" +
-      "ationConnections\022;.scalekit.v1.connectio" +
-      "ns.ListOrganizationConnectionsRequest\032<." +
-      "scalekit.v1.connections.ListOrganization" +
-      "ConnectionsResponse\"\232\002\222A\326\001\n\013Connections\022" +
-      "\035List organization connections\0329Retrieve" +
-      "s a list of connections for all the orga" +
-      "nizationsJm\n\003200\022f\n\"Successfully retriev" +
-      "ed connections\022@\n>\032<.scalekit.v1.connect" +
-      "ions.ListOrganizationConnectionsResponse" +
-      "\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\022#/api/v1/org" +
-      "anizations/-/connections\022\315\003\n\035SearchOrgan" +
-      "izationConnections\022=.scalekit.v1.connect" +
-      "ions.SearchOrganizationConnectionsReques" +
-      "t\032>.scalekit.v1.connections.SearchOrgani" +
-      "zationConnectionsResponse\"\254\002\222A\341\001\n\013Connec" +
-      "tions\022\037Search organization connections\032D" +
-      "Search with query or filters provided an" +
-      "d return list of connectionsJk\n\003200\022d\n\036S" +
-      "uccessfully found connections\022B\n@\032>.scal" +
-      "ekit.v1.connections.SearchOrganizationCo" +
-      "nnectionsResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323" +
-      "\344\223\002,\022*/api/v1/organizations/-/connection" +
-      "s:search\022\361\002\n\033UpdateEnvironmentConnection" +
-      "\022;.scalekit.v1.connections.UpdateEnviron" +
-      "mentConnectionRequest\0321.scalekit.v1.conn" +
-      "ections.UpdateConnectionResponse\"\341\001\222A\221\001\n" +
-      "\013Connections\022\023Update a connection\032\027Updat" +
-      "e a SSO ConnectionJT\n\003200\022M\n\024Updated Suc" +
-      "cessfully\0225\n3\0321.scalekit.v1.connections." +
-      "UpdateConnectionResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PR" +
-      "EVIEW\202\323\344\223\00212#/api/v1/connections/{connec" +
-      "tion_id}:\nconnection\022\224\003\n\020UpdateConnectio" +
-      "n\0220.scalekit.v1.connections.UpdateConnec" +
-      "tionRequest\0321.scalekit.v1.connections.Up" +
-      "dateConnectionResponse\"\232\002\222A\242\001\n\013Connectio" +
-      "ns\022$Update a connection for organization" +
+      "\210\001\001\022\232\001\n\005query\030\004 \001(\tB\177\222As2hFree-text sear" +
+      "ch that matches connections by connectio" +
+      "n name (key ID) or provider. Minimum 3 c" +
+      "haracters.J\007\"slack\"\272H\006r\004\020\003\030dH\001R\005query\210\001\001" +
+      "B\013\n\t_providerB\010\n\006_query\"\352\003\n\032ListAppConne" +
+      "ctionsResponse\022\201\001\n\013connections\030\001 \003(\0132\'.s" +
+      "calekit.v1.connections.ListConnectionB6\222" +
+      "A321List of connections matching the req" +
+      "uest criteriaR\013connections\022o\n\017next_page_" +
+      "token\030\002 \001(\tBG\222AD2\"Token for the next pag" +
+      "e of resultsJ\036\"eyJwYWdlIjoyLCJsaW1pdCI6M" +
+      "zB9\"R\rnextPageToken\022s\n\017prev_page_token\030\003" +
+      " \001(\tBK\222AH2&Token for the previous page o" +
+      "f resultsJ\036\"eyJwYWdlIjoyLCJsaW1pdCI6MzB9" +
+      "\"R\rprevPageToken\022b\n\ntotal_size\030\004 \001(\rBC\222A" +
+      "@29Total number of connections matching " +
+      "the request criteriaJ\003100R\ttotalSize\"\213\001\n" +
+      "\033GetConnectionContextRequest\0228\n\rconnecti" +
+      "on_id\030\001 \001(\tB\023\272H\020r\013\020\001\030 :\005conn_\310\001\001R\014connec" +
+      "tionId\0222\n\017organization_id\030\002 \001(\tB\t\272H\006r\004\020\000" +
+      "\030 R\016organizationId\"Q\n\034GetConnectionConte" +
+      "xtResponse\0221\n\007context\030\001 \001(\0132\027.google.pro" +
+      "tobuf.StructR\007context\"\301\001\n\036UpdateConnecti" +
+      "onContextRequest\0228\n\rconnection_id\030\001 \001(\tB" +
+      "\023\272H\020r\013\020\001\030 :\005conn_\310\001\001R\014connectionId\0222\n\017or" +
+      "ganization_id\030\002 \001(\tB\t\272H\006r\004\020\000\030 R\016organiza" +
+      "tionId\0221\n\007context\030\003 \001(\0132\027.google.protobu" +
+      "f.StructR\007context*W\n\021CodeChallengeType\022#" +
+      "\n\037CODE_CHALLENGE_TYPE_UNSPECIFIED\020\000\022\013\n\007N" +
+      "UMERIC\020\001\022\020\n\014ALPHANUMERIC\020\002*R\n\021Configurat" +
+      "ionType\022\"\n\036CONFIGURATION_TYPE_UNSPECIFIE" +
+      "D\020\000\022\r\n\tDISCOVERY\020\001\022\n\n\006MANUAL\020\002*a\n\014NameId" +
+      "Format\022\026\n\022NAME_ID_FORMAT_NIL\020\000\022\017\n\013UNSPEC" +
+      "IFIED\020\001\022\t\n\005EMAIL\020\002\022\r\n\tTRANSIENT\020\003\022\016\n\nPER" +
+      "SISTENT\020\004*U\n\020PasswordlessType\022 \n\034Passwor" +
+      "dlessType_UNSPECIFIED\020\000\022\010\n\004LINK\020\001\022\007\n\003OTP" +
+      "\020\002\022\014\n\010LINK_OTP\020\003*9\n\020TestResultStatus\022\013\n\007" +
+      "PENDING\020\000\022\013\n\007SUCCESS\020\001\022\013\n\007FAILURE\020\002*\330\001\n\022" +
+      "SAMLSigningOptions\022$\n SAML_SIGNING_OPTIO" +
+      "NS_UNSPECIFIED\020\000\022\016\n\nNO_SIGNING\020\001\022\036\n\032SAML" +
+      "_ONLY_RESPONSE_SIGNING\020\002\022\037\n\033SAML_ONLY_AS" +
+      "SERTION_SIGNING\020\003\022#\n\037SAML_RESPONSE_ASSER" +
+      "TION_SIGNING\020\004\022&\n\"SAML_RESPONSE_OR_ASSER" +
+      "TION_SIGNING\020\005*S\n\016RequestBinding\022\037\n\033REQU" +
+      "EST_BINDING_UNSPECIFIED\020\000\022\r\n\tHTTP_POST\020\001" +
+      "\022\021\n\rHTTP_REDIRECT\020\002*P\n\rTokenAuthType\022\037\n\033" +
+      "TOKEN_AUTH_TYPE_UNSPECIFIED\020\000\022\016\n\nURL_PAR" +
+      "AMS\020\001\022\016\n\nBASIC_AUTH\020\002*c\n\tOIDCScope\022\032\n\026OI" +
+      "DC_SCOPE_UNSPECIFIED\020\000\022\n\n\006openid\020\001\022\013\n\007pr" +
+      "ofile\020\002\022\t\n\005email\020\003\022\013\n\007address\020\004\022\t\n\005phone" +
+      "\020\005*\356\001\n\016ConnectionType\022\013\n\007INVALID\020\000\022\010\n\004OI" +
+      "DC\020\001\022\010\n\004SAML\020\002\022\014\n\010PASSWORD\020\003\022\t\n\005OAUTH\020\004\022" +
+      "\020\n\014PASSWORDLESS\020\005\022\t\n\005BASIC\020\006\022\n\n\006BEARER\020\007" +
+      "\022\013\n\007API_KEY\020\010\022\014\n\010WEBAUTHN\020\t\022\r\n\tOAUTH_M2M" +
+      "\020\n\022\021\n\rTRELLO_OAUTH1\020\013\022\016\n\nGOOGLE_DWD\020\014\022\017\n" +
+      "\013TRUSTED_IDP\020\r\022\016\n\nSMART_FHIR\020\016\022\013\n\007NO_AUT" +
+      "H\020\017*`\n\020ConnectionStatus\022!\n\035CONNECTION_ST" +
+      "ATUS_UNSPECIFIED\020\000\022\t\n\005DRAFT\020\001\022\017\n\013IN_PROG" +
+      "RESS\020\002\022\r\n\tCOMPLETED\020\003*\230\002\n\022ConnectionProv" +
+      "ider\022#\n\037CONNECTION_PROVIDER_UNSPECIFIED\020" +
+      "\000\022\010\n\004OKTA\020\001\022\n\n\006GOOGLE\020\002\022\020\n\014MICROSOFT_AD\020" +
+      "\003\022\t\n\005AUTH0\020\004\022\014\n\010ONELOGIN\020\005\022\021\n\rPING_IDENT" +
+      "ITY\020\006\022\r\n\tJUMPCLOUD\020\007\022\n\n\006CUSTOM\020\010\022\n\n\006GITH" +
+      "UB\020\t\022\n\n\006GITLAB\020\n\022\014\n\010LINKEDIN\020\013\022\016\n\nSALESF" +
+      "ORCE\020\014\022\r\n\tMICROSOFT\020\r\022\021\n\rIDP_SIMULATOR\020\016" +
+      "\022\014\n\010SCALEKIT\020\017\022\010\n\004ADFS\020\0202\222G\n\021ConnectionS" +
+      "ervice\022\221\003\n\033CreateEnvironmentConnection\022;" +
+      ".scalekit.v1.connections.CreateEnvironme" +
+      "ntConnectionRequest\0321.scalekit.v1.connec" +
+      "tions.CreateConnectionResponse\"\201\002\222A\301\001\n\013C" +
+      "onnections\022\027Create a new connection\0328Est" +
+      "ablish a new connection for the specifie" +
+      "d environmentJ_\n\003201\022X\n\037Connection creat" +
+      "ed successfully\0225\n3\0321.scalekit.v1.connec" +
+      "tions.CreateConnectionResponse\202\265\030\002\030D\372\322\344\223" +
+      "\002\t\022\007PREVIEW\202\323\344\223\002!\"\023/api/v1/connections:\n" +
+      "connection\022\263\003\n\020CreateConnection\0220.scalek" +
+      "it.v1.connections.CreateConnectionReques" +
+      "t\0321.scalekit.v1.connections.CreateConnec" +
+      "tionResponse\"\271\002\222A\306\001\n\013Connections\022\027Create" +
+      " a new connection\032=Establish a new SSO c" +
+      "onnection for the specified organization" +
+      "J_\n\003201\022X\n\037Connection created successful" +
+      "ly\0225\n3\0321.scalekit.v1.connections.CreateC" +
+      "onnectionResponse\202\265\030\025\n\021connections_write" +
+      "\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002A\"3/api/v1/organiz" +
+      "ations/{organization_id}/connections:\nco" +
+      "nnection\022\315\004\n\031AssignDomainsToConnection\0229" +
+      ".scalekit.v1.connections.AssignDomainsTo" +
+      "ConnectionRequest\032:.scalekit.v1.connecti" +
+      "ons.AssignDomainsToConnectionResponse\"\270\003" +
+      "\222A\266\002\n\013Connections\022\036Assign domains to a c" +
+      "onnection\032\236\001Assigns one or more domains " +
+      "to a specific connection within an organ" +
+      "ization. This allows the connection to b" +
+      "e used for authentication on the specifi" +
+      "ed domainsJf\n\003200\022_\n\035Domains assigned su" +
+      "ccessfully\022>\n<\032:.scalekit.v1.connections" +
+      ".AssignDomainsToConnectionResponse\202\265\030\025\n\021" +
+      "connections_write\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002P" +
+      "\032K/api/v1/organizations/{organization_id" +
+      "}/connections/{connection_id}/domains:\001*" +
+      "\022\263\003\n\030GetEnvironmentConnection\0228.scalekit" +
+      ".v1.connections.GetEnvironmentConnection" +
+      "Request\032..scalekit.v1.connections.GetCon" +
+      "nectionResponse\"\254\002\222A\347\001\n\013Connections\022\033Ret" +
+      "rieve connection details\032SObtain detaile" +
+      "d information about a specific connectio" +
+      "n using its unique identifierJf\n\003200\022_\n)" +
+      "Successfully retrieved connection detail" +
+      "s\0222\n0\032..scalekit.v1.connections.GetConne" +
+      "ctionResponse\202\265\030\003\030\304\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002" +
+      "%\022#/api/v1/connections/{connection_id}\022\317" +
+      "\004\n\rGetConnection\022-.scalekit.v1.connectio" +
+      "ns.GetConnectionRequest\032..scalekit.v1.co" +
+      "nnections.GetConnectionResponse\"\336\003\222A\201\003\n\013" +
+      "Connections\022\026Get connection details\032\321\001Re" +
+      "trieves the complete configuration and s" +
+      "tatus details for a specific connection " +
+      "by its ID within an organization. Return" +
+      "s all connection properties including pr" +
+      "ovider settings, protocols, and current " +
+      "status.J\205\001\n\003200\022~\nHSuccessfully retrieve" +
+      "d connection details for the specified o" +
+      "rganization\0222\n0\032..scalekit.v1.connection" +
+      "s.GetConnectionResponse\202\265\030\025\n\020connections" +
+      "_read\030\364\001\202\323\344\223\002:\0228/api/v1/organizations/{o" +
+      "rganization_id}/connections/{id}\022\344\002\n\017Lis" +
+      "tConnections\022/.scalekit.v1.connections.L" +
+      "istConnectionsRequest\0320.scalekit.v1.conn" +
+      "ections.ListConnectionsResponse\"\355\001\222A\266\001\n\013" +
+      "Connections\022\020List connections\0322Retrieves" +
+      " a list of connections in the environmen" +
+      "tJa\n\003200\022Z\n\"Successfully retrieved conne" +
+      "ctions\0224\n2\0320.scalekit.v1.connections.Lis" +
+      "tConnectionsResponse\202\265\030\024\n\020connections_re" +
+      "ad\030t\202\323\344\223\002\025\022\023/api/v1/connections\022\265\003\n\033List" +
+      "OrganizationConnections\022;.scalekit.v1.co" +
+      "nnections.ListOrganizationConnectionsReq" +
+      "uest\032<.scalekit.v1.connections.ListOrgan" +
+      "izationConnectionsResponse\"\232\002\222A\326\001\n\013Conne" +
+      "ctions\022\035List organization connections\0329R" +
+      "etrieves a list of connections for all t" +
+      "he organizationsJm\n\003200\022f\n\"Successfully " +
+      "retrieved connections\022@\n>\032<.scalekit.v1." +
+      "connections.ListOrganizationConnectionsR" +
+      "esponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\022#/api" +
+      "/v1/organizations/-/connections\022\315\003\n\035Sear" +
+      "chOrganizationConnections\022=.scalekit.v1." +
+      "connections.SearchOrganizationConnection" +
+      "sRequest\032>.scalekit.v1.connections.Searc" +
+      "hOrganizationConnectionsResponse\"\254\002\222A\341\001\n" +
+      "\013Connections\022\037Search organization connec" +
+      "tions\032DSearch with query or filters prov" +
+      "ided and return list of connectionsJk\n\0032" +
+      "00\022d\n\036Successfully found connections\022B\n@" +
+      "\032>.scalekit.v1.connections.SearchOrganiz" +
+      "ationConnectionsResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PR" +
+      "EVIEW\202\323\344\223\002,\022*/api/v1/organizations/-/con" +
+      "nections:search\022\361\002\n\033UpdateEnvironmentCon" +
+      "nection\022;.scalekit.v1.connections.Update" +
+      "EnvironmentConnectionRequest\0321.scalekit." +
+      "v1.connections.UpdateConnectionResponse\"" +
+      "\341\001\222A\221\001\n\013Connections\022\023Update a connection" +
       "\032\027Update a SSO ConnectionJT\n\003200\022M\n\024Upda" +
       "ted Successfully\0225\n3\0321.scalekit.v1.conne" +
-      "ctions.UpdateConnectionResponse\202\265\030\025\n\021con" +
-      "nections_write\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002F28/" +
-      "api/v1/organizations/{organization_id}/c" +
-      "onnections/{id}:\nconnection\022\222\002\n\033DeleteEn" +
-      "vironmentConnection\022;.scalekit.v1.connec" +
-      "tions.DeleteEnvironmentConnectionRequest" +
-      "\032\026.google.protobuf.Empty\"\235\001\222AZ\n\013Connecti" +
-      "ons\022\023Delete a connection\032\027Delete a SSO C" +
-      "onnectionJ\035\n\003200\022\026\n\024Deleted Successfully" +
-      "\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%*#/api/v1/con" +
-      "nections/{connection_id}\022\367\003\n\020DeleteConne" +
-      "ction\0220.scalekit.v1.connections.DeleteCo" +
-      "nnectionRequest\032\026.google.protobuf.Empty\"" +
-      "\230\003\222A\316\002\n\013Connections\022\025Delete SSO connecti" +
-      "on\032\371\001Deletes an SSO connection from the " +
-      "specified organization by connection ID." +
-      " Use this endpoint when an identity prov" +
-      "ider integration is no longer needed for" +
-      " the organization. Returns an empty resp" +
-      "onse after the SSO connection is deleted" +
-      " successfully.J,\n\003200\022%\n#SSO connection " +
-      "deleted successfully\202\265\030\002\030d\202\323\344\223\002:*8/api/v" +
-      "1/organizations/{organization_id}/connec" +
-      "tions/{id}\022\337\002\n\033EnableEnvironmentConnecti" +
-      "on\022;.scalekit.v1.connections.ToggleEnvir" +
-      "onmentConnectionRequest\0321.scalekit.v1.co" +
-      "nnections.ToggleConnectionResponse\"\317\001\222A\204" +
-      "\001\n\013Connections\022\023Enable a connection\032\027Ena" +
-      "ble a SSO ConnectionJG\n\003200\022@\n\007Success\0225" +
-      "\n3\0321.scalekit.v1.connections.ToggleConne" +
-      "ctionResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002," +
-      "2*/api/v1/connections/{connection_id}:en" +
-      "able\022\324\004\n\020EnableConnection\0220.scalekit.v1." +
-      "connections.ToggleConnectionRequest\0321.sc" +
-      "alekit.v1.connections.ToggleConnectionRe" +
-      "sponse\"\332\003\222A\366\002\n\013Connections\022\025Enable SSO c" +
-      "onnection\032\356\001Activate an existing connect" +
-      "ion for the specified organization. When" +
-      " enabled, users can authenticate using t" +
-      "his connection. This endpoint changes th" +
-      "e connection state from disabled to enab" +
-      "led without modifying other configuratio" +
-      "n settingsJ_\n\003200\022X\n\037Connection enabled " +
-      "successfully\0225\n3\0321.scalekit.v1.connectio" +
-      "ns.ToggleConnectionResponse\202\265\030\025\n\021connect" +
-      "ions_write\030t\202\323\344\223\002A2?/api/v1/organization" +
-      "s/{organization_id}/connections/{id}:ena" +
-      "ble\022\343\002\n\034DisableEnvironmentConnection\022;.s" +
-      "calekit.v1.connections.ToggleEnvironment" +
-      "ConnectionRequest\0321.scalekit.v1.connecti" +
-      "ons.ToggleConnectionResponse\"\322\001\222A\206\001\n\013Con" +
-      "nections\022\024Disable a connection\032\030Disable " +
-      "a SSO ConnectionJG\n\003200\022@\n\007Success\0225\n3\0321" +
-      ".scalekit.v1.connections.ToggleConnectio" +
-      "nResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002-2+/a" +
-      "pi/v1/connections/{connection_id}:disabl" +
-      "e\022\336\004\n\021DisableConnection\0220.scalekit.v1.co" +
-      "nnections.ToggleConnectionRequest\0321.scal" +
-      "ekit.v1.connections.ToggleConnectionResp" +
-      "onse\"\343\003\222A\376\002\n\013Connections\022\026Disable SSO co" +
-      "nnection\032\364\001Deactivate an existing connec" +
-      "tion for the specified organization. Whe" +
-      "n disabled, users cannot authenticate us",
-      "ing this connection. This endpoint chang" +
-      "es the connection state from enabled to " +
-      "disabled without modifying other configu" +
-      "ration settingsJ`\n\003200\022Y\n Connection dis" +
-      "abled successfully\0225\n3\0321.scalekit.v1.con" +
-      "nections.ToggleConnectionResponse\202\265\030\025\n\021c" +
-      "onnections_write\030t\202\323\344\223\002B2@/api/v1/organi" +
-      "zations/{organization_id}/connections/{i" +
-      "d}:disable\022\200\003\n\027GetConnectionTestResult\0227" +
-      ".scalekit.v1.connections.GetConnectionTe" +
-      "stResultRequest\0328.scalekit.v1.connection" +
-      "s.GetConnectionTestResultResponse\"\361\001\222A\215\001" +
-      "\n\013Connections\022\026Test connection result\032\026C" +
-      "onnection test resultJN\n\003200\022G\n\007Success\022" +
-      "<\n:\0328.scalekit.v1.connections.GetConnect" +
-      "ionTestResultResponse\202\265\030\002\030t\372\322\344\223\002\t\022\007PREVI" +
-      "EW\202\323\344\223\002E\022C/api/v1/connections/{connectio" +
-      "n_id}/test-requests/{test_request_id}\022\366\002" +
-      "\n\022ListAppConnections\0222.scalekit.v1.conne" +
-      "ctions.ListAppConnectionsRequest\0323.scale" +
-      "kit.v1.connections.ListAppConnectionsRes" +
-      "ponse\"\366\001\222A\276\001\n\013Connections\022\024List App conn" +
-      "ections\0326Retrieves a list of app connect" +
-      "ions in the environmentJa\n\003200\022Z\n\"Succes" +
-      "sfully retrieved connections\0224\n2\0320.scale" +
-      "kit.v1.connections.ListConnectionsRespon" +
-      "se\202\265\030\002\030d\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\022\027/api/v1/c" +
-      "onnections/app\022\321\003\n\024GetConnectionContext\022" +
-      "4.scalekit.v1.connections.GetConnectionC" +
-      "ontextRequest\0325.scalekit.v1.connections." +
-      "GetConnectionContextResponse\"\313\002\222A\255\001\n\013Con" +
-      "nections\022\026Get connection context\032<Retrie" +
-      "ves the custom context data for a specif" +
-      "ic connection.J(\n\003200\022!\n\037Returns the con" +
-      "nection context.J\036\n\003404\022\027\n\025Connection no" +
-      "t found.\202\265\030\003\030\360\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002~\022L/a" +
-      "pi/v1/organizations/{organization_id}/co" +
-      "nnections/{connection_id}/contextsZ.\022,/a" +
-      "pi/v1/connections/{connection_id}/contex" +
-      "ts\022\344\003\n\027UpdateConnectionContext\0227.scaleki" +
-      "t.v1.connections.UpdateConnectionContext" +
-      "Request\032\026.google.protobuf.Empty\"\367\002\222A\307\001\n\013" +
-      "Connections\022\031Update connection context\032:" +
-      "Updates the custom context data for a sp" +
-      "ecific connection.J&\n\003200\022\037\n\035Context upd" +
-      "ated successfully.J\031\n\003400\022\022\n\020Invalid req" +
-      "uest.J\036\n\003404\022\027\n\025Connection not found.\202\265\030" +
-      "\002\030p\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\220\001\032L/api/v1/organ" +
+      "ctions.UpdateConnectionResponse\202\265\030\002\030D\372\322\344" +
+      "\223\002\t\022\007PREVIEW\202\323\344\223\00212#/api/v1/connections/" +
+      "{connection_id}:\nconnection\022\224\003\n\020UpdateCo" +
+      "nnection\0220.scalekit.v1.connections.Updat" +
+      "eConnectionRequest\0321.scalekit.v1.connect" +
+      "ions.UpdateConnectionResponse\"\232\002\222A\242\001\n\013Co" +
+      "nnections\022$Update a connection for organ" +
+      "ization\032\027Update a SSO ConnectionJT\n\003200\022" +
+      "M\n\024Updated Successfully\0225\n3\0321.scalekit.v" +
+      "1.connections.UpdateConnectionResponse\202\265" +
+      "\030\025\n\021connections_write\030t\372\322\344\223\002\t\022\007PREVIEW\202\323" +
+      "\344\223\002F28/api/v1/organizations/{organizatio" +
+      "n_id}/connections/{id}:\nconnection\022\222\002\n\033D" +
+      "eleteEnvironmentConnection\022;.scalekit.v1" +
+      ".connections.DeleteEnvironmentConnection" +
+      "Request\032\026.google.protobuf.Empty\"\235\001\222AZ\n\013C" +
+      "onnections\022\023Delete a connection\032\027Delete " +
+      "a SSO ConnectionJ\035\n\003200\022\026\n\024Deleted Succe" +
+      "ssfully\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%*#/api" +
+      "/v1/connections/{connection_id}\022\367\003\n\020Dele" +
+      "teConnection\0220.scalekit.v1.connections.D" +
+      "eleteConnectionRequest\032\026.google.protobuf" +
+      ".Empty\"\230\003\222A\316\002\n\013Connections\022\025Delete SSO c" +
+      "onnection\032\371\001Deletes an SSO connection fr" +
+      "om the specified organization by connect" +
+      "ion ID. Use this endpoint when an identi" +
+      "ty provider integration is no longer nee" +
+      "ded for the organization. Returns an emp" +
+      "ty response after the SSO connection is " +
+      "deleted successfully.J,\n\003200\022%\n#SSO conn" +
+      "ection deleted successfully\202\265\030\002\030d\202\323\344\223\002:*" +
+      "8/api/v1/organizations/{organization_id}" +
+      "/connections/{id}\022\337\002\n\033EnableEnvironmentC" +
+      "onnection\022;.scalekit.v1.connections.Togg" +
+      "leEnvironmentConnectionRequest\0321.scaleki" +
+      "t.v1.connections.ToggleConnectionRespons" +
+      "e\"\317\001\222A\204\001\n\013Connections\022\023Enable a connecti" +
+      "on\032\027Enable a SSO ConnectionJG\n\003200\022@\n\007Su" +
+      "ccess\0225\n3\0321.scalekit.v1.connections.Togg" +
+      "leConnectionResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIE" +
+      "W\202\323\344\223\002,2*/api/v1/connections/{connection" +
+      "_id}:enable\022\324\004\n\020EnableConnection\0220.scale" +
+      "kit.v1.connections.ToggleConnectionReque" +
+      "st\0321.scalekit.v1.connections.ToggleConne" +
+      "ctionResponse\"\332\003\222A\366\002\n\013Connections\022\025Enabl" +
+      "e SSO connection\032\356\001Activate an existing " +
+      "connection for the specified organizatio" +
+      "n. When enabled, users can authenticate " +
+      "using this connection. This endpoint cha" +
+      "nges the connection state from disabled " +
+      "to enabled without modifying other confi" +
+      "guration settingsJ_\n\003200\022X\n\037Connection e" +
+      "nabled successfully\0225\n3\0321.scalekit.v1.co" +
+      "nnections.ToggleConnectionResponse\202\265\030\025\n\021" +
+      "connections_write\030t\202\323\344\223\002A2?/api/v1/organ" +
       "izations/{organization_id}/connections/{" +
-      "connection_id}/contexts:\007contextZ7\032,/api" +
-      "/v1/connections/{connection_id}/contexts" +
-      ":\007context\032\232\001\222A\226\001\n\013Connections\022\206\001Manage e" +
-      "nterprise connections for your Scalekit " +
-      "environment. This service provides endpo" +
-      "ints for retrieving, and updating connec" +
-      "tions.B\362\001\n)com.scalekit.grpc.scalekit.v1" +
-      ".connectionsB\020ConnectionsProtoP\001Z5github" +
-      ".com/scalekit-inc/scalekit/pkg/grpc/conn" +
-      "ections\242\002\003SVC\252\002\027Scalekit.V1.Connections\312" +
-      "\002\027Scalekit\\V1\\Connections\342\002#Scalekit\\V1\\" +
-      "Connections\\GPBMetadata\352\002\031Scalekit::V1::" +
-      "Connectionsb\006proto3"
+      "id}:enable\022\343\002\n\034DisableEnvironmentConnect" +
+      "ion\022;.scalekit.v1.connections.ToggleEnvi" +
+      "ronmentConnectionRequest\0321.scalekit.v1.c" +
+      "onnections.ToggleConnectionResponse\"\322\001\222A" +
+      "\206\001\n\013Connections\022\024Disable a connection\032\030D" +
+      "isable a SSO ConnectionJG\n\003200\022@\n\007Succes" +
+      "s\0225\n3\0321.scalekit.v1.connections.ToggleCo" +
+      "nnectionResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
+      "\223\002-2+/api/v1/connections/{connection_id}" +
+      ":disable\022\336\004\n\021DisableConnection\0220.scaleki" +
+      "t.v1.connections.ToggleConnectionRequest" +
+      "\0321.scalekit.v1.connections.ToggleConnect",
+      "ionResponse\"\343\003\222A\376\002\n\013Connections\022\026Disable" +
+      " SSO connection\032\364\001Deactivate an existing" +
+      " connection for the specified organizati" +
+      "on. When disabled, users cannot authenti" +
+      "cate using this connection. This endpoin" +
+      "t changes the connection state from enab" +
+      "led to disabled without modifying other " +
+      "configuration settingsJ`\n\003200\022Y\n Connect" +
+      "ion disabled successfully\0225\n3\0321.scalekit" +
+      ".v1.connections.ToggleConnectionResponse" +
+      "\202\265\030\025\n\021connections_write\030t\202\323\344\223\002B2@/api/v1" +
+      "/organizations/{organization_id}/connect" +
+      "ions/{id}:disable\022\200\003\n\027GetConnectionTestR" +
+      "esult\0227.scalekit.v1.connections.GetConne" +
+      "ctionTestResultRequest\0328.scalekit.v1.con" +
+      "nections.GetConnectionTestResultResponse" +
+      "\"\361\001\222A\215\001\n\013Connections\022\026Test connection re" +
+      "sult\032\026Connection test resultJN\n\003200\022G\n\007S" +
+      "uccess\022<\n:\0328.scalekit.v1.connections.Get" +
+      "ConnectionTestResultResponse\202\265\030\002\030t\372\322\344\223\002\t" +
+      "\022\007PREVIEW\202\323\344\223\002E\022C/api/v1/connections/{co" +
+      "nnection_id}/test-requests/{test_request" +
+      "_id}\022\366\002\n\022ListAppConnections\0222.scalekit.v" +
+      "1.connections.ListAppConnectionsRequest\032" +
+      "3.scalekit.v1.connections.ListAppConnect" +
+      "ionsResponse\"\366\001\222A\276\001\n\013Connections\022\024List A" +
+      "pp connections\0326Retrieves a list of app " +
+      "connections in the environmentJa\n\003200\022Z\n" +
+      "\"Successfully retrieved connections\0224\n2\032" +
+      "0.scalekit.v1.connections.ListConnection" +
+      "sResponse\202\265\030\002\030d\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\022\027/a" +
+      "pi/v1/connections/app\022\321\003\n\024GetConnectionC" +
+      "ontext\0224.scalekit.v1.connections.GetConn" +
+      "ectionContextRequest\0325.scalekit.v1.conne" +
+      "ctions.GetConnectionContextResponse\"\313\002\222A" +
+      "\255\001\n\013Connections\022\026Get connection context\032" +
+      "<Retrieves the custom context data for a" +
+      " specific connection.J(\n\003200\022!\n\037Returns " +
+      "the connection context.J\036\n\003404\022\027\n\025Connec" +
+      "tion not found.\202\265\030\003\030\360\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
+      "\223\002~\022L/api/v1/organizations/{organization" +
+      "_id}/connections/{connection_id}/context" +
+      "sZ.\022,/api/v1/connections/{connection_id}" +
+      "/contexts\022\344\003\n\027UpdateConnectionContext\0227." +
+      "scalekit.v1.connections.UpdateConnection" +
+      "ContextRequest\032\026.google.protobuf.Empty\"\367" +
+      "\002\222A\307\001\n\013Connections\022\031Update connection co" +
+      "ntext\032:Updates the custom context data f" +
+      "or a specific connection.J&\n\003200\022\037\n\035Cont" +
+      "ext updated successfully.J\031\n\003400\022\022\n\020Inva" +
+      "lid request.J\036\n\003404\022\027\n\025Connection not fo" +
+      "und.\202\265\030\002\030p\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\220\001\032L/api/v" +
+      "1/organizations/{organization_id}/connec" +
+      "tions/{connection_id}/contexts:\007contextZ" +
+      "7\032,/api/v1/connections/{connection_id}/c" +
+      "ontexts:\007context\032\232\001\222A\226\001\n\013Connections\022\206\001M" +
+      "anage enterprise connections for your Sc" +
+      "alekit environment. This service provide" +
+      "s endpoints for retrieving, and updating" +
+      " connections.B\362\001\n)com.scalekit.grpc.scal" +
+      "ekit.v1.connectionsB\020ConnectionsProtoP\001Z" +
+      "5github.com/scalekit-inc/scalekit/pkg/gr" +
+      "pc/connections\242\002\003SVC\252\002\027Scalekit.V1.Conne" +
+      "ctions\312\002\027Scalekit\\V1\\Connections\342\002#Scale" +
+      "kit\\V1\\Connections\\GPBMetadata\352\002\031Scaleki" +
+      "t::V1::Connectionsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2017,7 +2021,7 @@ public final class ConnectionsProto {
     internal_static_scalekit_v1_connections_ListAppConnectionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_connections_ListAppConnectionsRequest_descriptor,
-        new java.lang.String[] { "PageSize", "PageToken", "Provider", });
+        new java.lang.String[] { "PageSize", "PageToken", "Provider", "Query", });
     internal_static_scalekit_v1_connections_ListAppConnectionsResponse_descriptor =
       getDescriptor().getMessageTypes().get(55);
     internal_static_scalekit_v1_connections_ListAppConnectionsResponse_fieldAccessorTable = new
