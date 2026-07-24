@@ -170,9 +170,14 @@ public class ScalekitAuthClient implements AuthClient {
     /**
      * validateAccessToken validates an access token, optionally enforcing the
      * expected issuer and audience.
+     * <p>
+     * Returns {@code false} when the signature does not verify. Any other failure
+     * (expired token, or an issuer/audience mismatch when the option is set) is
+     * thrown as an {@link APIException} rather than returned as {@code false}.
      * @param jwt: The JWT token
      * @param options: Optional issuer/audience validation options (may be null)
      * @return boolean: True if the token is valid
+     * @throws APIException if the token is expired or fails an issuer/audience check
      */
     public boolean validateAccessToken(String jwt, TokenValidationOptions options) throws APIException {
         try {

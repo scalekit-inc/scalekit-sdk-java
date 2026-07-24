@@ -6486,6 +6486,8 @@ boolean ok = client.authentication().validateAccessToken("<access_token_jwt>");
 <dd>
 
 Validates an access token's signature and expiry, and additionally enforces the expected issuer (exact match) and/or audience (token must contain at least one of the expected values) when provided via `TokenValidationOptions`.
+
+Returns `false` when the signature does not verify. Any other failure — an expired token, or an issuer/audience mismatch when the corresponding option is set — is thrown as an `APIException` rather than returned as `false`, so wrap the call in a try/catch when you need to distinguish those cases.
 </dd>
 </dl>
 </dd>
