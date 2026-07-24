@@ -1,0 +1,59 @@
+name: Release
+
+# Publishes the SDK to Maven Central via the Sonatype Central Portal.
+# Triggered when a GitHub Release is published, or manually via the Actions tab.
+#
+# Because pom.xml sets autoPublish=false, `mvn deploy` uploads a *pending*
+# deployment bundle. Review and click Publish at:
+#   https://central.sonatype.com/publishing/deployments
+#
+# Required secrets (see deployment.md):
+#   NEXUS_USERNAME  - Sonatype Central Portal token username
+#   NEXUS_PASSWORD  - Sonatype Central Portal token password
+#   GPG_PRIVATE_KEY - ASCII-armored private key (gpg --armor --export-secret-keys <KEY_ID>)
+#   GPG_PASSPHRASE  - passphrase for the GPG key
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: publish to Maven Central
+    runs-on: ubuntu-latest
+    environment: release
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # This job only runs `mvn deploy`; it never uses the GitHub token,
+          # so don't leave it persisted in the checkout for later steps.
+          persist-credentials: false
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          # setup-java writes ~/.m2/settings.xml with a <server id="central">
+          # block and imports the GPG key, so we don't hand-roll either.
+          server-id: central
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_CENTRAL_TOKEN
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE
+
+      - name: Deploy to Maven Central (pending in Portal)
+        run: mvn -B -ntp deploy
+        env:
+          MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
+          MAVEN_CENTRAL_TOKEN: ${{ secrets.NEXUS_PASSWORD }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
