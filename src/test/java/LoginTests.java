@@ -1,6 +1,7 @@
 import com.scalekit.ScalekitClient;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.auth.User;
+import com.scalekit.internal.http.UpdateLoginUserDetailsResult;
 import io.grpc.Status;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
@@ -87,7 +88,9 @@ public class LoginTests {
                 .setEmail("test.user@example.com")
                 .build();
         try {
-            String authRequestId = client.login().updateLoginUserDetails(connectionId, loginRequestId, user);
+            UpdateLoginUserDetailsResult result = client.login().updateLoginUserDetails(connectionId, loginRequestId, user);
+            assertNotNull(result);
+            String authRequestId = result.getAuthRequestId();
             assertNotNull(authRequestId);
             assertFalse(authRequestId.isEmpty());
             assertTrue(authRequestId.startsWith("req_"));

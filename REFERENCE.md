@@ -7755,7 +7755,7 @@ ListEventsPaginatedResponse response = client.events().listEventsPaginated(filte
 
 ## Login
 
-<details><summary><code>client.login().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/LoginClient.java">updateLoginUserDetails</a>(connectionId, loginRequestId, user) -> String</code></summary>
+<details><summary><code>client.login().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/LoginClient.java">updateLoginUserDetails</a>(connectionId, loginRequestId, user) -> UpdateLoginUserDetailsResult</code></summary>
 <dl>
 <dd>
 
@@ -7767,7 +7767,7 @@ ListEventsPaginatedResponse response = client.events().listEventsPaginated(filte
 <dl>
 <dd>
 
-Updates the user details for an in-progress login request (e.g. after collecting additional profile information or marking the login as failed via `User.newBuilder().setLoginFailed(true)`), and returns the resulting auth request ID.
+Updates the user details for an in-progress login request (e.g. after collecting additional profile information or marking the login as failed via `User.newBuilder().setLoginFailed(true)`), and returns an `UpdateLoginUserDetailsResult` whose `getAuthRequestId()` exposes the resulting auth request ID. The result is a wrapper type so future response fields can be added without changing the method signature.
 </dd>
 </dl>
 </dd>
@@ -7783,6 +7783,7 @@ Updates the user details for an in-progress login request (e.g. after collecting
 
 ```java
 import com.scalekit.grpc.scalekit.v1.auth.User;
+import com.scalekit.internal.http.UpdateLoginUserDetailsResult;
 
 // Success path: both sub and email are required unless login_failed is true.
 User user = User.newBuilder()
@@ -7790,14 +7791,16 @@ User user = User.newBuilder()
   .setEmail("user@example.com")
   .build();
 
-String authRequestId = client.login().updateLoginUserDetails("conn_123", "lri_123", user);
+UpdateLoginUserDetailsResult result = client.login().updateLoginUserDetails("conn_123", "lri_123", user);
+String authRequestId = result.getAuthRequestId();
 
 // Failure path: mark the login as failed instead of providing sub/email.
 User failedUser = User.newBuilder()
   .setLoginFailed(true)
   .build();
 
-String failedAuthRequestId = client.login().updateLoginUserDetails("conn_123", "lri_123", failedUser);
+UpdateLoginUserDetailsResult failedResult = client.login().updateLoginUserDetails("conn_123", "lri_123", failedUser);
+String failedAuthRequestId = failedResult.getAuthRequestId();
 ```
 </dd>
 </dl>

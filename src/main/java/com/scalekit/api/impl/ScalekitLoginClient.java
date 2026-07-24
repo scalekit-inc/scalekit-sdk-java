@@ -5,6 +5,7 @@ import com.scalekit.api.LoginClient;
 import com.scalekit.grpc.scalekit.v1.auth.*;
 import com.scalekit.internal.RetryExecuter;
 import com.scalekit.internal.ScalekitCredentials;
+import com.scalekit.internal.http.UpdateLoginUserDetailsResult;
 import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
 
@@ -27,7 +28,7 @@ public class ScalekitLoginClient implements LoginClient {
     }
 
     @Override
-    public String updateLoginUserDetails(String connectionId, String loginRequestId, User user) {
+    public UpdateLoginUserDetailsResult updateLoginUserDetails(String connectionId, String loginRequestId, User user) {
         if (connectionId == null || connectionId.isEmpty()) {
             throw new IllegalArgumentException("connectionId is required");
         }
@@ -46,7 +47,9 @@ public class ScalekitLoginClient implements LoginClient {
                             .setLoginRequestId(loginRequestId)
                             .setUser(user)
                             .build());
-            return resp.getAuthRequestId();
+            return UpdateLoginUserDetailsResult.builder()
+                    .authRequestId(resp.getAuthRequestId())
+                    .build();
         }, this.credentials);
     }
 }
