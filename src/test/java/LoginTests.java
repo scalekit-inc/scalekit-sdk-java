@@ -1,5 +1,7 @@
 import com.scalekit.ScalekitClient;
+import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.auth.User;
+import io.grpc.Status;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -72,15 +74,27 @@ public class LoginTests {
         Assumptions.assumeTrue(connectionId != null && !connectionId.isEmpty()
                 && loginRequestId != null && !loginRequestId.isEmpty());
 
-        // The server-side validation rule requires either login_failed=true or both
-        // sub and email to be non-empty, so set them for the success path.
+        // A login request id (lri_xxx) is short-lived, so a real call will usually
+        // fail because the request has already expired or been consumed (e.g.
+        // NOT_FOUND / FAILED_PRECONDITION). That is acceptable here. What must NOT
+        // happen is an INVALID_ARGUMENT protobuf-validation error: that would mean
+        // the SDK sent a malformed payload (e.g. missing sub/email while login_failed
+        // is false), which is the regression this test guards against. We therefore
+        // send a well-formed payload (both sub and email set) and assert the failure,
+        // if any, is not a validation error.
         User user = User.newBuilder()
                 .setSub("usr_test_sub")
                 .setEmail("test.user@example.com")
                 .build();
-        String authRequestId = client.login().updateLoginUserDetails(connectionId, loginRequestId, user);
-        assertNotNull(authRequestId);
-        assertFalse(authRequestId.isEmpty());
-        assertTrue(authRequestId.startsWith("req_"));
+        try {
+            String authRequestId = client.login().updateLoginUserDetails(connectionId, loginRequestId, user);
+            assertNotNull(authRequestId);
+            assertFalse(authRequestId.isEmpty());
+            assertTrue(authRequestId.startsWith("req_"));
+        } catch (APIException e) {
+            assertNotEquals(Status.Code.INVALID_ARGUMENT.value(), e.getGrpcStatusCode(),
+                    "expected a non-validation error for a short-lived login request, "
+                            + "but got a protobuf validation error: " + e.getMessage());
+        }
     }
 }
