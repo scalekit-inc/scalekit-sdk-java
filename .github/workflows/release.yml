@@ -33,6 +33,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # This job only runs `mvn deploy`; it never uses the GitHub token,
+          # so don't leave it persisted in the checkout for later steps.
+          persist-credentials: false
 
       - name: Set up Java
         uses: actions/setup-java@v4

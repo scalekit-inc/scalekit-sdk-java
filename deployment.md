@@ -1,6 +1,11 @@
 # Deployment Guide
 
-This SDK is published to Maven Central via the [Sonatype Central Portal](https://central.sonatype.com), under the `com.scalekit` namespace. Publishing is **not automated in CI** — there is no `release.yml`/`publish.yml` workflow. It is a manual `mvn deploy` run from a maintainer's machine, using the `central-publishing-maven-plugin` and `maven-gpg-plugin` configured in `pom.xml`.
+This SDK is published to Maven Central via the [Sonatype Central Portal](https://central.sonatype.com), under the `com.scalekit` namespace, using the `central-publishing-maven-plugin` and `maven-gpg-plugin` configured in `pom.xml`.
+
+There are two ways to publish:
+
+- **Automated (recommended)** — the [`.github/workflows/release.yml`](.github/workflows/release.yml) GitHub Actions workflow runs on a published GitHub Release (or manual `workflow_dispatch`) and deploys from CI. See [Automated publishing via GitHub Actions](#automated-publishing-via-github-actions) below.
+- **Manual fallback** — run `mvn deploy` from a maintainer's machine, following steps 1–8 below.
 
 This guide assumes you are the **namespace owner** for `com.scalekit` (i.e. you have (or are creating) the account that owns/verified the namespace, not someone being added as an additional publisher by an existing owner).
 
@@ -51,29 +56,14 @@ Maven Central requires every published artifact to be signed. The `maven-gpg-plu
    ```bash
    gpg --keyserver keyserver.ubuntu.com --send-keys YOUR_KEY_ID
    ```
-3. Make sure `gpg-agent` is running so Maven can access the key without a passphrase prompt hanging the build, or configure the passphrase via `~/.m2/settings.xml`:
-   ```xml
-   <settings>
-     <servers>
-       <server>
-         <id>central</id>
-         <username>YOUR_TOKEN_USERNAME</username>
-         <password>YOUR_TOKEN_PASSWORD</password>
-       </server>
-     </servers>
-     <profiles>
-       <profile>
-         <id>gpg-sign</id>
-         <activation>
-           <activeByDefault>true</activeByDefault>
-         </activation>
-         <properties>
-           <gpg.passphrase>YOUR_GPG_PASSPHRASE</gpg.passphrase>
-         </properties>
-       </profile>
-     </profiles>
-   </settings>
-   ```
+3. Provide the passphrase to the build **without** storing it in plaintext. `maven-gpg-plugin` 3.x discourages `<gpg.passphrase>` in `settings.xml` (with `bestPractices` enabled it fails the build). Use one of:
+   - **Local, interactive:** prime `gpg-agent` before the build so the passphrase is cached — sign anything once (`echo test | gpg --clearsign`) and the agent supplies it non-interactively for `mvn deploy`.
+   - **Unattended / scripted:** export the passphrase via the environment variable the plugin reads by default:
+     ```bash
+     export MAVEN_GPG_PASSPHRASE='your-gpg-passphrase'
+     mvn clean deploy
+     ```
+   (This is the same mechanism CI uses — see the automated section below.)
 
 ## 6. Bump the version
 
@@ -96,6 +86,32 @@ This runs the full build (compile, test, javadoc jar, sources jar, shade, GPG si
 3. Click **Publish** to release it to Maven Central, or **Drop** to discard it.
 
 Once published, artifacts typically become searchable on [search.maven.org](https://search.maven.org) within ~30 minutes, and syncable to Maven Central proper within a few hours.
+
+## Automated publishing via GitHub Actions
+
+The [`.github/workflows/release.yml`](.github/workflows/release.yml) workflow runs `mvn deploy` from CI so you don't need any local setup. It triggers on a **published GitHub Release** or a manual **workflow_dispatch**, and runs in a protected `release` environment.
+
+`actions/setup-java` writes the `<server id="central">` block into `settings.xml` and imports the GPG key automatically — you only supply the values as secrets.
+
+### One-time setup
+
+1. In repo **Settings → Environments**, create an environment named **`release`** (optionally add required reviewers for an approval gate before each publish).
+2. In that environment, add these four secrets:
+
+   | Secret | Value |
+   |---|---|
+   | `NEXUS_USERNAME` | Central Portal token username (step 3 above) |
+   | `NEXUS_PASSWORD` | Central Portal token password |
+   | `GPG_PRIVATE_KEY` | ASCII-armored private key: `gpg --armor --export-secret-keys YOUR_KEY_ID` |
+   | `GPG_PASSPHRASE` | passphrase for that GPG key |
+
+   The private key must be the full armored block including the `-----BEGIN/END PGP PRIVATE KEY BLOCK-----` lines. Piping avoids clipboard mangling: `gpg --armor --export-secret-keys YOUR_KEY_ID | gh secret set GPG_PRIVATE_KEY --env release`.
+
+### Releasing
+
+1. Bump `<version>` in `pom.xml` and merge to `main`.
+2. Create a GitHub Release (tag = the new version). This triggers the workflow.
+3. As with a manual deploy, `autoPublish=false` means the bundle lands **pending** — confirm it at [central.sonatype.com/publishing/deployments](https://central.sonatype.com/publishing/deployments).
 
 ## Adding another publisher to the namespace
 
