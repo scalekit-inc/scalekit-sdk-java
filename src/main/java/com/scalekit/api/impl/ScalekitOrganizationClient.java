@@ -304,7 +304,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     /**
      * updateOrganizationSessionPolicy sets a custom session policy for an organization or reverts to application defaults.
      * @param organizationId Organization identifier
-     * @param policy The policy to apply (use SessionPolicySource.APPLICATION to revert to defaults)
+     * @param policy The policy to apply (use SessionPolicyType.APPLICATION to revert to defaults)
      * @return Updated OrganizationSessionPolicySettings
      */
     @Override
