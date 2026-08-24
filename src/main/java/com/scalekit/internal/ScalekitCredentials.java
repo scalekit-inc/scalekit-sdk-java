@@ -12,7 +12,9 @@ import java.util.concurrent.Executor;
 @Getter
 public class ScalekitCredentials extends CallCredentials {
 
-    private  String token;
+    // volatile because applyRequestMetadata reads it without synchronization while
+    // updateCredentials() writes it under a lock from a different thread on retry.
+    private volatile String token;
     private final AuthClient client;
     private Instant lastGenerated;
 
