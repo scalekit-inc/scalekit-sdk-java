@@ -48,7 +48,32 @@ public class ScalekitClient {
 
     private final LoginClient loginClient;
 
+    /** Default: how often an idle gRPC connection is verified before reuse. */
+    public static final long DEFAULT_KEEPALIVE_TIME_SECONDS = 60;
+
+    /** Default: how long to wait for a keepalive response before treating an idle connection as dead. */
+    public static final long DEFAULT_KEEPALIVE_TIMEOUT_SECONDS = 10;
+
     public ScalekitClient(String siteName, String clientId, String clientSecret) {
+        this(siteName, clientId, clientSecret, DEFAULT_KEEPALIVE_TIME_SECONDS, DEFAULT_KEEPALIVE_TIMEOUT_SECONDS);
+    }
+
+    /**
+     * @param keepAliveTimeSeconds    How often, in seconds, an idle gRPC connection is
+     *                                verified before reuse. Lower this if your network
+     *                                path drops idle connections faster than the
+     *                                default window. Defaults to 60.
+     * @param keepAliveTimeoutSeconds How long, in seconds, to wait for a keepalive
+     *                                response before treating an idle connection as
+     *                                dead. Defaults to 10.
+     */
+    public ScalekitClient(
+            String siteName,
+            String clientId,
+            String clientSecret,
+            long keepAliveTimeSeconds,
+            long keepAliveTimeoutSeconds
+    ) {
 
         Environment.configure(siteName,clientId,clientSecret);
         Environment environment = Environment.defaultConfig();
@@ -65,8 +90,8 @@ public class ScalekitClient {
             // isn't detected until the next real call is written to it.
             ManagedChannel channel = ManagedChannelBuilder.forAddress(url.getAuthority(), 443)
                     .userAgent("scalekit-sdk-java/" + version)
-                    .keepAliveTime(60, TimeUnit.SECONDS)
-                    .keepAliveTimeout(10, TimeUnit.SECONDS)
+                    .keepAliveTime(keepAliveTimeSeconds, TimeUnit.SECONDS)
+                    .keepAliveTimeout(keepAliveTimeoutSeconds, TimeUnit.SECONDS)
                     .keepAliveWithoutCalls(true)
                     .build();
 
