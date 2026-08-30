@@ -59,11 +59,15 @@ public class ScalekitClient {
         try {
             URL url = URI.create(environment.siteName).toURL();
             // Managed channel automatically handles channel closing
+            // keepAliveWithoutCalls(true) so an idle channel is still periodically
+            // verified: without it, keepalive pings only fire while a call is active,
+            // so a connection silently dropped by a network intermediary while idle
+            // isn't detected until the next real call is written to it.
             ManagedChannel channel = ManagedChannelBuilder.forAddress(url.getAuthority(), 443)
                     .userAgent("scalekit-sdk-java/" + version)
                     .keepAliveTime(60, TimeUnit.SECONDS)
                     .keepAliveTimeout(10, TimeUnit.SECONDS)
-                    .keepAliveWithoutCalls(false)
+                    .keepAliveWithoutCalls(true)
                     .build();
 
             // Initialize all clients
