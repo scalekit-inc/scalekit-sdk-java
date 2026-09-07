@@ -83,12 +83,13 @@ public class ScalekitClient {
         ScalekitCredentials credentials = new ScalekitCredentials(authenticationClient);
         try {
             URL url = URI.create(environment.siteName).toURL();
+            int port = url.getPort() != -1 ? url.getPort() : 443;
             // Managed channel automatically handles channel closing
             // keepAliveWithoutCalls(true) so an idle channel is still periodically
             // verified: without it, keepalive pings only fire while a call is active,
             // so a connection silently dropped by a network intermediary while idle
             // isn't detected until the next real call is written to it.
-            ManagedChannel channel = ManagedChannelBuilder.forAddress(url.getAuthority(), 443)
+            ManagedChannel channel = ManagedChannelBuilder.forAddress(url.getHost(), port)
                     .userAgent("scalekit-sdk-java/" + version)
                     .keepAliveTime(keepAliveTimeSeconds, TimeUnit.SECONDS)
                     .keepAliveTimeout(keepAliveTimeoutSeconds, TimeUnit.SECONDS)
