@@ -6,11 +6,31 @@ import io.grpc.StatusRuntimeException;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.function.LongConsumer;
 
 public class RetryExecuter {
 
     private static final int MAX_ATTEMPTS = 3;
-    private static final long UNAVAILABLE_BASE_BACKOFF_MILLIS = 100;
+
+    // Matches Python's/Node's shape: 1s base, doubling per attempt, capped at 30s - long enough
+    // that a retry sequence can plausibly outlast a multi-second transient outage instead of
+    // exhausting all attempts in the first few hundred milliseconds (see java-sdk-auth-hooks-client
+    // task notes: a toxiproxy fault-matrix run showed the previous 100ms-based backoff finishing
+    // all 3 attempts in well under 300ms, failing a case where the outage cleared at 2s that
+    // Python/Node would have successfully retried through).
+    private static final long UNAVAILABLE_BASE_BACKOFF_MILLIS = 1000;
+    private static final long UNAVAILABLE_MAX_BACKOFF_MILLIS = 30_000;
+
+    // Swappable so tests can assert on the computed backoff without actually sleeping for it.
+    // Public (not the intended production API - it's in the internal package, not com.scalekit.api
+    // - just needs cross-package visibility for tests, which live in the unnamed default package).
+    public static LongConsumer sleeper = ms -> {
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException interrupted) {
+            Thread.currentThread().interrupt();
+        }
+    };
 
     /**
      * Retries on UNAUTHENTICATED (refreshing credentials first) and UNAVAILABLE (backing off
@@ -56,15 +76,15 @@ public class RetryExecuter {
         throw new APIException(lastError);
     }
 
-    // Exponential backoff with full jitter, so a channel-wide UNAVAILABLE blip doesn't turn into
-    // every concurrent caller retrying in lockstep against a struggling backend.
+    // Exponential backoff with half jitter (same shape as Python's/Node's: base * (0.5 + rand()
+    // * 0.5)), so a channel-wide UNAVAILABLE blip doesn't turn into every concurrent caller
+    // retrying in lockstep against a struggling backend, while still guaranteeing at least half
+    // of the capped delay - full 0-to-max jitter could roll close to zero and defeat the point
+    // of widening the cap in the first place.
     private static void backoffBeforeRetry(int attempt) {
-        long maxDelayMillis = UNAVAILABLE_BASE_BACKOFF_MILLIS * (1L << (attempt - 1));
-        long delayMillis = ThreadLocalRandom.current().nextLong(maxDelayMillis);
-        try {
-            Thread.sleep(delayMillis);
-        } catch (InterruptedException interrupted) {
-            Thread.currentThread().interrupt();
-        }
+        long capped = Math.min(UNAVAILABLE_BASE_BACKOFF_MILLIS * (1L << (attempt - 1)), UNAVAILABLE_MAX_BACKOFF_MILLIS);
+        double jitterFactor = 0.5 + ThreadLocalRandom.current().nextDouble() * 0.5;
+        long delayMillis = (long) (capped * jitterFactor);
+        sleeper.accept(delayMillis);
     }
 }

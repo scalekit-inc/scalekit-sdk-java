@@ -4,10 +4,13 @@ import com.scalekit.internal.RetryExecuter;
 import com.scalekit.internal.ScalekitCredentials;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.concurrent.Callable;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,12 +20,28 @@ public class RetryExecuterTest {
 
     private AuthClient authClient;
     private ScalekitCredentials credentials;
+    private final List<Long> recordedSleeps = new CopyOnWriteArrayList<>();
 
     @BeforeEach
     void setUp() {
         authClient = mock(AuthClient.class);
         when(authClient.getClientAccessToken()).thenReturn("fresh-token");
         credentials = new ScalekitCredentials(authClient);
+        // Swap out the real Thread.sleep so tests exercising retries don't pay the (now much
+        // larger, 1s-30s-capped) production backoff in wall-clock time - see backoffBeforeRetry's
+        // javadoc-equivalent comment for why the cap was widened.
+        RetryExecuter.sleeper = recordedSleeps::add;
+    }
+
+    @AfterEach
+    void tearDown() {
+        RetryExecuter.sleeper = ms -> {
+            try {
+                Thread.sleep(ms);
+            } catch (InterruptedException interrupted) {
+                Thread.currentThread().interrupt();
+            }
+        };
     }
 
     @Test
@@ -145,5 +164,43 @@ public class RetryExecuterTest {
                 () -> RetryExecuter.executeWithRetry(callable, failingCredentials));
         assertNotNull(ex.getCause());
         assertTrue(ex.getMessage().contains("Failed to refresh credentials"));
+    }
+
+    // Backoff must be wide enough to plausibly outlast a multi-second transient outage (see
+    // RetryExecuter's backoffBeforeRetry comment) - not just nonzero. Exhausting all 3 attempts
+    // in the previous ~300ms-max backoff meant Java failed cases Python/Node would retry through.
+    @Test
+    void backoffWidensExponentiallyWithHalfJitter() throws Exception {
+        AtomicInteger calls = new AtomicInteger();
+        Callable<String> callable = () -> {
+            if (calls.getAndIncrement() < 2) {
+                throw new StatusRuntimeException(Status.UNAVAILABLE.withDescription("still recovering"));
+            }
+            return "ok";
+        };
+
+        assertEquals("ok", RetryExecuter.executeWithRetry(callable, credentials));
+
+        assertEquals(2, recordedSleeps.size());
+        // attempt=1: base 1000ms, half-jitter -> [500, 1000]
+        assertTrue(recordedSleeps.get(0) >= 500 && recordedSleeps.get(0) <= 1000,
+                "expected first backoff in [500,1000], got " + recordedSleeps.get(0));
+        // attempt=2: base 2000ms, half-jitter -> [1000, 2000]
+        assertTrue(recordedSleeps.get(1) >= 1000 && recordedSleeps.get(1) <= 2000,
+                "expected second backoff in [1000,2000], got " + recordedSleeps.get(1));
+    }
+
+    @Test
+    void backoffCapsAtThirtySecondsRegardlessOfAttemptCount() {
+        // MAX_ATTEMPTS is 3, so this mostly documents the cap's existence for whenever that
+        // changes, rather than exercising it through executeWithRetry today.
+        Callable<String> callable = () -> {
+            throw new StatusRuntimeException(Status.UNAVAILABLE.withDescription("still down"));
+        };
+
+        assertThrows(APIException.class, () -> RetryExecuter.executeWithRetry(callable, credentials));
+
+        assertEquals(2, recordedSleeps.size());
+        recordedSleeps.forEach(ms -> assertTrue(ms <= 30_000, "backoff exceeded the 30s cap: " + ms));
     }
 }
