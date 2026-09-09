@@ -54,15 +54,24 @@ public class ScalekitClient {
     /** Default: how long to wait for a keepalive response before treating an idle connection as dead. */
     public static final long DEFAULT_KEEPALIVE_TIMEOUT_SECONDS = 10;
 
+    /**
+     * Minimum allowed {@code keepAliveTimeSeconds}, short of passing {@code 0} to disable
+     * keepalive entirely. The backend's gRPC {@code EnforcementPolicy.MinTime} is 30s - anything
+     * under that is flagged as a ping-abuse strike, and enough strikes get the connection
+     * GOAWAY'd (ENHANCE_YOUR_CALM), aborting whatever call was in flight. 60s keeps meaningful
+     * headroom above that floor rather than sitting right on top of it.
+     */
+    public static final long MIN_KEEPALIVE_TIME_SECONDS = 60;
+
     public ScalekitClient(String siteName, String clientId, String clientSecret) {
         this(siteName, clientId, clientSecret, DEFAULT_KEEPALIVE_TIME_SECONDS, DEFAULT_KEEPALIVE_TIMEOUT_SECONDS);
     }
 
     /**
      * @param keepAliveTimeSeconds    How often, in seconds, an idle gRPC connection is
-     *                                verified before reuse. Lower this if your network
-     *                                path drops idle connections faster than the
-     *                                default window. Defaults to 60.
+     *                                verified before reuse. Must be {@code 0} (disables
+     *                                keepalive entirely) or {@code >= MIN_KEEPALIVE_TIME_SECONDS}
+     *                                - see that constant's javadoc for why. Defaults to 60.
      * @param keepAliveTimeoutSeconds How long, in seconds, to wait for a keepalive
      *                                response before treating an idle connection as
      *                                dead. Defaults to 10.
@@ -74,6 +83,14 @@ public class ScalekitClient {
             long keepAliveTimeSeconds,
             long keepAliveTimeoutSeconds
     ) {
+        if (keepAliveTimeSeconds != 0 && keepAliveTimeSeconds < MIN_KEEPALIVE_TIME_SECONDS) {
+            throw new IllegalArgumentException(
+                    "keepAliveTimeSeconds must be 0 (disabled) or >= " + MIN_KEEPALIVE_TIME_SECONDS
+                            + " seconds, got " + keepAliveTimeSeconds
+                            + ". The backend's gRPC keepalive MinTime is 30s; pinging faster than "
+                            + "that risks the connection being GOAWAY'd (ENHANCE_YOUR_CALM) after "
+                            + "repeated strikes, aborting whatever call was in flight.");
+        }
 
         Environment.configure(siteName,clientId,clientSecret);
         Environment environment = Environment.defaultConfig();
@@ -85,16 +102,20 @@ public class ScalekitClient {
             URL url = URI.create(environment.siteName).toURL();
             int port = url.getPort() != -1 ? url.getPort() : 443;
             // Managed channel automatically handles channel closing
-            // keepAliveWithoutCalls(true) so an idle channel is still periodically
-            // verified: without it, keepalive pings only fire while a call is active,
-            // so a connection silently dropped by a network intermediary while idle
-            // isn't detected until the next real call is written to it.
-            ManagedChannel channel = ManagedChannelBuilder.forAddress(url.getHost(), port)
-                    .userAgent("scalekit-sdk-java/" + version)
-                    .keepAliveTime(keepAliveTimeSeconds, TimeUnit.SECONDS)
-                    .keepAliveTimeout(keepAliveTimeoutSeconds, TimeUnit.SECONDS)
-                    .keepAliveWithoutCalls(true)
-                    .build();
+            ManagedChannelBuilder<?> channelBuilder = ManagedChannelBuilder.forAddress(url.getHost(), port)
+                    .userAgent("scalekit-sdk-java/" + version);
+            if (keepAliveTimeSeconds > 0) {
+                // keepAliveWithoutCalls(true) so an idle channel is still periodically
+                // verified: without it, keepalive pings only fire while a call is active,
+                // so a connection silently dropped by a network intermediary while idle
+                // isn't detected until the next real call is written to it. keepAliveTimeSeconds
+                // == 0 skips all of this, leaving the channel on grpc-java's own default
+                // (keepalive disabled) instead of pinging at some other, unvalidated interval.
+                channelBuilder.keepAliveTime(keepAliveTimeSeconds, TimeUnit.SECONDS)
+                        .keepAliveTimeout(keepAliveTimeoutSeconds, TimeUnit.SECONDS)
+                        .keepAliveWithoutCalls(true);
+            }
+            ManagedChannel channel = channelBuilder.build();
 
             // Initialize all clients
             organizationClient = new ScalekitOrganizationClient(channel, credentials);
