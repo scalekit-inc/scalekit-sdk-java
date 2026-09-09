@@ -114,6 +114,16 @@ public class ScalekitClient {
                 channelBuilder.keepAliveTime(keepAliveTimeSeconds, TimeUnit.SECONDS)
                         .keepAliveTimeout(keepAliveTimeoutSeconds, TimeUnit.SECONDS)
                         .keepAliveWithoutCalls(true);
+
+                // The backend closes a connection with zero active RPCs after its own
+                // MaxConnectionIdle (5 minutes, see escalekit/scalekit/cmd/grpc.go). Idling the
+                // channel client-side first - well before that - means the *client* always
+                // initiates the next reconnect on its own terms, instead of racing a new call
+                // against the server's GOAWAY for the same connection. Derived from
+                // keepAliveTimeSeconds (same shape as the Node SDK's idleConnectionTimeoutMs),
+                // capped at 240s to stay safely under the server's 300s bound with margin.
+                long idleTimeoutSeconds = Math.min(240, keepAliveTimeSeconds * 5);
+                channelBuilder.idleTimeout(idleTimeoutSeconds, TimeUnit.SECONDS);
             }
             ManagedChannel channel = channelBuilder.build();
 
