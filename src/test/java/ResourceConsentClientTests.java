@@ -15,10 +15,10 @@ public class ResourceConsentClientTests {
 
     private static ScalekitClient client;
 
-    // A real MCP server resource in the test environment. It currently has no
-    // consents, which is fine — these tests assert the call shape and the
-    // pagination envelope, never the consent contents.
-    private static final String TEST_RESOURCE_ID = "res_142145647087190278";
+    // A real MCP server resource in the test environment. These tests assert the
+    // call shape and the pagination envelope, never the consent contents, so they
+    // hold whether or not the resource currently has consents.
+    private static final String TEST_RESOURCE_ID = "res_142388122116685880";
 
     @BeforeAll
     static void init() {
