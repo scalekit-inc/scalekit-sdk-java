@@ -2,6 +2,7 @@ import com.scalekit.internal.CallTimeout;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CallTimeoutTest {
 
@@ -9,6 +10,18 @@ public class CallTimeoutTest {
     void resolvesToEnvironmentDefaultWithNoOverride() {
         com.scalekit.Environment.configure("https://example.scalekit.dev", "id", "secret");
         assertEquals(com.scalekit.Environment.defaultConfig().timeout, CallTimeout.resolveMillis());
+    }
+
+    @Test
+    void environmentDefaultsToTwentySecondsMatchingPythonAndNode() {
+        com.scalekit.Environment.configure("https://example.scalekit.dev", "id", "secret");
+        assertEquals(20_000, com.scalekit.Environment.defaultConfig().timeout);
+    }
+
+    @Test
+    void rejectsZeroOrNegativeOverride() {
+        assertThrows(IllegalArgumentException.class, () -> CallTimeout.override(0));
+        assertThrows(IllegalArgumentException.class, () -> CallTimeout.override(-1));
     }
 
     @Test

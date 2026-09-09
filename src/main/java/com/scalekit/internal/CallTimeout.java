@@ -34,8 +34,17 @@ public final class CallTimeout {
         return override != null ? override : Environment.defaultConfig().timeout;
     }
 
-    /** Opens a scope overriding the timeout for calls made on this thread until the scope is closed. */
+    /**
+     * Opens a scope overriding the timeout for calls made on this thread until the scope is
+     * closed.
+     *
+     * @throws IllegalArgumentException if timeoutMillis is not positive - matches Python's/Node's
+     *                                   own per-call timeout validation (Node's assertValidTimeout).
+     */
     public static Scope override(long timeoutMillis) {
+        if (timeoutMillis <= 0) {
+            throw new IllegalArgumentException("timeout must be positive, got " + timeoutMillis + "ms");
+        }
         Long previous = OVERRIDE_MILLIS.get();
         OVERRIDE_MILLIS.set(timeoutMillis);
         return () -> {

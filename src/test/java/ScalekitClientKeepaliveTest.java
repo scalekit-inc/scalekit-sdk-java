@@ -37,4 +37,19 @@ public class ScalekitClientKeepaliveTest {
     void threeArgConstructorUsesValidDefaults() {
         assertDoesNotThrow(() -> new ScalekitClient(SITE, "id", "secret"));
     }
+
+    @Test
+    void rejectsNonPositiveKeepAliveTimeoutWhenKeepaliveEnabled() {
+        assertThrows(IllegalArgumentException.class,
+                () -> new ScalekitClient(SITE, "id", "secret", ScalekitClient.MIN_KEEPALIVE_TIME_SECONDS, 0));
+        assertThrows(IllegalArgumentException.class,
+                () -> new ScalekitClient(SITE, "id", "secret", ScalekitClient.MIN_KEEPALIVE_TIME_SECONDS, -1));
+    }
+
+    @Test
+    void keepAliveTimeoutIsUnvalidatedWhenKeepaliveDisabled() {
+        // keepAliveTimeSeconds=0 means keepalive is off entirely, so a nonsensical companion
+        // timeout is harmless - it's never read.
+        assertDoesNotThrow(() -> new ScalekitClient(SITE, "id", "secret", 0, -1));
+    }
 }

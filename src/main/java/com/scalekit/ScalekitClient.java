@@ -91,6 +91,12 @@ public class ScalekitClient {
                             + "that risks the connection being GOAWAY'd (ENHANCE_YOUR_CALM) after "
                             + "repeated strikes, aborting whatever call was in flight.");
         }
+        // Only meaningful (and only validated) when keepalive is actually enabled - a disabled
+        // keepAliveTimeSeconds=0 never reads this value at all (see the channelBuilder branch below).
+        if (keepAliveTimeSeconds != 0 && keepAliveTimeoutSeconds <= 0) {
+            throw new IllegalArgumentException(
+                    "keepAliveTimeoutSeconds must be positive when keepalive is enabled, got " + keepAliveTimeoutSeconds);
+        }
 
         Environment.configure(siteName,clientId,clientSecret);
         Environment environment = Environment.defaultConfig();
