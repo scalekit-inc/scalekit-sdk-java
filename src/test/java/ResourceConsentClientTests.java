@@ -1,7 +1,8 @@
 import com.scalekit.ScalekitClient;
 import com.scalekit.api.util.ListUserConsentsOptions;
+import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse;
-import io.grpc.StatusRuntimeException;
+import io.grpc.Status;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -100,13 +101,16 @@ public class ResourceConsentClientTests {
             userIds[i] = "usr_" + i;
         }
 
-        StatusRuntimeException exception = assertThrows(StatusRuntimeException.class, () ->
+        // RetryExecuter converts a StatusRuntimeException into an APIException,
+        // preserving the gRPC status code, so assert on that rather than on the
+        // raw gRPC exception, which never reaches the caller.
+        APIException exception = assertThrows(APIException.class, () ->
                 client.resources().listUserConsents(TEST_RESOURCE_ID,
                         ListUserConsentsOptions.builder()
                                 .userIds(Arrays.asList(userIds))
                                 .build()));
 
-        assertEquals(io.grpc.Status.INVALID_ARGUMENT.getCode(), exception.getStatus().getCode());
+        assertEquals(Status.Code.INVALID_ARGUMENT.value(), exception.getGrpcStatusCode());
     }
 
     @Test
@@ -142,11 +146,16 @@ public class ResourceConsentClientTests {
         assertEquals("consentId is required", exception.getMessage());
     }
 
+    // An unknown consent must surface as an error rather than a silent success, so
+    // callers can tell "revoked" apart from "there was nothing to revoke". The
+    // exact code is the server's business; what matters here is that a real gRPC
+    // status reached the caller, which a non-zero grpcStatusCode proves — the
+    // String-only APIException constructors leave it at 0.
     @Test
     void testRevokeUserConsentUnknownConsent() {
-        StatusRuntimeException exception = assertThrows(StatusRuntimeException.class, () ->
+        APIException exception = assertThrows(APIException.class, () ->
                 client.resources().revokeUserConsent("m2m_000000000000000000", "usrcnst_000000000000000000"));
 
-        assertNotNull(exception.getStatus());
+        assertNotEquals(0, exception.getGrpcStatusCode());
     }
 }
