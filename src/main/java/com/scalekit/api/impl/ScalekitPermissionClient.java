@@ -1,6 +1,6 @@
 package com.scalekit.api.impl;
 
-import com.scalekit.Environment;
+import com.scalekit.internal.CallTimeout;
 import com.scalekit.api.PermissionClient;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.roles.*;
@@ -36,7 +36,7 @@ public class ScalekitPermissionClient implements PermissionClient {
     public CreatePermissionResponse createPermission(CreatePermissionRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .createPermission(request);
         }, this.credentials);
     }
@@ -50,7 +50,7 @@ public class ScalekitPermissionClient implements PermissionClient {
     public GetPermissionResponse getPermission(String permissionName) {
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .getPermission(GetPermissionRequest.newBuilder()
                             .setPermissionName(permissionName)
                             .build());
@@ -73,7 +73,7 @@ public class ScalekitPermissionClient implements PermissionClient {
                 builder.setPageSize(pageSize);
             }
             return rolesService
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .listPermissions(builder.build());
         }, this.credentials);
     }
@@ -111,7 +111,7 @@ public class ScalekitPermissionClient implements PermissionClient {
     public UpdatePermissionResponse updatePermission(String permissionName, UpdatePermissionRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .updatePermission(UpdatePermissionRequest.newBuilder()
                             .setPermissionName(permissionName)
                             .setPermission(request.getPermission())
@@ -127,7 +127,7 @@ public class ScalekitPermissionClient implements PermissionClient {
     public void deletePermission(String permissionName) {
         RetryExecuter.executeWithRetry(() -> {
             rolesService
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .deletePermission(DeletePermissionRequest.newBuilder()
                             .setPermissionName(permissionName)
                             .build());
@@ -146,7 +146,7 @@ public class ScalekitPermissionClient implements PermissionClient {
     public ListRolePermissionsResponse listRolePermissions(String roleName) {
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .listRolePermissions(ListRolePermissionsRequest.newBuilder()
                             .setRoleName(roleName)
                             .build());
@@ -163,7 +163,7 @@ public class ScalekitPermissionClient implements PermissionClient {
     public AddPermissionsToRoleResponse addPermissionsToRole(String roleName, AddPermissionsToRoleRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .addPermissionsToRole(request.toBuilder()
                             .setRoleName(roleName)
                             .build());
@@ -179,7 +179,7 @@ public class ScalekitPermissionClient implements PermissionClient {
     public void removePermissionFromRole(String roleName, String permissionName) {
         RetryExecuter.executeWithRetry(() -> {
             rolesService
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .removePermissionFromRole(RemovePermissionFromRoleRequest.newBuilder()
                             .setRoleName(roleName)
                             .setPermissionName(permissionName)
@@ -197,7 +197,7 @@ public class ScalekitPermissionClient implements PermissionClient {
     public ListEffectiveRolePermissionsResponse listEffectiveRolePermissions(String roleName) {
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .listEffectiveRolePermissions(ListEffectiveRolePermissionsRequest.newBuilder()
                             .setRoleName(roleName)
                             .build());

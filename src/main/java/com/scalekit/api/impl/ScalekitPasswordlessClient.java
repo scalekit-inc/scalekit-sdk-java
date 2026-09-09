@@ -1,6 +1,6 @@
 package com.scalekit.api.impl;
 
-import com.scalekit.Environment;
+import com.scalekit.internal.CallTimeout;
 import com.scalekit.api.PasswordlessClient;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.auth.passwordless.*;
@@ -64,7 +64,7 @@ public class ScalekitPasswordlessClient implements PasswordlessClient {
             }
 
             return this.passwordlessStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .sendPasswordlessEmail(requestBuilder.build());
         }, this.credentials);
     }
@@ -109,7 +109,7 @@ public class ScalekitPasswordlessClient implements PasswordlessClient {
             }
 
             return this.passwordlessStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .verifyPasswordlessEmail(requestBuilder.build());
         }, this.credentials);
     }
@@ -141,7 +141,7 @@ public class ScalekitPasswordlessClient implements PasswordlessClient {
                     .build();
 
             return this.passwordlessStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .resendPasswordlessEmail(request);
         }, this.credentials);
     }

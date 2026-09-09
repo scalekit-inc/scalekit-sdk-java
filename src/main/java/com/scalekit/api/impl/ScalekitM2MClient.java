@@ -1,6 +1,6 @@
 package com.scalekit.api.impl;
 
-import com.scalekit.Environment;
+import com.scalekit.internal.CallTimeout;
 import com.scalekit.api.M2MClient;
 import com.scalekit.grpc.scalekit.v1.clients.*;
 import com.scalekit.internal.RetryExecuter;
@@ -39,7 +39,7 @@ public class ScalekitM2MClient implements M2MClient {
                 .build();
         return RetryExecuter.executeWithRetry(() ->
                 this.clientStub
-                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                         .createOrganizationClient(request),
                 this.credentials);
     }
@@ -58,7 +58,7 @@ public class ScalekitM2MClient implements M2MClient {
                 .build();
         return RetryExecuter.executeWithRetry(() ->
                 this.clientStub
-                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                         .getOrganizationClient(request),
                 this.credentials);
     }
@@ -81,7 +81,7 @@ public class ScalekitM2MClient implements M2MClient {
                 .build();
         return RetryExecuter.executeWithRetry(() ->
                 this.clientStub
-                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                         .updateOrganizationClient(request),
                 this.credentials);
     }
@@ -101,7 +101,7 @@ public class ScalekitM2MClient implements M2MClient {
         RetryExecuter.executeWithRetry(() -> {
             try {
                 this.clientStub
-                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                         .deleteOrganizationClient(request);
             } catch (StatusRuntimeException e) {
                 if (e.getStatus().getCode() == io.grpc.Status.NOT_FOUND.getCode()) {
@@ -127,7 +127,7 @@ public class ScalekitM2MClient implements M2MClient {
                 .build();
         return RetryExecuter.executeWithRetry(() ->
                 this.clientStub
-                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                         .createOrganizationClientSecret(request),
                 this.credentials);
     }
@@ -151,7 +151,7 @@ public class ScalekitM2MClient implements M2MClient {
         RetryExecuter.executeWithRetry(() -> {
             try {
                 this.clientStub
-                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                         .deleteOrganizationClientSecret(request);
             } catch (io.grpc.StatusRuntimeException e) {
                 if (e.getStatus().getCode() == io.grpc.Status.NOT_FOUND.getCode()) {
@@ -181,7 +181,7 @@ public class ScalekitM2MClient implements M2MClient {
                 .build();
         return RetryExecuter.executeWithRetry(() ->
                 this.clientStub
-                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                         .listOrganizationClients(request),
                 this.credentials);
     }

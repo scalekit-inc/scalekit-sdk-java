@@ -142,6 +142,22 @@ public class ScalekitClient {
 
     }
 
+    /**
+     * Overrides the per-call deadline for calls made on the current thread until the returned
+     * scope is closed, instead of the client-wide default ({@code Environment.defaultConfig().timeout},
+     * itself defaulting to 10s or the {@code SCALEKIT_REQUEST_TIMEOUT} env var). Use for a call
+     * that legitimately needs longer (or a tighter budget than the default):
+     * <pre>{@code
+     * try (var scope = scalekitClient.withTimeout(5, TimeUnit.SECONDS)) {
+     *     scalekitClient.organizations().getById("org_123");
+     * }
+     * }</pre>
+     * Scoped per-thread - see {@link com.scalekit.internal.CallTimeout} for propagation caveats.
+     */
+    public com.scalekit.internal.CallTimeout.Scope withTimeout(long timeout, TimeUnit unit) {
+        return com.scalekit.internal.CallTimeout.override(unit.toMillis(timeout));
+    }
+
     public OrganizationClient organizations() {
         return this.organizationClient;
     }

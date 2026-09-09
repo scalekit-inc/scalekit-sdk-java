@@ -1,6 +1,6 @@
 package com.scalekit.api.impl;
 
-import com.scalekit.Environment;
+import com.scalekit.internal.CallTimeout;
 import com.scalekit.api.OrganizationClient;
 import com.scalekit.grpc.scalekit.v1.organizations.*;
 import com.scalekit.internal.RetryExecuter;
@@ -41,7 +41,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     public Organization create(CreateOrganization organization) {
         return RetryExecuter.executeWithRetry(() -> {
             CreateOrganizationResponse response = this.organizationStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .createOrganization(
                     CreateOrganizationRequest.newBuilder()
                             .setOrganization(organization)
@@ -61,7 +61,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     public Organization getById(String id) {
         return RetryExecuter.executeWithRetry(() -> {
             GetOrganizationResponse response = this.organizationStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                             .getOrganization(
                     GetOrganizationRequest.newBuilder()
                             .setId(id)
@@ -83,7 +83,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     public Organization getByExternalId(String externalId) {
         return RetryExecuter.executeWithRetry(() -> {
             GetOrganizationResponse response = this.organizationStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                             .getOrganization(
                     GetOrganizationRequest.newBuilder()
                             .setExternalId(externalId)
@@ -104,7 +104,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     public Organization updateById(String id, UpdateOrganization organization) {
         return RetryExecuter.executeWithRetry(() -> {
             UpdateOrganizationResponse response = this.organizationStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .updateOrganization(
                     UpdateOrganizationRequest.newBuilder()
                             .setOrganization(organization)
@@ -125,7 +125,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     public Organization updateByExternalId(String externalId, UpdateOrganization organization) {
         return RetryExecuter.executeWithRetry(() -> {
             UpdateOrganizationResponse response = this.organizationStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .updateOrganization(
                     UpdateOrganizationRequest.newBuilder()
                             .setOrganization(organization)
@@ -144,7 +144,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     public void deleteById(String id) {
         RetryExecuter.executeWithRetry(() -> {
             this.organizationStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .deleteOrganization(
                     DeleteOrganizationRequest.newBuilder()
                             .setId(id)
@@ -163,7 +163,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
 
       RetryExecuter.executeWithRetry(() -> {
             this.organizationStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .deleteOrganization(
                     DeleteOrganizationRequest.newBuilder()
                             .setExternalId(externalId)
@@ -200,7 +200,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
                     .setPageToken(effectivePageToken)
                     .build();
             return this.organizationStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .listOrganization(request);
         },this.credentials);
     }
@@ -230,7 +230,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
                     .addAllFeatures(features)
                     .build();
             GeneratePortalLinkResponse response = this.organizationStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .generatePortalLink(request);
             return response.getLink();
         },this.credentials);
@@ -251,7 +251,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
                     .setSettings(OrganizationSettings.newBuilder().addAllFeatures(settings))
                     .build();
             GetOrganizationResponse  response = this.organizationStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .updateOrganizationSettings(request);
             return response.getOrganization();
         },this.credentials);
@@ -271,7 +271,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
                 settingsBuilder.mergeFrom(settings);
             }
             UpsertUserManagementSettingsResponse response = this.organizationStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .upsertUserManagementSettings(
                             UpsertUserManagementSettingsRequest.newBuilder()
                                     .setOrganizationId(organizationId)
@@ -291,7 +291,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
     public OrganizationSessionPolicySettings getOrganizationSessionPolicy(String organizationId) {
         return RetryExecuter.executeWithRetry(() -> {
             GetOrganizationSessionPolicyResponse response = this.organizationStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .getOrganizationSessionPolicy(
                             GetOrganizationSessionPolicyRequest.newBuilder()
                                     .setOrganizationId(organizationId)
@@ -330,7 +330,7 @@ public class ScalekitOrganizationClient implements OrganizationClient {
                 builder.setIdleSessionTimeoutUnit(policy.getIdleSessionTimeoutUnit());
             }
             UpdateOrganizationSessionPolicyResponse response = this.organizationStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .updateOrganizationSessionPolicy(builder.build());
             return response.getPolicy();
         }, this.credentials);

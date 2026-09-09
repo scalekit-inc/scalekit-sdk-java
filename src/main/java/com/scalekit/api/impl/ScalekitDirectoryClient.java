@@ -2,7 +2,7 @@ package com.scalekit.api.impl;
 
 import com.google.protobuf.Empty;
 import com.google.protobuf.Timestamp;
-import com.scalekit.Environment;
+import com.scalekit.internal.CallTimeout;
 import com.scalekit.api.DirectoryClient;
 import com.scalekit.api.util.ListDirectoryGroupResponse;
 import com.scalekit.api.util.ListDirectoryResourceOptions;
@@ -49,7 +49,7 @@ public class ScalekitDirectoryClient implements DirectoryClient {
     public Directory getDirectory(String directoryId, String organizationId) {
         return RetryExecuter.executeWithRetry(() -> {
             GetDirectoryResponse response = this.directoryStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .getDirectory(
                     GetDirectoryRequest.newBuilder()
                             .setId(directoryId)
@@ -70,7 +70,7 @@ public class ScalekitDirectoryClient implements DirectoryClient {
     @Override
     public ListDirectoriesResponse listDirectories(String organizationId) {
         return RetryExecuter.executeWithRetry(() -> this.directoryStub
-                .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                 .listDirectories(
                 ListDirectoriesRequest.newBuilder()
                         .setOrganizationId(organizationId)
@@ -104,7 +104,7 @@ public class ScalekitDirectoryClient implements DirectoryClient {
                     .setUpdatedAfter(finalOptions.getUpdatedAfter())
                     .build();
             ListDirectoryUsersResponse grpcListDirectoryUsersResponse = directoryStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .listDirectoryUsers(request);
             return new ListDirectoryUserResponse(grpcListDirectoryUsersResponse);
         },this.credentials);
@@ -133,7 +133,7 @@ public class ScalekitDirectoryClient implements DirectoryClient {
                     .setOrganizationId(organizationId)
                     .build();
             ListDirectoryGroupsResponse grpcListDirectoryGroupsResponse = directoryStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .listDirectoryGroups(request);
             return new ListDirectoryGroupResponse(grpcListDirectoryGroupsResponse);
         },this.credentials);
@@ -157,7 +157,7 @@ public class ScalekitDirectoryClient implements DirectoryClient {
                     .setOrganizationId(organizationId)
                     .build();
             return directoryStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .enableDirectory(request);
         },this.credentials);
 
@@ -180,7 +180,7 @@ public class ScalekitDirectoryClient implements DirectoryClient {
                     .setOrganizationId(organizationId)
                     .build();
             return directoryStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .disableDirectory(request);
         },this.credentials);
     }
@@ -213,7 +213,7 @@ public class ScalekitDirectoryClient implements DirectoryClient {
 
         return RetryExecuter.executeWithRetry(() -> {
             CreateDirectoryResponse response = this.directoryStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .createDirectory(
                     CreateDirectoryRequest.newBuilder()
                             .setOrganizationId(organizationId)
@@ -248,7 +248,7 @@ public class ScalekitDirectoryClient implements DirectoryClient {
                     .setOrganizationId(organizationId)
                     .build();
             directoryStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .deleteDirectory(request);
             return null;
         },this.credentials);

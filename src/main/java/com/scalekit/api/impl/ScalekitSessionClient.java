@@ -1,6 +1,6 @@
 package com.scalekit.api.impl;
 
-import com.scalekit.Environment;
+import com.scalekit.internal.CallTimeout;
 import com.scalekit.api.SessionClient;
 import com.scalekit.grpc.scalekit.v1.sessions.*;
 import com.scalekit.internal.RetryExecuter;
@@ -29,7 +29,7 @@ public class ScalekitSessionClient implements SessionClient {
     @Override
     public SessionDetails getSession(String sessionId) {
         return RetryExecuter.executeWithRetry(() -> this.sessionStub
-                .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                 .getSession(SessionDetailsRequest.newBuilder()
                         .setSessionId(sessionId)
                         .build()), this.credentials);
@@ -53,14 +53,14 @@ public class ScalekitSessionClient implements SessionClient {
         }
 
         return RetryExecuter.executeWithRetry(() -> this.sessionStub
-                .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                 .getUserSessions(requestBuilder.build()), this.credentials);
     }
 
     @Override
     public RevokeSessionResponse revokeSession(String sessionId) {
         return RetryExecuter.executeWithRetry(() -> this.sessionStub
-                .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                 .revokeSession(RevokeSessionRequest.newBuilder()
                         .setSessionId(sessionId)
                         .build()), this.credentials);
@@ -69,7 +69,7 @@ public class ScalekitSessionClient implements SessionClient {
     @Override
     public RevokeAllUserSessionsResponse revokeAllUserSessions(String userId) {
         return RetryExecuter.executeWithRetry(() -> this.sessionStub
-                .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                 .revokeAllUserSessions(RevokeAllUserSessionsRequest.newBuilder()
                         .setUserId(userId)
                         .build()), this.credentials);

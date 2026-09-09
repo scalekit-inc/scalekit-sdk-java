@@ -1,6 +1,6 @@
 package com.scalekit.api.impl;
 
-import com.scalekit.Environment;
+import com.scalekit.internal.CallTimeout;
 import com.scalekit.api.LoginClient;
 import com.scalekit.grpc.scalekit.v1.auth.*;
 import com.scalekit.internal.RetryExecuter;
@@ -41,7 +41,7 @@ public class ScalekitLoginClient implements LoginClient {
 
         return RetryExecuter.executeWithRetry(() -> {
             UpdateLoginUserDetailsResponse resp = this.stub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .updateLoginUserDetails(UpdateLoginUserDetailsRequest.newBuilder()
                             .setConnectionId(connectionId)
                             .setLoginRequestId(loginRequestId)

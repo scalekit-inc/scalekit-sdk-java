@@ -1,7 +1,7 @@
 package com.scalekit.api.impl;
 
 import com.google.protobuf.Empty;
-import com.scalekit.Environment;
+import com.scalekit.internal.CallTimeout;
 import com.scalekit.api.ConnectionClient;
 import com.scalekit.grpc.scalekit.v1.connections.*;
 import com.scalekit.internal.RetryExecuter;
@@ -37,7 +37,7 @@ public class ScalekitConnectionClient implements ConnectionClient {
     public Connection getConnectionById(String connectionId, String organizationId) {
         return RetryExecuter.executeWithRetry(() -> {
             GetConnectionResponse response = this.ConnectionStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .getConnection(
                     GetConnectionRequest.newBuilder()
                             .setId(connectionId)
@@ -56,7 +56,7 @@ public class ScalekitConnectionClient implements ConnectionClient {
     @Override
     public ListConnectionsResponse listConnectionsByDomain(String domain) {
         return RetryExecuter.executeWithRetry(() -> this.ConnectionStub
-                .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                 .listConnections(
                 ListConnectionsRequest.newBuilder()
                         .setDomain(domain)
@@ -74,7 +74,7 @@ public class ScalekitConnectionClient implements ConnectionClient {
     public ListConnectionsResponse listConnectionsByOrganization(String organizationId) {
 
         return RetryExecuter.executeWithRetry(() -> this.ConnectionStub
-                .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                 .listConnections(
                 ListConnectionsRequest.newBuilder()
                         .setOrganizationId(organizationId)
@@ -99,7 +99,7 @@ public class ScalekitConnectionClient implements ConnectionClient {
                     .setId(connectionId)
                     .build();
             return this.ConnectionStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .enableConnection(request);
         },this.credentials);
 
@@ -120,7 +120,7 @@ public class ScalekitConnectionClient implements ConnectionClient {
                         .setId(connectionId)
                         .build();
                 return this.ConnectionStub
-                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                         .disableConnection(request);
             },this.credentials);
     }
@@ -136,7 +136,7 @@ public class ScalekitConnectionClient implements ConnectionClient {
     public Connection createConnection(String organizationId, CreateConnection connection) {
         return RetryExecuter.executeWithRetry(() -> {
             CreateConnectionResponse response = this.ConnectionStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .createConnection(
                     CreateConnectionRequest.newBuilder()
                             .setOrganizationId(organizationId)
@@ -157,7 +157,7 @@ public class ScalekitConnectionClient implements ConnectionClient {
     public void  deleteConnection(String connectionId, String organizationId) {
          RetryExecuter.executeWithRetry(()->{
            Empty response = this.ConnectionStub
-                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
                     .deleteConnection(
                     DeleteConnectionRequest.newBuilder()
                             .setId(connectionId)
