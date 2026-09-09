@@ -45,7 +45,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
   /**
-   * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+   * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The nextPageToken.
    */
   @java.lang.Override
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+   * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for nextPageToken.
    */
   @java.lang.Override
@@ -555,7 +555,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nextPageToken_ = "";
     /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
@@ -571,7 +571,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString
@@ -588,7 +588,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The nextPageToken to set.
      * @return This builder for chaining.
      */
@@ -601,7 +601,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
@@ -611,7 +611,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for nextPageToken to set.
      * @return This builder for chaining.
      */

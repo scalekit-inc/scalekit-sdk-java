@@ -19,4 +19,16 @@ public interface OTPRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCodeChallengeBytes();
+
+  /**
+   * <code>string g_recaptcha_response = 2 [json_name = "gRecaptchaResponse", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The gRecaptchaResponse.
+   */
+  java.lang.String getGRecaptchaResponse();
+  /**
+   * <code>string g_recaptcha_response = 2 [json_name = "gRecaptchaResponse", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for gRecaptchaResponse.
+   */
+  com.google.protobuf.ByteString
+      getGRecaptchaResponseBytes();
 }

@@ -25,9 +25,9 @@ public interface GeneratePortalLinkRequestOrBuilder extends
    * Deprecated: Use features
    * </pre>
    *
-   * <code>optional bool sso = 2 [json_name = "sso", deprecated = true, (.google.api.field_visibility) = { ... }</code>
+   * <code>optional bool sso = 2 [json_name = "sso", deprecated = true, (.scalekit.v1.options.agent_field) = { ... }</code>
    * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.sso is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=996
+   *     See scalekit/v1/organizations/organizations.proto;l=1208
    * @return Whether the sso field is set.
    */
   @java.lang.Deprecated boolean hasSso();
@@ -36,9 +36,9 @@ public interface GeneratePortalLinkRequestOrBuilder extends
    * Deprecated: Use features
    * </pre>
    *
-   * <code>optional bool sso = 2 [json_name = "sso", deprecated = true, (.google.api.field_visibility) = { ... }</code>
+   * <code>optional bool sso = 2 [json_name = "sso", deprecated = true, (.scalekit.v1.options.agent_field) = { ... }</code>
    * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.sso is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=996
+   *     See scalekit/v1/organizations/organizations.proto;l=1208
    * @return The sso.
    */
   @java.lang.Deprecated boolean getSso();
@@ -48,9 +48,9 @@ public interface GeneratePortalLinkRequestOrBuilder extends
    * Deprecated: Use features
    * </pre>
    *
-   * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true, (.google.api.field_visibility) = { ... }</code>
+   * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true, (.scalekit.v1.options.agent_field) = { ... }</code>
    * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.directory_sync is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=1002
+   *     See scalekit/v1/organizations/organizations.proto;l=1223
    * @return Whether the directorySync field is set.
    */
   @java.lang.Deprecated boolean hasDirectorySync();
@@ -59,9 +59,9 @@ public interface GeneratePortalLinkRequestOrBuilder extends
    * Deprecated: Use features
    * </pre>
    *
-   * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true, (.google.api.field_visibility) = { ... }</code>
+   * <code>optional bool directory_sync = 3 [json_name = "directorySync", deprecated = true, (.scalekit.v1.options.agent_field) = { ... }</code>
    * @deprecated scalekit.v1.organizations.GeneratePortalLinkRequest.directory_sync is deprecated.
-   *     See scalekit/v1/organizations/organizations.proto;l=1002
+   *     See scalekit/v1/organizations/organizations.proto;l=1223
    * @return The directorySync.
    */
   @java.lang.Deprecated boolean getDirectorySync();

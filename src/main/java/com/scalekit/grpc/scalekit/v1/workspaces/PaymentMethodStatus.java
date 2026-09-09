@@ -104,7 +104,7 @@ public enum PaymentMethodStatus
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.workspaces.WorkspacesProto.getDescriptor().getEnumTypes().get(3);
+    return com.scalekit.grpc.scalekit.v1.workspaces.WorkspacesProto.getDescriptor().getEnumTypes().get(4);
   }
 
   private static final PaymentMethodStatus[] VALUES = values();

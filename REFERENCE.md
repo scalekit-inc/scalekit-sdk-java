@@ -16,6 +16,7 @@
 - [Auth](#auth)
 - [Tokens](#tokens)
 - [M2M](#m2m)
+- [Resources](#resources)
 - [Events](#events)
 - [Login](#login)
 
@@ -1000,6 +1001,60 @@ Returns a <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/s
 
 ```java
 client.m2m().listOrganizationClients("org_123", 20, "");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+This method takes no parameters.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/ScalekitClient.java">resources</a>() -> ResourceConsentClient</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Returns a <a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">ResourceConsentClient</a> for reading and revoking the end-user consents granted against a resource, such as an MCP server.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.resources().listUserConsents("res_142145647087190278", null);
 ```
 </dd>
 </dl>
@@ -7602,6 +7657,156 @@ client.m2m().listOrganizationClients("org_123", 20, "");
 <dd>
 
 **pageToken:** `String` - Pagination cursor for next page (null or empty string for first page)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+## Resources
+
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">listUserConsents</a>(resourceId, options) -> ListResourceUserConsentsResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists the end-user consents granted against a resource, such as an MCP server, with pagination.
+
+A consent records that one end user allowed a specific API client to act on their behalf. Each returned consent carries `id`, `externalUserId`, `clientId`, `clientName`, `scopes` and `grantedAt`; the response also carries `totalSize` plus `nextPageToken` and `prevPageToken` cursors.
+
+`externalUserId` is the identifier your application supplied for the user when the consent was granted. Set `userIds` to match it exactly and case-sensitively (maximum 25 values, combined with OR), or `search` for a case-insensitive substring match. When both are set, `userIds` wins and `search` is ignored.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.api.util.ListUserConsentsOptions;
+import com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse;
+import com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsent;
+
+import java.util.Arrays;
+
+ListResourceUserConsentsResponse response = client.resources().listUserConsents(
+  "res_142145647087190278",
+  ListUserConsentsOptions.builder()
+    .pageSize(10)
+    .userIds(Arrays.asList("usr_42", "usr_43"))
+    .build()
+);
+
+for (ResourceUserConsent consent : response.getConsentsList()) {
+  System.out.println(consent.getId() + " " + consent.getExternalUserId() + " " + consent.getClientName());
+}
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceId:** `String` - The resource to list consents for (format: `res_xxxxx`). Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**options:** `ListUserConsentsOptions` - `search` (case-insensitive substring match on external user IDs), `pageSize` (max 30; 0 uses the server default), `pageToken`, `userIds` (exact match, max 25). Pass `null` for no options.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">revokeUserConsent</a>(clientId, consentId) -> RevokeUserConsentResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Revokes a single end-user consent held by an API client.
+
+Deletes the consent, so the client is prompted for consent again on its next authorization attempt, and revokes every active refresh token issued to that client for the same user. Access tokens already issued stay valid until they expire.
+
+Note that `clientId` is the API client that holds the consent (`m2m_` prefix), not the resource id.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.resources().revokeUserConsent("m2m_142145647087190278", "usrcnst_142145647087190278");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**clientId:** `String` - The API client holding the consent (format: `m2m_xxxxx`). Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**consentId:** `String` - The consent to revoke (format: `usrcnst_xxxxx`). Required.
 
 </dd>
 </dl>

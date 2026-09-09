@@ -393,7 +393,7 @@ public final class WebauthnProto {
       "nsRequest\"{\n\031GetRelatedOriginsResponse\022^" +
       "\n\007origins\030\001 \003(\tBD\222AA2?List of related or" +
       "igins for cross-origin passkey authentic" +
-      "ationR\007origins2\212\037\n\017WebAuthnService\022\362\003\n\021B" +
+      "ationR\007origins2\243\037\n\017WebAuthnService\022\362\003\n\021B" +
       "eginRegistration\0223.scalekit.v1.auth.weba" +
       "uthn.BeginRegistrationRequest\0324.scalekit" +
       ".v1.auth.webauthn.BeginRegistrationRespo" +
@@ -444,10 +444,10 @@ public final class WebauthnProto {
       "ser session token\022;\n9\0327.scalekit.v1.auth" +
       ".webauthn.FinishAuthenticationResponse\202\265" +
       "\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002+\"&/api/v1/webau" +
-      "thn/authentication:finish:\001*\022\330\003\n\017ListCre" +
+      "thn/authentication:finish:\001*\022\344\003\n\017ListCre" +
       "dentials\0221.scalekit.v1.auth.webauthn.Lis" +
       "tCredentialsRequest\0322.scalekit.v1.auth.w" +
-      "ebauthn.ListCredentialsResponse\"\335\002\222A\257\002\022\024" +
+      "ebauthn.ListCredentialsResponse\"\351\002\222A\257\002\022\024" +
       "List user\'s passkeys\032\265\001Retrieves all reg" +
       "istered passkeys for the current user, i" +
       "ncluding device information, creation ti" +
@@ -455,51 +455,52 @@ public final class WebauthnProto {
       " show users their registered authenticat" +
       "ors.J_\n\003200\022X\n\036List of passkeys with met" +
       "adata\0226\n4\0322.scalekit.v1.auth.webauthn.Li" +
-      "stCredentialsResponse\202\265\030\002\030T\202\323\344\223\002\036\022\034/api/" +
-      "v1/webauthn/credentials\022\267\003\n\020DeleteCreden" +
-      "tial\0222.scalekit.v1.auth.webauthn.DeleteC" +
-      "redentialRequest\0323.scalekit.v1.auth.weba" +
-      "uthn.DeleteCredentialResponse\"\271\002\222A\373\001\022\020Re" +
-      "move a passkey\032\206\001Deletes a specific pass" +
-      "key credential for the current user. Aft" +
-      "er removal, the authenticator can no lon" +
-      "ger be used for authentication.J^\n\003200\022W" +
-      "\n\034Passkey successfully deleted\0227\n5\0323.sca" +
-      "lekit.v1.auth.webauthn.DeleteCredentialR" +
-      "esponse\202\265\030\002\030T\202\323\344\223\002.*,/api/v1/webauthn/cr" +
-      "edentials/{credential_id}\022\306\003\n\020UpdateCred" +
-      "ential\0222.scalekit.v1.auth.webauthn.Updat" +
-      "eCredentialRequest\0323.scalekit.v1.auth.we" +
-      "bauthn.UpdateCredentialResponse\"\310\002\222A\207\002\022\020" +
-      "Rename a passkey\032\204\001Updates the display n" +
-      "ame of a passkey credential to help user" +
-      "s identify their authenticators. Only th" +
-      "e display name can be modified.Jl\n\003200\022e" +
-      "\n*Passkey successfully updated with new " +
-      "name\0227\n5\0323.scalekit.v1.auth.webauthn.Upd" +
-      "ateCredentialResponse\202\265\030\002\030\024\202\323\344\223\00212,/api/" +
-      "v1/webauthn/credentials/{credential_id}:" +
-      "\001*\022\313\003\n\021GetRelatedOrigins\0223.scalekit.v1.a" +
-      "uth.webauthn.GetRelatedOriginsRequest\0324." +
-      "scalekit.v1.auth.webauthn.GetRelatedOrig" +
-      "insResponse\"\312\002\222A\224\002\022\034Get WebAuthn related" +
-      " origins\032\214\001Retrieves the list of related" +
-      " origins configured for cross-origin pas" +
-      "skey authentication. Serves the standard" +
-      " .well-known/webauthn endpoint.Je\n\003200\022^" +
-      "\n\"List of configured related origins\0228\n6" +
-      "\0324.scalekit.v1.auth.webauthn.GetRelatedO" +
-      "riginsResponse\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002" +
-      "\027\022\025/.well-known/webauthn\032Y\222AV\n\010Passkeys\022" +
-      "JEndpoints for passkey-based authenticat" +
-      "ion using WebAuthn/FIDO2 standards.B\375\001\n+" +
-      "com.scalekit.grpc.scalekit.v1.auth.webau" +
-      "thnB\rWebauthnProtoP\001Z7github.com/scaleki" +
-      "t-inc/scalekit/pkg/grpc/auth/webauthn\242\002\004" +
-      "SVAW\252\002\031Scalekit.V1.Auth.Webauthn\312\002\031Scale" +
-      "kit\\V1\\Auth\\Webauthn\342\002%Scalekit\\V1\\Auth\\" +
-      "Webauthn\\GPBMetadata\352\002\034Scalekit::V1::Aut" +
-      "h::Webauthnb\006proto3"
+      "stCredentialsResponse\202\265\030\016\n\nusers:read\030T\202" +
+      "\323\344\223\002\036\022\034/api/v1/webauthn/credentials\022\304\003\n\020" +
+      "DeleteCredential\0222.scalekit.v1.auth.weba" +
+      "uthn.DeleteCredentialRequest\0323.scalekit." +
+      "v1.auth.webauthn.DeleteCredentialRespons" +
+      "e\"\306\002\222A\373\001\022\020Remove a passkey\032\206\001Deletes a s" +
+      "pecific passkey credential for the curre" +
+      "nt user. After removal, the authenticato" +
+      "r can no longer be used for authenticati" +
+      "on.J^\n\003200\022W\n\034Passkey successfully delet" +
+      "ed\0227\n5\0323.scalekit.v1.auth.webauthn.Delet" +
+      "eCredentialResponse\202\265\030\017\n\013users:write\030T\202\323" +
+      "\344\223\002.*,/api/v1/webauthn/credentials/{cred" +
+      "ential_id}\022\306\003\n\020UpdateCredential\0222.scalek" +
+      "it.v1.auth.webauthn.UpdateCredentialRequ" +
+      "est\0323.scalekit.v1.auth.webauthn.UpdateCr" +
+      "edentialResponse\"\310\002\222A\207\002\022\020Rename a passke" +
+      "y\032\204\001Updates the display name of a passke" +
+      "y credential to help users identify thei" +
+      "r authenticators. Only the display name " +
+      "can be modified.Jl\n\003200\022e\n*Passkey succe" +
+      "ssfully updated with new name\0227\n5\0323.scal" +
+      "ekit.v1.auth.webauthn.UpdateCredentialRe" +
+      "sponse\202\265\030\002\030\024\202\323\344\223\00212,/api/v1/webauthn/cre" +
+      "dentials/{credential_id}:\001*\022\313\003\n\021GetRelat" +
+      "edOrigins\0223.scalekit.v1.auth.webauthn.Ge" +
+      "tRelatedOriginsRequest\0324.scalekit.v1.aut" +
+      "h.webauthn.GetRelatedOriginsResponse\"\312\002\222" +
+      "A\224\002\022\034Get WebAuthn related origins\032\214\001Retr" +
+      "ieves the list of related origins config" +
+      "ured for cross-origin passkey authentica" +
+      "tion. Serves the standard .well-known/we" +
+      "bauthn endpoint.Je\n\003200\022^\n\"List of confi" +
+      "gured related origins\0228\n6\0324.scalekit.v1." +
+      "auth.webauthn.GetRelatedOriginsResponse\202" +
+      "\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\027\022\025/.well-known" +
+      "/webauthn\032Y\222AV\n\010Passkeys\022JEndpoints for " +
+      "passkey-based authentication using WebAu" +
+      "thn/FIDO2 standards.B\375\001\n+com.scalekit.gr" +
+      "pc.scalekit.v1.auth.webauthnB\rWebauthnPr" +
+      "otoP\001Z7github.com/scalekit-inc/scalekit/" +
+      "pkg/grpc/auth/webauthn\242\002\004SVAW\252\002\031Scalekit" +
+      ".V1.Auth.Webauthn\312\002\031Scalekit\\V1\\Auth\\Web" +
+      "authn\342\002%Scalekit\\V1\\Auth\\Webauthn\\GPBMet" +
+      "adata\352\002\034Scalekit::V1::Auth::Webauthnb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

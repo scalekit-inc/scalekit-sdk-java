@@ -569,269 +569,280 @@ public final class McpProto {
       "t\030\002 \001(\0132\032.google.protobuf.TimestampBL\222AF" +
       "2DAbsolute time at which the token expir" +
       "es. Equals issued_at + expiry.\340A\003R\texpir" +
-      "esAt2\263L\n\nMcpService\022\236\003\n\tCreateMcp\022!.scal" +
+      "esAt2\366O\n\nMcpService\022\271\003\n\tCreateMcp\022!.scal" +
       "ekit.v1.mcp.CreateMcpRequest\032\".scalekit." +
-      "v1.mcp.CreateMcpResponse\"\311\002\222A\230\002\n\013MCP Ser" +
+      "v1.mcp.CreateMcpResponse\"\344\002\222A\230\002\n\013MCP Ser" +
       "vers\022\026Create or retrieve MCP\032gCreates a " +
       "new MCP for the configuration. If same c" +
       "onfiguration exists, it will return the " +
       "existing MCP.JL\n\003200\022E\n\033The created or e" +
       "xisting MCP\022&\n$\032\".scalekit.v1.mcp.Create" +
       "McpResponseJ\030\n\003400\022\021\n\017Invalid requestJ \n" +
-      "\003401\022\031\n\027Authentication required\202\265\030\002\030d\372\322\344" +
-      "\223\002\t\022\007PREVIEW\202\323\344\223\002\022\"\013/api/v1/mcp:\003mcp\022\360\002\n" +
-      "\006GetMcp\022\036.scalekit.v1.mcp.GetMcpRequest\032" +
-      "\037.scalekit.v1.mcp.GetMcpResponse\"\244\002\222A\357\001\n" +
-      "\013MCP Servers\022\rGet MCP by ID\032+Returns the" +
-      " existing MCP with the given ID.J?\n\003200\022" +
-      "8\n\021The requested MCP\022#\n!\032\037.scalekit.v1.m" +
-      "cp.GetMcpResponseJ\030\n\003400\022\021\n\017Invalid requ" +
-      "estJ \n\003401\022\031\n\027Authentication requiredJ\'\n" +
-      "\003404\022 \n\036Not Found - MCP does not exist\202\265" +
-      "\030\002\030d\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\026\022\024/api/v1/mcp/{" +
-      "mcp_id}\022\362\002\n\007ListMcp\022\037.scalekit.v1.mcp.Li" +
-      "stMcpRequest\032 .scalekit.v1.mcp.ListMcpRe" +
-      "sponse\"\243\002\222A\367\001\n\013MCP Servers\022\tList MCPs\032dR" +
-      "eturns a list of existing MCPs, optional" +
-      "ly filtered by connected_account_identif" +
-      "ier and link_token.J;\n\003200\0224\n\014List of MC" +
-      "Ps\022$\n\"\032 .scalekit.v1.mcp.ListMcpResponse" +
-      "J\030\n\003400\022\021\n\017Invalid requestJ \n\003401\022\031\n\027Aut" +
-      "hentication required\202\265\030\002\030d\372\322\344\223\002\t\022\007PREVIE" +
-      "W\202\323\344\223\002\r\022\013/api/v1/mcp\022\325\002\n\tDeleteMcp\022!.sca" +
-      "lekit.v1.mcp.DeleteMcpRequest\032\".scalekit" +
-      ".v1.mcp.DeleteMcpResponse\"\200\002\222A\313\001\n\013MCP Se" +
-      "rvers\022\020Delete MCP by ID\032\"Deletes the MCP" +
-      " with the given ID.J!\n\003200\022\032\n\030MCP delete" +
-      "d successfullyJ\030\n\003400\022\021\n\017Invalid request" +
-      "J \n\003401\022\031\n\027Authentication requiredJ\'\n\00340" +
-      "4\022 \n\036Not Found - MCP does not exist\202\265\030\002\030" +
-      "d\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\026*\024/api/v1/mcp/{mcp" +
-      "_id}\022\206\004\n\017CreateMcpConfig\022\'.scalekit.v1.m" +
-      "cp.CreateMcpConfigRequest\032(.scalekit.v1." +
-      "mcp.CreateMcpConfigResponse\"\237\003\222A\362\002\n\022MCP " +
-      "Configurations\022\036Create a new MCP configu" +
-      "ration\032DCreates a new MCP configuration " +
-      "with a set of connections and tools.JZ\n\003" +
-      "201\022S\n#The newly created MCP configurati" +
-      "on\022,\n*\032(.scalekit.v1.mcp.CreateMcpConfig" +
-      "ResponseJV\n\003400\022O\nMInvalid request - mis" +
-      "sing required fields or invalid connecti" +
-      "on/tool mappingsJB\n\003401\022;\n9Authenticatio" +
-      "n required - missing or invalid access t" +
-      "oken\202\265\030\002\030D\202\323\344\223\002\035\"\023/api/v1/mcp/configs:\006c" +
-      "onfig\022\334\004\n\017UpdateMcpConfig\022\'.scalekit.v1." +
-      "mcp.UpdateMcpConfigRequest\032(.scalekit.v1" +
-      ".mcp.UpdateMcpConfigResponse\"\365\003\222A\301\003\n\022MCP" +
-      " Configurations\022$Update an existing MCP " +
-      "configuration\032\223\001Updates the description " +
-      "and connection-to-tool mappings for an e" +
-      "xisting MCP configuration. The configura" +
-      "tion name cannot be changed after creati" +
-      "on.JT\n\003200\022M\n\035The updated MCP configurat" +
-      "ion\022,\n*\032(.scalekit.v1.mcp.UpdateMcpConfi" +
-      "gResponseJ@\n\003400\0229\n7Invalid request - ma" +
-      "lformed payload or invalid mappingsJ \n\0034" +
-      "01\022\031\n\027Authentication requiredJ5\n\003404\022.\n," +
-      "Not Found - MCP configuration does not e" +
-      "xist\202\265\030\002\030D\202\323\344\223\002$\032\037/api/v1/mcp/configs/{c" +
-      "onfig_id}:\001*\022\343\003\n\016ListMcpConfigs\022&.scalek" +
+      "\003401\022\031\n\027Authentication required\202\265\030\035\n\031vir" +
+      "tual_mcp_servers:write\030d\372\322\344\223\002\t\022\007PREVIEW\202" +
+      "\323\344\223\002\022\"\013/api/v1/mcp:\003mcp\022\212\003\n\006GetMcp\022\036.sca" +
+      "lekit.v1.mcp.GetMcpRequest\032\037.scalekit.v1" +
+      ".mcp.GetMcpResponse\"\276\002\222A\357\001\n\013MCP Servers\022" +
+      "\rGet MCP by ID\032+Returns the existing MCP" +
+      " with the given ID.J?\n\003200\0228\n\021The reques" +
+      "ted MCP\022#\n!\032\037.scalekit.v1.mcp.GetMcpResp" +
+      "onseJ\030\n\003400\022\021\n\017Invalid requestJ \n\003401\022\031\n" +
+      "\027Authentication requiredJ\'\n\003404\022 \n\036Not F" +
+      "ound - MCP does not exist\202\265\030\034\n\030virtual_m" +
+      "cp_servers:read\030d\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\026\022\024" +
+      "/api/v1/mcp/{mcp_id}\022\214\003\n\007ListMcp\022\037.scale" +
+      "kit.v1.mcp.ListMcpRequest\032 .scalekit.v1." +
+      "mcp.ListMcpResponse\"\275\002\222A\367\001\n\013MCP Servers\022" +
+      "\tList MCPs\032dReturns a list of existing M" +
+      "CPs, optionally filtered by connected_ac" +
+      "count_identifier and link_token.J;\n\003200\022" +
+      "4\n\014List of MCPs\022$\n\"\032 .scalekit.v1.mcp.Li" +
+      "stMcpResponseJ\030\n\003400\022\021\n\017Invalid requestJ" +
+      " \n\003401\022\031\n\027Authentication required\202\265\030\034\n\030v" +
+      "irtual_mcp_servers:read\030d\372\322\344\223\002\t\022\007PREVIEW" +
+      "\202\323\344\223\002\r\022\013/api/v1/mcp\022\360\002\n\tDeleteMcp\022!.scal" +
+      "ekit.v1.mcp.DeleteMcpRequest\032\".scalekit." +
+      "v1.mcp.DeleteMcpResponse\"\233\002\222A\313\001\n\013MCP Ser" +
+      "vers\022\020Delete MCP by ID\032\"Deletes the MCP " +
+      "with the given ID.J!\n\003200\022\032\n\030MCP deleted" +
+      " successfullyJ\030\n\003400\022\021\n\017Invalid requestJ" +
+      " \n\003401\022\031\n\027Authentication requiredJ\'\n\003404" +
+      "\022 \n\036Not Found - MCP does not exist\202\265\030\035\n\031" +
+      "virtual_mcp_servers:write\030d\372\322\344\223\002\t\022\007PREVI" +
+      "EW\202\323\344\223\002\026*\024/api/v1/mcp/{mcp_id}\022\241\004\n\017Creat" +
+      "eMcpConfig\022\'.scalekit.v1.mcp.CreateMcpCo" +
+      "nfigRequest\032(.scalekit.v1.mcp.CreateMcpC" +
+      "onfigResponse\"\272\003\222A\362\002\n\022MCP Configurations" +
+      "\022\036Create a new MCP configuration\032DCreate" +
+      "s a new MCP configuration with a set of " +
+      "connections and tools.JZ\n\003201\022S\n#The new" +
+      "ly created MCP configuration\022,\n*\032(.scale" +
+      "kit.v1.mcp.CreateMcpConfigResponseJV\n\00340" +
+      "0\022O\nMInvalid request - missing required " +
+      "fields or invalid connection/tool mappin" +
+      "gsJB\n\003401\022;\n9Authentication required - m" +
+      "issing or invalid access token\202\265\030\035\n\031virt" +
+      "ual_mcp_servers:write\030D\202\323\344\223\002\035\"\023/api/v1/m" +
+      "cp/configs:\006config\022\367\004\n\017UpdateMcpConfig\022\'" +
+      ".scalekit.v1.mcp.UpdateMcpConfigRequest\032" +
+      "(.scalekit.v1.mcp.UpdateMcpConfigRespons" +
+      "e\"\220\004\222A\301\003\n\022MCP Configurations\022$Update an " +
+      "existing MCP configuration\032\223\001Updates the" +
+      " description and connection-to-tool mapp" +
+      "ings for an existing MCP configuration. " +
+      "The configuration name cannot be changed" +
+      " after creation.JT\n\003200\022M\n\035The updated M" +
+      "CP configuration\022,\n*\032(.scalekit.v1.mcp.U" +
+      "pdateMcpConfigResponseJ@\n\003400\0229\n7Invalid" +
+      " request - malformed payload or invalid " +
+      "mappingsJ \n\003401\022\031\n\027Authentication requir" +
+      "edJ5\n\003404\022.\n,Not Found - MCP configurati" +
+      "on does not exist\202\265\030\035\n\031virtual_mcp_serve" +
+      "rs:write\030D\202\323\344\223\002$\032\037/api/v1/mcp/configs/{c" +
+      "onfig_id}:\001*\022\375\003\n\016ListMcpConfigs\022&.scalek" +
       "it.v1.mcp.ListMcpConfigsRequest\032\'.scalek" +
-      "it.v1.mcp.ListMcpConfigsResponse\"\377\002\222A\332\002\n" +
+      "it.v1.mcp.ListMcpConfigsResponse\"\231\003\222A\332\002\n" +
       "\022MCP Configurations\022\027List MCP configurat" +
-      "ions\032mLists MCP configurations for the c" +
+      "ions\032mLists MCP configurations for the c",
       "urrent environment with optional filters" +
       " for id, name prefix, and provider.JZ\n\0032" +
       "00\022S\n$Paginated list of MCP configuratio" +
-      "ns\022+\n)\032\'.scalekit.v1.mcp.ListMcpConfigsR",
+      "ns\022+\n)\032\'.scalekit.v1.mcp.ListMcpConfigsR" +
       "esponseJ>\n\003400\0227\n5Invalid request - bad " +
       "filter or pagination parametersJ \n\003401\022\031" +
-      "\n\027Authentication required\202\265\030\002\030D\202\323\344\223\002\025\022\023/" +
-      "api/v1/mcp/configs\022\316\003\n\014GetMcpConfig\022$.sc" +
-      "alekit.v1.mcp.GetMcpConfigRequest\032%.scal" +
-      "ekit.v1.mcp.GetMcpConfigResponse\"\360\002\222A\277\002\n" +
-      "\022MCP Configurations\022\032Fetch an MCP config" +
-      "uration\032EReturns a single MCP configurat" +
-      "ion for the current environment by ID.JS" +
-      "\n\003200\022L\n\037The requested MCP configuration" +
-      "\022)\n\'\032%.scalekit.v1.mcp.GetMcpConfigRespo" +
-      "nseJ\030\n\003400\022\021\n\017Invalid requestJ \n\003401\022\031\n\027" +
-      "Authentication requiredJ5\n\003404\022.\n,Not Fo" +
-      "und - MCP configuration does not exist\202\265" +
-      "\030\002\030D\202\323\344\223\002!\022\037/api/v1/mcp/configs/{config_" +
-      "id}\022\346\003\n\017DeleteMcpConfig\022\'.scalekit.v1.mc" +
-      "p.DeleteMcpConfigRequest\032(.scalekit.v1.m" +
-      "cp.DeleteMcpConfigResponse\"\377\002\222A\316\002\n\022MCP C" +
-      "onfigurations\022\033Delete an MCP configurati" +
-      "on\032cDeletes the MCP configuration and an" +
-      "y associated mappings and instances in t" +
-      "he current environment.JC\n\003200\022<\n:MCP co" +
-      "nfiguration and associated data deleted " +
-      "successfullyJ\030\n\003400\022\021\n\017Invalid requestJ " +
-      "\n\003401\022\031\n\027Authentication requiredJ5\n\003404\022" +
-      ".\n,Not Found - MCP configuration does no" +
-      "t exist\202\265\030\002\030D\202\323\344\223\002!*\037/api/v1/mcp/configs" +
-      "/{config_id}\022\355\003\n\021EnsureMcpInstance\022).sca" +
-      "lekit.v1.mcp.EnsureMcpInstanceRequest\032*." +
-      "scalekit.v1.mcp.EnsureMcpInstanceRespons" +
-      "e\"\200\003\222A\307\002\n\rMCP Instances\022\035Get or create a" +
-      "n MCP instance\032vReturns an existing MCP " +
-      "instance for the given configuration, na" +
-      "me, and user identifier or creates one i" +
-      "f none exists.Jc\n\003200\022\\\n*The existing or" +
-      " newly created MCP instance\022.\n,\032*.scalek" +
-      "it.v1.mcp.EnsureMcpInstanceResponseJ\030\n\0034" +
-      "00\022\021\n\017Invalid requestJ \n\003401\022\031\n\027Authenti" +
-      "cation required\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
-      "\002\032\"\025/api/v1/mcp/instances:\001*\022\366\003\n\020ListMcp" +
-      "Instances\022(.scalekit.v1.mcp.ListMcpInsta" +
-      "ncesRequest\032).scalekit.v1.mcp.ListMcpIns" +
-      "tancesResponse\"\214\003\222A\326\002\n\rMCP Instances\022\022Li" +
-      "st MCP instances\032\233\001Lists MCP instances f" +
-      "or the current environment with optional" +
-      " filters for instance id, name, configur" +
-      "ation, and text search across name or us" +
-      "er identifier.JW\n\003200\022P\n\037Paginated list " +
-      "of MCP instances\022-\n+\032).scalekit.v1.mcp.L" +
-      "istMcpInstancesResponseJ\030\n\003400\022\021\n\017Invali" +
-      "d requestJ \n\003401\022\031\n\027Authentication requi" +
-      "red\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\027\022\025/api/v1/" +
-      "mcp/instances\022\255\003\n\021DeleteMcpInstance\022).sc" +
-      "alekit.v1.mcp.DeleteMcpInstanceRequest\032*" +
-      ".scalekit.v1.mcp.DeleteMcpInstanceRespon" +
-      "se\"\300\002\222A\374\001\n\rMCP Instances\022\026Delete an MCP " +
-      "instance\0329Deletes a single MCP instance " +
-      "in the current environment.J*\n\003200\022#\n!MC" +
-      "P instance deleted successfullyJ\030\n\003400\022\021" +
-      "\n\017Invalid requestJ \n\003401\022\031\n\027Authenticati" +
-      "on requiredJ0\n\003404\022)\n\'Not Found - MCP in" +
-      "stance does not exist\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVI" +
-      "EW\202\323\344\223\002%*#/api/v1/mcp/instances/{instanc" +
-      "e_id}\022\316\004\n\021UpdateMcpInstance\022).scalekit.v" +
-      "1.mcp.UpdateMcpInstanceRequest\032*.scaleki" +
-      "t.v1.mcp.UpdateMcpInstanceResponse\"\341\003\222A\232" +
-      "\003\n\rMCP Instances\022\026Update an MCP instance" +
-      "\032\257\001Updates attributes of an MCP instance" +
-      ". Changing the display name only renames" +
-      " the instance; changing the config name " +
-      "rebuilds the instance mappings from the " +
-      "new configuration.JQ\n\003200\022J\n\030The updated" +
-      " MCP instance\022.\n,\032*.scalekit.v1.mcp.Upda" +
-      "teMcpInstanceResponseJ\030\n\003400\022\021\n\017Invalid " +
-      "requestJ \n\003401\022\031\n\027Authentication require" +
-      "dJ0\n\003404\022)\n\'Not Found - MCP instance doe" +
-      "s not exist\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002(2#" +
-      "/api/v1/mcp/instances/{instance_id}:\001*\022\320" +
-      "\003\n\016GetMcpInstance\022&.scalekit.v1.mcp.GetM" +
-      "cpInstanceRequest\032\'.scalekit.v1.mcp.GetM" +
-      "cpInstanceResponse\"\354\002\222A\250\002\n\rMCP Instances" +
-      "\022\025Fetch an MCP instance\032@Returns a singl" +
-      "e MCP instance for the current environme" +
-      "nt by ID.JP\n\003200\022I\n\032The requested MCP in" +
-      "stance\022+\n)\032\'.scalekit.v1.mcp.GetMcpInsta" +
-      "nceResponseJ\030\n\003400\022\021\n\017Invalid requestJ \n" +
-      "\003401\022\031\n\027Authentication requiredJ0\n\003404\022)" +
-      "\n\'Not Found - MCP instance does not exis" +
-      "t\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\022#/api/v1/mc" +
-      "p/instances/{instance_id}\022\362\004\n\027GetMcpInst" +
-      "anceAuthState\022/.scalekit.v1.mcp.GetMcpIn" +
-      "stanceAuthStateRequest\0320.scalekit.v1.mcp" +
-      ".GetMcpInstanceAuthStateResponse\"\363\003\222A\240\003\n" +
-      "\rMCP Instances\022/Fetch connection auth st" +
-      "ate for an MCP instance\032sReturns the con" +
-      "nected account status and fresh authenti" +
-      "cation links for each connection mapped " +
-      "to the MCP instance.J{\n\003200\022t\n<Authentic" +
-      "ation state for each connection in the M" +
-      "CP instance\0224\n2\0320.scalekit.v1.mcp.GetMcp" +
-      "InstanceAuthStateResponseJ\030\n\003400\022\021\n\017Inva" +
-      "lid requestJ \n\003401\022\031\n\027Authentication req" +
-      "uiredJ0\n\003404\022)\n\'Not Found - MCP instance" +
-      " does not exist\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
-      "\0024\"2/api/v1/mcp/instances/{instance_id}:" +
-      "get_auth_state\022\251\n\n\025CreateMcpSessionToken" +
-      "\022-.scalekit.v1.mcp.CreateMcpSessionToken" +
-      "Request\032..scalekit.v1.mcp.CreateMcpSessi" +
-      "onTokenResponse\"\260\t\222A\361\010\n\022MCP Configuratio" +
-      "ns\022\033Create an MCP session token\032\337\004Mints " +
-      "a short-lived JWT that represents a user" +
-      " identifier across the connected account" +
-      "s associated with an MCP configuration. " +
-      "The supplied identifier becomes the toke" +
-      "n\'s `sub` claim; the token\'s `aud` claim" +
-      " is the MCP server URL bound to the conf" +
-      "iguration. Claims also carry the MCP con" +
-      "figuration ID (`mcp_cfg`) and the list o" +
-      "f resolved connected-account IDs (`ca_id" +
-      "s`). Use this operation to issue a singl" +
-      "e credential an MCP server can present o" +
-      "n the user\'s behalf when calling provide" +
-      "r tools. The mint fails if any connectio" +
-      "n mapped to the configuration has no act" +
-      "ive connected account for the identifier" +
-      ".J\210\001\n\003200\022\200\001\nJToken created successfully" +
-      "; returns the signed JWT and its absolut" +
-      "e expiry\0222\n0\032..scalekit.v1.mcp.CreateMcp" +
-      "SessionTokenResponseJ\355\001\n\003400\022\345\001\n\342\001Invali" +
-      "d request - mcp_config_id or identifier " +
-      "is missing or malformed, expiry is outsi" +
-      "de the 60s-24h window, the MCP configura" +
-      "tion has no connections, or a connection" +
-      " has no active connected account for the" +
-      " supplied identifierJa\n\003404\022Z\nXNot Found" +
-      " - no MCP configuration exists with the " +
-      "supplied ID in the caller\'s environment\202" +
-      "\265\030\002\030D\202\323\344\223\002/\"*/api/v1/mcp/configs/{mcp_co" +
-      "nfig_id}/tokens:\001*\022\217\t\n\030ListMcpConnectedA" +
-      "ccounts\0220.scalekit.v1.mcp.ListMcpConnect" +
-      "edAccountsRequest\0321.scalekit.v1.mcp.List" +
-      "McpConnectedAccountsResponse\"\215\010\222A\306\007\n\022MCP" +
-      " Configurations\0220List connected accounts" +
-      " for an MCP configuration\032\337\004Returns the " +
-      "connected account state for each connect" +
-      "ion in the MCP configuration for the giv" +
-      "en user identifier. When include_auth_li" +
-      "nk is true, creates connected accounts o" +
-      "n the fly if they do not exist and retur" +
-      "ns a fresh authentication link per conne" +
-      "ction. When include_auth_link is false o" +
-      "r omitted, returns the current status of" +
-      " existing connected accounts only \342\200\224 no" +
-      " accounts are created and authentication" +
-      "_link is always empty. Authentication li" +
-      "nks are only present when the connection" +
-      " has an associated key; if the connectio" +
-      "n has no key, authentication_link is emp" +
-      "ty regardless of include_auth_link.J\212\001\n\003" +
-      "200\022\202\001\nIConnected account state returned" +
-      " for each connection in the configuratio" +
-      "n\0225\n3\0321.scalekit.v1.mcp.ListMcpConnected" +
-      "AccountsResponseJD\n\003400\022=\n;Bad request -" +
-      " config_id or identifier is missing or i" +
-      "nvalidJI\n\003404\022B\n@Not found - no MCP conf" +
-      "iguration exists with the given config_i" +
-      "d\202\265\030\002\030D\202\323\344\223\0027\"2/api/v1/mcp/configs/{conf" +
-      "ig_id}/connected_accounts:\001*\032L\222AI\n\013MCP S" +
-      "ervers\022:Manage MCP servers and their con" +
-      "figurations for AI agents.B\300\005\n!com.scale" +
-      "kit.grpc.scalekit.v1.mcpB\010McpProtoP\001Z-gi" +
-      "thub.com/scalekit-inc/scalekit/pkg/grpc/" +
-      "mcp\242\002\003SVM\252\002\017Scalekit.V1.Mcp\312\002\017Scalekit\\V" +
-      "1\\Mcp\342\002\033Scalekit\\V1\\Mcp\\GPBMetadata\352\002\021Sc" +
-      "alekit::V1::Mcp\222A\202\004j\272\001\n\013MCP Servers\022\252\001Ma" +
-      "nage MCP servers and their configuration" +
-      "s for AI agents. MCP (Model Context Prot" +
-      "ocol) allows agents to securely access t" +
-      "ools and data through authenticated conn" +
-      "ections.j\242\001\n\022MCP Configurations\022\213\001Create" +
-      " and manage reusable MCP configurations." +
-      " A configuration defines which connectio" +
-      "ns and tools are available to an MCP ser" +
-      "ver instance.j\235\001\n\rMCP Instances\022\213\001Create" +
-      ", manage, and interact with live MCP ser" +
-      "ver instances. An instance is a running " +
-      "MCP server tied to a specific configurat" +
-      "ion and user.b\006proto3"
+      "\n\027Authentication required\202\265\030\034\n\030virtual_m" +
+      "cp_servers:read\030D\202\323\344\223\002\025\022\023/api/v1/mcp/con" +
+      "figs\022\350\003\n\014GetMcpConfig\022$.scalekit.v1.mcp." +
+      "GetMcpConfigRequest\032%.scalekit.v1.mcp.Ge" +
+      "tMcpConfigResponse\"\212\003\222A\277\002\n\022MCP Configura" +
+      "tions\022\032Fetch an MCP configuration\032ERetur" +
+      "ns a single MCP configuration for the cu" +
+      "rrent environment by ID.JS\n\003200\022L\n\037The r" +
+      "equested MCP configuration\022)\n\'\032%.scaleki" +
+      "t.v1.mcp.GetMcpConfigResponseJ\030\n\003400\022\021\n\017" +
+      "Invalid requestJ \n\003401\022\031\n\027Authentication" +
+      " requiredJ5\n\003404\022.\n,Not Found - MCP conf" +
+      "iguration does not exist\202\265\030\034\n\030virtual_mc" +
+      "p_servers:read\030D\202\323\344\223\002!\022\037/api/v1/mcp/conf" +
+      "igs/{config_id}\022\201\004\n\017DeleteMcpConfig\022\'.sc" +
+      "alekit.v1.mcp.DeleteMcpConfigRequest\032(.s" +
+      "calekit.v1.mcp.DeleteMcpConfigResponse\"\232" +
+      "\003\222A\316\002\n\022MCP Configurations\022\033Delete an MCP" +
+      " configuration\032cDeletes the MCP configur" +
+      "ation and any associated mappings and in" +
+      "stances in the current environment.JC\n\0032" +
+      "00\022<\n:MCP configuration and associated d" +
+      "ata deleted successfullyJ\030\n\003400\022\021\n\017Inval" +
+      "id requestJ \n\003401\022\031\n\027Authentication requ" +
+      "iredJ5\n\003404\022.\n,Not Found - MCP configura" +
+      "tion does not exist\202\265\030\035\n\031virtual_mcp_ser" +
+      "vers:write\030D\202\323\344\223\002!*\037/api/v1/mcp/configs/" +
+      "{config_id}\022\210\004\n\021EnsureMcpInstance\022).scal" +
+      "ekit.v1.mcp.EnsureMcpInstanceRequest\032*.s" +
+      "calekit.v1.mcp.EnsureMcpInstanceResponse" +
+      "\"\233\003\222A\307\002\n\rMCP Instances\022\035Get or create an" +
+      " MCP instance\032vReturns an existing MCP i" +
+      "nstance for the given configuration, nam" +
+      "e, and user identifier or creates one if" +
+      " none exists.Jc\n\003200\022\\\n*The existing or " +
+      "newly created MCP instance\022.\n,\032*.scaleki" +
+      "t.v1.mcp.EnsureMcpInstanceResponseJ\030\n\00340" +
+      "0\022\021\n\017Invalid requestJ \n\003401\022\031\n\027Authentic" +
+      "ation required\202\265\030\035\n\031virtual_mcp_servers:" +
+      "write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\032\"\025/api/v1/mc" +
+      "p/instances:\001*\022\220\004\n\020ListMcpInstances\022(.sc" +
+      "alekit.v1.mcp.ListMcpInstancesRequest\032)." +
+      "scalekit.v1.mcp.ListMcpInstancesResponse" +
+      "\"\246\003\222A\326\002\n\rMCP Instances\022\022List MCP instanc" +
+      "es\032\233\001Lists MCP instances for the current" +
+      " environment with optional filters for i" +
+      "nstance id, name, configuration, and tex" +
+      "t search across name or user identifier." +
+      "JW\n\003200\022P\n\037Paginated list of MCP instanc" +
+      "es\022-\n+\032).scalekit.v1.mcp.ListMcpInstance" +
+      "sResponseJ\030\n\003400\022\021\n\017Invalid requestJ \n\0034" +
+      "01\022\031\n\027Authentication required\202\265\030\034\n\030virtu" +
+      "al_mcp_servers:read\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
+      "\002\027\022\025/api/v1/mcp/instances\022\310\003\n\021DeleteMcpI" +
+      "nstance\022).scalekit.v1.mcp.DeleteMcpInsta" +
+      "nceRequest\032*.scalekit.v1.mcp.DeleteMcpIn" +
+      "stanceResponse\"\333\002\222A\374\001\n\rMCP Instances\022\026De" +
+      "lete an MCP instance\0329Deletes a single M" +
+      "CP instance in the current environment.J" +
+      "*\n\003200\022#\n!MCP instance deleted successfu" +
+      "llyJ\030\n\003400\022\021\n\017Invalid requestJ \n\003401\022\031\n\027" +
+      "Authentication requiredJ0\n\003404\022)\n\'Not Fo" +
+      "und - MCP instance does not exist\202\265\030\035\n\031v" +
+      "irtual_mcp_servers:write\030D\372\322\344\223\002\t\022\007PREVIE" +
+      "W\202\323\344\223\002%*#/api/v1/mcp/instances/{instance" +
+      "_id}\022\351\004\n\021UpdateMcpInstance\022).scalekit.v1" +
+      ".mcp.UpdateMcpInstanceRequest\032*.scalekit" +
+      ".v1.mcp.UpdateMcpInstanceResponse\"\374\003\222A\232\003" +
+      "\n\rMCP Instances\022\026Update an MCP instance\032" +
+      "\257\001Updates attributes of an MCP instance." +
+      " Changing the display name only renames " +
+      "the instance; changing the config name r" +
+      "ebuilds the instance mappings from the n" +
+      "ew configuration.JQ\n\003200\022J\n\030The updated " +
+      "MCP instance\022.\n,\032*.scalekit.v1.mcp.Updat" +
+      "eMcpInstanceResponseJ\030\n\003400\022\021\n\017Invalid r" +
+      "equestJ \n\003401\022\031\n\027Authentication required" +
+      "J0\n\003404\022)\n\'Not Found - MCP instance does" +
+      " not exist\202\265\030\035\n\031virtual_mcp_servers:writ" +
+      "e\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002(2#/api/v1/mcp/in" +
+      "stances/{instance_id}:\001*\022\352\003\n\016GetMcpInsta" +
+      "nce\022&.scalekit.v1.mcp.GetMcpInstanceRequ" +
+      "est\032\'.scalekit.v1.mcp.GetMcpInstanceResp" +
+      "onse\"\206\003\222A\250\002\n\rMCP Instances\022\025Fetch an MCP" +
+      " instance\032@Returns a single MCP instance" +
+      " for the current environment by ID.JP\n\0032" +
+      "00\022I\n\032The requested MCP instance\022+\n)\032\'.s" +
+      "calekit.v1.mcp.GetMcpInstanceResponseJ\030\n" +
+      "\003400\022\021\n\017Invalid requestJ \n\003401\022\031\n\027Authen" +
+      "tication requiredJ0\n\003404\022)\n\'Not Found - " +
+      "MCP instance does not exist\202\265\030\034\n\030virtual" +
+      "_mcp_servers:read\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%" +
+      "\022#/api/v1/mcp/instances/{instance_id}\022\214\005" +
+      "\n\027GetMcpInstanceAuthState\022/.scalekit.v1." +
+      "mcp.GetMcpInstanceAuthStateRequest\0320.sca" +
+      "lekit.v1.mcp.GetMcpInstanceAuthStateResp" +
+      "onse\"\215\004\222A\240\003\n\rMCP Instances\022/Fetch connec" +
+      "tion auth state for an MCP instance\032sRet" +
+      "urns the connected account status and fr" +
+      "esh authentication links for each connec" +
+      "tion mapped to the MCP instance.J{\n\003200\022" +
+      "t\n<Authentication state for each connect" +
+      "ion in the MCP instance\0224\n2\0320.scalekit.v" +
+      "1.mcp.GetMcpInstanceAuthStateResponseJ\030\n" +
+      "\003400\022\021\n\017Invalid requestJ \n\003401\022\031\n\027Authen" +
+      "tication requiredJ0\n\003404\022)\n\'Not Found - " +
+      "MCP instance does not exist\202\265\030\034\n\030virtual" +
+      "_mcp_servers:read\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0024" +
+      "\"2/api/v1/mcp/instances/{instance_id}:ge" +
+      "t_auth_state\022\304\n\n\025CreateMcpSessionToken\022-" +
+      ".scalekit.v1.mcp.CreateMcpSessionTokenRe" +
+      "quest\032..scalekit.v1.mcp.CreateMcpSession" +
+      "TokenResponse\"\313\t\222A\361\010\n\022MCP Configurations" +
+      "\022\033Create an MCP session token\032\337\004Mints a " +
+      "short-lived JWT that represents a user i" +
+      "dentifier across the connected accounts " +
+      "associated with an MCP configuration. Th" +
+      "e supplied identifier becomes the token\'" +
+      "s `sub` claim; the token\'s `aud` claim i" +
+      "s the MCP server URL bound to the config" +
+      "uration. Claims also carry the MCP confi" +
+      "guration ID (`mcp_cfg`) and the list of " +
+      "resolved connected-account IDs (`ca_ids`" +
+      "). Use this operation to issue a single " +
+      "credential an MCP server can present on " +
+      "the user\'s behalf when calling provider " +
+      "tools. The mint fails if any connection " +
+      "mapped to the configuration has no activ" +
+      "e connected account for the identifier.J" +
+      "\210\001\n\003200\022\200\001\nJToken created successfully; " +
+      "returns the signed JWT and its absolute " +
+      "expiry\0222\n0\032..scalekit.v1.mcp.CreateMcpSe" +
+      "ssionTokenResponseJ\355\001\n\003400\022\345\001\n\342\001Invalid " +
+      "request - mcp_config_id or identifier is" +
+      " missing or malformed, expiry is outside" +
+      " the 60s-24h window, the MCP configurati" +
+      "on has no connections, or a connection h" +
+      "as no active connected account for the s" +
+      "upplied identifierJa\n\003404\022Z\nXNot Found -" +
+      " no MCP configuration exists with the su" +
+      "pplied ID in the caller\'s environment\202\265\030" +
+      "\035\n\031virtual_mcp_servers:write\030D\202\323\344\223\002/\"*/a" +
+      "pi/v1/mcp/configs/{mcp_config_id}/tokens" +
+      ":\001*\022\251\t\n\030ListMcpConnectedAccounts\0220.scale" +
+      "kit.v1.mcp.ListMcpConnectedAccountsReque" +
+      "st\0321.scalekit.v1.mcp.ListMcpConnectedAcc" +
+      "ountsResponse\"\247\010\222A\306\007\n\022MCP Configurations" +
+      "\0220List connected accounts for an MCP con" +
+      "figuration\032\337\004Returns the connected accou" +
+      "nt state for each connection in the MCP " +
+      "configuration for the given user identif" +
+      "ier. When include_auth_link is true, cre" +
+      "ates connected accounts on the fly if th" +
+      "ey do not exist and returns a fresh auth" +
+      "entication link per connection. When inc" +
+      "lude_auth_link is false or omitted, retu" +
+      "rns the current status of existing conne" +
+      "cted accounts only \342\200\224 no accounts are c" +
+      "reated and authentication_link is always" +
+      " empty. Authentication links are only pr" +
+      "esent when the connection has an associa" +
+      "ted key; if the connection has no key, a" +
+      "uthentication_link is empty regardless o" +
+      "f include_auth_link.J\212\001\n\003200\022\202\001\nIConnect" +
+      "ed account state returned for each conne" +
+      "ction in the configuration\0225\n3\0321.scaleki" +
+      "t.v1.mcp.ListMcpConnectedAccountsRespons" +
+      "eJD\n\003400\022=\n;Bad request - config_id or i" +
+      "dentifier is missing or invalidJI\n\003404\022B" +
+      "\n@Not found - no MCP configuration exist" +
+      "s with the given config_id\202\265\030\034\n\030virtual_" +
+      "mcp_servers:read\030D\202\323\344\223\0027\"2/api/v1/mcp/co" +
+      "nfigs/{config_id}/connected_accounts:\001*\032" +
+      "L\222AI\n\013MCP Servers\022:Manage MCP servers an" +
+      "d their configurations for AI agents.B\300\005" +
+      "\n!com.scalekit.grpc.scalekit.v1.mcpB\010Mcp" +
+      "ProtoP\001Z-github.com/scalekit-inc/scaleki" +
+      "t/pkg/grpc/mcp\242\002\003SVM\252\002\017Scalekit.V1.Mcp\312\002" +
+      "\017Scalekit\\V1\\Mcp\342\002\033Scalekit\\V1\\Mcp\\GPBMe" +
+      "tadata\352\002\021Scalekit::V1::Mcp\222A\202\004j\272\001\n\013MCP S" +
+      "ervers\022\252\001Manage MCP servers and their co" +
+      "nfigurations for AI agents. MCP (Model C" +
+      "ontext Protocol) allows agents to secure" +
+      "ly access tools and data through authent" +
+      "icated connections.j\242\001\n\022MCP Configuratio" +
+      "ns\022\213\001Create and manage reusable MCP conf" +
+      "igurations. A configuration defines whic" +
+      "h connections and tools are available to" +
+      " an MCP server instance.j\235\001\n\rMCP Instanc" +
+      "es\022\213\001Create, manage, and interact with l" +
+      "ive MCP server instances. An instance is" +
+      " a running MCP server tied to a specific" +
+      " configuration and user.b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

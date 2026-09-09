@@ -42,6 +42,7 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest.class, com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int RESOURCE_ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceId_ = "";
@@ -170,6 +171,32 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int FILTER_FIELD_NUMBER = 5;
+  private com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter filter_;
+  /**
+   * <code>.scalekit.v1.clients.ResourceUserConsentFilter filter = 5 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the filter field is set.
+   */
+  @java.lang.Override
+  public boolean hasFilter() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>.scalekit.v1.clients.ResourceUserConsentFilter filter = 5 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The filter.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter getFilter() {
+    return filter_ == null ? com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter.getDefaultInstance() : filter_;
+  }
+  /**
+   * <code>.scalekit.v1.clients.ResourceUserConsentFilter filter = 5 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilterOrBuilder getFilterOrBuilder() {
+    return filter_ == null ? com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter.getDefaultInstance() : filter_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -196,6 +223,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pageToken_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getFilter());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -217,6 +247,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pageToken_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getFilter());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -241,6 +275,11 @@ private static final long serialVersionUID = 0L;
         != other.getPageSize()) return false;
     if (!getPageToken()
         .equals(other.getPageToken())) return false;
+    if (hasFilter() != other.hasFilter()) return false;
+    if (hasFilter()) {
+      if (!getFilter()
+          .equals(other.getFilter())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -260,6 +299,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    if (hasFilter()) {
+      hash = (37 * hash) + FILTER_FIELD_NUMBER;
+      hash = (53 * hash) + getFilter().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -379,13 +422,19 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsRequest.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getFilterFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -395,6 +444,11 @@ private static final long serialVersionUID = 0L;
       search_ = "";
       pageSize_ = 0;
       pageToken_ = "";
+      filter_ = null;
+      if (filterBuilder_ != null) {
+        filterBuilder_.dispose();
+        filterBuilder_ = null;
+      }
       return this;
     }
 
@@ -440,6 +494,14 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.pageToken_ = pageToken_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.filter_ = filterBuilder_ == null
+            ? filter_
+            : filterBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -504,6 +566,9 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.hasFilter()) {
+        mergeFilter(other.getFilter());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -550,6 +615,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 34
+            case 42: {
+              input.readMessage(
+                  getFilterFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -813,6 +885,127 @@ private static final long serialVersionUID = 0L;
       bitField0_ |= 0x00000008;
       onChanged();
       return this;
+    }
+
+    private com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter filter_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter, com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter.Builder, com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilterOrBuilder> filterBuilder_;
+    /**
+     * <code>.scalekit.v1.clients.ResourceUserConsentFilter filter = 5 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the filter field is set.
+     */
+    public boolean hasFilter() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceUserConsentFilter filter = 5 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The filter.
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter getFilter() {
+      if (filterBuilder_ == null) {
+        return filter_ == null ? com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter.getDefaultInstance() : filter_;
+      } else {
+        return filterBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceUserConsentFilter filter = 5 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setFilter(com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter value) {
+      if (filterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        filter_ = value;
+      } else {
+        filterBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceUserConsentFilter filter = 5 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setFilter(
+        com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter.Builder builderForValue) {
+      if (filterBuilder_ == null) {
+        filter_ = builderForValue.build();
+      } else {
+        filterBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceUserConsentFilter filter = 5 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeFilter(com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter value) {
+      if (filterBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0) &&
+          filter_ != null &&
+          filter_ != com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter.getDefaultInstance()) {
+          getFilterBuilder().mergeFrom(value);
+        } else {
+          filter_ = value;
+        }
+      } else {
+        filterBuilder_.mergeFrom(value);
+      }
+      if (filter_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceUserConsentFilter filter = 5 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearFilter() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      filter_ = null;
+      if (filterBuilder_ != null) {
+        filterBuilder_.dispose();
+        filterBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceUserConsentFilter filter = 5 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter.Builder getFilterBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getFilterFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceUserConsentFilter filter = 5 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilterOrBuilder getFilterOrBuilder() {
+      if (filterBuilder_ != null) {
+        return filterBuilder_.getMessageOrBuilder();
+      } else {
+        return filter_ == null ?
+            com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter.getDefaultInstance() : filter_;
+      }
+    }
+    /**
+     * <code>.scalekit.v1.clients.ResourceUserConsentFilter filter = 5 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter, com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter.Builder, com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilterOrBuilder> 
+        getFilterFieldBuilder() {
+      if (filterBuilder_ == null) {
+        filterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter, com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter.Builder, com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilterOrBuilder>(
+                getFilter(),
+                getParentForChildren(),
+                isClean());
+        filter_ = null;
+      }
+      return filterBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

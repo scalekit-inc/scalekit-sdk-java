@@ -21,6 +21,10 @@ public enum AssetCategory
    * <code>PORTAL_CUSTOMIZATION_IMAGE = 1;</code>
    */
   PORTAL_CUSTOMIZATION_IMAGE(1),
+  /**
+   * <code>PORTAL_CUSTOMIZATION_FONT = 2;</code>
+   */
+  PORTAL_CUSTOMIZATION_FONT(2),
   UNRECOGNIZED(-1),
   ;
 
@@ -32,6 +36,10 @@ public enum AssetCategory
    * <code>PORTAL_CUSTOMIZATION_IMAGE = 1;</code>
    */
   public static final int PORTAL_CUSTOMIZATION_IMAGE_VALUE = 1;
+  /**
+   * <code>PORTAL_CUSTOMIZATION_FONT = 2;</code>
+   */
+  public static final int PORTAL_CUSTOMIZATION_FONT_VALUE = 2;
 
 
   public final int getNumber() {
@@ -60,6 +68,7 @@ public enum AssetCategory
     switch (value) {
       case 0: return ASSET_CATEGORY_UNSPECIFIED;
       case 1: return PORTAL_CUSTOMIZATION_IMAGE;
+      case 2: return PORTAL_CUSTOMIZATION_FONT;
       default: return null;
     }
   }

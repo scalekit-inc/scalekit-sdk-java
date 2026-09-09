@@ -131,33 +131,35 @@ public final class SecretsProto {
       "\033\n\027SECRET_TYPE_UNSPECIFIED\020\000\022\024\n\020INTERCEP" +
       "TOR_HMAC\020\001\022\023\n\017DIRECTORY_TOKEN\020\002*I\n\nTenan" +
       "tType\022\033\n\027TENANT_TYPE_UNSPECIFIED\020\000\022\017\n\013IN" +
-      "TERCEPTOR\020\001\022\r\n\tDIRECTORY\020\0022\233\006\n\rSecretSer" +
-      "vice\022\231\001\n\014CreateSecret\022(.scalekit.v1.secr" +
+      "TERCEPTOR\020\001\022\r\n\tDIRECTORY\020\0022\375\006\n\rSecretSer" +
+      "vice\022\255\001\n\014CreateSecret\022(.scalekit.v1.secr" +
       "ets.CreateSecretRequest\032).scalekit.v1.se" +
-      "crets.CreateSecretResponse\"4\202\265\030\002\030D\372\322\344\223\002\t" +
-      "\022\007PREVIEW\202\323\344\223\002\031\"\017/api/v1/secrets:\006secret" +
-      "\022\235\001\n\014RotateSecret\022(.scalekit.v1.secrets." +
-      "RotateSecretRequest\032).scalekit.v1.secret" +
-      "s.RotateSecretResponse\"8\202\265\030\002\030D\372\322\344\223\002\t\022\007PR" +
+      "crets.CreateSecretResponse\"H\202\265\030\026\n\022interc" +
+      "eptors:write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\"\017/ap" +
+      "i/v1/secrets:\006secret\022\261\001\n\014RotateSecret\022(." +
+      "scalekit.v1.secrets.RotateSecretRequest\032" +
+      ").scalekit.v1.secrets.RotateSecretRespon" +
+      "se\"L\202\265\030\026\n\022interceptors:write\030D\372\322\344\223\002\t\022\007PR" +
       "EVIEW\202\323\344\223\002\035\"\033/api/v1/secrets/{id}:rotate" +
-      "\022\215\001\n\tGetSecret\022%.scalekit.v1.secrets.Get" +
+      "\022\240\001\n\tGetSecret\022%.scalekit.v1.secrets.Get" +
       "SecretRequest\032&.scalekit.v1.secrets.GetS" +
-      "ecretResponse\"1\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
-      "\002\026\022\024/api/v1/secrets/{id}\022\267\001\n\013ListSecrets" +
-      "\022\'.scalekit.v1.secrets.ListSecretsReques" +
-      "t\032(.scalekit.v1.secrets.ListSecretsRespo" +
-      "nse\"U\222A&\022\014List secrets\032\026List available s" +
-      "ecrets\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\021\022\017/api/" +
-      "v1/secrets\022\203\001\n\014DeleteSecret\022(.scalekit.v" +
-      "1.secrets.DeleteSecretRequest\032\026.google.p" +
-      "rotobuf.Empty\"1\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
-      "\002\026*\024/api/v1/secrets/{id}B\326\001\n%com.scaleki" +
-      "t.grpc.scalekit.v1.secretsB\014SecretsProto" +
-      "P\001Z1github.com/scalekit-inc/scalekit/pkg" +
-      "/grpc/secrets\242\002\003SVS\252\002\023Scalekit.V1.Secret" +
-      "s\312\002\023Scalekit\\V1\\Secrets\342\002\037Scalekit\\V1\\Se" +
-      "crets\\GPBMetadata\352\002\025Scalekit::V1::Secret" +
-      "sb\006proto3"
+      "ecretResponse\"D\202\265\030\025\n\021interceptors:read\030D" +
+      "\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\026\022\024/api/v1/secrets/{" +
+      "id}\022\312\001\n\013ListSecrets\022\'.scalekit.v1.secret" +
+      "s.ListSecretsRequest\032(.scalekit.v1.secre" +
+      "ts.ListSecretsResponse\"h\222A&\022\014List secret" +
+      "s\032\026List available secrets\202\265\030\025\n\021intercept" +
+      "ors:read\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\021\022\017/api/v1" +
+      "/secrets\022\227\001\n\014DeleteSecret\022(.scalekit.v1." +
+      "secrets.DeleteSecretRequest\032\026.google.pro" +
+      "tobuf.Empty\"E\202\265\030\026\n\022interceptors:write\030D\372" +
+      "\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\026*\024/api/v1/secrets/{i" +
+      "d}B\326\001\n%com.scalekit.grpc.scalekit.v1.sec" +
+      "retsB\014SecretsProtoP\001Z1github.com/scaleki" +
+      "t-inc/scalekit/pkg/grpc/secrets\242\002\003SVS\252\002\023" +
+      "Scalekit.V1.Secrets\312\002\023Scalekit\\V1\\Secret" +
+      "s\342\002\037Scalekit\\V1\\Secrets\\GPBMetadata\352\002\025Sc" +
+      "alekit::V1::Secretsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

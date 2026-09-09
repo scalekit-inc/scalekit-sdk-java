@@ -9,195 +9,195 @@ public interface AuthLogRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The organizationId.
    */
   java.lang.String getOrganizationId();
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for organizationId.
    */
   com.google.protobuf.ByteString
       getOrganizationIdBytes();
 
   /**
-   * <code>string environment_id = 2 [json_name = "environmentId"];</code>
+   * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The environmentId.
    */
   java.lang.String getEnvironmentId();
   /**
-   * <code>string environment_id = 2 [json_name = "environmentId"];</code>
+   * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for environmentId.
    */
   com.google.protobuf.ByteString
       getEnvironmentIdBytes();
 
   /**
-   * <code>string connection_id = 3 [json_name = "connectionId"];</code>
+   * <code>string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connectionId.
    */
   java.lang.String getConnectionId();
   /**
-   * <code>string connection_id = 3 [json_name = "connectionId"];</code>
+   * <code>string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for connectionId.
    */
   com.google.protobuf.ByteString
       getConnectionIdBytes();
 
   /**
-   * <code>string auth_request_id = 4 [json_name = "authRequestId"];</code>
+   * <code>string auth_request_id = 4 [json_name = "authRequestId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The authRequestId.
    */
   java.lang.String getAuthRequestId();
   /**
-   * <code>string auth_request_id = 4 [json_name = "authRequestId"];</code>
+   * <code>string auth_request_id = 4 [json_name = "authRequestId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for authRequestId.
    */
   com.google.protobuf.ByteString
       getAuthRequestIdBytes();
 
   /**
-   * <code>string email = 5 [json_name = "email"];</code>
+   * <code>string email = 5 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The email.
    */
   java.lang.String getEmail();
   /**
-   * <code>string email = 5 [json_name = "email"];</code>
+   * <code>string email = 5 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for email.
    */
   com.google.protobuf.ByteString
       getEmailBytes();
 
   /**
-   * <code>string connection_type = 6 [json_name = "connectionType"];</code>
+   * <code>string connection_type = 6 [json_name = "connectionType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connectionType.
    */
   java.lang.String getConnectionType();
   /**
-   * <code>string connection_type = 6 [json_name = "connectionType"];</code>
+   * <code>string connection_type = 6 [json_name = "connectionType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for connectionType.
    */
   com.google.protobuf.ByteString
       getConnectionTypeBytes();
 
   /**
-   * <code>string connection_provider = 7 [json_name = "connectionProvider"];</code>
+   * <code>string connection_provider = 7 [json_name = "connectionProvider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connectionProvider.
    */
   java.lang.String getConnectionProvider();
   /**
-   * <code>string connection_provider = 7 [json_name = "connectionProvider"];</code>
+   * <code>string connection_provider = 7 [json_name = "connectionProvider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for connectionProvider.
    */
   com.google.protobuf.ByteString
       getConnectionProviderBytes();
 
   /**
-   * <code>string status = 8 [json_name = "status"];</code>
+   * <code>string status = 8 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The status.
    */
   java.lang.String getStatus();
   /**
-   * <code>string status = 8 [json_name = "status"];</code>
+   * <code>string status = 8 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for status.
    */
   com.google.protobuf.ByteString
       getStatusBytes();
 
   /**
-   * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp"];</code>
+   * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the timestamp field is set.
    */
   boolean hasTimestamp();
   /**
-   * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp"];</code>
+   * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The timestamp.
    */
   com.google.protobuf.Timestamp getTimestamp();
   /**
-   * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp"];</code>
+   * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder();
 
   /**
-   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails> 
       getConnectionDetailsList();
   /**
-   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails getConnectionDetails(int index);
   /**
-   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   int getConnectionDetailsCount();
   /**
-   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<? extends com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetailsOrBuilder> 
       getConnectionDetailsOrBuilderList();
   /**
-   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetailsOrBuilder getConnectionDetailsOrBuilder(
       int index);
 
   /**
-   * <code>string workflow = 11 [json_name = "workflow"];</code>
+   * <code>string workflow = 11 [json_name = "workflow", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The workflow.
    */
   java.lang.String getWorkflow();
   /**
-   * <code>string workflow = 11 [json_name = "workflow"];</code>
+   * <code>string workflow = 11 [json_name = "workflow", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for workflow.
    */
   com.google.protobuf.ByteString
       getWorkflowBytes();
 
   /**
-   * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+   * <code>string resource_id = 12 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The resourceId.
    */
   java.lang.String getResourceId();
   /**
-   * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+   * <code>string resource_id = 12 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for resourceId.
    */
   com.google.protobuf.ByteString
       getResourceIdBytes();
 
   /**
-   * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+   * <code>string resource_name = 13 [json_name = "resourceName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The resourceName.
    */
   java.lang.String getResourceName();
   /**
-   * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+   * <code>string resource_name = 13 [json_name = "resourceName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for resourceName.
    */
   com.google.protobuf.ByteString
       getResourceNameBytes();
 
   /**
-   * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+   * <code>string resource_type = 14 [json_name = "resourceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The resourceType.
    */
   java.lang.String getResourceType();
   /**
-   * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+   * <code>string resource_type = 14 [json_name = "resourceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for resourceType.
    */
   com.google.protobuf.ByteString
       getResourceTypeBytes();
 
   /**
-   * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+   * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connectedAccountIdentifier.
    */
   java.lang.String getConnectedAccountIdentifier();
   /**
-   * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+   * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for connectedAccountIdentifier.
    */
   com.google.protobuf.ByteString

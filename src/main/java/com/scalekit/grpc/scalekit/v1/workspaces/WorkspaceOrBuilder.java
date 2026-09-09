@@ -135,4 +135,15 @@ public interface WorkspaceOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDeploymentBytes();
+
+  /**
+   * <code>.scalekit.v1.workspaces.BillingMode billing_mode = 12 [json_name = "billingMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for billingMode.
+   */
+  int getBillingModeValue();
+  /**
+   * <code>.scalekit.v1.workspaces.BillingMode billing_mode = 12 [json_name = "billingMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The billingMode.
+   */
+  com.scalekit.grpc.scalekit.v1.workspaces.BillingMode getBillingMode();
 }

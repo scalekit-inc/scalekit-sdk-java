@@ -17,6 +17,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetMemberResponse() {
+    dashboardPermissions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -66,6 +68,43 @@ private static final long serialVersionUID = 0L;
     return member_ == null ? com.scalekit.grpc.scalekit.v1.members.Member.getDefaultInstance() : member_;
   }
 
+  public static final int DASHBOARD_PERMISSIONS_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList dashboardPermissions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string dashboard_permissions = 2 [json_name = "dashboardPermissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the dashboardPermissions.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getDashboardPermissionsList() {
+    return dashboardPermissions_;
+  }
+  /**
+   * <code>repeated string dashboard_permissions = 2 [json_name = "dashboardPermissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of dashboardPermissions.
+   */
+  public int getDashboardPermissionsCount() {
+    return dashboardPermissions_.size();
+  }
+  /**
+   * <code>repeated string dashboard_permissions = 2 [json_name = "dashboardPermissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The dashboardPermissions at the given index.
+   */
+  public java.lang.String getDashboardPermissions(int index) {
+    return dashboardPermissions_.get(index);
+  }
+  /**
+   * <code>repeated string dashboard_permissions = 2 [json_name = "dashboardPermissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the dashboardPermissions at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getDashboardPermissionsBytes(int index) {
+    return dashboardPermissions_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -83,6 +122,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getMember());
     }
+    for (int i = 0; i < dashboardPermissions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, dashboardPermissions_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -95,6 +137,14 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getMember());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < dashboardPermissions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(dashboardPermissions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDashboardPermissionsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -116,6 +166,8 @@ private static final long serialVersionUID = 0L;
       if (!getMember()
           .equals(other.getMember())) return false;
     }
+    if (!getDashboardPermissionsList()
+        .equals(other.getDashboardPermissionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -130,6 +182,10 @@ private static final long serialVersionUID = 0L;
     if (hasMember()) {
       hash = (37 * hash) + MEMBER_FIELD_NUMBER;
       hash = (53 * hash) + getMember().hashCode();
+    }
+    if (getDashboardPermissionsCount() > 0) {
+      hash = (37 * hash) + DASHBOARD_PERMISSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getDashboardPermissionsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -273,6 +329,8 @@ private static final long serialVersionUID = 0L;
         memberBuilder_.dispose();
         memberBuilder_ = null;
       }
+      dashboardPermissions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -312,6 +370,10 @@ private static final long serialVersionUID = 0L;
             ? member_
             : memberBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        dashboardPermissions_.makeImmutable();
+        result.dashboardPermissions_ = dashboardPermissions_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -363,6 +425,16 @@ private static final long serialVersionUID = 0L;
       if (other.hasMember()) {
         mergeMember(other.getMember());
       }
+      if (!other.dashboardPermissions_.isEmpty()) {
+        if (dashboardPermissions_.isEmpty()) {
+          dashboardPermissions_ = other.dashboardPermissions_;
+          bitField0_ |= 0x00000002;
+        } else {
+          ensureDashboardPermissionsIsMutable();
+          dashboardPermissions_.addAll(other.dashboardPermissions_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -396,6 +468,12 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureDashboardPermissionsIsMutable();
+              dashboardPermissions_.add(s);
+              break;
+            } // case 18
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -532,6 +610,117 @@ private static final long serialVersionUID = 0L;
         member_ = null;
       }
       return memberBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList dashboardPermissions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureDashboardPermissionsIsMutable() {
+      if (!dashboardPermissions_.isModifiable()) {
+        dashboardPermissions_ = new com.google.protobuf.LazyStringArrayList(dashboardPermissions_);
+      }
+      bitField0_ |= 0x00000002;
+    }
+    /**
+     * <code>repeated string dashboard_permissions = 2 [json_name = "dashboardPermissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the dashboardPermissions.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getDashboardPermissionsList() {
+      dashboardPermissions_.makeImmutable();
+      return dashboardPermissions_;
+    }
+    /**
+     * <code>repeated string dashboard_permissions = 2 [json_name = "dashboardPermissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of dashboardPermissions.
+     */
+    public int getDashboardPermissionsCount() {
+      return dashboardPermissions_.size();
+    }
+    /**
+     * <code>repeated string dashboard_permissions = 2 [json_name = "dashboardPermissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The dashboardPermissions at the given index.
+     */
+    public java.lang.String getDashboardPermissions(int index) {
+      return dashboardPermissions_.get(index);
+    }
+    /**
+     * <code>repeated string dashboard_permissions = 2 [json_name = "dashboardPermissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the dashboardPermissions at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getDashboardPermissionsBytes(int index) {
+      return dashboardPermissions_.getByteString(index);
+    }
+    /**
+     * <code>repeated string dashboard_permissions = 2 [json_name = "dashboardPermissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The dashboardPermissions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDashboardPermissions(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureDashboardPermissionsIsMutable();
+      dashboardPermissions_.set(index, value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string dashboard_permissions = 2 [json_name = "dashboardPermissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The dashboardPermissions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDashboardPermissions(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureDashboardPermissionsIsMutable();
+      dashboardPermissions_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string dashboard_permissions = 2 [json_name = "dashboardPermissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The dashboardPermissions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDashboardPermissions(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureDashboardPermissionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, dashboardPermissions_);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string dashboard_permissions = 2 [json_name = "dashboardPermissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDashboardPermissions() {
+      dashboardPermissions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string dashboard_permissions = 2 [json_name = "dashboardPermissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the dashboardPermissions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDashboardPermissionsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureDashboardPermissionsIsMutable();
+      dashboardPermissions_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

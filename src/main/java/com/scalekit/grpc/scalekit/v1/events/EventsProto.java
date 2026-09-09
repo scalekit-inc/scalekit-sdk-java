@@ -273,51 +273,51 @@ public final class EventsProto {
       "InterceptorEvent\020$\022\016\n\nPermission\020%\022\026\n\022Or" +
       "gMembershipEvent\020&\022\022\n\016UserLoginEvent\020\'\022\023" +
       "\n\017UserLogoutEvent\020(\022\024\n\020ConnectedAccount\020" +
-      ")2\215\014\n\rEventsService\022\201\001\n\nListEvents\022%.sca" +
+      ")2\252\014\n\rEventsService\022\216\001\n\nListEvents\022%.sca" +
       "lekit.v1.events.ListEventsRequest\032&.scal" +
-      "ekit.v1.events.ListEventsResponse\"$\202\265\030\002\030" +
-      "d\202\323\344\223\002\030\"\016/api/v1/events:\006filter\022\310\t\n\023List" +
-      "EventsPaginated\022..scalekit.v1.events.Lis" +
-      "tEventsPaginatedRequest\032/.scalekit.v1.ev" +
-      "ents.ListEventsPaginatedResponse\"\317\010\222A\235\010\n" +
-      "\006Events\022\037List events without total count" +
-      "\032\332\005Returns a paginated list of events fo" +
-      "r the current environment, ordered most-" +
-      "recent first. The response carries curso" +
-      "r tokens for forward and backward pagina" +
-      "tion but omits the total event count, wh" +
-      "ich lets the server skip a COUNT(*) quer" +
-      "y against the events table. Use this ope" +
-      "ration when rendering an event log that " +
-      "does not display a total \342\200\224 for example" +
-      " a paginated table that only needs next/" +
-      "previous controls. The filter accepts ev" +
-      "ent types, time window, organization, so" +
-      "urce, and optional identifiers (auth_req" +
-      "uest_id, interceptor_id, connection_id, " +
-      "connected_account_id). Page size default" +
-      "s to 10 and is clamped to 100. To page f" +
-      "orward, pass the returned next_page_toke" +
-      "n as the page_token query parameter on t" +
-      "he next call.J\215\001\n\003200\022\205\001\nNEvents page re" +
-      "turned successfully; includes the events" +
-      " array and cursor tokens\0223\n1\032/.scalekit." +
-      "v1.events.ListEventsPaginatedResponseJS\n" +
-      "\003400\022L\nJInvalid request - page_token is " +
-      "malformed, or start_time is after end_ti" +
-      "meJ0\n\003401\022)\n\'Missing or invalid Authoriz" +
-      "ation header\202\265\030\002\030\004\202\323\344\223\002\"\"\030/api/v1/events" +
-      "/paginated:\006filter\022\254\001\n\017SendCustomEvent\022*" +
-      ".scalekit.v1.events.SendCustomEventReque" +
-      "st\032+.scalekit.v1.events.SendCustomEventR" +
-      "esponse\"@\202\265\030\002\030`\202\323\344\223\0024\"+/api/v1/events/fr" +
-      "ontend_events/{event_type}:\005eventB\317\001\n$co" +
-      "m.scalekit.grpc.scalekit.v1.eventsB\013Even" +
-      "tsProtoP\001Z0github.com/scalekit-inc/scale" +
-      "kit/pkg/grpc/events\242\002\003SVE\252\002\022Scalekit.V1." +
-      "Events\312\002\022Scalekit\\V1\\Events\342\002\036Scalekit\\V" +
-      "1\\Events\\GPBMetadata\352\002\024Scalekit::V1::Eve" +
-      "ntsb\006proto3"
+      "ekit.v1.events.ListEventsResponse\"1\202\265\030\017\n" +
+      "\013events:read\030d\202\323\344\223\002\030\"\016/api/v1/events:\006fi" +
+      "lter\022\310\t\n\023ListEventsPaginated\022..scalekit." +
+      "v1.events.ListEventsPaginatedRequest\032/.s" +
+      "calekit.v1.events.ListEventsPaginatedRes" +
+      "ponse\"\317\010\222A\235\010\n\006Events\022\037List events withou" +
+      "t total count\032\332\005Returns a paginated list" +
+      " of events for the current environment, " +
+      "ordered most-recent first. The response " +
+      "carries cursor tokens for forward and ba" +
+      "ckward pagination but omits the total ev" +
+      "ent count, which lets the server skip a " +
+      "COUNT(*) query against the events table." +
+      " Use this operation when rendering an ev" +
+      "ent log that does not display a total \342\200" +
+      "\224 for example a paginated table that onl" +
+      "y needs next/previous controls. The filt" +
+      "er accepts event types, time window, org" +
+      "anization, source, and optional identifi" +
+      "ers (auth_request_id, interceptor_id, co" +
+      "nnection_id, connected_account_id). Page" +
+      " size defaults to 10 and is clamped to 1" +
+      "00. To page forward, pass the returned n" +
+      "ext_page_token as the page_token query p" +
+      "arameter on the next call.J\215\001\n\003200\022\205\001\nNE" +
+      "vents page returned successfully; includ" +
+      "es the events array and cursor tokens\0223\n" +
+      "1\032/.scalekit.v1.events.ListEventsPaginat" +
+      "edResponseJS\n\003400\022L\nJInvalid request - p" +
+      "age_token is malformed, or start_time is" +
+      " after end_timeJ0\n\003401\022)\n\'Missing or inv" +
+      "alid Authorization header\202\265\030\002\030\004\202\323\344\223\002\"\"\030/" +
+      "api/v1/events/paginated:\006filter\022\274\001\n\017Send" +
+      "CustomEvent\022*.scalekit.v1.events.SendCus" +
+      "tomEventRequest\032+.scalekit.v1.events.Sen" +
+      "dCustomEventResponse\"P\202\265\030\022\n\016webhooks:wri" +
+      "te\030`\202\323\344\223\0024\"+/api/v1/events/frontend_even" +
+      "ts/{event_type}:\005eventB\317\001\n$com.scalekit." +
+      "grpc.scalekit.v1.eventsB\013EventsProtoP\001Z0" +
+      "github.com/scalekit-inc/scalekit/pkg/grp" +
+      "c/events\242\002\003SVE\252\002\022Scalekit.V1.Events\312\002\022Sc" +
+      "alekit\\V1\\Events\342\002\036Scalekit\\V1\\Events\\GP" +
+      "BMetadata\352\002\024Scalekit::V1::Eventsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

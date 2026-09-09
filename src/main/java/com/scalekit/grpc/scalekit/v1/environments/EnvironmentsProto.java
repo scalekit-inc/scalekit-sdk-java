@@ -419,128 +419,145 @@ public final class EnvironmentsProto {
       "\032\034google/protobuf/struct.proto\032\037google/p" +
       "rotobuf/timestamp.proto\032\036google/protobuf" +
       "/wrappers.proto\032.protoc-gen-openapiv2/op" +
-      "tions/annotations.proto\032!scalekit/v1/com" +
-      "mons/commons.proto\032)scalekit/v1/connecti" +
-      "ons/connections.proto\032!scalekit/v1/optio" +
-      "ns/options.proto\032-scalekit/v1/organizati" +
-      "ons/organizations.proto\"o\n\031CreateCustomD" +
-      "omainRequest\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003env" +
-      "R\002id\0222\n\rcustom_domain\030\002 \001(\tB\r\272H\nr\005\020\001\030\372\001\310" +
-      "\001\001R\014customDomain\"e\n\032CreateCustomDomainRe" +
+      "tions/annotations.proto\032!scalekit/v1/bil" +
+      "ling/billing.proto\032!scalekit/v1/commons/" +
+      "commons.proto\032)scalekit/v1/connections/c" +
+      "onnections.proto\032!scalekit/v1/options/op" +
+      "tions.proto\032-scalekit/v1/organizations/o" +
+      "rganizations.proto\"o\n\031CreateCustomDomain" +
+      "Request\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003envR\002id\022" +
+      "2\n\rcustom_domain\030\002 \001(\tB\r\272H\nr\005\020\001\030\372\001\310\001\001R\014c" +
+      "ustomDomain\"e\n\032CreateCustomDomainRespons" +
+      "e\022G\n\013environment\030\001 \001(\0132%.scalekit.v1.env" +
+      "ironments.EnvironmentR\013environment\"j\n\024Ge" +
+      "tDNSRecordsRequest\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030" +
+      " :\003envR\002id\0222\n\rcustom_domain\030\002 \001(\tB\r\272H\nr\005" +
+      "\020\001\030\372\001\310\001\001R\014customDomain\"^\n\025GetDNSRecordsR" +
+      "esponse\022E\n\013dns_records\030\001 \003(\0132$.scalekit." +
+      "v1.environments.DNSRecordsR\ndnsRecords\"w" +
+      "\n\nDNSRecords\022\'\n\thost_name\030\001 \001(\tB\n\272H\007r\005\020\001" +
+      "\030\372\001R\010hostName\022\036\n\004type\030\002 \001(\tB\n\272H\007r\005\020\001\030\372\001R" +
+      "\004type\022 \n\005value\030\003 \001(\tB\n\272H\007r\005\020\001\030\372\001R\005value\"" +
+      "\222\004\n\013Environment\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003" +
+      "envR\002id\022;\n\013create_time\030\002 \001(\0132\032.google.pr" +
+      "otobuf.TimestampR\ncreateTime\022;\n\013update_t" +
+      "ime\030\003 \001(\0132\032.google.protobuf.TimestampR\nu" +
+      "pdateTime\022-\n\014display_name\030\004 \001(\tB\n\272H\007r\005\020\001" +
+      "\030\310\001R\013displayName\022\"\n\006domain\030\005 \001(\tB\n\272H\007r\005\020" +
+      "\001\030\372\001R\006domain\022@\n\013region_code\030\006 \001(\0162\037.scal" +
+      "ekit.v1.commons.RegionCodeR\nregionCode\0228" +
+      "\n\004type\030\007 \001(\0162$.scalekit.v1.commons.Envir" +
+      "onmentTypeR\004type\022(\n\rcustom_domain\030\010 \001(\tH" +
+      "\000R\014customDomain\210\001\001\022^\n\024custom_domain_stat" +
+      "us\030\t \001(\0162,.scalekit.v1.environments.Cust" +
+      "omDomainStatusR\022customDomainStatusB\020\n\016_c" +
+      "ustom_domain\"\336\005\n\021CreateEnvironment\022-\n\014di" +
+      "splay_name\030\004 \001(\tB\n\272H\007r\005\020\001\030\310\001R\013displayNam" +
+      "e\022E\n\013region_code\030\006 \001(\0162\037.scalekit.v1.com" +
+      "mons.RegionCodeH\000R\nregionCode\210\001\001\022=\n\004type" +
+      "\030\007 \001(\0162$.scalekit.v1.commons.Environment" +
+      "TypeH\001R\004type\210\001\001\022\257\001\n\023authentication_mode\030" +
+      "\010 \001(\0162\'.scalekit.v1.commons.Authenticati" +
+      "onModeBP\222AM2KThe authentication mode for" +
+      " the environment. The default is FULL_ST" +
+      "ACK_AUTHH\002R\022authenticationMode\210\001\001\022\252\002\n\005pl" +
+      "ans\030\t \003(\0132\035.scalekit.v1.billing.LinePlan" +
+      "B\364\001\222A\360\0012\355\001Plan to bill each product line" +
+      " on. Required for workspaces billed per " +
+      "environment: select at least one line, a" +
+      "nd any line omitted from a non-empty sel" +
+      "ection goes on the free plan. Ignored fo" +
+      "r workspaces on legacy workspace-level b" +
+      "illing.R\005plansB\016\n\014_region_codeB\007\n\005_typeB" +
+      "\026\n\024_authentication_modeJ\004\010\005\020\006\"j\n\021UpdateE" +
+      "nvironment\0222\n\014display_name\030\004 \001(\tB\n\272H\007r\005\020" +
+      "\001\030\320\017H\000R\013displayName\210\001\001B\017\n\r_display_nameJ" +
+      "\004\010\005\020\006J\004\010\006\020\007J\004\010\007\020\010\"S\n\027UpdateEnvironmentDo" +
+      "main\022\'\n\006domain\030\005 \001(\tB\n\272H\007r\005\020\001\030\372\001H\000R\006doma" +
+      "in\210\001\001B\t\n\007_domainJ\004\010\004\020\005\"q\n\030CreateEnvironm" +
+      "entRequest\022U\n\013environment\030\001 \001(\0132+.scalek" +
+      "it.v1.environments.CreateEnvironmentB\006\272H" +
+      "\003\310\001\001R\013environment\"d\n\031CreateEnvironmentRe" +
       "sponse\022G\n\013environment\030\001 \001(\0132%.scalekit.v" +
       "1.environments.EnvironmentR\013environment\"" +
-      "j\n\024GetDNSRecordsRequest\022\036\n\002id\030\001 \001(\tB\016\272H\013" +
-      "r\t\020\001\030 :\003envR\002id\0222\n\rcustom_domain\030\002 \001(\tB\r" +
-      "\272H\nr\005\020\001\030\372\001\310\001\001R\014customDomain\"^\n\025GetDNSRec" +
-      "ordsResponse\022E\n\013dns_records\030\001 \003(\0132$.scal" +
-      "ekit.v1.environments.DNSRecordsR\ndnsReco" +
-      "rds\"w\n\nDNSRecords\022\'\n\thost_name\030\001 \001(\tB\n\272H" +
-      "\007r\005\020\001\030\372\001R\010hostName\022\036\n\004type\030\002 \001(\tB\n\272H\007r\005\020" +
-      "\001\030\372\001R\004type\022 \n\005value\030\003 \001(\tB\n\272H\007r\005\020\001\030\372\001R\005v" +
-      "alue\"\222\004\n\013Environment\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020" +
-      "\001\030 :\003envR\002id\022;\n\013create_time\030\002 \001(\0132\032.goog" +
-      "le.protobuf.TimestampR\ncreateTime\022;\n\013upd" +
-      "ate_time\030\003 \001(\0132\032.google.protobuf.Timesta" +
-      "mpR\nupdateTime\022-\n\014display_name\030\004 \001(\tB\n\272H" +
-      "\007r\005\020\001\030\310\001R\013displayName\022\"\n\006domain\030\005 \001(\tB\n\272" +
-      "H\007r\005\020\001\030\372\001R\006domain\022@\n\013region_code\030\006 \001(\0162\037" +
-      ".scalekit.v1.commons.RegionCodeR\nregionC" +
-      "ode\0228\n\004type\030\007 \001(\0162$.scalekit.v1.commons." +
-      "EnvironmentTypeR\004type\022(\n\rcustom_domain\030\010" +
-      " \001(\tH\000R\014customDomain\210\001\001\022^\n\024custom_domain" +
-      "_status\030\t \001(\0162,.scalekit.v1.environments" +
-      ".CustomDomainStatusR\022customDomainStatusB" +
-      "\020\n\016_custom_domain\"\261\003\n\021CreateEnvironment\022" +
-      "-\n\014display_name\030\004 \001(\tB\n\272H\007r\005\020\001\030\310\001R\013displ" +
-      "ayName\022E\n\013region_code\030\006 \001(\0162\037.scalekit.v" +
-      "1.commons.RegionCodeH\000R\nregionCode\210\001\001\022=\n" +
-      "\004type\030\007 \001(\0162$.scalekit.v1.commons.Enviro" +
-      "nmentTypeH\001R\004type\210\001\001\022\257\001\n\023authentication_" +
-      "mode\030\010 \001(\0162\'.scalekit.v1.commons.Authent" +
-      "icationModeBP\222AM2KThe authentication mod" +
-      "e for the environment. The default is FU" +
-      "LL_STACK_AUTHH\002R\022authenticationMode\210\001\001B\016" +
-      "\n\014_region_codeB\007\n\005_typeB\026\n\024_authenticati" +
-      "on_modeJ\004\010\005\020\006\"j\n\021UpdateEnvironment\0222\n\014di" +
-      "splay_name\030\004 \001(\tB\n\272H\007r\005\020\001\030\320\017H\000R\013displayN" +
-      "ame\210\001\001B\017\n\r_display_nameJ\004\010\005\020\006J\004\010\006\020\007J\004\010\007\020" +
-      "\010\"S\n\027UpdateEnvironmentDomain\022\'\n\006domain\030\005" +
-      " \001(\tB\n\272H\007r\005\020\001\030\372\001H\000R\006domain\210\001\001B\t\n\007_domain" +
-      "J\004\010\004\020\005\"q\n\030CreateEnvironmentRequest\022U\n\013en" +
-      "vironment\030\001 \001(\0132+.scalekit.v1.environmen" +
-      "ts.CreateEnvironmentB\006\272H\003\310\001\001R\013environmen" +
-      "t\"d\n\031CreateEnvironmentResponse\022G\n\013enviro" +
-      "nment\030\001 \001(\0132%.scalekit.v1.environments.E" +
-      "nvironmentR\013environment\"\221\001\n\030UpdateEnviro" +
-      "nmentRequest\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003env" +
-      "R\002id\022U\n\013environment\030\002 \001(\0132+.scalekit.v1." +
-      "environments.UpdateEnvironmentB\006\272H\003\310\001\001R\013" +
-      "environment\"\235\001\n\036UpdateEnvironmentDomainR" +
-      "equest\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003envR\002id\022[" +
-      "\n\013environment\030\002 \001(\01321.scalekit.v1.enviro" +
-      "nments.UpdateEnvironmentDomainB\006\272H\003\310\001\001R\013" +
-      "environment\"d\n\031UpdateEnvironmentResponse" +
-      "\022G\n\013environment\030\001 \001(\0132%.scalekit.v1.envi" +
-      "ronments.EnvironmentR\013environment\"7\n\025Get" +
-      "EnvironmentRequest\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030" +
-      " :\003envR\002id\"a\n\026GetEnvironmentResponse\022G\n\013" +
-      "environment\030\001 \001(\0132%.scalekit.v1.environm" +
-      "ents.EnvironmentR\013environment\"U\n\027ListEnv" +
-      "ironmentsRequest\022\033\n\tpage_size\030\001 \001(\rR\010pag" +
-      "eSize\022\035\n\npage_token\030\002 \001(\tR\tpageToken\"\254\001\n" +
-      "\030ListEnvironmentsResponse\022&\n\017next_page_t" +
-      "oken\030\001 \001(\tR\rnextPageToken\022\035\n\ntotal_size\030" +
-      "\002 \001(\rR\ttotalSize\022I\n\014environments\030\003 \003(\0132%" +
-      ".scalekit.v1.environments.EnvironmentR\014e" +
-      "nvironments\":\n\030DeleteEnvironmentRequest\022" +
-      "\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003envR\002id\"@\n\036Gener" +
-      "ateSamlCertificateRequest\022\036\n\002id\030\001 \001(\tB\016\272" +
-      "H\013r\t\020\001\030 :\003envR\002id\"k\n\037GenerateSamlCertifi" +
-      "cateResponse\022\016\n\002id\030\001 \001(\tR\002id\022 \n\013certific" +
-      "ate\030\002 \001(\tR\013certificate\022\026\n\006expiry\030\003 \001(\003R\006" +
-      "expiry\"\231\001\n!UpdatePortalCustomizationResp" +
-      "onse\022$\n\renvironmentId\030\001 \001(\tR\renvironment" +
-      "Id\022N\n\026customization_settings\030\002 \001(\0132\027.goo" +
-      "gle.protobuf.StructR\025customizationSettin" +
-      "gs\"\232\001\n UpdatePortalCustomizationRequest\022" +
-      "\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003envR\002id\022V\n\026custo" +
-      "mization_settings\030\002 \001(\0132\027.google.protobu" +
-      "f.StructB\006\272H\003\310\001\001R\025customizationSettings\"" +
-      ":\n\035GetPortalCustomizationRequest\022\031\n\002id\030\001" +
-      " \001(\tB\t\272H\006r\004\020\000\030 R\002id\"\235\004\n\016PortalSettings\022\230" +
-      "\001\n\017custom_branding\030\001 \001(\010Bo\222Al2dIndicates" +
-      " whether custom portal branding is enabl" +
-      "ed for this workspace based on billing s" +
-      "ubscriptionJ\004trueR\016customBranding\022\303\001\n\027ne" +
-      "w_self_serve_sso_scim\030\002 \001(\010B\214\001\222A\210\0012\177Indi" +
-      "cates whether the new self-serve SSO/SCI" +
-      "M flow should be shown in the customer p" +
-      "ortal (rollout-driven, not billing-deriv" +
-      "ed)J\005falseR\023newSelfServeSsoScim\022\251\001\n\022enab" +
-      "le_conn_delete\030\003 \001(\010B{\222Ax2oIndicates whe" +
-      "ther connection deletion is enabled for " +
-      "this environment (rollout-driven by envi" +
-      "ronment allowlist)J\005falseR\020enableConnDel" +
-      "ete\"\202\003\n\036GetPortalCustomizationResponse\022$" +
-      "\n\renvironmentId\030\001 \001(\tR\renvironmentId\022S\n\026" +
-      "customization_settings\030\002 \001(\0132\027.google.pr" +
-      "otobuf.StructB\003\340A\001R\025customizationSetting" +
-      "s\022I\n\010settings\030\003 \001(\0132(.scalekit.v1.enviro" +
-      "nments.PortalSettingsB\003\340A\003R\010settings\022z\n\033" +
-      "organization_customizations\030\004 \001(\0132/.scal" +
-      "ekit.v1.commons.OrganizationCustomizatio" +
-      "nsB\003\340A\003H\000R\032organizationCustomizations\210\001\001" +
-      "B\036\n\034_organization_customizations\"Z\n\034Crea" +
-      "teAssetUploadUrlResponse\022\035\n\nupload_url\030\001" +
-      " \001(\tR\tuploadUrl\022\033\n\tfetch_url\030\002 \001(\tR\010fetc" +
-      "hUrl\"\215\001\n\033CreateAssetUploadUrlRequest\022\036\n\002" +
-      "id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003envR\002id\022N\n\016asset_se" +
-      "ttings\030\002 \001(\0132\'.scalekit.v1.environments." +
-      "AssetSettingsR\rassetSettings\"\221\001\n\rAssetSe" +
-      "ttings\022K\n\010category\030\001 \001(\0162\'.scalekit.v1.e" +
-      "nvironments.AssetCategoryB\006\272H\003\310\001\001R\010categ" +
-      "ory\0223\n\textension\030\002 \001(\tB\025\272H\022r\020R\003jpgR\004jpeg" +
-      "R\003pngR\textension\"\211\001\n\025UpdateFeaturesReque" +
+      "\221\001\n\030UpdateEnvironmentRequest\022\036\n\002id\030\001 \001(\t" +
+      "B\016\272H\013r\t\020\001\030 :\003envR\002id\022U\n\013environment\030\002 \001(" +
+      "\0132+.scalekit.v1.environments.UpdateEnvir" +
+      "onmentB\006\272H\003\310\001\001R\013environment\"\235\001\n\036UpdateEn" +
+      "vironmentDomainRequest\022\036\n\002id\030\001 \001(\tB\016\272H\013r" +
+      "\t\020\001\030 :\003envR\002id\022[\n\013environment\030\002 \001(\01321.sc" +
+      "alekit.v1.environments.UpdateEnvironment" +
+      "DomainB\006\272H\003\310\001\001R\013environment\"d\n\031UpdateEnv" +
+      "ironmentResponse\022G\n\013environment\030\001 \001(\0132%." +
+      "scalekit.v1.environments.EnvironmentR\013en" +
+      "vironment\"\264\001\n\025GetEnvironmentRequest\022\232\001\n\002" +
+      "id\030\001 \001(\tB\211\001\222Ax2_Unique Scalekit-generate" +
+      "d identifier for the environment. Always" +
+      " begins with the `env_` prefix.J\020\"env_12" +
+      "34567890\"x \200\001\001\272H\013r\t\020\001\030 :\003envR\002id\"a\n\026GetE" +
+      "nvironmentResponse\022G\n\013environment\030\001 \001(\0132" +
+      "%.scalekit.v1.environments.EnvironmentR\013" +
+      "environment\"\275\001\n\027ListEnvironmentsRequest\022" +
+      "\033\n\tpage_size\030\001 \001(\rR\010pageSize\022\204\001\n\npage_to" +
+      "ken\030\002 \001(\tBe\222A\\2ZPagination cursor from a" +
+      " previous response. Use it to fetch the " +
+      "next page of environments.\222\265\030\002\010\001R\tpageTo" +
+      "ken\"\213\002\n\030ListEnvironmentsResponse\022\204\001\n\017nex" +
+      "t_page_token\030\001 \001(\tB\\\222AS2QPagination curs" +
+      "or for the next page of results. Empty w" +
+      "hen this is the last page.\222\265\030\002\010\001R\rnextPa" +
+      "geToken\022\035\n\ntotal_size\030\002 \001(\rR\ttotalSize\022I" +
+      "\n\014environments\030\003 \003(\0132%.scalekit.v1.envir" +
+      "onments.EnvironmentR\014environments\":\n\030Del" +
+      "eteEnvironmentRequest\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t" +
+      "\020\001\030 :\003envR\002id\"@\n\036GenerateSamlCertificate" +
+      "Request\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003envR\002id\"" +
+      "k\n\037GenerateSamlCertificateResponse\022\016\n\002id" +
+      "\030\001 \001(\tR\002id\022 \n\013certificate\030\002 \001(\tR\013certifi" +
+      "cate\022\026\n\006expiry\030\003 \001(\003R\006expiry\"\231\001\n!UpdateP" +
+      "ortalCustomizationResponse\022$\n\renvironmen" +
+      "tId\030\001 \001(\tR\renvironmentId\022N\n\026customizatio" +
+      "n_settings\030\002 \001(\0132\027.google.protobuf.Struc" +
+      "tR\025customizationSettings\"\232\001\n UpdatePorta" +
+      "lCustomizationRequest\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t" +
+      "\020\001\030 :\003envR\002id\022V\n\026customization_settings\030" +
+      "\002 \001(\0132\027.google.protobuf.StructB\006\272H\003\310\001\001R\025" +
+      "customizationSettings\":\n\035GetPortalCustom" +
+      "izationRequest\022\031\n\002id\030\001 \001(\tB\t\272H\006r\004\020\000\030 R\002i" +
+      "d\"\235\004\n\016PortalSettings\022\230\001\n\017custom_branding" +
+      "\030\001 \001(\010Bo\222Al2dIndicates whether custom po" +
+      "rtal branding is enabled for this worksp" +
+      "ace based on billing subscriptionJ\004trueR" +
+      "\016customBranding\022\303\001\n\027new_self_serve_sso_s" +
+      "cim\030\002 \001(\010B\214\001\222A\210\0012\177Indicates whether the " +
+      "new self-serve SSO/SCIM flow should be s" +
+      "hown in the customer portal (rollout-dri" +
+      "ven, not billing-derived)J\005falseR\023newSel" +
+      "fServeSsoScim\022\251\001\n\022enable_conn_delete\030\003 \001" +
+      "(\010B{\222Ax2oIndicates whether connection de" +
+      "letion is enabled for this environment (" +
+      "rollout-driven by environment allowlist)" +
+      "J\005falseR\020enableConnDelete\"\202\003\n\036GetPortalC" +
+      "ustomizationResponse\022$\n\renvironmentId\030\001 " +
+      "\001(\tR\renvironmentId\022S\n\026customization_sett" +
+      "ings\030\002 \001(\0132\027.google.protobuf.StructB\003\340A\001" +
+      "R\025customizationSettings\022I\n\010settings\030\003 \001(" +
+      "\0132(.scalekit.v1.environments.PortalSetti" +
+      "ngsB\003\340A\003R\010settings\022z\n\033organization_custo" +
+      "mizations\030\004 \001(\0132/.scalekit.v1.commons.Or" +
+      "ganizationCustomizationsB\003\340A\003H\000R\032organiz" +
+      "ationCustomizations\210\001\001B\036\n\034_organization_" +
+      "customizations\"Z\n\034CreateAssetUploadUrlRe" +
+      "sponse\022\035\n\nupload_url\030\001 \001(\tR\tuploadUrl\022\033\n" +
+      "\tfetch_url\030\002 \001(\tR\010fetchUrl\"\215\001\n\033CreateAss" +
+      "etUploadUrlRequest\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030" +
+      " :\003envR\002id\022N\n\016asset_settings\030\002 \001(\0132\'.sca" +
+      "lekit.v1.environments.AssetSettingsR\rass" +
+      "etSettings\"\243\001\n\rAssetSettings\022K\n\010category" +
+      "\030\001 \001(\0162\'.scalekit.v1.environments.AssetC" +
+      "ategoryB\006\272H\003\310\001\001R\010category\022E\n\textension\030\002" +
+      " \001(\tB\'\272H$r\"R\003jpgR\004jpegR\003pngR\004woffR\005woff2" +
+      "R\003ttfR\textension\"\211\001\n\025UpdateFeaturesReque" +
       "st\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003envR\002id\022P\n\010fe" +
       "atures\030\002 \003(\0132,.scalekit.v1.environments." +
       "EnvironmentFeatureB\006\272H\003\310\001\001R\010features\"2\n\027" +
@@ -647,7 +664,7 @@ public final class EnvironmentsProto {
       "vironments.TimeUnitR\032absoluteSessionTime" +
       "outUnit\022]\n\031idle_session_timeout_unit\030\014 \001" +
       "(\0162\".scalekit.v1.environments.TimeUnitR\026" +
-      "idleSessionTimeoutUnit\"\245\007\n\016UserManagemen" +
+      "idleSessionTimeoutUnit\"\271\010\n\016UserManagemen" +
       "t\022a\n\037allow_duplicate_user_identities\030\001 \001" +
       "(\0132\032.google.protobuf.BoolValueR\034allowDup" +
       "licateUserIdentities\022X\n\032allow_multiple_m" +
@@ -670,351 +687,424 @@ public final class EnvironmentsProto {
       "l_domains\030\n \001(\0132\032.google.protobuf.BoolVa" +
       "lueR\027blockPublicEmailDomains\022X\n\033sync_use" +
       "r_profile_on_signin\030\013 \001(\0132\032.google.proto" +
-      "buf.BoolValueR\027syncUserProfileOnSignin\"\303" +
-      "\004\n\010TestUser\0224\n\007enabled\030\001 \001(\0132\032.google.pr" +
-      "otobuf.BoolValueR\007enabled\022\325\001\n\030static_con" +
-      "firmation_code\030\003 \001(\0132\034.google.protobuf.S" +
-      "tringValueB}\222Az2\\Six-digit static OTP co" +
-      "de used in place of a real verification " +
-      "email for matched test users.J\010\"424242\"x" +
-      "\006\200\001\006\212\001\n^[0-9]{6}$R\026staticConfirmationCod" +
-      "e\022\225\002\n\006emails\030\004 \003(\tB\374\001\222A\370\0012\275\001Explicit lis" +
-      "t of test user email addresses. Each ema" +
-      "il must contain \'+sktest\' in the local p" +
-      "art (e.g. alice+sktest@example.com). Max" +
-      "imum 5 emails per environment (configura" +
-      "ble server-side).J6[\"alice+sktest@exampl" +
-      "e.com\", \"bob+sktest@example.com\"]R\006email" +
-      "sJ\004\010\002\020\003R\013email_regex\":\n\021GetContextReques" +
-      "t\022%\n\016environment_id\030\002 \001(\tR\renvironmentId" +
-      "\"G\n\022GetContextResponse\0221\n\007context\030\001 \001(\0132" +
-      "\027.google.protobuf.StructR\007context\"p\n\024Upd" +
-      "ateContextRequest\022%\n\016environment_id\030\002 \001(" +
-      "\tR\renvironmentId\0221\n\007context\030\003 \001(\0132\027.goog" +
-      "le.protobuf.StructR\007context\"*\n\030GetCurren" +
-      "tSessionRequest\022\016\n\002id\030\002 \001(\tR\002id\"\223\003\n\031GetC" +
-      "urrentSessionResponse\022F\n\016session_expiry\030" +
-      "\001 \001(\0132\032.google.protobuf.TimestampH\000R\rses" +
-      "sionExpiry\210\001\001\022J\n\023access_token_expiry\030\002 \001" +
-      "(\0132\032.google.protobuf.TimestampR\021accessTo" +
-      "kenExpiry\022,\n\017organization_id\030\003 \001(\tH\001R\016or" +
-      "ganizationId\210\001\001\022\030\n\007subject\030\004 \001(\tR\007subjec" +
-      "t\022\031\n\005email\030\005 \001(\tH\002R\005email\210\001\001\0225\n\024connecte" +
-      "d_account_id\030\006 \001(\tH\003R\022connectedAccountId" +
-      "\210\001\001B\021\n\017_session_expiryB\022\n\020_organization_" +
-      "idB\010\n\006_emailB\027\n\025_connected_account_id\"\305\001" +
-      "\n\020ResourceMetadata\022K\n\004type\030\001 \001(\01627.scale" +
-      "kit.v1.environments.ResourceMetadata.Res" +
-      "ourceTypeR\004type\022 \n\013identifiers\030\002 \003(\tR\013id" +
-      "entifiers\"B\n\014ResourceType\022\020\n\014organizatio" +
-      "n\020\000\022\016\n\nconnection\020\001\022\020\n\014auth_request\020\002\"c\n" +
-      "\027ScalekitResourceRequest\022H\n\tresources\030\001 " +
-      "\003(\0132*.scalekit.v1.environments.ResourceM" +
-      "etadataR\tresources\"\322\001\n\030ScalekitResourceR" +
-      "esponse\022_\n\tresources\030\001 \003(\0132A.scalekit.v1" +
-      ".environments.ScalekitResourceResponse.R" +
-      "esourcesEntryR\tresources\032U\n\016ResourcesEnt" +
-      "ry\022\020\n\003key\030\001 \001(\tR\003key\022-\n\005value\030\002 \001(\0132\027.go" +
-      "ogle.protobuf.StructR\005value:\0028\001\"\030\n\026Porta" +
-      "lBootstrapRequest\"\332\002\n\034PortalCustomizatio" +
-      "nBootstrap\022S\n\026customization_settings\030\001 \001" +
-      "(\0132\027.google.protobuf.StructB\003\340A\001R\025custom" +
-      "izationSettings\022I\n\010settings\030\002 \001(\0132(.scal" +
-      "ekit.v1.environments.PortalSettingsB\003\340A\003" +
-      "R\010settings\022z\n\033organization_customization" +
-      "s\030\003 \001(\0132/.scalekit.v1.commons.Organizati" +
-      "onCustomizationsB\003\340A\003H\000R\032organizationCus" +
-      "tomizations\210\001\001B\036\n\034_organization_customiz" +
-      "ations\"\355\002\n\027PortalBootstrapResponse\022M\n\007se" +
-      "ssion\030\001 \001(\01323.scalekit.v1.environments.G" +
-      "etCurrentSessionResponseR\007session\022k\n\025por" +
-      "tal_customizations\030\002 \001(\01326.scalekit.v1.e" +
-      "nvironments.PortalCustomizationBootstrap" +
-      "R\024portalCustomizations\022K\n\014organization\030\003" +
-      " \001(\0132\'.scalekit.v1.organizations.Organiz" +
-      "ationR\014organization\022I\n\013connections\030\004 \003(\013" +
-      "2\'.scalekit.v1.connections.ListConnectio" +
-      "nR\013connections\"\247\003\n\022AgentActionsConfig\022l\n" +
-      "\020user_verify_mode\030\001 \001(\01628.scalekit.v1.en" +
-      "vironments.ConnectedAccountUserVerifyMod" +
-      "eB\010\272H\005\202\001\002\020\001R\016userVerifyMode\022\207\002\n\026detailed" +
-      "_error_logging\030\002 \001(\010B\313\001\222A\307\0012\304\001When true," +
-      " full error messages from provider failu" +
-      "res are captured in tool-call logs. When" +
-      " false (default), only the error code is" +
-      " retained. Omit the field to leave the e" +
-      "xisting setting unchanged.H\000R\024detailedEr" +
-      "rorLogging\210\001\001B\031\n\027_detailed_error_logging" +
-      "\"\246\001\n\037CreateAgentActionsConfigRequest\022\036\n\002" +
-      "id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003envR\002id\022c\n\024agent_ac" +
-      "tions_config\030\002 \001(\0132,.scalekit.v1.environ" +
-      "ments.AgentActionsConfigB\003\340A\002R\022agentActi" +
-      "onsConfig\"\207\001\n CreateAgentActionsConfigRe" +
-      "sponse\022c\n\024agent_actions_config\030\001 \001(\0132,.s" +
-      "calekit.v1.environments.AgentActionsConf" +
-      "igB\003\340A\003R\022agentActionsConfig\">\n\034GetAgentA" +
-      "ctionsConfigRequest\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001" +
-      "\030 :\003envR\002id\"\204\001\n\035GetAgentActionsConfigRes" +
-      "ponse\022c\n\024agent_actions_config\030\001 \001(\0132,.sc" +
-      "alekit.v1.environments.AgentActionsConfi" +
-      "gB\003\340A\003R\022agentActionsConfig\"\246\001\n\037UpdateAge" +
-      "ntActionsConfigRequest\022\036\n\002id\030\001 \001(\tB\016\272H\013r" +
-      "\t\020\001\030 :\003envR\002id\022c\n\024agent_actions_config\030\002" +
-      " \001(\0132,.scalekit.v1.environments.AgentAct" +
-      "ionsConfigB\003\340A\002R\022agentActionsConfig\"\207\001\n " +
-      "UpdateAgentActionsConfigResponse\022c\n\024agen" +
-      "t_actions_config\030\001 \001(\0132,.scalekit.v1.env" +
-      "ironments.AgentActionsConfigB\003\340A\003R\022agent" +
-      "ActionsConfig*W\n\022CustomDomainStatus\022\017\n\013U" +
-      "NSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\n\n\006ACTIVE\020\002\022\n\n" +
-      "\006FAILED\020\003\022\013\n\007INITIAL\020\004*O\n\rAssetCategory\022" +
-      "\036\n\032ASSET_CATEGORY_UNSPECIFIED\020\000\022\036\n\032PORTA" +
-      "L_CUSTOMIZATION_IMAGE\020\001*O\n\010TimeUnit\022!\n\035S" +
-      "ESSION_TIME_UNIT_UNSPECIFIED\020\000\022\013\n\007MINUTE" +
-      "S\020\001\022\t\n\005HOURS\020\002\022\010\n\004DAYS\020\003*w\n\027OrgUserRelat" +
-      "ionshipType\022\'\n#OrgUserRelationshipType_U" +
-      "NSPECIFIED\020\000\022\027\n\023SINGLE_ORGANIZATION\020\001\022\032\n" +
-      "\026MULTIPLE_ORGANIZATIONS\020\002*[\n\025CookiePersi" +
-      "stenceType\022%\n!CookiePersistenceType_UNSP" +
-      "ECIFIED\020\000\022\016\n\nPERSISTENT\020\001\022\013\n\007SESSION\020\002*[" +
-      "\n\025CookieSameSiteSetting\022%\n!CookieSameSit" +
-      "eSetting_UNSPECIFIED\020\000\022\014\n\010LAX_MODE\020\001\022\r\n\t" +
-      "NONE_MODE\020\002*\261\001\n\036ConnectedAccountUserVeri" +
-      "fyMode\0222\n.CONNECTED_ACCOUNT_USER_VERIFY_" +
-      "MODE_UNSPECIFIED\020\000\022\031\n\025USER_VERIFY_MODE_N" +
-      "ONE\020\001\022\030\n\024USER_VERIFY_MODE_B2B\020\002\022&\n\"USER_" +
-      "VERIFY_MODE_SCALEKIT_PLATFORM\020\0032\211F\n\022Envi" +
-      "ronmentService\022\274\001\n\021CreateEnvironment\0222.s" +
-      "calekit.v1.environments.CreateEnvironmen" +
-      "tRequest\0323.scalekit.v1.environments.Crea" +
-      "teEnvironmentResponse\">\202\265\030\002\030D\372\322\344\223\002\t\022\007PRE" +
+      "buf.BoolValueR\027syncUserProfileOnSignin\022L" +
+      "\n\024enable_bot_detection\030\014 \001(\0132\032.google.pr" +
+      "otobuf.BoolValueR\022enableBotDetection\022D\n\020" +
+      "enable_fail_open\030\r \001(\0132\032.google.protobuf" +
+      ".BoolValueR\016enableFailOpen\"\303\004\n\010TestUser\022" +
+      "4\n\007enabled\030\001 \001(\0132\032.google.protobuf.BoolV" +
+      "alueR\007enabled\022\325\001\n\030static_confirmation_co" +
+      "de\030\003 \001(\0132\034.google.protobuf.StringValueB}" +
+      "\222Az2\\Six-digit static OTP code used in p" +
+      "lace of a real verification email for ma" +
+      "tched test users.J\010\"424242\"x\006\200\001\006\212\001\n^[0-9" +
+      "]{6}$R\026staticConfirmationCode\022\225\002\n\006emails" +
+      "\030\004 \003(\tB\374\001\222A\370\0012\275\001Explicit list of test us" +
+      "er email addresses. Each email must cont" +
+      "ain \'+sktest\' in the local part (e.g. al" +
+      "ice+sktest@example.com). Maximum 5 email" +
+      "s per environment (configurable server-s" +
+      "ide).J6[\"alice+sktest@example.com\", \"bob" +
+      "+sktest@example.com\"]R\006emailsJ\004\010\002\020\003R\013ema" +
+      "il_regex\":\n\021GetContextRequest\022%\n\016environ" +
+      "ment_id\030\002 \001(\tR\renvironmentId\"G\n\022GetConte" +
+      "xtResponse\0221\n\007context\030\001 \001(\0132\027.google.pro" +
+      "tobuf.StructR\007context\"p\n\024UpdateContextRe" +
+      "quest\022%\n\016environment_id\030\002 \001(\tR\renvironme" +
+      "ntId\0221\n\007context\030\003 \001(\0132\027.google.protobuf." +
+      "StructR\007context\"*\n\030GetCurrentSessionRequ" +
+      "est\022\016\n\002id\030\002 \001(\tR\002id\"\223\003\n\031GetCurrentSessio" +
+      "nResponse\022F\n\016session_expiry\030\001 \001(\0132\032.goog" +
+      "le.protobuf.TimestampH\000R\rsessionExpiry\210\001" +
+      "\001\022J\n\023access_token_expiry\030\002 \001(\0132\032.google." +
+      "protobuf.TimestampR\021accessTokenExpiry\022,\n" +
+      "\017organization_id\030\003 \001(\tH\001R\016organizationId" +
+      "\210\001\001\022\030\n\007subject\030\004 \001(\tR\007subject\022\031\n\005email\030\005" +
+      " \001(\tH\002R\005email\210\001\001\0225\n\024connected_account_id" +
+      "\030\006 \001(\tH\003R\022connectedAccountId\210\001\001B\021\n\017_sess" +
+      "ion_expiryB\022\n\020_organization_idB\010\n\006_email" +
+      "B\027\n\025_connected_account_id\"\305\001\n\020ResourceMe" +
+      "tadata\022K\n\004type\030\001 \001(\01627.scalekit.v1.envir" +
+      "onments.ResourceMetadata.ResourceTypeR\004t" +
+      "ype\022 \n\013identifiers\030\002 \003(\tR\013identifiers\"B\n" +
+      "\014ResourceType\022\020\n\014organization\020\000\022\016\n\nconne" +
+      "ction\020\001\022\020\n\014auth_request\020\002\"c\n\027ScalekitRes" +
+      "ourceRequest\022H\n\tresources\030\001 \003(\0132*.scalek" +
+      "it.v1.environments.ResourceMetadataR\tres" +
+      "ources\"\322\001\n\030ScalekitResourceResponse\022_\n\tr" +
+      "esources\030\001 \003(\0132A.scalekit.v1.environment" +
+      "s.ScalekitResourceResponse.ResourcesEntr" +
+      "yR\tresources\032U\n\016ResourcesEntry\022\020\n\003key\030\001 " +
+      "\001(\tR\003key\022-\n\005value\030\002 \001(\0132\027.google.protobu" +
+      "f.StructR\005value:\0028\001\"\030\n\026PortalBootstrapRe" +
+      "quest\"\332\002\n\034PortalCustomizationBootstrap\022S" +
+      "\n\026customization_settings\030\001 \001(\0132\027.google." +
+      "protobuf.StructB\003\340A\001R\025customizationSetti" +
+      "ngs\022I\n\010settings\030\002 \001(\0132(.scalekit.v1.envi" +
+      "ronments.PortalSettingsB\003\340A\003R\010settings\022z" +
+      "\n\033organization_customizations\030\003 \001(\0132/.sc" +
+      "alekit.v1.commons.OrganizationCustomizat" +
+      "ionsB\003\340A\003H\000R\032organizationCustomizations\210" +
+      "\001\001B\036\n\034_organization_customizations\"\355\002\n\027P" +
+      "ortalBootstrapResponse\022M\n\007session\030\001 \001(\0132" +
+      "3.scalekit.v1.environments.GetCurrentSes" +
+      "sionResponseR\007session\022k\n\025portal_customiz" +
+      "ations\030\002 \001(\01326.scalekit.v1.environments." +
+      "PortalCustomizationBootstrapR\024portalCust" +
+      "omizations\022K\n\014organization\030\003 \001(\0132\'.scale" +
+      "kit.v1.organizations.OrganizationR\014organ" +
+      "ization\022I\n\013connections\030\004 \003(\0132\'.scalekit." +
+      "v1.connections.ListConnectionR\013connectio" +
+      "ns\"\247\003\n\022AgentActionsConfig\022l\n\020user_verify" +
+      "_mode\030\001 \001(\01628.scalekit.v1.environments.C" +
+      "onnectedAccountUserVerifyModeB\010\272H\005\202\001\002\020\001R" +
+      "\016userVerifyMode\022\207\002\n\026detailed_error_loggi" +
+      "ng\030\002 \001(\010B\313\001\222A\307\0012\304\001When true, full error " +
+      "messages from provider failures are capt" +
+      "ured in tool-call logs. When false (defa" +
+      "ult), only the error code is retained. O" +
+      "mit the field to leave the existing sett" +
+      "ing unchanged.H\000R\024detailedErrorLogging\210\001" +
+      "\001B\031\n\027_detailed_error_logging\"\246\001\n\037CreateA" +
+      "gentActionsConfigRequest\022\036\n\002id\030\001 \001(\tB\016\272H" +
+      "\013r\t\020\001\030 :\003envR\002id\022c\n\024agent_actions_config" +
+      "\030\002 \001(\0132,.scalekit.v1.environments.AgentA" +
+      "ctionsConfigB\003\340A\002R\022agentActionsConfig\"\207\001" +
+      "\n CreateAgentActionsConfigResponse\022c\n\024ag" +
+      "ent_actions_config\030\001 \001(\0132,.scalekit.v1.e" +
+      "nvironments.AgentActionsConfigB\003\340A\003R\022age" +
+      "ntActionsConfig\">\n\034GetAgentActionsConfig" +
+      "Request\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003envR\002id\"" +
+      "\204\001\n\035GetAgentActionsConfigResponse\022c\n\024age" +
+      "nt_actions_config\030\001 \001(\0132,.scalekit.v1.en" +
+      "vironments.AgentActionsConfigB\003\340A\003R\022agen" +
+      "tActionsConfig\"\246\001\n\037UpdateAgentActionsCon" +
+      "figRequest\022\036\n\002id\030\001 \001(\tB\016\272H\013r\t\020\001\030 :\003envR\002" +
+      "id\022c\n\024agent_actions_config\030\002 \001(\0132,.scale" +
+      "kit.v1.environments.AgentActionsConfigB\003" +
+      "\340A\002R\022agentActionsConfig\"\207\001\n UpdateAgentA" +
+      "ctionsConfigResponse\022c\n\024agent_actions_co" +
+      "nfig\030\001 \001(\0132,.scalekit.v1.environments.Ag" +
+      "entActionsConfigB\003\340A\003R\022agentActionsConfi" +
+      "g*W\n\022CustomDomainStatus\022\017\n\013UNSPECIFIED\020\000" +
+      "\022\013\n\007PENDING\020\001\022\n\n\006ACTIVE\020\002\022\n\n\006FAILED\020\003\022\013\n" +
+      "\007INITIAL\020\004*n\n\rAssetCategory\022\036\n\032ASSET_CAT" +
+      "EGORY_UNSPECIFIED\020\000\022\036\n\032PORTAL_CUSTOMIZAT" +
+      "ION_IMAGE\020\001\022\035\n\031PORTAL_CUSTOMIZATION_FONT" +
+      "\020\002*O\n\010TimeUnit\022!\n\035SESSION_TIME_UNIT_UNSP" +
+      "ECIFIED\020\000\022\013\n\007MINUTES\020\001\022\t\n\005HOURS\020\002\022\010\n\004DAY" +
+      "S\020\003*w\n\027OrgUserRelationshipType\022\'\n#OrgUse" +
+      "rRelationshipType_UNSPECIFIED\020\000\022\027\n\023SINGL" +
+      "E_ORGANIZATION\020\001\022\032\n\026MULTIPLE_ORGANIZATIO" +
+      "NS\020\002*[\n\025CookiePersistenceType\022%\n!CookieP" +
+      "ersistenceType_UNSPECIFIED\020\000\022\016\n\nPERSISTE" +
+      "NT\020\001\022\013\n\007SESSION\020\002*[\n\025CookieSameSiteSetti" +
+      "ng\022%\n!CookieSameSiteSetting_UNSPECIFIED\020" +
+      "\000\022\014\n\010LAX_MODE\020\001\022\r\n\tNONE_MODE\020\002*\261\001\n\036Conne" +
+      "ctedAccountUserVerifyMode\0222\n.CONNECTED_A" +
+      "CCOUNT_USER_VERIFY_MODE_UNSPECIFIED\020\000\022\031\n" +
+      "\025USER_VERIFY_MODE_NONE\020\001\022\030\n\024USER_VERIFY_" +
+      "MODE_B2B\020\002\022&\n\"USER_VERIFY_MODE_SCALEKIT_" +
+      "PLATFORM\020\0032\252[\n\022EnvironmentService\022\321\001\n\021Cr" +
+      "eateEnvironment\0222.scalekit.v1.environmen" +
+      "ts.CreateEnvironmentRequest\0323.scalekit.v" +
+      "1.environments.CreateEnvironmentResponse",
+      "\"S\202\265\030\027\n\023environments:create\030D\372\322\344\223\002\t\022\007PRE" +
       "VIEW\202\323\344\223\002#\"\024/api/v1/environments:\013enviro" +
-      "nment\022\262\001\n\021UpdateEnvironment\0222.scalekit.v" +
+      "nment\022\306\001\n\021UpdateEnvironment\0222.scalekit.v" +
       "1.environments.UpdateEnvironmentRequest\032" +
       "3.scalekit.v1.environments.UpdateEnviron" +
-      "mentResponse\"4\202\265\030\002\030@\202\323\344\223\002(2\031/api/v1/envi" +
-      "ronments/{id}:\013environment\022\305\001\n\027UpdateEnv" +
-      "ironmentDomain\0228.scalekit.v1.environment" +
-      "s.UpdateEnvironmentDomainRequest\0323.scale" +
-      "kit.v1.environments.UpdateEnvironmentRes" +
-      "ponse\";\202\265\030\002\030@\202\323\344\223\002/2 /api/v1/environment" +
-      "s/{id}:update:\013environment\022\234\001\n\016GetEnviro" +
-      "nment\022/.scalekit.v1.environments.GetEnvi" +
+      "mentResponse\"H\202\265\030\026\n\022environments:write\030@" +
+      "\202\323\344\223\002(2\031/api/v1/environments/{id}:\013envir" +
+      "onment\022\332\001\n\027UpdateEnvironmentDomain\0228.sca" +
+      "lekit.v1.environments.UpdateEnvironmentD" +
+      "omainRequest\0323.scalekit.v1.environments." +
+      "UpdateEnvironmentResponse\"P\202\265\030\027\n\023custom_" +
+      "domain:write\030@\202\323\344\223\002/2 /api/v1/environmen" +
+      "ts/{id}:update:\013environment\022\306\010\n\016GetEnvir" +
+      "onment\022/.scalekit.v1.environments.GetEnv" +
+      "ironmentRequest\0320.scalekit.v1.environmen" +
+      "ts.GetEnvironmentResponse\"\320\007\222A\355\005\n\014Enviro" +
+      "nments\022\027Get environment details\032\377\002Retrie" +
+      "ves one environment by its Scalekit iden" +
+      "tifier, including its display name, type" +
+      ", domain and custom domain status. Use t" +
+      "his to read the configuration of an envi" +
+      "ronment you already have the id for; cal" +
+      "l the list endpoint first when you do no" +
+      "t. The id must belong to the calling wor" +
+      "kspace \342\200\224 an environment in another wor" +
+      "kspace is reported as not found rather t" +
+      "han as forbidden.J\235\001\n\003200\022\225\001\n]Returns th" +
+      "e environment with its id, display name," +
+      " type, domain and domain verification st" +
+      "ate\0224\n2\0320.scalekit.v1.environments.GetEn" +
+      "vironmentResponseJ\\\n\003400\022U\nSThe id is mi" +
+      "ssing, longer than 32 characters, or doe" +
+      "s not begin with the env prefixJD\n\003404\022=" +
+      "\n;No environment with this id exists in " +
+      "the calling workspace\202\265\030\035\n\031environment_s" +
+      "ettings:read\030@\212\265\030\230\001\n\017get_environment\022\202\001G" +
+      "et one environment\'s details by id. The " +
+      "id must belong to the caller\'s own works" +
+      "pace \342\200\224 use list_environments to find v" +
+      "alid ids.\030\001\202\323\344\223\002\033\022\031/api/v1/environments/" +
+      "{id}\022\350\010\n\017ListEnvironment\0221.scalekit.v1.e" +
+      "nvironments.ListEnvironmentsRequest\0322.sc" +
+      "alekit.v1.environments.ListEnvironmentsR" +
+      "esponse\"\355\007\222A\252\005\n\014Environments\022\021List envir" +
+      "onments\032\240\003Retrieves a paginated list of " +
+      "the environments in the calling workspac" +
+      "e, such as Development, Staging and Prod" +
+      "uction. Use this to discover environment" +
+      " identifiers before calling any environm" +
+      "ent-scoped endpoint. Control the page wi" +
+      "th `page_size` and pass the `next_page_t" +
+      "oken` from the previous response as `pag" +
+      "e_token` to fetch the following page; `t" +
+      "otal_size` reports how many environments" +
+      " the workspace has in all.J\234\001\n\003200\022\224\001\nZR" +
+      "eturns the environments in the workspace" +
+      ", the total count, and a cursor for the " +
+      "next page\0226\n4\0322.scalekit.v1.environments" +
+      ".ListEnvironmentsResponseJE\n\003400\022>\n<The " +
+      "page token is not a cursor issued by a p" +
+      "revious response\202\265\030\002\030@\212\265\030\230\002\n\021list_enviro" +
+      "nments\022\200\002List every environment (e.g. De" +
+      "velopment, Staging, Production) in the c" +
+      "aller\'s own workspace, with id, display " +
+      "name, domain, and type. Use this to help" +
+      " the member find or confirm an environme" +
+      "nt before calling get_environment or any" +
+      " environment-scoped tool.\030\001\202\323\344\223\002\026\022\024/api/" +
+      "v1/environments\022\206\001\n\021DeleteEnvironment\0222." +
+      "scalekit.v1.environments.DeleteEnvironme" +
+      "ntRequest\032\026.google.protobuf.Empty\"%\202\265\030\000\202" +
+      "\323\344\223\002\033*\031/api/v1/environments/{id}\022\274\001\n\025Get" +
+      "RequiredDNSRecords\022..scalekit.v1.environ" +
+      "ments.GetDNSRecordsRequest\032/.scalekit.v1" +
+      ".environments.GetDNSRecordsResponse\"B\202\265\030" +
+      "\026\n\022custom_domain:read\030D\202\323\344\223\002\"\"\035/api/v1/e" +
+      "nvironments/{id}/dns:\001*\022\246\001\n\020VerifyDNSRec" +
+      "ords\022..scalekit.v1.environments.GetDNSRe" +
+      "cordsRequest\032\026.google.protobuf.Empty\"J\202\265" +
+      "\030\027\n\023custom_domain:write\030D\202\323\344\223\002)\"$/api/v1" +
+      "/environments/{id}/dns:verify:\001*\022\336\001\n\022Cre" +
+      "ateCustomDomain\0223.scalekit.v1.environmen" +
+      "ts.CreateCustomDomainRequest\0324.scalekit." +
+      "v1.environments.CreateCustomDomainRespon" +
+      "se\"]\202\265\030\027\n\023custom_domain:write\030D\372\322\344\223\002\t\022\007P" +
+      "REVIEW\202\323\344\223\002-\"(/api/v1/environments/{id}/" +
+      "custom-domains:\001*\022\340\001\n\027CheckCustomDomainS" +
+      "tatus\022/.scalekit.v1.environments.GetEnvi" +
       "ronmentRequest\0320.scalekit.v1.environment" +
-      "s.GetEnvironmentResponse\"\'\202\265\030\002\030@\202\323\344\223\002\033\022\031" +
-      "/api/v1/environments/{id}\022\234\001\n\017ListEnviro" +
-      "nment\0221.scalekit.v1.environments.ListEnv" +
-      "ironmentsRequest\0322.scalekit.v1.environme" +
-      "nts.ListEnvironmentsResponse\"\"\202\265\030\002\030@\202\323\344\223" +
-      "\002\026\022\024/api/v1/environments\022\206\001\n\021DeleteEnvir" +
-      "onment\0222.scalekit.v1.environments.Delete" +
-      "EnvironmentRequest\032\026.google.protobuf.Emp",
-      "ty\"%\202\265\030\000\202\323\344\223\002\033*\031/api/v1/environments/{id" +
-      "}\022\250\001\n\025GetRequiredDNSRecords\022..scalekit.v" +
-      "1.environments.GetDNSRecordsRequest\032/.sc" +
-      "alekit.v1.environments.GetDNSRecordsResp" +
-      "onse\".\202\265\030\002\030D\202\323\344\223\002\"\"\035/api/v1/environments" +
-      "/{id}/dns:\001*\022\221\001\n\020VerifyDNSRecords\022..scal" +
-      "ekit.v1.environments.GetDNSRecordsReques" +
-      "t\032\026.google.protobuf.Empty\"5\202\265\030\002\030D\202\323\344\223\002)\"" +
-      "$/api/v1/environments/{id}/dns:verify:\001*" +
-      "\022\311\001\n\022CreateCustomDomain\0223.scalekit.v1.en" +
-      "vironments.CreateCustomDomainRequest\0324.s" +
-      "calekit.v1.environments.CreateCustomDoma" +
-      "inResponse\"H\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002-\"" +
-      "(/api/v1/environments/{id}/custom-domain" +
-      "s:\001*\022\314\001\n\027CheckCustomDomainStatus\022/.scale" +
-      "kit.v1.environments.GetEnvironmentReques" +
-      "t\0320.scalekit.v1.environments.GetEnvironm" +
-      "entResponse\"N\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0023" +
-      "\"./api/v1/environments/{id}/custom-domai" +
-      "ns:check:\001*\022\347\001\n\032GenerateNewSamlCertifica" +
-      "te\0228.scalekit.v1.environments.GenerateSa" +
-      "mlCertificateRequest\0329.scalekit.v1.envir" +
-      "onments.GenerateSamlCertificateResponse\"" +
-      "T\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0029\"4/api/v1/en" +
-      "vironments/{id}/saml-certificates:genera" +
-      "te:\001*\022\300\002\n\031UpdatePortalCustomization\022:.sc" +
-      "alekit.v1.environments.UpdatePortalCusto" +
-      "mizationRequest\032;.scalekit.v1.environmen" +
-      "ts.UpdatePortalCustomizationResponse\"\251\001\202" +
-      "\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\215\001\032//api/v1/env" +
-      "ironments/{id}/portal_customizations:\026cu" +
-      "stomization_settingsZB\032(/api/v1/environm" +
-      "ents/{id}/customizations:\026customization_" +
-      "settings\022\351\001\n\026GetPortalCustomization\0227.sc" +
-      "alekit.v1.environments.GetPortalCustomiz" +
-      "ationRequest\0328.scalekit.v1.environments." +
-      "GetPortalCustomizationResponse\"\\\202\265\030\003\030\340\001\202" +
-      "\323\344\223\002O\022\035/api/v1/portal_customizationsZ.\022," +
-      "/api/v1/environments/-/portal_customizat" +
-      "ions\022\304\001\n\024CreateAssetUploadURL\0225.scalekit" +
-      ".v1.environments.CreateAssetUploadUrlReq" +
-      "uest\0326.scalekit.v1.environments.CreateAs" +
-      "setUploadUrlResponse\"=\202\265\030\002\030@\202\323\344\223\0021\"\037/api" +
-      "/v1/environments/{id}/asset:\016asset_setti" +
-      "ngs\022\254\001\n\016UpdateFeatures\022/.scalekit.v1.env" +
-      "ironments.UpdateFeaturesRequest\032-.scalek" +
-      "it.v1.environments.GetFeaturesResponse\":" +
-      "\202\265\030\002\030@\202\323\344\223\002.\032\"/api/v1/environments/{id}/" +
-      "features:\010features\022\313\001\n\020EnableFSAFeature\022" +
-      "1.scalekit.v1.environments.EnableFSAFeat" +
-      "ureRequest\032\026.google.protobuf.Empty\"l\202\265\030\002" +
-      "\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002Q\"-/api/v1/environ" +
-      "ments/{id}/features/fsa/enable:\001*Z\035\"\033/ap" +
-      "i/v1/features/fsa/enable\022\201\001\n\021DisableFSAF" +
-      "eature\022\026.google.protobuf.Empty\032\026.google." +
-      "protobuf.Empty\"<\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
-      "\223\002!\"\034/api/v1/features/fsa/disable:\001*\022\235\001\n" +
-      "\rEnableFeature\022..scalekit.v1.environment" +
-      "s.EnableFeatureRequest\032\026.google.protobuf" +
-      ".Empty\"D\202\265\030\002\030`\202\323\344\223\0028\"6/api/v1/environmen" +
-      "ts/{id}/features/{feature_id}:enable\022\240\001\n" +
-      "\016DisableFeature\022/.scalekit.v1.environmen" +
-      "ts.DisableFeatureRequest\032\026.google.protob" +
-      "uf.Empty\"E\202\265\030\002\030`\202\323\344\223\0029\"7/api/v1/environm" +
-      "ents/{id}/features/{feature_id}:disable\022" +
-      "\212\001\n\013GetFeatures\022,.scalekit.v1.environmen" +
-      "ts.GetFeaturesRequest\032-.scalekit.v1.envi" +
-      "ronments.GetFeaturesResponse\"\036\202\265\030\002\030T\202\323\344\223" +
-      "\002\022\022\020/api/v1/features\022\271\004\n\037GetHostScopedPu" +
-      "blicFeatureFlags\022\026.google.protobuf.Empty" +
-      "\032A.scalekit.v1.environments.GetHostScope" +
-      "dPublicFeatureFlagsResponse\"\272\003\222A\362\002\n\014Envi" +
-      "ronments\022%List host-scoped public featur" +
-      "e flags\032\305\001Resolves the environment from " +
-      "the request host only (no environment pa" +
-      "th, query, or header). Returns allowlist" +
-      "ed OpenFeature values; no bearer token. " +
-      "404 if the host does not map to an envir" +
-      "onment.J2\n\003200\022+\n)Allowlisted flag keys " +
-      "and resolved valuesJ?\n\003404\0228\n6No environ" +
-      "ment resolved from host or workspace UI " +
-      "host\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002)\022\'/api/v1" +
-      "/environments:publicFeatureFlags\022\204\002\n Cre" +
-      "ateEnvironmentSessionSettings\022A.scalekit" +
-      ".v1.environments.CreateEnvironmentSessio" +
-      "nSettingsRequest\032B.scalekit.v1.environme" +
-      "nts.CreateEnvironmentSessionSettingsResp" +
-      "onse\"Y\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002>\"*/api/" +
-      "v1/environments/{id}/session-settings:\020s" +
-      "ession_settings\022\210\002\n\037CreateEnvironmentUse" +
-      "rManagement\022@.scalekit.v1.environments.C" +
-      "reateEnvironmentUserManagementRequest\032A." +
-      "scalekit.v1.environments.CreateEnvironme" +
-      "ntUserManagementResponse\"`\202\265\030\002\030D\372\322\344\223\002\t\022\007" +
-      "PREVIEW\202\323\344\223\002E\"2/api/v1/environments/{id}" +
-      "/settings/user-management:\017user_manageme" +
-      "nt\022\332\001\n\035GetEnvironmentSessionSettings\022>.s" +
-      "calekit.v1.environments.GetEnvironmentSe" +
-      "ssionSettingsRequest\032?.scalekit.v1.envir" +
-      "onments.GetEnvironmentSessionSettingsRes" +
-      "ponse\"8\202\265\030\002\030T\202\323\344\223\002,\022*/api/v1/environment" +
-      "s/{id}/session-settings\022\337\001\n\034GetEnvironme" +
-      "ntUserManagement\022=.scalekit.v1.environme" +
-      "nts.GetEnvironmentUserManagementRequest\032" +
-      ">.scalekit.v1.environments.GetEnvironmen" +
-      "tUserManagementResponse\"@\202\265\030\002\030T\202\323\344\223\0024\0222/" +
-      "api/v1/environments/{id}/settings/user-m" +
-      "anagement\022\326\001\n\026GetEnvironmentTestUser\0227.s" +
-      "calekit.v1.environments.GetEnvironmentTe" +
-      "stUserRequest\0328.scalekit.v1.environments" +
-      ".GetEnvironmentTestUserResponse\"I\202\265\030\002\030T\372" +
-      "\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002.\022,/api/v1/environmen" +
-      "ts/{id}/settings/test-user\022\204\002\n UpdateEnv" +
-      "ironmentSessionSettings\022A.scalekit.v1.en" +
-      "vironments.UpdateEnvironmentSessionSetti" +
-      "ngsRequest\032B.scalekit.v1.environments.Up" +
-      "dateEnvironmentSessionSettingsResponse\"Y" +
-      "\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002>2*/api/v1/env" +
-      "ironments/{id}/session-settings:\020session" +
-      "_settings\022\210\002\n\037UpdateEnvironmentUserManag" +
-      "ement\022@.scalekit.v1.environments.UpdateE" +
-      "nvironmentUserManagementRequest\032A.scalek" +
-      "it.v1.environments.UpdateEnvironmentUser" +
-      "ManagementResponse\"`\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIE" +
-      "W\202\323\344\223\002E22/api/v1/environments/{id}/setti" +
-      "ngs/user-management:\017user_management\022\206\004\n" +
-      "\030CreateAgentActionsConfig\0229.scalekit.v1." +
-      "environments.CreateAgentActionsConfigReq" +
-      "uest\032:.scalekit.v1.environments.CreateAg" +
-      "entActionsConfigResponse\"\362\002\222A\213\002\n\014Environ" +
-      "ments\022\033Create agent actions config\032:Crea" +
-      "tes the agent actions configuration for " +
-      "an environmentJ2\n\003200\022+\n)Agent actions c" +
-      "onfig created successfullyJN\n\003400\022G\nEInv" +
-      "alid request - missing or invalid fields" +
-      ", or config already existsJ\036\n\003404\022\027\n\025Env" +
-      "ironment not found\202\265\030\002\030@\372\322\344\223\002\t\022\007PREVIEW\202" +
+      "s.GetEnvironmentResponse\"b\202\265\030\026\n\022custom_d" +
+      "omain:read\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0023\"./api/" +
+      "v1/environments/{id}/custom-domains:chec" +
+      "k:\001*\022\362\001\n\032GenerateNewSamlCertificate\0228.sc" +
+      "alekit.v1.environments.GenerateSamlCerti" +
+      "ficateRequest\0329.scalekit.v1.environments" +
+      ".GenerateSamlCertificateResponse\"_\202\265\030\r\n\t" +
+      "sso:write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0029\"4/api/v" +
+      "1/environments/{id}/saml-certificates:ge" +
+      "nerate:\001*\022\320\002\n\031UpdatePortalCustomization\022" +
+      ":.scalekit.v1.environments.UpdatePortalC" +
+      "ustomizationRequest\032;.scalekit.v1.enviro" +
+      "nments.UpdatePortalCustomizationResponse" +
+      "\"\271\001\202\265\030\022\n\016branding:write\030D\372\322\344\223\002\t\022\007PREVIEW" +
+      "\202\323\344\223\002\215\001\032//api/v1/environments/{id}/porta" +
+      "l_customizations:\026customization_settings" +
+      "ZB\032(/api/v1/environments/{id}/customizat" +
+      "ions:\026customization_settings\022\370\001\n\026GetPort" +
+      "alCustomization\0227.scalekit.v1.environmen" +
+      "ts.GetPortalCustomizationRequest\0328.scale" +
+      "kit.v1.environments.GetPortalCustomizati" +
+      "onResponse\"k\202\265\030\022\n\rbranding:read\030\340\001\202\323\344\223\002O" +
+      "\022\035/api/v1/portal_customizationsZ.\022,/api/" +
+      "v1/environments/-/portal_customizations\022" +
+      "\324\001\n\024CreateAssetUploadURL\0225.scalekit.v1.e" +
+      "nvironments.CreateAssetUploadUrlRequest\032" +
+      "6.scalekit.v1.environments.CreateAssetUp" +
+      "loadUrlResponse\"M\202\265\030\022\n\016branding:write\030@\202" +
+      "\323\344\223\0021\"\037/api/v1/environments/{id}/asset:\016" +
+      "asset_settings\022\310\001\n\016UpdateFeatures\022/.scal" +
+      "ekit.v1.environments.UpdateFeaturesReque" +
+      "st\032-.scalekit.v1.environments.GetFeature" +
+      "sResponse\"V\202\265\030\036\n\032environment_settings:wr" +
+      "ite\030@\202\323\344\223\002.\032\"/api/v1/environments/{id}/f" +
+      "eatures:\010features\022\350\001\n\020EnableFSAFeature\0221" +
+      ".scalekit.v1.environments.EnableFSAFeatu" +
+      "reRequest\032\026.google.protobuf.Empty\"\210\001\202\265\030\036" +
+      "\n\032environment_settings:write\030D\372\322\344\223\002\t\022\007PR" +
+      "EVIEW\202\323\344\223\002Q\"-/api/v1/environments/{id}/f" +
+      "eatures/fsa/enable:\001*Z\035\"\033/api/v1/feature" +
+      "s/fsa/enable\022\235\001\n\021DisableFSAFeature\022\026.goo" +
+      "gle.protobuf.Empty\032\026.google.protobuf.Emp" +
+      "ty\"X\202\265\030\036\n\032environment_settings:write\030D\372\322" +
+      "\344\223\002\t\022\007PREVIEW\202\323\344\223\002!\"\034/api/v1/features/fs" +
+      "a/disable:\001*\022\271\001\n\rEnableFeature\022..scaleki" +
+      "t.v1.environments.EnableFeatureRequest\032\026" +
+      ".google.protobuf.Empty\"`\202\265\030\036\n\032environmen" +
+      "t_settings:write\030`\202\323\344\223\0028\"6/api/v1/enviro" +
+      "nments/{id}/features/{feature_id}:enable" +
+      "\022\274\001\n\016DisableFeature\022/.scalekit.v1.enviro" +
+      "nments.DisableFeatureRequest\032\026.google.pr" +
+      "otobuf.Empty\"a\202\265\030\036\n\032environment_settings" +
+      ":write\030`\202\323\344\223\0029\"7/api/v1/environments/{id" +
+      "}/features/{feature_id}:disable\022\245\001\n\013GetF" +
+      "eatures\022,.scalekit.v1.environments.GetFe" +
+      "aturesRequest\032-.scalekit.v1.environments" +
+      ".GetFeaturesResponse\"9\202\265\030\035\n\031environment_" +
+      "settings:read\030T\202\323\344\223\002\022\022\020/api/v1/features\022" +
+      "\271\004\n\037GetHostScopedPublicFeatureFlags\022\026.go" +
+      "ogle.protobuf.Empty\032A.scalekit.v1.enviro" +
+      "nments.GetHostScopedPublicFeatureFlagsRe" +
+      "sponse\"\272\003\222A\362\002\n\014Environments\022%List host-s" +
+      "coped public feature flags\032\305\001Resolves th" +
+      "e environment from the request host only" +
+      " (no environment path, query, or header)" +
+      ". Returns allowlisted OpenFeature values" +
+      "; no bearer token. 404 if the host does " +
+      "not map to an environment.J2\n\003200\022+\n)All" +
+      "owlisted flag keys and resolved valuesJ?" +
+      "\n\003404\0228\n6No environment resolved from ho" +
+      "st or workspace UI host\202\265\030\002\030\001\372\322\344\223\002\t\022\007PRE" +
+      "VIEW\202\323\344\223\002)\022\'/api/v1/environments:publicF" +
+      "eatureFlags\022\240\002\n CreateEnvironmentSession" +
+      "Settings\022A.scalekit.v1.environments.Crea" +
+      "teEnvironmentSessionSettingsRequest\032B.sc" +
+      "alekit.v1.environments.CreateEnvironment" +
+      "SessionSettingsResponse\"u\202\265\030\036\n\032environme" +
+      "nt_settings:write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002>" +
+      "\"*/api/v1/environments/{id}/session-sett" +
+      "ings:\020session_settings\022\244\002\n\037CreateEnviron" +
+      "mentUserManagement\022@.scalekit.v1.environ" +
+      "ments.CreateEnvironmentUserManagementReq" +
+      "uest\032A.scalekit.v1.environments.CreateEn" +
+      "vironmentUserManagementResponse\"|\202\265\030\036\n\032e" +
+      "nvironment_settings:write\030D\372\322\344\223\002\t\022\007PREVI" +
+      "EW\202\323\344\223\002E\"2/api/v1/environments/{id}/sett" +
+      "ings/user-management:\017user_management\022\365\001" +
+      "\n\035GetEnvironmentSessionSettings\022>.scalek" +
+      "it.v1.environments.GetEnvironmentSession" +
+      "SettingsRequest\032?.scalekit.v1.environmen" +
+      "ts.GetEnvironmentSessionSettingsResponse" +
+      "\"S\202\265\030\035\n\031environment_settings:read\030T\202\323\344\223\002" +
+      ",\022*/api/v1/environments/{id}/session-set" +
+      "tings\022\372\001\n\034GetEnvironmentUserManagement\022=" +
+      ".scalekit.v1.environments.GetEnvironment" +
+      "UserManagementRequest\032>.scalekit.v1.envi" +
+      "ronments.GetEnvironmentUserManagementRes" +
+      "ponse\"[\202\265\030\035\n\031environment_settings:read\030T" +
+      "\202\323\344\223\0024\0222/api/v1/environments/{id}/settin" +
+      "gs/user-management\022\361\001\n\026GetEnvironmentTes" +
+      "tUser\0227.scalekit.v1.environments.GetEnvi" +
+      "ronmentTestUserRequest\0328.scalekit.v1.env" +
+      "ironments.GetEnvironmentTestUserResponse" +
+      "\"d\202\265\030\035\n\031environment_settings:read\030T\372\322\344\223\002" +
+      "\t\022\007PREVIEW\202\323\344\223\002.\022,/api/v1/environments/{" +
+      "id}/settings/test-user\022\240\002\n UpdateEnviron" +
+      "mentSessionSettings\022A.scalekit.v1.enviro" +
+      "nments.UpdateEnvironmentSessionSettingsR" +
+      "equest\032B.scalekit.v1.environments.Update" +
+      "EnvironmentSessionSettingsResponse\"u\202\265\030\036" +
+      "\n\032environment_settings:write\030D\372\322\344\223\002\t\022\007PR" +
+      "EVIEW\202\323\344\223\002>2*/api/v1/environments/{id}/s" +
+      "ession-settings:\020session_settings\022\244\002\n\037Up" +
+      "dateEnvironmentUserManagement\022@.scalekit" +
+      ".v1.environments.UpdateEnvironmentUserMa" +
+      "nagementRequest\032A.scalekit.v1.environmen" +
+      "ts.UpdateEnvironmentUserManagementRespon" +
+      "se\"|\202\265\030\036\n\032environment_settings:write\030D\372\322" +
+      "\344\223\002\t\022\007PREVIEW\202\323\344\223\002E22/api/v1/environment" +
+      "s/{id}/settings/user-management:\017user_ma" +
+      "nagement\022\242\004\n\030CreateAgentActionsConfig\0229." +
+      "scalekit.v1.environments.CreateAgentActi" +
+      "onsConfigRequest\032:.scalekit.v1.environme" +
+      "nts.CreateAgentActionsConfigResponse\"\216\003\222" +
+      "A\213\002\n\014Environments\022\033Create agent actions " +
+      "config\032:Creates the agent actions config" +
+      "uration for an environmentJ2\n\003200\022+\n)Age" +
+      "nt actions config created successfullyJN" +
+      "\n\003400\022G\nEInvalid request - missing or in" +
+      "valid fields, or config already existsJ\036" +
+      "\n\003404\022\027\n\025Environment not found\202\265\030\036\n\032envi" +
+      "ronment_settings:write\030@\372\322\344\223\002\t\022\007PREVIEW\202" +
       "\323\344\223\002H\"0/api/v1/environments/{id}/setting" +
-      "s/agent-actions:\024agent_actions_config\022\243\003" +
+      "s/agent-actions:\024agent_actions_config\022\276\003" +
       "\n\025GetAgentActionsConfig\0226.scalekit.v1.en" +
       "vironments.GetAgentActionsConfigRequest\032" +
       "7.scalekit.v1.environments.GetAgentActio" +
-      "nsConfigResponse\"\230\002\222A\307\001\n\014Environments\022\030G" +
+      "nsConfigResponse\"\263\002\222A\307\001\n\014Environments\022\030G" +
       "et agent actions config\032=Retrieves the a" +
       "gent actions configuration for an enviro" +
       "nment.J4\n\003200\022-\n+Agent actions config re" +
       "trieved successfullyJ(\n\003404\022!\n\037Environme" +
-      "nt or config not found\202\265\030\002\030@\372\322\344\223\002\t\022\007PREV" +
-      "IEW\202\323\344\223\0022\0220/api/v1/environments/{id}/set" +
-      "tings/agent-actions\022\226\004\n\030UpdateAgentActio" +
-      "nsConfig\0229.scalekit.v1.environments.Upda" +
-      "teAgentActionsConfigRequest\032:.scalekit.v" +
-      "1.environments.UpdateAgentActionsConfigR" +
-      "esponse\"\202\003\222A\233\002\n\014Environments\022\033Update age" +
-      "nt actions config\032:Updates the agent act" +
-      "ions configuration for an environmentJ2\n" +
-      "\003200\022+\n)Agent actions config updated suc" +
-      "cessfullyJ^\n\003400\022W\nUInvalid request - mi" +
-      "ssing or invalid fields, or mode not all" +
-      "owed for this environmentJ\036\n\003404\022\027\n\025Envi" +
-      "ronment not found\202\265\030\002\030@\372\322\344\223\002\t\022\007PREVIEW\202\323" +
-      "\344\223\002H20/api/v1/environments/{id}/settings" +
-      "/agent-actions:\024agent_actions_config\022\342\001\n" +
-      "\031UpdateEnvironmentTestUser\022:.scalekit.v1" +
-      ".environments.UpdateEnvironmentTestUserR" +
-      "equest\032;.scalekit.v1.environments.Update" +
-      "EnvironmentTestUserResponse\"L\202\265\030\002\030D\372\322\344\223\002" +
-      "\t\022\007PREVIEW\202\323\344\223\00212,/api/v1/environments/{" +
-      "id}/settings/test-user:\001*\022\245\001\n\nGetContext" +
-      "\022+.scalekit.v1.environments.GetContextRe" +
-      "quest\032,.scalekit.v1.environments.GetCont" +
-      "extResponse\"<\202\265\030\002\030@\202\323\344\223\0020\022./api/v1/envir" +
-      "onments/{environment_id}/contexts\022\236\001\n\rUp" +
-      "dateContext\022..scalekit.v1.environments.U" +
-      "pdateContextRequest\032\026.google.protobuf.Em" +
-      "pty\"E\202\265\030\002\030@\202\323\344\223\0029\032./api/v1/environments/" +
-      "{environment_id}/contexts:\007context\022\357\001\n\021G" +
-      "etCurrentSession\0222.scalekit.v1.environme" +
-      "nts.GetCurrentSessionRequest\0323.scalekit." +
-      "v1.environments.GetCurrentSessionRespons" +
-      "e\"q\202\265\030\003\030\360\001\202\323\344\223\002d\022%/api/v1/environments/{" +
-      "id}/sessions:meZ$\022\"/api/v1/environments/" +
-      "-/sessions:meZ\025\022\023/api/v1/sessions:me\022\261\001\n" +
-      "\024GetScalekitResources\0221.scalekit.v1.envi" +
-      "ronments.ScalekitResourceRequest\0322.scale" +
-      "kit.v1.environments.ScalekitResourceResp" +
-      "onse\"2\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\027\"\022/api/" +
-      "v1/fetch:bulk:\001*\022\320\003\n\017PortalBootstrap\0220.s" +
-      "calekit.v1.environments.PortalBootstrapR" +
-      "equest\0321.scalekit.v1.environments.Portal" +
-      "BootstrapResponse\"\327\002\222A\255\002\n\006Portal\022\036Retrie" +
-      "ve portal bootstrap data\032\227\001Returns all d" +
-      "ata needed to initialize the customer po" +
-      "rtal in a single request, combining sess" +
-      "ion, portal customizations, organization" +
-      ", and connections.J5\n\003200\022.\n,Successfull" +
-      "y retrieved portal bootstrap dataJ2\n\003401" +
-      "\022+\n)Unauthorized - invalid or expired se" +
-      "ssion\202\265\030\002\030`\202\323\344\223\002\032\022\030/api/v1/portal/bootst" +
-      "rapB\371\001\n*com.scalekit.grpc.scalekit.v1.en" +
-      "vironmentsB\021EnvironmentsProtoP\001Z6github." +
-      "com/scalekit-inc/scalekit/pkg/grpc/envir" +
-      "onments\242\002\003SVE\252\002\030Scalekit.V1.Environments" +
-      "\312\002\030Scalekit\\V1\\Environments\342\002$Scalekit\\V" +
-      "1\\Environments\\GPBMetadata\352\002\032Scalekit::V" +
-      "1::Environmentsb\006proto3"
+      "nt or config not found\202\265\030\035\n\031environment_" +
+      "settings:read\030@\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0022\0220/a" +
+      "pi/v1/environments/{id}/settings/agent-a" +
+      "ctions\022\262\004\n\030UpdateAgentActionsConfig\0229.sc" +
+      "alekit.v1.environments.UpdateAgentAction" +
+      "sConfigRequest\032:.scalekit.v1.environment" +
+      "s.UpdateAgentActionsConfigResponse\"\236\003\222A\233" +
+      "\002\n\014Environments\022\033Update agent actions co" +
+      "nfig\032:Updates the agent actions configur" +
+      "ation for an environmentJ2\n\003200\022+\n)Agent" +
+      " actions config updated successfullyJ^\n\003" +
+      "400\022W\nUInvalid request - missing or inva" +
+      "lid fields, or mode not allowed for this" +
+      " environmentJ\036\n\003404\022\027\n\025Environment not f" +
+      "ound\202\265\030\036\n\032environment_settings:write\030@\372\322" +
+      "\344\223\002\t\022\007PREVIEW\202\323\344\223\002H20/api/v1/environment" +
+      "s/{id}/settings/agent-actions:\024agent_act" +
+      "ions_config\022\376\001\n\031UpdateEnvironmentTestUse" +
+      "r\022:.scalekit.v1.environments.UpdateEnvir" +
+      "onmentTestUserRequest\032;.scalekit.v1.envi" +
+      "ronments.UpdateEnvironmentTestUserRespon" +
+      "se\"h\202\265\030\036\n\032environment_settings:write\030D\372\322" +
+      "\344\223\002\t\022\007PREVIEW\202\323\344\223\00212,/api/v1/environment" +
+      "s/{id}/settings/test-user:\001*\022\300\001\n\nGetCont" +
+      "ext\022+.scalekit.v1.environments.GetContex" +
+      "tRequest\032,.scalekit.v1.environments.GetC" +
+      "ontextResponse\"W\202\265\030\035\n\031environment_settin" +
+      "gs:read\030@\202\323\344\223\0020\022./api/v1/environments/{e" +
+      "nvironment_id}/contexts\022\272\001\n\rUpdateContex" +
+      "t\022..scalekit.v1.environments.UpdateConte" +
+      "xtRequest\032\026.google.protobuf.Empty\"a\202\265\030\036\n" +
+      "\032environment_settings:write\030@\202\323\344\223\0029\032./ap" +
+      "i/v1/environments/{environment_id}/conte" +
+      "xts:\007context\022\213\002\n\021GetCurrentSession\0222.sca" +
+      "lekit.v1.environments.GetCurrentSessionR" +
+      "equest\0323.scalekit.v1.environments.GetCur" +
+      "rentSessionResponse\"\214\001\202\265\030\036\n\031environment_" +
+      "settings:read\030\360\001\202\323\344\223\002d\022%/api/v1/environm" +
+      "ents/{id}/sessions:meZ$\022\"/api/v1/environ" +
+      "ments/-/sessions:meZ\025\022\023/api/v1/sessions:" +
+      "me\022\314\001\n\024GetScalekitResources\0221.scalekit.v" +
+      "1.environments.ScalekitResourceRequest\0322" +
+      ".scalekit.v1.environments.ScalekitResour" +
+      "ceResponse\"M\202\265\030\035\n\031environment_settings:r" +
+      "ead\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\027\"\022/api/v1/fetc" +
+      "h:bulk:\001*\022\353\003\n\017PortalBootstrap\0220.scalekit" +
+      ".v1.environments.PortalBootstrapRequest\032" +
+      "1.scalekit.v1.environments.PortalBootstr" +
+      "apResponse\"\362\002\222A\255\002\n\006Portal\022\036Retrieve port" +
+      "al bootstrap data\032\227\001Returns all data nee" +
+      "ded to initialize the customer portal in" +
+      " a single request, combining session, po" +
+      "rtal customizations, organization, and c" +
+      "onnections.J5\n\003200\022.\n,Successfully retri" +
+      "eved portal bootstrap dataJ2\n\003401\022+\n)Una" +
+      "uthorized - invalid or expired session\202\265" +
+      "\030\035\n\031environment_settings:read\030`\202\323\344\223\002\032\022\030/" +
+      "api/v1/portal/bootstrapB\371\001\n*com.scalekit" +
+      ".grpc.scalekit.v1.environmentsB\021Environm" +
+      "entsProtoP\001Z6github.com/scalekit-inc/sca" +
+      "lekit/pkg/grpc/environments\242\002\003SVE\252\002\030Scal" +
+      "ekit.V1.Environments\312\002\030Scalekit\\V1\\Envir" +
+      "onments\342\002$Scalekit\\V1\\Environments\\GPBMe" +
+      "tadata\352\002\032Scalekit::V1::Environmentsb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1030,6 +1120,7 @@ public final class EnvironmentsProto {
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
           com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor(),
+          com.scalekit.grpc.scalekit.v1.billing.BillingProto.getDescriptor(),
           com.scalekit.grpc.scalekit.v1.commons.CommonsProto.getDescriptor(),
           com.scalekit.grpc.scalekit.v1.connections.ConnectionsProto.getDescriptor(),
           com.scalekit.grpc.scalekit.v1.options.OptionsProto.getDescriptor(),
@@ -1076,7 +1167,7 @@ public final class EnvironmentsProto {
     internal_static_scalekit_v1_environments_CreateEnvironment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_environments_CreateEnvironment_descriptor,
-        new java.lang.String[] { "DisplayName", "RegionCode", "Type", "AuthenticationMode", });
+        new java.lang.String[] { "DisplayName", "RegionCode", "Type", "AuthenticationMode", "Plans", });
     internal_static_scalekit_v1_environments_UpdateEnvironment_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_scalekit_v1_environments_UpdateEnvironment_fieldAccessorTable = new
@@ -1376,7 +1467,7 @@ public final class EnvironmentsProto {
     internal_static_scalekit_v1_environments_UserManagement_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_environments_UserManagement_descriptor,
-        new java.lang.String[] { "AllowDuplicateUserIdentities", "AllowMultipleMemberships", "AllowOrganizationSignup", "OrgUserRelationship", "EnableMaxUsersLimit", "MaxUsersLimit", "InvitationExpiry", "BlockDisposableEmailDomains", "BlockPublicEmailDomains", "SyncUserProfileOnSignin", });
+        new java.lang.String[] { "AllowDuplicateUserIdentities", "AllowMultipleMemberships", "AllowOrganizationSignup", "OrgUserRelationship", "EnableMaxUsersLimit", "MaxUsersLimit", "InvitationExpiry", "BlockDisposableEmailDomains", "BlockPublicEmailDomains", "SyncUserProfileOnSignin", "EnableBotDetection", "EnableFailOpen", });
     internal_static_scalekit_v1_environments_TestUser_descriptor =
       getDescriptor().getMessageTypes().get(57);
     internal_static_scalekit_v1_environments_TestUser_fieldAccessorTable = new
@@ -1505,6 +1596,8 @@ public final class EnvironmentsProto {
     registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
+    registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.agentField);
+    registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.agentTool);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
@@ -1519,6 +1612,7 @@ public final class EnvironmentsProto {
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
     com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor();
+    com.scalekit.grpc.scalekit.v1.billing.BillingProto.getDescriptor();
     com.scalekit.grpc.scalekit.v1.commons.CommonsProto.getDescriptor();
     com.scalekit.grpc.scalekit.v1.connections.ConnectionsProto.getDescriptor();
     com.scalekit.grpc.scalekit.v1.options.OptionsProto.getDescriptor();
