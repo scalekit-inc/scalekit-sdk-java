@@ -52,4 +52,19 @@ public class ScalekitClientKeepaliveTest {
         // timeout is harmless - it's never read.
         assertDoesNotThrow(() -> new ScalekitClient(SITE, "id", "secret", 0, -1));
     }
+
+    // A ping interval longer than IDLE_TIMEOUT_SECONDS would never get a chance to fire - the
+    // channel idles itself out first, silently defeating the caller's own chosen cadence.
+    @Test
+    void rejectsKeepAliveTimeAboveTheIdleTimeoutCeiling() {
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class,
+                () -> new ScalekitClient(SITE, "id", "secret", ScalekitClient.IDLE_TIMEOUT_SECONDS + 1, 10));
+        assertTrue(ex.getMessage().contains(String.valueOf(ScalekitClient.IDLE_TIMEOUT_SECONDS)));
+    }
+
+    @Test
+    void acceptsExactlyTheIdleTimeoutCeiling() {
+        assertDoesNotThrow(
+                () -> new ScalekitClient(SITE, "id", "secret", ScalekitClient.IDLE_TIMEOUT_SECONDS, 10));
+    }
 }

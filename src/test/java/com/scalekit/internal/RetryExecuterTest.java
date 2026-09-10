@@ -1,7 +1,7 @@
+package com.scalekit.internal;
+
 import com.scalekit.api.AuthClient;
 import com.scalekit.exceptions.APIException;
-import com.scalekit.internal.RetryExecuter;
-import com.scalekit.internal.ScalekitCredentials;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import org.junit.jupiter.api.AfterEach;
@@ -29,7 +29,9 @@ public class RetryExecuterTest {
         credentials = new ScalekitCredentials(authClient);
         // Swap out the real Thread.sleep so tests exercising retries don't pay the (now much
         // larger, 1s-30s-capped) production backoff in wall-clock time - see backoffBeforeRetry's
-        // javadoc-equivalent comment for why the cap was widened.
+        // javadoc-equivalent comment for why the cap was widened. Package-private access is why
+        // this test lives in com.scalekit.internal instead of the default package like most of
+        // this SDK's other tests - sleeper deliberately isn't public production API surface.
         RetryExecuter.sleeper = recordedSleeps::add;
     }
 

@@ -63,6 +63,19 @@ public class ScalekitClient {
      */
     public static final long MIN_KEEPALIVE_TIME_SECONDS = 60;
 
+    /**
+     * How long, with zero active RPCs, before the client proactively idles the channel and
+     * reconnects on the next call, rather than racing a new call against the backend's own
+     * MaxConnectionIdle (5 minutes, see escalekit/scalekit/cmd/grpc.go) - the same shape as the
+     * Node SDK's idleConnectionTimeoutMs. This is independent of {@code keepAliveTimeSeconds}:
+     * proactive idle-eviction and ping-based liveness checking are separate concerns, so it
+     * applies even when keepalive pings are disabled ({@code keepAliveTimeSeconds == 0}) - a
+     * connection that's dead can still be silently stale whether or not anything was pinging it.
+     * Also why {@code keepAliveTimeSeconds} is capped at this value below: a ping interval longer
+     * than this would never get a chance to fire before the channel idles itself out first.
+     */
+    public static final long IDLE_TIMEOUT_SECONDS = 240;
+
     public ScalekitClient(String siteName, String clientId, String clientSecret) {
         this(siteName, clientId, clientSecret, DEFAULT_KEEPALIVE_TIME_SECONDS, DEFAULT_KEEPALIVE_TIMEOUT_SECONDS);
     }
@@ -70,8 +83,11 @@ public class ScalekitClient {
     /**
      * @param keepAliveTimeSeconds    How often, in seconds, an idle gRPC connection is
      *                                verified before reuse. Must be {@code 0} (disables
-     *                                keepalive entirely) or {@code >= MIN_KEEPALIVE_TIME_SECONDS}
-     *                                - see that constant's javadoc for why. Defaults to 60.
+     *                                keepalive pings entirely - idle-eviction still applies,
+     *                                see {@link #IDLE_TIMEOUT_SECONDS}) or between
+     *                                {@code MIN_KEEPALIVE_TIME_SECONDS} and
+     *                                {@code IDLE_TIMEOUT_SECONDS} inclusive - see those
+     *                                constants' javadoc for why. Defaults to 60.
      * @param keepAliveTimeoutSeconds How long, in seconds, to wait for a keepalive
      *                                response before treating an idle connection as
      *                                dead. Defaults to 10.
@@ -83,13 +99,16 @@ public class ScalekitClient {
             long keepAliveTimeSeconds,
             long keepAliveTimeoutSeconds
     ) {
-        if (keepAliveTimeSeconds != 0 && keepAliveTimeSeconds < MIN_KEEPALIVE_TIME_SECONDS) {
+        if (keepAliveTimeSeconds != 0
+                && (keepAliveTimeSeconds < MIN_KEEPALIVE_TIME_SECONDS || keepAliveTimeSeconds > IDLE_TIMEOUT_SECONDS)) {
             throw new IllegalArgumentException(
-                    "keepAliveTimeSeconds must be 0 (disabled) or >= " + MIN_KEEPALIVE_TIME_SECONDS
-                            + " seconds, got " + keepAliveTimeSeconds
-                            + ". The backend's gRPC keepalive MinTime is 30s; pinging faster than "
-                            + "that risks the connection being GOAWAY'd (ENHANCE_YOUR_CALM) after "
-                            + "repeated strikes, aborting whatever call was in flight.");
+                    "keepAliveTimeSeconds must be 0 (disabled) or between " + MIN_KEEPALIVE_TIME_SECONDS
+                            + " and " + IDLE_TIMEOUT_SECONDS + " seconds, got " + keepAliveTimeSeconds
+                            + ". Below " + MIN_KEEPALIVE_TIME_SECONDS
+                            + "s risks the connection being GOAWAY'd (ENHANCE_YOUR_CALM) against the "
+                            + "backend's 30s ping-abuse MinTime; above " + IDLE_TIMEOUT_SECONDS
+                            + "s, the channel's own idle-eviction (see IDLE_TIMEOUT_SECONDS) would close "
+                            + "the connection before a single ping at that cadence ever got to fire.");
         }
         // Only meaningful (and only validated) when keepalive is actually enabled - a disabled
         // keepAliveTimeSeconds=0 never reads this value at all (see the channelBuilder branch below).
@@ -107,9 +126,12 @@ public class ScalekitClient {
         try {
             URL url = URI.create(environment.siteName).toURL();
             int port = url.getPort() != -1 ? url.getPort() : 443;
-            // Managed channel automatically handles channel closing
+            // Managed channel automatically handles channel closing.
+            // idleTimeout is unconditional - independent of keepAliveTimeSeconds, including when
+            // keepalive pings are disabled (0) - see IDLE_TIMEOUT_SECONDS's javadoc for why.
             ManagedChannelBuilder<?> channelBuilder = ManagedChannelBuilder.forAddress(url.getHost(), port)
-                    .userAgent("scalekit-sdk-java/" + version);
+                    .userAgent("scalekit-sdk-java/" + version)
+                    .idleTimeout(IDLE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
             if (keepAliveTimeSeconds > 0) {
                 // keepAliveWithoutCalls(true) so an idle channel is still periodically
                 // verified: without it, keepalive pings only fire while a call is active,
@@ -120,16 +142,6 @@ public class ScalekitClient {
                 channelBuilder.keepAliveTime(keepAliveTimeSeconds, TimeUnit.SECONDS)
                         .keepAliveTimeout(keepAliveTimeoutSeconds, TimeUnit.SECONDS)
                         .keepAliveWithoutCalls(true);
-
-                // The backend closes a connection with zero active RPCs after its own
-                // MaxConnectionIdle (5 minutes, see escalekit/scalekit/cmd/grpc.go). Idling the
-                // channel client-side first - well before that - means the *client* always
-                // initiates the next reconnect on its own terms, instead of racing a new call
-                // against the server's GOAWAY for the same connection. Derived from
-                // keepAliveTimeSeconds (same shape as the Node SDK's idleConnectionTimeoutMs),
-                // capped at 240s to stay safely under the server's 300s bound with margin.
-                long idleTimeoutSeconds = Math.min(240, keepAliveTimeSeconds * 5);
-                channelBuilder.idleTimeout(idleTimeoutSeconds, TimeUnit.SECONDS);
             }
             ManagedChannel channel = channelBuilder.build();
 
@@ -161,7 +173,7 @@ public class ScalekitClient {
     /**
      * Overrides the per-call deadline for calls made on the current thread until the returned
      * scope is closed, instead of the client-wide default ({@code Environment.defaultConfig().timeout},
-     * itself defaulting to 10s or the {@code SCALEKIT_REQUEST_TIMEOUT} env var). Use for a call
+     * itself defaulting to 20s or the {@code SCALEKIT_REQUEST_TIMEOUT} env var). Use for a call
      * that legitimately needs longer (or a tighter budget than the default):
      * <pre>{@code
      * try (var scope = scalekitClient.withTimeout(5, TimeUnit.SECONDS)) {

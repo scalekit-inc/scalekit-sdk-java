@@ -21,10 +21,10 @@ public class RetryExecuter {
     private static final long UNAVAILABLE_BASE_BACKOFF_MILLIS = 1000;
     private static final long UNAVAILABLE_MAX_BACKOFF_MILLIS = 30_000;
 
-    // Swappable so tests can assert on the computed backoff without actually sleeping for it.
-    // Public (not the intended production API - it's in the internal package, not com.scalekit.api
-    // - just needs cross-package visibility for tests, which live in the unnamed default package).
-    public static LongConsumer sleeper = ms -> {
+    // Swappable so tests (in this same package) can assert on the computed backoff without
+    // actually sleeping for it. Package-private deliberately - this controls production retry
+    // timing, so it shouldn't be reachable (and overridable) from arbitrary application code.
+    static LongConsumer sleeper = ms -> {
         try {
             Thread.sleep(ms);
         } catch (InterruptedException interrupted) {
