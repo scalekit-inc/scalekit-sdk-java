@@ -205,4 +205,29 @@ public class RetryExecuterTest {
         assertEquals(2, recordedSleeps.size());
         recordedSleeps.forEach(ms -> assertTrue(ms <= 30_000, "backoff exceeded the 30s cap: " + ms));
     }
+
+    // Before this fix, the sleeper caught InterruptedException, restored the interrupt flag, and
+    // returned normally - executeWithRetry never checked that flag, so it just proceeded to
+    // another callable.call() on a thread that had been told to stop (e.g. executor
+    // shutdown/cancellation while an attempt was backing off).
+    @Test
+    void abortsRetryLoopWhenBackoffIsInterrupted() {
+        AtomicInteger calls = new AtomicInteger();
+        Callable<String> callable = () -> {
+            calls.incrementAndGet();
+            throw new StatusRuntimeException(Status.UNAVAILABLE.withDescription("still down"));
+        };
+
+        // Simulates what the real sleeper does when Thread.sleep is interrupted: it restores the
+        // interrupt flag (Thread.currentThread().interrupt()) without throwing.
+        RetryExecuter.sleeper = ms -> Thread.currentThread().interrupt();
+
+        try {
+            assertThrows(APIException.class, () -> RetryExecuter.executeWithRetry(callable, credentials));
+            assertEquals(1, calls.get(), "should not have retried after the interrupted backoff");
+            assertTrue(Thread.currentThread().isInterrupted(), "interrupt status should still be set for the caller to observe");
+        } finally {
+            Thread.interrupted(); // clear so the flag doesn't leak into later tests on this thread
+        }
+    }
 }

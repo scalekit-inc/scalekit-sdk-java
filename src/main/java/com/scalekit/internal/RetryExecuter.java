@@ -65,8 +65,12 @@ public class RetryExecuter {
                                 "Failed to refresh credentials after UNAUTHENTICATED response: " + refreshError.getMessage(),
                                 refreshError);
                     }
-                } else {
-                    backoffBeforeRetry(attempt);
+                } else if (!backoffBeforeRetry(attempt)) {
+                    // Interrupted mid-backoff (e.g. executor shutdown/cancellation) - stop
+                    // retrying instead of firing another RPC on a thread that's been told to
+                    // stop. The interrupt flag stays set (backoffBeforeRetry doesn't clear it)
+                    // so calling code still observes the interruption.
+                    throw new APIException("Retry aborted: interrupted while backing off after " + code, lastError);
                 }
             } catch (Exception e) {
                 throw new APIException(e.getMessage());
@@ -81,10 +85,14 @@ public class RetryExecuter {
     // retrying in lockstep against a struggling backend, while still guaranteeing at least half
     // of the capped delay - full 0-to-max jitter could roll close to zero and defeat the point
     // of widening the cap in the first place.
-    private static void backoffBeforeRetry(int attempt) {
+    //
+    // @return false if the sleep was interrupted (caller should abort the retry loop instead of
+    //         making another RPC), true if it completed normally.
+    private static boolean backoffBeforeRetry(int attempt) {
         long capped = Math.min(UNAVAILABLE_BASE_BACKOFF_MILLIS * (1L << (attempt - 1)), UNAVAILABLE_MAX_BACKOFF_MILLIS);
         double jitterFactor = 0.5 + ThreadLocalRandom.current().nextDouble() * 0.5;
         long delayMillis = (long) (capped * jitterFactor);
         sleeper.accept(delayMillis);
+        return !Thread.currentThread().isInterrupted();
     }
 }
