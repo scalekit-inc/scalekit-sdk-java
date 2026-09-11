@@ -18,16 +18,34 @@ public class Environment {
 
     private static Environment defaultEnv; // singleton
 
-    public int timeout = 10000;
+    /** Default per-call deadline in milliseconds - matches Python's/Node's 20s control-plane default. */
+    public static final int DEFAULT_TIMEOUT_MILLIS = 20_000;
+
+    public int timeout = DEFAULT_TIMEOUT_MILLIS;
 
 
     public Environment(String siteName, String clientId, String clientSecret) {
         this.clientId = clientId;
         this.clientSecret = clientSecret;
         this.siteName = siteName;
-        this.timeout = System.getenv(Constants.SCALEKIT_REQUEST_TIMEOUT) != null ?
-                Integer.parseInt(System.getenv(Constants.SCALEKIT_REQUEST_TIMEOUT)) :
-                10000;
+
+        String configured = System.getenv(Constants.SCALEKIT_REQUEST_TIMEOUT);
+        if (configured == null) {
+            this.timeout = DEFAULT_TIMEOUT_MILLIS;
+        } else {
+            int parsed;
+            try {
+                parsed = Integer.parseInt(configured);
+            } catch (NumberFormatException e) {
+                throw new IllegalArgumentException(
+                        Constants.SCALEKIT_REQUEST_TIMEOUT + " must be a positive integer (milliseconds), got: " + configured);
+            }
+            if (parsed <= 0) {
+                throw new IllegalArgumentException(
+                        Constants.SCALEKIT_REQUEST_TIMEOUT + " must be a positive number of milliseconds, got: " + parsed);
+            }
+            this.timeout = parsed;
+        }
     }
 
     public static void configure(String siteName, String clientId, String clientSecret) {
