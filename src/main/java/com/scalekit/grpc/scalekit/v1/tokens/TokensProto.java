@@ -263,10 +263,10 @@ public final class TokensProto {
       "time\340A\002R\013retrievedAt\022r\n\ntoken_info\030\003 \001(\013" +
       "2\031.scalekit.v1.tokens.TokenB8\222A220Token " +
       "metadata record for display/audit purpos" +
-      "es\340A\002R\ttokenInfo2\270\027\n\017ApiTokenService\022\324\004\n" +
+      "es\340A\002R\ttokenInfo2\252\030\n\017ApiTokenService\022\353\004\n" +
       "\013CreateToken\022&.scalekit.v1.tokens.Create" +
       "TokenRequest\032\'.scalekit.v1.tokens.Create" +
-      "TokenResponse\"\363\003\222A\314\003\n\006Tokens\022\023Create an " +
+      "TokenResponse\"\212\004\222A\314\003\n\006Tokens\022\023Create an " +
       "API Token\032\253\002Generates a new API token fo" +
       "r an organization, with an option to sco" +
       "pe it to a specific user. The plain-text" +
@@ -278,72 +278,75 @@ public final class TokensProto {
       "\nIToken created successfully; includes p" +
       "lain token string and custom claims\022+\n)\032" +
       "\'.scalekit.v1.tokens.CreateTokenResponse" +
-      "\202\265\030\002\030D\202\323\344\223\002\027\"\016/api/v1/tokens:\005token\022\353\003\n\r" +
-      "ValidateToken\022(.scalekit.v1.tokens.Valid" +
-      "ateTokenRequest\032).scalekit.v1.tokens.Val" +
-      "idateTokenResponse\"\204\003\222A\330\002\n\006Tokens\022\025Valid" +
-      "ate an API token\032\223\001Validates a provided " +
-      "plain-text opaque token or token identif" +
-      "ier, and returns the resolved organizati" +
-      "on or user context along with related me" +
-      "tadataJr\n\003200\022k\n:Token is valid; returns" +
-      " resolved token details and context\022-\n+\032" +
-      ").scalekit.v1.tokens.ValidateTokenRespon" +
-      "seJ-\n\003404\022&\n$Not Found - invalid or expi" +
-      "red token\202\265\030\002\030D\202\323\344\223\002\034\"\027/api/v1/tokens:va" +
-      "lidate:\001*\022\306\003\n\017InvalidateToken\022*.scalekit" +
-      ".v1.tokens.InvalidateTokenRequest\032\026.goog" +
-      "le.protobuf.Empty\"\356\002\222A\300\002\n\006Tokens\022\027Invali" +
-      "date an API Token\032\255\001Marks a token as inv" +
-      "alid, in an idempotent way: the operatio" +
-      "n succeeds even if the token was already" +
-      " invalidated. Use this to promptly revok" +
-      "e programmatic access credentialsJY\n\003200" +
-      "\022R\n4Token invalidated or already invalid" +
-      "ated; empty body\022\032\n\030\032\026.google.protobuf.E" +
-      "mptyJ\022\n\003404\022\013\n\tNot Found\202\265\030\002\030D\202\323\344\223\002\036\"\031/a" +
-      "pi/v1/tokens:invalidate:\001*\022\367\002\n\nListToken" +
-      "s\022%.scalekit.v1.tokens.ListTokensRequest" +
-      "\032&.scalekit.v1.tokens.ListTokensResponse" +
-      "\"\231\002\222A\371\001\n\006Tokens\022\017List API tokens\032kRetrie" +
-      "ves all active tokens for an organizatio" +
-      "n, with optional filtering by user and s" +
-      "upport for paginationJq\n\003200\022j\n<Page of " +
-      "token claims returned with pagination cu" +
-      "rsor details\022*\n(\032&.scalekit.v1.tokens.Li" +
-      "stTokensResponse\202\265\030\002\030D\202\323\344\223\002\020\022\016/api/v1/to" +
-      "kens\022\336\003\n\013UpdateToken\022&.scalekit.v1.token" +
-      "s.UpdateTokenRequest\032\'.scalekit.v1.token" +
-      "s.UpdateTokenResponse\"\375\002\222A\323\002\n\006Tokens\022\023Up" +
-      "date an API token\032\246\001Updates the mutable " +
-      "fields of an active token, such as custo" +
-      "m_claims and description. The request bo" +
-      "dy can include either the plain-text tok" +
-      "en or its token identifierJw\n\003200\022p\nATok" +
-      "en metadata updated successfully; return" +
-      "s updated token record\022+\n)\032\'.scalekit.v1" +
-      ".tokens.UpdateTokenResponseJ\022\n\003404\022\013\n\tNo" +
-      "t Found\202\265\030\002\030D\202\323\344\223\002\032\"\025/api/v1/tokens:upda" +
-      "te:\001*\022\357\003\n\nFetchToken\022%.scalekit.v1.token" +
-      "s.FetchTokenRequest\032&.scalekit.v1.tokens" +
-      ".FetchTokenResponse\"\221\003\222A\337\002\n\006Tokens\022\030Fetc" +
-      "h plain token string\032\266\001Returns the plain" +
-      " token string for an active token record" +
-      " identified by token_id. Token MUST be a" +
-      "ctive (not expired or invalidated). Usef" +
-      "ul for redisplaying credentials to opera" +
-      "tors.JO\n\003200\022H\n\032Token fetched successful" +
-      "ly\022*\n(\032&.scalekit.v1.tokens.FetchTokenRe" +
-      "sponseJ1\n\003404\022*\n(Token not found, expire" +
-      "d, or invalidated\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\"\024" +
-      "/api/v1/tokens:fetch:\001*\032J\222AG\n\006Tokens\022=AP" +
-      "I token management for organizations and" +
-      " user-scoped accessB\317\001\n$com.scalekit.grp" +
-      "c.scalekit.v1.tokensB\013TokensProtoP\001Z0git" +
-      "hub.com/scalekit-inc/scalekit/pkg/grpc/t" +
-      "okens\242\002\003SVT\252\002\022Scalekit.V1.Tokens\312\002\022Scale" +
-      "kit\\V1\\Tokens\342\002\036Scalekit\\V1\\Tokens\\GPBMe" +
-      "tadata\352\002\024Scalekit::V1::Tokensb\006proto3"
+      "\202\265\030\031\n\025api_credentials:write\030D\202\323\344\223\002\027\"\016/ap" +
+      "i/v1/tokens:\005token\022\201\004\n\rValidateToken\022(.s" +
+      "calekit.v1.tokens.ValidateTokenRequest\032)" +
+      ".scalekit.v1.tokens.ValidateTokenRespons" +
+      "e\"\232\003\222A\330\002\n\006Tokens\022\025Validate an API token\032" +
+      "\223\001Validates a provided plain-text opaque" +
+      " token or token identifier, and returns " +
+      "the resolved organization or user contex" +
+      "t along with related metadataJr\n\003200\022k\n:" +
+      "Token is valid; returns resolved token d" +
+      "etails and context\022-\n+\032).scalekit.v1.tok" +
+      "ens.ValidateTokenResponseJ-\n\003404\022&\n$Not " +
+      "Found - invalid or expired token\202\265\030\030\n\024ap" +
+      "i_credentials:read\030D\202\323\344\223\002\034\"\027/api/v1/toke" +
+      "ns:validate:\001*\022\336\003\n\017InvalidateToken\022*.sca" +
+      "lekit.v1.tokens.InvalidateTokenRequest\032\026" +
+      ".google.protobuf.Empty\"\206\003\222A\300\002\n\006Tokens\022\027I" +
+      "nvalidate an API Token\032\255\001Marks a token a" +
+      "s invalid, in an idempotent way: the ope" +
+      "ration succeeds even if the token was al" +
+      "ready invalidated. Use this to promptly " +
+      "revoke programmatic access credentialsJY" +
+      "\n\003200\022R\n4Token invalidated or already in" +
+      "validated; empty body\022\032\n\030\032\026.google.proto" +
+      "buf.EmptyJ\022\n\003404\022\013\n\tNot Found\202\265\030\032\n\026api_c" +
+      "redentials:rotate\030D\202\323\344\223\002\036\"\031/api/v1/token" +
+      "s:invalidate:\001*\022\215\003\n\nListTokens\022%.scaleki" +
+      "t.v1.tokens.ListTokensRequest\032&.scalekit" +
+      ".v1.tokens.ListTokensResponse\"\257\002\222A\371\001\n\006To" +
+      "kens\022\017List API tokens\032kRetrieves all act" +
+      "ive tokens for an organization, with opt" +
+      "ional filtering by user and support for " +
+      "paginationJq\n\003200\022j\n<Page of token claim" +
+      "s returned with pagination cursor detail" +
+      "s\022*\n(\032&.scalekit.v1.tokens.ListTokensRes" +
+      "ponse\202\265\030\030\n\024api_credentials:read\030D\202\323\344\223\002\020\022" +
+      "\016/api/v1/tokens\022\365\003\n\013UpdateToken\022&.scalek" +
+      "it.v1.tokens.UpdateTokenRequest\032\'.scalek" +
+      "it.v1.tokens.UpdateTokenResponse\"\224\003\222A\323\002\n" +
+      "\006Tokens\022\023Update an API token\032\246\001Updates t" +
+      "he mutable fields of an active token, su" +
+      "ch as custom_claims and description. The" +
+      " request body can include either the pla" +
+      "in-text token or its token identifierJw\n" +
+      "\003200\022p\nAToken metadata updated successfu" +
+      "lly; returns updated token record\022+\n)\032\'." +
+      "scalekit.v1.tokens.UpdateTokenResponseJ\022" +
+      "\n\003404\022\013\n\tNot Found\202\265\030\031\n\025api_credentials:" +
+      "write\030D\202\323\344\223\002\032\"\025/api/v1/tokens:update:\001*\022" +
+      "\357\003\n\nFetchToken\022%.scalekit.v1.tokens.Fetc" +
+      "hTokenRequest\032&.scalekit.v1.tokens.Fetch" +
+      "TokenResponse\"\221\003\222A\337\002\n\006Tokens\022\030Fetch plai" +
+      "n token string\032\266\001Returns the plain token" +
+      " string for an active token record ident" +
+      "ified by token_id. Token MUST be active " +
+      "(not expired or invalidated). Useful for" +
+      " redisplaying credentials to operators.J" +
+      "O\n\003200\022H\n\032Token fetched successfully\022*\n(" +
+      "\032&.scalekit.v1.tokens.FetchTokenResponse" +
+      "J1\n\003404\022*\n(Token not found, expired, or " +
+      "invalidated\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\"\024/api/v" +
+      "1/tokens:fetch:\001*\032J\222AG\n\006Tokens\022=API toke" +
+      "n management for organizations and user-" +
+      "scoped accessB\317\001\n$com.scalekit.grpc.scal" +
+      "ekit.v1.tokensB\013TokensProtoP\001Z0github.co" +
+      "m/scalekit-inc/scalekit/pkg/grpc/tokens\242" +
+      "\002\003SVT\252\002\022Scalekit.V1.Tokens\312\002\022Scalekit\\V1" +
+      "\\Tokens\342\002\036Scalekit\\V1\\Tokens\\GPBMetadata" +
+      "\352\002\024Scalekit::V1::Tokensb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

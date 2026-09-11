@@ -168,48 +168,49 @@ public final class WebhooksProto {
       "N_INVITATION\020\007\022(\n$USER_ORGANIZATION_MEMB" +
       "ERSHIP_CREATED\020\010\022(\n$USER_ORGANIZATION_ME" +
       "MBERSHIP_UPDATED\020\t\022(\n$USER_ORGANIZATION_" +
-      "MEMBERSHIP_DELETED\020\n2\362\n\n\016WebhookService\022" +
-      "\314\002\n\014GetPortalURL\022).scalekit.v1.webhooks." +
+      "MEMBERSHIP_DELETED\020\n2\241\013\n\016WebhookService\022" +
+      "\334\002\n\014GetPortalURL\022).scalekit.v1.webhooks." +
       "GetPortalURLRequest\032*.scalekit.v1.webhoo" +
-      "ks.GetPortalURLResponse\"\344\001\222A\250\001\022\026Get webh" +
+      "ks.GetPortalURLResponse\"\364\001\222A\250\001\022\026Get webh" +
       "ook portal URL\0322Retrieves the portal URL" +
       " for webhook configurationJZ\n\003200\022S\n!Por" +
       "tal URL retrieved successfully\022.\n,\032*.sca" +
       "lekit.v1.webhooks.GetPortalURLResponse\202\265" +
-      "\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\035\022\033/api/v1/webho" +
-      "oks/portal-url\022\302\003\n\016WebhookWrapper\022+.scal" +
-      "ekit.v1.webhooks.WebhookWrapperRequest\032\027" +
-      ".google.protobuf.Struct\"\351\002\222A\237\001\022\017Webhook " +
-      "wrapper\032FWrapper endpoint for webhook re" +
-      "quests supporting multiple HTTP methodsJ" +
-      "D\n\003200\022=\n\036Request processed successfully" +
-      "\022\033\n\031\032\027.google.protobuf.Struct\202\265\030\002\030@\372\322\344\223\002" +
-      "\t\022\007PREVIEW\202\323\344\223\002\252\001\022\026/api/v1/webhooks/wb/*" +
-      "*Z&\"\026/api/v1/webhooks/wb/**:\014request_bod" +
-      "yZ&\032\026/api/v1/webhooks/wb/**:\014request_bod" +
-      "yZ&2\026/api/v1/webhooks/wb/**:\014request_bod" +
-      "yZ\030*\026/api/v1/webhooks/wb/**\022\327\002\n\rSendTest" +
-      "Event\022*.scalekit.v1.webhooks.SendTestEve" +
-      "ntRequest\032+.scalekit.v1.webhooks.SendTes" +
-      "tEventResponse\"\354\001\222A\243\001\022\027Send test webhook" +
-      " event\0320Sends a test webhook event of th" +
-      "e specified typeJV\n\003200\022O\n\034Test event se" +
-      "nt successfully\022/\n-\032+.scalekit.v1.webhoo" +
-      "ks.SendTestEventResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PR" +
-      "EVIEW\202\323\344\223\002*\"(/api/v1/webhooks/test-event" +
-      "/{event_type}\022\361\001\n\020SendWebhookEvent\022\".sca" +
-      "lekit.v1.webhooks.WebhookEvent\032\033.scaleki" +
-      "t.v1.webhooks.Empty\"\233\001\222Au\022\022Send webhook " +
-      "event\0321Receives a webhook event payload " +
-      "and processes itJ,\n\003200\022%\n#Webhook event" +
-      " received successfully\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
-      "\223\002\016\"\t/webhooks:\001*B\335\001\n&com.scalekit.grpc." +
-      "scalekit.v1.webhooksB\rWebhooksProtoP\001Z2g" +
-      "ithub.com/scalekit-inc/scalekit/pkg/grpc" +
-      "/webhooks\242\002\003SVW\252\002\024Scalekit.V1.Webhooks\312\002" +
-      "\024Scalekit\\V1\\Webhooks\342\002 Scalekit\\V1\\Webh" +
-      "ooks\\GPBMetadata\352\002\026Scalekit::V1::Webhook" +
-      "sb\006proto3"
+      "\030\022\n\016webhooks:write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002" +
+      "\035\022\033/api/v1/webhooks/portal-url\022\321\003\n\016Webho" +
+      "okWrapper\022+.scalekit.v1.webhooks.Webhook" +
+      "WrapperRequest\032\027.google.protobuf.Struct\"" +
+      "\370\002\222A\237\001\022\017Webhook wrapper\032FWrapper endpoin" +
+      "t for webhook requests supporting multip" +
+      "le HTTP methodsJD\n\003200\022=\n\036Request proces" +
+      "sed successfully\022\033\n\031\032\027.google.protobuf.S" +
+      "truct\202\265\030\021\n\rwebhooks:read\030@\372\322\344\223\002\t\022\007PREVIE" +
+      "W\202\323\344\223\002\252\001\022\026/api/v1/webhooks/wb/**Z&\"\026/api" +
+      "/v1/webhooks/wb/**:\014request_bodyZ&\032\026/api" +
+      "/v1/webhooks/wb/**:\014request_bodyZ&2\026/api" +
+      "/v1/webhooks/wb/**:\014request_bodyZ\030*\026/api" +
+      "/v1/webhooks/wb/**\022\347\002\n\rSendTestEvent\022*.s" +
+      "calekit.v1.webhooks.SendTestEventRequest" +
+      "\032+.scalekit.v1.webhooks.SendTestEventRes" +
+      "ponse\"\374\001\222A\243\001\022\027Send test webhook event\0320S" +
+      "ends a test webhook event of the specifi" +
+      "ed typeJV\n\003200\022O\n\034Test event sent succes" +
+      "sfully\022/\n-\032+.scalekit.v1.webhooks.SendTe" +
+      "stEventResponse\202\265\030\022\n\016webhooks:write\030D\372\322\344" +
+      "\223\002\t\022\007PREVIEW\202\323\344\223\002*\"(/api/v1/webhooks/tes" +
+      "t-event/{event_type}\022\361\001\n\020SendWebhookEven" +
+      "t\022\".scalekit.v1.webhooks.WebhookEvent\032\033." +
+      "scalekit.v1.webhooks.Empty\"\233\001\222Au\022\022Send w" +
+      "ebhook event\0321Receives a webhook event p" +
+      "ayload and processes itJ,\n\003200\022%\n#Webhoo" +
+      "k event received successfully\372\322\344\223\002\t\022\007PRE" +
+      "VIEW\202\323\344\223\002\016\"\t/webhooks:\001*B\335\001\n&com.scaleki" +
+      "t.grpc.scalekit.v1.webhooksB\rWebhooksPro" +
+      "toP\001Z2github.com/scalekit-inc/scalekit/p" +
+      "kg/grpc/webhooks\242\002\003SVW\252\002\024Scalekit.V1.Web" +
+      "hooks\312\002\024Scalekit\\V1\\Webhooks\342\002 Scalekit\\" +
+      "V1\\Webhooks\\GPBMetadata\352\002\026Scalekit::V1::" +
+      "Webhooksb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -9,48 +9,48 @@ public interface ConnectionDetailsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string connection_id = 1 [json_name = "connectionId"];</code>
+   * <code>string connection_id = 1 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connectionId.
    */
   java.lang.String getConnectionId();
   /**
-   * <code>string connection_id = 1 [json_name = "connectionId"];</code>
+   * <code>string connection_id = 1 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for connectionId.
    */
   com.google.protobuf.ByteString
       getConnectionIdBytes();
 
   /**
-   * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 2 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The organizationId.
    */
   java.lang.String getOrganizationId();
   /**
-   * <code>string organization_id = 2 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 2 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for organizationId.
    */
   com.google.protobuf.ByteString
       getOrganizationIdBytes();
 
   /**
-   * <code>string connection_type = 3 [json_name = "connectionType"];</code>
+   * <code>string connection_type = 3 [json_name = "connectionType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connectionType.
    */
   java.lang.String getConnectionType();
   /**
-   * <code>string connection_type = 3 [json_name = "connectionType"];</code>
+   * <code>string connection_type = 3 [json_name = "connectionType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for connectionType.
    */
   com.google.protobuf.ByteString
       getConnectionTypeBytes();
 
   /**
-   * <code>string connection_provider = 4 [json_name = "connectionProvider"];</code>
+   * <code>string connection_provider = 4 [json_name = "connectionProvider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connectionProvider.
    */
   java.lang.String getConnectionProvider();
   /**
-   * <code>string connection_provider = 4 [json_name = "connectionProvider"];</code>
+   * <code>string connection_provider = 4 [json_name = "connectionProvider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for connectionProvider.
    */
   com.google.protobuf.ByteString

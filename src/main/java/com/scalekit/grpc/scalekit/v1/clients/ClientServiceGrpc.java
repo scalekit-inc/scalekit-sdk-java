@@ -139,6 +139,99 @@ public final class ClientServiceGrpc {
     return getUpdateClientMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.AddEnvironmentRedirectUriRequest,
+      com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> getAddEnvironmentRedirectUriMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddEnvironmentRedirectUri",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.AddEnvironmentRedirectUriRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.AddEnvironmentRedirectUriRequest,
+      com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> getAddEnvironmentRedirectUriMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.AddEnvironmentRedirectUriRequest, com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> getAddEnvironmentRedirectUriMethod;
+    if ((getAddEnvironmentRedirectUriMethod = ClientServiceGrpc.getAddEnvironmentRedirectUriMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getAddEnvironmentRedirectUriMethod = ClientServiceGrpc.getAddEnvironmentRedirectUriMethod) == null) {
+          ClientServiceGrpc.getAddEnvironmentRedirectUriMethod = getAddEnvironmentRedirectUriMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.AddEnvironmentRedirectUriRequest, com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddEnvironmentRedirectUri"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.AddEnvironmentRedirectUriRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("AddEnvironmentRedirectUri"))
+              .build();
+        }
+      }
+    }
+    return getAddEnvironmentRedirectUriMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.RemoveEnvironmentRedirectUriRequest,
+      com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> getRemoveEnvironmentRedirectUriMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RemoveEnvironmentRedirectUri",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.RemoveEnvironmentRedirectUriRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.RemoveEnvironmentRedirectUriRequest,
+      com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> getRemoveEnvironmentRedirectUriMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.RemoveEnvironmentRedirectUriRequest, com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> getRemoveEnvironmentRedirectUriMethod;
+    if ((getRemoveEnvironmentRedirectUriMethod = ClientServiceGrpc.getRemoveEnvironmentRedirectUriMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getRemoveEnvironmentRedirectUriMethod = ClientServiceGrpc.getRemoveEnvironmentRedirectUriMethod) == null) {
+          ClientServiceGrpc.getRemoveEnvironmentRedirectUriMethod = getRemoveEnvironmentRedirectUriMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.RemoveEnvironmentRedirectUriRequest, com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RemoveEnvironmentRedirectUri"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.RemoveEnvironmentRedirectUriRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("RemoveEnvironmentRedirectUri"))
+              .build();
+        }
+      }
+    }
+    return getRemoveEnvironmentRedirectUriMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.SetEnvironmentInitiateLoginUriRequest,
+      com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> getSetEnvironmentInitiateLoginUriMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetEnvironmentInitiateLoginUri",
+      requestType = com.scalekit.grpc.scalekit.v1.clients.SetEnvironmentInitiateLoginUriRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.SetEnvironmentInitiateLoginUriRequest,
+      com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> getSetEnvironmentInitiateLoginUriMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.SetEnvironmentInitiateLoginUriRequest, com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> getSetEnvironmentInitiateLoginUriMethod;
+    if ((getSetEnvironmentInitiateLoginUriMethod = ClientServiceGrpc.getSetEnvironmentInitiateLoginUriMethod) == null) {
+      synchronized (ClientServiceGrpc.class) {
+        if ((getSetEnvironmentInitiateLoginUriMethod = ClientServiceGrpc.getSetEnvironmentInitiateLoginUriMethod) == null) {
+          ClientServiceGrpc.getSetEnvironmentInitiateLoginUriMethod = getSetEnvironmentInitiateLoginUriMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.clients.SetEnvironmentInitiateLoginUriRequest, com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetEnvironmentInitiateLoginUri"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.SetEnvironmentInitiateLoginUriRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientServiceMethodDescriptorSupplier("SetEnvironmentInitiateLoginUri"))
+              .build();
+        }
+      }
+    }
+    return getSetEnvironmentInitiateLoginUriMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.clients.DeleteClientRequest,
       com.google.protobuf.Empty> getDeleteClientMethod;
 
@@ -1239,6 +1332,46 @@ public final class ClientServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delta operations on the ENVIRONMENT client's login URIs — the single OIDC client
+     * every environment is provisioned with, which is what the dashboard's "Redirect URIs"
+     * settings and the support agent's `list_redirect_uris` tool both read.
+     * WHY THESE EXIST rather than an (agent_tool) annotation on UpdateClient, because it
+     * reads as duplication otherwise. Two independent reasons, and either alone is enough:
+     *  1. The approval card. A gated write's summary must name every value the model chose
+     *     (protoc-gen-agenttool's checkWriteSummaryCoversRequest), and UpdateClient's
+     *     request carries a whole Client message plus a FieldMask — a message and a
+     *     repeated field, neither of which has a one-line rendering on a card. Hiding both
+     *     leaves a tool that can set nothing. A request that is one URI is the only shape
+     *     the gate can describe honestly.
+     *  2. Read-modify-write belongs on the server. UpdateClient REPLACES post_login_uris
+     *     wholesale, so "add one URI" through it means the caller reads the list, appends,
+     *     and writes it back — and any concurrent edit between the read and the write is
+     *     silently discarded. Here the list is read and written inside one call.
+     * PREVIEW because they are dashboard/agent conveniences over UpdateClient, not a new
+     * public API surface: the public way to set these remains UpdateClient.
+     * </pre>
+     */
+    default void addEnvironmentRedirectUri(com.scalekit.grpc.scalekit.v1.clients.AddEnvironmentRedirectUriRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAddEnvironmentRedirectUriMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void removeEnvironmentRedirectUri(com.scalekit.grpc.scalekit.v1.clients.RemoveEnvironmentRedirectUriRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRemoveEnvironmentRedirectUriMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void setEnvironmentInitiateLoginUri(com.scalekit.grpc.scalekit.v1.clients.SetEnvironmentInitiateLoginUriRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetEnvironmentInitiateLoginUriMethod(), responseObserver);
+    }
+
+    /**
      */
     default void deleteClient(com.scalekit.grpc.scalekit.v1.clients.DeleteClientRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1548,6 +1681,49 @@ public final class ClientServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.UpdateClientResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateClientMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delta operations on the ENVIRONMENT client's login URIs — the single OIDC client
+     * every environment is provisioned with, which is what the dashboard's "Redirect URIs"
+     * settings and the support agent's `list_redirect_uris` tool both read.
+     * WHY THESE EXIST rather than an (agent_tool) annotation on UpdateClient, because it
+     * reads as duplication otherwise. Two independent reasons, and either alone is enough:
+     *  1. The approval card. A gated write's summary must name every value the model chose
+     *     (protoc-gen-agenttool's checkWriteSummaryCoversRequest), and UpdateClient's
+     *     request carries a whole Client message plus a FieldMask — a message and a
+     *     repeated field, neither of which has a one-line rendering on a card. Hiding both
+     *     leaves a tool that can set nothing. A request that is one URI is the only shape
+     *     the gate can describe honestly.
+     *  2. Read-modify-write belongs on the server. UpdateClient REPLACES post_login_uris
+     *     wholesale, so "add one URI" through it means the caller reads the list, appends,
+     *     and writes it back — and any concurrent edit between the read and the write is
+     *     silently discarded. Here the list is read and written inside one call.
+     * PREVIEW because they are dashboard/agent conveniences over UpdateClient, not a new
+     * public API surface: the public way to set these remains UpdateClient.
+     * </pre>
+     */
+    public void addEnvironmentRedirectUri(com.scalekit.grpc.scalekit.v1.clients.AddEnvironmentRedirectUriRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAddEnvironmentRedirectUriMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void removeEnvironmentRedirectUri(com.scalekit.grpc.scalekit.v1.clients.RemoveEnvironmentRedirectUriRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRemoveEnvironmentRedirectUriMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void setEnvironmentInitiateLoginUri(com.scalekit.grpc.scalekit.v1.clients.SetEnvironmentInitiateLoginUriRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetEnvironmentInitiateLoginUriMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1881,6 +2057,46 @@ public final class ClientServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delta operations on the ENVIRONMENT client's login URIs — the single OIDC client
+     * every environment is provisioned with, which is what the dashboard's "Redirect URIs"
+     * settings and the support agent's `list_redirect_uris` tool both read.
+     * WHY THESE EXIST rather than an (agent_tool) annotation on UpdateClient, because it
+     * reads as duplication otherwise. Two independent reasons, and either alone is enough:
+     *  1. The approval card. A gated write's summary must name every value the model chose
+     *     (protoc-gen-agenttool's checkWriteSummaryCoversRequest), and UpdateClient's
+     *     request carries a whole Client message plus a FieldMask — a message and a
+     *     repeated field, neither of which has a one-line rendering on a card. Hiding both
+     *     leaves a tool that can set nothing. A request that is one URI is the only shape
+     *     the gate can describe honestly.
+     *  2. Read-modify-write belongs on the server. UpdateClient REPLACES post_login_uris
+     *     wholesale, so "add one URI" through it means the caller reads the list, appends,
+     *     and writes it back — and any concurrent edit between the read and the write is
+     *     silently discarded. Here the list is read and written inside one call.
+     * PREVIEW because they are dashboard/agent conveniences over UpdateClient, not a new
+     * public API surface: the public way to set these remains UpdateClient.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse addEnvironmentRedirectUri(com.scalekit.grpc.scalekit.v1.clients.AddEnvironmentRedirectUriRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddEnvironmentRedirectUriMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse removeEnvironmentRedirectUri(com.scalekit.grpc.scalekit.v1.clients.RemoveEnvironmentRedirectUriRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveEnvironmentRedirectUriMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse setEnvironmentInitiateLoginUri(com.scalekit.grpc.scalekit.v1.clients.SetEnvironmentInitiateLoginUriRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetEnvironmentInitiateLoginUriMethod(), getCallOptions(), request);
+    }
+
+    /**
      */
     public com.google.protobuf.Empty deleteClient(com.scalekit.grpc.scalekit.v1.clients.DeleteClientRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2182,6 +2398,49 @@ public final class ClientServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Delta operations on the ENVIRONMENT client's login URIs — the single OIDC client
+     * every environment is provisioned with, which is what the dashboard's "Redirect URIs"
+     * settings and the support agent's `list_redirect_uris` tool both read.
+     * WHY THESE EXIST rather than an (agent_tool) annotation on UpdateClient, because it
+     * reads as duplication otherwise. Two independent reasons, and either alone is enough:
+     *  1. The approval card. A gated write's summary must name every value the model chose
+     *     (protoc-gen-agenttool's checkWriteSummaryCoversRequest), and UpdateClient's
+     *     request carries a whole Client message plus a FieldMask — a message and a
+     *     repeated field, neither of which has a one-line rendering on a card. Hiding both
+     *     leaves a tool that can set nothing. A request that is one URI is the only shape
+     *     the gate can describe honestly.
+     *  2. Read-modify-write belongs on the server. UpdateClient REPLACES post_login_uris
+     *     wholesale, so "add one URI" through it means the caller reads the list, appends,
+     *     and writes it back — and any concurrent edit between the read and the write is
+     *     silently discarded. Here the list is read and written inside one call.
+     * PREVIEW because they are dashboard/agent conveniences over UpdateClient, not a new
+     * public API surface: the public way to set these remains UpdateClient.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> addEnvironmentRedirectUri(
+        com.scalekit.grpc.scalekit.v1.clients.AddEnvironmentRedirectUriRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAddEnvironmentRedirectUriMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> removeEnvironmentRedirectUri(
+        com.scalekit.grpc.scalekit.v1.clients.RemoveEnvironmentRedirectUriRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRemoveEnvironmentRedirectUriMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse> setEnvironmentInitiateLoginUri(
+        com.scalekit.grpc.scalekit.v1.clients.SetEnvironmentInitiateLoginUriRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetEnvironmentInitiateLoginUriMethod(), getCallOptions()), request);
+    }
+
+    /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteClient(
         com.scalekit.grpc.scalekit.v1.clients.DeleteClientRequest request) {
@@ -2471,39 +2730,42 @@ public final class ClientServiceGrpc {
   private static final int METHODID_CREATE_CLIENT = 1;
   private static final int METHODID_GET_CLIENT = 2;
   private static final int METHODID_UPDATE_CLIENT = 3;
-  private static final int METHODID_DELETE_CLIENT = 4;
-  private static final int METHODID_CREATE_CLIENT_SECRET = 5;
-  private static final int METHODID_UPDATE_CLIENT_SECRET = 6;
-  private static final int METHODID_DELETE_CLIENT_SECRET = 7;
-  private static final int METHODID_CREATE_ORGANIZATION_CLIENT = 8;
-  private static final int METHODID_GET_ORGANIZATION_CLIENT = 9;
-  private static final int METHODID_CREATE_ORGANIZATION_CLIENT_SECRET = 10;
-  private static final int METHODID_DELETE_ORGANIZATION_CLIENT_SECRET = 11;
-  private static final int METHODID_UPDATE_ORGANIZATION_CLIENT = 12;
-  private static final int METHODID_DELETE_ORGANIZATION_CLIENT = 13;
-  private static final int METHODID_LIST_ORGANIZATION_CLIENTS = 14;
-  private static final int METHODID_CREATE_RESOURCE = 15;
-  private static final int METHODID_GET_RESOURCE = 16;
-  private static final int METHODID_LIST_RESOURCES = 17;
-  private static final int METHODID_UPDATE_RESOURCE = 18;
-  private static final int METHODID_DELETE_RESOURCE = 19;
-  private static final int METHODID_DELETE_RESOURCE_PROVIDER = 20;
-  private static final int METHODID_CREATE_RESOURCE_CLIENT = 21;
-  private static final int METHODID_UPDATE_RESOURCE_CLIENT = 22;
-  private static final int METHODID_GET_RESOURCE_CLIENT = 23;
-  private static final int METHODID_LIST_RESOURCE_CLIENTS = 24;
-  private static final int METHODID_LIST_CURRENT_AGENT_CONSENTS = 25;
-  private static final int METHODID_REVOKE_CURRENT_AGENT_CONSENT = 26;
-  private static final int METHODID_LIST_RESOURCE_USER_CONSENTS = 27;
-  private static final int METHODID_DELETE_RESOURCE_CLIENT = 28;
-  private static final int METHODID_REGISTER_CLIENT = 29;
-  private static final int METHODID_CREATE_SCOPE = 30;
-  private static final int METHODID_LIST_SCOPES = 31;
-  private static final int METHODID_UPDATE_SCOPE = 32;
-  private static final int METHODID_DELETE_SCOPE = 33;
-  private static final int METHODID_GET_CONSENT_DETAILS = 34;
-  private static final int METHODID_REVOKE_USER_CONSENT = 35;
-  private static final int METHODID_ENSURE_RESOURCE_CONNECTION = 36;
+  private static final int METHODID_ADD_ENVIRONMENT_REDIRECT_URI = 4;
+  private static final int METHODID_REMOVE_ENVIRONMENT_REDIRECT_URI = 5;
+  private static final int METHODID_SET_ENVIRONMENT_INITIATE_LOGIN_URI = 6;
+  private static final int METHODID_DELETE_CLIENT = 7;
+  private static final int METHODID_CREATE_CLIENT_SECRET = 8;
+  private static final int METHODID_UPDATE_CLIENT_SECRET = 9;
+  private static final int METHODID_DELETE_CLIENT_SECRET = 10;
+  private static final int METHODID_CREATE_ORGANIZATION_CLIENT = 11;
+  private static final int METHODID_GET_ORGANIZATION_CLIENT = 12;
+  private static final int METHODID_CREATE_ORGANIZATION_CLIENT_SECRET = 13;
+  private static final int METHODID_DELETE_ORGANIZATION_CLIENT_SECRET = 14;
+  private static final int METHODID_UPDATE_ORGANIZATION_CLIENT = 15;
+  private static final int METHODID_DELETE_ORGANIZATION_CLIENT = 16;
+  private static final int METHODID_LIST_ORGANIZATION_CLIENTS = 17;
+  private static final int METHODID_CREATE_RESOURCE = 18;
+  private static final int METHODID_GET_RESOURCE = 19;
+  private static final int METHODID_LIST_RESOURCES = 20;
+  private static final int METHODID_UPDATE_RESOURCE = 21;
+  private static final int METHODID_DELETE_RESOURCE = 22;
+  private static final int METHODID_DELETE_RESOURCE_PROVIDER = 23;
+  private static final int METHODID_CREATE_RESOURCE_CLIENT = 24;
+  private static final int METHODID_UPDATE_RESOURCE_CLIENT = 25;
+  private static final int METHODID_GET_RESOURCE_CLIENT = 26;
+  private static final int METHODID_LIST_RESOURCE_CLIENTS = 27;
+  private static final int METHODID_LIST_CURRENT_AGENT_CONSENTS = 28;
+  private static final int METHODID_REVOKE_CURRENT_AGENT_CONSENT = 29;
+  private static final int METHODID_LIST_RESOURCE_USER_CONSENTS = 30;
+  private static final int METHODID_DELETE_RESOURCE_CLIENT = 31;
+  private static final int METHODID_REGISTER_CLIENT = 32;
+  private static final int METHODID_CREATE_SCOPE = 33;
+  private static final int METHODID_LIST_SCOPES = 34;
+  private static final int METHODID_UPDATE_SCOPE = 35;
+  private static final int METHODID_DELETE_SCOPE = 36;
+  private static final int METHODID_GET_CONSENT_DETAILS = 37;
+  private static final int METHODID_REVOKE_USER_CONSENT = 38;
+  private static final int METHODID_ENSURE_RESOURCE_CONNECTION = 39;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2537,6 +2799,18 @@ public final class ClientServiceGrpc {
         case METHODID_UPDATE_CLIENT:
           serviceImpl.updateClient((com.scalekit.grpc.scalekit.v1.clients.UpdateClientRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.UpdateClientResponse>) responseObserver);
+          break;
+        case METHODID_ADD_ENVIRONMENT_REDIRECT_URI:
+          serviceImpl.addEnvironmentRedirectUri((com.scalekit.grpc.scalekit.v1.clients.AddEnvironmentRedirectUriRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse>) responseObserver);
+          break;
+        case METHODID_REMOVE_ENVIRONMENT_REDIRECT_URI:
+          serviceImpl.removeEnvironmentRedirectUri((com.scalekit.grpc.scalekit.v1.clients.RemoveEnvironmentRedirectUriRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse>) responseObserver);
+          break;
+        case METHODID_SET_ENVIRONMENT_INITIATE_LOGIN_URI:
+          serviceImpl.setEnvironmentInitiateLoginUri((com.scalekit.grpc.scalekit.v1.clients.SetEnvironmentInitiateLoginUriRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse>) responseObserver);
           break;
         case METHODID_DELETE_CLIENT:
           serviceImpl.deleteClient((com.scalekit.grpc.scalekit.v1.clients.DeleteClientRequest) request,
@@ -2716,6 +2990,27 @@ public final class ClientServiceGrpc {
               com.scalekit.grpc.scalekit.v1.clients.UpdateClientRequest,
               com.scalekit.grpc.scalekit.v1.clients.UpdateClientResponse>(
                 service, METHODID_UPDATE_CLIENT)))
+        .addMethod(
+          getAddEnvironmentRedirectUriMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.AddEnvironmentRedirectUriRequest,
+              com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse>(
+                service, METHODID_ADD_ENVIRONMENT_REDIRECT_URI)))
+        .addMethod(
+          getRemoveEnvironmentRedirectUriMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.RemoveEnvironmentRedirectUriRequest,
+              com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse>(
+                service, METHODID_REMOVE_ENVIRONMENT_REDIRECT_URI)))
+        .addMethod(
+          getSetEnvironmentInitiateLoginUriMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.clients.SetEnvironmentInitiateLoginUriRequest,
+              com.scalekit.grpc.scalekit.v1.clients.EnvironmentLoginUrisResponse>(
+                service, METHODID_SET_ENVIRONMENT_INITIATE_LOGIN_URI)))
         .addMethod(
           getDeleteClientMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2999,6 +3294,9 @@ public final class ClientServiceGrpc {
               .addMethod(getCreateClientMethod())
               .addMethod(getGetClientMethod())
               .addMethod(getUpdateClientMethod())
+              .addMethod(getAddEnvironmentRedirectUriMethod())
+              .addMethod(getRemoveEnvironmentRedirectUriMethod())
+              .addMethod(getSetEnvironmentInitiateLoginUriMethod())
               .addMethod(getDeleteClientMethod())
               .addMethod(getCreateClientSecretMethod())
               .addMethod(getUpdateClientSecretMethod())

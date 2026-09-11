@@ -299,4 +299,34 @@ public interface OAuthConnectionConfigOrBuilder extends
    * <code>optional .scalekit.v1.connections.OauthExtensions extensions = 24 [json_name = "extensions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.connections.OauthExtensionsOrBuilder getExtensionsOrBuilder();
+
+  /**
+   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the tokenEndpointAuthMethod field is set.
+   */
+  boolean hasTokenEndpointAuthMethod();
+  /**
+   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The tokenEndpointAuthMethod.
+   */
+  com.google.protobuf.StringValue getTokenEndpointAuthMethod();
+  /**
+   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.StringValueOrBuilder getTokenEndpointAuthMethodOrBuilder();
+
+  /**
+   * <code>.google.protobuf.StringValue googleads_developer_token = 26 [json_name = "googleadsDeveloperToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the googleadsDeveloperToken field is set.
+   */
+  boolean hasGoogleadsDeveloperToken();
+  /**
+   * <code>.google.protobuf.StringValue googleads_developer_token = 26 [json_name = "googleadsDeveloperToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The googleadsDeveloperToken.
+   */
+  com.google.protobuf.StringValue getGoogleadsDeveloperToken();
+  /**
+   * <code>.google.protobuf.StringValue googleads_developer_token = 26 [json_name = "googleadsDeveloperToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.StringValueOrBuilder getGoogleadsDeveloperTokenOrBuilder();
 }

@@ -24,7 +24,7 @@ public interface ListToolsRequestOrBuilder extends
   com.scalekit.grpc.scalekit.v1.tools.FilterOrBuilder getFilterOrBuilder();
 
   /**
-   * <code>uint32 page_size = 2 [json_name = "pageSize"];</code>
+   * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageSize.
    */
   int getPageSize();

@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
   /**
-   * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+   * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The nextPageToken.
    */
   @java.lang.Override
@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+   * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for nextPageToken.
    */
   @java.lang.Override
@@ -85,7 +85,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object prevPageToken_ = "";
   /**
-   * <code>string prev_page_token = 2 [json_name = "prevPageToken"];</code>
+   * <code>string prev_page_token = 2 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The prevPageToken.
    */
   @java.lang.Override
@@ -102,7 +102,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string prev_page_token = 2 [json_name = "prevPageToken"];</code>
+   * <code>string prev_page_token = 2 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for prevPageToken.
    */
   @java.lang.Override
@@ -123,7 +123,7 @@ private static final long serialVersionUID = 0L;
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
   /**
-   * <code>uint32 total_size = 3 [json_name = "totalSize"];</code>
+   * <code>uint32 total_size = 3 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The totalSize.
    */
   @java.lang.Override
@@ -135,14 +135,14 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private java.util.List<com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest> authRequests_;
   /**
-   * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+   * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest> getAuthRequestsList() {
     return authRequests_;
   }
   /**
-   * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+   * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequestOrBuilder> 
@@ -150,21 +150,21 @@ private static final long serialVersionUID = 0L;
     return authRequests_;
   }
   /**
-   * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+   * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public int getAuthRequestsCount() {
     return authRequests_.size();
   }
   /**
-   * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+   * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest getAuthRequests(int index) {
     return authRequests_.get(index);
   }
   /**
-   * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+   * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequestOrBuilder getAuthRequestsOrBuilder(
@@ -619,7 +619,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nextPageToken_ = "";
     /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
@@ -635,7 +635,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString
@@ -652,7 +652,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The nextPageToken to set.
      * @return This builder for chaining.
      */
@@ -665,7 +665,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+     * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for nextPageToken to set.
      * @return This builder for chaining.
      */
@@ -691,7 +691,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object prevPageToken_ = "";
     /**
-     * <code>string prev_page_token = 2 [json_name = "prevPageToken"];</code>
+     * <code>string prev_page_token = 2 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The prevPageToken.
      */
     public java.lang.String getPrevPageToken() {
@@ -707,7 +707,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string prev_page_token = 2 [json_name = "prevPageToken"];</code>
+     * <code>string prev_page_token = 2 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for prevPageToken.
      */
     public com.google.protobuf.ByteString
@@ -724,7 +724,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string prev_page_token = 2 [json_name = "prevPageToken"];</code>
+     * <code>string prev_page_token = 2 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The prevPageToken to set.
      * @return This builder for chaining.
      */
@@ -737,7 +737,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string prev_page_token = 2 [json_name = "prevPageToken"];</code>
+     * <code>string prev_page_token = 2 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearPrevPageToken() {
@@ -747,7 +747,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string prev_page_token = 2 [json_name = "prevPageToken"];</code>
+     * <code>string prev_page_token = 2 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for prevPageToken to set.
      * @return This builder for chaining.
      */
@@ -763,7 +763,7 @@ private static final long serialVersionUID = 0L;
 
     private int totalSize_ ;
     /**
-     * <code>uint32 total_size = 3 [json_name = "totalSize"];</code>
+     * <code>uint32 total_size = 3 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The totalSize.
      */
     @java.lang.Override
@@ -771,7 +771,7 @@ private static final long serialVersionUID = 0L;
       return totalSize_;
     }
     /**
-     * <code>uint32 total_size = 3 [json_name = "totalSize"];</code>
+     * <code>uint32 total_size = 3 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The totalSize to set.
      * @return This builder for chaining.
      */
@@ -783,7 +783,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>uint32 total_size = 3 [json_name = "totalSize"];</code>
+     * <code>uint32 total_size = 3 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearTotalSize() {
@@ -806,7 +806,7 @@ private static final long serialVersionUID = 0L;
         com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest, com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest.Builder, com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequestOrBuilder> authRequestsBuilder_;
 
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest> getAuthRequestsList() {
       if (authRequestsBuilder_ == null) {
@@ -816,7 +816,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public int getAuthRequestsCount() {
       if (authRequestsBuilder_ == null) {
@@ -826,7 +826,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest getAuthRequests(int index) {
       if (authRequestsBuilder_ == null) {
@@ -836,7 +836,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setAuthRequests(
         int index, com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest value) {
@@ -853,7 +853,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setAuthRequests(
         int index, com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest.Builder builderForValue) {
@@ -867,7 +867,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addAuthRequests(com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest value) {
       if (authRequestsBuilder_ == null) {
@@ -883,7 +883,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addAuthRequests(
         int index, com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest value) {
@@ -900,7 +900,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addAuthRequests(
         com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest.Builder builderForValue) {
@@ -914,7 +914,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addAuthRequests(
         int index, com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest.Builder builderForValue) {
@@ -928,7 +928,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addAllAuthRequests(
         java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest> values) {
@@ -943,7 +943,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearAuthRequests() {
       if (authRequestsBuilder_ == null) {
@@ -956,7 +956,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder removeAuthRequests(int index) {
       if (authRequestsBuilder_ == null) {
@@ -969,14 +969,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest.Builder getAuthRequestsBuilder(
         int index) {
       return getAuthRequestsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequestOrBuilder getAuthRequestsOrBuilder(
         int index) {
@@ -986,7 +986,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<? extends com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequestOrBuilder> 
          getAuthRequestsOrBuilderList() {
@@ -997,14 +997,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest.Builder addAuthRequestsBuilder() {
       return getAuthRequestsFieldBuilder().addBuilder(
           com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest.Builder addAuthRequestsBuilder(
         int index) {
@@ -1012,7 +1012,7 @@ private static final long serialVersionUID = 0L;
           index, com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.AuthLogRequest authRequests = 4 [json_name = "authRequests", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.auditlogs.AuthLogRequest.Builder> 
          getAuthRequestsBuilderList() {

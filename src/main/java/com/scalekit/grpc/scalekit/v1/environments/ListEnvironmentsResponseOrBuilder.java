@@ -9,12 +9,12 @@ public interface ListEnvironmentsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+   * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
-   * <code>string next_page_token = 1 [json_name = "nextPageToken"];</code>
+   * <code>string next_page_token = 1 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString

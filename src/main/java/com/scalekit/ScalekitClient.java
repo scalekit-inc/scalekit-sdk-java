@@ -44,6 +44,8 @@ public class ScalekitClient {
 
     private final M2MClient m2mClient;
 
+    private final ResourceConsentClient resourceConsentClient;
+
     private final EventsClient eventsClient;
 
     private final LoginClient loginClient;
@@ -166,6 +168,7 @@ public class ScalekitClient {
             webAuthnClient = new ScalekitWebAuthnClient(channel, credentials);
             tokenClient = new ScalekitTokenClient(channel, credentials);
             m2mClient = new ScalekitM2MClient(channel, credentials);
+            resourceConsentClient = new ScalekitResourceConsentClient(channel, credentials);
             eventsClient = new ScalekitEventsClient(channel, credentials);
             loginClient = new ScalekitLoginClient(channel, credentials);
             webhook = new ScalekitWebhook();
@@ -232,6 +235,10 @@ public class ScalekitClient {
 
     public M2MClient m2m() {
         return this.m2mClient;
+    }
+
+    public ResourceConsentClient resources() {
+        return this.resourceConsentClient;
     }
 
     public EventsClient events() {

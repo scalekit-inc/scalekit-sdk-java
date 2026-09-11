@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     type_ = 0;
     providerKey_ = "";
     keyId_ = "";
+    authMode_ = 0;
   }
 
   @java.lang.Override
@@ -166,6 +167,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CONTEXT_FIELD_NUMBER = 5;
+  private com.google.protobuf.Struct context_;
+  /**
+   * <code>.google.protobuf.Struct context = 5 [json_name = "context", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the context field is set.
+   */
+  @java.lang.Override
+  public boolean hasContext() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>.google.protobuf.Struct context = 5 [json_name = "context", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The context.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getContext() {
+    return context_ == null ? com.google.protobuf.Struct.getDefaultInstance() : context_;
+  }
+  /**
+   * <code>.google.protobuf.Struct context = 5 [json_name = "context", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getContextOrBuilder() {
+    return context_ == null ? com.google.protobuf.Struct.getDefaultInstance() : context_;
+  }
+
+  public static final int AUTH_MODE_FIELD_NUMBER = 6;
+  private int authMode_ = 0;
+  /**
+   * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 6 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for authMode.
+   */
+  @java.lang.Override public int getAuthModeValue() {
+    return authMode_;
+  }
+  /**
+   * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 6 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The authMode.
+   */
+  @java.lang.Override public com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode getAuthMode() {
+    com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode result = com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode.forNumber(authMode_);
+    return result == null ? com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -192,6 +237,12 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, keyId_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(5, getContext());
+    }
+    if (authMode_ != com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode.CONNECTION_AUTH_MODE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(6, authMode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -214,6 +265,14 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, keyId_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getContext());
+    }
+    if (authMode_ != com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode.CONNECTION_AUTH_MODE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(6, authMode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -239,6 +298,12 @@ private static final long serialVersionUID = 0L;
       if (!getKeyId()
           .equals(other.getKeyId())) return false;
     }
+    if (hasContext() != other.hasContext()) return false;
+    if (hasContext()) {
+      if (!getContext()
+          .equals(other.getContext())) return false;
+    }
+    if (authMode_ != other.authMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -260,6 +325,12 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + KEY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getKeyId().hashCode();
     }
+    if (hasContext()) {
+      hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getContext().hashCode();
+    }
+    hash = (37 * hash) + AUTH_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + authMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -379,13 +450,19 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.scalekit.grpc.scalekit.v1.connections.CreateConnection.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getContextFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -395,6 +472,12 @@ private static final long serialVersionUID = 0L;
       type_ = 0;
       providerKey_ = "";
       keyId_ = "";
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
+        contextBuilder_ = null;
+      }
+      authMode_ = 0;
       return this;
     }
 
@@ -441,6 +524,15 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.keyId_ = keyId_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.context_ = contextBuilder_ == null
+            ? context_
+            : contextBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.authMode_ = authMode_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -505,6 +597,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.hasContext()) {
+        mergeContext(other.getContext());
+      }
+      if (other.authMode_ != 0) {
+        setAuthModeValue(other.getAuthModeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -551,6 +649,18 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 34
+            case 42: {
+              input.readMessage(
+                  getContextFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 42
+            case 48: {
+              authMode_ = input.readEnum();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 48
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -821,6 +931,180 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       keyId_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Struct context_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> contextBuilder_;
+    /**
+     * <code>.google.protobuf.Struct context = 5 [json_name = "context", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the context field is set.
+     */
+    public boolean hasContext() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Struct context = 5 [json_name = "context", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The context.
+     */
+    public com.google.protobuf.Struct getContext() {
+      if (contextBuilder_ == null) {
+        return context_ == null ? com.google.protobuf.Struct.getDefaultInstance() : context_;
+      } else {
+        return contextBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.Struct context = 5 [json_name = "context", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setContext(com.google.protobuf.Struct value) {
+      if (contextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        context_ = value;
+      } else {
+        contextBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct context = 5 [json_name = "context", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setContext(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (contextBuilder_ == null) {
+        context_ = builderForValue.build();
+      } else {
+        contextBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct context = 5 [json_name = "context", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeContext(com.google.protobuf.Struct value) {
+      if (contextBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0) &&
+          context_ != null &&
+          context_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getContextBuilder().mergeFrom(value);
+        } else {
+          context_ = value;
+        }
+      } else {
+        contextBuilder_.mergeFrom(value);
+      }
+      if (context_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct context = 5 [json_name = "context", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearContext() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
+        contextBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct context = 5 [json_name = "context", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.Struct.Builder getContextBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getContextFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Struct context = 5 [json_name = "context", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StructOrBuilder getContextOrBuilder() {
+      if (contextBuilder_ != null) {
+        return contextBuilder_.getMessageOrBuilder();
+      } else {
+        return context_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : context_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Struct context = 5 [json_name = "context", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getContextFieldBuilder() {
+      if (contextBuilder_ == null) {
+        contextBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getContext(),
+                getParentForChildren(),
+                isClean());
+        context_ = null;
+      }
+      return contextBuilder_;
+    }
+
+    private int authMode_ = 0;
+    /**
+     * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 6 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enum numeric value on the wire for authMode.
+     */
+    @java.lang.Override public int getAuthModeValue() {
+      return authMode_;
+    }
+    /**
+     * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 6 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enum numeric value on the wire for authMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthModeValue(int value) {
+      authMode_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 6 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The authMode.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode getAuthMode() {
+      com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode result = com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode.forNumber(authMode_);
+      return result == null ? com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 6 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The authMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthMode(com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      authMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 6 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAuthMode() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      authMode_ = 0;
       onChanged();
       return this;
     }

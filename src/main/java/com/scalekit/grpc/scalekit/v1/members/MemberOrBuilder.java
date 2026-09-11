@@ -21,42 +21,42 @@ public interface MemberOrBuilder extends
       getIdBytes();
 
   /**
-   * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime"];</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
-   * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime"];</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
-   * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime"];</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime", (.scalekit.v1.options.agent_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime"];</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
-   * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime"];</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
-   * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime"];</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime", (.scalekit.v1.options.agent_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
   /**
-   * <code>string workspace_id = 4 [json_name = "workspaceId"];</code>
+   * <code>string workspace_id = 4 [json_name = "workspaceId", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return The workspaceId.
    */
   java.lang.String getWorkspaceId();
   /**
-   * <code>string workspace_id = 4 [json_name = "workspaceId"];</code>
+   * <code>string workspace_id = 4 [json_name = "workspaceId", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return The bytes for workspaceId.
    */
   com.google.protobuf.ByteString
@@ -154,75 +154,75 @@ java.lang.String defaultValue);
       java.lang.String key);
 
   /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
    */
   java.util.List<com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership> 
       getOrganizationsList();
   /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership getOrganizations(int index);
   /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
    */
   int getOrganizationsCount();
   /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
    */
   java.util.List<? extends com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder> 
       getOrganizationsOrBuilderList();
   /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder getOrganizationsOrBuilder(
       int index);
 
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile"];</code>
+   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return Whether the userProfile field is set.
    */
   boolean hasUserProfile();
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile"];</code>
+   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return The userProfile.
    */
   com.scalekit.grpc.scalekit.v1.commons.UserProfile getUserProfile();
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile"];</code>
+   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.scalekit.v1.options.agent_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder getUserProfileOrBuilder();
 
   /**
-   * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return The externalId.
    */
   java.lang.String getExternalId();
   /**
-   * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return The bytes for externalId.
    */
   com.google.protobuf.ByteString
       getExternalIdBytes();
 
   /**
-   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return A list containing the workspaceIds.
    */
   java.util.List<java.lang.String>
       getWorkspaceIdsList();
   /**
-   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return The count of workspaceIds.
    */
   int getWorkspaceIdsCount();
   /**
-   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The workspaceIds at the given index.
    */
   java.lang.String getWorkspaceIds(int index);
   /**
-   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the workspaceIds at the given index.
    */
@@ -245,4 +245,31 @@ java.lang.String defaultValue);
    */
   com.google.protobuf.ByteString
       getActiveWorkspaceExternalIdBytes();
+
+  /**
+   * <code>.scalekit.v1.members.DashboardRole dashboard_role = 15 [json_name = "dashboardRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the dashboardRole field is set.
+   */
+  boolean hasDashboardRole();
+  /**
+   * <code>.scalekit.v1.members.DashboardRole dashboard_role = 15 [json_name = "dashboardRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The dashboardRole.
+   */
+  com.scalekit.grpc.scalekit.v1.members.DashboardRole getDashboardRole();
+  /**
+   * <code>.scalekit.v1.members.DashboardRole dashboard_role = 15 [json_name = "dashboardRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.members.DashboardRoleOrBuilder getDashboardRoleOrBuilder();
+
+  /**
+   * <code>string dashboard_role_name = 16 [json_name = "dashboardRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The dashboardRoleName.
+   */
+  java.lang.String getDashboardRoleName();
+  /**
+   * <code>string dashboard_role_name = 16 [json_name = "dashboardRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for dashboardRoleName.
+   */
+  com.google.protobuf.ByteString
+      getDashboardRoleNameBytes();
 }

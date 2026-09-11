@@ -561,6 +561,58 @@ private static final long serialVersionUID = 0L;
     return extensions_ == null ? com.scalekit.grpc.scalekit.v1.connections.OauthExtensions.getDefaultInstance() : extensions_;
   }
 
+  public static final int TOKEN_ENDPOINT_AUTH_METHOD_FIELD_NUMBER = 25;
+  private com.google.protobuf.StringValue tokenEndpointAuthMethod_;
+  /**
+   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the tokenEndpointAuthMethod field is set.
+   */
+  @java.lang.Override
+  public boolean hasTokenEndpointAuthMethod() {
+    return ((bitField0_ & 0x00020000) != 0);
+  }
+  /**
+   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The tokenEndpointAuthMethod.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getTokenEndpointAuthMethod() {
+    return tokenEndpointAuthMethod_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : tokenEndpointAuthMethod_;
+  }
+  /**
+   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getTokenEndpointAuthMethodOrBuilder() {
+    return tokenEndpointAuthMethod_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : tokenEndpointAuthMethod_;
+  }
+
+  public static final int GOOGLEADS_DEVELOPER_TOKEN_FIELD_NUMBER = 26;
+  private com.google.protobuf.StringValue googleadsDeveloperToken_;
+  /**
+   * <code>.google.protobuf.StringValue googleads_developer_token = 26 [json_name = "googleadsDeveloperToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the googleadsDeveloperToken field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleadsDeveloperToken() {
+    return ((bitField0_ & 0x00040000) != 0);
+  }
+  /**
+   * <code>.google.protobuf.StringValue googleads_developer_token = 26 [json_name = "googleadsDeveloperToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The googleadsDeveloperToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValue getGoogleadsDeveloperToken() {
+    return googleadsDeveloperToken_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : googleadsDeveloperToken_;
+  }
+  /**
+   * <code>.google.protobuf.StringValue googleads_developer_token = 26 [json_name = "googleadsDeveloperToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StringValueOrBuilder getGoogleadsDeveloperTokenOrBuilder() {
+    return googleadsDeveloperToken_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : googleadsDeveloperToken_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -631,6 +683,12 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00010000) != 0)) {
       output.writeMessage(24, getExtensions());
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      output.writeMessage(25, getTokenEndpointAuthMethod());
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      output.writeMessage(26, getGoogleadsDeveloperToken());
     }
     getUnknownFields().writeTo(output);
   }
@@ -719,6 +777,14 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(24, getExtensions());
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(25, getTokenEndpointAuthMethod());
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(26, getGoogleadsDeveloperToken());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -824,6 +890,16 @@ private static final long serialVersionUID = 0L;
       if (!getExtensions()
           .equals(other.getExtensions())) return false;
     }
+    if (hasTokenEndpointAuthMethod() != other.hasTokenEndpointAuthMethod()) return false;
+    if (hasTokenEndpointAuthMethod()) {
+      if (!getTokenEndpointAuthMethod()
+          .equals(other.getTokenEndpointAuthMethod())) return false;
+    }
+    if (hasGoogleadsDeveloperToken() != other.hasGoogleadsDeveloperToken()) return false;
+    if (hasGoogleadsDeveloperToken()) {
+      if (!getGoogleadsDeveloperToken()
+          .equals(other.getGoogleadsDeveloperToken())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -908,6 +984,14 @@ private static final long serialVersionUID = 0L;
     if (hasExtensions()) {
       hash = (37 * hash) + EXTENSIONS_FIELD_NUMBER;
       hash = (53 * hash) + getExtensions().hashCode();
+    }
+    if (hasTokenEndpointAuthMethod()) {
+      hash = (37 * hash) + TOKEN_ENDPOINT_AUTH_METHOD_FIELD_NUMBER;
+      hash = (53 * hash) + getTokenEndpointAuthMethod().hashCode();
+    }
+    if (hasGoogleadsDeveloperToken()) {
+      hash = (37 * hash) + GOOGLEADS_DEVELOPER_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getGoogleadsDeveloperToken().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1056,6 +1140,8 @@ private static final long serialVersionUID = 0L;
         getAppNameFieldBuilder();
         getOptionalScopesFieldBuilder();
         getExtensionsFieldBuilder();
+        getTokenEndpointAuthMethodFieldBuilder();
+        getGoogleadsDeveloperTokenFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1149,6 +1235,16 @@ private static final long serialVersionUID = 0L;
       if (extensionsBuilder_ != null) {
         extensionsBuilder_.dispose();
         extensionsBuilder_ = null;
+      }
+      tokenEndpointAuthMethod_ = null;
+      if (tokenEndpointAuthMethodBuilder_ != null) {
+        tokenEndpointAuthMethodBuilder_.dispose();
+        tokenEndpointAuthMethodBuilder_ = null;
+      }
+      googleadsDeveloperToken_ = null;
+      if (googleadsDeveloperTokenBuilder_ != null) {
+        googleadsDeveloperTokenBuilder_.dispose();
+        googleadsDeveloperTokenBuilder_ = null;
       }
       return this;
     }
@@ -1293,6 +1389,18 @@ private static final long serialVersionUID = 0L;
             : extensionsBuilder_.build();
         to_bitField0_ |= 0x00010000;
       }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.tokenEndpointAuthMethod_ = tokenEndpointAuthMethodBuilder_ == null
+            ? tokenEndpointAuthMethod_
+            : tokenEndpointAuthMethodBuilder_.build();
+        to_bitField0_ |= 0x00020000;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.googleadsDeveloperToken_ = googleadsDeveloperTokenBuilder_ == null
+            ? googleadsDeveloperToken_
+            : googleadsDeveloperTokenBuilder_.build();
+        to_bitField0_ |= 0x00040000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1405,6 +1513,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasExtensions()) {
         mergeExtensions(other.getExtensions());
+      }
+      if (other.hasTokenEndpointAuthMethod()) {
+        mergeTokenEndpointAuthMethod(other.getTokenEndpointAuthMethod());
+      }
+      if (other.hasGoogleadsDeveloperToken()) {
+        mergeGoogleadsDeveloperToken(other.getGoogleadsDeveloperToken());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1562,6 +1676,20 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00040000;
               break;
             } // case 194
+            case 202: {
+              input.readMessage(
+                  getTokenEndpointAuthMethodFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00080000;
+              break;
+            } // case 202
+            case 210: {
+              input.readMessage(
+                  getGoogleadsDeveloperTokenFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00100000;
+              break;
+            } // case 210
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3817,6 +3945,248 @@ private static final long serialVersionUID = 0L;
         extensions_ = null;
       }
       return extensionsBuilder_;
+    }
+
+    private com.google.protobuf.StringValue tokenEndpointAuthMethod_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> tokenEndpointAuthMethodBuilder_;
+    /**
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the tokenEndpointAuthMethod field is set.
+     */
+    public boolean hasTokenEndpointAuthMethod() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The tokenEndpointAuthMethod.
+     */
+    public com.google.protobuf.StringValue getTokenEndpointAuthMethod() {
+      if (tokenEndpointAuthMethodBuilder_ == null) {
+        return tokenEndpointAuthMethod_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : tokenEndpointAuthMethod_;
+      } else {
+        return tokenEndpointAuthMethodBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setTokenEndpointAuthMethod(com.google.protobuf.StringValue value) {
+      if (tokenEndpointAuthMethodBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tokenEndpointAuthMethod_ = value;
+      } else {
+        tokenEndpointAuthMethodBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setTokenEndpointAuthMethod(
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (tokenEndpointAuthMethodBuilder_ == null) {
+        tokenEndpointAuthMethod_ = builderForValue.build();
+      } else {
+        tokenEndpointAuthMethodBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeTokenEndpointAuthMethod(com.google.protobuf.StringValue value) {
+      if (tokenEndpointAuthMethodBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0) &&
+          tokenEndpointAuthMethod_ != null &&
+          tokenEndpointAuthMethod_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getTokenEndpointAuthMethodBuilder().mergeFrom(value);
+        } else {
+          tokenEndpointAuthMethod_ = value;
+        }
+      } else {
+        tokenEndpointAuthMethodBuilder_.mergeFrom(value);
+      }
+      if (tokenEndpointAuthMethod_ != null) {
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearTokenEndpointAuthMethod() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      tokenEndpointAuthMethod_ = null;
+      if (tokenEndpointAuthMethodBuilder_ != null) {
+        tokenEndpointAuthMethodBuilder_.dispose();
+        tokenEndpointAuthMethodBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValue.Builder getTokenEndpointAuthMethodBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return getTokenEndpointAuthMethodFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getTokenEndpointAuthMethodOrBuilder() {
+      if (tokenEndpointAuthMethodBuilder_ != null) {
+        return tokenEndpointAuthMethodBuilder_.getMessageOrBuilder();
+      } else {
+        return tokenEndpointAuthMethod_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : tokenEndpointAuthMethod_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getTokenEndpointAuthMethodFieldBuilder() {
+      if (tokenEndpointAuthMethodBuilder_ == null) {
+        tokenEndpointAuthMethodBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getTokenEndpointAuthMethod(),
+                getParentForChildren(),
+                isClean());
+        tokenEndpointAuthMethod_ = null;
+      }
+      return tokenEndpointAuthMethodBuilder_;
+    }
+
+    private com.google.protobuf.StringValue googleadsDeveloperToken_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> googleadsDeveloperTokenBuilder_;
+    /**
+     * <code>.google.protobuf.StringValue googleads_developer_token = 26 [json_name = "googleadsDeveloperToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the googleadsDeveloperToken field is set.
+     */
+    public boolean hasGoogleadsDeveloperToken() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.StringValue googleads_developer_token = 26 [json_name = "googleadsDeveloperToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The googleadsDeveloperToken.
+     */
+    public com.google.protobuf.StringValue getGoogleadsDeveloperToken() {
+      if (googleadsDeveloperTokenBuilder_ == null) {
+        return googleadsDeveloperToken_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : googleadsDeveloperToken_;
+      } else {
+        return googleadsDeveloperTokenBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue googleads_developer_token = 26 [json_name = "googleadsDeveloperToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setGoogleadsDeveloperToken(com.google.protobuf.StringValue value) {
+      if (googleadsDeveloperTokenBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        googleadsDeveloperToken_ = value;
+      } else {
+        googleadsDeveloperTokenBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue googleads_developer_token = 26 [json_name = "googleadsDeveloperToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setGoogleadsDeveloperToken(
+        com.google.protobuf.StringValue.Builder builderForValue) {
+      if (googleadsDeveloperTokenBuilder_ == null) {
+        googleadsDeveloperToken_ = builderForValue.build();
+      } else {
+        googleadsDeveloperTokenBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue googleads_developer_token = 26 [json_name = "googleadsDeveloperToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeGoogleadsDeveloperToken(com.google.protobuf.StringValue value) {
+      if (googleadsDeveloperTokenBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0) &&
+          googleadsDeveloperToken_ != null &&
+          googleadsDeveloperToken_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getGoogleadsDeveloperTokenBuilder().mergeFrom(value);
+        } else {
+          googleadsDeveloperToken_ = value;
+        }
+      } else {
+        googleadsDeveloperTokenBuilder_.mergeFrom(value);
+      }
+      if (googleadsDeveloperToken_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue googleads_developer_token = 26 [json_name = "googleadsDeveloperToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearGoogleadsDeveloperToken() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      googleadsDeveloperToken_ = null;
+      if (googleadsDeveloperTokenBuilder_ != null) {
+        googleadsDeveloperTokenBuilder_.dispose();
+        googleadsDeveloperTokenBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.StringValue googleads_developer_token = 26 [json_name = "googleadsDeveloperToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValue.Builder getGoogleadsDeveloperTokenBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return getGoogleadsDeveloperTokenFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.StringValue googleads_developer_token = 26 [json_name = "googleadsDeveloperToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.StringValueOrBuilder getGoogleadsDeveloperTokenOrBuilder() {
+      if (googleadsDeveloperTokenBuilder_ != null) {
+        return googleadsDeveloperTokenBuilder_.getMessageOrBuilder();
+      } else {
+        return googleadsDeveloperToken_ == null ?
+            com.google.protobuf.StringValue.getDefaultInstance() : googleadsDeveloperToken_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.StringValue googleads_developer_token = 26 [json_name = "googleadsDeveloperToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
+        getGoogleadsDeveloperTokenFieldBuilder() {
+      if (googleadsDeveloperTokenBuilder_ == null) {
+        googleadsDeveloperTokenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder>(
+                getGoogleadsDeveloperToken(),
+                getParentForChildren(),
+                isClean());
+        googleadsDeveloperToken_ = null;
+      }
+      return googleadsDeveloperTokenBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -356,5 +356,33 @@ java.lang.String defaultValue);
   com.google.protobuf.ByteString
       getMcpServerUrlBytes();
 
+  /**
+   * <code>optional string resolved_proxy_url = 30 [json_name = "resolvedProxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the resolvedProxyUrl field is set.
+   */
+  boolean hasResolvedProxyUrl();
+  /**
+   * <code>optional string resolved_proxy_url = 30 [json_name = "resolvedProxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resolvedProxyUrl.
+   */
+  java.lang.String getResolvedProxyUrl();
+  /**
+   * <code>optional string resolved_proxy_url = 30 [json_name = "resolvedProxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for resolvedProxyUrl.
+   */
+  com.google.protobuf.ByteString
+      getResolvedProxyUrlBytes();
+
+  /**
+   * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 31 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for authMode.
+   */
+  int getAuthModeValue();
+  /**
+   * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 31 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The authMode.
+   */
+  com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode getAuthMode();
+
   com.scalekit.grpc.scalekit.v1.connections.Connection.SettingsCase getSettingsCase();
 }

@@ -102,33 +102,34 @@ public final class AgentkitAnalyticsProto {
       ") so that any window returns at most 30 " +
       "points.R\025bucketDurationSeconds\022\'\n\017provid" +
       "er_errors\030\006 \001(\003R\016providerErrors\022\'\n\017platf" +
-      "orm_errors\030\007 \001(\003R\016platformErrors2\212\006\n\030Age" +
-      "ntkitAnalyticsService\022\301\003\n\020GetOverviewSta" +
+      "orm_errors\030\007 \001(\003R\016platformErrors2\233\006\n\030Age" +
+      "ntkitAnalyticsService\022\322\003\n\020GetOverviewSta" +
       "ts\0222.scalekit.v1.agentkit_logs.GetOvervi" +
       "ewStatsRequest\032(.scalekit.v1.agentkit_lo" +
-      "gs.OverviewStats\"\316\002\222A\212\002\n\022AgentKit Analyt" +
+      "gs.OverviewStats\"\337\002\222A\212\002\n\022AgentKit Analyt" +
       "ics\022!Get tool call overview statistics\032~" +
       "Returns aggregated tool call metrics for" +
       " the environment over the specified time" +
       " window. Used to power the Overview dash" +
       "board.J3\n\003200\022,\n*Overview statistics ret" +
       "rieved successfullyJ\034\n\003400\022\025\n\023Invalid ti" +
-      "me window\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\022#/a" +
-      "pi/v1/agentkit/analytics/overview\022\220\002\n\027Ge" +
-      "tCurrentOverviewStats\0222.scalekit.v1.agen" +
-      "tkit_logs.GetOverviewStatsRequest\032(.scal" +
-      "ekit.v1.agentkit_logs.OverviewStats\"\226\001\222A" +
-      "N\n\022AgentKit Analytics\0228Get the calling e" +
-      "nd-user\'s tool call overview statistics\202" +
-      "\265\030\002\030\030\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002*\022(/api/v1/agen" +
-      "tkit/analytics/overview:this\032\027\222A\024\n\022Agent" +
-      "Kit AnalyticsB\200\002\n+com.scalekit.grpc.scal" +
-      "ekit.v1.agentkit_logsB\026AgentkitAnalytics" +
-      "ProtoP\001Z7github.com/scalekit-inc/scaleki" +
-      "t/pkg/grpc/agentkit_logs\242\002\003SVA\252\002\030Scaleki" +
-      "t.V1.AgentkitLogs\312\002\030Scalekit\\V1\\Agentkit" +
-      "Logs\342\002$Scalekit\\V1\\AgentkitLogs\\GPBMetad" +
-      "ata\352\002\032Scalekit::V1::AgentkitLogsb\006proto3"
+      "me window\202\265\030\023\n\017agent_logs:read\030T\372\322\344\223\002\t\022\007" +
+      "PREVIEW\202\323\344\223\002%\022#/api/v1/agentkit/analytic" +
+      "s/overview\022\220\002\n\027GetCurrentOverviewStats\0222" +
+      ".scalekit.v1.agentkit_logs.GetOverviewSt" +
+      "atsRequest\032(.scalekit.v1.agentkit_logs.O" +
+      "verviewStats\"\226\001\222AN\n\022AgentKit Analytics\0228" +
+      "Get the calling end-user\'s tool call ove" +
+      "rview statistics\202\265\030\002\030\030\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
+      "\223\002*\022(/api/v1/agentkit/analytics/overview" +
+      ":this\032\027\222A\024\n\022AgentKit AnalyticsB\200\002\n+com.s" +
+      "calekit.grpc.scalekit.v1.agentkit_logsB\026" +
+      "AgentkitAnalyticsProtoP\001Z7github.com/sca" +
+      "lekit-inc/scalekit/pkg/grpc/agentkit_log" +
+      "s\242\002\003SVA\252\002\030Scalekit.V1.AgentkitLogs\312\002\030Sca" +
+      "lekit\\V1\\AgentkitLogs\342\002$Scalekit\\V1\\Agen" +
+      "tkitLogs\\GPBMetadata\352\002\032Scalekit::V1::Age" +
+      "ntkitLogsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

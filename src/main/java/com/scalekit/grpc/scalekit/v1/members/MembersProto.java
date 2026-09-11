@@ -31,6 +31,11 @@ public final class MembersProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_members_CreateMemberRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_InviteMemberRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_InviteMemberRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_members_CreateMemberResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -90,6 +95,111 @@ public final class MembersProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_members_DeleteMemberRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_DashboardRole_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_DashboardRole_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_AssignDashboardRoleRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_AssignDashboardRoleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_AssignDashboardRoleResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_AssignDashboardRoleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_SetDashboardEnvironmentRoleRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_SetDashboardEnvironmentRoleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_SetDashboardEnvironmentRoleResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_SetDashboardEnvironmentRoleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_ClearDashboardEnvironmentRoleRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_ClearDashboardEnvironmentRoleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_ClearDashboardEnvironmentRoleResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_ClearDashboardEnvironmentRoleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_ListDashboardRolesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_ListDashboardRolesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_ListDashboardRolesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_ListDashboardRolesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_DashboardPermission_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_DashboardPermission_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_ListDashboardPermissionsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_ListDashboardPermissionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_ListDashboardPermissionsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_ListDashboardPermissionsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_CreateDashboardRoleRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_CreateDashboardRoleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_CreateDashboardRoleResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_CreateDashboardRoleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_UpdateDashboardRoleRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_UpdateDashboardRoleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_UpdateDashboardRoleResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_UpdateDashboardRoleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_DeleteDashboardRoleRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_DeleteDashboardRoleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_DeleteDashboardRoleResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_DeleteDashboardRoleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_ListDashboardMemberEnvironmentRolesRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_ListDashboardMemberEnvironmentRolesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_DashboardMemberEnvironmentRole_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_DashboardMemberEnvironmentRole_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_members_ListDashboardMemberEnvironmentRolesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_members_ListDashboardMemberEnvironmentRolesResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -108,97 +218,562 @@ public final class MembersProto {
       ".protoc-gen-openapiv2/options/annotation" +
       "s.proto\032!scalekit/v1/commons/commons.pro" +
       "to\032!scalekit/v1/options/options.proto\032\035s" +
-      "calekit/v1/users/users.proto\"\272\007\n\006Member\022" +
-      "\016\n\002id\030\001 \001(\tR\002id\022;\n\013create_time\030\002 \001(\0132\032.g" +
-      "oogle.protobuf.TimestampR\ncreateTime\022;\n\013" +
-      "update_time\030\003 \001(\0132\032.google.protobuf.Time" +
-      "stampR\nupdateTime\022!\n\014workspace_id\030\004 \001(\tR" +
-      "\013workspaceId\0223\n\004role\030\005 \001(\0162\037.scalekit.v1" +
-      ".members.MemberRoleR\004role\022,\n\nfirst_name\030" +
-      "\006 \001(\tB\010\272H\005r\003\030\310\001H\000R\tfirstName\210\001\001\022*\n\tlast_" +
-      "name\030\007 \001(\tB\010\272H\005r\003\030\310\001H\001R\010lastName\210\001\001\022\035\n\005e" +
-      "mail\030\010 \001(\tB\007\272H\004r\002`\001R\005email\022`\n\010metadata\030\t" +
-      " \003(\0132).scalekit.v1.members.Member.Metada" +
-      "taEntryB\031\272H\026\232\001\023\020\024\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010meta" +
-      "data\022V\n\rorganizations\030\n \003(\0132+.scalekit.v" +
-      "1.commons.OrganizationMembershipB\003\340A\003R\ro" +
-      "rganizations\022C\n\014user_profile\030\013 \001(\0132 .sca" +
-      "lekit.v1.commons.UserProfileR\013userProfil" +
-      "e\022$\n\013external_id\030\014 \001(\tB\003\340A\003R\nexternalId\022" +
-      "#\n\rworkspace_ids\030\r \003(\tR\014workspaceIds\022\217\001\n" +
-      "\034active_workspace_external_id\030\016 \001(\tBI\222AC" +
-      "2(Members session current active workspa" +
-      "ceJ\027\"org_72289897007874151\"\340A\003H\002R\031active" +
-      "WorkspaceExternalId\210\001\001\032;\n\rMetadataEntry\022" +
-      "\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:" +
-      "\0028\001B\r\n\013_first_nameB\014\n\n_last_nameB\037\n\035_act" +
-      "ive_workspace_external_id\"R\n\023CreateMembe" +
-      "rRequest\022;\n\006member\030\001 \001(\0132\033.scalekit.v1.m" +
-      "embers.MemberB\006\272H\003\310\001\001R\006member\"K\n\024CreateM" +
-      "emberResponse\0223\n\006member\030\001 \001(\0132\033.scalekit" +
-      ".v1.members.MemberR\006member\"\203\003\n\014UpdateMem" +
-      "ber\022.\n\nfirst_name\030\006 \001(\tB\n\272H\007r\005\020\001\030\310\001H\000R\tf" +
-      "irstName\210\001\001\022,\n\tlast_name\030\007 \001(\tB\n\272H\007r\005\020\001\030" +
-      "\310\001H\001R\010lastName\210\001\001\022f\n\010metadata\030\t \003(\0132/.sc" +
-      "alekit.v1.members.UpdateMember.MetadataE" +
-      "ntryB\031\272H\026\232\001\023\020\n\"\006r\004\020\003\030\031*\007r\005\020\001\030\200\002R\010metadat" +
-      "a\022G\n\014user_profile\030\n \001(\0132$.scalekit.v1.us" +
-      "ers.UpdateUserProfileR\013userProfile\032;\n\rMe" +
-      "tadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002" +
-      " \001(\tR\005value:\0028\001B\r\n\013_first_nameB\014\n\n_last_" +
-      "nameJ\004\010\004\020\005J\004\010\010\020\t\"W\n\032UpdateCurrentMemberR" +
-      "equest\0229\n\006member\030\001 \001(\0132!.scalekit.v1.mem" +
-      "bers.UpdateMemberR\006member\"k\n\023UpdateMembe" +
-      "rRequest\022\031\n\002id\030\001 \001(\tB\t\272H\006r\004\020\023\030\031R\002id\0229\n\006m" +
-      "ember\030\002 \001(\0132!.scalekit.v1.members.Update" +
-      "MemberR\006member\"K\n\024UpdateMemberResponse\0223" +
-      "\n\006member\030\001 \001(\0132\033.scalekit.v1.members.Mem" +
-      "berR\006member\"\031\n\027GetCurrentMemberRequest\"-" +
-      "\n\020GetMemberRequest\022\031\n\002id\030\001 \001(\tB\t\272H\006r\004\020\023\030" +
-      "\031R\002id\"H\n\021GetMemberResponse\0223\n\006member\030\001 \001" +
-      "(\0132\033.scalekit.v1.members.MemberR\006member\"" +
-      "O\n\021ListMemberRequest\022\033\n\tpage_size\030\001 \001(\rR" +
-      "\010pageSize\022\035\n\npage_token\030\002 \001(\tR\tpageToken" +
-      "\"\222\001\n\022ListMemberResponse\022&\n\017next_page_tok" +
-      "en\030\001 \001(\tR\rnextPageToken\022\035\n\ntotal_size\030\002 " +
-      "\001(\rR\ttotalSize\0225\n\007members\030\003 \003(\0132\033.scalek" +
-      "it.v1.members.MemberR\007members\"0\n\023DeleteM" +
-      "emberRequest\022\031\n\002id\030\001 \001(\tB\t\272H\006r\004\020\023\030\031R\002id*" +
-      ">\n\nMemberRole\022\033\n\027MEMBER_ROLE_UNSPECIFIED" +
-      "\020\000\022\t\n\005ADMIN\020\001\022\010\n\004USER\020\0022\277\010\n\016MembersServi" +
-      "ce\022\231\001\n\014CreateMember\022(.scalekit.v1.member" +
-      "s.CreateMemberRequest\032).scalekit.v1.memb" +
-      "ers.CreateMemberResponse\"4\202\265\030\002\030D\372\322\344\223\002\t\022\007" +
-      "PREVIEW\202\323\344\223\002\031\"\017/api/v1/members:\006member\022\254" +
-      "\001\n\023UpdateCurrentMember\022/.scalekit.v1.mem" +
-      "bers.UpdateCurrentMemberRequest\032).scalek" +
-      "it.v1.members.UpdateMemberResponse\"9\202\265\030\002" +
-      "\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\0362\024/api/v1/members" +
-      ":this:\006member\022\236\001\n\014UpdateMember\022(.scaleki" +
-      "t.v1.members.UpdateMemberRequest\032).scale" +
-      "kit.v1.members.UpdateMemberResponse\"9\202\265\030" +
-      "\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\0362\024/api/v1/member" +
-      "s/{id}:\006member\022\233\001\n\020GetCurrentMember\022,.sc" +
-      "alekit.v1.members.GetCurrentMemberReques" +
-      "t\032&.scalekit.v1.members.GetMemberRespons" +
-      "e\"1\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\026\022\024/api/v1/" +
-      "members:this\022\215\001\n\tGetMember\022%.scalekit.v1" +
-      ".members.GetMemberRequest\032&.scalekit.v1." +
-      "members.GetMemberResponse\"1\202\265\030\002\030D\372\322\344\223\002\t\022" +
-      "\007PREVIEW\202\323\344\223\002\026\022\024/api/v1/members/{id}\022\214\001\n" +
-      "\013ListMembers\022&.scalekit.v1.members.ListM" +
-      "emberRequest\032\'.scalekit.v1.members.ListM" +
-      "emberResponse\",\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
-      "\002\021\022\017/api/v1/members\022\203\001\n\014DeleteMember\022(.s" +
-      "calekit.v1.members.DeleteMemberRequest\032\026" +
-      ".google.protobuf.Empty\"1\202\265\030\002\030D\372\322\344\223\002\t\022\007PR" +
-      "EVIEW\202\323\344\223\002\026*\024/api/v1/members/{id}B\326\001\n%co" +
-      "m.scalekit.grpc.scalekit.v1.membersB\014Mem" +
-      "bersProtoP\001Z1github.com/scalekit-inc/sca" +
-      "lekit/pkg/grpc/members\242\002\003SVM\252\002\023Scalekit." +
-      "V1.Members\312\002\023Scalekit\\V1\\Members\342\002\037Scale" +
-      "kit\\V1\\Members\\GPBMetadata\352\002\025Scalekit::V" +
-      "1::Membersb\006proto3"
+      "calekit/v1/users/users.proto\"\341\016\n\006Member\022" +
+      "\016\n\002id\030\001 \001(\tR\002id\022A\n\013create_time\030\002 \001(\0132\032.g" +
+      "oogle.protobuf.TimestampB\004\222\265\030\000R\ncreateTi" +
+      "me\022A\n\013update_time\030\003 \001(\0132\032.google.protobu" +
+      "f.TimestampB\004\222\265\030\000R\nupdateTime\022\'\n\014workspa" +
+      "ce_id\030\004 \001(\tB\004\222\265\030\000R\013workspaceId\0223\n\004role\030\005" +
+      " \001(\0162\037.scalekit.v1.members.MemberRoleR\004r" +
+      "ole\022,\n\nfirst_name\030\006 \001(\tB\010\272H\005r\003\030\310\001H\000R\tfir" +
+      "stName\210\001\001\022*\n\tlast_name\030\007 \001(\tB\010\272H\005r\003\030\310\001H\001" +
+      "R\010lastName\210\001\001\022\035\n\005email\030\010 \001(\tB\007\272H\004r\002`\001R\005e" +
+      "mail\022d\n\010metadata\030\t \003(\0132).scalekit.v1.mem" +
+      "bers.Member.MetadataEntryB\035\272H\026\232\001\023\020\024\"\006r\004\020" +
+      "\003\030\031*\007r\005\020\001\030\200\002\222\265\030\000R\010metadata\022Z\n\rorganizati" +
+      "ons\030\n \003(\0132+.scalekit.v1.commons.Organiza" +
+      "tionMembershipB\007\340A\003\222\265\030\000R\rorganizations\022I" +
+      "\n\014user_profile\030\013 \001(\0132 .scalekit.v1.commo" +
+      "ns.UserProfileB\004\222\265\030\000R\013userProfile\022(\n\013ext" +
+      "ernal_id\030\014 \001(\tB\007\340A\003\222\265\030\000R\nexternalId\022)\n\rw" +
+      "orkspace_ids\030\r \003(\tB\004\222\265\030\000R\014workspaceIds\022\223" +
+      "\001\n\034active_workspace_external_id\030\016 \001(\tBM\222" +
+      "AC2(Members session current active works" +
+      "paceJ\027\"org_72289897007874151\"\340A\003\222\265\030\000H\002R\031" +
+      "activeWorkspaceExternalId\210\001\001\022\343\002\n\016dashboa" +
+      "rd_role\030\017 \001(\0132\".scalekit.v1.members.Dash" +
+      "boardRoleB\227\002\222A\214\0022\211\002The member\'s current " +
+      "workspace-default dashboard role. Null u" +
+      "nless dashboard RBAC is enabled and the " +
+      "member has a workspace-default assignmen" +
+      "t; a null value marks an unassigned memb" +
+      "er in the Team Members UI. A per-environ" +
+      "ment override, if any, does not appear h" +
+      "ere.\340A\003\222\265\030\000R\rdashboardRole\022\220\004\n\023dashboard" +
+      "_role_name\030\020 \001(\tB\337\003\222A\324\0032\304\003Dashboard role" +
+      " name or custom role id to assign to the" +
+      " invited member as their workspace-defau" +
+      "lt dashboard role, applied only when das" +
+      "hboard RBAC is enabled for the workspace" +
+      ". Fixed role names: admin, developer, me" +
+      "mber, no_access. Leave empty to skip the" +
+      " assignment (the member resolves to No A" +
+      "ccess until a role is assigned via Assig" +
+      "nDashboardRole). The caller may only ass" +
+      "ign a role whose permissions are a subse" +
+      "t of the permissions the caller holds.J\013" +
+      "\"developer\"\340A\004\222\265\030\000R\021dashboardRoleName\032;\n" +
+      "\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005valu" +
+      "e\030\002 \001(\tR\005value:\0028\001B\r\n\013_first_nameB\014\n\n_la" +
+      "st_nameB\037\n\035_active_workspace_external_id" +
+      "\"R\n\023CreateMemberRequest\022;\n\006member\030\001 \001(\0132" +
+      "\033.scalekit.v1.members.MemberB\006\272H\003\310\001\001R\006me" +
+      "mber\"\302\001\n\023InviteMemberRequest\022\252\001\n\005email\030\001" +
+      " \001(\tB\223\001\222A\202\0012eEmail address of the person" +
+      " to invite to the workspace. The invitat" +
+      "ion email is sent to this address.J\026\"tea" +
+      "mmate@example.com\"x\300\002\272H\nr\005\030\300\002`\001\310\001\001R\005emai" +
+      "l\"K\n\024CreateMemberResponse\0223\n\006member\030\001 \001(" +
+      "\0132\033.scalekit.v1.members.MemberR\006member\"\203" +
+      "\003\n\014UpdateMember\022.\n\nfirst_name\030\006 \001(\tB\n\272H\007" +
+      "r\005\020\001\030\310\001H\000R\tfirstName\210\001\001\022,\n\tlast_name\030\007 \001" +
+      "(\tB\n\272H\007r\005\020\001\030\310\001H\001R\010lastName\210\001\001\022f\n\010metadat" +
+      "a\030\t \003(\0132/.scalekit.v1.members.UpdateMemb" +
+      "er.MetadataEntryB\031\272H\026\232\001\023\020\n\"\006r\004\020\003\030\031*\007r\005\020\001" +
+      "\030\200\002R\010metadata\022G\n\014user_profile\030\n \001(\0132$.sc" +
+      "alekit.v1.users.UpdateUserProfileR\013userP" +
+      "rofile\032;\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003ke" +
+      "y\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\r\n\013_first_na" +
+      "meB\014\n\n_last_nameJ\004\010\004\020\005J\004\010\010\020\t\"W\n\032UpdateCu" +
+      "rrentMemberRequest\0229\n\006member\030\001 \001(\0132!.sca" +
+      "lekit.v1.members.UpdateMemberR\006member\"k\n" +
+      "\023UpdateMemberRequest\022\031\n\002id\030\001 \001(\tB\t\272H\006r\004\020" +
+      "\023\030\031R\002id\0229\n\006member\030\002 \001(\0132!.scalekit.v1.me" +
+      "mbers.UpdateMemberR\006member\"K\n\024UpdateMemb" +
+      "erResponse\0223\n\006member\030\001 \001(\0132\033.scalekit.v1" +
+      ".members.MemberR\006member\"\031\n\027GetCurrentMem" +
+      "berRequest\"-\n\020GetMemberRequest\022\031\n\002id\030\001 \001" +
+      "(\tB\t\272H\006r\004\020\023\030\031R\002id\"\276\002\n\021GetMemberResponse\022" +
+      "3\n\006member\030\001 \001(\0132\033.scalekit.v1.members.Me" +
+      "mberR\006member\022\363\001\n\025dashboard_permissions\030\002" +
+      " \003(\tB\275\001\222A\266\0012\216\001Dashboard permission keys " +
+      "the current member effectively holds; em" +
+      "pty unless dashboard RBAC is enabled. On" +
+      "ly populated for the current member.J#[\"" +
+      "organizations:read\",\"users:read\"]\340A\003R\024da" +
+      "shboardPermissions\"\261\001\n\021ListMemberRequest" +
+      "\022\033\n\tpage_size\030\001 \001(\rR\010pageSize\022\177\n\npage_to" +
+      "ken\030\002 \001(\tB`\222AW2UPagination cursor from a" +
+      " previous response. Use it to fetch the " +
+      "next page of members.\222\265\030\002\010\001R\tpageToken\"\361" +
+      "\001\n\022ListMemberResponse\022\204\001\n\017next_page_toke" +
+      "n\030\001 \001(\tB\\\222AS2QPagination cursor for the " +
+      "next page of results. Empty when this is" +
+      " the last page.\222\265\030\002\010\001R\rnextPageToken\022\035\n\n" +
+      "total_size\030\002 \001(\rR\ttotalSize\0225\n\007members\030\003" +
+      " \003(\0132\033.scalekit.v1.members.MemberR\007membe" +
+      "rs\"0\n\023DeleteMemberRequest\022\031\n\002id\030\001 \001(\tB\t\272" +
+      "H\006r\004\020\023\030\031R\002id\"\361\005\n\rDashboardRole\022F\n\002id\030\001 \001" +
+      "(\tB6\222A32(Stable identifier of the dashbo" +
+      "ard role.J\007\"skr_1\"R\002id\022\217\001\n\004name\030\002 \001(\tB{\222" +
+      "Ax2iCanonical role name. Fixed roles: ad" +
+      "min, developer, member, no_access. Custo" +
+      "m roles use a generated name.J\013\"develope" +
+      "r\"R\004name\022k\n\014display_name\030\003 \001(\tBH\222AE26Hum" +
+      "an-readable role name for display in the" +
+      " dashboard.J\013\"Developer\"R\013displayName\022v\n" +
+      "\013permissions\030\004 \003(\tBT\222AQ2*Dashboard permi" +
+      "ssion keys the role grants.J#[\"organizat" +
+      "ions:read\",\"users:read\"]R\013permissions\022\215\001" +
+      "\n\010is_fixed\030\005 \001(\010Br\222Ao2mTrue when the rol" +
+      "e is one of the four fixed, non-editable" +
+      " global roles (admin, developer, member," +
+      " no_access).R\007isFixed\022\220\001\n\013description\030\006 " +
+      "\001(\tBn\222Ak2HFree-text description of a cus" +
+      "tom dashboard role. Empty for fixed role" +
+      "s.J\037\"Read-only access for auditors\"R\013des" +
+      "cription\"\257\002\n\032AssignDashboardRoleRequest\022" +
+      "\200\001\n\tmember_id\030\001 \001(\tBc\222AT29Identifier of " +
+      "the workspace member to assign the role " +
+      "to.J\027\"mem_72289897007874151\"\340A\002\272H\006r\004\020\023\030\031" +
+      "R\010memberId\022\215\001\n\004role\030\002 \001(\tBy\222Al2]Dashboar" +
+      "d role name or custom role id. Fixed rol" +
+      "e names: admin, developer, member, no_ac" +
+      "cess.J\013\"developer\"\340A\002\272H\004r\002\020\001R\004role\"\035\n\033As" +
+      "signDashboardRoleResponse\"\364\003\n\"SetDashboa" +
+      "rdEnvironmentRoleRequest\022\216\001\n\tmember_id\030\001" +
+      " \001(\tBq\222Ab2GIdentifier of the workspace m" +
+      "ember to set the environment override fo" +
+      "r.J\027\"mem_72289897007874151\"\340A\002\272H\006r\004\020\023\030\031R" +
+      "\010memberId\022\257\001\n\016environment_id\030\002 \001(\tB\207\001\222Ax" +
+      "2]Identifier of the environment the over" +
+      "ride applies to. Must belong to the call" +
+      "er\'s workspace.J\027\"env_72289897007874151\"" +
+      "\340A\002\272H\006r\004\020\023\030\031R\renvironmentId\022\212\001\n\004role\030\003 \001" +
+      "(\tBv\222Ai2]Dashboard role name or custom r" +
+      "ole id. Fixed role names: admin, develop" +
+      "er, member, no_access.J\010\"member\"\340A\002\272H\004r\002" +
+      "\020\001R\004role\"%\n#SetDashboardEnvironmentRoleR" +
+      "esponse\"\355\002\n$ClearDashboardEnvironmentRol" +
+      "eRequest\022\220\001\n\tmember_id\030\001 \001(\tBs\222Ad2IIdent" +
+      "ifier of the workspace member whose envi" +
+      "ronment override is cleared.J\027\"mem_72289" +
+      "897007874151\"\340A\002\272H\006r\004\020\023\030\031R\010memberId\022\261\001\n\016" +
+      "environment_id\030\002 \001(\tB\211\001\222Az2_Identifier o" +
+      "f the environment whose override is clea" +
+      "red. Must belong to the caller\'s workspa" +
+      "ce.J\027\"env_72289897007874151\"\340A\002\272H\006r\004\020\023\030\031" +
+      "R\renvironmentId\"\'\n%ClearDashboardEnviron" +
+      "mentRoleResponse\"\033\n\031ListDashboardRolesRe" +
+      "quest\"|\n\032ListDashboardRolesResponse\022^\n\005r" +
+      "oles\030\001 \003(\0132\".scalekit.v1.members.Dashboa" +
+      "rdRoleB$\222A!2\037The assignable dashboard ro" +
+      "les.R\005roles\"\366\005\n\023DashboardPermission\022G\n\003k" +
+      "ey\030\001 \001(\tB5\222A22\031Canonical permission key." +
+      "J\025\"organizations:write\"R\003key\022R\n\005group\030\002 " +
+      "\001(\tB<\222A92&UI grouping the permission bel" +
+      "ongs to.J\017\"Organizations\"R\005group\022\236\001\n\004tie" +
+      "r\030\003 \001(\tB\211\001\222A\205\0012tWhere the permission is " +
+      "checked: \"workspace\" (never per-environm" +
+      "ent) or \"environment\" (overridable per e" +
+      "nvironment).J\r\"environment\"R\004tier\022]\n\013des" +
+      "cription\030\004 \001(\tB;\222A826One-line human summ" +
+      "ary of what the permission governs.R\013des" +
+      "cription\022\301\002\n\tsensitive\030\005 \001(\010B\242\002\222A\236\0022\225\002Wh" +
+      "ether granting this permission carries e" +
+      "levated risk (irreversible destruction, " +
+      "live-credential disclosure/execution, fi" +
+      "nancial spend, or access-control escalat" +
+      "ion). Sensitive permissions are excluded" +
+      " from the member floor and surface a war" +
+      "ning affordance in the role editor.J\004tru" +
+      "eR\tsensitive\"!\n\037ListDashboardPermissions" +
+      "Request\"\253\001\n ListDashboardPermissionsResp" +
+      "onse\022\206\001\n\013permissions\030\001 \003(\0132(.scalekit.v1" +
+      ".members.DashboardPermissionB:\222A725The d" +
+      "ashboard permission catalog, in canonica" +
+      "l order.R\013permissions\"\305\003\n\032CreateDashboar" +
+      "dRoleRequest\022n\n\004name\030\001 \001(\tBZ\222AK24Unique " +
+      "role name within the workspace (1-100 ch" +
+      "ars).J\023\"Billing Approvers\"\340A\002\272H\006r\004\020\001\030dR\004" +
+      "name\022{\n\013description\030\002 \001(\tBY\222AV20Optional" +
+      " human-readable description of the role." +
+      "J\"\"Can view and manage billing only\"R\013de" +
+      "scription\022\271\001\n\013permissions\030\003 \003(\tB\226\001\222A\207\0012c" +
+      "Dashboard permission catalog keys the ro" +
+      "le grants. Must be non-empty and contain" +
+      " only catalog keys.J [\"billing:read\",\"bi" +
+      "lling:write\"]\340A\002\272H\005\222\001\002\010\001R\013permissions\"t\n" +
+      "\033CreateDashboardRoleResponse\022U\n\004role\030\001 \001" +
+      "(\0132\".scalekit.v1.members.DashboardRoleB\035" +
+      "\222A\0322\030The created custom role.R\004role\"\360\004\n\032" +
+      "UpdateDashboardRoleRequest\022\260\001\n\007role_id\030\001" +
+      " \001(\tB\226\001\222A\210\0012lIdentifier of the custom ro" +
+      "le to update. Must belong to the caller\'" +
+      "s workspace and must not be a fixed role" +
+      ".J\030\"skdr_72289897007874151\"\340A\002\272H\004r\002\020\001R\006r" +
+      "oleId\022n\n\004name\030\002 \001(\tBZ\222AK24Unique role na" +
+      "me within the workspace (1-100 chars).J\023" +
+      "\"Billing Approvers\"\340A\002\272H\006r\004\020\001\030dR\004name\022r\n" +
+      "\013description\030\003 \001(\tBP\222AM2\'Human-readable " +
+      "description of the role.J\"\"Can view and " +
+      "manage billing only\"R\013description\022\272\001\n\013pe" +
+      "rmissions\030\004 \003(\tB\227\001\222A\210\0012tThe role\'s compl" +
+      "ete new permission set (replaces the pre" +
+      "vious set). Must be non-empty and contai" +
+      "n only catalog keys.J\020[\"billing:read\"]\340A" +
+      "\002\272H\005\222\001\002\010\001R\013permissions\"t\n\033UpdateDashboar" +
+      "dRoleResponse\022U\n\004role\030\001 \001(\0132\".scalekit.v" +
+      "1.members.DashboardRoleB\035\222A\0322\030The update" +
+      "d custom role.R\004role\"\317\001\n\032DeleteDashboard" +
+      "RoleRequest\022\260\001\n\007role_id\030\001 \001(\tB\226\001\222A\210\0012lId" +
+      "entifier of the custom role to delete. M" +
+      "ust belong to the caller\'s workspace and" +
+      " must not be a fixed role.J\030\"skdr_722898" +
+      "97007874151\"\340A\002\272H\004r\002\020\001R\006roleId\"\035\n\033Delete" +
+      "DashboardRoleResponse\"\315\001\n*ListDashboardM" +
+      "emberEnvironmentRolesRequest\022\236\001\n\tmember_" +
+      "id\030\001 \001(\tB\200\001\222Aq2VIdentifier of the worksp" +
+      "ace member whose per-environment dashboa" +
+      "rd roles are resolved.J\027\"mem_72289897007" +
+      "874151\"\340A\002\272H\006r\004\020\023\030\031R\010memberId\"\363\005\n\036Dashbo" +
+      "ardMemberEnvironmentRole\022c\n\016environment_" +
+      "id\030\001 \001(\tB<\222A92\036Identifier of the environ" +
+      "ment.J\027\"env_72289897007874151\"R\renvironm" +
+      "entId\022e\n\020environment_name\030\002 \001(\tB:\222A72\'Hu" +
+      "man-readable name of the environment.J\014\"" +
+      "Production\"R\017environmentName\022\302\002\n\016effecti" +
+      "ve_role\030\003 \001(\0132\".scalekit.v1.members.Dash" +
+      "boardRoleB\366\001\222A\362\0012\357\001The dashboard role th" +
+      "at applies to the member in this environ" +
+      "ment: the per-environment override when " +
+      "one exists, otherwise the workspace-defa" +
+      "ult role. Null when the member is entire" +
+      "ly unassigned (no override and no worksp" +
+      "ace-default role).R\reffectiveRole\022\277\001\n\013is" +
+      "_override\030\004 \001(\010B\235\001\222A\231\0012\226\001True when the e" +
+      "ffective role comes from a per-environme" +
+      "nt override for this environment; false " +
+      "when it comes from the member\'s workspac" +
+      "e-default role.R\nisOverride\"\364\001\n+ListDash" +
+      "boardMemberEnvironmentRolesResponse\022\304\001\n\014" +
+      "environments\030\001 \003(\01323.scalekit.v1.members" +
+      ".DashboardMemberEnvironmentRoleBk\222Ah2fTh" +
+      "e member\'s effective dashboard role in e" +
+      "ach environment of the workspace, one en" +
+      "try per environment.R\014environments*>\n\nMe" +
+      "mberRole\022\033\n\027MEMBER_ROLE_UNSPECIFIED\020\000\022\t\n" +
+      "\005ADMIN\020\001\022\010\n\004USER\020\0022\240_\n\016MembersService\022\250\001" +
+      "\n\014CreateMember\022(.scalekit.v1.members.Cre" +
+      "ateMemberRequest\032).scalekit.v1.members.C" +
+      "reateMemberResponse\"C\202\265\030\021\n\rmembers:write" +
+      "\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\"\017/api/v1/members" +
+      ":\006member\022\342\016\n\014InviteMember\022(.scalekit.v1." +
+      "members.InviteMemberRequest\032).scalekit.v" +
+      "1.members.CreateMemberResponse\"\374\r\222A\344\007\n\007M" +
+      "embers\022 Invite a member to the workspace" +
+      "\032\343\004Invites one person to the calling wor" +
+      "kspace by email address and sends them a" +
+      "n invitation email. Use this endpoint wh" +
+      "en the only detail available is an addre" +
+      "ss: unlike CreateMember it accepts no na" +
+      "me, metadata or role, so the request can" +
+      "not carry more than an invitation. The i" +
+      "nvitee joins with no dashboard role and " +
+      "resolves to No Access until a role is as" +
+      "signed, either from the dashboard or thr" +
+      "ough AssignDashboardRole. An address tha" +
+      "t already belongs to a member of this wo" +
+      "rkspace reuses that member rather than c" +
+      "reating a second one. Returns the result" +
+      "ing member, including the identifier ass" +
+      "igned to them.J\212\001\n\003200\022\202\001\nQInvitation se" +
+      "nt; returns the invited member with thei" +
+      "r identifier, email and role\022-\n+\032).scale" +
+      "kit.v1.members.CreateMemberResponseJt\n\0034" +
+      "00\022m\nkInvalid request - the email addres" +
+      "s is missing, malformed, or not permitte" +
+      "d by the workspace\'s email policyJN\n\003404" +
+      "\022G\nEWorkspace not found - the caller\'s s" +
+      "ession carries no valid workspace\202\265\030\021\n\rm" +
+      "embers:write\030D\212\265\030\311\005\n\027invite_workspace_me" +
+      "mber\022\361\004Invite a teammate to the caller\'s" +
+      " own Scalekit workspace by email address" +
+      ". The invited person receives an invitat" +
+      "ion email and joins with no dashboard ro" +
+      "le, so they can sign in but see nothing " +
+      "until a role is assigned from the dashbo" +
+      "ard \342\200\224 say so when you propose this. Th" +
+      "e email address is the only detail this " +
+      "tool sets: a name and a role cannot be s" +
+      "upplied here and are filled in from the " +
+      "dashboard afterwards. Call list_workspac" +
+      "e_members first to check whether the per" +
+      "son is already a member. Use this only w" +
+      "hen the member explicitly asks for a tea" +
+      "mmate to be invited \342\200\224 the member must " +
+      "approve the call before it runs.\030\002\"8Invi" +
+      "te {email} to your workspace, with no da" +
+      "shboard role\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\034\"\027/api/" +
+      "v1/members/invites:\001*\022\254\001\n\023UpdateCurrentM" +
+      "ember\022/.scalekit.v1.members.UpdateCurren" +
+      "tMemberRequest\032).scalekit.v1.members.Upd" +
+      "ateMemberResponse\"9\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW" +
+      "\202\323\344\223\002\0362\024/api/v1/members:this:\006member\022\255\001\n" +
+      "\014UpdateMember\022(.scalekit.v1.members.Upda" +
+      "teMemberRequest\032).scalekit.v1.members.Up" +
+      "dateMemberResponse\"H\202\265\030\021\n\rmembers:write\030" +
+      "D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\0362\024/api/v1/members/" +
+      "{id}:\006member\022\233\001\n\020GetCurrentMember\022,.scal" +
+      "ekit.v1.members.GetCurrentMemberRequest\032" +
+      "&.scalekit.v1.members.GetMemberResponse\"" +
+      "1\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\026\022\024/api/v1/me" +
+      "mbers:this\022\233\001\n\tGetMember\022%.scalekit.v1.m" +
+      "embers.GetMemberRequest\032&.scalekit.v1.me" +
+      "mbers.GetMemberResponse\"?\202\265\030\020\n\014members:r" +
+      "ead\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\026\022\024/api/v1/memb" +
+      "ers/{id}\022\333\002\n\013ListMembers\022&.scalekit.v1.m" +
+      "embers.ListMemberRequest\032\'.scalekit.v1.m" +
+      "embers.ListMemberResponse\"\372\001\202\265\030\020\n\014member" +
+      "s:read\030D\212\265\030\273\001\n\026list_workspace_members\022\236\001" +
+      "List members of the caller\'s own workspa" +
+      "ce, with id, email, name, and role. Use " +
+      "this to help the member find a teammate " +
+      "before an action that references them.\030\001" +
+      "\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\021\022\017/api/v1/members\022\222" +
+      "\001\n\014DeleteMember\022(.scalekit.v1.members.De" +
+      "leteMemberRequest\032\026.google.protobuf.Empt" +
+      "y\"@\202\265\030\021\n\rmembers:write\030D\372\322\344\223\002\t\022\007PREVIEW\202" +
+      "\323\344\223\002\026*\024/api/v1/members/{id}\022\347\010\n\023AssignDa" +
+      "shboardRole\022/.scalekit.v1.members.Assign" +
+      "DashboardRoleRequest\0320.scalekit.v1.membe" +
+      "rs.AssignDashboardRoleResponse\"\354\007\222A\217\007\n\007M" +
+      "embers\022#Assign a dashboard role to a mem" +
+      "ber\032\316\003Assigns a dashboard role to a work" +
+      "space member as the workspace-default ro" +
+      "le, applied across every environment unl" +
+      "ess a per-environment override exists. A" +
+      "ccepts a fixed role name (admin, develop" +
+      "er, member, no_access) or a custom role " +
+      "id. Use this endpoint from the dashboard" +
+      " to manage a member\'s baseline dashboard" +
+      " access. The caller may only assign a ro" +
+      "le whose permissions are a subset of the" +
+      " permissions the caller holds. Returns a" +
+      "n empty response on success.J\210\001\n\003200\022\200\001\n" +
+      "HRole assigned successfully as the works" +
+      "pace-default role for the member.\0224\n2\0320." +
+      "scalekit.v1.members.AssignDashboardRoleR" +
+      "esponseJs\n\003400\022l\njInvalid request - the " +
+      "role is not a valid fixed role name or c" +
+      "ustom role id, or the member id is malfo" +
+      "rmedJ\215\001\n\003403\022\205\001\n\202\001Permission denied - th" +
+      "e member belongs to a different workspac" +
+      "e, or the assigned role grants a permiss" +
+      "ion the caller does not hold\202\265\030\021\n\rmember" +
+      "s:write\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002/\"*/api/v1/" +
+      "dashboard/members/{member_id}/role:\001*\022\335\t" +
+      "\n\033SetDashboardEnvironmentRole\0227.scalekit" +
+      ".v1.members.SetDashboardEnvironmentRoleR" +
+      "equest\0328.scalekit.v1.members.SetDashboar" +
+      "dEnvironmentRoleResponse\"\312\010\222A\304\007\n\007Members" +
+      "\0221Set a member\'s dashboard role for one " +
+      "environment\032\373\003Sets a per-environment ove" +
+      "rride of a member\'s dashboard role for a" +
+      " single environment, taking precedence o" +
+      "ver the workspace-default role for that " +
+      "environment only. Use this endpoint to g" +
+      "rant or restrict a member\'s access withi" +
+      "n a specific environment without changin" +
+      "g their baseline role. The environment m" +
+      "ust belong to the caller\'s workspace, an" +
+      "d the caller may only assign a role whos" +
+      "e permissions are a subset of the permis" +
+      "sions the caller holds in that environme" +
+      "nt. Returns an empty response on success" +
+      ".J|\n\003200\022u\n5Environment override set suc" +
+      "cessfully for the member.\022<\n:\0328.scalekit" +
+      ".v1.members.SetDashboardEnvironmentRoleR" +
+      "esponseJk\n\003400\022d\nbInvalid request - the " +
+      "role is not a valid fixed role name or c" +
+      "ustom role id, or an id is malformedJ\234\001\n" +
+      "\003403\022\224\001\n\221\001Permission denied - the member" +
+      " or environment belongs to a different w" +
+      "orkspace, or the assigned role grants a " +
+      "permission the caller does not hold\202\265\030\034\n" +
+      "\030environment_access:write\030P\372\322\344\223\002\t\022\007PREVI" +
+      "EW\202\323\344\223\002M\"H/api/v1/dashboard/members/{mem" +
+      "ber_id}/environments/{environment_id}/ro" +
+      "le:\001*\022\327\007\n\035ClearDashboardEnvironmentRole\022" +
+      "9.scalekit.v1.members.ClearDashboardEnvi" +
+      "ronmentRoleRequest\032:.scalekit.v1.members" +
+      ".ClearDashboardEnvironmentRoleResponse\"\276" +
+      "\006\222A\273\005\n\007Members\022/Clear a member\'s dashboa",
+      "rd environment override\032\226\003Removes a memb" +
+      "er\'s per-environment dashboard role over" +
+      "ride for a single environment, reverting" +
+      " that environment to the member\'s worksp" +
+      "ace-default role. Use this endpoint to u" +
+      "ndo a previously set environment overrid" +
+      "e. The environment must belong to the ca" +
+      "ller\'s workspace. This operation is idem" +
+      "potent: clearing an override that does n" +
+      "ot exist succeeds without changes. Retur" +
+      "ns an empty response on success.J\214\001\n\003200" +
+      "\022\204\001\nBEnvironment override cleared succes" +
+      "sfully, or no override existed.\022>\n<\032:.sc" +
+      "alekit.v1.members.ClearDashboardEnvironm" +
+      "entRoleResponseJW\n\003403\022P\nNPermission den" +
+      "ied - the member or environment belongs " +
+      "to a different workspace\202\265\030\034\n\030environmen" +
+      "t_access:write\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002J*H/" +
+      "api/v1/dashboard/members/{member_id}/env" +
+      "ironments/{environment_id}/role\022\205\013\n#List" +
+      "DashboardMemberEnvironmentRoles\022?.scalek" +
+      "it.v1.members.ListDashboardMemberEnviron" +
+      "mentRolesRequest\032@.scalekit.v1.members.L" +
+      "istDashboardMemberEnvironmentRolesRespon" +
+      "se\"\332\t\222A\350\010\n\007Members\0228List a member\'s effe" +
+      "ctive dashboard role per environment\032\345\005L" +
+      "ists every environment in the caller\'s w" +
+      "orkspace together with the member\'s effe" +
+      "ctive dashboard role in that environment" +
+      " and whether that role comes from a per-" +
+      "environment override or the workspace-de" +
+      "fault role. Use this endpoint to render " +
+      "the Environment Access view, where each " +
+      "environment shows the role that applies " +
+      "and its source, and to decide when a res" +
+      "et-to-default action is available. For e" +
+      "ach environment the effective role is th" +
+      "e per-environment override when one exis" +
+      "ts, otherwise the member\'s workspace-def" +
+      "ault role; the effective role may be nul" +
+      "l when the member is entirely unassigned" +
+      ". Returns one entry per environment with" +
+      " the environment id and name, the effect" +
+      "ive role, and a flag indicating whether " +
+      "an override applies.J\271\001\n\003200\022\261\001\niThe mem" +
+      "ber\'s effective dashboard role in each e" +
+      "nvironment of the workspace, with the so" +
+      "urce of each role.\022D\nB\032@.scalekit.v1.mem" +
+      "bers.ListDashboardMemberEnvironmentRoles" +
+      "ResponseJ5\n\003400\022.\n,Invalid request - the" +
+      " member id is malformedJH\n\003403\022A\n?Permis" +
+      "sion denied - the member belongs to a di" +
+      "fferent workspace\202\265\030\033\n\027environment_acces" +
+      "s:read\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002:\0228/api/v1/d" +
+      "ashboard/members/{member_id}/environment" +
+      "s/roles\022\343\005\n\022ListDashboardRoles\022..scaleki" +
+      "t.v1.members.ListDashboardRolesRequest\032/" +
+      ".scalekit.v1.members.ListDashboardRolesR" +
+      "esponse\"\353\004\222A\235\004\n\007Members\022\037List assignable" +
+      " dashboard roles\032\355\002Lists the dashboard r" +
+      "oles that can be assigned to workspace m" +
+      "embers, together with the permission key" +
+      "s each role grants. Use this endpoint to" +
+      " populate role pickers in the dashboard " +
+      "and to display the permission set behind" +
+      " each role. Returns both the four fixed " +
+      "roles (admin, developer, member, no_acce" +
+      "ss) and any custom roles; fixed roles ar" +
+      "e flagged with is_fixed.J\200\001\n\003200\022y\nBThe " +
+      "list of assignable dashboard roles with " +
+      "their permission sets.\0223\n1\032/.scalekit.v1" +
+      ".members.ListDashboardRolesResponse\202\265\030\030\n" +
+      "\024dashboard_roles:read\030P\372\322\344\223\002\t\022\007PREVIEW\202\323" +
+      "\344\223\002\031\022\027/api/v1/dashboard/roles\022\365\004\n\030ListDa" +
+      "shboardPermissions\0224.scalekit.v1.members" +
+      ".ListDashboardPermissionsRequest\0325.scale" +
+      "kit.v1.members.ListDashboardPermissionsR" +
+      "esponse\"\353\003\222A\227\003\n\007Members\022\032List dashboard " +
+      "permissions\032\210\002Lists the fixed catalog of" +
+      " dashboard permissions a custom role can" +
+      " grant, with each permission\'s group and" +
+      " tier (workspace or environment). Use th" +
+      "is endpoint to build the permission pick" +
+      "er when creating or editing a custom das" +
+      "hboard role. Returns the full catalog.Je" +
+      "\n\003200\022^\n!The dashboard permission catalo" +
+      "g.\0229\n7\0325.scalekit.v1.members.ListDashboa" +
+      "rdPermissionsResponse\202\265\030\030\n\024dashboard_rol" +
+      "es:read\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\037\022\035/api/v1/" +
+      "dashboard/permissions\022\276\007\n\023CreateDashboar" +
+      "dRole\022/.scalekit.v1.members.CreateDashbo" +
+      "ardRoleRequest\0320.scalekit.v1.members.Cre" +
+      "ateDashboardRoleResponse\"\303\006\222A\361\005\n\007Members" +
+      "\022\036Create a custom dashboard role\032\321\002Creat" +
+      "es a workspace-scoped custom dashboard r" +
+      "ole from the fixed permission catalog. U" +
+      "se this endpoint to define a role beyond" +
+      " the built-in ones. The caller may only " +
+      "grant permissions the caller itself hold" +
+      "s. The permission set must be non-empty " +
+      "and contain only catalog keys. Returns t" +
+      "he created role, including its generated" +
+      " identifier.J[\n\003200\022T\n\034The custom role w" +
+      "as created.\0224\n2\0320.scalekit.v1.members.Cr" +
+      "eateDashboardRoleResponseJ\302\001\n\003400\022\272\001\n\267\001I" +
+      "nvalid request - the permission set is e" +
+      "mpty, too large, contains duplicates, or" +
+      " contains a key that is not in the dashb" +
+      "oard permission catalog, or the name is " +
+      "empty or already used.JP\n\003403\022I\nGPermiss" +
+      "ion denied - the caller lacks a permissi" +
+      "on the role would grant.\202\265\030\031\n\025dashboard_" +
+      "roles:write\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\034\"\027/api" +
+      "/v1/dashboard/roles:\001*\022\331\007\n\023UpdateDashboa" +
+      "rdRole\022/.scalekit.v1.members.UpdateDashb" +
+      "oardRoleRequest\0320.scalekit.v1.members.Up" +
+      "dateDashboardRoleResponse\"\336\006\222A\202\006\n\007Member" +
+      "s\022\036Update a custom dashboard role\032\333\002Upda" +
+      "tes a workspace-scoped custom dashboard " +
+      "role\'s name, description, and permission" +
+      " set. Use this endpoint to change what a" +
+      " custom role grants. The change takes ef" +
+      "fect immediately for every member alread" +
+      "y assigned the role. The caller may only" +
+      " grant permissions the caller itself hol" +
+      "ds, and fixed roles cannot be edited. Re" +
+      "turns the updated role.J[\n\003200\022T\n\034The cu" +
+      "stom role was updated.\0224\n2\0320.scalekit.v1" +
+      ".members.UpdateDashboardRoleResponseJ\233\001\n" +
+      "\003400\022\223\001\n\220\001Invalid request - the role is " +
+      "fixed or not found in the caller\'s works" +
+      "pace, the permission set is invalid, or " +
+      "the name is empty or already used.J~\n\00340" +
+      "3\022w\nuPermission denied - the caller lack" +
+      "s a permission the role would grant, or " +
+      "the role belongs to a different workspac" +
+      "e.\202\265\030\031\n\025dashboard_roles:write\030P\372\322\344\223\002\t\022\007P" +
+      "REVIEW\202\323\344\223\002&\032!/api/v1/dashboard/roles/{r" +
+      "ole_id}:\001*\022\310\006\n\023DeleteDashboardRole\022/.sca" +
+      "lekit.v1.members.DeleteDashboardRoleRequ" +
+      "est\0320.scalekit.v1.members.DeleteDashboar" +
+      "dRoleResponse\"\315\005\222A\364\004\n\007Members\022\036Delete a " +
+      "custom dashboard role\032\267\002Deletes a worksp" +
+      "ace-scoped custom dashboard role. Use th" +
+      "is endpoint to remove a role the workspa" +
+      "ce no longer needs. The role must not be" +
+      " assigned to any member (as a workspace " +
+      "default or an environment override); rea" +
+      "ssign those members first. Fixed roles c" +
+      "annot be deleted. Returns an empty respo" +
+      "nse on success.J[\n\003200\022T\n\034The custom rol" +
+      "e was deleted.\0224\n2\0320.scalekit.v1.members" +
+      ".DeleteDashboardRoleResponseJT\n\003400\022M\nKI" +
+      "nvalid request - the role is fixed or no" +
+      "t found in the caller\'s workspace.J\\\n\00340" +
+      "9\022U\nSConflict - the role is still assign" +
+      "ed to one or more members and cannot be " +
+      "deleted.\202\265\030\031\n\025dashboard_roles:write\030P\372\322\344" +
+      "\223\002\t\022\007PREVIEW\202\323\344\223\002#*!/api/v1/dashboard/ro" +
+      "les/{role_id}B\326\001\n%com.scalekit.grpc.scal" +
+      "ekit.v1.membersB\014MembersProtoP\001Z1github." +
+      "com/scalekit-inc/scalekit/pkg/grpc/membe" +
+      "rs\242\002\003SVM\252\002\023Scalekit.V1.Members\312\002\023Scaleki" +
+      "t\\V1\\Members\342\002\037Scalekit\\V1\\Members\\GPBMe" +
+      "tadata\352\002\025Scalekit::V1::Membersb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -219,7 +794,7 @@ public final class MembersProto {
     internal_static_scalekit_v1_members_Member_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_members_Member_descriptor,
-        new java.lang.String[] { "Id", "CreateTime", "UpdateTime", "WorkspaceId", "Role", "FirstName", "LastName", "Email", "Metadata", "Organizations", "UserProfile", "ExternalId", "WorkspaceIds", "ActiveWorkspaceExternalId", });
+        new java.lang.String[] { "Id", "CreateTime", "UpdateTime", "WorkspaceId", "Role", "FirstName", "LastName", "Email", "Metadata", "Organizations", "UserProfile", "ExternalId", "WorkspaceIds", "ActiveWorkspaceExternalId", "DashboardRole", "DashboardRoleName", });
     internal_static_scalekit_v1_members_Member_MetadataEntry_descriptor =
       internal_static_scalekit_v1_members_Member_descriptor.getNestedTypes().get(0);
     internal_static_scalekit_v1_members_Member_MetadataEntry_fieldAccessorTable = new
@@ -232,14 +807,20 @@ public final class MembersProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_members_CreateMemberRequest_descriptor,
         new java.lang.String[] { "Member", });
-    internal_static_scalekit_v1_members_CreateMemberResponse_descriptor =
+    internal_static_scalekit_v1_members_InviteMemberRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_scalekit_v1_members_InviteMemberRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_InviteMemberRequest_descriptor,
+        new java.lang.String[] { "Email", });
+    internal_static_scalekit_v1_members_CreateMemberResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_scalekit_v1_members_CreateMemberResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_members_CreateMemberResponse_descriptor,
         new java.lang.String[] { "Member", });
     internal_static_scalekit_v1_members_UpdateMember_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_scalekit_v1_members_UpdateMember_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_members_UpdateMember_descriptor,
@@ -251,59 +832,185 @@ public final class MembersProto {
         internal_static_scalekit_v1_members_UpdateMember_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_scalekit_v1_members_UpdateCurrentMemberRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_scalekit_v1_members_UpdateCurrentMemberRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_members_UpdateCurrentMemberRequest_descriptor,
         new java.lang.String[] { "Member", });
     internal_static_scalekit_v1_members_UpdateMemberRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_scalekit_v1_members_UpdateMemberRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_members_UpdateMemberRequest_descriptor,
         new java.lang.String[] { "Id", "Member", });
     internal_static_scalekit_v1_members_UpdateMemberResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_scalekit_v1_members_UpdateMemberResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_members_UpdateMemberResponse_descriptor,
         new java.lang.String[] { "Member", });
     internal_static_scalekit_v1_members_GetCurrentMemberRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_scalekit_v1_members_GetCurrentMemberRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_members_GetCurrentMemberRequest_descriptor,
         new java.lang.String[] { });
     internal_static_scalekit_v1_members_GetMemberRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_scalekit_v1_members_GetMemberRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_members_GetMemberRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_scalekit_v1_members_GetMemberResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_scalekit_v1_members_GetMemberResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_members_GetMemberResponse_descriptor,
-        new java.lang.String[] { "Member", });
+        new java.lang.String[] { "Member", "DashboardPermissions", });
     internal_static_scalekit_v1_members_ListMemberRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_scalekit_v1_members_ListMemberRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_members_ListMemberRequest_descriptor,
         new java.lang.String[] { "PageSize", "PageToken", });
     internal_static_scalekit_v1_members_ListMemberResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_scalekit_v1_members_ListMemberResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_members_ListMemberResponse_descriptor,
         new java.lang.String[] { "NextPageToken", "TotalSize", "Members", });
     internal_static_scalekit_v1_members_DeleteMemberRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_scalekit_v1_members_DeleteMemberRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_members_DeleteMemberRequest_descriptor,
         new java.lang.String[] { "Id", });
+    internal_static_scalekit_v1_members_DashboardRole_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_scalekit_v1_members_DashboardRole_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_DashboardRole_descriptor,
+        new java.lang.String[] { "Id", "Name", "DisplayName", "Permissions", "IsFixed", "Description", });
+    internal_static_scalekit_v1_members_AssignDashboardRoleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_scalekit_v1_members_AssignDashboardRoleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_AssignDashboardRoleRequest_descriptor,
+        new java.lang.String[] { "MemberId", "Role", });
+    internal_static_scalekit_v1_members_AssignDashboardRoleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_scalekit_v1_members_AssignDashboardRoleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_AssignDashboardRoleResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_scalekit_v1_members_SetDashboardEnvironmentRoleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_scalekit_v1_members_SetDashboardEnvironmentRoleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_SetDashboardEnvironmentRoleRequest_descriptor,
+        new java.lang.String[] { "MemberId", "EnvironmentId", "Role", });
+    internal_static_scalekit_v1_members_SetDashboardEnvironmentRoleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_scalekit_v1_members_SetDashboardEnvironmentRoleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_SetDashboardEnvironmentRoleResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_scalekit_v1_members_ClearDashboardEnvironmentRoleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_scalekit_v1_members_ClearDashboardEnvironmentRoleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_ClearDashboardEnvironmentRoleRequest_descriptor,
+        new java.lang.String[] { "MemberId", "EnvironmentId", });
+    internal_static_scalekit_v1_members_ClearDashboardEnvironmentRoleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_scalekit_v1_members_ClearDashboardEnvironmentRoleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_ClearDashboardEnvironmentRoleResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_scalekit_v1_members_ListDashboardRolesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_scalekit_v1_members_ListDashboardRolesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_ListDashboardRolesRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_scalekit_v1_members_ListDashboardRolesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_scalekit_v1_members_ListDashboardRolesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_ListDashboardRolesResponse_descriptor,
+        new java.lang.String[] { "Roles", });
+    internal_static_scalekit_v1_members_DashboardPermission_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_scalekit_v1_members_DashboardPermission_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_DashboardPermission_descriptor,
+        new java.lang.String[] { "Key", "Group", "Tier", "Description", "Sensitive", });
+    internal_static_scalekit_v1_members_ListDashboardPermissionsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_scalekit_v1_members_ListDashboardPermissionsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_ListDashboardPermissionsRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_scalekit_v1_members_ListDashboardPermissionsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_scalekit_v1_members_ListDashboardPermissionsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_ListDashboardPermissionsResponse_descriptor,
+        new java.lang.String[] { "Permissions", });
+    internal_static_scalekit_v1_members_CreateDashboardRoleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_scalekit_v1_members_CreateDashboardRoleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_CreateDashboardRoleRequest_descriptor,
+        new java.lang.String[] { "Name", "Description", "Permissions", });
+    internal_static_scalekit_v1_members_CreateDashboardRoleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_scalekit_v1_members_CreateDashboardRoleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_CreateDashboardRoleResponse_descriptor,
+        new java.lang.String[] { "Role", });
+    internal_static_scalekit_v1_members_UpdateDashboardRoleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_scalekit_v1_members_UpdateDashboardRoleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_UpdateDashboardRoleRequest_descriptor,
+        new java.lang.String[] { "RoleId", "Name", "Description", "Permissions", });
+    internal_static_scalekit_v1_members_UpdateDashboardRoleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_scalekit_v1_members_UpdateDashboardRoleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_UpdateDashboardRoleResponse_descriptor,
+        new java.lang.String[] { "Role", });
+    internal_static_scalekit_v1_members_DeleteDashboardRoleRequest_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_scalekit_v1_members_DeleteDashboardRoleRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_DeleteDashboardRoleRequest_descriptor,
+        new java.lang.String[] { "RoleId", });
+    internal_static_scalekit_v1_members_DeleteDashboardRoleResponse_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_scalekit_v1_members_DeleteDashboardRoleResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_DeleteDashboardRoleResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_scalekit_v1_members_ListDashboardMemberEnvironmentRolesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_scalekit_v1_members_ListDashboardMemberEnvironmentRolesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_ListDashboardMemberEnvironmentRolesRequest_descriptor,
+        new java.lang.String[] { "MemberId", });
+    internal_static_scalekit_v1_members_DashboardMemberEnvironmentRole_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_scalekit_v1_members_DashboardMemberEnvironmentRole_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_DashboardMemberEnvironmentRole_descriptor,
+        new java.lang.String[] { "EnvironmentId", "EnvironmentName", "EffectiveRole", "IsOverride", });
+    internal_static_scalekit_v1_members_ListDashboardMemberEnvironmentRolesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(34);
+    internal_static_scalekit_v1_members_ListDashboardMemberEnvironmentRolesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_members_ListDashboardMemberEnvironmentRolesResponse_descriptor,
+        new java.lang.String[] { "Environments", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);
@@ -311,6 +1018,9 @@ public final class MembersProto {
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
     registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
+    registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.agentField);
+    registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.agentTool);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

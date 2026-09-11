@@ -358,125 +358,134 @@ public final class GatewayProto {
       "NNECTION_POLICY_MODE_SUBSET_DENY\020\003*i\n\016To" +
       "olPolicyMode\022 \n\034TOOL_POLICY_MODE_UNSPECI" +
       "FIED\020\000\022\032\n\026TOOL_POLICY_MODE_ALLOW\020\001\022\031\n\025TO" +
-      "OL_POLICY_MODE_DENY\020\0022\236#\n\016GatewayService" +
-      "\022\304\002\n\rEnableGateway\022).scalekit.v1.gateway" +
+      "OL_POLICY_MODE_DENY\020\0022\371%\n\016GatewayService" +
+      "\022\323\002\n\rEnableGateway\022).scalekit.v1.gateway" +
       ".EnableGatewayRequest\032*.scalekit.v1.gate" +
-      "way.EnableGatewayResponse\"\333\001\222A\260\001\n\007gatewa" +
+      "way.EnableGatewayResponse\"\352\001\222A\260\001\n\007gatewa" +
       "y\0223Enable the MCP Gateway for the callin" +
       "g environment.\032pCreates a singleton MCP_" +
       "GATEWAY Application for the environment," +
       " or returns the existing one if already " +
-      "enabled.\202\265\030\002\030D\202\323\344\223\002\033\"\026/api/v1/gateway/en" +
-      "able:\001*\022\365\001\n\nGetGateway\022&.scalekit.v1.gat" +
-      "eway.GetGatewayRequest\032\'.scalekit.v1.gat" +
-      "eway.GetGatewayResponse\"\225\001\222Au\n\007gateway\0220" +
-      "Get the MCP Gateway for the calling envi" +
-      "ronment.\0328Returns the Gateway details or" +
-      " empty if not yet enabled.\202\265\030\002\030D\202\323\344\223\002\021\022\017" +
-      "/api/v1/gateway\022\356\002\n\024SetupGatewayIdentity" +
-      "\0220.scalekit.v1.gateway.SetupGatewayIdent" +
-      "ityRequest\0321.scalekit.v1.gateway.SetupGa" +
-      "tewayIdentityResponse\"\360\001\222A\303\001\n\007gateway\0225P" +
-      "rovision the Gateway\'s identity-anchor O" +
-      "rganization.\032\200\001Creates or returns the ub" +
-      "er-Organization referenced by gateway_co" +
-      "nfigurations.organization_id, with SSO +" +
-      " SCIM features enabled.\202\265\030\002\030D\202\323\344\223\002\035\"\030/ap" +
-      "i/v1/gateway/identity:\001*\022\237\002\n\016DisableGate" +
-      "way\022*.scalekit.v1.gateway.DisableGateway" +
-      "Request\032+.scalekit.v1.gateway.DisableGat" +
-      "ewayResponse\"\263\001\222A\207\001\n\007gateway\0224Disable th" +
-      "e MCP Gateway for the calling environmen" +
-      "t.\032FSoft disable \342\200\224 /mcp returns 404 un" +
-      "til re-enabled. No data destroyed.\202\265\030\002\030D" +
-      "\202\323\344\223\002\034\"\027/api/v1/gateway/disable:\001*\022\326\001\n\021L" +
-      "istGatewayGroups\022-.scalekit.v1.gateway.L" +
-      "istGatewayGroupsRequest\032..scalekit.v1.ga" +
-      "teway.ListGatewayGroupsResponse\"b\222A;\n\007ga" +
-      "teway\0220List Gateway groups for the calli" +
-      "ng environment.\202\265\030\002\030D\202\323\344\223\002\030\022\026/api/v1/gat" +
-      "eway/groups\022\334\001\n\030CreateManualGatewayGroup" +
+      "enabled.\202\265\030\021\n\rgateway:write\030D\202\323\344\223\002\033\"\026/ap" +
+      "i/v1/gateway/enable:\001*\022\203\002\n\nGetGateway\022&." +
+      "scalekit.v1.gateway.GetGatewayRequest\032\'." +
+      "scalekit.v1.gateway.GetGatewayResponse\"\243" +
+      "\001\222Au\n\007gateway\0220Get the MCP Gateway for t" +
+      "he calling environment.\0328Returns the Gat" +
+      "eway details or empty if not yet enabled" +
+      ".\202\265\030\020\n\014gateway:read\030D\202\323\344\223\002\021\022\017/api/v1/gat" +
+      "eway\022\375\002\n\024SetupGatewayIdentity\0220.scalekit" +
+      ".v1.gateway.SetupGatewayIdentityRequest\032" +
+      "1.scalekit.v1.gateway.SetupGatewayIdenti" +
+      "tyResponse\"\377\001\222A\303\001\n\007gateway\0225Provision th" +
+      "e Gateway\'s identity-anchor Organization" +
+      ".\032\200\001Creates or returns the uber-Organiza" +
+      "tion referenced by gateway_configuration" +
+      "s.organization_id, with SSO + SCIM featu" +
+      "res enabled.\202\265\030\021\n\rgateway:write\030D\202\323\344\223\002\035\"" +
+      "\030/api/v1/gateway/identity:\001*\022\256\002\n\016Disable" +
+      "Gateway\022*.scalekit.v1.gateway.DisableGat" +
+      "ewayRequest\032+.scalekit.v1.gateway.Disabl" +
+      "eGatewayResponse\"\302\001\222A\207\001\n\007gateway\0224Disabl" +
+      "e the MCP Gateway for the calling enviro" +
+      "nment.\032FSoft disable \342\200\224 /mcp returns 40" +
+      "4 until re-enabled. No data destroyed.\202\265" +
+      "\030\021\n\rgateway:write\030D\202\323\344\223\002\034\"\027/api/v1/gatew" +
+      "ay/disable:\001*\022\353\001\n\021ListGatewayGroups\022-.sc" +
+      "alekit.v1.gateway.ListGatewayGroupsReque" +
+      "st\032..scalekit.v1.gateway.ListGatewayGrou" +
+      "psResponse\"w\222A;\n\007gateway\0220List Gateway g" +
+      "roups for the calling environment.\202\265\030\027\n\023" +
+      "gateway_policy:read\030D\202\323\344\223\002\030\022\026/api/v1/gat" +
+      "eway/groups\022\362\001\n\030CreateManualGatewayGroup" +
       "\0224.scalekit.v1.gateway.CreateManualGatew" +
       "ayGroupRequest\0325.scalekit.v1.gateway.Cre" +
-      "ateManualGatewayGroupResponse\"S\222A)\n\007gate" +
-      "way\022\036Create a manual Gateway group.\202\265\030\002\030" +
-      "D\202\323\344\223\002\033\"\026/api/v1/gateway/groups:\001*\022\347\001\n\030U" +
-      "pdateManualGatewayGroup\0224.scalekit.v1.ga" +
-      "teway.UpdateManualGatewayGroupRequest\0325." +
-      "scalekit.v1.gateway.UpdateManualGatewayG" +
-      "roupResponse\"^\222A)\n\007gateway\022\036Update a man" +
-      "ual Gateway group.\202\265\030\002\030D\202\323\344\223\002&2!/api/v1/" +
-      "gateway/groups/{group_id}:\001*\022\344\001\n\030DeleteM" +
-      "anualGatewayGroup\0224.scalekit.v1.gateway." +
-      "DeleteManualGatewayGroupRequest\0325.scalek" +
-      "it.v1.gateway.DeleteManualGatewayGroupRe" +
-      "sponse\"[\222A)\n\007gateway\022\036Delete a manual Ga" +
-      "teway group.\202\265\030\002\030D\202\323\344\223\002#*!/api/v1/gatewa" +
-      "y/groups/{group_id}\022\204\002\n\035ListManualGatewa" +
-      "yGroupMembers\0229.scalekit.v1.gateway.List" +
-      "ManualGatewayGroupMembersRequest\032:.scale" +
-      "kit.v1.gateway.ListManualGatewayGroupMem" +
-      "bersResponse\"l\222A2\n\007gateway\022\'List members" +
-      " of a manual Gateway group.\202\265\030\002\030D\202\323\344\223\002+\022" +
-      ")/api/v1/gateway/groups/{group_id}/membe" +
-      "rs\022\201\002\n\033AddManualGatewayGroupMember\0227.sca" +
-      "lekit.v1.gateway.AddManualGatewayGroupMe" +
-      "mberRequest\0328.scalekit.v1.gateway.AddMan" +
-      "ualGatewayGroupMemberResponse\"o\222A2\n\007gate" +
-      "way\022\'Add a member to a manual Gateway gr" +
-      "oup.\202\265\030\002\030D\202\323\344\223\002.\")/api/v1/gateway/groups" +
-      "/{group_id}/members:\001*\022\226\002\n\036RemoveManualG" +
-      "atewayGroupMember\022:.scalekit.v1.gateway." +
-      "RemoveManualGatewayGroupMemberRequest\032;." +
-      "scalekit.v1.gateway.RemoveManualGatewayG" +
-      "roupMemberResponse\"{\222A7\n\007gateway\022,Remove" +
-      " a member from a manual Gateway group.\202\265" +
-      "\030\002\030D\202\323\344\223\0025*3/api/v1/gateway/groups/{grou" +
-      "p_id}/members/{user_id}\022\357\001\n\032UpsertGroupC" +
-      "onnectionGrant\0226.scalekit.v1.gateway.Ups" +
-      "ertGroupConnectionGrantRequest\0327.scaleki" +
-      "t.v1.gateway.UpsertGroupConnectionGrantR" +
-      "esponse\"`\222A-\n\007gateway\022\"Upsert a group\'s " +
-      "connection grant.\202\265\030\002\030D\202\323\344\223\002$\"\037/api/v1/g" +
-      "ateway/policies/grants:\001*\022\207\002\n\032DeleteGrou" +
-      "pConnectionGrant\0226.scalekit.v1.gateway.D" +
-      "eleteGroupConnectionGrantRequest\0327.scale" +
-      "kit.v1.gateway.DeleteGroupConnectionGran" +
-      "tResponse\"x\222A-\n\007gateway\022\"Delete a group\'" +
-      "s connection grant.\202\265\030\002\030D\202\323\344\223\002<*:/api/v1" +
-      "/gateway/policies/grants/{group_id}/{con" +
-      "nection_id}\022\377\001\n\031ListGroupConnectionGrant" +
-      "s\0225.scalekit.v1.gateway.ListGroupConnect" +
-      "ionGrantsRequest\0326.scalekit.v1.gateway.L" +
-      "istGroupConnectionGrantsResponse\"s\222A\'\n\007g" +
-      "ateway\022\034List grants on a connection.\202\265\030\002" +
-      "\030D\202\323\344\223\002=\022;/api/v1/gateway/policies/conne" +
-      "ctions/{connection_id}/grants\022\217\002\n\030Replac" +
-      "eGroupToolPolicies\0224.scalekit.v1.gateway" +
-      ".ReplaceGroupToolPoliciesRequest\0325.scale" +
-      "kit.v1.gateway.ReplaceGroupToolPoliciesR" +
-      "esponse\"\205\001\222A1\n\007gateway\022&Replace per-tool" +
-      " policies for a grant.\202\265\030\002\030D\202\323\344\223\002E\032@/api" +
-      "/v1/gateway/policies/grants/{group_id}/{" +
-      "connection_id}/tools:\001*\022\377\001\n\025ListGroupToo" +
-      "lPolicies\0221.scalekit.v1.gateway.ListGrou" +
-      "pToolPoliciesRequest\0322.scalekit.v1.gatew" +
-      "ay.ListGroupToolPoliciesResponse\"\177\222A.\n\007g" +
-      "ateway\022#List per-tool policies for a gra" +
-      "nt.\202\265\030\002\030D\202\323\344\223\002B\022@/api/v1/gateway/policie" +
-      "s/grants/{group_id}/{connection_id}/tool" +
-      "s\022\372\001\n\026PreviewEffectivePolicy\0222.scalekit." +
-      "v1.gateway.PreviewEffectivePolicyRequest" +
-      "\0323.scalekit.v1.gateway.PreviewEffectiveP" +
-      "olicyResponse\"w\222AF\n\007gateway\022;Preview the" +
-      " effective tool list for a user on a con" +
-      "nection.\202\265\030\002\030D\202\323\344\223\002\"\022 /api/v1/gateway/po" +
-      "licies/previewB\326\001\n%com.scalekit.grpc.sca" +
-      "lekit.v1.gatewayB\014GatewayProtoP\001Z1github" +
-      ".com/scalekit-inc/scalekit/pkg/grpc/gate" +
-      "way\242\002\003SVG\252\002\023Scalekit.V1.Gateway\312\002\023Scalek" +
-      "it\\V1\\Gateway\342\002\037Scalekit\\V1\\Gateway\\GPBM" +
-      "etadata\352\002\025Scalekit::V1::Gatewayb\006proto3"
+      "ateManualGatewayGroupResponse\"i\222A)\n\007gate" +
+      "way\022\036Create a manual Gateway group.\202\265\030\030\n" +
+      "\024gateway_policy:write\030D\202\323\344\223\002\033\"\026/api/v1/g" +
+      "ateway/groups:\001*\022\375\001\n\030UpdateManualGateway" +
+      "Group\0224.scalekit.v1.gateway.UpdateManual" +
+      "GatewayGroupRequest\0325.scalekit.v1.gatewa" +
+      "y.UpdateManualGatewayGroupResponse\"t\222A)\n" +
+      "\007gateway\022\036Update a manual Gateway group." +
+      "\202\265\030\030\n\024gateway_policy:write\030D\202\323\344\223\002&2!/api" +
+      "/v1/gateway/groups/{group_id}:\001*\022\372\001\n\030Del" +
+      "eteManualGatewayGroup\0224.scalekit.v1.gate" +
+      "way.DeleteManualGatewayGroupRequest\0325.sc" +
+      "alekit.v1.gateway.DeleteManualGatewayGro" +
+      "upResponse\"q\222A)\n\007gateway\022\036Delete a manua" +
+      "l Gateway group.\202\265\030\030\n\024gateway_policy:wri" +
+      "te\030D\202\323\344\223\002#*!/api/v1/gateway/groups/{grou" +
+      "p_id}\022\232\002\n\035ListManualGatewayGroupMembers\022" +
+      "9.scalekit.v1.gateway.ListManualGatewayG" +
+      "roupMembersRequest\032:.scalekit.v1.gateway" +
+      ".ListManualGatewayGroupMembersResponse\"\201" +
+      "\001\222A2\n\007gateway\022\'List members of a manual " +
+      "Gateway group.\202\265\030\027\n\023gateway_policy:read\030" +
+      "D\202\323\344\223\002+\022)/api/v1/gateway/groups/{group_i" +
+      "d}/members\022\230\002\n\033AddManualGatewayGroupMemb" +
+      "er\0227.scalekit.v1.gateway.AddManualGatewa" +
+      "yGroupMemberRequest\0328.scalekit.v1.gatewa" +
+      "y.AddManualGatewayGroupMemberResponse\"\205\001" +
+      "\222A2\n\007gateway\022\'Add a member to a manual G" +
+      "ateway group.\202\265\030\030\n\024gateway_policy:write\030" +
+      "D\202\323\344\223\002.\")/api/v1/gateway/groups/{group_i" +
+      "d}/members:\001*\022\255\002\n\036RemoveManualGatewayGro" +
+      "upMember\022:.scalekit.v1.gateway.RemoveMan" +
+      "ualGatewayGroupMemberRequest\032;.scalekit." +
+      "v1.gateway.RemoveManualGatewayGroupMembe" +
+      "rResponse\"\221\001\222A7\n\007gateway\022,Remove a membe" +
+      "r from a manual Gateway group.\202\265\030\030\n\024gate" +
+      "way_policy:write\030D\202\323\344\223\0025*3/api/v1/gatewa" +
+      "y/groups/{group_id}/members/{user_id}\022\205\002" +
+      "\n\032UpsertGroupConnectionGrant\0226.scalekit." +
+      "v1.gateway.UpsertGroupConnectionGrantReq" +
+      "uest\0327.scalekit.v1.gateway.UpsertGroupCo" +
+      "nnectionGrantResponse\"v\222A-\n\007gateway\022\"Ups" +
+      "ert a group\'s connection grant.\202\265\030\030\n\024gat" +
+      "eway_policy:write\030D\202\323\344\223\002$\"\037/api/v1/gatew" +
+      "ay/policies/grants:\001*\022\236\002\n\032DeleteGroupCon" +
+      "nectionGrant\0226.scalekit.v1.gateway.Delet" +
+      "eGroupConnectionGrantRequest\0327.scalekit." +
+      "v1.gateway.DeleteGroupConnectionGrantRes" +
+      "ponse\"\216\001\222A-\n\007gateway\022\"Delete a group\'s c" +
+      "onnection grant.\202\265\030\030\n\024gateway_policy:wri" +
+      "te\030D\202\323\344\223\002<*:/api/v1/gateway/policies/gra" +
+      "nts/{group_id}/{connection_id}\022\225\002\n\031ListG" +
+      "roupConnectionGrants\0225.scalekit.v1.gatew" +
+      "ay.ListGroupConnectionGrantsRequest\0326.sc" +
+      "alekit.v1.gateway.ListGroupConnectionGra" +
+      "ntsResponse\"\210\001\222A\'\n\007gateway\022\034List grants " +
+      "on a connection.\202\265\030\027\n\023gateway_policy:rea" +
+      "d\030D\202\323\344\223\002=\022;/api/v1/gateway/policies/conn" +
+      "ections/{connection_id}/grants\022\245\002\n\030Repla" +
+      "ceGroupToolPolicies\0224.scalekit.v1.gatewa" +
+      "y.ReplaceGroupToolPoliciesRequest\0325.scal" +
+      "ekit.v1.gateway.ReplaceGroupToolPolicies" +
+      "Response\"\233\001\222A1\n\007gateway\022&Replace per-too" +
+      "l policies for a grant.\202\265\030\030\n\024gateway_pol" +
+      "icy:write\030D\202\323\344\223\002E\032@/api/v1/gateway/polic" +
+      "ies/grants/{group_id}/{connection_id}/to" +
+      "ols:\001*\022\225\002\n\025ListGroupToolPolicies\0221.scale" +
+      "kit.v1.gateway.ListGroupToolPoliciesRequ" +
+      "est\0322.scalekit.v1.gateway.ListGroupToolP" +
+      "oliciesResponse\"\224\001\222A.\n\007gateway\022#List per" +
+      "-tool policies for a grant.\202\265\030\027\n\023gateway" +
+      "_policy:read\030D\202\323\344\223\002B\022@/api/v1/gateway/po" +
+      "licies/grants/{group_id}/{connection_id}" +
+      "/tools\022\220\002\n\026PreviewEffectivePolicy\0222.scal" +
+      "ekit.v1.gateway.PreviewEffectivePolicyRe" +
+      "quest\0323.scalekit.v1.gateway.PreviewEffec" +
+      "tivePolicyResponse\"\214\001\222AF\n\007gateway\022;Previ" +
+      "ew the effective tool list for a user on" +
+      " a connection.\202\265\030\027\n\023gateway_policy:read\030" +
+      "D\202\323\344\223\002\"\022 /api/v1/gateway/policies/previe" +
+      "wB\326\001\n%com.scalekit.grpc.scalekit.v1.gate" +
+      "wayB\014GatewayProtoP\001Z1github.com/scalekit" +
+      "-inc/scalekit/pkg/grpc/gateway\242\002\003SVG\252\002\023S" +
+      "calekit.V1.Gateway\312\002\023Scalekit\\V1\\Gateway" +
+      "\342\002\037Scalekit\\V1\\Gateway\\GPBMetadata\352\002\025Sca" +
+      "lekit::V1::Gatewayb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

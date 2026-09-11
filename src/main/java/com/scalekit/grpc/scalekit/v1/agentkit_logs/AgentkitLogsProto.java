@@ -143,40 +143,41 @@ public final class AgentkitLogsProto {
       "t_id (Gateway rows only).J\030\"m2m_12753423" +
       "8978308531\"H\003R\007agentId\210\001\001B\017\n\r_agent_run_" +
       "idB\022\n\020_organization_idB\017\n\r_workspace_idB" +
-      "\013\n\t_agent_id2\246\010\n\023AgentkitLogsService\022\272\003\n" +
+      "\013\n\t_agent_id2\310\010\n\023AgentkitLogsService\022\313\003\n" +
       "\020ListToolCallLogs\0222.scalekit.v1.agentkit" +
       "_logs.ListToolCallLogsRequest\0323.scalekit" +
       ".v1.agentkit_logs.ListToolCallLogsRespon" +
-      "se\"\274\002\222A\374\001\n\rAgentKit Logs\022\023List tool call" +
+      "se\"\315\002\222A\374\001\n\rAgentKit Logs\022\023List tool call" +
       " logs\032\200\001Returns paginated tool call exec" +
       "ution records for the environment. Filte" +
       "r by time range, status, provider, or co" +
       "nnected account.J.\n\003200\022\'\n%Tool call log" +
       "s retrieved successfullyJ#\n\003400\022\034\n\032Inval" +
-      "id request parameters\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVI" +
-      "EW\202\323\344\223\002!\022\037/api/v1/agentkit/tool_call_log" +
-      "s\022\356\002\n\016GetToolCallLog\0220.scalekit.v1.agent" +
-      "kit_logs.GetToolCallLogRequest\032&.scaleki" +
-      "t.v1.agentkit_logs.ToolCallLog\"\201\002\222A\262\001\n\rA" +
-      "gentKit Logs\022\023Get a tool call log\032<Retur" +
-      "ns a single tool call execution record b" +
-      "y execution ID.J-\n\003200\022&\n$Tool call log " +
-      "retrieved successfullyJ\037\n\003404\022\030\n\026Executi" +
-      "on ID not found\202\265\030\002\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
-      "\0020\022./api/v1/agentkit/tool_call_logs/{exe" +
-      "cution_id}\022\314\001\n\027ListCurrentToolCallLogs\0229" +
-      ".scalekit.v1.agentkit_logs.ListCurrentTo" +
-      "olCallLogsRequest\0323.scalekit.v1.agentkit" +
-      "_logs.ListToolCallLogsResponse\"A\202\265\030\002\030\030\372\322" +
-      "\344\223\002\t\022\007PREVIEW\202\323\344\223\002&\022$/api/v1/agentkit/to" +
-      "ol_call_logs:this\032\022\222A\017\n\rAgentKit LogsB\373\001" +
-      "\n+com.scalekit.grpc.scalekit.v1.agentkit" +
-      "_logsB\021AgentkitLogsProtoP\001Z7github.com/s" +
-      "calekit-inc/scalekit/pkg/grpc/agentkit_l" +
-      "ogs\242\002\003SVA\252\002\030Scalekit.V1.AgentkitLogs\312\002\030S" +
-      "calekit\\V1\\AgentkitLogs\342\002$Scalekit\\V1\\Ag" +
-      "entkitLogs\\GPBMetadata\352\002\032Scalekit::V1::A" +
-      "gentkitLogsb\006proto3"
+      "id request parameters\202\265\030\023\n\017agent_logs:re" +
+      "ad\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002!\022\037/api/v1/agent" +
+      "kit/tool_call_logs\022\377\002\n\016GetToolCallLog\0220." +
+      "scalekit.v1.agentkit_logs.GetToolCallLog" +
+      "Request\032&.scalekit.v1.agentkit_logs.Tool" +
+      "CallLog\"\222\002\222A\262\001\n\rAgentKit Logs\022\023Get a too" +
+      "l call log\032<Returns a single tool call e" +
+      "xecution record by execution ID.J-\n\003200\022" +
+      "&\n$Tool call log retrieved successfullyJ" +
+      "\037\n\003404\022\030\n\026Execution ID not found\202\265\030\023\n\017ag" +
+      "ent_logs:read\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0020\022./a" +
+      "pi/v1/agentkit/tool_call_logs/{execution" +
+      "_id}\022\314\001\n\027ListCurrentToolCallLogs\0229.scale" +
+      "kit.v1.agentkit_logs.ListCurrentToolCall" +
+      "LogsRequest\0323.scalekit.v1.agentkit_logs." +
+      "ListToolCallLogsResponse\"A\202\265\030\002\030\030\372\322\344\223\002\t\022\007" +
+      "PREVIEW\202\323\344\223\002&\022$/api/v1/agentkit/tool_cal" +
+      "l_logs:this\032\022\222A\017\n\rAgentKit LogsB\373\001\n+com." +
+      "scalekit.grpc.scalekit.v1.agentkit_logsB" +
+      "\021AgentkitLogsProtoP\001Z7github.com/scaleki" +
+      "t-inc/scalekit/pkg/grpc/agentkit_logs\242\002\003" +
+      "SVA\252\002\030Scalekit.V1.AgentkitLogs\312\002\030Scaleki" +
+      "t\\V1\\AgentkitLogs\342\002$Scalekit\\V1\\Agentkit" +
+      "Logs\\GPBMetadata\352\002\032Scalekit::V1::Agentki" +
+      "tLogsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

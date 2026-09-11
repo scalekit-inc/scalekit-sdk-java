@@ -164,4 +164,10 @@ public interface ConnectedAccountOrBuilder extends
    * <code>.google.protobuf.Struct api_config = 12 [json_name = "apiConfig", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.StructOrBuilder getApiConfigOrBuilder();
+
+  /**
+   * <code>bool is_org_wide_credential = 13 [json_name = "isOrgWideCredential", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isOrgWideCredential.
+   */
+  boolean getIsOrgWideCredential();
 }

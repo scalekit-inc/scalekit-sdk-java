@@ -120,56 +120,59 @@ public final class UserAttributesProto {
       "D_DATATYPE\020\000\022\n\n\006STRING\020\001\022\n\n\006NUMBER\020\002\022\010\n\004" +
       "BOOL\020\003\022\t\n\005ARRAY\020\004\022\n\n\006OBJECT\020\005*K\n\025UserAtt" +
       "ributeCategory\022\030\n\024UNSPECIFIED_CATEGORY\020\000" +
-      "\022\014\n\010STANDARD\020\001\022\n\n\006CUSTOM\020\0022\224\r\n\024UserAttri" +
-      "buteService\022\371\001\n\026CreateSsoUserAttribute\0227" +
+      "\022\014\n\010STANDARD\020\001\022\n\n\006CUSTOM\020\0022\373\r\n\024UserAttri" +
+      "buteService\022\206\002\n\026CreateSsoUserAttribute\0227" +
       ".scalekit.v1.user_attributes.CreateUserA" +
       "ttributeRequest\0328.scalekit.v1.user_attri" +
-      "butes.CreateUserAttributeResponse\"l\202\265\030\002\030" +
-      "t\202\323\344\223\002`\"\033/api/v1/sso-user-attributes:\016us" +
-      "er_attributeZ1\"\037/api/v1/user-profile-att" +
-      "ributes:\016user_attribute\022\266\001\n\025ListSsoUserA" +
-      "ttributes\022\026.google.protobuf.Empty\0327.scal" +
-      "ekit.v1.user_attributes.ListUserAttribut" +
-      "esResponse\"L\202\265\030\002\030t\202\323\344\223\002@\022\033/api/v1/sso-us" +
-      "er-attributesZ!\022\037/api/v1/user-profile-at" +
-      "tributes\022\205\002\n\026UpdateSsoUserAttribute\0227.sc" +
+      "butes.CreateUserAttributeResponse\"y\202\265\030\017\n" +
+      "\013users:write\030t\202\323\344\223\002`\"\033/api/v1/sso-user-a" +
+      "ttributes:\016user_attributeZ1\"\037/api/v1/use" +
+      "r-profile-attributes:\016user_attribute\022\302\001\n" +
+      "\025ListSsoUserAttributes\022\026.google.protobuf" +
+      ".Empty\0327.scalekit.v1.user_attributes.Lis" +
+      "tUserAttributesResponse\"X\202\265\030\016\n\nusers:rea" +
+      "d\030t\202\323\344\223\002@\022\033/api/v1/sso-user-attributesZ!" +
+      "\022\037/api/v1/user-profile-attributes\022\223\002\n\026Up" +
+      "dateSsoUserAttribute\0227.scalekit.v1.user_" +
+      "attributes.UpdateUserAttributeRequest\0328." +
+      "scalekit.v1.user_attributes.UpdateUserAt" +
+      "tributeResponse\"\205\001\202\265\030\017\n\013users:write\030d\202\323\344" +
+      "\223\002l2!/api/v1/sso-user-attributes/{key}:\016" +
+      "user_attributeZ72%/api/v1/user-profile-a" +
+      "ttributes/{key}:\016user_attribute\022\320\001\n\026Dele" +
+      "teSsoUserAttribute\0227.scalekit.v1.user_at" +
+      "tributes.DeleteUserAttributeRequest\032\026.go" +
+      "ogle.protobuf.Empty\"e\202\265\030\017\n\013users:write\030d" +
+      "\202\323\344\223\002L*!/api/v1/sso-user-attributes/{key" +
+      "}Z\'*%/api/v1/user-profile-attributes/{ke" +
+      "y}\022\337\001\n\034CreateDirectoryUserAttribute\0227.sc" +
+      "alekit.v1.user_attributes.CreateUserAttr" +
+      "ibuteRequest\0328.scalekit.v1.user_attribut" +
+      "es.CreateUserAttributeResponse\"L\202\265\030\017\n\013us" +
+      "ers:write\030d\202\323\344\223\0023\"!/api/v1/directory-use" +
+      "r-attributes:\016user_attribute\022\253\001\n\033ListDir" +
+      "ectoryUserAttributes\022\026.google.protobuf.E" +
+      "mpty\0327.scalekit.v1.user_attributes.ListU" +
+      "serAttributesResponse\";\202\265\030\016\n\nusers:read\030" +
+      "t\202\323\344\223\002#\022!/api/v1/directory-user-attribut" +
+      "es\022\345\001\n\034UpdateDirectoryUserAttribute\0227.sc" +
       "alekit.v1.user_attributes.UpdateUserAttr" +
       "ibuteRequest\0328.scalekit.v1.user_attribut" +
-      "es.UpdateUserAttributeResponse\"x\202\265\030\002\030d\202\323" +
-      "\344\223\002l2!/api/v1/sso-user-attributes/{key}:" +
-      "\016user_attributeZ72%/api/v1/user-profile-" +
-      "attributes/{key}:\016user_attribute\022\303\001\n\026Del" +
-      "eteSsoUserAttribute\0227.scalekit.v1.user_a" +
-      "ttributes.DeleteUserAttributeRequest\032\026.g" +
-      "oogle.protobuf.Empty\"X\202\265\030\002\030d\202\323\344\223\002L*!/api" +
-      "/v1/sso-user-attributes/{key}Z\'*%/api/v1" +
-      "/user-profile-attributes/{key}\022\322\001\n\034Creat" +
-      "eDirectoryUserAttribute\0227.scalekit.v1.us" +
-      "er_attributes.CreateUserAttributeRequest" +
-      "\0328.scalekit.v1.user_attributes.CreateUse" +
-      "rAttributeResponse\"?\202\265\030\002\030d\202\323\344\223\0023\"!/api/v" +
-      "1/directory-user-attributes:\016user_attrib" +
-      "ute\022\237\001\n\033ListDirectoryUserAttributes\022\026.go" +
-      "ogle.protobuf.Empty\0327.scalekit.v1.user_a" +
-      "ttributes.ListUserAttributesResponse\"/\202\265" +
-      "\030\002\030t\202\323\344\223\002#\022!/api/v1/directory-user-attri" +
-      "butes\022\330\001\n\034UpdateDirectoryUserAttribute\0227" +
-      ".scalekit.v1.user_attributes.UpdateUserA" +
-      "ttributeRequest\0328.scalekit.v1.user_attri" +
-      "butes.UpdateUserAttributeResponse\"E\202\265\030\002\030" +
-      "d\202\323\344\223\00292\'/api/v1/directory-user-attribut" +
-      "es/{key}:\016user_attribute\022\246\001\n\034DeleteDirec" +
-      "toryUserAttribute\0227.scalekit.v1.user_att" +
-      "ributes.DeleteUserAttributeRequest\032\026.goo" +
-      "gle.protobuf.Empty\"5\202\265\030\002\030d\202\323\344\223\002)*\'/api/v" +
-      "1/directory-user-attributes/{key}B\211\002\n-co" +
-      "m.scalekit.grpc.scalekit.v1.user_attribu" +
-      "tesB\023UserAttributesProtoP\001Z9github.com/s" +
-      "calekit-inc/scalekit/pkg/grpc/user_attri" +
-      "butes\242\002\003SVU\252\002\032Scalekit.V1.UserAttributes" +
-      "\312\002\032Scalekit\\V1\\UserAttributes\342\002&Scalekit" +
-      "\\V1\\UserAttributes\\GPBMetadata\352\002\034Scaleki" +
-      "t::V1::UserAttributesb\006proto3"
+      "es.UpdateUserAttributeResponse\"R\202\265\030\017\n\013us" +
+      "ers:write\030d\202\323\344\223\00292\'/api/v1/directory-use" +
+      "r-attributes/{key}:\016user_attribute\022\263\001\n\034D" +
+      "eleteDirectoryUserAttribute\0227.scalekit.v" +
+      "1.user_attributes.DeleteUserAttributeReq" +
+      "uest\032\026.google.protobuf.Empty\"B\202\265\030\017\n\013user" +
+      "s:write\030d\202\323\344\223\002)*\'/api/v1/directory-user-" +
+      "attributes/{key}B\211\002\n-com.scalekit.grpc.s" +
+      "calekit.v1.user_attributesB\023UserAttribut" +
+      "esProtoP\001Z9github.com/scalekit-inc/scale" +
+      "kit/pkg/grpc/user_attributes\242\002\003SVU\252\002\032Sca" +
+      "lekit.V1.UserAttributes\312\002\032Scalekit\\V1\\Us" +
+      "erAttributes\342\002&Scalekit\\V1\\UserAttribute" +
+      "s\\GPBMetadata\352\002\034Scalekit::V1::UserAttrib" +
+      "utesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

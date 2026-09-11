@@ -410,10 +410,10 @@ public final class SessionsProto {
       "ntId\022\217\001\n\017organization_id\030\002 \001(\tBf\222Ac2OAct" +
       "ive or last active Organization ID assoc" +
       "iated with the authenticated client.J\020\"o" +
-      "rg_1234567890\"R\016organizationId2\310\037\n\016Sessi" +
-      "onService\022\333\006\n\nGetSession\022+.scalekit.v1.s" +
+      "rg_1234567890\"R\016organizationId2\210 \n\016Sessi" +
+      "onService\022\352\006\n\nGetSession\022+.scalekit.v1.s" +
       "essions.SessionDetailsRequest\032$.scalekit" +
-      ".v1.sessions.SessionDetails\"\371\005\222A\312\005\n\010Sess" +
+      ".v1.sessions.SessionDetails\"\210\006\222A\312\005\n\010Sess" +
       "ions\022\023Get session details\032\315\004Retrieves co" +
       "mprehensive details for a specific user " +
       "session including authentication status," +
@@ -431,93 +431,95 @@ public final class SessionsProto {
       "bsolute expiration, and actual expiratio" +
       "n if applicable).JY\n\003200\022R\n&Successfully" +
       " retrieved session details\022(\n&\032$.scaleki" +
-      "t.v1.sessions.SessionDetails\202\265\030\002\030D\202\323\344\223\002\037" +
-      "\022\035/api/v1/sessions/{session_id}\022\242\006\n\rRevo" +
-      "keSession\022*.scalekit.v1.sessions.RevokeS" +
-      "essionRequest\032+.scalekit.v1.sessions.Rev" +
-      "okeSessionResponse\"\267\005\222A\201\005\n\010Sessions\022\023Rev" +
-      "oke user session\032\336\003Immediately invalidat" +
-      "es a specific user session by session ID" +
-      ", setting its status to \'revoked\'. Once " +
-      "revoked, the session cannot be used for " +
-      "any future API requests or application a" +
-      "ccess. Use this endpoint to implement se" +
-      "ssion-level logout, force a user to reau" +
-      "thenticate on a specific device, or term" +
-      "inate suspicious sessions. The revocatio" +
-      "n is instantaneous and irreversible. Ret" +
-      "urns the revoked session details includi" +
-      "ng the session ID, user ID, and the revo" +
-      "cation timestamp.J\177\n\003200\022x\nESuccessfully" +
-      " revoked the session. Returns the revoke" +
-      "d session details\022/\n-\032+.scalekit.v1.sess" +
-      "ions.RevokeSessionResponse\202\265\030\002\030T\202\323\344\223\002&\"$" +
-      "/api/v1/sessions/{session_id}/revoke\022\260\007\n" +
-      "\017GetUserSessions\022/.scalekit.v1.sessions." +
-      "UserSessionDetailsRequest\032(.scalekit.v1." +
-      "sessions.UserSessionDetails\"\301\006\222A\217\006\n\010Sess" +
-      "ions\022\022List user sessions\032\327\004Retrieves a p" +
-      "aginated list of all sessions associated" +
-      " with a specific user across all devices" +
-      " and browsers. Use this endpoint to audi" +
-      "t user activity, display all active sess" +
-      "ions in account management interfaces, o" +
-      "r verify user authentication status acro" +
-      "ss devices. Supports filtering by sessio" +
-      "n status (active, expired, revoked, logo" +
-      "ut) and time range (creation date). Retu" +
-      "rns session details for each session inc" +
-      "luding device information, IP address, g" +
-      "eolocation, and current status. The resp" +
-      "onse includes pagination metadata (page " +
-      "tokens and total count) to handle large " +
-      "session lists efficiently.J\224\001\n\003200\022\214\001\n\\S" +
-      "uccessfully retrieved user sessions. Ret" +
-      "urns a list of sessions with pagination " +
-      "information\022,\n*\032(.scalekit.v1.sessions.U" +
-      "serSessionDetails\202\265\030\002\030T\202\323\344\223\002\"\022 /api/v1/u" +
-      "sers/{user_id}/sessions\022\276\007\n\025RevokeAllUse" +
-      "rSessions\0222.scalekit.v1.sessions.RevokeA" +
-      "llUserSessionsRequest\0323.scalekit.v1.sess" +
-      "ions.RevokeAllUserSessionsResponse\"\273\006\222A\202" +
-      "\006\n\010Sessions\022\030Revoke all user sessions\032\271\004" +
-      "Immediately invalidates all active sessi" +
-      "ons for a specific user across all devic" +
-      "es and browsers, setting their status to" +
-      " \'revoked\'. Use this endpoint to impleme" +
-      "nt global logout functionality, force re" +
-      "-authentication after security incidents" +
-      ", or terminate all sessions following a " +
-      "password reset or credential compromise.",
-      " Only active sessions are revoked; alrea" +
-      "dy expired, logout, or previously revoke" +
-      "d sessions remain unchanged. The revocat" +
-      "ion is atomic and instantaneous. Returns" +
-      " a list of all revoked sessions with the" +
-      "ir details and a total count of sessions" +
-      " revoked.J\237\001\n\003200\022\227\001\n\\Successfully revok" +
-      "ed all user sessions. Returns the list o" +
-      "f revoked sessions and total count\0227\n5\0323" +
-      ".scalekit.v1.sessions.RevokeAllUserSessi" +
-      "onsResponse\202\265\030\002\030D\202\323\344\223\002)\"\'/api/v1/users/{" +
-      "user_id}/sessions/revoke\032\276\003\222A\272\003\n\010Session" +
-      "s\022\255\003Comprehensive session management for" +
-      " user authentication and authorization. " +
-      "This service provides endpoints for retr" +
-      "ieving session details, managing user se" +
-      "ssions across devices, revoking individu" +
-      "al sessions, and terminating all active " +
-      "sessions for a user. It supports session" +
-      " auditing, device tracking, and security" +
-      " monitoring with detailed session metada" +
-      "ta including device information, IP geol" +
-      "ocation, and activity timestamps.B\335\001\n&co" +
-      "m.scalekit.grpc.scalekit.v1.sessionsB\rSe" +
-      "ssionsProtoP\001Z2github.com/scalekit-inc/s" +
-      "calekit/pkg/grpc/sessions\242\002\003SVS\252\002\024Scalek" +
-      "it.V1.Sessions\312\002\024Scalekit\\V1\\Sessions\342\002 " +
-      "Scalekit\\V1\\Sessions\\GPBMetadata\352\002\026Scale" +
-      "kit::V1::Sessionsb\006proto3"
+      "t.v1.sessions.SessionDetails\202\265\030\021\n\rsessio" +
+      "ns:read\030D\202\323\344\223\002\037\022\035/api/v1/sessions/{sessi" +
+      "on_id}\022\263\006\n\rRevokeSession\022*.scalekit.v1.s" +
+      "essions.RevokeSessionRequest\032+.scalekit." +
+      "v1.sessions.RevokeSessionResponse\"\310\005\222A\201\005" +
+      "\n\010Sessions\022\023Revoke user session\032\336\003Immedi" +
+      "ately invalidates a specific user sessio" +
+      "n by session ID, setting its status to \'" +
+      "revoked\'. Once revoked, the session cann" +
+      "ot be used for any future API requests o" +
+      "r application access. Use this endpoint " +
+      "to implement session-level logout, force" +
+      " a user to reauthenticate on a specific " +
+      "device, or terminate suspicious sessions" +
+      ". The revocation is instantaneous and ir" +
+      "reversible. Returns the revoked session " +
+      "details including the session ID, user I" +
+      "D, and the revocation timestamp.J\177\n\003200\022" +
+      "x\nESuccessfully revoked the session. Ret" +
+      "urns the revoked session details\022/\n-\032+.s" +
+      "calekit.v1.sessions.RevokeSessionRespons" +
+      "e\202\265\030\023\n\017sessions:revoke\030T\202\323\344\223\002&\"$/api/v1/" +
+      "sessions/{session_id}/revoke\022\277\007\n\017GetUser" +
+      "Sessions\022/.scalekit.v1.sessions.UserSess" +
+      "ionDetailsRequest\032(.scalekit.v1.sessions" +
+      ".UserSessionDetails\"\320\006\222A\217\006\n\010Sessions\022\022Li" +
+      "st user sessions\032\327\004Retrieves a paginated" +
+      " list of all sessions associated with a " +
+      "specific user across all devices and bro" +
+      "wsers. Use this endpoint to audit user a" +
+      "ctivity, display all active sessions in " +
+      "account management interfaces, or verify" +
+      " user authentication status across devic" +
+      "es. Supports filtering by session status" +
+      " (active, expired, revoked, logout) and " +
+      "time range (creation date). Returns sess" +
+      "ion details for each session including d" +
+      "evice information, IP address, geolocati" +
+      "on, and current status. The response inc" +
+      "ludes pagination metadata (page tokens a" +
+      "nd total count) to handle large session " +
+      "lists efficiently.J\224\001\n\003200\022\214\001\n\\Successfu" +
+      "lly retrieved user sessions. Returns a l" +
+      "ist of sessions with pagination informat" +
+      "ion\022,\n*\032(.scalekit.v1.sessions.UserSessi" +
+      "onDetails\202\265\030\021\n\rsessions:read\030T\202\323\344\223\002\"\022 /a" +
+      "pi/v1/users/{user_id}/sessions\022\317\007\n\025Revok" +
+      "eAllUserSessions\0222.scalekit.v1.sessions." +
+      "RevokeAllUserSessionsRequest\0323.scalekit." +
+      "v1.sessions.RevokeAllUserSessionsRespons" +
+      "e\"\314\006\222A\202\006\n\010Sessions\022\030Revoke all user sess" +
+      "ions\032\271\004Immediately invalidates all activ" +
+      "e sessions for a specific user across al" +
+      "l devices and browsers, setting their st" +
+      "atus to \'revoked\'. Use this endpoint to " +
+      "implement global logout functionality, f" +
+      "orce re-authentication after security in" +
+      "cidents, or terminate all sessions follo",
+      "wing a password reset or credential comp" +
+      "romise. Only active sessions are revoked" +
+      "; already expired, logout, or previously" +
+      " revoked sessions remain unchanged. The " +
+      "revocation is atomic and instantaneous. " +
+      "Returns a list of all revoked sessions w" +
+      "ith their details and a total count of s" +
+      "essions revoked.J\237\001\n\003200\022\227\001\n\\Successfull" +
+      "y revoked all user sessions. Returns the" +
+      " list of revoked sessions and total coun" +
+      "t\0227\n5\0323.scalekit.v1.sessions.RevokeAllUs" +
+      "erSessionsResponse\202\265\030\023\n\017sessions:revoke\030" +
+      "D\202\323\344\223\002)\"\'/api/v1/users/{user_id}/session" +
+      "s/revoke\032\276\003\222A\272\003\n\010Sessions\022\255\003Comprehensiv" +
+      "e session management for user authentica" +
+      "tion and authorization. This service pro" +
+      "vides endpoints for retrieving session d" +
+      "etails, managing user sessions across de" +
+      "vices, revoking individual sessions, and" +
+      " terminating all active sessions for a u" +
+      "ser. It supports session auditing, devic" +
+      "e tracking, and security monitoring with" +
+      " detailed session metadata including dev" +
+      "ice information, IP geolocation, and act" +
+      "ivity timestamps.B\335\001\n&com.scalekit.grpc." +
+      "scalekit.v1.sessionsB\rSessionsProtoP\001Z2g" +
+      "ithub.com/scalekit-inc/scalekit/pkg/grpc" +
+      "/sessions\242\002\003SVS\252\002\024Scalekit.V1.Sessions\312\002" +
+      "\024Scalekit\\V1\\Sessions\342\002 Scalekit\\V1\\Sess" +
+      "ions\\GPBMetadata\352\002\026Scalekit::V1::Session" +
+      "sb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

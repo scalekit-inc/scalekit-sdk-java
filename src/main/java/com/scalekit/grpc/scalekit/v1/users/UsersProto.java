@@ -912,10 +912,10 @@ public final class UsersProto {
       "sh\"\217\001\n\033ListUserPermissionsResponse\022p\n\013pe" +
       "rmissions\030\001 \003(\0132\035.scalekit.v1.users.Perm" +
       "issionB/\222A,2*List of permissions the use" +
-      "r has access toR\013permissions2\260d\n\013UserSer" +
-      "vice\022\320\003\n\007GetUser\022!.scalekit.v1.users.Get" +
+      "r has access toR\013permissions2\207f\n\013UserSer" +
+      "vice\022\334\003\n\007GetUser\022!.scalekit.v1.users.Get" +
       "UserRequest\032\".scalekit.v1.users.GetUserR" +
-      "esponse\"\375\002\222A\261\002\n\005Users\022\010Get user\032\177Retriev" +
+      "esponse\"\211\003\222A\261\002\n\005Users\022\010Get user\032\177Retriev" +
       "es all details for a user by system-gene" +
       "rated user ID. The response includes org" +
       "anization memberships and user metadata." +
@@ -923,323 +923,328 @@ public final class UsersProto {
       "essfully. Returns full user object with " +
       "system-generated fields and timestamps.\022" +
       "&\n$\032\".scalekit.v1.users.GetUserResponse\202" +
-      "\265\030\002\030T\202\323\344\223\002<\022\022/api/v1/users/{id}Z&\022$/api/" +
-      "v1/users:external/{external_id}\022\325\003\n\016GetC" +
-      "urrentUser\022(.scalekit.v1.users.GetCurren" +
-      "tUserRequest\032).scalekit.v1.users.GetCurr" +
-      "entUserResponse\"\355\002\222A\246\002\n\005Users\022\026Get authe" +
-      "nticated user\032\236\001Retrieves details for th" +
-      "e currently authenticated user. Returns " +
-      "the same user object as GetUser but uses" +
-      " the authenticated user\'s ID from the se" +
-      "ssion context.Jd\n\003200\022]\n,Current user de" +
-      "tails retrieved successfully.\022-\n+\032).scal" +
-      "ekit.v1.users.GetCurrentUserResponse\202\265\030\002" +
-      "\030\030\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002(\022\022/api/v1/users:t" +
-      "hisZ\022\022\020/api/v1/users/me\022\360\002\n\016GetSupportHa" +
-      "sh\022\026.google.protobuf.Empty\032).scalekit.v1" +
-      ".users.GetSupportHashResponse\"\232\002\222A\337\001\n\005Us" +
-      "ers\022\020Get support hash\032fRetrieves the sup" +
-      "port email hash for the current logged i" +
-      "n user, used for the Scalekit support sy" +
-      "stem.J\\\n\003200\022U\n$Support hash retrieved s" +
-      "uccessfully.\022-\n+\032).scalekit.v1.users.Get" +
-      "SupportHashResponse\202\265\030\002\030P\372\322\344\223\002\t\022\007PREVIEW" +
-      "\202\323\344\223\002\034\022\032/api/v1/users/support-hash\022\240\004\n\tL" +
-      "istUsers\022#.scalekit.v1.users.ListUsersRe" +
-      "quest\032$.scalekit.v1.users.ListUsersRespo" +
-      "nse\"\307\003\222A\250\003\n\005Users\022\035List all users in env" +
-      "ironment\032\274\002Retrieves a paginated list of" +
-      " all users across your entire environmen" +
-      "t. Use this endpoint to view all users r" +
-      "egardless of their organization membersh" +
-      "ips. This is useful for administrative p" +
-      "urposes, user audits, or when you need t" +
-      "o see all users in your Scalekit environ" +
-      "ment. Supports pagination for large user" +
-      " bases.JA\n\003200\022:\n\016List of users.\022(\n&\032$.s" +
-      "calekit.v1.users.ListUsersResponse\202\265\030\002\030D" +
-      "\202\323\344\223\002\017\022\r/api/v1/users\022\270\005\n\013SearchUsers\022%." +
-      "scalekit.v1.users.SearchUsersRequest\032&.s" +
-      "calekit.v1.users.SearchUsersResponse\"\331\004\222" +
-      "A\263\004\n\005Users\022\014Search users\032\257\002Searches for " +
-      "users across the entire environment by e" +
-      "mail address, user ID, or external ID. T" +
-      "he query must be at least 3 characters a" +
-      "nd is case-insensitive. Returns a pagina" +
-      "ted list of matching users with up to 30" +
-      " results per page. Use the next_page_tok" +
-      "en from the response to retrieve subsequ" +
-      "ent pages.J\214\001\n\003200\022\204\001\nVMatching users re" +
-      "turned; includes pagination cursors for " +
-      "navigating large result sets.\022*\n(\032&.scal" +
-      "ekit.v1.users.SearchUsersResponseJ[\n\003400" +
-      "\022T\nRBad Request - query must be at least" +
-      " 3 characters and no more than 100 chara" +
-      "cters.\202\265\030\002\030D\202\323\344\223\002\026\022\024/api/v1/users:search" +
-      "\022\320\007\n\027SearchOrganizationUsers\0221.scalekit." +
-      "v1.users.SearchOrganizationUsersRequest\032" +
-      "2.scalekit.v1.users.SearchOrganizationUs" +
-      "ersResponse\"\315\006\222A\207\006\n\005Users\022\031Search organi" +
-      "zation users\032\343\002Searches for users within" +
-      " a specific organization by email addres" +
-      "s, user ID, or external ID. The query mu" +
-      "st be at least 3 characters and is case-" +
-      "insensitive. Scopes results strictly to " +
-      "the given organization. Returns a pagina" +
-      "ted list of matching users with up to 30" +
-      " results per page. Use the next_page_tok" +
-      "en from the response to retrieve subsequ" +
-      "ent pages.J\260\001\n\003200\022\250\001\nnMatching users wi" +
-      "thin the organization returned; includes" +
-      " pagination cursors for navigating large" +
-      " result sets.\0226\n4\0322.scalekit.v1.users.Se" +
-      "archOrganizationUsersResponseJ\233\001\n\003400\022\223\001" +
-      "\n\220\001Bad Request - query must be at least " +
-      "3 characters and no more than 100 charac" +
-      "ters, and organization_id must be a vali" +
-      "d org_ prefixed identifier.J,\n\003404\022%\n#No" +
-      "t Found - organization not found.\202\265\030\002\030D\202" +
-      "\323\344\223\0026\0224/api/v1/organizations/{organizati" +
-      "on_id}/users:search\022\304\005\n\nUpdateUser\022$.sca" +
-      "lekit.v1.users.UpdateUserRequest\032%.scale" +
-      "kit.v1.users.UpdateUserResponse\"\350\004\222A\220\004\n\005" +
-      "Users\022\027Update user information\032\341\002Modifie" +
-      "s user account information including pro" +
-      "file details, metadata, and external ID." +
-      " Use this endpoint to update a user\'s pe" +
-      "rsonal information, contact details, or " +
-      "custom metadata. You can update the user" +
-      "\'s profile, phone number, and metadata f" +
-      "ields. Note that fields like user ID, em" +
-      "ail address, environment ID, and creatio" +
-      "n time cannot be modified.J\211\001\n\003200\022\201\001\nTU" +
-      "ser updated successfully. Returns the mo" +
-      "dified user object with updated timestam" +
-      "ps.\022)\n\'\032%.scalekit.v1.users.UpdateUserRe" +
-      "sponse\202\265\030\002\030T\202\323\344\223\002H2\022/api/v1/users/{id}:\004" +
-      "userZ,2$/api/v1/users:external/{external" +
-      "_id}:\004user\022\245\004\n\nDeleteUser\022$.scalekit.v1." +
-      "users.DeleteUserRequest\032\026.google.protobu" +
-      "f.Empty\"\330\003\222A\214\003\n\005Users\022\027Delete user perma" +
-      "nently\032\260\002Permanently removes a user from" +
-      " your environment and deletes all associ" +
-      "ated data. Use this endpoint when you ne" +
-      "ed to completely remove a user account. " +
-      "This action deletes the user\'s profile, " +
-      "memberships, and all related data across" +
-      " all organizations. This operation canno" +
-      "t be undone, so use with caution.J7\n\003200" +
-      "\0220\n.User successfully deleted. No conten" +
-      "t returned\202\265\030\002\030D\202\323\344\223\002<*\022/api/v1/users/{i" +
-      "d}Z&*$/api/v1/users:external/{external_i" +
-      "d}\022\245\006\n\020CreateMembership\022*.scalekit.v1.us" +
-      "ers.CreateMembershipRequest\032+.scalekit.v" +
-      "1.users.CreateMembershipResponse\"\267\005\222A\336\003\n" +
-      "\005Users\022!Add existing user to organizatio" +
-      "n\032\225\002Adds an existing user to an organiza" +
-      "tion and assigns them specific roles and" +
-      " permissions. Use this endpoint when you" +
-      " want to grant an existing user access t" +
-      "o a particular organization. You can spe" +
-      "cify roles, metadata, and other membersh" +
-      "ip details during the invitation process" +
-      ".J\231\001\n\003201\022\221\001\n^User successfully added to" +
-      " the organization. Returns details of th" +
-      "e updated membership details\022/\n-\032+.scale" +
-      "kit.v1.users.CreateMembershipResponse\202\265\030" +
-      "\036\n\032organizations_users_invite\030T\202\323\344\223\002\254\001\">" +
-      "/api/v1/memberships/organizations/{organ" +
-      "ization_id}/users/{id}:\nmembershipZ^\"P/a" +
-      "pi/v1/memberships/organizations/{organiz" +
-      "ation_id}/users:external/{external_id}:\n" +
-      "membership\022\213\004\n\020DeleteMembership\022*.scalek" +
-      "it.v1.users.DeleteMembershipRequest\032\026.go" +
-      "ogle.protobuf.Empty\"\262\003\222A\361\001\n\005Users\022\'Delet" +
-      "e organization membership for user\032zRemo" +
-      "ves a user from an organization by user " +
-      "ID. This action is irreversible and may " +
-      "also remove related group memberships.JC" +
-      "\n\003200\022<\n:User successfully marked for de" +
-      "letion. No content returned\202\265\030\036\n\032organiz" +
-      "ations_users_remove\030T\202\323\344\223\002\224\001*>/api/v1/me" +
-      "mberships/organizations/{organization_id" +
-      "}/users/{id}ZR*P/api/v1/memberships/orga" +
-      "nizations/{organization_id}/users:extern" +
-      "al/{external_id}\022\357\004\n\020UpdateMembership\022*." +
-      "scalekit.v1.users.UpdateMembershipReques" +
-      "t\032+.scalekit.v1.users.UpdateMembershipRe" +
-      "sponse\"\201\004\222A\243\002\n\005Users\022\'Update organizatio" +
-      "n membership for user\032tUpdates a user\'s " +
-      "membership details within an organizatio" +
-      "n by user ID. You can update roles and m" +
-      "embership metadata.J{\n\003200\022t\nAMembership" +
-      " updated successfully. Returns the updat" +
-      "ed user object.\022/\n-\032+.scalekit.v1.users." +
-      "UpdateMembershipResponse\202\265\030#\n\037organizati" +
-      "ons_users_role_update\030T\202\323\344\223\002\254\0012>/api/v1/" +
-      "memberships/organizations/{organization_",
-      "id}/users/{id}:\nmembershipZ^2P/api/v1/me" +
-      "mberships/organizations/{organization_id" +
-      "}/users:external/{external_id}:\nmembersh" +
-      "ip\022\310\006\n\027CreateUserAndMembership\0221.scaleki" +
-      "t.v1.users.CreateUserAndMembershipReques" +
-      "t\0322.scalekit.v1.users.CreateUserAndMembe" +
-      "rshipResponse\"\305\005\222A\344\004\n\005Users\022\037Create new " +
-      "user in organization\032\203\003Creates a new use" +
-      "r account and immediately adds them to t" +
-      "he specified organization. Use this endp" +
-      "oint when you want to create a user and " +
-      "grant them access to an organization in " +
-      "a single operation. You can provide user" +
-      " profile information, assign roles, and " +
-      "configure membership metadata. The user " +
-      "receives an activation email unless this" +
-      " feature is disabled in the organization" +
-      " settings.J\263\001\n\003201\022\253\001\nqUser created succ" +
-      "essfully. Returns the created user objec" +
-      "t, including system-generated identifier" +
-      "s and timestamps\0226\n4\0322.scalekit.v1.users" +
-      ".CreateUserAndMembershipResponse\202\265\030\036\n\032or" +
-      "ganizations_users_invite\030T\202\323\344\223\0025\"-/api/v" +
-      "1/organizations/{organization_id}/users:" +
-      "\004user\022\375\004\n\025ListOrganizationUsers\022/.scalek" +
-      "it.v1.users.ListOrganizationUsersRequest" +
-      "\0320.scalekit.v1.users.ListOrganizationUse" +
-      "rsResponse\"\200\004\222A\247\003\n\005Users\022\027List organizat" +
-      "ion users\032\207\002Retrieves a paginated list o" +
-      "f all users who are members of the speci" +
-      "fied organization. Use this endpoint to " +
-      "view all users with access to a particul" +
-      "ar organization, including their roles, " +
-      "metadata, and membership details. Suppor" +
-      "ts pagination for large user lists.J{\n\0032" +
-      "00\022t\n<Successfully retrieved the list of" +
-      " users in the organization\0224\n2\0320.scaleki" +
-      "t.v1.users.ListOrganizationUsersResponse" +
-      "\202\265\030\034\n\030organizations_users_read\030T\202\323\344\223\002/\022-" +
-      "/api/v1/organizations/{organization_id}/" +
-      "users\022\256\020\n\014ResendInvite\022&.scalekit.v1.use" +
-      "rs.ResendInviteRequest\032\'.scalekit.v1.use" +
-      "rs.ResendInviteResponse\"\314\017\222A\332\016\n\005Users\022\034R" +
-      "esend user invitation email\032\341\004Resends an" +
-      " invitation email to a user who has a pe" +
-      "nding or expired invitation in the speci" +
-      "fied organization. If the invitation has" +
-      " expired, a new invitation will be autom" +
-      "atically created and sent. If the invita" +
-      "tion is still valid, a reminder email wi" +
-      "ll be sent instead. Use this endpoint wh" +
-      "en a user hasn\'t responded to their init" +
-      "ial invitation and you need to send them" +
-      " a reminder or when the original invitat" +
-      "ion has expired. The invitation email in" +
-      "cludes a secure magic link that allows t" +
-      "he user to complete their account setup " +
-      "and join the organization. Each resend o" +
-      "peration increments the resent counter.J" +
-      "\247\002\n\003200\022\237\002\n\357\001Successfully resent the inv" +
-      "itation email. Returns the updated invit" +
-      "ation object with organization ID, user " +
-      "ID, membership status, timestamps, and r" +
-      "esent count. If expired, a new invitatio" +
-      "n is created; otherwise, the existing on" +
-      "e is resent.\022+\n)\032\'.scalekit.v1.users.Res" +
-      "endInviteResponseJ\217\002\n\003400\022\207\002\n\335\001Invalid r" +
-      "equest \342\200\224 common causes include user ID" +
-      " or organization ID is invalid, full-sta" +
-      "ck authentication is disabled, user prof" +
-      "ile is missing, invite already accepted," +
-      " or missing expiry time in user manageme" +
-      "nt settings.\022%\n#\032!#/definitions/errdetai" +
-      "lsErrorInfoJ\235\002\n\003404\022\225\002\n\353\001Resource not fo" +
-      "und \342\200\224 the specified user, organization" +
-      ", membership, or invitation could not be" +
-      " found in the specified environment. Ver" +
-      "ify that all IDs are correct and that th" +
-      "e resources exist before attempting to r" +
-      "esend an invitation.\022%\n#\032!#/definitions/" +
-      "errdetailsErrorInfoJ\362\002\n\003500\022\352\002\n\300\002Interna" +
-      "l server error \342\200\224 an unexpected error o" +
-      "ccurred while processing the invitation " +
-      "resend request. This may be due to datab" +
-      "ase connectivity issues, problems genera" +
-      "ting the secure magic link, email delive" +
-      "ry service failures, or transaction erro" +
-      "rs during invitation processing. Contact" +
-      " support if the problem persists.\022%\n#\032!#" +
-      "/definitions/errdetailsErrorInfo\202\265\030\036\n\032or" +
-      "ganizations_users_invite\030T\202\323\344\223\002F2A/api/v" +
-      "1/invites/organizations/{organization_id" +
-      "}/users/{id}/resend:\001*\022\337\003\n\rListUserRoles" +
-      "\022\'.scalekit.v1.users.ListUserRolesReques" +
-      "t\032(.scalekit.v1.users.ListUserRolesRespo" +
-      "nse\"\372\002\222A\253\002\n\005Users\022\017List user roles\032\232\001Ret" +
-      "rieves all roles assigned to a user with" +
-      "in a specific organization. This include" +
-      "s both direct role assignments and inher" +
-      "ited roles from role hierarchy.Jt\n\003200\022m" +
-      "\n=Successfully retrieved the list of rol" +
-      "es assigned to the user\022,\n*\032(.scalekit.v" +
-      "1.users.ListUserRolesResponse\202\265\030\002\030D\202\323\344\223\002" +
-      "?\022=/api/v1/organizations/{organization_i" +
-      "d}/users/{user_id}/roles\022\203\004\n\017AssignUserR" +
-      "oles\022).scalekit.v1.users.AssignUserRoles" +
-      "Request\032*.scalekit.v1.users.AssignUserRo" +
-      "lesResponse\"\230\003\222A\222\002\n\005Users\022\024Assign roles " +
-      "to user\032\220\001Assigns one or more roles to a" +
-      " user within a specific organization. Th" +
-      "is operation adds to existing role assig" +
-      "nments rather than replacing them.J`\n\00320" +
-      "0\022Y\n\'Successfully assigned roles to the " +
-      "user\022.\n,\032*.scalekit.v1.users.AssignUserR" +
-      "olesResponse\202\265\030#\n\037organizations_users_ro" +
-      "le_update\030T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002F\"=/api/v" +
-      "1/organizations/{organization_id}/users/" +
-      "{user_id}/roles:\005roles\022\311\003\n\016RemoveUserRol" +
-      "e\022(.scalekit.v1.users.RemoveUserRoleRequ" +
-      "est\032\026.google.protobuf.Empty\"\364\002\222A\351\001\n\005User" +
-      "s\022\025Remove role from user\032\232\001Removes a spe" +
-      "cific role assignment from a user within" +
-      " an organization. This only removes dire" +
-      "ct role assignments, not inherited roles" +
-      " from role hierarchy.J,\n\003200\022%\n#Role suc" +
-      "cessfully removed from user\202\265\030#\n\037organiz" +
-      "ations_users_role_update\030T\372\322\344\223\002\t\022\007PREVIE" +
-      "W\202\323\344\223\002K*I/api/v1/organizations/{organiza" +
-      "tion_id}/users/{user_id}/roles/{role_nam" +
-      "e}\022\233\004\n\023ListUserPermissions\022-.scalekit.v1" +
-      ".users.ListUserPermissionsRequest\032..scal" +
-      "ekit.v1.users.ListUserPermissionsRespons" +
-      "e\"\244\003\222A\317\002\n\005Users\022\025List user permissions\032\264" +
-      "\001Retrieves all permissions a user has ac" +
-      "cess to within a specific organization. " +
-      "This includes permissions from direct ro" +
-      "le assignments and inherited permissions" +
-      " from role hierarchy.Jx\n\003200\022q\n;Successf" +
-      "ully retrieved the list of permissions f" +
-      "or the user\0222\n0\032..scalekit.v1.users.List" +
-      "UserPermissionsResponse\202\265\030\002\030D\202\323\344\223\002E\022C/ap" +
-      "i/v1/organizations/{organization_id}/use" +
-      "rs/{user_id}/permissions\032\354\003\222A\350\003\n\005Users\022\336" +
-      "\003Comprehensive user management operation" +
-      "s including user lifecycle, organization" +
-      " memberships, and invitation workflows. " +
-      "This service provides endpoints for crea" +
-      "ting, retrieving, updating, and deleting" +
-      " user accounts across your Scalekit envi" +
-      "ronment. It supports both individual use" +
-      "r operations and bulk operations for use" +
-      "r administration, including user search," +
-      " pagination, and metadata management. Th" +
-      "e service also handles user invitations " +
-      "and organization membership management.B" +
-      "\310\001\n#com.scalekit.grpc.scalekit.v1.usersB" +
-      "\nUsersProtoP\001Z/github.com/scalekit-inc/s" +
-      "calekit/pkg/grpc/users\242\002\003SVU\252\002\021Scalekit." +
-      "V1.Users\312\002\021Scalekit\\V1\\Users\342\002\035Scalekit\\" +
-      "V1\\Users\\GPBMetadata\352\002\023Scalekit::V1::Use" +
-      "rsb\006proto3"
+      "\265\030\016\n\nusers:read\030T\202\323\344\223\002<\022\022/api/v1/users/{" +
+      "id}Z&\022$/api/v1/users:external/{external_" +
+      "id}\022\341\003\n\016GetCurrentUser\022(.scalekit.v1.use" +
+      "rs.GetCurrentUserRequest\032).scalekit.v1.u" +
+      "sers.GetCurrentUserResponse\"\371\002\222A\246\002\n\005User" +
+      "s\022\026Get authenticated user\032\236\001Retrieves de" +
+      "tails for the currently authenticated us" +
+      "er. Returns the same user object as GetU" +
+      "ser but uses the authenticated user\'s ID" +
+      " from the session context.Jd\n\003200\022]\n,Cur" +
+      "rent user details retrieved successfully" +
+      ".\022-\n+\032).scalekit.v1.users.GetCurrentUser" +
+      "Response\202\265\030\016\n\nusers:read\030\030\372\322\344\223\002\t\022\007PREVIE" +
+      "W\202\323\344\223\002(\022\022/api/v1/users:thisZ\022\022\020/api/v1/u" +
+      "sers/me\022\360\002\n\016GetSupportHash\022\026.google.prot" +
+      "obuf.Empty\032).scalekit.v1.users.GetSuppor" +
+      "tHashResponse\"\232\002\222A\337\001\n\005Users\022\020Get support" +
+      " hash\032fRetrieves the support email hash " +
+      "for the current logged in user, used for" +
+      " the Scalekit support system.J\\\n\003200\022U\n$" +
+      "Support hash retrieved successfully.\022-\n+" +
+      "\032).scalekit.v1.users.GetSupportHashRespo" +
+      "nse\202\265\030\002\030P\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\034\022\032/api/v1/" +
+      "users/support-hash\022\254\004\n\tListUsers\022#.scale" +
+      "kit.v1.users.ListUsersRequest\032$.scalekit" +
+      ".v1.users.ListUsersResponse\"\323\003\222A\250\003\n\005User" +
+      "s\022\035List all users in environment\032\274\002Retri" +
+      "eves a paginated list of all users acros" +
+      "s your entire environment. Use this endp" +
+      "oint to view all users regardless of the" +
+      "ir organization memberships. This is use" +
+      "ful for administrative purposes, user au" +
+      "dits, or when you need to see all users " +
+      "in your Scalekit environment. Supports p" +
+      "agination for large user bases.JA\n\003200\022:" +
+      "\n\016List of users.\022(\n&\032$.scalekit.v1.users" +
+      ".ListUsersResponse\202\265\030\016\n\nusers:read\030D\202\323\344\223" +
+      "\002\017\022\r/api/v1/users\022\304\005\n\013SearchUsers\022%.scal" +
+      "ekit.v1.users.SearchUsersRequest\032&.scale" +
+      "kit.v1.users.SearchUsersResponse\"\345\004\222A\263\004\n" +
+      "\005Users\022\014Search users\032\257\002Searches for user" +
+      "s across the entire environment by email" +
+      " address, user ID, or external ID. The q" +
+      "uery must be at least 3 characters and i" +
+      "s case-insensitive. Returns a paginated " +
+      "list of matching users with up to 30 res" +
+      "ults per page. Use the next_page_token f" +
+      "rom the response to retrieve subsequent " +
+      "pages.J\214\001\n\003200\022\204\001\nVMatching users return" +
+      "ed; includes pagination cursors for navi" +
+      "gating large result sets.\022*\n(\032&.scalekit" +
+      ".v1.users.SearchUsersResponseJ[\n\003400\022T\nR" +
+      "Bad Request - query must be at least 3 c" +
+      "haracters and no more than 100 character" +
+      "s.\202\265\030\016\n\nusers:read\030D\202\323\344\223\002\026\022\024/api/v1/user" +
+      "s:search\022\334\007\n\027SearchOrganizationUsers\0221.s" +
+      "calekit.v1.users.SearchOrganizationUsers" +
+      "Request\0322.scalekit.v1.users.SearchOrgani" +
+      "zationUsersResponse\"\331\006\222A\207\006\n\005Users\022\031Searc" +
+      "h organization users\032\343\002Searches for user" +
+      "s within a specific organization by emai" +
+      "l address, user ID, or external ID. The " +
+      "query must be at least 3 characters and " +
+      "is case-insensitive. Scopes results stri" +
+      "ctly to the given organization. Returns " +
+      "a paginated list of matching users with " +
+      "up to 30 results per page. Use the next_" +
+      "page_token from the response to retrieve" +
+      " subsequent pages.J\260\001\n\003200\022\250\001\nnMatching " +
+      "users within the organization returned; " +
+      "includes pagination cursors for navigati" +
+      "ng large result sets.\0226\n4\0322.scalekit.v1." +
+      "users.SearchOrganizationUsersResponseJ\233\001" +
+      "\n\003400\022\223\001\n\220\001Bad Request - query must be a" +
+      "t least 3 characters and no more than 10" +
+      "0 characters, and organization_id must b" +
+      "e a valid org_ prefixed identifier.J,\n\0034" +
+      "04\022%\n#Not Found - organization not found" +
+      ".\202\265\030\016\n\nusers:read\030D\202\323\344\223\0026\0224/api/v1/organ" +
+      "izations/{organization_id}/users:search\022" +
+      "\321\005\n\nUpdateUser\022$.scalekit.v1.users.Updat" +
+      "eUserRequest\032%.scalekit.v1.users.UpdateU" +
+      "serResponse\"\365\004\222A\220\004\n\005Users\022\027Update user i" +
+      "nformation\032\341\002Modifies user account infor" +
+      "mation including profile details, metada" +
+      "ta, and external ID. Use this endpoint t" +
+      "o update a user\'s personal information, " +
+      "contact details, or custom metadata. You" +
+      " can update the user\'s profile, phone nu" +
+      "mber, and metadata fields. Note that fie" +
+      "lds like user ID, email address, environ" +
+      "ment ID, and creation time cannot be mod" +
+      "ified.J\211\001\n\003200\022\201\001\nTUser updated successf" +
+      "ully. Returns the modified user object w" +
+      "ith updated timestamps.\022)\n\'\032%.scalekit.v" +
+      "1.users.UpdateUserResponse\202\265\030\017\n\013users:wr" +
+      "ite\030T\202\323\344\223\002H2\022/api/v1/users/{id}:\004userZ,2" +
+      "$/api/v1/users:external/{external_id}:\004u" +
+      "ser\022\263\004\n\nDeleteUser\022$.scalekit.v1.users.D" +
+      "eleteUserRequest\032\026.google.protobuf.Empty" +
+      "\"\346\003\222A\214\003\n\005Users\022\027Delete user permanently\032" +
+      "\260\002Permanently removes a user from your e" +
+      "nvironment and deletes all associated da" +
+      "ta. Use this endpoint when you need to c" +
+      "ompletely remove a user account. This ac" +
+      "tion deletes the user\'s profile, members" +
+      "hips, and all related data across all or" +
+      "ganizations. This operation cannot be un" +
+      "done, so use with caution.J7\n\003200\0220\n.Use" +
+      "r successfully deleted. No content retur" +
+      "ned\202\265\030\020\n\014users:delete\030D\202\323\344\223\002<*\022/api/v1/u" +
+      "sers/{id}Z&*$/api/v1/users:external/{ext" +
+      "ernal_id}\022\262\006\n\020CreateMembership\022*.scaleki" +
+      "t.v1.users.CreateMembershipRequest\032+.sca" +
+      "lekit.v1.users.CreateMembershipResponse\"" +
+      "\304\005\222A\336\003\n\005Users\022!Add existing user to orga" +
+      "nization\032\225\002Adds an existing user to an o" +
+      "rganization and assigns them specific ro" +
+      "les and permissions. Use this endpoint w" +
+      "hen you want to grant an existing user a" +
+      "ccess to a particular organization. You " +
+      "can specify roles, metadata, and other m" +
+      "embership details during the invitation " +
+      "process.J\231\001\n\003201\022\221\001\n^User successfully a" +
+      "dded to the organization. Returns detail" +
+      "s of the updated membership details\022/\n-\032" +
+      "+.scalekit.v1.users.CreateMembershipResp" +
+      "onse\202\265\030+\n\032organizations_users_invite\n\013us" +
+      "ers:write\030T\202\323\344\223\002\254\001\">/api/v1/memberships/" +
+      "organizations/{organization_id}/users/{i" +
+      "d}:\nmembershipZ^\"P/api/v1/memberships/or" +
+      "ganizations/{organization_id}/users:exte" +
+      "rnal/{external_id}:\nmembership\022\231\004\n\020Delet" +
+      "eMembership\022*.scalekit.v1.users.DeleteMe" +
+      "mbershipRequest\032\026.google.protobuf.Empty\"" +
+      "\300\003\222A\361\001\n\005Users\022\'Delete organization membe" +
+      "rship for user\032zRemoves a user from an o" +
+      "rganization by user ID. This action is i" +
+      "rreversible and may also remove related " +
+      "group memberships.JC\n\003200\022<\n:User succes" +
+      "sfully marked for deletion. No content r" +
+      "eturned\202\265\030,\n\032organizations_users_remove\n" +
+      "\014users:delete\030T\202\323\344\223\002\224\001*>/api/v1/membersh" +
+      "ips/organizations/{organization_id}/user" +
+      "s/{id}ZR*P/api/v1/memberships/organizati" +
+      "ons/{organization_id}/users:external/{ex" +
+      "ternal_id}\022\374\004\n\020UpdateMembership\022*.scalek" +
+      "it.v1.users.UpdateMembershipRequest\032+.sc" +
+      "alekit.v1.users.UpdateMembershipResponse" +
+      "\"\216\004\222A\243\002\n\005Users\022\'Update organization memb" +
+      "ership for user\032tUpdates a user\'s member" +
+      "ship details within an organization by u" +
+      "ser ID. You can update roles and members" +
+      "hip metadata.J{\n\003200\022t\nAMembership updat" +
+      "ed successfully. Returns the updated use" +
+      "r object.\022/\n-\032+.scalekit.v1.users.Update",
+      "MembershipResponse\202\265\0300\n\037organizations_us" +
+      "ers_role_update\n\013users:write\030T\202\323\344\223\002\254\0012>/" +
+      "api/v1/memberships/organizations/{organi" +
+      "zation_id}/users/{id}:\nmembershipZ^2P/ap" +
+      "i/v1/memberships/organizations/{organiza" +
+      "tion_id}/users:external/{external_id}:\nm" +
+      "embership\022\325\006\n\027CreateUserAndMembership\0221." +
+      "scalekit.v1.users.CreateUserAndMembershi" +
+      "pRequest\0322.scalekit.v1.users.CreateUserA" +
+      "ndMembershipResponse\"\322\005\222A\344\004\n\005Users\022\037Crea" +
+      "te new user in organization\032\203\003Creates a " +
+      "new user account and immediately adds th" +
+      "em to the specified organization. Use th" +
+      "is endpoint when you want to create a us" +
+      "er and grant them access to an organizat" +
+      "ion in a single operation. You can provi" +
+      "de user profile information, assign role" +
+      "s, and configure membership metadata. Th" +
+      "e user receives an activation email unle" +
+      "ss this feature is disabled in the organ" +
+      "ization settings.J\263\001\n\003201\022\253\001\nqUser creat" +
+      "ed successfully. Returns the created use" +
+      "r object, including system-generated ide" +
+      "ntifiers and timestamps\0226\n4\0322.scalekit.v" +
+      "1.users.CreateUserAndMembershipResponse\202" +
+      "\265\030+\n\032organizations_users_invite\n\013users:w" +
+      "rite\030T\202\323\344\223\0025\"-/api/v1/organizations/{org" +
+      "anization_id}/users:\004user\022\211\005\n\025ListOrgani" +
+      "zationUsers\022/.scalekit.v1.users.ListOrga" +
+      "nizationUsersRequest\0320.scalekit.v1.users" +
+      ".ListOrganizationUsersResponse\"\214\004\222A\247\003\n\005U" +
+      "sers\022\027List organization users\032\207\002Retrieve" +
+      "s a paginated list of all users who are " +
+      "members of the specified organization. U" +
+      "se this endpoint to view all users with " +
+      "access to a particular organization, inc" +
+      "luding their roles, metadata, and member" +
+      "ship details. Supports pagination for la" +
+      "rge user lists.J{\n\003200\022t\n<Successfully r" +
+      "etrieved the list of users in the organi" +
+      "zation\0224\n2\0320.scalekit.v1.users.ListOrgan" +
+      "izationUsersResponse\202\265\030(\n\030organizations_" +
+      "users_read\n\nusers:read\030T\202\323\344\223\002/\022-/api/v1/" +
+      "organizations/{organization_id}/users\022\273\020" +
+      "\n\014ResendInvite\022&.scalekit.v1.users.Resen" +
+      "dInviteRequest\032\'.scalekit.v1.users.Resen" +
+      "dInviteResponse\"\331\017\222A\332\016\n\005Users\022\034Resend us" +
+      "er invitation email\032\341\004Resends an invitat" +
+      "ion email to a user who has a pending or" +
+      " expired invitation in the specified org" +
+      "anization. If the invitation has expired" +
+      ", a new invitation will be automatically" +
+      " created and sent. If the invitation is " +
+      "still valid, a reminder email will be se" +
+      "nt instead. Use this endpoint when a use" +
+      "r hasn\'t responded to their initial invi" +
+      "tation and you need to send them a remin" +
+      "der or when the original invitation has " +
+      "expired. The invitation email includes a" +
+      " secure magic link that allows the user " +
+      "to complete their account setup and join" +
+      " the organization. Each resend operation" +
+      " increments the resent counter.J\247\002\n\003200\022" +
+      "\237\002\n\357\001Successfully resent the invitation " +
+      "email. Returns the updated invitation ob" +
+      "ject with organization ID, user ID, memb" +
+      "ership status, timestamps, and resent co" +
+      "unt. If expired, a new invitation is cre" +
+      "ated; otherwise, the existing one is res" +
+      "ent.\022+\n)\032\'.scalekit.v1.users.ResendInvit" +
+      "eResponseJ\217\002\n\003400\022\207\002\n\335\001Invalid request \342" +
+      "\200\224 common causes include user ID or orga" +
+      "nization ID is invalid, full-stack authe" +
+      "ntication is disabled, user profile is m" +
+      "issing, invite already accepted, or miss" +
+      "ing expiry time in user management setti" +
+      "ngs.\022%\n#\032!#/definitions/errdetailsErrorI" +
+      "nfoJ\235\002\n\003404\022\225\002\n\353\001Resource not found \342\200\224 " +
+      "the specified user, organization, member" +
+      "ship, or invitation could not be found i" +
+      "n the specified environment. Verify that" +
+      " all IDs are correct and that the resour" +
+      "ces exist before attempting to resend an" +
+      " invitation.\022%\n#\032!#/definitions/errdetai" +
+      "lsErrorInfoJ\362\002\n\003500\022\352\002\n\300\002Internal server" +
+      " error \342\200\224 an unexpected error occurred " +
+      "while processing the invitation resend r" +
+      "equest. This may be due to database conn" +
+      "ectivity issues, problems generating the" +
+      " secure magic link, email delivery servi" +
+      "ce failures, or transaction errors durin" +
+      "g invitation processing. Contact support" +
+      " if the problem persists.\022%\n#\032!#/definit" +
+      "ions/errdetailsErrorInfo\202\265\030+\n\032organizati" +
+      "ons_users_invite\n\013users:write\030T\202\323\344\223\002F2A/" +
+      "api/v1/invites/organizations/{organizati" +
+      "on_id}/users/{id}/resend:\001*\022\353\003\n\rListUser" +
+      "Roles\022\'.scalekit.v1.users.ListUserRolesR" +
+      "equest\032(.scalekit.v1.users.ListUserRoles" +
+      "Response\"\206\003\222A\253\002\n\005Users\022\017List user roles\032" +
+      "\232\001Retrieves all roles assigned to a user" +
+      " within a specific organization. This in" +
+      "cludes both direct role assignments and " +
+      "inherited roles from role hierarchy.Jt\n\003" +
+      "200\022m\n=Successfully retrieved the list o" +
+      "f roles assigned to the user\022,\n*\032(.scale" +
+      "kit.v1.users.ListUserRolesResponse\202\265\030\016\n\n" +
+      "users:read\030D\202\323\344\223\002?\022=/api/v1/organization" +
+      "s/{organization_id}/users/{user_id}/role" +
+      "s\022\220\004\n\017AssignUserRoles\022).scalekit.v1.user" +
+      "s.AssignUserRolesRequest\032*.scalekit.v1.u" +
+      "sers.AssignUserRolesResponse\"\245\003\222A\222\002\n\005Use" +
+      "rs\022\024Assign roles to user\032\220\001Assigns one o" +
+      "r more roles to a user within a specific" +
+      " organization. This operation adds to ex" +
+      "isting role assignments rather than repl" +
+      "acing them.J`\n\003200\022Y\n\'Successfully assig" +
+      "ned roles to the user\022.\n,\032*.scalekit.v1." +
+      "users.AssignUserRolesResponse\202\265\0300\n\037organ" +
+      "izations_users_role_update\n\013users:write\030" +
+      "T\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002F\"=/api/v1/organiza" +
+      "tions/{organization_id}/users/{user_id}/" +
+      "roles:\005roles\022\326\003\n\016RemoveUserRole\022(.scalek" +
+      "it.v1.users.RemoveUserRoleRequest\032\026.goog" +
+      "le.protobuf.Empty\"\201\003\222A\351\001\n\005Users\022\025Remove " +
+      "role from user\032\232\001Removes a specific role" +
+      " assignment from a user within an organi" +
+      "zation. This only removes direct role as" +
+      "signments, not inherited roles from role" +
+      " hierarchy.J,\n\003200\022%\n#Role successfully " +
+      "removed from user\202\265\0300\n\037organizations_use" +
+      "rs_role_update\n\013users:write\030T\372\322\344\223\002\t\022\007PRE" +
+      "VIEW\202\323\344\223\002K*I/api/v1/organizations/{organ" +
+      "ization_id}/users/{user_id}/roles/{role_" +
+      "name}\022\247\004\n\023ListUserPermissions\022-.scalekit" +
+      ".v1.users.ListUserPermissionsRequest\032..s" +
+      "calekit.v1.users.ListUserPermissionsResp" +
+      "onse\"\260\003\222A\317\002\n\005Users\022\025List user permission" +
+      "s\032\264\001Retrieves all permissions a user has" +
+      " access to within a specific organizatio" +
+      "n. This includes permissions from direct" +
+      " role assignments and inherited permissi" +
+      "ons from role hierarchy.Jx\n\003200\022q\n;Succe" +
+      "ssfully retrieved the list of permission" +
+      "s for the user\0222\n0\032..scalekit.v1.users.L" +
+      "istUserPermissionsResponse\202\265\030\016\n\nusers:re" +
+      "ad\030D\202\323\344\223\002E\022C/api/v1/organizations/{organ" +
+      "ization_id}/users/{user_id}/permissions\032" +
+      "\354\003\222A\350\003\n\005Users\022\336\003Comprehensive user manag" +
+      "ement operations including user lifecycl" +
+      "e, organization memberships, and invitat" +
+      "ion workflows. This service provides end" +
+      "points for creating, retrieving, updatin" +
+      "g, and deleting user accounts across you" +
+      "r Scalekit environment. It supports both" +
+      " individual user operations and bulk ope" +
+      "rations for user administration, includi" +
+      "ng user search, pagination, and metadata" +
+      " management. The service also handles us" +
+      "er invitations and organization membersh" +
+      "ip management.B\310\001\n#com.scalekit.grpc.sca" +
+      "lekit.v1.usersB\nUsersProtoP\001Z/github.com" +
+      "/scalekit-inc/scalekit/pkg/grpc/users\242\002\003" +
+      "SVU\252\002\021Scalekit.V1.Users\312\002\021Scalekit\\V1\\Us" +
+      "ers\342\002\035Scalekit\\V1\\Users\\GPBMetadata\352\002\023Sc" +
+      "alekit::V1::Usersb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

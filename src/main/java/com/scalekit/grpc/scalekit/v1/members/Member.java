@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     workspaceIds_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     activeWorkspaceExternalId_ = "";
+    dashboardRoleName_ = "";
   }
 
   @java.lang.Override
@@ -105,7 +106,7 @@ private static final long serialVersionUID = 0L;
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
   /**
-   * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime"];</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return Whether the createTime field is set.
    */
   @java.lang.Override
@@ -113,7 +114,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime"];</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return The createTime.
    */
   @java.lang.Override
@@ -121,7 +122,7 @@ private static final long serialVersionUID = 0L;
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
-   * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime"];</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime", (.scalekit.v1.options.agent_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -131,7 +132,7 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
   /**
-   * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime"];</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return Whether the updateTime field is set.
    */
   @java.lang.Override
@@ -139,7 +140,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime"];</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return The updateTime.
    */
   @java.lang.Override
@@ -147,7 +148,7 @@ private static final long serialVersionUID = 0L;
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
   /**
-   * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime"];</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime", (.scalekit.v1.options.agent_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
@@ -158,7 +159,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object workspaceId_ = "";
   /**
-   * <code>string workspace_id = 4 [json_name = "workspaceId"];</code>
+   * <code>string workspace_id = 4 [json_name = "workspaceId", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return The workspaceId.
    */
   @java.lang.Override
@@ -175,7 +176,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string workspace_id = 4 [json_name = "workspaceId"];</code>
+   * <code>string workspace_id = 4 [json_name = "workspaceId", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return The bytes for workspaceId.
    */
   @java.lang.Override
@@ -427,14 +428,14 @@ java.lang.String defaultValue) {
   @SuppressWarnings("serial")
   private java.util.List<com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership> organizations_;
   /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership> getOrganizationsList() {
     return organizations_;
   }
   /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder> 
@@ -442,21 +443,21 @@ java.lang.String defaultValue) {
     return organizations_;
   }
   /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
    */
   @java.lang.Override
   public int getOrganizationsCount() {
     return organizations_.size();
   }
   /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership getOrganizations(int index) {
     return organizations_.get(index);
   }
   /**
-   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder getOrganizationsOrBuilder(
@@ -467,7 +468,7 @@ java.lang.String defaultValue) {
   public static final int USER_PROFILE_FIELD_NUMBER = 11;
   private com.scalekit.grpc.scalekit.v1.commons.UserProfile userProfile_;
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile"];</code>
+   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return Whether the userProfile field is set.
    */
   @java.lang.Override
@@ -475,7 +476,7 @@ java.lang.String defaultValue) {
     return ((bitField0_ & 0x00000010) != 0);
   }
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile"];</code>
+   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return The userProfile.
    */
   @java.lang.Override
@@ -483,7 +484,7 @@ java.lang.String defaultValue) {
     return userProfile_ == null ? com.scalekit.grpc.scalekit.v1.commons.UserProfile.getDefaultInstance() : userProfile_;
   }
   /**
-   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile"];</code>
+   * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.scalekit.v1.options.agent_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder getUserProfileOrBuilder() {
@@ -494,7 +495,7 @@ java.lang.String defaultValue) {
   @SuppressWarnings("serial")
   private volatile java.lang.Object externalId_ = "";
   /**
-   * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return The externalId.
    */
   @java.lang.Override
@@ -511,7 +512,7 @@ java.lang.String defaultValue) {
     }
   }
   /**
-   * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return The bytes for externalId.
    */
   @java.lang.Override
@@ -534,7 +535,7 @@ java.lang.String defaultValue) {
   private com.google.protobuf.LazyStringArrayList workspaceIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
   /**
-   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return A list containing the workspaceIds.
    */
   public com.google.protobuf.ProtocolStringList
@@ -542,14 +543,14 @@ java.lang.String defaultValue) {
     return workspaceIds_;
   }
   /**
-   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return The count of workspaceIds.
    */
   public int getWorkspaceIdsCount() {
     return workspaceIds_.size();
   }
   /**
-   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The workspaceIds at the given index.
    */
@@ -557,7 +558,7 @@ java.lang.String defaultValue) {
     return workspaceIds_.get(index);
   }
   /**
-   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+   * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the workspaceIds at the given index.
    */
@@ -607,6 +608,71 @@ java.lang.String defaultValue) {
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       activeWorkspaceExternalId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DASHBOARD_ROLE_FIELD_NUMBER = 15;
+  private com.scalekit.grpc.scalekit.v1.members.DashboardRole dashboardRole_;
+  /**
+   * <code>.scalekit.v1.members.DashboardRole dashboard_role = 15 [json_name = "dashboardRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the dashboardRole field is set.
+   */
+  @java.lang.Override
+  public boolean hasDashboardRole() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   * <code>.scalekit.v1.members.DashboardRole dashboard_role = 15 [json_name = "dashboardRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The dashboardRole.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.members.DashboardRole getDashboardRole() {
+    return dashboardRole_ == null ? com.scalekit.grpc.scalekit.v1.members.DashboardRole.getDefaultInstance() : dashboardRole_;
+  }
+  /**
+   * <code>.scalekit.v1.members.DashboardRole dashboard_role = 15 [json_name = "dashboardRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.members.DashboardRoleOrBuilder getDashboardRoleOrBuilder() {
+    return dashboardRole_ == null ? com.scalekit.grpc.scalekit.v1.members.DashboardRole.getDefaultInstance() : dashboardRole_;
+  }
+
+  public static final int DASHBOARD_ROLE_NAME_FIELD_NUMBER = 16;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dashboardRoleName_ = "";
+  /**
+   * <code>string dashboard_role_name = 16 [json_name = "dashboardRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The dashboardRoleName.
+   */
+  @java.lang.Override
+  public java.lang.String getDashboardRoleName() {
+    java.lang.Object ref = dashboardRoleName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      dashboardRoleName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string dashboard_role_name = 16 [json_name = "dashboardRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for dashboardRoleName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDashboardRoleNameBytes() {
+    java.lang.Object ref = dashboardRoleName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      dashboardRoleName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -671,6 +737,12 @@ java.lang.String defaultValue) {
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, activeWorkspaceExternalId_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(15, getDashboardRole());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dashboardRoleName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, dashboardRoleName_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -740,6 +812,13 @@ java.lang.String defaultValue) {
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, activeWorkspaceExternalId_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, getDashboardRole());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dashboardRoleName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, dashboardRoleName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -800,6 +879,13 @@ java.lang.String defaultValue) {
       if (!getActiveWorkspaceExternalId()
           .equals(other.getActiveWorkspaceExternalId())) return false;
     }
+    if (hasDashboardRole() != other.hasDashboardRole()) return false;
+    if (hasDashboardRole()) {
+      if (!getDashboardRole()
+          .equals(other.getDashboardRole())) return false;
+    }
+    if (!getDashboardRoleName()
+        .equals(other.getDashboardRoleName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -857,6 +943,12 @@ java.lang.String defaultValue) {
       hash = (37 * hash) + ACTIVE_WORKSPACE_EXTERNAL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getActiveWorkspaceExternalId().hashCode();
     }
+    if (hasDashboardRole()) {
+      hash = (37 * hash) + DASHBOARD_ROLE_FIELD_NUMBER;
+      hash = (53 * hash) + getDashboardRole().hashCode();
+    }
+    hash = (37 * hash) + DASHBOARD_ROLE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDashboardRoleName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1013,6 +1105,7 @@ java.lang.String defaultValue) {
         getUpdateTimeFieldBuilder();
         getOrganizationsFieldBuilder();
         getUserProfileFieldBuilder();
+        getDashboardRoleFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1052,6 +1145,12 @@ java.lang.String defaultValue) {
       workspaceIds_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
       activeWorkspaceExternalId_ = "";
+      dashboardRole_ = null;
+      if (dashboardRoleBuilder_ != null) {
+        dashboardRoleBuilder_.dispose();
+        dashboardRoleBuilder_ = null;
+      }
+      dashboardRoleName_ = "";
       return this;
     }
 
@@ -1151,6 +1250,15 @@ java.lang.String defaultValue) {
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.activeWorkspaceExternalId_ = activeWorkspaceExternalId_;
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.dashboardRole_ = dashboardRoleBuilder_ == null
+            ? dashboardRole_
+            : dashboardRoleBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.dashboardRoleName_ = dashboardRoleName_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1285,6 +1393,14 @@ java.lang.String defaultValue) {
         bitField0_ |= 0x00002000;
         onChanged();
       }
+      if (other.hasDashboardRole()) {
+        mergeDashboardRole(other.getDashboardRole());
+      }
+      if (!other.getDashboardRoleName().isEmpty()) {
+        dashboardRoleName_ = other.dashboardRoleName_;
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1400,6 +1516,18 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00002000;
               break;
             } // case 114
+            case 122: {
+              input.readMessage(
+                  getDashboardRoleFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00004000;
+              break;
+            } // case 122
+            case 130: {
+              dashboardRoleName_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00008000;
+              break;
+            } // case 130
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1493,14 +1621,14 @@ java.lang.String defaultValue) {
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
@@ -1511,7 +1639,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1527,7 +1655,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder setCreateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1541,7 +1669,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1562,7 +1690,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder clearCreateTime() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1575,7 +1703,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       bitField0_ |= 0x00000002;
@@ -1583,7 +1711,7 @@ java.lang.String defaultValue) {
       return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -1594,7 +1722,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime"];</code>
+     * <code>.google.protobuf.Timestamp create_time = 2 [json_name = "createTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1614,14 +1742,14 @@ java.lang.String defaultValue) {
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
@@ -1632,7 +1760,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -1648,7 +1776,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder setUpdateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1662,7 +1790,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -1683,7 +1811,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder clearUpdateTime() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1696,7 +1824,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
       bitField0_ |= 0x00000004;
@@ -1704,7 +1832,7 @@ java.lang.String defaultValue) {
       return getUpdateTimeFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -1715,7 +1843,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime"];</code>
+     * <code>.google.protobuf.Timestamp update_time = 3 [json_name = "updateTime", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1733,7 +1861,7 @@ java.lang.String defaultValue) {
 
     private java.lang.Object workspaceId_ = "";
     /**
-     * <code>string workspace_id = 4 [json_name = "workspaceId"];</code>
+     * <code>string workspace_id = 4 [json_name = "workspaceId", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @return The workspaceId.
      */
     public java.lang.String getWorkspaceId() {
@@ -1749,7 +1877,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>string workspace_id = 4 [json_name = "workspaceId"];</code>
+     * <code>string workspace_id = 4 [json_name = "workspaceId", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @return The bytes for workspaceId.
      */
     public com.google.protobuf.ByteString
@@ -1766,7 +1894,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>string workspace_id = 4 [json_name = "workspaceId"];</code>
+     * <code>string workspace_id = 4 [json_name = "workspaceId", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @param value The workspaceId to set.
      * @return This builder for chaining.
      */
@@ -1779,7 +1907,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>string workspace_id = 4 [json_name = "workspaceId"];</code>
+     * <code>string workspace_id = 4 [json_name = "workspaceId", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearWorkspaceId() {
@@ -1789,7 +1917,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>string workspace_id = 4 [json_name = "workspaceId"];</code>
+     * <code>string workspace_id = 4 [json_name = "workspaceId", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @param value The bytes for workspaceId to set.
      * @return This builder for chaining.
      */
@@ -2226,7 +2354,7 @@ java.lang.String defaultValue) {
         com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder> organizationsBuilder_;
 
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership> getOrganizationsList() {
       if (organizationsBuilder_ == null) {
@@ -2236,7 +2364,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public int getOrganizationsCount() {
       if (organizationsBuilder_ == null) {
@@ -2246,7 +2374,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership getOrganizations(int index) {
       if (organizationsBuilder_ == null) {
@@ -2256,7 +2384,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder setOrganizations(
         int index, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership value) {
@@ -2273,7 +2401,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder setOrganizations(
         int index, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder builderForValue) {
@@ -2287,7 +2415,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder addOrganizations(com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership value) {
       if (organizationsBuilder_ == null) {
@@ -2303,7 +2431,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder addOrganizations(
         int index, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership value) {
@@ -2320,7 +2448,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder addOrganizations(
         com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder builderForValue) {
@@ -2334,7 +2462,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder addOrganizations(
         int index, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder builderForValue) {
@@ -2348,7 +2476,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder addAllOrganizations(
         java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership> values) {
@@ -2363,7 +2491,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder clearOrganizations() {
       if (organizationsBuilder_ == null) {
@@ -2376,7 +2504,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder removeOrganizations(int index) {
       if (organizationsBuilder_ == null) {
@@ -2389,14 +2517,14 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder getOrganizationsBuilder(
         int index) {
       return getOrganizationsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder getOrganizationsOrBuilder(
         int index) {
@@ -2406,7 +2534,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public java.util.List<? extends com.scalekit.grpc.scalekit.v1.commons.OrganizationMembershipOrBuilder> 
          getOrganizationsOrBuilderList() {
@@ -2417,14 +2545,14 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder addOrganizationsBuilder() {
       return getOrganizationsFieldBuilder().addBuilder(
           com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder addOrganizationsBuilder(
         int index) {
@@ -2432,7 +2560,7 @@ java.lang.String defaultValue) {
           index, com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>repeated .scalekit.v1.commons.OrganizationMembership organizations = 10 [json_name = "organizations", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.commons.OrganizationMembership.Builder> 
          getOrganizationsBuilderList() {
@@ -2457,14 +2585,14 @@ java.lang.String defaultValue) {
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.commons.UserProfile, com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder, com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder> userProfileBuilder_;
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @return Whether the userProfile field is set.
      */
     public boolean hasUserProfile() {
       return ((bitField0_ & 0x00000400) != 0);
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @return The userProfile.
      */
     public com.scalekit.grpc.scalekit.v1.commons.UserProfile getUserProfile() {
@@ -2475,7 +2603,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder setUserProfile(com.scalekit.grpc.scalekit.v1.commons.UserProfile value) {
       if (userProfileBuilder_ == null) {
@@ -2491,7 +2619,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder setUserProfile(
         com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder builderForValue) {
@@ -2505,7 +2633,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder mergeUserProfile(com.scalekit.grpc.scalekit.v1.commons.UserProfile value) {
       if (userProfileBuilder_ == null) {
@@ -2526,7 +2654,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public Builder clearUserProfile() {
       bitField0_ = (bitField0_ & ~0x00000400);
@@ -2539,7 +2667,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder getUserProfileBuilder() {
       bitField0_ |= 0x00000400;
@@ -2547,7 +2675,7 @@ java.lang.String defaultValue) {
       return getUserProfileFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder getUserProfileOrBuilder() {
       if (userProfileBuilder_ != null) {
@@ -2558,7 +2686,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile"];</code>
+     * <code>.scalekit.v1.commons.UserProfile user_profile = 11 [json_name = "userProfile", (.scalekit.v1.options.agent_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.commons.UserProfile, com.scalekit.grpc.scalekit.v1.commons.UserProfile.Builder, com.scalekit.grpc.scalekit.v1.commons.UserProfileOrBuilder> 
@@ -2576,7 +2704,7 @@ java.lang.String defaultValue) {
 
     private java.lang.Object externalId_ = "";
     /**
-     * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      * @return The externalId.
      */
     public java.lang.String getExternalId() {
@@ -2592,7 +2720,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      * @return The bytes for externalId.
      */
     public com.google.protobuf.ByteString
@@ -2609,7 +2737,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      * @param value The externalId to set.
      * @return This builder for chaining.
      */
@@ -2622,7 +2750,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearExternalId() {
@@ -2632,7 +2760,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string external_id = 12 [json_name = "externalId", (.google.api.field_behavior) = OUTPUT_ONLY, (.scalekit.v1.options.agent_field) = { ... }</code>
      * @param value The bytes for externalId to set.
      * @return This builder for chaining.
      */
@@ -2655,7 +2783,7 @@ java.lang.String defaultValue) {
       bitField0_ |= 0x00001000;
     }
     /**
-     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @return A list containing the workspaceIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -2664,14 +2792,14 @@ java.lang.String defaultValue) {
       return workspaceIds_;
     }
     /**
-     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @return The count of workspaceIds.
      */
     public int getWorkspaceIdsCount() {
       return workspaceIds_.size();
     }
     /**
-     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @param index The index of the element to return.
      * @return The workspaceIds at the given index.
      */
@@ -2679,7 +2807,7 @@ java.lang.String defaultValue) {
       return workspaceIds_.get(index);
     }
     /**
-     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the workspaceIds at the given index.
      */
@@ -2688,7 +2816,7 @@ java.lang.String defaultValue) {
       return workspaceIds_.getByteString(index);
     }
     /**
-     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @param index The index to set the value at.
      * @param value The workspaceIds to set.
      * @return This builder for chaining.
@@ -2703,7 +2831,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @param value The workspaceIds to add.
      * @return This builder for chaining.
      */
@@ -2717,7 +2845,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @param values The workspaceIds to add.
      * @return This builder for chaining.
      */
@@ -2731,7 +2859,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearWorkspaceIds() {
@@ -2742,7 +2870,7 @@ java.lang.String defaultValue) {
       return this;
     }
     /**
-     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds"];</code>
+     * <code>repeated string workspace_ids = 13 [json_name = "workspaceIds", (.scalekit.v1.options.agent_field) = { ... }</code>
      * @param value The bytes of the workspaceIds to add.
      * @return This builder for chaining.
      */
@@ -2832,6 +2960,199 @@ java.lang.String defaultValue) {
       checkByteStringIsUtf8(value);
       activeWorkspaceExternalId_ = value;
       bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    private com.scalekit.grpc.scalekit.v1.members.DashboardRole dashboardRole_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.members.DashboardRole, com.scalekit.grpc.scalekit.v1.members.DashboardRole.Builder, com.scalekit.grpc.scalekit.v1.members.DashboardRoleOrBuilder> dashboardRoleBuilder_;
+    /**
+     * <code>.scalekit.v1.members.DashboardRole dashboard_role = 15 [json_name = "dashboardRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the dashboardRole field is set.
+     */
+    public boolean hasDashboardRole() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     * <code>.scalekit.v1.members.DashboardRole dashboard_role = 15 [json_name = "dashboardRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The dashboardRole.
+     */
+    public com.scalekit.grpc.scalekit.v1.members.DashboardRole getDashboardRole() {
+      if (dashboardRoleBuilder_ == null) {
+        return dashboardRole_ == null ? com.scalekit.grpc.scalekit.v1.members.DashboardRole.getDefaultInstance() : dashboardRole_;
+      } else {
+        return dashboardRoleBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.members.DashboardRole dashboard_role = 15 [json_name = "dashboardRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setDashboardRole(com.scalekit.grpc.scalekit.v1.members.DashboardRole value) {
+      if (dashboardRoleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dashboardRole_ = value;
+      } else {
+        dashboardRoleBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.members.DashboardRole dashboard_role = 15 [json_name = "dashboardRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setDashboardRole(
+        com.scalekit.grpc.scalekit.v1.members.DashboardRole.Builder builderForValue) {
+      if (dashboardRoleBuilder_ == null) {
+        dashboardRole_ = builderForValue.build();
+      } else {
+        dashboardRoleBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.members.DashboardRole dashboard_role = 15 [json_name = "dashboardRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeDashboardRole(com.scalekit.grpc.scalekit.v1.members.DashboardRole value) {
+      if (dashboardRoleBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0) &&
+          dashboardRole_ != null &&
+          dashboardRole_ != com.scalekit.grpc.scalekit.v1.members.DashboardRole.getDefaultInstance()) {
+          getDashboardRoleBuilder().mergeFrom(value);
+        } else {
+          dashboardRole_ = value;
+        }
+      } else {
+        dashboardRoleBuilder_.mergeFrom(value);
+      }
+      if (dashboardRole_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.members.DashboardRole dashboard_role = 15 [json_name = "dashboardRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearDashboardRole() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      dashboardRole_ = null;
+      if (dashboardRoleBuilder_ != null) {
+        dashboardRoleBuilder_.dispose();
+        dashboardRoleBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.members.DashboardRole dashboard_role = 15 [json_name = "dashboardRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.members.DashboardRole.Builder getDashboardRoleBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getDashboardRoleFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.members.DashboardRole dashboard_role = 15 [json_name = "dashboardRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.members.DashboardRoleOrBuilder getDashboardRoleOrBuilder() {
+      if (dashboardRoleBuilder_ != null) {
+        return dashboardRoleBuilder_.getMessageOrBuilder();
+      } else {
+        return dashboardRole_ == null ?
+            com.scalekit.grpc.scalekit.v1.members.DashboardRole.getDefaultInstance() : dashboardRole_;
+      }
+    }
+    /**
+     * <code>.scalekit.v1.members.DashboardRole dashboard_role = 15 [json_name = "dashboardRole", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.members.DashboardRole, com.scalekit.grpc.scalekit.v1.members.DashboardRole.Builder, com.scalekit.grpc.scalekit.v1.members.DashboardRoleOrBuilder> 
+        getDashboardRoleFieldBuilder() {
+      if (dashboardRoleBuilder_ == null) {
+        dashboardRoleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.members.DashboardRole, com.scalekit.grpc.scalekit.v1.members.DashboardRole.Builder, com.scalekit.grpc.scalekit.v1.members.DashboardRoleOrBuilder>(
+                getDashboardRole(),
+                getParentForChildren(),
+                isClean());
+        dashboardRole_ = null;
+      }
+      return dashboardRoleBuilder_;
+    }
+
+    private java.lang.Object dashboardRoleName_ = "";
+    /**
+     * <code>string dashboard_role_name = 16 [json_name = "dashboardRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The dashboardRoleName.
+     */
+    public java.lang.String getDashboardRoleName() {
+      java.lang.Object ref = dashboardRoleName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dashboardRoleName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string dashboard_role_name = 16 [json_name = "dashboardRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for dashboardRoleName.
+     */
+    public com.google.protobuf.ByteString
+        getDashboardRoleNameBytes() {
+      java.lang.Object ref = dashboardRoleName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        dashboardRoleName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string dashboard_role_name = 16 [json_name = "dashboardRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The dashboardRoleName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDashboardRoleName(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      dashboardRoleName_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dashboard_role_name = 16 [json_name = "dashboardRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDashboardRoleName() {
+      dashboardRoleName_ = getDefaultInstance().getDashboardRoleName();
+      bitField0_ = (bitField0_ & ~0x00008000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string dashboard_role_name = 16 [json_name = "dashboardRoleName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for dashboardRoleName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDashboardRoleNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      dashboardRoleName_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }

@@ -360,6 +360,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int IS_ORG_WIDE_CREDENTIAL_FIELD_NUMBER = 12;
+  private boolean isOrgWideCredential_ = false;
+  /**
+   * <code>bool is_org_wide_credential = 12 [json_name = "isOrgWideCredential", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isOrgWideCredential.
+   */
+  @java.lang.Override
+  public boolean getIsOrgWideCredential() {
+    return isOrgWideCredential_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -403,6 +414,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, connectionId_);
+    }
+    if (isOrgWideCredential_ != false) {
+      output.writeBool(12, isOrgWideCredential_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -448,6 +462,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, connectionId_);
     }
+    if (isOrgWideCredential_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(12, isOrgWideCredential_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -490,6 +508,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getId())) return false;
     if (!getConnectionId()
         .equals(other.getConnectionId())) return false;
+    if (getIsOrgWideCredential()
+        != other.getIsOrgWideCredential()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -527,6 +547,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + CONNECTION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getConnectionId().hashCode();
+    hash = (37 * hash) + IS_ORG_WIDE_CREDENTIAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsOrgWideCredential());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -692,6 +715,7 @@ private static final long serialVersionUID = 0L;
       }
       id_ = "";
       connectionId_ = "";
+      isOrgWideCredential_ = false;
       return this;
     }
 
@@ -764,6 +788,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.connectionId_ = connectionId_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.isOrgWideCredential_ = isOrgWideCredential_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -852,6 +879,9 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000200;
         onChanged();
       }
+      if (other.getIsOrgWideCredential() != false) {
+        setIsOrgWideCredential(other.getIsOrgWideCredential());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -934,6 +964,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000200;
               break;
             } // case 90
+            case 96: {
+              isOrgWideCredential_ = input.readBool();
+              bitField0_ |= 0x00000400;
+              break;
+            } // case 96
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1776,6 +1811,38 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       connectionId_ = value;
       bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private boolean isOrgWideCredential_ ;
+    /**
+     * <code>bool is_org_wide_credential = 12 [json_name = "isOrgWideCredential", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The isOrgWideCredential.
+     */
+    @java.lang.Override
+    public boolean getIsOrgWideCredential() {
+      return isOrgWideCredential_;
+    }
+    /**
+     * <code>bool is_org_wide_credential = 12 [json_name = "isOrgWideCredential", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The isOrgWideCredential to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsOrgWideCredential(boolean value) {
+
+      isOrgWideCredential_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_org_wide_credential = 12 [json_name = "isOrgWideCredential", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsOrgWideCredential() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      isOrgWideCredential_ = false;
       onChanged();
       return this;
     }
