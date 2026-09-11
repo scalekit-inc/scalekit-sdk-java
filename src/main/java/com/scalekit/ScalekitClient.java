@@ -117,6 +117,14 @@ public class ScalekitClient {
                     "keepAliveTimeoutSeconds must be positive when keepalive is enabled, got " + keepAliveTimeoutSeconds);
         }
 
+        // KNOWN LIMITATION (pre-existing, not introduced here): Environment.defaultEnv is a
+        // process-wide static singleton, so this overwrites it for every already-constructed
+        // ScalekitClient too - constructing a second client with different credentials mutates
+        // the first one's siteName/clientId/clientSecret/timeout out from under it, and two
+        // client instances in the same JVM can't hold independent per-call timeouts (unlike
+        // keepAliveTimeSeconds/keepAliveTimeoutSeconds above, which are genuinely per-instance
+        // via the constructor). Worth fixing (making Environment instance-scoped) before more
+        // per-client configuration accumulates on top of this, but out of scope for this change.
         Environment.configure(siteName,clientId,clientSecret);
         Environment environment = Environment.defaultConfig();
 
@@ -168,22 +176,6 @@ public class ScalekitClient {
 
 
 
-    }
-
-    /**
-     * Overrides the per-call deadline for calls made on the current thread until the returned
-     * scope is closed, instead of the client-wide default ({@code Environment.defaultConfig().timeout},
-     * itself defaulting to 20s or the {@code SCALEKIT_REQUEST_TIMEOUT} env var). Use for a call
-     * that legitimately needs longer (or a tighter budget than the default):
-     * <pre>{@code
-     * try (var scope = scalekitClient.withTimeout(5, TimeUnit.SECONDS)) {
-     *     scalekitClient.organizations().getById("org_123");
-     * }
-     * }</pre>
-     * Scoped per-thread - see {@link com.scalekit.internal.CallTimeout} for propagation caveats.
-     */
-    public com.scalekit.internal.CallTimeout.Scope withTimeout(long timeout, TimeUnit unit) {
-        return com.scalekit.internal.CallTimeout.override(unit.toMillis(timeout));
     }
 
     public OrganizationClient organizations() {

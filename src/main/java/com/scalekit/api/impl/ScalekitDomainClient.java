@@ -1,7 +1,7 @@
 package com.scalekit.api.impl;
 
 import com.google.protobuf.Int32Value;
-import com.scalekit.internal.CallTimeout;
+import com.scalekit.Environment;
 import com.scalekit.api.DomainClient;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.domains.*;
@@ -41,7 +41,7 @@ public class ScalekitDomainClient implements DomainClient {
     public Domain createDomain(String organizationId, String domainName) {
         return RetryExecuter.executeWithRetry(() -> {
             CreateDomainResponse response = this.domainStub
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .createDomain(
                     CreateDomainRequest.newBuilder()
                             .setOrganizationId(organizationId)
@@ -66,7 +66,7 @@ public class ScalekitDomainClient implements DomainClient {
     public Domain createDomain(String organizationId, String domainName, DomainType domainType) {
         return RetryExecuter.executeWithRetry(() -> {
             CreateDomainResponse response = this.domainStub
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .createDomain(
                     CreateDomainRequest.newBuilder()
                             .setOrganizationId(organizationId)
@@ -90,7 +90,7 @@ public class ScalekitDomainClient implements DomainClient {
     public Domain createDomain(CreateDomainRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             CreateDomainResponse response = this.domainStub
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .createDomain(request);
             return response.getDomain();
         }, this.credentials);
@@ -109,7 +109,7 @@ public class ScalekitDomainClient implements DomainClient {
     public Domain getDomainById(String organizationId, String domainId) {
         return RetryExecuter.executeWithRetry(() -> {
             GetDomainResponse response = this.domainStub
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .getDomain(
                     GetDomainRequest.newBuilder()
                             .setOrganizationId(organizationId)
@@ -132,7 +132,7 @@ public class ScalekitDomainClient implements DomainClient {
 
         return RetryExecuter.executeWithRetry(() -> {
             ListDomainResponse response = this.domainStub
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .listDomains(
                     ListDomainRequest.newBuilder()
                             .setOrganizationId(organizationId)
@@ -151,7 +151,7 @@ public class ScalekitDomainClient implements DomainClient {
                     .setPageSize(Int32Value.of(100))
                     .build();
             ListDomainResponse response = this.domainStub
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .listDomains(request);
             return response.getDomainsList();
         }, this.credentials);
@@ -167,7 +167,7 @@ public class ScalekitDomainClient implements DomainClient {
     public void deleteDomain(String organizationId, String domainId) {
         RetryExecuter.executeWithRetry(() -> {
             this.domainStub
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .deleteDomain(
                     DeleteDomainRequest.newBuilder() 
                             .setOrganizationId(organizationId)

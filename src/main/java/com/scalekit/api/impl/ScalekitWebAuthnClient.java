@@ -1,6 +1,6 @@
 package com.scalekit.api.impl;
 
-import com.scalekit.internal.CallTimeout;
+import com.scalekit.Environment;
 import com.scalekit.api.WebAuthnClient;
 import com.scalekit.grpc.scalekit.v1.auth.webauthn.*;
 import com.scalekit.internal.RetryExecuter;
@@ -43,7 +43,7 @@ public class ScalekitWebAuthnClient implements WebAuthnClient {
                     .build();
 
             return this.webAuthnStub
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .listCredentials(request);
         }, this.credentials);
     }
@@ -70,7 +70,7 @@ public class ScalekitWebAuthnClient implements WebAuthnClient {
                     .build();
 
             return this.webAuthnStub
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .updateCredential(request);
         }, this.credentials);
     }
@@ -92,7 +92,7 @@ public class ScalekitWebAuthnClient implements WebAuthnClient {
                     .build();
 
             return this.webAuthnStub
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .deleteCredential(request);
         }, this.credentials);
     }

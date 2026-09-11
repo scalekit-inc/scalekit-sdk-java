@@ -1,6 +1,6 @@
 package com.scalekit.api.impl;
 
-import com.scalekit.internal.CallTimeout;
+import com.scalekit.Environment;
 import com.scalekit.api.TokenClient;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.exceptions.TokenInvalidException;
@@ -85,7 +85,7 @@ public class ScalekitTokenClient implements TokenClient {
                 .build();
 
         return this.tokenStub
-                .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                 .createToken(request);
     }
 
@@ -107,7 +107,7 @@ public class ScalekitTokenClient implements TokenClient {
                         .build();
 
                 return this.tokenStub
-                        .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                         .validateToken(request);
             }, this.credentials);
         } catch (APIException e) {
@@ -140,7 +140,7 @@ public class ScalekitTokenClient implements TokenClient {
 
             try {
                 this.tokenStub
-                        .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                         .invalidateToken(request);
             } catch (StatusRuntimeException e) {
                 if (e.getStatus().getCode() == Status.NOT_FOUND.getCode()) {
@@ -177,7 +177,7 @@ public class ScalekitTokenClient implements TokenClient {
 
         return RetryExecuter.executeWithRetry(() ->
                 this.tokenStub
-                        .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                         .updateToken(requestBuilder.build()),
                 this.credentials);
     }
@@ -238,7 +238,7 @@ public class ScalekitTokenClient implements TokenClient {
             }
 
             return this.tokenStub
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .listTokens(requestBuilder.build());
         }, this.credentials);
     }

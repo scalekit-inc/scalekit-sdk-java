@@ -1,6 +1,6 @@
 package com.scalekit.api.impl;
 
-import com.scalekit.internal.CallTimeout;
+import com.scalekit.Environment;
 import com.scalekit.api.RoleClient;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.roles.*;
@@ -36,7 +36,7 @@ public class ScalekitRoleClient implements RoleClient {
     public CreateRoleResponse createRole(CreateRoleRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .createRole(request);
         }, this.credentials);
     }
@@ -50,7 +50,7 @@ public class ScalekitRoleClient implements RoleClient {
     public GetRoleResponse getRole(String roleName) {
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .getRole(GetRoleRequest.newBuilder()
                             .setRoleName(roleName)
                             .build());
@@ -65,7 +65,7 @@ public class ScalekitRoleClient implements RoleClient {
     public ListRolesResponse listRoles() {
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .listRoles(ListRolesRequest.newBuilder().build());
         }, this.credentials);
     }
@@ -80,7 +80,7 @@ public class ScalekitRoleClient implements RoleClient {
     public UpdateRoleResponse updateRole(String roleName, UpdateRoleRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .updateRole(UpdateRoleRequest.newBuilder()
                             .setRoleName(roleName)
                             .setRole(request.getRole())
@@ -96,7 +96,7 @@ public class ScalekitRoleClient implements RoleClient {
     public void deleteRole(String roleName) {
         RetryExecuter.executeWithRetry(() -> {
             rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .deleteRole(DeleteRoleRequest.newBuilder()
                             .setRoleName(roleName)
                             .build());
@@ -113,7 +113,7 @@ public class ScalekitRoleClient implements RoleClient {
     public void deleteRole(String roleName, String reassignRoleName) {
         RetryExecuter.executeWithRetry(() -> {
             rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .deleteRole(DeleteRoleRequest.newBuilder()
                             .setRoleName(roleName)
                             .setReassignRoleName(reassignRoleName)
@@ -131,7 +131,7 @@ public class ScalekitRoleClient implements RoleClient {
     public GetRoleUsersCountResponse getRoleUsersCount(String roleName) {
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .getRoleUsersCount(GetRoleUsersCountRequest.newBuilder()
                             .setRoleName(roleName)
                             .build());
@@ -150,7 +150,7 @@ public class ScalekitRoleClient implements RoleClient {
     public CreateOrganizationRoleResponse createOrganizationRole(String orgId, CreateOrganizationRoleRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .createOrganizationRole(request.toBuilder()
                             .setOrgId(orgId)
                             .build());
@@ -167,7 +167,7 @@ public class ScalekitRoleClient implements RoleClient {
     public GetOrganizationRoleResponse getOrganizationRole(String orgId, String roleName) {
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .getOrganizationRole(GetOrganizationRoleRequest.newBuilder()
                             .setOrgId(orgId)
                             .setRoleName(roleName)
@@ -184,7 +184,7 @@ public class ScalekitRoleClient implements RoleClient {
     public ListOrganizationRolesResponse listOrganizationRoles(String orgId) {
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .listOrganizationRoles(ListOrganizationRolesRequest.newBuilder()
                             .setOrgId(orgId)
                             .build());
@@ -202,7 +202,7 @@ public class ScalekitRoleClient implements RoleClient {
     public UpdateOrganizationRoleResponse updateOrganizationRole(String orgId, String roleName, UpdateOrganizationRoleRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .updateOrganizationRole(UpdateOrganizationRoleRequest.newBuilder()
                             .setOrgId(orgId)
                             .setRoleName(roleName)
@@ -220,7 +220,7 @@ public class ScalekitRoleClient implements RoleClient {
     public void deleteOrganizationRole(String orgId, String roleName) {
         RetryExecuter.executeWithRetry(() -> {
             rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .deleteOrganizationRole(DeleteOrganizationRoleRequest.newBuilder()
                             .setOrgId(orgId)
                             .setRoleName(roleName)
@@ -239,7 +239,7 @@ public class ScalekitRoleClient implements RoleClient {
     public void deleteOrganizationRole(String orgId, String roleName, String reassignRoleName) {
         RetryExecuter.executeWithRetry(() -> {
             rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .deleteOrganizationRole(DeleteOrganizationRoleRequest.newBuilder()
                             .setOrgId(orgId)
                             .setRoleName(roleName)
@@ -259,7 +259,7 @@ public class ScalekitRoleClient implements RoleClient {
     public GetOrganizationRoleUsersCountResponse getOrganizationRoleUsersCount(String orgId, String roleName) {
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .getOrganizationRoleUsersCount(GetOrganizationRoleUsersCountRequest.newBuilder()
                             .setOrgId(orgId)
                             .setRoleName(roleName)
@@ -277,7 +277,7 @@ public class ScalekitRoleClient implements RoleClient {
     public UpdateDefaultOrganizationRolesResponse updateDefaultOrganizationRoles(String orgId, UpdateDefaultOrganizationRolesRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .updateDefaultOrganizationRoles(request.toBuilder()
                             .setOrgId(orgId)
                             .build());
@@ -296,7 +296,7 @@ public class ScalekitRoleClient implements RoleClient {
         }
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .updateDefaultRoles(request);
         }, this.credentials);
     }
@@ -313,7 +313,7 @@ public class ScalekitRoleClient implements RoleClient {
         }
         return RetryExecuter.executeWithRetry(() -> {
             return rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .listDependentRoles(ListDependentRolesRequest.newBuilder()
                             .setRoleName(roleName)
                             .build());
@@ -330,7 +330,7 @@ public class ScalekitRoleClient implements RoleClient {
     public void deleteRoleBase(String roleName) {
         RetryExecuter.executeWithRetry(() -> {
             rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .deleteRoleBase(DeleteRoleBaseRequest.newBuilder()
                             .setRoleName(roleName)
                             .build());
@@ -347,7 +347,7 @@ public class ScalekitRoleClient implements RoleClient {
     public void deleteOrganizationRoleBase(String orgId, String roleName) {
         RetryExecuter.executeWithRetry(() -> {
             rolesService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .deleteOrganizationRoleBase(DeleteOrganizationRoleBaseRequest.newBuilder()
                             .setOrgId(orgId)
                             .setRoleName(roleName)

@@ -1,6 +1,6 @@
 package com.scalekit.api.impl;
 
-import com.scalekit.internal.CallTimeout;
+import com.scalekit.Environment;
 import com.scalekit.api.EventsClient;
 import com.scalekit.grpc.scalekit.v1.events.*;
 import com.scalekit.internal.RetryExecuter;
@@ -71,7 +71,7 @@ public class ScalekitEventsClient implements EventsClient {
                     .setPageToken(effectivePageToken)
                     .build();
             return this.eventsStub
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .listEventsPaginated(request);
         },this.credentials);
     }

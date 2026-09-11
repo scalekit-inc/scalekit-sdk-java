@@ -1,6 +1,6 @@
 package com.scalekit.api.impl;
 
-import com.scalekit.internal.CallTimeout;
+import com.scalekit.Environment;
 import com.scalekit.api.UserClient;
 import com.scalekit.grpc.scalekit.v1.users.*;
 import com.scalekit.internal.RetryExecuter;
@@ -34,7 +34,7 @@ public class ScalekitUserClient implements UserClient {
     public CreateUserAndMembershipResponse createUserAndMembership(String organizationId, CreateUserAndMembershipRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .createUserAndMembership(request.toBuilder()
                             .setOrganizationId(organizationId)
                             .build());
@@ -53,7 +53,7 @@ public class ScalekitUserClient implements UserClient {
                     .setId(userId)
                     .build();
             return userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .getUser(request);
         }, this.credentials);
     }
@@ -67,7 +67,7 @@ public class ScalekitUserClient implements UserClient {
     public ListUsersResponse listUsers(ListUsersRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .listUsers(request);
         }, this.credentials);
     }
@@ -82,7 +82,7 @@ public class ScalekitUserClient implements UserClient {
     public UpdateUserResponse updateUser(String userId, UpdateUserRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .updateUser(request.toBuilder()
                             .setId(userId)
                             .build());
@@ -100,7 +100,7 @@ public class ScalekitUserClient implements UserClient {
                     .setId(userId)
                     .build();
             userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .deleteUser(request);
             return null;
         }, this.credentials);
@@ -117,7 +117,7 @@ public class ScalekitUserClient implements UserClient {
     public CreateMembershipResponse createMembership(String organizationId, String userId, CreateMembershipRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .createMembership(request.toBuilder()
                             .setOrganizationId(organizationId)
                             .setId(userId)
@@ -138,7 +138,7 @@ public class ScalekitUserClient implements UserClient {
                     .setId(userId)
                     .build();
             userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .deleteMembership(request);
             return null;
         }, this.credentials);
@@ -155,7 +155,7 @@ public class ScalekitUserClient implements UserClient {
     public UpdateMembershipResponse updateMembership(String organizationId, String userId, UpdateMembershipRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .updateMembership(request.toBuilder()
                             .setOrganizationId(organizationId)
                             .setId(userId)
@@ -173,7 +173,7 @@ public class ScalekitUserClient implements UserClient {
     public ListOrganizationUsersResponse listOrganizationUsers(String organizationId, ListOrganizationUsersRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .listOrganizationUsers(request.toBuilder()
                             .setOrganizationId(organizationId)
                             .build());
@@ -189,7 +189,7 @@ public class ScalekitUserClient implements UserClient {
     public SearchUsersResponse searchUsers(SearchUsersRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .searchUsers(request);
         }, this.credentials);
     }
@@ -204,7 +204,7 @@ public class ScalekitUserClient implements UserClient {
     public SearchOrganizationUsersResponse searchOrganizationUsers(String organizationId, SearchOrganizationUsersRequest request) {
         return RetryExecuter.executeWithRetry(() -> {
             return userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .searchOrganizationUsers(request.toBuilder()
                             .setOrganizationId(organizationId)
                             .build());
@@ -225,7 +225,7 @@ public class ScalekitUserClient implements UserClient {
                     .setId(userId)
                     .build();
             return userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .resendInvite(request);
         }, this.credentials);
     }
@@ -250,7 +250,7 @@ public class ScalekitUserClient implements UserClient {
                     .setUserId(userId)
                     .build();
             return userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .listUserRoles(request);
         }, this.credentials);
     }
@@ -275,7 +275,7 @@ public class ScalekitUserClient implements UserClient {
                     .setUserId(userId)
                     .build();
             return userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .listUserPermissions(request);
         }, this.credentials);
     }
@@ -307,7 +307,7 @@ public class ScalekitUserClient implements UserClient {
                     .setExternalId(externalId)
                     .build();
             return userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .getUser(request);
         }, this.credentials);
     }
@@ -324,7 +324,7 @@ public class ScalekitUserClient implements UserClient {
         requireNonNull(request, "request");
         return RetryExecuter.executeWithRetry(() -> {
             return userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .updateUser(request.toBuilder()
                             .setExternalId(externalId)
                             .build());
@@ -343,7 +343,7 @@ public class ScalekitUserClient implements UserClient {
                     .setExternalId(externalId)
                     .build();
             userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .deleteUser(request);
             return null;
         }, this.credentials);
@@ -363,7 +363,7 @@ public class ScalekitUserClient implements UserClient {
         requireNonNull(request, "request");
         return RetryExecuter.executeWithRetry(() -> {
             return userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .createMembership(request.toBuilder()
                             .setOrganizationId(organizationId)
                             .setExternalId(externalId)
@@ -386,7 +386,7 @@ public class ScalekitUserClient implements UserClient {
                     .setExternalId(externalId)
                     .build();
             userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .deleteMembership(request);
             return null;
         }, this.credentials);
@@ -406,7 +406,7 @@ public class ScalekitUserClient implements UserClient {
         requireNonNull(request, "request");
         return RetryExecuter.executeWithRetry(() -> {
             return userService
-                    .withDeadlineAfter(CallTimeout.resolveMillis(), TimeUnit.MILLISECONDS)
+                    .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
                     .updateMembership(request.toBuilder()
                             .setOrganizationId(organizationId)
                             .setExternalId(externalId)
