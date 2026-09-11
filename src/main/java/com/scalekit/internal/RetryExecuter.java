@@ -12,18 +12,25 @@ public class RetryExecuter {
 
     private static final int MAX_ATTEMPTS = 3;
 
-    // Matches Python's/Node's shape: 1s base, doubling per attempt, capped at 30s - long enough
-    // that a retry sequence can plausibly outlast a multi-second transient outage instead of
-    // exhausting all attempts in the first few hundred milliseconds (see java-sdk-auth-hooks-client
-    // task notes: a toxiproxy fault-matrix run showed the previous 100ms-based backoff finishing
-    // all 3 attempts in well under 300ms, failing a case where the outage cleared at 2s that
-    // Python/Node would have successfully retried through).
+    // 1s base, doubling per attempt - long enough that a retry sequence can plausibly outlast a
+    // multi-second transient outage instead of exhausting all attempts in the first few hundred
+    // milliseconds (see java-sdk-auth-hooks-client task notes: a toxiproxy fault-matrix run showed
+    // the previous 100ms-based backoff finishing all 3 attempts in well under 300ms, failing a
+    // case that a wider backoff retried through successfully).
+    //
+    // UNAVAILABLE_MAX_BACKOFF_MILLIS is headroom for a future MAX_ATTEMPTS increase, not live
+    // today: with MAX_ATTEMPTS=3, backoffBeforeRetry only ever runs for attempt=1 and attempt=2
+    // (1000ms and 2000ms), so the 30s cap can never actually bind at the current attempt count -
+    // don't read its presence as evidence the SDK backs off up to 30s right now.
     private static final long UNAVAILABLE_BASE_BACKOFF_MILLIS = 1000;
     private static final long UNAVAILABLE_MAX_BACKOFF_MILLIS = 30_000;
 
     // Swappable so tests (in this same package) can assert on the computed backoff without
     // actually sleeping for it. Package-private deliberately - this controls production retry
     // timing, so it shouldn't be reachable (and overridable) from arbitrary application code.
+    // Not thread-safe against concurrent test execution: a single mutable static field means two
+    // tests swapping it in parallel (e.g. under a future switch to JUnit's parallel execution,
+    // off by default today) can race and clobber each other's override.
     static LongConsumer sleeper = ms -> {
         try {
             Thread.sleep(ms);
@@ -73,7 +80,7 @@ public class RetryExecuter {
                     throw new APIException("Retry aborted: interrupted while backing off after " + code, lastError);
                 }
             } catch (Exception e) {
-                throw new APIException(e.getMessage());
+                throw new APIException(e.getMessage(), e);
             }
         }
 

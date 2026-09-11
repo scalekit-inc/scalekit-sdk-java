@@ -136,6 +136,21 @@ public class RetryExecuterTest {
         assertEquals(Status.Code.UNAVAILABLE.value(), ex.getGrpcStatusCode());
     }
 
+    // Before this fix, the generic catch (Exception e) branch built APIException from just
+    // e.getMessage(), discarding e itself - so ex.getCause() was always null here even though the
+    // sibling StatusRuntimeException path two lines above correctly preserves it.
+    @Test
+    void preservesCauseForNonStatusRuntimeExceptions() {
+        RuntimeException original = new RuntimeException("boom");
+        Callable<String> callable = () -> {
+            throw original;
+        };
+
+        APIException ex = assertThrows(APIException.class,
+                () -> RetryExecuter.executeWithRetry(callable, credentials));
+        assertSame(original, ex.getCause());
+    }
+
     @Test
     void doesNotRetryNonRetryableStatus() throws Exception {
         AtomicInteger calls = new AtomicInteger();
