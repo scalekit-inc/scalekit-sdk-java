@@ -40,11 +40,30 @@ public class RetryExecuter {
     };
 
     /**
-     * Retries on UNAUTHENTICATED (refreshing credentials first) and UNAVAILABLE (backing off
-     * first), since both mean the request was rejected before any handler ran on the server -
-     * unlike DEADLINE_EXCEEDED, which is deliberately never retried here because the server may
-     * have already started processing a non-idempotent write by the time the deadline fires.
-     * A single failing call can therefore take up to MAX_ATTEMPTS x the per-call deadline
+     * Retries on UNAUTHENTICATED (refreshing credentials first - a rejected token means the
+     * request never reached a handler, so this one is safe) and on UNAVAILABLE (backing off
+     * first).
+     *
+     * <p>UNAVAILABLE is <b>not</b> the same kind of safe. A connection torn down after the
+     * request was already written, a keepalive timeout on a still-in-progress call, and a
+     * request the server fully processed but whose response never made it back are all
+     * indistinguishable from this side - only some of those are actually safe to retry. This SDK
+     * retries UNAVAILABLE anyway, unconditionally, for every operation including non-idempotent
+     * writes ({@code create*}/{@code update*}/{@code delete*} etc.) - a deliberate
+     * availability-over-safety tradeoff, not a proven-safe case. This matches the Node SDK's
+     * actual behavior (also unconditional) and this SDK's own default before this change existed;
+     * Python defaults the same way but additionally exposes a per-call opt-out
+     * ({@code retry_on_unavailable=False}) for callers who need to disable it - this SDK doesn't
+     * have that yet. Per-operation idempotency-aware retry (skip the retry for known-unsafe
+     * writes, closing this gap) is tracked as separate follow-up work, not addressed here.
+     *
+     * <p>DEADLINE_EXCEEDED is deliberately never retried, for the identical reason UNAVAILABLE's
+     * retry is risky: the server may have already started processing a non-idempotent write by
+     * the time the deadline fires. The two branches currently land on different sides of the
+     * same tradeoff - that inconsistency is real, and exactly what the follow-up above should
+     * resolve, not something this comment should paper over.
+     *
+     * <p>A single failing call can therefore take up to MAX_ATTEMPTS x the per-call deadline
      * (Environment.defaultConfig().timeout) to finally fail.
      */
     public static <T> T executeWithRetry(Callable<T> callable, ScalekitCredentials credentials) {
